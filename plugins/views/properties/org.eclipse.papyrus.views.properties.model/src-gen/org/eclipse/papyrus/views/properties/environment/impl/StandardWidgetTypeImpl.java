@@ -23,6 +23,7 @@ public class StandardWidgetTypeImpl extends WidgetTypeImpl implements StandardWi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StandardWidgetTypeImpl() {
@@ -32,6 +33,7 @@ public class StandardWidgetTypeImpl extends WidgetTypeImpl implements StandardWi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public class StandardWidgetTypeImpl extends WidgetTypeImpl implements StandardWi
 		return EnvironmentPackage.Literals.STANDARD_WIDGET_TYPE;
 	}
 
-} //StandardWidgetTypeImpl
+} // StandardWidgetTypeImpl

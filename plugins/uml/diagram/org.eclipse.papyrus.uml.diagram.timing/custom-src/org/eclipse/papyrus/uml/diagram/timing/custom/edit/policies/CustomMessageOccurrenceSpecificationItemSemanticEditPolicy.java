@@ -31,7 +31,7 @@ public class CustomMessageOccurrenceSpecificationItemSemanticEditPolicy extends 
 	/** Handles the "Hide Element" (remove only the view, and keep the semantic element) */
 	@Override
 	public Command getCommand(final Request request) {
-		if(request.getType() == REQ_DELETE) {
+		if (request.getType() == REQ_DELETE) {
 			final Command baseCommand = super.getCommand(request);
 			return OccurrenceSpecificationUtils.getHideOccurrenceSpecificationCommand(getHost(), baseCommand);
 		}
@@ -41,10 +41,10 @@ public class CustomMessageOccurrenceSpecificationItemSemanticEditPolicy extends 
 	@Override
 	protected Command getCreateCommand(final CreateElementRequest req) {
 		final IElementType elementType = req.getElementType();
-		if(UMLElementTypes.TimeConstraint_15 == elementType) {
+		if (UMLElementTypes.TimeConstraint_15 == elementType) {
 			return getGEFWrapper(new TimeConstraintCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TimeObservation_16 == elementType) {
+		if (UMLElementTypes.TimeObservation_16 == elementType) {
 			return getGEFWrapper(new TimeObservationCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);
@@ -53,10 +53,10 @@ public class CustomMessageOccurrenceSpecificationItemSemanticEditPolicy extends 
 	@Override
 	protected Command getCreateRelationshipCommand(final CreateRelationshipRequest req) {
 		final IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return null;
 		}
-		if(MessageUtils.isMessage(requestElementType)) {
+		if (MessageUtils.isMessage(requestElementType)) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req));
 		}
 		return super.getCreateRelationshipCommand(req);

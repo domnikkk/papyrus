@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.papyrus.views.properties.ui.*;
 import org.eclipse.papyrus.views.properties.ui.CompositeWidget;
 import org.eclipse.papyrus.views.properties.ui.Element;
 import org.eclipse.papyrus.views.properties.ui.Layout;
@@ -27,6 +26,7 @@ import org.eclipse.papyrus.views.properties.ui.ValueAttribute;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
@@ -34,16 +34,16 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static UiFactory init() {
 		try {
-			UiFactory theUiFactory = (UiFactory)EPackage.Registry.INSTANCE.getEFactory(UiPackage.eNS_URI);
+			UiFactory theUiFactory = (UiFactory) EPackage.Registry.INSTANCE.getEFactory(UiPackage.eNS_URI);
 			if (theUiFactory != null) {
 				return theUiFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new UiFactoryImpl();
@@ -53,6 +53,7 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UiFactoryImpl() {
@@ -62,29 +63,40 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case UiPackage.ELEMENT: return createElement();
-			case UiPackage.STANDARD_WIDGET: return createStandardWidget();
-			case UiPackage.PROPERTY_EDITOR: return createPropertyEditor();
-			case UiPackage.COMPOSITE_WIDGET: return createCompositeWidget();
-			case UiPackage.UNKNOWN_COMPONENT: return createUnknownComponent();
-			case UiPackage.LAYOUT: return createLayout();
-			case UiPackage.VALUE_ATTRIBUTE: return createValueAttribute();
-			case UiPackage.REFERENCE_ATTRIBUTE: return createReferenceAttribute();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case UiPackage.ELEMENT:
+			return createElement();
+		case UiPackage.STANDARD_WIDGET:
+			return createStandardWidget();
+		case UiPackage.PROPERTY_EDITOR:
+			return createPropertyEditor();
+		case UiPackage.COMPOSITE_WIDGET:
+			return createCompositeWidget();
+		case UiPackage.UNKNOWN_COMPONENT:
+			return createUnknownComponent();
+		case UiPackage.LAYOUT:
+			return createLayout();
+		case UiPackage.VALUE_ATTRIBUTE:
+			return createValueAttribute();
+		case UiPackage.REFERENCE_ATTRIBUTE:
+			return createReferenceAttribute();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Element createElement() {
 		ElementImpl element = new ElementImpl();
 		return element;
@@ -93,8 +105,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public StandardWidget createStandardWidget() {
 		StandardWidgetImpl standardWidget = new StandardWidgetImpl();
 		return standardWidget;
@@ -103,8 +117,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PropertyEditor createPropertyEditor() {
 		PropertyEditorImpl propertyEditor = new PropertyEditorImpl();
 		return propertyEditor;
@@ -113,8 +129,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public CompositeWidget createCompositeWidget() {
 		CompositeWidgetImpl compositeWidget = new CompositeWidgetImpl();
 		return compositeWidget;
@@ -123,8 +141,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public UnknownComponent createUnknownComponent() {
 		UnknownComponentImpl unknownComponent = new UnknownComponentImpl();
 		return unknownComponent;
@@ -133,8 +153,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Layout createLayout() {
 		LayoutImpl layout = new LayoutImpl();
 		return layout;
@@ -143,8 +165,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ValueAttribute createValueAttribute() {
 		ValueAttributeImpl valueAttribute = new ValueAttributeImpl();
 		return valueAttribute;
@@ -153,8 +177,10 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ReferenceAttribute createReferenceAttribute() {
 		ReferenceAttributeImpl referenceAttribute = new ReferenceAttributeImpl();
 		return referenceAttribute;
@@ -163,15 +189,18 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public UiPackage getUiPackage() {
-		return (UiPackage)getEPackage();
+		return (UiPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -180,4 +209,4 @@ public class UiFactoryImpl extends EFactoryImpl implements UiFactory {
 		return UiPackage.eINSTANCE;
 	}
 
-} //UiFactoryImpl
+} // UiFactoryImpl

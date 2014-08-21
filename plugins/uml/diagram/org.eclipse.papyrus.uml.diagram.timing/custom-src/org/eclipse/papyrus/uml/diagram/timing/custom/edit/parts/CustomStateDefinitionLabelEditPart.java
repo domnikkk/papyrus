@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ public class CustomStateDefinitionLabelEditPart extends StateDefinitionLabelEdit
 
 	@Override
 	public Command getCommand(final Request request) {
-		if(request.getType() == REQ_DELETE) {
+		if (request.getType() == REQ_DELETE) {
 			// if the StateDefinitionLabel is selected, then delete the parent StateDefinition
 			return getParent().getCommand(request);
 		}
@@ -41,7 +41,7 @@ public class CustomStateDefinitionLabelEditPart extends StateDefinitionLabelEdit
 	 */
 	@Override
 	public IParser getParser() {
-		if(this.parser == null) {
+		if (this.parser == null) {
 			this.parser = new StateDefinitionParser();
 		}
 		return this.parser;
@@ -53,7 +53,7 @@ public class CustomStateDefinitionLabelEditPart extends StateDefinitionLabelEdit
 		// There is no semantic element, so we return null in order for Papyrus to handle
 		// the delete menu action enablement correctly.
 		// XXX warning: this might cause unforeseen bugs somewhere else.
-		if(key == EObject.class) {
+		if (key == EObject.class) {
 			return null;
 		}
 		return super.getAdapter(key);

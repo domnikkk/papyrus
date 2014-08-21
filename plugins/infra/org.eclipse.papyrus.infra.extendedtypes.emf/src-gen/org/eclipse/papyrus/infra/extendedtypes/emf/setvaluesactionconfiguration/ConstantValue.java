@@ -12,7 +12,7 @@ import org.eclipse.uml2.uml.ValueSpecification;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue#getValueInstance <em>Value Instance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue#getValueInstance <em>Value Instance</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,10 +25,10 @@ public interface ConstantValue extends FeatureValue {
 	 * Returns the value of the '<em><b>Value Instance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value Instance</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Value Instance</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Value Instance</em>' containment reference.
 	 * @see #setValueInstance(ValueSpecification)
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.SetValuesActionConfigurationPackage#getConstantValue_ValueInstance()
@@ -41,7 +41,9 @@ public interface ConstantValue extends FeatureValue {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.ConstantValue#getValueInstance <em>Value Instance</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Instance</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Value Instance</em>' containment reference.
 	 * @see #getValueInstance()
 	 * @generated
 	 */

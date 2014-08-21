@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,12 +45,11 @@ public class UIUtil {
 	}
 
 	/**
-	 * Create an executor that runs tasks asynchronously on the UI thread. If you need synchronous execution, schedule {@link Future}s and
-	 * {@linkplain Future#get() wait} for them.
-	 * 
+	 * Create an executor that runs tasks asynchronously on the UI thread. If you need synchronous execution, schedule {@link Future}s and {@linkplain Future#get() wait} for them.
+	 *
 	 * @param display
-	 *        the display on which thread to execute tasks
-	 * 
+	 *            the display on which thread to execute tasks
+	 *
 	 * @return the executor
 	 */
 	public static ExecutorService createUIExecutor(Display display) {
@@ -60,7 +59,7 @@ public class UIUtil {
 	/**
 	 * Creates a local memento that is not persistable and is not based on an XML document. This is useful for capturing the
 	 * state of UI elements locally in cases where persistence of the memento is not required.
-	 * 
+	 *
 	 * @return the memento
 	 */
 	public static IMemento createLocalMemento() {
@@ -69,13 +68,13 @@ public class UIUtil {
 
 	/**
 	 * Synchronously invokes a {@code callable} on the given {@code display}'s thread.
-	 * 
+	 *
 	 * @param display
-	 *        a display
+	 *            a display
 	 * @param callable
-	 *        a callable to invoke
+	 *            a callable to invoke
 	 * @return the callable's result (which, because this method is synchronous, will be ready)
-	 * 
+	 *
 	 * @see #asyncCall(Display, Callable)
 	 * @see #createUIExecutor(Display)
 	 */
@@ -87,11 +86,11 @@ public class UIUtil {
 
 	/**
 	 * Synchronously invokes a {@code callable} on the default display thread.
-	 * 
+	 *
 	 * @param callable
-	 *        a callable to invoke
+	 *            a callable to invoke
 	 * @return the callable's result (which, because this method is synchronous, will be ready)
-	 * 
+	 *
 	 * @see #syncCall(Display, Callable)
 	 * @see #asyncCall(Callable)
 	 * @see #createUIExecutor(Display)
@@ -102,13 +101,13 @@ public class UIUtil {
 
 	/**
 	 * Asynchronously invokes a {@code callable} on the given {@code display}'s thread.
-	 * 
+	 *
 	 * @param display
-	 *        a display
+	 *            a display
 	 * @param callable
-	 *        a callable to invoke
+	 *            a callable to invoke
 	 * @return the callable's result
-	 * 
+	 *
 	 * @see #syncCall(Display, Callable)
 	 * @see #createUIExecutor(Display)
 	 */
@@ -120,11 +119,11 @@ public class UIUtil {
 
 	/**
 	 * Asynchronously invokes a {@code callable} on the default display thread.
-	 * 
+	 *
 	 * @param callable
-	 *        a callable to invoke
+	 *            a callable to invoke
 	 * @return the callable's result
-	 * 
+	 *
 	 * @see #asyncCall(Display, Callable)
 	 * @see #syncCall(Callable)
 	 * @see #createUIExecutor(Display)
@@ -154,7 +153,7 @@ public class UIUtil {
 		}
 
 		public void execute(Runnable command) {
-			if(isShutdown()) {
+			if (isShutdown()) {
 				throw new RejectedExecutionException("Executor service is shut down"); //$NON-NLS-1$
 			}
 
@@ -166,7 +165,7 @@ public class UIUtil {
 
 			shutdown();
 
-			for(Runnable dequeued = dequeue(); dequeued != null; dequeued = dequeue()) {
+			for (Runnable dequeued = dequeue(); dequeued != null; dequeued = dequeue()) {
 				result.add(dequeued);
 			}
 
@@ -180,7 +179,7 @@ public class UIUtil {
 			try {
 				boolean wasEmpty = pending.isEmpty();
 				pending.offer(result);
-				if(wasEmpty) {
+				if (wasEmpty) {
 					// Now not empty
 					emptyCond.signalAll();
 				}
@@ -197,7 +196,7 @@ public class UIUtil {
 			lock.lock();
 			try {
 				result = pending.poll();
-				if(result == null) {
+				if (result == null) {
 					// Now empty
 					emptyCond.signalAll();
 				}
@@ -214,7 +213,7 @@ public class UIUtil {
 			lock.lock();
 			try {
 				result = pending.remove(task);
-				if(result && pending.isEmpty()) {
+				if (result && pending.isEmpty()) {
 					// Now empty
 					emptyCond.signalAll();
 				}
@@ -243,7 +242,7 @@ public class UIUtil {
 		}
 
 		public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
-			if(timeout < 0L) {
+			if (timeout < 0L) {
 				throw new IllegalArgumentException("negative timeout"); //$NON-NLS-1$
 			}
 
@@ -253,8 +252,8 @@ public class UIUtil {
 			lock.lock();
 			try {
 				boolean stillWaiting = true;
-				for(result = isTerminated(); !result && stillWaiting; result = isTerminated()) {
-					if(deadline == null) {
+				for (result = isTerminated(); !result && stillWaiting; result = isTerminated()) {
+					if (deadline == null) {
 						emptyCond.await();
 					} else {
 						stillWaiting = emptyCond.awaitUntil(deadline);
@@ -281,7 +280,7 @@ public class UIUtil {
 
 			public void run() {
 				// Don't run if I was cancelled by shutdown
-				if(dequeue(this)) {
+				if (dequeue(this)) {
 					delegate.run();
 				}
 			}

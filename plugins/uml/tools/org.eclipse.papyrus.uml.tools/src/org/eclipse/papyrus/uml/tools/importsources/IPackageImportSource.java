@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public interface IPackageImportSource {
 	/**
 	 * Obtains a content provider for the model hierarchy content that I
 	 * contribute.
-	 * 
+	 *
 	 * The ContentProvider is configured with the given extension
-	 * 
+	 *
 	 * @return my content provider
 	 */
 	IStaticContentProvider getModelHierarchyContentProvider(Map<String, String> extensionFilters);
@@ -44,7 +44,7 @@ public interface IPackageImportSource {
 	 * Obtains a label provider for the model hierarchy content that I
 	 * contribute. As a special case, it may be asked for a label for the {@code IPackageImportSource}, itself. In this case, a label should be
 	 * provided that suitably represents "my kind of content."
-	 * 
+	 *
 	 * @return my label provider
 	 */
 	ILabelProvider getModelHierarchyLabelProvider();

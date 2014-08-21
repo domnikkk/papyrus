@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getParameterName <em>Parameter Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getValues <em>Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getParameterName <em>Parameter Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface ParameterInjection extends EObject {
 	 * Returns the value of the '<em><b>Parameter Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameter Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parameter Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Parameter Name</em>' attribute.
 	 * @see #setParameterName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getParameterInjection_ParameterName()
@@ -44,7 +44,9 @@ public interface ParameterInjection extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection#getParameterName <em>Parameter Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parameter Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Parameter Name</em>' attribute.
 	 * @see #getParameterName()
 	 * @generated
 	 */
@@ -55,10 +57,10 @@ public interface ParameterInjection extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Values</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Values</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getParameterInjection_Values()
 	 * @model containment="true" ordered="false"

@@ -23,10 +23,10 @@ public class DimensionMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof InstanceSpecification) {
+		if (eObject instanceof InstanceSpecification) {
 
-			InstanceSpecification element = (InstanceSpecification)eObject;
-			if(UMLUtil.getStereotypeApplication(element, Dimension.class) != null) {
+			InstanceSpecification element = (InstanceSpecification) eObject;
+			if (UMLUtil.getStereotypeApplication(element, Dimension.class) != null) {
 				isMatch = true;
 			}
 		}

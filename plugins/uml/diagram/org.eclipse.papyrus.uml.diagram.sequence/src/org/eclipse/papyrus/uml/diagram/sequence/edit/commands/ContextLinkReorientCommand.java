@@ -8,6 +8,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.Namespace;
@@ -51,14 +52,15 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == referenceOwner instanceof Constraint) {
+		if (false == referenceOwner instanceof Constraint) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -68,7 +70,7 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Namespace && newEnd instanceof Constraint)) {
+		if (!(oldEnd instanceof Namespace && newEnd instanceof Constraint)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistConstraintContext_8500(getNewSource(), getOldTarget());
@@ -78,7 +80,7 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Namespace && newEnd instanceof Namespace)) {
+		if (!(oldEnd instanceof Namespace && newEnd instanceof Namespace)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistConstraintContext_8500(getOldSource(), getNewTarget());
@@ -87,14 +89,15 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -121,27 +124,27 @@ public class ContextLinkReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Constraint getOldSource() {
-		return (Constraint)referenceOwner;
+		return (Constraint) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Constraint getNewSource() {
-		return (Constraint)newEnd;
+		return (Constraint) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Namespace getOldTarget() {
-		return (Namespace)oldEnd;
+		return (Namespace) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Namespace getNewTarget() {
-		return (Namespace)newEnd;
+		return (Namespace) newEnd;
 	}
 }

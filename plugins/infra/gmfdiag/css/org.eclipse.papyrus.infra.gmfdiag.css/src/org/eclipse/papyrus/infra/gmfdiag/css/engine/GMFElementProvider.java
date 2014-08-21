@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.w3c.dom.Element;
 
 /**
  * Provides an Element for a GMF Notation object.
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -27,23 +27,24 @@ public class GMFElementProvider implements IElementProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @param element
-	 *        A GMF View
+	 *            A GMF View
 	 * @param engine
-	 *        An ExtendedCSSEngine
+	 *            An ExtendedCSSEngine
 	 */
+	@Override
 	public Element getElement(Object element, CSSEngine engine) {
 
-		if(!(element instanceof View)) {
+		if (!(element instanceof View)) {
 			throw new IllegalArgumentException("Unknown element : " + element);
 		}
 
-		if(!(engine instanceof ExtendedCSSEngine)) {
+		if (!(engine instanceof ExtendedCSSEngine)) {
 			throw new IllegalArgumentException("Invalid CSS Engine : " + engine);
 		}
 
-		return new GMFElementAdapter((View)element, (ExtendedCSSEngine)engine);
+		return new GMFElementAdapter((View) element, (ExtendedCSSEngine) engine);
 	}
 
 }

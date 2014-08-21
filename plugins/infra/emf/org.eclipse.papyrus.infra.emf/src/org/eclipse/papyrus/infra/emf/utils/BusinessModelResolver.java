@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,8 @@ package org.eclipse.papyrus.infra.emf.utils;
  * already registered : gef.EditPart TODO Use extensions to register additional
  * resolvers.
  */
-//Refactoring 0.10: This class has been moved from infra.core to infra.emf.
-//It should be re-implemented as a Service.
+// Refactoring 0.10: This class has been moved from infra.core to infra.emf.
+// It should be re-implemented as a Service.
 public class BusinessModelResolver {
 
 	/**
@@ -39,7 +39,7 @@ public class BusinessModelResolver {
 	 * Get the business object associated to this object, if any. This method
 	 * navigate throw the object if the object is an graphical artefact or a
 	 * diagram artifact.
-	 * 
+	 *
 	 * @param object
 	 * @return Object
 	 */

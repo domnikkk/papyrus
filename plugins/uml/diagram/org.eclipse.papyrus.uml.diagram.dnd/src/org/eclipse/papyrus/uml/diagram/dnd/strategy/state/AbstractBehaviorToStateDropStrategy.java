@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,15 +26,15 @@ import org.eclipse.uml2.uml.State;
 /**
  * Abstract implementation for a Behavior being dropped on a State. One of the State's
  * features will be set to the dropped behavior (doActivity, Entry, Exit)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
-//FIXME: This is a sample implementation. The edited features are composite, which means
-//the dropped behavior is actually moved to the target state.
-//We should either add a warning to avoid confusing the user, or offer a refactoring option
-//(e.g. Move the behavior to an operation, create a new FunctionBehavior in the state, 
-//and link the FunctionBehavior#specification to the operation)
+// FIXME: This is a sample implementation. The edited features are composite, which means
+// the dropped behavior is actually moved to the target state.
+// We should either add a warning to avoid confusing the user, or offer a refactoring option
+// (e.g. Move the behavior to an operation, create a new FunctionBehavior in the state,
+// and link the FunctionBehavior#specification to the operation)
 public abstract class AbstractBehaviorToStateDropStrategy extends TransactionalDropStrategy {
 
 	public String getLabel() {
@@ -66,27 +66,27 @@ public abstract class AbstractBehaviorToStateDropStrategy extends TransactionalD
 
 	@Override
 	public Command doGetCommand(Request request, EditPart targetEditPart) {
-		if(!(getTargetSemanticElement(targetEditPart) instanceof State)) {
+		if (!(getTargetSemanticElement(targetEditPart) instanceof State)) {
 			return null;
 		}
 
 		List<EObject> sourceEObjects = getSourceEObjects(request);
 
-		if(sourceEObjects.size() != 1) {
+		if (sourceEObjects.size() != 1) {
 			return null;
 		}
 
-		if(!(sourceEObjects.get(0) instanceof Behavior)) {
+		if (!(sourceEObjects.get(0) instanceof Behavior)) {
 			return null;
 		}
 
-		final Behavior behavior = (Behavior)sourceEObjects.get(0);
-		final State targetState = (State)getTargetSemanticElement(targetEditPart);
+		final Behavior behavior = (Behavior) sourceEObjects.get(0);
+		final State targetState = (State) getTargetSemanticElement(targetEditPart);
 
 		EObject ancestor = targetState.eContainer();
-		while(ancestor != null) {
-			if(ancestor == behavior) {
-				return null; //Avoid containment cycle
+		while (ancestor != null) {
+			if (ancestor == behavior) {
+				return null; // Avoid containment cycle
 			}
 
 			ancestor = ancestor.eContainer();

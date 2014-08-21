@@ -26,7 +26,7 @@ public class DeploymentLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Get singleton instance
-	 * 
+	 *
 	 * @return the instance
 	 */
 	public static DeploymentLinkMappingHelper getInstance() {
@@ -43,6 +43,7 @@ public class DeploymentLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getSource(Element link) {
 		return LinkMappingHelper.getSource(link, new CommonSourceUMLSwitch() {
 
@@ -61,6 +62,7 @@ public class DeploymentLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getTarget(Element link) {
 		return LinkMappingHelper.getTarget(link, new CommonTargetUMLSwitch() {
 

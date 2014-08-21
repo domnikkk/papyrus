@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.ObjectNode;
  * <li>{@link org.eclipse.papyrus.sysml.activities.internal.impl.NoBufferImpl#getBase_ObjectNode <em>Base Object Node</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuffer {
@@ -39,7 +39,7 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 	 * The cached value of the '{@link #getBase_ObjectNode() <em>Base Object Node</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_ObjectNode()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NoBufferImpl() {
@@ -57,7 +57,7 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ObjectNode basicGetBase_ObjectNode() {
@@ -66,15 +66,16 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ActivitiesPackage.NO_BUFFER__BASE_OBJECT_NODE:
-			if(resolve)
+			if (resolve) {
 				return getBase_ObjectNode();
+			}
 			return basicGetBase_ObjectNode();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -82,12 +83,12 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ActivitiesPackage.NO_BUFFER__BASE_OBJECT_NODE:
 			return base_ObjectNode != null;
 		}
@@ -96,14 +97,14 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ActivitiesPackage.NO_BUFFER__BASE_OBJECT_NODE:
-			setBase_ObjectNode((ObjectNode)newValue);
+			setBase_ObjectNode((ObjectNode) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,7 +112,7 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +122,14 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ActivitiesPackage.NO_BUFFER__BASE_OBJECT_NODE:
-			setBase_ObjectNode((ObjectNode)null);
+			setBase_ObjectNode((ObjectNode) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -136,16 +137,17 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ObjectNode getBase_ObjectNode() {
-		if(base_ObjectNode != null && base_ObjectNode.eIsProxy()) {
-			InternalEObject oldBase_ObjectNode = (InternalEObject)base_ObjectNode;
-			base_ObjectNode = (ObjectNode)eResolveProxy(oldBase_ObjectNode);
-			if(base_ObjectNode != oldBase_ObjectNode) {
-				if(eNotificationRequired())
+		if (base_ObjectNode != null && base_ObjectNode.eIsProxy()) {
+			InternalEObject oldBase_ObjectNode = (InternalEObject) base_ObjectNode;
+			base_ObjectNode = (ObjectNode) eResolveProxy(oldBase_ObjectNode);
+			if (base_ObjectNode != oldBase_ObjectNode) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ActivitiesPackage.NO_BUFFER__BASE_OBJECT_NODE, oldBase_ObjectNode, base_ObjectNode));
+				}
 			}
 		}
 		return base_ObjectNode;
@@ -153,14 +155,15 @@ public class NoBufferImpl extends MinimalEObjectImpl.Container implements NoBuff
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_ObjectNode(ObjectNode newBase_ObjectNode) {
 		ObjectNode oldBase_ObjectNode = base_ObjectNode;
 		base_ObjectNode = newBase_ObjectNode;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ActivitiesPackage.NO_BUFFER__BASE_OBJECT_NODE, oldBase_ObjectNode, base_ObjectNode));
+		}
 	}
 
 } // NoBufferImpl

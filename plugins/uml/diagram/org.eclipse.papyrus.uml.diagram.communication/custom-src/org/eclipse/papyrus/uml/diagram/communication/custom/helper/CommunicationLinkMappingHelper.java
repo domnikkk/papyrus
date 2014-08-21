@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.MessageEnd;
 import org.eclipse.uml2.uml.MessageOccurrenceSpecification;
 
 /**
- * 
+ *
  * The Communication LinkMappingHelper is specialization of the link mapping helper for the Communication diagram
- * 
+ *
  */
 public class CommunicationLinkMappingHelper implements ILinkMappingHelper {
 
@@ -41,7 +41,7 @@ public class CommunicationLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of ClassLinkMappingHelper.
-	 * 
+	 *
 	 * @return single instance of ClassLinkMappingHelper
 	 */
 	public static CommunicationLinkMappingHelper getInstance() {
@@ -63,10 +63,10 @@ public class CommunicationLinkMappingHelper implements ILinkMappingHelper {
 
 			@Override
 			public java.util.Collection<?> caseMessage(org.eclipse.uml2.uml.Message object) {
-				if(object.getSendEvent() != null) {
+				if (object.getSendEvent() != null) {
 					MessageEnd messageEnd = object.getSendEvent();
-					if(messageEnd instanceof MessageOccurrenceSpecification) {
-						return ((MessageOccurrenceSpecification)messageEnd).getCovereds();
+					if (messageEnd instanceof MessageOccurrenceSpecification) {
+						return ((MessageOccurrenceSpecification) messageEnd).getCovereds();
 					}
 				}
 				return Collections.EMPTY_LIST;
@@ -82,10 +82,10 @@ public class CommunicationLinkMappingHelper implements ILinkMappingHelper {
 
 			@Override
 			public java.util.Collection<?> caseMessage(org.eclipse.uml2.uml.Message object) {
-				if(object.getReceiveEvent() != null) {
+				if (object.getReceiveEvent() != null) {
 					MessageEnd messageEnd = object.getReceiveEvent();
-					if(messageEnd instanceof MessageOccurrenceSpecification) {
-						return ((MessageOccurrenceSpecification)messageEnd).getCovereds();
+					if (messageEnd instanceof MessageOccurrenceSpecification) {
+						return ((MessageOccurrenceSpecification) messageEnd).getCovereds();
 					}
 				}
 				return Collections.EMPTY_LIST;

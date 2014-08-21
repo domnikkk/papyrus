@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
@@ -15,7 +15,7 @@ import org.junit.Test;
 
 /**
  * @author dumoulin
- * 
+ *
  */
 public class ServicesRegistryTest extends TestCase {
 
@@ -52,9 +52,8 @@ public class ServicesRegistryTest extends TestCase {
 	}
 
 	/**
-	 * Test method for
-	 * {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#add(org.eclipse.papyrus.infra.core.serviceregistry.ServiceDescriptor)} .
-	 * 
+	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#add(org.eclipse.papyrus.infra.core.serviceregistry.ServiceDescriptor)} .
+	 *
 	 * @throws ServiceMultiException
 	 */
 	public void testAdd() throws ServiceMultiException {
@@ -65,14 +64,14 @@ public class ServicesRegistryTest extends TestCase {
 		servicesRegistry.add(servicePojoADesc);
 
 		// Test entries creation
-		//		try {
-		//			assertFalse("serviceA stopped", servicesRegistry.isStarted(serviceADesc.getKey()));
-		//			assertFalse("serviceB stopped", servicesRegistry.isStarted(serviceBDesc.getKey()));
-		//			assertFalse("serviceC stopped", servicesRegistry.isStarted(serviceCDesc.getKey()));
-		//			assertFalse("servicePojoA stopped", servicesRegistry.isStarted(servicePojoADesc.getKey()));
-		//		} catch (ServiceNotFoundException e) {
-		//			fail("Service should exist." + e.getMessage());
-		//		}
+		// try {
+		// assertFalse("serviceA stopped", servicesRegistry.isStarted(serviceADesc.getKey()));
+		// assertFalse("serviceB stopped", servicesRegistry.isStarted(serviceBDesc.getKey()));
+		// assertFalse("serviceC stopped", servicesRegistry.isStarted(serviceCDesc.getKey()));
+		// assertFalse("servicePojoA stopped", servicesRegistry.isStarted(servicePojoADesc.getKey()));
+		// } catch (ServiceNotFoundException e) {
+		// fail("Service should exist." + e.getMessage());
+		// }
 
 		// Test startup
 		servicesRegistry.startNewServices();
@@ -93,7 +92,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#getService(java.lang.Object)}.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testGetService() throws ServiceException {
@@ -134,7 +133,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry#getService(java.lang.Object)}.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testGetServiceByClass() throws ServiceException {
@@ -172,7 +171,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Try to register 2 services under the same name, but with different priorities.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testPriority() throws ServiceException {
@@ -181,12 +180,12 @@ public class ServicesRegistryTest extends TestCase {
 		servicesRegistry.add(serviceBDesc);
 
 		// Test creation
-		//		try {
-		//			assertFalse("serviceA stopped", servicesRegistry.isStarted(serviceADesc.getKey()));
-		//			assertFalse("serviceB stopped", servicesRegistry.isStarted(serviceBDesc.getKey()));
-		//		} catch (ServiceNotFoundException e) {
-		//			fail("Service should exist.");
-		//		}
+		// try {
+		// assertFalse("serviceA stopped", servicesRegistry.isStarted(serviceADesc.getKey()));
+		// assertFalse("serviceB stopped", servicesRegistry.isStarted(serviceBDesc.getKey()));
+		// } catch (ServiceNotFoundException e) {
+		// fail("Service should exist.");
+		// }
 
 		servicesRegistry.startNewServices();
 
@@ -200,7 +199,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test add for a direct instance of service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testAddDirectInstance() throws ServiceException {
@@ -225,7 +224,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test life cycle for directly registered services
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testCallsOrder() throws ServiceException {
@@ -241,17 +240,17 @@ public class ServicesRegistryTest extends TestCase {
 		servicesRegistry.startNewServices();
 
 		// Check orders
-		// 
+		//
 		int i = 0;
 		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
-		//		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
+		// assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
 
 		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
-		//		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
+		// assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
 
 		// Now, start lazy service
 		ServiceB service = servicesRegistry.getService(ServiceB.class);
@@ -265,14 +264,14 @@ public class ServicesRegistryTest extends TestCase {
 		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
-		//		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
+		// assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
 
-		// 
+		//
 	}
 
 	/**
 	 * Test life cycle for services registered wih descriptors
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testCallsOrderForDescriptors() throws ServiceException {
@@ -286,16 +285,16 @@ public class ServicesRegistryTest extends TestCase {
 		servicesRegistry.startNewServices();
 
 		// Check orders
-		// 
+		//
 		int i = 0;
 		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
-		//		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
+		// assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
 
 		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
-		//		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
+		// assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
 
 		// Now, start lazy service
-		ServiceB service = (ServiceB)servicesRegistry.getService(ServiceB.class.getName());
+		ServiceB service = (ServiceB) servicesRegistry.getService(ServiceB.class.getName());
 		assertNotNull("service found", service);
 		assertEquals("service", TraceKind.init, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.start, ServiceA.getEvent(i++));
@@ -305,14 +304,14 @@ public class ServicesRegistryTest extends TestCase {
 		servicesRegistry.disposeRegistry();
 		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
 		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
-		//		assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
+		// assertEquals("service", TraceKind.dispose, ServiceA.getEvent(i++));
 
-		// 
+		//
 	}
 
 	/**
 	 * Test the start order for services of type Start and Service
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testStartDependantOrder() throws ServiceException {
@@ -322,7 +321,7 @@ public class ServicesRegistryTest extends TestCase {
 		String C = "C";
 		String D = "D";
 		String E = "E";
-		//		String F = "F";
+		// String F = "F";
 
 		// Create services E --> D --> C --> B --> A
 		FakeService.getTrace().reset();
@@ -332,7 +331,7 @@ public class ServicesRegistryTest extends TestCase {
 		servicesRegistry.add(new ServiceDesc(C, ServiceStartKind.STARTUP, Arrays.asList(B)));
 		servicesRegistry.add(new ServiceDesc(B, ServiceStartKind.STARTUP, Arrays.asList(A)));
 		servicesRegistry.add(new ServiceDesc(A, ServiceStartKind.STARTUP));
-		//		servicesRegistry.add( new ServiceIdDesc( F, ServiceStartKind.STARTUP, Arrays.asList(E) ));
+		// servicesRegistry.add( new ServiceIdDesc( F, ServiceStartKind.STARTUP, Arrays.asList(E) ));
 
 		// Start services
 		servicesRegistry.startNewServices();
@@ -343,33 +342,33 @@ public class ServicesRegistryTest extends TestCase {
 		assertNotSame("services are different", servicesRegistry.getService(A), servicesRegistry.getService(B));
 
 		// Get names of created services
-		String nameA = ((FakeService)servicesRegistry.getService(A)).getName();
-		String nameB = ((FakeService)servicesRegistry.getService(B)).getName();
-		String nameC = ((FakeService)servicesRegistry.getService(C)).getName();
-		String nameD = ((FakeService)servicesRegistry.getService(D)).getName();
-		String nameE = ((FakeService)servicesRegistry.getService(E)).getName();
-		//		String nameF = ((FakeService)servicesRegistry.getService(F)).getName();
+		String nameA = ((FakeService) servicesRegistry.getService(A)).getName();
+		String nameB = ((FakeService) servicesRegistry.getService(B)).getName();
+		String nameC = ((FakeService) servicesRegistry.getService(C)).getName();
+		String nameD = ((FakeService) servicesRegistry.getService(D)).getName();
+		String nameE = ((FakeService) servicesRegistry.getService(E)).getName();
+		// String nameF = ((FakeService)servicesRegistry.getService(F)).getName();
 
 
-		// check order	(E and F order are not guaranteed)	
+		// check order (E and F order are not guaranteed)
 		// order should be A, B, C, D, E
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
-		//		assertEquals("order", nameF + ",create", trace.getNameTrace(i++));
+		// assertEquals("order", nameF + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameA + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameB + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameC + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameD + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameE + ",create", trace.getNameTrace(i++));
 
-		//		assertEquals("order", nameF + ",init", trace.getNameTrace(i++));
+		// assertEquals("order", nameF + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameA + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameB + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameC + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameD + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameE + ",init", trace.getNameTrace(i++));
 
-		//		assertEquals("order", nameF + ",start", trace.getNameTrace(i++));
+		// assertEquals("order", nameF + ",start", trace.getNameTrace(i++));
 		assertEquals("order", nameA + ",start", trace.getNameTrace(i++));
 		assertEquals("order", nameB + ",start", trace.getNameTrace(i++));
 		assertEquals("order", nameC + ",start", trace.getNameTrace(i++));
@@ -381,7 +380,7 @@ public class ServicesRegistryTest extends TestCase {
 	/**
 	 * Start regular services, then add a new service and try to start it.
 	 * This should work.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testStartRegistryAndThenAddNewServiceAndStartIt() throws ServiceException {
@@ -418,7 +417,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test Service Factory creation
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testServiceFactoryCreation() throws ServiceException {
@@ -442,12 +441,12 @@ public class ServicesRegistryTest extends TestCase {
 		assertSame("service type", FakeCreatedService.class, servicesRegistry.getService(B).getClass());
 
 		// Get names of created services
-		String nameA = ((FakeCreatedService)servicesRegistry.getService(A)).getName();
-		String nameB = ((FakeCreatedService)servicesRegistry.getService(B)).getName();
-		String nameC = ((FakeCreatedService)servicesRegistry.getService(C)).getName();
+		String nameA = ((FakeCreatedService) servicesRegistry.getService(A)).getName();
+		String nameB = ((FakeCreatedService) servicesRegistry.getService(B)).getName();
+		String nameC = ((FakeCreatedService) servicesRegistry.getService(C)).getName();
 
 
-		// check order	
+		// check order
 		// Order should be: C, B, A
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
@@ -471,7 +470,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test Creation of Service Factory used with class as key.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testServiceFactoryWithClassKey() throws ServiceException {
@@ -501,12 +500,12 @@ public class ServicesRegistryTest extends TestCase {
 		assertSame("service type", FakeCreatedService.class, servicesRegistry.getService(B).getClass());
 
 		// Get names of created services
-		String nameA = ((FakeCreatedService)servicesRegistry.getService(A)).getName();
-		String nameB = ((FakeCreatedService)servicesRegistry.getService(B)).getName();
-		String nameC = ((FakeCreatedService)servicesRegistry.getService(C)).getName();
+		String nameA = ((FakeCreatedService) servicesRegistry.getService(A)).getName();
+		String nameB = ((FakeCreatedService) servicesRegistry.getService(B)).getName();
+		String nameC = ((FakeCreatedService) servicesRegistry.getService(C)).getName();
 
 
-		// check order	(E and F order are not guaranteed)	
+		// check order (E and F order are not guaranteed)
 		// Order should be
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
@@ -531,7 +530,7 @@ public class ServicesRegistryTest extends TestCase {
 	/**
 	 * Test Service Factory creation order.
 	 * One of the factory try to get the required service from its init() method.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testServiceFactoryWithRequiredInInit() throws ServiceException {
@@ -556,12 +555,12 @@ public class ServicesRegistryTest extends TestCase {
 		assertSame("service type", FakeCreatedService.class, servicesRegistry.getService(B).getClass());
 
 		// Get names of created services
-		String nameA = ((FakeCreatedService)servicesRegistry.getService(A)).getName();
-		String nameB = ((FakeCreatedService)servicesRegistry.getService(B)).getName();
-		String nameC = ((FakeCreatedService)servicesRegistry.getService(C)).getName();
+		String nameA = ((FakeCreatedService) servicesRegistry.getService(A)).getName();
+		String nameB = ((FakeCreatedService) servicesRegistry.getService(B)).getName();
+		String nameC = ((FakeCreatedService) servicesRegistry.getService(C)).getName();
 
 
-		// check order	
+		// check order
 		// Order should be: C, B, A
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
@@ -585,14 +584,14 @@ public class ServicesRegistryTest extends TestCase {
 
 		// next order is the order of getService()
 		assertEquals("order", nameA + ",createInstance", trace.getNameTrace(i++));
-		//		assertEquals("order", nameB + ",createInstance", trace.getNameTrace(i++));
-		//		assertEquals("order", nameC + ",createInstance", trace.getNameTrace(i++));
+		// assertEquals("order", nameB + ",createInstance", trace.getNameTrace(i++));
+		// assertEquals("order", nameC + ",createInstance", trace.getNameTrace(i++));
 	}
 
 	/**
 	 * Test {@link ServicesRegistry#startServicesByClassKeys(List)}.
 	 * Check that services are started.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	public void testStartService() throws ServiceException {
@@ -621,35 +620,35 @@ public class ServicesRegistryTest extends TestCase {
 		assertTrue("service started", servicesRegistry.isStarted(C));
 
 		// Get names of created services
-		String nameA = ((FakeService)servicesRegistry.getService(A)).getName();
-		String nameB = ((FakeService)servicesRegistry.getService(B)).getName();
-		String nameC = ((FakeService)servicesRegistry.getService(C)).getName();
-		//		String nameD = ((FakeService)servicesRegistry.getService(D)).getName();
-		//		String nameE = ((FakeService)servicesRegistry.getService(E)).getName();
-		//		String nameF = ((FakeService)servicesRegistry.getService(F)).getName();
+		String nameA = ((FakeService) servicesRegistry.getService(A)).getName();
+		String nameB = ((FakeService) servicesRegistry.getService(B)).getName();
+		String nameC = ((FakeService) servicesRegistry.getService(C)).getName();
+		// String nameD = ((FakeService)servicesRegistry.getService(D)).getName();
+		// String nameE = ((FakeService)servicesRegistry.getService(E)).getName();
+		// String nameF = ((FakeService)servicesRegistry.getService(F)).getName();
 
 
-		// check order	(E and F order are not guaranteed)	
+		// check order (E and F order are not guaranteed)
 		// order should be A, B, C
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
 		assertEquals("order", nameA + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameB + ",create", trace.getNameTrace(i++));
 		assertEquals("order", nameC + ",create", trace.getNameTrace(i++));
-		//		assertEquals("order", nameD + ",create", trace.getNameTrace(i++));
-		//		assertEquals("order", nameE + ",create", trace.getNameTrace(i++));
+		// assertEquals("order", nameD + ",create", trace.getNameTrace(i++));
+		// assertEquals("order", nameE + ",create", trace.getNameTrace(i++));
 
 		assertEquals("order", nameA + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameB + ",init", trace.getNameTrace(i++));
 		assertEquals("order", nameC + ",init", trace.getNameTrace(i++));
-		//		assertEquals("order", nameD + ",init", trace.getNameTrace(i++));
-		//		assertEquals("order", nameE + ",init", trace.getNameTrace(i++));
+		// assertEquals("order", nameD + ",init", trace.getNameTrace(i++));
+		// assertEquals("order", nameE + ",init", trace.getNameTrace(i++));
 
 		assertEquals("order", nameA + ",start", trace.getNameTrace(i++));
 		assertEquals("order", nameB + ",start", trace.getNameTrace(i++));
 		assertEquals("order", nameC + ",start", trace.getNameTrace(i++));
-		//		assertEquals("order", nameD + ",start", trace.getNameTrace(i++));
-		//		assertEquals("order", nameE + ",start", trace.getNameTrace(i++));
+		// assertEquals("order", nameD + ",start", trace.getNameTrace(i++));
+		// assertEquals("order", nameE + ",start", trace.getNameTrace(i++));
 
 	}
 
@@ -659,7 +658,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test the alias service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -690,7 +689,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test the alias service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -722,7 +721,7 @@ public class ServicesRegistryTest extends TestCase {
 		assertNotNull("got service started", registryA.getService(serviceC));
 		assertNotNull("got service started", registryA.getService(serviceA));
 
-		// check creation order	(C then A)	
+		// check creation order (C then A)
 		// order should be C, A
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
@@ -746,7 +745,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * Test the alias service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Test
@@ -784,7 +783,7 @@ public class ServicesRegistryTest extends TestCase {
 
 	/**
 	 * General purpose descriptor.
-	 * 
+	 *
 	 * @deprecated use {@link FakeServiceDescriptor}
 	 */
 	@Deprecated
@@ -819,7 +818,7 @@ public class ServicesRegistryTest extends TestCase {
 		/**
 		 * Constructor with a classname and {@link ServiceDescriptor#isStartAtStartup()} = true.
 		 * Constructor.
-		 * 
+		 *
 		 * @param key
 		 * @param startKind
 		 * @param requiredService
@@ -832,7 +831,7 @@ public class ServicesRegistryTest extends TestCase {
 		/**
 		 * Constructor with a classname and {@link ServiceDescriptor#isStartAtStartup()} = true.
 		 * Constructor.
-		 * 
+		 *
 		 * @param key
 		 * @param startKind
 		 * @param requiredService
@@ -854,9 +853,9 @@ public class ServicesRegistryTest extends TestCase {
 	}
 
 	/**
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	public class LazyServiceADescriptor extends ServiceDescriptor {
 

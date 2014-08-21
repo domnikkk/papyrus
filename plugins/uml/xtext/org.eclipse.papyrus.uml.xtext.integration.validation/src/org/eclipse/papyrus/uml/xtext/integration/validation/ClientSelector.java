@@ -6,9 +6,11 @@ import org.eclipse.uml2.uml.Element;
 public class ClientSelector implements IClientSelector {
 
 	public boolean selects(Object object) {
-		if((object instanceof Element)){
-		return true;}
-		else{
-			return false;}
+		if ((object instanceof Element)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }

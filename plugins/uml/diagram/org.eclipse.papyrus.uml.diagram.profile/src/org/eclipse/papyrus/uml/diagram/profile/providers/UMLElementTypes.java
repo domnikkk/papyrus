@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -342,12 +342,12 @@ public class UMLElementTypes {
 
 	/**
 	 * Returns 'type' of the ecore object associated with the hint.
-	 * 
+	 *
 	 * @generated
 	 */
 	public static synchronized ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
-		if(elements == null) {
+		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 			elements.put(Profile_1000, UMLPackage.eINSTANCE.getProfile());
 			elements.put(Dependency_2014, UMLPackage.eINSTANCE.getDependency());
@@ -393,7 +393,7 @@ public class UMLElementTypes {
 			elements.put(ConstraintConstrainedElement_4014, UMLPackage.eINSTANCE.getConstraint_ConstrainedElement());
 			elements.put(ConstraintContext_8500, UMLPackage.eINSTANCE.getConstraint_Context());
 		}
-		return (ENamedElement)elements.get(type);
+		return elements.get(type);
 	}
 
 	/**
@@ -407,7 +407,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static synchronized boolean isKnownElementType(IElementType elementType) {
-		if(KNOWN_ELEMENT_TYPES == null) {
+		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Profile_1000);
 			KNOWN_ELEMENT_TYPES.add(Dependency_2014);
@@ -460,7 +460,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static IElementType getElementType(int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case ProfileDiagramEditPart.VISUAL_ID:
 			return Profile_1000;
 		case DependencyNodeEditPart.VISUAL_ID:

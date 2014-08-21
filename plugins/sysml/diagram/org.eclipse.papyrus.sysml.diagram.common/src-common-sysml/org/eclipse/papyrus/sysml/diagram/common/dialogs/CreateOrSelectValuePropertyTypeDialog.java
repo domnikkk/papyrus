@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,6 +38,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -69,9 +70,9 @@ public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeDia
 	protected void createFormCreationSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getCreationSectionTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 
@@ -99,7 +100,7 @@ public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeDia
 		newTypeContainerNameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		newTypeContainerButton = pToolkit.createButton(lBody, "...", SWT.FLAT);
 		Image image = Activator.getInstance().getImage(containerType.getEClass());
-		if(containerEClass != null) {
+		if (containerEClass != null) {
 			image = Activator.getInstance().getImage(containerEClass);
 		}
 		newTypeContainerButton.setImage(image);
@@ -125,7 +126,7 @@ public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeDia
 	protected void buildNewTypeCreateCommand() {
 		// The new element is expected to be a NamedElement.
 		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(newTypeContainer);
-		if(commandService != null) {
+		if (commandService != null) {
 			CreateElementRequest createTypeRequest = new CreateElementRequest(newTypeContainer, newTypeKind);
 			createTypeRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getNamedElement_Name(), newTypeNameText.getText()));
 			newTypeCreateCommand = commandService.getEditCommand(createTypeRequest);
@@ -145,12 +146,13 @@ public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeDia
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				ISelection sel = newTypeKindComboViewer.getSelection();
-				if(sel instanceof StructuredSelection) {
-					Object type = ((StructuredSelection)sel).getFirstElement();
-					if(type instanceof IElementType) {
-						newTypeKind = (IElementType)type;
+				if (sel instanceof StructuredSelection) {
+					Object type = ((StructuredSelection) sel).getFirstElement();
+					if (type instanceof IElementType) {
+						newTypeKind = (IElementType) type;
 					} else {
 						newTypeKind = null;
 					}
@@ -169,9 +171,9 @@ public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeDia
 	@Override
 	protected void setNewTypeName(String text) {
 		String name = text;
-		if(text == null) {
+		if (text == null) {
 			name = NamedElementUtil.getDefaultNameWithIncrementFromBase(newTypeKind.getEClass().getName(), newTypeContainer.eContents());
-			if(newTypeKind == SysMLElementTypes.VALUE_TYPE) {
+			if (newTypeKind == SysMLElementTypes.VALUE_TYPE) {
 				name = NamedElementUtil.getDefaultNameWithIncrementFromBase(BlocksPackage.eINSTANCE.getValueType().getName(), newTypeContainer.eContents());
 			}
 			newTypeNameText.setText(name);
@@ -235,7 +237,7 @@ public class CreateOrSelectValuePropertyTypeDialog extends CreateOrSelectTypeDia
 
 	/**
 	 * Get the newTypeKind label.
-	 * 
+	 *
 	 * @return the label
 	 */
 	protected String getNewTypeKindLabel() {

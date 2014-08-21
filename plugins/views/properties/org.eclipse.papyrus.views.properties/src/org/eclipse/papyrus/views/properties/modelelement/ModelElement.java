@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
  * object, though the mean of {@link IObservable}s. It should also be able to
  * provide informations about each property, such as a ContentProvider for
  * references.
- * 
+ *
  * @author Camille Letavernier
  */
 public interface ModelElement {
@@ -35,9 +35,9 @@ public interface ModelElement {
 	 * The IObservable objects returned by this method may be shared by
 	 * many instances, which means they should not be disposed directly.
 	 * They will be disposed when this ModelElement is disposed.
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property for which we need an IObservable
+	 *            The property for which we need an IObservable
 	 * @return
 	 *         The IObservable corresponding to the given propertyPath
 	 */
@@ -47,9 +47,9 @@ public interface ModelElement {
 	 * Returns an IStaticContentProvider for the given propertyPath. The
 	 * returned value should not be null. If there is no content provider,
 	 * use {@link EmptyContentProvider#instance}
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The name of the property for which we want a Content provider
+	 *            The name of the property for which we want a Content provider
 	 * @return
 	 *         The IStaticContentProvider containing the available values for
 	 *         the given property
@@ -59,7 +59,7 @@ public interface ModelElement {
 	/**
 	 * Returns an ILabelProvider for the given propertypath, or null if
 	 * a default LabelProvider should be used.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 *         the LabelProvider for the given path
@@ -69,7 +69,7 @@ public interface ModelElement {
 	/**
 	 * Returns true if the given property should be ordered. Only relevant
 	 * for Collection properties.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 *         true is the property should be ordered
@@ -79,7 +79,7 @@ public interface ModelElement {
 	/**
 	 * Returns true if the elements from the given property should be unique.
 	 * Only relevant for Colleciton properties.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 *         true if the elements should be unique
@@ -88,7 +88,7 @@ public interface ModelElement {
 
 	/**
 	 * Returns true if the given property is Mandatory.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return true if the property is mandatory
 	 */
@@ -96,7 +96,7 @@ public interface ModelElement {
 
 	/**
 	 * Returns true if the given property is editable.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return true if the given property is editable.
 	 */
@@ -107,7 +107,7 @@ public interface ModelElement {
 	 * change occurs in the property view. This may help when the IObservable
 	 * doesn't catch some change events (For example, for some Ecore derived
 	 * properties).
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return true if the refresh should be forced
 	 */
@@ -115,15 +115,15 @@ public interface ModelElement {
 
 	/**
 	 * Sets the DataSource associated to this model element
-	 * 
+	 *
 	 * @param source
-	 *        The DataSource to associate to this model element
+	 *            The DataSource to associate to this model element
 	 */
 	public void setDataSource(DataSource source);
 
 	/**
 	 * @param propertyPath
-	 *        the propertyPath to lookup
+	 *            the propertyPath to lookup
 	 * @return the default factory used to handle operations such as object
 	 *         creation or edition, or null if these operations are not supported.
 	 *         This factory will typically be used by Multiple value editors, to
@@ -141,14 +141,14 @@ public interface ModelElement {
 	 * Indicates if the widget should be use the direct creation.
 	 * The direct edition will disable the possibility to browse
 	 * existing elements when the "add" button is pressed.
-	 * 
+	 *
 	 * This is essentially relevant for containment references : this method
 	 * should return false if the widget should only allow creation of new
 	 * elements.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return True if the widget should use the direct edition option for the given property
-	 * 
+	 *
 	 */
 	public boolean getDirectCreation(String propertyPath);
 
@@ -157,10 +157,11 @@ public interface ModelElement {
 	 * All created IObservable will be disposed
 	 */
 	public void dispose();
-	
+
 
 	/**
-	 * return  the Validator of a given String propertyPath
+	 * return the Validator of a given String propertyPath
+	 * 
 	 * @param propertyPath
 	 * @return
 	 */

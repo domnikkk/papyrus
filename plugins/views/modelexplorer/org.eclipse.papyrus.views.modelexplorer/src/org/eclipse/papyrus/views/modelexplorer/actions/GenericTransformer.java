@@ -1,7 +1,7 @@
 /***************************************************
  * Copyright (c) 2010 Atos Origin.
 
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.MultiStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
@@ -113,9 +114,9 @@ public class GenericTransformer {
 
 	/**
 	 * Instantiates a new generic transformer.
-	 * 
+	 *
 	 * @param currentNode
-	 *        the current node
+	 *            the current node
 	 */
 	public GenericTransformer(AbstractGraphicalEditPart currentNode) {
 		this(currentNode, true);
@@ -124,27 +125,27 @@ public class GenericTransformer {
 	/**
 	 * Instantiates a new generic transformer. and specify if we have to perform
 	 * graphical copy
-	 * 
+	 *
 	 * @param currentNode
-	 *        the current node
+	 *            the current node
 	 * @param graphCopy
-	 *        the graph copy
+	 *            the graph copy
 	 */
 	public GenericTransformer(AbstractGraphicalEditPart currentNode, boolean graphCopy) {
 		this.graphCopy = graphCopy;
-		if(currentNode != null) {
+		if (currentNode != null) {
 			Object model = currentNode.getModel();
-			if(model instanceof View) {
-				this.element = ((View)model).getElement();
+			if (model instanceof View) {
+				this.element = ((View) model).getElement();
 			}
 		}
 	}
 
 	/**
 	 * Instantiates a new generic transformer.
-	 * 
+	 *
 	 * @param currentEobject
-	 *        the current eobject
+	 *            the current eobject
 	 */
 	public GenericTransformer(EObject currentEobject) {
 		this.element = currentEobject;
@@ -152,47 +153,47 @@ public class GenericTransformer {
 
 	/**
 	 * Transform the element to the given eclass.
-	 * 
+	 *
 	 * @param eclass
-	 *        the targeted eclass
+	 *            the targeted eclass
 	 */
 	public void transform(EClass eclass) {
 
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorPart editor = page.getActiveEditor();
-		CommandStack stack = (CommandStack)editor.getAdapter(CommandStack.class);
+		CommandStack stack = (CommandStack) editor.getAdapter(CommandStack.class);
 		globalCommand = new CompositeCommand("Generic Transformation");
 
-		if(graphCopy) {
-			if(element != null) {
+		if (graphCopy) {
+			if (element != null) {
 				EReference[] features = { NotationPackage.eINSTANCE.getView_Element() };
 				Collection<?> views = EMFCoreUtil.getReferencers(element, features);
-				for(Object view : views) {
-					if(view instanceof View) {
-						referencingViews.add((View)view);
+				for (Object view : views) {
+					if (view instanceof View) {
+						referencingViews.add((View) view);
 					}
 				}
 			}
 		}
-		if(stack != null) {
+		if (stack != null) {
 			// maybe extension point for stereotypes
-			EObject model = (EObject)AdapterFactoryEditingDomain.unwrap(element);
+			EObject model = (EObject) AdapterFactoryEditingDomain.unwrap(element);
 			// get mixed editing domain to do transaction
-			TransactionalEditingDomain domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(model);
+			TransactionalEditingDomain domain = (TransactionalEditingDomain) EMFHelper.resolveEditingDomain(model);
 			commandModel = new EObjectInheritanceCopyCommand(model, eclass, domain);
 			globalCommand.add(commandModel);
-			if(graphCopy) {
+			if (graphCopy) {
 				importerCommand = new ImporterCommand(domain);
-				if(importerCommand.canExecute()) {
+				if (importerCommand.canExecute()) {
 					globalCommand.add(importerCommand);
 				}
 
 			}
-			if(globalCommand.canExecute()) {
+			if (globalCommand.canExecute()) {
 				try {
 					// drop caches about input element
 					ECrossReferenceAdapter cross = ECrossReferenceAdapter.getCrossReferenceAdapter(element);
-					if(cross != null) {
+					if (cross != null) {
 						cross.unsetTarget(element);
 					}
 					stack.execute(new ICommandProxy(globalCommand));
@@ -214,9 +215,9 @@ public class GenericTransformer {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param domain
-		 *        transactional editing domain
+		 *            transactional editing domain
 		 */
 		public ImporterCommand(TransactionalEditingDomain domain) {
 			super(domain, "Import graphical nodes", null);
@@ -224,11 +225,11 @@ public class GenericTransformer {
 
 		/**
 		 * Execute the command
-		 * 
+		 *
 		 * @param monitor
-		 *        progress monitor
+		 *            progress monitor
 		 * @param info
-		 *        the info
+		 *            the info
 		 * @return the command result
 		 * @throws ExecutionException
 		 */
@@ -240,23 +241,23 @@ public class GenericTransformer {
 
 		/**
 		 * Graph copy, make a drag and drop of the new object on all diagrams
-		 * 
+		 *
 		 * @param diagramDomain
-		 *        the mixed domain
+		 *            the mixed domain
 		 * @param target
-		 *        the target
+		 *            the target
 		 * @param globalCommand2
 		 * @param graphElement
-		 *        the graph element
+		 *            the graph element
 		 * @param oldLocation
-		 *        the old location
+		 *            the old location
 		 * @param editpart
-		 *        the editpart
+		 *            the editpart
 		 */
 		private void graphCopy(IDiagramEditDomain domain, EObject target) {
-			for(View graphElement : referencingViews) {
+			for (View graphElement : referencingViews) {
 				View parent = ViewUtil.getContainerView(graphElement);
-				if(parent == null || graphElement.getDiagram() == null) {
+				if (parent == null || graphElement.getDiagram() == null) {
 					// this is an orphaned view. Skip it
 					continue;
 				}
@@ -264,63 +265,63 @@ public class GenericTransformer {
 				// Get the edit part of the diagram containing the view.
 				DiagramEditPart diagramEditPart = null;
 				IEditorPart activeEditorPart = page.getActiveEditor();
-				if(activeEditorPart instanceof IDiagramWorkbenchPart) {
-					if(graphElement.getDiagram().equals(((IDiagramWorkbenchPart)activeEditorPart).getDiagram())) {
-						diagramEditPart = ((IDiagramWorkbenchPart)activeEditorPart).getDiagramEditPart();
+				if (activeEditorPart instanceof IDiagramWorkbenchPart) {
+					if (graphElement.getDiagram().equals(((IDiagramWorkbenchPart) activeEditorPart).getDiagram())) {
+						diagramEditPart = ((IDiagramWorkbenchPart) activeEditorPart).getDiagramEditPart();
 					}
 				}
-				if(diagramEditPart == null) {
+				if (diagramEditPart == null) {
 					// search in other editor parts than the active one
 					List<?> editorParts = EditorService.getInstance().getRegisteredEditorParts();
-					for(Object editorPart : editorParts) {
-						if(editorPart instanceof IDiagramWorkbenchPart) {
-							if(graphElement.getDiagram().equals(((IDiagramWorkbenchPart)editorPart).getDiagram())) {
-								diagramEditPart = ((IDiagramWorkbenchPart)editorPart).getDiagramEditPart();
+					for (Object editorPart : editorParts) {
+						if (editorPart instanceof IDiagramWorkbenchPart) {
+							if (graphElement.getDiagram().equals(((IDiagramWorkbenchPart) editorPart).getDiagram())) {
+								diagramEditPart = ((IDiagramWorkbenchPart) editorPart).getDiagramEditPart();
 							}
 						}
 					}
 				}
 
-				if(diagramEditPart != null) {
-					EditPart containerPart = (EditPart)diagramEditPart.getViewer().getEditPartRegistry().get(parent);
+				if (diagramEditPart != null) {
+					EditPart containerPart = (EditPart) diagramEditPart.getViewer().getEditPartRegistry().get(parent);
 					// create the new transformed view
 					DropObjectsRequest req = new DropObjectsRequest();
 					req.setObjects(Collections.singletonList(target));
-					if(graphElement instanceof Node) {
-						LayoutConstraint constraint = ((Node)graphElement).getLayoutConstraint();
-						if(constraint instanceof Location) {
-							Location location = (Location)constraint;
+					if (graphElement instanceof Node) {
+						LayoutConstraint constraint = ((Node) graphElement).getLayoutConstraint();
+						if (constraint instanceof Location) {
+							Location location = (Location) constraint;
 							req.setLocation(new Point(location.getX(), location.getY()));
 						}
 					}
-					if(req.getLocation() == null) {
+					if (req.getLocation() == null) {
 						req.setLocation(new Point());
 					}
 					Command partCreationCmd = containerPart.getCommand(req);
 					partCreationCmd.execute();
 					View newView = null;
-					if(partCreationCmd instanceof ICommandProxy) {
-						CommandResult res = ((ICommandProxy)partCreationCmd).getICommand().getCommandResult();
+					if (partCreationCmd instanceof ICommandProxy) {
+						CommandResult res = ((ICommandProxy) partCreationCmd).getICommand().getCommandResult();
 						Object newValue = res.getReturnValue();
-						if(newValue instanceof Collection<?>) {
-							for(Object value : (Collection<?>)newValue) {
-								if(value instanceof ViewDescriptor) {
-									newView = (View)((ViewDescriptor)value).getAdapter(View.class);
+						if (newValue instanceof Collection<?>) {
+							for (Object value : (Collection<?>) newValue) {
+								if (value instanceof ViewDescriptor) {
+									newView = (View) ((ViewDescriptor) value).getAdapter(View.class);
 								}
 							}
-						} else if(newValue instanceof ViewDescriptor) {
-							newView = (View)((ViewDescriptor)newValue).getAdapter(View.class);
+						} else if (newValue instanceof ViewDescriptor) {
+							newView = (View) ((ViewDescriptor) newValue).getAdapter(View.class);
 						}
 					}
 					// with ViewRefactorHelper, copy view properties on the old
 					// one
-					if(newView != null) {
+					if (newView != null) {
 						ViewTransformerHelper helper = new ViewTransformerHelper(diagramEditPart.getDiagramPreferencesHint());
 						helper.copyMixedViewFeatures(graphElement, newView);
 					}
 					// delete the old view
-					GroupRequest deleteReq = new GroupRequest(RequestConstants.REQ_DELETE);
-					EditPart oldPart = (EditPart)diagramEditPart.getViewer().getEditPartRegistry().get(graphElement);
+					GroupRequest deleteReq = new GroupRequest(org.eclipse.gef.RequestConstants.REQ_DELETE);
+					EditPart oldPart = (EditPart) diagramEditPart.getViewer().getEditPartRegistry().get(graphElement);
 					Command partDeletionCmd = oldPart.getCommand(deleteReq);
 					partDeletionCmd.execute();
 				}
@@ -338,9 +339,9 @@ public class GenericTransformer {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param preferencesHint
-		 *        the diagram preferences hint
+		 *            the diagram preferences hint
 		 */
 		public ViewTransformerHelper(PreferencesHint preferencesHint) {
 			super(preferencesHint);
@@ -348,19 +349,19 @@ public class GenericTransformer {
 
 		/**
 		 * Copy common features from a view to another
-		 * 
+		 *
 		 * @param oldView
-		 *        the old view to copy from
+		 *            the old view to copy from
 		 * @param newView
-		 *        the new view to copy to
+		 *            the new view to copy to
 		 */
 		public void copyMixedViewFeatures(View oldView, View newView) {
-			if(oldView instanceof Diagram && newView instanceof Diagram) {
-				copyDiagramFeatures((Diagram)oldView, (Diagram)newView);
-			} else if(oldView instanceof Node && newView instanceof Node) {
-				copyNodeFeatures((Node)oldView, (Node)newView);
-			} else if(oldView instanceof Edge && newView instanceof Edge) {
-				copyEdgeFeatures((Edge)oldView, (Edge)newView);
+			if (oldView instanceof Diagram && newView instanceof Diagram) {
+				copyDiagramFeatures((Diagram) oldView, (Diagram) newView);
+			} else if (oldView instanceof Node && newView instanceof Node) {
+				copyNodeFeatures((Node) oldView, (Node) newView);
+			} else if (oldView instanceof Edge && newView instanceof Edge) {
+				copyEdgeFeatures((Edge) oldView, (Edge) newView);
 			} else {
 				copyViewFeatures(oldView, newView);
 			}
@@ -370,10 +371,10 @@ public class GenericTransformer {
 
 	/**
 	 * Gets all the super types.
-	 * 
+	 *
 	 * @param class1
-	 *        the class
-	 * 
+	 *            the class
+	 *
 	 * @return super types
 	 */
 	public static HashSet<EClass> getAllSuperTypes(EClass class1) {
@@ -384,21 +385,21 @@ public class GenericTransformer {
 
 	/**
 	 * Gets the factory from uri.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
-	 * 
+	 *            the uri
+	 *
 	 * @return the factory
 	 */
 	public static AdapterFactory getFactory(String uri) {
 		AdapterFactory factory = factories.get(uri);
-		if(factory == null) {
+		if (factory == null) {
 			IConfigurationElement[] extensions = Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_FACTORIES);
-			for(IConfigurationElement e : extensions) {
-				if(uri.equals(e.getAttribute("uri"))) {
+			for (IConfigurationElement e : extensions) {
+				if (uri.equals(e.getAttribute("uri"))) {
 					try {
-						factory = (AdapterFactory)e.createExecutableExtension("class");
-						if(factory != null) {
+						factory = (AdapterFactory) e.createExecutableExtension("class");
+						if (factory != null) {
 							factories.put(uri, factory);
 						}
 					} catch (CoreException e1) {
@@ -412,24 +413,25 @@ public class GenericTransformer {
 
 	/**
 	 * Checks if a transformation is possible.
-	 * 
+	 *
 	 * @param eclass
-	 *        the eclass
-	 * 
+	 *            the eclass
+	 *
 	 * @return the multi status
 	 */
 	public MultiStatus isTransformationPossible(EClass eclass) {
 		MultiStatus result = new MultiStatus(Activator.PLUGIN_ID, 0, "Type incompatibility", null);
-		if(element != null) {
+		if (element != null) {
 			Collection<Setting> usages = EMFHelper.getUsages(element);
-			if(usages != null) {
-				for(EStructuralFeature.Setting nonNavigableInverseReference : usages) {
+			if (usages != null) {
+				for (EStructuralFeature.Setting nonNavigableInverseReference : usages) {
 					EStructuralFeature structuralFeature = nonNavigableInverseReference.getEStructuralFeature();
-					if(!(nonNavigableInverseReference.getEObject() instanceof View)) {
+					if (!(nonNavigableInverseReference.getEObject() instanceof View)) {
 						boolean compatible = EObjectInheritanceCopyCommand.isCompatible(structuralFeature.getEType(), eclass);
-						if(!compatible) {
-							String econtainer = structuralFeature.eContainer() instanceof EClassifier ? ((EClassifier)structuralFeature.eContainer()).getName() + " ( " + nonNavigableInverseReference.getEObject().toString() + " )" : structuralFeature.eContainer().toString();
-							Status s = new Status(Status.WARNING, Activator.PLUGIN_ID, String.format("an element typed %s references your selection, we can not assign instead of your selection an object typed %s", econtainer, eclass.getName()));
+						if (!compatible) {
+							String econtainer = structuralFeature.eContainer() instanceof EClassifier ? ((EClassifier) structuralFeature.eContainer()).getName() + " ( " + nonNavigableInverseReference.getEObject().toString() + " )" : structuralFeature
+									.eContainer().toString();
+							Status s = new Status(IStatus.WARNING, Activator.PLUGIN_ID, String.format("an element typed %s references your selection, we can not assign instead of your selection an object typed %s", econtainer, eclass.getName()));
 							result.add(s);
 						}
 					}

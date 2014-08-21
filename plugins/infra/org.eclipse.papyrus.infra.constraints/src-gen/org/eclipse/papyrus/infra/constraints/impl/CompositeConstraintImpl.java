@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.constraints.SimpleConstraint;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.CompositeConstraintImpl#getConstraints <em>Constraints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.CompositeConstraintImpl#getConstraints <em>Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CompositeConstraintImpl() {
@@ -54,6 +56,7 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,6 +67,7 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<SimpleConstraint> getConstraints() {
@@ -76,13 +80,14 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
-				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
+		case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
+			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -90,13 +95,14 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
-				return getConstraints();
+		case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
+			return getConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,16 +110,17 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
-				getConstraints().clear();
-				getConstraints().addAll((Collection<? extends SimpleConstraint>)newValue);
-				return;
+		case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
+			getConstraints().clear();
+			getConstraints().addAll((Collection<? extends SimpleConstraint>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -121,14 +128,15 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
-				getConstraints().clear();
-				return;
+		case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
+			getConstraints().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,15 +144,16 @@ public class CompositeConstraintImpl extends ConstraintDescriptorImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
-				return constraints != null && !constraints.isEmpty();
+		case ConstraintsPackage.COMPOSITE_CONSTRAINT__CONSTRAINTS:
+			return constraints != null && !constraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CompositeConstraintImpl
+} // CompositeConstraintImpl

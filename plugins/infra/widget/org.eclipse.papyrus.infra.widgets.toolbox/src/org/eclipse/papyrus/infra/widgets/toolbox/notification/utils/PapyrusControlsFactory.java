@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,21 +31,21 @@ public class PapyrusControlsFactory {
 
 	/**
 	 * Create a composite according to the type
-	 * 
+	 *
 	 * @param shell
-	 *        , the shell of the element
+	 *            , the shell of the element
 	 * @param toolkit
-	 *        , the toolkit used
+	 *            , the toolkit used
 	 * @param parent
-	 *        , the parent containing the composite created
+	 *            , the parent containing the composite created
 	 * @param type
-	 *        , the type to create
+	 *            , the type to create
 	 * @param image
-	 *        , the image to associate
+	 *            , the image to associate
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 * @param useHTML
-	 *        , if the composite use html
+	 *            , if the composite use html
 	 * @return the composite created
 	 */
 	public static Composite createCompositeWithType(Shell shell, FormToolkit toolkit, Composite parent, Type type, Image image, String message, boolean useHTML) {
@@ -54,37 +54,37 @@ public class PapyrusControlsFactory {
 
 	/**
 	 * Create a composite according to the type
-	 * 
+	 *
 	 * @param shell
-	 *        , the shell of the element
+	 *            , the shell of the element
 	 * @param toolkit
-	 *        , the toolkit used
+	 *            , the toolkit used
 	 * @param parent
-	 *        , the parent containing the composite created
+	 *            , the parent containing the composite created
 	 * @param type
-	 *        , the type to create
+	 *            , the type to create
 	 * @param image
-	 *        , the image to associate
+	 *            , the image to associate
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 * @param useHTML
-	 *        , if the composite use html
+	 *            , if the composite use html
 	 * @param creator
-	 *        , the composite creator it can be null
+	 *            , the composite creator it can be null
 	 * @param context
-	 *        , the context to add the composite created by the creator
+	 *            , the context to add the composite created by the creator
 	 * @return the composite created
 	 */
 	public static Composite createCompositeWithType(Shell shell, FormToolkit toolkit, Composite parent, Type type, Image image, String message, boolean useHTML, ICompositeCreator creator, IContext context) {
 		Composite top = null;
-		if(toolkit == null) {
+		if (toolkit == null) {
 			top = new Composite(parent, SWT.None);
 		} else {
 			top = toolkit.createComposite(parent, SWT.NONE);
 		}
 		top.setLayout(new GridLayout(2, false));
 		Image anImage = image;
-		switch(type) {
+		switch (type) {
 		case ERROR:
 			anImage = NotificationBuilder.getSWTImage(SWT.ICON_ERROR, shell);
 			break;
@@ -100,11 +100,11 @@ public class PapyrusControlsFactory {
 		default:
 		}
 		Label labelImage = new Label(top, SWT.None);
-		if(anImage != null) {
+		if (anImage != null) {
 			labelImage.setImage(anImage);
 		}
-		if(creator == null) {
-			if(toolkit != null) {
+		if (creator == null) {
+			if (toolkit != null) {
 				FormText label = toolkit.createFormText(top, false);
 				label.setText(message, useHTML, true);
 				label.setLayoutData(new GridData(GridData.FILL_BOTH));
@@ -114,11 +114,11 @@ public class PapyrusControlsFactory {
 				label.setLayoutData(new GridData(GridData.FILL_BOTH));
 			}
 		} else {
-			if(toolkit == null) {
+			if (toolkit == null) {
 				toolkit = PapyrusToolkit.INSTANCE;
 			}
 			Composite compo = creator.createComposite(top, toolkit);
-			if(context != null) {
+			if (context != null) {
 				context.put(IContext.COMPOSITE_CREATED, compo);
 			}
 		}

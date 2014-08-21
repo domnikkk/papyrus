@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -35,11 +35,11 @@ public class ClassifierUtils {
 
 	/**
 	 * This method provides a switch to ease the addition of a new Property in a Classifier.
-	 * 
+	 *
 	 * @param classifier
-	 *        the parent classifier.
+	 *            the parent classifier.
 	 * @param property
-	 *        the contained property.
+	 *            the contained property.
 	 * @return false if the addition fails.
 	 */
 	public static boolean addOwnedAttribute(Classifier classifier, Property property) {
@@ -49,11 +49,11 @@ public class ClassifierUtils {
 
 	/**
 	 * This method provides a switch to ease the addition of a new Property in a Classifier.
-	 * 
+	 *
 	 * @param classifier
-	 *        the parent classifier.
+	 *            the parent classifier.
 	 * @param property
-	 *        the contained property.
+	 *            the contained property.
 	 * @return false if the addition fails.
 	 */
 	public static List<Property> getOwnedAttributes(Classifier classifier) {

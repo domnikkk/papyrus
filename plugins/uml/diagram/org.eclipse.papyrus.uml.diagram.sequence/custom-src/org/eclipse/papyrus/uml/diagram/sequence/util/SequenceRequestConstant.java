@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public interface SequenceRequestConstant {
 	public static final String TARGET_MODEL_CONTAINER = "Target model container"; //$NON-NLS-1$
 
 	/** A key used in the creation of a CORegion to identify the lifeline graphically containing the CoRegion */
-	public static final String LIFELINE_GRAPHICAL_CONTAINER = "Lifeline graphical container"; //$NON-NLS-1$ 
+	public static final String LIFELINE_GRAPHICAL_CONTAINER = "Lifeline graphical container"; //$NON-NLS-1$
 
 	/** The occurrence specification(s) which are the nearest from a creation request */
 	public static final String NEAREST_OCCURRENCE_SPECIFICATION = "Nearest occurrence specification"; //$NON-NLS-1$

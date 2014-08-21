@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
  *
@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.ElementCreationMenuModelPackage;
 import org.eclipse.papyrus.infra.newchild.elementcreationmenumodel.Folder;
 import org.osgi.framework.Bundle;
+
 /**
  * This class is used to load all extension point call org.eclipse.papyrus.infra.newchild
  * It gives the set of all Folder that has to be displayed
@@ -35,38 +36,39 @@ public class CreationMenuRegistry {
 
 	private final String MENU_CREATION_MODEL_EXTENSION_ID = "org.eclipse.papyrus.infra.newchild"; //$NON-NLS-1$
 	private final String MODEL_ID = "model"; //$NON-NLS-1$
-	private  ArrayList<Folder> rootFolders= new ArrayList<Folder>();
+	private ArrayList<Folder> rootFolders = new ArrayList<Folder>();
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
-	public CreationMenuRegistry(){
+	public CreationMenuRegistry() {
 		init();
 	}
+
 	/**
 	 * this method load the extension points
 	 */
-	public void init(){
+	public void init() {
 		// Obtain a new resource set
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(ElementCreationMenuModelPackage.eINSTANCE.getNsURI(), ElementCreationMenuModelPackage.eINSTANCE);
-		
+
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(MENU_CREATION_MODEL_EXTENSION_ID);
-		for(int i = 0; i < configElements.length; i++) {
+		for (int i = 0; i < configElements.length; i++) {
 			rootFolders.add(initializeOneModel(resourceSet, configElements[i]));
 		}
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the set of root folders
 	 */
-	public  ArrayList<Folder> getRootFolder(){
+	public ArrayList<Folder> getRootFolder() {
 		return rootFolders;
 	}
 
@@ -74,13 +76,13 @@ public class CreationMenuRegistry {
 
 	/**
 	 * Load one model
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 */
 	private Folder initializeOneModel(ResourceSet resourceSet, IConfigurationElement element) {
 		try {
-			return (Folder)createExtension(resourceSet, element, element.getAttribute(MODEL_ID));
+			return createExtension(resourceSet, element, element.getAttribute(MODEL_ID));
 
 		} catch (Exception e) {
 			System.err.println("model of new child can not be loaded: " + e); //$NON-NLS-1$
@@ -90,30 +92,30 @@ public class CreationMenuRegistry {
 
 	/**
 	 * Load a resource instanceof ElementCreationMenuModel
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource set in which to load the menu model
+	 *            the resource set in which to load the menu model
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 * @param classAttribute
-	 *        the name of the resource to load
+	 *            the name of the resource to load
 	 * @return the loaded Folder
 	 * @throws Exception
-	 *         if the resource is not loaded
+	 *             if the resource is not loaded
 	 */
 	private static Folder createExtension(final ResourceSet resourceSet, final IConfigurationElement element, final String classAttribute) throws Exception {
 		try {
 			Bundle extensionBundle = Platform.getBundle(element.getDeclaringExtension().getNamespaceIdentifier());
 			URL url = extensionBundle.getResource(classAttribute);
 
-			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(	Resource.Factory.Registry.DEFAULT_EXTENSION,new XMIResourceFactoryImpl()); 
-			if(url!=null){
-				URI uri=URI.createURI(url.toURI().toASCIIString());
+			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+			if (url != null) {
+				URI uri = URI.createURI(url.toURI().toASCIIString());
 
 				// Get the resource
 				Resource resource = resourceSet.getResource(uri, true);
-				if(resource.getContents().get(0) instanceof Folder ){
-					return 	(Folder)resource.getContents().get(0);
+				if (resource.getContents().get(0) instanceof Folder) {
+					return (Folder) resource.getContents().get(0);
 				}
 			}
 			return null;

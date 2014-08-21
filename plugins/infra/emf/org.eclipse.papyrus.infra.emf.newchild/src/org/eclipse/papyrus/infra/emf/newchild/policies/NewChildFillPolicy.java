@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,16 +43,16 @@ public interface NewChildFillPolicy {
 
 		public NewChildFillPolicy getPolicy(NewChildPolicy policy) {
 			NewChildFillPolicy result = null;
-			if(policy instanceof ReplacePolicy) {
+			if (policy instanceof ReplacePolicy) {
 				result = new ReplaceFillPolicy();
-			} else if(policy instanceof FilterPolicy) {
+			} else if (policy instanceof FilterPolicy) {
 				result = new FilterFillPolicy();
-			} else if(policy instanceof CustomPolicy) {
-				String className = ((CustomPolicy)policy).getClassName();
+			} else if (policy instanceof CustomPolicy) {
+				String className = ((CustomPolicy) policy).getClassName();
 				return ClassLoaderHelper.newInstance(className, NewChildFillPolicy.class);
 			}
 
-			if(result != null) {
+			if (result != null) {
 				result.setPolicy(policy);
 			}
 

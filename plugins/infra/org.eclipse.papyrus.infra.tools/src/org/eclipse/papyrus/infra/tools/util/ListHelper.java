@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,22 +18,22 @@ public class ListHelper {
 
 	/**
 	 * Converts an array to a List
-	 * 
+	 *
 	 * This method is similar to Arrays.asList, except that it returns
 	 * a writeable list
-	 * 
+	 *
 	 * @param array
-	 *        The array to transform into a List
+	 *            The array to transform into a List
 	 * @return
 	 *         A List containing the same elements as the array
 	 */
 	public static <T> List<T> asList(T[] array) {
-		if(array == null) {
+		if (array == null) {
 			return new ArrayList<T>();
 		}
 
 		List<T> result = new ArrayList<T>(array.length);
-		for(T t : array) {
+		for (T t : array) {
 			result.add(t);
 		}
 		return result;
@@ -42,11 +42,11 @@ public class ListHelper {
 	/**
 	 * Invokes the toString() method recursively on this list's elements.
 	 * The values are separated by ", "
-	 * 
+	 *
 	 * @param list
-	 *        The list whose string representation to return
+	 *            The list whose string representation to return
 	 * @return
-	 * 
+	 *
 	 * @see #deepToString(List, String)
 	 */
 	public static String deepToString(List<?> list) {
@@ -56,20 +56,20 @@ public class ListHelper {
 	/**
 	 * Invokes the toString() method recursively on this list's elements.
 	 * The values are separated by the given separator
-	 * 
+	 *
 	 * @param list
-	 *        The list whose string representation to return
+	 *            The list whose string representation to return
 	 * @param separator
-	 *        The string to insert between each element's string representation
+	 *            The string to insert between each element's string representation
 	 * @return
-	 * 
+	 *
 	 * @see #deepToString(List)
 	 */
 	public static String deepToString(List<?> list, String separator) {
 		boolean firstElement = true;
 		String result = "";
-		for(Object item : list) {
-			if(firstElement) {
+		for (Object item : list) {
+			if (firstElement) {
 				firstElement = false;
 			} else {
 				result += separator;

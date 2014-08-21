@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,20 +26,21 @@ import org.eclipse.papyrus.uml.developper.mde.transcription.WikiTranscription;
 import org.eclipse.uml2.uml.Model;
 
 /**
- * This class is used to create and wiki  developper doc file.
+ * This class is used to create and wiki developper doc file.
  *
  */
 public class GetWikiTextHandler extends IDMAbstractHandler {
 
 	protected static final String INTERNAL_DIRECTORY_NAME = "/doc"; //$NON-NLS-1$
+
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		super.execute(event);
-		System.err.println( getCurrentProject().getLocationURI().getPath());
-		CreateDocumentModelCommand createDocumentModelCommand= new CreateDocumentModelCommand(transactionalEditingDomain,(Model)getSelection(), getCurrentProject().getLocationURI().getPath()+INTERNAL_DIRECTORY_NAME );
+		System.err.println(getCurrentProject().getLocationURI().getPath());
+		CreateDocumentModelCommand createDocumentModelCommand = new CreateDocumentModelCommand(transactionalEditingDomain, (Model) getSelection(), getCurrentProject().getLocationURI().getPath() + INTERNAL_DIRECTORY_NAME);
 		transactionalEditingDomain.getCommandStack().execute(createDocumentModelCommand);
 		IProject project = getCurrentProject();
-		TranscriptionEngine engine= new TranscriptionEngine((Model)getSelection(), project, new WikiTranscription());
+		TranscriptionEngine engine = new TranscriptionEngine((Model) getSelection(), project, new WikiTranscription());
 		engine.traduce();
 		return null;
 	}
@@ -48,22 +49,22 @@ public class GetWikiTextHandler extends IDMAbstractHandler {
 	private IProject getCurrentProject() {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot root = workspace.getRoot();
-		IProject project  = root.getProject();
-		String path=getSelection().eResource().getURI().path();
-		for(IProject currentProject : root.getProjects()) {
-			if( path.contains(currentProject.getName())){
-				project=currentProject;
+		IProject project = root.getProject();
+		String path = getSelection().eResource().getURI().path();
+		for (IProject currentProject : root.getProjects()) {
+			if (path.contains(currentProject.getName())) {
+				project = currentProject;
 			}
 		}
 		return project;
 	}
 
 
-	
+
 	@Override
 	public boolean isEnabled() {
-		if(getSelection() instanceof Model){
-			if(((Model)getSelection()).getAppliedStereotype(I_DeveloperIDMStereotype.PROJECT_STEREOTYPE)!=null){
+		if (getSelection() instanceof Model) {
+			if (((Model) getSelection()).getAppliedStereotype(I_DeveloperIDMStereotype.PROJECT_STEREOTYPE) != null) {
 				return true;
 			}
 

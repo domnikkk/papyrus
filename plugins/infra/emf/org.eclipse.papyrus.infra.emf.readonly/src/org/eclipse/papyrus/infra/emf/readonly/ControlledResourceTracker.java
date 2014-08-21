@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,23 +46,23 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 
 	/**
 	 * Obtains the single tracker instance associated with the specified editing {@code domain}.
-	 * 
+	 *
 	 * @param domain
-	 *        an editing domain
-	 * 
+	 *            an editing domain
+	 *
 	 * @return its tracker
 	 */
 	static ControlledResourceTracker getInstance(EditingDomain domain) {
 		ControlledResourceTracker result = null;
 
-		for(Object next : domain.getResourceSet().eAdapters()) {
-			if(next instanceof ControlledResourceTracker) {
-				result = (ControlledResourceTracker)next;
+		for (Object next : domain.getResourceSet().eAdapters()) {
+			if (next instanceof ControlledResourceTracker) {
+				result = (ControlledResourceTracker) next;
 				break;
 			}
 		}
 
-		if(result == null) {
+		if (result == null) {
 			result = new ControlledResourceTracker(domain);
 		}
 
@@ -72,8 +72,8 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	private ControlledResourceTracker(EditingDomain domain) {
 		domain.getResourceSet().eAdapters().add(this);
 
-		if(domain instanceof TransactionalEditingDomain) {
-			TransactionUtil.getAdapter((TransactionalEditingDomain)domain, TransactionalEditingDomain.Lifecycle.class).addTransactionalEditingDomainListener(this);
+		if (domain instanceof TransactionalEditingDomain) {
+			TransactionUtil.getAdapter((TransactionalEditingDomain) domain, TransactionalEditingDomain.Lifecycle.class).addTransactionalEditingDomainListener(this);
 		}
 
 		// commit the initial discovery
@@ -82,17 +82,17 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 
 	/**
 	 * Queries the URI of the resource in the root unit of the model of the same kind as the given potential sub-model unit.
-	 * 
+	 *
 	 * @param uri
-	 *        the URI of a resource that potentially is in a sub-model unit
-	 * 
+	 *            the URI of a resource that potentially is in a sub-model unit
+	 *
 	 * @return the URI of the corresponding resource in the model's root unit, which could be the same {@code uri} if this is the root unit
 	 */
 	URI getRootResourceURI(URI uri) {
 		URI result = uri.trimFileExtension();
 
-		for(URI parent = get(result); parent != null; parent = get(parent)) {
-			if(parent != null) {
+		for (URI parent = get(result); parent != null; parent = get(parent)) {
+			if (parent != null) {
 				result = parent;
 			}
 		}
@@ -103,7 +103,7 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	private URI get(URI potentialUnit) {
 		URI result = unitMap.get(potentialUnit);
 
-		if((result == null) && (pending != null)) {
+		if ((result == null) && (pending != null)) {
 			// Look here, too, in case the current transaction is adding the relationship
 			result = pending.get(potentialUnit);
 		}
@@ -112,7 +112,7 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	}
 
 	private void ensurePending() {
-		if(pending == null) {
+		if (pending == null) {
 			pending = new HashMap<URI, URI>(unitMap);
 		}
 	}
@@ -128,7 +128,7 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	}
 
 	private void commit() {
-		if(pending != null) {
+		if (pending != null) {
 			unitMap = pending;
 			pending = null;
 		}
@@ -144,13 +144,13 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 
 	@Override
 	public void setTarget(Notifier newTarget) {
-		if(newTarget instanceof ResourceSet) {
+		if (newTarget instanceof ResourceSet) {
 			// Discover existing resources
-			for(Resource next : ((ResourceSet)newTarget).getResources()) {
+			for (Resource next : ((ResourceSet) newTarget).getResources()) {
 				addAdapter(next);
 			}
-		} else if(newTarget instanceof Resource) {
-			handleResource((Resource)newTarget);
+		} else if (newTarget instanceof Resource) {
+			handleResource((Resource) newTarget);
 		}
 	}
 
@@ -164,8 +164,8 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 
 	@Override
 	public void unsetTarget(Notifier oldTarget) {
-		if(oldTarget instanceof ResourceSet) {
-			for(Resource next : ((ResourceSet)oldTarget).getResources()) {
+		if (oldTarget instanceof ResourceSet) {
+			for (Resource next : ((ResourceSet) oldTarget).getResources()) {
 				removeAdapter(next);
 			}
 		}
@@ -175,13 +175,13 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	 * Discover existing parent-unit relationship in a resource.
 	 */
 	protected void handleResource(Resource resource) {
-		if(!resource.getContents().isEmpty()) {
+		if (!resource.getContents().isEmpty()) {
 			EObject root = resource.getContents().get(0);
-			EObject container = ((InternalEObject)root).eInternalContainer();
-			if(container != null) {
+			EObject container = ((InternalEObject) root).eInternalContainer();
+			if (container != null) {
 				// Found cross-resource containment
-				URI parentURI = container.eIsProxy() ? ((InternalEObject)container).eProxyURI().trimFragment() : container.eResource().getURI();
-				if(parentURI != null) {
+				URI parentURI = container.eIsProxy() ? ((InternalEObject) container).eProxyURI().trimFragment() : container.eResource().getURI();
+				if (parentURI != null) {
 					map(resource.getURI(), parentURI);
 				}
 			}
@@ -190,15 +190,15 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 
 	/**
 	 * Discover an existing parent-unit relationship from a cross-resource-contained object.
-	 * 
+	 *
 	 * @param crossResourceContained
-	 *        an object that is in the contents list of a resource and also has a container
+	 *            an object that is in the contents list of a resource and also has a container
 	 */
 	protected void handleCrossResourceContainment(InternalEObject crossResourceContained) {
 		URI resourceURI = crossResourceContained.eIsProxy() ? crossResourceContained.eProxyURI().trimFragment() : crossResourceContained.eDirectResource().getURI();
 		EObject container = crossResourceContained.eInternalContainer();
-		URI parentURI = container.eIsProxy() ? ((InternalEObject)container).eProxyURI().trimFragment() : container.eResource().getURI();
-		if(parentURI != null) {
+		URI parentURI = container.eIsProxy() ? ((InternalEObject) container).eProxyURI().trimFragment() : container.eResource().getURI();
+		if (parentURI != null) {
 			map(resourceURI, parentURI);
 		}
 	}
@@ -207,48 +207,48 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	public void notifyChanged(Notification msg) {
 		Object notifier = msg.getNotifier();
 
-		if(notifier instanceof ResourceSet) {
-			switch(msg.getFeatureID(ResourceSet.class)) {
+		if (notifier instanceof ResourceSet) {
+			switch (msg.getFeatureID(ResourceSet.class)) {
 			case ResourceSet.RESOURCE_SET__RESOURCES:
-				switch(msg.getEventType()) {
+				switch (msg.getEventType()) {
 				case Notification.ADD:
-					addAdapter((Resource)msg.getNewValue());
+					addAdapter((Resource) msg.getNewValue());
 					break;
 				case Notification.ADD_MANY:
-					for(Object next : (Collection<?>)msg.getNewValue()) {
-						addAdapter((Resource)next);
+					for (Object next : (Collection<?>) msg.getNewValue()) {
+						addAdapter((Resource) next);
 					}
 					break;
 				case Notification.SET:
-					removeAdapter((Resource)msg.getOldValue());
-					addAdapter((Resource)msg.getNewValue());
+					removeAdapter((Resource) msg.getOldValue());
+					addAdapter((Resource) msg.getNewValue());
 					break;
 				case Notification.REMOVE:
-					removeAdapter((Resource)msg.getOldValue());
+					removeAdapter((Resource) msg.getOldValue());
 					break;
 				case Notification.REMOVE_MANY:
-					for(Object next : (Collection<?>)msg.getOldValue()) {
-						removeAdapter((Resource)next);
+					for (Object next : (Collection<?>) msg.getOldValue()) {
+						removeAdapter((Resource) next);
 					}
 					break;
 				}
 				break;
 			}
-		} else if(notifier instanceof Resource) {
-			switch(msg.getFeatureID(Resource.class)) {
+		} else if (notifier instanceof Resource) {
+			switch (msg.getFeatureID(Resource.class)) {
 			case Resource.RESOURCE__CONTENTS:
-				switch(msg.getEventType()) {
+				switch (msg.getEventType()) {
 				case Notification.ADD:
 				case Notification.ADD_MANY:
 					// Only process the resource when the first root is added
-					if(msg.getPosition() == 0) {
-						handleResource((Resource)notifier);
+					if (msg.getPosition() == 0) {
+						handleResource((Resource) notifier);
 					}
 					break;
 				case Notification.SET:
 					// Only process the resource when the first root is replaced
-					if(msg.getPosition() == 0) {
-						Resource resource = (Resource)notifier;
+					if (msg.getPosition() == 0) {
+						Resource resource = (Resource) notifier;
 						unmap(resource.getURI());
 						handleResource(resource);
 					}
@@ -256,8 +256,8 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 				case Notification.REMOVE:
 				case Notification.REMOVE_MANY:
 					// Only process the resource when the first root is removed
-					if(msg.getPosition() == 0) {
-						unmap(((Resource)msg.getNotifier()).getURI());
+					if (msg.getPosition() == 0) {
+						unmap(((Resource) msg.getNotifier()).getURI());
 					}
 					break;
 				}
@@ -270,7 +270,7 @@ class ControlledResourceTracker extends AdapterImpl implements TransactionalEdit
 	//
 
 	public void transactionClosed(TransactionalEditingDomainEvent event) {
-		if(event.getTransaction().getStatus().getSeverity() >= IStatus.ERROR) {
+		if (event.getTransaction().getStatus().getSeverity() >= IStatus.ERROR) {
 			// Transaction rolled back
 			rollback();
 		} else {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * This singleton is used to find a new name of element
- * 
+ *
  * @deprecated use {@link NamedElementUtil} instead.
  */
 @Deprecated
@@ -40,12 +40,12 @@ public class NamedElementHelper {
 
 	/**
 	 * Generic method that returns a new unique name within a namespace.
-	 * 
+	 *
 	 * @param umlParent
-	 *        the parent of the element to create
+	 *            the parent of the element to create
 	 * @param eclass
-	 *        the eclass of the element to name
-	 * 
+	 *            the eclass of the element to name
+	 *
 	 * @return a distinguisable name within the namespace of the umlParent
 	 * @deprecated
 	 */
@@ -56,14 +56,14 @@ public class NamedElementHelper {
 
 	/**
 	 * Generic method that returns a new unique name within a namespace.
-	 * 
+	 *
 	 * @param umlParent
-	 *        the parent of the element to create
+	 *            the parent of the element to create
 	 * @param baseString
-	 *        the base string for the new element name
-	 * 
+	 *            the base string for the new element name
+	 *
 	 * @return a distinguishable name within the namespace of the umlParent
-	 * 
+	 *
 	 * @deprecated use {@link NamedElementUtil#getDefaultNameWithIncrementFromBase(String, java.util.Collection)} directly.
 	 */
 	@Deprecated
@@ -73,9 +73,9 @@ public class NamedElementHelper {
 
 	/**
 	 * set the base string for the name
-	 * 
+	 *
 	 * @param baseString
-	 *        a string that is the prefix
+	 *            a string that is the prefix
 	 * @deprecated should not be used
 	 */
 	@Deprecated

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.sysml.provider.SysmlEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.portandflows.FlowSpecification} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class FlowSpecificationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -44,7 +44,7 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowSpecificationItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +55,12 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBase_InterfacePropertyDescriptor(object);
@@ -72,18 +72,19 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * This adds a property descriptor for the Base Interface feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_InterfacePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_FlowSpecification_base_Interface_feature"), getString("_UI_PropertyDescriptor_description", "_UI_FlowSpecification_base_Interface_feature", "_UI_FlowSpecification_type"), PortandflowsPackage.Literals.FLOW_SPECIFICATION__BASE_INTERFACE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_FlowSpecification_base_Interface_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_FlowSpecification_base_Interface_feature", "_UI_FlowSpecification_type"), PortandflowsPackage.Literals.FLOW_SPECIFICATION__BASE_INTERFACE, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns FlowSpecification.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +96,7 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +109,7 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -122,7 +123,7 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +135,7 @@ public class FlowSpecificationItemProvider extends ItemProviderAdapter implement
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

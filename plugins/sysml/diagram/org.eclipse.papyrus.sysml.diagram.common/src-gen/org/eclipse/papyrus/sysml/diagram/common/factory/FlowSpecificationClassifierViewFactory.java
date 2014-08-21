@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,6 +31,6 @@ public class FlowSpecificationClassifierViewFactory extends ShapeViewFactory {
 		// this action needs to be done after the compartments creation
 		super.decorateView(containerView, view, element, semanticHint, index, persisted);
 	}
-	// Start of user code preferences	
+	// Start of user code preferences
 	// End of user code
 }

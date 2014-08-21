@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -54,6 +54,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
@@ -107,11 +108,11 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Create a new dialog to initialize an ActivityParameterNode.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
 	public CreateOrSelectTypeDialog(Shell shell, EObject defaultContainer, IElementType elementType, EStructuralFeature editedFeature, EClass elementEClass, IElementType containerType, EStructuralFeature containerFeature, EClass containerEClass) {
 		super(shell);
@@ -129,12 +130,14 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 	/**
 	 * Create a new dialog to initialize an ActivityParameterNode.
 	 * This dialog will filter certain Stereotypes
+	 * 
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
-	public CreateOrSelectTypeDialog(Shell shell, EObject defaultContainer, IElementType elementType, EStructuralFeature editedFeature, EClass elementEClass, IElementType containerType, EStructuralFeature containerFeature, EClass containerEClass, List<?> notWantedMetaclasses) {
+	public CreateOrSelectTypeDialog(Shell shell, EObject defaultContainer, IElementType elementType, EStructuralFeature editedFeature, EClass elementEClass, IElementType containerType, EStructuralFeature containerFeature, EClass containerEClass,
+			List<?> notWantedMetaclasses) {
 		this(shell, defaultContainer, elementType, editedFeature, elementEClass, containerType, containerFeature, containerEClass);
 		this.notWantedMetaclasses = notWantedMetaclasses;
 	}
@@ -185,9 +188,9 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user to choose or create an existing element.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -212,9 +215,9 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Adds buttons to this dialog's button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the button bar composite
+	 *            the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -224,18 +227,18 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to choose an existing element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	protected void createFormSelectionSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getSelectionSectionTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 
@@ -259,7 +262,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 		existingTypeButton = pToolkit.createButton(lBody, "...", SWT.FLAT);
 
 		Image image = Activator.getInstance().getImage(elementType.getEClass());
-		if(elementEClass != null) {
+		if (elementEClass != null) {
 			image = Activator.getInstance().getImage(elementEClass);
 		}
 
@@ -272,18 +275,18 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to create an invoked element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	protected void createFormCreationSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getCreationSectionTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 
@@ -311,7 +314,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 		newTypeContainerNameText.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 		newTypeContainerButton = pToolkit.createButton(lBody, "...", SWT.FLAT);
 		Image image = Activator.getInstance().getImage(containerType.getEClass());
-		if(containerEClass != null) {
+		if (containerEClass != null) {
 			image = Activator.getInstance().getImage(containerEClass);
 		}
 		newTypeContainerButton.setImage(image);
@@ -327,7 +330,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 		// Build type creation command if needed
 		boolean isSelectionMode = selectionRadio.getSelection();
-		if(!isSelectionMode) {
+		if (!isSelectionMode) {
 			// Creation mode - Prepare type creation command and set existing type to null.
 			existingType = null;
 			buildNewTypeCreateCommand();
@@ -343,7 +346,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 	protected void buildNewTypeCreateCommand() {
 		// The new element is expected to be a NamedElement.
 		IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(newTypeContainer);
-		if(commandService != null) {
+		if (commandService != null) {
 			CreateElementRequest createTypeRequest = new CreateElementRequest(newTypeContainer, elementType);
 			createTypeRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getNamedElement_Name(), newTypeNameText.getText()));
 			newTypeCreateCommand = commandService.getEditCommand(createTypeRequest);
@@ -374,7 +377,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 			 */
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(creationRadio.equals(e.getSource())) {
+				if (creationRadio.equals(e.getSource())) {
 					refreshSectionsEnable(false);
 				} else {
 					refreshSectionsEnable(true);
@@ -405,6 +408,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				setNewTypeName(existingTypeNameText.getText());
 			}
@@ -421,7 +425,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 			public void widgetSelected(SelectionEvent e) {
 				handleChooseNewTypeContainer();
 				// reset name if not set
-				if(newTypeName == null) {
+				if (newTypeName == null) {
 					setNewTypeName(null);
 				}
 				refreshOkButton();
@@ -435,6 +439,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				validateNewTypeName();
 				refreshOkButton();
@@ -445,15 +450,15 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Set the name of the new type
-	 * 
+	 *
 	 * @param text
-	 *        the text string or null for auto-initialization
+	 *            the text string or null for auto-initialization
 	 */
 	protected void setNewTypeName(String text) {
 		String name = text;
-		if(text == null) {
+		if (text == null) {
 			name = NamedElementUtil.getDefaultNameWithIncrementFromBase(elementType.getEClass().getName(), newTypeContainer.eContents());
-			if(elementEClass != null) {
+			if (elementEClass != null) {
 				name = NamedElementUtil.getDefaultNameWithIncrementFromBase(elementEClass.getName(), newTypeContainer.eContents());
 			}
 			newTypeNameText.setText(name);
@@ -468,7 +473,7 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 	}
 
 	protected void validateNewTypeName() {
-		if(isValidName(newTypeContainer, newTypeNameText.getText())) {
+		if (isValidName(newTypeContainer, newTypeNameText.getText())) {
 			Color black = newTypeNameText.getDisplay().getSystemColor(SWT.COLOR_BLACK);
 			newTypeNameText.setForeground(black);
 
@@ -480,8 +485,8 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	protected boolean isValidName(EObject container, String newName) {
 		boolean isValid = true;
-		if(container instanceof Namespace) {
-			if(((Namespace)container).getOwnedMember(newName) != null) {
+		if (container instanceof Namespace) {
+			if (((Namespace) container).getOwnedMember(newName) != null) {
 				isValid = false;
 			}
 		}
@@ -503,15 +508,15 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 		dialog.setContentProvider(provider);
 		dialog.setLabelProvider(labelProvider);
-		
-		if(dialog.open() == Window.OK) {
+
+		if (dialog.open() == Window.OK) {
 			Object result = dialog.getResult()[0];
-			if(result instanceof IAdaptable) {
+			if (result instanceof IAdaptable) {
 				result = EMFHelper.getEObject(result);
 			}
 
-			if(result instanceof EObject) {
-				setExistingTypeSelection((EObject)result);
+			if (result instanceof EObject) {
+				setExistingTypeSelection((EObject) result);
 			} else {
 				setExistingTypeSelection(null);
 			}
@@ -520,12 +525,12 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Set the existing type selected (if selection mode is chosen)
-	 * 
+	 *
 	 * @param invokedElement
-	 *        the selected element
+	 *            the selected element
 	 */
 	protected void setExistingTypeSelection(EObject type) {
-		if(type == null) {
+		if (type == null) {
 			existingTypeNameText.setText("");
 		} else {
 			existingType = type;
@@ -546,14 +551,14 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 		dialog.setContentProvider(provider);
 		dialog.setLabelProvider(labelProvider);
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object result = dialog.getResult()[0];
-			if(result instanceof IAdaptable) {
+			if (result instanceof IAdaptable) {
 				result = EMFHelper.getEObject(result);
 			}
 
-			if(result instanceof EObject) {
-				setNewTypeContainer((EObject)result);
+			if (result instanceof EObject) {
+				setNewTypeContainer((EObject) result);
 			} else {
 				setNewTypeContainer(null);
 			}
@@ -562,17 +567,17 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Define the type of the object that will be created (if creation mode is chosen)
-	 * 
+	 *
 	 * @param the
-	 *        selected parent
+	 *            selected parent
 	 */
 	protected void setNewTypeContainer(EObject container) {
 
-		if((containerType instanceof ISpecializationType) && ((ISpecializationType)containerType).getMatcher().matches(container)) {
+		if ((containerType instanceof ISpecializationType) && ((ISpecializationType) containerType).getMatcher().matches(container)) {
 			newTypeContainer = container;
 			newTypeContainerNameText.setText(labelProvider.getText(newTypeContainer));
 
-		} else if(containerType.getEClass().isInstance(container)) {
+		} else if (containerType.getEClass().isInstance(container)) {
 			newTypeContainer = container;
 			newTypeContainerNameText.setText(labelProvider.getText(newTypeContainer));
 
@@ -584,20 +589,20 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 
 	/**
 	 * Refresh the enabled and disabled elements in various sections
-	 * 
+	 *
 	 * @param isSelectionSelected
-	 *        true if we choose to select an existing element, false if we choose to create an element
+	 *            true if we choose to select an existing element, false if we choose to create an element
 	 */
 	private void refreshSectionsEnable(boolean isSelectionSelected) {
 		// handle radio button value
-		if(isSelectionSelected) {
+		if (isSelectionSelected) {
 			creationRadio.setSelection(false);
-			if(!selectionRadio.getSelection()) {
+			if (!selectionRadio.getSelection()) {
 				selectionRadio.setSelection(true);
 			}
 		} else {
 			selectionRadio.setSelection(false);
-			if(!creationRadio.getSelection()) {
+			if (!creationRadio.getSelection()) {
 				creationRadio.setSelection(true);
 			}
 		}
@@ -614,8 +619,8 @@ public class CreateOrSelectTypeDialog extends FormDialog {
 	/** Refresh the OK button activation */
 	protected void refreshOkButton() {
 		boolean isSelectionSelected = selectionRadio.getSelection();
-		if(getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
-			if(isSelectionSelected) {
+		if (getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
+			if (isSelectionSelected) {
 				getButton(IDialogConstants.OK_ID).setEnabled(existingType != null);
 			} else {
 				getButton(IDialogConstants.OK_ID).setEnabled((newTypeContainer != null) && (isValidName(newTypeContainer, newTypeNameText.getText())));

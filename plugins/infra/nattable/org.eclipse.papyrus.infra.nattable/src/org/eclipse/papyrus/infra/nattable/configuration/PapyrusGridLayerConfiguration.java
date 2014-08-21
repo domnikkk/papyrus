@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,16 +19,16 @@ import org.eclipse.papyrus.infra.nattable.export.PapyrusExportBindings;
 
 /**
  * We change the edit configuration
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class PapyrusGridLayerConfiguration extends DefaultGridLayerConfiguration {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param gridLayer
 	 */
 	public PapyrusGridLayerConfiguration(CompositeLayer gridLayer) {
@@ -36,9 +36,9 @@ public class PapyrusGridLayerConfiguration extends DefaultGridLayerConfiguration
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.grid.layer.config.DefaultGridLayerConfiguration#addEditingHandlerConfig()
-	 * 
+	 *
 	 */
 	@Override
 	protected void addEditingHandlerConfig() {
@@ -46,9 +46,9 @@ public class PapyrusGridLayerConfiguration extends DefaultGridLayerConfiguration
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.grid.layer.config.DefaultGridLayerConfiguration#addEditingUIConfig()
-	 * 
+	 *
 	 */
 	@Override
 	protected void addEditingUIConfig() {
@@ -56,9 +56,9 @@ public class PapyrusGridLayerConfiguration extends DefaultGridLayerConfiguration
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.grid.layer.config.DefaultGridLayerConfiguration#addExcelExportUIBindings()
-	 * 
+	 *
 	 */
 	@Override
 	protected void addExcelExportUIBindings() {

@@ -12,7 +12,7 @@ import org.eclipse.papyrus.uml.textedit.stereotypeproperty.xtext.ui.internal.App
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class AppliedStereotypePropertyExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class AppliedStereotypePropertyExecutableExtensionFactory extends Abstrac
 	protected Bundle getBundle() {
 		return AppliedStereotypePropertyActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return AppliedStereotypePropertyActivator.getInstance().getInjector(AppliedStereotypePropertyActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_STEREOTYPEPROPERTY_XTEXT_APPLIEDSTEREOTYPEPROPERTY);
 	}
-	
+
 }

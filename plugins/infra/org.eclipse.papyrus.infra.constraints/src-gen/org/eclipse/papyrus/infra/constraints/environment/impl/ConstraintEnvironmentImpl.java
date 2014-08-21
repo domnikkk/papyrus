@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.environment.impl.ConstraintEnvironmentImpl#getConstraintTypes <em>Constraint Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.environment.impl.ConstraintEnvironmentImpl#getConstraintTypes <em>Constraint Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	 * The cached value of the '{@link #getConstraintTypes() <em>Constraint Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConstraintTypes()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintEnvironmentImpl() {
@@ -55,6 +57,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -65,6 +68,7 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ConstraintType> getConstraintTypes() {
@@ -77,13 +81,14 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
-				return ((InternalEList<?>)getConstraintTypes()).basicRemove(otherEnd, msgs);
+		case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
+			return ((InternalEList<?>) getConstraintTypes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,13 +96,14 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
-				return getConstraintTypes();
+		case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
+			return getConstraintTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,16 +111,17 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
-				getConstraintTypes().clear();
-				getConstraintTypes().addAll((Collection<? extends ConstraintType>)newValue);
-				return;
+		case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
+			getConstraintTypes().clear();
+			getConstraintTypes().addAll((Collection<? extends ConstraintType>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -122,14 +129,15 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
-				getConstraintTypes().clear();
-				return;
+		case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
+			getConstraintTypes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,15 +145,16 @@ public class ConstraintEnvironmentImpl extends EObjectImpl implements Constraint
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
-				return constraintTypes != null && !constraintTypes.isEmpty();
+		case EnvironmentPackage.CONSTRAINT_ENVIRONMENT__CONSTRAINT_TYPES:
+			return constraintTypes != null && !constraintTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConstraintEnvironmentImpl
+} // ConstraintEnvironmentImpl

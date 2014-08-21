@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ public class PortTypeAdapter extends AdapterImpl {
 	 * Instantiates a new port type adapter.
 	 *
 	 * @param port
-	 *        the port
+	 *            the port
 	 * @param volatileFeature
-	 *        the volatile feature
+	 *            the volatile feature
 	 * @param navigationFeature
 	 */
 	public PortTypeAdapter(Port port, EStructuralFeature volatileFeature, EStructuralFeature navigationFeature) {
@@ -56,7 +56,7 @@ public class PortTypeAdapter extends AdapterImpl {
 		this.derivedFeature = volatileFeature;
 		this.navigationFeature = navigationFeature;
 
-		if(port.getType() != null) {
+		if (port.getType() != null) {
 			attachAdapter(null, port.getType());
 		}
 	}
@@ -65,7 +65,7 @@ public class PortTypeAdapter extends AdapterImpl {
 	 * Notify changed.
 	 *
 	 * @param msg
-	 *        the msg
+	 *            the msg
 	 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
 
@@ -75,25 +75,25 @@ public class PortTypeAdapter extends AdapterImpl {
 		Object notificationFeature = msg.getFeature();
 
 		// Listen only type setting on Port element
-		if(notificationFeature != null && notificationFeature.equals(UMLPackage.Literals.TYPED_ELEMENT__TYPE)) {
-			switch(msg.getEventType()) {
+		if (notificationFeature != null && notificationFeature.equals(UMLPackage.Literals.TYPED_ELEMENT__TYPE)) {
+			switch (msg.getEventType()) {
 
 			case Notification.SET:
-				Type newType = (Type)msg.getNewValue();
-				if(newType != null) {
+				Type newType = (Type) msg.getNewValue();
+				if (newType != null) {
 
 					// Set a type to Port
-					attachAdapter((Type)msg.getOldValue(), newType);
+					attachAdapter((Type) msg.getOldValue(), newType);
 					updateObservableList();
 				} else {
 
 					// Unset type to port
-					detachAdapter((Type)msg.getOldValue());
+					detachAdapter((Type) msg.getOldValue());
 					updateObservableList();
 				}
 				break;
 			default:
-				//Nothing to do
+				// Nothing to do
 				break;
 			}
 		}
@@ -104,10 +104,10 @@ public class PortTypeAdapter extends AdapterImpl {
 
 	/**
 	 * Detach adapter of old type.
-	 * 
+	 *
 	 * @param type
-	 *        Type where adapter will be removed
-	 * 
+	 *            Type where adapter will be removed
+	 *
 	 */
 	private void detachAdapter(Type type) {
 		EObject source = determineSource(type);
@@ -119,35 +119,36 @@ public class PortTypeAdapter extends AdapterImpl {
 	 * Attach adapter to setted type.
 	 *
 	 * @param newType
-	 *        Type where adapter will be added
+	 *            Type where adapter will be added
 	 */
 	private void attachAdapter(Type oldType, Type newType) {
 
 
 		EObject newSource = determineSource(newType);
-		if(newSource != null) {
+		if (newSource != null) {
 
 			// Dispose adapter on old type
-			if(oldType != null && adapter != null) {
+			if (oldType != null && adapter != null) {
 				EObject oldSource = determineSource(oldType);
 
-				if(!oldSource.equals(newSource)) {
+				if (!oldSource.equals(newSource)) {
 					oldSource.eAdapters().remove(adapter);
 				}
 			}
 
 
 			// Attach adapter for new type
-			if(adapter == null || !newSource.eAdapters().contains(adapter)) {
+			if (adapter == null || !newSource.eAdapters().contains(adapter)) {
 
 				// Create a new one only if source don't have already one because last type can have same source to observe
 				adapter = new DerivedAttributeAdapter(newSource, derivedFeature, navigationFeature, UMLPackage.Literals.DEPENDENCY__SUPPLIER, Notification.ADD) {
 
+					@Override
 					protected void notifyDerivedAttributeChange(Notification notification) {
-						if(UMLPackage.Literals.DEPENDENCY__SUPPLIER.equals(notification.getFeature())) {
-							port.eNotify(new ENotificationImpl((InternalEObject)port, notification.getEventType(), derivedFeature, notification.getOldValue(), notification.getNewValue()));
-						} else if(Notification.REMOVE == notification.getEventType()) {
-							port.eNotify(new ENotificationImpl((InternalEObject)port, notification.getEventType(), derivedFeature, notification.getOldValue(), notification.getNewValue()));
+						if (UMLPackage.Literals.DEPENDENCY__SUPPLIER.equals(notification.getFeature())) {
+							port.eNotify(new ENotificationImpl((InternalEObject) port, notification.getEventType(), derivedFeature, notification.getOldValue(), notification.getNewValue()));
+						} else if (Notification.REMOVE == notification.getEventType()) {
+							port.eNotify(new ENotificationImpl((InternalEObject) port, notification.getEventType(), derivedFeature, notification.getOldValue(), notification.getNewValue()));
 						}
 
 					};
@@ -167,16 +168,16 @@ public class PortTypeAdapter extends AdapterImpl {
 	 * <p>
 	 * <b>Warning</b>: Result can be <code>null</code> for case of Required interfaces when Type was not yet affected to container.
 	 * </p>
-	 * 
+	 *
 	 * @param type
-	 *        Type is origin of evaluation
+	 *            Type is origin of evaluation
 	 * @return
 	 *         Source according of derived feature
 	 */
 	private EObject determineSource(Type type) {
 		EObject source = type;
 
-		if(UMLPackage.Literals.PORT__REQUIRED.equals(derivedFeature)) {
+		if (UMLPackage.Literals.PORT__REQUIRED.equals(derivedFeature)) {
 			source = type.eContainer();
 		}
 
@@ -187,18 +188,18 @@ public class PortTypeAdapter extends AdapterImpl {
 	 * Fire observable list.
 	 *
 	 * @param type
-	 *        the type
+	 *            the type
 	 */
 	private void updateObservableList() {
 
 		// Clear cache for derived feature
 		CacheAdapter cache = CacheAdapter.getCacheAdapter(port);
-		if(cache != null) {
+		if (cache != null) {
 			cache.put(port, derivedFeature, null);
 		}
 
 		// Notify observers
-		port.eNotify(new ENotificationImpl((InternalEObject)port, Notification.SET, derivedFeature, null, port.eGet(derivedFeature), true));
+		port.eNotify(new ENotificationImpl((InternalEObject) port, Notification.SET, derivedFeature, null, port.eGet(derivedFeature), true));
 
 
 	}

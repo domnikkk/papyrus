@@ -57,8 +57,8 @@ public class XWTObservableWrapper implements IObservableMap {
 	}
 
 	public void addMapChangeListener(IMapChangeListener listener) {
-		if(delegate == null) {
-			if(changeListeners.isEmpty()) {
+		if (delegate == null) {
+			if (changeListeners.isEmpty()) {
 				changeListeners = new ArrayList<IMapChangeListener>();
 			}
 			changeListeners.add(listener);
@@ -87,13 +87,14 @@ public class XWTObservableWrapper implements IObservableMap {
 		return delegate.entrySet();
 	}
 
+	@Override
 	public boolean equals(Object o) {
 		checkDelegated();
 		return delegate.equals(o);
 	}
 
 	public Object get(Object key) {
-		if(data == null) {
+		if (data == null) {
 			data = key;
 		}
 		checkDelegated();
@@ -110,6 +111,7 @@ public class XWTObservableWrapper implements IObservableMap {
 		return delegate.getValueType();
 	}
 
+	@Override
 	public int hashCode() {
 		checkDelegated();
 		return delegate.hashCode();
@@ -141,7 +143,7 @@ public class XWTObservableWrapper implements IObservableMap {
 	}
 
 	public void removeMapChangeListener(IMapChangeListener listener) {
-		if(delegate == null) {
+		if (delegate == null) {
 			changeListeners.remove(listener);
 		} else {
 			delegate.removeMapChangeListener(listener);
@@ -174,7 +176,7 @@ public class XWTObservableWrapper implements IObservableMap {
 	}
 
 	public void dispose() {
-		if(delegate != null) {
+		if (delegate != null) {
 			delegate.dispose();
 		}
 	}
@@ -210,10 +212,10 @@ public class XWTObservableWrapper implements IObservableMap {
 	}
 
 	protected void checkDelegated() {
-		if(delegate == null) {
+		if (delegate == null) {
 			IValueProperty property = ScopeManager.createValueProperty(control, data, new BindingExpressionPath(path));
 			delegate = property.observeDetail(domain);
-			for(IMapChangeListener listener : changeListeners) {
+			for (IMapChangeListener listener : changeListeners) {
 				delegate.addMapChangeListener(listener);
 			}
 			changeListeners.clear();

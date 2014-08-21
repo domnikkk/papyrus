@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,10 +22,10 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 /**
  * A service entry used for faulty services. In this implementation, methods do
  * nothings or throw an error.
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 
@@ -35,9 +35,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	private ServiceDescriptor descriptor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param descriptor
 	 */
 	public ErrorServiceTypeEntry(ServiceDescriptor descriptor) {
@@ -45,9 +45,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.internal.ServiceTypeEntry#getServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -57,9 +57,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.internal.ServiceTypeEntry#createService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -69,9 +69,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.internal.ServiceTypeEntry#initService(ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -82,9 +82,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.internal.ServiceTypeEntry#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -94,9 +94,9 @@ public class ErrorServiceTypeEntry extends ServiceTypeEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.internal.ServiceTypeEntry#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override

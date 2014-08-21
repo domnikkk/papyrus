@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public class CustomizationPage extends WizardPage {
 	}
 
 	protected CustomizationPage(CustomizationConfiguration configuration) {
-		super(Messages.CustomizationPage_Customization);//, null, org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("icons/papyrus.png"));
+		super(Messages.CustomizationPage_Customization);// , null, org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("icons/papyrus.png"));
 		setDescription("Select your customization configuration files");
 		setTitle(Messages.CustomizationPage_Customization);
 		this.configuration = configuration;
@@ -53,7 +53,7 @@ public class CustomizationPage extends WizardPage {
 		Composite container = new Composite(parent, SWT.NONE);
 		container.setLayout(new PropertiesLayout());
 
-		if(configuration == null) {
+		if (configuration == null) {
 			this.configuration = CustomizationPluginFactory.eINSTANCE.createCustomizationConfiguration();
 		}
 
@@ -74,7 +74,7 @@ public class CustomizationPage extends WizardPage {
 
 	@Override
 	public void setVisible(boolean visible) {
-		if(visible) {
+		if (visible) {
 			this.configuration.setPlugin(getWizard().getPluginId());
 		}
 		super.setVisible(visible);
@@ -82,7 +82,7 @@ public class CustomizationPage extends WizardPage {
 
 	@Override
 	public CreateNewCustomizationPluginWizard getWizard() {
-		return (CreateNewCustomizationPluginWizard)super.getWizard();
+		return (CreateNewCustomizationPluginWizard) super.getWizard();
 	}
 
 	public CustomizationConfiguration getConfiguration() {

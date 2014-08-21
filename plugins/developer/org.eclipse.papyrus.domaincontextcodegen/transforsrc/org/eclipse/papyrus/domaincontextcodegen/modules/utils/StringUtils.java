@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2010 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/

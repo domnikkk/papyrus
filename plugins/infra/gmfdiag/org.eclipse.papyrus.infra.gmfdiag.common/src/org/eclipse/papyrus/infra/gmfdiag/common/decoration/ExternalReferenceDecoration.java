@@ -31,13 +31,13 @@ public class ExternalReferenceDecoration implements IDecorationSpecificFunctions
 
 	@Override
 	public MarkChildren supportsMarkerPropagation() {
-		//This marker should not be propagated
+		// This marker should not be propagated
 		return null;
 	}
 
 	@Override
 	public IPapyrusDecoration markerPropagation(EList<IPapyrusDecoration> childDecorations) {
-		//This marker should not be propagated
+		// This marker should not be propagated
 		return null;
 	}
 
@@ -48,7 +48,7 @@ public class ExternalReferenceDecoration implements IDecorationSpecificFunctions
 
 	@Override
 	public ImageDescriptor getImageDescriptorForME(IPapyrusMarker marker) {
-		//This decorator only applies to GMF elements
+		// This decorator only applies to GMF elements
 		return null;
 	}
 

@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
@@ -41,10 +41,10 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getStakeholders <em>Stakeholders</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getViewpoints <em>Viewpoints</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getRules <em>Rules</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getConcerns <em>Concerns</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getStakeholders <em>Stakeholders</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getViewpoints <em>Viewpoints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getRules <em>Rules</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureFrameworkImpl#getConcerns <em>Concerns</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +55,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getStakeholders() <em>Stakeholders</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStakeholders()
 	 * @generated
 	 * @ordered
@@ -65,6 +66,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getViewpoints() <em>Viewpoints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getViewpoints()
 	 * @generated
 	 * @ordered
@@ -75,6 +77,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getRules() <em>Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRules()
 	 * @generated
 	 * @ordered
@@ -85,6 +88,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConcerns()
 	 * @generated
 	 * @ordered
@@ -94,6 +98,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ArchitectureFrameworkImpl() {
@@ -103,6 +108,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -113,6 +119,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Stakeholder> getStakeholders() {
@@ -125,6 +132,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureViewpoint> getViewpoints() {
@@ -137,6 +145,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<CorrespondenceRule> getRules() {
@@ -149,6 +158,7 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Concern> getConcerns() {
@@ -161,19 +171,20 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
-				return ((InternalEList<?>)getStakeholders()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
-				return ((InternalEList<?>)getViewpoints()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
-				return ((InternalEList<?>)getRules()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
-				return ((InternalEList<?>)getConcerns()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
+			return ((InternalEList<?>) getStakeholders()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
+			return ((InternalEList<?>) getViewpoints()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
+			return ((InternalEList<?>) getRules()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
+			return ((InternalEList<?>) getConcerns()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,19 +192,20 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
-				return getStakeholders();
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
-				return getViewpoints();
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
-				return getRules();
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
-				return getConcerns();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
+			return getStakeholders();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
+			return getViewpoints();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
+			return getRules();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
+			return getConcerns();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,28 +213,29 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
-				getStakeholders().clear();
-				getStakeholders().addAll((Collection<? extends Stakeholder>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
-				getViewpoints().clear();
-				getViewpoints().addAll((Collection<? extends ArchitectureViewpoint>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
-				getRules().clear();
-				getRules().addAll((Collection<? extends CorrespondenceRule>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
-				getConcerns().clear();
-				getConcerns().addAll((Collection<? extends Concern>)newValue);
-				return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
+			getStakeholders().clear();
+			getStakeholders().addAll((Collection<? extends Stakeholder>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
+			getViewpoints().clear();
+			getViewpoints().addAll((Collection<? extends ArchitectureViewpoint>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
+			getRules().clear();
+			getRules().addAll((Collection<? extends CorrespondenceRule>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
+			getConcerns().clear();
+			getConcerns().addAll((Collection<? extends Concern>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -230,23 +243,24 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
-				getStakeholders().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
-				getViewpoints().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
-				getRules().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
-				getConcerns().clear();
-				return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
+			getStakeholders().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
+			getViewpoints().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
+			getRules().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
+			getConcerns().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,21 +268,22 @@ public class ArchitectureFrameworkImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
-				return stakeholders != null && !stakeholders.isEmpty();
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
-				return viewpoints != null && !viewpoints.isEmpty();
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
-				return rules != null && !rules.isEmpty();
-			case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
-				return concerns != null && !concerns.isEmpty();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS:
+			return stakeholders != null && !stakeholders.isEmpty();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__VIEWPOINTS:
+			return viewpoints != null && !viewpoints.isEmpty();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__RULES:
+			return rules != null && !rules.isEmpty();
+		case Iso42010Package.ARCHITECTURE_FRAMEWORK__CONCERNS:
+			return concerns != null && !concerns.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ArchitectureFrameworkImpl
+} // ArchitectureFrameworkImpl

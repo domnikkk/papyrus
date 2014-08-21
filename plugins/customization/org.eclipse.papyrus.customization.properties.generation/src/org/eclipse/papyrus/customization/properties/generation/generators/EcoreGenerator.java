@@ -74,7 +74,7 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 		sourceLabel.setLayoutData(data);
 
 		sourceFileChooser = new FileChooser(root, false);
-		sourceFileChooser.setFilterExtensions(new String[]{ "ecore" }); //$NON-NLS-1$
+		sourceFileChooser.setFilterExtensions(new String[] { "ecore" }); //$NON-NLS-1$
 		sourceFileChooser.addListener(this);
 
 		listEPackages = new ArrayList<EPackage>();
@@ -95,21 +95,21 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 
 	public boolean isSelectedSingle(Property property) {
 		EStructuralFeature feature = getFeature(property);
-		if(feature == null) {
+		if (feature == null) {
 			return false;
 		}
 
-		if(feature.isDerived()) {
+		if (feature.isDerived()) {
 			return false;
 		}
 
-		if(!feature.isChangeable()) {
+		if (!feature.isChangeable()) {
 			return false;
 		}
 
-		if(feature instanceof EReference) {
-			EReference reference = (EReference)feature;
-			if(reference.isContainer() || reference.isContainment()) {
+		if (feature instanceof EReference) {
+			EReference reference = (EReference) feature;
+			if (reference.isContainer() || reference.isContainment()) {
 				return false;
 			}
 		}
@@ -130,15 +130,15 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 		EPackage currentPackage = ecorePackage;
 
 		EClassifier classifier = findClassifier(path, currentPackage);
-		if(classifier == null) {
+		if (classifier == null) {
 			return null;
 		}
 
-		if(!(classifier instanceof EClass)) {
+		if (!(classifier instanceof EClass)) {
 			return null;
 		}
 
-		EClass eClass = (EClass)classifier;
+		EClass eClass = (EClass) classifier;
 		return eClass.getEStructuralFeature(property.getName());
 	}
 
@@ -147,20 +147,20 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 	 * EPackage
 	 *
 	 * @param path
-	 *        The list of package and subpackages names, and the classifier
-	 *        name, i.e. the list of segments in the classifier's qualified
-	 *        name
+	 *            The list of package and subpackages names, and the classifier
+	 *            name, i.e. the list of segments in the classifier's qualified
+	 *            name
 	 * @param source
-	 *        The root EPackage in which the classifier should be retrieved
+	 *            The root EPackage in which the classifier should be retrieved
 	 * @return The corresponding EClassifier, or null if it couldn't be
 	 *         retrieved
 	 */
 	protected EClassifier findClassifier(List<String> path, EPackage source) {
 		String qualifier = path.get(0);
 		EClassifier classifier = source.getEClassifier(qualifier);
-		if(classifier == null) {
+		if (classifier == null) {
 			source = findSubPackage(source, qualifier);
-			if(source == null) {
+			if (source == null) {
 				return null;
 			}
 			path.remove(0);
@@ -175,14 +175,14 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 	 * given package
 	 *
 	 * @param currentPackage
-	 *        The EPackage in which the subpackage should be found
+	 *            The EPackage in which the subpackage should be found
 	 * @param packageName
-	 *        The name of the EPackage to find
+	 *            The name of the EPackage to find
 	 * @return The corresponding EPackage, or null if it couldn't be found
 	 */
 	protected EPackage findSubPackage(EPackage currentPackage, String packageName) {
-		for(EPackage pack : currentPackage.getESubpackages()) {
-			if(pack.getName().equals(packageName)) {
+		for (EPackage pack : currentPackage.getESubpackages()) {
+			if (pack.getName().equals(packageName)) {
 				return pack;
 			}
 		}
@@ -196,7 +196,7 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 
 	private List<String> getPath(DataContextElement element) {
 		List<String> result;
-		if(element.getPackage() == null) {
+		if (element.getPackage() == null) {
 			result = new LinkedList<String>();
 		} else {
 			result = getPath(element.getPackage());
@@ -207,21 +207,21 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 	}
 
 	public boolean isSelectedMultiple(Property property) {
-		if(!isSelectedSingle(property)) {
+		if (!isSelectedSingle(property)) {
 			return false;
 		}
 
 		EStructuralFeature feature = getFeature(property);
 
-		Set<String> validDataTypes = new HashSet<String>(Arrays.asList(new String[]{ "int", "boolean", "float", "double" })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+		Set<String> validDataTypes = new HashSet<String>(Arrays.asList(new String[] { "int", "boolean", "float", "double" })); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
-		if(feature.getEType() instanceof EDataType) {
-			if(validDataTypes.contains(((EDataType)feature.getEType()).getInstanceTypeName())) {
+		if (feature.getEType() instanceof EDataType) {
+			if (validDataTypes.contains(((EDataType) feature.getEType()).getInstanceTypeName())) {
 				return true;
 			}
 		}
 
-		if(feature.getEType() instanceof EEnum) {
+		if (feature.getEType() instanceof EEnum) {
 			return true;
 		}
 
@@ -252,17 +252,17 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 
 		PropertiesRoot root = ConfigurationManager.getInstance().getPropertiesRoot();
 		ModelExtent inRoot = new BasicModelExtent(Collections.singletonList(root));
-		if(!listEPackages.isEmpty()) {
+		if (!listEPackages.isEmpty()) {
 			temp.setContents(listEPackages);
-			if(!listEPackages.contains(ecorePackage)) {
-				result.add(temp); //if the root package isnt selected
+			if (!listEPackages.contains(ecorePackage)) {
+				result.add(temp); // if the root package isnt selected
 			} else {
 				result.add(inPackage);
 			}
 			result.add(temp);
 
 		} else {
-			//Basic Method
+			// Basic Method
 			result.add(inPackage);
 			result.add(inPackage);
 		}
@@ -282,30 +282,30 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 		URI packageURI = URI.createPlatformResourceURI(sourceFileChooser.getFilePath(), true);
 
 		try {
-			ecorePackage = (EPackage)loadEMFModel(packageURI);
+			ecorePackage = (EPackage) loadEMFModel(packageURI);
 		} catch (IOException e) {
 			// nothing
 		}
 		new ArrayList<Object>();
 		List<Object> listePackage = new ArrayList<Object>();
-		if(!listePackage.contains(ecorePackage)) {
+		if (!listePackage.contains(ecorePackage)) {
 			listePackage.add(ecorePackage);
 		}
 		TreeIterator<EObject> tree = ecorePackage.eAllContents();
-		while(tree.hasNext()) {
+		while (tree.hasNext()) {
 			EObject obj = tree.next();
-			if(obj instanceof EStructuralFeature) {
-				EStructuralFeature feature = (EStructuralFeature)obj;
+			if (obj instanceof EStructuralFeature) {
+				EStructuralFeature feature = (EStructuralFeature) obj;
 				EClass eClass = feature.getEContainingClass();
-				if(eClass != null) {
+				if (eClass != null) {
 					EClassifier classifier = feature.getEType();
 					EPackage targetPackage = null;
-					if(classifier != null) {
+					if (classifier != null) {
 						targetPackage = classifier.getEPackage();
 					}
-					if(targetPackage != null) {
-						if(!ecorePackage.equals(targetPackage)) {
-							if(!listePackage.contains(targetPackage)) {
+					if (targetPackage != null) {
+						if (!ecorePackage.equals(targetPackage)) {
+							if (!listePackage.contains(targetPackage)) {
 								listePackage.add(targetPackage);
 							}
 
@@ -313,12 +313,12 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 					}
 				}
 			}
-			if(obj instanceof EClass) {
+			if (obj instanceof EClass) {
 
-				EClass eclass = (EClass)obj;
+				EClass eclass = (EClass) obj;
 				List<EClass> liste = eclass.getESuperTypes();
-				for(EClass item : liste) {
-					if(!listePackage.contains(item.getEPackage())) {
+				for (EClass item : liste) {
+					if (!listePackage.contains(item.getEPackage())) {
 						listePackage.add(item.getEPackage());
 					}
 
@@ -332,8 +332,8 @@ public class EcoreGenerator extends AbstractQVTGenerator {
 
 	public void addCheckElement(Object obj) {
 
-		if(obj instanceof EPackage) {
-			EPackage pack = (EPackage)obj;
+		if (obj instanceof EPackage) {
+			EPackage pack = (EPackage) obj;
 			listEPackages.add(pack);
 		}
 

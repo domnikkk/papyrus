@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,12 +71,12 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class MultiAssociationHelper extends ElementHelper {
 	/**
 	 * get the member end that will be managed by the branch of the association.
-	 * 
+	 *
 	 * @param associationBranchView
 	 *            the association branch view
 	 * @param association
 	 *            the association
-	 * 
+	 *
 	 * @return the property concerned by the branch or null if the property is not found
 	 */
 	public static Property getPropertyToListen(Edge associationBranchView, Association association) {
@@ -95,7 +95,7 @@ public class MultiAssociationHelper extends ElementHelper {
 
 	/**
 	 * constructor.
-	 * 
+	 *
 	 * @param editDomain
 	 *            the editDomain , important to create commands can not be null
 	 */
@@ -106,10 +106,10 @@ public class MultiAssociationHelper extends ElementHelper {
 
 	/**
 	 * Display all branches command.
-	 * 
+	 *
 	 * @param associationNodeEditPart
 	 *            the association node edit part
-	 * 
+	 *
 	 * @return the command
 	 */
 	public Command displayAllBranchesCommand(AssociationNodeEditPart associationNodeEditPart) {
@@ -184,7 +184,7 @@ public class MultiAssociationHelper extends ElementHelper {
 
 	/**
 	 * Returns the drop Command for a MultiAssociation
-	 * 
+	 *
 	 * @param association
 	 *            the association to drop
 	 * @param viewer
@@ -261,12 +261,12 @@ public class MultiAssociationHelper extends ElementHelper {
 
 	/**
 	 * transform binary association to n-ary association.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            the command
-	 * 
+	 *
 	 * @return the command in charge of this job
 	 */
 	private Command getAssociationToMultiAssociationCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {
@@ -394,12 +394,12 @@ public class MultiAssociationHelper extends ElementHelper {
 
 	/**
 	 * code to create new branch.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            that will contain sub commands
-	 * 
+	 *
 	 * @return the command in charge of the branch creation
 	 */
 	private Command getBranchAssociationCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {
@@ -445,12 +445,12 @@ public class MultiAssociationHelper extends ElementHelper {
 	/**
 	 * return commands to transform a binary association to n-ary association or allow adding
 	 * branches.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            that will contains subcommands
-	 * 
+	 *
 	 * @return the command
 	 */
 	public Command getCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {
@@ -486,7 +486,7 @@ public class MultiAssociationHelper extends ElementHelper {
 
 	/**
 	 * look for a dependency node from a dependency branch.
-	 * 
+	 *
 	 * @param dependencyBranchEditPart
 	 * @return may be null
 	 */

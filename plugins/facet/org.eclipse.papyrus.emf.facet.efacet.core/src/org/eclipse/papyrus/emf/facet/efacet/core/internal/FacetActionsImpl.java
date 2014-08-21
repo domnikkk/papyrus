@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -35,8 +35,7 @@ public class FacetActionsImpl implements IFacetActions {
 	public void saveFacetSet(final FacetSet facetSet, final IFile file)
 			throws IOException, InvalidFacetSetException {
 		if (facetSet == null) {
-			throw new IllegalArgumentException(
-					"The given FacetSet cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given FacetSet cannot be null"); //$NON-NLS-1$
 		}
 		if (file == null) {
 			throw new IllegalArgumentException("The given IFile cannot be null"); //$NON-NLS-1$

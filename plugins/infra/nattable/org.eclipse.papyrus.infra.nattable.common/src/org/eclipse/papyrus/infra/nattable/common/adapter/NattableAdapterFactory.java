@@ -21,9 +21,9 @@ public class NattableAdapterFactory implements IAdapterFactory {
 
 	@Override
 	public Object getAdapter(Object adaptableObject, Class adapterType) {
-		if(adapterType == IOpenable.class) {
-			if(adaptableObject instanceof Table) {
-				Table table = (Table)adaptableObject;
+		if (adapterType == IOpenable.class) {
+			if (adaptableObject instanceof Table) {
+				Table table = (Table) adaptableObject;
 				return new IOpenableWithContainer.Openable(adaptableObject, table.getContext());
 			}
 		}
@@ -32,7 +32,7 @@ public class NattableAdapterFactory implements IAdapterFactory {
 
 	@Override
 	public Class[] getAdapterList() {
-		return new Class[]{ IOpenable.class };
+		return new Class[] { IOpenable.class };
 	}
 
 

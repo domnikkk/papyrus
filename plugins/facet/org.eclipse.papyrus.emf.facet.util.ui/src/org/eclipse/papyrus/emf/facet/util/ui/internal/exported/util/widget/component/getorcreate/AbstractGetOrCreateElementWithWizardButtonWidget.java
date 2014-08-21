@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Display;
 /**
  * Has the same goal than {@link AbstractGetOrCreateElementWithButtonWidget} but
  * especially for dialogs.
- * 
+ *
  * @since 0.3
  */
 public abstract class AbstractGetOrCreateElementWithWizardButtonWidget<T extends Object, W extends IExtendedWizard>
@@ -58,7 +58,7 @@ public abstract class AbstractGetOrCreateElementWithWizardButtonWidget<T extends
 
 	/**
 	 * Create the wizard for the selection of the type.
-	 * 
+	 *
 	 * @return the wizard.
 	 */
 	protected abstract W createIWizard();
@@ -66,7 +66,7 @@ public abstract class AbstractGetOrCreateElementWithWizardButtonWidget<T extends
 	/**
 	 * Action to do when the dialog opened with the button "..." is closed with
 	 * the "Ok" button.
-	 * 
+	 *
 	 * @param selectETypeDialog
 	 */
 	protected abstract void onWizardCommited(W wizard);

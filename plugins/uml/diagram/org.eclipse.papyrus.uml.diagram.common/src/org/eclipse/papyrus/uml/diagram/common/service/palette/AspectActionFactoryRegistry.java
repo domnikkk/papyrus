@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,11 +59,11 @@ public class AspectActionFactoryRegistry {
 
 	/**
 	 * Returns the singleton instance of this registry
-	 * 
+	 *
 	 * @return the singleton instance of this class
 	 */
 	public static AspectActionFactoryRegistry getInstance() {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new AspectActionFactoryRegistry();
 		}
 		return instance;
@@ -75,7 +75,7 @@ public class AspectActionFactoryRegistry {
 
 	/**
 	 * Returns the list of registered aspect actions
-	 * 
+	 *
 	 * @return the list of registered aspect actions
 	 */
 	public Collection<IAspectActionProvider> getAspectActionFactories() {

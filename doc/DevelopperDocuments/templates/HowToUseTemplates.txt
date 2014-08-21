@@ -16,9 +16,9 @@ Select the place where the file "Papyrus Code Templates.xml" is.
 
 -------------------------------------------------------------------------------
 
---------------------
-! Papyrus Formater !
---------------------
+---------------------
+! Papyrus Formatter !
+---------------------
 
 In Eclipse workbench, select "Window" -> "preferences" 
 
@@ -27,6 +27,21 @@ In the opened window, in the left tree, select:
 
 On the right, click on the button: "Import..."
 
-Select the place where the file "Papyrus Formatter profile.xml" is.
+Select the place where the file "papyrus_formatter.xml" is.
+
+-------------------------------------------------------------------------------
+
+-------------------
+! Papyrus Cleanup !
+-------------------
+
+In Eclipse workbench, select "Window" -> "preferences" 
+
+In the opened window, in the left tree, select:
+"Java" -> "Code Style" -> "Clean Up"
+
+On the right, click on the button: "Import..."
+
+Select the place where the file "papyrus_cleanup.xml" is.
 
 -------------------------------------------------------------------------------

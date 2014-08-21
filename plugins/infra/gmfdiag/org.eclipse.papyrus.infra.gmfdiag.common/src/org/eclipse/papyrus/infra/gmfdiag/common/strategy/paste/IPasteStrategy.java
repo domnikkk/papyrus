@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,59 +27,64 @@ public interface IPasteStrategy extends IStrategy {
 
 	/**
 	 * A user-readable label
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public String getLabel();
 
 	/**
 	 * A user-readable description
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public String getDescription();
 
 	/**
 	 * An image to associate to this strategy
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	@Deprecated
 	public Image getImage();
 
 	/**
 	 * A unique ID for this strategy
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public String getID();
 
 	/**
 	 * The command to be executed when the strategy is applied.
 	 * Should return null if the strategy cannot handle the request.
-	 * 
+	 *
 	 * @param request
-	 *        The drop request
+	 *            The drop request
 	 * @param targetEditPart
-	 *        The target edit part
+	 *            The target edit part
 	 * @return
 	 *         A command, or null if the strategy cannot handle the request
 	 */
-//	public Command getCommand(Request request, EditPart targetEditPart);
+	// public Command getCommand(Request request, EditPart targetEditPart);
 
 	/**
 	 * The default priority for this strategy. Might be overridden by a user
 	 * preference.
-	 * 
+	 *
 	 * @return
 	 * @deprecated The priority mechanism should not be used anymore
 	 */
+	@Override
 	@Deprecated
 	public int getPriority();
 
 	/**
 	 * Get the command for the semantic strategy pasting
-	 * 
+	 *
 	 * @param domain
 	 * @param targetOwner
 	 * @param papyrusClipboard
@@ -89,7 +94,7 @@ public interface IPasteStrategy extends IStrategy {
 
 	/**
 	 * Get the command for the graphical and semantic strategy pasting
-	 * 
+	 *
 	 * @param domain
 	 * @param targetOwner
 	 * @param papyrusClipboard
@@ -100,16 +105,16 @@ public interface IPasteStrategy extends IStrategy {
 
 	/**
 	 * Get the required strategy if one
-	 * 
+	 *
 	 * @return
 	 */
 	public IPasteStrategy dependsOn();
 
 	/**
 	 * Prepare in the clipboard the data required for the pasting strategy
-	 * 
+	 *
 	 * @param papyrusClipboard
-	 * @param list 
+	 * @param list
 	 */
 	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection);
 

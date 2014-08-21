@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.Nattableax
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.EStructuralFeatureAxisImpl#getElement <em>Element</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStructuralFeatureAxis {
@@ -42,7 +42,7 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EStructuralFeatureAxisImpl() {
@@ -62,7 +62,7 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,16 +73,18 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public EStructuralFeature getElement() {
-		if(element != null && element.eIsProxy()) {
-			InternalEObject oldElement = (InternalEObject)element;
-			element = (EStructuralFeature)eResolveProxy(oldElement);
-			if(element != oldElement) {
-				if(eNotificationRequired())
+		if (element != null && element.eIsProxy()) {
+			InternalEObject oldElement = (InternalEObject) element;
+			element = (EStructuralFeature) eResolveProxy(oldElement);
+			if (element != oldElement) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NattableaxisPackage.ESTRUCTURAL_FEATURE_AXIS__ELEMENT, oldElement, element));
+				}
 			}
 		}
 		return element;
@@ -91,7 +93,7 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EStructuralFeature basicGetElement() {
@@ -101,28 +103,31 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setElement(EStructuralFeature newElement) {
 		EStructuralFeature oldElement = element;
 		element = newElement;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.ESTRUCTURAL_FEATURE_AXIS__ELEMENT, oldElement, element));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.ESTRUCTURAL_FEATURE_AXIS__ELEMENT:
-			if(resolve)
+			if (resolve) {
 				return getElement();
+			}
 			return basicGetElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -131,14 +136,14 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.ESTRUCTURAL_FEATURE_AXIS__ELEMENT:
-			setElement((EStructuralFeature)newValue);
+			setElement((EStructuralFeature) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -147,14 +152,14 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.ESTRUCTURAL_FEATURE_AXIS__ELEMENT:
-			setElement((EStructuralFeature)null);
+			setElement((EStructuralFeature) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -163,16 +168,16 @@ public class EStructuralFeatureAxisImpl extends FeatureAxisImpl implements EStru
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.ESTRUCTURAL_FEATURE_AXIS__ELEMENT:
 			return element != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //EStructuralFeatureAxisImpl
+} // EStructuralFeatureAxisImpl

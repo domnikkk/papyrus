@@ -24,7 +24,7 @@ public class CustomBlockPropertyCompositeEditPart extends
 	public CustomBlockPropertyCompositeEditPart(View view) {
 		super(view);
 	}
-	
+
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -43,9 +43,10 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEdgeGraphicalType(EObject domainElement) {
 		String graphicalType = UNDEFINED_TYPE;
-		if(domainElement == null) {
+		if (domainElement == null) {
 			return UNDEFINED_TYPE;
 		}
 		return graphicalType;
@@ -54,9 +55,10 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEdgeGraphicalType(IElementType elementType) {
-		if(elementType instanceof IHintedType) {
-			String semanticHint = ((IHintedType)elementType).getSemanticHint();
+		if (elementType instanceof IHintedType) {
+			String semanticHint = ((IHintedType) elementType).getSemanticHint();
 			return getEdgeGraphicalType(semanticHint);
 		}
 		return UNDEFINED_TYPE;
@@ -65,8 +67,9 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEdgeGraphicalType(String proposedType) {
-		if(isKnownEdgeType(proposedType)) {
+		if (isKnownEdgeType(proposedType)) {
 			return proposedType;
 		}
 		return UNDEFINED_TYPE;
@@ -75,9 +78,10 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getNodeGraphicalType(EObject domainElement, String containerType) {
 		String graphicalType = UNDEFINED_TYPE;
-		if((containerType == null) || (domainElement == null)) {
+		if ((containerType == null) || (domainElement == null)) {
 			return UNDEFINED_TYPE;
 		}
 
@@ -87,9 +91,10 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getNodeGraphicalType(IElementType elementType, String containerType) {
-		if(elementType instanceof IHintedType) {
-			String semanticHint = ((IHintedType)elementType).getSemanticHint();
+		if (elementType instanceof IHintedType) {
+			String semanticHint = ((IHintedType) elementType).getSemanticHint();
 			return getNodeGraphicalType(semanticHint, containerType);
 		}
 
@@ -99,8 +104,9 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getNodeGraphicalType(String proposedType, String containerType) {
-		if(isKnownNodeType(proposedType)) {
+		if (isKnownNodeType(proposedType)) {
 			return proposedType;
 		}
 
@@ -110,6 +116,7 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isKnownEdgeType(String type) {
 		return knownEdges.contains(type);
 	}
@@ -117,6 +124,7 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isKnownNodeType(String type) {
 		return knownNodes.contains(type);
 	}

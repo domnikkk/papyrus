@@ -42,10 +42,8 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETyp
  * This interface allows clients to use the EMF Facet API to get and set the values of virtually
  * added {@link EReference}s and {@link EAttribute}s, and invoke {@link EOperation}s.
  * <p>
- * Derived {@link FacetAttribute}s and {@link FacetReference}s are computed by queries, whereas
- * non-derived {@link FacetAttribute}s and {@link EAttribute}s and {@link EReference}s and
- * {@link FacetReference}s are stored in the serialization {@link Resource} specified in the
- * {@link IFacetManagerFactory} that created this {@link IFacetManager}.
+ * Derived {@link FacetAttribute}s and {@link FacetReference}s are computed by queries, whereas non-derived {@link FacetAttribute}s and {@link EAttribute}s and {@link EReference}s and {@link FacetReference}s are stored in the serialization {@link Resource}
+ * specified in the {@link IFacetManagerFactory} that created this {@link IFacetManager}.
  *
  * @since 0.2
  * @noextend This interface is not intended to be extended by clients.
@@ -73,9 +71,8 @@ public interface IFacetManager {
 			throws FacetManagerException;
 
 	/**
-	 * Set the value of the given {@link EStructuralFeature} on the given
-	 * {@link EObject} to the given {@link Object} value.
-	 * 
+	 * Set the value of the given {@link EStructuralFeature} on the given {@link EObject} to the given {@link Object} value.
+	 *
 	 * @param eObject
 	 *            the model element whose feature must be set
 	 * @param structuralFeature
@@ -85,13 +82,10 @@ public interface IFacetManager {
 	 * @param editingDomain
 	 * @throws FacetManagerException
 	 *             <ul>
-	 *             <li>if the eObject doesn't conform to the Facet of the given
-	 *             attribute (in the case of a FacetAttribute)</li>
-	 *             <li>if the Facet of the given attribute is not applicable to
-	 *             the given eObject (in the case of a FacetAttribute)</li>
+	 *             <li>if the eObject doesn't conform to the Facet of the given attribute (in the case of a FacetAttribute)</li>
+	 *             <li>if the Facet of the given attribute is not applicable to the given eObject (in the case of a FacetAttribute)</li>
 	 *             <li>
-	 *             if there is an error evaluating the Facet's conformance typed
-	 *             element</li>
+	 *             if there is an error evaluating the Facet's conformance typed element</li>
 	 *             </ul>
 	 */
 	void set(EObject eObject, EStructuralFeature structuralFeature,
@@ -101,7 +95,7 @@ public interface IFacetManager {
 	/**
 	 * Evaluate the given {@link EOperation} of the given {@link EObject}. The
 	 * returned value has to be of the given expectedType {@link Class}
-	 * 
+	 *
 	 * @param eObject
 	 *            the model element on which the operation is evaluated
 	 * @param operation
@@ -118,19 +112,12 @@ public interface IFacetManager {
 	 * @throws FacetManagerException
 	 *             <ul>
 	 *             <li>if the effective type does not match the expected type</li>
-	 *             <li>in case of an error in the query that returns the value
-	 *             (can only happen in the case of a FacetOperation)</li>
-	 *             <li>in case of an error when delegating to the Ecore
-	 *             reflexive API (if the given EOperation is not a
-	 *             FacetOperation)</li>
-	 *             <li>if the eObject doesn't conform to the Facet of the given
-	 *             operation (in the case of a FacetOperation)</li>
-	 *             <li>if the Facet of the given operation is not applicable to
-	 *             the given eObject (in the case of a FacetOperation)</li>
-	 *             <li>if there is an error evaluating the Facet's conformance
-	 *             typed element</li>
-	 *             <li>if the given actual parameters don't match the
-	 *             EOperation's formal parameters</li>
+	 *             <li>in case of an error in the query that returns the value (can only happen in the case of a FacetOperation)</li>
+	 *             <li>in case of an error when delegating to the Ecore reflexive API (if the given EOperation is not a FacetOperation)</li>
+	 *             <li>if the eObject doesn't conform to the Facet of the given operation (in the case of a FacetOperation)</li>
+	 *             <li>if the Facet of the given operation is not applicable to the given eObject (in the case of a FacetOperation)</li>
+	 *             <li>if there is an error evaluating the Facet's conformance typed element</li>
+	 *             <li>if the given actual parameters don't match the EOperation's formal parameters</li>
 	 *             </ul>
 	 */
 	<T> T invoke(EObject eObject, EOperation operation,
@@ -140,7 +127,7 @@ public interface IFacetManager {
 	/**
 	 * Invoke the given {@link EOperation} on each element of the given
 	 * collection of {@link EObject}s.
-	 * 
+	 *
 	 * @param eObjects
 	 *            the model elements on which the operation is evaluated
 	 * @param operation
@@ -149,27 +136,23 @@ public interface IFacetManager {
 	 *            the values of the parameters of the EOperation that is
 	 *            evaluated: they must match both in size, types and
 	 *            multiplicity
-	 * @return the list of results, one for each model element of the given
-	 *         <code>eObjects</code>
+	 * @return the list of results, one for each model element of the given <code>eObjects</code>
 	 * @throws FacetManagerException
 	 *             <ul>
-	 *             <li>in case of an error when delegating to the Ecore
-	 *             reflexive API (if the given EOperation is not a
-	 *             FacetOperation)</li>
+	 *             <li>in case of an error when delegating to the Ecore reflexive API (if the given EOperation is not a FacetOperation)</li>
 	 *             <li>
-	 *             in case of an error in the derived typed element that returns
-	 *             the value</li>
+	 *             in case of an error in the derived typed element that returns the value</li>
 	 *             </ul>
 	 */
 	List<ETypedElementResult> batchInvoke(Collection<EObject> eObjects,
 			EOperation operation, Object... arguments)
 			throws FacetManagerException;
-	
+
 	/**
 	 * This method returns the list of loaded facet sets.
-	 * 
+	 *
 	 * @return a modifiable list of all FacetSets that
-	 *  constitute the working context of the FacetManager
+	 *         constitute the working context of the FacetManager
 	 */
 	List<FacetSet> getManagedFacetSets();
 
@@ -181,14 +164,14 @@ public interface IFacetManager {
 
 	<T> List<T> getOrInvokeMultiValued(EObject eObject, ETypedElement feature,
 			Class<T> aClass) throws FacetManagerException;
-	
+
 	<T> List<ETypedElementResult> batchGetOrInvoke(Collection<EObject> sources,
 			ETypedElement query, Class<T> aClass) throws FacetManagerException;
-	
+
 	/**
 	 * Get virtual references from an EObject. References must be defined in a
 	 * FacetSet
-	 * 
+	 *
 	 * @param eObject
 	 *            Model element
 	 * @return All not duplicated virtual references
@@ -200,7 +183,7 @@ public interface IFacetManager {
 	/**
 	 * Get virtual attributes from an EObject. References must be defined in a
 	 * FacetSet
-	 * 
+	 *
 	 * @param eObject
 	 *            Model element
 	 * @return All not duplicated virtual attributes
@@ -212,7 +195,7 @@ public interface IFacetManager {
 	/**
 	 * Get virtual references and attributes from an EObject. References must be
 	 * defined in a FacetSet
-	 * 
+	 *
 	 * @param eObject
 	 *            Model element
 	 * @return All not duplicated virtual references and attributes
@@ -221,11 +204,11 @@ public interface IFacetManager {
 	 */
 	Set<EStructuralFeature> getStructuralFeature(EObject eObject)
 			throws FacetManagerException;
-	
+
 	/**
 	 * Adds a listener to this manager that will be notified when this manager's
 	 * state changes.
-	 * 
+	 *
 	 * @param listener
 	 *            The listener to be added
 	 * @since 0.4
@@ -234,7 +217,7 @@ public interface IFacetManager {
 
 	/**
 	 * Removes a listener from this manager.
-	 * 
+	 *
 	 * @param listener
 	 *            The listener to be removed
 	 * @since 0.4

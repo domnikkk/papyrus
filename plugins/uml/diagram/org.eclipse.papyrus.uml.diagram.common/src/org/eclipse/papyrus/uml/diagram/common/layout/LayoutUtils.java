@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,8 +35,8 @@ import org.eclipse.papyrus.uml.diagram.common.util.Util;
 
 /**
  * This class provides utilities for the layout actions
- * 
- * 
+ *
+ *
  */
 public class LayoutUtils {
 
@@ -81,16 +81,16 @@ public class LayoutUtils {
 	public static final double scrollBarSize = 6;
 
 	/**
-	 * 
+	 *
 	 * A {@link Rectangle} with the absolute position from the {@link EditPart}
-	 * 
+	 *
 	 * @param ep
-	 *        the {@link EditPart} that we want the position
+	 *            the {@link EditPart} that we want the position
 	 * @return a {@link Rectangle} with the absolute position from the {@link EditPart}
-	 * 
+	 *
 	 */
 	public static PrecisionRectangle getAbsolutePosition(EditPart ep) {
-		GraphicalEditPart part = (GraphicalEditPart)ep;
+		GraphicalEditPart part = (GraphicalEditPart) ep;
 		PrecisionRectangle rect = new PrecisionRectangle(part.getFigure().getBounds());
 		part.getFigure().translateToAbsolute(rect);
 		return rect;
@@ -98,12 +98,12 @@ public class LayoutUtils {
 
 	/**
 	 * Returns the side on which the anchor is on the {@link EditPart}
-	 * 
+	 *
 	 * @param node
-	 *        the node where is located the anchor
+	 *            the node where is located the anchor
 	 * @param anchor
-	 *        the anchor. the anchor must in absolute coordinate before call
-	 *        this method.
+	 *            the anchor. the anchor must in absolute coordinate before call
+	 *            this method.
 	 * @return the side on which the anchor is on the {@link EditPart} The
 	 *         returned values can be :
 	 *         <ul>
@@ -131,66 +131,66 @@ public class LayoutUtils {
 		PrecisionRectangle bounds = LayoutUtils.getAbsolutePosition(node);
 
 		// we are not on EAST, not on WEST, but we are on the NORTH
-		if((anchor.y == bounds.y) && (anchor.x != bounds.x) && (anchor.x != bounds.getRight().x)) {
+		if ((anchor.y == bounds.y) && (anchor.x != bounds.x) && (anchor.x != bounds.getRight().x)) {
 			position = PositionConstants.NORTH;
 
 			// we are not on the EAST and not on the WEST, but we are on the
 			// SOUTH
-		} else if((anchor.y == bounds.getBottom().y) && (anchor.x != bounds.x) && (anchor.x != bounds.getRight().x)) {
+		} else if ((anchor.y == bounds.getBottom().y) && (anchor.x != bounds.x) && (anchor.x != bounds.getRight().x)) {
 			position = PositionConstants.SOUTH;
 
 			// we are on the EAST, but we are not on the NORTH and not on the
 			// SOUTH
-		} else if((anchor.x == bounds.getRight().x) && (anchor.y != bounds.y) && (anchor.y != bounds.getBottom().y)) {
+		} else if ((anchor.x == bounds.getRight().x) && (anchor.y != bounds.y) && (anchor.y != bounds.getBottom().y)) {
 			position = PositionConstants.EAST;
 
 			// we are on the WEST, but we are not on the on the NORTH and not on
 			// the SOUTH
-		} else if((anchor.x == bounds.x) && (anchor.y != bounds.getTop().y) && (anchor.y != bounds.getBottom().y)) {
+		} else if ((anchor.x == bounds.x) && (anchor.y != bounds.getTop().y) && (anchor.y != bounds.getBottom().y)) {
 			position = PositionConstants.WEST;
 
 			// we are on the NORTH and on the EAST
-		} else if(anchor.equals(bounds.getLeft())) {
+		} else if (anchor.equals(bounds.getLeft())) {
 			position = PositionConstants.NORTH_EAST;
 
 			// we are on the NORTH and on the WEST
-		} else if(anchor.equals(bounds.getRight())) {
+		} else if (anchor.equals(bounds.getRight())) {
 			position = PositionConstants.NORTH_WEST;
 
 			// we are on the EAST and on the SOUTH
-		} else if(anchor.equals(bounds.getBottomRight())) {
+		} else if (anchor.equals(bounds.getBottomRight())) {
 			position = PositionConstants.SOUTH_EAST;
 
 			// we are on the WEST and on the SOUTH
-		} else if(anchor.equals(bounds.getBottomLeft())) {
+		} else if (anchor.equals(bounds.getBottomLeft())) {
 			position = PositionConstants.SOUTH_WEST;
 		}
 
-		if(position == PositionConstants.NONE) {// the figure is not a
-												// rectangle
-			if(node instanceof ShapeEditPart) {
-				for(Object obj : node.getChildren()) {
-					if(obj instanceof CompartmentEditPart && position == PositionConstants.NONE) {
-						position = getAnchorPosition((EditPart)obj, anchor);
+		if (position == PositionConstants.NONE) {// the figure is not a
+													// rectangle
+			if (node instanceof ShapeEditPart) {
+				for (Object obj : node.getChildren()) {
+					if (obj instanceof CompartmentEditPart && position == PositionConstants.NONE) {
+						position = getAnchorPosition((EditPart) obj, anchor);
 					}
 				}
-				if(position == PositionConstants.NONE) {// the figure is not a
-														// rectangle
-					IFigure figure = ((ShapeEditPart)node).getFigure();
-					if(figure instanceof IOvalAnchorableFigure) {
-						Rectangle bounds2 = ((IOvalAnchorableFigure)figure).getOvalBounds().getCopy();
+				if (position == PositionConstants.NONE) {// the figure is not a
+															// rectangle
+					IFigure figure = ((ShapeEditPart) node).getFigure();
+					if (figure instanceof IOvalAnchorableFigure) {
+						Rectangle bounds2 = ((IOvalAnchorableFigure) figure).getOvalBounds().getCopy();
 						figure.translateToAbsolute(bounds2);
 						Rectangle northWestBounds = new Rectangle(bounds2.x, bounds2.y, bounds2.width / 2, bounds2.height / 2);
 						Rectangle southWestBounds = new Rectangle(bounds2.getLeft().x, bounds2.getLeft().y, bounds2.width / 2, bounds2.height / 2);
 						Rectangle northEAstBounds = new Rectangle(bounds2.getTop().x, bounds2.getTop().y, bounds2.width / 2, bounds2.height / 2);
 						Rectangle southEAstBounds = new Rectangle(bounds2.getTop().x, bounds2.getLeft().y, bounds2.width / 2, bounds2.height / 2);
-						if(northEAstBounds.contains(anchor)) {
+						if (northEAstBounds.contains(anchor)) {
 							return PositionConstants.NORTH_EAST;
-						} else if(southEAstBounds.contains(anchor)) {
+						} else if (southEAstBounds.contains(anchor)) {
 							return PositionConstants.SOUTH_EAST;
-						} else if(southWestBounds.contains(anchor)) {
+						} else if (southWestBounds.contains(anchor)) {
 							return PositionConstants.SOUTH_WEST;
-						} else if(northWestBounds.contains(anchor)) {
+						} else if (northWestBounds.contains(anchor)) {
 							return PositionConstants.NORTH_WEST;
 						}
 					}
@@ -218,7 +218,7 @@ public class LayoutUtils {
 
 	private static List<Integer> fillList(int[] array) {
 		List<Integer> list = new ArrayList<Integer>();
-		for(int i = 0; i < array.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			list.add(new Integer(array[i]));
 		}
 		return list;
@@ -232,14 +232,14 @@ public class LayoutUtils {
 	 * <li>An EditPart is included in the other</li>
 	 * <li>An EditPart intersects a part of the other : we calculate nothing</li>
 	 * </ul>
-	 * 
+	 *
 	 * Moreover this method includes a specific algorithm when the EditPart is
 	 * an Affixed Child Node
-	 * 
+	 *
 	 * @param sourceEditPart
-	 *        he source EditPart
+	 *            he source EditPart
 	 * @param targetEditPart
-	 *        the targetEditPart
+	 *            the targetEditPart
 	 * @return <ul>
 	 *         <li>Point[0] is the source Anchor</li>
 	 *         <li>Point[1] is the target Anchor</li>
@@ -252,68 +252,68 @@ public class LayoutUtils {
 		PrecisionRectangle sourceBounds = getAbsolutePosition(sourceEditPart);
 		PrecisionRectangle targetBounds = getAbsolutePosition(targetEditPart);
 		EditPart diagramEP = sourceEditPart;
-		while(!(diagramEP instanceof DiagramEditPart)) {
+		while (!(diagramEP instanceof DiagramEditPart)) {
 			diagramEP = diagramEP.getParent();
 		}
 		PrecisionRectangle diagramBounds = getAbsolutePosition(diagramEP);
 
-		if(!sourceBounds.intersects(targetBounds)) {
+		if (!sourceBounds.intersects(targetBounds)) {
 			/*
 			 * there is no intersection between the 2 EditParts we look for the
 			 * position of targetEditPart/sourceEditPart
 			 */
 			targetPosition = getRelativePositionFor(sourceBounds, targetBounds, diagramBounds);
 			// calculate source location
-			if(!Util.isAffixedChildNode(sourceEditPart)) {
-				switch(targetPosition) {
+			if (!Util.isAffixedChildNode(sourceEditPart)) {
+				switch (targetPosition) {
 				case PositionConstants.NORTH:// 1
 					sourceLocation = sourceBounds.getTop();
-					if(sourceBounds.preciseX() >= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
+					if (sourceBounds.preciseX() >= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
 						// nothing to do
-					} else if(sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() >= targetBounds.getRight().preciseX()) {
-						sourceLocation.x = (int)targetBounds.getBottom().preciseX();
-					} else if(sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
-						sourceLocation.x = (int)(((targetBounds.preciseX() + sourceBounds.getRight().preciseX()) / 2));
+					} else if (sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() >= targetBounds.getRight().preciseX()) {
+						sourceLocation.x = (int) targetBounds.getBottom().preciseX();
+					} else if (sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
+						sourceLocation.x = (int) (((targetBounds.preciseX() + sourceBounds.getRight().preciseX()) / 2));
 					} else {
-						sourceLocation.x = (int)(((sourceBounds.preciseX() + targetBounds.getRight().preciseX()) / 2));
+						sourceLocation.x = (int) (((sourceBounds.preciseX() + targetBounds.getRight().preciseX()) / 2));
 					}
 					break;
 				case PositionConstants.SOUTH:// 4
 					sourceLocation = sourceBounds.getBottom();
-					if(sourceBounds.preciseX() >= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
+					if (sourceBounds.preciseX() >= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
 						// nothing to do
-					} else if(sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() >= targetBounds.getRight().preciseX()) {
-						sourceLocation.x = (int)targetBounds.getBottom().preciseX();
-					} else if(sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
-						sourceLocation.x = (int)(((targetBounds.preciseX() + sourceBounds.getRight().preciseX()) / 2));
+					} else if (sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() >= targetBounds.getRight().preciseX()) {
+						sourceLocation.x = (int) targetBounds.getBottom().preciseX();
+					} else if (sourceBounds.preciseX() <= targetBounds.preciseX() && sourceBounds.getRight().preciseX() <= targetBounds.getRight().preciseX()) {
+						sourceLocation.x = (int) (((targetBounds.preciseX() + sourceBounds.getRight().preciseX()) / 2));
 					} else {
-						sourceLocation.x = (int)(((sourceBounds.preciseX() + targetBounds.getRight().preciseX()) / 2));
+						sourceLocation.x = (int) (((sourceBounds.preciseX() + targetBounds.getRight().preciseX()) / 2));
 					}
 					// sourceLocation = sourceBounds.getBottom();
 					break;
 				case PositionConstants.EAST:// 16
 					sourceLocation = sourceBounds.getRight();
-					if(sourceBounds.preciseY() >= targetBounds.preciseY() && sourceBounds.getBottom().preciseY() <= targetBounds.getBottom().preciseY()) {
+					if (sourceBounds.preciseY() >= targetBounds.preciseY() && sourceBounds.getBottom().preciseY() <= targetBounds.getBottom().preciseY()) {
 						// nothing to do
-					} else if(sourceBounds.preciseY() <= targetBounds.preciseY() && sourceBounds.getBottom().preciseY() >= targetBounds.getBottom().preciseY()) {
-						sourceLocation.y = (int)targetBounds.getLeft().preciseY();
-					} else if(sourceBounds.preciseY() >= targetBounds.preciseY() && sourceBounds.getBottom().preciseY() >= targetBounds.getBottom().preciseY()) {
-						sourceLocation.y = (int)((targetBounds.getBottom().preciseY() + sourceBounds.preciseY()) / 2);
+					} else if (sourceBounds.preciseY() <= targetBounds.preciseY() && sourceBounds.getBottom().preciseY() >= targetBounds.getBottom().preciseY()) {
+						sourceLocation.y = (int) targetBounds.getLeft().preciseY();
+					} else if (sourceBounds.preciseY() >= targetBounds.preciseY() && sourceBounds.getBottom().preciseY() >= targetBounds.getBottom().preciseY()) {
+						sourceLocation.y = (int) ((targetBounds.getBottom().preciseY() + sourceBounds.preciseY()) / 2);
 					} else {
-						sourceLocation.y = (int)((sourceBounds.getBottom().preciseY() + targetBounds.preciseY()) / 2);
+						sourceLocation.y = (int) ((sourceBounds.getBottom().preciseY() + targetBounds.preciseY()) / 2);
 					}
 					// sourceLocation = sourceBounds.getRight();
 					break;
 				case PositionConstants.WEST:// 8
 					sourceLocation = sourceBounds.getLeft();
-					if(sourceBounds.preciseY() > targetBounds.preciseY() && sourceBounds.getBottom().preciseY() < targetBounds.getBottom().preciseY()) {
+					if (sourceBounds.preciseY() > targetBounds.preciseY() && sourceBounds.getBottom().preciseY() < targetBounds.getBottom().preciseY()) {
 						// nothing to do
-					} else if(sourceBounds.preciseY() < targetBounds.preciseY() && sourceBounds.getBottom().preciseY() > targetBounds.getBottom().preciseY()) {
-						sourceLocation.y = (int)targetBounds.getLeft().preciseY();
-					} else if(sourceBounds.preciseY() > targetBounds.preciseY() && sourceBounds.getBottom().preciseY() > targetBounds.getBottom().preciseY()) {
-						sourceLocation.y = (int)((targetBounds.getBottom().preciseY() + sourceBounds.preciseY()) / 2);
+					} else if (sourceBounds.preciseY() < targetBounds.preciseY() && sourceBounds.getBottom().preciseY() > targetBounds.getBottom().preciseY()) {
+						sourceLocation.y = (int) targetBounds.getLeft().preciseY();
+					} else if (sourceBounds.preciseY() > targetBounds.preciseY() && sourceBounds.getBottom().preciseY() > targetBounds.getBottom().preciseY()) {
+						sourceLocation.y = (int) ((targetBounds.getBottom().preciseY() + sourceBounds.preciseY()) / 2);
 					} else {
-						sourceLocation.y = (int)((sourceBounds.getBottom().preciseY() + targetBounds.preciseY()) / 2);
+						sourceLocation.y = (int) ((sourceBounds.getBottom().preciseY() + targetBounds.preciseY()) / 2);
 					}
 					// sourceLocation = sourceBounds.getLeft();
 					break;
@@ -333,9 +333,9 @@ public class LayoutUtils {
 					break;
 				}
 			} else {
-				IBorderItemLocator loc = ((IBorderItemEditPart)sourceEditPart).getBorderItemLocator();
+				IBorderItemLocator loc = ((IBorderItemEditPart) sourceEditPart).getBorderItemLocator();
 				int side = loc.getCurrentSideOfParent();
-				switch(targetPosition) {
+				switch (targetPosition) {
 				case PositionConstants.NORTH:// 1
 					sourceLocation = sourceBounds.getTop();
 					break;
@@ -349,36 +349,36 @@ public class LayoutUtils {
 					sourceLocation = sourceBounds.getLeft();
 					break;
 				case PositionConstants.NORTH_EAST:// 17
-					if(eastPositions.contains(new Integer(side))) {
+					if (eastPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getRight();
-					} else if(westPositions.contains(new Integer(side))) {
+					} else if (westPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getRight();
 					} else {// side is NORTH or SOUTH
 						sourceLocation = sourceBounds.getTop();
 					}
 					break;
 				case PositionConstants.NORTH_WEST:// 9
-					if(eastPositions.contains(new Integer(side))) {
+					if (eastPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getLeft();
-					} else if(westPositions.contains(new Integer(side))) {
+					} else if (westPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getLeft();
 					} else {// side is NORTH or SOUTH
 						sourceLocation = sourceBounds.getTop();
 					}
 					break;
 				case PositionConstants.SOUTH_EAST:// 20
-					if(northPositions.contains(new Integer(side))) {
+					if (northPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getBottom();
-					} else if(southPositions.contains(new Integer(side))) {
+					} else if (southPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getBottom();
 					} else {// SIDE is EAST or WEST
 						sourceLocation = sourceBounds.getRight();
 					}
 					break;
 				case PositionConstants.SOUTH_WEST:// 12
-					if(northPositions.contains(new Integer(side))) {
+					if (northPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getBottom();
-					} else if(southPositions.contains(new Integer(side))) {
+					} else if (southPositions.contains(new Integer(side))) {
 						sourceLocation = sourceBounds.getBottom();
 					} else {// SIDE is EAST or WEST
 						sourceLocation = sourceBounds.getLeft();
@@ -390,22 +390,22 @@ public class LayoutUtils {
 			}
 
 			// calculate target location
-			if(!Util.isAffixedChildNode(targetEditPart)) {
-				switch(targetPosition) {
+			if (!Util.isAffixedChildNode(targetEditPart)) {
+				switch (targetPosition) {
 				case PositionConstants.NORTH:// 1
-					targetLocation.setLocation(sourceLocation.x, (int)targetBounds.getBottom().preciseY());
+					targetLocation.setLocation(sourceLocation.x, (int) targetBounds.getBottom().preciseY());
 					// targetLocation = targetBounds.getBottom();
 					break;
 				case PositionConstants.SOUTH:// 4
-					targetLocation.setLocation(sourceLocation.x, (int)targetBounds.getTop().preciseY());
+					targetLocation.setLocation(sourceLocation.x, (int) targetBounds.getTop().preciseY());
 					// targetLocation = targetBounds.getTop();
 					break;
 				case PositionConstants.EAST:// 16
-					targetLocation.setLocation((int)targetBounds.preciseX(), (int)sourceLocation.preciseY());
+					targetLocation.setLocation((int) targetBounds.preciseX(), (int) sourceLocation.preciseY());
 					// targetLocation = targetBounds.getLeft();
 					break;
 				case PositionConstants.WEST:// 8
-					targetLocation.setLocation((int)targetBounds.preciseX(), (int)sourceLocation.preciseY());
+					targetLocation.setLocation((int) targetBounds.preciseX(), (int) sourceLocation.preciseY());
 					// targetLocation = targetBounds.getRight();
 					break;
 				case PositionConstants.NORTH_EAST:// 17
@@ -424,9 +424,9 @@ public class LayoutUtils {
 					break;
 				}
 			} else {
-				IBorderItemLocator loc = ((IBorderItemEditPart)targetEditPart).getBorderItemLocator();
+				IBorderItemLocator loc = ((IBorderItemEditPart) targetEditPart).getBorderItemLocator();
 				int side = loc.getCurrentSideOfParent();
-				switch(targetPosition) {
+				switch (targetPosition) {
 				case PositionConstants.NORTH:// 1
 					targetLocation = targetBounds.getBottom();
 					break;
@@ -440,36 +440,36 @@ public class LayoutUtils {
 					targetLocation = targetBounds.getRight();
 					break;
 				case PositionConstants.NORTH_EAST:// 17
-					if(eastPositions.contains(new Integer(side))) {
+					if (eastPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getRight();
-					} else if(westPositions.contains(new Integer(side))) {
+					} else if (westPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getRight();
 					} else {
 						targetLocation = targetBounds.getTop();
 					}
 					break;
 				case PositionConstants.NORTH_WEST:// 9
-					if(eastPositions.contains(new Integer(side))) {
+					if (eastPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getLeft();
-					} else if(westPositions.contains(new Integer(side))) {
+					} else if (westPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getLeft();
 					} else {
 						targetLocation = targetBounds.getTop();
 					}
 					break;
 				case PositionConstants.SOUTH_EAST:// 20
-					if(northPositions.contains(new Integer(side))) {
+					if (northPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getTop();
-					} else if(southPositions.contains(new Integer(side))) {
+					} else if (southPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getTop();
 					} else {
 						targetLocation = targetBounds.getLeft();
 					}
 					break;
 				case PositionConstants.SOUTH_WEST:// 12
-					if(northPositions.contains(new Integer(side))) {
+					if (northPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getTop();
-					} else if(southPositions.contains(new Integer(side))) {
+					} else if (southPositions.contains(new Integer(side))) {
 						targetLocation = targetBounds.getTop();
 					} else {
 						targetLocation = targetBounds.getRight();
@@ -483,12 +483,12 @@ public class LayoutUtils {
 		} else {
 			// source and target intersect them
 			// test if one editpart is included in other
-			if(sourceBounds.contains(targetBounds)) {
-				sourceLocation.setLocation((int)targetBounds.getBottom().preciseX(), (int)sourceBounds.getBottom().preciseY());
+			if (sourceBounds.contains(targetBounds)) {
+				sourceLocation.setLocation((int) targetBounds.getBottom().preciseX(), (int) sourceBounds.getBottom().preciseY());
 				targetLocation = targetBounds.getBottom();
-			} else if(targetBounds.contains(sourceBounds)) {
+			} else if (targetBounds.contains(sourceBounds)) {
 				sourceLocation = sourceBounds.getBottom();
-				targetLocation.setLocation((int)sourceBounds.getBottom().preciseX(), (int)targetBounds.getBottom().preciseY());
+				targetLocation.setLocation((int) sourceBounds.getBottom().preciseX(), (int) targetBounds.getBottom().preciseY());
 			} else {
 				Rectangle rect = new Rectangle(sourceBounds);
 				Rectangle intersection = rect.getCopy().intersect(targetBounds);
@@ -497,16 +497,16 @@ public class LayoutUtils {
 			}
 		}
 		// return new Point[]{ new Point(), new Point() };
-		return new Point[]{ sourceLocation, targetLocation };
+		return new Point[] { sourceLocation, targetLocation };
 	}
 
 	/**
 	 * Return the Position of rect compared with reference
-	 * 
+	 *
 	 * @param reference
-	 *        the reference
+	 *            the reference
 	 * @param rect
-	 *        another rectangle
+	 *            another rectangle
 	 * @return the position of rect compared with reference Returned values can
 	 *         be :
 	 *         <ul>
@@ -544,7 +544,7 @@ public class LayoutUtils {
 		pos.setY(0);
 		pos.setHeight(reference.preciseY());
 		pos.setWidth(reference.preciseWidth());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.NORTH;// 1
 		}
 		// SOUTH
@@ -552,7 +552,7 @@ public class LayoutUtils {
 		pos.setY(reference.getBottom().preciseY());
 		pos.setHeight(diagramBounds.preciseHeight() - reference.getBottom().preciseY());
 		pos.setWidth(reference.preciseWidth());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.SOUTH;// 4
 		}
 		// EAST
@@ -560,7 +560,7 @@ public class LayoutUtils {
 		pos.setY(reference.getTop().preciseY());
 		pos.setHeight(reference.preciseHeight());
 		pos.setWidth(diagramBounds.preciseWidth() - reference.getLeft().preciseY());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.EAST;// 16
 		}
 
@@ -569,7 +569,7 @@ public class LayoutUtils {
 		pos.setY(reference.preciseY());
 		pos.setHeight(reference.preciseHeight());
 		pos.setWidth(reference.preciseX());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.WEST;// 8
 		}
 
@@ -598,7 +598,7 @@ public class LayoutUtils {
 		pos.setY(0);
 		pos.setHeight(reference.getRight().preciseY());
 		pos.setWidth(diagramBounds.preciseWidth() - reference.getTop().preciseX());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.NORTH_EAST;// 17
 		}
 		// NORTH_WEST
@@ -607,7 +607,7 @@ public class LayoutUtils {
 		pos.setY(0);
 		pos.setHeight(reference.getLeft().preciseY());
 		pos.setWidth(reference.getTop().preciseX());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.NORTH_WEST;// 9
 		}
 
@@ -617,7 +617,7 @@ public class LayoutUtils {
 		pos.setY(reference.getRight().preciseY());
 		pos.setHeight(diagramBounds.preciseHeight() - reference.getRight().preciseY());
 		pos.setWidth(diagramBounds.preciseWidth() - reference.getBottom().preciseX());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.SOUTH_EAST;// 20
 		}
 
@@ -627,7 +627,7 @@ public class LayoutUtils {
 		pos.setY(reference.getLeft().preciseY());
 		pos.setHeight(diagramBounds.preciseHeight() - reference.getLeft().preciseY());
 		pos.setWidth(reference.getBottom().preciseX());
-		if(pos.intersects(rect)) {
+		if (pos.intersects(rect)) {
 			return PositionConstants.SOUTH_WEST;// 12
 		}
 

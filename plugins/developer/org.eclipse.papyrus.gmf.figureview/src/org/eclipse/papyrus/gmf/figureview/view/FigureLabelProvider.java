@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Ansgar Radermacher (CEA LIST) ansgar.radermacher@cea.fr - Initial API and implementation
  *  Based on edit policy view from patrick.tessier@cea.fr
- *  
+ *
  */
 package org.eclipse.papyrus.gmf.figureview.view;
 
@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * This is the label provider to display figures
- * 
+ *
  */
 public class FigureLabelProvider implements ITableLabelProvider, ITableColorProvider {
 
@@ -36,27 +36,32 @@ public class FigureLabelProvider implements ITableLabelProvider, ITableColorProv
 
 	protected Color customizableDropEditPolicyColor = new Color(Display.getDefault(), 0, 38, 255);
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
+	@Override
 	public void dispose() {
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
-		if(element instanceof IFigure) {
-			IFigure figure = (IFigure)element;
-			switch(columnIndex) {
+		if (element instanceof IFigure) {
+			IFigure figure = (IFigure) element;
+			switch (columnIndex) {
 			case 0:
 				String name = figure.getClass().getName();
 				int index = name.lastIndexOf("."); //$NON-NLS-1$
-				if(index == -1) {
+				if (index == -1) {
 					return name;
 				}
 				else {
@@ -65,14 +70,14 @@ public class FigureLabelProvider implements ITableLabelProvider, ITableColorProv
 			case 1:
 				return figure.getBounds().toString();
 			case 2:
-				if(figure.getLayoutManager() != null) {
+				if (figure.getLayoutManager() != null) {
 					return figure.getLayoutManager().getClass().getSimpleName();
 				}
 				else {
 					return "none"; //$NON-NLS-1$
 				}
 			case 3:
-				if(figure.getBorder() != null) {
+				if (figure.getBorder() != null) {
 					String borderInfo = figure.getBorder().getClass().getSimpleName();
 					if (figure.getBorder() instanceof LineBorder) {
 						borderInfo += String.format(" (%d)", ((LineBorder) figure.getBorder()).getWidth()); //$NON-NLS-1$
@@ -97,15 +102,18 @@ public class FigureLabelProvider implements ITableLabelProvider, ITableColorProv
 		return "cannot display element: " + element; //$NON-NLS-1$
 	}
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		return null;
 	}
 
+	@Override
 	public Color getForeground(Object element, int columnIndex) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public Color getBackground(Object element, int columnIndex) {
 		// TODO Auto-generated method stub
 		return null;

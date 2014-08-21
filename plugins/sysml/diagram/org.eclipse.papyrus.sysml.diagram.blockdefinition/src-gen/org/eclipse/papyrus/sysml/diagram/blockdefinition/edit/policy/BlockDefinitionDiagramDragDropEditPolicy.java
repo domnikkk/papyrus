@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -19,8 +19,9 @@ import org.eclipse.papyrus.gmf.diagram.common.provider.IGraphicalTypeRegistry;
 import org.eclipse.papyrus.sysml.diagram.blockdefinition.provider.GraphicalTypeRegistry;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ClassDiagramDragDropEditPolicy;
 
-/** 
+/**
  * Customization of the DND edit policy for the BlockDefinition Diagram
+ * 
  * @deprecated prefer using {@link CustomDiagramDragDropEditPolicy}.
  */
 @Deprecated
@@ -35,7 +36,7 @@ public class BlockDefinitionDiagramDragDropEditPolicy extends ClassDiagramDragDr
 	@Override
 	public int getNodeVisualID(View containerView, EObject domainElement) {
 		String domainType = registry.getNodeGraphicalType(domainElement, containerView.getType());
-		if(IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
+		if (org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
 			return -1; // undefined
 		}
 		return new Integer(domainType);
@@ -47,7 +48,7 @@ public class BlockDefinitionDiagramDragDropEditPolicy extends ClassDiagramDragDr
 	@Override
 	public int getLinkWithClassVisualID(EObject domainElement) {
 		String domainType = registry.getEdgeGraphicalType(domainElement);
-		if(IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
+		if (org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE.equals(domainType)) {
 			return -1; // undefined
 		}
 		return new Integer(domainType);

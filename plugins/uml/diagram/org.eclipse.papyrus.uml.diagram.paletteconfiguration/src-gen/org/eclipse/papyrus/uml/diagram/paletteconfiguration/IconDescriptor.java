@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor#getPluginID <em>Plugin ID</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor#getIconPath <em>Icon Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor#getPluginID <em>Plugin ID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor#getIconPath <em>Icon Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public interface IconDescriptor extends EObject {
 	 * <!-- begin-model-doc -->
 	 * ID of the plugin where the icon is located. If not set, the tool will look in the bundle defining the palette.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Plugin ID</em>' attribute.
 	 * @see #setPluginID(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getIconDescriptor_PluginID()
@@ -49,7 +50,9 @@ public interface IconDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor#getPluginID <em>Plugin ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Plugin ID</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Plugin ID</em>' attribute.
 	 * @see #getPluginID()
 	 * @generated
 	 */
@@ -60,8 +63,9 @@ public interface IconDescriptor extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Path of the icon in the bundle. 
+	 * Path of the icon in the bundle.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Icon Path</em>' attribute.
 	 * @see #setIconPath(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getIconDescriptor_IconPath()
@@ -74,7 +78,9 @@ public interface IconDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor#getIconPath <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Icon Path</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Icon Path</em>' attribute.
 	 * @see #getIconPath()
 	 * @generated
 	 */

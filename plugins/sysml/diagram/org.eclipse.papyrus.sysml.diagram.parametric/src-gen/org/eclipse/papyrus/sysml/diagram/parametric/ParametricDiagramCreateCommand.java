@@ -45,10 +45,11 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * Represents a creation command for a SysML parametric diagram
+ * 
  * @author Laurent Wouters
  */
 public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -82,12 +83,12 @@ public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiag
 		Diagram diagram = null;
 
 		if (element instanceof org.eclipse.uml2.uml.Class) {
-			org.eclipse.uml2.uml.Class cOwner = (org.eclipse.uml2.uml.Class)element;
+			org.eclipse.uml2.uml.Class cOwner = (org.eclipse.uml2.uml.Class) element;
 			Block block = UMLUtil.getStereotypeApplication(cOwner, Block.class);
 
-			if(block != null) {
-				canvasDomainElement = (EObject)element;
-				Package owningPackage = ((Element)element).getNearestPackage();
+			if (block != null) {
+				canvasDomainElement = element;
+				Package owningPackage = ((Element) element).getNearestPackage();
 				diagram = super.doCreateDiagram(diagramResource, owner, owningPackage, prototype, name);
 			}
 
@@ -95,18 +96,18 @@ public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiag
 
 			try {
 				canvasDomainElement = null;
-				IEditCommandRequest request = new CreateElementRequest((Package)element, SysMLElementTypes.BLOCK);
+				IEditCommandRequest request = new CreateElementRequest(element, SysMLElementTypes.BLOCK);
 				IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(element);
-				if(commandService == null) {
+				if (commandService == null) {
 					return null;
 				}
 
 				ICommand createElementCommand = commandService.getEditCommand(request);
-				if((createElementCommand != null) && (createElementCommand.canExecute())) {
+				if ((createElementCommand != null) && (createElementCommand.canExecute())) {
 					createElementCommand.execute(new NullProgressMonitor(), null);
 					EObject block = GMFCommandUtils.getCommandEObjectResult(createElementCommand);
 					canvasDomainElement = block;
-					diagram = super.doCreateDiagram(diagramResource, owner, (Package)element, prototype, name);
+					diagram = super.doCreateDiagram(diagramResource, owner, element, prototype, name);
 				}
 
 			} catch (ExecutionException e) {
@@ -138,9 +139,9 @@ public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiag
 	 */
 	@Override
 	protected void initializeDiagram(EObject diagram) {
-		if(diagram instanceof Diagram) {
-			Diagram currentDiagram = (Diagram)diagram;
-			if(canvasDomainElement != null) {
+		if (diagram instanceof Diagram) {
+			Diagram currentDiagram = (Diagram) diagram;
+			if (canvasDomainElement != null) {
 				currentDiagram.setElement(canvasDomainElement);
 				initializeDiagramContent(currentDiagram);
 			}
@@ -149,19 +150,19 @@ public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiag
 
 	/**
 	 * Initialize the diagram with the canvas domain element shown.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram to initialize
+	 *            the diagram to initialize
 	 */
 	protected void initializeDiagramContent(Diagram diagram) {
 
 		// Create a view for the canvasDomainElement in the new diagram
 		View view =
-			ViewService.getInstance().createNode(new SemanticAdapter(canvasDomainElement, null), diagram, SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, ViewUtil.APPEND, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+				ViewService.getInstance().createNode(new SemanticAdapter(canvasDomainElement, null), diagram, SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID, ViewUtil.APPEND, true, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
 		view.setElement(diagram.getElement());
 
 		// Update the view position and size (should adapt to canvas current size)
-		Bounds viewBounds = (Bounds)((Node)view).getLayoutConstraint();
+		Bounds viewBounds = (Bounds) ((Node) view).getLayoutConstraint();
 		viewBounds.setX(DEFAULT_MARGIN);
 		viewBounds.setY(DEFAULT_MARGIN);
 		viewBounds.setHeight(DEFAULT_HEIGHT);
@@ -170,14 +171,14 @@ public class ParametricDiagramCreateCommand extends AbstractPapyrusGmfCreateDiag
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public boolean isParentReassignable() {
-		// Bug 374626: [Model Explorer] Moving an IBD from a block to another block shall be forbidden 
+		// Bug 374626: [Model Explorer] Moving an IBD from a block to another block shall be forbidden
 		return false;
 	}
- 	
- 	// End of user code
+
+	// End of user code
 }

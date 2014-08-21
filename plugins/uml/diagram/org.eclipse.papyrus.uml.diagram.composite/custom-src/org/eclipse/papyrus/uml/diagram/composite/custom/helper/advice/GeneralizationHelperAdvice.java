@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,12 +46,12 @@ public class GeneralizationHelperAdvice extends AbstractEditHelperAdvice {
 		// The list of member views becoming inconsistent after re-orient that should be deleted.
 		Set<View> viewsToDestroy = new HashSet<View>();
 
-		if(request.getRelationship() instanceof Generalization) {
-			viewsToDestroy.addAll(getMemberViewsToDestroy((Generalization)request.getRelationship()));
+		if (request.getRelationship() instanceof Generalization) {
+			viewsToDestroy.addAll(getMemberViewsToDestroy((Generalization) request.getRelationship()));
 		}
 
-		//return the command to destroy all these views
-		if(!viewsToDestroy.isEmpty()) {
+		// return the command to destroy all these views
+		if (!viewsToDestroy.isEmpty()) {
 
 			DestroyDependentsRequest ddr = new DestroyDependentsRequest(request.getEditingDomain(), request.getRelationship(), false);
 			ddr.setClientContext(request.getClientContext());
@@ -69,12 +69,12 @@ public class GeneralizationHelperAdvice extends AbstractEditHelperAdvice {
 
 		Set<View> viewsToDestroy = new HashSet<View>();
 
-		if(destructee instanceof Generalization) {
-			viewsToDestroy = getMemberViewsToDestroy((Generalization)destructee);
+		if (destructee instanceof Generalization) {
+			viewsToDestroy = getMemberViewsToDestroy((Generalization) destructee);
 		}
 
-		//return the command to destroy all these views
-		if(!viewsToDestroy.isEmpty()) {
+		// return the command to destroy all these views
+		if (!viewsToDestroy.isEmpty()) {
 			return request.getDestroyDependentsCommand(viewsToDestroy);
 		}
 		return null;
@@ -83,29 +83,29 @@ public class GeneralizationHelperAdvice extends AbstractEditHelperAdvice {
 	/**
 	 * This methods looks for inconsistent views to delete in case the generalization is deleted or
 	 * re-oriented.
-	 * 
+	 *
 	 * @param generalization
-	 *        the modified generalization
+	 *            the modified generalization
 	 * @return the list of {@link View} to delete
 	 */
 	protected Set<View> getMemberViewsToDestroy(Generalization generalization) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Classifier general = generalization.getGeneral();
-		if(general != null) {
+		if (general != null) {
 
 			// Parse members
 			EList<NamedElement> members = general.getMembers();
-			for(NamedElement member : members) {
+			for (NamedElement member : members) {
 
 				// Find Views in Composite Structure Diagram that are referencing current member
 				Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(member, CompositeStructureDiagramEditPart.MODEL_ID).iterator();
-				while(viewIt.hasNext()) {
+				while (viewIt.hasNext()) {
 					View view = viewIt.next();
 
 					// Test if current view (member) is concerned by the deletion (re-orientation) of the generalization
 					GeneralizationUtil util = new GeneralizationUtil();
-					if(util.isConcernedByGeneralizationChanges(generalization, view)) {
+					if (util.isConcernedByGeneralizationChanges(generalization, view)) {
 						viewsToDestroy.add(view);
 					}
 				}

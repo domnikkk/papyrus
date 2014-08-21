@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 CEA-LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  Vincent Lorenzo (CEA-LIST) - Bug 357621 - Improve the label displayed for Customization and Facets
  *  Gregoire Dupe (Mia-Software) - Bug 357621 - Improve the label displayed for Customization and Facets
@@ -180,8 +180,8 @@ public class ETypedElementSelectionControlManager implements
 		// only select elements that match the filter
 		final List<ETypedElement> filteredSelection = new ArrayList<ETypedElement>();
 		for (ETypedElement typedElement : newSelection) {
-				if (this.availableElements.contains(typedElement)) {
-					filteredSelection.add(typedElement);
+			if (this.availableElements.contains(typedElement)) {
+				filteredSelection.add(typedElement);
 			}
 		}
 		setSelection(new StructuredSelection(filteredSelection));

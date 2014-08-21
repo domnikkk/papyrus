@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor#getElementTypeId <em>Element Type Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor#getGraphicalHints <em>Graphical Hints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor#getElementTypeId <em>Element Type Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor#getGraphicalHints <em>Graphical Hints</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,10 +31,10 @@ public interface ElementDescriptor extends EObject {
 	 * Returns the value of the '<em><b>Element Type Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Element Type Id</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Element Type Id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Element Type Id</em>' attribute.
 	 * @see #setElementTypeId(String)
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getElementDescriptor_ElementTypeId()
@@ -47,7 +47,9 @@ public interface ElementDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor#getElementTypeId <em>Element Type Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Element Type Id</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Element Type Id</em>' attribute.
 	 * @see #getElementTypeId()
 	 * @generated
 	 */
@@ -58,10 +60,10 @@ public interface ElementDescriptor extends EObject {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Graphical Hints</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Graphical Hints</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Graphical Hints</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationPackage#getElementDescriptor_GraphicalHints()
 	 * @model

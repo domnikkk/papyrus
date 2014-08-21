@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -27,7 +27,7 @@ public interface ITreeMenu<T extends Object> {
 
 	/**
 	 * Select a menu item in the tree menu.
-	 * 
+	 *
 	 * @param menuItemType
 	 * @return an instance of T.
 	 */
@@ -35,7 +35,7 @@ public interface ITreeMenu<T extends Object> {
 
 	/**
 	 * Select all the items of the tree with the name <code>treeItemName</code>
-	 * 
+	 *
 	 * @param treeItemName
 	 *            the name of the item to select.
 	 * @return the list of all the tree item with the name in parameter.

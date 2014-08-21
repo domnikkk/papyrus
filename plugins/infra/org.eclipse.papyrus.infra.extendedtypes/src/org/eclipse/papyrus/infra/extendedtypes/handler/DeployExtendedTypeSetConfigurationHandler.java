@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,6 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.papyrus.infra.extendedtypes.Activator;
-import org.eclipse.papyrus.infra.extendedtypes.ElementTypeSetUtils;
 import org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSetRegistry;
 import org.eclipse.papyrus.infra.extendedtypes.preferences.ExtendedTypesPreferences;
 import org.eclipse.swt.widgets.Shell;
@@ -41,7 +40,7 @@ import org.eclipse.ui.statushandlers.StatusManager;
 
 
 /**
- * Handler to deploy new configuration 
+ * Handler to deploy new configuration
  */
 public class DeployExtendedTypeSetConfigurationHandler extends AbstractHandler implements IHandler {
 
@@ -50,11 +49,11 @@ public class DeployExtendedTypeSetConfigurationHandler extends AbstractHandler i
 	 */
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
+		if (!(currentSelection instanceof IStructuredSelection) || currentSelection.isEmpty()) {
 			return null;
 		}
 
-		final IStructuredSelection selection = (IStructuredSelection)currentSelection;
+		final IStructuredSelection selection = (IStructuredSelection) currentSelection;
 
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
 
@@ -75,9 +74,9 @@ public class DeployExtendedTypeSetConfigurationHandler extends AbstractHandler i
 				activeShell.getDisplay().asyncExec(new Runnable() {
 
 					public void run() {
-						if(event.getResult().isOK()) {
+						if (event.getResult().isOK()) {
 							MessageDialog.openInformation(activeShell, "Success", event.getResult().getMessage());
-						} else if(event.getResult().getSeverity() < IStatus.ERROR) { //Errors are already logged
+						} else if (event.getResult().getSeverity() < IStatus.ERROR) { // Errors are already logged
 							StatusManager.getManager().handle(event.getResult(), StatusManager.SHOW);
 						}
 					}
@@ -96,28 +95,28 @@ public class DeployExtendedTypeSetConfigurationHandler extends AbstractHandler i
 
 		MultiStatus result = new MultiStatus(Activator.PLUGIN_ID, IStatus.OK, "The properties view configuration has been successfully deployed and activated", null);
 
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 			Object selectedElement = selectionIterator.next();
-			if(selectedElement instanceof IAdaptable) {
-				IFile selectedFile = (IFile)((IAdaptable)selectedElement).getAdapter(IFile.class);
-				if(selectedFile == null) {
+			if (selectedElement instanceof IAdaptable) {
+				IFile selectedFile = (IFile) ((IAdaptable) selectedElement).getAdapter(IFile.class);
+				if (selectedFile == null) {
 					monitor.worked(1);
 					result.add(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "The selected element is not a file"));
 					continue;
 				}
 
-				
+
 				String fileName = selectedFile.getFullPath().removeFileExtension().lastSegment();
 				monitor.subTask("Deploy " + fileName);
 
 				URI emfURI = null;
-				if(selectedFile.getFullPath() != null) {
+				if (selectedFile.getFullPath() != null) {
 					emfURI = URI.createPlatformResourceURI(selectedFile.getFullPath().toString(), true);
-				} else if(selectedFile.getRawLocation() != null) {
+				} else if (selectedFile.getRawLocation() != null) {
 					emfURI = URI.createFileURI(selectedFile.getRawLocation().toString());
 				}
 
-				if(emfURI == null) {
+				if (emfURI == null) {
 					monitor.worked(1);
 					result.add(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "The selected element is not a valid configuration file"));
 					continue;
@@ -128,15 +127,15 @@ public class DeployExtendedTypeSetConfigurationHandler extends AbstractHandler i
 				monitor.subTask("Reset Element Types Registry");
 				ExtendedElementTypeSetRegistry.getInstance().loadExtendedElementTypeSet(fileName);
 				monitor.worked(1);
-				
+
 				result.add(new Status(IStatus.OK, Activator.PLUGIN_ID, "The extended types configuration has been successfully deployed and activated"));
 			}
 		}
 
-		if(result.getChildren().length == 1) {
+		if (result.getChildren().length == 1) {
 			return result.getChildren()[0];
-		} else { //Merge the result and specify an appropriate message based on the result
-			if(result.isOK()) {
+		} else { // Merge the result and specify an appropriate message based on the result
+			if (result.isOK()) {
 				return result;
 			} else {
 				MultiStatus actualResult = new MultiStatus(Activator.PLUGIN_ID, result.getCode(), "Some errors occurred during the deployment", result.getException());

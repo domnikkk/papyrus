@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -73,26 +73,27 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(COMMUNICATION_TOOL_LIFELINE)) {
+		if (toolId.equals(COMMUNICATION_TOOL_LIFELINE)) {
 			return createLifelineComCreationTool();
 		}
-		if(toolId.equals(COMMUNICATION_TOOL_COMMENT)) {
+		if (toolId.equals(COMMUNICATION_TOOL_COMMENT)) {
 			return createComment7CreationTool();
 		}
-		if(toolId.equals(COMMUNICATION_TOOL_CONSTRAINT)) {
+		if (toolId.equals(COMMUNICATION_TOOL_CONSTRAINT)) {
 			return createConstraint5CreationTool();
 		}
-		if(toolId.equals(COMMUNICATION_TOOL_DURATIONOBSERVATION)) {
+		if (toolId.equals(COMMUNICATION_TOOL_DURATIONOBSERVATION)) {
 			return createDurationObservation4CreationTool();
 		}
-		if(toolId.equals(COMMUNICATION_TOOL_TIMEOBSERVATION)) {
+		if (toolId.equals(COMMUNICATION_TOOL_TIMEOBSERVATION)) {
 			return createTimeObservation6CreationTool();
 		}
-		if(toolId.equals(CREATEMESSAGECREATECREATIONTOOL)) {
+		if (toolId.equals(CREATEMESSAGECREATECREATIONTOOL)) {
 			return createMessageCreateCreationTool();
 		}
-		if(toolId.equals(CREATELINK13CREATIONTOOL)) {
+		if (toolId.equals(CREATELINK13CREATIONTOOL)) {
 			return createLink13CreationTool();
 		}
 		// default return: null
@@ -102,6 +103,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;

@@ -23,6 +23,7 @@ public class FilterPolicyImpl extends NewChildPolicyImpl implements FilterPolicy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FilterPolicyImpl() {
@@ -32,6 +33,7 @@ public class FilterPolicyImpl extends NewChildPolicyImpl implements FilterPolicy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public class FilterPolicyImpl extends NewChildPolicyImpl implements FilterPolicy
 		return NcpolicyPackage.Literals.FILTER_POLICY;
 	}
 
-} //FilterPolicyImpl
+} // FilterPolicyImpl

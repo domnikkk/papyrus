@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -34,15 +34,16 @@ public class InteractionCompartmentItemSemanticEditPolicyTN extends UMLBaseItemS
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if(UMLElementTypes.Lifeline_19 == requestElementType) {
+		if (UMLElementTypes.Lifeline_19 == requestElementType) {
 			return getGEFWrapper(new FullLifelineCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Lifeline_20 == requestElementType) {
+		if (UMLElementTypes.Lifeline_20 == requestElementType) {
 			return getGEFWrapper(new CompactLifelineCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * This class allows to represent the title of a compartment in a the Show/Hide
  * Compartment Action
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class CompartmentTitleRepresentation {
 
@@ -36,13 +36,13 @@ public class CompartmentTitleRepresentation {
 	private EditPart parent;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent editpart
+	 *            the parent editpart
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public CompartmentTitleRepresentation(EditPart parent, View view) {
 		this.parent = parent;
@@ -50,7 +50,7 @@ public class CompartmentTitleRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return <code>true</code> if the title of the compartment is displayed
 	 *         and <code>false</code> if not
 	 */
@@ -59,7 +59,7 @@ public class CompartmentTitleRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the real object represented by this class
 	 */
 	public Object getRealObject() {
@@ -67,7 +67,7 @@ public class CompartmentTitleRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the parent editpart
 	 */
 	public EditPart getParent() {

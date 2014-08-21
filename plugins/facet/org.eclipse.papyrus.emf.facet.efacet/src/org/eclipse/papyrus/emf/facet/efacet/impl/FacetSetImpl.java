@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -43,9 +43,9 @@ import org.eclipse.papyrus.emf.facet.efacet.FacetSet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl#getFacets <em>Facets</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl#getCategories <em>Categories</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl#getExtendedEPackage <em>Extended EPackage</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl#getFacets <em>Facets</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl#getCategories <em>Categories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetSetImpl#getExtendedEPackage <em>Extended EPackage</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +59,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	 * The cached value of the '{@link #getFacets() <em>Facets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFacets()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -71,6 +72,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCategories()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -83,6 +85,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	 * The cached value of the '{@link #getExtendedEPackage() <em>Extended EPackage</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtendedEPackage()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -94,6 +97,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -105,6 +109,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -117,6 +122,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -131,6 +137,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -145,14 +152,15 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public EPackage getExtendedEPackage() {
 		if (this.extendedEPackage != null && this.extendedEPackage.eIsProxy()) {
-			InternalEObject oldExtendedEPackage = (InternalEObject)this.extendedEPackage;
-			this.extendedEPackage = (EPackage)eResolveProxy(oldExtendedEPackage);
+			InternalEObject oldExtendedEPackage = (InternalEObject) this.extendedEPackage;
+			this.extendedEPackage = (EPackage) eResolveProxy(oldExtendedEPackage);
 			if (this.extendedEPackage != oldExtendedEPackage) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.FACET_SET__EXTENDED_EPACKAGE, oldExtendedEPackage, this.extendedEPackage));
@@ -165,6 +173,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -176,6 +185,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -191,6 +201,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -200,7 +211,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	public NotificationChain eInverseAdd(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case EFacetPackage.FACET_SET__FACETS:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacets()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFacets()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -208,6 +219,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -216,9 +228,9 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case EFacetPackage.FACET_SET__FACETS:
-			return ((InternalEList<?>)getFacets()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getFacets()).basicRemove(otherEnd, msgs);
 		case EFacetPackage.FACET_SET__CATEGORIES:
-			return ((InternalEList<?>)getCategories()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getCategories()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -226,6 +238,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -249,6 +262,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -259,14 +273,14 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 		switch (featureID) {
 		case EFacetPackage.FACET_SET__FACETS:
 			getFacets().clear();
-			getFacets().addAll((Collection<? extends Facet>)newValue);
+			getFacets().addAll((Collection<? extends Facet>) newValue);
 			return;
 		case EFacetPackage.FACET_SET__CATEGORIES:
 			getCategories().clear();
-			getCategories().addAll((Collection<? extends Category>)newValue);
+			getCategories().addAll((Collection<? extends Category>) newValue);
 			return;
 		case EFacetPackage.FACET_SET__EXTENDED_EPACKAGE:
-			setExtendedEPackage((EPackage)newValue);
+			setExtendedEPackage((EPackage) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,6 +289,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -289,7 +304,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 			getCategories().clear();
 			return;
 		case EFacetPackage.FACET_SET__EXTENDED_EPACKAGE:
-			setExtendedEPackage((EPackage)null);
+			setExtendedEPackage((EPackage) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -298,6 +313,7 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -315,4 +331,4 @@ public class FacetSetImpl extends EPackageImpl implements FacetSet {
 		return super.eIsSet(featureID);
 	}
 
-} //FacetSetImpl
+} // FacetSetImpl

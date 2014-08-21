@@ -25,7 +25,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
 
 /**
  * A companion utility class for {@link ICustomizedTreeContentProvider}
- * 
+ *
  * @since 0.2
  */
 public final class CustomizedContentProviderUtils {
@@ -35,7 +35,7 @@ public final class CustomizedContentProviderUtils {
 
 	/**
 	 * Replace proxy objects by their underlying model elements in the given selection
-	 * 
+	 *
 	 * @return the unwrapped version of the selection
 	 */
 	public static ISelection resolveSelection(final ISelection selection) {
@@ -58,7 +58,7 @@ public final class CustomizedContentProviderUtils {
 
 	/**
 	 * Resolve the given UI element into the underlying model element.
-	 * 
+	 *
 	 * @param element
 	 *            a UI element, that may be a proxy for a model element
 	 * @return the corresponding model element, or the given element if it is not a proxy

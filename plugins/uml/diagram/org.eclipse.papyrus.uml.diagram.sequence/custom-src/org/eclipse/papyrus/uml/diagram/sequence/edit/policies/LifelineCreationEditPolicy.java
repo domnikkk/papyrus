@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 /**
  * A specific creation edit policy for the Lifeline.
  * Execution Specification is created graphically on the lifeline, but depending on its graphical position determines also its model container.
- * 
+ *
  * Occurrence Specification is located on the lifeline, but not visible. Though, elements must be created on it.
  */
 public class LifelineCreationEditPolicy extends CreationEditPolicy {
@@ -61,18 +61,18 @@ public class LifelineCreationEditPolicy extends CreationEditPolicy {
 		// get the element descriptor
 		CreateElementRequestAdapter requestAdapter = request.getViewAndElementDescriptor().getCreateElementRequestAdapter();
 		// get the semantic request
-		CreateElementRequest createElementRequest = (CreateElementRequest)requestAdapter.getAdapter(CreateElementRequest.class);
-		if(createElementRequest.getContainer() == null) {
+		CreateElementRequest createElementRequest = (CreateElementRequest) requestAdapter.getAdapter(CreateElementRequest.class);
+		if (createElementRequest.getContainer() == null) {
 			// complete the semantic request by filling in the host's semantic
 			// element as the context
-			View view = (View)getHost().getModel();
+			View view = (View) getHost().getModel();
 			EObject hostElement = ViewUtil.resolveSemanticElement(view);
-			if(hostElement == null && view.getElement() == null) {
+			if (hostElement == null && view.getElement() == null) {
 				hostElement = view;
 			}
 			// Returns null if host is unresolvable so that trying to create a
 			// new element in an unresolved shape will not be allowed.
-			if(hostElement == null) {
+			if (hostElement == null) {
 				return null;
 			}
 			createElementRequest.setContainer(hostElement);
@@ -82,23 +82,23 @@ public class LifelineCreationEditPolicy extends CreationEditPolicy {
 		extendedData.put(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER, ift);
 		// record the nearest event if necessary
 		String requestHint = request.getViewAndElementDescriptor().getSemanticHint();
-		if(isCreatedOnOccurrenceSpecification(requestHint)) {
+		if (isCreatedOnOccurrenceSpecification(requestHint)) {
 			EditPart hostPart = getHost();
-			if(hostPart instanceof LifelineEditPart) {
-				Entry<Point, List<OccurrenceSpecification>> eventAndLocation = SequenceUtil.findNearestEvent(request.getLocation(), (LifelineEditPart)hostPart);
+			if (hostPart instanceof LifelineEditPart) {
+				Entry<Point, List<OccurrenceSpecification>> eventAndLocation = SequenceUtil.findNearestEvent(request.getLocation(), (LifelineEditPart) hostPart);
 				// find an event near enough to create the constraint or observation
 				List<OccurrenceSpecification> events = Collections.emptyList();
 				Point location = null;
-				if(eventAndLocation != null) {
+				if (eventAndLocation != null) {
 					location = eventAndLocation.getKey();
 					events = eventAndLocation.getValue();
 				}
-				if(extendedData.containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2)) {
+				if (extendedData.containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2)) {
 					extendedData.put(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2, events);
 				} else {
 					extendedData.put(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION, events);
 				}
-				if(extendedData.containsKey(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION_2)) {
+				if (extendedData.containsKey(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION_2)) {
 					extendedData.put(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION_2, location);
 				} else {
 					extendedData.put(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION, location);
@@ -107,32 +107,32 @@ public class LifelineCreationEditPolicy extends CreationEditPolicy {
 		}
 		// get the create element command based on the elementdescriptor's
 		// request
-		Command createElementCommand = getHost().getCommand(new EditCommandRequestWrapper((CreateElementRequest)requestAdapter.getAdapter(CreateElementRequest.class), request.getExtendedData()));
-		if(createElementCommand == null) {
+		Command createElementCommand = getHost().getCommand(new EditCommandRequestWrapper((CreateElementRequest) requestAdapter.getAdapter(CreateElementRequest.class), request.getExtendedData()));
+		if (createElementCommand == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(!createElementCommand.canExecute()) {
+		if (!createElementCommand.canExecute()) {
 			return createElementCommand;
 		}
 		// create the semantic create wrapper command
 		SemanticCreateCommand semanticCommand = new SemanticCreateCommand(requestAdapter, createElementCommand);
 		Command viewCommand = getCreateCommand(request);
-		Command refreshConnectionCommand = getHost().getCommand(new RefreshConnectionsRequest(((List)request.getNewObject())));
+		Command refreshConnectionCommand = getHost().getCommand(new RefreshConnectionsRequest(((List) request.getNewObject())));
 		// form the compound command and return
 		CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 		cc.compose(semanticCommand);
 		cc.compose(new CommandProxy(viewCommand));
-		if(refreshConnectionCommand != null) {
+		if (refreshConnectionCommand != null) {
 			cc.compose(new CommandProxy(refreshConnectionCommand));
 		}
-		LifelineEditPart parentPart = (LifelineEditPart)getHost();
-		IHintedType type = (IHintedType)UMLElementTypes.Lifeline_3001;
-		if(type.getSemanticHint().equals(request.getViewAndElementDescriptor().getSemanticHint())) {
+		LifelineEditPart parentPart = (LifelineEditPart) getHost();
+		IHintedType type = (IHintedType) UMLElementTypes.Lifeline_3001;
+		if (type.getSemanticHint().equals(request.getViewAndElementDescriptor().getSemanticHint())) {
 			setChildLifelineBounds(cc, request, parentPart);
 		}
-		//Ordering fragments after creation,  See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
+		// Ordering fragments after creation, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
 		ICommand orderingFragmentsCommand = FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request);
-		if(orderingFragmentsCommand != null && orderingFragmentsCommand.canExecute()) {
+		if (orderingFragmentsCommand != null && orderingFragmentsCommand.canExecute()) {
 			cc.compose(orderingFragmentsCommand);
 		}
 		return new ICommandProxy(cc);
@@ -140,7 +140,7 @@ public class LifelineCreationEditPolicy extends CreationEditPolicy {
 
 	private void setChildLifelineBounds(CompositeCommand cc, CreateViewAndElementRequest request, LifelineEditPart parentPart) {
 		Point location = request.getLocation().getCopy();
-		LifelineDotLineCustomFigure parentFigure = (LifelineDotLineCustomFigure)parentPart.getContentPane();
+		LifelineDotLineCustomFigure parentFigure = (LifelineDotLineCustomFigure) parentPart.getContentPane();
 		Rectangle parentBounds = parentFigure.getBounds().getCopy();
 		parentFigure.translateToAbsolute(parentBounds);
 		Rectangle childBounds = parentBounds.getCopy();
@@ -154,9 +154,9 @@ public class LifelineCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Return true if creation must be performed on an occurrence specification
-	 * 
+	 *
 	 * @param requestHint
-	 *        the hint of object to create
+	 *            the hint of object to create
 	 * @return true if creation on an occurrence specification
 	 */
 	private boolean isCreatedOnOccurrenceSpecification(String requestHint) {
@@ -165,28 +165,28 @@ public class LifelineCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Return true if hint is for creating a duration observation/constraint
-	 * 
+	 *
 	 * @param requestHint
-	 *        the hint of object to create
+	 *            the hint of object to create
 	 * @return true if correct hint
 	 */
 	private boolean isDurationHint(String requestHint) {
-		String durCstOnLifelineHint = ((IHintedType)UMLElementTypes.DurationConstraint_3021).getSemanticHint();
-		String durCstOnMessage = ((IHintedType)UMLElementTypes.DurationConstraint_3023).getSemanticHint();
-		String durObsOnMessage = ((IHintedType)UMLElementTypes.DurationObservation_3024).getSemanticHint();
+		String durCstOnLifelineHint = ((IHintedType) UMLElementTypes.DurationConstraint_3021).getSemanticHint();
+		String durCstOnMessage = ((IHintedType) UMLElementTypes.DurationConstraint_3023).getSemanticHint();
+		String durObsOnMessage = ((IHintedType) UMLElementTypes.DurationObservation_3024).getSemanticHint();
 		return durCstOnLifelineHint.equals(requestHint) || durCstOnMessage.equals(requestHint) || durObsOnMessage.equals(requestHint);
 	}
 
 	/**
 	 * Return true if hint is for creating a time observation/constraint
-	 * 
+	 *
 	 * @param requestHint
-	 *        the hint of object to create
+	 *            the hint of object to create
 	 * @return true if correct hint
 	 */
 	private boolean isTimeHint(String requestHint) {
-		String timeConstraintHint = ((IHintedType)UMLElementTypes.TimeConstraint_3019).getSemanticHint();
-		String timeObservationHint = ((IHintedType)UMLElementTypes.TimeObservation_3020).getSemanticHint();
+		String timeConstraintHint = ((IHintedType) UMLElementTypes.TimeConstraint_3019).getSemanticHint();
+		String timeObservationHint = ((IHintedType) UMLElementTypes.TimeObservation_3020).getSemanticHint();
 		return timeConstraintHint.equals(requestHint) || timeObservationHint.equals(requestHint);
 	}
 }

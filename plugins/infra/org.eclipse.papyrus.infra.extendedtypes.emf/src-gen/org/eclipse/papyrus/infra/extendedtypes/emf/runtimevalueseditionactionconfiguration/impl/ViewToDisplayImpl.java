@@ -22,7 +22,7 @@ import org.eclipse.papyrus.views.properties.contexts.View;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.ViewToDisplayImpl#getView <em>View</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.ViewToDisplayImpl#getView <em>View</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	 * The cached value of the '{@link #getView() <em>View</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getView()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ViewToDisplayImpl() {
@@ -51,6 +53,7 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,15 +64,18 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public View getView() {
 		if (view != null && view.eIsProxy()) {
-			InternalEObject oldView = (InternalEObject)view;
-			view = (View)eResolveProxy(oldView);
+			InternalEObject oldView = (InternalEObject) view;
+			view = (View) eResolveProxy(oldView);
 			if (view != oldView) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW, oldView, view));
+				}
 			}
 		}
 		return view;
@@ -78,6 +84,7 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public View basicGetView() {
@@ -87,26 +94,32 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setView(View newView) {
 		View oldView = view;
 		view = newView;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW, oldView, view));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
-				if (resolve) return getView();
-				return basicGetView();
+		case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
+			if (resolve) {
+				return getView();
+			}
+			return basicGetView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,14 +127,15 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
-				setView((View)newValue);
-				return;
+		case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
+			setView((View) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,14 +143,15 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
-				setView((View)null);
-				return;
+		case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
+			setView((View) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -144,15 +159,16 @@ public class ViewToDisplayImpl extends MinimalEObjectImpl.Container implements V
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
-				return view != null;
+		case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY__VIEW:
+			return view != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ViewToDisplayImpl
+} // ViewToDisplayImpl

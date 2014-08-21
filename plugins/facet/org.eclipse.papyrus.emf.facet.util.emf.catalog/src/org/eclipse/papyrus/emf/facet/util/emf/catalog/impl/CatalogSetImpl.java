@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.util.emf.catalog.impl;
 
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogSetImpl#getCatalogs <em>Catalogs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.impl.CatalogSetImpl#getCatalogs <em>Catalogs</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	 * The cached value of the '{@link #getCatalogs() <em>Catalogs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCatalogs()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CatalogSetImpl() {
@@ -62,6 +64,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,6 +75,7 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Catalog> getCatalogs() {
@@ -84,13 +88,14 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CatalogPackage.CATALOG_SET__CATALOGS:
-				return ((InternalEList<?>)getCatalogs()).basicRemove(otherEnd, msgs);
+		case CatalogPackage.CATALOG_SET__CATALOGS:
+			return ((InternalEList<?>) getCatalogs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,13 +103,14 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CatalogPackage.CATALOG_SET__CATALOGS:
-				return getCatalogs();
+		case CatalogPackage.CATALOG_SET__CATALOGS:
+			return getCatalogs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,16 +118,17 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CatalogPackage.CATALOG_SET__CATALOGS:
-				getCatalogs().clear();
-				getCatalogs().addAll((Collection<? extends Catalog>)newValue);
-				return;
+		case CatalogPackage.CATALOG_SET__CATALOGS:
+			getCatalogs().clear();
+			getCatalogs().addAll((Collection<? extends Catalog>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -129,14 +136,15 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CatalogPackage.CATALOG_SET__CATALOGS:
-				getCatalogs().clear();
-				return;
+		case CatalogPackage.CATALOG_SET__CATALOGS:
+			getCatalogs().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -144,15 +152,16 @@ public class CatalogSetImpl extends EObjectImpl implements CatalogSet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CatalogPackage.CATALOG_SET__CATALOGS:
-				return catalogs != null && !catalogs.isEmpty();
+		case CatalogPackage.CATALOG_SET__CATALOGS:
+			return catalogs != null && !catalogs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CatalogSetImpl
+} // CatalogSetImpl

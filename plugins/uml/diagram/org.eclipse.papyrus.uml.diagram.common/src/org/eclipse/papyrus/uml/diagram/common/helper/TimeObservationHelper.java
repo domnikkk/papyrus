@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,18 +30,18 @@ public class TimeObservationHelper {
 
 	/**
 	 * Get the list of all TimeObservation observing a given element
-	 * 
+	 *
 	 * @param element
-	 *        the observed element
+	 *            the observed element
 	 * @return list of TimeObservation
 	 */
 	public static List<TimeObservation> getTimeObservations(NamedElement element) {
 		Collection<Setting> inverseReferences = EMFHelper.getUsages(element);
 		// TimeConstraint referencing element
 		List<TimeObservation> referencing = new LinkedList<TimeObservation>();
-		for(Setting ref : inverseReferences) {
-			if(UMLPackage.eINSTANCE.getTimeObservation_Event().equals(ref.getEStructuralFeature()) && ref.getEObject().eContainer() != null) {
-				referencing.add((TimeObservation)ref.getEObject());
+		for (Setting ref : inverseReferences) {
+			if (UMLPackage.eINSTANCE.getTimeObservation_Event().equals(ref.getEStructuralFeature()) && ref.getEObject().eContainer() != null) {
+				referencing.add((TimeObservation) ref.getEObject());
 			}
 		}
 		return referencing;

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.ui.views.navigator.ResourceComparator;
 
 /**
  * Sort Papyrus Files according to their Main File
- * 
+ *
  * @author tristan.faure@atosorigin.com
  */
 public class PapyrusViewerSorter extends ViewerSorter {

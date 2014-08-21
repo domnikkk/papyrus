@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ public class ReadOnlyEvent extends EventObject {
 	private final int eventType;
 
 	private final ReadOnlyAxis axis;
-	
+
 	private final URI resourceURI;
 
 	private final EObject object;
@@ -58,13 +58,13 @@ public class ReadOnlyEvent extends EventObject {
 	}
 
 	public IReadOnlyHandler2 getHandler() {
-		return (IReadOnlyHandler2)getSource();
+		return (IReadOnlyHandler2) getSource();
 	}
 
 	public int getEventType() {
 		return eventType;
 	}
-	
+
 	public ReadOnlyAxis getAxis() {
 		return axis;
 	}

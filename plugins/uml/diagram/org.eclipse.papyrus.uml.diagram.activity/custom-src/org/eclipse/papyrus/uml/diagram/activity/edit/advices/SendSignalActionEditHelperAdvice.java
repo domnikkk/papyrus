@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,23 +42,23 @@ public class SendSignalActionEditHelperAdvice extends AbstractEditHelperAdvice {
 		// get the activity containing the new element
 		Activity parentActivity = null;
 		EObject parent = request.getElementToConfigure();
-		while(parent != null && parentActivity == null) {
-			if(parent instanceof Activity) {
-				parentActivity = (Activity)parent;
+		while (parent != null && parentActivity == null) {
+			if (parent instanceof Activity) {
+				parentActivity = (Activity) parent;
 			}
 			parent = parent.eContainer();
 		}
-		CreateSendSignalActionDialog dialog = new CreateSendSignalActionDialog(Display.getDefault().getActiveShell(), parentActivity, (InvocationAction)request.getElementToConfigure());
-		if(IDialogConstants.OK_ID == dialog.open()) {
+		CreateSendSignalActionDialog dialog = new CreateSendSignalActionDialog(Display.getDefault().getActiveShell(), parentActivity, (InvocationAction) request.getElementToConfigure());
+		if (IDialogConstants.OK_ID == dialog.open()) {
 			// initialize the invoked element (no need to use a command, since action is being created)
 			CompositeCommand command = new CompositeCommand("Configure created element");
 			IElementEditService service = ElementEditServiceUtils.getCommandProvider(request.getElementToConfigure());
 			EObject signal = dialog.getSelectedInvoked();
-			if(signal instanceof Signal) {
-				SetRequest setSignalRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getSendSignalAction_Signal(), (Signal)signal);
+			if (signal instanceof Signal) {
+				SetRequest setSignalRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getSendSignalAction_Signal(), signal);
 				command.add(service.getEditCommand(setSignalRequest));
 				// initialize the action name with the signal
-				SetRequest setNameRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getNamedElement_Name(), "Send".concat(((Signal)signal).getName()));
+				SetRequest setNameRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getNamedElement_Name(), "Send".concat(((Signal) signal).getName()));
 				command.add(service.getEditCommand(setNameRequest));
 			}
 			return command;

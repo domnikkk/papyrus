@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -95,19 +95,19 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 
 	/**
 	 * Configure the lifeline figure
-	 * 
+	 *
 	 * @param inlineMode
-	 *        true if inline mode enabled
+	 *            true if inline mode enabled
 	 * @param innerConnectableElementsNumber
-	 *        Number of children
+	 *            Number of children
 	 */
 	public void configure(boolean inlineMode, int innerConnectableElementsNumber) {
-		if(inlineMode) {
+		if (inlineMode) {
 			this.innerConnectableElementsNumber = innerConnectableElementsNumber;
 		}
-		if(this.inlineMode != inlineMode) {
+		if (this.inlineMode != inlineMode) {
 			this.inlineMode = inlineMode;
-			if(inlineMode) {
+			if (inlineMode) {
 				setLayoutManager(inlineModeManager);
 			} else {
 				setLayoutManager(normalModeManager);
@@ -120,7 +120,7 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 	 */
 	@Override
 	protected void outlineShape(Graphics graphics) {
-		if(!inlineMode) {
+		if (!inlineMode) {
 			paintDashLineBackground(graphics);
 			super.outlineShape(graphics);
 		}
@@ -128,7 +128,7 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 
 	protected void paintDashLineBackground(Graphics graphics) {
 		NodeFigure dashLineRectangle = getDashLineRectangle();
-		if(!dashLineRectangle.isOpaque()) {
+		if (!dashLineRectangle.isOpaque()) {
 			return;
 		}
 		Rectangle r = getBounds().getCopy();
@@ -147,11 +147,11 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 
 	@Override
 	public boolean containsPoint(int x, int y) {
-		if(!super.containsPoint(x, y)) {
+		if (!super.containsPoint(x, y)) {
 			return false;
 		}
 		NodeFigure dashLineRectangle = getDashLineRectangle();
-		if(dashLineRectangle.containsPoint(x, y)) {
+		if (dashLineRectangle.containsPoint(x, y)) {
 			return true;
 		}
 		return false;
@@ -168,13 +168,13 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 		public IFigure findMouseEventTargetAt(int x, int y) {
 			// check children first instead of self
 			IFigure f = findMouseEventTargetInDescendantsAt(x, y);
-			if(f != null) {
+			if (f != null) {
 				return f;
 			}
-			if(!containsPoint(x, y)) {
+			if (!containsPoint(x, y)) {
 				return null;
 			}
-			if(isMouseEventTarget()) {
+			if (isMouseEventTarget()) {
 				return this;
 			}
 			return null;
@@ -182,17 +182,17 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 
 		@Override
 		public IFigure findFigureAt(int x, int y, TreeSearch search) {
-			if(search.prune(this)) {
+			if (search.prune(this)) {
 				return null;
 			}
 			IFigure child = findDescendantAtExcluding(x, y, search);
-			if(child != null) {
+			if (child != null) {
 				return child;
 			}
-			if(!containsPoint(x, y)) {
+			if (!containsPoint(x, y)) {
 				return null;
 			}
-			if(search.accept(this)) {
+			if (search.accept(this)) {
 				return this;
 			}
 			return null;
@@ -205,13 +205,13 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 		public IFigure findMouseEventTargetAt(int x, int y) {
 			// check children first instead of self
 			IFigure f = findMouseEventTargetInDescendantsAt(x, y);
-			if(f != null) {
+			if (f != null) {
 				return f;
 			}
-			if(!containsPoint(x, y)) {
+			if (!containsPoint(x, y)) {
 				return null;
 			}
-			if(isMouseEventTarget()) {
+			if (isMouseEventTarget()) {
 				return this;
 			}
 			return null;
@@ -219,17 +219,17 @@ public class LifelineDotLineCustomFigure extends LifelineDotLineFigure {
 
 		@Override
 		public IFigure findFigureAt(int x, int y, TreeSearch search) {
-			if(search.prune(this)) {
+			if (search.prune(this)) {
 				return null;
 			}
 			IFigure child = findDescendantAtExcluding(x, y, search);
-			if(child != null) {
+			if (child != null) {
 				return child;
 			}
-			if(!containsPoint(x, y)) {
+			if (!containsPoint(x, y)) {
 				return null;
 			}
-			if(search.accept(this)) {
+			if (search.accept(this)) {
 				return this;
 			}
 			return null;

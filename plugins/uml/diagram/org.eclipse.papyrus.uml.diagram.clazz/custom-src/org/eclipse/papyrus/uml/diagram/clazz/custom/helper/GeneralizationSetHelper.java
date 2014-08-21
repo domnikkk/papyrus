@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,7 +63,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 	 * is registered with a component using the component's <code>addDialogListener<code> method. When
 	 * the dialog event occurs, that object's appropriate
 	 * method is invoked.
-	 * 
+	 *
 	 * @see DialogEvent
 	 */
 	private class DialogListener implements Listener {
@@ -82,7 +82,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 
 		/**
 		 * Instantiates a new dialog listener.
-		 * 
+		 *
 		 * @param generalizationSetList
 		 *            the generalization set list
 		 * @param combo
@@ -98,7 +98,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 
 		/**
 		 * Gets the result.
-		 * 
+		 *
 		 * @return the result
 		 */
 		public GeneralizationSet getResult() {
@@ -108,6 +108,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 		/**
 		 * {@inheritedDoc}
 		 */
+		@Override
 		public void handleEvent(Event event) {
 			if (event.widget.equals(abuttonOk)) {
 				// look for selected button
@@ -128,7 +129,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 
 	/**
 	 * Instantiates a new generalization set helper.
-	 * 
+	 *
 	 * @param editDomain
 	 *            the edit domain
 	 */
@@ -138,21 +139,21 @@ public class GeneralizationSetHelper extends ElementHelper {
 
 	/**
 	 * Creates the generalization set.
-	 * 
+	 *
 	 * @param source
 	 *            the source of the GenralizationSet
 	 * @param target
 	 *            the target the Target of the Generalization
 	 * @param container
 	 *            the container of the GeneralizationSet
-	 * 
+	 *
 	 * @return the generalization set
 	 */
 	public GeneralizationSet createGeneralizationSet(Generalization source, Generalization target, org.eclipse.uml2.uml.Package container) {
 		final java.util.List<GeneralizationSet> generalizationSetList = new ArrayList<GeneralizationSet>(source.getGeneralizationSets());
 		Iterator<GeneralizationSet> iterator = target.getGeneralizationSets().iterator();
 		while (iterator.hasNext()) {
-			GeneralizationSet currentGeneralizationSet = (GeneralizationSet) iterator.next();
+			GeneralizationSet currentGeneralizationSet = iterator.next();
 			if (!generalizationSetList.contains(currentGeneralizationSet)) {
 				generalizationSetList.add(currentGeneralizationSet);
 			}
@@ -176,7 +177,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 
 	/**
 	 * In change to move anchor of other GeneralizationSet when moving one
-	 * 
+	 *
 	 * @param request
 	 *            a request ReconnectRequest
 	 * @param command
@@ -186,7 +187,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 	 *            the node
 	 * @param targetAnchor
 	 *            the target anchor
-	 * 
+	 *
 	 * @return the move target
 	 */
 	public org.eclipse.gef.commands.Command getMoveTarget(ReconnectRequest request, org.eclipse.gef.commands.Command command, INodeEditPart node, ConnectionAnchor targetAnchor) {
@@ -233,19 +234,20 @@ public class GeneralizationSetHelper extends ElementHelper {
 	/**
 	 * this command is used to overload the reconnect source command in order to move other
 	 * GeneralizationSet that have the same semantic
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @param node
 	 *            the node
-	 * 
+	 *
 	 * @return the reconnect source command
 	 */
 	public Command getReconnectSourceCommand(ReconnectRequest request, INodeEditPart node) {
 		// System.err.println("custom reconnection for GeneralizationSet source");
 		// System.err.println("node--> " + node);
-		if (node == null)
+		if (node == null) {
 			return null;
+		}
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		ConnectionAnchor sourceAnchor = node.getSourceConnectionAnchor(request);
 		// System.err.println("sourceAnchor--> " + sourceAnchor.getReferencePoint());
@@ -298,7 +300,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 	/**
 	 * Launch dialog when a GeneralizationSet is created. I ask to the user if he would like to
 	 * create a new semantic or reuse an existed semantic
-	 * 
+	 *
 	 * @param generalizationSetList
 	 *            the generalization set list
 	 * @param editingDomain
@@ -309,6 +311,7 @@ public class GeneralizationSetHelper extends ElementHelper {
 		// public void run() {
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				Display display = Display.getCurrent();// new Display();
 				final Button[] radios = new Button[2];
@@ -356,9 +359,11 @@ public class GeneralizationSetHelper extends ElementHelper {
 				}
 				radios[0].addSelectionListener(new SelectionListener() {
 
+					@Override
 					public void widgetDefaultSelected(SelectionEvent e) {
 					}
 
+					@Override
 					public void widgetSelected(SelectionEvent e) {
 						list.setEnabled(!radios[0].getSelection());
 					}
@@ -385,8 +390,9 @@ public class GeneralizationSetHelper extends ElementHelper {
 				dialog.pack();
 				dialog.open();
 				while (!dialog.isDisposed()) {
-					if (!display.readAndDispatch())
+					if (!display.readAndDispatch()) {
 						display.sleep();
+					}
 				}
 				generalizationSettoCreate = listener.getResult();
 			}

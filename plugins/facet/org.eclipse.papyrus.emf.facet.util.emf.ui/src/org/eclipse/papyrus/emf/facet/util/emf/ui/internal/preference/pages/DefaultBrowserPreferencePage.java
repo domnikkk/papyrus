@@ -99,6 +99,7 @@ public class DefaultBrowserPreferencePage extends FieldEditorPreferencePage impl
 				getFieldEditorParent()));
 	}
 
+	@Override
 	public void init(final IWorkbench workbench) {
 		// Nothing to do
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.sysml.provider.SysmlEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.allocations.Allocated} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AllocatedItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -44,7 +44,7 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocatedItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +55,12 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBase_NamedElementPropertyDescriptor(object);
@@ -74,40 +74,43 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * This adds a property descriptor for the Base Named Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_NamedElementPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Allocated_base_NamedElement_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Allocated_base_NamedElement_feature", "_UI_Allocated_type"), AllocationsPackage.Literals.ALLOCATED__BASE_NAMED_ELEMENT, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Allocated_base_NamedElement_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Allocated_base_NamedElement_feature", "_UI_Allocated_type"), AllocationsPackage.Literals.ALLOCATED__BASE_NAMED_ELEMENT, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Allocated From feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAllocatedFromPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Allocated_allocatedFrom_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Allocated_allocatedFrom_feature", "_UI_Allocated_type"), AllocationsPackage.Literals.ALLOCATED__ALLOCATED_FROM, false, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Allocated_allocatedFrom_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Allocated_allocatedFrom_feature", "_UI_Allocated_type"), AllocationsPackage.Literals.ALLOCATED__ALLOCATED_FROM, false, false, false, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Allocated To feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAllocatedToPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Allocated_allocatedTo_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Allocated_allocatedTo_feature", "_UI_Allocated_type"), AllocationsPackage.Literals.ALLOCATED__ALLOCATED_TO, false, false, false, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Allocated_allocatedTo_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Allocated_allocatedTo_feature", "_UI_Allocated_type"), AllocationsPackage.Literals.ALLOCATED__ALLOCATED_TO, false, false, false, null, null, null));
 	}
 
 	/**
 	 * This returns Allocated.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,7 +122,7 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -132,7 +135,7 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +149,7 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -158,7 +161,7 @@ public class AllocatedItemProvider extends ItemProviderAdapter implements IEditi
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

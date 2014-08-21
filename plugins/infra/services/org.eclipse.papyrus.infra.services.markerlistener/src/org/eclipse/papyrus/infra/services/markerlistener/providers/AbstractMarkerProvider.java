@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public abstract class AbstractMarkerProvider
 		List<Diagnostic> children = diagnostic.getChildren();
 
 		SubMonitor sub = SubMonitor.convert(monitor, children.size()
-			/ CREATE_PMARKER_INTERVAL);
+				/ CREATE_PMARKER_INTERVAL);
 		CoreException exception = null;
 
 		int i = 0;
@@ -62,7 +62,7 @@ public abstract class AbstractMarkerProvider
 					exception = e;
 				}
 			}
-			
+
 			if (i++ > CREATE_PMARKER_INTERVAL) {
 				i = 0;
 				sub.worked(1);
@@ -80,12 +80,12 @@ public abstract class AbstractMarkerProvider
 	/**
 	 * Creates a single marker for the specified {@code diagnostic}. This method
 	 * should not iterate the children of the {@code diagnostic}.
-	 * 
+	 *
 	 * @param resource
 	 *            the resource on which to create a marker
 	 * @param diagnostic
 	 *            the diagnostic describing the marker to create
-	 * 
+	 *
 	 * @throws CoreException
 	 *             on failure to create the marker
 	 */
@@ -97,7 +97,7 @@ public abstract class AbstractMarkerProvider
 	 * Notifies that a batch of markers has been created. This is an opportunity
 	 * to update user interfaces, let other threads complete some work, etc.
 	 * Subclasses should extend this method by calling {@code super}.
-	 * 
+	 *
 	 * @param resource
 	 *            the resource on which a batch of markers was created
 	 */
@@ -105,23 +105,30 @@ public abstract class AbstractMarkerProvider
 		Display display = Display.getCurrent();
 		if (display != null) {
 			// process pending display events
-			while (display.readAndDispatch());
+			while (display.readAndDispatch()) {
+				;
+			}
 		}
 	}
 
 	@Deprecated
 	public void deleteMarkers(EObject eObject, IProgressMonitor monitor)
 			throws CoreException {
-		this.deleteMarkers(eObject, monitor, null, true) ;
+		this.deleteMarkers(eObject, monitor, null, true);
 	}
 
 	/**
 	 * Delete all markers of a given type for EObjects that are within the subtree of the passed
 	 * first parameter.
-	 * @param eObject the root of the subtree for which markers should be deleted.
-	 * @param monitor a progress monitor
-	 * @param markerType the ID of a marker
-	 * @param includeSubtype boolean indicating whether sub-types are scheduled for deletion as well.
+	 * 
+	 * @param eObject
+	 *            the root of the subtree for which markers should be deleted.
+	 * @param monitor
+	 *            a progress monitor
+	 * @param markerType
+	 *            the ID of a marker
+	 * @param includeSubtype
+	 *            boolean indicating whether sub-types are scheduled for deletion as well.
 	 */
 	public void deleteMarkers(EObject eObject, IProgressMonitor monitor, String markerType, boolean includeSubtypes)
 			throws CoreException {
@@ -131,7 +138,7 @@ public abstract class AbstractMarkerProvider
 				markerType, includeSubtypes);
 
 		SubMonitor sub = SubMonitor.convert(monitor, markers.size()
-			/ DELETE_PMARKER_INTERVAL);
+				/ DELETE_PMARKER_INTERVAL);
 		CoreException exception = null;
 
 		int i = 0;
@@ -165,17 +172,20 @@ public abstract class AbstractMarkerProvider
 			throw exception;
 		}
 	}
-	
+
 	/**
 	 * Check if the first passed EObject is an indirect child of the 2nd passed object (or identical)
-	 * @param subEObj a potential child
-	 * @param eObj a father EObject
+	 * 
+	 * @param subEObj
+	 *            a potential child
+	 * @param eObj
+	 *            a father EObject
 	 * @return if subEObject is a child or identical to the father.
 	 */
 	private boolean isContainedBy(EObject subEObj, EObject eObj) {
-		if (eObj == subEObj)
+		if (eObj == subEObj) {
 			return true;
-		else if (subEObj != null) {
+		} else if (subEObj != null) {
 			return isContainedBy(subEObj.eContainer(), eObj);
 		}
 		// reached, if subEObj == null

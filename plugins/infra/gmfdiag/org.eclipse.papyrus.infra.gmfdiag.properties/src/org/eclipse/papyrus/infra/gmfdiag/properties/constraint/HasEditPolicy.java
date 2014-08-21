@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,11 +17,11 @@ import org.eclipse.papyrus.infra.constraints.constraints.AbstractConstraint;
 import org.eclipse.papyrus.infra.constraints.constraints.Constraint;
 
 /**
- * 
+ *
  * A constraint to test whether an object has the given EditPolicy or not
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class HasEditPolicy extends AbstractConstraint {
 
@@ -33,9 +33,10 @@ public class HasEditPolicy extends AbstractConstraint {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean match(Object selection) {
-		if(editPolicyID != null && selection instanceof GraphicalEditPart) {
-			return ((GraphicalEditPart)selection).getEditPolicy(editPolicyID) != null;
+		if (editPolicyID != null && selection instanceof GraphicalEditPart) {
+			return ((GraphicalEditPart) selection).getEditPolicy(editPolicyID) != null;
 		}
 
 		return false;
@@ -54,11 +55,11 @@ public class HasEditPolicy extends AbstractConstraint {
 	 */
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		if(constraint == null) {
+		if (constraint == null) {
 			return false;
 		}
 
-		return constraint instanceof HasEditPolicy && ((HasEditPolicy)constraint).editPolicyID == editPolicyID;
+		return constraint instanceof HasEditPolicy && ((HasEditPolicy) constraint).editPolicyID == editPolicyID;
 	}
 
 }

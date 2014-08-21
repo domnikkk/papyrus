@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractReferenceInstanceImpl#getEReference <em>EReference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractReferenceInstanceImpl#getEReference <em>EReference</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	 * The cached value of the '{@link #getEReference() <em>EReference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEReference()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractReferenceInstanceImpl() {
@@ -59,6 +61,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,15 +72,17 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getEReference() {
 		if (eReference != null && eReference.eIsProxy()) {
-			InternalEObject oldEReference = (InternalEObject)eReference;
-			eReference = (EReference)eResolveProxy(oldEReference);
+			InternalEObject oldEReference = (InternalEObject) eReference;
+			eReference = (EReference) eResolveProxy(oldEReference);
 			if (eReference != oldEReference) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE, oldEReference, eReference));
+				}
 			}
 		}
 		return eReference;
@@ -86,6 +91,7 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference basicGetEReference() {
@@ -95,26 +101,31 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setEReference(EReference newEReference) {
 		EReference oldEReference = eReference;
 		eReference = newEReference;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE, oldEReference, eReference));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
-				if (resolve) return getEReference();
-				return basicGetEReference();
+		case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
+			if (resolve) {
+				return getEReference();
+			}
+			return basicGetEReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,14 +133,15 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
-				setEReference((EReference)newValue);
-				return;
+		case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
+			setEReference((EReference) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -137,14 +149,15 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
-				setEReference((EReference)null);
-				return;
+		case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
+			setEReference((EReference) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,15 +165,16 @@ public class AbstractReferenceInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
-				return eReference != null;
+		case SerializationPackage.ABSTRACT_REFERENCE_INSTANCE__EREFERENCE:
+			return eReference != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AbstractReferenceInstanceImpl
+} // AbstractReferenceInstanceImpl

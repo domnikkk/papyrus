@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.swt.widgets.Layout;
  * <li>{@link org.eclipse.papyrus.infra.gmfdiag.preferences.jface.preference.ColorFieldEditor} <em>ColorFieldEditor</em></li>
  * <li>{@link org.eclipse.papyrus.infra.gmfdiag.preferences.jface.preference.FontFieldEditor} <em>FontFieldEditor</em></li>
  * </ul>
- * 
+ *
  * @author tlandre
  */
 public abstract class AbstractPapyrusElementPreferencePage extends AbstractPapyrusPreferencePage {
@@ -43,7 +43,7 @@ public abstract class AbstractPapyrusElementPreferencePage extends AbstractPapyr
 
 	/**
 	 * create a local composite
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
@@ -66,9 +66,9 @@ public abstract class AbstractPapyrusElementPreferencePage extends AbstractPapyr
 
 	/**
 	 * Get the specified preference type associated with this preference page.
-	 * 
+	 *
 	 * @param preferenceType
-	 *        an int representing the preference type to retrieve. It must be a value defined in {@link PreferencesConstantsHelper}
+	 *            an int representing the preference type to retrieve. It must be a value defined in {@link PreferencesConstantsHelper}
 	 * @return the preference constant used to store the given prefence type.
 	 */
 	protected String getPreferenceConstant(int preferenceType) {

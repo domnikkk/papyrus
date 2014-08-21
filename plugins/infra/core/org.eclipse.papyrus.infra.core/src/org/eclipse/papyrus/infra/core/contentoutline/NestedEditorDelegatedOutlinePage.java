@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and other.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -79,8 +79,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	private PageBook sashEditorPageBook;
 
 	/**
-	 * Map from papyrus pages (representing nested editors) to outline page records (key type:
-	 * <code>org.eclipse.papyrus.infra.core.sasheditor.editor.IPage</code>;
+	 * Map from papyrus pages (representing nested editors) to outline page records (key type: <code>org.eclipse.papyrus.infra.core.sasheditor.editor.IPage</code>;
 	 * value type: <code>OutlinePageRec</code>).
 	 */
 	private Map<IPage, OutlinePageRec> mapIPapyrusPageToOutlineRec = new HashMap<IPage, OutlinePageRec>();
@@ -98,6 +97,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void init(IMultiDiagramEditor multiEditor) {
 		this.multiEditor = multiEditor;
 
@@ -107,7 +107,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	}
 
 	private void internalInit(IMultiDiagramEditor multiEditor) {
-		sashWindowsContainer = (ISashWindowsContainer)multiEditor.getAdapter(ISashWindowsContainer.class);
+		sashWindowsContainer = (ISashWindowsContainer) multiEditor.getAdapter(ISashWindowsContainer.class);
 		sashWindowsContainer.addPageLifeCycleListener(this);
 	}
 
@@ -129,7 +129,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	@Override
 	public void dispose() {
-		if(multiEditor != null) {
+		if (multiEditor != null) {
 			IReloadableEditor.Adapter.getAdapter(multiEditor).removeEditorReloadListener(this);
 		}
 
@@ -144,7 +144,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	private void internalDispose() {
 		// Deref all of the pages.
 		activeRec = null;
-		if(defaultPageRec != null) {
+		if (defaultPageRec != null) {
 			// check for null since the default page may not have
 			// been created (ex. perspective never visible)
 			defaultPageRec.contentOutlinePage.dispose();
@@ -154,7 +154,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		java.util.List<OutlinePageRec> records = new ArrayList<NestedEditorDelegatedOutlinePage.OutlinePageRec>(mapIPapyrusPageToOutlineRec.values());
 		Iterator<OutlinePageRec> itr = records.iterator();
-		while(itr.hasNext()) {
+		while (itr.hasNext()) {
 			OutlinePageRec rec = itr.next();
 			removePage(rec);
 		}
@@ -173,12 +173,12 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		bars.clearGlobalActionHandlers();
 
 		// Set new actions.
-		Map newActionHandlers = ((SubActionBars)activeRec.getPageSite().getActionBars()).getGlobalActionHandlers();
-		if(newActionHandlers != null) {
+		Map newActionHandlers = ((SubActionBars) activeRec.getPageSite().getActionBars()).getGlobalActionHandlers();
+		if (newActionHandlers != null) {
 			Set<?> keys = newActionHandlers.entrySet();
 			Iterator<?> iter = keys.iterator();
-			while(iter.hasNext()) {
-				Map.Entry<String, IAction> entry = (Map.Entry)iter.next();
+			while (iter.hasNext()) {
+				Map.Entry<String, IAction> entry = (Map.Entry) iter.next();
 				bars.setGlobalActionHandler(entry.getKey(), entry.getValue());
 			}
 		}
@@ -187,6 +187,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		// nothing here
 	}
@@ -194,6 +195,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ISelection getSelection() {
 		// nothing here
 		return null;
@@ -202,6 +204,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		// nothing here
 	}
@@ -209,6 +212,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setSelection(ISelection selection) {
 		// nothing here
 	}
@@ -231,14 +235,14 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		// Show the initial active page or the default page
 		IPage activePage = sashWindowsContainer.getActiveSashWindowsPage();
-		if(activePage != null) {
+		if (activePage != null) {
 			OutlinePageRec rec = getOutlinePageRec(activePage);
-			if(rec == null) {
+			if (rec == null) {
 				rec = createPage(activePage);
 			}
 
 			// Show the page, if it was successfully created
-			if(rec != null) {
+			if (rec != null) {
 				showOutlinePageRec(rec);
 			} else {
 				showOutlinePageRec(defaultPageRec);
@@ -266,6 +270,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageChanged(IPage newPage) {
 		// throw new UnsupportedOperationException("pageChanged not implemented " + newPage);
 	}
@@ -273,17 +278,18 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageOpened(IPage page) {
 		// Activator.log.debug("Opened");
 		// create the new Outline
 		// Create a page for the part.
 		OutlinePageRec rec = getOutlinePageRec(page);
-		if(rec == null) {
+		if (rec == null) {
 			rec = createPage(page);
 		}
 
 		// Show the page, if it was successfully created
-		if(rec != null) {
+		if (rec != null) {
 			showOutlinePageRec(rec);
 		} else {
 			showOutlinePageRec(defaultPageRec);
@@ -293,16 +299,17 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageClosed(IPage papyrusPage) {
 		// Activator.log.debug("Closed");
 		// Update the active part.
-		if(activeRec != null && activeRec.papyrusPage == papyrusPage) {
+		if (activeRec != null && activeRec.papyrusPage == papyrusPage) {
 			showOutlinePageRec(defaultPageRec);
 		}
 
 		// Find and remove the part page.
 		OutlinePageRec rec = getOutlinePageRec(papyrusPage);
-		if(rec != null) {
+		if (rec != null) {
 			removePage(rec);
 		}
 	}
@@ -310,13 +317,14 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageActivated(IPage page) {
 		// Activator.log.debug("Activated");
 		// Create a page for the partm, if necessary.
 		OutlinePageRec rec = getOutlinePageRec(page, true);
 
 		// Show the page, if it was successfully created
-		if(rec != null) {
+		if (rec != null) {
 			showOutlinePageRec(rec);
 		} else {
 			showOutlinePageRec(defaultPageRec);
@@ -326,22 +334,25 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageDeactivated(IPage page) {
-		//throw new UnsupportedOperationException("pageDeactivated not implemented " + page);
+		// throw new UnsupportedOperationException("pageDeactivated not implemented " + page);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageAboutToBeOpened(IPage page) {
-		//throw new UnsupportedOperationException("pageAboutToBeOpened not implemented "+page);
+		// throw new UnsupportedOperationException("pageAboutToBeOpened not implemented "+page);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void pageAboutToBeClosed(IPage page) {
-		//throw new UnsupportedOperationException("pageAboutToBeClosed not implemented " + page);
+		// throw new UnsupportedOperationException("pageAboutToBeClosed not implemented " + page);
 	}
 
 	@Override
@@ -356,18 +367,18 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		internalInit(event.getEditor());
 		createContents();
 
-		((OutlineContext)event.getContext()).restore();
+		((OutlineContext) event.getContext()).restore();
 	}
 
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// MAINLY INSPIRED FROM PAGE BOOK VIEW
-	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	/**
 	 * Creates and returns the default page for this view.
-	 * 
+	 *
 	 * @param book
-	 *        the pagebook control
+	 *            the pagebook control
 	 * @return the default page
 	 */
 	protected IContentOutlinePage createDefaultPage(PageBook book) {
@@ -379,14 +390,14 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Creates an outline record for a given papyrus Page. Adds it to the pagebook but does not show it.
-	 * 
+	 *
 	 * @param page
-	 *        The nested editor we are created an outline.
+	 *            The nested editor we are created an outline.
 	 * @return the created outline page record
 	 */
 	protected OutlinePageRec createPage(IPage papyrusPage) {
 		OutlinePageRec rec = doCreatePage(papyrusPage);
-		if(rec != null) {
+		if (rec != null) {
 			mapIPapyrusPageToOutlineRec.put(papyrusPage, rec);
 			preparePage(rec);
 		}
@@ -395,15 +406,15 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Prepares the page in the given page rec for use in this view.
-	 * 
+	 *
 	 * @param rec
 	 */
 	protected void preparePage(OutlinePageRec rec) {
 		IPageSite site = null;
 
-		if(!doesPageExist(rec.contentOutlinePage)) {
-			if(rec.contentOutlinePage instanceof IPageBookViewPage) {
-				site = ((IPageBookViewPage)rec.contentOutlinePage).getSite();
+		if (!doesPageExist(rec.contentOutlinePage)) {
+			if (rec.contentOutlinePage instanceof IPageBookViewPage) {
+				site = ((IPageBookViewPage) rec.contentOutlinePage).getSite();
 				rec.setPageSite(site);
 			}
 		}
@@ -417,9 +428,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 * <p>
 	 * Subclasses may override
 	 * </p>
-	 * 
+	 *
 	 * @param page
-	 *        The page to initialize
+	 *            The page to initialize
 	 */
 	protected void initPage(IPageBookViewPage page) {
 		try {
@@ -433,21 +444,21 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * @param site
-	 *        the page site from which parent view site is retrieved
+	 *            the page site from which parent view site is retrieved
 	 * @return the retrieved page site
 	 */
 	protected static IViewSite getViewSite(IPageSite site) {
-		if(site instanceof IViewSite) {
-			return ((IViewSite)site);
+		if (site instanceof IViewSite) {
+			return ((IViewSite) site);
 		}
-		// no way to get the IViewSite from the page site. 
-		if(site instanceof PageSite) {
+		// no way to get the IViewSite from the page site.
+		if (site instanceof PageSite) {
 			try {
 				Field parentSiteField = PageSite.class.getDeclaredField("parentSite");
 				parentSiteField.setAccessible(true);
 				Object parentSite = parentSiteField.get(site);
-				if(parentSite instanceof IViewSite) {
-					return ((IViewSite)parentSite);
+				if (parentSite instanceof IViewSite) {
+					return ((IViewSite) parentSite);
 				}
 			} catch (SecurityException e) {
 				Activator.log.error(e);
@@ -468,13 +479,13 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	protected OutlinePageRec doCreatePage(IPage papyrusPage) {
 		// Try to get an outline page.
-		if(papyrusPage instanceof IEditorPage) {
-			IEditorPart part = ((IEditorPage)papyrusPage).getIEditorPart();
+		if (papyrusPage instanceof IEditorPage) {
+			IEditorPart part = ((IEditorPage) papyrusPage).getIEditorPart();
 			Object obj = getAdapter(part, IContentOutlinePage.class, false);
-			if(obj instanceof IContentOutlinePage) {
-				IContentOutlinePage page = (IContentOutlinePage)obj;
-				if(page instanceof IPageBookViewPage) {
-					initPage((IPageBookViewPage)page);
+			if (obj instanceof IContentOutlinePage) {
+				IContentOutlinePage page = (IContentOutlinePage) obj;
+				if (page instanceof IPageBookViewPage) {
+					initPage((IPageBookViewPage) page);
 				}
 				page.createControl(getPageBook());
 				return new OutlinePageRec(papyrusPage, page);
@@ -490,7 +501,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 */
 	@Override
 	public DelegatedPageSite getSite() {
-		return (DelegatedPageSite)super.getSite();
+		return (DelegatedPageSite) super.getSite();
 	}
 
 	/*
@@ -509,9 +520,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns true if the page has already been created.
-	 * 
+	 *
 	 * @param page
-	 *        the page to test
+	 *            the page to test
 	 * @return true if this page has already been created.
 	 */
 	protected boolean doesPageExist(IContentOutlinePage page) {
@@ -520,11 +531,11 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the papyrus page which contributed the current outline page to this view.
-	 * 
+	 *
 	 * @return the page which contributed the current outline page or <code>null</code> if no part contributed the current page
 	 */
 	protected IPage getCurrentContributingPage() {
-		if(activeRec == null) {
+		if (activeRec == null) {
 			return null;
 		}
 		return activeRec.papyrusPage;
@@ -532,11 +543,11 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the currently visible outline page for this view or <code>null</code> if no page is currently visible.
-	 * 
+	 *
 	 * @return the currently visible page
 	 */
 	public IContentOutlinePage getCurrentOutlinePage() {
-		if(activeRec == null) {
+		if (activeRec == null) {
 			return null;
 		}
 		return activeRec.contentOutlinePage;
@@ -544,14 +555,14 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the view site for the given page of this view.
-	 * 
+	 *
 	 * @param page
-	 *        the page
+	 *            the page
 	 * @return the corresponding site, or <code>null</code> if not found
 	 */
 	protected IPageSite getPageSite(IPage page) {
 		OutlinePageRec rec = getOutlinePageRec(page);
-		if(rec != null) {
+		if (rec != null) {
 			return rec.getPageSite();
 		}
 		return null;
@@ -559,7 +570,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the default page for this view.
-	 * 
+	 *
 	 * @return the default page
 	 */
 	public IContentOutlinePage getDefaultOutlinePage() {
@@ -568,7 +579,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the pagebook control for this view.
-	 * 
+	 *
 	 * @return the pagebook control, or <code>null</code> if not initialized
 	 */
 	protected PageBook getPageBook() {
@@ -577,9 +588,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the page record for the given part.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 * @return the corresponding page record, or <code>null</code> if not
 	 *         found
 	 */
@@ -589,7 +600,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	OutlinePageRec getOutlinePageRec(IPage papyrusPage, boolean create) {
 		OutlinePageRec result = getOutlinePageRec(papyrusPage);
-		if(result == null) {
+		if (result == null) {
 			result = createPage(papyrusPage);
 		}
 		return result;
@@ -597,17 +608,17 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Returns the page record for the given page of this view.
-	 * 
+	 *
 	 * @param page
-	 *        the page
+	 *            the page
 	 * @return the corresponding page record, or <code>null</code> if not
 	 *         found
 	 */
 	protected OutlinePageRec getPageRec(IContentOutlinePage contentOutlinePage) {
 		Iterator<OutlinePageRec> itr = mapIPapyrusPageToOutlineRec.values().iterator();
-		while(itr.hasNext()) {
+		while (itr.hasNext()) {
 			OutlinePageRec rec = itr.next();
-			if(rec.contentOutlinePage == contentOutlinePage) {
+			if (rec.contentOutlinePage == contentOutlinePage) {
 				return rec;
 			}
 		}
@@ -616,15 +627,15 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 	/**
 	 * Removes a page record.
-	 * 
+	 *
 	 * @param rec
-	 *        the page record to remove
+	 *            the page record to remove
 	 */
 	protected void removePage(OutlinePageRec rec) {
 		mapIPapyrusPageToOutlineRec.remove(rec.papyrusPage);
 
 		Control control = rec.contentOutlinePage.getControl();
-		if(control != null && !control.isDisposed()) {
+		if (control != null && !control.isDisposed()) {
 			// Dispose the page's control so pages don't have to do this in their dispose method.
 			// The page's control is a child of this view's control so if this view is closed, the page's control will already be disposed.
 			control.dispose();
@@ -632,9 +643,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		// Do this before destroying the page, otherwise we won't be able to retrieve the page site (it will be null)
 		IPageSite site = rec.getPageSite();
-		if(site instanceof PageSite) { // test null pointer and PageSite
-			((SubActionBars)((PageSite)site).getActionBars()).deactivate();
-			((SubActionBars)((PageSite)site).getActionBars()).dispose();
+		if (site instanceof PageSite) { // test null pointer and PageSite
+			((SubActionBars) ((PageSite) site).getActionBars()).deactivate();
+			((SubActionBars) ((PageSite) site).getActionBars()).dispose();
 		}
 
 		// Free the page
@@ -648,11 +659,11 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	public void setFocus() {
 		// first set focus on the page book, in case the page
 		// doesn't properly handle setFocus
-		if(sashEditorPageBook != null) {
+		if (sashEditorPageBook != null) {
 			sashEditorPageBook.setFocus();
 		}
 		// then set focus on the page, if any
-		if(activeRec != null) {
+		if (activeRec != null) {
 			activeRec.contentOutlinePage.setFocus();
 		}
 	}
@@ -661,28 +672,27 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	 * Shows page contained in the given page record in this view. The page
 	 * record must be one from this pagebook view.
 	 * <p>
-	 * The <code>PageBookView</code> implementation of this method asks the pagebook control to show the given page's control, and records that the
-	 * given page is now current. Subclasses may extend.
+	 * The <code>PageBookView</code> implementation of this method asks the pagebook control to show the given page's control, and records that the given page is now current. Subclasses may extend.
 	 * </p>
-	 * 
+	 *
 	 * @param pageRec
-	 *        the page record containing the page to show
+	 *            the page record containing the page to show
 	 */
 	protected void showOutlinePageRec(OutlinePageRec pageRec) {
 		// If already showing do nothing
-		if(activeRec == pageRec) {
+		if (activeRec == pageRec) {
 			return;
 		}
 		// If the page is the same, just set activeRec to pageRec
-		if(activeRec != null && pageRec != null && activeRec.contentOutlinePage == pageRec.contentOutlinePage) {
+		if (activeRec != null && pageRec != null && activeRec.contentOutlinePage == pageRec.contentOutlinePage) {
 			activeRec = pageRec;
 			return;
 		}
 
 		activeRec = pageRec;
 		Control pageControl = activeRec.contentOutlinePage.getControl();
-		if(pageControl != null && !pageControl.isDisposed()) {
-			PageSite pageSite = (PageSite)activeRec.getPageSite();
+		if (pageControl != null && !pageControl.isDisposed()) {
+			PageSite pageSite = (PageSite) activeRec.getPageSite();
 			// Verify that the page control is not disposed
 			// If we are closing, it may have already been disposed
 			sashEditorPageBook.showPage(pageControl);
@@ -694,52 +704,52 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 	/**
 	 * If it is possible to adapt the given object to the given type, this
 	 * returns the adapter. Performs the following checks:
-	 * 
+	 *
 	 * <ol>
 	 * <li>Returns <code>sourceObject</code> if it is an instance of the adapter type.</li>
 	 * <li>If sourceObject implements IAdaptable, it is queried for adapters.</li>
 	 * <li>If sourceObject is not an instance of PlatformObject (which would have already done so), the adapter manager is queried for adapters</li>
 	 * </ol>
-	 * 
+	 *
 	 * Otherwise returns null.
-	 * 
+	 *
 	 * @param sourceObject
-	 *        object to adapt, or null
+	 *            object to adapt, or null
 	 * @param adapter
-	 *        type to adapt to
+	 *            type to adapt to
 	 * @param activatePlugins
-	 *        true if IAdapterManager.loadAdapter should be used (may trigger plugin activation)
+	 *            true if IAdapterManager.loadAdapter should be used (may trigger plugin activation)
 	 * @return a representation of sourceObject that is assignable to the
 	 *         adapter type, or null if no such representation exists
 	 */
 	public static Object getAdapter(Object sourceObject, Class<?> adapter, boolean activatePlugins) {
 		Assert.isNotNull(adapter);
-		if(sourceObject == null) {
+		if (sourceObject == null) {
 			return null;
 		}
-		if(adapter.isInstance(sourceObject)) {
+		if (adapter.isInstance(sourceObject)) {
 			return sourceObject;
 		}
 
-		if(sourceObject instanceof IAdaptable) {
-			IAdaptable adaptable = (IAdaptable)sourceObject;
+		if (sourceObject instanceof IAdaptable) {
+			IAdaptable adaptable = (IAdaptable) sourceObject;
 
 			Object result = adaptable.getAdapter(adapter);
-			if(result != null) {
+			if (result != null) {
 				// Sanity-check
 				Assert.isTrue(adapter.isInstance(result));
 				return result;
 			}
 		}
 
-		if(!(sourceObject instanceof PlatformObject)) {
+		if (!(sourceObject instanceof PlatformObject)) {
 			Object result;
-			if(activatePlugins) {
+			if (activatePlugins) {
 				result = Platform.getAdapterManager().loadAdapter(sourceObject, adapter.getName());
 			} else {
 				result = Platform.getAdapterManager().getAdapter(sourceObject, adapter);
 			}
-			if(result != null) {
+			if (result != null) {
 				return result;
 			}
 		}
@@ -765,7 +775,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		/**
 		 * Creates a new page record initialized to the given papyrus page and outline page.
-		 * 
+		 *
 		 * @param papyrusPage
 		 * @param contentOutlinePage
 		 */
@@ -776,9 +786,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		/**
 		 * Sets the page site
-		 * 
+		 *
 		 * @param pageSite
-		 *        the page site for the recorded content outline page
+		 *            the page site for the recorded content outline page
 		 */
 		public void setPageSite(IPageSite pageSite) {
 			this.pageSite = pageSite;
@@ -786,9 +796,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		/**
 		 * Sets the page site
-		 * 
+		 *
 		 * @param pageSite
-		 *        the page site for the recorded content outline page
+		 *            the page site for the recorded content outline page
 		 */
 		public IPageSite getPageSite() {
 			return this.pageSite;
@@ -813,7 +823,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param parentViewSite
 		 * @param nestedEditorDelegatedOutlinePage
 		 */
@@ -824,13 +834,13 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		/**
 		 * Sets the active page site
-		 * 
+		 *
 		 * @param activePageSite
-		 *        the activePageSite to set
+		 *            the activePageSite to set
 		 */
 		public void setActivePageSite(PageSite activePageSite) {
 			// remove the contribution of the previous active page site
-			if(this.activePageSite != null) {
+			if (this.activePageSite != null) {
 				// update the action bars for the current page
 				getActionBars().deactivate();
 				getActionBars().clearGlobalActionHandlers();
@@ -840,7 +850,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 			}
 			this.activePageSite = activePageSite;
-			if(this.activePageSite != null) {
+			if (this.activePageSite != null) {
 				activePageSite.activate();
 				// update the action bars for the current page
 				getActionBars().activate();
@@ -850,7 +860,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 		/**
 		 * Returns the active page site
-		 * 
+		 *
 		 * @return the active Page Site
 		 */
 		public PageSite getActivePageSite() {
@@ -862,10 +872,10 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		 */
 		@Override
 		public SubActionBars getActionBars() {
-			if(activePageSite != null) {
-				return (SubActionBars)activePageSite.getActionBars();
+			if (activePageSite != null) {
+				return (SubActionBars) activePageSite.getActionBars();
 			}
-			return (SubActionBars)super.getActionBars();
+			return (SubActionBars) super.getActionBars();
 		}
 
 		/**
@@ -874,16 +884,16 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		@Override
 		public void deactivate() {
 			// deactivate the action bars of the current active page
-			if(activePageSite != null) {
+			if (activePageSite != null) {
 				activePageSite.deactivate();
 			}
 
 			// deactivate all subcontributions
-			for(OutlinePageRec rec : nestedEditorDelegatedOutlinePage.getAllPages()) {
+			for (OutlinePageRec rec : nestedEditorDelegatedOutlinePage.getAllPages()) {
 				IPageSite site = rec.getPageSite();
 				IActionBars bars = site.getActionBars();
-				if(bars instanceof SubActionBars) {
-					SubActionBars subActionBars = (SubActionBars)bars;
+				if (bars instanceof SubActionBars) {
+					SubActionBars subActionBars = (SubActionBars) bars;
 					subActionBars.deactivate();
 					subActionBars.clearGlobalActionHandlers();
 					subActionBars.updateActionBars();
@@ -901,17 +911,17 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 			// here, we have to desactivate all contributions of all pages of this delegating service.
 			// when the page site is activated, the pagebookview has already tried to update some action bars, even if it should not
 			// so we recompute all the active contributions items here, after desactivating all the contributions.
-			for(OutlinePageRec rec : nestedEditorDelegatedOutlinePage.getAllPages()) {
+			for (OutlinePageRec rec : nestedEditorDelegatedOutlinePage.getAllPages()) {
 				IPageSite site = rec.getPageSite();
 				IActionBars bars = site.getActionBars();
-				if(bars instanceof SubActionBars) {
-					SubActionBars subActionBars = (SubActionBars)bars;
+				if (bars instanceof SubActionBars) {
+					SubActionBars subActionBars = (SubActionBars) bars;
 					subActionBars.deactivate();
 					subActionBars.clearGlobalActionHandlers();
 					subActionBars.updateActionBars();
 				}
 			}
-			if(this.activePageSite != null) {
+			if (this.activePageSite != null) {
 				activePageSite.activate();
 				// update the action bars for the current page
 				getActionBars().activate();
@@ -930,6 +940,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void createControl(Composite parent) {
 			label = new Text(parent, SWT.NONE);
 			label.setText("No outline for this editor");
@@ -938,8 +949,9 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void dispose() {
-			if(label != null && label.isDisposed()) {
+			if (label != null && label.isDisposed()) {
 				label.dispose();
 				label = null;
 			}
@@ -948,6 +960,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public Control getControl() {
 			return label;
 		}
@@ -955,14 +968,16 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void setActionBars(IActionBars actionBars) {
 		}
 
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void setFocus() {
-			if(label != null && label.isDisposed()) {
+			if (label != null && label.isDisposed()) {
 				label.setFocus();
 			}
 		}
@@ -970,6 +985,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void addSelectionChangedListener(ISelectionChangedListener listener) {
 			// nothing here
 		}
@@ -977,6 +993,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public ISelection getSelection() {
 			// nothing here
 			return null;
@@ -985,6 +1002,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 			// nothing here
 		}
@@ -992,6 +1010,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void setSelection(ISelection selection) {
 			// nothing here
 		}
@@ -999,6 +1018,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public IPageSite getSite() {
 			return site;
 		}
@@ -1006,6 +1026,7 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void init(IPageSite site) throws PartInitException {
 			this.site = site;
 		}
@@ -1017,13 +1038,13 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 		private List<PageContext> pages = Lists.newArrayListWithCapacity(mapIPapyrusPageToOutlineRec.size());
 
 		OutlineContext() {
-			for(OutlinePageRec next : mapIPapyrusPageToOutlineRec.values()) {
+			for (OutlinePageRec next : mapIPapyrusPageToOutlineRec.values()) {
 				pages.add(new PageContext(next));
 			}
 		}
 
 		public void restore() {
-			for(PageContext next : pages) {
+			for (PageContext next : pages) {
 				next.restore();
 			}
 		}
@@ -1040,10 +1061,10 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 
 			PageContext(OutlinePageRec outlinePage) {
 				Object diagram = outlinePage.papyrusPage.getRawModel();
-				diagramToken = (diagram instanceof EObject) ? EcoreUtil.getURI((EObject)diagram) : null;
+				diagramToken = (diagram instanceof EObject) ? EcoreUtil.getURI((EObject) diagram) : null;
 
 				// Can only sensibly manage restoring the state of the page if we can find it again
-				if(diagramToken == null) {
+				if (diagramToken == null) {
 					context = null;
 				} else {
 					IReloadContextProvider provider = AdapterUtils.adapt(outlinePage.contentOutlinePage, IReloadContextProvider.class, null);
@@ -1052,16 +1073,16 @@ public class NestedEditorDelegatedOutlinePage extends Page implements IPapyrusCo
 			}
 
 			void restore() {
-				if(diagramToken != null) {
+				if (diagramToken != null) {
 					try {
 						ModelSet modelSet = multiEditor.getServicesRegistry().getService(ModelSet.class);
 
 						Object diagram = modelSet.getEObject(diagramToken, true);
-						if(diagram != null) {
+						if (diagram != null) {
 							IPage page = sashWindowsContainer.lookupModelPage(diagram);
-							if(page != null) {
+							if (page != null) {
 								OutlinePageRec outlinePage = getOutlinePageRec(page, true);
-								if((outlinePage != null) && (context != null)) {
+								if ((outlinePage != null) && (context != null)) {
 									// Restore it. We know it adapts if it provided the reload state in the first place
 									AdapterUtils.adapt(outlinePage.contentOutlinePage, IReloadContextProvider.class, null).restore(context);
 								}

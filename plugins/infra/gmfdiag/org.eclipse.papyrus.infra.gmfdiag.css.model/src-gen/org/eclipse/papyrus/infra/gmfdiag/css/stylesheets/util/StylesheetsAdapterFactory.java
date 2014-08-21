@@ -19,6 +19,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage
  * @generated
  */
@@ -27,6 +28,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static StylesheetsPackage modelPackage;
@@ -35,6 +37,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StylesheetsAdapterFactory() {
@@ -48,6 +51,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -57,7 +61,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -66,55 +70,65 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StylesheetsSwitch<Adapter> modelSwitch =
-		new StylesheetsSwitch<Adapter>() {
-			@Override
-			public Adapter caseModelStyleSheets(ModelStyleSheets object) {
-				return createModelStyleSheetsAdapter();
-			}
-			@Override
-			public Adapter caseStyleSheet(StyleSheet object) {
-				return createStyleSheetAdapter();
-			}
-			@Override
-			public Adapter caseStyleSheetReference(StyleSheetReference object) {
-				return createStyleSheetReferenceAdapter();
-			}
-			@Override
-			public Adapter caseEmbeddedStyleSheet(EmbeddedStyleSheet object) {
-				return createEmbeddedStyleSheetAdapter();
-			}
-			@Override
-			public Adapter caseWorkspaceThemes(WorkspaceThemes object) {
-				return createWorkspaceThemesAdapter();
-			}
-			@Override
-			public Adapter caseTheme(Theme object) {
-				return createThemeAdapter();
-			}
-			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new StylesheetsSwitch<Adapter>() {
+				@Override
+				public Adapter caseModelStyleSheets(ModelStyleSheets object) {
+					return createModelStyleSheetsAdapter();
+				}
+
+				@Override
+				public Adapter caseStyleSheet(StyleSheet object) {
+					return createStyleSheetAdapter();
+				}
+
+				@Override
+				public Adapter caseStyleSheetReference(StyleSheetReference object) {
+					return createStyleSheetReferenceAdapter();
+				}
+
+				@Override
+				public Adapter caseEmbeddedStyleSheet(EmbeddedStyleSheet object) {
+					return createEmbeddedStyleSheetAdapter();
+				}
+
+				@Override
+				public Adapter caseWorkspaceThemes(WorkspaceThemes object) {
+					return createWorkspaceThemesAdapter();
+				}
+
+				@Override
+				public Adapter caseTheme(Theme object) {
+					return createThemeAdapter();
+				}
+
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -124,6 +138,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.ModelStyleSheets
 	 * @generated
@@ -138,6 +153,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StyleSheet
 	 * @generated
@@ -152,6 +168,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StyleSheetReference
 	 * @generated
@@ -166,6 +183,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.EmbeddedStyleSheet
 	 * @generated
@@ -180,6 +198,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes
 	 * @generated
@@ -194,6 +213,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.Theme
 	 * @generated
@@ -208,6 +228,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
@@ -221,6 +242,7 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -228,4 +250,4 @@ public class StylesheetsAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //StylesheetsAdapterFactory
+} // StylesheetsAdapterFactory

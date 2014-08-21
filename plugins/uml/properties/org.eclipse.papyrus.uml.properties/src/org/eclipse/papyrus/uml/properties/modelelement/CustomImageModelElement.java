@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Image;
 
 /**
  * A Model Element for manipulating Stereotype icons in Papyrus
- * 
+ *
  * @author Camille Letavernier
  */
 public class CustomImageModelElement extends AbstractModelElement {
@@ -60,13 +60,13 @@ public class CustomImageModelElement extends AbstractModelElement {
 	public static final String NAME = "name"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlSource
-	 *        The image represented by this model element
+	 *            The image represented by this model element
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 */
 	public CustomImageModelElement(Image umlSource, EditingDomain domain) {
 		this.image = umlSource;
@@ -78,11 +78,11 @@ public class CustomImageModelElement extends AbstractModelElement {
 	 */
 	@Override
 	protected IObservable doGetObservable(String propertyPath) {
-		if(propertyPath.equals(KIND)) {
+		if (propertyPath.equals(KIND)) {
 			return new ImageKindObservableValue(image, editingDomain);
-		} else if(propertyPath.equals(EXPRESSION)) {
+		} else if (propertyPath.equals(EXPRESSION)) {
 			return new ImageExpressionObservableValue(image, editingDomain);
-		} else if(propertyPath.equals(NAME)) {
+		} else if (propertyPath.equals(NAME)) {
 			return new ImageNameObservableValue(image, editingDomain);
 		}
 
@@ -96,11 +96,11 @@ public class CustomImageModelElement extends AbstractModelElement {
 	 */
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(propertyPath.equals(KIND)) {
+		if (propertyPath.equals(KIND)) {
 			return new AbstractStaticContentProvider() {
 
 				public Object[] getElements() {
-					return new String[]{ KIND_UNDEFINED, KIND_ICON, KIND_SHAPE };
+					return new String[] { KIND_UNDEFINED, KIND_ICON, KIND_SHAPE };
 				}
 
 			};

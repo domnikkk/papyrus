@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,21 +31,22 @@ public class PapyrusPaletteEntryState extends PaletteEntryState {
 
 	/**
 	 * Creates a new PapyrusPaletteEntryState.
-	 * 
+	 *
 	 * @param entry
-	 *        the palette entry to manage
+	 *            the palette entry to manage
 	 */
 	public PapyrusPaletteEntryState(PaletteEntry entry) {
 		super(entry);
 	}
 
+	@Override
 	public void applyChangesFromMemento(IMemento entryMemento) {
 		super.applyChangesFromMemento(entryMemento);
 		PaletteEntry entry = getPaletteEntry();
 
 		String sValue = entryMemento.getString(PARENT_ID_KEY);
-		if(sValue != null) {
-			if(!entry.getParent().getId().equals(sValue)) {
+		if (sValue != null) {
+			if (!entry.getParent().getId().equals(sValue)) {
 				// adds to the new container, but does nto remove from old one,
 				// because of
 				// iterator...
@@ -58,6 +59,7 @@ public class PapyrusPaletteEntryState extends PaletteEntryState {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void rollback() {
 		super.rollback();
 		PaletteEntry entry = getPaletteEntry();
@@ -74,7 +76,7 @@ public class PapyrusPaletteEntryState extends PaletteEntryState {
 		PaletteEntry entry = getPaletteEntry();
 
 		// stores the parent id name
-		if(parentID != null && !parentID.equals(entry.getParent().getId()) || (parentID == null && entry.getParent() != null)) {
+		if (parentID != null && !parentID.equals(entry.getParent().getId()) || (parentID == null && entry.getParent() != null)) {
 			memento.putString(PARENT_ID_KEY, entry.getParent().getId());
 		}
 
@@ -83,6 +85,7 @@ public class PapyrusPaletteEntryState extends PaletteEntryState {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void storeState() {
 		super.storeState();
 		PaletteEntry entry = getPaletteEntry();

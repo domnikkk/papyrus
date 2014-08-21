@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class InteractionOperandFigure extends PapyrusNodeFigure {
 	@Override
 	public void paintFigure(Graphics graphics) {
 		super.paintFigure(graphics);
-		if(lineSeparator) {
+		if (lineSeparator) {
 			graphics.setLineStyle(getLineStyle());
 			graphics.setLineWidth(getLineWidth());
 			graphics.drawLine(getBounds().getTopLeft(), getBounds().getTopRight());
@@ -35,7 +35,7 @@ public class InteractionOperandFigure extends PapyrusNodeFigure {
 
 	/**
 	 * Set the line separator
-	 * 
+	 *
 	 * @param lineSeparator
 	 */
 	public void setLineSeparator(boolean lineSeparator) {

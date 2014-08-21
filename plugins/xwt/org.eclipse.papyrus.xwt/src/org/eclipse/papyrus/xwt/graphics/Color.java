@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -12,7 +12,7 @@ package org.eclipse.papyrus.xwt.graphics;
 
 /**
  * Color consists of four elements: alpha, blue, green and red.
- * 
+ *
  * @author yyang
  */
 public class Color {
@@ -67,7 +67,7 @@ public class Color {
 	}
 
 	public org.eclipse.swt.graphics.Color toSWTColor() {
-		if(swtColor == null) {
+		if (swtColor == null) {
 			swtColor = new org.eclipse.swt.graphics.Color(null, red, green, blue);
 		}
 		return swtColor;

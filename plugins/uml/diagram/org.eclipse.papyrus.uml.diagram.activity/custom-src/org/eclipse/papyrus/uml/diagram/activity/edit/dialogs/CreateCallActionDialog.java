@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -40,39 +41,41 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 
 	/**
 	 * Create a new dialog to initialize a CallAction.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
-	public CreateCallActionDialog(Shell shell, Activity owner,InvocationAction newAction) {
-		super(shell, owner,newAction);
+	public CreateCallActionDialog(Shell shell, Activity owner, InvocationAction newAction) {
+		super(shell, owner, newAction);
 	}
 
 	/**
 	 * Create the IsSynchronous section.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
+	@Override
 	protected void createExtraSections(Composite pParent, FormToolkit pToolkit) {
 		createIsSynchronousSection(pParent, pToolkit);
 	}
 
 	/**
 	 * Refresh the enabled and disabled elements in various sections
-	 * 
+	 *
 	 * @param isSelectionSelected
-	 *        true if we choose to select an existing element, false if we
-	 *        choose to create an element
+	 *            true if we choose to select an existing element, false if we
+	 *            choose to create an element
 	 */
+	@Override
 	protected void refreshSectionsEnable(boolean isSelectionSelected) {
 		super.refreshSectionsEnable(isSelectionSelected);
 		// handle synchronization constraint
-		if(isSelectionSelected) {
+		if (isSelectionSelected) {
 			updateSynchronous(getSelectedInvoked());
 		} else {
 			updateSynchronous(null);
@@ -82,10 +85,11 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 	/**
 	 * Define the object that will be invoked by the action (if selection mode
 	 * is chosen)
-	 * 
+	 *
 	 * @param invokedElement
-	 *        the selected element
+	 *            the selected element
 	 */
+	@Override
 	protected void setInvokedSelection(EObject invokedElement) {
 		super.setInvokedSelection(invokedElement);
 		updateSynchronous(invokedElement);
@@ -93,18 +97,18 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 
 	/**
 	 * Create the section to ask whether the action must be synchronous.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createIsSynchronousSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = getIsSynchronousSectionTitle();
-		Section lSection = pToolkit.createSection(pParent, Section.TWISTIE | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.TWISTIE | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, CustomMessages.CreateCallActionDialog_IsSynchronousHelp, true);
@@ -126,9 +130,9 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 	/**
 	 * Set correctly the invoked object, by creating it if needed. Then,
 	 * notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
@@ -139,7 +143,7 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 
 	/**
 	 * Get whether the CallAction must be synchronous.
-	 * 
+	 *
 	 * @return the invoked object to use.
 	 */
 	public boolean getIsSynchronous() {
@@ -148,21 +152,21 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 
 	/**
 	 * Test is the invoked object has parameters which will generate output pins
-	 * 
+	 *
 	 * @param invokedObject
-	 *        the object whose parameters must be inspected
+	 *            the object whose parameters must be inspected
 	 * @return true if there are parameters which will be mapped with output
 	 *         pins
 	 */
 	abstract protected boolean hasOutParameters(EObject invokedObject);
 
 	/**
-	 * 
+	 *
 	 * @param selectedInvoked
-	 *        the invoked object selected
+	 *            the invoked object selected
 	 */
 	private void updateSynchronous(EObject selectedInvoked) {
-		if(hasOutParameters(selectedInvoked)) {
+		if (hasOutParameters(selectedInvoked)) {
 			isSynchronousButton.setSelection(true);
 			isSynchronousButton.setEnabled(false);
 		} else {
@@ -172,7 +176,7 @@ public abstract class CreateCallActionDialog extends CreateInvocationActionDialo
 
 	/**
 	 * Get the title of the is synchronous section
-	 * 
+	 *
 	 * @return section title
 	 */
 	protected String getIsSynchronousSectionTitle() {

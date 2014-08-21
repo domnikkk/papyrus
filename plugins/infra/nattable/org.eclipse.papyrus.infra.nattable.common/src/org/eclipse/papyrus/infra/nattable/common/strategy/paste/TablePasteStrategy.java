@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteStrategy {
 
 	/** key to store tables with no owner */
-	protected static final String TABLE_WITH_NO_OWNER = "TABLE_WITH_NO_OWNER"; //$NON-NLS-1$ 
+	protected static final String TABLE_WITH_NO_OWNER = "TABLE_WITH_NO_OWNER"; //$NON-NLS-1$
 
 	/** The instance. */
 	private static IPasteStrategy instance = new TablePasteStrategy();
@@ -61,6 +61,7 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "Table Strategy"; //$NON-NLS-1$
 	}
@@ -70,6 +71,7 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
+	@Override
 	public String getID() {
 		return Activator.ID + ".TableStrategy"; //$NON-NLS-1$
 	}
@@ -79,6 +81,7 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return "Copy Table"; //$NON-NLS-1$
 	}
@@ -96,30 +99,30 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 		Map internalClipboardToTargetCopy = papyrusClipboard.getInternalClipboardToTargetCopy();
 		Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
 
-		if(additionalDataMap != null) {
+		if (additionalDataMap != null) {
 			Object additionalData = additionalDataMap.get(TABLE_WITH_NO_OWNER);
-			if(additionalData instanceof TableClipboardAdditionalData) {
-				TableClipboardAdditionalData tableAdditionalData = (TableClipboardAdditionalData)additionalData;
+			if (additionalData instanceof TableClipboardAdditionalData) {
+				TableClipboardAdditionalData tableAdditionalData = (TableClipboardAdditionalData) additionalData;
 				Collection<Table> duplicateTables = tableAdditionalData.getDuplicatedTables(internalClipboardToTargetCopy);
-				for(final Table table : duplicateTables) {
-					org.eclipse.emf.common.command.Command command = new InsertTableCommand((TransactionalEditingDomain)domain, "Insert a table whit no source owner", table, targetOwner); //$NON-NLS-1$
+				for (final Table table : duplicateTables) {
+					org.eclipse.emf.common.command.Command command = new InsertTableCommand((TransactionalEditingDomain) domain, "Insert a table whit no source owner", table, targetOwner); //$NON-NLS-1$
 					compoundCommand.append(command);
 				}
 			}
 
-			for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
-				Object object = (Object)iterator.next();
+			for (Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
+				Object object = iterator.next();
 				// get target Element
 				EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
-				if(target != null && target instanceof EObject) {
+				if (target != null && target instanceof EObject) {
 					// get affiliate additionalDataMap
 
 					additionalData = additionalDataMap.get(object);
-					if(additionalData instanceof TableClipboardAdditionalData) {
-						TableClipboardAdditionalData tableAdditionalData = (TableClipboardAdditionalData)additionalData;
+					if (additionalData instanceof TableClipboardAdditionalData) {
+						TableClipboardAdditionalData tableAdditionalData = (TableClipboardAdditionalData) additionalData;
 						Collection<Table> duplicateTables = tableAdditionalData.getDuplicatedTables(internalClipboardToTargetCopy);
-						for(final Table table : duplicateTables) {
-							org.eclipse.emf.common.command.Command command = new InsertTableCommand((TransactionalEditingDomain)domain, "InsertTableCommand", table, target); //$NON-NLS-1$
+						for (final Table table : duplicateTables) {
+							org.eclipse.emf.common.command.Command command = new InsertTableCommand((TransactionalEditingDomain) domain, "InsertTableCommand", table, target); //$NON-NLS-1$
 							compoundCommand.append(command);
 						}
 					}
@@ -127,8 +130,8 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 			}
 		}
 
-		// An empty compound Command can't be executed 
-		if(compoundCommand.getCommandList().isEmpty()) {
+		// An empty compound Command can't be executed
+		if (compoundCommand.getCommandList().isEmpty()) {
 			return null;
 		}
 		return compoundCommand;
@@ -156,16 +159,16 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 		Map<Object, IClipboardAdditionalData> mapCopyToClipboardAdditionalData = new HashMap<Object, IClipboardAdditionalData>();
 
 		List<Table> extractSelectedWithoutOwner = extractTableWithoutOwner(selection);
-		if(extractSelectedWithoutOwner != null && !extractSelectedWithoutOwner.isEmpty()) {
+		if (extractSelectedWithoutOwner != null && !extractSelectedWithoutOwner.isEmpty()) {
 			TableClipboardAdditionalData diagramAdditionnalData = new TableClipboardAdditionalData(extractSelectedWithoutOwner, sourceToInternalClipboard);
 			mapCopyToClipboardAdditionalData.put(TABLE_WITH_NO_OWNER, diagramAdditionnalData);
 		}
 
-		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
+		for (Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
 			EObject eObjectSource = iterator.next();
 			ResourceSet resourceSet = eObjectSource.eResource().getResourceSet();
 			List<Table> associatedTables = TableUtil.getAssociatedTables(eObjectSource, resourceSet);
-			if(associatedTables != null) {
+			if (associatedTables != null) {
 				TableClipboardAdditionalData tabledAdditionalData = new TableClipboardAdditionalData(associatedTables, sourceToInternalClipboard);
 				Object copy = papyrusClipboard.getCopyFromSource(eObjectSource);
 				mapCopyToClipboardAdditionalData.put(copy, tabledAdditionalData);
@@ -178,18 +181,18 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 
 	/**
 	 * Extract Table in which owner is not in the selection
-	 * 
+	 *
 	 * @param selection
 	 * @return
 	 */
 	protected List<Table> extractTableWithoutOwner(Collection<EObject> selection) {
 		List<Table> tableWithoutOwnerInSelection = new ArrayList<Table>();
-		if(selection != null) {
-			for(EObject eObject : selection) {
-				if(eObject instanceof Table) {
-					Table table = (Table)eObject;
+		if (selection != null) {
+			for (EObject eObject : selection) {
+				if (eObject instanceof Table) {
+					Table table = (Table) eObject;
 					EObject element = table.getOwner();
-					if(!selection.contains(element)) {
+					if (!selection.contains(element)) {
 						tableWithoutOwnerInSelection.add(table);
 					}
 				}
@@ -222,7 +225,7 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 
 		/**
 		 * @param tables
-		 *        to duplicate
+		 *            to duplicate
 		 * @param alreadyCopied
 		 * @return duplicated tables
 		 */
@@ -230,12 +233,12 @@ public class TablePasteStrategy extends AbstractPasteStrategy implements IPasteS
 			Collection<Table> duplicatedTables = new ArrayList<Table>();
 			EcoreUtil.Copier copier = new EcoreUtil.Copier();
 			copier.putAll(alreadyCopied);
-			for(Table table : tables) {
+			for (Table table : tables) {
 				copier.copy(table);
 				copier.copyReferences();
 				EObject copy = copier.get(table);
-				if(copy instanceof Table) {
-					duplicatedTables.add((Table)copy);
+				if (copy instanceof Table) {
+					duplicatedTables.add((Table) copy);
 				}
 			}
 			return duplicatedTables;

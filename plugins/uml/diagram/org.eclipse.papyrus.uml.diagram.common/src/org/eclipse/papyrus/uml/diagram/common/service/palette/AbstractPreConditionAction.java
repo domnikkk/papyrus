@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.w3c.dom.Node;
 
 /**
  * Abstract aspect action class for preconditions
- * 
+ *
  * @author proland
  */
 public abstract class AbstractPreConditionAction implements IPreAction {
@@ -48,6 +48,7 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		this.factory = factory;
 	}
@@ -55,6 +56,7 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Image getImage() {
 		return factory.getImage();
 	}
@@ -62,6 +64,7 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public String getLabel() {
 		return factory.getName();
 	}
@@ -69,21 +72,25 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public String getFactoryId() {
 		return factory.getFactoryId();
 	}
 
+	@Override
 	public IStatus checkPostCondition() {
-		//Do nothing
+		// Do nothing
 		return null;
 	}
 
+	@Override
 	public IStatus checkPreCondition() {
-		//Do nothing; this is already covered by the command itself, 
-		//which can return an Unexecutable command
+		// Do nothing; this is already covered by the command itself,
+		// which can return an Unexecutable command
 		return null;
 	}
 
+	@Override
 	public ICommand getConnectionPreCommand(View sourceView, View targetView) {
 		List<IStatus> preConditionStatusList = checkConnectionPreCondition(sourceView, targetView);
 		return handlePreconditionFailure(preConditionStatusList);
@@ -91,15 +98,16 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 
 	/**
 	 * Check the preCondition
-	 * 
+	 *
 	 * @param sourceView
-	 *        the future connection's source's View
+	 *            the future connection's source's View
 	 * @param targetView
-	 *        the future connection's target's View
+	 *            the future connection's target's View
 	 * @return
 	 */
 	protected abstract List<IStatus> checkConnectionPreCondition(View sourceView, View targetView);
 
+	@Override
 	public ICommand getNodePreCommand(View containerView) {
 		List<IStatus> preConditionStatusList = checkNodePreCondition(containerView);
 		return handlePreconditionFailure(preConditionStatusList);
@@ -107,9 +115,9 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 
 	/**
 	 * Check the preCondition
-	 * 
+	 *
 	 * @param containerView
-	 *        the future node's container's View
+	 *            the future node's container's View
 	 * @return
 	 */
 	protected abstract List<IStatus> checkNodePreCondition(View containerView);
@@ -117,49 +125,49 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 	/**
 	 * If the precondition check fails, call this method. It generates an appropiate log window and offers the user to continue regardless if
 	 * allowContinue() returns true
-	 * 
+	 *
 	 * @param preConditionStatusList
-	 *        the list of IStatus resulting from the precondition check
+	 *            the list of IStatus resulting from the precondition check
 	 * @return the appropriate command; null if no problems were encountered or the user chose to continue, UnexecutableCommand otherwise.
 	 */
 	protected ICommand handlePreconditionFailure(List<IStatus> preConditionStatusList) {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("The following precondition(s) failed with the error messages:");
 		boolean failed = false;
-		for(IStatus status : preConditionStatusList) {
-			if(!status.isOK()) {
+		for (IStatus status : preConditionStatusList) {
+			if (!status.isOK()) {
 				stringBuilder.append("\n\r\n\r" + status.getMessage());
 				failed = true;
 			}
 		}
 
-		if(failed) {
-			//If this precondition allows the user to continue regardless
-			if(allowContinue()) {
+		if (failed) {
+			// If this precondition allows the user to continue regardless
+			if (allowContinue()) {
 				stringBuilder.append("\n\r\n\rDo you wish to continue?");
 
-				//attempts to use NotificationBuilder cause the transaction to fail for reasons yet unknown (a rollback causes the view's element to be unset,
-				//prompting NPEs in following postActions. See commented code below)
+				// attempts to use NotificationBuilder cause the transaction to fail for reasons yet unknown (a rollback causes the view's element to be unset,
+				// prompting NPEs in following postActions. See commented code below)
 				MessageBox dialog = new MessageBox(Display.getCurrent().getActiveShell(), SWT.ICON_QUESTION | SWT.OK | SWT.CANCEL);
 				dialog.setText("Precondition failure");
 				dialog.setMessage(stringBuilder.toString());
 				int returnCode = dialog.open();
-				if(returnCode == SWT.OK) {
+				if (returnCode == SWT.OK) {
 					return null;
 				}
 
 				/** XXX This is cleaner and allows for the use of html tags for improved readability, but causes errors */
-				//				NotificationBuilder builder = NotificationBuilder
-				//					.createYesNo(stringBuilder.toString())
-				//					.setHTML(true)
-				//					.setMessage(stringBuilder.toString());
-				//				INotification notification = builder.run();
-				//				if(notification instanceof PopupNotification) {
-				//					PopupNotification popupNotification = (PopupNotification)notification;
-				//					if(popupNotification.getResult() == SWT.YES) {
-				//						return null;
-				//					}
-				//				}
+				// NotificationBuilder builder = NotificationBuilder
+				// .createYesNo(stringBuilder.toString())
+				// .setHTML(true)
+				// .setMessage(stringBuilder.toString());
+				// INotification notification = builder.run();
+				// if(notification instanceof PopupNotification) {
+				// PopupNotification popupNotification = (PopupNotification)notification;
+				// if(popupNotification.getResult() == SWT.YES) {
+				// return null;
+				// }
+				// }
 				return new UnexecutableCommand(Status.CANCEL_STATUS);
 			} else {
 				MessageBox dialog = new MessageBox(Display.getCurrent().getActiveShell(), SWT.ICON_ERROR | SWT.OK);
@@ -177,16 +185,17 @@ public abstract class AbstractPreConditionAction implements IPreAction {
 	 */
 	protected abstract boolean allowContinue();
 
+	@Override
 	public void setServicesRegistry(ServicesRegistry registry) {
 		this.registry = registry;
 	}
 
 	protected ServicesRegistry getServicesRegistry() {
-		if(registry == null) {
-			//FIXME: #setServicesRegistry() is not always properly called.
-			//Workaround: We rely on the ActiveEditor to retrieve the services registry, which is dangerous
-			//The initial Palette Customization wizard knows the customization context, but it is lost way before the PostAction is created
-			if(registry == null) {
+		if (registry == null) {
+			// FIXME: #setServicesRegistry() is not always properly called.
+			// Workaround: We rely on the ActiveEditor to retrieve the services registry, which is dangerous
+			// The initial Palette Customization wizard knows the customization context, but it is lost way before the PostAction is created
+			if (registry == null) {
 				try {
 					registry = ServiceUtilsForActionHandlers.getInstance().getServiceRegistry();
 				} catch (ServiceException ex) {

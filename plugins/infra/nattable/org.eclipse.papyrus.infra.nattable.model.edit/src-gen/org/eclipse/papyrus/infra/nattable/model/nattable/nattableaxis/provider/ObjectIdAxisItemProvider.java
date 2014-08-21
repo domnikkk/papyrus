@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.ObjectIdAxis} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -42,7 +42,7 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ObjectIdAxisItemProvider(AdapterFactory adapterFactory) {
@@ -53,12 +53,12 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -66,17 +66,16 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if(childrenFeatures == null) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(NattableaxisPackage.Literals.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION);
 		}
@@ -86,7 +85,7 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,7 +100,7 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	 * This returns ObjectIdAxis.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,14 +112,14 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ObjectIdAxis)object).getAlias();
+		String label = ((ObjectIdAxis) object).getAlias();
 		return label == null || label.length() == 0 ? getString("_UI_ObjectIdAxis_type") : //$NON-NLS-1$
-		getString("_UI_ObjectIdAxis_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_ObjectIdAxis_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -128,14 +127,14 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(ObjectIdAxis.class)) {
+		switch (notification.getFeatureID(ObjectIdAxis.class)) {
 		case NattableaxisPackage.OBJECT_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -148,7 +147,7 @@ public class ObjectIdAxisItemProvider extends IdAxisItemProvider implements IEdi
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

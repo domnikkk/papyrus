@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -71,6 +71,7 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new NestedDeviceItemSemanticEditPolicyCN());
@@ -93,18 +94,21 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -115,33 +119,35 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new DeviceFigure();
 	}
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.DeviceFigure
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public DeviceFigure getPrimaryShape() {
-		return (DeviceFigure)primaryShape;
+		return (DeviceFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NestedDeviceNameEditPartCN) {
-			((NestedDeviceNameEditPartCN)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NestedDeviceNameEditPartCN) {
+			((NestedDeviceNameEditPartCN) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 
 
-		if(childEditPart instanceof DeviceCompositeCompartmentEditPartCN) {
+		if (childEditPart instanceof DeviceCompositeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((DeviceCompositeCompartmentEditPartCN)childEditPart).getFigure());
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
+			pane.add(((DeviceCompositeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
 
@@ -152,12 +158,12 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NestedDeviceNameEditPartCN) {
+		if (childEditPart instanceof NestedDeviceNameEditPartCN) {
 			return true;
 		}
-		if(childEditPart instanceof DeviceCompositeCompartmentEditPartCN) {
+		if (childEditPart instanceof DeviceCompositeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			pane.remove(((DeviceCompositeCompartmentEditPartCN)childEditPart).getFigure());
+			pane.remove(((DeviceCompositeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -166,8 +172,9 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -176,8 +183,9 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -186,8 +194,9 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof DeviceCompositeCompartmentEditPartCN) {
+		if (editPart instanceof DeviceCompositeCompartmentEditPartCN) {
 			return getPrimaryShape().getCompositeCompartmentFigure();
 		}
 		return getContentPane();
@@ -196,6 +205,7 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(150, 100);
 		return result;
@@ -203,12 +213,13 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 
@@ -217,13 +228,14 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -234,8 +246,9 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -244,8 +257,9 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -253,6 +267,7 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
 		super.setLineWidth(width);
 	}
@@ -260,15 +275,17 @@ public class NestedDeviceEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof NodeFigure) {
+			((NodeFigure) primaryShape).setLineStyle(style);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(NestedDeviceNameEditPartCN.VISUAL_ID));
 	}

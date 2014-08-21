@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 Cedric Dumoulin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,11 +20,11 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * This AdapterFactory is used to attach a reference on the ServiceRegiqtry to an EMF ResourceSet.
- * 
+ *
  * This adapterFactory is not a real factory: no adapter is created.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  * @deprecated Since 1.0, the {@link ModelSetServiceFactory} class associates the model-set with its service registry.
  */
 @Deprecated
@@ -48,7 +48,7 @@ public class ServiceRegistryAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the associated {@link ServicesRegistry}
 	 */
 	public ServicesRegistry getServicesRegistry() {

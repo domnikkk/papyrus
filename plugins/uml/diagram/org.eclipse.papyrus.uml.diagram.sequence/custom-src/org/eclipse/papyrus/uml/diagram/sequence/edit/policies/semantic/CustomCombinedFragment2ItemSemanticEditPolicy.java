@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,10 +70,10 @@ public class CustomCombinedFragment2ItemSemanticEditPolicy extends CombinedFragm
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		EObject selectedEObject = req.getElementToDestroy();
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-			if(deleteCommand != null) {
+			if (deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}
 		}
@@ -95,35 +95,35 @@ public class CustomCombinedFragment2ItemSemanticEditPolicy extends CombinedFragm
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4003 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4006 == req.getElementType()) {
+		if (UMLElementTypes.Message_4006 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage4CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4007 == req.getElementType()) {
+		if (UMLElementTypes.Message_4007 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage5CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
 			return null;
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
 			return null;
 		}
-		//add general ordering
-		if(UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
+		// add general ordering
+		if (UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
 			return getGEFWrapper(new CustomGeneralOrderingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -135,35 +135,35 @@ public class CustomCombinedFragment2ItemSemanticEditPolicy extends CombinedFragm
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4003 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4006 == req.getElementType()) {
+		if (UMLElementTypes.Message_4006 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage4CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4007 == req.getElementType()) {
+		if (UMLElementTypes.Message_4007 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage5CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		//add general ordering
-		if(UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
+		// add general ordering
+		if (UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
 			return getGEFWrapper(new CustomGeneralOrderingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -172,13 +172,13 @@ public class CustomCombinedFragment2ItemSemanticEditPolicy extends CombinedFragm
 	/**
 	 * Returns command to reorient EClass based link. New link target or source
 	 * should be the domain model element associated with this node.
-	 * 
+	 *
 	 * @Override
 	 *           (update at each lifeline modification) add general ordering
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case MessageEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomMessageReorientCommand(req));
 		case Message2EditPart.VISUAL_ID:
@@ -193,9 +193,9 @@ public class CustomCombinedFragment2ItemSemanticEditPolicy extends CombinedFragm
 			return getGEFWrapper(new CustomMessage6ReorientCommand(req));
 		case Message7EditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomMessage7ReorientCommand(req));
-			//add general ordering
+			// add general ordering
 		case GeneralOrderingEditPart.VISUAL_ID:
-			if(req.getNewRelationshipEnd() instanceof OccurrenceSpecification) {
+			if (req.getNewRelationshipEnd() instanceof OccurrenceSpecification) {
 				return getGEFWrapper(new GeneralOrderingReorientCommand(req));
 			} else {
 				return null;
@@ -207,12 +207,12 @@ public class CustomCombinedFragment2ItemSemanticEditPolicy extends CombinedFragm
 	/**
 	 * Returns command to reorient EReference based link. New link target or source
 	 * should be the domain model element associated with this node.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomCommentAnnotatedElementReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:

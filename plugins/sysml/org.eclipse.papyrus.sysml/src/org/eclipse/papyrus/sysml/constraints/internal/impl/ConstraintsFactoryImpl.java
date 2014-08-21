@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,14 +26,14 @@ import org.eclipse.papyrus.sysml.constraints.ConstraintsPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -46,13 +46,13 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ConstraintsFactory init() {
 		try {
-			ConstraintsFactory theConstraintsFactory = (ConstraintsFactory)EPackage.Registry.INSTANCE.getEFactory(ConstraintsPackage.eNS_URI);
-			if(theConstraintsFactory != null) {
+			ConstraintsFactory theConstraintsFactory = (ConstraintsFactory) EPackage.Registry.INSTANCE.getEFactory(ConstraintsPackage.eNS_URI);
+			if (theConstraintsFactory != null) {
 				return theConstraintsFactory;
 			}
 		} catch (Exception exception) {
@@ -65,7 +65,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintsFactoryImpl() {
@@ -74,12 +74,12 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case ConstraintsPackage.CONSTRAINT_BLOCK:
 			return createConstraintBlock();
 		case ConstraintsPackage.CONSTRAINT_PROPERTY:
@@ -91,7 +91,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintBlock createConstraintBlock() {
@@ -101,7 +101,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintProperty createConstraintProperty() {
@@ -111,11 +111,11 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ConstraintsPackage getConstraintsPackage() {
-		return (ConstraintsPackage)getEPackage();
+		return (ConstraintsPackage) getEPackage();
 	}
 
 } // ConstraintsFactoryImpl

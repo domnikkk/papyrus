@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.services.edit.commands.AbstractConfigureCommandFactory;
 import org.eclipse.papyrus.infra.services.edit.utils.GMFCommandUtils;
 import org.eclipse.papyrus.sysml.diagram.common.dialogs.CreateOrSelectNonAtomicFlowPortTypeDialog;
@@ -38,24 +39,25 @@ public class CreateFlowPortWithFlowSpecificationConfigureCommandFactory extends 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand create(ConfigureRequest request) {
 
 		ICommand configureCommand = null;
 
 		Shell shell = Display.getDefault().getActiveShell();
 		// Start dialog to identify the new port type
-		Port port = (Port)request.getElementToConfigure();
+		Port port = (Port) request.getElementToConfigure();
 		Package partPkg = port.getNearestPackage();
 
 		CreateOrSelectNonAtomicFlowPortTypeDialog dialog = new CreateOrSelectNonAtomicFlowPortTypeDialog(shell, partPkg);
 		dialog.open();
-		if(dialog.getReturnCode() == CreateOrSelectNonAtomicFlowPortTypeDialog.OK) {
+		if (dialog.getReturnCode() == Window.OK) {
 
 			final ICommand typeCreationCommand = dialog.getNewTypeCreateCommand();
-			final Type portType = (Type)dialog.getExistingType();
+			final Type portType = (Type) dialog.getExistingType();
 
 			// Abort if type creation command exists but is not executable
-			if((typeCreationCommand != null) && (!typeCreationCommand.canExecute())) {
+			if ((typeCreationCommand != null) && (!typeCreationCommand.canExecute())) {
 				return cancelCommand(request);
 			} else {
 				configureCommand = CompositeCommand.compose(configureCommand, typeCreationCommand);
@@ -67,11 +69,11 @@ public class CreateFlowPortWithFlowSpecificationConfigureCommandFactory extends 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
-					Port port = (Port)getElementToEdit();
-					if(portType != null) {
+					Port port = (Port) getElementToEdit();
+					if (portType != null) {
 						port.setType(portType);
 					} else {
-						Type newType = (Type)GMFCommandUtils.getCommandEObjectResult(typeCreationCommand);
+						Type newType = (Type) GMFCommandUtils.getCommandEObjectResult(typeCreationCommand);
 						port.setType(newType);
 					}
 					return CommandResult.newOKCommandResult(port);

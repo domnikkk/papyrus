@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public class SelectStorageProviderPage
 	private CopyOnWriteArrayList<ISelectionChangedListener> selectionListeners = new CopyOnWriteArrayList<ISelectionChangedListener>();
 
 	private List<Button> providerRadioButtons = new java.util.ArrayList<Button>(
-		3);
+			3);
 
 	private Button selection;
 
@@ -71,7 +71,7 @@ public class SelectStorageProviderPage
 		myComposite.setLayout(new GridLayout());
 
 		new Label(myComposite, SWT.NONE)
-			.setText("Where would you like to store the new model?");
+				.setText("Where would you like to store the new model?");
 
 		Composite selectionArea = new Composite(myComposite, SWT.NONE);
 		selectionArea.setLayout(new GridLayout());
@@ -88,12 +88,12 @@ public class SelectStorageProviderPage
 			providerRadioButtons.add(newRadio);
 
 			INewModelStorageProvider.ISelectProviderPart part = next
-				.createSelectProviderPart();
+					.createSelectProviderPart();
 			if (part != null) {
 				Control partControl = part.createControl(selectionArea);
 				GridDataFactory.fillDefaults().grab(true, false)
-					.indent(convertWidthInCharsToPixels(5), 0)
-					.applyTo(partControl);
+						.indent(convertWidthInCharsToPixels(5), 0)
+						.applyTo(partControl);
 				part.setEnabled(newRadio.getSelection());
 
 				part.addPartCompleteListener(new INewModelStorageProvider.ISelectProviderPart.IPartCompleteListener() {
@@ -190,14 +190,14 @@ public class SelectStorageProviderPage
 	private void fireSelectionEvent() {
 		if (!selectionListeners.isEmpty()) {
 			SelectionChangedEvent event = new SelectionChangedEvent(this,
-				getSelection());
+					getSelection());
 
 			for (ISelectionChangedListener next : selectionListeners) {
 				try {
 					next.selectionChanged(event);
 				} catch (Exception e) {
 					Activator.log.error(
-						"Uncaught exception in selection listener.", e);
+							"Uncaught exception in selection listener.", e);
 				}
 			}
 		}

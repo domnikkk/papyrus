@@ -11,7 +11,7 @@
  *  Christian W. Damus (CEA) - bug 429826
  *  Christian W. Damus (CEA) - bug 408491
  *  Christian W. Damus (CEA) - bug 433320
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.utils;
 
@@ -33,13 +33,13 @@ import com.google.common.collect.Sets;
 
 /**
  * This helper can be used to run (safe) transactions outside the CommandStack
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.utils.TransactionHelper {
 
-	//Refactoring needed. The sasheditor contentprovider should have dependencies to infra.EMF...
+	// Refactoring needed. The sasheditor contentprovider should have dependencies to infra.EMF...
 
 	public static final String TRANSACTION_OPTION_READ_ONLY_AXIS = "papyrus.read_only_axis"; //$NON-NLS-1$
 
@@ -47,24 +47,24 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Queries whether an editing {@code domain} has been disposed.
-	 * 
+	 *
 	 * @param domain
-	 *        an editing domain
-	 * 
+	 *            an editing domain
+	 *
 	 * @return whether the {@code domain} is {@code null} (which presumably implies disposed) or has been disposed
 	 */
 	public static boolean isDisposed(TransactionalEditingDomain domain) {
 		// A disposed editing domain (and only a disposed editing domain) has no command stack
 		return (domain == null) || (domain.getCommandStack() == null);
 	}
-	
+
 	/**
 	 * Merges the read-only {@code axis} option into an existing map of {@code options}.
-	 * 
+	 *
 	 * @param options
-	 *        an existing (non-{@code null}) options map
+	 *            an existing (non-{@code null}) options map
 	 * @param axis
-	 *        the axis option to merge
+	 *            the axis option to merge
 	 * @return the augmented {@code options}
 	 */
 	public static Map<String, Object> mergeReadOnlyAxisOption(Map<String, Object> options, ReadOnlyAxis axis) {
@@ -73,11 +73,11 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Merges the read-only {@code axes} option into an existing map of {@code options}.
-	 * 
+	 *
 	 * @param options
-	 *        an existing (non-{@code null}) options map
+	 *            an existing (non-{@code null}) options map
 	 * @param axes
-	 *        the axes option to merge
+	 *            the axes option to merge
 	 * @return the augmented {@code options}
 	 */
 	public static Map<String, Object> mergeReadOnlyAxisOption(Map<String, Object> options, Set<ReadOnlyAxis> axes) {
@@ -87,11 +87,11 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Adds the read-only {@code axis} option to a transaction's {@code options}.
-	 * 
+	 *
 	 * @param options
-	 *        an options map, which may be {@code null} or immutable
+	 *            an options map, which may be {@code null} or immutable
 	 * @param axis
-	 *        the axis option to add
+	 *            the axis option to add
 	 * @return a new map based on the {@code options} and including the {@code axis}
 	 */
 	public static Map<String, Object> addReadOnlyAxisOption(Map<String, ?> options, ReadOnlyAxis axis) {
@@ -100,11 +100,11 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Adds the read-only {@code axes} option to a transaction's {@code options}.
-	 * 
+	 *
 	 * @param options
-	 *        an options map, which may be {@code null} or immutable
+	 *            an options map, which may be {@code null} or immutable
 	 * @param axes
-	 *        the axes option to add
+	 *            the axes option to add
 	 * @return a new map based on the {@code options} and including the {@code axes}
 	 */
 	public static Map<String, Object> addReadOnlyAxisOption(Map<String, ?> options, Set<ReadOnlyAxis> axes) {
@@ -115,9 +115,9 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Creates a new mutable transaction options map with a read-only {@code axis}.
-	 * 
+	 *
 	 * @param axis
-	 *        the axis option
+	 *            the axis option
 	 * @return a new mutable map including the {@code axis}
 	 */
 	public static Map<String, Object> readOnlyAxisOption(ReadOnlyAxis axis) {
@@ -126,9 +126,9 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Creates a new mutable transaction options map with a read-only {@code axes}.
-	 * 
+	 *
 	 * @param axes
-	 *        the axes option
+	 *            the axes option
 	 * @return a new mutable map including the {@code axes}
 	 */
 	public static Map<String, Object> readOnlyAxisOption(Set<ReadOnlyAxis> axes) {
@@ -137,9 +137,9 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Queries the read-only axes to be enforced by a {@code transaction}.
-	 * 
+	 *
 	 * @param transaction
-	 *        a transaction
+	 *            a transaction
 	 * @return its read-only axes, which are {@linkplain ReadOnlyAxis#anyAxis() all of them} by default if the option is absent
 	 */
 	@SuppressWarnings("unchecked")
@@ -147,10 +147,10 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 		Set<ReadOnlyAxis> result;
 
 		Object value = transaction.getOptions().get(TRANSACTION_OPTION_READ_ONLY_AXIS);
-		if(value instanceof Set<?>) {
-			result = (Set<ReadOnlyAxis>)value;
-		} else if(value instanceof Iterable<?>) {
-			result = Sets.immutableEnumSet((Iterable<ReadOnlyAxis>)value);
+		if (value instanceof Set<?>) {
+			result = (Set<ReadOnlyAxis>) value;
+		} else if (value instanceof Iterable<?>) {
+			result = Sets.immutableEnumSet((Iterable<ReadOnlyAxis>) value);
 		} else {
 			result = ReadOnlyAxis.anyAxis();
 		}
@@ -160,11 +160,11 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Merges the {@code interactive} transaction option into an existing map of {@code options}.
-	 * 
+	 *
 	 * @param options
-	 *        an existing (non-{@code null}) options map
+	 *            an existing (non-{@code null}) options map
 	 * @param interactive
-	 *        whether the transaction is in an user-interactive context
+	 *            whether the transaction is in an user-interactive context
 	 * @return the augmented {@code options}
 	 */
 	public static Map<String, Object> mergeInteractiveOption(Map<String, Object> options, boolean interactive) {
@@ -174,11 +174,11 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Adds the {@code interactive} option option to a transaction's {@code options}.
-	 * 
+	 *
 	 * @param options
-	 *        an options map, which may be {@code null} or immutable
+	 *            an options map, which may be {@code null} or immutable
 	 * @param interactive
-	 *        whether the transaction is in an user-interactive context
+	 *            whether the transaction is in an user-interactive context
 	 * @return a new map based on the {@code options} and including the {@code interactive} option
 	 */
 	public static Map<String, Object> addInteractiveOption(Map<String, ?> options, boolean interactive) {
@@ -189,9 +189,9 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 
 	/**
 	 * Creates a new mutable transaction options map with an {@code interactive} option.
-	 * 
+	 *
 	 * @param interactive
-	 *        whether the transaction is in an user-interactive context
+	 *            whether the transaction is in an user-interactive context
 	 * @return a new mutable map including the {@code interactive} option
 	 */
 	public static Map<String, Object> interactiveOption(boolean interactive) {
@@ -201,26 +201,25 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 	/**
 	 * Queries whether a {@code transaction} is running in a user-interactive context. In practice, this means that it would be appropriate to
 	 * prompt the user to make resources/objects writable if necessary.
-	 * 
+	 *
 	 * @param transaction
-	 *        a transaction
-	 * @return {@code false} if the {@code transaction} has the {@linkplain #TRANSACTION_OPTION_INTERACTIVE interactive option} set {@code false};
-	 *         {@code true}, otherwise (including the default case of no option set)
+	 *            a transaction
+	 * @return {@code false} if the {@code transaction} has the {@linkplain #TRANSACTION_OPTION_INTERACTIVE interactive option} set {@code false}; {@code true}, otherwise (including the default case of no option set)
 	 */
 	public static boolean isInteractive(Transaction transaction) {
 		Object value = transaction.getOptions().get(TRANSACTION_OPTION_INTERACTIVE);
-		return (value instanceof Boolean) ? (Boolean)value : true;
+		return (value instanceof Boolean) ? (Boolean) value : true;
 	}
-	
+
 	/**
 	 * Create a privileged runnable with progress, which is like a regular {@linkplain TransactionalEditingDomain#createPrivilegedRunnable(Runnable)
 	 * privileged runnable} except that it is given a progress monitor for progress reporting.
 	 * This enables execution of monitored runnables on the modal-context thread using the transaction borrowed from the UI thread.
-	 * 
+	 *
 	 * @param domain
-	 *        an editing domain
+	 *            an editing domain
 	 * @param runnable
-	 *        a runnable with progress that is to borrow the {@code domain}'s active transaction on the modal context thread
+	 *            a runnable with progress that is to borrow the {@code domain}'s active transaction on the modal context thread
 	 * @return the privileged runnable, ready to pass into the progress service or other such API
 	 */
 	public static IRunnableWithProgress createPrivilegedRunnableWithProgress(TransactionalEditingDomain domain, final IRunnableWithProgress runnable) {
@@ -248,10 +247,10 @@ public class TransactionHelper extends org.eclipse.papyrus.infra.core.sasheditor
 					privileged.run();
 				} catch (WrappedException e) {
 					Exception unwrapped = e.exception();
-					if(unwrapped instanceof InvocationTargetException) {
-						throw (InvocationTargetException)unwrapped;
-					} else if(unwrapped instanceof InterruptedException) {
-						throw (InterruptedException)unwrapped;
+					if (unwrapped instanceof InvocationTargetException) {
+						throw (InvocationTargetException) unwrapped;
+					} else if (unwrapped instanceof InterruptedException) {
+						throw (InterruptedException) unwrapped;
 					} else {
 						throw e;
 					}

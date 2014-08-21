@@ -35,9 +35,9 @@ import org.eclipse.swt.widgets.Display;
 /**
  * Full copy of DirectEditManager, changed visibility of BORDER_FRAME and
  * getCellEditorFrame to protected
- * 
+ *
  * TODO: Delete me when https://bugs.eclipse.org/bugs/show_bug.cgi?id=388697 is fixed
- *       CAVEAT: this variant also cleans the parser in bringDown()
+ * CAVEAT: this variant also cleans the parser in bringDown()
  */
 @SuppressWarnings("rawtypes")
 public abstract class DirectEditManagerEx extends DirectEditManager {
@@ -60,13 +60,13 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	private boolean committing = false;
 	private Object feature;
 
-	
-	
+
+
 	/**
 	 * Constructs a new DirectEditManager for the given source edit part. The
 	 * cell editor will be created by instantiating the type <i>editorType</i>.
 	 * The cell editor will be placed using the given CellEditorLocator.
-	 * 
+	 *
 	 * @param source
 	 *            the source edit part
 	 * @param editorType
@@ -86,7 +86,7 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	 * Constructs a new DirectEditManager for the given source edit part. The
 	 * cell editor will be created by instantiating the type <i>editorType</i>.
 	 * The cell editor will be placed using the given CellEditorLocator.
-	 * 
+	 *
 	 * @param source
 	 *            the source edit part
 	 * @param editorType
@@ -107,13 +107,13 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	public boolean isActive() {
 		return getCellEditor() != null;
 	}
-	
+
 	/**
 	 * Cleanup is done here. Any feedback is erased and listeners unhooked. If
-	 * the cell editor is not <code>null</code>, it will be
-	 * {@link CellEditor#deactivate() deativated}, {@link CellEditor#dispose()
+	 * the cell editor is not <code>null</code>, it will be {@link CellEditor#deactivate() deativated}, {@link CellEditor#dispose()
 	 * disposed}, and set to <code>null</code>.
 	 */
+	@Override
 	protected void bringDown() {
 		eraseFeedback();
 		unhookListeners();
@@ -127,13 +127,14 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	}
 
 	/**
-	 * Commits the current value of the cell editor by getting a {@link Command}
-	 * from the source edit part and executing it via the {@link CommandStack}.
+	 * Commits the current value of the cell editor by getting a {@link Command} from the source edit part and executing it via the {@link CommandStack}.
 	 * Finally, {@link #bringDown()} is called to perform and necessary cleanup.
 	 */
+	@Override
 	protected void commit() {
-		if (committing)
+		if (committing) {
 			return;
+		}
 		committing = true;
 		try {
 			eraseFeedback();
@@ -152,11 +153,12 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	 * Creates the cell editor on the given composite. The cell editor is
 	 * created by instantiating the cell editor type passed into this
 	 * DirectEditManager's constructor.
-	 * 
+	 *
 	 * @param composite
 	 *            the composite to create the cell editor on
 	 * @return the newly created cell editor
 	 */
+	@Override
 	protected CellEditor createCellEditorOn(Composite composite) {
 		try {
 			@SuppressWarnings("unchecked")
@@ -171,9 +173,10 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 
 	/**
 	 * Creates and returns the DirectEditRequest.
-	 * 
+	 *
 	 * @return the direct edit request
 	 */
+	@Override
 	protected DirectEditRequest createDirectEditRequest() {
 		DirectEditRequest req = new DirectEditRequest();
 		req.setCellEditor(getCellEditor());
@@ -184,6 +187,7 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	/**
 	 * Asks the source edit part to erase source feedback.
 	 */
+	@Override
 	protected void eraseFeedback() {
 		if (showingFeedback) {
 			LayerManager.Helper.find(getEditPart())
@@ -197,16 +201,19 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 
 	/**
 	 * Returns the cell editor.
-	 * 
+	 *
 	 * @return the cell editor
 	 */
+	@Override
 	protected CellEditor getCellEditor() {
 		return ce;
 	}
 
+	@Override
 	protected IFigure getCellEditorFrame() {
-		if (cellEditorFrame != null)
+		if (cellEditorFrame != null) {
 			return cellEditorFrame;
+		}
 		cellEditorFrame = new Figure();
 		cellEditorFrame.setBorder(BORDER_FRAME);
 		return cellEditorFrame;
@@ -222,42 +229,50 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	 *         to discriminate among them.
 	 * @since 3.2
 	 */
+	@Override
 	protected Object getDirectEditFeature() {
 		return feature;
 	}
 
 	/**
 	 * Returns the direct edit request, creating it if needed.
-	 * 
+	 *
 	 * @return the direct edit request
 	 */
+	@Override
 	protected DirectEditRequest getDirectEditRequest() {
-		if (request == null)
+		if (request == null) {
 			request = createDirectEditRequest();
+		}
 		return request;
 	}
 
 	/**
 	 * Returns the source edit part.
-	 * 
+	 *
 	 * @return the source edit part
 	 */
+	@Override
 	protected GraphicalEditPart getEditPart() {
 		return source;
 	}
 
+	@Override
 	protected CellEditorLocator getLocator() {
 		return locator;
 	}
 
+	@Override
 	protected void handleValueChanged() {
 		setDirty(true);
 		showFeedback();
 		placeCellEditor();
 	}
 
+	@Override
 	protected void hookListeners() {
 		ancestorListener = new AncestorListener.Stub() {
+			@Override
 			public void ancestorMoved(IFigure ancestor) {
 				placeCellEditor();
 			}
@@ -267,6 +282,7 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 		Control control = getControl();
 
 		controlListener = new ControlAdapter() {
+			@Override
 			public void controlMoved(ControlEvent e) {
 				// This must be handled async because during scrolling, the
 				// CellEditor moves
@@ -280,6 +296,7 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 				});
 			}
 
+			@Override
 			public void controlResized(ControlEvent e) {
 				placeBorder();
 			}
@@ -302,6 +319,7 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 		getCellEditor().addListener(cellEditorListener);
 
 		editPartListener = new EditPartListener.Stub() {
+			@Override
 			public void partDeactivated(EditPart editpart) {
 				bringDown();
 			}
@@ -314,13 +332,15 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	 * initial text and add things such as {@link VerifyListener
 	 * VerifyListeners}, if needed.
 	 */
+	@Override
 	protected abstract void initCellEditor();
 
 	/**
 	 * Returns <code>true</code> if the cell editor's value has been changed.
-	 * 
+	 *
 	 * @return <code>true</code> if the cell editor is dirty
 	 */
+	@Override
 	protected boolean isDirty() {
 		return dirty;
 	}
@@ -342,33 +362,37 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 
 	/**
 	 * Sets the cell editor to the given editor.
-	 * 
+	 *
 	 * @param editor
 	 *            the cell editor
 	 */
+	@Override
 	protected void setCellEditor(CellEditor editor) {
 		ce = editor;
-		if (ce == null)
+		if (ce == null) {
 			return;
+		}
 		hookListeners();
 	}
 
 	/**
 	 * Sets the dirty property.
-	 * 
+	 *
 	 * @param value
 	 *            the dirty property
 	 */
+	@Override
 	protected void setDirty(boolean value) {
 		dirty = value;
 	}
 
 	/**
 	 * Sets the source edit part.
-	 * 
+	 *
 	 * @param source
 	 *            the source edit part
 	 */
+	@Override
 	protected void setEditPart(GraphicalEditPart source) {
 		this.source = source;
 		// source.addEditPartListener();
@@ -377,26 +401,28 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	/**
 	 * Sets the CellEditorLocator used to place the cell editor in the correct
 	 * location.
-	 * 
+	 *
 	 * @param locator
 	 *            the locator
 	 */
+	@Override
 	public void setLocator(CellEditorLocator locator) {
 		this.locator = locator;
 	}
 
 	/**
-	 * Shows the cell editor when direct edit is started. Calls
-	 * {@link #initCellEditor()}, {@link CellEditor#activate()}, and
-	 * {@link #showFeedback()}.
+	 * Shows the cell editor when direct edit is started. Calls {@link #initCellEditor()}, {@link CellEditor#activate()}, and {@link #showFeedback()}.
 	 */
+	@Override
 	public void show() {
-		if (getCellEditor() != null)
+		if (getCellEditor() != null) {
 			return;
+		}
 		Composite composite = (Composite) source.getViewer().getControl();
 		setCellEditor(createCellEditorOn(composite));
-		if (getCellEditor() == null)
+		if (getCellEditor() == null) {
 			return;
+		}
 		initCellEditor();
 		getCellEditor().activate();
 		placeCellEditor();
@@ -415,9 +441,11 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	/**
 	 * Asks the source edit part to show source feedback.
 	 */
+	@Override
 	public void showFeedback() {
-		if (!showingFeedback)
+		if (!showingFeedback) {
 			showCellEditorFrame();
+		}
 		showingFeedback = true;
 		showCellEditorFrame();
 		getEditPart().showSourceFeedback(getDirectEditRequest());
@@ -426,20 +454,23 @@ public abstract class DirectEditManagerEx extends DirectEditManager {
 	/**
 	 * Unhooks listeners. Called from {@link #bringDown()}.
 	 */
+	@Override
 	protected void unhookListeners() {
 		getEditPart().getFigure().removeAncestorListener(ancestorListener);
 		getEditPart().removeEditPartListener(editPartListener);
 		ancestorListener = null;
 		editPartListener = null;
 
-		if (getCellEditor() == null)
+		if (getCellEditor() == null) {
 			return;
+		}
 		getCellEditor().removeListener(cellEditorListener);
 		cellEditorListener = null;
 
 		Control control = getCellEditor().getControl();
-		if (control == null || control.isDisposed())
+		if (control == null || control.isDisposed()) {
 			return;
+		}
 		control.removeControlListener(controlListener);
 		controlListener = null;
 	}

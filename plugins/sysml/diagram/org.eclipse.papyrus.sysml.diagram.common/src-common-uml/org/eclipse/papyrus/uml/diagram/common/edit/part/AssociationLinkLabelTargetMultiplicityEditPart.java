@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -55,11 +55,11 @@ public class AssociationLinkLabelTargetMultiplicityEditPart extends AbstractElem
 	 */
 	@Override
 	public EObject getParserElement() {
-		Association association = (Association)resolveSemanticElement();
-		if((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
+		Association association = (Association) resolveSemanticElement();
+		if ((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
 			View owner = ViewUtil.getContainerView(getNotationView());
 
-			if((association != null) && (association.getMemberEnds().size() == 2)) {
+			if ((association != null) && (association.getMemberEnds().size() == 2)) {
 				return AssociationViewUtils.getTargetSemanticEnd(owner);
 			}
 		}
@@ -78,6 +78,7 @@ public class AssociationLinkLabelTargetMultiplicityEditPart extends AbstractElem
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "TargetMultiplicity"; //$NON-NLS-1$
 	}
@@ -85,6 +86,7 @@ public class AssociationLinkLabelTargetMultiplicityEditPart extends AbstractElem
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

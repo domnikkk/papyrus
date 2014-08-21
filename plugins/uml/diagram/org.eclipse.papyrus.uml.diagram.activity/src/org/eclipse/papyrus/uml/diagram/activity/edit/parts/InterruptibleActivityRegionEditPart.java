@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -82,6 +82,7 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new InterruptibleActivityRegionItemSemanticEditPolicy());
@@ -94,9 +95,10 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 
 	/**
 	 * Papyrus codeGen
-	 * 
+	 *
 	 * @generated
 	 **/
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 	}
@@ -107,18 +109,21 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -129,6 +134,7 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new InterruptibleActivityRegionFigure();
 	}
@@ -136,13 +142,15 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public InterruptibleActivityRegionFigure getPrimaryShape() {
-		return (InterruptibleActivityRegionFigure)primaryShape;
+		return (InterruptibleActivityRegionFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		String prefElementId = "InterruptibleActivityRegion";
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
@@ -154,12 +162,13 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -172,13 +181,14 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -189,8 +199,9 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -199,6 +210,7 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated NOT avoid class cast exception by implementing this method
 	 */
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
 		return getContentPane();
 	}
@@ -206,8 +218,9 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -215,18 +228,20 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
 
@@ -245,9 +260,9 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
-		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
+		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
 			types.add(UMLElementTypes.DurationConstraint_3034);
 			types.add(UMLElementTypes.DurationConstraint_3035);
 			types.add(UMLElementTypes.TimeConstraint_3036);
@@ -266,28 +281,28 @@ public class InterruptibleActivityRegionEditPart extends NodeEditPart {
 	 */
 	@Override
 	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("InterruptibleActivityRegion", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("InterruptibleActivityRegion", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("InterruptibleActivityRegion", PreferencesConstantsHelper.COLOR_FILL);
 			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 			String prefGradient = PreferencesConstantsHelper.getElementConstant("InterruptibleActivityRegion", PreferencesConstantsHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 			}
 		}
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;

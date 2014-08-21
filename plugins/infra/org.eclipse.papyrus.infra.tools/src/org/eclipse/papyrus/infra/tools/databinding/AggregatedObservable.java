@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.core.databinding.observable.IObservable;
  * An interface to aggregate many IObservables in a single one.
  * A modification on the aggregated observable should be dispatched to all
  * the encapsulated observables.
- * 
+ *
  * @author Camille Letavernier
  */
 public interface AggregatedObservable extends IObservable {
@@ -26,12 +26,12 @@ public interface AggregatedObservable extends IObservable {
 	 * Aggregates the current Observable with the given observable.
 	 * Returns the aggregated Observable, or null if the aggregation is not
 	 * possible
-	 * 
+	 *
 	 * Typically, only IObservable with similar ValueTypes can be
 	 * aggregated.
-	 * 
+	 *
 	 * @param observable
-	 *        The IObservable to aggregate to the current IObservable
+	 *            The IObservable to aggregate to the current IObservable
 	 * @return
 	 *         The aggregated IObservable, or null if the aggregation is not
 	 *         possible
@@ -40,7 +40,7 @@ public interface AggregatedObservable extends IObservable {
 
 	/**
 	 * Tests if the sub-observables have different values
-	 * 
+	 *
 	 * @return true if the sub-observables have different values
 	 */
 	public boolean hasDifferentValues();

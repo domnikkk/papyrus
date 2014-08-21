@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.swt.SWT;
 
 /**
  * Adapted code from DefaultRowResizeBindings. Allow to resize the columns on all regions of the table (corner, body, row header, column header)
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class PapyrusColumnResizeBindingsConfiguration extends AbstractUiBindingConfiguration {
 
@@ -48,7 +48,7 @@ public class PapyrusColumnResizeBindingsConfiguration extends AbstractUiBindingC
 		uiBindingRegistry.registerFirstMouseDragMode(new ColumnResizeEventMatcher(SWT.NONE, GridRegion.CORNER, 1), new ColumnResizeDragMode());
 		uiBindingRegistry.registerFirstMouseDragMode(new ColumnResizeEventMatcher(SWT.NONE, GridRegion.BODY, 1), new ColumnResizeDragMode());
 
-		//			uiBindingRegistry.registerDoubleClickBinding(new ColumnResizeEventMatcher(SWT.NONE, GridRegion.COLUMN_HEADER, 1), new AutoResizeColumnAction());
+		// uiBindingRegistry.registerDoubleClickBinding(new ColumnResizeEventMatcher(SWT.NONE, GridRegion.COLUMN_HEADER, 1), new AutoResizeColumnAction());
 		uiBindingRegistry.registerSingleClickBinding(new ColumnResizeEventMatcher(SWT.NONE, GridRegion.COLUMN_HEADER, 1), new NoOpMouseAction());
 	}
 }

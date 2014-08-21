@@ -15,10 +15,10 @@ import org.eclipse.jface.viewers.TreeViewer;
 
 /**
  * Internal interface for a dialog to let the user select {@link FacetSet}s.
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
- * 
+ *
  * @param <T>
  *            the type of a pre-commit dialog (can be <code>null</code> if there is no pre-commit dialog)
  */

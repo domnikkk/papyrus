@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.preferences;
 
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.uml.properties.widgets.BodyEditor;
 /**
  * A Registry to manage associations between a language and a language
  * editor for UML Expressions
- * 
+ *
  * @author Camille Letavernier
  */
 public class LanguageRegistry {
@@ -57,8 +57,8 @@ public class LanguageRegistry {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		try {
 			Object preferencesObject = EMFHelper.loadEMFModel(resourceSet, preferencesURI);
-			if(preferencesObject instanceof Preferences) {
-				preferences = (Preferences)preferencesObject;
+			if (preferencesObject instanceof Preferences) {
+				preferences = (Preferences) preferencesObject;
 			} else {
 				createPreferences(resourceSet, preferencesURI);
 			}
@@ -66,7 +66,7 @@ public class LanguageRegistry {
 			createPreferences(resourceSet, preferencesURI);
 		}
 
-		//Init
+		// Init
 	}
 
 	private void createPreferences(ResourceSet resourceSet, URI preferencesURI) {
@@ -93,15 +93,15 @@ public class LanguageRegistry {
 
 	/**
 	 * Gets the editor associated to the given language
-	 * 
+	 *
 	 * @param language
-	 *        The language for which we want to edit an expression
+	 *            The language for which we want to edit an expression
 	 * @return The BodyEditor for the given language
 	 */
 	public BodyEditor getEditorFor(String language) {
-		if(languageMapping.containsKey(language)) {
+		if (languageMapping.containsKey(language)) {
 			List<Editor> editors = languageMapping.get(language);
-			if(editors != null && !editors.isEmpty()) {
+			if (editors != null && !editors.isEmpty()) {
 				return getInstance(editors.get(0));
 			}
 		}
@@ -111,14 +111,14 @@ public class LanguageRegistry {
 
 	/**
 	 * Sets the default editor for a language
-	 * 
+	 *
 	 * @param languageName
-	 *        The name of the language
+	 *            The name of the language
 	 * @param editor
-	 *        The editor to associate to the language
+	 *            The editor to associate to the language
 	 */
 	public void setDefaultEditorFor(String languageName, Editor editor) {
-		if(!languageMapping.containsKey(languageName)) {
+		if (!languageMapping.containsKey(languageName)) {
 			languageMapping.put(languageName, new LinkedList<Editor>());
 		}
 
@@ -139,30 +139,30 @@ public class LanguageRegistry {
 
 	/**
 	 * Registers a new editor for a given language
-	 * 
+	 *
 	 * @param language
-	 *        The language name
+	 *            The language name
 	 * @param editor
-	 *        The editor to associate to the language
+	 *            The editor to associate to the language
 	 */
 	public void registerEditor(String language, Editor editor) {
-		if(language == null) {
+		if (language == null) {
 			language = ""; //$NON-NLS-1$
 		}
 
-		if(!languageMapping.containsKey(language)) {
+		if (!languageMapping.containsKey(language)) {
 			languageMapping.put(language, new LinkedList<Editor>());
 		}
 
 		List<Editor> editors = languageMapping.get(language);
-		if(!editors.contains(editors)) {
+		if (!editors.contains(editors)) {
 			editors.add(editor);
 		}
 	}
 
 	private Language getLanguage(String name) {
-		for(Language language : preferences.getLanguages()) {
-			if(language.getName().equals(name)) {
+		for (Language language : preferences.getLanguages()) {
+			if (language.getName().equals(name)) {
 				return language;
 			}
 		}
@@ -184,7 +184,7 @@ public class LanguageRegistry {
 	private Preferences preferences;
 
 	/**
-	 * 
+	 *
 	 * @return the list of all known languages
 	 */
 	public List<String> getLanguages() {

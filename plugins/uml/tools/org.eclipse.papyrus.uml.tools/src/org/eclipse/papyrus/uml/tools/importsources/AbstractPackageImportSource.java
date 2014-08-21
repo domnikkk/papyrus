@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 430700
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.importsources;
 
@@ -59,14 +59,14 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 	protected Package getPackage(Collection<?> selection) {
 		Package result = null;
 
-		for(Object next : selection) {
-			if(next instanceof Package) {
-				result = (Package)next;
+		for (Object next : selection) {
+			if (next instanceof Package) {
+				result = (Package) next;
 				break;
-			} else if(next != null) {
+			} else if (next != null) {
 				EObject eObject = EMFHelper.getEObject(next);
-				if(eObject instanceof Package) {
-					result = (Package)eObject;
+				if (eObject instanceof Package) {
+					result = (Package) eObject;
 				}
 			}
 		}
@@ -75,7 +75,7 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 	}
 
 	public final ILabelProvider getModelHierarchyLabelProvider() {
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			labelProvider = createModelHierarchyLabelProvider();
 		}
 
@@ -87,7 +87,7 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 	}
 
 	public IStaticContentProvider getModelHierarchyContentProvider(Map<String, String> extensionFilters) {
-		if(contentProvider == null) {
+		if (contentProvider == null) {
 			contentProvider = createModelHierarchyContentProvider(extensionFilters);
 		}
 
@@ -109,23 +109,23 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 		validateSelection(model);
 
 		try {
-			if(model instanceof Resource) {
-				resource = (Resource)model;
-				if(!resource.isLoaded()) {
+			if (model instanceof Resource) {
+				resource = (Resource) model;
+				if (!resource.isLoaded()) {
 					resource.load(null);
 				}
-			} else if(model instanceof IFile) {
-				IFile file = (IFile)model;
+			} else if (model instanceof IFile) {
+				IFile file = (IFile) model;
 				resource = resourceSet.getResource(URI.createPlatformResourceURI(file.getFullPath().toString(), true), true);
-			} else if(model instanceof URI) {
-				resource = resourceSet.getResource((URI)model, true);
+			} else if (model instanceof URI) {
+				resource = resourceSet.getResource((URI) model, true);
 			}
 		} catch (Exception e) {
 			// resource load failed
 			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind("Failed to load packages from resource \"{0}\".", getText(model)), e));
 		}
 
-		if(resource == null) {
+		if (resource == null) {
 			throw new CoreException(new Status(IStatus.WARNING, Activator.PLUGIN_ID, NLS.bind("Could not determine a model resource for \"{0}\".", getText(model))));
 		} else {
 			validateResource(resource, model);
@@ -133,7 +133,7 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 			result = new java.util.ArrayList<Package>(EcoreUtil.<Package> getObjectsByType(resource.getContents(), UMLPackage.Literals.PACKAGE));
 		}
 
-		if(result.isEmpty()) {
+		if (result.isEmpty()) {
 			throw new CoreException(new Status(IStatus.WARNING, Activator.PLUGIN_ID, NLS.bind("No packages found in resource \"{0}\".", getText(model))));
 		}
 
@@ -146,18 +146,18 @@ public abstract class AbstractPackageImportSource implements IPackageImportSourc
 
 	protected void validateResource(Resource resource, Object model) throws CoreException {
 
-		if(resource.getContents().isEmpty()) {
+		if (resource.getContents().isEmpty()) {
 			throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, NLS.bind("The model resource is empty: \"{0}\".", getText(model))));
 		}
 	}
 
 	public void dispose() {
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			labelProvider.dispose();
 			labelProvider = null;
 		}
 
-		if(contentProvider != null) {
+		if (contentProvider != null) {
 			contentProvider.dispose();
 			contentProvider = null;
 		}

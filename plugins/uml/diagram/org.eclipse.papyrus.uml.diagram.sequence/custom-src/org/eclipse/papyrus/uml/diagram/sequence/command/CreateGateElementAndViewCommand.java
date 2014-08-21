@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class CreateGateElementAndViewCommand extends CreateGateViewCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param location
 	 * @param label
@@ -49,9 +49,8 @@ public class CreateGateElementAndViewCommand extends CreateGateViewCommand {
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecute(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecute(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -59,9 +58,9 @@ public class CreateGateElementAndViewCommand extends CreateGateViewCommand {
 	 */
 	@Override
 	protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Gate gate = GateHelper.createGate((Element)getParentElement(), isCreateInnerCFGate());
-		((ObjectAdapter)getGateAdapter()).setObject(gate);
-		if(isVolatiled()) {
+		Gate gate = GateHelper.createGate((Element) getParentElement(), isCreateInnerCFGate());
+		((ObjectAdapter) getGateAdapter()).setObject(gate);
+		if (isVolatiled()) {
 			GateHelper.setVolatile(gate, true);
 		}
 		return super.doExecute(monitor, info);
@@ -76,7 +75,7 @@ public class CreateGateElementAndViewCommand extends CreateGateViewCommand {
 
 	/**
 	 * @param createInnerCFGate
-	 *        the createInnerGateForCombinedFragment to set
+	 *            the createInnerGateForCombinedFragment to set
 	 */
 	public void setCreateInnerCFGate(boolean createInnerCFGate) {
 		this.createInnerCFGate = createInnerCFGate;
@@ -91,7 +90,7 @@ public class CreateGateElementAndViewCommand extends CreateGateViewCommand {
 
 	/**
 	 * @param volatiled
-	 *        the volatiled to set
+	 *            the volatiled to set
 	 */
 	public void setVolatiled(boolean volatiled) {
 		this.volatiled = volatiled;

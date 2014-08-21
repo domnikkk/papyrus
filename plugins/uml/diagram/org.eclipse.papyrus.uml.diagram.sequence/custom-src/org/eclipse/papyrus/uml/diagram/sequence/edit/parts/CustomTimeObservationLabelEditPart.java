@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,14 +53,14 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Add implementing IPapyrusEditPart to support displaying Stereotype as a Comment, because the label is always selected when a TimeObservation is
  * selected.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEditPart implements INodeEditPart, IPapyrusEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomTimeObservationLabelEditPart(View view) {
@@ -74,7 +74,7 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE, new CustomConnectionHandleEditPolicy());
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 	}
 
@@ -83,7 +83,7 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	 */
 	@Override
 	protected String getLabelTextHelper(IFigure figure) {
-		if(figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
+		if (figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
 			return getWrappingLabel(figure).getText();
 		}
 		return super.getLabelTextHelper(figure);
@@ -94,7 +94,7 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	 */
 	@Override
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
+		if (figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
 			getWrappingLabel(figure).setText(text);
 		} else {
 			super.setLabelTextHelper(figure, text);
@@ -106,7 +106,7 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	 */
 	@Override
 	protected Image getLabelIconHelper(IFigure figure) {
-		if(figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
+		if (figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
 			return getWrappingLabel(figure).getIcon();
 		} else {
 			return super.getLabelIconHelper(figure);
@@ -118,7 +118,7 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	 */
 	@Override
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
+		if (figure instanceof NodeFigure && getWrappingLabel(figure) != null) {
 			getWrappingLabel(figure).setIcon(icon);
 		} else {
 			super.setLabelIconHelper(figure, icon);
@@ -131,12 +131,12 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
-		if(NotationPackage.eINSTANCE.getView_SourceEdges().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getView_SourceEdges().equals(feature)) {
 			refreshSourceConnections();
-		} else if(NotationPackage.eINSTANCE.getView_TargetEdges().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getView_TargetEdges().equals(feature)) {
 			refreshTargetConnections();
 		}
-		if(ElementIconUtil.isIconNotification(event)) {
+		if (ElementIconUtil.isIconNotification(event)) {
 			refreshLabel();
 		}
 		super.handleNotificationEvent(event);
@@ -162,47 +162,50 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	}
 
 	protected WrappingLabel getWrappingLabel(IFigure nodeFigure) {
-		if(nodeFigure instanceof NodeFigure) {
-			return ((WrappingLabel)(nodeFigure.getChildren().get(0)));
+		if (nodeFigure instanceof NodeFigure) {
+			return ((WrappingLabel) (nodeFigure.getChildren().get(0)));
 		}
 		return null;
 	}
 
-	//Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826
+	// Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826
 	@Override
 	protected List getModelSourceConnections() {
-		return ViewUtil.getSourceConnectionsConnectingVisibleViews((View)getModel());
+		return ViewUtil.getSourceConnectionsConnectingVisibleViews((View) getModel());
 	}
 
 	@Override
 	protected List getModelTargetConnections() {
-		List list = ViewUtil.getTargetConnectionsConnectingVisibleViews((View)getModel());
+		List list = ViewUtil.getTargetConnectionsConnectingVisibleViews((View) getModel());
 		return list;
 	}
 
+	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
-		if(request instanceof ReconnectRequest) {
-			if(((DropRequest)request).getLocation() == null) {
-				return ((NodeFigure)getFigure()).getSourceConnectionAnchorAt(null);
+		if (request instanceof ReconnectRequest) {
+			if (((DropRequest) request).getLocation() == null) {
+				return ((NodeFigure) getFigure()).getSourceConnectionAnchorAt(null);
 			}
-			Point pt = ((DropRequest)request).getLocation().getCopy();
-			return ((NodeFigure)getFigure()).getSourceConnectionAnchorAt(pt);
-		} else if(request instanceof DropRequest) {
-			return ((NodeFigure)getFigure()).getSourceConnectionAnchorAt(((DropRequest)request).getLocation());
+			Point pt = ((DropRequest) request).getLocation().getCopy();
+			return ((NodeFigure) getFigure()).getSourceConnectionAnchorAt(pt);
+		} else if (request instanceof DropRequest) {
+			return ((NodeFigure) getFigure()).getSourceConnectionAnchorAt(((DropRequest) request).getLocation());
 		}
-		return ((NodeFigure)getFigure()).getSourceConnectionAnchorAt(null);
+		return ((NodeFigure) getFigure()).getSourceConnectionAnchorAt(null);
 	}
 
+	@Override
 	public ConnectionAnchor getSourceConnectionAnchor(ConnectionEditPart connEditPart) {
-		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart)connEditPart;
+		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart) connEditPart;
 		String t = ""; //$NON-NLS-1$
 		try {
-			t = (String)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+			t = (String) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+				@Override
 				public void run() {
-					Anchor a = ((Edge)connection.getModel()).getSourceAnchor();
-					if(a instanceof IdentityAnchor) {
-						setResult(((IdentityAnchor)a).getId());
+					Anchor a = ((Edge) connection.getModel()).getSourceAnchor();
+					if (a instanceof IdentityAnchor) {
+						setResult(((IdentityAnchor) a).getId());
 					} else {
 						setResult(""); //$NON-NLS-1$
 					}
@@ -212,19 +215,21 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 			Trace.catching(DiagramUIPlugin.getInstance(), DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(), "getSourceConnectionAnchor", e); //$NON-NLS-1$
 			Log.error(DiagramUIPlugin.getInstance(), DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING, "getSourceConnectionAnchor", e); //$NON-NLS-1$
 		}
-		return ((NodeFigure)getFigure()).getConnectionAnchor(t);
+		return ((NodeFigure) getFigure()).getConnectionAnchor(t);
 	}
 
+	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(ConnectionEditPart connEditPart) {
-		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart)connEditPart;
+		final org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart connection = (org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart) connEditPart;
 		String t = ""; //$NON-NLS-1$
 		try {
-			t = (String)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+			t = (String) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+				@Override
 				public void run() {
-					Anchor a = ((Edge)connection.getModel()).getTargetAnchor();
-					if(a instanceof IdentityAnchor) {
-						setResult(((IdentityAnchor)a).getId());
+					Anchor a = ((Edge) connection.getModel()).getTargetAnchor();
+					if (a instanceof IdentityAnchor) {
+						setResult(((IdentityAnchor) a).getId());
 					} else {
 						setResult(""); //$NON-NLS-1$
 					}
@@ -234,37 +239,41 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 			Trace.catching(DiagramUIPlugin.getInstance(), DiagramUIDebugOptions.EXCEPTIONS_CATCHING, getClass(), "getTargetConnectionAnchor", e); //$NON-NLS-1$
 			Log.error(DiagramUIPlugin.getInstance(), DiagramUIStatusCodes.IGNORED_EXCEPTION_WARNING, "getTargetConnectionAnchor", e); //$NON-NLS-1$
 		}
-		return ((NodeFigure)getFigure()).getConnectionAnchor(t);
+		return ((NodeFigure) getFigure()).getConnectionAnchor(t);
 	}
 
+	@Override
 	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
-		if(request instanceof ReconnectRequest) {
-			if(((DropRequest)request).getLocation() == null) {
-				return ((NodeFigure)getFigure()).getTargetConnectionAnchorAt(null);
+		if (request instanceof ReconnectRequest) {
+			if (((DropRequest) request).getLocation() == null) {
+				return ((NodeFigure) getFigure()).getTargetConnectionAnchorAt(null);
 			}
-			Point pt = ((DropRequest)request).getLocation().getCopy();
-			return ((NodeFigure)getFigure()).getTargetConnectionAnchorAt(pt);
-		} else if(request instanceof DropRequest) {
-			return ((NodeFigure)getFigure()).getTargetConnectionAnchorAt(((DropRequest)request).getLocation());
+			Point pt = ((DropRequest) request).getLocation().getCopy();
+			return ((NodeFigure) getFigure()).getTargetConnectionAnchorAt(pt);
+		} else if (request instanceof DropRequest) {
+			return ((NodeFigure) getFigure()).getTargetConnectionAnchorAt(((DropRequest) request).getLocation());
 		}
-		return ((NodeFigure)getFigure()).getTargetConnectionAnchorAt(null);
+		return ((NodeFigure) getFigure()).getTargetConnectionAnchorAt(null);
 	}
 
+	@Override
 	public String mapConnectionAnchorToTerminal(ConnectionAnchor c) {
-		return ((NodeFigure)getFigure()).getConnectionAnchorTerminal(c);
+		return ((NodeFigure) getFigure()).getConnectionAnchorTerminal(c);
 	}
 
+	@Override
 	public ConnectionAnchor mapTerminalToConnectionAnchor(String terminal) {
-		return ((NodeFigure)getFigure()).getConnectionAnchor(terminal);
+		return ((NodeFigure) getFigure()).getConnectionAnchor(terminal);
 	}
 
+	@Override
 	public boolean canAttachNote() {
 		return true;
 	}
 
 	@Override
 	protected Image getLabelIcon() {
-		if(AppearanceHelper.showElementIcon(getNotationView())) {
+		if (AppearanceHelper.showElementIcon(getNotationView())) {
 			return UMLElementTypes.getImage(resolveSemanticElement().eClass());
 		}
 		return null;
@@ -273,13 +282,14 @@ public class CustomTimeObservationLabelEditPart extends TimeObservationLabelEdit
 	@Override
 	public void refreshBounds() {
 		super.refreshBounds();
-		//Update location manually.
+		// Update location manually.
 		IBorderItemLocator locator = getBorderItemLocator();
-		if(locator != null) {
+		if (locator != null) {
 			locator.relocate(getFigure());
 		}
 	}
 
+	@Override
 	public IFigure getPrimaryShape() {
 		return getFigure();
 	}

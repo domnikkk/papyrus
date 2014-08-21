@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -93,19 +93,19 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		super.init(configurationNode, factory);
-		if(configurationNode == null) {
+		if (configurationNode == null) {
 			return;
 		}
 		NodeList childNodes = configurationNode.getChildNodes();
-		for(int i = 0; i < childNodes.getLength(); i++) {
+		for (int i = 0; i < childNodes.getLength(); i++) {
 			String nodeName = childNodes.item(i).getNodeName();
-			if(PROPERTIES_NODE_NAME.equals(nodeName)) {
+			if (PROPERTIES_NODE_NAME.equals(nodeName)) {
 				NodeList propertyNodes = childNodes.item(i).getChildNodes();
-				for(int j = 0; j < propertyNodes.getLength(); j++) {
+				for (int j = 0; j < propertyNodes.getLength(); j++) {
 					String propertyNodeName = propertyNodes.item(j).getNodeName();
-					if(PROPERTY_NODE_NAME.equals(propertyNodeName)) {
+					if (PROPERTY_NODE_NAME.equals(propertyNodeName)) {
 						Node propertyNameNode = propertyNodes.item(j).getAttributes().getNamedItem(IPapyrusPaletteConstant.NAME);
-						if(propertyNameNode != null) {
+						if (propertyNameNode != null) {
 							listOfDisplayableStereotypeProperties.add(propertyNameNode.getNodeValue());
 						}
 					}
@@ -119,13 +119,13 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 	 */
 	@Override
 	public void save(Node parentNode) {
-		Element propertiesNode = ((Element)parentNode).getOwnerDocument().createElement(PROPERTIES_NODE_NAME);
-		for(String propertyName : listOfDisplayableStereotypeProperties) {
+		Element propertiesNode = ((Element) parentNode).getOwnerDocument().createElement(PROPERTIES_NODE_NAME);
+		for (String propertyName : listOfDisplayableStereotypeProperties) {
 			Element propertyNode = propertiesNode.getOwnerDocument().createElement(PROPERTY_NODE_NAME);
 			propertyNode.setAttribute(IPapyrusPaletteConstant.NAME, propertyName);
 			propertiesNode.appendChild(propertyNode);
 		}
-		((Element)parentNode).appendChild(propertiesNode);
+		((Element) parentNode).appendChild(propertiesNode);
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
-				View view = (View)viewAdapter.getAdapter(View.class);
+				View view = (View) viewAdapter.getAdapter(View.class);
 				String stereotypesStrList = PaletteUtil.convertToCommaSeparatedRepresentation(listOfDisplayableStereotypeProperties);
 
 				AppliedStereotypeHelper.getAddAppliedStereotypePropertiesCommand(editingDomain, view, stereotypesStrList).execute();
@@ -160,10 +160,10 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 		this.entryProxy = entryProxy;
 		// retrieve displayed stereotypes
 		List<String> displayedStereotypeNames = new ArrayList<String>();
-		if(entryProxy instanceof IPaletteAspectToolEntryProxy) {
-			for(IPostAction postAction : ((IPaletteAspectToolEntryProxy)entryProxy).getPostActions()) {
-				if(postAction instanceof StereotypePostAction) {
-					for(String stereotypeName : ((StereotypePostAction)postAction).getStereotypesToApply()) {
+		if (entryProxy instanceof IPaletteAspectToolEntryProxy) {
+			for (IPostAction postAction : ((IPaletteAspectToolEntryProxy) entryProxy).getPostActions()) {
+				if (postAction instanceof StereotypePostAction) {
+					for (String stereotypeName : ((StereotypePostAction) postAction).getStereotypesToApply()) {
 						displayedStereotypeNames.add(stereotypeName);
 					}
 				}
@@ -171,15 +171,15 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 		}
 		// get the stereotypes to display, looking in the list of applied profiles and comparing with the list of stereotype qualified names to be displayed
 		List<Stereotype> displayedStereotypes = new ArrayList<Stereotype>();
-		for(Profile appliedProfile : appliedProfiles) {
-			for(Stereotype stereotype : appliedProfile.getOwnedStereotypes()) {
-				if(stereotype != null && displayedStereotypeNames.contains(stereotype.getQualifiedName())) {
+		for (Profile appliedProfile : appliedProfiles) {
+			for (Stereotype stereotype : appliedProfile.getOwnedStereotypes()) {
+				if (stereotype != null && displayedStereotypeNames.contains(stereotype.getQualifiedName())) {
 					displayedStereotypes.add(stereotype);
 				}
 			}
 		}
 		// check list has same size...
-		if(displayedStereotypeNames.size() != displayedStereotypes.size()) {
+		if (displayedStereotypeNames.size() != displayedStereotypes.size()) {
 			Activator.log.error("all the stereotypes were not resolved:\n" + displayedStereotypeNames + "\n" + displayedStereotypes, null);
 		}
 		Composite composite = new Composite(parent, SWT.BORDER);
@@ -196,6 +196,7 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 				// nothing to do here
 			}
@@ -203,6 +204,7 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public void dispose() {
 				// nothing to do here
 			}
@@ -210,9 +212,10 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public boolean hasChildren(Object element) {
-				if(element instanceof ITreeElement) {
-					return ((ITreeElement)element).getChildren().length > 0;
+				if (element instanceof ITreeElement) {
+					return ((ITreeElement) element).getChildren().length > 0;
 				}
 				return false;
 			}
@@ -220,9 +223,10 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public Object getParent(Object element) {
-				if(element instanceof ITreeElement) {
-					return ((ITreeElement)element).getParent();
+				if (element instanceof ITreeElement) {
+					return ((ITreeElement) element).getParent();
 				}
 				return null;
 			}
@@ -230,12 +234,13 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public Object[] getElements(Object inputElement) {
-				if(inputElement instanceof List) {
+				if (inputElement instanceof List) {
 					List<StereotypeTreeItem> stereotypeTreeItems = new ArrayList<DisplayAppliedStereotypePropertiesInCompartmentPostAction.StereotypeTreeItem>();
-					for(Object object : (List<?>)inputElement) {
-						if(object instanceof Stereotype) {
-							stereotypeTreeItems.add(new StereotypeTreeItem((Stereotype)object));
+					for (Object object : (List<?>) inputElement) {
+						if (object instanceof Stereotype) {
+							stereotypeTreeItems.add(new StereotypeTreeItem((Stereotype) object));
 						}
 					}
 					return stereotypeTreeItems.toArray();
@@ -246,9 +251,10 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public Object[] getChildren(Object parentElement) {
-				if(parentElement instanceof ITreeElement) {
-					return ((ITreeElement)parentElement).getChildren();
+				if (parentElement instanceof ITreeElement) {
+					return ((ITreeElement) parentElement).getChildren();
 				}
 				return new Object[0];
 			}
@@ -268,25 +274,26 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void checkStateChanged(CheckStateChangedEvent event) {
-			for(TreeItem stereotypeItem : ((CheckboxTreeViewer)event.getCheckable()).getTree().getItems()) {
-				Stereotype stereotype = ((StereotypeTreeItem)stereotypeItem.getData()).getStereotype();
-				if(stereotype == null) {
+			for (TreeItem stereotypeItem : ((CheckboxTreeViewer) event.getCheckable()).getTree().getItems()) {
+				Stereotype stereotype = ((StereotypeTreeItem) stereotypeItem.getData()).getStereotype();
+				if (stereotype == null) {
 					Activator.log.debug("impossible to find stereotype");
 					return;
 				}
-				for(TreeItem propertyItem : stereotypeItem.getItems()) {
-					PropertyTreeItem propertyTreeItem = ((PropertyTreeItem)propertyItem.getData());
-					if(propertyTreeItem != null && propertyTreeItem.getProperty() != null) {
-						if(propertyItem.getChecked()) {
-							listOfDisplayableStereotypeProperties.add(getPropertyName(stereotype, ((PropertyTreeItem)propertyItem.getData()).getProperty()));
+				for (TreeItem propertyItem : stereotypeItem.getItems()) {
+					PropertyTreeItem propertyTreeItem = ((PropertyTreeItem) propertyItem.getData());
+					if (propertyTreeItem != null && propertyTreeItem.getProperty() != null) {
+						if (propertyItem.getChecked()) {
+							listOfDisplayableStereotypeProperties.add(getPropertyName(stereotype, ((PropertyTreeItem) propertyItem.getData()).getProperty()));
 						} else {
-							listOfDisplayableStereotypeProperties.remove(getPropertyName(stereotype, ((PropertyTreeItem)propertyItem.getData()).getProperty()));
+							listOfDisplayableStereotypeProperties.remove(getPropertyName(stereotype, ((PropertyTreeItem) propertyItem.getData()).getProperty()));
 						}
 					}
 				}
 			}
-			
+
 		}
 	}
 
@@ -301,10 +308,10 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 		 */
 		@Override
 		public String getText(Object element) {
-			if(element instanceof StereotypeTreeItem) {
-				return ((StereotypeTreeItem)element).getStereotype().getQualifiedName();
-			} else if(element instanceof PropertyTreeItem) {
-				return ((PropertyTreeItem)element).getProperty().getQualifiedName();
+			if (element instanceof StereotypeTreeItem) {
+				return ((StereotypeTreeItem) element).getStereotype().getQualifiedName();
+			} else if (element instanceof PropertyTreeItem) {
+				return ((PropertyTreeItem) element).getProperty().getQualifiedName();
 			}
 			return super.getText(element);
 		}
@@ -315,11 +322,12 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public boolean isChecked(Object element) {
-			if(element instanceof PropertyTreeItem) {
-				Property property = ((PropertyTreeItem)element).getProperty();
-				Stereotype stereotype = ((PropertyTreeItem)element).getParent().getStereotype();
-				if(property != null && stereotype != null) {
+			if (element instanceof PropertyTreeItem) {
+				Property property = ((PropertyTreeItem) element).getProperty();
+				Stereotype stereotype = ((PropertyTreeItem) element).getParent().getStereotype();
+				if (property != null && stereotype != null) {
 					String name = getPropertyName(stereotype, property);
 					return listOfDisplayableStereotypeProperties.contains(name);
 				}
@@ -330,6 +338,7 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public boolean isGrayed(Object element) {
 			return false;
 		}
@@ -361,11 +370,11 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param parentItem
-		 *        th parent item for this tree item
+		 *            th parent item for this tree item
 		 * @param style
-		 *        the style of this tree item
+		 *            the style of this tree item
 		 */
 		public StereotypeTreeItem(Stereotype stereotype) {
 			this.stereotype = stereotype;
@@ -378,19 +387,21 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			return stereotype;
 		}
 
+		@Override
 		public PropertyTreeItem[] getChildren() {
-			if(propertyTreeItems == null) {
+			if (propertyTreeItems == null) {
 				List<PropertyTreeItem> items = new ArrayList<DisplayAppliedStereotypePropertiesInCompartmentPostAction.PropertyTreeItem>();
-				for(Property property : stereotype.getAllAttributes()) {
-					if(property != null) {
+				for (Property property : stereotype.getAllAttributes()) {
+					if (property != null) {
 						items.add(new PropertyTreeItem(this, property));
 					}
 				}
-				propertyTreeItems = items.toArray(new PropertyTreeItem[]{});
+				propertyTreeItems = items.toArray(new PropertyTreeItem[] {});
 			}
 			return propertyTreeItems;
 		}
 
+		@Override
 		public ITreeElement getParent() {
 			return null;
 		}
@@ -407,11 +418,11 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param parentItem
-		 *        the parent item for this tree item
+		 *            the parent item for this tree item
 		 * @param style
-		 *        the style of this tree item
+		 *            the style of this tree item
 		 */
 		public PropertyTreeItem(StereotypeTreeItem stereotypeTreeItem, Property property) {
 			this.stereotypeTreeItem = stereotypeTreeItem;
@@ -425,10 +436,12 @@ public class DisplayAppliedStereotypePropertiesInCompartmentPostAction extends G
 			return property;
 		}
 
+		@Override
 		public StereotypeTreeItem getParent() {
 			return stereotypeTreeItem;
 		}
 
+		@Override
 		public ITreeElement[] getChildren() {
 			return new ITreeElement[0];
 		}

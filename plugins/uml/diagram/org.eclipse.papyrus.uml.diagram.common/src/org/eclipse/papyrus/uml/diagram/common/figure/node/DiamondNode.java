@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 392301
- *  
+ *
  */
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
@@ -31,7 +31,7 @@ import org.eclipse.swt.graphics.Image;
  */
 public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -41,9 +41,10 @@ public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLEle
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Border getDefaultBorder(Color borderColor) {
 		return null;
 	}
@@ -51,6 +52,7 @@ public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLEle
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		graphics.pushState();
 		Rectangle r = getBounds().getCopy().crop(new Insets(0, 0, 1, 1));
@@ -78,6 +80,7 @@ public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLEle
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		// TODO Auto-generated method stub
 
@@ -86,6 +89,7 @@ public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLEle
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 		// TODO Auto-generated method stub
 
@@ -94,6 +98,7 @@ public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLEle
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 		// TODO Auto-generated method stub
 
@@ -102,6 +107,7 @@ public class DiamondNode extends PapyrusNodeFigure implements IPapyrusNodeUMLEle
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Label getStereotypesLabel() {
 		return new Label();
 	}

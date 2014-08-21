@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -31,12 +31,12 @@ import org.eclipse.swt.widgets.Tree;
 /**
  * This class provides the creation of a {@link Tree} but with extended
  * elements.</p>
- * 
+ *
  * This tree creates its menu {@link ExtendedTreeMenu} and had the list of all the items
  * of the tree accessible with the method {@link #getTreeItems()}.
- * 
+ *
  * </p> Only one element of the tree can be selected at the same time.
- * 
+ *
  * @since 0.3
  */
 public class ExtendedTree {
@@ -48,15 +48,14 @@ public class ExtendedTree {
 
 	/**
 	 * Constructor.
-	 * 
-	 * Create a new instance of a {@link Tree} and create the {@link ExtendedTreeMenu}
-	 * with the <code>menuItems</code> in parameter.
-	 * 
+	 *
+	 * Create a new instance of a {@link Tree} and create the {@link ExtendedTreeMenu} with the <code>menuItems</code> in parameter.
+	 *
 	 * @param parent
 	 *            the parent of the TreeExtended.
 	 * @param menuItems
 	 *            the items of the menu.
-	 * 
+	 *
 	 * @see ExtendedTreeMenu
 	 * @see AbstractTreeMenu
 	 */
@@ -126,7 +125,7 @@ public class ExtendedTree {
 
 	/**
 	 * Add a {@link ModificationListener} to the list of listeners of the tree.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void setListener(final Listener listener) {
@@ -134,8 +133,7 @@ public class ExtendedTree {
 	}
 
 	/**
-	 * When a modification appends, this method has to be called and the method
-	 * {@link #notifyChanged()} is called for the listener of this Tree.
+	 * When a modification appends, this method has to be called and the method {@link #notifyChanged()} is called for the listener of this Tree.
 	 */
 	public void fireChanged() {
 		this.listener.handleEvent(null);
@@ -143,8 +141,7 @@ public class ExtendedTree {
 
 	/**
 	 * @return a map of properties to pass to the {@link AbstractTreeItem}. Each
-	 *         items add to override the method
-	 *         {@link AbstractTreeItem#getExtraProperties(Map)} to get this
+	 *         items add to override the method {@link AbstractTreeItem#getExtraProperties(Map)} to get this
 	 *         properties.
 	 */
 	public void putExtraPropertiesToItems(final Map<String, Object> properties) {
@@ -153,7 +150,7 @@ public class ExtendedTree {
 
 	/**
 	 * Return the first {@link AbstractTreeItem} of the tree.
-	 * 
+	 *
 	 * @return the first item of the tree.
 	 */
 	public AbstractTreeItem<IDialog> getFirstTreeItem() {

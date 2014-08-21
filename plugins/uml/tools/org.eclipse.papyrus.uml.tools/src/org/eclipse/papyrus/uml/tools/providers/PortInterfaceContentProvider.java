@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Usage;
 
 /**
  * Content provider for Interfaces of provided or required attribute of a {@link Port}.
- * 
+ *
  * @author Gabriel Pascual
  *
  */
@@ -34,9 +34,9 @@ public class PortInterfaceContentProvider extends SemanticUMLContentProvider {
 	 * Instantiates a new port interface content provider.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param feature
-	 *        the feature
+	 *            the feature
 	 */
 	public PortInterfaceContentProvider(EObject source, EStructuralFeature feature) {
 		super(source, feature);
@@ -49,10 +49,11 @@ public class PortInterfaceContentProvider extends SemanticUMLContentProvider {
 	 * @return
 	 */
 
+	@Override
 	public Object[] getElements() {
-		if(feature == UMLPackage.eINSTANCE.getPort_Provided()) {
+		if (feature == UMLPackage.eINSTANCE.getPort_Provided()) {
 			return buildProvidedInterfaceElements();
-		} else if(feature == UMLPackage.eINSTANCE.getPort_Required()) {
+		} else if (feature == UMLPackage.eINSTANCE.getPort_Required()) {
 			return buildRequiredInterfaceElements();
 		}
 		return null;
@@ -67,8 +68,8 @@ public class PortInterfaceContentProvider extends SemanticUMLContentProvider {
 		Package topPackage = null;
 
 		EObject rootContainer = EcoreUtil.getRootContainer(eObject);
-		if(rootContainer instanceof Package) {
-			topPackage = (Package)rootContainer;
+		if (rootContainer instanceof Package) {
+			topPackage = (Package) rootContainer;
 		}
 		return topPackage;
 	}

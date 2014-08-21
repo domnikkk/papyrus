@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,12 +25,12 @@ import org.eclipse.uml2.uml.UseCase;
 
 /**
  * <pre>
- * 
+ *
  * Edit helper class for {@link UseCase}
  * 
  * Expected behavior:
  * - Remove any related {@link Include} or {@link Extend}
- * 
+ *
  * </pre>
  */
 public class UseCaseEditHelper extends BehavioredClassifierEditHelper {
@@ -41,7 +41,7 @@ public class UseCaseEditHelper extends BehavioredClassifierEditHelper {
 	@Override
 	protected ICommand getDestroyDependentsCommand(DestroyDependentsRequest req) {
 
-		UseCase elementToDelete = (UseCase)req.getElementToDestroy();
+		UseCase elementToDelete = (UseCase) req.getElementToDestroy();
 
 		List<DirectedRelationship> relationships = new ArrayList<DirectedRelationship>();
 		// Get related includes
@@ -52,7 +52,7 @@ public class UseCaseEditHelper extends BehavioredClassifierEditHelper {
 		relationships.addAll(elementToDelete.getTargetDirectedRelationships(UMLPackage.eINSTANCE.getExtend()));
 
 		// Return the command to destroy all these Include and Extend relationships
-		if(!relationships.isEmpty()) {
+		if (!relationships.isEmpty()) {
 			return req.getDestroyDependentsCommand(relationships);
 		}
 

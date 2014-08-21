@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.Package;
 
 /**
  * Command used to move Profile application to new resource
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class MoveProfileApplicationCommand extends AbstractControlCommand {
 
@@ -43,9 +43,9 @@ public class MoveProfileApplicationCommand extends AbstractControlCommand {
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Package packageUncontroled = (Package)getRequest().getTargetObject();
+		Package packageUncontroled = (Package) getRequest().getTargetObject();
 		Resource targetResource = getRequest().getTargetResource(getRequest().getNewURI().fileExtension());
-		if(targetResource == null) {
+		if (targetResource == null) {
 			return CommandResult.newErrorCommandResult("Unable to retreive target resource");
 		}
 		ProfileApplicationHelper.nestedRelocateStereotypeApplications(packageUncontroled, targetResource);

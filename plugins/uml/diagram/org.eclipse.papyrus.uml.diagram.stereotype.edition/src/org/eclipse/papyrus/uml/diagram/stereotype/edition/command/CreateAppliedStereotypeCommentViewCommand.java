@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart.AppliedStereo
 
 /**
  * the goal of this command is to create a comment in the notation that represent a compartment of stereotypes
- * 
+ *
  */
 public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand {
 
@@ -59,9 +59,9 @@ public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand 
 	protected Boolean isBorderedElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param owner
 	 * @param StereotypeApplication
@@ -82,7 +82,7 @@ public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand 
 	@Override
 	public void doExecute() {
 
-		//create the node
+		// create the node
 		Node node = NotationFactory.eINSTANCE.createShape();
 		node.setVisible(true);
 		Bounds bounds = NotationFactory.eINSTANCE.createBounds();
@@ -99,11 +99,11 @@ public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand 
 
 
 
-		EObjectValueStyle eObjectValueStyle = (EObjectValueStyle)node.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
+		EObjectValueStyle eObjectValueStyle = (EObjectValueStyle) node.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
 		eObjectValueStyle.setEObjectValue(base_element);
 		eObjectValueStyle.setName("BASE_ELEMENT");
 
-		//create the link
+		// create the link
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
@@ -122,11 +122,11 @@ public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand 
 		edge.setSource(owner);
 		edge.setTarget(node);
 		edge.setElement(null);
-		eObjectValueStyle = (EObjectValueStyle)edge.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
+		eObjectValueStyle = (EObjectValueStyle) edge.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
 		eObjectValueStyle.setEObjectValue(base_element);
 		eObjectValueStyle.setName("BASE_ELEMENT");
 
-		//copy EAnnotation
+		// copy EAnnotation
 		final EAnnotation stereotypeAnnotation = owner.getEAnnotation(UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION);
 		EAnnotation stereotypeAnnotationCopy = EcoreUtil.copy(stereotypeAnnotation);
 		node.getEAnnotations().add(stereotypeAnnotationCopy);
@@ -140,48 +140,48 @@ public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand 
 
 	/**
 	 * add the comment node form the owner
-	 * 
+	 *
 	 * @param owner
-	 *        the view from which we want to display a comment stereotype, cannot be null
+	 *            the view from which we want to display a comment stereotype, cannot be null
 	 * @param commentNode
-	 *        node that represent the comment , cannot be null
+	 *            node that represent the comment , cannot be null
 	 */
 	private void connectCommentNode(View owner, Node commentNode) {
 
-		//in the case of the edge the comment has to be placed into the common parent of each end
-		if(owner instanceof Edge) {
-			View viewSource = ((Edge)owner).getSource();
-			View viewTarget = ((Edge)owner).getSource();
-			//list of source parents
+		// in the case of the edge the comment has to be placed into the common parent of each end
+		if (owner instanceof Edge) {
+			View viewSource = ((Edge) owner).getSource();
+			View viewTarget = ((Edge) owner).getSource();
+			// list of source parents
 			ArrayList<View> parentsSource = getParentTree(viewSource);
-			//list of source targets
+			// list of source targets
 			ArrayList<View> parentsTarget = getParentTree(viewTarget);
 			View commonParent = null;
 			int index = 0;
-			//find the common
-			while(commonParent == null && index < parentsSource.size()) {
-				if(parentsTarget.contains(parentsSource.get(index))) {
+			// find the common
+			while (commonParent == null && index < parentsSource.size()) {
+				if (parentsTarget.contains(parentsSource.get(index))) {
 					commonParent = parentsSource.get(index);
-					if(!(commonParent instanceof BasicCompartment)) {
+					if (!(commonParent instanceof BasicCompartment)) {
 						commonParent = null;
 					}
 				}
 				index++;
 			}
 			// a common has been found
-			if(commonParent != null) {
-				((Bounds)commentNode.getLayoutConstraint()).setX(100);
-				((Bounds)commentNode.getLayoutConstraint()).setY(100);
+			if (commonParent != null) {
+				((Bounds) commentNode.getLayoutConstraint()).setX(100);
+				((Bounds) commentNode.getLayoutConstraint()).setY(100);
 				ViewUtil.insertChildView(commonParent, commentNode, ViewUtil.APPEND, true);
 				return;
 			}
 		}
-		//generic case
-		View econtainer = (View)owner.eContainer();
-		//for the case of a port
-		if(isBorderedElement) {
-			if(econtainer.eContainer() != null) {
-				econtainer = (View)econtainer.eContainer();
+		// generic case
+		View econtainer = (View) owner.eContainer();
+		// for the case of a port
+		if (isBorderedElement) {
+			if (econtainer.eContainer() != null) {
+				econtainer = (View) econtainer.eContainer();
 			}
 		}
 		ViewUtil.insertChildView(econtainer, commentNode, ViewUtil.APPEND, true);
@@ -190,17 +190,17 @@ public class CreateAppliedStereotypeCommentViewCommand extends RecordingCommand 
 
 	/**
 	 * @param view
-	 *        the view for which we look for its parents, cannot be null
+	 *            the view for which we look for its parents, cannot be null
 	 * @return the list of parents of a view
 	 */
 	private ArrayList<View> getParentTree(View view) {
 		ArrayList<View> parents = new ArrayList<View>();
 		View currentView = view;
-		while(currentView != null) {
-			currentView = (View)currentView.eContainer();
-			if(currentView != null) {
-				if(!(currentView instanceof DecorationNode) && !(currentView instanceof BasicCompartment)) {
-					//parents.addAll(currentView.getChildren());
+		while (currentView != null) {
+			currentView = (View) currentView.eContainer();
+			if (currentView != null) {
+				if (!(currentView instanceof DecorationNode) && !(currentView instanceof BasicCompartment)) {
+					// parents.addAll(currentView.getChildren());
 				}
 				parents.add(currentView);
 			}

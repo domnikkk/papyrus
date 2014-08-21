@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,6 +51,7 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 	 * org.eclipse.gmf.runtime.common.core.service.IProvider#addProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener
 	 * )
 	 */
+	@Override
 	public void addProviderChangeListener(IProviderChangeListener listener) {
 	}
 
@@ -60,68 +61,76 @@ public class GroupEditPolicyProvider implements IEditPolicyProvider {
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#removeProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.
 	 * IProviderChangeListener)
 	 */
+	@Override
 	public void removeProviderChangeListener(IProviderChangeListener listener) {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		/*
 		 * Installation of notiying edit polocy
 		 */
-		if(editPart instanceof ActivityEditPart) {
+		if (editPart instanceof ActivityEditPart) {
 			editPart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY, new ActivityGroupEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY)));
 		}
-		if(editPart instanceof IGraphicalEditPart && editPart.getParent() instanceof IGraphicalEditPart) {
-			IGraphicalEditPart graphEditpart = (IGraphicalEditPart)editPart;
-			//is top edit part of the element
-			IGraphicalEditPart parentEditPart = (IGraphicalEditPart)editPart.getParent();
+		if (editPart instanceof IGraphicalEditPart && editPart.getParent() instanceof IGraphicalEditPart) {
+			IGraphicalEditPart graphEditpart = (IGraphicalEditPart) editPart;
+			// is top edit part of the element
+			IGraphicalEditPart parentEditPart = (IGraphicalEditPart) editPart.getParent();
 			EObject resolveSemanticElement = graphEditpart.resolveSemanticElement();
-			if(resolveSemanticElement != null && !resolveSemanticElement.equals(parentEditPart.resolveSemanticElement())) {
-				if(resolveSemanticElement instanceof ActivityNode) {
+			if (resolveSemanticElement != null && !resolveSemanticElement.equals(parentEditPart.resolveSemanticElement())) {
+				if (resolveSemanticElement instanceof ActivityNode) {
 					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY, new ActivityNodeEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_NODE)));
 				}
-				if(resolveSemanticElement instanceof ActivityGroup) {
+				if (resolveSemanticElement instanceof ActivityGroup) {
 					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_MOVE_EDIT_POLICY, new ActivityGroupEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
 				}
 				/*
 				 * Installation of policy to handle graphicac
 				 */
-				switch(UMLVisualIDRegistry.getVisualID(graphEditpart.getNotationView())) {
+				switch (UMLVisualIDRegistry.getVisualID(graphEditpart.getNotationView())) {
 				case ActivityPartitionActivityPartitionContentCompartmentEditPart.VISUAL_ID:
-					graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new ActivityPartitionActivityPartitionContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_PARTITION)));
-					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY, new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
+					graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+							new ActivityPartitionActivityPartitionContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY_PARTITION)));
+					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY,
+							new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
 					break;
 				case InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID:
-					graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new InterruptibleActivityRegionContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.INTERRUPTIBLE_ACTIVITY_REGION)));
-					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY, new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
+					graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE,
+							new InterruptibleActivityRegionContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.INTERRUPTIBLE_ACTIVITY_REGION)));
+					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY,
+							new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
 					break;
 				case ActivityActivityContentCompartmentEditPart.VISUAL_ID:
 					graphEditpart.installEditPolicy(EditPolicyRoles.CREATION_ROLE, new ActivityContentCompartmentCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(UMLPackage.Literals.ACTIVITY)));
-					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY, new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
+					graphEditpart.installEditPolicy(IGroupEditPolicies.GROUP_FRAMEWORK_NOTIFYING_ON_CREATION_EDIT_POLICY,
+							new GroupNotifyingInCreationEditPolicy(ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(resolveSemanticElement.eClass())));
 					break;
 				default:
 					break;
 				}
 			}
-			
+
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
 			return false;
 		}
-		GraphicalEditPart gep = (GraphicalEditPart)epOperation.getEditPart();
+		GraphicalEditPart gep = (GraphicalEditPart) epOperation.getEditPart();
 		String diagramType = gep.getNotationView().getDiagram().getType();
-		if(ActivityDiagramEditPart.MODEL_ID.equals(diagramType)) {
+		if (ActivityDiagramEditPart.MODEL_ID.equals(diagramType)) {
 			return true;
 		}
 		return false;

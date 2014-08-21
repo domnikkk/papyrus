@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,7 +63,7 @@ public class ConnectorFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the applied stereotype association label.
-	 * 
+	 *
 	 * @return the applied stereotype association label
 	 */
 	public WrappingLabel getAppliedStereotypeAssociationLabel() {
@@ -72,7 +72,7 @@ public class ConnectorFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the Connector name label.
-	 * 
+	 *
 	 * @return the Connector name label
 	 */
 	public WrappingLabel getNameLabel() {
@@ -81,7 +81,7 @@ public class ConnectorFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the multiplicity source label.
-	 * 
+	 *
 	 * @return the multiplicity source label
 	 */
 	public WrappingLabel getMultiplicitySourceLabel() {
@@ -90,7 +90,7 @@ public class ConnectorFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the multiplicity target label.
-	 * 
+	 *
 	 * @return the multiplicity target label
 	 */
 	public WrappingLabel getMultiplicityTargetLabel() {

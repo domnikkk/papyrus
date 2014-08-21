@@ -8,19 +8,19 @@ import java.util.List;
 public class FakeServiceDescriptor extends ServiceDescriptor {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 * Create a descriptor for a FakeService with a specified name.
 	 *
 	 * @param key
 	 * @param startKind
 	 */
-	public FakeServiceDescriptor( String key, ServiceStartKind startKind) {
-		super(key, FakeService.class.getName(), startKind, 1 );
+	public FakeServiceDescriptor(String key, ServiceStartKind startKind) {
+		super(key, FakeService.class.getName(), startKind, 1);
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 * Create a descriptor for a FakeService with a specified name.
 	 *
@@ -28,16 +28,16 @@ public class FakeServiceDescriptor extends ServiceDescriptor {
 	 * @param startKind
 	 * @param requiredService
 	 */
-	public FakeServiceDescriptor( String key, ServiceStartKind startKind, List<String> requiredService) {
-		super(key, FakeService.class.getName(), startKind, 1, requiredService );
+	public FakeServiceDescriptor(String key, ServiceStartKind startKind, List<String> requiredService) {
+		super(key, FakeService.class.getName(), startKind, 1, requiredService);
 	}
-	
+
 	/**
 	 * Get the type of the created service.
+	 * 
 	 * @return
 	 */
 	static public Class<?> getServiceType() {
 		return FakeService.class;
 	}
 }
-

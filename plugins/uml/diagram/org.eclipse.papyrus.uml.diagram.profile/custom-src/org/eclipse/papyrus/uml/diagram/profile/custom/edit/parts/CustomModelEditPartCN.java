@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram 
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.edit.parts;
 
@@ -48,9 +48,10 @@ public class CustomModelEditPartCN extends ModelEditPartCN {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		primaryShape = new PackageFigure();
-		((PackageFigure)primaryShape).setTagIcon(Activator.getPluginIconImage(Activator.ID, ICONS_PATH));
+		((PackageFigure) primaryShape).setTagIcon(Activator.getPluginIconImage(Activator.ID, ICONS_PATH));
 		return primaryShape;
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ public interface ITreeSelectorDialog {
 
 	/**
 	 * Sets the label provider for this dialog
-	 * 
+	 *
 	 * @param provider
 	 */
 	public void setLabelProvider(ILabelProvider provider);
@@ -30,31 +30,31 @@ public interface ITreeSelectorDialog {
 	/**
 	 * Sets the ContentProvider for this dialog
 	 * The ContentProvider may be a {@link IHierarchicContentProvider}
-	 * 
+	 *
 	 * @param provider
-	 *        The content provider for this dialog. May be a {@link IHierarchicContentProvider}
+	 *            The content provider for this dialog. May be a {@link IHierarchicContentProvider}
 	 */
 	public void setContentProvider(ITreeContentProvider provider);
 
 	/**
 	 * Sets the description for this Dialog. The description is displayed on
 	 * top of the dialog
-	 * 
+	 *
 	 * @param description
-	 *        The description for this dialog
+	 *            The description for this dialog
 	 */
 	public void setDescription(String description);
 
 	/**
 	 * Sets the input object for this dialog's TreeViewer
-	 * 
+	 *
 	 * @param input
 	 */
 	public void setInput(Object input);
 
 	/**
 	 * Sets the initial selected value for this dialog
-	 * 
+	 *
 	 * @param singletonList
 	 */
 	public void setInitialElementSelections(List selectedElements);
@@ -62,16 +62,16 @@ public interface ITreeSelectorDialog {
 
 	/**
 	 * Opens the dialog's window, and returns its return code
-	 * 
+	 *
 	 * @return the return code
-	 * 
+	 *
 	 * @see #create()
 	 */
 	public int open();
 
 	/**
 	 * Returns the list of selections made by the user, or <code>null</code> if the selection was canceled.
-	 * 
+	 *
 	 * @return the array of selected elements, or <code>null</code> if Cancel
 	 *         was pressed
 	 */
@@ -79,9 +79,9 @@ public interface ITreeSelectorDialog {
 
 	/**
 	 * Sets the title for this dialog.
-	 * 
+	 *
 	 * @param title
-	 *        the title
+	 *            the title
 	 */
 	public void setTitle(String label);
 

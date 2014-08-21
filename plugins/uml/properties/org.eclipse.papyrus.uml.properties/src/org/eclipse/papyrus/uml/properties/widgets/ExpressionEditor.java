@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ import org.eclipse.swt.widgets.Listener;
  * ensures that operations on the language list will not break the coherence
  * with the bodies list. For example, when a language is deleted, the
  * associated body is deleted as well.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see ExpressionLanguageEditor
  */
-//TODO : Check support for Ctrl+Z (Is there one single command executed ?)
-//TODO : Check listeners on observables (If there is an external modification, is the value correctly refreshed ?)
+// TODO : Check support for Ctrl+Z (Is there one single command executed ?)
+// TODO : Check listeners on observables (If there is an external modification, is the value correctly refreshed ?)
 public class ExpressionEditor extends AbstractPropertyEditor implements Listener, ISelectionChangedListener, ICommitListener {
 
 	private final ExpressionLanguageEditor languageEditor;
@@ -63,56 +63,56 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 				bodyEditor.display(currentExpression);
 			}
 		}
-		
+
 	}
-	
+
 	ExpressionListChangeHandler expressionListChangeHandler;
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget is created
+	 *            The composite in which the widget is created
 	 * @param style
-	 *        The style for the {@link DynamicBodyEditor}
+	 *            The style for the {@link DynamicBodyEditor}
 	 */
 	public ExpressionEditor(Composite parent, int style) {
 
 		languageEditor = new ExpressionLanguageEditor(parent, SWT.NONE);
-		
+
 		GridLayout l = new GridLayout(2, false);
 		parent.setLayout(l);
-		
+
 		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, true);
 		gridData.grabExcessHorizontalSpace = true;
 		gridData.horizontalAlignment = GridData.FILL;
 		gridData.verticalAlignment = GridData.FILL;
-		
+
 		bodyEditor = new DynamicBodyEditor(parent, style);
 		bodyEditor.setLayoutData(gridData);
-		
+
 		bodyEditor.addChangeListener(this);
 
 		languageEditor.getViewer().addSelectionChangedListener(this);
 		languageEditor.addCommitListener(this);
 
 		expressionListChangeHandler = new ExpressionListChangeHandler();
-		setEditor(languageEditor);		
+		setEditor(languageEditor);
 	}
-	
+
 	@Override
 	public void setInput(DataSource input) {
-		bodies = (IObservableList)input.getObservable("UML:OpaqueExpression:body"); //$NON-NLS-1$
+		bodies = (IObservableList) input.getObservable("UML:OpaqueExpression:body"); //$NON-NLS-1$
 		super.setInput(input);
 	}
 
 	@Override
 	protected void doBinding() {
 		super.doBinding();
-		languageEditor.addCommitListener((ExpressionList)observableList);
+		languageEditor.addCommitListener((ExpressionList) observableList);
 		bodyEditor.setContext(input.getModelElement(propertyPath));
 
-		if(languageEditor.getViewer().getTree().getItemCount() > 0) {
+		if (languageEditor.getViewer().getTree().getItemCount() > 0) {
 			Object firstItem = languageEditor.getViewer().getTree().getItem(0).getData();
 			StructuredSelection selection = new StructuredSelection(firstItem);
 			languageEditor.getViewer().setSelection(selection);
@@ -125,7 +125,7 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 	 */
 	@Override
 	protected IObservableList getInputObservableList() {
-		if(observableList == null) {
+		if (observableList == null) {
 			observableList = new ExpressionList(super.getInputObservableList(), bodies, expressionListChangeHandler);
 		}
 
@@ -134,22 +134,22 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 
 	public void handleEvent(Event event) {
 		String newValue = bodyEditor.getValue();
-		if(newValue == null) {
+		if (newValue == null) {
 			return;
 		}
 
 		currentExpression.setBody(newValue);
-		((ExpressionList)observableList).commit(bodyEditor);
+		((ExpressionList) observableList).commit(bodyEditor);
 	}
 
 	public void selectionChanged(SelectionChangedEvent event) {
 		ISelection selection = event.getSelection();
 
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			bodyEditor.display(null);
-		} else if(selection instanceof IStructuredSelection) {
-			IStructuredSelection sSelection = (IStructuredSelection)selection;
-			Expression newExpression = (Expression)sSelection.getFirstElement();
+		} else if (selection instanceof IStructuredSelection) {
+			IStructuredSelection sSelection = (IStructuredSelection) selection;
+			Expression newExpression = (Expression) sSelection.getFirstElement();
 			if (newExpression != currentExpression) {
 				// ((ExpressionList)observableList).commit(bodyEditor);
 				currentExpression = newExpression;
@@ -157,7 +157,7 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 			}
 		}
 
-		//Force the layout of the widget after the new widget has been displayed
+		// Force the layout of the widget after the new widget has been displayed
 		bodyEditor.getParent().layout();
 	}
 
@@ -168,12 +168,12 @@ public class ExpressionEditor extends AbstractPropertyEditor implements Listener
 	}
 
 	public void commit(AbstractEditor editor) {
-		//If the viewer has no selection, or if there is only one element,
-		//automatically set the selection to the first element
-		if(editor == languageEditor && observableList != null) {
-			if(observableList.size() == 0) {
+		// If the viewer has no selection, or if there is only one element,
+		// automatically set the selection to the first element
+		if (editor == languageEditor && observableList != null) {
+			if (observableList.size() == 0) {
 				languageEditor.getViewer().setSelection(StructuredSelection.EMPTY);
-			} else if(observableList.size() == 1 || languageEditor.getViewer().getSelection().isEmpty()) {
+			} else if (observableList.size() == 1 || languageEditor.getViewer().getSelection().isEmpty()) {
 				languageEditor.getViewer().setSelection(new StructuredSelection(observableList.get(0)));
 			}
 		}

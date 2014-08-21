@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,15 +38,15 @@ public class ValueCompartmentSemanticEditPolicy extends CompartmentSemanticEditP
 
 		IElementType elementTypeToCreate = req.getElementType();
 		IElementType baseType = elementTypeToCreate;
-		//if extended type, retrieve the sysml closest element element type
-		if(elementTypeToCreate instanceof IExtendedHintedElementType) {
+		// if extended type, retrieve the sysml closest element element type
+		if (elementTypeToCreate instanceof IExtendedHintedElementType) {
 			List<IElementType> superTypes = Arrays.asList(elementTypeToCreate.getAllSuperTypes());
-		    if(superTypes.contains(SysMLElementTypes.VALUE_PROPERTY)) {
+			if (superTypes.contains(SysMLElementTypes.VALUE_PROPERTY)) {
 				baseType = SysMLElementTypes.VALUE_PROPERTY;
 			}
 		}
-		
-		if(SysMLElementTypes.VALUE_PROPERTY == baseType) {
+
+		if (SysMLElementTypes.VALUE_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateValueWithTypeConfigureCommandFactory());
 		}
 

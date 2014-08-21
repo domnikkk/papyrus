@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ public class EditorConnectionGroup extends ConnectionGroup {
 
 	/**
 	 * Instantiates a new editor connection group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param key
-	 *        the title
+	 *            the title
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 */
 	public EditorConnectionGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -42,6 +42,7 @@ public class EditorConnectionGroup extends ConnectionGroup {
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getPapyrusEditorConstant(preferenceType);
 	}

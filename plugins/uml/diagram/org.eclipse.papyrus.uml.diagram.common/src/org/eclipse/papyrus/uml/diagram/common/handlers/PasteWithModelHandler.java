@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,12 +32,13 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
- * 
+ *
  * @see org.eclipse.core.commands.IHandler
  * @see org.eclipse.core.commands.AbstractHandler
  * @Deprecated seems unused, use org.eclipse.papyrus.uml.diagram.menu.handlers.PasteWithModelHandler
  */
-@Deprecated // seems unused, use org.eclipse.papyrus.uml.diagram.menu.handlers.PasteWithModelHandler
+@Deprecated
+// seems unused, use org.eclipse.papyrus.uml.diagram.menu.handlers.PasteWithModelHandler
 public class PasteWithModelHandler extends AbstractHandler {
 
 	/**
@@ -51,21 +52,22 @@ public class PasteWithModelHandler extends AbstractHandler {
 	 * the command has been executed, so extract extract the needed information
 	 * from the application context.
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
-		if(selection instanceof IStructuredSelection) {
-			if(((IStructuredSelection)selection).getFirstElement() instanceof GraphicalEditPart) {
-				GraphicalEditPart targetEditPart = (GraphicalEditPart)((IStructuredSelection)selection).getFirstElement();
-				if(targetEditPart != null) {
+		if (selection instanceof IStructuredSelection) {
+			if (((IStructuredSelection) selection).getFirstElement() instanceof GraphicalEditPart) {
+				GraphicalEditPart targetEditPart = (GraphicalEditPart) ((IStructuredSelection) selection).getFirstElement();
+				if (targetEditPart != null) {
 					// get the paste command with model form the service
 					ICommand pastecommand = PasteCommandService.getInstance().getPasteWithModelCommand(targetEditPart, Toolkit.getDefaultToolkit().getSystemClipboard(), targetEditPart.getEditingDomain().getClipboard());
 
-					if(pastecommand.canExecute()) {
+					if (pastecommand.canExecute()) {
 						targetEditPart.getEditingDomain().getCommandStack().execute(new GMFtoEMFCommandWrapper(pastecommand));
 						RootEditPart topEditPart = targetEditPart.getRoot();
-						if(topEditPart.getChildren().get(0) instanceof DiagramEditPart) {
-							CleanDiagramHelper.getInstance().run((DiagramEditPart)topEditPart.getChildren().get(0));
+						if (topEditPart.getChildren().get(0) instanceof DiagramEditPart) {
+							CleanDiagramHelper.getInstance().run((DiagramEditPart) topEditPart.getChildren().get(0));
 						}
 					}
 				}

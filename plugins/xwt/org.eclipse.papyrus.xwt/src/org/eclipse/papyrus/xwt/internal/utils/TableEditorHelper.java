@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.internal.utils;
@@ -23,8 +23,8 @@ import org.eclipse.swt.widgets.Text;
 public class TableEditorHelper {
 
 	public static void initEditor(final TableItem tableItem, Control editor, final int column) {
-		if(editor instanceof Text) {
-			final Text text = (Text)editor;
+		if (editor instanceof Text) {
+			final Text text = (Text) editor;
 			text.setText(tableItem.getText(column));
 			text.addModifyListener(new ModifyListener() {
 
@@ -32,8 +32,8 @@ public class TableEditorHelper {
 					tableItem.setText(column, text.getText());
 				}
 			});
-		} else if(editor instanceof CCombo) {
-			final CCombo combo = (CCombo)editor;
+		} else if (editor instanceof CCombo) {
+			final CCombo combo = (CCombo) editor;
 			combo.setText(tableItem.getText(column));
 			combo.addSelectionListener(new SelectionListener() {
 
@@ -45,8 +45,8 @@ public class TableEditorHelper {
 					tableItem.setText(column, combo.getItem(combo.getSelectionIndex()));
 				}
 			});
-		} else if(editor instanceof Combo) {
-			final Combo combo = (Combo)editor;
+		} else if (editor instanceof Combo) {
+			final Combo combo = (Combo) editor;
 			combo.setText(tableItem.getText(column));
 			combo.addSelectionListener(new SelectionListener() {
 

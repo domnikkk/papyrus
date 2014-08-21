@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.uml.extensionpoints.Registry;
 import org.eclipse.papyrus.uml.extensionpoints.profile.IRegisteredProfile;
@@ -76,20 +77,20 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 		// 0);
 		// dialog.open();
 		this.open();
-		
+
 		List<Profile> result = new LinkedList<Profile>();
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
-		
+
 		try {
 			List<Profile> profilesToApply = this.treatSelection(resourceSet);
 
-			for(Profile profile : profilesToApply) {
+			for (Profile profile : profilesToApply) {
 				result.add(EMFHelper.reloadIntoContext(profile, currentPackage));
 			}
 		} finally {
 			EMFHelper.unload(resourceSet);
 		}
-		
+
 		return result;
 	}
 
@@ -103,7 +104,7 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 		// User selection
 		Object[] selection = this.getResult();
 
-		if(selection == null) { // Cancel was selected
+		if (selection == null) { // Cancel was selected
 			return new ArrayList<Profile>();
 		}
 
@@ -114,9 +115,9 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 		// try to parse the qualified names
 
 		List<String> subprofilesList = new ArrayList<String>();
-		for(int i = 0; i < selection.length; i++) {
+		for (int i = 0; i < selection.length; i++) {
 
-			IRegisteredProfile currentProfile = (IRegisteredProfile)(selection[i]);
+			IRegisteredProfile currentProfile = (IRegisteredProfile) (selection[i]);
 			URI modelUri = currentProfile.getUri();
 			Resource modelResource = resourceSet.getResource(modelUri, true);
 
@@ -127,15 +128,15 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 			String[] profiles = qualifiedNames.split(",");
 
 			// make a collection with String with no space
-			for(int j = 0; j < profiles.length; j++) {
+			for (int j = 0; j < profiles.length; j++) {
 				String string = profiles[j].trim();
 				subprofilesList.add(string);
 			}
 
-			if((!modelResource.getContents().isEmpty()) && modelResource.getContents().get(0) instanceof Profile) {
+			if ((!modelResource.getContents().isEmpty()) && modelResource.getContents().get(0) instanceof Profile) {
 				Message processMsg = new Message("Profile application", "Loading profiles...");
 				processMsg.open();
-				Profile profileToApply = (Profile)(modelResource.getContents().get(0));
+				Profile profileToApply = (Profile) (modelResource.getContents().get(0));
 				processMsg.close();
 				// if (PackageUtil.getSubProfiles(profileToApply).isEmpty()) {
 				// No sub-profile -> apply profile directly
@@ -147,16 +148,16 @@ public class RegisteredProfileSelectionDialog extends FilteredRegisteredElements
 			}
 		}
 
-		if(!listOfProfileToApply.isEmpty()) {
+		if (!listOfProfileToApply.isEmpty()) {
 			// Open package/profile selection tree selection
 			ProfileTreeSelectionDialog profileDialog = new ProfileTreeSelectionDialog(getShell(), listOfProfileToApply, subprofilesList);
 			int returnValue = profileDialog.open();
 
 			// Apply selected profile if ok was selected
-			if(Dialog.OK == returnValue) {
+			if (Window.OK == returnValue) {
 				Collection<ImportSpec<Profile>> dlgResult = profileDialog.getResult();
 				List<Profile> result = new java.util.ArrayList<Profile>(dlgResult.size());
-				for(ImportSpec<Profile> next : dlgResult) {
+				for (ImportSpec<Profile> next : dlgResult) {
 					result.add(next.getElement());
 				}
 				return result;

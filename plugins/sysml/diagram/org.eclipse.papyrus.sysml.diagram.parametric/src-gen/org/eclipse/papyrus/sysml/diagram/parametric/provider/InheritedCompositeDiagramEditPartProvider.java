@@ -37,14 +37,14 @@ public class InheritedCompositeDiagramEditPartProvider extends UMLEditPartProvid
 		}
 		return super.createEditPart(view);
 	}
-	
+
 	@Override
 	public synchronized boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is a Parametric Diagram
-			if(!ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType())) {
+			if (!ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType())) {
 				return false;
 			}
 
@@ -52,10 +52,10 @@ public class InheritedCompositeDiagramEditPartProvider extends UMLEditPartProvid
 			EObject eobject = view.getElement();
 
 			/** Nodes (and ChildLabelNodes) *********** */
-			if(eobject instanceof org.eclipse.uml2.uml.Constraint) {
+			if (eobject instanceof org.eclipse.uml2.uml.Constraint) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Comment) {
+			if (eobject instanceof org.eclipse.uml2.uml.Comment) {
 				return true;
 			}
 
@@ -66,14 +66,14 @@ public class InheritedCompositeDiagramEditPartProvider extends UMLEditPartProvid
 			String hint = view.getType();
 
 			/** Edges (Feature) : COMMENT_ANNOTATED_ELEMENT *********** */
-			if(ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(hint)) {
+			if (ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(hint)) {
 				return true;
 			}
 			/** Edges (Feature) : CONSTRAINT_CONSTRAINED_ELEMENT *********** */
-			if(ElementTypes.CONTEXT_LINK.getSemanticHint().equals(hint)) {
+			if (ElementTypes.CONTEXT_LINK.getSemanticHint().equals(hint)) {
 				return true;
 			}
-			if(ElementTypes.CONTEXT_LINK_APPLIED_STEREOTYPE.getSemanticHint().equals(hint)) {
+			if (ElementTypes.CONTEXT_LINK_APPLIED_STEREOTYPE.getSemanticHint().equals(hint)) {
 				return true;
 			}
 

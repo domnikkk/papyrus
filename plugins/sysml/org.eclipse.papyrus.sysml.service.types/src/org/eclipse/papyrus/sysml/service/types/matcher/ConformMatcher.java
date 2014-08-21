@@ -23,10 +23,10 @@ public class ConformMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Dependency) {
+		if (eObject instanceof Dependency) {
 
-			Dependency element = (Dependency)eObject;
-			if(UMLUtil.getStereotypeApplication(element, Conform.class) != null) {
+			Dependency element = (Dependency) eObject;
+			if (UMLUtil.getStereotypeApplication(element, Conform.class) != null) {
 				isMatch = true;
 			}
 		}

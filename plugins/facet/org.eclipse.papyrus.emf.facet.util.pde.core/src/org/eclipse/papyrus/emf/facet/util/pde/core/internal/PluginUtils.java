@@ -95,7 +95,7 @@ public final class PluginUtils {
 	/**
 	 * Returns whether the given file is registered in the plugin.xml of the
 	 * given project, using the given extension point.
-	 * 
+	 *
 	 * @param extensionPoint
 	 *            the extension point that is used to register elements of this
 	 *            kind (elements must be declared with a "file" attribute)
@@ -136,7 +136,7 @@ public final class PluginUtils {
 	/**
 	 * Registers the given file in the plugin.xml of the given project, using
 	 * the given extension point.
-	 * 
+	 *
 	 * @param project
 	 *            the project in which the element should be registered
 	 * @param extensionToCheck
@@ -148,7 +148,7 @@ public final class PluginUtils {
 	/**
 	 * Registers the given file in the plugin.xml of the given project, using
 	 * the given extension point.
-	 * 
+	 *
 	 * @param file
 	 *            the file to register
 	 * @param extensionPointId
@@ -385,7 +385,7 @@ public final class PluginUtils {
 	 * This method transforms a Java project into a plug-in project by creating
 	 * a MANIFEST.MF and an activator and by adding a the PDE nature and the PDE
 	 * classpath.
-	 * 
+	 *
 	 * @param project
 	 *            The project to transform in an plug-in project
 	 * @throws CoreException
@@ -402,7 +402,7 @@ public final class PluginUtils {
 
 	/**
 	 * This method returns true if the project is a plug-in project.
-	 * 
+	 *
 	 * @param project
 	 * @return True if the project is a plug-in project.
 	 * @throws CoreException
@@ -419,7 +419,7 @@ public final class PluginUtils {
 	/**
 	 * This method returns true if the path refers a file or a folder contained
 	 * in a plug-in project.
-	 * 
+	 *
 	 * @param path
 	 * @return True if the path refers a file or a folder contained in a plug-in
 	 *         project.
@@ -441,7 +441,7 @@ public final class PluginUtils {
 
 	/**
 	 * This method imports a plug-in in the workspace.
-	 * 
+	 *
 	 * @param bundle
 	 *            the bundle to import into a new project
 	 * @return the created project
@@ -458,7 +458,7 @@ public final class PluginUtils {
 
 	/**
 	 * This method imports a plug-in in the workspace.
-	 * 
+	 *
 	 * @param bundle
 	 *            the bundle to import into a new project
 	 * @param filter
@@ -480,7 +480,7 @@ public final class PluginUtils {
 
 	/**
 	 * This method imports a plug-in in the workspace.
-	 * 
+	 *
 	 * @param bundle
 	 *            the bundle to import into a new project
 	 * @param filter
@@ -492,8 +492,7 @@ public final class PluginUtils {
 	protected static IProject internalImportPlugin(final Bundle bundle, final IFilter<String> filter) throws CoreException {
 		final IProject project = createProjectWithUniqueName(bundle.getSymbolicName());
 		final List<IStatus> errors = new ArrayList<IStatus>();
-		final List<URL> urls = getURLsToCopy(bundle, project,
-				"/", filter, errors); //$NON-NLS-1$
+		final List<URL> urls = getURLsToCopy(bundle, project, "/", filter, errors); //$NON-NLS-1$
 		for (URL url : urls) {
 			copyUrlToFile(project, errors, url);
 		}
@@ -503,13 +502,12 @@ public final class PluginUtils {
 		project.build(IncrementalProjectBuilder.FULL_BUILD, new NullProgressMonitor());
 		return project;
 	}
-	
+
 	private static void copyUrlToFile(final IProject project,
 			final List<IStatus> errors, final URL url) throws CoreException {
 		try {
 			final InputStream inputStream = url.openStream();
-			final String strSubpath = url.toString().replaceAll(
-					"bundleentry://[^/]*/", ""); //$NON-NLS-1$  //$NON-NLS-2$
+			final String strSubpath = url.toString().replaceAll("bundleentry://[^/]*/", ""); //$NON-NLS-1$  //$NON-NLS-2$
 			final IFile file = project.getFile(new Path(strSubpath));
 			if (file.exists()) {
 				file.delete(true, new NullProgressMonitor());
@@ -549,6 +547,7 @@ public final class PluginUtils {
 		}
 		folder.create(true, true, new NullProgressMonitor());
 	}
+
 	protected static void handleErrors(final List<IStatus> errors) throws CoreException {
 		if (!errors.isEmpty()) {
 			final IStatus[] statusArray = errors.toArray(new IStatus[errors.size()]);

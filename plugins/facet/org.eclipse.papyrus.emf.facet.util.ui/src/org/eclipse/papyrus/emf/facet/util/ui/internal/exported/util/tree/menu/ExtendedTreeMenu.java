@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -26,11 +26,9 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 
 /**
- * This class provide the creation of the menu {@link Menu} of the tree (
- * {@link #createMenu(Control, ExtendedTree)}. The menu add a list of
- * {@link AbstractTreeItem} and for each an {@link AbstractTreeItem} which will
+ * This class provide the creation of the menu {@link Menu} of the tree ( {@link #createMenu(Control, ExtendedTree)}. The menu add a list of {@link AbstractTreeItem} and for each an {@link AbstractTreeItem} which will
  * be instantiate when the menu item is selected.
- * 
+ *
  * @since 0.3
  */
 public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
@@ -42,7 +40,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the menu.
 	 * @param treeExtended
@@ -58,7 +56,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * This method creates the tree menu, add put the listener into the menu.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the menu.
 	 * @param treeExtended
@@ -79,8 +77,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 	}
 
 	/**
-	 * This method is called when the menu is displayed. It calls all the
-	 * {@link AbstractTreeMenu#refresh(TreeMenu)} method of each element of the
+	 * This method is called when the menu is displayed. It calls all the {@link AbstractTreeMenu#refresh(TreeMenu)} method of each element of the
 	 * menu.
 	 */
 	public void onMenuShown() {
@@ -91,7 +88,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * Return the list of all the items of this menu.
-	 * 
+	 *
 	 * @return the list of the {@link AbstractTreeMenu} of this menu.
 	 */
 	public List<AbstractTreeMenu<IDialog>> getTreeMenuItems() {
@@ -100,7 +97,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * Return the {@link Menu} of this TreeMenu.
-	 * 
+	 *
 	 * @return the menu.
 	 */
 	public Menu getMenu() {
@@ -109,7 +106,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * Put this <code>properties</code> to each items created.
-	 * 
+	 *
 	 * @param properties
 	 *            the list of properties to pass.
 	 */
@@ -182,8 +179,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 	}
 
 	/**
-	 * This method call the method
-	 * {@link AbstractTreeItem#onItemMouseSelection()} of the current selection.
+	 * This method call the method {@link AbstractTreeItem#onItemMouseSelection()} of the current selection.
 	 */
 	public void onMouseSelection() {
 		final AbstractTreeItem<IDialog> treeMenu = getTreeItemExtended(getCurrentItemSelected());
@@ -194,8 +190,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 	}
 
 	/**
-	 * When a modification append, this method has to be called and the method
-	 * {@link #notifyChanged()} is called for the listener of this Tree.
+	 * When a modification append, this method has to be called and the method {@link #notifyChanged()} is called for the listener of this Tree.
 	 */
 	public void fireChanged() {
 		this.treeExtended.fireChanged();
@@ -210,7 +205,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * Select the item into the menu (if the item exist).
-	 * 
+	 *
 	 * @return can return a {@link IDialog}. Can be null.
 	 */
 	public IDialog selectMenuItem(
@@ -224,9 +219,8 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 	}
 
 	/**
-	 * Return (if exist) the {@link AbstractTreeMenu} with the name
-	 * <code>menuItemName</code> into the items of the tree menu.
-	 * 
+	 * Return (if exist) the {@link AbstractTreeMenu} with the name <code>menuItemName</code> into the items of the tree menu.
+	 *
 	 * @param menuItemType
 	 *            the name of the element to find.
 	 * @return the item menu with the name in parameter (can be null).
@@ -311,7 +305,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * get all the items of the tree with the name <code>treeItemName</code>
-	 * 
+	 *
 	 * @param treeItemName
 	 *            the name of the item to select.
 	 * @return the list of all the tree item with the name in parameter.
@@ -331,7 +325,7 @@ public class ExtendedTreeMenu<IDialog> implements ITreeMenu<IDialog> {
 
 	/**
 	 * Select a item into the tree.
-	 * 
+	 *
 	 * @param treeItem
 	 *            the {@link AbstractTreeItem} to select
 	 */

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -58,7 +58,7 @@ public class InterfaceEditPart extends AbstractElementEditPart {
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -79,20 +79,20 @@ public class InterfaceEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementNodeLabelNameEditPart) {
-			((NamedElementNodeLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NamedElementNodeLabelNameEditPart) {
+			((NamedElementNodeLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof PropertyCompartmentEditPart) {
+		if (childEditPart instanceof PropertyCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getPropertyCompartmentFigure();
 			setupContentPane(pane);
-			pane.add(((PropertyCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((PropertyCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if(childEditPart instanceof OperationCompartmentEditPart) {
+		if (childEditPart instanceof OperationCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
 			setupContentPane(pane);
-			pane.add(((OperationCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((OperationCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -100,19 +100,19 @@ public class InterfaceEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementNodeLabelNameEditPart) {
+		if (childEditPart instanceof NamedElementNodeLabelNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof PropertyCompartmentEditPart) {
+		if (childEditPart instanceof PropertyCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getPropertyCompartmentFigure();
 			setupContentPane(pane);
-			pane.remove(((PropertyCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((PropertyCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if(childEditPart instanceof OperationCompartmentEditPart) {
+		if (childEditPart instanceof OperationCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getOperationCompartmentFigure();
 			setupContentPane(pane);
-			pane.remove(((OperationCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((OperationCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -120,25 +120,25 @@ public class InterfaceEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof PropertyCompartmentEditPart) {
+		if (editPart instanceof PropertyCompartmentEditPart) {
 			return getPrimaryShape().getPropertyCompartmentFigure();
 		}
-		if(editPart instanceof OperationCompartmentEditPart) {
+		if (editPart instanceof OperationCompartmentEditPart) {
 			return getPrimaryShape().getOperationCompartmentFigure();
 		}
 		return getContentPane();
 	}
 
-	//	public EditPart getTargetEditPart(Request request) {
-	//		if(request instanceof CreateViewAndElementRequest) {
-	//			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-	//			IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
-	//			if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
-	//				return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
-	//			}
-	//		}
-	//		return super.getTargetEditPart(request);
-	//	}
+	// public EditPart getTargetEditPart(Request request) {
+	// if(request instanceof CreateViewAndElementRequest) {
+	// CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+	// IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
+	// if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
+	// return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
+	// }
+	// }
+	// return super.getTargetEditPart(request);
+	// }
 	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new InterfaceFigure();
@@ -146,7 +146,7 @@ public class InterfaceEditPart extends AbstractElementEditPart {
 
 	@Override
 	public InterfaceFigure getPrimaryShape() {
-		return (InterfaceFigure)primaryShape;
+		return (InterfaceFigure) primaryShape;
 	}
 
 	@Override

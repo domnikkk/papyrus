@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     Christian W. Damus (CEA) - bug 410346
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.wizards.pages;
 
@@ -54,7 +54,7 @@ import org.eclipse.swt.widgets.Label;
 
 /**
  * Wizard page that allows to select element from model.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class SelectRootElementPage extends WizardPage {
@@ -73,9 +73,9 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param selection
-	 *        the initial selection from which to get the resource for root element
+	 *            the initial selection from which to get the resource for root element
 	 */
 	public SelectRootElementPage(IStructuredSelection selection) {
 		super(PAGE_ID);
@@ -83,11 +83,11 @@ public class SelectRootElementPage extends WizardPage {
 		setDescription(Messages.SelectRootElementPage_select_root_element_desc);
 
 		Resource resource = null;
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			resource = adapt(selection.getFirstElement(), Resource.class);
-			if(resource == null) {
+			if (resource == null) {
 				URI uri = getSelectedResourceURI(selection);
-				if(uri != null) {
+				if (uri != null) {
 					resource = getResourceForURI(uri);
 				}
 			}
@@ -97,7 +97,7 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Gets the model element.
-	 * 
+	 *
 	 * @return the selected model element
 	 */
 	public EObject getModelElement() {
@@ -106,9 +106,9 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Creates the control.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
 
@@ -144,33 +144,33 @@ public class SelectRootElementPage extends WizardPage {
 		modelViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
 			public void selectionChanged(SelectionChangedEvent event) {
-				updateSelection((IStructuredSelection)event.getSelection());
+				updateSelection((IStructuredSelection) event.getSelection());
 			}
 		});
 
 		modelViewer.getControl().addDisposeListener(new DisposeListener() {
-			
+
 			public void widgetDisposed(DisposeEvent e) {
 				// Dispose the adapter factory that we created to avoid leaking its adapters
-				if(adapterFactory instanceof IDisposable) {
-					((IDisposable)adapterFactory).dispose();
+				if (adapterFactory instanceof IDisposable) {
+					((IDisposable) adapterFactory).dispose();
 				}
 			}
 		});
-		
+
 		setPageComplete(validatePage());
 	}
 
 	/**
 	 * Gets the model root.
-	 * 
+	 *
 	 * @param modelResource
-	 *        the model resource
+	 *            the model resource
 	 * @return the model root
 	 */
 	private EObject getModelRoot(Resource modelResource) {
-		if(modelResource == null) {
-			//log
+		if (modelResource == null) {
+			// log
 			return null;
 		}
 		return modelResource.getContents().get(0);
@@ -178,13 +178,13 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Gets the resource for a URI.
-	 * 
+	 *
 	 * @param uri
-	 *        the URI of the resource
+	 *            the URI of the resource
 	 * @return the resource
 	 */
 	private Resource getResourceForURI(URI uri) {
-		if(uri == null) {
+		if (uri == null) {
 			// log
 			return null;
 		}
@@ -193,9 +193,9 @@ public class SelectRootElementPage extends WizardPage {
 		try {
 			resource = modelSet.getResource(uri, true);
 		} catch (WrappedException e) {
-			if(ModelUtils.isDegradedModeAllowed(e.getCause())) {
+			if (ModelUtils.isDegradedModeAllowed(e.getCause())) {
 				resource = modelSet.getResource(uri, true);
-				if(resource == null) {
+				if (resource == null) {
 					error(e.getMessage());
 					throw e;
 				}
@@ -204,10 +204,10 @@ public class SelectRootElementPage extends WizardPage {
 				throw e;
 			}
 		}
-		if(!resource.getErrors().isEmpty()) {
+		if (!resource.getErrors().isEmpty()) {
 			StringBuilder builder = new StringBuilder();
-			for(Diagnostic d : resource.getErrors()) {
-				builder.append(String.format("<li>%s</li>", d.getMessage().replaceAll("\\<.*?\\>", ""))); //Basic strip tags to avoid breaking the NotificationBuilder with invalid HTML
+			for (Diagnostic d : resource.getErrors()) {
+				builder.append(String.format("<li>%s</li>", d.getMessage().replaceAll("\\<.*?\\>", ""))); // Basic strip tags to avoid breaking the NotificationBuilder with invalid HTML
 			}
 			error(builder.toString());
 		}
@@ -228,22 +228,22 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Update selection.
-	 * 
+	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 */
 	protected void updateSelection(IStructuredSelection selection) {
 		selectedModelElement = null;
-		if(selection.size() == 1) {
+		if (selection.size() == 1) {
 			Object selectedElement = selection.getFirstElement();
-			if(selectedElement instanceof IWrapperItemProvider) {
-				selectedElement = ((IWrapperItemProvider)selectedElement).getValue();
+			if (selectedElement instanceof IWrapperItemProvider) {
+				selectedElement = ((IWrapperItemProvider) selectedElement).getValue();
 			}
-			if(selectedElement instanceof FeatureMap.Entry) {
-				selectedElement = ((FeatureMap.Entry)selectedElement).getValue();
+			if (selectedElement instanceof FeatureMap.Entry) {
+				selectedElement = ((FeatureMap.Entry) selectedElement).getValue();
 			}
-			if(selectedElement instanceof EObject) {
-				selectedModelElement = (EObject)selectedElement;
+			if (selectedElement instanceof EObject) {
+				selectedModelElement = (EObject) selectedElement;
 			}
 		}
 		setPageComplete(validatePage());
@@ -251,7 +251,7 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Validate page.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	protected boolean validatePage() {
@@ -260,7 +260,7 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Creates the adapter factory.
-	 * 
+	 *
 	 * @return the composed adapter factory
 	 */
 	protected ComposedAdapterFactory createAdapterFactory() {
@@ -271,9 +271,9 @@ public class SelectRootElementPage extends WizardPage {
 
 	/**
 	 * Fill item provider factories.
-	 * 
+	 *
 	 * @param factories
-	 *        the factories
+	 *            the factories
 	 */
 	protected void fillItemProviderFactories(List<AdapterFactory> factories) {
 		// custom icons for model elements

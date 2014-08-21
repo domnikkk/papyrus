@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,12 @@ public interface IPostAction extends IAspectAction {
 
 	/**
 	 * command that will be execute after the creation command
-	 * 
+	 *
 	 * @param viewAdapter
-	 * 	an adapter to retrieve the view created by the creation command.
-	 *	the view will be available in the adapter
-	 *  during the execute() of the command but is not available when
-	 *  this method is called.
+	 *            an adapter to retrieve the view created by the creation command.
+	 *            the view will be available in the adapter
+	 *            during the execute() of the command but is not available when
+	 *            this method is called.
 	 * @return
 	 */
 	public ICommand getPostCommand(IAdaptable viewAdapter);
@@ -37,13 +37,14 @@ public interface IPostAction extends IAspectAction {
 	 * This is executed in post commit so you can't run a transactional command
 	 * Except in unprotected mode which is dangerous.
 	 * Please consider the use of getPostCommand instead if possible.
-	 * 
+	 *
 	 * @param editPart
 	 */
 	public void runInPostCommit(EditPart editPart);
 
 	/**
 	 * Needs to return true if an action is specified in runInPostCommit()
+	 * 
 	 * @return
 	 */
 	public boolean needsPostCommitRun();

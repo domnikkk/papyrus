@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * The descriptor for InterruptibleActivityRegion node used by
  * org.eclipse.papyrus.uml.diagram.common.groups.groupcontainment extension point.
- * 
+ *
  * @author vhemery
  */
 public class InterruptibleActivityRegionContainment extends AbstractContainerNodeDescriptor {
@@ -39,9 +39,10 @@ public class InterruptibleActivityRegionContainment extends AbstractContainerNod
 
 	/**
 	 * Get the eclass of the model eobject represented by the node
-	 * 
+	 *
 	 * @return InterruptibleActivityRegion eclass
 	 */
+	@Override
 	public EClass getContainerEClass() {
 		return UMLPackage.eINSTANCE.getInterruptibleActivityRegion();
 	}
@@ -49,9 +50,10 @@ public class InterruptibleActivityRegionContainment extends AbstractContainerNod
 	/**
 	 * Get the list of references linking the InterruptibleActivityRegion to
 	 * children element.
-	 * 
+	 *
 	 * @return the references to contained elements
 	 */
+	@Override
 	public List<EReference> getChildrenReferences() {
 		return Collections.singletonList(UMLPackage.eINSTANCE.getInterruptibleActivityRegion_Node());
 	}
@@ -63,7 +65,7 @@ public class InterruptibleActivityRegionContainment extends AbstractContainerNod
 
 	@Override
 	public Map<EStructuralFeature, EStructuralFeature> getParentEOppositeReferences() {
-		if(parentOpositeReferences == null) {
+		if (parentOpositeReferences == null) {
 			parentOpositeReferences = new HashMap<EStructuralFeature, EStructuralFeature>();
 			parentOpositeReferences.put(UMLPackage.Literals.ACTIVITY_GROUP__IN_ACTIVITY, UMLPackage.Literals.ACTIVITY__OWNED_GROUP);
 		}
@@ -73,9 +75,10 @@ public class InterruptibleActivityRegionContainment extends AbstractContainerNod
 	@Override
 	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart) {
 		String hint = "" + InterruptibleActivityRegionInterruptibleActivityRegionContentCompartmentEditPart.VISUAL_ID;
-		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
+		return ((GraphicalEditPart) editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
 
+	@Override
 	public int getGroupPriority() {
 		return IGroupPriority.INTERRUPTIBLE_REGION_PRIORITY;
 	}

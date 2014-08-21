@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractMethodInjectionImpl#getParameters <em>Parameters</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractMethodInjectionImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getParameters()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractMethodInjectionImpl() {
@@ -54,6 +56,7 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,8 +67,10 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ParameterInjection> getParameters() {
 		if (parameters == null) {
 			parameters = new EObjectContainmentEList<ParameterInjection>(ParameterInjection.class, this, ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS);
@@ -76,13 +81,14 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
+			return ((InternalEList<?>) getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -90,13 +96,14 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
-				return getParameters();
+		case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
+			return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,16 +111,17 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends ParameterInjection>)newValue);
-				return;
+		case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
+			getParameters().clear();
+			getParameters().addAll((Collection<? extends ParameterInjection>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -121,14 +129,15 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
-				getParameters().clear();
-				return;
+		case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
+			getParameters().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,15 +145,16 @@ public abstract class AbstractMethodInjectionImpl extends FeatureInjectionImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
+		case ServicedescriptorswithidPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
+			return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AbstractMethodInjectionImpl
+} // AbstractMethodInjectionImpl

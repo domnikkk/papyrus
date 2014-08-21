@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,18 +46,18 @@ public class CustomAssociationReorientCommand extends AssociationReorientCommand
 	 */
 	@Override
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Type && newEnd instanceof Type)) {
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
 		// if (getLink().getEndTypes().size() != 1) {
-		if(getLink().getEndTypes().size() == 1) {
+		if (getLink().getEndTypes().size() == 1) {
 			return false;
 		}
 		Type target = getLink().getEndTypes().get(0);
-		if(!(getLink().eContainer() instanceof Package)) {
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
+		Package container = (Package) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssociation_4001(container, getLink(), getNewSource(), target);
 	}
 
@@ -66,19 +66,19 @@ public class CustomAssociationReorientCommand extends AssociationReorientCommand
 	 */
 	@Override
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Type && newEnd instanceof Type)) {
+		if (!(oldEnd instanceof Type && newEnd instanceof Type)) {
 			return false;
 		}
 
 		// if (getLink().getEndTypes().size() != 1) {
-		if(getLink().getEndTypes().size() == 1) {
+		if (getLink().getEndTypes().size() == 1) {
 			return false;
 		}
 		Type source = getLink().getEndTypes().get(0);
-		if(!(getLink().eContainer() instanceof Package)) {
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
+		Package container = (Package) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistAssociation_4001(container, getLink(), source, getNewTarget());
 	}
 

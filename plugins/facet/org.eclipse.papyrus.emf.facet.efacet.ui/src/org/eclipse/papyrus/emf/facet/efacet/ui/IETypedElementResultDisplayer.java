@@ -20,7 +20,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETyp
  * Implemented by a view or editor that wants to be used to display the results
  * of a model query.
  */
-//Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.QueryResultDisplayer
+// Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.QueryResultDisplayer
 public interface IETypedElementResultDisplayer {
 	void displayETypedElementResults(final List<ETypedElementResult> result, EditingDomain editingDomain);
 

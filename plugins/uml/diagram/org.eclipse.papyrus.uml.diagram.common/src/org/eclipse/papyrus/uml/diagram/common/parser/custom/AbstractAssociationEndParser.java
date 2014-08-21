@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,6 @@ package org.eclipse.papyrus.uml.diagram.common.parser.custom;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.ui.services.parser.IParser;
@@ -26,7 +25,7 @@ import org.eclipse.uml2.uml.Property;
 
 /**
  * A specific parser to manage the property of association end.
- * 
+ *
  * @author tlandre
  */
 public abstract class AbstractAssociationEndParser implements IParser {
@@ -39,17 +38,17 @@ public abstract class AbstractAssociationEndParser implements IParser {
 
 	/**
 	 * Get the EStructuralFeature of the given notification
-	 * 
+	 *
 	 * @param notification
-	 *        the notification
+	 *            the notification
 	 * @return the EStructuralFeature
 	 */
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -58,6 +57,7 @@ public abstract class AbstractAssociationEndParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -65,23 +65,26 @@ public abstract class AbstractAssociationEndParser implements IParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		// TODO Auto-generated method stub
 		return null;
@@ -90,18 +93,19 @@ public abstract class AbstractAssociationEndParser implements IParser {
 	/**
 	 * Get the property associated with the given IAdaptable and the
 	 * memberEndIndex .
-	 * 
+	 *
 	 * @param element
-	 *        the given IAdaptable
+	 *            the given IAdaptable
 	 * @return the property associated or null if it can't be found.
 	 */
 	protected Property doAdapt(IAdaptable element) {
 		Object obj = EMFHelper.getEObject(element);
 		Property property = null;
-		if(obj instanceof Association) {
-			Association association = (Association)obj;
-			if(association.getMemberEnds() != null && association.getMemberEnds().size() > memberEndIndex)
+		if (obj instanceof Association) {
+			Association association = (Association) obj;
+			if (association.getMemberEnds() != null && association.getMemberEnds().size() > memberEndIndex) {
 				property = association.getMemberEnds().get(memberEndIndex);
+			}
 		}
 		return property;
 	}

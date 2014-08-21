@@ -13,13 +13,14 @@ import org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationFactory
  * @model kind="package"
  * @generated
@@ -29,6 +30,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "runtimevalueseditionactionconfiguration";
@@ -37,6 +39,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/extendedtypes/emf/runtimevalueseditionaction/1.0";
@@ -45,6 +48,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "runtimevalueseditionactionconfiguration";
@@ -53,6 +57,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	RuntimeValuesEditionActionConfigurationPackage eINSTANCE = org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationPackageImpl.init();
@@ -61,6 +66,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationImpl <em>Runtime Values Edition Action Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationPackageImpl#getRuntimeValuesEditionActionConfiguration()
 	 * @generated
@@ -71,6 +77,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -80,6 +87,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +97,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The feature id for the '<em><b>Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -98,6 +107,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The feature id for the '<em><b>Icon Entry</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +117,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The feature id for the '<em><b>Views To Display</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -116,6 +127,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The number of structural features of the '<em>Runtime Values Edition Action Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -125,6 +137,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.ViewToDisplayImpl <em>View To Display</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.ViewToDisplayImpl
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationPackageImpl#getViewToDisplay()
 	 * @generated
@@ -135,6 +148,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The feature id for the '<em><b>View</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -144,6 +158,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The number of structural features of the '<em>View To Display</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -153,6 +168,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * The number of operations of the '<em>View To Display</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -163,6 +179,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration <em>Runtime Values Edition Action Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Runtime Values Edition Action Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration
 	 * @generated
@@ -173,6 +190,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration#getViewsToDisplay <em>Views To Display</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Views To Display</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration#getViewsToDisplay()
 	 * @see #getRuntimeValuesEditionActionConfiguration()
@@ -184,6 +202,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay <em>View To Display</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>View To Display</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay
 	 * @generated
@@ -194,6 +213,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>View</em>'.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay#getView()
 	 * @see #getViewToDisplay()
@@ -205,6 +225,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -214,13 +235,14 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -228,6 +250,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationImpl <em>Runtime Values Edition Action Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationPackageImpl#getRuntimeValuesEditionActionConfiguration()
 		 * @generated
@@ -238,6 +261,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 		 * The meta object literal for the '<em><b>Views To Display</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference RUNTIME_VALUES_EDITION_ACTION_CONFIGURATION__VIEWS_TO_DISPLAY = eINSTANCE.getRuntimeValuesEditionActionConfiguration_ViewsToDisplay();
@@ -246,6 +270,7 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 		 * The meta object literal for the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.ViewToDisplayImpl <em>View To Display</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.ViewToDisplayImpl
 		 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.impl.RuntimeValuesEditionActionConfigurationPackageImpl#getViewToDisplay()
 		 * @generated
@@ -256,10 +281,11 @@ public interface RuntimeValuesEditionActionConfigurationPackage extends EPackage
 		 * The meta object literal for the '<em><b>View</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference VIEW_TO_DISPLAY__VIEW = eINSTANCE.getViewToDisplay_View();
 
 	}
 
-} //RuntimeValuesEditionActionConfigurationPackage
+} // RuntimeValuesEditionActionConfigurationPackage

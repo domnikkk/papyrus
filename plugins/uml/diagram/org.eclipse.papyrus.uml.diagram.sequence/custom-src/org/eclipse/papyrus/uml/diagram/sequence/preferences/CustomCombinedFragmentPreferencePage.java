@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CustomCombinedFragmentPreferencePage() {
 		super();
@@ -60,30 +60,34 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 		String key = PackageEditPart.MODEL_ID + "_CombinedFragment";
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(key, PreferencesConstantsHelper.WIDTH), 40);
 		store.setDefault(PreferencesConstantsHelper.getElementConstant(key, PreferencesConstantsHelper.HEIGHT), 40);
-		for(String name : compartments) {
+		for (String name : compartments) {
 			String preferenceName = PreferencesConstantsHelper.getCompartmentElementConstant(key, name, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			store.setDefault(preferenceName, true);
 		}
 	}
 
+	@Override
 	protected TreeMap<String, Boolean> getCompartmentTitleVisibilityPreferences() {
 		TreeMap<String, Boolean> map = new TreeMap<String, Boolean>();
-		for(String name : compartments) {
+		for (String name : compartments) {
 			map.put(name, Boolean.FALSE);
 		}
 		return map;
 	}
 
+	@Override
 	protected void initializeCompartmentsList() {
-		for(String name : compartments) {
+		for (String name : compartments) {
 			this.compartmentsList.add(name);
 		}
 	}
 
+	@Override
 	protected TreeMap<String, String> getLabelRole() {
 		return new TreeMap<String, String>();
 	}
 
+	@Override
 	protected void createPageContents(Composite parent) {
 		super.createPageContents(parent);
 		NodeColorGroup colorGroupForNodeComposite = new NodeColorGroup(parent, getPreferenceKey(), this);
@@ -92,12 +96,12 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 		addAbstractGroup(backgroundColorGroup);
 		DecorationGroup decorationGroup = new DecorationGroup(parent, getPreferenceKey(), this);
 		addAbstractGroup(decorationGroup);
-		if(!compartmentsList.isEmpty()) {
+		if (!compartmentsList.isEmpty()) {
 			NodeCompartmentGroupEx compartmentGroup = new NodeCompartmentGroupEx(parent, getPreferenceKey(), this, compartmentsList, getCompartmentTitleVisibilityPreferences().keySet(), getPreferenceStore());
 			addAbstractGroup(compartmentGroup);
 		}
-		//Label role group
-		if(!getLabelRole().isEmpty()) {
+		// Label role group
+		if (!getLabelRole().isEmpty()) {
 			LabelGroup compartmentGroup = new LabelGroup(parent, getPreferenceKey(), this, getLabelRole());
 			addAbstractGroup(compartmentGroup);
 		}
@@ -113,9 +117,9 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 		private final Set<String> compartmentsWithTitle;
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param parent
 		 * @param title
 		 * @param dialogPage
@@ -131,18 +135,18 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 
 		/**
 		 * create the content.
-		 * 
+		 *
 		 * @param parent
-		 *        : the parent composite
+		 *            : the parent composite
 		 */
 		protected void createContent(Composite parent) {
-			for(String compartment : myCompartments) {
+			for (String compartment : myCompartments) {
 				addCompartmentVisibilityGroup(parent, compartment);
 			}
 		}
 
 		protected void addCompartmentVisibilityGroup(Composite parent, String compartment) {
-			// show Compartment Visibility and CompartmentName Visibility items in the same row   
+			// show Compartment Visibility and CompartmentName Visibility items in the same row
 			Group group = new Group(parent, SWT.NONE);
 			group.setLayout(new GridLayout(2, true));
 			group.setText(compartment);
@@ -153,22 +157,22 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 			String compartmentVisibilityPreference = PreferencesConstantsHelper.getCompartmentElementConstant(getKey(), compartment, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			String compartmentVisibilityLabel = "Show compartment";
 			Button showCompartmentButton = addCheckboxField(group, compartmentVisibilityPreference, compartmentVisibilityLabel);
-			if(this.compartmentsWithTitle.contains(compartment)) {
+			if (this.compartmentsWithTitle.contains(compartment)) {
 				String compartmentNameVisibilityPreference = PreferencesConstantsHelper.getCompartmentElementConstant(getKey(), compartment, PreferencesConstantsHelper.COMPARTMENT_NAME_VISIBILITY);
 				String compartmentNameVisibilityLabel = "Show name";
 				Button showNameButton = addCheckboxField(group, compartmentNameVisibilityPreference, compartmentNameVisibilityLabel);
 				boolean showCompartmentIsNotChecked = !myPreferenceStore.getBoolean(compartmentVisibilityPreference);
-				if(showCompartmentIsNotChecked) {
+				if (showCompartmentIsNotChecked) {
 					showNameButton.setEnabled(false);
 				}
-				createDependency(showCompartmentButton, new Control[]{ showNameButton });
+				createDependency(showCompartmentButton, new Control[] { showNameButton });
 			}
 		}
 
 		protected Button addCheckboxField(Composite parent, String preferenceKey, String label) {
-			// show Compartment Visibility and CompartmentName Visibility items in the same row   
-			// as CheckBoxFieldEditor resets layout data to fit the grid we create this stub plate 
-			// @see #doFillIntoGrid 
+			// show Compartment Visibility and CompartmentName Visibility items in the same row
+			// as CheckBoxFieldEditor resets layout data to fit the grid we create this stub plate
+			// @see #doFillIntoGrid
 			Composite plate = new Composite(parent, SWT.NONE);
 			plate.setLayoutData(new GridData());
 			CheckBoxFieldEditor compartmentVisibilityBooleanFieldEditor = new CheckBoxFieldEditor(preferenceKey, label, plate);
@@ -181,13 +185,15 @@ public class CustomCombinedFragmentPreferencePage extends CombinedFragmentPrefer
 		protected void createDependency(final Button master, final Control[] slaves) {
 			SelectionListener dependencyListener = new SelectionListener() {
 
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					boolean state = master.getSelection();
-					for(int i = 0; i < slaves.length; i++) {
+					for (int i = 0; i < slaves.length; i++) {
 						slaves[i].setEnabled(state);
 					}
 				}
 
+				@Override
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			};

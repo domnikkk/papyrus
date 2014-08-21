@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.services.edit.internal.context.TypeContext;
 /**
  * Represents a descriptor for properties of type EClass
  * This is used for the ModelAutoCreate.target property because we may want to create stereotyped elements
- * 
+ *
  * @author Laurent Wouters
  */
 public class ComplexTypePropertyDescriptor extends SurrogateItemPropertyDescriptor {
@@ -55,8 +55,9 @@ public class ComplexTypePropertyDescriptor extends SurrogateItemPropertyDescript
 	@Override
 	public Collection<?> getChoiceOfValues(Object object) {
 		EObject current = (EObject) object;
-		if (current == null)
+		if (current == null) {
 			return empty;
+		}
 		return result;
 	}
 }

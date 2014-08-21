@@ -43,11 +43,11 @@ public class DestroyDependencyWithoutSupplierCommand extends AbstractTransaction
 	 * Constructor.
 	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param dependencies
-	 *        the dependencies to test
+	 *            the dependencies to test
 	 * @param provider
-	 *        the provider
+	 *            the provider
 	 */
 	public DestroyDependencyWithoutSupplierCommand(TransactionalEditingDomain domain, Set<Dependency> dependencies, IElementEditService provider) {
 		super(domain, "Destroy the empty elements", null); //$NON-NLS-1$
@@ -59,11 +59,11 @@ public class DestroyDependencyWithoutSupplierCommand extends AbstractTransaction
 	 * Constructor.
 	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param dependency
-	 *        the dependency
+	 *            the dependency
 	 * @param provider
-	 *        the provider
+	 *            the provider
 	 */
 	public DestroyDependencyWithoutSupplierCommand(TransactionalEditingDomain domain, Dependency dependency, IElementEditService provider) {
 		super(domain, "Destroy the empty elements", null); //$NON-NLS-1$
@@ -75,31 +75,30 @@ public class DestroyDependencyWithoutSupplierCommand extends AbstractTransaction
 	 * Do execute with result.
 	 *
 	 * @param monitor
-	 *        the monitor
+	 *            the monitor
 	 * @param info
-	 *        the info
+	 *            the info
 	 * @return the command result
 	 * @throws ExecutionException
-	 *         the execution exception
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
+	 *             the execution exception
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		CompositeCommand command = new CompositeCommand("Destroy relationship without suppliers"); //$NON-NLS-1$
 
-		for(Dependency current : dependencies) {
-			if(current.getSuppliers().isEmpty()) {
+		for (Dependency current : dependencies) {
+			if (current.getSuppliers().isEmpty()) {
 				DestroyElementRequest request = new DestroyElementRequest(getEditingDomain(), current, false);
 				ICommand cmd = getCommand(request);
-				if(cmd.canExecute()) {
+				if (cmd.canExecute()) {
 					command.add(cmd);
 				}
 			}
 		}
 
 
-		if(!command.isEmpty() && command.canExecute()) {
+		if (!command.isEmpty() && command.canExecute()) {
 			command.execute(monitor, info);
 		}
 		return CommandResult.newOKCommandResult();
@@ -109,14 +108,14 @@ public class DestroyDependencyWithoutSupplierCommand extends AbstractTransaction
 	 * Return the command corresponding to the request.
 	 *
 	 * @param req
-	 *        a request
+	 *            a request
 	 * @return the command corresponding to the request
 	 */
 	private ICommand getCommand(AbstractEditCommandRequest req) {
 
-		if(provider != null) {
+		if (provider != null) {
 			ICommand setCommand = provider.getEditCommand(req);
-			if(setCommand != null) {
+			if (setCommand != null) {
 				return setCommand.reduce();
 			}
 		}

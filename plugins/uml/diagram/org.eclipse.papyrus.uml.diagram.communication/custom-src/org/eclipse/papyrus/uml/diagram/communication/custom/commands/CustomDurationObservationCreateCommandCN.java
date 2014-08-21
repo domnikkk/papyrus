@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,17 +26,17 @@ import org.eclipse.uml2.uml.Interaction;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * 
+ *
  * Command to create a duration observation
- * 
+ *
  */
 
 public class CustomDurationObservationCreateCommandCN extends DurationObservationCreateCommandCN {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomDurationObservationCreateCommandCN(CreateElementRequest req, Diagram diagram) {
@@ -48,14 +48,14 @@ public class CustomDurationObservationCreateCommandCN extends DurationObservatio
 
 		DurationObservation newElement = UMLFactory.eINSTANCE.createDurationObservation();
 		// The owner of the duration observation is an Interaction
-		Interaction owner = (Interaction)getElementToEdit();
+		Interaction owner = (Interaction) getElementToEdit();
 		owner.getNearestPackage().getPackagedElements().add(newElement);
 
 		ElementInitializers.getInstance().init_DurationObservation_8007(newElement);
 
 		doConfigure(newElement, monitor, info);
 
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

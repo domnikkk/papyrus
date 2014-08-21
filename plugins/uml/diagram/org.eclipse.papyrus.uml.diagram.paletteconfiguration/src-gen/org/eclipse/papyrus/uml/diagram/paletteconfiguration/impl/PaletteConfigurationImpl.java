@@ -26,8 +26,8 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.PaletteConfigurationImpl#getDrawerConfigurations <em>Drawer Configurations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.PaletteConfigurationImpl#getRequiredProfiles <em>Required Profiles</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.PaletteConfigurationImpl#getDrawerConfigurations <em>Drawer Configurations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.PaletteConfigurationImpl#getRequiredProfiles <em>Required Profiles</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	 * The cached value of the '{@link #getDrawerConfigurations() <em>Drawer Configurations</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDrawerConfigurations()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	 * The cached value of the '{@link #getRequiredProfiles() <em>Required Profiles</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRequiredProfiles()
 	 * @generated
 	 * @ordered
@@ -57,6 +59,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PaletteConfigurationImpl() {
@@ -66,6 +69,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,6 +80,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<DrawerConfiguration> getDrawerConfigurations() {
@@ -88,6 +93,7 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<String> getRequiredProfiles() {
@@ -100,13 +106,14 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
-				return ((InternalEList<?>)getDrawerConfigurations()).basicRemove(otherEnd, msgs);
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
+			return ((InternalEList<?>) getDrawerConfigurations()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -114,15 +121,16 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
-				return getDrawerConfigurations();
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
-				return getRequiredProfiles();
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
+			return getDrawerConfigurations();
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
+			return getRequiredProfiles();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -130,20 +138,21 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
-				getDrawerConfigurations().clear();
-				getDrawerConfigurations().addAll((Collection<? extends DrawerConfiguration>)newValue);
-				return;
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
-				getRequiredProfiles().clear();
-				getRequiredProfiles().addAll((Collection<? extends String>)newValue);
-				return;
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
+			getDrawerConfigurations().clear();
+			getDrawerConfigurations().addAll((Collection<? extends DrawerConfiguration>) newValue);
+			return;
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
+			getRequiredProfiles().clear();
+			getRequiredProfiles().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -151,17 +160,18 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
-				getDrawerConfigurations().clear();
-				return;
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
-				getRequiredProfiles().clear();
-				return;
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
+			getDrawerConfigurations().clear();
+			return;
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
+			getRequiredProfiles().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -169,15 +179,16 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
-				return drawerConfigurations != null && !drawerConfigurations.isEmpty();
-			case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
-				return requiredProfiles != null && !requiredProfiles.isEmpty();
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__DRAWER_CONFIGURATIONS:
+			return drawerConfigurations != null && !drawerConfigurations.isEmpty();
+		case PaletteconfigurationPackage.PALETTE_CONFIGURATION__REQUIRED_PROFILES:
+			return requiredProfiles != null && !requiredProfiles.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -185,11 +196,14 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (requiredProfiles: ");
@@ -198,4 +212,4 @@ public class PaletteConfigurationImpl extends ConfigurationImpl implements Palet
 		return result.toString();
 	}
 
-} //PaletteConfigurationImpl
+} // PaletteConfigurationImpl

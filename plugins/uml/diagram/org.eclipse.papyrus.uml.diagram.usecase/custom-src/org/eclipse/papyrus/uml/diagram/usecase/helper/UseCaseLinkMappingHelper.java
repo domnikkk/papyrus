@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * Specialization of the link mapping helper for the Use Case diagram
- * 
+ *
  * @author eperico
  */
 public class UseCaseLinkMappingHelper implements ILinkMappingHelper {
@@ -38,7 +38,7 @@ public class UseCaseLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of ClassLinkMappingHelper.
-	 * 
+	 *
 	 * @return single instance of ClassLinkMappingHelper
 	 */
 	public static UseCaseLinkMappingHelper getInstance() {
@@ -55,13 +55,16 @@ public class UseCaseLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getSource(Element link) {
 		return LinkMappingHelper.getSource(link, new CommonSourceUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseInclude(org.eclipse.uml2.uml.Include object) {
 				return object.getSources();
 			};
 
+			@Override
 			public java.util.Collection<?> caseExtend(org.eclipse.uml2.uml.Extend object) {
 				return object.getSources();
 			};
@@ -71,13 +74,16 @@ public class UseCaseLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getTarget(Element link) {
 		return LinkMappingHelper.getTarget(link, new CommonTargetUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseInclude(org.eclipse.uml2.uml.Include object) {
 				return object.getTargets();
 			};
 
+			@Override
 			public java.util.Collection<?> caseExtend(org.eclipse.uml2.uml.Extend object) {
 				return object.getTargets();
 			};

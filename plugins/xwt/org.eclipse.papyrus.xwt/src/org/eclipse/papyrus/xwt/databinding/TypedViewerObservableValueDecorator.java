@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -32,15 +32,15 @@ public class TypedViewerObservableValueDecorator extends ViewerObservableValueDe
 
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof TypedViewerObservableValueDecorator)) {
+		if (!(obj instanceof TypedViewerObservableValueDecorator)) {
 			return false;
 		}
-		TypedViewerObservableValueDecorator decorator = (TypedViewerObservableValueDecorator)obj;
-		if(elementType != null) {
-			if(!elementType.equals(decorator.elementType)) {
+		TypedViewerObservableValueDecorator decorator = (TypedViewerObservableValueDecorator) obj;
+		if (elementType != null) {
+			if (!elementType.equals(decorator.elementType)) {
 				return false;
 			}
-		} else if(decorator.elementType != null) {
+		} else if (decorator.elementType != null) {
 			return false;
 		}
 		return super.equals(obj);
@@ -48,7 +48,7 @@ public class TypedViewerObservableValueDecorator extends ViewerObservableValueDe
 
 	@Override
 	public int hashCode() {
-		if(elementType == null) {
+		if (elementType == null) {
 			return super.hashCode();
 		}
 		return elementType.hashCode() * super.hashCode();
@@ -57,7 +57,7 @@ public class TypedViewerObservableValueDecorator extends ViewerObservableValueDe
 	@Override
 	public Object getValueType() {
 		Object elementType = getElementType();
-		if(elementType != null) {
+		if (elementType != null) {
 			return elementType;
 		}
 		return super.getValueType();

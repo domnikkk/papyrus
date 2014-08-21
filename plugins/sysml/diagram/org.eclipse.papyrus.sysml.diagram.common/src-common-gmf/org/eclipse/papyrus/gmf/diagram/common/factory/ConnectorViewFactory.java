@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -33,7 +33,7 @@ public class ConnectorViewFactory extends org.eclipse.gmf.runtime.diagram.ui.vie
 	 */
 	@Override
 	protected List createStyles(View view) {
-		return Arrays.asList(new Style[]{ NotationFactory.eINSTANCE.createFontStyle() });
+		return Arrays.asList(new Style[] { NotationFactory.eINSTANCE.createFontStyle() });
 	}
 
 	/**
@@ -41,17 +41,17 @@ public class ConnectorViewFactory extends org.eclipse.gmf.runtime.diagram.ui.vie
 	 */
 	@Override
 	protected void initializeFromPreferences(View view) {
-		//Do not call initializeFromPreferences when the preference initializer is disabled (Typical use case: CSS are installed)
-		if(ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
+		// Do not call initializeFromPreferences when the preference initializer is disabled (Typical use case: CSS are installed)
+		if (ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
 			super.initializeFromPreferences(view);
 		}
 
-		IPreferenceStore store = (IPreferenceStore)getPreferencesHint().getPreferenceStore();
-		if(store == null) {
+		IPreferenceStore store = (IPreferenceStore) getPreferencesHint().getPreferenceStore();
+		if (store == null) {
 			return;
 		}
 
-		//The PreferenceInitializerForElementHelper already checks for usePreferenceInitializer() (When required)
+		// The PreferenceInitializerForElementHelper already checks for usePreferenceInitializer() (When required)
 		String elementName = view.getType();
 		PreferenceInitializerForElementHelper.initForegroundFromPrefs(view, store, elementName);
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(view, store, elementName);

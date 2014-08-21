@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,11 +29,12 @@ import org.eclipse.uml2.uml.Observation;
  */
 public class CustomModelingAssistantProvider extends UMLModelingAssistantProvider {
 
+	@Override
 	public List getRelTypesOnSource(IAdaptable source) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart)source.getAdapter(IGraphicalEditPart.class);
-		if(sourceEditPart != null) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart != null) {
 			EObject element = sourceEditPart.resolveSemanticElement();
-			if(element instanceof Constraint || element instanceof Observation || element instanceof Comment) {
+			if (element instanceof Constraint || element instanceof Observation || element instanceof Comment) {
 				ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 				types.add(UMLElementTypes.CommentAnnotatedElement_4010);
 				return types;
@@ -43,19 +44,18 @@ public class CustomModelingAssistantProvider extends UMLModelingAssistantProvide
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.uml.diagram.sequence.providers.UMLModelingAssistantProvider#getRelTypesOnSourceAndTarget(org.eclipse.core.runtime.IAdaptable,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.papyrus.uml.diagram.sequence.providers.UMLModelingAssistantProvider#getRelTypesOnSourceAndTarget(org.eclipse.core.runtime.IAdaptable, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param source
 	 * @param target
 	 * @return
 	 */
 	@Override
 	public List getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
-		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart)source.getAdapter(IGraphicalEditPart.class);
-		if(sourceEditPart != null) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart != null) {
 			EObject element = sourceEditPart.resolveSemanticElement();
-			if(element instanceof Constraint || element instanceof Observation || element instanceof Comment) {
+			if (element instanceof Constraint || element instanceof Observation || element instanceof Comment) {
 				ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 				types.add(UMLElementTypes.CommentAnnotatedElement_4010);
 				return types;

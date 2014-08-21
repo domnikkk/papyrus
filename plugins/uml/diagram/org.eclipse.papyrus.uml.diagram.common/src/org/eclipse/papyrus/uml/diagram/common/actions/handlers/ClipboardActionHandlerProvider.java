@@ -30,10 +30,10 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 	/**
 	 * Returns a global action handler that supports operations (cut, copy, and
 	 * paste).
-	 * 
+	 *
 	 * @param context
-	 *        the context
-	 * 
+	 *            the context
+	 *
 	 * @return the global action handler
 	 */
 	@Override
@@ -41,7 +41,7 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 
 		/* Create the handler */
 
-		if(!getHandlerList().containsKey(context.getActivePart())) {
+		if (!getHandlerList().containsKey(context.getActivePart())) {
 
 			getHandlerList().put(context.getActivePart(), getClipboardActionHandler());
 
@@ -56,6 +56,7 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 				/**
 				 * @see org.eclipse.ui.IPartListener#partActivated(IWorkbenchPart)
 				 */
+				@Override
 				public void partActivated(IWorkbenchPart part) {
 					// Do nothing
 				}
@@ -63,6 +64,7 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 				/**
 				 * @see org.eclipse.ui.IPartListener#partBroughtToTop(IWorkbenchPart)
 				 */
+				@Override
 				public void partBroughtToTop(IWorkbenchPart part) {
 					// Do nothing
 				}
@@ -70,9 +72,10 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 				/**
 				 * @see org.eclipse.ui.IPartListener#partClosed(IWorkbenchPart)
 				 */
+				@Override
 				public void partClosed(IWorkbenchPart part) {
 					/* Remove the cache associated with the part */
-					if(part != null && part == localPart && getHandlerList().containsKey(part)) {
+					if (part != null && part == localPart && getHandlerList().containsKey(part)) {
 						getHandlerList().remove(part);
 						localPart.getSite().getPage().removePartListener(this);
 						localPart = null;
@@ -82,6 +85,7 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 				/**
 				 * @see org.eclipse.ui.IPartListener#partDeactivated(IWorkbenchPart)
 				 */
+				@Override
 				public void partDeactivated(IWorkbenchPart part) {
 					// Do nothing
 				}
@@ -89,18 +93,19 @@ public class ClipboardActionHandlerProvider extends AbstractGlobalActionHandlerP
 				/**
 				 * @see org.eclipse.ui.IPartListener#partOpened(IWorkbenchPart)
 				 */
+				@Override
 				public void partOpened(IWorkbenchPart part) {
 					// Do nothing
 				}
 			});
 		}
 
-		return (ClipboardActionHandler)getHandlerList().get(context.getActivePart());
+		return (ClipboardActionHandler) getHandlerList().get(context.getActivePart());
 	}
 
 	/**
 	 * Returns the handlerList.
-	 * 
+	 *
 	 * @return Hashtable
 	 */
 	private Hashtable getHandlerList() {

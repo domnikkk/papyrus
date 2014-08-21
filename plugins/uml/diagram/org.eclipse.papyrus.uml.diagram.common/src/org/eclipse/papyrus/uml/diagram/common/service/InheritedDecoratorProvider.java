@@ -22,9 +22,9 @@ import org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorTarget;
 import org.eclipse.gmf.runtime.notation.Node;
 
 /**
- * 
+ *
  * Provide the decorator for the Inheritance
- * 
+ *
  * @deprecated Replaced with the generic org.eclipse.papyrus.infra.gmfdiag.common.decoration.ExternalReferenceMarker
  */
 @Deprecated
@@ -34,15 +34,15 @@ public class InheritedDecoratorProvider extends AbstractProvider implements IDec
 	public static final String GENERALIZATION = "Generalization"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorProvider#createDecorators(org.eclipse.gmf.runtime.diagram.ui.services.decorator.IDecoratorTarget)
-	 * 
+	 *
 	 * @param decoratorTarget
 	 */
 	@Override
 	public void createDecorators(IDecoratorTarget decoratorTarget) {
 		Node node = InheritedDecorator.getDecoratorTargetNode(decoratorTarget);
-		if(node != null) {
+		if (node != null) {
 			decoratorTarget.installDecorator(GENERALIZATION, new InheritedDecorator(decoratorTarget));
 		}
 	}
@@ -58,11 +58,11 @@ public class InheritedDecoratorProvider extends AbstractProvider implements IDec
 	public boolean provides(IOperation operation) {
 		Assert.isNotNull(operation);
 
-		if(!(operation instanceof CreateDecoratorsOperation)) {
+		if (!(operation instanceof CreateDecoratorsOperation)) {
 			return false;
 		}
 
-		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation)operation).getDecoratorTarget();
+		IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
 		return InheritedDecorator.getDecoratorTargetNode(decoratorTarget) != null;
 	}
 

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl;
@@ -34,8 +34,8 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetElement
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetElementImpl#getDocumentation <em>Documentation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetElementImpl#getCategories <em>Categories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetElementImpl#getDocumentation <em>Documentation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.impl.FacetElementImpl#getCategories <em>Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The default value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDocumentation()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCategories()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FacetElementImpl() {
@@ -84,6 +88,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,6 +99,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDocumentation() {
@@ -103,18 +109,21 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDocumentation(String newDocumentation) {
 		String oldDocumentation = documentation;
 		documentation = newDocumentation;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EFacetPackage.FACET_ELEMENT__DOCUMENTATION, oldDocumentation, documentation));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Category> getCategories() {
@@ -127,15 +136,16 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
-				return getDocumentation();
-			case EFacetPackage.FACET_ELEMENT__CATEGORIES:
-				return getCategories();
+		case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
+			return getDocumentation();
+		case EFacetPackage.FACET_ELEMENT__CATEGORIES:
+			return getCategories();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,19 +153,20 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
-				setDocumentation((String)newValue);
-				return;
-			case EFacetPackage.FACET_ELEMENT__CATEGORIES:
-				getCategories().clear();
-				getCategories().addAll((Collection<? extends Category>)newValue);
-				return;
+		case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
+			setDocumentation((String) newValue);
+			return;
+		case EFacetPackage.FACET_ELEMENT__CATEGORIES:
+			getCategories().clear();
+			getCategories().addAll((Collection<? extends Category>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -163,17 +174,18 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
-				setDocumentation(DOCUMENTATION_EDEFAULT);
-				return;
-			case EFacetPackage.FACET_ELEMENT__CATEGORIES:
-				getCategories().clear();
-				return;
+		case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
+			setDocumentation(DOCUMENTATION_EDEFAULT);
+			return;
+		case EFacetPackage.FACET_ELEMENT__CATEGORIES:
+			getCategories().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -181,15 +193,16 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
-				return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
-			case EFacetPackage.FACET_ELEMENT__CATEGORIES:
-				return categories != null && !categories.isEmpty();
+		case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
+			return DOCUMENTATION_EDEFAULT == null ? documentation != null : !DOCUMENTATION_EDEFAULT.equals(documentation);
+		case EFacetPackage.FACET_ELEMENT__CATEGORIES:
+			return categories != null && !categories.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -197,14 +210,17 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == DocumentedElement.class) {
 			switch (derivedFeatureID) {
-				case EFacetPackage.FACET_ELEMENT__DOCUMENTATION: return EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION;
-				default: return -1;
+			case EFacetPackage.FACET_ELEMENT__DOCUMENTATION:
+				return EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -213,14 +229,17 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == DocumentedElement.class) {
 			switch (baseFeatureID) {
-				case EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION: return EFacetPackage.FACET_ELEMENT__DOCUMENTATION;
-				default: return -1;
+			case EFacetPackage.DOCUMENTED_ELEMENT__DOCUMENTATION:
+				return EFacetPackage.FACET_ELEMENT__DOCUMENTATION;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -229,11 +248,14 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (documentation: "); //$NON-NLS-1$
@@ -242,4 +264,4 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 		return result.toString();
 	}
 
-} //FacetElementImpl
+} // FacetElementImpl

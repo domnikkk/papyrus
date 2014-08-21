@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *		Arthur Daussy - arthur.daussy@atos.net - 395920: [Block Diagram Definition] All element contained by a block should be able to be linked to constraint or comment
  *
@@ -31,16 +31,17 @@ public class ShapeEditPolicyProvider extends AbstractProvider implements IEditPo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof IGraphicalEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof IGraphicalEditPart)) {
 			return false;
 		}
 
 		// Make sure this concern Block Definition Diagram only
-		IGraphicalEditPart gep = (IGraphicalEditPart)epOperation.getEditPart();
+		IGraphicalEditPart gep = (IGraphicalEditPart) epOperation.getEditPart();
 		// Provides for edit parts that represent nodes in Block Definition diagram
-		if(gep instanceof NamedElementEditPart) {
+		if (gep instanceof NamedElementEditPart) {
 			return true;
 		}
 
@@ -50,9 +51,10 @@ public class ShapeEditPolicyProvider extends AbstractProvider implements IEditPo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		// add behavior for the shapes display
-		if(editPart instanceof NamedElementEditPart) { // add to Block Property Composite and Block Composite 
+		if (editPart instanceof NamedElementEditPart) { // add to Block Property Composite and Block Composite
 			editPart.installEditPolicy(ShapeCompartmentEditPolicy.SHAPE_COMPARTMENT_EDIT_POLICY, new ShapeCompartmentEditPolicy());
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Display;
  * this is the label provider to display editplicies
  *
  */
-public class EditpolicyLabelProvider implements ITableLabelProvider, ITableColorProvider  {
+public class EditpolicyLabelProvider implements ITableLabelProvider, ITableColorProvider {
 	protected Color papyrusColor = new Color(Display.getDefault(), 0, 127, 14);
 	protected Color customizableDropEditPolicyColor = new Color(Display.getDefault(), 0, 38, 255);
 
@@ -43,19 +43,22 @@ public class EditpolicyLabelProvider implements ITableLabelProvider, ITableColor
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
-		if(element instanceof EditPolicyDescriptor){
+		if (element instanceof EditPolicyDescriptor) {
 			switch (columnIndex) {
 			case 0:
-				return ((EditPolicyDescriptor)element).role;
+				return ((EditPolicyDescriptor) element).role;
 			case 1:
-				if(((EditPolicyDescriptor)element).policy!=null){
-					return ((EditPolicyDescriptor)element).policy.getClass().getName();}
-				else{ return "";}
+				if (((EditPolicyDescriptor) element).policy != null) {
+					return ((EditPolicyDescriptor) element).policy.getClass().getName();
+				}
+				else {
+					return "";
+				}
 
 			}
 
 		}
-		return "cannot display it: "+element;
+		return "cannot display it: " + element;
 	}
 
 	public Image getColumnImage(Object element, int columnIndex) {
@@ -63,24 +66,24 @@ public class EditpolicyLabelProvider implements ITableLabelProvider, ITableColor
 	}
 
 	public Color getForeground(Object element, int columnIndex) {
-		if(element instanceof EditPolicyDescriptor){
+		if (element instanceof EditPolicyDescriptor) {
 			switch (columnIndex) {
 			case 0:
-				if(((EditPolicyDescriptor)element).policy!=null){
-					if(((EditPolicyDescriptor)element).policy.getClass().getName().contains("CustomizableDropEditPolicy")){
+				if (((EditPolicyDescriptor) element).policy != null) {
+					if (((EditPolicyDescriptor) element).policy.getClass().getName().contains("CustomizableDropEditPolicy")) {
 						return customizableDropEditPolicyColor;
 					}
-					if(((EditPolicyDescriptor)element).policy.getClass().getName().contains("papyrus")){
+					if (((EditPolicyDescriptor) element).policy.getClass().getName().contains("papyrus")) {
 						return papyrusColor;
 					}
 				}
 				return Display.getDefault().getSystemColor(0);
-			case  1:
-				if(((EditPolicyDescriptor)element).policy!=null){
-					if(((EditPolicyDescriptor)element).policy.getClass().getName().contains("CustomizableDropEditPolicy")){
+			case 1:
+				if (((EditPolicyDescriptor) element).policy != null) {
+					if (((EditPolicyDescriptor) element).policy.getClass().getName().contains("CustomizableDropEditPolicy")) {
 						return customizableDropEditPolicyColor;
 					}
-					if(((EditPolicyDescriptor)element).policy.getClass().getName().contains("papyrus")){
+					if (((EditPolicyDescriptor) element).policy.getClass().getName().contains("papyrus")) {
 						return papyrusColor;
 					}
 				}
@@ -95,4 +98,4 @@ public class EditpolicyLabelProvider implements ITableLabelProvider, ITableColor
 	public Color getBackground(Object element, int columnIndex) {
 		return null;
 	}
-};	
+};

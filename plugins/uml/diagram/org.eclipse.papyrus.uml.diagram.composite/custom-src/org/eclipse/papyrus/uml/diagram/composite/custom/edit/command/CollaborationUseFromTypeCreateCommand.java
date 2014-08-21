@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,31 +50,34 @@ public class CollaborationUseFromTypeCreateCommand extends EditElementCommand {
 		setResult(CommandResult.newOKCommandResult(semanticAdapter));
 	}
 
+	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return container;
 		}
 		return owner;
 	}
 
+	@Override
 	public boolean canExecute() {
 		return true;
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
 		newElement = UMLFactory.eINSTANCE.createCollaborationUse();
-		StructuredClassifier owner = (StructuredClassifier)getElementToEdit();
+		StructuredClassifier owner = (StructuredClassifier) getElementToEdit();
 		owner.getCollaborationUses().add(newElement);
 		newElement.setType(collaboration);
 
 		ElementInitializers.getInstance().init_CollaborationUse_3071(newElement);
 
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 
 		semanticAdapter.setElement(newElement);
 		return CommandResult.newOKCommandResult(semanticAdapter);

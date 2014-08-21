@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,15 +40,15 @@ public class RowHeaderLayerStack extends AbstractLayerTransform {
 
 	public RowHeaderLayerStack(final IDataProvider dataProvider, final BodyLayerStack bodyLayer) {
 		final DataLayer dataLayer = new DataLayer(dataProvider, RowHeaderLayerStack.DEFAULT_COLUMN_WIDTH, RowHeaderLayerStack.DEFAULT_ROW_HEIGHT);
-		//I know that selection layer is probably false
+		// I know that selection layer is probably false
 		final RowHeaderLayer rowHeaderLayer = new RowHeaderLayer(dataLayer, bodyLayer, /* bodyLayer.getSelectionLayer() */new SelectionLayer(dataLayer), false);
 		rowHeaderLayer.addConfiguration(new PapyrusRowResizeBindingsConfiguration());
-		//ne marche pas! but : avoir le même type de cellule dans les headers des lignes et des colonnes
+		// ne marche pas! but : avoir le même type de cellule dans les headers des lignes et des colonnes
 		rowHeaderLayer.addConfiguration(new PapyrusRowHeaderStyleConfiguration());
-		//		final IConfiguration configuration = new CustomConfig();
-		//		setUnderlyingLayer(sortHeaderLayer);
-		//		rowHeaderLayer.addConfiguration(configuration);
-		//		rowHeaderLayer.addConfiguration(new RowOnlySelectionBindings());
+		// final IConfiguration configuration = new CustomConfig();
+		// setUnderlyingLayer(sortHeaderLayer);
+		// rowHeaderLayer.addConfiguration(configuration);
+		// rowHeaderLayer.addConfiguration(new RowOnlySelectionBindings());
 		setUnderlyingLayer(rowHeaderLayer);
 		setRegionName(GridRegion.ROW_HEADER);
 	}
@@ -60,19 +60,20 @@ public class RowHeaderLayerStack extends AbstractLayerTransform {
 		@Override
 		protected void configureRowHeaderMouseClickBindings(final UiBindingRegistry uiBindingRegistry) {
 
-			//			uiBindingRegistry.registerDoubleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.NONE), new SelectCellAction());
+			// uiBindingRegistry.registerDoubleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.NONE), new SelectCellAction());
 			uiBindingRegistry.registerDoubleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.NONE), new MouseEditAction());
-			//			new BodyCellEditorMouseEventMatcher(TextCellEditor.class),
-			//			new MouseEditAction());
-			//			uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.NONE), new ViewportSelectColumnAction(false, false));
-			//			uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.SHIFT), new ViewportSelectColumnAction(true, false));
-			//			uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.CONTROL), new ViewportSelectColumnAction(false, true));
-			//			uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.SHIFT | SWT.CONTROL), new ViewportSelectColumnAction(true, true));
+			// new BodyCellEditorMouseEventMatcher(TextCellEditor.class),
+			// new MouseEditAction());
+			// uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.NONE), new ViewportSelectColumnAction(false, false));
+			// uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.SHIFT), new ViewportSelectColumnAction(true, false));
+			// uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.CONTROL), new ViewportSelectColumnAction(false, true));
+			// uiBindingRegistry.registerSingleClickBinding(MouseEventMatcher.columnHeaderLeftClick(SWT.SHIFT | SWT.CONTROL), new ViewportSelectColumnAction(true, true));
 		}
 	}
 
-	public class ReoderRowConfid extends AbstractUiBindingConfiguration {//This configuration should be added by the same kind of layer that DefaultColumnReorderLayerConfiguration but for row!
+	public class ReoderRowConfid extends AbstractUiBindingConfiguration {// This configuration should be added by the same kind of layer that DefaultColumnReorderLayerConfiguration but for row!
 
+		@Override
 		public void configureUiBindings(final UiBindingRegistry uiBindingRegistry) {
 			uiBindingRegistry.registerMouseDragMode(MouseEventMatcher.rowHeaderLeftClick(SWT.NONE), new AggregateDragMode(new CellDragMode(), new RowReorderDragMode()));
 		}

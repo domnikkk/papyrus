@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage
  * @generated
  */
@@ -21,6 +22,7 @@ public interface NewchildFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	NewchildFactory eINSTANCE = org.eclipse.papyrus.infra.emf.newchild.impl.NewchildFactoryImpl.init();
@@ -29,6 +31,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Configuration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Configuration</em>'.
 	 * @generated
 	 */
@@ -38,6 +41,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Menu Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Menu Root</em>'.
 	 * @generated
 	 */
@@ -47,6 +51,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Menu</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Menu</em>'.
 	 * @generated
 	 */
@@ -56,6 +61,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Menu Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Menu Action</em>'.
 	 * @generated
 	 */
@@ -65,6 +71,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Separator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Separator</em>'.
 	 * @generated
 	 */
@@ -74,6 +81,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Menu Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Menu Group</em>'.
 	 * @generated
 	 */
@@ -83,6 +91,7 @@ public interface NewchildFactory extends EFactory {
 	 * Returns a new object of class '<em>Custom Filler</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Custom Filler</em>'.
 	 * @generated
 	 */
@@ -92,9 +101,10 @@ public interface NewchildFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	NewchildPackage getNewchildPackage();
 
-} //NewchildFactory
+} // NewchildFactory

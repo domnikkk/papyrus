@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,10 +47,8 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 	/**
 	 * Provides custom completion for the specifying the submachine of
 	 * submachine state
-	 * 
-	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completePropertyRule_Type(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.Assignment,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *
+	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completePropertyRule_Type(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
 	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
 	 */
 	@Override
@@ -76,10 +74,8 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 
 	/**
 	 * Provides custom completion for the root element in a qualified name
-	 * 
-	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeTypeRule_Path(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.Assignment,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *
+	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeTypeRule_Path(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
 	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
 	 */
 	@Override
@@ -117,10 +113,8 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 	/**
 	 * Provides custom completion for specifying the submachine of a submachine
 	 * state, taking into account the path if the name is qualified
-	 * 
-	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeTypeRule_Type(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.Assignment,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *
+	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeTypeRule_Type(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
 	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
 	 */
 	@Override
@@ -156,10 +150,8 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 
 	/**
 	 * Provides custom completion for a path in a qualified name
-	 * 
-	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeQualifiedName_Path(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.Assignment,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *
+	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeQualifiedName_Path(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
 	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
 	 */
 	@Override
@@ -172,11 +164,9 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 	/**
 	 * Provides custom completion for a path, taking into account the path which
 	 * has already been specified
-	 * 
-	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeQualifiedName_Remaining(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.Assignment,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @see org.eclipse.papyrus.property.editor.xtext.ui.contentassist.AbstractUmlPropertyProposalProvider#completeQualifiedName_Remaining(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext, org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
 	 */
 	@Override
 	public void completeQualifiedName_Remaining(EObject model, Assignment assignment, ContentAssistContext context,
@@ -243,7 +233,7 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 
 	/**
 	 * Private Utility method for creating a completion proposal
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element for which completion proposal must be
 	 *            created
@@ -278,7 +268,7 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 	/**
 	 * Private Utility method for creating a completion proposal with
 	 * replacement of prefix
-	 * 
+	 *
 	 * @param namedElement
 	 *            The named element for which completion proposal must be
 	 *            created
@@ -312,7 +302,7 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 
 	/**
 	 * Private Utility method for creating a completion proposal
-	 * 
+	 *
 	 * @param completionString
 	 *            The actual completion string
 	 * @param displayString
@@ -342,7 +332,7 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 	/**
 	 * Utility methods wich returns the list of statemachines that are directly
 	 * or indirectly owned by a context statemachine
-	 * 
+	 *
 	 * @param context
 	 *            The context namespace
 	 * @return the list of statemachines that are directly or indirectly owned
@@ -366,7 +356,7 @@ public class UmlStateProposalProvider extends AbstractUmlStateProposalProvider {
 	/**
 	 * Utility methods which returns the list of statemachines that are directly
 	 * or indirectly owned by the namespaces imported by a context namespace
-	 * 
+	 *
 	 * @param context
 	 *            The context namespace
 	 * @return the list of statemachines that are directly or indirectly owned

@@ -16,7 +16,7 @@ import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 /**
  * A factory to create instances of {@link ICustomizedLabelProvider} that work on proxy UI elements, by customizing the
  * resolved elements.
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2
@@ -26,7 +26,7 @@ public interface IResolvingCustomizedLabelProviderFactory {
 
 	/**
 	 * This method is used to instantiate a {@link ICustomizedLabelProvider}.
-	 * 
+	 *
 	 * @param customizationManager
 	 *            the customization manager which has to used by the content provider.
 	 * @return a label provider

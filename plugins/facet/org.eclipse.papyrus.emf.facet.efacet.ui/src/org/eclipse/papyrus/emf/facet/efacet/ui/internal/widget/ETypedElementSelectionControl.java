@@ -14,8 +14,8 @@
  *     Gregoire Dupe (Mia-Software) - Bug 372626 - Aggregates
  *     Olivier Remaud (Soft-Maint) - Bug 377615 - Query View filtering
  *     Vincent Lorenzo (CEA-LIST) - Bug 357621 - Improve the label displayed for Customization and Facets
- *     Vincent Lorenzo (CEA-LIST) - Bug 377909 - The elements displayed in the ETypedElement dialog are not sorted by alphabetic order 
-*******************************************************************************/
+ *     Vincent Lorenzo (CEA-LIST) - Bug 377909 - The elements displayed in the ETypedElement dialog are not sorted by alphabetic order
+ *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.widget;
 
 import java.util.ArrayList;
@@ -72,9 +72,9 @@ import org.eclipse.ui.dialogs.PatternFilter;
 public class ETypedElementSelectionControl implements IETypedElementTabSelectionWidgetInternal {
 
 	public static final String TAB_ID = "flat.view.id"; //$NON-NLS-1$
-	
+
 	public static final String TITLE = Messages.ETypedElementSelectionControl_FlatView;
-	
+
 	/** An OK status, but without the "OK" message, because we don't want "OK" to appear in the status bar */
 	private static final IStatus OK_STATUS = new Status(IStatus.OK, Activator.PLUGIN_ID, ""); //$NON-NLS-1$
 

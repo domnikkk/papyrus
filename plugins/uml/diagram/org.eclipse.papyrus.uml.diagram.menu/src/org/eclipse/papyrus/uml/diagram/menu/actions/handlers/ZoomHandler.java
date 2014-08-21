@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,25 +19,25 @@ import org.eclipse.papyrus.uml.diagram.menu.actions.ZoomAction;
 
 /**
  * Handler for the zoom action
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ZoomHandler extends AbstractParametricHandler {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ZoomHandler() {
 		super("org.eclipse.papyrus.uml.diagram.menu.commandZoomParameter"); //$NON-NLS-1$
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -45,7 +45,7 @@ public class ZoomHandler extends AbstractParametricHandler {
 
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ZoomAction action = new ZoomAction(getParameter(), getSelectedElements());
-		if(action.isEnabled()) {
+		if (action.isEnabled()) {
 			action.doRun(null);
 		}
 		return null;
@@ -58,7 +58,7 @@ public class ZoomHandler extends AbstractParametricHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected String getParameter() {

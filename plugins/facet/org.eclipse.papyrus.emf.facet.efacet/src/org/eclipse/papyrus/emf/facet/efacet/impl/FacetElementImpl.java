@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -42,9 +42,9 @@ import org.eclipse.papyrus.emf.facet.efacet.FacetElement;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl#getCategories <em>Categories</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl#getFacet <em>Facet</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl#getOverride <em>Override</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl#getCategories <em>Categories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl#getFacet <em>Facet</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetElementImpl#getOverride <em>Override</em>}</li>
  * </ul>
  * </p>
  *
@@ -58,6 +58,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The cached value of the '{@link #getCategories() <em>Categories</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCategories()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -70,6 +71,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	 * The cached value of the '{@link #getOverride() <em>Override</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOverride()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -81,6 +83,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -92,6 +95,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -104,6 +108,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -118,6 +123,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -126,24 +132,26 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 		if (eContainerFeatureID() != EFacetPackage.FACET_ELEMENT__FACET) {
 			return null;
 		}
-		return (Facet)eContainer();
+		return (Facet) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public NotificationChain basicSetFacet(final Facet newFacet, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newFacet, EFacetPackage.FACET_ELEMENT__FACET, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newFacet, EFacetPackage.FACET_ELEMENT__FACET, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -151,7 +159,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	public void setFacet(final Facet newFacet) {
 		if (newFacet != eInternalContainer() || (eContainerFeatureID() != EFacetPackage.FACET_ELEMENT__FACET && newFacet != null)) {
 			if (EcoreUtil.isAncestor(this, newFacet))
-			 {
+			{
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			}
 			NotificationChain msgs = null;
@@ -159,7 +167,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
 			if (newFacet != null) {
-				msgs = ((InternalEObject)newFacet).eInverseAdd(this, EFacetPackage.FACET__FACET_ELEMENTS, Facet.class, msgs);
+				msgs = ((InternalEObject) newFacet).eInverseAdd(this, EFacetPackage.FACET__FACET_ELEMENTS, Facet.class, msgs);
 			}
 			msgs = basicSetFacet(newFacet, msgs);
 			if (msgs != null) {
@@ -174,14 +182,15 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public ETypedElement getOverride() {
 		if (this.override != null && this.override.eIsProxy()) {
-			InternalEObject oldOverride = (InternalEObject)this.override;
-			this.override = (ETypedElement)eResolveProxy(oldOverride);
+			InternalEObject oldOverride = (InternalEObject) this.override;
+			this.override = (ETypedElement) eResolveProxy(oldOverride);
 			if (this.override != oldOverride) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.FACET_ELEMENT__OVERRIDE, oldOverride, this.override));
@@ -194,6 +203,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -205,6 +215,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -220,6 +231,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -231,7 +243,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
-			return basicSetFacet((Facet)otherEnd, msgs);
+			return basicSetFacet((Facet) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -239,6 +251,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -255,6 +268,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -271,6 +285,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -294,6 +309,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -304,13 +320,13 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 		switch (featureID) {
 		case EFacetPackage.FACET_ELEMENT__CATEGORIES:
 			getCategories().clear();
-			getCategories().addAll((Collection<? extends Category>)newValue);
+			getCategories().addAll((Collection<? extends Category>) newValue);
 			return;
 		case EFacetPackage.FACET_ELEMENT__FACET:
-			setFacet((Facet)newValue);
+			setFacet((Facet) newValue);
 			return;
 		case EFacetPackage.FACET_ELEMENT__OVERRIDE:
-			setOverride((ETypedElement)newValue);
+			setOverride((ETypedElement) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -319,6 +335,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -330,10 +347,10 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 			getCategories().clear();
 			return;
 		case EFacetPackage.FACET_ELEMENT__FACET:
-			setFacet((Facet)null);
+			setFacet((Facet) null);
 			return;
 		case EFacetPackage.FACET_ELEMENT__OVERRIDE:
-			setOverride((ETypedElement)null);
+			setOverride((ETypedElement) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -342,6 +359,7 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -359,4 +377,4 @@ public abstract class FacetElementImpl extends ETypedElementImpl implements Face
 		return super.eIsSet(featureID);
 	}
 
-} //FacetElementImpl
+} // FacetElementImpl

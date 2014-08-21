@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,6 +19,7 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.AbstractCommand;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -39,68 +40,73 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * this is a parser to display a slot in the diagram
- * 
+ *
  */
 public class StereotypePropertyParser implements IParser, ISemanticParser {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getCompletionProcessor(org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getEditString(org.eclipse.core.runtime.IAdaptable, int)
-	 * 
+	 *
 	 * @param element
 	 * @param flags
 	 * @return
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
-		if(element instanceof IAdaptable) {
-			final Property property = ((Property)EMFHelper.getEObject(element));
-			final View view=((View)((IAdaptable)element).getAdapter(View.class));
-			final EObject stereotypeApplication=((View)view.eContainer()).getElement();
-			final Stereotype stereotype=UMLUtil.getStereotype(stereotypeApplication);
-			final Element umlElement=UMLUtil.getBaseElement(stereotypeApplication); 
+		if (element instanceof IAdaptable) {
+			final Property property = ((Property) EMFHelper.getEObject(element));
+			final View view = ((View) element.getAdapter(View.class));
+			final EObject stereotypeApplication = ((View) view.eContainer()).getElement();
+			final Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
+			final Element umlElement = UMLUtil.getBaseElement(stereotypeApplication);
 
 
-			String result= StereotypeUtil.displayPropertyValue(stereotype, property, umlElement, "");
-			if( result.contains("=")){			
-				result=result.substring(property.getName().length()+1);
+			String result = StereotypeUtil.displayPropertyValue(stereotype, property, umlElement, "");
+			if (result.contains("=")) {
+				result = result.substring(property.getName().length() + 1);
 				return result;
 			}
-			else{return "";}
+			else {
+				return "";
+			}
 
 		}
 		return "<UNDEFINED>";
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getParseCommand(org.eclipse.core.runtime.IAdaptable, java.lang.String, int)
-	 * 
+	 *
 	 * @param element
 	 * @param newString
 	 * @param flags
 	 * @return
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, final String newString, int flags) {
-		if(element instanceof IAdaptable) {
-			final Property property = ((Property)(EMFHelper.getEObject(element)));
-			final View view=((View)((IAdaptable)element).getAdapter(View.class));
-			final EObject stereotypeApplication=((View)view.eContainer()).getElement();
-			final Stereotype stereotype=UMLUtil.getStereotype(stereotypeApplication);
-			final Element umlElement=UMLUtil.getBaseElement(stereotypeApplication);
-			final Object oldValue= umlElement.getValue(stereotype,  property.getName()); 
-			ICommand cmd= new AbstractCommand("AppliedStereotypeProperty") {
+		if (element instanceof IAdaptable) {
+			final Property property = ((Property) (EMFHelper.getEObject(element)));
+			final View view = ((View) element.getAdapter(View.class));
+			final EObject stereotypeApplication = ((View) view.eContainer()).getElement();
+			final Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
+			final Element umlElement = UMLUtil.getBaseElement(stereotypeApplication);
+			final Object oldValue = umlElement.getValue(stereotype, property.getName());
+			ICommand cmd = new AbstractCommand("AppliedStereotypeProperty") {
 
 				@Override
 				protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
@@ -123,7 +129,7 @@ public class StereotypePropertyParser implements IParser, ISemanticParser {
 			};
 			return cmd;
 		}
-		//TO Modify
+		// TO Modify
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -131,22 +137,23 @@ public class StereotypePropertyParser implements IParser, ISemanticParser {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getPrintString(org.eclipse.core.runtime.IAdaptable, int)
-	 * 
+	 *
 	 * @param element
 	 * @param flags
 	 * @return
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 
-		if(element instanceof IAdaptable) {
-			final Property property = ((Property)(EMFHelper.getEObject(element)));
-			final View view=((View)((IAdaptable)element).getAdapter(View.class));
-			final EObject stereotypeApplication=((View)view.eContainer()).getElement();
-			final Stereotype stereotype=UMLUtil.getStereotype(stereotypeApplication);
-			final Element umlElement=UMLUtil.getBaseElement(stereotypeApplication); 
-			if(stereotype!=null && property!=null && umlElement!=null){
+		if (element instanceof IAdaptable) {
+			final Property property = ((Property) (EMFHelper.getEObject(element)));
+			final View view = ((View) element.getAdapter(View.class));
+			final EObject stereotypeApplication = ((View) view.eContainer()).getElement();
+			final Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
+			final Element umlElement = UMLUtil.getBaseElement(stereotypeApplication);
+			if (stereotype != null && property != null && umlElement != null) {
 				return StereotypeUtil.displayPropertyValue(stereotype, property, umlElement, "");
 			}
 		}
@@ -154,35 +161,39 @@ public class StereotypePropertyParser implements IParser, ISemanticParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isAffectingEvent(java.lang.Object, int)
-	 * 
+	 *
 	 * @param event
 	 * @param flags
 	 * @return
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#isValidEditString(org.eclipse.core.runtime.IAdaptable, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param editString
 	 * @return
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return new ParserEditStatus("Papyrus Edition for property of stereotype", IParserEditStatus.OK, "");
+		return new ParserEditStatus("Papyrus Edition for property of stereotype", IStatus.OK, "");
 	}
 
+	@Override
 	@SuppressWarnings("rawtypes")
 	public List getSemanticElementsBeingParsed(EObject element) {
 		return new ArrayList();
 	}
 
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}

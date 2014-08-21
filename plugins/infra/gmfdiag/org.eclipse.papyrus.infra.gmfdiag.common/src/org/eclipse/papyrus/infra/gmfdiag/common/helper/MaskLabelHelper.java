@@ -30,12 +30,12 @@ public class MaskLabelHelper {
 
 	/**
 	 * Return the current mask values, or null if undefined
-	 * 
+	 *
 	 * @param view
 	 * @return
 	 */
 	public static Collection<String> getMaskValues(View view) {
-		if(view.getNamedStyle(NotationPackage.eINSTANCE.getStringListValueStyle(), VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL) != null) {
+		if (view.getNamedStyle(NotationPackage.eINSTANCE.getStringListValueStyle(), VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL) != null) {
 			CustomStringStyleObservableList values = new CustomStringStyleObservableList(view, EMFHelper.resolveEditingDomain(view), VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL);
 			Set<String> result = new HashSet<String>(values);
 			values.dispose();
@@ -46,7 +46,7 @@ public class MaskLabelHelper {
 
 	public static void setMaskValues(View view, Collection<String> masks) {
 		CustomStringStyleObservableList values = new CustomStringStyleObservableList(view, EMFHelper.resolveEditingDomain(view), VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL);
-		if(!values.isEmpty()) {
+		if (!values.isEmpty()) {
 			values.clear();
 		}
 		values.addAll(masks);
@@ -56,11 +56,11 @@ public class MaskLabelHelper {
 
 	public static void unsetMaskValues(final View view) {
 		final NamedStyle style = view.getNamedStyle(NotationPackage.eINSTANCE.getStringListValueStyle(), VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL);
-		if(style == null) {
+		if (style == null) {
 			return;
 		}
 
-		TransactionalEditingDomain editingDomain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(view);
+		TransactionalEditingDomain editingDomain = (TransactionalEditingDomain) EMFHelper.resolveEditingDomain(view);
 		editingDomain.getCommandStack().execute(new RecordingCommand(editingDomain, "Restore default label configuration") {
 
 			@Override

@@ -49,21 +49,21 @@ public abstract class OpenEmbeddedTextEditorObjectActionDelegate implements IObj
 
 	/**
 	 * Returns the edited EObject
-	 * 
+	 *
 	 * @return the EObject edited in the editor. It should never be <code>null</code>.
 	 */
 	protected abstract EObject getEditedObject();
 
 	/**
 	 * Returns the selected graphical edit part
-	 * 
+	 *
 	 * @return the GraphicalEditPart selected in the editor. It should never be <code>null</code>.
 	 */
-	protected abstract GraphicalEditPart getSelectedElement() ;
-	
+	protected abstract GraphicalEditPart getSelectedElement();
+
 	/**
 	 * Retrieves the position where the editor should be opened.
-	 * 
+	 *
 	 * @return the position of the shell containing the editor
 	 */
 	// @unused
@@ -71,14 +71,14 @@ public abstract class OpenEmbeddedTextEditorObjectActionDelegate implements IObj
 
 	/**
 	 * Retrieves the editor context
-	 * 
+	 *
 	 * @return the context for the current editor
 	 */
 	// protected abstract IEditorContext getEditorContext();
 
 	/**
 	 * Returns the editor's main control
-	 * 
+	 *
 	 * @return the editor's main control
 	 */
 	// @unused
@@ -109,25 +109,25 @@ public abstract class OpenEmbeddedTextEditorObjectActionDelegate implements IObj
 			}
 			return;
 		} else if (configuration instanceof IPopupEditorConfiguration) {
-			IPopupEditorConfiguration popupEditor = (IPopupEditorConfiguration)configuration ;
-			popupEditor.createPopupEditorHelper(getSelectedElement()).showEditor() ;
-			return ;
-		} else if(configuration instanceof IAdvancedEditorConfiguration) {
-			dialog = ((IAdvancedEditorConfiguration)configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), getEditedObject(), configuration.getTextToEdit(getEditedObject()));
-		} else if(configuration instanceof IDirectEditorConfiguration) {
-			dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), getEditedObject(), ((IDirectEditorConfiguration)configuration).getTextToEdit(getEditedObject()), (IDirectEditorConfiguration)configuration);
+			IPopupEditorConfiguration popupEditor = (IPopupEditorConfiguration) configuration;
+			popupEditor.createPopupEditorHelper(getSelectedElement()).showEditor();
+			return;
+		} else if (configuration instanceof IAdvancedEditorConfiguration) {
+			dialog = ((IAdvancedEditorConfiguration) configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), getEditedObject(), configuration.getTextToEdit(getEditedObject()));
+		} else if (configuration instanceof IDirectEditorConfiguration) {
+			dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), getEditedObject(), configuration.getTextToEdit(getEditedObject()), configuration);
 		} else {
 			return;
 		}
 		final Dialog finalDialog = dialog;
 
-		if(Window.OK == dialog.open()) {
-			TransactionalEditingDomain domain = ((DiagramEditor)part).getEditingDomain();
+		if (Window.OK == dialog.open()) {
+			TransactionalEditingDomain domain = ((DiagramEditor) part).getEditingDomain();
 			RecordingCommand command = new RecordingCommand(domain, "Edit Label") { //$NON-NLS-1$
 
 				@Override
 				protected void doExecute() {
-					configuration.postEditAction(getEditedObject(), ((ILabelEditorDialog)finalDialog).getValue());
+					configuration.postEditAction(getEditedObject(), ((ILabelEditorDialog) finalDialog).getValue());
 
 				}
 			};
@@ -136,48 +136,48 @@ public abstract class OpenEmbeddedTextEditorObjectActionDelegate implements IObj
 	}
 
 	/*
-	protected void setManager(DirectEditManager manager) {
-		this.manager = manager;
-	}
+	 * protected void setManager(DirectEditManager manager) {
+	 * this.manager = manager;
+	 * }
+	 * 
+	 * public void setParser(IParser parser) {
+	 * this.parser = parser;
+	 * }
+	 * 
+	 * protected void initializeDirectEditManager(final Request request) {
+	 * // initialize the direct edit manager
+	 * try {
+	 * getEditingDomain().runExclusive(new Runnable() {
+	 * public void run() {
+	 * if (isActive() && isEditable()) {
+	 * if (request
+	 * .getExtendedData()
+	 * .get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+	 * Character initialChar = (Character) request
+	 * .getExtendedData()
+	 * .get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+	 * performDirectEdit(initialChar.charValue());
+	 * } else if ((request instanceof DirectEditRequest)
+	 * && (getEditText().equals(getLabelText()))) {
+	 * DirectEditRequest editRequest = (DirectEditRequest) request;
+	 * performDirectEdit(editRequest.getLocation());
+	 * } else {
+	 * performDirectEdit();
+	 * }
+	 * }
+	 * }
+	 * });
+	 * } catch (InterruptedException e) {
+	 * e.printStackTrace();
+	 * }
+	 * }
+	 */
 
-	public void setParser(IParser parser) {
-		this.parser = parser;
-	}
-
-	protected void initializeDirectEditManager(final Request request) {
-		// initialize the direct edit manager
-		try {
-			getEditingDomain().runExclusive(new Runnable() {
-				public void run() {
-					if (isActive() && isEditable()) {
-						if (request
-								.getExtendedData()
-								.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-							Character initialChar = (Character) request
-									.getExtendedData()
-									.get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
-							performDirectEdit(initialChar.charValue());
-						} else if ((request instanceof DirectEditRequest)
-								&& (getEditText().equals(getLabelText()))) {
-							DirectEditRequest editRequest = (DirectEditRequest) request;
-							performDirectEdit(editRequest.getLocation());
-						} else {
-							performDirectEdit();
-						}
-					}
-				}
-			});
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-	*/
-	
 	/**
 	 * Sets the configuration for the editor
-	 * 
+	 *
 	 * @param configuration
-	 *        the configuration for the specified editor
+	 *            the configuration for the specified editor
 	 */
 	public void setExtensionPointConfiguration(DirectEditorExtensionPoint directEditorExtensionPoint) {
 		this.directEditorExtensionPoint = directEditorExtensionPoint;
@@ -185,16 +185,16 @@ public abstract class OpenEmbeddedTextEditorObjectActionDelegate implements IObj
 
 	/**
 	 * Returns the parent composite for the new embedded editor
-	 * 
+	 *
 	 * @return the parent composite for the new embedded editor
 	 */
 	protected abstract Composite getParentComposite();
 
 	/**
 	 * Returns whether the widget is <code>null</code> or disposed or active.
-	 * 
+	 *
 	 * @param widget
-	 *        the widget to check
+	 *            the widget to check
 	 * @return <code>true</code> if the widget can be used
 	 */
 	public static boolean isValid(Widget widget) {

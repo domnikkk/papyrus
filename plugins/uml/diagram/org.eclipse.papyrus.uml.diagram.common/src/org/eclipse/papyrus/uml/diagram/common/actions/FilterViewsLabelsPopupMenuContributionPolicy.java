@@ -21,7 +21,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 // TODO: Auto-generated Javadoc
 /**
  * The Class FilterViewsLabelsPopupMenuContributionPolicy.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class FilterViewsLabelsPopupMenuContributionPolicy implements IPopupMenuContributionPolicy {
@@ -34,12 +34,13 @@ public class FilterViewsLabelsPopupMenuContributionPolicy implements IPopupMenuC
 	 * #appliesTo(org.eclipse.jface.viewers.ISelection,
 	 * org.eclipse.core.runtime.IConfigurationElement)
 	 */
+	@Override
 	public boolean appliesTo(ISelection selection, IConfigurationElement configuration) {
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection ss = (IStructuredSelection)selection;
-			for(Object o : ss.toList()) {
-				if(o instanceof IGraphicalEditPart) {
-					if(((IGraphicalEditPart)o).getNotationView() instanceof Diagram) {
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection ss = (IStructuredSelection) selection;
+			for (Object o : ss.toList()) {
+				if (o instanceof IGraphicalEditPart) {
+					if (((IGraphicalEditPart) o).getNotationView() instanceof Diagram) {
 
 						return true;
 					}

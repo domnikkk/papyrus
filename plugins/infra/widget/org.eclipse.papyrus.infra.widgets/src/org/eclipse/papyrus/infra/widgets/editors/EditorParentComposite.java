@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class EditorParentComposite extends Composite {
 	public boolean setFocus() {
 		Control focusVetoControl = AbstractEditor.FocusVeto.getFocusVetoControl(this);
 
-		if(focusVetoControl != null) {
+		if (focusVetoControl != null) {
 			// Don't let me or another control within me take focus
 			return false;
 		}

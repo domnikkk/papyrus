@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class ControlFlowPreferencePage extends AbstractPapyrusLinkPreferencePage
 	public static void initDefaults(IPreferenceStore store) {
 		String key = ActivityDiagramEditPart.MODEL_ID + "_ControlFlow";
 		Map<String, Boolean> map = getStaticLabelVisibilityPreferences();
-		for(String role : map.keySet()) {
+		for (String role : map.keySet()) {
 			String preferenceName = PreferencesConstantsHelper.getLabelElementConstant(key, role, PreferencesConstantsHelper.LABEL_VISIBILITY);
 			store.setDefault(preferenceName, map.get(role));
 		}
@@ -84,16 +84,17 @@ public class ControlFlowPreferencePage extends AbstractPapyrusLinkPreferencePage
 	/**
 	 * @generated
 	 */
+	@Override
 	protected TreeMap<String, String> getLabelRole() {
 		return getStaticLabelRole();
 	}
 
 	/**
 	 * Create preference page content concerning object flows
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.pages.AbstractPapyrusLinkPreferencePage#createPageContents(org.eclipse.swt.widgets.Composite)
 	 * @param parent
-	 *        parent composite
+	 *            parent composite
 	 * @generated NOT
 	 */
 	@Override

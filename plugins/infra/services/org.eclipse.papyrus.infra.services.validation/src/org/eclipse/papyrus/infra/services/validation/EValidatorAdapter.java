@@ -37,34 +37,28 @@ import org.eclipse.uml2.uml.util.UMLValidator;
 
 
 /**
- * An adapter that plugs the EMF Model Validation Service API into the
- * {@link org.eclipse.emf.ecore.EValidator} API.
+ * An adapter that plugs the EMF Model Validation Service API into the {@link org.eclipse.emf.ecore.EValidator} API.
  * <p>
- * <strong>NOTE</strong> that this class was copied from the EMF Validation
- * "Validation Adapter" example project as created by the EMF Validation SDK,
- * and modified only to ensure that the {@link Diagnostic} created from an
- * {@link IConstraintStatus} has the original validation target element as the
- * first element of the {@linkplain Diagnostic#getData() data list} because the
- * {@linkplain IConstraintStatus#getResultLocus() result locus} of a constraint
- * status is an unordered set.
+ * <strong>NOTE</strong> that this class was copied from the EMF Validation "Validation Adapter" example project as created by the EMF Validation SDK, and modified only to ensure that the {@link Diagnostic} created from an {@link IConstraintStatus} has the
+ * original validation target element as the first element of the {@linkplain Diagnostic#getData() data list} because the {@linkplain IConstraintStatus#getResultLocus() result locus} of a constraint status is an unordered set.
  * </p>
- * 
- * bug 405160 - avoid "false" errors by using the UMLValidator instead of EObjectValidator as base class 
+ *
+ * bug 405160 - avoid "false" errors by using the UMLValidator instead of EObjectValidator as base class
  */
 public class EValidatorAdapter
-	extends UMLValidator {
-	
+		extends UMLValidator {
+
 	/**
 	 * Model Validation Service interface for batch validation of EMF elements.
 	 */
 	private final IBatchValidator batchValidator;
-	
+
 	/**
 	 * Initializes me.
 	 */
 	public EValidatorAdapter() {
 		super();
-		
+
 		batchValidator = ModelValidationService.getInstance().newValidator(
 				EvaluationMode.BATCH);
 		batchValidator.setIncludeLiveConstraints(true);
@@ -85,74 +79,78 @@ public class EValidatorAdapter
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		// first, do whatever the basic EcoreValidator does
 		super.validate(eClass, eObject, diagnostics, context);
-		
+
 		return batchValidate(eObject, diagnostics, context);
 	}
 
 	protected boolean batchValidate(EObject eObject,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		IStatus status = Status.OK_STATUS;
-		
+
 		// no point in validating if we can't report results
 		if (diagnostics != null) {
 			// if EMF Mode Validation Service already covered the sub-tree,
-			//    which it does for efficient computation and error reporting,
-			//    then don't repeat (the Diagnostician does the recursion
-			//    externally).  If there is no context map, then we can't
-			//    help it
+			// which it does for efficient computation and error reporting,
+			// then don't repeat (the Diagnostician does the recursion
+			// externally). If there is no context map, then we can't
+			// help it
 			if (!hasProcessed(eObject, context)) {
 				status = batchValidator.validate(
-					eObject,
-					new NullProgressMonitor());
-				
+						eObject,
+						new NullProgressMonitor());
+
 				processed(eObject, context, status);
-				
+
 				appendDiagnostics(status, diagnostics);
 			}
 		}
-		
+
 		return status.isOK();
 	}
 
 	/**
 	 * Direct validation of {@link EDataType}s is not supported by the EMF
-	 * validation framework; they are validated indirectly via the
-	 * {@link EObject}s that hold their values.
+	 * validation framework; they are validated indirectly via the {@link EObject}s that hold their values.
 	 */
 	@Override
 	public boolean validate(EDataType eDataType, Object value,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return super.validate(eDataType, value, diagnostics, context);
 	}
-	
+
 	/**
 	 * If we have a context map, record this object's <code>status</code> in it
 	 * so that we will know later that we have processed it and its sub-tree.
-	 * 
-	 * @param eObject an element that we have validated
-	 * @param context the context (may be <code>null</code>)
-	 * @param status the element's validation status
+	 *
+	 * @param eObject
+	 *            an element that we have validated
+	 * @param context
+	 *            the context (may be <code>null</code>)
+	 * @param status
+	 *            the element's validation status
 	 */
 	private void processed(EObject eObject, Map<Object, Object> context, IStatus status) {
 		if (context != null) {
 			context.put(eObject, status);
 		}
 	}
-	
+
 	/**
 	 * Determines whether we have processed this <code>eObject</code> before,
-	 * by automatic recursion of the EMF Model Validation Service.  This is
+	 * by automatic recursion of the EMF Model Validation Service. This is
 	 * only possible if we do, indeed, have a context.
-	 * 
-	 * @param eObject an element to be validated (we hope not)
-	 * @param context the context (may be <code>null</code>)
+	 *
+	 * @param eObject
+	 *            an element to be validated (we hope not)
+	 * @param context
+	 *            the context (may be <code>null</code>)
 	 * @return <code>true</code> if the context is not <code>null</code> and
-	 *     the <code>eObject</code> or one of its containers has already been
-	 *     validated;  <code>false</code>, otherwise
+	 *         the <code>eObject</code> or one of its containers has already been
+	 *         validated; <code>false</code>, otherwise
 	 */
 	private boolean hasProcessed(EObject eObject, Map<Object, Object> context) {
 		boolean result = false;
-		
+
 		if (context != null) {
 			// this is O(NlogN) but there's no helping it
 			while (eObject != null) {
@@ -164,20 +162,22 @@ public class EValidatorAdapter
 				}
 			}
 		}
-		
+
 		return result;
 	}
-	
+
 	/**
 	 * Converts a status result from the EMF validation service to diagnostics.
-	 * 
-	 * @param status the EMF validation service's status result
-	 * @param diagnostics a diagnostic chain to accumulate results on
+	 *
+	 * @param status
+	 *            the EMF validation service's status result
+	 * @param diagnostics
+	 *            a diagnostic chain to accumulate results on
 	 */
 	private void appendDiagnostics(IStatus status, DiagnosticChain diagnostics) {
 		if (status.isMultiStatus()) {
 			IStatus[] children = status.getChildren();
-			
+
 			for (IStatus element : children) {
 				appendDiagnostics(element, diagnostics);
 			}
@@ -189,6 +189,7 @@ public class EValidatorAdapter
 
 	/**
 	 * Create a basic diagnostic with an unique id as source
+	 * 
 	 * @param status
 	 * @param constraintStatus
 	 * @return
@@ -197,38 +198,37 @@ public class EValidatorAdapter
 			IConstraintStatus constraintStatus) {
 		String source = status.getPlugin();
 		IModelConstraint constraint = constraintStatus.getConstraint();
-		if (constraint != null){
+		if (constraint != null) {
 			IConstraintDescriptor descriptor = constraint.getDescriptor();
 			if (descriptor != null) {
 				source = descriptor.getId();
 			}
 		}
-		
+
 		return new BasicDiagnostic(
-			status.getSeverity(),
-			source,
-			status.getCode(),
-			status.getMessage(),
-			toArray(constraintStatus.getResultLocus(), constraintStatus.getTarget()));
+				status.getSeverity(),
+				source,
+				status.getCode(),
+				status.getMessage(),
+				toArray(constraintStatus.getResultLocus(), constraintStatus.getTarget()));
 	}
 
 	/**
-	 * Converts a possibly unordered collection to a list that has a designated
-	 * {@code first} element.
-	 * 
+	 * Converts a possibly unordered collection to a list that has a designated {@code first} element.
+	 *
 	 * @param elements
 	 *            a possibly unordered collection of elements
 	 * @param first
 	 *            the element that is required to be first in the array. It will
 	 *            be added if not already in the {@code element}; otherwise it
 	 *            will not be repeated
-	 * 
+	 *
 	 * @return the array of {@code elements} with the {@code first} element
 	 *         first
 	 */
 	private Object[] toArray(Collection<?> elements, Object first) {
 		Object[] result;
-		
+
 		if (!elements.contains(first)) {
 			result = new Object[elements.size() + 1];
 			result[0] = first;
@@ -237,7 +237,7 @@ public class EValidatorAdapter
 			Iterator<?> iter = elements.iterator();
 			Object actualFirst = iter.next();
 			if (actualFirst == first) {
-				// already the correct order.  Don't make it complicated
+				// already the correct order. Don't make it complicated
 				result = elements.toArray();
 			} else {
 				// we have at least two elements if the collection contains
@@ -257,7 +257,7 @@ public class EValidatorAdapter
 				}
 			}
 		}
-		
+
 		return result;
 	}
 }

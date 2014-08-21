@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,12 +22,12 @@ public class ComboLabelProvider extends LabelProvider {
 	private ILabelProvider labelProvider;
 
 	public ComboLabelProvider(IBaseLabelProvider encapsulated) {
-		this.labelProvider = (ILabelProvider)encapsulated;
+		this.labelProvider = (ILabelProvider) encapsulated;
 	}
 
 	@Override
 	public String getText(Object value) {
-		if(value == UnsetObject.instance || value == UnchangedObject.instance) {
+		if (value == UnsetObject.instance || value == UnchangedObject.instance) {
 			return value.toString();
 		}
 		return labelProvider.getText(value);
@@ -35,7 +35,7 @@ public class ComboLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object value) {
-		if(value == UnsetObject.instance || value == UnchangedObject.instance) {
+		if (value == UnsetObject.instance || value == UnchangedObject.instance) {
 			return null;
 		}
 		return labelProvider.getImage(value);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,25 +43,25 @@ public class HyperLinkLabelProvider extends LabelProvider {
 
 	/**
 	 * {@inheritedDoc}.
-	 * 
+	 *
 	 * @param element
-	 *        the element
-	 * 
+	 *            the element
+	 *
 	 * @return the image
 	 */
 	@Override
 	public Image getImage(Object element) {
-		if(element instanceof HyperLinkDocument) {
+		if (element instanceof HyperLinkDocument) {
 			return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.PLUGIN_ID, HYPERLINK_DOCUMENT_ICON_PATH);
 		}
 
-		if(element instanceof HyperLinkWeb) {
+		if (element instanceof HyperLinkWeb) {
 			return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.PLUGIN_ID, HYPERLINK_WEB_ICON_PATH);
 		}
 
-		if(element instanceof HyperLinkEditor) {
-			EObject editorContext = EMFHelper.getEObject(((HyperLinkEditor)element).getObject());
-			if(editorContext != null) {
+		if (element instanceof HyperLinkEditor) {
+			EObject editorContext = EMFHelper.getEObject(((HyperLinkEditor) element).getObject());
+			if (editorContext != null) {
 				try {
 					return ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, editorContext).getLabelProvider().getImage(editorContext);
 				} catch (ServiceException ex) {
@@ -70,9 +70,9 @@ public class HyperLinkLabelProvider extends LabelProvider {
 			}
 		}
 
-		if(element instanceof HyperLinkSpecificObject) {
-			EObject targetElement = ((HyperLinkSpecificObject)element).getTargetElement();
-			if(targetElement != null) {
+		if (element instanceof HyperLinkSpecificObject) {
+			EObject targetElement = ((HyperLinkSpecificObject) element).getTargetElement();
+			if (targetElement != null) {
 				try {
 					return ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, targetElement).getLabelProvider().getImage(targetElement);
 				} catch (ServiceException ex) {
@@ -86,31 +86,31 @@ public class HyperLinkLabelProvider extends LabelProvider {
 
 	/**
 	 * {@inheritedDoc}.
-	 * 
+	 *
 	 * @param element
-	 *        the element
-	 * 
+	 *            the element
+	 *
 	 * @return the text
 	 */
 	@Override
 	public String getText(Object element) {
 		String out = ""; //$NON-NLS-1$
-		if(element instanceof HyperLinkDocument) {
-			out = ((HyperLinkDocument)element).getHyperlinkDocument();
-		} else if(element instanceof HyperLinkWeb) {
-			out = ((HyperLinkWeb)element).getHyperLinkWeb();
-		} else if(element instanceof HyperLinkEditor) {
-			EObject editorContext = EMFHelper.getEObject(((HyperLinkEditor)element).getObject());
-			if(editorContext != null) {
+		if (element instanceof HyperLinkDocument) {
+			out = ((HyperLinkDocument) element).getHyperlinkDocument();
+		} else if (element instanceof HyperLinkWeb) {
+			out = ((HyperLinkWeb) element).getHyperLinkWeb();
+		} else if (element instanceof HyperLinkEditor) {
+			EObject editorContext = EMFHelper.getEObject(((HyperLinkEditor) element).getObject());
+			if (editorContext != null) {
 				try {
 					return ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, editorContext).getLabelProvider().getText(editorContext);
 				} catch (ServiceException ex) {
 					Activator.log.error(ex);
 				}
 			}
-		} else if(element instanceof HyperLinkSpecificObject) {
-			EObject targetElement = ((HyperLinkSpecificObject)element).getTargetElement();
-			if(targetElement != null) {
+		} else if (element instanceof HyperLinkSpecificObject) {
+			EObject targetElement = ((HyperLinkSpecificObject) element).getTargetElement();
+			if (targetElement != null) {
 				try {
 					return ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, targetElement).getLabelProvider().getText(targetElement);
 				} catch (ServiceException ex) {
@@ -121,7 +121,7 @@ public class HyperLinkLabelProvider extends LabelProvider {
 			return super.getText(element);
 		}
 
-		out = out + SEP + ((HyperLinkObject)element).getTooltipText();
+		out = out + SEP + ((HyperLinkObject) element).getTooltipText();
 		return out;
 	}
 

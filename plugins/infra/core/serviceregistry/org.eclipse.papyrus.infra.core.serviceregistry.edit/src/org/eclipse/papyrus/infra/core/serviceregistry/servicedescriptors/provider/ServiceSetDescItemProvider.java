@@ -32,11 +32,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServiceSetDescItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -46,6 +47,7 @@ public class ServiceSetDescItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServiceSetDescItemProvider(AdapterFactory adapterFactory) {
@@ -56,6 +58,7 @@ public class ServiceSetDescItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,96 +78,100 @@ public class ServiceSetDescItemProvider
 	 * This adds a property descriptor for the Services feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addServicesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceSetDesc_services_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_services_feature", "_UI_ServiceSetDesc_type"),
-				 ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__SERVICES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ServiceSetDesc_services_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_services_feature", "_UI_ServiceSetDesc_type"),
+						ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__SERVICES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceSetDesc_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_name_feature", "_UI_ServiceSetDesc_type"),
-				 ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ServiceSetDesc_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_name_feature", "_UI_ServiceSetDesc_type"),
+						ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Extends feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addExtendsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceSetDesc_extends_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_extends_feature", "_UI_ServiceSetDesc_type"),
-				 ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__EXTENDS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ServiceSetDesc_extends_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_extends_feature", "_UI_ServiceSetDesc_type"),
+						ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__EXTENDS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceSetDesc_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_description_feature", "_UI_ServiceSetDesc_type"),
-				 ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ServiceSetDesc_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ServiceSetDesc_description_feature", "_UI_ServiceSetDesc_type"),
+						ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__DESCRIPTION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -179,6 +186,7 @@ public class ServiceSetDescItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -193,6 +201,7 @@ public class ServiceSetDescItemProvider
 	 * This returns ServiceSetDesc.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -204,14 +213,15 @@ public class ServiceSetDescItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceSetDesc)object).getName();
+		String label = ((ServiceSetDesc) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceSetDesc_type") :
-			getString("_UI_ServiceSetDesc_type") + " " + label;
+				getString("_UI_ServiceSetDesc_type") :
+				getString("_UI_ServiceSetDesc_type") + " " + label;
 	}
 
 	/**
@@ -219,6 +229,7 @@ public class ServiceSetDescItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -226,13 +237,13 @@ public class ServiceSetDescItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServiceSetDesc.class)) {
-			case ServicedescriptorsPackage.SERVICE_SET_DESC__NAME:
-			case ServicedescriptorsPackage.SERVICE_SET_DESC__DESCRIPTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ServicedescriptorsPackage.SERVICE_SET_DESC__OWNED_SERVICES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ServicedescriptorsPackage.SERVICE_SET_DESC__NAME:
+		case ServicedescriptorsPackage.SERVICE_SET_DESC__DESCRIPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ServicedescriptorsPackage.SERVICE_SET_DESC__OWNED_SERVICES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -242,6 +253,7 @@ public class ServiceSetDescItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -249,25 +261,26 @@ public class ServiceSetDescItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__OWNED_SERVICES,
-				 ServicedescriptorsFactory.eINSTANCE.createServiceDesc()));
+						ServicedescriptorsFactory.eINSTANCE.createServiceDesc()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__OWNED_SERVICES,
-				 ServicedescriptorsFactory.eINSTANCE.createAliasDesc()));
+						ServicedescriptorsFactory.eINSTANCE.createAliasDesc()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.SERVICE_SET_DESC__OWNED_SERVICES,
-				 ServicedescriptorsFactory.eINSTANCE.createServiceFactoryDesc()));
+						ServicedescriptorsFactory.eINSTANCE.createServiceFactoryDesc()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

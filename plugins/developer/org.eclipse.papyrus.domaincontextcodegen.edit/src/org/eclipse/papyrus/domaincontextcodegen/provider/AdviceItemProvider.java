@@ -29,7 +29,7 @@ import org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.Advice} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AdviceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -38,7 +38,7 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AdviceItemProvider(AdapterFactory adapterFactory) {
@@ -49,12 +49,12 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addAdviceIDPropertyDescriptor(object);
@@ -69,51 +69,55 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This adds a property descriptor for the Advice ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAdviceIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_adviceID_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Advice_adviceID_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__ADVICE_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_adviceID_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Advice_adviceID_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__ADVICE_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Ref feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addRefPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_ref_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Advice_ref_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__REF, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_ref_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Advice_ref_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__REF, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Advice Path feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addAdvicePathPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_advicePath_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Advice_advicePath_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__ADVICE_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_advicePath_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Advice_advicePath_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__ADVICE_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Inheritance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addInheritancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_inheritance_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Advice_inheritance_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__INHERITANCE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Advice_inheritance_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Advice_inheritance_feature", "_UI_Advice_type"), DomaincontextcodegenPackage.Literals.ADVICE__INHERITANCE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns Advice.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,12 +129,12 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Advice)object).getAdviceID();
+		String label = ((Advice) object).getAdviceID();
 		return label == null || label.length() == 0 ? getString("_UI_Advice_type") : getString("_UI_Advice_type") + " " + label;
 	}
 
@@ -139,14 +143,14 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(Advice.class)) {
+		switch (notification.getFeatureID(Advice.class)) {
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_ID:
 		case DomaincontextcodegenPackage.ADVICE__ADVICE_PATH:
 		case DomaincontextcodegenPackage.ADVICE__INHERITANCE:
@@ -161,7 +165,7 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +177,7 @@ public class AdviceItemProvider extends ItemProviderAdapter implements IEditingD
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

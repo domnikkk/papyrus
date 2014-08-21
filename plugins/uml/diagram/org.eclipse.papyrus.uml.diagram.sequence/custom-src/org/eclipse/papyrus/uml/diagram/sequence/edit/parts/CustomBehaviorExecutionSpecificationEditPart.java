@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,11 +73,11 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=417376. Display the behavior of an BehaviorExecutionSpecification as a Label.
- * 
+ *
  * IMPORTANT, the new behavior label was added to the BorderedNodeFigure of Interaction, it seems there are some problems about moving when it was
  * added
  * on the BorderedNodeFigure of current BehaviorExecutionSpecification EditPart.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecutionSpecificationEditPart {
@@ -98,7 +98,7 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomBehaviorExecutionSpecificationEditPart(View view) {
@@ -112,7 +112,7 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomBehaviorExecutionSpecificationItemSemanticEditPolicy());
-		//Fixed bug about reconnect message when the ends of execution were MessageOccurrenceSpecification. 
+		// Fixed bug about reconnect message when the ends of execution were MessageOccurrenceSpecification.
 		removeEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE);
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ExecutionGraphicalNodeEditPolicy());
 	}
@@ -121,30 +121,33 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if(child instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
+				if (child instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
 					return new BorderItemSelectionEditPolicy() {
 
+						@Override
 						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
 
+						@Override
 						protected Command getMoveCommand(ChangeBoundsRequest request) {
-							IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+							IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 							IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
 
-							if(borderItemLocator != null) {
-								LayoutConstraint layout = ((Node)getHost().getModel()).getLayoutConstraint();
+							if (borderItemLocator != null) {
+								LayoutConstraint layout = ((Node) getHost().getModel()).getLayoutConstraint();
 								Point location = new Point();
-								if(layout instanceof Location) {
-									location.x = ((Location)layout).getX();
-									location.y = ((Location)layout).getY();
+								if (layout instanceof Location) {
+									location.x = ((Location) layout).getX();
+									location.y = ((Location) layout).getY();
 								}
 								location.translate(request.getMoveDelta());
 
-								ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)getHost().getModel()), location);
+								ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) getHost().getModel()), location);
 								return new ICommandProxy(moveCommand);
 							}
 							return null;
@@ -154,16 +157,18 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 					};
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -174,7 +179,7 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	/**
 	 * Overrides to disable the defaultAnchorArea. The edge is no more stuck with the middle of the
 	 * figure.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -191,10 +196,10 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 			@Override
 			public ConnectionAnchor getConnectionAnchor(String terminal) {
-				//Use FixedAnchorEx for MessageSync, this will be invoked by mapConnectionAnchor(termial) operation.
-				if(terminal != null && terminal.indexOf("{") != -1 && terminal.indexOf("}") != -1) {
+				// Use FixedAnchorEx for MessageSync, this will be invoked by mapConnectionAnchor(termial) operation.
+				if (terminal != null && terminal.indexOf("{") != -1 && terminal.indexOf("}") != -1) {
 					int position = AnchorHelper.FixedAnchorEx.parsePosition(terminal);
-					if(PositionConstants.TOP == position || PositionConstants.BOTTOM == position) {
+					if (PositionConstants.TOP == position || PositionConstants.BOTTOM == position) {
 						return new AnchorHelper.FixedAnchorEx(this, position);
 					}
 				}
@@ -207,16 +212,16 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model so you may safely remove
 	 * <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
-		//figure.setLayoutManager(new StackLayout());
+		// figure.setLayoutManager(new StackLayout());
 		figure.setLayoutManager(new DelegatingLayout());
 		IFigure shape = createNodeShape();
 		figure.add(shape, new FillParentLocator());
@@ -226,28 +231,28 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 	/**
 	 * We did NOT use a BorderedNodeFigure in current EditPart. There are some problems about moving external labels.
-	 * 
+	 *
 	 * We just find and use the root(Interaction) BorderedNodeFigure.
 	 */
 	private BorderedNodeFigure getBorderedFigure() {
 		EditPart parent = getParent();
-		while(parent != null && !(parent instanceof CustomInteractionEditPart)) {
+		while (parent != null && !(parent instanceof CustomInteractionEditPart)) {
 			parent = parent.getParent();
 		}
-		if(parent != null) {
-			return ((CustomInteractionEditPart)parent).getBorderedFigure();
+		if (parent != null) {
+			return ((CustomInteractionEditPart) parent).getBorderedFigure();
 		}
 		return null;
 	}
 
 	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(childEditPart instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
-			IFigure childFigure = ((BehaviorExecutionSpecificationBehaviorEditPart)childEditPart).getFigure();
+		if (childEditPart instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
+			IFigure childFigure = ((BehaviorExecutionSpecificationBehaviorEditPart) childEditPart).getFigure();
 			BorderedNodeFigure borderedFigure = getBorderedFigure();
 			final IFigure figure = getFigure();
 			BehaviorLabelLocator locator = new BehaviorLabelLocator(figure);
-			if(borderedFigure != null) {
+			if (borderedFigure != null) {
 				borderedFigure.getBorderItemContainer().add(childFigure, locator);
 			}
 			return;
@@ -257,10 +262,10 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(childEditPart instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
-			IFigure childFigure = ((BehaviorExecutionSpecificationBehaviorEditPart)childEditPart).getFigure();
+		if (childEditPart instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
+			IFigure childFigure = ((BehaviorExecutionSpecificationBehaviorEditPart) childEditPart).getFigure();
 			BorderedNodeFigure borderedFigure = getBorderedFigure();
-			if(borderedFigure != null) {
+			if (borderedFigure != null) {
 				borderedFigure.getBorderItemContainer().remove(childFigure);
 			}
 			return;
@@ -270,12 +275,12 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.BehaviorExecutionSpecificationEditPart#setLineWidth(int)
-	 * 
+	 *
 	 * @param width
 	 */
 	@Override
 	protected void setLineWidth(int width) {
-		//		super.setLineWidth(width);
+		// super.setLineWidth(width);
 	}
 
 	@Override
@@ -291,13 +296,13 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	}
 
 	protected void refreshBehavior() {
-		if(!BehaviorDisplayHelper.shouldDisplayBehavior(getNotationView())) {
+		if (!BehaviorDisplayHelper.shouldDisplayBehavior(getNotationView())) {
 			return;
 		}
 		List children = getChildren();
-		for(Object child : children) {
-			if(child instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
-				((BehaviorExecutionSpecificationBehaviorEditPart)child).refresh();
+		for (Object child : children) {
+			if (child instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
+				((BehaviorExecutionSpecificationBehaviorEditPart) child).refresh();
 			}
 		}
 	}
@@ -306,9 +311,9 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	public void activate() {
 		super.activate();
 		EObject elt = resolveSemanticElement();
-		if(elt instanceof BehaviorExecutionSpecification) {
-			Behavior behavior = ((BehaviorExecutionSpecification)elt).getBehavior();
-			if(behavior != null) {
+		if (elt instanceof BehaviorExecutionSpecification) {
+			Behavior behavior = ((BehaviorExecutionSpecification) elt).getBehavior();
+			if (behavior != null) {
 				helper.listenObject(behavior);
 			}
 		}
@@ -316,28 +321,28 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	}
 
 	private void addSelfRemovingListener(EditPart editPart) {
-		if(editPart == null || editPart instanceof RootEditPart) {
+		if (editPart == null || editPart instanceof RootEditPart) {
 			return;
 		}
-		if(selfRemovingListener == null) {
+		if (selfRemovingListener == null) {
 			selfRemovingListener = new EditPartListener.Stub() {
 
 				@Override
 				public void removingChild(EditPart child, int index) {
 					boolean removeBehavior = false;
 					EditPart editPart = CustomBehaviorExecutionSpecificationEditPart.this;
-					while(editPart != null && !(editPart instanceof RootEditPart)) {
-						if(editPart == child) {
+					while (editPart != null && !(editPart instanceof RootEditPart)) {
+						if (editPart == child) {
 							removeBehavior = true;
 							break;
 						}
 						editPart = editPart.getParent();
 					}
-					if(removeBehavior) {
+					if (removeBehavior) {
 						List children = new ArrayList(getChildren());
-						for(Object object : children) {
-							if(object instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
-								removeChild((EditPart)object);
+						for (Object object : children) {
+							if (object instanceof BehaviorExecutionSpecificationBehaviorEditPart) {
+								removeChild((EditPart) object);
 								break;
 							}
 						}
@@ -345,7 +350,7 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 				}
 			};
 		}
-		if(editPart != null) {
+		if (editPart != null) {
 			editPart.removeEditPartListener(selfRemovingListener);
 			editPart.addEditPartListener(selfRemovingListener);
 			addSelfRemovingListener(editPart.getParent());
@@ -353,10 +358,10 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	}
 
 	private void removeSelfRemovingListener(EditPart editPart) {
-		if(editPart == null || editPart instanceof RootEditPart || selfRemovingListener == null) {
+		if (editPart == null || editPart instanceof RootEditPart || selfRemovingListener == null) {
 			return;
 		}
-		if(editPart != null) {
+		if (editPart != null) {
 			editPart.removeEditPartListener(selfRemovingListener);
 			removeSelfRemovingListener(editPart.getParent());
 		}
@@ -374,17 +379,17 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 		super.handleNotificationEvent(event);
 		Object feature = event.getFeature();
 		Object notifier = event.getNotifier();
-		if(UMLPackage.eINSTANCE.getBehaviorExecutionSpecification_Behavior() == feature) {
-			helper.unlistenObject((Notifier)event.getOldValue());
-			helper.listenObject((Notifier)event.getNewValue());
+		if (UMLPackage.eINSTANCE.getBehaviorExecutionSpecification_Behavior() == feature) {
+			helper.unlistenObject((Notifier) event.getOldValue());
+			helper.listenObject((Notifier) event.getNewValue());
 			refreshBehavior();
-		} else if(notifier != null) {
+		} else if (notifier != null) {
 			EObject elt = resolveSemanticElement();
-			if(elt instanceof BehaviorExecutionSpecification && notifier == ((BehaviorExecutionSpecification)elt).getBehavior()) {
+			if (elt instanceof BehaviorExecutionSpecification && notifier == ((BehaviorExecutionSpecification) elt).getBehavior()) {
 				refreshBehavior();
 			}
 		}
-		if(BehaviorDisplayHelper.isDisplayBehaviorChanged(event)) {
+		if (BehaviorDisplayHelper.isDisplayBehaviorChanged(event)) {
 			refreshChildren();
 		}
 	}
@@ -393,19 +398,19 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 	protected List getModelChildren() {
 		List modelChildren = new ArrayList(super.getModelChildren());
 		boolean displayBehavior = BehaviorDisplayHelper.shouldDisplayBehavior(getNotationView());
-		//Lazy check and create behavior label model.
+		// Lazy check and create behavior label model.
 		boolean hasBehaviorLabel = false;
 		final View view = getNotationView();
-		for(Object object : view.getChildren()) {
-			if(object instanceof View && BehaviorExecutionSpecificationBehaviorEditPart.BEHAVIOR_TYPE.equals(((View)object).getType())) {
+		for (Object object : view.getChildren()) {
+			if (object instanceof View && BehaviorExecutionSpecificationBehaviorEditPart.BEHAVIOR_TYPE.equals(((View) object).getType())) {
 				hasBehaviorLabel = true;
-				if(!displayBehavior) {
+				if (!displayBehavior) {
 					modelChildren.remove(object);
 				}
 				break;
 			}
 		}
-		if(!hasBehaviorLabel && displayBehavior) {
+		if (!hasBehaviorLabel && displayBehavior) {
 			final DecorationNode behaviorLabel = NotationFactory.eINSTANCE.createDecorationNode();
 			Location location = NotationFactory.eINSTANCE.createLocation();
 			location.setX(16);
@@ -433,7 +438,7 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public BehaviorLabelLocator(IFigure referenceFigure) {
 			this.referenceFigure = referenceFigure;
@@ -441,43 +446,46 @@ public class CustomBehaviorExecutionSpecificationEditPart extends BehaviorExecut
 
 		/**
 		 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#setConstraint(org.eclipse.draw2d.geometry.Rectangle)
-		 * 
+		 *
 		 * @param constraint
 		 */
 
+		@Override
 		public void setConstraint(Rectangle constraint) {
 			this.constraint = constraint;
 		}
 
 		/**
-		 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle,
-		 *      org.eclipse.draw2d.IFigure)
-		 * 
+		 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle, org.eclipse.draw2d.IFigure)
+		 *
 		 * @param proposedLocation
 		 * @param borderItem
 		 * @return
 		 */
 
+		@Override
 		public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 			return new Rectangle(proposedLocation);
 		}
 
 		/**
 		 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getCurrentSideOfParent()
-		 * 
+		 *
 		 * @return
 		 */
 
+		@Override
 		public int getCurrentSideOfParent() {
 			return 0;
 		}
 
 		/**
 		 * @see org.eclipse.draw2d.Locator#relocate(org.eclipse.draw2d.IFigure)
-		 * 
+		 *
 		 * @param target
 		 */
 
+		@Override
 		public void relocate(IFigure target) {
 			Rectangle ref = referenceFigure.getBounds().getCopy();
 			referenceFigure.translateToAbsolute(ref);

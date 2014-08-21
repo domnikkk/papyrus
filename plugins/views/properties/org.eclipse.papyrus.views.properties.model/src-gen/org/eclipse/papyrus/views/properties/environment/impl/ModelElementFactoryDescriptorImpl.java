@@ -20,8 +20,8 @@ import org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescr
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl#getFactoryClass <em>Factory Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl#getFactoryClass <em>Factory Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	 * The default value of the '{@link #getFactoryClass() <em>Factory Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFactoryClass()
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	 * The cached value of the '{@link #getFactoryClass() <em>Factory Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFactoryClass()
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ModelElementFactoryDescriptorImpl() {
@@ -80,6 +85,7 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,8 +96,10 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -99,20 +107,25 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getFactoryClass() {
 		return factoryClass;
 	}
@@ -120,27 +133,31 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setFactoryClass(String newFactoryClass) {
 		String oldFactoryClass = factoryClass;
 		factoryClass = newFactoryClass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS, oldFactoryClass, factoryClass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
-				return getName();
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
-				return getFactoryClass();
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
+			return getName();
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
+			return getFactoryClass();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,17 +165,18 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
-				setName((String)newValue);
-				return;
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
-				setFactoryClass((String)newValue);
-				return;
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
+			setName((String) newValue);
+			return;
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
+			setFactoryClass((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,17 +184,18 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
-				setFactoryClass(FACTORY_CLASS_EDEFAULT);
-				return;
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
+			setFactoryClass(FACTORY_CLASS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,15 +203,16 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
-				return FACTORY_CLASS_EDEFAULT == null ? factoryClass != null : !FACTORY_CLASS_EDEFAULT.equals(factoryClass);
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
+			return FACTORY_CLASS_EDEFAULT == null ? factoryClass != null : !FACTORY_CLASS_EDEFAULT.equals(factoryClass);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -200,11 +220,14 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -215,4 +238,4 @@ public class ModelElementFactoryDescriptorImpl extends EObjectImpl implements Mo
 		return result.toString();
 	}
 
-} //ModelElementFactoryDescriptorImpl
+} // ModelElementFactoryDescriptorImpl

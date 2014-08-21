@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,15 +58,15 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 	}
 
 	public CallOperationActionParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -79,6 +79,7 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -90,24 +91,25 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof CallOperationAction) {
-			CallOperationAction action = (CallOperationAction)obj;
+		if (obj instanceof CallOperationAction) {
+			CallOperationAction action = (CallOperationAction) obj;
 			String name = action.getName();
 			String operation = "";
 			String className = "";
-			if(name == null) {
+			if (name == null) {
 				name = "";
 			}
-			if(action.getOperation() != null) {
+			if (action.getOperation() != null) {
 				operation = action.getOperation().getName();
-				if(operation == null) {
+				if (operation == null) {
 					operation = "";
 				}
-				if(action.getOperation().getClass_() != null) {
+				if (action.getOperation().getClass_() != null) {
 					className = action.getOperation().getClass_().getName();
-					if(className == null) {
+					if (className == null) {
 						className = "";
 					}
 				}
@@ -121,24 +123,24 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 
 	/**
 	 * Get the string to print with the given elements
-	 * 
+	 *
 	 * @param name
-	 *        the name of the node or ""
+	 *            the name of the node or ""
 	 * @param operation
-	 *        the name of the operation or ""
+	 *            the name of the operation or ""
 	 * @param className
-	 *        the name of the operation class or ""
+	 *            the name of the operation class or ""
 	 * @return the string to print
 	 */
 	private String getPrintString(String name, String operation, String className) {
-		if("".equals(name) || operation.equals(name)) {
+		if ("".equals(name) || operation.equals(name)) {
 			// operation is displayed instead of node name
-			if("".equals(className)) {
+			if ("".equals(className)) {
 				return String.format(NAME_FORMAT, operation);
 			} else {
 				return String.format(NAME_CLASS_FORMAT, operation, className);
 			}
-		} else if("".equals(operation) && "".equals(className)) {
+		} else if ("".equals(operation) && "".equals(className)) {
 			// name only is displayed
 			return String.format(NAME_FORMAT, name);
 		} else {
@@ -155,6 +157,7 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -166,15 +169,16 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof CallOperationAction) {
-			CallOperationAction action = (CallOperationAction)element;
+		if (element instanceof CallOperationAction) {
+			CallOperationAction action = (CallOperationAction) element;
 			semanticElementsBeingParsed.add(action);
 			Operation operation = action.getOperation();
-			if(operation != null) {
+			if (operation != null) {
 				semanticElementsBeingParsed.add(operation);
-				if(operation.getClass_() != null) {
+				if (operation.getClass_() != null) {
 					semanticElementsBeingParsed.add(operation.getClass_());
 				}
 			}
@@ -185,9 +189,9 @@ public class CallOperationActionParser extends MessageFormatParser implements IS
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Tasktop Technologies - initial API and implementation
  *     Obeo - adaptation for Amalgamation, EMF based and no Mylyn dependency
@@ -123,7 +123,7 @@ import org.eclipse.ui.themes.IThemeManager;
 /**
  * The main wizard page that allows users to select connectors that they wish to
  * install.
- * 
+ *
  * @author David Green
  * @author Steffen Pingel
  * @author Cedric Brun
@@ -233,10 +233,11 @@ public class DiscoveryViewer {
 			GridDataFactory.fillDefaults().grab(true, false).align(
 					SWT.BEGINNING, SWT.CENTER).applyTo(nameLabel);
 			nameLabel.setFont(h2Font);
-			if (connector.isIncubation())
+			if (connector.isIncubation()) {
 				nameLabel.setText(connector.getName() + " (Incubation)");
-			else
+			} else {
 				nameLabel.setText(connector.getName());
+			}
 
 			providerLabel = new Link(connectorContainer, SWT.RIGHT);
 			configureLook(providerLabel, background);
@@ -280,8 +281,7 @@ public class DiscoveryViewer {
 					descriptionText = descriptionText.substring(0,
 							maxDescriptionLength);
 				}
-				description.setText(descriptionText.replaceAll(
-						"(\\r\\n)|\\n|\\r", " ")); //$NON-NLS-1$ //$NON-NLS-2$
+				description.setText(descriptionText.replaceAll("(\\r\\n)|\\n|\\r", " ")); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			// always disabled color to make it less prominent
 			providerLabel.setForeground(colorDisabled);
@@ -549,7 +549,7 @@ public class DiscoveryViewer {
 
 	/**
 	 * cause the UI to respond to a change in visibility filters
-	 * 
+	 *
 	 * @see #setVisibility(ConnectorDescriptorKind, boolean)
 	 */
 	public void connectorDescriptorKindVisibilityUpdated() {
@@ -721,7 +721,7 @@ public class DiscoveryViewer {
 		layout.marginHeight = 0;
 		layout.marginWidth = 0;
 		container.setLayout(layout);
-		//      
+		//
 		{ // header
 			Composite header = new Composite(container, SWT.NULL);
 			GridLayoutFactory.fillDefaults().applyTo(header);
@@ -966,8 +966,9 @@ public class DiscoveryViewer {
 					GridDataFactory.fillDefaults().grab(true, false).span(2, 1)
 							.hint(100, SWT.DEFAULT).applyTo(description);
 					description.setBackground(null);
-					if (category.getDescription() != null)
+					if (category.getDescription() != null) {
 						description.setText(category.getDescription());
+					}
 				}
 
 				categoryChildrenContainer = new Composite(container, SWT.NULL);
@@ -1284,8 +1285,7 @@ public class DiscoveryViewer {
 
 	/**
 	 * indicate if the category has nothing to display in the UI, given the
-	 * current state of
-	 * {@link DiscoveryWizard#isVisible(ConnectorDescriptorKind) filters}.
+	 * current state of {@link DiscoveryWizard#isVisible(ConnectorDescriptorKind) filters}.
 	 */
 	private boolean isEmpty(Category category) {
 		if (category.getComponents().isEmpty()) {
@@ -1300,8 +1300,9 @@ public class DiscoveryViewer {
 	}
 
 	private boolean isFiltered(InstallableComponent descriptor) {
-		if (!descriptor.isVisible())
+		if (!descriptor.isVisible()) {
 			return true;
+		}
 		boolean kindFiltered = false;
 		for (Group kind : descriptor.getGroups()) {
 			if (!isVisible(kind)) {
@@ -1320,7 +1321,7 @@ public class DiscoveryViewer {
 			if (!(filterMatches(descriptor.getName())
 					|| filterMatches(descriptor.getDescription())
 					|| filterMatches(descriptor.getProvider()) || filterMatches(descriptor
-					.getLicense()))) {
+						.getLicense()))) {
 				return true;
 			}
 		}
@@ -1346,7 +1347,7 @@ public class DiscoveryViewer {
 	/**
 	 * indicate if the given kind of connector is currently visible in the
 	 * wizard
-	 * 
+	 *
 	 * @see #setVisibility(ConnectorDescriptorKind, boolean)
 	 */
 	public boolean isVisible(Group kind) {
@@ -1437,7 +1438,7 @@ public class DiscoveryViewer {
 	/**
 	 * configure the page to show or hide connector descriptors of the given
 	 * kind
-	 * 
+	 *
 	 * @see #connectorDescriptorKindVisibilityUpdated()
 	 */
 	public void setVisibility(Group kind, boolean visible) {

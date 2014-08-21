@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,10 @@ import org.eclipse.papyrus.infra.hyperlink.Activator;
 /**
  * The Class EditorListContentProvider.
  */
-//TODO why a tree content provider
+// TODO why a tree content provider
 public class EditorListContentProvider implements ITreeContentProvider {
 
-	//The context of the ContentProvider
+	// The context of the ContentProvider
 	private EObject model;
 
 	public EditorListContentProvider(EObject model) {
@@ -67,9 +67,9 @@ public class EditorListContentProvider implements ITreeContentProvider {
 			Object[] result = iPageMngr.allPages().toArray();
 
 			List<Object> res = new ArrayList<Object>();
-			for(Object current : result) {
-				if(current != null /* && current instanceof PapyrusTableInstance */) {
-					//					 if the model is a little bit corrupted, we can have a null element in the list 
+			for (Object current : result) {
+				if (current != null /* && current instanceof PapyrusTableInstance */) {
+					// if the model is a little bit corrupted, we can have a null element in the list
 					res.add(current);
 				}
 			}
@@ -85,13 +85,13 @@ public class EditorListContentProvider implements ITreeContentProvider {
 	 * {@inheritDoc}
 	 */
 	public void dispose() {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		//nothing to do
+		// nothing to do
 	}
 }

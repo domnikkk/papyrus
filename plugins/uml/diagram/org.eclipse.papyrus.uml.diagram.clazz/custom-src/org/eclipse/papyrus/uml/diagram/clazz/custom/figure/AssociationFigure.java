@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,11 +71,11 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * create an association figure.
-	 * 
+	 *
 	 * @param targetType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 * @param sourceType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 */
 	public AssociationFigure(int sourceType, int targetType) {
 		super();
@@ -86,6 +86,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	/**
 	 * Creates the contents.
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 		fAssociationNameLabel = new WrappingLabel();
@@ -111,7 +112,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the aggregation decoration.
-	 * 
+	 *
 	 * @return the aggregation decoration
 	 */
 	protected RotatableDecoration getAggregationDecoration() {
@@ -129,7 +130,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the applied stereotype association label.
-	 * 
+	 *
 	 * @return the applied stereotype association label
 	 */
 	public WrappingLabel getAppliedStereotypeAssociationLabel() {
@@ -138,7 +139,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the association name label.
-	 * 
+	 *
 	 * @return the association name label
 	 */
 	public WrappingLabel getAssociationNameLabel() {
@@ -147,7 +148,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the composition decoration.
-	 * 
+	 *
 	 * @return the composition decoration
 	 */
 	protected RotatableDecoration getCompositionDecoration() {
@@ -164,10 +165,10 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the decoration.
-	 * 
+	 *
 	 * @param typeDecoration
-	 *        the type decoration
-	 * 
+	 *            the type decoration
+	 *
 	 * @return the decoration
 	 */
 	public RotatableDecoration getDecoration(int typeDecoration) {
@@ -180,44 +181,44 @@ public class AssociationFigure extends UMLEdgeFigure {
 		remain = remain % aggregation;
 		int navigationValue = remain / navigable;
 		// the end association is contained by the association?
-		if(ownedValue == 1) {
+		if (ownedValue == 1) {
 			// this is composite.
-			if(compositeValue == 1) {
-				if(navigationValue == 1) {
+			if (compositeValue == 1) {
+				if (navigationValue == 1) {
 					return getOwnedNavigableCompositionDecoration();
 				}
 				return getOwnedCompositionDecoration();
 			}
 			// an aggregation?
-			else if(aggregationValue == 1) {
-				if(navigationValue == 1) {
+			else if (aggregationValue == 1) {
+				if (navigationValue == 1) {
 					return getOwnedNavigableAggregationDecoration();
 				}
 				return getOwnedAggregationDecoration();
 			}
 			// Is it navigable?
-			else if(navigationValue == 1) {
+			else if (navigationValue == 1) {
 				return getOwnedNavigationDecoration();
 			} else {
 				return getOwnedDecoration();
 			}
 		} else {
 			// this is composite.
-			if(compositeValue == 1) {
-				if(navigationValue == 1) {
+			if (compositeValue == 1) {
+				if (navigationValue == 1) {
 					return getNavigableCompositionDecoration();
 				}
 				return getCompositionDecoration();
 			}
 			// an aggregation?
-			else if(aggregationValue == 1) {
-				if(navigationValue == 1) {
+			else if (aggregationValue == 1) {
+				if (navigationValue == 1) {
 					return getNavigableAggregationDecoration();
 				}
 				return getAggregationDecoration();
 			}
 			// Is it naviagable?
-			else if(navigationValue == 1) {
+			else if (navigationValue == 1) {
 				return getNavigationDecoration();
 			}
 		}
@@ -226,7 +227,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the multiplicity source label.
-	 * 
+	 *
 	 * @return the multiplicity source label
 	 */
 	public WrappingLabel getMultiplicitySourceLabel() {
@@ -235,7 +236,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the multiplicity target label.
-	 * 
+	 *
 	 * @return the multiplicity target label
 	 */
 	public WrappingLabel getMultiplicityTargetLabel() {
@@ -244,7 +245,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the navigable aggregation decoration.
-	 * 
+	 *
 	 * @return the navigable aggregation decoration
 	 */
 	protected RotatableDecoration getNavigableAggregationDecoration() {
@@ -266,7 +267,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the navigable composition decoration.
-	 * 
+	 *
 	 * @return the navigable composition decoration
 	 */
 	protected RotatableDecoration getNavigableCompositionDecoration() {
@@ -287,7 +288,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the navigation decoration.
-	 * 
+	 *
 	 * @return the navigation decoration
 	 */
 	protected RotatableDecoration getNavigationDecoration() {
@@ -299,7 +300,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the owned aggregation decoration.
-	 * 
+	 *
 	 * @return the owned aggregation decoration
 	 */
 	protected RotatableDecoration getOwnedAggregationDecoration() {
@@ -338,7 +339,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the owned composition decoration.
-	 * 
+	 *
 	 * @return the owned composition decoration
 	 */
 	protected RotatableDecoration getOwnedCompositionDecoration() {
@@ -376,7 +377,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the owned decoration.
-	 * 
+	 *
 	 * @return the owned decoration
 	 */
 	protected RotatableDecoration getOwnedDecoration() {
@@ -397,7 +398,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the owned navigable aggregation decoration.
-	 * 
+	 *
 	 * @return the owned navigable aggregation decoration
 	 */
 	protected RotatableDecoration getOwnedNavigableAggregationDecoration() {
@@ -441,7 +442,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the owned navigable composition decoration.
-	 * 
+	 *
 	 * @return the owned navigable composition decoration
 	 */
 	protected RotatableDecoration getOwnedNavigableCompositionDecoration() {
@@ -483,7 +484,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the owned navigation decoration.
-	 * 
+	 *
 	 * @return the owned navigation decoration
 	 */
 	protected RotatableDecoration getOwnedNavigationDecoration() {
@@ -509,7 +510,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the role source label.
-	 * 
+	 *
 	 * @return the role source label
 	 */
 	public WrappingLabel getRoleSourceLabel() {
@@ -518,7 +519,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the role target label.
-	 * 
+	 *
 	 * @return the role target label
 	 */
 	public WrappingLabel getRoleTargetLabel() {
@@ -528,6 +529,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	/**
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		graphics.setAntialias(SWT.ON);
 		super.paintFigure(graphics);
@@ -535,11 +537,11 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * used to display end of the association.
-	 * 
+	 *
 	 * @param targetType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 * @param sourceType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 */
 	public void setEnd(int sourceType, int targetType) {
 		this.sourceType = sourceType;

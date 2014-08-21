@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,9 +55,9 @@ import org.eclipse.ui.PlatformUI;
  * A listener for part activation. Will ask the user whether to reload when he
  * enters an editor whose underlying resources have changed, used to trigger an
  * update of
- * 
+ *
  * @author Ansgar Radermacher (CEA LIST)
- * 
+ *
  * @deprecated The equivalent behavior has been implemented in oep.infra.core
  */
 @Deprecated
@@ -65,7 +65,7 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * This class is a simple pair storing a resource delta and whether this delta causes conflict with editor's resource
-	 * 
+	 *
 	 * @author vhemery
 	 */
 	private static class ResourceModification {
@@ -97,7 +97,7 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * Test if main model has changed
-	 * 
+	 *
 	 * @return true, when a resource for the underlying editor's main model has been updated
 	 * @deprecated use {@link #isMainModelModified()} instead
 	 */
@@ -108,7 +108,7 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * Test if main model has changed
-	 * 
+	 *
 	 * @return true, when a resource for the underlying editor's main model has been updated
 	 */
 	public boolean isMainModelModified() {
@@ -117,9 +117,9 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * Check if an underlying resource has changed
-	 * 
+	 *
 	 * @param resourcePathToTest
-	 *        path of resource to check changes for (including file extension)
+	 *            path of resource to check changes for (including file extension)
 	 * @return true, when this resource has been updated for this underlying editor
 	 */
 	public boolean isModified(IPath resourcePathToTest) {
@@ -128,11 +128,11 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * indicate that the resource for an editor have been modified
-	 * 
+	 *
 	 * @param changedResourcePath
-	 *        The path to the resource that has been changed
+	 *            The path to the resource that has been changed
 	 * @param delta
-	 *        additional information about the change
+	 *            additional information about the change
 	 * @deprecated use {@link #setModificationData(IPath, IResourceDelta, boolean)} instead
 	 */
 	@Deprecated
@@ -143,21 +143,21 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * Indicates that a resource for an editor has been modified
-	 * 
+	 *
 	 * @param changedResourcePath
-	 *        The path to the resource that has been changed (including file extension)
+	 *            The path to the resource that has been changed (including file extension)
 	 * @param delta
-	 *        additional information about the change
+	 *            additional information about the change
 	 * @param isMainResource
-	 *        true if resource is part of the main model
+	 *            true if resource is part of the main model
 	 * @param resourceConflicts
-	 *        true if the resource contains modifications that should conflict with these changes
+	 *            true if the resource contains modifications that should conflict with these changes
 	 */
 	public void setModificationData(IPath changedResourcePath, IResourceDelta delta, boolean isMainResource, boolean resourceConflicts) {
-		if(resourceModifications.containsKey(changedResourcePath)) {
-			//merge two modifications : 1. merge conflicts the pessimistic way
+		if (resourceModifications.containsKey(changedResourcePath)) {
+			// merge two modifications : 1. merge conflicts the pessimistic way
 			resourceModifications.get(changedResourcePath).conflict |= resourceConflicts;
-			//merge two modifications : 2. take latest delta
+			// merge two modifications : 2. take latest delta
 			/*
 			 * Some delta information is lost, but kind is the best one :
 			 * If new delta kind is REMOVED, then ok : resource removed at the end
@@ -167,23 +167,24 @@ public class PartActivationListener implements IPartListener {
 			resourceModifications.get(changedResourcePath).delta = delta;
 		}
 		resourceModifications.put(changedResourcePath, new ResourceModification(delta, resourceConflicts));
-		if(isMainResource) {
+		if (isMainResource) {
 			changedMainResourcePaths.add(changedResourcePath);
 		}
 	}
 
+	@Override
 	public void partActivated(IWorkbenchPart part) {
 		// don't use (part == editor.getSite().getPart()), since different views
 		// (e.g. model explorer or property)
 		// of an active editor may actually be selected
 		IMultiDiagramEditor activeEditor = EditorUtils.getMultiDiagramEditor();
 
-		if((editor == activeEditor) && !resourceModifications.isEmpty()) {
+		if ((editor == activeEditor) && !resourceModifications.isEmpty()) {
 			// the byte union of all kinds of delta met for main resource
 			int mainDeltaKinds = 0;
-			if(!changedMainResourcePaths.isEmpty()) {
+			if (!changedMainResourcePaths.isEmpty()) {
 				// look up deltas for the main model
-				for(IPath mainPath : changedMainResourcePaths) {
+				for (IPath mainPath : changedMainResourcePaths) {
 					ResourceModification modif = resourceModifications.get(mainPath);
 					mainDeltaKinds |= modif.delta.getKind();
 				}
@@ -194,11 +195,11 @@ public class PartActivationListener implements IPartListener {
 			Set<String> removedModels = new HashSet<String>();
 			// store conflicts in addition for changed models
 			Map<String, Boolean> changedModels = new HashMap<String, Boolean>();
-			for(Entry<IPath, ResourceModification> entry : resourceModifications.entrySet()) {
+			for (Entry<IPath, ResourceModification> entry : resourceModifications.entrySet()) {
 				IPath path = entry.getKey();
 				ResourceModification modif = entry.getValue();
 				deltaKinds |= modif.delta.getKind();
-				switch(modif.delta.getKind()) {
+				switch (modif.delta.getKind()) {
 				case IResourceDelta.ADDED:
 					addedModels.add(path.removeFileExtension().toString());
 					break;
@@ -208,7 +209,7 @@ public class PartActivationListener implements IPartListener {
 				case IResourceDelta.CHANGED:
 					String key = path.removeFileExtension().toString();
 					// do not erase value if a conflicting resource has already been met for this model
-					if(!changedModels.containsKey(key) || !changedModels.get(key)) {
+					if (!changedModels.containsKey(key) || !changedModels.get(key)) {
 						changedModels.put(key, modif.conflict);
 					}
 					break;
@@ -225,25 +226,25 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * Handle delta kinds with appropriate message and editor action.
-	 * 
+	 *
 	 * @param deltaKinds
-	 *        the byte union of met deltas (on all resources)
+	 *            the byte union of met deltas (on all resources)
 	 * @param addedModels
-	 *        the models with added delta (taken in account if (deltaKinds & IResourceDelta.ADDED) > 0)
+	 *            the models with added delta (taken in account if (deltaKinds & IResourceDelta.ADDED) > 0)
 	 * @param removedModels
-	 *        the models with removed delta (taken in account if (deltaKinds & IResourceDelta.REMOVED) > 0)
+	 *            the models with removed delta (taken in account if (deltaKinds & IResourceDelta.REMOVED) > 0)
 	 * @param changedModels
-	 *        the models with changed delta (taken in account if (deltaKinds & IResourceDelta.CHANGED) > 0) and whether they conflict with current
-	 *        editor's changes
+	 *            the models with changed delta (taken in account if (deltaKinds & IResourceDelta.CHANGED) > 0) and whether they conflict with current
+	 *            editor's changes
 	 * @param mainDeltaKinds
-	 *        the byte union of met deltas (on main resources only)
+	 *            the byte union of met deltas (on main resources only)
 	 */
 	private void handleDeltaKinds(int deltaKinds, Set<String> addedModels, Set<String> removedModels, Map<String, Boolean> changedModels, int mainDeltaKinds) {
 		// use masks to check encountered delta types
-		if((deltaKinds & IResourceDelta.ADDED) > 0) {
+		if ((deltaKinds & IResourceDelta.ADDED) > 0) {
 			// no particular treatment
 		}
-		if((deltaKinds & IResourceDelta.REMOVED) > 0) {
+		if ((deltaKinds & IResourceDelta.REMOVED) > 0) {
 			// asynchronous notification to avoid that the removal of
 			// multiple resource files
 			// belonging to the editor (e.g. .uml and .notation) at the same
@@ -251,14 +252,14 @@ public class PartActivationListener implements IPartListener {
 			// user feedback.
 			String msg = ""; //$NON-NLS-1$
 			String list = getModelsListString(removedModels);
-			if(removedModels.size() == 1) {
+			if (removedModels.size() == 1) {
 				msg = String.format(Messages.PartActivationListener_RemovedMsg_single, list);
 			} else {
 				msg = String.format(Messages.PartActivationListener_RemovedMsg_many, list);
 			}
 			MessageDialog.openInformation(new Shell(), Messages.PartActivationListener_RemovedTitle, msg);
 		}
-		if((deltaKinds & IResourceDelta.CHANGED) > 0) {
+		if ((deltaKinds & IResourceDelta.CHANGED) > 0) {
 			// reopen the editor asynchronously to avoid that changes of
 			// multiple resource files
 			// belonging to the editor (e.g. .uml and .notation) lead to
@@ -267,28 +268,28 @@ public class PartActivationListener implements IPartListener {
 			boolean mainChanged = (mainDeltaKinds & IResourceDelta.CHANGED) > 0;
 			String msg = ""; //$NON-NLS-1$
 			String list = getModelsListString(changedModels.keySet());
-			if(changedModels.size() == 1 && mainChanged) {
+			if (changedModels.size() == 1 && mainChanged) {
 				msg = String.format(Messages.PartActivationListener_ChangedMainMsg_single, list);
-			} else if(mainChanged) {
+			} else if (mainChanged) {
 				msg = String.format(Messages.PartActivationListener_ChangedMainMsg_many, list);
-			} else if(changedModels.size() == 1) {
+			} else if (changedModels.size() == 1) {
 				msg = String.format(Messages.PartActivationListener_ChangedMsg_single, list);
 			} else {
 				msg = String.format(Messages.PartActivationListener_ChangedMsg_many, list);
 			}
-			if(editor.isDirty() && mainChanged) {
+			if (editor.isDirty() && mainChanged) {
 				msg += System.getProperty("line.separator"); //$NON-NLS-1$
 				msg += System.getProperty("line.separator"); //$NON-NLS-1$
 				msg += Messages.PartActivationListener_ChangedMainWarning;
-			} else if(editor.isDirty()) {
+			} else if (editor.isDirty()) {
 				// select conflicting models only
 				HashSet<String> dirtyModels = new HashSet<String>(changedModels.size());
-				for(Entry<String, Boolean> entry : changedModels.entrySet()) {
-					if(entry.getValue()) {
+				for (Entry<String, Boolean> entry : changedModels.entrySet()) {
+					if (entry.getValue()) {
 						dirtyModels.add(entry.getKey());
 					}
 				}
-				if(!dirtyModels.isEmpty()) {
+				if (!dirtyModels.isEmpty()) {
 					String dirtyList = getModelsListString(dirtyModels);
 					msg += System.getProperty("line.separator"); //$NON-NLS-1$
 					msg += System.getProperty("line.separator"); //$NON-NLS-1$
@@ -296,8 +297,8 @@ public class PartActivationListener implements IPartListener {
 				}
 			}
 
-			if(MessageDialog.openQuestion(new Shell(), Messages.PartActivationListener_ChangedTitle, msg)) {
-				if(mainChanged) {
+			if (MessageDialog.openQuestion(new Shell(), Messages.PartActivationListener_ChangedTitle, msg)) {
+				if (mainChanged) {
 					// unloading and reloading all resources of the main causes
 					// the following problems
 					// - since resources are removed during the modelSets unload
@@ -310,6 +311,7 @@ public class PartActivationListener implements IPartListener {
 					// editor.
 					Display.getCurrent().asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
 							IWorkbench wb = PlatformUI.getWorkbench();
 							IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
@@ -326,10 +328,10 @@ public class PartActivationListener implements IPartListener {
 				} else {
 					// sub models can be reloaded on their own without reloading the whole model
 					Object dom = editor.getAdapter(EditingDomain.class);
-					if(dom instanceof EditingDomain) {
-						Command refreshCmd = getRefreshCommand((EditingDomain)dom, changedModels.keySet());
-						if(refreshCmd.canExecute()) {
-							((EditingDomain)dom).getCommandStack().execute(refreshCmd);
+					if (dom instanceof EditingDomain) {
+						Command refreshCmd = getRefreshCommand((EditingDomain) dom, changedModels.keySet());
+						if (refreshCmd.canExecute()) {
+							((EditingDomain) dom).getCommandStack().execute(refreshCmd);
 						}
 					}
 				}
@@ -339,11 +341,11 @@ public class PartActivationListener implements IPartListener {
 
 	/**
 	 * Get the command to refresh the changed models
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain
+	 *            editing domain
 	 * @param changedModels
-	 *        the models to refresh
+	 *            the models to refresh
 	 * @return the command to refresh all changed models
 	 */
 	private Command getRefreshCommand(final EditingDomain domain, final Set<String> changedModels) {
@@ -355,13 +357,15 @@ public class PartActivationListener implements IPartListener {
 			/** URIs of models to update */
 			List<URI> urisToUpdate;
 
+			@Override
 			public void execute() {
-				for(URI uri : urisToUpdate) {
+				for (URI uri : urisToUpdate) {
 					LoadingUtils.unloadResourcesFromModelSet(modelSet, uri, false);
 					LoadingUtils.loadResourcesInModelSet(modelSet, uri);
 				}
 			}
 
+			@Override
 			public void redo() {
 				execute();
 			}
@@ -374,10 +378,10 @@ public class PartActivationListener implements IPartListener {
 			@Override
 			protected boolean prepare() {
 				ResourceSet set = domain.getResourceSet();
-				if(set instanceof ModelSet) {
-					modelSet = (ModelSet)set;
+				if (set instanceof ModelSet) {
+					modelSet = (ModelSet) set;
 					urisToUpdate = new ArrayList<URI>(changedModels.size());
-					for(String pathString : changedModels) {
+					for (String pathString : changedModels) {
 						IPath path = Path.fromPortableString(pathString);
 						urisToUpdate.add(URI.createPlatformResourceURI(path.toString(), true));
 					}
@@ -393,18 +397,18 @@ public class PartActivationListener implements IPartListener {
 	/**
 	 * Get formatted string with all models of the set displayed in it, separated with a line separator.
 	 * An additional separator is added at the beginning to allow separate display of the list in case there are several elements.
-	 * 
+	 *
 	 * @param models
-	 *        set of models path
+	 *            set of models path
 	 * @return formatted list string
 	 */
 	private String getModelsListString(Set<String> models) {
 		StringBuffer list = new StringBuffer();
 		Iterator<String> it = models.iterator();
-		if(models.size() == 1) {
+		if (models.size() == 1) {
 			return it.next();
 		}
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			String model = it.next();
 			list.append(System.getProperty("line.separator")); //$NON-NLS-1$
 			list.append(model);
@@ -412,15 +416,19 @@ public class PartActivationListener implements IPartListener {
 		return list.toString();
 	}
 
+	@Override
 	public void partDeactivated(IWorkbenchPart part) {
 	}
 
+	@Override
 	public void partBroughtToTop(IWorkbenchPart part) {
 	}
 
+	@Override
 	public void partClosed(IWorkbenchPart part) {
 	}
 
+	@Override
 	public void partOpened(IWorkbenchPart part) {
 	}
 }

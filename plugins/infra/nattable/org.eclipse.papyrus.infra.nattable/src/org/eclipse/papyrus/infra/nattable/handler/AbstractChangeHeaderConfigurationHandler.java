@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,27 +32,28 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Abstract class to edit the header cofniguration
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractChangeHeaderConfigurationHandler extends AbstractTableHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		AbstractHeaderAxisConfiguration configuration = getEditedAxisConfiguration();
 		final CompositeCommand cmd = new CompositeCommand("ChangeHeaderConfigurationCommand"); //$NON-NLS-1$
-		TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
-		if(configuration instanceof TableHeaderAxisConfiguration) {
-			//we can't edit it, because it's comes from the initial configuration
-			configuration = HeaderAxisConfigurationManagementUtils.transformToLocalHeaderConfiguration((TableHeaderAxisConfiguration)configuration);
+		TransactionalEditingDomain domain = getTableEditingDomain();
+		if (configuration instanceof TableHeaderAxisConfiguration) {
+			// we can't edit it, because it's comes from the initial configuration
+			configuration = HeaderAxisConfigurationManagementUtils.transformToLocalHeaderConfiguration((TableHeaderAxisConfiguration) configuration);
 			final Table table = getCurrentNattableModelManager().getTable();
 			final IEditCommandRequest request = new SetRequest(domain, table, getLocalHeaderAxisConfigurationFeature(), configuration);
 			final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(table);
@@ -68,21 +69,21 @@ public abstract class AbstractChangeHeaderConfigurationHandler extends AbstractT
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
-	 * 
+	 *
 	 */
 	protected abstract EStructuralFeature getLocalHeaderAxisConfigurationFeature();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited feature
 	 */
 	protected abstract EStructuralFeature getEditedFeature();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited axis configuration
 	 */

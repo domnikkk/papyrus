@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
+import org.eclipse.emf.workspace.WorkspaceEditingDomainFactory;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gmf.runtime.emf.core.GMFEditingDomainFactory;
 import org.eclipse.gmf.runtime.notation.Diagram;
@@ -103,12 +104,13 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public UMLNavigatorContentProvider() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
-		myEditingDomain = (AdapterFactoryEditingDomain)editingDomain;
+		TransactionalEditingDomain editingDomain = WorkspaceEditingDomainFactory.INSTANCE.createEditingDomain();
+		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 
+			@Override
 			public Object get(Object key) {
-				if(!containsKey(key)) {
+				if (!containsKey(key)) {
 					put(key, Boolean.TRUE);
 				}
 				return super.get(key);
@@ -116,45 +118,50 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		});
 		myViewerRefreshRunnable = new Runnable() {
 
+			@Override
 			public void run() {
-				if(myViewer != null) {
+				if (myViewer != null) {
 					myViewer.refresh();
 				}
 			}
 		};
 		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
 
+			@Override
 			public void dispose() {
 			}
 
+			@Override
 			public boolean handleResourceChanged(final Resource resource) {
-				for(Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-					Resource nextResource = (Resource)it.next();
+				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+					Resource nextResource = (Resource) it.next();
 					nextResource.unload();
 				}
-				if(myViewer != null) {
+				if (myViewer != null) {
 					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 				}
 				return true;
 			}
 
+			@Override
 			public boolean handleResourceDeleted(Resource resource) {
-				for(Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-					Resource nextResource = (Resource)it.next();
+				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+					Resource nextResource = (Resource) it.next();
 					nextResource.unload();
 				}
-				if(myViewer != null) {
+				if (myViewer != null) {
 					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 				}
 				return true;
 			}
 
+			@Override
 			public boolean handleResourceMoved(Resource resource, final URI newURI) {
-				for(Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-					Resource nextResource = (Resource)it.next();
+				for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+					Resource nextResource = (Resource) it.next();
 					nextResource.unload();
 				}
-				if(myViewer != null) {
+				if (myViewer != null) {
 					myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 				}
 				return true;
@@ -163,10 +170,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForPackageEditPart(View view, Object parentElement) {
@@ -194,17 +201,17 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		links.addChildren(createNavigatorItems(connectedViews, links, false));
 		connectedViews = getDiagramLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(GeneralOrderingEditPart.VISUAL_ID));
 		links.addChildren(createNavigatorItems(connectedViews, links, false));
-		if(!links.isEmpty()) {
+		if (!links.isEmpty()) {
 			result.add(links);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForInteractionEditPart(View view, Object parentElement) {
@@ -265,20 +272,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForLifelineEditPart(View view, Object parentElement) {
@@ -333,20 +340,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForActionExecutionSpecificationEditPart(View view, Object parentElement) {
@@ -385,20 +392,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForBehaviorExecutionSpecificationEditPart(View view, Object parentElement) {
@@ -437,20 +444,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForStateInvariantEditPart(View view, Object parentElement) {
@@ -489,20 +496,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForCombinedFragment2EditPart(View view, Object parentElement) {
@@ -541,20 +548,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForTimeConstraintEditPart(View view, Object parentElement) {
@@ -595,20 +602,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForDurationObservationEditPart(View view, Object parentElement) {
@@ -647,20 +654,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForTimeObservationEditPart(View view, Object parentElement) {
@@ -699,20 +706,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForDurationConstraintEditPart(View view, Object parentElement) {
@@ -753,20 +760,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForInteractionUseEditPart(View view, Object parentElement) {
@@ -805,20 +812,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForCombinedFragmentEditPart(View view, Object parentElement) {
@@ -860,20 +867,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForInteractionOperandEditPart(View view, Object parentElement) {
@@ -920,20 +927,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForContinuationEditPart(View view, Object parentElement) {
@@ -972,20 +979,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForConstraintEditPart(View view, Object parentElement) {
@@ -1026,20 +1033,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForDurationConstraintInMessageEditPart(View view, Object parentElement) {
@@ -1080,20 +1087,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getOutgoingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForCommentEditPart(View view, Object parentElement) {
@@ -1134,20 +1141,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForConsiderIgnoreFragmentEditPart(View view, Object parentElement) {
@@ -1186,20 +1193,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessageEditPart(View view, Object parentElement) {
@@ -1284,26 +1291,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessage2EditPart(View view, Object parentElement) {
@@ -1388,26 +1395,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessage3EditPart(View view, Object parentElement) {
@@ -1492,26 +1499,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessage4EditPart(View view, Object parentElement) {
@@ -1596,26 +1603,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessage5EditPart(View view, Object parentElement) {
@@ -1700,26 +1707,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessage6EditPart(View view, Object parentElement) {
@@ -1804,26 +1811,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template this method is a modification of gmf code in order to avoid
 	 * getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForMessage7EditPart(View view, Object parentElement) {
@@ -1908,26 +1915,26 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationObservationEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForCommentAnnotatedElementEditPart(View view, Object parentElement) {
@@ -1974,20 +1981,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		target.addChildren(createNavigatorItems(connectedViews, target, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(CommentEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForDestructionOccurrenceSpecificationEditPart(View view, Object parentElement) {
@@ -2026,20 +2033,20 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 		connectedViews = getIncomingLinksByType(Collections.singleton(view), UMLVisualIDRegistry.getType(ConstraintConstrainedElementEditPart.VISUAL_ID));
 		incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-		if(!incominglinks.isEmpty()) {
+		if (!incominglinks.isEmpty()) {
 			result.add(incominglinks);
 		}
-		if(!outgoinglinks.isEmpty()) {
+		if (!outgoinglinks.isEmpty()) {
 			result.add(outgoinglinks);
 		}
 		return result.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * Papyrus Template
 	 * this method is a modification of gmf code in order to avoid getViewChidreen() method becoming greater than 64kb.
-	 * 
+	 *
 	 * @generated
 	 **/
 	private Object[] getViewChildrenForConstraintConstrainedElementEditPart(View view, Object parentElement) {
@@ -2092,10 +2099,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
 		connectedViews = getLinksSourceByType(Collections.singleton(view), UMLVisualIDRegistry.getType(DurationConstraintInMessageEditPart.VISUAL_ID));
 		source.addChildren(createNavigatorItems(connectedViews, source, true));
-		if(!target.isEmpty()) {
+		if (!target.isEmpty()) {
 			result.add(target);
 		}
-		if(!source.isEmpty()) {
+		if (!source.isEmpty()) {
 			result.add(source);
 		}
 		return result.toArray();
@@ -2104,21 +2111,23 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		myWorkspaceSynchronizer.dispose();
 		myWorkspaceSynchronizer = null;
 		myViewerRefreshRunnable = null;
-		for(Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
-			Resource resource = (Resource)it.next();
+		for (Iterator it = myEditingDomain.getResourceSet().getResources().iterator(); it.hasNext();) {
+			Resource resource = (Resource) it.next();
 			resource.unload();
 		}
-		((TransactionalEditingDomain)myEditingDomain).dispose();
+		((TransactionalEditingDomain) myEditingDomain).dispose();
 		myEditingDomain = null;
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		myViewer = viewer;
 	}
@@ -2126,6 +2135,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object[] getElements(Object inputElement) {
 		return getChildren(inputElement);
 	}
@@ -2133,40 +2143,44 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void restoreState(IMemento aMemento) {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public void saveState(IMemento aMemento) {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof IFile) {
-			IFile file = (IFile)parentElement;
+		if (parentElement instanceof IFile) {
+			IFile file = (IFile) parentElement;
 			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
 			Collection result = new ArrayList();
 			result.addAll(createNavigatorItems(selectViewsByType(resource.getContents(), PackageEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
-		if(parentElement instanceof UMLNavigatorGroup) {
-			UMLNavigatorGroup group = (UMLNavigatorGroup)parentElement;
+		if (parentElement instanceof UMLNavigatorGroup) {
+			UMLNavigatorGroup group = (UMLNavigatorGroup) parentElement;
 			return group.getChildren();
 		}
-		if(parentElement instanceof UMLNavigatorItem) {
-			UMLNavigatorItem navigatorItem = (UMLNavigatorItem)parentElement;
-			if(navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
+		if (parentElement instanceof UMLNavigatorItem) {
+			UMLNavigatorItem navigatorItem = (UMLNavigatorItem) parentElement;
+			if (navigatorItem.isLeaf() || !isOwnView(navigatorItem.getView())) {
 				return EMPTY_ARRAY;
 			}
 			return getViewChildren(navigatorItem.getView(), parentElement);
@@ -2178,150 +2192,121 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 * @generated
 	 */
 	private Object[] getViewChildren(View view, Object parentElement) {
-		switch(UMLVisualIDRegistry.getVisualID(view)) {
-		case PackageEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		switch (UMLVisualIDRegistry.getVisualID(view)) {
+		case PackageEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForPackageEditPart(view, parentElement);
 		}
-		case InteractionEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case InteractionEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForInteractionEditPart(view, parentElement);
 		}
-		case LifelineEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case LifelineEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForLifelineEditPart(view, parentElement);
 		}
-		case InteractionUseEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case InteractionUseEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForInteractionUseEditPart(view, parentElement);
 		}
-		case BehaviorExecutionSpecificationEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case BehaviorExecutionSpecificationEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForBehaviorExecutionSpecificationEditPart(view, parentElement);
 		}
-		case CombinedFragmentEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case CombinedFragmentEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForCombinedFragmentEditPart(view, parentElement);
 		}
-		case InteractionOperandEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case InteractionOperandEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForInteractionOperandEditPart(view, parentElement);
 		}
-		case ActionExecutionSpecificationEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case ActionExecutionSpecificationEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForActionExecutionSpecificationEditPart(view, parentElement);
 		}
-		case ConsiderIgnoreFragmentEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case ConsiderIgnoreFragmentEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForConsiderIgnoreFragmentEditPart(view, parentElement);
 		}
-		case ConstraintEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case ConstraintEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForConstraintEditPart(view, parentElement);
 		}
-		case CommentEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case CommentEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForCommentEditPart(view, parentElement);
 		}
-		case ContinuationEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case ContinuationEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForContinuationEditPart(view, parentElement);
 		}
-		case StateInvariantEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case StateInvariantEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForStateInvariantEditPart(view, parentElement);
 		}
-		case CombinedFragment2EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case CombinedFragment2EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForCombinedFragment2EditPart(view, parentElement);
 		}
-		case TimeConstraintEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case TimeConstraintEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForTimeConstraintEditPart(view, parentElement);
 		}
-		case TimeObservationEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case TimeObservationEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForTimeObservationEditPart(view, parentElement);
 		}
-		case DurationConstraintEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case DurationConstraintEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForDurationConstraintEditPart(view, parentElement);
 		}
-		case DestructionOccurrenceSpecificationEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case DestructionOccurrenceSpecificationEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForDestructionOccurrenceSpecificationEditPart(view, parentElement);
 		}
-		case DurationConstraintInMessageEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case DurationConstraintInMessageEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForDurationConstraintInMessageEditPart(view, parentElement);
 		}
-		case DurationObservationEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case DurationObservationEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForDurationObservationEditPart(view, parentElement);
 		}
-		case MessageEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case MessageEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessageEditPart(view, parentElement);
 		}
-		case Message2EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case Message2EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessage2EditPart(view, parentElement);
 		}
-		case Message3EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case Message3EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessage3EditPart(view, parentElement);
 		}
-		case Message4EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case Message4EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessage4EditPart(view, parentElement);
 		}
-		case Message5EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case Message5EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessage5EditPart(view, parentElement);
 		}
-		case Message6EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case Message6EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessage6EditPart(view, parentElement);
 		}
-		case Message7EditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case Message7EditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForMessage7EditPart(view, parentElement);
 		}
-		case CommentAnnotatedElementEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case CommentAnnotatedElementEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForCommentAnnotatedElementEditPart(view, parentElement);
 		}
-		case ConstraintConstrainedElementEditPart.VISUAL_ID:
-		{
-			//modification of the template to avoid mistake of 65kb.
+		case ConstraintConstrainedElementEditPart.VISUAL_ID: {
+			// modification of the template to avoid mistake of 65kb.
 			return getViewChildrenForConstraintConstrainedElementEditPart(view, parentElement);
 		}
 		}
@@ -2333,10 +2318,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getLinksSourceByType(Collection edges, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = edges.iterator(); it.hasNext();) {
-			Edge nextEdge = (Edge)it.next();
+		for (Iterator it = edges.iterator(); it.hasNext();) {
+			Edge nextEdge = (Edge) it.next();
 			View nextEdgeSource = nextEdge.getSource();
-			if(type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
+			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
 				result.add(nextEdgeSource);
 			}
 		}
@@ -2348,10 +2333,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getLinksTargetByType(Collection edges, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = edges.iterator(); it.hasNext();) {
-			Edge nextEdge = (Edge)it.next();
+		for (Iterator it = edges.iterator(); it.hasNext();) {
+			Edge nextEdge = (Edge) it.next();
 			View nextEdgeTarget = nextEdge.getTarget();
-			if(type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
+			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
 				result.add(nextEdgeTarget);
 			}
 		}
@@ -2363,8 +2348,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getOutgoingLinksByType(Collection nodes, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = nodes.iterator(); it.hasNext();) {
-			View nextNode = (View)it.next();
+		for (Iterator it = nodes.iterator(); it.hasNext();) {
+			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
 		}
 		return result;
@@ -2375,8 +2360,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getIncomingLinksByType(Collection nodes, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = nodes.iterator(); it.hasNext();) {
-			View nextNode = (View)it.next();
+		for (Iterator it = nodes.iterator(); it.hasNext();) {
+			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
 		}
 		return result;
@@ -2387,8 +2372,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getChildrenByType(Collection nodes, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = nodes.iterator(); it.hasNext();) {
-			View nextNode = (View)it.next();
+		for (Iterator it = nodes.iterator(); it.hasNext();) {
+			View nextNode = (View) it.next();
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
 		}
 		return result;
@@ -2399,8 +2384,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection getDiagramLinksByType(Collection diagrams, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = diagrams.iterator(); it.hasNext();) {
-			Diagram nextDiagram = (Diagram)it.next();
+		for (Iterator it = diagrams.iterator(); it.hasNext();) {
+			Diagram nextDiagram = (Diagram) it.next();
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
 		}
 		return result;
@@ -2411,9 +2396,9 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection selectViewsByType(Collection views, String type) {
 		Collection result = new ArrayList();
-		for(Iterator it = views.iterator(); it.hasNext();) {
-			View nextView = (View)it.next();
-			if(type.equals(nextView.getType()) && isOwnView(nextView)) {
+		for (Iterator it = views.iterator(); it.hasNext();) {
+			View nextView = (View) it.next();
+			if (type.equals(nextView.getType()) && isOwnView(nextView)) {
 				result.add(nextView);
 			}
 		}
@@ -2432,8 +2417,8 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	 */
 	private Collection createNavigatorItems(Collection views, Object parent, boolean isLeafs) {
 		Collection result = new ArrayList();
-		for(Iterator it = views.iterator(); it.hasNext();) {
-			result.add(new UMLNavigatorItem((View)it.next(), parent, isLeafs));
+		for (Iterator it = views.iterator(); it.hasNext();) {
+			result.add(new UMLNavigatorItem((View) it.next(), parent, isLeafs));
 		}
 		return result;
 	}
@@ -2441,9 +2426,10 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getParent(Object element) {
-		if(element instanceof UMLAbstractNavigatorItem) {
-			UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem)element;
+		if (element instanceof UMLAbstractNavigatorItem) {
+			UMLAbstractNavigatorItem abstractNavigatorItem = (UMLAbstractNavigatorItem) element;
 			return abstractNavigatorItem.getParent();
 		}
 		return null;
@@ -2452,6 +2438,7 @@ public class UMLNavigatorContentProvider implements ICommonContentProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean hasChildren(Object element) {
 		return element instanceof IFile || getChildren(element).length > 0;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -69,29 +69,29 @@ public class SequenceDeleteHelper {
 	/**
 	 * Complete an ICommand which destroys an DestructionEvent element to also destroy dependent time/duration constraint/observation linked with
 	 * these ends
-	 * 
+	 *
 	 * @param deleteViewsCmd
-	 *        the command to complete
+	 *            the command to complete
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param destructionEventPart
-	 *        the execution specification edit part on which the request is called
+	 *            the execution specification edit part on which the request is called
 	 * @return the deletion command deleteViewsCmd for convenience
 	 */
 	public static CompoundCommand completeDeleteDestructionOccurenceViewCommand(CompoundCommand deleteViewsCmd, TransactionalEditingDomain editingDomain, EditPart destructionEventPart) {
-		if(destructionEventPart instanceof IGraphicalEditPart) {
-			EObject obj = ((IGraphicalEditPart)destructionEventPart).resolveSemanticElement();
-			if(obj instanceof DestructionOccurrenceSpecification) {
+		if (destructionEventPart instanceof IGraphicalEditPart) {
+			EObject obj = ((IGraphicalEditPart) destructionEventPart).resolveSemanticElement();
+			if (obj instanceof DestructionOccurrenceSpecification) {
 				LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(destructionEventPart);
-				if(lifelinePart != null) {
-					for(Object lifelineChild : lifelinePart.getChildren()) {
-						if(lifelineChild instanceof IBorderItemEditPart) {
-							final IBorderItemEditPart timePart = (IBorderItemEditPart)lifelineChild;
-							//At most one destruction event. Only parts linked to it can not move for now.
+				if (lifelinePart != null) {
+					for (Object lifelineChild : lifelinePart.getChildren()) {
+						if (lifelineChild instanceof IBorderItemEditPart) {
+							final IBorderItemEditPart timePart = (IBorderItemEditPart) lifelineChild;
+							// At most one destruction event. Only parts linked to it can not move for now.
 							boolean isNotLinked = OccurrenceSpecificationMoveHelper.canTimeElementPartBeYMoved(timePart);
-							if(!isNotLinked) {
+							if (!isNotLinked) {
 								// time part is linked, delete the view
-								Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)timePart.getModel()));
+								Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) timePart.getModel()));
 								deleteViewsCmd.add(deleteTimeViewCommand);
 							}
 						}
@@ -105,32 +105,32 @@ public class SequenceDeleteHelper {
 	/**
 	 * Complete an ICommand which destroys an ExecutionSpecification element to also destroy dependent finish and start events and time/duration
 	 * constraint/observation linked with these ends
-	 * 
+	 *
 	 * @param deleteViewsCmd
-	 *        the command to complete
+	 *            the command to complete
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param executionPart
-	 *        the execution specification edit part on which the request is called
+	 *            the execution specification edit part on which the request is called
 	 * @return the deletion command deleteViewsCmd for convenience
 	 */
 	public static CompoundCommand completeDeleteMessageViewCommand(CompoundCommand deleteViewsCmd, TransactionalEditingDomain editingDomain, EditPart messagePart) {
-		if(messagePart instanceof IGraphicalEditPart) {
-			EObject obj = ((IGraphicalEditPart)messagePart).resolveSemanticElement();
-			if(obj instanceof Message) {
-				Message message = (Message)obj;
-				LifelineEditPart srcLifelinePart = SequenceUtil.getParentLifelinePart(((ConnectionNodeEditPart)messagePart).getSource());
+		if (messagePart instanceof IGraphicalEditPart) {
+			EObject obj = ((IGraphicalEditPart) messagePart).resolveSemanticElement();
+			if (obj instanceof Message) {
+				Message message = (Message) obj;
+				LifelineEditPart srcLifelinePart = SequenceUtil.getParentLifelinePart(((ConnectionNodeEditPart) messagePart).getSource());
 				MessageEnd send = message.getSendEvent();
 				addDeleteRelatedTimePartsToCommand(deleteViewsCmd, editingDomain, srcLifelinePart, send);
-				LifelineEditPart tgtLifelinePart = SequenceUtil.getParentLifelinePart(((ConnectionNodeEditPart)messagePart).getTarget());
+				LifelineEditPart tgtLifelinePart = SequenceUtil.getParentLifelinePart(((ConnectionNodeEditPart) messagePart).getTarget());
 				MessageEnd receive = message.getReceiveEvent();
 				addDeleteRelatedTimePartsToCommand(deleteViewsCmd, editingDomain, tgtLifelinePart, receive);
 				// also delete time observation links which are related to message end
-				if(send instanceof OccurrenceSpecification) {
-					addDeleteRelatedTimeObservationLinkCommand(deleteViewsCmd, editingDomain, (OccurrenceSpecification)send, srcLifelinePart, false);
+				if (send instanceof OccurrenceSpecification) {
+					addDeleteRelatedTimeObservationLinkCommand(deleteViewsCmd, editingDomain, (OccurrenceSpecification) send, srcLifelinePart, false);
 				}
-				if(receive instanceof OccurrenceSpecification) {
-					addDeleteRelatedTimeObservationLinkCommand(deleteViewsCmd, editingDomain, (OccurrenceSpecification)receive, tgtLifelinePart, false);
+				if (receive instanceof OccurrenceSpecification) {
+					addDeleteRelatedTimeObservationLinkCommand(deleteViewsCmd, editingDomain, (OccurrenceSpecification) receive, tgtLifelinePart, false);
 				}
 			}
 		}
@@ -138,14 +138,14 @@ public class SequenceDeleteHelper {
 	}
 
 	private static void addDeleteRelatedTimePartsToCommand(CompoundCommand deleteViewsCmd, TransactionalEditingDomain editingDomain, LifelineEditPart lifelineEP, MessageEnd messageEnd) {
-		if(lifelineEP != null && messageEnd instanceof OccurrenceSpecification) {
-			for(Object lifelineChild : lifelineEP.getChildren()) {
-				if(lifelineChild instanceof IBorderItemEditPart) {
-					final IBorderItemEditPart timePart = (IBorderItemEditPart)lifelineChild;
-					int positionForEvent = SequenceUtil.positionWhereEventIsLinkedToPart((OccurrenceSpecification)messageEnd, timePart);
-					if(positionForEvent != PositionConstants.NONE) {
+		if (lifelineEP != null && messageEnd instanceof OccurrenceSpecification) {
+			for (Object lifelineChild : lifelineEP.getChildren()) {
+				if (lifelineChild instanceof IBorderItemEditPart) {
+					final IBorderItemEditPart timePart = (IBorderItemEditPart) lifelineChild;
+					int positionForEvent = SequenceUtil.positionWhereEventIsLinkedToPart((OccurrenceSpecification) messageEnd, timePart);
+					if (positionForEvent != PositionConstants.NONE) {
 						// time part is linked, delete the view
-						Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)timePart.getModel()));
+						Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) timePart.getModel()));
 						deleteViewsCmd.add(deleteTimeViewCommand);
 					}
 				}
@@ -156,52 +156,52 @@ public class SequenceDeleteHelper {
 	/**
 	 * Complete an ICommand which destroys an ExecutionSpecification element to also destroy dependent finish and start events and time/duration
 	 * constraint/observation linked with these ends
-	 * 
+	 *
 	 * @param deleteViewsCmd
-	 *        the command to complete
+	 *            the command to complete
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param executionPart
-	 *        the execution specification edit part on which the request is called
+	 *            the execution specification edit part on which the request is called
 	 * @return the deletion command deleteViewsCmd for convenience
 	 */
 	public static CompoundCommand completeDeleteExecutionSpecificationViewCommand(CompoundCommand deleteViewsCmd, TransactionalEditingDomain editingDomain, EditPart executionPart) {
-		if(executionPart instanceof IGraphicalEditPart) {
-			EObject obj = ((IGraphicalEditPart)executionPart).resolveSemanticElement();
-			if(obj instanceof ExecutionSpecification) {
-				ExecutionSpecification execution = (ExecutionSpecification)obj;
+		if (executionPart instanceof IGraphicalEditPart) {
+			EObject obj = ((IGraphicalEditPart) executionPart).resolveSemanticElement();
+			if (obj instanceof ExecutionSpecification) {
+				ExecutionSpecification execution = (ExecutionSpecification) obj;
 				LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(executionPart);
-				if(lifelinePart != null) {
-					for(Object lifelineChild : lifelinePart.getChildren()) {
-						if(lifelineChild instanceof IBorderItemEditPart) {
-							final IBorderItemEditPart timePart = (IBorderItemEditPart)lifelineChild;
+				if (lifelinePart != null) {
+					for (Object lifelineChild : lifelinePart.getChildren()) {
+						if (lifelineChild instanceof IBorderItemEditPart) {
+							final IBorderItemEditPart timePart = (IBorderItemEditPart) lifelineChild;
 							OccurrenceSpecification start = execution.getStart();
 							OccurrenceSpecification finish = execution.getStart();
 							int positionForStart = SequenceUtil.positionWhereEventIsLinkedToPart(start, timePart);
 							int positionForFinish = SequenceUtil.positionWhereEventIsLinkedToPart(finish, timePart);
-							if(positionForStart != PositionConstants.NONE || positionForFinish != PositionConstants.NONE) {
+							if (positionForStart != PositionConstants.NONE || positionForFinish != PositionConstants.NONE) {
 								// time part is linked, delete the view
-								Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)timePart.getModel()));
+								Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) timePart.getModel()));
 								deleteViewsCmd.add(deleteTimeViewCommand);
 							}
 						}
 					}
 					// delete each observation linked time element
-					for(Object targetConnection : lifelinePart.getTargetConnections()) {
-						if(targetConnection instanceof ObservationLinkEditPart) {
-							ObservationLinkEditPart observationLinkEditPart = (ObservationLinkEditPart)targetConnection;
-							TimeObservationLabelEditPart source = (TimeObservationLabelEditPart)observationLinkEditPart.getSource();
+					for (Object targetConnection : lifelinePart.getTargetConnections()) {
+						if (targetConnection instanceof ObservationLinkEditPart) {
+							ObservationLinkEditPart observationLinkEditPart = (ObservationLinkEditPart) targetConnection;
+							TimeObservationLabelEditPart source = (TimeObservationLabelEditPart) observationLinkEditPart.getSource();
 							OccurrenceSpecification start = execution.getStart();
 							OccurrenceSpecification finish = execution.getFinish();
 							int positionForStart = SequenceUtil.positionWhereEventIsLinkedToPart(start, source);
 							int positionForFinish = SequenceUtil.positionWhereEventIsLinkedToPart(finish, source);
-							if(positionForStart != PositionConstants.NONE) {
+							if (positionForStart != PositionConstants.NONE) {
 								// time part is linked, delete the view
-								//Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)source.getModel()));
-								//deleteViewsCmd.add(deleteTimeViewCommand);
+								// Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)source.getModel()));
+								// deleteViewsCmd.add(deleteTimeViewCommand);
 								addDeleteRelatedTimeObservationLinkCommand(deleteViewsCmd, editingDomain, start, lifelinePart, false);
 							}
-							if(positionForFinish != PositionConstants.NONE) {
+							if (positionForFinish != PositionConstants.NONE) {
 								addDeleteRelatedTimeObservationLinkCommand(deleteViewsCmd, editingDomain, finish, lifelinePart, false);
 							}
 						}
@@ -214,44 +214,44 @@ public class SequenceDeleteHelper {
 
 	/**
 	 * Delete the views associated with a list of elements.
-	 * 
+	 *
 	 * @param cmd
-	 *        the CompositeTransactionalCommand
+	 *            the CompositeTransactionalCommand
 	 * @param element
-	 *        the list of model elements
+	 *            the list of model elements
 	 * @param editingDomain
-	 *        the editing domain to use.
+	 *            the editing domain to use.
 	 */
 	public static void deleteView(CompositeTransactionalCommand cmd, List<Element> elements, TransactionalEditingDomain editingDomain) {
-		for(Element element : elements) {
+		for (Element element : elements) {
 			deleteView(cmd, element, editingDomain);
 		}
 	}
 
 	/**
 	 * Delete the views associated with an element.
-	 * 
+	 *
 	 * @param cmd
-	 *        the CompositeTransactionalCommand
+	 *            the CompositeTransactionalCommand
 	 * @param element
-	 *        the model element referenced by the views
+	 *            the model element referenced by the views
 	 * @param editingDomain
-	 *        the editing domain to use.
+	 *            the editing domain to use.
 	 */
 	public static void deleteView(CompositeTransactionalCommand cmd, Element element, TransactionalEditingDomain editingDomain) {
 		// Destroy its views
 		@SuppressWarnings("rawtypes")
 		List views = DiagramEditPartsUtil.getEObjectViews(element);
-		for(Object object : views) {
-			if(object instanceof View) {
-				cmd.add(new DeleteCommand(editingDomain, (View)object));
+		for (Object object : views) {
+			if (object instanceof View) {
+				cmd.add(new DeleteCommand(editingDomain, (View) object));
 			}
 		}
 	}
 
 	/**
 	 * Add complete delete message command
-	 * 
+	 *
 	 * @param req
 	 * @param editPart
 	 * @return Command
@@ -259,20 +259,20 @@ public class SequenceDeleteHelper {
 	public static Command completeDeleteMessageCommand(DestroyElementRequest req, EditPart editPart) {
 		EObject selectedEObject = req.getElementToDestroy();
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-			if(deleteCommand != null) {
+			if (deleteCommand != null) {
 				CompositeCommand command = new CompositeCommand(deleteCommand.getLabel());
 				command.add(deleteCommand);
-				Message message = (Message)selectedEObject;
+				Message message = (Message) selectedEObject;
 				MessageEnd receiveEvent = message.getReceiveEvent();
-				if(receiveEvent != null) {
+				if (receiveEvent != null) {
 					DestroyElementRequest myReq = new DestroyElementRequest(req.getEditingDomain(), receiveEvent, false);
 					command.add(new DestroyElementCommand(myReq));
 				}
 				MessageEnd sendEvent = message.getSendEvent();
-				if(sendEvent != null) {
+				if (sendEvent != null) {
 					DestroyElementRequest myReq = new DestroyElementRequest(req.getEditingDomain(), sendEvent, false);
 					command.add(new DestroyElementCommand(myReq));
 				}
@@ -292,11 +292,11 @@ public class SequenceDeleteHelper {
 		DestroyElementRequest delEnd = new DestroyElementRequest(req.getEditingDomain(), es.getFinish(), false);
 		deleteElementsCommand.add(new ICommandProxy(new DestroyElementCommand(delEnd)));
 		destroyMessageEvents(deleteElementsCommand, host, req.getEditingDomain());
-		if(host.getParent() instanceof LifelineEditPart) {
+		if (host.getParent() instanceof LifelineEditPart) {
 			List<OccurrenceSpecification> oss = new ArrayList<OccurrenceSpecification>();
 			oss.add(es.getStart());
 			oss.add(es.getFinish());
-			SequenceDeleteHelper.addDeleteRelatedTimeObservationLinkCommand(deleteElementsCommand, req.getEditingDomain(), (LifelineEditPart)host.getParent(), oss, true);
+			SequenceDeleteHelper.addDeleteRelatedTimeObservationLinkCommand(deleteElementsCommand, req.getEditingDomain(), (LifelineEditPart) host.getParent(), oss, true);
 		}
 		SequenceDeleteHelper.addDestroyExecutionSpecificationChildrenCommand(deleteElementsCommand, req.getEditingDomain(), host);
 	}
@@ -307,32 +307,32 @@ public class SequenceDeleteHelper {
 	}
 
 	static void destroyMessageEvents(CompoundCommand deleteElementsCommand, List list, TransactionalEditingDomain transactionalEditingDomain) {
-		for(Object o : list)
-			if(o instanceof ConnectionEditPart) {
-				EObject model = ((ConnectionEditPart)o).resolveSemanticElement();
-				if(model instanceof Message) {
-					Message message = (Message)model;
+		for (Object o : list) {
+			if (o instanceof ConnectionEditPart) {
+				EObject model = ((ConnectionEditPart) o).resolveSemanticElement();
+				if (model instanceof Message) {
+					Message message = (Message) model;
 					MessageEnd receiveEvent = message.getReceiveEvent();
-					if(receiveEvent != null) {
+					if (receiveEvent != null) {
 						DestroyElementRequest myReq = new DestroyElementRequest(transactionalEditingDomain, receiveEvent, false);
-						//Sometimes, the message end is also the end of a execution.
+						// Sometimes, the message end is also the end of a execution.
 						RestoreExecutionEndAdvice provider = new RestoreExecutionEndAdvice();
-						if(provider != null) {
+						if (provider != null) {
 							ICommand editCommand = provider.getAfterEditCommand(myReq);
-							if(editCommand != null && editCommand.canExecute()) {
+							if (editCommand != null && editCommand.canExecute()) {
 								deleteElementsCommand.add(new ICommandProxy(editCommand));
 							}
 						}
 						deleteElementsCommand.add(new ICommandProxy(new DestroyElementCommand(myReq)));
 					}
 					MessageEnd sendEvent = message.getSendEvent();
-					if(sendEvent != null) {
+					if (sendEvent != null) {
 						DestroyElementRequest myReq = new DestroyElementRequest(transactionalEditingDomain, sendEvent, false);
-						//Sometimes, the message end is also the end of a execution.
+						// Sometimes, the message end is also the end of a execution.
 						RestoreExecutionEndAdvice provider = new RestoreExecutionEndAdvice();
-						if(provider != null) {
+						if (provider != null) {
 							ICommand editCommand = provider.getAfterEditCommand(myReq);
-							if(editCommand != null && editCommand.canExecute()) {
+							if (editCommand != null && editCommand.canExecute()) {
 								deleteElementsCommand.add(new ICommandProxy(editCommand));
 							}
 						}
@@ -340,11 +340,12 @@ public class SequenceDeleteHelper {
 					}
 				}
 			}
+		}
 	}
 
 	static void addDestroyExecutionSpecificationChildrenCommand(CompoundCommand deleteElementsCommand, TransactionalEditingDomain editingDomain, ShapeNodeEditPart part) {
 		List<ShapeNodeEditPart> list = LifelineXYLayoutEditPolicy.getAffixedExecutionSpecificationEditParts(part);
-		for(ShapeNodeEditPart p : list) {
+		for (ShapeNodeEditPart p : list) {
 			Request request = new EditCommandRequestWrapper(new DestroyElementRequest(p.resolveSemanticElement(), false));
 			deleteElementsCommand.add(p.getCommand(request));
 			destroyMessageEvents(deleteElementsCommand, p.getSourceConnections(), editingDomain);
@@ -354,7 +355,7 @@ public class SequenceDeleteHelper {
 
 	/**
 	 * Add delete message related time observation link command
-	 * 
+	 *
 	 * @param editingDomain
 	 * @param editPart
 	 * @param command
@@ -362,12 +363,12 @@ public class SequenceDeleteHelper {
 	 * @param deleteRelatedEvent
 	 */
 	static void addDeleteMessageRelatedTimeObservationLinkCommand(TransactionalEditingDomain editingDomain, EditPart editPart, CompoundCommand compoundCommand, MessageEnd messageEnd, boolean deleteRelatedEvent) {
-		//Bug fix: messageEnd maybe a Gate instance.
-		if(messageEnd != null && messageEnd instanceof OccurrenceSpecification) {
-			OccurrenceSpecification occurrenceSpecification = (OccurrenceSpecification)messageEnd;
+		// Bug fix: messageEnd maybe a Gate instance.
+		if (messageEnd != null && messageEnd instanceof OccurrenceSpecification) {
+			OccurrenceSpecification occurrenceSpecification = (OccurrenceSpecification) messageEnd;
 			EList<Lifeline> receiveCovereds = occurrenceSpecification.getCovereds();
-			if(receiveCovereds.size() > 0) {
-				LifelineEditPart srcLifelinePart = (LifelineEditPart)SequenceUtil.getEditPart(editPart, receiveCovereds.get(0), LifelineEditPart.class);
+			if (receiveCovereds.size() > 0) {
+				LifelineEditPart srcLifelinePart = (LifelineEditPart) SequenceUtil.getEditPart(editPart, receiveCovereds.get(0), LifelineEditPart.class);
 				addDeleteRelatedTimeObservationLinkCommand(compoundCommand, editingDomain, occurrenceSpecification, srcLifelinePart, deleteRelatedEvent);
 			}
 		}
@@ -375,7 +376,7 @@ public class SequenceDeleteHelper {
 
 	/**
 	 * Add command for deleting time observation link which related to occurence specification
-	 * 
+	 *
 	 * @param deleteViewsCmd
 	 * @param editingDomain
 	 * @param os
@@ -390,7 +391,7 @@ public class SequenceDeleteHelper {
 
 	/**
 	 * Add command for deleting time observation link which related to occurence specification
-	 * 
+	 *
 	 * @param deleteViewsCmd
 	 * @param editingDomain
 	 * @param srcLifelinePart
@@ -399,19 +400,19 @@ public class SequenceDeleteHelper {
 	 */
 	public static void addDeleteRelatedTimeObservationLinkCommand(CompoundCommand deleteViewsCmd, TransactionalEditingDomain editingDomain, LifelineEditPart srcLifelinePart, List<OccurrenceSpecification> oss, boolean deleteRelatedEvent) {
 		List<TimeObservationLabelEditPart> timeObservationEditParts = SequenceUtil.findOccurenceSpecificationRelatedTimeObservationPart(srcLifelinePart, oss);
-		for(final TimeObservationLabelEditPart timeObservationEditPart : timeObservationEditParts) {
-			View view = (View)timeObservationEditPart.getModel();
+		for (final TimeObservationLabelEditPart timeObservationEditPart : timeObservationEditParts) {
+			View view = (View) timeObservationEditPart.getModel();
 			EList sourceEdges = view.getSourceEdges();
-			for(Object sourceEdge : sourceEdges) {
-				Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)sourceEdge));
+			for (Object sourceEdge : sourceEdges) {
+				Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) sourceEdge));
 				deleteViewsCmd.add(deleteTimeViewCommand);
 			}
-			if(deleteRelatedEvent) {
+			if (deleteRelatedEvent) {
 				deleteViewsCmd.add(new ICommandProxy(new AbstractTransactionalCommand(editingDomain, "Remove TimeObservation related event", null) {
 
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-						TimeObservation timeObservation = (TimeObservation)(timeObservationEditPart.resolveSemanticElement());
+						TimeObservation timeObservation = (TimeObservation) (timeObservationEditPart.resolveSemanticElement());
 						timeObservation.setEvent(null);
 						return CommandResult.newOKCommandResult();
 					}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,9 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.INotification;
 
 /**
  * The INotification corresponding to the async builder
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class AsyncNotification implements INotification {
 
@@ -29,7 +29,7 @@ public class AsyncNotification implements INotification {
 
 	/**
 	 * delete the current notification
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.INotification#delete()
 	 */
 	public void delete() {
@@ -39,9 +39,9 @@ public class AsyncNotification implements INotification {
 
 	/**
 	 * whether the current notification is deleted
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.INotification#isDeleted()
-	 * 
+	 *
 	 * @return true if notification is deleted
 	 */
 	public boolean isDeleted() {

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,9 +21,9 @@ import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
 
 /**
- * 
+ *
  * This observable value listen the preference store to send event and refresh itself when a preferences has changed
- * 
+ *
  */
 public abstract class AbstractDiagramPreferencesObservableValue extends AbstractObservableValue {
 
@@ -43,13 +43,13 @@ public abstract class AbstractDiagramPreferencesObservableValue extends Abstract
 	private IPropertyChangeListener listener;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram for which we re editing a preference
+	 *            the diagram for which we re editing a preference
 	 * @param preferenceName
-	 *        the name of edited the preference
+	 *            the name of edited the preference
 	 */
 	public AbstractDiagramPreferencesObservableValue(final Diagram diagram, final String preferenceName, final IPreferenceStore editedPreferenceStore) {
 		this.preferenceName = preferenceName;
@@ -57,7 +57,7 @@ public abstract class AbstractDiagramPreferencesObservableValue extends Abstract
 		this.editedPreferenceStore.addPropertyChangeListener(this.listener = new IPropertyChangeListener() {
 
 			public void propertyChange(final PropertyChangeEvent event) {
-				if(getEditedPreference().equals(event.getProperty())) {
+				if (getEditedPreference().equals(event.getProperty())) {
 					ValueDiff diff = new ValueDiff() {
 
 						@Override
@@ -84,7 +84,7 @@ public abstract class AbstractDiagramPreferencesObservableValue extends Abstract
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited preferences
 	 */
@@ -93,7 +93,7 @@ public abstract class AbstractDiagramPreferencesObservableValue extends Abstract
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited preference store
 	 */

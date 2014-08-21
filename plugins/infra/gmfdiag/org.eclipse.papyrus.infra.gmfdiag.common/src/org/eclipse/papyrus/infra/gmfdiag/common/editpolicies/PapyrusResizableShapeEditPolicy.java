@@ -21,23 +21,23 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableShapeEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.snap.ResizeTrackerWithPreferences;
 
 /**
- * 
+ *
  * See Bug 424943 ResizableEditPolicy#getResizeCommand duplicates request ignoring some request values
- * 
+ *
  */
 public class PapyrusResizableShapeEditPolicy extends ResizableShapeEditPolicy {
 
 	/**
 	 * See Bug 424943 ResizableEditPolicy#getResizeCommand duplicates request ignoring some request values
 	 * TODO : remove this override when the bug will be fixed
-	 * 
+	 *
 	 * Returns the command contribution for the given resize request. By
 	 * default, the request is re-dispatched to the host's parent as a {@link org.eclipse.gef.RequestConstants#REQ_RESIZE_CHILDREN}. The
 	 * parent's edit policies determine how to perform the resize based on the
 	 * layout manager in use.
-	 * 
+	 *
 	 * @param request
-	 *        the resize request
+	 *            the resize request
 	 * @return the command contribution obtained from the parent
 	 */
 
@@ -56,7 +56,7 @@ public class PapyrusResizableShapeEditPolicy extends ResizableShapeEditPolicy {
 		req.setExtendedData(request.getExtendedData());
 		req.setResizeDirection(request.getResizeDirection());
 
-		if(getHost().getParent() == null) {
+		if (getHost().getParent() == null) {
 			return null;
 		}
 
@@ -64,15 +64,15 @@ public class PapyrusResizableShapeEditPolicy extends ResizableShapeEditPolicy {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gef.editpolicies.ResizableEditPolicy#getResizeTracker(int)
-	 * 
+	 *
 	 * @param direction
 	 * @return
 	 */
 	@Override
 	protected ResizeTracker getResizeTracker(int direction) {
-		return new ResizeTrackerWithPreferences((GraphicalEditPart)getHost(), direction);
+		return new ResizeTrackerWithPreferences((GraphicalEditPart) getHost(), direction);
 	}
 
 }

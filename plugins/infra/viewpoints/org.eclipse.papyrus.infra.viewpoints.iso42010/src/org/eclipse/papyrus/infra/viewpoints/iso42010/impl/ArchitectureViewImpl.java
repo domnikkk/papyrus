@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
@@ -42,9 +42,9 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl#getGovernedBy <em>Governed By</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl#getModels <em>Models</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl#getAddresses <em>Addresses</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl#getGovernedBy <em>Governed By</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl#getModels <em>Models</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureViewImpl#getAddresses <em>Addresses</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +55,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	 * The cached value of the '{@link #getGovernedBy() <em>Governed By</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGovernedBy()
 	 * @generated
 	 * @ordered
@@ -65,6 +66,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	 * The cached value of the '{@link #getModels() <em>Models</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModels()
 	 * @generated
 	 * @ordered
@@ -75,6 +77,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	 * The cached value of the '{@link #getAddresses() <em>Addresses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAddresses()
 	 * @generated
 	 * @ordered
@@ -84,6 +87,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ArchitectureViewImpl() {
@@ -93,6 +97,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,15 +108,17 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ArchitectureViewpoint getGovernedBy() {
 		if (governedBy != null && governedBy.eIsProxy()) {
-			InternalEObject oldGovernedBy = (InternalEObject)governedBy;
-			governedBy = (ArchitectureViewpoint)eResolveProxy(oldGovernedBy);
+			InternalEObject oldGovernedBy = (InternalEObject) governedBy;
+			governedBy = (ArchitectureViewpoint) eResolveProxy(oldGovernedBy);
 			if (governedBy != oldGovernedBy) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY, oldGovernedBy, governedBy));
+				}
 			}
 		}
 		return governedBy;
@@ -120,6 +127,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ArchitectureViewpoint basicGetGovernedBy() {
@@ -129,6 +137,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetGovernedBy(ArchitectureViewpoint newGovernedBy, NotificationChain msgs) {
@@ -136,7 +145,11 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 		governedBy = newGovernedBy;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY, oldGovernedBy, newGovernedBy);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -144,25 +157,32 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setGovernedBy(ArchitectureViewpoint newGovernedBy) {
 		if (newGovernedBy != governedBy) {
 			NotificationChain msgs = null;
-			if (governedBy != null)
-				msgs = ((InternalEObject)governedBy).eInverseRemove(this, Iso42010Package.ARCHITECTURE_VIEWPOINT__GOVERNS, ArchitectureViewpoint.class, msgs);
-			if (newGovernedBy != null)
-				msgs = ((InternalEObject)newGovernedBy).eInverseAdd(this, Iso42010Package.ARCHITECTURE_VIEWPOINT__GOVERNS, ArchitectureViewpoint.class, msgs);
+			if (governedBy != null) {
+				msgs = ((InternalEObject) governedBy).eInverseRemove(this, Iso42010Package.ARCHITECTURE_VIEWPOINT__GOVERNS, ArchitectureViewpoint.class, msgs);
+			}
+			if (newGovernedBy != null) {
+				msgs = ((InternalEObject) newGovernedBy).eInverseAdd(this, Iso42010Package.ARCHITECTURE_VIEWPOINT__GOVERNS, ArchitectureViewpoint.class, msgs);
+			}
 			msgs = basicSetGovernedBy(newGovernedBy, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY, newGovernedBy, newGovernedBy));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureModel> getModels() {
@@ -175,6 +195,7 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Concern> getAddresses() {
@@ -187,20 +208,22 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
-				if (governedBy != null)
-					msgs = ((InternalEObject)governedBy).eInverseRemove(this, Iso42010Package.ARCHITECTURE_VIEWPOINT__GOVERNS, ArchitectureViewpoint.class, msgs);
-				return basicSetGovernedBy((ArchitectureViewpoint)otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getModels()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAddresses()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
+			if (governedBy != null) {
+				msgs = ((InternalEObject) governedBy).eInverseRemove(this, Iso42010Package.ARCHITECTURE_VIEWPOINT__GOVERNS, ArchitectureViewpoint.class, msgs);
+			}
+			return basicSetGovernedBy((ArchitectureViewpoint) otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getModels()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAddresses()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -208,17 +231,18 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
-				return basicSetGovernedBy(null, msgs);
-			case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
-				return ((InternalEList<?>)getModels()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
-				return ((InternalEList<?>)getAddresses()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
+			return basicSetGovernedBy(null, msgs);
+		case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
+			return ((InternalEList<?>) getModels()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
+			return ((InternalEList<?>) getAddresses()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -226,18 +250,21 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
-				if (resolve) return getGovernedBy();
-				return basicGetGovernedBy();
-			case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
-				return getModels();
-			case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
-				return getAddresses();
+		case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
+			if (resolve) {
+				return getGovernedBy();
+			}
+			return basicGetGovernedBy();
+		case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
+			return getModels();
+		case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
+			return getAddresses();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -245,23 +272,24 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
-				setGovernedBy((ArchitectureViewpoint)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
-				getModels().clear();
-				getModels().addAll((Collection<? extends ArchitectureModel>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
-				getAddresses().clear();
-				getAddresses().addAll((Collection<? extends Concern>)newValue);
-				return;
+		case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
+			setGovernedBy((ArchitectureViewpoint) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
+			getModels().clear();
+			getModels().addAll((Collection<? extends ArchitectureModel>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
+			getAddresses().clear();
+			getAddresses().addAll((Collection<? extends Concern>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -269,20 +297,21 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
-				setGovernedBy((ArchitectureViewpoint)null);
-				return;
-			case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
-				getModels().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
-				getAddresses().clear();
-				return;
+		case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
+			setGovernedBy((ArchitectureViewpoint) null);
+			return;
+		case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
+			getModels().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
+			getAddresses().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -290,19 +319,20 @@ public class ArchitectureViewImpl extends ADElementImpl implements ArchitectureV
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
-				return governedBy != null;
-			case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
-				return models != null && !models.isEmpty();
-			case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
-				return addresses != null && !addresses.isEmpty();
+		case Iso42010Package.ARCHITECTURE_VIEW__GOVERNED_BY:
+			return governedBy != null;
+		case Iso42010Package.ARCHITECTURE_VIEW__MODELS:
+			return models != null && !models.isEmpty();
+		case Iso42010Package.ARCHITECTURE_VIEW__ADDRESSES:
+			return addresses != null && !addresses.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ArchitectureViewImpl
+} // ArchitectureViewImpl

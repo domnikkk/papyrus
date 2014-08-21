@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * An IObservableList for editing Stereotype Applications
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 @SuppressWarnings({ "unchecked", "rawtypes" })
 public class StereotypeApplicationObservableList extends WritableList implements ICommitListener, IObserving {
@@ -52,13 +52,13 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	private AbstractStereotypeListener listener;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlSource
-	 *        The UML Element being observed
+	 *            The UML Element being observed
 	 * @param domain
-	 *        The Editing Domain on which the commands will be executed
+	 *            The Editing Domain on which the commands will be executed
 	 */
 	public StereotypeApplicationObservableList(Element umlSource, EditingDomain domain) {
 		super(new LinkedList<Object>(umlSource.getAppliedStereotypes()), Stereotype.class);
@@ -74,7 +74,7 @@ public class StereotypeApplicationObservableList extends WritableList implements
 
 					@Override
 					public ListDiffEntry[] getDifferences() {
-						return new ListDiffEntry[]{ new ListDiffEntry() {
+						return new ListDiffEntry[] { new ListDiffEntry() {
 
 							@Override
 							public int getPosition() {
@@ -103,7 +103,7 @@ public class StereotypeApplicationObservableList extends WritableList implements
 
 					@Override
 					public ListDiffEntry[] getDifferences() {
-						return new ListDiffEntry[]{ new ListDiffEntry() {
+						return new ListDiffEntry[] { new ListDiffEntry() {
 
 							@Override
 							public int getPosition() {
@@ -129,7 +129,7 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	}
 
 	public void commit(AbstractEditor editor) {
-		if(commands.isEmpty()) {
+		if (commands.isEmpty()) {
 			return;
 		}
 
@@ -158,22 +158,22 @@ public class StereotypeApplicationObservableList extends WritableList implements
 			 * the command n+1 depends on the result of the command n. We can't
 			 * check every command's canExecute() method here, so we only
 			 * check the first one.
-			 * 
+			 *
 			 */
 			@Override
 			public boolean canExecute() {
 				return commandList.isEmpty() ? false : commandList.get(0).canExecute();
 			}
 
-			//TODO : edit the execute() method to call the remaining canExecute() checks
-			//during the execution
-			//(n).canExecute()
-			//(n).execute()
-			//(n+1).canExecute()
-			//(n+1).execute()
+			// TODO : edit the execute() method to call the remaining canExecute() checks
+			// during the execution
+			// (n).canExecute()
+			// (n).execute()
+			// (n+1).canExecute()
+			// (n+1).execute()
 		};
 
-		for(Command cmd : commands) {
+		for (Command cmd : commands) {
 			compoundCommand.append(cmd);
 		}
 
@@ -196,11 +196,11 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	@Override
 	public boolean add(Object o) {
 
-		if(!(o instanceof Stereotype)) {
+		if (!(o instanceof Stereotype)) {
 			return false;
 		}
-		Stereotype stereotype = (Stereotype)o;
-		Command command = new ApplyStereotypeCommand(umlSource, stereotype, (TransactionalEditingDomain)domain);
+		Stereotype stereotype = (Stereotype) o;
+		Command command = new ApplyStereotypeCommand(umlSource, stereotype, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -210,12 +210,12 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	@Override
 	public boolean remove(Object o) {
 
-		if(!(o instanceof Stereotype)) {
+		if (!(o instanceof Stereotype)) {
 			return false;
 		}
 
-		final Stereotype stereotype = (Stereotype)o;
-		Command command = new UnapplyStereotypeCommand(umlSource, stereotype, (TransactionalEditingDomain)domain);
+		final Stereotype stereotype = (Stereotype) o;
+		Command command = new UnapplyStereotypeCommand(umlSource, stereotype, (TransactionalEditingDomain) domain);
 
 
 		commands.add(command);
@@ -225,10 +225,10 @@ public class StereotypeApplicationObservableList extends WritableList implements
 
 	@Override
 	public boolean addAll(Collection c) {
-		//We only apply the stereotypes that are not applied yet (To avoid removing them when undo is called)
+		// We only apply the stereotypes that are not applied yet (To avoid removing them when undo is called)
 		c.removeAll(wrappedList);
 
-		Command command = new ApplyStereotypeCommand(umlSource, c, (TransactionalEditingDomain)domain);
+		Command command = new ApplyStereotypeCommand(umlSource, c, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -237,7 +237,7 @@ public class StereotypeApplicationObservableList extends WritableList implements
 
 	@Override
 	public boolean removeAll(Collection c) {
-		Command command = new UnapplyStereotypeCommand(umlSource, c, (TransactionalEditingDomain)domain);
+		Command command = new UnapplyStereotypeCommand(umlSource, c, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -247,8 +247,8 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	@Override
 	public boolean retainAll(Collection c) {
 		List<Object> objectsToRemove = new LinkedList<Object>();
-		for(Object object : c) {
-			if(!contains(object)) {
+		for (Object object : c) {
+			if (!contains(object)) {
 				objectsToRemove.add(object);
 			}
 		}
@@ -256,15 +256,15 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	}
 
 
-	//Unsupported operations. Some of them have a "proxy" implementation
+	// Unsupported operations. Some of them have a "proxy" implementation
 	@Override
 	public void add(int index, Object value) {
-		add(value); //The list is not ordered
+		add(value); // The list is not ordered
 	}
 
 	@Override
 	public boolean addAll(int index, Collection c) {
-		return addAll(c); //The list is not ordered
+		return addAll(c); // The list is not ordered
 	}
 
 	@Override
@@ -285,7 +285,7 @@ public class StereotypeApplicationObservableList extends WritableList implements
 	public Object getObserved() {
 		return umlSource;
 	}
-	
+
 	@Override
 	public void dispose() {
 		super.dispose();

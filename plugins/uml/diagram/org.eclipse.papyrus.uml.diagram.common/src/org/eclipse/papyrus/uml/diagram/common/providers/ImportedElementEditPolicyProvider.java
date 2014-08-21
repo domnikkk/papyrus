@@ -14,6 +14,7 @@ package org.eclipse.papyrus.uml.diagram.common.providers;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;
 import org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.CreateEditPoliciesOperation;
+import org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.ExternalReferenceEditPolicy;
 import org.eclipse.papyrus.infra.gmfdiag.common.providers.ExternalReferenceEditPolicyProvider;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.ImportedElementEditPolicy;
 import org.eclipse.papyrus.uml.tools.utils.UMLUtil;
@@ -28,8 +29,8 @@ public class ImportedElementEditPolicyProvider extends ExternalReferenceEditPoli
 
 	@Override
 	public boolean provides(IOperation operation) {
-		if(super.provides(operation)) {
-			CreateEditPoliciesOperation createOperation = (CreateEditPoliciesOperation)operation;
+		if (super.provides(operation)) {
+			CreateEditPoliciesOperation createOperation = (CreateEditPoliciesOperation) operation;
 			return UMLUtil.resolveUMLElement(createOperation.getEditPart()) != null;
 		}
 
@@ -38,7 +39,7 @@ public class ImportedElementEditPolicyProvider extends ExternalReferenceEditPoli
 
 	@Override
 	public void createEditPolicies(EditPart editPart) {
-		editPart.installEditPolicy(ImportedElementEditPolicy.EDIT_POLICY_ROLE, new ImportedElementEditPolicy());
+		editPart.installEditPolicy(ExternalReferenceEditPolicy.EDIT_POLICY_ROLE, new ImportedElementEditPolicy());
 	}
 
 }

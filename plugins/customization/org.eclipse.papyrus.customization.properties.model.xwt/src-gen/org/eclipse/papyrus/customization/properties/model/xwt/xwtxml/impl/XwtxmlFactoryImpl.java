@@ -5,9 +5,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  *     Fabien Giquel (Mia-Software) - initial API and implementation
  * *******************************************************************************
  *
@@ -28,6 +28,7 @@ import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
@@ -35,16 +36,16 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static XwtxmlFactory init() {
 		try {
-			XwtxmlFactory theXwtxmlFactory = (XwtxmlFactory)EPackage.Registry.INSTANCE.getEFactory(XwtxmlPackage.eNS_URI);
+			XwtxmlFactory theXwtxmlFactory = (XwtxmlFactory) EPackage.Registry.INSTANCE.getEFactory(XwtxmlPackage.eNS_URI);
 			if (theXwtxmlFactory != null) {
 				return theXwtxmlFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new XwtxmlFactoryImpl();
@@ -54,6 +55,7 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public XwtxmlFactoryImpl() {
@@ -63,30 +65,42 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case XwtxmlPackage.ATTRIBUTE: return createAttribute();
-			case XwtxmlPackage.TEXT: return createText();
-			case XwtxmlPackage.ELEMENT: return createElement();
-			case XwtxmlPackage.ROOT: return createRoot();
-			case XwtxmlPackage.NAMESPACE: return createNamespace();
-			case XwtxmlPackage.COMMENT: return createComment();
-			case XwtxmlPackage.DOCUMENT_TYPE_DECLARATION: return createDocumentTypeDeclaration();
-			case XwtxmlPackage.CDATA: return createCDATA();
-			case XwtxmlPackage.PROCESSING_INSTRUCTION: return createProcessingInstruction();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case XwtxmlPackage.ATTRIBUTE:
+			return createAttribute();
+		case XwtxmlPackage.TEXT:
+			return createText();
+		case XwtxmlPackage.ELEMENT:
+			return createElement();
+		case XwtxmlPackage.ROOT:
+			return createRoot();
+		case XwtxmlPackage.NAMESPACE:
+			return createNamespace();
+		case XwtxmlPackage.COMMENT:
+			return createComment();
+		case XwtxmlPackage.DOCUMENT_TYPE_DECLARATION:
+			return createDocumentTypeDeclaration();
+		case XwtxmlPackage.CDATA:
+			return createCDATA();
+		case XwtxmlPackage.PROCESSING_INSTRUCTION:
+			return createProcessingInstruction();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Attribute createAttribute() {
 		AttributeImpl attribute = new AttributeImpl();
 		return attribute;
@@ -95,8 +109,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Text createText() {
 		TextImpl text = new TextImpl();
 		return text;
@@ -105,8 +121,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Element createElement() {
 		ElementImpl element = new ElementImpl();
 		return element;
@@ -115,8 +133,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Root createRoot() {
 		RootImpl root = new RootImpl();
 		return root;
@@ -125,8 +145,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Namespace createNamespace() {
 		NamespaceImpl namespace = new NamespaceImpl();
 		return namespace;
@@ -135,8 +157,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Comment createComment() {
 		CommentImpl comment = new CommentImpl();
 		return comment;
@@ -145,8 +169,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public DocumentTypeDeclaration createDocumentTypeDeclaration() {
 		DocumentTypeDeclarationImpl documentTypeDeclaration = new DocumentTypeDeclarationImpl();
 		return documentTypeDeclaration;
@@ -155,8 +181,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public CDATA createCDATA() {
 		CDATAImpl cdata = new CDATAImpl();
 		return cdata;
@@ -165,8 +193,10 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ProcessingInstruction createProcessingInstruction() {
 		ProcessingInstructionImpl processingInstruction = new ProcessingInstructionImpl();
 		return processingInstruction;
@@ -175,15 +205,18 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public XwtxmlPackage getXwtxmlPackage() {
-		return (XwtxmlPackage)getEPackage();
+		return (XwtxmlPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -192,4 +225,4 @@ public class XwtxmlFactoryImpl extends EFactoryImpl implements XwtxmlFactory {
 		return XwtxmlPackage.eINSTANCE;
 	}
 
-} //XwtxmlFactoryImpl
+} // XwtxmlFactoryImpl

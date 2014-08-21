@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 	 * Instantiates a new profile application content provider.
 	 *
 	 * @param rootPackage
-	 *        the root package
+	 *            the root package
 	 */
 	public ProfileApplicationContentProvider(Package rootPackage) {
 		this.rootPackage = rootPackage;
@@ -50,7 +50,7 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 	 * @return
 	 */
 	public Object[] getElements() {
-		return new Package[]{ rootPackage };
+		return new Package[] { rootPackage };
 	}
 
 	/**
@@ -63,19 +63,19 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 		Object[] children = null;
 
 		// Case 1 : Element is a Profile then stop exploration
-		if(parentElement instanceof ProfileApplication) {
+		if (parentElement instanceof ProfileApplication) {
 			children = new Object[0];
-		} else if(parentElement instanceof Package) {
+		} else if (parentElement instanceof Package) {
 			// Case 2 : Element is Package
-			Package parentPackage = (Package)parentElement;
+			Package parentPackage = (Package) parentElement;
 
 			List<Object> childrenList = new LinkedList<Object>();
 
 
 			// Parse applied profiles of parent to find dirty ones and get profile application
 			List<Profile> appliedProfiles = new LinkedList<Profile>(parentPackage.getAppliedProfiles());
-			for(Profile profile : appliedProfiles) {
-				if(ProfileUtil.isDirty(parentPackage, profile)) {
+			for (Profile profile : appliedProfiles) {
+				if (ProfileUtil.isDirty(parentPackage, profile)) {
 					childrenList.add(parentPackage.getProfileApplication(profile));
 				}
 			}
@@ -102,10 +102,10 @@ public class ProfileApplicationContentProvider extends AbstractStaticContentProv
 	public Object getParent(Object element) {
 		Object parent = null;
 
-		if(element instanceof Package) {
-			parent = ((Package)element).getNestingPackage();
-		} else if(element instanceof ProfileApplication) {
-			parent = ((ProfileApplication)element).getApplyingPackage();
+		if (element instanceof Package) {
+			parent = ((Package) element).getNestingPackage();
+		} else if (element instanceof ProfileApplication) {
+			parent = ((ProfileApplication) element).getApplyingPackage();
 		}
 
 		return parent;

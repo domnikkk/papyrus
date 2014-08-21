@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 ATOS.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,11 +28,11 @@ public class CustomRequirementTextLabelEditPart extends CustomAbstractRequiremen
 
 	@Override
 	public void refreshLabelText() {
-		if(this.figure != null && this.getRequirement() != null) {
-			WrappingLabel wrappingLabel = (WrappingLabel)figure;
+		if (this.figure != null && this.getRequirement() != null) {
+			WrappingLabel wrappingLabel = (WrappingLabel) figure;
 			Requirement req = this.getRequirement();
 			String text = req.getText();
-			if(text == null) {
+			if (text == null) {
 				text = ""; //$NON-NLS-1$
 			}
 			wrappingLabel.setText("text = \"" + text + "\""); //$NON-NLS-1$ //$NON-NLS-2$

@@ -34,7 +34,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETyp
 
 /**
  * Used to evaluate derived typed elements through their queries.
- * 
+ *
  * @since 0.2
  */
 public interface IDerivedTypedElementManager {
@@ -43,29 +43,24 @@ public interface IDerivedTypedElementManager {
 	/**
 	 * Evaluates a derived typed element on a model element.
 	 * <p>
-	 * <b>Note:</b> this method does not return a typed result, and it does not
-	 * check the result type. Use
-	 * {@link IDerivedTypedElementManager#evaluateSingleValued(DerivedTypedElement, EObject, List, Class)
-	 * evaluateSingleValued} or
-	 * {@link IDerivedTypedElementManager#evaluateMultiValued(DerivedTypedElement, EObject, List, Class)
+	 * <b>Note:</b> this method does not return a typed result, and it does not check the result type. Use {@link IDerivedTypedElementManager#evaluateSingleValued(DerivedTypedElement, EObject, List, Class)
+	 * evaluateSingleValued} or {@link IDerivedTypedElementManager#evaluateMultiValued(DerivedTypedElement, EObject, List, Class)
 	 * evaluateMultiValued} instead if you want a typed and type-checked result.
-	 * 
+	 *
 	 * @param derivedTE
 	 *            the derived typed element to evaluate
 	 * @param source
 	 *            the model element on which the derived typed element must be
 	 *            evaluated
 	 * @param parameterValues
-	 *            the arguments of the derived typed element (in the case of a
-	 *            {@link FacetOperation}; can be <code>null</code> if there are
+	 *            the arguments of the derived typed element (in the case of a {@link FacetOperation}; can be <code>null</code> if there are
 	 *            no parameters)
 	 * @return the derived typed element result: a single Object in the case of
 	 *         a single-valued derived typed element, or a List in the case of a
 	 *         multi-valued derived typed element.
 	 * @throws DerivedTypedElementException
 	 *             <ul>
-	 *             <li>in case of error in the derived typed element</li> <li>in
-	 *             case of error when evaluating the derived typed element</li>
+	 *             <li>in case of error in the derived typed element</li> <li>in case of error when evaluating the derived typed element</li>
 	 *             </ul>
 	 */
 	Object evaluate(DerivedTypedElement derivedTE, EObject source,
@@ -73,18 +68,15 @@ public interface IDerivedTypedElementManager {
 			throws DerivedTypedElementException;
 
 	/**
-	 * Evaluates a query on a model element. Calling this method is discouraged. You should evaluate a
-	 * {@link DerivedTypedElement}s (which contains a query) instead of trying to evaluate a {@link Query} directly.
-	 * Since the source type, return type and multiplicity of a query are carried by the {@link DerivedTypedElement}
-	 * that normally contains it, this method doesn't check the source type, return type or multiplicity.
-	 * 
+	 * Evaluates a query on a model element. Calling this method is discouraged. You should evaluate a {@link DerivedTypedElement}s (which contains a query) instead of trying to evaluate a {@link Query} directly.
+	 * Since the source type, return type and multiplicity of a query are carried by the {@link DerivedTypedElement} that normally contains it, this method doesn't check the source type, return type or multiplicity.
+	 *
 	 * @param query
 	 *            the query to evaluate
 	 * @param source
 	 *            the model element on which the query must be evaluated
 	 * @param parameterValues
-	 *            the arguments of the query (in the case of a query for a {@link FacetOperation}; can be
-	 *            <code>null</code> if there are no parameters)
+	 *            the arguments of the query (in the case of a query for a {@link FacetOperation}; can be <code>null</code> if there are no parameters)
 	 * @return the query result: may be a single Object or a List.
 	 * @throws DerivedTypedElementException
 	 *             if the evaluation failed
@@ -94,15 +86,14 @@ public interface IDerivedTypedElementManager {
 
 	/**
 	 * Evaluates a single valued derived typed element on a model element.
-	 * 
+	 *
 	 * @param derivedTE
 	 *            the derived typed element to evaluate
 	 * @param source
 	 *            the model element on which the derived typed element is
 	 *            evaluated
 	 * @param parameterValues
-	 *            the arguments of the derived typed element (in the case of a
-	 *            {@link FacetOperation}; can be <code>null</code> if there are
+	 *            the arguments of the derived typed element (in the case of a {@link FacetOperation}; can be <code>null</code> if there are
 	 *            no parameters)
 	 * @param resultType
 	 *            the type that the returned value must have
@@ -110,11 +101,9 @@ public interface IDerivedTypedElementManager {
 	 * @throws DerivedTypedElementException
 	 *             <ul>
 	 *             <li>in case of error in the derived typed element</li>
-	 *             <li>in case of error when evaluating the derived typed
-	 *             element</li>
+	 *             <li>in case of error when evaluating the derived typed element</li>
 	 *             <li>
-	 *             if the effective return type does not match the expected type
-	 *             </li>
+	 *             if the effective return type does not match the expected type</li>
 	 *             </ul>
 	 */
 	<T> T evaluateSingleValued(DerivedTypedElement derivedTE, EObject source,
@@ -123,15 +112,14 @@ public interface IDerivedTypedElementManager {
 
 	/**
 	 * Evaluates a multi-valued derived typed element on a model element.
-	 * 
+	 *
 	 * @param derivedTypedElement
 	 *            the derived typed element to evaluate
 	 * @param source
 	 *            the model element on which the derived typed element must be
 	 *            evaluated
 	 * @param parameterValues
-	 *            the arguments of the derived typed element (in the case of a
-	 *            {@link FacetOperation}; can be <code>null</code> if there are
+	 *            the arguments of the derived typed element (in the case of a {@link FacetOperation}; can be <code>null</code> if there are
 	 *            no parameters)
 	 * @param resultType
 	 *            the type that the returned value must have
@@ -139,10 +127,8 @@ public interface IDerivedTypedElementManager {
 	 * @throws DerivedTypedElementException
 	 *             <ul>
 	 *             <li>in case of error in the derived typed element</li>
-	 *             <li>in case of error when evaluating the derived typed
-	 *             element</li>
-	 *             <li>if the effective return type does not match the expected
-	 *             type</li>
+	 *             <li>in case of error when evaluating the derived typed element</li>
+	 *             <li>if the effective return type does not match the expected type</li>
 	 *             </ul>
 	 */
 	<T> List<T> evaluateMultiValued(DerivedTypedElement derivedTE,
@@ -153,44 +139,29 @@ public interface IDerivedTypedElementManager {
 	/**
 	 * Evaluates a derived typed element on a list of model elements in a single
 	 * call.
-	 * 
+	 *
 	 * @param derivedTE
 	 *            the derived typed element to evaluate
 	 * @param sources
 	 *            the model elements on which the derived typed element must be
 	 *            evaluated
 	 * @param parameterValues
-	 *            the arguments of the derived typed element (in the case of a
-	 *            {@link FacetOperation}; can be <code>null</code> if there are
+	 *            the arguments of the derived typed element (in the case of a {@link FacetOperation}; can be <code>null</code> if there are
 	 *            no parameters)
 	 * @param resultType
 	 *            the expected type of the returned list:
 	 *            <ul>
-	 *            <li> {@link DerivedTypedElementEObjectResult} if the
-	 *            {@link DerivedTypedElement} is a single-valued
-	 *            {@link EReference} or {@link EOperation} that returns EObjects
-	 *            <li>{@link DerivedTypedElementEObjectListResult} if the
-	 *            {@link DerivedTypedElement} is a multi-valued
-	 *            {@link EReference} or {@link EOperation} that returns EObjects
-	 *            <li>{@link DerivedTypedElementPrimitiveTypeResult} if the
-	 *            {@link DerivedTypedElement} is a single-valued
-	 *            {@link EAttribute} or {@link EOperation} that returns a
-	 *            primitive type value
-	 *            <li>{@link DerivedTypedElementPrimitiveTypeListResult} if the
-	 *            {@link DerivedTypedElement} is a multi-valued
-	 *            {@link EAttribute} or {@link EOperation} that returns a list
-	 *            of primitive type values
+	 *            <li> {@link DerivedTypedElementEObjectResult} if the {@link DerivedTypedElement} is a single-valued {@link EReference} or {@link EOperation} that returns EObjects
+	 *            <li>{@link DerivedTypedElementEObjectListResult} if the {@link DerivedTypedElement} is a multi-valued {@link EReference} or {@link EOperation} that returns EObjects
+	 *            <li>{@link DerivedTypedElementPrimitiveTypeResult} if the {@link DerivedTypedElement} is a single-valued {@link EAttribute} or {@link EOperation} that returns a primitive type value
+	 *            <li>{@link DerivedTypedElementPrimitiveTypeListResult} if the {@link DerivedTypedElement} is a multi-valued {@link EAttribute} or {@link EOperation} that returns a list of primitive type values
 	 *            </ul>
 	 * @return one derived typed element result for each source element that was
 	 *         evaluated
 	 * @throws DerivedTypedElementException
 	 *             <ul>
-	 *             <li>in case of error in the derived typed element.
-	 *             <b>Note</b>: an error that happens when evaluating the
-	 *             derived typed element on any of the given sources is not
-	 *             thrown but stored in the corresponding element result.</li>
-	 *             <li>if the effective return type does not match the expected
-	 *             type</li>
+	 *             <li>in case of error in the derived typed element. <b>Note</b>: an error that happens when evaluating the derived typed element on any of the given sources is not thrown but stored in the corresponding element result.</li>
+	 *             <li>if the effective return type does not match the expected type</li>
 	 *             </ul>
 	 */
 	<T extends ETypedElementResult> List<T> batchEvaluate(

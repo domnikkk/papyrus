@@ -45,9 +45,10 @@ public class TableControlModeHelper {
 		 */
 		Predicate<Setting> keepTableInstances = new Predicate<Setting>() {
 
+			@Override
 			public boolean apply(Setting setting) {
 				boolean result = true;
-				if(setting != null) {
+				if (setting != null) {
 					EObject settingEObject = setting.getEObject();
 					result &= settingEObject instanceof Table;
 				} else {
@@ -62,6 +63,7 @@ public class TableControlModeHelper {
 		 */
 		Function<Setting, EObject> getEObject = new Function<Setting, EObject>() {
 
+			@Override
 			public EObject apply(Setting input) {
 				EObject settingEObject = input.getEObject();
 				return settingEObject;
@@ -72,15 +74,15 @@ public class TableControlModeHelper {
 		/*
 		 * For the context and his descendants :
 		 */
-		while(contextAndDescendants.hasNext()) {
+		while (contextAndDescendants.hasNext()) {
 			EObject current = contextAndDescendants.next();
-			//Usages
+			// Usages
 			Iterable<Setting> usages = EMFHelper.getUsages(current);
-			//Filtering to keep only papyrus table instances.
+			// Filtering to keep only papyrus table instances.
 			Iterable<Setting> tableInstanceSettings = Iterables.filter(usages, keepTableInstances);
-			//Getting the eObjects
+			// Getting the eObjects
 			Iterable<EObject> papyrusTableInstances = Iterables.transform(tableInstanceSettings, getEObject);
-			//Adding all the kept usages.
+			// Adding all the kept usages.
 			Iterables.addAll(result, papyrusTableInstances);
 		}
 

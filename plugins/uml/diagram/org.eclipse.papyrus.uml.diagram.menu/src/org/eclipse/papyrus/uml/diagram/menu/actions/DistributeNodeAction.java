@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,9 +37,9 @@ import org.eclipse.papyrus.uml.diagram.common.layout.EditPartTree;
 import org.eclipse.papyrus.uml.diagram.common.layout.LayoutUtils;
 
 /**
- * 
+ *
  * This action allows to distribute element in the diagram or in their container
- * 
+ *
  */
 public class DistributeNodeAction extends AbstractDistributeAction {
 
@@ -58,14 +58,14 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.actions.AbstractDistributeAction#buildAction(java.util.List)
-	 * 
+	 *
 	 * @param elementsForAction
 	 */
 	@Override
 	protected void buildAction(List<?> elementsForAction) {
-		switch(distribution) {
+		switch (distribution) {
 		case DistributionConstants.DISTRIBUTE_H_CONTAINER_INT:
 		case DistributionConstants.DISTRIBUTE_V_CONTAINER_INT:
 			this.parentContainer = true;
@@ -78,78 +78,78 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 			break;
 		}
 		List<EditPart> elements = new ArrayList<EditPart>();
-		for(int i = 0; i < elementsForAction.size(); i++) {
-			elements.add(i, (EditPart)elementsForAction.get(i));
+		for (int i = 0; i < elementsForAction.size(); i++) {
+			elements.add(i, (EditPart) elementsForAction.get(i));
 		}
 
 		rootTree = new DistributionTree(elements);
-		//we create the requests and store them in rootTree
+		// we create the requests and store them in rootTree
 		createRequests(elements);
 	}
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.actions.AbstractDistributeAction#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Command getCommand() {
 		CompoundCommand command = new CompoundCommand("Command to Distribute Nodes"); //$NON-NLS-1$
 		Enumeration eptEnum = rootTree.breadthFirstEnumeration();
-		while(eptEnum.hasMoreElements()) {
-			EditPartTree ept = (EditPartTree)eptEnum.nextElement();
-			if(ept.getEditPart() != null) {
-				ChangeBoundsRequest currentReq = (ChangeBoundsRequest)ept.getRequest();
-				if(currentReq != null) {
+		while (eptEnum.hasMoreElements()) {
+			EditPartTree ept = (EditPartTree) eptEnum.nextElement();
+			if (ept.getEditPart() != null) {
+				ChangeBoundsRequest currentReq = (ChangeBoundsRequest) ept.getRequest();
+				if (currentReq != null) {
 					Command curCommand = null;
 					curCommand = ept.getEditPart().getCommand(currentReq);
-					if(curCommand != null) {
+					if (curCommand != null) {
 						command.add(curCommand);
 					}
 				}
 			}
 		}
 
-		return command.isEmpty() ? UnexecutableCommand.INSTANCE : (Command)command;
+		return command.isEmpty() ? UnexecutableCommand.INSTANCE : (Command) command;
 	}
 
 
 
 	/**
-	 * 
+	 *
 	 * Create the request for each editpart. Each request is stored in the node of the LayoutTree corresponding to this editpart
-	 * 
+	 *
 	 * @param editparts
-	 *        the editparts to distribute
-	 * 
+	 *            the editparts to distribute
+	 *
 	 */
 	protected void createRequests(List<EditPart> editparts) {
 		int depth = this.rootTree.getDepth();
-		for(int i = depth; i >= 0; i--) {//we iterate by level in the rootTree, beginning by the deepest level
-			List<EditPartTree> epTrees = rootTree.getChildLevel(i);//get all the node of the same level
-			if(i == 0) {//we work on the children of the children of epTree, but we have a problem when we want distribute element for the level 1!
+		for (int i = depth; i >= 0; i--) {// we iterate by level in the rootTree, beginning by the deepest level
+			List<EditPartTree> epTrees = rootTree.getChildLevel(i);// get all the node of the same level
+			if (i == 0) {// we work on the children of the children of epTree, but we have a problem when we want distribute element for the level 1!
 				epTrees.add(rootTree);
 			}
-			for(int iter = 0; iter < epTrees.size(); iter++) {//we iterate on the same level nodes
-				//get all the children for this node
+			for (int iter = 0; iter < epTrees.size(); iter++) {// we iterate on the same level nodes
+				// get all the children for this node
 				List<EditPartTree> children = epTrees.get(iter).getChildLevel(1);
 				removeUnselectedTree(children);
-				if((children.size() >= 2 && parentContainer) || (children.size() >= 3 && !parentContainer)) {
+				if ((children.size() >= 2 && parentContainer) || (children.size() >= 3 && !parentContainer)) {
 
-					//get the corresponding editparts
+					// get the corresponding editparts
 					List<EditPart> childrenEP = new ArrayList<EditPart>();
-					for(EditPartTree editPartTree : children) {
+					for (EditPartTree editPartTree : children) {
 						childrenEP.add(editPartTree.getEditPart());
 					}
 
-					//obtain the container area for these elements
+					// obtain the container area for these elements
 					PrecisionRectangle boundsArea = calcultateArea(childrenEP);
 
-					//we put a small space between the container and the node
-					if(parentContainer/* && !isPortSelection */) {
-						if(!(children.get(0).getEditPart().getParent() instanceof RootEditPart)) {//when the parent is the diagram, we doesn't add a margin!
+					// we put a small space between the container and the node
+					if (parentContainer/* && !isPortSelection */) {
+						if (!(children.get(0).getEditPart().getParent() instanceof RootEditPart)) {// when the parent is the diagram, we doesn't add a margin!
 							double usedMargin = margin > LayoutUtils.scrollBarSize ? margin : LayoutUtils.scrollBarSize;
 							boundsArea.setX(boundsArea.preciseX() + usedMargin);
 							boundsArea.setY(boundsArea.preciseY() + usedMargin);
@@ -159,13 +159,13 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 					}
 
 					double[] hSpaceAndvSpace = calculatesSpaceBetweenNodes(boundsArea, childrenEP);
-					//we sort the EditpartTree following x or y value (it depends on the action)
+					// we sort the EditpartTree following x or y value (it depends on the action)
 					Collections.sort(children, new CoordinatesComparator());
 
-					//variable containing the new position for the editpart (x or y following the distribution) 
+					// variable containing the new position for the editpart (x or y following the distribution)
 					double newPosition = 0;
-					//we determine the location for the first editpart
-					switch(this.distribution) {
+					// we determine the location for the first editpart
+					switch (this.distribution) {
 					case DistributionConstants.DISTRIBUTE_H_CONTAINER_INT:
 						newPosition = (horizontalDegradedMode == false) ? (boundsArea.preciseX + hSpaceAndvSpace[0]) : boundsArea.preciseX();
 						break;
@@ -183,25 +183,25 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 					}
 
 
-					//request creation for all editparts
-					for(EditPartTree editPartTree : children) {
-						if(editPartTree.isSelected()) {
-							//the new location for the editpart
+					// request creation for all editparts
+					for (EditPartTree editPartTree : children) {
+						if (editPartTree.isSelected()) {
+							// the new location for the editpart
 							PrecisionPoint ptLocation = null;
 							PrecisionRectangle absolutePosition = LayoutUtils.getAbsolutePosition(editPartTree.getEditPart());
 
-							//							if(!isPortSelection) {
-							if(this.distribution == DistributionConstants.DISTRIBUTE_H_CONTAINER_INT || this.distribution == DistributionConstants.DISTRIBUTE_H_NODES_INT) {
+							// if(!isPortSelection) {
+							if (this.distribution == DistributionConstants.DISTRIBUTE_H_CONTAINER_INT || this.distribution == DistributionConstants.DISTRIBUTE_H_NODES_INT) {
 								ptLocation = new PrecisionPoint(newPosition, absolutePosition.preciseY);
 								newPosition += absolutePosition.preciseWidth() + hSpaceAndvSpace[0];
-							} else {//vertical distribution
+							} else {// vertical distribution
 								ptLocation = new PrecisionPoint(absolutePosition.preciseX, newPosition);
 								newPosition += absolutePosition.preciseHeight() + hSpaceAndvSpace[1];
 							}
 
 
-							//we create the request
-							if(ptLocation != null) {
+							// we create the request
+							if (ptLocation != null) {
 								ChangeBoundsRequest req = new ChangeBoundsRequest(RequestConstants.REQ_MOVE);
 								req.setEditParts(editPartTree.getEditPart());
 								PrecisionPoint oldLocation = new PrecisionPoint(absolutePosition.preciseX, absolutePosition.preciseY);
@@ -223,14 +223,14 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 
 	/**
 	 * Removes the unselected {@link EditPartTree} from the list
-	 * 
+	 *
 	 * @param epTrees
-	 *        the {@link EditPartTree} list
+	 *            the {@link EditPartTree} list
 	 */
 	protected void removeUnselectedTree(List<EditPartTree> epTrees) {
 		List<EditPartTree> removedChildren = new ArrayList<EditPartTree>();
-		for(EditPartTree editPartTree : epTrees) {
-			if(!editPartTree.isSelected()) {
+		for (EditPartTree editPartTree : epTrees) {
+			if (!editPartTree.isSelected()) {
 				removedChildren.add(editPartTree);
 			}
 		}
@@ -239,17 +239,17 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 
 	/**
 	 * Calculates the area used to do the distribution
-	 * 
+	 *
 	 * @param nodeChild
-	 *        the editpart to distribute
+	 *            the editpart to distribute
 	 * @return
 	 *         an area in which we can move the editpart
 	 */
 	protected PrecisionRectangle calcultateArea(List<EditPart> nodeChild) {
-		//the returned area
+		// the returned area
 		PrecisionRectangle area = new PrecisionRectangle();
 
-		if(parentContainer) {
+		if (parentContainer) {
 			area = LayoutUtils.getAbsolutePosition(nodeChild.get(0).getParent());
 		} else {
 			PrecisionRectangle tmpArea;
@@ -259,8 +259,8 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 			double minY = tmpArea.preciseY();
 			double maxY = tmpArea.preciseY() + tmpArea.preciseHeight();
 
-			for(EditPart currentEP : nodeChild) {//we search the rectangle containing all the selected editpart
-				if(currentEP.getSelected() != EditPart.SELECTED_NONE) {
+			for (EditPart currentEP : nodeChild) {// we search the rectangle containing all the selected editpart
+				if (currentEP.getSelected() != EditPart.SELECTED_NONE) {
 					tmpArea = LayoutUtils.getAbsolutePosition(currentEP);
 					minX = tmpArea.preciseX < minX ? tmpArea.preciseX : minX;
 					minY = tmpArea.preciseY < minY ? tmpArea.preciseY : minY;
@@ -280,11 +280,11 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 	/**
 	 * Calculates the horizontal space and the vertical space to distribute the nodes
 	 * Set the fields {@link #horizontalDegradedMode} and {@link #verticalDegradedMode} to {@code true} or {@code false}
-	 * 
+	 *
 	 * @param boundsArea
-	 *        the Rectangle used to do the distribution
+	 *            the Rectangle used to do the distribution
 	 * @param nodeChild
-	 *        the node to distribute in the Rectangle
+	 *            the node to distribute in the Rectangle
 	 * @return {@code double[2]} with :
 	 *         <ul>
 	 *         <li>{@code double[0]} : the horizontal space between the nodes</li>
@@ -293,31 +293,31 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 	 */
 	protected double[] calculatesSpaceBetweenNodes(PrecisionRectangle boundsArea, List<EditPart> nodeChild) {
 
-		//reset of these 2 fields
+		// reset of these 2 fields
 		this.horizontalDegradedMode = false;
 		this.verticalDegradedMode = false;
 
-		//variables used to calculate the spacing
+		// variables used to calculate the spacing
 		double vertical = 0;
 		double horizontal = 0;
 		double vSpace = 0;
 		double hSpace = 0;
-		double[] hSpaceAndvSpace = new double[]{ 0, 0 };
+		double[] hSpaceAndvSpace = new double[] { 0, 0 };
 
-		//we calculate the length take by the element
-		for(EditPart currentEP : nodeChild) {
-			if(currentEP.getSelected() != EditPart.SELECTED_NONE) {//if the node is not selected, we ignore it
+		// we calculate the length take by the element
+		for (EditPart currentEP : nodeChild) {
+			if (currentEP.getSelected() != EditPart.SELECTED_NONE) {// if the node is not selected, we ignore it
 				PrecisionRectangle rect = LayoutUtils.getAbsolutePosition(currentEP);
 				vertical += rect.preciseHeight();
 				horizontal += rect.preciseWidth();
 			}
 		}
 
-		//we determine the divisor 
+		// we determine the divisor
 		double divisor = 1;
-		if(parentContainer) {
+		if (parentContainer) {
 			divisor = nodeChild.size() + 1;
-		} else if(!parentContainer) {
+		} else if (!parentContainer) {
 			divisor = nodeChild.size() - 1;
 		}
 
@@ -325,14 +325,14 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 		vSpace = ((boundsArea.preciseHeight() - vertical) / divisor);
 
 
-		if(hSpace < 0 && parentContainer) {
+		if (hSpace < 0 && parentContainer) {
 			this.horizontalDegradedMode = true;
 			double diff = boundsArea.preciseWidth() - horizontal;
 			hSpace = diff / (divisor - 2);
 
 		}
 
-		if(vSpace < 0 && parentContainer) {
+		if (vSpace < 0 && parentContainer) {
 			this.verticalDegradedMode = true;
 			double diff = boundsArea.preciseHeight() - vertical;
 			vSpace = diff / (divisor - 2);
@@ -346,34 +346,34 @@ public class DistributeNodeAction extends AbstractDistributeAction {
 
 
 	/**
-	 * 
+	 *
 	 * This class provides a comparator for the {@link EditPartTree}, using the coordinates of the representing {@link EditPart}
 	 */
 	protected class CoordinatesComparator implements Comparator<Object> {
 
 		/**
-		 * 
+		 *
 		 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
-		 * 
+		 *
 		 * @param o1
 		 * @param o2
 		 * @return
 		 */
 		public int compare(Object o1, Object o2) {
-			PrecisionRectangle rect1 = LayoutUtils.getAbsolutePosition(((EditPartTree)o1).getEditPart());
-			PrecisionRectangle rect2 = LayoutUtils.getAbsolutePosition(((EditPartTree)o2).getEditPart());
-			if(distribution == DistributionConstants.DISTRIBUTE_H_CONTAINER_INT || distribution == DistributionConstants.DISTRIBUTE_H_NODES_INT) {
-				if(rect1.preciseX() < rect2.preciseX()) {
+			PrecisionRectangle rect1 = LayoutUtils.getAbsolutePosition(((EditPartTree) o1).getEditPart());
+			PrecisionRectangle rect2 = LayoutUtils.getAbsolutePosition(((EditPartTree) o2).getEditPart());
+			if (distribution == DistributionConstants.DISTRIBUTE_H_CONTAINER_INT || distribution == DistributionConstants.DISTRIBUTE_H_NODES_INT) {
+				if (rect1.preciseX() < rect2.preciseX()) {
 					return -1;
-				} else if(rect1.preciseX() == rect2.preciseX()) {
+				} else if (rect1.preciseX() == rect2.preciseX()) {
 					return 0;
 				} else {
 					return 1;
 				}
-			} else //vertical distribution 
-			if(rect1.preciseY() < rect2.preciseY()) {
+			} else // vertical distribution
+			if (rect1.preciseY() < rect2.preciseY()) {
 				return -1;
-			} else if(rect1.preciseY() == rect2.preciseY()) {
+			} else if (rect1.preciseY() == rect2.preciseY()) {
 				return 0;
 			} else {
 				return 1;

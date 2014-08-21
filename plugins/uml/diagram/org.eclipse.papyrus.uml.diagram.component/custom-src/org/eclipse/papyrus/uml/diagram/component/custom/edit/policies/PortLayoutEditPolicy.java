@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,21 +38,22 @@ public class PortLayoutEditPolicy extends LayoutEditPolicy {
 	/**
 	 * Creates the child edit policy.
 	 *
-	 * @param child the child
+	 * @param child
+	 *            the child
 	 * @return the edits the policy
 	 * @see org.eclipse.gef.editpolicies.LayoutEditPolicy#createChildEditPolicy(org.eclipse.gef.EditPart)
 	 */
-	
+
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		View childView = (View)child.getModel();
-		switch(UMLVisualIDRegistry.getVisualID(childView)) {
+		View childView = (View) child.getModel();
+		switch (UMLVisualIDRegistry.getVisualID(childView)) {
 		case PortNameEditPart.VISUAL_ID:
 		case PortAppliedStereotypeEditPart.VISUAL_ID:
 			return new ExternalLabelPrimaryDragRoleEditPolicy();
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;
@@ -61,11 +62,12 @@ public class PortLayoutEditPolicy extends LayoutEditPolicy {
 	/**
 	 * Gets the move children command.
 	 *
-	 * @param request the request
+	 * @param request
+	 *            the request
 	 * @return the move children command
 	 * @see org.eclipse.gef.editpolicies.LayoutEditPolicy#getMoveChildrenCommand(org.eclipse.gef.Request)
 	 */
-	
+
 	@Override
 	protected Command getMoveChildrenCommand(Request request) {
 		return null;
@@ -74,11 +76,12 @@ public class PortLayoutEditPolicy extends LayoutEditPolicy {
 	/**
 	 * Gets the creates the command.
 	 *
-	 * @param request the request
+	 * @param request
+	 *            the request
 	 * @return the creates the command
 	 * @see org.eclipse.gef.editpolicies.LayoutEditPolicy#getCreateCommand(org.eclipse.gef.requests.CreateRequest)
 	 */
-	
+
 	@Override
 	protected Command getCreateCommand(CreateRequest request) {
 		return null;

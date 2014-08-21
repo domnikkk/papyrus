@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 425270
- *  
+ *
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.modelexplorer.queries;
 
@@ -28,7 +28,7 @@ public class GetComplexName implements IJavaQuery2<NamedElement, String> {
 
 	/**
 	 * Left Stereotype delimiters ('Guillemets francais').
-	 * 
+	 *
 	 * @deprecated No longer used.
 	 */
 	@Deprecated
@@ -36,7 +36,7 @@ public class GetComplexName implements IJavaQuery2<NamedElement, String> {
 
 	/**
 	 * Right Stereotype delimiters ('Guillemets francais').
-	 * 
+	 *
 	 * @deprecated No longer used.
 	 */
 	@Deprecated
@@ -45,9 +45,9 @@ public class GetComplexName implements IJavaQuery2<NamedElement, String> {
 	private static final IItemLabelProvider labelProvider = new DelegatingItemLabelProvider();
 
 	public String evaluate(NamedElement source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
-		ParameterValue parameterValue = (ParameterValue)parameterValues.getParameterValueByName("eObject"); //$NON-NLS-1$
-		if(parameterValue.getValue() instanceof EStructuralFeature) {
-			return ((EStructuralFeature)parameterValue.getValue()).getName();
+		ParameterValue parameterValue = parameterValues.getParameterValueByName("eObject"); //$NON-NLS-1$
+		if (parameterValue.getValue() instanceof EStructuralFeature) {
+			return ((EStructuralFeature) parameterValue.getValue()).getName();
 		}
 
 		// Delegate to UML2 Edit providers to get localized and inferred names where applicable

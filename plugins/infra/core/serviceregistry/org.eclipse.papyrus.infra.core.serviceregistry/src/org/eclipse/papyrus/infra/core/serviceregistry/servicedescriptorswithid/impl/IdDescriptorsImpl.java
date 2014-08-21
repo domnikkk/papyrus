@@ -28,8 +28,8 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl#getRegistries <em>Registries</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl#getServiceSets <em>Service Sets</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl#getRegistries <em>Registries</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.IdDescriptorsImpl#getServiceSets <em>Service Sets</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	 * The cached value of the '{@link #getRegistries() <em>Registries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRegistries()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	 * The cached value of the '{@link #getServiceSets() <em>Service Sets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getServiceSets()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IdDescriptorsImpl() {
@@ -68,6 +71,7 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,8 +82,10 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<RegistryIdDesc> getRegistries() {
 		if (registries == null) {
 			registries = new EObjectContainmentEList<RegistryIdDesc>(RegistryIdDesc.class, this, ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES);
@@ -90,8 +96,10 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ServiceSetIdDesc> getServiceSets() {
 		if (serviceSets == null) {
 			serviceSets = new EObjectContainmentEList<ServiceSetIdDesc>(ServiceSetIdDesc.class, this, ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS);
@@ -102,15 +110,16 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
-				return ((InternalEList<?>)getRegistries()).basicRemove(otherEnd, msgs);
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
-				return ((InternalEList<?>)getServiceSets()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
+			return ((InternalEList<?>) getRegistries()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
+			return ((InternalEList<?>) getServiceSets()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -118,15 +127,16 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
-				return getRegistries();
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
-				return getServiceSets();
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
+			return getRegistries();
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
+			return getServiceSets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -134,20 +144,21 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
-				getRegistries().clear();
-				getRegistries().addAll((Collection<? extends RegistryIdDesc>)newValue);
-				return;
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
-				getServiceSets().clear();
-				getServiceSets().addAll((Collection<? extends ServiceSetIdDesc>)newValue);
-				return;
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
+			getRegistries().clear();
+			getRegistries().addAll((Collection<? extends RegistryIdDesc>) newValue);
+			return;
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
+			getServiceSets().clear();
+			getServiceSets().addAll((Collection<? extends ServiceSetIdDesc>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -155,17 +166,18 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
-				getRegistries().clear();
-				return;
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
-				getServiceSets().clear();
-				return;
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
+			getRegistries().clear();
+			return;
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
+			getServiceSets().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -173,17 +185,18 @@ public class IdDescriptorsImpl extends EObjectImpl implements IdDescriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
-				return registries != null && !registries.isEmpty();
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
-				return serviceSets != null && !serviceSets.isEmpty();
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__REGISTRIES:
+			return registries != null && !registries.isEmpty();
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS__SERVICE_SETS:
+			return serviceSets != null && !serviceSets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //IdDescriptorsImpl
+} // IdDescriptorsImpl

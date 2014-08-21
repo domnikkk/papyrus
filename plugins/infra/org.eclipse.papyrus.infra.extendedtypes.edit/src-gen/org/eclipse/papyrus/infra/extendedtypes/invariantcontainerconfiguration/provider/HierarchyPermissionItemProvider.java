@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -39,11 +39,12 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.I
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration.HierarchyPermission} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class HierarchyPermissionItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -53,6 +54,7 @@ public class HierarchyPermissionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public HierarchyPermissionItemProvider(AdapterFactory adapterFactory) {
@@ -63,6 +65,7 @@ public class HierarchyPermissionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,72 +84,76 @@ public class HierarchyPermissionItemProvider
 	 * This adds a property descriptor for the Child Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addChildTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HierarchyPermission_childType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HierarchyPermission_childType_feature", "_UI_HierarchyPermission_type"),
-				 InvariantContainerConfigurationPackage.Literals.HIERARCHY_PERMISSION__CHILD_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_HierarchyPermission_childType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HierarchyPermission_childType_feature", "_UI_HierarchyPermission_type"),
+						InvariantContainerConfigurationPackage.Literals.HIERARCHY_PERMISSION__CHILD_TYPE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Is Permitted feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addIsPermittedPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HierarchyPermission_isPermitted_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HierarchyPermission_isPermitted_feature", "_UI_HierarchyPermission_type"),
-				 InvariantContainerConfigurationPackage.Literals.HIERARCHY_PERMISSION__IS_PERMITTED,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_HierarchyPermission_isPermitted_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HierarchyPermission_isPermitted_feature", "_UI_HierarchyPermission_type"),
+						InvariantContainerConfigurationPackage.Literals.HIERARCHY_PERMISSION__IS_PERMITTED,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Is Strict feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addIsStrictPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_HierarchyPermission_isStrict_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_HierarchyPermission_isStrict_feature", "_UI_HierarchyPermission_type"),
-				 InvariantContainerConfigurationPackage.Literals.HIERARCHY_PERMISSION__IS_STRICT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_HierarchyPermission_isStrict_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_HierarchyPermission_isStrict_feature", "_UI_HierarchyPermission_type"),
+						InvariantContainerConfigurationPackage.Literals.HIERARCHY_PERMISSION__IS_STRICT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns HierarchyPermission.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,22 +165,24 @@ public class HierarchyPermissionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((HierarchyPermission)object).getChildType();
+		String label = ((HierarchyPermission) object).getChildType();
 		return label == null || label.length() == 0 ?
-			getString("_UI_HierarchyPermission_type") :
-			getString("_UI_HierarchyPermission_type") + " " + label;
+				getString("_UI_HierarchyPermission_type") :
+				getString("_UI_HierarchyPermission_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -181,11 +190,11 @@ public class HierarchyPermissionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(HierarchyPermission.class)) {
-			case InvariantContainerConfigurationPackage.HIERARCHY_PERMISSION__CHILD_TYPE:
-			case InvariantContainerConfigurationPackage.HIERARCHY_PERMISSION__IS_PERMITTED:
-			case InvariantContainerConfigurationPackage.HIERARCHY_PERMISSION__IS_STRICT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case InvariantContainerConfigurationPackage.HIERARCHY_PERMISSION__CHILD_TYPE:
+		case InvariantContainerConfigurationPackage.HIERARCHY_PERMISSION__IS_PERMITTED:
+		case InvariantContainerConfigurationPackage.HIERARCHY_PERMISSION__IS_STRICT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -195,6 +204,7 @@ public class HierarchyPermissionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,6 +216,7 @@ public class HierarchyPermissionItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

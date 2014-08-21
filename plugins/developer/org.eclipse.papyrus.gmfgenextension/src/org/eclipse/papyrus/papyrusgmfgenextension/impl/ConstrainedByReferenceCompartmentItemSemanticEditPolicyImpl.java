@@ -22,7 +22,7 @@ import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl#getGenView <em>Gen View</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl#getGenView <em>Gen View</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	 * The cached value of the '{@link #getGenView() <em>Gen View</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenView()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl() {
@@ -51,6 +53,7 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,8 +64,10 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<GenCommonBase> getGenView() {
 		if (genView == null) {
 			genView = new EObjectResolvingEList<GenCommonBase>(GenCommonBase.class, this, PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW);
@@ -73,13 +78,14 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
-				return getGenView();
+		case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
+			return getGenView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -87,16 +93,17 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
-				getGenView().clear();
-				getGenView().addAll((Collection<? extends GenCommonBase>)newValue);
-				return;
+		case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
+			getGenView().clear();
+			getGenView().addAll((Collection<? extends GenCommonBase>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -104,14 +111,15 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
-				getGenView().clear();
-				return;
+		case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
+			getGenView().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -119,15 +127,16 @@ public class ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl extends
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
-				return genView != null && !genView.isEmpty();
+		case PapyrusgmfgenextensionPackage.CONSTRAINED_BY_REFERENCE_COMPARTMENT_ITEM_SEMANTIC_EDIT_POLICY__GEN_VIEW:
+			return genView != null && !genView.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl
+} // ConstrainedByReferenceCompartmentItemSemanticEditPolicyImpl

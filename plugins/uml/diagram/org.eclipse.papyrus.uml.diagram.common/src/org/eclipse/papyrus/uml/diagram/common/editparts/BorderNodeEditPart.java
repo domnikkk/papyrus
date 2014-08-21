@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008-2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.swt.graphics.Color;
 public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart implements IPapyrusEditPart {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public BorderNodeEditPart(View view) {
@@ -60,9 +60,10 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 	 * Returns the primary shape being the View of this edit part.
 	 * </p>
 	 * <b>Warning</b> It should never return <code>null</code>
-	 * 
+	 *
 	 * @return the primary shape associated to this edit part.
 	 */
+	@Override
 	public abstract IPapyrusNodeFigure getPrimaryShape();
 
 	/**
@@ -75,7 +76,7 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 	/**
 	 * Set the transparency to the correct figure
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -85,11 +86,11 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 	/**
 	 * Set the background color of this edit part
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the back ground color
-	 * 
-	 * 
+	 *            the new value of the back ground color
+	 *
+	 *
 	 */
 	@Override
 	protected void setBackgroundColor(Color color) {
@@ -100,15 +101,16 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 	/**
 	 * Set the gradient data to the correct figure
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void setGradient(GradientData gradient) {
 		IPapyrusNodeFigure fig = getPrimaryShape();
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(gradient != null) {
-			fig.setIsUsingGradient(true);;
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (gradient != null) {
+			fig.setIsUsingGradient(true);
+			;
 			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
 		} else {
 			fig.setIsUsingGradient(false);
@@ -117,9 +119,9 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 	/**
 	 * Set the font color
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the font color
+	 *            the new value of the font color
 	 */
 	@Override
 	protected void setFontColor(Color color) {
@@ -128,9 +130,9 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 	/**
 	 * Set the foreground color of this edit part's figure
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the foreground color
+	 *            the new value of the foreground color
 	 */
 	@Override
 	protected void setForegroundColor(Color color) {
@@ -141,13 +143,13 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 	 * Refresh the shadow of the figure
 	 */
 	protected void refreshShadow() {
-		getPrimaryShape().setShadow(ShadowFigureHelper.getShadowFigureValue((View)getModel()));
+		getPrimaryShape().setShadow(ShadowFigureHelper.getShadowFigureValue((View) getModel()));
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart#handleNotificationEvent(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param event
 	 */
 	@Override
@@ -156,15 +158,15 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 		// Update the figure when the line width changes
 		Object feature = event.getFeature();
-		if((getModel() != null) && (getModel() == event.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == event.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
-			} else if(NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
+			} else if (NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
 				refreshLineType();
 			}
 		}
 
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshShadow();
 		}
 	}
@@ -180,7 +182,7 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(width < 0) {
+		if (width < 0) {
 			width = 1;
 		}
 		getPrimaryShape().setLineWidth(width);
@@ -192,9 +194,9 @@ public abstract class BorderNodeEditPart extends BorderedBorderItemEditPart impl
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#getDragTracker(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */

@@ -24,7 +24,7 @@ public class CustomConstraintBlockPropertyCompositeEditPart extends
 	public CustomConstraintBlockPropertyCompositeEditPart(View view) {
 		super(view);
 	}
-	
+
 	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();

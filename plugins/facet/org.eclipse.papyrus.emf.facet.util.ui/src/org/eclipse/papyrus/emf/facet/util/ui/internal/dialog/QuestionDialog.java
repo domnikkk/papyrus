@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * A yes/no dialog, that replicates the JFace MessageDialog#openQuestion, but is designed to be easily testable with JUnit
- * 
+ *
  * @since 0.2
  */
 public class QuestionDialog implements IQuestionDialog {
@@ -62,7 +62,7 @@ public class QuestionDialog implements IQuestionDialog {
 
 	/**
 	 * Open the dialog.
-	 * 
+	 *
 	 * @return the result
 	 */
 	public final void open() {
@@ -177,7 +177,7 @@ public class QuestionDialog implements IQuestionDialog {
 	public final Boolean getResult() {
 		return this.result;
 	}
-	
+
 	public final Shell getShell() {
 		return this.shell;
 	}

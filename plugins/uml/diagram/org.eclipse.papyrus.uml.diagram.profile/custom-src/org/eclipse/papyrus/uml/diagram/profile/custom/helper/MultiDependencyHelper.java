@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,7 +67,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class MultiDependencyHelper extends ElementHelper {
 	/**
 	 * Instantiates a new multi dependency helper.
-	 * 
+	 *
 	 * @param editDomain
 	 *            the edit domain
 	 */
@@ -161,12 +161,12 @@ public class MultiDependencyHelper extends ElementHelper {
 
 	/**
 	 * Gets the branch dependency command.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            the command
-	 * 
+	 *
 	 * @return the branch dependency command
 	 */
 	private Command getBranchDepencencyCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {
@@ -202,12 +202,12 @@ public class MultiDependencyHelper extends ElementHelper {
 
 	/**
 	 * Gets the command.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            the command
-	 * 
+	 *
 	 * @return the command
 	 */
 	public Command getCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {
@@ -246,12 +246,12 @@ public class MultiDependencyHelper extends ElementHelper {
 
 	/**
 	 * this method is used to create a branch of a dependency.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the create connection view and element request
 	 * @param command
 	 *            the command that is used to create the link branch of a dependency
-	 * 
+	 *
 	 * @return the set of command to create a branch of a dependency
 	 */
 	private Command getDependencyToMultiDependencyCommand(CreateConnectionViewAndElementRequest createConnectionViewAndElementRequest, Command command) {
@@ -373,7 +373,7 @@ public class MultiDependencyHelper extends ElementHelper {
 
 	/**
 	 * look for a dependency node from a dependency branch.
-	 * 
+	 *
 	 * @param dependencyBranchEditPart
 	 * @return may be null
 	 */

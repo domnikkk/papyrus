@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -37,9 +37,10 @@ public class GetAllShapeProvidersOperation implements IOperation, IShapeProvider
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Object execute(IProvider provider) {
-		if(provider instanceof IShapeProvider) {
-			providers.add((IShapeProvider)provider);	
+		if (provider instanceof IShapeProvider) {
+			providers.add((IShapeProvider) provider);
 		} else {
 			Activator.log.warn("Trying to add a non-shape provider to the list of shape providers");
 		}

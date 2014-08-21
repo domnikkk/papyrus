@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.papyrus.xwt.core.IBinding;
 
 /**
  * Binding to Object covnerter
- * 
+ *
  * @author yyang
  */
 public class BindingToObject implements IConverter {
@@ -23,7 +23,7 @@ public class BindingToObject implements IConverter {
 	public static BindingToObject instance = new BindingToObject();
 
 	public Object convert(Object fromObject) {
-		IBinding binding = (IBinding)fromObject;
+		IBinding binding = (IBinding) fromObject;
 		return binding.getValue(null);
 	}
 

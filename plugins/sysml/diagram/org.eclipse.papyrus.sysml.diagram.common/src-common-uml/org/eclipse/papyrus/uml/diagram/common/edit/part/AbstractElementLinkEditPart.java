@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -26,6 +26,7 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.gmf.diagram.common.edit.policy.DefaultGraphicalNodeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.EdgeDecorationType;
 
@@ -49,15 +50,15 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new DefaultGraphicalNodeEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
 	}
 
 	/**
 	 * Add fixed child edit part.
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof AppliedStereotypeLinkLabelEditPart) {
-			((AppliedStereotypeLinkLabelEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+		if (childEditPart instanceof AppliedStereotypeLinkLabelEditPart) {
+			((AppliedStereotypeLinkLabelEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 			return true;
 		}
 		return false;
@@ -67,7 +68,7 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	 * Remove fixed child edit part.
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof AppliedStereotypeLinkLabelEditPart) {
+		if (childEditPart instanceof AppliedStereotypeLinkLabelEditPart) {
 			return true;
 		}
 		return false;
@@ -78,7 +79,7 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	 */
 	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -89,7 +90,7 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	 */
 	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -104,13 +105,13 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 
 		// Update the figure when the line width changes
 		Object feature = event.getFeature();
-		if((getModel() != null) && (getModel() == event.getNotifier())) {
+		if ((getModel() != null) && (getModel() == event.getNotifier())) {
 
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 				refreshArrowSource();
 				refreshArrowTarget();
-			} else if(NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
+			} else if (NotationPackage.eINSTANCE.getLineTypeStyle_LineType().equals(feature)) {
 				refreshLineType();
 			}
 		}
@@ -133,7 +134,7 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	 */
 	@Override
 	protected void setLineWidth(int width) {
-		if(width < 0) {
+		if (width < 0) {
 			width = 1;
 		}
 		getPrimaryShape().setLineWidth(width);
@@ -167,7 +168,7 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	 * <pre>
 	 * {@inheritDoc}
 	 * 
-	 * This method override parent implementation to add a new set of 
+	 * This method override parent implementation to add a new set of
 	 * predefined decoration type.
 	 * 
 	 * The arrowType available constants are given in {@link EdgeDecorationType}.
@@ -177,39 +178,39 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 	protected RotatableDecoration getArrowDecoration(int arrowType) {
 		RotatableDecoration decoration = null;
 		int width = getLineWidth();
-		if(width < 0) {
+		if (width < 0) {
 			width = 1;
 		}
-		if(arrowType == EdgeDecorationType.OPEN_ARROW) {
+		if (arrowType == EdgeDecorationType.OPEN_ARROW) {
 			IMapMode mm = getMapMode();
 			decoration = new PolylineDecoration();
-			((PolylineDecoration)decoration).setScale(mm.DPtoLP(15 + width), mm.DPtoLP(5 + width));
-			((PolylineDecoration)decoration).setTemplate(PolylineDecoration.TRIANGLE_TIP);
-			((PolylineDecoration)decoration).setLineWidth(mm.DPtoLP(width));
+			((PolylineDecoration) decoration).setScale(mm.DPtoLP(15 + width), mm.DPtoLP(5 + width));
+			((PolylineDecoration) decoration).setTemplate(PolylineDecoration.TRIANGLE_TIP);
+			((PolylineDecoration) decoration).setLineWidth(mm.DPtoLP(width));
 
-		} else if(arrowType == EdgeDecorationType.SOLID_ARROW_FILLED) {
+		} else if (arrowType == EdgeDecorationType.SOLID_ARROW_FILLED) {
 			IMapMode mm = getMapMode();
 			decoration = new PolygonDecoration();
-			((PolygonDecoration)decoration).setScale(mm.DPtoLP(15 + width), mm.DPtoLP(5 + width));
-			((PolygonDecoration)decoration).setTemplate(PolygonDecoration.TRIANGLE_TIP);
-			((PolygonDecoration)decoration).setLineWidth(mm.DPtoLP(width));
-			((PolygonDecoration)decoration).setFill(true);
+			((PolygonDecoration) decoration).setScale(mm.DPtoLP(15 + width), mm.DPtoLP(5 + width));
+			((PolygonDecoration) decoration).setTemplate(PolygonDecoration.TRIANGLE_TIP);
+			((PolygonDecoration) decoration).setLineWidth(mm.DPtoLP(width));
+			((PolygonDecoration) decoration).setFill(true);
 
-		} else if(arrowType == EdgeDecorationType.SOLID_ARROW_EMPTY) {
+		} else if (arrowType == EdgeDecorationType.SOLID_ARROW_EMPTY) {
 			IMapMode mm = getMapMode();
 			decoration = new PolygonDecoration();
-			((PolygonDecoration)decoration).setScale(mm.DPtoLP(15 + width), mm.DPtoLP(5 + width));
-			((PolygonDecoration)decoration).setTemplate(PolygonDecoration.TRIANGLE_TIP);
-			((PolygonDecoration)decoration).setLineWidth(mm.DPtoLP(width));
+			((PolygonDecoration) decoration).setScale(mm.DPtoLP(15 + width), mm.DPtoLP(5 + width));
+			((PolygonDecoration) decoration).setTemplate(PolygonDecoration.TRIANGLE_TIP);
+			((PolygonDecoration) decoration).setLineWidth(mm.DPtoLP(width));
 
 			// Not really empty... filled with white color.
-			((PolygonDecoration)decoration).setFill(true);
-			((PolygonDecoration)decoration).setBackgroundColor(ColorConstants.white);
+			((PolygonDecoration) decoration).setFill(true);
+			((PolygonDecoration) decoration).setBackgroundColor(ColorConstants.white);
 
-		} else if(arrowType == EdgeDecorationType.SOLID_DIAMOND_FILLED) {
+		} else if (arrowType == EdgeDecorationType.SOLID_DIAMOND_FILLED) {
 			IMapMode mm = getMapMode();
 			decoration = new PolygonDecoration();
-			((PolygonDecoration)decoration).setScale(mm.DPtoLP(12 + width), mm.DPtoLP(6 + width));
+			((PolygonDecoration) decoration).setScale(mm.DPtoLP(12 + width), mm.DPtoLP(6 + width));
 
 			PointList diamondPointList = new PointList();
 			diamondPointList.addPoint(0, 0);
@@ -217,14 +218,14 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 			diamondPointList.addPoint(-2, 0);
 			diamondPointList.addPoint(-1, -1);
 
-			((PolygonDecoration)decoration).setTemplate(diamondPointList);
-			((PolygonDecoration)decoration).setLineWidth(mm.DPtoLP(width));
-			((PolygonDecoration)decoration).setFill(true);
+			((PolygonDecoration) decoration).setTemplate(diamondPointList);
+			((PolygonDecoration) decoration).setLineWidth(mm.DPtoLP(width));
+			((PolygonDecoration) decoration).setFill(true);
 
-		} else if(arrowType == EdgeDecorationType.SOLID_DIAMOND_EMPTY) {
+		} else if (arrowType == EdgeDecorationType.SOLID_DIAMOND_EMPTY) {
 			IMapMode mm = getMapMode();
 			decoration = new PolygonDecoration();
-			((PolygonDecoration)decoration).setScale(mm.DPtoLP(12 + width), mm.DPtoLP(6 + width));
+			((PolygonDecoration) decoration).setScale(mm.DPtoLP(12 + width), mm.DPtoLP(6 + width));
 
 			PointList diamondPointList = new PointList();
 			diamondPointList.addPoint(0, 0);
@@ -232,12 +233,12 @@ public abstract class AbstractElementLinkEditPart extends UMLConnectionNodeEditP
 			diamondPointList.addPoint(-2, 0);
 			diamondPointList.addPoint(-1, -1);
 
-			((PolygonDecoration)decoration).setTemplate(diamondPointList);
-			((PolygonDecoration)decoration).setLineWidth(mm.DPtoLP(width));
+			((PolygonDecoration) decoration).setTemplate(diamondPointList);
+			((PolygonDecoration) decoration).setLineWidth(mm.DPtoLP(width));
 
 			// Not really empty... filled with white color.
-			((PolygonDecoration)decoration).setFill(true);
-			((PolygonDecoration)decoration).setBackgroundColor(ColorConstants.white);
+			((PolygonDecoration) decoration).setFill(true);
+			((PolygonDecoration) decoration).setBackgroundColor(ColorConstants.white);
 		}
 
 		return decoration;

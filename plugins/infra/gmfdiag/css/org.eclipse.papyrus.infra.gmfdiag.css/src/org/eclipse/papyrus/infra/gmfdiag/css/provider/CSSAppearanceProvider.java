@@ -25,24 +25,24 @@ public class CSSAppearanceProvider extends AnnotationStyleProvider {
 
 	@Override
 	public boolean showElementIcon(EModelElement modelElement) {
-		if(modelElement instanceof CustomStyle) {
-			return ((CustomStyle)modelElement).showElementIcon();
+		if (modelElement instanceof CustomStyle) {
+			return ((CustomStyle) modelElement).showElementIcon();
 		}
 		return super.showElementIcon(modelElement);
 	}
 
 	@Override
 	public int getQualifiedNameDepth(EModelElement modelElement) {
-		if(modelElement instanceof CustomStyle) {
-			return ((CustomStyle)modelElement).getQualifiedNameDepth();
+		if (modelElement instanceof CustomStyle) {
+			return ((CustomStyle) modelElement).getQualifiedNameDepth();
 		}
 		return super.getQualifiedNameDepth(modelElement);
 	}
 
 	@Override
 	public boolean showShadow(EModelElement modelElement) {
-		if(modelElement instanceof CustomStyle) {
-			return ((CustomStyle)modelElement).showShadow();
+		if (modelElement instanceof CustomStyle) {
+			return ((CustomStyle) modelElement).showShadow();
 		}
 		return super.showShadow(modelElement);
 	}

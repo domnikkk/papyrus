@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2013 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class FontProvider implements IFontProvider {
 	public FontProvider(final Device device) {
 		this.device = device;
 	}
-	
+
 	public Font getFont(final FontData fontData) {
 		Font result = this.cash.get(fontData);
 		if (result == null) {

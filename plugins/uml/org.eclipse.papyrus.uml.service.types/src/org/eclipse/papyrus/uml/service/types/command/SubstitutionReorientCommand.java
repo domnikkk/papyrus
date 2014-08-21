@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -43,40 +43,44 @@ public class SubstitutionReorientCommand extends DependencyReorientCommand {
 	 * @return true if the command is executable.
 	 * </pre>
 	 */
+	@Override
 	public boolean canExecute() {
-		if(! (getElementToEdit() instanceof Substitution)) {
+		if (!(getElementToEdit() instanceof Substitution)) {
 			return false;
 		}
-		
+
 		return super.canExecute();
 	}
 
+	@Override
 	protected boolean canReorientSource() {
-		if(!(newEnd instanceof Classifier)) {
+		if (!(newEnd instanceof Classifier)) {
 			return false;
 		}
 
 		if (newEnd == getLink().getContract()) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
+	@Override
 	protected boolean canReorientTarget() {
-		if(!(newEnd instanceof Classifier)) {
+		if (!(newEnd instanceof Classifier)) {
 			return false;
 		}
 
 		if (newEnd == getLink().getSubstitutingClassifier()) {
 			return false;
 		}
-		
+
 		return true;
 	}
 
+	@Override
 	protected Substitution getLink() {
-		return (Substitution)getElementToEdit();
+		return (Substitution) getElementToEdit();
 	}
 
 }

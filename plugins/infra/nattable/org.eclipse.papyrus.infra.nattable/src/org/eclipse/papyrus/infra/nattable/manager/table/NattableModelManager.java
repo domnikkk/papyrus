@@ -158,12 +158,12 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	private PreferenceStore localPreferenceStore;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param rawModel
-	 * 
-	 *        the model of the managed table
+	 *
+	 *            the model of the managed table
 	 */
 	public NattableModelManager(final Table rawModel) {
 		super(rawModel);
@@ -177,11 +177,11 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 			@Override
 			public void notifyChanged(Notification msg) {
-				if(msg.getEventType() == Notification.SET) {
+				if (msg.getEventType() == Notification.SET) {
 					final Object oldValue = msg.getOldValue();
 					final Object newValue = msg.getNewValue();
-					if(oldValue != null && newValue != null) {
-						if(msg.getFeature() == NattablePackage.eINSTANCE.getTable_InvertAxis()) {
+					if (oldValue != null && newValue != null) {
+						if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_InvertAxis()) {
 							invertJavaObject();
 
 						}
@@ -192,15 +192,16 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 		rawModel.eAdapters().add(this.invertAxisListener);
 		init();
-		if(rawModel.isInvertAxis()) {
+		if (rawModel.isInvertAxis()) {
 			invertJavaObject();
 		}
 
 		changeAxisProvider = new AdapterImpl() {
 
+			@Override
 			public void notifyChanged(final Notification msg) {
-				if(msg.getFeature() == NattablePackage.eINSTANCE.getTable_CurrentColumnAxisProvider() || msg.getFeature() == NattablePackage.eINSTANCE.getTable_CurrentRowAxisProvider()) {
-					if(msg.getNewValue() != null) {
+				if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_CurrentColumnAxisProvider() || msg.getFeature() == NattablePackage.eINSTANCE.getTable_CurrentRowAxisProvider()) {
+					if (msg.getNewValue() != null) {
 						Display.getCurrent().asyncExec(new Runnable() {
 
 							@Override
@@ -216,9 +217,10 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 		changeAxisProviderHistory = new AdapterImpl() {
 
+			@Override
 			public void notifyChanged(final Notification msg) {
-				if(msg.getFeature() == NattablePackage.eINSTANCE.getTable_ColumnAxisProvidersHistory() || msg.getFeature() == NattablePackage.eINSTANCE.getTable_RowAxisProvidersHistory()) {
-					if(msg.getNewValue() != null) {
+				if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_ColumnAxisProvidersHistory() || msg.getFeature() == NattablePackage.eINSTANCE.getTable_RowAxisProvidersHistory()) {
+					if (msg.getNewValue() != null) {
 						Display.getCurrent().asyncExec(new Runnable() {
 
 							@Override
@@ -237,7 +239,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 			@Override
 			public void notifyChanged(final Notification msg) {
-				if(msg.getFeature() == NattablePackage.eINSTANCE.getTable_Cells()) {
+				if (msg.getFeature() == NattablePackage.eINSTANCE.getTable_Cells()) {
 					updateCellMap(msg);
 				}
 			}
@@ -255,19 +257,21 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		this.refreshListener = new CommandStackListener() {
 
 			/**
-			 * 
+			 *
 			 * @see org.eclipse.emf.common.command.CommandStackListener#commandStackChanged(java.util.EventObject)
-			 * 
+			 *
 			 * @param event
 			 */
+			@Override
 			public void commandStackChanged(EventObject event) {
-				//we refresh the table after each command, only when it is visible
-				//its allows to refresh the text and the appearance of the table
-				//this refresh doesn't manage the add/remove axis
+				// we refresh the table after each command, only when it is visible
+				// its allows to refresh the text and the appearance of the table
+				// this refresh doesn't manage the add/remove axis
 				Display.getDefault().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
-						if(nattable != null && !nattable.isDisposed() && nattable.isVisible()) {
+						if (nattable != null && !nattable.isDisposed() && nattable.isVisible()) {
 							nattable.doCommand(new VisualRefreshCommand());
 						}
 					}
@@ -277,21 +281,23 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		};
 
 		getContextEditingDomain().getCommandStack().addCommandStackListener(this.refreshListener);
-		if(getTableEditingDomain() != getContextEditingDomain()) {
+		if (getTableEditingDomain() != getContextEditingDomain()) {
 			getTableEditingDomain().getCommandStack().addCommandStackListener(this.refreshListener);
 		}
 		this.focusListener = new FocusListener() {
 
+			@Override
 			public void focusLost(FocusEvent e) {
-				//nothing to do
+				// nothing to do
 			}
 
+			@Override
 			public void focusGained(FocusEvent e) {
 				updateToggleActionState();
 			}
 		};
 		nattable.addFocusListener(this.focusListener);
-		updateToggleActionState();//required, because the focus listener is not notified just after the creation of the widget
+		updateToggleActionState();// required, because the focus listener is not notified just after the creation of the widget
 		return nattable;
 	}
 
@@ -299,12 +305,12 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 * this command update the status of the toggle actions
 	 */
 	protected void updateToggleActionState() {
-		final ICommandService commandService = (ICommandService)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
-		if(commandService != null) {
+		final ICommandService commandService = (ICommandService) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
+		if (commandService != null) {
 
 			final AbstractHeaderAxisConfiguration columnAxisConfiguration = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(getTable());
 			final AbstractHeaderAxisConfiguration rowAxisConfiguration = HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisUsedInTable(getTable());
-			//update the header configuration
+			// update the header configuration
 			org.eclipse.core.commands.Command command = commandService.getCommand(CommandIds.COMMAND_COLUMN_DISPLAY_INDEX_ID);
 			updateToggleCommandState(command, columnAxisConfiguration.isDisplayIndex());
 
@@ -324,20 +330,20 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			updateRadioCommandState(command, rowAxisConfiguration.getIndexStyle().getLiteral());
 
 
-			//update the label header configuration
+			// update the label header configuration
 			final List<ILabelProviderConfiguration> columnLabelConfigurations = columnAxisConfiguration.getOwnedLabelConfigurations();
 			final List<ILabelProviderConfiguration> rowLabelConfigurations = rowAxisConfiguration.getOwnedLabelConfigurations();
-			for(final ILabelProviderConfiguration current : columnLabelConfigurations) {
-				if(current instanceof ObjectLabelProviderConfiguration) {
-					final ObjectLabelProviderConfiguration labelConfig = (ObjectLabelProviderConfiguration)current;
+			for (final ILabelProviderConfiguration current : columnLabelConfigurations) {
+				if (current instanceof ObjectLabelProviderConfiguration) {
+					final ObjectLabelProviderConfiguration labelConfig = (ObjectLabelProviderConfiguration) current;
 					command = commandService.getCommand(CommandIds.COMMAND_COLUMN_LABEL_DISPLAY_ICON);
 					updateToggleCommandState(command, labelConfig.isDisplayIcon());
 
 					command = commandService.getCommand(CommandIds.COMMAND_COLUMN_LABEL_DISPLAY_LABEL);
 					updateToggleCommandState(command, labelConfig.isDisplayLabel());
 
-					if(labelConfig instanceof FeatureLabelProviderConfiguration) {
-						final FeatureLabelProviderConfiguration labelFeatureConf = (FeatureLabelProviderConfiguration)labelConfig;
+					if (labelConfig instanceof FeatureLabelProviderConfiguration) {
+						final FeatureLabelProviderConfiguration labelFeatureConf = (FeatureLabelProviderConfiguration) labelConfig;
 						command = commandService.getCommand(CommandIds.COMMAND_COLUMN_LABEL_FEATURE_DISPLAY_IS_DERIVED);
 						updateToggleCommandState(command, labelFeatureConf.isDisplayIsDerived());
 
@@ -354,9 +360,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 				}
 			}
 
-			for(final ILabelProviderConfiguration current : rowLabelConfigurations) {
-				if(current instanceof ObjectLabelProviderConfiguration) {
-					final ObjectLabelProviderConfiguration labelConfig = (ObjectLabelProviderConfiguration)current;
+			for (final ILabelProviderConfiguration current : rowLabelConfigurations) {
+				if (current instanceof ObjectLabelProviderConfiguration) {
+					final ObjectLabelProviderConfiguration labelConfig = (ObjectLabelProviderConfiguration) current;
 
 					command = commandService.getCommand(CommandIds.COMMAND_ROW_LABEL_DISPLAY_ICON);
 					updateToggleCommandState(command, labelConfig.isDisplayIcon());
@@ -364,8 +370,8 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 					command = commandService.getCommand(CommandIds.COMMAND_ROW_LABEL_DISPLAY_LABEL);
 					updateToggleCommandState(command, labelConfig.isDisplayLabel());
 
-					if(labelConfig instanceof FeatureLabelProviderConfiguration) {
-						final FeatureLabelProviderConfiguration labelFeatureConf = (FeatureLabelProviderConfiguration)labelConfig;
+					if (labelConfig instanceof FeatureLabelProviderConfiguration) {
+						final FeatureLabelProviderConfiguration labelFeatureConf = (FeatureLabelProviderConfiguration) labelConfig;
 						command = commandService.getCommand(CommandIds.COMMAND_ROW_LABEL_FEATURE_DISPLAY_IS_DERIVED);
 						updateToggleCommandState(command, labelFeatureConf.isDisplayIsDerived());
 
@@ -381,18 +387,18 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 				}
 			}
 
-			//update the property IMasterObjectAxisProvider#disconnectslave
-			if(columnProvider instanceof ISlaveAxisProvider) {
+			// update the property IMasterObjectAxisProvider#disconnectslave
+			if (columnProvider instanceof ISlaveAxisProvider) {
 				command = commandService.getCommand(CommandIds.COMMAND_ROW_DISCONNECT_SLAVE);
-				updateToggleCommandState(command, ((IMasterAxisProvider)rowProvider).isDisconnectSlave());
+				updateToggleCommandState(command, ((IMasterAxisProvider) rowProvider).isDisconnectSlave());
 			}
 
-			if(rowProvider instanceof ISlaveAxisProvider) {
+			if (rowProvider instanceof ISlaveAxisProvider) {
 				command = commandService.getCommand(CommandIds.COMMAND_COLUMN_DISCONNECT_SLAVE);
-				updateToggleCommandState(command, ((IMasterAxisProvider)columnProvider).isDisconnectSlave());
+				updateToggleCommandState(command, ((IMasterAxisProvider) columnProvider).isDisconnectSlave());
 			}
 
-			//we update the state for the invert axis command
+			// we update the state for the invert axis command
 			command = commandService.getCommand(CommandIds.COMMAND_INVERT_AXIS);
 			updateToggleCommandState(command, getTable().isInvertAxis());
 
@@ -403,39 +409,39 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @param command
-	 *        an eclipse command
+	 *            an eclipse command
 	 * @param newValue
-	 *        the new boolean value to set to the state of this command
+	 *            the new boolean value to set to the state of this command
 	 */
 	private void updateToggleCommandState(final org.eclipse.core.commands.Command command, final boolean newValue) {
-		if(command != null) {
+		if (command != null) {
 			final State state = command.getState(CommandIds.TOGGLE_STATE);
-			if(state != null) {
+			if (state != null) {
 				state.setValue(newValue);
 			}
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param command
-	 *        an eclispe command
+	 *            an eclispe command
 	 * @param newValue
-	 *        the new value to set to the state of this command
+	 *            the new value to set to the state of this command
 	 */
 	private void updateRadioCommandState(final org.eclipse.core.commands.Command command, final Object newValue) {
-		if(command != null) {
+		if (command != null) {
 			final State state = command.getState(CommandIds.RADIO_STATE);
-			if(state != null) {
+			if (state != null) {
 				state.setValue(newValue);
 			}
 		}
 	}
 
 	public void invertJavaObject() {
-		getRowSortModel().clear();//we clear the sort model
+		getRowSortModel().clear();// we clear the sort model
 		AbstractAxisProvider newColumProvider = this.rowProvider;
 		AbstractAxisProvider newRowProvider = this.columnProvider;
 		List<Object> newVerticalElementList = this.horizontalElements;
@@ -463,10 +469,10 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 * create the line and the columns managers
 	 */
 	protected void init() {
-		if(this.columnManager != null) {
+		if (this.columnManager != null) {
 			this.columnManager.dispose();
 		}
-		if(this.rowManager != null) {
+		if (this.rowManager != null) {
 			this.rowManager.dispose();
 		}
 		this.columnProvider = getTable().getCurrentColumnAxisProvider();
@@ -479,16 +485,16 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @param ids
-	 *        the ids of the axis manager to use
+	 *            the ids of the axis manager to use
 	 * @param contentProvider
-	 *        the content provider in the model
+	 *            the content provider in the model
 	 * @return the created axis manager to use to manage the {@link IAxisContentsProvider}
 	 */
 	protected ICompositeAxisManager createAxisManager(final List<AxisManagerRepresentation> representations, final AbstractAxisProvider contentProvider) {
 		final List<IAxisManager> managers = new ArrayList<IAxisManager>();
-		for(AxisManagerRepresentation current : representations) {
+		for (AxisManagerRepresentation current : representations) {
 			final IAxisManager manager = AxisManagerFactory.INSTANCE.getAxisManager(current);
 			assert manager != null;
 			manager.init(this, current, contentProvider);
@@ -502,26 +508,26 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.services.IDisposable#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
-		if(this.tableEditingDomain != null && this.contextEditingDomain != null) {
-			if(this.tableEditingDomain.getCommandStack() != null) {
+		if (this.tableEditingDomain != null && this.contextEditingDomain != null) {
+			if (this.tableEditingDomain.getCommandStack() != null) {
 				this.tableEditingDomain.getCommandStack().removeCommandStackListener(this.refreshListener);
 			}
-			if(this.contextEditingDomain.getCommandStack() != null) {
+			if (this.contextEditingDomain.getCommandStack() != null) {
 				this.contextEditingDomain.getCommandStack().removeCommandStackListener(this.refreshListener);
 			}
 			this.columnManager.dispose();
 			this.rowManager.dispose();
 			Table table = getTable();
-			if(table != null && this.tableCellsListener != null) {
+			if (table != null && this.tableCellsListener != null) {
 				table.eAdapters().remove(this.tableCellsListener);
 			}
-			if(this.cellsMap != null) {
+			if (this.cellsMap != null) {
 				this.cellsMap.clear();
 			}
 			this.tableEditingDomain = null;
@@ -531,16 +537,17 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#addRows(java.util.Collection)
-	 * 
+	 *
 	 * @param objectsToAdd
-	 *        the list of the objects to add in rows
+	 *            the list of the objects to add in rows
 	 */
+	@Override
 	public void addRows(final Collection<Object> objectsToAdd) {
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		final Command cmd = getAddRowElementCommand(objectsToAdd);
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			domain.getCommandStack().execute(cmd);
 		}
 	}
@@ -548,6 +555,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	/**
 	 * called when the manager is used vertically
 	 */
+	@Override
 	public int getColumnCount() {
 		return this.getColumnElementsList().size();
 	}
@@ -556,51 +564,53 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	 * called when the manager is used horizontally
 	 */
 
+	@Override
 	public int getRowCount() {
 		return this.getRowElementsList().size();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#addColumns(java.util.Collection)
-	 * 
+	 *
 	 * @param objectsToAdd
-	 *        the list of the objects to add in columns
+	 *            the list of the objects to add in columns
 	 */
+	@Override
 	public void addColumns(final Collection<Object> objectsToAdd) {
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		final Command cmd = getAddColumnElementCommand(objectsToAdd);
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			domain.getCommandStack().execute(cmd);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#removeColumns(java.util.Collection)
-	 * 
+	 *
 	 * @param objetsToRemove
 	 */
 	@Override
 	public void removeColumns(Collection<Object> objetsToRemove) {
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		final Command cmd = getDestroyColumnElementCommand(objetsToRemove);
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			domain.getCommandStack().execute(cmd);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#removeRows(java.util.Collection)
-	 * 
+	 *
 	 * @param objectsToRemove
 	 */
 	@Override
 	public void removeRows(Collection<Object> objectsToRemove) {
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		final Command cmd = getDestroyRowElementCommand(objectsToRemove);
-		if(cmd != null && cmd.canExecute()) {
+		if (cmd != null && cmd.canExecute()) {
 			domain.getCommandStack().execute(cmd);
 		}
 	}
@@ -609,7 +619,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	/**
 	 * Returns the EditingDomain associated to the table
-	 * 
+	 *
 	 * @return
 	 */
 	private TransactionalEditingDomain getTableEditingDomain() {
@@ -618,7 +628,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	/**
 	 * Returns the EditingDomain associated to the context
-	 * 
+	 *
 	 * @return
 	 */
 	private TransactionalEditingDomain getContextEditingDomain() {
@@ -626,32 +636,34 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getBodyDataProvider()
-	 * 
+	 *
 	 * @return the data provider for the body of the table
 	 */
+	@Override
 	public IDataProvider getBodyDataProvider() {
 		return this;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.IDataProvider#getDataValue(int, int)
-	 * 
+	 *
 	 * @param columnIndex
-	 *        the index of the column
+	 *            the index of the column
 	 * @param rowIndex
-	 *        the index of the row
+	 *            the index of the row
 	 * @return the contents to display in the cell localted to columnIndex and
 	 *         rowIndex
 	 */
+	@Override
 	public Object getDataValue(final int columnIndex, final int rowIndex) {
 		final Object row;
 		final Object column;
 		final Object obj1 = this.verticalElements.get(columnIndex);
 		final Object obj2 = this.horizontalElements.get(rowIndex);
-		if(getTable().isInvertAxis()) {
+		if (getTable().isInvertAxis()) {
 			column = obj2;
 			row = obj1;
 		} else {
@@ -661,31 +673,34 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		return CellManagerFactory.INSTANCE.getCrossValue(column, row, this);
 	}
 
+	@Override
 	public void setDataValue(final int columnIndex, final int rowIndex, final Object newValue) {
 		final Object row;
 		final Object column;
 		final Object obj1 = this.verticalElements.get(columnIndex);
 		final Object obj2 = this.horizontalElements.get(rowIndex);
-		if(getTable().isInvertAxis()) {
+		if (getTable().isInvertAxis()) {
 			column = obj2;
 			row = obj1;
 		} else {
 			row = obj2;
 			column = obj1;
 		}
-		CellManagerFactory.INSTANCE.setCellValue((TransactionalEditingDomain)getContextEditingDomain(), column, row, newValue, this);
+		CellManagerFactory.INSTANCE.setCellValue(getContextEditingDomain(), column, row, newValue, this);
 	}
 
 	/**
 	 * refresh NatTable (asyncExec)
 	 */
 	public void refreshNatTable() {
-		if(this.natTable != null && !this.natTable.isDisposed()) {
+		if (this.natTable != null && !this.natTable.isDisposed()) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
-					if(natTable != null && !natTable.isDisposed())
+					if (natTable != null && !natTable.isDisposed()) {
 						NattableModelManager.this.natTable.refresh();
+					}
 				}
 			});
 		}
@@ -693,9 +708,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 
 	/**
-	 * 
+	 *
 	 * @param axis
-	 *        the axis for which must refresh the contents
+	 *            the axis for which must refresh the contents
 	 */
 	public void updateAxisContents(final AbstractAxisProvider axis) {
 
@@ -708,9 +723,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 						@Override
 						public void run() {
-							if(NattableModelManager.this.natTable != null && !NattableModelManager.this.natTable.isDisposed()) {
-								if(NattableModelManager.this.getTable() != null && NattableModelManager.this.getTable().getTableConfiguration() != null) {
-									if(axis == NattableModelManager.this.columnProvider) {
+							if (NattableModelManager.this.natTable != null && !NattableModelManager.this.natTable.isDisposed()) {
+								if (NattableModelManager.this.getTable() != null && NattableModelManager.this.getTable().getTableConfiguration() != null) {
+									if (axis == NattableModelManager.this.columnProvider) {
 										updateColumnContents();
 										NattableModelManager.this.getRowSortModel().updateSort();
 									} else {
@@ -736,7 +751,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	private void updateRowContents() {
 		NattableModelManager.this.rowManager.updateAxisContents();
 		CellEditorDeclaration declaration = getCellEditorDeclarationToUse(getTable());
-		if(declaration.equals(CellEditorDeclaration.ROW)) {
+		if (declaration.equals(CellEditorDeclaration.ROW)) {
 			configureNatTable();
 			refreshNatTable();
 		} else {
@@ -752,7 +767,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	private void updateColumnContents() {
 		NattableModelManager.this.columnManager.updateAxisContents();
 		CellEditorDeclaration declaration = getCellEditorDeclarationToUse(getTable());
-		if(declaration.equals(CellEditorDeclaration.COLUMN)) {
+		if (declaration.equals(CellEditorDeclaration.COLUMN)) {
 			configureNatTable();
 			refreshNatTable();
 		} else {
@@ -761,157 +776,177 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @param table
-	 *        the table
+	 *            the table
 	 * @return
 	 *         the celleditor declaration to use according to the table configuration and {@link Table#isInvertAxis()}
 	 */
 	private CellEditorDeclaration getCellEditorDeclarationToUse(final Table table) {
 		CellEditorDeclaration declaration = table.getTableConfiguration().getCellEditorDeclaration();
-		if(getTable().isInvertAxis()) {
-			if(declaration.equals(CellEditorDeclaration.COLUMN)) {
+		if (getTable().isInvertAxis()) {
+			if (declaration.equals(CellEditorDeclaration.COLUMN)) {
 				declaration = CellEditorDeclaration.ROW;
-			} else if(declaration.equals(CellEditorDeclaration.ROW)) {
+			} else if (declaration.equals(CellEditorDeclaration.ROW)) {
 				declaration = CellEditorDeclaration.COLUMN;
 			}
 		}
 		return declaration;
 	}
 
+	@Override
 	public List<Object> getColumnElementsList() {
 		return this.verticalElements;
 	}
 
+	@Override
 	public List<Object> getRowElementsList() {
 		return this.horizontalElements;
 	}
 
+	@Override
 	public boolean canInsertRow(Collection<Object> objectsToAdd, int index) {
 		return this.rowManager.canInsertAxis(objectsToAdd, index);
 	}
 
+	@Override
 	public boolean canInsertColumns(Collection<Object> objectsToAdd, int index) {
 		return this.columnManager.canInsertAxis(objectsToAdd, index);
 	}
 
+	@Override
 	public boolean canDropColumnsElement(Collection<Object> objectsToAdd) {
 		return this.columnManager.canDropAxisElement(objectsToAdd);
 	}
 
+	@Override
 	public boolean canDropRowElement(Collection<Object> objectsToAdd) {
 		return this.rowManager.canDropAxisElement(objectsToAdd);
 	}
 
+	@Override
 	public void insertRows(Collection<Object> objectsToAdd, int index) {
 		this.rowManager.getInsertAxisCommand(objectsToAdd, index);
 
 	}
 
+	@Override
 	public void insertColumns(Collection<Object> objectsToAdd, int index) {
 		this.columnManager.getInsertAxisCommand(objectsToAdd, index);
 	}
 
+	@Override
 	public Object getColumnElement(int index) {
-		if(index < 0 || index > this.verticalElements.size()) {
+		if (index < 0 || index > this.verticalElements.size()) {
 			return null;
 		}
 		return this.verticalElements.get(index);
 	}
 
+	@Override
 	public Object getRowElement(int index) {
-		if(index < 0 || index >= this.horizontalElements.size()) {
+		if (index < 0 || index >= this.horizontalElements.size()) {
 			return null;
 		}
 		return this.horizontalElements.get(index);
 	}
 
 	public List<Object> getElementsList(AbstractAxisProvider axisProvider) {
-		if(axisProvider == this.columnProvider) {
+		if (axisProvider == this.columnProvider) {
 			return this.verticalElements;
-		} else if(axisProvider == this.rowProvider) {
+		} else if (axisProvider == this.rowProvider) {
 			return this.horizontalElements;
 		}
 		return null;
 	}
 
+	@Override
 	public boolean canMoveRows() {
 		return this.rowManager.canMoveAxis();
 	}
 
+	@Override
 	public boolean canMoveColumns() {
 		return this.columnManager.canMoveAxis();
 	}
 
+	@Override
 	public void moveColumnElement(final Object axisToMove, final int newIndex) {
 		this.columnManager.moveAxis(axisToMove, newIndex);
 	}
 
 	// not tested
+	@Override
 	public void moveRowElement(final Object axisToMove, final int newIndex) {
 		this.rowManager.moveAxis(axisToMove, newIndex);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#invertAxis()
-	 * 
+	 *
 	 */
+	@Override
 	public void invertAxis() {
 		final CompoundCommand cmd = new CompoundCommand(Messages.NattableModelManager_SwitchLinesAndColumns);
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		boolean oldValue = getTable().isInvertAxis();
-		if(canInvertAxis()) {
+		if (canInvertAxis()) {
 			Command tmp = new SetCommand(domain, getTable(), NattablePackage.eINSTANCE.getTable_InvertAxis(), !oldValue);
 			cmd.append(tmp);
 			domain.getCommandStack().execute(cmd);
 		}
 	}
 
+	@Override
 	public boolean canInvertAxis() {
 		return this.columnManager.canBeUsedAsRowManager() && this.rowManager.canBeUsedAsColumnManager();
 	}
 
+	@Override
 	public boolean canCreateRowElement(String elementType) {
 		return this.rowManager.canCreateAxisElement(elementType);
 	}
 
+	@Override
 	public boolean canCreateColumnElement(String elementType) {
 		return this.columnManager.canCreateAxisElement(elementType);
 	}
 
+	@Override
 	public Command getAddRowElementCommand(Collection<Object> objectsToAdd) {
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		final CompoundCommand cmd = new CompoundCommand(Messages.NattableModelManager_AddRowCommand);
 		Command tmp = this.rowManager.getAddAxisCommand(domain, objectsToAdd);
-		if(tmp != null) {
+		if (tmp != null) {
 			cmd.append(tmp);
 		}
 		final AbstractAxisProvider rowsProvider = AxisUtils.getAxisProviderUsedForRows(this);
 		final AbstractAxisProvider columnsProvider = AxisUtils.getAxisProviderUsedForColumns(this);
-		boolean addComplementaryAxis = rowsProvider instanceof IMasterAxisProvider && columnsProvider instanceof ISlaveAxisProvider && !((IMasterAxisProvider)rowsProvider).isDisconnectSlave();
-		if(addComplementaryAxis) {
+		boolean addComplementaryAxis = rowsProvider instanceof IMasterAxisProvider && columnsProvider instanceof ISlaveAxisProvider && !((IMasterAxisProvider) rowsProvider).isDisconnectSlave();
+		if (addComplementaryAxis) {
 			tmp = this.columnManager.getComplementaryAddAxisCommand(domain, objectsToAdd);
-			if(tmp != null) {
+			if (tmp != null) {
 				cmd.append(tmp);
 			}
 		}
 		return cmd;
 	}
 
+	@Override
 	public Command getAddColumnElementCommand(Collection<Object> objectsToAdd) {
 		final TransactionalEditingDomain domain = getContextEditingDomain();
 		final CompoundCommand cmd = new CompoundCommand(Messages.NattableModelManager_AddColumnCommand);
 		Command tmp = this.columnManager.getAddAxisCommand(domain, objectsToAdd);
-		if(tmp != null) {
+		if (tmp != null) {
 			cmd.append(tmp);
 		}
 		final AbstractAxisProvider rowsProvider = AxisUtils.getAxisProviderUsedForRows(this);
 		final AbstractAxisProvider columnsProvider = AxisUtils.getAxisProviderUsedForColumns(this);
-		boolean addComplementaryAxis = columnsProvider instanceof IMasterAxisProvider && rowsProvider instanceof ISlaveAxisProvider && !((IMasterAxisProvider)columnsProvider).isDisconnectSlave();
-		if(addComplementaryAxis) {
+		boolean addComplementaryAxis = columnsProvider instanceof IMasterAxisProvider && rowsProvider instanceof ISlaveAxisProvider && !((IMasterAxisProvider) columnsProvider).isDisconnectSlave();
+		if (addComplementaryAxis) {
 			tmp = this.rowManager.getComplementaryAddAxisCommand(domain, objectsToAdd);
-			if(tmp != null) {
+			if (tmp != null) {
 				cmd.append(tmp);
 			}
 		}
@@ -931,20 +966,21 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getTableAxisElementProvider()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public ITableAxisElementProvider getTableAxisElementProvider() {
 		return this;
 	}
 
 	/**
 	 * When the axis manager is dynamic, we can't destroy axis
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#canCreateDestroyColumnsAxis()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -954,9 +990,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	/**
 	 * When the axis manager is dynamic, we can't destroy axis
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#canCreateDestroyRowsAxis()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -965,15 +1001,15 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serv
-	 *        the label provider service
+	 *            the label provider service
 	 * @param editedAxisManager
-	 *        the manager used for the edited axis
+	 *            the manager used for the edited axis
 	 * @param secondAxisManager
-	 *        the manager used for the other axis
+	 *            the manager used for the other axis
 	 * @param isEditingColumns
-	 *        boolean indicating if we are editing columns or rows
+	 *            boolean indicating if we are editing columns or rows
 	 */
 	private final void openCreateDestroyAxisManagerDialog(boolean isEditingColumns) {
 		final String dialogTitle;
@@ -983,7 +1019,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 		final IAxisManager editedAxisManager;
 		final IAxisManager secondAxisManager;
 		final String checkBoxMessage = Messages.NattableModelManager_DisconnectThisAxisManager;
-		if(isEditingColumns) {
+		if (isEditingColumns) {
 			dialogTitle = Messages.NattableModelManager_SelectColumns;
 			dialogCheckBoxTootip = Messages.NattableModelManager_DisableTheAutomaticAdditionOfColumnsWhenARowIsAdded;
 			dialogQuestion = String.format(Messages.NattableModelManager_TheCheckBoxHasNotBeenCheckedToAvoidAutomaticColumnAddition, checkBoxMessage);
@@ -1007,30 +1043,30 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 			@Override
 			public void createControls(Composite parent) {
 				super.createControls(parent);
-				this.treeViewer.setComparator(new ViewerComparator(new StringComparator()));//should always be string element
+				this.treeViewer.setComparator(new ViewerComparator(new StringComparator()));// should always be string element
 			}
 		};
 		selector.setLabelProvider(labelProvider);
 
 		IStaticContentProvider provider = editedAxisManager.createPossibleAxisContentProvider(true);
-		if(provider != null) {
-			selector.setContentProvider(new FlattenableRestrictedFilteredContentProvider((IRestrictedContentProvider)provider, selector));
+		if (provider != null) {
+			selector.setContentProvider(new FlattenableRestrictedFilteredContentProvider((IRestrictedContentProvider) provider, selector));
 			boolean canBeReorder = (!editedAxisManager.isDynamic()) && editedAxisManager.canMoveAxis();
 			final DisplayedAxisSelectorDialog dialog = new DisplayedAxisSelectorDialog(Display.getDefault().getActiveShell(), selector, dialogTitle, true, canBeReorder, -1);
 			boolean displayCheckBox = editedAxisProvider instanceof ISlaveAxisProvider;
 			dialog.setDisplayCheckBox(displayCheckBox);
-			boolean checkboxValue = secondAxisProvider instanceof IMasterAxisProvider && ((IMasterAxisProvider)secondAxisProvider).isDisconnectSlave();
-			if(displayCheckBox) {
+			boolean checkboxValue = secondAxisProvider instanceof IMasterAxisProvider && ((IMasterAxisProvider) secondAxisProvider).isDisconnectSlave();
+			if (displayCheckBox) {
 				dialog.setCheckBoxValues(checkBoxMessage, dialogCheckBoxTootip, checkboxValue);
 			}
 
 			dialog.setInformationDialogValues(Messages.NattableModelManager_DisconnectAxisManagerInformationDialogTitle, dialogQuestion);
 			dialog.setLabelProvider(labelProvider);
-			final List<Object> initialSelection = ((CompositeAxisManager)editedAxisManager).getAllManagedAxis(true);
+			final List<Object> initialSelection = ((CompositeAxisManager) editedAxisManager).getAllManagedAxis(true);
 			dialog.setInitialElementSelections(new ArrayList<Object>(initialSelection));
 
 			int open = dialog.open();
-			if(open == Window.OK) {
+			if (open == Window.OK) {
 				Collection<Object> existingColumns = initialSelection;
 				ArrayList<Object> checkedColumns = new ArrayList<Object>();
 				final List<Object> result = Arrays.asList(dialog.getResult());
@@ -1039,9 +1075,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 				ArrayList<Object> columnsToAdd = new ArrayList<Object>(checkedColumns);
 				columnsToAdd.removeAll(existingColumns);
 				CompoundCommand compoundCommand = new CompoundCommand("Update Existing Axis Command"); //$NON-NLS-1$
-				if(columnsToAdd.size() > 0) {
+				if (columnsToAdd.size() > 0) {
 					Command addAxisElementCommand = null;
-					if(isEditingColumns) {
+					if (isEditingColumns) {
 						addAxisElementCommand = getAddColumnElementCommand(columnsToAdd);
 					} else {
 						addAxisElementCommand = getAddRowElementCommand(columnsToAdd);
@@ -1051,9 +1087,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 				ArrayList<Object> axisToDestroy = new ArrayList<Object>(existingColumns);
 				axisToDestroy.removeAll(checkedColumns);
-				if(axisToDestroy.size() > 0) {
+				if (axisToDestroy.size() > 0) {
 					Command destroyAxisElementCommand = null;
-					if(isEditingColumns) {
+					if (isEditingColumns) {
 						destroyAxisElementCommand = getDestroyColumnElementCommand(axisToDestroy);
 					} else {
 						destroyAxisElementCommand = getDestroyRowElementCommand(axisToDestroy);
@@ -1062,20 +1098,20 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 				}
 
 				final boolean newState = dialog.isChecked();
-				if(displayCheckBox && checkboxValue != newState) {
-					final TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
+				if (displayCheckBox && checkboxValue != newState) {
+					final TransactionalEditingDomain domain = getTableEditingDomain();
 					final IEditCommandRequest request = new SetRequest(domain, secondAxisProvider, NattableaxisproviderPackage.eINSTANCE.getIMasterAxisProvider_DisconnectSlave(), newState);
 					final IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(secondAxisProvider);
 					compoundCommand.append(new GMFtoEMFCommandWrapper(commandProvider.getEditCommand(request)));
 				}
 
-				if(canBeReorder) {
-					final Command setOrderCommand = ((ICompositeAxisManager)editedAxisManager).getSetNewAxisOrderCommand(result);
-					if(setOrderCommand != null) {
+				if (canBeReorder) {
+					final Command setOrderCommand = ((ICompositeAxisManager) editedAxisManager).getSetNewAxisOrderCommand(result);
+					if (setOrderCommand != null) {
 						compoundCommand.append(setOrderCommand);
 					}
 				}
-				if(!compoundCommand.isEmpty()) {
+				if (!compoundCommand.isEmpty()) {
 					getContextEditingDomain().getCommandStack().execute(compoundCommand);
 					updateToggleActionState();
 				}
@@ -1086,9 +1122,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#openCreateDestroyRowsManagerDialog()
-	 * 
+	 *
 	 */
 	@Override
 	public void openCreateDestroyRowsManagerDialog() {
@@ -1096,31 +1132,35 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#openCreateDestroyColumnsManagerDialog()
-	 * 
+	 *
 	 */
+	@Override
 	public void openCreateDestroyColumnsManagerDialog() {
 		openCreateDestroyAxisManagerDialog(true);
 	}
 
+	@Override
 	public void sortColumnsByName(final boolean alphabeticOrder) {
 		this.columnManager.sortAxisByName(alphabeticOrder, this.natTable.getConfigRegistry());
 	}
 
 
+	@Override
 	public void sortRowsByName(final boolean alphabeticOrder) {
 		this.rowManager.sortAxisByName(alphabeticOrder, this.natTable.getConfigRegistry());
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getVerticalAxisProvider()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public AbstractAxisProvider getVerticalAxisProvider() {
-		if(getTable().isInvertAxis()) {
+		if (getTable().isInvertAxis()) {
 			return getTable().getCurrentRowAxisProvider();
 		} else {
 			return getTable().getCurrentColumnAxisProvider();
@@ -1128,13 +1168,14 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getHorizontalAxisProvider()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public AbstractAxisProvider getHorizontalAxisProvider() {
-		if(getTable().isInvertAxis()) {
+		if (getTable().isInvertAxis()) {
 			return getTable().getCurrentColumnAxisProvider();
 		} else {
 			return getTable().getCurrentRowAxisProvider();
@@ -1142,20 +1183,21 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#canEditColumnHeader(int)
-	 * 
+	 *
 	 * @param evaluationContext
 	 * @return
 	 */
+	@Override
 	public boolean canEditColumnHeader(final NatEventData evaluationContext) {
 		return this.columnManager.canEditAxisHeader(evaluationContext);
 	}
 
 	/***
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#canEditRowHeader(org.eclipse.nebula.widgets.nattable.ui.NatEventData)
-	 * 
+	 *
 	 * @param eventData
 	 * @return
 	 */
@@ -1165,29 +1207,31 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#openEditRowAliasDialog(org.eclipse.nebula.widgets.nattable.ui.NatEventData)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void openEditRowAliasDialog(NatEventData event) {
 		this.rowManager.openEditAxisAliasDialog(event, event.getNatTable().getRowIndexByPosition(event.getRowPosition()));
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#openEditColumnAliasDialog(org.eclipse.nebula.widgets.nattable.ui.NatEventData)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void openEditColumnAliasDialog(NatEventData event) {
 		this.columnManager.openEditAxisAliasDialog(event, event.getNatTable().getColumnIndexByPosition(event.getColumnPosition()));
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getColumnAxisManager()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -1197,9 +1241,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getRowAxisManager()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -1208,6 +1252,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 
+	@Override
 	public void setTableName(String name) {
 		SetRequest setNameRequest = new SetRequest(getTable(), NattableconfigurationPackage.eINSTANCE.getTableNamedElement_Name(), name);
 		IElementEditService editService = ElementEditServiceUtils.getCommandProvider(getTable());
@@ -1216,6 +1261,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 
+	@Override
 	public String getTableName() {
 		return getTable().getName();
 	}
@@ -1223,7 +1269,7 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if(adapter == NatTable.class) {
+		if (adapter == NatTable.class) {
 			return this.natTable;
 		}
 		return null;
@@ -1234,49 +1280,49 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 			@Override
 			protected IStatus run(final IProgressMonitor monitor) {
-				if(notification == null) {
+				if (notification == null) {
 					cellsMap.clear();
-					for(final Cell current : getTable().getCells()) {
+					for (final Cell current : getTable().getCells()) {
 						final CellMapKey key = createCellMapKeyWaitingCellAxis(current);
 						cellsMap.put(key, current);
 					}
 				} else {
 					int eventType = notification.getEventType();
-					if(eventType == Notification.ADD) {
+					if (eventType == Notification.ADD) {
 						final Object object = notification.getNewValue();
-						if(object instanceof Cell) {
-							final Cell cell = (Cell)object;
+						if (object instanceof Cell) {
+							final Cell cell = (Cell) object;
 							final CellMapKey key = createCellMapKeyWaitingCellAxis(cell);
 							cellsMap.put(key, cell);
 						}
-					} else if(eventType == Notification.ADD_MANY) {
+					} else if (eventType == Notification.ADD_MANY) {
 						final Object coll = notification.getNewValue();
 
-						if(coll instanceof Collection<?>) {
-							final Iterator<?> iter = ((Collection<?>)coll).iterator();
-							while(iter.hasNext()) {
+						if (coll instanceof Collection<?>) {
+							final Iterator<?> iter = ((Collection<?>) coll).iterator();
+							while (iter.hasNext()) {
 								Object object = iter.next();
-								if(object instanceof Cell) {
-									final Cell cell = (Cell)object;
+								if (object instanceof Cell) {
+									final Cell cell = (Cell) object;
 									final CellMapKey key = createCellMapKeyWaitingCellAxis(cell);
 									cellsMap.put(key, cell);
 								}
 							}
 						}
-					} else if(eventType == Notification.REMOVE) {
+					} else if (eventType == Notification.REMOVE) {
 						Object oldCell = notification.getOldValue();
-						if(oldCell instanceof Cell) {
+						if (oldCell instanceof Cell) {
 							CellMapKey key = cellsMap.inverse().get(oldCell);
 							cellsMap.remove(key);
 						}
-					} else if(eventType == Notification.REMOVE_MANY) {
+					} else if (eventType == Notification.REMOVE_MANY) {
 						final Object coll = notification.getOldValue();
 
-						if(coll instanceof Collection<?>) {
-							final Iterator<?> iter = ((Collection<?>)coll).iterator();
-							while(iter.hasNext()) {
+						if (coll instanceof Collection<?>) {
+							final Iterator<?> iter = ((Collection<?>) coll).iterator();
+							while (iter.hasNext()) {
 								Object object = iter.next();
-								if(object instanceof Cell) {
+								if (object instanceof Cell) {
 									final CellMapKey key = cellsMap.inverse().get(object);
 									cellsMap.remove(key);
 								}
@@ -1306,13 +1352,14 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getCell(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param columnElement
 	 * @param rowElement
 	 * @return
 	 */
+	@Override
 	public Cell getCell(final Object columnElement, final Object rowElement) {
 		final CellMapKey key = new CellMapKey(columnElement, rowElement);
 		return this.cellsMap.get(key);
@@ -1320,19 +1367,19 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 
 	/**
 	 * This method allows to create a CellMapKey object waiting that required fields in the cell have been initialized
-	 * 
+	 *
 	 * @param cell
-	 *        a cell
+	 *            a cell
 	 */
 	private CellMapKey createCellMapKeyWaitingCellAxis(final Cell cell) {
-		while(cell.getColumnWrapper() == null || cell.getRowWrapper() == null) {
+		while (cell.getColumnWrapper() == null || cell.getRowWrapper() == null) {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				Activator.log.error(e);
 			}
 		}
-		while(cell.getColumnWrapper().getElement() == null || cell.getRowWrapper().getElement() == null) {
+		while (cell.getColumnWrapper().getElement() == null || cell.getRowWrapper().getElement() == null) {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
@@ -1343,9 +1390,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#getTablePreferenceStore()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -1354,9 +1401,9 @@ public class NattableModelManager extends AbstractNattableWidgetManager implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager#setWorkspacePreferenceStore(org.eclipse.jface.preference.PreferenceStore)
-	 * 
+	 *
 	 * @param store
 	 */
 	@Override

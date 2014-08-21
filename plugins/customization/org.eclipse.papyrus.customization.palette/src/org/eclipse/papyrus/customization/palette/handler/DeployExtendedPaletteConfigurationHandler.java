@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class DeployExtendedPaletteConfigurationHandler extends AbstractDeployPal
 	protected IStatus deployPalette(String fileName, String paletteName, String path, ProviderPriority priority, String editorID, Set<String> requiredProfiles) {
 		// just add the palette
 		PapyrusPalettePreferences.addWorkspaceExtendedPalette(fileName, paletteName, path, priority, editorID, requiredProfiles);
-		return new Status(IStatus.OK, Activator.ID, "The palette configuration has been successfully deployed and activated"); 
+		return new Status(IStatus.OK, Activator.ID, "The palette configuration has been successfully deployed and activated");
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class DeployExtendedPaletteConfigurationHandler extends AbstractDeployPal
 		PapyrusPalettePreferences.changePaletteVisibility(fileName, editorID, true);
 		return new Status(IStatus.OK, Activator.ID, "The palette configuration was already deployed, it has just been activated");
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public class InvariantStereotypeEditHelperAdvice extends AbstractEditHelperAdvic
 	private String stereotypeQualifiedName;
 
 	/**
-	 * 
+	 *
 	 */
 	public InvariantStereotypeEditHelperAdvice() {
 	}
@@ -36,7 +36,7 @@ public class InvariantStereotypeEditHelperAdvice extends AbstractEditHelperAdvic
 	public void init(InvariantStereotypeConfiguration ruleConfiguration) {
 		setStereotypeQualifiedName(ruleConfiguration.getStereotypeQualifiedName());
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -54,7 +54,8 @@ public class InvariantStereotypeEditHelperAdvice extends AbstractEditHelperAdvic
 	}
 
 	/**
-	 * @param stereotypeQualifiedName the stereotypeQualifiedName to set
+	 * @param stereotypeQualifiedName
+	 *            the stereotypeQualifiedName to set
 	 */
 	public void setStereotypeQualifiedName(String stereotypeQualifiedName) {
 		this.stereotypeQualifiedName = stereotypeQualifiedName;

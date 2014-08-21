@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -35,6 +35,7 @@ public class CustomStateCompartmentEditPart extends StateCompartmentEditPart {
 
 	}
 
+	@Override
 	public IFigure createFigure() {
 		CustomStateCompartmentFigure result = new CustomStateCompartmentFigure(getCompartmentName(), getMapMode());
 		return result;
@@ -52,11 +53,11 @@ public class CustomStateCompartmentEditPart extends StateCompartmentEditPart {
 		// TODO Auto-generated method stub
 		super.refreshVisuals();
 
-		View stateView = (View)((View)getModel()).eContainer();
+		View stateView = (View) ((View) getModel()).eContainer();
 		if (stateView != null) {
-			State state = (State)stateView.getElement();
+			State state = (State) stateView.getElement();
 
-			((CustomStateCompartmentFigure)getFigure()).setToolTip(state.getName());
+			((CustomStateCompartmentFigure) getFigure()).setToolTip(state.getName());
 		}
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,12 +36,12 @@ public class ReadOnlyTester extends PropertyTester {
 	public static final String CAN_MAKE_WRITABLE = "canMakeWritable"; //$NON-NLS-1$
 
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(receiver instanceof IStructuredSelection) {
-			Iterator<?> objects = ((IStructuredSelection)receiver).iterator();
+		if (receiver instanceof IStructuredSelection) {
+			Iterator<?> objects = ((IStructuredSelection) receiver).iterator();
 
-			if(IS_READ_ONLY.equals(property)) {
+			if (IS_READ_ONLY.equals(property)) {
 				return testIsReadOnly(objects, asBoolean(expectedValue));
-			} else if(CAN_MAKE_WRITABLE.equals(property)) {
+			} else if (CAN_MAKE_WRITABLE.equals(property)) {
 				return canMakeWritable(objects, asBoolean(expectedValue));
 			}
 		}
@@ -51,17 +51,17 @@ public class ReadOnlyTester extends PropertyTester {
 
 	protected Boolean asBoolean(Object expectedValue) {
 		// true is the implied expected value for booleans
-		return (expectedValue instanceof Boolean) ? (Boolean)expectedValue : true;
+		return (expectedValue instanceof Boolean) ? (Boolean) expectedValue : true;
 	}
 
 	protected boolean testIsReadOnly(Iterator<?> objects, Boolean expectedValue) {
-		while(objects.hasNext()) {
+		while (objects.hasNext()) {
 			Object businessObject = BusinessModelResolver.getInstance().getBusinessModel(objects.next());
 
-			if(businessObject instanceof EObject) {
-				EObject eObject = (EObject)businessObject;
+			if (businessObject instanceof EObject) {
+				EObject eObject = (EObject) businessObject;
 				EditingDomain domain = EMFHelper.resolveEditingDomain(eObject);
-				if(domain != null) {
+				if (domain != null) {
 					return Objects.equal(ReadOnlyManager.getReadOnlyHandler(domain).isReadOnly(ReadOnlyAxis.anyAxis(), eObject).or(false), expectedValue);
 				}
 			}
@@ -71,18 +71,18 @@ public class ReadOnlyTester extends PropertyTester {
 	}
 
 	protected boolean canMakeWritable(Iterator<?> objects, Boolean expectedValue) {
-		while(objects.hasNext()) {
+		while (objects.hasNext()) {
 			Object businessObject = BusinessModelResolver.getInstance().getBusinessModel(objects.next());
 
-			if(businessObject instanceof EObject) {
-				EObject eObject = (EObject)businessObject;
+			if (businessObject instanceof EObject) {
+				EObject eObject = (EObject) businessObject;
 				EditingDomain domain = EMFHelper.resolveEditingDomain(eObject);
-				if(domain != null) {
+				if (domain != null) {
 					IReadOnlyHandler2 handler = ReadOnlyManager.getReadOnlyHandler(domain);
-					
+
 					boolean isAlreadyOrCanMakeWritable = !handler.isReadOnly(ReadOnlyAxis.anyAxis(), eObject).or(false) //
 							|| handler.canMakeWritable(ReadOnlyAxis.anyAxis(), eObject).or(false);
-					
+
 					return Objects.equal(isAlreadyOrCanMakeWritable, expectedValue);
 				}
 			}

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public class StereotypeApplicationPrecondition implements IProfileSwitchPrecondi
 		IStatus result = Status.OK_STATUS;
 
 		StereotypeApplicationRepairSnippet snippet = StereotypeApplicationRepairSnippet.getInstance(ctx.getModelSet());
-		if(snippet != null) {
+		if (snippet != null) {
 			result = snippet.repair(ctx.getModelSet());
 		}
 

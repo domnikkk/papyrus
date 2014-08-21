@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,35 +27,35 @@ public class ActivityContentCompartmentItemSemanticEditPolicy extends ActivityCN
 	@Override
 	protected Command getCreateCommand(final CreateElementRequest req) {
 		final IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
 		IElementType baseElementType = requestElementType;
 		boolean isExtendedType = false;
-		if(requestElementType instanceof IExtendedHintedElementType) {
+		if (requestElementType instanceof IExtendedHintedElementType) {
 			baseElementType = ElementTypeUtils.getClosestDiagramType(requestElementType);
-			if(baseElementType != null) {
+			if (baseElementType != null) {
 				isExtendedType = true;
 			} else {
 				// no reference element type ID. using the closest super element
 				// type to give more opportunities, but can lead to bugs.
-				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType)requestElementType);
+				baseElementType = ElementTypeUtils.findClosestNonExtendedElementType((IExtendedHintedElementType) requestElementType);
 				isExtendedType = true;
 			}
 		}
-		if(UMLElementTypes.CallBehaviorAction_3008 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
+		if (UMLElementTypes.CallBehaviorAction_3008 == baseElementType) {
+			if (isExtendedType) {
+				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
 			return getGEFWrapper(new CallBehaviorActionAsInteractionUseCreateCommand(req));
 		}
-		if(org.eclipse.papyrus.uml.diagram.interactionoverview.provider.UMLElementTypes.CallBehaviorAction_5000 == baseElementType) {
-			if(isExtendedType) {
-				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType)requestElementType);
+		if (org.eclipse.papyrus.uml.diagram.interactionoverview.provider.UMLElementTypes.CallBehaviorAction_5000 == baseElementType) {
+			if (isExtendedType) {
+				return getExtendedTypeCreationCommand(req, (IExtendedHintedElementType) requestElementType);
 			}
 			final CompoundCommand compoundCommand = new CompoundCommand();
 			compoundCommand.add(getGEFWrapper(getSemanticCreationCommand(req)));
-			compoundCommand.add(new RefreshCommandForDo((GraphicalEditPart)getHost()));
+			compoundCommand.add(new RefreshCommandForDo((GraphicalEditPart) getHost()));
 			return compoundCommand;
 		}
 		return super.getCreateCommand(req);

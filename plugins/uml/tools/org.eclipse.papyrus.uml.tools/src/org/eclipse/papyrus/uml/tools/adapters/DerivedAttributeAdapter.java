@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * Adapter for derived attribute.</br>
- * 
+ *
  * Based on article : <a href="http://wiki.eclipse.org/EMF/Recipes#Recipe:_Derived_Attribute_Notifier">Derived Attribute Notifier</a>
- * 
+ *
  * @author Gabriel Pascual
  */
 public class DerivedAttributeAdapter extends AdapterImpl {
@@ -54,15 +54,15 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Instantiates a new derived attribute adapter.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param derivedFeature
-	 *        the derived feature
+	 *            the derived feature
 	 * @param navigationFeature
-	 *        the navigation feature
+	 *            the navigation feature
 	 * @param dependantFeature
-	 *        the dependant feature
+	 *            the dependant feature
 	 * @param eventType
-	 *        the event type
+	 *            the event type
 	 */
 	public DerivedAttributeAdapter(EObject source, EStructuralFeature derivedFeature, EStructuralFeature navigationFeature, EStructuralFeature dependantFeature, int eventType) {
 		this(source, derivedFeature);
@@ -73,13 +73,13 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Instantiates a new derived attribute adapter.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param derivedFeature
-	 *        the derived feature
+	 *            the derived feature
 	 * @param navigationFeature
-	 *        the navigation feature
+	 *            the navigation feature
 	 * @param dependentFeaturesMap
-	 *        the dependent features map
+	 *            the dependent features map
 	 */
 	public DerivedAttributeAdapter(EObject source, EStructuralFeature derivedFeature, EStructuralFeature navigationFeature, Map<EStructuralFeature, Integer> dependentFeaturesMap) {
 		this(source, derivedFeature);
@@ -93,11 +93,11 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Instantiates a new derived attribute adapter.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param derivedFeature
-	 *        the derived feature
+	 *            the derived feature
 	 * @param localFeature
-	 *        the local feature
+	 *            the local feature
 	 */
 	public DerivedAttributeAdapter(EObject source, EStructuralFeature derivedFeature, EStructuralFeature localFeature) {
 		this(source, derivedFeature);
@@ -108,13 +108,13 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Instantiates a new derived attribute adapter.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param derivedFeature
-	 *        the derived feature
+	 *            the derived feature
 	 */
 	public DerivedAttributeAdapter(EObject source, EStructuralFeature derivedFeature) {
 		super();
-		this.source = (InternalEObject)source;
+		this.source = (InternalEObject) source;
 		this.derivedFeature = derivedFeature;
 		source.eAdapters().add(this);
 	}
@@ -123,9 +123,9 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Adds the navigated dependency.
 	 *
 	 * @param navigationFeature
-	 *        the navigation feature
+	 *            the navigation feature
 	 * @param dependentFeaturesMap
-	 *        the dependent features map
+	 *            the dependent features map
 	 */
 	public void addNavigatedDependency(EStructuralFeature navigationFeature, Map<EStructuralFeature, Integer> dependentFeaturesMap) {
 		this.navigationFeature = navigationFeature;
@@ -136,11 +136,11 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Adds the navigated dependency.
 	 *
 	 * @param navigationFeature
-	 *        the navigation feature
+	 *            the navigation feature
 	 * @param dependantFeature
-	 *        the dependant feature
+	 *            the dependant feature
 	 * @param eventType
-	 *        the event type
+	 *            the event type
 	 */
 	public void addNavigatedDependency(EStructuralFeature navigationFeature, EStructuralFeature dependantFeature, int eventType) {
 		this.navigationFeature = navigationFeature;
@@ -151,7 +151,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * Adds the local dependency.
 	 *
 	 * @param localFeature
-	 *        the local feature
+	 *            the local feature
 	 */
 	public void addLocalDependency(EStructuralFeature localFeature) {
 		localFeatures.add(localFeature);
@@ -165,29 +165,31 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	@Override
 	public void notifyChanged(Notification notification) {
 		Object notificationFeature = notification.getFeature();
-		if(notificationFeature != null && notificationFeature.equals(navigationFeature)) {
-			switch(notification.getEventType()) {
+		if (notificationFeature != null && notificationFeature.equals(navigationFeature)) {
+			switch (notification.getEventType()) {
 			case Notification.ADD:
-				EObject added = (EObject)notification.getNewValue();
+				EObject added = (EObject) notification.getNewValue();
 				added.eAdapters().add(dependantAdapter);
 				break;
 			case Notification.SET:
-				EObject newValue = (EObject)notification.getNewValue();
-				EObject oldValue = (EObject)notification.getOldValue();
-				if(oldValue != null)
+				EObject newValue = (EObject) notification.getNewValue();
+				EObject oldValue = (EObject) notification.getOldValue();
+				if (oldValue != null) {
 					oldValue.eAdapters().remove(dependantAdapter);
-				if(newValue != null)
+				}
+				if (newValue != null) {
 					newValue.eAdapters().add(dependantAdapter);
+				}
 				break;
 			case Notification.REMOVE:
-				EObject removed = (EObject)notification.getOldValue();
+				EObject removed = (EObject) notification.getOldValue();
 				removed.eAdapters().remove(dependantAdapter);
 				break;
 			default:
 				return; // No notification
 			}
 			notifyDerivedAttributeChange(notification);
-		} else if(localFeatures.contains(notificationFeature)) {
+		} else if (localFeatures.contains(notificationFeature)) {
 			notifyDerivedAttributeChange(notification);
 		}
 	}
@@ -197,12 +199,12 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 	 * <p>
 	 * The default implementation notifies the source element with notification.
 	 * </p>
-	 * 
+	 *
 	 * @param msg
-	 *        the msg
+	 *            the msg
 	 */
 	protected void notifyDerivedAttributeChange(Notification msg) {
-		if(source.eNotificationRequired()) {
+		if (source.eNotificationRequired()) {
 			source.eNotify(getNotification());
 		}
 	}
@@ -231,9 +233,9 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 		 * Instantiates a new dependent feature adapter.
 		 *
 		 * @param eventType
-		 *        the event type
+		 *            the event type
 		 * @param feature
-		 *        the feature
+		 *            the feature
 		 */
 		public DependentFeatureAdapter(int eventType, EStructuralFeature feature) {
 			super();
@@ -245,7 +247,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 		 * Instantiates a new dependent feature adapter.
 		 *
 		 * @param dependentFeaturesMap
-		 *        the dependent features map
+		 *            the dependent features map
 		 */
 		public DependentFeatureAdapter(Map<EStructuralFeature, Integer> dependentFeaturesMap) {
 			super();
@@ -260,7 +262,7 @@ public class DerivedAttributeAdapter extends AdapterImpl {
 
 		@Override
 		public void notifyChanged(Notification notification) {
-			if(dependentFeaturesMap.containsKey(notification.getFeature()) && dependentFeaturesMap.get(notification.getFeature()).equals(notification.getEventType())) {
+			if (dependentFeaturesMap.containsKey(notification.getFeature()) && dependentFeaturesMap.get(notification.getFeature()).equals(notification.getEventType())) {
 				notifyDerivedAttributeChange(notification);
 			}
 		}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Image;
 
 /**
  * An IObservableValue for editing Images
- * 
+ *
  * @author Camille Letavernier
  */
 public class ImageExpressionObservableValue extends AbstractObservableValue implements IObserving {
@@ -33,13 +33,13 @@ public class ImageExpressionObservableValue extends AbstractObservableValue impl
 	private EditingDomain domain;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param image
-	 *        The UML Image element to edit
+	 *            The UML Image element to edit
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 */
 	public ImageExpressionObservableValue(Image image, EditingDomain domain) {
 		this.image = image;
@@ -57,8 +57,8 @@ public class ImageExpressionObservableValue extends AbstractObservableValue impl
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(value instanceof String) {
-			final String expression = (String)value;
+		if (value instanceof String) {
+			final String expression = (String) value;
 
 			Runnable runnable = new Runnable() {
 

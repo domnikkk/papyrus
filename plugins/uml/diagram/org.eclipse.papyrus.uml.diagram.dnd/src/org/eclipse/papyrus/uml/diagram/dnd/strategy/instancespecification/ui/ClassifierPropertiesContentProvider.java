@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.uml2.uml.Property;
 /**
  * A TreeContentProvider which returns a collection of properties from a
  * collection of classifiers.
- * 
+ *
  * The roots are the classifiers, the leafs are the properties.
- * 
+ *
  * @author Camille Letavernier
  */
 public class ClassifierPropertiesContentProvider implements ITreeContentProvider {
@@ -40,13 +40,13 @@ public class ClassifierPropertiesContentProvider implements ITreeContentProvider
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		this.viewer = viewer;
-		this.input = (Collection<Classifier>)newInput;
+		this.input = (Collection<Classifier>) newInput;
 	}
 
 	public Object[] getElements(Object inputElement) {
 		Collection<Classifier> result = new LinkedHashSet<Classifier>();
 
-		for(Classifier classifier : input) {
+		for (Classifier classifier : input) {
 			getAllGenerals(classifier, result);
 		}
 
@@ -54,43 +54,43 @@ public class ClassifierPropertiesContentProvider implements ITreeContentProvider
 	}
 
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof Classifier) {
-			Classifier element = (Classifier)parentElement;
-			//			Set<Property> children = new LinkedHashSet<Property>();
+		if (parentElement instanceof Classifier) {
+			Classifier element = (Classifier) parentElement;
+			// Set<Property> children = new LinkedHashSet<Property>();
 
 			return element.getAttributes().toArray();
 
-			//			//Find all extended or implemented classifiers (Including self)
-			//			LinkedHashSet<Classifier> allGenerals = new LinkedHashSet<Classifier>();
-			//			getAllGenerals(element, allGenerals);
+			// //Find all extended or implemented classifiers (Including self)
+			// LinkedHashSet<Classifier> allGenerals = new LinkedHashSet<Classifier>();
+			// getAllGenerals(element, allGenerals);
 
-			//Find all properties
-			//			for(Classifier classifier : allGenerals) {
-			//				//Skip properties owned by another classifier, 
-			//				//when this classifier is included in the input (To avoid duplication)
-			//				if(isCloserClassifier(element, classifier)) {
-			//					children.addAll(classifier.getAttributes());
-			//				}
-			//			}
+			// Find all properties
+			// for(Classifier classifier : allGenerals) {
+			// //Skip properties owned by another classifier,
+			// //when this classifier is included in the input (To avoid duplication)
+			// if(isCloserClassifier(element, classifier)) {
+			// children.addAll(classifier.getAttributes());
+			// }
+			// }
 			//
-			//			//Remove all redefined properties
-			//			LinkedHashSet<Property> childrenCopy = new LinkedHashSet<Property>(children);
-			//			for(Property property : children) {
-			//				childrenCopy.removeAll(property.getRedefinedProperties());
-			//			}
+			// //Remove all redefined properties
+			// LinkedHashSet<Property> childrenCopy = new LinkedHashSet<Property>(children);
+			// for(Property property : children) {
+			// childrenCopy.removeAll(property.getRedefinedProperties());
+			// }
 			//
-			//			return childrenCopy.toArray();
+			// return childrenCopy.toArray();
 		}
 
 		return new Object[0];
 	}
 
 	protected boolean isCloserClassifier(Classifier current, Classifier classifier) {
-		if(current == classifier || input.size() == 1) {
+		if (current == classifier || input.size() == 1) {
 			return true;
 		}
 
-		if(input.contains(classifier)) {
+		if (input.contains(classifier)) {
 			return false;
 		}
 
@@ -98,19 +98,19 @@ public class ClassifierPropertiesContentProvider implements ITreeContentProvider
 	}
 
 	protected void getAllGenerals(Classifier classifier, Collection<Classifier> result) {
-		if(result.contains(classifier)) {
+		if (result.contains(classifier)) {
 			return;
 		}
 
-		//		Don't take the implemented interfaces into account. The semantic here is not clear enough.
+		// Don't take the implemented interfaces into account. The semantic here is not clear enough.
 		//
-		//		if(classifier instanceof BehavioredClassifier) {
-		//			for(Classifier general : ((BehavioredClassifier)classifier).getImplementedInterfaces()) {
-		//				getAllGenerals(general, result);
-		//			}
-		//		}
+		// if(classifier instanceof BehavioredClassifier) {
+		// for(Classifier general : ((BehavioredClassifier)classifier).getImplementedInterfaces()) {
+		// getAllGenerals(general, result);
+		// }
+		// }
 
-		for(Classifier general : classifier.getGenerals()) {
+		for (Classifier general : classifier.getGenerals()) {
 			getAllGenerals(general, result);
 		}
 
@@ -118,15 +118,15 @@ public class ClassifierPropertiesContentProvider implements ITreeContentProvider
 	}
 
 	public Object getParent(Object element) {
-		if(element instanceof Property) {
-			return ((Property)element).getOwner();
+		if (element instanceof Property) {
+			return ((Property) element).getOwner();
 		}
 		return null;
 	}
 
 	public boolean hasChildren(Object element) {
-		if(element instanceof Classifier) {
-			return !((Classifier)element).getAllAttributes().isEmpty();
+		if (element instanceof Classifier) {
+			return !((Classifier) element).getAllAttributes().isEmpty();
 		}
 		return false;
 	}

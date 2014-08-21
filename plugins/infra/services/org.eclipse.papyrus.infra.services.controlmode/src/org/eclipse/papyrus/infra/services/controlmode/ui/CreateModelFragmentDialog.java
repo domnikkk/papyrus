@@ -3,7 +3,7 @@
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Jacques Lescot (Anyware Technologies) - initial API and
  * implementation
  ******************************************************************************/
@@ -26,9 +26,9 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * Dialog that will ask the user the target URI for th new resource holding the new controlled element
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class CreateModelFragmentDialog extends ResourceDialog {
 
@@ -40,7 +40,7 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 
 	/**
 	 * The constructor
-	 * 
+	 *
 	 * @param parent
 	 * @param theDomain
 	 * @param theCurrentResource
@@ -61,7 +61,7 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 				IFile file = null;
 				String path = URI.createURI(computeDefaultURI()).lastSegment();
 				file = WorkspaceResourceDialog.openNewFile(getShell(), null, null, path != null ? new Path(path) : null, null);
-				if(file != null) {
+				if (file != null) {
 					uriField.setText(URI.createPlatformResourceURI(file.getFullPath().toString(), true).toString());
 				}
 			}
@@ -88,9 +88,10 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 	 * that a resource can be opened for that URI, that the resource is not the object's current
 	 * container, and that it is not read-only in the editing domain. If there is an existing
 	 * resource with that URI, it prompts before overriding or adding to it.
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.ui.dialogs.ResourceDialog#processResources()
 	 */
+	@Override
 	protected boolean processResources() {
 		URI uri = URI.createURI(getURIText());
 		this.uri = uri;
@@ -99,7 +100,7 @@ public class CreateModelFragmentDialog extends ResourceDialog {
 
 	/**
 	 * Return the created Resource
-	 * 
+	 *
 	 * @return the Resource
 	 */
 	public URI getURI() {

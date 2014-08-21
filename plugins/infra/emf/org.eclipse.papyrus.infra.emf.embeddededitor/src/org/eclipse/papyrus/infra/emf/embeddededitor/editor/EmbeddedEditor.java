@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -94,7 +94,7 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 	protected Adapter editingDomainAdapter;
 
 	public EmbeddedEditor(ResourceSet resourceSet) {
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			throw new IllegalArgumentException("The resourceSet shall not be null"); //$NON-NLS-1$
 		}
 
@@ -139,14 +139,14 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 		container.setBackground(new Color(parent.getDisplay(), 255, 255, 255));
 		container.setBackgroundMode(SWT.INHERIT_DEFAULT);
 
-		if(!resourceSet.getResources().isEmpty()) {
+		if (!resourceSet.getResources().isEmpty()) {
 			final PatternViewerFilter filter = new PatternViewerFilter();
 
 			final StringEditor filterPattern = new StringEditor(container, SWT.NONE, "Filter");
 			filterPattern.addCommitListener(new ICommitListener() {
 
 				public void commit(AbstractEditor editor) {
-					filter.setPattern((String)filterPattern.getValue());
+					filter.setPattern((String) filterPattern.getValue());
 					treeViewer.refresh();
 				}
 
@@ -156,7 +156,7 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 			tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 			treeViewer = new TreeViewer(tree);
-			treeViewer.setFilters(new ViewerFilter[]{ filter });
+			treeViewer.setFilters(new ViewerFilter[] { filter });
 			IStructuredContentProvider contentProvider = getContentProvider();
 			getCustomizationManager().installCustomPainter(tree);
 
@@ -189,19 +189,19 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 	}
 
 	public IStructuredContentProvider getContentProvider() {
-		if(contentProvider == null) {
+		if (contentProvider == null) {
 			contentProvider = createContentProvider();
 		}
 		return contentProvider;
 	}
 
 	protected IStructuredContentProvider createContentProvider() {
-		//return new AdapterFactoryContentProvider(adapterFactory);
+		// return new AdapterFactoryContentProvider(adapterFactory);
 		return new CustomizableContentProvider(getCustomizationManager());
 	}
 
 	public CustomizationManager getCustomizationManager() {
-		if(customizationManager == null) {
+		if (customizationManager == null) {
 			customizationManager = createCustomizationManager();
 		}
 		return customizationManager;
@@ -212,14 +212,14 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 	}
 
 	public ILabelProvider getLabelProvider() {
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			labelProvider = createLabelProvider();
 		}
 		return labelProvider;
 	}
 
 	protected ILabelProvider createLabelProvider() {
-		//		return new AdapterFactoryLabelProvider(adapterFactory);
+		// return new AdapterFactoryLabelProvider(adapterFactory);
 		return new CustomizableModelLabelProvider(getCustomizationManager());
 	}
 
@@ -232,7 +232,7 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 		viewer.getControl().setMenu(menu);
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[]{ LocalTransfer.getInstance() };
+		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
 		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
 		viewer.addDropSupport(dndOperations, transfers, new MoDiscoDropAdapter(editingDomain, viewer));
 	}
@@ -242,23 +242,23 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 	}
 
 	public void save() {
-		if(!((BasicCommandStack)editingDomain.getCommandStack()).isSaveNeeded()) {
+		if (!((BasicCommandStack) editingDomain.getCommandStack()).isSaveNeeded()) {
 			return;
 		}
 
-		IEditingDomainProvider domainProvider = (IEditingDomainProvider)EcoreUtil.getAdapter(resourceSet.eAdapters(), IEditingDomainProvider.class);
-		if(domainProvider == null) {
+		IEditingDomainProvider domainProvider = (IEditingDomainProvider) EcoreUtil.getAdapter(resourceSet.eAdapters(), IEditingDomainProvider.class);
+		if (domainProvider == null) {
 			return;
 		}
 
 		EditingDomain domain = domainProvider.getEditingDomain();
-		if(domain == null) {
+		if (domain == null) {
 			return;
 		}
 
-		for(Resource resource : resourceSet.getResources()) {
+		for (Resource resource : resourceSet.getResources()) {
 			try {
-				if(!EMFHelper.isReadOnly(resource, domain)) {
+				if (!EMFHelper.isReadOnly(resource, domain)) {
 					resource.save(Collections.EMPTY_MAP);
 				}
 			} catch (IOException ex) {
@@ -266,15 +266,15 @@ public class EmbeddedEditor implements CommandStackListener, IMenuListener {
 			}
 		}
 
-		((BasicCommandStack)editingDomain.getCommandStack()).saveIsDone();
+		((BasicCommandStack) editingDomain.getCommandStack()).saveIsDone();
 	}
 
 	public boolean isSaveNeeded() {
-		return ((BasicCommandStack)editingDomain.getCommandStack()).isSaveNeeded();
+		return ((BasicCommandStack) editingDomain.getCommandStack()).isSaveNeeded();
 	}
 
 	public void saveAs(URI saveAsURI) {
-		//TODO
+		// TODO
 	}
 
 	public void commandStackChanged(EventObject event) {

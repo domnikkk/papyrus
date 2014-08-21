@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.composite.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.ConnectorEnd;
@@ -56,14 +57,15 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof Connector) {
+		if (false == getElementToEdit() instanceof Connector) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -73,17 +75,17 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof ConnectorEnd && newEnd instanceof ConnectorEnd)) {
+		if (!(oldEnd instanceof ConnectorEnd && newEnd instanceof ConnectorEnd)) {
 			return false;
 		}
-		if(getLink().getEnds().size() != 1) {
+		if (getLink().getEnds().size() != 1) {
 			return false;
 		}
-		ConnectorEnd target = (ConnectorEnd)getLink().getEnds().get(0);
-		if(!(getLink().eContainer() instanceof StructuredClassifier)) {
+		ConnectorEnd target = getLink().getEnds().get(0);
+		if (!(getLink().eContainer() instanceof StructuredClassifier)) {
 			return false;
 		}
-		StructuredClassifier container = (StructuredClassifier)getLink().eContainer();
+		StructuredClassifier container = (StructuredClassifier) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistConnector_4013(container, getLink(), getNewSource(), target);
 	}
 
@@ -91,31 +93,32 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof ConnectorEnd && newEnd instanceof ConnectorEnd)) {
+		if (!(oldEnd instanceof ConnectorEnd && newEnd instanceof ConnectorEnd)) {
 			return false;
 		}
-		if(getLink().getEnds().size() != 1) {
+		if (getLink().getEnds().size() != 1) {
 			return false;
 		}
-		ConnectorEnd source = (ConnectorEnd)getLink().getEnds().get(0);
-		if(!(getLink().eContainer() instanceof StructuredClassifier)) {
+		ConnectorEnd source = getLink().getEnds().get(0);
+		if (!(getLink().eContainer() instanceof StructuredClassifier)) {
 			return false;
 		}
-		StructuredClassifier container = (StructuredClassifier)getLink().eContainer();
+		StructuredClassifier container = (StructuredClassifier) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistConnector_4013(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -143,34 +146,34 @@ public class ConnectorReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Connector getLink() {
-		return (Connector)getElementToEdit();
+		return (Connector) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ConnectorEnd getOldSource() {
-		return (ConnectorEnd)oldEnd;
+		return (ConnectorEnd) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ConnectorEnd getNewSource() {
-		return (ConnectorEnd)newEnd;
+		return (ConnectorEnd) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ConnectorEnd getOldTarget() {
-		return (ConnectorEnd)oldEnd;
+		return (ConnectorEnd) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ConnectorEnd getNewTarget() {
-		return (ConnectorEnd)newEnd;
+		return (ConnectorEnd) newEnd;
 	}
 }

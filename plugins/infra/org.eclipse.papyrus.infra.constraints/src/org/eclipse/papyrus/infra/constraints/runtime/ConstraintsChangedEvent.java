@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ public class ConstraintsChangedEvent extends EventObject {
 
 	/**
 	 * Initializes me with my originating constraint engine.
-	 * 
+	 *
 	 * @param source
-	 *        my source
+	 *            my source
 	 */
 	public ConstraintsChangedEvent(ConstraintEngine<?> source) {
 		super(source);
@@ -34,10 +34,10 @@ public class ConstraintsChangedEvent extends EventObject {
 
 	/**
 	 * Queries the constraint engine that generated this event.
-	 * 
+	 *
 	 * @return the source constraint engine
 	 */
 	public ConstraintEngine<?> getConstraintEngine() {
-		return (ConstraintEngine<?>)getSource();
+		return (ConstraintEngine<?>) getSource();
 	}
 }

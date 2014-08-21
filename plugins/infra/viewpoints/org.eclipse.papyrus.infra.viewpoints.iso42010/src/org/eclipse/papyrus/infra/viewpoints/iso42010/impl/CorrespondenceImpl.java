@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
@@ -40,8 +40,8 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl#getGovernedBy <em>Governed By</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl#getRelates <em>Relates</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl#getGovernedBy <em>Governed By</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.CorrespondenceImpl#getRelates <em>Relates</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +52,7 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getGovernedBy() <em>Governed By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGovernedBy()
 	 * @generated
 	 * @ordered
@@ -62,6 +63,7 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	 * The cached value of the '{@link #getRelates() <em>Relates</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRelates()
 	 * @generated
 	 * @ordered
@@ -71,6 +73,7 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CorrespondenceImpl() {
@@ -80,6 +83,7 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,6 +94,7 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<CorrespondenceRule> getGovernedBy() {
@@ -102,6 +107,7 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ADElement> getRelates() {
@@ -114,14 +120,15 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getGovernedBy()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGovernedBy()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -129,13 +136,14 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
-				return ((InternalEList<?>)getGovernedBy()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
+			return ((InternalEList<?>) getGovernedBy()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -143,15 +151,16 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
-				return getGovernedBy();
-			case Iso42010Package.CORRESPONDENCE__RELATES:
-				return getRelates();
+		case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
+			return getGovernedBy();
+		case Iso42010Package.CORRESPONDENCE__RELATES:
+			return getRelates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,20 +168,21 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
-				getGovernedBy().clear();
-				getGovernedBy().addAll((Collection<? extends CorrespondenceRule>)newValue);
-				return;
-			case Iso42010Package.CORRESPONDENCE__RELATES:
-				getRelates().clear();
-				getRelates().addAll((Collection<? extends ADElement>)newValue);
-				return;
+		case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
+			getGovernedBy().clear();
+			getGovernedBy().addAll((Collection<? extends CorrespondenceRule>) newValue);
+			return;
+		case Iso42010Package.CORRESPONDENCE__RELATES:
+			getRelates().clear();
+			getRelates().addAll((Collection<? extends ADElement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,17 +190,18 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
-				getGovernedBy().clear();
-				return;
-			case Iso42010Package.CORRESPONDENCE__RELATES:
-				getRelates().clear();
-				return;
+		case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
+			getGovernedBy().clear();
+			return;
+		case Iso42010Package.CORRESPONDENCE__RELATES:
+			getRelates().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,17 +209,18 @@ public class CorrespondenceImpl extends MinimalEObjectImpl.Container implements 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
-				return governedBy != null && !governedBy.isEmpty();
-			case Iso42010Package.CORRESPONDENCE__RELATES:
-				return relates != null && !relates.isEmpty();
+		case Iso42010Package.CORRESPONDENCE__GOVERNED_BY:
+			return governedBy != null && !governedBy.isEmpty();
+		case Iso42010Package.CORRESPONDENCE__RELATES:
+			return relates != null && !relates.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CorrespondenceImpl
+} // CorrespondenceImpl

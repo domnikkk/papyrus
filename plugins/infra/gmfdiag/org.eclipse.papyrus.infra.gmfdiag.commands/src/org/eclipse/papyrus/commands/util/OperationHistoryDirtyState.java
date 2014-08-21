@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,9 +59,9 @@ public class OperationHistoryDirtyState {
 	public static OperationHistoryDirtyState newInstance(IUndoContext context, IOperationHistory history) {
 		OperationHistoryDirtyState result;
 
-		synchronized(instances) {
+		synchronized (instances) {
 			result = instances.get(context);
-			if(result == null) {
+			if (result == null) {
 				result = new OperationHistoryDirtyState(context, history);
 				instances.put(context, result);
 			}
@@ -75,13 +75,13 @@ public class OperationHistoryDirtyState {
 		this.listener = new IOperationHistoryListener() {
 
 			public void historyNotification(OperationHistoryEvent event) {
-				switch(event.getEventType()) {
+				switch (event.getEventType()) {
 				case OperationHistoryEvent.DONE:
 				case OperationHistoryEvent.UNDONE:
 				case OperationHistoryEvent.REDONE:
 				case OperationHistoryEvent.OPERATION_CHANGED:
 					// Check on our savepoint, if any
-					if((savepoint != null) && !savepoint.hasContext(context)) {
+					if ((savepoint != null) && !savepoint.hasContext(context)) {
 						// Our savepoint has been removed from the context (our undo/redo stack), so it
 						// is effectively lost
 						savepoint = null;
@@ -89,11 +89,11 @@ public class OperationHistoryDirtyState {
 					break;
 				case OperationHistoryEvent.OPERATION_REMOVED:
 					IUndoableOperation removed = event.getOperation();
-					if(removed != null) {
-						if(removed == savepoint) {
+					if (removed != null) {
+						if (removed == savepoint) {
 							// the savepoint was removed, so now we can never return to it
 							savepoint = null;
-						} else if((savepoint == null) && removed.hasContext(context) && !OperationUtils.isNonDirtying(removed)) {
+						} else if ((savepoint == null) && removed.hasContext(context) && !OperationUtils.isNonDirtying(removed)) {
 							// A dirtying operation has been lost from the history, so we will not now be able to return
 							// to a state equivalent to the savepoint
 							forceDirty = true;
@@ -117,11 +117,11 @@ public class OperationHistoryDirtyState {
 	}
 
 	public void dispose() {
-		synchronized(instances) {
-			if(release()) {
+		synchronized (instances) {
+			if (release()) {
 				instances.remove(context);
 
-				if(listener != null) {
+				if (listener != null) {
 					history.removeOperationHistoryListener(listener);
 					listener = null;
 				}

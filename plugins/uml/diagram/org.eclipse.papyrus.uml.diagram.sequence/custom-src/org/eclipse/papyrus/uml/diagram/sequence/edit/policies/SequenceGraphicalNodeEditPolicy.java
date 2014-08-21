@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -85,7 +85,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
  * - Message cannot be uphill.
  * - Message Occurrence Specification which are created along the message may have a different container than the message.
  * - Message feedback on creation is always drawn in black (to avoid invisible feedback)
- * 
+ *
  */
 @SuppressWarnings({ "restriction", "unchecked", "rawtypes" })
 public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
@@ -96,9 +96,9 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	/**
 	 * Gets the command to start the creation of a new connection and relationship. This will update the request appropriately. Also completes the
 	 * request with nearby occurrence specification information.
-	 * 
+	 *
 	 * @param request
-	 *        creation request
+	 *            creation request
 	 * @return Command
 	 */
 	@Override
@@ -106,20 +106,20 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		Map<String, Object> extendedData = request.getExtendedData();
 		// record the nearest event if necessary
 		String requestHint = request.getConnectionViewAndElementDescriptor().getSemanticHint();
-		if(isCreatedNearOccurrenceSpecification(requestHint) || isOnOccerrenceSpecification(request.getLocation())) {
+		if (isCreatedNearOccurrenceSpecification(requestHint) || isOnOccerrenceSpecification(request.getLocation())) {
 			LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(getHost());
-			if(lifelinePart != null) {
+			if (lifelinePart != null) {
 				Entry<Point, List<OccurrenceSpecification>> eventAndLocation = SequenceUtil.findNearestEvent(request.getLocation(), lifelinePart);
 				// find an event near enough to create the constraint or observation
 				List<OccurrenceSpecification> events = Collections.emptyList();
 				Point location = null;
-				if(eventAndLocation != null) {
+				if (eventAndLocation != null) {
 					location = eventAndLocation.getKey();
 					events = eventAndLocation.getValue();
 				}
 				extendedData.put(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION, events);
 				extendedData.put(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION, location);
-				if(location != null) {
+				if (location != null) {
 					request.setLocation(location);
 				}
 			}
@@ -129,12 +129,12 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	private boolean isOnOccerrenceSpecification(Point location) {
 		EditPart editPart = getHost().getViewer().findObjectAt(location);
-		if(editPart == null) {
+		if (editPart == null) {
 			return false;
 		}
 		Object model = editPart.getModel();
-		if(model instanceof View) {
-			return (ViewUtil.resolveSemanticElement((View)model) instanceof OccurrenceSpecification);
+		if (model instanceof View) {
+			return (ViewUtil.resolveSemanticElement((View) model) instanceof OccurrenceSpecification);
 		}
 		return false;
 	}
@@ -142,9 +142,9 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	/**
 	 * Gets the command to complete the creation of a new connection and relationship. Also completes the request with nearby occurrence specification
 	 * information.
-	 * 
+	 *
 	 * @param request
-	 *        the creation request
+	 *            the creation request
 	 * @return Command
 	 */
 	@Override
@@ -152,27 +152,27 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		Map<String, Object> extendedData = request.getExtendedData();
 		// record the nearest event if necessary
 		String requestHint = request.getConnectionViewAndElementDescriptor().getSemanticHint();
-		if(isCreatedNearOccurrenceSpecification(requestHint) || isOnOccerrenceSpecification(request.getLocation())) {
+		if (isCreatedNearOccurrenceSpecification(requestHint) || isOnOccerrenceSpecification(request.getLocation())) {
 			LifelineEditPart lifelinePart = SequenceUtil.getParentLifelinePart(getHost());
-			if(lifelinePart != null) {
+			if (lifelinePart != null) {
 				Entry<Point, List<OccurrenceSpecification>> eventAndLocation = SequenceUtil.findNearestEvent(request.getLocation(), lifelinePart);
 				// find an event near enough to create the constraint or observation
 				List<OccurrenceSpecification> events = Collections.emptyList();
 				Point location = null;
-				if(eventAndLocation != null) {
+				if (eventAndLocation != null) {
 					location = eventAndLocation.getKey();
 					events = eventAndLocation.getValue();
 				}
 				extendedData.put(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2, events);
 				extendedData.put(SequenceRequestConstant.OCCURRENCE_SPECIFICATION_LOCATION_2, location);
-				if(location != null) {
+				if (location != null) {
 					request.setLocation(location);
 				}
 			}
 		}
-		//Ordering message occurrence specifications after message creation,  See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
+		// Ordering message occurrence specifications after message creation, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
 		Command command = super.getConnectionAndRelationshipCompleteCommand(request);
-		if(command != null && command.canExecute()) {
+		if (command != null && command.canExecute()) {
 			command = command.chain(FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request));
 		}
 		return command;
@@ -180,38 +180,38 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * Return true if creation must be performed to or from an occurrence specification
-	 * 
+	 *
 	 * @param requestHint
-	 *        the hint of object to create
+	 *            the hint of object to create
 	 * @return true if creation to or from an occurrence specification
 	 */
 	private boolean isCreatedNearOccurrenceSpecification(String requestHint) {
-		String generalOrderingHint = ((IHintedType)UMLElementTypes.GeneralOrdering_4012).getSemanticHint();
+		String generalOrderingHint = ((IHintedType) UMLElementTypes.GeneralOrdering_4012).getSemanticHint();
 		return generalOrderingHint.equals(requestHint);
 	}
 
 	/**
 	 * Return true if a message is being created
-	 * 
+	 *
 	 * @param requestHint
-	 *        the hint of object to create
+	 *            the hint of object to create
 	 * @return true if creation of a message
 	 */
 	protected boolean isMessageHint(String requestHint) {
 		List<String> messageHints = new ArrayList<String>(7);
-		String messageHint = ((IHintedType)UMLElementTypes.Message_4003).getSemanticHint();
+		String messageHint = ((IHintedType) UMLElementTypes.Message_4003).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4004).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4004).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4005).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4005).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4006).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4006).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4007).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4007).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4008).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4008).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4009).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4009).getSemanticHint();
 		messageHints.add(messageHint);
 		return messageHints.contains(requestHint);
 	}
@@ -220,13 +220,13 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
 		// move source point to the bottom if it is contained in LifelineNameContainerFigure
 		EditPart targetEditPart = request.getTargetEditPart();
-		if(targetEditPart != null && targetEditPart instanceof LifelineEditPart) {
-			LifelineEditPart target = (LifelineEditPart)targetEditPart;
-			if(target.getPrimaryShape() != null) {
+		if (targetEditPart != null && targetEditPart instanceof LifelineEditPart) {
+			LifelineEditPart target = (LifelineEditPart) targetEditPart;
+			if (target.getPrimaryShape() != null) {
 				Rectangle sourceBounds = target.getPrimaryShape().getFigureLifelineNameContainerFigure().getBounds().getCopy();
 				Point sourcePointCopy = request.getLocation().getCopy();
 				target.getFigure().translateToRelative(sourcePointCopy);
-				if(sourcePointCopy.y() < sourceBounds.getBottom().y()) {
+				if (sourcePointCopy.y() < sourceBounds.getBottom().y()) {
 					target.getFigure().translateToAbsolute(sourceBounds);
 					request.getLocation().setY(sourceBounds.getBottom().y() + 1);
 				}
@@ -238,13 +238,13 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		 * location if needed.
 		 */
 		PointEx sourcePoint = new PointEx(request.getLocation());
-		Viewport vp = findViewport((GraphicalEditPart)getHost().getViewer().getRootEditPart());
-		if(vp != null) {
+		Viewport vp = findViewport((GraphicalEditPart) getHost().getViewer().getRootEditPart());
+		if (vp != null) {
 			Point loc1 = vp.getClientArea().getLocation().getCopy();
 			sourcePoint.setViewportLocation(loc1);
 		}
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_LOCATION_DATA, sourcePoint);
-		//Safely calculate the source model container here.
+		// Safely calculate the source model container here.
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(sourcePoint, getHost()));
 		return super.getConnectionCreateCommand(request);
 	}
@@ -253,16 +253,16 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		IFigure figure = null;
 		Viewport port = null;
 		do {
-			if(figure == null) {
+			if (figure == null) {
 				figure = part.getContentPane();
 			} else {
 				figure = figure.getParent();
 			}
-			if(figure instanceof Viewport) {
-				port = (Viewport)figure;
+			if (figure instanceof Viewport) {
+				port = (Viewport) figure;
 				break;
 			}
-		} while(figure != part.getFigure() && figure != null);
+		} while (figure != part.getFigure() && figure != null);
 		return port;
 	}
 
@@ -272,80 +272,80 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	@Override
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
 		Command command = super.getConnectionCompleteCommand(request);
-		if(command == null) {
+		if (command == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		// disable the following code if we are not creating a message.
 		String requestHint = null;
-		if(request instanceof CreateConnectionViewRequest) {
-			requestHint = ((CreateConnectionViewRequest)request).getConnectionViewDescriptor().getSemanticHint();
-			if(!isMessageHint(requestHint)) {
+		if (request instanceof CreateConnectionViewRequest) {
+			requestHint = ((CreateConnectionViewRequest) request).getConnectionViewDescriptor().getSemanticHint();
+			if (!isMessageHint(requestHint)) {
 				return command;
 			}
 		}
-		//		ICommandProxy proxy = (ICommandProxy)request.getStartCommand();
-		//		CompositeCommand cc = (CompositeCommand)proxy.getICommand();
-		//		Iterator<?> commandItr = cc.iterator();
-		//		while(commandItr.hasNext()) {
-		//			Object obj = commandItr.next();
-		//			if(obj instanceof SetConnectionBendpointsCommand) {
-		//				SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand)obj;
-		//final PointList pointList = sbbCommand.getNewPointList();
-		Point sourcePoint = (Point)request.getExtendedData().get(SequenceRequestConstant.SOURCE_LOCATION_DATA);
+		// ICommandProxy proxy = (ICommandProxy)request.getStartCommand();
+		// CompositeCommand cc = (CompositeCommand)proxy.getICommand();
+		// Iterator<?> commandItr = cc.iterator();
+		// while(commandItr.hasNext()) {
+		// Object obj = commandItr.next();
+		// if(obj instanceof SetConnectionBendpointsCommand) {
+		// SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand)obj;
+		// final PointList pointList = sbbCommand.getNewPointList();
+		Point sourcePoint = (Point) request.getExtendedData().get(SequenceRequestConstant.SOURCE_LOCATION_DATA);
 		Point targetPoint = request.getLocation();
-		//Adjust source location to current coordinate system (the viewport may be scrolled by AutoexposeHelper.).
-		if(sourcePoint instanceof PointEx) {
-			Viewport vp = findViewport((GraphicalEditPart)getHost().getViewer().getRootEditPart());
-			if(vp != null) {
+		// Adjust source location to current coordinate system (the viewport may be scrolled by AutoexposeHelper.).
+		if (sourcePoint instanceof PointEx) {
+			Viewport vp = findViewport((GraphicalEditPart) getHost().getViewer().getRootEditPart());
+			if (vp != null) {
 				Point loc2 = vp.getClientArea().getLocation();
-				sourcePoint = ((PointEx)sourcePoint).adjustToFitNewViewport(loc2);
+				sourcePoint = ((PointEx) sourcePoint).adjustToFitNewViewport(loc2);
 			}
 		}
 		// prevent uphill message (leave margin for horizontal messages)
-		boolean messageCreate = ((IHintedType)UMLElementTypes.Message_4006).getSemanticHint().equals(requestHint);
-		if(sourcePoint == null || sourcePoint.y >= targetPoint.y + MARGIN) {
-			if(!messageCreate && !isLostFoundMessage(requestHint)) {
+		boolean messageCreate = ((IHintedType) UMLElementTypes.Message_4006).getSemanticHint().equals(requestHint);
+		if (sourcePoint == null || sourcePoint.y >= targetPoint.y + MARGIN) {
+			if (!messageCreate && !isLostFoundMessage(requestHint)) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
 		// prevent uphill message (for self recursive message)
-		if(request.getSourceEditPart().equals(request.getTargetEditPart()) && sourcePoint.y >= targetPoint.y) {
+		if (request.getSourceEditPart().equals(request.getTargetEditPart()) && sourcePoint.y >= targetPoint.y) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		// prevent uphill message (for reply message)
-		if(request instanceof CreateConnectionViewAndElementRequest) {
-			ConnectionViewAndElementDescriptor desc = ((CreateConnectionViewAndElementRequest)request).getConnectionViewAndElementDescriptor();
-			String replyHint = ((IHintedType)UMLElementTypes.Message_4005).getSemanticHint();
-			if(replyHint.equals(desc.getSemanticHint()) && request.getSourceEditPart() instanceof IGraphicalEditPart) {
-				Rectangle srcBounds = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)request.getSourceEditPart());
+		if (request instanceof CreateConnectionViewAndElementRequest) {
+			ConnectionViewAndElementDescriptor desc = ((CreateConnectionViewAndElementRequest) request).getConnectionViewAndElementDescriptor();
+			String replyHint = ((IHintedType) UMLElementTypes.Message_4005).getSemanticHint();
+			if (replyHint.equals(desc.getSemanticHint()) && request.getSourceEditPart() instanceof IGraphicalEditPart) {
+				Rectangle srcBounds = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart) request.getSourceEditPart());
 				int bottom = srcBounds.getBottom().y;
-				if(bottom >= targetPoint.y + MARGIN) {
+				if (bottom >= targetPoint.y + MARGIN) {
 					return UnexecutableCommand.INSTANCE;
 				}
 			}
 		}
 		// prevent duplicate create link
-		if(messageCreate && request.getSourceEditPart() != null && request.getTargetEditPart() != null) {
-			if(LifelineMessageCreateHelper.hasMessageCreate((GraphicalEditPart)request.getSourceEditPart(), request.getTargetEditPart())) {
+		if (messageCreate && request.getSourceEditPart() != null && request.getTargetEditPart() != null) {
+			if (LifelineMessageCreateHelper.hasMessageCreate((GraphicalEditPart) request.getSourceEditPart(), request.getTargetEditPart())) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
-		//The SOURCE MODEL should be calculated when connection started, the scroll bar maybe already changed when connection come to finished.
-		//		request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(sourcePoint, getHost()));
+		// The SOURCE MODEL should be calculated when connection started, the scroll bar maybe already changed when connection come to finished.
+		// request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(sourcePoint, getHost()));
 		request.getExtendedData().put(SequenceRequestConstant.TARGET_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(targetPoint, getHost()));
 		// In case we are creating a connection to/from a CoRegion, we will need the lifeline element where is drawn the CoRegion later in the process.
 		EditPart targetEditPart = getTargetEditPart(request);
-		if(targetEditPart instanceof CustomCombinedFragment2EditPart) {
-			request.getExtendedData().put(SequenceRequestConstant.LIFELINE_GRAPHICAL_CONTAINER, ((CustomCombinedFragment2EditPart)targetEditPart).getAttachedLifeline());
+		if (targetEditPart instanceof CustomCombinedFragment2EditPart) {
+			request.getExtendedData().put(SequenceRequestConstant.LIFELINE_GRAPHICAL_CONTAINER, ((CustomCombinedFragment2EditPart) targetEditPart).getAttachedLifeline());
 		}
-		//update bendpoints for self link message.
-		if(connectionFeedback != null && ((IHintedType)UMLElementTypes.Message_4004).getSemanticHint().equals(requestHint)) {
+		// update bendpoints for self link message.
+		if (connectionFeedback != null && ((IHintedType) UMLElementTypes.Message_4004).getSemanticHint().equals(requestHint)) {
 			updateConnectionBendpoints(request, command);
 		}
 		// change constraint of the target lifeline after added a Create Message
-		if(request.getTargetEditPart() instanceof LifelineEditPart && !(request.getSourceEditPart().equals(request.getTargetEditPart()))) {
-			if(requestHint.equals((((IHintedType)UMLElementTypes.Message_4006).getSemanticHint()))) {
-				LifelineEditPart target = (LifelineEditPart)request.getTargetEditPart();
+		if (request.getTargetEditPart() instanceof LifelineEditPart && !(request.getSourceEditPart().equals(request.getTargetEditPart()))) {
+			if (requestHint.equals((((IHintedType) UMLElementTypes.Message_4006).getSemanticHint()))) {
+				LifelineEditPart target = (LifelineEditPart) request.getTargetEditPart();
 				command = LifelineMessageCreateHelper.moveLifelineDown(command, target, sourcePoint.getCopy());
 			}
 		}
@@ -356,46 +356,46 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 * Update bendpoints when creating self message with the feedback, so that, the message can be created like feedback,
 	 */
 	private void updateConnectionBendpoints(CreateConnectionRequest request, Command command) {
-		if(connectionFeedback == null || connectionFeedback.getPoints().size() < 4) {
+		if (connectionFeedback == null || connectionFeedback.getPoints().size() < 4) {
 			return;
 		}
-		if(!(command instanceof ICommandProxy)) {
+		if (!(command instanceof ICommandProxy)) {
 			return;
 		}
-		ICommand iCommand = ((ICommandProxy)command).getICommand();
-		if(!(iCommand instanceof CompositeCommand)) {
+		ICommand iCommand = ((ICommandProxy) command).getICommand();
+		if (!(iCommand instanceof CompositeCommand)) {
 			return;
 		}
 		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-		if(targetEP == null) {
+		if (targetEP == null) {
 			return;
 		}
 		LifelineEditPart sourceLifeline = getLifeline(request.getSourceEditPart());
 		LifelineEditPart targetLifeline = getLifeline(request.getTargetEditPart());
 		boolean isSelfLink = sourceLifeline != null && sourceLifeline.equals(targetLifeline);
-		if(!isSelfLink) {
+		if (!isSelfLink) {
 			return;
 		}
-		CompositeCommand cc = (CompositeCommand)iCommand;
+		CompositeCommand cc = (CompositeCommand) iCommand;
 		SetConnectionAnchorsCommand scaCommand = null;
 		SetConnectionBendpointsCommand sbbCommand = null;
 		Iterator it = cc.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Object next = it.next();
-			if(next instanceof SetConnectionBendpointsCommand) {
-				sbbCommand = (SetConnectionBendpointsCommand)next;
-			} else if(next instanceof SetConnectionAnchorsCommand) {
-				scaCommand = (SetConnectionAnchorsCommand)next;
+			if (next instanceof SetConnectionBendpointsCommand) {
+				sbbCommand = (SetConnectionBendpointsCommand) next;
+			} else if (next instanceof SetConnectionAnchorsCommand) {
+				scaCommand = (SetConnectionAnchorsCommand) next;
 			}
-			if(sbbCommand != null && scaCommand != null) {
+			if (sbbCommand != null && scaCommand != null) {
 				break;
 			}
 		}
-		if(sbbCommand == null || scaCommand == null) {
+		if (sbbCommand == null || scaCommand == null) {
 			return;
 		}
 		ConnectionAnchor targetAnchor = targetEP.getTargetConnectionAnchor(request);
-		INodeEditPart sourceEditPart = (INodeEditPart)request.getSourceEditPart();
+		INodeEditPart sourceEditPart = (INodeEditPart) request.getSourceEditPart();
 		ConnectionAnchor sourceAnchor = sourceEditPart.mapTerminalToConnectionAnchor(scaCommand.getNewSourceTerminal());
 		PointList pointList = connectionFeedback.getPoints().getCopy();
 		connectionFeedback.translateToAbsolute(pointList);
@@ -403,11 +403,11 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	private LifelineEditPart getLifeline(EditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return null;
 		}
-		if(editPart instanceof LifelineEditPart) {
-			return (LifelineEditPart)editPart;
+		if (editPart instanceof LifelineEditPart) {
+			return (LifelineEditPart) editPart;
 		}
 		return getLifeline(editPart.getParent());
 	}
@@ -417,14 +417,14 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 */
 	@Override
 	protected Command getReconnectSourceCommand(ReconnectRequest request) {
-		if(isUphillMessage(request) && !isLostFoundMessage(request)) {
+		if (isUphillMessage(request) && !isLostFoundMessage(request)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		// prevent duplicate link
-		if(request.getConnectionEditPart() instanceof Message4EditPart && request.getTarget() != null && !LifelineMessageCreateHelper.canReconnectMessageCreate(request)) {
+		if (request.getConnectionEditPart() instanceof Message4EditPart && request.getTarget() != null && !LifelineMessageCreateHelper.canReconnectMessageCreate(request)) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		//Avoid to reconnect AppliedStereotypesCommentLink to another EditPart.
+		// Avoid to reconnect AppliedStereotypesCommentLink to another EditPart.
 		ConnectionEditPart connection = request.getConnectionEditPart();
 		if (connection instanceof AppliedStereotypesCommentLinkEditPart) {
 			if (connection.getSource() != getConnectableEditPart()) {
@@ -432,8 +432,8 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 			}
 		}
 		Command command = super.getReconnectSourceCommand(request);
-		////Ordering message occurrence specifications after message reconnected,  See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
-		if(command != null && command.canExecute()) {
+		// //Ordering message occurrence specifications after message reconnected, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
+		if (command != null && command.canExecute()) {
 			command = command.chain(FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request));
 		}
 		return command;
@@ -441,14 +441,14 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	private boolean isLostFoundMessage(ReconnectRequest request) {
 		ConnectionEditPart connectionEditPart = request.getConnectionEditPart();
-		if(connectionEditPart instanceof Message7EditPart || connectionEditPart instanceof Message6EditPart) {
+		if (connectionEditPart instanceof Message7EditPart || connectionEditPart instanceof Message6EditPart) {
 			return true;
 		}
 		return false;
 	}
 
 	private boolean isLostFoundMessage(String requestHint) {
-		if(((IHintedType)UMLElementTypes.Message_4008).getSemanticHint().equals(requestHint) || ((IHintedType)UMLElementTypes.Message_4009).getSemanticHint().equals(requestHint)) {
+		if (((IHintedType) UMLElementTypes.Message_4008).getSemanticHint().equals(requestHint) || ((IHintedType) UMLElementTypes.Message_4009).getSemanticHint().equals(requestHint)) {
 			return true;
 		}
 		return false;
@@ -459,16 +459,16 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 */
 	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
-		if(isUphillMessage(request) && !isLostFoundMessage(request)) {
+		if (isUphillMessage(request) && !isLostFoundMessage(request)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		// prevent duplicate link
-		if(request.getConnectionEditPart() instanceof Message4EditPart && request.getTarget() != null && !LifelineMessageCreateHelper.canReconnectMessageCreate(request)) {
+		if (request.getConnectionEditPart() instanceof Message4EditPart && request.getTarget() != null && !LifelineMessageCreateHelper.canReconnectMessageCreate(request)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		Command command = super.getReconnectTargetCommand(request);
-		//Ordering message occurrence specifications after message reconnected,  See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
-		if(command != null && command.canExecute()) {
+		// Ordering message occurrence specifications after message reconnected, See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
+		if (command != null && command.canExecute()) {
 			command = command.chain(FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request));
 		}
 		return command;
@@ -476,27 +476,27 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * Check that a message doesn't have its target point above its source point
-	 * 
+	 *
 	 * @param request
-	 *        the ReconnectRequest
+	 *            the ReconnectRequest
 	 * @return true if the target point is above the source point
 	 */
 	protected boolean isUphillMessage(ReconnectRequest request) {
 		ConnectionEditPart connectionEditPart = request.getConnectionEditPart();
-		if(connectionEditPart.getModel() instanceof Edge) {
-			Edge edge = (Edge)connectionEditPart.getModel();
-			if(edge.getElement() instanceof Message) {
-				if(connectionEditPart.getFigure() instanceof Polyline) {
+		if (connectionEditPart.getModel() instanceof Edge) {
+			Edge edge = (Edge) connectionEditPart.getModel();
+			if (edge.getElement() instanceof Message) {
+				if (connectionEditPart.getFigure() instanceof Polyline) {
 					// get connection end points translated to absolute
-					Polyline polyline = (Polyline)connectionEditPart.getFigure();
+					Polyline polyline = (Polyline) connectionEditPart.getFigure();
 					Point end = polyline.getEnd().getCopy();
 					Point start = polyline.getStart().getCopy();
 					polyline.getParent().translateToAbsolute(end);
 					polyline.getParent().translateToAbsolute(start);
 					// look at the request rather than at both polyline ends which may not be up to date
-					if(REQ_RECONNECT_SOURCE.equals(request.getType())) {
+					if (REQ_RECONNECT_SOURCE.equals(request.getType())) {
 						return request.getLocation().y >= end.y + MARGIN;
-					} else if(REQ_RECONNECT_TARGET.equals(request.getType())) {
+					} else if (REQ_RECONNECT_TARGET.equals(request.getType())) {
 						return start.y >= request.getLocation().y + MARGIN;
 					} else {
 						return start.y >= end.y + MARGIN;
@@ -511,7 +511,7 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 * Overrides to set the color of the dummyConnection to color black.
 	 * This allow to see the feedback of the connection when it is created.
 	 * By default, the color was the foreground color of the lifeline, which is always blank leading to an invisible feedback.
-	 * 
+	 *
 	 */
 	@Override
 	protected Connection createDummyConnection(Request req) {
@@ -523,11 +523,11 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	/**
 	 * Gets a command that pops up a menu which allows the user to select which
 	 * type of connection to be created and then creates the connection.
-	 * 
+	 *
 	 * @param content
-	 *        The list of items making up the content of the popup menu.
+	 *            The list of items making up the content of the popup menu.
 	 * @param request
-	 *        The relevant create connection request.
+	 *            The relevant create connection request.
 	 * @return the command to popup up the menu and create the connection
 	 */
 	@Override
@@ -556,9 +556,9 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 				@Override
 				public String getText(Object object) {
-					if(object instanceof IHintedType) {
-						IHintedType elementType = (IHintedType)object;
-						switch(UMLVisualIDRegistry.getVisualID(elementType.getSemanticHint())) {
+					if (object instanceof IHintedType) {
+						IHintedType elementType = (IHintedType) object;
+						switch (UMLVisualIDRegistry.getVisualID(elementType.getSemanticHint())) {
 						case MessageEditPart.VISUAL_ID:
 							return Messages.createMessageSync1CreationTool_title;
 						case Message2EditPart.VISUAL_ID:
@@ -583,52 +583,52 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(REQ_CONNECTION_START.equals(request.getType()) || REQ_CONNECTION_END.equals(request.getType()) || REQ_RECONNECT_SOURCE.equals(request.getType()) || REQ_RECONNECT_TARGET.equals(request.getType())) {
+		if (REQ_CONNECTION_START.equals(request.getType()) || REQ_CONNECTION_END.equals(request.getType()) || REQ_RECONNECT_SOURCE.equals(request.getType()) || REQ_RECONNECT_TARGET.equals(request.getType())) {
 			EditPart host = getHost();
-			if(request instanceof CreateConnectionRequest) {
-				if(host instanceof InteractionEditPart) {
-					if(REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4008)) {
+			if (request instanceof CreateConnectionRequest) {
+				if (host instanceof InteractionEditPart) {
+					if (REQ_CONNECTION_END.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4008)) {
 						return host;
 					}
-					if(REQ_CONNECTION_START.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4009)) {
+					if (REQ_CONNECTION_START.equals(request.getType()) && isCreateConnectionRequest(request, UMLElementTypes.Message_4009)) {
 						return host;
 					}
-					InteractionEditPart interactionPart = (InteractionEditPart)host;
-					if(!touchesInteractionBounds(interactionPart, ((CreateConnectionRequest)request).getLocation())) {
+					InteractionEditPart interactionPart = (InteractionEditPart) host;
+					if (!touchesInteractionBounds(interactionPart, ((CreateConnectionRequest) request).getLocation())) {
 						return null;
 					}
-				} else if(host instanceof InteractionOperandEditPart) {
+				} else if (host instanceof InteractionOperandEditPart) {
 					return null;
-				} else if(host instanceof InteractionFragmentEditPart) {
-					CreateConnectionRequest req = (CreateConnectionRequest)request;
+				} else if (host instanceof InteractionFragmentEditPart) {
+					CreateConnectionRequest req = (CreateConnectionRequest) request;
 					Point location = req.getLocation().getCopy();
-					// if mouse location is far from border, do not handle connection event 
-					if(!touchesInteractionBounds((GraphicalEditPart)host, location)) {
+					// if mouse location is far from border, do not handle connection event
+					if (!touchesInteractionBounds((GraphicalEditPart) host, location)) {
 						return null;
 					}
 				}
-			} else if(request instanceof ReconnectRequest) {
-				if(host instanceof InteractionEditPart) {
-					ConnectionEditPart conn = ((ReconnectRequest)request).getConnectionEditPart();
+			} else if (request instanceof ReconnectRequest) {
+				if (host instanceof InteractionEditPart) {
+					ConnectionEditPart conn = ((ReconnectRequest) request).getConnectionEditPart();
 					Object model = conn.getModel();
-					if(model instanceof View) {
-						if(REQ_RECONNECT_TARGET.equals(request.getType()) && 4008 == UMLVisualIDRegistry.getVisualID((View)model)) {
+					if (model instanceof View) {
+						if (REQ_RECONNECT_TARGET.equals(request.getType()) && 4008 == UMLVisualIDRegistry.getVisualID((View) model)) {
 							return host;
 						}
-						if(REQ_RECONNECT_SOURCE.equals(request.getType()) && 4009 == UMLVisualIDRegistry.getVisualID((View)model)) {
+						if (REQ_RECONNECT_SOURCE.equals(request.getType()) && 4009 == UMLVisualIDRegistry.getVisualID((View) model)) {
 							return host;
 						}
 					}
-					InteractionEditPart interactionEditPart = (InteractionEditPart)getHost();
-					if(!touchesInteractionBounds(interactionEditPart, ((ReconnectRequest)request).getLocation())) {
+					InteractionEditPart interactionEditPart = (InteractionEditPart) getHost();
+					if (!touchesInteractionBounds(interactionEditPart, ((ReconnectRequest) request).getLocation())) {
 						return null;
 					}
-				} else if(host instanceof InteractionOperandEditPart) {
+				} else if (host instanceof InteractionOperandEditPart) {
 					return null;
-				} else if(host instanceof InteractionFragmentEditPart) {
-					Point location = ((ReconnectRequest)request).getLocation().getCopy();
-					// if mouse location is far from border, do not handle connection event 
-					if(!touchesInteractionBounds((GraphicalEditPart)host, location)) {
+				} else if (host instanceof InteractionFragmentEditPart) {
+					Point location = ((ReconnectRequest) request).getLocation().getCopy();
+					// if mouse location is far from border, do not handle connection event
+					if (!touchesInteractionBounds((GraphicalEditPart) host, location)) {
 						return null;
 					}
 				}
@@ -642,25 +642,25 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		Point p = location.getCopy();
 		IFigure figure = interaction.getFigure();
 		figure.translateToRelative(p);
-		// if mouse location is far from border, do not handle connection event 
+		// if mouse location is far from border, do not handle connection event
 		Rectangle r = figure.getBounds().getCopy();
 		Rectangle innerRetangle = r.getShrinked(20, 20);
-		if(innerRetangle.contains(p)) {
+		if (innerRetangle.contains(p)) {
 			return false;
 		}
 		return r.getExpanded(1, 1).contains(p);
 	}
 
 	protected boolean isCreateConnectionRequest(Request request, IElementType type) {
-		if(request instanceof CreateAspectUnspecifiedTypeConnectionRequest) {
-			List types = ((CreateUnspecifiedTypeConnectionRequest)request).getElementTypes();
-			if(types.contains(type)) {
+		if (request instanceof CreateAspectUnspecifiedTypeConnectionRequest) {
+			List types = ((CreateUnspecifiedTypeConnectionRequest) request).getElementTypes();
+			if (types.contains(type)) {
 				return true;
 			}
 		}
-		if(request instanceof CreateConnectionViewRequest) {
-			String requestHint = ((CreateConnectionViewRequest)request).getConnectionViewDescriptor().getSemanticHint();
-			if(((IHintedType)type).getSemanticHint().equals(requestHint)) {
+		if (request instanceof CreateConnectionViewRequest) {
+			String requestHint = ((CreateConnectionViewRequest) request).getConnectionViewDescriptor().getSemanticHint();
+			if (((IHintedType) type).getSemanticHint().equals(requestHint)) {
 				return true;
 			}
 		}
@@ -669,7 +669,7 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	protected ConnectionRouter getDummyConnectionRouter(CreateConnectionRequest req) {
-		if(req.getSourceEditPart() instanceof InteractionEditPart || req.getSourceEditPart() instanceof CombinedFragmentEditPart) {
+		if (req.getSourceEditPart() instanceof InteractionEditPart || req.getSourceEditPart() instanceof CombinedFragmentEditPart) {
 			return ConnectionRouter.NULL;
 		}
 		return super.getDummyConnectionRouter(req);
@@ -678,7 +678,7 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	/**
 	 * A new point class which can hold the location of the viewpoint. The user can use adjustToFitNewViewport() service to get the correctly point in
 	 * given viewport.
-	 * 
+	 *
 	 * @author Jin Liu
 	 */
 	private static class PointEx extends Point {
@@ -692,14 +692,14 @@ public class SequenceGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		}
 
 		public void setViewportLocation(Point p) {
-			if(p != null) {
+			if (p != null) {
 				viewportLocation = p.getCopy();
 			}
 		}
 
 		public Point adjustToFitNewViewport(Point newViewportLoc) {
 			Point pt = getCopy();
-			if(newViewportLoc != null && viewportLocation != null && !newViewportLoc.equals(viewportLocation)) {
+			if (newViewportLoc != null && viewportLocation != null && !newViewportLoc.equals(viewportLocation)) {
 				pt.x += (viewportLocation.x - newViewportLoc.x);
 				pt.y += (viewportLocation.y - newViewportLoc.y);
 			}

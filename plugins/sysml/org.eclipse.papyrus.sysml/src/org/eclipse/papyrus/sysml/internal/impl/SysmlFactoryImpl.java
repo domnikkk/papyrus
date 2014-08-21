@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,14 +25,14 @@ import org.eclipse.papyrus.sysml.SysmlPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -45,13 +45,13 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SysmlFactory init() {
 		try {
-			SysmlFactory theSysmlFactory = (SysmlFactory)EPackage.Registry.INSTANCE.getEFactory(SysmlPackage.eNS_URI);
-			if(theSysmlFactory != null) {
+			SysmlFactory theSysmlFactory = (SysmlFactory) EPackage.Registry.INSTANCE.getEFactory(SysmlPackage.eNS_URI);
+			if (theSysmlFactory != null) {
 				return theSysmlFactory;
 			}
 		} catch (Exception exception) {
@@ -64,7 +64,7 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SysmlFactoryImpl() {
@@ -73,7 +73,7 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertDummyToString(EDataType eDataType, Object instanceValue) {
@@ -82,12 +82,12 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case SysmlPackage.DUMMY:
 			return convertDummyToString(eDataType, instanceValue);
 		default:
@@ -97,12 +97,12 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -110,21 +110,21 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createDummyFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case SysmlPackage.DUMMY:
 			return createDummyFromString(eDataType, initialValue);
 		default:
@@ -134,11 +134,11 @@ public class SysmlFactoryImpl extends EFactoryImpl implements SysmlFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SysmlPackage getSysmlPackage() {
-		return (SysmlPackage)getEPackage();
+		return (SysmlPackage) getEPackage();
 	}
 
 } // SysmlFactoryImpl

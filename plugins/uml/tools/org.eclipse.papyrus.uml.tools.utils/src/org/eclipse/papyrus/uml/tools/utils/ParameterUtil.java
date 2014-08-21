@@ -27,8 +27,7 @@ public class ParameterUtil {
 	 * string if <code>multiline</code> is <code>false</code>.
 	 *
 	 * @param multiLine
-	 *        boolean that indicates if the string should have several lines when set to <code>true</code> or only one line when set to
-	 *        <code>false</code>.
+	 *            boolean that indicates if the string should have several lines when set to <code>true</code> or only one line when set to <code>false</code>.
 	 *
 	 * @return a string giving all modifiers for the property
 	 */
@@ -38,20 +37,21 @@ public class ParameterUtil {
 		String NL = (multiLine) ? "\n" : " ";
 
 		// Return parameter modifiers
-		if(parameter.isOrdered()) {
-			needsComma = updateModifiersString(buffer, needsComma, NL, "ordered");;
+		if (parameter.isOrdered()) {
+			needsComma = updateModifiersString(buffer, needsComma, NL, "ordered");
+			;
 		}
-		if(parameter.isUnique()) {
+		if (parameter.isUnique()) {
 			needsComma = updateModifiersString(buffer, needsComma, NL, "unique");
 		}
-		if(parameter.isException()) {
+		if (parameter.isException()) {
 			needsComma = updateModifiersString(buffer, needsComma, NL, "exception");
 		}
-		if(parameter.isStream()) {
+		if (parameter.isStream()) {
 			needsComma = updateModifiersString(buffer, needsComma, NL, "stream");
 		}
 
-		if(!buffer.toString().equals("")) {
+		if (!buffer.toString().equals("")) {
 			buffer.insert(0, "{");
 			buffer.append("}");
 		}
@@ -63,17 +63,17 @@ public class ParameterUtil {
 	 * Update the modifiers string
 	 *
 	 * @param buffer
-	 *        the existing bufferString to append
+	 *            the existing bufferString to append
 	 * @param needsComma
-	 *        if it needs coma
+	 *            if it needs coma
 	 * @param NL
-	 *        if it is multiline
+	 *            if it is multiline
 	 * @param message
-	 *        the message top
+	 *            the message top
 	 * @return true because the modifier string is no more empty
 	 */
 	private static boolean updateModifiersString(StringBuffer buffer, boolean needsComma, String NL, String message) {
-		if(needsComma) {
+		if (needsComma) {
 			buffer.append(",");
 			buffer.append(NL);
 		}
@@ -98,12 +98,12 @@ public class ParameterUtil {
 
 		// name
 		buffer.append(" ");
-		if(parameter.getName() != null) {
+		if (parameter.getName() != null) {
 			buffer.append(parameter.getName());
 		}
 
 		// type
-		if(parameter.getType() != null) {
+		if (parameter.getType() != null) {
 			buffer.append(": " + parameter.getType().getName());
 		} else {
 			buffer.append(": " + TypeUtil.UNDEFINED_TYPE_NAME);
@@ -111,12 +111,12 @@ public class ParameterUtil {
 
 		// multiplicity -> do not display [1]
 		String multiplicity = MultiplicityElementUtil.getMultiplicityAsString(parameter);
-		if(!multiplicity.trim().equals("[1]")) {
+		if (!multiplicity.trim().equals("[1]")) {
 			buffer.append(multiplicity);
 		}
 
 		// default value
-		if(parameter.getDefault() != null) {
+		if (parameter.getDefault() != null) {
 			buffer.append(" = ");
 			buffer.append(parameter.getDefault());
 		}
@@ -131,7 +131,7 @@ public class ParameterUtil {
 	 * return the custom label of the property, given UML2 specification and a custom style.
 	 *
 	 * @param style
-	 *        the integer representing the style of the label
+	 *            the integer representing the style of the label
 	 *
 	 * @return the string corresponding to the label of the property
 	 */
@@ -139,51 +139,51 @@ public class ParameterUtil {
 		StringBuffer buffer = new StringBuffer();
 		// visibility
 		buffer.append(" ");
-		if(maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
+		if (maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(parameter));
 		}
 
 		// direction property
-		if(maskValues.contains(ICustomAppearance.DISP_PARAMETER_DIRECTION) || maskValues.contains(ICustomAppearance.DISP_DIRECTION)) {
+		if (maskValues.contains(ICustomAppearance.DISP_PARAMETER_DIRECTION) || maskValues.contains(ICustomAppearance.DISP_DIRECTION)) {
 			buffer.append(" ");
 			buffer.append(parameter.getDirection().getLiteral());
 		}
 
 		// name
-		if(maskValues.contains(ICustomAppearance.DISP_PARAMETER_NAME) || maskValues.contains(ICustomAppearance.DISP_NAME)) {
+		if (maskValues.contains(ICustomAppearance.DISP_PARAMETER_NAME) || maskValues.contains(ICustomAppearance.DISP_NAME)) {
 			buffer.append(" ");
 			buffer.append(parameter.getName());
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_PARAMETER_TYPE) || maskValues.contains(ICustomAppearance.DISP_TYPE)) {
+		if (maskValues.contains(ICustomAppearance.DISP_PARAMETER_TYPE) || maskValues.contains(ICustomAppearance.DISP_TYPE)) {
 			// type
-			if(parameter.getType() != null) {
+			if (parameter.getType() != null) {
 				buffer.append(": " + parameter.getType().getName());
 			} else {
 				buffer.append(": " + TypeUtil.UNDEFINED_TYPE_NAME);
 			}
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_PARAMETER_MULTIPLICITY) || maskValues.contains(ICustomAppearance.DISP_MULTIPLICITY)) {
+		if (maskValues.contains(ICustomAppearance.DISP_PARAMETER_MULTIPLICITY) || maskValues.contains(ICustomAppearance.DISP_MULTIPLICITY)) {
 			// multiplicity -> do not display [1]
 			String multiplicity = MultiplicityElementUtil.getMultiplicityAsString(parameter);
 			buffer.append(multiplicity);
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_PARAMETER_DEFAULT) || maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) {
+		if (maskValues.contains(ICustomAppearance.DISP_PARAMETER_DEFAULT) || maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) {
 			// default value
-			if(parameter.getDefault() != null) {
+			if (parameter.getDefault() != null) {
 				buffer.append(" = ");
 				buffer.append(parameter.getDefault());
 			}
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_MODIFIERS)) {
+		if (maskValues.contains(ICustomAppearance.DISP_MODIFIERS)) {
 			boolean multiLine = (maskValues.contains(ICustomAppearance.DISP_MULTI_LINE));
 			// property modifiers
 			String modifiers = ParameterUtil.getModifiersAsString(parameter, multiLine);
-			if(!modifiers.equals("")) {
-				if(multiLine) {
+			if (!modifiers.equals("")) {
+				if (multiLine) {
 					buffer.append("\n");
 				}
 				buffer.append(modifiers);
@@ -196,15 +196,15 @@ public class ParameterUtil {
 	 * Returns the default value as a String
 	 *
 	 * @param equalSign
-	 *        boolean set to <code>true</code> if the label must have the <code>=</code> sign
-	 *        before the default value
+	 *            boolean set to <code>true</code> if the label must have the <code>=</code> sign
+	 *            before the default value
 	 * @return the default value as a String
 	 */
 	private static String getDefaultAsString(Parameter parameter, boolean equalSign) {
 		String defaultString = "";
 		// default value
-		if((parameter.getDefault() != null) && !parameter.getDefault().equals("")) {
-			if(equalSign) {
+		if ((parameter.getDefault() != null) && !parameter.getDefault().equals("")) {
+			if (equalSign) {
 				defaultString += "= ";
 			}
 			defaultString += parameter.getDefault();

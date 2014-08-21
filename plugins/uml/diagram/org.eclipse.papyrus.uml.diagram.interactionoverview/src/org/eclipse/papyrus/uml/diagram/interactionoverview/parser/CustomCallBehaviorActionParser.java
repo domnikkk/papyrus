@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,20 +27,20 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class CustomCallBehaviorActionParser extends CallBehaviorActionParser {
 
 	public CustomCallBehaviorActionParser() {
-		super(new EAttribute[]{});
+		super(new EAttribute[] {});
 	}
 
 	@Override
 	public String getPrintString(final IAdaptable element, final int flags) {
 		final Object obj = EMFHelper.getEObject(element);
-		if(obj instanceof CallBehaviorAction) {
-			final CallBehaviorAction action = (CallBehaviorAction)obj;
+		if (obj instanceof CallBehaviorAction) {
+			final CallBehaviorAction action = (CallBehaviorAction) obj;
 			String behaviorName = "";
-			if(action.getBehavior() != null && action.getBehavior().getName() != null) {
+			if (action.getBehavior() != null && action.getBehavior().getName() != null) {
 				behaviorName = action.getBehavior().getName();
 			}
 			// display behavior name alone if name is not specified differently
-			if(!"".equals(behaviorName)) {
+			if (!"".equals(behaviorName)) {
 				return behaviorName;
 			}
 		}
@@ -50,14 +50,14 @@ public class CustomCallBehaviorActionParser extends CallBehaviorActionParser {
 	@Override
 	public String getEditString(final IAdaptable element, final int flags) {
 		final Object obj = EMFHelper.getEObject(element);
-		if(obj instanceof CallBehaviorAction) {
-			final CallBehaviorAction action = (CallBehaviorAction)obj;
+		if (obj instanceof CallBehaviorAction) {
+			final CallBehaviorAction action = (CallBehaviorAction) obj;
 			String behaviorName = "";
-			if(action.getBehavior() != null && action.getBehavior().getName() != null) {
+			if (action.getBehavior() != null && action.getBehavior().getName() != null) {
 				behaviorName = action.getBehavior().getName();
 			}
 			// display behavior name alone if name is not specified differently
-			if(!"".equals(behaviorName)) {
+			if (!"".equals(behaviorName)) {
 				return behaviorName;
 			}
 		}
@@ -66,17 +66,17 @@ public class CustomCallBehaviorActionParser extends CallBehaviorActionParser {
 
 	@Override
 	public ICommand getParseCommand(final IAdaptable adapter, final String newString, final int flags) {
-		if(newString == null) {
+		if (newString == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		final EObject element = EMFHelper.getEObject(adapter);
 		final TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		final CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
-		if(element instanceof CallBehaviorAction) {
-			final NamedElement namedElement = (((CallBehaviorAction)element).getBehavior());
+		if (element instanceof CallBehaviorAction) {
+			final NamedElement namedElement = (((CallBehaviorAction) element).getBehavior());
 			command.compose(getModificationCommand(namedElement, UMLPackage.eINSTANCE.getNamedElement_Name(), newString));
 		}
 		return command;

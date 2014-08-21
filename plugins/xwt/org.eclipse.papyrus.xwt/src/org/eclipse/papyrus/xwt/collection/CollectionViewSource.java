@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.xwt.XWT;
 
 /**
  * The proxy of a CollectionView class.
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class CollectionViewSource {
@@ -35,7 +35,7 @@ public class CollectionViewSource {
 
 	/**
 	 * Gets the view object that is currently associated with this instance of CollectionViewSource. This is a dependency property.
-	 * 
+	 *
 	 */
 	private IObservableCollection view;
 
@@ -51,14 +51,14 @@ public class CollectionViewSource {
 	private Class<?> collectionViewType = Object.class;
 
 	public Object getSource() {
-		if(source == null) {
+		if (source == null) {
 			source = new ArrayList<Object>();
 		}
 		return source;
 	}
 
 	public void setSource(Object source) {
-		if(this.source == source) {
+		if (this.source == source) {
 			return;
 		}
 		view = null;
@@ -66,19 +66,19 @@ public class CollectionViewSource {
 	}
 
 	public IObservableCollection getView() {
-		if(view == null) {
+		if (view == null) {
 			Object source = getSource();
-			if(!(source instanceof IObservableCollection)) {
+			if (!(source instanceof IObservableCollection)) {
 				Class<?> elementType = getCollectionViewType();
-				if(source.getClass().isArray()) {
-					Object[] array = (Object[])source;
+				if (source.getClass().isArray()) {
+					Object[] array = (Object[]) source;
 					elementType = source.getClass().getComponentType();
 					source = Arrays.asList(array);
 				}
-				if(source instanceof List<?>) {
-					view = new WritableList(XWT.getRealm(), (List<?>)source, elementType);
-				} else if(source instanceof Set<?>) {
-					view = new WritableSet(XWT.getRealm(), (List<?>)source, elementType);
+				if (source instanceof List<?>) {
+					view = new WritableList(XWT.getRealm(), (List<?>) source, elementType);
+				} else if (source instanceof Set<?>) {
+					view = new WritableSet(XWT.getRealm(), (List<?>) source, elementType);
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPacka
  * <li>{@link org.eclipse.papyrus.views.properties.runtime.preferences.impl.ContextDescriptorImpl#isDeleted <em>Deleted</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ContextDescriptorImpl extends EObjectImpl implements ContextDescriptor {
@@ -42,7 +42,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The default value of the '{@link #isApplied() <em>Applied</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isApplied()
 	 * @generated
 	 * @ordered
@@ -75,7 +75,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The cached value of the '{@link #isApplied() <em>Applied</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isApplied()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The cached value of the '{@link #getPrototype() <em>Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPrototype()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The default value of the '{@link #isDeleted() <em>Deleted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDeleted()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	 * The cached value of the '{@link #isDeleted() <em>Deleted</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isDeleted()
 	 * @generated
 	 * @ordered
@@ -118,7 +118,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContextDescriptorImpl() {
@@ -128,7 +128,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -149,20 +149,21 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencesPackage.CONTEXT_DESCRIPTOR__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isApplied() {
@@ -172,29 +173,31 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setApplied(boolean newApplied) {
 		boolean oldApplied = applied;
 		applied = newApplied;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencesPackage.CONTEXT_DESCRIPTOR__APPLIED, oldApplied, applied));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ContextDescriptor getPrototype() {
-		if(prototype != null && prototype.eIsProxy()) {
-			InternalEObject oldPrototype = (InternalEObject)prototype;
-			prototype = (ContextDescriptor)eResolveProxy(oldPrototype);
-			if(prototype != oldPrototype) {
-				if(eNotificationRequired())
+		if (prototype != null && prototype.eIsProxy()) {
+			InternalEObject oldPrototype = (InternalEObject) prototype;
+			prototype = (ContextDescriptor) eResolveProxy(oldPrototype);
+			if (prototype != oldPrototype) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PreferencesPackage.CONTEXT_DESCRIPTOR__PROTOTYPE, oldPrototype, prototype));
+				}
 			}
 		}
 		return prototype;
@@ -203,7 +206,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ContextDescriptor basicGetPrototype() {
@@ -213,20 +216,21 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setPrototype(ContextDescriptor newPrototype) {
 		ContextDescriptor oldPrototype = prototype;
 		prototype = newPrototype;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencesPackage.CONTEXT_DESCRIPTOR__PROTOTYPE, oldPrototype, prototype));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isDeleted() {
@@ -236,32 +240,34 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDeleted(boolean newDeleted) {
 		boolean oldDeleted = deleted;
 		deleted = newDeleted;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PreferencesPackage.CONTEXT_DESCRIPTOR__DELETED, oldDeleted, deleted));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__NAME:
 			return getName();
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__APPLIED:
 			return isApplied();
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__PROTOTYPE:
-			if(resolve)
+			if (resolve) {
 				return getPrototype();
+			}
 			return basicGetPrototype();
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__DELETED:
 			return isDeleted();
@@ -272,23 +278,23 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__NAME:
-			setName((String)newValue);
+			setName((String) newValue);
 			return;
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__APPLIED:
-			setApplied((Boolean)newValue);
+			setApplied((Boolean) newValue);
 			return;
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__PROTOTYPE:
-			setPrototype((ContextDescriptor)newValue);
+			setPrototype((ContextDescriptor) newValue);
 			return;
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__DELETED:
-			setDeleted((Boolean)newValue);
+			setDeleted((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -297,12 +303,12 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__NAME:
 			setName(NAME_EDEFAULT);
 			return;
@@ -310,7 +316,7 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 			setApplied(APPLIED_EDEFAULT);
 			return;
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__PROTOTYPE:
-			setPrototype((ContextDescriptor)null);
+			setPrototype((ContextDescriptor) null);
 			return;
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__DELETED:
 			setDeleted(DELETED_EDEFAULT);
@@ -322,12 +328,12 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case PreferencesPackage.CONTEXT_DESCRIPTOR__APPLIED:
@@ -343,13 +349,14 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -362,4 +369,4 @@ public class ContextDescriptorImpl extends EObjectImpl implements ContextDescrip
 		return result.toString();
 	}
 
-} //ContextDescriptorImpl
+} // ContextDescriptorImpl

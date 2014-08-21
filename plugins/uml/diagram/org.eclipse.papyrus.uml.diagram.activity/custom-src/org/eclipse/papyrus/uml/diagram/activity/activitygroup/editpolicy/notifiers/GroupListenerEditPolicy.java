@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.papyrus.uml.diagram.activity.activitygroup.utils.Utils;
 
 /**
  * Edit policy use as based for Group Edit Policies
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy implements IGroupNotifier {
 
@@ -53,9 +53,9 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param groupDescriptor
-	 *        {@link IContainerNodeDescriptor} which describe the relation that the semantic element can handle
+	 *            {@link IContainerNodeDescriptor} which describe the relation that the semantic element can handle
 	 */
 	public GroupListenerEditPolicy(IContainerNodeDescriptor groupDescriptor) {
 		super();
@@ -65,10 +65,11 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#getEObject()}
 	 */
+	@Override
 	public EObject getEObject() {
 		EditPart editPart = getHost();
-		if(editPart instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)editPart).resolveSemanticElement();
+		if (editPart instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) editPart).resolveSemanticElement();
 		}
 		return null;
 	}
@@ -88,7 +89,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	@Override
 	public void activate() {
 		EObject resolveSemanticElement = getHostEditPart().resolveSemanticElement();
-		if(resolveSemanticElement != null) {
+		if (resolveSemanticElement != null) {
 			GroupRequestAdvisor.getInstance().addListenner(resolveSemanticElement, this);
 		}
 		super.activate();
@@ -97,6 +98,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#getGroupDescriptor()}
 	 */
+	@Override
 	public IContainerNodeDescriptor getHostGroupDescriptor() {
 		return groupDescriptor;
 	}
@@ -111,16 +113,18 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#getHostEditPart()}
 	 */
+	@Override
 	public IGraphicalEditPart getHostEditPart() {
-		return (IGraphicalEditPart)getHost();
+		return (IGraphicalEditPart) getHost();
 	}
 
 	/**
 	 * {@inheritDoc IGroupNotifier#isIncludedIn()}
 	 */
+	@Override
 	public boolean isIncludedIn(Rectangle bounds) {
 		Rectangle figureBounds = null;
-		if(isMoving()) {
+		if (isMoving()) {
 			figureBounds = Utils.getAbslotueRequestBounds(getMovingRequest(), getHostEditPart());
 		} else {
 			figureBounds = Utils.getAbsoluteBounds(getHostEditPart());
@@ -131,14 +135,15 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#includes()}
 	 */
+	@Override
 	public boolean includes(Rectangle bounds) {
-		if(getHost() == null) {
+		if (getHost() == null) {
 			return false;
 		}
 		IGraphicalEditPart compartmentEditPart = getHostGroupDescriptor().getCompartmentPartFromView(getHostEditPart());
-		if(compartmentEditPart != null) {
+		if (compartmentEditPart != null) {
 			Rectangle figureBounds = null;
-			if(isMoving()) {
+			if (isMoving()) {
 				figureBounds = Utils.getAbslotueRequestBounds(getMovingRequest(), compartmentEditPart);
 			} else {
 				figureBounds = Utils.getAbsoluteBounds(compartmentEditPart);
@@ -151,8 +156,9 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IAdaptable#getAdapter(Class)}
 	 */
+	@Override
 	public Object getAdapter(Class adapter) {
-		if(IContainerNodeDescriptor.class.isAssignableFrom(adapter)) {
+		if (IContainerNodeDescriptor.class.isAssignableFrom(adapter)) {
 			return groupDescriptor;
 		} else {
 			return getHostEditPart().getAdapter(adapter);
@@ -162,6 +168,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc Comparable#compareTo(Object)}
 	 */
+	@Override
 	public int compareTo(IGroupNotifier o) {
 		return getHostGroupDescriptor().compareTo(o.getHostGroupDescriptor());
 	}
@@ -169,6 +176,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#startMoving()}
 	 */
+	@Override
 	public void startMoving(ChangeBoundsRequest request) {
 		setMoving(true);
 		setMovingRequest(request);
@@ -177,6 +185,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#stopMoving()}
 	 */
+	@Override
 	public void stopMoving() {
 		setMoving(false);
 		setMovingRequest(null);
@@ -184,7 +193,7 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 
 	/**
 	 * Get the moving parameter
-	 * 
+	 *
 	 * @return
 	 */
 	protected boolean isMoving() {
@@ -206,10 +215,12 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	/**
 	 * {@inheritDoc IGroupNotifier#isPartMoving()}
 	 */
+	@Override
 	public boolean isPartMoving() {
 		return isMoving();
 	}
 
+	@Override
 	public IAdaptable getAdaptableView() {
 		return getViewAdapter();
 	}
@@ -222,10 +233,11 @@ public abstract class GroupListenerEditPolicy extends GraphicalNodeEditPolicy im
 	public void showSourceFeedback(Request request) {
 	}
 
+	@Override
 	public IContainerNodeDescriptor getTargetGroupDescriptor(IAdaptable eObjectAdapter) {
 		Object adapted = eObjectAdapter.getAdapter(EObject.class);
-		if(adapted instanceof EObject) {
-			EObject eObject = (EObject)adapted;
+		if (adapted instanceof EObject) {
+			EObject eObject = (EObject) adapted;
 			return ContainerNodeDescriptorRegistry.getInstance().getContainerNodeDescriptor(eObject.eClass());
 		}
 		return null;

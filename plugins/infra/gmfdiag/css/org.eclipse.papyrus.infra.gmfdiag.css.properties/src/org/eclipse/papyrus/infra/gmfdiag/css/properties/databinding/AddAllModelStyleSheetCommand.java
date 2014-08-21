@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Mickaël Adam (ALL4TEC) mickael.adam@all4tec.net - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.databinding;
@@ -40,11 +40,11 @@ public class AddAllModelStyleSheetCommand extends RecordingCommand {
 	 * Constructor.
 	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param values
-	 *        the values
+	 *            the values
 	 */
 	public AddAllModelStyleSheetCommand(TransactionalEditingDomain domain, Resource resource, Collection<?> values) {
 		super(domain);
@@ -56,17 +56,18 @@ public class AddAllModelStyleSheetCommand extends RecordingCommand {
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 *
 	 */
+	@Override
 	public void doExecute() {
 
-		//Get the model styleSheet on the resource
+		// Get the model styleSheet on the resource
 		Object modelStyleSheetObject = EcoreUtil.getObjectByType(resource.getContents(), StylesheetsPackage.Literals.MODEL_STYLE_SHEETS);
 
-		//For each styleSheet
-		for(Object styleSheetRef : values) {
-			//Add it to the modelStyleSheet
-			((ModelStyleSheets)modelStyleSheetObject).getStylesheets().add((StyleSheet)styleSheetRef);
+		// For each styleSheet
+		for (Object styleSheetRef : values) {
+			// Add it to the modelStyleSheet
+			((ModelStyleSheets) modelStyleSheetObject).getStylesheets().add((StyleSheet) styleSheetRef);
 		}
-		//Add the modelStyleSheet to the resource
-		resource.getContents().add(((ModelStyleSheets)modelStyleSheetObject));
+		// Add the modelStyleSheet to the resource
+		resource.getContents().add(((ModelStyleSheets) modelStyleSheetObject));
 	}
 }

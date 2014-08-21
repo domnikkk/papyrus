@@ -20,7 +20,7 @@ import org.w3c.dom.css.CSSValueList;
 
 /**
  * A Helper for parsing CSS property values.
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -29,31 +29,31 @@ public class ParserHelper {
 	/**
 	 * Parses a list of CSS Values, and returns them as an Array of Strings
 	 * Used for multivalued CSS values (Space-separated)
-	 * 
+	 *
 	 * @param engine
-	 *        The engine used to parse the values
+	 *            The engine used to parse the values
 	 * @param value
-	 *        The raw CSSValue to parse
+	 *            The raw CSSValue to parse
 	 * @return
 	 *         An Array containing each parsed value
 	 */
 	public static String[] parseValues(CSSEngine engine, CSSValue cssValue) {
-		if(cssValue instanceof CSSValueList) {
-			CSSValueList list = (CSSValueList)cssValue;
+		if (cssValue instanceof CSSValueList) {
+			CSSValueList list = (CSSValueList) cssValue;
 			return toArray(list);
 		}
 
-		return new String[]{ cssValue.getCssText() };
+		return new String[] { cssValue.getCssText() };
 	}
 
 	/**
 	 * Parses a list of CSS Values, and returns them as an Array of Strings
 	 * Used for multivalued CSS values (Space-separated)
-	 * 
+	 *
 	 * @param engine
-	 *        The engine used to parse the values
+	 *            The engine used to parse the values
 	 * @param value
-	 *        The raw value to parse
+	 *            The raw value to parse
 	 * @return
 	 *         An Array containing each parsed value
 	 * @deprecated Does not properly support quoted strings (e.g. firstValue "second value")
@@ -68,26 +68,26 @@ public class ParserHelper {
 			return new String[0];
 		}
 
-		if(cssValue instanceof CSSValueList) {
-			CSSValueList list = (CSSValueList)cssValue;
+		if (cssValue instanceof CSSValueList) {
+			CSSValueList list = (CSSValueList) cssValue;
 			return toArray(list);
 		}
 
-		return new String[]{ cssValue.getCssText() };
+		return new String[] { cssValue.getCssText() };
 	}
 
 	/**
 	 * Converts a CSSValueList to an Array of Strings
-	 * 
+	 *
 	 * @param valueList
-	 *        The CSSValueList to convert
+	 *            The CSSValueList to convert
 	 * @return
 	 *         An Array of Strings containing the CSSValues, in their raw form
 	 *         (CSS Text form)
 	 */
 	public static String[] toArray(CSSValueList valueList) {
 		String[] result = new String[valueList.getLength()];
-		for(int i = 0; i < result.length; i++) {
+		for (int i = 0; i < result.length; i++) {
 			result[i] = valueList.item(i).getCssText();
 		}
 		return result;

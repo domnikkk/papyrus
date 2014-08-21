@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,13 +34,14 @@ import org.eclipse.papyrus.infra.emf.Activator;
 public class RestoreDependencyHelper {
 
 
-	/** The  uri replacement strategy. */
+	/** The uri replacement strategy. */
 	protected IURIReplacementStrategy iURIReplacementStrategy;
 
 	/**
 	 * Instantiates a new restore dependency helper.
 	 *
-	 * @param iURIReplacementStrategy the chosen uriReplacementStrategy
+	 * @param iURIReplacementStrategy
+	 *            the chosen uriReplacementStrategy
 	 */
 	public RestoreDependencyHelper(IURIReplacementStrategy iURIReplacementStrategy) {
 		this.iURIReplacementStrategy = iURIReplacementStrategy;
@@ -49,29 +50,30 @@ public class RestoreDependencyHelper {
 	/**
 	 * Restore dependencies, iterate on all contents to check and replace URIs.
 	 *
-	 * @param resource the resource
+	 * @param resource
+	 *            the resource
 	 * @return the collection
 	 */
 	public Collection<Replacement> restoreDependencies(Resource resource) {
 		Iterator<EObject> allContentsIterator = resource.getAllContents();
 		Collection<Replacement> replacements = new LinkedList<Replacement>();
-		while(allContentsIterator.hasNext()) {
+		while (allContentsIterator.hasNext()) {
 			EObject eObject = allContentsIterator.next();
 
-			for(EReference reference : eObject.eClass().getEAllReferences()) {
-				if(reference.isContainment()) {
+			for (EReference reference : eObject.eClass().getEAllReferences()) {
+				if (reference.isContainment()) {
 					continue;
 				}
 
-				if(!reference.isChangeable()) {
+				if (!reference.isChangeable()) {
 					continue;
 				}
 
 				Object value = eObject.eGet(reference);
-				if(value instanceof EObject) {
-					EObject eObjectToReplace = (EObject)value;
+				if (value instanceof EObject) {
+					EObject eObjectToReplace = (EObject) value;
 					EObject newEObject = checkAndReplace(eObjectToReplace);
-					if(newEObject == null) {
+					if (newEObject == null) {
 						continue;
 					}
 
@@ -82,25 +84,25 @@ public class RestoreDependencyHelper {
 						Activator.log.error(ex);
 					}
 
-				} else if(value instanceof Collection<?>) {
+				} else if (value instanceof Collection<?>) {
 					Map<EObject, EObject> previousToNewValue = new HashMap<EObject, EObject>();
-					Collection<?> collection = (Collection<?>)value;
-					for(Object collectionElement : (Collection<?>)value) {
-						if(collectionElement instanceof EObject) {
-							EObject eObjectToReplace = (EObject)collectionElement;
+					Collection<?> collection = (Collection<?>) value;
+					for (Object collectionElement : (Collection<?>) value) {
+						if (collectionElement instanceof EObject) {
+							EObject eObjectToReplace = (EObject) collectionElement;
 							EObject newEObject = checkAndReplace(eObjectToReplace);
-							if(newEObject == null) {
+							if (newEObject == null) {
 								continue;
 							}
 							previousToNewValue.put(eObjectToReplace, newEObject);
 						}
 					}
-					if(previousToNewValue.isEmpty()) {
+					if (previousToNewValue.isEmpty()) {
 						continue;
 					}
-					if(collection instanceof EStructuralFeature.Setting) {
-						EStructuralFeature.Setting setting = (EStructuralFeature.Setting)collection;
-						for(Map.Entry<EObject, EObject> entry : previousToNewValue.entrySet()) {
+					if (collection instanceof EStructuralFeature.Setting) {
+						EStructuralFeature.Setting setting = (EStructuralFeature.Setting) collection;
+						for (Map.Entry<EObject, EObject> entry : previousToNewValue.entrySet()) {
 							EcoreUtil.replace(setting, entry.getKey(), entry.getValue());
 							replacements.add(new ReplacementImpl(eObject, reference, entry.getKey(), entry.getValue()));
 						}
@@ -114,15 +116,16 @@ public class RestoreDependencyHelper {
 	/**
 	 * Check and replace.
 	 *
-	 * @param eObject the e object to replace
+	 * @param eObject
+	 *            the e object to replace
 	 * @return the e object
 	 */
 	protected EObject checkAndReplace(EObject eObject) {
 		URI eObjectURIToReplace = EcoreUtil.getURI(eObject);
 		URI resourceURI = eObjectURIToReplace.trimFragment();
-		if(!resourceURI.isEmpty()) {
+		if (!resourceURI.isEmpty()) {
 			URI targetURI = iURIReplacementStrategy.getReplacementCandidate(resourceURI);
-			if(targetURI != null && !targetURI.equals(resourceURI)) {
+			if (targetURI != null && !targetURI.equals(resourceURI)) {
 				return DependencyManagementHelper.replace(eObject, targetURI);
 			}
 		}

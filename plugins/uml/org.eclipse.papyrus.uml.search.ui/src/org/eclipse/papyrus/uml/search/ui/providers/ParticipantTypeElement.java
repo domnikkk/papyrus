@@ -42,10 +42,10 @@ public class ParticipantTypeElement {
 
 
 	public String getText() {
-		if(element instanceof NamedElement) {
-			return ((NamedElement)element).getName();
-		} else if(element instanceof ENamedElement) {
-			return ((ENamedElement)element).getName();
+		if (element instanceof NamedElement) {
+			return ((NamedElement) element).getName();
+		} else if (element instanceof ENamedElement) {
+			return ((ENamedElement) element).getName();
 		}
 		return null;
 	}

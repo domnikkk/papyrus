@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import org.eclipse.gef.commands.Command;
 /**
  * A Handler called when the user chooses a default action on
  * SelectAndExecuteCommand
- * 
+ *
  * @author Camille Letavernier
  */
 public interface DefaultActionHandler {

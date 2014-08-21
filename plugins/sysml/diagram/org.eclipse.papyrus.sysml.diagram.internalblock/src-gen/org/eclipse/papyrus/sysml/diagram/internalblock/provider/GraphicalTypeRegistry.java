@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -63,7 +63,7 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	public String getEdgeGraphicalType(EObject domainElement) {
 
 		String graphicalType = UNDEFINED_TYPE;
-		if(domainElement == null) {
+		if (domainElement == null) {
 			return UNDEFINED_TYPE;
 		}
 		return graphicalType;
@@ -73,8 +73,8 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	 * {@inheritDoc}
 	 */
 	public String getEdgeGraphicalType(IElementType elementType) {
-		if(elementType instanceof IHintedType) {
-			String semanticHint = ((IHintedType)elementType).getSemanticHint();
+		if (elementType instanceof IHintedType) {
+			String semanticHint = ((IHintedType) elementType).getSemanticHint();
 			return getEdgeGraphicalType(semanticHint);
 		}
 
@@ -85,7 +85,7 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	 * {@inheritDoc}
 	 */
 	public String getEdgeGraphicalType(String proposedType) {
-		if(isKnownEdgeType(proposedType)) {
+		if (isKnownEdgeType(proposedType)) {
 			return proposedType;
 		}
 
@@ -98,28 +98,28 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	public String getNodeGraphicalType(EObject domainElement, String containerType) {
 
 		String graphicalType = UNDEFINED_TYPE;
-		if((containerType == null) || (domainElement == null)) {
+		if ((containerType == null) || (domainElement == null)) {
 			return UNDEFINED_TYPE;
 		}
 
-		if(domainElement instanceof org.eclipse.uml2.uml.Constraint) {
-			if(ElementTypes.DIAGRAM_ID.equals(containerType)) { // Constraint TopNode
+		if (domainElement instanceof org.eclipse.uml2.uml.Constraint) {
+			if (ElementTypes.DIAGRAM_ID.equals(containerType)) { // Constraint TopNode
 				graphicalType = ElementTypes.CONSTRAINT.getSemanticHint();
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				graphicalType = ElementTypes.CONSTRAINT_CN.getSemanticHint();
 			}
 
 		}
 
-		if(domainElement instanceof org.eclipse.uml2.uml.Comment) {
-			if(ElementTypes.DIAGRAM_ID.equals(containerType)) { // Comment TopNode
+		if (domainElement instanceof org.eclipse.uml2.uml.Comment) {
+			if (ElementTypes.DIAGRAM_ID.equals(containerType)) { // Comment TopNode
 				graphicalType = ElementTypes.COMMENT.getSemanticHint();
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				graphicalType = ElementTypes.COMMENT_CN.getSemanticHint();
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
 				graphicalType = ElementTypes.COMMENT_CN.getSemanticHint();
 			}
 
@@ -132,8 +132,8 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	 * {@inheritDoc}
 	 */
 	public String getNodeGraphicalType(IElementType elementType, String containerType) {
-		if(elementType instanceof IHintedType) {
-			String semanticHint = ((IHintedType)elementType).getSemanticHint();
+		if (elementType instanceof IHintedType) {
+			String semanticHint = ((IHintedType) elementType).getSemanticHint();
 			return getNodeGraphicalType(semanticHint, containerType);
 		}
 
@@ -144,35 +144,35 @@ public class GraphicalTypeRegistry implements IGraphicalTypeRegistry {
 	 * {@inheritDoc}
 	 */
 	public String getNodeGraphicalType(String proposedType, String containerType) {
-		if((UMLElementTypes.COMMENT.getSemanticHint().equals(proposedType))) {
+		if ((UMLElementTypes.COMMENT.getSemanticHint().equals(proposedType))) {
 
-			if(ElementTypes.DIAGRAM_ID.equals(containerType)) { // Constraint TopNode
+			if (ElementTypes.DIAGRAM_ID.equals(containerType)) { // Constraint TopNode
 				return ElementTypes.COMMENT.getSemanticHint();
 			}
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return ElementTypes.COMMENT_CN.getSemanticHint();
 			}
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
 				return ElementTypes.COMMENT_CN.getSemanticHint();
 			}
 
 			return UNDEFINED_TYPE;
 		}
 
-		if(UMLElementTypes.CONSTRAINT.getSemanticHint().equals(proposedType)) {
+		if (UMLElementTypes.CONSTRAINT.getSemanticHint().equals(proposedType)) {
 
-			if(ElementTypes.DIAGRAM_ID.equals(containerType)) { // Constraint TopNode
+			if (ElementTypes.DIAGRAM_ID.equals(containerType)) { // Constraint TopNode
 				return ElementTypes.CONSTRAINT.getSemanticHint();
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return ElementTypes.CONSTRAINT_CN.getSemanticHint();
 			}
 
 			return UNDEFINED_TYPE;
 		}
-		if(isKnownNodeType(proposedType)) {
+		if (isKnownNodeType(proposedType)) {
 			return proposedType;
 		}
 

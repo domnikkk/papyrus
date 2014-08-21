@@ -34,22 +34,22 @@ public class EnvironmentContentProvider extends SemanticEMFContentProvider imple
 	 * Constructor.
 	 *
 	 * @param feature
-	 *        The EStructuralFeature used to retrieve the elements from the
-	 *        different environments.
+	 *            The EStructuralFeature used to retrieve the elements from the
+	 *            different environments.
 	 */
 	public EnvironmentContentProvider(EStructuralFeature feature) {
 		super(null, feature, getRoots(feature), org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager());
 	}
 
 	private static EObject[] getRoots(EStructuralFeature feature) {
-		if(!(feature.getEType() instanceof EClass)) {
+		if (!(feature.getEType() instanceof EClass)) {
 			Activator.log.warn("The feature " + feature + " cannot be handled by this content provider");
 			return new EObject[0];
 		}
 
 		List<Object> allObjects = new LinkedList<Object>();
-		for(Environment environment : ConfigurationManager.getInstance().getPropertiesRoot().getEnvironments()) {
-			allObjects.addAll((List<?>)environment.eGet(feature));
+		for (Environment environment : ConfigurationManager.getInstance().getPropertiesRoot().getEnvironments()) {
+			allObjects.addAll((List<?>) environment.eGet(feature));
 		}
 		return allObjects.toArray(new EObject[0]);
 	}

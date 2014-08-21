@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -70,6 +70,7 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new NestedArtifactNodeItemSemanticEditPolicyCN());
@@ -91,18 +92,21 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -113,33 +117,35 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new ArtifactFigure();
 	}
 
 	/**
 	 * org.eclipse.papyrus.uml.diagram.deployment.custom.figure.nodes.ArtifactFigure
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ArtifactFigure getPrimaryShape() {
-		return (ArtifactFigure)primaryShape;
+		return (ArtifactFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NestedArtifactNameEditPart) {
-			((NestedArtifactNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NestedArtifactNameEditPart) {
+			((NestedArtifactNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 
 
-		if(childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
+		if (childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ArtifactCompositeCompartmentEditPartCN)childEditPart).getFigure());
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
+			pane.add(((ArtifactCompositeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
 
@@ -150,12 +156,12 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NestedArtifactNameEditPart) {
+		if (childEditPart instanceof NestedArtifactNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
+		if (childEditPart instanceof ArtifactCompositeCompartmentEditPartCN) {
 			IFigure pane = getPrimaryShape().getCompositeCompartmentFigure();
-			pane.remove(((ArtifactCompositeCompartmentEditPartCN)childEditPart).getFigure());
+			pane.remove(((ArtifactCompositeCompartmentEditPartCN) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -164,8 +170,9 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -174,8 +181,9 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -184,8 +192,9 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof ArtifactCompositeCompartmentEditPartCN) {
+		if (editPart instanceof ArtifactCompositeCompartmentEditPartCN) {
 			return getPrimaryShape().getCompositeCompartmentFigure();
 		}
 		return getContentPane();
@@ -194,6 +203,7 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(150, 70);
 		return result;
@@ -201,12 +211,13 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodeFigure() {
 		return new SelectableBorderedNodeFigure(createMainFigureWithSVG());
 
@@ -215,13 +226,14 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -232,8 +244,9 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -242,8 +255,9 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -251,6 +265,7 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
 		super.setLineWidth(width);
 	}
@@ -258,15 +273,17 @@ public class NestedArtifactNodeEditPartCN extends NodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof NodeFigure) {
+			((NodeFigure) primaryShape).setLineStyle(style);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(NestedArtifactNameEditPart.VISUAL_ID));
 	}

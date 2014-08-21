@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,22 +41,22 @@ import org.eclipse.papyrus.views.properties.ui.ValueAttribute;
 
 /**
  * A Command for create a {@link Section} in the given View.
- * 
+ *
  * In the physical EMF Model, the section is owned by a Tab, and referenced
  * by one or more views. However, in the logical model used by the Customization
  * editor (Which is slightly different to be simpler), the view directly owns the
  * section, and the section refers to its Tab.
- * 
+ *
  * This command creates the section in the default Tab, and creates a reference
  * from the view to the section.
- * 
+ *
  * It also instantiates the XWT Resource associated to this sections, and fills
  * it with a default Composite widget and Layout.
- * 
+ *
  * The command can be undone in a single operation.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class CreateSectionAction extends StaticSelectionCommandAction {
 
@@ -66,24 +66,24 @@ public class CreateSectionAction extends StaticSelectionCommandAction {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * Creates a new CreateSectionAction, with the given name and file.
 	 * The sectionFile is a relative path from the section's URI, which is
 	 * the same as it's owning view.
-	 * 
+	 *
 	 * @param selection
-	 *        The current selection
+	 *            The current selection
 	 * @param sectionName
-	 *        The new section's name
+	 *            The new section's name
 	 * @param sectionFile
-	 *        The path to the section's XWT resource
+	 *            The path to the section's XWT resource
 	 */
 	public CreateSectionAction(ISelection selection, String sectionName, String sectionFile) {
 		this.sectionName = sectionName;
 		this.sectionFile = sectionFile;
 
-		if(selection instanceof IStructuredSelection) {
-			this.selection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			this.selection = (IStructuredSelection) selection;
 			configureAction(selection);
 		}
 	}
@@ -92,31 +92,31 @@ public class CreateSectionAction extends StaticSelectionCommandAction {
 	protected Command createActionCommand(EditingDomain editingDomain, Collection<?> collection) {
 		Object selectedElement = selection.getFirstElement();
 		View view = null;
-		if(selectedElement instanceof View) {
-			view = (View)selectedElement;
+		if (selectedElement instanceof View) {
+			view = (View) selectedElement;
 		}
 
-		if(view == null) {
+		if (view == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		EObject tab = null;
 
-		for(Section section : view.getSections()) {
-			if(section.getTab() != null) {
+		for (Section section : view.getSections()) {
+			if (section.getTab() != null) {
 				tab = section.getTab();
 				break;
 			}
 		}
 
-		if(tab == null) {
-			Context context = (Context)view.eContainer();
-			if(context.getTabs().size() > 0) {
+		if (tab == null) {
+			Context context = (Context) view.eContainer();
+			if (context.getTabs().size() > 0) {
 				tab = context.getTabs().get(0);
 			}
 		}
 
-		if(tab == null) {
+		if (tab == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -146,7 +146,7 @@ public class CreateSectionAction extends StaticSelectionCommandAction {
 		CompositeWidget newWidget = UiFactory.eINSTANCE.createCompositeWidget();
 
 
-		for(Map.Entry<String, String> entry : getNamespaces().entrySet()) {
+		for (Map.Entry<String, String> entry : getNamespaces().entrySet()) {
 			ValueAttribute attribute = UiFactory.eINSTANCE.createValueAttribute();
 			attribute.setName(entry.getKey());
 			attribute.setValue(entry.getValue());
@@ -173,7 +173,7 @@ public class CreateSectionAction extends StaticSelectionCommandAction {
 
 	private Command getCreateResourceCommand(CompositeWidget newWidget, Section section, Resource baseResource) {
 		URI widgetURI;
-		if(section.getSectionFile() == null || section.getSectionFile().equals("")) { //$NON-NLS-1$
+		if (section.getSectionFile() == null || section.getSectionFile().equals("")) { //$NON-NLS-1$
 			section.setSectionFile(getSectionFile());
 		}
 
@@ -185,7 +185,7 @@ public class CreateSectionAction extends StaticSelectionCommandAction {
 	}
 
 	private Command getSetWidgetCommand(CompositeWidget newWidget, Section section) {
-		if(section.getWidget() == null) {
+		if (section.getWidget() == null) {
 			return SetCommand.create(editingDomain, section, section.eClass().getEStructuralFeature("widget"), newWidget); //$NON-NLS-1$
 		} else {
 			return UnexecutableCommand.INSTANCE;

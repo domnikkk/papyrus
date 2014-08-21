@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,21 +34,24 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentItemSemanticEditPo
 
 	/**
 	 * Generated not for limit InteractionOperand number. {@inheritDoc}
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if(UMLElementTypes.InteractionOperand_3005 == req.getElementType()) {
+		if (UMLElementTypes.InteractionOperand_3005 == req.getElementType()) {
 			CombinedFragment combinedFragment = getAssociatedCombinedFragment(req.getContainer());
-			if(combinedFragment == null) {
+			if (combinedFragment == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			// Set the container of the request to the combinedFragment.
 			req.setContainer(combinedFragment);
 			InteractionOperatorKind interactionOperator = combinedFragment.getInteractionOperator();
 			EList<InteractionOperand> operands = combinedFragment.getOperands();
-			if(interactionOperator != null && !operands.isEmpty() && (InteractionOperatorKind.OPT_LITERAL.equals(interactionOperator) || InteractionOperatorKind.LOOP_LITERAL.equals(interactionOperator) || InteractionOperatorKind.BREAK_LITERAL.equals(interactionOperator) || InteractionOperatorKind.NEG_LITERAL.equals(interactionOperator))) {
+			if (interactionOperator != null
+					&& !operands.isEmpty()
+					&& (InteractionOperatorKind.OPT_LITERAL.equals(interactionOperator) || InteractionOperatorKind.LOOP_LITERAL.equals(interactionOperator) || InteractionOperatorKind.BREAK_LITERAL.equals(interactionOperator) || InteractionOperatorKind.NEG_LITERAL
+							.equals(interactionOperator))) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			// make compound command
@@ -57,22 +60,22 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentItemSemanticEditPo
 			result.add(cmd);
 			// append a command which notifies
 			// Fixed bug: remove the notify dialog, see: https://bugs.eclipse.org/bugs/show_bug.cgi?id=402977
-			//			Command notifyCmd = new Command() {
+			// Command notifyCmd = new Command() {
 			//
-			//				@Override
-			//				public void execute() {
-			//					NotificationBuilder warning = NotificationBuilder.createAsyncPopup(CustomMessages.Warning_ResizeInteractionOperandTitle, NLS.bind(CustomMessages.Warning_ResizeInteractionOperandTxt, System.getProperty("line.separator")));
-			//					warning.run();
-			//				}
+			// @Override
+			// public void execute() {
+			// NotificationBuilder warning = NotificationBuilder.createAsyncPopup(CustomMessages.Warning_ResizeInteractionOperandTitle, NLS.bind(CustomMessages.Warning_ResizeInteractionOperandTxt, System.getProperty("line.separator")));
+			// warning.run();
+			// }
 			//
-			//				@Override
-			//				public void undo() {
-			//					execute();
-			//				}
-			//			};
-			//			if(notifyCmd.canExecute()) {
-			//				result.add(notifyCmd);
-			//			}
+			// @Override
+			// public void undo() {
+			// execute();
+			// }
+			// };
+			// if(notifyCmd.canExecute()) {
+			// result.add(notifyCmd);
+			// }
 			return result;
 		}
 		return super.getCreateCommand(req);
@@ -83,9 +86,9 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentItemSemanticEditPo
 	 */
 	private CombinedFragment getAssociatedCombinedFragment(EObject eObject) {
 		CombinedFragment combinedFragment = null;
-		if(eObject instanceof CombinedFragment) {
-			return (CombinedFragment)eObject;
-		} else if(eObject != null) {
+		if (eObject instanceof CombinedFragment) {
+			return (CombinedFragment) eObject;
+		} else if (eObject != null) {
 			combinedFragment = getAssociatedCombinedFragment(eObject.eContainer());
 		}
 		return combinedFragment;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 ATOS.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Stereotype;
  * on commands to get the stereotypes (the computation of the text was
  * formerly processed by commands executed when the object was dragged
  * from a palette, from instance).
- * 
+ *
  * @author omelois
  */
 public class CustomAppliedStereotypeLabelDisplayEditPolicy extends AppliedStereotypeNodeLabelDisplayEditPolicy {
@@ -39,26 +39,26 @@ public class CustomAppliedStereotypeLabelDisplayEditPolicy extends AppliedStereo
 	public String stereotypesOnlyToDisplay() {
 		Object hostModel = getHost().getModel();
 		String result = ""; //$NON-NLS-1$
-		View view = (View)hostModel;
+		View view = (View) hostModel;
 		EObject viewElement = view.getElement();
-		Element element = (Element)viewElement;
+		Element element = (Element) viewElement;
 		Iterator<Stereotype> listStereotype = element.getAppliedStereotypes().iterator();
 		StringBuffer buffer = new StringBuffer();
-		while(listStereotype.hasNext()) {
+		while (listStereotype.hasNext()) {
 			Stereotype stereotypec = listStereotype.next();
 			String stereotype_string = stereotypec.getQualifiedName();
 			buffer.append(stereotype_string);
-			if(listStereotype.hasNext()) {
+			if (listStereotype.hasNext()) {
 				buffer.append(","); //$NON-NLS-1$
 			}
 		}
 		result = buffer.toString();
 
-		if(result.length() != 0) {
+		if (result.length() != 0) {
 			String stereotypespresentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(view);
 
 			// vertical representation
-			if(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
+			if (UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(stereotypespresentationKind)) {
 				return Activator.ST_LEFT + stereotypesToDisplay(Activator.ST_RIGHT + "\n" + Activator.ST_LEFT, result, "") + Activator.ST_RIGHT;
 			} else {// horizontal representation
 				return Activator.ST_LEFT + stereotypesToDisplay(", ", result, "") + Activator.ST_RIGHT;

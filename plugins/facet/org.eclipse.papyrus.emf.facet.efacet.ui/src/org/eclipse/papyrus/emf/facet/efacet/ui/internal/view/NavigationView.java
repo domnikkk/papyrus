@@ -15,7 +15,7 @@
  *     Gregoire Dupe (Mia-Software) - Bug 372626 - Aggregates
  *     Olivier Remaud (Soft-Maint) - Bug 377615 - Query View filtering
  *     Gregoire Dupe (Mia-Software) - Bug 378498 - Navigation view sometimes lacks an EditingDomain
- *     Nicolas Bros (Mia-Software) - Bug 379395 - Navigate should replace elements 
+ *     Nicolas Bros (Mia-Software) - Bug 379395 - Navigate should replace elements
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.efacet.ui.internal.view;
 
@@ -92,7 +92,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
-import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
@@ -151,10 +150,10 @@ public class NavigationView extends ViewPart implements INavigationView {
 		}
 
 		public Object[] getChildren(final Object parentElement) {
-			return new Object[]{};
+			return new Object[] {};
 		}
 	};
-	
+
 	private enum LayoutStyle {
 		Horizontal, Vertical
 	}
@@ -300,7 +299,7 @@ public class NavigationView extends ViewPart implements INavigationView {
 		final String label2 = this.labelProvider.getText(object2);
 		return label1.compareToIgnoreCase(label2);
 	}
-	
+
 	private EditableContext createEditableContext() {
 		return new EditableContext() {
 			public void add(final EObject eObject) {
@@ -336,11 +335,11 @@ public class NavigationView extends ViewPart implements INavigationView {
 	private void addDropSupport(final TreeViewer viewer) {
 		final DropTargetListener dropListener = new DropAdapter(
 				new DropAction() {
-			@Override
-			public void dropped(final Set<EObject> eObjects) {
-				addEObjects(eObjects);
-			}
-		});
+					@Override
+					public void dropped(final Set<EObject> eObjects) {
+						addEObjects(eObjects);
+					}
+				});
 		final int dndOperations = DND.DROP_LINK | DND.DROP_COPY | DND.DROP_MOVE;
 		final Transfer[] transfers = new Transfer[] { LocalTransfer
 				.getInstance() };
@@ -634,7 +633,7 @@ public class NavigationView extends ViewPart implements INavigationView {
 
 	public void selectETypedElement(final ETypedElement eTypedElement) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public ETypedElement getSelectedETypedElement() {
@@ -649,7 +648,7 @@ public class NavigationView extends ViewPart implements INavigationView {
 
 	public void setSelectDisplayer(final IETypedElementResultDisplayerOpener resultDisplayer) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public IETypedElementResultDisplayerOpener getSelectedDisplayer() {
@@ -675,15 +674,14 @@ public class NavigationView extends ViewPart implements INavigationView {
 		final EClass eobjectClass = EcorePackage.eINSTANCE.getEObject();
 		boolean result = false;
 		for (final EObject object : this.fContext) {
-			if 	(facet.getExtendedMetaclass() == null 
+			if (facet.getExtendedMetaclass() == null
 					|| facet.getExtendedMetaclass() == eobjectClass
-					|| facet.getExtendedMetaclass().isSuperTypeOf(object.eClass())
-				) {
+					|| facet.getExtendedMetaclass().isSuperTypeOf(object.eClass())) {
 				result = true;
 				break;
 			}
 		}
 		return result;
 	}
-	
+
 }

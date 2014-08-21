@@ -27,6 +27,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <!-- begin-user-doc -->
  * A sample utility for the '<em><b>servicedescriptors</b></em>' package.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServicedescriptorsExample {
@@ -34,26 +35,28 @@ public class ServicedescriptorsExample {
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
-	 * @param args the file paths or URIs.
+	 * 
+	 * @param args
+	 *            the file paths or URIs.
 	 * @generated
 	 */
 	public static void main(String[] args) {
 		// Create a resource set to hold the resources.
 		//
 		ResourceSet resourceSet = new ResourceSetImpl();
-		
+
 		// Register the appropriate resource factory to handle all file extensions.
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
-			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new XMIResourceFactoryImpl());
+				(Resource.Factory.Registry.DEFAULT_EXTENSION,
+						new XMIResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(ServicedescriptorsPackage.eNS_URI, 
-			 ServicedescriptorsPackage.eINSTANCE);
-        
+				(ServicedescriptorsPackage.eNS_URI,
+						ServicedescriptorsPackage.eINSTANCE);
+
 		// If there are no arguments, emit an appropriate usage message.
 		//
 		if (args.length == 0) {
@@ -63,8 +66,7 @@ public class ServicedescriptorsExample {
 				RegistryDesc root = ServicedescriptorsFactory.eINSTANCE.createRegistryDesc();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
-			}
-			catch (IOException exception) {
+			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
 		}
@@ -77,7 +79,7 @@ public class ServicedescriptorsExample {
 				// Otherwise, it's directly treated as a URL.
 				//
 				File file = new File(args[i]);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()): URI.createURI(args[i]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(args[i]);
 
 				try {
 					// Demand load resource for this file.
@@ -93,21 +95,23 @@ public class ServicedescriptorsExample {
 							printDiagnostic(diagnostic, "");
 						}
 					}
-				}
-				catch (RuntimeException exception) {
+				} catch (RuntimeException exception) {
 					System.out.println("Problem loading " + uri);
 					exception.printStackTrace();
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * Prints diagnostics with indentation.
 	 * <!-- end-user-doc -->
-	 * @param diagnostic the diagnostic to print.
-	 * @param indent the indentation for printing.
+	 * 
+	 * @param diagnostic
+	 *            the diagnostic to print.
+	 * @param indent
+	 *            the indentation for printing.
 	 * @generated
 	 */
 	protected static void printDiagnostic(Diagnostic diagnostic, String indent) {
@@ -118,4 +122,4 @@ public class ServicedescriptorsExample {
 		}
 	}
 
-} //ServicedescriptorsExample
+} // ServicedescriptorsExample

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,6 +19,7 @@ import org.eclipse.core.commands.operations.IUndoableOperation;
 import org.eclipse.core.commands.operations.OperationHistoryFactory;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.validation.internal.service.ResourceStatus;
 
 /**
@@ -34,16 +35,19 @@ public abstract class SafeDialogOpenerDuringValidation<ReturnType> {
 	 */
 	private static IOperationApprover2 operationDisapprover = new IOperationApprover2() {
 
+		@Override
 		public IStatus proceedUndoing(IUndoableOperation operation, IOperationHistory history, IAdaptable info) {
-			return ResourceStatus.CANCEL_STATUS;
+			return Status.CANCEL_STATUS;
 		}
 
+		@Override
 		public IStatus proceedRedoing(IUndoableOperation operation, IOperationHistory history, IAdaptable info) {
-			return ResourceStatus.CANCEL_STATUS;
+			return Status.CANCEL_STATUS;
 		}
 
+		@Override
 		public IStatus proceedExecuting(IUndoableOperation operation, IOperationHistory history, IAdaptable info) {
-			return ResourceStatus.CANCEL_STATUS;
+			return Status.CANCEL_STATUS;
 		}
 	};
 

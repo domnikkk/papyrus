@@ -16,8 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getX <em>X</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getY <em>Y</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getX <em>X</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getY <em>Y</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public interface Position extends EObject {
 	 * If the meaning of the '<em>X</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(int)
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getPosition_X()
@@ -46,7 +47,9 @@ public interface Position extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>X</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>X</em>' attribute.
 	 * @see #getX()
 	 * @generated
 	 */
@@ -59,6 +62,7 @@ public interface Position extends EObject {
 	 * If the meaning of the '<em>Y</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(int)
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getPosition_Y()
@@ -71,7 +75,9 @@ public interface Position extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.Position#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Y</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Y</em>' attribute.
 	 * @see #getY()
 	 * @generated
 	 */

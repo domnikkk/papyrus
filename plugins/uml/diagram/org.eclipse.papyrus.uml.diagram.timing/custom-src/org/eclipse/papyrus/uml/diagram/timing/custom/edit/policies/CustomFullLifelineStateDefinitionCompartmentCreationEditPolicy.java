@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,9 +50,9 @@ public class CustomFullLifelineStateDefinitionCompartmentCreationEditPolicy exte
 	protected Command getCreateCommand(final CreateViewRequest request) {
 		final Command superCommand = super.getCreateCommand(request);
 		final List<? extends ViewDescriptor> viewDescriptors = request.getViewDescriptors();
-		if(viewDescriptors.size() == 1 && Integer.toString(StateDefinitionEditPart.VISUAL_ID).equals(viewDescriptors.get(0).getSemanticHint())) {
-			final View lifelineView = (View)getHost().getParent().getModel();
-			final Lifeline lifeline = (Lifeline)lifelineView.getElement();
+		if (viewDescriptors.size() == 1 && Integer.toString(StateDefinitionEditPart.VISUAL_ID).equals(viewDescriptors.get(0).getSemanticHint())) {
+			final View lifelineView = (View) getHost().getParent().getModel();
+			final Lifeline lifeline = (Lifeline) lifelineView.getElement();
 			final List<?> children = getHost().getChildren();
 			final boolean firstStateDefinition = children.size() == 0;
 			return createStateDefinitionCommand(superCommand, lifeline, firstStateDefinition);
@@ -67,10 +67,10 @@ public class CustomFullLifelineStateDefinitionCompartmentCreationEditPolicy exte
 		// creates the state definition View
 		compoundCommand.add(superCommand);
 
-		final CommandResult superCommandResult = ((ICommandProxy)superCommand).getICommand().getCommandResult();
+		final CommandResult superCommandResult = ((ICommandProxy) superCommand).getICommand().getCommandResult();
 
 		final TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(lifeline);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			throw new IllegalStateException("no editing domain"); //$NON-NLS-1$
 		}
 
@@ -79,17 +79,17 @@ public class CustomFullLifelineStateDefinitionCompartmentCreationEditPolicy exte
 			@Override
 			protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 				// the result from the super command that creates the view
-				final ViewDescriptor viewDescriptor = (ViewDescriptor)superCommandResult.getReturnValue();
-				final View stateDefinitionView = (View)viewDescriptor.getAdapter(View.class);
+				final ViewDescriptor viewDescriptor = (ViewDescriptor) superCommandResult.getReturnValue();
+				final View stateDefinitionView = (View) viewDescriptor.getAdapter(View.class);
 
 				// create the annotation for the StateDefinition
 				StateDefinitionUtils.initNewStateDefinitionName(stateDefinitionView);
 
-				if(first) {
+				if (first) {
 					final String id = StateDefinitionUtils.getStateDefinitionViewID(stateDefinitionView);
 					StateInvariantUtils.createStateInvariant(id, lifelineEditPart, -1, -1, -1);
-					final View lifelineView = (View)lifelineEditPart.getModel();
-					final Lifeline lifeline = (Lifeline)lifelineView.getElement();
+					final View lifelineView = (View) lifelineEditPart.getModel();
+					final Lifeline lifeline = (Lifeline) lifelineView.getElement();
 					LifelineUtils.updateFragmentNames(lifeline, lifelineView);
 				}
 				return CommandResult.newOKCommandResult();
@@ -101,7 +101,7 @@ public class CustomFullLifelineStateDefinitionCompartmentCreationEditPolicy exte
 	}
 
 	protected FullLifelineEditPartCN getLifelineEditPart() {
-		return (FullLifelineEditPartCN)EditPartUtils.findParentEditPartWithId(getHost(), FullLifelineEditPartCN.VISUAL_ID);
+		return (FullLifelineEditPartCN) EditPartUtils.findParentEditPartWithId(getHost(), FullLifelineEditPartCN.VISUAL_ID);
 	}
 
 }

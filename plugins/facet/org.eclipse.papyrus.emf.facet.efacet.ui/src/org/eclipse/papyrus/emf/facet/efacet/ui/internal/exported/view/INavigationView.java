@@ -24,9 +24,9 @@ import org.eclipse.ui.part.WorkbenchPart;
 
 /**
  * This interface presents the services provided by a navigation view.
- * 
+ *
  * @author Gregoire Dupe
- * 
+ *
  */
 public interface INavigationView {
 
@@ -34,7 +34,7 @@ public interface INavigationView {
 	 * Add {@link EObject}s to the list of sources.
 	 * <p>
 	 * This method is called by the drop listener to fill the the navigation source {@link EObject} list
-	 * 
+	 *
 	 * @param eObjects
 	 *            the model elements to add to the list of sources
 	 */
@@ -42,9 +42,9 @@ public interface INavigationView {
 
 	/**
 	 * This method removes one eObject from the navigation source {@link EObject} list
-	 * 
+	 *
 	 * This method must be called by the "Delete" command handler.
-	 * 
+	 *
 	 * @param eObject
 	 *            eObject to remove from the navigation source {@link EObject} list
 	 */
@@ -53,7 +53,7 @@ public interface INavigationView {
 	/**
 	 * This method remove a list of eObject from the navigation source {@link EObject} list
 	 * This method must be called by the "Delete" command handler
-	 * 
+	 *
 	 * @param eObjects
 	 *            eObjects to remove from the navigation source {@link EObject} list
 	 */
@@ -66,7 +66,7 @@ public interface INavigationView {
 
 	/**
 	 * The methods must return the classifier for which each selected EObject conforms to.
-	 * 
+	 *
 	 * @return classifiers usable to the navigation
 	 */
 	List<EClassifier> getUsableEClassifiers();
@@ -74,7 +74,7 @@ public interface INavigationView {
 	/**
 	 * This method selects the eTypedElement that we want to navigate through. We can navigate
 	 * through an eStructuralFeature (or an eOperation) owned by a Facet or owned by an EClass.
-	 * 
+	 *
 	 * @param eTypedElement
 	 *            must a contained by one of the classifier returned by getUsableEClassifiers().
 	 * @throws IllegalArgumentException
@@ -85,7 +85,7 @@ public interface INavigationView {
 
 	/**
 	 * This method returns the eTypedElement that we want to navigate through.
-	 * 
+	 *
 	 * @return the eTypedElement that we want to navigate through.
 	 */
 	ETypedElement getSelectedETypedElement();
@@ -93,14 +93,14 @@ public interface INavigationView {
 	/**
 	 * This method returns the list of {@link IETypedElementResultDisplayerOpener} which have
 	 * been resisted using the org.eclipse.papyrus.emf.facet.efacet.ui.displayeropener extension point.
-	 * 
+	 *
 	 * @return a list of {@link IETypedElementResultDisplayerOpener}
 	 */
 	List<IETypedElementResultDisplayerOpener> getAvailableSelectedDisplayers();
 
 	/**
 	 * This method has to be used to select a {@link IETypedElementResultDisplayerOpener}
-	 * 
+	 *
 	 * @param resultDisplayer
 	 *            must be contained in the list returned by getAvailableSelectedDisplayers().
 	 */
@@ -109,7 +109,7 @@ public interface INavigationView {
 
 	/**
 	 * This method the selected {@link IETypedElementResultDisplayerOpener}
-	 * 
+	 *
 	 * @return an {@link IETypedElementResultDisplayerOpener} which is contained by the list
 	 *         returned by getAvailableSelectedDisplayers().
 	 */
@@ -117,7 +117,7 @@ public interface INavigationView {
 
 	/**
 	 * This method performs the navigation and return the {@link WorkbenchPart} in which the result is presented.
-	 * 
+	 *
 	 * @return
 	 */
 	WorkbenchPart preform();

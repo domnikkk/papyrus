@@ -98,7 +98,7 @@ public class FacetManager implements IFacetManager, Adapter {
 
 	/**
 	 * Returns whether the given model element conforms to the given Facet
-	 * 
+	 *
 	 * @param eObject
 	 *            the model element
 	 * @param facet
@@ -169,12 +169,10 @@ public class FacetManager implements IFacetManager, Adapter {
 			final ETypedElement typeElement) throws FacetManagerException {
 		// Begin precondition checking
 		if (typeElement.isMany()) {
-			throw new FacetManagerException(
-					"The Facet's conformance typed element must not be multi-valued"); //$NON-NLS-1$
+			throw new FacetManagerException("The Facet's conformance typed element must not be multi-valued"); //$NON-NLS-1$
 		}
 		if (typeElement.getEType() != FacetManager.EBOOLEAN && typeElement.getEType() != FacetManager.EBOOLEAN_OBJECT) {
-			throw new FacetManagerException(
-					"The Facet conformance typed element evaluated to a wrong type."); //$NON-NLS-1$
+			throw new FacetManagerException("The Facet conformance typed element evaluated to a wrong type."); //$NON-NLS-1$
 		}
 		// End precondition checking
 		Boolean result; // conformance typedElement Value
@@ -198,8 +196,7 @@ public class FacetManager implements IFacetManager, Adapter {
 			throw new FacetManagerException(e);
 		}
 		if (result == null) {
-			throw new FacetManagerException(
-					"The Facet conformance typed element evaluated to null"); //$NON-NLS-1$
+			throw new FacetManagerException("The Facet conformance typed element evaluated to null"); //$NON-NLS-1$
 		}
 		return result;
 	}
@@ -253,11 +250,11 @@ public class FacetManager implements IFacetManager, Adapter {
 			final Class<T> expectedType, final boolean basicGet)
 			throws FacetManagerException {
 		try {
-			Object value;	
+			Object value;
 			if (structuralFeature.eContainer() instanceof Facet) {
-				
+
 				EStructuralFeature baseFeature = structuralFeature;
-								
+
 				if (!basicGet) {
 					baseFeature = this.context.resolveOverrides(structuralFeature, eObject);
 					final Facet facet = (Facet) baseFeature.eContainer();
@@ -328,7 +325,7 @@ public class FacetManager implements IFacetManager, Adapter {
 		Object result;
 		if (operation.eContainer() instanceof Facet) {
 			final Facet facet = (Facet) operation.eContainer();
-			
+
 			if (!basicInvoke) {
 				checkConformance(eObject, facet);
 			}
@@ -389,12 +386,12 @@ public class FacetManager implements IFacetManager, Adapter {
 			throws FacetManagerException {
 		return getEStructuralFeatures(eObject, EAttribute.class);
 	}
-	
+
 	public Set<EStructuralFeature> getStructuralFeature(final EObject eObject)
 			throws FacetManagerException {
 		return getEStructuralFeatures(eObject, EStructuralFeature.class);
 	}
-	
+
 	public <T extends ETypedElement> Set<T> getEStructuralFeatures(
 			final EObject eObject, final Class<T> classs)
 			throws FacetManagerException {
@@ -404,7 +401,7 @@ public class FacetManager implements IFacetManager, Adapter {
 		}
 		return result;
 	}
-	
+
 	private <T extends ETypedElement> Collection<T> getETypedElements(
 			final EObject eObject, final FacetSet facetSet,
 			final Class<T> classs) throws FacetManagerException {
@@ -458,7 +455,7 @@ public class FacetManager implements IFacetManager, Adapter {
 			throws FacetManagerException {
 		return getEStructuralFeatures(eObject, EStructuralFeature.class);
 	}
-	
+
 	@Deprecated
 	public void addFacets(final EList<Facet> facets) {
 		for (Facet facetToLoad : facets) {
@@ -489,7 +486,7 @@ public class FacetManager implements IFacetManager, Adapter {
 		}
 		return result;
 	}
-	
+
 	public <T> T getOrInvoke(final EObject eObject,
 			final ETypedElement eTypedElement, final Class<T> classs)
 			throws FacetManagerException {
@@ -561,7 +558,7 @@ public class FacetManager implements IFacetManager, Adapter {
 	public void addBackManagedFacetSet(final FacetSet facetSet) {
 		this.context.addBackManagedFacetSet(facetSet);
 	}
-	
+
 	public void addFrontManagedFacetSet(final FacetSet facetSet) {
 		this.context.addFrontManagedFacetSet(facetSet);
 	}

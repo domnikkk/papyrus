@@ -51,13 +51,13 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Retrieve currently selected IGraphicalEditPart(s)
 		List<IGraphicalEditPart> editParts = getSelectedElements();
-		if(editParts.isEmpty()) {
+		if (editParts.isEmpty()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -67,19 +67,19 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Delete From Model");
 
 		Iterator<IGraphicalEditPart> it = editParts.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			IGraphicalEditPart editPart = it.next();
 
-			if(!(editPart instanceof DiagramEditPart)) {
+			if (!(editPart instanceof DiagramEditPart)) {
 				// Look for the GMF deletion command
 				Command curCommand = editPart.getCommand(new EditCommandRequestWrapper(new DestroyElementRequest(false)));
-				if(curCommand != null) {
+				if (curCommand != null) {
 					command.compose(new CommandProxy(curCommand));
 				}
 			}
 		}
 
-		if(command.isEmpty()) {
+		if (command.isEmpty()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -91,29 +91,29 @@ public class DeleteFromModelCommandHandler extends GraphicalCommandHandler imple
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		IReadOnlyHandler2 readOnly = ReadOnlyManager.getReadOnlyHandler(editingDomain);
 
-		for(IGraphicalEditPart editPart : getSelectedElements()) {
+		for (IGraphicalEditPart editPart : getSelectedElements()) {
 			EObject semantic = EMFHelper.getEObject(editPart);
 
 			View graphical = NotationHelper.findView(editPart);
 
-			if(readOnly != null) {
+			if (readOnly != null) {
 				List<URI> uris = new LinkedList<URI>();
-				if(semantic == null || semantic == graphical) {
+				if (semantic == null || semantic == graphical) {
 					return false;
 				} else {
-					if(semantic.eContainer() == null) {
-						//Do not delete root semantic element
+					if (semantic.eContainer() == null) {
+						// Do not delete root semantic element
 						return false;
 					}
 					uris.add(EcoreUtil.getURI(semantic));
 				}
 
-				if(graphical != null) {
+				if (graphical != null) {
 					uris.add(EcoreUtil.getURI(graphical));
 				}
 
 				Optional<Boolean> result = readOnly.anyReadOnly(ReadOnlyAxis.anyAxis(), uris.toArray(new URI[uris.size()]));
-				if(result.isPresent() && result.get()) {
+				if (result.isPresent() && result.get()) {
 					return false;
 				}
 			}

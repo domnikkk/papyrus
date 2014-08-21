@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -61,6 +61,7 @@ public class GeneralizationEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates figure for this edit part.
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new GeneralizationFigure();
 	}
@@ -68,8 +69,9 @@ public class GeneralizationEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates primary shape for this edit part.
 	 */
+	@Override
 	public GeneralizationFigure getPrimaryShape() {
-		return (GeneralizationFigure)getFigure();
+		return (GeneralizationFigure) getFigure();
 	}
 
 	/**

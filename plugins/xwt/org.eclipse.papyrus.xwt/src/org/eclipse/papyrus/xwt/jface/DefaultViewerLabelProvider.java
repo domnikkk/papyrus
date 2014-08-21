@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.xwt.metadata.IProperty;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class DefaultViewerLabelProvider implements ITableLabelProvider, ILabelProvider {
@@ -50,10 +50,10 @@ public class DefaultViewerLabelProvider implements ITableLabelProvider, ILabelPr
 	}
 
 	protected IProperty getColumnsProperty() {
-		if(columnsProperty == null) {
+		if (columnsProperty == null) {
 			IMetaclass metaclass = XWT.getMetaclass(viewer.getClass());
 			columnsProperty = metaclass.findProperty(PropertiesConstants.PROPERTY_COLUMNS);
-			if(columnsProperty == null) {
+			if (columnsProperty == null) {
 				throw new XWTException("Columns property is not found.");
 			}
 		}
@@ -95,22 +95,22 @@ public class DefaultViewerLabelProvider implements ITableLabelProvider, ILabelPr
 
 	protected Object[] getPaths() {
 		Viewer viewer = getViewer();
-		if(viewer instanceof AbstractTableViewer) {
-			Object[] objects = ((AbstractTableViewer)getViewer()).getColumnProperties();
-			for(int i = 0; i < objects.length; i++) {
-				if((objects[i] == null)) {
+		if (viewer instanceof AbstractTableViewer) {
+			Object[] objects = ((AbstractTableViewer) getViewer()).getColumnProperties();
+			for (int i = 0; i < objects.length; i++) {
+				if ((objects[i] == null)) {
 					objects[i] = getBindingPath();
 				}
 			}
 			return objects;
 		}
 		String path = bindingPath;
-		if(path == null) {
-			path = (String)UserData.getLocalData(getViewer(), IUserDataConstants.XWT_PROPERTY_DATA_KEY);
+		if (path == null) {
+			path = (String) UserData.getLocalData(getViewer(), IUserDataConstants.XWT_PROPERTY_DATA_KEY);
 		}
-		if(path == null) {
+		if (path == null) {
 			return Core.EMPTY_ARRAY;
 		}
-		return new String[]{ path };
+		return new String[] { path };
 	}
 }

@@ -27,8 +27,7 @@ public interface ILinkToExtendedEObjectReferenceAdapterFactory extends AdapterFa
 	public static ILinkToExtendedEObjectReferenceAdapterFactory INSTANCE = new LinkToExtendedEObjectReferenceAdapterFactory();
 
 	/**
-	 * This method returns <code>true</code> if this factory is a factory for the given type
-	 * {@link Object}, or <code>false</code> otherwise
+	 * This method returns <code>true</code> if this factory is a factory for the given type {@link Object}, or <code>false</code> otherwise
 	 */
 	public boolean isFactoryForType(final Object type);
 

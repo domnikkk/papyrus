@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,6 +45,7 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 
 	private Set<AbstractGroup> groupSet;
 
+	@Override
 	public void createControl(Composite parent) {
 		super.createControl(parent);
 		initGroup();
@@ -57,10 +58,10 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 		Group contentGroup = new Group(parent, 2);
 		contentGroup.setLayout(new GridLayout(4, false));
 
-		//FontGroup
+		// FontGroup
 		FontGroup fontGroupComposite = new DiagramFontGroup(contentGroup, getPreferenceKey(), this);
 		addAbstractGroup(fontGroupComposite);
-		//color
+		// color
 		NodeColorGroup colorGroupForNodeComposite = new DiagramNodeColorGroup(contentGroup, getPreferenceKey(), this);
 		addAbstractGroup(colorGroupForNodeComposite);
 
@@ -69,7 +70,7 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 		ConnectionGroup connectionGroupComposite = new DiagramConnectionGroup(contentGroup, getPreferenceKey(), this);
 		addAbstractGroup(connectionGroupComposite);
 
-		//background
+		// background
 		BackgroundColor backgroundColorGroup = new DiagramBackgroundColor(contentGroup, getPreferenceKey(), this);
 		addAbstractGroup(backgroundColorGroup);
 
@@ -89,14 +90,15 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	 * Init groups contained in this page.
 	 */
 	private void initGroup() {
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.setPreferenceStore(getPreferenceStore());
 				gs.load();
 			}
 		}
 	}
 
+	@Override
 	public boolean performOk() {
 		VisiblePageSingleton.getInstance().store();
 		return super.performOk();
@@ -106,8 +108,8 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	 * Stores the values of the fields contained in this page into the preference store.
 	 */
 	public void storePreferences() {
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.storePreferences();
 			}
 		}
@@ -119,7 +121,7 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	 */
 	public void storeAllPreferences() {
 		storePreferences();
-		((PapyrusPreferenceStore)getPreferenceStore()).deleteAllSubPreference(PreferencesConstantsHelper.DIAGRAM_PREFERENCE_PREFIX);
+		((PapyrusPreferenceStore) getPreferenceStore()).deleteAllSubPreference(PreferencesConstantsHelper.DIAGRAM_PREFERENCE_PREFIX);
 
 	}
 
@@ -130,8 +132,8 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	@Override
 	public void dispose() {
 		super.dispose();
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.dispose();
 			}
 		}
@@ -143,7 +145,7 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	 * Add the given field editor to the page.
 	 */
 	protected void addAbstractGroup(AbstractGroup fe) {
-		if(groupSet == null) {
+		if (groupSet == null) {
 			groupSet = new HashSet<AbstractGroup>();
 		}
 		groupSet.add(fe);
@@ -153,8 +155,8 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	 * Load the default preferences of the fields contained in this page
 	 */
 	private void loadDefaultPreferences() {
-		if(groupSet != null) {
-			for(AbstractGroup gs : groupSet) {
+		if (groupSet != null) {
+			for (AbstractGroup gs : groupSet) {
 				gs.loadDefault();
 			}
 		}
@@ -166,6 +168,7 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 	 * 
 	 * @see org.eclipse.jface.preference.PreferencePage#performDefaults()
 	 */
+	@Override
 	protected void performDefaults() {
 		loadDefaultPreferences();
 		super.performDefaults();
@@ -173,7 +176,7 @@ public class DiagramPreferencePage extends DiagramsPreferencePage {
 
 	@Override
 	public void setVisible(boolean visible) {
-		if(visible == true) {
+		if (visible == true) {
 			VisiblePageSingleton.getInstance().setVisiblePage(this);
 			initGroup();
 		}

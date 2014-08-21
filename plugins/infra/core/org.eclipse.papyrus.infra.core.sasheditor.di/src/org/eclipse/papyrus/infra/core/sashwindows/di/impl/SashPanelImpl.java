@@ -29,9 +29,9 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.SashPanel;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl#getSashPosition <em>Sash Position</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl#getDirection <em>Direction</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl#getSashPosition <em>Sash Position</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.impl.SashPanelImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	 * The default value of the '{@link #getSashPosition() <em>Sash Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSashPosition()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	 * The cached value of the '{@link #getSashPosition() <em>Sash Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSashPosition()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -92,6 +97,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SashPanelImpl() {
@@ -101,6 +107,7 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,8 +118,10 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractPanel> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentWithInverseEList<AbstractPanel>(AbstractPanel.class, this, DiPackage.SASH_PANEL__CHILDREN, DiPackage.ABSTRACT_PANEL__PARENT);
@@ -123,8 +132,10 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public float getSashPosition() {
 		return sashPosition;
 	}
@@ -132,20 +143,25 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setSashPosition(float newSashPosition) {
 		float oldSashPosition = sashPosition;
 		sashPosition = newSashPosition;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.SASH_PANEL__SASH_POSITION, oldSashPosition, sashPosition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getDirection() {
 		return direction;
 	}
@@ -153,27 +169,31 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDirection(int newDirection) {
 		int oldDirection = direction;
 		direction = newDirection;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.SASH_PANEL__DIRECTION, oldDirection, direction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
-	 * 
+	 *
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void setChildren(AbstractPanel leftChild, AbstractPanel rightChild, int direction) {
 		setDirection(direction);
 		List<AbstractPanel> children = getChildren();
 
-		if(children.size() == 0) {
+		if (children.size() == 0) {
 			children.add(leftChild);
 			children.add(rightChild);
 
@@ -187,9 +207,10 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void delete(AbstractPanel childToDelete) {
 		// Get the other child
 		EList<AbstractPanel> children = getChildren();
@@ -197,21 +218,22 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 
 		PanelParent parent = getParent();
 		// Change parent
-		//		otherChild.setParent( parent );
+		// otherChild.setParent( parent );
 		parent.replaceChild(this, otherChild);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DiPackage.SASH_PANEL__CHILDREN:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildren()).basicAdd(otherEnd, msgs);
+		case DiPackage.SASH_PANEL__CHILDREN:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildren()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -219,13 +241,14 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DiPackage.SASH_PANEL__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		case DiPackage.SASH_PANEL__CHILDREN:
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -233,17 +256,18 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiPackage.SASH_PANEL__CHILDREN:
-				return getChildren();
-			case DiPackage.SASH_PANEL__SASH_POSITION:
-				return getSashPosition();
-			case DiPackage.SASH_PANEL__DIRECTION:
-				return getDirection();
+		case DiPackage.SASH_PANEL__CHILDREN:
+			return getChildren();
+		case DiPackage.SASH_PANEL__SASH_POSITION:
+			return getSashPosition();
+		case DiPackage.SASH_PANEL__DIRECTION:
+			return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,22 +275,23 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiPackage.SASH_PANEL__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends AbstractPanel>)newValue);
-				return;
-			case DiPackage.SASH_PANEL__SASH_POSITION:
-				setSashPosition((Float)newValue);
-				return;
-			case DiPackage.SASH_PANEL__DIRECTION:
-				setDirection((Integer)newValue);
-				return;
+		case DiPackage.SASH_PANEL__CHILDREN:
+			getChildren().clear();
+			getChildren().addAll((Collection<? extends AbstractPanel>) newValue);
+			return;
+		case DiPackage.SASH_PANEL__SASH_POSITION:
+			setSashPosition((Float) newValue);
+			return;
+		case DiPackage.SASH_PANEL__DIRECTION:
+			setDirection((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -274,20 +299,21 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiPackage.SASH_PANEL__CHILDREN:
-				getChildren().clear();
-				return;
-			case DiPackage.SASH_PANEL__SASH_POSITION:
-				setSashPosition(SASH_POSITION_EDEFAULT);
-				return;
-			case DiPackage.SASH_PANEL__DIRECTION:
-				setDirection(DIRECTION_EDEFAULT);
-				return;
+		case DiPackage.SASH_PANEL__CHILDREN:
+			getChildren().clear();
+			return;
+		case DiPackage.SASH_PANEL__SASH_POSITION:
+			setSashPosition(SASH_POSITION_EDEFAULT);
+			return;
+		case DiPackage.SASH_PANEL__DIRECTION:
+			setDirection(DIRECTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -295,17 +321,18 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiPackage.SASH_PANEL__CHILDREN:
-				return children != null && !children.isEmpty();
-			case DiPackage.SASH_PANEL__SASH_POSITION:
-				return sashPosition != SASH_POSITION_EDEFAULT;
-			case DiPackage.SASH_PANEL__DIRECTION:
-				return direction != DIRECTION_EDEFAULT;
+		case DiPackage.SASH_PANEL__CHILDREN:
+			return children != null && !children.isEmpty();
+		case DiPackage.SASH_PANEL__SASH_POSITION:
+			return sashPosition != SASH_POSITION_EDEFAULT;
+		case DiPackage.SASH_PANEL__DIRECTION:
+			return direction != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -313,14 +340,17 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == PanelParent.class) {
 			switch (derivedFeatureID) {
-				case DiPackage.SASH_PANEL__CHILDREN: return DiPackage.PANEL_PARENT__CHILDREN;
-				default: return -1;
+			case DiPackage.SASH_PANEL__CHILDREN:
+				return DiPackage.PANEL_PARENT__CHILDREN;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -329,14 +359,17 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == PanelParent.class) {
 			switch (baseFeatureID) {
-				case DiPackage.PANEL_PARENT__CHILDREN: return DiPackage.SASH_PANEL__CHILDREN;
-				default: return -1;
+			case DiPackage.PANEL_PARENT__CHILDREN:
+				return DiPackage.SASH_PANEL__CHILDREN;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -345,11 +378,14 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (sashPosition: ");
@@ -364,18 +400,20 @@ public class SashPanelImpl extends AbstractPanelImpl implements SashPanel {
 	 * <!-- begin-user-doc -->
 	 * Set both ends (parent and child).
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
+	@Override
 	public void replaceChild(AbstractPanel oldChild, AbstractPanel newChild) {
 
 		int index = getChildren().indexOf(oldChild);
-		if(index >= 0) {
+		if (index >= 0) {
 			// do replace
 			getChildren().set(index, newChild);
 			newChild.setParent(this);
-		} else
+		} else {
 			throw new IndexOutOfBoundsException("Child '" + oldChild + "' not found in sash. Can't replace it.");
+		}
 	}
 
-} //SashPanelImpl
+} // SashPanelImpl

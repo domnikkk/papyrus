@@ -12,13 +12,9 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.presentatio
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
@@ -58,7 +54,7 @@ public class EMFUtil {
 
 	/**
 	 * Search for instances of the given EClass
-	 * 
+	 *
 	 * @param eClass
 	 *            the EClass of the elements that are looked for
 	 * @param resource
@@ -79,108 +75,107 @@ public class EMFUtil {
 
 	/**
 	 * Find and return all the metaclasses of the given resource set.
-	 * 
+	 *
 	 * @return a list of all the metaclasses of elements contained in the
 	 *         resource set, and metaclasses in resources in which metaclasses
 	 *         of elements in the resource set have been found
 	 */
-//	public static Set<EClass> findAllClasses(final Set<Resource> browsedResources) {
-//		// TODO: try to read from PackageRegistry?
-//		// resourceSet.getPackageRegistry().keySet()
-//
-//		// TODO: find EClasses in EPackages
-//
-//		/*
-//		 * the list of metaclasses is a tree set so that it is always sorted and
-//		 * each class is guaranteed to appear at most once.
-//		 */
-//		final TreeSet<EClass> classes = new TreeSet<EClass>(new Comparator<EClass>() {
-//			public int compare(final EClass c1, final EClass c2) {
-//				return ModelUtils.getMetaclassQualifiedName(c1).compareTo(
-//						ModelUtils.getMetaclassQualifiedName(c2));
-//			}
-//		});
-//
-//		/** The resources, in a HashSet to get constant time access */
-//		final HashSet<Resource> resources = new HashSet<Resource>();
-//		/**
-//		 * Resources that were discovered outside of the resource set, and which
-//		 * contain metaclasses used in the model
-//		 */
-//		final ArrayList<Resource> newResources = new ArrayList<Resource>();
-//
-//		resources.addAll(browsedResources);
-//
-//		for (final Resource resource : browsedResources) {
-//			final TreeIterator<EObject> allContents = resource.getAllContents();
-//			while (allContents.hasNext()) {
-//				final EObject eObject = allContents.next();
-//				if (eObject instanceof EClass) {
-//					final EClass eClass = (EClass) eObject;
-//					classes.add(eClass);
-//				} else {
-//					// EPackage ePackage = eObject.eClass().getEPackage();
-//					// System.out.println("package : " + ePackage.getNsURI());
-//
-//					final EClass eClass = eObject.eClass();
-//					if (eClass != null) {
-//						// make sure all model elements have their metaclass in
-//						// the list
-//						classes.add(eClass);
-//
-//						// if we discovered a new resource, then memorize it
-//						final Resource res = eClass.eResource();
-//						if (res != null && !resources.contains(res)) {
-//							resources.add(res);
-//							newResources.add(res);
-//						}
-//					}
-//				}
-//			}
-//		}
-//
-//		/*
-//		 * Now, add the classes that reside in resources that we discovered and
-//		 * are not part of the resource set. For example, the UML models have
-//		 * metaclasses in 'http://www.eclipse.org/uml2/2.1.0/UML', which is not
-//		 * in the resource set.
-//		 */
-//		addAll(classes, newResources);
-//		newResources.clear();
-//
-//		final ArrayList<EClass> newClasses = new ArrayList<EClass>();
-//
-//		for (final EClass eClass : classes) {
-//			final EList<EClass> allSuperTypes = eClass.getEAllSuperTypes();
-//			for (final EClass superclass : allSuperTypes) {
-//				newClasses.add(superclass);
-//
-//				// if we discovered a new resource, then memorize it
-//				final Resource resource = superclass.eResource();
-//				if (resource != null && !resources.contains(resource)) {
-//					resources.add(resource);
-//					newResources.add(resource);
-//				}
-//			}
-//		}
-//
-//		for (final EClass eClass : newClasses) {
-//			classes.add(eClass);
-//		}
-//
-//		// add classes in newly discovered resources (again)
-//		addAll(classes, newResources);
-//
-//		// for (Resource resource : resources) {
-//		// System.out.println(resource.getURI().toString());
-//		// }
-//
-//		return classes;
-//	}
+	// public static Set<EClass> findAllClasses(final Set<Resource> browsedResources) {
+	// // TODO: try to read from PackageRegistry?
+	// // resourceSet.getPackageRegistry().keySet()
+	//
+	// // TODO: find EClasses in EPackages
+	//
+	// /*
+	// * the list of metaclasses is a tree set so that it is always sorted and
+	// * each class is guaranteed to appear at most once.
+	// */
+	// final TreeSet<EClass> classes = new TreeSet<EClass>(new Comparator<EClass>() {
+	// public int compare(final EClass c1, final EClass c2) {
+	// return ModelUtils.getMetaclassQualifiedName(c1).compareTo(
+	// ModelUtils.getMetaclassQualifiedName(c2));
+	// }
+	// });
+	//
+	// /** The resources, in a HashSet to get constant time access */
+	// final HashSet<Resource> resources = new HashSet<Resource>();
+	// /**
+	// * Resources that were discovered outside of the resource set, and which
+	// * contain metaclasses used in the model
+	// */
+	// final ArrayList<Resource> newResources = new ArrayList<Resource>();
+	//
+	// resources.addAll(browsedResources);
+	//
+	// for (final Resource resource : browsedResources) {
+	// final TreeIterator<EObject> allContents = resource.getAllContents();
+	// while (allContents.hasNext()) {
+	// final EObject eObject = allContents.next();
+	// if (eObject instanceof EClass) {
+	// final EClass eClass = (EClass) eObject;
+	// classes.add(eClass);
+	// } else {
+	// // EPackage ePackage = eObject.eClass().getEPackage();
+	// // System.out.println("package : " + ePackage.getNsURI());
+	//
+	// final EClass eClass = eObject.eClass();
+	// if (eClass != null) {
+	// // make sure all model elements have their metaclass in
+	// // the list
+	// classes.add(eClass);
+	//
+	// // if we discovered a new resource, then memorize it
+	// final Resource res = eClass.eResource();
+	// if (res != null && !resources.contains(res)) {
+	// resources.add(res);
+	// newResources.add(res);
+	// }
+	// }
+	// }
+	// }
+	// }
+	//
+	// /*
+	// * Now, add the classes that reside in resources that we discovered and
+	// * are not part of the resource set. For example, the UML models have
+	// * metaclasses in 'http://www.eclipse.org/uml2/2.1.0/UML', which is not
+	// * in the resource set.
+	// */
+	// addAll(classes, newResources);
+	// newResources.clear();
+	//
+	// final ArrayList<EClass> newClasses = new ArrayList<EClass>();
+	//
+	// for (final EClass eClass : classes) {
+	// final EList<EClass> allSuperTypes = eClass.getEAllSuperTypes();
+	// for (final EClass superclass : allSuperTypes) {
+	// newClasses.add(superclass);
+	//
+	// // if we discovered a new resource, then memorize it
+	// final Resource resource = superclass.eResource();
+	// if (resource != null && !resources.contains(resource)) {
+	// resources.add(resource);
+	// newResources.add(resource);
+	// }
+	// }
+	// }
+	//
+	// for (final EClass eClass : newClasses) {
+	// classes.add(eClass);
+	// }
+	//
+	// // add classes in newly discovered resources (again)
+	// addAll(classes, newResources);
+	//
+	// // for (Resource resource : resources) {
+	// // System.out.println(resource.getURI().toString());
+	// // }
+	//
+	// return classes;
+	// }
 
 	/**
-	 * Add all the classes in <code>resources</code> to the <code>classes</code>
-	 * set
+	 * Add all the classes in <code>resources</code> to the <code>classes</code> set
 	 */
 	private static void addAll(final Set<EClass> classes, final List<Resource> resources) {
 		for (final Resource resource : resources) {
@@ -198,7 +193,7 @@ public class EMFUtil {
 	/**
 	 * Find the most specific metaclass that is common to all of the given
 	 * elements.
-	 * 
+	 *
 	 * @return the common metaclass or <code>null</code> if none was found
 	 */
 	public static EClass findCommonClass(final List<EObject> elements) {
@@ -229,8 +224,7 @@ public class EMFUtil {
 	}
 
 	/**
-	 * Find the first superclass of <code>eClass</code> that is a superclass of
-	 * <code>element</code>
+	 * Find the first superclass of <code>eClass</code> that is a superclass of <code>element</code>
 	 */
 	private static EClass findSuperType(final EClass eClass, final EClass element) {
 		// do a breadth-first search (with a bottom-up tree)
@@ -255,7 +249,7 @@ public class EMFUtil {
 
 	/**
 	 * Try to resolve the given proxy.
-	 * 
+	 *
 	 * @return whether the proxy could be resolved
 	 */
 	public static boolean tryResolve(final EObject eObject) {
@@ -282,15 +276,15 @@ public class EMFUtil {
 		return null;
 	}
 
-//	public static EClass findMetaclassWithName(final String metaclassFullyQualifiedName,
-//			final List<EClass> metaclasses) {
-//		for (EClass eClass : metaclasses) {
-//			if (metaclassFullyQualifiedName.equals(ModelUtils.getMetaclassQualifiedName(eClass))) {
-//				return eClass;
-//			}
-//		}
-//		return null;
-//	}
+	// public static EClass findMetaclassWithName(final String metaclassFullyQualifiedName,
+	// final List<EClass> metaclasses) {
+	// for (EClass eClass : metaclasses) {
+	// if (metaclassFullyQualifiedName.equals(ModelUtils.getMetaclassQualifiedName(eClass))) {
+	// return eClass;
+	// }
+	// }
+	// return null;
+	// }
 
 	/**
 	 * @return the name of the package in the package registry with this nsURI,
@@ -330,9 +324,8 @@ public class EMFUtil {
 	}
 
 	/**
-	 * Find the {@link EObject} with the given URI in the given
-	 * {@link ResourceSet}
-	 * 
+	 * Find the {@link EObject} with the given URI in the given {@link ResourceSet}
+	 *
 	 * @return the element or <code>null</code> if no element was found with
 	 *         this URI in the given {@link ResourceSet}
 	 */

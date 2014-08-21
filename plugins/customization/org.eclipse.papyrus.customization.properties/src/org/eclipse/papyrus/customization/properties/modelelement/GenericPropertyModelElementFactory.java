@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,18 +28,18 @@ import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFac
 
 /**
  * A ModelElementFactory for handling {@link ConfigProperty} properties
- * 
+ *
  * @author Camille Letavernier
  */
 public class GenericPropertyModelElementFactory extends AbstractModelElementFactory<GenericAttributeModelElement> {
 
-	//Source : Group
-	//context : Custom:Attribute:Group
+	// Source : Group
+	// context : Custom:Attribute:Group
 	@Override
 	protected GenericAttributeModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 
 		EObject source = EMFHelper.getEObject(sourceElement);
-		if(source == null) {
+		if (source == null) {
 			Activator.log.warn("Unable to resolve the source element to an EObject"); //$NON-NLS-1$
 			return null;
 		}
@@ -53,14 +53,14 @@ public class GenericPropertyModelElementFactory extends AbstractModelElementFact
 		return new GenericAttributeModelElement(source, domain, attributes, ConstraintsFactory.eINSTANCE, valueProperty, referenceProperty);
 	}
 
-	//	public List<ModelElement> createFromDataSource(ModelElement currentElement, DataSource source, String propertyPath, DataContextElement context) {
-	//		throw new UnsupportedOperationException();
-	//	}
+	// public List<ModelElement> createFromDataSource(ModelElement currentElement, DataSource source, String propertyPath, DataContextElement context) {
+	// throw new UnsupportedOperationException();
+	// }
 
 	@Override
 	protected void updateModelElement(GenericAttributeModelElement modelElement, Object newSourceElement) {
 		EObject eObject = EMFHelper.getEObject(newSourceElement);
-		if(eObject == null) {
+		if (eObject == null) {
 			throw new IllegalArgumentException("Cannot resolve EObject selection: " + newSourceElement);
 		}
 		modelElement.source = eObject;

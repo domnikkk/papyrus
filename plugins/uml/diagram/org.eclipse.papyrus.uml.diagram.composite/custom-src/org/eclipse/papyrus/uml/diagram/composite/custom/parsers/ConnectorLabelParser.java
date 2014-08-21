@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,18 +40,18 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Connector)) {
+		if ((eObject != null) && (eObject instanceof Connector)) {
 
-			Connector connector = (Connector)eObject;
+			Connector connector = (Connector) eObject;
 
 			// manage name
-			if(connector.isSetName()) {
+			if (connector.isSetName()) {
 				result = connector.getName();
 			}
 
 			// manage type
 			String type = "";
-			if((connector.getType() != null) && (connector.getType().isSetName())) {
+			if ((connector.getType() != null) && (connector.getType().isSetName())) {
 				type = connector.getType().getName();
 				result = String.format(TYPE_FORMAT, result, type);
 			}
@@ -66,9 +66,9 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) || UMLPackage.eINSTANCE.getConnector_Type().equals(feature);
 			}
 		}
@@ -83,11 +83,11 @@ public class ConnectorLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Connector)) {
-			Connector semElement = (Connector)element;
+		if ((element != null) && (element instanceof Connector)) {
+			Connector semElement = (Connector) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getType() != null) {
+			if (semElement.getType() != null) {
 				semanticElementsBeingParsed.add(semElement.getType());
 			}
 		}

@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.emf.newchild.ncpolicy.ReplacePolicy;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.ReplacePolicyImpl#getReplaceWith <em>Replace With</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.ReplacePolicyImpl#getReplaceWith <em>Replace With</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +37,7 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	 * The cached value of the '{@link #getReplaceWith() <em>Replace With</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getReplaceWith()
 	 * @generated
 	 * @ordered
@@ -46,6 +47,7 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ReplacePolicyImpl() {
@@ -55,6 +57,7 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -65,6 +68,7 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<MenuItem> getReplaceWith() {
@@ -77,13 +81,14 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
-				return ((InternalEList<?>)getReplaceWith()).basicRemove(otherEnd, msgs);
+		case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
+			return ((InternalEList<?>) getReplaceWith()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -91,13 +96,14 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
-				return getReplaceWith();
+		case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
+			return getReplaceWith();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -105,16 +111,17 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
-				getReplaceWith().clear();
-				getReplaceWith().addAll((Collection<? extends MenuItem>)newValue);
-				return;
+		case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
+			getReplaceWith().clear();
+			getReplaceWith().addAll((Collection<? extends MenuItem>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -122,14 +129,15 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
-				getReplaceWith().clear();
-				return;
+		case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
+			getReplaceWith().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,15 +145,16 @@ public class ReplacePolicyImpl extends NewChildPolicyImpl implements ReplacePoli
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
-				return replaceWith != null && !replaceWith.isEmpty();
+		case NcpolicyPackage.REPLACE_POLICY__REPLACE_WITH:
+			return replaceWith != null && !replaceWith.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ReplacePolicyImpl
+} // ReplacePolicyImpl

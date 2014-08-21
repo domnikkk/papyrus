@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.gmf.diagram.common.edit.policy;
 
 /**
  * This class has been moved in infra.gmfdiag.common framework. Keeping it here for compatibility
+ * 
  * @deprecated
  * @use {@link org.eclipse.papyrus.infra.gmfdiag.common.editpolicies.DefaultSemanticEditPolicy}
  */

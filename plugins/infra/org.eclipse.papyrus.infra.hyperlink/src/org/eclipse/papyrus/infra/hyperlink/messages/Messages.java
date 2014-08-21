@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA LIST) - Consolidate all hyperlink helper contributions into one tab
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.hyperlink.messages;
 
@@ -37,9 +37,9 @@ public class Messages extends NLS {
 	public static String HyperLinkTabRegistrationUtil_ICantCreateTheTab;
 
 	public static String HyperLinkTabRegistrationUtil_tabWillBeIgnored;
-	
+
 	public static String HyperLinkTabRegistrationUtil_NotAnInstanceOf;
-	
+
 	public static String AbstractEditHyperlinkDocumentShell_Cancel;
 
 	public static String AbstractEditHyperlinkDocumentShell_Diagram;
@@ -123,7 +123,7 @@ public class Messages extends NLS {
 	public static String HyperLinkTab_Listof;
 
 	public static String HyperLinkTab_SetOf;
-	
+
 	public static String DocumentHyperLinkHelper_Document;
 
 	public static String HyperLinkHelperFactory_addHyperLinksCommand;

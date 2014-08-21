@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,20 +16,20 @@ package org.eclipse.papyrus.infra.tools.preferences;
 /***************************************************************************
  Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
- * 
+ *
+ *
  * Contributors:
- *  the code is copy from ScopedPreferenceStore but I have open some methods in order to be 
+ *  the code is copy from ScopedPreferenceStore but I have open some methods in order to be
  *  available for the overload
- *  	
+ *
  *   Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *
- *  
+ *
  *******************************************************************************/
 
 import java.io.IOException;
@@ -63,7 +63,7 @@ import org.osgi.service.prefs.BackingStoreException;
  * <p>
  * The default scope is always included in the search scopes when searching for preference values.
  * </p>
- * 
+ *
  * @see org.eclipse.core.runtime.preferences
  * @since 3.1
  */
@@ -119,13 +119,13 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * Create a new instance of the receiver. Store the values in context in the
 	 * node looked up by qualifier. <strong>NOTE:</strong> Any instance of
 	 * ScopedPreferenceStore should call
-	 * 
+	 *
 	 * @param context
-	 *        the scope to store to
+	 *            the scope to store to
 	 * @param qualifier
-	 *        the qualifier used to look up the preference node
+	 *            the qualifier used to look up the preference node
 	 * @param defaultQualifierPath
-	 *        the qualifier used when looking up the defaults
+	 *            the qualifier used when looking up the defaults
 	 */
 	public PapyrusScopedPreferenceStore(IScopeContext context, String qualifier, String defaultQualifierPath) {
 		this(context, qualifier);
@@ -135,24 +135,24 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	/**
 	 * Create a new instance of the receiver. Store the values in context in the
 	 * node looked up by qualifier.
-	 * 
+	 *
 	 * @param context
-	 *        the scope to store to
+	 *            the scope to store to
 	 * @param qualifier
-	 *        the qualifer used to look up the preference node
+	 *            the qualifer used to look up the preference node
 	 */
 	public PapyrusScopedPreferenceStore(IScopeContext context, String qualifier) {
 		storeContext = context;
 		this.nodeQualifier = qualifier;
 		this.defaultQualifier = qualifier;
 
-		((IEclipsePreferences)getStorePreferences().parent()).addNodeChangeListener(getNodeChangeListener());
+		((IEclipsePreferences) getStorePreferences().parent()).addNodeChangeListener(getNodeChangeListener());
 	}
 
 	/**
 	 * Return a node change listener that adds a removes the receiver when nodes
 	 * change.
-	 * 
+	 *
 	 * @return INodeChangeListener
 	 */
 	private INodeChangeListener getNodeChangeListener() {
@@ -166,7 +166,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 			 * .NodeChangeEvent)
 			 */
 			public void added(NodeChangeEvent event) {
-				if(nodeQualifier.equals(event.getChild().name()) && isListenerAttached()) {
+				if (nodeQualifier.equals(event.getChild().name()) && isListenerAttached()) {
 					getStorePreferences().addPreferenceChangeListener(preferencesListener);
 				}
 			}
@@ -187,7 +187,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * Initialize the preferences listener.
 	 */
 	private void initializePreferencesListener() {
-		if(preferencesListener == null) {
+		if (preferencesListener == null) {
 			preferencesListener = new IEclipsePreferences.IPreferenceChangeListener() {
 
 				/*
@@ -198,16 +198,16 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 				 */
 				public void preferenceChange(PreferenceChangeEvent event) {
 
-					if(silentRunning) {
+					if (silentRunning) {
 						return;
 					}
 
 					Object oldValue = event.getOldValue();
 					Object newValue = event.getNewValue();
 					String key = event.getKey();
-					if(newValue == null) {
+					if (newValue == null) {
 						newValue = getDefault(key, oldValue);
-					} else if(oldValue == null) {
+					} else if (oldValue == null) {
 						oldValue = getDefault(key, newValue);
 					}
 					firePropertyChangeEvent(event.getKey(), oldValue, newValue);
@@ -223,26 +223,26 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * the given object's type and then looks in the list of defaults to see if
 	 * a value exists. If not or if there is a problem converting the value, the
 	 * default default value for that type is returned.
-	 * 
+	 *
 	 * @param key
-	 *        the key to search
+	 *            the key to search
 	 * @param obj
-	 *        the object who default we are looking for
+	 *            the object who default we are looking for
 	 * @return Object or <code>null</code>
 	 */
 	protected Object getDefault(String key, Object obj) {
 		IEclipsePreferences defaults = getDefaultPreferences();
-		if(obj instanceof String) {
+		if (obj instanceof String) {
 			return defaults.get(key, STRING_DEFAULT_DEFAULT);
-		} else if(obj instanceof Integer) {
+		} else if (obj instanceof Integer) {
 			return Integer.valueOf(defaults.getInt(key, INT_DEFAULT_DEFAULT));
-		} else if(obj instanceof Double) {
+		} else if (obj instanceof Double) {
 			return new Double(defaults.getDouble(key, DOUBLE_DEFAULT_DEFAULT));
-		} else if(obj instanceof Float) {
+		} else if (obj instanceof Float) {
 			return new Float(defaults.getFloat(key, FLOAT_DEFAULT_DEFAULT));
-		} else if(obj instanceof Long) {
+		} else if (obj instanceof Long) {
 			return Long.valueOf(defaults.getLong(key, LONG_DEFAULT_DEFAULT));
-		} else if(obj instanceof Boolean) {
+		} else if (obj instanceof Boolean) {
 			return defaults.getBoolean(key, BOOLEAN_DEFAULT_DEFAULT) ? Boolean.TRUE : Boolean.FALSE;
 		} else {
 			return null;
@@ -251,7 +251,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/**
 	 * Return the IEclipsePreferences node associated with this store.
-	 * 
+	 *
 	 * @return the preference node for this store
 	 */
 	protected IEclipsePreferences getStorePreferences() {
@@ -260,7 +260,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 
 	/**
 	 * Return the default IEclipsePreferences for this store.
-	 * 
+	 *
 	 * @return this store's default preference node
 	 */
 	protected IEclipsePreferences getDefaultPreferences() {
@@ -285,33 +285,33 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * <p>
 	 * Whether or not the default context should be included in the resulting list is specified by the <code>includeDefault</code> parameter.
 	 * </p>
-	 * 
+	 *
 	 * @param includeDefault
-	 *        <code>true</code> if the default context should be included
-	 *        and <code>false</code> otherwise
+	 *            <code>true</code> if the default context should be included
+	 *            and <code>false</code> otherwise
 	 * @return IEclipsePreferences[]
 	 * @since 3.4 public, was added in 3.1 as private method
 	 */
 	public IEclipsePreferences[] getPreferenceNodes(boolean includeDefault) {
 		// if the user didn't specify a search order, then return the scope that
 		// this store was created on. (and optionally the default)
-		if(searchContexts == null) {
-			if(includeDefault) {
-				return new IEclipsePreferences[]{ getStorePreferences(), getDefaultPreferences() };
+		if (searchContexts == null) {
+			if (includeDefault) {
+				return new IEclipsePreferences[] { getStorePreferences(), getDefaultPreferences() };
 			}
-			return new IEclipsePreferences[]{ getStorePreferences() };
+			return new IEclipsePreferences[] { getStorePreferences() };
 		}
 		// otherwise the user specified a search order so return the appropriate
 		// nodes based on it
 		int length = searchContexts.length;
-		if(includeDefault) {
+		if (includeDefault) {
 			length++;
 		}
 		IEclipsePreferences[] preferences = new IEclipsePreferences[length];
-		for(int i = 0; i < searchContexts.length; i++) {
+		for (int i = 0; i < searchContexts.length; i++) {
 			preferences[i] = searchContexts[i].getNode(nodeQualifier);
 		}
-		if(includeDefault) {
+		if (includeDefault) {
 			preferences[length - 1] = getDefaultPreferences();
 		}
 		return preferences;
@@ -322,26 +322,25 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * will be done in the order of scope contexts and will not search the
 	 * storeContext unless it is in this list.
 	 * <p>
-	 * If the given list is <code>null</code>, then clear this store's search contexts. This means that only this store's scope context and default
-	 * scope will be used during preference value searching.
+	 * If the given list is <code>null</code>, then clear this store's search contexts. This means that only this store's scope context and default scope will be used during preference value searching.
 	 * </p>
 	 * <p>
 	 * The defaultContext will be added to the end of this list automatically and <em>MUST NOT</em> be included by the user.
 	 * </p>
-	 * 
+	 *
 	 * @param scopes
-	 *        a list of scope contexts to use when searching, or <code>null</code>
+	 *            a list of scope contexts to use when searching, or <code>null</code>
 	 */
 	public void setSearchContexts(IScopeContext[] scopes) {
 		this.searchContexts = scopes;
-		if(scopes == null) {
+		if (scopes == null) {
 			return;
 		}
 
 		// Assert that the default was not included (we automatically add it to
 		// the end)
-		for(int i = 0; i < scopes.length; i++) {
-			if(scopes[i].equals(defaultContext)) {
+		for (int i = 0; i < scopes.length; i++) {
+			if (scopes[i].equals(defaultContext)) {
 				Assert.isTrue(false, WorkbenchMessages.ScopedPreferenceStore_DefaultAddedError);
 			}
 		}
@@ -353,7 +352,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * @see org.eclipse.jface.preference.IPreferenceStore#contains(java.lang.String)
 	 */
 	public boolean contains(String name) {
-		if(name == null) {
+		if (name == null) {
 			return false;
 		}
 		return (Platform.getPreferencesService().get(name, null, getPreferenceNodes(true))) != null;
@@ -369,18 +368,18 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 		// important: create intermediate array to protect against listeners
 		// being added/removed during the notification
 		final Object[] list = getListeners();
-		if(list.length == 0) {
+		if (list.length == 0) {
 			return;
 		}
 		final PropertyChangeEvent event = new PropertyChangeEvent(this, name, oldValue, newValue);
-		for(int i = 0; i < list.length; i++) {
-			final IPropertyChangeListener listener = (IPropertyChangeListener)list[i];
+		for (int i = 0; i < list.length; i++) {
+			final IPropertyChangeListener listener = (IPropertyChangeListener) list[i];
 			SafeRunner.run(new SafeRunnable(JFaceResources.getString("PreferenceStore.changeError")) { //$NON-NLS-1$
 
-				public void run() {
-					listener.propertyChange(event);
-				}
-			});
+						public void run() {
+							listener.propertyChange(event);
+						}
+					});
 		}
 	}
 
@@ -455,7 +454,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public double getDouble(String name) {
 		String value = internalGet(name);
-		if(value == null) {
+		if (value == null) {
 			return DOUBLE_DEFAULT_DEFAULT;
 		}
 		try {
@@ -469,9 +468,9 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * Return the string value for the specified key. Look in the nodes which
 	 * are specified by this object's list of search scopes. If the value does
 	 * not exist then return <code>null</code>.
-	 * 
+	 *
 	 * @param key
-	 *        the key to search with
+	 *            the key to search with
 	 * @return String or <code>null</code> if the value does not exist.
 	 */
 	protected String internalGet(String key) {
@@ -485,7 +484,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public float getFloat(String name) {
 		String value = internalGet(name);
-		if(value == null) {
+		if (value == null) {
 			return FLOAT_DEFAULT_DEFAULT;
 		}
 		try {
@@ -502,7 +501,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public int getInt(String name) {
 		String value = internalGet(name);
-		if(value == null) {
+		if (value == null) {
 			return INT_DEFAULT_DEFAULT;
 		}
 		try {
@@ -519,7 +518,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public long getLong(String name) {
 		String value = internalGet(name);
-		if(value == null) {
+		if (value == null) {
 			return LONG_DEFAULT_DEFAULT;
 		}
 		try {
@@ -545,7 +544,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 * @see org.eclipse.jface.preference.IPreferenceStore#isDefault(java.lang.String)
 	 */
 	public boolean isDefault(String name) {
-		if(name == null) {
+		if (name == null) {
 			return false;
 		}
 		return (Platform.getPreferencesService().get(name, null, getPreferenceNodes(false))) == null;
@@ -585,7 +584,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void removePropertyChangeListener(IPropertyChangeListener listener) {
 		removeListenerObject(listener);
-		if(!isListenerAttached()) {
+		if (!isListenerAttached()) {
 			disposePreferenceStoreListener();
 		}
 	}
@@ -664,7 +663,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 			// removing a non-existing preference is a no-op so call the Core
 			// API directly
 			getStorePreferences().remove(name);
-			if(!oldValue.equals(defaultValue)) {
+			if (!oldValue.equals(defaultValue)) {
 				dirty = true;
 				firePropertyChangeEvent(name, oldValue, defaultValue);
 			}
@@ -683,12 +682,12 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void setValue(String name, double value) {
 		double oldValue = getDouble(name);
-		if(oldValue == value) {
+		if (oldValue == value) {
 			return;
 		}
 		try {
 			silentRunning = true;// Turn off updates from the store
-			if(getDefaultDouble(name) == value) {
+			if (getDefaultDouble(name) == value) {
 				getStorePreferences().remove(name);
 			} else {
 				getStorePreferences().putDouble(name, value);
@@ -708,12 +707,12 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void setValue(String name, float value) {
 		float oldValue = getFloat(name);
-		if(oldValue == value) {
+		if (oldValue == value) {
 			return;
 		}
 		try {
 			silentRunning = true;// Turn off updates from the store
-			if(getDefaultFloat(name) == value) {
+			if (getDefaultFloat(name) == value) {
 				getStorePreferences().remove(name);
 			} else {
 				getStorePreferences().putFloat(name, value);
@@ -733,12 +732,12 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void setValue(String name, int value) {
 		int oldValue = getInt(name);
-		if(oldValue == value) {
+		if (oldValue == value) {
 			return;
 		}
 		try {
 			silentRunning = true;// Turn off updates from the store
-			if(getDefaultInt(name) == value) {
+			if (getDefaultInt(name) == value) {
 				getStorePreferences().remove(name);
 			} else {
 				getStorePreferences().putInt(name, value);
@@ -758,12 +757,12 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void setValue(String name, long value) {
 		long oldValue = getLong(name);
-		if(oldValue == value) {
+		if (oldValue == value) {
 			return;
 		}
 		try {
 			silentRunning = true;// Turn off updates from the store
-			if(getDefaultLong(name) == value) {
+			if (getDefaultLong(name) == value) {
 				getStorePreferences().remove(name);
 			} else {
 				getStorePreferences().putLong(name, value);
@@ -783,7 +782,7 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void setValue(String name, String value) {
 		// Do not turn on silent running here as Strings are propagated
-		if(getDefaultString(name).equals(value)) {
+		if (getDefaultString(name).equals(value)) {
 			getStorePreferences().remove(name);
 		} else {
 			getStorePreferences().put(name, value);
@@ -799,12 +798,12 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	public void setValue(String name, boolean value) {
 		boolean oldValue = getBoolean(name);
-		if(oldValue == value) {
+		if (oldValue == value) {
 			return;
 		}
 		try {
 			silentRunning = true;// Turn off updates from the store
-			if(getDefaultBoolean(name) == value) {
+			if (getDefaultBoolean(name) == value) {
 				getStorePreferences().remove(name);
 			} else {
 				getStorePreferences().putBoolean(name, value);
@@ -836,9 +835,9 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 	 */
 	private void disposePreferenceStoreListener() {
 
-		IEclipsePreferences root = (IEclipsePreferences)Platform.getPreferencesService().getRootNode().node(Plugin.PLUGIN_PREFERENCE_SCOPE);
+		IEclipsePreferences root = (IEclipsePreferences) Platform.getPreferencesService().getRootNode().node(Plugin.PLUGIN_PREFERENCE_SCOPE);
 		try {
-			if(!(root.nodeExists(nodeQualifier))) {
+			if (!(root.nodeExists(nodeQualifier))) {
 				return;
 			}
 		} catch (BackingStoreException e) {
@@ -847,10 +846,10 @@ public class PapyrusScopedPreferenceStore extends EventManager implements IPrefe
 		}
 
 		IEclipsePreferences preferences = getStorePreferences();
-		if(preferences == null) {
+		if (preferences == null) {
 			return;
 		}
-		if(preferencesListener != null) {
+		if (preferencesListener != null) {
 			preferences.removePreferenceChangeListener(preferencesListener);
 			preferencesListener = null;
 		}

@@ -51,14 +51,13 @@ class XtextStyledTextHighlightingReconciler implements
 
 	/**
 	 * Reconcile operation lock.
-	 * 
+	 *
 	 * @since 3.2
 	 */
 	private final Object fReconcileLock = new Object();
 	/**
-	 * <code>true</code> if any thread is executing <code>reconcile</code>,
-	 * <code>false</code> otherwise.
-	 * 
+	 * <code>true</code> if any thread is executing <code>reconcile</code>, <code>false</code> otherwise.
+	 *
 	 * @since 3.2
 	 */
 	private boolean reconciling = false;
@@ -73,7 +72,7 @@ class XtextStyledTextHighlightingReconciler implements
 
 	/**
 	 * Reconcile positions based on the AST subtrees
-	 * 
+	 *
 	 * @param subtrees
 	 *            the AST subtrees
 	 */
@@ -89,8 +88,9 @@ class XtextStyledTextHighlightingReconciler implements
 				removedPositionCount);
 		for (int i = 0, n = oldPositions.size(); i < n; i++) {
 			AttributedPosition current = oldPositions.get(i);
-			if (current != null)
+			if (current != null) {
 				newPositions.add(current);
+			}
 		}
 		removedPositions = newPositions;
 	}
@@ -98,7 +98,7 @@ class XtextStyledTextHighlightingReconciler implements
 	/**
 	 * Add a position with the given range and highlighting if it does not exist
 	 * already.
-	 * 
+	 *
 	 * @param offset
 	 *            The range offset
 	 * @param length
@@ -114,8 +114,9 @@ class XtextStyledTextHighlightingReconciler implements
 		// TODO: use binary search
 		for (int i = 0, n = removedPositions.size(); i < n; i++) {
 			AttributedPosition position = removedPositions.get(i);
-			if (position == null)
+			if (position == null) {
 				continue;
+			}
 			if (position.isEqual(offset, length, highlighting)) {
 				isExisting = true;
 				removedPositions.set(i, null);
@@ -133,7 +134,7 @@ class XtextStyledTextHighlightingReconciler implements
 
 	/**
 	 * Update the presentation.
-	 * 
+	 *
 	 * @param textPresentation
 	 *            the text presentation
 	 * @param addedPositions
@@ -146,8 +147,9 @@ class XtextStyledTextHighlightingReconciler implements
 			List<AttributedPosition> removedPositions) {
 		Runnable runnable = presenter.createUpdateRunnable(textPresentation,
 				addedPositions, removedPositions);
-		if (runnable == null)
+		if (runnable == null) {
 			return;
+		}
 
 		Display display = Display.getDefault();
 		display.asyncExec(runnable);
@@ -164,7 +166,7 @@ class XtextStyledTextHighlightingReconciler implements
 
 	/**
 	 * Install this reconciler on the given editor and presenter.
-	 * 
+	 *
 	 * @param editor
 	 *            the editor
 	 * @param sourceViewer
@@ -178,8 +180,9 @@ class XtextStyledTextHighlightingReconciler implements
 		this.styledTextXtextAdapter = xtextStyledText;
 		this.sourceViewer = sourceViewer;
 		if (calculator != null) {
-			if (styledTextXtextAdapter.getXtextDocument() != null)
+			if (styledTextXtextAdapter.getXtextDocument() != null) {
 				styledTextXtextAdapter.getXtextDocument().addModelListener(this);
+			}
 
 			sourceViewer.addTextInputListener(this);
 		}
@@ -190,13 +193,15 @@ class XtextStyledTextHighlightingReconciler implements
 	 * Uninstall this reconciler from the editor
 	 */
 	public void uninstall() {
-		if (presenter != null)
+		if (presenter != null) {
 			presenter.setCanceled(true);
+		}
 
 		if (styledTextXtextAdapter != null) {
 			if (calculator != null) {
-				if (styledTextXtextAdapter.getXtextDocument() != null)
+				if (styledTextXtextAdapter.getXtextDocument() != null) {
 					styledTextXtextAdapter.getXtextDocument().removeModelListener(this);
+				}
 				sourceViewer.removeTextInputListener(this);
 			}
 			styledTextXtextAdapter = null;
@@ -213,8 +218,9 @@ class XtextStyledTextHighlightingReconciler implements
 	 */
 	public void inputDocumentAboutToBeChanged(IDocument oldInput,
 			IDocument newInput) {
-		if (oldInput != null)
+		if (oldInput != null) {
 			((IXtextDocument) oldInput).removeModelListener(this);
+		}
 	}
 
 	/*
@@ -251,19 +257,22 @@ class XtextStyledTextHighlightingReconciler implements
 	public void modelChanged(XtextResource resource) {
 		// ensure at most one thread can be reconciling at any time
 		synchronized (fReconcileLock) {
-			if (reconciling)
+			if (reconciling) {
 				return;
+			}
 			reconciling = true;
 		}
 		final HighlightingPresenter highlightingPresenter = presenter;
 		try {
-			if (highlightingPresenter == null)
+			if (highlightingPresenter == null) {
 				return;
+			}
 
 			highlightingPresenter.setCanceled(false);
 
-			if (highlightingPresenter.isCanceled())
+			if (highlightingPresenter.isCanceled()) {
 				return;
+			}
 
 			startReconcilingPositions();
 
@@ -277,9 +286,10 @@ class XtextStyledTextHighlightingReconciler implements
 						addedPositions, removedPositions);
 			}
 
-			if (!highlightingPresenter.isCanceled())
+			if (!highlightingPresenter.isCanceled()) {
 				updatePresentation(textPresentation[0], addedPositions,
 						removedPositions);
+			}
 
 			stopReconcilingPositions();
 		} finally {

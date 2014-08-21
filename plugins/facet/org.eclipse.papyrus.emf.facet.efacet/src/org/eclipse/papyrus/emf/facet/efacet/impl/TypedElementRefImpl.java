@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.emf.facet.efacet.TypedElementRef;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.TypedElementRefImpl#getTypedElement <em>Typed Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.TypedElementRefImpl#getTypedElement <em>Typed Element</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	 * The cached value of the '{@link #getTypedElement() <em>Typed Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypedElement()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -56,6 +57,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -67,6 +69,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -79,14 +82,15 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public ETypedElement getTypedElement() {
 		if (this.typedElement != null && this.typedElement.eIsProxy()) {
-			InternalEObject oldTypedElement = (InternalEObject)this.typedElement;
-			this.typedElement = (ETypedElement)eResolveProxy(oldTypedElement);
+			InternalEObject oldTypedElement = (InternalEObject) this.typedElement;
+			this.typedElement = (ETypedElement) eResolveProxy(oldTypedElement);
 			if (this.typedElement != oldTypedElement) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.TYPED_ELEMENT_REF__TYPED_ELEMENT, oldTypedElement, this.typedElement));
@@ -99,6 +103,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -110,6 +115,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -125,6 +131,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -144,6 +151,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -152,7 +160,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EFacetPackage.TYPED_ELEMENT_REF__TYPED_ELEMENT:
-			setTypedElement((ETypedElement)newValue);
+			setTypedElement((ETypedElement) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -161,6 +169,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -169,7 +178,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EFacetPackage.TYPED_ELEMENT_REF__TYPED_ELEMENT:
-			setTypedElement((ETypedElement)null);
+			setTypedElement((ETypedElement) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -178,6 +187,7 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -191,4 +201,4 @@ public class TypedElementRefImpl extends QueryImpl implements TypedElementRef {
 		return super.eIsSet(featureID);
 	}
 
-} //TypedElementRefImpl
+} // TypedElementRefImpl

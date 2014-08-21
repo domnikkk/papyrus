@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.ui.IWorkbenchPart;
  * This action initialize the "CreateModelWizard" with the selected domain file,
  * and launch the wizard to create Diagram Interchange resources required by
  * Papyrus editor.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public abstract class InitDiagramAction implements IObjectActionDelegate {
@@ -36,9 +36,10 @@ public abstract class InitDiagramAction implements IObjectActionDelegate {
 	/**
 	 * Sets the active part.
 	 *
-	 * @param action the action
-	 * @param targetPart the target part
-	 * {@inheritDoc}
+	 * @param action
+	 *            the action
+	 * @param targetPart
+	 *            the target part {@inheritDoc}
 	 */
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		this.targetPart = targetPart;
@@ -47,12 +48,13 @@ public abstract class InitDiagramAction implements IObjectActionDelegate {
 	/**
 	 * Selection changed.
 	 *
-	 * @param action the action
-	 * @param selection the selection
-	 * {@inheritDoc}
+	 * @param action
+	 *            the action
+	 * @param selection
+	 *            the selection {@inheritDoc}
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		IStructuredSelection sselection = (IStructuredSelection)selection;
+		IStructuredSelection sselection = (IStructuredSelection) selection;
 		mySelection = sselection;
 		action.setEnabled(InitModelWizard.isSupportedDomainModelFile(sselection));
 	}
@@ -69,8 +71,8 @@ public abstract class InitDiagramAction implements IObjectActionDelegate {
 	/**
 	 * Run.
 	 *
-	 * @param action the action
-	 * {@inheritDoc}
+	 * @param action
+	 *            the action {@inheritDoc}
 	 */
 	public void run(IAction action) {
 		InitModelWizard wizard = new InitModelWizard();

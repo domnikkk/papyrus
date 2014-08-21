@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,11 +38,11 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * Creates a new FilteredCollectionView.
-	 * 
+	 *
 	 * @param list
-	 *        the list to filter
+	 *            the list to filter
 	 * @param filter
-	 *        the filter for the view
+	 *            the filter for the view
 	 */
 	public FilteredCollectionView(Collection<T> list, IFilter filter) {
 		this.list = list;
@@ -51,9 +51,9 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * Sets the value of the list property.
-	 * 
+	 *
 	 * @param aList
-	 *        the new value of the list property
+	 *            the new value of the list property
 	 */
 	public void setBackupCollection(Collection<T> aList) {
 		list = aList;
@@ -61,9 +61,9 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * Sets the value of the filter property.
-	 * 
+	 *
 	 * @param aFilter
-	 *        the new value of the filter property
+	 *            the new value of the filter property
 	 */
 	public void setFilter(IFilter aFilter) {
 		filter = aFilter;
@@ -71,7 +71,7 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * Returns the value of the filter property.
-	 * 
+	 *
 	 * @return the new value of the filter property
 	 */
 	public IFilter getFilter() {
@@ -80,15 +80,15 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * The size of the filtered list.
-	 * 
+	 *
 	 * @return the number of elements in the filtered list
 	 */
 	@Override
 	public int size() {
-		if(size == -1) { // compute the size
+		if (size == -1) { // compute the size
 			size = 0;
 			Iterator<T> i = iterator();
-			while(i.hasNext()) {
+			while (i.hasNext()) {
 				size++;
 				i.next();
 			}
@@ -98,11 +98,11 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * Return true if the filteredCollection contains the object.
-	 * 
+	 *
 	 * @see java.util.AbstractCollection#contains(java.lang.Object)
 	 * @param o
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public boolean contains(Object o) {
@@ -112,11 +112,11 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 	/**
 	 * remove the object. Throw an UnsupportedOperationException, as the
 	 * FilteredCollection is ReadOnly.
-	 * 
+	 *
 	 * @see java.util.AbstractCollection#remove(java.lang.Object)
 	 * @param o
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public boolean remove(Object o) {
@@ -127,10 +127,10 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 	 * Return the value to be returned by the iterator.next() method. This
 	 * method can be overloaded by subclasses in order to return another value
 	 * than the objects belonging to the underlying list.
-	 * 
+	 *
 	 * @param ele
-	 *        The iterated object. This is the object iterated inside the
-	 *        underlying list.
+	 *            The iterated object. This is the object iterated inside the
+	 *            underlying list.
 	 * @return
 	 */
 	protected T returnedValue(T ele) {
@@ -139,7 +139,7 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 	/**
 	 * listIterator.
-	 * 
+	 *
 	 * @return ListIterator
 	 */
 	@Override
@@ -169,19 +169,20 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 		/**
 		 * Unsupported operation, as this is just a view of a list.
 		 */
+		@Override
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
 
 		/**
 		 * Returns the next object of the list, when filter is applied
-		 * 
+		 *
 		 * @return
 		 */
 		protected T nextFilteredObject() {
-			while(listIterator.hasNext()) {
+			while (listIterator.hasNext()) {
 				T ele = listIterator.next();
-				if(filter.isAllowed(ele)) {
+				if (filter.isAllowed(ele)) {
 					return returnedValue(ele);
 				}
 			} // end loop
@@ -190,9 +191,10 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 
 		/**
 		 * hasNext.
-		 * 
+		 *
 		 * @return boolean
 		 */
+		@Override
 		public boolean hasNext() {
 			return next != null;
 		}
@@ -200,11 +202,12 @@ public class FilteredCollectionView<T> extends AbstractCollection<T> implements 
 		/**
 		 * Compute the next field (null or next value), and return the previous
 		 * value of the next field.
-		 * 
+		 *
 		 * @return Object
 		 */
+		@Override
 		public T next() {
-			if(next == null) {
+			if (next == null) {
 				throw new NoSuchElementException();
 			}
 			T ele = next;

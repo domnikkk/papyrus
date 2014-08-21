@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,11 @@ import org.eclipse.papyrus.infra.viewpoints.policy.ViewPrototype;
 
 /**
  * Represents the command helper for viewpoints-based generic tables
+ * 
  * @author Laurent Wouters
  */
 public class TableCommandHelper implements IViewTypeHelper {
-	
+
 	/**
 	 * The cache of prototypes
 	 */
@@ -38,13 +39,16 @@ public class TableCommandHelper implements IViewTypeHelper {
 
 	@Override
 	public ViewPrototype getPrototypeFor(PapyrusView configuration) {
-		if (!(configuration instanceof PapyrusTable))
+		if (!(configuration instanceof PapyrusTable)) {
 			return null;
-		if (cache == null)
+		}
+		if (cache == null) {
 			cache = new HashMap<PapyrusView, TableViewPrototype>();
-		if (cache.containsKey(configuration))
+		}
+		if (cache.containsKey(configuration)) {
 			return cache.get(configuration);
-		TableViewPrototype proto = new TableViewPrototype((PapyrusTable)configuration);
+		}
+		TableViewPrototype proto = new TableViewPrototype((PapyrusTable) configuration);
 		cache.put(configuration, proto);
 		return proto;
 	}
@@ -56,14 +60,15 @@ public class TableCommandHelper implements IViewTypeHelper {
 
 	@Override
 	public boolean isSupported(EObject view) {
-		if (!(view instanceof Table))
+		if (!(view instanceof Table)) {
 			return false;
-		Table table = (Table)view;
+		}
+		Table table = (Table) view;
 		return (table.getPrototype() instanceof PapyrusTable);
 	}
 
 	@Override
 	public ViewPrototype getPrototypeOf(EObject view) {
-		return getPrototypeFor((PapyrusView)((Table)view).getPrototype());
+		return getPrototypeFor((PapyrusView) ((Table) view).getPrototype());
 	}
 }

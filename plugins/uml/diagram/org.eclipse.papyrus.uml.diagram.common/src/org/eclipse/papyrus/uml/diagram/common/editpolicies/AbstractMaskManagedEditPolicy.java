@@ -53,11 +53,11 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		hostSemanticElement = initSemanticElement();
-		if(hostSemanticElement != null) {
+		if (hostSemanticElement != null) {
 
 			// adds a listener on the view and the element controlled by the
 			// editpart
@@ -78,7 +78,7 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 * @return the element linked to the edit policy
 	 */
 	protected Element initSemanticElement() {
-		return (Element)getView().getElement();
+		return (Element) getView().getElement();
 	}
 
 	/**
@@ -105,13 +105,13 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		// remove notification on element and view
 		getDiagramEventBroker().removeNotificationListener(view, this);
 
-		if(hostSemanticElement != null) {
+		if (hostSemanticElement != null) {
 			getDiagramEventBroker().removeNotificationListener(hostSemanticElement, this);
 			removeAdditionalListeners();
 		}
@@ -134,8 +134,8 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
@@ -156,7 +156,7 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
 	/**
@@ -164,18 +164,18 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 * charge of the mask managed label.
 	 *
 	 * @param object
-	 *        the object to be checked
+	 *            the object to be checked
 	 * @return <code>true</code> if the object is an {@link EAnnotation} and its
 	 *         source is the correct one.
 	 */
 	protected boolean isMaskManagedAnnotation(Object object) {
 		// check the notifier is an annotation
-		if((object instanceof NamedStyle)) {
+		if ((object instanceof NamedStyle)) {
 
 			// notifier is the eannotation. Check this is the annotation in
 			// charge of the property
 			// label display
-			if(VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL.equals(((NamedStyle)object).getName())) {
+			if (VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL.equals(((NamedStyle) object).getName())) {
 				return true;
 			}
 		}
@@ -187,24 +187,24 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	 * managed label is removed from the given object which should be a View.
 	 *
 	 * @param object
-	 *        the object to be checked
+	 *            the object to be checked
 	 * @param notification
-	 *        the notification passed to the policy (which is a listener)
+	 *            the notification passed to the policy (which is a listener)
 	 * @return <code>true</code> if the object is an {@link EAnnotation} and its
 	 *         source is the correct one.
 	 */
 	protected boolean isRemovedMaskManagedLabelAnnotation(Object object, Notification notification) {
 		// object is a model element, that means it has EAnnotations
-		if(object instanceof EModelElement) {
+		if (object instanceof EModelElement) {
 
 			// something was removed.
-			if(notification.getEventType() == Notification.REMOVE) {
+			if (notification.getEventType() == Notification.REMOVE) {
 				Object oldValue = notification.getOldValue();
 
 				// this is an annotation which is returned
-				if(oldValue instanceof NamedStyle) {
+				if (oldValue instanceof NamedStyle) {
 					// returns true if the annotation has the correct source
-					return VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL.equals(((NamedStyle)oldValue).getName());
+					return VisualInformationPapyrusConstants.CUSTOM_MASK_LABEL.equals(((NamedStyle) oldValue).getName());
 				}
 			}
 		}
@@ -214,17 +214,19 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	abstract public void refreshDisplay();
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 *
 	 * @param notification
-	 *        the notification object
+	 *            the notification object
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		Object object = notification.getNotifier();
-		if(object != null && object.equals(getView())) {
+		if (object != null && object.equals(getView())) {
 			refreshDisplay();
 		}
 	}
@@ -232,6 +234,7 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setDefaultDisplayValue() {
 		MaskLabelHelper.unsetMaskValues(getView());
 	}
@@ -239,6 +242,7 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void updateDisplayValue(Collection<String> newValue) {
 		MaskLabelHelper.setMaskValues(getView(), newValue);
 	}
@@ -246,9 +250,10 @@ public abstract class AbstractMaskManagedEditPolicy extends GraphicalEditPolicyE
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<String> getCurrentDisplayValue() {
 		Collection<String> maskValues = MaskLabelHelper.getMaskValues(getView());
-		if(maskValues == null) {
+		if (maskValues == null) {
 			return getDefaultDisplayValue();
 		}
 

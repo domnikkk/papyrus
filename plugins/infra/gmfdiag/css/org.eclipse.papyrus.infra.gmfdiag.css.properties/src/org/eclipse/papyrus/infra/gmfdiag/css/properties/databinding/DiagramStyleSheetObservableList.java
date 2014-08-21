@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,12 @@ import org.eclipse.papyrus.infra.gmfdiag.common.databinding.custom.CustomEObject
  * are stored in the view's Resource, and added as a CustomStyle (GMF NamedStyle)
  * in the view. When the last reference to a CSS Stylesheet is removed, it is
  * removed from the view's resource.
- * 
+ *
  * A Stylesheet will only be deleted if it is contained in the same resource as
  * the argument View (A Model B referencing a StyleSheet from a Model A cannot
  * delete it).
- * 
- * 
+ *
+ *
  * @author Camille Letavernier
  */
 public class DiagramStyleSheetObservableList extends CustomEObjectStyleObservableList {

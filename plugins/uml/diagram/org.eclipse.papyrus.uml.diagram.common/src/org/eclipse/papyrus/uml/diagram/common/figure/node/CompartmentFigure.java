@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2009 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *		Patrick Tessier (CEA LIST), Thibault Landre (Atos Origin) - Initial API and implementation
- *	
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
@@ -28,7 +28,7 @@ public class CompartmentFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param compartmentFigure
 	 */
 	public CompartmentFigure(List<String> compartmentFigure) {
@@ -37,11 +37,11 @@ public class CompartmentFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Constructor with a tagged value.
-	 * 
+	 *
 	 * @param compartmentFigure
-	 *        a list of id for the compartment figure
+	 *            a list of id for the compartment figure
 	 * @param taggedLabelValue
-	 *        the value to display as tagged value
+	 *            the value to display as tagged value
 	 */
 	public CompartmentFigure(List<String> compartmentFigure, String taggedLabelValue) {
 		super(taggedLabelValue);
@@ -53,13 +53,13 @@ public class CompartmentFigure extends NodeNamedElementFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param compartmentFigure
 	 */
 	protected void createContentPane(List<String> compartmentFigure) {
 		containerFigures = new HashMap<String, RectangleFigure>();
 
-		for(String id : compartmentFigure) {
+		for (String id : compartmentFigure) {
 			RectangleFigure newFigure = new RectangleFigure();
 			newFigure.setLayoutManager(new SubCompartmentLayoutManager());
 			// to debug graphically: newFigure.setFill(true);
@@ -75,9 +75,9 @@ public class CompartmentFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Get the RectangleFigure containing the wanted compartment.
-	 * 
+	 *
 	 * @param id
-	 *        the id to find the right compartment
+	 *            the id to find the right compartment
 	 * @return the RectangleFigure
 	 */
 	public RectangleFigure getCompartment(String id) {

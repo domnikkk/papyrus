@@ -1,14 +1,14 @@
 /**
- * 
+ *
  *   Copyright (c)  2012 CEA LIST.
  *   All rights reserved. This program and the accompanying materials
  *   are made available under the terms of the Eclipse Public License v1.0
  *   which accompanies this distribution, and is available at
  *   http://www.eclipse.org/legal/epl-v10.html
- *   
+ *
  *   Contributors:
  *       CEA LIST - initial API and implementation
- *  
+ *
  */
 package org.eclipse.papyrus.infra.discovery.impl;
 
@@ -30,9 +30,9 @@ import org.eclipse.papyrus.infra.discovery.Severity;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl#getMessage <em>Message</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl#getIcon <em>Icon</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl#getTitle <em>Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl#getMessage <em>Message</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.impl.MessageImpl#getIcon <em>Icon</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMessage()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -93,6 +98,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -102,6 +108,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MessageImpl() {
@@ -111,6 +118,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,6 +129,7 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getTitle() {
@@ -130,18 +139,21 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiscoveryPackage.MESSAGE__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getMessage() {
@@ -151,18 +163,21 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMessage(String newMessage) {
 		String oldMessage = message;
 		message = newMessage;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiscoveryPackage.MESSAGE__MESSAGE, oldMessage, message));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Severity getIcon() {
@@ -172,29 +187,32 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIcon(Severity newIcon) {
 		Severity oldIcon = icon;
 		icon = newIcon == null ? ICON_EDEFAULT : newIcon;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiscoveryPackage.MESSAGE__ICON, oldIcon, icon));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiscoveryPackage.MESSAGE__TITLE:
-				return getTitle();
-			case DiscoveryPackage.MESSAGE__MESSAGE:
-				return getMessage();
-			case DiscoveryPackage.MESSAGE__ICON:
-				return getIcon();
+		case DiscoveryPackage.MESSAGE__TITLE:
+			return getTitle();
+		case DiscoveryPackage.MESSAGE__MESSAGE:
+			return getMessage();
+		case DiscoveryPackage.MESSAGE__ICON:
+			return getIcon();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,20 +220,21 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiscoveryPackage.MESSAGE__TITLE:
-				setTitle((String)newValue);
-				return;
-			case DiscoveryPackage.MESSAGE__MESSAGE:
-				setMessage((String)newValue);
-				return;
-			case DiscoveryPackage.MESSAGE__ICON:
-				setIcon((Severity)newValue);
-				return;
+		case DiscoveryPackage.MESSAGE__TITLE:
+			setTitle((String) newValue);
+			return;
+		case DiscoveryPackage.MESSAGE__MESSAGE:
+			setMessage((String) newValue);
+			return;
+		case DiscoveryPackage.MESSAGE__ICON:
+			setIcon((Severity) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,20 +242,21 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiscoveryPackage.MESSAGE__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case DiscoveryPackage.MESSAGE__MESSAGE:
-				setMessage(MESSAGE_EDEFAULT);
-				return;
-			case DiscoveryPackage.MESSAGE__ICON:
-				setIcon(ICON_EDEFAULT);
-				return;
+		case DiscoveryPackage.MESSAGE__TITLE:
+			setTitle(TITLE_EDEFAULT);
+			return;
+		case DiscoveryPackage.MESSAGE__MESSAGE:
+			setMessage(MESSAGE_EDEFAULT);
+			return;
+		case DiscoveryPackage.MESSAGE__ICON:
+			setIcon(ICON_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,17 +264,18 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiscoveryPackage.MESSAGE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case DiscoveryPackage.MESSAGE__MESSAGE:
-				return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
-			case DiscoveryPackage.MESSAGE__ICON:
-				return icon != ICON_EDEFAULT;
+		case DiscoveryPackage.MESSAGE__TITLE:
+			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+		case DiscoveryPackage.MESSAGE__MESSAGE:
+			return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+		case DiscoveryPackage.MESSAGE__ICON:
+			return icon != ICON_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,11 +283,14 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
@@ -279,4 +303,4 @@ public class MessageImpl extends MinimalEObjectImpl implements Message {
 		return result.toString();
 	}
 
-} //MessageImpl
+} // MessageImpl

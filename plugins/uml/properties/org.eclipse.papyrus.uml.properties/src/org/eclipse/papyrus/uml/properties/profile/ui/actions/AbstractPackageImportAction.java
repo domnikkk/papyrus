@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,9 +49,9 @@ public abstract class AbstractPackageImportAction extends AbstractViewActionDele
 
 	/**
 	 * Returns <code>true</code> if the element is a Package
-	 * 
+	 *
 	 * @param element
-	 *        the element to test
+	 *            the element to test
 	 * @return <code>true</code> if the element is a Package
 	 */
 	@Override
@@ -64,8 +64,8 @@ public abstract class AbstractPackageImportAction extends AbstractViewActionDele
 	 */
 	@Override
 	public void setSelectedElement(Object selectedElement) {
-		if(selectedElement instanceof Package) {
-			this.selectedElement = (Package)selectedElement;
+		if (selectedElement instanceof Package) {
+			this.selectedElement = (Package) selectedElement;
 		}
 		else {
 			this.selectedElement = null;
@@ -74,7 +74,7 @@ public abstract class AbstractPackageImportAction extends AbstractViewActionDele
 
 	/**
 	 * Returns <code>true</code> if the action can be executed
-	 * 
+	 *
 	 * @return <code>true</code> if the action can be executed
 	 */
 	public boolean canExecute() {
@@ -92,16 +92,16 @@ public abstract class AbstractPackageImportAction extends AbstractViewActionDele
 	public void run(IAction action) {
 		if (selectedElement != null) {
 			EditingDomain editingDomain = TransactionUtil.getEditingDomain(selectedElement);
-			CommandStack stack = editingDomain.getCommandStack ();
-			stack.execute (getCommand(editingDomain));
+			CommandStack stack = editingDomain.getCommandStack();
+			stack.execute(getCommand(editingDomain));
 		}
 	}
 
 	/**
 	 * returns the command that is executed by this action.
-	 * 
+	 *
 	 * @param domain
-	 *        EMF editing domain used by the command
+	 *            EMF editing domain used by the command
 	 * @return the command that is executed by this action
 	 */
 	public abstract ChangeCommand getCommand(EditingDomain domain);

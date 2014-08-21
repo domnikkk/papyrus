@@ -18,17 +18,15 @@ public class ExpansionRegionHelper extends ActivityNodeHelper {
 	}
 
 	/**
-	 * This method return new request for creation {@link ExpansionNode} with right containment feature {@link ExpansionRegion#getInputElements()} and
-	 * {@link ExpansionRegion#getOutputElements()} are referenced list and
-	 * cannot contains {@link ExpansionNode}. Thats why we add new {@link ExpansionNode} element to {@link StructuredActivityNode#getNodes()}
-	 * containment list
-	 * 
+	 * This method return new request for creation {@link ExpansionNode} with right containment feature {@link ExpansionRegion#getInputElements()} and {@link ExpansionRegion#getOutputElements()} are referenced list and
+	 * cannot contains {@link ExpansionNode}. Thats why we add new {@link ExpansionNode} element to {@link StructuredActivityNode#getNodes()} containment list
+	 *
 	 * @param ItemSemanticPolicy
-	 *        {@link CreateElementRequest}
+	 *            {@link CreateElementRequest}
 	 * @return {@link CreateElementRequest} with changed containment feature
 	 */
 	protected CreateElementRequest getCreateExpansionRegionAffixedChildRequest(CreateElementRequest req) {
-		if(req == null) {
+		if (req == null) {
 			return null;
 		}
 		CreateElementRequest result = new CreateElementRequest(req.getEditingDomain(), req.getContainer(), req.getElementType());
@@ -40,9 +38,9 @@ public class ExpansionRegionHelper extends ActivityNodeHelper {
 
 	/**
 	 * Method check CreateEmentRequest to create {@link ExpansionNode} It check new ElementType and check containmentFeature
-	 * 
+	 *
 	 * @param ItemSematicPolicy
-	 *        {@link CreateElementRequest}
+	 *            {@link CreateElementRequest}
 	 * @return
 	 */
 	protected boolean isRequestToCreateExpansionNode(CreateElementRequest req) {
@@ -53,7 +51,7 @@ public class ExpansionRegionHelper extends ActivityNodeHelper {
 
 	/**
 	 * Check can this feature add {@link ExpansionNode} to {@link ExpansionRegion#getInputElements()} or {@link ExpansionRegion#getOutputElements()}
-	 * 
+	 *
 	 * @param {@link CreateElementRequest} containment feature.
 	 */
 	protected boolean isExpansionNodeFeature(EReference feature) {
@@ -62,9 +60,9 @@ public class ExpansionRegionHelper extends ActivityNodeHelper {
 
 	/**
 	 * Check is this type {@link ExpansionNode}
-	 * 
+	 *
 	 * @param type
-	 *        the {@link CreateElementRequest} new {@link IElementType}
+	 *            the {@link CreateElementRequest} new {@link IElementType}
 	 */
 	protected boolean isExpansionNodeType(IElementType type) {
 		return UMLPackage.eINSTANCE.getExpansionNode().equals(type.getEClass());

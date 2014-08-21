@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public interface IPapyrusUMLElementFigure {
 	 * <li>if this is not <code>null</code>, it creates the stereotype label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 **/
 	public void setStereotypeDisplay(String stereotypes, Image image);
 

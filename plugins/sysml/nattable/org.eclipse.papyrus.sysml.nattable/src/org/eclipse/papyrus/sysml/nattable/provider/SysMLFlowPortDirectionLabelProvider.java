@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.uml2.uml.Port;
 
 /**
  * This label provider allows to display N/A for the direction of the FlowPort when its requred!
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class SysMLFlowPortDirectionLabelProvider extends AbstractUMLNattableCellLabelProvider {
 
@@ -36,24 +36,24 @@ public class SysMLFlowPortDirectionLabelProvider extends AbstractUMLNattableCell
 	private static final FlowPortNAMatcher matcher = new FlowPortNAMatcher();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.GenericCellLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public boolean accept(final Object element) {
-		if(element instanceof LabelProviderCellContextElementWrapper) {
-			final ILayerCell cell = ((LabelProviderCellContextElementWrapper)element);
-			final IConfigRegistry registry = ((LabelProviderCellContextElementWrapper)element).getConfigRegistry();
+		if (element instanceof LabelProviderCellContextElementWrapper) {
+			final ILayerCell cell = ((LabelProviderCellContextElementWrapper) element);
+			final IConfigRegistry registry = ((LabelProviderCellContextElementWrapper) element).getConfigRegistry();
 			final Object columnObject = getColumnObject(cell, registry);
 			String str = AxisUtils.getPropertyId(columnObject);
-			if(str == null) {
+			if (str == null) {
 				final Object rowObject = getRowObject(cell, registry);
 				str = AxisUtils.getPropertyId(rowObject);
 			}
-			if(str != null) {
+			if (str != null) {
 				return str.endsWith(org.eclipse.papyrus.sysml.nattable.utils.Constants.STEREOTYPE_FLOWPORT_DIRECTION);
 			}
 		}
@@ -62,17 +62,17 @@ public class SysMLFlowPortDirectionLabelProvider extends AbstractUMLNattableCell
 
 	@Override
 	public String getText(Object element) {
-		final ILayerCell cell = ((LabelProviderCellContextElementWrapper)element);
-		final IConfigRegistry configRegistry = ((LabelProviderCellContextElementWrapper)element).getConfigRegistry();
+		final ILayerCell cell = ((LabelProviderCellContextElementWrapper) element);
+		final IConfigRegistry configRegistry = ((LabelProviderCellContextElementWrapper) element).getConfigRegistry();
 		final Object rowObject = getRowObject(cell, configRegistry);
 		final Object columObject = getColumnObject(cell, configRegistry);
 		Port port = null;
-		if(rowObject instanceof Port) {
-			port = (Port)rowObject;
-		} else if(columObject instanceof Port) {
-			port = (Port)columObject;
+		if (rowObject instanceof Port) {
+			port = (Port) rowObject;
+		} else if (columObject instanceof Port) {
+			port = (Port) columObject;
 		}
-		if(port != null && matcher.matches(port)) {
+		if (port != null && matcher.matches(port)) {
 			return Constants.NOT_AVALAIBLE;
 		}
 		return super.getText(element);

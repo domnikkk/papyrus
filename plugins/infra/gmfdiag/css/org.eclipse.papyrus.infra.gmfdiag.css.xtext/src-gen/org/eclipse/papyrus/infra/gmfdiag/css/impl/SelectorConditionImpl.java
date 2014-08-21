@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012-2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,25 +29,27 @@ import org.eclipse.papyrus.infra.gmfdiag.css.SelectorCondition;
  */
 public class SelectorConditionImpl extends MinimalEObjectImpl.Container implements SelectorCondition
 {
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected SelectorConditionImpl()
-  {
-    super();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected SelectorConditionImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  protected EClass eStaticClass()
-  {
-    return CssPackage.Literals.SELECTOR_CONDITION;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass()
+	{
+		return CssPackage.Literals.SELECTOR_CONDITION;
+	}
 
-} //SelectorConditionImpl
+} // SelectorConditionImpl

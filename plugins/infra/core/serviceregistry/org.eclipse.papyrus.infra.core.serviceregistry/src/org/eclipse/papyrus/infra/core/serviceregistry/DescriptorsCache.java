@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
 /**
  * A cache used to query the {@link IServiceDescriptorsWithIdProvider}. The cache return resolved descriptors,
  * in the form of instance of the ServiceDescriptors model.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class DescriptorsCache {
 
@@ -55,9 +55,9 @@ public class DescriptorsCache {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public DescriptorsCache() {
 		declaredDescriptorProvider = new ServiceDescriptorsWithIdProviderCollection();
@@ -66,7 +66,7 @@ public class DescriptorsCache {
 
 	/**
 	 * Add all the provided {@link IServiceDescriptorsWithIdProvider} to the list of providers to use.
-	 * 
+	 *
 	 * @param declaredDescriptorProviders
 	 */
 	public void addAll(IServiceDescriptorsWithIdProvider... declaredDescriptorProviders) {
@@ -82,21 +82,21 @@ public class DescriptorsCache {
 	 * The descriptor is cached. This mean that subsequent calls for the same name will return the same
 	 * result. <br/>
 	 * If the registry is not found, throws an exception.
-	 * 
+	 *
 	 * @param registryName
-	 *        The name of the registry for which the descriptor is required.
-	 * 
+	 *            The name of the registry for which the descriptor is required.
+	 *
 	 * @return The registry descriptor
 	 * @throws DeclarationException
-	 *         If an error occur while reading declarations.
-	 * 
+	 *             If an error occur while reading declarations.
+	 *
 	 */
 	public RegistryDesc getRegistryDesc(String registryName) throws DeclarationException {
 
 		// Try from cache
 		RegistryDesc desc = descriptorsCache.getRegistryDesc(registryName);
 
-		if(desc != null) {
+		if (desc != null) {
 			return desc;
 		}
 
@@ -115,17 +115,17 @@ public class DescriptorsCache {
 
 		// Set the references
 		// serviceSet
-		for(String serviceSetId : idDesc.getSets()) {
+		for (String serviceSetId : idDesc.getSets()) {
 			desc.getServiceSets().add(getServiceSetDesc(serviceSetId));
 		}
 
 		// extends
-		for(String extendsId : idDesc.getExtends()) {
+		for (String extendsId : idDesc.getExtends()) {
 			desc.getExtends().add(getRegistryDesc(extendsId));
 		}
 
 		// parents
-		for(String extendsId : idDesc.getParents()) {
+		for (String extendsId : idDesc.getParents()) {
 			desc.getParents().add(getRegistryDesc(extendsId));
 		}
 
@@ -145,7 +145,7 @@ public class DescriptorsCache {
 	 * The descriptor is cached. This mean that subsequent calls for the same name will return the same
 	 * result. <br/>
 	 * If the descriptor is not found, throws an exception.
-	 * 
+	 *
 	 * @param serviceSetId
 	 * @return
 	 * @throws DeclarationException
@@ -154,7 +154,7 @@ public class DescriptorsCache {
 		// Try from cache
 		ServiceSetDesc desc = descriptorsCache.getServiceSetDesc(serviceSetId);
 
-		if(desc != null) {
+		if (desc != null) {
 			return desc;
 		}
 
@@ -172,12 +172,12 @@ public class DescriptorsCache {
 
 		// Set the references
 		// serviceSet
-		for(AbstractServiceIdDesc serviceIdDesc : idDesc.getServiceDescriptors()) {
+		for (AbstractServiceIdDesc serviceIdDesc : idDesc.getServiceDescriptors()) {
 			desc.getOwnedServices().add(transformAbstractServiceIdDescToRef(serviceIdDesc));
 		}
 
 		// extends
-		for(String extendsId : idDesc.getExtends()) {
+		for (String extendsId : idDesc.getExtends()) {
 			desc.getExtends().add(getServiceSetDesc(extendsId));
 		}
 
@@ -191,17 +191,17 @@ public class DescriptorsCache {
 
 	/**
 	 * Transform {@link AncestorEvent} {@link AbstractServiceIdDesc} to an {@link AbstractServiceDesc}.
-	 * 
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
 	private AbstractServiceDesc transformAbstractServiceIdDescToRef(AbstractServiceIdDesc serviceIdDesc) {
-		if(serviceIdDesc instanceof ServiceFactoryIdDesc) {
-			return transformServiceFactoryIdDescToRef((ServiceFactoryIdDesc)serviceIdDesc);
-		} else if(serviceIdDesc instanceof ServiceIdDesc) {
-			return transformServiceIdDescToRef((ServiceIdDesc)serviceIdDesc);
-		} else if(serviceIdDesc instanceof AliasIdDesc) {
-			return transformAliasIdDescToRef((AliasIdDesc)serviceIdDesc);
+		if (serviceIdDesc instanceof ServiceFactoryIdDesc) {
+			return transformServiceFactoryIdDescToRef((ServiceFactoryIdDesc) serviceIdDesc);
+		} else if (serviceIdDesc instanceof ServiceIdDesc) {
+			return transformServiceIdDescToRef((ServiceIdDesc) serviceIdDesc);
+		} else if (serviceIdDesc instanceof AliasIdDesc) {
+			return transformAliasIdDescToRef((AliasIdDesc) serviceIdDesc);
 		} else {
 			// Should never happen
 			throw new UnsupportedOperationException("Don't no how to transform '" + serviceIdDesc + "' to AbstractServiceDesc."); //$NON-NLS-1$ //$NON-NLS-2$
@@ -209,7 +209,7 @@ public class DescriptorsCache {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
@@ -229,13 +229,13 @@ public class DescriptorsCache {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param startKind
 	 * @return
 	 */
 	private StartupKind transformStartKind(org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.StartupKind startKind) {
 
-		switch(startKind) {
+		switch (startKind) {
 		case STARTUP:
 			return StartupKind.STARTUP;
 		case LAZY:
@@ -246,7 +246,7 @@ public class DescriptorsCache {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
@@ -264,7 +264,7 @@ public class DescriptorsCache {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serviceIdDesc
 	 * @return
 	 */
@@ -285,11 +285,11 @@ public class DescriptorsCache {
 	/**
 	 * Compute the services available from this registry. This implies
 	 * resolving inheritances from extends.
-	 * 
+	 *
 	 * @param registryDesc
-	 *        The descriptor for which services should be computed.
-	 * 
-	 * 
+	 *            The descriptor for which services should be computed.
+	 *
+	 *
 	 */
 	private void computeRegistryServices(RegistryDesc registryDesc) {
 
@@ -299,7 +299,7 @@ public class DescriptorsCache {
 
 		// do the union of all services from sets
 		// Do not check for double names (this is done in the Registry).
-		for(ServiceSetDesc setDesc : registryDesc.getServiceSets()) {
+		for (ServiceSetDesc setDesc : registryDesc.getServiceSets()) {
 
 			services.addAll(setDesc.getServices());
 		}
@@ -307,13 +307,13 @@ public class DescriptorsCache {
 		// Add services from extends
 		// Add a services from a parent only if there is not a service with the same name
 		// in the child
-		for(RegistryDesc extendsDesc : registryDesc.getExtends()) {
+		for (RegistryDesc extendsDesc : registryDesc.getExtends()) {
 
 			// Walk each service of the parent
-			for(AbstractServiceDesc serviceDesc : extendsDesc.getServices()) {
+			for (AbstractServiceDesc serviceDesc : extendsDesc.getServices()) {
 
 				// Check if the service is already in the child
-				if(!registryDesc.servicesContains(serviceDesc.getName())) {
+				if (!registryDesc.servicesContains(serviceDesc.getName())) {
 					services.add(serviceDesc);
 				}
 			}
@@ -324,7 +324,7 @@ public class DescriptorsCache {
 	/**
 	 * Compute the services available from the specified {@link ServiceSetDesc}. This reset and compute
 	 * the {@link ServiceSetDesc#getServices()} property.
-	 * 
+	 *
 	 * @param serviceSetDesc
 	 */
 	private void computeServiceSetServices(ServiceSetDesc serviceSetDesc) {
@@ -339,13 +339,13 @@ public class DescriptorsCache {
 		// Add services from extends
 		// Add a services from an extends only if there is not a service with the same name
 		// in the child
-		for(ServiceSetDesc extendsDesc : serviceSetDesc.getExtends()) {
+		for (ServiceSetDesc extendsDesc : serviceSetDesc.getExtends()) {
 
 			// Walk each service of the parent
-			for(AbstractServiceDesc serviceDesc : extendsDesc.getServices()) {
+			for (AbstractServiceDesc serviceDesc : extendsDesc.getServices()) {
 
 				// Check if the service is already in the child
-				if(!serviceSetDesc.servicesContains(serviceDesc.getName())) {
+				if (!serviceSetDesc.servicesContains(serviceDesc.getName())) {
 					services.add(serviceDesc);
 				}
 			}

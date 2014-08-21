@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -41,11 +41,12 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryP
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class IsOneOfQueryItemProvider
-	extends QueryItemProvider
-	implements
+		extends QueryItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -55,6 +56,7 @@ public class IsOneOfQueryItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IsOneOfQueryItemProvider(AdapterFactory adapterFactory) {
@@ -65,6 +67,7 @@ public class IsOneOfQueryItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,28 +84,30 @@ public class IsOneOfQueryItemProvider
 	 * This adds a property descriptor for the Expected EObjects feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addExpectedEObjectsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IsOneOfQuery_expectedEObjects_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_IsOneOfQuery_expectedEObjects_feature", "_UI_IsOneOfQuery_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 QueryPackage.Literals.IS_ONE_OF_QUERY__EXPECTED_EOBJECTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_IsOneOfQuery_expectedEObjects_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_IsOneOfQuery_expectedEObjects_feature", "_UI_IsOneOfQuery_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						QueryPackage.Literals.IS_ONE_OF_QUERY__EXPECTED_EOBJECTS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns IsOneOfQuery.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -114,11 +119,12 @@ public class IsOneOfQueryItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		IsOneOfQuery isOneOfQuery = (IsOneOfQuery)object;
+		IsOneOfQuery isOneOfQuery = (IsOneOfQuery) object;
 		return getString("_UI_IsOneOfQuery_type") + " " + isOneOfQuery.isCanHaveSideEffects(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
@@ -127,6 +133,7 @@ public class IsOneOfQueryItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -140,6 +147,7 @@ public class IsOneOfQueryItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,6 +159,7 @@ public class IsOneOfQueryItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel
 
 /**
  * Basic implementation allowing to add item to be shown.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class TabFolderModel extends AbstractPanelModel implements ITabFolderModel {
 
@@ -48,8 +48,9 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 	}
 
 	/**
-	 * 
+	 *
 	 */
+	@Override
 	public List<IPageModel> getChildren() {
 		return children;
 	}
@@ -57,14 +58,15 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 	/**
 	 * This default implementation return directly the child which is already of the appropriate type.
 	 */
+	@Override
 	public IPageModel createChildSashModel(Object child) {
 		// In this default implementation, the child is already of the appropriate type.
-		return (IPageModel)child;
+		return (IPageModel) child;
 	}
 
 	/**
 	 * Add a new model.
-	 * 
+	 *
 	 * @param newModel
 	 */
 	private void addItem(IPageModel newModel) {
@@ -74,7 +76,7 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 
 	/**
 	 * Add a model at the specified position.
-	 * 
+	 *
 	 * @param index
 	 * @param newModel
 	 */
@@ -85,7 +87,7 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 
 	/**
 	 * Remove the specified tab.
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -98,7 +100,7 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 
 	/**
 	 * Remove the specified tab.
-	 * 
+	 *
 	 * @param tabItem
 	 */
 	public void removeTab(IPageModel tabItem) {
@@ -109,26 +111,28 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 	/**
 	 * Move a tab inside the folder.
 	 * Moves the tab from the old position to the new position.
-	 * 
+	 *
 	 * @param oldIndex
-	 *        the position of the tab before the move.
+	 *            the position of the tab before the move.
 	 * @param newIndex
-	 *        the position of the tab after the move.
+	 *            the position of the tab after the move.
 	 */
 	public void moveTab(int oldIndex, int newIndex) {
 		int listSize = children.size();
-		if(newIndex >= listSize) {
+		if (newIndex >= listSize) {
 			newIndex = listSize - 1;
 		}
-		if(newIndex < 0) {
+		if (newIndex < 0) {
 			newIndex = 0;
 		}
 
-		if(oldIndex == newIndex)
+		if (oldIndex == newIndex) {
 			return;
+		}
 
-		if(listSize == 0)
+		if (listSize == 0) {
 			return;
+		}
 
 
 		// Move
@@ -140,7 +144,7 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 	/**
 	 * Add a new model.
 	 * Do not fire change Event
-	 * 
+	 *
 	 * @param newModel
 	 */
 	protected void doAddItem(IPageModel newModel) {
@@ -150,21 +154,22 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 	/**
 	 * Add a model at the specified position.
 	 * Do not fire change Event
-	 * 
+	 *
 	 * @param index
 	 * @param newModel
 	 */
 	protected void doAddItem(int index, IPageModel newModel) {
-		if(index > children.size() || index < 0)
+		if (index > children.size() || index < 0) {
 			children.add(newModel);
-		else
+		} else {
 			children.add(index, newModel);
+		}
 	}
 
 	/**
 	 * Remove the specified tab.
 	 * Do not fire change Event
-	 * 
+	 *
 	 * @param index
 	 * @return
 	 */
@@ -176,7 +181,7 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 
 	/**
 	 * Remove all tabs from the folder.
-	 * 
+	 *
 	 * @return A list of removed tabs.
 	 */
 	protected List<IPageModel> doRemoveAll() {
@@ -187,7 +192,7 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 
 	/**
 	 * Add all tabs to the folder.
-	 * 
+	 *
 	 * @param newTabs
 	 */
 	protected void doAddAllTab(List<IPageModel> newTabs) {
@@ -197,12 +202,12 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 	/**
 	 * Remove the specified tab.
 	 * Do not fire change Event
-	 * 
+	 *
 	 * @param tabItem
 	 */
 	protected void doRemoveTab(IPageModel tabItem) {
 		children.remove(tabItem);
-//		contentProvider.firePropertyChanged(new ContentEvent(ContentEvent.ADDED, this, tabItem));
+		// contentProvider.firePropertyChanged(new ContentEvent(ContentEvent.ADDED, this, tabItem));
 	}
 
 	/**
@@ -215,20 +220,22 @@ public class TabFolderModel extends AbstractPanelModel implements ITabFolderMode
 
 	/**
 	 * Get a folder by one of its tab.
-	 * 
+	 *
 	 * @param tabItem
-	 *        Item for which a folder is looked for. If the item is null, return
-	 *        the first folder encountered.
+	 *            Item for which a folder is looked for. If the item is null, return
+	 *            the first folder encountered.
 	 * @return The folder if it contains the item, or if item is null.
 	 */
 	@Override
 	protected TabFolderModel lookupTabFolder(IPageModel tabItem) {
 
-		if(tabItem == null)
+		if (tabItem == null) {
 			return this;
+		}
 
-		if(children.contains(tabItem))
+		if (children.contains(tabItem)) {
 			return this;
+		}
 		// not found
 		return null;
 	}

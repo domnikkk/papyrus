@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenFactory
  * @model kind="package"
  * @generated
@@ -34,7 +34,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "domaincontextcodegen";
@@ -43,7 +43,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/2010/domaincontextcodegen";
@@ -52,7 +52,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "domaincontextcodegen";
@@ -61,7 +61,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	DomaincontextcodegenPackage eINSTANCE = org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl.init();
@@ -70,7 +70,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.DomainContextImpl <em>Domain Context</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomainContextImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getDomainContext()
 	 * @generated
@@ -81,7 +81,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -91,7 +91,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Handler Project Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -101,7 +101,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>IClient Context ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -111,7 +111,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -121,7 +121,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Specialization Of</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -131,7 +131,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Type ID Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -141,7 +141,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Type Name Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +151,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Types</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +161,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Helper Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,7 +171,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Advices</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +181,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -191,7 +191,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Gen Handlers</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -201,7 +201,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Generated Source Folder</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -211,7 +211,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Menu</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -221,7 +221,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,7 +231,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Domain Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -241,7 +241,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypesImpl <em>Element Types</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypesImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementTypes()
 	 * @generated
@@ -252,7 +252,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -262,7 +262,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Domain</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -272,7 +272,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Element Types</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -282,7 +282,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeImpl <em>Element Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementType()
 	 * @generated
@@ -293,7 +293,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -303,7 +303,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Helper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -313,7 +313,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -323,7 +323,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -333,7 +333,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Element Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -343,7 +343,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.MetaClassTypeImpl <em>Meta Class Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.MetaClassTypeImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getMetaClassType()
 	 * @generated
@@ -354,7 +354,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -364,7 +364,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Helper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -374,7 +374,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -384,7 +384,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -394,7 +394,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Meta Class</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -404,7 +404,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Meta Class Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -414,7 +414,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.SpecializationTypeImpl <em>Specialization Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.SpecializationTypeImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getSpecializationType()
 	 * @generated
@@ -425,7 +425,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -435,7 +435,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Helper</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -445,7 +445,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -455,7 +455,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -465,7 +465,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -475,7 +475,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Matcher</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -485,7 +485,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Gen Matcher</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -495,7 +495,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Gen Helper</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -505,7 +505,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Specialization Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -515,7 +515,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.AdviceImpl <em>Advice</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.AdviceImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getAdvice()
 	 * @generated
@@ -526,7 +526,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Advice ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -536,7 +536,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -546,7 +546,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Advice Path</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -556,7 +556,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Inheritance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -566,7 +566,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Advice</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -577,7 +577,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingsImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementTypeBindings()
 	 * @generated
@@ -588,7 +588,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Client Context ID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -598,7 +598,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Bindings</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -608,7 +608,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Element Type Bindings</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -618,7 +618,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.AdviceBindingImpl <em>Advice Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.AdviceBindingImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getAdviceBinding()
 	 * @generated
@@ -629,7 +629,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.BindingImpl <em>Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.BindingImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getBinding()
 	 * @generated
@@ -640,7 +640,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -650,7 +650,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -660,7 +660,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -670,7 +670,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingImpl <em>Element Type Binding</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementTypeBinding()
 	 * @generated
@@ -681,7 +681,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -691,7 +691,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -701,7 +701,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -711,7 +711,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Element Type Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -721,7 +721,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Owner</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -731,7 +731,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Pattern</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -741,7 +741,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -751,7 +751,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Advice Binding</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -761,7 +761,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenHandlersImpl <em>Gen Handlers</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.GenHandlersImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getGenHandlers()
 	 * @generated
@@ -772,7 +772,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Handler Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -782,7 +782,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Super Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -792,7 +792,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Super Class Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -802,7 +802,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Type Enumerator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -812,7 +812,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Type Enumerator Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -822,7 +822,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Visible Create Child Handlers</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -832,7 +832,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Parent Domain Create Child</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -842,7 +842,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Create Child Menu Location URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -852,7 +852,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Gen Handlers</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -862,7 +862,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenMatcherImpl <em>Gen Matcher</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.GenMatcherImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getGenMatcher()
 	 * @generated
@@ -873,7 +873,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -883,7 +883,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Gen Matcher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -893,7 +893,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenHelperImpl <em>Gen Helper</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.GenHelperImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getGenHelper()
 	 * @generated
@@ -904,7 +904,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -914,7 +914,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Gen Helper</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -925,7 +925,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotyped Element Matcher</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.StereotypedElementMatcherImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getStereotypedElementMatcher()
 	 * @generated
@@ -936,7 +936,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -946,7 +946,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -956,7 +956,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -966,7 +966,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Element Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -976,7 +976,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Element Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -986,7 +986,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Stereotyped Element Matcher</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -997,7 +997,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotyped Element Helper</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.StereotypedElementHelperImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getStereotypedElementHelper()
 	 * @generated
@@ -1008,7 +1008,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1018,7 +1018,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1028,7 +1028,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Stereotype Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1038,7 +1038,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Element Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1048,7 +1048,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Element Package</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1058,7 +1058,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Stereotyped Element Helper</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1068,7 +1068,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.MenuDeclarationImpl <em>Menu Declaration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.MenuDeclarationImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getMenuDeclaration()
 	 * @generated
@@ -1079,7 +1079,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Location URI</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1089,7 +1089,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Commands</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1099,7 +1099,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Menu Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1109,7 +1109,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.CommandDeclarationImpl <em>Command Declaration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.CommandDeclarationImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getCommandDeclaration()
 	 * @generated
@@ -1120,7 +1120,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Commands</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1130,7 +1130,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Command Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1140,7 +1140,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.CommandImpl <em>Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.CommandImpl
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getCommand()
 	 * @generated
@@ -1151,7 +1151,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Element Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1161,7 +1161,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The feature id for the '<em><b>Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1171,7 +1171,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The number of structural features of the '<em>Command</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1181,7 +1181,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.domaincontextcodegen.InheritanceKind <em>Inheritance Kind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.domaincontextcodegen.InheritanceKind
 	 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getInheritanceKind()
 	 * @generated
@@ -1192,7 +1192,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext <em>Domain Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Domain Context</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext
 	 * @generated
@@ -1204,7 +1204,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Type Project Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Type Project Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getTypeProjectName()
 	 * @see #getDomainContext()
@@ -1217,7 +1217,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Handler Project Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Handler Project Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getHandlerProjectName()
 	 * @see #getDomainContext()
@@ -1230,7 +1230,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>IClient Context ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>IClient Context ID</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getIClientContextID()
 	 * @see #getDomainContext()
@@ -1242,7 +1242,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getMetamodel <em>Metamodel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Metamodel</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getMetamodel()
 	 * @see #getDomainContext()
@@ -1255,7 +1255,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Specialization Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Specialization Of</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getSpecializationOf()
 	 * @see #getDomainContext()
@@ -1268,7 +1268,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Element Type ID Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Element Type ID Prefix</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getElementTypeIDPrefix()
 	 * @see #getDomainContext()
@@ -1281,7 +1281,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Element Type Name Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Element Type Name Prefix</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getElementTypeNamePrefix()
 	 * @see #getDomainContext()
@@ -1294,7 +1294,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Element Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Element Types</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getElementTypes()
 	 * @see #getDomainContext()
@@ -1307,7 +1307,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Default Helper Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Default Helper Path</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getDefaultHelperPath()
 	 * @see #getDomainContext()
@@ -1320,7 +1320,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Advices</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Advices</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getAdvices()
 	 * @see #getDomainContext()
@@ -1333,7 +1333,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Bindings</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getBindings()
 	 * @see #getDomainContext()
@@ -1346,7 +1346,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Gen Handlers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Gen Handlers</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getGenHandlers()
 	 * @see #getDomainContext()
@@ -1359,7 +1359,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Generated Source Folder</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Generated Source Folder</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getGeneratedSourceFolder()
 	 * @see #getDomainContext()
@@ -1372,7 +1372,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Menu</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Menu</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getMenu()
 	 * @see #getDomainContext()
@@ -1385,7 +1385,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Command</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext#getCommand()
 	 * @see #getDomainContext()
@@ -1397,7 +1397,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypes <em>Element Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Element Types</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypes
 	 * @generated
@@ -1409,7 +1409,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Types</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypes#getTypes()
 	 * @see #getElementTypes()
@@ -1421,7 +1421,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypes#getDomain <em>Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Domain</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypes#getDomain()
 	 * @see #getElementTypes()
@@ -1433,7 +1433,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType <em>Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Element Type</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType
 	 * @generated
@@ -1444,7 +1444,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType#getName()
 	 * @see #getElementType()
@@ -1456,7 +1456,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getHelper <em>Helper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Helper</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType#getHelper()
 	 * @see #getElementType()
@@ -1468,7 +1468,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Owner</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType#getOwner()
 	 * @see #getElementType()
@@ -1480,7 +1480,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getIcon <em>Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Icon</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType#getIcon()
 	 * @see #getElementType()
@@ -1492,7 +1492,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.MetaClassType <em>Meta Class Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Meta Class Type</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MetaClassType
 	 * @generated
@@ -1503,7 +1503,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.MetaClassType#getMetaClass <em>Meta Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Meta Class</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MetaClassType#getMetaClass()
 	 * @see #getMetaClassType()
@@ -1515,7 +1515,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType <em>Specialization Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Specialization Type</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.SpecializationType
 	 * @generated
@@ -1526,7 +1526,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Ref</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.SpecializationType#getRef()
 	 * @see #getSpecializationType()
@@ -1538,7 +1538,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType#getMatcher <em>Matcher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Matcher</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.SpecializationType#getMatcher()
 	 * @see #getSpecializationType()
@@ -1551,7 +1551,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Gen Matcher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Gen Matcher</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.SpecializationType#getGenMatcher()
 	 * @see #getSpecializationType()
@@ -1564,7 +1564,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Gen Helper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Gen Helper</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.SpecializationType#getGenHelper()
 	 * @see #getSpecializationType()
@@ -1576,7 +1576,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.Advice <em>Advice</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Advice</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Advice
 	 * @generated
@@ -1587,7 +1587,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getAdviceID <em>Advice ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Advice ID</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Advice#getAdviceID()
 	 * @see #getAdvice()
@@ -1599,7 +1599,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Ref</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Advice#getRef()
 	 * @see #getAdvice()
@@ -1611,7 +1611,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getAdvicePath <em>Advice Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Advice Path</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Advice#getAdvicePath()
 	 * @see #getAdvice()
@@ -1623,7 +1623,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.Advice#getInheritance <em>Inheritance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Inheritance</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Advice#getInheritance()
 	 * @see #getAdvice()
@@ -1635,7 +1635,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings <em>Element Type Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Element Type Bindings</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings
 	 * @generated
@@ -1647,7 +1647,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Client Context ID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Client Context ID</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings#getClientContextID()
 	 * @see #getElementTypeBindings()
@@ -1660,7 +1660,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Bindings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Bindings</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings#getBindings()
 	 * @see #getElementTypeBindings()
@@ -1672,7 +1672,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.AdviceBinding <em>Advice Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Advice Binding</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.AdviceBinding
 	 * @generated
@@ -1683,7 +1683,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.AdviceBinding#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Ref</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.AdviceBinding#getRef()
 	 * @see #getAdviceBinding()
@@ -1695,7 +1695,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.Binding <em>Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Binding</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Binding
 	 * @generated
@@ -1706,7 +1706,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the container reference '{@link org.eclipse.papyrus.domaincontextcodegen.Binding#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Owner</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Binding#getOwner()
 	 * @see #getBinding()
@@ -1718,7 +1718,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.Binding#getPattern <em>Pattern</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Pattern</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Binding#getPattern()
 	 * @see #getBinding()
@@ -1730,7 +1730,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding <em>Element Type Binding</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Element Type Binding</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding
 	 * @generated
@@ -1741,7 +1741,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Ref</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding#getRef()
 	 * @see #getElementTypeBinding()
@@ -1753,7 +1753,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.GenHandlers <em>Gen Handlers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Gen Handlers</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers
 	 * @generated
@@ -1765,7 +1765,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Handler Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Handler Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getHandlerPackage()
 	 * @see #getGenHandlers()
@@ -1777,7 +1777,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getSuperClass <em>Super Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Super Class</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getSuperClass()
 	 * @see #getGenHandlers()
@@ -1790,7 +1790,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Super Class Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Super Class Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getSuperClassPackage()
 	 * @see #getGenHandlers()
@@ -1803,7 +1803,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Element Type Enumerator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Element Type Enumerator</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getElementTypeEnumerator()
 	 * @see #getGenHandlers()
@@ -1816,7 +1816,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Element Type Enumerator Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Element Type Enumerator Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getElementTypeEnumeratorPackage()
 	 * @see #getGenHandlers()
@@ -1829,7 +1829,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Visible Create Child Handlers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Visible Create Child Handlers</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getVisibleCreateChildHandlers()
 	 * @see #getGenHandlers()
@@ -1842,7 +1842,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Parent Domain Create Child</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Parent Domain Create Child</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getParentDomainCreateChild()
 	 * @see #getGenHandlers()
@@ -1855,7 +1855,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Create Child Menu Location URI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Create Child Menu Location URI</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers#getCreateChildMenuLocationURI()
 	 * @see #getGenHandlers()
@@ -1867,7 +1867,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.GenMatcher <em>Gen Matcher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Gen Matcher</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenMatcher
 	 * @generated
@@ -1878,7 +1878,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.GenMatcher#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenMatcher#getName()
 	 * @see #getGenMatcher()
@@ -1890,7 +1890,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.GenHelper <em>Gen Helper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Gen Helper</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHelper
 	 * @generated
@@ -1901,7 +1901,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.GenHelper#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHelper#getName()
 	 * @see #getGenHelper()
@@ -1914,7 +1914,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotyped Element Matcher</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stereotyped Element Matcher</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher
 	 * @generated
@@ -1926,7 +1926,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotype Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getStereotypeName()
 	 * @see #getStereotypedElementMatcher()
@@ -1939,7 +1939,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotype Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getStereotypePackage()
 	 * @see #getStereotypedElementMatcher()
@@ -1952,7 +1952,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Base Element Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Base Element Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getBaseElementName()
 	 * @see #getStereotypedElementMatcher()
@@ -1965,7 +1965,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Base Element Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Base Element Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher#getBaseElementPackage()
 	 * @see #getStereotypedElementMatcher()
@@ -1978,7 +1978,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotyped Element Helper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Stereotyped Element Helper</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper
 	 * @generated
@@ -1990,7 +1990,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotype Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper#getStereotypeName()
 	 * @see #getStereotypedElementHelper()
@@ -2003,7 +2003,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Stereotype Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Stereotype Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper#getStereotypePackage()
 	 * @see #getStereotypedElementHelper()
@@ -2016,7 +2016,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Base Element Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Base Element Name</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper#getBaseElementName()
 	 * @see #getStereotypedElementHelper()
@@ -2029,7 +2029,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Base Element Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Base Element Package</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper#getBaseElementPackage()
 	 * @see #getStereotypedElementHelper()
@@ -2041,7 +2041,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration <em>Menu Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Menu Declaration</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration
 	 * @generated
@@ -2053,7 +2053,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Location URI</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Location URI</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration#getLocationURI()
 	 * @see #getMenuDeclaration()
@@ -2062,11 +2062,10 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	EAttribute getMenuDeclaration_LocationURI();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration#getCommands <em>Commands</em>}
-	 * '.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration#getCommands <em>Commands</em>} '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Commands</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration#getCommands()
 	 * @see #getMenuDeclaration()
@@ -2078,7 +2077,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration <em>Command Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Command Declaration</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration
 	 * @generated
@@ -2090,7 +2089,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <em>Commands</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Commands</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration#getCommands()
 	 * @see #getCommandDeclaration()
@@ -2102,7 +2101,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.domaincontextcodegen.Command <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Command</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Command
 	 * @generated
@@ -2113,7 +2112,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.domaincontextcodegen.Command#getElementType <em>Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Element Type</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Command#getElementType()
 	 * @see #getCommand()
@@ -2125,7 +2124,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.domaincontextcodegen.Command#getIcon <em>Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Icon</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Command#getIcon()
 	 * @see #getCommand()
@@ -2137,7 +2136,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.domaincontextcodegen.InheritanceKind <em>Inheritance Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Inheritance Kind</em>'.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.InheritanceKind
 	 * @generated
@@ -2148,7 +2147,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2164,7 +2163,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2173,7 +2172,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.DomainContextImpl <em>Domain Context</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomainContextImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getDomainContext()
 		 * @generated
@@ -2184,7 +2183,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Project Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__TYPE_PROJECT_NAME = eINSTANCE.getDomainContext_TypeProjectName();
@@ -2193,7 +2192,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Handler Project Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__HANDLER_PROJECT_NAME = eINSTANCE.getDomainContext_HandlerProjectName();
@@ -2202,7 +2201,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>IClient Context ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__ICLIENT_CONTEXT_ID = eINSTANCE.getDomainContext_IClientContextID();
@@ -2211,7 +2210,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Metamodel</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__METAMODEL = eINSTANCE.getDomainContext_Metamodel();
@@ -2220,7 +2219,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Specialization Of</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__SPECIALIZATION_OF = eINSTANCE.getDomainContext_SpecializationOf();
@@ -2229,7 +2228,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Type ID Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__ELEMENT_TYPE_ID_PREFIX = eINSTANCE.getDomainContext_ElementTypeIDPrefix();
@@ -2238,7 +2237,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Type Name Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__ELEMENT_TYPE_NAME_PREFIX = eINSTANCE.getDomainContext_ElementTypeNamePrefix();
@@ -2247,7 +2246,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Types</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__ELEMENT_TYPES = eINSTANCE.getDomainContext_ElementTypes();
@@ -2256,7 +2255,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Helper Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__DEFAULT_HELPER_PATH = eINSTANCE.getDomainContext_DefaultHelperPath();
@@ -2265,7 +2264,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Advices</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__ADVICES = eINSTANCE.getDomainContext_Advices();
@@ -2274,7 +2273,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__BINDINGS = eINSTANCE.getDomainContext_Bindings();
@@ -2283,7 +2282,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Gen Handlers</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__GEN_HANDLERS = eINSTANCE.getDomainContext_GenHandlers();
@@ -2292,7 +2291,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generated Source Folder</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DOMAIN_CONTEXT__GENERATED_SOURCE_FOLDER = eINSTANCE.getDomainContext_GeneratedSourceFolder();
@@ -2301,7 +2300,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Menu</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__MENU = eINSTANCE.getDomainContext_Menu();
@@ -2310,7 +2309,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DOMAIN_CONTEXT__COMMAND = eINSTANCE.getDomainContext_Command();
@@ -2319,7 +2318,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypesImpl <em>Element Types</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypesImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementTypes()
 		 * @generated
@@ -2330,7 +2329,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT_TYPES__TYPES = eINSTANCE.getElementTypes_Types();
@@ -2339,7 +2338,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Domain</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT_TYPES__DOMAIN = eINSTANCE.getElementTypes_Domain();
@@ -2348,7 +2347,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeImpl <em>Element Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementType()
 		 * @generated
@@ -2359,7 +2358,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ELEMENT_TYPE__NAME = eINSTANCE.getElementType_Name();
@@ -2368,7 +2367,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Helper</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ELEMENT_TYPE__HELPER = eINSTANCE.getElementType_Helper();
@@ -2377,7 +2376,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT_TYPE__OWNER = eINSTANCE.getElementType_Owner();
@@ -2386,7 +2385,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ELEMENT_TYPE__ICON = eINSTANCE.getElementType_Icon();
@@ -2395,7 +2394,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.MetaClassTypeImpl <em>Meta Class Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.MetaClassTypeImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getMetaClassType()
 		 * @generated
@@ -2406,7 +2405,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Meta Class</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference META_CLASS_TYPE__META_CLASS = eINSTANCE.getMetaClassType_MetaClass();
@@ -2416,7 +2415,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.SpecializationTypeImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getSpecializationType()
 		 * @generated
@@ -2427,7 +2426,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SPECIALIZATION_TYPE__REF = eINSTANCE.getSpecializationType_Ref();
@@ -2436,7 +2435,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Matcher</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SPECIALIZATION_TYPE__MATCHER = eINSTANCE.getSpecializationType_Matcher();
@@ -2445,7 +2444,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Gen Matcher</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SPECIALIZATION_TYPE__GEN_MATCHER = eINSTANCE.getSpecializationType_GenMatcher();
@@ -2454,7 +2453,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Gen Helper</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference SPECIALIZATION_TYPE__GEN_HELPER = eINSTANCE.getSpecializationType_GenHelper();
@@ -2463,7 +2462,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.AdviceImpl <em>Advice</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.AdviceImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getAdvice()
 		 * @generated
@@ -2474,7 +2473,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Advice ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ADVICE__ADVICE_ID = eINSTANCE.getAdvice_AdviceID();
@@ -2483,7 +2482,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ADVICE__REF = eINSTANCE.getAdvice_Ref();
@@ -2492,7 +2491,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Advice Path</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ADVICE__ADVICE_PATH = eINSTANCE.getAdvice_AdvicePath();
@@ -2501,7 +2500,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Inheritance</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ADVICE__INHERITANCE = eINSTANCE.getAdvice_Inheritance();
@@ -2511,7 +2510,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * <em>Element Type Bindings</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingsImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementTypeBindings()
 		 * @generated
@@ -2522,7 +2521,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Client Context ID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID = eINSTANCE.getElementTypeBindings_ClientContextID();
@@ -2531,7 +2530,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Bindings</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT_TYPE_BINDINGS__BINDINGS = eINSTANCE.getElementTypeBindings_Bindings();
@@ -2540,7 +2539,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.AdviceBindingImpl <em>Advice Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.AdviceBindingImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getAdviceBinding()
 		 * @generated
@@ -2551,7 +2550,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ADVICE_BINDING__REF = eINSTANCE.getAdviceBinding_Ref();
@@ -2560,7 +2559,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.BindingImpl <em>Binding</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.BindingImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getBinding()
 		 * @generated
@@ -2571,7 +2570,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference BINDING__OWNER = eINSTANCE.getBinding_Owner();
@@ -2580,17 +2579,16 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Pattern</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute BINDING__PATTERN = eINSTANCE.getBinding_Pattern();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingImpl <em>Element Type Binding</em>}
-		 * ' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingImpl <em>Element Type Binding</em>} ' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getElementTypeBinding()
 		 * @generated
@@ -2601,7 +2599,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT_TYPE_BINDING__REF = eINSTANCE.getElementTypeBinding_Ref();
@@ -2610,7 +2608,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenHandlersImpl <em>Gen Handlers</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.GenHandlersImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getGenHandlers()
 		 * @generated
@@ -2621,7 +2619,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Handler Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HANDLERS__HANDLER_PACKAGE = eINSTANCE.getGenHandlers_HandlerPackage();
@@ -2630,7 +2628,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Super Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HANDLERS__SUPER_CLASS = eINSTANCE.getGenHandlers_SuperClass();
@@ -2639,7 +2637,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Super Class Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HANDLERS__SUPER_CLASS_PACKAGE = eINSTANCE.getGenHandlers_SuperClassPackage();
@@ -2648,7 +2646,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Type Enumerator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR = eINSTANCE.getGenHandlers_ElementTypeEnumerator();
@@ -2657,7 +2655,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Type Enumerator Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR_PACKAGE = eINSTANCE.getGenHandlers_ElementTypeEnumeratorPackage();
@@ -2666,7 +2664,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Visible Create Child Handlers</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GEN_HANDLERS__VISIBLE_CREATE_CHILD_HANDLERS = eINSTANCE.getGenHandlers_VisibleCreateChildHandlers();
@@ -2675,7 +2673,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Parent Domain Create Child</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GEN_HANDLERS__PARENT_DOMAIN_CREATE_CHILD = eINSTANCE.getGenHandlers_ParentDomainCreateChild();
@@ -2684,7 +2682,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Create Child Menu Location URI</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HANDLERS__CREATE_CHILD_MENU_LOCATION_URI = eINSTANCE.getGenHandlers_CreateChildMenuLocationURI();
@@ -2693,7 +2691,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenMatcherImpl <em>Gen Matcher</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.GenMatcherImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getGenMatcher()
 		 * @generated
@@ -2704,7 +2702,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_MATCHER__NAME = eINSTANCE.getGenMatcher_Name();
@@ -2713,7 +2711,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.GenHelperImpl <em>Gen Helper</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.GenHelperImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getGenHelper()
 		 * @generated
@@ -2724,7 +2722,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GEN_HELPER__NAME = eINSTANCE.getGenHelper_Name();
@@ -2734,7 +2732,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * <em>Stereotyped Element Matcher</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.StereotypedElementMatcherImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getStereotypedElementMatcher()
 		 * @generated
@@ -2745,7 +2743,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_MATCHER__STEREOTYPE_NAME = eINSTANCE.getStereotypedElementMatcher_StereotypeName();
@@ -2754,7 +2752,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_MATCHER__STEREOTYPE_PACKAGE = eINSTANCE.getStereotypedElementMatcher_StereotypePackage();
@@ -2763,7 +2761,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Element Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_MATCHER__BASE_ELEMENT_NAME = eINSTANCE.getStereotypedElementMatcher_BaseElementName();
@@ -2772,7 +2770,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Element Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_MATCHER__BASE_ELEMENT_PACKAGE = eINSTANCE.getStereotypedElementMatcher_BaseElementPackage();
@@ -2782,7 +2780,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * <em>Stereotyped Element Helper</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.StereotypedElementHelperImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getStereotypedElementHelper()
 		 * @generated
@@ -2793,7 +2791,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_NAME = eINSTANCE.getStereotypedElementHelper_StereotypeName();
@@ -2802,7 +2800,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stereotype Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_PACKAGE = eINSTANCE.getStereotypedElementHelper_StereotypePackage();
@@ -2811,7 +2809,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Element Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_HELPER__BASE_ELEMENT_NAME = eINSTANCE.getStereotypedElementHelper_BaseElementName();
@@ -2820,7 +2818,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Element Package</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STEREOTYPED_ELEMENT_HELPER__BASE_ELEMENT_PACKAGE = eINSTANCE.getStereotypedElementHelper_BaseElementPackage();
@@ -2830,7 +2828,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.MenuDeclarationImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getMenuDeclaration()
 		 * @generated
@@ -2841,7 +2839,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Location URI</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute MENU_DECLARATION__LOCATION_URI = eINSTANCE.getMenuDeclaration_LocationURI();
@@ -2850,7 +2848,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Commands</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference MENU_DECLARATION__COMMANDS = eINSTANCE.getMenuDeclaration_Commands();
@@ -2860,7 +2858,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.CommandDeclarationImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getCommandDeclaration()
 		 * @generated
@@ -2871,7 +2869,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Commands</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMMAND_DECLARATION__COMMANDS = eINSTANCE.getCommandDeclaration_Commands();
@@ -2880,7 +2878,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.impl.CommandImpl <em>Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.CommandImpl
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getCommand()
 		 * @generated
@@ -2891,7 +2889,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Element Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMMAND__ELEMENT_TYPE = eINSTANCE.getCommand_ElementType();
@@ -2900,7 +2898,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Icon</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute COMMAND__ICON = eINSTANCE.getCommand_Icon();
@@ -2909,7 +2907,7 @@ public interface DomaincontextcodegenPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.domaincontextcodegen.InheritanceKind <em>Inheritance Kind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.domaincontextcodegen.InheritanceKind
 		 * @see org.eclipse.papyrus.domaincontextcodegen.impl.DomaincontextcodegenPackageImpl#getInheritanceKind()
 		 * @generated
@@ -2918,4 +2916,4 @@ public interface DomaincontextcodegenPackage extends EPackage {
 
 	}
 
-} //DomaincontextcodegenPackage
+} // DomaincontextcodegenPackage

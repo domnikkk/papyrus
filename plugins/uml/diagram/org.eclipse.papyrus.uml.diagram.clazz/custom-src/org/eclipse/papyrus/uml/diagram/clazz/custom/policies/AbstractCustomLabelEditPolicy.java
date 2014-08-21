@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Nizar GUEDIDI (CEA LIST) - Update getUMLElement()
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.policies;
 
@@ -39,9 +39,10 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -66,9 +67,10 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -87,7 +89,7 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 
 	/**
 	 * Remove the others listeners
-	 * 
+	 *
 	 */
 	protected void removeAdditionalListeners() {
 		// default implementation does nothing
@@ -95,7 +97,7 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
@@ -108,7 +110,7 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 
 	/**
 	 * Returns the uml element controlled by the host edit part
-	 * 
+	 *
 	 * @return the uml element controlled by the host edit part
 	 */
 	protected Element getUMLElement() {
@@ -121,7 +123,7 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {

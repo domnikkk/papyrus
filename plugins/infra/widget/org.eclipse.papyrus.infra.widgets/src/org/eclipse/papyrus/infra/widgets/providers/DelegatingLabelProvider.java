@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,6 +30,7 @@ public class DelegatingLabelProvider
 		this.delegate = delegate;
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		Image result = customGetImage(element);
 		if (result == null) {
@@ -39,9 +40,8 @@ public class DelegatingLabelProvider
 	}
 
 	/**
-	 * Overridden in subclasses to provide custom images for certain
-	 * {@code element}s.
-	 * 
+	 * Overridden in subclasses to provide custom images for certain {@code element}s.
+	 *
 	 * @param element
 	 *            an element
 	 * @return the custom image, or {@code null} to delegate
@@ -54,6 +54,7 @@ public class DelegatingLabelProvider
 		return delegate.getImage(element);
 	}
 
+	@Override
 	public String getText(Object element) {
 		String result = customGetText(element);
 		if (result == null) {
@@ -63,9 +64,8 @@ public class DelegatingLabelProvider
 	}
 
 	/**
-	 * Overridden in subclasses to provide custom text for certain
-	 * {@code element}s.
-	 * 
+	 * Overridden in subclasses to provide custom text for certain {@code element}s.
+	 *
 	 * @param element
 	 *            an element
 	 * @return the custom text, or {@code null} to delegate
@@ -78,14 +78,17 @@ public class DelegatingLabelProvider
 		return delegate.getText(element);
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return delegate.isLabelProperty(element, property);
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		delegate.addListener(listener);
 	}
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		delegate.removeListener(listener);
 	}
@@ -93,6 +96,7 @@ public class DelegatingLabelProvider
 	/**
 	 * Disposes my delegate.
 	 */
+	@Override
 	public void dispose() {
 		delegate.dispose();
 	}

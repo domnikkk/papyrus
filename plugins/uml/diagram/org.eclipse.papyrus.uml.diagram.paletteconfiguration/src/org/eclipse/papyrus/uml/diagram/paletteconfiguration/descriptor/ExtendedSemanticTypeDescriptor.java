@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class ExtendedSemanticTypeDescriptor implements ISpecializationTypeDescri
 		Bundle bundle = Activator.getDefault().getBundle();
 		URL result = bundle.getEntry("/icons/elementTypeIcon.gif");
 
-		if(result == null) {
+		if (result == null) {
 			try {
 				result = new URL("/icons/elementTypeIcon.gif");
 			} catch (MalformedURLException e) {
@@ -108,5 +108,5 @@ public class ExtendedSemanticTypeDescriptor implements ISpecializationTypeDescri
 	public IEditHelperAdvice getEditHelperAdvice() {
 		return new ExtendedEditHelperAdvice();
 	}
-	
+
 }

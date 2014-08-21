@@ -68,13 +68,13 @@ public class NamespaceToConstraintDropStrategy extends TransactionalDropStrategy
 	}
 
 	public void setOptions(Map<String, Object> options) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public Command doGetCommand(Request request, EditPart targetEditPart) {
 
-		if(request instanceof CreateAspectUnspecifiedTypeConnectionRequest) {
+		if (request instanceof CreateAspectUnspecifiedTypeConnectionRequest) {
 			return null;
 		}
 		CompositeCommand cc = new CompositeCommand(getLabel());
@@ -82,15 +82,15 @@ public class NamespaceToConstraintDropStrategy extends TransactionalDropStrategy
 		EObject semanticElement = getTargetSemanticElement(targetEditPart);
 
 		List<EObject> sourceElements = getSourceEObjects(request);
-		if(sourceElements.size() != 1) {
+		if (sourceElements.size() != 1) {
 			return null;
 		}
-		if(!(semanticElement instanceof Constraint)) {
+		if (!(semanticElement instanceof Constraint)) {
 			return null;
 		}
 
 		Object sourceElement = sourceElements.get(0);
-		if(sourceElement instanceof Namespace) {
+		if (sourceElement instanceof Namespace) {
 
 			SetRequest setContextRequest = new SetRequest(semanticElement, constraintContext_feature, sourceElement);
 			SetValueCommand setContextCommand = new SetValueCommand(setContextRequest);

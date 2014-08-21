@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST, LIFL, and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,14 +29,14 @@ import org.eclipse.ui.part.EditorPart;
 
 /**
  * Base editor that can be subclassed to provide a multi page editor with sash windows.
- * 
+ *
  * @author dumoulin
  */
 public abstract class AbstractMultiPageSashEditor extends EditorPart implements IMultiPageEditorPart, IMultiEditorManager {
 
 	/** The parent composite of my sash container. */
 	private Composite parentComposite;
-	
+
 	/** The pageProvider */
 	private ISashWindowsContentProvider pageProvider;
 
@@ -55,11 +55,11 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 
 	/**
 	 * get the contentProvider. Create it if necessary.
-	 * 
+	 *
 	 * @return
 	 */
 	protected ISashWindowsContentProvider getContentProvider() {
-		if(pageProvider == null) {
+		if (pageProvider == null) {
 			pageProvider = createPageProvider();
 		}
 
@@ -68,11 +68,11 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 
 	/**
 	 * Set the contentProvider if not set. If it is already set, this method do not change it.
-	 * 
+	 *
 	 * @param contentProvider
 	 */
 	protected void setContentProvider(ISashWindowsContentProvider contentProvider) {
-		if(pageProvider == null) {
+		if (pageProvider == null) {
 			pageProvider = contentProvider;
 		}
 	}
@@ -80,7 +80,7 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	/**
 	 * Create the provider.
 	 * Subclass must implements this method. It should return the provider used by the editor.
-	 * 
+	 *
 	 */
 	abstract protected ISashWindowsContentProvider createPageProvider();
 
@@ -93,11 +93,11 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	 * <p>
 	 * Subclasses may extend or reimplement this method.
 	 * </p>
-	 * 
+	 *
 	 * @copiedfrom org.eclipse.ui.part.MultiPageEditorPart.handlePropertyChange(int)
-	 * 
+	 *
 	 * @param propertyId
-	 *        the id of the property that changed
+	 *            the id of the property that changed
 	 */
 	protected void handlePropertyChange(int propertyId) {
 		firePropertyChange(propertyId);
@@ -107,14 +107,14 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	 * The <code>MultiPageEditorPart</code> implementation of this <code>IEditorPart</code> method sets its site to the given
 	 * site, its input to the given input, and the site's selection provider to a <code>MultiPageSelectionProvider</code>.
 	 * Subclasses may extend this method.
-	 * 
+	 *
 	 * @copiedfrom org.eclipse.ui.part.MultiPageEditorPart
 	 * @param site
-	 *        The site for which this part is being created; must not be <code>null</code>.
+	 *            The site for which this part is being created; must not be <code>null</code>.
 	 * @param input
-	 *        The input on which this editor should be created; must not be <code>null</code>.
+	 *            The input on which this editor should be created; must not be <code>null</code>.
 	 * @throws PartInitException
-	 *         If the initialization of the part fails -- currently never.
+	 *             If the initialization of the part fails -- currently never.
 	 */
 	@Override
 	public void init(IEditorSite site, IEditorInput input) throws PartInitException {
@@ -128,9 +128,9 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	@Override
 	public void createPartControl(Composite parent) {
 		parentComposite = parent;
-		
+
 		getSite().setSelectionProvider(new MultiPageSelectionProvider(this));
-		
+
 		activate();
 	}
 
@@ -161,18 +161,18 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 
 		// Could be deactivated by a call from dispose().
 		// In this case, the tabsSynchronizer can already be null, because no activation was done.
-		if(tabsSynchronizer == null) {
+		if (tabsSynchronizer == null) {
 			return;
 		}
 		tabsSynchronizer.dispose();
 		tabsSynchronizer = null;
 
-		if(tabMouseEventListener != null) {
+		if (tabMouseEventListener != null) {
 			tabMouseEventListener.dispose(sashContainer);
 			tabMouseEventListener = null;
 		}
-		
-		if(sashContainer != null) {
+
+		if (sashContainer != null) {
 			sashContainer.dispose();
 		}
 		pageProvider = null;
@@ -180,15 +180,15 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 
 	/**
 	 * Dispose the Editor. Also dispose the sashsystem.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
 		deactivate();
-		
-		//The selection provider keeps a reference to "this". It is not disposed.
+
+		// The selection provider keeps a reference to "this". It is not disposed.
 		getSite().setSelectionProvider(null);
 
 		super.dispose();
@@ -200,6 +200,7 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	protected void refreshTabs() {
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				doRefreshTabs();
 			}
@@ -207,7 +208,7 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	}
 
 	private void doRefreshTabs() {
-		if(sashContainer != null) {
+		if (sashContainer != null) {
 			sashContainer.refreshTabs();
 		}
 	}
@@ -215,32 +216,32 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	/**
 	 * If there is an adapter registered against the subclass of MultiPageEditorPart return that. Otherwise, delegate to the
 	 * internal editor.
-	 * 
+	 *
 	 * @copiedfrom org.eclipse.ui.part.MultiPageEditorPart
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.WorkbenchPart#getAdapter(java.lang.Class)
 	 */
 	@Override
 	public Object getAdapter(Class adapter) {
 
 		// Get the content provider if requested.
-		if(ISashWindowsContentProvider.class == adapter) {
+		if (ISashWindowsContentProvider.class == adapter) {
 			return getContentProvider();
 		}
 
 		// Get the content provider if requested.
-		if(ISashWindowsContainer.class == adapter) {
+		if (ISashWindowsContainer.class == adapter) {
 			return sashContainer;
 		}
 
 		// Look in hierarchy
 		Object result = super.getAdapter(adapter);
 
-		if(result == null) {
+		if (result == null) {
 			IEditorPart innerEditor = getActiveEditor();
 			// see bug 138823 - prevent some subclasses from causing
 			// an infinite loop
-			if(innerEditor != null && innerEditor != this) {
+			if (innerEditor != null && innerEditor != this) {
 				result = Util.getAdapter(innerEditor, adapter);
 			}
 		}
@@ -250,8 +251,9 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	/**
 	 * Needed by MultiPageActionBarContributor and MultiPageSelectionProvider.
 	 */
+	@Override
 	public IEditorPart getActiveEditor() {
-		if((sashContainer == null) || sashContainer.isDisposed()) {
+		if ((sashContainer == null) || sashContainer.isDisposed()) {
 			return null;
 		}
 
@@ -267,7 +269,7 @@ public abstract class AbstractMultiPageSashEditor extends EditorPart implements 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

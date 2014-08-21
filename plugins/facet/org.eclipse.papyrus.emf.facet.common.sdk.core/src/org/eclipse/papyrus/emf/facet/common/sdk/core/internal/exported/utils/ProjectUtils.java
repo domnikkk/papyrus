@@ -51,7 +51,7 @@ import com.ibm.icu.lang.UCharacter;
 
 /**
  * @author Gregoire Dupe (Mia-Software), Fabien Giquel (Mia-Software)
- * 
+ *
  */
 public final class ProjectUtils {
 
@@ -286,10 +286,10 @@ public final class ProjectUtils {
 
 	/**
 	 * Create an EMF Facet project
-	 * 
+	 *
 	 * @param project
 	 *            a reference to the project to create (it must not already exist)
-	 * @param projectLocation 
+	 * @param projectLocation
 	 * @param monitor
 	 *            a progress monitor
 	 * @throws CoreException

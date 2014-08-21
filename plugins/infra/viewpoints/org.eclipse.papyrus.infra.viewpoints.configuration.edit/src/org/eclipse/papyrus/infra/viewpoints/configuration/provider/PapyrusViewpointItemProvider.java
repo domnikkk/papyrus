@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,14 +32,16 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.ArchitectureViewpo
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusViewpoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PapyrusViewpointItemProvider
-	extends ArchitectureViewpointItemProvider {
+		extends ArchitectureViewpointItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PapyrusViewpointItemProvider(AdapterFactory adapterFactory) {
@@ -50,6 +52,7 @@ public class PapyrusViewpointItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,28 +69,30 @@ public class PapyrusViewpointItemProvider
 	 * This adds a property descriptor for the Parent feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addParentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PapyrusViewpoint_parent_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusViewpoint_parent_feature", "_UI_PapyrusViewpoint_type"),
-				 ConfigurationPackage.Literals.PAPYRUS_VIEWPOINT__PARENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PapyrusViewpoint_parent_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PapyrusViewpoint_parent_feature", "_UI_PapyrusViewpoint_type"),
+						ConfigurationPackage.Literals.PAPYRUS_VIEWPOINT__PARENT,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns PapyrusViewpoint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT - Custom Image
 	 */
 	@Override
@@ -102,7 +107,7 @@ public class PapyrusViewpointItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PapyrusViewpoint)object).getName();
+		String label = ((PapyrusViewpoint) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_PapyrusViewpoint_type") : label;
 	}
 
@@ -111,6 +116,7 @@ public class PapyrusViewpointItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -128,28 +134,29 @@ public class PapyrusViewpointItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-				 ConfigurationFactory.eINSTANCE.createPapyrusDiagram()));
+						ConfigurationFactory.eINSTANCE.createPapyrusDiagram()));
 		newChildDescriptors.add
-		(createChildParameter
-			(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-			 ConfigurationFactory.eINSTANCE.createPapyrusTable()));
+				(createChildParameter
+				(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
+						ConfigurationFactory.eINSTANCE.createPapyrusTable()));
 		newChildDescriptors.add
-		(createChildParameter
-			(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-			 ConfigurationFactory.eINSTANCE.createPapyrusSyncTable()));
+				(createChildParameter
+				(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
+						ConfigurationFactory.eINSTANCE.createPapyrusSyncTable()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

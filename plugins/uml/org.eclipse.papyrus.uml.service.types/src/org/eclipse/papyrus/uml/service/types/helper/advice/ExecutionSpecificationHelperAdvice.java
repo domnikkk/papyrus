@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  	Mathieu Velten (Atos Origin) mathieu.velten@atosorigin.com - remove linked messages too
  *
@@ -43,14 +43,14 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 	/**
 	 * <pre>
 	 * Add a command to associated {@link OccurrenceSpecification} and {@link Message}.
-	 * This command is only added if the start - finish referenced {@link OccurrenceSpecification} is not 
+	 * This command is only added if the start - finish referenced {@link OccurrenceSpecification} is not
 	 * referenced by another element or the start/finish references are of type {@link ExecutionOccurrenceSpecification}.
 	 * </pre>
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeDestroyDependentsCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest)
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the command to execute before the edit helper work is done
 	 */
 	@Override
@@ -58,16 +58,16 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 
 		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
 
-		ExecutionSpecification es = (ExecutionSpecification)request.getElementToDestroy();
+		ExecutionSpecification es = (ExecutionSpecification) request.getElementToDestroy();
 
 		// Check whether start - finish referenced OccurrenceSpecification should be added to the dependents list
 		OccurrenceSpecification osStart = es.getStart();
-		if(shouldDestroyOccurrenceSpecification(es, osStart)) {
+		if (shouldDestroyOccurrenceSpecification(es, osStart)) {
 			dependentsToDestroy.add(osStart);
 		}
 
 		OccurrenceSpecification osFinish = es.getFinish();
-		if(shouldDestroyOccurrenceSpecification(es, osFinish)) {
+		if (shouldDestroyOccurrenceSpecification(es, osFinish)) {
 			dependentsToDestroy.add(osFinish);
 		}
 
@@ -75,12 +75,12 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 
 		// find initiating MOS of a synch message
 		InteractionFragment previousIft = InteractionFragmentHelper.findPreviousFragment(osStart, es.getOwner());
-		while(previousIft != null) {
+		while (previousIft != null) {
 			// keep the first ift with the same lifelines, and check it
-			if(coveredLifelines.equals(new HashSet<Lifeline>(previousIft.getCovereds()))) {
-				if(previousIft instanceof MessageOccurrenceSpecification) {
-					Message msg = ((MessageOccurrenceSpecification)previousIft).getMessage();
-					if(msg != null && MessageSort.SYNCH_CALL_LITERAL.equals(msg.getMessageSort())) {
+			if (coveredLifelines.equals(new HashSet<Lifeline>(previousIft.getCovereds()))) {
+				if (previousIft instanceof MessageOccurrenceSpecification) {
+					Message msg = ((MessageOccurrenceSpecification) previousIft).getMessage();
+					if (msg != null && MessageSort.SYNCH_CALL_LITERAL.equals(msg.getMessageSort())) {
 						dependentsToDestroy.add(previousIft);
 					}
 				}
@@ -91,9 +91,9 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 
 		// find MOS between the start and finish
 		InteractionFragment fragment = osStart;
-		while(fragment != null && !fragment.equals(osFinish)) {
+		while (fragment != null && !fragment.equals(osFinish)) {
 			// remove MOS if it have the same covered lifelines as the ES
-			if(fragment instanceof MessageOccurrenceSpecification && coveredLifelines.equals(new HashSet<Lifeline>(fragment.getCovereds()))) {
+			if (fragment instanceof MessageOccurrenceSpecification && coveredLifelines.equals(new HashSet<Lifeline>(fragment.getCovereds()))) {
 				dependentsToDestroy.add(fragment);
 			}
 
@@ -101,7 +101,7 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 		}
 
 		// return command to destroy dependents
-		if(!dependentsToDestroy.isEmpty()) {
+		if (!dependentsToDestroy.isEmpty()) {
 			return request.getDestroyDependentsCommand(dependentsToDestroy);
 		}
 
@@ -112,17 +112,17 @@ public class ExecutionSpecificationHelperAdvice extends AbstractEditHelperAdvice
 	 * <pre>
 	 * Check that given {@link OccurrenceSpecification} should be destroyed along with {@link ExecutionSpecification} which references it.
 	 * It should be destroyed in case:
-	 * It is of type {@link ExecutionOccurrenceSpecification} (since the opposite reference 
+	 * It is of type {@link ExecutionOccurrenceSpecification} (since the opposite reference
 	 *   'ExecutionOccurrenceSpecification::execution[1]' which designates given {@link ExecutionSpecification} is mandatory).
 	 *   or
 	 * It is not used by another element.
 	 * </pre>
-	 * 
+	 *
 	 * @param es
-	 *        {@link ExecutionSpecification} which references {@link OccurrenceSpecification} (by means of #start/#finish references)
+	 *            {@link ExecutionSpecification} which references {@link OccurrenceSpecification} (by means of #start/#finish references)
 	 * @param os
-	 *        start or finish {@link OccurrenceSpecification} which defines the duration of {@link ExecutionSpecification}
-	 * @return true in case {@link OccurrenceSpecification} should be destroyed 
+	 *            start or finish {@link OccurrenceSpecification} which defines the duration of {@link ExecutionSpecification}
+	 * @return true in case {@link OccurrenceSpecification} should be destroyed
 	 */
 	private boolean shouldDestroyOccurrenceSpecification(ExecutionSpecification es, OccurrenceSpecification os) {
 		return os instanceof ExecutionOccurrenceSpecification

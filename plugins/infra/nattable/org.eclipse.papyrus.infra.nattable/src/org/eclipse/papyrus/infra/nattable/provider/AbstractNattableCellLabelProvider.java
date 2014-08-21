@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,81 +33,88 @@ import org.eclipse.swt.graphics.Image;
 public abstract class AbstractNattableCellLabelProvider implements IFilteredLabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.services.labelprovider.service.IFilteredLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
-	 * 
+	 *
 	 */
+	@Override
 	public boolean accept(Object element) {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
-	 * 
+	 *
 	 */
+	@Override
 	public Image getImage(Object element) {
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
-	 * 
+	 *
 	 */
+	@Override
 	public String getText(Object element) {
 		return ""; //$NON-NLS-1$
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
-	 *        always throws {@link UnsupportedOperationException}
+	 *            always throws {@link UnsupportedOperationException}
 	 */
+	@Override
 	public void addListener(ILabelProviderListener listener) {
-		//		throw new UnsupportedOperationException();
+		// throw new UnsupportedOperationException();
 	}
 
+	@Override
 	public void dispose() {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param property
 	 * @return
 	 *         false
 	 */
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
-	 *        always throws {@link UnsupportedOperationException}
+	 *            always throws {@link UnsupportedOperationException}
 	 */
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
-		//		throw new UnsupportedOperationException();
+		// throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param cell
 	 * @param registry
 	 * @return
@@ -120,7 +127,7 @@ public abstract class AbstractNattableCellLabelProvider implements IFilteredLabe
 	}
 
 	/**
-	 * 
+	 *
 	 * @param cell
 	 * @param registry
 	 * @return
@@ -133,7 +140,7 @@ public abstract class AbstractNattableCellLabelProvider implements IFilteredLabe
 	}
 
 	/**
-	 * 
+	 *
 	 * @param registry
 	 * @return
 	 *         the table axis element provider
@@ -143,7 +150,7 @@ public abstract class AbstractNattableCellLabelProvider implements IFilteredLabe
 	}
 
 	/**
-	 * 
+	 *
 	 * @param registry
 	 * @return
 	 *         the label provider service
@@ -153,20 +160,20 @@ public abstract class AbstractNattableCellLabelProvider implements IFilteredLabe
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
-	 *        a label provider context element
+	 *            a label provider context element
 	 * @return
 	 *         the configuration to use for this element
 	 */
 	protected ILabelProviderConfiguration getLabelConfiguration(final LabelProviderCellContextElementWrapper element) {
 		ILabelProviderConfiguration conf = null;
-		final IConfigRegistry configRegistry = ((ILabelProviderContextElementWrapper)element).getConfigRegistry();
+		final IConfigRegistry configRegistry = ((ILabelProviderContextElementWrapper) element).getConfigRegistry();
 		INattableModelManager manager = configRegistry.getConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);
 		LabelStack labels = element.getConfigLabels();
-		if(labels.hasLabel(GridRegion.COLUMN_HEADER)) {
+		if (labels.hasLabel(GridRegion.COLUMN_HEADER)) {
 			conf = LabelConfigurationManagementUtils.getUsedColumnObjectLabelConfiguration(manager.getTable());
-		} else if(labels.hasLabel(GridRegion.ROW_HEADER)) {
+		} else if (labels.hasLabel(GridRegion.ROW_HEADER)) {
 			conf = LabelConfigurationManagementUtils.getUsedRowObjectLabelConfiguration(manager.getTable());
 		}
 		return conf;

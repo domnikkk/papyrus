@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,7 +24,7 @@ public interface ICommandFilter {
 
 	/**
 	 * Get the list of element type for which the creation command is visible.
-	 * 
+	 *
 	 * @return the list of allowed element types.
 	 */
 	public List<IElementType> getVisibleCommands();

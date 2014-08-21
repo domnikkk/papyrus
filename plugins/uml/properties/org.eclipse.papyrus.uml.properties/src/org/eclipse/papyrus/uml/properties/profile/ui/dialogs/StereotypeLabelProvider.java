@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,10 +43,10 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 	 */
 	@Override
 	public String getText(Object stereotype) {
-		if(!(stereotype instanceof Stereotype)) {
+		if (!(stereotype instanceof Stereotype)) {
 			return "not a stereotype";
 		} else {
-			return ((Stereotype)stereotype).getName();
+			return ((Stereotype) stereotype).getName();
 		}
 	}
 
@@ -56,7 +56,7 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnImage(java.lang.Object, int)
 	 */
 	public Image getColumnImage(Object element, int columnIndex) {
-		if(columnIndex == 0) {
+		if (columnIndex == 0) {
 			return getImage(element);
 		}
 		return null;
@@ -68,10 +68,10 @@ public class StereotypeLabelProvider extends LabelProvider implements ITableLabe
 	 * @see org.eclipse.jface.viewers.ITableLabelProvider#getColumnText(java.lang.Object, int)
 	 */
 	public String getColumnText(Object element, int columnIndex) {
-		if(columnIndex == 0) {
+		if (columnIndex == 0) {
 			return getText(element);
-		} else if(columnIndex == 1) {
-			return ((Stereotype)element).getQualifiedName();
+		} else if (columnIndex == 1) {
+			return ((Stereotype) element).getQualifiedName();
 		}
 		return "not the right column index";
 	}

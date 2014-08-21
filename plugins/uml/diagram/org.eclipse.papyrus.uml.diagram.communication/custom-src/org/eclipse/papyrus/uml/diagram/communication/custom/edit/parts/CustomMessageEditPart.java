@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
+ *  Saadia Dhouib saadia.dhouib@cea.fr
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts;
@@ -31,9 +31,9 @@ public class CustomMessageEditPart extends MessageEditPart {
 
 	/**
 	 * Instantiates a new custom message edit part.
-	 * 
+	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public CustomMessageEditPart(View view) {
 		super(view);
@@ -55,22 +55,22 @@ public class CustomMessageEditPart extends MessageEditPart {
 	 */
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof MessageNameEditPart) {
-			if(childEditPart instanceof MessageNameEditPart) {
-				IFigure childFigureBefore = ((GraphicalEditPart)childEditPart).getFigure();
-				getPrimaryShape().remove(((MessageNameEditPart)childEditPart).getFigure());
-				IFigure childFigure = ((GraphicalEditPart)childEditPart).getFigure();
-				if(childFigure.getParent() == null) {
+		if (childEditPart instanceof MessageNameEditPart) {
+			if (childEditPart instanceof MessageNameEditPart) {
+				IFigure childFigureBefore = ((GraphicalEditPart) childEditPart).getFigure();
+				getPrimaryShape().remove(((MessageNameEditPart) childEditPart).getFigure());
+				IFigure childFigure = ((GraphicalEditPart) childEditPart).getFigure();
+				if (childFigure.getParent() == null) {
 					childFigure.setParent(this.getPrimaryShape());
 				}
-				if(childFigure.getBounds() == new Rectangle(0, 0, 0, 0)) {
-					//System.out.println("The bound have changed!!!! ");
+				if (childFigure.getBounds() == new Rectangle(0, 0, 0, 0)) {
+					// System.out.println("The bound have changed!!!! ");
 					childFigure.setBounds(childFigureBefore.getBounds());
 				}
 			}
 			return true;
 		}
-		if(childEditPart instanceof AppliedStereotypeMessageEditPart) {
+		if (childEditPart instanceof AppliedStereotypeMessageEditPart) {
 			return true;
 		}
 		return false;
@@ -78,32 +78,33 @@ public class CustomMessageEditPart extends MessageEditPart {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageEditPart#addFixedChild(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param childEditPart
 	 * @return
 	 */
+	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof MessageNameEditPart) {
+		if (childEditPart instanceof MessageNameEditPart) {
 			CustomWrappingLabel fFigureMessageCreateLabelFigure = new CustomWrappingLabel();
 			fFigureMessageCreateLabelFigure.setText("Message"); //$NON-NLS-1$
-			//fFigureMessageCreateLabelFigure.setTextWrap(true);
+			// fFigureMessageCreateLabelFigure.setTextWrap(true);
 			fFigureMessageCreateLabelFigure.setTextJustification(PositionConstants.CENTER);
 			fFigureMessageCreateLabelFigure.setAlignment(PositionConstants.CENTER);
 			fFigureMessageCreateLabelFigure.setIconAlignment(PositionConstants.CENTER);
-			IFigure childFigureBefore = ((GraphicalEditPart)childEditPart).getFigure();
+			IFigure childFigureBefore = ((GraphicalEditPart) childEditPart).getFigure();
 			IFigure fig = getFigure();
-			if((childFigureBefore == null)) {//First time the label is added to the figure of the message connector
+			if ((childFigureBefore == null)) {// First time the label is added to the figure of the message connector
 				fig.add(fFigureMessageCreateLabelFigure);
-				//getFigure().add(fFigureMessageCreateLabelFigure);
-				//setFigure(getFigure());
-				((MessageNameEditPart)childEditPart).setLabel(fFigureMessageCreateLabelFigure);
-			} else {//The figure has been already removed and now we re-add it to the Message Connector Figure (getFigure())
+				// getFigure().add(fFigureMessageCreateLabelFigure);
+				// setFigure(getFigure());
+				((MessageNameEditPart) childEditPart).setLabel(fFigureMessageCreateLabelFigure);
+			} else {// The figure has been already removed and now we re-add it to the Message Connector Figure (getFigure())
 				fig.add(childFigureBefore);
 			}
 			return true;
 		}
-		if(childEditPart instanceof AppliedStereotypeMessageEditPart) {
-			((AppliedStereotypeMessageEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+		if (childEditPart instanceof AppliedStereotypeMessageEditPart) {
+			((AppliedStereotypeMessageEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 			return true;
 		}
 		return false;

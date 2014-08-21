@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,11 +31,11 @@ public class DeleteStateDefinitionCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * @param id
-	 *        the id of the state definition to delete
+	 *            the id of the state definition to delete
 	 * @param lifeline
-	 *        the lifeline
+	 *            the lifeline
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 */
 	public DeleteStateDefinitionCommand(final String id, final Lifeline lifeline, final TransactionalEditingDomain domain) {
 		super(domain, Messages.DeleteStateDefinitionCommand_DeleteStateDefinition, null);

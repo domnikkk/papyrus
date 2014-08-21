@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -57,9 +57,9 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 	private ConnectorUtils utils = new ConnectorUtils();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -67,44 +67,44 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 	protected ICommand getBeforeReorientRelationshipCommand(final ReorientRelationshipRequest request) {
 		final CompositeCommand compositeCommand = new CompositeCommand("Destroy Connector View Command");
 
-		//the UML Connector Edit Helper Advice destroys connector views when roles changes
-		//Here, we destroys connectors views, when the path changes
+		// the UML Connector Edit Helper Advice destroys connector views when roles changes
+		// Here, we destroys connectors views, when the path changes
 		final EObject editedElement = request.getRelationship();
-		if(editedElement instanceof Connector) {
+		if (editedElement instanceof Connector) {
 
-			if(applySysMLRules(((Connector)editedElement).getOwner())) {
-				final Connector connector = (Connector)editedElement;
-				//verify the path now
+			if (applySysMLRules(((Connector) editedElement).getOwner())) {
+				final Connector connector = (Connector) editedElement;
+				// verify the path now
 				int reorientDirection = request.getDirection();
 				Edge reorientedEdgeView = RequestParameterUtils.getReconnectedEdge(request);
 				View newEndView = RequestParameterUtils.getReconnectedEndView(request);
 				View oppositeEndView = null;
-				if(reorientedEdgeView != null) {
-					oppositeEndView = (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();
+				if (reorientedEdgeView != null) {
+					oppositeEndView = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();
 				}
 				List<Property> newNestedPath = null;
-				if(reorientedEdgeView != null && newEndView != null) {
-					//we are working with a 'graphical' reconnect request
+				if (reorientedEdgeView != null && newEndView != null) {
+					// we are working with a 'graphical' reconnect request
 					newNestedPath = utils.getNestedPropertyPath(newEndView, oppositeEndView);
 				} else {
-					newNestedPath = (List<Property>)request.getParameter(ConnectorUtils.NESTED_CONNECTOR_END_PATH);
+					newNestedPath = (List<Property>) request.getParameter(ConnectorUtils.NESTED_CONNECTOR_END_PATH);
 				}
 
 				final Set<View> viewsToDestroy = utils.getViewsRepresentingConnector(connector);
 				final Iterator<View> iter = viewsToDestroy.iterator();
 
-				while(iter.hasNext()) {
-					final Edge current = (Edge)iter.next();
-					if(current != reorientedEdgeView) {
+				while (iter.hasNext()) {
+					final Edge current = (Edge) iter.next();
+					if (current != reorientedEdgeView) {
 						View oldEndView = null;
-						if(reorientDirection == ReorientReferenceRelationshipRequest.REORIENT_SOURCE) {
+						if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 							oldEndView = current.getSource();
-						} else if(reorientDirection == ReorientReferenceRelationshipRequest.REORIENT_TARGET) {
+						} else if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 							oldEndView = current.getTarget();
 						}
-						if(oppositeEndView != null) {
+						if (oppositeEndView != null) {
 							final List<Property> oldNestedPath = utils.getNestedPropertyPath(oldEndView, oppositeEndView);
-							if(!newNestedPath.equals(oldNestedPath)) {
+							if (!newNestedPath.equals(oldNestedPath)) {
 								final DestroyElementRequest destroyRequest = new DestroyElementRequest(request.getEditingDomain(), current, false);
 								final IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(current);
 								compositeCommand.add(commandProvider.getEditCommand(destroyRequest));
@@ -112,7 +112,7 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 						}
 					}
 				}
-				if(!compositeCommand.isEmpty()) {
+				if (!compositeCommand.isEmpty()) {
 					return compositeCommand;
 				}
 			}
@@ -121,9 +121,9 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param connectorOwner
-	 *        the owner of the connector
+	 *            the owner of the connector
 	 * @return
 	 */
 	protected boolean applySysMLRules(final Element connectorOwner) {
@@ -132,7 +132,7 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	@Override
 	protected ICommand getAfterReorientRelationshipCommand(final ReorientRelationshipRequest request) {
-		//we set the new value for the nested path
+		// we set the new value for the nested path
 		ICommand defaultCommand = super.getAfterReorientRelationshipCommand(request);
 
 		int reorientDirection = request.getDirection();
@@ -140,63 +140,63 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 
 		// Restrict this advice action to the end of Connector creation gesture (before clicking on target)
 		// in order to add SysML specific constraint
-		Connector connector = (Connector)request.getRelationship();
-		//get the direction
+		Connector connector = (Connector) request.getRelationship();
+		// get the direction
 
 		// Restrict action to SysML Connector (meaning owned by Block)
-		if(((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(connector.eContainer())) {
+		if (((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(connector.eContainer())) {
 			List<Property> tmpNestedPath = null;
 			Edge reorientedEdgeView = RequestParameterUtils.getReconnectedEdge(request);
 			View newEndView = RequestParameterUtils.getReconnectedEndView(request);
 			View oppositeEndView = null;
 
-			//graphical case : verify encapsulation and get the new path
+			// graphical case : verify encapsulation and get the new path
 			StructuredClassifier newOwner;
-			if(reorientedEdgeView != null) {
+			if (reorientedEdgeView != null) {
 
-				oppositeEndView = (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();
+				oppositeEndView = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();
 				Assert.isNotNull(oppositeEndView);
 				Assert.isNotNull(newEndView);
-				if(newEndView != null && oppositeEndView != null) {
+				if (newEndView != null && oppositeEndView != null) {
 					// If the source or target view is enclosed in a structure encapsulated view, forbid creation.
-					if(utils.isCrossingEncapsulation(newEndView, oppositeEndView) || utils.isCrossingEncapsulation(oppositeEndView, newEndView)) {
+					if (utils.isCrossingEncapsulation(newEndView, oppositeEndView) || utils.isCrossingEncapsulation(oppositeEndView, newEndView)) {
 						return UnexecutableCommand.INSTANCE;
 					}
-					//					newOwner = utils.deduceContainer(newEndView, oppositeEndView);
+					// newOwner = utils.deduceContainer(newEndView, oppositeEndView);
 					tmpNestedPath = utils.getNestedPropertyPath(newEndView, oppositeEndView);
 				}
 			} else {
-				//we are in the semantic case
-				tmpNestedPath = ((List<Property>)request.getParameter(ConnectorUtils.NESTED_CONNECTOR_END_PATH));
+				// we are in the semantic case
+				tmpNestedPath = ((List<Property>) request.getParameter(ConnectorUtils.NESTED_CONNECTOR_END_PATH));
 
-				//we need to verify encapsulation
-				if(ConnectorUtils.isCrossingEncapuslation(tmpNestedPath)) {
+				// we need to verify encapsulation
+				if (ConnectorUtils.isCrossingEncapuslation(tmpNestedPath)) {
 					return UnexecutableCommand.INSTANCE;
 				}
 			}
 
 			final List<ConnectableElement> oppositeFullNestedPath = new ArrayList<ConnectableElement>();
 			final List<ConnectableElement> newFullNestedPath = new ArrayList<ConnectableElement>(tmpNestedPath);
-			ConnectableElement newRole = (Property)request.getNewRelationshipEnd();
+			ConnectableElement newRole = (Property) request.getNewRelationshipEnd();
 			final ConnectorEnd oppositeEnd;
-			if(reorientDirection == ReorientRequest.REORIENT_SOURCE) {
-				oppositeEnd = ((Connector)request.getRelationship()).getEnds().get(1);
+			if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
+				oppositeEnd = ((Connector) request.getRelationship()).getEnds().get(1);
 			} else {
-				oppositeEnd = ((Connector)request.getRelationship()).getEnds().get(0);
+				oppositeEnd = ((Connector) request.getRelationship()).getEnds().get(0);
 			}
 			final NestedConnectorEnd nestedConnectorEnd = UMLUtil.getStereotypeApplication(oppositeEnd, NestedConnectorEnd.class);
-			if(nestedConnectorEnd != null) {
+			if (nestedConnectorEnd != null) {
 				oppositeFullNestedPath.addAll(nestedConnectorEnd.getPropertyPath());
 			}
 			oppositeFullNestedPath.add(oppositeEnd.getRole());
 			newFullNestedPath.add(newRole);
 
-			//TODO : we should recalculate a new owner according to the new nested path, then update these nested path according to the new owner
-			//we don't do it now, because we have some troubles with connector
-			//final EncapsulatedClassifier newOwner = deduceNewConnectorOwner(oppositeFullNestedPath, newFullNestedPath);
-			
-			int tmpNestedPathDirection = (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) ? SetNestedPathCommand.NESTED_SOURCE : SetNestedPathCommand.NESTED_TARGET;
-			defaultCommand = CompositeCommand.compose(defaultCommand, new SetNestedPathCommand("Set connector nested source path", request.getRelationship(), request, tmpNestedPath, tmpNestedPathDirection)); //$NON-NLS-0$
+			// TODO : we should recalculate a new owner according to the new nested path, then update these nested path according to the new owner
+			// we don't do it now, because we have some troubles with connector
+			// final EncapsulatedClassifier newOwner = deduceNewConnectorOwner(oppositeFullNestedPath, newFullNestedPath);
+
+			int tmpNestedPathDirection = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? SetNestedPathCommand.NESTED_SOURCE : SetNestedPathCommand.NESTED_TARGET;
+			defaultCommand = CompositeCommand.compose(defaultCommand, new SetNestedPathCommand("Set connector nested source path", request.getRelationship(), request, tmpNestedPath, tmpNestedPathDirection));
 		}
 
 		return defaultCommand;
@@ -204,53 +204,53 @@ public class ConnectorEditHelperAdvice extends AbstractEditHelperAdvice {
 
 
 
-	//	/**
-	//	 * @param fullNestedPathWithrole1
-	//	 * @param fullNestedPathWithRole2
-	//	 * @return
-	//	 *         the new owner for the connector
-	//	 */
-	//doesnt work currently
-	//	public static final EncapsulatedClassifier deduceNewConnectorOwner(final List<ConnectableElement> fullNestedPathWithrole1, final List<ConnectableElement> fullNestedPathWithRole2) {
-	//		final ConnectableElement firstElementPath = fullNestedPathWithrole1.get(0);
-	//		//case of encapsulation of the part
-	//		if(fullNestedPathWithRole2.get(0) == firstElementPath) {
-	//			if(fullNestedPathWithRole2.size() > 1) {
-	//				fullNestedPathWithrole1.remove(0);
-	//				fullNestedPathWithRole2.remove(0);
-	//				return deduceNewConnectorOwner(fullNestedPathWithrole1, fullNestedPathWithRole2);
-	//			} else {
-	//				return (EncapsulatedClassifier)firstElementPath.getOwner();
-	//			}
-	//		} else {
-	//			final ConnectableElement firstElementPath2 = fullNestedPathWithRole2.get(0);
-	//			if(firstElementPath.getOwner() == firstElementPath2.getOwner()) {
-	//				return (EncapsulatedClassifier)firstElementPath.getOwner();
-	//			} else {
-	//				final List<ConnectableElement> biggestList;
-	//				final List<ConnectableElement> smallestList;
-	//				if(fullNestedPathWithrole1.size() > fullNestedPathWithRole2.size()) {
-	//					biggestList = fullNestedPathWithrole1;
-	//					smallestList = fullNestedPathWithRole2;
-	//				} else {
-	//					biggestList = fullNestedPathWithRole2;
-	//					smallestList = fullNestedPathWithrole1;
-	//				}
-	//				for(int i = 0; i < biggestList.size(); i++) {
-	//					final ConnectableElement current = biggestList.get(i);
-	//					if(smallestList.contains(current) && i > 0) {
-	//						return (EncapsulatedClassifier)biggestList.get(i - 1).getOwner();
-	//					}
-	//				}
-	//			}
-	//		}
-	//		return null;
-	//		//		throw new RuntimeException("error");
+	// /**
+	// * @param fullNestedPathWithrole1
+	// * @param fullNestedPathWithRole2
+	// * @return
+	// * the new owner for the connector
+	// */
+	// doesnt work currently
+	// public static final EncapsulatedClassifier deduceNewConnectorOwner(final List<ConnectableElement> fullNestedPathWithrole1, final List<ConnectableElement> fullNestedPathWithRole2) {
+	// final ConnectableElement firstElementPath = fullNestedPathWithrole1.get(0);
+	// //case of encapsulation of the part
+	// if(fullNestedPathWithRole2.get(0) == firstElementPath) {
+	// if(fullNestedPathWithRole2.size() > 1) {
+	// fullNestedPathWithrole1.remove(0);
+	// fullNestedPathWithRole2.remove(0);
+	// return deduceNewConnectorOwner(fullNestedPathWithrole1, fullNestedPathWithRole2);
+	// } else {
+	// return (EncapsulatedClassifier)firstElementPath.getOwner();
+	// }
+	// } else {
+	// final ConnectableElement firstElementPath2 = fullNestedPathWithRole2.get(0);
+	// if(firstElementPath.getOwner() == firstElementPath2.getOwner()) {
+	// return (EncapsulatedClassifier)firstElementPath.getOwner();
+	// } else {
+	// final List<ConnectableElement> biggestList;
+	// final List<ConnectableElement> smallestList;
+	// if(fullNestedPathWithrole1.size() > fullNestedPathWithRole2.size()) {
+	// biggestList = fullNestedPathWithrole1;
+	// smallestList = fullNestedPathWithRole2;
+	// } else {
+	// biggestList = fullNestedPathWithRole2;
+	// smallestList = fullNestedPathWithrole1;
+	// }
+	// for(int i = 0; i < biggestList.size(); i++) {
+	// final ConnectableElement current = biggestList.get(i);
+	// if(smallestList.contains(current) && i > 0) {
+	// return (EncapsulatedClassifier)biggestList.get(i - 1).getOwner();
+	// }
+	// }
+	// }
+	// }
+	// return null;
+	// // throw new RuntimeException("error");
 	//
 	//
 	//
 	//
 	//
-	//	}
+	// }
 
 }

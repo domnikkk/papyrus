@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,15 +19,15 @@ import org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyNodeEditPart
 
 /**
  * this branch dependency can change its arrow
- * 
+ *
  */
 
 public class CustomDependencyBranchEditPart extends org.eclipse.papyrus.uml.diagram.profile.edit.parts.DependencyBranchEditPart {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomDependencyBranchEditPart(View view) {
@@ -35,14 +35,14 @@ public class CustomDependencyBranchEditPart extends org.eclipse.papyrus.uml.diag
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ConnectionEditPart#refreshVisuals()
-	 * 
+	 *
 	 */
 	@Override
 	protected void refreshVisuals() {
-		if(getTarget() instanceof DependencyNodeEditPart) {
-			if(getPrimaryShape() instanceof DashedEdgeFigure) {
+		if (getTarget() instanceof DependencyNodeEditPart) {
+			if (getPrimaryShape() instanceof DashedEdgeFigure) {
 				(getPrimaryShape()).setArrow(false);
 			}
 			super.refreshVisuals();

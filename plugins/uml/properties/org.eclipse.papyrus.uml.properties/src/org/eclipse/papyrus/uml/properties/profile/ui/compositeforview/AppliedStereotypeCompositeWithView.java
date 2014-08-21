@@ -53,7 +53,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 * The Constructor.
 	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public AppliedStereotypeCompositeWithView(Composite parent) {
 		super(parent);
@@ -64,9 +64,9 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 * Creates the content.
 	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param factory
-	 *        the factory
+	 *            the factory
 	 *
 	 * @return the composite
 	 */
@@ -86,7 +86,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 * Sets the selection.
 	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 */
 	public void setSelection(ISelection selection) {
 		this.selection = selection;
@@ -96,18 +96,18 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 * Sets the diagram element.
 	 *
 	 * @param diagramElement
-	 *        the diagram element
+	 *            the diagram element
 	 */
 	public void setDiagramElement(EModelElement diagramElement) {
 		this.diagramElement = diagramElement;
-		((ProfileElementWithDisplayContentProvider)treeViewer.getContentProvider()).setDiagramElement(diagramElement);
+		((ProfileElementWithDisplayContentProvider) treeViewer.getContentProvider()).setDiagramElement(diagramElement);
 	}
 
 	/**
 	 * Sets the property composite associated to this stereotype composite
 	 *
 	 * @param propertyComposite
-	 *        the composite associated to this stereotype composite used for stereotype property display.
+	 *            the composite associated to this stereotype composite used for stereotype property display.
 	 */
 	public void setPropertySelectionChangeListener(ISelectionChangedListener propertySelectionChangeListener) {
 		this.propertySelectionChangeListener = propertySelectionChangeListener;
@@ -158,7 +158,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 	 * Selection changed.
 	 *
 	 * @param event
-	 *        the event
+	 *            the event
 	 */
 	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
@@ -167,8 +167,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 
 	/**
 	 *
-	 * @see org.eclipse.papyrus.uml.properties.profile.ui.compositesformodel.AppliedStereotypeCompositeOnModel#getApplyStereotypeCommmand(org.eclipse.uml2.uml.Element,
-	 *      org.eclipse.uml2.uml.Stereotype, org.eclipse.emf.transaction.TransactionalEditingDomain)
+	 * @see org.eclipse.papyrus.uml.properties.profile.ui.compositesformodel.AppliedStereotypeCompositeOnModel#getApplyStereotypeCommmand(org.eclipse.uml2.uml.Element, org.eclipse.uml2.uml.Stereotype, org.eclipse.emf.transaction.TransactionalEditingDomain)
 	 *
 	 * @param elt
 	 * @param st
@@ -182,9 +181,9 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 		Command parentCommmand = super.getApplyStereotypeCommmand(elt, st, domain);
 		compoundCommand.append(parentCommmand);
 
-		//Fix regression / Bug 431258
-		//The graphical element is not necessarily available (e.g. Selection in ModelExplorer)
-		if(diagramElement != null) {
+		// Fix regression / Bug 431258
+		// The graphical element is not necessarily available (e.g. Selection in ModelExplorer)
+		if (diagramElement != null) {
 			String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(diagramElement);
 			RecordingCommand command = AppliedStereotypeHelper.getAddAppliedStereotypeCommand(domain, diagramElement, st.getQualifiedName(), presentationKind);
 
@@ -196,8 +195,7 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 
 	/**
 	 *
-	 * @see org.eclipse.papyrus.uml.properties.profile.ui.compositesformodel.AppliedStereotypeCompositeOnModel#getUnapplyStereotypeCommand(org.eclipse.uml2.uml.Element,
-	 *      org.eclipse.uml2.uml.Stereotype, org.eclipse.emf.transaction.TransactionalEditingDomain)
+	 * @see org.eclipse.papyrus.uml.properties.profile.ui.compositesformodel.AppliedStereotypeCompositeOnModel#getUnapplyStereotypeCommand(org.eclipse.uml2.uml.Element, org.eclipse.uml2.uml.Stereotype, org.eclipse.emf.transaction.TransactionalEditingDomain)
 	 *
 	 * @param elt
 	 * @param st
@@ -211,9 +209,9 @@ public class AppliedStereotypeCompositeWithView extends org.eclipse.papyrus.uml.
 		Command parentCommand = super.getUnapplyStereotypeCommand(elt, st, domain);
 		compoundCommand.append(parentCommand);
 
-		//Fix regression / Bug 431258
-		//The graphical element is not necessarily available (e.g. Selection in ModelExplorer)
-		if(diagramElement != null) {
+		// Fix regression / Bug 431258
+		// The graphical element is not necessarily available (e.g. Selection in ModelExplorer)
+		if (diagramElement != null) {
 			String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(diagramElement);
 			RecordingCommand command = AppliedStereotypeHelper.getRemoveAppliedStereotypeCommand(domain, diagramElement, st.getQualifiedName(), presentationKind);
 			compoundCommand.append(command);

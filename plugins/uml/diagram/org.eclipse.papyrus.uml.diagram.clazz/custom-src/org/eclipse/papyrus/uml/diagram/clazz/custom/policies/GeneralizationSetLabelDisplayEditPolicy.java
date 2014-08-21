@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
+import org.eclipse.gef.RequestConstants;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.AbstractEditPolicy;
 import org.eclipse.gef.requests.ReconnectRequest;
@@ -53,9 +54,10 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 	protected EObject hostSemanticElement;
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		View view = (View) getHost().getModel();
 		hostSemanticElement = view.getElement();
@@ -64,9 +66,10 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		View view = (View) getHost().getModel();
 		getDiagramEventBroker().removeNotificationListener(view, this);
@@ -76,7 +79,7 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editPart
 	 * @return
 	 */
@@ -109,7 +112,7 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	private DiagramEventBroker getDiagramEventBroker() {
@@ -121,9 +124,10 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		if (getHost().getViewer() instanceof DiagramGraphicalViewer) {
 			if (getHost() instanceof GeneralizationSetEditPart) {
@@ -137,9 +141,11 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 					try {
 						((IGraphicalEditPart) getHost()).getEditingDomain().runExclusive(new Runnable() {
 
+							@Override
 							public void run() {
 								Display.getCurrent().asyncExec(new Runnable() {
 
+									@Override
 									public void run() {
 										for (int i = 0; i < getHost().getChildren().size(); i++) {
 											SetRequest setRequest = new SetRequest((View) ((EditPart) getHost().getChildren().get(i)).getModel(), NotationPackage.eINSTANCE.getView_Visible(), false);
@@ -161,13 +167,15 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 			try {
 				((IGraphicalEditPart) getHost()).getEditingDomain().runExclusive(new Runnable() {
 
+					@Override
 					public void run() {
 						Display.getCurrent().asyncExec(new Runnable() {
 
+							@Override
 							public void run() {
 								if (getAllSameSemanticGeneralizationSet(((GeneralizationEditPart) ((GeneralizationSetEditPart) getHost()).getTarget())).size() != 0) {
 									ReconnectRequest reconnectRequest = new ReconnectRequest();
-									reconnectRequest.setType(GraphicalNodeEditPolicy.REQ_RECONNECT_TARGET);
+									reconnectRequest.setType(RequestConstants.REQ_RECONNECT_TARGET);
 									reconnectRequest.setConnectionEditPart(((GeneralizationSetEditPart) getHost()));
 									reconnectRequest.setTargetEditPart(((GeneralizationSetEditPart) getHost()).getTarget());
 									Command command = ((GeneralizationSetEditPart) getHost()).getTarget().getCommand(reconnectRequest);
@@ -175,7 +183,7 @@ public class GeneralizationSetLabelDisplayEditPolicy extends AbstractEditPolicy 
 								}
 								if (getAllSameSemanticGeneralizationSet(((GeneralizationEditPart) ((GeneralizationSetEditPart) getHost()).getSource())).size() != 0) {
 									ReconnectRequest reconnectRequest = new ReconnectRequest();
-									reconnectRequest.setType(GraphicalNodeEditPolicy.REQ_RECONNECT_SOURCE);
+									reconnectRequest.setType(RequestConstants.REQ_RECONNECT_SOURCE);
 									reconnectRequest.setConnectionEditPart(((GeneralizationSetEditPart) getHost()));
 									reconnectRequest.setTargetEditPart(((GeneralizationSetEditPart) getHost()).getSource());
 									Command command = ((GeneralizationSetEditPart) getHost()).getSource().getCommand(reconnectRequest);

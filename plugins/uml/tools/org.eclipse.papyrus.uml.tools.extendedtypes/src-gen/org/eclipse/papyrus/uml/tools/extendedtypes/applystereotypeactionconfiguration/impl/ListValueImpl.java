@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfigur
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ListValueImpl#getValues <em>Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.impl.ListValueImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ListValueImpl() {
@@ -64,6 +66,7 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,6 +77,7 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<FeatureValue> getValues() {
@@ -86,13 +90,14 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
-				return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
+		case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
+			return ((InternalEList<?>) getValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -100,13 +105,14 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
-				return getValues();
+		case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
+			return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,16 +120,17 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
-				getValues().clear();
-				getValues().addAll((Collection<? extends FeatureValue>)newValue);
-				return;
+		case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
+			getValues().clear();
+			getValues().addAll((Collection<? extends FeatureValue>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,14 +138,15 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
-				getValues().clear();
-				return;
+		case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
+			getValues().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -146,15 +154,16 @@ public class ListValueImpl extends FeatureValueImpl implements ListValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
-				return values != null && !values.isEmpty();
+		case ApplyStereotypeActionConfigurationPackage.LIST_VALUE__VALUES:
+			return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ListValueImpl
+} // ListValueImpl

@@ -15,14 +15,14 @@ import org.eclipse.core.databinding.property.value.IValueProperty;
 
 /**
  * A Data Binding provider defines the nature of Data Binding such as Bean Object Binding, EMF Object Binding, XML data Binding or Data Base binding
- * 
+ *
  * @author yyang
  */
 public interface IDataProvider {
 
 	/**
 	 * Return the data of the provider, this value can be not used for databindings.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -30,7 +30,7 @@ public interface IDataProvider {
 
 	/**
 	 * Return the data of the provider, this value can be not used for databindings.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -38,7 +38,7 @@ public interface IDataProvider {
 
 	/**
 	 * Return the data of the provider, this value can be not used for databindings.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -46,7 +46,7 @@ public interface IDataProvider {
 
 	/**
 	 * Return the data of the provider, this value can be not used for databindings.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -54,7 +54,7 @@ public interface IDataProvider {
 
 	/**
 	 * Return the data type of the provider.lue
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -62,7 +62,7 @@ public interface IDataProvider {
 
 	/**
 	 * check if the property is read only.
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
@@ -84,7 +84,7 @@ public interface IDataProvider {
 
 		/**
 		 * get the type of this object
-		 * 
+		 *
 		 * @param object
 		 * @return
 		 */

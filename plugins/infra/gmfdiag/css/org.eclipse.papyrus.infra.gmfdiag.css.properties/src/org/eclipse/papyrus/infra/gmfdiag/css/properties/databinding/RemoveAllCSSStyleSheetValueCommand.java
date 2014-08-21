@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,13 +34,13 @@ public class RemoveAllCSSStyleSheetValueCommand extends RemoveAllCustomStyleList
 
 	@Override
 	public void execute() {
-		for(Object value : values) {
-			if(value instanceof EObject) {
-				EObject styleSheet = (EObject)value;
+		for (Object value : values) {
+			if (value instanceof EObject) {
+				EObject styleSheet = (EObject) value;
 				Collection<EStructuralFeature.Setting> references = EMFHelper.getUsages(styleSheet);
-				//We're removing the last reference to this styleSheet (Only if the stylesheet is contained
-				//in the same resource as the view referencing it... We don't modify external models)
-				if(references.size() == 1 && styleSheet.eResource() == view.eResource()) {
+				// We're removing the last reference to this styleSheet (Only if the stylesheet is contained
+				// in the same resource as the view referencing it... We don't modify external models)
+				if (references.size() == 1 && styleSheet.eResource() == view.eResource()) {
 					deletedEObjects.add(styleSheet);
 					styleSheet.eResource().getContents().remove(styleSheet);
 				}
@@ -52,11 +52,11 @@ public class RemoveAllCSSStyleSheetValueCommand extends RemoveAllCustomStyleList
 
 	@Override
 	public void undo() {
-		for(Object value : values) {
-			if(value instanceof EObject) {
-				EObject eObject = (EObject)value;
-				if(deletedEObjects.contains(eObject)) {
-					//We destroyed the StyleSheet EObject: recreate it in its previous resource
+		for (Object value : values) {
+			if (value instanceof EObject) {
+				EObject eObject = (EObject) value;
+				if (deletedEObjects.contains(eObject)) {
+					// We destroyed the StyleSheet EObject: recreate it in its previous resource
 					view.eResource().getContents().add(eObject);
 				}
 			}

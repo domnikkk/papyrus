@@ -20,6 +20,7 @@ public class PropertyViewEnvironmentImpl extends FileBasedCustomizableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyViewEnvironmentImpl() {
@@ -29,6 +30,7 @@ public class PropertyViewEnvironmentImpl extends FileBasedCustomizableElementImp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class PropertyViewEnvironmentImpl extends FileBasedCustomizableElementImp
 		return CustomizationPluginPackage.Literals.PROPERTY_VIEW_ENVIRONMENT;
 	}
 
-} //PropertyViewEnvironmentImpl
+} // PropertyViewEnvironmentImpl

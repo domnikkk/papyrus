@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,19 +38,19 @@ import org.eclipse.ui.PlatformUI;
 public class TableMenuUtils {
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @return
 	 *         the command context to use to create new elements in the table
 	 */
 	public static ICommandContext getTableCommandContext(final INattableModelManager tableManager) {
 		INattableModelManager manager = tableManager;
-		if(manager != null) {
+		if (manager != null) {
 			final EObject container = manager.getTable().getContext();
 			ICommandContext context = null;
-			if(container != null) {
+			if (container != null) {
 				context = new CommandContext(container);
 			}
 			return context;
@@ -59,21 +59,21 @@ public class TableMenuUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param createCmd
-	 *        the create command
+	 *            the create command
 	 * @param createElementRequest
-	 *        the create element request
+	 *            the create element request
 	 * @return
 	 *         the command to use to create elements in the table editor
 	 */
 	public static Command buildNattableCreationCommand(Command createCmd, final CreateElementRequest createElementRequest) {
 		final INattableModelManager nattableModelManager = INattableModelManagerUtils.getTableManagerFromWorkbenchPart(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActivePart());
-		if(nattableModelManager != null) {
+		if (nattableModelManager != null) {
 			CompositeCommand cmd = new CompositeCommand(""); //$NON-NLS-1$
 			cmd.add(new EMFtoGMFCommandWrapper(createCmd));
 
-			//		depends on the synchronization of the axis manager
+			// depends on the synchronization of the axis manager
 			cmd.add(new AbstractTransactionalCommand(createElementRequest.getEditingDomain(), Messages.AbstractNattableCreateCommandHandler_AddElementCommand, null) {
 
 				@Override
@@ -82,7 +82,7 @@ public class TableMenuUtils {
 					Collection<Object> toAdd = new ArrayList<Object>();
 					toAdd.add(newElement);
 					Command tmp = nattableModelManager.getAddRowElementCommand(toAdd);
-					if(tmp != null) {
+					if (tmp != null) {
 						tmp.execute();
 					}
 					return CommandResult.newOKCommandResult();

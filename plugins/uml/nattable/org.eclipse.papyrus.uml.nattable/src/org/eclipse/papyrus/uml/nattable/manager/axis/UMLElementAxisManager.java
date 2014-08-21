@@ -21,16 +21,16 @@ import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- * 
+ *
  * This axis manager restrict the allowed contents to UML Element
- * 
+ *
  */
 public class UMLElementAxisManager extends EObjectAxisManager {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.nattable.manager.axis.EObjectAxisManager#isAllowedContents(java.lang.Object)
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -40,9 +40,9 @@ public class UMLElementAxisManager extends EObjectAxisManager {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#canCreateAxisElement(java.lang.String)
-	 * 
+	 *
 	 * @param elementId
 	 * @return
 	 */
@@ -50,8 +50,8 @@ public class UMLElementAxisManager extends EObjectAxisManager {
 	public boolean canCreateAxisElement(String elementId) {
 		final IElementType types = ElementTypeRegistry.getInstance().getType(elementId);
 		final EClass eClass = types.getEClass();
-		if(eClass != null) {
-			if(eClass.getEPackage() == UMLPackage.eINSTANCE) {
+		if (eClass != null) {
+			if (eClass.getEPackage() == UMLPackage.eINSTANCE) {
 				return true;
 			}
 		}

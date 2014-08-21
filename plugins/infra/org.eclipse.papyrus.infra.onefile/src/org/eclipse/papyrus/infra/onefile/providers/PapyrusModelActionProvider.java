@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration - CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,9 +70,9 @@ import org.eclipse.ui.part.FileEditorInput;
 
 /**
  * Actions available through an {@link IPapyrusFile}
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 @SuppressWarnings({ "restriction", "rawtypes" })
 public class PapyrusModelActionProvider extends CommonActionProvider {
@@ -104,7 +104,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 	@Override
 	public void fillActionBars(IActionBars actionBars) {
-		if(fInViewPart) {
+		if (fInViewPart) {
 			actionBars.setGlobalActionHandler(ICommonActionConstants.OPEN, openAction);
 			actionBars.setGlobalActionHandler(ActionFactory.DELETE.getId(), deleteAction);
 			actionBars.setGlobalActionHandler(ActionFactory.RENAME.getId(), renameAction);
@@ -127,18 +127,18 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 	}
 
 	private void appendToGroup(IMenuManager menu, IAction action, String id) {
-		if(action != null && action.isEnabled()) {
+		if (action != null && action.isEnabled()) {
 			menu.appendToGroup(id, action);
 		}
 	}
 
 	@Override
 	public void init(ICommonActionExtensionSite site) {
-		if(site.getViewSite() instanceof ICommonViewerWorkbenchSite) {
-			workbenchSite = (ICommonViewerWorkbenchSite)site.getViewSite();
+		if (site.getViewSite() instanceof ICommonViewerWorkbenchSite) {
+			workbenchSite = (ICommonViewerWorkbenchSite) site.getViewSite();
 		}
-		if(workbenchSite != null) {
-			if(workbenchSite.getPart() != null && workbenchSite.getPart() instanceof IViewPart) {
+		if (workbenchSite != null) {
+			if (workbenchSite.getPart() != null && workbenchSite.getPart() instanceof IViewPart) {
 				fInViewPart = true;
 			}
 			makeActions();
@@ -152,7 +152,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			@Override
 			public void run() {
-				if(getIFile() != null) {
+				if (getIFile() != null) {
 					try {
 						IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 						page.openEditor(new FileEditorInput(getIFile()), "org.eclipse.papyrus.infra.core.papyrusEditor", true, IWorkbenchPage.MATCH_ID | IWorkbenchPage.MATCH_INPUT);
@@ -181,7 +181,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			@Override
 			public boolean isEnabled() {
-				return getSelectedResources() != null && getSelectedResources().size() > 0 && OneFileUtils.isDi((IResource)getSelectedResources().get(0));
+				return getSelectedResources() != null && getSelectedResources().size() > 0 && OneFileUtils.isDi((IResource) getSelectedResources().get(0));
 
 			}
 
@@ -208,9 +208,9 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 				return helper.getSelectedResources(getContext());
 			}
 		};
-		
-		copyAction = new CopyToClipboardAction(provider){
-			
+
+		copyAction = new CopyToClipboardAction(provider) {
+
 			@Override
 			public IStructuredSelection getStructuredSelection() {
 				return helper.getStructuredSelection(getContext());
@@ -219,10 +219,10 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 			@Override
 			protected List getSelectedResources() {
 				return helper.getSelectedResources(getContext());
-			}			
-			
+			}
+
 		};
-				
+
 		renameAction = new OneFileRenameAction(provider);
 
 		refreshAction = new RefreshAction(provider) {
@@ -246,9 +246,9 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 	 * A Rename action applying to an IPapyrusFile
 	 * The action will rename only the *.di file
 	 * (Refactoring from infra.ui.resources will rename related files and fix URIs)
-	 * 
+	 *
 	 * The user won't be asked for a file extension (*.di will be kept)
-	 * 
+	 *
 	 * @author Camille Letavernier
 	 */
 	public class OneFileRenameAction extends RenameResourceAction {
@@ -271,15 +271,15 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			ISelection selection = partSiteProvider.getSelectionProvider().getSelection();
 
-			if(selection instanceof IStructuredSelection) {
-				IStructuredSelection structuredSelection = (IStructuredSelection)selection;
-				if(structuredSelection.size() != 1) {
+			if (selection instanceof IStructuredSelection) {
+				IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+				if (structuredSelection.size() != 1) {
 					return;
 				}
 
 				Object selectedElement = structuredSelection.getFirstElement();
-				if(selectedElement instanceof IPapyrusFile) {
-					IPapyrusFile modelToRename = (IPapyrusFile)selectedElement;
+				if (selectedElement instanceof IPapyrusFile) {
+					IPapyrusFile modelToRename = (IPapyrusFile) selectedElement;
 
 					RenamePapyrusModelWizard refactoringWizard = new RenamePapyrusModelWizard(modelToRename);
 					RefactoringWizardOpenOperation op = new RefactoringWizardOpenOperation(refactoringWizard);
@@ -304,7 +304,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 		@Override
 		protected void addUserInputPages() {
-			RenameResourceProcessor processor = (RenameResourceProcessor)getRefactoring().getAdapter(RenameResourceProcessor.class);
+			RenameResourceProcessor processor = (RenameResourceProcessor) getRefactoring().getAdapter(RenameResourceProcessor.class);
 			addPage(new RenamePapyrusModelPage(processor));
 		}
 
@@ -352,7 +352,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 			@Override
 			public void setVisible(boolean visible) {
-				if(visible) {
+				if (visible) {
 					fNameField.setFocus();
 				}
 				super.setVisible(visible);
@@ -398,16 +398,16 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 	}
 
 	protected void makeAction(Action action, String id, String imgTool, String imgToolDisabled) {
-		if(action != null) {
+		if (action != null) {
 			ISharedImages images = PlatformUI.getWorkbench().getSharedImages();
-			if(id != null) {
+			if (id != null) {
 				action.setId(id);
 				action.setActionDefinitionId(id);
 			}
-			if(imgTool != null) {
+			if (imgTool != null) {
 				action.setImageDescriptor(images.getImageDescriptor(imgTool));
 			}
-			if(imgToolDisabled != null) {
+			if (imgToolDisabled != null) {
 				action.setDisabledImageDescriptor(images.getImageDescriptor(imgToolDisabled));
 			}
 		}
@@ -421,12 +421,12 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 		public List getOneSelectedResources(ActionContext context) {
 			List selectedResources = getSelectedResources(context);
-			if(selectedResources.size() > 0) {
-				for(Iterator<?> i = selectedResources.iterator(); i.hasNext();) {
+			if (selectedResources.size() > 0) {
+				for (Iterator<?> i = selectedResources.iterator(); i.hasNext();) {
 					Object o = i.next();
-					if(o instanceof IFile) {
-						IFile file = (IFile)o;
-						if(!OneFileUtils.isDi(file)) {
+					if (o instanceof IFile) {
+						IFile file = (IFile) o;
+						if (!OneFileUtils.isDi(file)) {
 							i.remove();
 						}
 					}
@@ -438,7 +438,7 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 		public IStructuredSelection getOneStructuredSelection(ActionContext context) {
 			List selectedResources = getOneSelectedResources(context);
-			if(selectedResources.size() > 0) {
+			if (selectedResources.size() > 0) {
 				return new StructuredSelection(selectedResources);
 			}
 			return null;
@@ -447,12 +447,12 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 		protected List getSelectedResources(ActionContext context) {
 			ISelection selec = context.getSelection();
 			List<IResource> resources = new ArrayList<IResource>();
-			if(selec instanceof IStructuredSelection) {
-				IStructuredSelection struc = (IStructuredSelection)selec;
-				for(Iterator<Object> i = struc.iterator(); i.hasNext();) {
+			if (selec instanceof IStructuredSelection) {
+				IStructuredSelection struc = (IStructuredSelection) selec;
+				for (Iterator<Object> i = struc.iterator(); i.hasNext();) {
 					Object o = i.next();
-					if(o instanceof IPapyrusFile) {
-						IPapyrusFile papy = (IPapyrusFile)o;
+					if (o instanceof IPapyrusFile) {
+						IPapyrusFile papy = (IPapyrusFile) o;
 						resources.addAll(Arrays.asList(papy.getAssociatedResources()));
 					}
 				}
@@ -462,14 +462,14 @@ public class PapyrusModelActionProvider extends CommonActionProvider {
 
 		public IFile getIFile(ActionContext context) {
 			ISelection selec = context.getSelection();
-			if(selec instanceof IStructuredSelection) {
-				IStructuredSelection struc = (IStructuredSelection)selec;
+			if (selec instanceof IStructuredSelection) {
+				IStructuredSelection struc = (IStructuredSelection) selec;
 				Object firstElement = struc.getFirstElement();
-				if(firstElement instanceof IFile) {
-					IFile file = (IFile)firstElement;
+				if (firstElement instanceof IFile) {
+					IFile file = (IFile) firstElement;
 					return file;
-				} else if(firstElement instanceof IPapyrusFile) {
-					return ((IPapyrusFile)firstElement).getMainFile();
+				} else if (firstElement instanceof IPapyrusFile) {
+					return ((IPapyrusFile) firstElement).getMainFile();
 				}
 			}
 			return null;

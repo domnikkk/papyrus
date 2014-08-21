@@ -14,7 +14,7 @@ import org.eclipse.papyrus.infra.extendedtypes.SemanticActionConfiguration;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration#getViewsToDisplay <em>Views To Display</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfiguration#getViewsToDisplay <em>Views To Display</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface RuntimeValuesEditionActionConfiguration extends SemanticActionC
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Views To Display</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Views To Display</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Views To Display</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage#getRuntimeValuesEditionActionConfiguration_ViewsToDisplay()
 	 * @model containment="true"

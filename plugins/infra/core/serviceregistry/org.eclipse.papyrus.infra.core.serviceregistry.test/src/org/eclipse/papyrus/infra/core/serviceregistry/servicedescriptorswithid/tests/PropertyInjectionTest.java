@@ -11,6 +11,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Property Injection</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PropertyInjectionTest extends FeatureInjectionTest {
@@ -18,6 +19,7 @@ public class PropertyInjectionTest extends FeatureInjectionTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class PropertyInjectionTest extends FeatureInjectionTest {
 	 * Constructs a new Property Injection test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyInjectionTest(String name) {
@@ -38,16 +41,18 @@ public class PropertyInjectionTest extends FeatureInjectionTest {
 	 * Returns the fixture for this Property Injection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected PropertyInjection getFixture() {
-		return (PropertyInjection)fixture;
+		return (PropertyInjection) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class PropertyInjectionTest extends FeatureInjectionTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class PropertyInjectionTest extends FeatureInjectionTest {
 		setFixture(null);
 	}
 
-} //PropertyInjectionTest
+} // PropertyInjectionTest

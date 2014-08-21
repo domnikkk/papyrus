@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.uml.tools.model;
 
@@ -18,9 +18,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * A UML model.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class UmlModel extends EMFLogicalModel implements IModel {
 
@@ -36,7 +36,7 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.resource.IModel#createModel(org.eclipse.core.runtime.IPath)
-	 * 
+	 *
 	 * @param fullPath
 	 */
 	@Override
@@ -56,7 +56,7 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected String getContentType() {
@@ -65,9 +65,9 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * Get the file extension used for this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getModelFileExtension()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -77,9 +77,9 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * Get the identifier used to register this model.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.resource.AbstractBaseModel#getIdentifier()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -89,11 +89,11 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 
 	/**
 	 * Lookup the root of the model. Throw an exception if not found.
-	 * 
+	 *
 	 * @return
 	 */
 	public EObject lookupRoot() throws NotFoundException {
-		if(resource == null || resource.getContents().isEmpty()) {
+		if (resource == null || resource.getContents().isEmpty()) {
 			// The root doesn't exist.
 			throw new NotFoundException("No root defined in the model");
 		}
@@ -107,7 +107,7 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 	public void initializeEmptyModel() {
 
 		// Skip if the model is not empty
-		if(!resource.getContents().isEmpty()) {
+		if (!resource.getContents().isEmpty()) {
 			return;
 		}
 
@@ -118,8 +118,8 @@ public class UmlModel extends EMFLogicalModel implements IModel {
 
 	@Override
 	public void unload() {
-		for(Resource resource : resources) {
-			if(resource != null) {
+		for (Resource resource : resources) {
+			if (resource != null) {
 				CacheAdapter.getInstance().clear(resource);
 			}
 		}

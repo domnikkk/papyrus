@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.xwt.internal.xml.DocumentObject;
 
 /**
  * Shared constants
- * 
+ *
  * @author yyang
  */
 public interface IConstants {

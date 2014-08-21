@@ -3,7 +3,6 @@ package org.eclipse.papyrus.uml.diagram.sequence.edit.commands;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -62,15 +61,16 @@ public class DestructionOccurrenceSpecificationCreateCommand extends EditElement
 
 	/**
 	 * FIXME: replace with setElementToEdit()
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return container;
 		}
 		return eObject;
@@ -78,9 +78,10 @@ public class DestructionOccurrenceSpecificationCreateCommand extends EditElement
 
 	/**
 	 * A DestructionEvent on a lifeline can only be created if it doesn't exist yet a destructionEvent on that lifeline.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target.eClass(), UMLPackage.eINSTANCE.getDestructionOccurrenceSpecification());
@@ -90,16 +91,18 @@ public class DestructionOccurrenceSpecificationCreateCommand extends EditElement
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		DestructionOccurrenceSpecification newElement = UMLFactory.eINSTANCE.createDestructionOccurrenceSpecification();
 		EObject target = getElementToEdit();
 		ModelAddData data = PolicyChecker.getCurrent().getChildAddData(diagram, target, newElement);
-		if(data.isPermitted()) {
-			if(data.isPathDefined()) {
-				if(!data.execute(target, newElement))
+		if (data.isPermitted()) {
+			if (data.isPathDefined()) {
+				if (!data.execute(target, newElement)) {
 					return CommandResult.newErrorCommandResult("Failed to follow the policy-specified for the insertion of the new element");
+				}
 			} else {
-				Interaction qualifiedTarget = (Interaction)target;
+				Interaction qualifiedTarget = (Interaction) target;
 				qualifiedTarget.getFragments().add(newElement);
 			}
 		} else {
@@ -107,7 +110,7 @@ public class DestructionOccurrenceSpecificationCreateCommand extends EditElement
 		}
 		ElementInitializers.getInstance().init_DestructionOccurrenceSpecification_3022(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
@@ -115,12 +118,12 @@ public class DestructionOccurrenceSpecificationCreateCommand extends EditElement
 	 * @generated
 	 */
 	protected void doConfigure(DestructionOccurrenceSpecification newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

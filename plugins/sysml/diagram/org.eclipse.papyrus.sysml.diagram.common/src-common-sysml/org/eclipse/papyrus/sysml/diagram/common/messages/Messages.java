@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -150,7 +150,7 @@ public class Messages extends NLS {
 	public static String CreateOrSelectNonAtomicFlowPortTypeDialog_SelectNewTypeContainerDialogTitle;
 
 	public static String CreateOrSelectNonAtomicFlowPortTypeDialog_SelectNewTypeContainerDialogMessage;
-	
+
 	static {
 		NLS.initializeMessages("org.eclipse.papyrus.sysml.diagram.common.messages.messages", Messages.class); //$NON-NLS-1$
 	}

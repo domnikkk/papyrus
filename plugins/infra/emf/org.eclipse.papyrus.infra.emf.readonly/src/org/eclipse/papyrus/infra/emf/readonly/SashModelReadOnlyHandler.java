@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 429826
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.readonly;
 
@@ -30,9 +30,9 @@ import com.google.common.base.Optional;
  *
  * If the model is located in the user preferences space, it may be considered
  * read-only by other read-only handlers, whereas it shouldn't.
- * 
+ *
  * Its priority should be greater than EMFReadOnlyHandler, FSReadOnlyHandler and ...
- * 
+ *
  * This handler is discretion-based.
  *
  * @author Camille Letavernier
@@ -45,8 +45,8 @@ public class SashModelReadOnlyHandler extends AbstractReadOnlyHandler {
 	public SashModelReadOnlyHandler(EditingDomain editingDomain) {
 		super(editingDomain);
 
-		if(getEditingDomain().getResourceSet() instanceof ModelSet) {
-			modelSet = (ModelSet)getEditingDomain().getResourceSet();
+		if (getEditingDomain().getResourceSet() instanceof ModelSet) {
+			modelSet = (ModelSet) getEditingDomain().getResourceSet();
 		}
 	}
 
@@ -54,14 +54,14 @@ public class SashModelReadOnlyHandler extends AbstractReadOnlyHandler {
 	 * {@inheritDoc}
 	 */
 	public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if((modelSet == null) || !axes.contains(ReadOnlyAxis.DISCRETION)) {
+		if ((modelSet == null) || !axes.contains(ReadOnlyAxis.DISCRETION)) {
 			return Optional.absent();
 		}
 
 		// Only answer false if all of the resources in question are ones that we know must be allowed to be written
 		int knownWritableCount = 0;
-		for(URI uri : uris) {
-			if(SashModel.SASH_MODEL_FILE_EXTENSION.equals(uri.fileExtension()) || DiModel.DI_FILE_EXTENSION.equals(uri.fileExtension())) {
+		for (URI uri : uris) {
+			if (SashModel.SASH_MODEL_FILE_EXTENSION.equals(uri.fileExtension()) || DiModel.DI_FILE_EXTENSION.equals(uri.fileExtension())) {
 				knownWritableCount++;
 			}
 		}
@@ -73,7 +73,7 @@ public class SashModelReadOnlyHandler extends AbstractReadOnlyHandler {
 	 * {@inheritDoc}
 	 */
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
-		return Optional.absent(); //If the file is read-only, it can probably made writable by other read-only handlers (e.g. FSReadOnlyHandler).
+		return Optional.absent(); // If the file is read-only, it can probably made writable by other read-only handlers (e.g. FSReadOnlyHandler).
 	}
 
 

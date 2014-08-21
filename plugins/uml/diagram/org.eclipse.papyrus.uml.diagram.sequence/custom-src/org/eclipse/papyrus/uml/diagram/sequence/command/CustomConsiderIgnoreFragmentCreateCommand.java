@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -49,7 +49,7 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomConsiderIgnoreFragmentCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -58,7 +58,7 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 
 	/**
 	 * The creation command can only be executed if the elementToEdit (i.e the container) is an Interaction or an InteractionOperand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -68,7 +68,7 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 
 	/**
 	 * Handle creation on InteractionOperand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -79,12 +79,12 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 		// START GENERATED NOT CODE
 		EObject elementToEdit = getElementToEdit();
 		InteractionFragment owner = null;
-		if(elementToEdit instanceof InteractionOperand) {
-			InteractionOperand io = (InteractionOperand)elementToEdit;
+		if (elementToEdit instanceof InteractionOperand) {
+			InteractionOperand io = (InteractionOperand) elementToEdit;
 			owner = io;
 			io.getFragments().add(newElement);
 		} else {
-			Interaction i = (Interaction)elementToEdit;
+			Interaction i = (Interaction) elementToEdit;
 			owner = i;
 			i.getFragments().add(newElement);
 		}
@@ -92,13 +92,13 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 		// Create an interaction operand with the ConsiderIgnoreFragment (multiplicy 1...*)
 		InteractionOperand createInteractionOperand = UMLFactory.eINSTANCE.createInteractionOperand();
 		newElement.getOperands().add(createInteractionOperand);
-		Set<InteractionFragment> coveredInteractionFragments = (Set<InteractionFragment>)getRequest().getParameters().get(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS);
-		if(coveredInteractionFragments != null) {
+		Set<InteractionFragment> coveredInteractionFragments = (Set<InteractionFragment>) getRequest().getParameters().get(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS);
+		if (coveredInteractionFragments != null) {
 			// set the enclosing operand to the newly created one if the current enclosing interaction is the enclosing interaction
 			// of the new operand.
 			// => the interaction fragment that are inside an other container (like an enclosed CF) are not modified
-			for(InteractionFragment ift : coveredInteractionFragments) {
-				if(owner.equals(ift.getEnclosingOperand()) || owner.equals(ift.getEnclosingInteraction())) {
+			for (InteractionFragment ift : coveredInteractionFragments) {
+				if (owner.equals(ift.getEnclosingOperand()) || owner.equals(ift.getEnclosingInteraction())) {
 					ift.setEnclosingInteraction(null);
 					ift.setEnclosingOperand(createInteractionOperand);
 				}
@@ -106,7 +106,7 @@ public class CustomConsiderIgnoreFragmentCreateCommand extends ConsiderIgnoreFra
 		}
 		// END GENERATED NOT CODE
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

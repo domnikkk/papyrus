@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
@@ -8,9 +8,9 @@ import org.eclipse.papyrus.infra.core.sasheditor.editor.IPage;
 
 /**
  * A visitor used to lookup a PagePart from its raw model.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class LookupModelPageVisitor extends PartVisitor {
 
@@ -25,7 +25,7 @@ public class LookupModelPageVisitor extends PartVisitor {
 
 	/**
 	 * Get the result of the lookup.
-	 * 
+	 *
 	 * @return
 	 */
 	public IPage result() {
@@ -34,13 +34,13 @@ public class LookupModelPageVisitor extends PartVisitor {
 
 	/**
 	 * Check if the part is for the specified rawModel.
-	 * 
+	 *
 	 * @param part
 	 * @return
 	 */
 	private boolean isModelFor(PagePart part) {
 
-		if(part.getRawModel() == rawModel) {
+		if (part.getRawModel() == rawModel) {
 			result = part;
 			return true;
 		}
@@ -53,8 +53,9 @@ public class LookupModelPageVisitor extends PartVisitor {
 	 */
 	@Override
 	protected boolean acceptEditorTile(ComponentPart part) {
-		if(isModelFor(part))
+		if (isModelFor(part)) {
 			return false;
+		}
 
 		// Continue looking
 		return true;
@@ -65,8 +66,9 @@ public class LookupModelPageVisitor extends PartVisitor {
 	 */
 	@Override
 	protected boolean acceptEditorTile(EditorPart part) {
-		if(isModelFor(part))
+		if (isModelFor(part)) {
 			return false;
+		}
 
 		// Continue looking
 		return true;

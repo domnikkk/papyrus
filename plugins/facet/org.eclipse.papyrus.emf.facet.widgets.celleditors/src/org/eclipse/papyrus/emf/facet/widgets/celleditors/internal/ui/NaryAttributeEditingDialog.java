@@ -59,7 +59,7 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 
 	private static final int NUM_COLUMNS = 2;
 	private TableViewer featureValuesTableViewer;
-	
+
 	private final Object newValuePlaceholder = new Object();
 
 	private Button addButton;
@@ -98,11 +98,11 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 	 * @param values
 	 *            the current values
 	 * @param editHandler
-	 * 			  the edit handler to perform the commit.           
+	 *            the edit handler to perform the commit.
 	 * @param feature
 	 *            the feature to edit
 	 * @param eObject
-	 * 				the eObject being currently edited. Should not be modified in this dialog.
+	 *            the eObject being currently edited. Should not be modified in this dialog.
 	 */
 	public NaryAttributeEditingDialog(final Shell shell, final List<T> values,
 			final IModelCellEditHandler editHandler, final EObject eObject, final EStructuralFeature feature) {
@@ -180,14 +180,16 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 		return contents;
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	private void addButtonClicked() {
 		getValues().add(0, (T) NaryAttributeEditingDialog.this.newValuePlaceholder);
 		refresh();
 		this.featureValuesTableViewer.editElement(this.newValuePlaceholder, 0);
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	private void removeButtonClicked() {
 		final IStructuredSelection selection = (IStructuredSelection) this.featureValuesTableViewer
 				.getSelection();
@@ -196,7 +198,7 @@ public class NaryAttributeEditingDialog<T extends Object> extends AbstractNaryEd
 			final Object element = it.next();
 
 			if (getValues().contains(element)) {
-				getValues().remove(element);				
+				getValues().remove(element);
 			}
 		}
 		refresh();

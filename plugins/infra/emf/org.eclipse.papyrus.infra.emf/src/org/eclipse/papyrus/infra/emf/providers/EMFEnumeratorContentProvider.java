@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.infra.widgets.providers.AbstractStaticContentProvider
 
 /**
  * An IStaticContentProvider for EMF enumerators.
- * 
+ *
  * @author Camille Letavernier
  */
 public class EMFEnumeratorContentProvider extends AbstractStaticContentProvider {
@@ -32,7 +32,7 @@ public class EMFEnumeratorContentProvider extends AbstractStaticContentProvider 
 
 	/**
 	 * Constructs an EcoreEnumerator for the given Structural Feature
-	 * 
+	 *
 	 * @param feature
 	 */
 	public EMFEnumeratorContentProvider(EStructuralFeature feature) {
@@ -41,12 +41,12 @@ public class EMFEnumeratorContentProvider extends AbstractStaticContentProvider 
 
 	public Object[] getElements() {
 		EClassifier type = feature.getEType();
-		EEnum enumerated = (EEnum)type;
+		EEnum enumerated = (EEnum) type;
 		EEnumLiteral[] literals = enumerated.getELiterals().toArray(new EEnumLiteral[0]);
 		Enumerator[] values = new Enumerator[literals.length];
 
 		int i = 0;
-		for(EEnumLiteral literal : literals) {
+		for (EEnumLiteral literal : literals) {
 			Enumerator value = literal.getInstance();
 			values[i++] = value;
 		}

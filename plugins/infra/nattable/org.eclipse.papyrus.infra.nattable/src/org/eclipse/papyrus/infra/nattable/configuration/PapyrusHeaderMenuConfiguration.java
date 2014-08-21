@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,11 +21,11 @@ import org.eclipse.swt.SWT;
 
 /**
  * The configuration for the popup to use in the header of the table
- * 
+ *
  * Adapted code from AbstractHeaderMenuConfiguration
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class PapyrusHeaderMenuConfiguration extends AbstractUiBindingConfiguration {
 
@@ -41,9 +41,9 @@ public class PapyrusHeaderMenuConfiguration extends AbstractUiBindingConfigurati
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.config.IConfiguration#configureUiBindings(org.eclipse.nebula.widgets.nattable.ui.binding.UiBindingRegistry)
-	 * 
+	 *
 	 * @param uiBindingRegistry
 	 */
 	@Override

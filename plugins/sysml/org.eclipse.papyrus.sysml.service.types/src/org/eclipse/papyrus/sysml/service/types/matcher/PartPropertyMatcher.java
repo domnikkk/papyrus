@@ -21,22 +21,22 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * Test if current {@link Property} is a {@link Block} Part
  */
 public class PartPropertyMatcher implements IElementMatcher {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if((eObject instanceof Property) && !(eObject instanceof Port)) {
+		if ((eObject instanceof Property) && !(eObject instanceof Port)) {
 
-			Property element = (Property)eObject;
-			
+			Property element = (Property) eObject;
+
 			// The property is necessary a composition and has a type
 			if ((element.getType() != null) && (element.getAggregation() == AggregationKind.COMPOSITE_LITERAL)) {
-				
+
 				// Moreover its type has to be a Block
-				if(UMLUtil.getStereotypeApplication(element.getType(), Block.class) != null) {
+				if (UMLUtil.getStereotypeApplication(element.getType(), Block.class) != null) {
 					isMatch = true;
 				}
 			}

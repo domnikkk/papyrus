@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,14 +28,14 @@ import org.eclipse.ui.dialogs.PreferencesUtil;
 
 /**
  * this command is used to open the list of constraint to compute on the root model
- * 
+ *
  */
 public class SelectAndValidateModelCommand extends AbstractValidateCommand {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param selectedElement
 	 */
 	public SelectAndValidateModelCommand(EObject selectedElement, IPapyrusDiagnostician diagnostician) {
@@ -44,13 +44,13 @@ public class SelectAndValidateModelCommand extends AbstractValidateCommand {
 
 	/**
 	 * get the root element
-	 * 
+	 *
 	 * @param selectedElement
 	 * @return the root element
 	 */
 	private static EObject getTopOwner(EObject selectedElement) {
 		EObject selectedObject = selectedElement;
-		while(selectedObject.eContainer() != null) {
+		while (selectedObject.eContainer() != null) {
 			selectedObject = selectedObject.eContainer();
 		}
 		return selectedObject;
@@ -66,14 +66,14 @@ public class SelectAndValidateModelCommand extends AbstractValidateCommand {
 		String idRootPage = "org.eclipse.emf.validation.ui.rootPage"; //$NON-NLS-1$
 		String idConstraints = "org.eclipse.emf.validation.constraintsPrefs"; //$NON-NLS-1$
 		String filter[] = {
-			idRootPage,
-			idConstraints
+				idRootPage,
+				idConstraints
 		};
 		PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(null, idConstraints, filter, null);
 		int result = dialog.open();
 
-		if(result == IDialogConstants.OK_ID) {
-			if(selectedElement != null) {
+		if (result == IDialogConstants.OK_ID) {
+			if (selectedElement != null) {
 				runValidation(selectedElement);
 			}
 		}

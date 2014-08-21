@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
 	 */
 	public CustomMessageReorientCommand(ReorientRelationshipRequest request) {
@@ -47,19 +47,19 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 	 */
 	@Override
 	protected boolean canReorientSource() {
-		if(!(getOldSource() instanceof Element && getNewSource() instanceof Element)) {
+		if (!(getOldSource() instanceof Element && getNewSource() instanceof Element)) {
 			return false;
 		}
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		boolean canExistMessage = UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), getNewSource(), getOldTarget());
-		if(!canExistMessage) {
+		if (!canExistMessage) {
 			return false;
 		}
-		//Fixed bug about reconnect messages.
-		if(!(getNewSource() instanceof ExecutionSpecification)) {
+		// Fixed bug about reconnect messages.
+		if (!(getNewSource() instanceof ExecutionSpecification)) {
 			return false;
 		}
 		return MessageConnectionHelper.canReorientSource(getLink(), getNewSource());
@@ -70,19 +70,19 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 	 */
 	@Override
 	protected boolean canReorientTarget() {
-		if(!(getOldTarget() instanceof Element && getNewTarget() instanceof Element)) {
+		if (!(getOldTarget() instanceof Element && getNewTarget() instanceof Element)) {
 			return false;
 		}
 		Element source = getLink().getOwner();
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
-		if(!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), source, getNewTarget())) {
+		Interaction container = (Interaction) getLink().eContainer();
+		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4003(container, getLink(), source, getNewTarget())) {
 			return false;
 		}
-		//Fixed bug about reconnect messages.
-		if(!(getNewTarget() instanceof ExecutionSpecification)) {
+		// Fixed bug about reconnect messages.
+		if (!(getNewTarget() instanceof ExecutionSpecification)) {
 			return false;
 		}
 		return MessageConnectionHelper.canReorientTarget(getLink(), getNewTarget());
@@ -95,9 +95,9 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 	protected CommandResult reorientSource() throws ExecutionException {
 		MessageEnd sendEvent = getLink().getSendEvent();
 		ReconnectMessageHelper.updateMessageEnd(sendEvent, getOldSource(), getNewSource());
-		//Update Execution Ends after message reconnecte, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
-		if(getOldSource() instanceof ExecutionSpecification && sendEvent == (((ExecutionSpecification)getOldSource()).getStart())) {
-			OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification)getOldSource(), UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
+		// Update Execution Ends after message reconnecte, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
+		if (getOldSource() instanceof ExecutionSpecification && sendEvent == (((ExecutionSpecification) getOldSource()).getStart())) {
+			OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) getOldSource(), UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
 		}
 		return CommandResult.newOKCommandResult(getLink());
 	}
@@ -110,12 +110,12 @@ public class CustomMessageReorientCommand extends MessageReorientCommand {
 		MessageEnd receiveEvent = getLink().getReceiveEvent();
 		ReconnectMessageHelper.updateMessageEnd(receiveEvent, getOldTarget(), getNewTarget());
 		ReconnectMessageHelper.updateMessage(getLink());
-		//Update Execution Ends after message reconnecte, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
-		if(getOldTarget() instanceof ExecutionSpecification && receiveEvent == (((ExecutionSpecification)getOldTarget()).getStart())) {
-			OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification)getOldTarget(), UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
+		// Update Execution Ends after message reconnecte, see https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
+		if (getOldTarget() instanceof ExecutionSpecification && receiveEvent == (((ExecutionSpecification) getOldTarget()).getStart())) {
+			OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) getOldTarget(), UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
 		}
-		if(getNewTarget() instanceof ExecutionSpecification && receiveEvent instanceof MessageOccurrenceSpecification) {
-			OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification)getNewTarget(), receiveEvent);
+		if (getNewTarget() instanceof ExecutionSpecification && receiveEvent instanceof MessageOccurrenceSpecification) {
+			OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) getNewTarget(), receiveEvent);
 		}
 		return CommandResult.newOKCommandResult(getLink());
 	}

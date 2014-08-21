@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,8 @@ import org.eclipse.core.databinding.observable.IObservable;
 
 
 /**
- * A listener protocol for changes to a {@link DataSource} (especially its selection). Data sources are not {@linkplain IObservable observables}
- * because that would confuse the XWT bindings framework.
- * 
+ * A listener protocol for changes to a {@link DataSource} (especially its selection). Data sources are not {@linkplain IObservable observables} because that would confuse the XWT bindings framework.
+ *
  * @see DataSource
  * @see DataSource#addDataSourceListener(IDataSourceListener)
  */

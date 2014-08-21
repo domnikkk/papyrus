@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ public class MessageCreateReorientCommand extends MessageAbstractReorientCommand
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
-	 *        the re-orient request
+	 *            the re-orient request
 	 */
 	public MessageCreateReorientCommand(ReorientRelationshipRequest request) {
 		super(request);
@@ -32,15 +32,15 @@ public class MessageCreateReorientCommand extends MessageAbstractReorientCommand
 	 * <pre>
 	 * Ensure the target is a {@link Lifeline}.
 	 * </pre>
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.service.types.command.MessageAbstractReorientCommand#canReorientTarget()
-	 * 
+	 *
 	 * @return true if the link end can be re-oriented to a new target
 	 */
 	@Override
 	protected boolean canReorientTarget() {
 		// Verify possible type of new target
-		if(!(getNewTarget() instanceof Lifeline)) {
+		if (!(getNewTarget() instanceof Lifeline)) {
 			return false;
 		}
 

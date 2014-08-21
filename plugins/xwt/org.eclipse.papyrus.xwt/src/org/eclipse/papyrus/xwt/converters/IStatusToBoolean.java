@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.core.runtime.IStatus;
 
 /**
  * Binding to Object covnerter
- * 
+ *
  * @author yyang
  */
 public class IStatusToBoolean implements IConverter {
@@ -30,7 +30,7 @@ public class IStatusToBoolean implements IConverter {
 	 * Object)
 	 */
 	public Object convert(Object fromObject) {
-		IStatus status = (IStatus)fromObject;
+		IStatus status = (IStatus) fromObject;
 		return status.isOK();
 	}
 

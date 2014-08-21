@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,41 +26,44 @@ public abstract class AbstractDataProvider implements IDataProvider, IDisposable
 	protected INattableModelManager manager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableModelManager
-	 *        the manager of the table
+	 *            the manager of the table
 	 */
 	public AbstractDataProvider(final INattableModelManager tableModelManager) {
 		this.manager = tableModelManager;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.IDataProvider#getColumnCount()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public int getColumnCount() {
 		return this.manager.getColumnCount();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.IDataProvider#getRowCount()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public int getRowCount() {
 		return this.manager.getRowCount();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.services.IDisposable#dispose()
-	 * 
+	 *
 	 */
+	@Override
 	public void dispose() {
 		this.manager = null;
 	}

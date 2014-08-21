@@ -94,7 +94,7 @@ public class PageMngrImpl implements IPageMngr {
 	public List<Object> allPages() {
 		// TODO : use and return a shadow list ?
 		List<Object> list = new ArrayList<Object>();
-		for(PageRef pageRef : diSashModel.getPageList().getAvailablePage()) {
+		for (PageRef pageRef : diSashModel.getPageList().getAvailablePage()) {
 
 			list.add(pageRef.getPageIdentifier());
 		}
@@ -160,13 +160,13 @@ public class PageMngrImpl implements IPageMngr {
 
 		Iterator<PageRef> iterator = diSashModel.getPageList().getAvailablePage().iterator();
 		boolean found = false;
-		while(iterator.hasNext() && found == false) {
+		while (iterator.hasNext() && found == false) {
 			// Bug #288806 : the test should be inversed
-			if(pageIdentifier.equals(iterator.next().getPageIdentifier())) {
+			if (pageIdentifier.equals(iterator.next().getPageIdentifier())) {
 				found = true;
 			}
 		}
-		if(!found) {
+		if (!found) {
 			diSashModel.getPageList().addPage(pageIdentifier);
 		}
 		diSashModel.getSashModel().addPage(getCurrentFolder(), pageIdentifier);
@@ -199,7 +199,7 @@ public class PageMngrImpl implements IPageMngr {
 	public boolean isOpen(Object pageIdentifier) {
 		return diSashModel.getSashModel().lookupPage(pageIdentifier) != null;
 	}
-	
+
 	ContentChangedEventProvider getContentChangedEventProvider() {
 		return contentChangedEventProvider;
 	}

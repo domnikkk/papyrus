@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011,2012 CEA LIST and others
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,16 +63,16 @@ import com.google.inject.Injector;
 
 /**
  * this plugin is the configuration of the essential editor
- * 
+ *
  */
-public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorConfiguration { 
- // org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration {
+public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorConfiguration {
+	// org.eclipse.papyrus.infra.gmfdiag.xtext.glue.PopupEditorConfiguration {
 
 	private static final String OCL = "OCL"; //$NON-NLS-1$
 
 	@Inject
 	protected XtextResource fakeResource;
-	
+
 	/**
 	 * Clients may override to change style to {@link SWT}.MULTI
 	 */
@@ -80,7 +80,7 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 	public int getStyle() {
 		return SWT.MULTI | SWT.WRAP;
 	}
-	
+
 	@Override
 	public Object preEditAction(Object editedObject) {
 		if (editedObject instanceof Constraint) {
@@ -89,8 +89,8 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 				String stringValue = constraint.getSpecification().stringValue();
 				if ((stringValue != null) && (stringValue.length() > 0)) {
 					MessageDialog.openWarning(new Shell(),
-						Messages.EssentialOCLEditorConfiguration_ExistingSpecification,
-						Messages.EssentialOCLEditorConfiguration_AlreadyContainsNonEmpty);
+							Messages.EssentialOCLEditorConfiguration_ExistingSpecification,
+							Messages.EssentialOCLEditorConfiguration_AlreadyContainsNonEmpty);
 				}
 			}
 		}
@@ -99,7 +99,7 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 
 	/**
 	 * the command to save the content of the OCL constraint into the body of the UML constraint element
-	 * 
+	 *
 	 */
 	protected class UpdateConstraintCommand extends AbstractTransactionalCommand {
 
@@ -117,31 +117,31 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 		protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
 			org.eclipse.uml2.uml.OpaqueExpression opaqueExpression = null;
 			int indexOfOCLBody = -1;
-			if(constraint.getSpecification() == null || !(constraint.getSpecification() instanceof org.eclipse.uml2.uml.OpaqueExpression)) {
+			if (constraint.getSpecification() == null || !(constraint.getSpecification() instanceof org.eclipse.uml2.uml.OpaqueExpression)) {
 				opaqueExpression = UMLFactory.eINSTANCE.createOpaqueExpression();
 			} else {
-				opaqueExpression = (org.eclipse.uml2.uml.OpaqueExpression)constraint.getSpecification();
-				for(int i = 0; i < opaqueExpression.getLanguages().size() && indexOfOCLBody == -1; i++) {
-					if(opaqueExpression.getLanguages().get(i).equals(OCL)) {
+				opaqueExpression = (org.eclipse.uml2.uml.OpaqueExpression) constraint.getSpecification();
+				for (int i = 0; i < opaqueExpression.getLanguages().size() && indexOfOCLBody == -1; i++) {
+					if (opaqueExpression.getLanguages().get(i).equals(OCL)) {
 						indexOfOCLBody = i;
 					}
 				}
 			}
-			if(indexOfOCLBody == -1) {
+			if (indexOfOCLBody == -1) {
 				opaqueExpression.getLanguages().add(OCL);
 				opaqueExpression.getBodies().add(newTextualRepresentation);
 			} else {
 				opaqueExpression.getBodies().set(indexOfOCLBody, newTextualRepresentation);
 			}
 			constraint.setSpecification(opaqueExpression);
-			
+
 			return CommandResult.newOKCommandResult(constraint);
 		}
 	}
-	
+
 	/**
 	 * the command to save the content of an opaque expression
-	 * 
+	 *
 	 */
 	protected class UpdateOpaqueExpressionCommand extends AbstractTransactionalCommand {
 
@@ -158,15 +158,15 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
 			int indexOfOCLBody = -1;
-			for(int i = 0; i < opaqueExpression.getLanguages().size() && indexOfOCLBody == -1; i++) {
-				if(opaqueExpression.getLanguages().get(i).equals(OCL)) {
+			for (int i = 0; i < opaqueExpression.getLanguages().size() && indexOfOCLBody == -1; i++) {
+				if (opaqueExpression.getLanguages().get(i).equals(OCL)) {
 					indexOfOCLBody = i;
 				}
 			}
-			if(indexOfOCLBody == -1) {
+			if (indexOfOCLBody == -1) {
 				opaqueExpression.getLanguages().add(OCL);
 				opaqueExpression.getBodies().add(newTextualRepresentation);
-			} else if (indexOfOCLBody < opaqueExpression.getBodies().size()) {	// might not be true, if body list is not synchronized with language list
+			} else if (indexOfOCLBody < opaqueExpression.getBodies().size()) { // might not be true, if body list is not synchronized with language list
 				opaqueExpression.getBodies().set(indexOfOCLBody, newTextualRepresentation);
 			} else {
 				opaqueExpression.getBodies().add(newTextualRepresentation);
@@ -180,21 +180,21 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 		String value = ""; //$NON-NLS-1$
 		ValueSpecification specification = null;
 		if (objectToEdit instanceof Constraint) {
-			specification = ((Constraint)objectToEdit).getSpecification();
+			specification = ((Constraint) objectToEdit).getSpecification();
 		}
 		else if (objectToEdit instanceof ValueSpecification) {
 			specification = (ValueSpecification) objectToEdit;
 		}
 		if (specification != null) {
-			if(specification instanceof LiteralString) {
-				if(((LiteralString)specification).getValue() != null) {
-					value += ((LiteralString)specification).getValue();
+			if (specification instanceof LiteralString) {
+				if (((LiteralString) specification).getValue() != null) {
+					value += ((LiteralString) specification).getValue();
 				}
-			} else if(specification instanceof org.eclipse.uml2.uml.OpaqueExpression) {
+			} else if (specification instanceof org.eclipse.uml2.uml.OpaqueExpression) {
 				int indexOfOCLBody = -1;
-				org.eclipse.uml2.uml.OpaqueExpression opaqueExpression = (org.eclipse.uml2.uml.OpaqueExpression)specification;
-				for(int i = 0; i < opaqueExpression.getLanguages().size() && indexOfOCLBody == -1; i++) {
-					if(opaqueExpression.getLanguages().get(i).equals(OCL)) {
+				org.eclipse.uml2.uml.OpaqueExpression opaqueExpression = (org.eclipse.uml2.uml.OpaqueExpression) specification;
+				for (int i = 0; i < opaqueExpression.getLanguages().size() && indexOfOCLBody == -1; i++) {
+					if (opaqueExpression.getLanguages().get(i).equals(OCL)) {
 						if (i < opaqueExpression.getBodies().size()) {
 							value += opaqueExpression.getBodies().get(i);
 						}
@@ -211,13 +211,13 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 		return new IContextElementProviderWithInit() {
 
 			public EObject getContextObject() {
-				if(objectToEdit instanceof Constraint) {
-					return ((Constraint)objectToEdit).getContext();
+				if (objectToEdit instanceof Constraint) {
+					return ((Constraint) objectToEdit).getContext();
 				}
-				else if(objectToEdit instanceof OpaqueExpression) {
+				else if (objectToEdit instanceof OpaqueExpression) {
 					Element owner = ((OpaqueExpression) objectToEdit).getOwner();
 					if (owner instanceof Constraint) {
-						return ((Constraint)owner).getContext();
+						return ((Constraint) owner).getContext();
 					}
 				}
 				return null;
@@ -228,18 +228,17 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 					if (resource instanceof BaseResource) {
 						PivotUtil.setParserContext((BaseResource) resource, getContextObject());
 					}
-				}
-				catch (ParserException e) {
+				} catch (ParserException e) {
 				}
 			}
 		};
 	}
-		
+
 	@Override
 	public Injector getInjector() {
 		return UMLConstraintEditorActivator.getInstance().getInjector(EssentialOCLRuntimeModule.LANGUAGE_ID);
 	}
-	
+
 	@Override
 	public IParser createParser(final EObject semanticObject) {
 		if (objectToEdit == null) {
@@ -248,7 +247,7 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 		final IParser defaultParser = super.createParser(semanticObject);
 		// use a semantic parser to assure refresh after opaque expression changes, see bug 400077
 		return new ISemanticParser() {
-			
+
 			public String getEditString(IAdaptable element, int flags) {
 				return defaultParser.getEditString(element, flags);
 			}
@@ -264,7 +263,7 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 					// try to get resource set from nested dialog context
 					ResourceSet rs = NestedEditingDialogContext.getInstance().getResourceSet();
 					editingDomain = TransactionUtil.getEditingDomain(rs);
-					
+
 				}
 				if (semanticObject instanceof Constraint) {
 					result.add(new UpdateConstraintCommand(editingDomain, (Constraint) semanticObject, newString));
@@ -309,7 +308,7 @@ public class EssentialOCLEditorConfiguration extends DefaultXtextDirectEditorCon
 
 			public boolean areSemanticElementsAffected(EObject listener,
 					Object notification) {
-				// always return true to assure refresh of semantic listeners 
+				// always return true to assure refresh of semantic listeners
 				return true;
 			}
 		};

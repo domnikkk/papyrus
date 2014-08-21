@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.infra.services.edit.messages.Messages;
 
 /**
  * <pre>
- * 
+ *
  * Utility class for a convenient access to edit services.
- * 
+ *
  * </pre>
  */
 public class ElementEditServiceUtils {
@@ -54,14 +54,14 @@ public class ElementEditServiceUtils {
 
 		return null;
 
-		//ServicesRegistry serviceRegistry = EditorUtils.getServiceRegistry();
-		//		try {
-		//			IElementEditServiceProvider serviceProvider = serviceRegistry.getService(IElementEditServiceProvider.class);
-		//			IElementEditService service = serviceProvider.getEditService(objectToEdit);
-		//			return serviceRegistry == null ? null : service;
-		//		} catch (ServiceException e) {
-		//			return null;
-		//		}
+		// ServicesRegistry serviceRegistry = EditorUtils.getServiceRegistry();
+		// try {
+		// IElementEditServiceProvider serviceProvider = serviceRegistry.getService(IElementEditServiceProvider.class);
+		// IElementEditService service = serviceProvider.getEditService(objectToEdit);
+		// return serviceRegistry == null ? null : service;
+		// } catch (ServiceException e) {
+		// return null;
+		// }
 	}
 
 	/**
@@ -83,18 +83,18 @@ public class ElementEditServiceUtils {
 
 		return null;
 
-		//		ServicesRegistry serviceRegistry = EditorUtils.getServiceRegistry();
-		//		try {
-		//			IElementEditServiceProvider serviceProvider = serviceRegistry.getService(IElementEditServiceProvider.class);
-		//			return serviceRegistry == null ? null : serviceProvider;
-		//		} catch (ServiceException e) {
-		//			return null;
-		//		}
+		// ServicesRegistry serviceRegistry = EditorUtils.getServiceRegistry();
+		// try {
+		// IElementEditServiceProvider serviceProvider = serviceRegistry.getService(IElementEditServiceProvider.class);
+		// return serviceRegistry == null ? null : serviceProvider;
+		// } catch (ServiceException e) {
+		// return null;
+		// }
 	}
 
 	/**
 	 * Get the element edit service provider from the {@link ElementTypeRegistry}.
-	 * 
+	 *
 	 * @return the element edit service
 	 * @throws ServiceException
 	 */

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,17 +42,17 @@ public class PapyrusPaletteViewer extends PaletteViewerEx {
 	 */
 	@Override
 	public PaletteCustomizerDialog getCustomizerDialog() {
-		if(customizerDialog == null) {
+		if (customizerDialog == null) {
 			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-			//Load from extension point
-			for(IConfigurationElement e : config) {
+			// Load from extension point
+			for (IConfigurationElement e : config) {
 				String customizerClassName = e.getAttribute("customizerDialog"); //$NON-NLS-1$
 				try {
 					Class<? extends PaletteCustomizerDialog> advancedCustomizerDialogClass = Activator.getDefault().getBundle().loadClass(customizerClassName).asSubclass(PaletteCustomizerDialog.class);
-					if(advancedCustomizerDialogClass != null) {
+					if (advancedCustomizerDialogClass != null) {
 						Constructor<? extends PaletteCustomizerDialog> constructor = advancedCustomizerDialogClass.getConstructor(Shell.class, PaletteCustomizer.class, PaletteRoot.class);
-						if(constructor != null) {
+						if (constructor != null) {
 							customizerDialog = constructor.newInstance(getControl().getShell(), getCustomizer(), getPaletteRoot());
 							break;
 						}
@@ -63,7 +63,7 @@ public class PapyrusPaletteViewer extends PaletteViewerEx {
 				}
 			}
 
-			if(customizerDialog == null) {
+			if (customizerDialog == null) {
 				// be sure it is not null
 				customizerDialog = new PaletteCustomizerDialogEx(getControl().getShell(), getCustomizer(), getPaletteRoot());
 			}

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 
 /**
  * Abstract implementation of the {@link IDelegatingObservable} protocol with factory methods for creation of delegators.
- * 
+ *
  * @see #wrap(IObservable)
  * @see #create(Realm, Class)
  * @see #create(Realm, Class, ClassLoader, Class...)
@@ -44,7 +44,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	private T delegate;
 
 	@SuppressWarnings("unchecked")
-	private T realObservable = (T)this;
+	private T realObservable = (T) this;
 
 	private IChangeListener forwardingChangeListener;
 
@@ -68,31 +68,31 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 
 	/**
 	 * Wraps an {@code observable} in a delegator, returning an {@link IDelegatingObservable} of the appropriate kind.
-	 * 
+	 *
 	 * @param observable
-	 *        an observable to wrap in a delegator
+	 *            an observable to wrap in a delegator
 	 * @return the delegator, which will be an instance of the {@link IDelegatingObservable} interface
-	 * 
+	 *
 	 * @throws IllegalArgumentException
-	 *         if the {@code observable} is of a kind for which no delegator is currently implemented
+	 *             if the {@code observable} is of a kind for which no delegator is currently implemented
 	 */
 	public static IObservable wrap(IObservable observable) {
 		IObservable result;
 
-		if(Proxy.isProxyClass(observable.getClass()) && (Proxy.getInvocationHandler(observable) instanceof DelegatingInvocationHandler)) {
-			// Already have a delegator and it's a dynamic proxy.  Just create another like it
+		if (Proxy.isProxyClass(observable.getClass()) && (Proxy.getInvocationHandler(observable) instanceof DelegatingInvocationHandler)) {
+			// Already have a delegator and it's a dynamic proxy. Just create another like it
 			try {
 				result = DelegatingInvocationHandler.wrapDynamicProxy(observable);
 			} catch (Exception e) {
 				// Seems unlikely as I must have created the observable in the first place
 				throw new IllegalArgumentException("observable is an invalid implementation of IDelegatingObservable", e); //$NON-NLS-1$
 			}
-		} else if(observable instanceof IObservableList) {
-			result = DelegatingObservableList.wrap((IObservableList)observable);
-		} else if(observable instanceof IObservableSet) {
-			result = DelegatingObservableSet.wrap((IObservableSet)observable);
-		} else if(observable instanceof IObservableValue) {
-			result = DelegatingObservableValue.wrap((IObservableValue)observable);
+		} else if (observable instanceof IObservableList) {
+			result = DelegatingObservableList.wrap((IObservableList) observable);
+		} else if (observable instanceof IObservableSet) {
+			result = DelegatingObservableSet.wrap((IObservableSet) observable);
+		} else if (observable instanceof IObservableValue) {
+			result = DelegatingObservableValue.wrap((IObservableValue) observable);
 		} else {
 			throw new IllegalArgumentException("no delegating wrapper implementation available for observable"); //$NON-NLS-1$
 		}
@@ -108,14 +108,14 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	 * <li>{@link IObservableList}</li>
 	 * <li>{@link IObservableSet}</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param observableType
-	 *        the kind of observable that will be the new delegator's delegate
+	 *            the kind of observable that will be the new delegator's delegate
 	 * @return the delegator, which will be an instance of the {@link IDelegatingObservable} interface
-	 * 
+	 *
 	 * @throws IllegalArgumentException
-	 *         if the {@code observable} is of a kind for which no delegator is currently implemented
-	 * 
+	 *             if the {@code observable} is of a kind for which no delegator is currently implemented
+	 *
 	 * @see #create(Realm, Class, ClassLoader, Class...)
 	 */
 	public static <T extends IObservable> T create(Realm realm, Class<T> observableType) {
@@ -131,45 +131,44 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	 * <li>{@link IObservableList}</li>
 	 * <li>{@link IObservableSet}</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param observableType
-	 *        the kind of observable that will be the new delegator's delegate
+	 *            the kind of observable that will be the new delegator's delegate
 	 * @param loader
-	 *        a class loader that can see all of the {@code mixins}, if any
+	 *            a class loader that can see all of the {@code mixins}, if any
 	 * @param mixins
-	 *        optional mix-in interfaces that the resulting observable should refer to its delegate. These must all have
-	 *        {@linkplain #registerMixinHandler handlers already registered}
+	 *            optional mix-in interfaces that the resulting observable should refer to its delegate. These must all have {@linkplain #registerMixinHandler handlers already registered}
 	 * @return the delegator, which will be an instance of the {@link IDelegatingObservable} interface
-	 * 
+	 *
 	 * @throws IllegalArgumentException
-	 *         if the {@code observable} is of a kind for which no delegator is currently implemented
+	 *             if the {@code observable} is of a kind for which no delegator is currently implemented
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T extends IObservable> T create(Realm realm, Class<T> observableType, ClassLoader loader, Class<?>... mixins) {
-		if(observableType == IObservableList.class) {
-			return (T)DelegatingObservableList.create(realm, loader, mixins);
-		} else if(observableType == IObservableSet.class) {
-			return (T)DelegatingObservableSet.create(realm, loader, mixins);
-		} else if(observableType == IObservableValue.class) {
-			return (T)DelegatingObservableValue.create(realm, loader, mixins);
+		if (observableType == IObservableList.class) {
+			return (T) DelegatingObservableList.create(realm, loader, mixins);
+		} else if (observableType == IObservableSet.class) {
+			return (T) DelegatingObservableSet.create(realm, loader, mixins);
+		} else if (observableType == IObservableValue.class) {
+			return (T) DelegatingObservableValue.create(realm, loader, mixins);
 		} else {
 			throw new IllegalArgumentException("observableType"); //$NON-NLS-1$
 		}
 	}
 
 	public final void setDelegate(final IObservable delegate) {
-		if(isDisposed()) {
+		if (isDisposed()) {
 			throw new IllegalStateException("disposed"); //$NON-NLS-1$
 		}
 
 		final T oldDelegate = this.delegate;
 
-		if(delegate != oldDelegate) {
+		if (delegate != oldDelegate) {
 			final T newDelegate = (delegate == null) ? null : delegateType.cast(delegate);
 
-			if(oldDelegate != null) {
+			if (oldDelegate != null) {
 				unhookDelegate(oldDelegate);
-				
+
 				// Release it only after this iteration of the event loop so that UI refreshes can still access it for now
 				// in case its retain count will go to zero and it will be disposed
 				ReferenceCountedObservable.Util.autorelease(oldDelegate);
@@ -177,7 +176,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 
 			this.delegate = newDelegate;
 
-			if(newDelegate != null) {
+			if (newDelegate != null) {
 				ReferenceCountedObservable.Util.retain(newDelegate);
 				hookDelegate(newDelegate);
 			}
@@ -189,7 +188,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	final void clearDelegate() {
 		// Can do this even if disposed
 
-		if(delegate != null) {
+		if (delegate != null) {
 			unhookDelegate(delegate);
 
 			delegate = null;
@@ -206,11 +205,11 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 
 	/**
 	 * Notifies of a change from one delegate to another. Subclasses overriding this must call {@code super}.
-	 * 
+	 *
 	 * @param oldDelegate
-	 *        the previous delegate, or {@code null} if there was none
+	 *            the previous delegate, or {@code null} if there was none
 	 * @param newDelegate
-	 *        the new delegate, or {@code null} if now I have none
+	 *            the new delegate, or {@code null} if now I have none
 	 */
 	protected void delegateChanged(T oldDelegate, T newDelegate) {
 		fireChange();
@@ -252,11 +251,10 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	}
 
 	/**
-	 * Sets the real observable (which may be a dynamic proxy) to report as the source of events and the target of getter calls in the
-	 * {@link ObservableTracker}.
-	 * 
+	 * Sets the real observable (which may be a dynamic proxy) to report as the source of events and the target of getter calls in the {@link ObservableTracker}.
+	 *
 	 * @param realObservable
-	 *        my event source
+	 *            my event source
 	 */
 	final void setRealObservable(T realObservable) {
 		this.realObservable = realObservable;
@@ -264,7 +262,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 
 	/**
 	 * Gets the source to report for events (which may be a dynamic proxy).
-	 * 
+	 *
 	 * @return my event source
 	 */
 	final T getRealObservable() {
@@ -281,11 +279,12 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 		fireEvent(new StaleEvent(getRealObservable()));
 	}
 
+	@Override
 	public void dispose() {
-		if(!isDisposed()) {
-			if(delegate != null) {
+		if (!isDisposed()) {
+			if (delegate != null) {
 				unhookDelegate(delegate);
-				
+
 				// Release it only after this iteration of the event loop so that UI refreshes can still access it for now
 				// in case its retain count will go to zero and it will be disposed
 				ReferenceCountedObservable.Util.autorelease(delegate);
@@ -298,7 +297,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	@Override
 	protected void fireEvent(ObservableEvent event) {
 		// ensure the correct source for events fired by the superclass
-		if((event instanceof DisposeEvent) && (event.getSource() != getRealObservable())) {
+		if ((event instanceof DisposeEvent) && (event.getSource() != getRealObservable())) {
 			event = new DisposeEvent(getRealObservable());
 		}
 
@@ -306,7 +305,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	}
 
 	private IChangeListener getForwardingChangeListener() {
-		if(forwardingChangeListener == null) {
+		if (forwardingChangeListener == null) {
 			forwardingChangeListener = new IChangeListener() {
 
 				public void handleChange(ChangeEvent event) {
@@ -319,7 +318,7 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	}
 
 	private IStaleListener getForwardingStaleListener() {
-		if(forwardingStaleListener == null) {
+		if (forwardingStaleListener == null) {
 			forwardingStaleListener = new IStaleListener() {
 
 				public void handleStale(StaleEvent staleEvent) {
@@ -332,11 +331,11 @@ public abstract class DelegatingObservable<T extends IObservable> extends Refere
 	}
 
 	private IDisposeListener getDelegateDisposeListener() {
-		if(delegateDisposeListener == null) {
+		if (delegateDisposeListener == null) {
 			delegateDisposeListener = new IDisposeListener() {
 
 				public void handleDispose(DisposeEvent event) {
-					if(event.getObservable() == getDelegate()) {
+					if (event.getObservable() == getDelegate()) {
 						clearDelegate();
 					}
 				}

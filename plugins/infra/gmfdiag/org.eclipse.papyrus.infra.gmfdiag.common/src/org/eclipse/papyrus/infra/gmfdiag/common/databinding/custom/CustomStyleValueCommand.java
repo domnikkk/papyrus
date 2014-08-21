@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,35 +42,38 @@ public class CustomStyleValueCommand extends AbstractCommand {
 		this.styleFeature = styleFeature;
 	}
 
+	@Override
 	public void execute() {
 		NamedStyle valueStyle = view.getNamedStyle(styleClass, styleName);
 		createStyle = valueStyle == null;
-		if(createStyle) {
+		if (createStyle) {
 			valueStyle = createStyle();
 		} else {
 			oldValue = valueStyle.eGet(styleFeature);
 		}
 
 		valueStyle.eSet(styleFeature, value);
-		if(createStyle) {
+		if (createStyle) {
 			view.getStyles().add(valueStyle);
 		}
 	}
 
 	protected NamedStyle createStyle() {
-		NamedStyle result = (NamedStyle)NotationFactory.eINSTANCE.create(styleClass);
+		NamedStyle result = (NamedStyle) NotationFactory.eINSTANCE.create(styleClass);
 		result.setName(styleName);
 		return result;
 	}
 
+	@Override
 	public void redo() {
 		execute();
 	}
 
 	@Override
 	public void undo() {
-		NamedStyle valueStyle = view.getNamedStyle(styleClass, styleName);;
-		if(createStyle) {
+		NamedStyle valueStyle = view.getNamedStyle(styleClass, styleName);
+		;
+		if (createStyle) {
 			view.getStyles().remove(valueStyle);
 		} else {
 			valueStyle.eSet(styleFeature, oldValue);

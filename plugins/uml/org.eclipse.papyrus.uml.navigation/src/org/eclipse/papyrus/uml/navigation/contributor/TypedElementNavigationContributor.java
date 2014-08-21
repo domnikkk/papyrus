@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.uml2.uml.TypedElement;
 
 /**
  * NavigationContributor to navigate from TypedElement to their Type
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class TypedElementNavigationContributor implements NavigationContributor {
 
@@ -33,10 +33,10 @@ public class TypedElementNavigationContributor implements NavigationContributor 
 		List<NavigableElement> result = new LinkedList<NavigableElement>();
 
 		Element element = UMLUtil.resolveUMLElement(fromElement);
-		if(element instanceof TypedElement) {
-			result.add(new TypedNavigableElement(((TypedElement)element).getType()));
-		} else if(element instanceof Operation) {
-			result.add(new OperationTypeNavigableElement((Operation)element));
+		if (element instanceof TypedElement) {
+			result.add(new TypedNavigableElement(((TypedElement) element).getType()));
+		} else if (element instanceof Operation) {
+			result.add(new OperationTypeNavigableElement((Operation) element));
 		}
 
 		return result;

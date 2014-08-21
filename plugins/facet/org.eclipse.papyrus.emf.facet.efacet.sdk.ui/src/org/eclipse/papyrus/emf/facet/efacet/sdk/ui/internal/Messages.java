@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011, 2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	  Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *    Nicolas Bros (Mia-Software) - Bug 370442 - rewrite the Facet loading dialog for v0.2
@@ -51,9 +51,9 @@ public class Messages extends NLS {
 
 	public static String Please_select_EPackage;
 	public static String Select_EPackage;
-	
+
 	public static String Select_ETypedElement;
-	
+
 	public static String Select_query_type;
 
 	public static String Operation;
@@ -157,8 +157,8 @@ public class Messages extends NLS {
 	public static String JavaQueryWizardPage_has_side_effect;
 	public static String JavaQueryWizardPage_Query_name;
 	public static String Query_Select_Name_And_Type;
-	
-	//Begin copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
+
+	// Begin copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
 	public static String Query_name;
 	public static String QueryExecutionView_0;
 	public static String QueryExecutionView_1;
@@ -187,7 +187,7 @@ public class Messages extends NLS {
 	public static String QuerySelectionDialog_enableQuery;
 	public static String QuerySelectionDialog_refreshQuerySetsJob;
 	public static String QuerySelectionDialog_selectQuery;
-	
+
 	public static String Query_Query_Name;
 	public static String Query_has_side_effect;
 	public static String Query_Can_be_cached;
@@ -195,7 +195,7 @@ public class Messages extends NLS {
 	public static String Metaclass_mustSelectMetaclass;
 	public static String ExtendedMetaClass;
 
-	//End copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
+	// End copied from org.eclipse.papyrus.emf.facet.infra.query.ui.Messages
 
 	// Edition
 	public static String Edit_FacetSet;
@@ -213,7 +213,7 @@ public class Messages extends NLS {
 	public static String GetSubTypingType_title;
 
 	public static String FacetSetPropertyWizardPage_facet_properties;
-	
+
 	static {
 		// initialize resource bundle
 		NLS.initializeMessages(Messages.BUNDLE_NAME, Messages.class);

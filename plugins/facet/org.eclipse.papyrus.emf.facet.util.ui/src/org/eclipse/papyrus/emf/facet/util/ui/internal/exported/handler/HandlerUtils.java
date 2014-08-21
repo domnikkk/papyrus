@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
@@ -25,7 +25,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Util class for Handlers.
- * 
+ *
  * @since 0.3
  */
 public final class HandlerUtils {
@@ -36,7 +36,7 @@ public final class HandlerUtils {
 
 	/**
 	 * Return the tree selection of the user's selection.
-	 * 
+	 *
 	 * @return the current tree selection.
 	 */
 	public static IStructuredSelection getStructuredSelection() {
@@ -60,7 +60,7 @@ public final class HandlerUtils {
 
 	/**
 	 * Return the current selection.
-	 * 
+	 *
 	 * @return the current selection.
 	 */
 	public static Object getSelection() {
@@ -75,7 +75,7 @@ public final class HandlerUtils {
 
 	/**
 	 * Return the active workbench window.
-	 * 
+	 *
 	 * @return the active workbench window.
 	 */
 	public static Shell getWorkbenchWindowShell() {

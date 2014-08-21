@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ public class DiagramLinkColorGroup extends LinkColorGroup {
 
 	/**
 	 * Instantiates a new diagram link color group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param key
-	 *        the tkind of the diagram
+	 *            the tkind of the diagram
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 */
 	public DiagramLinkColorGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -42,6 +42,7 @@ public class DiagramLinkColorGroup extends LinkColorGroup {
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getDiagramConstant(getKey(), preferenceType);
 	}

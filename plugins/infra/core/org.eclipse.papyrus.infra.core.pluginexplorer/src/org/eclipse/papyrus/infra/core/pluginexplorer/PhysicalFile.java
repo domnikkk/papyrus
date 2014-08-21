@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.eclipse.core.runtime.Path;
 
 /**
  * Represents a physical file (on disk) as a resource within a plugin
+ * 
  * @author Laurent Wouters
  */
 public class PhysicalFile implements PluginEntry {
@@ -33,7 +34,7 @@ public class PhysicalFile implements PluginEntry {
 	 * A constant empty list of entries
 	 */
 	private static final List<PluginEntry> empty = new ArrayList<PluginEntry>(0);
-	
+
 	/**
 	 * The parent plugin
 	 */
@@ -46,28 +47,41 @@ public class PhysicalFile implements PluginEntry {
 	 * The cache of children
 	 */
 	private List<PluginEntry> cache;
-	
+
 	/**
 	 * Creates the representation of a physical file as a plugin entry
-	 * @param plugin The parent plugin
-	 * @param file The represented physical file
+	 * 
+	 * @param plugin
+	 *            The parent plugin
+	 * @param file
+	 *            The represented physical file
 	 */
 	public PhysicalFile(Plugin plugin, File file) {
 		this.plugin = plugin;
 		this.file = file;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getPlugin()
 	 */
-	public Plugin getPlugin() { return plugin; }
+	public Plugin getPlugin() {
+		return plugin;
+	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getName()
 	 */
-	public String getName() { return file.getName(); }
+	public String getName() {
+		return file.getName();
+	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getLogicalPath()
 	 */
 	public String getLogicalPath() {
@@ -76,12 +90,18 @@ public class PhysicalFile implements PluginEntry {
 		return "platform:/plugin/" + plugin.getName() + "/" + physical.makeRelativeTo(pp).toString();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getPhysicalPath()
 	 */
-	public String getPhysicalPath() { return file.getAbsolutePath(); }
+	public String getPhysicalPath() {
+		return file.getAbsolutePath();
+	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#hasChildren()
 	 */
 	public boolean hasChildren() {
@@ -92,12 +112,15 @@ public class PhysicalFile implements PluginEntry {
 		return false;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#children()
 	 */
 	public List<PluginEntry> children() {
-		if (cache != null)
+		if (cache != null) {
 			return cache;
+		}
 		if (!file.isDirectory()) {
 			cache = empty;
 			return empty;
@@ -105,20 +128,27 @@ public class PhysicalFile implements PluginEntry {
 		buildCache();
 		return cache;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getChild(java.lang.String)
 	 */
 	public PluginEntry getChild(String name) {
-		if (cache == null)
+		if (cache == null) {
 			buildCache();
-		for (PluginEntry entry : cache)
-			if (entry.getName().equals(name))
+		}
+		for (PluginEntry entry : cache) {
+			if (entry.getName().equals(name)) {
 				return entry;
+			}
+		}
 		return null;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.core.pluginexplorer.PluginEntry#getInputStream()
 	 */
 	public InputStream getInputStream() {
@@ -130,7 +160,7 @@ public class PhysicalFile implements PluginEntry {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Builds the cache of children entries
 	 */
@@ -140,8 +170,9 @@ public class PhysicalFile implements PluginEntry {
 			cache = empty;
 		} else {
 			cache = new ArrayList<PluginEntry>(content.length);
-			for (int i=0; i!=content.length; i++)
+			for (int i = 0; i != content.length; i++) {
 				cache.add(new PhysicalFile(plugin, content[i]));
+			}
 		}
 	}
 }

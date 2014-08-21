@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage#getPageIdentifier <em>Page Identifier</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage#getPageIdentifier <em>Page Identifier</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public interface AbstractPage extends EObject {
 	 * If the meaning of the '<em>Page Identifier</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Page Identifier</em>' attribute.
 	 * @see #setPageIdentifier(Object)
 	 * @see org.eclipse.papyrus.infra.core.sashwindows.di.DiPackage#getAbstractPage_PageIdentifier()
@@ -45,7 +46,9 @@ public interface AbstractPage extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.sashwindows.di.AbstractPage#getPageIdentifier <em>Page Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Page Identifier</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Page Identifier</em>' attribute.
 	 * @see #getPageIdentifier()
 	 * @generated
 	 */

@@ -18,12 +18,10 @@ package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog;
  * <p>
  * The second dialog should either:
  * <ul>
- * <li>call {@link IDialogCallback#committed(Object) committed} on the callback passed to
- * {@link IDialogCallbackWithPreCommit#openPrecommitDialog(Object, IDialogCallback) openPrecommitDialog} with the
- * definitive result
+ * <li>call {@link IDialogCallback#committed(Object) committed} on the callback passed to {@link IDialogCallbackWithPreCommit#openPrecommitDialog(Object, IDialogCallback) openPrecommitDialog} with the definitive result
  * <li>do nothing if the pre-commit dialog was canceled
  * </ul>
- * 
+ *
  * @param <T1>
  *            the type of the result for the first dialog
  * @param <T2>
@@ -34,7 +32,7 @@ package org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog;
 public interface IDialogCallbackWithPreCommit<T1, T2, D> {
 	/**
 	 * The user confirmed their choice in the pre-commit dialog.
-	 * 
+	 *
 	 * @param result
 	 *            the result of the first dialog
 	 * @param precommitResult
@@ -45,7 +43,7 @@ public interface IDialogCallbackWithPreCommit<T1, T2, D> {
 	/**
 	 * The user committed their selection in the first dialog. This method is called to let you open a second
 	 * "pre-commit" dialog, that can prompt the user for confirmation.
-	 * 
+	 *
 	 * @param result
 	 *            the result from the first dialog
 	 * @param precommitCallback

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,11 +31,6 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.papyrus.infra.core.resource.AbstractReadOnlyHandler;
 import org.eclipse.papyrus.infra.core.resource.ReadOnlyAxis;
 import org.eclipse.team.core.RepositoryProvider;
-import org.eclipse.team.svn.core.IStateFilter;
-import org.eclipse.team.svn.core.svnstorage.SVNRemoteStorage;
-import org.eclipse.team.svn.core.utility.FileUtility;
-import org.eclipse.team.svn.ui.SVNTeamModificationValidator;
-
 import com.google.common.base.Optional;
 import com.google.common.collect.Sets;
 
@@ -48,7 +43,7 @@ public class SVNLockHandler extends AbstractReadOnlyHandler {
 	// on that class (although, technically, it should be compiled into this class's constant
 	// pool, let's be explicit about it)
 	private static final String SVN_NATURE_ID = "org.eclipse.team.svn.core.nature"; //$NON-NLS-1$
-	
+
 	FileModificationValidator validator = null;
 
 	public SVNLockHandler(EditingDomain editingDomain) {
@@ -63,8 +58,8 @@ public class SVNLockHandler extends AbstractReadOnlyHandler {
 
 		if ((validator != null) && axes.contains(ReadOnlyAxis.PERMISSION)) {
 			IResource[] needsLockResources = FileUtility.filterResources(getIFiles(uris), IStateFilter.SF_NEEDS_LOCK, IResource.DEPTH_ZERO);
-			for(IResource needsLockResource : needsLockResources) {
-				if(!SVNRemoteStorage.instance().asLocalResource(needsLockResource).isLocked()) {
+			for (IResource needsLockResource : needsLockResources) {
+				if (!SVNRemoteStorage.instance().asLocalResource(needsLockResource).isLocked()) {
 					return Optional.of(Boolean.TRUE);
 				}
 			}
@@ -72,19 +67,19 @@ public class SVNLockHandler extends AbstractReadOnlyHandler {
 
 		return Optional.absent();
 	}
-	
+
 	@Override
 	public Optional<Boolean> canMakeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
-		if((validator != null) && axes.contains(ReadOnlyAxis.PERMISSION)) {
+		if ((validator != null) && axes.contains(ReadOnlyAxis.PERMISSION)) {
 			// get the unique set of projects to check for SVN team provider
 			IFile[] files = getIFiles(uris);
 			Set<IProject> projects = Sets.newHashSet();
-			for(int i = 0; i < files.length; i++) {
+			for (int i = 0; i < files.length; i++) {
 				projects.add(files[i].getProject());
 			}
 
 			boolean result = false;
-			for(Iterator<IProject> iter = projects.iterator(); !result && iter.hasNext();) {
+			for (Iterator<IProject> iter = projects.iterator(); !result && iter.hasNext();) {
 				result = RepositoryProvider.getProvider(iter.next(), SVN_NATURE_ID) != null;
 			}
 
@@ -104,7 +99,7 @@ public class SVNLockHandler extends AbstractReadOnlyHandler {
 
 	private IFile[] getIFiles(URI[] uris) {
 		HashSet<IFile> iFilesSet = new HashSet<IFile>();
-		for(URI uri : uris) {
+		for (URI uri : uris) {
 			IFile iFile = getFile(uri);
 			if (iFile != null) {
 				iFilesSet.add(iFile);
@@ -114,7 +109,7 @@ public class SVNLockHandler extends AbstractReadOnlyHandler {
 	}
 
 	private static IFile getFile(URI uri) {
-		if(uri.isPlatform()) {
+		if (uri.isPlatform()) {
 			return ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
 		}
 		return null;

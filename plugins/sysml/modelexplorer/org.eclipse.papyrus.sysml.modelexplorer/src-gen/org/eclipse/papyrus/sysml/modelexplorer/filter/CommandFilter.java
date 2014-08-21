@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,8 +25,9 @@ public class CommandFilter implements ICommandFilter {
 
 	private List<IElementType> visibleCommands;
 
+	@Override
 	public List<IElementType> getVisibleCommands() {
-		if(visibleCommands == null) {
+		if (visibleCommands == null) {
 			visibleCommands = new ArrayList<IElementType>();
 
 			visibleCommands.add(SysMLElementTypes.ACTOR_PART_PROPERTY);
@@ -68,7 +69,7 @@ public class CommandFilter implements ICommandFilter {
 			visibleCommands.add(SysMLElementTypes.VIEW);
 			visibleCommands.add(SysMLElementTypes.VIEW_POINT);
 
-			// UMLElementTypes.PROPERTY is required by ConstraintBlock Parameter 
+			// UMLElementTypes.PROPERTY is required by ConstraintBlock Parameter
 			visibleCommands.add(UMLElementTypes.PROPERTY);
 
 		}

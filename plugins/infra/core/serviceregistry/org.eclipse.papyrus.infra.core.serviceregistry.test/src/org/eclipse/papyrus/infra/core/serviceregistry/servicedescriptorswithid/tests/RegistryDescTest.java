@@ -13,6 +13,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Registry Desc</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RegistryDescTest extends TestCase {
@@ -21,6 +22,7 @@ public class RegistryDescTest extends TestCase {
 	 * The fixture for this Registry Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RegistryIdDesc fixture = null;
@@ -28,6 +30,7 @@ public class RegistryDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,6 +41,7 @@ public class RegistryDescTest extends TestCase {
 	 * Constructs a new Registry Desc test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RegistryDescTest(String name) {
@@ -48,6 +52,7 @@ public class RegistryDescTest extends TestCase {
 	 * Sets the fixture for this Registry Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(RegistryIdDesc fixture) {
@@ -58,6 +63,7 @@ public class RegistryDescTest extends TestCase {
 	 * Returns the fixture for this Registry Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RegistryIdDesc getFixture() {
@@ -67,6 +73,7 @@ public class RegistryDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -78,6 +85,7 @@ public class RegistryDescTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +94,4 @@ public class RegistryDescTest extends TestCase {
 		setFixture(null);
 	}
 
-} //RegistryDescTest
+} // RegistryDescTest

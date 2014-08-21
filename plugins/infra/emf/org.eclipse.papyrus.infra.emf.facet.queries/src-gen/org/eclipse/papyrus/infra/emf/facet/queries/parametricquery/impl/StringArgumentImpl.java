@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2012 CEA LIST.
- * 
- *  
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.StringArgumen
  * <li>{@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.StringArgumentImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
@@ -41,7 +41,7 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StringArgumentImpl() {
@@ -72,7 +72,7 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getValue() {
@@ -93,25 +93,26 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ParametricqueryPackage.STRING_ARGUMENT__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.STRING_ARGUMENT__VALUE:
 			return getValue();
 		}
@@ -121,14 +122,14 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.STRING_ARGUMENT__VALUE:
-			setValue((String)newValue);
+			setValue((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,12 +138,12 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.STRING_ARGUMENT__VALUE:
 			setValue(VALUE_EDEFAULT);
 			return;
@@ -153,12 +154,12 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ParametricqueryPackage.STRING_ARGUMENT__VALUE:
 			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
@@ -168,13 +169,14 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: "); //$NON-NLS-1$
@@ -183,4 +185,4 @@ public class StringArgumentImpl extends ArgumentImpl implements StringArgument {
 		return result.toString();
 	}
 
-} //StringArgumentImpl
+} // StringArgumentImpl

@@ -11,7 +11,7 @@ package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc#getAliasedService <em>Aliased Service</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc#getAliasedService <em>Aliased Service</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,10 +24,10 @@ public interface AliasIdDesc extends AbstractServiceIdDesc {
 	 * Returns the value of the '<em><b>Aliased Service</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Aliased Service</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Aliased Service</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Aliased Service</em>' attribute.
 	 * @see #setAliasedService(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getAliasIdDesc_AliasedService()
@@ -40,7 +40,9 @@ public interface AliasIdDesc extends AbstractServiceIdDesc {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc#getAliasedService <em>Aliased Service</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aliased Service</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Aliased Service</em>' attribute.
 	 * @see #getAliasedService()
 	 * @generated
 	 */

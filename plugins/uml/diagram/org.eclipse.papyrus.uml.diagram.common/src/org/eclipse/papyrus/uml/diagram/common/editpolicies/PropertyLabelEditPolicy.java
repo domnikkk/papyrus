@@ -48,12 +48,12 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		super.addAdditionalListeners();
 		Property property = getUMLElement();
 		// check host semantic element is not null
-		if(property == null) {
+		if (property == null) {
 			Activator.log.error("No semantic element present when adding listeners in PropertyLabelEditPolicy", null);
 			return;
 		}
 		// adds a listener to the element itself, and to linked elements, like Type
-		if(property.getType() != null) {
+		if (property.getType() != null) {
 			getDiagramEventBroker().addNotificationListener(property.getType(), this);
 		}
 		getDiagramEventBroker().addNotificationListener(property.getUpperValue(), this);
@@ -82,8 +82,8 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public Property getUMLElement() {
 		EObject element = super.getUMLElement();
-		if(element instanceof Property) {
-			return (Property)element;
+		if (element instanceof Property) {
+			return (Property) element;
 		}
 		return null;
 	}
@@ -101,23 +101,23 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		// - the stereotype application list has changed
 		Object object = notification.getNotifier();
 		Property property = getUMLElement();
-		if(object == null || property == null) {
+		if (object == null || property == null) {
 			return;
 		}
-		if(notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralInteger_Value())) {
+		if (notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralInteger_Value())) {
 			refreshDisplay();
-		} else if(notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value())) {
+		} else if (notification.getFeature().equals(UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value())) {
 			refreshDisplay();
 		}
-		if(object.equals(property)) {
+		if (object.equals(property)) {
 			notifyPropertyChanged(property, notification);
-		} else if(object.equals(property.getType())) {
+		} else if (object.equals(property.getType())) {
 			notifyPropertyTypeChanged(property.getType(), notification);
 		}
-		if(isMaskManagedAnnotation(object)) {
+		if (isMaskManagedAnnotation(object)) {
 			refreshDisplay();
 		}
-		if(isRemovedMaskManagedLabelAnnotation(object, notification)) {
+		if (isRemovedMaskManagedLabelAnnotation(object, notification)) {
 			refreshDisplay();
 		}
 	}
@@ -126,12 +126,12 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 * notifies that the the property has changed.
 	 *
 	 * @param property
-	 *        the property that has changed
+	 *            the property that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyPropertyChanged(Property property, Notification notification) {
-		switch(notification.getFeatureID(Property.class)) {
+		switch (notification.getFeatureID(Property.class)) {
 		case UMLPackage.PROPERTY__NAME:
 		case UMLPackage.PROPERTY__VISIBILITY:
 		case UMLPackage.PROPERTY__IS_DERIVED:
@@ -148,34 +148,34 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		case UMLPackage.PROPERTY__LOWER_VALUE:
 		case UMLPackage.PROPERTY__UPPER:
 		case UMLPackage.PROPERTY__UPPER_VALUE:
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			// if it is added => adds listener to the type element
 			case Notification.ADD:
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				refreshDisplay();
 				// if it is removed => removes listener from the type element
 				break;
 			case Notification.ADD_MANY: // should never happen
-				if(notification.getNewValue() instanceof List<?>) {
-					List<?> addedElements = (List<?>)notification.getNewValue();
-					for(Object addedElement : addedElements) {
-						if(addedElement instanceof EObject) {
-							getDiagramEventBroker().addNotificationListener((EObject)addedElement, this);
+				if (notification.getNewValue() instanceof List<?>) {
+					List<?> addedElements = (List<?>) notification.getNewValue();
+					for (Object addedElement : addedElements) {
+						if (addedElement instanceof EObject) {
+							getDiagramEventBroker().addNotificationListener((EObject) addedElement, this);
 						}
 					}
 				}
 				refreshDisplay();
 				break;
 			case Notification.REMOVE:
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				refreshDisplay();
 				break;
 			case Notification.REMOVE_MANY: // should never happen
-				if(notification.getOldValue() instanceof List<?>) {
-					List<?> removedElements = (List<?>)notification.getOldValue();
-					for(Object removedElement : removedElements) {
-						if(removedElement instanceof EObject) {
-							getDiagramEventBroker().removeNotificationListener((EObject)removedElement, this);
+				if (notification.getOldValue() instanceof List<?>) {
+					List<?> removedElements = (List<?>) notification.getOldValue();
+					for (Object removedElement : removedElements) {
+						if (removedElement instanceof EObject) {
+							getDiagramEventBroker().removeNotificationListener((EObject) removedElement, this);
 						}
 					}
 				}
@@ -184,11 +184,11 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			// if it is set, remove the old one and adds the new one. this is the method use when
 			// the type is set or removed...
 			case Notification.SET:
-				if(notification.getOldValue() != null) {
-					getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				if (notification.getOldValue() != null) {
+					getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				}
-				if(notification.getNewValue() != null) {
-					getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				if (notification.getNewValue() != null) {
+					getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				}
 				refreshDisplay();
 			default:
@@ -205,12 +205,12 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 * notifies that the type of the property has changed.
 	 *
 	 * @param type
-	 *        the type of the property that has changed
+	 *            the type of the property that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyPropertyTypeChanged(Type type, Notification notification) {
-		switch(notification.getFeatureID(Property.class)) {
+		switch (notification.getFeatureID(Property.class)) {
 		case UMLPackage.TYPE__NAME:
 			refreshDisplay(); // type name has changed => refresh the property display
 			break;
@@ -226,7 +226,7 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		PropertyLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		PropertyLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 
 	/**
@@ -236,11 +236,11 @@ public class PropertyLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	protected void removeAdditionalListeners() {
 		super.removeAdditionalListeners();
 		Property property = getUMLElement();
-		if(property == null) {
+		if (property == null) {
 			// check semantic element is not null and this is really an instance of Property
 			return;
 		}
-		if(property.getType() != null) {
+		if (property.getType() != null) {
 			getDiagramEventBroker().removeNotificationListener(property.getType(), this);
 		}
 		getDiagramEventBroker().removeNotificationListener(property.getUpperValue(), this);

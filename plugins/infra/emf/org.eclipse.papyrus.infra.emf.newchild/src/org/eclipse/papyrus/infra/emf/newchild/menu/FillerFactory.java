@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,27 +29,27 @@ public class FillerFactory {
 	public static FillerFactory instance = new FillerFactory();
 
 	public FillElement getFiller(FillMenuGroup parentGroup, MenuItem menuItem, Object selectedObject) {
-		if(menuItem instanceof NewEMFChildMenu) {
-			return new FillNewChild(parentGroup, (NewEMFChildMenu)menuItem, selectedObject);
+		if (menuItem instanceof NewEMFChildMenu) {
+			return new FillNewChild(parentGroup, (NewEMFChildMenu) menuItem, selectedObject);
 		}
 
-		if(menuItem instanceof Separator) {
-			return new FillSeparator(parentGroup, (Separator)menuItem);
+		if (menuItem instanceof Separator) {
+			return new FillSeparator(parentGroup, (Separator) menuItem);
 		}
 
-		if(menuItem instanceof Menu) {
-			return new FillMenu(parentGroup, (Menu)menuItem, selectedObject);
+		if (menuItem instanceof Menu) {
+			return new FillMenu(parentGroup, (Menu) menuItem, selectedObject);
 		}
 
-		if(menuItem instanceof MenuAction) {
-			return new FillMenuAction(parentGroup, (MenuAction)menuItem, selectedObject);
+		if (menuItem instanceof MenuAction) {
+			return new FillMenuAction(parentGroup, (MenuAction) menuItem, selectedObject);
 		}
 
-		if(menuItem instanceof CustomFiller) {
-			String className = ((CustomFiller)menuItem).getClassName();
+		if (menuItem instanceof CustomFiller) {
+			String className = ((CustomFiller) menuItem).getClassName();
 			CustomFillElement filler = ClassLoaderHelper.newInstance(className, CustomFillElement.class);
 			filler.setParentGroup(parentGroup);
-			filler.setMenuItem((CustomFiller)menuItem);
+			filler.setMenuItem((CustomFiller) menuItem);
 			filler.setSelectedObject(selectedObject);
 			return filler;
 		}
@@ -63,10 +63,10 @@ public class FillerFactory {
 	}
 
 	public FillElement getFiller(MenuContainer container, Object selectedObject) {
-		if(container instanceof MenuGroup) {
-			return new FillMenuGroup((MenuGroup)container, selectedObject);
-		} else if(container instanceof MenuRoot) {
-			return new FillMenuRoot((MenuRoot)container, selectedObject);
+		if (container instanceof MenuGroup) {
+			return new FillMenuGroup((MenuGroup) container, selectedObject);
+		} else if (container instanceof MenuRoot) {
+			return new FillMenuRoot((MenuRoot) container, selectedObject);
 		}
 
 		return null;

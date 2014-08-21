@@ -65,7 +65,7 @@ public class BehaviorDisplayHelper extends AnnotationModelElementFactory {
 	public static Command getChangeDisplayBehaviorCommand(
 			TransactionalEditingDomain domain, View source, final Object display) {
 		return new CreateEAnnotationCommand(
-				(TransactionalEditingDomain) domain, source, DISPLAY_BEHAVIOR) {
+				domain, source, DISPLAY_BEHAVIOR) {
 
 			@Override
 			protected void doExecute() {
@@ -144,6 +144,7 @@ public class BehaviorDisplayHelper extends AnnotationModelElementFactory {
 			}
 		}
 
+		@Override
 		protected Command getCommand(final Object value) {
 			return getChangeDisplayBehaviorCommand(
 					(TransactionalEditingDomain) domain, (View) source, value);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,24 +66,24 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 	 * org.eclipse.core.runtime.IPath, org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
-	// perform rename only for .di	
+	// perform rename only for .di
 	protected boolean performCopyWithAutoRename(IResource[] resources, IPath destination, IProgressMonitor monitor) {
 		IWorkspace workspace = resources[0].getWorkspace();
 		destinationPaths = new IPath[resources.length];
 		try {
 			String oldName = ""; //$NON-NLS-1$
 			String newName = ""; //$NON-NLS-1$
-			for(int i = 0; i < resources.length; i++) {
+			for (int i = 0; i < resources.length; i++) {
 				IResource source = resources[i];
 				destinationPaths[i] = destination.append(source.getName());
 				IPath relativSourcePath = source.getFullPath();
 				String sourceFileName = relativSourcePath.removeFileExtension().lastSegment();
-				if(sourceFileName.equals(oldName)) {
+				if (sourceFileName.equals(oldName)) {
 					String fileExtension = relativSourcePath.getFileExtension();
 					destinationPaths[i] = relativSourcePath.removeLastSegments(1).append(newName).addFileExtension(fileExtension);
 				} else {
 					oldName = sourceFileName;
-					if(workspace.getRoot().exists(destinationPaths[i]) && destinationPaths[i].getFileExtension().equals(DiModel.MODEL_FILE_EXTENSION)) {
+					if (workspace.getRoot().exists(destinationPaths[i]) && destinationPaths[i].getFileExtension().equals(DiModel.MODEL_FILE_EXTENSION)) {
 						destinationPaths[i] = getNewNameFor(destinationPaths[i], workspace);
 						newName = destinationPaths[i].removeFileExtension().lastSegment();
 					}
@@ -95,8 +95,8 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 			op.setModelProviderIds(getModelProviderIds());
 			PlatformUI.getWorkbench().getOperationSupport().getOperationHistory().execute(op, monitor, WorkspaceUndoUtil.getUIInfoAdapter(messageShell));
 		} catch (ExecutionException e) {
-			if(e.getCause() instanceof CoreException) {
-				recordError((CoreException)e.getCause());
+			if (e.getCause() instanceof CoreException) {
+				recordError((CoreException) e.getCause());
 			} else {
 				IDEWorkbenchPlugin.log(e.getMessage(), e);
 				displayError(e.getMessage());
@@ -117,9 +117,9 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 	// store path of created files
 	protected boolean performCopy(IResource[] resources, IPath destination, IProgressMonitor monitor) {
 		boolean performCopy = super.performCopy(resources, destination, monitor);
-		if(performCopy) {
+		if (performCopy) {
 			destinationPaths = new IPath[resources.length];
-			for(int i = 0; i < resources.length; i++) {
+			for (int i = 0; i < resources.length; i++) {
 				String name = resources[i].getName();
 				destinationPaths[i] = destination.append(name);
 			}
@@ -140,8 +140,8 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 		try {
 			ModelSet modelSet = initModelSet(copyResources);
 			Map<URI, URI> constructInternalMapping = constructInternalMapping(copyResources);
-			for(int i = 0; i < resources.length; i++) {
-				if(checkResource(modelSet, resources[i])) {
+			for (int i = 0; i < resources.length; i++) {
+				if (checkResource(modelSet, resources[i])) {
 					restoreAllLink(modelSet, constructInternalMapping, copyResources[i], destinationPaths[i]);
 				}
 			}
@@ -153,17 +153,18 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/**
 	 * Init a modelSet with registred model from resources
+	 * 
 	 * @param resources
 	 * @return
 	 */
 	protected ModelSet initModelSet(IResource[] resources) {
 		ModelSet modelSet = new DiResourceSet();
-		for(IResource iResource : resources) {
+		for (IResource iResource : resources) {
 			IPath fullPath = iResource.getFullPath();
-			if(DiModel.MODEL_FILE_EXTENSION.equals(fullPath.getFileExtension())) {
-				if (iResource instanceof IFile){
-					modelSet.createsModels((IFile)iResource);
-				}	
+			if (DiModel.MODEL_FILE_EXTENSION.equals(fullPath.getFileExtension())) {
+				if (iResource instanceof IFile) {
+					modelSet.createsModels((IFile) iResource);
+				}
 			}
 		}
 		return modelSet;
@@ -171,6 +172,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/**
 	 * Check if the iResource is known by the ModelSet
+	 * 
 	 * @param modelSet
 	 * @param iResource
 	 * @return
@@ -180,13 +182,14 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 		Resource resource = modelSet.getResource(uri, Boolean.FALSE);
 		return resource != null;
 	}
-	
+
 	/**
 	 * Restore referenced URI following the pattern ;
 	 * - if there is an accessible Resource use it
 	 * - else search the resource in the source location of the copy
-	 * 	
+	 *
 	 * Restore links to maintain coherence in the 3 files: uml-notation-di
+	 * 
 	 * @param modelSet
 	 * @param constructInternalMapping
 	 * @param copyResources
@@ -203,7 +206,7 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 		restoreDependencyHelper.restoreDependencies(resource);
 
 		// restore internal links
-		for(Entry<URI, URI> oneInternalCopyMapping : constructInternalMapping.entrySet()) {
+		for (Entry<URI, URI> oneInternalCopyMapping : constructInternalMapping.entrySet()) {
 			DependencyManagementHelper.updateDependencies(oneInternalCopyMapping.getKey(), oneInternalCopyMapping.getValue(), resource);
 		}
 		resource.save(ResourceUtils.getSaveOptions());
@@ -212,12 +215,13 @@ public class PapyrusCopyFilesAndFoldersOperation extends CopyFilesAndFoldersOper
 
 	/**
 	 * Construct an URI mapping from source to target
+	 * 
 	 * @param copyResources
 	 * @return
 	 */
 	protected Map<URI, URI> constructInternalMapping(IResource[] copyResources) {
 		Map<URI, URI> internalCopyMapping = new HashMap<URI, URI>();
-		for(int j = 0; j < copyResources.length; j++) {
+		for (int j = 0; j < copyResources.length; j++) {
 			IPath targetPath = destinationPaths[j];
 			IResource sourceResource = copyResources[j];
 			URI targetURI = URI.createPlatformResourceURI(targetPath.toString(), true);

@@ -23,6 +23,7 @@ public abstract class LeafConfigurationImpl extends ChildConfigurationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LeafConfigurationImpl() {
@@ -32,6 +33,7 @@ public abstract class LeafConfigurationImpl extends ChildConfigurationImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public abstract class LeafConfigurationImpl extends ChildConfigurationImpl imple
 		return PaletteconfigurationPackage.Literals.LEAF_CONFIGURATION;
 	}
 
-} //LeafConfigurationImpl
+} // LeafConfigurationImpl

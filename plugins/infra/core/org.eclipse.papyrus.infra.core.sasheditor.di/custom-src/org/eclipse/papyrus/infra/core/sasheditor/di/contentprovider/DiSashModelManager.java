@@ -65,7 +65,7 @@ public class DiSashModelManager {
 	protected ContentChangedEventProvider contentChangedEventProvider;
 
 	/** The factory used to create IPageModel */
-	//	private IPageModelFactory pageModelFactory;
+	// private IPageModelFactory pageModelFactory;
 
 
 	/**
@@ -77,12 +77,12 @@ public class DiSashModelManager {
 	 * @param currentFolderAndPageMngr
 	 */
 	public DiSashModelManager(IPageModelFactory pageModelFactory, final Resource diResource, TransactionalEditingDomain editingDomain, ICurrentFolderAndPageMngr currentFolderAndPageMngr) {
-		//		this.pageModelFactory = pageModelFactory;
+		// this.pageModelFactory = pageModelFactory;
 
 		// lookup the SashModel
 		sashWindowMngr = lookupSashWindowMngr(diResource);
 		// If no SashWindow structure is found, create a new one using a transaction.
-		if(sashWindowMngr == null) {
+		if (sashWindowMngr == null) {
 			// Create a default model and attach it to resource.
 			sashWindowMngr = createDefaultSashModel();
 			// Create a command
@@ -118,7 +118,7 @@ public class DiSashModelManager {
 		// lookup the SashModel
 		sashWindowMngr = lookupSashWindowMngr(diResource);
 		// If no SashWindow structure is found, create a new one using a transaction.
-		if(sashWindowMngr == null) {
+		if (sashWindowMngr == null) {
 			// Create a default model and attach it to resource.
 			sashWindowMngr = createDefaultSashModel();
 
@@ -171,10 +171,10 @@ public class DiSashModelManager {
 	 * @param pageModelFactory
 	 * @param diResource
 	 */
-	//	private DiSashModelManager(final Resource diResource, TransactionalEditingDomain editingDomain, ICurrentFolderAndPageMngr currentFolderAndPageMngr) {
-	//		this(null, diResource, editingDomain, currentFolderAndPageMngr);
+	// private DiSashModelManager(final Resource diResource, TransactionalEditingDomain editingDomain, ICurrentFolderAndPageMngr currentFolderAndPageMngr) {
+	// this(null, diResource, editingDomain, currentFolderAndPageMngr);
 	//
-	//	}
+	// }
 
 
 	/**
@@ -229,7 +229,7 @@ public class DiSashModelManager {
 	 * @return the PageMngrImpl
 	 */
 	protected final ContentChangedEventProvider getContentChangedEventProvider() {
-		if(contentChangedEventProvider == null) {
+		if (contentChangedEventProvider == null) {
 			contentChangedEventProvider = new ContentChangedEventProvider(sashWindowMngr);
 		}
 
@@ -303,12 +303,12 @@ public class DiSashModelManager {
 	 * @param diResource
 	 * @return The non transactional version of the IPageMngr
 	 */
-	//	public static IPageMngr createIPageMngr(Resource diResource) {
+	// public static IPageMngr createIPageMngr(Resource diResource) {
 	//
-	//		// Create an instance of the DiSashModelMngr with no factory.
-	//		// The factory is not needed since we don't get the ISashWindowsContentProvider.
-	//		return new DiSashModelManager(null, diResource).getIPageMngr();
+	// // Create an instance of the DiSashModelMngr with no factory.
+	// // The factory is not needed since we don't get the ISashWindowsContentProvider.
+	// return new DiSashModelManager(null, diResource).getIPageMngr();
 	//
-	//	}
+	// }
 
 }

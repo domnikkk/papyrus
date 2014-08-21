@@ -31,7 +31,7 @@ import org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ElementTypeBindingsItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -40,7 +40,7 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypeBindingsItemProvider(AdapterFactory adapterFactory) {
@@ -51,12 +51,12 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addClientContextIDPropertyDescriptor(object);
@@ -68,25 +68,26 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * This adds a property descriptor for the Client Context ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addClientContextIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ElementTypeBindings_clientContextID_feature"), getString("_UI_PropertyDescriptor_description", "_UI_ElementTypeBindings_clientContextID_feature", "_UI_ElementTypeBindings_type"), DomaincontextcodegenPackage.Literals.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ElementTypeBindings_clientContextID_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ElementTypeBindings_clientContextID_feature", "_UI_ElementTypeBindings_type"), DomaincontextcodegenPackage.Literals.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if(childrenFeatures == null) {
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DomaincontextcodegenPackage.Literals.ELEMENT_TYPE_BINDINGS__BINDINGS);
 		}
@@ -96,7 +97,7 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +112,7 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * This returns ElementTypeBindings.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,12 +124,12 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ElementTypeBindings)object).getClientContextID();
+		String label = ((ElementTypeBindings) object).getClientContextID();
 		return label == null || label.length() == 0 ? getString("_UI_ElementTypeBindings_type") : getString("_UI_ElementTypeBindings_type") + " " + label;
 	}
 
@@ -137,14 +138,14 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(ElementTypeBindings.class)) {
+		switch (notification.getFeatureID(ElementTypeBindings.class)) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -160,7 +161,7 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -176,7 +177,7 @@ public class ElementTypeBindingsItemProvider extends ItemProviderAdapter impleme
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

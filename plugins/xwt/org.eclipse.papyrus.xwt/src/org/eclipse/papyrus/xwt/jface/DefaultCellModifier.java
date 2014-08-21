@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -44,7 +44,7 @@ public class DefaultCellModifier implements ICellModifier {
 
 	public Object getValue(Object element, String property) {
 		PropertyDescriptor descriptor = getDescriptor(element, property);
-		if(descriptor != null) {
+		if (descriptor != null) {
 			try {
 				return descriptor.getReadMethod().invoke(element);
 			} catch (Exception e) {
@@ -55,15 +55,15 @@ public class DefaultCellModifier implements ICellModifier {
 	}
 
 	public void modify(Object element, String property, Object value) {
-		if(element instanceof TableItem) {
-			TableItem tableItem = (TableItem)element;
+		if (element instanceof TableItem) {
+			TableItem tableItem = (TableItem) element;
 			Object data = tableItem.getData();
 			PropertyDescriptor descriptor = getDescriptor(data, property);
-			if(descriptor != null) {
+			if (descriptor != null) {
 				try {
 					Class<?> type = descriptor.getPropertyType();
 					IConverter converter = XWT.findConvertor(value.getClass(), type);
-					if(converter != null) {
+					if (converter != null) {
 						Object newValue = converter.convert(value);
 						descriptor.getWriteMethod().invoke(data, newValue);
 						tableViewer.refresh(data);
@@ -79,10 +79,10 @@ public class DefaultCellModifier implements ICellModifier {
 
 	private PropertyDescriptor getDescriptor(Object element, String property) {
 		BeanInfo beanInfo = getBeanInfo(element);
-		if(beanInfo != null) {
+		if (beanInfo != null) {
 			PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-			for(PropertyDescriptor propertyDescriptor : propertyDescriptors) {
-				if(propertyDescriptor.getName().equalsIgnoreCase(property)) {
+			for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
+				if (propertyDescriptor.getName().equalsIgnoreCase(property)) {
 					return propertyDescriptor;
 				}
 			}

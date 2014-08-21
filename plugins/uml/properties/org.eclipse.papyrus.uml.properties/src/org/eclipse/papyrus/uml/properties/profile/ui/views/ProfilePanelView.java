@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.Package;
  * stereotypes applied to this element.
  * <p>
  * Panels are created using a factory, which should be overloaded when using a new selection manager.
- * 
+ *
  */
 public class ProfilePanelView extends ViewPart implements ISelectionListener, IPartListener {
 
@@ -56,9 +56,9 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Creates the part control.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	@Override
 	public void createPartControl(Composite parent) {
@@ -84,34 +84,34 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Selection changed.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 */
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 
-			IStructuredSelection sSelection = (IStructuredSelection)selection;
+			IStructuredSelection sSelection = (IStructuredSelection) selection;
 			Object previousTarget = currentTarget;
 			currentTarget = null;
 
-			//If more or less than 1 element is selected then nothing is active
-			if(sSelection.size() == 1) {
+			// If more or less than 1 element is selected then nothing is active
+			if (sSelection.size() == 1) {
 				// Retrieve selected object
 				Object object = sSelection.getFirstElement();
 				// If the object is an edit part, try to get semantic bridge
-				if(object instanceof Package) {
-					currentTarget = (Package)object;
-				} else if(object instanceof Element) {
-					currentTarget = (Element)object;
+				if (object instanceof Package) {
+					currentTarget = object;
+				} else if (object instanceof Element) {
+					currentTarget = object;
 				} else {
 					currentTarget = null;
 				}
 			}
-			if(previousTarget != currentTarget) {
+			if (previousTarget != currentTarget) {
 				switchUI();
 			}
 		} else {
@@ -128,9 +128,9 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Part activated.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 */
 	public void partActivated(IWorkbenchPart part) {
 	}
@@ -142,9 +142,9 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Part deactivated.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 */
 	public void partDeactivated(IWorkbenchPart part) {
 	}
@@ -156,9 +156,9 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Part brought to top.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 */
 	public void partBroughtToTop(IWorkbenchPart part) {
 	}
@@ -170,9 +170,9 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Part opened.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 */
 	public void partOpened(IWorkbenchPart part) {
 	}
@@ -184,9 +184,9 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 */
 	/**
 	 * Part closed.
-	 * 
+	 *
 	 * @param part
-	 *        the part
+	 *            the part
 	 */
 	public void partClosed(IWorkbenchPart part) {
 		switchUIDefault();
@@ -197,25 +197,25 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 * newly selected element.
 	 */
 	protected void switchUI() {
-		if((currentTarget != null) && (currentTarget instanceof Element)) {
+		if ((currentTarget != null) && (currentTarget instanceof Element)) {
 
 			/*
 			 * test to check if the panel is not disposed.
 			 * Closing the panel view and open it again creates a second
 			 * instance of panel, one of it is disposed, the new one is active
 			 */
-			if(!panel.isDisposed()) {
+			if (!panel.isDisposed()) {
 				panel.exitAction();
 				panel.dispose();
 
-				if(currentTarget instanceof Package) {
+				if (currentTarget instanceof Package) {
 					panel = new AppliedProfilePanel(this.parent, 0);
 					panel.createContent();
-					((AppliedProfilePanel)panel).setSelected((Package)currentTarget);
-				} else if(currentTarget instanceof Element) {
+					((AppliedProfilePanel) panel).setSelected((Package) currentTarget);
+				} else if (currentTarget instanceof Element) {
 					panel = new AppliedStereotypePanel(this.parent, 0);
 					panel.createContent();
-					((AppliedStereotypePanel)panel).setSelected((Element)currentTarget);
+					((AppliedStereotypePanel) panel).setSelected((Element) currentTarget);
 				} else {
 					panel = new DefaultPanel(this.parent, 0);
 					panel.createContent();
@@ -232,7 +232,7 @@ public class ProfilePanelView extends ViewPart implements ISelectionListener, IP
 	 * Replace current panel with default.
 	 */
 	private void switchUIDefault() {
-		if(!panel.isDisposed()) {
+		if (!panel.isDisposed()) {
 			// Flush previous
 			panel.exitAction();
 			panel.dispose();

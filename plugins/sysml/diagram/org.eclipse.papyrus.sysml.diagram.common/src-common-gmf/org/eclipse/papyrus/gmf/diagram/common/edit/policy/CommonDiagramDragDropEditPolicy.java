@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -85,7 +85,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	}
 
 	private Set<String> getSpecificDropList() {
-		if(specificDropList == null) {
+		if (specificDropList == null) {
 			specificDropList = getSpecificDropBehaviorTypes();
 		}
 		return specificDropList;
@@ -105,13 +105,13 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	protected Command getDropCommand(ChangeBoundsRequest request) {
 
 		Iterator<?> iter = request.getEditParts().iterator();
-		EObject graphicalParentObject = ((GraphicalEditPart)getHost()).resolveSemanticElement();
-		while((graphicalParentObject != null) && (iter.hasNext())) {
-			EditPart droppedEditPart = (EditPart)iter.next();
-			if(droppedEditPart instanceof AbstractElementBorderEditPart) {
+		EObject graphicalParentObject = ((GraphicalEditPart) getHost()).resolveSemanticElement();
+		while ((graphicalParentObject != null) && (iter.hasNext())) {
+			EditPart droppedEditPart = (EditPart) iter.next();
+			if (droppedEditPart instanceof AbstractElementBorderEditPart) {
 				return UnexecutableCommand.INSTANCE;
 			}
-			if(droppedEditPart instanceof AbstractElementLabelEditPart) {
+			if (droppedEditPart instanceof AbstractElementLabelEditPart) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
@@ -127,24 +127,24 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		CompoundCommand completeDropCommand = new CompoundCommand("DropObjectsAndArrange"); //$NON-NLS-1$
 
 		// Detect file drop
-		if((dropRequest.getObjects().size() > 0) && (dropRequest.getObjects().get(0) instanceof String)) {
+		if ((dropRequest.getObjects().size() > 0) && (dropRequest.getObjects().get(0) instanceof String)) {
 			return getDropFileCommand(dropRequest);
 		}
 
 		// Create the drop command by composite drop command for each dropped elements
 		CompositeCommand gmfDropCommand = new CompositeCommand("DropObjects"); //$NON-NLS-1$
 		Iterator<?> iter = dropRequest.getObjects().iterator();
-		while(iter.hasNext()) {
-			EObject droppedObject = (EObject)iter.next();
+		while (iter.hasNext()) {
+			EObject droppedObject = (EObject) iter.next();
 			gmfDropCommand.add(getDropObjectCommand(dropRequest, droppedObject));
 		}
 
 		// Create the complete drop command by adding an arrange command after drop
-		if(!gmfDropCommand.isEmpty()) {
+		if (!gmfDropCommand.isEmpty()) {
 
 			// Retrieve drop result (most probably created view but not necessarily) and update the request
 			CommandResult result = gmfDropCommand.getCommandResult();
-			List<?> newValues = (List<?>)result.getReturnValue();
+			List<?> newValues = (List<?>) result.getReturnValue();
 			dropRequest.setResult(newValues);
 
 			// Prepare refresh command
@@ -161,12 +161,12 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 			completeDropCommand.add(dropCommand.chain(refreshCommand));
 			completeDropCommand.add(arrangeCommand);
 
-			//add snap command if required
-			//430099: [Diagram] Snap to Grid for elements dropped from the ModelExplorer is ignored
-			//https://bugs.eclipse.org/bugs/show_bug.cgi?id=430099
+			// add snap command if required
+			// 430099: [Diagram] Snap to Grid for elements dropped from the ModelExplorer is ignored
+			// https://bugs.eclipse.org/bugs/show_bug.cgi?id=430099
 			final Object value = dropRequest.getExtendedData().get(PreferencesConstantsHelper.SNAP_TO_GRID_CONSTANT);
-			if(value instanceof Boolean && Boolean.TRUE.equals(value)) {
-				DeferredSnapToGridCommand snapCommand = new DeferredSnapToGridCommand(getEditingDomain(), newValues, (IGraphicalEditPart)getHost());
+			if (value instanceof Boolean && Boolean.TRUE.equals(value)) {
+				DeferredSnapToGridCommand snapCommand = new DeferredSnapToGridCommand(getEditingDomain(), newValues, (IGraphicalEditPart) getHost());
 				completeDropCommand.add(new ICommandProxy(snapCommand));
 			}
 
@@ -179,49 +179,49 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 
 		Point location = dropRequest.getLocation().getCopy();
 
-		View dropTargetView = ((IGraphicalEditPart)getHost()).getNotationView();
+		View dropTargetView = ((IGraphicalEditPart) getHost()).getNotationView();
 		EObject dropTargetElement = dropTargetView.getElement();
 
 		String droppedNodeType = registry.getNodeGraphicalType(droppedObject, dropTargetView.getType());
 		String droppedEdgeType = registry.getEdgeGraphicalType(droppedObject);
 
 		// Test if a specific drop command should be used
-		if(getSpecificDropList().contains(droppedNodeType) || getSpecificDropList().contains(droppedEdgeType)) {
+		if (getSpecificDropList().contains(droppedNodeType) || getSpecificDropList().contains(droppedEdgeType)) {
 			return getSpecificDropCommand(dropRequest, droppedObject, droppedNodeType, droppedEdgeType);
 		}
 
 		// Decide unknown type handling
-		if(UNDEFINED_TYPE.equals(droppedNodeType) && UNDEFINED_TYPE.equals(droppedEdgeType)) {
+		if (UNDEFINED_TYPE.equals(droppedNodeType) && UNDEFINED_TYPE.equals(droppedEdgeType)) {
 			return getUnknownDropCommand(dropRequest, droppedObject);
 		}
 
 		// The dropped element is a node
-		if(!UNDEFINED_TYPE.equals(droppedNodeType)) {
+		if (!UNDEFINED_TYPE.equals(droppedNodeType)) {
 
 			// Drop restriction:
 			// - no restriction when dropped on diagram
-			// - require containment when dropped on any other EObject		
-			 if((dropTargetView instanceof Diagram) || dropTargetElement.eContents().contains(droppedObject)) {
+			// - require containment when dropped on any other EObject
+			if ((dropTargetView instanceof Diagram) || dropTargetElement.eContents().contains(droppedObject)) {
 				return getDefaultDropNodeCommand(droppedNodeType, location, droppedObject);
-			 }
+			}
 
-			 // Allow drop for inherited elements
-			 if (dropTargetElement instanceof Classifier && ((Classifier) dropTargetElement).getAllAttributes().contains(droppedObject) ) {
+			// Allow drop for inherited elements
+			if (dropTargetElement instanceof Classifier && ((Classifier) dropTargetElement).getAllAttributes().contains(droppedObject)) {
 				return getDefaultDropNodeCommand(droppedNodeType, location, droppedObject);
-			 }		
-			 return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
+			}
+			return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 		}
 
 		// The dropped element is a edge
-		if(!UNDEFINED_TYPE.equals(droppedEdgeType)) {
+		if (!UNDEFINED_TYPE.equals(droppedEdgeType)) {
 
-			Collection<?> sources = linkMappingHelper.getSource((Element)droppedObject);
-			Collection<?> targets = linkMappingHelper.getTarget((Element)droppedObject);
+			Collection<?> sources = linkMappingHelper.getSource((Element) droppedObject);
+			Collection<?> targets = linkMappingHelper.getTarget((Element) droppedObject);
 
 			// Only manage binary link during drop
-			if((sources.size() > 0) && (targets.size() > 0)) {
-				EObject source = (EObject)sources.toArray()[0];
-				EObject target = (EObject)targets.toArray()[0];
+			if ((sources.size() > 0) && (targets.size() > 0)) {
+				EObject source = (EObject) sources.toArray()[0];
+				EObject target = (EObject) targets.toArray()[0];
 				return getDefaultDropEdgeCommand(droppedObject, source, target, droppedEdgeType, location);
 			}
 
@@ -250,7 +250,7 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 
 		CompositeCommand completeDropCommand = new CompositeCommand("CompleteDropEdge"); //$NON-NLS-1$
 
-		// Find views in current diagram representing source and target 
+		// Find views in current diagram representing source and target
 		Collection<View> sourceViews = getViews(source);
 		Collection<View> targetViews = getViews(target);
 
@@ -260,28 +260,28 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		// If either a source or target lacks create view for these elements
 		// - using defaultDrop command (assumed to be a view creation)
 		// - try to create view on host
-		if(sourceViews.isEmpty() || targetViews.isEmpty()) {
+		if (sourceViews.isEmpty() || targetViews.isEmpty()) {
 
 			CompositeCommand createEndViewsCommand = new CompositeCommand("CreateSourceTargetViews"); //$NON-NLS-1$
 
-			View dropContainerView = ((IGraphicalEditPart)getHost()).getNotationView();
+			View dropContainerView = ((IGraphicalEditPart) getHost()).getNotationView();
 			EObject dropContainerElement = dropContainerView.getElement();
 
-			if(sourceViews.isEmpty()) {
-				if(dropContainerElement.eContents().contains(source)) {
+			if (sourceViews.isEmpty()) {
+				if (dropContainerElement.eContents().contains(source)) {
 					ICommand dropSourceCommand = getDefaultDropNodeCommand(registry.getNodeGraphicalType(source, dropContainerView.getType()), absoluteLocation.getCopy(), source);
 					CompositeCommand.compose(createEndViewsCommand, dropSourceCommand);
-					sourceViewAdapter = (IAdaptable)dropSourceCommand.getCommandResult().getReturnValue();
+					sourceViewAdapter = (IAdaptable) dropSourceCommand.getCommandResult().getReturnValue();
 				} else {
 					return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 				}
 			}
 
-			if(targetViews.isEmpty()) {
-				if(dropContainerElement.eContents().contains(target)) {
+			if (targetViews.isEmpty()) {
+				if (dropContainerElement.eContents().contains(target)) {
 					ICommand dropTargetCommand = getDefaultDropNodeCommand(registry.getNodeGraphicalType(target, dropContainerView.getType()), absoluteLocation.getCopy(), target);
 					CompositeCommand.compose(createEndViewsCommand, dropTargetCommand);
-					targetViewAdapter = (IAdaptable)dropTargetCommand.getCommandResult().getReturnValue();
+					targetViewAdapter = (IAdaptable) dropTargetCommand.getCommandResult().getReturnValue();
 				} else {
 					return org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand.INSTANCE;
 				}
@@ -291,12 +291,12 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 		}
 
 		// Create source adapter
-		if(!sourceViews.isEmpty()) { // sourceViewAdapter should still be null in this case
+		if (!sourceViews.isEmpty()) { // sourceViewAdapter should still be null in this case
 			sourceViewAdapter = new SemanticAdapter(null, sourceViews.toArray()[0]);
 		}
 
 		// Create target adapter
-		if(!targetViews.isEmpty()) { // targetViewAdapter should still be null in this case
+		if (!targetViews.isEmpty()) { // targetViewAdapter should still be null in this case
 			targetViewAdapter = new SemanticAdapter(null, targetViews.toArray()[0]);
 		}
 
@@ -305,7 +305,8 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 
 		CreateConnectionViewRequest.ConnectionViewDescriptor linkdescriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(droppedObjectAdapter, droppedEdgeType, getDiagramPreferencesHint());
 
-		CommonDeferredCreateConnectionViewCommand createConnectionViewCommand = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), droppedEdgeType, sourceViewAdapter, targetViewAdapter, getViewer(), getDiagramPreferencesHint(), linkdescriptor, null);
+		CommonDeferredCreateConnectionViewCommand createConnectionViewCommand = new CommonDeferredCreateConnectionViewCommand(getEditingDomain(), droppedEdgeType, sourceViewAdapter, targetViewAdapter, getViewer(), getDiagramPreferencesHint(), linkdescriptor,
+				null);
 		createConnectionViewCommand.setElement(droppedObject);
 
 		CompositeCommand.compose(completeDropCommand, createConnectionViewCommand);
@@ -344,39 +345,39 @@ public abstract class CommonDiagramDragDropEditPolicy extends DiagramDragDropEdi
 	}
 
 	protected EditPartViewer getViewer() {
-		return ((IGraphicalEditPart)getHost()).getViewer();
+		return ((IGraphicalEditPart) getHost()).getViewer();
 	}
 
 	protected TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	protected PreferencesHint getDiagramPreferencesHint() {
-		return ((IGraphicalEditPart)getHost()).getDiagramPreferencesHint();
+		return ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint();
 	}
 
 	/**
 	 * This methods looks for views representing a given EObject in the host diagram.
-	 * 
+	 *
 	 * @param eObject
-	 *        the {@link EObject} to look for.
+	 *            the {@link EObject} to look for.
 	 * @return the list of {@link View} representing the eObject.
 	 */
 	private Set<View> getViews(EObject eObject) {
 		Set<View> views = new HashSet<View>();
 
 		// Retrieve host diagram
-		View hostView = ((IGraphicalEditPart)getHost()).getNotationView();
+		View hostView = ((IGraphicalEditPart) getHost()).getNotationView();
 		View hostDiagram = (hostView instanceof Diagram) ? hostView : hostView.getDiagram();
 
 		// Retrieve all views for the eObject
-		Collection<View> relatedViews =  CrossReferencerUtil.getCrossReferencingViews(eObject, hostDiagram.getType());
-		
-		// Parse and select views from host diagram only	
+		Collection<View> relatedViews = CrossReferencerUtil.getCrossReferencingViews(eObject, hostDiagram.getType());
+
+		// Parse and select views from host diagram only
 		Iterator<View> it = relatedViews.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			View currentView = it.next();
-			if(!(currentView instanceof Diagram) && (currentView.getDiagram() == hostDiagram)) {
+			if (!(currentView instanceof Diagram) && (currentView.getDiagram() == hostDiagram)) {
 				views.add(currentView);
 			}
 		}

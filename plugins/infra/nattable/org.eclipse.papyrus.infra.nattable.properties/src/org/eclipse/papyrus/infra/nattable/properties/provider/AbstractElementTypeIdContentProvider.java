@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,13 +29,13 @@ public abstract class AbstractElementTypeIdContentProvider implements IStaticCon
 	private Collection<String> allowedElements;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableManager
-	 *        the tableManager
+	 *            the tableManager
 	 * @param onColumn
-	 *        true if we are working on column
+	 *            true if we are working on column
 	 */
 	public AbstractElementTypeIdContentProvider(final INattableModelManager tableManager, final boolean onColumn) {
 		this.allowedElements = CreatableEObjectAxisUtils.getCreatableElementIds(tableManager, onColumn);
@@ -44,9 +44,9 @@ public abstract class AbstractElementTypeIdContentProvider implements IStaticCon
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */
@@ -56,9 +56,9 @@ public abstract class AbstractElementTypeIdContentProvider implements IStaticCon
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public final void dispose() {
@@ -66,9 +66,9 @@ public abstract class AbstractElementTypeIdContentProvider implements IStaticCon
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param viewer
 	 * @param oldInput
 	 * @param newInput
@@ -78,9 +78,9 @@ public abstract class AbstractElementTypeIdContentProvider implements IStaticCon
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

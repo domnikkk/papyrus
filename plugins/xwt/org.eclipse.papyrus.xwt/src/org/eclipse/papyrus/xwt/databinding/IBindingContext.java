@@ -25,13 +25,13 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 public interface IBindingContext {
 
 	/**
-	 * 
+	 *
 	 * @see @see org.eclipse.core.databinding.AggregateValidationStatus#MERGED
 	 */
 	public static final int MERGED = org.eclipse.core.databinding.AggregateValidationStatus.MERGED;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.AggregateValidationStatus#MAX_SEVERITY
 	 */
 	public static final int MAX_SEVERITY = org.eclipse.core.databinding.AggregateValidationStatus.MAX_SEVERITY;
@@ -53,7 +53,7 @@ public interface IBindingContext {
 
 	/**
 	 * The status type of the status. One of the values
-	 * 
+	 *
 	 * @return the statusType
 	 */
 	public abstract int getStatusType();
@@ -62,8 +62,7 @@ public interface IBindingContext {
 	 * @param targetObservableValue
 	 * @param modelObservableValue
 	 * @return
-	 * @see org.eclipse.core.databinding.DataBindingContext#bindValue(org.eclipse.core.databinding.observable.value.IObservableValue,
-	 *      org.eclipse.core.databinding.observable.value.IObservableValue)
+	 * @see org.eclipse.core.databinding.DataBindingContext#bindValue(org.eclipse.core.databinding.observable.value.IObservableValue, org.eclipse.core.databinding.observable.value.IObservableValue)
 	 */
 	public abstract Binding bindValue(IObservableValue targetObservableValue, IObservableValue modelObservableValue);
 
@@ -80,8 +79,7 @@ public interface IBindingContext {
 	 * @param targetToModel
 	 * @param modelToTarget
 	 * @return
-	 * @see org.eclipse.core.databinding.DataBindingContext#bindValue(org.eclipse.core.databinding.observable.value.IObservableValue,
-	 *      org.eclipse.core.databinding.observable.value.IObservableValue, org.eclipse.core.databinding.UpdateValueStrategy,
+	 * @see org.eclipse.core.databinding.DataBindingContext#bindValue(org.eclipse.core.databinding.observable.value.IObservableValue, org.eclipse.core.databinding.observable.value.IObservableValue, org.eclipse.core.databinding.UpdateValueStrategy,
 	 *      org.eclipse.core.databinding.UpdateValueStrategy)
 	 */
 	public abstract Binding bindValue(IObservableValue targetObservableValue, IObservableValue modelObservableValue, UpdateValueStrategy targetToModel, UpdateValueStrategy modelToTarget);
@@ -90,8 +88,7 @@ public interface IBindingContext {
 	 * @param targetObservableList
 	 * @param modelObservableList
 	 * @return
-	 * @see org.eclipse.core.databinding.DataBindingContext#bindList(org.eclipse.core.databinding.observable.list.IObservableList,
-	 *      org.eclipse.core.databinding.observable.list.IObservableList)
+	 * @see org.eclipse.core.databinding.DataBindingContext#bindList(org.eclipse.core.databinding.observable.list.IObservableList, org.eclipse.core.databinding.observable.list.IObservableList)
 	 */
 	public abstract Binding bindList(IObservableList targetObservableList, IObservableList modelObservableList);
 
@@ -101,8 +98,7 @@ public interface IBindingContext {
 	 * @param targetToModel
 	 * @param modelToTarget
 	 * @return
-	 * @see org.eclipse.core.databinding.DataBindingContext#bindList(org.eclipse.core.databinding.observable.list.IObservableList,
-	 *      org.eclipse.core.databinding.observable.list.IObservableList, org.eclipse.core.databinding.UpdateListStrategy,
+	 * @see org.eclipse.core.databinding.DataBindingContext#bindList(org.eclipse.core.databinding.observable.list.IObservableList, org.eclipse.core.databinding.observable.list.IObservableList, org.eclipse.core.databinding.UpdateListStrategy,
 	 *      org.eclipse.core.databinding.UpdateListStrategy)
 	 */
 	public abstract Binding bindList(IObservableList targetObservableList, IObservableList modelObservableList, UpdateListStrategy targetToModel, UpdateListStrategy modelToTarget);
@@ -111,8 +107,7 @@ public interface IBindingContext {
 	 * @param targetObservableSet
 	 * @param modelObservableSet
 	 * @return
-	 * @see org.eclipse.core.databinding.DataBindingContext#bindSet(org.eclipse.core.databinding.observable.set.IObservableSet,
-	 *      org.eclipse.core.databinding.observable.set.IObservableSet)
+	 * @see org.eclipse.core.databinding.DataBindingContext#bindSet(org.eclipse.core.databinding.observable.set.IObservableSet, org.eclipse.core.databinding.observable.set.IObservableSet)
 	 */
 	public abstract Binding bindSet(IObservableSet targetObservableSet, IObservableSet modelObservableSet);
 
@@ -122,14 +117,13 @@ public interface IBindingContext {
 	 * @param targetToModel
 	 * @param modelToTarget
 	 * @return
-	 * @see org.eclipse.core.databinding.DataBindingContext#bindSet(org.eclipse.core.databinding.observable.set.IObservableSet,
-	 *      org.eclipse.core.databinding.observable.set.IObservableSet, org.eclipse.core.databinding.UpdateSetStrategy,
+	 * @see org.eclipse.core.databinding.DataBindingContext#bindSet(org.eclipse.core.databinding.observable.set.IObservableSet, org.eclipse.core.databinding.observable.set.IObservableSet, org.eclipse.core.databinding.UpdateSetStrategy,
 	 *      org.eclipse.core.databinding.UpdateSetStrategy)
 	 */
 	public abstract Binding bindSet(IObservableSet targetObservableSet, IObservableSet modelObservableSet, UpdateSetStrategy targetToModel, UpdateSetStrategy modelToTarget);
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.DataBindingContext#dispose()
 	 */
 	public abstract void dispose();
@@ -151,6 +145,7 @@ public interface IBindingContext {
 	 * @deprecated
 	 * @see org.eclipse.core.databinding.DataBindingContext#getValidationStatusMap()
 	 */
+	@Deprecated
 	public abstract IObservableMap getValidationStatusMap();
 
 	/**
@@ -166,13 +161,13 @@ public interface IBindingContext {
 	public abstract void addValidationStatusProvider(ValidationStatusProvider validationStatusProvider);
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.DataBindingContext#updateModels()
 	 */
 	public abstract void updateModels();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.DataBindingContext#updateTargets()
 	 */
 	public abstract void updateTargets();
@@ -199,13 +194,13 @@ public interface IBindingContext {
 
 	/**
 	 * @param realm
-	 *        the realm to set
+	 *            the realm to set
 	 */
 	public abstract void setRealm(Realm realm);
 
 	/**
 	 * @param statusType
-	 *        the statusType to set
+	 *            the statusType to set
 	 */
 	public abstract void setStatusType(int statusType);
 

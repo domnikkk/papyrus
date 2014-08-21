@@ -23,44 +23,44 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterVal
  */
 public interface IParameterValueList2 extends List<ParameterValue> {
 	// This interface is a rewrite of
-		// org.eclipse.papyrus.emf.facet.infra.query.core.java.ParameterValueList
+	// org.eclipse.papyrus.emf.facet.infra.query.core.java.ParameterValueList
 
-		/**
-		 * Return the value of the parameter with the specified name.
-		 *
-		 * @param name
-		 *            the name of the parameter
-		 * @return the value, or <code>null</code> if there is no parameter with
-		 *         that name.
-		 */
-		public Object getValueByParameterName(final String name);
+	/**
+	 * Return the value of the parameter with the specified name.
+	 *
+	 * @param name
+	 *            the name of the parameter
+	 * @return the value, or <code>null</code> if there is no parameter with
+	 *         that name.
+	 */
+	public Object getValueByParameterName(final String name);
 
-		/**
-		 * Return the parameter with the specified name.
-		 *
-		 * @param name
-		 *            the name of the parameter
-		 * @return the parameter, or <code>null</code> if there is no parameter with
-		 *         that name.
-		 */
-		public ParameterValue getParameterValueByName(final String name);
+	/**
+	 * Return the parameter with the specified name.
+	 *
+	 * @param name
+	 *            the name of the parameter
+	 * @return the parameter, or <code>null</code> if there is no parameter with
+	 *         that name.
+	 */
+	public ParameterValue getParameterValueByName(final String name);
 
-		/**
-		 * Return the parameter corresponding to the given parameter declaration.
-		 *
-		 * @param parameter
-		 *            the parameter declaration
-		 * @return the parameter, or <code>null</code> if the given parameter
-		 *         declaration is unknown.
-		 */
-		public ParameterValue getParameterValue(final EParameter parameter);
+	/**
+	 * Return the parameter corresponding to the given parameter declaration.
+	 *
+	 * @param parameter
+	 *            the parameter declaration
+	 * @return the parameter, or <code>null</code> if the given parameter
+	 *         declaration is unknown.
+	 */
+	public ParameterValue getParameterValue(final EParameter parameter);
 
-		/**
-		 * Return the value of a parameter
-		 *
-		 * @param parameter
-		 *            the parameter
-		 * @return the value of the parameter
-		 */
-		public Object getValue(final EParameter parameter);
+	/**
+	 * Return the value of a parameter
+	 *
+	 * @param parameter
+	 *            the parameter
+	 * @return the value of the parameter
+	 */
+	public Object getValue(final EParameter parameter);
 }

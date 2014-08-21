@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import java.net.URL;
 import java.util.Set;
 
 /**
- * 
+ *
  * This interface defines the methods for the ProjectEditor
- * 
+ *
  */
 public interface IProjectEditor extends IFileEditor {
 
@@ -44,50 +44,50 @@ public interface IProjectEditor extends IFileEditor {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the missing nature for the project
 	 */
 	public Set<String> getMissingNature();
 
 	/**
-	 * 
+	 *
 	 * @param nature
-	 *        a nature
+	 *            a nature
 	 * @return
 	 *         <code>true</code> if the project has this nature
 	 */
 	public boolean hasNature(final String nature);
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the missing build command
 	 */
 	public Set<String> getMissingBuildCommand();
 
 	/**
-	 * 
+	 *
 	 * @param commands
-	 *        the command to add
+	 *            the command to add
 	 */
 	public void addBuildCommands(Set<String> commands);
 
 	/**
-	 * 
+	 *
 	 * @param command
-	 *        a build command
+	 *            a build command
 	 * @return
 	 *         <code>true</code> if the project has the build command
 	 */
 	public boolean hasBuildCommand(String command);
 
 	/**
-	 * 
+	 *
 	 * @param url
-	 *        the url of the file to copy
+	 *            the url of the file to copy
 	 * @param fileDestinationPath
-	 *        the destination path for the added file
+	 *            the destination path for the added file
 	 */
 	public void addFile(final URL url, final String fileDestinationPath, final boolean eraseExistingFile);
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,31 +21,31 @@ import org.eclipse.gmf.runtime.diagram.ui.internal.requests.RecalculatePageBreak
 import org.eclipse.papyrus.infra.gmfdiag.common.preferences.PreferencesConstantsHelper;
 
 /**
- * 
+ *
  * Handler for the Recalculate Page Breaks Action
- * 
- * 
+ *
+ *
  */
 @SuppressWarnings("restriction")
 public class RecalculatePageBreaksHandler extends AbstractViewHandler {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public RecalculatePageBreaksHandler() {
 		super(PreferencesConstantsHelper.VIEW_PAGE_BREAK_CONSTANT);
 	}
 
 	/**
-	 * 
+	 *
 	 * Execute the request via the preformRequest() call. This action does
 	 * not modify the model and does not use the request/command infrastructure.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.handlers.AbstractViewHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -53,8 +53,8 @@ public class RecalculatePageBreaksHandler extends AbstractViewHandler {
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		RecalculatePageBreaksRequest request = new RecalculatePageBreaksRequest();
-		//not done in a CommandStack! (like the original!)
-		((DiagramRootEditPart)getDiagramEditPart().getRoot()).performRequest(request);
+		// not done in a CommandStack! (like the original!)
+		((DiagramRootEditPart) getDiagramEditPart().getRoot()).performRequest(request);
 		return null;
 	}
 

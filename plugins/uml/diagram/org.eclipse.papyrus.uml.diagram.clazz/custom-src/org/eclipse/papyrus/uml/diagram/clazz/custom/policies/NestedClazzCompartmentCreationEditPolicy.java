@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,12 +52,13 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPo
 public class NestedClazzCompartmentCreationEditPolicy extends PapyrusCreationEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getReparentCommand(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart)
-	 * 
+	 *
 	 * @param gep
 	 * @return
 	 */
+	@Override
 	protected ICommand getReparentCommand(IGraphicalEditPart gep) {
 		CompositeCommand cc = new CompositeCommand(DiagramUIMessages.AddCommand_Label);
 		View container = (View) getHost().getModel();
@@ -96,7 +97,7 @@ public class NestedClazzCompartmentCreationEditPolicy extends PapyrusCreationEdi
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, DiagramUIMessages.AddCommand_Label);
 		Iterator<? extends org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest.ViewDescriptor> descriptors = request.getViewDescriptors().iterator();
 		while (descriptors.hasNext()) {
-			CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor) descriptors.next();
+			CreateViewRequest.ViewDescriptor descriptor = descriptors.next();
 			CreateCommand createCommand = new CreateUniqueViewCommand(editingDomain, descriptor, (View) (getHost().getModel()));
 			createCommand.setLabel("custoCreateCommand");
 			cc.compose(createCommand);

@@ -33,11 +33,12 @@ import org.eclipse.papyrus.views.properties.environment.provider.PropertiesEditP
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.contexts.Context} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ContextItemProvider
-	extends EModelElementItemProvider
-	implements
+		extends EModelElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class ContextItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ContextItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class ContextItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,52 +77,54 @@ public class ContextItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Context_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Context_name_feature", "_UI_Context_type"),
-				 ContextsPackage.Literals.CONTEXT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Context_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Context_name_feature", "_UI_Context_type"),
+						ContextsPackage.Literals.CONTEXT__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Dependencies feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDependenciesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Context_dependencies_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Context_dependencies_feature", "_UI_Context_type"),
-				 ContextsPackage.Literals.CONTEXT__DEPENDENCIES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Context_dependencies_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Context_dependencies_feature", "_UI_Context_type"),
+						ContextsPackage.Literals.CONTEXT__DEPENDENCIES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -136,6 +141,7 @@ public class ContextItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -150,6 +156,7 @@ public class ContextItemProvider
 	 * This returns Context.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -161,14 +168,15 @@ public class ContextItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Context)object).getName();
+		String label = ((Context) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Context_type") :
-			getString("_UI_Context_type") + " " + label;
+				getString("_UI_Context_type") :
+				getString("_UI_Context_type") + " " + label;
 	}
 
 	/**
@@ -176,6 +184,7 @@ public class ContextItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -183,14 +192,14 @@ public class ContextItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Context.class)) {
-			case ContextsPackage.CONTEXT__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ContextsPackage.CONTEXT__TABS:
-			case ContextsPackage.CONTEXT__VIEWS:
-			case ContextsPackage.CONTEXT__DATA_CONTEXTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ContextsPackage.CONTEXT__NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ContextsPackage.CONTEXT__TABS:
+		case ContextsPackage.CONTEXT__VIEWS:
+		case ContextsPackage.CONTEXT__DATA_CONTEXTS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -200,6 +209,7 @@ public class ContextItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -207,25 +217,26 @@ public class ContextItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.CONTEXT__TABS,
-				 ContextsFactory.eINSTANCE.createTab()));
+						ContextsFactory.eINSTANCE.createTab()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.CONTEXT__VIEWS,
-				 ContextsFactory.eINSTANCE.createView()));
+						ContextsFactory.eINSTANCE.createView()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ContextsPackage.Literals.CONTEXT__DATA_CONTEXTS,
-				 ContextsFactory.eINSTANCE.createDataContextRoot()));
+						ContextsFactory.eINSTANCE.createDataContextRoot()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

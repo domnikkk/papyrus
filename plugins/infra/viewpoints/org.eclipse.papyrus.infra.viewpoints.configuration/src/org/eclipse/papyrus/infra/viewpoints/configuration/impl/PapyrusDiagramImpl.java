@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,10 +34,10 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusDiagram;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getCustomPalette <em>Custom Palette</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getCustomStyle <em>Custom Style</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getChildRules <em>Child Rules</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getPaletteRules <em>Palette Rules</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getCustomPalette <em>Custom Palette</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getCustomStyle <em>Custom Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getChildRules <em>Child Rules</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.PapyrusDiagramImpl#getPaletteRules <em>Palette Rules</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The default value of the '{@link #getCustomPalette() <em>Custom Palette</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCustomPalette()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getCustomPalette() <em>Custom Palette</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCustomPalette()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The default value of the '{@link #getCustomStyle() <em>Custom Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCustomStyle()
 	 * @generated
 	 * @ordered
@@ -78,6 +81,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getCustomStyle() <em>Custom Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCustomStyle()
 	 * @generated
 	 * @ordered
@@ -88,6 +92,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getChildRules() <em>Child Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getChildRules()
 	 * @generated
 	 * @ordered
@@ -98,6 +103,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	 * The cached value of the '{@link #getPaletteRules() <em>Palette Rules</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPaletteRules()
 	 * @generated
 	 * @ordered
@@ -107,6 +113,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PapyrusDiagramImpl() {
@@ -116,6 +123,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,6 +134,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getCustomPalette() {
@@ -135,18 +144,21 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCustomPalette(String newCustomPalette) {
 		String oldCustomPalette = customPalette;
 		customPalette = newCustomPalette;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE, oldCustomPalette, customPalette));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getCustomStyle() {
@@ -156,18 +168,21 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCustomStyle(String newCustomStyle) {
 		String oldCustomStyle = customStyle;
 		customStyle = newCustomStyle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE, oldCustomStyle, customStyle));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ChildRule> getChildRules() {
@@ -180,6 +195,7 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<PaletteRule> getPaletteRules() {
@@ -192,15 +208,16 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
-				return ((InternalEList<?>)getChildRules()).basicRemove(otherEnd, msgs);
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
-				return ((InternalEList<?>)getPaletteRules()).basicRemove(otherEnd, msgs);
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
+			return ((InternalEList<?>) getChildRules()).basicRemove(otherEnd, msgs);
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
+			return ((InternalEList<?>) getPaletteRules()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,19 +225,20 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
-				return getCustomPalette();
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
-				return getCustomStyle();
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
-				return getChildRules();
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
-				return getPaletteRules();
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
+			return getCustomPalette();
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
+			return getCustomStyle();
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
+			return getChildRules();
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
+			return getPaletteRules();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -228,26 +246,27 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
-				setCustomPalette((String)newValue);
-				return;
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
-				setCustomStyle((String)newValue);
-				return;
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
-				getChildRules().clear();
-				getChildRules().addAll((Collection<? extends ChildRule>)newValue);
-				return;
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
-				getPaletteRules().clear();
-				getPaletteRules().addAll((Collection<? extends PaletteRule>)newValue);
-				return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
+			setCustomPalette((String) newValue);
+			return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
+			setCustomStyle((String) newValue);
+			return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
+			getChildRules().clear();
+			getChildRules().addAll((Collection<? extends ChildRule>) newValue);
+			return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
+			getPaletteRules().clear();
+			getPaletteRules().addAll((Collection<? extends PaletteRule>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -255,23 +274,24 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
-				setCustomPalette(CUSTOM_PALETTE_EDEFAULT);
-				return;
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
-				setCustomStyle(CUSTOM_STYLE_EDEFAULT);
-				return;
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
-				getChildRules().clear();
-				return;
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
-				getPaletteRules().clear();
-				return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
+			setCustomPalette(CUSTOM_PALETTE_EDEFAULT);
+			return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
+			setCustomStyle(CUSTOM_STYLE_EDEFAULT);
+			return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
+			getChildRules().clear();
+			return;
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
+			getPaletteRules().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -279,19 +299,20 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
-				return CUSTOM_PALETTE_EDEFAULT == null ? customPalette != null : !CUSTOM_PALETTE_EDEFAULT.equals(customPalette);
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
-				return CUSTOM_STYLE_EDEFAULT == null ? customStyle != null : !CUSTOM_STYLE_EDEFAULT.equals(customStyle);
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
-				return childRules != null && !childRules.isEmpty();
-			case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
-				return paletteRules != null && !paletteRules.isEmpty();
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_PALETTE:
+			return CUSTOM_PALETTE_EDEFAULT == null ? customPalette != null : !CUSTOM_PALETTE_EDEFAULT.equals(customPalette);
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CUSTOM_STYLE:
+			return CUSTOM_STYLE_EDEFAULT == null ? customStyle != null : !CUSTOM_STYLE_EDEFAULT.equals(customStyle);
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__CHILD_RULES:
+			return childRules != null && !childRules.isEmpty();
+		case ConfigurationPackage.PAPYRUS_DIAGRAM__PALETTE_RULES:
+			return paletteRules != null && !paletteRules.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -299,11 +320,14 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (customPalette: ");
@@ -314,4 +338,4 @@ public class PapyrusDiagramImpl extends PapyrusViewImpl implements PapyrusDiagra
 		return result.toString();
 	}
 
-} //PapyrusDiagramImpl
+} // PapyrusDiagramImpl

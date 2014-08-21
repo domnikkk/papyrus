@@ -28,18 +28,18 @@ import org.eclipse.papyrus.infra.hyperlink.ui.EditorHyperLinkEditorShell;
 public class HyperLinkEditor extends HyperLinkObject {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.ui.hyperlinkshell.HyperlinkObject#executeSelectPressed()
-	 * 
+	 *
 	 */
 	@Override
 	public void openLink() {
 		EObject context = EMFHelper.getEObject(getObject());
-		if(context != null) {
+		if (context != null) {
 			try {
 				final IPageManager pageManager = ServiceUtilsForEObject.getInstance().getIPageManager(context);
 				Object objectToOpen = getObject();
-				if(pageManager.isOpen(objectToOpen)) {
+				if (pageManager.isOpen(objectToOpen)) {
 					pageManager.selectPage(objectToOpen);
 				} else {
 					pageManager.openPage(objectToOpen);
@@ -52,9 +52,9 @@ public class HyperLinkEditor extends HyperLinkObject {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject#executeEditMousePressed(java.util.List, org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param list
 	 * @param amodel
 	 */
@@ -71,7 +71,7 @@ public class HyperLinkEditor extends HyperLinkObject {
 		EditorHyperLinkEditorShell editor = new EditorHyperLinkEditorShell(editorRegistry, amodel);
 		editor.setHyperLinkEditor(this);
 		editor.open();
-		if(editor.getHyperLinkEditor() != null) {
+		if (editor.getHyperLinkEditor() != null) {
 			int index = list.indexOf(this);
 			list.remove(this);
 			list.add(index, editor.getHyperLinkEditor());
@@ -80,7 +80,7 @@ public class HyperLinkEditor extends HyperLinkObject {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * This HyperLink never needs a command, because the IPageManager already supports transactions
 	 */
 	@Override

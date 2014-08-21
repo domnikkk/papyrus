@@ -1,15 +1,15 @@
 /***********************************************************************
  * Copyright (c) 2008, 2009 Anyware Technologies, Obeo
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Jacques Lescot (Anyware Technologies) - initial API and implementation
  *    Obeo
- * 
+ *
  **********************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.outline;
 
@@ -26,7 +26,7 @@ import org.eclipse.jface.viewers.Viewer;
 
 /**
  * Provide the content of the given diagram.
- * 
+ *
  * @author <a href="mailto:david.sciamma@anyware-tech.com">David Sciamma</a>
  * @author <a href="mailto:jacques.lescot@anyware-tech.com">Jacques Lescot</a>
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
@@ -62,12 +62,12 @@ public class DiagramOrientedContentProvider implements ITreeContentProvider {
 	 * {@inheritDoc}
 	 */
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof Diagram) {
-			this.diagram = (Diagram)inputElement;
+		if (inputElement instanceof Diagram) {
+			this.diagram = (Diagram) inputElement;
 			List<Object> children = new ArrayList<Object>();
-			for(Object object : diagram.getChildren()) {
-				if(object instanceof View) {
-					View view = (View)object;
+			for (Object object : diagram.getChildren()) {
+				if (object instanceof View) {
+					View view = (View) object;
 					EObject modelElement = ViewUtil.resolveSemanticElement(view);
 					if (modelElement != null)
 					{
@@ -92,8 +92,8 @@ public class DiagramOrientedContentProvider implements ITreeContentProvider {
 	 */
 	public Object getParent(Object element) {
 		// The parent of a diagram is the model object that contains it.
-		if(element instanceof Diagram) {
-			return ((Diagram)element).getElement();
+		if (element instanceof Diagram) {
+			return ((Diagram) element).getElement();
 		}
 		return null;
 	}

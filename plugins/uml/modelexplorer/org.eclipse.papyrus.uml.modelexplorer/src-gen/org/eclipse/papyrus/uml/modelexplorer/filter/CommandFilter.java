@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,7 +25,7 @@ public class CommandFilter implements ICommandFilter {
 	private List<IElementType> visibleCommands;
 
 	public List<IElementType> getVisibleCommands() {
-		if(visibleCommands == null) {
+		if (visibleCommands == null) {
 			visibleCommands = new ArrayList<IElementType>();
 
 			// visibleCommands.add(UMLElementTypes.ABSTRACTION);

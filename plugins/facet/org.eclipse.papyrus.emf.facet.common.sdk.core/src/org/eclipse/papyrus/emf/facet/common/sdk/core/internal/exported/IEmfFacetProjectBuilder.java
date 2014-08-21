@@ -23,9 +23,9 @@ import org.eclipse.core.runtime.IProgressMonitor;
  * implementing this interface. This set of classes is defined through the use of
  * the <tt>org.eclipse.papyrus.emf.facet.common.sdk.core.builderRegistration</tt> extension
  * point.
- * 
+ *
  * @author Grégoire Dupé (Mia-Software)
- * 
+ *
  */
 public interface IEmfFacetProjectBuilder {
 
@@ -46,6 +46,6 @@ public interface IEmfFacetProjectBuilder {
 	 * @param monitor
 	 * @throws CoreException
 	 */
-	void clean(IncrementalProjectBuilder builder, IProgressMonitor monitor) 
+	void clean(IncrementalProjectBuilder builder, IProgressMonitor monitor)
 			throws CoreException;
 }

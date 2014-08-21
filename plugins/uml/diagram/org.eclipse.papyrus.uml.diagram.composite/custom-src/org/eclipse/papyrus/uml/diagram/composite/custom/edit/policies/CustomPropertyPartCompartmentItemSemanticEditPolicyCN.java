@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 
 /**
  * <pre>
- * This class provides a custom edit policy used to replace the SEMANTIC_ROLE 
+ * This class provides a custom edit policy used to replace the SEMANTIC_ROLE
  * generated for the PropertyPartCompartment element (when used in CompositeStructure Diagram)
  * </pre>
  */
@@ -29,7 +29,7 @@ public class CustomPropertyPartCompartmentItemSemanticEditPolicyCN extends org.e
 
 	/**
 	 * <pre>
-	 * Calls a custom creation command that allow the creation of a Property 
+	 * Calls a custom creation command that allow the creation of a Property
 	 * on an existing Property.
 	 * Semantically the Property is created owned by the type the edited Property.
 	 * 
@@ -38,7 +38,7 @@ public class CustomPropertyPartCompartmentItemSemanticEditPolicyCN extends org.e
 	 */
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if(UMLElementTypes.Property_3070 == req.getElementType()) {
+		if (UMLElementTypes.Property_3070 == req.getElementType()) {
 			return getGEFWrapper(new PropertyPartCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

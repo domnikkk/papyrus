@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,10 +29,10 @@ public class UpdateDiagramInSnapshotCommandHandler extends GraphicalCommandHandl
 	protected Command getCommand() {
 		final CompoundCommand cmd = new CompoundCommand(Messages.UpdateDiagramInSnapshotCommandHandler_updateDiagram);
 		final List<IGraphicalEditPart> selectedElements = getSelectedElements();
-		for(final IGraphicalEditPart selectedElement : selectedElements) {
-			if(selectedElement instanceof CallBehaviorActionAsInteractionEditPart) {
+		for (final IGraphicalEditPart selectedElement : selectedElements) {
+			if (selectedElement instanceof CallBehaviorActionAsInteractionEditPart) {
 				cmd.add(new RefreshCommandForUndo(selectedElement));
-				cmd.add(getUpdateDiagramCommand((CallBehaviorActionAsInteractionEditPart)selectedElement));
+				cmd.add(getUpdateDiagramCommand((CallBehaviorActionAsInteractionEditPart) selectedElement));
 				cmd.add(new RefreshCommandForDo(selectedElement));
 			}
 		}

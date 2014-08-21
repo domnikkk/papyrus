@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.internal;
 
@@ -13,7 +13,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.editor.IPageLifeCycleEventsList
  * A class managing events of the {@link SashWindowsContainer}.
  * This class dispatch events fired by the {@link SashWindowsContainer} to any listeners
  * implementing {@link SashContainerEventsProvider}.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -24,19 +24,20 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Add a listener on the activeEditorChange event.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addListener(IPageLifeCycleEventsListener listener) {
 		// no duplicate
-		if(listeners.contains(listener))
+		if (listeners.contains(listener)) {
 			return;
+		}
 		listeners.add(listener);
 	}
 
 	/**
 	 * Add a listener on the activeEditorChange event.
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeListener(IPageLifeCycleEventsListener listener) {
@@ -46,66 +47,72 @@ public class SashContainerEventsProvider {
 
 	/**
 	 * Notify all listener with event.
+	 * 
 	 * @param newEditor
 	 */
 	public void firePageOpenedEvent(PagePart page) {
 		// Fire events to internal listeners
-		for(IPageLifeCycleEventsListener listener : listeners) {
+		for (IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageOpened(page);
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 * 
 	 * @param newEditor
 	 */
 	public void firePageClosedEvent(PagePart page) {
 		// Fire events to internal listeners
-		for(IPageLifeCycleEventsListener listener : listeners) {
+		for (IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageClosed(page);
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 * 
 	 * @param newEditor
 	 */
 	public void firePageAboutToBeOpenedEvent(PagePart page) {
 		// Fire events to internal listeners
-		for(IPageLifeCycleEventsListener listener : listeners) {
+		for (IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageAboutToBeOpened(page);
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 * 
 	 * @param newEditor
 	 */
 	public void firePageAboutToBeClosedEvent(PagePart page) {
 		// Fire events to internal listeners
-		for(IPageLifeCycleEventsListener listener : listeners) {
+		for (IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageAboutToBeClosed(page);
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 * 
 	 * @param newEditor
 	 */
 	public void firePageActivatedEvent(PagePart page) {
 		// Fire events to internal listeners
-		for(IPageLifeCycleEventsListener listener : listeners) {
+		for (IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageActivated(page);
 		}
 	}
 
 	/**
 	 * Notify all listener with event.
+	 * 
 	 * @param newEditor
 	 */
 	public void firePageDeactivatedEvent(PagePart page) {
 		// Fire events to internal listeners
-		for(IPageLifeCycleEventsListener listener : listeners) {
+		for (IPageLifeCycleEventsListener listener : listeners) {
 			listener.pageDeactivated(page);
 		}
 	}

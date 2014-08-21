@@ -32,7 +32,7 @@ import org.eclipse.papyrus.emf.facet.common.sdk.core.internal.exported.IEmfFacet
 /**
  * A builder for EMF Facet projects, that delegates to children builders provided by the extension point
  * "builderRegistration".
- * 
+ *
  * @author Gregoire Dupe (Mia-Software)
  */
 public class EmfFacetProjectBuilder extends IncrementalProjectBuilder {

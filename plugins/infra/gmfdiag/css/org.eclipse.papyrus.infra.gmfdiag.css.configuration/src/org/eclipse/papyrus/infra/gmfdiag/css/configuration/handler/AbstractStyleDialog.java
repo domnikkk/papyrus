@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 392301
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.configuration.handler;
 
@@ -105,7 +105,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 		selectorPreview.setLabel("Selector preview:");
 
 		selectorPreview.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-		GridLayout layout = (GridLayout)selectorPreview.getLayout();
+		GridLayout layout = (GridLayout) selectorPreview.getLayout();
 		layout.marginWidth = 0;
 
 		tabFolder = new CTabFolder(parent, SWT.BORDER);
@@ -143,7 +143,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 	}
 
 	protected void updateButtons() {
-		//Resets the error message
+		// Resets the error message
 		setError(null);
 		getButton(IDialogConstants.OK_ID).setEnabled(isValid());
 		getDialogArea().layout();
@@ -152,10 +152,10 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 	protected boolean isValid() {
 		boolean result = true;
 
-		//There must be at least one property declaration
+		// There must be at least one property declaration
 		boolean atLeastOneDeclaration = false;
-		for(Boolean value : declarations.values()) {
-			if(value) {
+		for (Boolean value : declarations.values()) {
+			if (value) {
 				atLeastOneDeclaration = true;
 				break;
 			}
@@ -163,7 +163,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 
 		result = result && atLeastOneDeclaration;
 
-		if(!atLeastOneDeclaration) {
+		if (!atLeastOneDeclaration) {
 			setError("There must be at least one property declaration");
 		}
 
@@ -171,20 +171,20 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 	}
 
 	protected void setError(String errorMessage) {
-		if(errorMessage == null && errorLabel != null) {
+		if (errorMessage == null && errorLabel != null) {
 			errorLabel.dispose();
 			errorLabel = null;
 			return;
 		}
 
-		if(errorMessage != null) {
-			if(errorLabel == null) {
+		if (errorMessage != null) {
+			if (errorLabel == null) {
 				errorLabel = new CLabel(getDialogArea(), SWT.WRAP);
 				errorLabel.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 				errorLabel.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/error.gif"));
 			}
 
-			if(errorLabel.getText() != null && !errorLabel.getText().trim().equals("")) {
+			if (errorLabel.getText() != null && !errorLabel.getText().trim().equals("")) {
 				errorLabel.setText(errorLabel.getText() + "\n" + errorMessage);
 			} else {
 				errorLabel.setText(errorMessage);
@@ -212,17 +212,17 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 
 			@Override
 			public String getText(Object element) {
-				Boolean value = (Boolean)element;
+				Boolean value = (Boolean) element;
 				return value ? getDiagramType(contextView.getDiagram()) + " only" : "Any diagram";
 			}
 		};
 
-		diagramRestrictionWidget.setProviders(new StaticContentProvider(new Boolean[]{ true, false }), labelProvider);
+		diagramRestrictionWidget.setProviders(new StaticContentProvider(new Boolean[] { true, false }), labelProvider);
 		diagramRestrictionWidget.setValue(this.diagramRestriction);
 		diagramRestrictionWidget.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				diagramRestriction = (Boolean)((EnumRadio)editor).getValue();
+				diagramRestriction = (Boolean) ((EnumRadio) editor).getValue();
 				updateSelectorLabel();
 			}
 		});
@@ -234,24 +234,24 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 
 			@Override
 			public String getText(Object element) {
-				Boolean value = (Boolean)element;
+				Boolean value = (Boolean) element;
 				return value ? selectorName + " only" : "Any kind of element";
 			}
 		};
 
-		selectorNameWidget.setProviders(new StaticContentProvider(new Boolean[]{ true, false }), labelProvider);
+		selectorNameWidget.setProviders(new StaticContentProvider(new Boolean[] { true, false }), labelProvider);
 		selectorNameWidget.setValue(this.useSelectorName);
 		selectorNameWidget.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				useSelectorName = (Boolean)((EnumRadio)editor).getValue();
+				useSelectorName = (Boolean) ((EnumRadio) editor).getValue();
 				updateSelectorLabel();
 			}
 		});
 	}
 
 	protected void createAttributeSelectorsSection(Composite parent) {
-		if(conditions.isEmpty()) {
+		if (conditions.isEmpty()) {
 			return;
 		}
 
@@ -259,11 +259,11 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 		detailLabel.setText("If the following properties are matched:");
 		detailLabel.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false, 3, 1));
 
-		for(SelectorCondition condition : conditions.keySet()) {
-			final Attribute currentCondition = (Attribute)condition;
+		for (SelectorCondition condition : conditions.keySet()) {
+			final Attribute currentCondition = (Attribute) condition;
 
 			String attributeLabel = currentCondition.getName();
-			if(currentCondition.getValue() != null) {
+			if (currentCondition.getValue() != null) {
 				attributeLabel += " " + currentCondition.getValue().getOperator() + " " + currentCondition.getValue().getValue();
 			}
 
@@ -273,7 +273,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 			checkbox.addCommitListener(new ICommitListener() {
 
 				public void commit(AbstractEditor editor) {
-					conditions.put(currentCondition, ((BooleanCheckbox)editor).getValue());
+					conditions.put(currentCondition, ((BooleanCheckbox) editor).getValue());
 					updateSelectorLabel();
 				}
 			});
@@ -294,7 +294,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 		styleNameEditor.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				cssClass = (String)((StringEditor)editor).getValue();
+				cssClass = (String) ((StringEditor) editor).getValue();
 				updateSelectorLabel();
 			}
 
@@ -308,10 +308,10 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 		declarationsLabel.setText("Select the properties you want to set. Unchecked properties will keep their default value\n (Which might be inherited from another style).");
 		declarationsLabel.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false, 3, 1));
 
-		for(Declaration declaration : declarations.keySet()) {
-			//Separate checkbox and label (Checkbox - Label) - (Checkbox - Label) - (Checkbox - Label)
-			//This is required to paint a custom foreground color on non-classic windows Theme 
-			//Checkboxes do not support foreground color on Windows, except for the Classic theme
+		for (Declaration declaration : declarations.keySet()) {
+			// Separate checkbox and label (Checkbox - Label) - (Checkbox - Label) - (Checkbox - Label)
+			// This is required to paint a custom foreground color on non-classic windows Theme
+			// Checkboxes do not support foreground color on Windows, except for the Classic theme
 			Composite propertyComposite = new Composite(parent, SWT.NONE);
 			GridLayout compositeLayout = new GridLayout(2, false);
 			compositeLayout.marginWidth = 0;
@@ -348,7 +348,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 			checkbox.addCommitListener(new ICommitListener() {
 
 				public void commit(AbstractEditor editor) {
-					boolean value = ((BooleanCheckbox)editor).getValue();
+					boolean value = ((BooleanCheckbox) editor).getValue();
 					declarations.put(currentDeclaration, value);
 					updateButtons();
 				}
@@ -360,27 +360,27 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 
 	protected Color[] getColors(Expression expression) {
 		Term term = expression.getTerms();
-		if(term instanceof HexColor) {
-			HexColor hexColor = (HexColor)term;
+		if (term instanceof HexColor) {
+			HexColor hexColor = (HexColor) term;
 			return getColors(hexColor);
 		}
 
-		for(Subterm subterm : expression.getSubterms()) {
-			if(subterm.getTerm() instanceof HexColor) {
-				return getColors((HexColor)subterm.getTerm());
+		for (Subterm subterm : expression.getSubterms()) {
+			if (subterm.getTerm() instanceof HexColor) {
+				return getColors((HexColor) subterm.getTerm());
 			}
 		}
 
-		return new Color[]{ Display.getDefault().getSystemColor(SWT.COLOR_WHITE), Display.getDefault().getSystemColor(SWT.COLOR_BLACK), };
+		return new Color[] { Display.getDefault().getSystemColor(SWT.COLOR_WHITE), Display.getDefault().getSystemColor(SWT.COLOR_BLACK), };
 	}
 
 	protected Color[] getColors(HexColor hexColor) {
-		Color[] colors = new Color[]{ Display.getDefault().getSystemColor(SWT.COLOR_WHITE), Display.getDefault().getSystemColor(SWT.COLOR_BLACK), };
+		Color[] colors = new Color[] { Display.getDefault().getSystemColor(SWT.COLOR_WHITE), Display.getDefault().getSystemColor(SWT.COLOR_BLACK), };
 
 		Color color = getColor(hexColor);
 		colors[0] = color;
 
-		if(getLightness(color) < 130) {
+		if (getLightness(color) < 130) {
 			colors[1] = Display.getDefault().getSystemColor(SWT.COLOR_WHITE);
 		}
 
@@ -388,7 +388,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 	}
 
 	private int getLightness(Color color) {
-		//Computes the lightness of the color
+		// Computes the lightness of the color
 		int M = Math.max(color.getGreen(), Math.max(color.getRed(), color.getBlue()));
 		int m = Math.min(color.getGreen(), Math.min(color.getRed(), color.getBlue()));
 		int L = (M + m) / 2;
@@ -402,19 +402,19 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 	}
 
 	public String getCSSClass() {
-		if(cssClass != null) {
+		if (cssClass != null) {
 			return cssClass.trim().equals("") ? null : cssClass.trim();
 		}
 		return null;
 	}
 
 	protected String getLabel(Expression expression) {
-		if(expression == null) {
+		if (expression == null) {
 			return "";
 		}
 		String label = getLabel(expression.getTerms());
-		for(Subterm subTerm : expression.getSubterms()) {
-			if(subTerm.getOperator() != null) {
+		for (Subterm subTerm : expression.getSubterms()) {
+			if (subTerm.getOperator() != null) {
 				label += subTerm.getOperator();
 			}
 			label += " " + getLabel(subTerm.getTerm());
@@ -443,7 +443,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 			@Override
 			public String caseNumber(Number term) {
 				String label = "";
-				if(term.getOp() != null) {
+				if (term.getOp() != null) {
 					label += term.getOp().getOperator();
 				}
 				label += term.getValue();
@@ -455,14 +455,14 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 	protected void updateSelectorLabel() {
 		String selectorText = "";
 
-		if(diagramRestriction) {
+		if (diagramRestriction) {
 			selectorText += getDiagramType(contextView.getDiagram()) + " ";
 		}
 
 		selectorText += useSelectorName ? selectorName : "*";
 
-		for(Entry<Attribute, Boolean> selectorEntry : conditions.entrySet()) {
-			if(selectorEntry.getValue()) {
+		for (Entry<Attribute, Boolean> selectorEntry : conditions.entrySet()) {
+			if (selectorEntry.getValue()) {
 				Attribute condition = selectorEntry.getKey();
 				Attribute attribute = condition;
 				AttributeValue value = attribute.getValue();
@@ -470,7 +470,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 			}
 		}
 
-		if(cssClass != null && !"".equals(cssClass)) {
+		if (cssClass != null && !"".equals(cssClass)) {
 			selectorText += "." + cssClass;
 		}
 
@@ -485,7 +485,7 @@ public abstract class AbstractStyleDialog extends TrayDialog {
 
 	@Override
 	public Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	public boolean useSelectorName() {

@@ -35,7 +35,7 @@ public class StringMask extends AbstractPropertyEditor implements XWTCompliantMa
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which this widget will be created
+	 *            The composite in which this widget will be created
 	 * @param style
 	 */
 	public StringMask(Composite parent, int style) {
@@ -47,9 +47,9 @@ public class StringMask extends AbstractPropertyEditor implements XWTCompliantMa
 	 * Creates the integer mask.
 	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the integer mask.
 	 */
 	protected org.eclipse.papyrus.infra.widgets.editors.StringMask createStringMask(Composite parent, int style) {
@@ -58,7 +58,7 @@ public class StringMask extends AbstractPropertyEditor implements XWTCompliantMa
 
 	@Override
 	protected void checkInput() {
-		if(maskProvider != null && maskProviderReady) {
+		if (maskProvider != null && maskProviderReady) {
 			super.checkInput();
 		}
 	}
@@ -87,7 +87,7 @@ public class StringMask extends AbstractPropertyEditor implements XWTCompliantMa
 	 * @param provider
 	 */
 	public void setMaskProvider(XWTCompliantMaskProvider provider) {
-		if(this.maskProvider != null) {
+		if (this.maskProvider != null) {
 			maskProvider.removeMaskProviderListener(this);
 		}
 

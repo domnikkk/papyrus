@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class CustomDestructionOccurrenceSpecificationEditPartCN extends Destruct
 
 	/**
 	 * The drag tracker has been specialized in order to constrain movement inside its container without scroll bar
-	 * 
+	 *
 	 * @see http://wiki.eclipse.org/Papyrus_Developer_Guide/NoScrollbar
 	 */
 	@Override

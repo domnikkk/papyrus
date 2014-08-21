@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ public class FeatureContentProvider implements CreateInFeatureContentProvider {
 
 	private EClass type;
 
-	//	private Viewer viewer;
+	// private Viewer viewer;
 
 	private Object input;
 
@@ -41,7 +41,7 @@ public class FeatureContentProvider implements CreateInFeatureContentProvider {
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		//		this.viewer = viewer;
+		// this.viewer = viewer;
 		this.input = newInput;
 	}
 
@@ -51,13 +51,13 @@ public class FeatureContentProvider implements CreateInFeatureContentProvider {
 
 	public Object[] getElements(Object inputElement) {
 		EObject inputEObject = EMFHelper.getEObject(input);
-		if(inputEObject == null) {
+		if (inputEObject == null) {
 			return new Object[0];
 		}
 		List<Object> elements = new LinkedList<Object>();
-		for(EReference reference : inputEObject.eClass().getEAllReferences()) {
-			if(reference.isContainment()) {
-				if(EMFHelper.isSubclass(type, reference.getEReferenceType())) {
+		for (EReference reference : inputEObject.eClass().getEAllReferences()) {
+			if (reference.isContainment()) {
+				if (EMFHelper.isSubclass(type, reference.getEReferenceType())) {
 					elements.add(reference);
 				}
 			}

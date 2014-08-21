@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,14 +53,14 @@ public class LoadinStrategyGroup extends AbstractGroup {
 
 	/**
 	 * Gets the strategies value from extension point.
-	 * 
+	 *
 	 * @return the strategies value
 	 */
 	private static String[][] getValuesFromExtensionPoint() {
 		Map<Integer, String> allStrategies = ProxyManager.getAllStrategies();
 		String[][] result = new String[allStrategies.size()][2];
 		int i = 0;
-		for(Integer val : allStrategies.keySet()) {
+		for (Integer val : allStrategies.keySet()) {
 			result[i][0] = allStrategies.get(val);
 			result[i][1] = String.valueOf(val);
 			i++;

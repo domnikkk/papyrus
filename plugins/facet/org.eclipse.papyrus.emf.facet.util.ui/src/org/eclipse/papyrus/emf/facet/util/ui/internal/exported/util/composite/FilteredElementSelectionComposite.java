@@ -28,7 +28,7 @@ import org.eclipse.ui.dialogs.FilteredList;
 /**
  * A control for selecting an element from a list of elements, that can be
  * filtered using the associated text field.
- * 
+ *
  * @since 0.3
  */
 public class FilteredElementSelectionComposite extends Composite implements

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.services.edit.commands.AbstractConfigureCommandFactory;
 import org.eclipse.papyrus.infra.services.edit.commands.ConfigureFeatureCommandFactory;
 import org.eclipse.papyrus.infra.services.edit.commands.IConfigureCommandFactory;
@@ -45,24 +46,25 @@ public class CreateConstraintPropertyWithTypeConfigureCommandFactory extends Abs
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand create(ConfigureRequest request) {
 
 		ICommand configureCommand = null;
 
 		Shell shell = Display.getDefault().getActiveShell();
 		// Start dialog to identify the new part type
-		Property part = (Property)request.getElementToConfigure();
+		Property part = (Property) request.getElementToConfigure();
 		Package partPkg = part.getNearestPackage();
 
 		CreateOrSelectConstraintPropertyTypeDialog dialog = new CreateOrSelectConstraintPropertyTypeDialog(shell, partPkg);
 		dialog.open();
-		if(dialog.getReturnCode() == CreateOrSelectConstraintPropertyTypeDialog.OK) {
+		if (dialog.getReturnCode() == Window.OK) {
 
 			final ICommand typeCreationCommand = dialog.getNewTypeCreateCommand();
-			final Type partType = (Type)dialog.getExistingType();
+			final Type partType = (Type) dialog.getExistingType();
 
 			// Abort if type creation command exists but is not executable
-			if((typeCreationCommand != null) && (!typeCreationCommand.canExecute())) {
+			if ((typeCreationCommand != null) && (!typeCreationCommand.canExecute())) {
 				return cancelCommand(request);
 			} else {
 				configureCommand = CompositeCommand.compose(configureCommand, typeCreationCommand);
@@ -74,23 +76,23 @@ public class CreateConstraintPropertyWithTypeConfigureCommandFactory extends Abs
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
-					Property part = (Property)getElementToEdit();
-					if(partType != null) {
+					Property part = (Property) getElementToEdit();
+					if (partType != null) {
 						part.setType(partType);
 					} else {
-						Type newType = (Type)GMFCommandUtils.getCommandEObjectResult(typeCreationCommand);
+						Type newType = (Type) GMFCommandUtils.getCommandEObjectResult(typeCreationCommand);
 						createConstraintBlockConstraint(newType, monitor, info);
 						part.setType(newType);
 					}
 					return CommandResult.newOKCommandResult(part);
 				}
 
-				private void createConstraintBlockConstraint(Type newType, IProgressMonitor monitor, IAdaptable info)  throws ExecutionException {
+				private void createConstraintBlockConstraint(Type newType, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 					// Create the constraint attached to the ConstraintBlock
 					IElementEditService commandService = ElementEditServiceUtils.getCommandProvider(newType);
-					if(commandService != null) {
+					if (commandService != null) {
 						CreateElementRequest createTypeRequest = new CreateElementRequest(newType, UMLElementTypes.CONSTRAINT);
-						createTypeRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, 
+						createTypeRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID,
 								new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getNamedElement_Name(), newType.getName() + "Specification"));
 						ICommand newConstraintCreateCommand = commandService.getEditCommand(createTypeRequest);
 						if (newConstraintCreateCommand.canExecute()) {

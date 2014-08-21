@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,8 +29,8 @@ public class OrRuleCreationElementValidator implements IInvariantCreationElement
 	 * {@inheritDoc}
 	 */
 	public boolean canCreate(CreateElementRequest request) {
-		for(IInvariantCreationElementValidator<InvariantRuleConfiguration> creationElementValidator : composedValidators) {
-			if(creationElementValidator.canCreate(request)) {
+		for (IInvariantCreationElementValidator<InvariantRuleConfiguration> creationElementValidator : composedValidators) {
+			if (creationElementValidator.canCreate(request)) {
 				return true;
 			}
 		}
@@ -42,9 +42,9 @@ public class OrRuleCreationElementValidator implements IInvariantCreationElement
 	 */
 	public void init(OrRule configuration) {
 		composedValidators = new ArrayList<IInvariantCreationElementValidator<InvariantRuleConfiguration>>();
-		for(InvariantRuleConfiguration composedRule : configuration.getComposedRules()) {
+		for (InvariantRuleConfiguration composedRule : configuration.getComposedRules()) {
 			IInvariantCreationElementValidator<InvariantRuleConfiguration> creationElementValidator = RuleConfigurationFactoryRegistry.getInstance().createCreationElementValidator(composedRule);
-			if(creationElementValidator != null) {
+			if (creationElementValidator != null) {
 				composedValidators.add(creationElementValidator);
 			}
 		}

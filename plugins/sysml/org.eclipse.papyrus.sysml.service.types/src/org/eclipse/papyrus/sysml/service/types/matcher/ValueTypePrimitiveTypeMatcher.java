@@ -23,10 +23,10 @@ public class ValueTypePrimitiveTypeMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof PrimitiveType) {
+		if (eObject instanceof PrimitiveType) {
 
-			PrimitiveType element = (PrimitiveType)eObject;
-			if(UMLUtil.getStereotypeApplication(element, ValueType.class) != null) {
+			PrimitiveType element = (PrimitiveType) eObject;
+			if (UMLUtil.getStereotypeApplication(element, ValueType.class) != null) {
 				isMatch = true;
 			}
 		}

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,12 +56,12 @@ public abstract class DelegatingObservableSetTest extends DelegatingObservableCo
 
 			@SuppressWarnings("unchecked")
 			Set<Object> additions() {
-				return (Set<Object>)diff.getAdditions();
+				return diff.getAdditions();
 			}
 
 			@Override
 			public void handleSetChange(SetChangeEvent event) {
-				assertThat(event.getObservable(), sameInstance((IObservable)fixture));
+				assertThat(event.getObservable(), sameInstance((IObservable) fixture));
 
 				diff = event.diff;
 			}
@@ -134,9 +134,10 @@ public abstract class DelegatingObservableSetTest extends DelegatingObservableCo
 
 		private IObservableValue master;
 
+		@Override
 		@Test
 		public void testGetObserved() {
-			assertThat(((IObserving)fixture).getObserved(), is((Object)set));
+			assertThat(((IObserving) fixture).getObserved(), is((Object) set));
 		}
 
 		//

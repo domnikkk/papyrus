@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ICreationElementValidator;
 
 
 /**
- * interface implemented by all configurable element types specializations 
+ * interface implemented by all configurable element types specializations
  */
 public interface IExtendedHintedElementType extends ISpecializationType, IHintedType {
 

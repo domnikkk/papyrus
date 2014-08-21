@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelrepair.handler;
 
@@ -45,29 +45,29 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * A Handler to switch for profile versions (e.g. Local to Registered version)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class SwitchProfileHandler extends AbstractHandler {
 
 	public Object execute(final ExecutionEvent event) throws ExecutionException {
 
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
-		if(currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
+		if (currentSelection.isEmpty() || !(currentSelection instanceof IStructuredSelection)) {
 			return null;
 		}
 
-		IStructuredSelection selection = (IStructuredSelection)currentSelection;
+		IStructuredSelection selection = (IStructuredSelection) currentSelection;
 
 		EObject selectedAdapter = EMFHelper.getEObject(selection.getFirstElement());
 
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
 
-		if(selectedAdapter instanceof Package) {
-			final Package selectedPackage = (Package)selectedAdapter;
+		if (selectedAdapter instanceof Package) {
+			final Package selectedPackage = (Package) selectedAdapter;
 
-			//Load the model in background and add a user information
+			// Load the model in background and add a user information
 			Job openDialogJob = new Job("Switch profiles") {
 
 				@Override
@@ -102,12 +102,12 @@ public class SwitchProfileHandler extends AbstractHandler {
 		final Collection<Profile> allAppliedProfiles = ProfileHelper.getAllAppliedProfiles(modelSet);
 
 		ProfileSwitchValidator validator = new ProfileSwitchValidator();
-		if(validator.validate(new ProfileSwitchContext(activeShell, modelSet, editingDomain, profiledPackage, allAppliedProfiles))) {
-			//Go back to the UI thread and open a dialog
+		if (validator.validate(new ProfileSwitchContext(activeShell, modelSet, editingDomain, profiledPackage, allAppliedProfiles))) {
+			// Go back to the UI thread and open a dialog
 			activeShell.getDisplay().asyncExec(new Runnable() {
 
 				public void run() {
-					if(allAppliedProfiles.isEmpty()) {
+					if (allAppliedProfiles.isEmpty()) {
 						MessageDialog.openInformation(activeShell, "Switch Profiles", "The selected model has no profiles applied.");
 						return;
 					}

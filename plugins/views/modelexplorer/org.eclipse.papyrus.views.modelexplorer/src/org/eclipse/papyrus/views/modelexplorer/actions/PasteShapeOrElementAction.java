@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,25 +24,25 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * Action used for pasting either a model element or a shape (i.e. the model element reprented
  * by the shape). Delegates to PasteShapeOrElementCommand
- * 
+ *
  * @author Ansgar Radermacher (CEA LIST)
  */
 public class PasteShapeOrElementAction extends PasteAction
-{	
-	public PasteShapeOrElementAction (EditingDomain domain) {
-		super (domain);
+{
+	public PasteShapeOrElementAction(EditingDomain domain) {
+		super(domain);
 	}
 
 	@Override
 	public Command createCommand(Collection<?> selection)
 	{
-		if ((selection.size () == 1) && (domain != null)) {
-			Object owner = selection.iterator().next ();
-		
+		if ((selection.size() == 1) && (domain != null)) {
+			Object owner = selection.iterator().next();
+
 			boolean onlyViewsInClipboard = true;
 			boolean foundView = false;
-			if (domain.getClipboard () != null) {
-				for (Object clipObject : domain.getClipboard ()) {
+			if (domain.getClipboard() != null) {
+				for (Object clipObject : domain.getClipboard()) {
 					if (clipObject instanceof View) {
 						foundView = true;
 					}
@@ -51,12 +51,12 @@ public class PasteShapeOrElementAction extends PasteAction
 					}
 				}
 			}
-				// TODO: currently only works for a single element to be copied.
+			// TODO: currently only works for a single element to be copied.
 			if (onlyViewsInClipboard && foundView) {
-				View shape = (View) domain.getClipboard ().iterator ().next ();
-				return AddCommand.create (domain, owner, null, shape.getElement ());
+				View shape = (View) domain.getClipboard().iterator().next();
+				return AddCommand.create(domain, owner, null, shape.getElement());
 			}
 		}
-		return super.createCommand (selection);
+		return super.createCommand(selection);
 	}
 }

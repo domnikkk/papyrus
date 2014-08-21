@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * Implementation of the IProfileHelper interface for UML profiles
+ * 
  * @author Laurent Wouters
  */
 public class UMLProfileHelper implements IProfileHelper {
@@ -37,15 +38,18 @@ public class UMLProfileHelper implements IProfileHelper {
 	 */
 	public Collection<EPackage> getAppliedProfiles(EObject model) {
 		ArrayList<EPackage> result = new ArrayList<EPackage>();
-		if (!(model instanceof Element))
+		if (!(model instanceof Element)) {
 			return result;
-		Element element = (Element)model;
+		}
+		Element element = (Element) model;
 		Package p = element.getNearestPackage();
-		if (p == null)
+		if (p == null) {
 			return result;
+		}
 		for (Profile profile : p.getAllAppliedProfiles()) {
-			if (!result.contains(profile.getDefinition()))
+			if (!result.contains(profile.getDefinition())) {
 				result.add(profile.getDefinition());
+			}
 		}
 		return result;
 	}
@@ -55,12 +59,14 @@ public class UMLProfileHelper implements IProfileHelper {
 	 */
 	public Collection<EClass> getAppliedStereotypes(EObject object) {
 		ArrayList<EClass> result = new ArrayList<EClass>();
-		if (!(object instanceof Element))
+		if (!(object instanceof Element)) {
 			return result;
-		Element element = (Element)object;
+		}
+		Element element = (Element) object;
 		for (EObject app : element.getStereotypeApplications()) {
-			if (!result.contains(app.eClass()))
+			if (!result.contains(app.eClass())) {
 				result.add(app.eClass());
+			}
 		}
 		return result;
 	}

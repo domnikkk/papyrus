@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ public interface IFilter {
 	/**
 	 * Is the specified object allowed ? Return true if the filter allow this
 	 * object. Return false if the filter doesn't allows the object.
-	 * 
+	 *
 	 * @param object
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public boolean isAllowed(Object object);

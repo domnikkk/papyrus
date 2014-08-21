@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Control;
 /**
  * A Factory for creating StyleSheets directly in the resource. It is not
  * contained in an EObject.
- * 
+ *
  * @author Camille Letavernier
  */
 public class StyleSheetFactory extends EcorePropertyEditorFactory {
@@ -38,8 +38,8 @@ public class StyleSheetFactory extends EcorePropertyEditorFactory {
 
 	@Override
 	protected EObject createObjectInDifferentContainer(Control widget) {
-		//The EObject is simply created ; it isn't stored anywhere (yet)
-		//@see #validateObjects(Collection)
+		// The EObject is simply created ; it isn't stored anywhere (yet)
+		// @see #validateObjects(Collection)
 		return simpleCreateObject(widget);
 	}
 

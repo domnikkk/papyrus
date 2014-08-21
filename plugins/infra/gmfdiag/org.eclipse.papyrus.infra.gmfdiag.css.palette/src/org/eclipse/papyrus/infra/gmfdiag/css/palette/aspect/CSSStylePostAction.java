@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ import org.w3c.dom.NodeList;
 
 /**
  * A Palette post action to automatically add a CSS Style on a newly created element
- * 
+ *
  * @author Camille Letavernier
  */
 public class CSSStylePostAction extends ModelPostAction {
@@ -56,14 +56,14 @@ public class CSSStylePostAction extends ModelPostAction {
 
 	private String value;
 
-	//Copied from org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSStyles.CSS_GMF_CLASS_KEY
-	//FIXME: Add a dependency and use the existing constant. Avoid dependency to the GMF Factory.
+	// Copied from org.eclipse.papyrus.infra.gmfdiag.css.notation.CSSStyles.CSS_GMF_CLASS_KEY
+	// FIXME: Add a dependency and use the existing constant. Avoid dependency to the GMF Factory.
 	private static final String CSS_CLASS = "cssClass";
 
 	public Control createConfigurationComposite(Composite parent, IPaletteEntryProxy entryProxy, List<Profile> appliedProfiles) {
 		editor = new StringCombo(parent, SWT.NONE);
-		editor.setContentProvider(EmptyContentProvider.instance); //TODO: We should not depend on the CSS Parser ; do not use CSSClassContentProvider.
-		if(value != null) {
+		editor.setContentProvider(EmptyContentProvider.instance); // TODO: We should not depend on the CSS Parser ; do not use CSSClassContentProvider.
+		if (value != null) {
 			editor.setValue(value);
 		}
 
@@ -86,21 +86,21 @@ public class CSSStylePostAction extends ModelPostAction {
 	}
 
 	public void save(Node parentNode) {
-		Element cssElement = ((Element)parentNode).getOwnerDocument().createElement(CLASS_ELEMENT);
+		Element cssElement = ((Element) parentNode).getOwnerDocument().createElement(CLASS_ELEMENT);
 		parentNode.appendChild(cssElement);
 		cssElement.setAttribute(CLASS_PROPERTY, value == null ? "" : value);
 	}
 
 	private String getValue() {
-		if(configurationNode == null) {
+		if (configurationNode == null) {
 			return null;
 		}
-		NodeList cssElements = ((Element)configurationNode).getElementsByTagName(CLASS_ELEMENT);
-		if(cssElements != null) {
-			for(int i = 0; i < cssElements.getLength(); i++) {
+		NodeList cssElements = ((Element) configurationNode).getElementsByTagName(CLASS_ELEMENT);
+		if (cssElements != null) {
+			for (int i = 0; i < cssElements.getLength(); i++) {
 				Node node = cssElements.item(i);
-				if(node instanceof Element) {
-					String value = ((Element)node).getAttribute(CLASS_PROPERTY);
+				if (node instanceof Element) {
+					String value = ((Element) node).getAttribute(CLASS_PROPERTY);
 					return value;
 				}
 			}
@@ -108,21 +108,22 @@ public class CSSStylePostAction extends ModelPostAction {
 		return null;
 	}
 
-	//We should not depend on the properties view to edit the custom style.
-	//FIXME: Move CustomStyleValueCommand to infra.gmfdiag.common (or infra.gmfdiag.tools)
+	// We should not depend on the properties view to edit the custom style.
+	// FIXME: Move CustomStyleValueCommand to infra.gmfdiag.common (or infra.gmfdiag.tools)
 	public ICommand getPostCommand(final IAdaptable viewAdapter) {
-		TransactionalEditingDomain domain = (TransactionalEditingDomain)EMFHelper.resolveEditingDomain(viewAdapter);
+		TransactionalEditingDomain domain = (TransactionalEditingDomain) EMFHelper.resolveEditingDomain(viewAdapter);
 
-		if(domain != null) {
+		if (domain != null) {
 			AbstractTransactionalCommand transactionalCommand = new AbstractTransactionalCommand(domain, "Change css style", null) {
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					View notationView = (View)viewAdapter.getAdapter(View.class);
-					if(notationView != null) {
+					View notationView = (View) viewAdapter.getAdapter(View.class);
+					if (notationView != null) {
 						String value = getValue();
-						if(value != null) {
-							AddCustomStyleListValueCommand command = new AddCustomStyleListValueCommand(getEditingDomain(), notationView, CSS_CLASS, NotationPackage.eINSTANCE.getStringListValueStyle(), NotationPackage.eINSTANCE.getStringListValueStyle_StringListValue(), value);
+						if (value != null) {
+							AddCustomStyleListValueCommand command = new AddCustomStyleListValueCommand(getEditingDomain(), notationView, CSS_CLASS, NotationPackage.eINSTANCE.getStringListValueStyle(),
+									NotationPackage.eINSTANCE.getStringListValueStyle_StringListValue(), value);
 							command.execute();
 							return CommandResult.newOKCommandResult();
 						}

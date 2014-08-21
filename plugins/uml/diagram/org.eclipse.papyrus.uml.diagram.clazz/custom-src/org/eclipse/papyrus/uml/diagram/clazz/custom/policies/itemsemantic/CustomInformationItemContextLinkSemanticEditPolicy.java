@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,9 @@ import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
  */
 public class CustomInformationItemContextLinkSemanticEditPolicy extends CustomInformationItemItemSemanticEditPolicy {
 
+	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.ConstraintContext_8500 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintContext_8500 == req.getElementType()) {
 			return getGEFWrapper(new CustomContextLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);

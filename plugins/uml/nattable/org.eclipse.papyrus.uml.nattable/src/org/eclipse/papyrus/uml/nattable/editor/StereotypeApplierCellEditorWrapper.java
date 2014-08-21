@@ -66,11 +66,11 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	 * Constructor.
 	 *
 	 * @param wrappedCellEditor
-	 *        the wrapped cell editor
+	 *            the wrapped cell editor
 	 * @param axisElement
-	 *        the edited axis
+	 *            the edited axis
 	 * @param elementProvider
-	 *        the axis element provider
+	 *            the axis element provider
 	 */
 	public StereotypeApplierCellEditorWrapper(final ICellEditor wrappedCellEditor, final Object axisElement, final ITableAxisElementProvider elementProvider) {
 		this.wrappedCellEditor = wrappedCellEditor;
@@ -79,8 +79,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#activateCell(org.eclipse.swt.widgets.Composite, java.lang.Object,
-	 *      org.eclipse.nebula.widgets.nattable.widget.EditModeEnum, org.eclipse.nebula.widgets.nattable.edit.ICellEditHandler,
+	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#activateCell(org.eclipse.swt.widgets.Composite, java.lang.Object, org.eclipse.nebula.widgets.nattable.widget.EditModeEnum, org.eclipse.nebula.widgets.nattable.edit.ICellEditHandler,
 	 *      org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
 	 *
 	 * @param parent
@@ -102,15 +101,15 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 		column = AxisUtils.getRepresentedElement(column);
 		Element editedElement = null;
 		Object feature = null;
-		if(row instanceof EObject && column == this.axisElement) {
-			editedElement = (Element)row;
+		if (row instanceof EObject && column == this.axisElement) {
+			editedElement = (Element) row;
 			feature = column;
 		} else {
-			editedElement = (Element)column;
+			editedElement = (Element) column;
 			feature = row;
 		}
 
-		if(!(feature instanceof EStructuralFeature)) {
+		if (!(feature instanceof EStructuralFeature)) {
 			final String id = AxisUtils.getPropertyId(this.axisElement);
 			applyRequiredStereotype(editedElement, id);
 		}
@@ -230,8 +229,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#validateCanonicalValue(java.lang.Object,
-	 *      org.eclipse.nebula.widgets.nattable.edit.editor.IEditErrorHandler)
+	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#validateCanonicalValue(java.lang.Object, org.eclipse.nebula.widgets.nattable.edit.editor.IEditErrorHandler)
 	 *
 	 * @param canonicalValue
 	 * @param validationErrorHandler
@@ -256,8 +254,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum,
-	 *      boolean)
+	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum, boolean)
 	 *
 	 * @param direction
 	 * @param closeAfterCommit
@@ -270,8 +267,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum,
-	 *      boolean, boolean)
+	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#commit(org.eclipse.nebula.widgets.nattable.selection.SelectionLayer.MoveDirectionEnum, boolean, boolean)
 	 *
 	 * @param direction
 	 * @param closeAfterCommit
@@ -329,8 +325,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#openInline(org.eclipse.nebula.widgets.nattable.config.IConfigRegistry,
-	 *      java.util.List)
+	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#openInline(org.eclipse.nebula.widgets.nattable.config.IConfigRegistry, java.util.List)
 	 *
 	 * @param configRegistry
 	 * @param configLabels
@@ -343,8 +338,7 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	}
 
 	/**
-	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#supportMultiEdit(org.eclipse.nebula.widgets.nattable.config.IConfigRegistry,
-	 *      java.util.List)
+	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.ICellEditor#supportMultiEdit(org.eclipse.nebula.widgets.nattable.config.IConfigRegistry, java.util.List)
 	 *
 	 * @param configRegistry
 	 * @param configLabels
@@ -402,15 +396,15 @@ public class StereotypeApplierCellEditorWrapper implements ICellEditor {
 	/**
 	 *
 	 * @param el
-	 *        an element of the model
+	 *            an element of the model
 	 * @param propertyId
-	 *        the id of the edited property
+	 *            the id of the edited property
 	 * @return <code>true</code> if a stereotype has been applied
 	 */
 	private static final boolean applyRequiredStereotype(final Element el, final String propertyId) {
-		if(UMLTableUtils.getAppliedStereotypesWithThisProperty(el, propertyId).size() == 0) {
+		if (UMLTableUtils.getAppliedStereotypesWithThisProperty(el, propertyId).size() == 0) {
 			final List<Stereotype> stereotypesList = UMLTableUtils.getApplicableStereotypesWithThisProperty(el, propertyId);
-			if(stereotypesList.size() == 1) {
+			if (stereotypesList.size() == 1) {
 				TransactionalEditingDomain domain = null;
 				try {
 					domain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(el);

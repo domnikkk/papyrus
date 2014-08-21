@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,18 +32,19 @@ public class ContainerHighlightEditPolicy extends org.eclipse.gef.editpolicies.G
 	private Color revertColor;
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void eraseTargetFeedback(Request request) {
-		if(revertColor != null) {
+		if (revertColor != null) {
 			setContainerBackground(revertColor);
 			revertColor = null;
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the background color of the figure
 	 */
 	private Color getContainerBackground() {
@@ -51,28 +52,29 @@ public class ContainerHighlightEditPolicy extends org.eclipse.gef.editpolicies.G
 	}
 
 	/**
-	 * 
+	 *
 	 * get the figure attach to the editpart
-	 * 
+	 *
 	 * @return
 	 */
 	private IFigure getContainerFigure() {
-		return ((GraphicalEditPart)getHost()).getFigure();
+		return ((GraphicalEditPart) getHost()).getFigure();
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public EditPart getTargetEditPart(Request request) {
 		return request.getType().equals(RequestConstants.REQ_SELECTION_HOVER) ? getHost() : null;
 	}
 
 	/**
 	 * set the color to the figure attached to the editpart
-	 * 
+	 *
 	 * @param c
-	 *        the background color
+	 *            the background color
 	 */
 	private void setContainerBackground(Color c) {
 		getContainerFigure().setBackgroundColor(c);
@@ -82,18 +84,20 @@ public class ContainerHighlightEditPolicy extends org.eclipse.gef.editpolicies.G
 	 * change the color of the figure
 	 */
 	protected void showHighlight() {
-		if(revertColor == null) {
+		if (revertColor == null) {
 			revertColor = getContainerBackground();
 			setContainerBackground(ColorConstants.lightBlue);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
+	@Override
 	public void showTargetFeedback(Request request) {
-		if(request.getType().equals(RequestConstants.REQ_MOVE) || request.getType().equals(RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_CLONE) || request.getType().equals(RequestConstants.REQ_CONNECTION_START) || request.getType().equals(RequestConstants.REQ_CONNECTION_END) || request.getType().equals(RequestConstants.REQ_CREATE)) {
+		if (request.getType().equals(RequestConstants.REQ_MOVE) || request.getType().equals(RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_CLONE) || request.getType().equals(RequestConstants.REQ_CONNECTION_START)
+				|| request.getType().equals(RequestConstants.REQ_CONNECTION_END) || request.getType().equals(RequestConstants.REQ_CREATE)) {
 			showHighlight();
 		}
 	}

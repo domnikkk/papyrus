@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,9 +61,9 @@ public class ClassifierFigure extends CompartmentFigure {
 
 	/**
 	 * Create a new Classifier figure with the given tag
-	 * 
+	 *
 	 * @param tagLabel
-	 *        a String that will be displayed at the top of the figure
+	 *            a String that will be displayed at the top of the figure
 	 */
 	public ClassifierFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
@@ -72,9 +72,10 @@ public class ClassifierFigure extends CompartmentFigure {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paint(Graphics graphics) {
 		super.paint(graphics);
-		if(active) {
+		if (active) {
 			Rectangle rect = this.getBounds();
 			graphics.pushState();
 			graphics.setForegroundColor(getForegroundColor());
@@ -94,10 +95,10 @@ public class ClassifierFigure extends CompartmentFigure {
 			graphics.popState();
 		}
 	}
-	
+
 	/**
 	 * Get the attribute's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getAttributeCompartmentFigure() {
@@ -106,7 +107,7 @@ public class ClassifierFigure extends CompartmentFigure {
 
 	/**
 	 * Get the Operation's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getOperationCompartmentFigure() {
@@ -115,7 +116,7 @@ public class ClassifierFigure extends CompartmentFigure {
 
 	/**
 	 * Get the NestedClassifier's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getNestedClassifierFigure() {
@@ -124,7 +125,7 @@ public class ClassifierFigure extends CompartmentFigure {
 
 	/**
 	 * Checks if is active.
-	 * 
+	 *
 	 * @return true, if is active
 	 */
 	// @unused
@@ -134,7 +135,7 @@ public class ClassifierFigure extends CompartmentFigure {
 
 	/**
 	 * Set the active
-	 * 
+	 *
 	 * @param active
 	 */
 	public void setActive(boolean active) {

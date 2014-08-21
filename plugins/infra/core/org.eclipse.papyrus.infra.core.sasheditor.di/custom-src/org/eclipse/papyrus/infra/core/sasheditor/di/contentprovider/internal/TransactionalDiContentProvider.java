@@ -16,9 +16,9 @@ import org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.utils.Transa
  * A content provider based on EMF di and using Transactions.
  * This implementation is a wrapper on {@link DiContentProvider}.
  * Each method is wrapped in a {@link RecordingCommand}.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class TransactionalDiContentProvider implements ISashWindowsContentProvider {
 
@@ -30,9 +30,9 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	private TransactionalEditingDomain editingDomain;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param diContentProvider
 	 */
 	public TransactionalDiContentProvider(DiContentProvider diContentProvider, TransactionalEditingDomain editingDomain) {
@@ -42,7 +42,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 
 	/**
 	 * Get the editing domain used to perform transactions.
-	 * 
+	 *
 	 * @return
 	 */
 	private TransactionalEditingDomain getTransactionalEditingDomain() {
@@ -52,7 +52,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#addPage(java.lang.Object)
 	 * @param page
-	 * 
+	 *
 	 */
 	@Override
 	public void addPage(final Object page) {
@@ -73,7 +73,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#addPage(java.lang.Object, int)
 	 * @param page
 	 * @param index
-	 * 
+	 *
 	 */
 	@Override
 	public void addPage(final Object page, final int index) {
@@ -94,7 +94,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#createChildSashModel(java.lang.Object)
 	 * @param root
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public IAbstractPanelModel createChildSashModel(final Object root) {
@@ -102,13 +102,13 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#createFolder(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int, org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#createFolder(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int,
+	 *      org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
 	 * @param tabFolder
 	 * @param tabIndex
 	 * @param targetFolder
 	 * @param side
-	 * 
+	 *
 	 */
 	@Override
 	public void createFolder(final ITabFolderModel tabFolder, final int tabIndex, final ITabFolderModel targetFolder, final int side) {
@@ -127,9 +127,9 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 
 	/**
 	 * Keep trace of the current folder.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#setCurrentFolder(java.lang.Object)
-	 * 
+	 *
 	 * @param rawModel
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#getRootModel()
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public Object getRootModel() {
@@ -148,12 +148,11 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int, int)
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int, int)
 	 * @param folderModel
 	 * @param oldIndex
 	 * @param newIndex
-	 * 
+	 *
 	 */
 	@Override
 	public void movePage(final ITabFolderModel folderModel, final int oldIndex, final int newIndex) {
@@ -171,13 +170,13 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int, org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int,
+	 *      org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
 	 * @param srcFolderModel
 	 * @param sourceIndex
 	 * @param targetFolderModel
 	 * @param targetIndex
-	 * 
+	 *
 	 */
 	@Override
 	public void movePage(final ITabFolderModel srcFolderModel, final int sourceIndex, final ITabFolderModel targetFolderModel, final int targetIndex) {
@@ -197,7 +196,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(int)
 	 * @param index
-	 * 
+	 *
 	 */
 	@Override
 	public void removePage(final int index) {
@@ -217,7 +216,7 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(java.lang.Object)
 	 * @param page
-	 * 
+	 *
 	 */
 	@Override
 	public void removePage(final Object page) {
@@ -235,11 +234,10 @@ public class TransactionalDiContentProvider implements ISashWindowsContentProvid
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int)
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
 	 * @param parentFolder
 	 * @param tabIndex
-	 * 
+	 *
 	 */
 	@Override
 	public void removePage(final ITabFolderModel parentFolder, final int tabIndex) {

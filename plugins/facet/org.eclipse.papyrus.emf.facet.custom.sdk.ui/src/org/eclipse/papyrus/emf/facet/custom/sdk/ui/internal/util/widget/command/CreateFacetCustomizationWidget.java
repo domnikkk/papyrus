@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -30,9 +30,8 @@ import org.eclipse.swt.widgets.Composite;
  * a command ( {@link #getCommand()} for the creation of the element into the
  * model and extends {@link CreateEClassCustomizationWidget}.
  * <p/>
- * 
- * This widget add a other widget to the 3 of
- * {@link CreateEClassCustomizationWidget}:
+ *
+ * This widget add a other widget to the 3 of {@link CreateEClassCustomizationWidget}:
  * <p/>
  * <li> {@link GetCustomizedFacetWidget} for the selection of a {@link Facet}</li>
  */
@@ -44,7 +43,7 @@ public class CreateFacetCustomizationWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param properties
@@ -93,7 +92,7 @@ public class CreateFacetCustomizationWidget extends
 	}
 
 	@SuppressWarnings("static-method")
-	//@SuppressWarnings("static-method") This method is overrode by EditFacetCustomizationWidget.
+	// @SuppressWarnings("static-method") This method is overrode by EditFacetCustomizationWidget.
 	public FacetCustomization getFacetCustomization() {
 		return CustomFactory.eINSTANCE.createFacetCustomization();
 	}

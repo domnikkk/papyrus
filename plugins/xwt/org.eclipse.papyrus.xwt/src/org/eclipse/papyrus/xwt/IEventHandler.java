@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt;
@@ -15,7 +15,7 @@ package org.eclipse.papyrus.xwt;
  * XWT uses Java reflection to find the method to handle an event. If the class
  * specified by <code>x:Class</code> implements this interface, this class can provide
  * the IEventInvoker for each event.
- * 
+ *
  * @author yyang
  */
 public interface IEventHandler {

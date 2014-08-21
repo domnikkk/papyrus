@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram 
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.policies;
 
@@ -136,14 +136,14 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 	 * this method has in charge to create command for create an association if the number of
 	 * endtype is superior of 2 a multi association is dropped. if the number of endtype this is
 	 * binary association that is dropped.
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visualid
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropAssociation(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -162,14 +162,14 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * this method send a Command that create views for associationClass
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visualid
-	 * 
+	 *
 	 * @return the command
 	 */
 	// protected Command dropAssociationClass(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -178,14 +178,14 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 	// }
 	/**
 	 * this method send a command to create views to display
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visualid
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropDependency(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -237,7 +237,7 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Returns the command to drop the metaclass
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticElement
@@ -270,14 +270,14 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Returns the command to drop the Comment + the link to attach it to its annotated elements
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visual id
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropComment(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -299,14 +299,14 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Returns the command to drop the Constraint + the link to attach it to its contrainted elements
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
 	 *            the semantic link
 	 * @param nodeVISUALID
 	 *            the node visual id
-	 * 
+	 *
 	 * @return the command
 	 */
 	protected Command dropConstraint(DropObjectsRequest dropRequest, Element semanticLink, int nodeVISUALID) {
@@ -328,7 +328,7 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Gets the editing domain.
-	 * 
+	 *
 	 * @return the editing domain
 	 */
 	@Override
@@ -337,9 +337,9 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 	}
 
 	/**
-	 * 
+	 *
 	 * this method send a command to create views to display to drop an extension link
-	 * 
+	 *
 	 * @param dropRequest
 	 *            the drop request
 	 * @param semanticLink
@@ -361,7 +361,7 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * the drop is possible only if the container of the dropped element is the same that the host!!!
-	 * 
+	 *
 	 * @param dropRequest
 	 * @param semanticLink
 	 * @param linkVISUALID
@@ -416,10 +416,10 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * this method is the equivalent to dropBinaryLink, except it uses lookForEditPartMetaclass
-	 * 
+	 *
 	 * the method provides command to create the binary link into the diagram. If the source and the
 	 * target views do not exist, these views will be created.
-	 * 
+	 *
 	 * @param cc
 	 *            the composite command that will contain the set of command to create the binary
 	 *            link
@@ -433,7 +433,7 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 	 *            the location the location where the view will be be created
 	 * @param semanticLink
 	 *            the semantic link that will be attached to the view
-	 * 
+	 *
 	 * @return the composite command
 	 */
 	public CompositeCommand dropBinaryLinkExtension(CompositeCommand cc, Element source, Element target, int linkVISUALID, Point location, Element semanticLink) {
@@ -479,10 +479,10 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Look for editPart from its semantic.
-	 * 
+	 *
 	 * @param semantic
 	 *            the semantic
-	 * 
+	 *
 	 * @return the edits the part or null if not found
 	 */
 	private EditPart lookForEditPartSource(EObject semantic) {
@@ -500,10 +500,10 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Look for editPart from its semantic and its container.
-	 * 
+	 *
 	 * @param semantic
 	 *            the semantic
-	 * 
+	 *
 	 * @return the edits the part or null if not found
 	 */
 	private EditPart lookForEditPartTarget(EObject semantic, Element semanticLink) {
@@ -524,7 +524,7 @@ public class ProfileDiagramDragDropEditPolicy extends OldCommonDiagramDragDropEd
 
 	/**
 	 * Check if the edit part type is the best one to represent an object of the given EClass type
-	 * 
+	 *
 	 * @param editPartClass
 	 *            the type of EditPart which may represent a semantic element
 	 * @param eClass

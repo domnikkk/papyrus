@@ -29,7 +29,7 @@ import org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.CommandDeclarationImpl#getCommands <em>Commands</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclaration {
@@ -38,7 +38,7 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	 * The cached value of the '{@link #getCommands() <em>Commands</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getCommands()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommandDeclarationImpl() {
@@ -58,7 +58,7 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,11 +69,11 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Command> getCommands() {
-		if(commands == null) {
+		if (commands == null) {
 			commands = new EObjectContainmentEList<Command>(Command.class, this, DomaincontextcodegenPackage.COMMAND_DECLARATION__COMMANDS);
 		}
 		return commands;
@@ -82,14 +82,14 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND_DECLARATION__COMMANDS:
-			return ((InternalEList<?>)getCommands()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getCommands()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,12 +97,12 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND_DECLARATION__COMMANDS:
 			return getCommands();
 		}
@@ -112,16 +112,16 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND_DECLARATION__COMMANDS:
 			getCommands().clear();
-			getCommands().addAll((Collection<? extends Command>)newValue);
+			getCommands().addAll((Collection<? extends Command>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -130,12 +130,12 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND_DECLARATION__COMMANDS:
 			getCommands().clear();
 			return;
@@ -146,16 +146,16 @@ public class CommandDeclarationImpl extends EObjectImpl implements CommandDeclar
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND_DECLARATION__COMMANDS:
 			return commands != null && !commands.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CommandDeclarationImpl
+} // CommandDeclarationImpl

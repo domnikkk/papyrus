@@ -20,6 +20,7 @@ public abstract class DynamicValueImpl extends FeatureValueImpl implements Dynam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DynamicValueImpl() {
@@ -29,6 +30,7 @@ public abstract class DynamicValueImpl extends FeatureValueImpl implements Dynam
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public abstract class DynamicValueImpl extends FeatureValueImpl implements Dynam
 		return SetValuesActionConfigurationPackage.Literals.DYNAMIC_VALUE;
 	}
 
-} //DynamicValueImpl
+} // DynamicValueImpl

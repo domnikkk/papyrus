@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,7 +70,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * returns the singleton instance of this registry
-	 * 
+	 *
 	 * @return the singleton instance of this registry
 	 */
 	public static synchronized ExtendedElementTypeSetRegistry getInstance() {
@@ -148,7 +148,7 @@ public class ExtendedElementTypeSetRegistry {
 	/**
 	 * Loads the specified extended element type set.
 	 * This does not take care to unload a similar set (a set with the same id) before loading. This should be handled before calling this method.
-	 * 
+	 *
 	 * @param extendedElementTypeSet
 	 *            {@link ExtendedElementTypeSet} to load.
 	 */
@@ -197,7 +197,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * Unloads a given {@link ExtendedElementTypeSet}
-	 * 
+	 *
 	 * @param elementTypeSet
 	 *            the element type set to unload
 	 */
@@ -304,7 +304,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * check this configuration type has not already caused issues du
-	 * 
+	 *
 	 * @param configurationType
 	 * @return
 	 */
@@ -318,7 +318,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * Returns the {@link IExtendedElementTypeFactory} class used to instantiate element type for the given configuration
-	 * 
+	 *
 	 * @return the {@link IExtendedElementTypeFactory} found or <code>null</code> if none was found
 	 */
 	@SuppressWarnings("unchecked")
@@ -387,7 +387,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * Loads the extensions in the platform
-	 * 
+	 *
 	 * @return the list of extension registered in the platform
 	 */
 	protected Map<String, ExtendedElementTypeSet> loadExtendedTypeSetsFromPlatform(Set<String> workspaceDefinitions) {
@@ -420,7 +420,7 @@ public class ExtendedElementTypeSetRegistry {
 	 * It looks the model file in the fragments first, then in the plugin itself.<BR>
 	 * If this is already a fragment, it should look in the fragment only
 	 * </p>
-	 * 
+	 *
 	 * @param extendedTypesID
 	 *            id of the extended type set to load
 	 * @param modelPath
@@ -459,7 +459,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * Retrieves the contribution in the plugin area
-	 * 
+	 *
 	 * @param path
 	 *            the path of the element type set to load in the plugin area
 	 */
@@ -485,7 +485,7 @@ public class ExtendedElementTypeSetRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param modelPath
 	 *            path of the model in the bundle
 	 * @param bundleId
@@ -493,7 +493,7 @@ public class ExtendedElementTypeSetRegistry {
 	 * @return the loaded file or <code>null</code> if some problem occured during loading
 	 */
 	protected ExtendedElementTypeSet getExtendedElementTypeSetInBundle(String modelPath, String bundleID) {
-		Resource resource = extendedTypesResourceSet.createResource(URI.createPlatformPluginURI(bundleID + Path.SEPARATOR + modelPath, true));
+		Resource resource = extendedTypesResourceSet.createResource(URI.createPlatformPluginURI(bundleID + IPath.SEPARATOR + modelPath, true));
 		try {
 			resource.load(null);
 		} catch (IOException e) {
@@ -509,7 +509,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * Creates the resource set that contains all models for extended types
-	 * 
+	 *
 	 * @return the resource set newly created.
 	 */
 	protected ResourceSet createResourceSet() {
@@ -531,7 +531,7 @@ public class ExtendedElementTypeSetRegistry {
 
 	/**
 	 * A utility method to load a class using its name and a given class loader.
-	 * 
+	 *
 	 * @param className
 	 *            The class name
 	 * @param bundle
@@ -547,8 +547,9 @@ public class ExtendedElementTypeSetRegistry {
 		WeakReference<Class<?>> ref = successLookupTable.get(keyString);
 		Class<?> found = (ref != null) ? ref.get() : null;
 		if (found == null) {
-			if (ref != null)
+			if (ref != null) {
 				successLookupTable.remove(keyString);
+			}
 			if (!failureLookupTable.contains(keyString)) {
 				try {
 					Bundle bundle = basicGetPluginBundle(pluginId);
@@ -578,15 +579,16 @@ public class ExtendedElementTypeSetRegistry {
 	/**
 	 * Given a bundle id, it checks if the bundle is found and activated. If it
 	 * is, the method returns the bundle, otherwise it returns <code>null</code>.
-	 * 
+	 *
 	 * @param pluginId
 	 *            the bundle ID
 	 * @return the bundle, if found
 	 */
 	protected static Bundle getPluginBundle(String pluginId) {
 		Bundle bundle = basicGetPluginBundle(pluginId);
-		if (null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE)
+		if (null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE) {
 			return bundle;
+		}
 		return null;
 	}
 

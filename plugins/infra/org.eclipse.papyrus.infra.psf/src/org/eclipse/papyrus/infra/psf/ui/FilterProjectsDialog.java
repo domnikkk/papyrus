@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,11 +36,11 @@ import org.eclipse.ui.dialogs.SelectionDialog;
 
 /**
  * A Checkbox Dialog to filter the projects to be imported.
- * 
+ *
  * Note: the projects are represented by their PSF Reference, which is specific for each
  * team provider. The reference does not necessarily represent a single project
  * (Although it is the most common case)
- * 
+ *
  * @author Camille Letavernier
  */
 public class FilterProjectsDialog extends SelectionDialog {
@@ -51,17 +51,17 @@ public class FilterProjectsDialog extends SelectionDialog {
 
 		@Override
 		public String getText(Object element) {
-			if(element instanceof String) {
-				String ref = (String)element;
+			if (element instanceof String) {
+				String ref = (String) element;
 
-				char[] splitStrings = new char[]{ '/', ',', '\\' };
+				char[] splitStrings = new char[] { '/', ',', '\\' };
 
 				int lastIndex = -1;
-				for(char split : splitStrings) {
+				for (char split : splitStrings) {
 					lastIndex = Math.max(lastIndex, ref.lastIndexOf(split));
 				}
 
-				if(lastIndex == -1) {
+				if (lastIndex == -1) {
 					return ref;
 				}
 				return ref.substring(lastIndex + 1);
@@ -74,22 +74,22 @@ public class FilterProjectsDialog extends SelectionDialog {
 	public class MapContentProvider implements ITreeContentProvider {
 
 		public void dispose() {
-			//Nothing
+			// Nothing
 		}
 
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-			//Nothing
+			// Nothing
 		}
 
 		public Object[] getElements(Object inputElement) {
-			if(inputElement instanceof Map<?, ?>) {
-				return ((Map<?, ?>)inputElement).keySet().toArray();
+			if (inputElement instanceof Map<?, ?>) {
+				return ((Map<?, ?>) inputElement).keySet().toArray();
 			}
 			return new Object[0];
 		}
 
 		public Object[] getChildren(Object parentElement) {
-			if(parentElement instanceof String && providersToProjects.containsKey(parentElement)) {
+			if (parentElement instanceof String && providersToProjects.containsKey(parentElement)) {
 				return providersToProjects.get(parentElement).toArray();
 			}
 			return new Object[0];
@@ -126,7 +126,7 @@ public class FilterProjectsDialog extends SelectionDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite dialogArea = (Composite)super.createDialogArea(parent);
+		Composite dialogArea = (Composite) super.createDialogArea(parent);
 		Composite self = new Composite(dialogArea, SWT.CHECK);
 
 		self.setLayout(new GridLayout(1, true));
@@ -157,11 +157,11 @@ public class FilterProjectsDialog extends SelectionDialog {
 		treeViewer.setLabelProvider(new PSFLabelProvider());
 		treeViewer.setInput(providersToProjects);
 
-		for(String key : providersToProjects.keySet()) {
+		for (String key : providersToProjects.keySet()) {
 			treeViewer.setSubtreeChecked(key, true);
 		}
 
-		//Propagate check to children
+		// Propagate check to children
 		treeViewer.addCheckStateListener(new ICheckStateListener() {
 
 			public void checkStateChanged(CheckStateChangedEvent event) {
@@ -174,28 +174,28 @@ public class FilterProjectsDialog extends SelectionDialog {
 		selectAll.addSelectionListener(new SelectionListener() {
 
 			public void widgetSelected(SelectionEvent e) {
-				for(String provider : providersToProjects.keySet()) {
+				for (String provider : providersToProjects.keySet()) {
 					treeViewer.setSubtreeChecked(provider, true);
 					computeGrayedRoots();
 				}
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 
 		unselectAll.addSelectionListener(new SelectionListener() {
 
 			public void widgetSelected(SelectionEvent e) {
-				for(String provider : providersToProjects.keySet()) {
+				for (String provider : providersToProjects.keySet()) {
 					treeViewer.setSubtreeChecked(provider, false);
 					computeGrayedRoots();
 				}
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 
@@ -203,26 +203,26 @@ public class FilterProjectsDialog extends SelectionDialog {
 	}
 
 	private void computeGrayedRoots() {
-		provider: for(String provider : providersToProjects.keySet()) {
+		provider: for (String provider : providersToProjects.keySet()) {
 
 			boolean oneChecked = false;
 
 			boolean oneUnchecked = false;
 
-			for(String project : providersToProjects.get(provider)) {
-				if(treeViewer.getChecked(project)) {
+			for (String project : providersToProjects.get(provider)) {
+				if (treeViewer.getChecked(project)) {
 					oneChecked = true;
 				} else {
 					oneUnchecked = true;
 				}
 
-				if(oneChecked && oneUnchecked) {
+				if (oneChecked && oneUnchecked) {
 					treeViewer.setGrayChecked(provider, true);
-					continue provider; //Go to the next provider
+					continue provider; // Go to the next provider
 				}
 			}
 
-			//We get here only when all projects under this provider have the same state (either checked or unchecked)
+			// We get here only when all projects under this provider have the same state (either checked or unchecked)
 			treeViewer.setChecked(provider, oneChecked);
 			treeViewer.setGrayed(provider, false);
 		}
@@ -230,23 +230,23 @@ public class FilterProjectsDialog extends SelectionDialog {
 
 	@Override
 	protected void okPressed() {
-		//Remove the unchecked projects/providers
+		// Remove the unchecked projects/providers
 		Iterator<String> providerIterator = providersToProjects.keySet().iterator();
-		while(providerIterator.hasNext()) {
+		while (providerIterator.hasNext()) {
 			String provider = providerIterator.next();
-			if(!treeViewer.getChecked(provider)) { //Unchecked
+			if (!treeViewer.getChecked(provider)) { // Unchecked
 				providerIterator.remove();
-			} else { //Grayed or checked
-				if(treeViewer.getGrayed(provider)) { //Grayed
+			} else { // Grayed or checked
+				if (treeViewer.getGrayed(provider)) { // Grayed
 					Iterator<String> projectIterator = providersToProjects.get(provider).iterator();
-					while(projectIterator.hasNext()) {
+					while (projectIterator.hasNext()) {
 						String project = projectIterator.next();
-						if(!treeViewer.getChecked(project)) {
+						if (!treeViewer.getChecked(project)) {
 							projectIterator.remove();
 						}
 					}
 				}
-				//Else: checked, do nothing
+				// Else: checked, do nothing
 			}
 		}
 

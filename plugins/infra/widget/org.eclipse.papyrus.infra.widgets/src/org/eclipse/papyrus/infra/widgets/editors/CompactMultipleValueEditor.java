@@ -81,11 +81,11 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The widget in which this editor is created
+	 *            The widget in which this editor is created
 	 * @param style
-	 *        The style for this editor's control
+	 *            The style for this editor's control
 	 * @param selector
-	 *        The IElementSelector for this editor's selection dialog
+	 *            The IElementSelector for this editor's selection dialog
 	 */
 	public CompactMultipleValueEditor(Composite parent, int style, IElementSelector selector) {
 		this(parent, style, selector, false, false, DEFAULT_VALUE_SEPARATOR, null);
@@ -96,15 +96,15 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The widget in which this editor is created
+	 *            The widget in which this editor is created
 	 * @param style
-	 *        The style for this editor's control
+	 *            The style for this editor's control
 	 * @param selector
-	 *        The element selector to be used in the selection dialog
+	 *            The element selector to be used in the selection dialog
 	 * @param ordered
-	 *        True if the multivalued property is ordered
+	 *            True if the multivalued property is ordered
 	 * @param unique
-	 *        True if the multivalued property needs unique values
+	 *            True if the multivalued property needs unique values
 	 */
 	public CompactMultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered, boolean unique) {
 		this(parent, style, selector, ordered, unique, DEFAULT_VALUE_SEPARATOR, null);
@@ -115,24 +115,24 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The widget in which this editor is created
+	 *            The widget in which this editor is created
 	 * @param style
-	 *        The style for this editor's control
+	 *            The style for this editor's control
 	 * @param selector
-	 *        The element selector to be used in the selection dialog
+	 *            The element selector to be used in the selection dialog
 	 * @param ordered
-	 *        True if the multivalued property is ordered
+	 *            True if the multivalued property is ordered
 	 * @param unique
-	 *        True if the multivalued property needs unique values
+	 *            True if the multivalued property needs unique values
 	 * @param separator
-	 *        The string used to separate values in the display label
+	 *            The string used to separate values in the display label
 	 * @param label
-	 *        The label for this editor
+	 *            The label for this editor
 	 */
 	public CompactMultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered, boolean unique, String separator, String label) {
 		super(parent, label);
 
-		((GridLayout)getLayout()).numColumns = 3;
+		((GridLayout) getLayout()).numColumns = 3;
 
 		valueLabel = factory.createLabel(this, null, style);
 		valueLabel.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
@@ -171,7 +171,7 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 * Sets the label provider for this editor
 	 *
 	 * @param provider
-	 *        The label provider for this editor
+	 *            The label provider for this editor
 	 */
 	public void setLabelProvider(ILabelProvider provider) {
 		dialog.setLabelProvider(provider);
@@ -187,10 +187,10 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 */
 	@Override
 	public void handleChange(ChangeEvent event) {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 
 			List<String> labels = new LinkedList<String>();
-			for(Object element : modelProperty) {
+			for (Object element : modelProperty) {
 				labels.add(labelProvider.getText(element));
 			}
 
@@ -202,16 +202,16 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 * Creates the text for the value label of this editor
 	 *
 	 * @param labels
-	 *        The labels for each selected element
+	 *            The labels for each selected element
 	 * @return The concatenated label
 	 */
 	protected String createValueLabel(List<String> labels) {
-		if(labels.size() == 0) {
+		if (labels.size() == 0) {
 			return ""; //$NON-NLS-1$
 		}
 
 		String result = labels.get(0);
-		for(int i = 1; i < labels.size(); i++) {
+		for (int i = 1; i < labels.size(); i++) {
 			result += separator + labels.get(i);
 		}
 		return result;
@@ -222,7 +222,7 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 	 */
 	@Override
 	public void dispose() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.removeChangeListener(this);
 		}
 		super.dispose();
@@ -236,19 +236,19 @@ public class CompactMultipleValueEditor extends AbstractListEditor implements IC
 		dialog.setContextElement(getContextElement());
 		dialog.setInitialSelections(modelProperty.toArray());
 		int returnCode = dialog.open();
-		if(returnCode == Window.CANCEL) {
+		if (returnCode == Window.CANCEL) {
 			return;
 		}
 
 		modelProperty.clear();
 
 		Object[] result = dialog.getResult();
-		if(result == null) {
+		if (result == null) {
 			return;
 		}
 
 		java.util.List<Object> resultElements = new LinkedList<Object>();
-		for(Object r : result) {
+		for (Object r : result) {
 			resultElements.add(r);
 		}
 

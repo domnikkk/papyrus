@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 
 /**
- * 
+ *
  * A generic implementation of participant validator that works on EMF basis
- * 
+ *
  */
 public class ParticipantValidator implements IParticipantValidator {
 
@@ -36,9 +36,9 @@ public class ParticipantValidator implements IParticipantValidator {
 
 	public final static ParticipantValidator getInstance() {
 
-		
-			synchronized(ParticipantValidator.class) {
-			if(ParticipantValidator.instance == null) {
+
+		synchronized (ParticipantValidator.class) {
+			if (ParticipantValidator.instance == null) {
 				ParticipantValidator.instance = new ParticipantValidator();
 
 			}
@@ -52,16 +52,16 @@ public class ParticipantValidator implements IParticipantValidator {
 		List<EObject> results = new ArrayList<EObject>();
 
 		// Evaluate root...
-		if(participantsTypesList.contains(root.eClass())) {
+		if (participantsTypesList.contains(root.eClass())) {
 			results.add(root);
 		}
 
 		// ... and all its content
 		TreeIterator<EObject> it = root.eAllContents();
-		while(it.hasNext()) {
-			EObject modelElement = (EObject)it.next();
-			//Check that metaclass of this element is a supported metaclass
-			if(participantsTypesList.contains(modelElement.eClass())) {
+		while (it.hasNext()) {
+			EObject modelElement = it.next();
+			// Check that metaclass of this element is a supported metaclass
+			if (participantsTypesList.contains(modelElement.eClass())) {
 				results.add(modelElement);
 			}
 		}

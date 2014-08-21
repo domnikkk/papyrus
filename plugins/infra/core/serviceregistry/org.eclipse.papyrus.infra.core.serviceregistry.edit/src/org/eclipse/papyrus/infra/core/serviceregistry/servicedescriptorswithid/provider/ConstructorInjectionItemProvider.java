@@ -22,11 +22,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.C
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ConstructorInjectionItemProvider
-	extends AbstractMethodInjectionItemProvider
-	implements
+		extends AbstractMethodInjectionItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -36,6 +37,7 @@ public class ConstructorInjectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstructorInjectionItemProvider(AdapterFactory adapterFactory) {
@@ -46,6 +48,7 @@ public class ConstructorInjectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -61,6 +64,7 @@ public class ConstructorInjectionItemProvider
 	 * This returns ConstructorInjection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,14 +76,15 @@ public class ConstructorInjectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConstructorInjection)object).getDescription();
+		String label = ((ConstructorInjection) object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ConstructorInjection_type") :
-			getString("_UI_ConstructorInjection_type") + " " + label;
+				getString("_UI_ConstructorInjection_type") :
+				getString("_UI_ConstructorInjection_type") + " " + label;
 	}
 
 	/**
@@ -87,6 +92,7 @@ public class ConstructorInjectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,6 +106,7 @@ public class ConstructorInjectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

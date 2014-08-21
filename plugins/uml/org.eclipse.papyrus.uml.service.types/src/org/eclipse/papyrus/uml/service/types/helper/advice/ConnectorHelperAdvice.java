@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -54,8 +54,8 @@ public class ConnectorHelperAdvice extends AbstractEditHelperAdvice {
 		ICommand gmfCommand = super.getBeforeMoveCommand(request);
 
 		// Parse moved objects and detect ConnectorEnd moves
-		for(Object movedObject : request.getElementsToMove().keySet()) {
-			if(movedObject instanceof ConnectorEnd) {
+		for (Object movedObject : request.getElementsToMove().keySet()) {
+			if (movedObject instanceof ConnectorEnd) {
 				// Replace default command.
 				gmfCommand = UnexecutableCommand.INSTANCE;
 				break;
@@ -66,30 +66,30 @@ public class ConnectorHelperAdvice extends AbstractEditHelperAdvice {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	protected ICommand getBeforeReorientRelationshipCommand(final ReorientRelationshipRequest request) {
-		//we need to destroy the invalid views from the diagram
+		// we need to destroy the invalid views from the diagram
 		final CompositeCommand compositeCommand = new CompositeCommand("Destroy Connector View Command"); //$NON-NLS-1$
 		final EObject relationShip = request.getRelationship();
 		final Edge reorientedEdge = RequestParameterUtils.getReconnectedEdge(request);
-		if(relationShip instanceof Connector) {
+		if (relationShip instanceof Connector) {
 			final EObject newEnd = request.getNewRelationshipEnd();
 			final EObject oldEnd = request.getOldRelationshipEnd();
-			if(oldEnd != newEnd) {
-				final Set<View> viewsToDestroy = new ConnectorUtils().getViewsRepresentingConnector((Connector)relationShip);
+			if (oldEnd != newEnd) {
+				final Set<View> viewsToDestroy = new ConnectorUtils().getViewsRepresentingConnector((Connector) relationShip);
 				final Iterator<View> iter = viewsToDestroy.iterator();
 
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					final View current = iter.next();
-					if(current != reorientedEdge) {//we don't destroy the edge that the user is reconnecting!
-						//the role is changing, so We remove the invalid views
+					if (current != reorientedEdge) {// we don't destroy the edge that the user is reconnecting!
+						// the role is changing, so We remove the invalid views
 						final DestroyElementRequest destroyRequest = new DestroyElementRequest(request.getEditingDomain(), current, false);
 						final IElementEditService commandProvider = ElementEditServiceUtils.getCommandProvider(current);
 						compositeCommand.add(commandProvider.getEditCommand(destroyRequest));
@@ -97,7 +97,7 @@ public class ConnectorHelperAdvice extends AbstractEditHelperAdvice {
 				}
 			}
 		}
-		if(!compositeCommand.isEmpty()) {
+		if (!compositeCommand.isEmpty()) {
 			return compositeCommand;
 		}
 		return null;

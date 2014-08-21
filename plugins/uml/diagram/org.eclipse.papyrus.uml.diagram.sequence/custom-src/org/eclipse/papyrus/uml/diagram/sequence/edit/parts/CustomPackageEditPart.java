@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class CustomPackageEditPart extends PackageEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomPackageEditPart(View view) {
@@ -46,7 +46,7 @@ public class CustomPackageEditPart extends PackageEditPart {
 
 	/**
 	 * Remove the two policies dealing with the popup menu
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -55,7 +55,7 @@ public class CustomPackageEditPart extends PackageEditPart {
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomPackageItemSemanticEditPolicy());
 		removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.POPUPBAR_ROLE);
 		removeEditPolicy(EditPolicyRoles.CONNECTION_HANDLES_ROLE);
-		//fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364688
+		// fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364688
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// do not handle connection event
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new ContainerNodeEditPolicy() {
@@ -72,8 +72,8 @@ public class CustomPackageEditPart extends PackageEditPart {
 
 			@Override
 			protected Command createAddCommand(EditPart child, Object constraint) {
-				if(child instanceof LifelineEditPart) {
-					if(!SequenceUtil.isCreateMessageEndLifeline((LifelineEditPart)child)) {
+				if (child instanceof LifelineEditPart) {
+					if (!SequenceUtil.isCreateMessageEndLifeline((LifelineEditPart) child)) {
 						return null;
 					}
 				}
@@ -85,10 +85,10 @@ public class CustomPackageEditPart extends PackageEditPart {
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if(event.getNotifier() instanceof EAnnotation) {
-			EAnnotation eAnnotation = (EAnnotation)event.getNotifier();
-			if(eAnnotation.getSource() != null && eAnnotation.getSource().equals(MDTUtil.FilterViewAndLabelsSource)) {
-				//modification form MOSKitt approach, canonical policies are not called
+		if (event.getNotifier() instanceof EAnnotation) {
+			EAnnotation eAnnotation = (EAnnotation) event.getNotifier();
+			if (eAnnotation.getSource() != null && eAnnotation.getSource().equals(MDTUtil.FilterViewAndLabelsSource)) {
+				// modification form MOSKitt approach, canonical policies are not called
 				MDTUtil.filterDiagramViews(this.getDiagramView());
 			}
 		}
@@ -96,7 +96,7 @@ public class CustomPackageEditPart extends PackageEditPart {
 
 	@Override
 	public Object getAdapter(Class adapter) {
-		if(adapter != null && adapter.equals(ViewInfo.class)) {
+		if (adapter != null && adapter.equals(ViewInfo.class)) {
 			return getDiagramViewInfo();
 		}
 		return super.getAdapter(adapter);
@@ -105,7 +105,7 @@ public class CustomPackageEditPart extends PackageEditPart {
 	private static ViewInfo diagramViewInfo = null;
 
 	public static ViewInfo getDiagramViewInfo() {
-		if(diagramViewInfo == null) {
+		if (diagramViewInfo == null) {
 			diagramViewInfo = getPackage_1000ViewInfo();
 		}
 		return diagramViewInfo;

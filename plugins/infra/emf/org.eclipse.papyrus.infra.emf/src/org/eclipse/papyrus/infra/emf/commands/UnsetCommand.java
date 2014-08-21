@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,15 +33,15 @@ public class UnsetCommand extends RecordingCommand {
 	private final EStructuralFeature feature;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param source
-	 *        the eobject to modify
+	 *            the eobject to modify
 	 * @param feature
-	 *        the feature to unset
+	 *            the feature to unset
 	 */
 	public UnsetCommand(final TransactionalEditingDomain domain, final EObject source, final EStructuralFeature feature) {
 		super(domain, Messages.UnsetCommand_UnsetCommand);
@@ -50,9 +50,9 @@ public class UnsetCommand extends RecordingCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
-	 * 
+	 *
 	 */
 	@Override
 	protected void doExecute() {

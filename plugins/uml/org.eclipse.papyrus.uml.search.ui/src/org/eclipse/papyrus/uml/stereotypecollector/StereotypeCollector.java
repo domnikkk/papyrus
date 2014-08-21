@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,8 +30,6 @@ import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -65,70 +63,65 @@ public class StereotypeCollector implements IStereotypeCollector {
 
 		Set<URI> umlResources = new HashSet<URI>();
 
-		if(container == null) {
+		if (container == null) {
 			umlResources.addAll(createWorkspaceScope());
 
 		} else {
-			switch(container.getSelectedScope()) {
-			case ISearchPageContainer.WORKSPACE_SCOPE:
-			{
+			switch (container.getSelectedScope()) {
+			case ISearchPageContainer.WORKSPACE_SCOPE: {
 				umlResources.addAll(createWorkspaceScope());
 				break;
 			}
-			case ISearchPageContainer.SELECTION_SCOPE:
-			{
+			case ISearchPageContainer.SELECTION_SCOPE: {
 				ISelection selection = container.getSelection();
 
-				if(!selection.isEmpty()) {
-					if(selection instanceof IStructuredSelection) {
-						umlResources.addAll(createSelectionScope((IStructuredSelection)selection));
+				if (!selection.isEmpty()) {
+					if (selection instanceof IStructuredSelection) {
+						umlResources.addAll(createSelectionScope((IStructuredSelection) selection));
 					} else {
-						//Do a workspace search instead
+						// Do a workspace search instead
 						umlResources.addAll(createWorkspaceScope());
 					}
 				} else {
-					//Do a workspace search instead
+					// Do a workspace search instead
 					umlResources.addAll(createWorkspaceScope());
 				}
 				break;
 			}
-			case ISearchPageContainer.SELECTED_PROJECTS_SCOPE:
-			{
+			case ISearchPageContainer.SELECTED_PROJECTS_SCOPE: {
 				String[] projects = container.getSelectedProjectNames();
 				umlResources.addAll(createProjectsScope(projects));
 				break;
 			}
-			case ISearchPageContainer.WORKING_SET_SCOPE:
-			{
+			case ISearchPageContainer.WORKING_SET_SCOPE: {
 				IWorkingSet[] workingSets = container.getSelectedWorkingSets();
 				umlResources.addAll(createWorkingSetsScope(workingSets));
 				break;
 			}
-			default:
-			{
+			default: {
 				break;
 			}
 			}
 		}
 
-		for(URI uri : umlResources) {
+		for (URI uri : umlResources) {
 			ModelSet resourceSet = new ModelSet();
 			Resource resource = resourceSet.getResource(uri, true);
 
 			TreeIterator<EObject> UMLResourceContentIterator = resource.getAllContents();
-			while(UMLResourceContentIterator.hasNext()) {
-				EObject umlElement = (EObject)UMLResourceContentIterator.next();
+			while (UMLResourceContentIterator.hasNext()) {
+				EObject umlElement = UMLResourceContentIterator.next();
 
-				if(umlElement instanceof ProfileApplication) {
+				if (umlElement instanceof ProfileApplication) {
 					boolean found = false;
-					Profile profileToProcess = ((ProfileApplication)umlElement).getAppliedProfile();
-					for(Profile alreadyAddedProfile : profiles) {
+					Profile profileToProcess = ((ProfileApplication) umlElement).getAppliedProfile();
+					for (Profile alreadyAddedProfile : profiles) {
 
-						if(EcoreUtil.equals(alreadyAddedProfile, profileToProcess)) {
+						if (EcoreUtil.equals(alreadyAddedProfile, profileToProcess)) {
 							found = true;
 						}
 					}
-					if(!found) {
+					if (!found) {
 						profiles.add(profileToProcess);
 					}
 				}
@@ -136,22 +129,22 @@ public class StereotypeCollector implements IStereotypeCollector {
 			}
 		}
 
-		for(Profile profile : profiles) {
+		for (Profile profile : profiles) {
 			TreeIterator<EObject> profileContentIterator = profile.eAllContents();
 
-			while(profileContentIterator.hasNext()) {
-				EObject profileContent = (EObject)profileContentIterator.next();
-				if(profileContent instanceof Stereotype) {
+			while (profileContentIterator.hasNext()) {
+				EObject profileContent = profileContentIterator.next();
+				if (profileContent instanceof Stereotype) {
 					boolean found = false;
-					Stereotype stereotypeToProcess = (Stereotype)profileContent;
-					for(Stereotype alreadyAddedStereotype : preResult) {
+					Stereotype stereotypeToProcess = (Stereotype) profileContent;
+					for (Stereotype alreadyAddedStereotype : preResult) {
 
-						if(EcoreUtil.equals(alreadyAddedStereotype, stereotypeToProcess)) {
+						if (EcoreUtil.equals(alreadyAddedStereotype, stereotypeToProcess)) {
 							found = true;
 						}
 					}
 
-					if(!found) {
+					if (!found) {
 						preResult.add(stereotypeToProcess);
 					}
 				}
@@ -160,22 +153,22 @@ public class StereotypeCollector implements IStereotypeCollector {
 		}
 
 		Set<Stereotype> result = new HashSet<Stereotype>();
-		for(Stereotype stereo : preResult) {
+		for (Stereotype stereo : preResult) {
 			result.add(stereo);
-			for(Classifier parent : stereo.getGenerals()) {
-				if(parent instanceof Stereotype) {
-					result.add((Stereotype)parent);
+			for (Classifier parent : stereo.getGenerals()) {
+				if (parent instanceof Stereotype) {
+					result.add((Stereotype) parent);
 
 					boolean found = false;
-					Stereotype stereotypeToProcess = (Stereotype)parent;
-					for(Stereotype alreadyAddedStereotype : result) {
+					Stereotype stereotypeToProcess = (Stereotype) parent;
+					for (Stereotype alreadyAddedStereotype : result) {
 
-						if(EcoreUtil.equals(alreadyAddedStereotype, stereotypeToProcess)) {
+						if (EcoreUtil.equals(alreadyAddedStereotype, stereotypeToProcess)) {
 							found = true;
 						}
 					}
 
-					if(!found) {
+					if (!found) {
 						result.add(stereotypeToProcess);
 					}
 
@@ -190,9 +183,9 @@ public class StereotypeCollector implements IStereotypeCollector {
 
 	/**
 	 * Create a scope when the container is ISearchPageContainer.SELECTION_SCOPE
-	 * 
+	 *
 	 * @param selection
-	 *        the selection of the container
+	 *            the selection of the container
 	 * @return
 	 *         the scope
 	 */
@@ -200,33 +193,33 @@ public class StereotypeCollector implements IStereotypeCollector {
 		List<URI> results = new ArrayList<URI>();
 
 		Iterator<?> it = selection.iterator();
-		while(it.hasNext()) {
-			Object object = (Object)it.next();
+		while (it.hasNext()) {
+			Object object = it.next();
 
-			if(object instanceof IPapyrusFile) {
-				IResource[] associatedResources = ((IPapyrusFile)object).getAssociatedResources();
-				for(IResource iResource : associatedResources) {
+			if (object instanceof IPapyrusFile) {
+				IResource[] associatedResources = ((IPapyrusFile) object).getAssociatedResources();
+				for (IResource iResource : associatedResources) {
 					results.addAll(findUMLModels(iResource));
 				}
 
-			} else if(object instanceof IResource) {
-				results.addAll(findUMLModels((IResource)object));
+			} else if (object instanceof IResource) {
+				results.addAll(findUMLModels((IResource) object));
 			} else {
 
 				Object element = BusinessModelResolver.getInstance().getBusinessModel(object);
-				if(element instanceof EObject) {
+				if (element instanceof EObject) {
 					// CDO resource *are* EObjects
-					Resource eResource = (element instanceof Resource) ? (Resource) element : ((EObject)element).eResource();
-					if(eResource != null) {
+					Resource eResource = (element instanceof Resource) ? (Resource) element : ((EObject) element).eResource();
+					if (eResource != null) {
 						results.add(eResource.getURI());
 
 					} else {
-						//Do a workspace search instead
+						// Do a workspace search instead
 						results.addAll(createWorkspaceScope());
 					}
 
 				} else {
-					//Do a workspace search instead
+					// Do a workspace search instead
 					results.addAll(createWorkspaceScope());
 				}
 
@@ -237,18 +230,18 @@ public class StereotypeCollector implements IStereotypeCollector {
 
 	/**
 	 * Create a scope when the container is ISearchPageContainer.SELECTED_PROJECTS_SCOPE
-	 * 
+	 *
 	 * @param projects
-	 *        the selected scope
+	 *            the selected scope
 	 * @return
 	 *         the scope
 	 */
 	protected List<URI> createProjectsScope(String[] projects) {
 		List<URI> results = new ArrayList<URI>();
 
-		for(String projectName : projects) {
+		for (String projectName : projects) {
 			IProject project = ResourcesPlugin.getWorkspace().getRoot().getProject(projectName);
-			if(project.isOpen()) {
+			if (project.isOpen()) {
 				results.addAll(findUMLModels(project));
 			}
 		}
@@ -257,21 +250,21 @@ public class StereotypeCollector implements IStereotypeCollector {
 
 	/**
 	 * Create a scope when the container is ISearchPageContainer.WORKING_SET_SCOPE
-	 * 
+	 *
 	 * @param workingSets
-	 *        the selected workingSets
+	 *            the selected workingSets
 	 * @return
 	 *         the scope
 	 */
 	protected List<URI> createWorkingSetsScope(IWorkingSet[] workingSets) {
 		List<URI> results = new ArrayList<URI>();
 
-		if(workingSets != null && workingSets.length > 0) {
-			for(IWorkingSet iWorkingSet : workingSets) {
-				for(IAdaptable element : iWorkingSet.getElements()) {
+		if (workingSets != null && workingSets.length > 0) {
+			for (IWorkingSet iWorkingSet : workingSets) {
+				for (IAdaptable element : iWorkingSet.getElements()) {
 					Object resource = element.getAdapter(IResource.class);
-					if(resource instanceof IResource) {
-						results.addAll(findUMLModels((IResource)resource));
+					if (resource instanceof IResource) {
+						results.addAll(findUMLModels((IResource) resource));
 					}
 				}
 			}
@@ -282,9 +275,9 @@ public class StereotypeCollector implements IStereotypeCollector {
 
 	/**
 	 * Find all Papyrus models from a specific root
-	 * 
+	 *
 	 * @param res
-	 *        the root
+	 *            the root
 	 * @return
 	 *         the found Papyrus models
 	 */
@@ -301,13 +294,13 @@ public class StereotypeCollector implements IStereotypeCollector {
 
 	/**
 	 * Create a scope when the container is ISearchPageContainer.WORKSPACE_SCOPE
-	 * 
+	 *
 	 * @return
 	 *         the scope
 	 */
 	protected Collection<URI> createWorkspaceScope() {
 
-		//Go through the workspace root
+		// Go through the workspace root
 		IResource root = ResourcesPlugin.getWorkspace().getRoot();
 
 		return findUMLModels(root);

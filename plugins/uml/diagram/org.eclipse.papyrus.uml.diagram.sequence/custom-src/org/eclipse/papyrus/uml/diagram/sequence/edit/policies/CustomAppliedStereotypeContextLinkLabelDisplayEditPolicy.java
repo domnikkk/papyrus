@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,24 +31,26 @@ public class CustomAppliedStereotypeContextLinkLabelDisplayEditPolicy extends Ap
 		super("context"); //$NON-NLS-1$
 	}
 
+	@Override
 	public void activate() {
 		// retrieve the view
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
-		//call the refresh overridden in this class
+		// call the refresh overridden in this class
 		refreshDisplay();
 	}
 
 	/**
 	 * Refreshes the tag display
 	 */
+	@Override
 	protected void refreshStereotypeDisplay() {
-		IFigure figure = ((GraphicalEditPart)getHost()).getFigure();
+		IFigure figure = ((GraphicalEditPart) getHost()).getFigure();
 		// the tag displayed here is <code>&laquo context &raquo</code> see the class constructor
-		if(figure instanceof IPapyrusUMLElementFigure) {
-			((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(tag, null);
+		if (figure instanceof IPapyrusUMLElementFigure) {
+			((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(tag, null);
 		}
 	}
 }

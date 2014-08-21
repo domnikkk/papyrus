@@ -37,12 +37,12 @@ public class ObservableValueManager implements IObservableValueListener {
 	}
 
 	public void changeValueHandle(Object object, Event event) {
-		// TODO the cast is not clean. 
-		EventProperty property = (EventProperty)object;
+		// TODO the cast is not clean.
+		EventProperty property = (EventProperty) object;
 		IObservableValue value = map.get(property.getName());
-		if(value != null) {
-			Boolean oldValue = (Boolean)value.getValue();
-			if(oldValue == null) {
+		if (value != null) {
+			Boolean oldValue = (Boolean) value.getValue();
+			if (oldValue == null) {
 				oldValue = false;
 			}
 			value.setValue(!oldValue);
@@ -53,31 +53,31 @@ public class ObservableValueManager implements IObservableValueListener {
 		// TODO this conversion should be simplied
 		String eventName = ModelUtils.normalizePropertyName(property.getEvent().getName());
 		IEventGroup eventGroup = metaclass.getEventGroup(eventName);
-		if(eventGroup != null) {
+		if (eventGroup != null) {
 			eventGroup.fireEvent(this, property);
 		}
 	}
 
 	public void registerValue(IProperty property, IObservableValue observableValue) {
-		if(map == null) {
+		if (map == null) {
 			map = new HashMap<String, IObservableValue>();
 		}
 		map.put(property.getName(), observableValue);
 
 		IMetaclass metaclass = XWT.getMetaclass(host);
-		// TODO it is not clean. 
-		EventProperty eventProperty = (EventProperty)property;
+		// TODO it is not clean.
+		EventProperty eventProperty = (EventProperty) property;
 
 		// TODO this conversion should be simplied
 		String eventName = ModelUtils.normalizePropertyName(eventProperty.getEvent().getName());
 		IEventGroup eventGroup = metaclass.getEventGroup(eventName);
-		if(eventGroup != null) {
+		if (eventGroup != null) {
 			eventGroup.registerEvent(this, property);
 		}
 	}
 
 	public IObservableValue getValue(IProperty property) {
-		if(map == null) {
+		if (map == null) {
 			return null;
 		}
 		return map.get(property.getName());

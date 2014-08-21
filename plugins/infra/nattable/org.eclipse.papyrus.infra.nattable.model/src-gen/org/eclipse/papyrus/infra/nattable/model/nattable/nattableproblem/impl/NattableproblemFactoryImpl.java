@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableproblem.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableproblemFactoryImpl extends EFactoryImpl implements NattableproblemFactory {
@@ -35,13 +35,13 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattableproblemFactory init() {
 		try {
-			NattableproblemFactory theNattableproblemFactory = (NattableproblemFactory)EPackage.Registry.INSTANCE.getEFactory(NattableproblemPackage.eNS_URI);
-			if(theNattableproblemFactory != null) {
+			NattableproblemFactory theNattableproblemFactory = (NattableproblemFactory) EPackage.Registry.INSTANCE.getEFactory(NattableproblemPackage.eNS_URI);
+			if (theNattableproblemFactory != null) {
 				return theNattableproblemFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +54,7 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableproblemFactoryImpl() {
@@ -64,12 +64,12 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattableproblemPackage.PROBLEM:
 			return createProblem();
 		case NattableproblemPackage.STRING_RESOLUTION_PROBLEM:
@@ -82,9 +82,10 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Problem createProblem() {
 		ProblemImpl problem = new ProblemImpl();
 		return problem;
@@ -93,9 +94,10 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public StringResolutionProblem createStringResolutionProblem() {
 		StringResolutionProblemImpl stringResolutionProblem = new StringResolutionProblemImpl();
 		return stringResolutionProblem;
@@ -104,17 +106,18 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattableproblemPackage getNattableproblemPackage() {
-		return (NattableproblemPackage)getEPackage();
+		return (NattableproblemPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -123,4 +126,4 @@ public class NattableproblemFactoryImpl extends EFactoryImpl implements Nattable
 		return NattableproblemPackage.eINSTANCE;
 	}
 
-} //NattableproblemFactoryImpl
+} // NattableproblemFactoryImpl

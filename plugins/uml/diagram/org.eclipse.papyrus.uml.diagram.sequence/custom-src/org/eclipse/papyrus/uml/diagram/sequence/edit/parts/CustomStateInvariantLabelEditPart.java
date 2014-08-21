@@ -15,10 +15,11 @@ public class CustomStateInvariantLabelEditPart extends StateInvariantLabelEditPa
 		super(view);
 	}
 
+	@Override
 	protected EObject getParserElement() {
 		EObject element = resolveSemanticElement();
-		if(element instanceof StateInvariant) {
-			return ((StateInvariant)element).getInvariant();
+		if (element instanceof StateInvariant) {
+			return ((StateInvariant) element).getInvariant();
 		}
 		return element;
 	}

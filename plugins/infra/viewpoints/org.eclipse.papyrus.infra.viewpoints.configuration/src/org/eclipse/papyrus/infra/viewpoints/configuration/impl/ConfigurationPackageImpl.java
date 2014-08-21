@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,12 +41,14 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ConfigurationPackageImpl extends EPackageImpl implements ConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusConfigurationEClass = null;
@@ -54,6 +56,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusViewpointEClass = null;
@@ -61,6 +64,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusViewEClass = null;
@@ -68,6 +72,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusDiagramEClass = null;
@@ -75,6 +80,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusSyncTableEClass = null;
@@ -82,6 +88,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass papyrusTableEClass = null;
@@ -89,6 +96,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass modelRuleEClass = null;
@@ -96,6 +104,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass owningRuleEClass = null;
@@ -103,6 +112,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass childRuleEClass = null;
@@ -110,6 +120,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass paletteRuleEClass = null;
@@ -117,6 +128,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass ruleEClass = null;
@@ -124,6 +136,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass pathElementEClass = null;
@@ -131,6 +144,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass categoryEClass = null;
@@ -138,20 +152,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass modelAutoCreateEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -164,27 +175,30 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link ConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
-	 * <p>This method is used to initialize {@link ConfigurationPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ConfigurationPackage init() {
-		if (isInited) return (ConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(ConfigurationPackage.eNS_URI);
+		if (isInited) {
+			return (ConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(ConfigurationPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		ConfigurationPackageImpl theConfigurationPackage = (ConfigurationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ConfigurationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ConfigurationPackageImpl());
+		ConfigurationPackageImpl theConfigurationPackage = (ConfigurationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ConfigurationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ConfigurationPackageImpl());
 
 		isInited = true;
 
@@ -201,7 +215,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		// Mark meta-data to indicate it can't be changed
 		theConfigurationPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ConfigurationPackage.eNS_URI, theConfigurationPackage);
 		return theConfigurationPackage;
@@ -210,6 +224,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPapyrusConfiguration() {
@@ -219,33 +234,37 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusConfiguration_DefaultStakeholder() {
-		return (EReference)papyrusConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EReference) papyrusConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusConfiguration_Metamodel() {
-		return (EReference)papyrusConfigurationEClass.getEStructuralFeatures().get(1);
+		return (EReference) papyrusConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusConfiguration_Categories() {
-		return (EReference)papyrusConfigurationEClass.getEStructuralFeatures().get(2);
+		return (EReference) papyrusConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPapyrusViewpoint() {
@@ -255,15 +274,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusViewpoint_Parent() {
-		return (EReference)papyrusViewpointEClass.getEStructuralFeatures().get(0);
+		return (EReference) papyrusViewpointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPapyrusView() {
@@ -273,69 +294,77 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPapyrusView_Icon() {
-		return (EAttribute)papyrusViewEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) papyrusViewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusView_Parent() {
-		return (EReference)papyrusViewEClass.getEStructuralFeatures().get(1);
+		return (EReference) papyrusViewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusView_Profiles() {
-		return (EReference)papyrusViewEClass.getEStructuralFeatures().get(2);
+		return (EReference) papyrusViewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusView_ModelRules() {
-		return (EReference)papyrusViewEClass.getEStructuralFeatures().get(3);
+		return (EReference) papyrusViewEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusView_OwningRules() {
-		return (EReference)papyrusViewEClass.getEStructuralFeatures().get(4);
+		return (EReference) papyrusViewEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPapyrusView_ImplementationID() {
-		return (EAttribute)papyrusViewEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) papyrusViewEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusView_Categories() {
-		return (EReference)papyrusViewEClass.getEStructuralFeatures().get(6);
+		return (EReference) papyrusViewEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPapyrusDiagram() {
@@ -345,42 +374,47 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPapyrusDiagram_CustomPalette() {
-		return (EAttribute)papyrusDiagramEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) papyrusDiagramEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPapyrusDiagram_CustomStyle() {
-		return (EAttribute)papyrusDiagramEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) papyrusDiagramEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusDiagram_ChildRules() {
-		return (EReference)papyrusDiagramEClass.getEStructuralFeatures().get(2);
+		return (EReference) papyrusDiagramEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPapyrusDiagram_PaletteRules() {
-		return (EReference)papyrusDiagramEClass.getEStructuralFeatures().get(3);
+		return (EReference) papyrusDiagramEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPapyrusSyncTable() {
@@ -390,6 +424,7 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPapyrusTable() {
@@ -399,15 +434,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPapyrusTable_Configuration() {
-		return (EAttribute)papyrusTableEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) papyrusTableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getModelRule() {
@@ -417,33 +454,37 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelRule_Element() {
-		return (EReference)modelRuleEClass.getEStructuralFeatures().get(0);
+		return (EReference) modelRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelRule_Stereotypes() {
-		return (EReference)modelRuleEClass.getEStructuralFeatures().get(1);
+		return (EReference) modelRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelRule_Multiplicity() {
-		return (EAttribute)modelRuleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) modelRuleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getOwningRule() {
@@ -453,42 +494,47 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getOwningRule_Element() {
-		return (EReference)owningRuleEClass.getEStructuralFeatures().get(0);
+		return (EReference) owningRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getOwningRule_Stereotypes() {
-		return (EReference)owningRuleEClass.getEStructuralFeatures().get(1);
+		return (EReference) owningRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getOwningRule_Multiplicity() {
-		return (EAttribute)owningRuleEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) owningRuleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getOwningRule_NewModelPath() {
-		return (EReference)owningRuleEClass.getEStructuralFeatures().get(3);
+		return (EReference) owningRuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getChildRule() {
@@ -498,42 +544,47 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getChildRule_Element() {
-		return (EReference)childRuleEClass.getEStructuralFeatures().get(0);
+		return (EReference) childRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getChildRule_Stereotypes() {
-		return (EReference)childRuleEClass.getEStructuralFeatures().get(1);
+		return (EReference) childRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getChildRule_Origin() {
-		return (EReference)childRuleEClass.getEStructuralFeatures().get(2);
+		return (EReference) childRuleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getChildRule_InsertionPath() {
-		return (EReference)childRuleEClass.getEStructuralFeatures().get(3);
+		return (EReference) childRuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPaletteRule() {
@@ -543,15 +594,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getPaletteRule_Element() {
-		return (EAttribute)paletteRuleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) paletteRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRule() {
@@ -561,15 +614,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRule_Permit() {
-		return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) ruleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPathElement() {
@@ -579,33 +634,37 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPathElement_Feature() {
-		return (EReference)pathElementEClass.getEStructuralFeatures().get(0);
+		return (EReference) pathElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPathElement_Origin() {
-		return (EReference)pathElementEClass.getEStructuralFeatures().get(1);
+		return (EReference) pathElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPathElement_Target() {
-		return (EReference)pathElementEClass.getEStructuralFeatures().get(2);
+		return (EReference) pathElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getCategory() {
@@ -615,15 +674,17 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCategory_Name() {
-		return (EAttribute)categoryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) categoryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getModelAutoCreate() {
@@ -633,55 +694,63 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelAutoCreate_Feature() {
-		return (EReference)modelAutoCreateEClass.getEStructuralFeatures().get(0);
+		return (EReference) modelAutoCreateEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelAutoCreate_Origin() {
-		return (EReference)modelAutoCreateEClass.getEStructuralFeatures().get(1);
+		return (EReference) modelAutoCreateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelAutoCreate_CreationType() {
-		return (EAttribute)modelAutoCreateEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) modelAutoCreateEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConfigurationFactory getConfigurationFactory() {
-		return (ConfigurationFactory)getEFactoryInstance();
+		return (ConfigurationFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -753,19 +822,23 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -774,8 +847,8 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		Iso42010Package theIso42010Package = (Iso42010Package)EPackage.Registry.INSTANCE.getEPackage(Iso42010Package.eNS_URI);
-		ConstraintsPackage theConstraintsPackage = (ConstraintsPackage)EPackage.Registry.INSTANCE.getEPackage(ConstraintsPackage.eNS_URI);
+		Iso42010Package theIso42010Package = (Iso42010Package) EPackage.Registry.INSTANCE.getEPackage(Iso42010Package.eNS_URI);
+		ConstraintsPackage theConstraintsPackage = (ConstraintsPackage) EPackage.Registry.INSTANCE.getEPackage(ConstraintsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -796,12 +869,16 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(papyrusConfigurationEClass, PapyrusConfiguration.class, "PapyrusConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPapyrusConfiguration_DefaultStakeholder(), theIso42010Package.getStakeholder(), null, "defaultStakeholder", null, 1, 1, PapyrusConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPapyrusConfiguration_Metamodel(), ecorePackage.getEPackage(), null, "metamodel", null, 1, 1, PapyrusConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPapyrusConfiguration_Categories(), this.getCategory(), null, "categories", null, 0, -1, PapyrusConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPapyrusConfiguration_DefaultStakeholder(), theIso42010Package.getStakeholder(), null, "defaultStakeholder", null, 1, 1, PapyrusConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPapyrusConfiguration_Metamodel(), ecorePackage.getEPackage(), null, "metamodel", null, 1, 1, PapyrusConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getPapyrusConfiguration_Categories(), this.getCategory(), null, "categories", null, 0, -1, PapyrusConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(papyrusViewpointEClass, PapyrusViewpoint.class, "PapyrusViewpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPapyrusViewpoint_Parent(), this.getPapyrusViewpoint(), null, "parent", null, 0, 1, PapyrusViewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPapyrusViewpoint_Parent(), this.getPapyrusViewpoint(), null, "parent", null, 0, 1, PapyrusViewpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(papyrusViewEClass, PapyrusView.class, "PapyrusView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPapyrusView_Icon(), ecorePackage.getEString(), "icon", null, 0, 1, PapyrusView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -815,8 +892,10 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		initEClass(papyrusDiagramEClass, PapyrusDiagram.class, "PapyrusDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPapyrusDiagram_CustomPalette(), ecorePackage.getEString(), "customPalette", null, 0, 1, PapyrusDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPapyrusDiagram_CustomStyle(), ecorePackage.getEString(), "customStyle", null, 0, 1, PapyrusDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPapyrusDiagram_ChildRules(), this.getChildRule(), null, "childRules", null, 0, -1, PapyrusDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPapyrusDiagram_PaletteRules(), this.getPaletteRule(), null, "paletteRules", null, 0, -1, PapyrusDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPapyrusDiagram_ChildRules(), this.getChildRule(), null, "childRules", null, 0, -1, PapyrusDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getPapyrusDiagram_PaletteRules(), this.getPaletteRule(), null, "paletteRules", null, 0, -1, PapyrusDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(papyrusSyncTableEClass, PapyrusSyncTable.class, "PapyrusSyncTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -835,7 +914,8 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		initEReference(getOwningRule_Element(), ecorePackage.getEClass(), null, "element", null, 0, 1, OwningRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOwningRule_Stereotypes(), ecorePackage.getEClass(), null, "stereotypes", null, 0, -1, OwningRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOwningRule_Multiplicity(), ecorePackage.getEInt(), "multiplicity", "-1", 1, 1, OwningRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOwningRule_NewModelPath(), this.getModelAutoCreate(), null, "newModelPath", null, 0, -1, OwningRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOwningRule_NewModelPath(), this.getModelAutoCreate(), null, "newModelPath", null, 0, -1, OwningRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(childRuleEClass, ChildRule.class, "ChildRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChildRule_Element(), ecorePackage.getEClass(), null, "element", null, 0, 1, ChildRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -855,7 +935,8 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		initEAttribute(getCategory_Name(), ecorePackage.getEString(), "name", null, 1, 1, Category.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelAutoCreateEClass, ModelAutoCreate.class, "ModelAutoCreate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelAutoCreate_Feature(), ecorePackage.getEReference(), null, "feature", null, 1, 1, ModelAutoCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelAutoCreate_Feature(), ecorePackage.getEReference(), null, "feature", null, 1, 1, ModelAutoCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getModelAutoCreate_Origin(), ecorePackage.getEClass(), null, "origin", null, 1, 1, ModelAutoCreate.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModelAutoCreate_CreationType(), ecorePackage.getEString(), "creationType", null, 1, 1, ModelAutoCreate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -863,4 +944,4 @@ public class ConfigurationPackageImpl extends EPackageImpl implements Configurat
 		createResource(eNS_URI);
 	}
 
-} //ConfigurationPackageImpl
+} // ConfigurationPackageImpl

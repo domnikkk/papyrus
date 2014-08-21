@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,10 +31,10 @@ public class DurationLinkConstraint extends org.eclipse.papyrus.infra.constraint
 
 	@Override
 	public boolean match(Object selection) {
-		if(selection instanceof CommentAnnotatedElementEditPart) {
-			CommentAnnotatedElementEditPart sel = (CommentAnnotatedElementEditPart)selection;
+		if (selection instanceof CommentAnnotatedElementEditPart) {
+			CommentAnnotatedElementEditPart sel = (CommentAnnotatedElementEditPart) selection;
 			EditPart source = sel.getSource();
-			if(source != null && sourcePart != null) {
+			if (source != null && sourcePart != null) {
 				Class<?> clazz = ClassLoaderHelper.loadClass(sourcePart);
 				return clazz.isInstance(source);
 			}
@@ -44,18 +44,20 @@ public class DurationLinkConstraint extends org.eclipse.papyrus.infra.constraint
 
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		if(constraint == null) {
+		if (constraint == null) {
 			return false;
 		}
-		if(!(constraint instanceof DurationLinkConstraint)) {
+		if (!(constraint instanceof DurationLinkConstraint)) {
 			return false;
 		}
-		DurationLinkConstraint other = (DurationLinkConstraint)constraint;
-		if(sourcePart == null) {
-			if(other.sourcePart != null)
+		DurationLinkConstraint other = (DurationLinkConstraint) constraint;
+		if (sourcePart == null) {
+			if (other.sourcePart != null) {
 				return false;
-		} else if(!sourcePart.equals(other.sourcePart))
+			}
+		} else if (!sourcePart.equals(other.sourcePart)) {
 			return false;
+		}
 
 		return true;
 	}

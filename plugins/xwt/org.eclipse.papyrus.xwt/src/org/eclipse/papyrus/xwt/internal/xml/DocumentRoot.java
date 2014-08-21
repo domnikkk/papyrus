@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *     Christian W. Damus (CEA) - Fix failure to propagate stream handlers of URLs (CDO)
@@ -134,7 +134,7 @@ public class DocumentRoot {
 	 * @see org.soyatec.xaml.IDocumentRoot#openStream()
 	 */
 	public InputStream openStream() throws IOException {
-		switch(format) {
+		switch (format) {
 		case FORMAT_GZIP:
 			return new GZIPInputStream(new URL(basePath + "/" + baseFile).openStream());
 		default:
@@ -154,18 +154,18 @@ public class DocumentRoot {
 		assert path != null;
 		InputStream in = null;
 
-		if(path.indexOf(':') < 0) {
-			if(format == FORMAT_ZIP) {
+		if (path.indexOf(':') < 0) {
+			if (format == FORMAT_ZIP) {
 				// If it is zip format, that means all directories and files in
 				// zip file are extracted to temporary directory.
 				File file = new File(basePath + "/" + path);
 				in = new FileInputStream(file);
 			} else {
 				// Else, maybe the file parent or url path.
-				switch(type) {
+				switch (type) {
 				case TYPE_FILE:
 					File file;
-					if(path.startsWith("/")) {
+					if (path.startsWith("/")) {
 						// Use absolute path
 						file = new File(path);
 					} else {
@@ -181,22 +181,22 @@ public class DocumentRoot {
 				}
 			}
 		} else {
-			if(path.startsWith("classpath:")) {
+			if (path.startsWith("classpath:")) {
 				// Use class path
 				String p = path.substring(10);
 				in = getClass().getResourceAsStream(p);
-				if(in == null) {
+				if (in == null) {
 					in = String.class.getResourceAsStream(p);
 				}
-				if(in == null) {
+				if (in == null) {
 					in = Thread.currentThread().getClass().getResourceAsStream(p);
 				}
-				if(in == null) {
+				if (in == null) {
 					throw new IOException("File not found in classpath: " + p);
 				}
 			} else {
 				File file = new File(path);
-				if(file.exists()) {
+				if (file.exists()) {
 					// Use Windows File path. For example, G:\\somefile.txt
 					in = new FileInputStream(file);
 				} else {
@@ -208,13 +208,15 @@ public class DocumentRoot {
 
 		// Automatically select the stream type
 		PushbackInputStream pis = new PushbackInputStream(in, 4);
-		if(Format.isGZIP(pis)) {
+		if (Format.isGZIP(pis)) {
 			return new GZIPInputStream(pis);
-		} else if(Format.isZIP(pis)) {
+		} else if (Format.isZIP(pis)) {
 			ZipInputStream zis = new ZipInputStream(pis);
 			// Skip entry of directory or file which contains directory
 			// path("someDirectory/someFile.suffix").
-			for(ZipEntry entry = zis.getNextEntry(); entry != null && (entry.isDirectory() || entry.getName().indexOf('/') != -1); entry = zis.getNextEntry());
+			for (ZipEntry entry = zis.getNextEntry(); entry != null && (entry.isDirectory() || entry.getName().indexOf('/') != -1); entry = zis.getNextEntry()) {
+				;
+			}
 			return zis;
 		} else {
 			return pis;
@@ -223,20 +225,20 @@ public class DocumentRoot {
 
 	/**
 	 * This method is used in <code>ModelLoader</code>
-	 * 
+	 *
 	 * @param file
-	 *        the xaml file path.
+	 *            the xaml file path.
 	 */
 	protected void init(InputStream inputStream, URL url) throws IOException {
 		File file = null;
-		
+
 		try {
 			file = "file".equals(url.getProtocol()) ? new File(url.toURI()) : null;
 		} catch (URISyntaxException e) {
-			// not a valid file URL.  Fine
+			// not a valid file URL. Fine
 		}
-		
-		if((inputStream == null) && (file != null) && file.exists()) {
+
+		if ((inputStream == null) && (file != null) && file.exists()) {
 			// Is file
 			init(file);
 		} else {
@@ -245,36 +247,36 @@ public class DocumentRoot {
 			baseURL = url;
 			PushbackInputStream pis = null;
 			boolean shouldClose_pis = false;
-			if(inputStream instanceof PushbackInputStream) {
-				pis = (PushbackInputStream)inputStream;
+			if (inputStream instanceof PushbackInputStream) {
+				pis = (PushbackInputStream) inputStream;
 			} else {
-				if(inputStream == null) {
+				if (inputStream == null) {
 					pis = new PushbackInputStream(baseURL.openStream(), 4);
 					shouldClose_pis = true;
 				} else {
 					pis = new PushbackInputStream(inputStream, 4);
 				}
 			}
-			if(Format.isGZIP(pis)) {
+			if (Format.isGZIP(pis)) {
 				format = FORMAT_GZIP;
-			} else if(Format.isZIP(pis)) {
+			} else if (Format.isZIP(pis)) {
 				format = FORMAT_ZIP;
 				File tempDir = extractZipToTemporary(pis);
 				basePath = "file:/" + tempDir.getAbsolutePath();
 				baseFile = getMainFile(tempDir);
 			}
-			if(shouldClose_pis) {
+			if (shouldClose_pis) {
 				pis.close();
 			}
 
-			if(basePath == null) {
+			if (basePath == null) {
 				String path = url.getPath();
-				while(path.endsWith("/")) {
+				while (path.endsWith("/")) {
 					path = path.substring(0, path.length() - 1);
 				}
 
 				int lastIndex = path.lastIndexOf("/");
-				if(lastIndex > 0) {
+				if (lastIndex > 0) {
 					basePath = path.substring(0, lastIndex);
 					baseFile = path.substring(lastIndex + 1);
 					baseURL = new URL(url, basePath); // be sure to preserve the stream handler
@@ -306,9 +308,9 @@ public class DocumentRoot {
 
 	/**
 	 * This method is used in <code>ModelLoader</code>
-	 * 
+	 *
 	 * @param file
-	 *        the XAML file.
+	 *            the XAML file.
 	 */
 	private void init(File file) throws IOException {
 		FileInputStream fis = new FileInputStream(file);
@@ -316,9 +318,9 @@ public class DocumentRoot {
 		baseURL = file.getParentFile().toURI().toURL();
 		basePath = baseURL.toString();
 		baseFile = file.getName();
-		if(Format.isGZIP(pis)) {
+		if (Format.isGZIP(pis)) {
 			format = FORMAT_GZIP;
-		} else if(Format.isZIP(pis)) {
+		} else if (Format.isZIP(pis)) {
 			format = FORMAT_ZIP;
 			File tempDir = extractZipToTemporary(pis);
 			basePath = "file:/" + tempDir.getAbsolutePath();
@@ -336,7 +338,7 @@ public class DocumentRoot {
 				return pathname.isFile() && pathname.getName().toLowerCase().endsWith(IConstants.XWT_EXTENSION_SUFFIX);
 			}
 		});
-		for(File tempFile : tempFiles) {
+		for (File tempFile : tempFiles) {
 			return tempFile.getName();
 		}
 		return null;
@@ -344,14 +346,14 @@ public class DocumentRoot {
 
 	/**
 	 * Extract zip stream to temporary directory.
-	 * 
+	 *
 	 * @param stream
-	 *        zip stream.
+	 *            zip stream.
 	 * @return Returns the directory file the zip stream extracted.
 	 */
 	private File extractZipToTemporary(InputStream stream) throws IOException {
 		File file = new File(System.getProperty("java.io.tmpdir") + "/cb" + System.currentTimeMillis() + Math.random());
-		if(!file.mkdir()) {
+		if (!file.mkdir()) {
 			throw new XWTException("Folder creation fails: " + file.toString());
 		}
 		file.deleteOnExit();
@@ -359,24 +361,24 @@ public class DocumentRoot {
 		String directory = file.getAbsolutePath();
 		ZipInputStream in = new ZipInputStream(stream);
 		ZipEntry z;
-		while((z = in.getNextEntry()) != null) {
-			if(z.isDirectory()) {
+		while ((z = in.getNextEntry()) != null) {
+			if (z.isDirectory()) {
 				String name = z.getName();
 				name = name.substring(0, name.length() - 1);
 				File f = new File(directory + File.separator + name);
-				if(!f.mkdir()) {
+				if (!f.mkdir()) {
 					throw new XWTException("Folder creation fails: " + f.toString());
 				}
 				f.deleteOnExit();
 			} else {
 				File f = new File(directory + File.separator + z.getName());
-				if(!f.createNewFile()) {
+				if (!f.createNewFile()) {
 					throw new XWTException("File creation fails: " + f.toString());
 				}
 				f.deleteOnExit();
 				FileOutputStream out = new FileOutputStream(f);
 				byte[] cache = new byte[4096];
-				for(int i = in.read(cache); i != -1; i = in.read(cache)) {
+				for (int i = in.read(cache); i != -1; i = in.read(cache)) {
 					out.write(cache, 0, i);
 				}
 				out.close();
@@ -392,27 +394,27 @@ public class DocumentRoot {
 	 * <p>
 	 * To check the format of file or stream.
 	 * </p>
-	 * 
+	 *
 	 */
 	static class Format {
 
 		/**
 		 * Check the stream is a gzip format or not.
-		 * 
+		 *
 		 * @param stream
-		 *        the checked stream.
+		 *            the checked stream.
 		 * @return Returns true is the stream is a gzip format.
 		 */
 		public static boolean isGZIP(PushbackInputStream stream) throws IOException {
 			assert stream != null;
 
 			byte[] cachedBytes = new byte[2];
-			if(stream.read(cachedBytes) != cachedBytes.length) {
+			if (stream.read(cachedBytes) != cachedBytes.length) {
 				throw new RuntimeException("data content wrong.");
 			}
 			stream.unread(cachedBytes);
 			// GZIP's header data starts with two bytes{1F,8B},
-			if((cachedBytes[0] & 0xff) == 0x1f && (cachedBytes[1] & 0xff) == 0x8b) {
+			if ((cachedBytes[0] & 0xff) == 0x1f && (cachedBytes[1] & 0xff) == 0x8b) {
 				return true;
 			} else {
 				return false;
@@ -421,9 +423,9 @@ public class DocumentRoot {
 
 		/**
 		 * Check the file is a gzip format or not.
-		 * 
+		 *
 		 * @param file
-		 *        the checked file.
+		 *            the checked file.
 		 * @return Returns true is the file is a gzip format.
 		 */
 		public static boolean isGZIP(File file) throws IOException {
@@ -438,21 +440,21 @@ public class DocumentRoot {
 
 		/**
 		 * Check the stream is a zip format or not.
-		 * 
+		 *
 		 * @param stream
-		 *        the checked stream.
+		 *            the checked stream.
 		 * @return Returns true is the stream is a zip format.
 		 */
 		public static boolean isZIP(PushbackInputStream stream) throws IOException {
 			assert stream != null;
 
 			byte[] cachedBytes = new byte[4];
-			if(stream.read(cachedBytes) != cachedBytes.length) {
+			if (stream.read(cachedBytes) != cachedBytes.length) {
 				throw new RuntimeException("data content wrong.");
 			}
 			stream.unread(cachedBytes);
 			// ZIP's header data starts with four bytes{0x50, 0x4b, 0x03, 0x04},
-			if((cachedBytes[0] & 0xff) == 0x50 && (cachedBytes[1] & 0xff) == 0x4b && (cachedBytes[2] & 0xff) == 0x03 && (cachedBytes[3] & 0xff) == 0x04) {
+			if ((cachedBytes[0] & 0xff) == 0x50 && (cachedBytes[1] & 0xff) == 0x4b && (cachedBytes[2] & 0xff) == 0x03 && (cachedBytes[3] & 0xff) == 0x04) {
 				return true;
 			} else {
 				return false;
@@ -461,9 +463,9 @@ public class DocumentRoot {
 
 		/**
 		 * Check the file is a zip format or not.
-		 * 
+		 *
 		 * @param file
-		 *        the checked file.
+		 *            the checked file.
 		 * @return Returns true is the file is a zip format.
 		 */
 		public static boolean isZIP(File file) throws IOException {

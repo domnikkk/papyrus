@@ -38,7 +38,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.mapmode.MapModeUtil;
  *
  */
 @SuppressWarnings("restriction")
-public class ZoomAction extends AbstractParametricAction {//extends Action
+public class ZoomAction extends AbstractParametricAction {// extends Action
 
 	/**
 	 * Custom zoom operations
@@ -80,21 +80,21 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 * Constructor.
 	 *
 	 * @param parameter
-	 *        parameter for the zoom action
-	 *        Parameters can value :
-	 *        <ul>
-	 *        <li>#ZOOM_IN_PARAMETER</li>
-	 *        <li>#ZOOM_OUT_PARAMETER</li>
-	 *        <li>#ZOOM_100_PARAMETER</li>
-	 *        <li>#ZOOM_FIT_PARAMETER</li>
-	 *        <li>#ZOOM_WIDTH_PARAMETER</li>
-	 *        <li>#ZOOM_HEIGHT_PARAMETER</li>
-	 *        <li>#ZOOM_SELECTION_PARAMETER</li>
-	 *        <li>a number as String (with % at end or not)</li>
-	 *        </ul>
+	 *            parameter for the zoom action
+	 *            Parameters can value :
+	 *            <ul>
+	 *            <li>#ZOOM_IN_PARAMETER</li>
+	 *            <li>#ZOOM_OUT_PARAMETER</li>
+	 *            <li>#ZOOM_100_PARAMETER</li>
+	 *            <li>#ZOOM_FIT_PARAMETER</li>
+	 *            <li>#ZOOM_WIDTH_PARAMETER</li>
+	 *            <li>#ZOOM_HEIGHT_PARAMETER</li>
+	 *            <li>#ZOOM_SELECTION_PARAMETER</li>
+	 *            <li>a number as String (with % at end or not)</li>
+	 *            </ul>
 	 *
 	 * @param selectedElements
-	 *        the selected element for the zoom action
+	 *            the selected element for the zoom action
 	 */
 	public ZoomAction(String parameter, List<IGraphicalEditPart> selectedElements) {
 		super(parameter, selectedElements);
@@ -115,34 +115,34 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 * <code>false</code> if not
 	 *
 	 * @param zoomText
-	 *        the new zoom value
+	 *            the new zoom value
 	 * @return
 	 *         <code>true</code> if the zoomText is a correct value
 	 */
 	protected boolean isValid(String zoomText) {
-		//we test if we are in a diagram
+		// we test if we are in a diagram
 		DiagramEditPart diagramEP = getDiagramEditPart();
-		if(diagramEP == null) {
+		if (diagramEP == null) {
 			return false;
 		}
 
-		if(zoomText.equals(ZoomAction.ZOOM_IN_PARAMETER)) {
+		if (zoomText.equals(ZoomAction.ZOOM_IN_PARAMETER)) {
 			return true;
-		} else if(zoomText.equals(ZOOM_OUT_PARAMETER)) {
+		} else if (zoomText.equals(ZOOM_OUT_PARAMETER)) {
 			return true;
-		} else if(zoomText.equals(ZOOM_100_PARAMETER)) {
+		} else if (zoomText.equals(ZOOM_100_PARAMETER)) {
 			return true;
-		} else if(zoomText.equals(ZOOM_FIT_PARAMETER)) {
+		} else if (zoomText.equals(ZOOM_FIT_PARAMETER)) {
 			return true;
-		} else if(zoomText.equals(ZOOM_WIDTH_PARAMETER)) {
+		} else if (zoomText.equals(ZOOM_WIDTH_PARAMETER)) {
 			return true;
-		} else if(zoomText.equals(ZOOM_HEIGHT_PARAMETER)) {
+		} else if (zoomText.equals(ZOOM_HEIGHT_PARAMETER)) {
 			return true;
-		} else if(zoomText.equals(ZOOM_SELECTION_PARAMETER)) {
+		} else if (zoomText.equals(ZOOM_SELECTION_PARAMETER)) {
 			return true;
 		} else {
 			StringBuffer buffer = new StringBuffer(zoomText);
-			while(buffer.indexOf("%") != -1) {//$NON-NLS-1$
+			while (buffer.indexOf("%") != -1) {//$NON-NLS-1$
 				int index = buffer.indexOf("%");//$NON-NLS-1$
 				buffer.deleteCharAt(index);
 			}
@@ -162,25 +162,25 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 */
 	@Override
 	public void doRun(IProgressMonitor progressMonitor) {
-		if(isEnabled()) {
+		if (isEnabled()) {
 			String parameter = getParameter();
 			getZoomManager();
-			if(parameter.equals(ZOOM_IN_PARAMETER)) {
+			if (parameter.equals(ZOOM_IN_PARAMETER)) {
 				getZoomManager().zoomIn();
-			} else if(parameter.equals(ZOOM_OUT_PARAMETER)) {
+			} else if (parameter.equals(ZOOM_OUT_PARAMETER)) {
 				getZoomManager().zoomOut();
-			} else if(parameter.equals(ZOOM_100_PARAMETER)) {
+			} else if (parameter.equals(ZOOM_100_PARAMETER)) {
 				getZoomManager().setZoom(1);
-			} else if(parameter.equals(ZOOM_FIT_PARAMETER)) {
+			} else if (parameter.equals(ZOOM_FIT_PARAMETER)) {
 				zoomToFit(true, true, false);
-			} else if(parameter.equals(ZOOM_WIDTH_PARAMETER)) {
+			} else if (parameter.equals(ZOOM_WIDTH_PARAMETER)) {
 				zoomToFit(true, false, false);
-			} else if(parameter.equals(ZOOM_HEIGHT_PARAMETER)) {
+			} else if (parameter.equals(ZOOM_HEIGHT_PARAMETER)) {
 				zoomToFit(false, true, false);
-			} else if(parameter.equals(ZOOM_SELECTION_PARAMETER)) {
+			} else if (parameter.equals(ZOOM_SELECTION_PARAMETER)) {
 				zoomToFit(true, true, true);
 			} else {
-				getZoomManager().setZoomAsText(parameter);//to set a specific value to zoom
+				getZoomManager().setZoomAsText(parameter);// to set a specific value to zoom
 			}
 		}
 	}
@@ -189,12 +189,12 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 * Performs the zoom operation. Always zooms when possible.
 	 *
 	 * @param onWidth
-	 *        true to perform zoom on the width
+	 *            true to perform zoom on the width
 	 * @param onHeight
-	 *        true to perform zoom on the height
+	 *            true to perform zoom on the height
 	 * @param selectionOnly
-	 *        true to only zoom the selected items, false to zoom the entire
-	 *        diagram
+	 *            true to only zoom the selected items, false to zoom the entire
+	 *            diagram
 	 */
 	protected void zoomToFit(boolean onWidth, boolean onHeight, boolean selectionOnly) {
 		zoomToFit(onWidth, onHeight, selectionOnly, false);
@@ -204,22 +204,22 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 * Performs the zoom operation.
 	 *
 	 * @param onWidth
-	 *        true to perform zoom on the width
+	 *            true to perform zoom on the width
 	 * @param onHeight
-	 *        true to perform zoom on the height
+	 *            true to perform zoom on the height
 	 * @param selectionOnly
-	 *        true to only zoom the selected items, false to zoom the entire
-	 *        diagram
+	 *            true to only zoom the selected items, false to zoom the entire
+	 *            diagram
 	 * @param zoomOutOnly
-	 *        true to only zoom out and avoid zooming to greater than 100%,
-	 *        false to always zoom even if it could make the shapes on the
-	 *        diagram very large
+	 *            true to only zoom out and avoid zooming to greater than 100%,
+	 *            false to always zoom even if it could make the shapes on the
+	 *            diagram very large
 	 */
 	@SuppressWarnings("unchecked")
 	protected void zoomToFit(boolean onWidth, boolean onHeight, boolean selectionOnly, boolean zoomOutOnly) {
 
 		Iterator<?> editParts;
-		if(selectionOnly) {
+		if (selectionOnly) {
 			editParts = getSelection().iterator();
 		} else {
 			List<?> allEditParts = getDiagramEditPart().getConnections();
@@ -228,13 +228,13 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 		}
 
 		Rectangle targetRegion = null;
-		while(editParts.hasNext()) {
-			IFigure f = ((GraphicalEditPart)editParts.next()).getFigure();
+		while (editParts.hasNext()) {
+			IFigure f = ((GraphicalEditPart) editParts.next()).getFigure();
 			targetRegion = targetRegion == null ? f.getBounds().getCopy() : targetRegion.getUnion(f.getBounds());
 		}
 
 		// IF nothing to Zoom...
-		if(targetRegion == null) {
+		if (targetRegion == null) {
 			// do nothing
 			return;
 		}
@@ -244,19 +244,19 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 		Viewport viewport = getZoomManager().getViewport();
 
-		float xratio = viewport.getHorizontalRangeModel().getExtent() / (float)targetRegion.width;
-		float yratio = viewport.getVerticalRangeModel().getExtent() / (float)targetRegion.height;
+		float xratio = viewport.getHorizontalRangeModel().getExtent() / (float) targetRegion.width;
+		float yratio = viewport.getVerticalRangeModel().getExtent() / (float) targetRegion.height;
 
 		double zoom = 1.0;
-		if(onHeight && onWidth) {
+		if (onHeight && onWidth) {
 			zoom = (yratio < xratio) ? Math.floor(yratio * 100) : Math.floor(xratio * 100);
-		} else if(onWidth) {
+		} else if (onWidth) {
 			zoom = Math.floor(xratio * 100);
-		} else if(onHeight) {
+		} else if (onHeight) {
 			zoom = Math.floor(yratio * 100);
 		}
 
-		if(zoomOutOnly && zoom >= 100) {
+		if (zoomOutOnly && zoom >= 100) {
 			// we should always continue in order to set the viewport
 			// location
 			zoom = 100;
@@ -264,10 +264,10 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 
 		// apply thresholds
 		Point topLeft = targetRegion.getTopLeft();
-		zoom = Math.min((int)(getZoomManager().getMaxZoom() * 100), Math.max((int)(getZoomManager().getMinZoom() * 100), zoom));
+		zoom = Math.min((int) (getZoomManager().getMaxZoom() * 100), Math.max((int) (getZoomManager().getMinZoom() * 100), zoom));
 
-		int viewX = Math.round(topLeft.x * (float)zoom / 100.0f);
-		int viewY = Math.round(topLeft.y * (float)zoom / 100.0f);
+		int viewX = Math.round(topLeft.x * (float) zoom / 100.0f);
+		int viewY = Math.round(topLeft.y * (float) zoom / 100.0f);
 
 		getZoomManager().setZoom(zoom / 100);
 		viewport.setHorizontalLocation(viewX);
@@ -283,8 +283,8 @@ public class ZoomAction extends AbstractParametricAction {//extends Action
 	 */
 	protected ZoomManager getZoomManager() {
 		IDiagramWorkbenchPart diagramPart = getDiagramWorkbenchPart();
-		if(diagramPart != null) {
-			return (ZoomManager)diagramPart.getAdapter(ZoomManager.class);
+		if (diagramPart != null) {
+			return (ZoomManager) diagramPart.getAdapter(ZoomManager.class);
 		}
 		return null;
 	}

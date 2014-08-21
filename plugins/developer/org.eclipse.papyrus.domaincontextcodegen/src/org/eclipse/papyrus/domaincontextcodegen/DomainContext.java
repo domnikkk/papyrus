@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Domain Context</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -35,7 +35,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getCommand <em>Command</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext()
  * @model
  * @generated
@@ -49,7 +49,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Type Project Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Type Project Name</em>' attribute.
 	 * @see #setTypeProjectName(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_TypeProjectName()
@@ -62,9 +62,9 @@ public interface DomainContext extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getTypeProjectName <em>Type Project Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Type Project Name</em>' attribute.
+	 *            the new value of the '<em>Type Project Name</em>' attribute.
 	 * @see #getTypeProjectName()
 	 * @generated
 	 */
@@ -77,7 +77,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Handler Project Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Handler Project Name</em>' attribute.
 	 * @see #setHandlerProjectName(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_HandlerProjectName()
@@ -91,9 +91,9 @@ public interface DomainContext extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Handler Project Name</em>' attribute.
+	 *            the new value of the '<em>Handler Project Name</em>' attribute.
 	 * @see #getHandlerProjectName()
 	 * @generated
 	 */
@@ -106,7 +106,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>IClient Context ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>IClient Context ID</em>' attribute.
 	 * @see #setIClientContextID(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_IClientContextID()
@@ -120,9 +120,9 @@ public interface DomainContext extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>IClient Context ID</em>' attribute.
+	 *            the new value of the '<em>IClient Context ID</em>' attribute.
 	 * @see #getIClientContextID()
 	 * @generated
 	 */
@@ -135,7 +135,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Metamodel</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Metamodel</em>' reference.
 	 * @see #setMetamodel(EPackage)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_Metamodel()
@@ -148,9 +148,9 @@ public interface DomainContext extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getMetamodel <em>Metamodel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Metamodel</em>' reference.
+	 *            the new value of the '<em>Metamodel</em>' reference.
 	 * @see #getMetamodel()
 	 * @generated
 	 */
@@ -163,7 +163,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Specialization Of</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Specialization Of</em>' reference.
 	 * @see #setSpecializationOf(DomainContext)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_SpecializationOf()
@@ -177,9 +177,9 @@ public interface DomainContext extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Specialization Of</em>' reference.
+	 *            the new value of the '<em>Specialization Of</em>' reference.
 	 * @see #getSpecializationOf()
 	 * @generated
 	 */
@@ -192,7 +192,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Element Type ID Prefix</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type ID Prefix</em>' attribute.
 	 * @see #setElementTypeIDPrefix(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_ElementTypeIDPrefix()
@@ -206,9 +206,9 @@ public interface DomainContext extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Element Type ID Prefix</em>' attribute.
+	 *            the new value of the '<em>Element Type ID Prefix</em>' attribute.
 	 * @see #getElementTypeIDPrefix()
 	 * @generated
 	 */
@@ -221,7 +221,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Element Type Name Prefix</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Type Name Prefix</em>' attribute.
 	 * @see #setElementTypeNamePrefix(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_ElementTypeNamePrefix()
@@ -235,9 +235,9 @@ public interface DomainContext extends EObject {
 	 * <em>Element Type Name Prefix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Element Type Name Prefix</em>' attribute.
+	 *            the new value of the '<em>Element Type Name Prefix</em>' attribute.
 	 * @see #getElementTypeNamePrefix()
 	 * @generated
 	 */
@@ -251,7 +251,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Element Types</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Types</em>' containment reference.
 	 * @see #setElementTypes(ElementTypes)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_ElementTypes()
@@ -266,9 +266,9 @@ public interface DomainContext extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Element Types</em>' containment reference.
+	 *            the new value of the '<em>Element Types</em>' containment reference.
 	 * @see #getElementTypes()
 	 * @generated
 	 */
@@ -281,7 +281,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Default Helper Path</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Default Helper Path</em>' attribute.
 	 * @see #setDefaultHelperPath(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_DefaultHelperPath()
@@ -295,9 +295,9 @@ public interface DomainContext extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Default Helper Path</em>' attribute.
+	 *            the new value of the '<em>Default Helper Path</em>' attribute.
 	 * @see #getDefaultHelperPath()
 	 * @generated
 	 */
@@ -311,7 +311,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Advices</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Advices</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_Advices()
 	 * @model containment="true"
@@ -327,7 +327,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Bindings</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bindings</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_Bindings()
 	 * @model containment="true"
@@ -342,7 +342,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Gen Handlers</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Gen Handlers</em>' containment reference.
 	 * @see #setGenHandlers(GenHandlers)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_GenHandlers()
@@ -356,9 +356,9 @@ public interface DomainContext extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Gen Handlers</em>' containment reference.
+	 *            the new value of the '<em>Gen Handlers</em>' containment reference.
 	 * @see #getGenHandlers()
 	 * @generated
 	 */
@@ -371,7 +371,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Generated Source Folder</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Generated Source Folder</em>' attribute.
 	 * @see #setGeneratedSourceFolder(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_GeneratedSourceFolder()
@@ -381,13 +381,12 @@ public interface DomainContext extends EObject {
 	String getGeneratedSourceFolder();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getGeneratedSourceFolder <em>Generated Source Folder</em>}
-	 * ' attribute.
+	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.DomainContext#getGeneratedSourceFolder <em>Generated Source Folder</em>} ' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Generated Source Folder</em>' attribute.
+	 *            the new value of the '<em>Generated Source Folder</em>' attribute.
 	 * @see #getGeneratedSourceFolder()
 	 * @generated
 	 */
@@ -401,7 +400,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Menu</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Menu</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_Menu()
 	 * @model containment="true"
@@ -417,7 +416,7 @@ public interface DomainContext extends EObject {
 	 * If the meaning of the '<em>Command</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Command</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getDomainContext_Command()
 	 * @model containment="true"

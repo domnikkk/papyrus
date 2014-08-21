@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 LIFL, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,17 +25,17 @@ import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * Page handling the {@link ModelExplorerView} for the {@link ModelExplorerPageBookView}
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ModelExplorerPage extends ViewPartPage {
 
 	private SharedModelExplorerState state;
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param part
 	 */
 	public ModelExplorerPage() {
@@ -43,24 +43,24 @@ public class ModelExplorerPage extends ViewPartPage {
 
 	/**
 	 * Create the Viewer for the requested part
-	 * 
+	 *
 	 * @param part
-	 *        The part to associate to the Viewer.
+	 *            The part to associate to the Viewer.
 	 * @return
 	 */
 	@Override
 	protected IViewPart createViewer(IWorkbenchPart part) {
 		// Part is of the right type because of call to isImportant()
-		ModelExplorerView result = new ModelExplorerView((IMultiDiagramEditor)part);
+		ModelExplorerView result = new ModelExplorerView((IMultiDiagramEditor) part);
 		result.setSharedState(state);
 		return result;
 	}
 
 	/**
 	 * Create control of the inner view
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.Page#createControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -70,14 +70,14 @@ public class ModelExplorerPage extends ViewPartPage {
 
 	/**
 	 * Return the control
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.core.ui.pagebookview.ViewPartPage#getControl()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Control getControl() {
-		return ((ModelExplorerView)getViewer()).getControl();
+		return ((ModelExplorerView) getViewer()).getControl();
 	}
 
 	void setSharedState(SharedModelExplorerState state) {

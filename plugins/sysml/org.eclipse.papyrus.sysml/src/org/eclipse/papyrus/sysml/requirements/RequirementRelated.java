@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Requirement Related</b></em> '. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.NamedElement;
  * <li>{@link org.eclipse.papyrus.sysml.requirements.RequirementRelated#getVerifies <em>Verifies</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirementRelated()
  * @model
  * @generated
@@ -44,7 +44,7 @@ public interface RequirementRelated extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirementRelated_Base_NamedElement()
@@ -61,7 +61,7 @@ public interface RequirementRelated extends EObject {
 	 * If the meaning of the '<em>Refines</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Refines</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirementRelated_Refines()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -78,7 +78,7 @@ public interface RequirementRelated extends EObject {
 	 * If the meaning of the '<em>Satisfies</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Satisfies</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirementRelated_Satisfies()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -95,7 +95,7 @@ public interface RequirementRelated extends EObject {
 	 * If the meaning of the '<em>Traced From</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Traced From</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirementRelated_TracedFrom()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -112,7 +112,7 @@ public interface RequirementRelated extends EObject {
 	 * If the meaning of the '<em>Verifies</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Verifies</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirementRelated_Verifies()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -126,9 +126,9 @@ public interface RequirementRelated extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Named Element</em>' reference.
+	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 */

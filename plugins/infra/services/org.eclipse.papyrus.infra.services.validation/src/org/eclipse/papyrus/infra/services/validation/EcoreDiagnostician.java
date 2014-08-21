@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,35 +28,37 @@ import org.eclipse.emf.edit.provider.IItemLabelProvider;
  *
  */
 public class EcoreDiagnostician extends Diagnostician implements IPapyrusDiagnostician {
-	
+
 	protected AdapterFactory adapterFactory;
 	protected IProgressMonitor progressMonitor;
-	
+
 	/**
 	 * Create diagnostician with custom validator (that must subclass ECore validator)
-	 * @param validatorAdapter custom validator adapter
+	 * 
+	 * @param validatorAdapter
+	 *            custom validator adapter
 	 */
 	public EcoreDiagnostician(EValidatorAdapter validatorAdapter) {
 		this.validatorAdapter = validatorAdapter;
 	}
-	
+
 	public EcoreDiagnostician() {
-		validatorAdapter = new EValidatorAdapter();		
+		validatorAdapter = new EValidatorAdapter();
 	}
-	
-	public void initialize (final AdapterFactory adapterFactory, final IProgressMonitor progressMonitor) {
-		this.adapterFactory=adapterFactory;
-		this.progressMonitor=progressMonitor;
+
+	public void initialize(final AdapterFactory adapterFactory, final IProgressMonitor progressMonitor) {
+		this.adapterFactory = adapterFactory;
+		this.progressMonitor = progressMonitor;
 	}
 
 	protected EValidatorAdapter validatorAdapter;
 
 	@Override
 	public String getObjectLabel(EObject eObject) {
-		if(adapterFactory != null && !eObject.eIsProxy())
+		if (adapterFactory != null && !eObject.eIsProxy())
 		{
-			IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(eObject, IItemLabelProvider.class);
-			if(itemLabelProvider != null) {
+			IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(eObject, IItemLabelProvider.class);
+			if (itemLabelProvider != null) {
 				return itemLabelProvider.getText(eObject);
 			}
 		}
@@ -65,7 +67,7 @@ public class EcoreDiagnostician extends Diagnostician implements IPapyrusDiagnos
 
 	@Override
 	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		assert(progressMonitor!=null);
+		assert (progressMonitor != null);
 		progressMonitor.worked(1);
 
 		// copied from superclass, difference: use EValidatorAdapter instead of first value from eValidatorRegistry
@@ -73,7 +75,7 @@ public class EcoreDiagnostician extends Diagnostician implements IPapyrusDiagnos
 
 		boolean circular = context.get(EObjectValidator.ROOT_OBJECT) == eObject;
 		boolean result = validatorAdapter.validate(eClass, eObject, diagnostics, context);
-		if((result || diagnostics != null) && !circular)
+		if ((result || diagnostics != null) && !circular)
 		{
 			result &= doValidateContents(eObject, diagnostics, context);
 		}

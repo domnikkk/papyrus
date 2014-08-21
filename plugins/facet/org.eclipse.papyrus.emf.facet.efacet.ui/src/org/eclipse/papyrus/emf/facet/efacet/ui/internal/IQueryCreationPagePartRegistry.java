@@ -18,6 +18,7 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.exported.wizard.IQueryCr
 
 /**
  * This interface is dedicated to the registry
+ * 
  * @since 0.2
  * @deprecated This interface has been replaced by {@link IQueryCreationPagePart2Registry}. No tracking bug needed because this API has not been released yet.
  */
@@ -31,7 +32,7 @@ public interface IQueryCreationPagePartRegistry {
 
 	/**
 	 * Return a registered {@link IQueryCreationPagePart} corresponding to the given type name.
-	 * 
+	 *
 	 * @param managedTypeName
 	 *            the type we need a part for.
 	 * @return a registered {@link IQueryCreationPagePart} corresponding to the given type name.
@@ -40,7 +41,7 @@ public interface IQueryCreationPagePartRegistry {
 
 	/**
 	 * Returns every registered {@link IQueryCreationPagePart} associated with their managed type.
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<String, IQueryCreationPagePart> getRegisteredWizardPageParts();

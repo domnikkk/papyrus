@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2011, 2012, 2013 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *      Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
@@ -169,31 +169,31 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 				result = object.toString();
 			}
 
-		} 
+		}
 		return result;
-		
-//TODO Remove before to commit
-//		if (structuralFeature.getUpperBound() == 1) {
-//			final Object object = this.customManager.getFacetManager().get(eObject,
-//					structuralFeature, Object.class);
-//			result = getText(object);
-//		} else {
-//			final StringBuffer stringBuffer = new StringBuffer();
-//			final List<Object> objects = this.customManager.getFacetManager()
-//					.getMultiValued(eObject, structuralFeature, Object.class);
-//			final Iterator<Object> objectsIter = objects.iterator();
-//			while (objectsIter.hasNext()) {
-//				final Object object = objectsIter.next();
-//				stringBuffer.append(this.getText(object));
-//				if (objectsIter.hasNext()) {
-//					stringBuffer.append(", ");
-//				}
-//			}
-//			result = stringBuffer.toString();
-//		}
-//TODO (end)
+
+		// TODO Remove before to commit
+		// if (structuralFeature.getUpperBound() == 1) {
+		// final Object object = this.customManager.getFacetManager().get(eObject,
+		// structuralFeature, Object.class);
+		// result = getText(object);
+		// } else {
+		// final StringBuffer stringBuffer = new StringBuffer();
+		// final List<Object> objects = this.customManager.getFacetManager()
+		// .getMultiValued(eObject, structuralFeature, Object.class);
+		// final Iterator<Object> objectsIter = objects.iterator();
+		// while (objectsIter.hasNext()) {
+		// final Object object = objectsIter.next();
+		// stringBuffer.append(this.getText(object));
+		// if (objectsIter.hasNext()) {
+		// stringBuffer.append(", ");
+		// }
+		// }
+		// result = stringBuffer.toString();
+		// }
+		// TODO (end)
 	}
-	
+
 	@Override
 	public void addListener(final ILabelProviderListener listener) {
 		this.listeners.add(listener);
@@ -213,7 +213,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 	public void removeListener(final ILabelProviderListener listener) {
 		this.listeners.remove(listener);
 	}
-	
+
 	private static Color getColor(final RGB rgb) {
 		final Display display = Display.getDefault();
 		final IColorProvider colorProvider = IColorProviderFactory.DEFAULT
@@ -253,7 +253,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 				.getOrCreateIFontProvider(Display.getDefault());
 		return fontProvider.getFont(fontData);
 	}
-	
+
 	public Font getFont(final Object element) {
 
 		String fontName = getPropertyValue(element,
@@ -333,7 +333,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 		}
 		return result;
 	}
-	
+
 	private Image getImage(final Object element, final FacetOperation operation, final ETypedElement feature) {
 		final IImage iimage = getPropertyValue(element, operation, feature,
 				IImage.class);
@@ -376,7 +376,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 		return getPropertyValue(element,
 				this.propertiesHandler.getToolTipTextProperty(), null, String.class);
 	}
-	
+
 	@Override
 	public int getToolTipStyle(final Object element) {
 		int style = 0;
@@ -384,10 +384,10 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 				this.propertiesHandler.getToolTipShadowProperty(), null,
 				Shadow.class);
 		switch (shadow) {
-		case NONE : 
+		case NONE:
 			style = SWT.SHADOW_NONE;
 			break;
-		case IN :
+		case IN:
 			style = SWT.SHADOW_IN;
 			break;
 		case OUT:
@@ -396,7 +396,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 		default:
 			throw new IllegalStateException("Un expected value"); //$NON-NLS-1$
 		}
-		
+
 		final Alignment alignment = getPropertyValue(element,
 				this.propertiesHandler.getToolTipAlignmentProperty(), null,
 				Alignment.class);
@@ -413,16 +413,16 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 		default:
 			throw new IllegalStateException("Un expected value"); //$NON-NLS-1$
 		}
-		
+
 		return style;
 	}
-	
+
 	@Override
 	public Image getToolTipImage(final Object element) {
 		return getPropertyValue(element,
 				this.propertiesHandler.getToolTipImageProperty(), null, Image.class);
 	}
-	
+
 	@Override
 	public Color getToolTipBackgroundColor(final Object element) {
 		final IColor color = getPropertyValue(element,
@@ -430,7 +430,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 				null, IColor.class);
 		return getColor(new RGB(color.getRed(), color.getGreen(), color.getBlue()));
 	}
-	
+
 	@Override
 	public Color getToolTipForegroundColor(final Object element) {
 		final IColor color = getPropertyValue(element,
@@ -493,7 +493,7 @@ public class CustomizedLabelProvider extends CellLabelProvider implements
 		return getPropertyValue(element,
 				this.propertiesHandler.getToolTipTimeDisplayedProperty(), null,
 				Integer.class).intValue();
-		
+
 	}
 
 	@Override

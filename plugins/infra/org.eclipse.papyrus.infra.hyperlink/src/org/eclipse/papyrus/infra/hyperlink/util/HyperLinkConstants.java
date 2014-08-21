@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,12 +16,12 @@ package org.eclipse.papyrus.infra.hyperlink.util;
 public final class HyperLinkConstants {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	private HyperLinkConstants() {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
@@ -55,5 +55,5 @@ public final class HyperLinkConstants {
 
 	public static final String LEGACY_HYPERLINK_TABLE = PAPYRUS_HYPERLINK_PREFIX + "Table";
 
-	public final static String[] validHyperLinkPageSources = new String[]{ HyperLinkConstants.PAPYRUS_HYPERLINK_PAGE, HyperLinkConstants.LEGACY_HYPERLINK_DIAGRAM, HyperLinkConstants.LEGACY_HYPERLINK_TABLE };
+	public final static String[] validHyperLinkPageSources = new String[] { HyperLinkConstants.PAPYRUS_HYPERLINK_PAGE, HyperLinkConstants.LEGACY_HYPERLINK_DIAGRAM, HyperLinkConstants.LEGACY_HYPERLINK_TABLE };
 }

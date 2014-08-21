@@ -12,7 +12,7 @@ import org.eclipse.papyrus.uml.textedit.port.xtext.ui.internal.UmlPortActivator;
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlPortExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class UmlPortExecutableExtensionFactory extends AbstractGuiceAwareExecuta
 	protected Bundle getBundle() {
 		return UmlPortActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlPortActivator.getInstance().getInjector(UmlPortActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PORT_XTEXT_UMLPORT);
 	}
-	
+
 }

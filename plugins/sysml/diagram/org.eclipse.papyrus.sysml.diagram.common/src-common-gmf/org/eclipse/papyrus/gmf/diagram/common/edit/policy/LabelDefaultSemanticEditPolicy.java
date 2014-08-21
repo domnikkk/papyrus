@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,7 +36,7 @@ public class LabelDefaultSemanticEditPolicy extends DefaultSemanticEditPolicy {
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return super.getDestroyElementCommand(req);
 	}
-	
+
 	@Override
 	protected Command getConfigureCommand(ConfigureRequest req) {
 		return UnexecutableCommand.INSTANCE;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.infra.emf.Activator;
 
 /**
- * 
+ *
  * This command allows to remove elements from a resource
- * 
+ *
  */
 public class RemoveFromResourcecommand extends RecordingCommand {
 
@@ -44,68 +44,68 @@ public class RemoveFromResourcecommand extends RecordingCommand {
 	final private Collection<EObject> elementsToRemove;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param toRemove
-	 *        the element to remove
+	 *            the element to remove
 	 */
 	public RemoveFromResourcecommand(final TransactionalEditingDomain domain, final Resource resource, final EObject toRemove) {
 		this(domain, resource, toRemove, null);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param elementsToRemove
-	 *        the list of the elements to remove
+	 *            the list of the elements to remove
 	 */
 	public RemoveFromResourcecommand(final TransactionalEditingDomain domain, final Resource resource, final Collection<EObject> elementsToRemove) {
 		this(domain, resource, null, elementsToRemove);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param toRemove
-	 *        the element to remove
+	 *            the element to remove
 	 * @param elementsToRemove
-	 *        the list of the elements to remove
+	 *            the list of the elements to remove
 	 */
 	protected RemoveFromResourcecommand(final TransactionalEditingDomain domain, final Resource resource, final EObject toRemove, final Collection<EObject> elementsToRemove) {
-		super(domain, "Remove an EObject from a resource"); 
+		super(domain, "Remove an EObject from a resource");
 		this.resource = resource;
 		this.toRemove = toRemove;
 		this.elementsToRemove = elementsToRemove;
 	}
 
 	/**
-	 * 
+	 *
 	 * remove the element(s) of the resource
-	 * 
+	 *
 	 */
 	@Override
 	protected void doExecute() {
 		try {
-			if(this.toRemove != null) {
+			if (this.toRemove != null) {
 				this.resource.getContents().remove(toRemove);
 			}
 
-			if(this.elementsToRemove != null) {
+			if (this.elementsToRemove != null) {
 				this.resource.getContents().removeAll(elementsToRemove);
 			}
 		} catch (Exception e) {
@@ -115,15 +115,15 @@ public class RemoveFromResourcecommand extends RecordingCommand {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.command.AbstractCommand#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean canExecute() {
 		boolean result = super.canExecute();
-		if(toRemove == null && elementsToRemove == null) {
+		if (toRemove == null && elementsToRemove == null) {
 			return false;
 		}
 		return result;

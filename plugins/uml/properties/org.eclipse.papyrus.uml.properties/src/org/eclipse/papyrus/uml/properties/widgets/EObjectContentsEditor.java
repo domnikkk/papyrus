@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,9 +53,9 @@ import org.eclipse.swt.widgets.Group;
 /**
  * A Property Editor to display an instance of DataType
  * TODO: It could actually be used as a generic EObject property editor
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class EObjectContentsEditor extends Composite {
 
@@ -82,7 +82,7 @@ public class EObjectContentsEditor extends Composite {
 
 		self = new Group(this, SWT.NONE);
 
-		((Group)self).setText(reference.getName() + ": " + reference.getEType().getName());
+		((Group) self).setText(reference.getName() + ": " + reference.getEType().getName());
 		self.setLayout(new PropertiesLayout());
 
 		buttonsBar = new Composite(self, SWT.NONE);
@@ -116,7 +116,7 @@ public class EObjectContentsEditor extends Composite {
 	}
 
 	public void setValue(IObservableValue observable) {
-		if(this.modelElementObservable != null) {
+		if (this.modelElementObservable != null) {
 			this.modelElementObservable.removeChangeListener(valueListener);
 		}
 
@@ -128,21 +128,21 @@ public class EObjectContentsEditor extends Composite {
 
 	@Override
 	public void dispose() {
-		if(this.modelElementObservable != null) {
+		if (this.modelElementObservable != null) {
 			this.modelElementObservable.removeChangeListener(valueListener);
 		}
 	}
 
 	protected void updateContents() {
-		EObject dataTypeInstance = (EObject)modelElementObservable.getValue();
+		EObject dataTypeInstance = (EObject) modelElementObservable.getValue();
 
-		for(Control child : contents.getChildren()) {
+		for (Control child : contents.getChildren()) {
 			child.dispose();
 		}
 
-		if(dataTypeInstance == null) {
-			//			Label label = new Label(contents, SWT.NONE);
-			//			label.setText("<<Unset>>");
+		if (dataTypeInstance == null) {
+			// Label label = new Label(contents, SWT.NONE);
+			// label.setText("<<Unset>>");
 		} else {
 			EClass dataTypeDefinition = dataTypeInstance.eClass();
 
@@ -154,12 +154,12 @@ public class EObjectContentsEditor extends Composite {
 				labelProvider = new UMLLabelProvider();
 			}
 
-			for(EStructuralFeature feature : dataTypeDefinition.getEAllStructuralFeatures()) {
+			for (EStructuralFeature feature : dataTypeDefinition.getEAllStructuralFeatures()) {
 				EStructuralFeatureEditor propertyEditor = new EStructuralFeatureEditor(contents, SWT.NONE);
 
 				propertyEditor.setProviders(new UMLContentProvider(dataTypeInstance, feature), labelProvider);
-				if(feature instanceof EReference) {
-					propertyEditor.setValueFactory(getUMLPropertyEditorFactory(dataTypeInstance, (EReference)feature));
+				if (feature instanceof EReference) {
+					propertyEditor.setValueFactory(getUMLPropertyEditorFactory(dataTypeInstance, (EReference) feature));
 				}
 
 				propertyEditor.setFeatureToEdit(feature, dataTypeInstance);
@@ -191,17 +191,17 @@ public class EObjectContentsEditor extends Composite {
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 	}
 
 	protected void addAction() {
 		EClassifier classifier = reference.getEType();
-		if(classifier instanceof EClass) {
-			EClass classToInstantiate = (EClass)classifier;
-			if(classToInstantiate.isAbstract()) {
-				//TODO
+		if (classifier instanceof EClass) {
+			EClass classToInstantiate = (EClass) classifier;
+			if (classToInstantiate.isAbstract()) {
+				// TODO
 			}
 
 			EPackage ePackage = classToInstantiate.getEPackage();

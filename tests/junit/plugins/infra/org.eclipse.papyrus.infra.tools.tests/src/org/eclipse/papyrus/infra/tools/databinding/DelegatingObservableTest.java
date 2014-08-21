@@ -92,9 +92,9 @@ public abstract class DelegatingObservableTest<T extends IObservable> extends Ab
 	@Conditional(key = "isObserving")
 	@Test
 	public void testGetObserved() {
-		IObserving observing = (IObserving)fixture;
+		IObserving observing = (IObserving) fixture;
 		assertThat(observing.getObserved(), notNullValue());
-		assertThat(observing.getObserved(), is(((IObserving)delegate).getObserved()));
+		assertThat(observing.getObserved(), is(((IObserving) delegate).getObserved()));
 	}
 
 	@Test
@@ -133,7 +133,7 @@ public abstract class DelegatingObservableTest<T extends IObservable> extends Ab
 			@Override
 			public void handleStale(StaleEvent staleEvent) {
 				count++;
-				assertThat(staleEvent.getObservable(), sameInstance((IObservable)fixture));
+				assertThat(staleEvent.getObservable(), sameInstance((IObservable) fixture));
 			}
 		}
 
@@ -213,13 +213,13 @@ public abstract class DelegatingObservableTest<T extends IObservable> extends Ab
 		assertThat(redelegator, notNullValue());
 
 		// The wrapping delegator trivially is of the same class as its delegate
-		assertThat((Object)redelegator.getClass(), sameInstance((Object)fixture.getClass()));
+		assertThat((Object) redelegator.getClass(), sameInstance((Object) fixture.getClass()));
 
 		// But, of course, it is a different instance
-		assertThat(redelegator, not(sameInstance((IObservable)fixture)));
+		assertThat(redelegator, not(sameInstance((IObservable) fixture)));
 
 		// And it properly delegates
-		assertThat(((IDelegatingObservable)redelegator).getDelegate(), sameInstance((IObservable)fixture));
+		assertThat(((IDelegatingObservable) redelegator).getDelegate(), sameInstance((IObservable) fixture));
 	}
 
 	//
@@ -247,7 +247,7 @@ public abstract class DelegatingObservableTest<T extends IObservable> extends Ab
 	}
 
 	protected IDelegatingObservable delegator() {
-		return (IDelegatingObservable)fixture;
+		return (IDelegatingObservable) fixture;
 	}
 
 	protected T createObservable() {
@@ -286,11 +286,11 @@ public abstract class DelegatingObservableTest<T extends IObservable> extends Ab
 	protected final Class<? extends IObservable> getFixtureType() {
 		Class<?> delegateType = getDelegateType();
 
-		if(IObservableSet.class.isAssignableFrom(delegateType)) {
+		if (IObservableSet.class.isAssignableFrom(delegateType)) {
 			return IObservableSet.class;
-		} else if(IObservableList.class.isAssignableFrom(delegateType)) {
+		} else if (IObservableList.class.isAssignableFrom(delegateType)) {
 			return IObservableList.class;
-		} else if(IObservableValue.class.isAssignableFrom(delegateType)) {
+		} else if (IObservableValue.class.isAssignableFrom(delegateType)) {
 			return IObservableValue.class;
 		} else {
 			fail("Invalid delegate type: " + delegateType);
@@ -301,11 +301,11 @@ public abstract class DelegatingObservableTest<T extends IObservable> extends Ab
 	private static Class<? extends IObservable> getInterface(Class<? extends IObservable> instanceClass) {
 		Class<? extends IObservable> result = IObservable.class;
 
-		if(IObservableSet.class.isAssignableFrom(instanceClass)) {
+		if (IObservableSet.class.isAssignableFrom(instanceClass)) {
 			result = IObservableSet.class;
-		} else if(IObservableList.class.isAssignableFrom(instanceClass)) {
+		} else if (IObservableList.class.isAssignableFrom(instanceClass)) {
 			result = IObservableList.class;
-		} else if(IObservableValue.class.isAssignableFrom(instanceClass)) {
+		} else if (IObservableValue.class.isAssignableFrom(instanceClass)) {
 			result = IObservableValue.class;
 		}
 

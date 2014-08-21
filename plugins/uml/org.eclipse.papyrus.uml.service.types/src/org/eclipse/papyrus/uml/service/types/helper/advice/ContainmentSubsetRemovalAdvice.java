@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class ContainmentSubsetRemovalAdvice extends AbstractEditHelperAdvice {
 	// This parameter is set by generated semantic edit policies when delegating to "visual element types" to
 	// decorate the semantic element command with advice targeting the visual element type, which is a hinted
 	// element type specializing the semantic element type to suggest the way in which it should be presented
-	// in the diagram.  Because our advice is already included in the semantic command, it isn't needed in
+	// in the diagram. Because our advice is already included in the semantic command, it isn't needed in
 	// this additional decoration and, therefore, it won't cause problems when the visual element type is
 	// a specialization (dubiously) of the null element type
 	// (see https://www.eclipse.org/forums/index.php/t/781825/ for discussion of that problem)
@@ -52,7 +52,7 @@ public class ContainmentSubsetRemovalAdvice extends AbstractEditHelperAdvice {
 	protected ICommand getAfterDestroyElementCommand(DestroyElementRequest request) {
 		ICommand result = super.getAfterDestroyElementCommand(request);
 
-		if(request.getParameter(EDIT_POLICY_COMMAND) != null) {
+		if (request.getParameter(EDIT_POLICY_COMMAND) != null) {
 			return result;
 		}
 
@@ -61,7 +61,7 @@ public class ContainmentSubsetRemovalAdvice extends AbstractEditHelperAdvice {
 		EReference containment = destructee.eContainmentFeature();
 		final Collection<EReference> supersets = !UmlUtils.isSubset(containment) ? null : UmlUtils.getAllChangeableSupersets(containment);
 
-		if(supersets != null) {
+		if (supersets != null) {
 			// Add a command that ensures removal from the supersets on redo, if necessary
 			final EObject container = destructee.eContainer();
 
@@ -70,7 +70,7 @@ public class ContainmentSubsetRemovalAdvice extends AbstractEditHelperAdvice {
 				@Override
 				protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 					// Ensure sanity of the supersets, which redoing the recorded ChangeDescription does not
-					for(EReference superset : supersets) {
+					for (EReference superset : supersets) {
 						remove(container, superset, destructee);
 					}
 
@@ -78,9 +78,9 @@ public class ContainmentSubsetRemovalAdvice extends AbstractEditHelperAdvice {
 				}
 
 				private void remove(EObject owner, EReference reference, EObject object) {
-					if(reference.isMany()) {
-						((Collection<?>)owner.eGet(reference)).remove(object);
-					} else if(owner.eGet(reference) == object) {
+					if (reference.isMany()) {
+						((Collection<?>) owner.eGet(reference)).remove(object);
+					} else if (owner.eGet(reference) == object) {
 						owner.eUnset(reference);
 					}
 				}

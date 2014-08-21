@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ public class PropertyPartFigure extends CompartmentFigure {
 
 	/**
 	 * Create a new Classifier figure with the given tag
-	 * 
+	 *
 	 * @param tagLabel
-	 *        a String that will be displayed at the top of the figure
+	 *            a String that will be displayed at the top of the figure
 	 */
 	public PropertyPartFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
@@ -55,7 +55,7 @@ public class PropertyPartFigure extends CompartmentFigure {
 
 	/**
 	 * Get the attribute's compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public IFigure getCompositeCompartmentFigure() {

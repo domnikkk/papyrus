@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -38,8 +38,8 @@ import org.eclipse.papyrus.emf.facet.efacet.ParameterValue;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl#getParameter <em>Parameter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl#getParameter <em>Parameter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.ParameterValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -53,6 +53,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	 * The cached value of the '{@link #getParameter() <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getParameter()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -65,6 +66,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -76,6 +78,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -87,6 +90,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -99,14 +103,15 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public Parameter getParameter() {
 		if (this.parameter != null && this.parameter.eIsProxy()) {
-			InternalEObject oldParameter = (InternalEObject)this.parameter;
-			this.parameter = (Parameter)eResolveProxy(oldParameter);
+			InternalEObject oldParameter = (InternalEObject) this.parameter;
+			this.parameter = (Parameter) eResolveProxy(oldParameter);
 			if (this.parameter != oldParameter) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.PARAMETER_VALUE__PARAMETER, oldParameter, this.parameter));
@@ -119,6 +124,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -130,6 +136,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -145,6 +152,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -159,6 +167,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -180,6 +189,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -189,11 +199,11 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EFacetPackage.PARAMETER_VALUE__PARAMETER:
-			setParameter((Parameter)newValue);
+			setParameter((Parameter) newValue);
 			return;
 		case EFacetPackage.PARAMETER_VALUE__VALUE:
 			getValue().clear();
-			getValue().addAll((Collection<? extends Object>)newValue);
+			getValue().addAll((Collection<? extends Object>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,6 +212,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -210,7 +221,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EFacetPackage.PARAMETER_VALUE__PARAMETER:
-			setParameter((Parameter)null);
+			setParameter((Parameter) null);
 			return;
 		case EFacetPackage.PARAMETER_VALUE__VALUE:
 			getValue().clear();
@@ -222,6 +233,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -240,6 +252,7 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -257,4 +270,4 @@ public class ParameterValueImpl extends EObjectImpl implements ParameterValue {
 		return result.toString();
 	}
 
-} //ParameterValueImpl
+} // ParameterValueImpl

@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.views.properties.ui.UiPackage
  * @generated
  */
@@ -21,6 +22,7 @@ public interface UiFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	UiFactory eINSTANCE = org.eclipse.papyrus.views.properties.ui.impl.UiFactoryImpl.init();
@@ -29,6 +31,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Element</em>'.
 	 * @generated
 	 */
@@ -38,6 +41,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Standard Widget</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Standard Widget</em>'.
 	 * @generated
 	 */
@@ -47,6 +51,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Property Editor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Property Editor</em>'.
 	 * @generated
 	 */
@@ -56,6 +61,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Composite Widget</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Composite Widget</em>'.
 	 * @generated
 	 */
@@ -65,6 +71,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Unknown Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Unknown Component</em>'.
 	 * @generated
 	 */
@@ -74,6 +81,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Layout</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Layout</em>'.
 	 * @generated
 	 */
@@ -83,6 +91,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Value Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Value Attribute</em>'.
 	 * @generated
 	 */
@@ -92,6 +101,7 @@ public interface UiFactory extends EFactory {
 	 * Returns a new object of class '<em>Reference Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Reference Attribute</em>'.
 	 * @generated
 	 */
@@ -101,9 +111,10 @@ public interface UiFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	UiPackage getUiPackage();
 
-} //UiFactory
+} // UiFactory

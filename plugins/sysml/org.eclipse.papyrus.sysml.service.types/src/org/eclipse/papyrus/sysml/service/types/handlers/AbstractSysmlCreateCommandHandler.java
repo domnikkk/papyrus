@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,15 +16,16 @@ import org.eclipse.papyrus.uml.service.types.filter.ICommandFilter;
 import org.eclipse.papyrus.uml.service.types.handlers.AbstractCreateCommandHandler;
 
 /**
- * 
+ *
  * Abstract handler for every creation command for Sysml elements
  * used in the ModelExplorer contextual ("Create new child") menu
- * 
+ *
  */
 public abstract class AbstractSysmlCreateCommandHandler extends AbstractCreateCommandHandler {
 
 	private static final ICommandFilter filter = SysmlCommandFilter.INSTANCE;
 
+	@Override
 	public ICommandFilter getCommandFilter() {
 		return filter;
 	}

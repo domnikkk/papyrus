@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public interface CreationContext {
 
 	/**
 	 * Obtains the model element in the context of which we are creating new model elements.
-	 * 
+	 *
 	 * @return the contextual model element, or {@code null} if unknown
 	 */
 	Object getCreationContextElement();
@@ -47,17 +47,17 @@ public interface CreationContext {
 	/**
 	 * Attaches this context to an element being newly created, in such a way (as appropriate to the particular data model) that
 	 * clients would be able to retrieve this context from that element.
-	 * 
+	 *
 	 * @param newElement
-	 *        an element being created within the scope of my {@linkplain #getCreationContextElement() creation context}
+	 *            an element being created within the scope of my {@linkplain #getCreationContextElement() creation context}
 	 */
 	void pushCreatedElement(Object newElement);
 
 	/**
 	 * Detaches this context from an newly created element for which we have completed its editing.
-	 * 
+	 *
 	 * @param newElement
-	 *        the newly created element
+	 *            the newly created element
 	 */
 	void popCreatedElement(Object newElement);
 }

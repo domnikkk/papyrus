@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,20 +27,20 @@ import org.eclipse.uml2.uml.UseCase;
 
 /**
  * this class allow creation of association on default named element if this element is a class
- * 
+ *
  */
 public class CustomDefaultNamedElementItemSemanticEditPolicyTN extends DefaultNamedElementItemSemanticEditPolicyTN {
 
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		EObject eobject = ((GraphicalEditPart)getHost()).resolveSemanticElement();
-		if((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
-			if(UMLElementTypes.Association_4011 == req.getElementType()) {
+		EObject eobject = ((GraphicalEditPart) getHost()).resolveSemanticElement();
+		if ((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
+			if (UMLElementTypes.Association_4011 == req.getElementType()) {
 				return getGEFWrapper(new AssociationCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
 			}
 		}
-		if((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
-			if(UMLElementTypes.Generalization_4010 == req.getElementType()) {
+		if ((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
+			if (UMLElementTypes.Generalization_4010 == req.getElementType()) {
 				return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
 			}
 		}
@@ -49,14 +49,14 @@ public class CustomDefaultNamedElementItemSemanticEditPolicyTN extends DefaultNa
 
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		EObject eobject = ((GraphicalEditPart)getHost()).resolveSemanticElement();
-		if((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
-			if(UMLElementTypes.Association_4011 == req.getElementType()) {
+		EObject eobject = ((GraphicalEditPart) getHost()).resolveSemanticElement();
+		if ((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
+			if (UMLElementTypes.Association_4011 == req.getElementType()) {
 				return getGEFWrapper(new AssociationCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
 			}
 		}
-		if((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
-			if(UMLElementTypes.Generalization_4010 == req.getElementType()) {
+		if ((eobject instanceof Class) || (eobject instanceof Actor) || (eobject instanceof UseCase)) {
+			if (UMLElementTypes.Generalization_4010 == req.getElementType()) {
 				return getGEFWrapper(new GeneralizationCreateCommand(req, req.getSource(), req.getTarget()));
 			}
 		}

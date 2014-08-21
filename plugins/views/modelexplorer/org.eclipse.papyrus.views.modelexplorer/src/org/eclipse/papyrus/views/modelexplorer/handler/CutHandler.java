@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,14 +22,14 @@ import org.eclipse.papyrus.infra.core.clipboard.PapyrusClipboard;
 
 /**
  * Handler for the Cut Action in Model Explorer : it's a copy followed by a delete
- * 
+ *
  */
 public class CutHandler extends AbstractCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -51,7 +51,7 @@ public class CutHandler extends AbstractCommandHandler {
 		return CopyHandler.isCopyEnabled(selectedElements) && DeleteCommandHandler.isDeleteEnabled(selectedElements);
 	}
 
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 

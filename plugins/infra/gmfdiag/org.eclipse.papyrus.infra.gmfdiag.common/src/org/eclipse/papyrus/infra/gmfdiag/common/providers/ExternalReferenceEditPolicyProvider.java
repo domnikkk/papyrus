@@ -33,14 +33,14 @@ public class ExternalReferenceEditPolicyProvider extends AbstractProvider implem
 
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateEditPoliciesOperation) {
-			CreateEditPoliciesOperation createOperation = (CreateEditPoliciesOperation)operation;
+		if (operation instanceof CreateEditPoliciesOperation) {
+			CreateEditPoliciesOperation createOperation = (CreateEditPoliciesOperation) operation;
 			try {
-				if(ServiceUtilsForEditPart.getInstance().getServiceRegistry(createOperation.getEditPart()) != null) {
+				if (ServiceUtilsForEditPart.getInstance().getServiceRegistry(createOperation.getEditPart()) != null) {
 					return createOperation.getEditPart().getModel() instanceof Node;
 				}
 			} catch (ServiceException ex) {
-				//Do nothing: the services registry is not available.
+				// Do nothing: the services registry is not available.
 			}
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,36 +39,40 @@ public class AssociationSelectionDialog extends AbstractAssociationSelectionDial
 
 	/**
 	 * Instantiates a new association selection dialog.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent shell
+	 *            the parent shell
 	 * @param style
-	 *        the style
+	 *            the style
 	 * @param commonAssociations
-	 *        list of assocation in which we would like to llok for
+	 *            list of assocation in which we would like to llok for
 	 */
 	public AssociationSelectionDialog(Shell parent, int style, HashSet<Association> commonAssociations) {
 		super(parent, style);
 		this.commonAssociations = commonAssociations;
-		this.selectedAssociation = (Association)commonAssociations.toArray()[0];
+		this.selectedAssociation = (Association) commonAssociations.toArray()[0];
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.clazz.custom.ui.AbstractAssociationSelectionDialog#createContents()
-	 * 
+	 *
 	 */
+	@Override
 	protected void createContents() {
 		// TODO Auto-generated method stub
 		super.createContents();
 		final ILabelProvider labelProvider = new AdapterFactoryLabelProvider(org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 		final IStructuredContentProvider associationContentProvider = new IStructuredContentProvider() {
 
+			@Override
 			public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 			}
 
+			@Override
 			public void dispose() {
 			}
 
+			@Override
 			public Object[] getElements(Object inputElement) {
 				return commonAssociations.toArray();
 			}
@@ -79,17 +83,20 @@ public class AssociationSelectionDialog extends AbstractAssociationSelectionDial
 		tableViewer.setInput(commonAssociations);
 		btnOk.addMouseListener(new MouseListener() {
 
+			@Override
 			public void mouseUp(MouseEvent e) {
 				ISelection selection = tableViewer.getSelection();
-				if(selection instanceof IStructuredSelection) {
-					selectedAssociation = (Association)((IStructuredSelection)selection).getFirstElement();
+				if (selection instanceof IStructuredSelection) {
+					selectedAssociation = (Association) ((IStructuredSelection) selection).getFirstElement();
 					shlAssociationselection.close();
 				}
 			}
 
+			@Override
 			public void mouseDown(MouseEvent e) {
 			}
 
+			@Override
 			public void mouseDoubleClick(MouseEvent e) {
 			}
 		});
@@ -98,7 +105,7 @@ public class AssociationSelectionDialog extends AbstractAssociationSelectionDial
 
 	/**
 	 * Gets the selected association.
-	 * 
+	 *
 	 * @return the selected association
 	 */
 	public Association getSelectedAssociation() {

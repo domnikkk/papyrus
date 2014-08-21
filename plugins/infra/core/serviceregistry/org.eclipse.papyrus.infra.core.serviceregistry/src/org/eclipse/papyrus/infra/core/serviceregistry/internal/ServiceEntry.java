@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
@@ -13,9 +13,9 @@ import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 /**
  * Entry of a Service implementing {@link IService}. This class provide methods
  * to manage the Service life cycle.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ServiceEntry extends ServiceTypeEntry {
 
@@ -24,7 +24,7 @@ public class ServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 * @param registry
 	 */
@@ -36,11 +36,11 @@ public class ServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Create an entry for an already created service. Constructor.
-	 * 
+	 *
 	 * @param descriptor
-	 *        Descriptor of the service. Key and priority should be set.
+	 *            Descriptor of the service. Key and priority should be set.
 	 * @param serviceInstance
-	 *        The service Instance
+	 *            The service Instance
 	 */
 	public ServiceEntry(ServiceDescriptor descriptor, IService serviceInstance) {
 		super(descriptor);
@@ -51,15 +51,15 @@ public class ServiceEntry extends ServiceTypeEntry {
 	/**
 	 * Get the service instance, even if it is not started. The service should
 	 * be created.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If service can't be started.
+	 *             If service can't be started.
 	 */
 	@Override
 	public Object getServiceInstance() throws ServiceException {
 
-		if(serviceInstance == null) {
+		if (serviceInstance == null) {
 			throw new BadStateException("Service is not created.", state, serviceDescriptor);
 		}
 
@@ -70,7 +70,7 @@ public class ServiceEntry extends ServiceTypeEntry {
 	/**
 	 * @see java.lang.Object#toString()
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public String toString() {
@@ -79,14 +79,14 @@ public class ServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Create the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
 	public void createService() throws ServiceException {
 		checkState(ServiceState.registered);
 		// Exit if already created.
-		if(serviceInstance != null) {
+		if (serviceInstance != null) {
 			setState(ServiceState.created);
 			return;
 		}
@@ -94,7 +94,7 @@ public class ServiceEntry extends ServiceTypeEntry {
 		// Create it
 		try {
 			// Create the instance
-			serviceInstance = (IService)instanciateService();
+			serviceInstance = (IService) instanciateService();
 		} catch (Exception e) {
 			setState(ServiceState.error);
 			throw new ServiceException(e);
@@ -104,10 +104,10 @@ public class ServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        The servicesRegistry containing this service.
-	 * 
+	 *            The servicesRegistry containing this service.
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class ServiceEntry extends ServiceTypeEntry {
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -155,7 +155,7 @@ public class ServiceEntry extends ServiceTypeEntry {
 	 */
 	@Override
 	public void disposeService() throws ServiceException {
-		if(serviceInstance == null) {
+		if (serviceInstance == null) {
 			return;
 		}
 

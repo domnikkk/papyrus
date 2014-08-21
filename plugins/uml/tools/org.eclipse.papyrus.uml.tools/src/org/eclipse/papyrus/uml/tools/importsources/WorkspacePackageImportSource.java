@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class WorkspacePackageImportSource extends AbstractPackageImportSource {
 	@Override
 	protected IStaticContentProvider createModelHierarchyContentProvider(Map<String, String> extensionFilters) {
 		WorkspaceContentProvider contentProvider = new WorkspaceContentProvider();
-		if(extensionFilters != null) {
+		if (extensionFilters != null) {
 			contentProvider.setExtensionFilters(extensionFilters);
 		}
 		return contentProvider;
@@ -52,7 +52,7 @@ public class WorkspacePackageImportSource extends AbstractPackageImportSource {
 			protected Image customGetImage(Object element) {
 				Image result = null;
 
-				if(element == WorkspacePackageImportSource.this) {
+				if (element == WorkspacePackageImportSource.this) {
 					result = delegatedGetImage(ResourcesPlugin.getWorkspace().getRoot());
 				}
 
@@ -63,7 +63,7 @@ public class WorkspacePackageImportSource extends AbstractPackageImportSource {
 			protected String customGetText(Object element) {
 				String result = null;
 
-				if(element == WorkspacePackageImportSource.this) {
+				if (element == WorkspacePackageImportSource.this) {
 					result = delegatedGetText(ResourcesPlugin.getWorkspace().getRoot());
 				}
 
@@ -76,7 +76,7 @@ public class WorkspacePackageImportSource extends AbstractPackageImportSource {
 	@Override
 	protected void validateSelection(Object model) throws CoreException {
 
-		if(!(model instanceof IFile)) {
+		if (!(model instanceof IFile)) {
 			throw new CoreException(new Status(IStatus.WARNING, Activator.PLUGIN_ID, NLS.bind("Selection is not a file: \"{0}\".", getText(model))));
 		}
 	}

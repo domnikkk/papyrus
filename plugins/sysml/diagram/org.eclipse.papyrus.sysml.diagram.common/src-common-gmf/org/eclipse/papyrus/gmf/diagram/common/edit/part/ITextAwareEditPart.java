@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -23,15 +23,15 @@ public interface ITextAwareEditPart extends org.eclipse.gmf.runtime.diagram.ui.e
 
 	/**
 	 * Get the parser elements.
-	 * 
+	 *
 	 * @return the element being parsed.
 	 */
 	public EObject getParserElement();
-	
-    /**
-     * Gets the default parser options (meaning parser options stored in preferences).
-     * 
-     * @return ParserOptions the parser options
-     */
+
+	/**
+	 * Gets the default parser options (meaning parser options stored in preferences).
+	 *
+	 * @return ParserOptions the parser options
+	 */
 	public ParserOptions getDefaultParserOptions();
 }

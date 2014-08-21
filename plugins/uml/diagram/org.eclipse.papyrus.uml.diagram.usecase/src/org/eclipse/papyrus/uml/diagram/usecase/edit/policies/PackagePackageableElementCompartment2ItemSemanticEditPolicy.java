@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,27 +38,28 @@ public class PackagePackageableElementCompartment2ItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if(UMLElementTypes.Constraint_3010 == requestElementType) {
+		if (UMLElementTypes.Constraint_3010 == requestElementType) {
 			return getGEFWrapper(new ConstraintInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Actor_3011 == requestElementType) {
+		if (UMLElementTypes.Actor_3011 == requestElementType) {
 			return getGEFWrapper(new ActorInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.UseCase_3012 == requestElementType) {
+		if (UMLElementTypes.UseCase_3012 == requestElementType) {
 			return getGEFWrapper(new UseCaseInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Component_3013 == requestElementType) {
+		if (UMLElementTypes.Component_3013 == requestElementType) {
 			return getGEFWrapper(new ComponentInPackageCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Package_3014 == requestElementType) {
+		if (UMLElementTypes.Package_3014 == requestElementType) {
 			return getGEFWrapper(new PackageCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Comment_3015 == requestElementType) {
+		if (UMLElementTypes.Comment_3015 == requestElementType) {
 			return getGEFWrapper(new CommentCreateCommandCN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

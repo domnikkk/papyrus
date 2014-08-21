@@ -11,6 +11,7 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test suite for the '<em><b>Servicedescriptorswithid</b></em>' model.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServicedescriptorswithidAllTests extends TestSuite {
@@ -18,6 +19,7 @@ public class ServicedescriptorswithidAllTests extends TestSuite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,6 +29,7 @@ public class ServicedescriptorswithidAllTests extends TestSuite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static Test suite() {
@@ -38,10 +41,11 @@ public class ServicedescriptorswithidAllTests extends TestSuite {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServicedescriptorswithidAllTests(String name) {
 		super(name);
 	}
 
-} //ServicedescriptorswithidAllTests
+} // ServicedescriptorswithidAllTests

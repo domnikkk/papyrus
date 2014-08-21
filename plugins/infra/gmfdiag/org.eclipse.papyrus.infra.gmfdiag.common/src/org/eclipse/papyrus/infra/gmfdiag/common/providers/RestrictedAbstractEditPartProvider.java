@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@ package org.eclipse.papyrus.infra.gmfdiag.common.providers;
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,10 +44,10 @@ public abstract class RestrictedAbstractEditPartProvider extends AbstractEditPar
 	 */
 	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			String currentDiagramType = ((IEditPartOperation)operation).getView().getDiagram().getType();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			String currentDiagramType = ((IEditPartOperation) operation).getView().getDiagram().getType();
 
-			if((diagramType == null) || (!diagramType.equals(currentDiagramType))) {
+			if ((diagramType == null) || (!diagramType.equals(currentDiagramType))) {
 				return false;
 			}
 		}

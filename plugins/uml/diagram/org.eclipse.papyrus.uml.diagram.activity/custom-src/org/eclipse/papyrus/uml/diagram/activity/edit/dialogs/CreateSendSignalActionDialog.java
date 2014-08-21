@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,31 +41,33 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * Create a new dialog to initialize a SendSignalAction.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
-	public CreateSendSignalActionDialog(Shell shell, Activity owner,InvocationAction newAction) {
-		super(shell, owner,newAction);
+	public CreateSendSignalActionDialog(Shell shell, Activity owner, InvocationAction newAction) {
+		super(shell, owner, newAction);
 	}
 
 	/**
 	 * Get the id of the preference storing whether selection is the default
 	 * choice.
-	 * 
+	 *
 	 * @return preference id
 	 */
+	@Override
 	protected String getSelectionIsDefaultPreference() {
 		return IActivityPreferenceConstants.PREF_NEW_SEND_SIGNAL_ACTION_SELECT_AS_DEFAULT;
 	}
 
 	/**
 	 * Get the id of the preference storing the last selected owner.
-	 * 
+	 *
 	 * @return preference id
 	 */
+	@Override
 	protected String getCreationDefaultOwnerPreference() {
 		return IActivityPreferenceConstants.PREF_NEW_SEND_SIGNAL_ACTION_CREATION_OWNER;
 	}
@@ -96,7 +98,7 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getTitle()
 	 */
 	@Override
@@ -106,7 +108,7 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getInvocationFeature()
 	 */
 	@Override
@@ -116,7 +118,7 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getPossibleInvokedParents()
 	 */
 	@Override
@@ -126,7 +128,7 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateInvocationActionDialog#isPossibleInvokedParent(org.eclipse.emf.ecore.EObject)
 	 */
 	@Override
@@ -136,17 +138,17 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getPossibleInvokedTypes()
 	 */
 	@Override
 	protected EClass[] getPossibleInvokedTypes() {
-		return new EClass[]{ UMLPackage.eINSTANCE.getSignal() };
+		return new EClass[] { UMLPackage.eINSTANCE.getSignal() };
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getCreationLabel()
 	 */
 	@Override
@@ -156,7 +158,7 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getSelectionLabel()
 	 */
 	@Override
@@ -166,7 +168,7 @@ public class CreateSendSignalActionDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getParentImage()
 	 */
 	@Override

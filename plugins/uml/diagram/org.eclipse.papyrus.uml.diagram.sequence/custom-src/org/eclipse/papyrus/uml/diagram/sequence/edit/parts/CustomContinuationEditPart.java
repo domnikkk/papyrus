@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomContinuationEditPart(View view) {
@@ -54,19 +54,19 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
-		if(UMLPackage.eINSTANCE.getContinuation_Setting().equals(notification.getFeature())) {
+		if (UMLPackage.eINSTANCE.getContinuation_Setting().equals(notification.getFeature())) {
 			IBorderItemLocator borderItemLocator = getBorderItemLocator();
-			int newValue = (Boolean)notification.getNewValue() ? PositionConstants.SOUTH : PositionConstants.NORTH;
-			if(borderItemLocator instanceof ContinuationLocator) {
-				((ContinuationLocator)borderItemLocator).setPreferredSideOfParent(newValue);
+			int newValue = (Boolean) notification.getNewValue() ? PositionConstants.SOUTH : PositionConstants.NORTH;
+			if (borderItemLocator instanceof ContinuationLocator) {
+				((ContinuationLocator) borderItemLocator).setPreferredSideOfParent(newValue);
 				// Refresh the position of the figure
 				borderItemLocator.relocate(this.getFigure());
 			}
 		}
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}
@@ -79,13 +79,14 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 		refreshTransparency();
 	}
 
+	@Override
 	protected void setTransparency(int transp) {
 		getPrimaryShape().setTransparency(transp);
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ContinuationEditPart#createNodeShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -95,16 +96,17 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.ContinuationEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public CustomContinuationFigure getPrimaryShape() {
-		return (CustomContinuationFigure)primaryShape;
+		return (CustomContinuationFigure) primaryShape;
 	}
 
 	public class CustomContinuationFigure extends ContinuationFigure {
 
+		@Override
 		protected void fillShape(Graphics graphics) {
 			graphics.pushState();
 			applyTransparency(graphics);
@@ -120,7 +122,7 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 
 		/**
 		 * Returns transparency value (belongs to [0, 100] interval)
-		 * 
+		 *
 		 * @return transparency
 		 * @since 1.2
 		 */
@@ -130,13 +132,13 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 
 		/**
 		 * Sets the transparency if the given parameter is in [0, 100] range
-		 * 
+		 *
 		 * @param transparency
-		 *        The transparency to set
+		 *            The transparency to set
 		 * @since 1.2
 		 */
 		public void setTransparency(int transparency) {
-			if(transparency != this.transparency && transparency >= 0 && transparency <= 100) {
+			if (transparency != this.transparency && transparency >= 0 && transparency <= 100) {
 				this.transparency = transparency;
 				repaint();
 			}
@@ -146,9 +148,9 @@ public class CustomContinuationEditPart extends ContinuationEditPart implements 
 		 * Converts transparency value from percent range [0, 100] to alpha range
 		 * [0, 255] and applies converted value. 0% corresponds to alpha 255 and
 		 * 100% corresponds to alpha 0.
-		 * 
+		 *
 		 * @param g
-		 *        The Graphics used to paint
+		 *            The Graphics used to paint
 		 * @since 1.2
 		 */
 		protected void applyTransparency(Graphics g) {

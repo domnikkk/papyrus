@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,27 +38,28 @@ public class ClassNestedClassifierCompartmentItemSemanticEditPolicyCN extends UM
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if(UMLElementTypes.Class_3014 == requestElementType) {
+		if (UMLElementTypes.Class_3014 == requestElementType) {
 			return getGEFWrapper(new NestedClassForClassCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Interface_3036 == requestElementType) {
+		if (UMLElementTypes.Interface_3036 == requestElementType) {
 			return getGEFWrapper(new NestedInterfaceForClassCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Enumeration_3052 == requestElementType) {
+		if (UMLElementTypes.Enumeration_3052 == requestElementType) {
 			return getGEFWrapper(new NestedEnumerationForClassCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.PrimitiveType_3047 == requestElementType) {
+		if (UMLElementTypes.PrimitiveType_3047 == requestElementType) {
 			return getGEFWrapper(new NestedPrimitiveTypeForClassCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.DataType_3044 == requestElementType) {
+		if (UMLElementTypes.DataType_3044 == requestElementType) {
 			return getGEFWrapper(new NestedDataTypeForClassCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Signal_3050 == requestElementType) {
+		if (UMLElementTypes.Signal_3050 == requestElementType) {
 			return getGEFWrapper(new NestedSignalForClassCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

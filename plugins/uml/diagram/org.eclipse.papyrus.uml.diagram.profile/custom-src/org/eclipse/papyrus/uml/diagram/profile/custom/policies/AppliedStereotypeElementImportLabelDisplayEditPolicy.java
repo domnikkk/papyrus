@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,8 +18,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLink
 /**
  * Edit Policy for Applied Stereotype Label for {@link ElementImport}.
  * <p>
- * It simply adds a tag "import" to the label. Thanks to GMF, it is not possible to call a cTor with a parameter. So it calls super cTor with the
- * "import" parameter
+ * It simply adds a tag "import" to the label. Thanks to GMF, it is not possible to call a cTor with a parameter. So it calls super cTor with the "import" parameter
  * </p>
  */
 public class AppliedStereotypeElementImportLabelDisplayEditPolicy extends AppliedStereotypeLinkLabelDisplayEditPolicy {

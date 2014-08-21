@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,18 +21,21 @@ import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * 
+ *
  */
-public class RootOnlyCopyStrategy implements ICopyStrategy  {
+public class RootOnlyCopyStrategy implements ICopyStrategy {
 
+	@Override
 	public String getLabel() {
 		return "RootOnlyCopyStrategy"; //$NON-NLS-1$
 	}
 
+	@Override
 	public String getID() {
 		return Activator.ID + ".RootOnlyCopyStrategy";//".ClassifierToStructureCompDrop"; //$NON-NLS-1$
 	}
 
+	@Override
 	public String getDescription() {
 		return "Copopy only root of the selected element"; //$NON-NLS-1$
 	}
@@ -43,18 +46,20 @@ public class RootOnlyCopyStrategy implements ICopyStrategy  {
 
 	public String getCategoryLabel() {
 		return "Select elements to copy"; //$NON-NLS-1$
-	}	
-	
+	}
+
+	@Override
 	public Image getImage() {
 		return null;
 	}
 
+	@Override
 	public int getPriority() {
 		return 0;
 	}
 
 	public void setOptions(Map<String, Object> options) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.Tessier@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.policies;
 
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.uml.diagram.common.editpolicies.OrphanViewPolicy;
  * this policy is used to suppress orphan node view in GMF view the policy to remove orphan
  * connection is more complex. It is dependent of the diagram. see remove OrphanConnectionView
  * policy in clazzdiagram
- * 
+ *
  */
 public class RemoveOrphanViewPolicy extends OrphanViewPolicy {
 

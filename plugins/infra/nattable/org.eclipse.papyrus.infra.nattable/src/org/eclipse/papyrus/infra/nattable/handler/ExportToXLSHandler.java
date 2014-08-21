@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,10 @@ import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 
 public class ExportToXLSHandler extends AbstractTableHandler {
 
+	@Override
 	public Object execute(ExecutionEvent arg0) throws ExecutionException {
 		final INattableModelManager manager = getCurrentNattableModelManager();
-		if(manager != null) {
+		if (manager != null) {
 			manager.exportToXLS();
 		}
 		return null;

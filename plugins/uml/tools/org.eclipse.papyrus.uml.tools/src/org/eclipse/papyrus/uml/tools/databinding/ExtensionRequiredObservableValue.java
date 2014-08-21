@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.uml2.uml.Extension;
 /**
  * An ObservableValue to edit the derived "isRequired" property for a Stereotype Extension
  * The isRequired property is reverse derived to retrieve the lower bound of the extensionEnd
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ExtensionRequiredObservableValue extends AbstractObservableValue implements IChangeListener, IObserving {
 
@@ -41,7 +41,7 @@ public class ExtensionRequiredObservableValue extends AbstractObservableValue im
 
 	public ExtensionRequiredObservableValue(Extension extension, EditingDomain domain) {
 		this.extension = extension;
-		if(!this.extension.getOwnedEnds().isEmpty()) {
+		if (!this.extension.getOwnedEnds().isEmpty()) {
 			observable = new MultiplicityObservableValue(this.extension.getOwnedEnds().get(0), domain);
 			observable.addChangeListener(this);
 		}
@@ -59,20 +59,20 @@ public class ExtensionRequiredObservableValue extends AbstractObservableValue im
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(!(value instanceof Boolean)) {
+		if (!(value instanceof Boolean)) {
 			return;
 		}
 
-		Boolean required = (Boolean)value;
+		Boolean required = (Boolean) value;
 
-		if(extension.getOwnedEnds().isEmpty()) {
+		if (extension.getOwnedEnds().isEmpty()) {
 			Activator.log.warn("Unable to change the extension \"isRequired\" property");
 		}
 
 		observable.setValue(required ? MultiplicityParser.ONE : MultiplicityParser.OPTIONAL);
 		currentValue = required;
 	}
-	
+
 	public Object getObserved() {
 		return extension;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 
 /**
  * Command for creating time observation element
- * 
+ *
  */
 public class CustomTimeObservationCreateCommand extends EditElementCommand {
 
@@ -56,11 +56,11 @@ public class CustomTimeObservationCreateCommand extends EditElementCommand {
 
 	@Override
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest)getRequest()).getContainer();
-		if(container instanceof View) {
-			container = ((View)container).getElement();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
+		if (container instanceof View) {
+			container = ((View) container).getElement();
 		}
-		if(container != null) {
+		if (container != null) {
 			return container;
 		}
 		return eObject;
@@ -76,27 +76,27 @@ public class CustomTimeObservationCreateCommand extends EditElementCommand {
 		TimeObservation newElement = UMLFactory.eINSTANCE.createTimeObservation();
 		// get the parent package as owner
 		EObject container = getElementToEdit();
-		while(container != null && !(container instanceof Package)) {
+		while (container != null && !(container instanceof Package)) {
 			container = container.eContainer();
 		}
-		if(container == null) {
+		if (container == null) {
 			return CommandResult.newCancelledCommandResult();
 		}
-		Package owner = (Package)container;
+		Package owner = (Package) container;
 		owner.getPackagedElements().add(newElement);
 		ElementInitializers.getInstance().init_TimeObservation_3020(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
 	protected void doConfigure(TimeObservation newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}

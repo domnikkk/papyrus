@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,14 +27,14 @@ import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedSt
 
 /**
  * Add implementing interface IPapyrusEditPart to displaying Stereotypes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomDestructionOccurrenceSpecificationEditPart extends DestructionOccurrenceSpecificationEditPart implements IPapyrusEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomDestructionOccurrenceSpecificationEditPart(View view) {
@@ -48,20 +48,20 @@ public class CustomDestructionOccurrenceSpecificationEditPart extends Destructio
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy());
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 	}
 
 	@Override
 	protected void refreshBounds() {
-		if(getBorderItemLocator() != null) {
-			int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-			int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		if (getBorderItemLocator() != null) {
+			int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+			int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 			Point loc = new Point(x, y);
-			int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-			int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+			int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+			int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 			Dimension size = new Dimension(width, height);
-			if(width != -1 && height != -1) {
+			if (width != -1 && height != -1) {
 				getFigure().setBounds(new Rectangle(loc, size));
 			}
 			getBorderItemLocator().setConstraint(new Rectangle(loc, size));
@@ -74,8 +74,8 @@ public class CustomDestructionOccurrenceSpecificationEditPart extends Destructio
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}

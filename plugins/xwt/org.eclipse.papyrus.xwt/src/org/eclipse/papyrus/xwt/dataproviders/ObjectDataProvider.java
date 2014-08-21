@@ -49,7 +49,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 			IMetaclass metaclass = XWT.getMetaclass(type);
 			IProperty property = metaclass.findProperty(propertyName);
 
-			if(property == null) {
+			if (property == null) {
 				throw new XWTException(" Property \"" + propertyName + "\" is not found in the class " + metaclass.getType().getName());
 			}
 			return property.getType();
@@ -91,7 +91,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 	 * org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#getObjectInstance()
 	 */
 	public Object getObjectInstance() {
-		if(objectInstance == null && objectType != null) {
+		if (objectInstance == null && objectType != null) {
 			try {
 				objectInstance = objectType.newInstance();
 			} catch (Exception e) {
@@ -107,7 +107,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 	 * @see org.eclipse.papyrus.xwt.dataproviders.IObjectDataProvider#getObjectType()
 	 */
 	public Class<?> getObjectType() {
-		if(objectType == null && objectInstance != null) {
+		if (objectType == null && objectInstance != null) {
 			objectType = objectInstance.getClass();
 		}
 		return objectType;
@@ -159,20 +159,20 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	protected Object getTarget() {
 		Object target = getObjectInstance();
-		if(target == null) {
+		if (target == null) {
 			return null;
 		}
 		Class<?> targetType = getObjectType();
 		Method method = null;
-		if(methodName != null) {
+		if (methodName != null) {
 			List<Class<?>> paras = new ArrayList<Class<?>>();
-			if(methodParameters != null) {
-				for(Object p : methodParameters) {
+			if (methodParameters != null) {
+				for (Object p : methodParameters) {
 					paras.add(p.getClass());
 				}
 			}
 			try {
-				if(paras.isEmpty()) {
+				if (paras.isEmpty()) {
 					method = targetType.getDeclaredMethod(methodName);
 					return method.invoke(target);
 				} else {
@@ -196,7 +196,7 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 	 * org.eclipse.papyrus.xwt.dataproviders.IDataProvider#getData(java.lang.String)
 	 */
 	public Object getData(String path) {
-		if(path == null) {
+		if (path == null) {
 			return getTarget();
 		}
 		return getData(getTarget(), path);
@@ -209,14 +209,14 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 	 * org.eclipse.papyrus.xwt.dataproviders.IDataProvider#getData(java.lang.String)
 	 */
 	public Object getData(Object object, String path) {
-		if(object instanceof IObservableValue) {
-			object = ((IObservableValue)object).getValue();
+		if (object instanceof IObservableValue) {
+			object = ((IObservableValue) object).getValue();
 		}
-		if(path == null || path.trim().length() == 0 || path.equals(".")) {
+		if (path == null || path.trim().length() == 0 || path.equals(".")) {
 			return JFaceXWTDataBinding.getValue(object, null);
 		}
 		int index = path.indexOf(".");
-		while(index != -1 && object != null) {
+		while (index != -1 && object != null) {
 			object = JFaceXWTDataBinding.getValue(object, path.substring(0, index));
 			path = path.substring(index + 1);
 			index = path.indexOf(".");
@@ -225,11 +225,11 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 	}
 
 	public void setData(Object object, String path, Object value) {
-		if(object instanceof IObservableValue) {
-			object = ((IObservableValue)object).getValue();
+		if (object instanceof IObservableValue) {
+			object = ((IObservableValue) object).getValue();
 		}
 		int index = path.indexOf(".");
-		while(index != -1 && object != null) {
+		while (index != -1 && object != null) {
 			object = JFaceXWTDataBinding.getValue(object, path.substring(0, index));
 			path = path.substring(index + 1);
 			index = path.indexOf(".");
@@ -250,11 +250,11 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 	 */
 	public Class<?> getDataType(String path) {
 		Object target = getTarget();
-		if(target == null) {
+		if (target == null) {
 			return null;
 		}
 		Class<?> type = JFaceXWTDataBinding.toType(target);
-		if(path == null) {
+		if (path == null) {
 			return type;
 		}
 		return JFaceXWTDataBinding.getValueType(type, path);
@@ -262,21 +262,22 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	/**
 	 * check if the property is read only
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
+	@Override
 	public boolean isPropertyReadOnly(String path) {
 		Object target = getTarget();
-		if(target == null || path == null) {
+		if (target == null || path == null) {
 			return true;
 		}
-		if(target instanceof IBinding) {
-			target = ((IBinding)target).getValue(null);
+		if (target instanceof IBinding) {
+			target = ((IBinding) target).getValue(null);
 		}
 		Class<?> type = JFaceXWTDataBinding.toType(target);
 		int index = path.indexOf(".");
-		while(index != -1 && target != null) {
+		while (index != -1 && target != null) {
 			type = JFaceXWTDataBinding.getValueType(type, path.substring(0, index));
 			path = path.substring(index + 1);
 			index = path.indexOf(".");
@@ -286,54 +287,59 @@ public class ObjectDataProvider extends AbstractDataProvider implements IObjectD
 
 	@Override
 	protected IObservableValue observeValue(Object bean, String propertyName) {
-		if(JFaceXWTDataBinding.isBeanSupport(bean)) {
+		if (JFaceXWTDataBinding.isBeanSupport(bean)) {
 			return BeansObservables.observeValue(XWT.getRealm(), bean, propertyName);
 		}
 		return PojoObservables.observeValue(XWT.getRealm(), bean, propertyName);
 	}
 
+	@Override
 	protected IObservableList observeList(Object bean, String propertyName) {
-		if(JFaceXWTDataBinding.isBeanSupport(bean)) {
+		if (JFaceXWTDataBinding.isBeanSupport(bean)) {
 			return BeansObservables.observeList(XWT.getRealm(), bean, propertyName);
 		}
 		return PojoObservables.observeList(XWT.getRealm(), bean, propertyName);
 	}
 
+	@Override
 	protected IObservableSet observeSet(Object bean, String propertyName) {
-		if(JFaceXWTDataBinding.isBeanSupport(bean)) {
+		if (JFaceXWTDataBinding.isBeanSupport(bean)) {
 			return BeansObservables.observeSet(XWT.getRealm(), bean, propertyName);
 		}
 		return PojoObservables.observeSet(XWT.getRealm(), bean, propertyName);
 	}
 
+	@Override
 	protected IObservableList observeDetailList(IObservableValue bean, Object elementType, String propertyName, Object propertyType) {
-		if(JFaceXWTDataBinding.isBeanSupport(bean)) {
-			return BeansObservables.observeDetailList(bean, propertyName, (Class<?>)propertyType);
+		if (JFaceXWTDataBinding.isBeanSupport(bean)) {
+			return BeansObservables.observeDetailList(bean, propertyName, (Class<?>) propertyType);
 		}
-		return PojoObservables.observeDetailList(bean, propertyName, (Class<?>)propertyType);
+		return PojoObservables.observeDetailList(bean, propertyName, (Class<?>) propertyType);
 	}
 
+	@Override
 	protected IObservableSet observeDetailSet(IObservableValue bean, Object elementType, String propertyName, Object propertyType) {
-		if(JFaceXWTDataBinding.isBeanSupport(bean)) {
-			return BeansObservables.observeDetailSet(bean, propertyName, (Class<?>)propertyType);
+		if (JFaceXWTDataBinding.isBeanSupport(bean)) {
+			return BeansObservables.observeDetailSet(bean, propertyName, (Class<?>) propertyType);
 		}
-		return PojoObservables.observeDetailSet(bean, propertyName, (Class<?>)propertyType);
+		return PojoObservables.observeDetailSet(bean, propertyName, (Class<?>) propertyType);
 	}
 
 	@Override
 	protected IObservableValue observeDetailValue(IObservableValue master, Object elementType, String propertyName, Object propertyType) {
-		Class<?> beanClass = (Class<?>)elementType;
-		if(beanClass == null && master.getValueType() instanceof Class<?>) {
-			beanClass = (Class<?>)master.getValueType();
+		Class<?> beanClass = (Class<?>) elementType;
+		if (beanClass == null && master.getValueType() instanceof Class<?>) {
+			beanClass = (Class<?>) master.getValueType();
 		}
-		if(JFaceXWTDataBinding.isBeanSupport(beanClass)) {
-			return BeanProperties.value(beanClass, propertyName, (Class<?>)propertyType).observeDetail(master);
+		if (JFaceXWTDataBinding.isBeanSupport(beanClass)) {
+			return BeanProperties.value(beanClass, propertyName, (Class<?>) propertyType).observeDetail(master);
 		}
-		return PojoProperties.value(beanClass, propertyName, (Class<?>)propertyType).observeDetail(master);
+		return PojoProperties.value(beanClass, propertyName, (Class<?>) propertyType).observeDetail(master);
 	}
 
+	@Override
 	public IValueProperty createValueProperty(Object type, String propertyName) {
-		if(JFaceXWTDataBinding.isBeanSupport(type)) {
+		if (JFaceXWTDataBinding.isBeanSupport(type)) {
 			return BeanProperties.value(JFaceXWTDataBinding.toType(type), propertyName);
 		}
 		return PojoProperties.value(JFaceXWTDataBinding.toType(type), propertyName);

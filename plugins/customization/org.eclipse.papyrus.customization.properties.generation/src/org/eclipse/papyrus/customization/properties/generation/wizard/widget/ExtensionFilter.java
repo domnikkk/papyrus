@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 
 /**
  * A filter for file extensions
- * 
+ *
  * @author Camille Letavernier
  */
 public class ExtensionFilter extends ViewerFilter {
@@ -31,12 +31,12 @@ public class ExtensionFilter extends ViewerFilter {
 	private Set<String> extensions;
 
 	/**
-	 * 
+	 *
 	 * Constructs a ViewerFilter that will only accept filenames with one of the
 	 * given extensions
-	 * 
+	 *
 	 * @param extensions
-	 *        The authorized extensions
+	 *            The authorized extensions
 	 */
 	public ExtensionFilter(String[] extensions) {
 		this.extensions = new HashSet<String>(Arrays.asList(extensions));
@@ -44,14 +44,14 @@ public class ExtensionFilter extends ViewerFilter {
 
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
-		if(element instanceof IFile) {
-			IFile file = (IFile)element;
-			for(String ext : extensions) {
-				if(file.getFullPath().toString().endsWith(ext)) {
+		if (element instanceof IFile) {
+			IFile file = (IFile) element;
+			for (String ext : extensions) {
+				if (file.getFullPath().toString().endsWith(ext)) {
 					return true;
 				}
 			}
-		} else if(element instanceof IProject || element instanceof IFolder) {
+		} else if (element instanceof IProject || element instanceof IFolder) {
 			return true;
 		}
 

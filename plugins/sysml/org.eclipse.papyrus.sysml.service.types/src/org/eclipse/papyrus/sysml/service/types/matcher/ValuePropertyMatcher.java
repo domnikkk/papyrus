@@ -29,18 +29,18 @@ public class ValuePropertyMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if((eObject instanceof Property) && !(eObject instanceof Port)) {
+		if ((eObject instanceof Property) && !(eObject instanceof Port)) {
 
-			Property element = (Property)eObject;
-			
+			Property element = (Property) eObject;
+
 			// The property is necessary a composition and has a type
 			if ((element.getType() != null) && (element.getAggregation() == AggregationKind.COMPOSITE_LITERAL)) {
-				
+
 				// Moreover its type has either to be a DataType or a ValueType
-				if(UMLUtil.getStereotypeApplication(element.getType(), ValueType.class) != null) {
+				if (UMLUtil.getStereotypeApplication(element.getType(), ValueType.class) != null) {
 					isMatch = true;
 				}
-				if(element.getType() instanceof DataType) {
+				if (element.getType() instanceof DataType) {
 					isMatch = true;
 				}
 			}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,19 +25,20 @@ import org.eclipse.papyrus.infra.gmfdiag.css.helper.CSSHelper;
 
 /**
  * An edit policy provider for MarkerEvenListenerEditPolicy
- * 
+ *
  */
 public class MarkerEventListenerEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 		EditPart editPart = epOperation.getEditPart();
-		if(!(editPart instanceof GraphicalEditPart)) {
+		if (!(editPart instanceof GraphicalEditPart)) {
 			return false;
 		}
 
 		EditingDomain domain = EMFHelper.resolveEditingDomain(editPart);
-		if(domain == null) {
+		if (domain == null) {
 			return false;
 		}
 
@@ -45,6 +46,7 @@ public class MarkerEventListenerEditPolicyProvider extends AbstractProvider impl
 		return CSSHelper.isCSSSupported(resourceSet);
 	}
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 		editPart.installEditPolicy(MarkerEventListenerEditPolicy.ROLE, new MarkerEventListenerEditPolicy());
 	}

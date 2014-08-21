@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "preferences";
@@ -49,7 +49,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papryus/properties/preferences";
@@ -58,7 +58,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "pref";
@@ -67,7 +67,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	PreferencesPackage eINSTANCE = org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesPackageImpl.init();
@@ -77,7 +77,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Context Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.ContextDescriptorImpl
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesPackageImpl#getContextDescriptor()
 	 * @generated
@@ -88,7 +88,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Applied</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Prototype</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,7 +118,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Deleted</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -128,7 +128,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The number of structural features of the '<em>Context Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -138,7 +138,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesImpl <em>Preferences</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesImpl
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesPackageImpl#getPreferences()
 	 * @generated
@@ -149,7 +149,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -159,7 +159,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface PreferencesPackage extends EPackage {
 	 * The number of structural features of the '<em>Preferences</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +181,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Context Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Context Descriptor</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor
 	 * @generated
@@ -193,7 +193,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor#getName()
 	 * @see #getContextDescriptor()
@@ -206,7 +206,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Applied</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Applied</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor#isApplied()
 	 * @see #getContextDescriptor()
@@ -219,7 +219,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Prototype</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Prototype</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor#getPrototype()
 	 * @see #getContextDescriptor()
@@ -232,7 +232,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Deleted</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Deleted</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor#isDeleted()
 	 * @see #getContextDescriptor()
@@ -244,7 +244,7 @@ public interface PreferencesPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.runtime.preferences.Preferences <em>Preferences</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Preferences</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.Preferences
 	 * @generated
@@ -252,11 +252,10 @@ public interface PreferencesPackage extends EPackage {
 	EClass getPreferences();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.views.properties.runtime.preferences.Preferences#getContexts <em>Contexts</em>}'.
+	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.views.properties.runtime.preferences.Preferences#getContexts <em>Contexts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Contexts</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.Preferences#getContexts()
 	 * @see #getPreferences()
@@ -269,7 +268,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.Preferences#getVersion()
 	 * @see #getPreferences()
@@ -281,7 +280,7 @@ public interface PreferencesPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -297,7 +296,7 @@ public interface PreferencesPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -307,7 +306,7 @@ public interface PreferencesPackage extends EPackage {
 		 * <em>Context Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.ContextDescriptorImpl
 		 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesPackageImpl#getContextDescriptor()
 		 * @generated
@@ -318,7 +317,7 @@ public interface PreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONTEXT_DESCRIPTOR__NAME = eINSTANCE.getContextDescriptor_Name();
@@ -327,7 +326,7 @@ public interface PreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Applied</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONTEXT_DESCRIPTOR__APPLIED = eINSTANCE.getContextDescriptor_Applied();
@@ -336,7 +335,7 @@ public interface PreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prototype</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONTEXT_DESCRIPTOR__PROTOTYPE = eINSTANCE.getContextDescriptor_Prototype();
@@ -345,17 +344,16 @@ public interface PreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Deleted</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONTEXT_DESCRIPTOR__DELETED = eINSTANCE.getContextDescriptor_Deleted();
 
 		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesImpl <em>Preferences</em>}
-		 * ' class.
+		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesImpl <em>Preferences</em>} ' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesImpl
 		 * @see org.eclipse.papyrus.views.properties.runtime.preferences.impl.PreferencesPackageImpl#getPreferences()
 		 * @generated
@@ -366,7 +364,7 @@ public interface PreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PREFERENCES__CONTEXTS = eINSTANCE.getPreferences_Contexts();
@@ -375,11 +373,11 @@ public interface PreferencesPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute PREFERENCES__VERSION = eINSTANCE.getPreferences_Version();
 
 	}
 
-} //PreferencesPackage
+} // PreferencesPackage

@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.TabFolder;
 
 /**
  * EMF implementation of the {@link ISashWindowsContentProvider}.
- * 
+ *
  * @author dumoulin
  */
 public class DiContentProvider implements ISashWindowsContentProvider {
@@ -41,17 +41,18 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 
 	/** Object delivering event to listeners. Used to control how the events are triggered */
 	private ContentChangedEventProvider contentChangedEventProvider;
-	
+
 
 	/**
 	 * Create a ContentProvider
-	 * 
+	 *
 	 * Constructor only used in tests.
-	 * 
+	 *
 	 * @param diSashModel
-	 * @param pageModelFactory The factory that will be used when a page will be created.
+	 * @param pageModelFactory
+	 *            The factory that will be used when a page will be created.
 	 * @throws IllegalArgumentException
-	 *         If the factory is null.
+	 *             If the factory is null.
 	 */
 	public DiContentProvider(SashModel diSashModel, IPageModelFactory pageModelFactory) throws IllegalArgumentException {
 
@@ -60,16 +61,18 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 
 	/**
 	 * Create a ContentProvider
-	 * 
+	 *
 	 * @param diSashModel
-	 * @param pageModelFactory The factory that will be used when a page will be created.
+	 * @param pageModelFactory
+	 *            The factory that will be used when a page will be created.
 	 * @throws IllegalArgumentException
-	 *         If the factory is null.
+	 *             If the factory is null.
 	 */
 	public DiContentProvider(SashModel diSashModel, IPageModelFactory pageModelFactory, ContentChangedEventProvider contentChangedEventProvider) throws IllegalArgumentException {
 
-		if(pageModelFactory == null)
+		if (pageModelFactory == null) {
 			throw new IllegalArgumentException("A IPageModelFactory should be provided.");
+		}
 
 		this.diSashModel = diSashModel;
 		this.pageModelFactory = pageModelFactory;
@@ -79,14 +82,14 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	/**
 	 * Access to internal structure for tests.
 	 * This method is not intended to be used for other purpose.
-	 * 
+	 *
 	 * @return the diSashModel
 	 */
 	protected SashModel getDiSashModel() {
 		return diSashModel;
 	}
 
-	
+
 	/**
 	 * @return the contentChangedEventProvider
 	 */
@@ -97,12 +100,13 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	/**
 	 * Add a page identifier to the SashModel. This page identifier will be added as "child" of the
 	 * specified TabFolder.
-	 * 
+	 *
 	 * Not use by SashContainer. Used by the tests.
+	 * 
 	 * @param pageIdentifier
 	 */
 	public void addPage(ITabFolderModel tabFolderModel, Object pageIdentifier) {
-		TabFolder folderModel = ((TabFolderModel)tabFolderModel).getTabFolder();
+		TabFolder folderModel = ((TabFolderModel) tabFolderModel).getTabFolder();
 
 		folderModel.addPage(pageIdentifier);
 	}
@@ -110,12 +114,13 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	/**
 	 * Add a page identifier to the SashModel. This page identifier will be added as "child" of the
 	 * specified TabFolder.
-	 * 
+	 *
 	 * Not use by SashContainer. Used by the tests.
+	 * 
 	 * @param pageIdentifier
 	 */
 	public void addPage(ITabFolderModel tabFolderModel, int index, Object pageIdentifier) {
-		TabFolder folderModel = ((TabFolderModel)tabFolderModel).getTabFolder();
+		TabFolder folderModel = ((TabFolderModel) tabFolderModel).getTabFolder();
 
 		folderModel.addPage(index, pageIdentifier);
 	}
@@ -123,10 +128,12 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	/**
 	 * Add a page identifier to the SashModel. This page identifier will be added as "child" of the current
 	 * TabFolder.
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @deprecated Not used by SashContainer. Use {@link IPageMngr#addPage(Object)} instead
 	 */
+	@Deprecated
+	@Override
 	public void addPage(Object pageIdentifier) {
 		diSashModel.addPage(pageIdentifier);
 	}
@@ -134,28 +141,29 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	/**
 	 * Add a page to the current folder.
 	 * Create the Page (Editor or Component) with the help of the factory.
-	 * 
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#addPage(int,
-	 *      org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#addPage(int, org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel)
+	 *
 	 * @param index
 	 * @param tabItem
 	 */
+	@Override
 	public void addPage(Object page, int index) {
 
 		throw new UnsupportedOperationException("Not yet implemented.");
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#createFolder(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int, org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
-	 * 
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#createFolder(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int,
+	 *      org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
+	 *
 	 * @param tabFolder
 	 * @param tabIndex
 	 * @param targetFolder
 	 * @param side
 	 * @return
 	 */
+	@Override
 	public void createFolder(ITabFolderModel tabFolder, int tabIndex, ITabFolderModel targetFolder, int side) {
 
 		// disable fired events
@@ -163,8 +171,8 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 		// Create new folder. Parent will be set when inserted.
 		TabFolder newFolder = DiFactory.eINSTANCE.createTabFolder();
 
-		TabFolder refFolder = ((TabFolderModel)targetFolder).getTabFolder();
-		TabFolder pageSrcFolder = ((TabFolderModel)tabFolder).getTabFolder();
+		TabFolder refFolder = ((TabFolderModel) targetFolder).getTabFolder();
+		TabFolder pageSrcFolder = ((TabFolderModel) tabFolder).getTabFolder();
 
 		// Insert folder
 		diSashModel.insertFolder(newFolder, refFolder, side);
@@ -181,31 +189,34 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 
 	/**
 	 * Set the current folder.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#setCurrentFolder(java.lang.Object)
-	 * 
+	 *
 	 * @deprecated Current folder is now managed by the sashContainer only.
-	 * 
+	 *
 	 * @param rawModel
-	 *        The object identifying the folder.
-	 *        
+	 *            The object identifying the folder.
+	 *
 	 */
+	@Deprecated
+	@Override
 	public void setCurrentFolder(Object rawModel) {
 
-//		if(!(rawModel instanceof TabFolder)) {
-//			return;
-//		}
-//		diSashModel.setCurrentSelectionSilently((TabFolder)rawModel);
+		// if(!(rawModel instanceof TabFolder)) {
+		// return;
+		// }
+		// diSashModel.setCurrentSelectionSilently((TabFolder)rawModel);
 	}
 
 	/**
 	 * Get the node used as root of the SashWindows.
 	 * For now, this is the first window.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#getRootModel()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Object getRootModel() {
 		// Get the first window.
 		return diSashModel.getWindows().get(0).getPanel();
@@ -213,33 +224,35 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 
 	/**
 	 * Create the IPanelModel for the rootModel returned by {@link DiContentProvider#getRootModel()}.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#createChildSashModel(java.lang.Object)
-	 * 
+	 *
 	 * @param root
 	 * @return
 	 */
+	@Override
 	public IAbstractPanelModel createChildSashModel(Object root) {
 
 
-		if(root instanceof SashPanel)
-			return new SashPanelModel((SashPanel)root, pageModelFactory);
-		else if(root instanceof TabFolder)
-			return new TabFolderModel((TabFolder)root, pageModelFactory);
-		else
+		if (root instanceof SashPanel) {
+			return new SashPanelModel((SashPanel) root, pageModelFactory);
+		} else if (root instanceof TabFolder) {
+			return new TabFolderModel((TabFolder) root, pageModelFactory);
+		} else {
 			throw new IllegalArgumentException("Can't create IPanelModel from raw model '" + root + "'.");
+		}
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int, int)
-	 * 
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int, int)
+	 *
 	 * @param folderModel
 	 * @param oldIndex
 	 * @param newIndex
 	 */
+	@Override
 	public void movePage(ITabFolderModel folderModel, int oldIndex, int newIndex) {
-		TabFolder folder = ((TabFolderModel)folderModel).getTabFolder();
+		TabFolder folder = ((TabFolderModel) folderModel).getTabFolder();
 
 		contentChangedEventProvider.setDeliver(false);
 		folder.movePage(oldIndex, newIndex);
@@ -248,18 +261,19 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int, org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
-	 * 
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#movePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int,
+	 *      org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
+	 *
 	 * @param srcFolderModel
 	 * @param sourceIndex
 	 * @param targetFolderModel
 	 * @param targetIndex
 	 */
+	@Override
 	public void movePage(ITabFolderModel srcFolderModel, int sourceIndex, ITabFolderModel targetFolderModel, int targetIndex) {
 
-		TabFolder srcFolder = ((TabFolderModel)srcFolderModel).getTabFolder();
-		TabFolder targetFolder = ((TabFolderModel)targetFolderModel).getTabFolder();
+		TabFolder srcFolder = ((TabFolderModel) srcFolderModel).getTabFolder();
+		TabFolder targetFolder = ((TabFolderModel) targetFolderModel).getTabFolder();
 
 		contentChangedEventProvider.setDeliver(false);
 		diSashModel.movePage(srcFolder, sourceIndex, targetFolder, targetIndex);
@@ -271,11 +285,12 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 
 	/**
 	 * Remove specified page from the current folder.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(int)
-	 * 
+	 *
 	 * @param index
 	 */
+	@Override
 	public void removePage(int index) {
 		diSashModel.removePage(index);
 
@@ -283,23 +298,24 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel)
-	 * 
+	 *
 	 * @param tabItem
 	 */
+	@Override
 	public void removePage(Object page) {
 		throw new UnsupportedOperationException("Not yet implemented.");
 
 	}
 
 	/**
-	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel,
-	 *      int)
-	 * 
+	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsContentProvider#removePage(org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel, int)
+	 *
 	 * @param parentFolder
 	 * @param tabIndex
 	 */
+	@Override
 	public void removePage(ITabFolderModel parentFolder, int tabIndex) {
-		TabFolder folder = ((TabFolderModel)parentFolder).getTabFolder();
+		TabFolder folder = ((TabFolderModel) parentFolder).getTabFolder();
 
 		contentChangedEventProvider.setDeliver(false);
 		folder.removePage(tabIndex);
@@ -310,7 +326,7 @@ public class DiContentProvider implements ISashWindowsContentProvider {
 	/**
 	 * Add a listener listening on content changed. This listener will be
 	 * notified each time the content change.
-	 * 
+	 *
 	 * @param listener
 	 */
 	protected void firePropertyChanged(ContentEvent event) {

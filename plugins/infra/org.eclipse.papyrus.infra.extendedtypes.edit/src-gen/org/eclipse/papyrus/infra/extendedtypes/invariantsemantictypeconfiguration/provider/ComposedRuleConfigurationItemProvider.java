@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -33,11 +33,12 @@ import org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguratio
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.ComposedRuleConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ComposedRuleConfigurationItemProvider
-	extends InvariantRuleConfigurationItemProvider
-	implements
+		extends InvariantRuleConfigurationItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -47,6 +48,7 @@ public class ComposedRuleConfigurationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ComposedRuleConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -57,6 +59,7 @@ public class ComposedRuleConfigurationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,41 +76,44 @@ public class ComposedRuleConfigurationItemProvider
 	 * This adds a property descriptor for the Composed Rules feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addComposedRulesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ComposedRuleConfiguration_composedRules_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComposedRuleConfiguration_composedRules_feature", "_UI_ComposedRuleConfiguration_type"),
-				 InvariantSemanticTypeConfigurationPackage.Literals.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ComposedRuleConfiguration_composedRules_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ComposedRuleConfiguration_composedRules_feature", "_UI_ComposedRuleConfiguration_type"),
+						InvariantSemanticTypeConfigurationPackage.Literals.COMPOSED_RULE_CONFIGURATION__COMPOSED_RULES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
 		return getString("_UI_ComposedRuleConfiguration_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,6 +127,7 @@ public class ComposedRuleConfigurationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -44,14 +44,14 @@ public class AssociationBaseEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the source type provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target role
 	 */
 	private Classifier getSourceOwnerType(ConfigureRequest req) {
 		Classifier result = null;
 		Object paramObject = req.getParameter(CreateRelationshipRequest.SOURCE);
-		if(paramObject instanceof Classifier) {
-			result = (Classifier)paramObject;
+		if (paramObject instanceof Classifier) {
+			result = (Classifier) paramObject;
 		}
 
 		return result;
@@ -59,14 +59,14 @@ public class AssociationBaseEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the target type provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target role
 	 */
 	private Classifier getTargetOwnerType(ConfigureRequest req) {
 		Classifier result = null;
 		Object paramObject = req.getParameter(CreateRelationshipRequest.TARGET);
-		if(paramObject instanceof Classifier) {
-			result = (Classifier)paramObject;
+		if (paramObject instanceof Classifier) {
+			result = (Classifier) paramObject;
 		}
 
 		return result;
@@ -74,20 +74,20 @@ public class AssociationBaseEditHelper extends ElementEditHelper {
 
 	/**
 	 * Test if the relationship creation is allowed.
-	 * 
+	 *
 	 * @param source
-	 *        the relationship source can be null
+	 *            the relationship source can be null
 	 * @param target
-	 *        the relationship target can be null
+	 *            the relationship target can be null
 	 * @return true if the creation is allowed
 	 */
 	protected boolean canCreate(EObject source, EObject target) {
 
-		if((source != null) && !(source instanceof Classifier)) {
+		if ((source != null) && !(source instanceof Classifier)) {
 			return false;
 		}
 
-		if((target != null) && !(target instanceof Classifier)) {
+		if ((target != null) && !(target instanceof Classifier)) {
 			return false;
 		}
 
@@ -106,20 +106,20 @@ public class AssociationBaseEditHelper extends ElementEditHelper {
 		boolean noSourceOrTarget = (source == null || target == null);
 		boolean noSourceAndTarget = (source == null && target == null);
 
-		if(!noSourceAndTarget && !canCreate(source, target)) {
+		if (!noSourceAndTarget && !canCreate(source, target)) {
 			// Abort creation.
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(noSourceOrTarget && !noSourceAndTarget) {
+		if (noSourceOrTarget && !noSourceAndTarget) {
 			// The request isn't complete yet. Return the identity command so
 			// that the create relationship gesture is enabled.
 			return IdentityCommand.INSTANCE;
 		}
 
 		// Propose a container if none is set in request.
-		//EObject proposedContainer = EMFCoreUtil.getLeastCommonContainer(Arrays.asList(new EObject[]{ source, target }), UMLPackage.eINSTANCE.getPackage());
-		View sourceView = (View)req.getParameter(RequestParameterConstants.EDGE_CREATE_REQUEST_SOURCE_VIEW);
+		// EObject proposedContainer = EMFCoreUtil.getLeastCommonContainer(Arrays.asList(new EObject[]{ source, target }), UMLPackage.eINSTANCE.getPackage());
+		View sourceView = (View) req.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.EDGE_CREATE_REQUEST_SOURCE_VIEW);
 		if (sourceView != null) {
 			Diagram diagram = sourceView.getDiagram();
 			EObject proposedContainer = EMFCoreUtil.getContainer(diagram.getElement(), UMLPackage.Literals.PACKAGE);
@@ -135,7 +135,7 @@ public class AssociationBaseEditHelper extends ElementEditHelper {
 	protected ICommand getConfigureCommand(final ConfigureRequest req) {
 
 		// All Association configure are managed by HelperAdvice(s).
-		if((getSourceOwnerType(req) == null) || (getTargetOwnerType(req) == null)) {
+		if ((getSourceOwnerType(req) == null) || (getTargetOwnerType(req) == null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 

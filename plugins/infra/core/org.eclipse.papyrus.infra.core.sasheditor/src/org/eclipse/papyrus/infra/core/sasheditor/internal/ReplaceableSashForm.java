@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,7 +48,7 @@ public class ReplaceableSashForm extends SashForm {
 	 * Reparent the provided control to have the leftPart parent.
 	 */
 	public void setLeftControl(Control control) {
-		if(leftComposite == null) {
+		if (leftComposite == null) {
 			leftComposite = new Composite(this, 0);
 		}
 
@@ -60,7 +60,7 @@ public class ReplaceableSashForm extends SashForm {
 	 * Reparent the provided control to have the leftPart parent.
 	 */
 	public void setRightControl(Control control) {
-		if(rightComposite == null) {
+		if (rightComposite == null) {
 			rightComposite = new Composite(this, 0);
 		}
 

@@ -51,25 +51,25 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	@Override
 	public Command getCommand(Request request) {
 		// we have to distinguish the case where this is an association class
-		if(REQ_CONNECTION_END.equals(request.getType())) {
-			if(request instanceof CreateConnectionViewAndElementRequest) {
+		if (REQ_CONNECTION_END.equals(request.getType())) {
+			if (request instanceof CreateConnectionViewAndElementRequest) {
 				// default behavior
-				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest)request);
+				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest) request);
 				// case of associationClass
-				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest)request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
-				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
-				if(UMLElementTypes.Dependency_4018.equals(createElementRequest.getElementType())) {
+				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest) request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
+				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
+				if (UMLElementTypes.Dependency_4018.equals(createElementRequest.getElementType())) {
 					MultiDependencyHelper multiDependencyHelper = new MultiDependencyHelper(getEditingDomain());
-					return multiDependencyHelper.getCommand(((CreateConnectionViewAndElementRequest)request), c);
-				} else if(UMLElementTypes.Association_4019.equals(createElementRequest.getElementType())) {
+					return multiDependencyHelper.getCommand(((CreateConnectionViewAndElementRequest) request), c);
+				} else if (UMLElementTypes.Association_4019.equals(createElementRequest.getElementType())) {
 					MultiAssociationHelper multiAssociationHelper = new MultiAssociationHelper(getEditingDomain());
-					return multiAssociationHelper.getCommand(((CreateConnectionViewAndElementRequest)request), c);
+					return multiAssociationHelper.getCommand(((CreateConnectionViewAndElementRequest) request), c);
 				} else {
 					return c;
 				}
 			}
-			if(request instanceof CreateUnspecifiedTypeConnectionRequest) {
-				return getUnspecifiedConnectionCompleteCommand((CreateUnspecifiedTypeConnectionRequest)request);
+			if (request instanceof CreateUnspecifiedTypeConnectionRequest) {
+				return getUnspecifiedConnectionCompleteCommand((CreateUnspecifiedTypeConnectionRequest) request);
 			}
 		}
 		return super.getCommand(request);
@@ -81,7 +81,7 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	 * @return the current transactional edit domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	@Override

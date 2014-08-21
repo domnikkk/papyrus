@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker;
  * @author Camille Letavernier
  *
  */
-//Rely on the GraphicalEditPolicyEx, which is less expensive than adding a listener to detect changes in the containment tree
+// Rely on the GraphicalEditPolicyEx, which is less expensive than adding a listener to detect changes in the containment tree
 @SuppressWarnings("restriction")
 public class ExternalReferenceEditPolicy extends GraphicalEditPolicyEx {
 
@@ -63,23 +63,23 @@ public class ExternalReferenceEditPolicy extends GraphicalEditPolicyEx {
 
 	@Override
 	public void refresh() {
-		if(getView() == null) {
+		if (getView() == null) {
 			return;
 		}
-		if(decorationService == null) {
+		if (decorationService == null) {
 			return;
 		}
 
-		//Add or remove the decoration when the current value is different from the last known value
-		if(isExternalRef(getView()) != isExternalReference) {
+		// Add or remove the decoration when the current value is different from the last known value
+		if (isExternalRef(getView()) != isExternalReference) {
 			isExternalReference = !isExternalReference;
-			if(isExternalReference) {
+			if (isExternalReference) {
 				decorationService.addDecoration(getMarker(), getView());
 			} else {
 				decorationService.removeDecoration(getMarker().toString());
 			}
-			//We need to call refresh again, so that the decorator gets display.
-			//We shouldn't end up with a StackOverFlow, because we arrive here only when the "isExternalRef" value changes
+			// We need to call refresh again, so that the decorator gets display.
+			// We shouldn't end up with a StackOverFlow, because we arrive here only when the "isExternalRef" value changes
 			getHost().refresh();
 		}
 	}
@@ -94,7 +94,7 @@ public class ExternalReferenceEditPolicy extends GraphicalEditPolicyEx {
 	 * @return
 	 */
 	protected IPapyrusMarker getMarker() {
-		if(marker == null) {
+		if (marker == null) {
 			marker = new ExternalReferenceMarker(getView());
 		}
 		return marker;
@@ -106,15 +106,15 @@ public class ExternalReferenceEditPolicy extends GraphicalEditPolicyEx {
 	 * @return
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
 	@Override
 	public void deactivate() {
 		super.deactivate();
 
-		if(marker != null && decorationService != null) {
-			//Remove the marker from the View to avoid duplication
+		if (marker != null && decorationService != null) {
+			// Remove the marker from the View to avoid duplication
 			decorationService.removeDecoration(getMarker().toString());
 			isExternalReference = false;
 		}

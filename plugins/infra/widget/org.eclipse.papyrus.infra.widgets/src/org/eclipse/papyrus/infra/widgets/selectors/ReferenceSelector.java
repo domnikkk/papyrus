@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,11 +46,11 @@ import org.eclipse.ui.dialogs.PatternFilter;
 
 /**
  * A Selector for Multiple Reference values, with a filter
- * 
+ *
  * This selector is compatible with {@link org.eclipse.papyrus.infra.widgets.providers.IAdaptableContentProvider}
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ReferenceSelector implements IElementSelector {
 
@@ -89,18 +89,18 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * The set of selected elements. If the selector is marked as "unique",
 	 * these elements will be filtered in the Tree.
-	 * 
+	 *
 	 * The Elements are in their container form
 	 */
 	protected Set<Object> selectedElements = new HashSet<Object>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param unique
-	 *        Indicates if the values are unique. If true, they are removed
-	 *        from the list when they are chosen
+	 *            Indicates if the values are unique. If true, they are removed
+	 *            from the list when they are chosen
 	 */
 	public ReferenceSelector(boolean unique) {
 		this.unique = unique;
@@ -109,10 +109,10 @@ public class ReferenceSelector implements IElementSelector {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 * Builds a new ReferenceSelector for a single element
-	 * 
+	 *
 	 */
 	public ReferenceSelector() {
 		this(false);
@@ -121,11 +121,12 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getSelectedElements() {
 		ISelection selection = treeViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object[] containerElementsToMove = getElementsToMove(((IStructuredSelection)selection).toArray());
+		if (selection instanceof IStructuredSelection) {
+			Object[] containerElementsToMove = getElementsToMove(((IStructuredSelection) selection).toArray());
 			Object[] semanticElementsToMove = getSemanticElements(containerElementsToMove);
 			addSelectedElements(semanticElementsToMove);
 			return semanticElementsToMove;
@@ -139,23 +140,23 @@ public class ReferenceSelector implements IElementSelector {
 	 * The objects can be in two different forms :
 	 * - The semantic element
 	 * - The container element
-	 * 
+	 *
 	 * This methods returns an array of semantic elements from an array of
 	 * container elements. This is useful for retrieving the semantic elements
 	 * from a viewer's selection when the viewer uses an IAdaptableContentProvider
-	 * 
+	 *
 	 * @param containerElements
-	 *        The array of elements wrapped in their container
+	 *            The array of elements wrapped in their container
 	 * @return
 	 *         The array of semantic elements to be converted
-	 * 
+	 *
 	 * @see #getContainerElements(Object[])
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IAdaptableContentProvider
 	 */
 	private Object[] getSemanticElements(Object[] containerElements) {
 		Object[] semanticElements = new Object[containerElements.length];
 		int i = 0;
-		for(Object containerElement : containerElements) {
+		for (Object containerElement : containerElements) {
 			semanticElements[i++] = contentProvider.getAdaptedValue(containerElement);
 		}
 		return semanticElements;
@@ -164,19 +165,19 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * Filters the selection to return only the objects that can
 	 * be selected, according to the content provider.
-	 * 
+	 *
 	 * @param selection
-	 *        The input array to filter
+	 *            The input array to filter
 	 * @return
 	 *         The filtered array
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider#isValidValue(Object)
 	 */
 	protected Object[] getElementsToMove(Object[] selection) {
 		List<Object> elementsToMove = new LinkedList<Object>();
 
-		for(Object element : selection) {
-			if(contentProvider.isValidValue(element)) {
+		for (Object element : selection) {
+			if (contentProvider.isValidValue(element)) {
 				elementsToMove.add(element);
 			}
 		}
@@ -188,11 +189,11 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * Adds elements to the list of selected elements. If the values are
 	 * unique, the specified elements won't be displayed
-	 * 
+	 *
 	 * @param elements
 	 */
 	private void addSelectedElements(Object[] semanticElements) {
-		if(semanticElements.length > 0) {
+		if (semanticElements.length > 0) {
 			selectedElements.addAll(Arrays.asList(semanticElements));
 			refresh();
 		}
@@ -201,23 +202,24 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * Returns all the elements that are currently displayed, i.e. matching
 	 * the filter
-	 * 
+	 *
 	 * {@link IElementSelector#getAllElements()}
-	 * 
+	 *
 	 * @return all elements matching the filter
 	 */
+	@Override
 	public Object[] getAllElements() {
-		//There is no way to retrieve the filteredElements on a FList
-		//We can only retrieve the selected ones
-		//Fix : we select everything, then we return the selection
-		if(contentProvider == null) {
+		// There is no way to retrieve the filteredElements on a FList
+		// We can only retrieve the selected ones
+		// Fix : we select everything, then we return the selection
+		if (contentProvider == null) {
 			return new Object[0];
 		}
 
 		Collection<Object> visibleElements = new LinkedList<Object>();
-		for(TreeItem rootItem : treeViewer.getTree().getItems()) {
+		for (TreeItem rootItem : treeViewer.getTree().getItems()) {
 			visibleElements.add(getElement(rootItem));
-			if(rootItem.getExpanded()) {
+			if (rootItem.getExpanded()) {
 				fillVisibleElements(rootItem, visibleElements);
 			}
 		}
@@ -230,9 +232,9 @@ public class ReferenceSelector implements IElementSelector {
 	}
 
 	private void fillVisibleElements(TreeItem item, Collection<Object> visibleElements) {
-		for(TreeItem childItem : item.getItems()) {
+		for (TreeItem childItem : item.getItems()) {
 			visibleElements.add(getElement(childItem));
-			if(childItem.getExpanded()) {
+			if (childItem.getExpanded()) {
 				fillVisibleElements(childItem, visibleElements);
 			}
 		}
@@ -245,20 +247,23 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * Sets the list of selected elements. If the values are
 	 * unique, the specified elements won't be displayed
-	 * 
+	 *
 	 * @param elements
 	 */
+	@Override
 	public void setSelectedElements(Object[] semanticElements) {
 		selectedElements.clear();
 		selectedElements.addAll(Arrays.asList(semanticElements));
 		refresh();
 	}
 
+	@Override
 	public void newObjectCreated(Object newObject) {
 		contentProvider.addTemporaryElement(newObject);
 		refresh();
 	}
 
+	@Override
 	public void clearTemporaryElements() {
 		contentProvider.clearTemporaryElements();
 	}
@@ -267,19 +272,19 @@ public class ReferenceSelector implements IElementSelector {
 	 * Refreshes this selector's {@link org.eclipse.swt.widgets.List}
 	 */
 	public void refresh() {
-		((SelectionFilteredBrowseStrategy)contentProvider.getBrowseStrategy()).refresh();
+		((SelectionFilteredBrowseStrategy) contentProvider.getBrowseStrategy()).refresh();
 		treeViewer.refresh();
 	}
 
 	/**
 	 * Sets this selector's label provider. The label provider is used
 	 * to display the reference values
-	 * 
+	 *
 	 * @param labelProvider
 	 */
 	public void setLabelProvider(ILabelProvider labelProvider) {
 		this.labelProvider = labelProvider;
-		if(treeViewer != null) {
+		if (treeViewer != null) {
 			treeViewer.setLabelProvider(labelProvider);
 		}
 	}
@@ -287,7 +292,7 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * Sets this selector's content provider. The content provider
 	 * is used to select the available values for this property
-	 * 
+	 *
 	 * @param staticContentProvider
 	 */
 	public void setContentProvider(IStaticContentProvider staticContentProvider) {
@@ -300,21 +305,21 @@ public class ReferenceSelector implements IElementSelector {
 
 		this.contentProvider = new StrategyBasedContentProvider(filteredBrowseStrategy, revealBrowseStrategy);
 
-		if(treeViewer != null) {
+		if (treeViewer != null) {
 			treeViewer.setContentProvider(contentProvider);
 			treeViewer.setInput(""); //$NON-NLS-1$
 		}
 
-		if(contentProvider instanceof ICommitListener) {
+		if (contentProvider instanceof ICommitListener) {
 			commitListeners.add(contentProvider);
 		}
 	}
 
 	/**
 	 * Strategy to hide tree elements which are already selected, when the selector is defined as unique
-	 * 
+	 *
 	 * @author Camille Letavernier
-	 * 
+	 *
 	 */
 	private class SelectionFilteredBrowseStrategy extends ProviderBasedBrowseStrategy {
 
@@ -324,11 +329,11 @@ public class ReferenceSelector implements IElementSelector {
 
 		@Override
 		public boolean isValidValue(Object element) {
-			if(!unique) {
+			if (!unique) {
 				return super.isValidValue(element);
 			}
 
-			if(!super.isValidValue(element)) {
+			if (!super.isValidValue(element)) {
 				return false;
 			}
 
@@ -336,7 +341,7 @@ public class ReferenceSelector implements IElementSelector {
 		}
 
 		public void refresh() {
-			if(unique) {
+			if (unique) {
 				clearCache();
 			}
 		}
@@ -345,28 +350,29 @@ public class ReferenceSelector implements IElementSelector {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createControls(Composite parent) {
 		Composite content = new Composite(parent, SWT.NONE);
 		content.setLayout(new GridLayout(1, true));
 
 		treeViewer = new TreeViewer(content, SWT.BORDER | SWT.MULTI);
-		treeViewer.setFilters(new ViewerFilter[]{ new PatternFilter() });
+		treeViewer.setFilters(new ViewerFilter[] { new PatternFilter() });
 
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		data.minimumHeight = 300;
 		data.minimumWidth = 300;
 		treeViewer.getTree().setLayoutData(data);
 
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			treeViewer.setLabelProvider(labelProvider);
 		}
 
-		if(contentProvider != null) {
+		if (contentProvider != null) {
 			treeViewer.setContentProvider(contentProvider);
 			treeViewer.setInput(""); //$NON-NLS-1$
 		}
 
-		if(contentProvider instanceof IGraphicalContentProvider) {
+		if (contentProvider instanceof IGraphicalContentProvider) {
 			IGraphicalContentProvider graphicalContentProvider = contentProvider;
 
 			Composite beforeTreeComposite = new Composite(content, SWT.NONE);
@@ -388,15 +394,16 @@ public class ReferenceSelector implements IElementSelector {
 			graphicalContentProvider.createAfter(afterTreeComposite);
 		}
 
-		//Adds double-click support
+		// Adds double-click support
 		treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
+			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				if(!elementSelectionListeners.isEmpty()) {
+				if (!elementSelectionListeners.isEmpty()) {
 					Object[] selectedElements = getSelectedElements();
-					if(selectedElements.length > 0) {
+					if (selectedElements.length > 0) {
 						notifyCommitListeners();
-						for(IElementSelectionListener listener : elementSelectionListeners) {
+						for (IElementSelectionListener listener : elementSelectionListeners) {
 							listener.addElements(selectedElements);
 						}
 					}
@@ -410,16 +417,18 @@ public class ReferenceSelector implements IElementSelector {
 		this.unique = unique;
 	}
 
+	@Override
 	public void addElementSelectionListener(IElementSelectionListener listener) {
 		elementSelectionListeners.add(listener);
 	}
 
+	@Override
 	public void removeElementSelectionListener(IElementSelectionListener listener) {
 		elementSelectionListeners.remove(listener);
 	}
 
 	protected void notifyCommitListeners() {
-		for(ICommitListener commitListener : commitListeners) {
+		for (ICommitListener commitListener : commitListeners) {
 			commitListener.commit(null);
 		}
 	}

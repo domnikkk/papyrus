@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ public class RowFeatureLabelDisplayNameObservableValue extends AbstractRowFeatur
 
 	/**
 	 * Instantiates a new row feature label display name observable value.
-	 * 
+	 *
 	 * @param table
-	 *        the table
+	 *            the table
 	 */
 	public RowFeatureLabelDisplayNameObservableValue(Table table) {
 		super(table, NattablelabelproviderPackage.eINSTANCE.getFeatureLabelProviderConfiguration_DisplayName());
@@ -35,7 +35,7 @@ public class RowFeatureLabelDisplayNameObservableValue extends AbstractRowFeatur
 
 	/**
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
-	 * 
+	 *
 	 * @return
 	 */
 

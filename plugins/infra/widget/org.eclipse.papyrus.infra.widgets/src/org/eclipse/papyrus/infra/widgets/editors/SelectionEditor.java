@@ -1,13 +1,13 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
- * Contributors: 
+ * Contributors:
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
  *****************************************************************************/
@@ -37,11 +37,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.List;
 
 /**
- * 
+ *
  * This class provides an editor to select easily elements
  * In the left side, we have the possible element to select and in the right side, we have the current selection
  * Moreover, its possible to add a Button to provide some action. Often this button shall be used to create new element
- * 
+ *
  */
 public class SelectionEditor extends Composite implements SelectionListener {
 
@@ -117,24 +117,24 @@ public class SelectionEditor extends Composite implements SelectionListener {
 	protected Composite buttonSection;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of this composite
+	 *            the parent of this composite
 	 * @param selector
-	 *        the selector
+	 *            the selector
 	 * @param labelProvider
-	 *        the label provider
+	 *            the label provider
 	 * @param initialSelection
-	 *        the initial selection
+	 *            the initial selection
 	 */
 	public SelectionEditor(Composite parent, IElementSelector selector, ILabelProvider labelProvider, java.util.List<Object> initialSelection) {
 		super(parent, SWT.NONE);
 		this.selector = selector;
 		this.labelProvider = labelProvider;
 		this.initialSelection = new ArrayList<Object>();
-		for(Object current : initialSelection) {
+		for (Object current : initialSelection) {
 			this.initialSelection.add(current);
 		}
 		currentSelection = initialSelection;
@@ -162,9 +162,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 	 * <li>the list</li>
 	 * <li>the buttons Add, AddAll, Remove, RemoveAll, Up, Down</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	protected void createBody(Composite parent) {
 
@@ -184,9 +184,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Creates the Message section
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the {@link Composite}
+	 *            the parent of the {@link Composite}
 	 */
 	protected void createMessageSection(Composite parent) {
 		messageSection = new Composite(parent, SWT.NONE);
@@ -197,15 +197,15 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Creates the button section
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the {@link Composite}
+	 *            the parent of the {@link Composite}
 	 */
 	protected void createCreateButtonSection(Composite parent) {
-		if(this.withAdditionalButton) {
+		if (this.withAdditionalButton) {
 			buttonSection = new Composite(parent, SWT.NONE);
 			additionalButton = new Button(buttonSection, SWT.PUSH);
-			if(additionalButtonLabel != null) {
+			if (additionalButtonLabel != null) {
 				additionalButton.setText(additionalButtonLabel);
 			}
 			buttonSection.setLayout(new FillLayout());
@@ -215,9 +215,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Creates the selector section
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	protected void createSelectorSection(Composite parent) {
 		selectorSection = new Composite(parent, SWT.NONE);
@@ -225,7 +225,7 @@ public class SelectionEditor extends Composite implements SelectionListener {
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		data.widthHint = 400;
 
-		//		data.exclude = true;
+		// data.exclude = true;
 		selectorSection.setLayoutData(data);
 		selector.createControls(selectorSection);
 
@@ -233,9 +233,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Creates the main controls section (Add, remove, Add all, remove all)
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	protected void createControlsSection(Composite parent) {
 		buttonSection = new Composite(parent, SWT.NONE);
@@ -265,9 +265,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Creates the list displaying the currently selected elements
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	protected void createListSection(Composite parent) {
 		Composite listSection = new Composite(parent, SWT.NONE);
@@ -281,8 +281,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 		selectedElementsViewer.setContentProvider(CollectionContentProvider.instance);
 
-		if(labelProvider != null)
+		if (labelProvider != null) {
 			selectedElementsViewer.setLabelProvider(labelProvider);
+		}
 
 		selectedElementsViewer.setInput(currentSelection);
 		selector.setSelectedElements(currentSelection.toArray());
@@ -291,9 +292,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Creates the up/down controls section
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	protected void createRightButtonsSection(Composite parent) {
 		rightButtonsSection = new Composite(parent, SWT.NONE);
@@ -314,24 +315,25 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * {@inheritDoc} Handles the events on one of the control buttons
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.SelectionListener#widgetSelected(org.eclipse.swt.events.SelectionEvent)
-	 * 
+	 *
 	 * @param e
-	 *        The event that occurred
+	 *            The event that occurred
 	 */
+	@Override
 	public void widgetSelected(SelectionEvent e) {
-		if(e.widget == add) {
+		if (e.widget == add) {
 			addAction();
-		} else if(e.widget == remove) {
+		} else if (e.widget == remove) {
 			removeAction();
-		} else if(e.widget == addAll) {
+		} else if (e.widget == addAll) {
 			addAllAction();
-		} else if(e.widget == removeAll) {
+		} else if (e.widget == removeAll) {
 			removeAllAction();
-		} else if(e.widget == up) {
+		} else if (e.widget == up) {
 			upAction();
-		} else if(e.widget == down) {
+		} else if (e.widget == down) {
 			downAction();
 		}
 	}
@@ -348,14 +350,15 @@ public class SelectionEditor extends Composite implements SelectionListener {
 	 * Handles the "Up" action
 	 */
 	protected void upAction() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsViewer.getSelection();
 
-		//We need a list to move objects. LinkedHashSet can't do that
+		// We need a list to move objects. LinkedHashSet can't do that
 		java.util.List<Object> list = new LinkedList<Object>(currentSelection);
-		for(Object o : selection.toArray()) {
+		for (Object o : selection.toArray()) {
 			int oldIndex = list.indexOf(o);
-			if(oldIndex > 0)
+			if (oldIndex > 0) {
 				move(list, oldIndex, oldIndex - 1);
+			}
 		}
 
 		currentSelection.clear();
@@ -370,19 +373,20 @@ public class SelectionEditor extends Composite implements SelectionListener {
 	 * Handles the "Down" action
 	 */
 	protected void downAction() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsViewer.getSelection();
 
-		//We need a list to move objects. LinkedHashSet can't do that
+		// We need a list to move objects. LinkedHashSet can't do that
 		java.util.List<Object> list = new LinkedList<Object>(currentSelection);
 
 		int maxIndex = list.size() - 1;
 
 		Object[] selectionArray = selection.toArray();
-		for(int i = selectionArray.length - 1; i >= 0; i--) {
+		for (int i = selectionArray.length - 1; i >= 0; i--) {
 			Object o = selectionArray[i];
 			int oldIndex = list.indexOf(o);
-			if(oldIndex < maxIndex)
+			if (oldIndex < maxIndex) {
 				move(list, oldIndex, oldIndex + 1);
+			}
 		}
 
 		currentSelection.clear();
@@ -395,19 +399,23 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Moves an element from oldIndex to newIndex
-	 * 
+	 *
 	 * @param list
-	 *        The list in which to move the object
+	 *            The list in which to move the object
 	 * @param oldIndex
 	 * @param newIndex
 	 */
 	protected void move(java.util.List<Object> list, int oldIndex, int newIndex) {
 		int size = list.size();
 
-		if(oldIndex < 0 || oldIndex >= size)
+		if (oldIndex < 0 || oldIndex >= size)
+		{
 			throw new IndexOutOfBoundsException("oldIndex: " + oldIndex + ", size:" + size); //$NON-NLS-1$ //$NON-NLS-2$
-		if(newIndex < 0 || newIndex >= size)
+		}
+		if (newIndex < 0 || newIndex >= size)
+		{
 			throw new IndexOutOfBoundsException("newIndex: " + newIndex + ", size:" + size); //$NON-NLS-1$ //$NON-NLS-2$
+		}
 		Object element = list.remove(oldIndex);
 		list.add(newIndex, element);
 	}
@@ -416,11 +424,12 @@ public class SelectionEditor extends Composite implements SelectionListener {
 	 * Handles the "Remove" action
 	 */
 	protected void removeAction() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsViewer.getSelection();
-		if(selection.isEmpty())
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsViewer.getSelection();
+		if (selection.isEmpty()) {
 			return;
+		}
 
-		for(Object element : selection.toArray()) {
+		for (Object element : selection.toArray()) {
 			currentSelection.remove(element);
 		}
 
@@ -450,12 +459,12 @@ public class SelectionEditor extends Composite implements SelectionListener {
 	/**
 	 * Adds the specified elements to the currently selected elements (For
 	 * "Add" and "Add all" actions)
-	 * 
+	 *
 	 * @param elements
-	 *        The elements to be added
+	 *            The elements to be added
 	 */
 	protected void addElements(Object[] elements) {
-		if(elements != null) {
+		if (elements != null) {
 			currentSelection.addAll(Arrays.asList(elements));
 			selectedElementsViewer.refresh();
 		}
@@ -463,13 +472,14 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.SelectionListener#widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent)
-	 * 
+	 *
 	 * @param e
 	 */
+	@Override
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing to do
+		// Nothing to do
 	}
 
 	public void setAdditionalButton(boolean withAdditionalButton, String messageButton, SelectionListener listener) {
@@ -480,9 +490,9 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Set the message displayed by the Editor
-	 * 
+	 *
 	 * @param string
-	 *        the message displayed by the editor
+	 *            the message displayed by the editor
 	 */
 	public void setMessage(String string) {
 		this.message = string;
@@ -490,7 +500,7 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Returns all selected elements
-	 * 
+	 *
 	 * @return
 	 *         all selected elements
 	 */
@@ -501,14 +511,14 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Returns the list of the elements to remove
-	 * 
+	 *
 	 * @return
 	 *         the list of the elements to remove
 	 */
 	public java.util.List<Object> getElementToRemove() {
 		java.util.List<Object> removedObject = new ArrayList<Object>();
-		for(Object current : this.initialSelection) {
-			if(!getSelectedElements().contains(current)) {
+		for (Object current : this.initialSelection) {
+			if (!getSelectedElements().contains(current)) {
 				removedObject.add(current);
 			}
 		}
@@ -517,14 +527,14 @@ public class SelectionEditor extends Composite implements SelectionListener {
 
 	/**
 	 * Returns the list of the elements to add
-	 * 
+	 *
 	 * @return
 	 *         the list of the elements to add
 	 */
 	public java.util.List<Object> getElementToAdd() {
 		java.util.List<Object> addedObject = new ArrayList<Object>();
-		for(Object current : getSelectedElements()) {
-			if(!this.initialSelection.contains(current)) {
+		for (Object current : getSelectedElements()) {
+			if (!this.initialSelection.contains(current)) {
 				addedObject.add(current);
 			}
 		}

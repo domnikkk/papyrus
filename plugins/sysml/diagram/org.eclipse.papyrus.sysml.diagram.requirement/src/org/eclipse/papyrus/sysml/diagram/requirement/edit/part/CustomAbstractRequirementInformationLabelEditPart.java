@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 ATOS.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public abstract class CustomAbstractRequirementInformationLabelEditPart extends 
 		 */
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new CustomRequirementInfoLabelUpdateEditPolicy());
 		super.createDefaultEditPolicies();
-		//Removing useless edit policies installed by superclasses.
+		// Removing useless edit policies installed by superclasses.
 		removeEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 		removeEditPolicy(EditPolicy.COMPONENT_ROLE);
 	}
@@ -50,7 +50,7 @@ public abstract class CustomAbstractRequirementInformationLabelEditPart extends 
 	@Override
 	protected IFigure createFigure() {
 		IFigure figure = new WrappingLabel();
-		((WrappingLabel)figure).setTextWrap(true);
+		((WrappingLabel) figure).setTextWrap(true);
 		figure.setFont(Display.getDefault().getSystemFont());
 		return figure;
 	}
@@ -79,13 +79,13 @@ public abstract class CustomAbstractRequirementInformationLabelEditPart extends 
 	protected Requirement getRequirement() {
 		EditPart compartment = this.getParent();
 		EditPart classEditPart = compartment.getParent();
-		//Getting the class out of the edit part.
-		Element clazz = (Element)((View)classEditPart.getModel()).getElement();
-		//Getting the requirement out of the class.
-		if(clazz != null) {
-			for(EObject appliedStereotype : clazz.getStereotypeApplications()) {
-				if(appliedStereotype instanceof Requirement) {
-					return ((Requirement)appliedStereotype);
+		// Getting the class out of the edit part.
+		Element clazz = (Element) ((View) classEditPart.getModel()).getElement();
+		// Getting the requirement out of the class.
+		if (clazz != null) {
+			for (EObject appliedStereotype : clazz.getStereotypeApplications()) {
+				if (appliedStereotype instanceof Requirement) {
+					return ((Requirement) appliedStereotype);
 				}
 			}
 		}

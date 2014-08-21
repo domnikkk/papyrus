@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,35 +26,37 @@ public class StereotypePropertiesCompartment extends RectangleFigure {
 
 	protected boolean upperLine = true;
 
+	@Override
 	public Dimension getPreferredSize(int wHint, int hHint) {
-		//the calculus of the prefered size is contextual
-		prefSize=null;
-		return super.getPreferredSize(wHint,hHint);
+		// the calculus of the prefered size is contextual
+		prefSize = null;
+		return super.getPreferredSize(wHint, hHint);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paint(Graphics graphics) {
 		paintChildren(graphics);
 		IFigure parentFigure = getParent();
-		if(parentFigure instanceof PapyrusNodeFigure) {
-			graphics.setForegroundColor(((PapyrusNodeFigure)parentFigure).getBorderColor());
-			graphics.setBackgroundColor(((PapyrusNodeFigure)parentFigure).getBorderColor());
+		if (parentFigure instanceof PapyrusNodeFigure) {
+			graphics.setForegroundColor(((PapyrusNodeFigure) parentFigure).getBorderColor());
+			graphics.setBackgroundColor(((PapyrusNodeFigure) parentFigure).getBorderColor());
 		}
-		if(upperLine) {
-			for(int i = 0; i < getChildren().size(); i++) {
-				Point source = new Point(parentFigure.getBounds().x, ((IFigure)getChildren().get(i)).getBounds().getTopLeft().y);
+		if (upperLine) {
+			for (int i = 0; i < getChildren().size(); i++) {
+				Point source = new Point(parentFigure.getBounds().x, ((IFigure) getChildren().get(i)).getBounds().getTopLeft().y);
 				Point target = null;
-				if(parentFigure instanceof PackageFigure) {
-					target = new Point(((PackageFigure)(parentFigure)).getHeader().x + ((PackageFigure)(parentFigure)).getHeader().width, ((IFigure)getChildren().get(i)).getBounds().getTopRight().y);
+				if (parentFigure instanceof PackageFigure) {
+					target = new Point(((PackageFigure) (parentFigure)).getHeader().x + ((PackageFigure) (parentFigure)).getHeader().width, ((IFigure) getChildren().get(i)).getBounds().getTopRight().y);
 
 				} else {
-					target = new Point(parentFigure.getBounds().x + parentFigure.getBounds().width, ((IFigure)getChildren().get(i)).getBounds().getTopRight().y);
+					target = new Point(parentFigure.getBounds().x + parentFigure.getBounds().width, ((IFigure) getChildren().get(i)).getBounds().getTopRight().y);
 				}
 				// graphics.setForegroundColor(ColorConstants.black);
 				graphics.setLineWidth(1);
-				if(!( parentFigure instanceof IEllipseFigure)){
+				if (!(parentFigure instanceof IEllipseFigure)) {
 					graphics.drawLine(source, target);
 				}
 			}
@@ -63,9 +65,9 @@ public class StereotypePropertiesCompartment extends RectangleFigure {
 
 	/**
 	 * used to display or not line upper the compartment stereotype
-	 * 
+	 *
 	 * @param upperLine
-	 *        true if we want to display
+	 *            true if we want to display
 	 */
 	public void setUpperLine(boolean upperLine) {
 		this.upperLine = upperLine;

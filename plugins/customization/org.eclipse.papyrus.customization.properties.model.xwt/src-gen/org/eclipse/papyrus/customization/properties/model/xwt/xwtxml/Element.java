@@ -5,9 +5,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  *     Fabien Giquel (Mia-Software) - initial API and implementation
  * *******************************************************************************
  *
@@ -24,7 +24,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element#getChildren <em>Children</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,10 +39,10 @@ public interface Element extends Node {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Children</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Children</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getElement_Children()
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -92,7 +92,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -101,9 +101,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the image at the given path from this plugin
-	 * 
+	 *
 	 * @param path
-	 *        the path of the image to be displayed
+	 *            the path of the image to be displayed
 	 * @return The Image at the given location, or null if it couldn't be found
 	 */
 	public Image getImage(String path) {
@@ -112,11 +112,11 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the image from the given image descriptor
-	 * 
+	 *
 	 * @param pluginId
-	 *        The plugin in which the image is located
+	 *            The plugin in which the image is located
 	 * @param path
-	 *        The path to the image from the plugin
+	 *            The path to the image from the plugin
 	 * @return
 	 *         The Image at the given location, or null if it couldn't be found
 	 */
@@ -124,7 +124,7 @@ public class Activator extends AbstractUIPlugin {
 		final ImageRegistry registry = getImageRegistry();
 		String key = pluginId + "/" + path; //$NON-NLS-1$
 		Image image = registry.get(key);
-		if(image == null) {
+		if (image == null) {
 			registry.put(key, AbstractUIPlugin.imageDescriptorFromPlugin(pluginId, path));
 			image = registry.get(key);
 		}
@@ -133,14 +133,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the image from the given path
-	 * 
+	 *
 	 * @param imagePath
-	 *        The path of the image, in the form /<plug-in ID>/<path to the image>
+	 *            The path of the image, in the form /<plug-in ID>/<path to the image>
 	 * @return
 	 *         The Image at the given location, or null if none was found
 	 */
 	public Image getImageFromPlugin(String imagePath) {
-		if(imagePath.startsWith("/")) { //$NON-NLS-1$
+		if (imagePath.startsWith("/")) { //$NON-NLS-1$
 			String pluginId, path;
 			imagePath = imagePath.substring(1, imagePath.length());
 			pluginId = imagePath.substring(0, imagePath.indexOf("/")); //$NON-NLS-1$

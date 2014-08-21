@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,20 +21,20 @@ import org.eclipse.papyrus.customization.properties.util.ActionUtil;
 /**
  * An adapter for the EMF "Delete" Action, compatible with the
  * MoDisco customizable content provider.
- * 
+ *
  * @author Camille Letavernier
  */
 public class MoDiscoDeleteAction extends DeleteAction {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        The editing domain on which the action will be called
+	 *            The editing domain on which the action will be called
 	 * @param removeAllReferences
-	 *        If true, all references to the deleted object will be removed.
-	 *        This causes the whole resourceSet to be loaded, which may
-	 *        lead to performance issues.
+	 *            If true, all references to the deleted object will be removed.
+	 *            This causes the whole resourceSet to be loaded, which may
+	 *            lead to performance issues.
 	 */
 	public MoDiscoDeleteAction(EditingDomain domain, boolean removeAllReferences) {
 		super(domain, removeAllReferences);
@@ -42,22 +42,22 @@ public class MoDiscoDeleteAction extends DeleteAction {
 
 	/**
 	 * Constructor. All references to the deleted object will be removed.
-	 * 
+	 *
 	 * @param domain
-	 *        The editing domain on which the action will be called
+	 *            The editing domain on which the action will be called
 	 */
 	public MoDiscoDeleteAction(EditingDomain domain) {
 		super(domain);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param removeAllReferences
-	 *        If true, all references to the deleted object will be removed.
-	 *        This causes the whole resourceSet to be loaded, which may
-	 *        lead to performance issues.
+	 *            If true, all references to the deleted object will be removed.
+	 *            This causes the whole resourceSet to be loaded, which may
+	 *            lead to performance issues.
 	 */
 	public MoDiscoDeleteAction(boolean removeAllReferences) {
 		super(removeAllReferences);

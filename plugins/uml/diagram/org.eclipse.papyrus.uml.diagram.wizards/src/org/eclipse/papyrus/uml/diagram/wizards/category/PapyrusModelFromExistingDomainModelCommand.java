@@ -44,11 +44,11 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 	 * Instantiates a new papyrus model from existing domain model command.
 	 *
 	 * @param diResourceSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param newURI
-	 *        the URI of the new model's principal resource
+	 *            the URI of the new model's principal resource
 	 * @param root
-	 *        the root
+	 *            the root
 	 */
 	public PapyrusModelFromExistingDomainModelCommand(ModelSet modelSet, URI newURI, EObject root) {
 		super(modelSet.getTransactionalEditingDomain());
@@ -61,7 +61,7 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.transaction.RecordingCommand#doExecute()
 	 */
 	@Override
@@ -81,10 +81,10 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 					try {
 						resource = getResourceSet().getResource(resourceURI, true);
 					} catch (WrappedException e) {
-						if(ModelUtils.isDegradedModeAllowed(e.getCause())) {
+						if (ModelUtils.isDegradedModeAllowed(e.getCause())) {
 							// in this case Papyrus can work in degraded mode
 							resource = getResourceSet().getResource(resourceURI, false);
-							if(resource == null) {
+							if (resource == null) {
 								throw e;
 							}
 						} else {
@@ -97,10 +97,10 @@ public class PapyrusModelFromExistingDomainModelCommand extends RecordingCommand
 			};
 		};
 		myDiResourceSet.getInternal().registerModel(umlModel, true);
-		umlModel.createModel((URI)null);
+		umlModel.createModel((URI) null);
 
-		//					// call snippets to allow them to do their stuff
-		//					snippets.performStart(this);
+		// // call snippets to allow them to do their stuff
+		// snippets.performStart(this);
 		// END OF WORKAROUND for #315083
 	}
 

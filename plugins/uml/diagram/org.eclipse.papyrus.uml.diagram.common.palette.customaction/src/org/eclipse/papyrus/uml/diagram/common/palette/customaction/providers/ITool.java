@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ import org.eclipse.gef.EditPart;
 
 /**
  * An ITool must run a code from a given edit part
+ * 
  * @author tfaure
  *
  */
@@ -22,6 +23,7 @@ public interface ITool {
 
 	/**
 	 * Code the tool has to perform when the user has created the desired element
+	 * 
 	 * @param editPart
 	 */
 	void run(EditPart editPart);

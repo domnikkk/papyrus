@@ -21,8 +21,8 @@ import org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescr
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.impl.DataContextRootImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.impl.DataContextRootImpl#getModelElementFactory <em>Model Element Factory</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.impl.DataContextRootImpl#getLabel <em>Label</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.impl.DataContextRootImpl#getModelElementFactory <em>Model Element Factory</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	 * The cached value of the '{@link #getModelElementFactory() <em>Model Element Factory</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelElementFactory()
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DataContextRootImpl() {
@@ -71,6 +75,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -81,8 +86,10 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -90,27 +97,33 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLabel(String newLabel) {
 		String oldLabel = label;
 		label = newLabel;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ContextsPackage.DATA_CONTEXT_ROOT__LABEL, oldLabel, label));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ModelElementFactoryDescriptor getModelElementFactory() {
 		if (modelElementFactory != null && modelElementFactory.eIsProxy()) {
-			InternalEObject oldModelElementFactory = (InternalEObject)modelElementFactory;
-			modelElementFactory = (ModelElementFactoryDescriptor)eResolveProxy(oldModelElementFactory);
+			InternalEObject oldModelElementFactory = (InternalEObject) modelElementFactory;
+			modelElementFactory = (ModelElementFactoryDescriptor) eResolveProxy(oldModelElementFactory);
 			if (modelElementFactory != oldModelElementFactory) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY, oldModelElementFactory, modelElementFactory));
+				}
 			}
 		}
 		return modelElementFactory;
@@ -119,6 +132,7 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelElementFactoryDescriptor basicGetModelElementFactory() {
@@ -128,28 +142,34 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setModelElementFactory(ModelElementFactoryDescriptor newModelElementFactory) {
 		ModelElementFactoryDescriptor oldModelElementFactory = modelElementFactory;
 		modelElementFactory = newModelElementFactory;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY, oldModelElementFactory, modelElementFactory));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
-				return getLabel();
-			case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
-				if (resolve) return getModelElementFactory();
-				return basicGetModelElementFactory();
+		case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
+			return getLabel();
+		case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
+			if (resolve) {
+				return getModelElementFactory();
+			}
+			return basicGetModelElementFactory();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,17 +177,18 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
-				setLabel((String)newValue);
-				return;
-			case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
-				setModelElementFactory((ModelElementFactoryDescriptor)newValue);
-				return;
+		case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
+			setLabel((String) newValue);
+			return;
+		case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
+			setModelElementFactory((ModelElementFactoryDescriptor) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -175,17 +196,18 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
-				setLabel(LABEL_EDEFAULT);
-				return;
-			case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
-				setModelElementFactory((ModelElementFactoryDescriptor)null);
-				return;
+		case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
+			setLabel(LABEL_EDEFAULT);
+			return;
+		case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
+			setModelElementFactory((ModelElementFactoryDescriptor) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -193,15 +215,16 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
-				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
-				return modelElementFactory != null;
+		case ContextsPackage.DATA_CONTEXT_ROOT__LABEL:
+			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+		case ContextsPackage.DATA_CONTEXT_ROOT__MODEL_ELEMENT_FACTORY:
+			return modelElementFactory != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -209,11 +232,14 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (label: ");
@@ -222,4 +248,4 @@ public class DataContextRootImpl extends DataContextPackageImpl implements DataC
 		return result.toString();
 	}
 
-} //DataContextRootImpl
+} // DataContextRootImpl

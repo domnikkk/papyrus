@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2009 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -45,17 +45,18 @@ public class AddHyperLinkPopupBarBehavior extends Action {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 
 		// Parse selected GenLink(s) and add the desired CustomBehavior
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenNode) {
+			if (eObject instanceof GenNode) {
 
 				// Create the behavior required by stereotype management (if not already created)
-				if(!hasCustomBehavior((GenNode)eObject, POPUP_POLICY_KEY)) {
-					addCustomBehavior((GenNode)eObject, POPUP_POLICY_KEY, HYPERLINK_POPUPBAR_POLICY_CLASS);
+				if (!hasCustomBehavior((GenNode) eObject, POPUP_POLICY_KEY)) {
+					addCustomBehavior((GenNode) eObject, POPUP_POLICY_KEY, HYPERLINK_POPUPBAR_POLICY_CLASS);
 				}
 
 			}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 LIFL and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,14 +15,14 @@ package org.eclipse.papyrus.infra.core.serviceregistry;
 
 /**
  * Root Exception of Services Exception.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class ServiceException extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -35,7 +35,7 @@ public class ServiceException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 */
 	public ServiceException(String message) {
@@ -45,7 +45,7 @@ public class ServiceException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param cause
 	 */
 	public ServiceException(Throwable cause) {
@@ -55,7 +55,7 @@ public class ServiceException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 * @param cause
 	 */

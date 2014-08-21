@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,7 +62,7 @@ public class DiagnosticDialog extends ErrorDialog {
 
 	@Override
 	protected void buttonPressed(int id) {
-		switch(id) {
+		switch (id) {
 		case CREATE_MARKERS_ID:
 			createMarkers();
 			getButton(CREATE_MARKERS_ID).setEnabled(false);
@@ -81,9 +81,9 @@ public class DiagnosticDialog extends ErrorDialog {
 					Map<Resource, Diagnostic> partitions = partitionByResource(diagnostics);
 					SubMonitor subMonitor = SubMonitor.convert(monitor, partitions.size());
 
-					for(Map.Entry<Resource, Diagnostic> next : partitions.entrySet()) {
+					for (Map.Entry<Resource, Diagnostic> next : partitions.entrySet()) {
 						IMarkerProvider provider = getMarkerProvider(next.getKey());
-						if(provider == null) {
+						if (provider == null) {
 							// Just tick
 							subMonitor.worked(1);
 						} else {
@@ -106,14 +106,14 @@ public class DiagnosticDialog extends ErrorDialog {
 	protected Map<Resource, Diagnostic> partitionByResource(Diagnostic diagnostics) {
 		Map<Resource, Diagnostic> result = new LinkedHashMap<Resource, Diagnostic>();
 
-		if(!diagnostics.getChildren().isEmpty()) {
-			for(Diagnostic next : diagnostics.getChildren()) {
+		if (!diagnostics.getChildren().isEmpty()) {
+			for (Diagnostic next : diagnostics.getChildren()) {
 				Resource context = getContextResource(next);
-				if(context != null) {
-					DiagnosticChain chain = (DiagnosticChain)result.get(context);
-					if(chain == null) {
+				if (context != null) {
+					DiagnosticChain chain = (DiagnosticChain) result.get(context);
+					if (chain == null) {
 						chain = new BasicDiagnostic();
-						result.put(context, (Diagnostic)chain);
+						result.put(context, (Diagnostic) chain);
 					}
 					chain.add(next);
 				}
@@ -127,14 +127,14 @@ public class DiagnosticDialog extends ErrorDialog {
 		Resource result = null;
 
 		List<?> data = diagnostic.getData();
-		if((data != null) && !data.isEmpty()) {
-			for(Object next : data) {
-				if(next instanceof Resource) {
-					result = (Resource)next;
+		if ((data != null) && !data.isEmpty()) {
+			for (Object next : data) {
+				if (next instanceof Resource) {
+					result = (Resource) next;
 					break;
-				} else if(next instanceof EObject) {
-					result = ((EObject)next).eResource();
-					if(result != null) {
+				} else if (next instanceof EObject) {
+					result = ((EObject) next).eResource();
+					if (result != null) {
 						break;
 					}
 				}

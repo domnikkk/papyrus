@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.extensionpoints.editors.ui;
 
@@ -26,7 +26,7 @@ import org.eclipse.ui.menus.IWorkbenchContribution;
 import org.eclipse.ui.services.IServiceLocator;
 
 /**
- * 
+ *
  */
 public class DirectEditorsContributionItem extends ContributionItem implements IWorkbenchContribution {
 
@@ -38,7 +38,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 	private MenuItem subMenuItem;
 
 	/**
-	 * 
+	 *
 	 */
 	public DirectEditorsContributionItem() {
 		setId("org.eclipse.papyrus.editors.menuitem"); //$NON-NLS-1$
@@ -57,7 +57,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 	 */
 	@Override
 	public void dispose() {
-		if(subMenuItem != null && !subMenuItem.isDisposed()) {
+		if (subMenuItem != null && !subMenuItem.isDisposed()) {
 			subMenuItem.dispose();
 		}
 	}
@@ -82,7 +82,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 		// first case: this class was not able to retrieve the selection service
 		// or does not understand the current selection.
 		// does not build any sub-menu and returns.
-		if(selectedElement == null) {
+		if (selectedElement == null) {
 			return;
 		}
 
@@ -90,7 +90,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 		final Object businessObject = EMFHelper.getEObject(selectedElement);
 
 		// no object found: exit
-		if(businessObject == null) {
+		if (businessObject == null) {
 			return;
 		}
 
@@ -100,7 +100,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 		// if configurations is not empty, a submenu should open to select which
 		// editor to use...
 
-		if(configurations.size() < 1) {
+		if (configurations.size() < 1) {
 			return;
 		}
 
@@ -112,7 +112,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 		// create direct item, and then create sub-items
 		subMenuItem = new MenuItem(menu, SWT.CASCADE);
 		String type = ((businessObject instanceof EObject) ?
-				((EObject)businessObject).eClass().getName() : ""); //$NON-NLS-1$
+				((EObject) businessObject).eClass().getName() : ""); //$NON-NLS-1$
 
 		subMenuItem.setText("Edit " + type); //$NON-NLS-1$
 
@@ -122,15 +122,15 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 
 		// items on the submenu
 		// there are as many items as configurations
-		Class<?> fullType = ((businessObject instanceof EObject) ? ((EObject)businessObject).eClass().getInstanceClass() : null);
+		Class<?> fullType = ((businessObject instanceof EObject) ? ((EObject) businessObject).eClass().getInstanceClass() : null);
 		final DirectEditorExtensionPoint defaultConfig = DirectEditorExtensionPoint.getDefautDirectEditorConfiguration(fullType);
 
-		for(final DirectEditorExtensionPoint configuration : configurations) {
+		for (final DirectEditorExtensionPoint configuration : configurations) {
 			MenuItem item = new MenuItem(subMenu, SWT.NONE);
 			StringBuffer buffer = new StringBuffer();
 			buffer.append("Using "); //$NON-NLS-1$
 			buffer.append(configuration.getLanguage());
-			if(configuration.equals(defaultConfig)) {
+			if (configuration.equals(defaultConfig)) {
 				buffer.append(" (Default via F2)"); //$NON-NLS-1$
 			}
 			item.setText(buffer.toString());
@@ -149,7 +149,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 				public void widgetSelected(SelectionEvent e) {
 					// launch editor
 					GMFEmbeddedEditorActionDelegate actionDelegate = new GMFEmbeddedEditorActionDelegate();
-					actionDelegate.setActivePart(null, ((IMultiDiagramEditor)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor()).getActiveEditor());
+					actionDelegate.setActivePart(null, ((IMultiDiagramEditor) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor()).getActiveEditor());
 					actionDelegate.selectionChanged(null, getSelection());
 					actionDelegate.setExtensionPointConfiguration(configuration);
 					actionDelegate.run(null);
@@ -160,26 +160,26 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 
 	/**
 	 * Retrieves and return the current selected element
-	 * 
+	 *
 	 * @return the current selected element
 	 */
 	protected Object getSelectedElement() {
 		ISelection selection = getSelection();
 		// this checks if it is the good instance AND if it is not null
-		if(selection instanceof IStructuredSelection) {
-			return ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			return ((IStructuredSelection) selection).getFirstElement();
 		}
 		return null;
 	}
 
 	/**
 	 * Retrieves and return the current selection
-	 * 
+	 *
 	 * @return the current selection
 	 */
 	protected ISelection getSelection() {
 		ISelectionService selectionService = getSelectionService();
-		if(selectionService != null) {
+		if (selectionService != null) {
 			return selectionService.getSelection();
 		}
 		return null;
@@ -187,12 +187,12 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 
 	/**
 	 * Returns the selection service for the current workbench
-	 * 
+	 *
 	 * @return the selection service for the current workbench or <code>null</code> if no selection
 	 *         service was found.
 	 */
 	protected ISelectionService getSelectionService() {
-		ISelectionService selectionService = (ISelectionService)serviceLocator.getService(ISelectionService.class);
+		ISelectionService selectionService = (ISelectionService) serviceLocator.getService(ISelectionService.class);
 		return selectionService;
 	}
 
@@ -207,7 +207,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 	/**
 	 * The default implementation of this <code>IContributionItem</code> method does nothing.
 	 * Subclasses may override.
-	 * 
+	 *
 	 * @since 3.0
 	 */
 	@Override
@@ -217,7 +217,7 @@ public class DirectEditorsContributionItem extends ContributionItem implements I
 	/**
 	 * The default implementation of this <code>IContributionItem</code> method does nothing.
 	 * Subclasses may override.
-	 * 
+	 *
 	 * @since 3.0
 	 */
 	@Override

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -31,7 +31,7 @@ public class GetOrCreateJavaImplementationWidgetComposite extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this widget.
 	 * @param properties
@@ -72,6 +72,7 @@ public class GetOrCreateJavaImplementationWidgetComposite extends
 	protected SelectOrCreateJavaClassWizard createIWizard() {
 		SelectOrCreateJavaClassWizard classCreation = null;
 		final IDialogCallback<String> callBack = new IDialogCallback<String>() {
+			@Override
 			public void committed(final String result) {
 				GetOrCreateJavaImplementationWidgetComposite.this
 						.onWizardCommited(result);

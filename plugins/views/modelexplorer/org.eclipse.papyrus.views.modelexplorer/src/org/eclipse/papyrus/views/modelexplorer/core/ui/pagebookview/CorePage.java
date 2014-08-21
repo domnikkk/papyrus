@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,10 +32,10 @@ public class CorePage extends Page {
 	 * The default ui
 	 */
 	private Text text;
-	
+
 	private IWorkbenchPart part;
-	
-	
+
+
 	/**
 	 * Constructor.
 	 *
@@ -43,7 +43,7 @@ public class CorePage extends Page {
 	public CorePage(IWorkbenchPart part) {
 		this.part = part;
 	}
-	
+
 	/**
 	 * @see org.eclipse.ui.part.Page#createControl(org.eclipse.swt.widgets.Composite)
 	 *
@@ -65,6 +65,7 @@ public class CorePage extends Page {
 	public Control getControl() {
 		return text;
 	}
+
 	/**
 	 * @see org.eclipse.ui.part.Page#setFocus()
 	 *

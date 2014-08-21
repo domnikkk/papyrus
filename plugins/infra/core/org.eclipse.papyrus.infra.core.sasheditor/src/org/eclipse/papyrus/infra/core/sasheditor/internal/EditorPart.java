@@ -24,7 +24,6 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.sasheditor.Activator;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel;
 import org.eclipse.papyrus.infra.core.sasheditor.editor.IEditorPage;
-import org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPart.GarbageState;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.eclipsecopy.IMultiPageEditorSite;
 import org.eclipse.papyrus.infra.core.sasheditor.internal.eclipsecopy.MultiPageEditorSite;
 import org.eclipse.swt.SWT;
@@ -79,7 +78,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	/**
 	 * The MultiPageContainer system. This is the manager of all tiles.
 	 */
-	//	private SashWindowsContainer tilesContainer;
+	// private SashWindowsContainer tilesContainer;
 
 	/**
 	 * The manager used to access main editor properties like site, actionbars, ...
@@ -90,7 +89,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Parent owning this PagePart.
 	 * Can be null if the Part is orphaned. Even if it is orphaned, the Item still set.
 	 */
-	//	protected TabFolderPart parent;
+	// protected TabFolderPart parent;
 
 	/**
 	 * Listen on mouse enter event.
@@ -107,8 +106,8 @@ public class EditorPart extends PagePart implements IEditorPage {
 		 */
 		@Override
 		public void handleEvent(Event event) {
-			//			Point globalPos = new Point(event.x, event.y);
-			//			System.out.println(this.getClass().getSimpleName() + ".handleEvent(" + eventName(event.type) + ", " + globalPos + ")");
+			// Point globalPos = new Point(event.x, event.y);
+			// System.out.println(this.getClass().getSimpleName() + ".handleEvent(" + eventName(event.type) + ", " + globalPos + ")");
 		}
 	};
 
@@ -132,36 +131,36 @@ public class EditorPart extends PagePart implements IEditorPage {
 	};
 
 	// To be removed
-	//	private String eventName(int eventType) {
-	//		switch(eventType) {
-	//		case SWT.MouseEnter:
-	//			return "MouseEnter";
-	//		case SWT.MouseDown:
-	//			return "MouseDown";
-	//		case SWT.MouseExit:
-	//			return "MouseExit";
-	//		case SWT.MouseHover:
-	//			return "MouseHover";
-	//		case SWT.FocusIn:
-	//			return "FocusIn";
-	//		case SWT.FocusOut:
-	//			return "FocusOut";
-	//		case SWT.MouseMove:
-	//			return "MouseMove";
-	//		case SWT.MouseUp:
-	//			return "MouseUp";
-	//		case SWT.Activate:
-	//			return "Activate";
-	//		default:
-	//			return Integer.toString(eventType);
-	//		}
-	//	}
+	// private String eventName(int eventType) {
+	// switch(eventType) {
+	// case SWT.MouseEnter:
+	// return "MouseEnter";
+	// case SWT.MouseDown:
+	// return "MouseDown";
+	// case SWT.MouseExit:
+	// return "MouseExit";
+	// case SWT.MouseHover:
+	// return "MouseHover";
+	// case SWT.FocusIn:
+	// return "FocusIn";
+	// case SWT.FocusOut:
+	// return "FocusOut";
+	// case SWT.MouseMove:
+	// return "MouseMove";
+	// case SWT.MouseUp:
+	// return "MouseUp";
+	// case SWT.Activate:
+	// return "Activate";
+	// default:
+	// return Integer.toString(eventType);
+	// }
+	// }
 
 	/**
 	 * Constructor.
 	 *
 	 * @param editorModel
-	 *        The model of the editor.
+	 *            The model of the editor.
 	 */
 	public EditorPart(TabFolderPart parent, IEditorModel editorModel, Object rawModel, IMultiEditorManager multiEditorManager) {
 		super(parent, rawModel);
@@ -176,18 +175,18 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * This method forward to {@link createPartControl(Composite)}.
 	 *
 	 * @param parent
-	 *        TODO remove ?
+	 *            TODO remove ?
 	 */
-	//	public void createControl(Composite parent) {
-	//		createPartControl(parent);
-	//	}
+	// public void createControl(Composite parent) {
+	// createPartControl(parent);
+	// }
 
 
 	/**
 	 * Create the control of this Part, and children's controls.
 	 *
 	 * @param parent
-	 *        The SWT parent of this EditorPart. This is usually the {@link TabFolderPart}'s control.
+	 *            The SWT parent of this EditorPart. This is usually the {@link TabFolderPart}'s control.
 	 */
 	@Override
 	public void createPartControl(Composite parent) {
@@ -201,14 +200,14 @@ public class EditorPart extends PagePart implements IEditorPage {
 		} catch (PartInitException e) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getLocalizedMessage(), e));
 			// TODO Create a fake Error Page and initialize this part with.
-			//			editorPart = new ErrorEditorPart();
-			//			editorControl = createEditorPartControl(parent, editorPart);
-			//			editorControl = createErrorPartControl(parent, e);
+			// editorPart = new ErrorEditorPart();
+			// editorControl = createEditorPartControl(parent, editorPart);
+			// editorControl = createErrorPartControl(parent, e);
 			createErrorEditorPart(parent, e);
 		} catch (Exception e) {
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, e.getLocalizedMessage(), e));
 			// TODO Create a fake Error Page and initialize this part with.
-			//			editorControl = createErrorPartControl(parent, e);
+			// editorControl = createErrorPartControl(parent, e);
 			createErrorEditorPart(parent, e);
 		}
 	}
@@ -217,9 +216,9 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Create a Control showing the error.
 	 *
 	 * @param parent
-	 *        Parent Control to which the Created Control should be attached
+	 *            Parent Control to which the Created Control should be attached
 	 * @param e
-	 *        Exception containing the error.
+	 *            Exception containing the error.
 	 */
 	private Composite createErrorPartControl(Composite parent, Exception e) {
 
@@ -304,7 +303,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 		});
 
 		// TODO test to be removed
-		//				attachListeners(editorParent, false);
+		// attachListeners(editorParent, false);
 		return editorParent;
 	}
 
@@ -315,49 +314,49 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 		// All following methods listen to the same event.
 		// So use only one of them
-		//		theControl.addListener(SWT.MouseEnter, mouseEnterListener);
+		// theControl.addListener(SWT.MouseEnter, mouseEnterListener);
 		//
-		//		theControl.addListener(SWT.FocusIn, mouseEnterListener);
-		//		theControl.addListener(SWT.MouseMove, mouseEnterListener);
-		//		theControl.addListener(SWT.MouseHover, mouseEnterListener);
-		//		theControl.addListener(SWT.MouseUp, mouseEnterListener);
-		//		theControl.addListener(SWT.MouseDown, mouseEnterListener);
+		// theControl.addListener(SWT.FocusIn, mouseEnterListener);
+		// theControl.addListener(SWT.MouseMove, mouseEnterListener);
+		// theControl.addListener(SWT.MouseHover, mouseEnterListener);
+		// theControl.addListener(SWT.MouseUp, mouseEnterListener);
+		// theControl.addListener(SWT.MouseDown, mouseEnterListener);
 		theControl.addListener(SWT.Activate, mouseEnterListener);
 
-		//		if (recursive && theControl instanceof Composite) {
-		//			Composite composite = (Composite) theControl;
-		//			Control[] children = composite.getChildren();
+		// if (recursive && theControl instanceof Composite) {
+		// Composite composite = (Composite) theControl;
+		// Control[] children = composite.getChildren();
 		//
-		//			for (int i = 0; i < children.length; i++) {
-		//				Control control = children[i];
+		// for (int i = 0; i < children.length; i++) {
+		// Control control = children[i];
 		//
-		//				attachListeners(control, true);
-		//			}
-		//		}
+		// attachListeners(control, true);
+		// }
+		// }
 	}
 
 	/**
 	 * Detach SWT listeners
 	 */
 	private void detachListeners(Control theControl, boolean recursive) {
-		//		theControl.removeListener(SWT.MouseEnter, mouseEnterListener);
-		//		theControl.removeListener(SWT.FocusIn, mouseEnterListener);
-		//		theControl.removeListener(SWT.MouseMove, mouseEnterListener);
-		//		theControl.removeListener(SWT.MouseHover, mouseEnterListener);
-		//		theControl.removeListener(SWT.MouseUp, mouseEnterListener);
-		//		theControl.removeListener(SWT.MouseDown, mouseEnterListener);
+		// theControl.removeListener(SWT.MouseEnter, mouseEnterListener);
+		// theControl.removeListener(SWT.FocusIn, mouseEnterListener);
+		// theControl.removeListener(SWT.MouseMove, mouseEnterListener);
+		// theControl.removeListener(SWT.MouseHover, mouseEnterListener);
+		// theControl.removeListener(SWT.MouseUp, mouseEnterListener);
+		// theControl.removeListener(SWT.MouseDown, mouseEnterListener);
 		theControl.removeListener(SWT.Activate, mouseEnterListener);
 
-		//		if (recursive && theControl instanceof Composite) {
-		//			Composite composite = (Composite) theControl;
-		//			Control[] children = composite.getChildren();
+		// if (recursive && theControl instanceof Composite) {
+		// Composite composite = (Composite) theControl;
+		// Control[] children = composite.getChildren();
 		//
-		//			for (int i = 0; i < children.length; i++) {
-		//				Control control = children[i];
+		// for (int i = 0; i < children.length; i++) {
+		// Control control = children[i];
 		//
-		//				detachListeners(control, false);
-		//			}
-		//		}
+		// detachListeners(control, false);
+		// }
+		// }
 	}
 
 
@@ -373,7 +372,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * </p>
 	 *
 	 * @param propertyId
-	 *        the id of the property that changed
+	 *            the id of the property that changed
 	 */
 	private void handlePropertyChange(int propertyId) {
 		getSashWindowContainer().firePropertyChange(propertyId);
@@ -385,7 +384,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * reimplement to create more specialized sites.
 	 *
 	 * @param editor
-	 *        the nested editor
+	 *            the nested editor
 	 * @return the editor site
 	 */
 	protected IEditorSite createSite(IEditorPart editor) {
@@ -415,8 +414,8 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * @see SWT#NONE
 	 */
 	private int getOrientation(IEditorPart editor) {
-		if(editor instanceof IWorkbenchPartOrientation) {
-			return ((IWorkbenchPartOrientation)editor).getOrientation();
+		if (editor instanceof IWorkbenchPartOrientation) {
+			return ((IWorkbenchPartOrientation) editor).getOrientation();
 		}
 		return Window.getDefaultOrientation();
 	}
@@ -444,11 +443,11 @@ public class EditorPart extends PagePart implements IEditorPage {
 		// This should also trigger the disposal of associated editor.
 		editorControl.dispose();
 		// Dispose the editor.
-		//		disposeEditorPart();
+		// disposeEditorPart();
 
 		// clean up properties to help GC
 		editorModel = null;
-		//		editorPart = null;
+		// editorPart = null;
 		rawModel = null;
 	}
 
@@ -466,7 +465,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 
 		// clean up properties to help GC
 		editorModel = null;
-		//		editorPart = null;
+		// editorPart = null;
 		rawModel = null;
 	}
 
@@ -476,13 +475,13 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Do not dispose it twice.
 	 *
 	 * @param part
-	 *        The part to dispose; must not be <code>null</code>.
+	 *            The part to dispose; must not be <code>null</code>.
 	 * @copy copied from org.eclipse.ui.part.MultiPageEditorPart.disposePart(IWorkbenchPart) v3.8
 	 */
 	private void disposeEditorPart() {
 
 		// Is the editor already disposed ?
-		if(editorPart == null) {
+		if (editorPart == null) {
 			return;
 		}
 
@@ -495,8 +494,8 @@ public class EditorPart extends PagePart implements IEditorPage {
 			public void run() {
 				IWorkbenchPartSite partSite = part.getSite();
 				part.dispose();
-				if(partSite instanceof IMultiPageEditorSite) {
-					((IMultiPageEditorSite)partSite).dispose();
+				if (partSite instanceof IMultiPageEditorSite) {
+					((IMultiPageEditorSite) partSite).dispose();
 				}
 			}
 
@@ -528,7 +527,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	@Override
 	public PagePart findPartAt(Point toFind, Class<?> expectedTileType) {
 
-		if(expectedTileType == this.getClass()) {
+		if (expectedTileType == this.getClass()) {
 			return this;
 		}
 
@@ -542,7 +541,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * @return
 	 */
 	public PagePart findPart(Object control) {
-		if(getControl() == control) {
+		if (getControl() == control) {
 			return this;
 		}
 
@@ -617,9 +616,9 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Do not detach the Tile from its old parent.
 	 *
 	 * @param newParent
-	 *        The tilePart that should be used as part parent.
+	 *            The tilePart that should be used as part parent.
 	 * @param compositeParent
-	 *        The composite that should be used as parent.
+	 *            The composite that should be used as parent.
 	 */
 	@Override
 	public void reparent(TabFolderPart newParent) {
@@ -630,7 +629,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 		editorControl.setParent(newParent.getControl());
 
 		// Change state
-		if(garbageState == GarbageState.UNVISITED || garbageState == GarbageState.ORPHANED || garbageState == GarbageState.CREATED) {
+		if (garbageState == GarbageState.UNVISITED || garbageState == GarbageState.ORPHANED || garbageState == GarbageState.CREATED) {
 			garbageState = GarbageState.REPARENTED;
 		} else {
 			// Bad state, this is an internal error
@@ -647,7 +646,7 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 */
 	@Override
 	public void setFocus() {
-		if(editorPart != null) {
+		if (editorPart != null) {
 			try {
 				editorPart.setFocus();
 			} catch (Exception ex) {
@@ -715,12 +714,12 @@ public class EditorPart extends PagePart implements IEditorPage {
 	 * Show item status.
 	 */
 	protected void showStatus() {
-		//		System.out.println( "EditorTile: "
-		//				+ " disposed=" + editorControl.isDisposed()
-		//				+ ", visible=" + editorControl.isVisible()
-		//				+ ", garbState=" + garbageState
-		//				+ ", '" + editorPart.getTitle()
-		//				+ "', " + this);
+		// System.out.println( "EditorTile: "
+		// + " disposed=" + editorControl.isDisposed()
+		// + ", visible=" + editorControl.isVisible()
+		// + ", garbState=" + garbageState
+		// + ", '" + editorPart.getTitle()
+		// + "', " + this);
 		String title = (editorPart != null ? editorPart.getTitle() : "no editorPart");
 		System.out.printf("EditorTile: disposed=%-5b, visible=%-5b, garbState=%-10s, %s, %s\n", editorControl.isDisposed(), (editorControl.isDisposed() ? false : editorControl.isVisible()), garbageState, title, this);
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,18 +19,18 @@ import org.eclipse.jface.viewers.ITreeContentProvider;
  * The other ones are displayed only to show the hierarchy.
  * This interface allows the user to specify which elements he is interested
  * in.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public interface IHierarchicContentProvider extends ITreeContentProvider {
 
 	/**
 	 * Indicates if the given is a valid value. Only valid values can be
 	 * chosen.
-	 * 
+	 *
 	 * @param element
-	 *        The element to test
+	 *            The element to test
 	 * @return
 	 *         True if the element is a valid value
 	 */

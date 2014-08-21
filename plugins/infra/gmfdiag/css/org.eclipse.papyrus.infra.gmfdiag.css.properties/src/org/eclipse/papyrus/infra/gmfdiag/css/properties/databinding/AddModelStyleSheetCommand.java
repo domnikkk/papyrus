@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,11 +34,11 @@ public class AddModelStyleSheetCommand extends RecordingCommand {
 	 * Instantiates a new adds the model style sheet command.
 	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param object
-	 *        the object
+	 *            the object
 	 */
 	public AddModelStyleSheetCommand(TransactionalEditingDomain domain, Resource resource, EObject object) {
 		super(domain);
@@ -51,6 +51,7 @@ public class AddModelStyleSheetCommand extends RecordingCommand {
 	 *
 	 */
 
+	@Override
 	public void doExecute() {
 		resource.getContents().add(object);
 	}

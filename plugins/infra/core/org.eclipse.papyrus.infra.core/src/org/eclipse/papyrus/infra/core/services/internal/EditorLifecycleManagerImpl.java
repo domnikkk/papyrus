@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,66 +27,80 @@ public class EditorLifecycleManagerImpl implements EditorLifecycleManager, Inter
 
 	private final Set<EditorLifecycleEventListener> listeners = new HashSet<EditorLifecycleEventListener>();
 
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void startService() throws ServiceException {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void disposeService() throws ServiceException {
 		listeners.clear();
 	}
 
+	@Override
 	public void addEditorLifecycleEventsListener(EditorLifecycleEventListener listener) {
 		listeners.add(listener);
 	}
 
+	@Override
 	public void removeEditorLifecycleEventsListener(EditorLifecycleEventListener listener) {
 		listeners.remove(listener);
 	}
 
+	@Override
 	public void firePostInit(final IMultiDiagramEditor editor) {
-		for(final EditorLifecycleEventListener listener : listeners) {
+		for (final EditorLifecycleEventListener listener : listeners) {
 			SafeRunner.run(new ISafeRunnable() {
 
+				@Override
 				public void run() throws Exception {
 					listener.postInit(editor);
 				}
 
+				@Override
 				public void handleException(Throwable exception) {
-					//Already logged by the SafeRunner
+					// Already logged by the SafeRunner
 				}
 			});
 		}
 	}
 
+	@Override
 	public void firePostDisplay(final IMultiDiagramEditor editor) {
-		for(final EditorLifecycleEventListener listener : listeners) {
+		for (final EditorLifecycleEventListener listener : listeners) {
 			SafeRunner.run(new ISafeRunnable() {
 
+				@Override
 				public void run() throws Exception {
 					listener.postDisplay(editor);
 				}
 
+				@Override
 				public void handleException(Throwable exception) {
-					//Already logged by the SafeRunner
+					// Already logged by the SafeRunner
 				}
 			});
 		}
 	}
 
+	@Override
 	public void fireBeforeClose(final IMultiDiagramEditor editor) {
-		for(final EditorLifecycleEventListener listener : listeners) {
+		for (final EditorLifecycleEventListener listener : listeners) {
 			SafeRunner.run(new ISafeRunnable() {
 
+				@Override
 				public void run() throws Exception {
 					listener.beforeClose(editor);
 				}
 
+				@Override
 				public void handleException(Throwable exception) {
-					//Already logged by the SafeRunner
+					// Already logged by the SafeRunner
 				}
 			});
 		}

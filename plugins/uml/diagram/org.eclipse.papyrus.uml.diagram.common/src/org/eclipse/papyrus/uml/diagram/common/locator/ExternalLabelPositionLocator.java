@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class ExternalLabelPositionLocator implements IBorderItemLocator {
 
 	/**
 	 * get the location constraint
-	 * 
+	 *
 	 * @return the constraint
 	 */
 	public Rectangle getConstraint() {
@@ -46,46 +46,49 @@ public class ExternalLabelPositionLocator implements IBorderItemLocator {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle,
-	 *      org.eclipse.draw2d.IFigure)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle, org.eclipse.draw2d.IFigure)
+	 *
 	 * @param proposedLocation
 	 * @param borderItem
 	 * @return the valid location
 	 */
+	@Override
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		return new Rectangle(proposedLocation);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#setConstraint(org.eclipse.draw2d.geometry.Rectangle)
-	 * 
+	 *
 	 * @param constraint
 	 */
+	@Override
 	public void setConstraint(Rectangle constraint) {
 		this.constraint = constraint;
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getCurrentSideOfParent()
-	 * 
+	 *
 	 * @return current side of parent
 	 */
+	@Override
 	public int getCurrentSideOfParent() {
 		// Not used.
 		return PositionConstants.NONE;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Locator#relocate(org.eclipse.draw2d.IFigure)
-	 * 
+	 *
 	 * @param target
 	 */
+	@Override
 	public void relocate(IFigure target) {
 
 		Rectangle proposedBounds = constraint.getCopy();

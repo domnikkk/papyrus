@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,11 +34,11 @@ public class DebugUtils {
 
 	/**
 	 * Get loger
-	 * 
+	 *
 	 * @return
 	 */
 	public static LogHelper getLog() {
-		if(log == null) {
+		if (log == null) {
 			log = new LogHelper(UMLDiagramEditorPlugin.getInstance());
 		}
 		return log;
@@ -46,7 +46,7 @@ public class DebugUtils {
 
 	/**
 	 * return true if debugging
-	 * 
+	 *
 	 * @return
 	 */
 	public static boolean isDebugging() {
@@ -55,14 +55,14 @@ public class DebugUtils {
 
 	/**
 	 * Display a multi map
-	 * 
+	 *
 	 * @param message
 	 * @param multimap
 	 */
 	public static void displayMultipmapDebug(String message, Multimap<EReference, EObject> multimap) {
-		if(DebugUtils.isDebugging()) {
+		if (DebugUtils.isDebugging()) {
 			DebugUtils.getLog().debug(message);
-			for(Entry<EReference, EObject> e : multimap.entries()) {
+			for (Entry<EReference, EObject> e : multimap.entries()) {
 				StringBuilder stringBuilder = new StringBuilder();
 				stringBuilder.append(Utils.getCorrectLabel(e.getValue()));
 				stringBuilder.append(" --> ");

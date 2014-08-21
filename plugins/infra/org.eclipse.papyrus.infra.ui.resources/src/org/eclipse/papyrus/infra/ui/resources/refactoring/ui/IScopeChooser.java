@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,29 +20,29 @@ import org.eclipse.core.resources.IFile;
 
 /**
  * Interface for elements getting related files from a file
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public interface IScopeChooser {
 
 	/**
 	 * The name or label of the chooser
-	 * 
+	 *
 	 * @return
 	 */
 	public String getName();
 
 	/**
 	 * The description to inform user
-	 * 
+	 *
 	 * @return
 	 */
 	public String getDescription();
 
 	/**
 	 * Return the list of files related to the given parameter
-	 * 
+	 *
 	 * @param f
 	 * @return
 	 */

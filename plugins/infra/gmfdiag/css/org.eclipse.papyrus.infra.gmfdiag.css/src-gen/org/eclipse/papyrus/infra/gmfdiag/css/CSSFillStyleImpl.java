@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,62 +29,65 @@ public class CSSFillStyleImpl extends FillStyleImpl implements CSSFillStyle {
 	private CSSFillStyle fillStyle;
 
 	protected CSSFillStyle getFillStyle() {
-		if(fillStyle == null) {
+		if (fillStyle == null) {
 			fillStyle = new CSSFillStyleDelegate(this, getEngine());
 		}
 		return fillStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)findView().getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) findView().getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 	protected View findView() {
 		EObject parent = eContainer();
-		while(!(parent instanceof View) && parent != null) {
+		while (!(parent instanceof View) && parent != null) {
 			parent = parent.eContainer();
 		}
 
-		if(parent != null) {
-			return (View)parent;
+		if (parent != null) {
+			return (View) parent;
 		}
 
 		return null;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public int getCSSFillColor() {
 		int value = super.getFillColor();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getFillStyle_FillColor(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getFillStyle_FillColor(), value)) {
 			return value;
 		} else {
 			return getFillStyle().getCSSFillColor();
 		}
 	}
 
+	@Override
 	public int getCSSTransparency() {
 		int value = super.getTransparency();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getFillStyle_Transparency(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getFillStyle_Transparency(), value)) {
 			return value;
 		} else {
 			return getFillStyle().getCSSTransparency();
 		}
 	}
 
+	@Override
 	public org.eclipse.gmf.runtime.notation.datatype.GradientData getCSSGradient() {
 		org.eclipse.gmf.runtime.notation.datatype.GradientData value = super.getGradient();
 
-		if(ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getFillStyle_Gradient(), value)) {
+		if (ForceValueHelper.isSet(findView(), this, NotationPackage.eINSTANCE.getFillStyle_Gradient(), value)) {
 			return value;
 		} else {
 			return getFillStyle().getCSSGradient();
@@ -94,27 +97,27 @@ public class CSSFillStyleImpl extends FillStyleImpl implements CSSFillStyle {
 
 	@Override
 	public int getFillColor() {
-		//return super.getFillColor();
+		// return super.getFillColor();
 		return getCSSFillColor();
 	}
 
 	@Override
 	public int getTransparency() {
-		//return super.getTransparency();
+		// return super.getTransparency();
 		return getCSSTransparency();
 	}
 
 	@Override
 	public org.eclipse.gmf.runtime.notation.datatype.GradientData getGradient() {
-		//return super.getGradient();
+		// return super.getGradient();
 		return getCSSGradient();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setFillColor(int value) {
@@ -140,9 +143,9 @@ public class CSSFillStyleImpl extends FillStyleImpl implements CSSFillStyle {
 		ForceValueHelper.setValue(findView(), feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

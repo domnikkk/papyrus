@@ -44,13 +44,13 @@ public class ImportPackageFromUserModelHandler extends AbstractImportHandler {
 		 * Creates a new ImportLibraryFromRepositoryCommand
 		 *
 		 * @param editingDomain
-		 *        editing domain that manages the changed objects
+		 *            editing domain that manages the changed objects
 		 * @param runnable
-		 *        process that executes the modifications
+		 *            process that executes the modifications
 		 * @param label
-		 *        the label of the command
+		 *            the label of the command
 		 * @param description
-		 *        description of the command
+		 *            description of the command
 		 */
 		public ImportFromFileCommand() {
 			super(new Runnable() {
@@ -67,19 +67,19 @@ public class ImportPackageFromUserModelHandler extends AbstractImportHandler {
 
 					Collection<Package> packages = PackageImportSourceDialog.open(shell, "Select the models to import", getSelection(), extensionFilters);
 
-					if(packages == null) {
+					if (packages == null) {
 						return; // user cancelled the dialog
 					}
 
-					if(!packages.isEmpty()) {
+					if (!packages.isEmpty()) {
 						PackageImportDialog dialog = new PackageImportDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), packages);
 
-						if(dialog.open() == Window.OK) {
+						if (dialog.open() == Window.OK) {
 							Collection<ImportSpec<Package>> result = dialog.getResult();
 
-							for(ImportSpec<Package> resultElement : result) {
+							for (ImportSpec<Package> resultElement : result) {
 								Package selectedPackage = resultElement.getElement();
-								switch(resultElement.getAction()) {
+								switch (resultElement.getAction()) {
 								case COPY:
 									handleCopyPackage(selectedPackage);
 									break;

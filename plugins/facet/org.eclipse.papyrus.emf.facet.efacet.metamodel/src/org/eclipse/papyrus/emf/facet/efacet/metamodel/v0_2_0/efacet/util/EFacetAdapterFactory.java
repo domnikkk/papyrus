@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *  Gregoire Dupe (Mia-Software) - Bug 364325 - [Restructuring] The user must be able to navigate into a model using the Facet.
  */
@@ -28,7 +28,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.*;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Category;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DocumentedElement;
@@ -46,6 +45,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterVal
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.EFacetPackage
  * @generated
  */
@@ -54,6 +54,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static EFacetPackage modelPackage;
@@ -62,6 +63,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EFacetAdapterFactory() {
@@ -75,6 +77,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -84,7 +87,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -93,103 +96,125 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EFacetSwitch<Adapter> modelSwitch =
-		new EFacetSwitch<Adapter>() {
-			@Override
-			public Adapter caseFacetAttribute(FacetAttribute object) {
-				return createFacetAttributeAdapter();
-			}
-			@Override
-			public Adapter caseFacetReference(FacetReference object) {
-				return createFacetReferenceAdapter();
-			}
-			@Override
-			public Adapter caseFacetOperation(FacetOperation object) {
-				return createFacetOperationAdapter();
-			}
-			@Override
-			public Adapter caseFacetSet(FacetSet object) {
-				return createFacetSetAdapter();
-			}
-			@Override
-			public Adapter caseFacet(Facet object) {
-				return createFacetAdapter();
-			}
-			@Override
-			public Adapter caseCategory(Category object) {
-				return createCategoryAdapter();
-			}
-			@Override
-			public Adapter caseFacetElement(FacetElement object) {
-				return createFacetElementAdapter();
-			}
-			@Override
-			public Adapter caseDerivedTypedElement(DerivedTypedElement object) {
-				return createDerivedTypedElementAdapter();
-			}
-			@Override
-			public Adapter caseParameterValue(ParameterValue object) {
-				return createParameterValueAdapter();
-			}
-			@Override
-			public Adapter caseDocumentedElement(DocumentedElement object) {
-				return createDocumentedElementAdapter();
-			}
-			@Override
-			public Adapter caseEModelElement(EModelElement object) {
-				return createEModelElementAdapter();
-			}
-			@Override
-			public Adapter caseENamedElement(ENamedElement object) {
-				return createENamedElementAdapter();
-			}
-			@Override
-			public Adapter caseETypedElement(ETypedElement object) {
-				return createETypedElementAdapter();
-			}
-			@Override
-			public Adapter caseEStructuralFeature(EStructuralFeature object) {
-				return createEStructuralFeatureAdapter();
-			}
-			@Override
-			public Adapter caseEAttribute(EAttribute object) {
-				return createEAttributeAdapter();
-			}
-			@Override
-			public Adapter caseEReference(EReference object) {
-				return createEReferenceAdapter();
-			}
-			@Override
-			public Adapter caseEOperation(EOperation object) {
-				return createEOperationAdapter();
-			}
-			@Override
-			public Adapter caseEPackage(EPackage object) {
-				return createEPackageAdapter();
-			}
-			@Override
-			public Adapter caseEClassifier(EClassifier object) {
-				return createEClassifierAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new EFacetSwitch<Adapter>() {
+				@Override
+				public Adapter caseFacetAttribute(FacetAttribute object) {
+					return createFacetAttributeAdapter();
+				}
+
+				@Override
+				public Adapter caseFacetReference(FacetReference object) {
+					return createFacetReferenceAdapter();
+				}
+
+				@Override
+				public Adapter caseFacetOperation(FacetOperation object) {
+					return createFacetOperationAdapter();
+				}
+
+				@Override
+				public Adapter caseFacetSet(FacetSet object) {
+					return createFacetSetAdapter();
+				}
+
+				@Override
+				public Adapter caseFacet(Facet object) {
+					return createFacetAdapter();
+				}
+
+				@Override
+				public Adapter caseCategory(Category object) {
+					return createCategoryAdapter();
+				}
+
+				@Override
+				public Adapter caseFacetElement(FacetElement object) {
+					return createFacetElementAdapter();
+				}
+
+				@Override
+				public Adapter caseDerivedTypedElement(DerivedTypedElement object) {
+					return createDerivedTypedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseParameterValue(ParameterValue object) {
+					return createParameterValueAdapter();
+				}
+
+				@Override
+				public Adapter caseDocumentedElement(DocumentedElement object) {
+					return createDocumentedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseEModelElement(EModelElement object) {
+					return createEModelElementAdapter();
+				}
+
+				@Override
+				public Adapter caseENamedElement(ENamedElement object) {
+					return createENamedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseETypedElement(ETypedElement object) {
+					return createETypedElementAdapter();
+				}
+
+				@Override
+				public Adapter caseEStructuralFeature(EStructuralFeature object) {
+					return createEStructuralFeatureAdapter();
+				}
+
+				@Override
+				public Adapter caseEAttribute(EAttribute object) {
+					return createEAttributeAdapter();
+				}
+
+				@Override
+				public Adapter caseEReference(EReference object) {
+					return createEReferenceAdapter();
+				}
+
+				@Override
+				public Adapter caseEOperation(EOperation object) {
+					return createEOperationAdapter();
+				}
+
+				@Override
+				public Adapter caseEPackage(EPackage object) {
+					return createEPackageAdapter();
+				}
+
+				@Override
+				public Adapter caseEClassifier(EClassifier object) {
+					return createEClassifierAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -199,6 +224,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetAttribute
 	 * @generated
@@ -213,6 +239,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetReference
 	 * @generated
@@ -227,6 +254,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation
 	 * @generated
@@ -241,6 +269,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet
 	 * @generated
@@ -255,6 +284,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet
 	 * @generated
@@ -269,6 +299,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Category
 	 * @generated
@@ -283,6 +314,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetElement
 	 * @generated
@@ -297,6 +329,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement
 	 * @generated
@@ -311,6 +344,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterValue
 	 * @generated
@@ -325,6 +359,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DocumentedElement
 	 * @generated
@@ -339,6 +374,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
@@ -353,6 +389,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.ENamedElement
 	 * @generated
@@ -367,6 +404,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.ETypedElement
 	 * @generated
@@ -381,6 +419,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EStructuralFeature
 	 * @generated
@@ -395,6 +434,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EAttribute
 	 * @generated
@@ -409,6 +449,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EReference
 	 * @generated
@@ -423,6 +464,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EOperation
 	 * @generated
@@ -437,6 +479,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EPackage
 	 * @generated
@@ -451,6 +494,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.EClassifier
 	 * @generated
@@ -464,6 +508,7 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -471,4 +516,4 @@ public class EFacetAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //EFacetAdapterFactory
+} // EFacetAdapterFactory

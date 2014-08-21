@@ -30,9 +30,10 @@ public abstract class AbstractCustomCommand extends AbstractTransactionalCommand
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<IFile> getAffectedFiles() {
 		if (viewer != null) {
 			EditPart editpart = viewer.getRootEditPart().getContents();
@@ -64,7 +65,7 @@ public abstract class AbstractCustomCommand extends AbstractTransactionalCommand
 
 	/**
 	 * used to set the node
-	 * 
+	 *
 	 * @param newNode
 	 *            the newNode to set
 	 */
@@ -74,7 +75,7 @@ public abstract class AbstractCustomCommand extends AbstractTransactionalCommand
 
 	/**
 	 * used to obtain the created node.
-	 * 
+	 *
 	 * @return the created node
 	 */
 	public View getNode() {

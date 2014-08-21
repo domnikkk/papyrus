@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,15 +44,15 @@ public class ActivitySingleExecutionParser extends MessageFormatParser implement
 	}
 
 	public ActivitySingleExecutionParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getActivity_IsSingleExecution() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getActivity_IsSingleExecution() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -65,6 +65,7 @@ public class ActivitySingleExecutionParser extends MessageFormatParser implement
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -76,11 +77,12 @@ public class ActivitySingleExecutionParser extends MessageFormatParser implement
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof Activity) {
-			Activity activity = (Activity)obj;
-			if(activity.isSingleExecution()) {
+		if (obj instanceof Activity) {
+			Activity activity = (Activity) obj;
+			if (activity.isSingleExecution()) {
 				return SINGLE_EXECUTION_LABEL;
 			}
 		}
@@ -94,6 +96,7 @@ public class ActivitySingleExecutionParser extends MessageFormatParser implement
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -105,10 +108,11 @@ public class ActivitySingleExecutionParser extends MessageFormatParser implement
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof Activity) {
-			Activity activity = (Activity)element;
+		if (element instanceof Activity) {
+			Activity activity = (Activity) element;
 			semanticElementsBeingParsed.add(activity);
 		}
 		return semanticElementsBeingParsed;
@@ -117,9 +121,9 @@ public class ActivitySingleExecutionParser extends MessageFormatParser implement
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

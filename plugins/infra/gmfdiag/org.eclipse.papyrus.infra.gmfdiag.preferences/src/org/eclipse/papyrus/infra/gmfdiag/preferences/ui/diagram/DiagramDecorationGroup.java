@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ public class DiagramDecorationGroup extends DecorationGroup {
 
 	/**
 	 * Instantiates a new diagram decoration group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param key
-	 *        the prefix preference key the kind of diagram
+	 *            the prefix preference key the kind of diagram
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 */
 	public DiagramDecorationGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -42,6 +42,7 @@ public class DiagramDecorationGroup extends DecorationGroup {
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getDiagramConstant(getKey(), preferenceType);
 	}

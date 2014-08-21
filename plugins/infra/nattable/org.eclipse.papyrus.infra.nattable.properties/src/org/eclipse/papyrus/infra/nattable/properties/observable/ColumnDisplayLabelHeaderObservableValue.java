@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,18 +20,18 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 
 
 /**
- * 
+ *
  * The column observable value for {@link AbstractHeaderAxisConfiguration#displayLabel}
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public final class ColumnDisplayLabelHeaderObservableValue extends AbstractColumnHeaderAxisConfigurationObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
 	 */
 	public ColumnDisplayLabelHeaderObservableValue(final Table table) {
@@ -39,9 +39,9 @@ public final class ColumnDisplayLabelHeaderObservableValue extends AbstractColum
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

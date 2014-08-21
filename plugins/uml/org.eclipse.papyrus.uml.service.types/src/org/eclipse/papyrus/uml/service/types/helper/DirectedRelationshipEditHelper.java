@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -45,25 +45,25 @@ public abstract class DirectedRelationshipEditHelper extends ElementEditHelper {
 
 	/**
 	 * Subclasses should implement this method providing the EReference to be used as source.
-	 * 
+	 *
 	 * @return the source EReference
 	 */
 	protected abstract EReference getSourceReference();
 
 	/**
 	 * Subclasses should implement this method providing the EReference to be used as target.
-	 * 
+	 *
 	 * @return the target EReference
 	 */
 	protected abstract EReference getTargetReference();
 
 	/**
 	 * Test if the relationship creation is allowed.
-	 * 
+	 *
 	 * @param source
-	 *        the relationship source can be null
+	 *            the relationship source can be null
 	 * @param target
-	 *        the relationship target can be null
+	 *            the relationship target can be null
 	 * @return true if the creation is allowed
 	 */
 	protected abstract boolean canCreate(EObject source, EObject target);
@@ -84,15 +84,15 @@ public abstract class DirectedRelationshipEditHelper extends ElementEditHelper {
 			// Abort creation.
 			return UnexecutableCommand.INSTANCE;
 		}
-		
-		if(noSourceOrTarget && !noSourceAndTarget) {
+
+		if (noSourceOrTarget && !noSourceAndTarget) {
 			// The request isn't complete yet. Return the identity command so
 			// that the create relationship gesture is enabled.
 			return IdentityCommand.INSTANCE;
 		}
-		
+
 		// Propose a container if none is set in request.
-		EObject proposedContainer = EMFCoreUtil.getLeastCommonContainer(Arrays.asList(new EObject[]{source, target}), UMLPackage.eINSTANCE.getPackage());
+		EObject proposedContainer = EMFCoreUtil.getLeastCommonContainer(Arrays.asList(new EObject[] { source, target }), UMLPackage.eINSTANCE.getPackage());
 
 		// If no common container is found try source nearest package
 		EObject sourcePackage = EMFCoreUtil.getContainer(source, UMLPackage.eINSTANCE.getPackage());
@@ -105,29 +105,29 @@ public abstract class DirectedRelationshipEditHelper extends ElementEditHelper {
 		if ((proposedContainer == null) && !(isReadOnly(targetPackage))) {
 			proposedContainer = targetPackage;
 		}
-		
+
 		req.setContainer(proposedContainer);
-		
+
 		return new CreateRelationshipCommand(req);
 	}
 
 	private boolean isReadOnly(EObject eObject) {
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
 		boolean isReadOnly = (eObject.eResource() != null) && (editingDomain.isReadOnly(eObject.eResource()));
-		
+
 		return isReadOnly;
 	}
 
 	/**
 	 * This method provides the object to be use as source.
-	 * 
+	 *
 	 * @return the source value (EList or EObject)
 	 */
 	protected Object getSourceObject(ConfigureRequest req) {
 		Object result = null;
-		if(getSourceReference().getUpperBound() != 1) {
+		if (getSourceReference().getUpperBound() != 1) {
 			EList<EObject> objects = new BasicEList<EObject>();
-			objects.add((EObject)req.getParameter(CreateRelationshipRequest.SOURCE));
+			objects.add((EObject) req.getParameter(CreateRelationshipRequest.SOURCE));
 
 			result = objects;
 		} else {
@@ -139,14 +139,14 @@ public abstract class DirectedRelationshipEditHelper extends ElementEditHelper {
 
 	/**
 	 * This method provides the object to be used as target.
-	 * 
+	 *
 	 * @return the target value (EList or EObject)
 	 */
 	protected Object getTargetObject(ConfigureRequest req) {
 		Object result = null;
-		if(getTargetReference().getUpperBound() != 1) {
+		if (getTargetReference().getUpperBound() != 1) {
 			EList<EObject> objects = new BasicEList<EObject>();
-			objects.add((EObject)req.getParameter(CreateRelationshipRequest.TARGET));
+			objects.add((EObject) req.getParameter(CreateRelationshipRequest.TARGET));
 
 			result = objects;
 		} else {
@@ -164,15 +164,16 @@ public abstract class DirectedRelationshipEditHelper extends ElementEditHelper {
 
 		ICommand configureCommand = new ConfigureElementCommand(req) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-				DirectedRelationship element = (DirectedRelationship)req.getElementToConfigure();
+				DirectedRelationship element = (DirectedRelationship) req.getElementToConfigure();
 
-				if(req.getParameter(CreateRelationshipRequest.SOURCE) != null) {
+				if (req.getParameter(CreateRelationshipRequest.SOURCE) != null) {
 					element.eSet(getSourceReference(), getSourceObject(req));
 				}
 
-				if(req.getParameter(CreateRelationshipRequest.TARGET) != null) {
+				if (req.getParameter(CreateRelationshipRequest.TARGET) != null) {
 					element.eSet(getTargetReference(), getTargetObject(req));
 				}
 

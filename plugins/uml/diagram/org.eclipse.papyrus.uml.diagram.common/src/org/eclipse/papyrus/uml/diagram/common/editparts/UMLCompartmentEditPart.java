@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ public class UMLCompartmentEditPart extends PapyrusCompartmentEditPart {
 
 	/**
 	 * Creates a new UMLCompartmentEditPart.
-	 * 
+	 *
 	 * @param model
-	 *        the view managed by this edit part
+	 *            the view managed by this edit part
 	 */
 	public UMLCompartmentEditPart(EObject model) {
 		super(model);
@@ -62,7 +62,7 @@ public class UMLCompartmentEditPart extends PapyrusCompartmentEditPart {
 	 */
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(ApplyStereotypeRequest.APPLY_STEREOTYPE_REQUEST.equals(request.getType())) {
+		if (ApplyStereotypeRequest.APPLY_STEREOTYPE_REQUEST.equals(request.getType())) {
 			return this;
 		}
 		return super.getTargetEditPart(request);

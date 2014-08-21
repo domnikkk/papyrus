@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -61,11 +61,11 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * create an association figure.
-	 * 
+	 *
 	 * @param targetType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 * @param sourceType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 */
 	public AssociationFigure(int sourceType, int targetType) {
 		super();
@@ -76,6 +76,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	/**
 	 * Creates the contents of the association
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 		fAssociationNameLabel = new WrappingLabel();
@@ -97,16 +98,16 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the decoration.
-	 * 
+	 *
 	 * @param typeDecoration
-	 *        the type decoration
-	 * 
+	 *            the type decoration
+	 *
 	 * @return the appropriate decoration
 	 */
 	public RotatableDecoration getDecoration(int typeDecoration) {
 		int remain = typeDecoration % owned;
 		int navigationValue = remain / navigable;
-		if(navigationValue == 1) {
+		if (navigationValue == 1) {
 			return getNavigationDecoration();
 		}
 		return null;
@@ -114,7 +115,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * Gets the navigation decoration.
-	 * 
+	 *
 	 * @return the navigation decoration
 	 */
 	protected RotatableDecoration getNavigationDecoration() {
@@ -127,6 +128,7 @@ public class AssociationFigure extends UMLEdgeFigure {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		graphics.setAntialias(SWT.ON);
 		super.paintFigure(graphics);
@@ -134,11 +136,11 @@ public class AssociationFigure extends UMLEdgeFigure {
 
 	/**
 	 * used to display end of the association.
-	 * 
+	 *
 	 * @param targetType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 * @param sourceType
-	 *        the type of end of the association {@link AssociationFigure#navigable}
+	 *            the type of end of the association {@link AssociationFigure#navigable}
 	 */
 	public void setEnd(int sourceType, int targetType) {
 		this.sourceType = sourceType;

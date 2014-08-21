@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.services.resourceloading;
 
@@ -18,13 +18,13 @@ import org.eclipse.papyrus.uml.tools.model.UmlUtils;
 /**
  * A {@link ModelSet} allowing to load models on demand.
  * Also, this implementation allows to have loading strategies.
- * 
+ *
  * TODO extends {@link ModelSet} rather than {@link DiResourceSet}. This can be done once
  * DiResourceSet is not referenced anywhere.
- * 
+ *
  * @author cedric dumoulin
  * @author emilien perico
- * 
+ *
  */
 public class OnDemandLoadingModelSet extends DiResourceSet {
 
@@ -37,16 +37,16 @@ public class OnDemandLoadingModelSet extends DiResourceSet {
 	private IProxyManager proxyManager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public OnDemandLoadingModelSet() {
 		super();
 		// Register declared models
-		//	The ModelsReader has already been invoked in super()
-		//		ModelsReader reader = new ModelsReader();
-		//		reader.readModel(this);
+		// The ModelsReader has already been invoked in super()
+		// ModelsReader reader = new ModelsReader();
+		// reader.readModel(this);
 		proxyManager = new ProxyManager(this);
 	}
 
@@ -65,15 +65,16 @@ public class OnDemandLoadingModelSet extends DiResourceSet {
 	 */
 	@Override
 	public EObject getEObject(URI uri, boolean loadOnDemand) {
-		//return super.getEObject(uri, loadOnDemand);
+		// return super.getEObject(uri, loadOnDemand);
 
 		URI resourceURI = uri.trimFragment();
 		// for performance reasons, we check the three initial resources first
 		// TODO not use getUMLModel
-		if(resourceURI.equals(UmlUtils.getUmlModel(this).getResourceURI()) || resourceURI.equals(NotationUtils.getNotationModel(this).getResourceURI()) || resourceURI.equals(SashModelUtils.getSashModel(this).getResourceURI()) || uriLoading.contains(resourceURI)) {
+		if (resourceURI.equals(UmlUtils.getUmlModel(this).getResourceURI()) || resourceURI.equals(NotationUtils.getNotationModel(this).getResourceURI()) || resourceURI.equals(SashModelUtils.getSashModel(this).getResourceURI())
+				|| uriLoading.contains(resourceURI)) {
 			// do not manage eObject of the current resources
 			return super.getEObject(uri, loadOnDemand);
-		} else if(loadOnDemand) {
+		} else if (loadOnDemand) {
 			return proxyManager.getEObjectFromStrategy(uri);
 		} else {
 			// call super so that the eobject is returned
@@ -85,9 +86,9 @@ public class OnDemandLoadingModelSet extends DiResourceSet {
 	/**
 	 * Enables to add an URI that will be always loaded.
 	 * It is not listening at the current loading strategy and always load the specified URI if needed.
-	 * 
+	 *
 	 * @param alwaysLoadedUri
-	 *        the always loaded uri
+	 *            the always loaded uri
 	 */
 	public void forceUriLoading(URI alwaysLoadedUri) {
 		uriLoading.add(alwaysLoadedUri);

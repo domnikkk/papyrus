@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,19 +57,19 @@ import org.eclipse.ui.part.FileEditorInput;
  * service also allows to listen on the dirty state of the Models. <br>
  * The service implements the {@link ISaveablePart} interface, and can be used
  * directly in part requiring such interface of adapter.
- * 
+ *
  * <br>
  * This class allows nested editors to register themselves as nested {@link ISaveablePart}. In this case, the registered part will be notified
  * each time a save or saveAs is performed. Also, the nested part will be asked
  * for its dirtyState.
- * 
+ *
  * TODO : Improve the implementation by registering the isDirty flag value, and
  * firing events only if the value really change. Actually, the event is fired
  * every time the model is modified, even if the virtual value of the flag
  * hasn't changed.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISaveablePart, IService, ISaveAndDirtyService {
 
@@ -92,14 +92,14 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	private ModelSet resourceSet;
 
 	/**
-	 * 
+	 *
 	 */
 	private TransactionalEditingDomain transactionalEditingDomain;
 
 	/**
 	 * The serviceRegistry.
 	 */
-	//	private ServicesRegistry servicesRegistry;
+	// private ServicesRegistry servicesRegistry;
 
 	/**
 	 * Associated editor. Needed by saveAs to synchronize editor input.
@@ -122,6 +122,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	 */
 	private final CommandStackListener commandStackListener = new CommandStackListener() {
 
+		@Override
 		public void commandStackChanged(EventObject event) {
 
 			fireIsDirtyChanged();
@@ -133,24 +134,29 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	 */
 	private final ResourceSetListener resourceSetListener = new ResourceSetListener() {
 
+		@Override
 		public NotificationFilter getFilter() {
 			return null;
 		}
 
+		@Override
 		public boolean isAggregatePrecommitListener() {
 			return false;
 		}
 
+		@Override
 		public boolean isPostcommitOnly() {
 			return true;
 		}
 
+		@Override
 		public boolean isPrecommitOnly() {
 			return false;
 		}
 
+		@Override
 		public void resourceSetChanged(ResourceSetChangeEvent event) {
-			if(event.getTransaction() != null && event.getTransaction().getStatus().isOK() && madePersistableChanges(event)) {
+			if (event.getTransaction() != null && event.getTransaction().getStatus().isOK() && madePersistableChanges(event)) {
 				fireIsDirtyChanged();
 			}
 		}
@@ -163,6 +169,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 			return !Boolean.TRUE.equals(transaction.getOptions().get(Transaction.OPTION_UNPROTECTED));
 		}
 
+		@Override
 		public Command transactionAboutToCommit(ResourceSetChangeEvent event) throws RollbackException {
 			return null;
 		}
@@ -171,7 +178,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public SaveAndDirtyService() {
 		registeredIsaveablePart = new ISaveablePartList();
@@ -181,15 +188,16 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	/**
 	 * Initialize the service. Retrieve other required services (ModelSet,
 	 * CoreEditor).
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 
-		//		this.servicesRegistry = servicesRegistry;
+		// this.servicesRegistry = servicesRegistry;
 
 		// Retrieve required services.
 		resourceSet = servicesRegistry.getService(ModelSet.class);
@@ -208,11 +216,12 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * Do nothing.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void startService() throws ServiceException {
 
 		// Listen to the modifications of the EMF model
@@ -224,26 +233,27 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
-		if(transactionalEditingDomain != null) {
-			// Check if commandStack is null (meaning that transactionalEditingDomain 
+		if (transactionalEditingDomain != null) {
+			// Check if commandStack is null (meaning that transactionalEditingDomain
 			// is disposed
 			CommandStack commandStack = transactionalEditingDomain.getCommandStack();
-			if(commandStack != null) {
+			if (commandStack != null) {
 				transactionalEditingDomain.getCommandStack().removeCommandStackListener(commandStackListener);
 			}
 			transactionalEditingDomain.removeResourceSetListener(resourceSetListener);
-			//			resourceSetListener = null;
+			// resourceSetListener = null;
 		}
 
 		// clean properties in order to help GC
 		inputChangedListeners.clear();
 		inputChangedListeners = null;
 		multiDiagramEditor = null;
-		//		servicesRegistry = null;
+		// servicesRegistry = null;
 		transactionalEditingDomain = null;
 		resourceSet = null;
 		lifeCycleEvent = null;
@@ -257,11 +267,12 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * Save the Models
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISaveablePart#doSave(org.eclipse.core.runtime.IProgressMonitor)
-	 * 
+	 *
 	 * @param monitor
 	 */
+	@Override
 	public void doSave(IProgressMonitor monitor) {
 		// Sent pre doSave event
 		lifeCycleEventsProvider.fireAboutToDoSaveEvent(lifeCycleEvent);
@@ -287,8 +298,9 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * @see org.eclipse.ui.ISaveablePart#doSaveAs()
-	 * 
+	 *
 	 */
+	@Override
 	public void doSaveAs() {
 		// Sent pre doSave event
 		lifeCycleEventsProvider.fireAboutToDoSaveAsEvent(lifeCycleEvent);
@@ -300,31 +312,31 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 		// Show a SaveAs dialog
 		Shell shell = multiDiagramEditor.getEditorSite().getWorkbenchWindow().getShell();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		dialog.setOriginalFile(((IFileEditorInput)multiDiagramEditor.getEditorInput()).getFile());
+		dialog.setOriginalFile(((IFileEditorInput) multiDiagramEditor.getEditorInput()).getFile());
 		dialog.open();
 		final IPath path = dialog.getResult();
-		if(path != null) {
+		if (path != null) {
 			// try to save the editor's contents under a different file name
 			final IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
 			try {
 				new ProgressMonitorDialog(shell).run(false, // don't fork
-					false, // can't cancel
-					new WorkspaceModifyOperation() { // run this operation
+						false, // can't cancel
+						new WorkspaceModifyOperation() { // run this operation
 
-						@Override
-						public void execute(final IProgressMonitor monitor) {
-							try {
-								//to event bad redirection after the saveAs
-								//see bug 319023
-								EcoreUtil.resolveAll(resourceSet);
-								resourceSet.saveAs(path);
-								// notify registered IsaveablePart
-								registeredIsaveablePart.doSave(monitor);
-							} catch (IOException e) {
-								log.error("Unable to saveAs the resource set", e); //$NON-NLS-1$
+							@Override
+							public void execute(final IProgressMonitor monitor) {
+								try {
+									// to event bad redirection after the saveAs
+									// see bug 319023
+									EcoreUtil.resolveAll(resourceSet);
+									resourceSet.saveAs(path);
+									// notify registered IsaveablePart
+									registeredIsaveablePart.doSave(monitor);
+								} catch (IOException e) {
+									log.error("Unable to saveAs the resource set", e); //$NON-NLS-1$
+								}
 							}
-						}
-					});
+						});
 				// set input to the new file
 				fireEditorInputChanged(new FileEditorInput(file));
 				markSaveLocation();
@@ -342,12 +354,12 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * Change the input of the underlying editor.
-	 * 
+	 *
 	 * @param fileEditorInput
 	 */
 	private void fireEditorInputChanged(FileEditorInput fileEditorInput) {
 
-		for(IEditorInputChangedListener listener : inputChangedListeners) {
+		for (IEditorInputChangedListener listener : inputChangedListeners) {
 			try {
 				listener.editorInputChanged(fileEditorInput);
 			} catch (Exception e) {
@@ -359,12 +371,12 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 	/**
 	 * Fire a PropertyChanged event to registered {@link IEditorInputChangedListener}.
-	 * 
+	 *
 	 * @param propertyId
 	 */
 	private void fireIsDirtyChanged() {
 
-		for(IEditorInputChangedListener listener : inputChangedListeners) {
+		for (IEditorInputChangedListener listener : inputChangedListeners) {
 			try {
 				listener.isDirtyChanged();
 			} catch (Exception e) {
@@ -387,34 +399,37 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	 * </ul>
 	 * If one of these states is false, the returned value is false. <br>
 	 * If all of these states are true, the returned value is true.
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISaveablePart#isDirty()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isDirty() {
 		// First, look if the model part (EMF) is dirty, else look at the
 		// Graphical part (GEF/GMF)
-		if(transactionalEditingDomain == null) {
+		if (transactionalEditingDomain == null) {
 			return false;
 		}
-		return ((BasicCommandStack)transactionalEditingDomain.getCommandStack()).isSaveNeeded() || registeredIsaveablePart.isDirty();
+		return ((BasicCommandStack) transactionalEditingDomain.getCommandStack()).isSaveNeeded() || registeredIsaveablePart.isDirty();
 	}
 
 	/**
 	 * @see org.eclipse.ui.ISaveablePart#isSaveAsAllowed()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
 
 	/**
 	 * @see org.eclipse.ui.ISaveablePart#isSaveOnCloseNeeded()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean isSaveOnCloseNeeded() {
 		return isDirty();
 	}
@@ -424,7 +439,7 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	 * nothing.
 	 */
 	protected void markSaveLocation() {
-		((BasicCommandStack)transactionalEditingDomain.getCommandStack()).saveIsDone();
+		((BasicCommandStack) transactionalEditingDomain.getCommandStack()).saveIsDone();
 		fireIsDirtyChanged();
 	}
 
@@ -432,62 +447,66 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 	 * Register a nested {@link ISaveablePart} as a listener that will be
 	 * notified each time a {@link #doSave(IProgressMonitor)} or {@link #doSaveAs()} is performed. Also, it will be asked for the
 	 * dirtyState.
-	 * 
+	 *
 	 * @param saveablePart
 	 */
+	@Override
 	public void registerIsaveablePart(ISaveablePart saveablePart) {
 		registeredIsaveablePart.add(saveablePart);
 	}
 
 	/**
 	 * Remove the specified {@link ISaveablePart} from the list of listeners.
-	 * 
+	 *
 	 * @param saveablePart
 	 */
+	@Override
 	public void removeIsaveablePart(ISaveablePart saveablePart) {
 		registeredIsaveablePart.remove(saveablePart);
 	}
 
 	/**
 	 * Add a listeners on input changed event.
-	 * 
+	 *
 	 * @param inputChangedListener
 	 */
+	@Override
 	public void addInputChangedListener(IEditorInputChangedListener inputChangedListener) {
 		inputChangedListeners.add(inputChangedListener);
 	}
 
 	/**
 	 * Remove a listeners on input changed event.
-	 * 
+	 *
 	 * @param inputChangedListener
 	 */
+	@Override
 	public void removeInputChangedListener(IEditorInputChangedListener inputChangedListener) {
 		inputChangedListeners.remove(inputChangedListener);
 	}
 
 	/**
 	 * A list of {@link ISaveablePart}.
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	public class ISaveablePartList extends ArrayList<ISaveablePart> {
 
 		/**
-		 * 
+		 *
 		 */
 		private static final long serialVersionUID = 1L;
 
 		/**
 		 * Return true if one of the part is dirty, false if all part are not
 		 * dirty.
-		 * 
+		 *
 		 * @return
 		 */
 		public boolean isDirty() {
-			for(ISaveablePart part : this) {
-				if(part.isDirty()) {
+			for (ISaveablePart part : this) {
+				if (part.isDirty()) {
 					return true;
 				}
 			}
@@ -497,11 +516,11 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 		/**
 		 * Call doSave on each registered {@link ISaveablePart}.
-		 * 
+		 *
 		 * @param monitor
 		 */
 		public void doSave(IProgressMonitor monitor) {
-			for(ISaveablePart part : this) {
+			for (ISaveablePart part : this) {
 
 				try {
 					part.doSave(monitor);
@@ -514,11 +533,11 @@ public class SaveAndDirtyService extends LifeCycleEventsProvider implements ISav
 
 		/**
 		 * Call doSaveAs on each registered {@link ISaveablePart}.
-		 * 
+		 *
 		 * @param monitor
 		 */
 		public void doSaveAs() {
-			for(ISaveablePart part : this) {
+			for (ISaveablePart part : this) {
 				try {
 					part.doSaveAs();
 				} catch (Exception e) {

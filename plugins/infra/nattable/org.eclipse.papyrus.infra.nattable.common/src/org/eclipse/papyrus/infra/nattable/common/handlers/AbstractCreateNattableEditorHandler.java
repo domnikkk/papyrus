@@ -33,6 +33,7 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.resource.NotFoundException;
 import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
@@ -86,15 +87,15 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	 * @return The name, or <code>null</code> if the user cancelled the creation
 	 */
 	public String askName() {
-		//we create a new resourceSet to avoid to load unused config in the resourceset in case of Cancel
+		// we create a new resourceSet to avoid to load unused config in the resourceset in case of Cancel
 		ResourceSet set = new ResourceSetImpl();
 		Resource res = set.getResource(getTableEditorConfigurationURI(), true);
-		TableConfiguration conf = (TableConfiguration)res.getContents().get(0);
+		TableConfiguration conf = (TableConfiguration) res.getContents().get(0);
 		String defaultName = conf.getName();
 		// default Value
 		final String nameWithIncrement = EditorNameInitializer.getNameWithIncrement(NattablePackage.eINSTANCE.getTable(), NattableconfigurationPackage.eINSTANCE.getTableNamedElement_Name(), defaultName, getTableContext());
 		final InputDialog dialog = new InputDialog(Display.getDefault().getActiveShell(), Messages.AbstractCreateNattableEditorHandler_PapyrusTableCreation, Messages.AbstractCreateNattableEditorHandler_EnterTheNameForTheNewTable, nameWithIncrement, null);
-		if(dialog.open() == Dialog.OK) {
+		if (dialog.open() == Window.OK) {
 			return dialog.getValue();
 		}
 		return null;
@@ -109,7 +110,7 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	 */
 	public void runAsTransaction(final ExecutionEvent event) throws ServiceException {
 		String name = askName();
-		if(name != null) {
+		if (name != null) {
 			runAsTransaction(event, name);
 		}
 	}
@@ -182,16 +183,16 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	 * @return
 	 * @throws ServiceException
 	 * @throws NotFoundException
-	 *         The model where to save the TableInstance is not found.
+	 *             The model where to save the TableInstance is not found.
 	 */
 	protected Table createEditorModel(final ServicesRegistry serviceRegistry, String name, String description) throws ServiceException, NotFoundException {
 		final ModelSet modelSet = ServiceUtils.getInstance().getModelSet(serviceRegistry);
 		final TableConfiguration configuration = getDefaultTableEditorConfiguration(modelSet);
 		Assert.isNotNull(configuration);
 
-		final Table table = TableHelper.createTable(configuration, null, name, description); //context null here, see bug 410357
+		final Table table = TableHelper.createTable(configuration, null, name, description); // context null here, see bug 410357
 		// Save the model in the associated resource
-		final PapyrusNattableModel model = (PapyrusNattableModel)modelSet.getModelChecked(PapyrusNattableModel.MODEL_ID);
+		final PapyrusNattableModel model = (PapyrusNattableModel) modelSet.getModelChecked(PapyrusNattableModel.MODEL_ID);
 		table.setContext(getTableContext());
 		model.addPapyrusTable(table);
 		return table;
@@ -201,15 +202,15 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	/**
 	 *
 	 * @param resourceSet
-	 *        TODO
+	 *            TODO
 	 * @return
 	 *         the configuration to use for the new table
 	 */
 	protected TableConfiguration getDefaultTableEditorConfiguration(ResourceSet resourceSet) {
 		final Resource resource = resourceSet.getResource(getTableEditorConfigurationURI(), true);
 		TableConfiguration tableConfiguration = null;
-		if(resource.getContents().get(0) instanceof TableConfiguration) {
-			tableConfiguration = (TableConfiguration)resource.getContents().get(0);
+		if (resource.getContents().get(0) instanceof TableConfiguration) {
+			tableConfiguration = (TableConfiguration) resource.getContents().get(0);
 		}
 		return tableConfiguration;
 	}
@@ -226,7 +227,7 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	protected EObject getTableContext() {
 		final List<EObject> selection = getSelection();
 
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			return selection.get(0);
 		}
 		return null;
@@ -239,18 +240,18 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	protected List<EObject> getSelection() {
 		final List<EObject> selectedElements = new ArrayList<EObject>();
 		final IWorkbenchWindow ww = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if(ww != null) {
+		if (ww != null) {
 			final ISelection selection = ww.getSelectionService().getSelection();
-			if(selection instanceof IStructuredSelection) {
+			if (selection instanceof IStructuredSelection) {
 
-				final IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+				final IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 				final Iterator<?> it = structuredSelection.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					final Object object = it.next();
 					final EObject currentEObject = EMFHelper.getEObject(object);
 
-					if(currentEObject != null) {
+					if (currentEObject != null) {
 						selectedElements.add(currentEObject);
 					}
 
@@ -265,10 +266,10 @@ public abstract class AbstractCreateNattableEditorHandler extends AbstractHandle
 	 */
 	protected EObject getRootElement(final Resource modelResource) {
 		EObject rootElement = null;
-		if(modelResource != null && modelResource.getContents() != null && modelResource.getContents().size() > 0) {
+		if (modelResource != null && modelResource.getContents() != null && modelResource.getContents().size() > 0) {
 			final Object root = modelResource.getContents().get(0);
-			if(root instanceof EObject) {
-				rootElement = (EObject)root;
+			if (root instanceof EObject) {
+				rootElement = (EObject) root;
 			}
 		}
 		return rootElement;

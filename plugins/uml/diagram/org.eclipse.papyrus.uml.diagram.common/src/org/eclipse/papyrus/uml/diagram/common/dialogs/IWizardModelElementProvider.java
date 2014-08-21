@@ -17,14 +17,14 @@ import org.eclipse.emf.ecore.EObject;
 // TODO: Auto-generated Javadoc
 /**
  * The Interface IWizardModelElementProvider.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public interface IWizardModelElementProvider {
 
 	/**
 	 * Gets the model element.
-	 * 
+	 *
 	 * @return the model element
 	 */
 	EObject getModelElement();

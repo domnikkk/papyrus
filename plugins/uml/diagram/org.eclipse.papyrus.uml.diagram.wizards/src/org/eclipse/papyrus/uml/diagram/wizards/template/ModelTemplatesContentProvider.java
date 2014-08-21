@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,16 +38,16 @@ public class ModelTemplatesContentProvider implements IStructuredContentProvider
 
 	/** The Constant ATTRIBUTE_FILE. */
 	private static final String ATTRIBUTE_UML_FILE = "file"; //$NON-NLS-1$
-	
+
 	/** The Constant ATTRIBUTE_NOTATION_FILE. */
 	private static final String ATTRIBUTE_NOTATION_FILE = "notation_file"; //$NON-NLS-1$
-	
+
 	/** The Constant ATTRIBUTE_DI_FILE. */
 	private static final String ATTRIBUTE_DI_FILE = "di_file"; //$NON-NLS-1$
 
 	/** The Constant ATTRIBUTE_LANGUAGE. */
 	private static final String ATTRIBUTE_LANGUAGE = "language"; //$NON-NLS-1$
-	
+
 	/** The my template descriptions. */
 	private ModelTemplateDescription[] myTemplateDescriptions;
 
@@ -73,7 +73,7 @@ public class ModelTemplatesContentProvider implements IStructuredContentProvider
 			IExtensionRegistry registry = Platform.getExtensionRegistry();
 			IExtension[] extensions = registry.getExtensionPoint(EXTENSION_POINT_ID).getExtensions();
 
-			for(IExtension extension : extensions) {
+			for (IExtension extension : extensions) {
 				templates.addAll(processExtension(extension));
 			}
 			myTemplateDescriptions = templates.toArray(new ModelTemplateDescription[templates.size()]);
@@ -84,13 +84,15 @@ public class ModelTemplatesContentProvider implements IStructuredContentProvider
 	/**
 	 * Process extension.
 	 *
-	 * @param extension the extension
+	 * @param extension
+	 *            the extension
 	 * @return the collection
 	 */
 	private Collection<ModelTemplateDescription> processExtension(IExtension extension) {
 		List<ModelTemplateDescription> templates = new ArrayList<ModelTemplateDescription>();
-		for(IConfigurationElement configElement : extension.getConfigurationElements()) {
-			ModelTemplateDescription template = new ModelTemplateDescription(configElement.getAttribute(ATTRIBUTE_NAME), extension.getContributor().getName(), configElement.getAttribute(ATTRIBUTE_UML_FILE),configElement.getAttribute(ATTRIBUTE_NOTATION_FILE),configElement.getAttribute(ATTRIBUTE_DI_FILE));
+		for (IConfigurationElement configElement : extension.getConfigurationElements()) {
+			ModelTemplateDescription template = new ModelTemplateDescription(configElement.getAttribute(ATTRIBUTE_NAME), extension.getContributor().getName(), configElement.getAttribute(ATTRIBUTE_UML_FILE), configElement.getAttribute(ATTRIBUTE_NOTATION_FILE),
+					configElement.getAttribute(ATTRIBUTE_DI_FILE));
 			template.setLanguage(configElement.getAttribute(ATTRIBUTE_LANGUAGE));
 			templates.add(template);
 		}
@@ -100,20 +102,21 @@ public class ModelTemplatesContentProvider implements IStructuredContentProvider
 	/**
 	 * Gets the elements.
 	 *
-	 * @param inputElement the input element
+	 * @param inputElement
+	 *            the input element
 	 * @return the elements
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
 	 */
 	public Object[] getElements(Object inputElement) {
-		
-		if(inputElement instanceof Object[]) {		
-			List<ModelTemplateDescription> result = new ArrayList<ModelTemplateDescription>();			
-			
-			for (Object next: (Object[])inputElement) {
+
+		if (inputElement instanceof Object[]) {
+			List<ModelTemplateDescription> result = new ArrayList<ModelTemplateDescription>();
+
+			for (Object next : (Object[]) inputElement) {
 				if (next instanceof String) {
-					String diagramCategory = (String)next;
-					for(ModelTemplateDescription template : getTemplatesDescription()) {						
-						if(diagramCategory == null || diagramCategory.equals(template.getLanguage())) {
+					String diagramCategory = (String) next;
+					for (ModelTemplateDescription template : getTemplatesDescription()) {
+						if (diagramCategory == null || diagramCategory.equals(template.getLanguage())) {
 							result.add(template);
 						}
 					}
@@ -121,21 +124,24 @@ public class ModelTemplatesContentProvider implements IStructuredContentProvider
 			}
 			return result.toArray();
 		}
-		
+
 		return new Object[0];
 	}
 
 	/**
 	 * Input changed.
 	 *
-	 * @param viewer the viewer
-	 * @param oldInput the old input
-	 * @param newInput the new input
+	 * @param viewer
+	 *            the viewer
+	 * @param oldInput
+	 *            the old input
+	 * @param newInput
+	 *            the new input
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
 	 */
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(viewer instanceof TableViewer) {
-			((TableViewer)viewer).add(getElements(null));
+		if (viewer instanceof TableViewer) {
+			((TableViewer) viewer).add(getElements(null));
 		}
 	}
 

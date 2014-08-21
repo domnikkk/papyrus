@@ -27,11 +27,11 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * Default approach is to traverse ancestors of the source to find instance
 	 * of container. Modify with appropriate logic.
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected Region deduceContainer(EObject source, EObject target) {
-		// TODO: avoid modification of generated code, problem is that model needs to be changed at many places ... 
+		// TODO: avoid modification of generated code, problem is that model needs to be changed at many places ...
 		return EMFCustomTransitionRetargetContainerCommand.deduceContainer(source, target);
 	}
 
@@ -63,21 +63,22 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof Vertex) {
+		if (source != null && false == source instanceof Vertex) {
 			return false;
 		}
-		if(target != null && false == target instanceof Vertex) {
+		if (target != null && false == target instanceof Vertex) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		if(getContainer() == null) {
+		if (getContainer() == null) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateTransition_7000(getContainer(), getSource(), getTarget());
@@ -87,14 +88,14 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected void doConfigure(Transition newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
 		configureRequest.setParameter(CreateRelationshipRequest.SOURCE, getSource());
 		configureRequest.setParameter(CreateRelationshipRequest.TARGET, getTarget());
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}
@@ -102,8 +103,9 @@ public class TransitionCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 		Transition newElement = UMLFactory.eINSTANCE.createTransition();
@@ -112,7 +114,7 @@ public class TransitionCreateCommand extends EditElementCommand {
 		newElement.setTarget(getTarget());
 		ElementInitializers.getInstance().init_Transition_7000(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
@@ -127,19 +129,20 @@ public class TransitionCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Vertex getSource() {
-		return (Vertex)source;
+		return (Vertex) source;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Vertex getTarget() {
-		return (Vertex)target;
+		return (Vertex) target;
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setElementToEdit(EObject element) {
 		throw new UnsupportedOperationException();
 	}

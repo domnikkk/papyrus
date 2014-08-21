@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.swt.graphics.RGB;
 
 /**
  * Initialize a view with the properties contained in a preference store
- * 
+ *
  * <p>
  * The following properties can be initialized :
  * <ul>
@@ -34,7 +34,7 @@ import org.eclipse.swt.graphics.RGB;
  * <li>{@link org.eclipse.gmf.runtime.notation.LineStyle#getLineColor() <em>Line Color</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @author tlandre
  */
 public abstract class AbstractViewInitializer {
@@ -47,11 +47,11 @@ public abstract class AbstractViewInitializer {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param view
-	 *        the view to initialize
+	 *            the view to initialize
 	 * @param store
-	 *        the preference store where the properties are.
+	 *            the preference store where the properties are.
 	 */
 	public AbstractViewInitializer(View view, IPreferenceStore store) {
 		this.view = view;
@@ -60,15 +60,15 @@ public abstract class AbstractViewInitializer {
 
 	/**
 	 * Initialize the font.
-	 * 
+	 *
 	 * @param preferenceFontName
-	 *        the name of the preference where is stored the value of the font.
+	 *            the name of the preference where is stored the value of the font.
 	 */
 	// @unused
 	public void initFont(String preferenceFontName) {
-		FontStyle fontStyle = (FontStyle)view.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle fontStyle = (FontStyle) view.getStyle(NotationPackage.Literals.FONT_STYLE);
 
-		if(fontStyle != null) {
+		if (fontStyle != null) {
 			// default font
 			FontData fontData = PreferenceConverter.getFontData(store, preferenceFontName);
 			fontStyle.setFontName(fontData.getName());
@@ -83,15 +83,15 @@ public abstract class AbstractViewInitializer {
 
 	/**
 	 * Initialize the font color.
-	 * 
+	 *
 	 * @param preferenceFontColorName
-	 *        the name of the preference where is stored the value of the color.
+	 *            the name of the preference where is stored the value of the color.
 	 */
 	// @unused
 	public void initFontColor(String preferenceFontColorName) {
-		FontStyle fontStyle = (FontStyle)view.getStyle(NotationPackage.Literals.FONT_STYLE);
+		FontStyle fontStyle = (FontStyle) view.getStyle(NotationPackage.Literals.FONT_STYLE);
 
-		if(fontStyle != null) {
+		if (fontStyle != null) {
 			// font color
 			RGB fontRGB = PreferenceConverter.getColor(store, preferenceFontColorName);
 			fontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB).intValue());
@@ -100,14 +100,14 @@ public abstract class AbstractViewInitializer {
 
 	/**
 	 * Initialize the line color.
-	 * 
+	 *
 	 * @param preferenceLineColorName
-	 *        the name of the preference where is stored the value of the color.
+	 *            the name of the preference where is stored the value of the color.
 	 */
 	// @unused
 	public void initLineColor(String preferenceLineColorName) {
-		LineStyle lineStyle = (LineStyle)view.getStyle(NotationPackage.Literals.LINE_STYLE);
-		if(lineStyle != null) {
+		LineStyle lineStyle = (LineStyle) view.getStyle(NotationPackage.Literals.LINE_STYLE);
+		if (lineStyle != null) {
 			// line color
 			RGB lineRGB = PreferenceConverter.getColor(store, preferenceLineColorName);
 
@@ -117,7 +117,7 @@ public abstract class AbstractViewInitializer {
 
 	/**
 	 * Get the preference store used for this view
-	 * 
+	 *
 	 * @return the preference store used
 	 */
 	public IPreferenceStore getStore() {
@@ -126,7 +126,7 @@ public abstract class AbstractViewInitializer {
 
 	/**
 	 * Get the view for this initializer
-	 * 
+	 *
 	 * @return the view used
 	 */
 	public View getView() {

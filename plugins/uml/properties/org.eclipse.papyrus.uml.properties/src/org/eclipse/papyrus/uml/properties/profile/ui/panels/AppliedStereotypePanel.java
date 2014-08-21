@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,12 +33,12 @@ import org.eclipse.uml2.uml.Element;
 public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
-     * 
+     *
      */
 	public TabbedPropertySheetWidgetFactory factory;
 
 	/**
-     * 
+     *
      */
 	protected Composite parent;
 
@@ -59,11 +59,11 @@ public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
 	 * The default constructor.
-	 * 
+	 *
 	 * @param style
-	 *        the style of this panel
+	 *            the style of this panel
 	 * @param parent
-	 *        the parent Composite for this panel
+	 *            the parent Composite for this panel
 	 */
 	public AppliedStereotypePanel(Composite parent, int style) {
 		super(parent, style);
@@ -73,7 +73,7 @@ public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
 	 * A constructor parameterized by a factory.
-	 * 
+	 *
 	 * @param style
 	 * @param factory
 	 * @param parent
@@ -91,7 +91,7 @@ public class AppliedStereotypePanel extends AbstractPanel {
 	 */
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @return the control
 	 */
 	@Override
@@ -130,7 +130,7 @@ public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
 	 * Gets the control.
-	 * 
+	 *
 	 * @return the control for this panel
 	 */
 	public Control getControl() {
@@ -139,7 +139,7 @@ public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
 	 * Gets the selected.
-	 * 
+	 *
 	 * @return Returns the selected.
 	 */
 	public Element getSelected() {
@@ -158,15 +158,15 @@ public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
 	 * Sets the selected.
-	 * 
+	 *
 	 * @param selected
-	 *        The selected to set.
+	 *            The selected to set.
 	 * @param elt
-	 *        the elt
+	 *            the elt
 	 */
 	public void setSelected(Element elt) {
 
-		if(stereotypeComposite != null) {
+		if (stereotypeComposite != null) {
 			selected = elt;
 			stereotypeComposite.setInput(new StereotypedElementTreeObject(elt));
 			refresh();
@@ -175,11 +175,11 @@ public class AppliedStereotypePanel extends AbstractPanel {
 
 	/**
 	 * Sets the selected property.
-	 * 
+	 *
 	 * @param selected
-	 *        The selected to set.
+	 *            The selected to set.
 	 * @param elt
-	 *        the elt
+	 *            the elt
 	 */
 	public void setSelectedProperty(AppliedStereotypePropertyTreeObject elt) {
 		propertyComposite.setInput(elt);

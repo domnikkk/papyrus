@@ -11,7 +11,7 @@ public class PlatformHelper {
 			return adaptable;
 		}
 		if (adaptable instanceof IAdaptable) {
-			Object result = ((IAdaptable)adaptable).getAdapter(adapterType);
+			Object result = ((IAdaptable) adaptable).getAdapter(adapterType);
 			if (result != null) {
 				return result;
 			}

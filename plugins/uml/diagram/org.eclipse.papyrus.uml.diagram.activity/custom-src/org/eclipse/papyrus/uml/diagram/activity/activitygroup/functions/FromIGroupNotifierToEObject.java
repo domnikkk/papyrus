@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import com.google.common.collect.Iterables;
 
 /**
  * Transform an IGroupNotifier to an EObject they reference
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class FromIGroupNotifierToEObject implements Function<IGroupNotifier, EObject> {
 
@@ -33,7 +33,7 @@ public class FromIGroupNotifierToEObject implements Function<IGroupNotifier, EOb
 
 	/**
 	 * @author adaussy
-	 * 
+	 *
 	 */
 	private static class SingletonHolder {
 
@@ -42,7 +42,7 @@ public class FromIGroupNotifierToEObject implements Function<IGroupNotifier, EOb
 
 	/**
 	 * Get the singleton object
-	 * 
+	 *
 	 * @return
 	 */
 	public static FromIGroupNotifierToEObject getInstance() {
@@ -53,6 +53,7 @@ public class FromIGroupNotifierToEObject implements Function<IGroupNotifier, EOb
 		return Iterables.transform(from, FromIGroupNotifierToEObject.getInstance());
 	}
 
+	@Override
 	public EObject apply(IGroupNotifier from) {
 		return from.getEObject();
 	}

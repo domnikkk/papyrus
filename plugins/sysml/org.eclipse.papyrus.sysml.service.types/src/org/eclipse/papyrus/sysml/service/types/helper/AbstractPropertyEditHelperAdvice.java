@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.sysml.service.types.helper;
 
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Property;
  * Abstract edit helper advice for SysML specific Properties: part and reference
  */
 public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelperAdvice {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -39,54 +39,56 @@ public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelpe
 	protected ICommand getBeforeDuplicateCommand(DuplicateElementsRequest request) {
 		Object targetContainer = request.getParameter("Target_Owner");
 		// additional element should be a set of elements that will be duplicated. If this is null, the request will be ignored.
-		if(!(targetContainer instanceof EObject)) {
+		if (!(targetContainer instanceof EObject)) {
 			return super.getBeforeDuplicateCommand(request);
 		}
 		Property propertyToBeDuplicated = getDuplicatedProperty(request);
-		if(propertyToBeDuplicated == null) {
+		if (propertyToBeDuplicated == null) {
 			return super.getBeforeDuplicateCommand(request);
 		}
 
-		Property newPart = (Property)request.getAllDuplicatedElementsMap().get(propertyToBeDuplicated);
-		if(newPart == null) {
+		Property newPart = (Property) request.getAllDuplicatedElementsMap().get(propertyToBeDuplicated);
+		if (newPart == null) {
 			Activator.log.debug("Trying to create a command for a new sysml property which has not been created yet");
 			return super.getBeforeDuplicateCommand(request);
 		}
 
 		// check association has not be duplicated yet
 		Association originalAssociation = propertyToBeDuplicated.getAssociation();
-		Association newAssociation = (Association)request.getAllDuplicatedElementsMap().get(originalAssociation);
-		if(newAssociation != null && newAssociation.equals(newPart.getAssociation())) {
+		Association newAssociation = (Association) request.getAllDuplicatedElementsMap().get(originalAssociation);
+		if (newAssociation != null && newAssociation.equals(newPart.getAssociation())) {
 			return super.getBeforeDuplicateCommand(request);
 		}
 
 		TransactionalEditingDomain editingDomain = getEditingDomain(propertyToBeDuplicated);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return super.getBeforeDuplicateCommand(request);
 		}
 
-		Package targetPackage = getTargetContainer((EObject)targetContainer, propertyToBeDuplicated, newPart, request.getAllDuplicatedElementsMap());
+		Package targetPackage = getTargetContainer((EObject) targetContainer, propertyToBeDuplicated, newPart, request.getAllDuplicatedElementsMap());
 		return new DuplicatePapyrusAssociationCommand(editingDomain, "Duplicate Association", originalAssociation, request.getAllDuplicatedElementsMap(), targetPackage);
 	}
 
 	/**
 	 * Returns the duplicate Part or Reference.
-	 * @param request the duplicate request for which we try to find the property
+	 * 
+	 * @param request
+	 *            the duplicate request for which we try to find the property
 	 * @return the found Property
 	 */
 	protected abstract Property getDuplicatedProperty(DuplicateElementsRequest request);
 
 	/**
 	 * Computes the target container for the new association
-	 * 
+	 *
 	 * @param targetContainer
-	 *        the target container of the association creation request
+	 *            the target container of the association creation request
 	 * @param partToBeDuplicated
-	 *        the part which was duplicated
+	 *            the part which was duplicated
 	 * @param newPart
-	 *        the new part linked to the association
+	 *            the new part linked to the association
 	 * @param allDuplicatedElementsMap
-	 *        the map of all duplicated elements
+	 *            the map of all duplicated elements
 	 * @return the target {@link Package} for the new association or <code>null</code> if no package was found
 	 */
 	protected Package getTargetContainer(EObject targetContainer, Property partToBeDuplicated, Property newPart, Map allDuplicatedElementsMap) {
@@ -97,23 +99,23 @@ public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelpe
 		// 4. look for the nearest package of the target container
 
 		Package result = newPart.getNearestPackage();
-		if(result != null) {
+		if (result != null) {
 			return result;
 		}
 
 		Package originalPackage = partToBeDuplicated.getNearestPackage();
 		// look for its equivalent in the list of duplicated objects
 		Object o = allDuplicatedElementsMap.get(originalPackage);
-		if(o instanceof Package) {
-			return (Package)o;
+		if (o instanceof Package) {
+			return (Package) o;
 		}
 
-		if(targetContainer instanceof Package) {
-			return ((Package)targetContainer);
+		if (targetContainer instanceof Package) {
+			return ((Package) targetContainer);
 		}
 
-		if(targetContainer instanceof Element) {
-			return ((Element)targetContainer).getNearestPackage();
+		if (targetContainer instanceof Element) {
+			return ((Element) targetContainer).getNearestPackage();
 		}
 
 		return null;
@@ -121,14 +123,14 @@ public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelpe
 
 	/**
 	 * Get the editing domain from an {@link EObject}
-	 * 
+	 *
 	 * @param eObject
 	 * @return
 	 */
 	protected TransactionalEditingDomain getEditingDomain(EObject eObject) {
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
-		if(editingDomain instanceof TransactionalEditingDomain) {
-			return (TransactionalEditingDomain)editingDomain;
+		if (editingDomain instanceof TransactionalEditingDomain) {
+			return (TransactionalEditingDomain) editingDomain;
 		}
 		return null;
 	}
@@ -150,17 +152,17 @@ public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelpe
 		 * list of EObjects. Also sets the list of affected files to be the files,
 		 * where the targetContainer is stored. Target container specifies the
 		 * eObject into which the duplicated eObjects will be added.
-		 * 
+		 *
 		 * @param editingDomain
-		 *        the editing domain through which model changes are made
+		 *            the editing domain through which model changes are made
 		 * @param label
-		 *        The label for the new command.
+		 *            The label for the new command.
 		 * @param originalAssociation
-		 *        <code>Association</code> to be duplicated.
+		 *            <code>Association</code> to be duplicated.
 		 * @param allDuplicatedObjectsMap
-		 *        An empty map to be populated with the duplicated objects.
+		 *            An empty map to be populated with the duplicated objects.
 		 * @param targetContainer
-		 *        target package
+		 *            target package
 		 */
 		public DuplicatePapyrusAssociationCommand(TransactionalEditingDomain editingDomain, String label, Association originalAssociation, Map allDuplicatedObjectsMap, Package targetContainer) {
 			super(editingDomain, label, Collections.singletonList(originalAssociation), allDuplicatedObjectsMap, targetContainer);
@@ -182,12 +184,12 @@ public abstract class AbstractPropertyEditHelperAdvice extends AbstractEditHelpe
 			copier.copy(associationToDuplicate);
 			copier.copyReferences();
 
-			Association newAssociation = (Association)copier.get(associationToDuplicate);
-			if(newAssociation == null) {
+			Association newAssociation = (Association) copier.get(associationToDuplicate);
+			if (newAssociation == null) {
 				return CommandResult.newErrorCommandResult("Impossible to find the copied association");
 			}
 
-			// note: can be executed only if targetcontainer is instanceof package, this means that there is no need to tests for null targetContainer 
+			// note: can be executed only if targetcontainer is instanceof package, this means that there is no need to tests for null targetContainer
 			newAssociation.setPackage(targetContainer);
 			String associationName = NamedElementHelper.getDefaultNameWithIncrementFromBase("Association", targetContainer.eContents()); //$NON-NLS-1$
 			newAssociation.setName(associationName);

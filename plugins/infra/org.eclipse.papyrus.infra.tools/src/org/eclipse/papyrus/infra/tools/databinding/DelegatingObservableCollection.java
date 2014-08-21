@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -119,7 +119,7 @@ public abstract class DelegatingObservableCollection<T extends IObservableCollec
 	}
 
 	public void clear() {
-		if(getDelegate() != null) {
+		if (getDelegate() != null) {
 			getDelegate().clear();
 		}
 	}

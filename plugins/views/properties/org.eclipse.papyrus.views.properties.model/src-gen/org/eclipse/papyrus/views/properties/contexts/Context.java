@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,12 +23,12 @@ import org.eclipse.emf.ecore.EModelElement;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getDependencies <em>Dependencies</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getTabs <em>Tabs</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getViews <em>Views</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getDataContexts <em>Data Contexts</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getPrototype <em>Prototype</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getDependencies <em>Dependencies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getTabs <em>Tabs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getViews <em>Views</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getDataContexts <em>Data Contexts</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.Context#getPrototype <em>Prototype</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface Context extends EModelElement {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getContext_Name()
@@ -57,7 +57,9 @@ public interface Context extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.Context#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -68,10 +70,10 @@ public interface Context extends EModelElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.views.properties.contexts.Context}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Dependencies</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Dependencies</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Dependencies</em>' reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getContext_Dependencies()
 	 * @model ordered="false"
@@ -84,10 +86,10 @@ public interface Context extends EModelElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.views.properties.contexts.Tab}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Tabs</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Tabs</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Tabs</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getContext_Tabs()
 	 * @model containment="true"
@@ -101,10 +103,10 @@ public interface Context extends EModelElement {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.views.properties.contexts.View#getContext <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Views</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Views</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Views</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getContext_Views()
 	 * @see org.eclipse.papyrus.views.properties.contexts.View#getContext
@@ -118,10 +120,10 @@ public interface Context extends EModelElement {
 	 * The list contents are of type {@link org.eclipse.papyrus.views.properties.contexts.DataContextRoot}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Data Contexts</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Data Contexts</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Data Contexts</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getContext_DataContexts()
 	 * @model containment="true"
@@ -134,8 +136,9 @@ public interface Context extends EModelElement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * References the context from which a context was copied.  The context manager caches the prototype reference so that it can enable a prototype when the copied context is not available.
+	 * References the context from which a context was copied. The context manager caches the prototype reference so that it can enable a prototype when the copied context is not available.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Prototype</em>' reference.
 	 * @see #setPrototype(Context)
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getContext_Prototype()
@@ -148,7 +151,9 @@ public interface Context extends EModelElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.contexts.Context#getPrototype <em>Prototype</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Prototype</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Prototype</em>' reference.
 	 * @see #getPrototype()
 	 * @generated
 	 */

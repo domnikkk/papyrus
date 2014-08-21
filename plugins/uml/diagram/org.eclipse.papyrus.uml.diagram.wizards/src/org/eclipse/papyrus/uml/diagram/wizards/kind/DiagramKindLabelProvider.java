@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,23 +28,27 @@ public class DiagramKindLabelProvider implements ILabelProvider {
 	/** The Constant UNDEFINED_ELEMENT. */
 	private static final String UNDEFINED_ELEMENT = Messages.DiagramKindLabelProvider_undefined_element;
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
 	 */
 	public Image getImage(Object element) {
-		if(element instanceof ViewPrototype) {
-			ViewPrototype proto = (ViewPrototype)element;
+		if (element instanceof ViewPrototype) {
+			ViewPrototype proto = (ViewPrototype) element;
 			return proto.getIcon();
 		}
 		return null;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
 	 */
 	public String getText(Object element) {
-		if(element instanceof ViewPrototype) {
-			ViewPrototype proto = (ViewPrototype)element;
+		if (element instanceof ViewPrototype) {
+			ViewPrototype proto = (ViewPrototype) element;
 			return proto.getLabel();
 		}
 		return UNDEFINED_ELEMENT;
@@ -53,8 +57,8 @@ public class DiagramKindLabelProvider implements ILabelProvider {
 	/**
 	 * Adds the listener.
 	 *
-	 * @param listener the listener
-	 * {@inheritDoc}
+	 * @param listener
+	 *            the listener {@inheritDoc}
 	 */
 	public void addListener(ILabelProviderListener listener) {
 	}
@@ -70,10 +74,11 @@ public class DiagramKindLabelProvider implements ILabelProvider {
 	/**
 	 * Checks if is label property.
 	 *
-	 * @param element the element
-	 * @param property the property
-	 * @return true, if is label property
-	 * {@inheritDoc}
+	 * @param element
+	 *            the element
+	 * @param property
+	 *            the property
+	 * @return true, if is label property {@inheritDoc}
 	 */
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
@@ -82,8 +87,8 @@ public class DiagramKindLabelProvider implements ILabelProvider {
 	/**
 	 * Removes the listener.
 	 *
-	 * @param listener the listener
-	 * {@inheritDoc}
+	 * @param listener
+	 *            the listener {@inheritDoc}
 	 */
 	public void removeListener(ILabelProviderListener listener) {
 	}

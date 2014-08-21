@@ -30,10 +30,10 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getExtends <em>Extends</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getServiceDescriptors <em>Service Descriptors</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getExtends <em>Extends</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.ServiceSetIdDescImpl#getServiceDescriptors <em>Service Descriptors</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	 * The cached value of the '{@link #getExtends() <em>Extends</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtends()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -94,6 +99,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	 * The cached value of the '{@link #getServiceDescriptors() <em>Service Descriptors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getServiceDescriptors()
 	 * @generated
 	 * @ordered
@@ -103,6 +109,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceSetIdDescImpl() {
@@ -112,6 +119,7 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -122,8 +130,10 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -131,20 +141,25 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getExtends() {
 		if (extends_ == null) {
 			extends_ = new EDataTypeUniqueEList<String>(String.class, this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS);
@@ -155,8 +170,10 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -164,23 +181,29 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractServiceIdDesc> getServiceDescriptors() {
 		if (serviceDescriptors == null) {
-			serviceDescriptors = new EObjectContainmentWithInverseEList<AbstractServiceIdDesc>(AbstractServiceIdDesc.class, this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE);
+			serviceDescriptors = new EObjectContainmentWithInverseEList<AbstractServiceIdDesc>(AbstractServiceIdDesc.class, this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS,
+					ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE);
 		}
 		return serviceDescriptors;
 	}
@@ -188,28 +211,32 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public AbstractServiceIdDesc getService(Object serviceId) {
 		// Ensure that you remove @generated or mark it @generated NOT
-		if(serviceId == null) {
+		if (serviceId == null) {
 			return null;
 		}
-		
-		for( AbstractServiceIdDesc desc : getServiceDescriptors()) {
-			if( serviceId.equals(desc.getName() ) ) {
+
+		for (AbstractServiceIdDesc desc : getServiceDescriptors()) {
+			if (serviceId.equals(desc.getName())) {
 				return desc;
 			}
 		}
-		
+
 		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public boolean containsService(Object serviceId) {
 		return getService(serviceId) != null;
 	}
@@ -217,32 +244,37 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public AbstractServiceIdDesc getService(AbstractServiceIdDesc serviceDesc) {
-		return getService( serviceDesc.getName() );
+		return getService(serviceDesc.getName());
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public boolean containsService(AbstractServiceIdDesc serviceDesc) {
-		return getService( serviceDesc.getName() ) != null;
+		return getService(serviceDesc.getName()) != null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getServiceDescriptors()).basicAdd(otherEnd, msgs);
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getServiceDescriptors()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -250,13 +282,14 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
-				return ((InternalEList<?>)getServiceDescriptors()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
+			return ((InternalEList<?>) getServiceDescriptors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -264,19 +297,20 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
-				return getName();
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
-				return getExtends();
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
-				return getDescription();
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
-				return getServiceDescriptors();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
+			return getName();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
+			return getExtends();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
+			return getDescription();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
+			return getServiceDescriptors();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -284,26 +318,27 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
-				setName((String)newValue);
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
-				getExtends().clear();
-				getExtends().addAll((Collection<? extends String>)newValue);
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
-				getServiceDescriptors().clear();
-				getServiceDescriptors().addAll((Collection<? extends AbstractServiceIdDesc>)newValue);
-				return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
+			setName((String) newValue);
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
+			getExtends().clear();
+			getExtends().addAll((Collection<? extends String>) newValue);
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
+			getServiceDescriptors().clear();
+			getServiceDescriptors().addAll((Collection<? extends AbstractServiceIdDesc>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -311,23 +346,24 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
-				getExtends().clear();
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
-				getServiceDescriptors().clear();
-				return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
+			getExtends().clear();
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
+			getServiceDescriptors().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -335,19 +371,20 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
-				return extends_ != null && !extends_.isEmpty();
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
-				return serviceDescriptors != null && !serviceDescriptors.isEmpty();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__EXTENDS:
+			return extends_ != null && !extends_.isEmpty();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS:
+			return serviceDescriptors != null && !serviceDescriptors.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -355,11 +392,14 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -372,4 +412,4 @@ public class ServiceSetIdDescImpl extends EObjectImpl implements ServiceSetIdDes
 		return result.toString();
 	}
 
-} //ServiceSetIdDescImpl
+} // ServiceSetIdDescImpl

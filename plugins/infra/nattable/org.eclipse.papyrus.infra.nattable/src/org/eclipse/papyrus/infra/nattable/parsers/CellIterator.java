@@ -16,7 +16,7 @@ import java.util.Iterator;
 
 /**
  * Represents an iterator over cells in a single row in a CSV document
- * 
+ *
  * @author Laurent Wouters
  */
 public abstract class CellIterator implements Iterator<String> {
@@ -26,6 +26,7 @@ public abstract class CellIterator implements Iterator<String> {
 	 * 
 	 * @see java.util.Iterator#remove()
 	 */
+	@Override
 	public void remove() {
 		throw new UnsupportedOperationException();
 	}

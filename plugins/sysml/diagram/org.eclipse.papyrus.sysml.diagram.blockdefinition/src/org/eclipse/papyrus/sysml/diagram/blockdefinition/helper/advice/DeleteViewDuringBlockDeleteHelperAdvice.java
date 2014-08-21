@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -43,21 +43,21 @@ public class DeleteViewDuringBlockDeleteHelperAdvice extends AbstractEditHelperA
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 
-		
+
 		EObject elementToEdit = request.getElementToDestroy();
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		// Get all Part or Reference typed by this deleted Block
-		Iterator<?> references = EMFCoreUtil.getReferencers(elementToEdit, new EReference[]{UMLPackage.eINSTANCE.getTypedElement_Type()}).iterator();
-		while(references.hasNext()) {
+		Iterator<?> references = EMFCoreUtil.getReferencers(elementToEdit, new EReference[] { UMLPackage.eINSTANCE.getTypedElement_Type() }).iterator();
+		while (references.hasNext()) {
 			Object current = references.next();
-			
-			if (! (current instanceof EObject)) {
+
+			if (!(current instanceof EObject)) {
 				continue;
 			}
-			
+
 			EObject property = (EObject) current;
-			
+
 			// Search inconsistent views if the reference is a Part or a Reference
 			if (((ISpecializationType) SysMLElementTypes.PART_PROPERTY).getMatcher().matches(property)) {
 				viewsToDestroy.addAll(getPartViewsToDestroy(property));
@@ -67,57 +67,57 @@ public class DeleteViewDuringBlockDeleteHelperAdvice extends AbstractEditHelperA
 			}
 		}
 
-		if(!(viewsToDestroy.isEmpty())) {
+		if (!(viewsToDestroy.isEmpty())) {
 			DestroyDependentsRequest req = new DestroyDependentsRequest(request.getEditingDomain(), elementToEdit, false);
 			req.setClientContext(request.getClientContext());
 			req.addParameters(request.getParameters());
 			return req.getDestroyDependentsCommand(viewsToDestroy);
 		}
-		
+
 		return super.getBeforeDestroyDependentsCommand(request);
 	}
 
 	/**
 	 * This methods looks for inconsistent Part views to delete.
-	 * 
+	 *
 	 * @param modifiedObject
-	 *        the modified {@link EObject}
+	 *            the modified {@link EObject}
 	 * @return the list of {@link View} to delete
 	 */
 	private Set<View> getPartViewsToDestroy(EObject modifiedObject) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(modifiedObject, ElementTypes.DIAGRAM_ID).iterator();
-		while(viewIt.hasNext()) {
-			View view = (View)viewIt.next();
+		while (viewIt.hasNext()) {
+			View view = viewIt.next();
 
 			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_PART_AS_LIST_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_PART_AS_LIST_ID.equals(containerType)) {
 				viewsToDestroy.add(view);
 			}
 		}
 
 		return viewsToDestroy;
 	}
-	
+
 	/**
 	 * This methods looks for inconsistent Reference views to delete.
-	 * 
+	 *
 	 * @param modifiedObject
-	 *        the modified {@link EObject}
+	 *            the modified {@link EObject}
 	 * @return the list of {@link View} to delete
 	 */
 	private Set<View> getReferenceViewsToDestroy(EObject modifiedObject) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(modifiedObject, ElementTypes.DIAGRAM_ID).iterator();
-		while(viewIt.hasNext()) {
-			View view = (View)viewIt.next();
+		while (viewIt.hasNext()) {
+			View view = viewIt.next();
 
 			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_REFERENCE_AS_LIST_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_REFERENCE_AS_LIST_ID.equals(containerType)) {
 				viewsToDestroy.add(view);
 			}
 		}

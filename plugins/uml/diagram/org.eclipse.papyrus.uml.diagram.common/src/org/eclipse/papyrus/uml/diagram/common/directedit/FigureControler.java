@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,22 +22,22 @@ import org.eclipse.draw2d.IFigure;
 public class FigureControler implements ILabelControler {
 
 	/**
-	 * 
+	 *
 	 */
 	private IFigure figure;
 
 	/**
-	 * 
+	 *
 	 */
 	private PropertyAccessor propertyAccessor;
 
 	/**
 	 * Creates a new FigureControler.
-	 * 
+	 *
 	 * @param figure
-	 *        the figure to be associated
+	 *            the figure to be associated
 	 * @param propertyAccessor
-	 *        the accessor for the properties associated to the figure.
+	 *            the accessor for the properties associated to the figure.
 	 */
 	public FigureControler(IFigure figure, PropertyAccessor propertyAccessor) {
 		this.figure = figure;
@@ -45,19 +45,21 @@ public class FigureControler implements ILabelControler {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
+	@Override
 	public IFigure getLabel() {
 		return figure;
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
+	@Override
 	public PropertyAccessor getPropertyAccessor() {
 		return propertyAccessor;
 	}

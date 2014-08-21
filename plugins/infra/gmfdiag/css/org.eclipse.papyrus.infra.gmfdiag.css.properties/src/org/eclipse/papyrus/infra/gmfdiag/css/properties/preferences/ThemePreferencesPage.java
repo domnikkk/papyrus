@@ -165,10 +165,10 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	private static final String THEME_NAME_LABEL = "Label";
 
 	/** List of valid extensions for an icon. */
-	private List<String> filterExtensions = Arrays.asList(new String[]{ "*.gif;*.png;*.jpeg;*.jpg;*.bmp", "*.gif", "*.png", "*.jpeg;*.jpg", "*.*" });
+	private List<String> filterExtensions = Arrays.asList(new String[] { "*.gif;*.png;*.jpeg;*.jpg;*.bmp", "*.gif", "*.png", "*.jpeg;*.jpg", "*.*" });
 
 	/** List of name associated to valid extensions. */
-	private List<String> filterNames = Arrays.asList(new String[]{ "All images", "GIF Icon", "PNG Icon", "JPEG Icon", "All" });
+	private List<String> filterNames = Arrays.asList(new String[] { "All images", "GIF Icon", "PNG Icon", "JPEG Icon", "All" });
 
 	/** Flag to define if refresh must be done. */
 	public boolean needsRefresh = false;
@@ -218,15 +218,15 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Gets the filter labels.
 	 *
 	 * @param filterNames
-	 *        the filter names
+	 *            the filter names
 	 * @param filterExtensions
-	 *        the filter extensions
+	 *            the filter extensions
 	 */
 	private void initialiseFilterLabels(List<String> filterNames, List<String> filterExtensions) {
 		int size = Math.min(filterNames.size(), filterExtensions.size());
 		String[] filters = new String[size];
 
-		for(int i = 0; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			filters[i] = filterNames.get(i) + " (" + filterExtensions.get(i) + ")";
 		}
 
@@ -240,7 +240,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 */
 	public void init(IWorkbench workbench) {
 
-		//Used default preference store to save current theme
+		// Used default preference store to save current theme
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 
 		// Set description for page
@@ -285,7 +285,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Create part of page to select, add and remove theme.
 	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createPreferenceThemePart(Composite parent) {
 
@@ -310,13 +310,13 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 */
 	@Override
 	protected void createFieldEditors() {
-		//Get all themes define in application instance
+		// Get all themes define in application instance
 		String[][] themes = getFieldThemes();
 
 		themesCombo = new InputComboFieldEditor(ThemePreferences.CURRENT_THEME, CURRENT_THEME_FIELD_LABEL, themes, mainContainer);
 
 
-		addField((FieldEditor)themesCombo);
+		addField((FieldEditor) themesCombo);
 
 
 	}
@@ -325,7 +325,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Create theme label composite.
 	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createThemeLabelPart(Composite parent) {
 
@@ -354,7 +354,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Create theme icon part.
 	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createThemeIconPart(Composite parent) {
 		Label iconLabel = new Label(parent, SWT.NONE);
@@ -383,9 +383,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Create menu item.
 	 *
 	 * @param parentMenu
-	 *        Menu where it will be added
+	 *            Menu where it will be added
 	 * @param label
-	 *        Label of menu item
+	 *            Label of menu item
 	 * @param menuId
 	 */
 	private void createMenuItem(Menu parentMenu, String label, int menuId) {
@@ -397,7 +397,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				menuSelected(((Integer)e.widget.getData()).intValue());
+				menuSelected(((Integer) e.widget.getData()).intValue());
 			}
 		});
 
@@ -408,10 +408,10 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Action to run when a menu is slected.
 	 *
 	 * @param menuId
-	 *        ID of selected menu
+	 *            ID of selected menu
 	 */
 	private void menuSelected(int menuId) {
-		switch(menuId) {
+		switch (menuId) {
 		case WORKSPACE_MENU_ID:
 			browseWorkspace();
 			break;
@@ -437,7 +437,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		dialog.setFilterExtensions(filterExtensions.toArray(new String[filterExtensions.size()]));
 		dialog.setFilterNames(filterNames.toArray(new String[filterNames.size()]));
 		String result = dialog.open();
-		if(result == null) { //Cancel
+		if (result == null) { // Cancel
 			return;
 		}
 		setResult(result);
@@ -465,12 +465,12 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		WorkspaceContentProvider contentProvider = new WorkspaceContentProvider();
 
 
-		if(!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
-			//The filters have been defined
-			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); //Reset the default filters
+		if (!(filterExtensions.isEmpty() || filterNames.isEmpty())) {
+			// The filters have been defined
+			contentProvider.setExtensionFilters(new LinkedHashMap<String, String>()); // Reset the default filters
 
-			//Use our own filters
-			for(int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
+			// Use our own filters
+			for (int i = 0; i < Math.min(filterNames.size(), filterExtensions.size()); i++) {
 				contentProvider.addExtensionFilter(filterExtensions.get(i), filterNames.get(i));
 			}
 		}
@@ -479,17 +479,17 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		dialog.setLabelProvider(labelProvider);
 
 
-		if(currentFile != null && currentFile.exists()) {
-			dialog.setInitialSelections(new IFile[]{ currentFile });
+		if (currentFile != null && currentFile.exists()) {
+			dialog.setInitialSelections(new IFile[] { currentFile });
 		}
 
 		int code = dialog.open();
-		if(code == Window.OK) {
+		if (code == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result.length > 0) {
+			if (result.length > 0) {
 				Object file = result[0];
-				if(file instanceof IFile) {
-					setResult((IFile)file);
+				if (file instanceof IFile) {
+					setResult((IFile) file);
 				}
 			}
 		}
@@ -500,7 +500,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(IFile file) {
 		iconPathfield.setText(file.getFullPath().toString());
@@ -510,7 +510,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Sets the result.
 	 *
 	 * @param file
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(File file) {
 		iconPathfield.setText(file.getAbsolutePath());
@@ -521,7 +521,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Sets the result.
 	 *
 	 * @param path
-	 *        the new result
+	 *            the new result
 	 */
 	protected void setResult(String path) {
 		iconPathfield.setText(path);
@@ -532,7 +532,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the i file
 	 */
 	protected IFile getIFile(String path) {
@@ -543,7 +543,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Gets the file.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the file
 	 */
 	protected File getFile(String path) {
@@ -554,7 +554,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Create theme style sheets part.
 	 *
 	 * @param parent
-	 *        Parent composite where components will be added
+	 *            Parent composite where components will be added
 	 */
 	private void createThemeStyleSheetsPart(Composite parent) {
 
@@ -579,10 +579,10 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 				String text = super.getText(element);
 
 				// Display path of style sheet reference
-				if(element instanceof StyleSheetReference) {
-					text = ((StyleSheetReference)element).getPath();
-				} else if(element instanceof EmbeddedStyleSheet) {
-					text = ((EmbeddedStyleSheet)element).getLabel();
+				if (element instanceof StyleSheetReference) {
+					text = ((StyleSheetReference) element).getPath();
+				} else if (element instanceof EmbeddedStyleSheet) {
+					text = ((EmbeddedStyleSheet) element).getLabel();
 				}
 
 				return text;
@@ -602,7 +602,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Create actions associate to tree viewer.
 	 *
 	 * @param parent
-	 *        Composite where action buttons will be added
+	 *            Composite where action buttons will be added
 	 */
 	private void createTreeActionButtons(Composite parent) {
 		Label labelViewer = new Label(parent, SWT.NONE);
@@ -631,7 +631,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * @return
 	 */
 	protected Button createButton(Composite parent, int id, Image icon, String label) {
-		((GridLayout)parent.getLayout()).numColumns++;
+		((GridLayout) parent.getLayout()).numColumns++;
 		Button button = new Button(parent, SWT.PUSH);
 		button.setFont(JFaceResources.getDialogFont());
 		button.setData(new Integer(id));
@@ -639,14 +639,14 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				buttonPressed(((Integer)event.widget.getData()).intValue());
+				buttonPressed(((Integer) event.widget.getData()).intValue());
 			}
 		});
 
-		if(label != null) {
+		if (label != null) {
 			button.setText(label);
 		}
-		if(icon != null) {
+		if (icon != null) {
 			button.setImage(icon);
 		}
 		buttonsMap.put(new Integer(id), button);
@@ -660,7 +660,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * @param buttonId
 	 */
 	protected void buttonPressed(int buttonId) {
-		switch(buttonId) {
+		switch (buttonId) {
 		case ADD_BUTTON_ID:
 			addAction();
 			break;
@@ -686,7 +686,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 			deleteThemeAction();
 			break;
 		default:
-			//Nothing to do
+			// Nothing to do
 		}
 	}
 
@@ -697,9 +697,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	private void deleteAction() {
 		ISelection selection = themeStyleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedElement instanceof StyleSheet) {
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedElement instanceof StyleSheet) {
 				currentTheme.getStylesheets().remove(selectedElement);
 			}
 
@@ -727,7 +727,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 					public Object[] getElements() {
 						List<Object> result = new LinkedList<Object>();
-						if(editedEObject instanceof Theme) {
+						if (editedEObject instanceof Theme) {
 							result.addAll(currentTheme.getStylesheets());
 						}
 						return result.toArray();
@@ -745,7 +745,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 		// Handle dialog result
 		int result = vDialog.open();
-		if(result == Dialog.OK) {
+		if (result == Window.OK) {
 
 			Object[] resultArray = vDialog.getResult();
 			refreshStyleSheets(resultArray);
@@ -759,16 +759,16 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Fill style sheets viewer with selected style sheets.
 	 *
 	 * @param result
-	 *        Result from dialog selection
+	 *            Result from dialog selection
 	 */
 	private void refreshStyleSheets(Object[] result) {
 
 		// Complete current theme with dialog result
-		for(Object object : result) {
+		for (Object object : result) {
 
 			// Check if this is a style sheet
-			if(object instanceof StyleSheet) {
-				currentTheme.getStylesheets().add((StyleSheet)object);
+			if (object instanceof StyleSheet) {
+				currentTheme.getStylesheets().add((StyleSheet) object);
 			}
 		}
 
@@ -781,7 +781,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Refresh content of tree viewer according to selected theme/
 	 *
 	 * @param currentTheme
-	 *        Current theme
+	 *            Current theme
 	 */
 	private void refreshTreeviewer(Theme currentTheme) {
 
@@ -808,18 +808,18 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 		// Handle selection to extract selected style sheet
 		ISelection selection = themeStyleSheetsViewer.getSelection();
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof StyleSheet) {
+			if (selectedElement instanceof StyleSheet) {
 
 				// Get index of selected style sheet in list
 				EList<StyleSheet> stylesheetsList = currentTheme.getStylesheets();
 				int index = stylesheetsList.indexOf(selectedElement);
 
 				// Check if selected style sheet is not at top of list
-				if(index > 0) {
-					stylesheetsList.move(--index, (StyleSheet)selectedElement);
+				if (index > 0) {
+					stylesheetsList.move(--index, (StyleSheet) selectedElement);
 					themeStyleSheetsViewer.setInput(stylesheetsList);
 				}
 
@@ -836,18 +836,18 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		// Handle selection to extract selected style sheet
 		ISelection selection = themeStyleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof StyleSheet) {
+			if (selectedElement instanceof StyleSheet) {
 
 				// Get index of selected style sheet in list
 				EList<StyleSheet> stylesheetsList = currentTheme.getStylesheets();
 				int index = stylesheetsList.indexOf(selectedElement);
 
 				// Check if selected style sheet is not at bottom of list
-				if(index < stylesheetsList.size() - 1) {
-					stylesheetsList.move(++index, (StyleSheet)selectedElement);
+				if (index < stylesheetsList.size() - 1) {
+					stylesheetsList.move(++index, (StyleSheet) selectedElement);
 					themeStyleSheetsViewer.setInput(stylesheetsList);
 				}
 
@@ -864,9 +864,9 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 		ISelection selection = themeStyleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedObject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedObject instanceof StyleSheet) {
+		if (selection instanceof IStructuredSelection) {
+			Object selectedObject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedObject instanceof StyleSheet) {
 				// Use editor factory
 				editorFactory.edit(buttonsMap.get(EDIT_BUTTON_ID), selectedObject);
 				needsRefresh = true;
@@ -884,13 +884,13 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		ThemeManager themeManager = ThemeManager.instance;
 		Object createdObject = editorFactory.createObject(buttonsMap.get(NEW_THEME_BUTTON_ID), themeManager.getWorkspaceThemesPreferences());
 
-		if(createdObject instanceof Theme) {
+		if (createdObject instanceof Theme) {
 
-			themeManager.addTemporaryTheme((Theme)createdObject);
-			currentTheme = (Theme)createdObject;
+			themeManager.addTemporaryTheme((Theme) createdObject);
+			currentTheme = (Theme) createdObject;
 
 			themesCombo.setInput(getFieldThemes());
-			themesCombo.setSelection(((Theme)createdObject).getId());
+			themesCombo.setSelection(((Theme) createdObject).getId());
 
 		}
 	}
@@ -900,7 +900,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 */
 	private void deleteThemeAction() {
 		boolean confirm = MessageDialog.openConfirm(getShell(), "Delete CSS theme", "WARNING! Deletion will be difinitive.\nDo you really want to delete this theme ?");
-		if(confirm) {
+		if (confirm) {
 			ThemeManager themeManager = ThemeManager.instance;
 			themeManager.delete(currentTheme);
 			String[][] fieldThemes = getFieldThemes();
@@ -916,13 +916,13 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Update state of dialog buttons.
 	 *
 	 * @param currentTheme
-	 *        Selected theme which determine state of different buttons.
+	 *            Selected theme which determine state of different buttons.
 	 */
 	private void updateButtons(Theme currentTheme) {
 		boolean editionEnable = ThemeManager.instance.isEditable(currentTheme.getId());
 
-		for(int buttonId : buttonsMap.keySet()) {
-			switch(buttonId) {
+		for (int buttonId : buttonsMap.keySet()) {
+			switch (buttonId) {
 			case ADD_BUTTON_ID:
 			case BROWSE_BUTTON_ID:
 				buttonsMap.get(buttonId).setEnabled(editionEnable);
@@ -957,12 +957,12 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		// Determine id of button
 		Object data = button.getData();
 		int buttonId = -1;
-		if(data instanceof Integer) {
-			buttonId = (Integer)data;
+		if (data instanceof Integer) {
+			buttonId = (Integer) data;
 		}
 
-		//Filter specific button to set data layout
-		switch(buttonId) {
+		// Filter specific button to set data layout
+		switch (buttonId) {
 		case ADD_BUTTON_ID:
 		case DELETE_BUTTON_ID:
 		case UP_BUTTON_ID:
@@ -990,12 +990,12 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	@Override
 	public void propertyChange(PropertyChangeEvent event) {
 		super.propertyChange(event);
-		if(ThemePreferences.CURRENT_THEME.equals(event.getProperty())) {
+		if (ThemePreferences.CURRENT_THEME.equals(event.getProperty())) {
 			needsRefresh = true;
 		}
-		if(FieldEditor.VALUE.equals(event.getProperty())) {
-			FieldEditor fieldEditor = (FieldEditor)event.getSource();
-			if(ThemePreferences.CURRENT_THEME.equals(fieldEditor.getPreferenceName())) {
+		if (FieldEditor.VALUE.equals(event.getProperty())) {
+			FieldEditor fieldEditor = (FieldEditor) event.getSource();
+			if (ThemePreferences.CURRENT_THEME.equals(fieldEditor.getPreferenceName())) {
 
 				Object newValue = event.getNewValue();
 				ThemeManager themeManager = ThemeManager.instance;
@@ -1011,7 +1011,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	 * Refresh dialog area according to combo selection.
 	 *
 	 * @param selection
-	 *        selection which comes from combo viewer
+	 *            selection which comes from combo viewer
 	 */
 	protected void refreshPreferencePage() {
 
@@ -1020,7 +1020,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		boolean editableTheme = ThemeManager.instance.isEditable(currentTheme.getId());
 		needsRefresh = true;
 
-		if(themeLabel == null) {
+		if (themeLabel == null) {
 			themeLabel = "";
 		}
 		themeLabelField.setEnabled(editableTheme);
@@ -1028,7 +1028,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 
 
 		String iconPath = currentTheme.getIcon();
-		if(iconPath == null) {
+		if (iconPath == null) {
 			iconPath = "";
 		}
 		iconPathfield.setEnabled(editableTheme);
@@ -1072,7 +1072,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 	@Override
 	public boolean performOk() {
 		boolean result = super.performOk();
-		if(needsRefresh) {
+		if (needsRefresh) {
 			WorkspaceCSSEngine.instance.reset();
 			DiagramHelper.setNeedsRefresh();
 			DiagramHelper.refreshDiagrams();
@@ -1121,7 +1121,7 @@ public class ThemePreferencesPage extends FieldEditorPreferencePage implements I
 		// Build theme list for combo editor
 		String[][] result = new String[themes.size()][2];
 		int i = 0;
-		for(Theme theme : themes) {
+		for (Theme theme : themes) {
 			result[i][0] = theme.getLabel();
 			result[i][1] = theme.getId();
 			i++;

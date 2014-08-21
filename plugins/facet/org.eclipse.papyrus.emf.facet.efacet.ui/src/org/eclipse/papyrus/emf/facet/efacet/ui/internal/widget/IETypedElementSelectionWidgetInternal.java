@@ -33,9 +33,9 @@ public interface IETypedElementSelectionWidgetInternal extends IETypedElementSel
 	boolean isDisposed();
 
 	FilteredTree getFilteredTree();
-	
+
 	void createContents();
 
 	void setSelection(IStructuredSelection selection);
-	
+
 }

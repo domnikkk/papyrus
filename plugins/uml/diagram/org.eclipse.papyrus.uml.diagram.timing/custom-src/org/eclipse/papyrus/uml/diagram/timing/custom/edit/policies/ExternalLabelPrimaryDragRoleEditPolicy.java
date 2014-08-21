@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.uml.diagram.timing.custom.utils.FigureUtils;
  * This policy provides the selection handles, feedback and move command for an external node label. The expected
  * behavior is to provide an external label that can freely move and with a link feedback towards its parent figure
  * during the move.
- * 
+ *
  * @author nbros : I copied this class from
  *         org.eclipse.papyrus.uml.diagram.clazz.custom.policies.ExternalLabelPrimaryDragRoleEditPolicy, removed dead
  *         code, added a Refresh, and constrained the bounds within the containing compartment.
@@ -47,14 +47,14 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 
 	@Override
 	protected List<?> createSelectionHandles() {
-		final MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+		final MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 		mh.setBorder(null);
 		return Collections.singletonList(mh);
 	}
 
 	@Override
 	protected Command getMoveCommand(final ChangeBoundsRequest request) {
-		final LabelEditPart editPart = (LabelEditPart)getHost();
+		final LabelEditPart editPart = (LabelEditPart) getHost();
 
 		final IFigure parentFigure = getHostFigure().getParent();
 		final Rectangle parentBounds = parentFigure.getBounds();
@@ -70,8 +70,8 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 		updatedBounds = updatedBounds.getTranslated(parentBounds.getLocation().getNegated());
 
 		final CompoundCommand compoundCommand = new CompoundCommand();
-		compoundCommand.add(new RefreshCommandForUndo((GraphicalEditPart)editPart.getParent().getParent()));
-		compoundCommand.add(new ICommandProxy(new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View)editPart.getModel()), updatedBounds)));
+		compoundCommand.add(new RefreshCommandForUndo((GraphicalEditPart) editPart.getParent().getParent()));
+		compoundCommand.add(new ICommandProxy(new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View) editPart.getModel()), updatedBounds)));
 		compoundCommand.add(new RefreshCommandForDo(editPart));
 		return compoundCommand;
 	}

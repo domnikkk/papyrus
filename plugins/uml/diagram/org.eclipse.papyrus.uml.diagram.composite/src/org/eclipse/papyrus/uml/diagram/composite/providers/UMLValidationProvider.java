@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,6 +41,7 @@ public class UMLValidationProvider {
 		final Runnable op = operation;
 		Runnable task = new Runnable() {
 
+			@Override
 			public void run() {
 				try {
 					constraintsActive = true;
@@ -50,7 +51,7 @@ public class UMLValidationProvider {
 				}
 			}
 		};
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
@@ -65,11 +66,11 @@ public class UMLValidationProvider {
 	 * @generated
 	 */
 	static boolean isInDefaultEditorContext(Object object) {
-		if(shouldConstraintsBePrivate() && !constraintsActive) {
+		if (shouldConstraintsBePrivate() && !constraintsActive) {
 			return false;
 		}
-		if(object instanceof View) {
-			return constraintsActive && CompositeStructureDiagramEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID((View)object));
+		if (object instanceof View) {
+			return constraintsActive && CompositeStructureDiagramEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

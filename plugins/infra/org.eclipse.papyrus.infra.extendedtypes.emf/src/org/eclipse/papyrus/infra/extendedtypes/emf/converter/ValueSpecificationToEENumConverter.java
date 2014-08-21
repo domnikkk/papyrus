@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,34 +38,34 @@ public class ValueSpecificationToEENumConverter extends Converter implements ICo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object convert(Object fromObject) {
-		if(fromObject instanceof InstanceValue) {
-			InstanceSpecification instanceSpecification = ((InstanceValue)fromObject).getInstance();
-			if(instanceSpecification instanceof EnumerationLiteral) {
-				
+		if (fromObject instanceof InstanceValue) {
+			InstanceSpecification instanceSpecification = ((InstanceValue) fromObject).getInstance();
+			if (instanceSpecification instanceof EnumerationLiteral) {
+
 				System.err.println(VisibilityKind.PRIVATE_LITERAL);
-				Class<?> eclass = ((EnumerationLiteral)instanceSpecification).getEnumeration().eClass().getInstanceClass();
+				Class<?> eclass = ((EnumerationLiteral) instanceSpecification).getEnumeration().eClass().getInstanceClass();
 				System.err.println(eclass.getEnumConstants());
 				System.err.println(eclass);
-				
-				
-				
-				
-				
-				
-//				final EEnumLiteral literal = eenum.getEEnumLiteral(umlLiteral.getName());
-//				if(literal != null) {
-//					return literal.getInstance();
-//				}
-//				return null;
-//				
+
+
+
+
+
+				// final EEnumLiteral literal = eenum.getEEnumLiteral(umlLiteral.getName());
+				// if(literal != null) {
+				// return literal.getInstance();
+				// }
+				// return null;
+				//
 				System.err.println(instanceSpecification);
-				
-				
-				//return ((EnumerationLiteral)instanceSpecification).;
+
+
+				// return ((EnumerationLiteral)instanceSpecification).;
 			}
 		}
-		
+
 		return fromObject;
 	}
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,11 +35,11 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 	private EditingDomain editingDomain;
 
 	private CopyOnWriteArrayList<IReadOnlyListener> listeners = new CopyOnWriteArrayList<IReadOnlyListener>();
-	
+
 	public AbstractReadOnlyHandler(EditingDomain editingDomain) {
 		this.editingDomain = editingDomain;
 	}
-	
+
 	public static IReadOnlyHandler2 adapt(IReadOnlyHandler handler, EditingDomain domain) {
 		return new Adapter(handler, domain);
 	}
@@ -48,38 +48,44 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 		return editingDomain;
 	}
 
+	@Override
 	@Deprecated
 	public Optional<Boolean> anyReadOnly(URI[] uris) {
 		return anyReadOnly(permissionAxes(), uris);
 	}
-	
+
+	@Override
 	@Deprecated
 	public Optional<Boolean> isReadOnly(EObject eObject) {
 		return isReadOnly(permissionAxes(), eObject);
 	}
 
+	@Override
 	public Optional<Boolean> isReadOnly(Set<ReadOnlyAxis> axes, EObject eObject) {
 		Resource res = eObject.eResource();
 		if (res != null && res.getURI() != null) {
-			return anyReadOnly(axes, new URI[] {res.getURI()});
+			return anyReadOnly(axes, new URI[] { res.getURI() });
 		}
 		return Optional.absent();
 	}
 
+	@Override
 	@Deprecated
 	public Optional<Boolean> makeWritable(URI[] uris) {
 		return makeWritable(permissionAxes(), uris);
 	}
-	
+
+	@Override
 	@Deprecated
 	public Optional<Boolean> makeWritable(EObject eObject) {
 		return makeWritable(permissionAxes(), eObject);
 	}
 
+	@Override
 	public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, EObject eObject) {
 		Resource res = eObject.eResource();
 		if (res != null && res.getURI() != null) {
-			return makeWritable(axes, new URI[] {res.getURI()});
+			return makeWritable(axes, new URI[] { res.getURI() });
 		}
 		return Optional.absent();
 	}
@@ -87,32 +93,34 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 	/**
 	 * By default, we do not handle writability of these resources.
 	 */
+	@Override
 	public Optional<Boolean> canMakeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
 		return Optional.absent();
 	}
-	
+
+	@Override
 	public Optional<Boolean> canMakeWritable(Set<ReadOnlyAxis> axes, EObject object) {
 		Resource res = object.eResource();
-		if((res != null) && (res.getURI() != null)) {
-			return canMakeWritable(axes, new URI[]{ res.getURI() });
+		if ((res != null) && (res.getURI() != null)) {
+			return canMakeWritable(axes, new URI[] { res.getURI() });
 		}
 		return Optional.absent();
 	}
-	
+
 	@Override
 	public void addReadOnlyListener(IReadOnlyListener listener) {
 		listeners.addIfAbsent(listener);
 	}
-	
+
 	@Override
 	public void removeReadOnlyListener(IReadOnlyListener listener) {
 		listeners.remove(listener);
 	}
-	
+
 	protected void fireReadOnlyStateChanged(ReadOnlyAxis axis, URI resourceURI, boolean readOnly) {
-		if(!listeners.isEmpty()) {
+		if (!listeners.isEmpty()) {
 			ReadOnlyEvent event = new ReadOnlyEvent(this, axis, resourceURI, readOnly);
-			for(IReadOnlyListener next : listeners) {
+			for (IReadOnlyListener next : listeners) {
 				try {
 					next.readOnlyStateChanged(event);
 				} catch (Exception e) {
@@ -121,11 +129,11 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 			}
 		}
 	}
-	
+
 	protected void fireReadOnlyStateChanged(ReadOnlyAxis axis, EObject object, boolean readOnly) {
-		if(!listeners.isEmpty()) {
+		if (!listeners.isEmpty()) {
 			ReadOnlyEvent event = new ReadOnlyEvent(this, axis, object, readOnly);
-			for(IReadOnlyListener next : listeners) {
+			for (IReadOnlyListener next : listeners) {
 				try {
 					next.readOnlyStateChanged(event);
 				} catch (Exception e) {
@@ -134,11 +142,11 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 			}
 		}
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	private static class Adapter extends AbstractReadOnlyHandler {
 		private final IReadOnlyHandler delegate;
 
@@ -148,37 +156,39 @@ public abstract class AbstractReadOnlyHandler implements IReadOnlyHandler2 {
 			this.delegate = handler;
 		}
 
+		@Override
 		public Optional<Boolean> anyReadOnly(Set<ReadOnlyAxis> axes, URI[] uris) {
 			// these handlers implicitly only deal with permission-based read-only-ness
 			return !axes.contains(ReadOnlyAxis.PERMISSION) ? Optional.<Boolean> absent() : delegate.anyReadOnly(uris);
 		}
-		
+
 		@Override
 		public Optional<Boolean> isReadOnly(Set<ReadOnlyAxis> axes, EObject eObject) {
 			return !axes.contains(ReadOnlyAxis.PERMISSION) ? Optional.<Boolean> absent() : delegate.isReadOnly(eObject);
 		}
 
+		@Override
 		public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, URI[] uris) {
 			// these handlers implicitly only deal with permission-based read-only-ness
 			Optional<Boolean> result = !axes.contains(ReadOnlyAxis.PERMISSION) ? Optional.<Boolean> absent() : delegate.makeWritable(uris);
-			
+
 			if (result.or(false)) {
 				for (URI next : uris) {
 					fireReadOnlyStateChanged(ReadOnlyAxis.PERMISSION, next, true);
 				}
 			}
-			
+
 			return result;
 		}
-		
+
 		@Override
 		public Optional<Boolean> makeWritable(Set<ReadOnlyAxis> axes, EObject eObject) {
 			Optional<Boolean> result = !axes.contains(ReadOnlyAxis.PERMISSION) ? Optional.<Boolean> absent() : delegate.makeWritable(eObject);
-			
+
 			if (result.or(false)) {
 				fireReadOnlyStateChanged(ReadOnlyAxis.PERMISSION, eObject, true);
 			}
-			
+
 			return result;
 		}
 	}

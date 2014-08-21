@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Gregoire Dupe (Mia-Software) - initial API and implementation
  */
@@ -16,9 +16,9 @@ import org.eclipse.papyrus.emf.facet.efacet.core.exception.QueryExecutionExcepti
 /**
  * This is the EMF Facet Java Query interface. A java query is a query written
  * in Java.
- * 
+ *
  * This interface has to be used to declare a Java query.
- * 
+ *
  * @author Gregoire Dupe (Mia-Software)
  * @param <T>
  *            the context type (i.e., the type of the elements on which the
@@ -36,7 +36,7 @@ public interface IJavaQuery<T extends EObject, R> {
 	/**
 	 * This method must be implemented by each sub class to implement query
 	 * evaluation.
-	 * 
+	 *
 	 * @param context
 	 *            The query evaluation context (i.e., the element on which the
 	 *            query will be evaluated)

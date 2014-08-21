@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,13 +36,13 @@ public class SetAppliedStereotypeToDisplayCommand extends CreateEAnnotationComma
 
 	/**
 	 * Instantiates a new sets the applied stereotype to display command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param stereotypeList
-	 *        the stereotype list
+	 *            the stereotype list
 	 */
 	public SetAppliedStereotypeToDisplayCommand(TransactionalEditingDomain domain, EModelElement object,
 			String stereotypeList, String appliedStereotypepresentationKind) {
@@ -57,7 +57,7 @@ public class SetAppliedStereotypeToDisplayCommand extends CreateEAnnotationComma
 	@Override
 	protected void doExecute() {
 		EAnnotation oldAnnotation = getObject().getEAnnotation(UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION);
-		if(oldAnnotation == null) {
+		if (oldAnnotation == null) {
 			oldAnnotation = createEAnnotation();
 			attachEannotation(oldAnnotation, getObject());
 		}

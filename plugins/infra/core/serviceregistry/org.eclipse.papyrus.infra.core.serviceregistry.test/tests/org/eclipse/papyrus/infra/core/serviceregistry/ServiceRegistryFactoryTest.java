@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,9 +47,10 @@ public class ServiceRegistryFactoryTest {
 	/**
 	 * Integration test.
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.ServiceRegistryFactory#getServicesRegistry(java.lang.String)}.
-	 * @throws DeclarationException 
-	 * @throws IOException 
-	 * @throws ServiceMultiException 
+	 * 
+	 * @throws DeclarationException
+	 * @throws IOException
+	 * @throws ServiceMultiException
 	 */
 	@Test
 	public void testGetServicesRegistryString() throws DeclarationException, ServiceException, IOException {
@@ -57,23 +58,23 @@ public class ServiceRegistryFactoryTest {
 
 		// Initialize Factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
-		
+
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
 		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
-		
-		
+
+
 		String serviceA = FakeServiceA.class.getName();
 		String serviceB = FakeServiceB.class.getName();
 		// Create ServiceRegistry from factory
 		ServicesRegistry servicesRegistry = factory.getServicesRegistry("simpleTestRegistry");
 		servicesRegistry.startNewServices();
-		
+
 		// Check result
 		assertNotNull("registry created", servicesRegistry);
-		
+
 		assertNotNull("Get registered service", servicesRegistry.getService(serviceA));
 		assertNotNull("Get registered service", servicesRegistry.getService(serviceB));
-		
+
 	}
 
 	/**

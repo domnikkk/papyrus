@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,7 +38,7 @@ public class NamedElementEdgeFigure extends UMLEdgeFigure {
 		super();
 
 		// set dashes
-		for(int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) {
 			dashes[i] = 5;
 		}
 		setLineDash(dashes);

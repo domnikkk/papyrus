@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ public class AssociationEndTargetEditPart extends AssociationRoleTargetEditPart 
 
 	/**
 	 * Instantiates a new association end target edit part.
-	 * 
+	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public AssociationEndTargetEditPart(View view) {
 		super(view);
@@ -40,7 +40,7 @@ public class AssociationEndTargetEditPart extends AssociationRoleTargetEditPart 
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#resolveSemanticElement()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -52,7 +52,7 @@ public class AssociationEndTargetEditPart extends AssociationRoleTargetEditPart 
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAdapter(Class key) {
-		if(key == IPropertySource.class) {
+		if (key == IPropertySource.class) {
 			return resolveSemanticElement();
 		}
 		return super.getAdapter(key);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * Section to use in the properties view. This section enables to choose which of the possible parents graphically contains the selected node.
- * 
+ *
  * @author vhemery
  */
 public class ChooseGraphicalParentSection extends AbstractNotationPropertiesSection {
@@ -29,12 +29,12 @@ public class ChooseGraphicalParentSection extends AbstractNotationPropertiesSect
 
 	/** Load the switch icon once */
 	static {
-		////load images
-		//		try {
-		//			switchImage = new Image(Display.getDefault(), Activator.getDefault().getBundle().getResource(ICON_PATH).openStream());
-		//		} catch (IOException e) {
-		//			Activator.getDefault().getLog().log(new Status(Status.WARNING, Activator.PLUGIN_ID, e.getMessage(), e));
-		//		}
+		// //load images
+		// try {
+		// switchImage = new Image(Display.getDefault(), Activator.getDefault().getBundle().getResource(ICON_PATH).openStream());
+		// } catch (IOException e) {
+		// Activator.getDefault().getLog().log(new Status(Status.WARNING, Activator.PLUGIN_ID, e.getMessage(), e));
+		// }
 	}
 
 	/**

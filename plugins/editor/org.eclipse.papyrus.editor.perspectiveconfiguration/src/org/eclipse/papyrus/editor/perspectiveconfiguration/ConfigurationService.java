@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,42 +58,42 @@ public class ConfigurationService {
 
 	public ConfigurationService() {
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(PERSPECTIVE_CONFIGURATION_EXTENSION_POINT_ID);
-		for(int i = 0; i < configElements.length; i++) {
+		for (int i = 0; i < configElements.length; i++) {
 			constructAConfiguation(configElements[i]);
 		}
 	}
 
 	protected void constructAConfiguation(IConfigurationElement iConfigurationElement) {
 		try {
-			String configName = (String)iConfigurationElement.getAttribute(PERPSECTIVE_ID);
-			if(!configurationMap.containsKey(configName) || configurationMap.get(configName) == null) {
+			String configName = iConfigurationElement.getAttribute(PERPSECTIVE_ID);
+			if (!configurationMap.containsKey(configName) || configurationMap.get(configName) == null) {
 				configurationMap.put(configName, new Configuration(configName));
 			}
 			Configuration configuration = configurationMap.get(configName);
 
 			IConfigurationElement[] element = iConfigurationElement.getChildren(ACTION_SET);
-			for(int i = 0; i < element.length; i++) {
+			for (int i = 0; i < element.length; i++) {
 				configuration.addActionSet(element[i].getAttribute(ACTION_SET_ID));
 			}
 			element = iConfigurationElement.getChildren(MENU);
-			for(int i = 0; i < element.length; i++) {
+			for (int i = 0; i < element.length; i++) {
 				configuration.addMenu(element[i].getAttribute(MENU_ID));
 			}
 			element = iConfigurationElement.getChildren(TOOLBAR);
-			for(int i = 0; i < element.length; i++) {
+			for (int i = 0; i < element.length; i++) {
 				configuration.addtoolBar(element[i].getAttribute(TOOLBAR_ID));
 			}
 			element = iConfigurationElement.getChildren(PREFERENCEPAGE);
-			for(int i = 0; i < element.length; i++) {
+			for (int i = 0; i < element.length; i++) {
 				configuration.addPreference(element[i].getAttribute(PREFERENCEPAGEID));
 			}
 			element = iConfigurationElement.getChildren(CATEGORY);
-			for(int i = 0; i < element.length; i++) {
+			for (int i = 0; i < element.length; i++) {
 				configuration.addCategory(element[i].getAttribute(CATEGORYID));
 			}
 
 			element = iConfigurationElement.getChildren(COMMAND);
-			for(int i = 0; i < element.length; i++) {
+			for (int i = 0; i < element.length; i++) {
 				configuration.addCommandID(element[i].getAttribute(COMMANDID));
 			}
 		} catch (Exception e) {
@@ -102,7 +102,7 @@ public class ConfigurationService {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return a set of perspective id that has a configuration
 	 */
 	protected Set<String> getPerspectiveList() {
@@ -111,7 +111,7 @@ public class ConfigurationService {
 
 	/**
 	 * get a configuration from a perspective ID
-	 * 
+	 *
 	 * @param perspectiveID
 	 * @return a configuration or null if a configuration is not defined for the given perspective ID
 	 */

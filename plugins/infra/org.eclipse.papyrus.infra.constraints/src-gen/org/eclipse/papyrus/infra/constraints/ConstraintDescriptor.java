@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getDisplay <em>Display</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#isOverrideable <em>Overrideable</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getOverriddenConstraints <em>Overridden Constraints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getDisplay <em>Display</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#isOverrideable <em>Overrideable</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getOverriddenConstraints <em>Overridden Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,10 +33,10 @@ public interface ConstraintDescriptor extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getConstraintDescriptor_Name()
@@ -49,7 +49,9 @@ public interface ConstraintDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -60,10 +62,10 @@ public interface ConstraintDescriptor extends EObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.infra.constraints.DisplayUnit#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Display</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Display</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Display</em>' container reference.
 	 * @see #setDisplay(DisplayUnit)
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getConstraintDescriptor_Display()
@@ -77,7 +79,9 @@ public interface ConstraintDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#getDisplay <em>Display</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Display</em>' container reference.
 	 * @see #getDisplay()
 	 * @generated
 	 */
@@ -88,10 +92,10 @@ public interface ConstraintDescriptor extends EObject {
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Overrideable</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Overrideable</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Overrideable</em>' attribute.
 	 * @see #setOverrideable(boolean)
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getConstraintDescriptor_Overrideable()
@@ -104,7 +108,9 @@ public interface ConstraintDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.constraints.ConstraintDescriptor#isOverrideable <em>Overrideable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Overrideable</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Overrideable</em>' attribute.
 	 * @see #isOverrideable()
 	 * @generated
 	 */
@@ -115,10 +121,10 @@ public interface ConstraintDescriptor extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.constraints.SimpleConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Overridden Constraints</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Overridden Constraints</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Overridden Constraints</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.constraints.ConstraintsPackage#getConstraintDescriptor_OverriddenConstraints()
 	 * @model

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,22 +24,22 @@ import org.eclipse.uml2.uml.Property;
  * Test if current {@link Property} is a {@link Actor} Part
  */
 public class ActorPartPropertyMatcher implements IElementMatcher {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if((eObject instanceof Property) && !(eObject instanceof Port)) {
+		if ((eObject instanceof Property) && !(eObject instanceof Port)) {
 
-			Property element = (Property)eObject;
-			
+			Property element = (Property) eObject;
+
 			// The property is necessary a composition and has a type
 			if ((element.getType() != null) && (element.getAggregation() == AggregationKind.COMPOSITE_LITERAL)) {
-				
+
 				// Moreover its type has to be a Actor
-				if(element.getType() instanceof Actor) {
+				if (element.getType() instanceof Actor) {
 					isMatch = true;
 				}
 			}

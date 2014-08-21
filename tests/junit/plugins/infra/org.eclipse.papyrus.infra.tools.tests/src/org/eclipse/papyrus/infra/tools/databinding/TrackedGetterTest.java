@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.core.databinding.observable.ObservableTracker;
 /**
  * Annotates a test as testing a tracked getter, so the {@code RealmRunner} will check that the test's observable fixture
  * (as indicated by the {@link &#x40;ObservableFixture ObservableFixture} annotation) was reported to the {@link ObservableTracker}.
- * 
+ *
  * @see ObservableFixture
  * @see RealmRunner
  */

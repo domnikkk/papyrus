@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,9 +16,9 @@ package org.eclipse.papyrus.uml.diagram.common.service.palette;
 import org.eclipse.core.runtime.Assert;
 
 /**
- * 
+ *
  * This class is used to represent a {@link org.eclipse.uml2.uml.Property} value
- * 
+ *
  */
 public class Value {
 
@@ -29,11 +29,11 @@ public class Value {
 	private String value;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param value
-	 * 
+	 *
 	 */
 	public Value(String value) {
 		Assert.isNotNull(value);
@@ -41,12 +41,12 @@ public class Value {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor. Note : the field {@link PropertyRepresentation} is not
 	 * copied
-	 * 
+	 *
 	 * @param val
-	 *        The {@link Value} used to instantiate a new {@value}
+	 *            The {@link Value} used to instantiate a new {@value}
 	 */
 	public Value(Value val) {
 		Assert.isNotNull(val);
@@ -54,18 +54,19 @@ public class Value {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public String toString() {
 		return getValue();
 	}
 
 	/**
 	 * Getter for {@link #property}
-	 * 
+	 *
 	 * @return the property owning this value
 	 */
 	public PropertyRepresentation getPropertyRepresentation() {
@@ -75,7 +76,7 @@ public class Value {
 
 	/**
 	 * Returns the string representing this value
-	 * 
+	 *
 	 * @return the string representing this value
 	 */
 	public String getValue() {
@@ -84,7 +85,7 @@ public class Value {
 
 	/**
 	 * Set the property owned this value (called by {@link PropertyRepresentation#addValue(Value)})
-	 * 
+	 *
 	 * @param property
 	 */
 	public void setPropertyRepresentation(PropertyRepresentation property) {
@@ -93,7 +94,7 @@ public class Value {
 
 	/**
 	 * Set a new value to this value
-	 * 
+	 *
 	 * @param newValue
 	 */
 	public void setValue(String newValue) {

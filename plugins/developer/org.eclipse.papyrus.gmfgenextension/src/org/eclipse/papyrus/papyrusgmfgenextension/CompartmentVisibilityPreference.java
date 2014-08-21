@@ -22,8 +22,8 @@ import org.eclipse.gmf.codegen.gmfgen.GenCompartment;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.CompartmentVisibilityPreference#isVisibleByDefault <em>Visible By Default</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.CompartmentVisibilityPreference#getCompartments <em>Compartments</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.CompartmentVisibilityPreference#isVisibleByDefault <em>Visible By Default</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.CompartmentVisibilityPreference#getCompartments <em>Compartments</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,10 +37,10 @@ public interface CompartmentVisibilityPreference extends CommentedElement {
 	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Visible By Default</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Visible By Default</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Visible By Default</em>' attribute.
 	 * @see #setVisibleByDefault(boolean)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCompartmentVisibilityPreference_VisibleByDefault()
@@ -53,7 +53,9 @@ public interface CompartmentVisibilityPreference extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.CompartmentVisibilityPreference#isVisibleByDefault <em>Visible By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Visible By Default</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Visible By Default</em>' attribute.
 	 * @see #isVisibleByDefault()
 	 * @generated
 	 */
@@ -64,10 +66,10 @@ public interface CompartmentVisibilityPreference extends CommentedElement {
 	 * The list contents are of type {@link org.eclipse.gmf.codegen.gmfgen.GenCompartment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Compartments</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Compartments</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Compartments</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getCompartmentVisibilityPreference_Compartments()
 	 * @model

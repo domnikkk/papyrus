@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 /**
  * this class is a structure that contains a configuration
- * 
+ *
  */
 public class Configuration {
 
@@ -94,7 +94,7 @@ public class Configuration {
 
 	/**
 	 * constructor of a perspective
-	 * 
+	 *
 	 * @param perspectiveName
 	 */
 	public Configuration(String perspectiveName) {

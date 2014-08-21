@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public class AssociationEndTargetLabelHelper extends AssociationEndPropertyLabel
 	private static AssociationEndTargetLabelHelper labelHelper;
 
 	public static AssociationEndTargetLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new AssociationEndTargetLabelHelper();
 		}
 		return labelHelper;
@@ -42,42 +42,42 @@ public class AssociationEndTargetLabelHelper extends AssociationEndPropertyLabel
 	 */
 	@Override
 	public Property getUMLElement(GraphicalEditPart editPart) {
-		if((View)editPart.getModel() != null && ((View)editPart.getModel()).eContainer() != null) {
-			if(((Edge)((View)editPart.getModel()).eContainer()).getTarget() == null) {
+		if ((View) editPart.getModel() != null && ((View) editPart.getModel()).eContainer() != null) {
+			if (((Edge) ((View) editPart.getModel()).eContainer()).getTarget() == null) {
 				return null;
 			}
-			Classifier target = (Classifier)((Edge)((View)editPart.getModel()).eContainer()).getTarget().getElement();
+			Classifier target = (Classifier) ((Edge) ((View) editPart.getModel()).eContainer()).getTarget().getElement();
 			Property propertyToDisplay = null;
-			if(((View)editPart.getModel()) != null && (((View)editPart.getModel()).getElement() instanceof Association)) {
+			if (((View) editPart.getModel()) != null && (((View) editPart.getModel()).getElement() instanceof Association)) {
 				// look for the property that is typed by the classifier
 
-				Iterator<Property> propertiesIterator = ((Association)((View)editPart.getModel()).getElement()).getMemberEnds().iterator();
+				Iterator<Property> propertiesIterator = ((Association) ((View) editPart.getModel()).getElement()).getMemberEnds().iterator();
 
-				//find the last
-				while(propertiesIterator.hasNext()) {
+				// find the last
+				while (propertiesIterator.hasNext()) {
 					Property currentProperty = propertiesIterator.next();
-					if(currentProperty.getType().equals(target)) {
+					if (currentProperty.getType().equals(target)) {
 						propertyToDisplay = currentProperty;
 					}
 				}
 
 			}
-			if(propertyToDisplay != null) {
+			if (propertyToDisplay != null) {
 				return propertyToDisplay;
 			}
-			///in the case of reorient the property must be not found,
+			// /in the case of reorient the property must be not found,
 			// so we have to find the property that is different from the source.
 
-			Classifier source = (Classifier)((Edge)((View)editPart.getModel()).eContainer()).getSource().getElement();
-			if(((View)editPart.getModel()) != null && (((View)editPart.getModel()).getElement() instanceof Association)) {
+			Classifier source = (Classifier) ((Edge) ((View) editPart.getModel()).eContainer()).getSource().getElement();
+			if (((View) editPart.getModel()) != null && (((View) editPart.getModel()).getElement() instanceof Association)) {
 				// look for the property that is typed by the classifier
 
-				Iterator<Property> propertiesIterator = ((Association)((View)editPart.getModel()).getElement()).getMemberEnds().iterator();
+				Iterator<Property> propertiesIterator = ((Association) ((View) editPart.getModel()).getElement()).getMemberEnds().iterator();
 
-				//find the last
-				while(propertiesIterator.hasNext()) {
+				// find the last
+				while (propertiesIterator.hasNext()) {
 					Property currentProperty = propertiesIterator.next();
-					if(!currentProperty.getType().equals(source)) {
+					if (!currentProperty.getType().equals(source)) {
 						propertyToDisplay = currentProperty;
 					}
 				}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.swt.widgets.Control;
 /**
  * Base implementation of the NavigationService. It is based on the
  * navigationContributor extension point.
- * 
+ *
  * @author Camille Letavernier
  */
 public class NavigationServiceImpl implements NavigationService {
@@ -74,14 +74,14 @@ public class NavigationServiceImpl implements NavigationService {
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
-			if(!"contributor".equals(e.getName())) {
+		for (IConfigurationElement e : config) {
+			if (!"contributor".equals(e.getName())) {
 				continue;
 			}
 			try {
 				Object instance = e.createExecutableExtension("contributor");
-				if(instance instanceof NavigationContributor) {
-					NavigationContributorDescriptor wrapper = new NavigationContributorDescriptor((NavigationContributor)instance);
+				if (instance instanceof NavigationContributor) {
+					NavigationContributorDescriptor wrapper = new NavigationContributorDescriptor((NavigationContributor) instance);
 					wrapper.setId(e.getAttribute("id"));
 					wrapper.setLabel(e.getAttribute("label"));
 					wrapper.setDescription(e.getAttribute("description"));
@@ -99,14 +99,14 @@ public class NavigationServiceImpl implements NavigationService {
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
-			if(!"target".equals(e.getName())) {
+		for (IConfigurationElement e : config) {
+			if (!"target".equals(e.getName())) {
 				continue;
 			}
 			try {
 				Object instance = e.createExecutableExtension("navigationTargetProvider");
-				if(instance instanceof NavigationTargetProvider) {
-					NavigationTargetProviderDescriptor descriptor = new NavigationTargetProviderDescriptor((NavigationTargetProvider)instance);
+				if (instance instanceof NavigationTargetProvider) {
+					NavigationTargetProviderDescriptor descriptor = new NavigationTargetProviderDescriptor((NavigationTargetProvider) instance);
 					descriptor.setId(e.getAttribute("id"));
 					descriptor.setLabel(e.getAttribute("label"));
 					descriptor.setDescription(e.getAttribute("description"));
@@ -132,8 +132,8 @@ public class NavigationServiceImpl implements NavigationService {
 	public List<NavigableElement> getNavigableElements(Object fromElement) {
 		List<NavigableElement> navigableElements = new LinkedList<NavigableElement>();
 
-		for(NavigationContributorDescriptor contributor : navigationContributors) {
-			if(contributor.isActive()) {
+		for (NavigationContributorDescriptor contributor : navigationContributors) {
+			if (contributor.isActive()) {
 				navigableElements.addAll(contributor.getNavigableElements(fromElement));
 			}
 		}
@@ -194,11 +194,11 @@ public class NavigationServiceImpl implements NavigationService {
 		}
 
 		public int compareTo(NavigationTargetProviderDescriptor o) {
-			if(o == null) {
+			if (o == null) {
 				return -1;
 			}
 
-			if(o.order == order) {
+			if (o.order == order) {
 				return 0;
 			}
 
@@ -231,7 +231,7 @@ public class NavigationServiceImpl implements NavigationService {
 		}
 
 		public List<NavigableElement> getNavigableElements(Object fromElement) {
-			if(isActive()) {
+			if (isActive()) {
 				return contributor.getNavigableElements(fromElement);
 			} else {
 				return Collections.emptyList();
@@ -290,7 +290,7 @@ public class NavigationServiceImpl implements NavigationService {
 	 */
 	public SelectionMenu createNavigationList(Object fromElement, final Control parent) {
 		List<NavigableElement> navigableElements = getNavigableElements(fromElement);
-		if(navigableElements.isEmpty()) {
+		if (navigableElements.isEmpty()) {
 			return null;
 		}
 
@@ -299,33 +299,33 @@ public class NavigationServiceImpl implements NavigationService {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof NavigableElement) {
-					return ((NavigableElement)element).getLabel();
+				if (element instanceof NavigableElement) {
+					return ((NavigableElement) element).getLabel();
 				}
 				return super.getText(element);
 			}
 
 			@Override
 			public Image getImage(Object element) {
-				if(element instanceof NavigableElement) {
-					return ((NavigableElement)element).getImage();
+				if (element instanceof NavigableElement) {
+					return ((NavigableElement) element).getImage();
 				}
 				return super.getImage(element);
 			}
 
 			@Override
 			public String getToolTipText(Object element) {
-				if(element instanceof NavigableElement) {
-					return ((NavigableElement)element).getDescription();
+				if (element instanceof NavigableElement) {
+					return ((NavigableElement) element).getDescription();
 				}
 				return super.getToolTipText(element);
 			}
 
 			@Override
 			public Color getForeground(Object element) {
-				if(element instanceof NavigableElement) {
-					NavigableElement navigableElement = (NavigableElement)element;
-					if(!navigableElement.isEnabled()) {
+				if (element instanceof NavigableElement) {
+					NavigableElement navigableElement = (NavigableElement) element;
+					if (!navigableElement.isEnabled()) {
 						return parent.getDisplay().getSystemColor(SWT.COLOR_GRAY);
 					}
 				}
@@ -345,18 +345,18 @@ public class NavigationServiceImpl implements NavigationService {
 	 * {@inheritDoc}
 	 */
 	public void navigate(NavigableElement navigableElement) {
-		if(registry == null) {
+		if (registry == null) {
 			throw new IllegalStateException("The navigation service is not initialized");
 		}
 
-		for(NavigationTargetProvider provider : getNavigationTargetProviders()) {
+		for (NavigationTargetProvider provider : getNavigationTargetProviders()) {
 			NavigationTarget target = provider.getNavigationTarget(registry);
 
-			if(target == null) {
+			if (target == null) {
 				continue;
 			}
 
-			if(navigableElement.navigate(target)) {
+			if (navigableElement.navigate(target)) {
 				return;
 			}
 		}
@@ -366,18 +366,18 @@ public class NavigationServiceImpl implements NavigationService {
 	 * {@inheritDoc}
 	 */
 	public void navigate(Object element) {
-		if(registry == null) {
+		if (registry == null) {
 			throw new IllegalStateException("The navigation service is not initialized");
 		}
 
-		for(NavigationTargetProvider provider : getNavigationTargetProviders()) {
+		for (NavigationTargetProvider provider : getNavigationTargetProviders()) {
 			NavigationTarget target = provider.getNavigationTarget(registry);
 
-			if(target == null) {
+			if (target == null) {
 				continue;
 			}
 
-			if(target.revealElement(element)) {
+			if (target.revealElement(element)) {
 				return;
 			}
 		}

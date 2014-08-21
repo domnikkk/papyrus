@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.creation;
 
@@ -38,7 +38,7 @@ import org.eclipse.uml2.uml.UMLPackage;
  * A factory to instantiate arguments corresponding to Message signatures
  * The arguments are pre-filled with the right name and type, which
  * are extracted from the corresponding parameter
- * 
+ *
  * @author Camille Letavernier
  */
 public class MessageValueSpecificationFactory extends EcorePropertyEditorFactory {
@@ -62,15 +62,15 @@ public class MessageValueSpecificationFactory extends EcorePropertyEditorFactory
 	protected Set<ParameterDirectionKind> directions;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param type
-	 *        The type that will be instantiated
+	 *            The type that will be instantiated
 	 * @param parent
-	 *        The parent Message
+	 *            The parent Message
 	 * @param directions
-	 *        The directions of the parameters we want to retain
+	 *            The directions of the parameters we want to retain
 	 */
 	public MessageValueSpecificationFactory(EReference reference, Message parent, Set<ParameterDirectionKind> directions) {
 		super(reference);
@@ -85,8 +85,8 @@ public class MessageValueSpecificationFactory extends EcorePropertyEditorFactory
 	protected List<EClass> getAvailableEClasses() {
 		List<EClass> allClasses = EMFHelper.getSubclassesOf(type, true);
 		List<EClass> result = new LinkedList<EClass>();
-		for(EClass eClass : allClasses) {
-			if(isValid(eClass)) {
+		for (EClass eClass : allClasses) {
+			if (isValid(eClass)) {
 				result.add(eClass);
 			}
 		}
@@ -97,18 +97,18 @@ public class MessageValueSpecificationFactory extends EcorePropertyEditorFactory
 	@Override
 	protected Object doCreateObject(Control widget, Object context) {
 		EClass eClass = chooseEClass(widget);
-		if(eClass == null) {
+		if (eClass == null) {
 			return null;
 		}
 
 		EObject instance = eClass.getEPackage().getEFactoryInstance().create(eClass);
-		if(instance != null && instance instanceof NamedElement) {
+		if (instance != null && instance instanceof NamedElement) {
 			Parameter parameter = getParameter();
-			if(parameter != null) {
-				((NamedElement)instance).setName(parameter.getName());
+			if (parameter != null) {
+				((NamedElement) instance).setName(parameter.getName());
 
-				if(instance instanceof InstanceValue) {
-					((InstanceValue)instance).setType(parameter.getType());
+				if (instance instanceof InstanceValue) {
+					((InstanceValue) instance).setType(parameter.getType());
 				}
 			}
 		}
@@ -119,68 +119,68 @@ public class MessageValueSpecificationFactory extends EcorePropertyEditorFactory
 	/**
 	 * Tests if the given EClass can be instantiated for the following
 	 * parameter
-	 * 
+	 *
 	 * @param eClass
-	 *        The EClass to test
+	 *            The EClass to test
 	 * @return
 	 *         True if the EClass is a valid type for the next parameter
-	 * 
+	 *
 	 * @see #getParameter()
 	 */
 	protected boolean isValid(EClass eClass) {
 		Parameter parameter = getParameter();
-		if(parameter == null) {
+		if (parameter == null) {
 			return !restrictedInstantiation;
 		}
 
 		Type parameterType = parameter.getType();
-		if(parameterType instanceof PrimitiveType) {
-			return isValidType(eClass, (PrimitiveType)parameterType);
+		if (parameterType instanceof PrimitiveType) {
+			return isValidType(eClass, (PrimitiveType) parameterType);
 		}
 
-		if(parameterType instanceof Classifier) {
+		if (parameterType instanceof Classifier) {
 			return eClass == UMLPackage.eINSTANCE.getInstanceValue();
 		}
 
-		return !restrictedInstantiation; //The operation has no signature
+		return !restrictedInstantiation; // The operation has no signature
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the Operation corresponding to the message's signature,
 	 *         or null if the message's signature is not an operation
 	 */
 	protected Operation getOperation() {
 		NamedElement namedElement = parent.getSignature();
 
-		if(namedElement instanceof Operation) {
-			return (Operation)namedElement;
+		if (namedElement instanceof Operation) {
+			return (Operation) namedElement;
 		}
 
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the next parameter from the operation. The next parameter
 	 *         is the first operation's parameter that isn't matched by an argument
 	 *         of the parent message.
-	 * 
+	 *
 	 * @see #getOperation()
 	 */
 	protected Parameter getParameter() {
 		Operation operation = getOperation();
-		if(operation == null) {
+		if (operation == null) {
 			return null;
 		}
 
 		int index = parent.getArguments().size();
 
 		int i = 0;
-		for(Parameter parameter : operation.getOwnedParameters()) {
+		for (Parameter parameter : operation.getOwnedParameters()) {
 			ParameterDirectionKind direction = parameter.getDirection();
-			if(directions.contains(direction)) {
-				if(i++ == index) {
+			if (directions.contains(direction)) {
+				if (i++ == index) {
 					return parameter;
 				}
 			}
@@ -193,47 +193,47 @@ public class MessageValueSpecificationFactory extends EcorePropertyEditorFactory
 	 * Tests if the given EClass is a valid type for the given PrimitiveType
 	 * This test is pretty subjective, as it tries to associate a custom primitive
 	 * type to a UML Literal type (or InstanceValue).
-	 * 
+	 *
 	 * For example, the UML "Literal Integer" can match the "Integer" or "int"
 	 * primitive type, which means that an instance of the "Integer" Primitive
 	 * Type is a valid value for a Literal Integer.
-	 * 
+	 *
 	 * @param eClass
-	 *        A Subclass of InstanceSpecification
+	 *            A Subclass of InstanceSpecification
 	 * @param parameterType
-	 *        A PrimitiveType
+	 *            A PrimitiveType
 	 * @return
 	 *         True if an instance of the given PrimitiveType is a valid instance for the given eClass
 	 */
-	//TODO : To make this method a little more usable with custom primitive
-	//types, and a little less subjective, the matching should be done through
-	//an extension point or a local customization (preferences).
-	//This currently works only with basic UML Primitive Types and standard
-	//java-like types
+	// TODO : To make this method a little more usable with custom primitive
+	// types, and a little less subjective, the matching should be done through
+	// an extension point or a local customization (preferences).
+	// This currently works only with basic UML Primitive Types and standard
+	// java-like types
 	protected boolean isValidType(EClass eClass, PrimitiveType parameterType) {
 		String typeName = parameterType.getName();
 
-		//Integer numbers
-		if(eClass == UMLPackage.eINSTANCE.getLiteralInteger() || eClass == UMLPackage.eINSTANCE.getLiteralUnlimitedNatural()) {
+		// Integer numbers
+		if (eClass == UMLPackage.eINSTANCE.getLiteralInteger() || eClass == UMLPackage.eINSTANCE.getLiteralUnlimitedNatural()) {
 			return typeName.equals("Integer") || typeName.equals("int"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
-		//Can be used to instantiate anything, except integers and booleans
-		if(eClass == UMLPackage.eINSTANCE.getLiteralString()) {
+		// Can be used to instantiate anything, except integers and booleans
+		if (eClass == UMLPackage.eINSTANCE.getLiteralString()) {
 			return !(typeName.equals("Integer") || typeName.equals("int") || typeName.equals("Boolean") || typeName.equals("boolean")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		}
 
-		//Can be used to instantiate anything, except integers, booleans and strings
-		if(eClass == UMLPackage.eINSTANCE.getInstanceValue()) {
+		// Can be used to instantiate anything, except integers, booleans and strings
+		if (eClass == UMLPackage.eINSTANCE.getInstanceValue()) {
 			return !(typeName.equals("Integer") || typeName.equals("int") || typeName.equals("Boolean") || typeName.equals("boolean") || typeName.equals("String")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
 		}
 
-		//Booleans
-		if(eClass == UMLPackage.eINSTANCE.getLiteralBoolean()) {
+		// Booleans
+		if (eClass == UMLPackage.eINSTANCE.getLiteralBoolean()) {
 			return typeName.equals("Boolean") || typeName.equals("boolean"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
-		//We aren't interested in other InstanceSpecifications
+		// We aren't interested in other InstanceSpecifications
 		return false;
 	}
 }

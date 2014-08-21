@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,9 +42,9 @@ import org.eclipse.uml2.uml.InteractionFragment;
 /**
  * This creation policy is used to move covered interaction fragments into the interaction operand
  * when creating a new combined fragment.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 
@@ -52,28 +52,29 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 	@Override
 	protected Command getCreateElementAndViewCommand(CreateViewAndElementRequest request) {
 		Command createElementAndViewCmd = super.getCreateElementAndViewCommand(request);
-		if(isDerivedCombinedFragment(request.getViewAndElementDescriptor().getSemanticHint())) {
+		if (isDerivedCombinedFragment(request.getViewAndElementDescriptor().getSemanticHint())) {
 			Rectangle selectionRect = getSelectionRectangle(request);
 			Set<InteractionFragment> coveredInteractionFragments = SequenceUtil.getCoveredInteractionFragments(selectionRect, getHost(), null);
 			request.getExtendedData().put(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS, coveredInteractionFragments);
 			// Add updating bounds command for Combined fragment createment
 			String hint = request.getViewAndElementDescriptor().getSemanticHint();
-			if(OperandBoundsComputeHelper.isDerivedCombinedFragment(hint)) {
-				if(createElementAndViewCmd instanceof ICommandProxy) {
-					ICommandProxy commandProxy = (ICommandProxy)createElementAndViewCmd;
+			if (OperandBoundsComputeHelper.isDerivedCombinedFragment(hint)) {
+				if (createElementAndViewCmd instanceof ICommandProxy) {
+					ICommandProxy commandProxy = (ICommandProxy) createElementAndViewCmd;
 					ICommand realCmd = commandProxy.getICommand();
-					if(realCmd instanceof CompositeCommand) {
+					if (realCmd instanceof CompositeCommand) {
 						ICommand createUpdateBoundsCmd = OperandBoundsComputeHelper.createUpdateCFAndIOBoundsForCFCreationCommand(this.getHost(), request);
-						if(createUpdateBoundsCmd != null)
-							((CompositeCommand)realCmd).add(createUpdateBoundsCmd);
+						if (createUpdateBoundsCmd != null) {
+							((CompositeCommand) realCmd).add(createUpdateBoundsCmd);
+						}
 					}
 				}
 			}
 		}
-		//Ordering fragments
-		if(createElementAndViewCmd != null && createElementAndViewCmd.canExecute()) {
+		// Ordering fragments
+		if (createElementAndViewCmd != null && createElementAndViewCmd.canExecute()) {
 			ICommand orderingFragmentsCommand = FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request);
-			if(orderingFragmentsCommand != null) {
+			if (orderingFragmentsCommand != null) {
 				createElementAndViewCmd = createElementAndViewCmd.chain(new ICommandProxy(orderingFragmentsCommand));
 			}
 		}
@@ -83,25 +84,26 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 	@Override
 	protected Command getCreateCommand(CreateViewRequest request) {
 		Command createViewCmd = super.getCreateCommand(request);
-		if(createViewCmd instanceof ICommandProxy) {
-			ICommandProxy commandProxy = (ICommandProxy)createViewCmd;
+		if (createViewCmd instanceof ICommandProxy) {
+			ICommandProxy commandProxy = (ICommandProxy) createViewCmd;
 			CompositeCommand compositeCommand = null;
 			ICommand realCmd = commandProxy.getICommand();
-			if(realCmd instanceof CompositeCommand) {
-				compositeCommand = (CompositeCommand)realCmd;
+			if (realCmd instanceof CompositeCommand) {
+				compositeCommand = (CompositeCommand) realCmd;
 			} else {
 				compositeCommand = new CompositeCommand(commandProxy.getLabel());
 				compositeCommand.add(realCmd);
 				realCmd = compositeCommand;
 			}
-			for(ViewDescriptor viewDescriptor : request.getViewDescriptors()) {
+			for (ViewDescriptor viewDescriptor : request.getViewDescriptors()) {
 				String hint = viewDescriptor.getSemanticHint();
-				if(isDerivedCombinedFragment(hint)) {
+				if (isDerivedCombinedFragment(hint)) {
 					// Add updating bounds command for Combined fragment createment
-					if(OperandBoundsComputeHelper.isDerivedCombinedFragment(hint)) {
+					if (OperandBoundsComputeHelper.isDerivedCombinedFragment(hint)) {
 						ICommand createUpdateBoundsCmd = OperandBoundsComputeHelper.createUpdateCFAndIOBoundsForCFCreationCommand(this.getHost(), request);
-						if(createUpdateBoundsCmd != null)
-							((CompositeCommand)realCmd).add(createUpdateBoundsCmd);
+						if (createUpdateBoundsCmd != null) {
+							((CompositeCommand) realCmd).add(createUpdateBoundsCmd);
+						}
 					}
 				}
 			}
@@ -112,16 +114,16 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Retrieve the selection rectangle associated with the request.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return
 	 */
 	private Rectangle getSelectionRectangle(CreateViewAndElementRequest request) {
 		Rectangle selectionRect = new Rectangle();
 		Point location = request.getLocation();
 		Dimension size = request.getSize();
-		if(location != null) {
+		if (location != null) {
 			selectionRect.x = location.x;
 			selectionRect.y = location.y;
 		} else {
@@ -129,7 +131,7 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 			selectionRect.x = 100;
 			selectionRect.y = 100;
 		}
-		if(size != null) {
+		if (size != null) {
 			selectionRect.height = size.height;
 			selectionRect.width = size.width;
 		} else {
@@ -142,19 +144,19 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Check if it is a combined fragment or something similar which needs this policy to move ift in the correct container.
-	 * 
+	 *
 	 * @param hint
-	 *        the semantic hint
+	 *            the semantic hint
 	 * @return
 	 */
 	private static boolean isDerivedCombinedFragment(String hint) {
-		if(((IHintedType)UMLElementTypes.InteractionOperand_3005).getSemanticHint().equals(hint)) {
+		if (((IHintedType) UMLElementTypes.InteractionOperand_3005).getSemanticHint().equals(hint)) {
 			return true;
 		}
-		if(((IHintedType)UMLElementTypes.CombinedFragment_3004).getSemanticHint().equals(hint)) {
+		if (((IHintedType) UMLElementTypes.CombinedFragment_3004).getSemanticHint().equals(hint)) {
 			return true;
 		}
-		if(((IHintedType)UMLElementTypes.ConsiderIgnoreFragment_3007).getSemanticHint().equals(hint)) {
+		if (((IHintedType) UMLElementTypes.ConsiderIgnoreFragment_3007).getSemanticHint().equals(hint)) {
 			return true;
 		}
 		return false;
@@ -162,14 +164,14 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getTargetEditPart(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		//Fixed bugs about creating Gates on clientArea of CombinedFragment. Whatever the host is InteractionOperand or Compartment, just use CombinedFragment.
-		if(isCreatingGate(request)) {
+		// Fixed bugs about creating Gates on clientArea of CombinedFragment. Whatever the host is InteractionOperand or Compartment, just use CombinedFragment.
+		if (isCreatingGate(request)) {
 			return getCombinedFragmentEditPart();
 		}
 		return super.getTargetEditPart(request);
@@ -177,8 +179,8 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 
 	private EditPart getCombinedFragmentEditPart() {
 		EditPart editPart = getHost();
-		while(editPart != null) {
-			if(editPart instanceof CombinedFragmentEditPart) {
+		while (editPart != null) {
+			if (editPart instanceof CombinedFragmentEditPart) {
 				return editPart;
 			}
 			editPart = editPart.getParent();
@@ -187,29 +189,29 @@ public class CombinedFragmentCreationEditPolicy extends CreationEditPolicy {
 	}
 
 	private boolean isCreatingGate(Request request) {
-		if(!(request instanceof CreateRequest)) {
+		if (!(request instanceof CreateRequest)) {
 			return false;
 		}
-		CreateRequest createReq = (CreateRequest)request;
+		CreateRequest createReq = (CreateRequest) request;
 		try {
 			Object newObjectType = createReq.getNewObjectType();
 			return GateEditPart.GATE_TYPE.equals(newObjectType);
 		} catch (Exception e) {
-			//There's no CreationFactory set.
+			// There's no CreationFactory set.
 			return false;
 		}
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#understandsRequest(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public boolean understandsRequest(Request request) {
-		//Fixed bug when creating Gate, take care of CustomizableDropEditPolicy.
-		if(isCreatingGate(request)) {
+		// Fixed bug when creating Gate, take care of CustomizableDropEditPolicy.
+		if (isCreatingGate(request)) {
 			return getCombinedFragmentEditPart() != null;
 		}
 		return super.understandsRequest(request);

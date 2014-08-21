@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.core.runtime.IExtensionRegistry;
 public class ExtensionServiceDescriptorsWithIdProviderFromFile extends ExtensionServiceDescriptorsWithIdProvider {
 
 	protected IExtensionRegistry extensionRegistry;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param extensionRegistry
@@ -38,7 +38,7 @@ public class ExtensionServiceDescriptorsWithIdProviderFromFile extends Extension
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

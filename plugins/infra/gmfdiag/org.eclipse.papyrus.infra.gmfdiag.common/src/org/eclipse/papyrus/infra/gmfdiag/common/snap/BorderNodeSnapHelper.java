@@ -16,16 +16,16 @@ import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.SnapToHelper;
 
 /**
- * 
+ *
  * Snap Helper with default behavior for BorderNode (snap only on the center of the figrue
  * TODO PapyrusDragBorderNodeEditPartTrackerEx should use me
  */
 public class BorderNodeSnapHelper extends NodeSnapHelper {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param helper
 	 * @param figureToSnapBounds
 	 */

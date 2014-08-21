@@ -23,9 +23,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * A service starting the ModelSet
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ModelSetServiceFactory implements IServiceFactory {
 
@@ -35,34 +35,37 @@ public class ModelSetServiceFactory implements IServiceFactory {
 	private ModelSet service;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
+	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
 		this.serviceRegistry = servicesRegistry;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void startService() throws ServiceException {
 		// Pass
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
-		if(service != null) {
+		if (service != null) {
 			try {
 				setServiceRegistry(service, null);
 			} finally {
@@ -74,8 +77,9 @@ public class ModelSetServiceFactory implements IServiceFactory {
 	/**
 	 * Create the service served by this factory.
 	 */
+	@Override
 	public final Object createServiceInstance() throws ServiceException {
-		if(service == null) {
+		if (service == null) {
 			service = createModelSet();
 			setServiceRegistry(service, serviceRegistry);
 		}
@@ -97,20 +101,20 @@ public class ModelSetServiceFactory implements IServiceFactory {
 
 	/**
 	 * Associates a resource set with a service registry.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        a resource set. Must not be {@code null}
+	 *            a resource set. Must not be {@code null}
 	 * @param serviceRegistry
-	 *        a service registry. May be {@code null} to remove a previous association
+	 *            a service registry. May be {@code null} to remove a previous association
 	 */
 	public static void setServiceRegistry(ResourceSet resourceSet, ServicesRegistry serviceRegistry) throws ServiceException {
-		if(serviceRegistry != null) {
+		if (serviceRegistry != null) {
 			ModelSetServiceAdapter adapter = new ModelSetServiceAdapter(resourceSet);
 			adapter.init(serviceRegistry);
 			adapter.startService();
 		} else {
 			ModelSetServiceAdapter adapter = ModelSetServiceAdapter.getInstance(resourceSet);
-			if(adapter != null) {
+			if (adapter != null) {
 				adapter.stopService();
 			}
 		}

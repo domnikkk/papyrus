@@ -47,7 +47,7 @@ public class OptionalMessageDialog extends MessageDialog {
 
 	/**
 	 * Opens the dialog but only if the user hasn't chosen to hide it.
-	 * 
+	 *
 	 * @return the index of the pressed button or {@link SWT#DEFAULT} if the dialog got dismissed
 	 *         without pressing a button (e.g. via Esc) or {{@link #NOT_SHOWN} if the dialog was not
 	 *         shown
@@ -58,14 +58,15 @@ public class OptionalMessageDialog extends MessageDialog {
 
 	/**
 	 * Opens the dialog but only if the user hasn't chosen to hide it.
-	 * 
+	 *
 	 * @return the index of the pressed button or {@link SWT#DEFAULT} if the dialog got dismissed
 	 *         without pressing a button (e.g. via Esc) or {{@link #NOT_SHOWN} if the dialog was not
 	 *         shown
 	 */
 	public static int open(String id, Shell parent, String title, Image titleImage, String message, int dialogType, String[] buttonLabels, int defaultButtonIndex, String checkboxText) {
-		if(!isDialogEnabled(id))
+		if (!isDialogEnabled(id)) {
 			return OptionalMessageDialog.NOT_SHOWN;
+		}
 		MessageDialog dialog = new OptionalMessageDialog(id, parent, title, titleImage, message, dialogType, buttonLabels, defaultButtonIndex, checkboxText);
 		return dialog.open();
 	}
@@ -95,24 +96,25 @@ public class OptionalMessageDialog extends MessageDialog {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				setDialogEnabled(fId, !((Button)e.widget).getSelection());
+				setDialogEnabled(fId, !((Button) e.widget).getSelection());
 			}
 		});
 		applyDialogFont(fHideDialogCheckBox);
 		return fHideDialogCheckBox;
 	}
 
-	//--------------- Configuration handling --------------
+	// --------------- Configuration handling --------------
 	/**
 	 * Returns this dialog
-	 * 
+	 *
 	 * @return the settings to be used
 	 */
 	private static IDialogSettings getDialogSettings() {
 		IDialogSettings settings = Activator.getDefault().getDialogSettings();
 		settings = settings.getSection(STORE_ID);
-		if(settings == null)
+		if (settings == null) {
 			settings = Activator.getDefault().getDialogSettings().addNewSection(STORE_ID);
+		}
 		return settings;
 	}
 

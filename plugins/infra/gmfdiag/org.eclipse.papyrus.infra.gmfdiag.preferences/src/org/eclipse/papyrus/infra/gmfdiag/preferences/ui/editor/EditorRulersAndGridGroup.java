@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -26,13 +26,13 @@ public class EditorRulersAndGridGroup extends RulersAndGridGroup {
 
 	/**
 	 * Instantiates a new editor background color.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param key
-	 *        the key of the preference
+	 *            the key of the preference
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 */
 	public EditorRulersAndGridGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -43,6 +43,7 @@ public class EditorRulersAndGridGroup extends RulersAndGridGroup {
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getPapyrusEditorConstant(preferenceType);
 	}

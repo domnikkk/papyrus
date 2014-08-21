@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Interaction;
 
 /**
- * 
+ *
  * this content provider is used to display diagrams and their contents
- * 
+ *
  */
 @Deprecated
 public class DiagramContentProvider extends MoDiscoContentProvider implements IHierarchicContentProvider {
@@ -48,21 +48,21 @@ public class DiagramContentProvider extends MoDiscoContentProvider implements IH
 	public EObject[] getRootElements(final Object inputElement) {
 
 		try {
-			if(!(inputElement instanceof ServicesRegistry)) {
+			if (!(inputElement instanceof ServicesRegistry)) {
 				return null;
 			}
 
-			final ServicesRegistry servicesRegistry = (ServicesRegistry)inputElement;
+			final ServicesRegistry servicesRegistry = (ServicesRegistry) inputElement;
 
 			modelSet = ModelUtils.getModelSetChecked(servicesRegistry);
 			pageMngr = servicesRegistry.getService(IPageManager.class);
 
 			final ArrayList<EObject> result = new ArrayList<EObject>();
 			final List<Object> list = pageMngr.allPages();
-			for(int i = 0; i < list.size(); i++) {
+			for (int i = 0; i < list.size(); i++) {
 				final Object element = pageMngr.allPages().get(i);
-				if(element instanceof Diagram && isValidDiagram((Diagram)element)) {
-					result.add((EObject)pageMngr.allPages().get(i));
+				if (element instanceof Diagram && isValidDiagram((Diagram) element)) {
+					result.add((EObject) pageMngr.allPages().get(i));
 				}
 			}
 
@@ -77,18 +77,18 @@ public class DiagramContentProvider extends MoDiscoContentProvider implements IH
 	}
 
 	private boolean isValidDiagram(final Diagram diagram) {
-		//seqDiagram or comDiagram
-		if(diagram.getType().equals(PackageEditPart.MODEL_ID) || diagram.getType().equals(ModelEditPart.MODEL_ID)) {
-			if(diagram.getElement().equals(interaction)) {
+		// seqDiagram or comDiagram
+		if (diagram.getType().equals(PackageEditPart.MODEL_ID) || diagram.getType().equals(ModelEditPart.MODEL_ID)) {
+			if (diagram.getElement().equals(interaction)) {
 				return true;
 			}
-			//timing Diagram
-		} else if(diagram.getType().equals(TimingDiagramEditPart.MODEL_ID)) {
+			// timing Diagram
+		} else if (diagram.getType().equals(TimingDiagramEditPart.MODEL_ID)) {
 			return true;
-			//InteractionOverviewDiagram
-		} else if(diagram.getType().equals(InteractionOverviewDiagramEditPart.MODEL_ID)) {
-			if(diagram.getElement() instanceof Activity) {
-				if(((Activity)diagram.getElement()).getOwnedBehaviors().contains(interaction)) {
+			// InteractionOverviewDiagram
+		} else if (diagram.getType().equals(InteractionOverviewDiagramEditPart.MODEL_ID)) {
+			if (diagram.getElement() instanceof Activity) {
+				if (((Activity) diagram.getElement()).getOwnedBehaviors().contains(interaction)) {
 					return true;
 				}
 			}
@@ -96,10 +96,11 @@ public class DiagramContentProvider extends MoDiscoContentProvider implements IH
 		return false;
 	}
 
+	@Override
 	public boolean isValidValue(final Object element) {
 		final EObject eObject = EMFHelper.getEObject(element);
-		if(eObject instanceof Diagram) {
-			return isValidDiagram((Diagram)eObject);
+		if (eObject instanceof Diagram) {
+			return isValidDiagram((Diagram) eObject);
 		}
 		return false;
 	}

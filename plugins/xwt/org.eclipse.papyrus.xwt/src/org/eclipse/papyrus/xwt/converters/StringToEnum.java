@@ -3,9 +3,9 @@
  * All rights reserved. This program and the accompanying materials            *
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
- * http://www.eclipse.org/legal/epl-v10.html                                   *  
- * Contributors:                                                               *  
- *     Soyatec - initial API and implementation                                * 
+ * http://www.eclipse.org/legal/epl-v10.html                                   *
+ * Contributors:                                                               *
+ *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.converters;
 
@@ -28,15 +28,15 @@ public class StringToEnum implements IConverter {
 	 * @see org.eclipse.core.databinding.conversion.IConverter#convert(java.lang.Object)
 	 */
 	public Object convert(Object fromObject) {
-		if(fromObject == null || "".equals(fromObject)) {
-			Class<?> type = (Class<?>)getToType();
+		if (fromObject == null || "".equals(fromObject)) {
+			Class<?> type = (Class<?>) getToType();
 			Object[] values = type.getEnumConstants();
-			if(values != null && values.length > 0) {
+			if (values != null && values.length > 0) {
 				return values[0];
 			}
 		}
 
-		return Enum.valueOf((Class)getToType(), (String)fromObject);
+		return Enum.valueOf((Class) getToType(), (String) fromObject);
 	}
 
 	/*

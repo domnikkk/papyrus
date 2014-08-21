@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,11 +40,11 @@ public class RuleConfigurationFactoryRegistry {
 
 	/**
 	 * returns the singleton instance of this registry
-	 * 
+	 *
 	 * @return the singleton instance of this registry
 	 */
 	public static synchronized RuleConfigurationFactoryRegistry getInstance() {
-		if(registry == null) {
+		if (registry == null) {
 			registry = new RuleConfigurationFactoryRegistry();
 			registry.init();
 		}
@@ -55,22 +55,23 @@ public class RuleConfigurationFactoryRegistry {
 	 * Inits the registry.
 	 */
 	protected void init() {
-		configurationTypeToClassDescriptor = new  HashMap<String, RuleConfigurationFactoryRegistry.ConfigurableClassDescriptor>();
-		//read invariant rule configuration etension point
+		configurationTypeToClassDescriptor = new HashMap<String, RuleConfigurationFactoryRegistry.ConfigurableClassDescriptor>();
+		// read invariant rule configuration etension point
 		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(IInvariantRuleExtensionPoint.EXTENSION_POINT_ID);
-		// for each element, parses and retrieve the model file. then loads it and returns the root element 
-		for(IConfigurationElement configurationElement : elements) {
-			// contributor will always be the same, but implementation could be different.  
+		// for each element, parses and retrieve the model file. then loads it and returns the root element
+		for (IConfigurationElement configurationElement : elements) {
+			// contributor will always be the same, but implementation could be different.
 			String contributorName = configurationElement.getContributor().getName();
 
 			String configurationClass = configurationElement.getAttribute(IInvariantRuleExtensionPoint.RULE_CONFIGURATION_CLASS);
-			
+
 			String matcherClassName = configurationElement.getAttribute(IInvariantRuleExtensionPoint.ELEMENT_MATCHER_CLASS);
 			String editHelperAdviceClassName = configurationElement.getAttribute(IInvariantRuleExtensionPoint.EDIT_HELPER_ADVICE_CLASS);
 			String containerDescriptorClassName = configurationElement.getAttribute(IInvariantRuleExtensionPoint.CONTAINER_DESCRIPTOR_CLASS);
 			String creationElementValidatorClassName = configurationElement.getAttribute(IInvariantRuleExtensionPoint.CREATION_ELEMENT_VALIDATOR_CLASS);
-			
-			ConfigurableClassDescriptor configurableClassDescriptor = new ConfigurableClassDescriptor(contributorName, matcherClassName, contributorName, editHelperAdviceClassName, contributorName, containerDescriptorClassName, contributorName, creationElementValidatorClassName);
+
+			ConfigurableClassDescriptor configurableClassDescriptor = new ConfigurableClassDescriptor(contributorName, matcherClassName, contributorName, editHelperAdviceClassName, contributorName, containerDescriptorClassName, contributorName,
+					creationElementValidatorClassName);
 			configurationTypeToClassDescriptor.put(configurationClass, configurableClassDescriptor);
 		}
 
@@ -78,20 +79,20 @@ public class RuleConfigurationFactoryRegistry {
 
 	/**
 	 * Creates the {@link IElementMatcher} specific to the given rule configuration
-	 * 
+	 *
 	 * @param ruleConfiguration
-	 *        the rule configuration that will configure the created matcher
+	 *            the rule configuration that will configure the created matcher
 	 * @return the {@link IElementMatcher} created or <code>null</code> if none could be created
 	 */
 	public IInvariantElementMatcher<InvariantRuleConfiguration> createMatcher(InvariantRuleConfiguration ruleConfiguration) {
 		// creates the matcher from the extension points
 		Class<IInvariantElementMatcher<InvariantRuleConfiguration>> elementMatcherClass = getMatcherClass(ruleConfiguration);
-		if(elementMatcherClass == null) {
+		if (elementMatcherClass == null) {
 			return null;
 		}
 		try {
 			IInvariantElementMatcher<InvariantRuleConfiguration> matcher = elementMatcherClass.newInstance();
-			if(matcher != null) {
+			if (matcher != null) {
 				matcher.init(ruleConfiguration);
 			}
 			return matcher;
@@ -109,12 +110,12 @@ public class RuleConfigurationFactoryRegistry {
 	 */
 	public IInvariantContainerDescriptor<InvariantRuleConfiguration> createContainerDescriptor(InvariantRuleConfiguration ruleConfiguration) {
 		Class<IInvariantContainerDescriptor<InvariantRuleConfiguration>> containerDescriptorClass = getContainerDescriptorClass(ruleConfiguration);
-		if(containerDescriptorClass == null) {
+		if (containerDescriptorClass == null) {
 			return null;
 		}
 		try {
 			IInvariantContainerDescriptor<InvariantRuleConfiguration> containerDescriptor = containerDescriptorClass.newInstance();
-			if(containerDescriptor != null) {
+			if (containerDescriptor != null) {
 				containerDescriptor.init(ruleConfiguration);
 			}
 			return containerDescriptor;
@@ -132,13 +133,13 @@ public class RuleConfigurationFactoryRegistry {
 	 */
 	public IInvariantEditHelperAdvice<InvariantRuleConfiguration> createEditHelperAdvice(InvariantRuleConfiguration ruleConfiguration) {
 		Class<IInvariantEditHelperAdvice<InvariantRuleConfiguration>> editHelperAdviceClass = getEditHelperAdviceClass(ruleConfiguration);
-		if(editHelperAdviceClass == null) {
-			Activator.log.error("impossible to find the edit helper advice implementation for configuration type : " + ((ruleConfiguration!=null) ? ruleConfiguration.eClass().getName() : "null"), null);
+		if (editHelperAdviceClass == null) {
+			Activator.log.error("impossible to find the edit helper advice implementation for configuration type : " + ((ruleConfiguration != null) ? ruleConfiguration.eClass().getName() : "null"), null);
 			return null;
 		}
 		try {
 			IInvariantEditHelperAdvice<InvariantRuleConfiguration> editHelperAdvice = editHelperAdviceClass.newInstance();
-			if(editHelperAdvice != null) {
+			if (editHelperAdvice != null) {
 				editHelperAdvice.init(ruleConfiguration);
 			}
 			return editHelperAdvice;
@@ -149,20 +150,20 @@ public class RuleConfigurationFactoryRegistry {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param ruleConfiguration
 	 * @return
 	 */
 	public IInvariantCreationElementValidator<InvariantRuleConfiguration> createCreationElementValidator(InvariantRuleConfiguration ruleConfiguration) {
 		Class<IInvariantCreationElementValidator<InvariantRuleConfiguration>> creationElementValidatorClass = getCreationElementValidatorClass(ruleConfiguration);
-		if(creationElementValidatorClass == null) {
+		if (creationElementValidatorClass == null) {
 			// Activator.log.error("impossible to find the Creation Element Validator for configuration type : " + ((ruleConfiguration!=null) ? ruleConfiguration.eClass().getName() : "null"), null);
 			return null;
 		}
 		try {
 			IInvariantCreationElementValidator<InvariantRuleConfiguration> creationElementValidator = creationElementValidatorClass.newInstance();
-			if(creationElementValidator != null) {
+			if (creationElementValidator != null) {
 				creationElementValidator.init(ruleConfiguration);
 			}
 			return creationElementValidator;
@@ -173,8 +174,8 @@ public class RuleConfigurationFactoryRegistry {
 		}
 		return null;
 	}
-	
-	
+
+
 	/**
 	 * @param ruleConfiguration
 	 * @return
@@ -184,13 +185,13 @@ public class RuleConfigurationFactoryRegistry {
 		String configurationType = configuration.eClass().getInstanceClassName();
 		String className = configurationTypeToClassDescriptor.get(configurationType).getCreationElementValidatorClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getCreationElementValidatorContributorName();
-		
+
 		// look in the list of registered matcher for the right one
-		if(className ==null) {
-			 //Activator.log.error("There should be an implementation class for the configuration "+configurationType+ " from contributor "+contributorName, null);
-		} else if(contributorName !=null) {
-			return (Class<IInvariantCreationElementValidator<InvariantRuleConfiguration>>)loadClass(className, contributorName);
-		} 
+		if (className == null) {
+			// Activator.log.error("There should be an implementation class for the configuration "+configurationType+ " from contributor "+contributorName, null);
+		} else if (contributorName != null) {
+			return (Class<IInvariantCreationElementValidator<InvariantRuleConfiguration>>) loadClass(className, contributorName);
+		}
 		return null;
 	}
 
@@ -200,18 +201,18 @@ public class RuleConfigurationFactoryRegistry {
 	 */
 	@SuppressWarnings("unchecked")
 	protected Class<IInvariantElementMatcher<InvariantRuleConfiguration>> getMatcherClass(InvariantRuleConfiguration configuration) {
-		
+
 		String configurationType = configuration.eClass().getInstanceClassName();
 		String className = configurationTypeToClassDescriptor.get(configurationType).getElementMatcherClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getElementMatcherContributorName();
-		
+
 		// look in the list of registered matcher for the right one
-		if(className !=null && contributorName !=null) {
-			return (Class<IInvariantElementMatcher<InvariantRuleConfiguration>>)loadClass(className, contributorName);
+		if (className != null && contributorName != null) {
+			return (Class<IInvariantElementMatcher<InvariantRuleConfiguration>>) loadClass(className, contributorName);
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param configurationType
 	 * @return
@@ -221,9 +222,9 @@ public class RuleConfigurationFactoryRegistry {
 		String configurationType = configuration.eClass().getInstanceClassName();
 		String className = configurationTypeToClassDescriptor.get(configurationType).getEditHelperAdviceClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getEditHelperAdviceContributorName();
-		
+
 		// look in the list of registered edit helper advices for the right one
-		return (Class<IInvariantEditHelperAdvice<InvariantRuleConfiguration>>)loadClass(className, contributorName);
+		return (Class<IInvariantEditHelperAdvice<InvariantRuleConfiguration>>) loadClass(className, contributorName);
 	}
 
 	/**
@@ -235,17 +236,17 @@ public class RuleConfigurationFactoryRegistry {
 		String configurationType = configuration.eClass().getInstanceClassName();
 		String className = configurationTypeToClassDescriptor.get(configurationType).getContainerDescriptorClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getContainerDescriptorContributorName();
-		
-		
+
+
 		// look in the list of registered edit helper advices for the right one
-		if(className !=null && contributorName !=null) {
-			return (Class<IInvariantContainerDescriptor<InvariantRuleConfiguration>>)loadClass(className, contributorName);
+		if (className != null && contributorName != null) {
+			return (Class<IInvariantContainerDescriptor<InvariantRuleConfiguration>>) loadClass(className, contributorName);
 		}
 		return null;
 	}
 
 	protected static class ConfigurableClassDescriptor {
-		
+
 		/**
 		 * @param elementMatcherContributorName
 		 * @param elementMatcherClassName
@@ -254,7 +255,8 @@ public class RuleConfigurationFactoryRegistry {
 		 * @param containerDescriptorContributorName
 		 * @param containerDescriptorClassName
 		 */
-		public ConfigurableClassDescriptor(String elementMatcherContributorName, String elementMatcherClassName, String editHelperAdviceContributorName, String editHelperAdviceClassName, String containerDescriptorContributorName, String containerDescriptorClassName, String creationElementValidatorContributorName, String creationElementValidatorClassName) {
+		public ConfigurableClassDescriptor(String elementMatcherContributorName, String elementMatcherClassName, String editHelperAdviceContributorName, String editHelperAdviceClassName, String containerDescriptorContributorName,
+				String containerDescriptorClassName, String creationElementValidatorContributorName, String creationElementValidatorClassName) {
 			this.elementMatcherContributorName = elementMatcherContributorName;
 			this.elementMatcherClassName = elementMatcherClassName;
 			this.editHelperAdviceContributorName = editHelperAdviceContributorName;
@@ -266,15 +268,15 @@ public class RuleConfigurationFactoryRegistry {
 		}
 
 		private final String elementMatcherContributorName;
-		
+
 		private final String elementMatcherClassName;
-		
+
 		private final String editHelperAdviceContributorName;
-		
+
 		private final String editHelperAdviceClassName;
-		
+
 		private final String containerDescriptorContributorName;
-		
+
 		private final String containerDescriptorClassName;
 
 		private final String creationElementValidatorContributorName;
@@ -294,7 +296,7 @@ public class RuleConfigurationFactoryRegistry {
 		public String getCreationElementValidatorClassName() {
 			return creationElementValidatorClassName;
 		}
-		
+
 		/**
 		 * @return the elementMatcherContributorName
 		 */
@@ -302,7 +304,7 @@ public class RuleConfigurationFactoryRegistry {
 			return elementMatcherContributorName;
 		}
 
-		
+
 		/**
 		 * @return the elementMatcherClassName
 		 */
@@ -310,7 +312,7 @@ public class RuleConfigurationFactoryRegistry {
 			return elementMatcherClassName;
 		}
 
-		
+
 		/**
 		 * @return the editHelperAdviceContributorName
 		 */
@@ -318,7 +320,7 @@ public class RuleConfigurationFactoryRegistry {
 			return editHelperAdviceContributorName;
 		}
 
-		
+
 		/**
 		 * @return the editHelperAdviceClassName
 		 */
@@ -326,7 +328,7 @@ public class RuleConfigurationFactoryRegistry {
 			return editHelperAdviceClassName;
 		}
 
-		
+
 		/**
 		 * @return the containerDescriptorContributorName
 		 */
@@ -334,19 +336,19 @@ public class RuleConfigurationFactoryRegistry {
 			return containerDescriptorContributorName;
 		}
 
-		
+
 		/**
 		 * @return the containerDescriptorClassName
 		 */
 		public String getContainerDescriptorClassName() {
 			return containerDescriptorClassName;
 		}
-		
+
 	}
-	
-	///////////////////////////////////////////////////////////////////////////
+
+	// /////////////////////////////////////////////////////////////////////////
 	// loading resource
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
 	/** A map of classes that have been successfully loaded, keyed on the class name optionally prepended by the plugin ID, if specified. */
 	private static Map<String, WeakReference<Class<?>>> successLookupTable = new HashMap<String, WeakReference<Class<?>>>();
 
@@ -358,11 +360,11 @@ public class RuleConfigurationFactoryRegistry {
 
 	/**
 	 * A utility method to load a class using its name and a given class loader.
-	 * 
+	 *
 	 * @param className
-	 *        The class name
+	 *            The class name
 	 * @param bundle
-	 *        The class loader
+	 *            The class loader
 	 * @return The loaded class or <code>null</code> if could not be loaded
 	 */
 	protected static Class<?> loadClass(String className, String pluginId) {
@@ -373,21 +375,22 @@ public class RuleConfigurationFactoryRegistry {
 		String keyString = keyStringBuf.toString();
 		WeakReference<Class<?>> ref = successLookupTable.get(keyString);
 		Class<?> found = (ref != null) ? ref.get() : null;
-		if(found == null) {
-			if(ref != null)
+		if (found == null) {
+			if (ref != null) {
 				successLookupTable.remove(keyString);
-			if(!failureLookupTable.contains(keyString)) {
+			}
+			if (!failureLookupTable.contains(keyString)) {
 				try {
 					Bundle bundle = basicGetPluginBundle(pluginId);
-					if(bundle != null) {
+					if (bundle != null) {
 						// never load the class if the bundle is not active other wise
 						// we will cause the plugin to load
 						// unless the class is in the exception list
 						int state = bundle.getState();
-						if(state == org.osgi.framework.Bundle.ACTIVE || isInExceptionList(bundle, className)) {
+						if (state == org.osgi.framework.Bundle.ACTIVE || isInExceptionList(bundle, className)) {
 							found = bundle.loadClass(className);
 							successLookupTable.put(keyString, new WeakReference<Class<?>>(found));
-							if(state == org.osgi.framework.Bundle.ACTIVE) {
+							if (state == org.osgi.framework.Bundle.ACTIVE) {
 								bundleToExceptionsSetMap.remove(bundle);
 							}
 						}
@@ -405,15 +408,16 @@ public class RuleConfigurationFactoryRegistry {
 	/**
 	 * Given a bundle id, it checks if the bundle is found and activated. If it
 	 * is, the method returns the bundle, otherwise it returns <code>null</code>.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the bundle ID
+	 *            the bundle ID
 	 * @return the bundle, if found
 	 */
 	protected static Bundle getPluginBundle(String pluginId) {
 		Bundle bundle = basicGetPluginBundle(pluginId);
-		if(null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE)
+		if (null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE) {
 			return bundle;
+		}
 		return null;
 	}
 
@@ -424,23 +428,23 @@ public class RuleConfigurationFactoryRegistry {
 	private static boolean isInExceptionList(Bundle bundle, String className) {
 		String packageName = className.substring(0, className.lastIndexOf('.'));
 		Set<String> exceptionSet = bundleToExceptionsSetMap.get(bundle);
-		if(exceptionSet == null) {
+		if (exceptionSet == null) {
 			Dictionary<String, String> dict = bundle.getHeaders();
 			String value = dict.get("Eclipse-LazyStart"); //$NON-NLS-1$
-			if(value != null) {
+			if (value != null) {
 				int index = value.indexOf("exceptions"); //$NON-NLS-1$
-				if(index != -1) {
+				if (index != -1) {
 					try {
 						int start = value.indexOf('"', index + 1);
 						int end = value.indexOf('"', start + 1);
 						String exceptions = value.substring(start + 1, end);
 						exceptionSet = new HashSet<String>(2);
 						StringTokenizer tokenizer = new StringTokenizer(exceptions, ","); //$NON-NLS-1$
-						while(tokenizer.hasMoreTokens()) {
+						while (tokenizer.hasMoreTokens()) {
 							exceptionSet.add(tokenizer.nextToken().trim());
 						}
 					} catch (IndexOutOfBoundsException exception) {
-						// this means the MF did not follow the documented format for the exceptions list  so i'll consider it empty
+						// this means the MF did not follow the documented format for the exceptions list so i'll consider it empty
 						exceptionSet = Collections.emptySet();
 					}
 				} else {

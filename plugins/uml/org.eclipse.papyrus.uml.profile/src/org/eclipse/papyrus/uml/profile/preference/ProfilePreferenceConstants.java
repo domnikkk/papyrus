@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ public class ProfilePreferenceConstants {
 	/**
 	 * this method is used to store default preference of stereotype display.
 	 * default is expanded
-	 * 
+	 *
 	 * @param store
-	 *        the preference store used to manage persistent properties
+	 *            the preference store used to manage persistent properties
 	 */
 	public static void setDefaultPreferences(IPreferenceStore store) {
 		store.setDefault(EXPAND_STEREOTYPES_TREE, true);

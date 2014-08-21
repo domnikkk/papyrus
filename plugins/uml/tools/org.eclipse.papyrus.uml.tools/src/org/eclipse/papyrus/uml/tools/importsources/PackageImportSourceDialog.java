@@ -47,9 +47,9 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 	 * Initializes me.
 	 *
 	 * @param parentShell
-	 *        the shell to use as parent of the dialog
+	 *            the shell to use as parent of the dialog
 	 * @param title
-	 *        the dialog title
+	 *            the dialog title
 	 */
 	public PackageImportSourceDialog(Shell parentShell, String title) {
 		super(parentShell, new MyReferenceSelector(), title, true, true);
@@ -104,11 +104,11 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 	}
 
 	public void initialize(Collection<?> selection) {
-		IEvaluationService evaluationService = (IEvaluationService)PlatformUI.getWorkbench().getService(IEvaluationService.class);
+		IEvaluationService evaluationService = (IEvaluationService) PlatformUI.getWorkbench().getService(IEvaluationService.class);
 		source = new PackageImportSourceRegistry(evaluationService).createImportSourceFor(selection);
 		source.initialize(selection);
 
-		MyReferenceSelector selector = (MyReferenceSelector)this.selector;
+		MyReferenceSelector selector = (MyReferenceSelector) this.selector;
 		ILabelProvider labelProvider = source.getModelHierarchyLabelProvider();
 		selector.setLabelProvider(labelProvider);
 		selector.setContentProvider(source.getModelHierarchyContentProvider(extensionFilters));
@@ -132,7 +132,7 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 	public boolean close() {
 		boolean result = super.close();
 
-		if(result) {
+		if (result) {
 			computePackages();
 
 			dispose();
@@ -142,12 +142,12 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 	}
 
 	public void dispose() {
-		if(source != null) {
+		if (source != null) {
 			source.dispose();
 			source = null;
 		}
-		
-		if(resourceSet != null) {
+
+		if (resourceSet != null) {
 			EMFHelper.unload(resourceSet);
 			resourceSet = null;
 		}
@@ -155,10 +155,10 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 
 	private void computePackages() {
 		Object[] dlgResult = getResult();
-		if(dlgResult != null) {
+		if (dlgResult != null) {
 			selectedPackages = new java.util.ArrayList<Package>(dlgResult.length);
 
-			for(Object selectedElement : dlgResult) {
+			for (Object selectedElement : dlgResult) {
 				try {
 					selectedPackages.addAll(source.getPackages(resourceSet, selectedElement));
 				} catch (CoreException e) {
@@ -187,7 +187,7 @@ public class PackageImportSourceDialog extends MultipleValueSelectorDialog {
 		public void createControls(Composite parent) {
 			super.createControls(parent);
 
-			if(source instanceof CompositePackageImportSource) {
+			if (source instanceof CompositePackageImportSource) {
 				// expand to the second level to show projects in the workspace
 				// and whatever is contributed by other sources
 				treeViewer.expandToLevel(2);

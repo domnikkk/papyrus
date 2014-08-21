@@ -23,10 +23,10 @@ public class FlowPortMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isFlowPort = false;
-		if(eObject instanceof Port) {
+		if (eObject instanceof Port) {
 
-			Port port = (Port)eObject;
-			if(UMLUtil.getStereotypeApplication(port, FlowPort.class) != null) {
+			Port port = (Port) eObject;
+			if (UMLUtil.getStereotypeApplication(port, FlowPort.class) != null) {
 				isFlowPort = true;
 			}
 		}

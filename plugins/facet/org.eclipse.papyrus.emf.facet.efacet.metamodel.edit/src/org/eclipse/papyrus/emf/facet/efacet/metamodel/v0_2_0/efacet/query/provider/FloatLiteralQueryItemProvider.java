@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2011-2012 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Gregoire Dupe (Mia-Software) - Design
  *    Nicolas Guyomar (Mia-Software) - Implementation
- *    Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ *    Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  *    Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *    Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *    Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -18,7 +18,7 @@
  *    Gregoire Dupe (Mia-software) - Bug 364325 - [Restructuring] The user must be able to navigate into a model using the Facet.
  *    Nicolas Bros (Mia-Software) - Bug 372626 - [Facet] Aggregates
  *    Nicolas Bros (Mia-Software) - Bug 376941 - [EFacet] Facet operation arguments in Facet model
- * 
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.provider;
 
@@ -52,11 +52,12 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryP
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FloatLiteralQueryItemProvider
-	extends QueryItemProvider
-	implements
+		extends QueryItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -66,6 +67,7 @@ public class FloatLiteralQueryItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FloatLiteralQueryItemProvider(AdapterFactory adapterFactory) {
@@ -76,6 +78,7 @@ public class FloatLiteralQueryItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -92,28 +95,30 @@ public class FloatLiteralQueryItemProvider
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FloatLiteralQuery_value_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_FloatLiteralQuery_value_feature", "_UI_FloatLiteralQuery_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 QueryPackage.Literals.FLOAT_LITERAL_QUERY__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FloatLiteralQuery_value_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_FloatLiteralQuery_value_feature", "_UI_FloatLiteralQuery_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						QueryPackage.Literals.FLOAT_LITERAL_QUERY__VALUE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns FloatLiteralQuery.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,11 +130,12 @@ public class FloatLiteralQueryItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		FloatLiteralQuery floatLiteralQuery = (FloatLiteralQuery)object;
+		FloatLiteralQuery floatLiteralQuery = (FloatLiteralQuery) object;
 		return getString("_UI_FloatLiteralQuery_type") + " " + floatLiteralQuery.isCanHaveSideEffects(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
@@ -138,6 +144,7 @@ public class FloatLiteralQueryItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -145,9 +152,9 @@ public class FloatLiteralQueryItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FloatLiteralQuery.class)) {
-			case QueryPackage.FLOAT_LITERAL_QUERY__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case QueryPackage.FLOAT_LITERAL_QUERY__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -157,6 +164,7 @@ public class FloatLiteralQueryItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -168,6 +176,7 @@ public class FloatLiteralQueryItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

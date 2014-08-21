@@ -56,7 +56,7 @@ public class InitializeSashCommand extends AbstractControlCommand {
 		try {
 			SashWindowsMngr sashMng = createSashWindowsMngr(openables);
 			Resource diResource = getDiResource();
-			if(diResource == null) {
+			if (diResource == null) {
 				return CommandResult.newErrorCommandResult("Unable to find DI resource");
 			}
 			diResource.getContents().add(sashMng);
@@ -72,8 +72,8 @@ public class InitializeSashCommand extends AbstractControlCommand {
 	 */
 	@SuppressWarnings("unchecked")
 	protected Collection<EObject> getMovedOpenablesFromRequest() {
-		Collection<EObject> tabs = (Collection<EObject>)getRequest().getParameter(ControlModeRequestParameters.MOVED_OPENABLES);
-		if(tabs == null) {
+		Collection<EObject> tabs = (Collection<EObject>) getRequest().getParameter(ControlModeRequestParameters.MOVED_OPENABLES);
+		if (tabs == null) {
 			return new ArrayList<EObject>();
 		}
 		return tabs;
@@ -98,10 +98,10 @@ public class InitializeSashCommand extends AbstractControlCommand {
 		SashWindowsMngr windowsMngr = DiUtils.createDefaultSashWindowsMngr();
 		Resource diResource = SashModelUtils.getSashModel(getRequest().getModelSet()).getResource();
 		// add pages to the page list
-		for(EObject openable : openables) {
+		for (EObject openable : openables) {
 			PageRef pageRef = DiUtils.getPageRef(diResource, openable);
-			if(pageRef != null) {
-				//windowsMngr.getPageList().addPage(pageRef.getPageIdentifier()); //The page list is not used anymore
+			if (pageRef != null) {
+				// windowsMngr.getPageList().addPage(pageRef.getPageIdentifier()); //The page list is not used anymore
 				DiUtils.addPageToTabFolder(windowsMngr, pageRef);
 			}
 		}

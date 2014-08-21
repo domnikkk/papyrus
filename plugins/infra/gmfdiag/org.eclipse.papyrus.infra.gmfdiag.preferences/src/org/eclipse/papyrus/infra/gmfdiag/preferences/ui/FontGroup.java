@@ -1,15 +1,15 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr 
- *  Thibault Landre (Atos Origin) 
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr
+ *  Thibault Landre (Atos Origin)
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.preferences.ui;
 
@@ -35,13 +35,13 @@ public class FontGroup extends AbstractGroup {
 
 	/**
 	 * Instantiates a new font group composite.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the composite
+	 *            the parent of the composite
 	 * @param key
-	 *        the key of the preference
+	 *            the key of the preference
 	 * @param dialogPage
-	 *        to set the page in field editor
+	 *            to set the page in field editor
 	 **/
 	public FontGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -51,9 +51,9 @@ public class FontGroup extends AbstractGroup {
 
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	protected void createContent(Composite parent) {
 		Group fontGroup = new Group(parent, SWT.SHADOW_NONE);

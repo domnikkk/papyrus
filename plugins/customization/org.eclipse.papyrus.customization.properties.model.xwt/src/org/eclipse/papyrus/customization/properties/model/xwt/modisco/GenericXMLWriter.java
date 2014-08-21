@@ -60,21 +60,21 @@ public class GenericXMLWriter extends PrintWriter {
 	public final void serialize(final Element element) {
 		startTag(element);
 
-		if(element.getChildren() != null) {
-			for(Node child : element.getChildren()) {
-				if(child instanceof Element) {
-					serialize((Element)child);
-				} else if(child instanceof CDATA) {
-					String text = ((CDATA)child).getName();
+		if (element.getChildren() != null) {
+			for (Node child : element.getChildren()) {
+				if (child instanceof Element) {
+					serialize((Element) child);
+				} else if (child instanceof CDATA) {
+					String text = ((CDATA) child).getName();
 					print("<![CDATA[" + text + "]]>"); //$NON-NLS-1$ //$NON-NLS-2$
-				} else if(child instanceof Text) {
-					String text = ((Text)child).getName();
+				} else if (child instanceof Text) {
+					String text = ((Text) child).getName();
 					print(GenericXMLWriter.getEscaped(text));
-				} else if(child instanceof Comment) {
-					String text = "<!--" + ((Comment)child).getName() + "-->"; //$NON-NLS-1$ //$NON-NLS-2$
+				} else if (child instanceof Comment) {
+					String text = "<!--" + ((Comment) child).getName() + "-->"; //$NON-NLS-1$ //$NON-NLS-2$
 					print(text);
-				} else if(child instanceof ProcessingInstruction) {
-					printPI(((ProcessingInstruction)child));
+				} else if (child instanceof ProcessingInstruction) {
+					printPI(((ProcessingInstruction) child));
 				}
 			}
 		}
@@ -83,13 +83,13 @@ public class GenericXMLWriter extends PrintWriter {
 	}
 
 	private void startTag(final Element element) {
-		if(element instanceof Root) {
-			Root root = (Root)element;
-			if(root.getDtd() != null) {
+		if (element instanceof Root) {
+			Root root = (Root) element;
+			if (root.getDtd() != null) {
 				printDTD(root.getDtd());
 			}
-			if(root.getLeadingPIs() != null) {
-				for(ProcessingInstruction pi : root.getLeadingPIs()) {
+			if (root.getLeadingPIs() != null) {
+				for (ProcessingInstruction pi : root.getLeadingPIs()) {
 					printPI(pi);
 					println();
 				}
@@ -97,23 +97,23 @@ public class GenericXMLWriter extends PrintWriter {
 		}
 		print("<"); //$NON-NLS-1$
 		print(element.getName());
-		if(element instanceof Root) {
-			Root root = (Root)element;
-			if(root.getNamespaces() != null) {
-				for(Namespace ns : root.getNamespaces()) {
-					if(ns.getName().length() > 0) {
+		if (element instanceof Root) {
+			Root root = (Root) element;
+			if (root.getNamespaces() != null) {
+				for (Namespace ns : root.getNamespaces()) {
+					if (ns.getName().length() > 0) {
 						printAttribute(GenericXMLHandler.XMLNS + ":" + ns.getName(), //$NON-NLS-1$
-							ns.getValue());
+								ns.getValue());
 					} else {
 						printAttribute(GenericXMLHandler.XMLNS, ns.getValue());
 					}
 				}
 			}
 		}
-		if(element.getChildren() != null) {
-			for(Node child : element.getChildren()) {
-				if(child instanceof Attribute) {
-					Attribute attr = (Attribute)child;
+		if (element.getChildren() != null) {
+			for (Node child : element.getChildren()) {
+				if (child instanceof Attribute) {
+					Attribute attr = (Attribute) child;
 					printAttribute(attr.getName(), attr.getValue());
 				}
 			}
@@ -153,7 +153,7 @@ public class GenericXMLWriter extends PrintWriter {
 
 	private static void appendEscapedChar(final StringBuffer buffer, final char c) {
 		String replacement = GenericXMLWriter.getReplacement(c);
-		if(replacement != null) {
+		if (replacement != null) {
 			buffer.append('&');
 			buffer.append(replacement);
 			buffer.append(';');
@@ -164,7 +164,7 @@ public class GenericXMLWriter extends PrintWriter {
 
 	private static String getEscaped(final String s) {
 		StringBuffer result = new StringBuffer(s.length() + GenericXMLWriter.STRING_BUFFER_OFFSET);
-		for(int i = 0; i < s.length(); ++i) {
+		for (int i = 0; i < s.length(); ++i) {
 			GenericXMLWriter.appendEscapedChar(result, s.charAt(i));
 		}
 		return result.toString();
@@ -174,7 +174,7 @@ public class GenericXMLWriter extends PrintWriter {
 		// Encode special XML characters into the equivalent character
 		// references.
 		// These five are defined by default for all XML documents.
-		switch(c) {
+		switch (c) {
 		case '<':
 			return "lt"; //$NON-NLS-1$
 		case '>':

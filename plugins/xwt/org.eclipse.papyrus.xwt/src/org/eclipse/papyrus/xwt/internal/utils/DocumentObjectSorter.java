@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.internal.utils;
@@ -28,29 +28,29 @@ public class DocumentObjectSorter {
 
 	public static List<DocumentObject> sortWithAttr(DocumentObject[] sourceArray, Comparator<Element> comparator, String attrName) {
 		List<DocumentObject> columnsList = new LinkedList<DocumentObject>();
-		for(DocumentObject column : sourceArray) {
-			Element columnElement = (Element)column;
+		for (DocumentObject column : sourceArray) {
+			Element columnElement = (Element) column;
 			Attribute indexAttr = columnElement.getAttribute(attrName);
-			if(indexAttr == null) {
+			if (indexAttr == null) {
 				columnsList.add(column);
 			}
 		}
 
 		List<Element> tempList = new LinkedList<Element>();
-		for(DocumentObject column : sourceArray) {
-			Element columnElement = (Element)column;
+		for (DocumentObject column : sourceArray) {
+			Element columnElement = (Element) column;
 			Attribute indexAttr = columnElement.getAttribute(attrName);
-			if(indexAttr != null) {
+			if (indexAttr != null) {
 				tempList.add(columnElement);
 			}
 		}
 
-		if(comparator == null) {
+		if (comparator == null) {
 			comparator = new AttrComparator(attrName);
 		}
 		Collections.sort(tempList, comparator);
 
-		for(Element columnElement : tempList) {
+		for (Element columnElement : tempList) {
 			Attribute indexAttr = columnElement.getAttribute(attrName);
 			try {
 				int index = Integer.parseInt(indexAttr.getContent());
@@ -78,7 +78,7 @@ public class DocumentObjectSorter {
 			Attribute attr2 = e2.getAttribute(attrName);
 			String compare1 = attr1.getContent();
 			String compare2 = attr2.getContent();
-			if(compare1 == null || compare2 == null) {
+			if (compare1 == null || compare2 == null) {
 				return 0;
 			}
 			try {

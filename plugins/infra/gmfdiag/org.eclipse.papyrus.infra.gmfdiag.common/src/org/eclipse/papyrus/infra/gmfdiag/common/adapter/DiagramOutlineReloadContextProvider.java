@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,8 +45,8 @@ class DiagramOutlineReloadContextProvider implements IReloadContextProvider {
 		Method showPageMethod = null;
 		Field showOutlineActionField = null;
 
-		for(Class<?> next : DiagramEditor.class.getDeclaredClasses()) {
-			if("DiagramOutlinePage".equals(next.getSimpleName())) { //$NON-NLS-1$
+		for (Class<?> next : DiagramEditor.class.getDeclaredClasses()) {
+			if ("DiagramOutlinePage".equals(next.getSimpleName())) { //$NON-NLS-1$
 				diagramOutlinePageClass = next;
 
 				try {
@@ -56,7 +56,7 @@ class DiagramOutlineReloadContextProvider implements IReloadContextProvider {
 					showOutlineActionField = diagramOutlinePageClass.getDeclaredField("showOutlineAction"); //$NON-NLS-1$
 					showOutlineActionField.setAccessible(true);
 				} catch (Exception e) {
-					// Can't reflect?  Then abandon all hope
+					// Can't reflect? Then abandon all hope
 					Activator.log.error(e);
 					diagramOutlinePageClass = null;
 				}
@@ -85,13 +85,13 @@ class DiagramOutlineReloadContextProvider implements IReloadContextProvider {
 
 	@Override
 	public void restore(Object reloadContext) {
-		((ReloadContext)reloadContext).restore(diagramOutline);
+		((ReloadContext) reloadContext).restore(diagramOutline);
 	}
 
 	static boolean isDiagramOutline(Object o) {
 		// If we couldn't reflect on DiagramOutline class, then we will never detect a diagram outline
-		// instance, so we will never try to create an adapter, and all is safe.  The only consequence
-		// will be that we don't get diagram outline state properly restored.  That's fine
+		// instance, so we will never try to create an adapter, and all is safe. The only consequence
+		// will be that we don't get diagram outline state properly restored. That's fine
 		return (diagramOutlinePage != null) && diagramOutlinePage.isInstance(o);
 	}
 
@@ -107,7 +107,7 @@ class DiagramOutlineReloadContextProvider implements IReloadContextProvider {
 			super();
 
 			try {
-				this.pageID = ((IAction)showOutlineAction.get(diagramOutline)).isChecked() ? ID_OUTLINE : ID_OVERVIEW;
+				this.pageID = ((IAction) showOutlineAction.get(diagramOutline)).isChecked() ? ID_OUTLINE : ID_OVERVIEW;
 			} catch (IllegalAccessException e) {
 				// We wouldn't be here if we couldn't make it accessible. Something is very wrong
 				throw new Error(e);
@@ -122,10 +122,10 @@ class DiagramOutlineReloadContextProvider implements IReloadContextProvider {
 				throw new Error(e);
 			} catch (InvocationTargetException e) {
 				Throwable target = e.getTargetException();
-				if(target instanceof RuntimeException) {
-					throw (RuntimeException)target;
-				} else if(target instanceof Error) {
-					throw (Error)target;
+				if (target instanceof RuntimeException) {
+					throw (RuntimeException) target;
+				} else if (target instanceof Error) {
+					throw (Error) target;
 				} else {
 					Activator.log.error(target);
 				}

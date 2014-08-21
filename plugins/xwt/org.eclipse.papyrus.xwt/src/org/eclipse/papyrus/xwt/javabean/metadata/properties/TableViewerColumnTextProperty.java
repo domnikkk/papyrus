@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.javabean.metadata.properties;
@@ -16,7 +16,7 @@ import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.widgets.TableColumn;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class TableViewerColumnTextProperty extends AbstractProperty {
@@ -30,9 +30,9 @@ public class TableViewerColumnTextProperty extends AbstractProperty {
 	}
 
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		TableViewerColumn tableViewerColumn = (TableViewerColumn)target;
+		TableViewerColumn tableViewerColumn = (TableViewerColumn) target;
 		TableColumn tableColumn = tableViewerColumn.getColumn();
-		String text = (String)value;
+		String text = (String) value;
 		tableColumn.setText(text);
 	}
 }

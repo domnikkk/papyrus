@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class CopyMarkerAction
 		super(site, "Copy");
 
 		setImageDescriptor(PlatformUI.getWorkbench().getSharedImages()
-			.getImageDescriptor(ISharedImages.IMG_TOOL_COPY));
+				.getImageDescriptor(ISharedImages.IMG_TOOL_COPY));
 		setDisabledImageDescriptor(PlatformUI.getWorkbench().getSharedImages()
-			.getImageDescriptor(ISharedImages.IMG_TOOL_COPY_DISABLED));
+				.getImageDescriptor(ISharedImages.IMG_TOOL_COPY_DISABLED));
 		setActionDefinitionId(ActionFactory.COPY.getCommandId());
 	}
 
@@ -47,10 +47,10 @@ public class CopyMarkerAction
 			String text = copy(viewer);
 
 			Clipboard clipboard = new Clipboard(viewer.getControl()
-				.getDisplay());
+					.getDisplay());
 			try {
-				clipboard.setContents(new Object[]{text},
-					new Transfer[]{TextTransfer.getInstance()});
+				clipboard.setContents(new Object[] { text },
+						new Transfer[] { TextTransfer.getInstance() });
 			} finally {
 				clipboard.dispose();
 			}
@@ -72,7 +72,7 @@ public class CopyMarkerAction
 		final int startIndex = 1; // the Severity column has no label
 		final int columnCount = viewer.getTable().getColumnCount();
 		CellLabelProvider[] labelProviders = new CellLabelProvider[columnCount
-			- startIndex];
+				- startIndex];
 		for (int i = startIndex; i < columnCount; i++) {
 			labelProviders[i - startIndex] = viewer.getLabelProvider(i);
 		}
@@ -95,16 +95,16 @@ public class CopyMarkerAction
 		String result;
 
 		switch (marker.getAttribute(IPapyrusMarker.SEVERITY,
-			IPapyrusMarker.SEVERITY_ERROR)) {
+				IPapyrusMarker.SEVERITY_ERROR)) {
 
-			case IPapyrusMarker.SEVERITY_INFO :
-				result = "Info";
-				break;
-			case IPapyrusMarker.SEVERITY_WARNING :
-				result = "Warning";
-				break;
-			default :
-				result = "Error";
+		case IPapyrusMarker.SEVERITY_INFO:
+			result = "Info";
+			break;
+		case IPapyrusMarker.SEVERITY_WARNING:
+			result = "Warning";
+			break;
+		default:
+			result = "Error";
 		}
 
 		return result;

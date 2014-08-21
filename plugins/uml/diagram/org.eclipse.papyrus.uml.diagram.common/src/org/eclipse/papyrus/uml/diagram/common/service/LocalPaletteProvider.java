@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import java.io.InputStream;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -49,18 +48,19 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 	 * The list of palette provider XML contributions
 	 */
 	protected NodeList contributions = null;
-	
+
 	/** list of required applied profile */
 	protected Collection<String> requiredProfiles;
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<String> getRequiredProfiles() {
-		if(contributions==null) {
+		if (contributions == null) {
 			return Collections.emptyList();
 		}
-		if(requiredProfiles == null) {
+		if (requiredProfiles == null) {
 			requiredProfiles = new HashSet<String>();
 
 			try {
@@ -69,9 +69,9 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 				// using safe computation
 				XMLPaletteDefinitionProfileInspector inspector = new XMLPaletteDefinitionProfileInspector();
 				XMLPaletteDefinitionWalker walker = new XMLPaletteDefinitionWalker(inspector);
-				for(int i = 0; i < contributions.getLength(); i++) {
+				for (int i = 0; i < contributions.getLength(); i++) {
 					Node node = contributions.item(i);
-					if(PALETTE_DEFINITION.equals(node.getNodeName())) {
+					if (PALETTE_DEFINITION.equals(node.getNodeName())) {
 						walker.walk(node);
 						requiredProfiles.addAll(inspector.getRequiredProfiles());
 					}
@@ -82,20 +82,21 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 		}
 		return requiredProfiles;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("unchecked")
 	public void contributeToPalette(IEditorPart editor, Object content, PaletteRoot root, Map predefinedEntries) {
-		if(contributions ==null) {
+		if (contributions == null) {
 			return;
 		}
 		XMLPaletteDefinitionWalker walker = new XMLPaletteDefinitionWalker(new XMLPaletteApplicator(((DiagramEditor) editor).getDiagram(), root, predefinedEntries));
-		
-		for(int i = 0; i < contributions.getLength(); i++) {
+
+		for (int i = 0; i < contributions.getLength(); i++) {
 			Node node = contributions.item(i);
-			if(PALETTE_DEFINITION.equals(node.getNodeName())) {
+			if (PALETTE_DEFINITION.equals(node.getNodeName())) {
 				walker.walk(node);
 			}
 		}
@@ -104,10 +105,11 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 	/**
 	 * Adds the configuration elements to the list of palette provider XML
 	 * contributions
-	 * 
+	 *
 	 * @param configElement
-	 *        the configuration element from which information are retrieved
+	 *            the configuration element from which information are retrieved
 	 */
+	@Override
 	public void setContributions(IConfigurationElement configElement) {
 		// tries to read the XML configuration file
 		readXMLDocument(configElement.getAttribute(PATH));
@@ -115,9 +117,9 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 
 	/**
 	 * locally defines palette
-	 * 
+	 *
 	 * @param description
-	 *        the description of the palette to build
+	 *            the description of the palette to build
 	 */
 	public void setContributions(IPaletteDescription description) {
 		readXMLDocument(description.getContributions());
@@ -125,21 +127,21 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 
 	/**
 	 * Reads the XML configuration for the specified element
-	 * 
+	 *
 	 * @param contribution
-	 *        the path for the xml file
+	 *            the path for the xml file
 	 */
 	protected void readXMLDocument(Object contribution) {
-		if(contribution instanceof String) {
-			readXMLDocument((String)contribution);
+		if (contribution instanceof String) {
+			readXMLDocument((String) contribution);
 		}
 	}
 
 	/**
 	 * Reads the XML configuration for the specified element
-	 * 
+	 *
 	 * @param iConfigurationElement
-	 *        the path for the xml file
+	 *            the path for the xml file
 	 */
 	protected void readXMLDocument(String path) {
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -150,13 +152,13 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 			InputStream inputStream = getXmlFile(path);
 			// the file should never be null in this implementation, but
 			// sub-classes could return null
-			if(inputStream == null) {
+			if (inputStream == null) {
 				contributions = new EmptyNodeList();
 				Activator.log.debug("Impossible to load file: " + path);
 			} else {
 				Document document = documentBuilder.parse(inputStream);
 				contributions = document.getChildNodes();
-				if(contributions == null) {
+				if (contributions == null) {
 					contributions = new EmptyNodeList();
 				}
 			}
@@ -174,9 +176,9 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 
 	/**
 	 * Returns the file using the specified path in the plugin state location
-	 * 
+	 *
 	 * @param path
-	 *        the path to the file
+	 *            the path to the file
 	 * @return the file using the specified path in the plugin state location,
 	 *         even if it does not exists. In the latter case, the method {@link File#exists()} returns <code>false</code>.
 	 */
@@ -187,6 +189,7 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
 		return false;
 	}
@@ -199,6 +202,7 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public int getLength() {
 			return 0;
 		}
@@ -206,6 +210,7 @@ public class LocalPaletteProvider extends AbstractProvider implements IPalettePr
 		/**
 		 * {@inheritDoc}
 		 */
+		@Override
 		public Node item(int index) {
 			return null;
 		}

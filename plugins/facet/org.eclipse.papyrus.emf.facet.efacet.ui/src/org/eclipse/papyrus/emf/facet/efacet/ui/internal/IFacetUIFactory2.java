@@ -26,22 +26,22 @@ import org.eclipse.jface.viewers.ISelection;
 
 /**
  * This interface provides methods used to create wizards that create {@link Facet}s and Facet elements.
- * 
+ *
  * TODO: This interface has to be renamed to IFacetUIFactory before the release of 0.2
- * 
+ *
  * @since 0.2
  */
-//TODO: This interface has to be renamed to IFacetUIFactory before the release of 0.2
+// TODO: This interface has to be renamed to IFacetUIFactory before the release of 0.2
 public interface IFacetUIFactory2 {
 
 	/**
 	 * Returns an instance of a {@link FacetUIFactoryImpl}
 	 */
-	IFacetUIFactory2 INSTANCE = null; //TODO cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
+	IFacetUIFactory2 INSTANCE = null; // TODO cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link Facet} in a {@link FacetSet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a FacetSet
 	 * @param editingDomain
@@ -52,7 +52,7 @@ public interface IFacetUIFactory2 {
 
 	/**
 	 * Create a wizard dialog dedicated to the creation of a {@link FacetSet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection
 	 * @return the newly created wizard
@@ -61,7 +61,7 @@ public interface IFacetUIFactory2 {
 
 	/**
 	 * Create a wizard dialog dedicated to the creation of a {@link FacetSet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection
 	 * @param openCreatedFacetSetInEditor
@@ -71,7 +71,7 @@ public interface IFacetUIFactory2 {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link FacetAttribute} in a {@link Facet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a Facet
 	 * @param editingDomain
@@ -82,7 +82,7 @@ public interface IFacetUIFactory2 {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link FacetOperation} in a {@link Facet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a Facet
 	 * @param editingDomain
@@ -93,7 +93,7 @@ public interface IFacetUIFactory2 {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link EParameter} to a {@link FacetOperation}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a FacetOperation
 	 * @param editingDomain
@@ -104,7 +104,7 @@ public interface IFacetUIFactory2 {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link FacetReference} in a {@link Facet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a Facet Reference
 	 * @param editingDomain

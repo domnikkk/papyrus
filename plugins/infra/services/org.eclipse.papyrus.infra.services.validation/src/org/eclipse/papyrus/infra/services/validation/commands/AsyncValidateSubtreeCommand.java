@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,8 +31,11 @@ public class AsyncValidateSubtreeCommand extends ValidateSubtreeCommand {
 
 	/**
 	 * Constructor based on selected element and diagnostician
-	 * @param selectedElement the element from which on a subtree should be validated
-	 * @param diagnostician the diagnostician (e.g. UMLDiagnostician)
+	 * 
+	 * @param selectedElement
+	 *            the element from which on a subtree should be validated
+	 * @param diagnostician
+	 *            the diagnostician (e.g. UMLDiagnostician)
 	 */
 	public AsyncValidateSubtreeCommand(EObject selectedElement,
 			IPapyrusDiagnostician diagnostician) {
@@ -50,12 +53,12 @@ public class AsyncValidateSubtreeCommand extends ValidateSubtreeCommand {
 		});
 		return Status.OK_STATUS;
 	}
-	
+
 	protected IStatus asyncDoExecute(final IProgressMonitor monitor, final IAdaptable info) {
 		try {
 			return super.doExecute(monitor, info);
+		} catch (ExecutionException e) {
 		}
-		catch (ExecutionException e) {}
 		return null;
 	}
 }

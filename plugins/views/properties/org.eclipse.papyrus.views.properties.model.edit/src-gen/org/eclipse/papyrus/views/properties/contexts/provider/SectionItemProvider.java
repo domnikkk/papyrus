@@ -31,11 +31,12 @@ import org.eclipse.papyrus.views.properties.environment.provider.PropertiesEditP
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.contexts.Section} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SectionItemProvider
-	extends DisplayUnitItemProvider
-	implements
+		extends DisplayUnitItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -45,6 +46,7 @@ public class SectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SectionItemProvider(AdapterFactory adapterFactory) {
@@ -55,6 +57,7 @@ public class SectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -73,72 +76,76 @@ public class SectionItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Section_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Section_name_feature", "_UI_Section_type"),
-				 ContextsPackage.Literals.SECTION__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Section_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Section_name_feature", "_UI_Section_type"),
+						ContextsPackage.Literals.SECTION__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Section File feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addSectionFilePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Section_sectionFile_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Section_sectionFile_feature", "_UI_Section_type"),
-				 ContextsPackage.Literals.SECTION__SECTION_FILE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Section_sectionFile_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Section_sectionFile_feature", "_UI_Section_type"),
+						ContextsPackage.Literals.SECTION__SECTION_FILE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Widget feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addWidgetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Section_widget_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Section_widget_feature", "_UI_Section_type"),
-				 ContextsPackage.Literals.SECTION__WIDGET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Section_widget_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Section_widget_feature", "_UI_Section_type"),
+						ContextsPackage.Literals.SECTION__WIDGET,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns Section.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -150,14 +157,15 @@ public class SectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Section)object).getName();
+		String label = ((Section) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Section_type") :
-			getString("_UI_Section_type") + " " + label;
+				getString("_UI_Section_type") :
+				getString("_UI_Section_type") + " " + label;
 	}
 
 	/**
@@ -165,6 +173,7 @@ public class SectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -172,10 +181,10 @@ public class SectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Section.class)) {
-			case ContextsPackage.SECTION__NAME:
-			case ContextsPackage.SECTION__SECTION_FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ContextsPackage.SECTION__NAME:
+		case ContextsPackage.SECTION__SECTION_FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -185,6 +194,7 @@ public class SectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -196,6 +206,7 @@ public class SectionItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

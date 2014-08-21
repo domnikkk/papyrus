@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,34 +41,34 @@ public class LifelineHelperAdvice extends AbstractEditHelperAdvice {
 
 		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
 
-		Lifeline lifeline = (Lifeline)request.getElementToDestroy();
+		Lifeline lifeline = (Lifeline) request.getElementToDestroy();
 
-		for(InteractionFragment ift : lifeline.getCoveredBys()) {
+		for (InteractionFragment ift : lifeline.getCoveredBys()) {
 			// Destroy covered ExecutionSpecification
-			if(ift instanceof ExecutionSpecification) {
+			if (ift instanceof ExecutionSpecification) {
 				dependentsToDestroy.add(ift);
 			}
 
 			// Destroy related Message
 			// Destroy related Message
-			if((ift instanceof MessageOccurrenceSpecification) && (((MessageOccurrenceSpecification)ift).getMessage() != null)) {
-				dependentsToDestroy.add(((MessageOccurrenceSpecification)ift).getMessage());
+			if ((ift instanceof MessageOccurrenceSpecification) && (((MessageOccurrenceSpecification) ift).getMessage() != null)) {
+				dependentsToDestroy.add(((MessageOccurrenceSpecification) ift).getMessage());
 			}
 
 			// Destroy covered OccurrenceSpecification
-			if(ift instanceof OccurrenceSpecification) {
+			if (ift instanceof OccurrenceSpecification) {
 				dependentsToDestroy.add(ift);
 			}
 		}
 
 		// Destroy decomposed lifelines
 		PartDecomposition decomposition = lifeline.getDecomposedAs();
-		if(decomposition != null && EMFHelper.isOnlyUsage(decomposition, lifeline)) {
+		if (decomposition != null && EMFHelper.isOnlyUsage(decomposition, lifeline)) {
 			dependentsToDestroy.add(decomposition);
 		}
 
 		// return command to destroy dependents
-		if(!dependentsToDestroy.isEmpty()) {
+		if (!dependentsToDestroy.isEmpty()) {
 			return request.getDestroyDependentsCommand(dependentsToDestroy);
 		}
 

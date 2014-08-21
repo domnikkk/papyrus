@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * this class is used to display the a constraint with the possibility of
  * gradient qualified name
- * 
+ *
  */
 public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNamedElementFigure, ILabelFigure, IMultilineEditableFigure {
 
@@ -51,27 +51,27 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 
 	/**
 	 * Calculate the partial qualified name with a specified depth.
-	 * 
+	 *
 	 * @param qualifiedName
-	 *        the qualified name can return null
+	 *            the qualified name can return null
 	 */
 	public String getQualifiedName(String qualifiedName, int depth) {
 		int n = -1;
 
 		int i = 0;
-		if(depth <= 0) {
+		if (depth <= 0) {
 			return qualifiedName;
 		}
 
-		while(i < depth) {
-			if((n = qualifiedName.indexOf("::", n + 1)) != -1) {
+		while (i < depth) {
+			if ((n = qualifiedName.indexOf("::", n + 1)) != -1) {
 				i++;
 			} else {
 				return null;
 			}
 		}
 
-		if(n == -1) {
+		if (n == -1) {
 			return qualifiedName;
 		} else {
 			return qualifiedName.substring(n + 2);
@@ -80,21 +80,22 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#setQualifiedName(java.lang.String)
-	 * 
+	 *
 	 * @param qualifiedName
 	 */
+	@Override
 	public void setQualifiedName(String qualifiedName) {
 		String tmpQualifiedName = getQualifiedName(qualifiedName, depth);
 		// two raisons to remove label!
 		// null
 		// or the qualified name is equal to 1
-		if(qualifiedName == null || tmpQualifiedName == null || !tmpQualifiedName.contains("::")) { // Remove
+		if (qualifiedName == null || tmpQualifiedName == null || !tmpQualifiedName.contains("::")) { // Remove
 			// label
 			// if
 			// any
-			if(this.qualifiedLabel != null) {
+			if (this.qualifiedLabel != null) {
 				this.remove(this.qualifiedLabel);
 				this.qualifiedLabel = null;
 			}
@@ -102,13 +103,13 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 		}
 
 		// Set the stereotype label
-		if(this.qualifiedLabel == null) {
+		if (this.qualifiedLabel == null) {
 			this.createQualifiedNameLabel();
 		}
 		// we have to not display name.
 
 		int i = tmpQualifiedName.lastIndexOf("::");
-		if(i != -1) {
+		if (i != -1) {
 			tmpQualifiedName = tmpQualifiedName.substring(0, i);
 		}
 		this.qualifiedLabel.setText("(" + tmpQualifiedName.trim() + ")");
@@ -116,12 +117,13 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#getQualifiedNameLabel()
-	 * 
+	 *
 	 * @return
 	 */
 
+	@Override
 	public Label getQualifiedNameLabel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -151,11 +153,12 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#getTaggedLabel()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Label getTaggedLabel() {
 		return taggedLabel;
 	}
@@ -163,12 +166,12 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	/**
 	 * Create the tag label in the figure. The tag label is created if value is
 	 * not null.
-	 * 
+	 *
 	 * @param value
-	 *        the value to use
+	 *            the value to use
 	 */
 	protected void initTagLabel(String value) {
-		if(value != null && value.length() > 0) {
+		if (value != null && value.length() > 0) {
 			taggedLabel = new Label();
 			String textToDisplay = new StringBuffer(CHEVRON).insert(1, value).toString();
 			taggedLabel.setText(textToDisplay);
@@ -180,32 +183,35 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#setDepth(int)
-	 * 
+	 *
 	 * @param depth
 	 */
+	@Override
 	public void setDepth(int depth) {
 		// TODO Auto-generated method stub
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#getNameLabel()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public WrappingLabel getNameLabel() {
 		return nameLabel;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#setNameLabelIcon(boolean)
-	 * 
+	 *
 	 * @param displayNameLabelIcon
 	 */
+	@Override
 	public void setNameLabelIcon(boolean displayNameLabelIcon) {
 		// TODO Auto-generated method stub
 
@@ -225,7 +231,7 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 
 	protected int getQualifiedNameLabelPosition() {
 		int position = getStereotypePropertiesLabelPosition();
-		if(stereotypePropertiesInBraceContent != null) {
+		if (stereotypePropertiesInBraceContent != null) {
 			position++;
 		}
 		return position;
@@ -234,7 +240,7 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	/**
 	 * use to obtain the reference of this figure (use in order to launch an
 	 * edit request)
-	 * 
+	 *
 	 * @return the constraintfigure
 	 */
 	public ConstraintFigure getConstraintFigure() {
@@ -242,18 +248,19 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setText(java.lang.String)
-	 * 
+	 *
 	 * @param text
 	 */
+	@Override
 	public void setText(String text) {
 		// generates new ones
 		textFlow.setText(LEFT_BRACE + text + RIGHT_BRACE);
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the textflow of the constraint that contain the string of the
 	 *         specification
 	 */
@@ -262,7 +269,7 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the container of the text flow
 	 */
 	public FlowPage getPageFlow() {
@@ -271,40 +278,43 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getText()
-	 * 
+	 *
 	 * @return the display string that represents the specification
 	 */
+	@Override
 	public String getText() {
 		return textFlow.getText();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#setIcon(org.eclipse.swt.graphics.Image)
-	 * 
+	 *
 	 * @param icon
 	 */
+	@Override
 	public void setIcon(Image icon) {
-		//Nothing
+		// Nothing
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.ILabelFigure#getIcon()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Image getIcon() {
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Figure#getMinimumSize(int, int)
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	@Override
 	public Dimension getMinimumSize(int wHint, int hHint) {
@@ -312,10 +322,11 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IMultilineEditableFigure#getEditionLocation()
-	 * 
+	 *
 	 */
+	@Override
 	public Point getEditionLocation() {
 		return page.getLocation();
 	}
@@ -323,36 +334,42 @@ public class ConstraintFigure extends CornerBentFigure implements IPapyrusNodeNa
 	/**
 	 * Create a label that contains the name of the element.
 	 */
+	@Override
 	public void restoreNameLabel() {
-		//		nameLabel.setOpaque(false);
-		//		nameLabel.setAlignment(PositionConstants.MIDDLE);
-		//		getNameLabelContainer().add(nameLabel, getNameLabelConstraint(), getNameLabelPosition());
+		// nameLabel.setOpaque(false);
+		// nameLabel.setAlignment(PositionConstants.MIDDLE);
+		// getNameLabelContainer().add(nameLabel, getNameLabelConstraint(), getNameLabelPosition());
 	}
 
+	@Override
 	public void removeNameLabel() {
-		//		if(getNameLabelContainer().getChildren().contains(nameLabel)) {
-		//			getNameLabelContainer().remove(nameLabel);
-		//		}
+		// if(getNameLabelContainer().getChildren().contains(nameLabel)) {
+		// getNameLabelContainer().remove(nameLabel);
+		// }
 	}
 
+	@Override
 	public void removeStereotypeLabel() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	@Override
 	public void restoreStereotypeLabel() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	@Override
 	public void restoreTaggedLabel() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
+	@Override
 	public void removeTaggedLabel() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 

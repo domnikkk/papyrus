@@ -1,16 +1,16 @@
 /*****************************************************************************
-* Copyright (c) 2010 CEA LIST.
-*
-* 
+ * Copyright (c) 2010 CEA LIST.
+ *
+ *
  * All rights reserved. This program and the accompanying materials
-* are made available under the terms of the Eclipse Public License v1.0
-* which accompanies this distribution, and is available at
-* http://www.eclipse.org/legal/epl-v10.html
-*
-* Contributors:
-*  Itemis - Initial API and implementation
-*
-*****************************************************************************/ 
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Itemis - Initial API and implementation
+ *
+ *****************************************************************************/
 
 package org.eclipse.papyrus.uml.xtext.integration;
 
@@ -38,13 +38,13 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * Get the last active editor in general or of a specific type.
- * 
+ *
  * Please note that the ActiveEditorTracker currently only supports one single
  * workbench window properly.
- * 
+ *
  * @author patrick.koenemann@itemis.de
  * @author alexander.nyssen@itemis.de
- * 
+ *
  */
 public class ActiveEditorTracker implements IPageListener, IPartListener,
 		IStartup, IWindowListener {
@@ -62,8 +62,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 	private static ActiveEditorTracker INSTANCE;
 
 	public ActiveEditorTracker() {
-		if (INSTANCE != null)
+		if (INSTANCE != null) {
 			throw new IllegalStateException(SINGLETON_MSG);
+		}
 		INSTANCE = this;
 	}
 
@@ -117,14 +118,15 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 	}
 
 	/**
-	 * 
+	 *
 	 * @return The EMF resource set of the last active editor (if it is still
 	 *         open).
 	 */
 	public static ResourceSet getLastActiveEditorResourceSet() {
 		final IEditorPart editor = getLastActiveEditor();
-		if (editor == null)
+		if (editor == null) {
 			return null;
+		}
 		EditingDomain domain = null;
 		if (editor instanceof IEditingDomainProvider) {
 			domain = ((IEditingDomainProvider) editor).getEditingDomain();
@@ -148,8 +150,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 	 */
 	public static IProject getLastActiveEditorProject() {
 		final IEditorPart editor = getLastActiveEditor();
-		if (editor == null)
+		if (editor == null) {
 			return null;
+		}
 		final IEditorInput editorInput = editor.getEditorInput();
 		if (editorInput instanceof IFileEditorInput) {
 			final IFileEditorInput input = (IFileEditorInput) editorInput;
@@ -213,8 +216,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 	private IEditorPart getLastActiveEditorInternal() {
 		if (activePage == null) {
 			initialize(PlatformUI.getWorkbench().getActiveWorkbenchWindow());
-			if (activePage == null)
+			if (activePage == null) {
 				return null;
+			}
 		}
 		boolean updated = false;
 		if (lastActiveEditorId == null) {
@@ -235,8 +239,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 	}
 
 	private IEditorPart getEditorById(String editorId) {
-		if (activePage == null || editorId == null)
+		if (activePage == null || editorId == null) {
 			return null;
+		}
 		final IEditorPart editor = activeEditors.get(editorId);
 		final String id = checkEditorAndGetId(editor);
 		if (id != null && id.equals(editorId)) {
@@ -246,8 +251,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 	}
 
 	private String checkEditorAndGetId(IEditorPart editor) {
-		if (editor == null)
+		if (editor == null) {
 			return null;
+		}
 		for (IEditorReference ref : activePage.getEditorReferences()) {
 			if (editor.equals(ref.getEditor(false))) {
 				return ref.getId();
@@ -269,8 +275,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 			return;
 		}
 		final IWorkbenchPartReference reference = activePage.getReference(part);
-		if (reference == null)
+		if (reference == null) {
 			throw new IllegalStateException("Impossible?!");
+		}
 		lastActiveEditorId = reference.getId();
 		activeEditors.put(lastActiveEditorId, part);
 	}
@@ -302,8 +309,9 @@ public class ActiveEditorTracker implements IPageListener, IPartListener,
 			 */
 		}
 		this.workbenchWindow = window;
-		if (window == null)
+		if (window == null) {
 			return;
+		}
 		this.activePage = window.getActivePage();
 		final IEditorPart editor = this.activePage.getActiveEditor();
 		if (editor != null) {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,15 +51,15 @@ public class CustomizationElementCreationFactory extends EcorePropertyEditorFact
 	@Override
 	protected EObject simpleCreateObject(Control widget) {
 		EClass eClass = chooseEClass(widget);
-		if(eClass == null) {
+		if (eClass == null) {
 			return null;
 		}
 
 		EObject instance = eClass.getEPackage().getEFactoryInstance().create(eClass);
-		if(eClass == CustomizationPluginPackage.eINSTANCE.getProfile()) {
-			((Profile)instance).setProvider(CreateNewCustomizationPluginWizard.current.getProvider());
-		} else if(eClass == CustomizationPluginPackage.eINSTANCE.getUMLModel()) {
-			((UMLModel)instance).setProvider(CreateNewCustomizationPluginWizard.current.getProvider());
+		if (eClass == CustomizationPluginPackage.eINSTANCE.getProfile()) {
+			((Profile) instance).setProvider(CreateNewCustomizationPluginWizard.current.getProvider());
+		} else if (eClass == CustomizationPluginPackage.eINSTANCE.getUMLModel()) {
+			((UMLModel) instance).setProvider(CreateNewCustomizationPluginWizard.current.getProvider());
 		}
 		return instance;
 	}
@@ -67,11 +67,11 @@ public class CustomizationElementCreationFactory extends EcorePropertyEditorFact
 	public static final String METAMODEL_EXTENSION = Activator.PLUGIN_ID;
 
 	protected static Set<EPackage> getContributedEPackages() {
-		if(contributedEPackages == null) {
+		if (contributedEPackages == null) {
 			contributedEPackages = new HashSet<EPackage>();
-			for(ExtensionFactory factory : ExtensionFactoryRegistry.instance.getFactories()) {
-				if(factory.getCustomizableElementClass() != null) {
-					if(factory.getCustomizableElementClass().getEPackage() != null) {
+			for (ExtensionFactory factory : ExtensionFactoryRegistry.instance.getFactories()) {
+				if (factory.getCustomizableElementClass() != null) {
+					if (factory.getCustomizableElementClass().getEPackage() != null) {
 						contributedEPackages.add(factory.getCustomizableElementClass().getEPackage());
 					}
 				}

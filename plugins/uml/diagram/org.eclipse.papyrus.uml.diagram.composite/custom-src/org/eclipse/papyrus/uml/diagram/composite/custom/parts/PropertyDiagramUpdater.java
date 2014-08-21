@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.uml.diagram.composite.part.UMLNodeDescriptor;
 
 /**
  * <pre>
- * This class provides a custom implementation for the method 
+ * This class provides a custom implementation for the method
  * resolving the semantic children of a Property (as viewed in a
  * structured classifier) in {@link UMLDiagramUpdater}.
  * </pre>
@@ -33,19 +33,20 @@ public class PropertyDiagramUpdater implements ICustomDiagramUpdater<UMLNodeDesc
 	 * <pre>
 	 * The original generated method of {@link UMLDiagramUpdater} class is kept commented below.
 	 * 
-	 * In the CompositeStructure Diagram, Port may be shown graphically attached to 
+	 * In the CompositeStructure Diagram, Port may be shown graphically attached to
 	 * a Property. This is only possible if the Property is typed by the StructuredClassifier
 	 * that owns the Port.
 	 * 
 	 * In order to implement this in GMF, the Port is declared as an affixed child for both
-	 * StructuredClassifier and Property, but as the Port is not contained by Property, the 
-	 * Property related getSemanticChildren is not generated properly. 
+	 * StructuredClassifier and Property, but as the Port is not contained by Property, the
+	 * Property related getSemanticChildren is not generated properly.
 	 * 
 	 * FIXME : Not sure whether the {@link UMLDiagramUpdater} class is really needed by Papyrus
 	 * 
 	 * {@inheritDoc}
 	 * </pre>
 	 */
+	@Override
 	public List<UMLNodeDescriptor> getSemanticChildren(View view) {
 		return Collections.emptyList();
 		// if (!view.isSetElement()) {

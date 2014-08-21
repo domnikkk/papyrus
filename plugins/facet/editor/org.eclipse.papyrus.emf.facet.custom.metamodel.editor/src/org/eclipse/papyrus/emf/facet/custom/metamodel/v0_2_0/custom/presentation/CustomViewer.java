@@ -14,19 +14,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.naming.event.ObjectChangeListener;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
-import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StyledCellLabelProvider;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.TreeViewerColumn;
 import org.eclipse.jface.viewers.Viewer;
@@ -35,7 +30,6 @@ import org.eclipse.jface.viewers.ViewerComparator;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.DerivedTypedElement;
-import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.Facet;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetAttribute;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetElement;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
@@ -52,18 +46,12 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NullLi
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLiteralQuery;
-import org.eclipse.papyrus.emf.facet.query.java.core.IJavaQuery2;
 import org.eclipse.papyrus.emf.facet.query.java.metamodel.v0_2_0.javaquery.JavaQuery;
 import org.eclipse.papyrus.emf.facet.query.ocl.metamodel.oclquery.OclQuery;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.StyleRange;
-import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * Displays the current customizations for a given {@link CustomView}, which is
@@ -75,8 +63,8 @@ public class CustomViewer {
 	private static final int TYPE_COLUMN_WIDTH = 200;
 	private static final int FEATURE_COLUMN_WIDTH = 200;
 	private final TreeViewer treeViewer;
-	
-	//Customization
+
+	// Customization
 	private static final String TOP_LEFT_OVERLAY_ICON_PATH = "topLeftOverlay";
 	private static final String TOP_MIDDLE_OVERLAY_ICON_PATH = "topMiddleOverlay";
 	private static final String TOP_RIGHT_OVERLAY_ICON_PATH = "topRightOverlay";
@@ -149,13 +137,13 @@ public class CustomViewer {
 				final FacetOperation facetOperation = (FacetOperation) inputElement;
 				facetOperations.add(facetOperation);
 			}
-			if(inputElement instanceof FacetElement){
-				final FacetElement facetElement = (FacetElement)inputElement;
+			if (inputElement instanceof FacetElement) {
+				final FacetElement facetElement = (FacetElement) inputElement;
 				facetOperations.add(facetElement);
 			}
-			if(inputElement instanceof List){
-				for (Object object : (List)inputElement) {
-					if(object instanceof DerivedTypedElement){
+			if (inputElement instanceof List) {
+				for (Object object : (List) inputElement) {
+					if (object instanceof DerivedTypedElement) {
 						facetOperations.add(object);
 					}
 				}
@@ -206,11 +194,11 @@ public class CustomViewer {
 		public String getText(final Object element) {
 			if (element instanceof DerivedTypedElement) {
 				final DerivedTypedElement facetElement = (DerivedTypedElement) element;
-				return facetElement.getName() ;
-			}else if (element instanceof ParameterValue){
+				return facetElement.getName();
+			} else if (element instanceof ParameterValue) {
 				final ParameterValue parameterValue = (ParameterValue) element;
 				return parameterValue.getParameter().getName();
-			}else if (element instanceof EParameter){
+			} else if (element instanceof EParameter) {
 				final EParameter parameterValue = (EParameter) element;
 				return parameterValue.getName();
 			}
@@ -233,67 +221,69 @@ public class CustomViewer {
 			super();
 		}
 
+		@Override
 		public String getText(final Object element) {
-			
-			if(element instanceof DerivedTypedElement){
-				DerivedTypedElement derivedTypedElement = (DerivedTypedElement)element;
+
+			if (element instanceof DerivedTypedElement) {
+				DerivedTypedElement derivedTypedElement = (DerivedTypedElement) element;
 				Query query = derivedTypedElement.getQuery();
-				if(query != null){
-					if(query instanceof StringLiteralQuery){
-						StringLiteralQuery stringQuery = (StringLiteralQuery)query;
+				if (query != null) {
+					if (query instanceof StringLiteralQuery) {
+						StringLiteralQuery stringQuery = (StringLiteralQuery) query;
 						return stringQuery.getValue();
-					}else if(query instanceof TrueLiteralQuery){
+					} else if (query instanceof TrueLiteralQuery) {
 						return "true";
-					}else if(query instanceof FalseLiteralQuery){
+					} else if (query instanceof FalseLiteralQuery) {
 						return "false";
-					}else if(query instanceof NullLiteralQuery){
+					} else if (query instanceof NullLiteralQuery) {
 						return "null";
-					}else if(query instanceof OperationCallQuery){
-						OperationCallQuery operationCallQuery = (OperationCallQuery)query;
+					} else if (query instanceof OperationCallQuery) {
+						OperationCallQuery operationCallQuery = (OperationCallQuery) query;
 						return operationCallQuery.toString();
-					}else if(query instanceof JavaQuery){
-						JavaQuery javaQuery = (JavaQuery)query;
+					} else if (query instanceof JavaQuery) {
+						JavaQuery javaQuery = (JavaQuery) query;
 						String qualifiedName = javaQuery.getImplementationClassName();
 						String[] path = qualifiedName.split("\\.");
-						return path[path.length -1];
-					}else if (query instanceof OclQuery){
-						OclQuery oclQuery = (OclQuery)query;
+						return path[path.length - 1];
+					} else if (query instanceof OclQuery) {
+						OclQuery oclQuery = (OclQuery) query;
 						return oclQuery.getOclExpression();
-					}else if (query instanceof NavigationQuery){
-						NavigationQuery navigationQuery = (NavigationQuery)query;
+					} else if (query instanceof NavigationQuery) {
+						NavigationQuery navigationQuery = (NavigationQuery) query;
 						return navigationQuery.getPath().toString();
-					}else if (query instanceof IsOneOfQuery){
-						IsOneOfQuery isOneOfQuery = (IsOneOfQuery)query;
+					} else if (query instanceof IsOneOfQuery) {
+						IsOneOfQuery isOneOfQuery = (IsOneOfQuery) query;
 						return isOneOfQuery.getExpectedEObjects().toString();
-					}else if (query instanceof IntegerLiteralQuery){
-						IntegerLiteralQuery integerQuery = (IntegerLiteralQuery)query;
+					} else if (query instanceof IntegerLiteralQuery) {
+						IntegerLiteralQuery integerQuery = (IntegerLiteralQuery) query;
 						return String.valueOf(integerQuery.getValue());
-					}else if (query instanceof FloatLiteralQuery){
-						FloatLiteralQuery floatQuery = (FloatLiteralQuery)query;
+					} else if (query instanceof FloatLiteralQuery) {
+						FloatLiteralQuery floatQuery = (FloatLiteralQuery) query;
 						return String.valueOf(floatQuery.getValue());
-					}else if (query instanceof EObjectLiteralQuery){
-						EObjectLiteralQuery eObjectQuery = (EObjectLiteralQuery)query;
+					} else if (query instanceof EObjectLiteralQuery) {
+						EObjectLiteralQuery eObjectQuery = (EObjectLiteralQuery) query;
 						return eObjectQuery.getElement().eClass().getName();
-					}else if(query instanceof ETypedElementSwitchQuery){
-						ETypedElementSwitchQuery switchQuery = (ETypedElementSwitchQuery)query;
+					} else if (query instanceof ETypedElementSwitchQuery) {
+						ETypedElementSwitchQuery switchQuery = (ETypedElementSwitchQuery) query;
 						EList<ETypedElementCase> list = switchQuery.getCases();
 						List listResult = new ArrayList<String>();
 						for (ETypedElementCase object : list) {
-							if(object.getCase() != null){
+							if (object.getCase() != null) {
 								listResult.add(object.getCase().getName());
 							}
 						}
 						return listResult.toString();
 					}
 				}
-			}else if(element instanceof EParameter){
-				EParameter parameterValue = (EParameter)element;
+			} else if (element instanceof EParameter) {
+				EParameter parameterValue = (EParameter) element;
 				return "";
-				//return parameterValue.getName();
+				// return parameterValue.getName();
 			}
 			return "N/A";
 		}
 
+		@Override
 		public Image getImage(final Object element) {
 			return null;
 		}
@@ -315,9 +305,9 @@ public class CustomViewer {
 			boolean gray = false;
 			if (element instanceof FacetOperation) {
 				final FacetOperation customViewFeature = (FacetOperation) element;
-				//if (customViewFeature.getDefaultValue() == null) {
-				//	gray = true;
-				//}
+				// if (customViewFeature.getDefaultValue() == null) {
+				// gray = true;
+				// }
 			}
 
 			// red if unresolved query
@@ -341,76 +331,76 @@ public class CustomViewer {
 			}
 		}
 	}
-	
-	protected class TypeLabelProvider extends ColumnLabelProvider{
-		
+
+	protected class TypeLabelProvider extends ColumnLabelProvider {
+
 		@Override
 		public String getText(final Object element) {
 			if (element instanceof DerivedTypedElement) {
 				final DerivedTypedElement facetElement = (DerivedTypedElement) element;
-				if(facetElement instanceof FacetAttribute || facetElement instanceof FacetReference){
+				if (facetElement instanceof FacetAttribute || facetElement instanceof FacetReference) {
 					return facetElement.getEType().getName();
-				}else{
+				} else {
 					DerivedTypedElement override = facetElement.getOverride();
-					if( override != null){
+					if (override != null) {
 						return override.getName();
-					}else{
+					} else {
 						return ("N/A");
 					}
 				}
-			} else if( element instanceof EParameter){
+			} else if (element instanceof EParameter) {
 				final EParameter eParameter = (EParameter) element;
 				return eParameter.getEType().getName();
 			}
 
 			return element.toString();
 		}
-		
+
 		@Override
 		public Image getImage(Object element) {
 			if (element instanceof DerivedTypedElement) {
 				final DerivedTypedElement facetElement = (DerivedTypedElement) element;
-				if(facetElement instanceof FacetAttribute || facetElement instanceof FacetReference){
+				if (facetElement instanceof FacetAttribute || facetElement instanceof FacetReference) {
 					return ImageProvider.getInstance().getAttributeIcon();
-				}else{
+				} else {
 					DerivedTypedElement override = facetElement.getOverride();
-					if( override != null){
+					if (override != null) {
 						String overrideName = override.getName();
-						if(CustomViewer.TOP_LEFT_OVERLAY_ICON_PATH.equals(overrideName)){
+						if (CustomViewer.TOP_LEFT_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getTopLeftOverlayIcon();
-						}else if(CustomViewer.TOP_MIDDLE_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.TOP_MIDDLE_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getTopMiddleOverlayIcon();
-						}else if(CustomViewer.TOP_RIGHT_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.TOP_RIGHT_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getTopRightOverlayIcon();
-						}else if(CustomViewer.MIDDLE_LEFT_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.MIDDLE_LEFT_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getMiddleLeftOverlayIcon();
-						}else if(CustomViewer.MIDDLE_RIGHT_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.MIDDLE_RIGHT_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getMiddleRightOverlayIcon();
-						}else if(CustomViewer.BOTTOM_LEFT_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.BOTTOM_LEFT_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getBottomLeftOverlayIcon();
-						}else if(CustomViewer.BOTTOM_MIDDLE_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.BOTTOM_MIDDLE_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getBottomMiddleOverlayIcon();
-						}else if(CustomViewer.BOTTOM_RIGHT_OVERLAY_ICON_PATH.equals(overrideName)){
+						} else if (CustomViewer.BOTTOM_RIGHT_OVERLAY_ICON_PATH.equals(overrideName)) {
 							return ImageProvider.getInstance().getBottomRightOverlayIcon();
-						}else if(CustomViewer.CUSTOMIZATION_LABEL.equals(overrideName)){
+						} else if (CustomViewer.CUSTOMIZATION_LABEL.equals(overrideName)) {
 							return ImageProvider.getInstance().getCustomizationLabelIcon();
-						}else if(CustomViewer.CUSTOMIZATION_IMAGE.equals(overrideName)){
+						} else if (CustomViewer.CUSTOMIZATION_IMAGE.equals(overrideName)) {
 							return ImageProvider.getInstance().getCustomizationImageIcon();
-						}else if(CustomViewer.CUSTOMIZATION_FOREGROUND.equals(overrideName)){
+						} else if (CustomViewer.CUSTOMIZATION_FOREGROUND.equals(overrideName)) {
 							return ImageProvider.getInstance().getCustomizationColorIcon();
-						}else if(CustomViewer.CUSTOMIZATION_BACKGROUND.equals(overrideName)){
+						} else if (CustomViewer.CUSTOMIZATION_BACKGROUND.equals(overrideName)) {
 							return ImageProvider.getInstance().getCustomizationColorIcon();
-						}else if(CustomViewer.FONT_NAME.equals(overrideName)){
+						} else if (CustomViewer.FONT_NAME.equals(overrideName)) {
 							return ImageProvider.getInstance().getFontNameIcon();
-						}else if(CustomViewer.FONT_SIZE.equals(overrideName)){
+						} else if (CustomViewer.FONT_SIZE.equals(overrideName)) {
 							return ImageProvider.getInstance().getFontSizeIcon();
-						}else if(CustomViewer.FONT_BOLD.equals(overrideName)){
+						} else if (CustomViewer.FONT_BOLD.equals(overrideName)) {
 							return ImageProvider.getInstance().getIsBoldIcon();
-						}else if(CustomViewer.FONT_ITALIC.equals(overrideName)){
+						} else if (CustomViewer.FONT_ITALIC.equals(overrideName)) {
 							return ImageProvider.getInstance().getIsItalicIcon();
-						}else if(CustomViewer.FONT_UNDERLINE.equals(overrideName)){
+						} else if (CustomViewer.FONT_UNDERLINE.equals(overrideName)) {
 							return ImageProvider.getInstance().getIsUnderlinedIcon();
-						}else if(CustomViewer.FONT_STRUKETHROUGH.equals(overrideName)){
+						} else if (CustomViewer.FONT_STRUKETHROUGH.equals(overrideName)) {
 							return ImageProvider.getInstance().getIsStrukethroughIcon();
 						}
 					}

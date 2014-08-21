@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,12 +19,12 @@ import org.eclipse.papyrus.xwt.internal.core.Core;
 public class DefaultListContentProvider implements IStructuredContentProvider {
 
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof Collection<?>) {
-			Collection<?> collection = (Collection<?>)inputElement;
+		if (inputElement instanceof Collection<?>) {
+			Collection<?> collection = (Collection<?>) inputElement;
 			return collection.toArray();
 		}
-		if(inputElement instanceof Object[]) {
-			return (Object[])inputElement;
+		if (inputElement instanceof Object[]) {
+			return (Object[]) inputElement;
 		}
 		return Core.EMPTY_ARRAY;
 	}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 /**
  * The PreferencePage for the Papyrus Property View. Offers an UI to enable or disable
  * property view contexts.
- * 
+ *
  * @author Camille Letavernier
  */
 public class Preferences extends PreferencePage implements IWorkbenchPreferencePage {
@@ -47,7 +47,7 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 	private boolean changeOccured = false;
 
 	public void init(IWorkbench workbench) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
@@ -63,11 +63,11 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 
 		contextState.init();
 
-		//Only customizable Property view contexts should appear here
+		// Only customizable Property view contexts should appear here
 		List<Context> contexts = new java.util.ArrayList<Context>(configurationManager.getCustomizableContexts());
 		contexts.addAll(configurationManager.getMissingContexts());
 
-		for(Context context : contexts) {
+		for (Context context : contexts) {
 			boolean applied = configurationManager.isApplied(context);
 			Button checkbox = new Button(self, SWT.CHECK);
 			checkbox.setText(getLabel(context));
@@ -78,11 +78,11 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 			checkbox.addSelectionListener(new SelectionListener() {
 
 				public void widgetSelected(SelectionEvent e) {
-					contextState.setContextState(theContext, ((Button)e.widget).getSelection());
+					contextState.setContextState(theContext, ((Button) e.widget).getSelection());
 				}
 
 				public void widgetDefaultSelected(SelectionEvent e) {
-					//Nothing
+					// Nothing
 				}
 
 			});
@@ -106,10 +106,10 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 
 	@Override
 	public void performDefaults() {
-		for(Context context : ConfigurationManager.getInstance().getContexts()) {
+		for (Context context : ConfigurationManager.getInstance().getContexts()) {
 			boolean applied = ConfigurationManager.getInstance().isPlugin(context);
 			Button checkbox = checkboxes.get(context);
-			if(checkbox != null) {
+			if (checkbox != null) {
 				checkbox.setSelection(applied);
 			}
 
@@ -120,9 +120,9 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 	private String getLabel(Context context) {
 		String qualifier;
 
-		if(ConfigurationManager.getInstance().isPlugin(context)) {
+		if (ConfigurationManager.getInstance().isPlugin(context)) {
 			qualifier = Messages.Preferences_Plugin;
-		} else if(ConfigurationManager.getInstance().isMissing(context)) {
+		} else if (ConfigurationManager.getInstance().isMissing(context)) {
 			qualifier = "missing";
 		} else {
 			qualifier = Messages.Preferences_Custom;
@@ -150,8 +150,8 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 		}
 
 		public boolean saveContext() {
-			for(Entry<Context, Boolean> entry : contexts.entrySet()) {
-				if(entry.getValue()) {
+			for (Entry<Context, Boolean> entry : contexts.entrySet()) {
+				if (entry.getValue()) {
 					ConfigurationManager.getInstance().enableContext(entry.getKey(), false);
 				} else {
 					ConfigurationManager.getInstance().disableContext(entry.getKey(), false);
@@ -162,16 +162,16 @@ public class Preferences extends PreferencePage implements IWorkbenchPreferenceP
 
 			Collection<ConfigurationConflict> conflicts = ConfigurationManager.getInstance().checkConflicts();
 
-			if(changeOccured && !conflicts.isEmpty()) {
+			if (changeOccured && !conflicts.isEmpty()) {
 				String errorMessage = Messages.Preferences_ConflictWarning1;
-				for(ConfigurationConflict conflict : conflicts) {
+				for (ConfigurationConflict conflict : conflicts) {
 					errorMessage += conflict.toString() + "\n"; //$NON-NLS-1$
 				}
 				errorMessage += Messages.Preferences_ConflictWarning2;
 
-				MessageDialog dialog = new MessageDialog(getShell(), Messages.Preferences_ConflictWarningTitle, null, errorMessage, MessageDialog.WARNING, new String[]{ IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 1);
+				MessageDialog dialog = new MessageDialog(getShell(), Messages.Preferences_ConflictWarningTitle, null, errorMessage, MessageDialog.WARNING, new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 1);
 				int result = dialog.open();
-				if(result != 0) {
+				if (result != 0) {
 					return false;
 				}
 			}

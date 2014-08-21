@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,29 +50,29 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * This axis manager provides the axis for properties of stereotypes
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager implements IIdAxisManager {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.UMLFeatureAxisManager#isAllowedContents(java.lang.Object)
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
 	@Override
 	public boolean isAllowedContents(Object object) {
 		boolean result = false;
-		if(object instanceof Property) {
-			final Property prop = (Property)object;
+		if (object instanceof Property) {
+			final Property prop = (Property) object;
 			final Element owner = prop.getOwner();
 			result = owner instanceof Stereotype;
-			if(result) {
+			if (result) {
 				result = owner.getOwner() instanceof Profile;
-				if(result) {
+				if (result) {
 					result = EMFHelper.isReadOnly(prop);
 				}
 			}
@@ -81,10 +81,9 @@ public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager impl
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getComplementaryAddAxisCommand(TransactionalEditingDomain,
-	 *      java.util.Collection)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getComplementaryAddAxisCommand(TransactionalEditingDomain, java.util.Collection)
+	 *
 	 * @param domain
 	 * @param objectToAdd
 	 * @return
@@ -92,26 +91,26 @@ public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager impl
 	@Override
 	public Command getComplementaryAddAxisCommand(final TransactionalEditingDomain domain, final Collection<Object> objectToAdd) {
 		final Set<Stereotype> appliedStereotypes = new HashSet<Stereotype>();
-		for(final Object current : objectToAdd) {
-			if(current instanceof Element) {
-				appliedStereotypes.addAll(((Element)current).getAppliedStereotypes());
+		for (final Object current : objectToAdd) {
+			if (current instanceof Element) {
+				appliedStereotypes.addAll(((Element) current).getAppliedStereotypes());
 			}
 		}
 		final Set<Object> propertiesToAdd = new HashSet<Object>();
 
-		for(final Stereotype stereotype : appliedStereotypes) {
+		for (final Stereotype stereotype : appliedStereotypes) {
 			propertiesToAdd.addAll(StereotypeUtil.getAllStereotypePropertiesWithoutBaseProperties(stereotype));
 		}
-		if(!propertiesToAdd.isEmpty()) {
+		if (!propertiesToAdd.isEmpty()) {
 			return getAddAxisCommand(domain, propertiesToAdd);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.AbstractAxisManager#getAddAxisCommand(TransactionalEditingDomain, java.util.Collection)
-	 * 
+	 *
 	 * @param domain
 	 * @param objectToAdd
 	 * @return
@@ -119,15 +118,15 @@ public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager impl
 	@Override
 	public Command getAddAxisCommand(final TransactionalEditingDomain domain, final Collection<Object> objectToAdd) {
 		final List<String> allPropertyQN = new ArrayList<String>();
-		for(Object object : objectToAdd) {
-			if(isAllowedContents(object)) {
-				allPropertyQN.add(Constants.PROPERTY_OF_STEREOTYPE_PREFIX + ((NamedElement)object).getQualifiedName());
+		for (Object object : objectToAdd) {
+			if (isAllowedContents(object)) {
+				allPropertyQN.add(Constants.PROPERTY_OF_STEREOTYPE_PREFIX + ((NamedElement) object).getQualifiedName());
 			}
 		}
 		allPropertyQN.removeAll(getElements());
-		if(!allPropertyQN.isEmpty()) {
+		if (!allPropertyQN.isEmpty()) {
 			final Collection<IAxis> toAdd = new ArrayList<IAxis>();
-			for(String propQN : allPropertyQN) {
+			for (String propQN : allPropertyQN) {
 				final IdAxis newAxis = NattableaxisFactory.eINSTANCE.createFeatureIdAxis();
 				newAxis.setElement(propQN);
 				newAxis.setManager(this.representedAxisManager);
@@ -148,27 +147,28 @@ public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager impl
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.UMLFeatureAxisManager#getAllPossibleAxis()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Collection<Object> getAllPossibleAxis() {
 		return getRootProfiles();
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of the root profiles availables in the model
 	 */
 	private Collection<Object> getRootProfiles() {
-		EObject context = ((INattableModelManager)getTableManager()).getTable().getContext();
+		EObject context = ((INattableModelManager) getTableManager()).getTable().getContext();
 		assert context instanceof Element;
 
-		final List<Profile> allAppliedProfiles = ((Element)context).getNearestPackage().getAllAppliedProfiles();
+		final List<Profile> allAppliedProfiles = ((Element) context).getNearestPackage().getAllAppliedProfiles();
 		final Collection<Object> profiles = new HashSet<Object>();
-		for(Profile profile : allAppliedProfiles) {
+		for (Profile profile : allAppliedProfiles) {
 			EObject rootContainer = EcoreUtil.getRootContainer(profile);
 			profiles.add(rootContainer);
 		}
@@ -176,12 +176,12 @@ public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager impl
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.axis.IAxisManager#getDestroyAxisCommand(TransactionalEditingDomain, java.util.Collection)
-	 * 
+	 *
 	 * @param domain
 	 * @param umlProperties
-	 *        the UML Property for which we want destroy axis
+	 *            the UML Property for which we want destroy axis
 	 * @return
 	 */
 	@Override
@@ -189,35 +189,36 @@ public class UMLStereotypePropertyAxisManager extends UMLFeatureAxisManager impl
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(getRepresentedContentProvider());
 		final CompositeCommand compositeCommand = new CompositeCommand("Destroy IAxis Command"); //$NON-NLS-1$
 		final List<String> propIdToDestroy = new ArrayList<String>();
-		for(final Object current : umlProperties) {
-			if(current instanceof Property && ((Property)current).eContainer() instanceof Stereotype) {
-				propIdToDestroy.add(Constants.PROPERTY_OF_STEREOTYPE_PREFIX + ((NamedElement)current).getQualifiedName());
+		for (final Object current : umlProperties) {
+			if (current instanceof Property && ((Property) current).eContainer() instanceof Stereotype) {
+				propIdToDestroy.add(Constants.PROPERTY_OF_STEREOTYPE_PREFIX + ((NamedElement) current).getQualifiedName());
 			}
 		}
 
-		for(final IAxis current : getRepresentedContentProvider().getAxis()) {
-			if(current instanceof IdAxis) {
+		for (final IAxis current : getRepresentedContentProvider().getAxis()) {
+			if (current instanceof IdAxis) {
 				String propId = AxisUtils.getPropertyId(current);
-				if(propIdToDestroy.contains(propId)) {
-					DestroyElementRequest request = new DestroyElementRequest((TransactionalEditingDomain)domain, current, false);
+				if (propIdToDestroy.contains(propId)) {
+					DestroyElementRequest request = new DestroyElementRequest(domain, current, false);
 					compositeCommand.add(provider.getEditCommand(request));
 				}
 			}
 		}
 
-		if(!compositeCommand.isEmpty()) {
+		if (!compositeCommand.isEmpty()) {
 			return new GMFtoEMFCommandWrapper(compositeCommand);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param path
 	 * @return
 	 */
+	@Override
 	public Object resolvedPath(final String path) {
-		if(path.startsWith(Constants.PROPERTY_OF_STEREOTYPE_PREFIX)) {
+		if (path.startsWith(Constants.PROPERTY_OF_STEREOTYPE_PREFIX)) {
 			return UMLTableUtils.getRealStereotypeProperty(getTableContext(), path);
 		}
 		return null;

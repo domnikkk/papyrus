@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -125,9 +125,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates a new ProfileDefinitionDialog
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell for this dialog
+	 *            the parent shell for this dialog
 	 */
 	public ProfileDefinitionDialog(Shell parentShell, Profile profileToDefine) {
 		super(parentShell);
@@ -151,14 +151,14 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 	@Override
 	protected void okPressed() {
 		// save author and copyright in preference store
-		if(savePreferencesButton.getSelection()) {
+		if (savePreferencesButton.getSelection()) {
 			Activator.getDefault().getPreferenceStore().setValue(ProfileDefinitionPreferenceConstants.PREF_AUTHOR_NAME, authorText.getText());
 			Activator.getDefault().getPreferenceStore().setValue(ProfileDefinitionPreferenceConstants.PREF_COPYRIGHT, copyrightText.getText());
 		}
 
 		// creates the new Papyrus Definition Annotation
 		papyrusDefinitionAnnotation = new PapyrusDefinitionAnnotation(newVersionValue, commentText.getText(), copyrightText.getText(), dateText.getText(), authorText.getText());
-		if(constraintCheck != null) {
+		if (constraintCheck != null) {
 			saveConstraint = constraintCheck.getSelection();
 		}
 
@@ -175,7 +175,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 	@Override
 	protected Control createDialogArea(Composite parent) {
 		// top level composite
-		Composite parentComposite = (Composite)super.createDialogArea(parent);
+		Composite parentComposite = (Composite) super.createDialogArea(parent);
 
 		setTitle("Information about new definition");
 		setTitleImage(ImageManager.getImage(PROFILE_DEFINITION));
@@ -233,9 +233,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates and returns the content of the advanced area.
-	 * 
+	 *
 	 * @param composite
-	 *        The parent composite to contain the advanced area
+	 *            The parent composite to contain the advanced area
 	 */
 	private Composite createAdvancedArea(Composite composite) {
 		Composite parent = new Composite(composite, SWT.CENTER);
@@ -251,9 +251,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates and returns the content of the copyright area.
-	 * 
+	 *
 	 * @param composite
-	 *        The parent composite to contain the copyright area
+	 *            The parent composite to contain the copyright area
 	 */
 	private Composite createSaveConstraintAera(Composite composite) {
 		Group group = new Group(composite, SWT.CENTER);
@@ -265,7 +265,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		constraintCheck = new Button(group, SWT.RADIO);
 		// Enable button by default, see bug #411256
 		constraintCheck.setSelection(true);
-		// should look 
+		// should look
 		constraintCheck.setText("Save OCL constraints, if any, into the profile definition"); //$NON-NLS-1$
 		Button writeToPlugin = new Button(group, SWT.RADIO);
 		writeToPlugin.setText("Ignore OCL constraints, if any. (use validation plugin generator instead)"); //$NON-NLS-1$
@@ -277,9 +277,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates and returns the content of the copyright area.
-	 * 
+	 *
 	 * @param composite
-	 *        The parent composite to contain the copyright area
+	 *            The parent composite to contain the copyright area
 	 */
 	private Composite createCopyrightArea(Composite composite) {
 		Group group = new Group(composite, SWT.CENTER);
@@ -289,7 +289,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 		// new copyright area
 		copyrightText = new Text(group, SWT.MULTI | SWT.BORDER | SWT.WRAP | SWT.V_SCROLL);
-		// should look 
+		// should look
 		copyrightText.setText(Activator.getDefault().getPreferenceStore().getString(ProfileDefinitionPreferenceConstants.PREF_COPYRIGHT));
 		GridData gd = new GridData(SWT.FILL, SWT.CENTER, true, true);
 		gd.heightHint = 60;
@@ -299,9 +299,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates and returns the content of the information area.
-	 * 
+	 *
 	 * @param composite
-	 *        The parent composite to contain the information area
+	 *            The parent composite to contain the information area
 	 */
 	private Composite createInfoArea(Composite composite) {
 		Group group = new Group(composite, SWT.CENTER);
@@ -338,9 +338,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates and returns the content of the comment area.
-	 * 
+	 *
 	 * @param composite
-	 *        The parent composite to contain the comment area
+	 *            The parent composite to contain the comment area
 	 */
 	private Composite createCommentArea(Composite composite) {
 		Group group = new Group(composite, SWT.CENTER);
@@ -358,14 +358,14 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		commentHistory = new Combo(group, SWT.READ_ONLY | SWT.DROP_DOWN);
 
 		Iterator<PapyrusDefinitionAnnotation> it = oldVersionAnnotations.listIterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			String comment = it.next().getComment();
-			if(comment != null && !"".equals(comment)) {
+			if (comment != null && !"".equals(comment)) {
 				availableComments.add(comment);
 			}
 		}
 
-		for(String comment : availableComments) {
+		for (String comment : availableComments) {
 			// should be max 80 characters or something like that
 			commentHistory.add(comment.substring(0, Math.min(comment.length(), 80)));
 		}
@@ -379,7 +379,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 			/** @{inheritedDoc */
 			public void widgetSelected(SelectionEvent e) {
 				int index = commentHistory.getSelectionIndex();
-				if(index == -1) {
+				if (index == -1) {
 					return;
 				}
 				String text = availableComments.get(index);
@@ -395,9 +395,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Creates and returns the content of the version area.
-	 * 
+	 *
 	 * @param composite
-	 *        The parent composite to contain the version area
+	 *            The parent composite to contain the version area
 	 */
 	private Composite createVersionArea(Composite composite) {
 		Group group = new Group(composite, SWT.CENTER);
@@ -405,7 +405,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 		GridLayout layout = new GridLayout(2, false);
 		group.setLayout(layout);
 
-		// old version label 
+		// old version label
 		Label oldVersionLabel = new Label(group, SWT.LEFT);
 		oldVersionLabel.setText("Previous Version");
 		GridData gd = new GridData(SWT.FILL, SWT.CENTER, true, false);
@@ -533,9 +533,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Action called as the development version button is pressed
-	 * 
+	 *
 	 * @param e
-	 *        the selection event that triggers this behavior
+	 *            the selection event that triggers this behavior
 	 */
 	private void developmentVersionButtonPressed() {
 		devVersionButton.setSelection(true);
@@ -548,9 +548,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Action called as the release version button is pressed
-	 * 
+	 *
 	 * @param e
-	 *        the selection event that triggers this behavior
+	 *            the selection event that triggers this behavior
 	 */
 	private void releaseVersionButtonPressed() {
 		devVersionButton.setSelection(false);
@@ -563,9 +563,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Action called as the major release version button is pressed
-	 * 
+	 *
 	 * @param e
-	 *        the selection event that triggers this behavior
+	 *            the selection event that triggers this behavior
 	 */
 	private void majorReleaseVersionButtonPressed() {
 		devVersionButton.setSelection(false);
@@ -578,9 +578,9 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Action called as the release version button is pressed
-	 * 
+	 *
 	 * @param e
-	 *        the selection event that triggers this behavior
+	 *            the selection event that triggers this behavior
 	 */
 	private void customVersionButtonPressed() {
 		devVersionButton.setSelection(false);
@@ -603,7 +603,7 @@ public class ProfileDefinitionDialog extends TitleAreaDialog {
 
 	/**
 	 * Returns the defined PapyrusDefinitionAnnotation
-	 * 
+	 *
 	 * @return the papyrusDefinitionAnnotation
 	 */
 	public PapyrusDefinitionAnnotation getPapyrusDefinitionAnnotation() {

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *	 CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 392301
  *
@@ -33,7 +33,7 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * An editor to be used in multitabs editor. This editor extends the original UML Diagram.
- * 
+ *
  */
 public class BlockDefinitionDiagramForMultiEditor extends BlockDefinitionDiagramEditor {
 
@@ -49,16 +49,16 @@ public class BlockDefinitionDiagramForMultiEditor extends BlockDefinitionDiagram
 
 	/** The editor splitter. */
 	private Composite splitter;
-	
+
 	private Image titleImage;
 
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public BlockDefinitionDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -77,11 +77,11 @@ public class BlockDefinitionDiagramForMultiEditor extends BlockDefinitionDiagram
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ import org.eclipse.ui.services.IServiceLocator;
 import org.eclipse.uml2.uml.Property;
 
 /**
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public abstract class AbstractCreateStereotypePropertyMenuFactory extends ExtensionContributionFactory {
 
@@ -57,11 +57,11 @@ public abstract class AbstractCreateStereotypePropertyMenuFactory extends Extens
 	private final String iconPath;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param menuLabel
-	 *        the label to use for the menu
+	 *            the label to use for the menu
 	 */
 	public AbstractCreateStereotypePropertyMenuFactory(final String menuLabel, final String iconPath) {
 		this.menuLabel = menuLabel;
@@ -69,23 +69,24 @@ public abstract class AbstractCreateStereotypePropertyMenuFactory extends Extens
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the current table manager
+	 *            the current table manager
 	 * @return
 	 *         the uml stereotype property axis manager or <code>null</code> if not found
 	 */
 	protected abstract UMLStereotypePropertyAxisManager getStereotypeAxisManager(final INattableModelManager tableManager);
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createContributionItems(IServiceLocator serviceLocator, IContributionRoot additions) {
 		final INattableModelManager tableManager = getTableManager();
-		if(tableManager != null) {
+		if (tableManager != null) {
 			final IAxisManager steretoypeAxisManager = getStereotypeAxisManager(tableManager);
-			if(steretoypeAxisManager == null) {
+			if (steretoypeAxisManager == null) {
 				return;
 			}
 			final IRestrictedContentProvider provider = steretoypeAxisManager.createPossibleAxisContentProvider(true);
@@ -93,30 +94,30 @@ public abstract class AbstractCreateStereotypePropertyMenuFactory extends Extens
 			final Object[] elementss = flatProvider.getElements();
 
 			final Map<String, Property> nameToPropertyMap = new HashMap<String, Property>();
-			for(final Object current : elementss) {
-				if(current instanceof Property) {
-					nameToPropertyMap.put(((Property)current).getQualifiedName(), (Property)current);
+			for (final Object current : elementss) {
+				if (current instanceof Property) {
+					nameToPropertyMap.put(((Property) current).getQualifiedName(), (Property) current);
 				}
 			}
 
 
 			final Collection<String> initialSelection = new ArrayList<String>();
 
-			for(final Object current : getAxisElementList(tableManager)) {
-				if(current instanceof FeatureIdAxis) {
-					String el = ((FeatureIdAxis)current).getElement();
-					if(el.startsWith(Constants.PROPERTY_OF_STEREOTYPE_PREFIX)) {
-						initialSelection.add(((FeatureIdAxis)current).getElement().replace(Constants.PROPERTY_OF_STEREOTYPE_PREFIX, ""));
+			for (final Object current : getAxisElementList(tableManager)) {
+				if (current instanceof FeatureIdAxis) {
+					String el = ((FeatureIdAxis) current).getElement();
+					if (el.startsWith(Constants.PROPERTY_OF_STEREOTYPE_PREFIX)) {
+						initialSelection.add(((FeatureIdAxis) current).getElement().replace(Constants.PROPERTY_OF_STEREOTYPE_PREFIX, ""));
 					}
 				}
 			}
 
-			if(tableManager != null) {
-				if(true) {
+			if (tableManager != null) {
+				if (true) {
 					MenuManager manager = new MenuManager(menuLabel) {
 
 						/**
-						 * 
+						 *
 						 * {@inheritDoc}
 						 */
 						@Override
@@ -137,7 +138,7 @@ public abstract class AbstractCreateStereotypePropertyMenuFactory extends Extens
 					final IContributionItem item = new ContributionItem() {
 
 						/**
-						 * 
+						 *
 						 * {@inheritDoc}
 						 */
 						@Override
@@ -147,14 +148,14 @@ public abstract class AbstractCreateStereotypePropertyMenuFactory extends Extens
 					};
 
 					Menu menu = manager.getMenu();
-					if(menu != null) {
+					if (menu != null) {
 						menu.setEnabled(false);
 					}
 					manager.add(item);
 					Expression visibleWhen = new Expression() {
 
 						/**
-						 * 
+						 *
 						 * {@inheritDoc}
 						 */
 						@Override
@@ -170,37 +171,37 @@ public abstract class AbstractCreateStereotypePropertyMenuFactory extends Extens
 	}
 
 	/**
-	 * 
+	 *
 	 * @param menu
-	 *        the menu to fill
+	 *            the menu to fill
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @param initialSelection
-	 *        the initial selection
+	 *            the initial selection
 	 * @param nameToPropertyMap
-	 *        the map with th available properties
+	 *            the map with th available properties
 	 */
 	protected abstract void fillMenu(final Menu menu, final INattableModelManager tableManager, final Collection<String> initialSelection, final Map<String, Property> nameToPropertyMap);
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @return
 	 *         the list of the element currently know by the axis
 	 */
 	protected abstract Collection<?> getAxisElementList(final INattableModelManager tableManager);
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the table manager
 	 */
 	protected final INattableModelManager getTableManager() {
 		final IWorkbenchPart workbenchPart = EditorHelper.getActivePart();
 		INattableModelManager tableManager = null;
-		if(workbenchPart != null) {
-			tableManager = (INattableModelManager)workbenchPart.getAdapter(INattableModelManager.class);
+		if (workbenchPart != null) {
+			tableManager = (INattableModelManager) workbenchPart.getAdapter(INattableModelManager.class);
 		}
 		return tableManager;
 	}

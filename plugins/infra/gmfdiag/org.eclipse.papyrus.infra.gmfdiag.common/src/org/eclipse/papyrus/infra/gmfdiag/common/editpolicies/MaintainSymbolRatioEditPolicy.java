@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,14 +37,14 @@ public class MaintainSymbolRatioEditPolicy extends GraphicalEditPolicy implement
 	protected IObservableValue styleObservable;
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
-		View view = (View)getHost().getModel();
-		if(view == null) {
+		View view = (View) getHost().getModel();
+		if (view == null) {
 			return;
 		}
 
@@ -54,21 +54,21 @@ public class MaintainSymbolRatioEditPolicy extends GraphicalEditPolicy implement
 
 
 	/**
-	 * 
+	 *
 	 * @param currentView
 	 * @return the current Style that reperesent the boder
 	 */
 	protected BooleanValueStyle getMaintainSymbolRatioStyle(View currentView) {
-		return (BooleanValueStyle)currentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), MAINTAIN_SYMBOL_RATIO);
+		return (BooleanValueStyle) currentView.getNamedStyle(NotationPackage.eINSTANCE.getBooleanValueStyle(), MAINTAIN_SYMBOL_RATIO);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void deactivate() {
-		if(styleObservable != null) {
+		if (styleObservable != null) {
 			styleObservable.removeChangeListener(this);
 			styleObservable.dispose();
 			styleObservable = null;

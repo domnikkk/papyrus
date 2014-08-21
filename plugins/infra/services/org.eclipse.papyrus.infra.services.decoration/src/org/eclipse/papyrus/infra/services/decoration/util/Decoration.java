@@ -85,15 +85,15 @@ public class Decoration implements IPapyrusDecoration {
 	 * Instantiates a new decoration.
 	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 * @param decorationImage
-	 *        the decoration image
+	 *            the decoration image
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param priority
-	 *        the priority
+	 *            the priority
 	 */
 	public Decoration(String id, String type, ImageDescriptor decorationImageForGE, ImageDescriptor decorationImageForME, String message, EObject element, int priority) {
 
@@ -140,7 +140,7 @@ public class Decoration implements IPapyrusDecoration {
 	 * Sets the message.
 	 *
 	 * @param message
-	 *        the new message
+	 *            the new message
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setMessage(java.lang.String)
 	 */
 
@@ -163,7 +163,7 @@ public class Decoration implements IPapyrusDecoration {
 	 * Sets the element.
 	 *
 	 * @param element
-	 *        the new element
+	 *            the new element
 	 */
 	public void setElement(EObject element) {
 		this.element = element;
@@ -183,7 +183,7 @@ public class Decoration implements IPapyrusDecoration {
 	 * Sets the decoration image for a graphical editor.
 	 *
 	 * @param decorationImage
-	 *        the new decoration image
+	 *            the new decoration image
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setDecorationImageForGE(org.eclipse.jface.resource.ImageDescriptor)
 	 */
 	public void setDecorationImageForGE(ImageDescriptor decorationImageForGE) {
@@ -204,7 +204,7 @@ public class Decoration implements IPapyrusDecoration {
 	 * Sets the decoration image for the model explorer.
 	 *
 	 * @param decorationImage
-	 *        the new decoration image
+	 *            the new decoration image
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setDecorationImageForGE(org.eclipse.jface.resource.ImageDescriptor)
 	 */
 	public void setDecorationImageForME(ImageDescriptor decorationImageForME) {
@@ -227,7 +227,7 @@ public class Decoration implements IPapyrusDecoration {
 	 * Sets the position.
 	 *
 	 * @param position
-	 *        the new position
+	 *            the new position
 	 * @see org.eclipse.papyrus.infra.services.decoration.util.IPapyrusDecoration#setPosition(org.eclipse.papyrus.infra.services.decoration.util.Decoration.PreferedPosition)
 	 */
 
@@ -240,7 +240,7 @@ public class Decoration implements IPapyrusDecoration {
 	 *         (TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT, UNDERLAY
 	 */
 	public int getPositionForJFace() {
-		switch(position) {
+		switch (position) {
 		case NORTH_WEST:
 		case NORTH:
 			return IDecoration.TOP_LEFT;
@@ -263,13 +263,13 @@ public class Decoration implements IPapyrusDecoration {
 
 	/**
 	 * @param element
-	 *        the element for which we want to get the message. This must be an eObject or an object
-	 *        that can be adapted to an eObject (which is the case for elements of the model explorer)
+	 *            the element for which we want to get the message. This must be an eObject or an object
+	 *            that can be adapted to an eObject (which is the case for elements of the model explorer)
 	 * @return the decoration message. This might be a multi-line message
 	 */
 	public static String getMessageFromDecorations(DecorationService decorationService, Object element) {
 
-		if(decorationService == null) {
+		if (decorationService == null) {
 			return null;
 		}
 
@@ -277,20 +277,20 @@ public class Decoration implements IPapyrusDecoration {
 
 		EObject eObject = EMFHelper.getEObject(element);
 		String message = decorationService.initialMessage(eObject);
-		if(decorations != null) {
-			for(IPapyrusDecoration decoration : decorations) {
-				if(message == null) {
+		if (decorations != null) {
+			for (IPapyrusDecoration decoration : decorations) {
+				if (message == null) {
 					message = ""; //$NON-NLS-1$
 				}
-				if(message.length() > 0) {
+				if (message.length() > 0) {
 					message += "\n"; //$NON-NLS-1$
 				}
-				if(decoration.getMessage() != null) {
+				if (decoration.getMessage() != null) {
 					message += WordUtils.wrap(decoration.getMessage(), 100, "\n  ", true); //$NON-NLS-1$
 				}
 			}
 		}
-		if((message != null) && message.length() > 0) {
+		if ((message != null) && message.length() > 0) {
 			return message;
 		} else {
 			return null;
@@ -311,7 +311,7 @@ public class Decoration implements IPapyrusDecoration {
 	 * Sets the priority.
 	 *
 	 * @param priority
-	 *        the new priority
+	 *            the new priority
 	 */
 	public void setPriority(int priority) {
 		this.priority = priority;

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,15 +24,16 @@ public class PrimitiveTypeFigure extends ClassifierFigure {
 		super("primitive"); //$NON-NLS-1$
 	}
 
+	@Override
 	protected void createContentPane(List<String> compartments) {
 		super.createContentPane(getUpdatedListOfCompartments(compartments));
 	}
 
 	/**
 	 * Get the list of compartments, updated with specific ones
-	 * 
+	 *
 	 * @param compartments
-	 *        the original list of compartments (untouched)
+	 *            the original list of compartments (untouched)
 	 * @return the new completed list of compartments
 	 */
 	private List<String> getUpdatedListOfCompartments(List<String> compartments) {

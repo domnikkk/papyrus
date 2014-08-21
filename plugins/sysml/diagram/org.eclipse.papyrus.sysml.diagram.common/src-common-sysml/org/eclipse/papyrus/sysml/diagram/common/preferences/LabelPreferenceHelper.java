@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,15 +20,15 @@ public class LabelPreferenceHelper {
 
 	/**
 	 * Create the preference constant for a label view.
-	 * 
+	 *
 	 * @param diagramType
-	 *        the type of diagram
+	 *            the type of diagram
 	 * @param viewType
-	 *        the type of the view
+	 *            the type of the view
 	 * @param constantPreferenceKey
-	 *        the constant key of the preference to retrieve
+	 *            the constant key of the preference to retrieve
 	 * @return the complete preference key
-	 * @deprecated see https://bugs.eclipse.org/bugs/show_bug.cgi?id=353193 
+	 * @deprecated see https://bugs.eclipse.org/bugs/show_bug.cgi?id=353193
 	 */
 	@Deprecated
 	public static String getPreferenceConstant(String diagramType, String viewType, String constantPreferenceKey) {
@@ -37,11 +37,11 @@ public class LabelPreferenceHelper {
 
 	/**
 	 * Create the preference constant for a label view.
-	 * 
+	 *
 	 * @param elementkey
-	 *        the element key (including diagram hint)
+	 *            the element key (including diagram hint)
 	 * @param constantPreferenceKey
-	 *        the constant key of the preference to retrieve
+	 *            the constant key of the preference to retrieve
 	 * @return the complete preference key
 	 */
 	public static String getPreferenceConstant(String elementkey, String constantPreferenceKey) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,12 +36,12 @@ public class SizeHandler extends ParametricAndListeningHandler {
 
 	/** the SizeAction */
 	// Removed (bug 384145)
-	//	SizeAction action;
+	// SizeAction action;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public SizeHandler() {
 		super("org.eclipse.papyrus.uml.diagram.menu.commandSizeParameter"); //$NON-NLS-1$
@@ -50,7 +50,7 @@ public class SizeHandler extends ParametricAndListeningHandler {
 	// Overload the method (execute) to update the position of Scroll Bar
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -61,28 +61,28 @@ public class SizeHandler extends ParametricAndListeningHandler {
 		List<IGraphicalEditPart> selem = getSelectedElements();
 
 
-		if(!selem.isEmpty()) {
+		if (!selem.isEmpty()) {
 
 			Iterator<IGraphicalEditPart> editParts = selem.iterator();
 
 
-			while(editParts.hasNext()) {
+			while (editParts.hasNext()) {
 				EditPart editPart = editParts.next();
 				List<?> editPartChildS = editPart.getChildren();
 
 
-				for(int k = 0; k < editPartChildS.size(); k++) {
-					if(!editPartChildS.isEmpty()) {
-						EditPart ept = (EditPart)editPartChildS.get(k);
+				for (int k = 0; k < editPartChildS.size(); k++) {
+					if (!editPartChildS.isEmpty()) {
+						EditPart ept = (EditPart) editPartChildS.get(k);
 
-						final GraphicalEditPart graphicalEditPart = (GraphicalEditPart)ept;
+						final GraphicalEditPart graphicalEditPart = (GraphicalEditPart) ept;
 
 						final IFigure fig = graphicalEditPart.getFigure();
 
-						if(fig instanceof ResizableCompartmentFigure) {
+						if (fig instanceof ResizableCompartmentFigure) {
 
-							ScrollPane fScrollPane = ((ResizableCompartmentFigure)fig).getScrollPane();
-							if(fScrollPane != null) {
+							ScrollPane fScrollPane = ((ResizableCompartmentFigure) fig).getScrollPane();
+							if (fScrollPane != null) {
 								fScrollPane.scrollHorizontalTo(0);
 								fScrollPane.scrollVerticalTo(0);
 							}
@@ -95,9 +95,9 @@ public class SizeHandler extends ParametricAndListeningHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.ParametricAndListeningHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */

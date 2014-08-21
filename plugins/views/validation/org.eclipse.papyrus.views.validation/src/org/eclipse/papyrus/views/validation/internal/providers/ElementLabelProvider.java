@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,10 @@ public class ElementLabelProvider
 		super();
 
 		this.factory = ((AdapterFactoryEditingDomain) modelSet
-			.getTransactionalEditingDomain()).getAdapterFactory();
+				.getTransactionalEditingDomain()).getAdapterFactory();
 	}
 
+	@Override
 	public String getText(Object element) {
 		String result = null;
 
@@ -45,7 +46,7 @@ public class ElementLabelProvider
 			EObject object = marker.getEObject();
 			if (object != null) {
 				IItemLabelProvider provider = (IItemLabelProvider) factory
-					.adapt(object, IItemLabelProvider.class);
+						.adapt(object, IItemLabelProvider.class);
 				if (provider != null) {
 					result = provider.getText(object);
 				}
@@ -64,7 +65,7 @@ public class ElementLabelProvider
 			EObject object = marker.getEObject();
 			if (object != null) {
 				IItemLabelProvider provider = (IItemLabelProvider) factory
-					.adapt(object, IItemLabelProvider.class);
+						.adapt(object, IItemLabelProvider.class);
 				if (provider != null) {
 					result = images.getImage(provider.getImage(object));
 				}

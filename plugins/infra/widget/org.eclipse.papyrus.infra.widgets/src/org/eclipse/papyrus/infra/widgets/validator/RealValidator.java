@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,19 +25,20 @@ public class RealValidator extends AbstractValidator {
 
 
 	/**
-	 * 
+	 *
 	 * @param newValue
 	 * @return {@link Status#OK_STATUS} if the newValue is valid and {@link IStatus#ERROR} when newValue is
 	 *         invalid
 	 */
+	@Override
 	public IStatus validate(Object newValue) {
-		if(newValue instanceof Double) {
+		if (newValue instanceof Double) {
 			return Status.OK_STATUS;
 		}
 
-		if(newValue instanceof String) {
+		if (newValue instanceof String) {
 			try {
-				Double.parseDouble((String)newValue);
+				Double.parseDouble((String) newValue);
 				return Status.OK_STATUS;
 			} catch (NumberFormatException ex) {
 				return error(Messages.RealInputValidator_NotaRealMessage);

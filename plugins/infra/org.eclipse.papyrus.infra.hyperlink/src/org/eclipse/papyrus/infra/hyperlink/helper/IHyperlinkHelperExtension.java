@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,17 @@ public interface IHyperlinkHelperExtension {
 
 	/**
 	 * Obtains a command, if possible, that creates a hyperlink from a prospective {@code linkOwner} to a {@code linkTarget}.
-	 * 
+	 *
 	 * @param domain
-	 *        the transactional editing domain in which to create the command
+	 *            the transactional editing domain in which to create the command
 	 * @param linkOwner
-	 *        the object in which to create the hyperlink
+	 *            the object in which to create the hyperlink
 	 * @param linkTarget
-	 *        the object to which to establish the hyperlink
-	 * 
+	 *            the object to which to establish the hyperlink
+	 *
 	 * @return the command, or {@code null} if I do not know how to create a command to link to this target
-	 * 
-	 * @see AbstractHyperLinkHelper#getAddHyperLinkCommand(TransactionalEditingDomain, EModelElement,
-	 *      org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject)
+	 *
+	 * @see AbstractHyperLinkHelper#getAddHyperLinkCommand(TransactionalEditingDomain, EModelElement, org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject)
 	 */
 	Command getCreateHyperlinkCommand(TransactionalEditingDomain domain, EModelElement linkOwner, Object linkTarget);
 }

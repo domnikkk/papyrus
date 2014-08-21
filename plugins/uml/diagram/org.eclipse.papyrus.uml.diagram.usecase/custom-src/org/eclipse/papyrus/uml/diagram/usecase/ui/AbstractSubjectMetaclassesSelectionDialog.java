@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public class AbstractSubjectMetaclassesSelectionDialog extends Dialog {
 
 	/**
 	 * Create the dialog.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -53,7 +53,7 @@ public class AbstractSubjectMetaclassesSelectionDialog extends Dialog {
 
 	/**
 	 * Open the dialog.
-	 * 
+	 *
 	 * @return the result
 	 */
 	public Object open() {
@@ -61,8 +61,8 @@ public class AbstractSubjectMetaclassesSelectionDialog extends Dialog {
 		shlmetaclassSelection.open();
 		shlmetaclassSelection.layout();
 		Display display = getParent().getDisplay();
-		while(!shlmetaclassSelection.isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!shlmetaclassSelection.isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}

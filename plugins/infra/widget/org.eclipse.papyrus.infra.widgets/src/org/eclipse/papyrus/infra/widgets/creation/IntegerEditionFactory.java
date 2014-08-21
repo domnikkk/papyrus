@@ -21,35 +21,35 @@ import org.eclipse.swt.widgets.Control;
 public class IntegerEditionFactory extends StringEditionFactory {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public IntegerEditionFactory() {
 		this(new IntegerInputValidator());
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param validator
-	 *        The InputValidator used to check the entered Integer
+	 *            The InputValidator used to check the entered Integer
 	 */
 	public IntegerEditionFactory(IInputValidator validator) {
 		super(validator);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
-	 *        The title of the dialog opened by this factory when editing an Integer
+	 *            The title of the dialog opened by this factory when editing an Integer
 	 * @param label
-	 *        The Label used to describe the kind of value being edited
+	 *            The Label used to describe the kind of value being edited
 	 * @param validator
-	 *        The validator used to check the Integers being edited
+	 *            The validator used to check the Integers being edited
 	 */
 
 	public IntegerEditionFactory(String title, String label, IInputValidator validator) {
@@ -57,13 +57,13 @@ public class IntegerEditionFactory extends StringEditionFactory {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
-	 *        The title of the dialog opened by this factory when editing a Integer
+	 *            The title of the dialog opened by this factory when editing a Integer
 	 * @param label
-	 *        The Label used to describe the kind of value being edited
+	 *            The Label used to describe the kind of value being edited
 	 */
 	public IntegerEditionFactory(String title, String label) {
 		this(title, label, new IntegerInputValidator());
@@ -72,7 +72,7 @@ public class IntegerEditionFactory extends StringEditionFactory {
 	@Override
 	public Object createObject(Control widget, Object context) {
 		String txt = super.createObject(widget, context).toString();
-		if(txt != null) {
+		if (txt != null) {
 			return Integer.parseInt(txt);
 		}
 		return null;

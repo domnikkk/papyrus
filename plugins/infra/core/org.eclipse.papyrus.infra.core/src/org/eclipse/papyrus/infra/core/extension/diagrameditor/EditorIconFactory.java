@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.extension.diagrameditor;
 
@@ -10,9 +10,9 @@ import org.eclipse.swt.graphics.Image;
 /**
  * A factory used to create the Icon associated to an editor TODO Lets have a
  * common ancestor for {@link EditorIconFactory} and {@link EditorFactoryProxy}
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class EditorIconFactory implements IEditorIconFactoryExtended {
 
@@ -33,7 +33,7 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceRegistry
 	 * @param editorDescriptor
 	 */
@@ -43,13 +43,14 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorIconFactory#getEditorIcon(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public Image getEditorIcon(Object pageIdentifier) {
 
-		if(cachedImage == null) {
+		if (cachedImage == null) {
 			cachedImage = createEditorIcon(pageIdentifier);
 		}
 
@@ -59,12 +60,13 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 	/**
 	 * Create an Image associated to the editor used to render the specified
 	 * pageIdentifier
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Image createEditorIcon(Object pageIdentifier) {
 		ImageDescriptor imageDescriptor = editorDescriptor.getIcon();
-		if(imageDescriptor == null) {
+		if (imageDescriptor == null) {
 			return null;
 		}
 		Image image = imageDescriptor.createImage();
@@ -73,10 +75,11 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#isPageModelFactoryFor(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
 		return getEditorFactory().isPageModelFactoryFor(pageIdentifier);
 	}
@@ -86,7 +89,7 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 	 */
 	protected IPluggableEditorFactory getEditorFactory() {
 
-		if(editorFactory == null) {
+		if (editorFactory == null) {
 			editorFactory = createEditorFactory();
 		}
 
@@ -97,7 +100,7 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 	/**
 	 * Create an instance of IPluggableEditorFactory as described in the
 	 * editorDescriptor. TODO let propagate the exceptions.
-	 * 
+	 *
 	 * @return
 	 */
 	private IPluggableEditorFactory createEditorFactory() {
@@ -122,23 +125,25 @@ public class EditorIconFactory implements IEditorIconFactoryExtended {
 
 	/**
 	 * Return the URL of the main icon used to create this icon
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorIconFactory#getURLMainIcon(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public String getURLMainIcon(Object pageIdentifier) {
 		return editorDescriptor.getIconURL();
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Dispose the cached image
 	 */
+	@Override
 	public void dispose() {
-		if(cachedImage != null) {
+		if (cachedImage != null) {
 			cachedImage.dispose();
 			cachedImage = null;
 		}

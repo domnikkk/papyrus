@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class ResourceFilteredLabelProvider extends EMFLabelProvider implements I
 
 	@Override
 	public void dispose() {
-		if(images != null) {
+		if (images != null) {
 			images.dispose();
 			images = null;
 		}
@@ -56,7 +56,7 @@ public class ResourceFilteredLabelProvider extends EMFLabelProvider implements I
 
 	@Override
 	public String getText(Object element) {
-		return (element instanceof Resource) ? getText((Resource)element) : super.getText(element);
+		return (element instanceof Resource) ? getText((Resource) element) : super.getText(element);
 	}
 
 	protected String getText(Resource resource) {
@@ -64,21 +64,21 @@ public class ResourceFilteredLabelProvider extends EMFLabelProvider implements I
 
 		URI uri = resource.getURI();
 
-		if(uri.isPlatformResource()) {
+		if (uri.isPlatformResource()) {
 			String ext = uri.fileExtension();
-			if(ext == null) {
+			if (ext == null) {
 				result = NLS.bind(Messages.ResourceFilteredLabelProvider_workspace, uri.toPlatformString(true));
 			} else {
 				result = NLS.bind(Messages.ResourceFilteredLabelProvider_workspaceExt, uri.toPlatformString(true), uri.fileExtension());
 			}
-		} else if(uri.isFile()) {
+		} else if (uri.isFile()) {
 			String ext = uri.fileExtension();
-			if(ext == null) {
+			if (ext == null) {
 				result = NLS.bind(Messages.ResourceFilteredLabelProvider_local, uri.toFileString());
 			} else {
 				result = NLS.bind(Messages.ResourceFilteredLabelProvider_localExt, uri.toFileString(), uri.fileExtension());
 			}
-		} else if(uri.isHierarchical()) {
+		} else if (uri.isHierarchical()) {
 			result = NLS.bind(Messages.ResourceFilteredLabelProvider_system, uri.lastSegment());
 		} else {
 			result = NLS.bind(Messages.ResourceFilteredLabelProvider_systemExt, uri.toString());
@@ -89,7 +89,7 @@ public class ResourceFilteredLabelProvider extends EMFLabelProvider implements I
 
 	@Override
 	public Image getImage(Object element) {
-		return (element instanceof Resource) ? getImage((Resource)element) : super.getImage(element);
+		return (element instanceof Resource) ? getImage((Resource) element) : super.getImage(element);
 	}
 
 	protected Image getImage(Resource resource) {
@@ -99,20 +99,20 @@ public class ResourceFilteredLabelProvider extends EMFLabelProvider implements I
 		IContentType contentType = null;
 		try {
 			Map<String, ?> description = converter.contentDescription(uri, null);
-			contentType = (description.get(ContentHandler.CONTENT_TYPE_PROPERTY) == null) ? null : Platform.getContentTypeManager().getContentType((String)description.get(ContentHandler.CONTENT_TYPE_PROPERTY));
+			contentType = (description.get(ContentHandler.CONTENT_TYPE_PROPERTY) == null) ? null : Platform.getContentTypeManager().getContentType((String) description.get(ContentHandler.CONTENT_TYPE_PROPERTY));
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
 
 		IEditorDescriptor[] editors;
-		if(contentType != null) {
+		if (contentType != null) {
 			editors = PlatformUI.getWorkbench().getEditorRegistry().getEditors(uri.lastSegment(), contentType);
 		} else {
 			editors = PlatformUI.getWorkbench().getEditorRegistry().getEditors(uri.lastSegment());
 		}
 
 		ImageDescriptor result = null;
-		for(int i = 0; (result == null) && (i < editors.length); i++) {
+		for (int i = 0; (result == null) && (i < editors.length); i++) {
 			result = editors[0].getImageDescriptor();
 		}
 
@@ -122,12 +122,12 @@ public class ResourceFilteredLabelProvider extends EMFLabelProvider implements I
 	protected Image convert(ImageDescriptor descriptor) {
 		Image result = null;
 
-		if(descriptor != null) {
-			if(images == null) {
+		if (descriptor != null) {
+			if (images == null) {
 				images = new LocalResourceManager(JFaceResources.getResources());
 			}
 
-			result = (Image)images.get(descriptor);
+			result = (Image) images.get(descriptor);
 		}
 
 		return result;

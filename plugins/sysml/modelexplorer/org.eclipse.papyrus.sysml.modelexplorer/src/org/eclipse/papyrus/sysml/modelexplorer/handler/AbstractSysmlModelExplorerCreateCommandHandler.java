@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,11 +23,12 @@ import org.eclipse.papyrus.uml.service.types.utils.ICommandContext;
 public abstract class AbstractSysmlModelExplorerCreateCommandHandler extends AbstractSysmlCreateCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCommandHandler#getCommandContext()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	protected ICommandContext getCommandContext() {
 		return ModelExplorerUtils.getSelectionCommandContext();
 	}

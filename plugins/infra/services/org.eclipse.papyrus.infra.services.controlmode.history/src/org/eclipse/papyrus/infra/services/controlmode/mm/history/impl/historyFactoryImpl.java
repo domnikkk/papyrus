@@ -20,7 +20,7 @@ import org.eclipse.papyrus.infra.services.controlmode.mm.history.historyPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
@@ -29,13 +29,13 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static historyFactory init() {
 		try {
-			historyFactory thehistoryFactory = (historyFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/0.7.0/controlmode");
-			if(thehistoryFactory != null) {
+			historyFactory thehistoryFactory = (historyFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/0.7.0/controlmode");
+			if (thehistoryFactory != null) {
 				return thehistoryFactory;
 			}
 		} catch (Exception exception) {
@@ -48,7 +48,7 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public historyFactoryImpl() {
@@ -58,12 +58,12 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case historyPackage.CONTROLED_RESOURCE:
 			return createControledResource();
 		default:
@@ -74,12 +74,12 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case historyPackage.STRING:
 			return createStringFromString(eDataType, initialValue);
 		default:
@@ -90,12 +90,12 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch(eDataType.getClassifierID()) {
+		switch (eDataType.getClassifierID()) {
 		case historyPackage.STRING:
 			return convertStringToString(eDataType, instanceValue);
 		default:
@@ -106,9 +106,10 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ControledResource createControledResource() {
 		ControledResourceImpl controledResource = new ControledResourceImpl();
 		return controledResource;
@@ -117,17 +118,17 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -137,17 +138,18 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public historyPackage gethistoryPackage() {
-		return (historyPackage)getEPackage();
+		return (historyPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -156,4 +158,4 @@ public class historyFactoryImpl extends EFactoryImpl implements historyFactory {
 		return historyPackage.eINSTANCE;
 	}
 
-} //historyFactoryImpl
+} // historyFactoryImpl

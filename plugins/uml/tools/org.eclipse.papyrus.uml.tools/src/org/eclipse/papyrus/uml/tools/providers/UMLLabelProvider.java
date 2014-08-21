@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Patrick Tessier (CEA LIST) - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 425270
- *  
+ *
  /*****************************************************************************/
 package org.eclipse.papyrus.uml.tools.providers;
 
@@ -46,9 +46,9 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * A global LabelProvider for UML
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider {
 
@@ -58,9 +58,9 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 	private IItemLabelProvider labelProvider = new DelegatingItemLabelProvider(DelegatingItemLabelProvider.SHOW_LABEL | DelegatingItemLabelProvider.SHOW_METACLASS);
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return <ul>
 	 *         <li>if stereotypes are applied on the elements : return the image corresponding to the first applied stereotype</li>
@@ -74,12 +74,12 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 		element = resolveElement(element);
 
 		// test for other UML Elements
-		if(element instanceof Element) {
+		if (element instanceof Element) {
 			// return the stereotype image if a stereotype is applied on the
 			// element
-			Image image = Activator.getDefault().getIconElement((Element)element);
+			Image image = Activator.getDefault().getIconElement((Element) element);
 
-			//If image is null, return the standard EMF image
+			// If image is null, return the standard EMF image
 			return image == null ? super.getImage(element) : image;
 		}
 
@@ -89,44 +89,44 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 	/**
 	 * If the inputElement is a StereotypeApplication, we want to provide the label
 	 * of the stereotyped element, instead of the one of the StereotypeApplication
-	 * 
+	 *
 	 * @param inputElement
-	 *        The EObject for which we want to provide a label
+	 *            The EObject for which we want to provide a label
 	 * @return
 	 *         The Base Element if the input is a StereotypeApplication ; the inputElement instead
 	 */
 	protected EObject resolveElement(EObject inputElement) {
-		if(inputElement == null) {
+		if (inputElement == null) {
 			return null;
 		}
 
-		if(inputElement instanceof Element) {
-			return inputElement; //An Element cannot be a Stereotype
+		if (inputElement instanceof Element) {
+			return inputElement; // An Element cannot be a Stereotype
 		}
 
-		//It is not an Element: test if it is a Stereotype
+		// It is not an Element: test if it is a Stereotype
 		Element baseElement = UMLUtil.getBaseElement(inputElement);
 
-		if(baseElement != null) {
+		if (baseElement != null) {
 			// Stereotype Application
 			// We return the label of the Stereotyped element, not the one of the
 			// StereotypeApplication itself
 			return baseElement;
 		}
 
-		//This is another kind of EObject
+		// This is another kind of EObject
 		return inputElement;
 	}
 
 	@Override
 	public String getText(Object element) {
-		//For comments, we want to use hard coded labels. Do not use the EMF Facet label Provider
+		// For comments, we want to use hard coded labels. Do not use the EMF Facet label Provider
 		EObject eObject = EMFHelper.getEObject(element);
-		if(eObject instanceof Comment) {
+		if (eObject instanceof Comment) {
 			return getText(eObject);
 		}
 
-		if((!(eObject instanceof Element)) && UMLUtil.getBaseElement(eObject) instanceof Comment) {
+		if ((!(eObject instanceof Element)) && UMLUtil.getBaseElement(eObject) instanceof Comment) {
 			return getText(eObject);
 		}
 
@@ -134,9 +134,9 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return <ul>
 	 *         <li>if element is a {@link NamedElement}, we return its name</li>
@@ -148,63 +148,63 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 	protected String getText(EObject element) {
 		element = resolveElement(element);
 
-		if(element == null) {
+		if (element == null) {
 			return "<Undefined>";
 		}
 
-		if(element instanceof org.eclipse.uml2.uml.Image) {
+		if (element instanceof org.eclipse.uml2.uml.Image) {
 			// imageName
 			// location
 			// imageName : location
 			// Image
-			org.eclipse.uml2.uml.Image image = ((org.eclipse.uml2.uml.Image)element);
+			org.eclipse.uml2.uml.Image image = ((org.eclipse.uml2.uml.Image) element);
 
 			String imageName = ImageUtil.getName(image);
 			String location = image.getLocation();
 
-			if(isEmptyString(imageName)) {
-				if(isEmptyString(location)) {
+			if (isEmptyString(imageName)) {
+				if (isEmptyString(location)) {
 					return "Image";
 				}
 				return location;
 			}
 
-			if(isEmptyString(location)) {
+			if (isEmptyString(location)) {
 				return imageName;
 			}
 
 			return imageName + " : " + location; //$NON-NLS-1$
-		} else if(element instanceof PackageImport) {
+		} else if (element instanceof PackageImport) {
 			return labelProvider.getText(element);
-		} else if(element instanceof ElementImport) {
+		} else if (element instanceof ElementImport) {
 			return labelProvider.getText(element);
-		} else if(element instanceof PackageMerge) {
+		} else if (element instanceof PackageMerge) {
 			return labelProvider.getText(element);
-		} else if(element instanceof NamedElement) {
-			if(element instanceof ValueSpecification) { // Format : [name=]value
+		} else if (element instanceof NamedElement) {
+			if (element instanceof ValueSpecification) { // Format : [name=]value
 				String value = null;
-				if(element instanceof InstanceValue) {
-					InstanceSpecification specification = ((InstanceValue)element).getInstance();
-					if(specification != null) {
+				if (element instanceof InstanceValue) {
+					InstanceSpecification specification = ((InstanceValue) element).getInstance();
+					if (specification != null) {
 						value = getText(specification);
 					}
-				} else if(element instanceof LiteralString) {
-					value = "\"" + ((ValueSpecification)element).stringValue() + "\""; //$NON-NLS-1$ //$NON-NLS-2$
-				} else if(element instanceof LiteralNull) {
+				} else if (element instanceof LiteralString) {
+					value = "\"" + ((ValueSpecification) element).stringValue() + "\""; //$NON-NLS-1$ //$NON-NLS-2$
+				} else if (element instanceof LiteralNull) {
 					value = "null";
 				} else {
-					value = ((ValueSpecification)element).stringValue();
+					value = ((ValueSpecification) element).stringValue();
 				}
 
-				if(value != null) {
-					if(((NamedElement)element).isSetName()) {
-						return ((NamedElement)element).getName() + "=" + value; //$NON-NLS-1$
+				if (value != null) {
+					if (((NamedElement) element).isSetName()) {
+						return ((NamedElement) element).getName() + "=" + value; //$NON-NLS-1$
 					} else {
 						return value;
 					}
 				} else {
-					if(((NamedElement)element).isSetName()) {
-						return ((NamedElement)element).getName();
+					if (((NamedElement) element).isSetName()) {
+						return ((NamedElement) element).getName();
 					} else {
 						return ""; //$NON-NLS-1$
 					}
@@ -212,68 +212,68 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 			} else {
 				return labelProvider.getText(element);
 			}
-		} else if(element instanceof Comment) {
-			Comment comment = (Comment)element;
+		} else if (element instanceof Comment) {
+			Comment comment = (Comment) element;
 			return getText(comment);
-		} else if(element instanceof PackageMerge) {
+		} else if (element instanceof PackageMerge) {
 			return labelProvider.getText(element);
 		}
 		// TODO: Temporary solution for template parameters
-		// Note: In the class diagram, for template parameters, 
+		// Note: In the class diagram, for template parameters,
 		// org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.TemplateParameterParser is used for computing the label
 		// This code is duplicated here in the following "else" clause, as well as in the "displayOperation" method
-		else if(element instanceof TemplateParameter) {
-			final TemplateParameter templateParam = (TemplateParameter)element;
-			if(templateParam.getParameteredElement() == null) {
+		else if (element instanceof TemplateParameter) {
+			final TemplateParameter templateParam = (TemplateParameter) element;
+			if (templateParam.getParameteredElement() == null) {
 				return "<UNDEFINED>";
 			}
 			String out = "";
-			if(templateParam.getParameteredElement() instanceof NamedElement) {
-				NamedElement namedElement = (NamedElement)templateParam.getParameteredElement();
+			if (templateParam.getParameteredElement() instanceof NamedElement) {
+				NamedElement namedElement = (NamedElement) templateParam.getParameteredElement();
 				out = namedElement.getName() + ": " + namedElement.eClass().getName();
 			}
 
-			if(templateParam instanceof OperationTemplateParameter) {
-				if(templateParam.getParameteredElement() != null) {
-					Operation op = (Operation)(templateParam.getParameteredElement());
+			if (templateParam instanceof OperationTemplateParameter) {
+				if (templateParam.getParameteredElement() != null) {
+					Operation op = (Operation) (templateParam.getParameteredElement());
 					out = displayOperation(op);
 				}
-			} else if(templateParam instanceof ClassifierTemplateParameter) {
-				if(!((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().isEmpty()) {
+			} else if (templateParam instanceof ClassifierTemplateParameter) {
+				if (!((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().isEmpty()) {
 					out = out + ">";
-					for(int i = 0; i < ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().size(); i++) {
-						out = out + ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().get(i).getName();
-						if(i < ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().size() - 1) {
+					for (int i = 0; i < ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().size(); i++) {
+						out = out + ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().get(i).getName();
+						if (i < ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().size() - 1) {
 							out = out + ", ";
 						}
 					}
 
 				}
 			}
-			if(templateParam.getDefault() instanceof Operation) {
-				out = out + "=" + displayOperation((Operation)templateParam.getDefault());
-			} else if(templateParam.getDefault() instanceof NamedElement) {
-				out = out + "=" + ((NamedElement)templateParam.getDefault()).getName();
+			if (templateParam.getDefault() instanceof Operation) {
+				out = out + "=" + displayOperation((Operation) templateParam.getDefault());
+			} else if (templateParam.getDefault() instanceof NamedElement) {
+				out = out + "=" + ((NamedElement) templateParam.getDefault()).getName();
 			}
 			return out;
 		}
 		// TODO: Temporary solution for template parameter substitutions
-		// Note: In the class diagram, for template parameters, 
+		// Note: In the class diagram, for template parameters,
 		// org.eclipse.papyrus.uml.diagram.clazz.custom.parsers.TemplateBindingParser is used for computing the label
 		// This code is duplicated here in the following "else" clause
-		else if(element instanceof TemplateParameterSubstitution) {
+		else if (element instanceof TemplateParameterSubstitution) {
 			String out = "";
-			TemplateParameterSubstitution substitution = (TemplateParameterSubstitution)element;
-			if(substitution.getFormal() != null && substitution.getFormal().getParameteredElement() instanceof NamedElement) {
-				out = out + ((NamedElement)substitution.getFormal().getParameteredElement()).getName();
+			TemplateParameterSubstitution substitution = (TemplateParameterSubstitution) element;
+			if (substitution.getFormal() != null && substitution.getFormal().getParameteredElement() instanceof NamedElement) {
+				out = out + ((NamedElement) substitution.getFormal().getParameteredElement()).getName();
 			}
-			if(substitution.getActual() instanceof NamedElement) {
-				out = out + " -> " + ((NamedElement)substitution.getActual()).getName() + "\n";
+			if (substitution.getActual() instanceof NamedElement) {
+				out = out + " -> " + ((NamedElement) substitution.getActual()).getName() + "\n";
 			}
 			return out;
 		}
 		// END TODO
-		else if(element instanceof Element) {
+		else if (element instanceof Element) {
 			return labelProvider.getText(element);
 		}
 
@@ -282,7 +282,7 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 
 	/**
 	 * Returns a truncated string representing the body of the comment
-	 * 
+	 *
 	 * @param comment
 	 * @return
 	 */
@@ -291,59 +291,59 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 
 			@Override
 			protected String decorate(String text) {
-				return text; //Do not decorate the string. Html is not supported in most cases
+				return text; // Do not decorate the string. Html is not supported in most cases
 			}
 		};
 
 		String body = comment.getBody();
 
-		if(body == null) {
+		if (body == null) {
 			return "<Empty Comment>";
 		}
 
-		//Truncate extra lines
+		// Truncate extra lines
 		int nIndex = body.indexOf('\n');
 		int rIndex = body.indexOf('\r');
 
 		int minIndex = -1;
 
-		if(nIndex > -1) { //Multiline
-			if(rIndex > -1) {
+		if (nIndex > -1) { // Multiline
+			if (rIndex > -1) {
 				minIndex = Math.min(nIndex, rIndex);
 			} else {
 				minIndex = nIndex;
 			}
-		} else if(rIndex > -1) {
+		} else if (rIndex > -1) {
 			minIndex = rIndex;
 		}
 
 		boolean isTruncated = false;
 
 		String singleLineText;
-		if(minIndex > -1) { //Multiline
+		if (minIndex > -1) { // Multiline
 			singleLineText = body.substring(0, minIndex);
 			isTruncated = true;
 		} else {
 			singleLineText = body;
 		}
 
-		//Replace references
+		// Replace references
 
 		singleLineText = helper.replaceReferences(singleLineText);
 
-		//Truncate long texts
+		// Truncate long texts
 
 		String truncatedText;
 		int maxLength = 60;
-		if(singleLineText.length() > maxLength) {
+		if (singleLineText.length() > maxLength) {
 			truncatedText = singleLineText.substring(0, maxLength);
 			isTruncated = true;
 		} else {
 			truncatedText = singleLineText;
 		}
 
-		//Append truncated marker
-		if(isTruncated) {
+		// Append truncated marker
+		if (isTruncated) {
 			truncatedText += "...";
 		}
 
@@ -356,18 +356,18 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 
 	/**
 	 * Computes the label corresponding to an UML Operation
-	 * 
+	 *
 	 * @param op
-	 *        the operation from which the label is computed
+	 *            the operation from which the label is computed
 	 * @return the label
 	 */
 	protected String displayOperation(Operation op) {
 		String out = op.getName() + "(";
 		Iterator<Parameter> iter = op.getOwnedParameters().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			Parameter param = iter.next();
 			out = out + param.getName();
-			if(!param.equals(op.getOwnedParameters().get(op.getOwnedParameters().size() - 1))) {
+			if (!param.equals(op.getOwnedParameters().get(op.getOwnedParameters().size() - 1))) {
 				out = out + ", ";
 			}
 		}
@@ -378,11 +378,11 @@ public class UMLLabelProvider extends EMFLabelProvider implements ILabelProvider
 
 	@Override
 	protected EObject getParent(EObject object) {
-		return (object instanceof Element) ? ((Element)object).getOwner() : super.getParent(object);
+		return (object instanceof Element) ? ((Element) object).getOwner() : super.getParent(object);
 	}
 
 	@Override
 	protected String getQualifiedText(EObject object) {
-		return (object instanceof NamedElement) ? ((NamedElement)object).getQualifiedName() : super.getQualifiedText(object);
+		return (object instanceof NamedElement) ? ((NamedElement) object).getQualifiedName() : super.getQualifiedText(object);
 	}
 }

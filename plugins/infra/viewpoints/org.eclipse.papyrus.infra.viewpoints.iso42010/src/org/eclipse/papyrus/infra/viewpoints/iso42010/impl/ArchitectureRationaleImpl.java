@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
@@ -36,7 +36,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureRationaleImpl#getJustifies <em>Justifies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureRationaleImpl#getJustifies <em>Justifies</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	 * The cached value of the '{@link #getJustifies() <em>Justifies</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getJustifies()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ArchitectureRationaleImpl() {
@@ -65,6 +67,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -75,6 +78,7 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getJustifies() {
@@ -87,14 +91,15 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJustifies()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getJustifies()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -102,13 +107,14 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
-				return ((InternalEList<?>)getJustifies()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
+			return ((InternalEList<?>) getJustifies()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -116,13 +122,14 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
-				return getJustifies();
+		case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
+			return getJustifies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -130,16 +137,17 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
-				getJustifies().clear();
-				getJustifies().addAll((Collection<? extends ArchitectureDecision>)newValue);
-				return;
+		case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
+			getJustifies().clear();
+			getJustifies().addAll((Collection<? extends ArchitectureDecision>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -147,14 +155,15 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
-				getJustifies().clear();
-				return;
+		case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
+			getJustifies().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -162,15 +171,16 @@ public class ArchitectureRationaleImpl extends ADElementImpl implements Architec
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
-				return justifies != null && !justifies.isEmpty();
+		case Iso42010Package.ARCHITECTURE_RATIONALE__JUSTIFIES:
+			return justifies != null && !justifies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ArchitectureRationaleImpl
+} // ArchitectureRationaleImpl

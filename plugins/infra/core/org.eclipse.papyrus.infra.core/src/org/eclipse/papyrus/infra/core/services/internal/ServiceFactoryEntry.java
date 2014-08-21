@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 /**
  * Entry of a Service implementing {@link IServiceFactory}. This class provide
  * methods to manage the Service life cycle.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ServiceFactoryEntry extends ServiceTypeEntry {
 
@@ -37,7 +37,7 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 * @param registry
 	 */
@@ -49,11 +49,11 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 
 	/**
 	 * Create an entry for an already created service. Constructor.
-	 * 
+	 *
 	 * @param descriptor
-	 *        Descriptor of the service. Key and priority should be set.
+	 *            Descriptor of the service. Key and priority should be set.
 	 * @param serviceInstance
-	 *        The service Instance
+	 *            The service Instance
 	 */
 	public ServiceFactoryEntry(ServiceDescriptor descriptor, IServiceFactory factoryInstance) {
 		super(descriptor);
@@ -64,23 +64,24 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 	/**
 	 * Get the service instance, even if it is not started. The service should
 	 * be created.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
-	 *         If service can't be started.
+	 *             If service can't be started.
 	 */
+	@Override
 	public Object getServiceInstance() throws ServiceException {
 
-		if(factoryInstance == null) {
+		if (factoryInstance == null) {
 			throw new BadStateException("Service is not available (state=" //$NON-NLS-1$
-		       + state.toString() 
-		       + "). ", state, serviceDescriptor); //$NON-NLS-1$
+					+ state.toString()
+					+ "). ", state, serviceDescriptor); //$NON-NLS-1$
 
 		}
 		// Get the service instance if needed.
-		if(serviceInstance == null) {
+		if (serviceInstance == null) {
 			serviceInstance = factoryInstance.createServiceInstance();
-			if(serviceInstance == null) {
+			if (serviceInstance == null) {
 				throw new ServiceException("Service Factory '" + getDescriptor().getKey() + " return a null service. It should return a valid service."); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 		}
@@ -92,7 +93,7 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 	/**
 	 * @see java.lang.Object#toString()
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public String toString() {
@@ -101,13 +102,14 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 
 	/**
 	 * Create the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void createService() throws ServiceException {
 		checkState(ServiceState.registered);
 		// Exit if already created.
-		if(factoryInstance != null) {
+		if (factoryInstance != null) {
 			setState(ServiceState.created);
 			return;
 		}
@@ -115,7 +117,7 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 		// Create it
 		try {
 			// Create the instance
-			factoryInstance = (IServiceFactory)instanciateService();
+			factoryInstance = (IServiceFactory) instanciateService();
 		} catch (Exception e) {
 			setState(ServiceState.error);
 			throw new ServiceException(e);
@@ -125,12 +127,13 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        The servicesRegistry containing this service.
-	 * 
+	 *            The servicesRegistry containing this service.
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void initService(ServicesRegistry servicesRegistry) throws ServiceException {
 		checkState(ServiceState.created);
 		try {
@@ -148,9 +151,10 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
+	@Override
 	public void startService() throws ServiceException {
 
 		checkState(ServiceState.initialized);
@@ -172,9 +176,11 @@ public class ServiceFactoryEntry extends ServiceTypeEntry {
 	/**
 	 * Dispose the service.
 	 */
+	@Override
 	public void disposeService() throws ServiceException {
-		if(factoryInstance == null)
+		if (factoryInstance == null) {
 			return;
+		}
 
 		factoryInstance.disposeService();
 		factoryInstance = null;

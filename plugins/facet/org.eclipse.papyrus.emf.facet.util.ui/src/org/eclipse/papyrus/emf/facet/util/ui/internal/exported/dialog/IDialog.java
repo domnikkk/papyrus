@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -35,14 +35,14 @@ public interface IDialog<W extends Object> {
 	/**
 	 * Open the dialog. This method is used for to open the dialog into the
 	 * thread UI. So, this method has no to be called into the constructor.
-	 * 
+	 *
 	 * @return the result of the dialog (OK or CANCEL).
 	 */
 	int open();
 
 	/**
 	 * Return if the dialog is valid or not.
-	 * 
+	 *
 	 * @return true if all the necessaries properties are set.
 	 */
 	boolean isDialogValid();

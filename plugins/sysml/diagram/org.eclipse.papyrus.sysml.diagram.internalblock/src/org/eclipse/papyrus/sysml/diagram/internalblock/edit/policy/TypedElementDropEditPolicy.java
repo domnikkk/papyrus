@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -30,7 +30,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * <pre>
- * Customization of the DND edit policy for TypedElement (Port, Part, Reference, FlowPort), that enables 
+ * Customization of the DND edit policy for TypedElement (Port, Part, Reference, FlowPort), that enables
  * type modification by a drop on target.
  * </pre>
  */
@@ -49,26 +49,26 @@ public class TypedElementDropEditPolicy extends CustomDragDropEditPolicy {
 		TypeDropHelper helper = new TypeDropHelper(getEditingDomain());
 
 		// Single drop management possible drop action list can be proposed
-		if(dropRequest.getObjects().size() == 1) {
+		if (dropRequest.getObjects().size() == 1) {
 
 			// List of available drop commands
 			final List<Command> commandChoice = new ArrayList<Command>();
 
 			// 1. Try to set the target element type with dropped object
-			Command dropAsSetType = helper.getDropAsTypedElementType(dropRequest, (GraphicalEditPart)getHost());
-			if((dropAsSetType != null) && (dropAsSetType.canExecute())) {
+			Command dropAsSetType = helper.getDropAsTypedElementType(dropRequest, (GraphicalEditPart) getHost());
+			if ((dropAsSetType != null) && (dropAsSetType.canExecute())) {
 				commandChoice.add(dropAsSetType);
 			}
 
 			// 3. Build default drop command (show view of the dropped object)
 			Command defaultDropCommand = super.getDropObjectsCommand(dropRequest);
 			defaultDropCommand.setLabel("Default drop (Show dropped object in diagram)");
-			if((defaultDropCommand != null) && (defaultDropCommand.canExecute())) {
+			if ((defaultDropCommand != null) && (defaultDropCommand.canExecute())) {
 				commandChoice.add(defaultDropCommand);
 			}
 
 			// Prepare the selection command (if several command are available) or return the drop command
-			if(commandChoice.size() > 1) {
+			if (commandChoice.size() > 1) {
 				RunnableWithResult<ICommand> runnable;
 				Display.getDefault().syncExec(runnable = new RunnableWithResult.Impl<ICommand>() {
 
@@ -80,7 +80,7 @@ public class TypedElementDropEditPolicy extends CustomDragDropEditPolicy {
 				ICommand selectCommand = runnable.getResult();
 
 				return new ICommandProxy(selectCommand);
-			} else if(commandChoice.size() == 1) {
+			} else if (commandChoice.size() == 1) {
 				return commandChoice.get(0);
 			}
 

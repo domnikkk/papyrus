@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,41 +36,41 @@ import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * @author Patrick Tessier
- * 
+ *
  *         this class is used to create a resize command for border items and
  *         add the {@link BorderItemResizableEditPolicy} on border Item
  */
 public class ConstrainedItemBorderLayoutEditPolicy extends ConstrainedLayoutEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command createChangeConstraintCommand(EditPart child, Object constraint) {
 
 		// code that comes form XYLayoutEditPolicy
-		Rectangle newBounds = (Rectangle)constraint;
-		View shapeView = (View)child.getModel();
+		Rectangle newBounds = (Rectangle) constraint;
+		View shapeView = (View) child.getModel();
 
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 
 		ICommand boundsCommand = new SetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, new EObjectAdapter(shapeView), newBounds);
 		return new ICommandProxy(boundsCommand);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		if(child instanceof IBorderItemEditPart) {
+		if (child instanceof IBorderItemEditPart) {
 			// return new BorderItemSelectionEditPolicy();
 			return new BorderItemResizableEditPolicy();
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;
@@ -78,19 +78,20 @@ public class ConstrainedItemBorderLayoutEditPolicy extends ConstrainedLayoutEdit
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(REQ_RESIZE_CHILDREN.equals(request.getType()))
-			return getResizeChildrenCommand((ChangeBoundsRequest)request);
+		if (REQ_RESIZE_CHILDREN.equals(request.getType())) {
+			return getResizeChildrenCommand((ChangeBoundsRequest) request);
+		}
 
 		return super.getCommand(request);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -100,7 +101,7 @@ public class ConstrainedItemBorderLayoutEditPolicy extends ConstrainedLayoutEdit
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -110,7 +111,7 @@ public class ConstrainedItemBorderLayoutEditPolicy extends ConstrainedLayoutEdit
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -119,7 +120,7 @@ public class ConstrainedItemBorderLayoutEditPolicy extends ConstrainedLayoutEdit
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

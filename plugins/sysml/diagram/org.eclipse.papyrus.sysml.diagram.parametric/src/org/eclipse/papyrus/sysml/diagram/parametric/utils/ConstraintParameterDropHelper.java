@@ -37,7 +37,8 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This class provides convenience methods to create Type specific drop action (Show Port on BlockPropertyComposite).
- */public class ConstraintParameterDropHelper extends ElementHelper {
+ */
+public class ConstraintParameterDropHelper extends ElementHelper {
 
 	public ConstraintParameterDropHelper(TransactionalEditingDomain editDomain) {
 		this.editDomain = editDomain;
@@ -49,12 +50,12 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 	public Command getDropConstraintParameterOnPart(Property droppedConstraintParameter, Point location, GraphicalEditPart host) {
 
-		if(!isValidConstraintParameter(droppedConstraintParameter, getHostEObject(host))) {
+		if (!isValidConstraintParameter(droppedConstraintParameter, getHostEObject(host))) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// Prepare the view creation command
-		ViewDescriptor descriptor = new ViewDescriptor(new SemanticAdapter((EObject)droppedConstraintParameter, null), Node.class, /* explicit semantic hint is mandatory */ null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
+		ViewDescriptor descriptor = new ViewDescriptor(new SemanticAdapter(droppedConstraintParameter, null), Node.class, /* explicit semantic hint is mandatory */null, ViewDescriptorUtil.PERSISTED, host.getDiagramPreferencesHint());
 		CreateViewRequest createViewRequest = new CreateViewRequest(descriptor);
 		createViewRequest.setLocation(location);
 		Command viewCreateCommand = host.getCommand(createViewRequest);
@@ -68,14 +69,14 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 			return false;
 		}
 		// drop on a Block/ConstraintBlock
-		if (dropTarget instanceof Class && UMLUtil.getStereotypeApplication((Class)dropTarget, ConstraintBlock.class) != null) {
-			return ((Class)dropTarget).getOwnedAttributes().contains(object);
+		if (dropTarget instanceof Class && UMLUtil.getStereotypeApplication((Class) dropTarget, ConstraintBlock.class) != null) {
+			return ((Class) dropTarget).getOwnedAttributes().contains(object);
 		}
 		// drop on a part
-		if (dropTarget instanceof Property && UMLUtil.getStereotypeApplication((Property)dropTarget, ConstraintProperty.class) != null) {
-			Type type = ((Property)dropTarget).getType();
-			if (type instanceof Class && UMLUtil.getStereotypeApplication((Class)type, ConstraintBlock.class) != null) {
-				return ((Class)type).getOwnedAttributes().contains(object);
+		if (dropTarget instanceof Property && UMLUtil.getStereotypeApplication((Property) dropTarget, ConstraintProperty.class) != null) {
+			Type type = ((Property) dropTarget).getType();
+			if (type instanceof Class && UMLUtil.getStereotypeApplication(type, ConstraintBlock.class) != null) {
+				return ((Class) type).getOwnedAttributes().contains(object);
 			}
 		}
 		return false;
@@ -84,10 +85,10 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 	/**
 	 * return the host Edit Part's semantic element, if the semantic element
 	 * is <code>null</code> or unresolvable it will return <code>null</code>
-	 * 
+	 *
 	 * @return EObject
 	 */
 	protected EObject getHostEObject(GraphicalEditPart host) {
-		return ViewUtil.resolveSemanticElement((View)host.getModel());
+		return ViewUtil.resolveSemanticElement((View) host.getModel());
 	}
 }

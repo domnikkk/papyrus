@@ -10,7 +10,7 @@
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.providers;
 
@@ -55,37 +55,37 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 	protected ResourceSet root;
 
 	public UMLContentProvider() {
-		//Empty (@see #inputChanged(Viewer, Object, Object))
+		// Empty (@see #inputChanged(Viewer, Object, Object))
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		IStructuredContentProvider semanticProvider = null;
 
-		if(newInput instanceof EObject) {
-			EObject eObject = (EObject)newInput;
+		if (newInput instanceof EObject) {
+			EObject eObject = (EObject) newInput;
 			semanticProvider = getSemanticProvider(eObject);
 		}
 
-		if(newInput instanceof Resource) {
-			semanticProvider = getSemanticProvider((Resource)newInput);
+		if (newInput instanceof Resource) {
+			semanticProvider = getSemanticProvider((Resource) newInput);
 		}
 
-		if(newInput instanceof ResourceSet) {
-			root = (ResourceSet)newInput;
+		if (newInput instanceof ResourceSet) {
+			root = (ResourceSet) newInput;
 			semanticProvider = getSemanticProvider(root);
 		}
 
-		if(newInput instanceof ServicesRegistry) {
+		if (newInput instanceof ServicesRegistry) {
 			try {
-				root = ServiceUtils.getInstance().getModelSet((ServicesRegistry)newInput);
+				root = ServiceUtils.getInstance().getModelSet((ServicesRegistry) newInput);
 				semanticProvider = getSemanticProvider(root);
 			} catch (Exception ex) {
 				Activator.log.error(ex);
 			}
 		}
 
-		if(semanticProvider != null) {
+		if (semanticProvider != null) {
 			encapsulated = UMLProviderHelper.encapsulateProvider(semanticProvider, null, feature, root);
 		}
 
@@ -94,59 +94,59 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The edited EObject
+	 *            The edited EObject
 	 * @param feature
-	 *        The edited EStructuralFeature
+	 *            The edited EStructuralFeature
 	 */
 	public UMLContentProvider(final EObject source, final EStructuralFeature feature) {
 		this(source, feature, null);
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
-	 *        The edited {@link EObject} (Should be either a UML Element or a StereotypeApplication)
+	 *            The edited {@link EObject} (Should be either a UML Element or a StereotypeApplication)
 	 * @param feature
-	 *        The edited {@link EStructuralFeature}
+	 *            The edited {@link EStructuralFeature}
 	 * @param stereotype
-	 *        The {@link Stereotype} of the source EObject. May be null if the source is not a StereotypeApplication
+	 *            The {@link Stereotype} of the source EObject. May be null if the source is not a StereotypeApplication
 	 */
 	public UMLContentProvider(final EObject source, final EStructuralFeature feature, final Stereotype stereotype) {
 		this(source, feature, stereotype, null);
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
-	 *        The edited {@link EObject} (Should be either a UML Element or a StereotypeApplication)
+	 *            The edited {@link EObject} (Should be either a UML Element or a StereotypeApplication)
 	 * @param feature
-	 *        The edited {@link EStructuralFeature}
+	 *            The edited {@link EStructuralFeature}
 	 * @param stereotype
-	 *        The {@link Stereotype} of the source EObject. May be null if the source is not a StereotypeApplication
+	 *            The {@link Stereotype} of the source EObject. May be null if the source is not a StereotypeApplication
 	 * @param root
-	 *        The resource set in which the objects could be found. If null, derive resource set automatically
+	 *            The resource set in which the objects could be found. If null, derive resource set automatically
 	 */
 	public UMLContentProvider(final EObject source, final EStructuralFeature feature, final Stereotype stereotype, ResourceSet root) {
 		this.eObject = source;
 		this.feature = feature;
 		this.stereotype = stereotype;
 
-		if(root == null && eObject.eResource() != null) {
+		if (root == null && eObject.eResource() != null) {
 			try {
 				// try to retrieve the root from the object to edit
 				root = ServiceUtilsForResource.getInstance().getModelSet(eObject.eResource());
 			} catch (ServiceException e) {
-				//Nothing
+				// Nothing
 			}
 		}
-		if(root == null) {
+		if (root == null) {
 			// try to retrieve the root from the current editor
 			try {
 				root = ServiceUtilsForActionHandlers.getInstance().getModelSet();
 			} catch (ServiceException e) {
-				//Nothing
+				// Nothing
 			}
 		}
 		this.root = root;
@@ -164,45 +164,45 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 	}
 
 	protected IStructuredContentProvider getSemanticProvider(EObject root) {
-		return new SemanticUMLContentProvider(new EObject[]{ root });
+		return new SemanticUMLContentProvider(new EObject[] { root });
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
-	 *        The edited {@link EObject} (Should be either a UML Element or a StereotypeApplication)
+	 *            The edited {@link EObject} (Should be either a UML Element or a StereotypeApplication)
 	 * @param feature
-	 *        The edited {@link EStructuralFeature}
+	 *            The edited {@link EStructuralFeature}
 	 * @param stereotype
-	 *        The {@link Stereotype} of the source {@link EObject}. May be null if the source is not a StereotypeApplication
+	 *            The {@link Stereotype} of the source {@link EObject}. May be null if the source is not a StereotypeApplication
 	 * @return
 	 */
 	protected IStructuredContentProvider getSemanticProvider(final EObject source, final EStructuralFeature feature, final Stereotype stereotype) {
-		if(UMLUtil.getBaseElement(source) != null) {
+		if (UMLUtil.getBaseElement(source) != null) {
 			Property umlReference = ProfileUtil.findStereotypedProperty(stereotype, feature.getName());
-			if(umlReference != null) {
-				return getStereotypedReferenceContentProvider(source, feature, (Stereotype)umlReference.getType());
+			if (umlReference != null) {
+				return getStereotypedReferenceContentProvider(source, feature, (Stereotype) umlReference.getType());
 			}
 		}
 
-		if(feature == null) {
+		if (feature == null) {
 			return EmptyContentProvider.instance;
 		}
 
-		//Bug 383401: [Sequence Diagram] Interaction operator
-		//https://bugs.eclipse.org/bugs/show_bug.cgi?id=383401
-		if(feature == UMLPackage.eINSTANCE.getCombinedFragment_InteractionOperator()) {
+		// Bug 383401: [Sequence Diagram] Interaction operator
+		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=383401
+		if (feature == UMLPackage.eINSTANCE.getCombinedFragment_InteractionOperator()) {
 			return new InteractionOperatorContentProvider(source, feature);
 		}
 
-		if(feature.getEType() instanceof EEnum) {
+		if (feature.getEType() instanceof EEnum) {
 			return new EMFEnumeratorContentProvider(feature);
 		}
 
-		if(feature == UMLPackage.eINSTANCE.getPort_Provided() || feature == UMLPackage.eINSTANCE.getPort_Required()) {
+		if (feature == UMLPackage.eINSTANCE.getPort_Provided() || feature == UMLPackage.eINSTANCE.getPort_Required()) {
 			return new PortInterfaceContentProvider(source, feature);
-		} else if(feature == UMLPackage.eINSTANCE.getInstanceValue_Instance()) {
-			return new InstanceValueContentProvider((InstanceValue)source, feature, root);
+		} else if (feature == UMLPackage.eINSTANCE.getInstanceValue_Instance()) {
+			return new InstanceValueContentProvider((InstanceValue) source, feature, root);
 		} else {
 			return new ServiceEditFilteredContentProvider(source, feature, root);
 		}
@@ -210,9 +210,9 @@ public class UMLContentProvider extends EncapsulatedContentProvider {
 
 	/**
 	 * Uses the content provider for reference properties typed by a stereotype
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The name of the property being edited
+	 *            The name of the property being edited
 	 * @return
 	 *         The Content Provider for properties typed by a stereotype
 	 */

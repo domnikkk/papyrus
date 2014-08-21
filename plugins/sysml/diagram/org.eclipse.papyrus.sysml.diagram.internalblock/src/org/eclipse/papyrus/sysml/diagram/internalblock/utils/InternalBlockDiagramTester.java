@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,9 +36,9 @@ public class InternalBlockDiagramTester extends PropertyTester {
 	public static final String IS_FLOW_PORT = "isFlowPort"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.expressions.IPropertyTester#test(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Object)
-	 * 
+	 *
 	 * @param receiver
 	 * @param property
 	 * @param args
@@ -46,28 +46,28 @@ public class InternalBlockDiagramTester extends PropertyTester {
 	 * @return
 	 */
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(IS_FLOW_PORT.equals(property) && receiver instanceof ISelection) {
-			return testFlowPort((ISelection)receiver, expectedValue);
+		if (IS_FLOW_PORT.equals(property) && receiver instanceof ISelection) {
+			return testFlowPort((ISelection) receiver, expectedValue);
 		}
 		return false;
 	}
 
 	/**
 	 * Tests if the current port is stereotyped with "SysML::PortAndFlows::FlowPort"
-	 * 
+	 *
 	 * @param selection
-	 *        the current selection
+	 *            the current selection
 	 * @return
 	 *         <code>true</code> if a Port is stereotyped with "SysML::PortAndFlows::FlowPort"
 	 */
 	protected boolean testFlowPort(ISelection selection, Object expectedValue) {
-		if(selection instanceof StructuredSelection && expectedValue != null) {
+		if (selection instanceof StructuredSelection && expectedValue != null) {
 			@SuppressWarnings("unchecked")
-			Iterator<Object> iter = ((StructuredSelection)selection).iterator();
-			while(iter.hasNext()) {
+			Iterator<Object> iter = ((StructuredSelection) selection).iterator();
+			while (iter.hasNext()) {
 				Object current = iter.next();
-				if(current instanceof IAdaptable) {
-					Element port = (Element)((IAdaptable)current).getAdapter(Element.class);
+				if (current instanceof IAdaptable) {
+					Element port = (Element) ((IAdaptable) current).getAdapter(Element.class);
 					FlowPort fp = UMLUtil.getStereotypeApplication(port, FlowPort.class);
 					boolean value = fp != null;
 					return expectedValue.equals(value);

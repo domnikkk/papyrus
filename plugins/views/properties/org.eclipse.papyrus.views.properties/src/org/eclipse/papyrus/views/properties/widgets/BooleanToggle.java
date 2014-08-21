@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A Widget for editing Booleans. The widget is a button with two states.
  * The button can have either an image or a text
- * 
+ *
  * @author Camille Letavernier
  */
 public class BooleanToggle extends AbstractPropertyEditor {
@@ -31,11 +31,11 @@ public class BooleanToggle extends AbstractPropertyEditor {
 	private String text;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The parent in which the widget will be created
+	 *            The parent in which the widget will be created
 	 * @param style
 	 */
 	public BooleanToggle(Composite parent, int style) {
@@ -45,11 +45,11 @@ public class BooleanToggle extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the boolean toggle.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the boolean toggle.
 	 */
 	protected org.eclipse.papyrus.infra.widgets.editors.BooleanToggle createBooleanToggle(Composite parent, int style) {
@@ -58,7 +58,7 @@ public class BooleanToggle extends AbstractPropertyEditor {
 
 	/**
 	 * Sets this button's text
-	 * 
+	 *
 	 * @param text
 	 */
 	public void setText(String text) {
@@ -67,7 +67,7 @@ public class BooleanToggle extends AbstractPropertyEditor {
 
 	/**
 	 * Return this button's text
-	 * 
+	 *
 	 * @return this button's text
 	 */
 	public String getText() {
@@ -76,9 +76,9 @@ public class BooleanToggle extends AbstractPropertyEditor {
 
 	/**
 	 * Sets this button's image
-	 * 
+	 *
 	 * @param imagePath
-	 *        The path to the image, in the form /<plug-in>/<path>
+	 *            The path to the image, in the form /<plug-in>/<path>
 	 */
 	public void setImage(String imagePath) {
 		this.imagePath = imagePath;
@@ -88,7 +88,7 @@ public class BooleanToggle extends AbstractPropertyEditor {
 
 	/**
 	 * Returns the path to this editor's image
-	 * 
+	 *
 	 * @return
 	 *         The path to this editor's image
 	 */

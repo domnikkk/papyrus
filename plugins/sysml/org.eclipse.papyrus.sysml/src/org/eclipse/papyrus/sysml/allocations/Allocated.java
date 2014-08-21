@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Allocated</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.NamedElement;
  * <li>{@link org.eclipse.papyrus.sysml.allocations.Allocated#getAllocatedTo <em>Allocated To</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.allocations.AllocationsPackage#getAllocated()
  * @model
  * @generated
@@ -44,7 +44,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Allocated From</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocated From</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.allocations.AllocationsPackage#getAllocated_AllocatedFrom()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -53,13 +53,12 @@ public interface Allocated extends EObject {
 	EList<NamedElement> getAllocatedFrom();
 
 	/**
-	 * Retrieves the first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>' from the '
-	 * <em><b>Allocated From</b></em>' reference list.
+	 * Retrieves the first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>' from the ' <em><b>Allocated From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getAllocatedFrom()
 	 * @generated
@@ -67,17 +66,16 @@ public interface Allocated extends EObject {
 	NamedElement getAllocatedFrom(String name);
 
 	/**
-	 * Retrieves the first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>' from the '
-	 * <em><b>Allocated From</b></em>' reference list.
+	 * Retrieves the first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>' from the ' <em><b>Allocated From</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getAllocatedFrom()
 	 * @generated
@@ -92,7 +90,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Allocated To</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Allocated To</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.allocations.AllocationsPackage#getAllocated_AllocatedTo()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -105,9 +103,9 @@ public interface Allocated extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getAllocatedTo()
 	 * @generated
@@ -119,13 +117,13 @@ public interface Allocated extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getAllocatedTo()
 	 * @generated
@@ -139,7 +137,7 @@ public interface Allocated extends EObject {
 	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Named Element</em>' reference.
 	 * @see #setBase_NamedElement(NamedElement)
 	 * @see org.eclipse.papyrus.sysml.allocations.AllocationsPackage#getAllocated_Base_NamedElement()
@@ -152,9 +150,9 @@ public interface Allocated extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.allocations.Allocated#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Named Element</em>' reference.
+	 *            the new value of the '<em>Base Named Element</em>' reference.
 	 * @see #getBase_NamedElement()
 	 * @generated
 	 */

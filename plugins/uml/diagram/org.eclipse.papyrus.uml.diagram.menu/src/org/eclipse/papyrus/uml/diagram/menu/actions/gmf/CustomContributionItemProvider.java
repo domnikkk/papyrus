@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,16 +23,16 @@ import org.eclipse.ui.IWorkbenchPage;
 
 /**
  * This DiagramContributionItem provides a custom action to add a Note
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class CustomContributionItemProvider extends DiagramContributionItemProvider {
 
 	@Override
 	protected IAction createAction(String actionId, IWorkbenchPartDescriptor partDescriptor) {
 		IWorkbenchPage workbenchPage = partDescriptor.getPartPage();
-		if(CustomCreateShapeViewAction.ActionId.equals(actionId)) {
+		if (CustomCreateShapeViewAction.ActionId.equals(actionId)) {
 			return new CustomCreateShapeViewAction(workbenchPage, actionId, ViewType.NOTE, DiagramUIProvidersMessages.Note_menuItem, SharedImages.DESC_NOTE);
 		}
 		return null;

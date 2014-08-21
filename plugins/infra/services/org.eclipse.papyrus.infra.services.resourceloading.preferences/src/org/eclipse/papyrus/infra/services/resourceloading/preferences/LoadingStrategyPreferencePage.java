@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,8 +66,8 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 		StrategyChooser.setCurrentStrategy(doGetPreferenceStore().getInt(ICorePreferenceConstants.PREF_CORE_DEFINE_LOADING_STRATEGY));
 		IPreferenceStore modifiedPrefStore = doGetPreferenceStore();
 		try {
-			if(modifiedPrefStore instanceof ScopedPreferenceStore) {
-				((ScopedPreferenceStore)modifiedPrefStore).save();
+			if (modifiedPrefStore instanceof ScopedPreferenceStore) {
+				((ScopedPreferenceStore) modifiedPrefStore).save();
 			}
 		} catch (Exception e) {
 			Activator.logError(e);
@@ -79,6 +79,7 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 	/**
 	 * @see org.eclipse.ui.IWorkbenchPropertyPage#getElement()
 	 */
+	@Override
 	public IAdaptable getElement() {
 		return project;
 	}
@@ -86,8 +87,9 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 	/**
 	 * @see org.eclipse.ui.IWorkbenchPropertyPage#setElement(org.eclipse.core.runtime.IAdaptable)
 	 */
+	@Override
 	public void setElement(IAdaptable element) {
-		project = (IProject)element.getAdapter(IResource.class);
+		project = (IProject) element.getAdapter(IResource.class);
 	}
 
 	@Override
@@ -98,9 +100,10 @@ public class LoadingStrategyPreferencePage extends AbstractPapyrusNodePreference
 	/**
 	 * @see org.eclipse.jface.preference.PreferencePage#doGetPreferenceStore()
 	 */
+	@Override
 	protected IPreferenceStore doGetPreferenceStore() {
 		IPreferenceStore store;
-		if(project != null) {
+		if (project != null) {
 			store = new ScopedPreferenceStore(new ProjectScope(project), getBundleId());
 		} else {
 			store = new ScopedPreferenceStore(new InstanceScope(), getBundleId());

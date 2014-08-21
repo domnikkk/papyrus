@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -25,20 +25,18 @@ import org.eclipse.swt.widgets.Label;
 
 /**
  * This Abstract class provides all the elements to create:</p>
- * 
+ *
  * Label : [x]</p>
- * 
- * The label is set by {@link #getLabel()}. The checkbox is initialized with the
- * {@link PropertyElement} attributes
+ *
+ * The label is set by {@link #getLabel()}. The checkbox is initialized with the {@link PropertyElement} attributes
  * <nl>
- * <li>{@link PropertyElement#getValue()} (the value of the property must be a
- * boolean)</li>
+ * <li>{@link PropertyElement#getValue()} (the value of the property must be a boolean)</li>
  * <li>{@link PropertyElement#isChangeable()}</li>
  * </nl>
- * 
+ *
  * The {@link #getError()} method return 'null' because no error can be returned
  * (the value of the checkbox is 'true' or 'false').
- * 
+ *
  * @see GetChangeableWidget
  * @see GetOrderedWidget
  * @see GetDerivedWidget
@@ -56,10 +54,9 @@ public abstract class AbstractGetPropertyWidget extends AbstractWidget {
 	private Button propertyButton;
 
 	/**
-	 * Constructor. Initialize the composite with a layout of
-	 * {@value #COLUMN_NUMBER} columns and the layoutData with the
+	 * Constructor. Initialize the composite with a layout of {@value #COLUMN_NUMBER} columns and the layoutData with the
 	 * 'fillGridData' attribute of {@link AbstractWidget}.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent containing this composite.
 	 * @param style
@@ -68,7 +65,7 @@ public abstract class AbstractGetPropertyWidget extends AbstractWidget {
 	 *            the current editing domain.
 	 * @param propertyElement
 	 *            the property element that this composite will edit.
-	 * 
+	 *
 	 * @see AbstractWidget
 	 */
 	protected AbstractGetPropertyWidget(final Composite parent,
@@ -99,8 +96,7 @@ public abstract class AbstractGetPropertyWidget extends AbstractWidget {
 	/**
 	 * Create a checkbox initialized with the {@link PropertyElement} attributes
 	 * <nl>
-	 * <li>Default value : {@link PropertyElement#getValue()} (the value of the
-	 * property must be a boolean)</li>
+	 * <li>Default value : {@link PropertyElement#getValue()} (the value of the property must be a boolean)</li>
 	 * <li>Enabled : {@link PropertyElement#isChangeable()}</li>
 	 * </nl>
 	 */
@@ -142,7 +138,7 @@ public abstract class AbstractGetPropertyWidget extends AbstractWidget {
 
 	/**
 	 * Method to change the distance between the label and the checkbox.
-	 * 
+	 *
 	 * @param lABEL_WIDTH_HINT
 	 *            the lABEL_WIDTH_HINT to set
 	 */

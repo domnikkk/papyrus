@@ -23,7 +23,7 @@ public class CustomOccurrenceSpecificationLabelEditPart extends OccurrenceSpecif
 
 	@Override
 	public IParser getParser() {
-		if(this.parser == null) {
+		if (this.parser == null) {
 			this.parser = new OccurrenceSpecificationNameParser();
 		}
 		return this.parser;

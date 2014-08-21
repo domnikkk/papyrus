@@ -1,4 +1,4 @@
-/** 
+/**
  * Copyright (c) 2012 Mia-Software.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -16,11 +16,13 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.Abstr
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
 
 @SuppressWarnings("PMD.ExcessivePublicCount")
-public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EObject, CW extends java.lang.Object> extends SynchronizedObject<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget <C, CW>> implements org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget <C, CW> {
+public class SynchronizedENamedElementWidget<C extends org.eclipse.emf.ecore.EObject, CW extends java.lang.Object> extends SynchronizedObject<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget<C, CW>> implements
+		org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget<C, CW> {
 
-	public SynchronizedENamedElementWidget(final org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget <C, CW> object, final Display display) {
+	public SynchronizedENamedElementWidget(final org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget<C, CW> object, final Display display) {
 		super(object, display);
 	}
+
 	public final void addListener(final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.AbstractWidget parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -29,7 +31,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final void createWidgetContent() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -38,7 +40,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final java.lang.String getError() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -47,7 +49,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final void notifyChanged() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -56,7 +58,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final <A> A adapt(final java.lang.Class<A> parm0) {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<A>() {
 			@Override
@@ -65,7 +67,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final java.lang.Object getCommand() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.Object>() {
 			@Override
@@ -74,7 +76,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final void onDialogValidation() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -83,7 +85,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final C getContainer() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<C>() {
 			@Override
@@ -92,7 +94,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final java.lang.String getElementName() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -101,7 +103,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<CW> pressParentButton() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<CW>>() {
 			@Override
@@ -110,7 +112,7 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 	public final void setName(final java.lang.String parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -119,5 +121,5 @@ public class SynchronizedENamedElementWidget <C extends org.eclipse.emf.ecore.EO
 			}
 		});
 	}
-	
+
 }

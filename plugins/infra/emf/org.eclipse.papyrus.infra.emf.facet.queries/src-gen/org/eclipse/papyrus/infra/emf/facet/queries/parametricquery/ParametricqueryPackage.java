@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2012 CEA LIST.
- * 
- *  
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.facet.infra.query.QueryPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +29,7 @@ import org.eclipse.emf.facet.infra.query.QueryPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.ParametricqueryFactory
  * @model kind="package"
  * @generated
@@ -42,7 +40,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "parametricquery"; //$NON-NLS-1$
@@ -51,7 +49,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/infra/emf/facet/parametric/query/0.9.1"; //$NON-NLS-1$
@@ -60,7 +58,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "paramQuery"; //$NON-NLS-1$
@@ -69,7 +67,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	ParametricqueryPackage eINSTANCE = org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl.init();
@@ -79,7 +77,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>Parametric Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricQueryImpl
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getParametricQuery()
 	 * @generated
@@ -90,7 +88,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -100,7 +98,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -110,7 +108,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Return Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -120,7 +118,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Scope</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -130,7 +128,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Query Set</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -140,7 +138,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -150,7 +148,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Is External Context Dependent</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +158,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -170,7 +168,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -180,7 +178,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Called Query</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -190,7 +188,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -200,7 +198,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Parametric Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -210,7 +208,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ArgumentImpl <em>Argument</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ArgumentImpl
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getArgument()
 	 * @generated
@@ -221,7 +219,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Argument Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -231,7 +229,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The number of structural features of the '<em>Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -242,7 +240,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>String Argument</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.StringArgumentImpl
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getStringArgument()
 	 * @generated
@@ -253,7 +251,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Argument Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -263,7 +261,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -273,7 +271,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The number of structural features of the '<em>String Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -284,7 +282,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>EStructural Feature Argument</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.EStructuralFeatureArgumentImpl
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getEStructuralFeatureArgument()
 	 * @generated
@@ -295,7 +293,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Argument Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -305,7 +303,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -315,7 +313,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * The number of structural features of the '<em>EStructural Feature Argument</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -327,7 +325,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>Parametric Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Parametric Query</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.ParametricQuery
 	 * @generated
@@ -339,7 +337,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>Called Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Called Query</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.ParametricQuery#getCalledQuery()
 	 * @see #getParametricQuery()
@@ -348,11 +346,10 @@ public interface ParametricqueryPackage extends EPackage {
 	EReference getParametricQuery_CalledQuery();
 
 	/**
-	 * Returns the meta object for the containment reference list '
-	 * {@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.ParametricQuery#getArguments <em>Arguments</em>}'.
+	 * Returns the meta object for the containment reference list ' {@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.ParametricQuery#getArguments <em>Arguments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '<em>Arguments</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.ParametricQuery#getArguments()
 	 * @see #getParametricQuery()
@@ -364,7 +361,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.Argument <em>Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Argument</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.Argument
 	 * @generated
@@ -376,7 +373,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>Argument Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Argument Name</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.Argument#getArgumentName()
 	 * @see #getArgument()
@@ -385,11 +382,10 @@ public interface ParametricqueryPackage extends EPackage {
 	EAttribute getArgument_ArgumentName();
 
 	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.StringArgument <em>String Argument</em>}
-	 * '.
+	 * Returns the meta object for class '{@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.StringArgument <em>String Argument</em>} '.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>String Argument</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.StringArgument
 	 * @generated
@@ -401,7 +397,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.StringArgument#getValue()
 	 * @see #getStringArgument()
@@ -414,7 +410,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <em>EStructural Feature Argument</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>EStructural Feature Argument</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.EStructuralFeatureArgument
 	 * @generated
@@ -422,11 +418,10 @@ public interface ParametricqueryPackage extends EPackage {
 	EClass getEStructuralFeatureArgument();
 
 	/**
-	 * Returns the meta object for the reference '
-	 * {@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.EStructuralFeatureArgument#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference ' {@link org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.EStructuralFeatureArgument#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.EStructuralFeatureArgument#getValue()
 	 * @see #getEStructuralFeatureArgument()
@@ -438,7 +433,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -454,7 +449,7 @@ public interface ParametricqueryPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -464,7 +459,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * <em>Parametric Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricQueryImpl
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getParametricQuery()
 		 * @generated
@@ -475,7 +470,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Called Query</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PARAMETRIC_QUERY__CALLED_QUERY = eINSTANCE.getParametricQuery_CalledQuery();
@@ -484,7 +479,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference PARAMETRIC_QUERY__ARGUMENTS = eINSTANCE.getParametricQuery_Arguments();
@@ -494,7 +489,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ArgumentImpl
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getArgument()
 		 * @generated
@@ -505,7 +500,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Argument Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ARGUMENT__ARGUMENT_NAME = eINSTANCE.getArgument_ArgumentName();
@@ -515,7 +510,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * <em>String Argument</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.StringArgumentImpl
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getStringArgument()
 		 * @generated
@@ -526,7 +521,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute STRING_ARGUMENT__VALUE = eINSTANCE.getStringArgument_Value();
@@ -536,7 +531,7 @@ public interface ParametricqueryPackage extends EPackage {
 		 * <em>EStructural Feature Argument</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.EStructuralFeatureArgumentImpl
 		 * @see org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.impl.ParametricqueryPackageImpl#getEStructuralFeatureArgument()
 		 * @generated
@@ -547,11 +542,11 @@ public interface ParametricqueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ESTRUCTURAL_FEATURE_ARGUMENT__VALUE = eINSTANCE.getEStructuralFeatureArgument_Value();
 
 	}
 
-} //ParametricqueryPackage
+} // ParametricqueryPackage

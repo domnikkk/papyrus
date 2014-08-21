@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.provider;
 
@@ -39,11 +39,12 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.iso42010.ArchitectureViewpoint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ArchitectureViewpointItemProvider
-	extends ADElementItemProvider
-	implements
+		extends ADElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -53,6 +54,7 @@ public class ArchitectureViewpointItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ArchitectureViewpointItemProvider(AdapterFactory adapterFactory) {
@@ -63,6 +65,7 @@ public class ArchitectureViewpointItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,52 +83,54 @@ public class ArchitectureViewpointItemProvider
 	 * This adds a property descriptor for the Governs feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addGovernsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ArchitectureViewpoint_governs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ArchitectureViewpoint_governs_feature", "_UI_ArchitectureViewpoint_type"),
-				 Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__GOVERNS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ArchitectureViewpoint_governs_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ArchitectureViewpoint_governs_feature", "_UI_ArchitectureViewpoint_type"),
+						Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__GOVERNS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Frames feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addFramesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ArchitectureViewpoint_frames_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ArchitectureViewpoint_frames_feature", "_UI_ArchitectureViewpoint_type"),
-				 Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__FRAMES,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ArchitectureViewpoint_frames_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ArchitectureViewpoint_frames_feature", "_UI_ArchitectureViewpoint_type"),
+						Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__FRAMES,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -140,6 +145,7 @@ public class ArchitectureViewpointItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,6 +160,7 @@ public class ArchitectureViewpointItemProvider
 	 * This returns ArchitectureViewpoint.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,14 +172,15 @@ public class ArchitectureViewpointItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ArchitectureViewpoint)object).getName();
+		String label = ((ArchitectureViewpoint) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ArchitectureViewpoint_type") :
-			getString("_UI_ArchitectureViewpoint_type") + " " + label;
+				getString("_UI_ArchitectureViewpoint_type") :
+				getString("_UI_ArchitectureViewpoint_type") + " " + label;
 	}
 
 	/**
@@ -180,6 +188,7 @@ public class ArchitectureViewpointItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -187,9 +196,9 @@ public class ArchitectureViewpointItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ArchitectureViewpoint.class)) {
-			case Iso42010Package.ARCHITECTURE_VIEWPOINT__MODEL_KINDS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case Iso42010Package.ARCHITECTURE_VIEWPOINT__MODEL_KINDS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -199,6 +208,7 @@ public class ArchitectureViewpointItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -206,9 +216,9 @@ public class ArchitectureViewpointItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_VIEWPOINT__MODEL_KINDS,
-				 Iso42010Factory.eINSTANCE.createModelKind()));
+						Iso42010Factory.eINSTANCE.createModelKind()));
 	}
 
 }

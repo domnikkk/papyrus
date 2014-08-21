@@ -26,6 +26,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
 import org.eclipse.papyrus.sysml.requirements.Requirement;
 import org.eclipse.papyrus.uml.diagram.common.parser.NamedElementLabelParser;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
@@ -48,29 +49,29 @@ public class RequirementLabelParser extends NamedElementLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
-		EObject eObject =EMFHelper.getEObject(element);
+		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Class)) {
+		if ((eObject != null) && (eObject instanceof Class)) {
 
-			Class clazz = (Class)eObject;
+			Class clazz = (Class) eObject;
 			Requirement requirement = UMLUtil.getStereotypeApplication(clazz, Requirement.class);
 
 			// manage name
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_NAME)) {
+			if (maskValues.contains(ICustomAppearance.DISP_NAME)) {
 				String name = clazz.getName();
 				result = String.format(NAME_FORMAT, name);
 			}
 
 
-			if(requirement != null) {
+			if (requirement != null) {
 
 				// manage id
-				if(maskValues.contains(ILabelPreferenceConstants.DISP_ID)) {
+				if (maskValues.contains(ILabelPreferenceConstants.DISP_ID)) {
 					String id = requirement.getId();
 					result = String.format(ID_FORMAT, result, id);
 				}
@@ -87,13 +88,13 @@ public class RequirementLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Class)) {
-			Class semElement = (Class)element;
+		if ((element != null) && (element instanceof Class)) {
+			Class semElement = (Class) element;
 
 			semanticElementsBeingParsed.add(semElement);
 
 			Requirement requirement = UMLUtil.getStereotypeApplication(semElement, Requirement.class);
-			if(requirement != null) {
+			if (requirement != null) {
 				semanticElementsBeingParsed.add(requirement);
 			}
 		}
@@ -103,13 +104,13 @@ public class RequirementLabelParser extends NamedElementLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
 		masks.put(ILabelPreferenceConstants.DISP_ID, "Id");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_ID);
+		return Arrays.asList(ICustomAppearance.DISP_NAME, ILabelPreferenceConstants.DISP_ID);
 	}
 }

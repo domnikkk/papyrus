@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.provider;
 
@@ -38,16 +38,17 @@ import org.eclipse.papyrus.emf.facet.efacet.QueryContext;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.QueryContext} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  * @deprecated use the new eFacet metamodel in org.eclipse.papyrus.emf.facet.efacet.metamodel. Cf.
  *             https://bugs.eclipse.org/bugs/show_bug.cgi?id=373672
  */
 @Deprecated
-//generated code
+// generated code
 @SuppressWarnings("all")
 public class QueryContextItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -57,6 +58,7 @@ public class QueryContextItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public QueryContextItemProvider(AdapterFactory adapterFactory) {
@@ -67,6 +69,7 @@ public class QueryContextItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -84,50 +87,53 @@ public class QueryContextItemProvider
 	 * This adds a property descriptor for the Selected Model Elements feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addSelectedModelElementsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QueryContext_selectedModelElements_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryContext_selectedModelElements_feature", "_UI_QueryContext_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 EFacetPackage.Literals.QUERY_CONTEXT__SELECTED_MODEL_ELEMENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_QueryContext_selectedModelElements_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_QueryContext_selectedModelElements_feature", "_UI_QueryContext_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EFacetPackage.Literals.QUERY_CONTEXT__SELECTED_MODEL_ELEMENTS,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Selected Models feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addSelectedModelsPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_QueryContext_selectedModels_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_QueryContext_selectedModels_feature", "_UI_QueryContext_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 EFacetPackage.Literals.QUERY_CONTEXT__SELECTED_MODELS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_QueryContext_selectedModels_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_QueryContext_selectedModels_feature", "_UI_QueryContext_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						EFacetPackage.Literals.QUERY_CONTEXT__SELECTED_MODELS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns QueryContext.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -139,6 +145,7 @@ public class QueryContextItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -151,6 +158,7 @@ public class QueryContextItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -158,9 +166,9 @@ public class QueryContextItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QueryContext.class)) {
-			case EFacetPackage.QUERY_CONTEXT__SELECTED_MODELS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case EFacetPackage.QUERY_CONTEXT__SELECTED_MODELS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -170,6 +178,7 @@ public class QueryContextItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -181,11 +190,12 @@ public class QueryContextItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

@@ -100,11 +100,10 @@ public final class QueryUtils {
 			container = container.eContainer();
 		}
 		if (result == null) {
-			throw new IllegalStateException(
-					"Query must always be contained by a DerivedTypedElement"); //$NON-NLS-1$
+			throw new IllegalStateException("Query must always be contained by a DerivedTypedElement"); //$NON-NLS-1$
 		}
 		return (DerivedTypedElement) container;
-	
+
 	}
 
 	// Moved from

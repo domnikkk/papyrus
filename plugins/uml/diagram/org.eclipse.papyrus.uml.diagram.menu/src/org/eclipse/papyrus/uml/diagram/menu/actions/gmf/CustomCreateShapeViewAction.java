@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,18 +37,18 @@ import org.eclipse.ui.IWorkbenchPage;
 
 /**
  * @see CreateShapeViewAction
- * 
+ *
  *      We create the note, with a white background
- * 
+ *
  */
 public class CustomCreateShapeViewAction extends CreateShapeViewAction {
 
 	public static final String ActionId = "customAddNoteLinkAction"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param workbenchPage
 	 * @param actionId
 	 * @param semanticHint
@@ -65,35 +65,36 @@ public class CustomCreateShapeViewAction extends CreateShapeViewAction {
 	 */
 	@Override
 	protected void selectAddedObject() {
-		Object result = ((CreateRequest)getTargetRequest()).getNewObject();
-		if(!(result instanceof Collection)) {
+		Object result = ((CreateRequest) getTargetRequest()).getNewObject();
+		if (!(result instanceof Collection)) {
 			return;
 		}
 		final List editparts = new ArrayList(1);
 
 		IDiagramGraphicalViewer viewer = getDiagramGraphicalViewer();
-		if(viewer == null) {
+		if (viewer == null) {
 			return;
 		}
 
 		Map editpartRegistry = viewer.getEditPartRegistry();
-		for(Iterator iter = ((Collection)result).iterator(); iter.hasNext();) {
+		for (Iterator iter = ((Collection) result).iterator(); iter.hasNext();) {
 			Object viewAdaptable = iter.next();
-			if(viewAdaptable instanceof IAdaptable) {
-				Object editPart = editpartRegistry.get(((IAdaptable)viewAdaptable).getAdapter(View.class));
-				if(editPart != null)
+			if (viewAdaptable instanceof IAdaptable) {
+				Object editPart = editpartRegistry.get(((IAdaptable) viewAdaptable).getAdapter(View.class));
+				if (editPart != null) {
 					editparts.add(editPart);
+				}
 			}
 		}
 
-		if(!editparts.isEmpty()) {
+		if (!editparts.isEmpty()) {
 			viewer.setSelection(new StructuredSelection(editparts));
 
 			// automatically put the first shape into edit-mode
 			Display.getCurrent().asyncExec(new Runnable() {
 
 				public void run() {
-					EditPart editPart = (EditPart)editparts.get(0);
+					EditPart editPart = (EditPart) editparts.get(0);
 					ChangePropertyValueRequest request = new ChangePropertyValueRequest("Fill Color", "notation.FillStyle.fillColor"); //$NON-NLS-1$ //$NON-NLS-2$
 					request.setType("property_change"); //$NON-NLS-1$
 					RGB rgb = new RGB(255, 255, 255);

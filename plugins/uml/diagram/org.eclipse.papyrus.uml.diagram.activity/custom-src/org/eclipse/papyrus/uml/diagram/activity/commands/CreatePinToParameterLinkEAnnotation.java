@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.Pin;
 
 /**
  * Command to create or update the EAnnoation which store the link from a {@link Pin} to a {@link Parameter}
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationCommand implements IPinToParameterLinkCommand {
 
@@ -71,28 +71,28 @@ public class CreatePinToParameterLinkEAnnotation extends CreateEAnnotationComman
 
 	@Override
 	protected void doExecute() {
-		//try to get an old EAnnotation
+		// try to get an old EAnnotation
 		eAnnotation = modelOwner.getEAnnotation(PIN_TO_PARAMETER_LINK);
-		if(eAnnotation == null) {
+		if (eAnnotation == null) {
 			super.doExecute();
 		}
 		EMap<String, String> details = eAnnotation.getDetails();
-		if(details != null) {
+		if (details != null) {
 			details.put(PIN_TO_PARAMETER_LINK, getXmiID(target));
 		}
 	}
 
 	/**
 	 * Get the XMI id to identify the parameter
-	 * 
+	 *
 	 * @param p
-	 *        {@link Parameter} to identify
+	 *            {@link Parameter} to identify
 	 * @return XMI id og the {@link Parameter}
 	 */
 	protected String getXmiID(EObject p) {
 		Resource ressource = p.eResource();
-		if(ressource instanceof XMIResource) {
-			return ((XMIResource)ressource).getID(p);
+		if (ressource instanceof XMIResource) {
+			return ((XMIResource) ressource).getID(p);
 		}
 		return NO_PARAMETER_ID;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * AbstractActionFigure is an abstract super class for Action figures in order
  * to manage stereotype display
- * 
+ *
  * @generated
  */
 public abstract class AbstractActionFigure extends RoundedRectangle implements IPapyrusNodeUMLElementFigure {
@@ -51,10 +51,10 @@ public abstract class AbstractActionFigure extends RoundedRectangle implements I
 		// use StereotypeFigureHelper
 		stereotypeHelper = new StereotypeFigureHelper(this) {
 
-//			@Override
-//			public IMapMode getMapMode() {
-//				return AbstractActionFigure.this.getMapMode();
-//			}
+			// @Override
+			// public IMapMode getMapMode() {
+			// return AbstractActionFigure.this.getMapMode();
+			// }
 
 			@Override
 			public Object getStereotypeRectangleConstraint() {
@@ -87,14 +87,14 @@ public abstract class AbstractActionFigure extends RoundedRectangle implements I
 	 * <li>if this is not <code>null</code>, it creates the stereotype label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 * @param image
-	 *        the image representing the stereotypes to be displayed
-	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String,
-	 *      org.eclipse.swt.graphics.Image)
+	 *            the image representing the stereotypes to be displayed
+	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		stereotypeHelper.setStereotypeDisplay(stereotypes, image);
 		refreshLayout();
@@ -109,11 +109,12 @@ public abstract class AbstractActionFigure extends RoundedRectangle implements I
 	 * <li>if this is not <code>null</code>, it creates the stereotype properties label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string representing the stereotype properties to be
-	 *        displayed
+	 *            the string representing the stereotype properties to be
+	 *            displayed
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 		stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
 		refreshLayout();
@@ -121,13 +122,14 @@ public abstract class AbstractActionFigure extends RoundedRectangle implements I
 
 	/**
 	 * displays the new string corresponding to the list of stereotypes.
-	 * 
+	 *
 	 * if the string is <code>null</code>, then the figure that displays the
 	 * stereotype label is removed from the NodeNamedElementFigure.
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string to be displayed.
+	 *            the string to be displayed.
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 		stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
 		refreshLayout();
@@ -136,6 +138,7 @@ public abstract class AbstractActionFigure extends RoundedRectangle implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected boolean useLocalCoordinates() {
 		return myUseLocalCoordinates;
 	}
@@ -149,11 +152,13 @@ public abstract class AbstractActionFigure extends RoundedRectangle implements I
 
 	/**
 	 * Gets the stereotype label.
-	 * 
+	 *
 	 * @return the stereotype label
 	 * @unused
 	 * @deprecated
 	 */
+	@Deprecated
+	@Override
 	public Label getStereotypesLabel() {
 		return null;// fActionStereotypeLabel;
 	}

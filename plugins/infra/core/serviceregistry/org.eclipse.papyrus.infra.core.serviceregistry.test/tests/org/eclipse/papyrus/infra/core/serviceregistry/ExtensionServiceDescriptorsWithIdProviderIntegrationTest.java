@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,150 +51,156 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.internal.ServicesRegistryConfigurationReaderFromExtensions#loadServicesRegistryConfiguration(org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry, java.lang.String)}.
-	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
+	 * 
+	 * @throws IOException
+	 * @throws ServiceException
+	 * @throws DeclarationException
 	 */
 	@Test
 	public void testLoadServicesSetConfiguration() throws IOException, ServiceException, DeclarationException {
-		
+
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
 		// Create ServiceRegistry from factory
 		ServicesRegistry registry = factory.getServicesRegistry("simpleTestRegistry");
-		
-//		String servicesSetName = "simpleTest";
-		
+
+		// String servicesSetName = "simpleTest";
+
 		// Check if specified service are in the registry
 		Class<?> serviceA = FakeServiceA.class;
 		Class<?> serviceC = FakeServiceC.class;
 
-		assertNotNull( "service registered", registry.serviceState(serviceA) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceA) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceC) );
-		
+		assertNotNull("service registered", registry.serviceState(serviceA));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceA));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceC));
+
 		registry.startNewServices();
-		assertNotNull( "service found", registry.getService(serviceA) );
-		assertNotNull( "service found", registry.getService(serviceC) );
-		
+		assertNotNull("service found", registry.getService(serviceA));
+		assertNotNull("service found", registry.getService(serviceC));
+
 		registry.disposeRegistry(true);
 	}
 
 	/**
 	 * Test a set extending another set.
-	 * 	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
+	 * * @throws IOException
+	 * 
+	 * @throws ServiceException
+	 * @throws DeclarationException
 	 */
 	@Test
 	public void testLoadServicesSetWithExtends() throws IOException, ServiceException, DeclarationException {
-		
+
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
 		// Create ServiceRegistry from factory
 		ServicesRegistry registry = factory.getServicesRegistry("extendingSetRegistry");
-		
+
 		// Create a ServiceRegistry
-//		String servicesSetName = "extendingSet";
-		
+		// String servicesSetName = "extendingSet";
+
 		// set(A, B) --> set(C)
-		
+
 		// Check if specified service are in the registry
 		// C should be in the registry
 		Class<?> serviceA = FakeServiceA.class;
 		Class<?> serviceB = FakeServiceB.class;
 		Class<?> serviceC = FakeServiceC.class;
 
-		assertNotNull( "service registered", registry.serviceState(serviceA) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceA) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceB) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceC) );
-		
+		assertNotNull("service registered", registry.serviceState(serviceA));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceA));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceB));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceC));
+
 		registry.startNewServices();
-		assertNotNull( "service found", registry.getService(serviceA) );
-		assertNotNull( "service found", registry.getService(serviceC) );
-		
+		assertNotNull("service found", registry.getService(serviceA));
+		assertNotNull("service found", registry.getService(serviceC));
+
 		registry.disposeRegistry(true);
 	}
 
 	/**
 	 * Test a set extending another set.
-	 * 	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
+	 * * @throws IOException
+	 * 
+	 * @throws ServiceException
+	 * @throws DeclarationException
 	 */
 	@Test
 	public void testBadDeclaration() throws IOException, ServiceException, DeclarationException {
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
 		// Create ServiceRegistry from factory
-		
+
 		// Create a ServiceRegistry
-		ServicesRegistry registry ;
-//		String servicesSetName = "badSetExtendsIdMissing";
+		ServicesRegistry registry;
+		// String servicesSetName = "badSetExtendsIdMissing";
 		try {
 			registry = factory.getServicesRegistry("badSetExtendsIdMissingRegistry");
 			registry.startNewServices();
 			fail("Exception should be thrown");
 		} catch (DeclarationException e) {
-//			e.printStackTrace();
+			// e.printStackTrace();
 		}
 
 	}
-	
+
 	/**
 	 * Test a set extending another set.
-	 * 	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
+	 * * @throws IOException
+	 * 
+	 * @throws ServiceException
+	 * @throws DeclarationException
 	 */
 	@Test
 	public void testMissingBadServiceSetName() throws IOException, ServiceException, DeclarationException {
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
-		
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
+
 		// Create a ServiceRegistry
-		ServicesRegistry registry ;
-//		String servicesSetName = "NonExistingName";
+		ServicesRegistry registry;
+		// String servicesSetName = "NonExistingName";
 		try {
 			// Create ServiceRegistry from factory
-			 registry = factory.getServicesRegistry("NonExistingName");
+			registry = factory.getServicesRegistry("NonExistingName");
 			registry.startNewServices();
 			fail("Exception should be thrown");
 		} catch (DeclarationException e) {
-//			e.printStackTrace();
+			// e.printStackTrace();
 		}
 
 	}
+
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.internal.ServicesRegistryConfigurationReaderFromExtensions#loadServicesRegistryConfiguration(org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry, java.lang.String)}.
-	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
+	 * 
+	 * @throws IOException
+	 * @throws ServiceException
+	 * @throws DeclarationException
 	 */
 	@Test
 	public void testServicesWithExtends() throws IOException, ServiceException, DeclarationException {
-		
+
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
 		// Create ServiceRegistry from factory
 		ServicesRegistry registry = factory.getServicesRegistry("dependantServicesRegistry");
 
-//		String servicesSetName = "dependantServices";
+		// String servicesSetName = "dependantServices";
 		FakeService.getTrace().reset();
 		registry.startNewServices();
-	
-	
+
+
 		// check services
 		Class<?> serviceA = FakeServiceA.class;
 		Class<?> serviceB = FakeServiceB.class;
@@ -207,8 +213,8 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 		// Check if we can get them
 		assertNotNull("got service started", registry.getService(serviceC));
 		assertNotNull("got service started", registry.getService(serviceA));
-		
-		// check creation order	(C then A)	
+
+		// check creation order (C then A)
 		// order should be C, A
 		TestTrace trace = FakeService.getTrace();
 		int i = 0;
@@ -229,7 +235,7 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 	}
 
 
-	
+
 	/**
 	 * Test method for {@link org.eclipse.papyrus.infra.core.serviceregistry.internal.ServicesRegistryConfigurationReaderFromExtensions#loadServicesSetConfiguration(org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry, java.lang.String)}.
 	 */
@@ -240,63 +246,63 @@ public class ExtensionServiceDescriptorsWithIdProviderIntegrationTest {
 
 	/**
 	 * Check if a serviceSet declared in several fragments with the same name is correctly loaded.
-	 * 
-	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
+	 *
+	 * @throws IOException
+	 * @throws ServiceException
+	 * @throws DeclarationException
 	 */
 	@Test
 	public void testLoadServicesSetFromPartialFragments() throws IOException, ServiceException, DeclarationException {
-		
+
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
 		// Create ServiceRegistry from factory
 		ServicesRegistry registry = factory.getServicesRegistry("doubleNameRegistry");
-		
+
 		// Create a ServiceRegistry
-//		String servicesSetName = "doubleName";
-		
+		// String servicesSetName = "doubleName";
+
 		// Check if specified service are in the registry
 		Class<?> serviceA = FakeServiceA.class;
 		Class<?> serviceB = FakeServiceB.class;
 
-		assertNotNull( "service registered", registry.serviceState(serviceA) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceA) );
-		assertSame( "service registered", ServiceState.registered, registry.serviceState(serviceB) );
-		
+		assertNotNull("service registered", registry.serviceState(serviceA));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceA));
+		assertSame("service registered", ServiceState.registered, registry.serviceState(serviceB));
+
 		registry.startNewServices();
-		assertNotNull( "service found", registry.getService(serviceA) );
-		assertNotNull( "service found", registry.getService(serviceB) );
-		
+		assertNotNull("service found", registry.getService(serviceA));
+		assertNotNull("service found", registry.getService(serviceB));
+
 		registry.disposeRegistry(true);
 	}
 
 	/**
 	 * Check if a serviceSet declared in several fragments with the same name is correctly loaded.
-	 * 
-	 * @throws IOException 
-	 * @throws ServiceException 
-	 * @throws DeclarationException 
-	 * @throws ServiceException 
+	 *
+	 * @throws IOException
+	 * @throws ServiceException
+	 * @throws DeclarationException
+	 * @throws ServiceException
 	 */
 	@Test
 	public void testLoadAlias() throws IOException, DeclarationException, ServiceException {
-		
+
 		// Create a declaration provider, and a factory
 		IExtensionRegistry extensionRegistry = EclipseExtensionUtils.instance.createRegistry("resources/plugin.xml");
 		IServiceDescriptorsWithIdProvider declarationsProvider = new ExtensionServiceDescriptorsWithIdProviderFromFile(extensionRegistry);
-		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);	
+		ServiceRegistryFactory factory = new ServiceRegistryFactory(declarationsProvider);
 		// Create ServiceRegistry from factory
 		ServicesRegistry registry = factory.getServicesRegistry("setWithAliasRegistry");
 		registry.startNewServices();
-		
+
 		// Check if specified service are in the registry
 		Class<?> serviceA = FakeServiceA.class;
 		String aliasService = "AnAlias";
-		assertNotNull( "service found", registry.getService(serviceA) );
-		assertNotNull( "service found", registry.getService(aliasService) );
+		assertNotNull("service found", registry.getService(serviceA));
+		assertNotNull("service found", registry.getService(aliasService));
 		assertSame("same service", registry.getService(serviceA), registry.getService(aliasService));
 		registry.disposeRegistry(true);
 	}

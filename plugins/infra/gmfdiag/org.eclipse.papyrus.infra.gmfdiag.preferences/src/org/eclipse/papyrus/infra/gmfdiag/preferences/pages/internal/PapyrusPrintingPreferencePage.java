@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 /**
  * The Papyrus printing preference page
- * 
+ *
  * @author tlandre
  */
 public class PapyrusPrintingPreferencePage extends PrintingPreferencePage implements IWorkbenchPropertyPage {
@@ -50,15 +50,16 @@ public class PapyrusPrintingPreferencePage extends PrintingPreferencePage implem
 	 * @see org.eclipse.ui.IWorkbenchPropertyPage#setElement(org.eclipse.core.runtime.IAdaptable)
 	 */
 	public void setElement(IAdaptable element) {
-		project = (IProject)element.getAdapter(IResource.class);
+		project = (IProject) element.getAdapter(IResource.class);
 	}
 
 	/**
 	 * @see org.eclipse.jface.preference.PreferencePage#doGetPreferenceStore()
 	 */
+	@Override
 	protected IPreferenceStore doGetPreferenceStore() {
 		IPreferenceStore store;
-		if(project != null) {
+		if (project != null) {
 			store = new ScopedPreferenceStore(new ProjectScope(project), getBundleId());
 		} else {
 			store = new ScopedPreferenceStore(new InstanceScope(), getBundleId());

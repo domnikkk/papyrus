@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class UMLRuleHelper {
 	private static final EClass[] possibleBehaviors = { UMLPackage.Literals.INTERACTION, UMLPackage.Literals.ACTIVITY, UMLPackage.Literals.STATE_MACHINE };
 
 	public static void addBehaviorCreatedNavigableElements(List<NavigableElement> navElements, NavigableElement currentNavElement, EStructuralFeature feature, final IModelLinker modelLinker) {
-		for(EClass behaviorClass : possibleBehaviors) {
+		for (EClass behaviorClass : possibleBehaviors) {
 			final EObject behavior = UMLFactory.eINSTANCE.create(behaviorClass);
 			navElements.add(new CreatedNavigableElement(behavior, currentNavElement, feature, modelLinker, UMLBaseNameSetter.instance));
 		}

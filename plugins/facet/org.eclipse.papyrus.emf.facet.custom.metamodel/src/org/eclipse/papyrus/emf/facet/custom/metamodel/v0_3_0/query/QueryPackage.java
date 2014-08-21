@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2013 Soft-Maint.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  * 		David Couvrand (Soft-Maint) - Bug 402725 - Need a query to get an image from an URI
  *  	Nicolas Rault (Soft-Maint) - Bug 402725 - Need a query to get an image from an URI
@@ -23,12 +23,13 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.extensible.E
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.QueryFactory
  * @model kind="package"
  * @generated
@@ -38,6 +39,7 @@ public interface QueryPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "query";
@@ -46,6 +48,7 @@ public interface QueryPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/emf/facet/custom/0.3.incubation/query";
@@ -54,6 +57,7 @@ public interface QueryPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "customQuery";
@@ -62,6 +66,7 @@ public interface QueryPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	QueryPackage eINSTANCE = org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.QueryPackageImpl.init();
@@ -70,6 +75,7 @@ public interface QueryPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.URIImageQueryImpl <em>URI Image Query</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.URIImageQueryImpl
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.QueryPackageImpl#getURIImageQuery()
 	 * @generated
@@ -80,6 +86,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Have Side Effects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -89,6 +96,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Cached</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -98,6 +106,7 @@ public interface QueryPackage extends EPackage {
 	 * The feature id for the '<em><b>Uri</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -107,6 +116,7 @@ public interface QueryPackage extends EPackage {
 	 * The number of structural features of the '<em>URI Image Query</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -117,6 +127,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery <em>URI Image Query</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>URI Image Query</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery
 	 * @generated
@@ -127,6 +138,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery#getUri <em>Uri</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Uri</em>'.
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.URIImageQuery#getUri()
 	 * @see #getURIImageQuery()
@@ -138,6 +150,7 @@ public interface QueryPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -147,12 +160,13 @@ public interface QueryPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -160,6 +174,7 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.URIImageQueryImpl <em>URI Image Query</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.URIImageQueryImpl
 		 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_3_0.query.impl.QueryPackageImpl#getURIImageQuery()
 		 * @generated
@@ -170,10 +185,11 @@ public interface QueryPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Uri</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute URI_IMAGE_QUERY__URI = eINSTANCE.getURIImageQuery_Uri();
 
 	}
 
-} //QueryPackage
+} // QueryPackage

@@ -19,7 +19,7 @@ import org.eclipse.swt.widgets.Control;
 
 /**
  * A widget to select one or more {@link FacetSet}s from a tree
- * 
+ *
  * @since 0.2.0
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
@@ -28,7 +28,7 @@ public interface IFacetSetSelectionWidget {
 
 	/**
 	 * This method can be called at any time to change the {@link FacetSet}s which can be selected by the user.
-	 * 
+	 *
 	 * @param available
 	 *            the {@link FacetSet}s that can be selected in this widget
 	 */
@@ -41,8 +41,7 @@ public interface IFacetSetSelectionWidget {
 	void setSelectedFacetSets(Collection<? extends FacetSet> newSelection);
 
 	/**
-	 * @return the validation status : the selection is not valid if {@link IStatus#getSeverity()} >=
-	 *         {@link IStatus#ERROR}
+	 * @return the validation status : the selection is not valid if {@link IStatus#getSeverity()} >= {@link IStatus#ERROR}
 	 */
 	IStatus getValidationStatus();
 

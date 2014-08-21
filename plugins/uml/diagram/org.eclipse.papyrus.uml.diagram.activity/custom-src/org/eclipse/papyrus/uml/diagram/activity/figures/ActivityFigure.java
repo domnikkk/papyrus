@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusRoundedNodeFigu
 
 /**
  * Activity figure for the activity diagram
- * 
+ *
  * @author PT202707
- * 
+ *
  */
 public class ActivityFigure extends PapyrusRoundedNodeFigure {
 
@@ -49,7 +49,7 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 
 	/**
 	 * this is the layout manager in charge to place element in the enumeration
-	 * 
+	 *
 	 */
 	private class ActivityLayoutManager extends AbstractLayout {
 
@@ -62,7 +62,7 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 		 * |--------------------------------------------------| |parameter | |
 		 * |----------- | | activity content |
 		 * ----------------------------------------------------
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
@@ -70,20 +70,20 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 			int minimumWith = 0;
 			int minimumHeight = 0;
 			// take in account the content of the figure activity
-			if((getContentFigure().getChildren().size() > 0)) {
-				IFigure content = (IFigure)getContentFigure().getChildren().get(0);
+			if ((getContentFigure().getChildren().size() > 0)) {
+				IFigure content = (IFigure) getContentFigure().getChildren().get(0);
 				minimumWith = content.getPreferredSize().width + 50;
 				minimumHeight = content.getPreferredSize().height + 50;
 			}
 			// display name
-			if(getNameLabel() != null) {
-				if(getNameLabel().getPreferredSize().width > minimumWith) {
+			if (getNameLabel() != null) {
+				if (getNameLabel().getPreferredSize().width > minimumWith) {
 					minimumWith = getNameLabel().getPreferredSize().width;
 				}
 				minimumHeight += getNameLabel().getPreferredSize().height;
 			}
-			if(getHeaderSingleExecution() != null) {
-				if(getHeaderSingleExecution().getBounds().getTopRight().x > minimumWith) {
+			if (getHeaderSingleExecution() != null) {
+				if (getHeaderSingleExecution().getBounds().getTopRight().x > minimumWith) {
 					minimumWith = getHeaderSingleExecution().getBounds().getTopRight().x;
 				}
 			}
@@ -91,22 +91,23 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 		}
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void layout(IFigure container) {
 			List childrenList = container.getChildren();
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
-				bound.setSize(((IFigure)childrenList.get(i)).getPreferredSize());
-				if(i > 0) {
-					bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
+				bound.setSize(((IFigure) childrenList.get(i)).getPreferredSize());
+				if (i > 0) {
+					bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
 					bound.x = getBounds().x + GAP_X;
 				} else {
 					bound.x = getBounds().x + GAP_X;
 					bound.y = getBounds().y + GAP_Y;
 				}
-				((IFigure)childrenList.get(i)).setBounds(bound);
+				((IFigure) childrenList.get(i)).setBounds(bound);
 			}
 			// container
 			Rectangle lastRectangle = getContentFigure().getBounds();
@@ -114,7 +115,7 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 			lastRectangle.x = container.getBounds().x;
 			lastRectangle.width = getBounds().width;
 			getContentFigure().setBounds(lastRectangle);
-			if(getGMFContentContainer() != null) {
+			if (getGMFContentContainer() != null) {
 				getGMFContentContainer().setBounds(lastRectangle);
 			}
 			// place precondition
@@ -122,74 +123,79 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 			Rectangle preconditionBound = getPreconditionFigure().getBounds().getCopy();
 			preconditionBound.x = getNameLabel().getBounds().getTopRight().x + GAP_X;
 			// take in account stereotype label
-			if(getStereotypesLabel() != null) {
+			if (getStereotypesLabel() != null) {
 				int posStererotypeLabel = getStereotypesLabel().getBounds().getTopRight().x + GAP_X;
-				if(posStererotypeLabel > preconditionBound.x) {
+				if (posStererotypeLabel > preconditionBound.x) {
 					preconditionBound.x = posStererotypeLabel;
 				}
 			}
 			// take in account qualified name
-			if(getQualifiedNameLabel() != null) {
+			if (getQualifiedNameLabel() != null) {
 				int posqualifiedName = getQualifiedNameLabel().getBounds().getTopRight().x + GAP_X;
-				if(posqualifiedName > preconditionBound.x) {
+				if (posqualifiedName > preconditionBound.x) {
 					preconditionBound.x = posqualifiedName;
 				}
 			}
 			// take in account stereotype properties
-			if(stereotypePropertiesInBraceContent != null) {
+			if (stereotypePropertiesInBraceContent != null) {
 				int possterotypeInBrace = stereotypePropertiesInBraceContent.getBounds().getTopRight().x + GAP_X;
-				if(possterotypeInBrace > preconditionBound.x) {
+				if (possterotypeInBrace > preconditionBound.x) {
 					preconditionBound.x = possterotypeInBrace;
 				}
 			}
 			// take in account parameter figure
-			if(getParameterFigure() != null) {
+			if (getParameterFigure() != null) {
 				int posparameter = getParameterFigure().getBounds().getTopRight().x + GAP_X;
-				if(posparameter > preconditionBound.x) {
+				if (posparameter > preconditionBound.x) {
 					preconditionBound.x = posparameter;
 				}
 			}
 			// setY
-			preconditionBound.y = ((IFigure)container.getChildren().get(0)).getBounds().y;
+			preconditionBound.y = ((IFigure) container.getChildren().get(0)).getBounds().y;
 			getPreconditionFigure().setBounds(preconditionBound);
-			if(getPreconditionFigure().getChildren().size() > 0) {
-				((IFigure)getPreconditionFigure().getChildren().get(0)).setBounds(preconditionBound);;
+			if (getPreconditionFigure().getChildren().size() > 0) {
+				((IFigure) getPreconditionFigure().getChildren().get(0)).setBounds(preconditionBound);
+				;
 			}
 			// setPoscondtion
 			Rectangle postconditionBound = getPostconditionFigure().getBounds().getCopy();
 			postconditionBound.x = getPreconditionFigure().getBounds().x;
 			postconditionBound.y = getPreconditionFigure().getBounds().y + getPreconditionFigure().getBounds().height + GAP_Y;
 			getPostconditionFigure().setBounds(postconditionBound);
-			if(getPostconditionFigure().getChildren().size() > 0) {
-				((IFigure)getPostconditionFigure().getChildren().get(0)).setBounds(postconditionBound);;
+			if (getPostconditionFigure().getChildren().size() > 0) {
+				((IFigure) getPostconditionFigure().getChildren().get(0)).setBounds(postconditionBound);
+				;
 			}
 			// setPoscondtion
 			Rectangle singleExecutionBound = getHeaderSingleExecution().getBounds().getCopy();
-			singleExecutionBound.x = getPreconditionFigure().getBounds().x + getPreconditionFigure().getBounds().width + GAP_X;;
+			singleExecutionBound.x = getPreconditionFigure().getBounds().x + getPreconditionFigure().getBounds().width + GAP_X;
+			;
 			singleExecutionBound.y = getPreconditionFigure().getBounds().y;
 			getHeaderSingleExecution().setBounds(singleExecutionBound);
 			// replace compartment stereotype properties
-			if(getStereotypePropertiesContent() != null) {
+			if (getStereotypePropertiesContent() != null) {
 				Rectangle pscontainer = getStereotypePropertiesContent().getBounds().getCopy();
-				if(getPostconditionFigure().getBounds().y + getPostconditionFigure().getBounds().height + GAP_Y > pscontainer.y)
+				if (getPostconditionFigure().getBounds().y + getPostconditionFigure().getBounds().height + GAP_Y > pscontainer.y) {
 					pscontainer.y = getPostconditionFigure().getBounds().y + getPostconditionFigure().getBounds().height + GAP_Y;
+				}
 				getStereotypePropertiesContent().setBounds(pscontainer);
 			}
 			// place parameter
 			// replace compartment stereotype properties
-			if(getStereotypePropertiesContent() != null) {
+			if (getStereotypePropertiesContent() != null) {
 				Rectangle paramBoundcontainer = getParameterFigure().getBounds().getCopy();
 				paramBoundcontainer.y = getStereotypePropertiesContent().getBounds().getBottomLeft().y;
 				getParameterFigure().setBounds(paramBoundcontainer);
-				if(getParameterFigure().getChildren().size() > 0) {
-					((IFigure)shapeCompartment.getChildren().get(0)).setBounds(paramBoundcontainer);
+				if (getParameterFigure().getChildren().size() > 0) {
+					((IFigure) shapeCompartment.getChildren().get(0)).setBounds(paramBoundcontainer);
 				}
 			} else {
 				Rectangle paramBoundcontainer = getParameterFigure().getBounds().getCopy();
 				paramBoundcontainer.y = getNameLabel().getBounds().getBottomLeft().y;
 				getParameterFigure().setBounds(paramBoundcontainer);
-				if(getParameterFigure().getChildren().size() > 0) {
-					((IFigure)shapeCompartment.getChildren().get(0)).setBounds(paramBoundcontainer);;
+				if (getParameterFigure().getChildren().size() > 0) {
+					((IFigure) shapeCompartment.getChildren().get(0)).setBounds(paramBoundcontainer);
+					;
 				}
 			}
 		}
@@ -288,12 +294,12 @@ public class ActivityFigure extends PapyrusRoundedNodeFigure {
 
 	/**
 	 * get the gmf container figure of the package
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFContentContainer() {
-		if(shapeCompartment.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure)shapeCompartment.getChildren().get(0);
+		if (shapeCompartment.getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) shapeCompartment.getChildren().get(0);
 		}
 		return null;
 	}

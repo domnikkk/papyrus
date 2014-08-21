@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -16,7 +16,7 @@ package org.eclipse.papyrus.infra.nattable.paste;
 import org.eclipse.papyrus.infra.nattable.messages.Messages;
 
 /**
- * 
+ *
  * Enumeration for text delimiters
  *
  */
@@ -26,12 +26,12 @@ public enum TextDelimiter {
 	 * the single quote
 	 */
 	SINGLE_QUOTE('\'', Messages.TextDelimiter_Quote),
-		
+
 	/**
 	 * the double quote
 	 */
 	DOUBLE_QUOTE('"', Messages.TextDelimiter_DoubleQuote);
-	
+
 	/**
 	 * the delimiter itself
 	 */
@@ -43,7 +43,7 @@ public enum TextDelimiter {
 	private final String name;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param delimiter
@@ -55,7 +55,7 @@ public enum TextDelimiter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the separator to use
 	 */
@@ -64,7 +64,7 @@ public enum TextDelimiter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the name of the separator
 	 */

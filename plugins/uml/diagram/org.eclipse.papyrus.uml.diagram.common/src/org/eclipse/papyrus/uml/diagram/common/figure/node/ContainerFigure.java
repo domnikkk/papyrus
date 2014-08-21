@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
 
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.swt.graphics.Color;
 
@@ -22,12 +23,12 @@ import org.eclipse.swt.graphics.Color;
 public class ContainerFigure extends NodeNamedElementFigure {
 
 	/**
-	 * 
+	 *
 	 */
 	protected ContainerBorder border;
 
 	/**
-	 * 
+	 *
 	 */
 	// @unused
 	public ContainerFigure() {
@@ -38,7 +39,7 @@ public class ContainerFigure extends NodeNamedElementFigure {
 		// element
 		// vertically
 		layout.setStretchMinorAxis(true);
-		layout.setMinorAlignment(ToolbarLayout.ALIGN_TOPLEFT);
+		layout.setMinorAlignment(OrderedLayout.ALIGN_TOPLEFT);
 		int spacing = 0;
 		layout.setSpacing(spacing);
 		setLayoutManager(layout);
@@ -49,8 +50,8 @@ public class ContainerFigure extends NodeNamedElementFigure {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param backgroundColor
 	 */
 	@Override

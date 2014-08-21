@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,11 +20,11 @@ import org.eclipse.papyrus.infra.widgets.providers.AbstractTreeFilter;
 /**
  * A class to retain all elements that are instance of the
  * given metaclass.
- * 
+ *
  * The parent elements of retained elements are also retained.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class MetaclassViewerFilter extends AbstractTreeFilter {
 
@@ -37,20 +37,20 @@ public class MetaclassViewerFilter extends AbstractTreeFilter {
 	@Override
 	public boolean isVisible(Viewer viewer, Object parentElement, Object element) {
 
-		if(metaclass == null || !(metaclass instanceof EClass)) {
+		if (metaclass == null || !(metaclass instanceof EClass)) {
 			return false;
 		}
 
-		EClass eClass = (EClass)metaclass;
+		EClass eClass = (EClass) metaclass;
 
-		if(element instanceof IAdaptable) {
-			EObject eObject = (EObject)((IAdaptable)element).getAdapter(EObject.class);
-			if(eObject != null) {
+		if (element instanceof IAdaptable) {
+			EObject eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
+			if (eObject != null) {
 				element = eObject;
 			}
 		}
 
-		if(element instanceof EObject) {
+		if (element instanceof EObject) {
 			return eClass.isInstance(element);
 		}
 

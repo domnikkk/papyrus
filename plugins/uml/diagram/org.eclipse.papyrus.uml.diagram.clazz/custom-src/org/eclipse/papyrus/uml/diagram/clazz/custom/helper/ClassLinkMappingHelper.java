@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - 
+ *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com -
  *  	refactor common behavior between diagrams, define only specific behavior
  *
  *****************************************************************************/
@@ -46,7 +46,7 @@ public class ClassLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of ClassLinkMappingHelper.
-	 * 
+	 *
 	 * @return single instance of ClassLinkMappingHelper
 	 */
 	public static ClassLinkMappingHelper getInstance() {
@@ -63,35 +63,42 @@ public class ClassLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getSource(Element link) {
 		return LinkMappingHelper.getSource(link, new CommonSourceUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseAssociationClass(org.eclipse.uml2.uml.AssociationClass object) {
 				return object.getEndTypes();
 			};
 
+			@Override
 			public java.util.Collection<?> caseElementImport(org.eclipse.uml2.uml.ElementImport object) {
 				List<Namespace> result = new ArrayList<Namespace>();
 				result.add(object.getImportingNamespace());
 				return result;
 			};
 
+			@Override
 			public java.util.Collection<?> caseGeneralizationSet(org.eclipse.uml2.uml.GeneralizationSet object) {
 				return object.getGeneralizations();
 			};
 
+			@Override
 			public java.util.Collection<?> caseInterfaceRealization(org.eclipse.uml2.uml.InterfaceRealization object) {
 				List<BehavioredClassifier> result = new ArrayList<BehavioredClassifier>();
 				result.add(object.getImplementingClassifier());
 				return result;
 			};
 
+			@Override
 			public java.util.Collection<?> caseProfileApplication(org.eclipse.uml2.uml.ProfileApplication object) {
 				List<org.eclipse.uml2.uml.Package> result = new ArrayList<org.eclipse.uml2.uml.Package>();
 				result.add(object.getApplyingPackage());
 				return result;
 			};
 
+			@Override
 			public java.util.Collection<?> caseTemplateBinding(org.eclipse.uml2.uml.TemplateBinding object) {
 				List<org.eclipse.uml2.uml.TemplateableElement> result = new ArrayList<org.eclipse.uml2.uml.TemplateableElement>();
 				result.add(object.getBoundElement());
@@ -103,35 +110,42 @@ public class ClassLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getTarget(Element link) {
 		return LinkMappingHelper.getTarget(link, new CommonTargetUMLSwitch() {
 
+			@Override
 			public java.util.Collection<org.eclipse.uml2.uml.Type> caseAssociationClass(org.eclipse.uml2.uml.AssociationClass object) {
 				return object.getEndTypes();
 			};
 
+			@Override
 			public java.util.Collection<PackageableElement> caseElementImport(org.eclipse.uml2.uml.ElementImport object) {
 				List<org.eclipse.uml2.uml.PackageableElement> result = new ArrayList<org.eclipse.uml2.uml.PackageableElement>();
 				result.add(object.getImportedElement());
 				return result;
 			};
 
+			@Override
 			public java.util.Collection<Generalization> caseGeneralizationSet(org.eclipse.uml2.uml.GeneralizationSet object) {
 				return object.getGeneralizations();
 			};
 
+			@Override
 			public java.util.Collection<Interface> caseInterfaceRealization(org.eclipse.uml2.uml.InterfaceRealization object) {
 				List<org.eclipse.uml2.uml.Interface> result = new ArrayList<org.eclipse.uml2.uml.Interface>();
 				result.add(object.getContract());
 				return result;
 			};
 
+			@Override
 			public java.util.Collection<Profile> caseProfileApplication(org.eclipse.uml2.uml.ProfileApplication object) {
 				List<org.eclipse.uml2.uml.Profile> result = new ArrayList<org.eclipse.uml2.uml.Profile>();
 				result.add(object.getAppliedProfile());
 				return result;
 			};
 
+			@Override
 			public java.util.Collection<Element> caseTemplateBinding(org.eclipse.uml2.uml.TemplateBinding object) {
 				List<org.eclipse.uml2.uml.Element> result = new ArrayList<org.eclipse.uml2.uml.Element>();
 				result.add(object.getSignature().getOwner());

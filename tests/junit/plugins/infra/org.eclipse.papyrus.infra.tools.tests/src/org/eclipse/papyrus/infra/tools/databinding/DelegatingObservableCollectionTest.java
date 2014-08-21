@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -196,7 +196,7 @@ public abstract class DelegatingObservableCollectionTest<T extends IObservableCo
 	 */
 	@Test
 	public void testGetElementType() {
-		assertThat(fixture.getElementType(), is((Object)getDelegateElementType()));
+		assertThat(fixture.getElementType(), is((Object) getDelegateElementType()));
 
 		// Edge case
 		delegator().setDelegate(null);
@@ -204,6 +204,7 @@ public abstract class DelegatingObservableCollectionTest<T extends IObservableCo
 	}
 
 	// This is a tracked getter for collections
+	@Override
 	@TrackedGetterTest
 	@Test
 	public void testEquals() {
@@ -211,6 +212,7 @@ public abstract class DelegatingObservableCollectionTest<T extends IObservableCo
 	}
 
 	// This is a tracked getter for collections
+	@Override
 	@TrackedGetterTest
 	@Test
 	public void testHashCode() {
@@ -224,7 +226,7 @@ public abstract class DelegatingObservableCollectionTest<T extends IObservableCo
 	protected abstract Class<?> getDelegateElementType();
 
 	Object[] newArray() {
-		return (Object[])Array.newInstance(getDelegateElementType(), 0);
+		return (Object[]) Array.newInstance(getDelegateElementType(), 0);
 	}
 
 	Object aValueToAdd() {
@@ -263,7 +265,7 @@ public abstract class DelegatingObservableCollectionTest<T extends IObservableCo
 
 	@SuppressWarnings("unchecked")
 	<E> Collection<E> delegateCollection() {
-		return (Collection<E>)delegate;
+		return delegate;
 	}
 
 	Iterator<?> iterator(IObservableCollection c) {
@@ -280,7 +282,7 @@ public abstract class DelegatingObservableCollectionTest<T extends IObservableCo
 
 			@Override
 			public boolean matches(Object item) {
-				return (item instanceof Object[]) && Arrays.equals((Object[])item, array);
+				return (item instanceof Object[]) && Arrays.equals((Object[]) item, array);
 			}
 		};
 	}

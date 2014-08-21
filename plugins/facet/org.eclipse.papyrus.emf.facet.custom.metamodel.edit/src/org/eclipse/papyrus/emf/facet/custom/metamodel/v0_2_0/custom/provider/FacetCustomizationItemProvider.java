@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.provider;
 
@@ -27,7 +27,6 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.provider.FacetItemProvider;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.CustomPackage;
 import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization;
@@ -36,11 +35,12 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomi
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FacetCustomizationItemProvider
-	extends FacetItemProvider
-	implements
+		extends FacetItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -50,6 +50,7 @@ public class FacetCustomizationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FacetCustomizationItemProvider(AdapterFactory adapterFactory) {
@@ -60,6 +61,7 @@ public class FacetCustomizationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,28 +78,30 @@ public class FacetCustomizationItemProvider
 	 * This adds a property descriptor for the Customized Facet feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addCustomizedFacetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FacetCustomization_customizedFacet_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FacetCustomization_customizedFacet_feature", "_UI_FacetCustomization_type"),
-				 CustomPackage.Literals.FACET_CUSTOMIZATION__CUSTOMIZED_FACET,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FacetCustomization_customizedFacet_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FacetCustomization_customizedFacet_feature", "_UI_FacetCustomization_type"),
+						CustomPackage.Literals.FACET_CUSTOMIZATION__CUSTOMIZED_FACET,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns FacetCustomization.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -109,14 +113,15 @@ public class FacetCustomizationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FacetCustomization)object).getName();
+		String label = ((FacetCustomization) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_FacetCustomization_type") :
-			getString("_UI_FacetCustomization_type") + " " + label;
+				getString("_UI_FacetCustomization_type") :
+				getString("_UI_FacetCustomization_type") + " " + label;
 	}
 
 	/**
@@ -124,6 +129,7 @@ public class FacetCustomizationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,6 +143,7 @@ public class FacetCustomizationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -148,6 +155,7 @@ public class FacetCustomizationItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

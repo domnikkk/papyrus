@@ -37,43 +37,43 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	private CustomStyle customStyle;
 
 	protected CSSShapeStyle getShapeStyle() {
-		if(shapeStyle == null) {
+		if (shapeStyle == null) {
 			shapeStyle = new CSSShapeStyleDelegate(this, getEngine());
 		}
 		return shapeStyle;
 	}
 
 	protected CustomStyle getCustomStyle() {
-		if(customStyle == null) {
+		if (customStyle == null) {
 			customStyle = new CSSCustomStyleDelegate(this, getEngine());
 		}
 		return customStyle;
 	}
 
 	protected CSSView getCSSView() {
-		if(cssView == null) {
+		if (cssView == null) {
 			cssView = new CSSViewDelegate(this, getEngine());
 		}
 		return cssView;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
 	@Override
 	public int getCSSFontColor() {
 		int value = super.getFontColor();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_FontColor(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_FontColor(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSFontColor();
@@ -84,7 +84,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public java.lang.String getCSSFontName() {
 		java.lang.String value = super.getFontName();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_FontName(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_FontName(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSFontName();
@@ -95,7 +95,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public int getCSSFontHeight() {
 		int value = super.getFontHeight();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_FontHeight(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_FontHeight(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSFontHeight();
@@ -106,7 +106,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public boolean isCSSBold() {
 		boolean value = super.isBold();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_Bold(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_Bold(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().isCSSBold();
@@ -117,7 +117,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public boolean isCSSItalic() {
 		boolean value = super.isItalic();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_Italic(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_Italic(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().isCSSItalic();
@@ -128,7 +128,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public boolean isCSSUnderline() {
 		boolean value = super.isUnderline();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_Underline(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_Underline(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().isCSSUnderline();
@@ -139,7 +139,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public boolean isCSSStrikeThrough() {
 		boolean value = super.isStrikeThrough();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_StrikeThrough(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFontStyle_StrikeThrough(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().isCSSStrikeThrough();
@@ -150,7 +150,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public boolean isCSSVisible() {
 		boolean value = super.isVisible();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getView_Visible(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getView_Visible(), value)) {
 			return value;
 		} else {
 			return getCSSView().isCSSVisible();
@@ -161,7 +161,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public java.lang.String getCSSDescription() {
 		java.lang.String value = super.getDescription();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getDescriptionStyle_Description(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getDescriptionStyle_Description(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSDescription();
@@ -172,7 +172,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public int getCSSFillColor() {
 		int value = super.getFillColor();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFillStyle_FillColor(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFillStyle_FillColor(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSFillColor();
@@ -183,7 +183,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public int getCSSTransparency() {
 		int value = super.getTransparency();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFillStyle_Transparency(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFillStyle_Transparency(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSTransparency();
@@ -194,7 +194,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public org.eclipse.gmf.runtime.notation.datatype.GradientData getCSSGradient() {
 		org.eclipse.gmf.runtime.notation.datatype.GradientData value = super.getGradient();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFillStyle_Gradient(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getFillStyle_Gradient(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSGradient();
@@ -205,7 +205,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public int getCSSLineColor() {
 		int value = super.getLineColor();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getLineStyle_LineColor(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getLineStyle_LineColor(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSLineColor();
@@ -216,7 +216,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public int getCSSLineWidth() {
 		int value = super.getLineWidth();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getLineStyle_LineWidth(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getLineStyle_LineWidth(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSLineWidth();
@@ -227,7 +227,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	public int getCSSRoundedBendpointsRadius() {
 		int value = super.getRoundedBendpointsRadius();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius(), value)) {
 			return value;
 		} else {
 			return getShapeStyle().getCSSRoundedBendpointsRadius();
@@ -237,97 +237,97 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 
 	@Override
 	public int getFontColor() {
-		//return super.getFontColor();
+		// return super.getFontColor();
 		return getCSSFontColor();
 	}
 
 	@Override
 	public java.lang.String getFontName() {
-		//return super.getFontName();
+		// return super.getFontName();
 		return getCSSFontName();
 	}
 
 	@Override
 	public int getFontHeight() {
-		//return super.getFontHeight();
+		// return super.getFontHeight();
 		return getCSSFontHeight();
 	}
 
 	@Override
 	public boolean isBold() {
-		//return super.isBold();
+		// return super.isBold();
 		return isCSSBold();
 	}
 
 	@Override
 	public boolean isItalic() {
-		//return super.isItalic();
+		// return super.isItalic();
 		return isCSSItalic();
 	}
 
 	@Override
 	public boolean isUnderline() {
-		//return super.isUnderline();
+		// return super.isUnderline();
 		return isCSSUnderline();
 	}
 
 	@Override
 	public boolean isStrikeThrough() {
-		//return super.isStrikeThrough();
+		// return super.isStrikeThrough();
 		return isCSSStrikeThrough();
 	}
 
 	@Override
 	public java.lang.String getDescription() {
-		//return super.getDescription();
+		// return super.getDescription();
 		return getCSSDescription();
 	}
 
 	@Override
 	public int getFillColor() {
-		//return super.getFillColor();
+		// return super.getFillColor();
 		return getCSSFillColor();
 	}
 
 	@Override
 	public int getTransparency() {
-		//return super.getTransparency();
+		// return super.getTransparency();
 		return getCSSTransparency();
 	}
 
 	@Override
 	public org.eclipse.gmf.runtime.notation.datatype.GradientData getGradient() {
-		//return super.getGradient();
+		// return super.getGradient();
 		return getCSSGradient();
 	}
 
 	@Override
 	public int getLineColor() {
-		//return super.getLineColor();
+		// return super.getLineColor();
 		return getCSSLineColor();
 	}
 
 	@Override
 	public int getLineWidth() {
-		//return super.getLineWidth();
+		// return super.getLineWidth();
 		return getCSSLineWidth();
 	}
 
 	@Override
 	public int getRoundedBendpointsRadius() {
-		//return super.getRoundedBendpointsRadius();
+		// return super.getRoundedBendpointsRadius();
 		return getCSSRoundedBendpointsRadius();
 	}
 
 	@Override
 	public boolean isVisible() {
-		//return super.isVisible();
+		// return super.isVisible();
 		return isCSSVisible();
 	}
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setVisible(boolean value) {
@@ -465,23 +465,23 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		ForceValueHelper.setValue(this, feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {
 		super.eUnset(featureId);
 
 		EStructuralFeature feature = eClass().getEStructuralFeature(featureId);
-		if(feature != null) {
+		if (feature != null) {
 			ForceValueHelper.unsetValue(this, feature);
 		}
 	}
 
-	///////////////////////////////////
-	//	Implements the custom styles //
-	///////////////////////////////////
+	// /////////////////////////////////
+	// Implements the custom styles //
+	// /////////////////////////////////
 
 	@Override
 	public boolean showElementIcon() {
@@ -498,9 +498,9 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 		return getCustomStyle().showShadow();
 	}
 
-	//////////////////////////////////
-	//	Implements the getNamedStyle //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the getNamedStyle //
+	// ////////////////////////////////
 
 	@Override
 	public NamedStyle getNamedStyle(EClass eClass, String name) {
@@ -510,7 +510,7 @@ public class CSSShapeImpl extends ShapeImpl implements CSSShapeStyle, CustomStyl
 	@Override
 	public NamedStyle getCSSNamedStyle(EClass eClass, String name) {
 		NamedStyle userStyle = super.getNamedStyle(eClass, name);
-		if(userStyle != null) {
+		if (userStyle != null) {
 			return userStyle;
 		}
 

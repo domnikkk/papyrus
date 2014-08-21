@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 
 /**
  * Edit Helper advice to add Table duplication when duplicating
- * 
+ *
  * Duplicated and Adapted code from GMFDiagramDuplicatedEditHelperAdvice
  */
 public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice {
@@ -63,13 +63,13 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 	protected ICommand getBeforeDuplicateCommand(DuplicateElementsRequest request) {
 		Object additional = request.getParameter(IPapyrusDuplicateCommandConstants.ADDITIONAL_DUPLICATED_ELEMENTS);
 		// additional element should be a set of elements that will be duplicated. If this is null, the request will be ignored.
-		if(!(additional instanceof Set<?>)) {
+		if (!(additional instanceof Set<?>)) {
 			return super.getBeforeDuplicateCommand(request);
 		}
 
-		Set<Object> duplicatedObjects = ((Set<Object>)additional);
+		Set<Object> duplicatedObjects = ((Set<Object>) additional);
 		EObject object = getDuplicatedEObject(request);
-		if(object == null || object.eResource()==null) {
+		if (object == null || object.eResource() == null) {
 			return super.getBeforeDuplicateCommand(request);
 		}
 
@@ -78,46 +78,46 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 
 		ResourceSet resourceSet = object.eResource().getResourceSet();
 		ECrossReferenceAdapter adapter = ECrossReferenceAdapter.getCrossReferenceAdapter(resourceSet);
-		if(adapter == null) {
+		if (adapter == null) {
 			adapter = new ECrossReferenceAdapter();
 			resourceSet.eAdapters().add(adapter);
 		}
 
 		// do not proceed for graphical elements, which will have evident relationships to Diagrams (owner, etc.)
-		//not required for Table
-		//		if(object instanceof View) {
-		//			return super.getBeforeDuplicateCommand(request);
-		//		}
+		// not required for Table
+		// if(object instanceof View) {
+		// return super.getBeforeDuplicateCommand(request);
+		// }
 
 		// check for the element itself
 		Collection<Setting> settings = adapter.getInverseReferences(object, false);
-		for(Setting setting : settings) {
+		for (Setting setting : settings) {
 			EObject value = setting.getEObject();
-			if(value instanceof Table) {
-				tablesToDuplicate.add((Table)value);
+			if (value instanceof Table) {
+				tablesToDuplicate.add((Table) value);
 			}
 		}
 
 		// check for sub-elements
-		for(Iterator<EObject> it = object.eAllContents(); it.hasNext();) {
+		for (Iterator<EObject> it = object.eAllContents(); it.hasNext();) {
 			EObject child = it.next();
 			settings = adapter.getInverseReferences(child, false);
 
-			for(Setting setting : settings) {
+			for (Setting setting : settings) {
 				EObject value = setting.getEObject();
-				if(value instanceof Table) {
-					tablesToDuplicate.add((Table)value);
+				if (value instanceof Table) {
+					tablesToDuplicate.add((Table) value);
 				}
 			}
 		}
 
 
-		if(!tablesToDuplicate.isEmpty()) {
+		if (!tablesToDuplicate.isEmpty()) {
 			CompositeCommand command = null;
 			// create the command for all the Tables that have no command ready
-			for(Table TableToDuplicate : tablesToDuplicate) {
-				if(!duplicatedObjects.contains(TableToDuplicate)) {
-					if(command == null) {
+			for (Table TableToDuplicate : tablesToDuplicate) {
+				if (!duplicatedObjects.contains(TableToDuplicate)) {
+					if (command == null) {
 						command = new CompositeCommand("", Arrays.asList(new DuplicateTableCommand(request.getEditingDomain(), "Duplicate Table", TableToDuplicate, request.getAllDuplicatedElementsMap()))); //$NON-NLS-1$ //$NON-NLS-2$
 					} else {
 						command.add(new DuplicateTableCommand(request.getEditingDomain(), "Duplicate Table", TableToDuplicate, request.getAllDuplicatedElementsMap())); //$NON-NLS-1$
@@ -126,8 +126,8 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 				}
 			}
 
-			if(command != null) {
-				if(super.getBeforeDuplicateCommand(request) != null) {
+			if (command != null) {
+				if (super.getBeforeDuplicateCommand(request) != null) {
 					command.add(super.getBeforeDuplicateCommand(request));
 					return command.reduce();
 				} else {
@@ -142,17 +142,17 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 
 	/**
 	 * Returns the EObject to be duplicated
-	 * 
+	 *
 	 * @return the EObject to be duplicated
 	 */
 	protected EObject getDuplicatedEObject(DuplicateElementsRequest request) {
 		List<Object> elementsToBeDuplicated = request.getElementsToBeDuplicated();
-		if(elementsToBeDuplicated == null || elementsToBeDuplicated.isEmpty()) {
+		if (elementsToBeDuplicated == null || elementsToBeDuplicated.isEmpty()) {
 			return null;
 		}
 		Object elementToBeDuplicated = elementsToBeDuplicated.get(0);
-		if(elementToBeDuplicated instanceof EObject) {
-			return ((EObject)elementToBeDuplicated);
+		if (elementToBeDuplicated instanceof EObject) {
+			return ((EObject) elementToBeDuplicated);
 		}
 		return null;
 	}
@@ -168,13 +168,13 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 		/**
 		 * Constructs a new duplicate EObjects command with the specified label and
 		 * list of EObjects.
-		 * 
+		 *
 		 * @param editingDomain
-		 *        the editing domain through which model changes are made
+		 *            the editing domain through which model changes are made
 		 * @param label
-		 *        The label for the new command.
+		 *            The label for the new command.
 		 * @param Table
-		 *        <code>Table</code> to be duplicated.
+		 *            <code>Table</code> to be duplicated.
 		 */
 		public DuplicateTableCommand(TransactionalEditingDomain editingDomain, String label, Table Table) {
 			super(editingDomain, label, Collections.singletonList(Table));
@@ -184,15 +184,15 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 		/**
 		 * Constructs a new duplicate EObjects command with the specified label and
 		 * list of EObjects.
-		 * 
+		 *
 		 * @param editingDomain
-		 *        the editing domain through which model changes are made
+		 *            the editing domain through which model changes are made
 		 * @param label
-		 *        The label for the new command.
+		 *            The label for the new command.
 		 * @param Table
-		 *        <code>Table</code> to be duplicated.
+		 *            <code>Table</code> to be duplicated.
 		 * @param allDuplicatedObjectsMap
-		 *        An empty map to be populated with the duplicated objects.
+		 *            An empty map to be populated with the duplicated objects.
 		 */
 		public DuplicateTableCommand(TransactionalEditingDomain editingDomain, String label, Table Table, Map allDuplicatedObjectsMap) {
 			super(editingDomain, label, Collections.singletonList(Table), allDuplicatedObjectsMap);
@@ -204,15 +204,15 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 		 * list of EObjects. Also sets the list of affected files to be the files,
 		 * where the targetContainer is stored. Target container specifies the
 		 * eObject into which the duplicated eObjects will be added.
-		 * 
+		 *
 		 * @param editingDomain
-		 *        the editing domain through which model changes are made
+		 *            the editing domain through which model changes are made
 		 * @param label
-		 *        The label for the new command.
+		 *            The label for the new command.
 		 * @param Table
-		 *        <code>Table</code> to be duplicated.
+		 *            <code>Table</code> to be duplicated.
 		 * @param allDuplicatedObjectsMap
-		 *        An empty map to be populated with the duplicated objects.
+		 *            An empty map to be populated with the duplicated objects.
 		 */
 		public DuplicateTableCommand(TransactionalEditingDomain editingDomain, String label, Table Table, Map allDuplicatedObjectsMap, EObject targetContainer) {
 			super(editingDomain, label, Collections.singletonList(Table), allDuplicatedObjectsMap, targetContainer);
@@ -233,13 +233,13 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 			copier.copyReferences();
 
 			EObject duplicateTable = copier.get(TableToDuplicate);
-			Resource targetResource = getNotationResourceForTable(((Table)duplicateTable).getContext(), getEditingDomain());
-			Resource diTargetResource = getDiResourceForTable(((Table)duplicateTable).getContext(), getEditingDomain());
+			Resource targetResource = getNotationResourceForTable(((Table) duplicateTable).getContext(), getEditingDomain());
+			Resource diTargetResource = getDiResourceForTable(((Table) duplicateTable).getContext(), getEditingDomain());
 
-			if(targetResource != null) {
+			if (targetResource != null) {
 				targetResource.getContents().add(duplicateTable);
 
-				if(diTargetResource != null) {
+				if (diTargetResource != null) {
 					try {
 						IPageManager pageManager = ServiceUtilsForResource.getInstance().getIPageManager(diTargetResource);
 						pageManager.addPage(duplicateTable);
@@ -252,10 +252,10 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 			} else {
 				Activator.log.warn("It was not possible to find the Resource with the target EObject"); //$NON-NLS-1$
 				targetResource = TableToDuplicate.eResource();
-				if(targetResource != null) {
+				if (targetResource != null) {
 					Activator.log.error("It was not possible to find the Resource with the source Table", null); //$NON-NLS-1$
 					targetResource.getContents().add(duplicateTable);
-					if(diTargetResource != null) {
+					if (diTargetResource != null) {
 						try {
 							IPageManager pageManager = ServiceUtilsForResource.getInstance().getIPageManager(diTargetResource);
 							pageManager.addPage(duplicateTable);
@@ -279,70 +279,74 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 
 	/**
 	 * Returns the notation resource where to add the new Table
-	 * 
+	 *
 	 * @param eObject
-	 *        the semantic object linked to the Table or the Table itself.
+	 *            the semantic object linked to the Table or the Table itself.
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @return the resource where the Table should be added or <code>null</code> if no resource was found
 	 *         TODO this method should be handled by the resource plugin.
 	 */
 	public Resource getNotationResourceForTable(EObject eObject, TransactionalEditingDomain domain) {
 		Object object = BusinessModelResolver.getInstance().getBusinessModel(eObject);
 		EObject semanticObject;
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			semanticObject = eObject;
 		} else {
-			semanticObject = (EObject)object;
+			semanticObject = (EObject) object;
 		}
 
 		Resource containerResource = semanticObject.eResource();
-		if(containerResource == null) {
+		if (containerResource == null) {
 			return null;
 		}
 		// retrieve the model set from the container resource
 		ResourceSet resourceSet = containerResource.getResourceSet();
 
-		if(resourceSet instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)resourceSet;
+		if (resourceSet instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) resourceSet;
 			Resource destinationResource = modelSet.getAssociatedResource(semanticObject, PapyrusNattableModel.TABLE_MODEL_FILE_EXTENSION, true);
 			return destinationResource;
-		} else
+		}
+		else {
 			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
+		}
 	}
 
 
 	/**
 	 * Returns the di resource where to add the new Table
-	 * 
+	 *
 	 * @param eObject
-	 *        the semantic object linked to the Table or the Table itself.
+	 *            the semantic object linked to the Table or the Table itself.
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @return the resource where the Table should be added or <code>null</code> if no resource was found
 	 */
 	public Resource getDiResourceForTable(EObject eObject, TransactionalEditingDomain domain) {
 		Object object = BusinessModelResolver.getInstance().getBusinessModel(eObject);
 		EObject semanticObject;
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			semanticObject = eObject;
 		} else {
-			semanticObject = (EObject)object;
+			semanticObject = (EObject) object;
 		}
 
 		Resource containerResource = semanticObject.eResource();
-		if(containerResource == null) {
+		if (containerResource == null) {
 			return null;
 		}
 		// retrieve the model set from the container resource
 		ResourceSet resourceSet = containerResource.getResourceSet();
 
-		if(resourceSet instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)resourceSet;
+		if (resourceSet instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) resourceSet;
 			Resource destinationResource = modelSet.getAssociatedResource(semanticObject, DiModel.DI_FILE_EXTENSION, true);
 			return destinationResource;
-		} else
+		}
+		else {
 			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
+		}
 	}
 
 	/**
@@ -358,9 +362,9 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 
 		/**
 		 * Creates a new {@link TableCopier}
-		 * 
+		 *
 		 * @param semanticObjects
-		 *        list of semantic objects already copied, to which new views should be related.
+		 *            list of semantic objects already copied, to which new views should be related.
 		 */
 		public TableCopier(Map<EObject, EObject> semanticObjects) {
 			this.semanticObjects = semanticObjects;
@@ -368,13 +372,13 @@ public class NatTableDuplicateEditHelperAdvice extends AbstractEditHelperAdvice 
 
 		/**
 		 * Overrides the get to look in the map of duplicated semantic objects in case the element was not found in this map
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
 		public EObject get(Object arg0) {
 			EObject object = super.get(arg0);
-			if(object == null) {
+			if (object == null) {
 				object = semanticObjects.get(arg0);
 			}
 			return object;

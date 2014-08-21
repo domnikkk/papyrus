@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -59,7 +59,7 @@ public class ConstraintBlockEditPart extends AbstractElementEditPart {
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -80,20 +80,20 @@ public class ConstraintBlockEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ConstraintBlockLabelNameEditPart) {
-			((ConstraintBlockLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof ConstraintBlockLabelNameEditPart) {
+			((ConstraintBlockLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
-		if(childEditPart instanceof ParameterCompartmentEditPart) {
+		if (childEditPart instanceof ParameterCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getParameterCompartmentFigure();
 			setupContentPane(pane);
-			pane.add(((ParameterCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((ParameterCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if(childEditPart instanceof BlockConstraintCompartmentEditPart) {
+		if (childEditPart instanceof BlockConstraintCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getBlockConstraintCompartmentFigure();
 			setupContentPane(pane);
-			pane.add(((BlockConstraintCompartmentEditPart)childEditPart).getFigure());
+			pane.add(((BlockConstraintCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -101,19 +101,19 @@ public class ConstraintBlockEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ConstraintBlockLabelNameEditPart) {
+		if (childEditPart instanceof ConstraintBlockLabelNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof ParameterCompartmentEditPart) {
+		if (childEditPart instanceof ParameterCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getParameterCompartmentFigure();
 			setupContentPane(pane);
-			pane.remove(((ParameterCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((ParameterCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
-		if(childEditPart instanceof BlockConstraintCompartmentEditPart) {
+		if (childEditPart instanceof BlockConstraintCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getBlockConstraintCompartmentFigure();
 			setupContentPane(pane);
-			pane.remove(((BlockConstraintCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((BlockConstraintCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -121,25 +121,25 @@ public class ConstraintBlockEditPart extends AbstractElementEditPart {
 
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof ParameterCompartmentEditPart) {
+		if (editPart instanceof ParameterCompartmentEditPart) {
 			return getPrimaryShape().getParameterCompartmentFigure();
 		}
-		if(editPart instanceof BlockConstraintCompartmentEditPart) {
+		if (editPart instanceof BlockConstraintCompartmentEditPart) {
 			return getPrimaryShape().getBlockConstraintCompartmentFigure();
 		}
 		return getContentPane();
 	}
 
-	//	public EditPart getTargetEditPart(Request request) {
-	//		if(request instanceof CreateViewAndElementRequest) {
-	//			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
-	//			IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
-	//			if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
-	//				return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
-	//			}
-	//		}
-	//		return super.getTargetEditPart(request);
-	//	}
+	// public EditPart getTargetEditPart(Request request) {
+	// if(request instanceof CreateViewAndElementRequest) {
+	// CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest)request).getViewAndElementDescriptor().getCreateElementRequestAdapter();
+	// IElementType type = (IElementType)adapter.getAdapter(IElementType.class);
+	// if(type == CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_CLN) {
+	// return getChildBySemanticHint(CustomBlockDefinitionDiagramElementTypes.BLOCK_CONSTRAINT_COMPARTMENT_HINT);
+	// }
+	// }
+	// return super.getTargetEditPart(request);
+	// }
 	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new ConstraintBlockFigure();
@@ -147,7 +147,7 @@ public class ConstraintBlockEditPart extends AbstractElementEditPart {
 
 	@Override
 	public ConstraintBlockFigure getPrimaryShape() {
-		return (ConstraintBlockFigure)primaryShape;
+		return (ConstraintBlockFigure) primaryShape;
 	}
 
 	@Override

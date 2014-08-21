@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ package org.eclipse.papyrus.uml.tools.utils;
 public class PrimitivesTypesUtils {
 
 	private PrimitivesTypesUtils() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/** the string used for the uml boolean */
@@ -30,7 +30,7 @@ public class PrimitivesTypesUtils {
 	public static final String UML_REAL = "Real"; //$NON-NLS-1$
 
 	/** the string used for UML string */
-	public static final String UML_STRING = "String"; //$NON-NLS-1$ 
+	public static final String UML_STRING = "String"; //$NON-NLS-1$
 
 	/** the string used for uml unlimited natural */
 	public static final String UML_UNLIMITED_NATURAL = "UnlimitedNatural"; //$NON-NLS-1$

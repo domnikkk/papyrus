@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,11 +42,11 @@ public class DelegatingObservableSet extends DelegatingObservableCollection<IObs
 
 	public static IObservableSet wrap(IObservableSet observable) {
 		IObservableSet result;
-		
-		if(observable instanceof IDelegatingObservable) {
-			// Already have a delegator.  Just create another like it
+
+		if (observable instanceof IDelegatingObservable) {
+			// Already have a delegator. Just create another like it
 			try {
-				result = (IObservableSet)observable.getClass().getDeclaredConstructor(IObservableSet.class).newInstance(observable);
+				result = observable.getClass().getDeclaredConstructor(IObservableSet.class).newInstance(observable);
 			} catch (Exception e) {
 				// Seems unlikely as I must have created the observable in the first place
 				throw new IllegalArgumentException("observable is an invalid implementation of IDelegatingObservable", e); //$NON-NLS-1$
@@ -54,7 +54,7 @@ public class DelegatingObservableSet extends DelegatingObservableCollection<IObs
 		} else {
 			result = DelegatingInvocationHandler.wrap(new DelegatingObservableSet(observable), IObservableSet.class);
 		}
-		
+
 		return result;
 	}
 
@@ -93,7 +93,7 @@ public class DelegatingObservableSet extends DelegatingObservableCollection<IObs
 	}
 
 	private ISetChangeListener getForwardingSetChangeListener() {
-		if(forwardingSetChangeListener == null) {
+		if (forwardingSetChangeListener == null) {
 			forwardingSetChangeListener = new ISetChangeListener() {
 
 				public void handleSetChange(SetChangeEvent event) {

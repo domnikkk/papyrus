@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.sysml.sysmloveruml.codegen.generationUtils.SysMLOverU
 
 /**
  * Generator for model elements.
- * 
+ *
  * @author "Arthur Daussy <a href="mailto:arthur.daussy@atos.net">arthur.daussy@atos.net</a>"
- * 
+ *
  */
 public class SysMLOverUmlGenModelGenerator extends AbstractGeneratorAdaptor<GenModel> {
 
@@ -39,7 +39,7 @@ public class SysMLOverUmlGenModelGenerator extends AbstractGeneratorAdaptor<GenM
 
 	@Override
 	protected Diagnostic generateEdit(Object object, Monitor monitor) {
-		final GenModel genModel = (GenModel)object;
+		final GenModel genModel = (GenModel) object;
 		monitor.beginTask("", 2); //$NON-NLS-1$
 		message = GENERATOR_LABEL;
 		monitor.subTask(message);
@@ -49,8 +49,9 @@ public class SysMLOverUmlGenModelGenerator extends AbstractGeneratorAdaptor<GenM
 		 * Generate only if there at least one good template to generate
 		 */
 		final JETEmitterDescriptor[] emitters = getJETEmitterDescriptors(genModel);
-		if(emitters.length > 0) {
-			generateJava(genModel.getEditDirectory(), SysMLOverUMLHelper.getAdapterFactoryRegistryPackageName(), SysMLOverUMLHelper.getAdapterFactoryRegistryClassName(), getJETEmitter(getJETEmitterDescriptors(genModel), CHANGE_ELEMENT_ID), null, createMonitor(monitor, 1));
+		if (emitters.length > 0) {
+			generateJava(genModel.getEditDirectory(), SysMLOverUMLHelper.getAdapterFactoryRegistryPackageName(), SysMLOverUMLHelper.getAdapterFactoryRegistryClassName(), getJETEmitter(getJETEmitterDescriptors(genModel), CHANGE_ELEMENT_ID), null,
+					createMonitor(monitor, 1));
 		}
 		return Diagnostic.OK_INSTANCE;
 	}

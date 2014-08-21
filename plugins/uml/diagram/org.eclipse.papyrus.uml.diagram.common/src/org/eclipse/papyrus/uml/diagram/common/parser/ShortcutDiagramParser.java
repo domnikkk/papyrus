@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.uml.diagram.common.parser;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
@@ -33,17 +32,18 @@ import org.eclipse.papyrus.uml.diagram.common.Messages;
 
 /**
  * parser to display the name of diagram in the case of a short cut
- * 
+ *
  */
 public class ShortcutDiagramParser implements IParser {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		Diagram diagram = doAdapt(element);
-		if(diagram == null || diagram.eResource() == null) {
+		if (diagram == null || diagram.eResource() == null) {
 			return Messages.DiagramNotFound;
 		}
 
@@ -51,39 +51,42 @@ public class ShortcutDiagramParser implements IParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		Diagram diagram = doAdapt(element);
-		if(diagram == null || diagram.eResource() == null) {
+		if (diagram == null || diagram.eResource() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(diagram);
-		if(editingDomain == null) {
+		if (editingDomain == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, Messages.SetNameDiagram); //$NON-NLS-1$
+		CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, Messages.SetNameDiagram);
 		SetRequest request = new SetRequest(diagram, NotationPackage.eINSTANCE.getDiagram_Name(), newString);
 		command.compose(new SetValueCommand(request));
 		return command;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Diagram diagram = doAdapt(element);
-		if(diagram == null || diagram.eResource() == null) {
+		if (diagram == null || diagram.eResource() == null) {
 			return Messages.DiagramNotFound;
 		}
 
@@ -91,18 +94,20 @@ public class ShortcutDiagramParser implements IParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;
@@ -110,15 +115,15 @@ public class ShortcutDiagramParser implements IParser {
 
 	/**
 	 * used to obtain the diagram element.
-	 * 
+	 *
 	 * @param element
-	 *        the given IAdaptable
+	 *            the given IAdaptable
 	 * @return the diagram or null if it can't be found.
 	 */
 	protected Diagram doAdapt(IAdaptable element) {
-		Object obj =EMFHelper.getEObject(element);
-		if(obj instanceof Diagram) {
-			return (Diagram)obj;
+		Object obj = EMFHelper.getEObject(element);
+		if (obj instanceof Diagram) {
+			return (Diagram) obj;
 		}
 		return null;
 	}

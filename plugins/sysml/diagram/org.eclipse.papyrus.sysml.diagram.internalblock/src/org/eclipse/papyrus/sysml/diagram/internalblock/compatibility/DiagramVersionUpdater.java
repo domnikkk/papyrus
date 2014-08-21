@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,6 +18,7 @@ import org.eclipse.papyrus.gmf.diagram.common.compatibility.IDiagramVersionUpdat
 
 /**
  * Diagram version updater for the Internal Block Diagram.*
+ * 
  * @Deprecated
  * @link org.eclipse.papyrus.sysml.diagram.internalblock.migration.InternalBlockDiagramReconcilierUndefinedTo100
  */
@@ -25,44 +26,44 @@ import org.eclipse.papyrus.gmf.diagram.common.compatibility.IDiagramVersionUpdat
 public class DiagramVersionUpdater implements IDiagramVersionUpdater {
 
 	public static final String VERSION_0_9_1 = "0.9.1";
-	
+
 	public final static String VERSION_0_8_1 = "0.8.1";
-	
+
 	/** Constructor */
 	public DiagramVersionUpdater() {
 	}
 
 	public int update(Diagram diagram, String oldVersion, String newVersion) {
-//		TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(diagram);
-//
-//		if(DiagramVersioningUtils.UNDEFINED_VERSION.equals(oldVersion)) {
-//			if(VERSION_0_8_1.equals(newVersion)) {
-//				try {
-//					editingDomain.getCommandStack().execute(getUpdateCommandFromUndefinedTo_081(diagram));
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			} else if(VERSION_0_9_1.equals(newVersion)) {
-//				try {
-//					CompoundCommand cc = new CompoundCommand("Update Diagram");
-//					cc.append(getUpdateCommandFromUndefinedTo_081(diagram));
-//					cc.append(getUpdateCommandFrom081To_091(diagram));
-//					editingDomain.getCommandStack().execute(cc);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//			
-//		}
-//
-//		if(VERSION_0_8_1.equals(oldVersion) && (VERSION_0_9_1.equals(newVersion))) {
-//			try {
-//				editingDomain.getCommandStack().execute(getUpdateCommandFrom081To_091(diagram));
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//		
+		// TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(diagram);
+		//
+		// if(DiagramVersioningUtils.UNDEFINED_VERSION.equals(oldVersion)) {
+		// if(VERSION_0_8_1.equals(newVersion)) {
+		// try {
+		// editingDomain.getCommandStack().execute(getUpdateCommandFromUndefinedTo_081(diagram));
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// } else if(VERSION_0_9_1.equals(newVersion)) {
+		// try {
+		// CompoundCommand cc = new CompoundCommand("Update Diagram");
+		// cc.append(getUpdateCommandFromUndefinedTo_081(diagram));
+		// cc.append(getUpdateCommandFrom081To_091(diagram));
+		// editingDomain.getCommandStack().execute(cc);
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// }
+		//
+		// }
+		//
+		// if(VERSION_0_8_1.equals(oldVersion) && (VERSION_0_9_1.equals(newVersion))) {
+		// try {
+		// editingDomain.getCommandStack().execute(getUpdateCommandFrom081To_091(diagram));
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		// }
+		//
 		return 0;
 	}
 

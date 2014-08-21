@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 
 /**
  * The comparator used to sort IAxis
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class AxisComparator implements Comparator<IAxis> {
 
@@ -42,13 +42,13 @@ public class AxisComparator implements Comparator<IAxis> {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param alphabeticOrder
-	 *        indicates the direction of the sort
+	 *            indicates the direction of the sort
 	 * @param configRegistry
-	 *        the config registry used by the table
+	 *            the config registry used by the table
 	 */
 	public AxisComparator(boolean alphabticOrder, final IConfigRegistry configRegistry) {
 		this.alphabeticOrder = alphabticOrder;
@@ -57,18 +57,19 @@ public class AxisComparator implements Comparator<IAxis> {
 
 	/**
 	 * Compare 2 {@link IAxis}
-	 * 
+	 *
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param arg0
 	 * @param arg1
 	 * @return
 	 */
+	@Override
 	public int compare(IAxis arg0, IAxis arg1) {
 		final LabelProviderService serv = this.configRegistry.getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
-		final String str1 = getText(serv, arg0).replaceAll(AxisUtils.REGEX, "");//we keep only words characters (letters + numbers) + whitespace
+		final String str1 = getText(serv, arg0).replaceAll(AxisUtils.REGEX, "");// we keep only words characters (letters + numbers) + whitespace
 		final String str2 = getText(serv, arg1).replaceAll(AxisUtils.REGEX, "");
-		if(this.alphabeticOrder) {
+		if (this.alphabeticOrder) {
 			return str1.compareToIgnoreCase(str2);
 		}
 		return str2.compareToIgnoreCase(str1);
@@ -76,11 +77,11 @@ public class AxisComparator implements Comparator<IAxis> {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serv
-	 *        the label provider service
+	 *            the label provider service
 	 * @param obj
-	 *        the object for which we want the displayed text
+	 *            the object for which we want the displayed text
 	 * @return
 	 */
 	protected String getText(final LabelProviderService serv, final Object obj) {

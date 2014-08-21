@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.SequenceNodeStructure
 
 /**
  * Set in order to have Generation Gap Pattern.
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class CustomSequenceNodeStructuredActivityNodeContentCompartmentEditPart extends SequenceNodeStructuredActivityNodeContentCompartmentEditPart implements IGroupCompartmentEditPart {
 
@@ -37,7 +37,7 @@ public class CustomSequenceNodeStructuredActivityNodeContentCompartmentEditPart 
 	 */
 	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure)super.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.setTitleVisibility(false);
 		// remove the top border
 		result.setBorder(null);

@@ -25,7 +25,7 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 	/**
 	 * The drag tracker has been specialized in order to constrain movement inside its container without scroll bar
-	 * 
+	 *
 	 * @see http://wiki.eclipse.org/Papyrus_Developer_Guide/NoScrollbar
 	 */
 	@Override

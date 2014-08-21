@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,24 +46,24 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * this is the tab in charge to display the hyperlink for the property defaut
- * 
+ *
  */
 public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public DefaultHyperLinkTab() {
 		super();
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tabId
 	 * @param helper
 	 */
@@ -91,7 +91,7 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 
 
 	/**
-	 * 
+	 *
 	 * @return get the list of hyperlink that are to be as default hyperlinks
 	 */
 	public List<HyperLinkObject> getDefaultHyperLinkObject() {
@@ -99,10 +99,9 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.hyperlink.ui.AbstractHyperLinkTab#init(org.eclipse.swt.custom.CTabFolder, java.util.List,
-	 *      org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.hyperlink.ui.AbstractHyperLinkTab#init(org.eclipse.swt.custom.CTabFolder, java.util.List, org.eclipse.emf.ecore.EObject)
+	 *
 	 * @param cTabFolder
 	 * @param hyperlinkObjects
 	 * @param element
@@ -155,11 +154,11 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				//move element left to right
-				if(availableHyperLinkViewer.getSelection() != null) {
-					//normally this viewer contains only hyperlinkObject
-					if(availableHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
-						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject)((IStructuredSelection)availableHyperLinkViewer.getSelection()).getFirstElement();
+				// move element left to right
+				if (availableHyperLinkViewer.getSelection() != null) {
+					// normally this viewer contains only hyperlinkObject
+					if (availableHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
+						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject) ((IStructuredSelection) availableHyperLinkViewer.getSelection()).getFirstElement();
 						hyperlinkObjectToMove.setIsDefault(true);
 						availableHyperLinkObject.remove(hyperlinkObjectToMove);
 						defaultHyperLinkObject.add(hyperlinkObjectToMove);
@@ -182,12 +181,12 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				//move element right to left
-				if(defaultHyperLinkViewer.getSelection() != null) {
-					//normally this viewer contains only hyperlinkObject
-					if(defaultHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
+				// move element right to left
+				if (defaultHyperLinkViewer.getSelection() != null) {
+					// normally this viewer contains only hyperlinkObject
+					if (defaultHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
 
-						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject)((IStructuredSelection)defaultHyperLinkViewer.getSelection()).getFirstElement();
+						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject) ((IStructuredSelection) defaultHyperLinkViewer.getSelection()).getFirstElement();
 						hyperlinkObjectToMove.setIsDefault(false);
 						defaultHyperLinkObject.remove(hyperlinkObjectToMove);
 						availableHyperLinkObject.add(hyperlinkObjectToMove);
@@ -217,14 +216,14 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				//move element bottom to top
-				if(defaultHyperLinkViewer.getSelection() != null) {
-					//normally this viewer contains only hyperlinkObject
-					if(defaultHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
+				// move element bottom to top
+				if (defaultHyperLinkViewer.getSelection() != null) {
+					// normally this viewer contains only hyperlinkObject
+					if (defaultHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
 
-						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject)((IStructuredSelection)defaultHyperLinkViewer.getSelection()).getFirstElement();
+						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject) ((IStructuredSelection) defaultHyperLinkViewer.getSelection()).getFirstElement();
 						int index = defaultHyperLinkObject.indexOf(hyperlinkObjectToMove);
-						if(index > 0) {
+						if (index > 0) {
 							defaultHyperLinkObject.remove(hyperlinkObjectToMove);
 							defaultHyperLinkObject.add(index - 1, hyperlinkObjectToMove);
 							refresh();
@@ -248,14 +247,14 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 			}
 
 			public void mouseDown(MouseEvent e) {
-				//move element top to bottom
-				if(defaultHyperLinkViewer.getSelection() != null) {
-					//normally this viewer contains only hyperlinkObject
-					if(defaultHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
+				// move element top to bottom
+				if (defaultHyperLinkViewer.getSelection() != null) {
+					// normally this viewer contains only hyperlinkObject
+					if (defaultHyperLinkViewer.getSelection() instanceof IStructuredSelection) {
 
-						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject)((IStructuredSelection)defaultHyperLinkViewer.getSelection()).getFirstElement();
+						HyperLinkObject hyperlinkObjectToMove = (HyperLinkObject) ((IStructuredSelection) defaultHyperLinkViewer.getSelection()).getFirstElement();
 						int index = defaultHyperLinkObject.indexOf(hyperlinkObjectToMove);
-						if(index < defaultHyperLinkObject.size() - 1) {
+						if (index < defaultHyperLinkObject.size() - 1) {
 
 							defaultHyperLinkObject.remove(hyperlinkObjectToMove);
 							defaultHyperLinkObject.add(index + 1, hyperlinkObjectToMove);
@@ -280,7 +279,7 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 		EObject contextElement = EMFHelper.getEObject(element);
 
 		ILabelProvider provider = null;
-		if(contextElement != null) {
+		if (contextElement != null) {
 			try {
 				provider = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, contextElement).getLabelProvider();
 			} catch (ServiceException ex) {
@@ -288,12 +287,12 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 			}
 		}
 
-		if(provider == null) {
+		if (provider == null) {
 			provider = new LabelProvider();
 		}
 
 
-		//init tableviewer
+		// init tableviewer
 		availableHyperLinkViewer = new TableViewer(availableHyperLink);
 		availableHyperLinkViewer.setLabelProvider(provider);
 		availableHyperLinkViewer.setContentProvider(CollectionContentProvider.instance);
@@ -306,7 +305,7 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the composite that manage all widgets in the this tab
 	 */
 	protected Composite getMainComposite() {
@@ -327,19 +326,19 @@ public class DefaultHyperLinkTab extends AbstractHyperLinkTab {
 	 * input of this tab
 	 * --> fill all available hyperlinks
 	 * --> fill all default hyperlinks
-	 * 
+	 *
 	 * @param hyperLinkObjectList
-	 *        the list of hyperlinks
+	 *            the list of hyperlinks
 	 */
 	@Override
 	public void setInput(List<HyperLinkObject> hyperLinkObjectList) {
 		defaultHyperLinkObject.clear();
 		availableHyperLinkObject.clear();
-		//filter between default and not default
+		// filter between default and not default
 		Iterator<HyperLinkObject> iterator = hyperLinkObjectList.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			HyperLinkObject hyperlinkObject = iterator.next();
-			if(hyperlinkObject.getIsDefault()) {
+			if (hyperlinkObject.getIsDefault()) {
 				defaultHyperLinkObject.add(hyperlinkObject);
 			} else {
 				availableHyperLinkObject.add(hyperlinkObject);

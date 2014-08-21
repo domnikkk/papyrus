@@ -38,17 +38,17 @@ public class GenericDataTypeLabelProvider extends EMFLabelProvider implements IF
 	 * {@inheritDoc}
 	 */
 	public boolean accept(Object element) {
-		if(element instanceof Collection<?>) {
-			for(Object item : ((Collection<?>)element)) {
-				if(!accept(item)) {
+		if (element instanceof Collection<?>) {
+			for (Object item : ((Collection<?>) element)) {
+				if (!accept(item)) {
 					return false;
 				}
 			}
-			return !((Collection<?>)element).isEmpty();
+			return !((Collection<?>) element).isEmpty();
 		}
 
 		EObject eObject = EMFHelper.getEObject(element);
-		if(eObject == null) {
+		if (eObject == null) {
 			return false;
 		}
 
@@ -57,25 +57,25 @@ public class GenericDataTypeLabelProvider extends EMFLabelProvider implements IF
 
 	@Override
 	public String getText(Object element) {
-		//Initial implementation. TODO: Improve the label
-		if(element instanceof Collection<?> && !(((Collection<?>)element).isEmpty())) {
+		// Initial implementation. TODO: Improve the label
+		if (element instanceof Collection<?> && !(((Collection<?>) element).isEmpty())) {
 			Set<EClass> allEClasses = new HashSet<EClass>();
-			for(Object item : (Collection<?>)element) {
+			for (Object item : (Collection<?>) element) {
 				EObject eObject = EMFHelper.getEObject(item);
-				if(eObject != null) {
+				if (eObject != null) {
 					allEClasses.add(eObject.eClass());
 				}
 			}
 
-			if(allEClasses.size() == 1) {
-				return "Multiple " + allEClasses.iterator().next().getName() + ": " + ((Collection<?>)element).size();
+			if (allEClasses.size() == 1) {
+				return "Multiple " + allEClasses.iterator().next().getName() + ": " + ((Collection<?>) element).size();
 			}
-			return "Multiple DataTypeInstances: " + ((Collection<?>)element).size();
+			return "Multiple DataTypeInstances: " + ((Collection<?>) element).size();
 		} else {
 			EObject dataTypeInstance = EMFHelper.getEObject(element);
-			if(dataTypeInstance != null) {
+			if (dataTypeInstance != null) {
 				EClass dataTypeDefinition = dataTypeInstance.eClass();
-				if(dataTypeDefinition != null) {
+				if (dataTypeDefinition != null) {
 					return dataTypeDefinition.getName();
 				}
 			}

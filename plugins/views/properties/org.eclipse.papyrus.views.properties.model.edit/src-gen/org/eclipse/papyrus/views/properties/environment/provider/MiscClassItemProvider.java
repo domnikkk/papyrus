@@ -30,11 +30,12 @@ import org.eclipse.papyrus.views.properties.environment.MiscClass;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.environment.MiscClass} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class MiscClassItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class MiscClassItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public MiscClassItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class MiscClassItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,72 +75,76 @@ public class MiscClassItemProvider
 	 * This adds a property descriptor for the Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MiscClass_label_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MiscClass_label_feature", "_UI_MiscClass_type"),
-				 EnvironmentPackage.Literals.MISC_CLASS__LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_MiscClass_label_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_MiscClass_label_feature", "_UI_MiscClass_type"),
+						EnvironmentPackage.Literals.MISC_CLASS__LABEL,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MiscClass_class_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MiscClass_class_feature", "_UI_MiscClass_type"),
-				 EnvironmentPackage.Literals.MISC_CLASS__CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_MiscClass_class_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_MiscClass_class_feature", "_UI_MiscClass_type"),
+						EnvironmentPackage.Literals.MISC_CLASS__CLASS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Namespace feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamespacePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_MiscClass_namespace_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_MiscClass_namespace_feature", "_UI_MiscClass_type"),
-				 EnvironmentPackage.Literals.MISC_CLASS__NAMESPACE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_MiscClass_namespace_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_MiscClass_namespace_feature", "_UI_MiscClass_type"),
+						EnvironmentPackage.Literals.MISC_CLASS__NAMESPACE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns MiscClass.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,14 +156,15 @@ public class MiscClassItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MiscClass)object).getLabel();
+		String label = ((MiscClass) object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_MiscClass_type") :
-			getString("_UI_MiscClass_type") + " " + label;
+				getString("_UI_MiscClass_type") :
+				getString("_UI_MiscClass_type") + " " + label;
 	}
 
 	/**
@@ -164,6 +172,7 @@ public class MiscClassItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,10 +180,10 @@ public class MiscClassItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(MiscClass.class)) {
-			case EnvironmentPackage.MISC_CLASS__LABEL:
-			case EnvironmentPackage.MISC_CLASS__CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case EnvironmentPackage.MISC_CLASS__LABEL:
+		case EnvironmentPackage.MISC_CLASS__CLASS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -184,6 +193,7 @@ public class MiscClassItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -195,6 +205,7 @@ public class MiscClassItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

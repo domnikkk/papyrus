@@ -57,25 +57,25 @@ public class ImageQuery implements IJavaQuery2<EObject, IImage> {
 		IImage result = null;
 		final ComposedAdapterFactory adapterFactory = new ComposedAdapterFactory(
 				ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
-		
+
 		try {
-			final IItemLabelProvider itemLabelProvider = (IItemLabelProvider)adapterFactory.adapt(source, IItemLabelProvider.class);
-			if(itemLabelProvider != null) {
+			final IItemLabelProvider itemLabelProvider = (IItemLabelProvider) adapterFactory.adapt(source, IItemLabelProvider.class);
+			if (itemLabelProvider != null) {
 				Object imageObject = itemLabelProvider.getImage(source);
 				Image image = ExtendedImageRegistry.getInstance().getImage(imageObject);
 				result = new ImageWrapper(image);
-////			final ImageDescriptor imgDescriptor = ExtendedImageRegistry.getInstance().getImageDescriptor(source);
-//				final IImageProvider imgProvider = IImageProviderFactory.DEFAULT.createIImageProvider(Activator.getDefault());
-//				if(imgDescriptor != null) {
-//					final Image image = imgProvider.getImage(imgDescriptor);
-//					result = new ImageWrapper(image);
-//				}
+				// // final ImageDescriptor imgDescriptor = ExtendedImageRegistry.getInstance().getImageDescriptor(source);
+				// final IImageProvider imgProvider = IImageProviderFactory.DEFAULT.createIImageProvider(Activator.getDefault());
+				// if(imgDescriptor != null) {
+				// final Image image = imgProvider.getImage(imgDescriptor);
+				// result = new ImageWrapper(image);
+				// }
 			}
 		} finally {
 			// Dispose the adapter factory because it added an adapter that would leak, as it will never be reused
 			adapterFactory.dispose();
 		}
-		
+
 		return result;
 	}
 

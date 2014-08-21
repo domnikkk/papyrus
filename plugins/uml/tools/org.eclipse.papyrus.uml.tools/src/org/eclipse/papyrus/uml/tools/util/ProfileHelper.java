@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,26 +25,26 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
 
 /**
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ProfileHelper {
 
 	public static Collection<Profile> getAllAppliedProfiles(ModelSet modelSet) {
-		UmlModel umlModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
+		UmlModel umlModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
 
-		if(umlModel != null) {
+		if (umlModel != null) {
 			Resource mainUMLResource = umlModel.getResource();
 
 			final Set<Profile> allAppliedProfiles = new HashSet<Profile>();
 
 			Iterator<EObject> allContents = mainUMLResource.getAllContents();
 
-			while(allContents.hasNext()) {
+			while (allContents.hasNext()) {
 				EObject currentElement = allContents.next();
-				if(currentElement instanceof Package) {
-					Package currentPackage = (Package)currentElement;
+				if (currentElement instanceof Package) {
+					Package currentPackage = (Package) currentElement;
 					allAppliedProfiles.addAll(currentPackage.getAppliedProfiles());
 				}
 			}

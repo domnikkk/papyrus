@@ -5,11 +5,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 426732
- *  
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.timing.custom.utils;
 
@@ -36,17 +36,17 @@ public final class EcoreUtils {
 	/**
 	 * Replace an EObject instance by another compatible EObject instance (replacement must be either the same type, or
 	 * a subtype of original).
-	 * 
+	 *
 	 * @param original
-	 *        the object to replace
+	 *            the object to replace
 	 * @param replacement
-	 *        the replacement object
+	 *            the replacement object
 	 */
 	public static void replaceEObjectInstance(final EObject original, final EObject replacement) {
 		final Collection<Setting> settings = EMFHelper.getUsages(original);
 
 		final Set<EStructuralFeature> referencingFeatures = new HashSet<EStructuralFeature>();
-		for(final Setting setting : settings) {
+		for (final Setting setting : settings) {
 			referencingFeatures.add(setting.getEStructuralFeature());
 		}
 
@@ -54,9 +54,9 @@ public final class EcoreUtils {
 		copyFeatures(original, replacement, referencingFeatures);
 
 		// put the replacement object in all the referencing features of the original object
-		for(final Setting setting : settings) {
+		for (final Setting setting : settings) {
 			final EStructuralFeature feature = setting.getEStructuralFeature();
-			if(feature.isChangeable() && !feature.isDerived()) {
+			if (feature.isChangeable() && !feature.isDerived()) {
 				// if it is already in the list, remove it and put it at the right index
 				EcoreUtil.remove(setting, replacement);
 				// replace the original by the replacement
@@ -70,36 +70,36 @@ public final class EcoreUtils {
 
 	/**
 	 * Copies all the features from the source object to the target object, ignoring the referencingFeatures
-	 * 
+	 *
 	 * @param source
-	 *        the object that will give its values to the target object
+	 *            the object that will give its values to the target object
 	 * @param target
-	 *        the object that will receive its values from the source object
+	 *            the object that will receive its values from the source object
 	 * @param referencingFeatures
-	 *        features to ignore in the copy
+	 *            features to ignore in the copy
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static void copyFeatures(final EObject source, final EObject target, final Set<EStructuralFeature> referencingFeatures) {
 		final EList<EStructuralFeature> eAllStructuralFeatures = source.eClass().getEAllStructuralFeatures();
 
-		for(final EStructuralFeature feature : eAllStructuralFeatures) {
-			if(referencingFeatures.contains(feature)) {
+		for (final EStructuralFeature feature : eAllStructuralFeatures) {
+			if (referencingFeatures.contains(feature)) {
 				// the value will be set through the object referencing the "from" object
 				continue;
 			}
-			if(feature instanceof EReference) {
-				final EReference reference = (EReference)feature;
-				if(reference.isContainer()) {
+			if (feature instanceof EReference) {
+				final EReference reference = (EReference) feature;
+				if (reference.isContainer()) {
 					// the container will be set at the end
 					continue;
 				}
 			}
-			if(feature.isChangeable() && !feature.isDerived()) {
-				if(feature.isMany()) {
+			if (feature.isChangeable() && !feature.isDerived()) {
+				if (feature.isMany()) {
 					final Object result = source.eGet(feature);
-					if(result instanceof List<?>) {
-						final List list1 = (List)result;
-						final List list2 = (List)target.eGet(feature);
+					if (result instanceof List<?>) {
+						final List list1 = (List) result;
+						final List list2 = (List) target.eGet(feature);
 						list2.addAll(list1);
 					}
 				} else {
@@ -112,19 +112,19 @@ public final class EcoreUtils {
 
 	/**
 	 * Return the first element in the container hierarchy of the given element that is of the given class.
-	 * 
+	 *
 	 * @param element
-	 *        the starting point
+	 *            the starting point
 	 * @param clazz
-	 *        the class of the parent that is searched
+	 *            the class of the parent that is searched
 	 * @return the first containing element of the given class, or <code>null</code> if none
 	 */
 	@SuppressWarnings("unchecked")
 	public static <T> T getContaining(final EObject element, final Class<T> clazz) {
 		EObject container = element;
-		while(container != null) {
-			if(clazz.isInstance(container)) {
-				return (T)container;
+		while (container != null) {
+			if (clazz.isInstance(container)) {
+				return (T) container;
 			}
 			container = container.eContainer();
 		}
@@ -133,10 +133,10 @@ public final class EcoreUtils {
 
 	public static EStructuralFeature getEStructuralFeature(final Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			final Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			final Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.constraints.runtime;
 
@@ -23,16 +23,16 @@ import org.eclipse.papyrus.infra.constraints.DisplayUnit;
  * An interface representing a Constraint Engine.
  * The Constraint Engine is responsible for retrieving the DisplayUnits
  * to display for a given ISelection.
- * 
+ *
  * @author Camille Letavernier
  * @param <E>
- *        The type of DisplayUnit managed by this Constraint Engine
+ *            The type of DisplayUnit managed by this Constraint Engine
  */
 public interface ConstraintEngine<E extends DisplayUnit> {
 
 	/**
 	 * Returns the DisplayUnits matching the given selection
-	 * 
+	 *
 	 * @param forSelection
 	 * @return
 	 */
@@ -40,7 +40,7 @@ public interface ConstraintEngine<E extends DisplayUnit> {
 
 	/**
 	 * Adds a constraint descriptor to this engine
-	 * 
+	 *
 	 * @param descriptor
 	 */
 	public void addConstraint(ConstraintDescriptor descriptor);
@@ -52,6 +52,6 @@ public interface ConstraintEngine<E extends DisplayUnit> {
 	public void refresh();
 
 	void addConstraintEngineListener(ConstraintEngineListener listener);
-	
+
 	void removeConstraintEngineListener(ConstraintEngineListener listener);
 }

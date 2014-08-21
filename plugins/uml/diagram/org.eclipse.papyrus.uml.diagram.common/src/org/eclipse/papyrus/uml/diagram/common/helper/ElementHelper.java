@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,9 +16,9 @@ package org.eclipse.papyrus.uml.diagram.common.helper;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 /**
- * 
+ *
  * this is an abstract class for helper
- * 
+ *
  */
 public abstract class ElementHelper {
 
@@ -26,7 +26,7 @@ public abstract class ElementHelper {
 
 	/**
 	 * Gets the editing domain.
-	 * 
+	 *
 	 * @return the editing domain
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {

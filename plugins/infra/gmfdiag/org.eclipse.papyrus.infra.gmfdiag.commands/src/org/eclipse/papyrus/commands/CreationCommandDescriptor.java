@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Jerome Benois (Obeo) jerome.benois@obeo.fr - initial API and implementation
  *     Tristan Faure (Atos Origin) tristan.faure@atosorigin.com - add condition to the create command (task #296902)
@@ -17,7 +17,7 @@ import org.eclipse.papyrus.infra.core.extension.commands.ICreationCondition;
 
 /**
  * Creation Command Descriptor used to create a new diagram
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class CreationCommandDescriptor {
@@ -67,13 +67,14 @@ public class CreationCommandDescriptor {
 
 	/**
 	 * constructor.
-	 * 
+	 *
 	 * @return the creation command
 	 * @throws BackboneException
 	 */
 	public ICreationCommand getCommand() throws BackboneException {
-		if(instance == null)
+		if (instance == null) {
 			instance = createCommand();
+		}
 
 		return instance;
 	}

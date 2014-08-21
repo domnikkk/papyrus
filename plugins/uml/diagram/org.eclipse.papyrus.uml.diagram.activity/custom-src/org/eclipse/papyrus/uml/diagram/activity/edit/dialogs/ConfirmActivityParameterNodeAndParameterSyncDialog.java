@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,25 +35,25 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * This class enables to open a dialog to ask the user to confirm he wants to
  * delete activity parameter node(s) with parameter
- * 
+ *
  */
 public class ConfirmActivityParameterNodeAndParameterSyncDialog extends MessageDialog {
 
 	/**
 	 * Protected constructor. Use {@link #openConfirmFromParameter(Shell)} or {@link #openConfirmFromPin(Shell)}
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param dialogMessage
-	 *        the message
+	 *            the message
 	 */
 	protected ConfirmActivityParameterNodeAndParameterSyncDialog(Shell parentShell, String dialogMessage) {
-		super(parentShell, CustomMessages.ConfirmActivityParameterAndParameterSync_Title, null, dialogMessage, CONFIRM, new String[]{ IDialogConstants.OK_LABEL, IDialogConstants.CANCEL_LABEL }, 0);
+		super(parentShell, CustomMessages.ConfirmActivityParameterAndParameterSync_Title, null, dialogMessage, CONFIRM, new String[] { IDialogConstants.OK_LABEL, IDialogConstants.CANCEL_LABEL }, 0);
 	}
 
 	/**
 	 * Open a confirmation dialog for the parameter deletion
-	 * 
+	 *
 	 * @param parentShell
 	 * @param parameterNodes
 	 * @param labelprovider
@@ -63,9 +63,9 @@ public class ConfirmActivityParameterNodeAndParameterSyncDialog extends MessageD
 		// consult preferences before opening the popup
 		final IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		boolean showPopup = prefStore.getBoolean(IActivityPreferenceConstants.PREF_CONFIRM_ACTIVITY_PARAMETER_SYNC_FROM_PARAMETER);
-		if(showPopup) {
+		if (showPopup) {
 			StringBuffer parsedList = new StringBuffer();
-			for(NamedElement element : parameterNodes) {
+			for (NamedElement element : parameterNodes) {
 				parsedList.append(labelprovider.getText(element));
 				parsedList.append(System.getProperty("line.separator"));
 			}
@@ -79,11 +79,11 @@ public class ConfirmActivityParameterNodeAndParameterSyncDialog extends MessageD
 
 	/**
 	 * Create a checkbox for not displaying the popup again
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.MessageDialog#createCustomArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
-	 *        parent composite
+	 *            parent composite
 	 * @return checkbox
 	 */
 	@Override
@@ -94,8 +94,8 @@ public class ConfirmActivityParameterNodeAndParameterSyncDialog extends MessageD
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(e.getSource() instanceof Button) {
-					boolean doNotShow = ((Button)e.getSource()).getSelection();
+				if (e.getSource() instanceof Button) {
+					boolean doNotShow = ((Button) e.getSource()).getSelection();
 					final IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 					prefStore.putValue(IActivityPreferenceConstants.PREF_CONFIRM_ACTIVITY_PARAMETER_SYNC_FROM_PARAMETER, Boolean.toString(!doNotShow));
 				}

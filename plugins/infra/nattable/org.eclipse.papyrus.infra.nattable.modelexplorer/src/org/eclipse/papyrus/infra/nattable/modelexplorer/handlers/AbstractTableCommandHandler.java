@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ public abstract class AbstractTableCommandHandler extends AbstractCommandHandler
 
 	/**
 	 * Returns the list of selected tables
-	 * 
+	 *
 	 * @return the list of selected tables
 	 */
 	protected List<Table> getSelectedTables() {
@@ -41,21 +41,21 @@ public abstract class AbstractTableCommandHandler extends AbstractCommandHandler
 			selection = activeWorkbenchWindow.getSelectionService().getSelection();
 
 			// Get first element if the selection is an IStructuredSelection
-			if(selection instanceof IStructuredSelection) {
-				IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+			if (selection instanceof IStructuredSelection) {
+				IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 				Iterator<?> iter = structuredSelection.iterator();
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					Object current = iter.next();
 					/**
 					 * Get the table object. This getElement is used in order to
 					 * use IAdaptable mechanisme For example for Facet Elements
 					 */
 					EObject table = NavigatorUtils.getElement(current, EObject.class);
-					if(table instanceof Table) {
-						tables.add((Table)table);
+					if (table instanceof Table) {
+						tables.add((Table) table);
 					}
 				}
-			}			
+			}
 		}
 		return tables;
 	}

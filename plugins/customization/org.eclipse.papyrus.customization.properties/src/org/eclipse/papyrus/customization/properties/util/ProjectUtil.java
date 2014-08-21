@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ import org.eclipse.papyrus.views.properties.contexts.Section;
  * These methods cannot be applied on contexts registered via plugin extensions,
  * as they are read-only. For such contexts, you need to first copy them,
  * and edit the copy.
- * 
+ *
  * @see WorkspaceContextCopyAction
- * 
+ *
  * @author Camille Letavernier
  */
 public class ProjectUtil {
@@ -49,14 +49,14 @@ public class ProjectUtil {
 	public static final String CUSTOM_PROJECT_NAME = "org.eclipse.papyrus.customization.properties.internal"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * @param context
-	 *        The context we want to edit
+	 *            The context we want to edit
 	 * @return
 	 *         The IFile containing the given context. This IFile can be passed
 	 *         to an Eclipse editor
 	 * @throws CoreException
-	 *         If an error occured
+	 *             If an error occured
 	 */
 	public static IFile getContextFile(Context context) throws CoreException {
 		IFolder projectFolder = getContextFolder(context);
@@ -69,12 +69,12 @@ public class ProjectUtil {
 	/**
 	 * @return the hidden IProject used by the customization plugin
 	 * @throws CoreException
-	 *         If an error occured
+	 *             If an error occured
 	 */
 	public static IProject getContextProject() throws CoreException {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IProject custom = workspace.getRoot().getProject(CUSTOM_PROJECT_NAME);
-		if(!custom.exists()) {
+		if (!custom.exists()) {
 			IProjectDescription description = workspace.newProjectDescription(CUSTOM_PROJECT_NAME);
 			IPath customProjectPath = Activator.getDefault().getPreferencesPath().append("/" + CUSTOM_PROJECT_NAME); //$NON-NLS-1$
 			description.setLocation(customProjectPath);
@@ -82,7 +82,7 @@ public class ProjectUtil {
 			custom.open(null);
 		}
 
-		if(!custom.isOpen()) {
+		if (!custom.isOpen()) {
 			custom.open(null);
 		}
 
@@ -94,20 +94,20 @@ public class ProjectUtil {
 
 	/**
 	 * Return the IFolder containing the given context
-	 * 
+	 *
 	 * @param context
-	 *        The context for which we want to get its IFolder
+	 *            The context for which we want to get its IFolder
 	 * @return
 	 *         The IFolder containing the given context
 	 * @throws CoreException
-	 *         If an error occured
+	 *             If an error occured
 	 */
 	public static IFolder getContextFolder(Context context) throws CoreException {
 		IProject project = getContextProject();
 
 		IFolder projectFolder = project.getFolder(context.getName());
 
-		if(!projectFolder.exists()) {
+		if (!projectFolder.exists()) {
 			String referencedFolderPath = new File(context.eResource().getURI().toFileString()).getParent();
 			projectFolder.createLink(new Path(referencedFolderPath), IResource.REPLACE, null);
 		}
@@ -117,16 +117,16 @@ public class ProjectUtil {
 
 	/**
 	 * Return the IFile containing the section's XWT Resource
-	 * 
+	 *
 	 * @param section
-	 *        The section we want to edit
+	 *            The section we want to edit
 	 * @return
 	 *         The IFile containing the section's XWT Resource
 	 * @throws CoreException
-	 *         If an error occured
+	 *             If an error occured
 	 */
 	public static IFile getSectionFile(Section section) throws CoreException {
-		IFolder projectFolder = getContextFolder((Context)(section.eContainer()).eContainer());
+		IFolder projectFolder = getContextFolder((Context) (section.eContainer()).eContainer());
 		IFile sectionFile = projectFolder.getFile(section.getSectionFile());
 		return sectionFile;
 	}

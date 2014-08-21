@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,35 +18,35 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * A strategy to be applied when dropping elements
- * 
+ *
  * @author Camille Letavernier
  */
 public interface DropStrategy {
 
 	/**
 	 * A user-readable label
-	 * 
+	 *
 	 * @return
 	 */
 	public String getLabel();
 
 	/**
 	 * A user-readable description
-	 * 
+	 *
 	 * @return
 	 */
 	public String getDescription();
 
 	/**
 	 * An image to associate to this strategy
-	 * 
+	 *
 	 * @return
 	 */
 	public Image getImage();
 
 	/**
 	 * A unique ID for this strategy
-	 * 
+	 *
 	 * @return
 	 */
 	public String getID();
@@ -54,11 +54,11 @@ public interface DropStrategy {
 	/**
 	 * The command to be executed when the strategy is applied.
 	 * Should return null if the strategy cannot handle the request.
-	 * 
+	 *
 	 * @param request
-	 *        The drop request
+	 *            The drop request
 	 * @param targetEditPart
-	 *        The target edit part
+	 *            The target edit part
 	 * @return
 	 *         A command, or null if the strategy cannot handle the request
 	 */
@@ -67,7 +67,7 @@ public interface DropStrategy {
 	/**
 	 * The default priority for this strategy. Might be overridden by a user
 	 * preference.
-	 * 
+	 *
 	 * @return
 	 * @deprecated The priority mechanism isn't used anymore
 	 */

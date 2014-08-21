@@ -8,7 +8,7 @@
  * Contributors:
  *    Nicolas Guyomar (Mia-Software) - Bug 333652 Extension point offering the possibility to declare an EPackage browser
  *    Nicolas Bros (Mia-Software) - Bug 335218 - Extension point for registering EObject, EPackage, model editor
- *    Laurent Pichierri (Soft-Maint) - Bug 371204 - Compatibility with Helios 
+ *    Laurent Pichierri (Soft-Maint) - Bug 371204 - Compatibility with Helios
  ***********************************************************************************/
 package org.eclipse.papyrus.emf.facet.util.emf.core.internal.registry;
 

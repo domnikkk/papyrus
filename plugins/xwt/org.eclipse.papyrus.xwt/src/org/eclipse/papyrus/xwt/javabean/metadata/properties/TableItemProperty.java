@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -17,7 +17,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.TableItem;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class TableItemProperty extends AbstractProperty {
@@ -64,14 +64,14 @@ public class TableItemProperty extends AbstractProperty {
 
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
 
-		Collection<Cell> cells = (Collection<Cell>)value;
-		TableItem tableItem = (TableItem)target;
+		Collection<Cell> cells = (Collection<Cell>) value;
+		TableItem tableItem = (TableItem) target;
 
 		String[] texts = new String[cells.size()];
 		Image[] images = new Image[cells.size()];
 
 		int i = 0;
-		for(Cell cell : cells) {
+		for (Cell cell : cells) {
 			String text = (cell).getText();
 			texts[i] = text == null ? "" : text;
 			images[i] = cell.getImage();

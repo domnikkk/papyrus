@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,12 +33,12 @@ public class RemoveCSSStyleSheetCommand extends RemoveCustomStyleListValueComman
 
 	@Override
 	public void execute() {
-		if(value instanceof EObject) {
-			EObject styleSheet = (EObject)value;
+		if (value instanceof EObject) {
+			EObject styleSheet = (EObject) value;
 			Collection<EStructuralFeature.Setting> references = EMFHelper.getUsages(styleSheet);
-			//We're removing the last reference to this styleSheet (Only if the stylesheet is contained
-			//in the same resource as the view referencing it... We don't modify external models)
-			if(references.size() == 1 && styleSheet.eResource() == view.eResource()) {
+			// We're removing the last reference to this styleSheet (Only if the stylesheet is contained
+			// in the same resource as the view referencing it... We don't modify external models)
+			if (references.size() == 1 && styleSheet.eResource() == view.eResource()) {
 				previousResource = styleSheet.eResource();
 				styleSheet.eResource().getContents().remove(styleSheet);
 			}
@@ -49,9 +49,9 @@ public class RemoveCSSStyleSheetCommand extends RemoveCustomStyleListValueComman
 
 	@Override
 	public void undo() {
-		//We destroyed the StyleSheet EObject: recreate it in its previous resource
-		if(previousResource != null) {
-			previousResource.getContents().add((EObject)value);
+		// We destroyed the StyleSheet EObject: recreate it in its previous resource
+		if (previousResource != null) {
+			previousResource.getContents().add((EObject) value);
 		}
 		super.undo();
 	}

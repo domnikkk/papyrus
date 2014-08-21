@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,24 +19,24 @@ import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 
 /**
  * An IObservableValue for a Gradient
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class GradientObservableValue extends PapyrusObservableValue {
 
 	private ObservableGradientData gradientData;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The EObject owning the gradient data
+	 *            The EObject owning the gradient data
 	 * @param feature
-	 *        The Feature in which the gradient data is set
+	 *            The Feature in which the gradient data is set
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 */
 	public GradientObservableValue(EObject source, EStructuralFeature feature, EditingDomain domain) {
 		super(source, feature, domain);
@@ -44,8 +44,8 @@ public class GradientObservableValue extends PapyrusObservableValue {
 
 	@Override
 	protected Object doGetValue() {
-		if(gradientData == null) {
-			GradientData data = (GradientData)eObject.eGet(eStructuralFeature);
+		if (gradientData == null) {
+			GradientData data = (GradientData) eObject.eGet(eStructuralFeature);
 			gradientData = new ObservableGradientData(this, data);
 		}
 

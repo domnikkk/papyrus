@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -28,8 +28,7 @@ import org.eclipse.papyrus.sysml.service.types.matcher.BlockMatcher;
 /**
  * Custom drag'n'drop edit policy when the target edit part is the diagram itself.
  * <P>
- * In this case, it should be impossible to drop elements in this Internal Block Diagram, except the block context of that diagram, if it is not
- * already displayed in the diagram.
+ * In this case, it should be impossible to drop elements in this Internal Block Diagram, except the block context of that diagram, if it is not already displayed in the diagram.
  * </P>
  */
 public class CustomDiagramDropEditPolicy extends CustomDragDropEditPolicy {
@@ -49,26 +48,26 @@ public class CustomDiagramDropEditPolicy extends CustomDragDropEditPolicy {
 	 */
 	@Override
 	protected ICommand getSpecificDropCommand(DropObjectsRequest dropRequest, EObject droppedEObject, String nodeType, String edgeType) {
-		if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(nodeType)) {
-			// should not be possible to execute, unless 2 conditions: 
+		if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(nodeType)) {
+			// should not be possible to execute, unless 2 conditions:
 			// 1. the block is the context of the diagram
 			// 2. the block is not already displayed in the diagram
 			BlockMatcher matcher = new BlockMatcher();
-			if(!matcher.matches(droppedEObject)) { // should check for additional free elements, like comments, constraints.
+			if (!matcher.matches(droppedEObject)) { // should check for additional free elements, like comments, constraints.
 				return UnexecutableCommand.INSTANCE;
 			}
 
 			// this is a block. checking if the element context of the diagram is the block dropped
 			Object model = getHost().getModel();
-			if(model instanceof Diagram) { // should be...
-				EObject element = ((Diagram)model).getElement();
-				if(droppedEObject.equals(element)) {
+			if (model instanceof Diagram) { // should be...
+				EObject element = ((Diagram) model).getElement();
+				if (droppedEObject.equals(element)) {
 					// check no view exists for this block already
 					@SuppressWarnings("unchecked")
-					Iterator<View> it = ((Diagram)model).getChildren().iterator();
-					while(it.hasNext()) {
+					Iterator<View> it = ((Diagram) model).getChildren().iterator();
+					while (it.hasNext()) {
 						View view = it.next();
-						if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(view.getType())) {
+						if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(view.getType())) {
 							// there is already a block displayed in the diagram. Should be unexecutable.
 							return UnexecutableCommand.INSTANCE;
 						}

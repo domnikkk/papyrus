@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -121,7 +121,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Add implementing IPapyrusEditPart to displaying Stereotypes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart implements ITextAwareEditPart, IPapyrusEditPart {
@@ -154,7 +154,7 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomCombinedFragmentEditPart(View view) {
@@ -170,18 +170,18 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomCombinedFragmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new CombinedFragmentDirectEditPolicy());
-		//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
+		// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new GatesHolderGraphicalNodeEditPolicy());
 		installEditPolicy("Gate Creation Edit Policy", new GateCreationEditPolicy());
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeNodeLabelDisplayEditPolicy());
-		//ignore impact layout when head changed.
+		// ignore impact layout when head changed.
 		installEditPolicy(AbstractHeadImpactLayoutEditPolicy.HEAD_IMPACT_LAYOUT_POLICY, new CombinedFragmentHeadImpactLayoutEditPolicy());
 	}
 
 	/**
 	 * Generated not for handle operator kind
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -199,15 +199,16 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		return new BorderedNodeFigure(super.createNodeFigure());
 	}
 
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof IBorderItemEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();
 	}
 
 	public final BorderedNodeFigure getBorderedFigure() {
-		return (BorderedNodeFigure)getFigure();
+		return (BorderedNodeFigure) getFigure();
 	}
 
 	@Override
@@ -225,8 +226,8 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	 */
 	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof NodeFigure) {
+			((NodeFigure) primaryShape).setLineWidth(width);
 		} else {
 			super.setLineWidth(width);
 		}
@@ -234,13 +235,13 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
+		if (childEditPart instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getCompartmentFigure();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.remove(((CombinedFragmentCombinedFragmentCompartmentEditPart)childEditPart).getFigure());
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
+			pane.remove(((CombinedFragmentCombinedFragmentCompartmentEditPart) childEditPart).getFigure());
 			return true;
-		} else if(childEditPart instanceof GateEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((GateEditPart)childEditPart).getFigure());
+		} else if (childEditPart instanceof GateEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((GateEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -248,14 +249,14 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.CombinedFragmentEditPart#addFixedChild(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param childEditPart
 	 * @return
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof GateEditPart) {
-			getBorderedFigure().getBorderItemContainer().add(((GateEditPart)childEditPart).getFigure(), new GateLocator((GateEditPart)childEditPart, getFigure()));
+		if (childEditPart instanceof GateEditPart) {
+			getBorderedFigure().getBorderItemContainer().add(((GateEditPart) childEditPart).getFigure(), new GateLocator((GateEditPart) childEditPart, getFigure()));
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -264,10 +265,10 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	public List<CustomInteractionOperandEditPart> getOperandChildrenEditParts() {
 		List<CustomInteractionOperandEditPart> children = new LinkedList<CustomInteractionOperandEditPart>();
 		IGraphicalEditPart compartment = getChildBySemanticHint(String.valueOf(CombinedFragmentCombinedFragmentCompartmentEditPart.VISUAL_ID));
-		if(compartment instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
-			for(Object ep : compartment.getChildren()) {
-				if(ep instanceof CustomInteractionOperandEditPart) {
-					children.add((CustomInteractionOperandEditPart)ep);
+		if (compartment instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
+			for (Object ep : compartment.getChildren()) {
+				if (ep instanceof CustomInteractionOperandEditPart) {
+					children.add((CustomInteractionOperandEditPart) ep);
 				}
 			}
 		}
@@ -280,23 +281,23 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		Object feature = notification.getFeature();
-		if(UMLPackage.eINSTANCE.getCombinedFragment_InteractionOperator().equals(feature)) {
-			CombinedFragment combinedFragment = (CombinedFragment)resolveSemanticElement();
+		if (UMLPackage.eINSTANCE.getCombinedFragment_InteractionOperator().equals(feature)) {
+			CombinedFragment combinedFragment = (CombinedFragment) resolveSemanticElement();
 			String newStringValue = notification.getNewStringValue();
-			if(notification.getOldValue() instanceof InteractionOperatorKind && !isAllowedInteractionOperator(newStringValue)) {
+			if (notification.getOldValue() instanceof InteractionOperatorKind && !isAllowedInteractionOperator(newStringValue)) {
 				MessageDialog.openError(Display.getCurrent().getActiveShell(), FORBIDDEN_ACTION, FORBIDEN_OPERATOR_MODIFICATION_MSG);
 				CommandHelper.executeCommandWithoutHistory(getEditingDomain(), SetCommand.create(getEditingDomain(), combinedFragment, feature, notification.getOldValue()), true);
 				return;
 			}
 			EList<InteractionOperand> operands = combinedFragment.getOperands();
-			if(operands == null || operands.size() <= 1) {
+			if (operands == null || operands.size() <= 1) {
 				// If CombinedFragment have no operand, we can change the
 				// OperatorKind
 				updateHeaderLabel();
 			} else {
-				if(notification.getOldValue() instanceof InteractionOperatorKind) {
-					InteractionOperatorKind newValue = (InteractionOperatorKind)notification.getNewValue();
-					if(!InteractionOperatorKindCompatibleMapping.supportMultiOperand(newValue)) {
+				if (notification.getOldValue() instanceof InteractionOperatorKind) {
+					InteractionOperatorKind newValue = (InteractionOperatorKind) notification.getNewValue();
+					if (!InteractionOperatorKindCompatibleMapping.supportMultiOperand(newValue)) {
 						MessageDialog.openError(Display.getCurrent().getActiveShell(), FORBIDDEN_ACTION, BLOCK_OPERATOR_MODIFICATION_MSG);
 						CommandHelper.executeCommandWithoutHistory(getEditingDomain(), SetCommand.create(getEditingDomain(), combinedFragment, feature, notification.getOldValue()), true);
 					} else {
@@ -314,18 +315,19 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 			 * }
 			 */
 			// update guards on enclosed operands
-			for(CustomInteractionOperandEditPart ioep : getOperandChildrenEditParts()) {
+			for (CustomInteractionOperandEditPart ioep : getOperandChildrenEditParts()) {
 				ioep.updateConstraintLabel();
 			}
-		} else if(UMLPackage.eINSTANCE.getCombinedFragment_Operand().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getCombinedFragment_Operand().equals(feature)) {
 			// Case only call by the model explorer
-			CombinedFragment combinedFragment = (CombinedFragment)resolveSemanticElement();
+			CombinedFragment combinedFragment = (CombinedFragment) resolveSemanticElement();
 			InteractionOperatorKind interactionOperator = combinedFragment.getInteractionOperator();
 			Object newValue = notification.getNewValue();
-			if(interactionOperator != null && newValue != null) {
-				if(InteractionOperatorKind.OPT_LITERAL.equals(interactionOperator) || InteractionOperatorKind.LOOP_LITERAL.equals(interactionOperator) || InteractionOperatorKind.BREAK_LITERAL.equals(interactionOperator) || InteractionOperatorKind.NEG_LITERAL.equals(interactionOperator)) {
+			if (interactionOperator != null && newValue != null) {
+				if (InteractionOperatorKind.OPT_LITERAL.equals(interactionOperator) || InteractionOperatorKind.LOOP_LITERAL.equals(interactionOperator) || InteractionOperatorKind.BREAK_LITERAL.equals(interactionOperator)
+						|| InteractionOperatorKind.NEG_LITERAL.equals(interactionOperator)) {
 					EList<InteractionOperand> operands = combinedFragment.getOperands();
-					if(operands != null && operands.size() > 1) {
+					if (operands != null && operands.size() > 1) {
 						// Case of there is already an operand on opt, loop, break and neg
 						// CombinedFragment type
 						MessageDialog.openError(Display.getCurrent().getActiveShell(), FORBIDDEN_ACTION, BLOCK_OPERAND_ADDITION_MSG);
@@ -334,43 +336,44 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 					}
 				}
 			}
-		} else if(UMLPackage.eINSTANCE.getInteractionFragment_Covered().equals(feature)) {
-			if(notification.getNotifier() instanceof CombinedFragment) {
+		} else if (UMLPackage.eINSTANCE.getInteractionFragment_Covered().equals(feature)) {
+			if (notification.getNotifier() instanceof CombinedFragment) {
 				// Synchronize operands' covered lifelines with combined fragment's covered lifelines
-				CombinedFragment combinedFragment = (CombinedFragment)notification.getNotifier();
+				CombinedFragment combinedFragment = (CombinedFragment) notification.getNotifier();
 				EList<Lifeline> combinedFragmentCoveredLifelines = combinedFragment.getCovereds();
-				for(InteractionOperand operand : combinedFragment.getOperands()) {
+				for (InteractionOperand operand : combinedFragment.getOperands()) {
 					EList<Lifeline> operandCoveredLifelines = operand.getCovereds();
-					if(!operandCoveredLifelines.equals(combinedFragmentCoveredLifelines)) {
+					if (!operandCoveredLifelines.equals(combinedFragmentCoveredLifelines)) {
 						// Add new covered lifelines (not already covered)
 						List<Lifeline> coveredLifelinesToAdd = new ArrayList<Lifeline>(combinedFragmentCoveredLifelines);
 						coveredLifelinesToAdd.removeAll(operandCoveredLifelines);
-						if(!coveredLifelinesToAdd.isEmpty()) {
+						if (!coveredLifelinesToAdd.isEmpty()) {
 							CommandHelper.executeCommandWithoutHistory(getEditingDomain(), AddCommand.create(getEditingDomain(), operand, UMLPackage.eINSTANCE.getInteractionFragment_Covered(), coveredLifelinesToAdd), true);
 						}
 						// Delete old covered lifelines (not covered anymore)
 						List<Lifeline> coveredLifelinesToRemove = new ArrayList<Lifeline>(operandCoveredLifelines);
 						coveredLifelinesToRemove.removeAll(combinedFragmentCoveredLifelines);
-						if(!coveredLifelinesToRemove.isEmpty()) {
+						if (!coveredLifelinesToRemove.isEmpty()) {
 							CommandHelper.executeCommandWithoutHistory(getEditingDomain(), RemoveCommand.create(getEditingDomain(), operand, UMLPackage.eINSTANCE.getInteractionFragment_Covered(), coveredLifelinesToRemove), true);
 						}
 					}
 				}
 			}
-		} else if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature)) {
-			if(notification.getNotifier() instanceof CombinedFragment) {
+		} else if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature)) {
+			if (notification.getNotifier() instanceof CombinedFragment) {
 				refreshLabel();
 			}
 		}
-		if(notification.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstants.QUALIFIED_NAME.equals(((EAnnotation)notification.getNewValue()).getSource())) {
+		if (notification.getNewValue() instanceof EAnnotation && VisualInformationPapyrusConstants.QUALIFIED_NAME.equals(((EAnnotation) notification.getNewValue()).getSource())) {
 			refreshLabel();
 		}
 		super.handleNotificationEvent(notification);
-		//fixed bug (id=364711) when bounds changed update coveredBys with the figure's bounds.
-		if(notification.getNotifier() instanceof Bounds) {
-			if(notification.getNotifier() instanceof Bounds) {
+		// fixed bug (id=364711) when bounds changed update coveredBys with the figure's bounds.
+		if (notification.getNotifier() instanceof Bounds) {
+			if (notification.getNotifier() instanceof Bounds) {
 				Display.getDefault().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						LifelineCoveredByUpdater updater = new LifelineCoveredByUpdater();
 						updater.update(CustomCombinedFragmentEditPart.this);
@@ -378,21 +381,21 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 				});
 			}
 		}
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshShadow();
 		}
-		if(ElementIconUtil.isIconNotification(notification)) {
+		if (ElementIconUtil.isIconNotification(notification)) {
 			refreshLabelIcon();
 		}
 	}
 
 	protected void refreshShadow() {
-		getPrimaryShape().setShadow(ShadowFigureHelper.getShadowFigureValue((View)getModel()));
+		getPrimaryShape().setShadow(ShadowFigureHelper.getShadowFigureValue((View) getModel()));
 	}
 
 	/**
@@ -409,9 +412,10 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	@Override
 	protected void setGradient(GradientData gradient) {
 		IPapyrusNodeFigure fig = getPrimaryShape();
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(gradient != null) {
-			fig.setIsUsingGradient(true);;
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (gradient != null) {
+			fig.setIsUsingGradient(true);
+			;
 			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
 		} else {
 			fig.setIsUsingGradient(false);
@@ -436,8 +440,8 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	 */
 	protected void updateHeaderLabel() {
 		Object element = resolveSemanticElement();
-		if(element instanceof CombinedFragment) {
-			CombinedFragment combinedFragment = (CombinedFragment)element;
+		if (element instanceof CombinedFragment) {
+			CombinedFragment combinedFragment = (CombinedFragment) element;
 			String operatorKind = combinedFragment.getInteractionOperator().getName();
 			getPrimaryShape().getHeaderLabel().setText(operatorKind);
 		}
@@ -445,9 +449,9 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 	/**
 	 * Return true if the InteractionOperatorKind is allowed
-	 * 
+	 *
 	 * @param interactionOperatorLiteral
-	 *        The InteractionOperator to test
+	 *            The InteractionOperator to test
 	 * @return true if allowed
 	 */
 	protected boolean isAllowedInteractionOperator(String interactionOperatorLiteral) {
@@ -457,9 +461,10 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	@Override
 	protected void addNotationalListeners() {
 		super.addNotationalListeners();
-		if(this.propertyListener == null) {
+		if (this.propertyListener == null) {
 			this.propertyListener = new IEclipsePreferences.IPreferenceChangeListener() {
 
+				@Override
 				public void preferenceChange(PreferenceChangeEvent event) {
 					handlePreferenceChange(event);
 				}
@@ -469,11 +474,11 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	}
 
 	protected void handlePreferenceChange(PreferenceChangeEvent event) {
-		if(getParent() == null) {
+		if (getParent() == null) {
 			return;
 		}
 		String key = event.getKey();
-		if(key.equals(getTitlePreferenceKey())) {
+		if (key.equals(getTitlePreferenceKey())) {
 			refreshLabel();
 		}
 	}
@@ -501,11 +506,11 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	// update label visibility and text
 	private void refreshLabel() {
 		Object element = resolveSemanticElement();
-		if(element instanceof CombinedFragment) {
-			CombinedFragment combinedFragment = (CombinedFragment)element;
+		if (element instanceof CombinedFragment) {
+			CombinedFragment combinedFragment = (CombinedFragment) element;
 			String name = combinedFragment.getName();
 			int depth = AppearanceHelper.getQualifiedNameDepth(this.getNotationView());
-			if(depth == 0) { // full qualified
+			if (depth == 0) { // full qualified
 				name = combinedFragment.getQualifiedName();
 			}
 			WrappingLabel label = getPrimaryShape().getTitleLabel();
@@ -517,28 +522,28 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	}
 
 	protected DirectEditManager getManager() {
-		if(manager == null) {
+		if (manager == null) {
 			WrappingLabel label = this.getPrimaryShape().getTitleLabel();
 			manager = new TextDirectEditManager(this, TextCellEditorEx.class, new TextCellEditorLocator(label) {
 
 				@Override
 				public void relocate(CellEditor celleditor) {
-					Text text = (Text)celleditor.getControl();
+					Text text = (Text) celleditor.getControl();
 					Rectangle rect = getWrapLabel().getBounds().getCopy();
 					getWrapLabel().translateToAbsolute(rect);
 					Point right = rect.getRight();
-					if(!text.getFont().isDisposed()) {
-						if(getWrapLabel().isTextWrapOn() && getWrapLabel().getText().length() > 0) {
+					if (!text.getFont().isDisposed()) {
+						if (getWrapLabel().isTextWrapOn() && getWrapLabel().getText().length() > 0) {
 							rect.setSize(new Dimension(text.computeSize(rect.width, SWT.DEFAULT)));
 						} else {
 							int avr = org.eclipse.draw2d.FigureUtilities.getFontMetrics(text.getFont()).getAverageCharWidth();
 							rect.setSize(new Dimension(text.computeSize(SWT.DEFAULT, SWT.DEFAULT)).expand(avr * 2, 0));
 						}
-						if(rect.getRight().x > right.x) { // should not exceed right border
+						if (rect.getRight().x > right.x) { // should not exceed right border
 							rect.translate(right.x - rect.getRight().x, 0);
 						}
 					}
-					if(!rect.equals(new Rectangle(text.getBounds()))) {
+					if (!rect.equals(new Rectangle(text.getBounds()))) {
 						text.setBounds(rect.x, rect.y, rect.width, rect.height);
 					}
 				}
@@ -549,11 +554,11 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 	@Override
 	protected void performDirectEditRequest(Request request) {
-		if(request instanceof DirectEditRequest) {
+		if (request instanceof DirectEditRequest) {
 			WrappingLabel label = getPrimaryShape().getTitleLabel();
-			Point location = ((DirectEditRequest)request).getLocation().getCopy();
-			label.translateToRelative(location); // convert request location to relative			
-			if(label.containsPoint(location)) {
+			Point location = ((DirectEditRequest) request).getLocation().getCopy();
+			label.translateToRelative(location); // convert request location to relative
+			if (label.containsPoint(location)) {
 				getManager().show();
 			}
 		}
@@ -563,49 +568,57 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		return resolveSemanticElement();
 	}
 
+	@Override
 	public IParser getParser() {
-		if(parser == null) {
+		if (parser == null) {
 			parser = new CombinedFragmentTitleParser();
 		}
 		return parser;
 	}
 
+	@Override
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return null;
 		}
 		return getParser().getCompletionProcessor(new EObjectAdapter(getParserElement()));
 	}
 
+	@Override
 	public String getEditText() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return getParser().getEditString(new EObjectAdapter(getParserElement()), getParserOptions().intValue());
 	}
 
+	@Override
 	public void setLabelText(String text) {
 		WrappingLabel label = this.getPrimaryShape().getTitleLabel();
 		label.setText(text);
 	}
 
+	@Override
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
+			@Override
 			public String isValid(final Object value) {
-				if(value instanceof String) {
+				if (value instanceof String) {
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
-					if(element != null && parser != null) {
+					if (element != null && parser != null) {
 						try {
-							IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+							IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+								@Override
 								public void run() {
-									setResult(parser.isValidEditString(new EObjectAdapter(element), (String)value));
+									setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 								}
 							});
 							return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
@@ -628,23 +641,23 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 		@Override
 		protected Command getDirectEditCommand(DirectEditRequest edit) {
-			String labelText = (String)edit.getCellEditor().getValue();
-			//for CellEditor, null is always returned for invalid values
-			if(labelText == null) {
+			String labelText = (String) edit.getCellEditor().getValue();
+			// for CellEditor, null is always returned for invalid values
+			if (labelText == null) {
 				return null;
 			}
-			ITextAwareEditPart compartment = (ITextAwareEditPart)getHost();
-			EObject model = (EObject)compartment.getModel();
+			ITextAwareEditPart compartment = (ITextAwareEditPart) getHost();
+			EObject model = (EObject) compartment.getModel();
 			EObjectAdapter elementAdapter = null;
-			if(model instanceof View) {
-				View view = (View)model;
+			if (model instanceof View) {
+				View view = (View) model;
 				elementAdapter = new EObjectAdapterEx(ViewUtil.resolveSemanticElement(view), view);
 			} else {
 				elementAdapter = new EObjectAdapterEx(model, null);
 			}
 			String prevText = compartment.getParser().getEditString(elementAdapter, compartment.getParserOptions().intValue());
 			// check to make sure an edit has occurred before returning a command.
-			if(!prevText.equals(labelText)) {
+			if (!prevText.equals(labelText)) {
 				ICommand iCommand = compartment.getParser().getParseCommand(elementAdapter, labelText, 0);
 				return new ICommandProxy(iCommand);
 			}
@@ -653,7 +666,7 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 		@Override
 		protected void showCurrentEditValue(DirectEditRequest request) {
-			String value = (String)request.getCellEditor().getValue();
+			String value = (String) request.getCellEditor().getValue();
 			WrappingLabel label = getPrimaryShape().getTitleLabel();
 			label.setText(value);
 		}
@@ -662,18 +675,20 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 	static class CombinedFragmentTitleParser extends MessageFormatParser implements ISemanticParser {
 
 		public CombinedFragmentTitleParser() {
-			super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+			super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 		}
 
+		@Override
 		public List getSemanticElementsBeingParsed(EObject element) {
 			List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-			if(element instanceof CombinedFragment) {
-				CombinedFragment cf = (CombinedFragment)element;
+			if (element instanceof CombinedFragment) {
+				CombinedFragment cf = (CombinedFragment) element;
 				semanticElementsBeingParsed.add(cf);
 			}
 			return semanticElementsBeingParsed;
 		}
 
+		@Override
 		public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 			EStructuralFeature feature = getEStructuralFeature(notification);
 			return isValidFeature(feature);
@@ -688,8 +703,8 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		@Override
 		public String getPrintString(IAdaptable element, int flags) {
 			Object adapter = element.getAdapter(EObject.class);
-			if(adapter instanceof CombinedFragment) {
-				CombinedFragment cf = (CombinedFragment)adapter;
+			if (adapter instanceof CombinedFragment) {
+				CombinedFragment cf = (CombinedFragment) adapter;
 				return cf.getName();
 			}
 			return "";
@@ -702,9 +717,9 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 		@Override
 		public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
-			EObject element = (EObject)adapter.getAdapter(EObject.class);
+			EObject element = (EObject) adapter.getAdapter(EObject.class);
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
-			if(editingDomain == null || !(element instanceof CombinedFragment)) {
+			if (editingDomain == null || !(element instanceof CombinedFragment)) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			SetRequest request = new SetRequest(element, UMLPackage.eINSTANCE.getNamedElement_Name(), newString);
@@ -714,8 +729,8 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		@Override
 		public String getEditString(IAdaptable element, int flags) {
 			Object adapter = element.getAdapter(EObject.class);
-			if(adapter instanceof CombinedFragment) {
-				CombinedFragment cf = (CombinedFragment)adapter;
+			if (adapter instanceof CombinedFragment) {
+				CombinedFragment cf = (CombinedFragment) adapter;
 				return cf.getName();
 			}
 			return "";
@@ -723,10 +738,10 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 		protected EStructuralFeature getEStructuralFeature(Object notification) {
 			EStructuralFeature featureImpl = null;
-			if(notification instanceof Notification) {
-				Object feature = ((Notification)notification).getFeature();
-				if(feature instanceof EStructuralFeature) {
-					featureImpl = (EStructuralFeature)feature;
+			if (notification instanceof Notification) {
+				Object feature = ((Notification) notification).getFeature();
+				if (feature instanceof EStructuralFeature) {
+					featureImpl = (EStructuralFeature) feature;
 				}
 			}
 			return featureImpl;
@@ -743,11 +758,11 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 
 		/**
 		 * constructor
-		 * 
+		 *
 		 * @param element
-		 *        element to be wrapped
+		 *            element to be wrapped
 		 * @param view
-		 *        view to be wrapped
+		 *            view to be wrapped
 		 */
 		public EObjectAdapterEx(EObject element, View view) {
 			super(element);
@@ -757,10 +772,10 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 		@Override
 		public Object getAdapter(Class adapter) {
 			Object o = super.getAdapter(adapter);
-			if(o != null) {
+			if (o != null) {
 				return o;
 			}
-			if(adapter.equals(View.class)) {
+			if (adapter.equals(View.class)) {
 				return view;
 			}
 			return null;
@@ -785,22 +800,22 @@ public class CustomCombinedFragmentEditPart extends CombinedFragmentEditPart imp
 			min.width = mmode.LPtoDP(min.width);
 			max.height = mmode.LPtoDP(max.height);
 			max.width = mmode.LPtoDP(max.width);
-			if(min.width > rect.width) {
+			if (min.width > rect.width) {
 				rect.width = min.width;
-				if(request.getMoveDelta().x > 0 && request.getSizeDelta().width < 0) { // shrinking from left
+				if (request.getMoveDelta().x > 0 && request.getSizeDelta().width < 0) { // shrinking from left
 					rect.x = old.getRight().x - min.width;
 					request.getMoveDelta().x = rect.x - old.getLeft().x;
 				}
-			} else if(max.width < rect.width) {
+			} else if (max.width < rect.width) {
 				rect.width = max.width;
 			}
-			if(min.height > rect.height) {
+			if (min.height > rect.height) {
 				rect.height = min.height;
-				if(request.getMoveDelta().y > 0 && request.getSizeDelta().height < 0) { // shrinking from upper
+				if (request.getMoveDelta().y > 0 && request.getSizeDelta().height < 0) { // shrinking from upper
 					rect.y = old.getBottom().y - min.height;
 					request.getMoveDelta().y = rect.y - old.getTop().y;
 				}
-			} else if(max.height < rect.height) {
+			} else if (max.height < rect.height) {
 				rect.height = max.height;
 			}
 			feedback.translateToRelative(rect);

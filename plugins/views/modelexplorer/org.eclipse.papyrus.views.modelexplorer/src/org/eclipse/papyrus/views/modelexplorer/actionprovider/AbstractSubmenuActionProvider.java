@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana, Obeo. All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: 
+ *
+ * Contributors:
  * 	Francisco Javier Cano Muñoz (Prodevelop) – Initial API implementation.
  *  Obeo
  *
@@ -26,7 +26,7 @@ import org.eclipse.jface.action.MenuManager;
 /**
  * Specialization of <AbstractCommonActionProvider> to be used in menu and
  * submenu contributions.
- * 
+ *
  * @author fjcano
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
@@ -35,13 +35,13 @@ public abstract class AbstractSubmenuActionProvider extends
 
 	/**
 	 * Organizes the given <Collection> of <IActions>.
-	 * 
+	 *
 	 * @param createActions
 	 *            <Collection> of <IActions> to organize
 	 * @param token
 	 *            <String> that the <StringTokenizer> will use to trim each
 	 *            <IAction>'s text.
-	 * 
+	 *
 	 * @return a <Map> associating <String>s to <Collection>s of <IAction>s.
 	 */
 	protected Map<String, Collection<IAction>> extractSubmenuActions(
@@ -72,7 +72,7 @@ public abstract class AbstractSubmenuActionProvider extends
 
 	/**
 	 * Fills a <IContributionManager> with the given <Collection> of <IActions>.
-	 * 
+	 *
 	 * @param manager
 	 *            the manager
 	 * @param actions
@@ -96,7 +96,7 @@ public abstract class AbstractSubmenuActionProvider extends
 	/**
 	 * Fills a <IContributionManager> with two levels of menus, as specified by
 	 * the <Map> of <String>s to <Collection>s of <IAction>s.
-	 * 
+	 *
 	 * @param manager
 	 *            the manager
 	 * @param submenuActions

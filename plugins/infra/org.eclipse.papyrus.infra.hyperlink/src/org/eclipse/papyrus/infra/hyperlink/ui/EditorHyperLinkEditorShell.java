@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Display;
 
 /**
- * 
+ *
  * This shell is used to find the editors
- * 
+ *
  */
 public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShell {
 
@@ -57,11 +57,11 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 		Display display = Display.getCurrent();
 		// code use to wait for an action from the user
 
-		//		getEditHyperlinkShell().setBounds(500, 500, 600, 120);
+		// getEditHyperlinkShell().setBounds(500, 500, 600, 120);
 		getEditHyperlinkShell().pack();
 		getEditHyperlinkShell().open();
-		while(!getEditHyperlinkShell().isDisposed()) {
-			if(!display.readAndDispatch()) {
+		while (!getEditHyperlinkShell().isDisposed()) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
 		}
@@ -69,23 +69,23 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 
 	/**
 	 * Instantiates a new editor hyperlink diagram shell.
-	 * 
+	 *
 	 * @param editorFactoryRegistry
-	 *        the editor factory registry
+	 *            the editor factory registry
 	 * @param model
-	 *        the model
+	 *            the model
 	 */
 	public EditorHyperLinkEditorShell(IPageIconsRegistry editorFactoryRegistry, EObject model) {
 		super();
 		this.amodel = model;
 		this.editorRegistry = editorFactoryRegistry;
 		createEditHyperlinkShell();
-		getObjectcLabel().setText(Messages.EditorHyperLinkEditorShell_View); //TODO : where is it used?
+		getObjectcLabel().setText(Messages.EditorHyperLinkEditorShell_View); // TODO : where is it used?
 
 		// intialize "use default" check box
 		getUseDefaultCheckBox().setSelection(usedefaultTooltip);
 		getObjectLabeltext().setEditable(false);
-		if(usedefaultTooltip) {
+		if (usedefaultTooltip) {
 			getTooltipInputText().setEditable(false);
 			getTooltipInputText().setText(getObjectLabeltext().getText());
 		}
@@ -94,7 +94,7 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				usedefaultTooltip = getUseDefaultCheckBox().getSelection();
-				if(usedefaultTooltip) {
+				if (usedefaultTooltip) {
 					getTooltipInputText().setEditable(false);
 					getTooltipInputText().setText(getObjectLabeltext().getText());
 				} else {
@@ -110,8 +110,8 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 				EditorLookForEditorShell editorLookForDiagram = new EditorLookForEditorShell(editorRegistry, amodel);
 				editorLookForDiagram.open();
 				Object selection = editorLookForDiagram.getSelectedEditor();
-				if(selection == null) {//cancelled or no selection
-					//nothing to do
+				if (selection == null) {// cancelled or no selection
+					// nothing to do
 				} else {
 
 					EditorHyperLinkHelper helper = new EditorHyperLinkHelper();
@@ -119,7 +119,7 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 					Assert.isNotNull(hyperLinkEditor, NLS.bind(Messages.EditorHyperLinkEditorShell_ICanFindTheHyperLinkEditorObject, selection));
 					hyperLinkEditor.setObject(selection);
 
-					//TODO : remove this dependency
+					// TODO : remove this dependency
 					ILabelProvider labelProvider;
 					try {
 						labelProvider = ServiceUtilsForEObject.getInstance().getServiceRegistry(amodel).getService(LabelProviderService.class).getLabelProvider();
@@ -128,7 +128,7 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 						labelProvider = new LabelProvider();
 					}
 					getObjectLabeltext().setText(labelProvider.getText(selection));
-					if(usedefaultTooltip) {
+					if (usedefaultTooltip) {
 						getTooltipInputText().setText(getObjectLabeltext().getText());
 					}
 				}
@@ -147,11 +147,11 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 		this.getOkButton().addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(hyperLinkEditor != null) {
+				if (hyperLinkEditor != null) {
 					hyperLinkEditor.setTooltipText(getTooltipInputText().getText().trim());
 					// if diagram is null, maybe bad selection or other it
 					// return null!
-					if(hyperLinkEditor.getObject() == null) {
+					if (hyperLinkEditor.getObject() == null) {
 						hyperLinkEditor = null;
 					}
 				}
@@ -162,7 +162,7 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 
 	/**
 	 * Gets the hyper link diagram.
-	 * 
+	 *
 	 * @return the hyperLinkEditor maybe null, if cancel or bad selection
 	 */
 	public HyperLinkEditor getHyperLinkEditor() {
@@ -171,12 +171,12 @@ public class EditorHyperLinkEditorShell extends AbstractEditHyperlinkDocumentShe
 
 	/**
 	 * Sets the hyper link diagram.
-	 * 
+	 *
 	 * @param hyperLinkEditor
-	 *        the hyperLinkEditor to set
+	 *            the hyperLinkEditor to set
 	 */
 	public void setHyperLinkEditor(HyperLinkEditor hyperLinkEditor) {
-		//TODO
+		// TODO
 		getTooltipInputText().setText(hyperLinkEditor.getTooltipText());
 		this.hyperLinkEditor = hyperLinkEditor;
 	}

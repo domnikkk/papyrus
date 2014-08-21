@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -43,41 +43,41 @@ public class PropertyCompartmentSemanticEditPolicy extends CompartmentSemanticEd
 
 		IElementType elementTypeToCreate = req.getElementType();
 		IElementType baseType = elementTypeToCreate;
-		//if extended type, retrieve the sysml closest element element type
-		if(elementTypeToCreate instanceof IExtendedHintedElementType) {
+		// if extended type, retrieve the sysml closest element element type
+		if (elementTypeToCreate instanceof IExtendedHintedElementType) {
 			List<IElementType> superTypes = Arrays.asList(elementTypeToCreate.getAllSuperTypes());
-			if(superTypes.contains(SysMLElementTypes.PART_PROPERTY)) {
+			if (superTypes.contains(SysMLElementTypes.PART_PROPERTY)) {
 				baseType = SysMLElementTypes.PART_PROPERTY;
-			} else if(superTypes.contains(SysMLElementTypes.REFERENCE_PROPERTY)) {
+			} else if (superTypes.contains(SysMLElementTypes.REFERENCE_PROPERTY)) {
 				baseType = SysMLElementTypes.REFERENCE_PROPERTY;
-			} else if(superTypes.contains(SysMLElementTypes.ACTOR_PART_PROPERTY)) {
+			} else if (superTypes.contains(SysMLElementTypes.ACTOR_PART_PROPERTY)) {
 				baseType = SysMLElementTypes.ACTOR_PART_PROPERTY;
-			} else if(superTypes.contains(SysMLElementTypes.VALUE_PROPERTY)) {
+			} else if (superTypes.contains(SysMLElementTypes.VALUE_PROPERTY)) {
 				baseType = SysMLElementTypes.VALUE_PROPERTY;
-			} else if(superTypes.contains(SysMLElementTypes.FLOW_PORT_NA)) {
+			} else if (superTypes.contains(SysMLElementTypes.FLOW_PORT_NA)) {
 				baseType = SysMLElementTypes.FLOW_PORT_NA;
-			} else if(superTypes.contains(SysMLElementTypes.CONSTRAINT_PROPERTY)) {
+			} else if (superTypes.contains(SysMLElementTypes.CONSTRAINT_PROPERTY)) {
 				baseType = SysMLElementTypes.CONSTRAINT_PROPERTY;
 			}
 		}
-		
-		
-		if(SysMLElementTypes.PART_PROPERTY == baseType) {
+
+
+		if (SysMLElementTypes.PART_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreatePartWithTypeConfigureCommandFactory());
 		}
-		if(SysMLElementTypes.REFERENCE_PROPERTY == baseType) {
+		if (SysMLElementTypes.REFERENCE_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateReferenceWithTypeConfigureCommandFactory());
 		}
-		if(SysMLElementTypes.ACTOR_PART_PROPERTY ==baseType) {
+		if (SysMLElementTypes.ACTOR_PART_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateActorPartWithTypeConfigureCommandFactory());
 		}
-		if(SysMLElementTypes.VALUE_PROPERTY == baseType) {
+		if (SysMLElementTypes.VALUE_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateValueWithTypeConfigureCommandFactory());
 		}
-		if(SysMLElementTypes.FLOW_PORT_NA == baseType) {
+		if (SysMLElementTypes.FLOW_PORT_NA == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateFlowPortWithFlowSpecificationConfigureCommandFactory());
 		}
-		if(SysMLElementTypes.CONSTRAINT_PROPERTY == baseType) {
+		if (SysMLElementTypes.CONSTRAINT_PROPERTY == baseType) {
 			req.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new CreateConstraintPropertyWithTypeConfigureCommandFactory());
 		}
 

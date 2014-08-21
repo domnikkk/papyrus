@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class CustomActionExecutionSpecificationCreateCommand extends ActionExecu
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -44,7 +44,7 @@ public class CustomActionExecutionSpecificationCreateCommand extends ActionExecu
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomActionExecutionSpecificationCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -53,18 +53,18 @@ public class CustomActionExecutionSpecificationCreateCommand extends ActionExecu
 
 	/**
 	 * To add the lifeline to the attribute covered of the AES
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// Get the model container
-		Object modelContainer = ((CreateElementRequest)getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
+		Object modelContainer = ((CreateElementRequest) getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
 		// Create the action execution specification
-		ActionExecutionSpecification aes = (ActionExecutionSpecification)CommandHelper.doCreateExecutionSpecification(UMLFactory.eINSTANCE.createActionExecutionSpecification(), (Lifeline)getElementToEdit(), modelContainer);
-		//TODO : add the corresponding action
+		ActionExecutionSpecification aes = (ActionExecutionSpecification) CommandHelper.doCreateExecutionSpecification(UMLFactory.eINSTANCE.createActionExecutionSpecification(), (Lifeline) getElementToEdit(), modelContainer);
+		// TODO : add the corresponding action
 		doConfigure(aes, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(aes);
+		((CreateElementRequest) getRequest()).setNewElement(aes);
 		return CommandResult.newOKCommandResult(aes);
 	}
 }

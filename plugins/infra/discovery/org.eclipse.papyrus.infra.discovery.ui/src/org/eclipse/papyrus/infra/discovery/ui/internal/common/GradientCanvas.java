@@ -69,7 +69,9 @@ public class GradientCanvas extends Canvas {
 		boolean vertical;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.swt.widgets.Control#forceFocus()
 	 */
 	@Override
@@ -79,7 +81,7 @@ public class GradientCanvas extends Canvas {
 
 	/**
 	 * Creates the form content control as a child of the provided parent.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent widget
 	 */
@@ -241,8 +243,8 @@ public class GradientCanvas extends Canvas {
 		}
 		if (gradientInfo != null) {
 			// TODO e3.4 use FormImages
-//			gradientImage = FormImages.getInstance().getGradient(gradientInfo.gradientColors, gradientInfo.percents,
-//					gradientInfo.vertical ? rect.height : rect.width, gradientInfo.vertical, getColor(COLOR_BASE_BG));
+			// gradientImage = FormImages.getInstance().getGradient(gradientInfo.gradientColors, gradientInfo.percents,
+			// gradientInfo.vertical ? rect.height : rect.width, gradientInfo.vertical, getColor(COLOR_BASE_BG));
 			boolean vertical = gradientInfo.vertical;
 			int width = vertical ? 1 : rect.width;
 			int height = vertical ? rect.height : 1;
@@ -341,7 +343,7 @@ public class GradientCanvas extends Canvas {
 	}
 
 	public Color getColor(String key) {
-		return (Color) colors.get(key);
+		return colors.get(key);
 	}
 
 	public boolean hasColor(String key) {

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet;
 
@@ -29,8 +29,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getParameter <em>Parameter</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getParameter <em>Parameter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,10 +46,10 @@ public interface ParameterValue extends EObject {
 	 * Returns the value of the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parameter</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parameter</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Parameter</em>' reference.
 	 * @see #setParameter(Parameter)
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getParameterValue_Parameter()
@@ -64,7 +64,9 @@ public interface ParameterValue extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.emf.facet.efacet.ParameterValue#getParameter <em>Parameter</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parameter</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Parameter</em>' reference.
 	 * @see #getParameter()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -77,10 +79,10 @@ public interface ParameterValue extends EObject {
 	 * The list contents are of type {@link java.lang.Object}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Value</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Value</em>' attribute list.
 	 * @see org.eclipse.papyrus.emf.facet.efacet.EFacetPackage#getParameterValue_Value()
 	 * @model

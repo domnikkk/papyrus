@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.jface.viewers.ViewerFilter;
 
 /**
  * A class to filter the empty elements, based on the given content provider
- * 
+ *
  * @author Camille Letavernier
  */
 public class MetamodelContentFilter extends ViewerFilter {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,18 +17,18 @@ package org.eclipse.papyrus.infra.core.serviceregistry;
 
 /**
  * @author cedric dumoulin
- * 
+ *
  */
 public class DeclarationNotFoundException extends DeclarationException {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public DeclarationNotFoundException() {
 		super();
@@ -36,7 +36,7 @@ public class DeclarationNotFoundException extends DeclarationException {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 * @param cause
 	 */
@@ -46,7 +46,7 @@ public class DeclarationNotFoundException extends DeclarationException {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 */
 	public DeclarationNotFoundException(String message) {
@@ -55,7 +55,7 @@ public class DeclarationNotFoundException extends DeclarationException {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param cause
 	 */
 	public DeclarationNotFoundException(Throwable cause) {

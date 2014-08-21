@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,9 +22,13 @@ public interface IDiagramVersionUpdater {
 
 	/**
 	 * Update a diagram to a new version.
-	 * @param diagram the diagram to update
-	 * @param oldVersion the old version of the diagram
-	 * @param newVersion the new version of the diagram
+	 * 
+	 * @param diagram
+	 *            the diagram to update
+	 * @param oldVersion
+	 *            the old version of the diagram
+	 * @param newVersion
+	 *            the new version of the diagram
 	 * @return TODO : should return a status, not int.
 	 */
 	public int update(Diagram diagram, String oldVersion, String newVersion);

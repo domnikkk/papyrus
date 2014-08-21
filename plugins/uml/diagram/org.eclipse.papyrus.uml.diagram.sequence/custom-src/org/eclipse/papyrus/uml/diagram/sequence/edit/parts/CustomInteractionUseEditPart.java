@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,7 +59,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Add implementing IPapyrusEditPart to displaying Stereotypes.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class CustomInteractionUseEditPart extends InteractionUseEditPart implements IPapyrusEditPart {
@@ -91,7 +91,7 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomInteractionUseEditPart(View view) {
@@ -102,11 +102,11 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	 * Try to use the notifier from super class, if not exist, create new one.
 	 */
 	protected NotificationHelper getNotifier() {
-		if(notifier == null) {
+		if (notifier == null) {
 			try {
 				Field f = InteractionUseEditPart.class.getDeclaredField("notifier");
 				f.setAccessible(true);
-				notifier = (NotificationHelper)f.get(this);
+				notifier = (NotificationHelper) f.get(this);
 			} catch (Exception e) {
 				notifier = new NotificationHelper(new UIAdapterImpl() {
 
@@ -122,12 +122,13 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(width);
 		}
 		super.setLineWidth(width);
 	}
 
+	@Override
 	protected IFigure createNodeShape() {
 		primaryShape = new InteractionUseRectangleFigure();
 		getPrimaryShape().setShadow(false);
@@ -141,11 +142,11 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CustomInteractionUseItemSemanticEditPolicy());
-		//installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SequenceGraphicalNodeEditPolicy());
-		//Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
+		// installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new SequenceGraphicalNodeEditPolicy());
+		// Fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new GatesHolderGraphicalNodeEditPolicy());
 		installEditPolicy("Gate Creation Edit Policy", new GateCreationEditPolicy());
-		//install a editpolicy to display stereotypes
+		// install a editpolicy to display stereotypes
 		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeNodeLabelDisplayEditPolicy());
 	}
 
@@ -157,21 +158,22 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 		return new BorderedNodeFigure(super.createNodeFigure());
 	}
 
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof IBorderItemEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		}
 		return getContentPane();
 	}
 
 	public final BorderedNodeFigure getBorderedFigure() {
-		return (BorderedNodeFigure)getFigure();
+		return (BorderedNodeFigure) getFigure();
 	}
 
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof GateEditPart) {
-			getBorderedFigure().getBorderItemContainer().remove(((GateEditPart)childEditPart).getFigure());
+		if (childEditPart instanceof GateEditPart) {
+			getBorderedFigure().getBorderItemContainer().remove(((GateEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return super.removeFixedChild(childEditPart);
@@ -179,21 +181,21 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionUseEditPart#addFixedChild(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param childEditPart
 	 * @return
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof GateEditPart) {
-			getBorderedFigure().getBorderItemContainer().add(((GateEditPart)childEditPart).getFigure(), new GateLocator((GateEditPart)childEditPart, getFigure()));
+		if (childEditPart instanceof GateEditPart) {
+			getBorderedFigure().getBorderItemContainer().add(((GateEditPart) childEditPart).getFigure(), new GateLocator((GateEditPart) childEditPart, getFigure()));
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
 	}
 
 	protected void refreshShadow() {
-		getPrimaryShape().setShadow(AppearanceHelper.showShadow((View)getModel()));
+		getPrimaryShape().setShadow(AppearanceHelper.showShadow((View) getModel()));
 	}
 
 	/**
@@ -206,9 +208,9 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 
 	/**
 	 * sets the back ground color of this edit part
-	 * 
+	 *
 	 * @param color
-	 *        the new value of the back ground color
+	 *            the new value of the back ground color
 	 */
 	@Override
 	protected void setBackgroundColor(Color color) {
@@ -223,9 +225,10 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	@Override
 	protected void setGradient(GradientData gradient) {
 		IPapyrusNodeFigure fig = getPrimaryShape();
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(gradient != null) {
-			fig.setIsUsingGradient(true);;
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (gradient != null) {
+			fig.setIsUsingGradient(true);
+			;
 			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
 		} else {
 			fig.setIsUsingGradient(false);
@@ -244,97 +247,97 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	protected void handleNotificationEvent(Notification notification) {
 		final NotificationHelper notifier = getNotifier();
 		Object feature = notification.getFeature();
-		if(UMLPackage.eINSTANCE.getInteractionUse_RefersTo().equals(feature)) {
-			if(notification.getOldValue() instanceof Interaction) {
+		if (UMLPackage.eINSTANCE.getInteractionUse_RefersTo().equals(feature)) {
+			if (notification.getOldValue() instanceof Interaction) {
 				notifier.unlistenAll();
 				// notifier.unlistenObject((Interaction) notification.getOldValue());
 			}
-			InteractionUse interactionUse = (InteractionUse)resolveSemanticElement();
+			InteractionUse interactionUse = (InteractionUse) resolveSemanticElement();
 			CommandHelper.executeCommandWithoutHistory(getEditingDomain(), RemoveCommand.create(getEditingDomain(), interactionUse, UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), interactionUse.getActualGates()), true);
-			if(notification.getNewValue() instanceof Interaction) {
-				Interaction interaction = (Interaction)notification.getNewValue();
+			if (notification.getNewValue() instanceof Interaction) {
+				Interaction interaction = (Interaction) notification.getNewValue();
 				notifier.listenObject(interaction);
 				interactionUse.getActualGates();
 				List<Gate> formalGates = interaction.getFormalGates();
-				for(Gate formalGate : formalGates) {
-					Gate newActualGate = (Gate)EcoreUtil.create(UMLPackage.Literals.GATE);
+				for (Gate formalGate : formalGates) {
+					Gate newActualGate = (Gate) EcoreUtil.create(UMLPackage.Literals.GATE);
 					newActualGate.setName(formalGate.getName());
 					CommandHelper.executeCommandWithoutHistory(getEditingDomain(), AddCommand.create(getEditingDomain(), resolveSemanticElement(), UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), newActualGate), true);
 					notifier.listenObject(formalGate);
 					notifier.listenObject(newActualGate);
 				}
 			}
-		} else if(UMLPackage.eINSTANCE.getInteractionFragment_Covered().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getInteractionFragment_Covered().equals(feature)) {
 			activate();
 			resizeInteractionFragmentFigure();
-		} else if(UMLPackage.eINSTANCE.getInteraction_FormalGate().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getInteraction_FormalGate().equals(feature)) {
 			// Handle formal gate
-			InteractionUse interactionUse = (InteractionUse)resolveSemanticElement();
+			InteractionUse interactionUse = (InteractionUse) resolveSemanticElement();
 			Object oldValue = notification.getOldValue();
-			if(oldValue instanceof Gate) {
-				notifier.unlistenObject((Gate)oldValue);
+			if (oldValue instanceof Gate) {
+				notifier.unlistenObject((Gate) oldValue);
 				List<Gate> actualGates = interactionUse.getActualGates();
-				for(int i = actualGates.size() - 1; i >= 0; i--) {
+				for (int i = actualGates.size() - 1; i >= 0; i--) {
 					Gate element = actualGates.get(i);
-					if(((Gate)oldValue).getName().equals(element.getName())) {
+					if (((Gate) oldValue).getName().equals(element.getName())) {
 						notifier.unlistenObject(element);
 						CommandHelper.executeCommandWithoutHistory(getEditingDomain(), RemoveCommand.create(getEditingDomain(), interactionUse, UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), element), true);
 					}
 				}
 			}
 			Object newValue = notification.getNewValue();
-			if(newValue instanceof Gate) {
-				Gate actualGate = interactionUse.createActualGate(((Gate)newValue).getName());
-				notifier.listenObject((Gate)newValue);
+			if (newValue instanceof Gate) {
+				Gate actualGate = interactionUse.createActualGate(((Gate) newValue).getName());
+				notifier.listenObject((Gate) newValue);
 				notifier.listenObject(actualGate);
 			}
-		} else if(UMLPackage.eINSTANCE.getInteractionUse_ActualGate().equals(feature)) {
-			if(notification.getEventType() == Notification.ADD) {
+		} else if (UMLPackage.eINSTANCE.getInteractionUse_ActualGate().equals(feature)) {
+			if (notification.getEventType() == Notification.ADD) {
 				// Block manual creation of actual gate
-				//				if(notification.getNewValue() instanceof Gate) {
-				//					Gate newActualGate = (Gate)notification.getNewValue();
-				//					if(!checkActualGateExistence(newActualGate)) {
-				//						MessageDialog.openError(Display.getCurrent().getActiveShell(), NO_ACTUAL_GATE_MANUAL_CREATION_DLG_TITLE, NO_ACTUAL_GATE_MANUAL_CREATION_DLG_MSG);
-				//						CommandHelper.executeCommandWithoutHistory(getEditingDomain(), RemoveCommand.create(getEditingDomain(), resolveSemanticElement(), UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), newActualGate), true);
-				//					}
-				//				}
-			} else if(notification.getEventType() == Notification.REMOVE) {
+				// if(notification.getNewValue() instanceof Gate) {
+				// Gate newActualGate = (Gate)notification.getNewValue();
+				// if(!checkActualGateExistence(newActualGate)) {
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), NO_ACTUAL_GATE_MANUAL_CREATION_DLG_TITLE, NO_ACTUAL_GATE_MANUAL_CREATION_DLG_MSG);
+				// CommandHelper.executeCommandWithoutHistory(getEditingDomain(), RemoveCommand.create(getEditingDomain(), resolveSemanticElement(), UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), newActualGate), true);
+				// }
+				// }
+			} else if (notification.getEventType() == Notification.REMOVE) {
 				// Block manual deletion of actual gate
-				//				if(notification.getOldValue() instanceof Gate) {
-				//					Gate oldActualGate = (Gate)notification.getOldValue();
-				//					//There are some issues in redo progress, check if there is other one with same time firstly.
-				//					InteractionUse interactionUse = (InteractionUse)notification.getNotifier();
-				//					Gate otherOne = interactionUse.getActualGate(oldActualGate.getName());
-				//					if(otherOne == null && checkActualGateExistence(oldActualGate)) {
-				//						MessageDialog.openError(Display.getCurrent().getActiveShell(), NO_ACTUAL_GATE_MANUAL_DELETION_DLG_TITLE, NO_ACTUAL_GATE_MANUAL_DELETION_DLG_MSG);
-				//						CommandHelper.executeCommandWithoutHistory(getEditingDomain(), AddCommand.create(getEditingDomain(), resolveSemanticElement(), UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), oldActualGate), true);
-				//					}
-				//				}
+				// if(notification.getOldValue() instanceof Gate) {
+				// Gate oldActualGate = (Gate)notification.getOldValue();
+				// //There are some issues in redo progress, check if there is other one with same time firstly.
+				// InteractionUse interactionUse = (InteractionUse)notification.getNotifier();
+				// Gate otherOne = interactionUse.getActualGate(oldActualGate.getName());
+				// if(otherOne == null && checkActualGateExistence(oldActualGate)) {
+				// MessageDialog.openError(Display.getCurrent().getActiveShell(), NO_ACTUAL_GATE_MANUAL_DELETION_DLG_TITLE, NO_ACTUAL_GATE_MANUAL_DELETION_DLG_MSG);
+				// CommandHelper.executeCommandWithoutHistory(getEditingDomain(), AddCommand.create(getEditingDomain(), resolveSemanticElement(), UMLPackage.eINSTANCE.getInteractionUse_ActualGate(), oldActualGate), true);
+				// }
+				// }
 			}
-		} else if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) && notification.getNotifier() instanceof Gate) {
-			Gate gate = (Gate)notification.getNotifier();
-			if(gate.eContainer() instanceof Interaction) {
+		} else if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature) && notification.getNotifier() instanceof Gate) {
+			Gate gate = (Gate) notification.getNotifier();
+			if (gate.eContainer() instanceof Interaction) {
 				// Handle modification of formal gate's name
-				InteractionUse interactionUse = (InteractionUse)resolveSemanticElement();
+				InteractionUse interactionUse = (InteractionUse) resolveSemanticElement();
 				List<Gate> actualGates = interactionUse.getActualGates();
 				String oldValue = notification.getOldStringValue();
 				String newValue = notification.getNewStringValue();
-				for(Gate actualGate : actualGates) {
-					if(oldValue == null && actualGate.getName() == null || oldValue != null && oldValue.equals(actualGate.getName())) {
+				for (Gate actualGate : actualGates) {
+					if (oldValue == null && actualGate.getName() == null || oldValue != null && oldValue.equals(actualGate.getName())) {
 						notifier.unlistenObject(actualGate); // Delete listener on gate
 						actualGate.setName(newValue);
 						notifier.listenObject(actualGate); // Add listener on gate
 					}
 				}
-			} else if(gate.eContainer() instanceof InteractionUse) {
+			} else if (gate.eContainer() instanceof InteractionUse) {
 				// Block modification of actual gate's name
 				notifier.unlistenObject(gate); // Delete listener on gate
 				gate.setName(notification.getOldStringValue());
 				notifier.listenObject(gate); // Add listener on gate
 			}
 		}
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}
@@ -344,16 +347,16 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 
 	/**
 	 * Check if actual gate is attached to a formal gate
-	 * 
+	 *
 	 * @return true if there is a formal gate corresponding to the actual gate
 	 */
 	private boolean checkActualGateExistence(Gate actualGate) {
-		InteractionUse interactionUse = (InteractionUse)resolveSemanticElement();
+		InteractionUse interactionUse = (InteractionUse) resolveSemanticElement();
 		Interaction interaction = interactionUse.getRefersTo();
-		if(interaction != null) {
+		if (interaction != null) {
 			// Find if the corresponding formal gate exists
-			for(Gate formalGate : interaction.getFormalGates()) {
-				if(formalGate.getName().equals(actualGate.getName())) {
+			for (Gate formalGate : interaction.getFormalGates()) {
+				if (formalGate.getName().equals(actualGate.getName())) {
 					return true;
 				}
 			}
@@ -368,17 +371,17 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	public void activate() {
 		super.activate();
 		final NotificationHelper notifier = getNotifier();
-		if(resolveSemanticElement() instanceof InteractionUse) {
-			InteractionUse interactionUse = (InteractionUse)resolveSemanticElement();
+		if (resolveSemanticElement() instanceof InteractionUse) {
+			InteractionUse interactionUse = (InteractionUse) resolveSemanticElement();
 			Interaction interaction = interactionUse.getRefersTo();
-			if(interaction != null) {
+			if (interaction != null) {
 				// activate the listener on the referred interaction
 				notifier.listenObject(interaction);
-				for(Gate formalGate : interaction.getFormalGates()) {
+				for (Gate formalGate : interaction.getFormalGates()) {
 					notifier.listenObject(formalGate);
 				}
 			}
-			for(Gate actualGate : interactionUse.getActualGates()) {
+			for (Gate actualGate : interactionUse.getActualGates()) {
 				notifier.listenObject(actualGate);
 			}
 		}
@@ -391,7 +394,7 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	@Override
 	public void deactivate() {
 		super.deactivate();
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 	}
@@ -401,7 +404,7 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 	 */
 	@Override
 	public void removeNotify() {
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 		super.removeNotify();
@@ -409,15 +412,15 @@ public class CustomInteractionUseEditPart extends InteractionUseEditPart impleme
 
 	@Override
 	public void performRequest(Request request) {
-		if(request.getType().equals(REQ_OPEN)) {
-			InteractionUse interactionUse = (InteractionUse)resolveSemanticElement();
+		if (request.getType().equals(REQ_OPEN)) {
+			InteractionUse interactionUse = (InteractionUse) resolveSemanticElement();
 			Interaction interaction = interactionUse.getRefersTo();
-			if(interaction == null) {
+			if (interaction == null) {
 				MessageDialog.openWarning(Display.getCurrent().getActiveShell(), "Warning", "There is no referenced interaction!");
 				return;
 			}
 			Diagram diagram = InteractionUseUtil.findDiagram(getNotationView(), interaction);
-			if(diagram == null) {
+			if (diagram == null) {
 				MessageDialog.openWarning(Display.getCurrent().getActiveShell(), "Warning", "Cannot find diagram of the referenced interaction!");
 			} else {
 				InteractionUseUtil.openDiagram(diagram);

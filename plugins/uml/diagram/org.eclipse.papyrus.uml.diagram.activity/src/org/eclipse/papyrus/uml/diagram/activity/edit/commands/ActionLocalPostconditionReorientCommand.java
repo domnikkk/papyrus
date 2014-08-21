@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin and CEA LIST
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.Constraint;
@@ -65,14 +66,15 @@ public class ActionLocalPostconditionReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == referenceOwner instanceof Action) {
+		if (false == referenceOwner instanceof Action) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -82,7 +84,7 @@ public class ActionLocalPostconditionReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Constraint && newEnd instanceof Action)) {
+		if (!(oldEnd instanceof Constraint && newEnd instanceof Action)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistActionLocalPostcondition_4002(getNewSource(), getOldTarget());
@@ -92,7 +94,7 @@ public class ActionLocalPostconditionReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Constraint && newEnd instanceof Constraint)) {
+		if (!(oldEnd instanceof Constraint && newEnd instanceof Constraint)) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistActionLocalPostcondition_4002(getOldSource(), getNewTarget());
@@ -101,14 +103,15 @@ public class ActionLocalPostconditionReorientCommand extends EditElementCommand 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -136,27 +139,27 @@ public class ActionLocalPostconditionReorientCommand extends EditElementCommand 
 	 * @generated
 	 */
 	protected Action getOldSource() {
-		return (Action)referenceOwner;
+		return (Action) referenceOwner;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Action getNewSource() {
-		return (Action)newEnd;
+		return (Action) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Constraint getOldTarget() {
-		return (Constraint)oldEnd;
+		return (Constraint) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Constraint getNewTarget() {
-		return (Constraint)newEnd;
+		return (Constraint) newEnd;
 	}
 }

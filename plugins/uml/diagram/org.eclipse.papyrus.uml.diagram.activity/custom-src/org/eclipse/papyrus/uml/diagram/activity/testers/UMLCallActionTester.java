@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,22 +37,23 @@ public class UMLCallActionTester extends PropertyTester {
 	}
 
 	/** Test the receiver against the selected property */
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 		// Ensure Papyrus is the active editor
 		IEditorPart editor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
+		if ((editor == null) || (!(editor instanceof IMultiDiagramEditor))) {
 			return false;
 		}
 		Object currentValue = null;
-		if(IS_CALL_ACTION.equals(property)) {
-			if(receiver instanceof StructuredSelection) {
-				StructuredSelection structuredSelection = (StructuredSelection)receiver;
+		if (IS_CALL_ACTION.equals(property)) {
+			if (receiver instanceof StructuredSelection) {
+				StructuredSelection structuredSelection = (StructuredSelection) receiver;
 				Object obj = structuredSelection.getFirstElement();
 				EObject element = null;
-				if(obj instanceof IAdaptable) {
-					element = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
-					if(element instanceof View) {
-						element = ((View)element).getElement();
+				if (obj instanceof IAdaptable) {
+					element = (EObject) ((IAdaptable) obj).getAdapter(EObject.class);
+					if (element instanceof View) {
+						element = ((View) element).getElement();
 					}
 				}
 				currentValue = element instanceof InvocationAction;

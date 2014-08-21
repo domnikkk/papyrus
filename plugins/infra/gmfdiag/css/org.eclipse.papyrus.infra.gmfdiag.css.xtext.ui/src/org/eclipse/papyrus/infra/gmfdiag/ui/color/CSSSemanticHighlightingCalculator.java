@@ -11,6 +11,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
@@ -32,63 +33,64 @@ public class CSSSemanticHighlightingCalculator implements ISemanticHighlightingC
 		ruleNameToID.put("Declaration", CSSHighlightingConfiguration.PROPERTY);
 		ruleNameToID.put("Function", CSSHighlightingConfiguration.FUNCTION);
 
-		//Values
+		// Values
 
-		ruleNameToID.put("Name", CSSHighlightingConfiguration.STRING_ID);
-		ruleNameToID.put("StringValue", CSSHighlightingConfiguration.STRING_ID);
-		ruleNameToID.put("Uri", CSSHighlightingConfiguration.STRING_ID);
+		ruleNameToID.put("Name", DefaultHighlightingConfiguration.STRING_ID);
+		ruleNameToID.put("StringValue", DefaultHighlightingConfiguration.STRING_ID);
+		ruleNameToID.put("Uri", DefaultHighlightingConfiguration.STRING_ID);
 
 		ruleNameToID.put("HexColor", CSSHighlightingConfiguration.HEX_COLOR);
 
-		ruleNameToID.put("Length", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Percentage", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Frequency", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Ems", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Exs", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Angle", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Time", CSSHighlightingConfiguration.NUMBER_ID);
-		ruleNameToID.put("Number", CSSHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Length", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Percentage", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Frequency", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Ems", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Exs", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Angle", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Time", DefaultHighlightingConfiguration.NUMBER_ID);
+		ruleNameToID.put("Number", DefaultHighlightingConfiguration.NUMBER_ID);
 
-		//Available fonts
+		// Available fonts
 
 		FontData[] fontData = Display.getCurrent().getFontList(null, true);
-		for(FontData data : fontData) {
+		for (FontData data : fontData) {
 			fontNames.add(data.getName().toLowerCase());
 		}
 	}
 
+	@Override
 	public void provideHighlightingFor(XtextResource resource, IHighlightedPositionAcceptor acceptor) {
-		if(resource == null || resource.getParseResult() == null) {
+		if (resource == null || resource.getParseResult() == null) {
 			return;
 		}
 
 		INode root = resource.getParseResult().getRootNode();
-		for(INode node : root.getAsTreeIterable()) {
-			if(node.getGrammarElement() instanceof RuleCall) {
-				RuleCall ruleCall = (RuleCall)node.getGrammarElement();
+		for (INode node : root.getAsTreeIterable()) {
+			if (node.getGrammarElement() instanceof RuleCall) {
+				RuleCall ruleCall = (RuleCall) node.getGrammarElement();
 				String name = ruleCall.getRule().getName();
 
 				String stringOrNameValue = null;
 
-				if("Name".equals(name)) { //TODO: Strings should also be taken into account
-					//Check the known elements (fonts, colors, ...)
+				if ("Name".equals(name)) { // TODO: Strings should also be taken into account
+					// Check the known elements (fonts, colors, ...)
 					stringOrNameValue = node.getText();
-				} else if("StringValue".equals(name)) {
+				} else if ("StringValue".equals(name)) {
 					stringOrNameValue = node.getText();
 					stringOrNameValue = stringOrNameValue.substring(1, stringOrNameValue.length() - 1);
 				}
 
-				if(stringOrNameValue != null) {
-					if(isFont(stringOrNameValue)) {
+				if (stringOrNameValue != null) {
+					if (isFont(stringOrNameValue)) {
 						acceptor.addPosition(node.getOffset(), node.getLength(), CSSHighlightingConfiguration.FONT);
 						continue;
-					} else if(isColor(stringOrNameValue)) {
+					} else if (isColor(stringOrNameValue)) {
 						acceptor.addPosition(node.getOffset(), node.getLength(), CSSHighlightingConfiguration.COLOR);
 						continue;
 					}
 				}
 
-				if(ruleNameToID.containsKey(name)) {
+				if (ruleNameToID.containsKey(name)) {
 					acceptor.addPosition(node.getOffset(), node.getLength(), ruleNameToID.get(name));
 				}
 			}

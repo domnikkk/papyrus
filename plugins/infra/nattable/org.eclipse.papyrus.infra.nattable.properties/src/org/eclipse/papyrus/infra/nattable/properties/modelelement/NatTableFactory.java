@@ -29,13 +29,13 @@ public class NatTableFactory extends EMFModelElementFactory {
 	@Override
 	protected EMFModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		EObject source = EMFHelper.getEObject(sourceElement);
-		if(source == null) {
+		if (source == null) {
 			Activator.log.warn("Unable to resolve the selected element to an EObject"); //$NON-NLS-1$
 			return null;
 		}
-		if(source instanceof Table) {
+		if (source instanceof Table) {
 			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(source);
-			return new NatTableModelElement((Table)source, domain);
+			return new NatTableModelElement((Table) source, domain);
 		} else {
 			return super.doCreateFromSource(sourceElement, context);
 		}

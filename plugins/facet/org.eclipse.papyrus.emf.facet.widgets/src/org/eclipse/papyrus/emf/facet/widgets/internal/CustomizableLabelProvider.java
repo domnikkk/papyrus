@@ -10,7 +10,7 @@
  *    Nicolas Bros (Mia-Software) - Bug 339653 - org.eclipse.papyrus.emf.facet.widgets API Cleaning
  *    Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
  *    Christian W. Damus (CEA) - bug 410346
- *  
+ *
  *******************************************************************************/
 
 package org.eclipse.papyrus.emf.facet.widgets.internal;
@@ -61,7 +61,7 @@ public class CustomizableLabelProvider extends LabelProvider {
 			super.dispose();
 		}
 	}
-	
+
 	@Override
 	public String getText(final Object element) {
 		if (element instanceof EReference) {

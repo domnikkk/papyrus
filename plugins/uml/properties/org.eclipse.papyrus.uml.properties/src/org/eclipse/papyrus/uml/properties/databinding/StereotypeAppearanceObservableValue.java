@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * An IObservableValue for editing the Stereotype appearance properties
- * 
+ *
  * @author Camille Letavernier
  */
 public class StereotypeAppearanceObservableValue extends AbstractObservableValue implements IObserving {
@@ -80,25 +80,25 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	private String cachedValue;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param diagramElement
-	 *        The Diagram Element associated to the UML Element
+	 *            The Diagram Element associated to the UML Element
 	 * @param element
-	 *        The UML Element being observed
+	 *            The UML Element being observed
 	 * @param propertyPath
-	 *        The name of the property being observed
+	 *            The name of the property being observed
 	 * @param domain
-	 *        The EditingDomain on which the commands will be executed.
-	 *        This should be a {@link TransactionalEditingDomain}
+	 *            The EditingDomain on which the commands will be executed.
+	 *            This should be a {@link TransactionalEditingDomain}
 	 */
 	public StereotypeAppearanceObservableValue(EModelElement diagramElement, Element element, String propertyPath, EditingDomain domain) {
 		this.propertyPath = propertyPath;
 		this.diagramElement = diagramElement;
 		this.element = element;
-		this.domain = (TransactionalEditingDomain)domain;
-		if(diagramElement != null) {
+		this.domain = (TransactionalEditingDomain) domain;
+		if (diagramElement != null) {
 			diagramElement.eAdapters().add(getDiagramElementListener());
 		}
 	}
@@ -107,12 +107,12 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	 * Create a listener for DiagramElement.
 	 */
 	private Adapter getDiagramElementListener() {
-		if(diagramElementListener == null) {
+		if (diagramElementListener == null) {
 			diagramElementListener = new AdapterImpl() {
 
 				@Override
 				public void notifyChanged(Notification msg) {
-					if(!msg.isTouch()) {
+					if (!msg.isTouch()) {
 						handleStereotypeChanged(msg);
 					}
 				}
@@ -134,11 +134,11 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 
 	@Override
 	protected String doGetValue() {
-		if(propertyPath.equals(STEREOTYPE_DISPLAY)) {
+		if (propertyPath.equals(STEREOTYPE_DISPLAY)) {
 			return getStereotypeDisplayValue();
-		} else if(propertyPath.equals(TEXT_ALIGNMENT)) {
+		} else if (propertyPath.equals(TEXT_ALIGNMENT)) {
 			return getTextAlignmentValue();
-		} else if(propertyPath.equals(DISPLAY_PLACE)) {
+		} else if (propertyPath.equals(DISPLAY_PLACE)) {
 			return getDisplayPlaceValue();
 		}
 
@@ -148,19 +148,19 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	private String getStereotypeDisplayValue() {
 		final String stereotypePresentation = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(diagramElement);
 
-		if(stereotypePresentation != null) {
+		if (stereotypePresentation != null) {
 
-			Element element = (Element)((View)(diagramElement)).getElement();
+			Element element = (Element) ((View) (diagramElement)).getElement();
 			// get the first displayed stereotype
 			Stereotype stereotype = AppliedStereotypeHelper.getFirstDisplayedStereotype(diagramElement, element);
 
 			boolean hasIcons = ElementUtil.hasIcons(element, stereotype);
 			boolean hasShapes = ElementUtil.hasShapes(element, stereotype);
-			if(stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION) && hasIcons) {
+			if (stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION) && hasIcons) {
 				return ICON;
-			} else if(stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.TEXT_ICON_STEREOTYPE_PRESENTATION) && hasIcons) {
+			} else if (stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.TEXT_ICON_STEREOTYPE_PRESENTATION) && hasIcons) {
 				return TEXT_AND_ICON;
-			} else if(stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.IMAGE_STEREOTYPE_PRESENTATION) && hasShapes) {
+			} else if (stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.IMAGE_STEREOTYPE_PRESENTATION) && hasShapes) {
 				return SHAPE;
 			} else {
 				return TEXT;
@@ -174,10 +174,10 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	private String getTextAlignmentValue() {
 		final String stereotypePresentation = AppliedStereotypeHelper.getAppliedStereotypePresentationKind(diagramElement);
 
-		if(stereotypePresentation != null) {
-			if(stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION)) {
+		if (stereotypePresentation != null) {
+			if (stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION)) {
 				return HORIZONTAL;
-			} else if(stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION)) {
+			} else if (stereotypePresentation.equals(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION)) {
 				return VERTICAL;
 			} else {
 				return HORIZONTAL;
@@ -189,7 +189,7 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	}
 
 	private String getDisplayPlaceValue() {
-		if(diagramElement != null) {
+		if (diagramElement != null) {
 			return AppliedStereotypeHelper.getAppliedStereotypesPropertiesLocalization(diagramElement);
 		} else {
 			return null;
@@ -199,28 +199,28 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	@SuppressWarnings("restriction")
 	@Override
 	protected void doSetValue(Object value) {
-		if(value instanceof String) {
+		if (value instanceof String) {
 			String oldValue = cachedValue;
-			String stringValue = (String)value;
-			if(diagramElement != null) {
+			String stringValue = (String) value;
+			if (diagramElement != null) {
 				diagramElement.eAdapters().remove(diagramElementListener);
 			}
 			String currentValue = doGetValue();
-			//Update model with if the real value changed.
-			if(!Util.equals(currentValue, stringValue)) {
-				if(propertyPath.equals(STEREOTYPE_DISPLAY)) { //Edition of the stereotypeDisplay property
+			// Update model with if the real value changed.
+			if (!Util.equals(currentValue, stringValue)) {
+				if (propertyPath.equals(STEREOTYPE_DISPLAY)) { // Edition of the stereotypeDisplay property
 					setStereotypeDisplayValue(stringValue);
-				} else if(propertyPath.equals(TEXT_ALIGNMENT)) { //Edition of the textAlignment property
+				} else if (propertyPath.equals(TEXT_ALIGNMENT)) { // Edition of the textAlignment property
 					setTextAlignmentValue(stringValue);
-				} else if(propertyPath.equals(DISPLAY_PLACE)) { //Edition of the displayPlace property
+				} else if (propertyPath.equals(DISPLAY_PLACE)) { // Edition of the displayPlace property
 					setDisplayPlaceValue(stringValue);
 				}
 			}
-			//Send an event if value changed. We should use the cached value since it was binded with others, and the real value can be changed externally(such as UNDO/REDO).
-			if(!Util.equals(oldValue, stringValue) && hasListeners()) {
+			// Send an event if value changed. We should use the cached value since it was binded with others, and the real value can be changed externally(such as UNDO/REDO).
+			if (!Util.equals(oldValue, stringValue) && hasListeners()) {
 				fireValueChange(Diffs.createValueDiff(oldValue, stringValue));
 			}
-			if(diagramElement != null) {
+			if (diagramElement != null) {
 				diagramElement.eAdapters().add(getDiagramElementListener());
 			}
 			cachedValue = stringValue;
@@ -236,13 +236,13 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 		boolean hasShapes = ElementUtil.hasShapes(element, stereotype);
 		String appliedStereotypeKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION;
 
-		if(stereotypeAppearance.equals(TEXT)) {
+		if (stereotypeAppearance.equals(TEXT)) {
 			appliedStereotypeKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION;
-		} else if(stereotypeAppearance.equals(ICON) && hasIcons) {
+		} else if (stereotypeAppearance.equals(ICON) && hasIcons) {
 			appliedStereotypeKind = UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION;
-		} else if(stereotypeAppearance.equals(TEXT_AND_ICON) && hasIcons) {
+		} else if (stereotypeAppearance.equals(TEXT_AND_ICON) && hasIcons) {
 			appliedStereotypeKind = UMLVisualInformationPapyrusConstant.TEXT_ICON_STEREOTYPE_PRESENTATION;
-		} else if(stereotypeAppearance.equals(SHAPE) && hasShapes) {
+		} else if (stereotypeAppearance.equals(SHAPE) && hasShapes) {
 			appliedStereotypeKind = UMLVisualInformationPapyrusConstant.IMAGE_STEREOTYPE_PRESENTATION;
 		}
 
@@ -255,9 +255,9 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 
 	private void setTextAlignmentValue(String alignment) {
 		String appliedStereotypeKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION;
-		if(alignment.equals(HORIZONTAL)) {
+		if (alignment.equals(HORIZONTAL)) {
 			appliedStereotypeKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION;
-		} else if(alignment.equals(VERTICAL)) {
+		} else if (alignment.equals(VERTICAL)) {
 			appliedStereotypeKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION;
 		}
 
@@ -276,14 +276,14 @@ public class StereotypeAppearanceObservableValue extends AbstractObservableValue
 	public Object getObserved() {
 		return diagramElement;
 	}
-	
+
 	/**
 	 * @see org.eclipse.core.databinding.observable.AbstractObservable#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public synchronized void dispose() {
-		if(diagramElement != null && diagramElementListener != null) {
+		if (diagramElement != null && diagramElementListener != null) {
 			diagramElement.eAdapters().remove(diagramElementListener);
 		}
 		super.dispose();

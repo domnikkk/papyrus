@@ -32,18 +32,18 @@ public class IsDiagramContainer extends AbstractEditorContainerQuery implements 
 	public Boolean evaluate(EObject source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
 		Iterator<EObject> roots = NavigatorUtils.getNotationRoots(source);
 
-		if(roots != null) {
-			while(roots.hasNext()) {
+		if (roots != null) {
+			while (roots.hasNext()) {
 				EObject root = roots.next();
-				if(root instanceof Diagram) {
-					if (DiagramUtils.getOwner((Diagram)root) == source){
+				if (root instanceof Diagram) {
+					if (DiagramUtils.getOwner((Diagram) root) == source) {
 						return true;
-					}	
+					}
 				}
 			}
 		}
 
-		return false; //Return super...
+		return false; // Return super...
 	}
 
 }

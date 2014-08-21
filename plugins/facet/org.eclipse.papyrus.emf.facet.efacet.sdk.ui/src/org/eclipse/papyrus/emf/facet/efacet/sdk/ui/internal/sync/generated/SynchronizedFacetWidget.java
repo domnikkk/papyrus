@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -23,6 +23,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 	public SynchronizedFacetWidget(final org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IFacetWidget object, final Display display) {
 		super(object, display);
 	}
+
 	public final void addListener(final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.AbstractWidget parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -31,7 +32,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final void createWidgetContent() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -40,7 +41,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final java.lang.String getError() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -49,7 +50,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final void notifyChanged() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -58,7 +59,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final <A> A adapt(final java.lang.Class<A> parm0) {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<A>() {
 			@Override
@@ -67,7 +68,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final java.lang.Object getCommand() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.Object>() {
 			@Override
@@ -76,7 +77,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final void onDialogValidation() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -85,7 +86,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet getContainer() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet>() {
 			@Override
@@ -94,7 +95,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final java.lang.String getElementName() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -103,7 +104,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget> pressParentButton() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget>>() {
 			@Override
@@ -112,7 +113,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final void setName(final java.lang.String parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -121,7 +122,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.metaclass.IGetExtendedMetaclassWidget getGetExtendedMetaclassWidget() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.metaclass.IGetExtendedMetaclassWidget>() {
 			@Override
@@ -130,7 +131,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final java.lang.String getSubTypingFacet() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -139,7 +140,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget<org.eclipse.emf.ecore.ETypedElement, java.lang.Object>> pressSubTypingButton() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget<org.eclipse.emf.ecore.ETypedElement, java.lang.Object>>>() {
 			@Override
@@ -148,7 +149,7 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 	public final void setSubTypingFacetSelection(final boolean parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -157,5 +158,5 @@ public class SynchronizedFacetWidget extends SynchronizedObject<org.eclipse.papy
 			}
 		});
 	}
-	
+
 }

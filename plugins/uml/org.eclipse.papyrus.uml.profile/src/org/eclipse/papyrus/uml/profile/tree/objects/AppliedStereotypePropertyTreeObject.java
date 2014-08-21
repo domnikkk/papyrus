@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,11 +48,11 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param property
-	 *        the property
+	 *            the property
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public AppliedStereotypePropertyTreeObject(AppliedStereotypeTreeObject parent, Property property) {
 		super(parent);
@@ -60,12 +60,12 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	}
 
 	public Stereotype getParentStereotype() {
-		return ((AppliedStereotypeTreeObject)getParent()).getStereotype();
+		return ((AppliedStereotypeTreeObject) getParent()).getStereotype();
 	}
 
 	/**
 	 * Gets the property.
-	 * 
+	 *
 	 * @return the property
 	 */
 	public Property getProperty() {
@@ -88,15 +88,15 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	protected void createChildren() {
 		// Retrieve value which is normally either a list of objects or a single object
 		Object value = getValue();
-		if(value == null) {
+		if (value == null) {
 			return;
 		}
 
-		if(value instanceof EList) {
+		if (value instanceof EList) {
 			@SuppressWarnings("unchecked")
-			EList<Object> values = (EList<Object>)value;
+			EList<Object> values = (EList<Object>) value;
 			Iterator<Object> it = values.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				final Object currentValue = it.next();
 				ValueTreeObject vTO = createValueTreeObject(currentValue);
 				addChild(vTO);
@@ -109,12 +109,12 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 
 	/**
 	 * Returns the value of the stereotype attribute
-	 * 
+	 *
 	 * @return the value
 	 */
 	public Object getValue() {
-		AppliedStereotypeTreeObject sTO = (AppliedStereotypeTreeObject)getParent();
-		StereotypedElementTreeObject rTO = (StereotypedElementTreeObject)sTO.getParent();
+		AppliedStereotypeTreeObject sTO = (AppliedStereotypeTreeObject) getParent();
+		StereotypedElementTreeObject rTO = (StereotypedElementTreeObject) sTO.getParent();
 
 		Stereotype st = sTO.getStereotype();
 		Element elt = rTO.getElement();
@@ -122,8 +122,8 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	}
 
 	public Element getElement() {
-		AppliedStereotypeTreeObject sTO = (AppliedStereotypeTreeObject)getParent();
-		StereotypedElementTreeObject rTO = (StereotypedElementTreeObject)sTO.getParent();
+		AppliedStereotypeTreeObject sTO = (AppliedStereotypeTreeObject) getParent();
+		StereotypedElementTreeObject rTO = (StereotypedElementTreeObject) sTO.getParent();
 
 		return rTO.getElement();
 	}
@@ -137,16 +137,16 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	}
 
 	public Stereotype getStereotype() {
-		AppliedStereotypeTreeObject sTO = (AppliedStereotypeTreeObject)getParent();
+		AppliedStereotypeTreeObject sTO = (AppliedStereotypeTreeObject) getParent();
 		return sTO.getStereotype();
 	}
 
 	/**
 	 * Creates the value tree object.
-	 * 
+	 *
 	 * @param value
-	 *        the value
-	 * 
+	 *            the value
+	 *
 	 * @return the value tree object
 	 */
 	private ValueTreeObject createValueTreeObject(Object value) {
@@ -155,27 +155,27 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 		ValueTreeObject vTO = null;
 
 		/** Property type is a PrimitiveType */
-		if(type instanceof PrimitiveType) {
+		if (type instanceof PrimitiveType) {
 			vTO = PrimitiveTypeValueTreeObject.createInstance(this, value);
 
 			/** Property type is a metaclass */
-		} else if(Util.isMetaclass(type)) {
+		} else if (Util.isMetaclass(type)) {
 			vTO = new MetaclassValueTreeObject(this, value);
 
 			/** Property type is an Enumeration */
-		} else if(type instanceof Enumeration) {
+		} else if (type instanceof Enumeration) {
 			vTO = new EnumerationValueTreeObject(this, value);
 
 			/** Property is a dataType */
-		} else if(type instanceof DataType) {
+		} else if (type instanceof DataType) {
 			vTO = new DataTypeValueTreeObject(this, value);
 
 			/** Property is a stereotype */
-		} else if(type instanceof Stereotype) {
+		} else if (type instanceof Stereotype) {
 			vTO = new StereotypeValueTreeObject(this, value);
 
 			/** property is a composite class */
-		} else if((type instanceof org.eclipse.uml2.uml.Class) && !(type instanceof Stereotype) && property.isComposite()) {
+		} else if ((type instanceof org.eclipse.uml2.uml.Class) && !(type instanceof Stereotype) && property.isComposite()) {
 			vTO = new CompositeValueTreeObject(this, value);
 		}
 
@@ -186,23 +186,23 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	 * This function is used prior to updating the model. It will add the new value to the
 	 * list of existing values, in case of a multi-valued property. editMe methods should call
 	 * this method before calling update.
-	 * 
+	 *
 	 * @param newValue
-	 *        a new value for the property (must not be a list itself)
+	 *            a new value for the property (must not be a list itself)
 	 * @return a new list which the existing stereotype value and the newValue in case of
 	 *         a multi-value property or the newValue, if not multi-valued
 	 */
 	public Object appendMV(Object newValue) {
 
-		Stereotype stereotype = ((AppliedStereotypeTreeObject)getParent()).getStereotype();
-		Element element = ((StereotypedElementTreeObject)getParent().getParent()).getElement();
+		Stereotype stereotype = ((AppliedStereotypeTreeObject) getParent()).getStereotype();
+		Element element = ((StereotypedElementTreeObject) getParent().getParent()).getElement();
 
-		if(property.isMultivalued()) {
+		if (property.isMultivalued()) {
 			// add to existing contents
 			Object existingValue = element.getValue(stereotype, property.getName());
-			if(existingValue instanceof EList) {
+			if (existingValue instanceof EList) {
 				@SuppressWarnings("unchecked")
-				EList<Object> existingValueList = (EList<Object>)existingValue;
+				EList<Object> existingValueList = (EList<Object>) existingValue;
 				EList<Object> valueList = new BasicEList<Object>();
 				valueList.addAll(existingValueList);
 				valueList.add(newValue);
@@ -215,20 +215,20 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	/**
 	 * Remove elements from the list of proposed stereotype values that have already
 	 * selected - except the currently selected element.
-	 * 
+	 *
 	 * @param proposalList
-	 *        the list of possible stereotype values
+	 *            the list of possible stereotype values
 	 * @param oldValue
-	 *        the currently selected value
+	 *            the currently selected value
 	 */
 	protected <T extends Object> void removeSelected(List<T> proposalList, T oldValue) {
-		if(property.isMultivalued()) {
+		if (property.isMultivalued()) {
 			@SuppressWarnings("unchecked")
-			EList<EObject> values = (EList<EObject>)getValue();
-			if(values != null) {
+			EList<EObject> values = (EList<EObject>) getValue();
+			if (values != null) {
 				proposalList.removeAll(values);
 			}
-			if(oldValue != null) {
+			if (oldValue != null) {
 				proposalList.add(oldValue);
 			}
 		}
@@ -237,9 +237,9 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 	/**
 	 * Update value by means of a command that is executed within the Papyrus
 	 * editing domain.
-	 * 
+	 *
 	 * @param newValue
-	 *        the new value
+	 *            the new value
 	 */
 	public void updateValue(final Object newValue) {
 
@@ -259,8 +259,8 @@ public class AppliedStereotypePropertyTreeObject extends ParentTreeObject {
 			 */
 			@Override
 			protected void doExecute() {
-				Stereotype stereotype = ((AppliedStereotypeTreeObject)getParent()).getStereotype();
-				Element element = ((StereotypedElementTreeObject)getParent().getParent()).getElement();
+				Stereotype stereotype = ((AppliedStereotypeTreeObject) getParent()).getStereotype();
+				Element element = ((StereotypedElementTreeObject) getParent().getParent()).getElement();
 
 				Property property = getProperty();
 

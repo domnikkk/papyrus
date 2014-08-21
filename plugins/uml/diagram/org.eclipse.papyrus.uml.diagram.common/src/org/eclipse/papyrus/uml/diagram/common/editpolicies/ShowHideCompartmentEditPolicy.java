@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,10 +33,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.commands.ShowHideCompartmentRequest;
 
 /**
- * 
+ *
  * This EditPolicy provides the same commands that {@link PropertyHandlerEditPolicy}, more the command to Show/Hide a given
  * compartment
- * 
+ *
  */
 public class ShowHideCompartmentEditPolicy extends AbstractEditPolicy {
 
@@ -45,14 +45,14 @@ public class ShowHideCompartmentEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.PropertyHandlerEditPolicy#getCommand(org.eclipse.gef.Request)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(request.getType().equals(ShowHideCompartmentRequest.SHOW_HIDE_COMPARTMENT)) {
-			ShowHideCompartmentRequest req = (ShowHideCompartmentRequest)request;
+		if (request.getType().equals(ShowHideCompartmentRequest.SHOW_HIDE_COMPARTMENT)) {
+			ShowHideCompartmentRequest req = (ShowHideCompartmentRequest) request;
 			return getShowHideCompartmentCommand(req);
 		}
 		return null;
@@ -60,18 +60,18 @@ public class ShowHideCompartmentEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * Return the command to show/hide a compartment.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the command to show/hide a compartment
 	 */
 	protected Command getShowHideCompartmentCommand(ShowHideCompartmentRequest request) {
-		if(getHost() instanceof TopGraphicEditPart) {
-			List<?> views = getAllNotationViews((TopGraphicEditPart)getHost());
-			for(Iterator<?> iter = views.iterator(); iter.hasNext();) {
-				View childView = (View)iter.next();
-				if(ViewUtil.isPropertySupported(childView, request.getPropertyID())) {
-					if(childView.equals(request.getCompartment())) {
+		if (getHost() instanceof TopGraphicEditPart) {
+			List<?> views = getAllNotationViews((TopGraphicEditPart) getHost());
+			for (Iterator<?> iter = views.iterator(); iter.hasNext();) {
+				View childView = (View) iter.next();
+				if (ViewUtil.isPropertySupported(childView, request.getPropertyID())) {
+					if (childView.equals(request.getCompartment())) {
 						return new ICommandProxy(new SetPropertyCommand(getEditingDomain(), new EObjectAdapter(childView), request.getPropertyID(), request.getPropertyName(), request.getValue()));
 					}
 				}
@@ -82,19 +82,19 @@ public class ShowHideCompartmentEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * Returns all the views associated to this editpart
-	 * 
+	 *
 	 * @param ep
-	 *        a {@link TopGraphicEditPart}
+	 *            a {@link TopGraphicEditPart}
 	 * @return all the views associated to this editpart
 	 */
 	public List<?> getAllNotationViews(TopGraphicEditPart ep) {
 		View view = ep.getNotationView();
-		if(view != null) {
+		if (view != null) {
 			List<View> views = new ArrayList<View>();
 			Iterator<?> childrenIterator = view.getChildren().iterator();
-			while(childrenIterator.hasNext()) {
-				View child = (View)childrenIterator.next();
-				if(child instanceof Node) {
+			while (childrenIterator.hasNext()) {
+				View child = (View) childrenIterator.next();
+				if (child instanceof Node) {
 					views.add(child);
 				}
 			}
@@ -105,10 +105,10 @@ public class ShowHideCompartmentEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * Return the current {@link EditingDomain}
-	 * 
+	 *
 	 * @return the current {@link EditingDomain}
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 }

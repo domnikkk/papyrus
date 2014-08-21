@@ -114,26 +114,31 @@ public class SelectOrCreateJavaClassWizard extends Wizard implements
 		return finish();
 	}
 
+	@Override
 	public int open() {
 		return this.dialog.open();
 	}
 
+	@Override
 	public IWizardPage getCurrentPage() {
 		return getContainer().getCurrentPage();
 	}
 
+	@Override
 	public IWizardPage next() {
 		final IWizardPage nextPage = getNextPage(this.getCurrentPage());
 		this.dialog.showPage(nextPage);
 		return nextPage;
 	}
 
+	@Override
 	public IWizardPage previous() {
 		final IWizardPage previousPage = getPreviousPage(this.getCurrentPage());
 		this.dialog.showPage(previousPage);
 		return previousPage;
 	}
 
+	@Override
 	public boolean finish() {
 		boolean result = true;
 		try {

@@ -35,9 +35,9 @@ public class MoDiscoDropAdapter extends EditingDomainViewerDropAdapter {
 	 * Constructor.
 	 *
 	 * @param domain
-	 *        The Editing domain for this Drop Adapter
+	 *            The Editing domain for this Drop Adapter
 	 * @param viewer
-	 *        The Viewer for this Drop Adapter
+	 *            The Viewer for this Drop Adapter
 	 */
 	public MoDiscoDropAdapter(EditingDomain domain, Viewer viewer) {
 		super(domain, viewer);
@@ -45,8 +45,8 @@ public class MoDiscoDropAdapter extends EditingDomainViewerDropAdapter {
 
 	@Override
 	protected Collection<?> extractDragSource(Object object) {
-		if(object instanceof ISelection) {
-			return super.extractDragSource(ActionUtil.getAdaptedSelection((ISelection)object));
+		if (object instanceof ISelection) {
+			return super.extractDragSource(ActionUtil.getAdaptedSelection((ISelection) object));
 		} else {
 			return super.extractDragSource(object);
 		}
@@ -56,7 +56,7 @@ public class MoDiscoDropAdapter extends EditingDomainViewerDropAdapter {
 	protected Object extractDropTarget(Widget item) {
 		Object dropTarget = super.extractDropTarget(item);
 		EObject eObject = EMFHelper.getEObject(dropTarget);
-		if(eObject != null) {
+		if (eObject != null) {
 			return eObject;
 		}
 

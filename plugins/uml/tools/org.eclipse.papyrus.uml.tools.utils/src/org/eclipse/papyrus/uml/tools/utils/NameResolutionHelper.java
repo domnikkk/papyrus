@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Arnaud Cuccuru (CEA LIST) - Initial API and implementation
  *  Vincent Lorenzo   (CEA LIST)
- *  Benoit Maggi (CEA LIST) - Bug 431629 Patch to avoid loop on imported packages 
+ *  Benoit Maggi (CEA LIST) - Bug 431629 Patch to avoid loop on imported packages
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.tools.utils;
@@ -46,7 +46,7 @@ public class NameResolutionHelper {
 	}
 
 	public List<NamedElement> getNamedElements(String name) {
-		if(this.allNames == null) {
+		if (this.allNames == null) {
 			this.allNames = new HashMap<String, List<NamedElement>>();
 			this.computeAllNames();
 		}
@@ -59,28 +59,28 @@ public class NameResolutionHelper {
 	 */
 	protected void computeAllNames() {
 
-		// compute names directly available in the scope 
+		// compute names directly available in the scope
 		computeNames("", scope, true);
 
-		// compute names related to enclosing namepaces of scope		
+		// compute names related to enclosing namepaces of scope
 		Namespace enclosingNamespace = scope.getNamespace();
 		String prefix = "";
-		while(enclosingNamespace != null) {
-//			prefix += enclosingNamespace.getName() + NamedElementUtil.QUALIFIED_NAME_SEPARATOR;
-			prefix="";
+		while (enclosingNamespace != null) {
+			// prefix += enclosingNamespace.getName() + NamedElementUtil.QUALIFIED_NAME_SEPARATOR;
+			prefix = "";
 			computeNames(prefix, enclosingNamespace, false);
 			enclosingNamespace = enclosingNamespace.getNamespace();
 		}
 
 		// Compute names related to the root context model
 		Namespace model = scope.getModel();
-		if(model==null){
-			model  = scope;
+		if (model == null) {
+			model = scope;
 		}
-		if(filter != null) {
-			if(filter.isSuperTypeOf(model.eClass())) {
+		if (filter != null) {
+			if (filter.isSuperTypeOf(model.eClass())) {
 				List<NamedElement> l = this.allNames.get(model.getName());
-				if(l == null) { // i.e. no names have already been resolved in enclosed namespaces
+				if (l == null) { // i.e. no names have already been resolved in enclosed namespaces
 					l = new ArrayList<NamedElement>();
 					l.add(model);
 					this.allNames.put(model.getName(), l);
@@ -88,30 +88,31 @@ public class NameResolutionHelper {
 			}
 		} else {
 			List<NamedElement> l = this.allNames.get(model.getName());
-			if(l == null) { // i.e. no names have already been resolved in enclosed namespaces
+			if (l == null) { // i.e. no names have already been resolved in enclosed namespaces
 				l = new ArrayList<NamedElement>();
 				l.add(model);
 				this.allNames.put(model.getName(), l);
 			}
 		}
-		computeNames(model.getName() +  NamedElementUtil.QUALIFIED_NAME_SEPARATOR, model, false); 
+		computeNames(model.getName() + NamedElementUtil.QUALIFIED_NAME_SEPARATOR, model, false);
 
-		// Build names corresponding to other available UML resources in the workspace 
-		List<Resource> resources = new ArrayList<Resource>(scope.eResource().getResourceSet().getResources());//we duplicate the resource to avoid concurrent modification
-		for(Resource resource : resources) {
-			if(resource != scope.eResource() && resource instanceof UMLResource) {
-				UMLResource umlResource = (UMLResource)resource;
+		// Build names corresponding to other available UML resources in the workspace
+		List<Resource> resources = new ArrayList<Resource>(scope.eResource().getResourceSet().getResources());// we duplicate the resource to avoid concurrent modification
+		for (Resource resource : resources) {
+			if (resource != scope.eResource() && resource instanceof UMLResource) {
+				UMLResource umlResource = (UMLResource) resource;
 				Model root = null;
-				for(Iterator<EObject> i = umlResource.getAllContents(); i.hasNext() && root == null;) {
+				for (Iterator<EObject> i = umlResource.getAllContents(); i.hasNext() && root == null;) {
 					EObject next = i.next();
-					if(next instanceof Model)
-						root = (Model)next;
+					if (next instanceof Model) {
+						root = (Model) next;
+					}
 				}
-				if(root != null) {
-					if(filter != null) {
-						if(filter.isSuperTypeOf(root.eClass())) {
+				if (root != null) {
+					if (filter != null) {
+						if (filter.isSuperTypeOf(root.eClass())) {
 							List<NamedElement> l = this.allNames.get(root.getName());
-							if(l == null) { // i.e. no names have already been resolved in enclosed namespaces
+							if (l == null) { // i.e. no names have already been resolved in enclosed namespaces
 								l = new ArrayList<NamedElement>();
 								l.add(root);
 								this.allNames.put(root.getName(), l);
@@ -119,7 +120,7 @@ public class NameResolutionHelper {
 						}
 					} else {
 						List<NamedElement> l = this.allNames.get(root.getName());
-						if(l == null) { // i.e. no names have already been resolved in enclosed namespaces
+						if (l == null) { // i.e. no names have already been resolved in enclosed namespaces
 							l = new ArrayList<NamedElement>();
 							l.add(root);
 							this.allNames.put(root.getName(), l);
@@ -135,37 +136,39 @@ public class NameResolutionHelper {
 	 * TODO
 	 */
 	protected void computeNames(String prefix, Namespace scope, boolean ignoreAlreadyFoundNames) {
-		computeNames(prefix,scope,ignoreAlreadyFoundNames, new HashSet<Namespace>()) ;
+		computeNames(prefix, scope, ignoreAlreadyFoundNames, new HashSet<Namespace>());
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param prefix
 	 * @param scope
 	 * @param ignoreAlreadyFoundNames
-	 * @param alreadyComputedNamespace list of already visited Namespace to avoid loop on imported packages
+	 * @param alreadyComputedNamespace
+	 *            list of already visited Namespace to avoid loop on imported packages
 	 */
 	protected void computeNames(String prefix, Namespace scope, boolean ignoreAlreadyFoundNames, Set<Namespace> alreadyComputedNamespace) {
 		alreadyComputedNamespace.add(scope);
 		Set<String> preExistingKeys;
-		if(ignoreAlreadyFoundNames)
+		if (ignoreAlreadyFoundNames) {
 			preExistingKeys = new HashSet<String>();
-		else
+		} else {
 			preExistingKeys = this.allNames.keySet();
+		}
 		// iterates members of the scope
-		for(NamedElement member : scope.getMembers()) {
+		for (NamedElement member : scope.getMembers()) {
 			List<String> memberNames = scope.getNamesOfMember(member);
 			// iterates other names given to the current member in the context of this scope
-			for(String memberName : memberNames) {
+			for (String memberName : memberNames) {
 				// Checks if the name must be considered or not
-				if(!preExistingKeys.contains(prefix + memberName)) {
+				if (!preExistingKeys.contains(prefix + memberName)) {
 					List<NamedElement> l = this.getNamedElements(prefix + memberName);
 					l.add(member);
 					this.allNames.put(prefix + memberName, l);
 				}
-				if(member instanceof Namespace && ! alreadyComputedNamespace.contains(member)) { // avoid loop on imported packages
+				if (member instanceof Namespace && !alreadyComputedNamespace.contains(member)) { // avoid loop on imported packages
 					// Recursive call on the current member
-					computeNames(prefix + memberName + NamedElementUtil.QUALIFIED_NAME_SEPARATOR, (Namespace)member, false , alreadyComputedNamespace);
+					computeNames(prefix + memberName + NamedElementUtil.QUALIFIED_NAME_SEPARATOR, (Namespace) member, false, alreadyComputedNamespace);
 				}
 			}
 		}

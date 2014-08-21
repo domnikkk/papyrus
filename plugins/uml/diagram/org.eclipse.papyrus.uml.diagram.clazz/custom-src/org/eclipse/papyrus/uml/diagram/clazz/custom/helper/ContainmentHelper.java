@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  
+ *
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.helper;
@@ -78,7 +78,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Instantiates a new containment class helper.
-	 * 
+	 *
 	 * @param editDomain
 	 *            the edit domain
 	 */
@@ -89,19 +89,19 @@ public class ContainmentHelper extends ElementHelper {
 	/**
 	 * Create a containment link view with the semantic transformation.
 	 * This link can be created between two classes or between the node of the containment link with the targeted class or package
-	 * 
+	 *
 	 * @param createConnectionViewRequest
 	 *            the create connection view request
 	 * @param command
 	 *            the command
-	 * 
+	 *
 	 * @return the containment element command
 	 */
 	public Command getCreateContainmentCommand(CreateConnectionViewRequest createConnectionViewRequest, Command command) {
 		CompositeCommand compoundCommand = new CompositeCommand(CREATE_CONTAINMENT);
 		IGraphicalEditPart sourceEditPart = (GraphicalEditPart) createConnectionViewRequest.getSourceEditPart();
 		View sourceView = (View) sourceEditPart.getModel();
-		EditPartViewer editPartViewer = (EditPartViewer) sourceEditPart.getViewer();
+		EditPartViewer editPartViewer = sourceEditPart.getViewer();
 		PreferencesHint preferencesHint = sourceEditPart.getDiagramPreferencesHint();
 		String linkHint = ((IHintedType) UMLElementTypes.Link_4022).getSemanticHint();
 		ConnectionViewDescriptor viewDescriptor = new ConnectionViewDescriptor(org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes.Link_4022,
@@ -131,7 +131,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Delete all incoming link that go this node
-	 * 
+	 *
 	 * @param cc
 	 *            a composite command in which the behavior of deletion
 	 * @param node
@@ -154,7 +154,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Delete all outgoing link that come from this node
-	 * 
+	 *
 	 * @param cc
 	 *            a composite command in which the behavior of deletion
 	 * @param node
@@ -176,7 +176,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * DragDrop the contained class from the modelexplorer to the diagram and from the compartment to the diagram.
-	 * 
+	 *
 	 * @param droppedElement
 	 *            the semantic class
 	 * @param viewer
@@ -187,7 +187,7 @@ public class ContainmentHelper extends ElementHelper {
 	 *            the location
 	 * @param containerView
 	 *            the container view
-	 * 
+	 *
 	 * @return the command
 	 */
 	public Command outlineDropContainedClass(PackageableElement droppedElement, EditPartViewer viewer, PreferencesHint diagramPreferencesHint, Point location, View containerView) {
@@ -199,8 +199,8 @@ public class ContainmentHelper extends ElementHelper {
 	 * - a drop from the model explorer
 	 * - a drop from the owner class to outside of this class
 	 * when the contained link is not created in this case.
-	 * 
-	 * 
+	 *
+	 *
 	 * @param droppedElement
 	 *            the dropped element <B> cannot be null</B>
 	 * @param viewer
@@ -220,7 +220,7 @@ public class ContainmentHelper extends ElementHelper {
 		// - the edit part of a the dropped element already exist?
 		EditPart droppedElementEditPart = findEditPartFor(viewer.getEditPartRegistry(), droppedElement);
 		// Is is contained into a class ?
-		Element owner = (Element) droppedElement.getOwner();
+		Element owner = droppedElement.getOwner();
 		// the container editpart is the the class that can contained the dropped element.
 		// if it is not null we are in the context of drop intra diagram
 		GraphicalEditPart containerEditpart = null;
@@ -246,7 +246,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * dropped the dropped element into container view at a good location,
-	 * 
+	 *
 	 * @param cc
 	 *            the composite command, where the behavior will be add <B> cannot be null</B>
 	 * @param droppedElement
@@ -269,7 +269,7 @@ public class ContainmentHelper extends ElementHelper {
 	/**
 	 * TO DO: to investigate about the use of this code
 	 * this method is used to display applied stereotype of the dropped element
-	 * 
+	 *
 	 * @param cc
 	 *            the command where the behavior will be add
 	 * @param droppedElement
@@ -284,16 +284,16 @@ public class ContainmentHelper extends ElementHelper {
 		EList<Stereotype> stereotypeAppliedList = droppedElement.getAppliedStereotypes();
 		Iterator<Stereotype> stereotypeAppliedIterator = stereotypeAppliedList.iterator();
 		while (stereotypeAppliedIterator.hasNext()) {
-			Stereotype stereotype = (Stereotype) stereotypeAppliedIterator.next();
+			Stereotype stereotype = stereotypeAppliedIterator.next();
 			String profileApplied = "\"" + stereotype.getProfile() + "\"::";
 			cc.add(new CustomDropAppliedStereotypeCommand(this.editDomain, createdEditPartAdapter, profileApplied, UMLVisualInformationPapyrusConstant.STEREOTYPE_COMPARTMENT_LOCATION));
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * Checks if is reorient about the containment link.
-	 * 
+	 *
 	 * @param request
 	 *            a connection request
 	 * @return true, if is reorient about the containment link
@@ -306,7 +306,7 @@ public class ContainmentHelper extends ElementHelper {
 	/**
 	 * TO DO: to investigate about the use of this code
 	 * During the reconnection we need to add information about the view that is reconnected.
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @return the reconnect request
@@ -323,7 +323,7 @@ public class ContainmentHelper extends ElementHelper {
 	/**
 	 * TO DO: to investigate about the use of this code
 	 * During the reconnection we need to add information about the view that is reconnected.
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @return the reconnect request
@@ -339,7 +339,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Gets the visual id.
-	 * 
+	 *
 	 * @param request
 	 *            the request
 	 * @return the visual id
@@ -351,7 +351,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Checks if is containment link.
-	 * 
+	 *
 	 * @param edge
 	 *            the edge
 	 * @return true, if is containment link
@@ -362,7 +362,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Checks if is containment node.
-	 * 
+	 *
 	 * @param view
 	 *            the notation view
 	 * @return true, if is containment link
@@ -373,7 +373,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * checks if the node contains several outgoing link.
-	 * 
+	 *
 	 * @param containmentCircle
 	 *            the node that show a contaiment link
 	 * @return true if the coantaiment node is connected several link
@@ -384,7 +384,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Delete incoming containment link command.
-	 * 
+	 *
 	 * @param editingDomain
 	 *            the editing domain
 	 * @param incomingLink
@@ -396,14 +396,14 @@ public class ContainmentHelper extends ElementHelper {
 		cmd.add(new DeleteCommand(editingDomain, incomingLink));
 		View containmentCircle = incomingLink.getSource();
 		if (!circleHasOtherLinks(containmentCircle)) {
-			cmd.add(new DeleteCommand(editingDomain, (View) containmentCircle));
+			cmd.add(new DeleteCommand(editingDomain, containmentCircle));
 		}
 		return cmd;
 	}
 
 	/**
 	 * Adds the delete incoming containment link view commands.
-	 * 
+	 *
 	 * @param editingDomain
 	 *            the editing domain
 	 * @param targetNode
@@ -418,7 +418,7 @@ public class ContainmentHelper extends ElementHelper {
 				cmd.add(new DeleteCommand(editingDomain, incomingLink));
 				View containmentCircle = incomingLink.getSource();
 				if (!circleHasOtherLinks(containmentCircle)) {
-					cmd.add(new DeleteCommand(editingDomain, (View) containmentCircle));
+					cmd.add(new DeleteCommand(editingDomain, containmentCircle));
 				}
 			}
 		}
@@ -426,7 +426,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Checks for incoming containment link.
-	 * 
+	 *
 	 * @param targetNode
 	 *            the target node
 	 * @return true, if successful
@@ -443,7 +443,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Checks for outgoing containment link.
-	 * 
+	 *
 	 * @param targetNode
 	 *            the target node
 	 * @return true, if successful
@@ -465,13 +465,13 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Adds the destroy outgoing containment links command.
-	 * 
+	 *
 	 * @param editingDomain
 	 *            the editing domain
 	 * @param sourceNode
 	 *            the source node
 	 * @param cmd
-	 * 
+	 *
 	 *            the cmd
 	 */
 	public static void addDeleteOutgoingContainmentLinkViewCommands(TransactionalEditingDomain editingDomain, View sourceNode, ICompositeCommand cmd) {
@@ -494,7 +494,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * look for a editpart from the semantic element
-	 * 
+	 *
 	 * @param editPartRegistry
 	 *            the map of editpart
 	 * @param droppedElement
@@ -521,7 +521,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Move.
-	 * 
+	 *
 	 * @param objectToMove
 	 *            the object to move
 	 * @param to
@@ -539,7 +539,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Move package.
-	 * 
+	 *
 	 * @param pakkage
 	 *            the pakkage
 	 * @param to
@@ -557,7 +557,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Move class.
-	 * 
+	 *
 	 * @param clazz
 	 *            the clazz
 	 * @param to
@@ -591,7 +591,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Do move package.
-	 * 
+	 *
 	 * @param pakkage
 	 *            the pakkage
 	 * @param from
@@ -606,7 +606,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Do move class.
-	 * 
+	 *
 	 * @param clazz
 	 *            the clazz
 	 * @param from
@@ -621,7 +621,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Do move class.
-	 * 
+	 *
 	 * @param clazz
 	 *            the clazz
 	 * @param from
@@ -636,7 +636,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Do move class.
-	 * 
+	 *
 	 * @param clazz
 	 *            the clazz
 	 * @param from
@@ -651,7 +651,7 @@ public class ContainmentHelper extends ElementHelper {
 
 	/**
 	 * Do move class.
-	 * 
+	 *
 	 * @param clazz
 	 *            the clazz
 	 * @param from

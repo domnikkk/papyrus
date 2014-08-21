@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Abstract Header Axis Configuration</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <!-- begin-model-doc -->
  * Abstract Class for the HeaderAxisConfiguration. This class provides :
  * <ul>
@@ -32,25 +32,21 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.I
  * <li>a list of axisConfiguration. These axis configuration are used to provide the contents of the axis</li>
  * </ul>
  * <!-- end-model-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle <em>Index
- * Style</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel <em>Display
- * Label</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter <em>Display
- * Filter</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex <em>Display
- * Index</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle <em>Index Style</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel <em>Display Label</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter <em>Display Filter</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex <em>Display Index</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedLabelConfigurations
  * <em>Owned Label Configurations</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getOwnedAxisConfigurations
  * <em>Owned Axis Configurations</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAbstractHeaderAxisConfiguration()
  * @model abstract="true"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='oneObjectLabelConfigurationTypes oneFeatureLabelConfigurationTypes'"
@@ -68,7 +64,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	 * <!-- begin-model-doc -->
 	 * This value can't be null. Indicates how to display the index of the Axis : using letter or using number.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Index Style</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle
 	 * @see #setIndexStyle(AxisIndexStyle)
@@ -79,14 +75,13 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	AxisIndexStyle getIndexStyle();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#getIndexStyle
 	 * <em>Index Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Index Style</em>' attribute.
+	 *            the new value of the '<em>Index Style</em>' attribute.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AxisIndexStyle
 	 * @see #getIndexStyle()
 	 * @generated
@@ -101,7 +96,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	 * <!-- begin-model-doc -->
 	 * If true, the label header will be displayed.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Label</em>' attribute.
 	 * @see #setDisplayLabel(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAbstractHeaderAxisConfiguration_DisplayLabel()
@@ -111,14 +106,13 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	boolean isDisplayLabel();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayLabel
 	 * <em>Display Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Label</em>' attribute.
+	 *            the new value of the '<em>Display Label</em>' attribute.
 	 * @see #isDisplayLabel()
 	 * @generated
 	 */
@@ -132,7 +126,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	 * <!-- begin-model-doc -->
 	 * If true AND if the axisConfiguration is used as column, the row filter will be displayed.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Filter</em>' attribute.
 	 * @see #setDisplayFilter(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAbstractHeaderAxisConfiguration_DisplayFilter()
@@ -142,14 +136,13 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	boolean isDisplayFilter();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayFilter
 	 * <em>Display Filter</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Filter</em>' attribute.
+	 *            the new value of the '<em>Display Filter</em>' attribute.
 	 * @see #isDisplayFilter()
 	 * @generated
 	 */
@@ -163,7 +156,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	 * <!-- begin-model-doc -->
 	 * If true, the index header will be displayed.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Display Index</em>' attribute.
 	 * @see #setDisplayIndex(boolean)
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAbstractHeaderAxisConfiguration_DisplayIndex()
@@ -173,14 +166,13 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	boolean isDisplayIndex();
 
 	/**
-	 * Sets the value of the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex
+	 * Sets the value of the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.AbstractHeaderAxisConfiguration#isDisplayIndex
 	 * <em>Display Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Display Index</em>' attribute.
+	 *            the new value of the '<em>Display Index</em>' attribute.
 	 * @see #isDisplayIndex()
 	 * @generated
 	 */
@@ -194,7 +186,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	 * <!-- begin-model-doc -->
 	 * The list of the possible label configuration, referenced by the axis configuration.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Label Configurations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAbstractHeaderAxisConfiguration_OwnedLabelConfigurations()
 	 * @model containment="true"
@@ -210,7 +202,7 @@ public interface AbstractHeaderAxisConfiguration extends EObject, EModelElement 
 	 * <!-- begin-model-doc -->
 	 * The list of the owned axis configuration.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owned Axis Configurations</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.NattableaxisconfigurationPackage#getAbstractHeaderAxisConfiguration_OwnedAxisConfigurations()
 	 * @model containment="true"

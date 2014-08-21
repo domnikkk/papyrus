@@ -78,7 +78,7 @@ public class ModelCellsEditingSupport<T> extends EditingSupport {
 				IModelCellEditHandler editHandler = new IModelCellEditHandler() {
 					public void commit() {
 						@SuppressWarnings("unchecked")
-						//unchecked: The cellEditor.getValue() type cannot be checked.
+						// unchecked: The cellEditor.getValue() type cannot be checked.
 						T value = (T) ModelCellsEditingSupport.this.cellEditor.getValue();
 						int index = ModelCellsEditingSupport.this.values.indexOf(element);
 						if (index != -1

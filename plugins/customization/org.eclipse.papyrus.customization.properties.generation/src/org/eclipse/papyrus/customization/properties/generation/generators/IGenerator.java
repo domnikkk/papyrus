@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Strategy improvement of generated files
  *  Christian W. Damus (CEA) - bug 422257
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.generation.generators;
 
@@ -51,7 +51,7 @@ public interface IGenerator {
 	 * for changes on them.
 	 *
 	 * @param parent
-	 *        The Composite in which the controls will be displayed
+	 *            The Composite in which the controls will be displayed
 	 */
 	public void createControls(Composite parent);
 
@@ -140,7 +140,7 @@ public interface IGenerator {
 	public void setStrategy(int strategy);
 
 	public void addCheckElement(Object obj);
-	
+
 	/**
 	 * Disposes of any resources allocated by me when I am no longer needed.
 	 */

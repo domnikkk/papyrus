@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,15 +41,15 @@ public class HelpDialog extends CustomPopupDialog {
 	/**
 	 * Instantiates a new help dialog. You must use constructor with parseTags
 	 * parameter if you want to define rich text content in your description
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param point
-	 *        the point
+	 *            the point
 	 * @param title
-	 *        the title
+	 *            the title
 	 * @param description
-	 *        the description
+	 *            the description
 	 */
 	public HelpDialog(Shell parent, Point point, String title, String description) {
 		super(parent, point, title);
@@ -61,17 +61,17 @@ public class HelpDialog extends CustomPopupDialog {
 	 * Instantiates a new help dialog. ParseTags parameter must be used if you
 	 * want to define rich text content for the description. For example use
 	 * <form> tag to format your text
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param point
-	 *        the point
+	 *            the point
 	 * @param title
-	 *        the title
+	 *            the title
 	 * @param description
-	 *        the description
+	 *            the description
 	 * @param parseTags
-	 *        enables tags parsing on the description content
+	 *            enables tags parsing on the description content
 	 */
 	public HelpDialog(Shell parent, Point point, String title, String description, boolean parseTags) {
 		super(parent, point, title);
@@ -88,16 +88,19 @@ public class HelpDialog extends CustomPopupDialog {
 		FormText text = toolkit.createFormText(formHead.getBody(), false);
 		text.addHyperlinkListener(new IHyperlinkListener() {
 
+			@Override
 			public void linkExited(HyperlinkEvent e) {
 			}
 
+			@Override
 			public void linkEntered(HyperlinkEvent e) {
 			}
 
+			@Override
 			public void linkActivated(HyperlinkEvent e) {
 				try {
 					IWebBrowser externalBrowser = PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser();
-					externalBrowser.openURL(new URL((String)e.getHref()));
+					externalBrowser.openURL(new URL((String) e.getHref()));
 				} catch (PartInitException e1) {
 					errorBrowser();
 					e1.printStackTrace();

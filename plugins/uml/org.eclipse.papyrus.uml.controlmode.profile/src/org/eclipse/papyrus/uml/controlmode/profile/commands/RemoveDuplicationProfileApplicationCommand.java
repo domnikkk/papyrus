@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.uml2.uml.Profile;
 
 /**
  * Command to remove duplication profile applicaiton during uncontrol
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public final class RemoveDuplicationProfileApplicationCommand extends AbstractControlCommand {
 
@@ -40,9 +40,9 @@ public final class RemoveDuplicationProfileApplicationCommand extends AbstractCo
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		for(Profile profile : ((Package)getRequest().getTargetObject()).getAppliedProfiles()) {
+		for (Profile profile : ((Package) getRequest().getTargetObject()).getAppliedProfiles()) {
 			// profile is duplicated, unapply it
-			ProfileApplicationHelper.removeProfileApplicationDuplication(((Package)getRequest().getTargetObject()), profile, true);
+			ProfileApplicationHelper.removeProfileApplicationDuplication(((Package) getRequest().getTargetObject()), profile, true);
 		}
 		return CommandResult.newOKCommandResult();
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public abstract class AbstractAssociationBranchEditPart extends ConnectionEditPa
 	}
 
 	/**
-	 * 
+	 *
 	 * add listener
 	 */
 	protected void addAssociationEndListeners() {
@@ -66,10 +66,11 @@ public abstract class AbstractAssociationBranchEditPart extends ConnectionEditPa
 	/**
 	 * @generated
 	 */
+	@Override
 	public abstract AssociationFigure getPrimaryShape();
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -82,7 +83,7 @@ public abstract class AbstractAssociationBranchEditPart extends ConnectionEditPa
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

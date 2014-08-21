@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -35,7 +35,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * <pre>
- * This builder creates notification both in a temporary pop-up and in Papyrus notification view. 
+ * This builder creates notification both in a temporary pop-up and in Papyrus notification view.
  * It is not supposed to be registered in extension point as its implementation can possibly interfere with existing ones
  * ({@link ViewBuilder}, {@link AsyncNotifierBuilder}).
  * 
@@ -43,7 +43,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
  * 
  * Usage example : new NotificationBuilder().setBuilderClass(MyBuilder.class).setType(type).setTitle(title).setMessage(message).run();
  * 
- * The expected behavior is the following : 
+ * The expected behavior is the following :
  * - if the notification view is not active, a popup is shown and a notification is added in the view.
  * - if the notification view is active the notification is added in the view (no popup).
  * - if the notification view is not opened, it get created but do not get the focus so that the active view does not switch automatically.
@@ -61,10 +61,10 @@ public class CombinedPopupAndViewBuilder implements IBuilder {
 
 		// Find PapyrusNotificationView or create it but do not give it the focus, let the user decide when to consult these
 		// informations.
-		PapyrusNotificationView notificationView = (PapyrusNotificationView)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView(PapyrusNotificationView.ID);
-		if(notificationView == null) {
+		PapyrusNotificationView notificationView = (PapyrusNotificationView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().findView(PapyrusNotificationView.ID);
+		if (notificationView == null) {
 			try {
-				notificationView = (PapyrusNotificationView)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(PapyrusNotificationView.ID, null, IWorkbenchPage.VIEW_CREATE);
+				notificationView = (PapyrusNotificationView) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(PapyrusNotificationView.ID, null, IWorkbenchPage.VIEW_CREATE);
 			} catch (PartInitException e) {
 				// log error - unable to create notification view
 				return null;
@@ -72,7 +72,7 @@ public class CombinedPopupAndViewBuilder implements IBuilder {
 		}
 
 		// If the Notification view is not visible show temporary notification
-		if((notificationView != null) && !(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().isPartVisible(notificationView))) {
+		if ((notificationView != null) && !(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().isPartVisible(notificationView))) {
 			createNotificationPopup(wrapper, toolkit);
 		}
 
@@ -91,11 +91,11 @@ public class CombinedPopupAndViewBuilder implements IBuilder {
 
 	/**
 	 * This method creates the notification as a temporary popup.
-	 * 
+	 *
 	 * @param wrapper
-	 *        the notification property wrapper.
+	 *            the notification property wrapper.
 	 * @param toolkit
-	 *        the form toolkit.
+	 *            the form toolkit.
 	 * @return the notification.
 	 */
 	private INotification createNotificationPopup(final PropertyWrapper wrapper, FormToolkit toolkit) {
@@ -115,19 +115,19 @@ public class CombinedPopupAndViewBuilder implements IBuilder {
 
 	/**
 	 * This method add notifications in the notification view.
-	 * 
+	 *
 	 * @param notificationView
-	 *        the notification view.
+	 *            the notification view.
 	 * @param wrapper
-	 *        the notification property wrapper.
+	 *            the notification property wrapper.
 	 * @param toolkit
-	 *        the form toolkit.
+	 *            the form toolkit.
 	 * @return the notification.
 	 */
 	private INotification createNotificationLog(PapyrusNotificationView notificationView, final PropertyWrapper wrapper, final FormToolkit toolkit) {
 
 		ICompositeCreator compositeCreator = wrapper.getComposite();
-		if(compositeCreator == null) {
+		if (compositeCreator == null) {
 
 			compositeCreator = new ICompositeCreator() {
 

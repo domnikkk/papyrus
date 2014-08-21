@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ public class DecoratedModelElementFactory extends AbstractModelElementFactory<De
 	protected DecoratedModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		View view = NotationHelper.findView(sourceElement);
 
-		if(view != null) {
+		if (view != null) {
 			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(view);
-			if(ShapeDecorator.isDecorable(view)) {
+			if (ShapeDecorator.isDecorable(view)) {
 				return new DecoratedModelElement(view, domain);
 			}
 
@@ -47,7 +47,7 @@ public class DecoratedModelElementFactory extends AbstractModelElementFactory<De
 	@Override
 	protected void updateModelElement(DecoratedModelElement modelElement, Object newSourceElement) {
 		View view = NotationHelper.findView(newSourceElement);
-		if((view == null) || !ShapeDecorator.isDecorable(view)) {
+		if ((view == null) || !ShapeDecorator.isDecorable(view)) {
 			throw new IllegalArgumentException("Cannot resolve decorable View selection: " + newSourceElement);
 		}
 		modelElement.source = view;

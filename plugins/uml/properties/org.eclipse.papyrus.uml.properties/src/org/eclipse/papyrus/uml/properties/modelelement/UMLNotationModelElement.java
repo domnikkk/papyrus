@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -35,9 +35,9 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * A ModelElement for handling UML-Specific appearance elements and properties
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class UMLNotationModelElement extends AbstractModelElement {
 
@@ -72,11 +72,11 @@ public class UMLNotationModelElement extends AbstractModelElement {
 	protected EditPart sourceElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param sourceElement
-	 *        The GMF EditPart represented by this ModelElement
+	 *            The GMF EditPart represented by this ModelElement
 	 */
 	public UMLNotationModelElement(EditPart sourceElement) {
 		this.sourceElement = sourceElement;
@@ -84,18 +84,18 @@ public class UMLNotationModelElement extends AbstractModelElement {
 
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
-		if(propertyPath.equals(LabelCustomization)) {
+		if (propertyPath.equals(LabelCustomization)) {
 			EditingDomain editingDomain = EMFHelper.resolveEditingDomain(sourceElement);
 			return new MaskValueObservableList(sourceElement, editingDomain);
-		} else if(propertyPath.equals(StereotypeDisplay)) {
-			//TODO : check if we need an observable in this case. For now, the Widget is responsible for updating the element
-			//@see StereotypeDisplay
+		} else if (propertyPath.equals(StereotypeDisplay)) {
+			// TODO : check if we need an observable in this case. For now, the Widget is responsible for updating the element
+			// @see StereotypeDisplay
 			return null;
-		} else if(propertyPath.equals(ElementIcon)) {
+		} else if (propertyPath.equals(ElementIcon)) {
 			return new ElementCustomizationObservableValue(sourceElement, Property.ELEMENT_ICON);
-		} else if(propertyPath.equals(Shadow)) {
+		} else if (propertyPath.equals(Shadow)) {
 			return new ElementCustomizationObservableValue(sourceElement, Property.SHADOW);
-		} else if(propertyPath.equals(QualifiedName)) {
+		} else if (propertyPath.equals(QualifiedName)) {
 			return new ElementCustomizationObservableValue(sourceElement, Property.QUALIFIED_NAME);
 		}
 
@@ -106,20 +106,20 @@ public class UMLNotationModelElement extends AbstractModelElement {
 
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(propertyPath.equals(QualifiedName)) {
-			//maxDepth corresponds to "None" (The name is not qualified), while 0 corresponds to "Full" (Fully qualified name)
+		if (propertyPath.equals(QualifiedName)) {
+			// maxDepth corresponds to "None" (The name is not qualified), while 0 corresponds to "Full" (Fully qualified name)
 			return new AbstractStaticContentProvider() {
 
 				public Object[] getElements() {
-					int maxDepth = NamedElementUtil.getQualifiedNameMaxDepth((NamedElement)UMLUtil.resolveUMLElement(sourceElement));
-					if(maxDepth == 0) {
-						return new Integer[]{ 0 };
+					int maxDepth = NamedElementUtil.getQualifiedNameMaxDepth((NamedElement) UMLUtil.resolveUMLElement(sourceElement));
+					if (maxDepth == 0) {
+						return new Integer[] { 0 };
 					}
 
 					Integer[] result = new Integer[maxDepth + 1];
-					result[0] = maxDepth; //None
-					result[1] = 0; //Full
-					for(int i = 1; i < maxDepth; i++) {
+					result[0] = maxDepth; // None
+					result[1] = 0; // Full
+					for (int i = 1; i < maxDepth; i++) {
 						result[i + 1] = i;
 					}
 					return result;
@@ -133,19 +133,19 @@ public class UMLNotationModelElement extends AbstractModelElement {
 
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		//maxDepth corresponds to "None" (The name is not qualified), while 0 corresponds to "Full" (Fully qualified name)
-		int depth = NamedElementUtil.getQualifiedNameMaxDepth((NamedElement)UMLUtil.resolveUMLElement(sourceElement));
+		// maxDepth corresponds to "None" (The name is not qualified), while 0 corresponds to "Full" (Fully qualified name)
+		int depth = NamedElementUtil.getQualifiedNameMaxDepth((NamedElement) UMLUtil.resolveUMLElement(sourceElement));
 		final int maxDepth = depth == 0 ? 1 : depth;
 
 		return new LabelProvider() {
 
 			@Override
 			public String getText(Object value) {
-				if(value instanceof Integer) {
-					Integer intValue = (Integer)value;
-					if(intValue == maxDepth) {
+				if (value instanceof Integer) {
+					Integer intValue = (Integer) value;
+					if (intValue == maxDepth) {
 						return Messages.UMLNotationModelElement_DepthNone;
-					} else if(intValue == 0) {
+					} else if (intValue == 0) {
 						return Messages.UMLNotationModelElement_DepthFull;
 					} else {
 						return "-" + intValue; //$NON-NLS-1$
@@ -161,7 +161,7 @@ public class UMLNotationModelElement extends AbstractModelElement {
 	 * @return the GMF Notation model element associated to this edit part
 	 */
 	public EModelElement getEModelElement() {
-		return (EModelElement)sourceElement.getModel();
+		return (EModelElement) sourceElement.getModel();
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class UMLNotationModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isMandatory(String propertyPath) {
-		if(QualifiedName.equals(propertyPath)) {
+		if (QualifiedName.equals(propertyPath)) {
 			return true;
 		}
 		return super.isMandatory(propertyPath);

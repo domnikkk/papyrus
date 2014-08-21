@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2011-2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *      Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 /**
  * Customization catalog implementation using the catalog manager features provided by the plug-in
  * org.eclipse.papyrus.emf.facet.util.emf.core
- * 
+ *
  * @author Gregoire Dupe
- * 
+ *
  */
 public class CustomizationCatalogManager implements
 		ICustomizationCatalogManager, ICatalogManager {
@@ -82,7 +82,7 @@ public class CustomizationCatalogManager implements
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public List<Customization> getRegisteredCustomizations() {
 		List<Customization> result = new ArrayList<Customization>();
 		for (EObject eObject : this.catalog.getInstalledEntries()) {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,9 +15,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A widget for editing Integer values with a SWT Spinner
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see org.eclipse.papyrus.infra.widgets.editors.IntegerSpinner
  * @see org.eclipse.swt.widgets.Spinner
  */
@@ -28,9 +28,9 @@ public class IntegerSpinner extends AbstractPropertyEditor {
 	private int minimum = 0, maximum = 100, increment = 1;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -44,11 +44,11 @@ public class IntegerSpinner extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the integer spinner.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the integer spinner.
 	 */
 	protected org.eclipse.papyrus.infra.widgets.editors.IntegerSpinner createIntegerSpinner(Composite parent, int style) {
@@ -64,7 +64,7 @@ public class IntegerSpinner extends AbstractPropertyEditor {
 
 	/**
 	 * @param minimum
-	 *        the minimum value for the spinner
+	 *            the minimum value for the spinner
 	 */
 	public void setMinimum(int minimum) {
 		this.minimum = minimum;
@@ -80,7 +80,7 @@ public class IntegerSpinner extends AbstractPropertyEditor {
 
 	/**
 	 * @param maximum
-	 *        the maximum value for the spinner
+	 *            the maximum value for the spinner
 	 */
 	public void setMaximum(int maximum) {
 		this.maximum = maximum;
@@ -96,7 +96,7 @@ public class IntegerSpinner extends AbstractPropertyEditor {
 
 	/**
 	 * @param increment
-	 *        the increment value for the spinner
+	 *            the increment value for the spinner
 	 */
 	public void setIncrement(int increment) {
 		this.increment = increment;

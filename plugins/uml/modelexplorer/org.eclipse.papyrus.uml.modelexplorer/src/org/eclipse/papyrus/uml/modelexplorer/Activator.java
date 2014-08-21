@@ -1,12 +1,10 @@
 /*
- * 
+ *
  */
 package org.eclipse.papyrus.uml.modelexplorer;
 
-import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.papyrus.infra.core.log.LogHelper;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.eclipse.uml2.uml.UMLPackage;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -56,7 +54,7 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -64,9 +62,9 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.IStartup#earlyStartup()
-	 * 
+	 *
 	 */
 	public void earlyStartup() {
 

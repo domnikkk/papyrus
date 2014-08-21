@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2007 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2007 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * Miguel Llacer San Fernando (Prodevelop) - initial API and implementation
  *
@@ -29,11 +29,11 @@ public class ShowViewEditPolicy {
 
 	/**
 	 * Gets the open edit policy.
-	 * 
+	 *
 	 * @return the open edit policy
 	 */
 	private static OpenEditPolicy getOpenEditPolicy() {
-		if(policy == null) {
+		if (policy == null) {
 			policy = new OpenEditPolicy() {
 
 				@Override
@@ -55,7 +55,7 @@ public class ShowViewEditPolicy {
 	/**
 	 * Listens to double-click event over some element of the diagram and shows
 	 * properties tab.
-	 * 
+	 *
 	 * @return the open edit policy
 	 */
 	// @unused

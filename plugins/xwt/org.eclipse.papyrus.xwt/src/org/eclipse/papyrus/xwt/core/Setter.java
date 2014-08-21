@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.xwt.metadata.IProperty;
 
 /**
  * Setter of the class Style, which is used to define the in-line XAML style
- * 
+ *
  * @see Style
  * @author yyang
  */
@@ -55,24 +55,25 @@ public class Setter extends SetterBase {
 		this.value = value;
 	}
 
+	@Override
 	public Object applyTo(Object element, boolean update) {
 		String propName = getProperty();
 		Object propValue = getValue();
 		String targetName = getTargetName();
 		Object setterTarget = element;
 		Object oldValue = null;
-		if(targetName != null) {
+		if (targetName != null) {
 			setterTarget = TriggerBase.getElementByName(element, targetName);
 		}
 		IMetaclass metaclass = XWT.getMetaclass(setterTarget);
 		IProperty prop = metaclass.findProperty(propName);
-		if(prop != null && propValue != null) {
+		if (prop != null && propValue != null) {
 			Object toValue = propValue;
 			Class<?> valueType = propValue.getClass();
 			Class<?> targetType = prop.getType();
-			if(targetType != null && !targetType.isAssignableFrom(valueType)) {
+			if (targetType != null && !targetType.isAssignableFrom(valueType)) {
 				IConverter converter = XWT.findConvertor(valueType, targetType);
-				if(converter != null) {
+				if (converter != null) {
 					toValue = converter.convert(propValue);
 				} else {
 					throw new XWTException("Converter doesn't exist from \"" + valueType.getName() + "\" to \"" + targetType.getName());
@@ -80,7 +81,7 @@ public class Setter extends SetterBase {
 			}
 			try {
 				oldValue = prop.getValue(setterTarget);
-				if(update) {
+				if (update) {
 					prop.setValue(setterTarget, toValue);
 				}
 			} catch (Exception e) {
@@ -90,16 +91,17 @@ public class Setter extends SetterBase {
 		return oldValue;
 	}
 
+	@Override
 	public void undo(Object element, Object value) {
 		String propName = getProperty();
 		String targetName = getTargetName();
 		Object setterTarget = element;
-		if(targetName != null) {
+		if (targetName != null) {
 			setterTarget = TriggerBase.getElementByName(element, targetName);
 		}
 		IMetaclass metaclass = XWT.getMetaclass(setterTarget);
 		IProperty prop = metaclass.findProperty(propName);
-		if(prop != null) {
+		if (prop != null) {
 			try {
 				prop.setValue(setterTarget, value);
 			} catch (Exception e) {

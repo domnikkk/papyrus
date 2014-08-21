@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -17,17 +17,12 @@ package org.eclipse.papyrus.infra.gmfdiag.common.commands;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.Assert;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.PrecisionRectangle;
-import org.eclipse.emf.transaction.RunnableWithResult;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.workspace.util.WorkspaceSynchronizer;
 import org.eclipse.gef.EditPart;
@@ -37,14 +32,13 @@ import org.eclipse.gef.commands.CompoundCommand;
 import org.eclipse.gef.editparts.AbstractConnectionEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.INodeEditPart;
-import org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewRequest;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.FixAnchorHelper;
 
 
 /**
- * 
+ *
  * an abstract command used to update anchor location in the notation
  * 430702: [Diagram] Moving source of a link moves the target too.
  * https://bugs.eclipse.org/bugs/show_bug.cgi?id=430702
@@ -64,22 +58,23 @@ public abstract class AbstractFixEdgeAnchorDeferredCommand extends AbstractTrans
 	private static final Dimension nullDimension = new Dimension(0, 0);
 
 	public AbstractFixEdgeAnchorDeferredCommand(final TransactionalEditingDomain editingDomain, final String commandTitle, final IGraphicalEditPart containerEP) {
-		super(editingDomain, commandTitle, null); //$NON-NLS-1$
+		super(editingDomain, commandTitle, null);
 		this.containerEP = containerEP;
 		this.helper = new FixAnchorHelper(editingDomain);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#getAffectedFiles()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public List getAffectedFiles() {
-		if(containerEP != null) {
-			View view = (View)containerEP.getModel();
-			if(view != null) {
+		if (containerEP != null) {
+			View view = (View) containerEP.getModel();
+			if (view != null) {
 				IFile f = WorkspaceSynchronizer.getFile(view.eResource());
 				return f != null ? Collections.singletonList(f) : Collections.EMPTY_LIST;
 			}
@@ -88,50 +83,51 @@ public abstract class AbstractFixEdgeAnchorDeferredCommand extends AbstractTrans
 	}
 
 	/**
-	 * 
+	 *
 	 * @param connectionToRefresh
-	 *        the connection edit part to refresh
+	 *            the connection edit part to refresh
 	 * @param commandToContribute
-	 *        the command to contribute (as parameter to avoid to create several compound command
+	 *            the command to contribute (as parameter to avoid to create several compound command
 	 */
 	protected void addFixAnchorCommand(final AbstractConnectionEditPart connectionToRefresh, final CompoundCommand commandToContribute) {
 		Assert.isNotNull(commandToContribute);
-		final EditPart sourceEditPart = ((AbstractConnectionEditPart)connectionToRefresh).getSource();
-		final EditPart targetEditPart = ((AbstractConnectionEditPart)connectionToRefresh).getTarget();
-		if(sourceEditPart instanceof NodeEditPart) {
-			final INodeEditPart nodeEditPart = (INodeEditPart)sourceEditPart;
+		final EditPart sourceEditPart = connectionToRefresh.getSource();
+		final EditPart targetEditPart = connectionToRefresh.getTarget();
+		if (sourceEditPart instanceof NodeEditPart) {
+			final INodeEditPart nodeEditPart = (INodeEditPart) sourceEditPart;
 			PrecisionRectangle nodeBounds = new PrecisionRectangle(nodeEditPart.getFigure().getBounds());
 			nodeEditPart.getFigure().translateToAbsolute(nodeBounds);
 			final Command cc = this.helper.getFixAnchorCommand(nodeEditPart, nodeBounds, nodeBounds, connectionToRefresh, orig, nullDimension, true);
-			if(cc != null) {
+			if (cc != null) {
 				commandToContribute.add(cc);
 			}
 		}
-		if(targetEditPart instanceof NodeEditPart) {
-			final INodeEditPart nodeEditPart = (INodeEditPart)targetEditPart;
+		if (targetEditPart instanceof NodeEditPart) {
+			final INodeEditPart nodeEditPart = (INodeEditPart) targetEditPart;
 			PrecisionRectangle nodeBounds = new PrecisionRectangle(nodeEditPart.getFigure().getBounds());
 			nodeEditPart.getFigure().translateToAbsolute(nodeBounds);
 			final Command cc = this.helper.getFixAnchorCommand(nodeEditPart, nodeBounds, nodeBounds, connectionToRefresh, orig, nullDimension, false);
-			if(cc != null) {
+			if (cc != null) {
 				commandToContribute.add(cc);
 			}
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#cleanup()
-	 * 
+	 *
 	 */
+	@Override
 	protected void cleanup() {
-		this.containerEP = null;//for garbage collection
+		this.containerEP = null;// for garbage collection
 		this.helper = null;
 		super.cleanup();
 	}
 
 	/**
 	 * gets the container edit part's figure
-	 * 
+	 *
 	 * @return the container figure
 	 */
 	protected final IFigure getContainerFigure() {
@@ -140,7 +136,7 @@ public abstract class AbstractFixEdgeAnchorDeferredCommand extends AbstractTrans
 
 	/**
 	 * gets the container edit part
-	 * 
+	 *
 	 * @return the container edit part
 	 */
 	protected final IGraphicalEditPart getContainerEP() {
@@ -148,9 +144,9 @@ public abstract class AbstractFixEdgeAnchorDeferredCommand extends AbstractTrans
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -158,5 +154,5 @@ public abstract class AbstractFixEdgeAnchorDeferredCommand extends AbstractTrans
 		return super.canExecute() && this.helper != null && this.containerEP != null;
 	}
 
-	
+
 }

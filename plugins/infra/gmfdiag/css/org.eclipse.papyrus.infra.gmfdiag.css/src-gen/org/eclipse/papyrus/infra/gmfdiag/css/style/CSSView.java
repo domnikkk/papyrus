@@ -9,20 +9,20 @@ public interface CSSView {
 
 	/**
 	 * CSS Implementation of the isVisible() method
-	 * 
+	 *
 	 * @return
-	 * 
+	 *
 	 * @see View#isVisible()
 	 */
 	public boolean isCSSVisible();
 
 	/**
 	 * CSS Implementation of the getNamedStyle() method
-	 * 
+	 *
 	 * @param eClass
 	 * @param name
 	 * @return
-	 * 
+	 *
 	 * @see View#getNamedStyle(EClass, String)
 	 */
 	public NamedStyle getCSSNamedStyle(EClass eClass, String name);

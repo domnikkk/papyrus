@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes;
 
 /**
  * Helper to define a theme from CSS style sheet file.
- * 
+ *
  * @author gpascual
  *
  */
@@ -58,7 +58,7 @@ public class WorkspaceThemesHelper {
 	 * <p>
 	 * FIXME User could select several CSS files to create a theme
 	 * <P>
-	 * 
+	 *
 	 * @param file
 	 */
 	public Theme defineCSSStyleSheetFilesAsTheme(IStructuredSelection selection) {
@@ -67,10 +67,10 @@ public class WorkspaceThemesHelper {
 		// Extract file from selection
 		Iterator<?> selectionIterator = selection.iterator();
 
-		while(selectionIterator.hasNext()) {
+		while (selectionIterator.hasNext()) {
 			Object next = selectionIterator.next();
-			if(next instanceof IFile) {
-				selectedCSSFilesList.add((IFile)next);
+			if (next instanceof IFile) {
+				selectedCSSFilesList.add((IFile) next);
 			}
 		}
 
@@ -84,11 +84,11 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Method to persist deleted and edited theme in workspace preference file.
-	 * 
+	 *
 	 * @param editedThemesArray
-	 *        Array of edited themes to persist
+	 *            Array of edited themes to persist
 	 * @param deletedThemesArray
-	 *        Array of deleted theme to persist
+	 *            Array of deleted theme to persist
 	 */
 	public void saveWorkspaceThemesPreferenceResource(Theme[] editedThemesArray, Theme[] deletedThemesArray) {
 
@@ -96,18 +96,18 @@ public class WorkspaceThemesHelper {
 		Resource currentThemefile = findThemeFile();
 		WorkspaceThemes workspaceThemes = getWorspaceThemesRoot(currentThemefile);
 
-		// Handle edited  themes
-		for(Theme editedTheme : editedThemesArray) {
+		// Handle edited themes
+		for (Theme editedTheme : editedThemesArray) {
 			boolean updateResult = updateWorkspaceTheme(editedTheme, workspaceThemes);
 
-			// If update haven't done, theme must be added 
-			if(!updateResult) {
+			// If update haven't done, theme must be added
+			if (!updateResult) {
 				workspaceThemes.getThemes().add(editedTheme);
 			}
 		}
 
 		// Handle deleted themes
-		for(Theme deletedTheme : deletedThemesArray) {
+		for (Theme deletedTheme : deletedThemesArray) {
 			removeWorkspaceTheme(deletedTheme, workspaceThemes);
 		}
 
@@ -118,11 +118,11 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Method to delete a theme in workspace theme.
-	 * 
+	 *
 	 * @param deletedTheme
-	 *        Theme to delete
+	 *            Theme to delete
 	 * @param workspaceThemes
-	 *        Current workspace themes
+	 *            Current workspace themes
 	 */
 	private void removeWorkspaceTheme(Theme deletedTheme, WorkspaceThemes workspaceThemes) {
 		// Search resource value of edited theme
@@ -130,12 +130,12 @@ public class WorkspaceThemesHelper {
 		Theme themeId = null;
 		boolean found = false;
 
-		while(currentThemesIterator.hasNext() && !found) {
+		while (currentThemesIterator.hasNext() && !found) {
 			themeId = currentThemesIterator.next();
 			found = themeId.getId().equals(deletedTheme.getId());
 		}
 
-		if(found) {
+		if (found) {
 			// Replace in resource the current value with the edited one and save resource
 			EcoreUtil.remove(workspaceThemes, StylesheetsPackage.eINSTANCE.getWorkspaceThemes_Themes(), themeId);
 		}
@@ -146,9 +146,9 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Replace in current workspace themes resource theme with the edited value.
-	 * 
+	 *
 	 * @param editedTheme
-	 *        New theme value
+	 *            New theme value
 	 */
 	public void saveWorkspaceThemesPreferenceResource(Theme editedTheme) {
 		// Get current resource of workspace theme preferences
@@ -161,13 +161,13 @@ public class WorkspaceThemesHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * Update in current workspace themes resource the theme with the edited one.
-	 * 
+	 *
 	 * @param editedTheme
-	 *        Theme with new value
+	 *            Theme with new value
 	 * @param workspaceThemes
-	 *        workspace themes
+	 *            workspace themes
 	 */
 	private boolean updateWorkspaceTheme(Theme editedTheme, WorkspaceThemes workspaceThemes) {
 		// Search resource value of edited theme
@@ -175,12 +175,12 @@ public class WorkspaceThemesHelper {
 		Theme themeId = null;
 		boolean found = false;
 
-		while(currentThemesIterator.hasNext() && !found) {
+		while (currentThemesIterator.hasNext() && !found) {
 			themeId = currentThemesIterator.next();
 			found = themeId.getId().equals(editedTheme.getId());
 		}
 
-		if(found) {
+		if (found) {
 			// Replace in resource the current value with the edited one and save resource
 			EcoreUtil.replace(workspaceThemes, StylesheetsPackage.eINSTANCE.getWorkspaceThemes_Themes(), themeId, editedTheme);
 		}
@@ -190,13 +190,13 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Save style sheets EMF Resource.
-	 * 
+	 *
 	 * @param styleSheetsResource
-	 * 
+	 *
 	 */
 	private void saveResource(Resource styleSheetsResource) {
 		// Save theme preference file
-		if(styleSheetsResource != null) {
+		if (styleSheetsResource != null) {
 			try {
 				Map<String, Object> options = new HashMap<String, Object>();
 				options.put(XMIResource.XMI_ID, Boolean.TRUE);
@@ -210,21 +210,21 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Save theme in workspace preferences.
-	 * 
+	 *
 	 * @param theme
-	 *        Theme to save
+	 *            Theme to save
 	 */
 	public void saveNewThemeWorkspacePreference(Theme theme) {
 		Resource themeFile = theme.eResource();
 
-		if(themeFile == null) {
+		if (themeFile == null) {
 			themeFile = findThemeFile();
 		}
 
 		// Get workspace themes
 		WorkspaceThemes workspaceThemes = getWorspaceThemesRoot(themeFile);
 
-		// Add created theme 
+		// Add created theme
 		workspaceThemes.getThemes().add(theme);
 
 		saveResource(themeFile);
@@ -233,7 +233,7 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Created a style sheets theme from project selection.
-	 * 
+	 *
 	 * @param selectedCSSFilesList
 	 * @return
 	 */
@@ -245,9 +245,9 @@ public class WorkspaceThemesHelper {
 		// Create new theme
 		Theme newTheme = styleSheetsFactory.createTheme();
 
-		for(IFile cssFile : selectedCSSFilesList) {
+		for (IFile cssFile : selectedCSSFilesList) {
 
-			//Style sheets to add in theme
+			// Style sheets to add in theme
 			StyleSheetReference styleSheetsReference = styleSheetsFactory.createStyleSheetReference();
 			styleSheetsReference.setPath(cssFile.getFullPath().toString());
 			newTheme.getStylesheets().add(styleSheetsReference);
@@ -257,7 +257,7 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Look for theme workspace preferences file.
-	 * 
+	 *
 	 * @return Created resource if it don't exist, otherwise loaded
 	 */
 	private Resource findThemeFile() {
@@ -271,7 +271,7 @@ public class WorkspaceThemesHelper {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = null;
 
-		if(themeFilePath.toFile().exists()) {
+		if (themeFilePath.toFile().exists()) {
 			resource = resourceSet.getResource(resolvedURI, true);
 		} else {
 			resource = resourceSet.createResource(resolvedURI);
@@ -282,7 +282,7 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Build path to access preference file.
-	 * 
+	 *
 	 * @return Path to theme.xmi file in workspace preference directory
 	 */
 	public IPath getThemeWorkspacePreferenceFilePath() {
@@ -296,17 +296,17 @@ public class WorkspaceThemesHelper {
 
 	/**
 	 * Get root element of an workspace themes resource.
-	 * 
+	 *
 	 * @param workspaceThemesResource
-	 *        The resource to inspect
+	 *            The resource to inspect
 	 * @return The existing root of type {@link WorkspaceThemes}, otherwise create and add to resource
 	 */
 	private WorkspaceThemes getWorspaceThemesRoot(Resource workspaceThemesResource) {
 
-		//Verify if root element exit
-		WorkspaceThemes workspaceThemesRoot = (WorkspaceThemes)EcoreUtil.getObjectByType(workspaceThemesResource.getContents(), StylesheetsPackage.Literals.WORKSPACE_THEMES);
+		// Verify if root element exit
+		WorkspaceThemes workspaceThemesRoot = (WorkspaceThemes) EcoreUtil.getObjectByType(workspaceThemesResource.getContents(), StylesheetsPackage.Literals.WORKSPACE_THEMES);
 
-		if(workspaceThemesRoot == null) {
+		if (workspaceThemesRoot == null) {
 
 			// Create a root element if there is not
 			workspaceThemesRoot = StylesheetsFactory.eINSTANCE.createWorkspaceThemes();

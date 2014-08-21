@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * A Builder able to create {@link PapyrusNotificationView} instances
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class ViewBuilder implements IBuilder {
 
@@ -46,13 +46,13 @@ public class ViewBuilder implements IBuilder {
 	public INotification build(PropertyWrapper wrapper, FormToolkit toolkit) {
 		try {
 			IViewPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(PapyrusNotificationView.ID);
-			if(part instanceof PapyrusNotificationView) {
-				PapyrusNotificationView view = (PapyrusNotificationView)part;
+			if (part instanceof PapyrusNotificationView) {
+				PapyrusNotificationView view = (PapyrusNotificationView) part;
 				AbstractInsideComposite viewCompo = null;
-				if(wrapper.getComposite() != null) {
+				if (wrapper.getComposite() != null) {
 					viewCompo = view.setComposite(wrapper.getComposite(), wrapper.getTitle(), wrapper.getActions(), wrapper.getType());
 				} else {
-					if(wrapper.getType() != null || wrapper.getImage() != null || wrapper.isHtml()) {
+					if (wrapper.getType() != null || wrapper.getImage() != null || wrapper.isHtml()) {
 						final Image image = wrapper.getImage();
 						final Type type = wrapper.getType();
 						final boolean isHtml = wrapper.isHtml();
@@ -65,14 +65,14 @@ public class ViewBuilder implements IBuilder {
 							}
 						}, wrapper.getTitle(), wrapper.getActions());
 					} else {
-						if(wrapper.getMessage() != null) {
+						if (wrapper.getMessage() != null) {
 							viewCompo = view.setMessage(wrapper.getMessage(), wrapper.getTitle(), wrapper.getActions());
 						}
 					}
 				}
 				ViewNotification notification = new ViewNotification(viewCompo);
 				viewCompo.setINotification(notification);
-				return notification ;
+				return notification;
 			}
 		} catch (PartInitException e) {
 		}
@@ -86,37 +86,37 @@ public class ViewBuilder implements IBuilder {
 	 */
 	public boolean accept(String parameterName, Object value) {
 		boolean found = false;
-		for(IViewReference ref : PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getViewReferences()) {
-			if(PapyrusNotificationView.ID.equals(ref.getId())) {
+		for (IViewReference ref : PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getViewReferences()) {
+			if (PapyrusNotificationView.ID.equals(ref.getId())) {
 				found = true;
 			}
 		}
-		if(found) {
-			if(NotificationBuilder.ASYNCHRONOUS.equals(parameterName)) {
-				return value instanceof Boolean && (Boolean)value;
+		if (found) {
+			if (NotificationBuilder.ASYNCHRONOUS.equals(parameterName)) {
+				return value instanceof Boolean && (Boolean) value;
 			}
-			if(NotificationBuilder.TEMPORARY.equals(parameterName)) {
-				return value instanceof Boolean && !(Boolean)value;
+			if (NotificationBuilder.TEMPORARY.equals(parameterName)) {
+				return value instanceof Boolean && !(Boolean) value;
 			}
-			if(NotificationBuilder.DELAY.equals(parameterName)) {
+			if (NotificationBuilder.DELAY.equals(parameterName)) {
 				return false;
 			}
-			if(NotificationBuilder.MESSAGE.equals(parameterName)) {
+			if (NotificationBuilder.MESSAGE.equals(parameterName)) {
 				return true;
 			}
-			if(NotificationBuilder.COMPOSITE.equals(parameterName)) {
+			if (NotificationBuilder.COMPOSITE.equals(parameterName)) {
 				return true;
 			}
-			if(NotificationBuilder.ACTION.equals(parameterName)) {
+			if (NotificationBuilder.ACTION.equals(parameterName)) {
 				return true;
 			}
-			if(NotificationBuilder.TYPE.equals(parameterName)) {
+			if (NotificationBuilder.TYPE.equals(parameterName)) {
 				return true;
 			}
-			if(NotificationBuilder.TITLE.equals(parameterName)) {
+			if (NotificationBuilder.TITLE.equals(parameterName)) {
 				return true;
 			}
-			if(NotificationBuilder.HTML.equals(parameterName)) {
+			if (NotificationBuilder.HTML.equals(parameterName)) {
 				return true;
 			}
 		}

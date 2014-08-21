@@ -41,4 +41,4 @@ public abstract class TreeElementImpl extends AdaptableTreeElementImpl implement
 		parent = newParent;
 	}
 
-} //TreeElementImpl
+} // TreeElementImpl

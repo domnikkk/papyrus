@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,6 +40,7 @@ public class CommentLinkEditPart extends ConnectionEditPart implements ITreeBran
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CommentLinkItemSemanticEditPolicy());
@@ -47,12 +48,13 @@ public class CommentLinkEditPart extends ConnectionEditPart implements ITreeBran
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new LinkFigure();
 	}
@@ -60,7 +62,8 @@ public class CommentLinkEditPart extends ConnectionEditPart implements ITreeBran
 	/**
 	 * @generated
 	 */
+	@Override
 	public LinkFigure getPrimaryShape() {
-		return (LinkFigure)getFigure();
+		return (LinkFigure) getFigure();
 	}
 }

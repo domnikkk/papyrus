@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.views.properties.modelelement.AbstractEMFModelElement
 /**
  * Themes ModelElement factory to provide label provider because
  * CSS EMF model is not in Service registry.
- * 
+ *
  * @author gpascual
  *
  */
@@ -44,7 +44,7 @@ public class CSSThemesModelElementFactory extends AbstractEMFModelElementFactory
 	protected CSSThemesModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 
 		EObject source = EMFHelper.getEObject(sourceElement);
-		if(source == null) {
+		if (source == null) {
 			Activator.log.warn("Unable to resolve the selected element to an EObject"); //$NON-NLS-1$
 			return null;
 		}

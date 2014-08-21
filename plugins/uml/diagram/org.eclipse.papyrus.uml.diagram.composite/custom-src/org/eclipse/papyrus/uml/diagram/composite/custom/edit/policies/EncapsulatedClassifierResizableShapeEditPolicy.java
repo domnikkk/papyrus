@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,58 +52,58 @@ public class EncapsulatedClassifierResizableShapeEditPolicy extends PapyrusResiz
 	 */
 	@Override
 	protected Command getResizeCommand(ChangeBoundsRequest request) {
-		
+
 		// Prepare command to move the affixed children as well (and an optional fix command)
 		CompoundCommand updatePortLocationsCommand = new CompoundCommand("Update border items location"); //$NON-NLS-1$
 		CompoundCommand fixPortLocationsCommand = new CompoundCommand("Fix border items location"); //$NON-NLS-1$
-		
+
 		Iterator<?> it = getHost().getChildren().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Object tmp = it.next();
 			if (!(tmp instanceof IBorderItemEditPart)) {
 				continue;
 			}
-			
+
 			IBorderItemEditPart borderItem = (IBorderItemEditPart) tmp;
-			Shape borderItemView = (Shape)borderItem.getNotationView();
+			Shape borderItemView = (Shape) borderItem.getNotationView();
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(borderItemView);
 
 			// Fix possible location issue in BorderItem bounds in notation model
-			ICommand fixPortLocationCommand = new FixPortLocationCommand(editingDomain, borderItem, (GraphicalEditPart)getHost());
+			ICommand fixPortLocationCommand = new FixPortLocationCommand(editingDomain, borderItem, (GraphicalEditPart) getHost());
 			if (fixPortLocationCommand.canExecute()) {
 				fixPortLocationsCommand.add(new ICommandProxy(fixPortLocationCommand));
 			}
-					
-			ICommand updatePortLocationCommand = new UpdatePortLocationCommand(editingDomain, request, (GraphicalEditPart)getHost(), borderItem, borderItem.getBorderItemLocator().getCurrentSideOfParent());
+
+			ICommand updatePortLocationCommand = new UpdatePortLocationCommand(editingDomain, request, (GraphicalEditPart) getHost(), borderItem, borderItem.getBorderItemLocator().getCurrentSideOfParent());
 			if (updatePortLocationCommand.canExecute()) {
 				updatePortLocationsCommand.add(new ICommandProxy(updatePortLocationCommand));
 			}
 		}
-		
-		
+
+
 		// Create the complete resize command
 		CompoundCommand resizeCommand = new CompoundCommand("Resize command"); //$NON-NLS-1$
-	
+
 		// Add command to fix border item locations.
-		// The role of this command is to make sure that the Port is correctly located (here this means 
+		// The role of this command is to make sure that the Port is correctly located (here this means
 		// that the figure and the view have the same location) before resizing its parent.
 		// See bug. https://bugs.eclipse.org/bugs/show_bug.cgi?id=354814.
 		if (!fixPortLocationsCommand.isEmpty()) {
 			resizeCommand.add(fixPortLocationsCommand);
 		}
-		
+
 		// Add command to update locations
 		resizeCommand.add(super.getResizeCommand(request));
-		
+
 		// Add command to update border item locations.
 		// This command uses the border side of the border item before the resize action, and thus
-		// requires that the Port location is correct. Previous versions did not move the IBorderItem, this is the reason 
+		// requires that the Port location is correct. Previous versions did not move the IBorderItem, this is the reason
 		// why a fix on the fly may be required.
 		// See bug. https://bugs.eclipse.org/bugs/show_bug.cgi?id=354814.
 		if (!updatePortLocationsCommand.isEmpty()) {
 			resizeCommand.add(updatePortLocationsCommand);
 		}
-		
+
 		return resizeCommand;
 	}
 

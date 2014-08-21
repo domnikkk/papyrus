@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Type;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Nested Connector End</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Type;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.NestedConnectorEnd#getBase_ConnectorEnd <em>Base Connector End</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getNestedConnectorEnd()
  * @model
  * @generated
@@ -44,7 +44,7 @@ public interface NestedConnectorEnd extends EObject {
 	 * If the meaning of the '<em>Base Connector End</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Connector End</em>' reference.
 	 * @see #setBase_ConnectorEnd(ConnectorEnd)
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getNestedConnectorEnd_Base_ConnectorEnd()
@@ -61,7 +61,7 @@ public interface NestedConnectorEnd extends EObject {
 	 * If the meaning of the '<em>Property Path</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Property Path</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getNestedConnectorEnd_PropertyPath()
 	 * @model required="true"
@@ -70,38 +70,34 @@ public interface NestedConnectorEnd extends EObject {
 	EList<Property> getPropertyPath();
 
 	/**
-	 * Retrieves the first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>' from the '
-	 * <em><b>Property Path</b></em>' reference list.
+	 * Retrieves the first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>' from the ' <em><b>Property Path</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
 	 * @param type
-	 *        The '<em><b>Type</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
-	 * @return The first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>', or
-	 *         <code>null</code>.
+	 *            The '<em><b>Type</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
+	 * @return The first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>', or <code>null</code>.
 	 * @see #getPropertyPath()
 	 * @generated
 	 */
 	Property getPropertyPath(String name, Type type);
 
 	/**
-	 * Retrieves the first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>' from the '
-	 * <em><b>Property Path</b></em>' reference list.
+	 * Retrieves the first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>' from the ' <em><b>Property Path</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
 	 * @param type
-	 *        The '<em><b>Type</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Type</b></em>' of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
-	 * @return The first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>', or
-	 *         <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.Property} to retrieve, or <code>null</code>.
+	 * @return The first {@link org.eclipse.uml2.uml.Property} with the specified '<em><b>Name</b></em>', and '<em><b>Type</b></em>', or <code>null</code>.
 	 * @see #getPropertyPath()
 	 * @generated
 	 */
@@ -111,9 +107,9 @@ public interface NestedConnectorEnd extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.blocks.NestedConnectorEnd#getBase_ConnectorEnd <em>Base Connector End</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Connector End</em>' reference.
+	 *            the new value of the '<em>Base Connector End</em>' reference.
 	 * @see #getBase_ConnectorEnd()
 	 * @generated
 	 */

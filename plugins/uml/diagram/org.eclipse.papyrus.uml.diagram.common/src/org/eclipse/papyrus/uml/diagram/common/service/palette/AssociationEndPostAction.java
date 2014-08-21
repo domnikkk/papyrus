@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -136,7 +136,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		super.init(configurationNode, factory);
-		if(configurationNode == null) {
+		if (configurationNode == null) {
 			// creates 2 default configuration property
 			PropertyEndConfiguration sourceConfiguration = new PropertyEndConfiguration(0, "source");
 			PropertyEndConfiguration targetConfiguration = new PropertyEndConfiguration(1, "target");
@@ -145,38 +145,38 @@ public class AssociationEndPostAction extends ModelPostAction {
 			return;
 		}
 		NodeList childNodes = configurationNode.getChildNodes();
-		for(int i = 0; i < childNodes.getLength(); i++) {
+		for (int i = 0; i < childNodes.getLength(); i++) {
 			Node featureNode = childNodes.item(i);
-			if(ASSOCIATION_END_NODE_NAME.equals(featureNode.getNodeName())) {
+			if (ASSOCIATION_END_NODE_NAME.equals(featureNode.getNodeName())) {
 				Node indexNode = featureNode.getAttributes().getNamedItem(INDEX_ATTRIBUTE_NAME);
 				Node nameNode = featureNode.getAttributes().getNamedItem(NAME_ATTRIBUTE_NAME);
 
-				if(indexNode != null && nameNode != null) {
+				if (indexNode != null && nameNode != null) {
 					Integer index = Integer.parseInt(indexNode.getNodeValue());
 					PropertyEndConfiguration configuration = new PropertyEndConfiguration(index, nameNode.getNodeValue());
 					// parse sub nodes (aggregation, navigation, etc.)
 					NodeList subNodes = featureNode.getChildNodes();
-					for(int j = 0; j < subNodes.getLength(); j++) {
+					for (int j = 0; j < subNodes.getLength(); j++) {
 						Node subNode = subNodes.item(j);
 						String subNodeName = subNode.getNodeName();
-						if(AGGREGATION_NODE_NAME.equals(subNodeName)) {
+						if (AGGREGATION_NODE_NAME.equals(subNodeName)) {
 							Node valueNode = subNode.getAttributes().getNamedItem(VALUE_ATTRIBUTE_NAME);
-							if(valueNode != null) {
+							if (valueNode != null) {
 								configuration.setAggregationKind(valueNode.getNodeValue());
 							}
-						} else if(MULTIPLICITY_NODE_NAME.equals(subNodeName)) {
+						} else if (MULTIPLICITY_NODE_NAME.equals(subNodeName)) {
 							Node valueNode = subNode.getAttributes().getNamedItem(VALUE_ATTRIBUTE_NAME);
-							if(valueNode != null) {
+							if (valueNode != null) {
 								configuration.setMultiplicity(valueNode.getNodeValue());
 							}
-						} else if(NAVIGABLE_NODE_NAME.equals(subNodeName)) {
+						} else if (NAVIGABLE_NODE_NAME.equals(subNodeName)) {
 							Node valueNode = subNode.getAttributes().getNamedItem(VALUE_ATTRIBUTE_NAME);
-							if(valueNode != null) {
+							if (valueNode != null) {
 								configuration.setNavigation(valueNode.getNodeValue());
 							}
-						} else if(OWNER_NODE_NAME.equals(subNodeName)) {
+						} else if (OWNER_NODE_NAME.equals(subNodeName)) {
 							Node valueNode = subNode.getAttributes().getNamedItem(VALUE_ATTRIBUTE_NAME);
-							if(valueNode != null) {
+							if (valueNode != null) {
 								configuration.setOwner(valueNode.getNodeValue());
 							}
 						}
@@ -193,6 +193,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getPostCommand(final IAdaptable viewAdapter) {
 
 		final TransactionalEditingDomain editingDomain = EditorUtils.getTransactionalEditingDomain();
@@ -201,36 +202,36 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				View view = (View)viewAdapter.getAdapter(View.class);
+				View view = (View) viewAdapter.getAdapter(View.class);
 
-				if(view != null && view.getElement() instanceof Association) {
+				if (view != null && view.getElement() instanceof Association) {
 					EObject objectToEdit = view.getElement();
 
-					for(PropertyEndConfiguration configuration : configurations) {
+					for (PropertyEndConfiguration configuration : configurations) {
 
 						// retrieve Property... more tests to do!!
-						Property property = ((Association)objectToEdit).getMemberEnds().get(configuration.getIndex());
+						Property property = ((Association) objectToEdit).getMemberEnds().get(configuration.getIndex());
 
-						if(!("".equals(configuration.getOwner()))) {
+						if (!("".equals(configuration.getOwner()))) {
 							// change the owner to the specified one
-							IUndoableOperation operation = AssociationHelper.createSetOwnerCommand((Association)objectToEdit, property, CLASS_OWNER.equals(configuration.getOwner()));
-							if(operation != null && operation.canExecute()) {
+							IUndoableOperation operation = AssociationHelper.createSetOwnerCommand((Association) objectToEdit, property, CLASS_OWNER.equals(configuration.getOwner()));
+							if (operation != null && operation.canExecute()) {
 								operation.execute(null, null);
 							}
 						}
 
-						if(!("".equals(configuration.getAggregationKind()))) {
+						if (!("".equals(configuration.getAggregationKind()))) {
 							// change the aggregation kind
 							AggregationKind aggregationKind = AggregationKind.get(configuration.getAggregationKind());
 							AssociationHelper.createSetAggregationCommand(property, aggregationKind).execute(null, null);
 						}
 
-						if(!("".equals(configuration.getMultiplicity()))) {
+						if (!("".equals(configuration.getMultiplicity()))) {
 							// change the aggregation kind
 							String multiplicity = configuration.getMultiplicity();
 							try {
 								int[] values = MultiplicityElementUtil.parseMultiplicity(multiplicity);
-								if(values.length == 2) {
+								if (values.length == 2) {
 									AssociationHelper.createSetMultiplicityCommand(property, values[0], values[1]).execute(null, null);
 								}
 							} catch (NumberFormatException e) {
@@ -238,10 +239,10 @@ public class AssociationEndPostAction extends ModelPostAction {
 							}
 						}
 
-						if(!("".equals(configuration.getNavigation()))) {
+						if (!("".equals(configuration.getNavigation()))) {
 							String navigation = configuration.getNavigation();
 							boolean isNavigable = NAVIGABLE_YES.equals(navigation);
-							AssociationHelper.createSetNavigableCommand(((Association)objectToEdit), property, isNavigable).execute(null, null);
+							AssociationHelper.createSetNavigableCommand(((Association) objectToEdit), property, isNavigable).execute(null, null);
 						}
 					}
 				}
@@ -253,13 +254,14 @@ public class AssociationEndPostAction extends ModelPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Control createConfigurationComposite(Composite parent, IPaletteEntryProxy entryProxy, List<Profile> appliedProfiles) {
 		this.appliedProfiles = appliedProfiles;
 		this.entryProxy = entryProxy;
 
 		// retrieve tool metaclass
-		if(entryProxy.getEntry() instanceof CombinedTemplateCreationEntry) {
-			metaclass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry)entryProxy.getEntry());
+		if (entryProxy.getEntry() instanceof CombinedTemplateCreationEntry) {
+			metaclass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry) entryProxy.getEntry());
 		}
 
 		Composite mainComposite = new Composite(parent, SWT.BORDER);
@@ -271,7 +273,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 		GridData data = new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1);
 		titleLabel.setLayoutData(data);
 
-		for(PropertyEndConfiguration configuration : configurations) {
+		for (PropertyEndConfiguration configuration : configurations) {
 			PropertyEndComposite composite = new PropertyEndComposite(configuration);
 			composite.createComposite(mainComposite);
 			configurationComposites.add(composite);
@@ -282,44 +284,45 @@ public class AssociationEndPostAction extends ModelPostAction {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public void save(Node parentNode) {
-		if(!(parentNode instanceof Element)) {
+		if (!(parentNode instanceof Element)) {
 			Activator.log.error("parent node is not an Element", null);
 			return;
 		} else {
 			// a sub node should be created for each configuration
-			for(PropertyEndConfiguration configuration : configurations) {
-				Element associationEndNode = ((Element)parentNode).getOwnerDocument().createElement(ASSOCIATION_END_NODE_NAME);
+			for (PropertyEndConfiguration configuration : configurations) {
+				Element associationEndNode = ((Element) parentNode).getOwnerDocument().createElement(ASSOCIATION_END_NODE_NAME);
 				associationEndNode.setAttribute(INDEX_ATTRIBUTE_NAME, configuration.getIndex() + "");
 				associationEndNode.setAttribute(NAME_ATTRIBUTE_NAME, configuration.getName());
 
 				// save child nodes, if required
-				if(!"".equals(configuration.getAggregationKind())) {
+				if (!"".equals(configuration.getAggregationKind())) {
 					createChildNode(associationEndNode, AGGREGATION_NODE_NAME, configuration.getAggregationKind());
 				}
-				if(!"".equals(configuration.getMultiplicity())) {
+				if (!"".equals(configuration.getMultiplicity())) {
 					createChildNode(associationEndNode, MULTIPLICITY_NODE_NAME, configuration.getMultiplicity());
 				}
-				if(!"".equals(configuration.getNavigation())) {
+				if (!"".equals(configuration.getNavigation())) {
 					createChildNode(associationEndNode, NAVIGABLE_NODE_NAME, configuration.getNavigation());
 				}
-				if(!"".equals(configuration.getOwner())) {
+				if (!"".equals(configuration.getOwner())) {
 					createChildNode(associationEndNode, OWNER_NODE_NAME, configuration.getOwner());
 				}
-				((Element)parentNode).appendChild(associationEndNode);
+				((Element) parentNode).appendChild(associationEndNode);
 			}
 		}
 	}
 
 	/**
 	 * Creates a child node to the given element
-	 * 
+	 *
 	 * @param parent
-	 *        the element owner of the new child node
+	 *            the element owner of the new child node
 	 * @param tagName
-	 *        the name of the child node
+	 *            the name of the child node
 	 * @param value
-	 *        the value of the "value" attribute node
+	 *            the value of the "value" attribute node
 	 */
 	protected void createChildNode(Element parent, String tagName, String value) {
 		Element childNode = parent.getOwnerDocument().createElement(tagName);
@@ -370,9 +373,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param index
-		 *        the index of the property in the association ends list
+		 *            the index of the property in the association ends list
 		 */
 		public PropertyEndComposite(PropertyEndConfiguration configuration) {
 			this.configuration = configuration;
@@ -381,9 +384,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Creates the composite for configuration
-		 * 
+		 *
 		 * @param parent
-		 *        the composite in which sub-composite should be created
+		 *            the composite in which sub-composite should be created
 		 */
 		public void createComposite(Composite parent) {
 			Group mainComposite = new Group(parent, SWT.NONE);
@@ -400,13 +403,15 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 			aggregationCombo = new Combo(mainComposite, SWT.READ_ONLY);
 			aggregationCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
-			aggregationCombo.setItems(aggregationItems.toArray(new String[]{}));
+			aggregationCombo.setItems(aggregationItems.toArray(new String[] {}));
 			aggregationCombo.addFocusListener(new FocusListener() {
 
+				@Override
 				public void focusLost(FocusEvent e) {
 					configuration.setAggregationKind(aggregationCombo.getText());
 				}
 
+				@Override
 				public void focusGained(FocusEvent e) {
 
 				}
@@ -418,21 +423,23 @@ public class AssociationEndPostAction extends ModelPostAction {
 			ownerLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
 
 			ownerCombo = new Combo(mainComposite, SWT.READ_ONLY);
-			ownerCombo.setItems(ownerItems.toArray(new String[]{}));
+			ownerCombo.setItems(ownerItems.toArray(new String[] {}));
 			ownerCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 			ownerCombo.addSelectionListener(new SelectionListener() {
 
 				/**
 				 * @{inheritDoc
 				 */
+				@Override
 				public void widgetSelected(SelectionEvent e) {
-					String value = ((Combo)e.widget).getText();
+					String value = ((Combo) e.widget).getText();
 					configuration.setOwner(value);
 				}
 
 				/**
 				 * @{inheritDoc
 				 */
+				@Override
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			});
@@ -443,21 +450,23 @@ public class AssociationEndPostAction extends ModelPostAction {
 			navigationLabel.setLayoutData(new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1));
 
 			navigationCombo = new Combo(mainComposite, SWT.READ_ONLY);
-			navigationCombo.setItems(navigationItems.toArray(new String[]{}));
+			navigationCombo.setItems(navigationItems.toArray(new String[] {}));
 			navigationCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
 			navigationCombo.addSelectionListener(new SelectionListener() {
 
 				/**
 				 * @{inheritDoc
 				 */
+				@Override
 				public void widgetSelected(SelectionEvent e) {
-					String value = ((Combo)e.widget).getText();
+					String value = ((Combo) e.widget).getText();
 					configuration.setNavigation(value);
 				}
 
 				/**
 				 * @{inheritDoc
 				 */
+				@Override
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			});
@@ -469,21 +478,23 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 			multiplicityCombo = new Combo(mainComposite, SWT.BORDER);
 			multiplicityCombo.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 2, 1));
-			multiplicityCombo.setItems(multiplicityItems.toArray(new String[]{}));
+			multiplicityCombo.setItems(multiplicityItems.toArray(new String[] {}));
 			multiplicityCombo.addFocusListener(new FocusListener() {
 
 				/**
 				 * @{inheritDoc
 				 */
+				@Override
 				public void focusLost(FocusEvent e) {
 					// check validity. open a window to ask if we should stay on
 					// multiplicity combo or left.
 					String newValue = multiplicityCombo.getText();
-					if(isMultiplicityValid(newValue.trim())) {
+					if (isMultiplicityValid(newValue.trim())) {
 						configuration.setMultiplicity(newValue.trim());
 					} else {
-						boolean leaveCombo = MessageDialog.openQuestion(multiplicityCombo.getShell(), "Incorrect multiplicity value", "The text [" + newValue + "] is not a valid value.\nDo you really want to leave the combo, losing your modification on multiplicity value?");
-						if(!leaveCombo) {
+						boolean leaveCombo = MessageDialog.openQuestion(multiplicityCombo.getShell(), "Incorrect multiplicity value", "The text [" + newValue
+								+ "] is not a valid value.\nDo you really want to leave the combo, losing your modification on multiplicity value?");
+						if (!leaveCombo) {
 							multiplicityCombo.setFocus();
 							multiplicityCombo.setText(newValue);
 						} else {
@@ -496,6 +507,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 				/**
 				 * @{inheritDoc
 				 */
+				@Override
 				public void focusGained(FocusEvent e) {
 
 				}
@@ -517,19 +529,19 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Checks if the multiplicity is valid
-		 * 
+		 *
 		 * @param newValue
-		 *        the value to check
+		 *            the value to check
 		 * @return true if the String represents a valid multiplicity
 		 */
 		private boolean isMultiplicityValid(String newValue) {
 			// checks if is only a string
-			if(newValue.equals("")) {
+			if (newValue.equals("")) {
 				return true;
 			}
 			try {
 				int[] values = MultiplicityElementUtil.parseMultiplicity(newValue);
-				if(values.length == 2) {
+				if (values.length == 2) {
 					int lower = values[0];
 					int upper = values[1];
 
@@ -566,7 +578,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Returns the name of this configuration (the name of the property end)
-		 * 
+		 *
 		 * @return the name of this configuration (the name of the property end)
 		 */
 		public String getName() {
@@ -576,7 +588,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 		/**
 		 * Returns the index of this configuration (the index of the property
 		 * end)
-		 * 
+		 *
 		 * @return the index of this configuration (the index of the property
 		 *         end
 		 */
@@ -586,9 +598,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param index
-		 *        the index of the property end
+		 *            the index of the property end
 		 */
 		public PropertyEndConfiguration(int index, String name) {
 			this.index = index;
@@ -597,7 +609,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Returns the current value of aggregationKind
-		 * 
+		 *
 		 * @return the current value of aggregationKind
 		 */
 		public String getAggregationKind() {
@@ -606,9 +618,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Sets the current value of aggregationKind
-		 * 
+		 *
 		 * @param aggregationKind
-		 *        the aggregationKind to set
+		 *            the aggregationKind to set
 		 */
 		public void setAggregationKind(String aggregationKind) {
 			this.aggregationKind = aggregationKind;
@@ -616,7 +628,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Returns the current value of owner
-		 * 
+		 *
 		 * @return the current value of owner
 		 */
 		public String getOwner() {
@@ -625,9 +637,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Sets the current value of owner
-		 * 
+		 *
 		 * @param owner
-		 *        the owner to set
+		 *            the owner to set
 		 */
 		public void setOwner(String owner) {
 			this.owner = owner;
@@ -635,7 +647,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Returns the current value of navigation
-		 * 
+		 *
 		 * @return the current value of navigation
 		 */
 		public String getNavigation() {
@@ -644,9 +656,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Sets the current value of navigation
-		 * 
+		 *
 		 * @param navigation
-		 *        the navigation to set
+		 *            the navigation to set
 		 */
 		public void setNavigation(String navigation) {
 			this.navigation = navigation;
@@ -654,7 +666,7 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Returns the current value of multiplicity
-		 * 
+		 *
 		 * @return the current value of multiplicity
 		 */
 		public String getMultiplicity() {
@@ -663,9 +675,9 @@ public class AssociationEndPostAction extends ModelPostAction {
 
 		/**
 		 * Sets the current value of multiplicity
-		 * 
+		 *
 		 * @param multiplicity
-		 *        the multiplicity to set
+		 *            the multiplicity to set
 		 */
 		public void setMultiplicity(String multiplicity) {
 			this.multiplicity = multiplicity;

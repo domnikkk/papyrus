@@ -80,14 +80,14 @@ public class DynamicNewChild extends ContributionItem {
 	@Override
 	public void fill(Menu menu, int index) {
 		EObject eObject = getSelection();
-		if(eObject != null) {
+		if (eObject != null) {
 			CreationMenuFactory creationMenuFactory = new CreationMenuFactory(editingDomain);
 			ArrayList<Folder> folders = creationMenuRegistry.getRootFolder();
 			Iterator<Folder> iterFolder = folders.iterator();
-			while(iterFolder.hasNext()) {
+			while (iterFolder.hasNext()) {
 				Folder currentFolder = iterFolder.next();
 				boolean hasbeenBuild = creationMenuFactory.populateMenu(menu, currentFolder, eObject, index);
-				if(hasbeenBuild) {
+				if (hasbeenBuild) {
 					index++;
 				}
 			}
@@ -108,16 +108,16 @@ public class DynamicNewChild extends ContributionItem {
 		ISelectionService selectionService = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getSelectionService();
 		ISelection selection = selectionService.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
 			EObject selectedEObject = EMFHelper.getEObject(selectedobject);
 			EObject editingDomainCitizen = selectedEObject;
 
-			if((editingDomainCitizen instanceof EReference) && (selection instanceof ITreeSelection)) {
+			if ((editingDomainCitizen instanceof EReference) && (selection instanceof ITreeSelection)) {
 				// The user selected a reference in the Advanced presentation. Infer the editing domain from the parent node, which is the reference owner
-				ITreeSelection treeSel = (ITreeSelection)selection;
+				ITreeSelection treeSel = (ITreeSelection) selection;
 				TreePath[] paths = treeSel.getPathsFor(selectedobject);
-				if((paths != null) && (paths.length > 0) && (paths[0].getSegmentCount() > 1)) {
+				if ((paths != null) && (paths.length > 0) && (paths[0].getSegmentCount() > 1)) {
 					editingDomainCitizen = EMFHelper.getEObject(paths[0].getSegment(paths[0].getSegmentCount() - 2));
 				}
 			}
@@ -125,7 +125,7 @@ public class DynamicNewChild extends ContributionItem {
 			try {
 				editingDomain = ServiceUtilsForEObject.getInstance().getService(org.eclipse.emf.transaction.TransactionalEditingDomain.class, editingDomainCitizen);
 			} catch (Exception ex) {
-				//Nothing to do. We can't handle this case
+				// Nothing to do. We can't handle this case
 			}
 			return selectedEObject;
 		}

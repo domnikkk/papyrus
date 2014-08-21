@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.util.emf.catalog;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet#getCatalogs <em>Catalogs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet#getCatalogs <em>Catalogs</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,13 +43,13 @@ public interface CatalogSet extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.emf.facet.util.emf.catalog.Catalog}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Catalogs</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Catalogs</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The "catalogs" reference references all the EMF Facet Catalog catalogs contained by a CatalogSet
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Catalogs</em>' containment reference list.
 	 * @see org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage#getCatalogSet_Catalogs()
 	 * @model containment="true"

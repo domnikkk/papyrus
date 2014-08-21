@@ -51,7 +51,7 @@ public interface SashWindowsMngr extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *        the new value of the '<em>Page List</em>' containment reference.
+	 *            the new value of the '<em>Page List</em>' containment reference.
 	 * @see #getPageList()
 	 * @generated
 	 */
@@ -81,7 +81,7 @@ public interface SashWindowsMngr extends EObject {
 	 * <!-- end-user-doc -->
 	 *
 	 * @param value
-	 *        the new value of the '<em>Sash Model</em>' containment reference.
+	 *            the new value of the '<em>Sash Model</em>' containment reference.
 	 * @see #getSashModel()
 	 * @generated
 	 */

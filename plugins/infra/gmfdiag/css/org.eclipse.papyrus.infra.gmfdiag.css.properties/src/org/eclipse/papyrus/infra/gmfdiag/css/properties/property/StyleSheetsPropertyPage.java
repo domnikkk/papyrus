@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,6 +39,7 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.infra.emf.providers.EMFContentProvider;
 import org.eclipse.papyrus.infra.gmfdiag.css.Activator;
 import org.eclipse.papyrus.infra.gmfdiag.css.engine.ProjectCSSEngine;
@@ -142,7 +143,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	 *
 	 */
 	public StyleSheetsPropertyPage() {
-		//This preference is stored with EMF format : .settings/stylesheets.xmi
+		// This preference is stored with EMF format : .settings/stylesheets.xmi
 		setPreferenceStore(null);
 		noDefaultAndApplyButton();
 	}
@@ -150,39 +151,39 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Get Style sheets model file to manage preference.
-	 * 
+	 *
 	 * @return a new style sheets list or the existing one
 	 */
 	private EList<EObject> getProjectStylesheets() {
-		//Get selected project
+		// Get selected project
 		Object pageElement = getElement().getAdapter(IProject.class);
 
-		//Initialize preferences data
+		// Initialize preferences data
 		ResourceSet resourceSet = new ResourceSetImpl();
 		EList<EObject> styleSheetsList = null;
 
-		//Check if element is a project
-		if(pageElement instanceof IProject) {
+		// Check if element is a project
+		if (pageElement instanceof IProject) {
 			// Build path of preference file
-			ProjectScope pageProject = new ProjectScope((IProject)pageElement);
+			ProjectScope pageProject = new ProjectScope((IProject) pageElement);
 			IPath preferencePath = pageProject.getLocation().append(ProjectCSSEngine.PROJECT_STYLESHEETS);
 
 			// Check path is valid
-			if(preferencePath != null) {
+			if (preferencePath != null) {
 
 				// Verify presence of file in project
-				IPath projectRelativePath = preferencePath.makeRelativeTo(((IProject)pageElement).getLocation());
-				IFile preferenceFile = ((IProject)pageElement).getFile(projectRelativePath);
-				if(preferenceFile.exists()) {
+				IPath projectRelativePath = preferencePath.makeRelativeTo(((IProject) pageElement).getLocation());
+				IFile preferenceFile = ((IProject) pageElement).getFile(projectRelativePath);
+				if (preferenceFile.exists()) {
 
-					//Load existing preference file
+					// Load existing preference file
 					resource = resourceSet.getResource(URI.createPlatformResourceURI(preferenceFile.getFullPath().toOSString(), true), true);
 					styleSheetsList = resource.getContents();
 
 
 				} else {
 
-					//Create default preference file
+					// Create default preference file
 					resource = resourceSet.createResource(URI.createPlatformResourceURI(preferenceFile.getFullPath().toOSString(), true));
 					styleSheetsList = resource.getContents();
 				}
@@ -193,7 +194,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.PreferencePage#createContents(org.eclipse.swt.widgets.Composite)
 	 *
 	 * @param parent
@@ -216,7 +217,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 		createStyleSheetsPageViewer(container);
 		createStyleSheetsPageButtons(container);
 
-		//Update state buttons
+		// Update state buttons
 		updateButtons();
 
 		return container;
@@ -227,9 +228,9 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Create label for page.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where compound will added
+	 *            Parent composite where compound will added
 	 */
 	private void createLabelPage(Composite parent) {
 		Label labelPage = new Label(parent, SWT.NONE);
@@ -249,15 +250,15 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	private void initializeDataPage() {
 
 		EList<EObject> stylesheetsModel = getProjectStylesheets();
-		modelStyleSheets = (ModelStyleSheets)StylesheetsPackage.eINSTANCE.getEFactoryInstance().create(StylesheetsPackage.Literals.MODEL_STYLE_SHEETS);
+		modelStyleSheets = (ModelStyleSheets) StylesheetsPackage.eINSTANCE.getEFactoryInstance().create(StylesheetsPackage.Literals.MODEL_STYLE_SHEETS);
 		modelStyleSheets.getStylesheets();
 		List<EObject> mirrorList = new ArrayList<EObject>();
 		mirrorList.addAll(stylesheetsModel);
 
-		for(EObject object : mirrorList) {
+		for (EObject object : mirrorList) {
 
-			if(object instanceof StyleSheet) {
-				modelStyleSheets.getStylesheets().add((StyleSheet)object);
+			if (object instanceof StyleSheet) {
+				modelStyleSheets.getStylesheets().add((StyleSheet) object);
 			}
 		}
 
@@ -283,7 +284,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 					public Object[] getElements() {
 						List<Object> result = new LinkedList<Object>();
-						if(editedEObject instanceof ModelStyleSheets) {
+						if (editedEObject instanceof ModelStyleSheets) {
 							result.addAll(modelStyleSheets.getStylesheets());
 						}
 						return result.toArray();
@@ -300,9 +301,9 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Create viewer to display content of style sheets model.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where compound will added
+	 *            Parent composite where compound will added
 	 */
 	private void createStyleSheetsPageViewer(Composite parent) {
 
@@ -330,13 +331,13 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Create buttons which are associated with viewer.
-	 * 
+	 *
 	 * @param parent
-	 *        Parent composite where compound will added
+	 *            Parent composite where compound will added
 	 */
 	private void createStyleSheetsPageButtons(Composite parent) {
 
-		//Build composite which contains buttons
+		// Build composite which contains buttons
 		Composite buttonsComposite = new Composite(parent, SWT.NONE);
 		buttonsComposite.setLayout(new GridLayout());
 		buttonsComposite.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
@@ -352,13 +353,13 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Method to create button.
-	 * 
+	 *
 	 * @param parent
-	 *        Composite where will be added
+	 *            Composite where will be added
 	 * @param icon
-	 *        Icon for button
+	 *            Icon for button
 	 * @param id
-	 *        Id to identify button
+	 *            Id to identify button
 	 */
 	private void createButton(Composite parent, Image icon, int id) {
 		Button button = new Button(parent, SWT.PUSH);
@@ -369,7 +370,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 			@Override
 			public void widgetSelected(SelectionEvent event) {
-				buttonPressed(((Integer)event.widget.getData()).intValue());
+				buttonPressed(((Integer) event.widget.getData()).intValue());
 			}
 		});
 
@@ -378,18 +379,18 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Fill style sheets viewer with selected style sheets.
-	 * 
+	 *
 	 * @param result
-	 *        Result from dialog selection
+	 *            Result from dialog selection
 	 */
 	protected void refreshStyleSheets(Object[] result) {
 
 		// Add selected CSS style sheets
-		for(Object object : result) {
+		for (Object object : result) {
 
-			//Check if object is a style sheet
-			if(object instanceof StyleSheet) {
-				modelStyleSheets.getStylesheets().add((StyleSheet)object);
+			// Check if object is a style sheet
+			if (object instanceof StyleSheet) {
+				modelStyleSheets.getStylesheets().add((StyleSheet) object);
 
 			}
 		}
@@ -402,11 +403,11 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 	/**
 	 * Method call when a button is pressed.
-	 * 
+	 *
 	 * @param buttonId
 	 */
 	protected void buttonPressed(int buttonId) {
-		switch(buttonId) {
+		switch (buttonId) {
 		case ADD_BUTTON_ID:
 			addAction();
 			break;
@@ -434,9 +435,9 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 		ISelection selection = styleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedObject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedObject instanceof StyleSheet) {
+		if (selection instanceof IStructuredSelection) {
+			Object selectedObject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedObject instanceof StyleSheet) {
 				// Use editor factory
 				editorFactory.edit(buttonsMap.get(EDIT_BUTTON_ID), selectedObject);
 			}
@@ -451,18 +452,18 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	private void upAction() {
 		// Handle selection to extract selected style sheet
 		ISelection selection = styleSheetsViewer.getSelection();
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof StyleSheet) {
+			if (selectedElement instanceof StyleSheet) {
 
 				// Get index of selected style sheet in list
 				EList<StyleSheet> stylesheetsList = modelStyleSheets.getStylesheets();
 				int index = stylesheetsList.indexOf(selectedElement);
 
 				// Check if selected style sheet is not at top of list
-				if(index > 0) {
-					stylesheetsList.move(--index, (StyleSheet)selectedElement);
+				if (index > 0) {
+					stylesheetsList.move(--index, (StyleSheet) selectedElement);
 					styleSheetsViewer.setInput(stylesheetsList);
 				}
 			}
@@ -478,18 +479,18 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 		// Handle selection to extract selected style sheet
 		ISelection selection = styleSheetsViewer.getSelection();
 
-		if(selection instanceof IStructuredSelection) {
-			Object selectedElement = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object selectedElement = ((IStructuredSelection) selection).getFirstElement();
 
-			if(selectedElement instanceof StyleSheet) {
+			if (selectedElement instanceof StyleSheet) {
 
 				// Get index of selected style sheet in list
 				EList<StyleSheet> stylesheetsList = modelStyleSheets.getStylesheets();
 				int index = stylesheetsList.indexOf(selectedElement);
 
 				// Check if selected style sheet is not at bottom of list
-				if(index < stylesheetsList.size() - 1) {
-					stylesheetsList.move(++index, (StyleSheet)selectedElement);
+				if (index < stylesheetsList.size() - 1) {
+					stylesheetsList.move(++index, (StyleSheet) selectedElement);
 					styleSheetsViewer.setInput(stylesheetsList);
 				}
 			}
@@ -503,11 +504,11 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	 */
 	private void deleteAction() {
 		ISelection selection = styleSheetsViewer.getSelection();
-		if(selection instanceof IStructuredSelection) {
+		if (selection instanceof IStructuredSelection) {
 
 			// Handle selection
-			Object firstElement = ((IStructuredSelection)selection).getFirstElement();
-			if(firstElement instanceof StyleSheet) {
+			Object firstElement = ((IStructuredSelection) selection).getFirstElement();
+			if (firstElement instanceof StyleSheet) {
 				modelStyleSheets.getStylesheets().remove(firstElement);
 			}
 
@@ -525,7 +526,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	 */
 	private void addAction() {
 		ReferenceSelector selector = new ReferenceSelector(true);
-		selector.setContentProvider((IStaticContentProvider)contentProvider);
+		selector.setContentProvider((IStaticContentProvider) contentProvider);
 		selector.setLabelProvider(labelProvider);
 
 		// Use common component for add dialog and parameterize it
@@ -536,10 +537,10 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 
 		// Handle dialog result
 		int result = vDialog.open();
-		if(result == Dialog.OK) {
+		if (result == Window.OK) {
 
 			Object[] resultArray = vDialog.getResult();
-			if(resultArray != null) {
+			if (resultArray != null) {
 				refreshStyleSheets(resultArray);
 			}
 		}
@@ -553,8 +554,8 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	protected void updateButtons() {
 		ISelection selection = styleSheetsViewer.getSelection();
 		boolean enabled = !selection.isEmpty();
-		for(int idButton : buttonsMap.keySet()) {
-			switch(idButton) {
+		for (int idButton : buttonsMap.keySet()) {
+			switch (idButton) {
 			case UP_BUTTON_ID:
 			case DOWN_BUTTON_ID:
 				EList<StyleSheet> stylesheets = modelStyleSheets.getStylesheets();
@@ -576,7 +577,7 @@ public class StyleSheetsPropertyPage extends PropertyPage implements IWorkbenchP
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.PreferencePage#performOk()
 	 *
 	 * @return

@@ -43,7 +43,7 @@ public class DiagramNavigableElement implements NavigableElement {
 	public boolean navigate(NavigationTarget navigationContext) {
 		try {
 			final IPageManager pageManager = ServiceUtilsForEObject.getInstance().getIPageManager(targetDiagram);
-			if(pageManager.isOpen(targetDiagram)) {
+			if (pageManager.isOpen(targetDiagram)) {
 				pageManager.selectPage(targetDiagram);
 			} else {
 				pageManager.openPage(targetDiagram);
@@ -62,7 +62,7 @@ public class DiagramNavigableElement implements NavigableElement {
 	}
 
 	public Image getImage() {
-		if(targetDiagram != null) {
+		if (targetDiagram != null) {
 			try {
 				ILabelProvider labelProvider = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, targetDiagram).getLabelProvider();
 				return labelProvider.getImage(targetDiagram);

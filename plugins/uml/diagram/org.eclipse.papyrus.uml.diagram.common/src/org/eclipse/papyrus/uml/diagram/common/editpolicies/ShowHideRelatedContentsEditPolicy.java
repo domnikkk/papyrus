@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,11 +15,11 @@ package org.eclipse.papyrus.uml.diagram.common.editpolicies;
 
 
 /**
- * 
+ *
  * This EditPolicy provides the same behavior that
  * ShowHideClassifierContentsEditPolicy. Currently its used in the Composite
  * Structure Diagram to Show/Hide the related Contents for the properties
- * 
+ *
  */
 public class ShowHideRelatedContentsEditPolicy extends ShowHideClassifierContentsEditPolicy {
 

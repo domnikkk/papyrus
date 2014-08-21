@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public class ContentOutlineRegistry {
 	 * order be sure that they are initialized. The multiEditor should be
 	 * initialized. In particular, getEditorSite(), getEditorInput() and
 	 * getDefaultContext() should return initialized values.
-	 * 
+	 *
 	 * @param multiEditor
 	 * @param defaultContext
 	 * @param input
@@ -64,13 +64,13 @@ public class ContentOutlineRegistry {
 	/**
 	 * Returns the single instance of the content outline. Creates one if
 	 * necessary.
-	 * 
+	 *
 	 * @return the contentOutline the single instance of the content outline
 	 * @throws BackboneException
-	 *         exception thrown when the outline can not be created.
+	 *             exception thrown when the outline can not be created.
 	 */
 	public IPapyrusContentOutlinePage getContentOutline() throws BackboneException {
-		if(contentOutline == null) {
+		if (contentOutline == null) {
 			createContentOutline();
 		}
 		return contentOutline;
@@ -78,26 +78,26 @@ public class ContentOutlineRegistry {
 
 	/**
 	 * Return the {@link ContentOutlineDescriptor} with the highest priority.
-	 * 
+	 *
 	 * @return
 	 * @throws BackboneException
 	 * @throws NotFoundException
-	 *         If no ContentOutline can be found in extensions
+	 *             If no ContentOutline can be found in extensions
 	 */
 	private ContentOutlineDescriptor getContentOutlineDescriptor() throws BackboneException {
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(extensionPointNamespace, EDITOR_EXTENSION_ID);
 		ContentOutlineDescriptor found = null;
 
 		// look for the one with the highest priority
-		for(IConfigurationElement ele : configElements) {
+		for (IConfigurationElement ele : configElements) {
 			ContentOutlineDescriptor desc = new ContentOutlineDescriptor(ele);
-			if(desc.isHigher(found)) {
+			if (desc.isHigher(found)) {
 				found = desc;
 			}
 		}
 
 		// Instanciate the object
-		if(found == null) {
+		if (found == null) {
 			throw new NotFoundException("No ContentOutline registered."); //$NON-NLS-1$
 		}
 
@@ -107,15 +107,15 @@ public class ContentOutlineRegistry {
 
 	/**
 	 * Creates the content outline from the selected extension.
-	 * 
+	 *
 	 * @throws BackboneException
-	 *         exception thrown when the outline can not be created.
+	 *             exception thrown when the outline can not be created.
 	 */
 	private void createContentOutline() throws BackboneException {
 
 		ContentOutlineDescriptor found = getContentOutlineDescriptor();
 		// Instanciate the object
-		if(found != null) {
+		if (found != null) {
 			contentOutline = found.createContentOutlinePage();
 		}
 	}
@@ -156,7 +156,7 @@ public class ContentOutlineRegistry {
 
 			this.element = element;
 			// check parameters
-			if(className == null) {
+			if (className == null) {
 				throw new BadClassNameException("Class name must be set", "contentoutline", classAttributeName); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 
@@ -166,7 +166,7 @@ public class ContentOutlineRegistry {
 		 * Compare priority. The highest priority win.
 		 */
 		public boolean isHigher(ContentOutlineDescriptor found) {
-			if(found == null) {
+			if (found == null) {
 				return true;
 			}
 			return this.getPriority() > found.getPriority();
@@ -189,13 +189,13 @@ public class ContentOutlineRegistry {
 
 		/**
 		 * Returns the content outline page instance (lazy initialization)
-		 * 
+		 *
 		 * @return the context outline page
 		 * @throws BackboneException
-		 *         exception thrown when a problem occurs.
+		 *             exception thrown when a problem occurs.
 		 */
 		protected IPapyrusContentOutlinePage getContentOutline() throws BackboneException {
-			if(instance == null) {
+			if (instance == null) {
 				instance = createContentOutlinePage();
 			}
 			return instance;
@@ -205,18 +205,18 @@ public class ContentOutlineRegistry {
 		 * Create the class corresponding to the class attribute.
 		 */
 		private Class<IPapyrusContentOutlinePage> loadClass() throws BadClassNameException {
-			if(className == null || className.length() == 0) {
+			if (className == null || className.length() == 0) {
 				throw new BadClassNameException("Classname should be set.", "contentoutline", classAttributeName); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			Class<IPapyrusContentOutlinePage> factoryClass;
 			try {
-				factoryClass = (Class<IPapyrusContentOutlinePage>)Class.forName(className);
+				factoryClass = (Class<IPapyrusContentOutlinePage>) Class.forName(className);
 			} catch (ClassNotFoundException e) {
 				// try another way
 				try {
 					String declaringID = element.getContributor().getName();
 					Bundle bundle = Platform.getBundle(declaringID);
-					factoryClass = (Class<IPapyrusContentOutlinePage>)bundle.loadClass(className);
+					factoryClass = (Class<IPapyrusContentOutlinePage>) bundle.loadClass(className);
 				} catch (ClassNotFoundException e1) {
 					throw new BadClassNameException("", "contentoutline", classAttributeName, e1); //$NON-NLS-1$ //$NON-NLS-2$
 				}
@@ -227,12 +227,12 @@ public class ContentOutlineRegistry {
 		/**
 		 * create the outlinepage by calling constructor without parameter and
 		 * then call init method
-		 * 
+		 *
 		 * @return the outline.
 		 * @throws BackboneException
 		 */
 		protected IPapyrusContentOutlinePage createContentOutlinePage() throws BackboneException {
-			if(false) {
+			if (false) {
 				System.out.println("Not yet"); // FIXME : no syso
 				return null;
 			}

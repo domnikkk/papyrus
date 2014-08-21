@@ -23,10 +23,10 @@ public class FlowPropertyMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isFlowProperty = false;
-		if(eObject instanceof Property) {
+		if (eObject instanceof Property) {
 
-			Property element = (Property)eObject;
-			if(UMLUtil.getStereotypeApplication(element, FlowProperty.class) != null) {
+			Property element = (Property) eObject;
+			if (UMLUtil.getStereotypeApplication(element, FlowProperty.class) != null) {
 				isFlowProperty = true;
 			}
 		}

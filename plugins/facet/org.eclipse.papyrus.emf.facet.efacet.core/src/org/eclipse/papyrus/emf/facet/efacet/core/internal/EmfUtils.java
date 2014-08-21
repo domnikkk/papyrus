@@ -28,19 +28,19 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.emf.facet.efacet.core.internal.exception.UnmatchingExpectedTypeException;
 
 public final class EmfUtils {
-	
+
 	private EmfUtils() {
-		//Must not be used
+		// Must not be used
 	}
 
 	public static void checkAssignment(final Object value, final ETypedElement eTypedElement)
 			throws UnmatchingExpectedTypeException {
 		final String typedElementName = getTypeElementDescription(eTypedElement);
-		//Begin checking precondition
+		// Begin checking precondition
 		if (eTypedElement.getEType() == null) {
 			throw new IllegalArgumentException(typedElementName + " has a null type"); //$NON-NLS-1$
 		}
-		//End checking precondition
+		// End checking precondition
 		if (value == null && (eTypedElement.getLowerBound() > 0)) {
 			throw new IllegalArgumentException(
 					"The assigned value cannot be null for " + typedElementName + " because multiplicity is " + eTypedElement.getLowerBound() + ".." + eTypedElement.getUpperBound()); //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
@@ -59,12 +59,12 @@ public final class EmfUtils {
 				final List<?> argumentList = (List<?>) value;
 				try {
 					CastUtils.checkTypeOfAllListElements(argumentList, eTypedElement.getEType().getInstanceClass());
-					//FIXME What happens if we use a not generated meta-model ?
+					// FIXME What happens if we use a not generated meta-model ?
 				} catch (UnmatchingExpectedTypeException e) {
 					throw new UnmatchingExpectedTypeException(
-							"Type mismatch for an element of the list value " + typedElementName , e); //$NON-NLS-1$
+							"Type mismatch for an element of the list value " + typedElementName, e); //$NON-NLS-1$
 				}
-			} 
+			}
 		}
 	}
 

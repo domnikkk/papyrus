@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 
 /**
  * Provides usefull utility methods for ICompositeCreator instances
- * 
+ *
  * @author vhemery
  */
 public class CreatorUtils {
@@ -38,7 +38,7 @@ public class CreatorUtils {
 
 	/**
 	 * Get the form layout data to place element at top of the parent composite
-	 * 
+	 *
 	 * @return form data
 	 */
 	public static FormData getTopFormData() {
@@ -51,9 +51,9 @@ public class CreatorUtils {
 
 	/**
 	 * Get the form layout data to place element under another
-	 * 
+	 *
 	 * @param upperControl
-	 *        control under which the element must be located
+	 *            control under which the element must be located
 	 * @return form data
 	 */
 	public static FormData getFormDataUnder(Control upperControl) {
@@ -66,9 +66,9 @@ public class CreatorUtils {
 
 	/**
 	 * Get the form layout data to place element under another, aligned on the right of the parent composite
-	 * 
+	 *
 	 * @param upperControl
-	 *        control under which the element must be located
+	 *            control under which the element must be located
 	 * @return form data
 	 */
 	public static FormData getFormDataRightAlignedUnder(Control upperControl) {
@@ -80,9 +80,9 @@ public class CreatorUtils {
 
 	/**
 	 * Get the label of a graphical edit part
-	 * 
+	 *
 	 * @param editPart
-	 *        the input part
+	 *            the input part
 	 * @return the string label
 	 */
 	public static String getLabel(IGraphicalEditPart editPart) {
@@ -92,22 +92,22 @@ public class CreatorUtils {
 
 	/**
 	 * Gets the custom label provider that parses label for EClass
-	 * 
+	 *
 	 * @return the custom label provider
 	 */
 	public static ILabelProvider getCustomLabelProvider() {
-		if(adapterFactory == null) {
+		if (adapterFactory == null) {
 			adapterFactory = new AdapterFactoryLabelProvider(new UMLItemProviderAdapterFactory()) {
 
 				/**
 				 * Override label provider for EClass
-				 * 
+				 *
 				 * @see org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider#getText(java.lang.Object)
 				 */
 				@Override
 				public String getText(Object object) {
 					String text = super.getText(object);
-					if(object instanceof EClass) {
+					if (object instanceof EClass) {
 						return text.substring(0, text.indexOf("[") - 1);
 					} else {
 						return text;

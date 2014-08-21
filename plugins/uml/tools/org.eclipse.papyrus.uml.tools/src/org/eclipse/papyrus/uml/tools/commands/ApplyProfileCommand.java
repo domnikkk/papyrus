@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.ProfileApplication;
  * <p>
  * It is possible to disable save of version, passing boolean value to constructor.
  * </p>
- * 
+ *
  * @author Camille Letavernier
  */
 public class ApplyProfileCommand extends RecordingCommand {
@@ -44,15 +44,15 @@ public class ApplyProfileCommand extends RecordingCommand {
 	private boolean saveProfileApplicationVersion;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlPackage
-	 *        The UML Package on which the profiles will be applied
+	 *            The UML Package on which the profiles will be applied
 	 * @param profiles
-	 *        The list of profiles to apply
+	 *            The list of profiles to apply
 	 * @param editingDomain
-	 *        The EditingDomain
+	 *            The EditingDomain
 	 */
 	public ApplyProfileCommand(Package umlPackage, Collection<Profile> profiles, TransactionalEditingDomain editingDomain) {
 		this(umlPackage, profiles, editingDomain, true);
@@ -62,13 +62,13 @@ public class ApplyProfileCommand extends RecordingCommand {
 	 * Instantiates a new apply profile command.
 	 *
 	 * @param umlPackage
-	 *        the uml package
+	 *            the uml package
 	 * @param profiles
-	 *        the profiles
+	 *            the profiles
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param saveProfileApplicationVersion
-	 *        the save profile application version
+	 *            the save profile application version
 	 */
 	public ApplyProfileCommand(Package umlPackage, Collection<Profile> profiles, TransactionalEditingDomain editingDomain, boolean saveProfileApplicationVersion) {
 		super(editingDomain);
@@ -78,15 +78,15 @@ public class ApplyProfileCommand extends RecordingCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlPackage
-	 *        The UML Package on which the profile will be applied
+	 *            The UML Package on which the profile will be applied
 	 * @param profile
-	 *        The profile to apply
+	 *            The profile to apply
 	 * @param editingDomain
-	 *        The EditingDomain
+	 *            The EditingDomain
 	 */
 	public ApplyProfileCommand(Package umlPackage, Profile profile, TransactionalEditingDomain editingDomain) {
 		this(umlPackage, profile, editingDomain, true);
@@ -96,13 +96,13 @@ public class ApplyProfileCommand extends RecordingCommand {
 	 * Constructor.
 	 *
 	 * @param umlPackage
-	 *        The UML Package on which the profile will be applied
+	 *            The UML Package on which the profile will be applied
 	 * @param profile
-	 *        The profile to apply
+	 *            The profile to apply
 	 * @param editingDomain
-	 *        The EditingDomain
+	 *            The EditingDomain
 	 * @param saveProfileApplicationVersion
-	 *        the save profile application version
+	 *            the save profile application version
 	 */
 	public ApplyProfileCommand(Package umlPackage, Profile profile, TransactionalEditingDomain editingDomain, boolean saveProfileApplicationVersion) {
 		this(umlPackage, Collections.singletonList(profile), editingDomain, saveProfileApplicationVersion);
@@ -114,17 +114,17 @@ public class ApplyProfileCommand extends RecordingCommand {
 	 */
 	@Override
 	protected void doExecute() {
-		for(Profile profile : profiles) {
+		for (Profile profile : profiles) {
 			// Apply profile
 			umlPackage.applyProfile(profile);
 
 			// Save version of applied profile if necessary
-			if(saveProfileApplicationVersion) {
+			if (saveProfileApplicationVersion) {
 				ProfileApplication profileApplication = umlPackage.getProfileApplication(profile);
 
 				// Get version annotation in case it is a Papyrus profile
 				EAnnotation versionAnnotation = profile.getDefinition().getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
-				if(versionAnnotation != null) {
+				if (versionAnnotation != null) {
 					profileApplication.getEAnnotations().add(0, EcoreUtil.copy(versionAnnotation));
 				}
 			}

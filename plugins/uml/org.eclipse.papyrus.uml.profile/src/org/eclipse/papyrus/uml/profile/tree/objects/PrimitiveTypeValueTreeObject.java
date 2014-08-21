@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,11 +29,11 @@ public abstract class PrimitiveTypeValueTreeObject extends ValueTreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	protected PrimitiveTypeValueTreeObject(AppliedStereotypePropertyTreeObject parent, Object value) {
 		super(parent, value);
@@ -41,12 +41,12 @@ public abstract class PrimitiveTypeValueTreeObject extends ValueTreeObject {
 
 	/**
 	 * Creates the instance.
-	 * 
+	 *
 	 * @param newValue
-	 *        the new value
+	 *            the new value
 	 * @param parent
-	 *        the parent
-	 * 
+	 *            the parent
+	 *
 	 * @return the primitive type value tree object
 	 */
 	public static PrimitiveTypeValueTreeObject createInstance(AppliedStereotypePropertyTreeObject parent, Object newValue) {
@@ -56,15 +56,15 @@ public abstract class PrimitiveTypeValueTreeObject extends ValueTreeObject {
 		PrimitiveTypeValueTreeObject newVTO = null;
 
 		/** primitive type **/
-		if(type instanceof PrimitiveType) {
+		if (type instanceof PrimitiveType) {
 			String typeName = type.getQualifiedName();
-			if(typeName.equals("UMLPrimitiveTypes::Boolean")) {
+			if (typeName.equals("UMLPrimitiveTypes::Boolean")) {
 				newVTO = new BooleanValueTreeObject(parent, newValue);
-			} else if(typeName.equals("UMLPrimitiveTypes::String")) {
+			} else if (typeName.equals("UMLPrimitiveTypes::String")) {
 				newVTO = new StringValueTreeObject(parent, newValue);
-			} else if(typeName.equals("UMLPrimitiveTypes::Integer")) {
+			} else if (typeName.equals("UMLPrimitiveTypes::Integer")) {
 				newVTO = new IntegerValueTreeObject(parent, newValue);
-			} else if(typeName.equals("UMLPrimitiveTypes::UnlimitedNatural")) {
+			} else if (typeName.equals("UMLPrimitiveTypes::UnlimitedNatural")) {
 				newVTO = new UnlimitedNaturalValueTreeObject(parent, newValue);
 			} else {
 				newVTO = new UserPrimitiveTypeValueTreeObject(parent, newValue);
@@ -79,7 +79,7 @@ public abstract class PrimitiveTypeValueTreeObject extends ValueTreeObject {
 	 */
 	@Override
 	public void editMe() {
-		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject)getParent();
+		AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject) getParent();
 		Property property = pTO.getProperty();
 		Type type = property.getType();
 
@@ -88,7 +88,7 @@ public abstract class PrimitiveTypeValueTreeObject extends ValueTreeObject {
 		int val = valueDialog.open();
 
 		// Treat Cancel case first
-		if(val == InputDialogPrimitiveType.CANCEL) {
+		if (val == InputDialogPrimitiveType.CANCEL) {
 			// Close dialog box
 			valueDialog.close();
 			// And quit

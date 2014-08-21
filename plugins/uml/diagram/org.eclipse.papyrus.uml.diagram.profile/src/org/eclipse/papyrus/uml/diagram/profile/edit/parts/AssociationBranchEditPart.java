@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -43,6 +43,7 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AssociationBranchItemSemanticEditPolicy());
@@ -54,11 +55,11 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof AssociationBranchRoleEditPart) {
-			((AssociationBranchRoleEditPart)childEditPart).setLabel(getPrimaryShape().getRoleSourceLabel());
+		if (childEditPart instanceof AssociationBranchRoleEditPart) {
+			((AssociationBranchRoleEditPart) childEditPart).setLabel(getPrimaryShape().getRoleSourceLabel());
 		}
-		if(childEditPart instanceof AssociationBranchMultiplicityEditPart) {
-			((AssociationBranchMultiplicityEditPart)childEditPart).setLabel(getPrimaryShape().getMultiplicitySourceLabel());
+		if (childEditPart instanceof AssociationBranchMultiplicityEditPart) {
+			((AssociationBranchMultiplicityEditPart) childEditPart).setLabel(getPrimaryShape().getMultiplicitySourceLabel());
 		}
 		return false;
 	}
@@ -66,8 +67,9 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -77,10 +79,10 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof AssociationBranchRoleEditPart) {
+		if (childEditPart instanceof AssociationBranchRoleEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof AssociationBranchMultiplicityEditPart) {
+		if (childEditPart instanceof AssociationBranchMultiplicityEditPart) {
 			return true;
 		}
 		return false;
@@ -89,8 +91,9 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -98,12 +101,13 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new AssociationFigure();
 	}
@@ -111,7 +115,8 @@ public class AssociationBranchEditPart extends AbstractAssociationBranchEditPart
 	/**
 	 * @generated
 	 */
+	@Override
 	public AssociationFigure getPrimaryShape() {
-		return (AssociationFigure)getFigure();
+		return (AssociationFigure) getFigure();
 	}
 }

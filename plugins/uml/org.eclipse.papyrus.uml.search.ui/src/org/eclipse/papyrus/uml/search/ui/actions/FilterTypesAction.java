@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,20 +22,20 @@ import org.eclipse.search.ui.text.AbstractTextSearchViewPage;
 import com.swtdesigner.ResourceManager;
 
 /**
- * 
+ *
  * Action that opens a {@link org.eclipse.papyrus.uml.search.ui.dialogs.TypesFilterDialog} in order to filter search results
- * 
+ *
  */
 public class FilterTypesAction extends Action {
 
 	private AbstractTextSearchViewPage fPage;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param page
-	 *        the result page whose results while be filtered
+	 *            the result page whose results while be filtered
 	 */
 	public FilterTypesAction(AbstractTextSearchViewPage page) {
 		fPage = page;
@@ -45,9 +45,9 @@ public class FilterTypesAction extends Action {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.action.Action#run()
-	 * 
+	 *
 	 */
 	@Override
 	public void run() {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,14 +51,14 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 
 	/**
 	 * Creates the most efficient composition of zero or more {@code queries}.
-	 * 
+	 *
 	 * @param queries
-	 *        zero or more queries to delegate to
-	 * 
+	 *            zero or more queries to delegate to
+	 *
 	 * @return a composition of the {@code queries}
 	 */
 	public static AbstractPapyrusQuery compose(Iterable<? extends AbstractPapyrusQuery> queries) {
-		switch(Iterables.size(queries)) {
+		switch (Iterables.size(queries)) {
 		case 0:
 			return AbstractPapyrusQuery.Empty.INSTANCE;
 		case 1:
@@ -80,8 +80,8 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 	public boolean canRerun() {
 		boolean result = true;
 
-		for(AbstractPapyrusQuery next : queries) {
-			if(!next.canRerun()) {
+		for (AbstractPapyrusQuery next : queries) {
+			if (!next.canRerun()) {
 				result = false;
 				break;
 			}
@@ -93,8 +93,8 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 	public boolean canRunInBackground() {
 		boolean result = true;
 
-		for(AbstractPapyrusQuery next : queries) {
-			if(!next.canRunInBackground()) {
+		for (AbstractPapyrusQuery next : queries) {
+			if (!next.canRunInBackground()) {
 				result = false;
 				break;
 			}
@@ -109,13 +109,13 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 		searchResult.clear();
 
 		SubMonitor sub = SubMonitor.convert(monitor, result.size());
-		for(AbstractPapyrusQuery next : queries) {
+		for (AbstractPapyrusQuery next : queries) {
 			IStatus status = next.run(sub.newChild(1));
-			if(!status.isOK()) {
+			if (!status.isOK()) {
 				result.add(status);
 			}
 
-			searchResult.addSearchResult((AbstractTextSearchResult)next.getSearchResult());
+			searchResult.addSearchResult((AbstractTextSearchResult) next.getSearchResult());
 		}
 
 		return result.isEmpty() ? Status.OK_STATUS : (result.size() == 1) ? result.get(0) : new MultiStatus(Activator.PLUGIN_ID, 0, result.toArray(new IStatus[result.size()]), "Problems occurred in search.", null);
@@ -138,7 +138,7 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 		}
 
 		void clear() {
-			for(AbstractTextSearchResult next : searchResults.keySet()) {
+			for (AbstractTextSearchResult next : searchResults.keySet()) {
 				next.removeListener(this);
 			}
 			searchResults.clear();
@@ -146,13 +146,13 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 
 		void addSearchResult(AbstractTextSearchResult searchResult) {
 			Object[] elements = searchResult.getElements();
-			for(int i = 0; i < elements.length; i++) {
+			for (int i = 0; i < elements.length; i++) {
 				Match[] matches = searchResult.getMatches(elements[i]);
 				searchResults.putAll(searchResult, Arrays.asList(matches));
 				addMatches(matches); // I need them, too
 			}
 
-			if(!searchResults.containsKey(searchResult)) {
+			if (!searchResults.containsKey(searchResult)) {
 				// we have to make sure that we remember this empty result!
 				searchResults.putAll(searchResult, Collections.<Match> emptyList());
 			}
@@ -161,13 +161,13 @@ public class CompositePapyrusQuery extends AbstractPapyrusQuery {
 		}
 
 		public void searchResultChanged(SearchResultEvent e) {
-			AbstractTextSearchResult source = (AbstractTextSearchResult)e.getSearchResult();
+			AbstractTextSearchResult source = (AbstractTextSearchResult) e.getSearchResult();
 
-			if(e instanceof RemoveAllEvent) {
+			if (e instanceof RemoveAllEvent) {
 				removeAll(source);
-			} else if(e instanceof MatchEvent) {
-				MatchEvent event = (MatchEvent)e;
-				switch(event.getKind()) {
+			} else if (e instanceof MatchEvent) {
+				MatchEvent event = (MatchEvent) e;
+				switch (event.getKind()) {
 				case MatchEvent.ADDED:
 					add(source, event.getMatches());
 					break;

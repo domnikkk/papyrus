@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class CopyToClipboardAction extends CopyResourceAction {
 	@Override
 	public void run() {
 		Display display = shellProvider.getShell().getDisplay();
-		fClipboard= new Clipboard(display);
+		fClipboard = new Clipboard(display);
 		IStructuredSelection structuredSelection = getStructuredSelection();
 		try {
 			copytoClipboardStructuredSelection(structuredSelection);
@@ -46,25 +46,26 @@ public class CopyToClipboardAction extends CopyResourceAction {
 			fClipboard.dispose();
 		}
 	}
-	
-   
-    /**
-     * Copy in the clipboard the selection
-     * @param selection
-     */
-    public void copytoClipboardStructuredSelection(IStructuredSelection selection) {
-        Display display = Display.getCurrent();
-        Clipboard clipboard = new Clipboard(display);
-        Object[] array = selection.toArray();
-        IResource[] associatedResources = new IResource[array.length]; 
-        for(int i = 0; i < associatedResources.length; i++) {
-        	Object object = array[i];
-        	if (object instanceof IResource){
-        		associatedResources[i]= (IResource) object;
-        	}
+
+
+	/**
+	 * Copy in the clipboard the selection
+	 * 
+	 * @param selection
+	 */
+	public void copytoClipboardStructuredSelection(IStructuredSelection selection) {
+		Display display = Display.getCurrent();
+		Clipboard clipboard = new Clipboard(display);
+		Object[] array = selection.toArray();
+		IResource[] associatedResources = new IResource[array.length];
+		for (int i = 0; i < associatedResources.length; i++) {
+			Object object = array[i];
+			if (object instanceof IResource) {
+				associatedResources[i] = (IResource) object;
+			}
 		}
-        clipboard.setContents(new Object[] { associatedResources }, 
-            new Transfer[] { ResourceTransfer.getInstance() });                
-        clipboard.dispose();
-    }
+		clipboard.setContents(new Object[] { associatedResources },
+				new Transfer[] { ResourceTransfer.getInstance() });
+		clipboard.dispose();
+	}
 }

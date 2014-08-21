@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,7 +57,7 @@ public class PropertyEditorTypeContentProvider extends EMFGraphicalContentProvid
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(super.viewer != null) {
+		if (super.viewer != null) {
 			super.viewer.removeFilter(currentFilter);
 		}
 		super.inputChanged(viewer, oldInput, newInput);
@@ -67,7 +67,7 @@ public class PropertyEditorTypeContentProvider extends EMFGraphicalContentProvid
 	@Override
 	public void commit(AbstractEditor editor) {
 		currentFilter.setFilter(filterButton.getValue());
-		if(super.viewer != null) {
+		if (super.viewer != null) {
 			super.viewer.refresh();
 		}
 	}
@@ -78,14 +78,14 @@ public class PropertyEditorTypeContentProvider extends EMFGraphicalContentProvid
 
 		@Override
 		public boolean isVisible(Viewer viewer, Object parentElement, Object element) {
-			if(!filter) {
+			if (!filter) {
 				return true;
 			}
 
 			Object adaptedValue = getAdaptedValue(element);
-			if(adaptedValue instanceof PropertyEditorType) {
-				PropertyEditorType editorType = (PropertyEditorType)adaptedValue;
-				if(source.getProperty() == null) {
+			if (adaptedValue instanceof PropertyEditorType) {
+				PropertyEditorType editorType = (PropertyEditorType) adaptedValue;
+				if (source.getProperty() == null) {
 					return true;
 				}
 				return editorType.getType() == source.getProperty().getType() && isMultiplicityEquivalent(editorType.getMultiplicity(), source.getProperty().getMultiplicity());
@@ -95,7 +95,7 @@ public class PropertyEditorTypeContentProvider extends EMFGraphicalContentProvid
 		}
 
 		private boolean isMultiplicityEquivalent(int multiplicity, int multiplicity2) {
-			if(multiplicity < 0 || multiplicity > 1) {
+			if (multiplicity < 0 || multiplicity > 1) {
 				return multiplicity2 < 0 || multiplicity2 > 1;
 			}
 

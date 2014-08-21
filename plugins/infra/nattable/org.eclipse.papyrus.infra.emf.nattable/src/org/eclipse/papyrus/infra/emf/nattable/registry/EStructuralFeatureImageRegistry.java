@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ public class EStructuralFeatureImageRegistry {
 
 
 	/**
-	 * 
+	 *
 	 * @param path
-	 *        a path
+	 *            a path
 	 * @return
 	 *         the image loaded from this path
 	 */
@@ -47,7 +47,7 @@ public class EStructuralFeatureImageRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the icon for link
 	 */
@@ -56,7 +56,7 @@ public class EStructuralFeatureImageRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the icon for unidirectional link
 	 */
@@ -65,7 +65,7 @@ public class EStructuralFeatureImageRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the icon for aggregation
 	 */
@@ -74,7 +74,7 @@ public class EStructuralFeatureImageRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the icon for aggregation
 	 */
@@ -83,7 +83,7 @@ public class EStructuralFeatureImageRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the icon for unidirectional aggregation
 	 */
@@ -92,7 +92,7 @@ public class EStructuralFeatureImageRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the attribute icon
 	 */

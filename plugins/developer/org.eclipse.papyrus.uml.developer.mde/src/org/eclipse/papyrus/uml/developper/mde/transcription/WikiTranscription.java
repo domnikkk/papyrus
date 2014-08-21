@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,8 @@ public class WikiTranscription implements ITranscription {
 	 *
 	 * @param out
 	 */
-	
+
+	@Override
 	public void writeEndingDocument(StringBuffer out) {
 	}
 
@@ -44,7 +45,8 @@ public class WikiTranscription implements ITranscription {
 	 * @param out
 	 * @return the string buffer after adding the prefix for the document
 	 */
-	
+
+	@Override
 	public StringBuffer writeBeginningDocument(StringBuffer out) {
 		out.append("\n__TOC__"); //$NON-NLS-1$
 		return out;
@@ -57,12 +59,13 @@ public class WikiTranscription implements ITranscription {
 	 * @param out
 	 * @param documentModel
 	 */
-	
+
+	@Override
 	public void writeDocumentTitle(StringBuffer out, Model documentModel) {
-		out.append("\n= "+documentModel.getName()+" ="); //$NON-NLS-1$ //$NON-NLS-2$
+		out.append("\n= " + documentModel.getName() + " ="); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
-	
+
 
 
 	/**
@@ -72,15 +75,16 @@ public class WikiTranscription implements ITranscription {
 	 * @param level
 	 * @param packageableElement
 	 */
-	
+
+	@Override
 	public void writesectionTitle(StringBuffer out, int level, Element packageableElement) {
-		if(level==2){
-		out.append("\n=="+((Package)packageableElement).getName()+"==");} //$NON-NLS-1$ //$NON-NLS-2$
-		if(level==3){
-			out.append("\n==="+((Package)packageableElement).getName()+"===");} //$NON-NLS-1$ //$NON-NLS-2$
-		if(level==4){
-			out.append("\n===="+((Package)packageableElement).getName()+"====");} //$NON-NLS-1$ //$NON-NLS-2$
-		
+		if (level == 2) {
+			out.append("\n==" + ((Package) packageableElement).getName() + "==");} //$NON-NLS-1$ //$NON-NLS-2$
+		if (level == 3) {
+			out.append("\n===" + ((Package) packageableElement).getName() + "===");} //$NON-NLS-1$ //$NON-NLS-2$
+		if (level == 4) {
+			out.append("\n====" + ((Package) packageableElement).getName() + "====");} //$NON-NLS-1$ //$NON-NLS-2$
+
 	}
 
 
@@ -91,9 +95,10 @@ public class WikiTranscription implements ITranscription {
 	 * @param packageableElement
 	 * @param imgRefStereotype
 	 */
-	
+
+	@Override
 	public void writeImageRef(StringBuffer out, Element packageableElement, Stereotype imgRefStereotype) {
-		out.append("\n[[Image:"+((Element)packageableElement).getValue(imgRefStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT)+"|"+((Comment)packageableElement).getBody()+"]]<br>");  //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		out.append("\n[[Image:" + packageableElement.getValue(imgRefStereotype, I_DocumentStereotype.IMAGEREF_REF_ATT) + "|" + ((Comment) packageableElement).getBody() + "]]<br>"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
 
 
@@ -103,14 +108,16 @@ public class WikiTranscription implements ITranscription {
 	 * @param out
 	 * @param packageableElement
 	 */
-	
+
+	@Override
 	public void writeParagraph(StringBuffer out, Element packageableElement) {
-		out.append("\n"+((Comment)packageableElement).getBody()); //$NON-NLS-1$
+		out.append("\n" + ((Comment) packageableElement).getBody()); //$NON-NLS-1$
 	}
 
 
+	@Override
 	public String getNameFile() {
-		
+
 		return "DeveloperDoc.mediawiki"; //$NON-NLS-1$
 	}
 

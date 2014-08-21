@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -34,23 +34,23 @@ public class FlowPropertyChildLabelEditPart extends AbstractElementChildLabelEdi
 		super.createDefaultEditPolicies();
 	}
 
-	//	/**
-	//	 * {@inheritDoc}
-	//	 */
-	//	@Override
-	//	protected Image getLabelIcon() {
-	//		EObject parserElement = getParserElement();
-	//		if(parserElement == null) {
-	//			return null;
-	//		}
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// protected Image getLabelIcon() {
+	// EObject parserElement = getParserElement();
+	// if(parserElement == null) {
+	// return null;
+	// }
 	//
-	//		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
-	//		for(View view : views) {
-	//			if(NameLabelIconHelper.showLabelIcon(view)) {
-	//				return labelProvider.getImage(parserElement);
-	//			}
-	//		}
+	// List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
+	// for(View view : views) {
+	// if(NameLabelIconHelper.showLabelIcon(view)) {
+	// return labelProvider.getImage(parserElement);
+	// }
+	// }
 	//
-	//		return null;
-	//	}
+	// return null;
+	// }
 }

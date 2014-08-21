@@ -23,6 +23,7 @@ public class LayoutTypeImpl extends WidgetTypeImpl implements LayoutType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected LayoutTypeImpl() {
@@ -32,6 +33,7 @@ public class LayoutTypeImpl extends WidgetTypeImpl implements LayoutType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public class LayoutTypeImpl extends WidgetTypeImpl implements LayoutType {
 		return EnvironmentPackage.Literals.LAYOUT_TYPE;
 	}
 
-} //LayoutTypeImpl
+} // LayoutTypeImpl

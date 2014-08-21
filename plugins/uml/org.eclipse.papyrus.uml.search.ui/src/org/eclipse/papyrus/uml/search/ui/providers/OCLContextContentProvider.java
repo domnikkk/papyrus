@@ -24,8 +24,8 @@ public class OCLContextContentProvider implements ITreeContentProvider {
 
 	public Object[] getElements(Object inputElement) {
 		ArrayList result = new ArrayList();
-		if(inputElement instanceof ModelSet) {
-			UmlModel root = (UmlModel)((ModelSet)inputElement).getModel(UmlModel.MODEL_ID);
+		if (inputElement instanceof ModelSet) {
+			UmlModel root = (UmlModel) ((ModelSet) inputElement).getModel(UmlModel.MODEL_ID);
 			try {
 				result.add(root.lookupRoot());
 			} catch (NotFoundException e) {
@@ -38,8 +38,8 @@ public class OCLContextContentProvider implements ITreeContentProvider {
 
 	public Object[] getChildren(Object parentElement) {
 		ArrayList result = new ArrayList();
-		if(parentElement instanceof EObject) {
-			result.addAll(((EObject)parentElement).eContents());
+		if (parentElement instanceof EObject) {
+			result.addAll(((EObject) parentElement).eContents());
 		}
 
 		return result.toArray();

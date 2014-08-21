@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 429422
  *  Mickael ADAM (ALL4TEC) mickael.adam@ALL4TEC.net - bug 429642
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.engine;
 
@@ -51,12 +51,14 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 	/** A adapter for the model styleSheet. */
 	Adapter adapter = new AdapterImpl() {
 
+		@Override
 		public void notifyChanged(Notification notification) {
 			ModelCSSEngine.this.reset();
 
 			DiagramHelper.setNeedsRefresh();
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					DiagramHelper.refreshDiagrams();
 				}
@@ -77,14 +79,14 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 
 	/**
 	 * Initialize the adapter attached to model styleSheet.
-	 * 
+	 *
 	 */
 	public void initAdapter() {
-		for(EObject eObject : model.getContents()) {
-			if(eObject instanceof ModelStyleSheets) {
-				ModelStyleSheets styleSheets = (ModelStyleSheets)eObject;
+		for (EObject eObject : model.getContents()) {
+			if (eObject instanceof ModelStyleSheets) {
+				ModelStyleSheets styleSheets = (ModelStyleSheets) eObject;
 				styleSheets.eAdapters().add(adapter);
-				for(StyleSheet styleSheet : styleSheets.getStylesheets()) {
+				for (StyleSheet styleSheet : styleSheets.getStylesheets()) {
 					styleSheet.eAdapters().add(adapter);
 				}
 			}
@@ -94,8 +96,8 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 
 	private static ExtendedCSSEngine getParentCSSEngine(Resource resource) {
 		ExtendedCSSEngine result;
-		if(resource instanceof CSSNotationResource) {
-			result = ((CSSNotationResource)resource).getProjectEngine();
+		if (resource instanceof CSSNotationResource) {
+			result = ((CSSNotationResource) resource).getProjectEngine();
 		} else {
 			result = ProjectCSSEngine.createEngine(resource);
 		}
@@ -106,10 +108,10 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 	@Override
 	protected void reloadStyleSheets() {
 		this.styleSheets.clear();
-		for(EObject eObject : model.getContents()) {
-			if(eObject instanceof ModelStyleSheets) {
-				ModelStyleSheets styleSheets = (ModelStyleSheets)eObject;
-				for(StyleSheet styleSheet : styleSheets.getStylesheets()) {
+		for (EObject eObject : model.getContents()) {
+			if (eObject instanceof ModelStyleSheets) {
+				ModelStyleSheets styleSheets = (ModelStyleSheets) eObject;
+				for (StyleSheet styleSheet : styleSheets.getStylesheets()) {
 					this.styleSheets.add(styleSheet);
 				}
 			}
@@ -119,7 +121,7 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 	@Override
 	protected void parseStyleSheet(StyleSheetReference styleSheet) throws IOException {
 		String path = styleSheet.getPath();
-		if(path.startsWith("/")) { //Either plug-in or workspace
+		if (path.startsWith("/")) { // Either plug-in or workspace
 			path = "platform:/resource" + path;
 			URL url = new URL(path);
 			try {
@@ -138,11 +140,11 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 
 	@Override
 	public void dispose() {
-		for(EObject eObject : model.getContents()) {
-			if(eObject instanceof ModelStyleSheets) {
-				ModelStyleSheets styleSheets = (ModelStyleSheets)eObject;
+		for (EObject eObject : model.getContents()) {
+			if (eObject instanceof ModelStyleSheets) {
+				ModelStyleSheets styleSheets = (ModelStyleSheets) eObject;
 				styleSheets.eAdapters().remove(adapter);
-				for(StyleSheet styleSheet : styleSheets.getStylesheets()) {
+				for (StyleSheet styleSheet : styleSheets.getStylesheets()) {
 					styleSheet.eAdapters().remove(adapter);
 				}
 			}
@@ -150,7 +152,7 @@ public class ModelCSSEngine extends ExtendedCSSEngineImpl {
 		super.dispose();
 	}
 
-	//Unsupported operations. The ModelCSSEngine should not be used directly.
+	// Unsupported operations. The ModelCSSEngine should not be used directly.
 
 	@Override
 	public Element getElement(Object node) {

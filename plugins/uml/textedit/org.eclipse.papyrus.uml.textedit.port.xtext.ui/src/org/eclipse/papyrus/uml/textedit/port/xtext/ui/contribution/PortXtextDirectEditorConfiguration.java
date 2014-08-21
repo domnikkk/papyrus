@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,11 +36,11 @@ import com.google.inject.Injector;
 
 /**
  * @author CEA LIST
- * 
+ *
  *         This class is used for contribution to the Papyrus extension point
  *         DirectEditor. It is used for the integration of an xtext generated
  *         editor, for properties of UML classifiers.
- * 
+ *
  */
 public class PortXtextDirectEditorConfiguration extends DefaultXtextDirectEditorConfiguration {
 

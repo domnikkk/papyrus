@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ package org.eclipse.papyrus.uml.diagram.common.actions;
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,10 +44,10 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.emf.providers.EMFLabelProvider;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
-import org.eclipse.papyrus.uml.diagram.common.util.ViewServiceUtil;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -57,9 +57,9 @@ import org.eclipse.ui.dialogs.CheckedTreeSelectionDialog;
 import org.eclipse.ui.dialogs.SelectionDialog;
 
 /**
- * 
+ *
  * Super Class for the ShowHide action
- * 
+ *
  */
 public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbenchWindowActionDelegate {
 
@@ -94,15 +94,15 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	protected List<EditPartRepresentation> representations;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
-	 *        title for the dialog
+	 *            title for the dialog
 	 * @param message
-	 *        message for the dialog
+	 *            message for the dialog
 	 * @param editPolicyKey
-	 *        the EditPolicy used for this action
+	 *            the EditPolicy used for this action
 	 */
 	public AbstractShowHideAction(String title, String message, String editPolicyKey) {
 		this.editPolicyKey = editPolicyKey;
@@ -115,6 +115,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void dispose() {
 		// nothing here
 	}
@@ -122,6 +123,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void init(IWorkbenchWindow window) {
 		// nothing here
 	}
@@ -129,27 +131,30 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void run(IAction action) {
 
-		if(!canRun()) {
+		if (!canRun()) {
 			return;
 		}
 		initAction();
 		buildInitialSelection();
 		SelectionDialog selectionDialog = getSelectionDialog();
 		selectionDialog.open();
-		if(selectionDialog.getReturnCode() == Dialog.OK) {
+		if (selectionDialog.getReturnCode() == Window.OK) {
 			buildShowHideElementsList(selectionDialog.getResult());
 			final Command command = getActionCommand();
 			final TransactionalEditingDomain domain = this.selectedElements.get(0).getEditingDomain();
-			if(command.canExecute()) {
+			if (command.canExecute()) {
 				try {
 					domain.runExclusive(new Runnable() {
 
+						@Override
 						public void run() {
 							PlatformUI.getWorkbench().getDisplay().asyncExec(new Runnable() {
 
 								// executing the command
+								@Override
 								public void run() {
 									domain.getCommandStack().execute(new GEFtoEMFCommandWrapper(command));
 								}
@@ -165,7 +170,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Creates and returns the selection dialog displayed by this action
-	 * 
+	 *
 	 * @return the created selection dialog
 	 */
 	protected SelectionDialog getSelectionDialog() {
@@ -181,12 +186,12 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Returns the list of all elements
-	 * 
+	 *
 	 * @return the list of all elements
 	 */
 	protected Object[] getExpandedElements() {
 		List<Object> allElements = new ArrayList<Object>();
-		for(EditPartRepresentation current : this.representations) {
+		for (EditPartRepresentation current : this.representations) {
 			allElements.add(current);
 			allElements.addAll(current.getPossibleElement());
 		}
@@ -194,23 +199,23 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	}
 
 	/**
-	 * 
+	 *
 	 * Test if the action can be run! Useful when we press F4 and it's the first
 	 * action in Papyrus
-	 * 
+	 *
 	 * @return if the action can be run or not
 	 */
 	public boolean canRun() {
 
-		if(this.selectedElements.isEmpty()) {
+		if (this.selectedElements.isEmpty()) {
 			return false;
 		}
-		for(Object object : this.selectedElements) {
-			if(!(object instanceof EditPart)) {
+		for (Object object : this.selectedElements) {
+			if (!(object instanceof EditPart)) {
 				return false;
 			} else {
-				EditPolicy policy = ((EditPart)object).getEditPolicy(editPolicyKey);
-				if(policy == null) {
+				EditPolicy policy = ((EditPart) object).getEditPolicy(editPolicyKey);
+				if (policy == null) {
 					return false;
 				}
 			}
@@ -220,24 +225,25 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
-	 * 
+	 *
 	 * @param action
-	 *        the current action
+	 *            the current action
 	 * @param selection
-	 *        the current selection
+	 *            the current selection
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		boolean enabled = false;
-		if(editPolicyKey != null) {
+		if (editPolicyKey != null) {
 			selectedElements = new ArrayList<IGraphicalEditPart>();
-			if(selection instanceof StructuredSelection) {
-				for(Object current : ((StructuredSelection)selection).toArray()) {
-					if(current instanceof IGraphicalEditPart) {
-						selectedElements.add((IGraphicalEditPart)current);
-						EditPolicy policy = ((IGraphicalEditPart)current).getEditPolicy(editPolicyKey);
-						if(policy != null) {
+			if (selection instanceof StructuredSelection) {
+				for (Object current : ((StructuredSelection) selection).toArray()) {
+					if (current instanceof IGraphicalEditPart) {
+						selectedElements.add((IGraphicalEditPart) current);
+						EditPolicy policy = ((IGraphicalEditPart) current).getEditPolicy(editPolicyKey);
+						if (policy != null) {
 							enabled = true;
 							break;
 						}
@@ -246,7 +252,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 			}
 
 		}
-		if(action != null) {
+		if (action != null) {
 			action.setEnabled(enabled);
 		}
 	}
@@ -257,9 +263,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	 * <li>{@link #labelProvider}</li>
 	 * <li> {@link #representations}</li>
 	 * </ul>
-	 * 
+	 *
 	 * This method should be override by subclasses to initialize {@link #contentProvider} for example.
-	 * 
+	 *
 	 */
 	protected void initAction() {
 		this.labelProvider = new EditPartRepresentationLabelProvider();
@@ -268,7 +274,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Returns the initial selection for the Tree Dialog.
-	 * 
+	 *
 	 * @return The initial selection for the Tree Dialog
 	 */
 	public List<Object> getInitialSelection() {
@@ -281,24 +287,24 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	 */
 	protected void buildInitialSelection() {
 		this.initialSelection = new ArrayList<Object>();
-		for(EditPartRepresentation current : this.representations) {
+		for (EditPartRepresentation current : this.representations) {
 			contributeToInitialSelection(initialSelection, current);
 		}
 	}
 
 	/**
 	 * Complete the list of initial selection for the given representation and its potential children
-	 * 
+	 *
 	 * @param listToComplete
-	 *        the list of selected elements to complete
+	 *            the list of selected elements to complete
 	 * @param representation
-	 *        the edit part representation that completes the list
+	 *            the edit part representation that completes the list
 	 */
 	protected void contributeToInitialSelection(List<Object> listToComplete, EditPartRepresentation representation) {
 		listToComplete.addAll(representation.getInitialSelection());
 		List<EditPartRepresentation> children = representation.getPossibleElement();
-		if(children != null) {
-			for(EditPartRepresentation child : children) {
+		if (children != null) {
+			for (EditPartRepresentation child : children) {
 				contributeToInitialSelection(listToComplete, child);
 			}
 		}
@@ -306,7 +312,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Returns the input for the TreeDialog
-	 * 
+	 *
 	 * @return the input for the TreeDialog
 	 */
 	abstract protected List<Object> getInput();
@@ -318,9 +324,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	 * <li>{@link #viewsToCreate}</li>
 	 * <li> {@link #viewsToDestroy}</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param result
-	 *        the interesting element selected in the tree
+	 *            the interesting element selected in the tree
 	 */
 	protected void buildShowHideElementsList(Object[] result) {
 		this.viewsToCreate = new ArrayList<EditPartRepresentation>();
@@ -329,16 +335,16 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Returns the command done by this action
-	 * 
+	 *
 	 * @return the command done by this action
 	 */
 	abstract protected Command getActionCommand();
 
 	/**
 	 * Setter for {@link #labelProvider}
-	 * 
+	 *
 	 * @param provider
-	 *        the label provider for the tree
+	 *            the label provider for the tree
 	 */
 	protected void setEditorLabelProvider(ILabelProvider provider) {
 		this.labelProvider = provider;
@@ -346,7 +352,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Returns the label provider used by the dialog
-	 * 
+	 *
 	 * @return the labelProvider
 	 */
 	protected ILabelProvider getEditorLabelProvider() {
@@ -355,9 +361,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Setter for {@link #contentProvider}
-	 * 
+	 *
 	 * @param provider
-	 *        the provider for the tree
+	 *            the provider for the tree
 	 */
 	protected void setContentProvider(ITreeContentProvider provider) {
 		this.contentProvider = provider;
@@ -365,7 +371,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Returns the content provider for the selection dialog
-	 * 
+	 *
 	 * @return the contentProvider
 	 */
 	protected ITreeContentProvider getContentProvider() {
@@ -376,9 +382,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	 * Setter for {@link #selectedElements}. When this action is called by a
 	 * popup menu, {@link #selectedElements} is filled by {@link #selectionChanged(IAction, ISelection)} When this action is called
 	 * by a Handler, {@link #selectedElements} is filled with this method
-	 * 
+	 *
 	 * @param selection
-	 *        the current selection
+	 *            the current selection
 	 */
 	public void setSelection(List<IGraphicalEditPart> selection) {
 		this.selectedElements = selection;
@@ -386,9 +392,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 	/**
 	 * Getter for {@link AbstractShowHideAction#editPolicyKey}
-	 * 
+	 *
 	 * @return
-	 * 
+	 *
 	 *         {@link AbstractShowHideAction#editPolicyKey}
 	 */
 	public String getEditPolicyKey() {
@@ -396,9 +402,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 	}
 
 	/**
-	 * 
+	 *
 	 * This class provides some facilities to build the action.
-	 * 
+	 *
 	 */
 	public class EditPartRepresentation {
 
@@ -419,26 +425,26 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param representedEditPart
-		 *        the represented EditPart
+		 *            the represented EditPart
 		 * @param eObject
-		 *        the semantic element represented by EditPartRepresentation
+		 *            the semantic element represented by EditPartRepresentation
 		 */
 		public EditPartRepresentation(IGraphicalEditPart representedEditPart, EObject eObject) {
 			this(representedEditPart, eObject, null);
 		}
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param representedEditPart
-		 *        the represented EditPart
+		 *            the represented EditPart
 		 * @param eObject
-		 *        the semantic element represented by EditPartRepresentation
+		 *            the semantic element represented by EditPartRepresentation
 		 * @param parentRepresentation
-		 *        parent representation of this edit part representation
+		 *            parent representation of this edit part representation
 		 */
 		public EditPartRepresentation(IGraphicalEditPart representedEditPart, EObject eObject, EditPartRepresentation parentRepresentation) {
 			this.setRepresentedEditPart(representedEditPart);
@@ -449,7 +455,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Getter for {@link #representedEditPart}
-		 * 
+		 *
 		 * @return the represented editpart, {@link #representedEditPart}
 		 */
 		public IGraphicalEditPart getRepresentedEditPart() {
@@ -458,7 +464,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Getter for {@link #eObject}
-		 * 
+		 *
 		 * @return {@link #eObject}
 		 */
 		public EObject getSemanticElement() {
@@ -467,7 +473,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Getter for {@link #initialSelection}
-		 * 
+		 *
 		 * @return {@link #initialSelection}
 		 */
 		public List<EditPartRepresentation> getInitialSelection() {
@@ -488,7 +494,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Setter for {@link #elementsToSelect}
-		 * 
+		 *
 		 * @return {@link #elementsToSelect}
 		 */
 		public List<EditPartRepresentation> getPossibleElement() {
@@ -497,7 +503,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Returns the parent representation of this edit part representation
-		 * 
+		 *
 		 * @return the parent representation of this edit part representation
 		 */
 		public EditPartRepresentation getParentRepresentation() {
@@ -506,9 +512,9 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Setter for the {@link #representedEditPart}
-		 * 
+		 *
 		 * @param representedEditPart
-		 *        {@link #representedEditPart}
+		 *            {@link #representedEditPart}
 		 */
 		public void setRepresentedEditPart(IGraphicalEditPart representedEditPart) {
 			this.representedEditPart = representedEditPart;
@@ -516,12 +522,12 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Returns the display label for this edit part representation
-		 * 
+		 *
 		 * @return the display label for this edit part representation
 		 */
 		public String getLabel() {
 			EObject semanticElement = getSemanticElement();
-			if(isElementInherited()) {
+			if (isElementInherited()) {
 				StringBuffer buffer = new StringBuffer();
 				buffer.append(getEditorLabelProvider().getText(getSemanticElement()));
 				buffer.append(" ");
@@ -535,7 +541,7 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Returns the display label for this edit part representation
-		 * 
+		 *
 		 * @return the display label for this edit part representation
 		 */
 		public Image getImage() {
@@ -544,29 +550,29 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 
 		/**
 		 * Checks if the parent of the element linked to the given edit part representation is similar to the element of the parent representation
-		 * 
+		 *
 		 * @param representation
-		 *        the edit part representation to check
+		 *            the edit part representation to check
 		 * @return <code>true</code> if the element is inherited
 		 */
 		protected boolean isElementInherited() {
 			EditPartRepresentation parentRepresentation = getParentRepresentation();
-			if(parentRepresentation == null) { // no parent => can not be inherited
+			if (parentRepresentation == null) { // no parent => can not be inherited
 				return false;
 			}
 
 			// no uml element in representation, can not check
-			if(getSemanticElement() == null) {
+			if (getSemanticElement() == null) {
 				return false;
 			}
 
 			EObject parentElement = parentRepresentation.getSemanticElement();
 			EObject elementOwner = getSemanticElement().eContainer(); // Null for rer.getUMLElement was already check before.
-			if(parentElement == null || elementOwner == null) { // no element in the parent representation
+			if (parentElement == null || elementOwner == null) { // no element in the parent representation
 				return false;
 			}
 
-			if(!parentElement.equals(elementOwner)) {
+			if (!parentElement.equals(elementOwner)) {
 				return true;
 			}
 			return false;
@@ -593,8 +599,8 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 		 */
 		@Override
 		public String getText(Object element) {
-			if(element instanceof EditPartRepresentation) {
-				return ((EditPartRepresentation)element).getLabel();
+			if (element instanceof EditPartRepresentation) {
+				return ((EditPartRepresentation) element).getLabel();
 			}
 			return editorLabelProvider.getText(element);
 		}
@@ -604,54 +610,54 @@ public abstract class AbstractShowHideAction implements IActionDelegate, IWorkbe
 		 */
 		@Override
 		public Image getImage(Object element) {
-			if(element instanceof EditPartRepresentation) {
-				return ((EditPartRepresentation)element).getImage();
+			if (element instanceof EditPartRepresentation) {
+				return ((EditPartRepresentation) element).getImage();
 			}
 			return editorLabelProvider.getImage(element);
 		}
 	}
 
-	//	/**
-	//	 * 
-	//	 * EditorLabelProvider for the {@link CheckedTreeSelectionDialog}
-	//	 * 
-	//	 */
-	//	public class CustomEditorLabelProvider extends EditorLabelProvider {
+	// /**
+	// *
+	// * EditorLabelProvider for the {@link CheckedTreeSelectionDialog}
+	// *
+	// */
+	// public class CustomEditorLabelProvider extends EditorLabelProvider {
 	//
-	//		/**
-	//		 * {@inheritDoc}
-	//		 */
-	//		@Override
-	//		public Image getImage(Object element) {
-	//			if(element instanceof EditPartRepresentation) {
-	//				element = ((EditPartRepresentation)element).getSemanticElement();
-	//			}
-	//			return super.getImage(element);
-	//		}
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// public Image getImage(Object element) {
+	// if(element instanceof EditPartRepresentation) {
+	// element = ((EditPartRepresentation)element).getSemanticElement();
+	// }
+	// return super.getImage(element);
+	// }
 	//
-	//		/**
-	//		 * {@inheritDoc}
-	//		 */
-	//		@Override
-	//		public String getText(Object element) {
-	//			if(element instanceof CompartmentEditPartRepresentation) {
-	//				return ((CompartmentEditPartRepresentation)element).getCompartmentName();
-	//			} else if(element instanceof EditPartRepresentation) {
-	//				EObject semanticElement = ((EditPartRepresentation)element).getSemanticElement();
-	//				if(isElementInherited((EditPartRepresentation)element)) {
-	//					StringBuffer buffer = new StringBuffer();
-	//					buffer.append(super.getText(semanticElement));
-	//					buffer.append(" ");
-	//					buffer.append("(from ");
-	//					buffer.append(super.getText(((EditPartRepresentation)element).getSemanticElement().eContainer()));
-	//					buffer.append(")");
-	//					return buffer.toString();
-	//				} else {
-	//					return super.getText(semanticElement);
-	//				}
-	//			}
-	//			return super.getText(element);
-	//		}
-	//	}
+	// /**
+	// * {@inheritDoc}
+	// */
+	// @Override
+	// public String getText(Object element) {
+	// if(element instanceof CompartmentEditPartRepresentation) {
+	// return ((CompartmentEditPartRepresentation)element).getCompartmentName();
+	// } else if(element instanceof EditPartRepresentation) {
+	// EObject semanticElement = ((EditPartRepresentation)element).getSemanticElement();
+	// if(isElementInherited((EditPartRepresentation)element)) {
+	// StringBuffer buffer = new StringBuffer();
+	// buffer.append(super.getText(semanticElement));
+	// buffer.append(" ");
+	// buffer.append("(from ");
+	// buffer.append(super.getText(((EditPartRepresentation)element).getSemanticElement().eContainer()));
+	// buffer.append(")");
+	// return buffer.toString();
+	// } else {
+	// return super.getText(semanticElement);
+	// }
+	// }
+	// return super.getText(element);
+	// }
+	// }
 
 }

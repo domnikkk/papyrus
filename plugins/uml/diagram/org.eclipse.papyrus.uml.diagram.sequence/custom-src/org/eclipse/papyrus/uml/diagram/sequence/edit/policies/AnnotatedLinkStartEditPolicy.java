@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.uml2.uml.TimeObservation;
 
 /**
  * An editpolicy for handling connections start from Comment, Constraint and Observations.
- * 
+ *
  * @see AnnotatedLinkEndEditPolicy
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
@@ -53,7 +53,7 @@ public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(REQ_ANNOTATED_LINK_START.equals(request.getType()) || REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType())) {
+		if (REQ_ANNOTATED_LINK_START.equals(request.getType()) || REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType())) {
 			return getConnectableEditPart();
 		}
 		return null;
@@ -65,24 +65,24 @@ public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
 	@Override
 	protected INodeEditPart getConnectableEditPart() {
 		EditPart host = getHost();
-		if(host instanceof INodeEditPart) {
-			return (INodeEditPart)host;
+		if (host instanceof INodeEditPart) {
+			return (INodeEditPart) host;
 		} else {
-			IGraphicalEditPart hostGraphical = (IGraphicalEditPart)host.getAdapter(IGraphicalEditPart.class);
-			if(hostGraphical == null) {
+			IGraphicalEditPart hostGraphical = (IGraphicalEditPart) host.getAdapter(IGraphicalEditPart.class);
+			if (hostGraphical == null) {
 				return null;
 			}
 			EObject element = hostGraphical.resolveSemanticElement();
-			if(element == null) {
+			if (element == null) {
 				return null;
 			}
 			EditPart parent = host.getParent();
-			if(!(parent instanceof INodeEditPart)) {
+			if (!(parent instanceof INodeEditPart)) {
 				return null;
 			}
-			IGraphicalEditPart parentGraphical = (IGraphicalEditPart)parent.getAdapter(IGraphicalEditPart.class);
-			if(parentGraphical != null && element == parentGraphical.resolveSemanticElement()) {
-				return (INodeEditPart)parent;
+			IGraphicalEditPart parentGraphical = (IGraphicalEditPart) parent.getAdapter(IGraphicalEditPart.class);
+			if (parentGraphical != null && element == parentGraphical.resolveSemanticElement()) {
+				return (INodeEditPart) parent;
 			}
 		}
 		return null;
@@ -90,25 +90,25 @@ public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	public Command getCommand(Request request) {
-		if(REQ_ANNOTATED_LINK_START.equals(request.getType())) {
-			return getConnectionCreateCommand((CreateConnectionRequest)request);
-		} else if(REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType())) {
-			return getReconnectSourceCommand((ReconnectRequest)request);
+		if (REQ_ANNOTATED_LINK_START.equals(request.getType())) {
+			return getConnectionCreateCommand((CreateConnectionRequest) request);
+		} else if (REQ_ANNOTATED_LINK_REORIENT_START.equals(request.getType())) {
+			return getReconnectSourceCommand((ReconnectRequest) request);
 		}
 		return null;
 	}
 
 	@Override
 	public void showSourceFeedback(Request request) {
-		if(AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_END.equals(request.getType())) {
-			showCreationFeedback((CreateConnectionRequest)request);
+		if (AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_END.equals(request.getType())) {
+			showCreationFeedback((CreateConnectionRequest) request);
 		}
 	}
 
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if(AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_END.equals(request.getType())) {
-			eraseCreationFeedback((CreateConnectionRequest)request);
+		if (AnnotatedLinkEndEditPolicy.REQ_ANNOTATED_LINK_END.equals(request.getType())) {
+			eraseCreationFeedback((CreateConnectionRequest) request);
 		}
 	}
 
@@ -122,26 +122,26 @@ public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
 	@Override
 	protected Command getReconnectSourceCommand(ReconnectRequest request) {
 		EditPart host = getHost();
-		//Quickly failed for TimeObservation, the event of a TimeObservation can only one.
-		if(host instanceof GraphicalEditPart) {
-			View primaryView = ((GraphicalEditPart)host).getPrimaryView();
+		// Quickly failed for TimeObservation, the event of a TimeObservation can only one.
+		if (host instanceof GraphicalEditPart) {
+			View primaryView = ((GraphicalEditPart) host).getPrimaryView();
 			EObject element = ViewUtil.resolveSemanticElement(primaryView);
-			if(element instanceof TimeObservation && ((TimeObservation)element).getEvent() != null) {
+			if (element instanceof TimeObservation && ((TimeObservation) element).getEvent() != null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}
-		ICommandProxy c = (ICommandProxy)super.getReconnectSourceCommand(request);
-		if(c == null) {
+		ICommandProxy c = (ICommandProxy) super.getReconnectSourceCommand(request);
+		if (c == null) {
 			return null;
 		}
-		if(request.getConnectionEditPart() instanceof AnnotatedLinkEditPart) {
-			if(getHost() instanceof CustomDurationConstraintEditPart && !((CustomDurationConstraintEditPart)getHost()).canCreateLink(request.getLocation())) {
+		if (request.getConnectionEditPart() instanceof AnnotatedLinkEditPart) {
+			if (getHost() instanceof CustomDurationConstraintEditPart && !((CustomDurationConstraintEditPart) getHost()).canCreateLink(request.getLocation())) {
 				return UnexecutableCommand.INSTANCE; // only 2 links are allowed, one for each side
 			}
 
-			CompositeCommand cc = (CompositeCommand)c.getICommand();
+			CompositeCommand cc = (CompositeCommand) c.getICommand();
 			AnnotatedLinkEditCommand ac = new AnnotatedLinkEditCommand(getEditingDomain());
-			ac.setAnnotatedLink((AnnotatedLinkEditPart)request.getConnectionEditPart());
+			ac.setAnnotatedLink((AnnotatedLinkEditPart) request.getConnectionEditPart());
 			ac.setSource(getHost());
 			cc.add(ac);
 			return c;
@@ -152,23 +152,23 @@ public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
 	@Override
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
 		EditPart host = getHost();
-		//Quickly failed for TimeObservation, the event of a TimeObservation can only one.
-		if(host instanceof GraphicalEditPart) {
-			View primaryView = ((GraphicalEditPart)host).getPrimaryView();
+		// Quickly failed for TimeObservation, the event of a TimeObservation can only one.
+		if (host instanceof GraphicalEditPart) {
+			View primaryView = ((GraphicalEditPart) host).getPrimaryView();
 			EObject element = ViewUtil.resolveSemanticElement(primaryView);
-			if(element instanceof TimeObservation && ((TimeObservation)element).getEvent() != null) {
+			if (element instanceof TimeObservation && ((TimeObservation) element).getEvent() != null) {
 				return UnexecutableCommand.INSTANCE;
 			}
-			if(host instanceof CustomDurationConstraintEditPart) {
-				boolean can = ((CustomDurationConstraintEditPart)host).canCreateLink(request.getLocation());
-				if(!can) {
+			if (host instanceof CustomDurationConstraintEditPart) {
+				boolean can = ((CustomDurationConstraintEditPart) host).canCreateLink(request.getLocation());
+				if (!can) {
 					return UnexecutableCommand.INSTANCE;
 				}
 			}
 		}
 		Command command = super.getConnectionCreateCommand(request);
-		if(command instanceof ICommandProxy) {
-			CompositeCommand cc = (CompositeCommand)((ICommandProxy)command).getICommand();
+		if (command instanceof ICommandProxy) {
+			CompositeCommand cc = (CompositeCommand) ((ICommandProxy) command).getICommand();
 			AnnotatedLinkEditCommand operation = new AnnotatedLinkEditCommand(getEditingDomain());
 			operation.setSource(getHost());
 			cc.add(operation);
@@ -177,6 +177,6 @@ public class AnnotatedLinkStartEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 }

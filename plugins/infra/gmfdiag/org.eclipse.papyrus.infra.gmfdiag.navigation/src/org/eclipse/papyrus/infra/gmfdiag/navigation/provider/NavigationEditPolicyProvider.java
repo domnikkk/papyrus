@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,15 +24,15 @@ import org.eclipse.papyrus.infra.services.navigation.service.NavigationService;
 public class NavigationEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateEditPoliciesOperation) {
+		if (operation instanceof CreateEditPoliciesOperation) {
 
-			CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+			CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 			EditPart editPart = epOperation.getEditPart();
 			try {
 				NavigationService navigationService = ServiceUtilsForEditPart.getInstance().getService(NavigationService.class, editPart);
 				return navigationService != null;
 			} catch (Exception ex) {
-				//Ignore: The NavigationService is not available; do nothing
+				// Ignore: The NavigationService is not available; do nothing
 			}
 		}
 		return false;

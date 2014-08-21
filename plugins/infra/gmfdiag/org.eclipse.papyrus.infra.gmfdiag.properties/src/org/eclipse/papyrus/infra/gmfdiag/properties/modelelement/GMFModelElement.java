@@ -56,7 +56,7 @@ public class GMFModelElement extends EMFModelElement {
 	 * Constructor.
 	 *
 	 * @param source
-	 *        The source element (from the Notation metamodel)
+	 *            The source element (from the Notation metamodel)
 	 */
 	public GMFModelElement(EObject source) {
 		super(source);
@@ -67,10 +67,10 @@ public class GMFModelElement extends EMFModelElement {
 	 * Constructor.
 	 *
 	 * @param source
-	 *        The source element (from the Notation metamodel)
+	 *            The source element (from the Notation metamodel)
 	 * @param domain
-	 *        The editing domain on which the commands will be executed.
-	 *        May be null
+	 *            The editing domain on which the commands will be executed.
+	 *            May be null
 	 */
 	public GMFModelElement(EObject source, EditingDomain domain) {
 		super(source, domain);
@@ -78,7 +78,7 @@ public class GMFModelElement extends EMFModelElement {
 
 	@Override
 	protected boolean isFeatureEditable(String propertyPath) {
-		if(propertyPath.endsWith("owner")) {
+		if (propertyPath.endsWith("owner")) {
 			return true;
 		}
 		return super.isFeatureEditable(propertyPath);
@@ -86,17 +86,17 @@ public class GMFModelElement extends EMFModelElement {
 
 	@Override
 	protected IObservable doGetObservable(String propertyPath) {
-		if(propertyPath.endsWith("owner")) {
-			Diagram diagram = (Diagram)source;
+		if (propertyPath.endsWith("owner")) {
+			Diagram diagram = (Diagram) source;
 			Style style = diagram.getStyle(StylePackage.Literals.PAPYRUS_VIEW_STYLE);
-			if(style != null) {
+			if (style != null) {
 				return new PapyrusObservableValue(style, StylePackage.Literals.PAPYRUS_VIEW_STYLE__OWNER, domain);
 			}
 			return new LegacyOwnerObservable(diagram, StylePackage.Literals.PAPYRUS_VIEW_STYLE__OWNER, domain);
-		} else if(propertyPath.endsWith("prototype")) {
-			Diagram diagram = (Diagram)source;
+		} else if (propertyPath.endsWith("prototype")) {
+			Diagram diagram = (Diagram) source;
 			Style style = diagram.getStyle(StylePackage.Literals.PAPYRUS_VIEW_STYLE);
-			if(style != null) {
+			if (style != null) {
 				return new PapyrusObservableValue(style, StylePackage.Literals.PAPYRUS_VIEW_STYLE__CONFIGURATION, domain);
 			}
 			return new LegacyOwnerObservable(diagram, StylePackage.Literals.PAPYRUS_VIEW_STYLE__CONFIGURATION, domain);
@@ -105,15 +105,15 @@ public class GMFModelElement extends EMFModelElement {
 		FeaturePath featurePath = getFeaturePath(propertyPath);
 		EStructuralFeature feature = getFeature(propertyPath);
 
-		if(feature == null) {
+		if (feature == null) {
 			return null;
 		}
 
-		if(feature.getEType() == NotationPackage.eINSTANCE.getGradientData()) {
+		if (feature.getEType() == NotationPackage.eINSTANCE.getGradientData()) {
 			return new GradientObservableValue(source, feature, domain);
 		}
 
-		if(feature.getUpperBound() != 1) {
+		if (feature.getUpperBound() != 1) {
 			IObservableList list = domain == null ? EMFProperties.list(featurePath).observe(source) : new PapyrusObservableList(EMFProperties.list(featurePath).observe(source), domain, getSource(featurePath), feature);
 			return list;
 		}
@@ -124,7 +124,7 @@ public class GMFModelElement extends EMFModelElement {
 
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		if(propertyPath.endsWith("prototype")) {
+		if (propertyPath.endsWith("prototype")) {
 			return new ILabelProvider() {
 
 				public void addListener(ILabelProviderListener listener) {
@@ -141,12 +141,12 @@ public class GMFModelElement extends EMFModelElement {
 				}
 
 				public Image getImage(Object element) {
-					ViewPrototype proto = DiagramUtils.getPrototype((Diagram)source);
+					ViewPrototype proto = DiagramUtils.getPrototype((Diagram) source);
 					return proto.getIcon();
 				}
 
 				public String getText(Object element) {
-					ViewPrototype proto = DiagramUtils.getPrototype((Diagram)source);
+					ViewPrototype proto = DiagramUtils.getPrototype((Diagram) source);
 					return proto.getQualifiedName();
 				}
 			};
@@ -164,9 +164,9 @@ public class GMFModelElement extends EMFModelElement {
 	 */
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if("element".equals(propertyPath)) {
-			if(source instanceof Diagram) {
-				Diagram diagram = (Diagram)source;
+		if ("element".equals(propertyPath)) {
+			if (source instanceof Diagram) {
+				Diagram diagram = (Diagram) source;
 				return new ModelContentProvider(diagram, getRoot(diagram.getElement())) {
 
 					@Override
@@ -177,8 +177,8 @@ public class GMFModelElement extends EMFModelElement {
 			} else {
 				return EmptyContentProvider.instance;
 			}
-		} else if("owner".equals(propertyPath)) {
-			Diagram diagram = (Diagram)source;
+		} else if ("owner".equals(propertyPath)) {
+			Diagram diagram = (Diagram) source;
 			return new ModelContentProvider(diagram, getRoot(diagram.getElement())) {
 
 				@Override
@@ -194,13 +194,13 @@ public class GMFModelElement extends EMFModelElement {
 	 * Gets the root EObject from the given one
 	 *
 	 * @param obj
-	 *        An object
+	 *            An object
 	 * @return The root object which is an ancestor of the given one
 	 */
 	private EObject getRoot(EObject obj) {
 		EObject current = obj;
 		EObject parent = obj.eContainer();
-		while(parent != null) {
+		while (parent != null) {
 			current = parent;
 			parent = parent.eContainer();
 		}

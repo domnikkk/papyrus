@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,13 +22,14 @@ import org.eclipse.papyrus.uml.diagram.clazz.custom.helper.CustomMultiAssociatio
 import org.eclipse.papyrus.uml.diagram.clazz.edit.commands.AssociationBranchReorientCommand;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.helper.AssociationHelper;
+import org.eclipse.papyrus.uml.diagram.common.helper.MultiAssociationHelper;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Type;
 
 /**
  * this class is used to allow reconnecting a association branch on elements
- * 
+ *
  */
 public class CustomAssociationBranchReorientCommand extends AssociationBranchReorientCommand {
 
@@ -48,6 +49,7 @@ public class CustomAssociationBranchReorientCommand extends AssociationBranchReo
 	/**
 	 * it is impossible to retarget the source ( remove the association node)
 	 */
+	@Override
 	protected boolean canReorientSource() {
 		return false;
 	}
@@ -55,6 +57,7 @@ public class CustomAssociationBranchReorientCommand extends AssociationBranchReo
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected boolean canReorientTarget() {
 		if (!(oldNamedElementEnd instanceof Type && newNamedElementEnd instanceof Type)) {
 			return false;
@@ -62,7 +65,7 @@ public class CustomAssociationBranchReorientCommand extends AssociationBranchReo
 		if (getLink().getEndTypes().size() < 1) {
 			return false;
 		}
-		Type source = (Type) getLink().getEndTypes().get(0);
+		Type source = getLink().getEndTypes().get(0);
 		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
@@ -73,12 +76,13 @@ public class CustomAssociationBranchReorientCommand extends AssociationBranchReo
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult reorientTarget() throws ExecutionException {
 		/* look for end for the given type */
 		int i = 0;
 		Property end = null;
-		if (CustomMultiAssociationHelper.getSemanticBranchEnd(connection) != null) {
-			end = CustomMultiAssociationHelper.getSemanticBranchEnd(connection);
+		if (MultiAssociationHelper.getSemanticBranchEnd(connection) != null) {
+			end = MultiAssociationHelper.getSemanticBranchEnd(connection);
 			i = getLink().getMemberEnds().indexOf(end);
 		} else {
 			end = getLink().getMemberEnds().get(i);

@@ -139,7 +139,7 @@ public class ModelSet extends ResourceSetImpl {
 
 		getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
 		getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
-		getLoadOptions().put(XMIResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
+		getLoadOptions().put(XMLResource.OPTION_LAX_FEATURE_PROCESSING, Boolean.TRUE);
 		getLoadOptions().put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 		getLoadOptions().put(XMLResource.OPTION_USE_PACKAGE_NS_URI_AS_LOCATION, Boolean.FALSE);
 
@@ -152,11 +152,11 @@ public class ModelSet extends ResourceSetImpl {
 	 * (ModelPackage.eCONTENT_TYPE).
 	 *
 	 * @param model
-	 *        the model
+	 *            the model
 	 */
 	public void registerModel(IModel model) {
 		IModel existing = models.get(model.getIdentifier());
-		if((existing == null) || existing.getClass().isAssignableFrom(model.getClass().getSuperclass())) {
+		if ((existing == null) || existing.getClass().isAssignableFrom(model.getClass().getSuperclass())) {
 			// only add this model if it is the first instance for its identifier
 			// or it's an instance of a subclass
 			doRegisterModel(model);
@@ -172,7 +172,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * Get a model by its key. TODO throw an exception if not found.
 	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @return the model
 	 */
 	public IModel getModel(String key) {
@@ -183,14 +183,14 @@ public class ModelSet extends ResourceSetImpl {
 	 * Get a model by its key. TODO throw an exception if not found.
 	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @return the model
 	 * @throws NotFoundException
-	 *         If no model is registered under the key.
+	 *             If no model is registered under the key.
 	 */
 	public IModel getModelChecked(String key) throws NotFoundException {
 		IModel model = models.get(key);
-		if(model == null) {
+		if (model == null) {
 			throw new NotFoundException("Can't find model for identifier '" + key + "'.");
 		}
 
@@ -204,18 +204,18 @@ public class ModelSet extends ResourceSetImpl {
 
 	@Override
 	public Resource getResource(URI uri, boolean loadOnDemand) {
-		if(uri.hasFragment()) {
+		if (uri.hasFragment()) {
 			Activator.log.warn("Invalid Resource URI: resource URIs cannot contain a fragment"); //$NON-NLS-1$
-			uri = uri.trimFragment(); //Fix and continue
+			uri = uri.trimFragment(); // Fix and continue
 		}
 		Resource r = null;
 		try {
 			r = super.getResource(uri, loadOnDemand);
 		} catch (WrappedException e) {
 			// Activator.log.error(e);
-			if(ModelUtils.isDegradedModeAllowed(e.getCause())) {
+			if (ModelUtils.isDegradedModeAllowed(e.getCause())) {
 				r = super.getResource(uri, false);
-				if(r == null) {
+				if (r == null) {
 					throw e;
 				}
 			} else {
@@ -235,8 +235,8 @@ public class ModelSet extends ResourceSetImpl {
 	public void setTrackingModification(boolean isTrackingModification) {
 		boolean oldIsTrackingModification = modificationTrackingAdapter != null;
 
-		if(oldIsTrackingModification != isTrackingModification) {
-			if(isTrackingModification) {
+		if (oldIsTrackingModification != isTrackingModification) {
+			if (isTrackingModification) {
 				modificationTrackingAdapter = createModificationTrackingAdapter();
 				this.eAdapters().add(modificationTrackingAdapter);
 			} else {
@@ -259,23 +259,23 @@ public class ModelSet extends ResourceSetImpl {
 	 * Queries whether a {@code resource} managed by me is either known to be or assumed to be needing to be saved.
 	 * Generally this is true for resources that have been modified since the last save and that are saveable
 	 * (not read-only and correctly and completely loaded in the first place).
-	 * 
+	 *
 	 * @param resource
-	 *        a resource that I manage
-	 * 
+	 *            a resource that I manage
+	 *
 	 * @return whether the {@code resource} currently needs to be saved
 	 */
 	public boolean shouldSave(Resource resource) {
 		boolean result;
 
-		if(getTransactionalEditingDomain().isReadOnly(resource) || ModelUtils.resourceFailedOnLoad(resource)) {
+		if (getTransactionalEditingDomain().isReadOnly(resource) || ModelUtils.resourceFailedOnLoad(resource)) {
 			result = false;
-		} else if(!getURIConverter().exists(resource.getURI(), null)) {
+		} else if (!getURIConverter().exists(resource.getURI(), null)) {
 			// If the resource needs to be created, it needs to be saved
 			result = true;
-		} else if(modificationTrackingAdapter instanceof ProxyModificationTrackingAdapter) {
-			result = ((ProxyModificationTrackingAdapter)modificationTrackingAdapter).shouldSave(resource);
-		} else if(modificationTrackingAdapter != null) {
+		} else if (modificationTrackingAdapter instanceof ProxyModificationTrackingAdapter) {
+			result = ((ProxyModificationTrackingAdapter) modificationTrackingAdapter).shouldSave(resource);
+		} else if (modificationTrackingAdapter != null) {
 			result = !resource.isTrackingModification() || resource.isModified();
 		} else {
 			// Assume that the resource is modified since the last save
@@ -315,11 +315,11 @@ public class ModelSet extends ResourceSetImpl {
 	 * @param modelElement
 	 * @param associatedResourceExtension
 	 * @param loadOnDemand
-	 *        same as for getResource
+	 *            same as for getResource
 	 * @return
 	 */
 	public Resource getAssociatedResource(EObject modelElement, String associatedResourceExtension, boolean loadOnDemand) {
-		if(modelElement != null) {
+		if (modelElement != null) {
 			return getAssociatedResource(modelElement.eResource(), associatedResourceExtension, loadOnDemand);
 		}
 		return null;
@@ -331,12 +331,12 @@ public class ModelSet extends ResourceSetImpl {
 	 * @param modelResource
 	 * @param associatedResourceExtension
 	 * @param loadOnDemand
-	 *        same as for getResource
+	 *            same as for getResource
 	 * @return
 	 */
 	public Resource getAssociatedResource(Resource modelResource, String associatedResourceExtension, boolean loadOnDemand) {
 		Resource r = null;
-		if(modelResource != null) {
+		if (modelResource != null) {
 			URI trimmedModelURI = modelResource.getURI().trimFileExtension();
 			r = getResource(trimmedModelURI.appendFileExtension(associatedResourceExtension), loadOnDemand);
 		}
@@ -348,18 +348,18 @@ public class ModelSet extends ResourceSetImpl {
 	 * the resource to the caller so we can set options on the resource.
 	 *
 	 * @param r
-	 *        , can be null
+	 *            , can be null
 	 * @return the same resource for convenience
 	 */
 	protected Resource setResourceOptions(Resource r) {
 
-		for(IModel model : models.values()) {
-			if(model instanceof IEMFModel) {
-				((IEMFModel)model).handle(r);
+		for (IModel model : models.values()) {
+			if (model instanceof IEMFModel) {
+				((IEMFModel) model).handle(r);
 			}
 		}
 
-		if(r != null && isTrackingModification() && !r.isTrackingModification()) {
+		if (r != null && isTrackingModification() && !r.isTrackingModification()) {
 			r.setTrackingModification(true);
 		}
 		return r;
@@ -380,7 +380,7 @@ public class ModelSet extends ResourceSetImpl {
 	public synchronized TransactionalEditingDomain getTransactionalEditingDomain() {
 		transactionalEditingDomain = TransactionalEditingDomainManager.getTransactionalEditingDomain(this);
 
-		if(transactionalEditingDomain == null) {
+		if (transactionalEditingDomain == null) {
 			transactionalEditingDomain = TransactionalEditingDomainManager.createTransactionalEditingDomain(this);
 			// register the id for lifecyle events the id is set by the registry
 			EditingDomainManager.getInstance().configureListeners(PAPYRUS_EDITING_DOMAIN_ID, transactionalEditingDomain);
@@ -397,8 +397,8 @@ public class ModelSet extends ResourceSetImpl {
 	public IPath getFilenameWithoutExtension() {
 		IPath result = null;
 
-		if(uriWithoutExtension != null) {
-			if(uriWithoutExtension.isPlatformResource()) {
+		if (uriWithoutExtension != null) {
+			if (uriWithoutExtension.isPlatformResource()) {
 				result = new Path(uriWithoutExtension.toPlatformString(true));
 			} else {
 				throw new IllegalStateException("URI is not a platform:/resource URI");
@@ -417,7 +417,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * @throws BadStateException
 	 */
 	protected URI getURIWithoutExtensionChecked() throws BadStateException {
-		if(uriWithoutExtension == null) {
+		if (uriWithoutExtension == null) {
 			throw new BadStateException("Path should be set prior calling any operations.");
 		}
 
@@ -426,7 +426,7 @@ public class ModelSet extends ResourceSetImpl {
 
 	/**
 	 * @param filenameWithoutExtension
-	 *        the filenameWithoutExtension to set
+	 *            the filenameWithoutExtension to set
 	 */
 	protected void setURIWithoutExtension(URI uriWithoutExtension) {
 		this.uriWithoutExtension = uriWithoutExtension;
@@ -437,8 +437,8 @@ public class ModelSet extends ResourceSetImpl {
 	 * they already exist.
 	 *
 	 * @param newFile
-	 *        The file from which path is extracted to create the new
-	 *        resources
+	 *            The file from which path is extracted to create the new
+	 *            resources
 	 *
 	 * @deprecated Use the {@link #createModels(URI)} API, instead.
 	 */
@@ -452,8 +452,8 @@ public class ModelSet extends ResourceSetImpl {
 	 * they already exist.
 	 *
 	 * @param newFile
-	 *        The file from which path is extracted to create the new
-	 *        resources
+	 *            The file from which path is extracted to create the new
+	 *            resources
 	 */
 	public void createModels(URI newURI) {
 
@@ -461,7 +461,7 @@ public class ModelSet extends ResourceSetImpl {
 		setURIWithoutExtension(newURI.trimFileExtension());
 
 		// Walk all registered models
-		for(IModel model : models.values()) {
+		for (IModel model : models.values()) {
 			model.createModel(uriWithoutExtension);
 		}
 
@@ -476,13 +476,13 @@ public class ModelSet extends ResourceSetImpl {
 	 * This creates the models, regardless if they already exist.
 	 *
 	 * @param newFile
-	 *        The file from which path is extracted to create the new
-	 *        resources
+	 *            The file from which path is extracted to create the new
+	 *            resources
 	 */
 	public void createsModels(ModelIdentifiers modelIdentifiers) {
 
 		// Walk all registered models
-		for(String modelId : modelIdentifiers) {
+		for (String modelId : modelIdentifiers) {
 			IModel model = getModel(modelId);
 
 			// Load models using the default path
@@ -498,12 +498,12 @@ public class ModelSet extends ResourceSetImpl {
 	 * loaded using the ModelSet Path.
 	 *
 	 * @param modelIdentifier
-	 *        the model identifier
+	 *            the model identifier
 	 * @param file
-	 *        the file
+	 *            the file
 	 * @return the i model
 	 * @throws BadStateException
-	 *         If the global path is not specified.
+	 *             If the global path is not specified.
 	 * @returns The loaded model.
 	 */
 	public IModel loadModel(String modelIdentifier) throws BadStateException {
@@ -518,9 +518,9 @@ public class ModelSet extends ResourceSetImpl {
 	 * Import only the specified model. ModelSetSnippets are not called.
 	 *
 	 * @param modelIdentifier
-	 *        the model identifier
+	 *            the model identifier
 	 * @param file
-	 *        the file
+	 *            the file
 	 * @return the i model
 	 * @throws ModelException
 	 * @returns The loaded model.
@@ -539,7 +539,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * file.
 	 *
 	 * @param file
-	 *        The file to load (no matter the extension)
+	 *            The file to load (no matter the extension)
 	 * @deprecated Use the {@link #loadModels(URI)} API, instead.
 	 */
 	@Deprecated
@@ -556,7 +556,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * files.
 	 *
 	 * @param uri
-	 *        The URI to load (no matter the extension)
+	 *            The URI to load (no matter the extension)
 	 */
 	public void loadModels(URI uri) throws ModelMultiException {
 
@@ -567,14 +567,14 @@ public class ModelSet extends ResourceSetImpl {
 		List<IModel> orderedModelsForLoading = getOrderedModelsForLoading();
 
 		// Walk all registered models
-		for(IModel model : orderedModelsForLoading) {
+		for (IModel model : orderedModelsForLoading) {
 			// Try to load each model. Catch exceptions in order to load other
 			// models.
 			try {
 				model.loadModel(uriWithoutExtension);
 			} catch (Exception e) {
 				// Record the exception
-				if(exceptions == null) {
+				if (exceptions == null) {
 
 					exceptions = new ModelMultiException("Problems encountered while loading one of the models.");
 				}
@@ -586,7 +586,7 @@ public class ModelSet extends ResourceSetImpl {
 		snippets.performStart(this);
 
 		// Report exceptions if any
-		if(exceptions != null) {
+		if (exceptions != null) {
 			throw exceptions;
 		}
 	}
@@ -606,11 +606,11 @@ public class ModelSet extends ResourceSetImpl {
 	 * ModelSet Path.
 	 *
 	 * @param modelIdentifiers
-	 *        The model to import from the specified IFile.
+	 *            The model to import from the specified IFile.
 	 * @param file
-	 *        The IFile used to import the model.
+	 *            The IFile used to import the model.
 	 * @throws ModelException
-	 *         If an error occur during import.
+	 *             If an error occur during import.
 	 *
 	 * @deprecated Use the {@link #importModels(ModelIdentifiers, URI)} API, instead
 	 */
@@ -626,22 +626,22 @@ public class ModelSet extends ResourceSetImpl {
 	 * ModelSet Path.
 	 *
 	 * @param modelIdentifiers
-	 *        The model to import from the specified IFile.
+	 *            The model to import from the specified IFile.
 	 * @param file
-	 *        The IFile used to import the model.
+	 *            The IFile used to import the model.
 	 * @throws ModelException
-	 *         If an error occur during import.
+	 *             If an error occur during import.
 	 */
 	public void importModels(ModelIdentifiers modelIdentifiers, URI uri) throws ModelException {
 
 		URI toImport = uri.trimFileExtension();
 		// Walk all registered models
-		for(String modelId : modelIdentifiers) {
+		for (String modelId : modelIdentifiers) {
 			IModel model = getModel(modelId);
 
 			// Load models using the default path
 			model.importModel(toImport);
-			if(uri != null) {
+			if (uri != null) {
 				model.setModelURI(uriWithoutExtension);
 			}
 		}
@@ -653,9 +653,9 @@ public class ModelSet extends ResourceSetImpl {
 	 * be done before a model is loaded.
 	 *
 	 * @param modelIdentifier
-	 *        the model identifier
+	 *            the model identifier
 	 * @param file
-	 *        the file
+	 *            the file
 	 * @throws ModelException
 	 * @returns The loaded model.
 	 *
@@ -673,9 +673,9 @@ public class ModelSet extends ResourceSetImpl {
 	 * be done before a model is loaded.
 	 *
 	 * @param modelIdentifier
-	 *        the model identifier
+	 *            the model identifier
 	 * @param file
-	 *        the file
+	 *            the file
 	 * @throws ModelException
 	 * @returns The loaded model.
 	 */
@@ -706,9 +706,9 @@ public class ModelSet extends ResourceSetImpl {
 	 * Save the resources.
 	 *
 	 * @param monitor
-	 *        The monitor.
+	 *            The monitor.
 	 * @throws IOException
-	 *         IO Error.
+	 *             IO Error.
 	 */
 	public void save(IProgressMonitor monitor) throws IOException {
 
@@ -717,48 +717,48 @@ public class ModelSet extends ResourceSetImpl {
 		monitor.beginTask("Saving resources", modelList.size());
 
 		IReadOnlyHandler2 roHandler = getReadOnlyHandler();
-		if(isTrackingModification() && (roHandler != null)) {
+		if (isTrackingModification() && (roHandler != null)) {
 			Set<URI> roUris = new HashSet<URI>();
-			for(IModel model : modelList) {
+			for (IModel model : modelList) {
 				Set<URI> uris = model.getModifiedURIs();
-				for(URI u : uris) {
-					Optional<Boolean> res = (roHandler.anyReadOnly(ReadOnlyAxis.permissionAxes(), new URI[]{ u }));
-					if(res.isPresent() && res.get()) {
+				for (URI u : uris) {
+					Optional<Boolean> res = (roHandler.anyReadOnly(ReadOnlyAxis.permissionAxes(), new URI[] { u }));
+					if (res.isPresent() && res.get()) {
 						roUris.add(u);
 					}
 				}
 			}
 
-			for(URI u : getResourcesToDeleteOnSave()) {
-				Optional<Boolean> res = roHandler.anyReadOnly(ReadOnlyAxis.permissionAxes(), new URI[]{ u });
-				if(res.isPresent() && res.get()) {
+			for (URI u : getResourcesToDeleteOnSave()) {
+				Optional<Boolean> res = roHandler.anyReadOnly(ReadOnlyAxis.permissionAxes(), new URI[] { u });
+				if (res.isPresent() && res.get()) {
 					roUris.add(u);
 				}
 			}
 
-			if(!roUris.isEmpty()) {
+			if (!roUris.isEmpty()) {
 				Optional<Boolean> authorizeSave = roHandler.makeWritable(ReadOnlyAxis.permissionAxes(), roUris.toArray(new URI[roUris.size()]));
 
-				if(authorizeSave.isPresent() && !authorizeSave.get()) {
+				if (authorizeSave.isPresent() && !authorizeSave.get()) {
 					monitor.done();
-					//FIXME: In Kepler M6, it seems that it is sometimes possible to modify the readOnly StandardL3 profile.
-					//This doesn't have any consequence, but prevents the save action. We'd better not throw an exception here.
-					//throw new IOException("Some modified resources are read-only : the model can't be saved");
+					// FIXME: In Kepler M6, it seems that it is sometimes possible to modify the readOnly StandardL3 profile.
+					// This doesn't have any consequence, but prevents the save action. We'd better not throw an exception here.
+					// throw new IOException("Some modified resources are read-only : the model can't be saved");
 				}
 			}
 		}
 
 		try {
 			// Walk all registered models
-			for(IModel model : modelList) {
+			for (IModel model : modelList) {
 				try {
-					if(!(model instanceof AdditionalResourcesModel)) {
+					if (!(model instanceof AdditionalResourcesModel)) {
 						model.saveModel();
 						monitor.worked(1);
 					}
 				} catch (Exception ex) {
-					//If an exception occurs, we should not prevent other models from being saved.
-					//This would probably make things even worse. Catch and log.
+					// If an exception occurs, we should not prevent other models from being saved.
+					// This would probably make things even worse. Catch and log.
 					Activator.log.error(ex);
 				}
 			}
@@ -768,7 +768,7 @@ public class ModelSet extends ResourceSetImpl {
 				Activator.log.error(ex);
 			}
 
-			//Delete resource back end to delete on save
+			// Delete resource back end to delete on save
 			handleResourcesToDelete();
 		} finally {
 			monitor.done();
@@ -787,11 +787,11 @@ public class ModelSet extends ResourceSetImpl {
 	 */
 	protected void handleResourcesToDelete() {
 		Iterator<URI> uriIterator = getResourcesToDeleteOnSave().iterator();
-		while(uriIterator.hasNext()) {
+		while (uriIterator.hasNext()) {
 			URI uri = uriIterator.next();
 
-			if(validateDeleteResource(uri)) {
-				if(deleteResource(uri)) {
+			if (validateDeleteResource(uri)) {
+				if (deleteResource(uri)) {
 					uriIterator.remove();
 				}
 			}
@@ -802,7 +802,7 @@ public class ModelSet extends ResourceSetImpl {
 		boolean result = true;
 
 		Resource resource = getResource(uri, false);
-		if(resource != null) {
+		if (resource != null) {
 			String warMessage = "The resource " + resource.getURI().lastSegment() + " was about to deleted but was still contained in the resource set. The will not be deleted";
 			Activator.log.warn(warMessage);
 
@@ -823,7 +823,7 @@ public class ModelSet extends ResourceSetImpl {
 
 			// hope it's a file that we can delete from the workspace!
 			IFile file = getFile(uri);
-			if(file != null && file.exists()) {
+			if (file != null && file.exists()) {
 				try {
 					file.delete(true, new NullProgressMonitor());
 					result = true;
@@ -841,38 +841,38 @@ public class ModelSet extends ResourceSetImpl {
 	 * if necessary (and provided) to normalize it.
 	 *
 	 * @param uri
-	 *        a URI
+	 *            a URI
 	 * @param converter
-	 *        an optional URI converter (may be <code>null</code>)
+	 *            an optional URI converter (may be <code>null</code>)
 	 *
 	 * @return the file, if available in the workspace
 	 */
 	protected IFile getFile(URI uri) {
 		IFile result = null;
-		if(uri.isPlatformPlugin()) {
+		if (uri.isPlatformPlugin()) {
 			/* resource with platform plug-in URI could not be in the workspace */
 			return result;
-		} else if(uri.isPlatformResource()) {
+		} else if (uri.isPlatformResource()) {
 			IPath path = new Path(uri.toPlatformString(true));
 			result = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-		} else if(uri.isFile() && !uri.isRelative()) {
+		} else if (uri.isFile() && !uri.isRelative()) {
 			result = ResourcesPlugin.getWorkspace().getRoot().getFileForLocation(new Path(uri.toFileString()));
 		} else {
 			// normalize, to see whether may we can resolve it this time
-			if(uriConverter != null) {
+			if (uriConverter != null) {
 				URI normalized = uriConverter.normalize(uri);
-				if(!uri.equals(normalized)) {
+				if (!uri.equals(normalized)) {
 					// recurse on the new URI
 					result = getFile(normalized);
 				}
 			}
 		}
-		if((result == null) && !uri.isRelative()) {
+		if ((result == null) && !uri.isRelative()) {
 			try {
 				java.net.URI location = new java.net.URI(uri.toString());
-				if(hasRegisteredEFS(location)) {
+				if (hasRegisteredEFS(location)) {
 					IFile[] files = ResourcesPlugin.getWorkspace().getRoot().findFilesForLocationURI(new java.net.URI(uri.toString()));
-					if(files.length > 0) {
+					if (files.length > 0) {
 						// set the result to be the first file found
 						result = files[0];
 					}
@@ -886,7 +886,7 @@ public class ModelSet extends ResourceSetImpl {
 
 	protected boolean hasRegisteredEFS(java.net.URI location) {
 		try {
-			if(EFS.getStore(location) != null) {
+			if (EFS.getStore(location) != null) {
 				return true;
 			}
 		} catch (CoreException ex) {
@@ -900,9 +900,9 @@ public class ModelSet extends ResourceSetImpl {
 	 * name.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @throws IOException
-	 *         Signals that an I/O exception has occurred.
+	 *             Signals that an I/O exception has occurred.
 	 *
 	 * @deprecated Use the {@link #saveAs(URI)} API, instead.
 	 */
@@ -916,19 +916,19 @@ public class ModelSet extends ResourceSetImpl {
 	 * name.
 	 *
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @throws IOException
-	 *         Signals that an I/O exception has occurred.
+	 *             Signals that an I/O exception has occurred.
 	 */
 	public void saveAs(URI uri) throws IOException {
 
-		EcoreUtil.resolveAll(this); //Save will not be consistent if we don't load all related resources first
+		EcoreUtil.resolveAll(this); // Save will not be consistent if we don't load all related resources first
 
 		// Get the file name, without extension.
 		URI newUriWithoutExtension = uri.trimFileExtension();
 
 		// Walk all registered models
-		for(IModel model : models.values()) {
+		for (IModel model : models.values()) {
 			model.setModelURI(newUriWithoutExtension);
 		}
 
@@ -949,15 +949,15 @@ public class ModelSet extends ResourceSetImpl {
 
 		// FIXME RS: handle the unload ordering as indicated in the model extension point
 		// Walk all registered models
-		for(IModel model : models.values()) {
-			if(!(model instanceof AdditionalResourcesModel)) {
+		for (IModel model : models.values()) {
+			if (!(model instanceof AdditionalResourcesModel)) {
 				model.unload();
 			}
 		}
 		additional.unload();
 
 		// Unload remaining resources
-		for(Iterator<Resource> iter = getResources().iterator(); iter.hasNext();) {
+		for (Iterator<Resource> iter = getResources().iterator(); iter.hasNext();) {
 			iter.next().unload();
 			iter.remove();
 		}
@@ -966,33 +966,33 @@ public class ModelSet extends ResourceSetImpl {
 		// want to leak in BasicExtendedMetaData instances attached to static EPackages)
 		// Works around EMF bug 433108
 		EPackage.Registry packageRegistry = getPackageRegistry();
-		if(packageRegistry != null) {
+		if (packageRegistry != null) {
 			packageRegistry.clear();
 		}
 
 		// Dispose Editing Domain
-		if(transactionalEditingDomain != null) {
+		if (transactionalEditingDomain != null) {
 			transactionalEditingDomain.dispose();
 			transactionalEditingDomain = null;
 		}
 		// Detach associated factories
-		if(adapterFactories != null) {
+		if (adapterFactories != null) {
 			adapterFactories.clear();
 		}
 		EList<Adapter> adapters = eAdapters();
-		if(adapters != null) {
+		if (adapters != null) {
 			adapters.clear();
 		}
 	}
 
 	public IReadOnlyHandler2 getReadOnlyHandler() {
-		if(roHandler == null) {
+		if (roHandler == null) {
 			EditingDomain editingDomain = getTransactionalEditingDomain();
 			Object handler = PlatformHelper.getAdapter(editingDomain, IReadOnlyHandler.class);
-			if(handler instanceof IReadOnlyHandler2) {
-				roHandler = (IReadOnlyHandler2)handler;
-			} else if(handler instanceof IReadOnlyHandler) {
-				roHandler = AbstractReadOnlyHandler.adapt((IReadOnlyHandler)handler, editingDomain);
+			if (handler instanceof IReadOnlyHandler2) {
+				roHandler = (IReadOnlyHandler2) handler;
+			} else if (handler instanceof IReadOnlyHandler) {
+				roHandler = AbstractReadOnlyHandler.adapt((IReadOnlyHandler) handler, editingDomain);
 			}
 		}
 		return roHandler;
@@ -1013,7 +1013,7 @@ public class ModelSet extends ResourceSetImpl {
 
 			@Override
 			public void registerModel(IModel model, boolean force) {
-				if(force) {
+				if (force) {
 					doRegisterModel(model);
 				} else {
 					ModelSet.this.registerModel(model);
@@ -1027,7 +1027,7 @@ public class ModelSet extends ResourceSetImpl {
 	 * perform additional operations on the ModelSet.
 	 *
 	 * @param snippet
-	 *        The snippet to add.
+	 *            The snippet to add.
 	 */
 	public void addModelSetSnippet(IModelSetSnippet snippet) {
 		snippets.add(snippet);
@@ -1050,10 +1050,10 @@ public class ModelSet extends ResourceSetImpl {
 		 * Call the start method on all registered snippets.
 		 *
 		 * @param modelsManager
-		 *        The model that is starting
+		 *            The model that is starting
 		 */
 		public void performStart(ModelSet modelsManager) {
-			for(IModelSetSnippet snippet : this) {
+			for (IModelSetSnippet snippet : this) {
 				snippet.start(modelsManager);
 			}
 		}
@@ -1062,10 +1062,10 @@ public class ModelSet extends ResourceSetImpl {
 		 * Call the start method on all registered snippets.
 		 *
 		 * @param modelsManager
-		 *        The model that is stopping
+		 *            The model that is stopping
 		 */
 		public void performDispose(ModelSet modelsManager) {
-			for(IModelSetSnippet snippet : this) {
+			for (IModelSetSnippet snippet : this) {
 				snippet.dispose(modelsManager);
 			}
 
@@ -1081,7 +1081,7 @@ public class ModelSet extends ResourceSetImpl {
 		 * Sets the {@link ModelSet}'s primary resource URI.
 		 *
 		 * @param uri
-		 *        the URI
+		 *            the URI
 		 *
 		 * @see ModelSet#createModels(URI)
 		 * @see ModelSet#saveAs(URI)
@@ -1093,9 +1093,9 @@ public class ModelSet extends ResourceSetImpl {
 		 * implementation of the model is already registered).
 		 *
 		 * @param model
-		 *        a model to register
+		 *            a model to register
 		 * @param force
-		 *        whether to force the registration
+		 *            whether to force the registration
 		 */
 		void registerModel(IModel model, boolean force);
 	}
@@ -1109,15 +1109,15 @@ public class ModelSet extends ResourceSetImpl {
 
 		Map<Object, Object> targetMap = new HashMap<Object, Object>();
 
-		for(IModel model : models.values()) {
-			if(model instanceof IVersionableModel) {
-				IVersionableModel versionable = (IVersionableModel)model;
+		for (IModel model : models.values()) {
+			if (model instanceof IVersionableModel) {
+				IVersionableModel versionable = (IVersionableModel) model;
 				versionable.fillTargetMap(targetPathWithoutExtension, targetMap);
 				versionableModels.add(versionable);
 			}
 		}
 
-		for(IVersionableModel model : versionableModels) {
+		for (IVersionableModel model : versionableModels) {
 			model.saveCopy(targetPathWithoutExtension, targetMap);
 		}
 	}
@@ -1131,8 +1131,8 @@ public class ModelSet extends ResourceSetImpl {
 	}
 
 	public void notifyResourceLoadState(Resource resource, boolean newState) {
-		if(resourceLoadStateListeners != null) {
-			for(IResourceLoadStateListener listener : resourceLoadStateListeners) {
+		if (resourceLoadStateListeners != null) {
+			for (IResourceLoadStateListener listener : resourceLoadStateListeners) {
 				try {
 					listener.notifyLoadStateChanged(resource, newState);
 				} catch (Throwable e) {
@@ -1154,17 +1154,17 @@ public class ModelSet extends ResourceSetImpl {
 		@Override
 		public void notifyChanged(Notification notification) {
 			// if notification = add, add many or remove/remove many resource(s) to list of resources, process..
-			if(RESOURCE_SET__RESOURCES == notification.getFeatureID(ResourceSet.class)) {
-				switch(notification.getEventType()) {
+			if (RESOURCE_SET__RESOURCES == notification.getFeatureID(ResourceSet.class)) {
+				switch (notification.getEventType()) {
 				case Notification.ADD:
 					Object object = notification.getNewValue();
-					if(object instanceof Resource) {
-						resourcesToLoadState.put(((Resource)object), ((Resource)object).isLoaded());
+					if (object instanceof Resource) {
+						resourcesToLoadState.put(((Resource) object), ((Resource) object).isLoaded());
 					}
 					break;
 				case Notification.REMOVE:
 					object = notification.getNewValue();
-					if(object instanceof Resource) {
+					if (object instanceof Resource) {
 						resourcesToLoadState.remove((object));
 					}
 					break;
@@ -1217,8 +1217,8 @@ public class ModelSet extends ResourceSetImpl {
 	 * @return
 	 */
 	public IModel getModelFor(Object element) {
-		for(IModel model : models.values()) {
-			if(model.isModelFor(element)) {
+		for (IModel model : models.values()) {
+			if (model.isModelFor(element)) {
 				return model;
 			}
 		}

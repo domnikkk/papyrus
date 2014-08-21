@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,22 +24,22 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * A class retrieving the icons used in papyrus toolbox
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class ToolbooxImageUtils {
 
 	/**
 	 * Returns an image according to {@link ISharedImages}
-	 * 
+	 *
 	 * @param id
-	 *        , the constant
+	 *            , the constant
 	 * @return
 	 */
 	public static Image getImage(int id) {
 		StringBuffer path = new StringBuffer("/icons/");
-		switch(id) {
+		switch (id) {
 		case ISharedImages.IMG_RUN:
 			path = path.append("run.gif");
 			break;
@@ -48,7 +48,7 @@ public class ToolbooxImageUtils {
 		}
 		String key = Activator.PLUGIN_ID + path;
 		Image result = JFaceResources.getImageRegistry().get(key);
-		if(result == null) {
+		if (result == null) {
 			URL url = Activator.getDefault().getBundle().getEntry(path.toString());
 			try {
 				result = new Image(Display.getDefault(), url.openStream());
@@ -61,9 +61,9 @@ public class ToolbooxImageUtils {
 
 	/**
 	 * Returns an image descriptor according to {@link ISharedImages}
-	 * 
+	 *
 	 * @param id
-	 *        , the constant
+	 *            , the constant
 	 * @return
 	 */
 	public static ImageDescriptor getImageDescriptor(final int id) {

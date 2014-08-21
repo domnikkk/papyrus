@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,46 +26,48 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 
 /**
  * This converter uses the label provider service to display the correct text
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class GenericDisplayConverter implements IDisplayConverter {
 
 	/**
 	 * throw new UnsupportedOperationException();
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.convert.IDisplayConverter#canonicalToDisplayValue(java.lang.Object)
-	 * 
+	 *
 	 * @param canonicalValue
 	 * @return
 	 */
+	@Override
 	public Object canonicalToDisplayValue(Object canonicalValue) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * throw new UnsupportedOperationException();
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.convert.IDisplayConverter#displayToCanonicalValue(java.lang.Object)
-	 * 
+	 *
 	 * @param displayValue
 	 * @return
 	 */
+	@Override
 	public Object displayToCanonicalValue(Object displayValue) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.data.convert.IDisplayConverter#canonicalToDisplayValue(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell,
-	 *      org.eclipse.nebula.widgets.nattable.config.IConfigRegistry, java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.data.convert.IDisplayConverter#canonicalToDisplayValue(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry, java.lang.Object)
+	 *
 	 * @param cell
 	 * @param configRegistry
 	 * @param canonicalValue
 	 * @return
 	 */
+	@Override
 	public Object canonicalToDisplayValue(final ILayerCell cell, final IConfigRegistry configRegistry, final Object canonicalValue) {
 		final LabelProviderService service = configRegistry.getConfigAttribute(NattableConfigAttributes.LABEL_PROVIDER_SERVICE_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.LABEL_PROVIDER_SERVICE_ID);
 		final ILabelProvider labelProvider = service.getLabelProvider(Constants.TABLE_LABEL_PROVIDER_CONTEXT);
@@ -76,17 +78,17 @@ public class GenericDisplayConverter implements IDisplayConverter {
 
 	/**
 	 * throw new UnsupportedOperationException();
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.data.convert.IDisplayConverter#displayToCanonicalValue(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell,
-	 *      org.eclipse.nebula.widgets.nattable.config.IConfigRegistry, java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.data.convert.IDisplayConverter#displayToCanonicalValue(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry, java.lang.Object)
+	 *
 	 * @param cell
 	 * @param configRegistry
 	 * @param displayValue
 	 * @return
 	 */
+	@Override
 	public Object displayToCanonicalValue(ILayerCell cell, IConfigRegistry configRegistry, Object displayValue) {
-		//		throw new UnsupportedOperationException();
+		// throw new UnsupportedOperationException();
 		return displayValue;
 	}
 

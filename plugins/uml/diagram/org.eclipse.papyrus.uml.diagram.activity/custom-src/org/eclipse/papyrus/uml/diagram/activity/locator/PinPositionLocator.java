@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.CallOperationAction;
 
 /**
  * This class is used to constrain the position of Pin
- * 
+ *
  * TODO : The pin is not re-sizable
  */
 public class PinPositionLocator extends AdvancedBorderItemLocator {
@@ -88,22 +88,23 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * The preferred side takes precedence.
-	 * 
+	 *
 	 * @param suggestedLocation
 	 * @param suggestedSide
 	 * @param circuitCount
-	 *        recursion count to avoid an infinite loop
+	 *            recursion count to avoid an infinite loop
 	 * @return point
 	 */
+	@Override
 	protected Point locateOnBorder(Point suggestedLocation, int suggestedSide, int circuitCount, IFigure borderItem) {
 		Point suggestedCenter = borderItem.getBounds().getCopy().setLocation(suggestedLocation).getCenter();
 		suggestedSide = redefineSuggestedSide(suggestedCenter, suggestedSide);
-		if(isInSendSignalAction()) {
+		if (isInSendSignalAction()) {
 			// prevent a pin too far EAST that would be on the convex sides of
 			// the pentagon
-			if(suggestedSide == PositionConstants.SOUTH || suggestedSide == PositionConstants.NORTH) {
+			if (suggestedSide == PositionConstants.SOUTH || suggestedSide == PositionConstants.NORTH) {
 				int maxLocation = getParentBorder().x + getParentBorder().width * SEND_SIGNAL_ACTION_MAX_X / SEND_SIGNAL_ACTION_WIDTH - getSize(borderItem).width;
-				if(suggestedLocation.x > maxLocation) {
+				if (suggestedLocation.x > maxLocation) {
 					suggestedLocation.x = maxLocation;
 				}
 			}
@@ -115,15 +116,16 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 	/**
 	 * Ensure the suggested location actually lies on the parent boundary. The
 	 * side takes precedence.
-	 * 
+	 *
 	 * @param suggestedLocation
-	 *        suggested location
+	 *            suggested location
 	 * @param suggestedSide
-	 *        suggested side
+	 *            suggested side
 	 * @param borderItem
-	 *        the item figure
+	 *            the item figure
 	 * @return point
 	 */
+	@Override
 	protected Point locateOnParent(Point suggestedLocation, int suggestedSide, IFigure borderItem) {
 		Rectangle bounds = getParentBorder();
 		int parentFigureWidth = bounds.width;
@@ -136,53 +138,53 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 		int westX = parentFigureX - borderItemSize.width + getBorderItemOffset().width;
 		int eastX = parentFigureX + parentFigureWidth - getBorderItemOffset().width;
 		int maxX = 0;
-		if(isInSendSignalAction()) {
+		if (isInSendSignalAction()) {
 			// prevent a pin too far EAST that would be on the convex sides of
 			// the pentagon
-			if(suggestedSide == PositionConstants.SOUTH || suggestedSide == PositionConstants.NORTH) {
+			if (suggestedSide == PositionConstants.SOUTH || suggestedSide == PositionConstants.NORTH) {
 				maxX = parentFigureX + parentFigureWidth * SEND_SIGNAL_ACTION_MAX_X / SEND_SIGNAL_ACTION_WIDTH - getBorderItemOffset().width;
 			}
 		}
 		int southY = parentFigureY + parentFigureHeight - getBorderItemOffset().height;
 		int northY = parentFigureY - borderItemSize.height + getBorderItemOffset().height;
-		if(suggestedSide == PositionConstants.WEST) {
-			if(suggestedLocation.x != westX) {
+		if (suggestedSide == PositionConstants.WEST) {
+			if (suggestedLocation.x != westX) {
 				newX = westX;
 			}
-			if(suggestedLocation.y < bounds.getTopLeft().y) {
+			if (suggestedLocation.y < bounds.getTopLeft().y) {
 				newY = northY + borderItemSize.height;
-			} else if(suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
+			} else if (suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
 				newY = southY - borderItemSize.height;
 			}
-		} else if(suggestedSide == PositionConstants.EAST) {
-			if(suggestedLocation.x != eastX) {
+		} else if (suggestedSide == PositionConstants.EAST) {
+			if (suggestedLocation.x != eastX) {
 				newX = eastX;
 			}
-			if(suggestedLocation.y < bounds.getTopLeft().y) {
+			if (suggestedLocation.y < bounds.getTopLeft().y) {
 				newY = northY + borderItemSize.height;
-			} else if(suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
+			} else if (suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
 				newY = southY - borderItemSize.height;
 			}
-		} else if(suggestedSide == PositionConstants.SOUTH) {
-			if(suggestedLocation.y != southY) {
+		} else if (suggestedSide == PositionConstants.SOUTH) {
+			if (suggestedLocation.y != southY) {
 				newY = southY;
 			}
-			if(suggestedLocation.x < bounds.getBottomLeft().x) {
+			if (suggestedLocation.x < bounds.getBottomLeft().x) {
 				newX = westX + borderItemSize.width;
-			} else if(suggestedLocation.x > bounds.getBottomRight().x - borderItemSize.width) {
+			} else if (suggestedLocation.x > bounds.getBottomRight().x - borderItemSize.width) {
 				newX = eastX - borderItemSize.width;
 			}
 		} else { // NORTH
-			if(suggestedLocation.y != northY) {
+			if (suggestedLocation.y != northY) {
 				newY = northY;
 			}
-			if(suggestedLocation.x < bounds.getBottomLeft().x) {
+			if (suggestedLocation.x < bounds.getBottomLeft().x) {
 				newX = westX + borderItemSize.width;
-			} else if(suggestedLocation.x > bounds.getBottomRight().x - borderItemSize.width) {
+			} else if (suggestedLocation.x > bounds.getBottomRight().x - borderItemSize.width) {
 				newX = eastX - borderItemSize.width;
 			}
 		}
-		if(maxX > 0 && newX > maxX) {
+		if (maxX > 0 && newX > maxX) {
 			newX = maxX;
 		}
 		return new Point(newX, newY);
@@ -191,38 +193,38 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 	/**
 	 * Recomputes the suggested side by eliminating unauthorized sides depending
 	 * on the action type
-	 * 
+	 *
 	 * @param childCenter
-	 *        suggested location center
+	 *            suggested location center
 	 * @param suggestedSide
-	 *        suggested side
+	 *            suggested side
 	 * @return correct side
 	 */
 	private int redefineSuggestedSide(Point childCenter, int suggestedSide) {
-		if(isInSendSignalAction()) {
+		if (isInSendSignalAction()) {
 			// EAST side is not authorized
-			if(suggestedSide == PositionConstants.EAST) {
+			if (suggestedSide == PositionConstants.EAST) {
 				Point parentCenter = getParentBorder().getCenter();
-				if(childCenter.y < parentCenter.y) {
+				if (childCenter.y < parentCenter.y) {
 					suggestedSide = PositionConstants.NORTH;
 				} else {
 					suggestedSide = PositionConstants.SOUTH;
 				}
 			}
-		} else if(isInAcceptEventAction()) {
+		} else if (isInAcceptEventAction()) {
 			// WEST side is not authorized
-			if(suggestedSide == PositionConstants.WEST) {
+			if (suggestedSide == PositionConstants.WEST) {
 				Point parentCenter = getParentBorder().getCenter();
-				if(childCenter.y < parentCenter.y) {
+				if (childCenter.y < parentCenter.y) {
 					suggestedSide = PositionConstants.NORTH;
 				} else {
 					suggestedSide = PositionConstants.SOUTH;
 				}
 			}
 			// EAST side is not authorized for AcceptTimeEventAction
-			if(suggestedSide == PositionConstants.EAST && isInAcceptTimeEventAction()) {
+			if (suggestedSide == PositionConstants.EAST && isInAcceptTimeEventAction()) {
 				Point parentCenter = getParentBorder().getCenter();
-				if(childCenter.y < parentCenter.y) {
+				if (childCenter.y < parentCenter.y) {
 					suggestedSide = PositionConstants.NORTH;
 				} else {
 					suggestedSide = PositionConstants.SOUTH;
@@ -234,7 +236,7 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Find the closest side when x,y is inside parent.
-	 * 
+	 *
 	 * @param proposedLocation
 	 * @param parentBorder
 	 * @return draw constant
@@ -247,13 +249,13 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Know whether containing action is a SendSignalAction
-	 * 
+	 *
 	 * @return true is containing action is a SendSignalAction
 	 */
 	private boolean isInSendSignalAction() {
 		IFigure parentFigure = getParentFigure();
-		for(Object child : parentFigure.getChildren()) {
-			if(child instanceof PapyrusSendNodeFigure) {
+		for (Object child : parentFigure.getChildren()) {
+			if (child instanceof PapyrusSendNodeFigure) {
 				return true;
 			}
 		}
@@ -262,14 +264,14 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Know whether containing action is an AcceptEventAction
-	 * 
+	 *
 	 * @return true is containing action is an AcceptEventAction
 	 */
 	private boolean isInAcceptEventAction() {
 		IFigure parentFigure = getParentFigure();
-		for(Object child : parentFigure.getChildren()) {
-			if(child instanceof AcceptEventActionFigure) {
-				((AcceptEventActionFigure)child).isTemplateForAcceptTimeEventActionUsed();
+		for (Object child : parentFigure.getChildren()) {
+			if (child instanceof AcceptEventActionFigure) {
+				((AcceptEventActionFigure) child).isTemplateForAcceptTimeEventActionUsed();
 				return true;
 			}
 		}
@@ -278,15 +280,15 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Know whether containing action is an AcceptTimeEventAction
-	 * 
+	 *
 	 * @return true is containing action is an AcceptEventAction with
 	 *         AcceptTimeEventAction representation
 	 */
 	private boolean isInAcceptTimeEventAction() {
 		IFigure parentFigure = getParentFigure();
-		for(Object child : parentFigure.getChildren()) {
-			if(child instanceof AcceptEventActionFigure) {
-				return ((AcceptEventActionFigure)child).isTemplateForAcceptTimeEventActionUsed();
+		for (Object child : parentFigure.getChildren()) {
+			if (child instanceof AcceptEventActionFigure) {
+				return ((AcceptEventActionFigure) child).isTemplateForAcceptTimeEventActionUsed();
 			}
 		}
 		return false;
@@ -294,9 +296,9 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Re-arrange the location of the border item, and also the contained arrow.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator#relocate(org.eclipse.draw2d.IFigure)
-	 * 
+	 *
 	 * @param borderItem
 	 */
 	@Override
@@ -304,7 +306,7 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 		// reset bounds of borderItem
 		Dimension size = getSize(borderItem);
 		Rectangle rectSuggested = getConstraint().getCopy();
-		if(rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
+		if (rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
 			rectSuggested.setLocation(getPreferredLocation(borderItem));
 		} else {
 			// recovered constraint must be translated with the parent location
@@ -319,9 +321,9 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 		setCurrentSideOfParent(findClosestAuthorizedSideOfParent(borderItem.getBounds(), getParentBorder()));
 		// refresh the arrow depending on the Pin type and the side on which it
 		// is located
-		for(Object subfigure : borderItem.getChildren()) {
-			if(subfigure instanceof IFigure) {
-				for(Object child : ((IFigure)subfigure).getChildren()) {
+		for (Object subfigure : borderItem.getChildren()) {
+			if (subfigure instanceof IFigure) {
+				for (Object child : ((IFigure) subfigure).getChildren()) {
 					refreshPinDescriptorArrow(child, MapModeUtil.getMapMode(borderItem), size);
 				}
 			}
@@ -330,47 +332,47 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Refresh the arrow in case child is a Pin Descriptor
-	 * 
+	 *
 	 * @param child
-	 *        the Pin Descriptor (no effect otherwise)
+	 *            the Pin Descriptor (no effect otherwise)
 	 * @param mapMode
-	 *        the IMapMode
+	 *            the IMapMode
 	 * @param size
-	 *        the size of the border item
+	 *            the size of the border item
 	 */
 	private void refreshPinDescriptorArrow(Object child, IMapMode mapMode, Dimension size) {
 		boolean arrowIn = false;
 		AbstractPointListShape arrow = null;
-		if(child instanceof PinFigure) {
+		if (child instanceof PinFigure) {
 			arrowIn = true;
-			arrow = ((PinFigure)child).getOptionalArrowFigure();
+			arrow = ((PinFigure) child).getOptionalArrowFigure();
 		}
-		
-		if(child instanceof OutputPinFigure) {
+
+		if (child instanceof OutputPinFigure) {
 			arrowIn = false;
-			arrow = ((PinFigure)child).getOptionalArrowFigure();
+			arrow = ((PinFigure) child).getOptionalArrowFigure();
 		}
-		
-		if(arrow != null && arrow.getPoints().size() > 0) {
+
+		if (arrow != null && arrow.getPoints().size() > 0) {
 			int arrowDirection;
 			int side = getCurrentSideOfParent();
-			switch(side) {
+			switch (side) {
 			case PositionConstants.NORTH:
-				if(arrowIn) {
+				if (arrowIn) {
 					arrowDirection = PositionConstants.SOUTH;
 				} else {
 					arrowDirection = PositionConstants.NORTH;
 				}
 				break;
 			case PositionConstants.EAST:
-				if(arrowIn) {
+				if (arrowIn) {
 					arrowDirection = PositionConstants.WEST;
 				} else {
 					arrowDirection = PositionConstants.EAST;
 				}
 				break;
 			case PositionConstants.SOUTH:
-				if(arrowIn) {
+				if (arrowIn) {
 					arrowDirection = PositionConstants.NORTH;
 				} else {
 					arrowDirection = PositionConstants.SOUTH;
@@ -378,7 +380,7 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 				break;
 			case PositionConstants.WEST:
 			default:
-				if(arrowIn) {
+				if (arrowIn) {
 					arrowDirection = PositionConstants.EAST;
 				} else {
 					arrowDirection = PositionConstants.WEST;
@@ -391,12 +393,13 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 	/**
 	 * Get an initial location based on the side. ( appropriate extremity of the
 	 * side )
-	 * 
+	 *
 	 * @param side
-	 *        the preferred side of the parent figure on which to place this
-	 *        border item as defined in {@link PositionConstants}
+	 *            the preferred side of the parent figure on which to place this
+	 *            border item as defined in {@link PositionConstants}
 	 * @return point
 	 */
+	@Override
 	protected Point getPreferredLocation(int side, IFigure borderItem) {
 		Rectangle bounds = getParentBorder();
 		int parentFigureWidth = bounds.width;
@@ -406,7 +409,7 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 		int x = parentFigureX;
 		int y = parentFigureY;
 		Dimension borderItemSize = getSize(borderItem);
-		switch(side) {
+		switch (side) {
 		case PositionConstants.NORTH:
 			x += EXTRA_BORDER_DEFAULT_OFFSET + getBorderItemOffset().width;
 			y += -borderItemSize.height + getBorderItemOffset().height;
@@ -430,27 +433,27 @@ public class PinPositionLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Adapt the bounds constraint to fit to the action's contained pins
-	 * 
+	 *
 	 * @param boundsConstraint
-	 *        the constraint to adapt
+	 *            the constraint to adapt
 	 * @param domainElement
-	 *        the model action
+	 *            the model action
 	 * @return
 	 * @return boundsConstraint for convenience
-	 * 
+	 *
 	 */
 	public static Bounds adaptActionHeight(Bounds boundsConstraint, EObject domainElement) {
-		if(domainElement instanceof Action) {
+		if (domainElement instanceof Action) {
 			int pinsOnHeight = 0;
-			int numberOfInputs = ((Action)domainElement).getInputs().size();
-			int numberOfOutputs = ((Action)domainElement).getOutputs().size();
-			if(domainElement instanceof CallOperationAction) {
+			int numberOfInputs = ((Action) domainElement).getInputs().size();
+			int numberOfOutputs = ((Action) domainElement).getOutputs().size();
+			if (domainElement instanceof CallOperationAction) {
 				// target is located on top
 				pinsOnHeight = Math.max(numberOfInputs - 1, numberOfOutputs);
 			} else {
 				pinsOnHeight = Math.max(numberOfInputs, numberOfOutputs);
 			}
-			if(pinsOnHeight > 0) {
+			if (pinsOnHeight > 0) {
 				// each pin is 16 px height, consider extra px for margins
 				int heightInPx = 2 * EXTRA_BORDER_DEFAULT_OFFSET + pinsOnHeight * (DEFAULT_PIN_SIZE + 8) - 8;
 				boundsConstraint.setHeight(heightInPx);

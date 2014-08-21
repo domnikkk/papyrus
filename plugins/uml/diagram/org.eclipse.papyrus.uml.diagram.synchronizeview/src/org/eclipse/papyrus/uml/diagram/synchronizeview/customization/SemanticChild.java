@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class SemanticChild {
 
 
 	/**
-	 * 
+	 *
 	 * @return the referenced edipart, cannot but null.
 	 */
 	public Class<? extends EditPart> getEditPart() {
@@ -37,7 +37,7 @@ public class SemanticChild {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return an instance of ISynchroSemanticChild, cannot be null
 	 */
 	public ISynchroSemanticChild getSynchroSemanticChild() {
@@ -46,7 +46,7 @@ public class SemanticChild {
 
 	/**
 	 * get the priority for this mapping
-	 * 
+	 *
 	 * @return
 	 */
 	public int getPriority() {
@@ -54,15 +54,15 @@ public class SemanticChild {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param editPart
-	 *        the editpart
+	 *            the editpart
 	 * @param synchroSemanticChild
-	 *        the class that explain the list of semantic element that play graphical childreen.
+	 *            the class that explain the list of semantic element that play graphical childreen.
 	 * @param priority
-	 *        the priority of this mapping
+	 *            the priority of this mapping
 	 */
 	public SemanticChild(Class<? extends EditPart> editPart, ISynchroSemanticChild synchroSemanticChild, int priority) {
 		super();

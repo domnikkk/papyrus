@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.w3c.dom.css.CSSRuleList;
 
 /**
  * More usable implementation for CSSRuleList
- * 
+ *
  * @author Camille Letavernier
  */
 public class ExtendedCSSRuleList extends LinkedList<CSSRule> implements CSSRuleList {
@@ -35,12 +35,12 @@ public class ExtendedCSSRuleList extends LinkedList<CSSRule> implements CSSRuleL
 
 	/**
 	 * Builds an ExtendedCSSRuleList by making a copy of a CSSRuleList
-	 * 
+	 *
 	 * @param listToCopy
-	 *        The CSSRuleList to copy
+	 *            The CSSRuleList to copy
 	 */
 	public ExtendedCSSRuleList(CSSRuleList listToCopy) {
-		for(int i = 0; i < listToCopy.getLength(); i++) {
+		for (int i = 0; i < listToCopy.getLength(); i++) {
 			add(listToCopy.item(i));
 		}
 	}
@@ -48,18 +48,20 @@ public class ExtendedCSSRuleList extends LinkedList<CSSRule> implements CSSRuleL
 	/**
 	 * Builds an ExtendedCSSRuleList by making a copy of a Collection of
 	 * CSSRules
-	 * 
+	 *
 	 * @param listToCopy
-	 *        The list of CSSRule to copy
+	 *            The list of CSSRule to copy
 	 */
 	public ExtendedCSSRuleList(Collection<? extends CSSRule> listToCopy) {
 		super(listToCopy);
 	}
 
+	@Override
 	public int getLength() {
 		return size();
 	}
 
+	@Override
 	public CSSRule item(int index) {
 		return get(index);
 	}

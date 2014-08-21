@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ import org.eclipse.ui.views.properties.PropertySheetPage;
 
 /**
  * This is an example of a EMF UML model editor. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEditor implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
@@ -56,9 +56,9 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 	protected CommandStackListener commandStackListener;
 
 	/**
-	 * 
+	 *
 	 * Constructor. Create an DiEditor using the {@link ServicesRegistry}.
-	 * 
+	 *
 	 * @param servicesRegistry
 	 */
 	public UMLEditor(ServicesRegistry servicesRegistry) throws ServiceException, BackboneException {
@@ -68,7 +68,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 
 	/**
 	 * Init the editor from the specified context.
-	 * 
+	 *
 	 * @param editorContext
 	 * @throws ServiceException
 	 */
@@ -84,7 +84,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 		commandStackListener = new CommandStackListener() {
 
 			public void commandStackChanged(final EventObject event) {
-				if(getContainer().isDisposed()) {
+				if (getContainer().isDisposed()) {
 					return;
 				}
 				getContainer().getDisplay().asyncExec(new Runnable() {
@@ -94,19 +94,19 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 
 						// Try to select the affected objects.
 						//
-						Command mostRecentCommand = ((CommandStack)event.getSource()).getMostRecentCommand();
-						if(mostRecentCommand != null) {
+						Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+						if (mostRecentCommand != null) {
 							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 						}
-						
+
 						for (Iterator<PropertySheetPage> i = propertySheetPages
-							.iterator(); i.hasNext();) {
+								.iterator(); i.hasNext();) {
 
 							PropertySheetPage propertySheetPage = i.next();
 
 							if ((propertySheetPage.getControl() == null)
-								|| propertySheetPage.getControl().isDisposed()) {
-								
+									|| propertySheetPage.getControl().isDisposed()) {
+
 								i.remove();
 							} else {
 								propertySheetPage.refresh();
@@ -137,7 +137,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 	 * This is the method called to load a resource into the editing domain's resource set based on
 	 * the editor's input. Put the existing model into the editingDomain. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 	/**
 	 * This is for implementing {@link IEditorPart} and simply saves the model file. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -157,7 +157,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 
 	/**
 	 * This also changes the editor's input. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -166,7 +166,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -181,7 +181,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -196,7 +196,7 @@ public class UMLEditor extends org.eclipse.uml2.uml.editor.presentation.UMLEdito
 
 	@Override
 	public void dispose() {
-		//super.dispose(); //FIXME: Fails on a ClassCastException: The ActionBarContributor is not accessible
+		// super.dispose(); //FIXME: Fails on a ClassCastException: The ActionBarContributor is not accessible
 		try {
 			TransactionalEditingDomain papyrusEditingDomain = servicesRegistry.getService(TransactionalEditingDomain.class);
 			CommandStack commandStack = papyrusEditingDomain.getCommandStack();

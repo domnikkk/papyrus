@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,9 +54,9 @@ public abstract class AbstractShortCutDiagramEditPart extends NodeEditPart imple
 	 * Return the EditorRegistry for nested editor descriptors. Subclass should
 	 * implements this method in order to return the registry associated to the
 	 * extension point namespace.
-	 * 
+	 *
 	 * @return the EditorRegistry for nested editor descriptors
-	 * 
+	 *
 	 */
 	protected IPageIconsRegistry createEditorRegistry() {
 		try {
@@ -87,9 +87,9 @@ public abstract class AbstractShortCutDiagramEditPart extends NodeEditPart imple
 	 * Get the EditorRegistry used to create editor instances. This default
 	 * implementation return the singleton eINSTANCE. This method can be
 	 * subclassed to return another registry.
-	 * 
+	 *
 	 * @return the singleton eINSTANCE of editor registry
-	 * 
+	 *
 	 */
 	protected IPageIconsRegistry getEditorRegistry() {
 		if (editorRegistry == null) {
@@ -100,13 +100,14 @@ public abstract class AbstractShortCutDiagramEditPart extends NodeEditPart imple
 
 	/**
 	 * get the figure
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public abstract DiagramNodeFigure getPrimaryShape();
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -123,7 +124,7 @@ public abstract class AbstractShortCutDiagramEditPart extends NodeEditPart imple
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -155,14 +156,17 @@ public abstract class AbstractShortCutDiagramEditPart extends NodeEditPart imple
 		resourceToListen.eAdapters().remove(this);
 	}
 
+	@Override
 	public void setTarget(Notifier target) {
 		this.target = target;
 	}
 
+	@Override
 	public Notifier getTarget() {
 		return target;
 	}
 
+	@Override
 	public boolean isAdapterForType(Object type) {
 		return (getModel().getClass() == type);
 	}

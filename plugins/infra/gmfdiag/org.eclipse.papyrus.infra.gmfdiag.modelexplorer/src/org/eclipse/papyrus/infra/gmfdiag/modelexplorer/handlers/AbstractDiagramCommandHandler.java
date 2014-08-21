@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.ui.PlatformUI;
 public abstract class AbstractDiagramCommandHandler extends AbstractCommandHandler {
 	/**
 	 * Returns the list of selected diagrams
-	 * 
+	 *
 	 * @return
 	 *         the list of selected diagrams
 	 */
@@ -38,13 +38,13 @@ public abstract class AbstractDiagramCommandHandler extends AbstractCommandHandl
 		ISelection selection = null;
 		// Get current selection
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow!=null){
+		if (activeWorkbenchWindow != null) {
 			selection = activeWorkbenchWindow.getSelectionService().getSelection();
 			// Get first element if the selection is an IStructuredSelection
-			if(selection instanceof IStructuredSelection) {
-				IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+			if (selection instanceof IStructuredSelection) {
+				IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 				Iterator<?> iter = structuredSelection.iterator();
-				while(iter.hasNext()) {
+				while (iter.hasNext()) {
 					Object current = iter.next();
 					/**
 					 * Get the diagram object.
@@ -52,11 +52,11 @@ public abstract class AbstractDiagramCommandHandler extends AbstractCommandHandl
 					 * For example for Facet Elements
 					 */
 					EObject diag = EMFHelper.getEObject(current);
-					if(diag instanceof Diagram) {
-						diagrams.add((Diagram)diag);
+					if (diag instanceof Diagram) {
+						diagrams.add((Diagram) diag);
 					}
 				}
-			}			
+			}
 		}
 		return diagrams;
 	}

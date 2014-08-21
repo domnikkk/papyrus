@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.requests.ChangeBoundsRequest;
 
 /**
- * 
+ *
  * This class provides methods to represent an EditPart.
- * 
+ *
  */
 public class EditPartRepresentation {
 
@@ -37,9 +37,9 @@ public class EditPartRepresentation {
 	private Dimension delta = new Dimension(0, 0);
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param ep
 	 */
 	public EditPartRepresentation(EditPart ep) {
@@ -48,7 +48,7 @@ public class EditPartRepresentation {
 
 	/**
 	 * Getter for {@link #representedEditPart}
-	 * 
+	 *
 	 * @return {@link #representedEditPart}
 	 */
 	public EditPart getRepresentedEditPart() {
@@ -57,8 +57,8 @@ public class EditPartRepresentation {
 
 	/**
 	 * Returns the position of the {@link EditPart} before its shift
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the position of the {@link EditPart} before its shift
 	 */
 	public PrecisionRectangle getPosition() {
@@ -66,13 +66,13 @@ public class EditPartRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * Returns the command for this {@link EditPart}
-	 * 
+	 *
 	 * @return the command for this {@link EditPart}
 	 */
 	public Command getCommand() {
-		if(request != null) {
+		if (request != null) {
 			return representedEditPart.getCommand(request);
 		}
 
@@ -81,9 +81,9 @@ public class EditPartRepresentation {
 
 	/**
 	 * Setter for {@link #request}
-	 * 
+	 *
 	 * @param req
-	 *        the request
+	 *            the request
 	 */
 	public void setRequest(ChangeBoundsRequest req) {
 		this.request = req;
@@ -92,9 +92,9 @@ public class EditPartRepresentation {
 
 	/**
 	 * Setter for {@link #delta}
-	 * 
+	 *
 	 * @param delta
-	 *        the delta between initial position and new position
+	 *            the delta between initial position and new position
 	 */
 	public void setMoveDelta(Dimension delta) {
 		this.delta = delta;
@@ -102,7 +102,7 @@ public class EditPartRepresentation {
 
 	/**
 	 * Getter for {@link EditPartRepresentation#delta}
-	 * 
+	 *
 	 * @return {@link #delta}
 	 */
 	public Dimension getMoveDelta() {

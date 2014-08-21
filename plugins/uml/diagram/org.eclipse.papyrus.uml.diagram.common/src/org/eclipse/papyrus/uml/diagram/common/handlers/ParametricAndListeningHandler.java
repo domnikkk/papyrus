@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,18 +55,18 @@ public abstract class ParametricAndListeningHandler extends GraphicalCommandHand
 	protected ISelectionListener listener = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ParametricAndListeningHandler() {
 		this.thisHandler = this;
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ParametricAndListeningHandler(String parameterID) {
 		this.thisHandler = this;
@@ -75,9 +75,9 @@ public abstract class ParametricAndListeningHandler extends GraphicalCommandHand
 
 	/**
 	 * This method add a listener on the selection service and return a command
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return {@link UnexecutableCommand}
 	 * @throws ExecutionException
 	 */
@@ -93,17 +93,18 @@ public abstract class ParametricAndListeningHandler extends GraphicalCommandHand
 	 */
 	protected void addSelectionListener() {
 		// when we are in the Menu, we need to refresh
-		if(serv == null) {// should be always!=null after the first call to
+		if (serv == null) {// should be always!=null after the first call to
 							// getCommand()
 			IWorkbench workbench = PlatformUI.getWorkbench();
 
-			if(workbench != null) {
+			if (workbench != null) {
 				IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-				if(workbenchWindow != null) {
+				if (workbenchWindow != null) {
 					this.serv = workbenchWindow.getSelectionService();
-					if(this.serv != null) {
+					if (this.serv != null) {
 						this.listener = new ISelectionListener() {
 
+							@Override
 							public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 								refreshMenu();
 							}
@@ -125,29 +126,29 @@ public abstract class ParametricAndListeningHandler extends GraphicalCommandHand
 
 	/**
 	 * Initialize the field {@link #parameter}
-	 * 
-	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
+	 *
 	 * @param config
 	 * @param propertyName
 	 * @param data
 	 * @throws CoreException
 	 */
+	@Override
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
-		if(data instanceof Hashtable && this.parametedID != null) {
-			this.parameter = (String)((Hashtable)data).get(this.parametedID);
+		if (data instanceof Hashtable && this.parametedID != null) {
+			this.parameter = (String) ((Hashtable) data).get(this.parametedID);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
-		if(this.serv != null && this.listener != null) {
+		if (this.serv != null && this.listener != null) {
 			this.serv.removeSelectionListener(listener);
 		}
 	}

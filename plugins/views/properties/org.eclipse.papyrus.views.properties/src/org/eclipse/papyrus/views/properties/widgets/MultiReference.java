@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A PropertyEditor for editing multiple references in a List
- * 
+ *
  * @see org.eclipse.papyrus.widgets.editors.BooleanCheckbox
- * 
+ *
  * @author Camille Letavernier
  */
 public class MultiReference extends AbstractPropertyEditor {
@@ -39,11 +39,11 @@ public class MultiReference extends AbstractPropertyEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 */
 	public MultiReference(Composite parent, int style) {
 		editor = createMultipleReferenceEditor(parent, style);
@@ -52,11 +52,11 @@ public class MultiReference extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the reference editor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return The reference editor
 	 */
 	protected MultipleReferenceEditor createMultipleReferenceEditor(Composite parent, int style) {
@@ -68,14 +68,14 @@ public class MultiReference extends AbstractPropertyEditor {
 		IStaticContentProvider contentProvider = input.getContentProvider(propertyPath);
 		ILabelProvider labelProvider = input.getLabelProvider(propertyPath);
 
-		if(getInputObservableList() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableList());
+		if (getInputObservableList() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableList());
 		}
 
 		editor.setProviders(contentProvider, labelProvider);
 		editor.setOrdered(input.isOrdered(propertyPath));
 		editor.setUnique(input.isUnique(propertyPath));
-		if(factory == null) {
+		if (factory == null) {
 			editor.setFactory(input.getValueFactory(propertyPath));
 		} else {
 			editor.setFactory(factory);
@@ -88,7 +88,7 @@ public class MultiReference extends AbstractPropertyEditor {
 	/**
 	 * Sets the {@link ReferenceValueFactory} for this Editor. The factory
 	 * allows creation and direct edition of objects.
-	 * 
+	 *
 	 * @param factory
 	 */
 	public void setFactory(ReferenceValueFactory factory) {

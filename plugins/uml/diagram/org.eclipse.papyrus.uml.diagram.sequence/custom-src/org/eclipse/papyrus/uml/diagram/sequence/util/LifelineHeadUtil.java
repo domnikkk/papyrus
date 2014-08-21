@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.ToolbarLayout;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -35,6 +36,7 @@ import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeNodeEditPart;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.BaseSlidableAnchor;
 import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
 import org.eclipse.gmf.runtime.notation.Anchor;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -67,26 +69,26 @@ import org.eclipse.uml2.uml.Lifeline;
 public class LifelineHeadUtil {
 
 	public static int computeLifelineVerticalPosition(final EditPart parent) {
-		if(parent instanceof GraphicalEditPart) {
+		if (parent instanceof GraphicalEditPart) {
 			List children = parent.getChildren();
 			int bottom = -1;
-			for(Object object : children) {
-				if(!(object instanceof LifelineEditPart)) {
+			for (Object object : children) {
+				if (!(object instanceof LifelineEditPart)) {
 					continue;
 				}
-				LifelineEditPart lifeline = (LifelineEditPart)object;
+				LifelineEditPart lifeline = (LifelineEditPart) object;
 				LifelineFigure primaryShape = lifeline.getPrimaryShape();
 				RectangleFigure figure = primaryShape.getFigureLifelineNameContainerFigure();
 				Rectangle r = figure.getBounds().getCopy();
-				if(!r.isEmpty()) {
+				if (!r.isEmpty()) {
 					bottom = Math.max(bottom, r.bottom());
 				}
 			}
-			if(bottom != -1) {
+			if (bottom != -1) {
 				RectangleFigure figure = new RectangleFigure();
 				figure.setBorder(new MarginBorder(7));
 				ToolbarLayout layout = new ToolbarLayout();
-				layout.setMinorAlignment(ToolbarLayout.ALIGN_CENTER);
+				layout.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
 				Label label = new Label("Lifeline");
 				label.setFont(Display.getDefault().getSystemFont());
 				figure.add(label);
@@ -99,53 +101,53 @@ public class LifelineHeadUtil {
 	}
 
 	public static void updateHead(LifelineEditPart lifeline, int resized) {
-		if(lifeline == null || resized == 0) {
+		if (lifeline == null || resized == 0) {
 			return;
 		}
 		List<LifelineEditPart> toMovedLifelines = new ArrayList<LifelineEditPart>();
 		collectLifelines(toMovedLifelines, lifeline);
 		List<ShapeNodeEditPart> children = LifelineEditPartUtil.getChildShapeNodeEditPart(lifeline);
-		for(ShapeNodeEditPart child : children) {
+		for (ShapeNodeEditPart child : children) {
 			collectLifelines(toMovedLifelines, child);
 		}
 		EditPart parent = lifeline.getParent();
-		while(parent instanceof LifelineEditPart) {
+		while (parent instanceof LifelineEditPart) {
 			parent = parent.getParent();
 		}
 		List childrenList = parent.getChildren();
-		for(Object object : childrenList) {
-			if(toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
+		for (Object object : childrenList) {
+			if (toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
 				continue;
 			}
-			toMovedLifelines.add((LifelineEditPart)object);
+			toMovedLifelines.add((LifelineEditPart) object);
 		}
-		if(toMovedLifelines.isEmpty()) {
+		if (toMovedLifelines.isEmpty()) {
 			return;
 		}
 		CompoundCommand command = new CompoundCommand();
 		computeUpdateHeadCommand(command, lifeline, false, resized, new ArrayList<EditPart>());
-		if(command.canExecute()) {
+		if (command.canExecute()) {
 			CommandHelper.executeCommandWithoutHistory(lifeline.getEditingDomain(), command, true);
 		}
 	}
 
 	private static void computeUpdateHeadCommand(CompoundCommand commands, LifelineEditPart lifeline, boolean moveChildren, int moveDelta, List<EditPart> movedEditParts) {
-		//1. move children of current lifeline.
-		if(moveChildren) {
+		// 1. move children of current lifeline.
+		if (moveChildren) {
 			ShapeNodeEditPart nodeToMove = lifeline;
 			EditPart parent = lifeline.getParent();
-			while(parent instanceof LifelineEditPart) {
-				nodeToMove = (ShapeNodeEditPart)parent;
+			while (parent instanceof LifelineEditPart) {
+				nodeToMove = (ShapeNodeEditPart) parent;
 				parent = parent.getParent();
 			}
 			Command cmd = getVerticalMoveShapeCommand(nodeToMove, moveDelta, false);
 			commands.appendIfCanExecute(cmd);
 		} else {
 			View view = lifeline.getNotationView();
-			LayoutConstraint constraint = ((Shape)view).getLayoutConstraint();
-			if(constraint instanceof Size) {
-				int height = ((Size)constraint).getHeight();
-				if(height == -1) {
+			LayoutConstraint constraint = ((Shape) view).getLayoutConstraint();
+			if (constraint instanceof Size) {
+				int height = ((Size) constraint).getHeight();
+				if (height == -1) {
 					height = lifeline.getFigure().getBounds().height;
 				}
 				height += moveDelta;
@@ -154,50 +156,50 @@ public class LifelineHeadUtil {
 		}
 		movedEditParts.add(lifeline);
 
-		//2. move covered CombinedFragment and InteractionUse
+		// 2. move covered CombinedFragment and InteractionUse
 		EObject elt = lifeline.resolveSemanticElement();
-		if(elt instanceof Lifeline) {
-			EList<InteractionFragment> coveredBys = ((Lifeline)elt).getCoveredBys();
+		if (elt instanceof Lifeline) {
+			EList<InteractionFragment> coveredBys = ((Lifeline) elt).getCoveredBys();
 			EditPartViewer viewer = lifeline.getViewer();
-			for(InteractionFragment fragment : coveredBys) {
-				if(!(fragment instanceof CombinedFragment || fragment instanceof InteractionUse)) {
+			for (InteractionFragment fragment : coveredBys) {
+				if (!(fragment instanceof CombinedFragment || fragment instanceof InteractionUse)) {
 					continue;
 				}
 				List<View> views = DiagramEditPartsUtil.findViews(fragment, viewer);
-				if(views.isEmpty()) {
+				if (views.isEmpty()) {
 					continue;
 				}
-				for(View view : views) {
-					EditPart ep = (EditPart)viewer.getEditPartRegistry().get(view);
-					if(ep == null) {
+				for (View view : views) {
+					EditPart ep = (EditPart) viewer.getEditPartRegistry().get(view);
+					if (ep == null) {
 						continue;
 					}
-					if(movedEditParts.contains(ep)) {
+					if (movedEditParts.contains(ep)) {
 						continue;
 					}
 					EditPart parent = ep.getParent();
 					boolean parentMoved = false;
-					while(parent != null) {
-						if(movedEditParts.contains(parent)) {
+					while (parent != null) {
+						if (movedEditParts.contains(parent)) {
 							parentMoved = true;
 							break;
 						}
 						parent = parent.getParent();
 					}
-					if(parentMoved) {
+					if (parentMoved) {
 						continue;
 					}
-					if(ep instanceof CombinedFragmentEditPart || ep instanceof InteractionUseEditPart) {
-						Command cmd = getVerticalMoveShapeCommand((ShapeNodeEditPart)ep, moveDelta, false);
+					if (ep instanceof CombinedFragmentEditPart || ep instanceof InteractionUseEditPart) {
+						Command cmd = getVerticalMoveShapeCommand((ShapeNodeEditPart) ep, moveDelta, false);
 						commands.appendIfCanExecute(cmd);
 						movedEditParts.add(ep);
 						List children = ep.getChildren();
-						for(Object object : children) {
-							if(movedEditParts.contains(object)) {
+						for (Object object : children) {
+							if (movedEditParts.contains(object)) {
 								continue;
 							}
-							if(object instanceof GateEditPart) {
-								GateEditPart gate = (GateEditPart)object;
+							if (object instanceof GateEditPart) {
+								GateEditPart gate = (GateEditPart) object;
 								Command command = getVerticalMoveShapeCommand(gate, moveDelta, false);
 								commands.appendIfCanExecute(command);
 								movedEditParts.add(gate);
@@ -209,33 +211,33 @@ public class LifelineHeadUtil {
 			}
 		}
 
-		//3. move Gate if existed.
+		// 3. move Gate if existed.
 		fillMoveDownMessageEnds(commands, lifeline, moveDelta, movedEditParts);
 		List<ShapeNodeEditPart> childShapeNodeEditParts = LifelineEditPartUtil.getChildShapeNodeEditPart(lifeline);
-		for(ShapeNodeEditPart shapeNodeEditPart : childShapeNodeEditParts) {
+		for (ShapeNodeEditPart shapeNodeEditPart : childShapeNodeEditParts) {
 			fillMoveDownMessageEnds(commands, shapeNodeEditPart, moveDelta, movedEditParts);
 		}
 
-		//4. move children of linked lifelines.
+		// 4. move children of linked lifelines.
 		List<LifelineEditPart> toMovedLifelines = new ArrayList<LifelineEditPart>();
 		collectLifelines(toMovedLifelines, lifeline);
 		List<ShapeNodeEditPart> children = LifelineEditPartUtil.getChildShapeNodeEditPart(lifeline);
-		for(ShapeNodeEditPart child : children) {
+		for (ShapeNodeEditPart child : children) {
 			collectLifelines(toMovedLifelines, child);
 		}
 		EditPart parent = lifeline.getParent();
-		while(parent instanceof LifelineEditPart) {
+		while (parent instanceof LifelineEditPart) {
 			parent = parent.getParent();
 		}
 		List childrenList = parent.getChildren();
-		for(Object object : childrenList) {
-			if(toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
+		for (Object object : childrenList) {
+			if (toMovedLifelines.contains(object) || !(object instanceof LifelineEditPart)) {
 				continue;
 			}
-			toMovedLifelines.add((LifelineEditPart)object);
+			toMovedLifelines.add((LifelineEditPart) object);
 		}
-		for(LifelineEditPart editPart : toMovedLifelines) {
-			if(movedEditParts.contains(editPart)) {
+		for (LifelineEditPart editPart : toMovedLifelines) {
+			if (movedEditParts.contains(editPart)) {
 				continue;
 			}
 			computeUpdateHeadCommand(commands, editPart, true, moveDelta, movedEditParts);
@@ -244,26 +246,26 @@ public class LifelineHeadUtil {
 
 	private static void fillMoveDownMessageEnds(CompoundCommand commands, GraphicalEditPart editPart, int moveDelta, List<EditPart> movedEditParts) {
 		List sourceConnections = editPart.getSourceConnections();
-		for(Object object : sourceConnections) {
-			ConnectionEditPart conn = (ConnectionEditPart)object;
+		for (Object object : sourceConnections) {
+			ConnectionEditPart conn = (ConnectionEditPart) object;
 			EditPart target = conn.getTarget();
-			if(target instanceof GateEditPart) {
-				Command command = getVerticalMoveShapeCommand((GateEditPart)target, moveDelta, false);
+			if (target instanceof GateEditPart) {
+				Command command = getVerticalMoveShapeCommand((GateEditPart) target, moveDelta, false);
 				commands.appendIfCanExecute(command);
 				movedEditParts.add(target);
-			} else if(object instanceof Message6EditPart) {
+			} else if (object instanceof Message6EditPart) {
 				Command command = getMoveAnchorCommand(conn, moveDelta, false);
 				commands.appendIfCanExecute(command);
 			}
 		}
 		List targetConnections = editPart.getTargetConnections();
-		for(Object object : targetConnections) {
-			ConnectionEditPart conn = (ConnectionEditPart)object;
-			if(conn instanceof Message7EditPart) {
+		for (Object object : targetConnections) {
+			ConnectionEditPart conn = (ConnectionEditPart) object;
+			if (conn instanceof Message7EditPart) {
 				Command command = getMoveAnchorCommand(conn, moveDelta, true);
 				commands.appendIfCanExecute(command);
-			} else if(conn.getSource() instanceof GateEditPart) {
-				Command command = getVerticalMoveShapeCommand((GateEditPart)conn.getSource(), moveDelta, false);
+			} else if (conn.getSource() instanceof GateEditPart) {
+				Command command = getVerticalMoveShapeCommand((GateEditPart) conn.getSource(), moveDelta, false);
 				commands.appendIfCanExecute(command);
 				movedEditParts.add(conn.getSource());
 			}
@@ -272,25 +274,25 @@ public class LifelineHeadUtil {
 
 	private static Command getMoveAnchorCommand(ConnectionEditPart conn, int moveDelta, boolean moveSource) {
 		EditPart editPart = moveSource ? conn.getSource() : conn.getTarget();
-		if(!(editPart instanceof IGraphicalEditPart)) {
+		if (!(editPart instanceof IGraphicalEditPart)) {
 			return null;
 		}
 		Object model = conn.getModel();
-		if(!(model instanceof Edge)) {
+		if (!(model instanceof Edge)) {
 			return null;
 		}
-		Edge edge = (Edge)model;
+		Edge edge = (Edge) model;
 		Anchor anchor = moveSource ? edge.getSourceAnchor() : edge.getTargetAnchor();
-		if(!(anchor instanceof IdentityAnchor)) {
+		if (!(anchor instanceof IdentityAnchor)) {
 			return null;
 		}
-		String terminal = ((IdentityAnchor)anchor).getId();
-		PrecisionPoint pt = SlidableAnchor.parseTerminalString(terminal);
+		String terminal = ((IdentityAnchor) anchor).getId();
+		PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
 		PrecisionPoint p = null;
-		if(pt.preciseX() > 1 || pt.preciseY() > 1) {
+		if (pt.preciseX() > 1 || pt.preciseY() > 1) {
 			p = new PrecisionPoint(pt.preciseX(), pt.preciseY() + moveDelta);
 		} else {
-			Rectangle bounds = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)editPart);
+			Rectangle bounds = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart) editPart);
 			PrecisionPoint location = new PrecisionPoint(pt.preciseX() * bounds.preciseWidth() + bounds.preciseX(), pt.preciseY() * bounds.preciseHeight() + bounds.preciseY());
 			location.translate(0, moveDelta);
 			Dimension d = location.getDifference(bounds.getTopLeft());
@@ -302,66 +304,66 @@ public class LifelineHeadUtil {
 		s.append(','); // 1 char
 		s.append(p.preciseY()); // 10 chars
 		s.append(')');
-		return SetCommand.create(getEditingDomain((GraphicalEditPart)editPart), anchor, NotationPackage.eINSTANCE.getIdentityAnchor_Id(), s.toString());
+		return SetCommand.create(getEditingDomain((GraphicalEditPart) editPart), anchor, NotationPackage.eINSTANCE.getIdentityAnchor_Id(), s.toString());
 	}
 
 	private static void collectLifelines(List<LifelineEditPart> toMovedLifelines, GraphicalEditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return;
 		}
-		//1. links from current lifeline
+		// 1. links from current lifeline
 		List sourceConnections = editPart.getSourceConnections();
-		for(Object object : sourceConnections) {
-			ConnectionEditPart conn = (ConnectionEditPart)object;
+		for (Object object : sourceConnections) {
+			ConnectionEditPart conn = (ConnectionEditPart) object;
 			LifelineEditPart target = getLifeline(conn.getTarget());
-			if(target == null || toMovedLifelines.contains(target) || editPart == target) {
+			if (target == null || toMovedLifelines.contains(target) || editPart == target) {
 				continue;
 			}
 			toMovedLifelines.add(target);
 		}
 
-		//2. links to current lifeline.
+		// 2. links to current lifeline.
 		List targetConnections = editPart.getTargetConnections();
-		for(Object object : targetConnections) {
-			ConnectionEditPart conn = (ConnectionEditPart)object;
+		for (Object object : targetConnections) {
+			ConnectionEditPart conn = (ConnectionEditPart) object;
 			LifelineEditPart source = getLifeline(conn.getSource());
-			if(source == null || toMovedLifelines.contains(source) || editPart == source) {
+			if (source == null || toMovedLifelines.contains(source) || editPart == source) {
 				continue;
 			}
 			toMovedLifelines.add(source);
 		}
 
-		if(editPart instanceof CustomLifelineEditPart && ((CustomLifelineEditPart)editPart).isInlineMode()) {
-			List children = ((CustomLifelineEditPart)editPart).getChildren();
-			for(Object object : children) {
-				if(object instanceof LifelineEditPart) {
-					collectLifelines(toMovedLifelines, (LifelineEditPart)object);
+		if (editPart instanceof CustomLifelineEditPart && ((CustomLifelineEditPart) editPart).isInlineMode()) {
+			List children = ((CustomLifelineEditPart) editPart).getChildren();
+			for (Object object : children) {
+				if (object instanceof LifelineEditPart) {
+					collectLifelines(toMovedLifelines, (LifelineEditPart) object);
 				}
 			}
-			if(toMovedLifelines.isEmpty()) {
-				toMovedLifelines.add((LifelineEditPart)editPart);
+			if (toMovedLifelines.isEmpty()) {
+				toMovedLifelines.add((LifelineEditPart) editPart);
 			}
 		}
 	}
 
 	private static Command getVerticalMoveShapeCommand(GraphicalEditPart shapeEditPart, int moveDelta, boolean increaseHeight) {
-		if(shapeEditPart == null || moveDelta == 0) {
+		if (shapeEditPart == null || moveDelta == 0) {
 			return null;
 		}
 		Object view = shapeEditPart.getModel();
-		if(!(view instanceof Shape)) {
+		if (!(view instanceof Shape)) {
 			return null;
 		}
-		LayoutConstraint constraint = ((Shape)view).getLayoutConstraint();
-		if(!(constraint instanceof Location)) {
+		LayoutConstraint constraint = ((Shape) view).getLayoutConstraint();
+		if (!(constraint instanceof Location)) {
 			return null;
 		}
-		int y = ((Location)constraint).getY();
+		int y = ((Location) constraint).getY();
 		int value = y + moveDelta;
 		Command command = SetCommand.create(getEditingDomain(shapeEditPart), constraint, NotationPackage.eINSTANCE.getLocation_Y(), value);
-		if(increaseHeight && constraint instanceof Size) {
-			int height = ((Size)constraint).getHeight();
-			if(height == -1) {
+		if (increaseHeight && constraint instanceof Size) {
+			int height = ((Size) constraint).getHeight();
+			if (height == -1) {
 				height = shapeEditPart.getFigure().getBounds().height;
 			}
 			height += moveDelta;
@@ -371,18 +373,18 @@ public class LifelineHeadUtil {
 	}
 
 	private static EditingDomain getEditingDomain(GraphicalEditPart editPart) {
-		if(editPart instanceof IGraphicalEditPart) {
-			return ((IGraphicalEditPart)editPart).getEditingDomain();
+		if (editPart instanceof IGraphicalEditPart) {
+			return ((IGraphicalEditPart) editPart).getEditingDomain();
 		}
 		return null;
 	}
 
 	private static LifelineEditPart getLifeline(EditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return null;
 		}
-		if(editPart instanceof LifelineEditPart) {
-			return (LifelineEditPart)editPart;
+		if (editPart instanceof LifelineEditPart) {
+			return (LifelineEditPart) editPart;
 		}
 		return getLifeline(editPart.getParent());
 	}

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -54,11 +54,11 @@ public class ConnectorLinkLabelTargetMultiplicityEditPart extends AbstractElemen
 	 */
 	@Override
 	public EObject getParserElement() {
-		Connector connector = (Connector)resolveSemanticElement();
-		if((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
+		Connector connector = (Connector) resolveSemanticElement();
+		if ((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
 			View owner = ViewUtil.getContainerView(getNotationView());
 
-			if((connector != null) && (connector.getEnds().size() == 2)) {
+			if ((connector != null) && (connector.getEnds().size() == 2)) {
 				connector.getEnds().get(1);
 			}
 		}
@@ -77,6 +77,7 @@ public class ConnectorLinkLabelTargetMultiplicityEditPart extends AbstractElemen
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "TargetMultiplicity"; //$NON-NLS-1$
 	}
@@ -84,6 +85,7 @@ public class ConnectorLinkLabelTargetMultiplicityEditPart extends AbstractElemen
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

@@ -28,18 +28,21 @@ public class ServiceA implements IService {
 		nametrace.clear();
 	}
 
+	@Override
 	public void init(ServicesRegistry servicesRegistry) {
 		trace.add(TraceKind.init);
 		nametrace.add(this.getClass().getSimpleName());
 
 	}
 
+	@Override
 	public void startService() {
 		trace.add(TraceKind.start);
 		nametrace.add(this.getClass().getSimpleName());
 
 	}
 
+	@Override
 	public void disposeService() {
 		trace.add(TraceKind.dispose);
 		nametrace.add(this.getClass().getSimpleName());

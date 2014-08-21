@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,10 +53,10 @@ public abstract class AbstractContextStorageProvider implements IContextStorageP
 	}
 
 	protected void fireContextsAdded(Collection<? extends Context> contexts) {
-		if(!listeners.isEmpty() && !contexts.isEmpty()) {
+		if (!listeners.isEmpty() && !contexts.isEmpty()) {
 			contexts = Collections.unmodifiableCollection(contexts);
 
-			for(IContextStorageProviderListener next : listeners) {
+			for (IContextStorageProviderListener next : listeners) {
 				try {
 					next.contextsAdded(contexts);
 				} catch (Exception e) {
@@ -67,10 +67,10 @@ public abstract class AbstractContextStorageProvider implements IContextStorageP
 	}
 
 	protected void fireContextsChanged(Collection<? extends Context> contexts) {
-		if(!listeners.isEmpty() && !contexts.isEmpty()) {
+		if (!listeners.isEmpty() && !contexts.isEmpty()) {
 			contexts = Collections.unmodifiableCollection(contexts);
 
-			for(IContextStorageProviderListener next : listeners) {
+			for (IContextStorageProviderListener next : listeners) {
 				try {
 					next.contextsChanged(contexts);
 				} catch (Exception e) {
@@ -81,10 +81,10 @@ public abstract class AbstractContextStorageProvider implements IContextStorageP
 	}
 
 	protected void fireContextsRemoved(Collection<? extends Context> contexts) {
-		if(!listeners.isEmpty() && !contexts.isEmpty()) {
+		if (!listeners.isEmpty() && !contexts.isEmpty()) {
 			contexts = Collections.unmodifiableCollection(contexts);
 
-			for(IContextStorageProviderListener next : listeners) {
+			for (IContextStorageProviderListener next : listeners) {
 				try {
 					next.contextsRemoved(contexts);
 				} catch (Exception e) {

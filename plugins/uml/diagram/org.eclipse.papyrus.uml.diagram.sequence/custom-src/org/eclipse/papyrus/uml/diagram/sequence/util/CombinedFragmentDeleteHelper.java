@@ -54,9 +54,10 @@ public class CombinedFragmentDeleteHelper {
 			this.elementToEdit = elementToEdit;
 		}
 
+		@Override
 		public Object getEditHelperContext() {
 			IClientContext context = getClientContext();
-			if(context == null) {
+			if (context == null) {
 				return getElementToEdit();
 			} else {
 				return new EditHelperContext(getElementToEdit(), context);
@@ -83,15 +84,15 @@ public class CombinedFragmentDeleteHelper {
 		public MoveOperandFragmentsCommand(CombinedFragmentEditPart host, CombinedFragment cf, InteractionOperand op, EditRequest editRequest) {
 			super(null, editRequest.getElementToEdit(), editRequest);
 			InteractionOperand enclosingOp = cf.getEnclosingOperand();
-			if(enclosingOp != null) {
+			if (enclosingOp != null) {
 				Element owner = enclosingOp.getOwner();
-				if(owner instanceof CombinedFragment) {
+				if (owner instanceof CombinedFragment) {
 					this.parent = enclosingOp;
 				}
 			} else {
 				Element owner = cf.getOwner();
-				if(owner instanceof Interaction) {
-					this.parent = (InteractionFragment)owner;
+				if (owner instanceof Interaction) {
+					this.parent = (InteractionFragment) owner;
 				}
 			}
 			this.host = host;
@@ -107,14 +108,14 @@ public class CombinedFragmentDeleteHelper {
 
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			if(parent != null && !fragmentsToMove.isEmpty()) {
+			if (parent != null && !fragmentsToMove.isEmpty()) {
 				List<CombinedFragmentEditPart> parts = collectCombinedFragmentParts();
-				if(parent instanceof InteractionOperand) {
-					((InteractionOperand)parent).getFragments().addAll(fragmentsToMove);
-					moveToOperandPart((InteractionOperandEditPart)host.getParent(), parts);
-				} else if(parent instanceof Interaction) {
-					((Interaction)parent).getFragments().addAll(fragmentsToMove);
-					moveToInteractionPart((InteractionInteractionCompartmentEditPart)host.getParent(), parts);
+				if (parent instanceof InteractionOperand) {
+					((InteractionOperand) parent).getFragments().addAll(fragmentsToMove);
+					moveToOperandPart((InteractionOperandEditPart) host.getParent(), parts);
+				} else if (parent instanceof Interaction) {
+					((Interaction) parent).getFragments().addAll(fragmentsToMove);
+					moveToInteractionPart((InteractionInteractionCompartmentEditPart) host.getParent(), parts);
 				}
 			}
 			sourceOperand.getFragments().clear();
@@ -122,12 +123,12 @@ public class CombinedFragmentDeleteHelper {
 		}
 
 		private void moveToOperandPart(GraphicalEditPart op, List<CombinedFragmentEditPart> keepParts) {
-			if(!keepParts.isEmpty()) {
-				Rectangle parentBounds = getAbsoluteBounds((AbstractGraphicalEditPart)op.getParent());
-				for(CombinedFragmentEditPart cef : keepParts) {
+			if (!keepParts.isEmpty()) {
+				Rectangle parentBounds = getAbsoluteBounds((AbstractGraphicalEditPart) op.getParent());
+				for (CombinedFragmentEditPart cef : keepParts) {
 					View view = cef.getNotationView();
 					op.getNotationView().getPersistedChildren().add(view);
-					Bounds bounds = (Bounds)((Shape)cef.getNotationView()).getLayoutConstraint();
+					Bounds bounds = (Bounds) ((Shape) cef.getNotationView()).getLayoutConstraint();
 					Rectangle absolute = getAbsoluteBounds(cef);
 					bounds.setX(absolute.x() - parentBounds.x());
 					bounds.setY(absolute.y() - parentBounds.y());
@@ -136,12 +137,12 @@ public class CombinedFragmentDeleteHelper {
 		}
 
 		private void moveToInteractionPart(GraphicalEditPart op, List<CombinedFragmentEditPart> keepParts) {
-			if(!keepParts.isEmpty()) {
+			if (!keepParts.isEmpty()) {
 				Rectangle b = getAbsoluteBounds(op);
-				for(CombinedFragmentEditPart cef : keepParts) {
+				for (CombinedFragmentEditPart cef : keepParts) {
 					View view = cef.getNotationView();
 					op.getNotationView().getPersistedChildren().add(view);
-					Bounds bounds = (Bounds)((Shape)cef.getNotationView()).getLayoutConstraint();
+					Bounds bounds = (Bounds) ((Shape) cef.getNotationView()).getLayoutConstraint();
 					Rectangle absolute = getAbsoluteBounds(cef);
 					absolute.performTranslate(-b.x, -b.y);
 					bounds.setX(absolute.x() - 5);
@@ -152,11 +153,11 @@ public class CombinedFragmentDeleteHelper {
 
 		private List<CombinedFragmentEditPart> collectCombinedFragmentParts() {
 			List<CombinedFragmentEditPart> parts = new ArrayList<CombinedFragmentEditPart>();
-			for(InteractionFragment f : fragmentsToMove) {
-				if(f instanceof CombinedFragment) {
+			for (InteractionFragment f : fragmentsToMove) {
+				if (f instanceof CombinedFragment) {
 					EditPart p = findEditPartByModel(host, f);
-					if(p instanceof CombinedFragmentEditPart) {
-						parts.add((CombinedFragmentEditPart)p);
+					if (p instanceof CombinedFragmentEditPart) {
+						parts.add((CombinedFragmentEditPart) p);
 					}
 				}
 			}
@@ -199,11 +200,11 @@ public class CombinedFragmentDeleteHelper {
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, org.eclipse.core.runtime.IAdaptable info) throws ExecutionException {
 			CommandResult cmdResult = super.doExecuteWithResult(progressMonitor, info);
-			if(!cmdResult.getStatus().isOK()) {
+			if (!cmdResult.getStatus().isOK()) {
 				return cmdResult;
 			}
 			this.choice = cmdResult.getReturnValue().toString();
-			if(choice.contains(labels[0])) {
+			if (choice.contains(labels[0])) {
 				deletaAllCommand.execute(progressMonitor, info);
 				return deletaAllCommand.getCommandResult();
 			} else {
@@ -214,7 +215,7 @@ public class CombinedFragmentDeleteHelper {
 
 		@Override
 		protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-			if(choice != null && choice.contains(labels[0])) {
+			if (choice != null && choice.contains(labels[0])) {
 				deletaAllCommand.undo(progressMonitor, info);
 				return deletaAllCommand.getCommandResult();
 			} else {
@@ -225,7 +226,7 @@ public class CombinedFragmentDeleteHelper {
 
 		@Override
 		protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-			if(choice.contains(labels[0])) {
+			if (choice.contains(labels[0])) {
 				deletaAllCommand.redo(progressMonitor, info);
 				return deletaAllCommand.getCommandResult();
 			} else {
@@ -265,12 +266,12 @@ public class CombinedFragmentDeleteHelper {
 		CompositeTransactionalCommand deleteCfOnly = new CompositeTransactionalCommand(transactionalEditingDomain, null);
 		{
 			// remove children from operands and append to parent combined fragment
-			for(InteractionOperand op : cf.getOperands()) {
+			for (InteractionOperand op : cf.getOperands()) {
 				deleteCfOnly.add(new MoveOperandFragmentsCommand(host, cf, op, new EditRequest(transactionalEditingDomain, cf)));
 			}
 			deleteCfOnly.add(new DeleteCombinedFragmentCommand(transactionalEditingDomain, provider, req));
 		}
-		return new SelectAndDeleteCommand(deleteAll, deleteCfOnly, new String[]{ "Delete all", "Keep contents" });
+		return new SelectAndDeleteCommand(deleteAll, deleteCfOnly, new String[] { "Delete all", "Keep contents" });
 	}
 
 	public static ICommand createDeleteViewCommand(CombinedFragment cf, TransactionalEditingDomain transactionalEditingDomain, CombinedFragmentEditPart host) {
@@ -284,15 +285,15 @@ public class CombinedFragmentDeleteHelper {
 		CompositeTransactionalCommand deleteCfOnly = new CompositeTransactionalCommand(transactionalEditingDomain, null);
 		{
 			// remove children from operands and append to parent combined fragment
-			for(InteractionOperand op : cf.getOperands()) {
+			for (InteractionOperand op : cf.getOperands()) {
 				deleteCfOnly.add(new MoveOperandFragmentsCommand(host, cf, op, new EditRequest(transactionalEditingDomain, cf)));
 			}
 			// delete operands from combined fragment
-			for(Element element : cf.getOperands()) {
+			for (Element element : cf.getOperands()) {
 				SequenceDeleteHelper.deleteView(deleteCfOnly, element, transactionalEditingDomain);
 			}
 		}
-		return new SelectAndDeleteCommand(deleteAll, deleteCfOnly, new String[]{ "Hide all", "Keep contents" });
+		return new SelectAndDeleteCommand(deleteAll, deleteCfOnly, new String[] { "Hide all", "Keep contents" });
 	}
 
 	static Rectangle getAbsoluteBounds(AbstractGraphicalEditPart part) {
@@ -303,15 +304,15 @@ public class CombinedFragmentDeleteHelper {
 
 	public static EditPart findEditPartByModel(EditPart part, EObject m) {
 		List children = part.getChildren();
-		if(children != null && children.size() > 0) {
-			for(Object o : children) {
-				EditPart p = (EditPart)o;
+		if (children != null && children.size() > 0) {
+			for (Object o : children) {
+				EditPart p = (EditPart) o;
 				Object model = p.getModel();
-				if(model != null && model instanceof View && m.equals(((View)model).getElement())) {
+				if (model != null && model instanceof View && m.equals(((View) model).getElement())) {
 					return p;
 				}
 				EditPart res = findEditPartByModel(p, m);
-				if(res != null) {
+				if (res != null) {
 					return res;
 				}
 			}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,8 +33,8 @@ public class BehaviorLayoutEditPolicy extends StructuredClassifierLayoutEditPoli
 
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		View childView = (View)child.getModel();
-		switch(UMLVisualIDRegistry.getVisualID(childView)) {
+		View childView = (View) child.getModel();
+		switch (UMLVisualIDRegistry.getVisualID(childView)) {
 		case PortEditPart.VISUAL_ID:
 		case ParameterEditPart.VISUAL_ID:
 
@@ -42,7 +42,7 @@ public class BehaviorLayoutEditPolicy extends StructuredClassifierLayoutEditPoli
 
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;

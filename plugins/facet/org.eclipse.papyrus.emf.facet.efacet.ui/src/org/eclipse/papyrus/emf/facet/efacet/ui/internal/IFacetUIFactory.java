@@ -20,6 +20,7 @@ import org.eclipse.jface.viewers.ISelection;
 
 /**
  * This interface provides methods used to create wizards that create {@link Facet}s and Facet elements.
+ * 
  * @since 0.2
  * @deprecated This interface has been replaced by {@link IFacetUIFactory2}. No tracking bug needed because this API has not been released yet.
  */
@@ -33,7 +34,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link Facet} in a {@link FacetSet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a FacetSet
 	 * @param editingDomain
@@ -44,7 +45,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the creation of a {@link FacetSet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection
 	 * @return the newly created wizard
@@ -53,7 +54,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the creation of a {@link FacetSet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection
 	 * @param openCreatedFacetSetInEditor
@@ -63,7 +64,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link FacetAttribute} in a {@link Facet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a Facet
 	 * @param editingDomain
@@ -74,7 +75,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link FacetOperation} in a {@link Facet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a Facet
 	 * @param editingDomain
@@ -85,7 +86,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link EParameter} to a {@link FacetOperation}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a FacetOperation
 	 * @param editingDomain
@@ -96,7 +97,7 @@ public interface IFacetUIFactory {
 
 	/**
 	 * Create a wizard dialog dedicated to the addition of a {@link FacetReference} in a {@link Facet}
-	 * 
+	 *
 	 * @param selection
 	 *            the current selection, should be a Facet Reference
 	 * @param editingDomain

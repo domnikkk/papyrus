@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,51 +31,51 @@ public class AssociationViewUtils {
 
 	/**
 	 * Get the semantic end from the source of an edge representing an Association.
-	 * 
+	 *
 	 * @param view
-	 *        the Association view.
+	 *            the Association view.
 	 * @return the Property corresponding to the source of the graphical end.
 	 */
 	public static Property getSourceSemanticEnd(View view) {
-		EObjectValueStyle semanticStyle = (EObjectValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_SOURCE_END);
-		return semanticStyle == null ? null : (Property)semanticStyle.getEObjectValue();
+		EObjectValueStyle semanticStyle = (EObjectValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_SOURCE_END);
+		return semanticStyle == null ? null : (Property) semanticStyle.getEObjectValue();
 	}
 
 	/**
 	 * Get the semantic end from the target of an edge representing an Association.
-	 * 
+	 *
 	 * @param view
-	 *        the Association view.
+	 *            the Association view.
 	 * @return the Property corresponding to the target of the graphical end.
 	 */
 	public static Property getTargetSemanticEnd(View view) {
-		EObjectValueStyle semanticStyle = (EObjectValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_TARGET_END);
-		return semanticStyle == null ? null : (Property)semanticStyle.getEObjectValue();
+		EObjectValueStyle semanticStyle = (EObjectValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_TARGET_END);
+		return semanticStyle == null ? null : (Property) semanticStyle.getEObjectValue();
 	}
 
 	/**
 	 * Set the semantic end for the source of an edge representing an Association.
-	 * 
+	 *
 	 * @param view
-	 *        the Association view.
+	 *            the Association view.
 	 * @param end
-	 *        the Property corresponding to the source of the graphical end.
+	 *            the Property corresponding to the source of the graphical end.
 	 */
 	public static void setSourceSemanticEnd(View view, Property end) {
-		EObjectValueStyle semanticStyle = (EObjectValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_SOURCE_END);
+		EObjectValueStyle semanticStyle = (EObjectValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_SOURCE_END);
 		semanticStyle.setEObjectValue(end);
 	}
 
 	/**
 	 * Set the semantic end for the target of an edge representing an Association.
-	 * 
+	 *
 	 * @param view
-	 *        the Association view.
+	 *            the Association view.
 	 * @param end
-	 *        the Property corresponding to the target of the graphical end.
+	 *            the Property corresponding to the target of the graphical end.
 	 */
 	public static void setTargetSemanticEnd(View view, Property end) {
-		EObjectValueStyle semanticStyle = (EObjectValueStyle)view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_TARGET_END);
+		EObjectValueStyle semanticStyle = (EObjectValueStyle) view.getNamedStyle(NotationPackage.eINSTANCE.getEObjectValueStyle(), SEMANTIC_TARGET_END);
 		semanticStyle.setEObjectValue(end);
 	}
 }

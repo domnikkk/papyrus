@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class CustomViewProvider extends org.eclipse.papyrus.gmf.diagram.common.p
 	@Override
 	protected boolean provides(final CreateNodeViewOperation op) {
 		// Must have a container
-		if(op.getContainerView() == null) {
+		if (op.getContainerView() == null) {
 			return false;
 		}
 		// Get the type of the container
@@ -42,7 +42,7 @@ public class CustomViewProvider extends org.eclipse.papyrus.gmf.diagram.common.p
 		// This provider is registered for InteractionOverviewDiagram Diagram
 		// only
 		final String diagramType = op.getContainerView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
@@ -51,10 +51,10 @@ public class CustomViewProvider extends org.eclipse.papyrus.gmf.diagram.common.p
 		// expected container.
 		// /////////////////////////////////////////////////////////////////////
 
-		final IElementType elementType = (IElementType)op.getSemanticAdapter().getAdapter(IElementType.class);
-		if(elementType == UMLElementTypes.CallBehaviorAction_5000) {
+		final IElementType elementType = (IElementType) op.getSemanticAdapter().getAdapter(IElementType.class);
+		if (elementType == UMLElementTypes.CallBehaviorAction_5000) {
 
-			if(ElementTypes.ACTIVITY_COMPARTMENT_ACTIVITY_FIGURE_CONTENT_HINT.equals(containerGraphicalType)) {
+			if (ElementTypes.ACTIVITY_COMPARTMENT_ACTIVITY_FIGURE_CONTENT_HINT.equals(containerGraphicalType)) {
 				return true;
 			}
 		}
@@ -65,12 +65,12 @@ public class CustomViewProvider extends org.eclipse.papyrus.gmf.diagram.common.p
 	public Node createNode(final IAdaptable semanticAdapter, final View containerView, final String semanticHint, final int index, final boolean persisted, final PreferencesHint preferencesHint) {
 		final EObject domainElement = getSemanticElement(semanticAdapter);
 		final int visualID;
-		if(semanticHint == null) {
+		if (semanticHint == null) {
 			visualID = UMLVisualIDRegistry.getNodeVisualID(containerView, domainElement);
 		} else {
 			visualID = UMLVisualIDRegistry.getVisualID(semanticHint);
 		}
-		switch(visualID) {
+		switch (visualID) {
 		case CallBehaviorActionAsInteractionEditPart.VISUAL_ID:
 			return createCallBehaviorAction_5000(domainElement, containerView, index, persisted, preferencesHint);
 			// can't happen, provided #provides(CreateNodeViewOperation) is correct
@@ -85,9 +85,9 @@ public class CustomViewProvider extends org.eclipse.papyrus.gmf.diagram.common.p
 		node.setType(UMLVisualIDRegistry.getType(CallBehaviorActionAsInteractionEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
-		CallBehaviorUtil.setCallBehaviorActionType((CallBehaviorAction)domainElement, CallBehaviorActionType.snapshot);
-		// initializeFromPreferences 
-		final IPreferenceStore prefStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
+		CallBehaviorUtil.setCallBehaviorActionType((CallBehaviorAction) domainElement, CallBehaviorActionType.snapshot);
+		// initializeFromPreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 		PreferenceInitializerForElementHelper.initForegroundFromPrefs(node, prefStore, "CallBehaviorAction");
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(node, prefStore, "CallBehaviorAction");
 		PreferenceInitializerForElementHelper.initBackgroundFromPrefs(node, prefStore, "CallBehaviorAction");

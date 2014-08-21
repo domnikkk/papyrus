@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,20 +27,22 @@ import org.eclipse.ui.handlers.HandlerUtil;
 /**
  * A Handler for the "OpenCustomization" Action.
  * Opens the {@link CustomizationDialog}
- * 
+ *
  * @author Camille Letavernier
  */
 public class OpenCustomization extends AbstractHandler {
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final Shell shell = HandlerUtil.getActiveShellChecked(event);
 
-		//The first opening might take some time, as the Property view ConfigurationManager may not be initialized yet
+		// The first opening might take some time, as the Property view ConfigurationManager may not be initialized yet
 
 		ProgressMonitorDialog dialog = new ProgressMonitorDialog(shell);
 		try {
 			dialog.run(false, false, new IRunnableWithProgress() {
 
+				@Override
 				public void run(IProgressMonitor monitor) throws InvocationTargetException, InterruptedException {
 					monitor.beginTask("Opening the property view customization page", IProgressMonitor.UNKNOWN);
 					runOpenCustomizationDialog(shell);

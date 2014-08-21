@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 408491
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
@@ -44,9 +44,9 @@ import org.eclipse.ui.dialogs.SelectionDialog;
 /**
  * A Dialog for selecting values. The values are displayed as a Tree. If only
  * some of the values of this Tree should be selectable, you should pass a {@link IHierarchicContentProvider} to this dialog.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class TreeSelectorDialog extends SelectionDialog implements ITreeSelectorDialog {
 
@@ -57,19 +57,19 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 	private TreeViewer treeViewer;
 
 	private String description;
-	
+
 	private Label descriptionLabel;
 
 	private Object input = null;
 
 	private final Set<ICommitListener> commitListeners = new HashSet<ICommitListener>();
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        The parent shell in which this dialog will be opened
+	 *            The parent shell in which this dialog will be opened
 	 */
 	public TreeSelectorDialog(Shell parentShell) {
 		super(parentShell);
@@ -77,12 +77,13 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 
 	/**
 	 * Sets the label provider for this dialog
-	 * 
+	 *
 	 * @param provider
 	 */
+	@Override
 	public void setLabelProvider(ILabelProvider provider) {
 		labelProvider = provider;
-		if(treeViewer != null) {
+		if (treeViewer != null) {
 			treeViewer.setLabelProvider(labelProvider);
 		}
 	}
@@ -90,30 +91,31 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 	/**
 	 * Sets the ContentProvider for this dialog
 	 * The ContentProvider may be a {@link IHierarchicContentProvider}
-	 * 
+	 *
 	 * @param provider
-	 *        The content provider for this dialog. May be a {@link IHierarchicContentProvider}
+	 *            The content provider for this dialog. May be a {@link IHierarchicContentProvider}
 	 */
+	@Override
 	public void setContentProvider(ITreeContentProvider provider) {
 		contentProvider = provider;
-		if(treeViewer != null) {
+		if (treeViewer != null) {
 			initViewerAndProvider();
 		}
-		if(contentProvider instanceof ICommitListener) {
-			commitListeners.add((ICommitListener)contentProvider);
+		if (contentProvider instanceof ICommitListener) {
+			commitListeners.add((ICommitListener) contentProvider);
 		}
 	}
 
 	protected void initViewerAndProvider() {
 		treeViewer.setContentProvider(contentProvider);
-		if(treeViewer.getInput() == null) {
+		if (treeViewer.getInput() == null) {
 			doSetInput();
 		}
 	}
 
 	@Override
 	protected Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	@Override
@@ -123,37 +125,38 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 		descriptionLabel = new Label(getDialogArea(), SWT.WRAP);
 		descriptionLabel.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 
-		if(description != null) {
+		if (description != null) {
 			descriptionLabel.setText(description);
 		}
-		
-		treeViewer = new TreeViewer(getDialogArea(), SWT.BORDER);
-		//		treeViewer.setFilters(new ViewerFilter[]{ new PatternFilter() });
 
-		if(labelProvider != null) {
+		treeViewer = new TreeViewer(getDialogArea(), SWT.BORDER);
+		// treeViewer.setFilters(new ViewerFilter[]{ new PatternFilter() });
+
+		if (labelProvider != null) {
 			treeViewer.setLabelProvider(labelProvider);
 		}
-		if(contentProvider != null) {
+		if (contentProvider != null) {
 			initViewerAndProvider();
 		}
 
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
 				ISelection selection = event.getSelection();
 
 				Object selectedElement = null;
-				if(selection instanceof IStructuredSelection && !selection.isEmpty()) {
-					IStructuredSelection sSelection = (IStructuredSelection)selection;
+				if (selection instanceof IStructuredSelection && !selection.isEmpty()) {
+					IStructuredSelection sSelection = (IStructuredSelection) selection;
 					selectedElement = sSelection.getFirstElement();
 				}
 
-				if(contentProvider instanceof IHierarchicContentProvider) {
-					boolean isValidValue = ((IHierarchicContentProvider)contentProvider).isValidValue(selectedElement);
-					if(contentProvider instanceof IAdaptableContentProvider) {
-						selectedElement = ((IAdaptableContentProvider)contentProvider).getAdaptedValue(selectedElement);
+				if (contentProvider instanceof IHierarchicContentProvider) {
+					boolean isValidValue = ((IHierarchicContentProvider) contentProvider).isValidValue(selectedElement);
+					if (contentProvider instanceof IAdaptableContentProvider) {
+						selectedElement = ((IAdaptableContentProvider) contentProvider).getAdaptedValue(selectedElement);
 					}
-					if(isValidValue) {
+					if (isValidValue) {
 						setResult(Collections.singletonList(selectedElement));
 					} else {
 						setResult(Collections.EMPTY_LIST);
@@ -165,8 +168,9 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 
 		treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
+			@Override
 			public void doubleClick(DoubleClickEvent event) {
-				if(getOkButton().isEnabled()) {
+				if (getOkButton().isEnabled()) {
 					okPressed();
 				}
 			}
@@ -178,8 +182,8 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 		data.minimumWidth = 300;
 		treeViewer.getTree().setLayoutData(data);
 
-		if(contentProvider instanceof IGraphicalContentProvider) {
-			IGraphicalContentProvider graphicalContentProvider = (IGraphicalContentProvider)contentProvider;
+		if (contentProvider instanceof IGraphicalContentProvider) {
+			IGraphicalContentProvider graphicalContentProvider = (IGraphicalContentProvider) contentProvider;
 
 			Composite beforeTreeComposite = new Composite(getDialogArea(), SWT.NONE);
 			beforeTreeComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
@@ -195,11 +199,11 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 		}
 
 		List<?> initialSelection = getInitialElementSelections();
-		if(contentProvider instanceof IRevealSemanticElement) {
-			((IRevealSemanticElement)contentProvider).revealSemanticElement(initialSelection);
-		} else if(!initialSelection.isEmpty()) {
-			//FIXME : When we use an EncapsulatedContentProvider, we'll not get into this case,
-			//even if the encapsulated provider is not a IRevealSemanticElement
+		if (contentProvider instanceof IRevealSemanticElement) {
+			((IRevealSemanticElement) contentProvider).revealSemanticElement(initialSelection);
+		} else if (!initialSelection.isEmpty()) {
+			// FIXME : When we use an EncapsulatedContentProvider, we'll not get into this case,
+			// even if the encapsulated provider is not a IRevealSemanticElement
 			treeViewer.setSelection(new StructuredSelection(initialSelection.get(0)), true);
 		}
 
@@ -207,27 +211,28 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 		getButton(OK).setFocus();
 		getShell().setImage(Activator.getDefault().getImage("/icons/papyrus.png")); //$NON-NLS-1$
 		getShell().pack();
-		
+
 	}
 
 	/**
 	 * Sets the description for this Dialog. The description is displayed on
 	 * top of the dialog
-	 * 
+	 *
 	 * @param description
-	 *        The description for this dialog
+	 *            The description for this dialog
 	 */
+	@Override
 	public void setDescription(String description) {
 		this.description = description;
 
-		if((descriptionLabel != null) && !descriptionLabel.isDisposed()) {
+		if ((descriptionLabel != null) && !descriptionLabel.isDisposed()) {
 			descriptionLabel.setText(description == null ? "" : description); //$NON-NLS-1$
 		}
 	}
 
 	/**
 	 * Get the TreeViewer used by this dialog
-	 * 
+	 *
 	 * @return
 	 *         The TreeViewer associated to this dialog
 	 */
@@ -237,16 +242,17 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 
 	/**
 	 * Sets the input object for this dialog's TreeViewer
-	 * 
+	 *
 	 * @param input
 	 */
+	@Override
 	public void setInput(Object input) {
 		this.input = input;
 	}
 
 	private void doSetInput() {
-		if(input == null) {
-			//Default non-null input for IStaticContentProvider (input-independent)
+		if (input == null) {
+			// Default non-null input for IStaticContentProvider (input-independent)
 			treeViewer.setInput(""); //$NON-NLS-1$
 		} else {
 			treeViewer.setInput(input);
@@ -255,7 +261,7 @@ public class TreeSelectorDialog extends SelectionDialog implements ITreeSelector
 
 	@Override
 	public void okPressed() {
-		for(ICommitListener listener : commitListeners) {
+		for (ICommitListener listener : commitListeners) {
 			listener.commit(null);
 		}
 		super.okPressed();

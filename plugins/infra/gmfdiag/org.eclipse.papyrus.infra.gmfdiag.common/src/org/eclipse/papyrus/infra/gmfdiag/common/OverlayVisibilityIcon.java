@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.swt.graphics.Point;
 
 /**
  * This class is used to add UML visibility decoration over stereotype icons
- * 
+ *
  */
 public class OverlayVisibilityIcon extends CompositeImageDescriptor {
 
@@ -64,7 +64,7 @@ public class OverlayVisibilityIcon extends CompositeImageDescriptor {
 
 	/**
 	 * Get the image formed by overlaying different images on the base image
-	 * 
+	 *
 	 * @return composite image
 	 */
 	public Image getImage() {

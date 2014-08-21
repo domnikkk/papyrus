@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,7 +64,7 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getConnectionCompleteCommand(org.eclipse.gef.requests.CreateConnectionRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -72,52 +72,53 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
 		request.getExtendedData().put(SequenceRequestConstant.TARGET_MODEL_CONTAINER, getInteractionFragment(request.getLocation()));
 		Command command = super.getConnectionCompleteCommand(request);
-		if(request instanceof CreateConnectionViewAndElementRequest) {
-			CreateConnectionViewAndElementRequest viewRequest = (CreateConnectionViewAndElementRequest)request;
+		if (request instanceof CreateConnectionViewAndElementRequest) {
+			CreateConnectionViewAndElementRequest viewRequest = (CreateConnectionViewAndElementRequest) request;
 			EditPart sourceEP = viewRequest.getSourceEditPart();
-			EObject source = ViewUtil.resolveSemanticElement((View)sourceEP.getModel());
+			EObject source = ViewUtil.resolveSemanticElement((View) sourceEP.getModel());
 			/*
 			 * Create Graphical Gate if needed, See: https://bugs.eclipse.org/bugs/show_bug.cgi?id=389531
 			 */
 			String semanticHint = viewRequest.getConnectionViewAndElementDescriptor().getSemanticHint();
-			//Ignore CoRegion.
-			if(!(sourceEP instanceof CombinedFragment2EditPart) && (((IHintedType)(UMLElementTypes.Message_4004)).getSemanticHint().equals(semanticHint) || ((IHintedType)(UMLElementTypes.Message_4005)).getSemanticHint().equals(semanticHint))) {
-				if(source instanceof CombinedFragment || source instanceof Interaction || source instanceof InteractionUse) {
+			// Ignore CoRegion.
+			if (!(sourceEP instanceof CombinedFragment2EditPart) && (((IHintedType) (UMLElementTypes.Message_4004)).getSemanticHint().equals(semanticHint) || ((IHintedType) (UMLElementTypes.Message_4005)).getSemanticHint().equals(semanticHint))) {
+				if (source instanceof CombinedFragment || source instanceof Interaction || source instanceof InteractionUse) {
 					CompoundCommand cc = new CompoundCommand("Redirect to Gate");
 					Point location = null;
-					IGraphicalEditPart adapter = (IGraphicalEditPart)sourceEP.getAdapter(IGraphicalEditPart.class);
-					if(adapter != null) {
+					IGraphicalEditPart adapter = (IGraphicalEditPart) sourceEP.getAdapter(IGraphicalEditPart.class);
+					if (adapter != null) {
 						Point sourceLocation = request.getLocation();
 						Object object = request.getExtendedData().get(SequenceRequestConstant.SOURCE_LOCATION_DATA);
-						if(object instanceof Point) {
-							sourceLocation = (Point)object;
+						if (object instanceof Point) {
+							sourceLocation = (Point) object;
 						}
 						location = GateHelper.computeGateLocation(sourceLocation, adapter.getFigure(), null);
 					}
 					ConnectionViewDescriptor edgeAdapter = viewRequest.getConnectionViewDescriptor();
 					final IAdaptable elementAdapter = edgeAdapter.getElementAdapter();
-					if(elementAdapter != null) {
+					if (elementAdapter != null) {
 						IAdaptable gateAdapter = new IAdaptable() {
 
+							@Override
 							public Object getAdapter(Class adapter) {
-								if(Gate.class == adapter) {
-									Message message = (Message)elementAdapter.getAdapter(Message.class);
+								if (Gate.class == adapter) {
+									Message message = (Message) elementAdapter.getAdapter(Message.class);
 									MessageEnd sendEvent = message.getSendEvent();
-									if(sendEvent instanceof Gate) {
+									if (sendEvent instanceof Gate) {
 										return sendEvent;
 									}
 								}
 								return null;
 							}
 						};
-						TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+						TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 						CreateGateViewCommand createGateCommand = new CreateGateViewCommand(editingDomain, sourceEP, location, gateAdapter);
 						cc.add(new ICommandProxy(createGateCommand));
 						SetConnectionEndsCommand resetSourceCommand = new SetConnectionEndsCommand(editingDomain, null);
 						resetSourceCommand.setEdgeAdaptor(edgeAdapter);
 						resetSourceCommand.setNewSourceAdaptor(createGateCommand.getResult());
 						cc.add(new ICommandProxy(resetSourceCommand));
-						if(cc.canExecute()) {
+						if (cc.canExecute()) {
 							command = command.chain(cc);
 						}
 					}
@@ -128,25 +129,25 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	private Gate resolveSemanticElement() {
-		return (Gate)((GateEditPart)getHost()).resolveSemanticElement();
+		return (Gate) ((GateEditPart) getHost()).resolveSemanticElement();
 	}
 
 	/**
 	 * Fix bug to find a correct InteractionOperand when connecting on CombinedFragment.
-	 * 
+	 *
 	 * @param location
 	 * @return
 	 */
 	private InteractionFragment getInteractionFragment(Point location) {
 		Gate gate = resolveSemanticElement();
-		if(gate != null) {
-			InteractionFragment fragment = (InteractionFragment)gate.eContainer();
-			if(fragment instanceof CombinedFragment) {
+		if (gate != null) {
+			InteractionFragment fragment = (InteractionFragment) gate.eContainer();
+			if (fragment instanceof CombinedFragment) {
 				fragment = SequenceUtil.findInteractionFragmentContainerAt(location, getHost());
-				if(!(fragment instanceof InteractionOperand)) {
-					Rectangle rect = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)getHost());
+				if (!(fragment instanceof InteractionOperand)) {
+					Rectangle rect = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart) getHost());
 					fragment = SequenceUtil.findInteractionFragmentContainerAt(rect.getRight(), getHost());
-					if(!(fragment instanceof InteractionOperand)) {
+					if (!(fragment instanceof InteractionOperand)) {
 						fragment = SequenceUtil.findInteractionFragmentContainerAt(rect.getLeft(), getHost());
 					}
 				}
@@ -158,7 +159,7 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getConnectionAndRelationshipCompleteCommand(org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -170,40 +171,41 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getConnectionCreateCommand(org.eclipse.gef.requests.CreateConnectionRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
-		if(request.getSourceEditPart() != null && request.getSourceEditPart() != getHost()) {
+		if (request.getSourceEditPart() != null && request.getSourceEditPart() != getHost()) {
 			return null;
 		}
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, getInteractionFragment(request.getLocation()));
-		Rectangle rect = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)getHost());
+		Rectangle rect = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart) getHost());
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_LOCATION_DATA, rect.getLocation());
 		return super.getConnectionCreateCommand(request);
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getConnectionAndRelationshipCreateCommand(org.eclipse.gmf.runtime.diagram.ui.requests.CreateConnectionViewAndElementRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getConnectionAndRelationshipCreateCommand(CreateConnectionViewAndElementRequest request) {
-		if(request.getSourceEditPart() != null && request.getSourceEditPart() != getHost()) {
+		if (request.getSourceEditPart() != null && request.getSourceEditPart() != getHost()) {
 			return null;
 		}
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, getInteractionFragment(request.getLocation()));
-		Rectangle rect = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)getHost());
+		Rectangle rect = SequenceUtil.getAbsoluteBounds((IGraphicalEditPart) getHost());
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_LOCATION_DATA, rect.getLocation());
 		return super.getConnectionAndRelationshipCreateCommand(request);
 	}
 
+	@Override
 	protected Connection createDummyConnection(Request req) {
-		PolylineConnection c = (PolylineConnection)super.createDummyConnection(req);
+		PolylineConnection c = (PolylineConnection) super.createDummyConnection(req);
 		c.setLineStyle(Graphics.LINE_DASHDOT);
 		c.setForegroundColor(ColorConstants.black);
 		return c;
@@ -211,7 +213,7 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getDummyConnectionRouter(org.eclipse.gef.requests.CreateConnectionRequest)
-	 * 
+	 *
 	 * @param arg0
 	 * @return
 	 */
@@ -222,18 +224,18 @@ public class GateGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getReconnectTargetCommand(org.eclipse.gef.requests.ReconnectRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
 		ConnectionEditPart connectionEditPart = request.getConnectionEditPart();
-		IGraphicalEditPart adapter = (IGraphicalEditPart)connectionEditPart.getAdapter(IGraphicalEditPart.class);
-		if(adapter != null && adapter.resolveSemanticElement() instanceof Message) {
-			Message oldMessage = (Message)adapter.resolveSemanticElement();
+		IGraphicalEditPart adapter = (IGraphicalEditPart) connectionEditPart.getAdapter(IGraphicalEditPart.class);
+		if (adapter != null && adapter.resolveSemanticElement() instanceof Message) {
+			Message oldMessage = (Message) adapter.resolveSemanticElement();
 			Gate gate = resolveSemanticElement();
-			if(gate == null || (gate.getMessage() != null && oldMessage != gate.getMessage())) {
+			if (gate == null || (gate.getMessage() != null && oldMessage != gate.getMessage())) {
 				return UnexecutableCommand.INSTANCE;
 			}
 		}

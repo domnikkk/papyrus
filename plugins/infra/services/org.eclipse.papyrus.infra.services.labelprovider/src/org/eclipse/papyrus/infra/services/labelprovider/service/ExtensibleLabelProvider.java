@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,11 +32,11 @@ import org.eclipse.swt.graphics.Image;
 /**
  * An ExtensibleLabelProvider encapsulates a set of LabelProviders. Each LabelProvider handles only a few kind of elements.
  * The ExtensibleLabelProvider retrieves the most appropriate LabelProvider for each object.
- * 
+ *
  * When more than one LabelProvider match an element, the one with the smaller priority is used.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelProvider, ILabelProviderListener, IColorProvider, IFontProvider {
 
@@ -53,24 +53,28 @@ public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelP
 		defaultProvider = new LabelProvider();
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		listeners.add(listener);
 	}
 
+	@Override
 	public void dispose() {
 		listeners.clear();
-		for(List<IFilteredLabelProvider> filteredProviders : providers.values()) {
-			for(IFilteredLabelProvider provider : filteredProviders) {
+		for (List<IFilteredLabelProvider> filteredProviders : providers.values()) {
+			for (IFilteredLabelProvider provider : filteredProviders) {
 				provider.dispose();
 			}
 		}
 		providers.clear();
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		listeners.remove(listener);
 	}
@@ -80,54 +84,61 @@ public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelP
 		provider.addListener(this);
 	}
 
+	@Override
 	public Color getForeground(Object element) {
 		IColorProvider provider = getProvider(element, IColorProvider.class);
-		if(provider != null) {
+		if (provider != null) {
 			return provider.getForeground(element);
 		}
 		return null;
 	}
 
+	@Override
 	public Color getBackground(Object element) {
 		IColorProvider provider = getProvider(element, IColorProvider.class);
-		if(provider != null) {
+		if (provider != null) {
 			return provider.getBackground(element);
 		}
 		return null;
 	}
 
+	@Override
 	public Font getFont(Object element) {
 		IFontProvider provider = getProvider(element, IFontProvider.class);
-		if(provider != null) {
+		if (provider != null) {
 			return provider.getFont(element);
 		}
 		return null;
 	}
 
+	@Override
 	public Image getImage(Object element) {
 		return getProvider(element).getImage(element);
 	}
 
+	@Override
 	public String getText(Object element) {
 		return getProvider(element).getText(element);
 	}
 
+	@Override
 	public Image getQualifierImage(Object element) {
 		Image result = null;
 
 		IQualifierLabelProvider provider = getProvider(element, IQualifierLabelProvider.class);
-		if(provider != null) {
+		if (provider != null) {
 			result = provider.getQualifierImage(element);
 		}
 
 		return result;
 	}
 
+	@Override
 	public String getQualifierText(Object element) {
 		String result = null;
 
 		IQualifierLabelProvider provider = getProvider(element, IQualifierLabelProvider.class);
-		if(provider != null) {
+		if (provider != null) {
 			result = provider.getQualifierText(element);
 		}
 
@@ -135,9 +146,9 @@ public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelP
 	}
 
 	protected final ILabelProvider getProvider(Object element) {
-		for(List<IFilteredLabelProvider> filteredProviders : providers.values()) {
-			for(IFilteredLabelProvider provider : filteredProviders) {
-				if(provider.accept(element)) {
+		for (List<IFilteredLabelProvider> filteredProviders : providers.values()) {
+			for (IFilteredLabelProvider provider : filteredProviders) {
+				if (provider.accept(element)) {
 					return provider;
 				}
 			}
@@ -147,9 +158,9 @@ public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelP
 	}
 
 	protected final <T> T getProvider(Object element, Class<T> type) {
-		for(List<IFilteredLabelProvider> filteredProviders : providers.values()) {
-			for(IFilteredLabelProvider provider : filteredProviders) {
-				if((type.isInstance(provider)) && provider.accept(element)) {
+		for (List<IFilteredLabelProvider> filteredProviders : providers.values()) {
+			for (IFilteredLabelProvider provider : filteredProviders) {
+				if ((type.isInstance(provider)) && provider.accept(element)) {
 					return type.cast(provider);
 				}
 			}
@@ -159,7 +170,7 @@ public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelP
 	}
 
 	protected final List<IFilteredLabelProvider> getProviders(int priority) {
-		if(!providers.containsKey(priority)) {
+		if (!providers.containsKey(priority)) {
 			providers.put(priority, new LinkedList<IFilteredLabelProvider>());
 		}
 
@@ -168,11 +179,12 @@ public class ExtensibleLabelProvider implements ILabelProvider, IQualifierLabelP
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Forwards the event to each listener
 	 */
+	@Override
 	public void labelProviderChanged(LabelProviderChangedEvent event) {
-		for(ILabelProviderListener listener : listeners) {
+		for (ILabelProviderListener listener : listeners) {
 			listener.labelProviderChanged(event);
 		}
 	}

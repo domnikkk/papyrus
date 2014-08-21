@@ -25,10 +25,10 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
 @SuppressWarnings("PMD.ConstructorCallsOverridableMethod")
-//@SuppressWarnings("PMD.ConstructorCallsOverridableMethod") This class is
-//deprecated, we won't then spend to many time to conforms to PMD rules.
+// @SuppressWarnings("PMD.ConstructorCallsOverridableMethod") This class is
+// deprecated, we won't then spend to many time to conforms to PMD rules.
 @Deprecated
-//TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
+// TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
 public class SelectQueryTypeComposite extends Composite {
 
 	private Combo queryTypeComboBox;

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -37,7 +37,7 @@ public class AddParameterInOperationWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param properties
@@ -83,7 +83,7 @@ public class AddParameterInOperationWidget extends
 	}
 
 	@SuppressWarnings("static-method")
-	//@SuppressWarnings("static-method") This method cannot be static because it is overrode by EditFacetWidget.
+	// @SuppressWarnings("static-method") This method cannot be static because it is overrode by EditFacetWidget.
 	protected EParameter getOperationParameter() {
 		return EcoreFactory.eINSTANCE.createEParameter();
 	}

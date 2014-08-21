@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -35,13 +35,13 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLi
 /**
  * <!-- begin-user-doc -->
  * The <b>Switch</b> for the model's inheritance hierarchy.
- * It supports the call {@link #doSwitch(EObject) doSwitch(object)}
- * to invoke the <code>caseXXX</code> method for each class of the model,
+ * It supports the call {@link #doSwitch(EObject) doSwitch(object)} to invoke the <code>caseXXX</code> method for each class of the model,
  * starting with the actual class of the object
  * and proceeding up the inheritance hierarchy
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.QueryPackage
  * @generated
  */
@@ -50,6 +50,7 @@ public class QuerySwitch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static QueryPackage modelPackage;
@@ -58,6 +59,7 @@ public class QuerySwitch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public QuerySwitch() {
@@ -70,6 +72,7 @@ public class QuerySwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -81,6 +84,7 @@ public class QuerySwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -90,8 +94,7 @@ public class QuerySwitch<T> {
 		}
 		else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
-			return
-				eSuperTypes.isEmpty() ?
+			return eSuperTypes.isEmpty() ?
 					defaultCase(theEObject) :
 					doSwitch(eSuperTypes.get(0), theEObject);
 		}
@@ -101,82 +104,124 @@ public class QuerySwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case QueryPackage.NAVIGATION_QUERY: {
-				NavigationQuery navigationQuery = (NavigationQuery)theEObject;
-				T result = caseNavigationQuery(navigationQuery);
-				if (result == null) result = caseQuery(navigationQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+		case QueryPackage.NAVIGATION_QUERY: {
+			NavigationQuery navigationQuery = (NavigationQuery) theEObject;
+			T result = caseNavigationQuery(navigationQuery);
+			if (result == null) {
+				result = caseQuery(navigationQuery);
 			}
-			case QueryPackage.IS_ONE_OF_QUERY: {
-				IsOneOfQuery isOneOfQuery = (IsOneOfQuery)theEObject;
-				T result = caseIsOneOfQuery(isOneOfQuery);
-				if (result == null) result = caseQuery(isOneOfQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case QueryPackage.STRING_LITERAL_QUERY: {
-				StringLiteralQuery stringLiteralQuery = (StringLiteralQuery)theEObject;
-				T result = caseStringLiteralQuery(stringLiteralQuery);
-				if (result == null) result = caseQuery(stringLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case QueryPackage.IS_ONE_OF_QUERY: {
+			IsOneOfQuery isOneOfQuery = (IsOneOfQuery) theEObject;
+			T result = caseIsOneOfQuery(isOneOfQuery);
+			if (result == null) {
+				result = caseQuery(isOneOfQuery);
 			}
-			case QueryPackage.TRUE_LITERAL_QUERY: {
-				TrueLiteralQuery trueLiteralQuery = (TrueLiteralQuery)theEObject;
-				T result = caseTrueLiteralQuery(trueLiteralQuery);
-				if (result == null) result = caseQuery(trueLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case QueryPackage.FALSE_LITERAL_QUERY: {
-				FalseLiteralQuery falseLiteralQuery = (FalseLiteralQuery)theEObject;
-				T result = caseFalseLiteralQuery(falseLiteralQuery);
-				if (result == null) result = caseQuery(falseLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case QueryPackage.STRING_LITERAL_QUERY: {
+			StringLiteralQuery stringLiteralQuery = (StringLiteralQuery) theEObject;
+			T result = caseStringLiteralQuery(stringLiteralQuery);
+			if (result == null) {
+				result = caseQuery(stringLiteralQuery);
 			}
-			case QueryPackage.NULL_LITERAL_QUERY: {
-				NullLiteralQuery nullLiteralQuery = (NullLiteralQuery)theEObject;
-				T result = caseNullLiteralQuery(nullLiteralQuery);
-				if (result == null) result = caseQuery(nullLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case QueryPackage.INTEGER_LITERAL_QUERY: {
-				IntegerLiteralQuery integerLiteralQuery = (IntegerLiteralQuery)theEObject;
-				T result = caseIntegerLiteralQuery(integerLiteralQuery);
-				if (result == null) result = caseQuery(integerLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case QueryPackage.TRUE_LITERAL_QUERY: {
+			TrueLiteralQuery trueLiteralQuery = (TrueLiteralQuery) theEObject;
+			T result = caseTrueLiteralQuery(trueLiteralQuery);
+			if (result == null) {
+				result = caseQuery(trueLiteralQuery);
 			}
-			case QueryPackage.FLOAT_LITERAL_QUERY: {
-				FloatLiteralQuery floatLiteralQuery = (FloatLiteralQuery)theEObject;
-				T result = caseFloatLiteralQuery(floatLiteralQuery);
-				if (result == null) result = caseQuery(floatLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			case QueryPackage.EOBJECT_LITERAL_QUERY: {
-				EObjectLiteralQuery eObjectLiteralQuery = (EObjectLiteralQuery)theEObject;
-				T result = caseEObjectLiteralQuery(eObjectLiteralQuery);
-				if (result == null) result = caseQuery(eObjectLiteralQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			return result;
+		}
+		case QueryPackage.FALSE_LITERAL_QUERY: {
+			FalseLiteralQuery falseLiteralQuery = (FalseLiteralQuery) theEObject;
+			T result = caseFalseLiteralQuery(falseLiteralQuery);
+			if (result == null) {
+				result = caseQuery(falseLiteralQuery);
 			}
-			case QueryPackage.OPERATION_CALL_QUERY: {
-				OperationCallQuery operationCallQuery = (OperationCallQuery)theEObject;
-				T result = caseOperationCallQuery(operationCallQuery);
-				if (result == null) result = caseQuery(operationCallQuery);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
+			if (result == null) {
+				result = defaultCase(theEObject);
 			}
-			default: return defaultCase(theEObject);
+			return result;
+		}
+		case QueryPackage.NULL_LITERAL_QUERY: {
+			NullLiteralQuery nullLiteralQuery = (NullLiteralQuery) theEObject;
+			T result = caseNullLiteralQuery(nullLiteralQuery);
+			if (result == null) {
+				result = caseQuery(nullLiteralQuery);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case QueryPackage.INTEGER_LITERAL_QUERY: {
+			IntegerLiteralQuery integerLiteralQuery = (IntegerLiteralQuery) theEObject;
+			T result = caseIntegerLiteralQuery(integerLiteralQuery);
+			if (result == null) {
+				result = caseQuery(integerLiteralQuery);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case QueryPackage.FLOAT_LITERAL_QUERY: {
+			FloatLiteralQuery floatLiteralQuery = (FloatLiteralQuery) theEObject;
+			T result = caseFloatLiteralQuery(floatLiteralQuery);
+			if (result == null) {
+				result = caseQuery(floatLiteralQuery);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case QueryPackage.EOBJECT_LITERAL_QUERY: {
+			EObjectLiteralQuery eObjectLiteralQuery = (EObjectLiteralQuery) theEObject;
+			T result = caseEObjectLiteralQuery(eObjectLiteralQuery);
+			if (result == null) {
+				result = caseQuery(eObjectLiteralQuery);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		case QueryPackage.OPERATION_CALL_QUERY: {
+			OperationCallQuery operationCallQuery = (OperationCallQuery) theEObject;
+			T result = caseOperationCallQuery(operationCallQuery);
+			if (result == null) {
+				result = caseQuery(operationCallQuery);
+			}
+			if (result == null) {
+				result = defaultCase(theEObject);
+			}
+			return result;
+		}
+		default:
+			return defaultCase(theEObject);
 		}
 	}
 
@@ -186,7 +231,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Navigation Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -201,7 +248,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Is One Of Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -216,7 +265,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>String Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -231,7 +282,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>True Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -246,7 +299,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>False Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -261,7 +316,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Null Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -276,7 +333,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Integer Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -291,7 +350,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Float Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -306,7 +367,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject Literal Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -321,7 +384,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Operation Call Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -336,7 +401,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Query</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -351,7 +418,9 @@ public class QuerySwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
+	 * 
+	 * @param object
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -360,4 +429,4 @@ public class QuerySwitch<T> {
 		return null;
 	}
 
-} //QuerySwitch
+} // QuerySwitch

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ package org.eclipse.papyrus.uml.profile.tree.objects;
 
 import java.util.ArrayList;
 
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.uml.profile.Message;
 import org.eclipse.papyrus.uml.profile.tree.ProfileElementLabelProvider;
 import org.eclipse.papyrus.uml.profile.ui.dialogs.ComboSelectionDialog;
@@ -33,11 +34,11 @@ public class MetaclassValueTreeObject extends ValueTreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public MetaclassValueTreeObject(AppliedStereotypePropertyTreeObject parent, Object value) {
 		super(parent, value);
@@ -67,12 +68,12 @@ public class MetaclassValueTreeObject extends ValueTreeObject {
 		// Fetching all instances in the model applicable to this property value
 		final ArrayList<Element> filteredElements = Util.getInstancesFilteredByType(elt, metaType, null);
 		// No element : error !!!
-		if(filteredElements.size() <= 0) {
+		if (filteredElements.size() <= 0) {
 			Message.warning("No element of type " + type.getName() + " found in the model.");
 			return;
 		}
 
-		pTO.removeSelected (filteredElements, (Element) value);
+		pTO.removeSelected(filteredElements, (Element) value);
 
 		String[] elementNames = Util.getStringArrayFromList(filteredElements);
 
@@ -86,7 +87,7 @@ public class MetaclassValueTreeObject extends ValueTreeObject {
 		String initialValue = (value != null ? labelProvider.getText(this) : elementNames[0]);
 		ComboSelectionDialog valueDialog = new ComboSelectionDialog(new Shell(), "New value:", elementNames, initialValue);
 		int val = valueDialog.open();
-		if((val == ComboSelectionDialog.OK) && (valueDialog.indexOfSelection != -1)) {
+		if ((val == Window.OK) && (valueDialog.indexOfSelection != -1)) {
 			Object newValue = filteredElements.get(valueDialog.indexOfSelection);
 			pTO.updateValue(pTO.appendMV(newValue));
 		}

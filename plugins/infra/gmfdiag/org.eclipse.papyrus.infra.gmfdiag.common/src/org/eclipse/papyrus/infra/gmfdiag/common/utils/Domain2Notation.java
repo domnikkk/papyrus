@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,22 +34,22 @@ public class Domain2Notation extends HashMap<EObject, Set<View>> {
 
 	/**
 	 * Maps view.
-	 * 
+	 *
 	 * @param view
-	 *        the view from which are mapped all subviews
+	 *            the view from which are mapped all subviews
 	 */
 	public void mapModel(View view) {
-		if((view instanceof Connector || view instanceof Shape) && !(view instanceof BasicCompartment)) {
+		if ((view instanceof Connector || view instanceof Shape) && !(view instanceof BasicCompartment)) {
 			putView(view);
 		}
-		@SuppressWarnings("unchecked")//$NON-NLS-1$
+		@SuppressWarnings("unchecked")
 		List<View> children = view.getChildren();
-		for(View child : children) {
+		for (View child : children) {
 			mapModel(child);
 		}
-		@SuppressWarnings("unchecked")//$NON-NLS-1$
+		@SuppressWarnings("unchecked")
 		List<View> sourceEdges = view.getSourceEdges();
-		for(View edge : sourceEdges) {
+		for (View edge : sourceEdges) {
 			mapModel(edge);
 		}
 
@@ -58,19 +58,19 @@ public class Domain2Notation extends HashMap<EObject, Set<View>> {
 
 	/**
 	 * Put view.
-	 * 
+	 *
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public void putView(View view) {
 		EObject element = view.getElement();
-		if(element == null) {
-			final EObject source = ((Connector)view).getSource().getElement();
-			final EObject target = ((Connector)view).getTarget().getElement();
+		if (element == null) {
+			final EObject source = ((Connector) view).getSource().getElement();
+			final EObject target = ((Connector) view).getTarget().getElement();
 			element = new EdgeWithNoSemanticElementRepresentationImpl(source, target, view.getType());
 		}
 		Set<View> set = this.get(element);
-		if(set != null) {
+		if (set != null) {
 			set.add(view);
 		} else {
 			Set<View> hashSet = new HashSet<View>();
@@ -81,15 +81,15 @@ public class Domain2Notation extends HashMap<EObject, Set<View>> {
 
 	/**
 	 * Put view.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param view
-	 *        the view
+	 *            the view
 	 */
 	public void putView(EObject element, View view) {
 		Set<View> set = this.get(element);
-		if(set != null) {
+		if (set != null) {
 			set.add(view);
 		} else {
 			Set<View> hashSet = new HashSet<View>();
@@ -100,15 +100,15 @@ public class Domain2Notation extends HashMap<EObject, Set<View>> {
 
 	/**
 	 * Gets the first view, prefer the get(Object key) method to get all the views
-	 * 
+	 *
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @return the first view
 	 */
 	@Deprecated
 	public View getFirstView(Object key) {
 		Set<View> set = get(key);
-		if(set != null) {
+		if (set != null) {
 			return set.iterator().next();
 		}
 		return null;

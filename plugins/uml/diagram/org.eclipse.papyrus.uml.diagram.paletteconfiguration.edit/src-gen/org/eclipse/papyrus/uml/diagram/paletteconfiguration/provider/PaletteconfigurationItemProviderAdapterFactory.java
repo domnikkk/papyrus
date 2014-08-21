@@ -30,6 +30,7 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.util.Paletteconfigur
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PaletteconfigurationItemProviderAdapterFactory extends PaletteconfigurationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -37,6 +38,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -45,6 +47,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -53,6 +56,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -61,6 +65,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PaletteconfigurationItemProviderAdapterFactory() {
@@ -75,6 +80,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PaletteConfigurationItemProvider paletteConfigurationItemProvider;
@@ -83,6 +89,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,6 +105,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ToolConfigurationItemProvider toolConfigurationItemProvider;
@@ -106,6 +114,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ToolConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,6 +130,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StackConfigurationItemProvider stackConfigurationItemProvider;
@@ -129,6 +139,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,6 +155,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.DrawerConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DrawerConfigurationItemProvider drawerConfigurationItemProvider;
@@ -152,6 +164,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.DrawerConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,6 +180,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IconDescriptorItemProvider iconDescriptorItemProvider;
@@ -175,6 +189,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.IconDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -190,6 +205,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ElementDescriptorItemProvider elementDescriptorItemProvider;
@@ -198,6 +214,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.ElementDescriptor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,6 +230,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SeparatorConfigurationItemProvider separatorConfigurationItemProvider;
@@ -221,6 +239,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This creates an adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,8 +255,10 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -246,8 +267,10 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -255,6 +278,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -266,6 +290,7 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -276,13 +301,14 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -294,8 +320,10 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -304,8 +332,10 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -314,8 +344,10 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -325,19 +357,35 @@ public class PaletteconfigurationItemProviderAdapterFactory extends Paletteconfi
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (paletteConfigurationItemProvider != null) paletteConfigurationItemProvider.dispose();
-		if (toolConfigurationItemProvider != null) toolConfigurationItemProvider.dispose();
-		if (stackConfigurationItemProvider != null) stackConfigurationItemProvider.dispose();
-		if (drawerConfigurationItemProvider != null) drawerConfigurationItemProvider.dispose();
-		if (iconDescriptorItemProvider != null) iconDescriptorItemProvider.dispose();
-		if (elementDescriptorItemProvider != null) elementDescriptorItemProvider.dispose();
-		if (separatorConfigurationItemProvider != null) separatorConfigurationItemProvider.dispose();
+		if (paletteConfigurationItemProvider != null) {
+			paletteConfigurationItemProvider.dispose();
+		}
+		if (toolConfigurationItemProvider != null) {
+			toolConfigurationItemProvider.dispose();
+		}
+		if (stackConfigurationItemProvider != null) {
+			stackConfigurationItemProvider.dispose();
+		}
+		if (drawerConfigurationItemProvider != null) {
+			drawerConfigurationItemProvider.dispose();
+		}
+		if (iconDescriptorItemProvider != null) {
+			iconDescriptorItemProvider.dispose();
+		}
+		if (elementDescriptorItemProvider != null) {
+			elementDescriptorItemProvider.dispose();
+		}
+		if (separatorConfigurationItemProvider != null) {
+			separatorConfigurationItemProvider.dispose();
+		}
 	}
 
 }

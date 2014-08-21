@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.gmf.runtime.emf.type.core.edithelper.IEditHelperAdvice;
 import org.osgi.framework.Bundle;
 
 /**
- * Registry that manages all possible pre/post action configurations 
+ * Registry that manages all possible pre/post action configurations
  */
 public class AspectConfigurationFactoryRegistry {
 
@@ -40,11 +40,11 @@ public class AspectConfigurationFactoryRegistry {
 
 	/**
 	 * returns the singleton instance of this registry
-	 * 
+	 *
 	 * @return the singleton instance of this registry
 	 */
 	public static synchronized AspectConfigurationFactoryRegistry getInstance() {
-		if(registry == null) {
+		if (registry == null) {
 			registry = new AspectConfigurationFactoryRegistry();
 			registry.init();
 		}
@@ -55,20 +55,20 @@ public class AspectConfigurationFactoryRegistry {
 	 * Inits the registry.
 	 */
 	protected void init() {
-		configurationTypeToClassDescriptor = new  HashMap<String, AspectConfigurationFactoryRegistry.ConfigurableClassDescriptor>();
-		//read invariant rule configuration etension point
+		configurationTypeToClassDescriptor = new HashMap<String, AspectConfigurationFactoryRegistry.ConfigurableClassDescriptor>();
+		// read invariant rule configuration etension point
 		IConfigurationElement[] elements = Platform.getExtensionRegistry().getConfigurationElementsFor(IAspectTypeExtensionPoint.EXTENSION_POINT_ID);
-		// for each element, parses and retrieve the model file. then loads it and returns the root element 
-		for(IConfigurationElement configurationElement : elements) {
-			// contributor will always be the same, but implementation could be different.  
+		// for each element, parses and retrieve the model file. then loads it and returns the root element
+		for (IConfigurationElement configurationElement : elements) {
+			// contributor will always be the same, but implementation could be different.
 			String contributorName = configurationElement.getContributor().getName();
 
 			String configurationClass = configurationElement.getAttribute(IAspectTypeExtensionPoint.CONFIGURATION_CLASS);
-			
+
 			String editHelperAdviceClassName = configurationElement.getAttribute(IAspectTypeExtensionPoint.EDIT_HELPER_ADVICE_CLASS);
 			String containerDescriptorClassName = configurationElement.getAttribute(IAspectTypeExtensionPoint.CONTAINER_DESCRIPTOR_CLASS);
 			String creationElementValidatorClassName = configurationElement.getAttribute(IAspectTypeExtensionPoint.CREATION_ELEMENT_VALIDATOR_CLASS);
-			
+
 			ConfigurableClassDescriptor configurableClassDescriptor = new ConfigurableClassDescriptor(contributorName, editHelperAdviceClassName, contributorName, containerDescriptorClassName, contributorName, creationElementValidatorClassName);
 			configurationTypeToClassDescriptor.put(configurationClass, configurableClassDescriptor);
 		}
@@ -81,12 +81,12 @@ public class AspectConfigurationFactoryRegistry {
 	 */
 	public IContainerDescriptor createContainerDescriptor(ActionConfiguration ruleConfiguration) {
 		Class<IActionContainerDescriptor<ActionConfiguration>> containerDescriptorClass = getContainerDescriptorClass(ruleConfiguration);
-		if(containerDescriptorClass == null) {
+		if (containerDescriptorClass == null) {
 			return null;
 		}
 		try {
 			IActionContainerDescriptor<ActionConfiguration> containerDescriptor = containerDescriptorClass.newInstance();
-			if(containerDescriptor != null) {
+			if (containerDescriptor != null) {
 				containerDescriptor.init(ruleConfiguration);
 			}
 			return containerDescriptor;
@@ -104,13 +104,13 @@ public class AspectConfigurationFactoryRegistry {
 	 */
 	public IEditHelperAdvice createEditHelperAdvice(ActionConfiguration actionConfiguration) {
 		Class<IActionEditHelperAdvice<ActionConfiguration>> editHelperAdviceClass = getEditHelperAdviceClass(actionConfiguration);
-		if(editHelperAdviceClass == null) {
-			Activator.log.error("impossible to find the edit helper advice implementation for configuration type : " + ((actionConfiguration!=null) ? actionConfiguration.eClass().getName() : "null"), null);
+		if (editHelperAdviceClass == null) {
+			Activator.log.error("impossible to find the edit helper advice implementation for configuration type : " + ((actionConfiguration != null) ? actionConfiguration.eClass().getName() : "null"), null);
 			return null;
 		}
 		try {
 			IActionEditHelperAdvice<ActionConfiguration> editHelperAdvice = editHelperAdviceClass.newInstance();
-			if(editHelperAdvice != null) {
+			if (editHelperAdvice != null) {
 				editHelperAdvice.init(actionConfiguration);
 			}
 			return editHelperAdvice;
@@ -121,20 +121,20 @@ public class AspectConfigurationFactoryRegistry {
 		}
 		return null;
 	}
-	
+
 	/**
 	 * @param ruleConfiguration
 	 * @return
 	 */
 	public ICreationElementValidator createCreationElementValidator(ActionConfiguration actionConfiguration) {
 		Class<IActionCreationElementValidator<ActionConfiguration>> creationElementValidatorClass = getCreationElementValidatorClass(actionConfiguration);
-		if(creationElementValidatorClass == null) {
-			Activator.log.error("impossible to find the Creation Element Validator for configuration type : " + ((actionConfiguration!=null) ? actionConfiguration.eClass().getName() : "null"), null);
+		if (creationElementValidatorClass == null) {
+			Activator.log.error("impossible to find the Creation Element Validator for configuration type : " + ((actionConfiguration != null) ? actionConfiguration.eClass().getName() : "null"), null);
 			return null;
 		}
 		try {
 			IActionCreationElementValidator<ActionConfiguration> creationElementValidator = creationElementValidatorClass.newInstance();
-			if(creationElementValidator != null) {
+			if (creationElementValidator != null) {
 				creationElementValidator.init(actionConfiguration);
 			}
 			return creationElementValidator;
@@ -145,8 +145,8 @@ public class AspectConfigurationFactoryRegistry {
 		}
 		return null;
 	}
-	
-	
+
+
 	/**
 	 * @param ruleConfiguration
 	 * @return
@@ -157,10 +157,10 @@ public class AspectConfigurationFactoryRegistry {
 		String className = configurationTypeToClassDescriptor.get(configurationType).getCreationElementValidatorClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getCreationElementValidatorContributorName();
 		// look in the list of registered matcher for the right one
-		if(className == null) {
-			Activator.log.error("There should be an implementation class for the configuration "+configurationType+ " from contributor "+contributorName, null);
-		} else if(contributorName != null) {
-			return (Class<IActionCreationElementValidator<ActionConfiguration>>)loadClass(className, contributorName);
+		if (className == null) {
+			Activator.log.error("There should be an implementation class for the configuration " + configurationType + " from contributor " + contributorName, null);
+		} else if (contributorName != null) {
+			return (Class<IActionCreationElementValidator<ActionConfiguration>>) loadClass(className, contributorName);
 		}
 		return null;
 	}
@@ -174,9 +174,9 @@ public class AspectConfigurationFactoryRegistry {
 		String configurationType = configuration.eClass().getInstanceClassName();
 		String className = configurationTypeToClassDescriptor.get(configurationType).getEditHelperAdviceClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getEditHelperAdviceContributorName();
-		
+
 		// look in the list of registered edit helper advices for the right one
-		return (Class<IActionEditHelperAdvice<ActionConfiguration>>)loadClass(className, contributorName);
+		return (Class<IActionEditHelperAdvice<ActionConfiguration>>) loadClass(className, contributorName);
 	}
 
 	/**
@@ -188,24 +188,25 @@ public class AspectConfigurationFactoryRegistry {
 		String configurationType = configuration.eClass().getInstanceClassName();
 		String className = configurationTypeToClassDescriptor.get(configurationType).getContainerDescriptorClassName();
 		String contributorName = configurationTypeToClassDescriptor.get(configurationType).getContainerDescriptorContributorName();
-		
-		
+
+
 		// look in the list of registered edit helper advices for the right one
-		if(className !=null && contributorName !=null) {
-			return (Class<IActionContainerDescriptor<ActionConfiguration>>)loadClass(className, contributorName);
+		if (className != null && contributorName != null) {
+			return (Class<IActionContainerDescriptor<ActionConfiguration>>) loadClass(className, contributorName);
 		}
 		return null;
 	}
 
 	protected static class ConfigurableClassDescriptor {
-		
+
 		/**
 		 * @param editHelperAdviceContributorName
 		 * @param editHelperAdviceClassName
 		 * @param containerDescriptorContributorName
 		 * @param containerDescriptorClassName
 		 */
-		public ConfigurableClassDescriptor(String editHelperAdviceContributorName, String editHelperAdviceClassName, String containerDescriptorContributorName, String containerDescriptorClassName, String creationElementValidatorContributorName, String creationElementValidatorClassName) {
+		public ConfigurableClassDescriptor(String editHelperAdviceContributorName, String editHelperAdviceClassName, String containerDescriptorContributorName, String containerDescriptorClassName, String creationElementValidatorContributorName,
+				String creationElementValidatorClassName) {
 			this.editHelperAdviceContributorName = editHelperAdviceContributorName;
 			this.editHelperAdviceClassName = editHelperAdviceClassName;
 			this.containerDescriptorContributorName = containerDescriptorContributorName;
@@ -215,11 +216,11 @@ public class AspectConfigurationFactoryRegistry {
 		}
 
 		private final String editHelperAdviceContributorName;
-		
+
 		private final String editHelperAdviceClassName;
-		
+
 		private final String containerDescriptorContributorName;
-		
+
 		private final String containerDescriptorClassName;
 
 		private final String creationElementValidatorContributorName;
@@ -239,7 +240,7 @@ public class AspectConfigurationFactoryRegistry {
 		public String getCreationElementValidatorClassName() {
 			return creationElementValidatorClassName;
 		}
-		
+
 		/**
 		 * @return the editHelperAdviceContributorName
 		 */
@@ -247,7 +248,7 @@ public class AspectConfigurationFactoryRegistry {
 			return editHelperAdviceContributorName;
 		}
 
-		
+
 		/**
 		 * @return the editHelperAdviceClassName
 		 */
@@ -255,7 +256,7 @@ public class AspectConfigurationFactoryRegistry {
 			return editHelperAdviceClassName;
 		}
 
-		
+
 		/**
 		 * @return the containerDescriptorContributorName
 		 */
@@ -263,19 +264,19 @@ public class AspectConfigurationFactoryRegistry {
 			return containerDescriptorContributorName;
 		}
 
-		
+
 		/**
 		 * @return the containerDescriptorClassName
 		 */
 		public String getContainerDescriptorClassName() {
 			return containerDescriptorClassName;
 		}
-		
+
 	}
-	
-	///////////////////////////////////////////////////////////////////////////
+
+	// /////////////////////////////////////////////////////////////////////////
 	// loading resource
-	///////////////////////////////////////////////////////////////////////////
+	// /////////////////////////////////////////////////////////////////////////
 	/** A map of classes that have been successfully loaded, keyed on the class name optionally prepended by the plugin ID, if specified. */
 	private static Map<String, WeakReference<Class<?>>> successLookupTable = new HashMap<String, WeakReference<Class<?>>>();
 
@@ -287,11 +288,11 @@ public class AspectConfigurationFactoryRegistry {
 
 	/**
 	 * A utility method to load a class using its name and a given class loader.
-	 * 
+	 *
 	 * @param className
-	 *        The class name
+	 *            The class name
 	 * @param bundle
-	 *        The class loader
+	 *            The class loader
 	 * @return The loaded class or <code>null</code> if could not be loaded
 	 */
 	protected static Class<?> loadClass(String className, String pluginId) {
@@ -302,21 +303,22 @@ public class AspectConfigurationFactoryRegistry {
 		String keyString = keyStringBuf.toString();
 		WeakReference<Class<?>> ref = successLookupTable.get(keyString);
 		Class<?> found = (ref != null) ? ref.get() : null;
-		if(found == null) {
-			if(ref != null)
+		if (found == null) {
+			if (ref != null) {
 				successLookupTable.remove(keyString);
-			if(!failureLookupTable.contains(keyString)) {
+			}
+			if (!failureLookupTable.contains(keyString)) {
 				try {
 					Bundle bundle = basicGetPluginBundle(pluginId);
-					if(bundle != null) {
+					if (bundle != null) {
 						// never load the class if the bundle is not active other wise
 						// we will cause the plugin to load
 						// unless the class is in the exception list
 						int state = bundle.getState();
-						if(state == org.osgi.framework.Bundle.ACTIVE || isInExceptionList(bundle, className)) {
+						if (state == org.osgi.framework.Bundle.ACTIVE || isInExceptionList(bundle, className)) {
 							found = bundle.loadClass(className);
 							successLookupTable.put(keyString, new WeakReference<Class<?>>(found));
-							if(state == org.osgi.framework.Bundle.ACTIVE) {
+							if (state == org.osgi.framework.Bundle.ACTIVE) {
 								bundleToExceptionsSetMap.remove(bundle);
 							}
 						}
@@ -334,15 +336,16 @@ public class AspectConfigurationFactoryRegistry {
 	/**
 	 * Given a bundle id, it checks if the bundle is found and activated. If it
 	 * is, the method returns the bundle, otherwise it returns <code>null</code>.
-	 * 
+	 *
 	 * @param pluginId
-	 *        the bundle ID
+	 *            the bundle ID
 	 * @return the bundle, if found
 	 */
 	protected static Bundle getPluginBundle(String pluginId) {
 		Bundle bundle = basicGetPluginBundle(pluginId);
-		if(null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE)
+		if (null != bundle && bundle.getState() == org.osgi.framework.Bundle.ACTIVE) {
 			return bundle;
+		}
 		return null;
 	}
 
@@ -353,23 +356,23 @@ public class AspectConfigurationFactoryRegistry {
 	private static boolean isInExceptionList(Bundle bundle, String className) {
 		String packageName = className.substring(0, className.lastIndexOf('.'));
 		Set<String> exceptionSet = bundleToExceptionsSetMap.get(bundle);
-		if(exceptionSet == null) {
+		if (exceptionSet == null) {
 			Dictionary<String, String> dict = bundle.getHeaders();
 			String value = dict.get("Eclipse-LazyStart"); //$NON-NLS-1$
-			if(value != null) {
+			if (value != null) {
 				int index = value.indexOf("exceptions"); //$NON-NLS-1$
-				if(index != -1) {
+				if (index != -1) {
 					try {
 						int start = value.indexOf('"', index + 1);
 						int end = value.indexOf('"', start + 1);
 						String exceptions = value.substring(start + 1, end);
 						exceptionSet = new HashSet<String>(2);
 						StringTokenizer tokenizer = new StringTokenizer(exceptions, ","); //$NON-NLS-1$
-						while(tokenizer.hasMoreTokens()) {
+						while (tokenizer.hasMoreTokens()) {
 							exceptionSet.add(tokenizer.nextToken().trim());
 						}
 					} catch (IndexOutOfBoundsException exception) {
-						// this means the MF did not follow the documented format for the exceptions list  so i'll consider it empty
+						// this means the MF did not follow the documented format for the exceptions list so i'll consider it empty
 						exceptionSet = Collections.emptySet();
 					}
 				} else {

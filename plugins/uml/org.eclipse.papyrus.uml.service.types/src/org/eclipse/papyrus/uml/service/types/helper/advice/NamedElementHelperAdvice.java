@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -42,29 +42,29 @@ public class NamedElementHelperAdvice extends AbstractEditHelperAdvice {
 
 		ICommand command = super.getBeforeDestroyDependentsCommand(request);
 
-		NamedElement elementToDestroy = (NamedElement)request.getElementToDestroy();
+		NamedElement elementToDestroy = (NamedElement) request.getElementToDestroy();
 
 		Set<DirectedRelationship> relationshipsWithoutEnds = new HashSet<DirectedRelationship>();
 
 		Iterator<DirectedRelationship> srcRelationhipsIt = elementToDestroy.getSourceDirectedRelationships(UMLPackage.eINSTANCE.getDependency()).iterator();
-		while(srcRelationhipsIt.hasNext()) {
+		while (srcRelationhipsIt.hasNext()) {
 			DirectedRelationship directedRelationship = srcRelationhipsIt.next();
 
-			// If all sources from the directed relationship are to be destroyed, add the relationship destruction 
-			if(request.getDependentElementsToDestroy().containsAll(directedRelationship.getSources())) {
-				if(!request.getDependentElementsToDestroy().contains(directedRelationship)) {
+			// If all sources from the directed relationship are to be destroyed, add the relationship destruction
+			if (request.getDependentElementsToDestroy().containsAll(directedRelationship.getSources())) {
+				if (!request.getDependentElementsToDestroy().contains(directedRelationship)) {
 					relationshipsWithoutEnds.add(directedRelationship);
 				}
 			}
 		}
 
 		Iterator<DirectedRelationship> tgtRelationhipsIt = elementToDestroy.getTargetDirectedRelationships(UMLPackage.eINSTANCE.getDependency()).iterator();
-		while(tgtRelationhipsIt.hasNext()) {
+		while (tgtRelationhipsIt.hasNext()) {
 			DirectedRelationship directedRelationship = tgtRelationhipsIt.next();
 
-			// If all sources from the directed relationship are to be destroyed, add the relationship destruction 
-			if(request.getDependentElementsToDestroy().containsAll(directedRelationship.getTargets())) {
-				if(!request.getDependentElementsToDestroy().contains(directedRelationship)) {
+			// If all sources from the directed relationship are to be destroyed, add the relationship destruction
+			if (request.getDependentElementsToDestroy().containsAll(directedRelationship.getTargets())) {
+				if (!request.getDependentElementsToDestroy().contains(directedRelationship)) {
 					relationshipsWithoutEnds.add(directedRelationship);
 				}
 			}

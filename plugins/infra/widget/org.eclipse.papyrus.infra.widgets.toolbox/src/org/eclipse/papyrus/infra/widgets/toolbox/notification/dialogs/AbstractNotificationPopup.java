@@ -82,16 +82,16 @@ public abstract class AbstractNotificationPopup extends Window {
 
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
-			if(!display.isDisposed()) {
+			if (!display.isDisposed()) {
 				display.asyncExec(new Runnable() {
 
 					public void run() {
 						Shell shell = AbstractNotificationPopup.this.getShell();
-						if(shell == null || shell.isDisposed()) {
+						if (shell == null || shell.isDisposed()) {
 							return;
 						}
 
-						if(isMouseOver(shell)) {
+						if (isMouseOver(shell)) {
 							scheduleAutoClose();
 							return;
 						}
@@ -101,7 +101,7 @@ public abstract class AbstractNotificationPopup extends Window {
 
 				});
 			}
-			if(monitor.isCanceled()) {
+			if (monitor.isCanceled()) {
 				return Status.CANCEL_STATUS;
 			}
 
@@ -149,12 +149,12 @@ public abstract class AbstractNotificationPopup extends Window {
 	 * parameter that's associated with the product ID (e.g.
 	 * "org.eclipse.sdk.ide"). Strips the trailing "SDK" for any name, since
 	 * this part of the label is considered visual noise.
-	 * 
+	 *
 	 * @return the name to be used in the title of the popup.
 	 */
 	protected String getPopupShellTitle() {
 		String productName = "Papyrus ";
-		return productName + LABEL_NOTIFICATION; //$NON-NLS-1$
+		return productName + LABEL_NOTIFICATION;
 	}
 
 	protected Image getPopupShellImage(int maximumHeight) {
@@ -163,7 +163,7 @@ public abstract class AbstractNotificationPopup extends Window {
 
 	/**
 	 * Override to populate with notifications.
-	 * 
+	 *
 	 * @param parent
 	 */
 	protected void createContentArea(Composite parent) {
@@ -174,7 +174,7 @@ public abstract class AbstractNotificationPopup extends Window {
 	 * Override to customize the title bar
 	 */
 	protected void createTitleArea(Composite parent) {
-		((GridData)parent.getLayoutData()).heightHint = TITLE_HEIGHT;
+		((GridData) parent.getLayoutData()).heightHint = TITLE_HEIGHT;
 
 		Label titleImageLabel = new Label(parent, SWT.NONE);
 		titleImageLabel.setImage(getPopupShellImage(TITLE_HEIGHT));
@@ -273,7 +273,7 @@ public abstract class AbstractNotificationPopup extends Window {
 		region.subtract(s.x - 1, s.y - 4, 1, 1);
 
 		/* Dispose old first */
-		if(shell.getRegion() != null) {
+		if (shell.getRegion() != null) {
 			shell.getRegion().dispose();
 		}
 
@@ -285,7 +285,7 @@ public abstract class AbstractNotificationPopup extends Window {
 	}
 
 	private boolean isMouseOver(Shell shell) {
-		if(display.isDisposed()) {
+		if (display.isDisposed()) {
 			return false;
 		}
 		return shell.getBounds().contains(display.getCursorLocation());
@@ -293,7 +293,7 @@ public abstract class AbstractNotificationPopup extends Window {
 
 	@Override
 	public int open() {
-		if(shell == null || shell.isDisposed()) {
+		if (shell == null || shell.isDisposed()) {
 			shell = null;
 			create();
 		}
@@ -301,18 +301,18 @@ public abstract class AbstractNotificationPopup extends Window {
 		constrainShellSize();
 		shell.setLocation(fixupDisplayBounds(shell.getSize(), shell.getLocation()));
 
-		if(isFadingEnabled()) {
+		if (isFadingEnabled()) {
 			shell.setAlpha(0);
 		}
 		shell.setVisible(true);
 		fadeJob = SwtUtil.fadeIn(shell, new SwtUtil.IFadeListener() {
 
 			public void faded(Shell shell, int alpha) {
-				if(shell.isDisposed()) {
+				if (shell.isDisposed()) {
 					return;
 				}
 
-				if(alpha == 255) {
+				if (alpha == 255) {
 					scheduleAutoClose();
 				}
 			}
@@ -321,15 +321,15 @@ public abstract class AbstractNotificationPopup extends Window {
 	}
 
 	protected void scheduleAutoClose() {
-		if(delayClose > 0) {
+		if (delayClose > 0) {
 			closeJob.schedule(delayClose);
 		}
 	}
 
 	@Override
 	protected Control createContents(Composite parent) {
-		((GridLayout)parent.getLayout()).marginWidth = 1;
-		((GridLayout)parent.getLayout()).marginHeight = 1;
+		((GridLayout) parent.getLayout()).marginWidth = 1;
+		((GridLayout) parent.getLayout()).marginHeight = 1;
 
 		/* Outer Composite holding the controls */
 		final Composite outerCircle = new Composite(parent, SWT.NO_FOCUS);
@@ -355,7 +355,7 @@ public abstract class AbstractNotificationPopup extends Window {
 				Image oldBGImage = outerCircle.getBackgroundImage();
 				outerCircle.setBackgroundImage(lastUsedBgImage);
 
-				if(oldBGImage != null) {
+				if (oldBGImage != null) {
 					oldBGImage.dispose();
 				}
 			}
@@ -470,10 +470,10 @@ public abstract class AbstractNotificationPopup extends Window {
 	}
 
 	private void setNullBackground(final Composite outerCircle) {
-		for(Control c : outerCircle.getChildren()) {
+		for (Control c : outerCircle.getChildren()) {
 			c.setBackground(null);
-			if(c instanceof Composite) {
-				setNullBackground((Composite)c);
+			if (c instanceof Composite) {
+				setNullBackground((Composite) c);
 			}
 		}
 	}
@@ -496,27 +496,27 @@ public abstract class AbstractNotificationPopup extends Window {
 	}
 
 	public void closeFade() {
-		if(fadeJob != null) {
+		if (fadeJob != null) {
 			fadeJob.cancelAndWait(false);
 		}
 		fadeJob = SwtUtil.fadeOut(getShell(), new SwtUtil.IFadeListener() {
 
 			public void faded(Shell shell, int alpha) {
-				if(!shell.isDisposed()) {
-					if(alpha == 0) {
+				if (!shell.isDisposed()) {
+					if (alpha == 0) {
 						shell.close();
-					} else if(isMouseOver(shell)) {
-						if(fadeJob != null) {
+					} else if (isMouseOver(shell)) {
+						if (fadeJob != null) {
 							fadeJob.cancelAndWait(false);
 						}
 						fadeJob = SwtUtil.fastFadeIn(shell, new SwtUtil.IFadeListener() {
 
 							public void faded(Shell shell, int alpha) {
-								if(shell.isDisposed()) {
+								if (shell.isDisposed()) {
 									return;
 								}
 
-								if(alpha == 255) {
+								if (alpha == 255) {
 									scheduleAutoClose();
 								}
 							}
@@ -530,10 +530,10 @@ public abstract class AbstractNotificationPopup extends Window {
 	@Override
 	public boolean close() {
 		resources.dispose();
-		if(lastUsedRegion != null) {
+		if (lastUsedRegion != null) {
 			lastUsedRegion.dispose();
 		}
-		if(lastUsedBgImage != null && !lastUsedBgImage.isDisposed()) {
+		if (lastUsedBgImage != null && !lastUsedBgImage.isDisposed()) {
 			lastUsedBgImage.dispose();
 		}
 		return super.close();
@@ -548,30 +548,30 @@ public abstract class AbstractNotificationPopup extends Window {
 	}
 
 	private Point fixupDisplayBounds(Point tipSize, Point location) {
-		if(respectDisplayBounds) {
+		if (respectDisplayBounds) {
 			Rectangle bounds;
 			Point rightBounds = new Point(tipSize.x + location.x, tipSize.y + location.y);
 
-			if(respectMonitorBounds) {
+			if (respectMonitorBounds) {
 				bounds = shell.getDisplay().getPrimaryMonitor().getBounds();
 			} else {
 				bounds = getPrimaryClientArea();
 			}
 
-			if(!(bounds.contains(location) && bounds.contains(rightBounds))) {
-				if(rightBounds.x > bounds.x + bounds.width) {
+			if (!(bounds.contains(location) && bounds.contains(rightBounds))) {
+				if (rightBounds.x > bounds.x + bounds.width) {
 					location.x -= rightBounds.x - (bounds.x + bounds.width);
 				}
 
-				if(rightBounds.y > bounds.y + bounds.height) {
+				if (rightBounds.y > bounds.y + bounds.height) {
 					location.y -= rightBounds.y - (bounds.y + bounds.height);
 				}
 
-				if(location.x < bounds.x) {
+				if (location.x < bounds.x) {
 					location.x = bounds.x;
 				}
 
-				if(location.y < bounds.y) {
+				if (location.y < bounds.y) {
 					location.y = bounds.y;
 				}
 			}

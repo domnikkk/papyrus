@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,33 +54,33 @@ public class CutAndInsertOccurrenceSpecificationCommand extends AbstractTransact
 
 	/**
 	 * @param fullStateInvariantEditPartCN
-	 *        the state invariant to cut in two
+	 *            the state invariant to cut in two
 	 * @param location
-	 *        where the user clicked: the horizontal coordinate indicates where to insert the
-	 *        OccurrenceSpecification
+	 *            where the user clicked: the horizontal coordinate indicates where to insert the
+	 *            OccurrenceSpecification
 	 * @param destruction
-	 *        whether to create a DestructionOccurrenceSpecification
+	 *            whether to create a DestructionOccurrenceSpecification
 	 */
 	public CutAndInsertOccurrenceSpecificationCommand(final FullStateInvariantEditPartCN fullStateInvariantEditPartCN, final Point location, final boolean destruction) {
 		super(getEditingDomain(fullStateInvariantEditPartCN), Messages.CutAndInsertOccurrenceSpecificationCommand_CreateOccurrenceSpecification, null);
 		this.fullStateInvariantEditPartCN = fullStateInvariantEditPartCN;
 		this.location = location;
 		this.destruction = destruction;
-		this.lifelineEditPart = (FullLifelineEditPartCN)EditPartUtils.findParentEditPartWithId(this.fullStateInvariantEditPartCN, FullLifelineEditPartCN.VISUAL_ID);
-		this.lifeline = (Lifeline)((View)this.lifelineEditPart.getModel()).getElement();
+		this.lifelineEditPart = (FullLifelineEditPartCN) EditPartUtils.findParentEditPartWithId(this.fullStateInvariantEditPartCN, FullLifelineEditPartCN.VISUAL_ID);
+		this.lifeline = (Lifeline) ((View) this.lifelineEditPart.getModel()).getElement();
 	}
 
 	private static TransactionalEditingDomain getEditingDomain(final FullStateInvariantEditPartCN fullStateInvariantEditPart) {
-		final StateInvariant stateInvariant = (StateInvariant)((View)fullStateInvariantEditPart.getModel()).getElement();
+		final StateInvariant stateInvariant = (StateInvariant) ((View) fullStateInvariantEditPart.getModel()).getElement();
 		return TransactionUtil.getEditingDomain(stateInvariant);
 	}
 
 	@Override
 	protected CommandResult doExecuteWithResult(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
-		final FullLifelineTimelineCompartmentEditPartCN timelineCompartmentEditPart = (FullLifelineTimelineCompartmentEditPartCN)EditPartUtils.findFirstChildEditPartWithId(this.lifelineEditPart, FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID);
-		final View timelineCompartmentView = (View)timelineCompartmentEditPart.getModel();
-		final View stateInvariantView = (View)this.fullStateInvariantEditPartCN.getModel();
-		final StateInvariant firstStateInvariant = (StateInvariant)stateInvariantView.getElement();
+		final FullLifelineTimelineCompartmentEditPartCN timelineCompartmentEditPart = (FullLifelineTimelineCompartmentEditPartCN) EditPartUtils.findFirstChildEditPartWithId(this.lifelineEditPart, FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID);
+		final View timelineCompartmentView = (View) timelineCompartmentEditPart.getModel();
+		final View stateInvariantView = (View) this.fullStateInvariantEditPartCN.getModel();
+		final StateInvariant firstStateInvariant = (StateInvariant) stateInvariantView.getElement();
 
 		final int indexInFragments = this.lifeline.getInteraction().getFragments().indexOf(firstStateInvariant);
 		final int indexInCoveredBys = this.lifeline.getCoveredBys().indexOf(firstStateInvariant);
@@ -96,7 +96,7 @@ public class CutAndInsertOccurrenceSpecificationCommand extends AbstractTransact
 		final UMLViewProvider umlViewProvider = new UMLViewProvider();
 
 		final Node occurrenceSpecificationView;
-		if(this.destruction) {
+		if (this.destruction) {
 			occurrenceSpecificationView = umlViewProvider.createDestructionOccurrenceSpecification_27(newOccurrenceSpecification, timelineCompartmentView, indexInCompartment + 1, true, PreferencesHint.USE_DEFAULTS);
 		} else {
 			occurrenceSpecificationView = umlViewProvider.createOccurrenceSpecification_12(newOccurrenceSpecification, timelineCompartmentView, indexInCompartment + 1, true, PreferencesHint.USE_DEFAULTS);
@@ -109,7 +109,7 @@ public class CutAndInsertOccurrenceSpecificationCommand extends AbstractTransact
 		loc.setY(pt.y);
 		occurrenceSpecificationView.setLayoutConstraint(loc);
 
-		if(this.destruction) {
+		if (this.destruction) {
 			OccurrenceSpecificationUtils.deleteEverythingAfter(newOccurrenceSpecification, occurrenceSpecificationView);
 		} else {
 			// create a VerticalLine View to link the two StateInvariants
@@ -123,10 +123,11 @@ public class CutAndInsertOccurrenceSpecificationCommand extends AbstractTransact
 		}
 
 		// update the names of the adjacent occurrences
-		LifelineUtils.updateFragmentNames(this.lifeline, (View)this.lifelineEditPart.getModel());
+		LifelineUtils.updateFragmentNames(this.lifeline, (View) this.lifelineEditPart.getModel());
 
 		Display.getDefault().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				timelineCompartmentEditPart.refresh();
 				ViewUtils.selectInViewer(occurrenceSpecificationView, CutAndInsertOccurrenceSpecificationCommand.this.lifelineEditPart.getViewer());

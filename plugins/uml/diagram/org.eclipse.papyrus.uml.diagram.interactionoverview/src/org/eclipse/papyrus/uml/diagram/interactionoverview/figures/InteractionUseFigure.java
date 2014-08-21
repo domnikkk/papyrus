@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,19 +52,20 @@ public class InteractionUseFigure extends CallBehaviorActionFigure {
 
 	protected class InteractionUseLayoutManager extends AbstractLayout {
 
+		@Override
 		public void layout(final IFigure container) {
 			final List childrenList = container.getChildren();
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				final IFigure currentFigure = (IFigure)childrenList.get(i);
-				if(currentFigure.equals(interactionLabelContainer) || currentFigure.equals(interactionContentPane)) {
-					final Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
-					bound.setSize(((IFigure)childrenList.get(i)).getPreferredSize());
-					if(i > 0) {
-						bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				final IFigure currentFigure = (IFigure) childrenList.get(i);
+				if (currentFigure.equals(interactionLabelContainer) || currentFigure.equals(interactionContentPane)) {
+					final Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
+					bound.setSize(((IFigure) childrenList.get(i)).getPreferredSize());
+					if (i > 0) {
+						bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
 					} else {
 						bound.y = getBounds().y;
 					}
-					((IFigure)childrenList.get(i)).setBounds(bound);
+					((IFigure) childrenList.get(i)).setBounds(bound);
 				}
 			}
 
@@ -96,7 +97,7 @@ public class InteractionUseFigure extends CallBehaviorActionFigure {
 			@Override
 			public Dimension getPreferredSize(final int wHint, final int hHint) {
 				final Dimension preferredSize = super.getPreferredSize(wHint, hHint);
-				if(preferredSize.width == 0) {
+				if (preferredSize.width == 0) {
 					return preferredSize;
 				}
 				return new Dimension(preferredSize.width + 2, preferredSize.height + 2);
@@ -123,12 +124,12 @@ public class InteractionUseFigure extends CallBehaviorActionFigure {
 
 	/**
 	 * get the gmf container figure of the package
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	public ShapeCompartmentFigure getGMFContentContainer() {
-		if(interactionContentPane.getChildren().size() > 0) {
-			return (ShapeCompartmentFigure)interactionContentPane.getChildren().get(0);
+		if (interactionContentPane.getChildren().size() > 0) {
+			return (ShapeCompartmentFigure) interactionContentPane.getChildren().get(0);
 		}
 		return null;
 	}

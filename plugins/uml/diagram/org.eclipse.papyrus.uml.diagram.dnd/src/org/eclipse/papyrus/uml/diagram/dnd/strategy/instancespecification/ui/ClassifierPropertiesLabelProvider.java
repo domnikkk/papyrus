@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Classifier;
 
 /**
  * A LabelProvider for the Classifiers' properties
- * 
+ *
  * @author Camille Letavernier
  */
 public class ClassifierPropertiesLabelProvider extends StyledCellLabelProvider {
@@ -41,19 +41,19 @@ public class ClassifierPropertiesLabelProvider extends StyledCellLabelProvider {
 	}
 
 	protected StyledString getStyledText(Object element, int columnIndex) {
-		//		if(columnIndex == 1 && element instanceof Property) {
-		//			Property property = (Property)element;
-		//			String classifierLabel = umlLabelProvider.getText(property.getOwner());
-		//			String qualifiedName = " (" + ((Classifier)property.getOwner()).getQualifiedName() + ")";
+		// if(columnIndex == 1 && element instanceof Property) {
+		// Property property = (Property)element;
+		// String classifierLabel = umlLabelProvider.getText(property.getOwner());
+		// String qualifiedName = " (" + ((Classifier)property.getOwner()).getQualifiedName() + ")";
 		//
-		//			StyledString styledString = new StyledString(classifierLabel);
-		//			styledString.append(qualifiedName, StyledString.QUALIFIER_STYLER);
+		// StyledString styledString = new StyledString(classifierLabel);
+		// styledString.append(qualifiedName, StyledString.QUALIFIER_STYLER);
 		//
-		//			return styledString;
-		//		}
+		// return styledString;
+		// }
 
-		if(columnIndex == 1 && element instanceof Classifier) {
-			Classifier classifier = (Classifier)element;
+		if (columnIndex == 1 && element instanceof Classifier) {
+			Classifier classifier = (Classifier) element;
 
 			StyledString styledString = new StyledString(classifier.getQualifiedName(), StyledString.QUALIFIER_STYLER);
 
@@ -64,7 +64,7 @@ public class ClassifierPropertiesLabelProvider extends StyledCellLabelProvider {
 	}
 
 	protected String getText(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
 			return umlLabelProvider.getText(element);
 		default:
@@ -73,14 +73,14 @@ public class ClassifierPropertiesLabelProvider extends StyledCellLabelProvider {
 	}
 
 	protected Image getImage(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case 0:
 			return umlLabelProvider.getImage(element);
 		case 1:
-			//			if(element instanceof Property) {
-			//				return umlLabelProvider.getImage(((Property)element).getOwner());
-			//			}
-			if(element instanceof Classifier) {
+			// if(element instanceof Property) {
+			// return umlLabelProvider.getImage(((Property)element).getOwner());
+			// }
+			if (element instanceof Classifier) {
 				return umlLabelProvider.getImage(element);
 			}
 		default:

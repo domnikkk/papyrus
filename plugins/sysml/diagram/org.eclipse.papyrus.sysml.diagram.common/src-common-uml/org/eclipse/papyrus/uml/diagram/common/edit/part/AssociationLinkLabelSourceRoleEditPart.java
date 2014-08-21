@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -55,11 +55,11 @@ public class AssociationLinkLabelSourceRoleEditPart extends AbstractElementLabel
 	 */
 	@Override
 	public EObject getParserElement() {
-		Association association = (Association)resolveSemanticElement();
-		if((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
+		Association association = (Association) resolveSemanticElement();
+		if ((getNotationView() != null) && (ViewUtil.getContainerView(getNotationView()) != null)) {
 			View owner = ViewUtil.getContainerView(getNotationView());
 
-			if((association != null) && (association.getMemberEnds().size() == 2)) {
+			if ((association != null) && (association.getMemberEnds().size() == 2)) {
 				return AssociationViewUtils.getSourceSemanticEnd(owner);
 			}
 		}
@@ -70,6 +70,7 @@ public class AssociationLinkLabelSourceRoleEditPart extends AbstractElementLabel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "SourceRole"; //$NON-NLS-1$
 	}
@@ -77,6 +78,7 @@ public class AssociationLinkLabelSourceRoleEditPart extends AbstractElementLabel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

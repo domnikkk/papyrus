@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisprovider.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements NattableaxisproviderFactory {
@@ -35,13 +35,13 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static NattableaxisproviderFactory init() {
 		try {
-			NattableaxisproviderFactory theNattableaxisproviderFactory = (NattableaxisproviderFactory)EPackage.Registry.INSTANCE.getEFactory(NattableaxisproviderPackage.eNS_URI);
-			if(theNattableaxisproviderFactory != null) {
+			NattableaxisproviderFactory theNattableaxisproviderFactory = (NattableaxisproviderFactory) EPackage.Registry.INSTANCE.getEFactory(NattableaxisproviderPackage.eNS_URI);
+			if (theNattableaxisproviderFactory != null) {
 				return theNattableaxisproviderFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +54,7 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NattableaxisproviderFactoryImpl() {
@@ -64,12 +64,12 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case NattableaxisproviderPackage.SLAVE_OBJECT_AXIS_PROVIDER:
 			return createSlaveObjectAxisProvider();
 		case NattableaxisproviderPackage.MASTER_OBJECT_AXIS_PROVIDER:
@@ -82,9 +82,10 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public SlaveObjectAxisProvider createSlaveObjectAxisProvider() {
 		SlaveObjectAxisProviderImpl slaveObjectAxisProvider = new SlaveObjectAxisProviderImpl();
 		return slaveObjectAxisProvider;
@@ -93,9 +94,10 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public MasterObjectAxisProvider createMasterObjectAxisProvider() {
 		MasterObjectAxisProviderImpl masterObjectAxisProvider = new MasterObjectAxisProviderImpl();
 		return masterObjectAxisProvider;
@@ -104,17 +106,18 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public NattableaxisproviderPackage getNattableaxisproviderPackage() {
-		return (NattableaxisproviderPackage)getEPackage();
+		return (NattableaxisproviderPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -123,4 +126,4 @@ public class NattableaxisproviderFactoryImpl extends EFactoryImpl implements Nat
 		return NattableaxisproviderPackage.eINSTANCE;
 	}
 
-} //NattableaxisproviderFactoryImpl
+} // NattableaxisproviderFactoryImpl

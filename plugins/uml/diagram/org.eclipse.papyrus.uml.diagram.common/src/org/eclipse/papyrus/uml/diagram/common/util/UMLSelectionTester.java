@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,19 +45,20 @@ public class UMLSelectionTester extends PropertyTester {
 	}
 
 	/** Test the receiver against the selected property */
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
 
 		// Ensure Papyrus is the active editor
 		IMultiDiagramEditor editor = EditorUtils.getMultiDiagramEditor();
-		if(editor == null) {
+		if (editor == null) {
 			return false;
 		}
 
 		Object currentValue = null;
-		if(IS_UML_MODEL.equals(property)) {
+		if (IS_UML_MODEL.equals(property)) {
 			currentValue = testUMLModelNature(receiver);
 			return (currentValue == expectedValue);
-		} else if(IS_UML_PROFILE.equals(property)) {
+		} else if (IS_UML_PROFILE.equals(property)) {
 			currentValue = testUMLProfileNature(receiver);
 			return (currentValue == expectedValue);
 		}
@@ -82,8 +83,8 @@ public class UMLSelectionTester extends PropertyTester {
 	}
 
 	private EObject getRoot(Object receiver) {
-		if(receiver instanceof IStructuredSelection) {
-			IStructuredSelection selection = (IStructuredSelection)receiver;
+		if (receiver instanceof IStructuredSelection) {
+			IStructuredSelection selection = (IStructuredSelection) receiver;
 			try {
 				ModelSet modelSet = ServiceUtilsForSelection.getInstance().getModelSet(selection);
 				EObject root = getRoot(modelSet);
@@ -98,8 +99,8 @@ public class UMLSelectionTester extends PropertyTester {
 
 	/** Returns the root EObject of currently opened model */
 	private EObject getRoot(ModelSet modelSet) {
-		UmlModel openedModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
-		if(openedModel != null) {
+		UmlModel openedModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
+		if (openedModel != null) {
 			EObject root;
 			try {
 				root = openedModel.lookupRoot();

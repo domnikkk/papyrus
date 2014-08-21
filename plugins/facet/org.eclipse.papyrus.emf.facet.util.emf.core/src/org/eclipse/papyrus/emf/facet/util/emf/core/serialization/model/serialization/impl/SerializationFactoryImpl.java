@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  *    Nicolas Bros (Mia-Software) - Bug 338907 - expose serialization services from SerializationFactoryImpl
@@ -23,19 +23,19 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.serialization.model.serializa
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class SerializationFactoryImpl extends EFactoryImpl implements SerializationFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static SerializationFactory init() {
 		try {
 			SerializationFactory theSerializationFactory = (SerializationFactory) EPackage.Registry.INSTANCE
-					.getEFactory("http://www.eclipse.org/papyrus/emf/facet/serialization/0.1.incubation"); //$NON-NLS-1$ 
+					.getEFactory("http://www.eclipse.org/papyrus/emf/facet/serialization/0.1.incubation"); //$NON-NLS-1$
 			if (theSerializationFactory != null) {
 				return theSerializationFactory;
 			}
@@ -47,7 +47,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SerializationFactoryImpl() {
@@ -56,7 +56,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,7 +70,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> Deserializes a value.
-	 * 
+	 *
 	 * @param eDataType
 	 *            the datatype
 	 * @param initialValue
@@ -116,7 +116,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> Serializes a value.
-	 * 
+	 *
 	 * @param eDataType
 	 *            the datatype
 	 * @param instanceValue
@@ -130,7 +130,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public SerializationPackage getSerializationPackage() {
@@ -139,7 +139,7 @@ public class SerializationFactoryImpl extends EFactoryImpl implements Serializat
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ public class NameLabelIconHelper {
 
 	/**
 	 * get the display name label icon indication true or false
-	 * 
+	 *
 	 * @param modelElement
-	 *        the view where is attach the element
+	 *            the view where is attach the element
 	 */
 	@Deprecated
 	public static boolean showLabelIcon(EModelElement modelElement) {
@@ -38,14 +38,14 @@ public class NameLabelIconHelper {
 
 	/**
 	 * Gets the command to set the gradient to true are false.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
+	 *            the view
 	 * @param nameLabelIconValue
-	 *        true to display the icon of the element in labelName
-	 * 
+	 *            true to display the icon of the element in labelName
+	 *
 	 * @return the command to set the elementIcon to true are false.
 	 */
 	@Deprecated

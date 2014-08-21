@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Juan Cadavid (CEA LIST) juan.cadavid@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 413703
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.modelexplorer.util;
 
@@ -41,13 +41,13 @@ public class ModelExplorerUtils {
 		Object selection = (activeWorkbenchWindow != null) ? activeWorkbenchWindow.getSelectionService().getSelection() : null;
 
 		// If the selection is null, return null command context.
-		if(selection == null) {
+		if (selection == null) {
 			return null;
 		}
 
 		// Get first element if the selection is an IStructuredSelection
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			selection = structuredSelection.getFirstElement();
 		}
 
@@ -58,29 +58,29 @@ public class ModelExplorerUtils {
 
 		container = EMFHelper.getEObject(selection);
 
-		if(container instanceof EReference) {
-			reference = (EReference)container;
+		if (container instanceof EReference) {
+			reference = (EReference) container;
 			container = null;
-			
+
 			// The following part introduce a dependency to EMF Facet.
 			// Although the selection can be adapted to EReference, the link parent is required but
 			// no API allows to get this element except LinkItem or ITreeElement.
-			if(selection instanceof EReferenceTreeElement) {
-				container = ((EReferenceTreeElement)selection).getParent().getEObject();
+			if (selection instanceof EReferenceTreeElement) {
+				container = ((EReferenceTreeElement) selection).getParent().getEObject();
 			}
 		}
 
 		// Prepare the command context
 		ICommandContext context = null;
-		if(container != null) {
-			if(reference != null) {
+		if (container != null) {
+			if (reference != null) {
 				context = new CommandContext(container, reference);
 			} else {
 				context = new CommandContext(container);
 			}
 		}
 
-		// Return the context	
+		// Return the context
 		return context;
 	}
 

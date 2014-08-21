@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,16 +29,16 @@ import org.eclipse.papyrus.infra.gmfdiag.modelexplorer.messages.Messages;
 
 /**
  * This handler provides the duplicate action for the diagrams
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class DuplicateDiagramHandler extends AbstractDiagramCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -47,9 +47,9 @@ public class DuplicateDiagramHandler extends AbstractDiagramCommandHandler {
 		final IPageManager pageManager = getPageManager();
 		List<Diagram> diagrams = getSelectedDiagrams();
 
-		if(editingDomain != null && pageManager != null && !diagrams.isEmpty()) {
+		if (editingDomain != null && pageManager != null && !diagrams.isEmpty()) {
 			CompoundCommand command = new CompoundCommand();
-			for(Diagram diagram : diagrams) {
+			for (Diagram diagram : diagrams) {
 
 				// Clone the current diagram
 				final Diagram newDiagram = EcoreUtil.copy(diagram);

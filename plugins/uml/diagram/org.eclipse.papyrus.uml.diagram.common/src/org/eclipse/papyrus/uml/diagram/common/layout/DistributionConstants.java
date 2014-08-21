@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.papyrus.uml.diagram.common.Messages;
 
 /**
- * 
+ *
  * This class provides constants for the distribution actions
- * 
+ *
  */
 public class DistributionConstants {
 
@@ -30,13 +30,13 @@ public class DistributionConstants {
 	 * the list of the horizontal values for the distribution and the alignment
 	 * actions
 	 */
-	public static final List<Integer> horizontalValuesList = createArrayList(new int[]{ PositionConstants.NORTH, PositionConstants.SOUTH, PositionConstants.NORTH_EAST, PositionConstants.NORTH_WEST, PositionConstants.SOUTH_EAST, PositionConstants.SOUTH_WEST });
+	public static final List<Integer> horizontalValuesList = createArrayList(new int[] { PositionConstants.NORTH, PositionConstants.SOUTH, PositionConstants.NORTH_EAST, PositionConstants.NORTH_WEST, PositionConstants.SOUTH_EAST, PositionConstants.SOUTH_WEST });
 
 	/**
 	 * the list of the vertical values for the distribution and the alignment
 	 * actions
 	 */
-	public static final List<Integer> verticalValuesList = createArrayList(new int[]{ PositionConstants.EAST, PositionConstants.WEST, PositionConstants.NORTH_EAST, PositionConstants.NORTH_WEST, PositionConstants.SOUTH_EAST, PositionConstants.SOUTH_WEST });
+	public static final List<Integer> verticalValuesList = createArrayList(new int[] { PositionConstants.EAST, PositionConstants.WEST, PositionConstants.NORTH_EAST, PositionConstants.NORTH_WEST, PositionConstants.SOUTH_EAST, PositionConstants.SOUTH_WEST });
 
 	/**
 	 * Constant used to identify the horizontal distribution in the parent
@@ -114,14 +114,14 @@ public class DistributionConstants {
 
 	/**
 	 * Returns an {@link ArrayList}<{@link Integer}> filled with {@code array}
-	 * 
+	 *
 	 * @param array
-	 *        the array used to create an {@link ArrayList}<{@link Integer}>
+	 *            the array used to create an {@link ArrayList}<{@link Integer}>
 	 * @return an {@link ArrayList}<{@link Integer}> filled with {@code array}
 	 */
 	private static List<Integer> createArrayList(int[] array) {
 		ArrayList<Integer> values = new ArrayList<Integer>();
-		for(int i = 0; i < array.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			values.add(array[i]);
 		}
 		return values;

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -19,9 +19,9 @@ import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * 
+ *
  * Label Provider for line style
- * 
+ *
  */
 public class LineStyleLabelProvider implements ILabelProvider {
 
@@ -39,65 +39,71 @@ public class LineStyleLabelProvider implements ILabelProvider {
 	public static final String LINE_STYLE_CUSTOM = "Custom";
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#addListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#dispose()
-	 * 
+	 *
 	 */
+	@Override
 	public void dispose() {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#isLabelProperty(java.lang.Object, java.lang.String)
-	 * 
+	 *
 	 * @param element
 	 * @param property
 	 * @return
 	 */
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IBaseLabelProvider#removeListener(org.eclipse.jface.viewers.ILabelProviderListener)
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
+	@Override
 	public Image getImage(Object element) {
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
+	@Override
 	public String getText(Object element) {
-		if(element instanceof Integer) {
-			int lineStyle = (Integer)element;
-			switch(lineStyle) {
+		if (element instanceof Integer) {
+			int lineStyle = (Integer) element;
+			switch (lineStyle) {
 			case Graphics.LINE_SOLID:
 				return LINE_STYLE_SOLID_STRING;
 			case Graphics.LINE_DASH:

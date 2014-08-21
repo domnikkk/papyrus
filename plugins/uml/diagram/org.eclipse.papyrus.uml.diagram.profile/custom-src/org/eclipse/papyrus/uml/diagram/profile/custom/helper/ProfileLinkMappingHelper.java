@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,9 +9,9 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com - 
+ *  Emilien Perico (Atos Origin) emilien.perico@atosorigin.com -
  *  	refactor common behavior between diagrams, define only specific behavior
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram 
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.helper;
 
@@ -42,7 +42,7 @@ public class ProfileLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of ClassLinkMappingHelper.
-	 * 
+	 *
 	 * @return single instance of ClassLinkMappingHelper
 	 */
 	public static ProfileLinkMappingHelper getInstance() {

@@ -21,24 +21,23 @@ import org.eclipse.papyrus.sysml.diagram.parametric.factory.ParametricDiagramVie
 
 public class ParametricDiagramViewProvider extends AbstractViewProvider {
 
-		@Override
-		protected boolean provides(CreateDiagramViewOperation operation) {
-	
-			if(ElementTypes.DIAGRAM_ID.equals(operation.getSemanticHint())) {
-				return true;
-			}
-	
-			return false;
-		}
-	
-		@Override
-		protected Class<?> getDiagramViewClass(IAdaptable semanticAdapter, String diagramKind) {
-			if(ElementTypes.DIAGRAM_ID.equals(diagramKind)) {
-				return ParametricDiagramViewFactory.class;
-			}
-	
-			Activator.log.error(new Exception("Could not create View."));
-			return null;
-		}
-}
+	@Override
+	protected boolean provides(CreateDiagramViewOperation operation) {
 
+		if (ElementTypes.DIAGRAM_ID.equals(operation.getSemanticHint())) {
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
+	protected Class<?> getDiagramViewClass(IAdaptable semanticAdapter, String diagramKind) {
+		if (ElementTypes.DIAGRAM_ID.equals(diagramKind)) {
+			return ParametricDiagramViewFactory.class;
+		}
+
+		Activator.log.error(new Exception("Could not create View."));
+		return null;
+	}
+}

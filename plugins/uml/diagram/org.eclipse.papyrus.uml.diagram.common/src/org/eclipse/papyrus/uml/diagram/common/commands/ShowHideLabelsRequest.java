@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * This request is used to manage the display (or not) of ONE label for the
  * connection
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ShowHideLabelsRequest extends ToggleConnectionLabelsRequest {
 
@@ -36,13 +36,13 @@ public class ShowHideLabelsRequest extends ToggleConnectionLabelsRequest {
 	private View view;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param showConnectionLabel
-	 *        the value for the action : <code>true</code> means show and <code>false</code> means hdie
+	 *            the value for the action : <code>true</code> means show and <code>false</code> means hdie
 	 * @param view
-	 *        the view to manage
+	 *            the view to manage
 	 */
 	public ShowHideLabelsRequest(boolean showConnectionLabel, View view) {
 		super(showConnectionLabel);
@@ -52,7 +52,7 @@ public class ShowHideLabelsRequest extends ToggleConnectionLabelsRequest {
 
 	/**
 	 * Returns the view to show/hide
-	 * 
+	 *
 	 * @return the view to show/hide
 	 */
 	public View getView() {

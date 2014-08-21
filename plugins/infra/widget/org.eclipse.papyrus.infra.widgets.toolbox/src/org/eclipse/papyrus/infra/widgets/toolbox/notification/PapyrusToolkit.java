@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,15 +13,16 @@ package org.eclipse.papyrus.infra.widgets.toolbox.notification;
 
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 
 
 /**
  * This class allows specific toolkit for component creation
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class PapyrusToolkit extends FormToolkit {
 
@@ -38,8 +39,8 @@ public class PapyrusToolkit extends FormToolkit {
 
 	@Override
 	public Section createSection(Composite parent, int sectionStyle) {
-		if(sectionStyle == DEFAULT_STYLE) {
-			return super.createSection(parent, Section.EXPANDED | Section.TITLE_BAR);
+		if (sectionStyle == DEFAULT_STYLE) {
+			return super.createSection(parent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		}
 		return super.createSection(parent, sectionStyle);
 	}

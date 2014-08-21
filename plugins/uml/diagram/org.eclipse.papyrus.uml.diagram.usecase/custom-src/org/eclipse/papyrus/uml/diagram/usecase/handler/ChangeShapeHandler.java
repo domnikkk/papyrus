@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * This class is an abstract class in charge to transform a editpart into another editpart
- * 
+ *
  */
 public abstract class ChangeShapeHandler extends AbstractHandler {
 
@@ -50,24 +50,25 @@ public abstract class ChangeShapeHandler extends AbstractHandler {
 	protected abstract AbstractTransactionalCommand getChangeShapeCommand(final GraphicalEditPart editPart);
 
 	/**
-	 * 
+	 *
 	 * @return null or the selected editPart
 	 */
 	protected GraphicalEditPart getSelectedGraphicalEditpart() {
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (activeWorkbenchWindow!=null){
+		if (activeWorkbenchWindow != null) {
 			ISelectionService selectionService = activeWorkbenchWindow.getSelectionService();
 			ISelection selection = selectionService.getSelection();
-			if(selection instanceof IStructuredSelection) {
-				Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-				if(selectedobject instanceof GraphicalEditPart) {
-					return (GraphicalEditPart)selectedobject;
+			if (selection instanceof IStructuredSelection) {
+				Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+				if (selectedobject instanceof GraphicalEditPart) {
+					return (GraphicalEditPart) selectedobject;
 				}
-			}			
+			}
 		}
 		return null;
 	}
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		final GraphicalEditPart editPart = getSelectedGraphicalEditpart();
 		ServiceUtilsForEditPart util = ServiceUtilsForEditPart.getInstance();
@@ -79,9 +80,11 @@ public abstract class ChangeShapeHandler extends AbstractHandler {
 		try {
 			editPart.getEditingDomain().runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
 					Display.getCurrent().asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
 							AbstractTransactionalCommand command = getChangeShapeCommand(editPart);
 							Request deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);

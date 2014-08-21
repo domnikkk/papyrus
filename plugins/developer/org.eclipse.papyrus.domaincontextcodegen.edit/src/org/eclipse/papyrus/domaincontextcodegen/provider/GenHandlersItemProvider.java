@@ -29,7 +29,7 @@ import org.eclipse.papyrus.domaincontextcodegen.GenHandlers;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.GenHandlers} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GenHandlersItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -38,7 +38,7 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GenHandlersItemProvider(AdapterFactory adapterFactory) {
@@ -49,12 +49,12 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addHandlerPackagePropertyDescriptor(object);
@@ -73,95 +73,110 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * This adds a property descriptor for the Handler Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addHandlerPackagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_handlerPackage_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_handlerPackage_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__HANDLER_PACKAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_handlerPackage_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_handlerPackage_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__HANDLER_PACKAGE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Super Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSuperClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_superClass_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_superClass_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__SUPER_CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_superClass_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_superClass_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__SUPER_CLASS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Super Class Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSuperClassPackagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_superClassPackage_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_superClassPackage_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__SUPER_CLASS_PACKAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_superClassPackage_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_superClassPackage_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__SUPER_CLASS_PACKAGE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Element Type Enumerator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addElementTypeEnumeratorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_elementTypeEnumerator_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_elementTypeEnumerator_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_elementTypeEnumerator_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_elementTypeEnumerator_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Element Type Enumerator Package feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addElementTypeEnumeratorPackagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_elementTypeEnumeratorPackage_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_elementTypeEnumeratorPackage_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR_PACKAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_elementTypeEnumeratorPackage_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_elementTypeEnumeratorPackage_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__ELEMENT_TYPE_ENUMERATOR_PACKAGE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Visible Create Child Handlers feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addVisibleCreateChildHandlersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_visibleCreateChildHandlers_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_visibleCreateChildHandlers_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__VISIBLE_CREATE_CHILD_HANDLERS, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_visibleCreateChildHandlers_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_visibleCreateChildHandlers_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__VISIBLE_CREATE_CHILD_HANDLERS, true, false, true, null, null,
+				null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Parent Domain Create Child feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addParentDomainCreateChildPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_parentDomainCreateChild_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_parentDomainCreateChild_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__PARENT_DOMAIN_CREATE_CHILD, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_parentDomainCreateChild_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_parentDomainCreateChild_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__PARENT_DOMAIN_CREATE_CHILD, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Create Child Menu Location URI feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addCreateChildMenuLocationURIPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_createChildMenuLocationURI_feature"), getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_createChildMenuLocationURI_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__CREATE_CHILD_MENU_LOCATION_URI, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_GenHandlers_createChildMenuLocationURI_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_GenHandlers_createChildMenuLocationURI_feature", "_UI_GenHandlers_type"), DomaincontextcodegenPackage.Literals.GEN_HANDLERS__CREATE_CHILD_MENU_LOCATION_URI, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns GenHandlers.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,12 +188,12 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GenHandlers)object).getHandlerPackage();
+		String label = ((GenHandlers) object).getHandlerPackage();
 		return label == null || label.length() == 0 ? getString("_UI_GenHandlers_type") : getString("_UI_GenHandlers_type") + " " + label;
 	}
 
@@ -187,14 +202,14 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(GenHandlers.class)) {
+		switch (notification.getFeatureID(GenHandlers.class)) {
 		case DomaincontextcodegenPackage.GEN_HANDLERS__HANDLER_PACKAGE:
 		case DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS:
 		case DomaincontextcodegenPackage.GEN_HANDLERS__SUPER_CLASS_PACKAGE:
@@ -212,7 +227,7 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -224,7 +239,7 @@ public class GenHandlersItemProvider extends ItemProviderAdapter implements IEdi
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

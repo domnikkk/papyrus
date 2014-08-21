@@ -5,9 +5,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  *     Fabien Giquel (Mia-Software) - initial API and implementation
  * *******************************************************************************
  *
@@ -37,12 +37,14 @@ import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPacka
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
@@ -50,6 +52,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
@@ -57,6 +60,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass textEClass = null;
@@ -64,6 +68,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass elementEClass = null;
@@ -71,6 +76,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass rootEClass = null;
@@ -78,6 +84,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass namespaceEClass = null;
@@ -85,6 +92,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass commentEClass = null;
@@ -92,6 +100,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass documentTypeDeclarationEClass = null;
@@ -99,6 +108,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass cdataEClass = null;
@@ -106,20 +116,17 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass processingInstructionEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#eNS_URI
 	 * @see #init()
@@ -132,27 +139,29 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link XwtxmlPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link XwtxmlPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static XwtxmlPackage init() {
-		if (isInited) return (XwtxmlPackage)EPackage.Registry.INSTANCE.getEPackage(XwtxmlPackage.eNS_URI);
+		if (isInited) {
+			return (XwtxmlPackage) EPackage.Registry.INSTANCE.getEPackage(XwtxmlPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		XwtxmlPackageImpl theXwtxmlPackage = (XwtxmlPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof XwtxmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new XwtxmlPackageImpl());
+		XwtxmlPackageImpl theXwtxmlPackage = (XwtxmlPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof XwtxmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new XwtxmlPackageImpl());
 
 		isInited = true;
 
@@ -165,7 +174,7 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 		// Mark meta-data to indicate it can't be changed
 		theXwtxmlPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(XwtxmlPackage.eNS_URI, theXwtxmlPackage);
 		return theXwtxmlPackage;
@@ -174,8 +183,10 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getNode() {
 		return nodeEClass;
 	}
@@ -183,26 +194,32 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNode_Name() {
-		return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) nodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getNode_Parent() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+		return (EReference) nodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getAttribute() {
 		return attributeEClass;
 	}
@@ -210,17 +227,21 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAttribute_Value() {
-		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) attributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getText() {
 		return textEClass;
 	}
@@ -228,8 +249,10 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getElement() {
 		return elementEClass;
 	}
@@ -237,17 +260,21 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getElement_Children() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(0);
+		return (EReference) elementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRoot() {
 		return rootEClass;
 	}
@@ -255,35 +282,43 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRoot_Namespaces() {
-		return (EReference)rootEClass.getEStructuralFeatures().get(0);
+		return (EReference) rootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRoot_Dtd() {
-		return (EReference)rootEClass.getEStructuralFeatures().get(1);
+		return (EReference) rootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRoot_LeadingPIs() {
-		return (EReference)rootEClass.getEStructuralFeatures().get(2);
+		return (EReference) rootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getNamespace() {
 		return namespaceEClass;
 	}
@@ -291,8 +326,10 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getComment() {
 		return commentEClass;
 	}
@@ -300,8 +337,10 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getDocumentTypeDeclaration() {
 		return documentTypeDeclarationEClass;
 	}
@@ -309,26 +348,32 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentTypeDeclaration_PublicID() {
-		return (EAttribute)documentTypeDeclarationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) documentTypeDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getDocumentTypeDeclaration_SystemID() {
-		return (EAttribute)documentTypeDeclarationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) documentTypeDeclarationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getCDATA() {
 		return cdataEClass;
 	}
@@ -336,8 +381,10 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getProcessingInstruction() {
 		return processingInstructionEClass;
 	}
@@ -345,37 +392,45 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProcessingInstruction_Data() {
-		return (EAttribute)processingInstructionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) processingInstructionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public XwtxmlFactory getXwtxmlFactory() {
-		return (XwtxmlFactory)getEFactoryInstance();
+		return (XwtxmlFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -413,19 +468,23 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -483,4 +542,4 @@ public class XwtxmlPackageImpl extends EPackageImpl implements XwtxmlPackage {
 		createResource(eNS_URI);
 	}
 
-} //XwtxmlPackageImpl
+} // XwtxmlPackageImpl

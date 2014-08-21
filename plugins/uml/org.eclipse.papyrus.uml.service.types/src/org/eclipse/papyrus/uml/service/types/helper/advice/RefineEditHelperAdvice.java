@@ -39,8 +39,8 @@ public class RefineEditHelperAdvice extends AbstractStereotypedElementEditHelper
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				NamedElement element = (NamedElement)request.getElementToConfigure();
-				if(element != null) {
+				NamedElement element = (NamedElement) request.getElementToConfigure();
+				if (element != null) {
 					StereotypeApplicationHelper.INSTANCE.applyStereotype(element, StandardPackage.eINSTANCE.getRefine());
 
 					// Set default name

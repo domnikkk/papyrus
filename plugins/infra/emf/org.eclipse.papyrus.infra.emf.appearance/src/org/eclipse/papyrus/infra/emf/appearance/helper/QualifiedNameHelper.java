@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ public class QualifiedNameHelper {
 
 	/**
 	 * get the depth to display for the qualified name from a eannotation in the view
-	 * 
+	 *
 	 * @param modelElement
-	 *        the view where is attach the element
+	 *            the view where is attach the element
 	 * @return the depth
 	 */
 	@Deprecated
@@ -39,14 +39,14 @@ public class QualifiedNameHelper {
 
 	/**
 	 * Gets the sets the qualifed name depth command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
+	 *            the view
 	 * @param depth
-	 *        the depth
-	 * 
+	 *            the depth
+	 *
 	 * @return the set qualified name depth command
 	 */
 	@Deprecated

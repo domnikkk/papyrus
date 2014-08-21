@@ -8,7 +8,7 @@ public class CustomExpansionRegionStructuredActivityNodeContentCompartmentItemSe
 	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		// handled by CreateActionLocalConditionEditPolicy, return null
-		if(CreateActionLocalConditionEditPolicy.LOCAL_CONDITION_TYPES.contains(req.getElementType())) {
+		if (CreateActionLocalConditionEditPolicy.LOCAL_CONDITION_TYPES.contains(req.getElementType())) {
 			return null;
 		}
 		return super.getCreateCommand(req);

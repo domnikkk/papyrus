@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,11 +52,12 @@ public class DiagramGeneralPreferencePage extends DiagramPreferencePage {
 
 	/**
 	 * Adds the field editors to this composite.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent Composite that the field editors will be added to
+	 *            the parent Composite that the field editors will be added to
 	 * @generated NOT
 	 */
+	@Override
 	protected void addFields(Composite parent) {
 		super.addFields(parent);
 		Group notificationsGroup = new Group(parent, SWT.NONE);
@@ -70,15 +71,16 @@ public class DiagramGeneralPreferencePage extends DiagramPreferencePage {
 		Composite composite = new Composite(notificationsGroup, SWT.NONE);
 		confirmPinSyncFromParameter = new BooleanFieldEditor(IActivityPreferenceConstants.PREF_CONFIRM_PIN_SYNC_FROM_PARAMETER, CustomMessages.DiagramsPreferencePage_confirmPinSyncFromParameter_label, composite);
 		addField(confirmPinSyncFromParameter);
-		confirmActivityParameterNodeSyncFromParameter = new BooleanFieldEditor(IActivityPreferenceConstants.PREF_CONFIRM_ACTIVITY_PARAMETER_SYNC_FROM_PARAMETER, CustomMessages.DiagramsPreferencePage_confirmActivityParameterNodeSyncFromParameter_label, composite);
+		confirmActivityParameterNodeSyncFromParameter = new BooleanFieldEditor(IActivityPreferenceConstants.PREF_CONFIRM_ACTIVITY_PARAMETER_SYNC_FROM_PARAMETER, CustomMessages.DiagramsPreferencePage_confirmActivityParameterNodeSyncFromParameter_label,
+				composite);
 		addField(confirmActivityParameterNodeSyncFromParameter);
 	}
 
 	/**
 	 * Initializes the default preference values for this preference store.
-	 * 
+	 *
 	 * @param IPreferenceStore
-	 *        preferenceStore
+	 *            preferenceStore
 	 * @generated NOT
 	 */
 	public static void initSpecificDefaults(IPreferenceStore preferenceStore) {

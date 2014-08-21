@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,11 +45,11 @@ public class ShortCutDiagramEditPolicy extends OpenEditPolicy {
 
 		/**
 		 * Instantiates a new open diagram command.
-		 * 
+		 *
 		 * @param domain
-		 *        the domain
+		 *            the domain
 		 * @param diagram
-		 *        the diagram
+		 *            the diagram
 		 */
 		public OpenDiagramCommand(TransactionalEditingDomain domain, Diagram diagram) {
 			super(domain, "open diagram", null);
@@ -63,7 +63,7 @@ public class ShortCutDiagramEditPolicy extends OpenEditPolicy {
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			try {
 				IPageManager pageMngr = ServiceUtilsForEObject.getInstance().getIPageManager(diagramToOpen);
-				if(pageMngr.isOpen(diagramToOpen)) {
+				if (pageMngr.isOpen(diagramToOpen)) {
 					pageMngr.selectPage(diagramToOpen);
 				} else {
 					pageMngr.openPage(diagramToOpen);
@@ -80,9 +80,9 @@ public class ShortCutDiagramEditPolicy extends OpenEditPolicy {
 	 */
 	@Override
 	protected Command getOpenCommand(Request request) {
-		if(((GraphicalEditPart)getHost()).getNotationView().getElement() instanceof Diagram && ((GraphicalEditPart)getHost()).getNotationView().getElement().eResource() != null) {
-			Diagram diagram = (Diagram)((GraphicalEditPart)getHost()).getNotationView().getElement();
-			OpenDiagramCommand openDiagramCommand = new OpenDiagramCommand(((GraphicalEditPart)getHost()).getEditingDomain(), diagram);
+		if (((GraphicalEditPart) getHost()).getNotationView().getElement() instanceof Diagram && ((GraphicalEditPart) getHost()).getNotationView().getElement().eResource() != null) {
+			Diagram diagram = (Diagram) ((GraphicalEditPart) getHost()).getNotationView().getElement();
+			OpenDiagramCommand openDiagramCommand = new OpenDiagramCommand(((GraphicalEditPart) getHost()).getEditingDomain(), diagram);
 			return new ICommandProxy(openDiagramCommand);
 		} else {
 			return UnexecutableCommand.INSTANCE;

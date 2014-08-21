@@ -27,7 +27,7 @@ import org.eclipse.papyrus.views.properties.contexts.DataContextElement;
 import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFactory;
 
 /**
- * 
+ *
  * @author vl222926
  *         The factory used to edit Rulers and Grid properties
  */
@@ -35,12 +35,12 @@ public class RulersAndGridModelElementFactory extends AbstractModelElementFactor
 
 	@Override
 	protected RulerAndGridModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
-		if(sourceElement instanceof EditPart) {
-			final IPreferenceStore preferenceStore = DiagramEditPartsUtil.getDiagramWorkspacePreferenceStore((EditPart)sourceElement);
-			View view = NotationHelper.findView(DiagramEditPartsUtil.getDiagramEditPart((EditPart)sourceElement));
-			if(preferenceStore != null && view instanceof Diagram) {
+		if (sourceElement instanceof EditPart) {
+			final IPreferenceStore preferenceStore = DiagramEditPartsUtil.getDiagramWorkspacePreferenceStore((EditPart) sourceElement);
+			View view = NotationHelper.findView(DiagramEditPartsUtil.getDiagramEditPart((EditPart) sourceElement));
+			if (preferenceStore != null && view instanceof Diagram) {
 				EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(view);
-				return new RulerAndGridModelElement((Diagram)view, domain, context, preferenceStore);
+				return new RulerAndGridModelElement((Diagram) view, domain, context, preferenceStore);
 			}
 		}
 
@@ -50,12 +50,12 @@ public class RulersAndGridModelElementFactory extends AbstractModelElementFactor
 
 	@Override
 	protected void updateModelElement(RulerAndGridModelElement modelElement, Object newSourceElement) {
-		if(!(newSourceElement instanceof EditPart)) {
+		if (!(newSourceElement instanceof EditPart)) {
 			throw new IllegalArgumentException("Cannot resolve EditPart selection: " + newSourceElement);
 		}
-		EditPart editPart = (EditPart)newSourceElement;
+		EditPart editPart = (EditPart) newSourceElement;
 		modelElement.store = DiagramEditPartsUtil.getDiagramWorkspacePreferenceStore(editPart);
-		modelElement.diagram = (Diagram)NotationHelper.findView(DiagramEditPartsUtil.getDiagramEditPart(editPart));
+		modelElement.diagram = (Diagram) NotationHelper.findView(DiagramEditPartsUtil.getDiagramEditPart(editPart));
 	}
 
 }

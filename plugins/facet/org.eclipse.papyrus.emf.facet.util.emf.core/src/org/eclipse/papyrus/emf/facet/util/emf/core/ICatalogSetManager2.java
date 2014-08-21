@@ -41,7 +41,7 @@ public interface ICatalogSetManager2 {
 
 	/**
 	 * The singleton instance of this {@link ICatalogSetManager2}.
-	 * 
+	 *
 	 * @deprecated has been replaced by
 	 *             org.eclipse.papyrus.emf.facet.util.emf.core.ICatalogSetManagerFactory
 	 *             .createICatalogSetManager(ResourceSet)

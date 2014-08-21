@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,7 @@ package org.eclipse.papyrus.uml.diagram.common.groups.utils;
 
 /**
  * This class contains constants used by requests concerned by groups
- * 
+ *
  * @author vhemery
  */
 public class GroupRequestConstants {

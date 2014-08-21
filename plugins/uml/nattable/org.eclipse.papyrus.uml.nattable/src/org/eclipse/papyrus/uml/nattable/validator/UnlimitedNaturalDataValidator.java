@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,16 +17,16 @@ import org.eclipse.nebula.widgets.nattable.data.validate.DataValidator;
 import org.eclipse.papyrus.infra.widgets.validator.UnlimitedNaturalInputValidator;
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
  *         Validator for UnlimitedNatural
  */
 public class UnlimitedNaturalDataValidator extends DataValidator {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.validate.DataValidator#validate(int, int, java.lang.Object)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @param rowIndex
 	 * @param newValue

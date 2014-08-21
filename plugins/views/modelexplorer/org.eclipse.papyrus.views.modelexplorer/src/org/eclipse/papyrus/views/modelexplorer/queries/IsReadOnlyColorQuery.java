@@ -22,7 +22,7 @@ import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
 import org.eclipse.papyrus.emf.facet.custom.ui.internal.custompt.Color;
 
 /**
- * The purpose of this request is the return the color for read only elements 
+ * The purpose of this request is the return the color for read only elements
  *
  */
 public class IsReadOnlyColorQuery implements IJavaQuery2<EObject, IColor> {
@@ -31,7 +31,7 @@ public class IsReadOnlyColorQuery implements IJavaQuery2<EObject, IColor> {
 			final IParameterValueList2 parameterValues,
 			final IFacetManager facetManager)
 			throws DerivedTypedElementException {
-		return new Color(100,100,100);
+		return new Color(100, 100, 100);
 	}
 
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class ValidationTool {
 	private EObject eObject;
 
 	protected Resource resource;
-	
+
 	protected IMarkerProvider provider;
 
 	/**
@@ -53,9 +53,9 @@ public class ValidationTool {
 	/**
 	 * Constructor:
 	 * create a new instance of the validation tool for a specific model element
-	 * 
+	 *
 	 * @param eObject
-	 *        a model element
+	 *            a model element
 	 */
 	public ValidationTool(EObject eObject) {
 		this(eObject, ValidationUtils.getValidationResource(eObject));
@@ -64,39 +64,41 @@ public class ValidationTool {
 	/**
 	 * Constructor:
 	 * create a new instance of the validation tool for a specific model element
-	 * 
+	 *
 	 * @param eObject
-	 *        a model element
+	 *            a model element
 	 * @param resource
-	 *        the resource for which we look for markers.
+	 *            the resource for which we look for markers.
 	 */
 	public ValidationTool(EObject eObject, Resource resource) {
 		this.resource = resource;
 		setEObject(eObject);
-		
+
 		this.provider = (resource == null)
-			? IMarkerProvider.NULL
-			: MarkerListenerUtils.getMarkerProvider(resource);
+				? IMarkerProvider.NULL
+				: MarkerListenerUtils.getMarkerProvider(resource);
 	}
 
 	public void tryChildIfEmpty() {
 		// element has no eObject. try parent
-		if(getEObject() == null) {
+		if (getEObject() == null) {
 			// TODO: is it possible to access the children in another way (without internal access?)
-			//TODO: EMF-FACET update link-item
-			/**if(element instanceof LinkItem) {
-				List<?> items = ((LinkItem)element).getChildrenElements();
-				if(items.size() > 0 && items.get(0) instanceof EObject) {
-					// element = items[0];
-					setEObject((EObject)items.get(0));
-				}
-			}**/
+			// TODO: EMF-FACET update link-item
+			/**
+			 * if(element instanceof LinkItem) {
+			 * List<?> items = ((LinkItem)element).getChildrenElements();
+			 * if(items.size() > 0 && items.get(0) instanceof EObject) {
+			 * // element = items[0];
+			 * setEObject((EObject)items.get(0));
+			 * }
+			 * }
+			 **/
 		}
 	}
 
 	/**
 	 * Returns the current EObject
-	 * 
+	 *
 	 * @return the current EObject
 	 */
 	public EObject getEObject() {
@@ -106,7 +108,7 @@ public class ValidationTool {
 
 	/**
 	 * sets the current EObject
-	 * 
+	 *
 	 * eObject the current EObject
 	 */
 	public void setEObject(EObject eObject) {
@@ -120,22 +122,24 @@ public class ValidationTool {
 			return provider.getMarkers(resource, null, true);
 		} catch (CoreException e) {
 		}
-		
+
 		return Collections.emptyList();
 	}
 
 	/**
 	 * Delete all markers that refer to eObjects owned by the parentEObj (passed in the constructor)
-	 * 
+	 *
 	 * Convenience function for code that does not use a progress monitor
 	 */
 	public void deleteSubMarkers() {
 		deleteSubMarkers(new NullProgressMonitor());
 	}
-	
+
 	/**
 	 * Delete all markers that refer to eObjects owned by the parentEObj (passed in the constructor)
-	 * @param monitor A progress monitor
+	 * 
+	 * @param monitor
+	 *            A progress monitor
 	 */
 	public void deleteSubMarkers(IProgressMonitor monitor) {
 		try {
@@ -144,22 +148,22 @@ public class ValidationTool {
 			Activator.getDefault().getLog().log(e.getStatus());
 		}
 	}
-	
+
 	public IRunnableWithProgress wrap(IRunnableWithProgress runnableWithProgress) {
 		IRunnableWithProgress result = runnableWithProgress;
 
 		if (isWorkspaceResource() && (MarkerListenerUtils.eclipseResourcesUtil != null)) {
 			result = MarkerListenerUtils.eclipseResourcesUtil
-				.getWorkspaceModifyOperation(result);
+					.getWorkspaceModifyOperation(result);
 		}
 
 		return result;
 	}
-	
+
 	protected boolean isWorkspaceResource() {
 		return provider instanceof WorkspaceMarkerProvider;
 	}
-	
+
 	public void createMarkers(Diagnostic diagnostic, IProgressMonitor monitor) {
 		try {
 			provider.createMarkers(resource, diagnostic, monitor);

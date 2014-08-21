@@ -33,32 +33,35 @@ public class RotateAction implements IObjectActionDelegate {
 
 	private ShapeNodeEditPart selectedElement;
 
+	@Override
 	public void run(IAction action) {
-		if(selectedElement == null) {
+		if (selectedElement == null) {
 			return;
 		}
 
 		Dimension size = selectedElement.getSize();
 
-		int x = (Integer)selectedElement.getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X());
-		int y = (Integer)selectedElement.getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y());
+		int x = (Integer) selectedElement.getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X());
+		int y = (Integer) selectedElement.getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y());
 
 		Rectangle rectangle = new Rectangle(x + size.width / 2 - size.height / 2, y - size.width / 2 + size.height / 2, size.height, size.width);
 		SetBoundsCommand command = new SetBoundsCommand(selectedElement.getEditingDomain(), Messages.RotateAction_rotate_command, new EObjectAdapter(selectedElement.getNotationView()), rectangle);
 		selectedElement.getDiagramEditDomain().getDiagramCommandStack().execute(new ICommandProxy(command));
 	}
 
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		selectedElement = null;
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
-			if(structuredSelection.getFirstElement() instanceof ShapeNodeEditPart) {
-				selectedElement = (ShapeNodeEditPart)structuredSelection.getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+			if (structuredSelection.getFirstElement() instanceof ShapeNodeEditPart) {
+				selectedElement = (ShapeNodeEditPart) structuredSelection.getFirstElement();
 			}
 		}
 		action.setEnabled(selectedElement != null);
 	}
 
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 	}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,44 +45,46 @@ public class CommunicationDeferredCreateConnectionViewCommand extends CommonDefe
 
 	/**
 	 * Instantiates a new communication deferred create connection view command.
-	 * 
+	 *
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param semanticHint
-	 *        the semantic hint
+	 *            the semantic hint
 	 * @param sourceViewAdapter
-	 *        the source view adapter
+	 *            the source view adapter
 	 * @param targetViewAdapter
-	 *        the target view adapter
+	 *            the target view adapter
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param preferencesHint
-	 *        the preferences hint
+	 *            the preferences hint
 	 * @param viewDescriptor
-	 *        the view descriptor
+	 *            the view descriptor
 	 * @param command
-	 *        the command
+	 *            the command
 	 */
-	public CommunicationDeferredCreateConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint, ConnectionViewDescriptor viewDescriptor, ICommand command, EObject labelElement) {
+	public CommunicationDeferredCreateConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint,
+			ConnectionViewDescriptor viewDescriptor, ICommand command, EObject labelElement) {
 		super(editingDomain, semanticHint, sourceViewAdapter, targetViewAdapter, viewer, preferencesHint, viewDescriptor, command);
 		this.labelElement = labelElement;
 	}
 
 	/**
 	 * Creates a connection view between the source and target.
-	 * 
+	 *
 	 * @param progressMonitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 * @param info
-	 *        the info
+	 *            the info
 	 * @param sourceEditPart
-	 *        the source edit part
+	 *            the source edit part
 	 * @param targetEditPart
-	 *        the target edit part
+	 *            the target edit part
 	 * @return the command result
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info, IGraphicalEditPart sourceEditPart, IGraphicalEditPart targetEditPart) throws ExecutionException {
 
 		// If these are null, then the diagram's editparts may not
@@ -94,10 +96,10 @@ public class CommunicationDeferredCreateConnectionViewCommand extends CommonDefe
 		CreateConnectionViewRequest createRequest = new CreateConnectionViewRequest(viewDescriptor);
 		createConnectionCmd = CreateConnectionViewRequest.getCreateCommand(createRequest, sourceEditPart, targetEditPart);
 
-		if(createConnectionCmd.canExecute()) {
+		if (createConnectionCmd.canExecute()) {
 			createConnectionCmd.execute();
 		}
-		if(labelElement != null) {
+		if (labelElement != null) {
 
 			/*
 			 * Code Commented to no more set the the semantic element of the connector
@@ -117,19 +119,20 @@ public class CommunicationDeferredCreateConnectionViewCommand extends CommonDefe
 			 * // }
 			 */
 
-			//set element of the label of the connector to element
-			if(((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().size() > 1) {
+			// set element of the label of the connector to element
+			if (((View) (createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().size() > 1) {
 
-				for(int i = 0; i < ((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().size(); i++) {
+				for (int i = 0; i < ((View) (createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().size(); i++) {
 					// ---------------------------------------------------------
 					// help to debug
-					//System.err.println("Child of connector view :" + (((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i)));
-					//System.err.println("VisualID of Child of connector view :" + UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID));
-					//System.err.println("VisualID  of MessageNameEditPart :" + ((View)(((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i))).getType());
+					// System.err.println("Child of connector view :" + (((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i)));
+					// System.err.println("VisualID of Child of connector view :" + UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID));
+					// System.err.println("VisualID  of MessageNameEditPart :" + ((View)(((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i))).getType());
 					// ---------------------------------------------------------
-					if(((View)(((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i))).getType().equals(UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID))) {//this is the label that coresponds to the message
-						((View)(((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i))).setElement(labelElement);
-						//System.err.println("VisualID  of MessageNameEditPart == VisualID of Child of connector view ");
+					if (((View) (((View) (createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i))).getType().equals(UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID))) {// this is the label that coresponds to the
+																																																						// message
+						((View) (((View) (createRequest.getConnectionViewDescriptor().getAdapter(View.class))).getChildren().get(i))).setElement(labelElement);
+						// System.err.println("VisualID  of MessageNameEditPart == VisualID of Child of connector view ");
 					}
 				}
 			}

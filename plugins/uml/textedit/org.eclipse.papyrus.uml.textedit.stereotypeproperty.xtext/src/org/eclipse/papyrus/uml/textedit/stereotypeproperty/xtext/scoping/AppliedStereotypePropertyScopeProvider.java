@@ -38,8 +38,8 @@ public class AppliedStereotypePropertyScopeProvider extends AlfScopeProvider {
 	public IScope scope_AppliedStereotypePropertyRule_property(AppliedStereotypePropertyRule ctx, EReference ref) {
 		IScope result = null;
 
-		AppliedStereotypeProperty appliedStereotypeProperty = (AppliedStereotypeProperty)ContextElementUtil.getContextElement(ctx.eResource());
-		if(appliedStereotypeProperty != null) {
+		AppliedStereotypeProperty appliedStereotypeProperty = (AppliedStereotypeProperty) ContextElementUtil.getContextElement(ctx.eResource());
+		if (appliedStereotypeProperty != null) {
 			ArrayList<org.eclipse.uml2.uml.Property> properties = new ArrayList<org.eclipse.uml2.uml.Property>();
 			properties.add(appliedStereotypeProperty.getStereotypeProperty());
 			Iterable<IEObjectDescription> visiblePropertiesIterable = Scopes.scopedElementsFor(properties);

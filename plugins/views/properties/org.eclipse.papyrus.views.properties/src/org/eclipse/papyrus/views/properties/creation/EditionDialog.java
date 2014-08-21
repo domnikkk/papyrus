@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 404874
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.creation;
 
@@ -52,10 +52,10 @@ import org.eclipse.ui.dialogs.SelectionDialog;
 /**
  * A dialog used to display an edition form for a given object.
  * The form is described by the given {@link View}s
- * 
+ *
  * @author Camille Letavernier
  */
-//TODO : This dialog should use the Embedded Display Engine
+// TODO : This dialog should use the Embedded Display Engine
 public class EditionDialog extends SelectionDialog {
 
 	private Set<View> views;
@@ -67,15 +67,15 @@ public class EditionDialog extends SelectionDialog {
 	private boolean cancelable = false;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param shell
-	 *        The shell in which the dialog will be opened
+	 *            The shell in which the dialog will be opened
 	 * @param cancelable
-	 *        Whether the cancel button is active or not. The values are data-binded, ie.
-	 *        edited in real time, before the ok button is pressed. If the cancel button
-	 *        is active, callers are responsible for undoing the changes.
+	 *            Whether the cancel button is active or not. The values are data-binded, ie.
+	 *            edited in real time, before the ok button is pressed. If the cancel button
+	 *            is active, callers are responsible for undoing the changes.
 	 */
 	protected EditionDialog(Shell shell, boolean cancelable) {
 		super(shell);
@@ -83,11 +83,11 @@ public class EditionDialog extends SelectionDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param shell
-	 *        The shell in which the dialog will be opened
+	 *            The shell in which the dialog will be opened
 	 */
 	protected EditionDialog(Shell shell) {
 		this(shell, false);
@@ -96,7 +96,7 @@ public class EditionDialog extends SelectionDialog {
 	@Override
 	public void create() {
 		super.create();
-		if(getShell().getText() == null || "".equals(getShell().getText())) { //$NON-NLS-1$
+		if (getShell().getText() == null || "".equals(getShell().getText())) { //$NON-NLS-1$
 			setTitle(Messages.EditionDialog_CreateANewElement);
 		}
 		getShell().setImage(Activator.getDefault().getImage("org.eclipse.papyrus.infra.widgets", "/icons/papyrus.png")); //$NON-NLS-1$ //$NON-NLS-2$
@@ -110,18 +110,18 @@ public class EditionDialog extends SelectionDialog {
 
 		display();
 
-		//The values are data-binded, thus are edited in real time. It is not possible to cancel (However, Ctrl+Z should work)
+		// The values are data-binded, thus are edited in real time. It is not possible to cancel (However, Ctrl+Z should work)
 		getButton(IDialogConstants.CANCEL_ID).setEnabled(cancelable);
 	}
 
 	@Override
 	public Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	/**
 	 * Sets the object being edited by this dialog
-	 * 
+	 *
 	 * @param input
 	 */
 	public void setInput(Object input) {
@@ -130,7 +130,7 @@ public class EditionDialog extends SelectionDialog {
 
 	/**
 	 * Sets the Views used to edit the input object
-	 * 
+	 *
 	 * @param views
 	 */
 	public void setViews(Set<View> views) {
@@ -149,8 +149,8 @@ public class EditionDialog extends SelectionDialog {
 
 		final Set<Tab> tabsList = new LinkedHashSet<Tab>();
 
-		for(View view : views) {
-			for(Section section : view.getSections()) {
+		for (View view : views) {
+			for (Section section : view.getSections()) {
 				tabsList.add(section.getTab());
 			}
 		}
@@ -161,39 +161,39 @@ public class EditionDialog extends SelectionDialog {
 
 			/**
 			 * compares two tabs each other
-			 * 
+			 *
 			 * @param tab1
-			 *        first tab to compare
+			 *            first tab to compare
 			 * @param tab2
-			 *        second tab to compare
+			 *            second tab to compare
 			 * @return a negative integer if the first tab should be placed before the second tab
 			 */
 			public int compare(Tab tab1, Tab tab2) {
 				int priority1 = getPriority(tab1);
 				int priority2 = getPriority(tab2);
 
-				if(priority1 < priority2) {
+				if (priority1 < priority2) {
 					return -1;
 				}
 
-				if(priority1 > priority2) {
+				if (priority1 > priority2) {
 					return 1;
 				}
 
-				//p1 == p2
+				// p1 == p2
 
 				priority1 = getXWTTabPriority(tab1);
 				priority2 = getXWTTabPriority(tab2);
 
-				if(priority1 < priority2) {
+				if (priority1 < priority2) {
 					return -1;
 				}
 
-				if(priority1 > priority2) {
+				if (priority1 > priority2) {
 					return 1;
 				}
 
-				//p1 == p2
+				// p1 == p2
 
 				String label1 = tab1.getLabel();
 				String label2 = tab2.getLabel();
@@ -203,7 +203,7 @@ public class EditionDialog extends SelectionDialog {
 
 			private Tab getPreviousTab(Tab tab) {
 				Tab afterTab = tab.getAfterTab();
-				if(tabsList.contains(afterTab)) {
+				if (tabsList.contains(afterTab)) {
 					return afterTab;
 				}
 
@@ -213,7 +213,7 @@ public class EditionDialog extends SelectionDialog {
 
 			private int getPriority(Tab tab) {
 				Tab previousTab = getPreviousTab(tab);
-				if(previousTab != null) {
+				if (previousTab != null) {
 					return getPriority(previousTab) + 1;
 				}
 
@@ -227,24 +227,24 @@ public class EditionDialog extends SelectionDialog {
 		});
 
 		Map<Tab, Composite> tabs = new LinkedHashMap<Tab, Composite>();
-		if(allTabs.size() > 1) {
+		if (allTabs.size() > 1) {
 			CTabFolder tabFolder = new CTabFolder(parent, SWT.BOTTOM);
-			tabFolder.setSelectionBackground(new Color[]{ tabFolder.getDisplay().getSystemColor(SWT.COLOR_WHITE), tabFolder.getBackground() }, new int[]{ 100 }, true);
+			tabFolder.setSelectionBackground(new Color[] { tabFolder.getDisplay().getSystemColor(SWT.COLOR_WHITE), tabFolder.getBackground() }, new int[] { 100 }, true);
 			tabFolder.setLayout(new FillLayout());
-			for(Tab tab : allTabs) {
+			for (Tab tab : allTabs) {
 				CTabItem item = new CTabItem(tabFolder, SWT.NONE);
 				Composite tabControl = new Composite(tabFolder, SWT.NONE);
 				item.setControl(tabControl);
 				item.setText(tab.getLabel());
 				tabs.put(tab, tabControl);
 			}
-		} else if(!allTabs.isEmpty()) {
+		} else if (!allTabs.isEmpty()) {
 			Tab tab = allTabs.get(0);
 			tabs.put(tab, parent);
 		}
 
-		for(View view : views) {
-			for(Section section : view.getSections()) {
+		for (View view : views) {
+			for (Section section : view.getSections()) {
 				XWTSection xwtSection = new XWTSection(section, view, display);
 				sections.add(xwtSection);
 
@@ -257,7 +257,7 @@ public class EditionDialog extends SelectionDialog {
 		getShell().pack();
 		Point size = getShell().getSize();
 		int minWidth = 600;
-		if(size.x < minWidth) {
+		if (size.x < minWidth) {
 			size.x = minWidth;
 		}
 		getShell().setSize(size);
@@ -267,7 +267,7 @@ public class EditionDialog extends SelectionDialog {
 	 * Disposes this dialog
 	 */
 	public void dispose() {
-		for(XWTSection section : sections) {
+		for (XWTSection section : sections) {
 			section.dispose();
 		}
 		sections.clear();

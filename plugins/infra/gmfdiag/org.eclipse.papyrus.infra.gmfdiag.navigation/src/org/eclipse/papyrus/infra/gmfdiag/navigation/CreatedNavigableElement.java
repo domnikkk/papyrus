@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EStructuralFeature;
  * This element is not currently linked to the model, but it can be by using
  * linkToModel if the user decides to navigate to it, to create a diagram on it
  * for example.
- * 
+ *
  * @author mvelten
- * 
+ *
  */
 public class CreatedNavigableElement extends NavigableElement {
 
@@ -37,7 +37,7 @@ public class CreatedNavigableElement extends NavigableElement {
 	 * This constructor initiates a navigable element from a newly created
 	 * element. This element is not directly linked to its container.
 	 * linkToModel() needs to be defined and call when you want to link it.
-	 * 
+	 *
 	 * @param element
 	 * @param previousNavigableElement
 	 */
@@ -53,13 +53,13 @@ public class CreatedNavigableElement extends NavigableElement {
 	}
 
 	public void linkToModel() {
-		if(modelLinker != null) {
+		if (modelLinker != null) {
 			modelLinker.linkToModel(getElement());
 		}
 	}
 
 	public void setBaseName(String base) {
-		if(baseNameSetter != null) {
+		if (baseNameSetter != null) {
 			baseNameSetter.setBaseName(base, getElement());
 		}
 	}

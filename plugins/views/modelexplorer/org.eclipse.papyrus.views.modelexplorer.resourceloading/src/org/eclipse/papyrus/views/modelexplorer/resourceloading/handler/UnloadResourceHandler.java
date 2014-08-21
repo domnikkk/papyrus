@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,8 +65,8 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 	protected Command getCommand() {
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		List<EObject> selection = getSelectedElements();
-		if(editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
-			final ModelSet set = (ModelSet)editingDomain.getResourceSet();
+		if (editingDomain != null && editingDomain.getResourceSet() instanceof ModelSet && selection.size() > 0) {
+			final ModelSet set = (ModelSet) editingDomain.getResourceSet();
 
 			class NonDirtyingCompound extends CompoundCommand implements NonDirtying {
 				// Empty
@@ -75,7 +75,7 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 
 			final IEditorPart editor = getEditor();
 			SaveIfNecessaryCommand save = null;
-			if(editor.isDirty()) {
+			if (editor.isDirty()) {
 				// First, a command to save if necessary
 				save = new SaveIfNecessaryCommand(editor);
 				command.append(save);
@@ -85,14 +85,14 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 			// ensure main URI is never unloaded
 			URI mainURI = SashModelUtils.getSashModel(set).getResourceURI().trimFileExtension();
 			handledURI.add(mainURI);
-			for(EObject sel : selection) {
-				if(!sel.eIsProxy()) {
+			for (EObject sel : selection) {
+				if (!sel.eIsProxy()) {
 					final Resource resource = sel.eResource();
 					final URI uriTrim = resource.getURI().trimFileExtension();
-					if(!handledURI.contains(uriTrim)) {
+					if (!handledURI.contains(uriTrim)) {
 						handledURI.add(uriTrim);
 
-						if((save != null) && set.shouldSave(resource)) {
+						if ((save != null) && set.shouldSave(resource)) {
 							save.setNeedsSave(true);
 						}
 
@@ -110,7 +110,8 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 							public boolean canExecute() {
 								return true;
 							}
-						};
+						}
+						;
 						command.append(new UnloadCommand());
 					}
 				}
@@ -122,15 +123,15 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 
 	/**
 	 * Get currently opened editor
-	 * 
+	 *
 	 * @return editor
 	 */
 	protected IEditorPart getEditor() {
 		IEditorPart editor = null;
 		IWorkbenchWindow activeWorkbenchWindow = getActiveWorkbenchWindow();
-		if(activeWorkbenchWindow != null) {
+		if (activeWorkbenchWindow != null) {
 			IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-			if(activePage != null) {
+			if (activePage != null) {
 				editor = activePage.getActiveEditor();
 			}
 		}
@@ -139,12 +140,12 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 
 	/**
 	 * Get the active workbench window
-	 * 
+	 *
 	 * @return window
 	 */
 	protected IWorkbenchWindow getActiveWorkbenchWindow() {
 		IWorkbench workbench = PlatformUI.getWorkbench();
-		if(workbench != null) {
+		if (workbench != null) {
 			return workbench.getActiveWorkbenchWindow();
 		}
 		return null;
@@ -176,8 +177,8 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 		}
 
 		public void execute() {
-			if(needsSave()) {
-				if(promptToSave()) {
+			if (needsSave()) {
+				if (promptToSave()) {
 					save();
 				} else {
 					// Safely cancel the entire composite
@@ -198,12 +199,12 @@ public class UnloadResourceHandler extends AbstractCommandHandler {
 		boolean promptToSave() {
 			final Shell parent = editor.getEditorSite().getShell();
 			final int yesIndex = 0;
-			MessageDialog dlg = new MessageDialog(parent, Messages.UnloadResourceHandler_0, null, Messages.UnloadResourceHandler_1, MessageDialog.WARNING, new String[]{ IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, yesIndex);
+			MessageDialog dlg = new MessageDialog(parent, Messages.UnloadResourceHandler_0, null, Messages.UnloadResourceHandler_1, MessageDialog.WARNING, new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, yesIndex);
 			return dlg.open() == yesIndex;
 		}
 
 		void save() {
-			IProgressService progress = (IProgressService)editor.getSite().getService(IProgressService.class);
+			IProgressService progress = (IProgressService) editor.getSite().getService(IProgressService.class);
 
 			try {
 				progress.busyCursorWhile(new IRunnableWithProgress() {

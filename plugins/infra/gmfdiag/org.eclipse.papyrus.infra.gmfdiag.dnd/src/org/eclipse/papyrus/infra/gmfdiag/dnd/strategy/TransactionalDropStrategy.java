@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.infra.gmfdiag.dnd.Activator;
 /**
  * An abstract implementation for TransactionalDropStrategies. Extenders do not
  * need to implement their commands' #undo and #redo methods.
- * 
+ *
  * @author Camille Letavernier
  */
 public abstract class TransactionalDropStrategy extends AbstractDropStrategy {
@@ -37,12 +37,12 @@ public abstract class TransactionalDropStrategy extends AbstractDropStrategy {
 
 		final Command command = doGetCommand(request, targetEditPart);
 
-		if(command == null) {
+		if (command == null) {
 			return null;
 		}
 
 		String label = command.getLabel();
-		if(label == null || "".equals(label)) {
+		if (label == null || "".equals(label)) {
 			label = getLabel();
 		}
 
@@ -69,8 +69,8 @@ public abstract class TransactionalDropStrategy extends AbstractDropStrategy {
 
 	protected TransactionalEditingDomain getTransactionalEditingDomain(EditPart targetEditPart) {
 		EditingDomain domain = getEditingDomain(targetEditPart);
-		if(domain instanceof TransactionalEditingDomain) {
-			return (TransactionalEditingDomain)domain;
+		if (domain instanceof TransactionalEditingDomain) {
+			return (TransactionalEditingDomain) domain;
 		}
 		return null;
 	}
@@ -82,11 +82,11 @@ public abstract class TransactionalDropStrategy extends AbstractDropStrategy {
 	/**
 	 * The command to be executed when the strategy is applied.
 	 * Should return null if the strategy cannot handle the request.
-	 * 
+	 *
 	 * @param request
-	 *        The drop request
+	 *            The drop request
 	 * @param targetEditPart
-	 *        The target edit part
+	 *            The target edit part
 	 * @return
 	 *         A command, or null if the strategy cannot handle the request
 	 */

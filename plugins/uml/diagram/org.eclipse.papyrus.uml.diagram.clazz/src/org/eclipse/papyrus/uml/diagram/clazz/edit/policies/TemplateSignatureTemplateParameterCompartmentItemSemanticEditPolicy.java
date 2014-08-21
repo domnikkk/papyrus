@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -35,18 +35,19 @@ public class TemplateSignatureTemplateParameterCompartmentItemSemanticEditPolicy
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if(UMLElementTypes.ClassifierTemplateParameter_3031 == requestElementType) {
+		if (UMLElementTypes.ClassifierTemplateParameter_3031 == requestElementType) {
 			return getGEFWrapper(new ClassifierTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.OperationTemplateParameter_3035 == requestElementType) {
+		if (UMLElementTypes.OperationTemplateParameter_3035 == requestElementType) {
 			return getGEFWrapper(new OperationTemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TemplateParameter_3016 == requestElementType) {
+		if (UMLElementTypes.TemplateParameter_3016 == requestElementType) {
 			return getGEFWrapper(new TemplateParameterCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);

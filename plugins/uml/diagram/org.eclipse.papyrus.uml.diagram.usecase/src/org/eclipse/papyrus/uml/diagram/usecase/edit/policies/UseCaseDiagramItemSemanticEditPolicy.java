@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -46,39 +46,40 @@ public class UseCaseDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getCreateCommand(CreateElementRequest req) {
 		IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return super.getCreateCommand(req);
 		}
-		if(UMLElementTypes.Actor_2011 == requestElementType) {
+		if (UMLElementTypes.Actor_2011 == requestElementType) {
 			return getGEFWrapper(new ActorCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Actor_2012 == requestElementType) {
+		if (UMLElementTypes.Actor_2012 == requestElementType) {
 			return getGEFWrapper(new ActorAsRectangleCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.UseCase_2013 == requestElementType) {
+		if (UMLElementTypes.UseCase_2013 == requestElementType) {
 			return getGEFWrapper(new UseCaseCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.UseCase_2014 == requestElementType) {
+		if (UMLElementTypes.UseCase_2014 == requestElementType) {
 			return getGEFWrapper(new UseCaseAsRectangleCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Classifier_2015 == requestElementType) {
+		if (UMLElementTypes.Classifier_2015 == requestElementType) {
 			return getGEFWrapper(new SubjectClassifierCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Package_2016 == requestElementType) {
+		if (UMLElementTypes.Package_2016 == requestElementType) {
 			return getGEFWrapper(new PackageCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Constraint_2017 == requestElementType) {
+		if (UMLElementTypes.Constraint_2017 == requestElementType) {
 			return getGEFWrapper(new ConstraintCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Comment_2018 == requestElementType) {
+		if (UMLElementTypes.Comment_2018 == requestElementType) {
 			return getGEFWrapper(new CommentCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.NamedElement_2022 == requestElementType) {
+		if (UMLElementTypes.NamedElement_2022 == requestElementType) {
 			return getGEFWrapper(new DefaultNamedElementCreateCommandTN(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.Diagram_2019 == requestElementType) {
+		if (UMLElementTypes.Diagram_2019 == requestElementType) {
 			return getGEFWrapper(new ShortCutDiagramCreateCommand(req, DiagramUtils.getDiagramFrom(getHost())));
 		}
 		return super.getCreateCommand(req);
@@ -87,8 +88,9 @@ public class UseCaseDiagramItemSemanticEditPolicy extends UMLBaseItemSemanticEdi
 	/**
 	 * @generated
 	 */
+	@Override
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 

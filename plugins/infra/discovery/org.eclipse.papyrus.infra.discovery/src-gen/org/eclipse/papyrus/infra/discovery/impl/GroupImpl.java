@@ -1,14 +1,14 @@
 /**
- * 
+ *
  *   Copyright (c)  2012 CEA LIST.
  *   All rights reserved. This program and the accompanying materials
  *   are made available under the terms of the Eclipse Public License v1.0
  *   which accompanies this distribution, and is available at
  *   http://www.eclipse.org/legal/epl-v10.html
- *   
+ *
  *   Contributors:
  *       CEA LIST - initial API and implementation
- *  
+ *
  */
 package org.eclipse.papyrus.infra.discovery.impl;
 
@@ -29,7 +29,7 @@ import org.eclipse.papyrus.infra.discovery.Group;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.discovery.impl.GroupImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.discovery.impl.GroupImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GroupImpl() {
@@ -68,6 +71,7 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,6 +82,7 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -87,25 +92,28 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiscoveryPackage.GROUP__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DiscoveryPackage.GROUP__NAME:
-				return getName();
+		case DiscoveryPackage.GROUP__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,14 +121,15 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DiscoveryPackage.GROUP__NAME:
-				setName((String)newValue);
-				return;
+		case DiscoveryPackage.GROUP__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,14 +137,15 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DiscoveryPackage.GROUP__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case DiscoveryPackage.GROUP__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,13 +153,14 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DiscoveryPackage.GROUP__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case DiscoveryPackage.GROUP__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,11 +168,14 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -170,4 +184,4 @@ public class GroupImpl extends MinimalEObjectImpl implements Group {
 		return result.toString();
 	}
 
-} //GroupImpl
+} // GroupImpl

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.views.properties.environment.EnvironmentFactory
  * @model kind="package"
  * @generated
@@ -33,6 +34,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "environment";
@@ -41,6 +43,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/properties/environment/0.9";
@@ -49,6 +52,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "environment";
@@ -57,6 +61,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	EnvironmentPackage eINSTANCE = org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl.init();
@@ -65,6 +70,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.EnvironmentImpl <em>Environment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getEnvironment()
 	 * @generated
@@ -75,6 +81,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Constraint Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -84,6 +91,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Element Factories</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -93,6 +101,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Widget Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -102,6 +111,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Property Editor Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -111,6 +121,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Composite Widget Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -120,6 +131,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Layout Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -129,6 +141,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespaces</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -138,6 +151,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Misc Classes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -147,6 +161,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Environment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -156,6 +171,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl <em>Widget Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getWidgetType()
 	 * @generated
@@ -166,6 +182,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -175,6 +192,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Widget Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -184,6 +202,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -193,6 +212,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Widget Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -202,6 +222,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.PropertyEditorTypeImpl <em>Property Editor Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.PropertyEditorTypeImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getPropertyEditorType()
 	 * @generated
@@ -212,6 +233,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -221,6 +243,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Widget Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -230,6 +253,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -239,6 +263,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -248,6 +273,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -257,6 +283,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Property Editor Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -266,6 +293,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.CompositeWidgetTypeImpl <em>Composite Widget Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.CompositeWidgetTypeImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getCompositeWidgetType()
 	 * @generated
@@ -276,6 +304,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -285,6 +314,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Widget Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -294,6 +324,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -303,6 +334,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Composite Widget Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -312,6 +344,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.LayoutTypeImpl <em>Layout Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.LayoutTypeImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getLayoutType()
 	 * @generated
@@ -322,6 +355,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -331,6 +365,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Widget Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -340,6 +375,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -349,6 +385,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Layout Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -358,6 +395,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl <em>Model Element Factory Descriptor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getModelElementFactoryDescriptor()
 	 * @generated
@@ -368,6 +406,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -377,6 +416,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Factory Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -386,6 +426,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Element Factory Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -395,6 +436,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.StandardWidgetTypeImpl <em>Standard Widget Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.StandardWidgetTypeImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getStandardWidgetType()
 	 * @generated
@@ -405,6 +447,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -414,6 +457,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Widget Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -423,6 +467,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -432,6 +477,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Standard Widget Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -441,6 +487,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.NamespaceImpl <em>Namespace</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.NamespaceImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getNamespace()
 	 * @generated
@@ -451,6 +498,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Prefix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -460,6 +508,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -469,6 +518,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -478,6 +528,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Namespace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -487,6 +538,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl <em>Misc Class</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getMiscClass()
 	 * @generated
@@ -497,6 +549,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -506,6 +559,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Class</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -515,6 +569,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -524,6 +579,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The number of structural features of the '<em>Misc Class</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -533,6 +589,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.views.properties.environment.Type <em>Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.views.properties.environment.Type
 	 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getType()
 	 * @generated
@@ -544,6 +601,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.Environment <em>Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Environment</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment
 	 * @generated
@@ -554,6 +612,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getModelElementFactories <em>Model Element Factories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Model Element Factories</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getModelElementFactories()
 	 * @see #getEnvironment()
@@ -565,6 +624,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getWidgetTypes <em>Widget Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Widget Types</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getWidgetTypes()
 	 * @see #getEnvironment()
@@ -576,6 +636,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getPropertyEditorTypes <em>Property Editor Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Property Editor Types</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getPropertyEditorTypes()
 	 * @see #getEnvironment()
@@ -587,6 +648,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getCompositeWidgetTypes <em>Composite Widget Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Composite Widget Types</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getCompositeWidgetTypes()
 	 * @see #getEnvironment()
@@ -598,6 +660,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getLayoutTypes <em>Layout Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Layout Types</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getLayoutTypes()
 	 * @see #getEnvironment()
@@ -609,6 +672,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getNamespaces <em>Namespaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Namespaces</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getNamespaces()
 	 * @see #getEnvironment()
@@ -620,6 +684,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.views.properties.environment.Environment#getMiscClasses <em>Misc Classes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Misc Classes</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Environment#getMiscClasses()
 	 * @see #getEnvironment()
@@ -631,6 +696,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.PropertyEditorType <em>Property Editor Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Property Editor Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.PropertyEditorType
 	 * @generated
@@ -641,6 +707,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.PropertyEditorType#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.PropertyEditorType#getType()
 	 * @see #getPropertyEditorType()
@@ -652,6 +719,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.PropertyEditorType#getMultiplicity <em>Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Multiplicity</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.PropertyEditorType#getMultiplicity()
 	 * @see #getPropertyEditorType()
@@ -663,6 +731,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.WidgetType <em>Widget Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Widget Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.WidgetType
 	 * @generated
@@ -673,6 +742,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.WidgetType#getLabel <em>Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Label</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.WidgetType#getLabel()
 	 * @see #getWidgetType()
@@ -684,6 +754,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.WidgetType#getWidgetClass <em>Widget Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Widget Class</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.WidgetType#getWidgetClass()
 	 * @see #getWidgetType()
@@ -695,6 +766,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.views.properties.environment.WidgetType#getNamespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Namespace</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.WidgetType#getNamespace()
 	 * @see #getWidgetType()
@@ -706,6 +778,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.CompositeWidgetType <em>Composite Widget Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Composite Widget Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.CompositeWidgetType
 	 * @generated
@@ -716,6 +789,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.LayoutType <em>Layout Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Layout Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.LayoutType
 	 * @generated
@@ -726,6 +800,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor <em>Model Element Factory Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Model Element Factory Descriptor</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor
 	 * @generated
@@ -736,6 +811,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor#getName()
 	 * @see #getModelElementFactoryDescriptor()
@@ -747,6 +823,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor#getFactoryClass <em>Factory Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Factory Class</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor#getFactoryClass()
 	 * @see #getModelElementFactoryDescriptor()
@@ -758,6 +835,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.StandardWidgetType <em>Standard Widget Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Standard Widget Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.StandardWidgetType
 	 * @generated
@@ -768,6 +846,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.Namespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Namespace</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Namespace
 	 * @generated
@@ -778,6 +857,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.Namespace#getPrefix <em>Prefix</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Prefix</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Namespace#getPrefix()
 	 * @see #getNamespace()
@@ -789,6 +869,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.Namespace#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Namespace#getName()
 	 * @see #getNamespace()
@@ -800,6 +881,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.Namespace#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Namespace#getValue()
 	 * @see #getNamespace()
@@ -811,6 +893,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.views.properties.environment.MiscClass <em>Misc Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Misc Class</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.MiscClass
 	 * @generated
@@ -821,6 +904,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.MiscClass#getLabel <em>Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Label</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.MiscClass#getLabel()
 	 * @see #getMiscClass()
@@ -832,6 +916,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.views.properties.environment.MiscClass#getClass_ <em>Class</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Class</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.MiscClass#getClass_()
 	 * @see #getMiscClass()
@@ -843,6 +928,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.views.properties.environment.MiscClass#getNamespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the reference '<em>Namespace</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.MiscClass#getNamespace()
 	 * @see #getMiscClass()
@@ -854,6 +940,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.views.properties.environment.Type <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Type</em>'.
 	 * @see org.eclipse.papyrus.views.properties.environment.Type
 	 * @generated
@@ -864,6 +951,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -879,6 +967,7 @@ public interface EnvironmentPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -887,6 +976,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.EnvironmentImpl <em>Environment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getEnvironment()
 		 * @generated
@@ -897,6 +987,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Element Factories</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__MODEL_ELEMENT_FACTORIES = eINSTANCE.getEnvironment_ModelElementFactories();
@@ -905,6 +996,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Widget Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__WIDGET_TYPES = eINSTANCE.getEnvironment_WidgetTypes();
@@ -913,6 +1005,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Property Editor Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__PROPERTY_EDITOR_TYPES = eINSTANCE.getEnvironment_PropertyEditorTypes();
@@ -921,6 +1014,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Composite Widget Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__COMPOSITE_WIDGET_TYPES = eINSTANCE.getEnvironment_CompositeWidgetTypes();
@@ -929,6 +1023,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Layout Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__LAYOUT_TYPES = eINSTANCE.getEnvironment_LayoutTypes();
@@ -937,6 +1032,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Namespaces</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__NAMESPACES = eINSTANCE.getEnvironment_Namespaces();
@@ -945,6 +1041,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Misc Classes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENVIRONMENT__MISC_CLASSES = eINSTANCE.getEnvironment_MiscClasses();
@@ -953,6 +1050,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.PropertyEditorTypeImpl <em>Property Editor Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.PropertyEditorTypeImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getPropertyEditorType()
 		 * @generated
@@ -963,6 +1061,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PROPERTY_EDITOR_TYPE__TYPE = eINSTANCE.getPropertyEditorType_Type();
@@ -971,6 +1070,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute PROPERTY_EDITOR_TYPE__MULTIPLICITY = eINSTANCE.getPropertyEditorType_Multiplicity();
@@ -979,6 +1079,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl <em>Widget Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getWidgetType()
 		 * @generated
@@ -989,6 +1090,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute WIDGET_TYPE__LABEL = eINSTANCE.getWidgetType_Label();
@@ -997,6 +1099,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Widget Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute WIDGET_TYPE__WIDGET_CLASS = eINSTANCE.getWidgetType_WidgetClass();
@@ -1005,6 +1108,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference WIDGET_TYPE__NAMESPACE = eINSTANCE.getWidgetType_Namespace();
@@ -1013,6 +1117,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.CompositeWidgetTypeImpl <em>Composite Widget Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.CompositeWidgetTypeImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getCompositeWidgetType()
 		 * @generated
@@ -1023,6 +1128,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.LayoutTypeImpl <em>Layout Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.LayoutTypeImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getLayoutType()
 		 * @generated
@@ -1033,6 +1139,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl <em>Model Element Factory Descriptor</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.ModelElementFactoryDescriptorImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getModelElementFactoryDescriptor()
 		 * @generated
@@ -1043,6 +1150,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME = eINSTANCE.getModelElementFactoryDescriptor_Name();
@@ -1051,6 +1159,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Factory Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS = eINSTANCE.getModelElementFactoryDescriptor_FactoryClass();
@@ -1059,6 +1168,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.StandardWidgetTypeImpl <em>Standard Widget Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.StandardWidgetTypeImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getStandardWidgetType()
 		 * @generated
@@ -1069,6 +1179,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.NamespaceImpl <em>Namespace</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.NamespaceImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getNamespace()
 		 * @generated
@@ -1079,6 +1190,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Prefix</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute NAMESPACE__PREFIX = eINSTANCE.getNamespace_Prefix();
@@ -1087,6 +1199,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute NAMESPACE__NAME = eINSTANCE.getNamespace_Name();
@@ -1095,6 +1208,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute NAMESPACE__VALUE = eINSTANCE.getNamespace_Value();
@@ -1103,6 +1217,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl <em>Misc Class</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.MiscClassImpl
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getMiscClass()
 		 * @generated
@@ -1113,6 +1228,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MISC_CLASS__LABEL = eINSTANCE.getMiscClass_Label();
@@ -1121,6 +1237,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MISC_CLASS__CLASS = eINSTANCE.getMiscClass_Class();
@@ -1129,6 +1246,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Namespace</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MISC_CLASS__NAMESPACE = eINSTANCE.getMiscClass_Namespace();
@@ -1137,6 +1255,7 @@ public interface EnvironmentPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.views.properties.environment.Type <em>Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.views.properties.environment.Type
 		 * @see org.eclipse.papyrus.views.properties.environment.impl.EnvironmentPackageImpl#getType()
 		 * @generated
@@ -1145,4 +1264,4 @@ public interface EnvironmentPackage extends EPackage {
 
 	}
 
-} //EnvironmentPackage
+} // EnvironmentPackage

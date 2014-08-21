@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *  Mickaël Adam (ALL4TEC) mickael.adam@all4tec.net - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.databinding;
@@ -22,9 +22,9 @@ import org.eclipse.gmf.runtime.emf.type.core.commands.DestroyElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 
 /**
- * 
+ *
  * Command to remove an EObject from its containing resource and/or its containing object.
- * 
+ *
  * @author Mickael ADAM
  *
  */
@@ -41,9 +41,9 @@ public class RemoveObjectCommand extends RecordingCommand {
 	 * Constructor.
 	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 */
 	public RemoveObjectCommand(TransactionalEditingDomain domain, EObject object) {
 		super(domain);
@@ -58,11 +58,11 @@ public class RemoveObjectCommand extends RecordingCommand {
 	@Override
 	protected void doExecute() {
 		// Create a request to delete the object
-		DestroyElementRequest request = new DestroyElementRequest((TransactionalEditingDomain)domain, (EObject)object, false);
+		DestroyElementRequest request = new DestroyElementRequest(domain, object, false);
 		// Get the command to delete the object
 		DestroyElementCommand command = new DestroyElementCommand(request);
 		try {
-			//execute command
+			// execute command
 			command.execute(new NullProgressMonitor(), null);
 		} catch (ExecutionException e) {
 			e.printStackTrace();

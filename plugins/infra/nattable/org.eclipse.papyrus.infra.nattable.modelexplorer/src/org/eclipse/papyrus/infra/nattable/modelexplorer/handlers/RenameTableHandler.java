@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,36 +28,36 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * This handler provides the method to rename a Table
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class RenameTableHandler extends AbstractTableCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getCommand() {
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		List<Table> tables = getSelectedTables();
-		if(editingDomain != null && tables.size() == 1) {
+		if (editingDomain != null && tables.size() == 1) {
 
 			final Table table = tables.get(0);
 			final String currentName = table.getName();
-			if(currentName != null) {
+			if (currentName != null) {
 
 				AbstractTransactionalCommand cmd = new AbstractTransactionalCommand(editingDomain, "RenameTableCommand", null) { //$NON-NLS-1$
 
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) {
 						InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), Messages.RenameTableHandler_RenameAnExistingTable, Messages.RenameTableHandler_NewName, currentName, null);
-						if(dialog.open() == Window.OK) {
+						if (dialog.open() == Window.OK) {
 							final String name = dialog.getValue();
-							if(name != null && name.length() > 0) {
+							if (name != null && name.length() > 0) {
 								table.setName(name);
 							}
 							return CommandResult.newOKCommandResult();

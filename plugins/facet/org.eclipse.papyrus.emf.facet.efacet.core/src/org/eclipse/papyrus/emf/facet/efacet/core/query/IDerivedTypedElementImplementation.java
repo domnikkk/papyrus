@@ -26,9 +26,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.ParameterVal
 /**
  * Interface implemented by all EMF Facet derived typed element evaluators.
  * <p>
- * A derived typed element evaluator may choose to implement
- * {@link IDerivedTypedElementCollectionImplementation} instead if it wants to improve the
- * performance of evaluation on collections of elements.
+ * A derived typed element evaluator may choose to implement {@link IDerivedTypedElementCollectionImplementation} instead if it wants to improve the performance of evaluation on collections of elements.
  *
  * @since 0.2
  * @deprecated replaced by {@link IQueryImplementation}. https://bugs.eclipse.org/bugs/show_bug.cgi?id=377058.
@@ -39,7 +37,7 @@ public interface IDerivedTypedElementImplementation {
 	/**
 	 * This method must be implemented by each sub class to evaluate a derived
 	 * typed element
-	 * 
+	 *
 	 * @param derivedTypedElement
 	 *            The derived typed element to evaluate
 	 * @param source
@@ -62,7 +60,7 @@ public interface IDerivedTypedElementImplementation {
 	/**
 	 * This method must be implemented by each sub class to set the value of a
 	 * derived typed element
-	 * 
+	 *
 	 * @param derivedTypedElement
 	 *            The derived typed element to set
 	 * @param source
@@ -83,8 +81,7 @@ public interface IDerivedTypedElementImplementation {
 	/**
 	 * Return whether to check the type of the derived typed element result after its evaluation
 	 * <p>
-	 * Normally, this is <code>true</code>, but the derived typed element evaluator can choose to
-	 * skip the check, for example if the return type of the query can't be loaded.
+	 * Normally, this is <code>true</code>, but the derived typed element evaluator can choose to skip the check, for example if the return type of the query can't be loaded.
 	 *
 	 * @return whether to check the type of the derived typed element result after its evaluation
 	 */

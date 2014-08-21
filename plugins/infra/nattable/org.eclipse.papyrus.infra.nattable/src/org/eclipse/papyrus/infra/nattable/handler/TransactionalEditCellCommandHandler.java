@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -59,14 +59,15 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 		return EditCellCommand.class;
 	}
 
+	@Override
 	protected ExecutionStatusKind doCommand(EditCellCommand command) {
 		ILayerCell cell = command.getCell();
 		Composite parent = command.getParent();
 		IConfigRegistry configRegistry = command.getConfigRegistry();
 
-		IEditableRule rule = (IEditableRule)configRegistry.getConfigAttribute(EditConfigAttributes.CELL_EDITABLE_RULE, DisplayMode.EDIT, cell.getConfigLabels().getLabels());
+		IEditableRule rule = configRegistry.getConfigAttribute(EditConfigAttributes.CELL_EDITABLE_RULE, DisplayMode.EDIT, cell.getConfigLabels().getLabels());
 
-		if(rule.isEditable(cell, configRegistry)) {
+		if (rule.isEditable(cell, configRegistry)) {
 			return editCell(cell, parent, cell.getDataValue(), configRegistry);
 		}
 
@@ -86,10 +87,10 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 
 			List<String> configLabels = cell.getConfigLabels().getLabels();
 
-			ICellEditor cellEditor = (ICellEditor)configRegistry.getConfigAttribute(EditConfigAttributes.CELL_EDITOR, DisplayMode.EDIT, configLabels);
+			ICellEditor cellEditor = configRegistry.getConfigAttribute(EditConfigAttributes.CELL_EDITOR, DisplayMode.EDIT, configLabels);
 
 			// Try to open an in-line editor before falling back to a dialog
-			if(cellEditor.openInline(configRegistry, configLabels)) {
+			if (cellEditor.openInline(configRegistry, configLabels)) {
 				MyInlineEditHandler editHandler = new MyInlineEditHandler(layer, columnPosition, rowPosition);
 
 				Rectangle editorBounds = layer.getLayerPainter().adjustCellBounds(columnPosition, rowPosition, new Rectangle(cellBounds.x, cellBounds.y, cellBounds.width, cellBounds.height));
@@ -97,7 +98,7 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 				cellEditor.activateCell(parent, initialCanonicalValue, EditModeEnum.INLINE, editHandler, cell, configRegistry);
 
 				Control editorControl = cellEditor.getEditorControl();
-				if((editorControl != null) && (!(editorControl.isDisposed()))) {
+				if ((editorControl != null) && (!(editorControl.isDisposed()))) {
 					editorControl.setBounds(editorBounds);
 
 					cellEditor.addEditorControlListeners();
@@ -114,7 +115,7 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 				result = editCells(cells, parent, initialCanonicalValue, configRegistry);
 			}
 		} catch (OperationCanceledException e) {
-			// OK.  The user cancelled a dialog or some such
+			// OK. The user cancelled a dialog or some such
 			result = ExecutionStatusKind.FAIL_ROLLBACK;
 		} catch (Exception e) {
 			Activator.log.error("Uncaught exception in table cell editor activation.", e); //$NON-NLS-1$
@@ -125,29 +126,29 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 
 	// From Nebula EditController (with minor tweaks)
 	protected ExecutionStatusKind editCells(List<ILayerCell> cells, Composite parent, Object initialCanonicalValue, IConfigRegistry configRegistry) {
-		if((cells == null) || (cells.isEmpty())) {
+		if ((cells == null) || (cells.isEmpty())) {
 			return ExecutionStatusKind.FAIL_ROLLBACK;
 		}
 
-		ICellEditor cellEditor = (ICellEditor)configRegistry.getConfigAttribute(EditConfigAttributes.CELL_EDITOR, DisplayMode.EDIT, ((ILayerCell)cells.get(0)).getConfigLabels().getLabels());
+		ICellEditor cellEditor = configRegistry.getConfigAttribute(EditConfigAttributes.CELL_EDITOR, DisplayMode.EDIT, cells.get(0).getConfigLabels().getLabels());
 
-		if((cells.size() != 1) && ((cells.size() <= 1) || !(supportMultiEdit(cells, cellEditor, configRegistry)))) {
+		if ((cells.size() != 1) && ((cells.size() <= 1) || !(supportMultiEdit(cells, cellEditor, configRegistry)))) {
 			return ExecutionStatusKind.FAIL_ROLLBACK;
 		}
 
 		ExecutionStatusKind result = ExecutionStatusKind.FAIL_ROLLBACK;
 
-		ICellEditDialog dialog = CellEditDialogFactory.createCellEditDialog((parent != null) ? parent.getShell() : null, initialCanonicalValue, (ILayerCell)cells.get(0), cellEditor, configRegistry);
+		ICellEditDialog dialog = CellEditDialogFactory.createCellEditDialog((parent != null) ? parent.getShell() : null, initialCanonicalValue, cells.get(0), cellEditor, configRegistry);
 
 		int returnValue = dialog.open();
 
-		if(returnValue == Window.OK) {
+		if (returnValue == Window.OK) {
 			// The edit was completed and should appear on the undo stack
 			result = ExecutionStatusKind.OK_COMPLETE;
 
-			for(ILayerCell selectedCell : cells) {
+			for (ILayerCell selectedCell : cells) {
 				Object editorValue = dialog.getCommittedValue();
-				if(dialog.getEditType() != EditTypeEnum.SET) {
+				if (dialog.getEditType() != EditTypeEnum.SET) {
 					editorValue = dialog.calculateValue(selectedCell.getDataValue(), editorValue);
 				}
 				ILayer layer = selectedCell.getLayer();
@@ -161,18 +162,18 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 
 	// From Nebula EditController (with minor tweaks)
 	private static boolean supportMultiEdit(List<ILayerCell> cells, ICellEditor cellEditor, IConfigRegistry configRegistry) {
-		for(ILayerCell cell : cells) {
-			if(!(cellEditor.supportMultiEdit(configRegistry, cell.getConfigLabels().getLabels()))) {
+		for (ILayerCell cell : cells) {
+			if (!(cellEditor.supportMultiEdit(configRegistry, cell.getConfigLabels().getLabels()))) {
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	private static class MyInlineEditHandler extends InlineEditHandler {
 
 		private boolean committed;
@@ -184,9 +185,9 @@ public class TransactionalEditCellCommandHandler extends TransactionalCommandHan
 		@Override
 		public boolean commit(Object canonicalValue, MoveDirectionEnum direction) {
 			boolean result = super.commit(canonicalValue, direction);
-			
+
 			committed = result || committed;
-			
+
 			return result;
 		}
 

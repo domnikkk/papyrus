@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *   Nicolas Bros (Mia-Software) - Bug 339664 - org.eclipse.papyrus.emf.facet.widgets.celleditors API cleaning
  *   Nicolas Bros (Mia-Software) - Bug 334539 - [celleditors] change listener
  *   Gregoire Dupe (Mia-Software) - Bug 344563 - NPE with Enum Editor
- *   Nicolas Guyomar (Mia-Software) - Bug 344563 - NPE with Enum Editor 
+ *   Nicolas Guyomar (Mia-Software) - Bug 344563 - NPE with Enum Editor
  *****************************************************************************/
 package org.eclipse.papyrus.emf.facet.widgets.celleditors.internal.core.composite;
 
@@ -66,14 +66,14 @@ public abstract class EnumComposite<T> extends AbstractCellEditorComposite<T> {
 				fireChanged();
 			}
 		});
-		
+
 		this.combo.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(final KeyEvent event) {
 				// Enter key pressed
 				if ((event.keyCode == SWT.CR && event.stateMask == 0)
 						|| (event.keyCode == SWT.KEYPAD_CR && event.stateMask == 0)) {
-						commit();
+					commit();
 				} else if (event.keyCode == SWT.ESC && event.stateMask == 0) {
 					// Escape key pressed
 					close();

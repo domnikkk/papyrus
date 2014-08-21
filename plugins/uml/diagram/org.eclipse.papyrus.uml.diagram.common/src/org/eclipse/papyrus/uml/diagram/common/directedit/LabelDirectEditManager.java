@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,17 +35,17 @@ import org.eclipse.ui.part.CellEditorActionHandler;
 public class LabelDirectEditManager extends DirectEditManager {
 
 	/**
-	 * 
+	 *
 	 */
 	protected IActionBars actionBars;
 
 	/**
-	 * 
+	 *
 	 */
 	protected CellEditorActionHandler actionHandler;
 
 	/**
-	 * 
+	 *
 	 */
 	protected IAction copy, cut, paste, undo, redo, find, selectAll, delete;
 
@@ -56,12 +56,12 @@ public class LabelDirectEditManager extends DirectEditManager {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param locator
 	 * @param labelCtrl
-	 *        The label to edit
+	 *            The label to edit
 	 * @param source
-	 *        The EditPart owning the label.
+	 *            The EditPart owning the label.
 	 */
 	public LabelDirectEditManager(GraphicalEditPart source, CellEditorLocator locator, ILabelControler labelCtrl) {
 		super(source, null, locator);
@@ -74,15 +74,15 @@ public class LabelDirectEditManager extends DirectEditManager {
 	 * @see org.eclipse.gef.tools.DirectEditManager#bringDown()
 	 */
 	/**
-	 * 
+	 *
 	 */
 	@Override
 	protected void bringDown() {
-		if(actionHandler != null) {
+		if (actionHandler != null) {
 			actionHandler.dispose();
 			actionHandler = null;
 		}
-		if(actionBars != null) {
+		if (actionBars != null) {
 			restoreSavedActions(actionBars);
 			actionBars.updateActionBars();
 			actionBars = null;
@@ -98,10 +98,10 @@ public class LabelDirectEditManager extends DirectEditManager {
 	 * .swt.widgets.Composite)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param composite
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -115,8 +115,8 @@ public class LabelDirectEditManager extends DirectEditManager {
 	 * @see org.eclipse.gef.tools.DirectEditManager#createDirectEditRequest()
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	@Override
@@ -149,8 +149,8 @@ public class LabelDirectEditManager extends DirectEditManager {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param actionBars
 	 */
 	private void restoreSavedActions(IActionBars actionBars) {
@@ -165,8 +165,8 @@ public class LabelDirectEditManager extends DirectEditManager {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param actionBars
 	 */
 	private void saveCurrentActions(IActionBars actionBars) {

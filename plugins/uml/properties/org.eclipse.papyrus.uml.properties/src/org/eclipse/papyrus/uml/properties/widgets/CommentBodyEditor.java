@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A Widget for editing the Body of Comments
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class CommentBodyEditor extends StringMultilineWithReferences {
 
@@ -50,21 +50,21 @@ public class CommentBodyEditor extends StringMultilineWithReferences {
 		ModelElement element = getInput().getModelElement(getProperty());
 		ResourceSet resourceSet = null;
 		Resource baseResource = null;
-		if(element instanceof EMFModelElement) {
-			EMFModelElement emfElement = (EMFModelElement)element;
+		if (element instanceof EMFModelElement) {
+			EMFModelElement emfElement = (EMFModelElement) element;
 			EObject editedElement = emfElement.getSource();
 			resourceSet = (emfElement.getDomain() == null) ? null : emfElement.getDomain().getResourceSet();
 			baseResource = editedElement.eResource();
-			
-			if(baseResource == null) {
+
+			if (baseResource == null) {
 				// Editing an object that is not yet added to the model? Try to locate the creation context
 				CreationContext creationContext = EcorePropertyEditorFactory.getCreationContext(editedElement, false);
-				if(creationContext != null) {
-					baseResource = ((EObject)creationContext.getCreationContextElement()).eResource();
+				if (creationContext != null) {
+					baseResource = ((EObject) creationContext.getCreationContextElement()).eResource();
 				}
 			}
-			
-			if(resourceSet != null) {
+
+			if (resourceSet != null) {
 				SemanticUMLContentProvider semanticProvider = new SemanticUMLContentProvider(editedElement, UMLPackage.eINSTANCE.getComment_Body(), resourceSet);
 				semanticProvider.setWantedMetaclasses(Collections.singletonList(UMLPackage.eINSTANCE.getNamedElement()));
 

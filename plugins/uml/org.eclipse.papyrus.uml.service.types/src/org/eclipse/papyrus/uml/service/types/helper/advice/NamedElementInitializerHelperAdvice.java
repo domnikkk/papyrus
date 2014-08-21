@@ -1,13 +1,13 @@
 /*****************************************************************************
  * Copyright (c) 2010. 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 	Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 440263
  *
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.Namespace;
  * <pre>
  * This is an advice helper used to initialize namedElement.
  * 
- * In particular the name of such elements is initialized in order 
+ * In particular the name of such elements is initialized in order
  * to have a unique name for a specific type of element per {@link Namespace}.
- * 
+ *
  * </pre>
  */
 public class NamedElementInitializerHelperAdvice extends AbstractEditHelperAdvice {
@@ -44,13 +44,14 @@ public class NamedElementInitializerHelperAdvice extends AbstractEditHelperAdvic
 	protected ICommand getBeforeConfigureCommand(final ConfigureRequest request) {
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
-				NamedElement element = (NamedElement)request.getElementToConfigure();
+				NamedElement element = (NamedElement) request.getElementToConfigure();
 
 				// Initialize the element name based on the created IElementType
 				String initializedName = NamedElementUtil.getDefaultNameWithIncrement(element, element.eContainer().eContents());
-				if(initializedName != null) {
+				if (initializedName != null) {
 					element.setName(initializedName);
 				}
 

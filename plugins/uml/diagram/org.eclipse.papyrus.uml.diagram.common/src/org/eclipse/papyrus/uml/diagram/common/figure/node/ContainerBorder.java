@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,18 +22,18 @@ import org.eclipse.swt.graphics.Color;
 
 /**
  * Construct a border with a line at the top, and margin on the other sides.
- * 
+ *
  * @author dumoulin
  */
 public class ContainerBorder extends AbstractBorder {
 
 	/**
-	 * 
+	 *
 	 */
 	private int lineWidth = 1;
 
 	/**
-	 * 
+	 *
 	 */
 	private Color color;
 
@@ -45,14 +45,14 @@ public class ContainerBorder extends AbstractBorder {
 	/**
 	 * Constructs a LineBorder with the specified color and of the specified
 	 * width.
-	 * 
+	 *
 	 * @param lineWidth
-	 *        The width of the line in pixels.
+	 *            The width of the line in pixels.
 	 * @param color
-	 *        The color of the border.
+	 *            The color of the border.
 	 * @param marginInsets
-	 *        The width of the margin in pixels.
-	 * 
+	 *            The width of the margin in pixels.
+	 *
 	 * @since 2.0
 	 */
 	public ContainerBorder(Color color, int lineWidth, Insets marginInsets) {
@@ -65,7 +65,7 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * to adapt the color of the border.
-	 * 
+	 *
 	 * @param color
 	 */
 	public void setBorder(Color color) {
@@ -75,14 +75,14 @@ public class ContainerBorder extends AbstractBorder {
 	/**
 	 * Constructs a LineBorder with the specified color and of the specified
 	 * width.
-	 * 
+	 *
 	 * @param allMargin
-	 *        The width of the margin in pixels.
+	 *            The width of the margin in pixels.
 	 * @param lineWidth
-	 *        The width of the line in pixels.
+	 *            The width of the line in pixels.
 	 * @param color
-	 *        The color of the border.
-	 * 
+	 *            The color of the border.
+	 *
 	 * @since 2.0
 	 */
 	public ContainerBorder(Color color, int lineWidth, int allMargin) {
@@ -92,20 +92,20 @@ public class ContainerBorder extends AbstractBorder {
 	/**
 	 * Constructs a LineBorder with the specified color and of the specified
 	 * width.
-	 * 
+	 *
 	 * @param lineWidth
-	 *        The width of the line in pixels.
+	 *            The width of the line in pixels.
 	 * @param color
-	 *        The color of the border.
+	 *            The color of the border.
 	 * @param r
-	 *        magin at rigth
+	 *            magin at rigth
 	 * @param t
-	 *        margin at top
+	 *            margin at top
 	 * @param l
-	 *        margin at left
+	 *            margin at left
 	 * @param b
-	 *        margin at bottom
-	 * 
+	 *            margin at bottom
+	 *
 	 * @since 2.0
 	 */
 	public ContainerBorder(Color color, int lineWidth, int t, int l, int b, int r) {
@@ -114,10 +114,10 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * Constructs a LineBorder with the specified color and a width of 1 pixel.
-	 * 
+	 *
 	 * @param color
-	 *        The color of the border.
-	 * 
+	 *            The color of the border.
+	 *
 	 * @since 2.0
 	 */
 	// @unused
@@ -127,10 +127,10 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * Constructs a black LineBorder with the specified width.
-	 * 
+	 *
 	 * @param width
-	 *        The width of the border in pixels.
-	 * 
+	 *            The width of the border in pixels.
+	 *
 	 * @since 2.0
 	 */
 	// @unused
@@ -140,7 +140,7 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * Constructs a default black LineBorder with a width of one pixel.
-	 * 
+	 *
 	 * @since 2.0
 	 */
 	// @unused
@@ -149,7 +149,7 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * Returns the line color of this border.
-	 * 
+	 *
 	 * @return The line color of this border
 	 */
 	public Color getColor() {
@@ -159,19 +159,20 @@ public class ContainerBorder extends AbstractBorder {
 	/**
 	 * Returns the space used by the border for the figure provided as input. In
 	 * this border all sides always have equal width.
-	 * 
+	 *
 	 * @param figure
-	 *        The figure this border belongs to
-	 * 
+	 *            The figure this border belongs to
+	 *
 	 * @return This border's insets
 	 */
+	@Override
 	public Insets getInsets(IFigure figure) {
 		return insets;
 	}
 
 	/**
 	 * Returns the line width of this border.
-	 * 
+	 *
 	 * @return The line width of this border
 	 */
 	public int getLineWidth() {
@@ -181,7 +182,7 @@ public class ContainerBorder extends AbstractBorder {
 	/**
 	 * Returns <code>true</code> since this border is opaque. Being opaque it is
 	 * responsible to fill in the area within its boundaries.
-	 * 
+	 *
 	 * @return <code>true</code> since this border is opaque
 	 */
 	@Override
@@ -190,19 +191,20 @@ public class ContainerBorder extends AbstractBorder {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param graphics
 	 * @param figure
 	 * @param insets
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Border#paint(IFigure, Graphics, Insets)
 	 */
+	@Override
 	public void paint(IFigure figure, Graphics graphics, Insets insets) {
 		graphics.pushState();
 		Rectangle bounds = figure.getBounds();
 		graphics.setLineWidth(getLineWidth());
-		if(getColor() != null) {
+		if (getColor() != null) {
 			graphics.setForegroundColor(getColor());
 		}
 		// graphics.drawLine(tempRect.getTopLeft(), tempRect.getTopRight());
@@ -212,9 +214,9 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * Sets the line color for this border.
-	 * 
+	 *
 	 * @param color
-	 *        The line color
+	 *            The line color
 	 */
 	public void setColor(Color color) {
 		this.color = color;
@@ -222,9 +224,9 @@ public class ContainerBorder extends AbstractBorder {
 
 	/**
 	 * Sets the line width for this border.
-	 * 
+	 *
 	 * @param width
-	 *        The line width
+	 *            The line width
 	 */
 	public void setLineWidth(int width) {
 		this.lineWidth = width;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,15 +30,15 @@ public interface ICompartmentLayoutHelper {
 
 	/**
 	 * Sets the layout kind on view.
-	 * 
+	 *
 	 * @param layoutKind
-	 *        the new layout kind on view
+	 *            the new layout kind on view
 	 */
 	public SetLayoutKindCommand setLayoutKindOnView(TransactionalEditingDomain domain, EModelElement view, String layoutKind);
 
 	/**
 	 * Gets the layout kind from view.
-	 * 
+	 *
 	 * @return the layout kind from view
 	 */
 	public String getLayoutKindFromView(EModelElement modelElement);

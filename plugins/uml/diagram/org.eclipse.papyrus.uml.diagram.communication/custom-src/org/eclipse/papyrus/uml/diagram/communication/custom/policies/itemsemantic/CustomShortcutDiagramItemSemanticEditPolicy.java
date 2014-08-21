@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,10 +21,11 @@ import org.eclipse.papyrus.uml.diagram.communication.edit.policies.ShortCutDiagr
 
 /**
  * this is a specific item edit policy to disable the action remove from model
- * 
+ *
  */
 public class CustomShortcutDiagramItemSemanticEditPolicy extends ShortCutDiagramItemSemanticEditPolicy {
 
+	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}

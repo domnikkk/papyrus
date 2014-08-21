@@ -28,11 +28,12 @@ import org.eclipse.papyrus.views.properties.ui.UiPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.ui.ReferenceAttribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ReferenceAttributeItemProvider
-	extends WidgetAttributeItemProvider
-	implements
+		extends WidgetAttributeItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -42,6 +43,7 @@ public class ReferenceAttributeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ReferenceAttributeItemProvider(AdapterFactory adapterFactory) {
@@ -52,6 +54,7 @@ public class ReferenceAttributeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -64,11 +67,11 @@ public class ReferenceAttributeItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -83,6 +86,7 @@ public class ReferenceAttributeItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -97,6 +101,7 @@ public class ReferenceAttributeItemProvider
 	 * This returns ReferenceAttribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -108,14 +113,15 @@ public class ReferenceAttributeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ReferenceAttribute)object).getName();
+		String label = ((ReferenceAttribute) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ReferenceAttribute_type") :
-			getString("_UI_ReferenceAttribute_type") + " " + label;
+				getString("_UI_ReferenceAttribute_type") :
+				getString("_UI_ReferenceAttribute_type") + " " + label;
 	}
 
 	/**
@@ -123,6 +129,7 @@ public class ReferenceAttributeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,9 +137,9 @@ public class ReferenceAttributeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ReferenceAttribute.class)) {
-			case UiPackage.REFERENCE_ATTRIBUTE__VALUE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case UiPackage.REFERENCE_ATTRIBUTE__VALUE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -142,6 +149,7 @@ public class ReferenceAttributeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -149,29 +157,29 @@ public class ReferenceAttributeItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(UiPackage.Literals.REFERENCE_ATTRIBUTE__VALUE,
-				 UiFactory.eINSTANCE.createStandardWidget()));
+						UiFactory.eINSTANCE.createStandardWidget()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(UiPackage.Literals.REFERENCE_ATTRIBUTE__VALUE,
-				 UiFactory.eINSTANCE.createPropertyEditor()));
+						UiFactory.eINSTANCE.createPropertyEditor()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(UiPackage.Literals.REFERENCE_ATTRIBUTE__VALUE,
-				 UiFactory.eINSTANCE.createCompositeWidget()));
+						UiFactory.eINSTANCE.createCompositeWidget()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(UiPackage.Literals.REFERENCE_ATTRIBUTE__VALUE,
-				 UiFactory.eINSTANCE.createUnknownComponent()));
+						UiFactory.eINSTANCE.createUnknownComponent()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(UiPackage.Literals.REFERENCE_ATTRIBUTE__VALUE,
-				 UiFactory.eINSTANCE.createLayout()));
+						UiFactory.eINSTANCE.createLayout()));
 	}
 
 }

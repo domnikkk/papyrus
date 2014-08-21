@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class ClazzDiagramAssociationHelper {
 		Association association = UMLFactory.eINSTANCE.createAssociation();
 		String targetString = target.getName().substring(0, 1).toLowerCase() + target.getName().substring(1, target.getName().length());
 		String sourceString = source.getName().substring(0, 1).toLowerCase() + source.getName().substring(1, source.getName().length());
-		
+
 		// create target property
 		CreateElementRequest request = new CreateElementRequest(domain, association, UMLElementTypes.Property_3002, UMLPackage.eINSTANCE.getAssociation_OwnedEnd());
 		EditElementCommand c = new PropertyCommandForAssociation(request, diagram);
@@ -65,7 +65,7 @@ public class ClazzDiagramAssociationHelper {
 		if (source instanceof StructuredClassifier) {
 			((StructuredClassifier) source).getOwnedAttributes().add(targetProperty);
 		}
-		
+
 		// create source property
 		request = new CreateElementRequest(domain, association, UMLElementTypes.Property_3002, UMLPackage.eINSTANCE.getAssociation_OwnedEnd());
 		c = new PropertyCommandForAssociation(request, diagram);
@@ -95,7 +95,7 @@ public class ClazzDiagramAssociationHelper {
 		}
 		container.getPackagedElements().add(association);
 		ElementInitializers.getInstance().init_Association_4001(association);
-		String associationName = NamedElementUtil.getDefaultNameWithIncrement(association, container.eContents());//$NON-NLS-1$ //$NON-NLS-2$
+		String associationName = NamedElementUtil.getDefaultNameWithIncrement(association, container.eContents());
 		association.setName(associationName);
 		return association;
 	}

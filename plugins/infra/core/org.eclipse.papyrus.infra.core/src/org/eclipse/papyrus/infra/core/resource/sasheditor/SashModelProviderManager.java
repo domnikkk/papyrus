@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -57,16 +57,16 @@ class SashModelProviderManager {
 	}
 
 	void dispose() {
-		for(ProviderDescriptor next : descriptors) {
+		for (ProviderDescriptor next : descriptors) {
 			next.dispose();
 		}
 	}
 
 	/**
 	 * Obtains the most appropriate sash model provider for the specified URI.
-	 * 
+	 *
 	 * @param userModelURI
-	 * 
+	 *
 	 * @return the sash model provider, never {@code null} (there is always a default available)
 	 */
 	ISashModelProvider getSashModelProvider(final URI userModelURI) {
@@ -97,8 +97,8 @@ class SashModelProviderManager {
 	private List<ProviderDescriptor> createDescriptors() {
 		List<ProviderDescriptor> result = Lists.newArrayListWithExpectedSize(1);
 
-		for(IConfigurationElement next : Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_PT)) {
-			if(E_PROVIDER.equals(next.getName())) {
+		for (IConfigurationElement next : Platform.getExtensionRegistry().getConfigurationElementsFor(EXT_PT)) {
+			if (E_PROVIDER.equals(next.getName())) {
 				try {
 					result.add(new ProviderDescriptor(next));
 				} catch (CoreException e) {
@@ -122,10 +122,10 @@ class SashModelProviderManager {
 
 				IPath stateLocation = Activator.getDefault().getStateLocation();
 
-				if(uriWithoutExtension.isPlatform()) {
+				if (uriWithoutExtension.isPlatform()) {
 					stateLocation = stateLocation.append(uriWithoutExtension.toPlatformString(true));
 				} else {
-					//TODO properly support and test non-platform URIs that are not already handled by extensions
+					// TODO properly support and test non-platform URIs that are not already handled by extensions
 					stateLocation = stateLocation.append(URI.decode(uriWithoutExtension.toString()));
 				}
 
@@ -170,7 +170,7 @@ class SashModelProviderManager {
 			this.scheme = config.getAttribute(A_SCHEME);
 			String pattern = config.getAttribute(A_PATTERN);
 
-			if(Strings.isNullOrEmpty(scheme) && Strings.isNullOrEmpty(pattern)) {
+			if (Strings.isNullOrEmpty(scheme) && Strings.isNullOrEmpty(pattern)) {
 				throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Sash model provider missing both scheme and pattern filter.")); //$NON-NLS-1$
 			}
 
@@ -184,13 +184,13 @@ class SashModelProviderManager {
 		@Override
 		public boolean apply(URI input) {
 			return ((scheme == null) || scheme.equals(input.scheme())) // Scheme filter
-				&& ((pattern == null) || pattern.matcher(input.toString()).find()); // Pattern filter
+					&& ((pattern == null) || pattern.matcher(input.toString()).find()); // Pattern filter
 		}
 
 		ISashModelProvider getProvider() throws CoreException {
-			if(provider == null) {
+			if (provider == null) {
 				try {
-					provider = (ISashModelProvider)config.createExecutableExtension(A_CLASS);
+					provider = (ISashModelProvider) config.createExecutableExtension(A_CLASS);
 					provider.initialize(modelSet);
 				} catch (CoreException e) {
 					throw e;
@@ -205,7 +205,7 @@ class SashModelProviderManager {
 		}
 
 		void dispose() {
-			if(provider != null) {
+			if (provider != null) {
 				try {
 					provider.dispose();
 				} catch (Exception e) {

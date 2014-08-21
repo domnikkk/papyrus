@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.TreeItem;
  * Class for the creation of a sub-menu in the menu. The sub-menu is not
  * selectable and own a list of sub-items (declared by the contributor with the
  * extension point).
- * 
+ *
  * @since 0.3
  */
 public abstract class AbstractTreeSubMenu<T extends Object> extends
@@ -42,7 +42,7 @@ public abstract class AbstractTreeSubMenu<T extends Object> extends
 
 	/**
 	 * Add an item to the list of the sub-menu items.
-	 * 
+	 *
 	 * @param item
 	 *            the item to add.
 	 */
@@ -70,7 +70,7 @@ public abstract class AbstractTreeSubMenu<T extends Object> extends
 
 	/**
 	 * Create the concrete sub menu into the tree menu.
-	 * 
+	 *
 	 * @param parent
 	 *            the menu parent of this sub menu.
 	 * @return the new item into the menu.

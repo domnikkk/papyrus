@@ -20,8 +20,8 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.IconDescriptorImpl#getPluginID <em>Plugin ID</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.IconDescriptorImpl#getIconPath <em>Icon Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.IconDescriptorImpl#getPluginID <em>Plugin ID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.impl.IconDescriptorImpl#getIconPath <em>Icon Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The default value of the '{@link #getPluginID() <em>Plugin ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPluginID()
 	 * @generated
 	 * @ordered
@@ -42,6 +43,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The cached value of the '{@link #getPluginID() <em>Plugin ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPluginID()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The default value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -62,6 +65,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	 * The cached value of the '{@link #getIconPath() <em>Icon Path</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIconPath()
 	 * @generated
 	 * @ordered
@@ -71,6 +75,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IconDescriptorImpl() {
@@ -80,6 +85,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,6 +96,7 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getPluginID() {
@@ -99,18 +106,21 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setPluginID(String newPluginID) {
 		String oldPluginID = pluginID;
 		pluginID = newPluginID;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID, oldPluginID, pluginID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getIconPath() {
@@ -120,27 +130,30 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIconPath(String newIconPath) {
 		String oldIconPath = iconPath;
 		iconPath = newIconPath;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH, oldIconPath, iconPath));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
-				return getPluginID();
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
-				return getIconPath();
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
+			return getPluginID();
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
+			return getIconPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,17 +161,18 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
-				setPluginID((String)newValue);
-				return;
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
-				setIconPath((String)newValue);
-				return;
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
+			setPluginID((String) newValue);
+			return;
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
+			setIconPath((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,17 +180,18 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
-				setPluginID(PLUGIN_ID_EDEFAULT);
-				return;
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
-				setIconPath(ICON_PATH_EDEFAULT);
-				return;
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
+			setPluginID(PLUGIN_ID_EDEFAULT);
+			return;
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
+			setIconPath(ICON_PATH_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,15 +199,16 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
-				return PLUGIN_ID_EDEFAULT == null ? pluginID != null : !PLUGIN_ID_EDEFAULT.equals(pluginID);
-			case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
-				return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__PLUGIN_ID:
+			return PLUGIN_ID_EDEFAULT == null ? pluginID != null : !PLUGIN_ID_EDEFAULT.equals(pluginID);
+		case PaletteconfigurationPackage.ICON_DESCRIPTOR__ICON_PATH:
+			return ICON_PATH_EDEFAULT == null ? iconPath != null : !ICON_PATH_EDEFAULT.equals(iconPath);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -200,11 +216,14 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (pluginID: ");
@@ -215,4 +234,4 @@ public class IconDescriptorImpl extends EObjectImpl implements IconDescriptor {
 		return result.toString();
 	}
 
-} //IconDescriptorImpl
+} // IconDescriptorImpl

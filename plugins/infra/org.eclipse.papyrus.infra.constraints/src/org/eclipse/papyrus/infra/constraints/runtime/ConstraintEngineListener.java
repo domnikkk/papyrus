@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ public interface ConstraintEngineListener extends EventListener {
 
 	/**
 	 * Notifies listeners that the engine's constraints have changed, so any remembered calculation results may need to be recomputed.
-	 * 
+	 *
 	 * @param event
-	 *        the notification object
+	 *            the notification object
 	 */
 	void constraintsChanged(ConstraintsChangedEvent event);
 }

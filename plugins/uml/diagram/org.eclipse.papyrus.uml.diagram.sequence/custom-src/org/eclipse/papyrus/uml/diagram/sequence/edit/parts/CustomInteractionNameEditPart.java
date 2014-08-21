@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class CustomInteractionNameEditPart extends InteractionNameEditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomInteractionNameEditPart(View view) {
@@ -40,10 +40,10 @@ public class CustomInteractionNameEditPart extends InteractionNameEditPart {
 
 	protected void refreshLabelContainer() {
 		Object p = getParent();
-		if(p instanceof InteractionEditPart) {
-			InteractionEditPart iep = (InteractionEditPart)p;
+		if (p instanceof InteractionEditPart) {
+			InteractionEditPart iep = (InteractionEditPart) p;
 			IFigure container = iep.getPrimaryShape().getHeaderLabel().getParent();
-			if(container != null) {
+			if (container != null) {
 				container.revalidate();
 				container.repaint();
 			}
@@ -52,13 +52,13 @@ public class CustomInteractionNameEditPart extends InteractionNameEditPart {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionNameEditPart#handleNotificationEvent(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param event
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
-		if(ElementIconUtil.isIconNotification(event)) {
+		if (ElementIconUtil.isIconNotification(event)) {
 			refreshLabelContainer();
 		}
 	}

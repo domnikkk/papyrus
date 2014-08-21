@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ class MarkerCache {
 
 	public Collection<? extends IPapyrusMarker> getMarkers(Resource resource) {
 		Collection<? extends IPapyrusMarker> result = cache.get(resource);
-		if(result == null) {
+		if (result == null) {
 			try {
 				result = loader.getMarkers(resource);
 			} catch (CoreException e) {
@@ -61,16 +61,16 @@ class MarkerCache {
 	public Collection<IPapyrusMarker> getMarkers(Resource context, EObject object) {
 		List<IPapyrusMarker> result = null;
 
-		for(IPapyrusMarker marker : getMarkers(context)) {
-			if(marker.getEObject() == object) {
-				if(result == null) {
+		for (IPapyrusMarker marker : getMarkers(context)) {
+			if (marker.getEObject() == object) {
+				if (result == null) {
 					result = new ArrayList<IPapyrusMarker>();
 				}
 				result.add(marker);
 			}
 		}
 
-		if(result == null) {
+		if (result == null) {
 			result = Collections.emptyList();
 		}
 
@@ -82,7 +82,7 @@ class MarkerCache {
 		// In which case we would end up deleting stuff from the cache prematurely, resulting in reduced performance and
 		// possibly a memory leak
 		Display display = Display.getDefault();
-		if(display != null) {
+		if (display != null) {
 			display.asyncExec(new Runnable() {
 
 				public void run() {

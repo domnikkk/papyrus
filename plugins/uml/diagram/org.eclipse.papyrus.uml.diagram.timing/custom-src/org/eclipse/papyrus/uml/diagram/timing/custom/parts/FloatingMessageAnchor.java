@@ -30,17 +30,20 @@ public class FloatingMessageAnchor extends ConnectionAnchorBase {
 		this.defaultOffset = defaultOffset;
 	}
 
+	@Override
 	public Point getReferencePoint() {
 		return new Point(0, 0);
 	}
 
+	@Override
 	public IFigure getOwner() {
 		return null;
 	}
 
+	@Override
 	public Point getLocation(final Point reference) {
 		final Point point = MessageUtils.getMessageConnectorLocation(this.connectionEditPart);
-		if(point != null) {
+		if (point != null) {
 			return new Point(reference.x + point.x, reference.y + point.y);
 		}
 		return new Point(reference.x + this.defaultOffset.x, reference.y + this.defaultOffset.y);

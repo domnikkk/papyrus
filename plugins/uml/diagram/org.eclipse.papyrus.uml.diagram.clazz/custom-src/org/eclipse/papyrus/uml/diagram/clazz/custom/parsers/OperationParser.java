@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,6 +17,7 @@ package org.eclipse.papyrus.uml.diagram.clazz.custom.parsers;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -35,23 +36,25 @@ import org.eclipse.uml2.uml.Operation;
 
 /**
  * This the custom parser to manage operation
- * 
+ *
  * @author Patrick Tessier
  */
 public class OperationParser implements IParser {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(final IAdaptable element, int flags) {
 		if (element instanceof EObjectAdapter) {
 			final Operation operation = ((Operation) ((EObjectAdapter) element).getRealObject());
@@ -61,9 +64,10 @@ public class OperationParser implements IParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		final Operation operation = ((Operation) ((EObjectAdapter) element).getRealObject());
 		final String result = newString;
@@ -79,6 +83,7 @@ public class OperationParser implements IParser {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				SafeRunnable.run(new SafeRunnable() {
 
+					@Override
 					public void run() {
 						RecordingCommand rc = new RecordingCommand(getEditingDomain()) {
 
@@ -97,18 +102,21 @@ public class OperationParser implements IParser {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		return "<default>";
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		return false;
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IParserEditStatus.OK, "");
+		return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IStatus.OK, "");
 	}
 }

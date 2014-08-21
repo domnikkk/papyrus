@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.swt.graphics.Color;
 /**
  * this is a abstract editpart to display a comment
  */
-public abstract class  AbstractCommentEditPart extends NodeEditPart {
+public abstract class AbstractCommentEditPart extends NodeEditPart {
 
 	public AbstractCommentEditPart(View view) {
 		super(view);
@@ -41,7 +41,7 @@ public abstract class  AbstractCommentEditPart extends NodeEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -49,13 +49,13 @@ public abstract class  AbstractCommentEditPart extends NodeEditPart {
 		super.handleNotificationEvent(event);
 
 		// set the figure active when the feature of the of a class is true
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshFontColor();
 
 		}
 	}
 
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -68,13 +68,13 @@ public abstract class  AbstractCommentEditPart extends NodeEditPart {
 
 	/**
 	 * Refresh figure's background transparency.
-	 * 
+	 *
 	 * @since 1.2
 	 */
 	@Override
 	protected void refreshTransparency() {
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(style.getGradient() != null) {
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (style.getGradient() != null) {
 			setTransparency(style.getTransparency());
 		} else {
 			setTransparency(0);
@@ -91,8 +91,8 @@ public abstract class  AbstractCommentEditPart extends NodeEditPart {
 	/** Refresh the editpart's figure font color. */
 	@Override
 	protected void refreshFontColor() {
-		FontStyle style = (FontStyle)getPrimaryView().getStyle(NotationPackage.Literals.FONT_STYLE);
-		if(style != null) {
+		FontStyle style = (FontStyle) getPrimaryView().getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (style != null) {
 			setFontColor(DiagramColorRegistry.getInstance().getColor(new Integer(style.getFontColor())));
 		}
 	}

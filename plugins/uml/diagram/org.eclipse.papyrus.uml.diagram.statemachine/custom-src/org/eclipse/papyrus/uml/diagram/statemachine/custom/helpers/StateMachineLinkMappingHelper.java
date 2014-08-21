@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -33,7 +33,7 @@ public class StateMachineLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of StateMachineLinkMappingHelper.
-	 * 
+	 *
 	 * @return single instance of StateMachineLinkMappingHelper
 	 */
 	public static StateMachineLinkMappingHelper getInstance() {
@@ -47,11 +47,13 @@ public class StateMachineLinkMappingHelper implements ILinkMappingHelper {
 		// do nothing
 	}
 
+	@Override
 	public Collection<?> getSource(Element link) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public Collection<?> getTarget(Element link) {
 		// TODO Auto-generated method stub
 		return null;

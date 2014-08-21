@@ -33,6 +33,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.papyrus.uml.tools.utils.ValueSpecificationUtil;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.UMLPackage;
@@ -57,27 +58,27 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String editString = "";
 
-		EObject eObject =EMFHelper.getEObject(element);
-		if((eObject != null) && (eObject instanceof Constraint)) {
-			Constraint semElement = (Constraint)eObject;
+		EObject eObject = EMFHelper.getEObject(element);
+		if ((eObject != null) && (eObject instanceof Constraint)) {
+			Constraint semElement = (Constraint) eObject;
 
 			// edit name
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_NAME))) {
-				if(semElement.isSetName()) {
+			if ((maskValues.contains(ICustomAppearance.DISP_NAME))) {
+				if (semElement.isSetName()) {
 					editString = semElement.getName();
 				}
 
 				// (try to) edit constraint specification
-			} else if((maskValues.contains(ILabelPreferenceConstants.DISP_SPECIFICATION))) {
-				if(semElement.getSpecification() != null) {
+			} else if ((maskValues.contains(ILabelPreferenceConstants.DISP_SPECIFICATION))) {
+				if (semElement.getSpecification() != null) {
 					editString = ValueSpecificationUtil.getSpecificationValue(semElement.getSpecification());
-					if(editString == null) {
+					if (editString == null) {
 						editString = "";
 					}
 				}
@@ -93,29 +94,29 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 	public String getPrintString(IAdaptable element, int flags) {
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Constraint)) {
+		if ((eObject != null) && (eObject instanceof Constraint)) {
 
-			Constraint semElement = (Constraint)eObject;
+			Constraint semElement = (Constraint) eObject;
 
 			// manage name
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_NAME)) && (semElement.isSetName())) {
+			if ((maskValues.contains(ICustomAppearance.DISP_NAME)) && (semElement.isSetName())) {
 				String name = semElement.getName();
 				result = String.format(NAME_FORMAT, name);
 			}
 
 			// manage specification
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_SPECIFICATION))) {
+			if ((maskValues.contains(ILabelPreferenceConstants.DISP_SPECIFICATION))) {
 				String spec = "<Undefined>";
-				if(semElement.getSpecification() != null) {
+				if (semElement.getSpecification() != null) {
 					spec = ValueSpecificationUtil.getSpecificationValue(semElement.getSpecification());
-					if(spec == null || "".equals(spec)) {
+					if (spec == null || "".equals(spec)) {
 						spec = "<Undefined>";
 					}
 				}
@@ -136,20 +137,20 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 		ICommand command = UnexecutableCommand.INSTANCE;
 		SetRequest updateRequest = null;
 
-		Constraint constraint = (Constraint)EMFHelper.getEObject(element);
-		if(constraint == null) {
+		Constraint constraint = (Constraint) EMFHelper.getEObject(element);
+		if (constraint == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		// prepare set name request
-		if((maskValues.contains(ILabelPreferenceConstants.DISP_NAME))) {
+		if ((maskValues.contains(ICustomAppearance.DISP_NAME))) {
 			updateRequest = new SetRequest(constraint, UMLPackage.eINSTANCE.getNamedElement_Name(), newString);
 			updateRequest.setLabel("Update Constraint Label");
 
 			// prepare set specification request
-		} else if((maskValues.contains(ILabelPreferenceConstants.DISP_SPECIFICATION))) {
+		} else if ((maskValues.contains(ILabelPreferenceConstants.DISP_SPECIFICATION))) {
 			ValueSpecification spec = constraint.getSpecification();
-			if(spec == null) {
+			if (spec == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 
@@ -161,7 +162,7 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 		}
 
 		try {
-			if(updateRequest != null) {
+			if (updateRequest != null) {
 				command = ElementEditServiceUtils.getEditServiceProvider().getEditService(constraint).getEditCommand(updateRequest);
 			}
 
@@ -179,10 +180,12 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				return UMLPackage.eINSTANCE.getValueSpecification__BooleanValue().equals(feature) || UMLPackage.eINSTANCE.getValueSpecification__IntegerValue().equals(feature) || UMLPackage.eINSTANCE.getValueSpecification__StringValue().equals(feature) || UMLPackage.eINSTANCE.getValueSpecification__UnlimitedValue().equals(feature) || UMLPackage.eINSTANCE.getOpaqueExpression_Body().equals(feature) || UMLPackage.eINSTANCE.getOpaqueExpression_Language().equals(feature) || super.isAffectingEvent(event, flags);
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				return UMLPackage.eINSTANCE.getValueSpecification__BooleanValue().equals(feature) || UMLPackage.eINSTANCE.getValueSpecification__IntegerValue().equals(feature) || UMLPackage.eINSTANCE.getValueSpecification__StringValue().equals(feature)
+						|| UMLPackage.eINSTANCE.getValueSpecification__UnlimitedValue().equals(feature) || UMLPackage.eINSTANCE.getOpaqueExpression_Body().equals(feature) || UMLPackage.eINSTANCE.getOpaqueExpression_Language().equals(feature)
+						|| super.isAffectingEvent(event, flags);
 			}
 		}
 
@@ -196,11 +199,11 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Constraint)) {
-			Constraint semElement = (Constraint)element;
+		if ((element != null) && (element instanceof Constraint)) {
+			Constraint semElement = (Constraint) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getSpecification() != null) {
+			if (semElement.getSpecification() != null) {
 				semanticElementsBeingParsed.add(semElement.getSpecification());
 			}
 		}
@@ -213,7 +216,7 @@ public class ConstraintLabelParser extends NamedElementLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>(2);
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
 		masks.put(ILabelPreferenceConstants.DISP_SPECIFICATION, "Specification");
 		return masks;
 	}

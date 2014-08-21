@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
@@ -34,19 +34,19 @@ import org.eclipse.papyrus.views.properties.contexts.View;
  * A DataSource is an object encapsulating one or more {@link ModelElement}s.
  * It contains methods to resolve property paths, and forward the methods to
  * the right ModelElement.
- * 
+ *
  * For example, a UML class stereotyped with the SysML::Blocks::Block will have
  * two ModelElements : one for UML, and one for the Block stereotype.
- * 
+ *
  * It will be able to resolve paths such as UML:Class:name or
  * SysML:Blocks:Block:isEncapsulated
- * 
+ *
  * The methods such as isUnique, isEditable or getContentProvider will be
  * delegated to the resolved ModelElement, with a truncated property path.
- * 
+ *
  * For example, a call to DataSource#isEditable("UML:Class:name") will be
  * forwarded to UMLModelElement#isEditable("name")
- * 
+ *
  * @author Camille Letavernier
  */
 public class DataSource implements IChangeListener {
@@ -54,7 +54,7 @@ public class DataSource implements IChangeListener {
 	private final ListenerList changeListeners = new ListenerList(ListenerList.IDENTITY);
 
 	private final ListenerList dataSourceListeners = new ListenerList(ListenerList.IDENTITY);
-	
+
 	private View view;
 
 	private IStructuredSelection selection;
@@ -63,11 +63,11 @@ public class DataSource implements IChangeListener {
 
 	/**
 	 * Constructs a new DataSource from the given view and selection
-	 * 
+	 *
 	 * @param realm
 	 * @param view
 	 * @param selection
-	 * 
+	 *
 	 * @see DataSourceFactory#createDataSourceFromSelection(IStructuredSelection, View)
 	 */
 	protected DataSource(View view, IStructuredSelection selection) {
@@ -77,18 +77,18 @@ public class DataSource implements IChangeListener {
 
 	/**
 	 * Return the instance of ModelElement associated to the given path
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The propertyPath to lookup
+	 *            The propertyPath to lookup
 	 * @return
 	 *         The ModelElement associated to the given propertyPath
 	 */
 	public ModelElement getModelElement(String propertyPath) {
-		//ConfigurationManager.instance.getProperty(propertyPath)
+		// ConfigurationManager.instance.getProperty(propertyPath)
 		String key = propertyPath.substring(0, propertyPath.lastIndexOf(":")); //$NON-NLS-1$
-		if(!elements.containsKey(key)) { //Try to resolve the modelElements on-the-fly
+		if (!elements.containsKey(key)) { // Try to resolve the modelElements on-the-fly
 			ModelElement element = DataSourceFactory.instance.getModelElementFromPropertyPath(this, propertyPath);
-			if(element == null) {
+			if (element == null) {
 				Activator.log.warn("Unable to find a ModelElement for " + propertyPath + ". Elements : " + elements); //$NON-NLS-1$ //$NON-NLS-2$
 			}
 			elements.put(key, element);
@@ -107,9 +107,9 @@ public class DataSource implements IChangeListener {
 	 * The IObservable objects returned by this method may be shared by
 	 * many instances, which means they should not be disposed directly.
 	 * They will be disposed when this DataSource is disposed.
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property path for which we want to retrieve an ObservableValue
+	 *            The property path for which we want to retrieve an ObservableValue
 	 * @return
 	 *         The IObservable corresponding to the given propertyPath
 	 */
@@ -117,12 +117,12 @@ public class DataSource implements IChangeListener {
 		String localPropertyPath = getLocalPropertyPath(propertyPath);
 		ModelElement element = getModelElement(propertyPath);
 
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 
 		IObservable observable = element.getObservable(localPropertyPath);
-		if(observable != null) {
+		if (observable != null) {
 			observable.addChangeListener(this);
 		}
 
@@ -137,15 +137,15 @@ public class DataSource implements IChangeListener {
 	/**
 	 * Returns an IStaticContentProvider corresponding to the given property path
 	 * The call to this method is delegated to the corresponding ModelElement
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property path for which we want to retrieve a ContentProvider
+	 *            The property path for which we want to retrieve a ContentProvider
 	 * @return
 	 *         The IStaticContentProvider corresponding to the given propertyPath
 	 */
 	public IStaticContentProvider getContentProvider(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return EmptyContentProvider.instance;
 		}
 
@@ -156,15 +156,15 @@ public class DataSource implements IChangeListener {
 	/**
 	 * Returns an ILabelProvider corresponding to the given property path
 	 * The call to this method is delegated to the corresponding ModelElement
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property path for which we want to retrieve an ILabelProvider
+	 *            The property path for which we want to retrieve an ILabelProvider
 	 * @return
 	 *         The ILabelProvider corresponding to the given propertyPath
 	 */
 	public ILabelProvider getLabelProvider(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		String localPropertyPath = getLocalPropertyPath(propertyPath);
@@ -174,10 +174,10 @@ public class DataSource implements IChangeListener {
 	/**
 	 * Adds a change listener to this DataSource. The listener will be notified
 	 * each time a change occurs on one of the IObservable produced by this DataSource
-	 * 
+	 *
 	 * @see DataSource#getObservable(String)
 	 * @param listener
-	 *        The Change listener
+	 *            The Change listener
 	 */
 	public void addChangeListener(IChangeListener listener) {
 		changeListeners.add(listener);
@@ -185,41 +185,41 @@ public class DataSource implements IChangeListener {
 
 	/**
 	 * Removes a change listener from this DataSource.
-	 * 
+	 *
 	 * @param listener
-	 *        The listener to remove
+	 *            The listener to remove
 	 * @see DataSource#addChangeListener(IChangeListener)
 	 */
 	public void removeChangeListener(IChangeListener listener) {
 		changeListeners.remove(listener);
 	}
-	
+
 	public void addDataSourceListener(IDataSourceListener listener) {
 		dataSourceListeners.add(listener);
 	}
-	
+
 	public void removeDataSourceListener(IDataSourceListener listener) {
 		dataSourceListeners.remove(listener);
 	}
 
 	public void handleChange(ChangeEvent event) {
 		Object[] listeners = changeListeners.getListeners();
-		for(int i = 0; i < listeners.length; i++) {
+		for (int i = 0; i < listeners.length; i++) {
 			try {
-				((IChangeListener)listeners[i]).handleChange(event);
+				((IChangeListener) listeners[i]).handleChange(event);
 			} catch (Exception e) {
 				Activator.log.error("Uncaught exception in observable change listener.", e); //$NON-NLS-1$
 			}
 		}
 	}
-	
+
 	protected void fireDataSourceChanged() {
 		Object[] listeners = dataSourceListeners.getListeners();
-		if(listeners.length > 0) {
+		if (listeners.length > 0) {
 			DataSourceChangedEvent event = new DataSourceChangedEvent(this);
-			for(int i = 0; i < listeners.length; i++) {
+			for (int i = 0; i < listeners.length; i++) {
 				try {
-					((IDataSourceListener)listeners[i]).dataSourceChanged(event);
+					((IDataSourceListener) listeners[i]).dataSourceChanged(event);
 				} catch (Exception e) {
 					Activator.log.error("Uncaught exception in data-source listener.", e); //$NON-NLS-1$
 				}
@@ -240,12 +240,13 @@ public class DataSource implements IChangeListener {
 	public IStructuredSelection getSelection() {
 		return selection;
 	}
-	
+
 	/**
-	 * @param selection the selection to set
+	 * @param selection
+	 *            the selection to set
 	 */
 	public void setSelection(IStructuredSelection selection) {
-		if(!selection.equals(this.selection)) {
+		if (!selection.equals(this.selection)) {
 			this.selection = selection;
 
 			fireDataSourceChanged();
@@ -259,7 +260,7 @@ public class DataSource implements IChangeListener {
 	 */
 	public boolean isOrdered(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 		return element.isOrdered(getLocalPropertyPath(propertyPath));
@@ -272,7 +273,7 @@ public class DataSource implements IChangeListener {
 	 */
 	public boolean isUnique(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 		return element.isUnique(getLocalPropertyPath(propertyPath));
@@ -285,7 +286,7 @@ public class DataSource implements IChangeListener {
 	 */
 	public boolean isMandatory(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 		return element.isMandatory(getLocalPropertyPath(propertyPath));
@@ -298,7 +299,7 @@ public class DataSource implements IChangeListener {
 	 */
 	public boolean isEditable(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 		return element.isEditable(getLocalPropertyPath(propertyPath));
@@ -309,13 +310,13 @@ public class DataSource implements IChangeListener {
 	 * occurs in the property view. May help when the IObservable doesn't
 	 * catch some change events (For example, for some Ecore derived
 	 * properties).
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return true if the refresh should be forced
 	 */
 	public boolean forceRefresh(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return false;
 		}
 		return element.forceRefresh(getLocalPropertyPath(propertyPath));
@@ -323,15 +324,15 @@ public class DataSource implements IChangeListener {
 
 	/**
 	 * Return the value factory associated to the given path. May be null
-	 * 
+	 *
 	 * @param propertyPath
-	 *        The property path to lookup
+	 *            The property path to lookup
 	 * @return
 	 *         The factory used to edit and/or instantiate values for this property path
 	 */
 	public ReferenceValueFactory getValueFactory(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		return element.getValueFactory(getLocalPropertyPath(propertyPath));
@@ -339,14 +340,14 @@ public class DataSource implements IChangeListener {
 
 	/**
 	 * Return the default value for the given property path
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 *         The default value for the given property
 	 */
 	public Object getDefaultValue(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 		return element.getDefaultValue(getLocalPropertyPath(propertyPath));
@@ -356,18 +357,18 @@ public class DataSource implements IChangeListener {
 	 * Indicates if the widget should use the direct creation.
 	 * The direct edition will disable the possibility to browse
 	 * existing elements when the "add" button is pressed.
-	 * 
+	 *
 	 * This is essentially relevant for containment references : this method
 	 * should return false if the widget should only allow creation of new
 	 * elements.
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 *         True if the widget should use the direct edition option for the given property
 	 */
 	public boolean getDirectCreation(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return true;
 		}
 		return element.getDirectCreation(getLocalPropertyPath(propertyPath));
@@ -378,23 +379,25 @@ public class DataSource implements IChangeListener {
 	 * This will dispose all ModelElements and IObservable created by this DataSource
 	 */
 	public void dispose() {
-		for(ModelElement element : elements.values()) {
-			if(element != null) {
+		for (ModelElement element : elements.values()) {
+			if (element != null) {
 				element.dispose();
 			}
 		}
 		elements.clear();
 	}
+
 	/**
 	 * return the IValidator for a property path
+	 * 
 	 * @param propertyPath
 	 * @return
 	 */
-	public IValidator getValidator(String propertyPath){
+	public IValidator getValidator(String propertyPath) {
 		ModelElement element = getModelElement(propertyPath);
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
-		return element.getValidator(getLocalPropertyPath(propertyPath));		
+		return element.getValidator(getLocalPropertyPath(propertyPath));
 	}
 }

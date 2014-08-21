@@ -20,9 +20,9 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuImpl#getIcon <em>Icon</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuImpl#getId <em>Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuImpl#getIcon <em>Icon</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,6 +66,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -83,6 +88,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -92,6 +98,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MenuImpl() {
@@ -101,6 +108,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +119,7 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getId() {
@@ -120,18 +129,21 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU__ID, oldId, id));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -141,18 +153,21 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getIcon() {
@@ -162,29 +177,32 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIcon(String newIcon) {
 		String oldIcon = icon;
 		icon = newIcon;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU__ICON, oldIcon, icon));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.MENU__ID:
-				return getId();
-			case NewchildPackage.MENU__NAME:
-				return getName();
-			case NewchildPackage.MENU__ICON:
-				return getIcon();
+		case NewchildPackage.MENU__ID:
+			return getId();
+		case NewchildPackage.MENU__NAME:
+			return getName();
+		case NewchildPackage.MENU__ICON:
+			return getIcon();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,20 +210,21 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.MENU__ID:
-				setId((String)newValue);
-				return;
-			case NewchildPackage.MENU__NAME:
-				setName((String)newValue);
-				return;
-			case NewchildPackage.MENU__ICON:
-				setIcon((String)newValue);
-				return;
+		case NewchildPackage.MENU__ID:
+			setId((String) newValue);
+			return;
+		case NewchildPackage.MENU__NAME:
+			setName((String) newValue);
+			return;
+		case NewchildPackage.MENU__ICON:
+			setIcon((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,20 +232,21 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU__ID:
-				setId(ID_EDEFAULT);
-				return;
-			case NewchildPackage.MENU__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case NewchildPackage.MENU__ICON:
-				setIcon(ICON_EDEFAULT);
-				return;
+		case NewchildPackage.MENU__ID:
+			setId(ID_EDEFAULT);
+			return;
+		case NewchildPackage.MENU__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case NewchildPackage.MENU__ICON:
+			setIcon(ICON_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,17 +254,18 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case NewchildPackage.MENU__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case NewchildPackage.MENU__ICON:
-				return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
+		case NewchildPackage.MENU__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case NewchildPackage.MENU__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case NewchildPackage.MENU__ICON:
+			return ICON_EDEFAULT == null ? icon != null : !ICON_EDEFAULT.equals(icon);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -252,14 +273,17 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == MenuItem.class) {
 			switch (derivedFeatureID) {
-				case NewchildPackage.MENU__ID: return NewchildPackage.MENU_ITEM__ID;
-				default: return -1;
+			case NewchildPackage.MENU__ID:
+				return NewchildPackage.MENU_ITEM__ID;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -268,14 +292,17 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == MenuItem.class) {
 			switch (baseFeatureID) {
-				case NewchildPackage.MENU_ITEM__ID: return NewchildPackage.MENU__ID;
-				default: return -1;
+			case NewchildPackage.MENU_ITEM__ID:
+				return NewchildPackage.MENU__ID;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -284,11 +311,14 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
@@ -301,4 +331,4 @@ public class MenuImpl extends MenuContainerImpl implements Menu {
 		return result.toString();
 	}
 
-} //MenuImpl
+} // MenuImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 /**
  * A specific locator for Continuation.
  * This locator is in charge of positioning the continuation at the top or the bottom of its container.
- * 
+ *
  */
 public class ContinuationLocator extends BorderItemLocator {
 
@@ -31,11 +31,11 @@ public class ContinuationLocator extends BorderItemLocator {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param parentFigure
-	 *        the parent figure
+	 *            the parent figure
 	 * @param location
-	 *        ContinuationLocator.TOP or ContinuationLocator.BOTTOM
+	 *            ContinuationLocator.TOP or ContinuationLocator.BOTTOM
 	 */
 	public ContinuationLocator(IFigure parentFigure, int location) {
 		super(parentFigure, location);
@@ -43,7 +43,7 @@ public class ContinuationLocator extends BorderItemLocator {
 
 	/**
 	 * Locate the figure on its parent
-	 * 
+	 *
 	 * @param suggestedLocation
 	 * @param suggestedSide
 	 * @return point
@@ -52,7 +52,7 @@ public class ContinuationLocator extends BorderItemLocator {
 	protected Point locateOnParent(Point suggestedLocation, int suggestedSide, IFigure borderItem) {
 		Rectangle bounds = getParentBorder();
 		Dimension borderItemSize = getSize(borderItem);
-		if(getPreferredSideOfParent() == PositionConstants.SOUTH) {
+		if (getPreferredSideOfParent() == PositionConstants.SOUTH) {
 			return new Point(bounds.x + MARGIN, bounds.y + bounds.height - borderItemSize.height - MARGIN);
 		}
 		return new Point(bounds.x + MARGIN, bounds.y + MARGIN);
@@ -62,7 +62,7 @@ public class ContinuationLocator extends BorderItemLocator {
 	 * Overrides :
 	 * - the width of the borderItem is equivalent to its parentBorder width - MARGIN * 2
 	 * - the CurrentSide and PreferredSide are no more needed.
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.Locator#relocate(org.eclipse.draw2d.IFigure)
 	 */
 	@Override

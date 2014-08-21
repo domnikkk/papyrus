@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 436072
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.editors;
 
@@ -33,7 +33,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A Widget for editing a String with an editable combo.
  * The combo proposes a set of default values.
- * 
+ *
  * @author Camille Letavernier
  */
 public class StringCombo extends ReferenceCombo {
@@ -55,12 +55,12 @@ public class StringCombo extends ReferenceCombo {
 	/**
 	 * Sets the content provider for this combo. The Content provider should
 	 * specify the objects that can be referred by this property
-	 * 
+	 *
 	 * @param provider
 	 */
 	@Override
 	public void setContentProvider(IStaticContentProvider provider) {
-		if(provider != null) {
+		if (provider != null) {
 			contentProvider = new EncapsulatedContentProvider(provider);
 			viewer.setContentProvider(contentProvider);
 			viewer.setInput(""); //$NON-NLS-1$
@@ -74,17 +74,17 @@ public class StringCombo extends ReferenceCombo {
 
 	@Override
 	public String getValue() {
-		//See Bug 359835 : The ComboViewer doesn't support custom values
-		//We can't rely on the ComboViewer#getSelection() method
+		// See Bug 359835 : The ComboViewer doesn't support custom values
+		// We can't rely on the ComboViewer#getSelection() method
 		return combo.getText();
 	}
 
 	@Override
 	public void setValue(Object value) {
-		//See Bug 359835 : The ComboViewer doesn't support custom values
-		//We can't rely on the ComboViewer#setSelection() method
-		if(value instanceof String) {
-			combo.setText((String)value);
+		// See Bug 359835 : The ComboViewer doesn't support custom values
+		// We can't rely on the ComboViewer#setSelection() method
+		if (value instanceof String) {
+			combo.setText((String) value);
 		} else {
 			combo.setText(""); //$NON-NLS-1$
 		}
@@ -95,7 +95,7 @@ public class StringCombo extends ReferenceCombo {
 	 */
 	@Override
 	protected void updateControls() {
-		//See Bug 359835 : The ComboViewer doesn't support custom values
+		// See Bug 359835 : The ComboViewer doesn't support custom values
 		String value = getValue();
 		super.updateControls();
 		setValue(value);
@@ -107,11 +107,12 @@ public class StringCombo extends ReferenceCombo {
 
 		public CComboObservableValue() {
 			previousValue = combo.getText();
-			combo.addSelectionListener(this); //Selection change
-			combo.addKeyListener(this); //Enter pressed
-			combo.addFocusListener(this); //Focus lost
+			combo.addSelectionListener(this); // Selection change
+			combo.addKeyListener(this); // Enter pressed
+			combo.addFocusListener(this); // Focus lost
 		}
 
+		@Override
 		public Object getValueType() {
 			return String.class;
 		}
@@ -123,29 +124,32 @@ public class StringCombo extends ReferenceCombo {
 
 		@Override
 		protected void doSetValue(Object value) {
-			if(modelProperty instanceof AggregatedObservable && ((AggregatedObservable)modelProperty).hasDifferentValues()) {
+			if (modelProperty instanceof AggregatedObservable && ((AggregatedObservable) modelProperty).hasDifferentValues()) {
 				combo.setText(UnchangedObject.instance.toString());
-			} else if(value instanceof String) {
+			} else if (value instanceof String) {
 				// This is the new baseline value (coming from the model) against which to compare a future edit by the user
-				previousValue = (String)value;
+				previousValue = (String) value;
 				combo.setText(previousValue);
 			}
 		}
 
-		//Enter pressed
+		// Enter pressed
+		@Override
 		public void keyReleased(KeyEvent e) {
-			if((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) && e.stateMask == SWT.NONE) {
+			if ((e.keyCode == SWT.CR || e.keyCode == SWT.KEYPAD_CR) && e.stateMask == SWT.NONE) {
 				maybeFireChange();
-				e.doit = false; //Stops the propagation of the event
+				e.doit = false; // Stops the propagation of the event
 			}
 		}
 
-		//Selection change
+		// Selection change
+		@Override
 		public void widgetSelected(SelectionEvent e) {
 			maybeFireChange();
 		}
 
-		//Focus lost
+		// Focus lost
+		@Override
 		public void focusLost(FocusEvent e) {
 			maybeFireChange();
 		}
@@ -153,7 +157,7 @@ public class StringCombo extends ReferenceCombo {
 		void maybeFireChange() {
 			// Only report a change if there is actually a change, otherwise we get a no-op command that dirties the editor
 			final String currentValue = doGetValue();
-			if((currentValue == null) ? previousValue != null : !currentValue.equals(previousValue)) {
+			if ((currentValue == null) ? previousValue != null : !currentValue.equals(previousValue)) {
 				doFireChange();
 			}
 		}
@@ -175,16 +179,19 @@ public class StringCombo extends ReferenceCombo {
 			});
 		}
 
+		@Override
 		public void widgetDefaultSelected(SelectionEvent e) {
-			//Nothing
+			// Nothing
 		}
 
+		@Override
 		public void focusGained(FocusEvent e) {
-			//Nothing
+			// Nothing
 		}
 
+		@Override
 		public void keyPressed(KeyEvent e) {
-			//Nothing
+			// Nothing
 		}
 
 	}

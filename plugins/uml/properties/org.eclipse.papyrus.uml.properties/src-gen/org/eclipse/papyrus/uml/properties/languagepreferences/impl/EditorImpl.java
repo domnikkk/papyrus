@@ -23,7 +23,7 @@ import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreference
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.EditorImpl#getClass_ <em>Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.EditorImpl#getClass_ <em>Class</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	 * The default value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -44,6 +45,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getClass_()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EditorImpl() {
@@ -62,6 +65,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,6 +76,7 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getClass_() {
@@ -81,25 +86,28 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setClass(String newClass) {
 		String oldClass = class_;
 		class_ = newClass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, languagepreferencesPackage.EDITOR__CLASS, oldClass, class_));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case languagepreferencesPackage.EDITOR__CLASS:
-				return getClass_();
+		case languagepreferencesPackage.EDITOR__CLASS:
+			return getClass_();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,14 +115,15 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case languagepreferencesPackage.EDITOR__CLASS:
-				setClass((String)newValue);
-				return;
+		case languagepreferencesPackage.EDITOR__CLASS:
+			setClass((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -122,14 +131,15 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case languagepreferencesPackage.EDITOR__CLASS:
-				setClass(CLASS_EDEFAULT);
-				return;
+		case languagepreferencesPackage.EDITOR__CLASS:
+			setClass(CLASS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -137,13 +147,14 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case languagepreferencesPackage.EDITOR__CLASS:
-				return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
+		case languagepreferencesPackage.EDITOR__CLASS:
+			return CLASS_EDEFAULT == null ? class_ != null : !CLASS_EDEFAULT.equals(class_);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -151,11 +162,14 @@ public class EditorImpl extends EObjectImpl implements Editor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (class: ");
@@ -164,4 +178,4 @@ public class EditorImpl extends EObjectImpl implements Editor {
 		return result.toString();
 	}
 
-} //EditorImpl
+} // EditorImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,10 +49,10 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 	public boolean canImportInto(Collection<?> selection) {
 		boolean result = false;
 
-		for(IPackageImportSource next : delegates) {
+		for (IPackageImportSource next : delegates) {
 			result = next.canImportInto(selection);
 
-			if(result) {
+			if (result) {
 				break;
 			}
 		}
@@ -62,7 +62,7 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 
 	@Override
 	public void initialize(Collection<?> selection) {
-		for(IPackageImportSource next : delegates) {
+		for (IPackageImportSource next : delegates) {
 			try {
 				next.initialize(selection);
 			} catch (Exception e) {
@@ -89,19 +89,19 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 	}
 
 	IPackageImportSource getDelegate(Object element) {
-		return ((Wrapper)element).getOwner();
+		return ((Wrapper) element).getOwner();
 	}
 
 	ITreeContentProvider getTreeContentProvider(Object element) {
 		Object result = getDelegate(element).getModelHierarchyContentProvider(extensionFilters);
-		return (result instanceof ITreeContentProvider) ? (ITreeContentProvider)result : null;
+		return (result instanceof ITreeContentProvider) ? (ITreeContentProvider) result : null;
 	}
 
 	@Override
 	public void dispose() {
 		wrappers.clear();
 
-		for(IPackageImportSource next : delegates) {
+		for (IPackageImportSource next : delegates) {
 			try {
 				next.dispose();
 			} catch (Exception e) {
@@ -117,7 +117,7 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 	Object[] wrap(Collection<? extends IPackageImportSource> sources) {
 		List<Object> result = new java.util.ArrayList<Object>(sources.size());
 
-		for(IPackageImportSource next : sources) {
+		for (IPackageImportSource next : sources) {
 			result.add(new Wrapper(next, next));
 		}
 
@@ -127,9 +127,9 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 	Object wrap(Object element, IPackageImportSource owner) {
 		Object result = element;
 
-		if(element != null) {
+		if (element != null) {
 			result = wrappers.get(element);
-			if(result == null) {
+			if (result == null) {
 				Wrapper wrapper = new Wrapper(element, owner);
 				wrappers.put(element, wrapper);
 				result = wrapper;
@@ -142,11 +142,11 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 	Object[] wrap(Object[] elements, IPackageImportSource owner) {
 		Object[] result;
 
-		if(elements.length == 0) {
+		if (elements.length == 0) {
 			result = NONE;
 		} else {
 			result = new Object[elements.length];
-			for(int i = 0; i < elements.length; i++) {
+			for (int i = 0; i < elements.length; i++) {
 				result[i] = wrap(elements[i], owner);
 			}
 		}
@@ -155,7 +155,7 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 	}
 
 	static Object unwrap(Object element) {
-		return (element instanceof Wrapper) ? ((Wrapper)element).getElement() : element;
+		return (element instanceof Wrapper) ? ((Wrapper) element).getElement() : element;
 	}
 
 	//
@@ -197,13 +197,13 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 		}
 
 		public void addListener(ILabelProviderListener listener) {
-			for(IPackageImportSource next : delegates) {
+			for (IPackageImportSource next : delegates) {
 				next.getModelHierarchyLabelProvider().addListener(listener);
 			}
 		}
 
 		public void removeListener(ILabelProviderListener listener) {
-			for(IPackageImportSource next : delegates) {
+			for (IPackageImportSource next : delegates) {
 				next.getModelHierarchyLabelProvider().removeListener(listener);
 			}
 		}
@@ -227,7 +227,7 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 
 			this.input = newInput;
 
-			for(IPackageImportSource next : delegates) {
+			for (IPackageImportSource next : delegates) {
 				next.getModelHierarchyContentProvider(extensionFilters).inputChanged(viewer, oldInput, newInput);
 			}
 		}
@@ -241,7 +241,7 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 			boolean result;
 
 			Object realElement = unwrap(element);
-			if(realElement instanceof IPackageImportSource) {
+			if (realElement instanceof IPackageImportSource) {
 				// it's a root
 				result = getChildren(element).length > 0;
 			} else {
@@ -256,8 +256,8 @@ public class CompositePackageImportSource extends AbstractPackageImportSource {
 			Object[] result;
 
 			Object realParent = unwrap(parentElement);
-			if(realParent instanceof IPackageImportSource) {
-				IPackageImportSource source = (IPackageImportSource)realParent;
+			if (realParent instanceof IPackageImportSource) {
+				IPackageImportSource source = (IPackageImportSource) realParent;
 				result = wrap(source.getModelHierarchyContentProvider(extensionFilters).getElements(input), source);
 			} else {
 				ITreeContentProvider provider = getTreeContentProvider(parentElement);

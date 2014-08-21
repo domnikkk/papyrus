@@ -20,7 +20,7 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuItemImpl#getId <em>Id</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuItemImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,6 +31,7 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -50,6 +52,7 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MenuItemImpl() {
@@ -59,6 +62,7 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,6 +73,7 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getId() {
@@ -78,25 +83,28 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU_ITEM__ID, oldId, id));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ITEM__ID:
-				return getId();
+		case NewchildPackage.MENU_ITEM__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -104,14 +112,15 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ITEM__ID:
-				setId((String)newValue);
-				return;
+		case NewchildPackage.MENU_ITEM__ID:
+			setId((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -119,14 +128,15 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ITEM__ID:
-				setId(ID_EDEFAULT);
-				return;
+		case NewchildPackage.MENU_ITEM__ID:
+			setId(ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -134,13 +144,14 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ITEM__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+		case NewchildPackage.MENU_ITEM__ID:
+			return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -148,11 +159,14 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (id: ");
@@ -161,4 +175,4 @@ public abstract class MenuItemImpl extends EObjectImpl implements MenuItem {
 		return result.toString();
 	}
 
-} //MenuItemImpl
+} // MenuItemImpl

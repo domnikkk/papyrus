@@ -1,16 +1,16 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *   
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
- * 
- *  
+ *
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.commands;
 
@@ -23,9 +23,9 @@ import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 
 
 /**
- * 
+ *
  * abstract runnable used to refresh the connection, source and target editparts
- * 
+ *
  */
 public abstract class AbstractRefreshConnectionElementsRunnable<T> implements RunnableWithResult<T> {
 
@@ -45,77 +45,81 @@ public abstract class AbstractRefreshConnectionElementsRunnable<T> implements Ru
 	private final IGraphicalEditPart containerEP;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param containerEP
-	 *        the editpart owning the connection
+	 *            the editpart owning the connection
 	 */
 	public AbstractRefreshConnectionElementsRunnable(final IGraphicalEditPart containerEP) {
 		this.containerEP = containerEP;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RunnableWithResult#getResult()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public final T getResult() {
 		return result;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RunnableWithResult#setStatus(org.eclipse.core.runtime.IStatus)
-	 * 
+	 *
 	 * @param status
-	 *        set the new status for the runnable
+	 *            set the new status for the runnable
 	 */
+	@Override
 	public final void setStatus(IStatus status) {
 		this.status = status;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.emf.transaction.RunnableWithResult#getStatus()
-	 * 
+	 *
 	 * @return
 	 *         the status of the runnable
 	 */
+	@Override
 	public final IStatus getStatus() {
 		return status;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the container edit part
 	 */
 	protected final IGraphicalEditPart getContainerEditPart() {
 		return this.containerEP;
 	}
+
 	/**
-	 * 
+	 *
 	 * @param connectionToRefresh
-	 *        the connection edit part to refresh
+	 *            the connection edit part to refresh
 	 */
 	protected final void refreshConnection(final AbstractConnectionEditPart connectionToRefresh) {
 		connectionToRefresh.refresh();
 		final EditPart sourceEp = connectionToRefresh.getSource();
-		if(sourceEp != null) {
+		if (sourceEp != null) {
 			sourceEp.refresh();
 		}
 		final EditPart targetEP = connectionToRefresh.getTarget();
-		if(targetEP != null) {
+		if (targetEP != null) {
 			targetEP.refresh();
 		}
-		//to force the call to the router, to update the figure
+		// to force the call to the router, to update the figure
 		connectionToRefresh.getFigure().validate();
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the figure for the container edit part
 	 */
@@ -124,12 +128,12 @@ public abstract class AbstractRefreshConnectionElementsRunnable<T> implements Ru
 	}
 
 	/**
-	 * 
+	 *
 	 * @param result
-	 *        set the result of the runnable
+	 *            set the result of the runnable
 	 */
 	protected final void setResult(T result) {
 		this.result = result;
 	}
-	
+
 };

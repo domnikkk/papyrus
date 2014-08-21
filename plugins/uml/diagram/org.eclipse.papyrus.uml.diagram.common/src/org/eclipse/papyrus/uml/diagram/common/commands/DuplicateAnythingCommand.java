@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana. All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Mario Cervera Ubeda (Prodevelop) - initial API and implementation
  *
  ******************************************************************************/
@@ -38,10 +38,10 @@ public class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		CommandResult result = super.doExecuteWithResult(progressMonitor, info);
 
-		for(Object duplicatedObject : this.getAllDuplicatedObjectsMap().keySet()) {
-			if(duplicatedObject instanceof EObject) {
-				if(MultiDiagramUtil.findEObjectReferencedInEAnnotation(diagram, (EObject)duplicatedObject)) {
-					MultiDiagramUtil.AddEAnnotationReferenceToDiagram(diagram, (EObject)this.getAllDuplicatedObjectsMap().get(duplicatedObject));
+		for (Object duplicatedObject : this.getAllDuplicatedObjectsMap().keySet()) {
+			if (duplicatedObject instanceof EObject) {
+				if (MultiDiagramUtil.findEObjectReferencedInEAnnotation(diagram, (EObject) duplicatedObject)) {
+					MultiDiagramUtil.AddEAnnotationReferenceToDiagram(diagram, (EObject) this.getAllDuplicatedObjectsMap().get(duplicatedObject));
 				}
 			}
 		}

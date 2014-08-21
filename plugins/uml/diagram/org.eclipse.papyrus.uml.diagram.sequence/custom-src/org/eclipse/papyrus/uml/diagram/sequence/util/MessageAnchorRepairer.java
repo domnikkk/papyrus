@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,35 +40,35 @@ import org.eclipse.papyrus.uml.diagram.sequence.edit.parts.LifelineEditPart;
 public class MessageAnchorRepairer {
 
 	public static ICommand createPreserveMessageAnchorsCommand(ShapeNodeEditPart editPart, int heightDelta) {
-		if(editPart == null || heightDelta == 0) {
+		if (editPart == null || heightDelta == 0) {
 			return null;
 		}
 		Dimension sizeDelta = new Dimension(0, heightDelta);
 		int preserveAxis = PreserveAnchorsPositionCommand.PRESERVE_Y;
-		if(editPart instanceof LifelineEditPart) {
+		if (editPart instanceof LifelineEditPart) {
 			return new CustomLifelineEditPart.PreserveAnchorsPositionCommandEx(editPart, sizeDelta, preserveAxis);
 		}
 		return new PreserveAnchorsPositionCommand(editPart, sizeDelta, preserveAxis);
 	}
 
 	public static ICommand preserveMessageAnchorsCommand(ShapeNodeEditPart editPart, int heightDelta, int direction) {
-		if(editPart == null || heightDelta == 0) {
+		if (editPart == null || heightDelta == 0) {
 			return null;
 		}
 		Dimension sizeDelta = new Dimension(0, heightDelta);
-		if(editPart instanceof LifelineEditPart) {
+		if (editPart instanceof LifelineEditPart) {
 			return new CustomLifelineEditPart.PreserveAnchorsPositionCommandEx(editPart, sizeDelta, PreserveAnchorsPositionCommand.PRESERVE_Y, editPart.getFigure(), direction);
 		}
 		return new PreserveAnchorsPositionCommand(editPart, sizeDelta, PreserveAnchorsPositionCommand.PRESERVE_Y, editPart.getFigure(), direction);
 	}
 
 	public static int computeResizeDelta(ShapeNodeEditPart editPart, Rectangle newChildBounds) {
-		if(editPart == null || newChildBounds == null) {
+		if (editPart == null || newChildBounds == null) {
 			return -1;
 		}
 		IFigure figure = editPart.getFigure();
 		Rectangle rect = figure.getBounds().getCopy();
-		if(rect.contains(newChildBounds)) {
+		if (rect.contains(newChildBounds)) {
 			return -1;
 		}
 		Rectangle result = rect.getUnion(newChildBounds);
@@ -77,43 +77,43 @@ public class MessageAnchorRepairer {
 
 	/**
 	 * Update anchor of linked messages for Lifeline and CombinedFragment.
-	 * 
+	 *
 	 * @param newHeight
 	 * @param oldHeight
 	 */
 	public static void repair(NodeEditPart editPart, int oldHeight, int newHeight) {
-		if(editPart == null || !(editPart instanceof LifelineEditPart || editPart instanceof CombinedFragmentEditPart)) {
+		if (editPart == null || !(editPart instanceof LifelineEditPart || editPart instanceof CombinedFragmentEditPart)) {
 			return;
 		}
-		Rectangle bounds = ((GraphicalEditPart)editPart).getFigure().getBounds();
-		if(oldHeight < 0) {
+		Rectangle bounds = ((GraphicalEditPart) editPart).getFigure().getBounds();
+		if (oldHeight < 0) {
 			oldHeight = bounds.height;
 		}
-		if(newHeight < 0) {
+		if (newHeight < 0) {
 			newHeight = bounds.height;
 		}
-		if(oldHeight == newHeight) {
+		if (oldHeight == newHeight) {
 			return;
 		}
-		EditingDomain editingDomain = ((GraphicalEditPart)editPart).getEditingDomain();
+		EditingDomain editingDomain = ((GraphicalEditPart) editPart).getEditingDomain();
 		List sourceConnections = editPart.getSourceConnections();
-		for(Object object : sourceConnections) {
-			if(!(object instanceof AbstractMessageEditPart)) {
+		for (Object object : sourceConnections) {
+			if (!(object instanceof AbstractMessageEditPart)) {
 				continue;
 			}
-			AbstractMessageEditPart conn = (AbstractMessageEditPart)object;
-			Edge edge = (Edge)conn.getModel();
-			final IdentityAnchor anchor = (IdentityAnchor)edge.getSourceAnchor();
+			AbstractMessageEditPart conn = (AbstractMessageEditPart) object;
+			Edge edge = (Edge) conn.getModel();
+			final IdentityAnchor anchor = (IdentityAnchor) edge.getSourceAnchor();
 			updateAnchorTerminal(editingDomain, anchor, oldHeight, newHeight);
 		}
 		List targetConnections = editPart.getTargetConnections();
-		for(Object object : targetConnections) {
-			if(!(object instanceof AbstractMessageEditPart)) {
+		for (Object object : targetConnections) {
+			if (!(object instanceof AbstractMessageEditPart)) {
 				continue;
 			}
-			AbstractMessageEditPart conn = (AbstractMessageEditPart)object;
-			Edge edge = (Edge)conn.getModel();
-			final IdentityAnchor anchor = (IdentityAnchor)edge.getTargetAnchor();
+			AbstractMessageEditPart conn = (AbstractMessageEditPart) object;
+			Edge edge = (Edge) conn.getModel();
+			final IdentityAnchor anchor = (IdentityAnchor) edge.getTargetAnchor();
 			updateAnchorTerminal(editingDomain, anchor, oldHeight, newHeight);
 		}
 	}
@@ -121,16 +121,17 @@ public class MessageAnchorRepairer {
 	private static void updateAnchorTerminal(EditingDomain editingDomain, final IdentityAnchor anchor, int oldHeight, int newHeight) {
 		final String oldTerminal = anchor.getId();
 		PrecisionPoint pp = BaseSlidableAnchor.parseTerminalString(oldTerminal);
-		int yPos = (int)Math.round(oldHeight * pp.preciseY());
-		pp.setPreciseY((double)yPos / newHeight);
-		if(pp.preciseY() > 1.0) {
+		int yPos = (int) Math.round(oldHeight * pp.preciseY());
+		pp.setPreciseY((double) yPos / newHeight);
+		if (pp.preciseY() > 1.0) {
 			pp.setPreciseY(1.0);
-		} else if(pp.preciseY() < 0.0) {
+		} else if (pp.preciseY() < 0.0) {
 			pp.setPreciseY(0.0);
 		}
 		final String newTerminal = (new BaseSlidableAnchor(null, pp)).getTerminal();
 		CommandHelper.executeCommandWithoutHistory(editingDomain, new AbstractCommand("Update Target Anchors") {
 
+			@Override
 			public void redo() {
 				execute();
 			}
@@ -140,6 +141,7 @@ public class MessageAnchorRepairer {
 				return false;
 			}
 
+			@Override
 			public void execute() {
 				anchor.setId(newTerminal);
 			}

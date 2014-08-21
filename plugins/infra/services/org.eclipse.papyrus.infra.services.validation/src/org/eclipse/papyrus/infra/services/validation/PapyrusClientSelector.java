@@ -36,7 +36,7 @@ public class PapyrusClientSelector
 			EObject eObject = (EObject) object;
 			Resource resource = eObject.eResource();
 			result = (resource != null)
-				&& (resource.getResourceSet() instanceof ModelSet);
+					&& (resource.getResourceSet() instanceof ModelSet);
 		}
 
 		return result;

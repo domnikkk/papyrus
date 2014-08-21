@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 437052
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.core.resource;
 
@@ -39,13 +39,13 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 	@Override
 	protected void configureResource(Resource resourceToConfigure) {
 		super.configureResource(resourceToConfigure);
-		if(resourceToConfigure != null) {
+		if (resourceToConfigure != null) {
 			resources.add(resourceToConfigure);
 		}
 	}
 
 	protected boolean isRelatedResource(Resource resource) {
-		if(resource == null) {
+		if (resource == null) {
 			return false;
 		}
 
@@ -55,14 +55,14 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 	@Override
 	public void saveModel() throws IOException {
 		final ModelSet set = getModelManager();
-		
-		for(Resource resource : getResources()) {
-			if(set.shouldSave(resource)) {
+
+		for (Resource resource : getResources()) {
+			if (set.shouldSave(resource)) {
 				try {
 					resource.save(null);
 				} catch (IOException ex) {
-					//If an exception occurs, we should not prevent other resources from being saved.
-					//This would probably make things even worse. Catch and log.
+					// If an exception occurs, we should not prevent other resources from being saved.
+					// This would probably make things even worse. Catch and log.
 					Activator.log.error(ex);
 				}
 			}
@@ -71,7 +71,7 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 
 	@Override
 	public void handle(Resource resource) {
-		if(isRelatedResource(resource)) {
+		if (isRelatedResource(resource)) {
 			configureResource(resource);
 		}
 	}
@@ -84,8 +84,8 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 
 	@Override
 	public void setModelURI(URI uriWithoutExtension) {
-		for(Resource resource : getResources()) {
-			if(isControlled(resource)) {
+		for (Resource resource : getResources()) {
+			if (isControlled(resource)) {
 				updateURI(resource, uriWithoutExtension);
 			}
 		}
@@ -105,8 +105,8 @@ public abstract class EMFLogicalModel extends AbstractBaseModel implements IEMFM
 
 	@Override
 	public boolean isModelFor(Object element) {
-		if(element instanceof EObject) {
-			return resources.contains(((EObject)element).eResource());
+		if (element instanceof EObject) {
+			return resources.contains(((EObject) element).eResource());
 		}
 		return resources.contains(element);
 	}

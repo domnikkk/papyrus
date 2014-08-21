@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -108,15 +108,15 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 	@Override
 	public void init(Node configurationNode, IAspectActionProvider factory) {
 		super.init(configurationNode, factory);
-		if(configurationNode == null) {
+		if (configurationNode == null) {
 			return;
 		}
 		Node node = configurationNode.getAttributes().getNamedItem(IPapyrusPaletteConstant.DISPLAY_KIND);
-		if(node != null) {
+		if (node != null) {
 			displayKind = node.getNodeValue();
 		}
 		node = configurationNode.getAttributes().getNamedItem(IPapyrusPaletteConstant.DISPLAY_PLACE);
-		if(node != null) {
+		if (node != null) {
 			displayPlace = node.getNodeValue();
 		}
 	}
@@ -126,9 +126,9 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 	 */
 	@Override
 	public void save(Node configurationNode) {
-		if(configurationNode instanceof Element) {
-			((Element)configurationNode).setAttribute(IPapyrusPaletteConstant.DISPLAY_KIND, displayKind);
-			((Element)configurationNode).setAttribute(IPapyrusPaletteConstant.DISPLAY_PLACE, displayPlace);
+		if (configurationNode instanceof Element) {
+			((Element) configurationNode).setAttribute(IPapyrusPaletteConstant.DISPLAY_KIND, displayKind);
+			((Element) configurationNode).setAttribute(IPapyrusPaletteConstant.DISPLAY_PLACE, displayPlace);
 		} else {
 			Activator.log.error("configuration node is not an Element", null);
 		}
@@ -142,19 +142,19 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 
 		final TransactionalEditingDomain editingDomain = EditorUtils.getTransactionalEditingDomain();
 		return new AbstractTransactionalCommand(editingDomain, "Modify Stereotype Display", null) {
-			
+
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				View view = (View)viewAdapter.getAdapter(View.class);
+				View view = (View) viewAdapter.getAdapter(View.class);
 
-				if(view != null) {
+				if (view != null) {
 					String stereotypetoDisplay = AppliedStereotypeHelper.getStereotypesToDisplay(view);
 					AppliedStereotypeHelper.getAppliedStereotypeToDisplayCommand(editingDomain, view, stereotypetoDisplay, displayKind).execute();
 				}
 				return null;
 			}
 		};
-		
+
 	}
 
 	/**
@@ -177,15 +177,17 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		displayLabel.setText("Stereotype Display:");
 
 		displayCombo = new Combo(mainComposite, SWT.READ_ONLY | SWT.BORDER);
-		displayCombo.setItems(DISPLAY_LIST.toArray(new String[]{}));
+		displayCombo.setItems(DISPLAY_LIST.toArray(new String[] {}));
 		data = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		displayCombo.setLayoutData(data);
 		displayCombo.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				updateDisplayKindValue();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				// nothing to do
 			}
@@ -195,15 +197,17 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		directionLabel.setText("Text alignement:");
 
 		directionCombo = new Combo(mainComposite, SWT.READ_ONLY | SWT.BORDER);
-		directionCombo.setItems(DIRECTION_LIST.toArray(new String[]{}));
+		directionCombo.setItems(DIRECTION_LIST.toArray(new String[] {}));
 		// data = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		directionCombo.setLayoutData(data);
 		directionCombo.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				updateDisplayKindValue();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				// nothing to do
 			}
@@ -220,10 +224,12 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		placeCombo.setLayoutData(data);
 		placeCombo.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				updateDisplayPlaceValue();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				// nothing to do
 			}
@@ -241,9 +247,9 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		int placeIndex = placeCombo.getSelectionIndex();
 		String place = PLACE_LIST.get((placeIndex >= 0) ? placeIndex : 0);
 
-		if(BRACE.equals(place)) {
+		if (BRACE.equals(place)) {
 			displayPlace = UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION;
-		} else if(COMMENT.equals(place)) {
+		} else if (COMMENT.equals(place)) {
 			displayPlace = UMLVisualInformationPapyrusConstant.STEREOTYPE_COMMENT_LOCATION;
 		} else {
 			displayPlace = UMLVisualInformationPapyrusConstant.STEREOTYPE_COMPARTMENT_LOCATION;
@@ -261,14 +267,14 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		String display = DISPLAY_LIST.get((displayIndex >= 0) ? displayIndex : 0);
 		int directionIndex = directionCombo.getSelectionIndex();
 		String direction = DIRECTION_LIST.get((directionIndex >= 0) ? directionIndex : 0);
-		if(ICON.equals(display)) {
+		if (ICON.equals(display)) {
 			displayKind = UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION;
-		} else if(TEXT_AND_ICON.equals(display)) {
+		} else if (TEXT_AND_ICON.equals(display)) {
 			displayKind = UMLVisualInformationPapyrusConstant.TEXT_ICON_STEREOTYPE_PRESENTATION;
-		} else if(SHAPE.equals(display)) {
+		} else if (SHAPE.equals(display)) {
 			displayKind = UMLVisualInformationPapyrusConstant.IMAGE_STEREOTYPE_PRESENTATION;
 		} else {
-			if(VERTICAL.equals(direction)) {
+			if (VERTICAL.equals(direction)) {
 				displayKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION;
 			} else {
 				displayKind = UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION;
@@ -293,19 +299,19 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		 * VisualInformationPapyrusConstant
 		 * .STEREOTYPE_TEXT_VERTICAL_PRESENTATION
 		 */
-		if(UMLVisualInformationPapyrusConstant.TEXT_ICON_STEREOTYPE_PRESENTATION.equals(displayKind)) {
+		if (UMLVisualInformationPapyrusConstant.TEXT_ICON_STEREOTYPE_PRESENTATION.equals(displayKind)) {
 			displayCombo.select(DISPLAY_LIST.indexOf(TEXT_AND_ICON));
 			directionCombo.select(DIRECTION_LIST.indexOf(HORIZONTAL));
 			directionCombo.setEnabled(false);
-		} else if(UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(displayKind)) {
+		} else if (UMLVisualInformationPapyrusConstant.ICON_STEREOTYPE_PRESENTATION.equals(displayKind)) {
 			displayCombo.select(DISPLAY_LIST.indexOf(ICON));
 			directionCombo.select(DIRECTION_LIST.indexOf(HORIZONTAL));
 			directionCombo.setEnabled(false);
-		} else if(UMLVisualInformationPapyrusConstant.IMAGE_STEREOTYPE_PRESENTATION.equals(displayKind)) {
+		} else if (UMLVisualInformationPapyrusConstant.IMAGE_STEREOTYPE_PRESENTATION.equals(displayKind)) {
 			displayCombo.select(DISPLAY_LIST.indexOf(SHAPE));
 			directionCombo.select(DIRECTION_LIST.indexOf(HORIZONTAL));
 			directionCombo.setEnabled(false);
-		} else if(UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(displayKind)) {
+		} else if (UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_VERTICAL_PRESENTATION.equals(displayKind)) {
 			displayCombo.select(DISPLAY_LIST.indexOf(TEXT));
 			directionCombo.select(DIRECTION_LIST.indexOf(VERTICAL));
 			directionCombo.setEnabled(true);
@@ -321,9 +327,9 @@ public class ChangeStereotypeDisplayPostAction extends GraphicalPostAction {
 		 * VisualInformationPapyrusConstants.STEREOTYPE_COMPARTMENT_LOCATION
 		 * VisualInformationPapyrusConstants.STEREOTYPE_BRACE_LOCATION
 		 */
-		if(UMLVisualInformationPapyrusConstant.STEREOTYPE_COMMENT_LOCATION.equals(displayPlace)) {
+		if (UMLVisualInformationPapyrusConstant.STEREOTYPE_COMMENT_LOCATION.equals(displayPlace)) {
 			placeCombo.select(PLACE_LIST.indexOf(COMMENT));
-		} else if(UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION.equals(displayPlace)) {
+		} else if (UMLVisualInformationPapyrusConstant.STEREOTYPE_BRACE_LOCATION.equals(displayPlace)) {
 			placeCombo.select(PLACE_LIST.indexOf(BRACE));
 		} else {
 			placeCombo.select(PLACE_LIST.indexOf(COMPARTMENT));

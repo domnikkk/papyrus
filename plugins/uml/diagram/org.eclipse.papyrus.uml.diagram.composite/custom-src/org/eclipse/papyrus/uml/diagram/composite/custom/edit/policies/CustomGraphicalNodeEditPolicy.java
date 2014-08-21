@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,12 +33,12 @@ import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
 
 /**
  * <pre>
- * This class provides a custom edit policy used to replace the GRAPHICAL_NODE_ROLE 
+ * This class provides a custom edit policy used to replace the GRAPHICAL_NODE_ROLE
  * for the Port and Property elements (when used in CompositeStructure Diagram).
  * 
  * The reason for this is that the creation of Connector requires not only to know
- * the ConnectableElement(s) on both end (given in CreateRelationshipRequest 
- * Source and Target), but also the Property graphically owning the Port used at 
+ * the ConnectableElement(s) on both end (given in CreateRelationshipRequest
+ * Source and Target), but also the Property graphically owning the Port used at
  * ConnectorEnd.
  * </pre>
  */
@@ -87,26 +87,26 @@ public class CustomGraphicalNodeEditPolicy extends org.eclipse.gmf.runtime.diagr
 		// get the element descriptor
 		CreateElementRequestAdapter requestAdapter = request.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
 		// get the semantic request
-		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
+		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
 
 		createElementRequest.setPrompt(!request.isUISupressed());
 
 		// complete the semantic request by filling in the source and
 		// destination
 		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-		View sourceView = (View)request.getSourceEditPart().getModel();
-		View targetView = (View)targetEP.getModel();
+		View sourceView = (View) request.getSourceEditPart().getModel();
+		View targetView = (View) targetEP.getModel();
 
 		// resolve the source
 		EObject source = ViewUtil.resolveSemanticElement(sourceView);
-		if(source == null) {
+		if (source == null) {
 			source = sourceView;
 		}
 
 		// resolve the source parent (meaning graphical parent here)
-		View sourceParentView = (request.getSourceEditPart() instanceof ConnectionEditPart) ? null : (View)request.getSourceEditPart().getParent().getModel();
+		View sourceParentView = (request.getSourceEditPart() instanceof ConnectionEditPart) ? null : (View) request.getSourceEditPart().getParent().getModel();
 		EObject sourceParent = (sourceParentView != null) ? ViewUtil.resolveSemanticElement(sourceParentView) : null;
-		if(sourceParent == null) {
+		if (sourceParent == null) {
 			sourceParent = sourceParentView;
 		}
 
@@ -116,14 +116,14 @@ public class CustomGraphicalNodeEditPolicy extends org.eclipse.gmf.runtime.diagr
 
 		// resolve the target
 		EObject target = ViewUtil.resolveSemanticElement(targetView);
-		if(target == null) {
+		if (target == null) {
 			target = targetView;
 		}
 
 		// resolve the source parent (meaning graphical parent here)
-		View targetParentView = (request.getTargetEditPart() instanceof ConnectionEditPart) ? null : (View)request.getTargetEditPart().getParent().getModel();
+		View targetParentView = (request.getTargetEditPart() instanceof ConnectionEditPart) ? null : (View) request.getTargetEditPart().getParent().getModel();
 		EObject targetParent = (targetParentView != null) ? ViewUtil.resolveSemanticElement(targetParentView) : null;
-		if(targetParent == null) {
+		if (targetParent == null) {
 			targetParent = targetParentView;
 		}
 
@@ -133,27 +133,29 @@ public class CustomGraphicalNodeEditPolicy extends org.eclipse.gmf.runtime.diagr
 
 		Command createElementCommand = null;
 
-		//we have a custom command for the InformationFlow
-		if(request.getConnectionViewDescriptor().getSemanticHint().equals((((IHintedType)UMLElementTypes.InformationFlow_4021).getSemanticHint()))) {
+		// we have a custom command for the InformationFlow
+		if (request.getConnectionViewDescriptor().getSemanticHint().equals((((IHintedType) UMLElementTypes.InformationFlow_4021).getSemanticHint()))) {
 
 			createElementCommand = new ICommandProxy(new CustomInformationFlowCreateCommand(createElementRequest, source, target));
 
 		} else {
 			// get the create element request based on the elementdescriptor's
 			// request
-			createElementCommand = targetEP.getCommand(new EditCommandRequestWrapper((CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class), request.getExtendedData()));
+			createElementCommand = targetEP.getCommand(new EditCommandRequestWrapper((CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class), request.getExtendedData()));
 
 		}
 
 		// create the create semantic element wrapper command
-		if(null == createElementCommand)
+		if (null == createElementCommand) {
 			return null;
+		}
 
 		SemanticCreateCommand semanticCommand = new SemanticCreateCommand(requestAdapter, createElementCommand);
 		// get the view command
 		Command viewCommand = getConnectionCompleteCommand(request);
-		if(null == viewCommand)
+		if (null == viewCommand) {
 			return null;
+		}
 		// form the compound command and return
 		CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 		cc.compose(semanticCommand);

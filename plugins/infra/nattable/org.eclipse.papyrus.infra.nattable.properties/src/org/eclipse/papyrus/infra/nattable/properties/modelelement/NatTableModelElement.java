@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -130,13 +130,13 @@ public class NatTableModelElement extends EMFModelElement {
 	private INattableModelManager tableModelManager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        the table
+	 *            the table
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 */
 	public NatTableModelElement(final Table source, final EditingDomain domain) {
 		super(source, domain);
@@ -170,19 +170,19 @@ public class NatTableModelElement extends EMFModelElement {
 		this.tableListener = new AdapterImpl() {
 
 			/**
-			 * 
+			 *
 			 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-			 * 
+			 *
 			 * @param msg
 			 */
 			@Override
 			public void notifyChanged(Notification msg) {
-				if(interestingFeatures.contains(msg.getFeature())) {
+				if (interestingFeatures.contains(msg.getFeature())) {
 					updateValues();
 				}
 			}
 		};
-		//we add a listener on the main object managed by the property view
+		// we add a listener on the main object managed by the property view
 		source.eAdapters().add(tableListener);
 		initOtherFieldsAndAddOthersListeners();
 
@@ -196,36 +196,36 @@ public class NatTableModelElement extends EMFModelElement {
 		columnHeaderAxisConfiguration = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisInTable(getEditedTable());
 		rowHeaderAxisConfiguration = HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisInTable(getEditedTable());
 
-		//COLUMNS MANAGEMENT
-		//we add a listener on the columnHeaderAxisConfiguration
-		if(columnHeaderAxisConfiguration != null) {
+		// COLUMNS MANAGEMENT
+		// we add a listener on the columnHeaderAxisConfiguration
+		if (columnHeaderAxisConfiguration != null) {
 			columnHeaderAxisConfiguration.eAdapters().add(tableListener);
 		}
 
-		if(columnHeaderAxisConfiguration != null) {
+		if (columnHeaderAxisConfiguration != null) {
 			columnLabelProviderConfigurations = columnHeaderAxisConfiguration.getOwnedLabelConfigurations();
 		}
 
-		if(this.columnLabelProviderConfigurations != null) {
-			//we add listener on all column label configurations
-			for(final ILabelProviderConfiguration conf : columnLabelProviderConfigurations) {
+		if (this.columnLabelProviderConfigurations != null) {
+			// we add listener on all column label configurations
+			for (final ILabelProviderConfiguration conf : columnLabelProviderConfigurations) {
 				conf.eAdapters().add(tableListener);
 			}
 		}
 
-		//ROW MANAGEMENT
-		//we add a listener on the rowHeaderAxisConfiguration
-		if(rowHeaderAxisConfiguration != null) {
+		// ROW MANAGEMENT
+		// we add a listener on the rowHeaderAxisConfiguration
+		if (rowHeaderAxisConfiguration != null) {
 			rowHeaderAxisConfiguration.eAdapters().add(tableListener);
 		}
 
-		if(rowHeaderAxisConfiguration != null) {
+		if (rowHeaderAxisConfiguration != null) {
 			rowLabelProviderConfigurations = rowHeaderAxisConfiguration.getOwnedLabelConfigurations();
 		}
 
-		if(this.rowLabelProviderConfigurations != null) {
-			//we add listener on all column label configurations
-			for(final ILabelProviderConfiguration conf : rowLabelProviderConfigurations) {
+		if (this.rowLabelProviderConfigurations != null) {
+			// we add listener on all column label configurations
+			for (final ILabelProviderConfiguration conf : rowLabelProviderConfigurations) {
 				conf.eAdapters().add(tableListener);
 			}
 		}
@@ -238,30 +238,30 @@ public class NatTableModelElement extends EMFModelElement {
 	 * remove the listener
 	 */
 	private void removeListeners() {
-		//COLUMNS MANAGEMENT
-		//we add a listener on the columnHeaderAxisConfiguration
-		if(columnHeaderAxisConfiguration != null) {
+		// COLUMNS MANAGEMENT
+		// we add a listener on the columnHeaderAxisConfiguration
+		if (columnHeaderAxisConfiguration != null) {
 			columnHeaderAxisConfiguration.eAdapters().remove(tableListener);
 		}
 
 
 
-		if(this.columnLabelProviderConfigurations != null) {
-			//we add listener on all column label configurations
-			for(final ILabelProviderConfiguration conf : columnLabelProviderConfigurations) {
+		if (this.columnLabelProviderConfigurations != null) {
+			// we add listener on all column label configurations
+			for (final ILabelProviderConfiguration conf : columnLabelProviderConfigurations) {
 				conf.eAdapters().remove(tableListener);
 			}
 		}
 
-		//ROW MANAGEMENT
-		//we add a listener on the rowHeaderAxisConfiguration
-		if(rowHeaderAxisConfiguration != null) {
+		// ROW MANAGEMENT
+		// we add a listener on the rowHeaderAxisConfiguration
+		if (rowHeaderAxisConfiguration != null) {
 			rowHeaderAxisConfiguration.eAdapters().remove(tableListener);
 		}
 
-		if(this.rowLabelProviderConfigurations != null) {
-			//we add listener on all column label configurations
-			for(final ILabelProviderConfiguration conf : rowLabelProviderConfigurations) {
+		if (this.rowLabelProviderConfigurations != null) {
+			// we add listener on all column label configurations
+			for (final ILabelProviderConfiguration conf : rowLabelProviderConfigurations) {
 				conf.eAdapters().remove(tableListener);
 			}
 		}
@@ -271,13 +271,13 @@ public class NatTableModelElement extends EMFModelElement {
 	 * update all values in the property view
 	 */
 	private void updateValues() {
-		//we do the update with asyncExec to be sure that the new values have been set before to update it
+		// we do the update with asyncExec to be sure that the new values have been set before to update it
 		Display.getDefault().asyncExec(new Runnable() {
 
 			/**
-			 * 
+			 *
 			 * @see java.lang.Runnable#run()
-			 * 
+			 *
 			 */
 			@Override
 			public void run() {
@@ -285,9 +285,9 @@ public class NatTableModelElement extends EMFModelElement {
 				initOtherFieldsAndAddOthersListeners();
 
 				final Event event = new Event();
-				for(final IObservable current : observableValues.values()) {
-					if(current instanceof Listener) {
-						((Listener)current).handleEvent(event);
+				for (final IObservable current : observableValues.values()) {
+					if (current instanceof Listener) {
+						((Listener) current).handleEvent(event);
 					}
 				}
 			}
@@ -295,9 +295,9 @@ public class NatTableModelElement extends EMFModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.modelelement.AbstractModelElement#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -313,116 +313,116 @@ public class NatTableModelElement extends EMFModelElement {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	private Table getEditedTable() {
-		return (Table)source;
+		return (Table) source;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.modelelement.EMFModelElement#doGetObservable(java.lang.String)
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 */
 	@Override
 	protected IObservable doGetObservable(final String propertyPath) {
 		IObservable value = this.observableValues.get(propertyPath);
-		if(value == null) {
+		if (value == null) {
 			Table table = getEditedTable();
-			//column header properties
-			if(Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_DISPLAY_FILTER.equals(propertyPath)) {
+			// column header properties
+			if (Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_DISPLAY_FILTER.equals(propertyPath)) {
 				value = new ColumnDisplayFilterHeaderObservableValue(table);
-			} else if(Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_DISPLAY_INDEX.equals(propertyPath)) {
+			} else if (Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_DISPLAY_INDEX.equals(propertyPath)) {
 				value = new ColumnDisplayIndexHeaderObservableValue(table);
-			} else if(Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				value = new ColumnDisplayLabelHeaderObservableValue(table);
-			} else if(Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_INDEX_STYLE.equals(propertyPath)) {
+			} else if (Constants.LOCAL_COLUMN_HEADER_AXIS_CONFIGURATION_INDEX_STYLE.equals(propertyPath)) {
 				value = new ColumnIndexHeaderStyleObservableValue(table);
 
 
-				//row header property
-			} else if(Constants.LOCAL_ROW_HEADER_AXIS_CONFIGURATION_DISPLAY_INDEX.equals(propertyPath)) {
+				// row header property
+			} else if (Constants.LOCAL_ROW_HEADER_AXIS_CONFIGURATION_DISPLAY_INDEX.equals(propertyPath)) {
 				value = new RowDisplayIndexHeaderObservableValue(table);
-			} else if(Constants.LOCAL_ROW_HEADER_AXIS_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.LOCAL_ROW_HEADER_AXIS_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				value = new RowDisplayLabelHeaderObservableValue(table);
-			} else if(Constants.LOCAL_ROW_HEADER_AXIS_CONFIGURATION_INDEX_STYLE.equals(propertyPath)) {
+			} else if (Constants.LOCAL_ROW_HEADER_AXIS_CONFIGURATION_INDEX_STYLE.equals(propertyPath)) {
 				value = new RowIndexHeaderStyleObservableValue(table);
 
 
-				//feature column label property
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+				// feature column label property
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				value = new ColumnFeatureLabelDisplayIconObservableValue(table);
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				value = new ColumnFeatureLabelDisplayLabelObservableValue(table);
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
 				value = new ColumnFeatureLabelDisplayIsDerivedObservableValue(table);
-			} else if(Constants.COLUMN__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
+			} else if (Constants.COLUMN__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
 				value = new ColumnFeatureLabelDisplayNameObservableValue(table);
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
 				value = new ColumnFeatureLabelDisplayTypeObservableValue(table);
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
 				value = new ColumnFeatureLabelDisplayMultiplicityObservableValue(table);
 
 
-				//object column label property
-			} else if(Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+				// object column label property
+			} else if (Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				value = new ColumnObjectLabelDisplayIconObservableValue(table);
-			} else if(Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				value = new ColumnObjectLabelDisplayLabelObservableValue(table);
 			} else
 
-			//feature row label property
-			if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+			// feature row label property
+			if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				value = new RowFeatureLabelDisplayIconObservableValue(table);
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				value = new RowFeatureLabelDisplayLabelObservableValue(table);
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
 				value = new RowFeatureLabelDisplayIsDerivedObservableValue(table);
-			} else if(Constants.ROW__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
+			} else if (Constants.ROW__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
 				value = new RowFeatureLabelDisplayNameObservableValue(table);
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
 				value = new RowFeatureLabelDisplayTypeObservableValue(table);
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
 				value = new RowFeatureLabelDisplayMultiplicityObservableValue(table);
 
 
-				//object row label property
-			} else if(Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+				// object row label property
+			} else if (Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				value = new RowObjectLabelDisplayIconObservableValue(table);
-			} else if(Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				value = new RowObjectLabelDisplayLabelObservableValue(table);
 			}
 
-			//paste row EObject
-			else if(Constants.ROW_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
+			// paste row EObject
+			else if (Constants.ROW_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
 				value = new RowPasteEObjectContainmentFeatureObservableValue(table);
-			} else if(Constants.ROW_PASTED_EOBJECT_ID.equals(propertyPath)) {
+			} else if (Constants.ROW_PASTED_EOBJECT_ID.equals(propertyPath)) {
 				value = new RowPasteEObjectElementTypeIdObservableValue(table);
-			} else if(Constants.ROW_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
+			} else if (Constants.ROW_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
 				value = new RowPasteObjectDetachedModeObservableValue(getEditedTable());
-			} else if(Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+			} else if (Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 				value = new RowPasteObjectPostActionsObservableValue(getDomain(), getEditedTable());
 			}
 
-			//paste column EObject
-			else if(Constants.COLUMN_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
+			// paste column EObject
+			else if (Constants.COLUMN_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
 				value = new ColumnPasteEObjectContainmentFeatureObservableValue(table);
-			} else if(Constants.COLUMN_PASTED_EOBJECT_ID.equals(propertyPath)) {
+			} else if (Constants.COLUMN_PASTED_EOBJECT_ID.equals(propertyPath)) {
 				value = new ColumnPasteEObjectElementTypeIdObservableValue(table);
-			} else if(Constants.COLUMN_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
+			} else if (Constants.COLUMN_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
 				value = new ColumnPasteObjectDetachedModeObservableValue(getEditedTable());
-			} else if(Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+			} else if (Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 				value = new ColumnPasteObjectPostActionsObservableValue(getDomain(), getEditedTable());
 			}
 
-			if(value != null) {
-				this.observableValues.put(propertyPath, (IObservable)value);
+			if (value != null) {
+				this.observableValues.put(propertyPath, value);
 			}
 		}
-		if(value != null) {
+		if (value != null) {
 			return value;
 		}
 		return super.doGetObservable(propertyPath);
@@ -435,69 +435,69 @@ public class NatTableModelElement extends EMFModelElement {
 	@Override
 	protected boolean isFeatureEditable(String propertyPath) {
 		boolean res = super.isFeatureEditable(propertyPath);
-		if(!res) {
-			//feature column label property
-			if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+		if (!res) {
+			// feature column label property
+			if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
+			} else if (Constants.COLUMN__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
+			} else if (Constants.COLUMN_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
 				res = true;
 
-				//object column label property
-			} else if(Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+				// object column label property
+			} else if (Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.COLUMN_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				res = true;
 			}
 
 
 
-			//feature row label property
-			else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+			// feature row label property
+			else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_IS_DERIVED.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
+			} else if (Constants.ROW__FEATURE_LABEL_CONFIGURATION_DISPLAY_NAME.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_TYPE.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
+			} else if (Constants.ROW_FEATURE_LABEL_CONFIGURATION_DISPLAY_MULTIPLICITY.equals(propertyPath)) {
 				res = true;
 
-				//object row label property
-			} else if(Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
+				// object row label property
+			} else if (Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_ICON.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
+			} else if (Constants.ROW_OBJECT_LABEL_CONFIGURATION_DISPLAY_LABEL.equals(propertyPath)) {
 				res = true;
 			}
 
-			//paste row EObject
-			else if(Constants.ROW_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
+			// paste row EObject
+			else if (Constants.ROW_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
 				res = new RowContainmentFeatureContentProvider(getEditedTable()).getElements().length != 0;
-			} else if(Constants.ROW_PASTED_EOBJECT_ID.equals(propertyPath)) {
+			} else if (Constants.ROW_PASTED_EOBJECT_ID.equals(propertyPath)) {
 				res = new RowElementTypeIdContentProvider(this.tableModelManager).getElements().length != 0;
-			} else if(Constants.ROW_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
+			} else if (Constants.ROW_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+			} else if (Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 				res = new RowPostActionIdsProvider(this.tableModelManager).getElements().length != 0;
 
-				//paste column EObject
-			} else if(Constants.COLUMN_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
+				// paste column EObject
+			} else if (Constants.COLUMN_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
 				res = new ColumnContainmentFeatureContentProvider(getEditedTable()).getElements().length != 0;
-			} else if(Constants.COLUMN_PASTED_EOBJECT_ID.equals(propertyPath)) {
+			} else if (Constants.COLUMN_PASTED_EOBJECT_ID.equals(propertyPath)) {
 				res = new ColumnElementTypeIdContentProvider(this.tableModelManager).getElements().length != 0;
-			} else if(Constants.COLUMN_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
+			} else if (Constants.COLUMN_PASTED_OBJECT_DETACHED_MODE_FEATURE.equals(propertyPath)) {
 				res = true;
-			} else if(Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+			} else if (Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 				res = new ColumnPostActionIdsProvider(this.tableModelManager).getElements().length != 0;
 			}
 		}
@@ -506,66 +506,66 @@ public class NatTableModelElement extends EMFModelElement {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.modelelement.EMFModelElement#getContentProvider(java.lang.String)
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 */
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
 		IStaticContentProvider provider = null;
-		if(Constants.TABLE_CONTEXT.equals(propertyPath)) {
+		if (Constants.TABLE_CONTEXT.equals(propertyPath)) {
 			Table table = getEditedTable();
 			provider = new ContextFeatureContentProvider(table, getRoot(table.getContext()));
-		} else if(Constants.ROW_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
+		} else if (Constants.ROW_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
 			provider = new RowContainmentFeatureContentProvider(getEditedTable());
-		} else if(Constants.COLUMN_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
+		} else if (Constants.COLUMN_PASTED_EOBJECT_CONTAINMENT_FEATURE.equals(propertyPath)) {
 			provider = new ColumnContainmentFeatureContentProvider(getEditedTable());
-		} else if(Constants.ROW_PASTED_EOBJECT_ID.equals(propertyPath)) {
+		} else if (Constants.ROW_PASTED_EOBJECT_ID.equals(propertyPath)) {
 			provider = new RowElementTypeIdContentProvider(this.tableModelManager);
-		} else if(Constants.COLUMN_PASTED_EOBJECT_ID.equals(propertyPath)) {
+		} else if (Constants.COLUMN_PASTED_EOBJECT_ID.equals(propertyPath)) {
 			provider = new ColumnElementTypeIdContentProvider(this.tableModelManager);
-		} else if(Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+		} else if (Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 			provider = new RowPostActionIdsProvider(this.tableModelManager);
-		} else if(Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+		} else if (Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 			provider = new RowPostActionIdsProvider(this.tableModelManager);
 		}
-		if(provider != null) {
+		if (provider != null) {
 			return provider;
 		}
 		return super.getContentProvider(propertyPath);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.modelelement.EMFModelElement#isUnique(java.lang.String)
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 */
 	@Override
 	public boolean isUnique(final String propertyPath) {
-		if(Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+		if (Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 			return true;
-		} else if(Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+		} else if (Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 			return true;
 		}
 		return super.isUnique(propertyPath);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.properties.modelelement.EMFModelElement#isOrdered(java.lang.String)
-	 * 
+	 *
 	 * @param propertyPath
 	 * @return
 	 */
 	@Override
 	public boolean isOrdered(final String propertyPath) {
-		if(Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+		if (Constants.ROW_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 			return true;
-		} else if(Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
+		} else if (Constants.COLUMN_PASTED_OBJECT_POST_ACTIONS_FEATURE.equals(propertyPath)) {
 			return true;
 		}
 		return super.isOrdered(propertyPath);
@@ -575,32 +575,50 @@ public class NatTableModelElement extends EMFModelElement {
 	public ILabelProvider getLabelProvider(String propertyPath) {
 		if (propertyPath.endsWith("prototype")) {
 			return new ILabelProvider() {
-				public void addListener(ILabelProviderListener listener) { }
-				public void removeListener(ILabelProviderListener listener) { }
-				public void dispose() { }
-				public boolean isLabelProperty(Object element, String property) { return false; }
+				@Override
+				public void addListener(ILabelProviderListener listener) {
+				}
+
+				@Override
+				public void removeListener(ILabelProviderListener listener) {
+				}
+
+				@Override
+				public void dispose() {
+				}
+
+				@Override
+				public boolean isLabelProperty(Object element, String property) {
+					return false;
+				}
+
+				@Override
 				public Image getImage(Object element) {
 					if (element == null) {
 						return null;
 					}
-					ViewPrototype proto = ViewPrototype.get((PapyrusView)element);
+					ViewPrototype proto = ViewPrototype.get((PapyrusView) element);
 					return proto.getIcon();
 				}
+
+				@Override
 				public String getText(Object element) {
 					if (element == null) {
 						return null;
 					}
-					ViewPrototype proto = ViewPrototype.get((PapyrusView)element);
+					ViewPrototype proto = ViewPrototype.get((PapyrusView) element);
 					return proto.getQualifiedName();
 				}
 			};
 		}
 		return super.getLabelProvider(propertyPath);
 	}
-	
+
 	/**
 	 * Gets the root EObject from the given one
-	 * @param obj An object
+	 * 
+	 * @param obj
+	 *            An object
 	 * @return The root object which is an ancestor of the given one
 	 */
 	private EObject getRoot(EObject obj) {

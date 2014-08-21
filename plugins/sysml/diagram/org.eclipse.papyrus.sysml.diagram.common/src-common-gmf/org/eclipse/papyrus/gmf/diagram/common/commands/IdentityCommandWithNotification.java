@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.widgets.toolbox.notification.builders.Notificat
 /**
  * A command that is always executable, undoable and redoable, but does nothing.
  * It always returns the same OK command result.
- * 
+ *
  * @author ldamus
  */
 public class IdentityCommandWithNotification extends AbstractCommand {
@@ -65,6 +65,7 @@ public class IdentityCommandWithNotification extends AbstractCommand {
 	/**
 	 * Does nothing and returns an OK command result.
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
 		new NotificationBuilder().setBuilderClass(CombinedPopupAndViewBuilder.class).setType(type).setTitle(title).setMessage(message).run();
@@ -75,6 +76,7 @@ public class IdentityCommandWithNotification extends AbstractCommand {
 	/**
 	 * Does nothing and returns an OK command result.
 	 */
+	@Override
 	protected CommandResult doRedoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
 		return getCommandResult();
@@ -83,6 +85,7 @@ public class IdentityCommandWithNotification extends AbstractCommand {
 	/**
 	 * Does nothing and returns an OK command result.
 	 */
+	@Override
 	protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
 		return getCommandResult();

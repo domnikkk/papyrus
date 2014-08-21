@@ -21,7 +21,7 @@ public class CheckboxIGraphicalFocusListenner implements MouseTrackListener {
 
 	public CheckboxIGraphicalFocusListenner(IGraphicalEditPart parent) {
 		super();
-		this.parentView = (View)parent.getModel();
+		this.parentView = (View) parent.getModel();
 		newColor = FigureUtilities.RGBToInteger(new RGB(255, 0, 0));
 
 	}
@@ -29,17 +29,17 @@ public class CheckboxIGraphicalFocusListenner implements MouseTrackListener {
 
 	public void mouseEnter(MouseEvent arg0) {
 
-		//		SetPropertyCommand changeColor = new SetPropertyCommand( editingDomain,"blabla",parentView,NotationPackage.Literals.LINE_STYLE,newColor);
+		// SetPropertyCommand changeColor = new SetPropertyCommand( editingDomain,"blabla",parentView,NotationPackage.Literals.LINE_STYLE,newColor);
 	}
 
 	public void mouseExit(MouseEvent arg0) {
-		//		LineStyle lineStyle = (LineStyle)parentView.getStyle(NotationPackage.Literals.LINE_STYLE);
-		//		if(lineStyle != null) {
-		//			// line color
-		//			//RGB lineRGB = PreferenceConverter.getColor(store, preferenceLineColorName);
-		//			newColor = lineStyle.getLineColor();
-		//			lineStyle.setLineColor(oldColor);
-		//		}
+		// LineStyle lineStyle = (LineStyle)parentView.getStyle(NotationPackage.Literals.LINE_STYLE);
+		// if(lineStyle != null) {
+		// // line color
+		// //RGB lineRGB = PreferenceConverter.getColor(store, preferenceLineColorName);
+		// newColor = lineStyle.getLineColor();
+		// lineStyle.setLineColor(oldColor);
+		// }
 
 
 	}

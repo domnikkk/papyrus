@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -24,11 +24,10 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * Concrete implementation of {@link AbstractGetMetaclassWidget} abstract
  * class.</p>
- * 
+ *
  * Create a simple Label {@link #getLabel()}TextField and a button.</p> This
- * class provide the selection the extended metaclass. The type used is
- * {@link ETypeSelectionOptions#ECLASS}
- * 
+ * class provide the selection the extended metaclass. The type used is {@link ETypeSelectionOptions#ECLASS}
+ *
  * @since 0.3
  */
 public class GetExtendedMetaclassWidget extends
@@ -36,7 +35,7 @@ public class GetExtendedMetaclassWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param propertyElement

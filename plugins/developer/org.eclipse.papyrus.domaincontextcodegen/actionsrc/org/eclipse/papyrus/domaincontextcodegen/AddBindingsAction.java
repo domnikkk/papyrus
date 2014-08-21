@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public class AddBindingsAction implements IObjectActionDelegate {
 		ElementTypeBindings bindings = domain.getBindings().get(0);
 
 		Iterator<ElementType> it = eltTypes.getTypes().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			ElementType elementType = it.next();
 
 			ElementTypeBinding etb = DomaincontextcodegenFactory.eINSTANCE.createElementTypeBinding();
@@ -42,9 +42,9 @@ public class AddBindingsAction implements IObjectActionDelegate {
 	}
 
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			if(((IStructuredSelection)selection).getFirstElement() instanceof ElementTypes) {
-				eltTypes = (ElementTypes)((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			if (((IStructuredSelection) selection).getFirstElement() instanceof ElementTypes) {
+				eltTypes = (ElementTypes) ((IStructuredSelection) selection).getFirstElement();
 			}
 		}
 

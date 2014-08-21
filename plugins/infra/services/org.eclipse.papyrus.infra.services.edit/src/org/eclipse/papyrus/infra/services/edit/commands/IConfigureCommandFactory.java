@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -29,9 +29,9 @@ public interface IConfigureCommandFactory {
 
 	/**
 	 * Create a configure element command.
-	 * 
+	 *
 	 * @param request
-	 *        the configure request.
+	 *            the configure request.
 	 * @return the configure command.
 	 */
 	public ICommand create(final ConfigureRequest request);

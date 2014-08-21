@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.gmf.runtime.emf.core.util.EObjectAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 /**
- * 
+ *
  * @author Patrick Tessier Policy that allows resizing border item code comes
  *         form {@link BorderItemSelectionEditPolicy} and modify in order to use
  *         resize behavior
@@ -42,21 +42,22 @@ public class BorderItemResizableEditPolicy extends ResizableShapeEditPolicy {
 
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		if((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_CLONE.equals(request.getType()) || REQ_ADD.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType()) || REQ_RESIZE.equals(request.getType()))
-			eraseChangeBoundsFeedback((ChangeBoundsRequest)request);
+		if ((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_CLONE.equals(request.getType()) || REQ_ADD.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType()) || REQ_RESIZE.equals(request.getType())) {
+			eraseChangeBoundsFeedback((ChangeBoundsRequest) request);
+		}
 
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getMoveCommand(ChangeBoundsRequest request) {
-		IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+		IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 		IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
 
-		if(borderItemLocator != null) {
+		if (borderItemLocator != null) {
 			PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 			getHostFigure().translateToAbsolute(rect);
 			rect.translate(request.getMoveDelta());
@@ -69,7 +70,7 @@ public class BorderItemResizableEditPolicy extends ResizableShapeEditPolicy {
 			Dimension d = realLocation.getTopLeft().getDifference(parentOrigin);
 			Point location = new Point(d.width, d.height);
 
-			ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)getHost().getModel()), location);
+			ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) getHost().getModel()), location);
 			return new ICommandProxy(moveCommand);
 		}
 		return null;
@@ -77,16 +78,16 @@ public class BorderItemResizableEditPolicy extends ResizableShapeEditPolicy {
 
 	/**
 	 * Shows or updates feedback for a change bounds request.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 */
 	@Override
 	protected void showChangeBoundsFeedback(ChangeBoundsRequest request) {
-		IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+		IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 		IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
 
-		if(borderItemLocator != null) {
+		if (borderItemLocator != null) {
 			IFigure feedback = getDragSourceFeedbackFigure();
 			PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 			getHostFigure().translateToAbsolute(rect);
@@ -105,7 +106,8 @@ public class BorderItemResizableEditPolicy extends ResizableShapeEditPolicy {
 	 */
 	@Override
 	public void showSourceFeedback(Request request) {
-		if((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_ADD.equals(request.getType()) || REQ_CLONE.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType()) || REQ_RESIZE.equals(request.getType()))
-			showChangeBoundsFeedback((ChangeBoundsRequest)request);
+		if ((REQ_MOVE.equals(request.getType()) && isDragAllowed()) || REQ_ADD.equals(request.getType()) || REQ_CLONE.equals(request.getType()) || RequestConstants.REQ_DROP.equals(request.getType()) || REQ_RESIZE.equals(request.getType())) {
+			showChangeBoundsFeedback((ChangeBoundsRequest) request);
+		}
 	}
 }

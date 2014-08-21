@@ -15,13 +15,13 @@ public class LongEditor extends StringEditor {
 	private IConverter targetToModelConverter;
 
 	/**
-	 * 
+	 *
 	 * Constructs an Editor for a Long value. The widget is a Text field.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which the editor is created
+	 *            The Composite in which the editor is created
 	 * @param style
-	 *        The Text's style
+	 *            The Text's style
 	 */
 	public LongEditor(Composite parent, int style) {
 		super(parent, style);
@@ -44,7 +44,7 @@ public class LongEditor extends StringEditor {
 	@Override
 	public Long getValue() {
 		try {
-			return (Long)targetToModelConverter.convert(super.getValue());
+			return (Long) targetToModelConverter.convert(super.getValue());
 		} catch (Exception ex) {
 			Activator.log.error(ex);
 			return null;

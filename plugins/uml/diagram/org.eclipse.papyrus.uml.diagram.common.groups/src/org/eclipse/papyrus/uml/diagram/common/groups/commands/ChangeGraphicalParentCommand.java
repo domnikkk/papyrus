@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,9 +44,9 @@ import org.eclipse.papyrus.uml.diagram.common.groups.utils.GroupRequestConstants
 
 /**
  * This command change the graphical parent of an edit part without changing the absolute position of the element
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
@@ -92,18 +92,18 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
 
 	/**
-	 * 
+	 *
 	 * Command constructor.
 	 * Create a command from to existing EditPart which exist at the time of the creation of the command
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain
+	 *            editing domain
 	 * @param label
-	 *        command label
+	 *            command label
 	 * @param parent
-	 *        new parent edit part
+	 *            new parent edit part
 	 * @param child
-	 *        child edit part to reroute parent
+	 *            child edit part to reroute parent
 	 */
 	public ChangeGraphicalParentCommand(TransactionalEditingDomain domain, String label, EditPart parent, EditPart child, IGraphicalEditPart getHost) {
 		super(domain, label, null);
@@ -115,20 +115,19 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Command constructor.
 	 * Create a command from to existing EditPart which exist at the time of the creation of the command.
-	 * In this constructor the request is needed if any translation has to be made (e.g {@link ChangeBoundsRequest} @see
-	 * {@link XYLayoutEditGroupPolicy#getCommand(Request)}
-	 * 
+	 * In this constructor the request is needed if any translation has to be made (e.g {@link ChangeBoundsRequest} @see {@link XYLayoutEditGroupPolicy#getCommand(Request)}
+	 *
 	 * @param domain
-	 *        editing domain
+	 *            editing domain
 	 * @param label
-	 *        command label
+	 *            command label
 	 * @param parent
-	 *        new parent edit part
+	 *            new parent edit part
 	 * @param child
-	 *        child edit part to reroute parent
+	 *            child edit part to reroute parent
 	 */
 	public ChangeGraphicalParentCommand(TransactionalEditingDomain domain, String label, EditPart parent, EditPart child, IGraphicalEditPart getHost, Request request) {
 		super(domain, label, null);
@@ -140,62 +139,62 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain
+	 *            editing domain
 	 * @param label
-	 *        command label
+	 *            command label
 	 * @param request
-	 *        Create element request to be able to find the IGraphicalEditPart of the create element
-	 *        ( WARNING the IGraphicalEditPart has to be already created at the execution time of this command and it has to be have it's bounds set)
+	 *            Create element request to be able to find the IGraphicalEditPart of the create element
+	 *            ( WARNING the IGraphicalEditPart has to be already created at the execution time of this command and it has to be have it's bounds set)
 	 * @param child
-	 *        IGraphicalEditPart of the child (has to be available a the creation time of the request)
+	 *            IGraphicalEditPart of the child (has to be available a the creation time of the request)
 	 */
 	public ChangeGraphicalParentCommand(TransactionalEditingDomain domain, String label, CreateRequest request, EditPart child, IGraphicalEditPart getHost) {
 		super(domain, label, null);
 		this.parent = null;
 		this.child = child;
-		this.request = (CreateViewAndElementRequest)request;
+		this.request = request;
 		this.host = getHost;
 		this.mode = Mode.CREATION_PARENT;
 	}
 
 	/**
 	 * This command change the view of the parent and the child edit part to make all the changes needed.
-	 * 
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
+	 *
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
-		//Get the IGraphical edit part of the old parent
-		IGraphicalEditPart oldParentPart = (IGraphicalEditPart)child.getParent();
+		// Get the IGraphical edit part of the old parent
+		IGraphicalEditPart oldParentPart = (IGraphicalEditPart) child.getParent();
 		Map<?, ?> editPartRegistry = getEditPartRegistery();
-		if(editPartRegistry == null) {
+		if (editPartRegistry == null) {
 			return CommandResult.newErrorCommandResult(CommandResultMessagesError.THE_EDIT_PART_REGISTERY_WAS_NOT_FOUND);
 		}
-		//Get the view of the new parent, old parent and the child
+		// Get the view of the new parent, old parent and the child
 		// If the parent is null then check if the request is an creation request
-		if(parent == null) {
-			if(request instanceof CreateViewAndElementRequest) {
-				//If true try to get the EditPart of the element in creation
-				parent = getEditPartFromViewDescriptor((IGraphicalEditPart)child, (CreateViewAndElementRequest)request);
+		if (parent == null) {
+			if (request instanceof CreateViewAndElementRequest) {
+				// If true try to get the EditPart of the element in creation
+				parent = getEditPartFromViewDescriptor((IGraphicalEditPart) child, (CreateViewAndElementRequest) request);
 			}
 		} else {
 			parent = Utils.getCompartementEditPartFromMainEditPart(editPartRegistry, parent);
 		}
-		if(parent == null) {
-			//If no parent is found then an error is thrown
+		if (parent == null) {
+			// If no parent is found then an error is thrown
 			return CommandResult.newErrorCommandResult(CommandResultMessagesError.IGRAPHICAL_EDIT_PART_NOT_CREATED_YET);
 		}
-		View newParentView = (View)parent.getModel();
-		View childView = (View)child.getModel();
+		View newParentView = (View) parent.getModel();
+		View childView = (View) child.getModel();
 		/*
 		 * Translate the new node to the corresponding location in its new father.
 		 */
 		CommandResult cmdChangeCoordinate = changeCoordinateInNewFather(oldParentPart, childView);
-		if(cmdChangeCoordinate != null) {
+		if (cmdChangeCoordinate != null) {
 			return cmdChangeCoordinate;
 		}
 		newParentView.insertChild(childView);
@@ -207,11 +206,11 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 	 * This method is not generic. It will handle differently if the command is came from a createRequest or the cahgneBounds request or without any
 	 * request.
 	 * This method should be reviewed later.(TODO)
-	 * 
+	 *
 	 * @param oldParentPart
-	 *        {@link IGraphicalEditPart} of the old paret
+	 *            {@link IGraphicalEditPart} of the old paret
 	 * @param childView
-	 *        View of the child
+	 *            View of the child
 	 * @return
 	 */
 	private CommandResult changeCoordinateInNewFather(IGraphicalEditPart oldParentPart, View childView) {
@@ -219,16 +218,16 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 		 * Deleted because do not find the case where should it should be applied
 		 * if(host != parent) {
 		 */
-		if(childView instanceof Node) {
-			IFigure parentCompartmentFigure = ((AbstractGraphicalEditPart)parent).getFigure();
+		if (childView instanceof Node) {
+			IFigure parentCompartmentFigure = ((AbstractGraphicalEditPart) parent).getFigure();
 			/*
 			 * If the change graphical parent come after a move
 			 */
-			if(Mode.MOVE_CHILD.equals(mode) || Mode.MOVE_PARENT.equals(mode)) {
-				Rectangle newDimension = computeDeltaToChangeParent((IGraphicalEditPart)parent);
-				LayoutConstraint layoutConstraint = ((Node)childView).getLayoutConstraint();
-				if(layoutConstraint instanceof Location) {
-					Location location = (Location)layoutConstraint;
+			if (Mode.MOVE_CHILD.equals(mode) || Mode.MOVE_PARENT.equals(mode)) {
+				Rectangle newDimension = computeDeltaToChangeParent((IGraphicalEditPart) parent);
+				LayoutConstraint layoutConstraint = ((Node) childView).getLayoutConstraint();
+				if (layoutConstraint instanceof Location) {
+					Location location = (Location) layoutConstraint;
 					location.setX(newDimension.x);
 					location.setY(newDimension.y);
 				} else {
@@ -237,7 +236,7 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 				/*
 				 * If the change come after a creation or after nothing
 				 */
-			} else if(Mode.CREATION_CHILD.equals(mode) || Mode.CREATION_PARENT.equals(mode) || Mode.NORMAL.equals(mode)) {
+			} else if (Mode.CREATION_CHILD.equals(mode) || Mode.CREATION_PARENT.equals(mode) || Mode.NORMAL.equals(mode)) {
 				/*
 				 * Handle change graphical parent from a create request or with no request
 				 * 1 - If the group in creation is the parent then
@@ -246,18 +245,18 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 				 * 3 - Translate the location of the constraint
 				 */
 				Dimension newDimension;
-				if(parentCompartmentFigure.getBounds().isEmpty()) {
+				if (parentCompartmentFigure.getBounds().isEmpty()) {
 					Rectangle oldBounds = parentCompartmentFigure.getBounds().getCopy();
 					Point compLoc = emulateFigureCreation(parentCompartmentFigure);
-					newDimension = Utils.computeDeltaToChangeParent(oldParentPart, (IGraphicalEditPart)parent.getParent());
+					newDimension = Utils.computeDeltaToChangeParent(oldParentPart, (IGraphicalEditPart) parent.getParent());
 					reajustNewDimensionIfNeeded(parentCompartmentFigure, compLoc, newDimension);
 					parentCompartmentFigure.getBounds().setBounds(oldBounds);
 				} else {
-					newDimension = Utils.computeDeltaToChangeParent(oldParentPart, (IGraphicalEditPart)parent);
+					newDimension = Utils.computeDeltaToChangeParent(oldParentPart, (IGraphicalEditPart) parent);
 				}
-				LayoutConstraint layoutConstraint = ((Node)childView).getLayoutConstraint();
-				if(layoutConstraint instanceof Location) {
-					Location location = (Location)layoutConstraint;
+				LayoutConstraint layoutConstraint = ((Node) childView).getLayoutConstraint();
+				if (layoutConstraint instanceof Location) {
+					Location location = (Location) layoutConstraint;
 					Point newLocation = new Point(newDimension.width + location.getX(), newDimension.height + location.getY());
 					location.setX(newLocation.x);
 					location.setY(newLocation.y);
@@ -277,9 +276,9 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Compute the new rectangle of the child from the original position set in the request and with the newParent {@link IGraphicalEditPart}
-	 * 
+	 *
 	 * @param newParent
-	 *        {@link IGraphicalEditPart} of the new parent
+	 *            {@link IGraphicalEditPart} of the new parent
 	 * @return new rectangle of the child
 	 */
 	private Rectangle computeDeltaToChangeParent(IGraphicalEditPart newParent) {
@@ -287,8 +286,8 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 		 * Get the absolute bound of a child
 		 */
 		Rectangle childAbsoluteRectangle = getChildAbsoluteBounds();
-		if(childAbsoluteRectangle instanceof Rectangle) {
-			IFigure newPartFigure = ((IGraphicalEditPart)parent).getContentPane();
+		if (childAbsoluteRectangle instanceof Rectangle) {
+			IFigure newPartFigure = ((IGraphicalEditPart) parent).getContentPane();
 			newPartFigure.translateToRelative(childAbsoluteRectangle);
 			newPartFigure.translateFromParent(childAbsoluteRectangle);
 			Point negatedLayoutOrigin = newPartFigure.getClientArea().getLocation().getNegated();
@@ -306,19 +305,19 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Get the EditpartRegistery
-	 * 
+	 *
 	 * @return Map if found null is not found
 	 */
 	private Map<?, ?> getEditPartRegistery() {
 		Map<?, ?> editPartRegistry = null;
-		//Check if the parent in valid compartment EditPart
-		if(parent != null) {
+		// Check if the parent in valid compartment EditPart
+		if (parent != null) {
 			EditPartViewer parentViewer = parent.getViewer();
-			if(parentViewer != null) {
+			if (parentViewer != null) {
 				editPartRegistry = parentViewer.getEditPartRegistry();
 			}
 		}
-		if(editPartRegistry == null && child != null && child.getViewer() != null) {
+		if (editPartRegistry == null && child != null && child.getViewer() != null) {
 			editPartRegistry = child.getViewer().getEditPartRegistry();
 		}
 		return editPartRegistry;
@@ -328,16 +327,16 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 	/**
 	 * Used to readjusts the coordinate of the child if the parentComptmentFigure is not well set yet.
 	 * Used to hack the system if the editPart is not properly set
-	 * 
+	 *
 	 * @param parentCompartmentFigure
-	 *        The compartment figure of the parent
+	 *            The compartment figure of the parent
 	 * @param compLoc
 	 * @see {@link #emulateFigureCreation(IFigure)}
 	 * @param correctionDimension
-	 *        New {@link Dimension} which are going to modify in order to correctt the coordinatte of the child
+	 *            New {@link Dimension} which are going to modify in order to correctt the coordinatte of the child
 	 */
 	private void reajustNewDimensionIfNeeded(IFigure parentCompartmentFigure, Point compLoc, Dimension correctionDimension) {
-		if(compLoc != null) {
+		if (compLoc != null) {
 			correctionDimension.shrink(compLoc.x + parentCompartmentFigure.getInsets().left, compLoc.y + parentCompartmentFigure.getInsets().top);
 		}
 	}
@@ -345,17 +344,17 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 	/**
 	 * Emulate the figure creation it's not already done. This allow the system to know the absolute solution even if the edit part of the parent is
 	 * not yet finish
-	 * 
+	 *
 	 * @return null is the figure is already done. Return the translation needed to take into account the child position in it's parent ( e.g
 	 *         ActivityPartitionCompartement from its ActivityPartitionEditPart)
 	 */
 	private Point emulateFigureCreation(IFigure parentCompartmentFigure) {
-		if(parentCompartmentFigure.getBounds().isEmpty()) {
+		if (parentCompartmentFigure.getBounds().isEmpty()) {
 			// layout parent node correctly to recover the correct location of compartment which has not been set previously
 			IFigure parentNodeFigure = parentCompartmentFigure.getParent();
-			if(parentNodeFigure != null) {
+			if (parentNodeFigure != null) {
 				IFigure grandParentFigure = parentNodeFigure.getParent();
-				if(grandParentFigure != null) {
+				if (grandParentFigure != null) {
 					grandParentFigure.getLayoutManager().layout(grandParentFigure);
 				}
 				parentNodeFigure.getLayoutManager().layout(parentNodeFigure);
@@ -372,9 +371,9 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 	 * 1 - Get descriptors
 	 * 2 - Get View (adapter)
 	 * 3 - Get IGraphicalEditPart if it exists
-	 * 
+	 *
 	 * @param anyPart
-	 *        Any IGraphicalEditPart in order to get the EditPartRegistery
+	 *            Any IGraphicalEditPart in order to get the EditPartRegistery
 	 * @return true if it as found the edit part
 	 */
 	private EditPart getEditPartFromViewDescriptor(IGraphicalEditPart anyPart, CreateViewAndElementRequest _request) {
@@ -382,11 +381,11 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 		EditPart result = null;
 		Iterator<? extends CreateViewRequest.ViewDescriptor> descriptors = _request.getViewDescriptors().iterator();
 		Map<?, ?> editPartRegistry = anyPart.getViewer().getEditPartRegistry();
-		while(descriptors.hasNext()) {
-			CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor)descriptors.next();
+		while (descriptors.hasNext()) {
+			CreateViewRequest.ViewDescriptor descriptor = descriptors.next();
 			Object view = descriptor.getAdapter(View.class);
-			if(view instanceof View) {
-				View childView = (View)view;
+			if (view instanceof View) {
+				View childView = (View) view;
 				result = getCompartmentEditPartFromView(editPartRegistry, childView);
 			}
 		}
@@ -395,18 +394,18 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Get a compartment editPart from a view and the editPartRegistery
-	 * 
+	 *
 	 * @param editPartRegistry
-	 *        EditPartRegistery
+	 *            EditPartRegistery
 	 * @param view
-	 *        View of the element we want to find the compartment
+	 *            View of the element we want to find the compartment
 	 * @return the EdiPart of compartment and null if not found
 	 */
 	public EditPart getCompartmentEditPartFromView(Map<?, ?> editPartRegistry, View view) {
 		EditPart resultCompartmentEditPart = null;
 		Object editPartAux = editPartRegistry.get(view);
-		if(editPartAux instanceof EditPart) {
-			EditPart _editPart = (EditPart)editPartAux;
+		if (editPartAux instanceof EditPart) {
+			EditPart _editPart = (EditPart) editPartAux;
 			resultCompartmentEditPart = Utils.getCompartementEditPartFromMainEditPart(editPartRegistry, _editPart);
 		}
 		return resultCompartmentEditPart;
@@ -425,26 +424,26 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Give the absolute rectangle of the child. (Depending of the mode)
-	 * 
+	 *
 	 * @return {@link Rectangle} of the child
 	 */
 	private Rectangle getChildAbsoluteBounds() {
 		Rectangle result = null;
-		if(child instanceof IGraphicalEditPart) {
-			switch(mode) {
+		if (child instanceof IGraphicalEditPart) {
+			switch (mode) {
 			case MOVE_CHILD:
-				if(request instanceof ChangeBoundsRequest) {
+				if (request instanceof ChangeBoundsRequest) {
 					Object _origineConstraint = request.getExtendedData().get(GroupRequestConstants.CONSTRAINT_AFTER_MOVING);
-					if(_origineConstraint instanceof Rectangle) {
-						result = (Rectangle)_origineConstraint;
+					if (_origineConstraint instanceof Rectangle) {
+						result = (Rectangle) _origineConstraint;
 					}
 				}
 				break;
 			case MOVE_PARENT:
-				result = Utils.getAbsoluteBounds((IGraphicalEditPart)child).getCopy();
+				result = Utils.getAbsoluteBounds((IGraphicalEditPart) child).getCopy();
 				break;
 			default:
-				result = Utils.getAbsoluteBounds((IGraphicalEditPart)child).getCopy();
+				result = Utils.getAbsoluteBounds((IGraphicalEditPart) child).getCopy();
 				break;
 			}
 		}
@@ -453,15 +452,15 @@ public class ChangeGraphicalParentCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Get the correction to be applied to the child in function of the mode
-	 * 
+	 *
 	 * @return {@link Point} to translate the child
 	 */
 	private Point getChildCorrectionFromParent() {
 		Point result = null;
-		if(child instanceof IGraphicalEditPart) {
-			switch(mode) {
+		if (child instanceof IGraphicalEditPart) {
+			switch (mode) {
 			case MOVE_PARENT:
-				result = ((ChangeBoundsRequest)request).getMoveDelta().getNegated();
+				result = ((ChangeBoundsRequest) request).getMoveDelta().getNegated();
 				break;
 			default:
 				result = new Point(0, 0);

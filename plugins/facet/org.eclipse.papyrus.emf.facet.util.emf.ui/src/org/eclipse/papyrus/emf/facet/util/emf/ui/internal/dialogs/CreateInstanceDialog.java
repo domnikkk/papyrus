@@ -31,10 +31,9 @@ public final class CreateInstanceDialog {
 	}
 
 	/**
-	 * Open a dialog with a list of metaclasses that are subclasses of the given
-	 * {@link EClass}. When the user chooses a metaclass, an instance is created
+	 * Open a dialog with a list of metaclasses that are subclasses of the given {@link EClass}. When the user chooses a metaclass, an instance is created
 	 * an returned.
-	 * 
+	 *
 	 * @param shell
 	 *            the parent shell for the dialog
 	 * @param eClass

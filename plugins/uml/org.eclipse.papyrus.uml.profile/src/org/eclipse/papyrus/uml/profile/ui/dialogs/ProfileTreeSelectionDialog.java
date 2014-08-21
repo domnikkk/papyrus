@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,11 +45,11 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param model
-	 *        of the profile
+	 *            of the profile
 	 * @param parent
-	 *        the shell
+	 *            the shell
 	 */
 	public ProfileTreeSelectionDialog(Shell parent, Package model) {
 		this(parent, Collections.singletonList(model));
@@ -57,11 +57,11 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param model
-	 *        of the profile
+	 *            of the profile
 	 * @param parent
-	 *        the shell
+	 *            the shell
 	 */
 	public ProfileTreeSelectionDialog(Shell parent, Collection<Package> model) {
 		this(parent, model, new ArrayList<String>());
@@ -72,11 +72,11 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param model
-	 *        of the profile
+	 *            of the profile
 	 * @param parent
-	 *        the shell
+	 *            the shell
 	 * @param
 	 */
 	public ProfileTreeSelectionDialog(Shell parent, Collection<Package> model, List<String> subprofiles) {
@@ -88,7 +88,7 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 
 	/**
 	 * Returns the elements to import.
-	 * 
+	 *
 	 * @return a list of profile even if the user selects a package
 	 */
 	@Override
@@ -96,10 +96,10 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 	public Collection<ImportSpec<Profile>> getResult() {
 		List<ImportSpec<Profile>> result = new ArrayList<ImportSpec<Profile>>();
 		Iterator<? extends ImportSpec<? extends Package>> iter = elementsToImport.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			ImportSpec<? extends Package> currentElement = iter.next();
-			if(currentElement.getElement() instanceof Profile) {
-				result.add((ImportSpec<Profile>)currentElement);
+			if (currentElement.getElement() instanceof Profile) {
+				result.add((ImportSpec<Profile>) currentElement);
 			}
 		}
 		return result;
@@ -110,10 +110,10 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 		Collection<Package> result = new java.util.ArrayList<Package>();
 
 		Iterator<PackageableElement> elemIter = package_.getPackagedElements().iterator();
-		while(elemIter.hasNext()) {
+		while (elemIter.hasNext()) {
 			Element elem = elemIter.next();
-			if(elem instanceof Package) {
-				result.add((Package)elem);
+			if (elem instanceof Package) {
+				result.add((Package) elem);
 			}
 		}
 
@@ -128,7 +128,7 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite result = (Composite)super.createDialogArea(parent);
+		Composite result = (Composite) super.createDialogArea(parent);
 
 		Composite buttons = new Composite(result, SWT.NONE);
 		buttons.setLayout(new RowLayout());
@@ -154,12 +154,12 @@ public class ProfileTreeSelectionDialog extends ElementImportTreeSelectionDialog
 		});
 
 		// set initial sub-profile selections
-		for(Iterator<?> iter = EcoreUtil.getAllContents(packages); iter.hasNext();) {
+		for (Iterator<?> iter = EcoreUtil.getAllContents(packages); iter.hasNext();) {
 			Object next = iter.next();
-			if(next instanceof Profile) {
-				Profile profile = (Profile)next;
+			if (next instanceof Profile) {
+				Profile profile = (Profile) next;
 				String name = profile.getQualifiedName();
-				if((name != null) && subProfilesList.contains(name)) {
+				if ((name != null) && subProfilesList.contains(name)) {
 					setInitialSelection(profile);
 				}
 			}

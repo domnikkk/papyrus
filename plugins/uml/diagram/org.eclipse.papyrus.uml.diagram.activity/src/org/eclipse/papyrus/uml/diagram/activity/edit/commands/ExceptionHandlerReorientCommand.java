@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin and CEA LIST
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.ExceptionHandler;
 import org.eclipse.uml2.uml.ExecutableNode;
@@ -59,14 +60,15 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof ExceptionHandler) {
+		if (false == getElementToEdit() instanceof ExceptionHandler) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -76,14 +78,14 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof ExecutableNode && newEnd instanceof ExecutableNode)) {
+		if (!(oldEnd instanceof ExecutableNode && newEnd instanceof ExecutableNode)) {
 			return false;
 		}
 		ObjectNode target = getLink().getExceptionInput();
-		if(!(getLink().eContainer() instanceof ExecutableNode)) {
+		if (!(getLink().eContainer() instanceof ExecutableNode)) {
 			return false;
 		}
-		ExecutableNode container = (ExecutableNode)getLink().eContainer();
+		ExecutableNode container = (ExecutableNode) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistExceptionHandler_4005(container, getLink(), getNewSource(), target);
 	}
 
@@ -91,28 +93,29 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof ObjectNode && newEnd instanceof ObjectNode)) {
+		if (!(oldEnd instanceof ObjectNode && newEnd instanceof ObjectNode)) {
 			return false;
 		}
 		ExecutableNode source = getLink().getProtectedNode();
-		if(!(getLink().eContainer() instanceof ExecutableNode)) {
+		if (!(getLink().eContainer() instanceof ExecutableNode)) {
 			return false;
 		}
-		ExecutableNode container = (ExecutableNode)getLink().eContainer();
+		ExecutableNode container = (ExecutableNode) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistExceptionHandler_4005(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -138,34 +141,34 @@ public class ExceptionHandlerReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected ExceptionHandler getLink() {
-		return (ExceptionHandler)getElementToEdit();
+		return (ExceptionHandler) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ExecutableNode getOldSource() {
-		return (ExecutableNode)oldEnd;
+		return (ExecutableNode) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ExecutableNode getNewSource() {
-		return (ExecutableNode)newEnd;
+		return (ExecutableNode) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ObjectNode getOldTarget() {
-		return (ObjectNode)oldEnd;
+		return (ObjectNode) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected ObjectNode getNewTarget() {
-		return (ObjectNode)newEnd;
+		return (ObjectNode) newEnd;
 	}
 }

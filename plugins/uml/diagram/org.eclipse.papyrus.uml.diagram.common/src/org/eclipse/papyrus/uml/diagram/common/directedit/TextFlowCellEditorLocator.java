@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,9 +32,9 @@ final public class TextFlowCellEditorLocator implements CellEditorLocator {
 
 	/**
 	 * Creates a new TextFlowCellEditorLocator.
-	 * 
+	 *
 	 * @param figureToEdit
-	 *        The textflow to be edited.
+	 *            The textflow to be edited.
 	 */
 	// @unused
 	public TextFlowCellEditorLocator(TextFlow figureToEdit) {
@@ -49,12 +49,13 @@ final public class TextFlowCellEditorLocator implements CellEditorLocator {
 	 * .CellEditor)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param celleditor
 	 */
+	@Override
 	public void relocate(CellEditor celleditor) {
-		Text text = (Text)celleditor.getControl();
+		Text text = (Text) celleditor.getControl();
 		Point pref = text.computeSize(-1, -1);
 		Rectangle rect = figureToEdit.getClientArea();
 		figureToEdit.translateToAbsolute(rect);

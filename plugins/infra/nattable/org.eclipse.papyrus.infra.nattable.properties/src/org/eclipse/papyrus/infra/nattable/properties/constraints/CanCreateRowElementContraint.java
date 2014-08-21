@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,23 +20,23 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.nattable.utils.CreatableEObjectAxisUtils;
 
 /**
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class CanCreateRowElementContraint implements JavaQuery {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.constraints.constraints.JavaQuery#match(java.lang.Object)
-	 * 
+	 *
 	 * @param selection
 	 * @return
 	 */
 	@Override
 	public boolean match(Object selection) {
 		final EObject table = EMFHelper.getEObject(selection);
-		return CreatableEObjectAxisUtils.getCreatableElementIds((Table)table, false).size() != 0;
+		return CreatableEObjectAxisUtils.getCreatableElementIds((Table) table, false).size() != 0;
 	}
 
 }

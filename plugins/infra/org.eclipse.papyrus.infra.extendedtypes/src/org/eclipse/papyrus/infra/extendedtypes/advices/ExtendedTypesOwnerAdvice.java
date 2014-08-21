@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,57 +46,57 @@ public class ExtendedTypesOwnerAdvice extends AbstractEditHelperAdvice {
 	 */
 	@Override
 	public boolean approveRequest(IEditCommandRequest request) {
-		if(request instanceof CreateElementRequest) {
-			// approve the request for this element and all super types 
-			IElementType typeToCreate = ((CreateElementRequest)request).getElementType();
-			if(typeToCreate instanceof IExtendedHintedElementType) {
-				if(!approveCreationRequest(((IExtendedHintedElementType)typeToCreate), (CreateElementRequest)request)) {
+		if (request instanceof CreateElementRequest) {
+			// approve the request for this element and all super types
+			IElementType typeToCreate = ((CreateElementRequest) request).getElementType();
+			if (typeToCreate instanceof IExtendedHintedElementType) {
+				if (!approveCreationRequest(((IExtendedHintedElementType) typeToCreate), (CreateElementRequest) request)) {
 					return false;
 				}
 				// ask for extended super types
-				List<IExtendedHintedElementType> superExtendedTypes = getAllSuperExtendedTypes((IExtendedHintedElementType)typeToCreate);
-				if(superExtendedTypes == null || superExtendedTypes.size() == 0) {
+				List<IExtendedHintedElementType> superExtendedTypes = getAllSuperExtendedTypes((IExtendedHintedElementType) typeToCreate);
+				if (superExtendedTypes == null || superExtendedTypes.size() == 0) {
 					return super.approveRequest(request);
 				} else {
-					for(IExtendedHintedElementType superType : superExtendedTypes) {
+					for (IExtendedHintedElementType superType : superExtendedTypes) {
 						// only refuse if one element refuses the request
-						if(!approveCreationRequest(superType, (CreateElementRequest)request)) {
+						if (!approveCreationRequest(superType, (CreateElementRequest) request)) {
 							return false;
 						}
 					}
 				}
 			}
-		} else if(request instanceof SetRequest) {
+		} else if (request instanceof SetRequest) {
 			// check the feature to set is a containment feature and element to move is an extended element type
-			EStructuralFeature feature = ((SetRequest)request).getFeature();
-			if(feature instanceof EReference) {
-				if(!((EReference)feature).isContainment()) {
+			EStructuralFeature feature = ((SetRequest) request).getFeature();
+			if (feature instanceof EReference) {
+				if (!((EReference) feature).isContainment()) {
 					return super.approveRequest(request);
 				} else {
 					// containment. Check the kind of element to edit
-					Object value = ((SetRequest)request).getValue();
+					Object value = ((SetRequest) request).getValue();
 					// value = single object or list ?
-					if(value instanceof EObject) {
-						IElementType type = ElementTypeRegistry.getInstance().getElementType((EObject)value, request.getClientContext());
-						if(type instanceof IExtendedHintedElementType) {
-							return approveMoveRequest((IExtendedHintedElementType)type, (SetRequest)request);
+					if (value instanceof EObject) {
+						IElementType type = ElementTypeRegistry.getInstance().getElementType((EObject) value, request.getClientContext());
+						if (type instanceof IExtendedHintedElementType) {
+							return approveMoveRequest((IExtendedHintedElementType) type, (SetRequest) request);
 						}
-					} else if(value instanceof List<?>) {
-						for(Object object : (List<Object>)value) {
-							if(object instanceof EObject) {
-								IElementType[] types = ElementTypeRegistry.getInstance().getAllTypesMatching((EObject)object, request.getClientContext());
-								for(IElementType type : types) {
-									if(type instanceof IExtendedHintedElementType) {
-										if(!approveMoveRequest((IExtendedHintedElementType)type, (SetRequest)request)) {
+					} else if (value instanceof List<?>) {
+						for (Object object : (List<Object>) value) {
+							if (object instanceof EObject) {
+								IElementType[] types = ElementTypeRegistry.getInstance().getAllTypesMatching((EObject) object, request.getClientContext());
+								for (IElementType type : types) {
+									if (type instanceof IExtendedHintedElementType) {
+										if (!approveMoveRequest((IExtendedHintedElementType) type, (SetRequest) request)) {
 											return false;
 										}
-										List<IExtendedHintedElementType> superExtendedTypes = getAllSuperExtendedTypes((IExtendedHintedElementType)type);
-										if(superExtendedTypes == null || superExtendedTypes.size() == 0) {
+										List<IExtendedHintedElementType> superExtendedTypes = getAllSuperExtendedTypes((IExtendedHintedElementType) type);
+										if (superExtendedTypes == null || superExtendedTypes.size() == 0) {
 											// nothing here
 										} else {
-											for(IExtendedHintedElementType superType : superExtendedTypes) {
+											for (IExtendedHintedElementType superType : superExtendedTypes) {
 												// only refuse if one element refuses the request
-												if(!approveMoveRequest(superType, (SetRequest)request)) {
+												if (!approveMoveRequest(superType, (SetRequest) request)) {
 													return false;
 												}
 											}
@@ -108,27 +108,27 @@ public class ExtendedTypesOwnerAdvice extends AbstractEditHelperAdvice {
 					}
 				}
 			}
-		} else if(request instanceof MoveRequest) {
+		} else if (request instanceof MoveRequest) {
 			// check the feature to set is a containment feature and element to move is an extended element type
-			Map<EObject, EReference> objectsToMove = ((MoveRequest)request).getElementsToMove();
-			if(objectsToMove == null || objectsToMove.isEmpty()) {
+			Map<EObject, EReference> objectsToMove = ((MoveRequest) request).getElementsToMove();
+			if (objectsToMove == null || objectsToMove.isEmpty()) {
 				return super.approveRequest(request);
 			}
-			for(Entry<EObject, EReference> movedElement : objectsToMove.entrySet()) {
+			for (Entry<EObject, EReference> movedElement : objectsToMove.entrySet()) {
 				// do not compute with reference, this can be null. This could be interesting to check...
 				IElementType[] types = ElementTypeRegistry.getInstance().getAllTypesMatching(movedElement.getKey(), request.getClientContext());
-				for(IElementType type : types) {
-					if(type instanceof IExtendedHintedElementType) {
-						if(!approveMoveRequest((IExtendedHintedElementType)type, movedElement.getKey(), (MoveRequest)request)) {
+				for (IElementType type : types) {
+					if (type instanceof IExtendedHintedElementType) {
+						if (!approveMoveRequest((IExtendedHintedElementType) type, movedElement.getKey(), (MoveRequest) request)) {
 							return false;
 						}
-						List<IExtendedHintedElementType> superExtendedTypes = getAllSuperExtendedTypes((IExtendedHintedElementType)type);
-						if(superExtendedTypes == null || superExtendedTypes.size() == 0) {
+						List<IExtendedHintedElementType> superExtendedTypes = getAllSuperExtendedTypes((IExtendedHintedElementType) type);
+						if (superExtendedTypes == null || superExtendedTypes.size() == 0) {
 							// nothing here
 						} else {
-							for(IExtendedHintedElementType superType : superExtendedTypes) {
+							for (IExtendedHintedElementType superType : superExtendedTypes) {
 								// only refuse if one element refuses the request
-								if(!approveMoveRequest(superType, movedElement.getKey(), (MoveRequest)request)) {
+								if (!approveMoveRequest(superType, movedElement.getKey(), (MoveRequest) request)) {
 									return false;
 								}
 							}
@@ -150,28 +150,28 @@ public class ExtendedTypesOwnerAdvice extends AbstractEditHelperAdvice {
 		IContainerDescriptor containerDescriptor = typeToCreate.getEContainerDescriptor();
 		EObject newContainer = request.getContainer();
 		// check it matches the container descriptor for the element type
-		if(containerDescriptor != null && newContainer != null) {
-			if(containerDescriptor.getContainmentFeatures() != null && containerDescriptor.getContainmentFeatures().length > 0) {
+		if (containerDescriptor != null && newContainer != null) {
+			if (containerDescriptor.getContainmentFeatures() != null && containerDescriptor.getContainmentFeatures().length > 0) {
 				// check containment feature
 				List<EReference> references = Arrays.asList(containerDescriptor.getContainmentFeatures());
-				if(!(references.contains(request.getContainmentFeature()))) {
+				if (!(references.contains(request.getContainmentFeature()))) {
 					return false;
 				}
 			}
 			IElementMatcher containerMatcher = containerDescriptor.getMatcher();
-			if(containerMatcher != null) {
-				if(!containerMatcher.matches(newContainer)) {
+			if (containerMatcher != null) {
+				if (!containerMatcher.matches(newContainer)) {
 					return false;
 				}
 			}
 		}
-		
-		// check that the element can be created. Delegates to the created element type if it can be created or not (rather than being based on the container, as usual on GMF element type framework). 
+
+		// check that the element can be created. Delegates to the created element type if it can be created or not (rather than being based on the container, as usual on GMF element type framework).
 		ICreationElementValidator creationValidator = typeToCreate.getCreationElementValidator();
-		if(creationValidator!=null) {
+		if (creationValidator != null) {
 			return creationValidator.canCreate(request);
 		}
-		
+
 		return true;
 	}
 
@@ -179,18 +179,18 @@ public class ExtendedTypesOwnerAdvice extends AbstractEditHelperAdvice {
 		IContainerDescriptor containerDescriptor = typeToMove.getEContainerDescriptor();
 		EObject newContainer = request.getElementToEdit();
 		// check it matches the container descriptor for the element type
-		if(containerDescriptor == null || newContainer == null) {
+		if (containerDescriptor == null || newContainer == null) {
 			return true;
 		}
-		if(containerDescriptor.getContainmentFeatures() != null && containerDescriptor.getContainmentFeatures().length > 0) {
+		if (containerDescriptor.getContainmentFeatures() != null && containerDescriptor.getContainmentFeatures().length > 0) {
 			// check containment feature
 			List<EReference> references = Arrays.asList(containerDescriptor.getContainmentFeatures());
-			if(!(references.contains(request.getFeature()))) {
+			if (!(references.contains(request.getFeature()))) {
 				return false;
 			}
 		}
 		IElementMatcher containerMatcher = containerDescriptor.getMatcher();
-		if(containerMatcher != null) {
+		if (containerMatcher != null) {
 			return containerMatcher.matches(newContainer);
 		}
 		// check container is matching the matcher of the container descriptor for the new type
@@ -201,18 +201,18 @@ public class ExtendedTypesOwnerAdvice extends AbstractEditHelperAdvice {
 		IContainerDescriptor containerDescriptor = typeToMove.getEContainerDescriptor();
 		EObject newContainer = request.getTargetContainer();
 		// check it matches the container descriptor for the element type
-		if(containerDescriptor == null || newContainer == null) {
+		if (containerDescriptor == null || newContainer == null) {
 			return true;
 		}
-		if(containerDescriptor.getContainmentFeatures() != null && containerDescriptor.getContainmentFeatures().length > 0) {
+		if (containerDescriptor.getContainmentFeatures() != null && containerDescriptor.getContainmentFeatures().length > 0) {
 			// check containment feature
 			List<EReference> references = Arrays.asList(containerDescriptor.getContainmentFeatures());
-			if(!(references.contains(request.getTargetFeature(objectToMove)))) {
+			if (!(references.contains(request.getTargetFeature(objectToMove)))) {
 				return false;
 			}
 		}
 		IElementMatcher containerMatcher = containerDescriptor.getMatcher();
-		if(containerMatcher != null) {
+		if (containerMatcher != null) {
 			return containerMatcher.matches(newContainer);
 		}
 		// check container is matching the matcher of the container descriptor for the new type
@@ -221,14 +221,14 @@ public class ExtendedTypesOwnerAdvice extends AbstractEditHelperAdvice {
 
 	public List<IExtendedHintedElementType> getAllSuperExtendedTypes(IExtendedHintedElementType type) {
 		IElementType[] superTypes = type.getAllSuperTypes();
-		if(superTypes.length == 0) {
+		if (superTypes.length == 0) {
 			return Collections.emptyList();
 		}
 		List<IExtendedHintedElementType> superExtendedTypes = new ArrayList<IExtendedHintedElementType>();
 		// get the reverse order (the extended element types are the closest types
-		for(int i = superTypes.length - 1; i >= 0; i--) {
-			if(superTypes[i] instanceof IExtendedHintedElementType) {
-				superExtendedTypes.add((IExtendedHintedElementType)superTypes[i]);
+		for (int i = superTypes.length - 1; i >= 0; i--) {
+			if (superTypes[i] instanceof IExtendedHintedElementType) {
+				superExtendedTypes.add((IExtendedHintedElementType) superTypes[i]);
 			} /*
 			 * else { // optimization: once we are in the hierarchy of "standard" types, we should not go into this hierarchy
 			 * return superExtendedTypes;

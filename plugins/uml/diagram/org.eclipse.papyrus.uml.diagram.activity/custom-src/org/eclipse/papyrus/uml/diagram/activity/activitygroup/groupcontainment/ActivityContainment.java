@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Node descriptor for an activity
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class ActivityContainment extends AbstractContainerNodeDescriptor {
 
@@ -55,7 +55,7 @@ public class ActivityContainment extends AbstractContainerNodeDescriptor {
 	 */
 	@Override
 	public List<EReference> getChildrenReferences() {
-		if(parentReferences == null) {
+		if (parentReferences == null) {
 			parentReferences = new ArrayList<EReference>();
 			parentReferences.add(UMLPackage.Literals.ACTIVITY__OWNED_NODE);
 			parentReferences.add(UMLPackage.Literals.ACTIVITY__OWNED_GROUP);
@@ -80,9 +80,10 @@ public class ActivityContainment extends AbstractContainerNodeDescriptor {
 	 * org.eclipse.papyrus.uml.diagram.activity.activitygroup.AbstractContainerNodeDescriptor#getCompartmentPartFromView(org.eclipse.gmf.runtime.diagram
 	 * .ui.editparts.IGraphicalEditPart)
 	 */
+	@Override
 	public IGraphicalEditPart getCompartmentPartFromView(IGraphicalEditPart editpart) {
 		String hint = "" + ActivityActivityContentCompartmentEditPart.VISUAL_ID;
-		return ((GraphicalEditPart)editpart).getChildBySemanticHintOnPrimaryView(hint);
+		return ((GraphicalEditPart) editpart).getChildBySemanticHintOnPrimaryView(hint);
 	}
 
 	/*
@@ -90,6 +91,7 @@ public class ActivityContainment extends AbstractContainerNodeDescriptor {
 	 * 
 	 * @see org.eclipse.papyrus.uml.diagram.activity.activitygroup.IContainerNodeDescriptor#getGroupPriority()
 	 */
+	@Override
 	public int getGroupPriority() {
 		return IGroupPriority.ACTIVITY_PRIORITY;
 	}

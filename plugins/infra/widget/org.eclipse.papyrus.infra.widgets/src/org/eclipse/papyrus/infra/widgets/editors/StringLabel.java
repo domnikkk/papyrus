@@ -39,9 +39,9 @@ public class StringLabel extends AbstractValueEditor implements IChangeListener 
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The Composite widget in which this editor is created
+	 *            The Composite widget in which this editor is created
 	 * @param style
-	 *        The style to be applied to this editor's CLabel
+	 *            The style to be applied to this editor's CLabel
 	 */
 	public StringLabel(final Composite parent, final int style) {
 		super(parent, style);
@@ -63,22 +63,22 @@ public class StringLabel extends AbstractValueEditor implements IChangeListener 
 	 * String
 	 *
 	 * @param labelProvider
-	 *        The Label provider used to display the current value
+	 *            The Label provider used to display the current value
 	 */
 	public void setLabelProvider(final ILabelProvider labelProvider) {
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			return;
 		}
 
 		this.labelProvider = labelProvider;
-		if(this.binding != null) {
+		if (this.binding != null) {
 			this.binding.updateModelToTarget();
 		}
 	}
 
 	@Override
 	public void doBinding() {
-		//We don't do a real databinding here
+		// We don't do a real databinding here
 		this.modelProperty.addChangeListener(this);
 		valueLabel.addDisposeListener(this);
 		updateLabel();
@@ -88,7 +88,7 @@ public class StringLabel extends AbstractValueEditor implements IChangeListener 
 	 * Updates the CLabel's display
 	 */
 	protected void updateLabel() {
-		if(valueLabel.isDisposed()) {
+		if (valueLabel.isDisposed()) {
 			Activator.log.warn("Widget is disposed"); //$NON-NLS-1$
 			return;
 		}
@@ -104,14 +104,14 @@ public class StringLabel extends AbstractValueEditor implements IChangeListener 
 
 	@Override
 	public Object getValue() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			return modelProperty.getValue();
 		}
 		return value;
 	}
 
 	public void setValue(Object value) {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.setValue(value);
 		}
 		this.value = value;
@@ -126,7 +126,7 @@ public class StringLabel extends AbstractValueEditor implements IChangeListener 
 
 	@Override
 	public void setReadOnly(final boolean readOnly) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
@@ -147,7 +147,7 @@ public class StringLabel extends AbstractValueEditor implements IChangeListener 
 
 	@Override
 	public void dispose() {
-		if(this.modelProperty != null) {
+		if (this.modelProperty != null) {
 			this.modelProperty.removeChangeListener(this);
 		}
 		super.dispose();

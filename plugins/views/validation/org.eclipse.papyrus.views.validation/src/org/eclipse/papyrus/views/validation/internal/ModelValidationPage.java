@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -101,9 +101,9 @@ public class ModelValidationPage
 		this.settings = settings;
 
 		this.markers = ServiceUtils.getInstance().getService(
-			ValidationMarkersService.class, services);
+				ValidationMarkersService.class, services);
 		this.labelProviders = ServiceUtils.getInstance().getService(
-			LabelProviderService.class, services);
+				LabelProviderService.class, services);
 		this.modelSet = ServiceUtils.getInstance().getModelSet(services);
 	}
 
@@ -123,7 +123,7 @@ public class ModelValidationPage
 		tableParent.setLayout(layout);
 
 		table = new TableViewer(tableParent, SWT.BORDER | SWT.V_SCROLL
-			| SWT.H_SCROLL | SWT.FULL_SELECTION | SWT.MULTI);
+				| SWT.H_SCROLL | SWT.FULL_SELECTION | SWT.MULTI);
 		table.getTable().setHeaderVisible(true);
 		table.getTable().setLinesVisible(true);
 		table.setUseHashlookup(true);
@@ -131,7 +131,7 @@ public class ModelValidationPage
 		// the severity column has fixed width
 		TableViewerColumn severity = new TableViewerColumn(table, SWT.NONE);
 		layout.setColumnData(severity.getColumn(), new ColumnPixelData(24,
-			false));
+				false));
 		severity.getColumn().setResizable(false);
 		labels(severity, new SeverityLabelProvider());
 
@@ -173,7 +173,7 @@ public class ModelValidationPage
 		result.getColumn().setText(title);
 
 		TableColumnLayout layout = (TableColumnLayout) table.getControl()
-			.getParent().getLayout();
+				.getParent().getLayout();
 
 		final int columnIndex = table.getTable().indexOf(result.getColumn());
 
@@ -189,7 +189,7 @@ public class ModelValidationPage
 		ColumnLayoutData layoutData;
 		layoutData = new ColumnPixelData(width, true);
 		layout.setColumnData(result.getColumn(), layoutData);
-		
+
 		result.getColumn().addListener(SWT.Resize, new Listener() {
 
 			public void handleEvent(Event event) {
@@ -236,8 +236,8 @@ public class ModelValidationPage
 		if (settings.getSortColumn() == columnIndex) {
 			int direction = settings.getSortDirection();
 			viewer.setComparator(direction == SWT.UP
-				? sorter
-				: invert(sorter));
+					? sorter
+					: invert(sorter));
 			viewer.getTable().setSortColumn(col.getColumn());
 			viewer.getTable().setSortDirection(direction);
 		}
@@ -259,12 +259,12 @@ public class ModelValidationPage
 		table.getControl().setMenu(menu);
 
 		getSite().registerContextMenu(ModelValidationView.VIEW_ID, contextMenu,
-			table);
+				table);
 	}
 
 	protected void createActions() {
 		final ISelectionProvider selectionProvider = getSite()
-			.getSelectionProvider();
+				.getSelectionProvider();
 
 		gotoMarkerAction = new GotoMarkerAction(getSite());
 		selectionProvider.addSelectionChangedListener(gotoMarkerAction);
@@ -276,11 +276,11 @@ public class ModelValidationPage
 
 		final IActionBars actionBars = getSite().getActionBars();
 		actionBars.setGlobalActionHandler(ActionFactory.COPY.getId(),
-			copyMarkerAction);
+				copyMarkerAction);
 		actionBars.setGlobalActionHandler(ActionFactory.DELETE.getId(),
-			deleteMarkerAction);
+				deleteMarkerAction);
 		actionBars.setGlobalActionHandler(ActionFactory.SELECT_ALL.getId(),
-			selectAllAction);
+				selectAllAction);
 	}
 
 	protected void fillContextMenu(IMenuManager menu) {
@@ -324,7 +324,7 @@ public class ModelValidationPage
 			// apply to the columns
 			for (int i = startIndex; i < columns.length; i++) {
 				layout.setColumnData(columns[i],
-					new ColumnPixelData(settings.getColumnWidth(i)));
+						new ColumnPixelData(settings.getColumnWidth(i)));
 			}
 
 			// discover the new layout data
@@ -332,7 +332,7 @@ public class ModelValidationPage
 		} else {
 			// update the settings for next time
 			settings.setColumnWidth(index, table.getTable().getColumn(index)
-				.getWidth());
+					.getWidth());
 		}
 	}
 }

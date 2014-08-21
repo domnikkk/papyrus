@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,9 +51,9 @@ import org.eclipse.swt.widgets.Shell;
 /**
  * This class provides a Dialog with 2 columns. In the first column, we have a TreeViewer and in the other one, you have
  * a check-box with (empty) text (check-box label provider)
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColumnViewerSelectionDialog {
 
@@ -64,23 +64,23 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 	protected final static String ICON_UNCHECKED = "/icons/incomplete_tsk.gif"; //$NON-NLS-1$
 
 	/** all the title representation */
-	//protected List<CompartmentTitleRepresentation> titleRepresentations;
+	// protected List<CompartmentTitleRepresentation> titleRepresentations;
 
 	/** the selected title representation */
 	// protected List<CompartmentTitleRepresentation> selectedTitles;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        the shell parent
+	 *            the shell parent
 	 * @param labelProvider
-	 *        the label provider (used only to get the name of the root elements
+	 *            the label provider (used only to get the name of the root elements
 	 * @param contentProvider
-	 *        the content provider
+	 *            the content provider
 	 * @param diagramEP
-	 *        the current diagram EditPart
+	 *            the current diagram EditPart
 	 */
 	public ShowHideCompartmentSelectionDialog(Shell parent, ILabelProvider labelProvider, ITreeContentProvider contentProvider) {
 		super(parent, labelProvider, contentProvider, SWT.CENTER | SWT.BORDER | SWT.FULL_SELECTION, 2);
@@ -99,30 +99,30 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 		setResult(returnedValues);
 	}
 
-	//	/**
-	//     * @see org.eclipse.papyrus.diagram.common.dialogs.CheckedTreeSelectionDialog#setInput()
-	//     */
-	//	@Override
-	//    public void setInput(Object input) {
-	//		super.setInput(input);
-	//    }
+	// /**
+	// * @see org.eclipse.papyrus.diagram.common.dialogs.CheckedTreeSelectionDialog#setInput()
+	// */
+	// @Override
+	// public void setInput(Object input) {
+	// super.setInput(input);
+	// }
 
-	//	/**
-	//	 * Setter for {@link #titleRepresentations}
-	//	 * 
-	//	 * @param rep
-	//	 *        the list of the title representation
-	//	 */
-	//	public void setTitleRepresentation(List<CompartmentTitleRepresentation> rep) {
-	//		this.titleRepresentations = rep;
-	//	}
+	// /**
+	// * Setter for {@link #titleRepresentations}
+	// *
+	// * @param rep
+	// * the list of the title representation
+	// */
+	// public void setTitleRepresentation(List<CompartmentTitleRepresentation> rep) {
+	// this.titleRepresentations = rep;
+	// }
 
 	/**
 	 * Adds the propagation button (in addition to the buttons added by the super class) to the dialog.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.diagram.common.dialogs.CustomCheckedTreeSelectionDialog.createSelectionButtons
 	 * @param composite
-	 *        the parent composite
+	 *            the parent composite
 	 * @return Composite the composite the buttons were created in.
 	 */
 	@Override
@@ -137,44 +137,44 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.SelectionDialog#setInitialElementSelections(java.util.List)
-	 * 
+	 *
 	 * @param selectedElements
 	 */
 	@SuppressWarnings("rawtypes")
-	//remove the warning on the parameter (List instead of List<?>
+	// remove the warning on the parameter (List instead of List<?>
 	@Override
 	public void setInitialElementSelections(List selectedElements) {
 		super.setInitialElementSelections(selectedElements);
 		// this.selectedTitles = new ArrayList<CompartmentTitleRepresentation>();
-		for(Object current : selectedElements) {
-			//			if(current instanceof CompartmentTitleRepresentation) {
-			//				this.selectedTitles.add((CompartmentTitleRepresentation)current);
-			//			}
+		for (Object current : selectedElements) {
+			// if(current instanceof CompartmentTitleRepresentation) {
+			// this.selectedTitles.add((CompartmentTitleRepresentation)current);
+			// }
 		}
 	}
 
 	/**
 	 * Initialize the columns Width, the columns Titles and the LabelProvider for the viewer.
-	 * 
+	 *
 	 */
 	protected void init() {
-		setColumnTitles(new String[]{ "Compartments To Display", "Display Compartment Title" });
-		setColumnWidths(new int[]{ 350, 180 });
-		setColumnCellLabelProvider(new CellLabelProvider[]{ new CompartmentNameProvider(), new TitleVisibilityLabelProvider() });
+		setColumnTitles(new String[] { "Compartments To Display", "Display Compartment Title" });
+		setColumnWidths(new int[] { 350, 180 });
+		setColumnCellLabelProvider(new CellLabelProvider[] { new CompartmentNameProvider(), new TitleVisibilityLabelProvider() });
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.diagram.common.dialogs.AbstractCheckedTreeColumnViewerSelectionDialog#getEditingSupport(int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
 	@Override
 	protected EditingSupport getEditingSupport(int columnIndex) {
-		if(columnIndex == 1) {
+		if (columnIndex == 1) {
 			return new NameVisibilityEditingSupport(getTreeViewer());
 		}
 		return null;
@@ -187,9 +187,9 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param viewer
-		 *        the viewer for which editing support is provided
+		 *            the viewer for which editing support is provided
 		 */
 		public NameVisibilityEditingSupport(ColumnViewer viewer) {
 			super(viewer);
@@ -200,7 +200,7 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		protected CellEditor getCellEditor(Object element) {
-			if(element instanceof CompartmentEditPartRepresentation) {
+			if (element instanceof CompartmentEditPartRepresentation) {
 				CheckboxCellEditor editor = new CheckboxCellEditor();
 				editor.setValue(getValue(element));
 				return editor;
@@ -221,8 +221,8 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		protected Object getValue(Object element) {
-			if(element instanceof CompartmentEditPartRepresentation) {
-				return ((CompartmentEditPartRepresentation)element).isTitleVisible();
+			if (element instanceof CompartmentEditPartRepresentation) {
+				return ((CompartmentEditPartRepresentation) element).isTitleVisible();
 			}
 			return false;
 		}
@@ -232,14 +232,14 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		protected void setValue(Object element, Object value) {
-			if(value == null) {
+			if (value == null) {
 				return;
 			}
-			if(element instanceof CompartmentEditPartRepresentation) {
-				if(value.equals(true)) {
-					((CompartmentEditPartRepresentation)element).setTitleVisible(true);
+			if (element instanceof CompartmentEditPartRepresentation) {
+				if (value.equals(true)) {
+					((CompartmentEditPartRepresentation) element).setTitleVisible(true);
 				} else {
-					((CompartmentEditPartRepresentation)element).setTitleVisible(false);
+					((CompartmentEditPartRepresentation) element).setTitleVisible(false);
 				}
 			}
 			getTreeViewer().refresh();
@@ -249,7 +249,7 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 
 	/**
 	 * This provider is used by the 2nd column
-	 * 
+	 *
 	 */
 	protected class CompartmentNameProvider extends ColumnLabelProvider {
 
@@ -278,9 +278,9 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.jface.viewers.CellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
-		 * 
+		 *
 		 * @param cell
 		 */
 		@Override
@@ -311,8 +311,8 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 		 */
 		@Override
 		public Image getImage(Object element) {
-			if(element instanceof CompartmentEditPartRepresentation) {
-				if(((CompartmentEditPartRepresentation)element).isTitleVisible()) {
+			if (element instanceof CompartmentEditPartRepresentation) {
+				if (((CompartmentEditPartRepresentation) element).isTitleVisible()) {
 					return Activator.getPluginIconImage(Activator.ID, ICON_CHECKED);
 				}
 				return Activator.getPluginIconImage(Activator.ID, ICON_UNCHECKED);
@@ -332,15 +332,15 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 		@Override
 		public void widgetSelected(SelectionEvent e) {
 			ISelection sel = getTreeViewer().getSelection();
-			if(sel instanceof ITreeSelection) {
-				TreePath paths[] = ((ITreeSelection)sel).getPaths();
+			if (sel instanceof ITreeSelection) {
+				TreePath paths[] = ((ITreeSelection) sel).getPaths();
 				RootEditPartRepresentation selectedRootEPRep;
-				if(paths.length != 1) {
+				if (paths.length != 1) {
 					return;
 				}
 				Object objSelectedEP = paths[0].getFirstSegment();
-				if(objSelectedEP instanceof RootEditPartRepresentation) {
-					selectedRootEPRep = (RootEditPartRepresentation)objSelectedEP;
+				if (objSelectedEP instanceof RootEditPartRepresentation) {
+					selectedRootEPRep = (RootEditPartRepresentation) objSelectedEP;
 				} else {
 					return;
 				}
@@ -348,21 +348,21 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 
 				boolean changedTitle = false;
 				Object[] viewerElements = fContentProvider.getElements(fInput);
-				for(Object viewerElement : viewerElements) {
+				for (Object viewerElement : viewerElements) {
 					// not the element of that is currently selected
-					if(viewerElement != selectedRootEPRep) {
-						if(viewerElement instanceof RootEditPartRepresentation) {
-							RootEditPartRepresentation otherRootEPRep = (RootEditPartRepresentation)viewerElement;
+					if (viewerElement != selectedRootEPRep) {
+						if (viewerElement instanceof RootEditPartRepresentation) {
+							RootEditPartRepresentation otherRootEPRep = (RootEditPartRepresentation) viewerElement;
 							// verify identical eClass of underlying elements before copying selection
-							if(otherRootEPRep.getSemanticElement().eClass() == eClass) {
+							if (otherRootEPRep.getSemanticElement().eClass() == eClass) {
 								Iterator<EditPartRepresentation> selectedCompartmentIter = selectedRootEPRep.getPossibleElement().iterator();
-								for(EditPartRepresentation subElement : otherRootEPRep.getPossibleElement()) {
-									if(subElement instanceof CompartmentEditPartRepresentation) {
+								for (EditPartRepresentation subElement : otherRootEPRep.getPossibleElement()) {
+									if (subElement instanceof CompartmentEditPartRepresentation) {
 										Object selectedCompartment = selectedCompartmentIter.next();
-										if(selectedCompartment instanceof CompartmentEditPartRepresentation) {
-											CompartmentEditPartRepresentation selectedCEPR = (CompartmentEditPartRepresentation)selectedCompartment;
-											CompartmentEditPartRepresentation otherCEPR = (CompartmentEditPartRepresentation)subElement;
-											if(otherCEPR.isTitleVisible() != selectedCEPR.isTitleVisible()) {
+										if (selectedCompartment instanceof CompartmentEditPartRepresentation) {
+											CompartmentEditPartRepresentation selectedCEPR = (CompartmentEditPartRepresentation) selectedCompartment;
+											CompartmentEditPartRepresentation otherCEPR = (CompartmentEditPartRepresentation) subElement;
+											if (otherCEPR.isTitleVisible() != selectedCEPR.isTitleVisible()) {
 												otherCEPR.setTitleVisible(selectedCEPR.isTitleVisible());
 												changedTitle = true;
 											}
@@ -377,7 +377,7 @@ public class ShowHideCompartmentSelectionDialog extends AbstractCheckedTreeColum
 				}
 
 				updateOKStatus();
-				if(changedTitle) {
+				if (changedTitle) {
 					getTreeViewer().refresh();
 				}
 			}

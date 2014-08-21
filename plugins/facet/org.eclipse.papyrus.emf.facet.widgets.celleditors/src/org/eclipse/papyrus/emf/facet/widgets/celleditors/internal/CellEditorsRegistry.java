@@ -80,7 +80,7 @@ public class CellEditorsRegistry extends AbstractRegistry implements ICellEditor
 	 * Returns a cell editor wrapper for the given type, or <code>null</code> if none was found.
 	 * Custom cell editors override the default ones (from
 	 * "org.eclipse.papyrus.emf.facet.widgets.celleditors").
-	 * 
+	 *
 	 * @param type
 	 *            the type for which to get a cell editor wrapper
 	 * @param many
@@ -95,7 +95,7 @@ public class CellEditorsRegistry extends AbstractRegistry implements ICellEditor
 	 * Returns a cell editor to edit a single value of the given type, or <code>null</code> if none
 	 * was found. Custom cell editors override the default ones (from
 	 * "org.eclipse.papyrus.emf.facet.widgets.celleditors").
-	 * 
+	 *
 	 * @param type
 	 *            the type for which to get a cell editor
 	 * @return the cell editor or <code>null</code> if none was found for the given type
@@ -109,10 +109,9 @@ public class CellEditorsRegistry extends AbstractRegistry implements ICellEditor
 	}
 
 	/**
-	 * Returns a cell editor wrapper to edit a list of values of the given type, or
-	 * <code>null</code> if none was found. Custom cell editors override the default ones (from
+	 * Returns a cell editor wrapper to edit a list of values of the given type, or <code>null</code> if none was found. Custom cell editors override the default ones (from
 	 * "org.eclipse.papyrus.emf.facet.widgets.celleditors").
-	 * 
+	 *
 	 * @param type
 	 *            the type for which to get a cell editor
 	 * @return the cell editor wrapper or <code>null</code> if none was found for the given type
@@ -148,7 +147,7 @@ public class CellEditorsRegistry extends AbstractRegistry implements ICellEditor
 	/**
 	 * Returns a cell editor for the given type, or <code>null</code> if none was found. Custom cell
 	 * editors override the default ones (from "org.eclipse.papyrus.emf.facet.widgets.celleditors").
-	 * 
+	 *
 	 * @param type
 	 *            the type for which to get a cell editor
 	 * @param many
@@ -196,8 +195,7 @@ public class CellEditorsRegistry extends AbstractRegistry implements ICellEditor
 				for (ModelCellEditor cellEditor : cellEditors) {
 					// lower priority for
 					// org.eclipse.papyrus.emf.facet.widgets.celleditors.*
-					if (cellEditor.getBundleName().startsWith(
-							"org.eclipse.papyrus.emf.facet.widgets.celleditors")) { //$NON-NLS-1$
+					if (cellEditor.getBundleName().startsWith("org.eclipse.papyrus.emf.facet.widgets.celleditors")) { //$NON-NLS-1$
 						if (skippedDefault) {
 							Logger.logError(
 									"Several default cell editors are defined in EMF Facet for type: " //$NON-NLS-1$

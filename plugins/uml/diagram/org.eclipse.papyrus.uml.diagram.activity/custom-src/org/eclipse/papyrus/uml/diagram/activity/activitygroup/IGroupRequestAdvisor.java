@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,22 +23,22 @@ import com.google.common.collect.Multimap;
 
 /**
  * Represent an advisor of Group Request. Should be able to handle group request
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public interface IGroupRequestAdvisor {
 
 	/**
 	 * Remove the listener from the Group framework
-	 * 
+	 *
 	 * @param editpolicy
 	 */
 	public void removeListenner(IGroupNotifier editpolicy);
 
 	/**
 	 * Register into the group framework
-	 * 
+	 *
 	 * @param eObject
 	 * @param editpolicy
 	 */
@@ -46,7 +46,7 @@ public interface IGroupRequestAdvisor {
 
 	/**
 	 * Notify to the group framework a change (come from a Notifing Edit policy)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
@@ -54,7 +54,7 @@ public interface IGroupRequestAdvisor {
 
 	/**
 	 * Return all register edit policy
-	 * 
+	 *
 	 * @return
 	 */
 	public Multimap<EObject, IGroupNotifier> getListenerRegistry();

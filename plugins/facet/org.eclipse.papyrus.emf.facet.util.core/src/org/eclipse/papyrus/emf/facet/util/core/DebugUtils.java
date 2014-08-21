@@ -32,14 +32,14 @@ public final class DebugUtils {
 	private DebugUtils() {
 		// Must not be used
 	}
-	
+
 	public static void debug(final boolean condition) {
 		if (condition) {
 			String location = getCallerLocation(0);
 			System.out.println(location);
 		}
 	}
-	
+
 	public static void debug(final boolean condition, final String message) {
 		if (condition) {
 			String location = getCallerLocation(0);
@@ -50,6 +50,7 @@ public final class DebugUtils {
 
 	/**
 	 * This methods returns the qualified name of the calling method.
+	 * 
 	 * @param stackOffset
 	 * @return
 	 */
@@ -69,7 +70,7 @@ public final class DebugUtils {
 		final String debugOption = getDebugOption(plugin) + '/' + suboption;
 		return internalGetDebugStatus(plugin, debugOption);
 	}
-	
+
 	private static boolean internalGetDebugStatus(final Plugin plugin,
 			final String debugOption) {
 		final String debugOptionValue = Platform.getDebugOption(debugOption);
@@ -100,7 +101,7 @@ public final class DebugUtils {
 		String location = getCallerLocation(stackOffset);
 		System.out.println(location + ": " //$NON-NLS-1$
 				+ message);
-		
+
 	}
 
 }

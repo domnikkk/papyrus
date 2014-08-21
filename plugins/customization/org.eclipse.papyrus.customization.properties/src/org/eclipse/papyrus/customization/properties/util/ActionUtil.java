@@ -38,13 +38,13 @@ public class ActionUtil {
 	 * Objects that cannot be adapted remain as-is in the collection.
 	 *
 	 * @param selection
-	 *        The collection to adapt
+	 *            The collection to adapt
 	 * @return
 	 *         The adapted selection
 	 */
 	public static Collection<Object> getAdaptedSelection(Collection<? extends Object> selection) {
 		Collection<Object> newSelection = new LinkedList<Object>();
-		for(Object o : selection) {
+		for (Object o : selection) {
 			EObject semantic = EMFHelper.getEObject(o);
 			newSelection.add(semantic == null ? o : semantic);
 		}
@@ -60,17 +60,17 @@ public class ActionUtil {
 	 * Objects that cannot be adapted remain as-is in the selection.
 	 *
 	 * @param sourceSelection
-	 *        The selection to adapt
+	 *            The selection to adapt
 	 * @return
 	 *         The adapted selection
 	 */
 	public static ISelection getAdaptedSelection(ISelection sourceSelection) {
-		if(sourceSelection instanceof StructuredSelection) {
-			StructuredSelection currentSelection = (StructuredSelection)sourceSelection;
+		if (sourceSelection instanceof StructuredSelection) {
+			StructuredSelection currentSelection = (StructuredSelection) sourceSelection;
 			List<Object> newSelection = new LinkedList<Object>();
 
 			Iterator<?> it = currentSelection.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Object object = it.next();
 				EObject eObject = EMFHelper.getEObject(object);
 				newSelection.add(eObject == null ? object : eObject);

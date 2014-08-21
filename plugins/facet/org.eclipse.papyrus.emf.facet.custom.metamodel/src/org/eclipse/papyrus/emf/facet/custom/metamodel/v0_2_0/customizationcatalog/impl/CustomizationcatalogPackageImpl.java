@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *   	Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.impl;
 
@@ -26,12 +26,14 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class CustomizationcatalogPackageImpl extends EPackageImpl implements CustomizationcatalogPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass customizationCatalogEClass = null;
@@ -39,20 +41,17 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass customizationPropertiesCatalogEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.customizationcatalog.CustomizationcatalogPackage#eNS_URI
 	 * @see #init()
@@ -65,27 +64,31 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link CustomizationcatalogPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link CustomizationcatalogPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static CustomizationcatalogPackage init() {
-		if (isInited) return (CustomizationcatalogPackage)EPackage.Registry.INSTANCE.getEPackage(CustomizationcatalogPackage.eNS_URI);
+		if (isInited) {
+			return (CustomizationcatalogPackage) EPackage.Registry.INSTANCE.getEPackage(CustomizationcatalogPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		CustomizationcatalogPackageImpl theCustomizationcatalogPackage = (CustomizationcatalogPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CustomizationcatalogPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new CustomizationcatalogPackageImpl());
+		CustomizationcatalogPackageImpl theCustomizationcatalogPackage = (CustomizationcatalogPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof CustomizationcatalogPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new CustomizationcatalogPackageImpl());
 
 		isInited = true;
 
@@ -101,7 +104,7 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 		// Mark meta-data to indicate it can't be changed
 		theCustomizationcatalogPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CustomizationcatalogPackage.eNS_URI, theCustomizationcatalogPackage);
 		return theCustomizationcatalogPackage;
@@ -110,6 +113,7 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getCustomizationCatalog() {
@@ -119,6 +123,7 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getCustomizationPropertiesCatalog() {
@@ -128,28 +133,33 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CustomizationcatalogFactory getCustomizationcatalogFactory() {
-		return (CustomizationcatalogFactory)getEFactoryInstance();
+		return (CustomizationcatalogFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -161,19 +171,23 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -182,7 +196,7 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		CatalogPackage theCatalogPackage = (CatalogPackage)EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
+		CatalogPackage theCatalogPackage = (CatalogPackage) EPackage.Registry.INSTANCE.getEPackage(CatalogPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -201,4 +215,4 @@ public class CustomizationcatalogPackageImpl extends EPackageImpl implements Cus
 		createResource(eNS_URI);
 	}
 
-} //CustomizationcatalogPackageImpl
+} // CustomizationcatalogPackageImpl

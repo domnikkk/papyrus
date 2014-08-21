@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Gabriel Pascual	(ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.properties.provider;
 
@@ -24,7 +24,7 @@ public class CSSThemeLabelProvider extends LabelProvider {
 	@Override
 	public String getText(Object value) {
 		Theme theme = getTheme(value);
-		if(theme != null) {
+		if (theme != null) {
 			return theme.getLabel();
 		}
 		return super.getText(value);
@@ -33,7 +33,7 @@ public class CSSThemeLabelProvider extends LabelProvider {
 	@Override
 	public Image getImage(Object value) {
 		Theme theme = getTheme(value);
-		if(theme != null) {
+		if (theme != null) {
 			Image icon = ThemeManager.instance.getThemeIcon(theme);
 			return icon;
 		}
@@ -41,8 +41,8 @@ public class CSSThemeLabelProvider extends LabelProvider {
 	}
 
 	protected Theme getTheme(Object value) {
-		if(value instanceof String) {
-			String themeId = (String)value;
+		if (value instanceof String) {
+			String themeId = (String) value;
 			Theme theme = ThemeManager.instance.getTheme(themeId);
 			return theme;
 		}

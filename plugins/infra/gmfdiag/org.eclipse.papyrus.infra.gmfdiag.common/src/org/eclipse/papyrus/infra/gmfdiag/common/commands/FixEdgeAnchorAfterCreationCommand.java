@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -42,15 +42,15 @@ import org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants;
 
 
 /**
- * 
+ *
  * This command is used to fix the edge anchor just after the creation of the edge, in order to get anchor on the sides of the source
  * and target figure and not somewhere inside the figure.
- * 
+ *
  * This fix allows to avoid to get source (or target) location moving instead you are moving the target (or source) anchor
- * 
+ *
  * see bug 430702: [Diagram] Moving source of a link moves the target too.
  */
- 
+
 public class FixEdgeAnchorAfterCreationCommand extends AbstractTransactionalCommand {
 
 	private static final String RECT_RIGHT_MIDDLE_ANCHOR = "(1.0,0.5)";
@@ -63,15 +63,15 @@ public class FixEdgeAnchorAfterCreationCommand extends AbstractTransactionalComm
 	protected CreateConnectionViewRequest request;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param request
-	 *        the creation request
+	 *            the creation request
 	 * @param containerEP
-	 *        the diagram edit part
+	 *            the diagram edit part
 	 */
 	public FixEdgeAnchorAfterCreationCommand(final TransactionalEditingDomain editingDomain, final CreateConnectionViewRequest request) {
 		super(editingDomain, "Fix Edge Anchor after creation", null); //$NON-NLS-1$
@@ -81,22 +81,23 @@ public class FixEdgeAnchorAfterCreationCommand extends AbstractTransactionalComm
 
 	/**
 	 * Executes a fix anchor command for the created edge
-	 * 
+	 *
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(final IProgressMonitor progressMonitor, final IAdaptable info) throws ExecutionException {
 		final ConnectionViewDescriptor connectionViewDescriptor = this.request.getConnectionViewDescriptor();
-		final Edge createdEdge = (Edge)connectionViewDescriptor.getAdapter(View.class);
-		final IAdaptable adaptable = (CreateElementRequestAdapter)connectionViewDescriptor.getElementAdapter();
-		final CreateRelationshipRequest createRelationShipRequest = (CreateRelationshipRequest)adaptable.getAdapter(CreateRelationshipRequest.class);
+		final Edge createdEdge = (Edge) connectionViewDescriptor.getAdapter(View.class);
+		final IAdaptable adaptable = connectionViewDescriptor.getElementAdapter();
+		final CreateRelationshipRequest createRelationShipRequest = (CreateRelationshipRequest) adaptable.getAdapter(CreateRelationshipRequest.class);
 		final Map<?, ?> requestParameters = createRelationShipRequest.getParameters();
-		final IFigure sourceFigure = (IFigure)requestParameters.get(RequestParameterConstants.EDGE_SOURCE_FIGURE);
-		final IFigure targetFigure = (IFigure)requestParameters.get(RequestParameterConstants.EDGE_TARGET_FIGURE);
-		final Point sourcePoint = (Point)requestParameters.get(RequestParameterConstants.EDGE_SOURCE_POINT);
-		final Point targetPoint = (Point)requestParameters.get(RequestParameterConstants.EDGE_TARGET_POINT);
-		if(createdEdge != null && sourceFigure instanceof IAnchorableFigure && targetFigure instanceof IAnchorableFigure && sourcePoint!=null && targetPoint!=null) {
+		final IFigure sourceFigure = (IFigure) requestParameters.get(RequestParameterConstants.EDGE_SOURCE_FIGURE);
+		final IFigure targetFigure = (IFigure) requestParameters.get(RequestParameterConstants.EDGE_TARGET_FIGURE);
+		final Point sourcePoint = (Point) requestParameters.get(RequestParameterConstants.EDGE_SOURCE_POINT);
+		final Point targetPoint = (Point) requestParameters.get(RequestParameterConstants.EDGE_TARGET_POINT);
+		if (createdEdge != null && sourceFigure instanceof IAnchorableFigure && targetFigure instanceof IAnchorableFigure && sourcePoint != null && targetPoint != null) {
 			final String sourceTerminal;
 			final String targetTerminal;
-			if(sourceFigure == targetFigure) {
+			if (sourceFigure == targetFigure) {
 				sourceTerminal = RECT_RIGHT_MIDDLE_ANCHOR.toString();
 				targetTerminal = RECT_BOTTOM_MIDDLE_ANCHOR.toString();
 			} else {
@@ -110,21 +111,21 @@ public class FixEdgeAnchorAfterCreationCommand extends AbstractTransactionalComm
 				final Point realSourcePoint = RectangleUtils.getIntersectionPoint(sourceBds, segment);
 				final Point realTargetPoint = RectangleUtils.getIntersectionPoint(targetBds, segment);
 
-				//get source anchor terminal
-				final BaseSlidableAnchor anchorSource = (BaseSlidableAnchor)((IAnchorableFigure)sourceFigure).getSourceConnectionAnchorAt(realSourcePoint);
+				// get source anchor terminal
+				final BaseSlidableAnchor anchorSource = (BaseSlidableAnchor) ((IAnchorableFigure) sourceFigure).getSourceConnectionAnchorAt(realSourcePoint);
 				sourceTerminal = anchorSource.getTerminal();
 
-				//get target anchor terminal
-				final BaseSlidableAnchor anchorTarget = (BaseSlidableAnchor)((IAnchorableFigure)targetFigure).getTargetConnectionAnchorAt(realTargetPoint);
+				// get target anchor terminal
+				final BaseSlidableAnchor anchorTarget = (BaseSlidableAnchor) ((IAnchorableFigure) targetFigure).getTargetConnectionAnchorAt(realTargetPoint);
 				targetTerminal = anchorTarget.getTerminal();
-				//create and set the source anchor
+				// create and set the source anchor
 			}
-			//TODO : it is possible that the result will be not correct when the preferred routing for the link is not the oblique router
+			// TODO : it is possible that the result will be not correct when the preferred routing for the link is not the oblique router
 			final IdentityAnchor sourceAnchor = NotationFactory.eINSTANCE.createIdentityAnchor();
 			sourceAnchor.setId(sourceTerminal);
 			createdEdge.setSourceAnchor(sourceAnchor);
 
-			//create an set the target anchor
+			// create an set the target anchor
 			final IdentityAnchor targetAnchor = NotationFactory.eINSTANCE.createIdentityAnchor();
 			targetAnchor.setId(targetTerminal);
 			createdEdge.setTargetAnchor(targetAnchor);
@@ -135,10 +136,11 @@ public class FixEdgeAnchorAfterCreationCommand extends AbstractTransactionalComm
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#cleanup()
-	 * 
+	 *
 	 */
+	@Override
 	protected void cleanup() {
 		this.request = null;
 		super.cleanup();
@@ -146,9 +148,9 @@ public class FixEdgeAnchorAfterCreationCommand extends AbstractTransactionalComm
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -35,16 +35,17 @@ public class CustomLinkMappingHelper implements ILinkMappingHelper {
 	public Collection<?> getSource(Element link) {
 		CommonSourceUMLSwitch umlSwitch = new CommonSourceUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseConnector(org.eclipse.uml2.uml.Connector object) {
 
 				java.util.Collection<?> ends = Collections.emptySet();
 
 				// Support for binary Connector only in this diagram.
 
-				if(object.getEnds().size() == 2) {
+				if (object.getEnds().size() == 2) {
 
 					ConnectorEnd semanticSource = object.getEnds().get(0);
-					ends = Arrays.asList(new EObject[]{ semanticSource });
+					ends = Arrays.asList(new EObject[] { semanticSource });
 
 				} else {
 					// TODO: log warning here - can only drop binary associations in this diagram...
@@ -63,16 +64,17 @@ public class CustomLinkMappingHelper implements ILinkMappingHelper {
 	public Collection<?> getTarget(Element link) {
 		CommonTargetUMLSwitch umlSwitch = new CommonTargetUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseConnector(org.eclipse.uml2.uml.Connector object) {
 
 				java.util.Collection<?> ends = Collections.emptySet();
 
-				// Support for binary Connector only in this diagram.			
+				// Support for binary Connector only in this diagram.
 
-				if(object.getEnds().size() == 2) {
+				if (object.getEnds().size() == 2) {
 
 					ConnectorEnd semanticTarget = object.getEnds().get(1);
-					ends = Arrays.asList(new EObject[]{ semanticTarget });
+					ends = Arrays.asList(new EObject[] { semanticTarget });
 
 				} else {
 					// TODO: log warning here - can only drop binary associations in this diagram...

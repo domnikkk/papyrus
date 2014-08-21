@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -30,7 +30,7 @@ public class EnumerationLiteralPreferencePage extends BlockDefinitionDiagramNode
 
 	/** Default preferences initializer */
 	public static void initDefaults(IPreferenceStore store) {
-		// Start of user code custom default initializations		
+		// Start of user code custom default initializations
 		// End of user code
 	}
 

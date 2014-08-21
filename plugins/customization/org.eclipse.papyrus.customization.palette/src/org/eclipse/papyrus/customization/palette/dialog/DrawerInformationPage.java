@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.customization.palette.dialog;
 
 import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.papyrus.uml.diagram.common.Activator;
 import org.eclipse.papyrus.uml.diagram.common.Messages;
@@ -69,9 +70,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates a new wizard page with the given name, title, and image.
-	 * 
+	 *
 	 * @param part
-	 *        the editor part in which the wizard was created
+	 *            the editor part in which the wizard was created
 	 */
 	public DrawerInformationPage() {
 		super(Messages.Wizard_Drawer_Page_Name, Messages.Wizard_Drawer_Page_Title, Activator.getImageDescriptor(WIZARD_ICON));
@@ -80,9 +81,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates a new wizard page with the given name, title, and image.
-	 * 
+	 *
 	 * @param part
-	 *        the editor part in which the wizard was created
+	 *            the editor part in which the wizard was created
 	 */
 	public DrawerInformationPage(PaletteLocalDrawerProxy drawerProxy) {
 		super(Messages.Wizard_Drawer_Page_Name, Messages.Wizard_Drawer_Page_Title, Activator.getImageDescriptor(WIZARD_ICON));
@@ -134,7 +135,7 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the current value of palette name
-	 * 
+	 *
 	 * @return the current value of palette name
 	 */
 	public String getDrawerName() {
@@ -143,7 +144,7 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the current value of palette ID
-	 * 
+	 *
 	 * @return the current value of palette ID
 	 */
 	public String getDrawerID() {
@@ -152,7 +153,7 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * Returns the current value of path for image descriptor
-	 * 
+	 *
 	 * @return the current value of path for image descriptor
 	 */
 	public String getImageDescriptorPath() {
@@ -163,7 +164,7 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 	 * inits the name field value
 	 */
 	protected void initName() {
-		if(drawerProxy == null) {
+		if (drawerProxy == null) {
 			name = "";
 		} else {
 			name = drawerProxy.getLabel();
@@ -175,7 +176,7 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 	 * inits the palette id value
 	 */
 	protected void initDrawerID() {
-		if(drawerProxy == null) {
+		if (drawerProxy == null) {
 			drawerID = "drawer_" + System.currentTimeMillis();
 		} else {
 			drawerID = drawerProxy.getId();
@@ -187,7 +188,7 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 	 * Inits the image descriptor
 	 */
 	protected void initImageDescriptor() {
-		if(drawerProxy == null) {
+		if (drawerProxy == null) {
 			imageDescriptorPath = "/icons/drawer.gif";
 		} else {
 			imageDescriptorPath = drawerProxy.getImagePath();
@@ -200,23 +201,23 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 	 */
 	protected boolean validatePage() {
 		boolean valid = true;
-		if(advancedComposite != null && !advancedComposite.isDisposed()) {
+		if (advancedComposite != null && !advancedComposite.isDisposed()) {
 
-			if("".equals(getDrawerID())) {
+			if ("".equals(getDrawerID())) {
 				setErrorMessage(Messages.Wizard_Drawer_Error_Id);
 				valid = false;
-			} else if("".equals(getImageDescriptorPath())) {
+			} else if ("".equals(getImageDescriptorPath())) {
 				setErrorMessage(Messages.Wizard_Drawer_Error_Icon);
 				valid = false;
 			}
 		}
 
-		if("".equals(getDrawerName())) {
+		if ("".equals(getDrawerName())) {
 			setErrorMessage(Messages.Wizard_Drawer_Error_Name);
 			valid = false;
 		}
 
-		if(valid) {
+		if (valid) {
 			setMessage(null);
 			setErrorMessage(null);
 		}
@@ -225,9 +226,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * Creates the widget for advanced options.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	protected void createAdvancedControls(Composite parent) {
 		advancedButton = new Button(parent, SWT.PUSH);
@@ -265,9 +266,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * creates the control area for the icon path definition
-	 * 
+	 *
 	 * @param composite
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	protected void createIconControl(final Composite composite) {
 		final Label iconLabel = new Label(composite, SWT.NONE);
@@ -292,9 +293,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 			 */
 			public void mouseUp(MouseEvent e) {
 				BundleIconExplorerDialog dialog = new BundleIconExplorerDialog(composite.getShell(), imageText.getText());
-				if(Dialog.OK == dialog.open()) {
+				if (Window.OK == dialog.open()) {
 					Object[] values = dialog.getResult();
-					if(values.length != 1) {
+					if (values.length != 1) {
 						Activator.log.error("Waiting one icon path, but found " + values.length, null);
 					} else {
 						imageDescriptorPath = values[0].toString();
@@ -323,9 +324,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 	 * Shows/hides the advanced option widgets.
 	 */
 	protected void handleAdvancedButtonSelect() {
-		Composite composite = (Composite)getControl();
+		Composite composite = (Composite) getControl();
 
-		if(advancedComposite != null) {
+		if (advancedComposite != null) {
 			advancedComposite.dispose();
 			advancedComposite = null;
 			advancedButton.setText(Messages.Dialog_Advanced_Button_Closed);
@@ -337,9 +338,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * creates the control area for the id definition
-	 * 
+	 *
 	 * @param control
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	protected void createIDControl(Composite control) {
 		final Label idLabel = new Label(control, SWT.NONE);
@@ -374,9 +375,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 
 	/**
 	 * creates the control area for the name definition
-	 * 
+	 *
 	 * @param control
-	 *        the parent composite
+	 *            the parent composite
 	 */
 	protected void createNameControl(Composite control) {
 		final Label nameLabel = new Label(control, SWT.NONE);
@@ -407,9 +408,9 @@ public class DrawerInformationPage extends WizardPage implements Listener {
 	 */
 	public void handleEvent(Event event) {
 		Widget widget = event.widget;
-		if(widget.equals(nameText)) {
+		if (widget.equals(nameText)) {
 			name = nameText.getText();
-		} else if(widget.equals(idText)) {
+		} else if (widget.equals(idText)) {
 			drawerID = idText.getText();
 		}
 		setPageComplete(validatePage());

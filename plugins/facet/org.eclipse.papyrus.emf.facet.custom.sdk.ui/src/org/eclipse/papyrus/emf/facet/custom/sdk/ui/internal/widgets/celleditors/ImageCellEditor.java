@@ -34,7 +34,7 @@ public class ImageCellEditor implements IModelCellEditor {
 	public Control activateCell(final Composite parent, final Object originalValue,
 			final IModelCellEditHandler editHandler, final EStructuralFeature feature,
 			final EObject source) {
-		
+
 		this.imageComposite = new ImageComposite(parent);
 
 		if (originalValue instanceof IImage) {

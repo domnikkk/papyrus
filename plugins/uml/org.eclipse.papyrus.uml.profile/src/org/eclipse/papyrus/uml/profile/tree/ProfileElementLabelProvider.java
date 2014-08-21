@@ -91,35 +91,35 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the image.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the image
 	 */
 	@Override
 	public Image getImage(Object object) {
-		if(object instanceof AppliedStereotypeTreeObject) {
+		if (object instanceof AppliedStereotypeTreeObject) {
 			return ImageManager.IMG_STEREOTYPE;
 
-		} else if(object instanceof AppliedStereotypePropertyTreeObject) {
+		} else if (object instanceof AppliedStereotypePropertyTreeObject) {
 			return ImageManager.IMG_PROPERTY;
 
-		} else if(object instanceof BooleanValueTreeObject) {
+		} else if (object instanceof BooleanValueTreeObject) {
 			return ImageManager.IMG_LITERALBOOLEAN;
-		} else if(object instanceof StringValueTreeObject) {
+		} else if (object instanceof StringValueTreeObject) {
 			return ImageManager.IMG_LITERALSTRING;
-		} else if(object instanceof IntegerValueTreeObject) {
+		} else if (object instanceof IntegerValueTreeObject) {
 			return ImageManager.IMG_LITERALINTEGER;
-		} else if(object instanceof UnlimitedNaturalValueTreeObject) {
+		} else if (object instanceof UnlimitedNaturalValueTreeObject) {
 			return ImageManager.IMG_LITERALUNLIMITEDNATURAL;
-		} else if(object instanceof UserPrimitiveTypeValueTreeObject) {
+		} else if (object instanceof UserPrimitiveTypeValueTreeObject) {
 			return ImageManager.IMG_PRIMITIVETYPE;
-		} else if(object instanceof EnumerationValueTreeObject) {
+		} else if (object instanceof EnumerationValueTreeObject) {
 			return ImageManager.IMG_ENUMERATION;
-		} else if(object instanceof DataTypeValueTreeObject) {
+		} else if (object instanceof DataTypeValueTreeObject) {
 			return ImageManager.IMG_DATATYPE;
-		} else if(object instanceof StereotypeValueTreeObject) {
+		} else if (object instanceof StereotypeValueTreeObject) {
 			return ImageManager.IMG_STEREOTYPEPROPERTY;
-		} else if(object instanceof MetaclassValueTreeObject) {
+		} else if (object instanceof MetaclassValueTreeObject) {
 			return ImageManager.IMG_METACLASS;
 
 		} else {
@@ -131,43 +131,43 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the text.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the text
 	 */
 	@Override
 	public String getText(Object object) {
 
-		if(object == null) {
+		if (object == null) {
 			return "null";
 		}
 
-		if(object instanceof AppliedStereotypeTreeObject) {
-			AppliedStereotypeTreeObject element = (AppliedStereotypeTreeObject)object;
-			StereotypedElementTreeObject parent = (StereotypedElementTreeObject)element.getParent();
+		if (object instanceof AppliedStereotypeTreeObject) {
+			AppliedStereotypeTreeObject element = (AppliedStereotypeTreeObject) object;
+			StereotypedElementTreeObject parent = (StereotypedElementTreeObject) element.getParent();
 			Element baseElement = parent.getElement();
 			Package nearestPackage = baseElement.getNearestPackage();
 
-			Stereotype st = ((AppliedStereotypeTreeObject)object).getStereotype();
+			Stereotype st = ((AppliedStereotypeTreeObject) object).getStereotype();
 			String stName = st.getName();
 			String profileName = st.getProfile().getQualifiedName();
 			String label = stName + TAB + "(from " + profileName + ")";
 
-			if(ProfileUtil.isDirty(nearestPackage, st.getProfile())) {
+			if (ProfileUtil.isDirty(nearestPackage, st.getProfile())) {
 				label += TAG_PROFILE_CHANGED;
 			}
 			return label;
 
-		} else if(object instanceof AppliedStereotypePropertyTreeObject) {
-			AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject)object;
+		} else if (object instanceof AppliedStereotypePropertyTreeObject) {
+			AppliedStereotypePropertyTreeObject pTO = (AppliedStereotypePropertyTreeObject) object;
 			Property prop = pTO.getProperty();
 			Type propType = prop.getType();
 			Object propValue = pTO.getValue();
 
 			return getPropLabel(prop, propType, propValue);
 
-		} else if(object instanceof ValueTreeObject) {
-			return getLabel((ValueTreeObject)object);
+		} else if (object instanceof ValueTreeObject) {
+			return getLabel((ValueTreeObject) object);
 
 		} else {
 			return object.toString();
@@ -180,11 +180,11 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Returns the label to show for a property.
 	 *
 	 * @param currentPropType
-	 *        current property type
+	 *            current property type
 	 * @param currentProp
-	 *        current property
+	 *            current property
 	 * @param currentPropValue
-	 *        current property value
+	 *            current property value
 	 *
 	 * @return the String label
 	 */
@@ -192,7 +192,7 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 		String label = getPropertyShortLabel(currentProp);
 
-		if(currentPropValue == null) {
+		if (currentPropValue == null) {
 			label = label + " = null";
 			return label;
 		}
@@ -204,11 +204,11 @@ public class ProfileElementLabelProvider extends LabelProvider {
 		// property is a stereotype
 		// property is a composite class
 		// default case
-		if(currentPropType instanceof Enumeration) {
+		if (currentPropType instanceof Enumeration) {
 			label = getPropEnumerationLabel(currentProp, currentPropType, currentPropValue);
-		} else if(currentPropType instanceof Stereotype) {
+		} else if (currentPropType instanceof Stereotype) {
 			label = getPropStereotypeLabel(currentProp, currentPropType, currentPropValue);
-		} else if(currentPropType instanceof Class) {
+		} else if (currentPropType instanceof Class) {
 			label = getPropClassLabel(currentProp, currentPropType, currentPropValue);
 		} else {
 			label = getPropDefaultLabel(currentProp, currentPropValue);
@@ -221,22 +221,22 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Returns the label to show for a property with type that is a Enumeration.
 	 *
 	 * @param currentPropType
-	 *        current property type
+	 *            current property type
 	 * @param currentProp
-	 *        current property
+	 *            current property
 	 * @param currentPropValue
-	 *        current property value
+	 *            current property value
 	 *
 	 * @return the String label
 	 */
 	private String getPropEnumerationLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
 		String label = getPropertyShortLabel(currentProp);
 
-		if(currentProp.getUpper() == 1) { // Multiplicity = 1
-			if(currentPropValue != null) {
+		if (currentProp.getUpper() == 1) { // Multiplicity = 1
+			if (currentPropValue != null) {
 				// Retrieve literal
-				if(currentPropValue instanceof EnumerationLiteral) {
-					label = label + " = " + ((EnumerationLiteral)currentPropValue).getLabel();
+				if (currentPropValue instanceof EnumerationLiteral) {
+					label = label + " = " + ((EnumerationLiteral) currentPropValue).getLabel();
 				} else {
 					label = label + " = " + currentPropValue;
 				}
@@ -253,21 +253,21 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Returns the label to show for a property with type that is a Stereotype.
 	 *
 	 * @param currentPropType
-	 *        current property type
+	 *            current property type
 	 * @param currentProp
-	 *        current property
+	 *            current property
 	 * @param currentPropValue
-	 *        current property value
+	 *            current property value
 	 *
 	 * @return the String label
 	 */
 	private String getPropStereotypeLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
 		String label = getPropertyShortLabel(currentProp);
 
-		if(currentProp.getUpper() == 1) { // Multiplicity = 1
+		if (currentProp.getUpper() == 1) { // Multiplicity = 1
 
 			// retrieve the base element from the stereotype application
-			Element baseElement = UMLUtil.getBaseElement((EObject)currentPropValue);
+			Element baseElement = UMLUtil.getBaseElement((EObject) currentPropValue);
 			// display the base element's qualified name
 			label = label + " = " + Util.getLabel(baseElement, true);
 
@@ -275,13 +275,13 @@ public class ProfileElementLabelProvider extends LabelProvider {
 
 			// retrieve the base element from the stereotype application
 			@SuppressWarnings("unchecked")
-			List<Object> values = (List<Object>)currentPropValue;
+			List<Object> values = (List<Object>) currentPropValue;
 			ArrayList<String> baseElements = new ArrayList<String>();
-			for(Object value : values) {
+			for (Object value : values) {
 				// display the base element's qualified name
-				Element baseElement = UMLUtil.getBaseElement((EObject)value);
+				Element baseElement = UMLUtil.getBaseElement((EObject) value);
 				String name = Util.getLabel(baseElement, true);
-				if(name != null) {
+				if (name != null) {
 					baseElements.add(name);
 				}
 			}
@@ -296,28 +296,28 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Returns the label to show for a property with type that is a Metaclass or Composite.
 	 *
 	 * @param currentPropType
-	 *        current property type
+	 *            current property type
 	 * @param currentProp
-	 *        current property
+	 *            current property
 	 * @param currentPropValue
-	 *        current property value
+	 *            current property value
 	 *
 	 * @return the String label
 	 */
 	private String getPropClassLabel(Property currentProp, Type currentPropType, Object currentPropValue) {
 		String label = getPropertyShortLabel(currentProp);
 
-		if(Util.isMetaclass(currentPropType)) {
-			if(currentProp.getUpper() == 1) { // Multiplicity = 1
+		if (Util.isMetaclass(currentPropType)) {
+			if (currentProp.getUpper() == 1) { // Multiplicity = 1
 				label = label + " = " + Util.getLabel(currentPropValue, true);
 
 			} else { // Multiplicity > 1
 
 				@SuppressWarnings("unchecked")
-				List<Object> values = (List<Object>)currentPropValue;
+				List<Object> values = (List<Object>) currentPropValue;
 				ArrayList<String> elementNames = new ArrayList<String>();
-				if(values != null) {
-					for(int i = 0; i < values.size(); i++) {
+				if (values != null) {
+					for (int i = 0; i < values.size(); i++) {
 						elementNames.add(Util.getLabel(values.get(i), true));
 					}
 				}
@@ -333,16 +333,16 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Returns the label to show for a property with type that is neither Metaclass / Composite / Enumeration / Stereotype.
 	 *
 	 * @param currentProp
-	 *        current property
+	 *            current property
 	 * @param currentPropValue
-	 *        current property value
+	 *            current property value
 	 *
 	 * @return the String label
 	 */
 	private String getPropDefaultLabel(Property currentProp, Object currentPropValue) {
 		String label = getPropertyShortLabel(currentProp);
 
-		if(currentPropValue != null) {
+		if (currentPropValue != null) {
 			label = label + " = " + labelProviderService.getLabelProvider().getText(currentPropValue);
 		}
 
@@ -353,7 +353,7 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Creates the label based on type + multiplicity for the selected property.
 	 *
 	 * @param property
-	 *        the property
+	 *            the property
 	 *
 	 * @return the property short label
 	 */
@@ -362,7 +362,7 @@ public class ProfileElementLabelProvider extends LabelProvider {
 		String label = "";
 
 		String derived = "";
-		if(property.isDerived()) {
+		if (property.isDerived()) {
 			derived = "/";
 		}
 		int upper = property.getUpper();
@@ -373,7 +373,7 @@ public class ProfileElementLabelProvider extends LabelProvider {
 		String typeName = type == null ? TypeUtil.UNDEFINED_TYPE_NAME : type.getName();
 		String name = property.getName();
 
-		if(upper != -1) {
+		if (upper != -1) {
 			label = derived + name + ": " + typeName + " " + "[" + lower + ".." + upper + "]";
 		} else {
 			label = derived + name + ": " + typeName + " " + "[" + lower + "..*]";
@@ -386,22 +386,22 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the label.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the label
 	 */
 	private String getLabel(ValueTreeObject object) {
 
-		if(object instanceof PrimitiveTypeValueTreeObject) {
-			return getLabel((PrimitiveTypeValueTreeObject)object);
-		} else if(object instanceof EnumerationValueTreeObject) {
-			return getLabel((EnumerationValueTreeObject)object);
-		} else if(object instanceof DataTypeValueTreeObject) {
-			return getLabel((DataTypeValueTreeObject)object);
-		} else if(object instanceof StereotypeValueTreeObject) {
-			return getLabel((StereotypeValueTreeObject)object);
-		} else if(object instanceof MetaclassValueTreeObject) {
-			return getLabel((MetaclassValueTreeObject)object);
+		if (object instanceof PrimitiveTypeValueTreeObject) {
+			return getLabel((PrimitiveTypeValueTreeObject) object);
+		} else if (object instanceof EnumerationValueTreeObject) {
+			return getLabel((EnumerationValueTreeObject) object);
+		} else if (object instanceof DataTypeValueTreeObject) {
+			return getLabel((DataTypeValueTreeObject) object);
+		} else if (object instanceof StereotypeValueTreeObject) {
+			return getLabel((StereotypeValueTreeObject) object);
+		} else if (object instanceof MetaclassValueTreeObject) {
+			return getLabel((MetaclassValueTreeObject) object);
 		} // else
 		return object.getValue().toString();
 	}
@@ -410,14 +410,14 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the label.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the label
 	 */
 	private String getLabel(PrimitiveTypeValueTreeObject object) {
 
 		Object value = object.getValue();
-		if(value != null) {
+		if (value != null) {
 			return value.toString();
 		}
 
@@ -428,14 +428,14 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the label.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the label
 	 */
 	private String getLabel(DataTypeValueTreeObject object) {
 
 		Object value = object.getValue();
-		if(value != null) {
+		if (value != null) {
 			return value.toString();
 		}
 
@@ -446,41 +446,41 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the label.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the label
 	 */
 	private String getLabel(EnumerationValueTreeObject object) {
 		EnumerationValueTreeObject eTO = object;
-		Property property = ((AppliedStereotypePropertyTreeObject)eTO.getParent()).getProperty();
+		Property property = ((AppliedStereotypePropertyTreeObject) eTO.getParent()).getProperty();
 		Object value = eTO.getValue();
 
 		EnumerationLiteral eLiteral = null;
 		// Prepare Item data
-		if(value instanceof EnumerationLiteral) {
-			eLiteral = (EnumerationLiteral)value;
+		if (value instanceof EnumerationLiteral) {
+			eLiteral = (EnumerationLiteral) value;
 
-		} else if(value instanceof EEnumLiteral) {
-			EEnumLiteral eEnumLiteral = (EEnumLiteral)value;
+		} else if (value instanceof EEnumLiteral) {
+			EEnumLiteral eEnumLiteral = (EEnumLiteral) value;
 			Object tmp = Util.getValueObjectFromString(eEnumLiteral.getName(), property.getType());
-			eLiteral = ((EnumerationLiteral)tmp);
+			eLiteral = ((EnumerationLiteral) tmp);
 
-		} else if(value instanceof String) {
-			String literalString = (String)value;
+		} else if (value instanceof String) {
+			String literalString = (String) value;
 			Object tmp = Util.getValueObjectFromString(literalString, property.getType());
-			eLiteral = ((EnumerationLiteral)tmp);
+			eLiteral = ((EnumerationLiteral) tmp);
 
-		} else if(value instanceof Enumerator) { // Enumeration in static profile
-			String literalString = ((Enumerator)value).getLiteral();
+		} else if (value instanceof Enumerator) { // Enumeration in static profile
+			String literalString = ((Enumerator) value).getLiteral();
 			Object tmp = Util.getValueObjectFromString(literalString, property.getType());
-			eLiteral = ((EnumerationLiteral)tmp);
+			eLiteral = ((EnumerationLiteral) tmp);
 
 		} else { // Error
 			String err = "Value " + value.toString() + " of Property " + property.getName() + " is not an EnumerationLiteral.";
 			Message.error(err);
 		}
 
-		if(eLiteral != null) {
+		if (eLiteral != null) {
 			return eLiteral.getName();
 		} else {
 			return "undefined";
@@ -491,34 +491,34 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the label.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the label
 	 */
 	private String getLabel(StereotypeValueTreeObject object) {
 		StereotypeValueTreeObject sTO = object;
-		Property property = ((AppliedStereotypePropertyTreeObject)sTO.getParent()).getProperty();
+		Property property = ((AppliedStereotypePropertyTreeObject) sTO.getParent()).getProperty();
 		Object value = sTO.getValue();
 
 		Element baseElement = null;
 
-		if(value instanceof EObject) {
+		if (value instanceof EObject) {
 			// retrieve the base element from the stereotype application
-			baseElement = UMLUtil.getBaseElement((EObject)value);
+			baseElement = UMLUtil.getBaseElement((EObject) value);
 
 		} else { // Error
 			String err = "Type " + (value != null ? value.toString() : "null") + " of Property " + property.getName() + " is not an EObject.";
 			Message.error(err);
 		}
 
-		if(baseElement != null) {
+		if (baseElement != null) {
 			String label = baseElement.toString();
-			if(baseElement instanceof ValueSpecification) {
-				return Util.getOriginLabel((ValueSpecification)baseElement);
+			if (baseElement instanceof ValueSpecification) {
+				return Util.getOriginLabel((ValueSpecification) baseElement);
 
-			} else if(baseElement instanceof NamedElement) {
-				NamedElement baseNamedElement = (NamedElement)baseElement;
-				if(baseNamedElement.isSetName()) {
+			} else if (baseElement instanceof NamedElement) {
+				NamedElement baseNamedElement = (NamedElement) baseElement;
+				if (baseNamedElement.isSetName()) {
 					label = baseNamedElement.getQualifiedName();
 				}
 			}
@@ -533,7 +533,7 @@ public class ProfileElementLabelProvider extends LabelProvider {
 	 * Gets the label.
 	 *
 	 * @param object
-	 *        the object
+	 *            the object
 	 *
 	 * @return the label
 	 */
@@ -541,10 +541,10 @@ public class ProfileElementLabelProvider extends LabelProvider {
 		MetaclassValueTreeObject sTO = object;
 		Object value = sTO.getValue();
 
-		if(value instanceof ValueSpecification) {
-			return Util.getOriginLabel((ValueSpecification)value);
+		if (value instanceof ValueSpecification) {
+			return Util.getOriginLabel((ValueSpecification) value);
 
-		} else if(value instanceof Element) {
+		} else if (value instanceof Element) {
 			return Util.getLabel(value, false);
 		}
 

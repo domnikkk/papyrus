@@ -1,5 +1,5 @@
 /*
- * 
+ *
  */
 package org.eclipse.papyrus.uml.modelexplorer.handler;
 
@@ -9,9 +9,9 @@ import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 /**
  * <pre>
  * Command handler for ActivityPartition creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class ActivityPartitionHandler extends AbstractUmlModelExplorerCreateCommandHandler {
@@ -21,11 +21,12 @@ public class ActivityPartitionHandler extends AbstractUmlModelExplorerCreateComm
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
 	 * 
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return UMLElementTypes.ACTIVITY_PARTITION;
 	}

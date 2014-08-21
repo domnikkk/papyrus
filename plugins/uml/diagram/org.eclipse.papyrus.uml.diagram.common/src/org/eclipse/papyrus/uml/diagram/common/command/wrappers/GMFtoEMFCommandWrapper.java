@@ -16,16 +16,17 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 /**
  * A EMF Command that wraps a GMF command. Each method is redirected to the GMF
  * one.
- * 
+ *
  * @deprecated use {@link org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper} instead
  */
+@Deprecated
 public class GMFtoEMFCommandWrapper extends org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param gmfCommand
-	 *        the gmf command
+	 *            the gmf command
 	 */
 	public GMFtoEMFCommandWrapper(ICommand gmfCommand) {
 		super(gmfCommand);

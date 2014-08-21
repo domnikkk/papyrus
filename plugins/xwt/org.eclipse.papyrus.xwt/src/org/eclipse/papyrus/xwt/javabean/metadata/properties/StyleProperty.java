@@ -17,7 +17,7 @@ import org.eclipse.papyrus.xwt.XWTException;
 import org.eclipse.papyrus.xwt.core.Style;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class StyleProperty extends AbstractProperty {
@@ -31,10 +31,10 @@ public class StyleProperty extends AbstractProperty {
 	}
 
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		if(!(value instanceof Style)) {
+		if (!(value instanceof Style)) {
 			throw new XWTException("Style is expected.");
 		}
-		Style style = (Style)value;
+		Style style = (Style) value;
 		style.apply(target);
 	}
 }

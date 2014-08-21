@@ -34,8 +34,7 @@ import org.eclipse.swt.graphics.Rectangle;
 public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter {
 
 	/**
-	 * Creates the default {@link SortableHeaderTextPainter} that uses a {@link TextPainter} as base {@link ICellPainter} and decorate it with the
-	 * {@link SortIconPainter} on the right
+	 * Creates the default {@link SortableHeaderTextPainter} that uses a {@link TextPainter} as base {@link ICellPainter} and decorate it with the {@link SortIconPainter} on the right
 	 * edge of the cell.
 	 */
 	public PapyrusSortableHeaderTextPainter() {
@@ -43,26 +42,24 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 	}
 
 	/**
-	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the
-	 * {@link SortIconPainter} on the right
+	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the {@link SortIconPainter} on the right
 	 * edge of the cell.
 	 *
 	 * @param interiorPainter
-	 *        the base {@link ICellPainter} to use
+	 *            the base {@link ICellPainter} to use
 	 */
 	public PapyrusSortableHeaderTextPainter(ICellPainter interiorPainter) {
 		this(interiorPainter, CellEdgeEnum.RIGHT);
 	}
 
 	/**
-	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the
-	 * {@link SortIconPainter} on the specified
+	 * Creates a {@link SortableHeaderTextPainter} that uses the given {@link ICellPainter} as base {@link ICellPainter} and decorate it with the {@link SortIconPainter} on the specified
 	 * edge of the cell.
 	 *
 	 * @param interiorPainter
-	 *        the base {@link ICellPainter} to use
+	 *            the base {@link ICellPainter} to use
 	 * @param cellEdge
-	 *        the edge of the cell on which the sort indicator decoration should be applied
+	 *            the edge of the cell on which the sort indicator decoration should be applied
 	 */
 	public PapyrusSortableHeaderTextPainter(ICellPainter interiorPainter, CellEdgeEnum cellEdge) {
 		this(interiorPainter, cellEdge, new SortIconPainter(true));
@@ -74,12 +71,12 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 	 * related decoration on the specified edge of the cell.
 	 *
 	 * @param interiorPainter
-	 *        the base {@link ICellPainter} to use
+	 *            the base {@link ICellPainter} to use
 	 * @param cellEdge
-	 *        the edge of the cell on which the sort indicator decoration should be applied
+	 *            the edge of the cell on which the sort indicator decoration should be applied
 	 * @param decoratorPainter
-	 *        the {@link ICellPainter} that should be used to paint the sort related
-	 *        decoration (by default the {@link SortIconPainter} will be used)
+	 *            the {@link ICellPainter} that should be used to paint the sort related
+	 *            decoration (by default the {@link SortIconPainter} will be used)
 	 */
 	public PapyrusSortableHeaderTextPainter(ICellPainter interiorPainter, CellEdgeEnum cellEdge, ICellPainter decoratorPainter) {
 		setWrappedPainter(new CellPainterDecorator(interiorPainter, cellEdge, decoratorPainter));
@@ -99,16 +96,16 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 		@Override
 		public void paintCell(ILayerCell cell, GC gc, Rectangle bounds, IConfigRegistry configRegistry) {
 			int position = cell.getRowPosition();
-			if(position == 0) {
+			if (position == 0) {
 				INattableModelManager manager = configRegistry.getConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);
 				AbstractHeaderAxisConfiguration config = HeaderAxisConfigurationManagementUtils.getColumnAbstractHeaderAxisUsedInTable(manager.getTable());
-				if(config != null && config.isDisplayIndex()) {
+				if (config != null && config.isDisplayIndex()) {
 					return;
 				}
 			}
 
 			Image image = getImage(cell, configRegistry);
-			if(image != null) {
+			if (image != null) {
 				Rectangle imageBounds = image.getBounds();
 				imageBounds = new Rectangle(imageBounds.x, imageBounds.y, imageBounds.width, imageBounds.height);
 
@@ -117,14 +114,14 @@ public class PapyrusSortableHeaderTextPainter extends SortableHeaderTextPainter 
 
 				gc.drawImage(image, bounds.x + CellStyleUtil.getHorizontalAlignmentPadding(cellStyle, bounds, imageBounds.width), y);
 
-				//a try to add the order of the column into the sort at the top of the arrow
-				//				int x = bounds.x + CellStyleUtil.getHorizontalAlignmentPadding(cellStyle, bounds, imageBounds.width);
+				// a try to add the order of the column into the sort at the top of the arrow
+				// int x = bounds.x + CellStyleUtil.getHorizontalAlignmentPadding(cellStyle, bounds, imageBounds.width);
 				//
-				//				System.out.println("before =" + y);
-				//				int yy = (y - imageBounds.height) - 2;//- 7;
-				//				float halfHeight = ((float)getPreferredHeight(cell, gc, configRegistry)) / ((float)2);
-				//				yy = (int)(y - (gc.getFont().getFontData()[0].height + 2));
-				//				System.out.println("after =" + yy);
+				// System.out.println("before =" + y);
+				// int yy = (y - imageBounds.height) - 2;//- 7;
+				// float halfHeight = ((float)getPreferredHeight(cell, gc, configRegistry)) / ((float)2);
+				// yy = (int)(y - (gc.getFont().getFontData()[0].height + 2));
+				// System.out.println("after =" + yy);
 				//
 				//				gc.drawText(Integer.toString(getSortSequence(cell)), x, yy); //$NON-NLS-1$
 			}

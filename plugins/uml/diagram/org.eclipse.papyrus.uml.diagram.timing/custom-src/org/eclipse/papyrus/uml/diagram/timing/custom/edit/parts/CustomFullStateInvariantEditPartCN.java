@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,7 +52,7 @@ public class CustomFullStateInvariantEditPartCN extends FullStateInvariantEditPa
 
 	/**
 	 * The drag tracker has been specialized in order to constrain movement inside its container without scroll bar
-	 * 
+	 *
 	 * @see http://wiki.eclipse.org/Papyrus_Developer_Guide/NoScrollbar
 	 */
 	@Override
@@ -64,11 +64,11 @@ public class CustomFullStateInvariantEditPartCN extends FullStateInvariantEditPa
 	public void performRequest(final Request request) {
 		// allow creating an OccurrenceSpecification when double-clicking on a StateInvariant line
 		// (in addition to the OccurrenceSpecification creation tool from the palette)
-		if(request.getType() == REQ_OPEN && request instanceof LocationRequest) {
-			final StateInvariant stateInvariant = (StateInvariant)((View)getModel()).getElement();
+		if (request.getType() == REQ_OPEN && request instanceof LocationRequest) {
+			final StateInvariant stateInvariant = (StateInvariant) ((View) getModel()).getElement();
 			final TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(stateInvariant);
 			// shift by 2 pixels to cut at the center of the OccurrenceSpecification
-			final Point loc = new Point(((LocationRequest)request).getLocation()).translate(-SmallSquareFigure.RADIUS, 0);
+			final Point loc = new Point(((LocationRequest) request).getLocation()).translate(-SmallSquareFigure.RADIUS, 0);
 			final CompositeCommand compositeCommand = new CompositeCommand(Messages.CustomFullStateInvariantEditPartCN_CreateOccurrenceSpecification);
 			compositeCommand.add(new CutAndInsertOccurrenceSpecificationCommand(this, loc, false));
 			final EditPart timeline = EditPartUtils.findParentEditPartWithId(this, FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID);
@@ -82,20 +82,20 @@ public class CustomFullStateInvariantEditPartCN extends FullStateInvariantEditPa
 
 	@Override
 	public Command getCommand(final Request request) {
-		if(request instanceof ChangeBoundsRequest) {
-			final ChangeBoundsRequest changeBoundsRequest = (ChangeBoundsRequest)request;
+		if (request instanceof ChangeBoundsRequest) {
+			final ChangeBoundsRequest changeBoundsRequest = (ChangeBoundsRequest) request;
 			// we allow moving an OccurrenceSpecification on top of a StateInvariant line
 			// in this case, we redirect the request to the parent timeline compartment
-			if(RequestUtils.isChangeBoundsRequestFor(changeBoundsRequest, UMLPackage.eINSTANCE.getOccurrenceSpecification())) {
+			if (RequestUtils.isChangeBoundsRequestFor(changeBoundsRequest, UMLPackage.eINSTANCE.getOccurrenceSpecification())) {
 				return getTimelineCompartmentEditPart().getCommand(request);
 			}
-		} else if(request instanceof EditCommandRequestWrapper) {
+		} else if (request instanceof EditCommandRequestWrapper) {
 			// we also need to forward this request, otherwise the feedback figure stays displayed
-			final EditCommandRequestWrapper editCommandRequestWrapper = (EditCommandRequestWrapper)request;
+			final EditCommandRequestWrapper editCommandRequestWrapper = (EditCommandRequestWrapper) request;
 			final IEditCommandRequest editCommandRequest = editCommandRequestWrapper.getEditCommandRequest();
-			if(editCommandRequest instanceof MoveRequest) {
-				final MoveRequest moveRequest = (MoveRequest)editCommandRequest;
-				if(moveRequest.getTargetContainer() instanceof StateInvariant) {
+			if (editCommandRequest instanceof MoveRequest) {
+				final MoveRequest moveRequest = (MoveRequest) editCommandRequest;
+				if (moveRequest.getTargetContainer() instanceof StateInvariant) {
 					return getTimelineCompartmentEditPart().getCommand(request);
 				}
 			}
@@ -104,13 +104,13 @@ public class CustomFullStateInvariantEditPartCN extends FullStateInvariantEditPa
 	}
 
 	private FullLifelineTimelineCompartmentEditPartCN getTimelineCompartmentEditPart() {
-		final FullLifelineTimelineCompartmentEditPartCN timelineEditPart = (FullLifelineTimelineCompartmentEditPartCN)EditPartUtils.findParentEditPartWithId(this, FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID);
+		final FullLifelineTimelineCompartmentEditPartCN timelineEditPart = (FullLifelineTimelineCompartmentEditPartCN) EditPartUtils.findParentEditPartWithId(this, FullLifelineTimelineCompartmentEditPartCN.VISUAL_ID);
 		return timelineEditPart;
 	}
 
 	@Override
 	protected void addBorderItem(final IFigure borderItemContainer, final IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof FullStateInvariantAppliedStereotypeEditPart) {
+		if (borderItemEditPart instanceof FullStateInvariantAppliedStereotypeEditPart) {
 			final BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH) {
 
 				@Override

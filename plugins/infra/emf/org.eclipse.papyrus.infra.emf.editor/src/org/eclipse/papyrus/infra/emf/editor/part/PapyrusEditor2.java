@@ -31,11 +31,8 @@ import org.eclipse.jface.viewers.IStructuredContentProvider;
 import org.eclipse.jface.viewers.StructuredViewer;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.ViewerFilter;
-import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationCatalogManager;
 import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
-import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization;
 import org.eclipse.papyrus.emf.facet.custom.ui.ICustomizedContentProviderFactory;
-import org.eclipse.papyrus.infra.emf.Activator;
 import org.eclipse.papyrus.infra.emf.editor.actions.MoDiscoDropAdapter;
 import org.eclipse.papyrus.infra.emf.providers.EMFLabelProvider;
 import org.eclipse.papyrus.infra.widgets.editors.AbstractEditor;
@@ -62,15 +59,15 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 
 /**
  * An extended EMF editor
- * 
+ *
  * This generic editor provides the following features :
- * 
+ *
  * - EMF Facet browser customization
  * - Papyrus customizable property view
  * - Papyrus customizable new child
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetPageContributor, CommandStackListener {
 
@@ -93,15 +90,15 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 		Composite gParent = new Composite(getContainer(), SWT.NONE);
 		gParent.setLayout(new FillLayout());
 
-		//SashForm parent = new SashForm(gParent, SWT.VERTICAL | SWT.V_SCROLL | SWT.H_SCROLL);
-		//parent.setLayout(new FillLayout());
+		// SashForm parent = new SashForm(gParent, SWT.VERTICAL | SWT.V_SCROLL | SWT.H_SCROLL);
+		// parent.setLayout(new FillLayout());
 
 		Composite parent = new Composite(gParent, SWT.NONE);
 		parent.setLayout(new PropertiesLayout());
 
 		// Only creates the other pages if there is something that can be edited
 		//
-		if(!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
 			// Create a page for the selection tree view.
 			//
 
@@ -112,7 +109,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 			filterPattern.addCommitListener(new ICommitListener() {
 
 				public void commit(AbstractEditor editor) {
-					filter.setPattern((String)filterPattern.getValue());
+					filter.setPattern((String) filterPattern.getValue());
 					selectionViewer.refresh();
 				}
 
@@ -122,7 +119,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 			tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 			selectionViewer = new TreeViewer(tree);
-			selectionViewer.setFilters(new ViewerFilter[]{ filter });
+			selectionViewer.setFilters(new ViewerFilter[] { filter });
 			setCurrentViewer(selectionViewer);
 
 			initializeCustomizationCatalogManager();
@@ -137,7 +134,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 			selectionViewer.setLabelProvider(labelProvider);
 
 			selectionViewer.setInput(getTreeViewerInput());
-			//			selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
+			// selectionViewer.setSelection(new StructuredSelection(editingDomain.getResourceSet().getResources().get(0)), true);
 
 			new AdapterFactoryTreeEditor(selectionViewer.getTree(), adapterFactory);
 
@@ -147,9 +144,9 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 			setActivePage(0);
 
-			//			Preview preview = new Preview(this);
-			//			preview.createPartControl(parent);
-			//			addPreview(preview);
+			// Preview preview = new Preview(this);
+			// preview.createPartControl(parent);
+			// addPreview(preview);
 
 			parent.layout();
 		}
@@ -163,7 +160,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 			@Override
 			public void controlResized(ControlEvent event) {
-				if(!guard) {
+				if (!guard) {
 					guard = true;
 					hideTabs();
 					guard = false;
@@ -171,8 +168,8 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 			}
 		});
 
-		if(getActionBarContributor() instanceof ActionBarContributor) {
-			((ActionBarContributor)getActionBarContributor()).setEditingDomain(getEditingDomain());
+		if (getActionBarContributor() instanceof ActionBarContributor) {
+			((ActionBarContributor) getActionBarContributor()).setEditingDomain(getEditingDomain());
 		}
 
 		updateProblemIndication();
@@ -180,8 +177,8 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 	protected Object getTreeViewerInput() {
 		List<EObject> roots = new LinkedList<EObject>();
-		for(Resource resource : getResourceSet().getResources()) {
-			for(EObject rootEObject : resource.getContents()) {
+		for (Resource resource : getResourceSet().getResources()) {
+			for (EObject rootEObject : resource.getContents()) {
 				roots.add(rootEObject);
 			}
 		}
@@ -218,15 +215,15 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 						// Try to select the affected objects.
 						//
-						Command mostRecentCommand = ((CommandStack)event.getSource()).getMostRecentCommand();
-						if(mostRecentCommand != null) {
+						Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+						if (mostRecentCommand != null) {
 							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 						}
 
 						Iterator<PropertySheetPage> propertySheetPagesIterator = propertySheetPages.iterator();
-						while(propertySheetPagesIterator.hasNext()) {
+						while (propertySheetPagesIterator.hasNext()) {
 							PropertySheetPage propertySheetPage = propertySheetPagesIterator.next();
-							if(propertySheetPage.getControl().isDisposed()) {
+							if (propertySheetPage.getControl().isDisposed()) {
 								propertySheetPagesIterator.remove();
 							} else {
 								propertySheetPage.refresh();
@@ -253,14 +250,14 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 		viewer.getControl().setMenu(menu);
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[]{ LocalTransfer.getInstance() };
+		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
 		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
 		viewer.addDropSupport(dndOperations, transfers, new MoDiscoDropAdapter(editingDomain, viewer));
 	}
 
 	@Override
 	public IPropertySheetPage getPropertySheetPage() {
-		if(iPropertySheetPage == null) {
+		if (iPropertySheetPage == null) {
 			iPropertySheetPage = new TabbedPropertySheetPage(this);
 		}
 		return iPropertySheetPage;
@@ -268,22 +265,22 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 
 	protected ICustomizationManager getCustomizationManager() {
 		return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
-//		if(customizationManager == null) {
-//			customizationManager = ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(getResourceSet());
-//		}
-//		return customizationManager;
+		// if(customizationManager == null) {
+		// customizationManager = ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(getResourceSet());
+		// }
+		// return customizationManager;
 	}
 
 	protected void initializeCustomizationCatalogManager() {
-//		ICustomizationCatalogManager customCatalog = ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(getResourceSet());
-//		ICustomizationCatalogManager customCatalog = Activator.getDefault().getCustomizationManager()
-//		List<Customization> allCustomizations = customCatalog.getRegisteredCustomizations();
-//		for(Customization customization : allCustomizations) {
-//			if(customization.isMustBeLoadedByDefault()) {
-//				System.out.println("Apply default customization: " + customization.getName());
-//				getCustomizationManager().getManagedCustomizations().add(customization);
-//			}
-//		}
+		// ICustomizationCatalogManager customCatalog = ICustomizationCatalogManagerFactory.DEFAULT.getOrCreateCustomizationCatalogManager(getResourceSet());
+		// ICustomizationCatalogManager customCatalog = Activator.getDefault().getCustomizationManager()
+		// List<Customization> allCustomizations = customCatalog.getRegisteredCustomizations();
+		// for(Customization customization : allCustomizations) {
+		// if(customization.isMustBeLoadedByDefault()) {
+		// System.out.println("Apply default customization: " + customization.getName());
+		// getCustomizationManager().getManagedCustomizations().add(customization);
+		// }
+		// }
 	}
 
 	protected IStructuredContentProvider createContentProvider() {
@@ -295,7 +292,7 @@ public class PapyrusEditor2 extends EcoreEditor implements ITabbedPropertySheetP
 	}
 
 	protected ILabelProvider createLabelProvider() {
-//		return IResolvingCustomizedLabelProviderFactory.DEFAULT.createCustomizedLabelProvider(getCustomizationManager());
+		// return IResolvingCustomizedLabelProviderFactory.DEFAULT.createCustomizedLabelProvider(getCustomizationManager());
 		return new EMFLabelProvider();
 	}
 

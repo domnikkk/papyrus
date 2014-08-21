@@ -10,7 +10,7 @@ import com.google.inject.Inject;
 
 /**
  * Provides labels for a EObjects.
- * 
+ *
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#labelProvider
  */
 public class UmlCommonLabelProvider extends DefaultEObjectLabelProvider {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.swt.widgets.Label;
  * Default panel for the Accord/UML view.<BR>
  * If the element selected in the model explorer or in the diagrams, or if
  * the element selected is not a UML element, it is displayed in the view.
- * 
+ *
  * @author Remi SCHNEKENBURGER
  */
 public class DefaultPanel extends AbstractPanel {
@@ -40,11 +40,11 @@ public class DefaultPanel extends AbstractPanel {
 	/**
 	 * Constructs a new instance of this class given its parent and a style
 	 * value describing its behavior and appearance.
-	 * 
+	 *
 	 * @param style
-	 *        the style for this style
+	 *            the style for this style
 	 * @param parent
-	 *        the composite parent of this element
+	 *            the composite parent of this element
 	 */
 	public DefaultPanel(Composite parent, int style) {
 		super(parent, style);
@@ -58,7 +58,7 @@ public class DefaultPanel extends AbstractPanel {
 	 */
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @return the control
 	 */
 	@Override

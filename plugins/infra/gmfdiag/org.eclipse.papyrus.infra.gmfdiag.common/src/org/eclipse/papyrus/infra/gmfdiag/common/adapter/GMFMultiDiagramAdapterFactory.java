@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,26 +23,27 @@ import org.eclipse.ui.IEditorPart;
 
 public class GMFMultiDiagramAdapterFactory implements IAdapterFactory {
 
+	@Override
 	public Object getAdapter(Object adaptableObject, Class adapterType) {
-		if(adaptableObject instanceof IMultiDiagramEditor) {
-			IEditorPart nestedEditor = ((IMultiDiagramEditor)adaptableObject).getActiveEditor();
+		if (adaptableObject instanceof IMultiDiagramEditor) {
+			IEditorPart nestedEditor = ((IMultiDiagramEditor) adaptableObject).getActiveEditor();
 
-			//The nestedEditor may or may not handle these cases.
-			if(nestedEditor != null && nestedEditor instanceof IAdaptable) {
-				if(adapterType == IDiagramGraphicalViewer.class) {
-					return ((IAdaptable)nestedEditor).getAdapter(IDiagramGraphicalViewer.class);
+			// The nestedEditor may or may not handle these cases.
+			if (nestedEditor != null && nestedEditor instanceof IAdaptable) {
+				if (adapterType == IDiagramGraphicalViewer.class) {
+					return ((IAdaptable) nestedEditor).getAdapter(IDiagramGraphicalViewer.class);
 				}
 
-				if(adapterType == Diagram.class) {
-					return ((IAdaptable)nestedEditor).getAdapter(Diagram.class);
+				if (adapterType == Diagram.class) {
+					return ((IAdaptable) nestedEditor).getAdapter(Diagram.class);
 				}
 
-				if(adapterType == DiagramEditPart.class) {
-					return ((IAdaptable)nestedEditor).getAdapter(DiagramEditPart.class);
+				if (adapterType == DiagramEditPart.class) {
+					return ((IAdaptable) nestedEditor).getAdapter(DiagramEditPart.class);
 				}
 
-				if(adapterType == IDiagramWorkbenchPart.class) {
-					return ((IAdaptable)nestedEditor).getAdapter(IDiagramWorkbenchPart.class);
+				if (adapterType == IDiagramWorkbenchPart.class) {
+					return ((IAdaptable) nestedEditor).getAdapter(IDiagramWorkbenchPart.class);
 				}
 			}
 		}
@@ -50,8 +51,9 @@ public class GMFMultiDiagramAdapterFactory implements IAdapterFactory {
 		return null;
 	}
 
+	@Override
 	public Class<?>[] getAdapterList() {
-		return new Class<?>[]{ IMultiDiagramEditor.class };
+		return new Class<?>[] { IMultiDiagramEditor.class };
 	}
 
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.papyrus.uml.diagram.menu.actions.CustomAlignAction;
 
 
 /**
- * 
+ *
  * Handler for the AlignmentAction
- * 
+ *
  */
 public class AlignementHandler extends ParametricAndListeningHandler {
 
@@ -33,18 +33,18 @@ public class AlignementHandler extends ParametricAndListeningHandler {
 	protected CustomAlignAction action = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AlignementHandler() {
 		super("org.eclipse.papyrus.uml.diagram.menu.commandAlignmentParameter"); //$NON-NLS-1$
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -57,9 +57,9 @@ public class AlignementHandler extends ParametricAndListeningHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param param
-	 *        the parameter for the alignment action
+	 *            the parameter for the alignment action
 	 * @return
 	 *         the value represented by this parameter, this valu can be :
 	 *         <ul>
@@ -73,17 +73,17 @@ public class AlignementHandler extends ParametricAndListeningHandler {
 	 *         </ul>
 	 */
 	public int getAlignment(String param) {
-		if(param.equals(LayoutUtils.LEFT)) {
+		if (param.equals(LayoutUtils.LEFT)) {
 			return PositionConstants.LEFT;
-		} else if(param.equals(LayoutUtils.CENTER)) {
+		} else if (param.equals(LayoutUtils.CENTER)) {
 			return PositionConstants.CENTER;
-		} else if(param.equals(LayoutUtils.RIGHT)) {
+		} else if (param.equals(LayoutUtils.RIGHT)) {
 			return PositionConstants.RIGHT;
-		} else if(param.equals(LayoutUtils.BOTTOM)) {
+		} else if (param.equals(LayoutUtils.BOTTOM)) {
 			return PositionConstants.BOTTOM;
-		} else if(param.equals(LayoutUtils.MIDDLE)) {
+		} else if (param.equals(LayoutUtils.MIDDLE)) {
 			return PositionConstants.MIDDLE;
-		} else if(param.equals(LayoutUtils.TOP)) {
+		} else if (param.equals(LayoutUtils.TOP)) {
 			return PositionConstants.TOP;
 		}
 		return PositionConstants.NONE;

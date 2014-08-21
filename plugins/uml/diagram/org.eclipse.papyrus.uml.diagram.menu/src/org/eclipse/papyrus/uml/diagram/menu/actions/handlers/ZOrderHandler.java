@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.uml.diagram.menu.actions.ZOrderAction;
 
 /**
  * The handler for the ZOrderAction
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class ZOrderHandler extends AbstractGraphicalCommandHandler {
 
@@ -31,20 +31,20 @@ public class ZOrderHandler extends AbstractGraphicalCommandHandler {
 	public static final String parameterID = "order_parameter"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
-	 *        the command parameter
+	 *            the command parameter
 	 */
 	public ZOrderHandler(String parameter) {
 		super(parameterID, parameter);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ZOrderHandler() {
 		super(parameterID);
@@ -52,9 +52,9 @@ public class ZOrderHandler extends AbstractGraphicalCommandHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */

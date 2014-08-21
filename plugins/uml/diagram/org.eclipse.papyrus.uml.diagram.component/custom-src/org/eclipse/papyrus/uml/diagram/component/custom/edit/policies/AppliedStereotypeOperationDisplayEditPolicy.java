@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Remi Schnekenburger (CEA LIST) remi.schnekenburger@cea.fr - Initial API and implementation
  *  Nizar GUEDIDI (CEA LIST) - Update getUMLElement()
- * 
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.component.custom.edit.policies;
 
@@ -32,8 +32,8 @@ public class AppliedStereotypeOperationDisplayEditPolicy extends AbstractApplied
 	@Override
 	protected Operation getUMLElement() {
 		EObject element = super.getUMLElement();
-		if(element instanceof Operation) {
-			return (Operation)element;
+		if (element instanceof Operation) {
+			return (Operation) element;
 		}
 		return null;
 	}
@@ -44,6 +44,6 @@ public class AppliedStereotypeOperationDisplayEditPolicy extends AbstractApplied
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		OperationLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		OperationLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 }

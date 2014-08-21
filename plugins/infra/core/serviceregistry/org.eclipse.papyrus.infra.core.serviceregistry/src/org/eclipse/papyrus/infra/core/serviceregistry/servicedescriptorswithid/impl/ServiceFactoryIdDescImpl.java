@@ -20,6 +20,7 @@ public class ServiceFactoryIdDescImpl extends ServiceIdDescImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceFactoryIdDescImpl() {
@@ -29,6 +30,7 @@ public class ServiceFactoryIdDescImpl extends ServiceIdDescImpl implements Servi
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ServiceFactoryIdDescImpl extends ServiceIdDescImpl implements Servi
 		return ServicedescriptorswithidPackage.Literals.SERVICE_FACTORY_ID_DESC;
 	}
 
-} //ServiceFactoryIdDescImpl
+} // ServiceFactoryIdDescImpl

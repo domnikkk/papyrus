@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -16,13 +16,14 @@ package org.eclipse.papyrus.uml.diagram.component.custom.figure.edges;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure;
 
-/**this class has to option to display it:
-* normal with the UML view or as a link to display lollipop 
-**/
-public class UsageLinkFigure extends DashedEdgeFigure{
-	
+/**
+ * this class has to option to display it:
+ * normal with the UML view or as a link to display lollipop
+ **/
+public class UsageLinkFigure extends DashedEdgeFigure {
+
 	private boolean asLink = true;
-	
+
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.edge.DashedEdgeFigure#resetStyle()
 	 */
@@ -40,14 +41,14 @@ public class UsageLinkFigure extends DashedEdgeFigure{
 	/**
 	 * display it as a line
 	 */
-	public void displayAsAlink(){
+	public void displayAsAlink() {
 		asLink = true;
 	}
 
 	/**
 	 * display it as the UML representation with its decoration
 	 */
-	public void displayAsUMLShape(){
+	public void displayAsUMLShape() {
 		asLink = false;
 	}
 }

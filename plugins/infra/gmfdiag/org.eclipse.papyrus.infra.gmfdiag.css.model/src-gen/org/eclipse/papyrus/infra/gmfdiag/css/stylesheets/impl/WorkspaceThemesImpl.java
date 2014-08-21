@@ -13,8 +13,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.EModelElementImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage;
 import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.Theme;
@@ -27,7 +25,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.impl.WorkspaceThemesImpl#getThemes <em>Themes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.impl.WorkspaceThemesImpl#getThemes <em>Themes</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +36,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	 * The cached value of the '{@link #getThemes() <em>Themes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getThemes()
 	 * @generated
 	 * @ordered
@@ -47,6 +46,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected WorkspaceThemesImpl() {
@@ -56,6 +56,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,6 +67,7 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Theme> getThemes() {
@@ -78,13 +80,14 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
-				return ((InternalEList<?>)getThemes()).basicRemove(otherEnd, msgs);
+		case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
+			return ((InternalEList<?>) getThemes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,13 +95,14 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
-				return getThemes();
+		case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
+			return getThemes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,16 +110,17 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
-				getThemes().clear();
-				getThemes().addAll((Collection<? extends Theme>)newValue);
-				return;
+		case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
+			getThemes().clear();
+			getThemes().addAll((Collection<? extends Theme>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -123,14 +128,15 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
-				getThemes().clear();
-				return;
+		case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
+			getThemes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,15 +144,16 @@ public class WorkspaceThemesImpl extends EModelElementImpl implements WorkspaceT
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
-				return themes != null && !themes.isEmpty();
+		case StylesheetsPackage.WORKSPACE_THEMES__THEMES:
+			return themes != null && !themes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //WorkspaceThemesImpl
+} // WorkspaceThemesImpl

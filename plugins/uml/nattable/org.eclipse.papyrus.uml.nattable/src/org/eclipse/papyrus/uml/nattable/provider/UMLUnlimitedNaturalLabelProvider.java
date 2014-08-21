@@ -24,42 +24,42 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * This label provider allows to display '*' instead of -1 for unlimitednatural
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class UMLUnlimitedNaturalLabelProvider extends AbstractUMLNattableCellLabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.GenericCellLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public boolean accept(Object element) {
-		if(element instanceof ILabelProviderCellContextElementWrapper) {
-			final ILabelProviderCellContextElementWrapper cellWrapperContext = ((ILabelProviderCellContextElementWrapper)element);
+		if (element instanceof ILabelProviderCellContextElementWrapper) {
+			final ILabelProviderCellContextElementWrapper cellWrapperContext = ((ILabelProviderCellContextElementWrapper) element);
 			final IConfigRegistry registry = cellWrapperContext.getConfigRegistry();
 
-			//we do some quick test on the value
+			// we do some quick test on the value
 			final Object value = cellWrapperContext.getObject();
-			if(value instanceof Collection<?> && !((Collection<?>)value).iterator().hasNext()) {//if the value is en empty collection, we return false;
+			if (value instanceof Collection<?> && !((Collection<?>) value).iterator().hasNext()) {// if the value is en empty collection, we return false;
 				return false;
-			} else if(!(value instanceof Collection<?>) && !(value instanceof Integer)) { //if the value is not a collection and not an integer, we return false
+			} else if (!(value instanceof Collection<?>) && !(value instanceof Integer)) { // if the value is not a collection and not an integer, we return false
 				return false;
 			}
 
-			//now it is possible that we accepts the element
+			// now it is possible that we accepts the element
 			final Object rowObject = getRowObject(cellWrapperContext, registry);
 			final Object columnObject = getColumnObject(cellWrapperContext, registry);
 
 			final List<Object> objects = getUMLObjects(rowObject, columnObject);
-			if(objects.size() == 2) {
+			if (objects.size() == 2) {
 				final Object feature = objects.get(1);
-				if(feature instanceof Property) {
-					return UMLUtil.isUnlimitedNatural(((Property)feature).getType());
+				if (feature instanceof Property) {
+					return UMLUtil.isUnlimitedNatural(((Property) feature).getType());
 				}
 			}
 			return false;
@@ -68,9 +68,9 @@ public class UMLUnlimitedNaturalLabelProvider extends AbstractUMLNattableCellLab
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.GenericCellLabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

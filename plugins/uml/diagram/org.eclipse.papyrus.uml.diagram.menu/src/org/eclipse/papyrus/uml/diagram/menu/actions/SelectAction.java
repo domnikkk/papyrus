@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ import org.eclipse.jface.viewers.StructuredSelection;
 
 /**
  * Adapted from {@link SelectAllAction}
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class SelectAction extends AbstractParametricAction {
 
@@ -69,9 +69,9 @@ public class SelectAction extends AbstractParametricAction {
 	protected boolean selectConnections = false;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
 	 */
 	public SelectAction(String parameter, List<IGraphicalEditPart> selectedElements) {
@@ -80,20 +80,20 @@ public class SelectAction extends AbstractParametricAction {
 	}
 
 	protected void initAction() {
-		if(SELECT_ALL.equals(getParameter())) {
+		if (SELECT_ALL.equals(getParameter())) {
 			this.selectShapes = true;
 			this.selectConnections = true;
-		} else if(SELECT_ALL_SHAPES.equals(getParameter())) {
+		} else if (SELECT_ALL_SHAPES.equals(getParameter())) {
 			this.selectShapes = true;
-		} else if(SELECT_ALL_CONNECTORS.equals(getParameter())) {
+		} else if (SELECT_ALL_CONNECTORS.equals(getParameter())) {
 			this.selectConnections = true;
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#isEnabled()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -107,9 +107,9 @@ public class SelectAction extends AbstractParametricAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.menu.actions.AbstractParametricAction#getSelection()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -123,30 +123,33 @@ public class SelectAction extends AbstractParametricAction {
 	 */
 	protected List createOperationSet() {
 		List selection = getSelection();
-		if(selection.isEmpty() || !(selection.get(0) instanceof IGraphicalEditPart))
+		if (selection.isEmpty() || !(selection.get(0) instanceof IGraphicalEditPart)) {
 			return Collections.EMPTY_LIST;
+		}
 
 		List selectables = new ArrayList();
 
-		EditPart primaryEP = (EditPart)selection.get(selection.size() - 1);
+		EditPart primaryEP = (EditPart) selection.get(selection.size() - 1);
 		List nodeEditParts = new ArrayList();
 		nodeEditParts.addAll(getSelectableNodes(primaryEP));
 
-		if(selectShapes)
+		if (selectShapes) {
 			selectables.addAll(nodeEditParts);
-		if(selectConnections)
+		}
+		if (selectConnections) {
 			selectables.addAll(addSelectableConnections(nodeEditParts));
+		}
 		return filterEditPartsMatching(selectables, getSelectionConditional());
 	}
 
 	/**
 	 * Determines the candidate list of node editparts for selection
-	 * 
+	 *
 	 * @param editpart
 	 * @return
 	 */
 	protected List getSelectableNodes(EditPart editpart) {
-		if(editpart == null) {
+		if (editpart == null) {
 			return Collections.EMPTY_LIST;
 		}
 
@@ -157,37 +160,40 @@ public class SelectAction extends AbstractParametricAction {
 
 	/**
 	 * Determines the candidate list of node editparts for selection
-	 * 
+	 *
 	 * @param editpart
 	 * @param topLevel
-	 *        <code>boolean</code> is this the initial entry point into the recursive method.
+	 *            <code>boolean</code> is this the initial entry point into the recursive method.
 	 * @param retval
-	 *        <code>List</code> to modify
+	 *            <code>List</code> to modify
 	 */
 	private void getSelectableNodesInside(EditPart editpart, boolean topLevel, List retval) {
 
-		if(editpart instanceof ISurfaceEditPart) {
+		if (editpart instanceof ISurfaceEditPart) {
 			getSelectableChildrenNodes(editpart, retval);
-		} else if(editpart instanceof IPrimaryEditPart) {
-			if(topLevel) {
-				if(editpart instanceof ConnectionEditPart) {
-					ConnectionEditPart connection = (ConnectionEditPart)editpart;
+		} else if (editpart instanceof IPrimaryEditPart) {
+			if (topLevel) {
+				if (editpart instanceof ConnectionEditPart) {
+					ConnectionEditPart connection = (ConnectionEditPart) editpart;
 					EditPart source = connection.getSource();
 					EditPart target = connection.getTarget();
-					if(source != null && target != null) {
+					if (source != null && target != null) {
 						getSelectableNodesInside(source, true, retval);
-						if(target.getParent() != source.getParent())
+						if (target.getParent() != source.getParent()) {
 							getSelectableNodesInside(target, true, retval);
+						}
 					}
-				} else
+				} else {
 					getSelectableNodesInside(editpart.getParent(), true, retval);
+				}
 			} else {
-				if(editpart.isSelectable())
+				if (editpart.isSelectable()) {
 					retval.add(editpart);
+				}
 
 				// Do not dig into groups -- just select the group, but not the
 				// shapes inside.
-				if(!(editpart instanceof GroupEditPart)) {
+				if (!(editpart instanceof GroupEditPart)) {
 					getSelectableChildrenNodes(editpart, retval);
 				}
 			}
@@ -195,34 +201,34 @@ public class SelectAction extends AbstractParametricAction {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editpart
-	 *        an editpart
+	 *            an editpart
 	 * @param retval
-	 *        the selectable node inside this editpart
+	 *            the selectable node inside this editpart
 	 */
 	private void getSelectableChildrenNodes(EditPart editpart, List retval) {
 		Iterator iter = editpart.getChildren().iterator();
-		while(iter.hasNext()) {
-			EditPart child = (EditPart)iter.next();
+		while (iter.hasNext()) {
+			EditPart child = (EditPart) iter.next();
 			getSelectableNodesInside(child, false, retval);
 		}
 	}
 
 	/**
 	 * This method searches an edit part for a child that is a border item edit part
-	 * 
+	 *
 	 * @param parent
-	 *        part needed to search
+	 *            part needed to search
 	 * @param set
-	 *        to be modified of border item edit parts that are direct children of the parent
+	 *            to be modified of border item edit parts that are direct children of the parent
 	 */
 	private void getBorderItemEditParts(EditPart parent, Set retval) {
 
 		Iterator iter = parent.getChildren().iterator();
-		while(iter.hasNext()) {
-			EditPart child = (EditPart)iter.next();
-			if(child instanceof IBorderItemEditPart) {
+		while (iter.hasNext()) {
+			EditPart child = (EditPart) iter.next();
+			if (child instanceof IBorderItemEditPart) {
 				retval.add(child);
 				retval.addAll(child.getChildren());
 			}
@@ -234,7 +240,7 @@ public class SelectAction extends AbstractParametricAction {
 	 * Determines the candidate list of connection edit for selection
 	 * A connection is included if atleast the source or the target is
 	 * included in the given list
-	 * 
+	 *
 	 * @param editparts
 	 */
 	protected List addSelectableConnections(List editparts) {
@@ -243,20 +249,21 @@ public class SelectAction extends AbstractParametricAction {
 		DiagramEditPart diagramEditPart = getDiagramEditPart();
 		Set connnectableEditParts = new HashSet(editparts);
 		ListIterator li = editparts.listIterator();
-		while(li.hasNext()) {
-			EditPart ep = (EditPart)li.next();
+		while (li.hasNext()) {
+			EditPart ep = (EditPart) li.next();
 			getBorderItemEditParts(ep, connnectableEditParts);
-			if(ep instanceof GroupEditPart) {
-				connnectableEditParts.addAll(((GroupEditPart)ep).getShapeChildren());
+			if (ep instanceof GroupEditPart) {
+				connnectableEditParts.addAll(((GroupEditPart) ep).getShapeChildren());
 			}
 		}
 
-		if(diagramEditPart != null) {
+		if (diagramEditPart != null) {
 			Iterator connections = diagramEditPart.getConnections().iterator();
-			while(connections.hasNext()) {
-				ConnectionEditPart connection = (ConnectionEditPart)connections.next();
-				if(canSelectConnection(connection, connnectableEditParts))
+			while (connections.hasNext()) {
+				ConnectionEditPart connection = (ConnectionEditPart) connections.next();
+				if (canSelectConnection(connection, connnectableEditParts)) {
 					selectableConnections.add(connection);
+				}
 			}
 		}
 		return selectableConnections;
@@ -269,9 +276,9 @@ public class SelectAction extends AbstractParametricAction {
 	 * or target of the connection is another connection and if that connection's
 	 * source or target is in the given connectableEditPart list. This is in
 	 * response to Bugzilla #162083.
-	 * 
+	 *
 	 * @param connection
-	 *        connection to check
+	 *            connection to check
 	 * @param connectableEditParts
 	 */
 	private boolean canSelectConnection(ConnectionEditPart connection, Set connectableEditParts) {
@@ -280,14 +287,17 @@ public class SelectAction extends AbstractParametricAction {
 		boolean sourceHasSelectable = false;
 		boolean targetHasSelectable = false;
 
-		if(connectableEditParts.contains(connectionSource) || connectableEditParts.contains(connectionTarget))
+		if (connectableEditParts.contains(connectionSource) || connectableEditParts.contains(connectionTarget)) {
 			return true;
+		}
 
-		if(connectionSource instanceof ConnectionEditPart)
-			sourceHasSelectable = canSelectConnection((ConnectionEditPart)connectionSource, connectableEditParts);
+		if (connectionSource instanceof ConnectionEditPart) {
+			sourceHasSelectable = canSelectConnection((ConnectionEditPart) connectionSource, connectableEditParts);
+		}
 
-		if(!sourceHasSelectable && connectionTarget instanceof ConnectionEditPart)
-			targetHasSelectable = canSelectConnection((ConnectionEditPart)connectionTarget, connectableEditParts);
+		if (!sourceHasSelectable && connectionTarget instanceof ConnectionEditPart) {
+			targetHasSelectable = canSelectConnection((ConnectionEditPart) connectionTarget, connectableEditParts);
+		}
 
 		return sourceHasSelectable || targetHasSelectable;
 	}
@@ -307,21 +317,22 @@ public class SelectAction extends AbstractParametricAction {
 	/**
 	 * Filters the given list of EditParts so that the list only contains the
 	 * EditParts that matches the given condition.
-	 * 
+	 *
 	 * @param list
-	 *        the list of edit parts to filter
+	 *            the list of edit parts to filter
 	 * @param condition
-	 *        the condition
+	 *            the condition
 	 * @return a modified list containing those editparts that matched the
 	 *         condition
 	 */
 	protected List filterEditPartsMatching(List list, EditPartViewer.Conditional condition) {
 		List matchList = new ArrayList();
 		Iterator iter = list.iterator();
-		while(iter.hasNext()) {
-			EditPart ep = (EditPart)iter.next();
-			if(condition.evaluate(ep))
+		while (iter.hasNext()) {
+			EditPart ep = (EditPart) iter.next();
+			if (condition.evaluate(ep)) {
 				matchList.add(ep);
+			}
 		}
 		return matchList;
 	}

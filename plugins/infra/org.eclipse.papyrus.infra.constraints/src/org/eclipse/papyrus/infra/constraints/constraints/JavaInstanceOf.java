@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.papyrus.infra.tools.util.ClassLoaderHelper;
 /**
  * A Constraint to test if an object is an instance of a given
  * Java class
- * 
+ *
  * @author Camille Letavernier
  */
 public class JavaInstanceOf extends AbstractConstraint {
@@ -29,8 +29,9 @@ public class JavaInstanceOf extends AbstractConstraint {
 		clazz = ClassLoaderHelper.loadClass(getValue("class")); //$NON-NLS-1$
 	}
 
+	@Override
 	public boolean match(Object selection) {
-		if(clazz == null) {
+		if (clazz == null) {
 			return false;
 		}
 
@@ -39,7 +40,7 @@ public class JavaInstanceOf extends AbstractConstraint {
 
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		return false; //TODO
+		return false; // TODO
 	}
 
 }

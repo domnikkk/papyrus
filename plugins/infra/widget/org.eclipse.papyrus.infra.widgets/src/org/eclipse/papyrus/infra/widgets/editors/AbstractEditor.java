@@ -48,10 +48,10 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
  *
  * @author Camille Letavernier
  */
-//FIXME: The composite widget hides access to the encapsulated widget(s).
-//Thus, it is not possible to add custom listeners on the editors
-//We should forward the listeners to the encapsulated (this.addListener(int, Listener) -> getMainWidget().addListener(int, Listener))
-//Problem: some widgets have more than one "main widget" (e.g. EnumRadio).
+// FIXME: The composite widget hides access to the encapsulated widget(s).
+// Thus, it is not possible to add custom listeners on the editors
+// We should forward the listeners to the encapsulated (this.addListener(int, Listener) -> getMainWidget().addListener(int, Listener))
+// Problem: some widgets have more than one "main widget" (e.g. EnumRadio).
 public abstract class AbstractEditor extends Composite implements DisposeListener {
 
 	/**
@@ -88,7 +88,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 
 	static {
 		factory.setBackground(null);
-		factory.setBorderStyle(SWT.BORDER); //This seems to be used only by the FormToolKit factory, we still need to force it for the CLabel or CCombo widgets
+		factory.setBorderStyle(SWT.BORDER); // This seems to be used only by the FormToolKit factory, we still need to force it for the CLabel or CCombo widgets
 	}
 
 	/**
@@ -96,7 +96,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Constructor. Constructs an editor without a label
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be created
+	 *            The composite in which this editor should be created
 	 */
 	protected AbstractEditor(Composite parent) {
 		this(parent, SWT.NONE, null);
@@ -107,9 +107,9 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Constructor. Constructs an editor without a label
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be created
+	 *            The composite in which this editor should be created
 	 * @param style
-	 *        The style of this editor's main composite
+	 *            The style of this editor's main composite
 	 */
 	protected AbstractEditor(Composite parent, int style) {
 		this(parent, style, null);
@@ -120,10 +120,10 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Constructor. Constructs an editor with a label
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be created
+	 *            The composite in which this editor should be created
 	 * @param label
-	 *        The label that will be displayed for this editor, or null
-	 *        if no label should be displayed
+	 *            The label that will be displayed for this editor, or null
+	 *            if no label should be displayed
 	 */
 	protected AbstractEditor(Composite parent, String label) {
 		this(parent, SWT.NONE, label);
@@ -134,18 +134,18 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Constructor. Constructs an editor with a label
 	 *
 	 * @param parent
-	 *        The composite in which this editor should be created
+	 *            The composite in which this editor should be created
 	 * @param style
-	 *        The style of this editor's main composite
+	 *            The style of this editor's main composite
 	 * @param label
-	 *        The label that will be displayed for this editor, or null
-	 *        if no label should be displayed
+	 *            The label that will be displayed for this editor, or null
+	 *            if no label should be displayed
 	 */
 	protected AbstractEditor(Composite parent, int style, String label) {
 		super(parent, style);
 		GridLayout layout = new GridLayout(1, false);
 		setLayout(layout);
-		if(label != null) {
+		if (label != null) {
 			createLabel(label);
 		}
 		parent.addDisposeListener(this);
@@ -155,15 +155,15 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Creates the label widget with the given text
 	 *
 	 * @param text
-	 *        The text to be displayed on the label
+	 *            The text to be displayed on the label
 	 */
 	protected void createLabel(String text) {
 		label = factory.createLabel(this, text);
 		label.setLayoutData(getLabelLayoutData());
-		if(toolTipText != null) {
+		if (toolTipText != null) {
 			label.setToolTipText(toolTipText);
 		}
-		((GridLayout)getLayout()).numColumns++;
+		((GridLayout) getLayout()).numColumns++;
 	}
 
 	/**
@@ -192,12 +192,12 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * only when the editor has been constructed with a label.
 	 *
 	 * @param label
-	 *        The new text for this editor's label
+	 *            The new text for this editor's label
 	 */
 	public void setLabel(String label) {
 		this.labelText = label;
 
-		if(this.label != null) {
+		if (this.label != null) {
 			this.label.setText(label);
 		} else {
 			createLabel(label);
@@ -211,12 +211,12 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * @param displayLabel
 	 */
 	public void setDisplayLabel(boolean displayLabel) {
-		if(displayLabel) {
+		if (displayLabel) {
 			setLabel(labelText);
 		} else {
-			if(this.label != null) {
+			if (this.label != null) {
 				this.label.dispose();
-				((GridLayout)getLayout()).numColumns--;
+				((GridLayout) getLayout()).numColumns--;
 			}
 		}
 	}
@@ -226,7 +226,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * fired when a modification occurs on this editor.
 	 *
 	 * @param listener
-	 *        The commit listener to add to this editor
+	 *            The commit listener to add to this editor
 	 */
 	public void addCommitListener(ICommitListener listener) {
 		commitListeners.add(listener);
@@ -236,7 +236,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Removes a commit listener from this editor.
 	 *
 	 * @param listener
-	 *        The commit listener to remove from this editor
+	 *            The commit listener to remove from this editor
 	 */
 	public void removeCommitListener(ICommitListener listener) {
 		commitListeners.remove(listener);
@@ -246,7 +246,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Informs the commit listeners that a modification occured
 	 */
 	protected void commit() {
-		for(ICommitListener listener : commitListeners) {
+		for (ICommitListener listener : commitListeners) {
 			listener.commit(this);
 
 		}
@@ -260,7 +260,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * @return
 	 */
 	protected DataBindingContext getBindingContext() {
-		if(dbc == null) {
+		if (dbc == null) {
 			dbc = new DataBindingContext();
 		}
 		return dbc;
@@ -309,8 +309,8 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * when the given control looses the Focus
 	 *
 	 * @param control
-	 *        The control on which a FocusListener should be added,
-	 *        to notify the CommitListeners
+	 *            The control on which a FocusListener should be added,
+	 *            to notify the CommitListeners
 	 */
 	protected void setCommitOnFocusLost(Control control) {
 		control.addFocusListener(new FocusAdapter() {
@@ -327,14 +327,14 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Forces the refresh of the widget's value
 	 */
 	public void refreshValue() {
-		if(binding != null) {
+		if (binding != null) {
 			binding.updateModelToTarget();
 		}
 
 	}
 
 	public void refreshModel() {
-		if(binding != null) {
+		if (binding != null) {
 			binding.updateTargetToModel();
 		}
 
@@ -344,11 +344,11 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Sets the given toolTip to the label
 	 *
 	 * @param text
-	 *        The new label's tooltip
+	 *            The new label's tooltip
 	 */
 	protected void setLabelToolTipText(String text) {
 		toolTipText = text;
-		if(label != null && !label.isDisposed()) {
+		if (label != null && !label.isDisposed()) {
 			label.setToolTipText(text);
 		}
 	}
@@ -357,22 +357,22 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Excludes or includes the given control from the layout
 	 *
 	 * @param control
-	 *        The control to exclude or include
+	 *            The control to exclude or include
 	 * @param exclude
-	 *        If true, the control will be excluded ; otherwise, it will be included
+	 *            If true, the control will be excluded ; otherwise, it will be included
 	 */
 	protected void setExclusion(Control control, boolean exclude) {
-		if(control.getLayoutData() == null) {
+		if (control.getLayoutData() == null) {
 			GridData data = new GridData();
 			control.setLayoutData(data);
 		}
 
-		GridData data = (GridData)control.getLayoutData();
+		GridData data = (GridData) control.getLayoutData();
 
-		if(data.exclude != exclude) {
+		if (data.exclude != exclude) {
 			data.exclude = exclude;
-			GridLayout layout = (GridLayout)control.getParent().getLayout();
-			if(exclude) {
+			GridLayout layout = (GridLayout) control.getParent().getLayout();
+			if (exclude) {
 				layout.numColumns--;
 			} else {
 				layout.numColumns++;
@@ -395,21 +395,21 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * Obtains the most appropriate operation executor for the object being edited.
 	 *
 	 * @param context
-	 *        the object being edited
+	 *            the object being edited
 	 * @return the executor to use to run operations (never {@code null})
 	 */
 	public IAtomicOperationExecutor getOperationExecutor(Object context) {
 		IAtomicOperationExecutor result;
-		if(context instanceof IAdaptable) {
-			result = (IAtomicOperationExecutor)((IAdaptable)context).getAdapter(IAtomicOperationExecutor.class);
-		} else if(context != null) {
-			result = (IAtomicOperationExecutor)Platform.getAdapterManager().getAdapter(context, IAtomicOperationExecutor.class);
+		if (context instanceof IAdaptable) {
+			result = (IAtomicOperationExecutor) ((IAdaptable) context).getAdapter(IAtomicOperationExecutor.class);
+		} else if (context != null) {
+			result = (IAtomicOperationExecutor) Platform.getAdapterManager().getAdapter(context, IAtomicOperationExecutor.class);
 		} else {
 			// We can't adapt null, of course, so we will have to settle for the default executor
 			result = null;
 		}
 
-		if(result == null) {
+		if (result == null) {
 			result = IAtomicOperationExecutor.DEFAULT;
 		}
 
@@ -419,7 +419,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	/**
 	 * A hook to call when a control is accepting a focus that is sensitive to glitches in focus management
 	 * on the current SWT platform.
-	 * 
+	 *
 	 * @see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=435420">bug 435420</a>
 	 */
 	protected final void acceptingFocus() {
@@ -443,7 +443,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 	 * while a {@link CCombo} is trying to accept focus in a Property Sheet that currently does not have focus
 	 * results in the text contents of some unrelated {@link Text} widget being presented in the {@code CCombo}'s
 	 * text field.
-	 * 
+	 *
 	 * @see <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=435420">bug 435420</a>
 	 */
 	static class FocusVeto {
@@ -466,7 +466,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 
 					removeFocusVeto(shell, FocusVeto.this);
 
-					if(!FocusVeto.this.focusControl.isDisposed() && !FocusVeto.this.focusControl.isFocusControl()) {
+					if (!FocusVeto.this.focusControl.isDisposed() && !FocusVeto.this.focusControl.isFocusControl()) {
 						FocusVeto.this.focusControl.setFocus();
 					}
 				}
@@ -483,17 +483,17 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 		}
 
 		static void vetoFocus(Control focusControl) {
-			if(IS_SWT_COCOA) {
+			if (IS_SWT_COCOA) {
 				Shell shell = focusControl.getShell();
 				FocusVeto current = getFocusVeto(shell);
-				if(current == null) {
+				if (current == null) {
 					setFocusVeto(shell, new FocusVeto(focusControl));
 				}
 			}
 		}
 
 		static FocusVeto getFocusVeto(Shell shell) {
-			return (FocusVeto)shell.getData(FocusVeto.class.getName());
+			return (FocusVeto) shell.getData(FocusVeto.class.getName());
 		}
 
 		static void setFocusVeto(Shell shell, FocusVeto focusVeto) {
@@ -501,7 +501,7 @@ public abstract class AbstractEditor extends Composite implements DisposeListene
 		}
 
 		static void removeFocusVeto(Shell shell, FocusVeto focusVeto) {
-			if(getFocusVeto(shell) == focusVeto) {
+			if (getFocusVeto(shell) == focusVeto) {
 				shell.setData(FocusVeto.class.getName(), null);
 			}
 		}

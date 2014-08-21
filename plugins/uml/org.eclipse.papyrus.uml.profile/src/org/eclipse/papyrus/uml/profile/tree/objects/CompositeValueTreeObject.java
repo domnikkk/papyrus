@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,11 @@ public class CompositeValueTreeObject extends ValueTreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public CompositeValueTreeObject(AppliedStereotypePropertyTreeObject parent, Object value) {
 		super(parent, value);
@@ -46,16 +46,16 @@ public class CompositeValueTreeObject extends ValueTreeObject {
 		// Element elt = ((RootElementTreeObject) getParent().getParent().getParent()).getElement();
 		// Property property = pTO.getProperty();
 		// Type type = property.getType();
-		//		
+		//
 		// final ArrayList filteredElements = Util.getInstancesFilteredByType(elt.getModel(), null, (Stereotype) type);
-		//		
+		//
 		// String[] elementsNames = Util.getStringArrayFromList(filteredElements);
 		// // if no possible selection : abort
 		// if (elementsNames == null) {
 		// Message.warning("No element stereotyped <<" + type.getName() + ">> was found in the model.");
 		// return;
 		// }
-		//		
+		//
 		// ProfileElementLabelProvider labelProvider = new ProfileElementLabelProvider();
 		// ComboSelectionDialog valueDialog = new ComboSelectionDialog(new Shell(), "New value:", elementsNames, labelProvider.getText(this));
 		// int val = valueDialog.open();
@@ -64,7 +64,7 @@ public class CompositeValueTreeObject extends ValueTreeObject {
 		// EObject newValue = newElement.getStereotypeApplication((Stereotype) type);
 		// updateValue(newValue);
 		// }
-		//		
+		//
 		// // Close dialog box and refresh table
 		// valueDialog.close();
 	}

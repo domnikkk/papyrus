@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A widget to edit Colors represented by an Integer (RGB) value
  * The editor is a Button with a color-picker popup.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class XWTAwareColorPicker extends AbstractPropertyEditor {
 
@@ -40,7 +40,7 @@ public class XWTAwareColorPicker extends AbstractPropertyEditor {
 	public void setImage(String imagePath) {
 		this.imagePath = imagePath;
 		Image image = Activator.getDefault().getImageFromPlugin(imagePath);
-		if(image != null) {
+		if (image != null) {
 			editor.setImage(image);
 		}
 	}
@@ -49,8 +49,8 @@ public class XWTAwareColorPicker extends AbstractPropertyEditor {
 	protected void doBinding() {
 		super.doBinding();
 		Object defaultValue = input.getDefaultValue(propertyPath);
-		if(defaultValue instanceof Integer) {
-			editor.setDefaultColor((Integer)defaultValue);
+		if (defaultValue instanceof Integer) {
+			editor.setDefaultColor((Integer) defaultValue);
 		}
 	}
 
@@ -59,7 +59,7 @@ public class XWTAwareColorPicker extends AbstractPropertyEditor {
 	}
 
 	protected void checkBounds() {
-		if(x > -1 && y > -1 && width > -1 && height > -1) {
+		if (x > -1 && y > -1 && width > -1 && height > -1) {
 			editor.setColorBounds(new Rectangle(x, y, width, height));
 		}
 	}

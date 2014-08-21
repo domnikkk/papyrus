@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -25,11 +25,9 @@ import org.eclipse.swt.widgets.Text;
 
 /**
  * Abstract class for the creation of a composite that allows the selection or
- * creation of an element. Classes implementing this class must overrides
- * {@link #getSubWidgets()} method. This class prepare the composite for
- * {@link #COLUMN_NUMBER} subComposites and provide the method
- * {@link #createTextField(boolean)} for the creation of a textField area.
- * 
+ * creation of an element. Classes implementing this class must overrides {@link #getSubWidgets()} method. This class prepare the composite for {@link #COLUMN_NUMBER} subComposites and provide the method {@link #createTextField(boolean)} for the creation of a
+ * textField area.
+ *
  * @see AbstractGetOrCreateElementWithButtonWidget
  * @see AbstractGetElementNameWidget
  * @since 0.3
@@ -46,9 +44,8 @@ public abstract class AbstractGetOrCreateElementWidget<T extends Object>
 	private Text text;
 
 	/**
-	 * Constructor. Initialize the composite with a layout of
-	 * {@value #COLUMN_NUMBER} columns.
-	 * 
+	 * Constructor. Initialize the composite with a layout of {@value #COLUMN_NUMBER} columns.
+	 *
 	 * @param parent
 	 *            the parent containing this composite.
 	 * @param style
@@ -77,9 +74,8 @@ public abstract class AbstractGetOrCreateElementWidget<T extends Object>
 	}
 
 	/**
-	 * Create the text field in the composite.</p> If the property
-	 * {@link #propertyElement} has a value, the field is not editable.
-	 * 
+	 * Create the text field in the composite.</p> If the property {@link #propertyElement} has a value, the field is not editable.
+	 *
 	 * @param enabled
 	 *            set if the field must be editable or not.
 	 */

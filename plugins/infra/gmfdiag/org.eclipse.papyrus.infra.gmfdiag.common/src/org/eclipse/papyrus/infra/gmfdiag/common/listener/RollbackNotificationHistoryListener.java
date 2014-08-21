@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,23 +49,24 @@ public class RollbackNotificationHistoryListener implements IOperationHistoryLis
 		super();
 	}
 
+	@Override
 	public void historyNotification(OperationHistoryEvent event) {
-		switch(event.getEventType()) {
+		switch (event.getEventType()) {
 		case OperationHistoryEvent.OPERATION_NOT_OK:
 			final long now = System.currentTimeMillis();
 
 			IRollbackStatus rollback = RollbackStatus.findRollbackStatus(event.getStatus());
-			if(rollback == null) {
+			if (rollback == null) {
 				// Failure of a TriggeredOperations results in an event without a status
 				rollback = findRollbackStatus(event.getOperation());
 			}
 
-			if(rollback != null) {
+			if (rollback != null) {
 				Collection<?> causalObjects = rollback.getCausalObjects();
 				Collection<String> labels = getObjectLabels(causalObjects);
 
 				String message;
-				switch(rollback.getCode()) {
+				switch (rollback.getCode()) {
 				case IRollbackStatus.UNCAUGHT_EXCEPTION:
 					message = labels.isEmpty() ? Messages.RollbackNotificationHistoryListener_exception : NLS.bind(Messages.RollbackNotificationHistoryListener_exceptionWithCause, labels);
 					break;
@@ -93,31 +94,31 @@ public class RollbackNotificationHistoryListener implements IOperationHistoryLis
 		ILabelProvider labels = null;
 
 		try {
-			for(Object next : objects) {
-				if(labels == null) {
+			for (Object next : objects) {
+				if (labels == null) {
 					try {
 						LabelProviderService labelService = null;
-						if(next instanceof EObject) {
-							labelService = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, (EObject)next);
-						} else if(next instanceof Resource) {
-							labelService = ServiceUtilsForResource.getInstance().getService(LabelProviderService.class, (Resource)next);
+						if (next instanceof EObject) {
+							labelService = ServiceUtilsForEObject.getInstance().getService(LabelProviderService.class, (EObject) next);
+						} else if (next instanceof Resource) {
+							labelService = ServiceUtilsForResource.getInstance().getService(LabelProviderService.class, (Resource) next);
 						}
 
-						if(labelService != null) {
+						if (labelService != null) {
 							labels = labelService.getLabelProvider();
 						}
 					} catch (ServiceException e) {
-						// not in an editor context.  Fine
+						// not in an editor context. Fine
 						labels = new EMFLabelProvider();
 					}
 				}
 
-				if(labels != null) {
+				if (labels != null) {
 					result.add(labels.getText(next));
 				}
 			}
 		} finally {
-			if(labels != null) {
+			if (labels != null) {
 				labels.dispose();
 			}
 		}
@@ -128,14 +129,14 @@ public class RollbackNotificationHistoryListener implements IOperationHistoryLis
 	protected IRollbackStatus findRollbackStatus(IUndoableOperation operation) {
 		IRollbackStatus result = null;
 
-		if(operation instanceof ICommand) {
-			CommandResult commandResult = ((ICommand)operation).getCommandResult();
-			if(commandResult != null) {
+		if (operation instanceof ICommand) {
+			CommandResult commandResult = ((ICommand) operation).getCommandResult();
+			if (commandResult != null) {
 				result = RollbackStatus.findRollbackStatus(commandResult.getStatus());
 			}
-		} else if(operation instanceof TriggeredOperations) {
+		} else if (operation instanceof TriggeredOperations) {
 			// We can't get the children out of a generic ICompositeOperation, and from this one only the initial triggering operation
-			return findRollbackStatus(((TriggeredOperations)operation).getTriggeringOperation());
+			return findRollbackStatus(((TriggeredOperations) operation).getTriggeringOperation());
 		}
 
 		return result;

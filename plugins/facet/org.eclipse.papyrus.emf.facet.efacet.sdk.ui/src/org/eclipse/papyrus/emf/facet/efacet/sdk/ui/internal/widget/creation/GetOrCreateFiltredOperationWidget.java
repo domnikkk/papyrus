@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -29,7 +29,7 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * Concrete implementation of {@link AbstractGetOrCreateElementWidget}.</p>
- * 
+ *
  * This class allows to select an Operation or create a new one.
  */
 public class GetOrCreateFiltredOperationWidget extends
@@ -40,7 +40,7 @@ public class GetOrCreateFiltredOperationWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this widget.
 	 * @param properties

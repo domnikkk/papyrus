@@ -11,7 +11,7 @@
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.parametric.preferences; 
+package org.eclipse.papyrus.sysml.diagram.parametric.preferences;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -25,49 +25,49 @@ import org.eclipse.papyrus.sysml.diagram.parametric.provider.ElementTypes;
 public class BlockCompositePreferencePage extends ParametricDiagramNodePreferencePage {
 
 	/** Constant key to access preferences */
-	public static String prefKey = ElementTypes.DIAGRAM_ID + "_" +  SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID; //$NON-NLS-1$
+	public static String prefKey = ElementTypes.DIAGRAM_ID + "_" + SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID; //$NON-NLS-1$
 
-	/** The compartments default visibility for preferences */ 
+	/** The compartments default visibility for preferences */
 	public static final Map<String, Boolean> compartmentDefaultVisibilityMap;
 
-	/** The compartment titles default visibility for preferences */ 
+	/** The compartment titles default visibility for preferences */
 	public static final Map<String, Boolean> compartmentTitleDefaultVisibilityMap;
-		
+
 	/** Static attribute initialization */
 	static {
 		compartmentDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
-		compartmentDefaultVisibilityMap.put("structure", Boolean.TRUE); //$NON-NLS-1$	
-		
+		compartmentDefaultVisibilityMap.put("structure", Boolean.TRUE); //$NON-NLS-1$
+
 		compartmentTitleDefaultVisibilityMap = new LinkedHashMap<String, Boolean>();
 		compartmentTitleDefaultVisibilityMap.put("structure", Boolean.TRUE); //$NON-NLS-1$
-		
-		
+
+
 		// Start of user code custom static initializations
- 		// End of user code
- 		
- 		Collections.unmodifiableMap(compartmentDefaultVisibilityMap);
- 		Collections.unmodifiableMap(compartmentTitleDefaultVisibilityMap);
+		// End of user code
+
+		Collections.unmodifiableMap(compartmentDefaultVisibilityMap);
+		Collections.unmodifiableMap(compartmentTitleDefaultVisibilityMap);
 	}
-	
+
 	/** Constructor */
 	public BlockCompositePreferencePage() {
 		super();
-		setPreferenceKey(ElementTypes.DIAGRAM_ID + "_" +  SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID); //$NON-NLS-1$
+		setPreferenceKey(ElementTypes.DIAGRAM_ID + "_" + SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID); //$NON-NLS-1$
 	}
-	
+
 	/** Default preferences initializer */
 	public static void initDefaults(IPreferenceStore store) {
 		// Start of user code custom default initializations
 		// End of user code
-		
+
 		// Initialize default visibility for compartments in preference page.
-		for(String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
 			String showCompartmentKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			store.setDefault(showCompartmentKey, compartmentDefaultVisibilityMap.get(compartmentName));
 		}
 
 		// Initialize default title visibility for compartments in preference page.
-		for(String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
 			String showCompartmentTitleKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_NAME_VISIBILITY);
 			store.setDefault(showCompartmentTitleKey, compartmentTitleDefaultVisibilityMap.get(compartmentName));
 		}
@@ -78,7 +78,7 @@ public class BlockCompositePreferencePage extends ParametricDiagramNodePreferenc
 	 */
 	@Override
 	protected void initializeCompartmentNamesList() {
-		for(String name : compartmentDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentDefaultVisibilityMap.keySet()) {
 			this.compartmentNamesList.add(name);
 		}
 	}
@@ -88,9 +88,9 @@ public class BlockCompositePreferencePage extends ParametricDiagramNodePreferenc
 	 */
 	@Override
 	protected void initializeCompartmentTitlesList() {
-		for(String name : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentTitleDefaultVisibilityMap.keySet()) {
 			this.compartmentTitlesList.add(name);
 		}
 	}
-	
+
 }

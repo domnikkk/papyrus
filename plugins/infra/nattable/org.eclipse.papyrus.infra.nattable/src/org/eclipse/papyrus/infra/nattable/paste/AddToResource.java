@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,9 +22,9 @@ import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 
 /**
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class AddToResource implements IValueSetter {
 
@@ -39,9 +39,9 @@ public class AddToResource implements IValueSetter {
 	private final EObject toAdd;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param resource
 	 * @param feature
 	 * @param toAdd
@@ -52,19 +52,19 @@ public class AddToResource implements IValueSetter {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.paste.IValueSetter#doSetValue(org.eclipse.emf.edit.domain.EditingDomain)
-	 * 
+	 *
 	 * @param domain
 	 */
 	@Override
 	public void doSetValue(EditingDomain domain) {
-		if(resource != null && toAdd != null) {
-			final Command cmd = new RecordingCommand((TransactionalEditingDomain)domain) {
+		if (resource != null && toAdd != null) {
+			final Command cmd = new RecordingCommand((TransactionalEditingDomain) domain) {
 
 				@Override
 				protected void doExecute() {
-					resource.getContents().add((EObject)toAdd);
+					resource.getContents().add(toAdd);
 				}
 			};
 			cmd.execute();

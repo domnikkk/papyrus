@@ -24,9 +24,9 @@ import org.eclipse.papyrus.infra.tools.util.StringHelper;
 /**
  * This singleton holds a map between computer-readable notation types (e.g. 7017) and human-readable
  * types (e.g. Attribute Compartment)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class NotationTypesMap {
 
@@ -40,7 +40,7 @@ public class NotationTypesMap {
 
 	public static final String MAPPING = "mapping";
 
-	private final Map<String, TypeMap> typeMaps = new HashMap<String, TypeMap>(); //DiagramID -> TypeMap
+	private final Map<String, TypeMap> typeMaps = new HashMap<String, TypeMap>(); // DiagramID -> TypeMap
 
 	private NotationTypesMap() {
 		readExtensionPoint();
@@ -48,19 +48,19 @@ public class NotationTypesMap {
 
 	private void readExtensionPoint() {
 		IConfigurationElement[] configurationElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
-		for(IConfigurationElement diagramMappingsDefinition : configurationElements) {
+		for (IConfigurationElement diagramMappingsDefinition : configurationElements) {
 
-			if(DIAGRAM_CATEGORY.equals(diagramMappingsDefinition.getName())) {
+			if (DIAGRAM_CATEGORY.equals(diagramMappingsDefinition.getName())) {
 				String diagramID = diagramMappingsDefinition.getAttribute("diagramID");
 
 				TypeMap typeMap = getOrCreateTypeMap(diagramID);
 
-				for(IConfigurationElement mappingDefinition : diagramMappingsDefinition.getChildren()) {
+				for (IConfigurationElement mappingDefinition : diagramMappingsDefinition.getChildren()) {
 
 					final String notationType = mappingDefinition.getAttribute("type");
 					final String humanReadableType = StringHelper.toJavaIdentifier(mappingDefinition.getAttribute("humanReadableType"));
 
-					if(notationType == null || humanReadableType == null) {
+					if (notationType == null || humanReadableType == null) {
 						Activator.log.warn(String.format("Plug-in %s contributed an invalid extension for Notation Type Mappings", mappingDefinition.getContributor().getName()));
 						continue;
 					}
@@ -69,14 +69,14 @@ public class NotationTypesMap {
 					typeMap.getComputerToHumanTypeMapping().put(notationType, humanReadableType);
 					typeMap.getHumanToComputerTypeMapping().put(humanReadableType, notationType);
 				}
-			} else if(MAPPING.equals(diagramMappingsDefinition.getName())) {
+			} else if (MAPPING.equals(diagramMappingsDefinition.getName())) {
 
 				TypeMap typeMap = TypeMap.defaultMap;
 
 				final String notationType = diagramMappingsDefinition.getAttribute("type");
 				final String humanReadableType = StringHelper.toJavaIdentifier(diagramMappingsDefinition.getAttribute("humanReadableType"));
 
-				if(notationType == null || humanReadableType == null) {
+				if (notationType == null || humanReadableType == null) {
 					Activator.log.warn(String.format("Plug-in %s contributed an invalid extension for Notation Type Mappings", diagramMappingsDefinition.getContributor().getName()));
 					continue;
 				}
@@ -88,10 +88,10 @@ public class NotationTypesMap {
 		}
 	}
 
-	//Never null.
-	//Used at runtime. Do not fill the map if the diagramID doesn't exist.
+	// Never null.
+	// Used at runtime. Do not fill the map if the diagramID doesn't exist.
 	private TypeMap getTypeMap(String diagramID) {
-		if(typeMaps.containsKey(diagramID)) {
+		if (typeMaps.containsKey(diagramID)) {
 			return typeMaps.get(diagramID);
 		}
 
@@ -99,17 +99,17 @@ public class NotationTypesMap {
 	}
 
 	private TypeMap getTypeMap(View view) {
-		if(view.getDiagram() == null) {
+		if (view.getDiagram() == null) {
 			return TypeMap.defaultMap;
 		}
 
 		return getTypeMap(view.getDiagram().getType());
 	}
 
-	//Never null.
-	//Used during parsing of extension point. Fills the map if the diagramID doesn't exist
+	// Never null.
+	// Used during parsing of extension point. Fills the map if the diagramID doesn't exist
 	private TypeMap getOrCreateTypeMap(String diagramID) {
-		if(!typeMaps.containsKey(diagramID)) {
+		if (!typeMaps.containsKey(diagramID)) {
 			TypeMap typeMap = new TypeMap();
 			typeMaps.put(diagramID, typeMap);
 		}
@@ -117,7 +117,7 @@ public class NotationTypesMap {
 		return typeMaps.get(diagramID);
 	}
 
-	//////////////////////
+	// ////////////////////
 
 	public String getNotationType(String humanReadableType, String diagramID) {
 		return getTypeMap(diagramID).getNotationType(humanReadableType);
@@ -135,10 +135,10 @@ public class NotationTypesMap {
 		return getTypeMap(diagramID).getHumanToComputerTypeMapping();
 	}
 
-	//////////////////////
+	// ////////////////////
 
 	public String getNotationType(View view) {
-		if(view == null) {
+		if (view == null) {
 			return null;
 		}
 
@@ -146,7 +146,7 @@ public class NotationTypesMap {
 	}
 
 	public String getHumanReadableType(View view) {
-		if(view == null) {
+		if (view == null) {
 			return null;
 		}
 
@@ -155,7 +155,7 @@ public class NotationTypesMap {
 
 
 	public Map<String, String> getComputerToHumanTypeMapping(Diagram diagram) {
-		if(diagram == null) {
+		if (diagram == null) {
 			return TypeMap.defaultMap.getComputerToHumanTypeMapping();
 		}
 
@@ -163,25 +163,25 @@ public class NotationTypesMap {
 	}
 
 	public Map<String, String> getHumanToComputerTypeMapping(Diagram diagram) {
-		if(diagram == null) {
+		if (diagram == null) {
 			return TypeMap.defaultMap.getHumanToComputerTypeMapping();
 		}
 
 		return getHumanToComputerTypeMapping(diagram.getType());
 	}
 
-	//////////////////////
+	// ////////////////////
 
 	private static class TypeMap {
 
 		public static final TypeMap defaultMap = new TypeMap();
 
-		private final Map<String, String> computerToHumanTypeMapping = new HashMap<String, String>(); //GMF Type -> Human-readable Type
+		private final Map<String, String> computerToHumanTypeMapping = new HashMap<String, String>(); // GMF Type -> Human-readable Type
 
-		private final Map<String, String> humanToComputerTypeMapping = new HashMap<String, String>(); //Human-readable Type -> GMF Type
+		private final Map<String, String> humanToComputerTypeMapping = new HashMap<String, String>(); // Human-readable Type -> GMF Type
 
 		public String getNotationType(String humanReadableType) {
-			if(humanToComputerTypeMapping.containsKey(humanReadableType) || defaultMap == this) {
+			if (humanToComputerTypeMapping.containsKey(humanReadableType) || defaultMap == this) {
 				return humanToComputerTypeMapping.get(humanReadableType);
 			}
 
@@ -189,7 +189,7 @@ public class NotationTypesMap {
 		}
 
 		public String getHumanReadableType(String notationType) {
-			if(computerToHumanTypeMapping.containsKey(notationType) || defaultMap == this) {
+			if (computerToHumanTypeMapping.containsKey(notationType) || defaultMap == this) {
 				return computerToHumanTypeMapping.get(notationType);
 			}
 

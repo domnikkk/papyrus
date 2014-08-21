@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,16 +66,16 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 
 		List<IPage> allPages = getAllPages(sashContainer);
 
-		for(IPage page : allPages) {
-			final DelegatingReloadContext delegator = (page instanceof IEditorPage) ? add(new DelegatingReloadContext(((IEditorPage)page).getIEditorPart())) : null;
+		for (IPage page : allPages) {
+			final DelegatingReloadContext delegator = (page instanceof IEditorPage) ? add(new DelegatingReloadContext(((IEditorPage) page).getIEditorPart())) : null;
 			DiagramPageContext context;
 
-			if(page == active) {
+			if (page == active) {
 				// This one will have the selection of the active page
 				context = new DiagramPageContext(new VisiblePageSelectionProvider(page), page, delegator);
 				activePage = context;
 			} else {
-				if(visiblePages.contains(page)) {
+				if (visiblePages.contains(page)) {
 					// This one must be selected in its folder in order to make it visible again
 					context = new DiagramPageContext(new VisiblePageSelectionProvider(page), page, delegator);
 				} else {
@@ -89,7 +89,7 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 			}
 		}
 
-		if(activePage != null) {
+		if (activePage != null) {
 			// Restore this one last
 			add(activePage);
 		}
@@ -133,7 +133,7 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 		reloadResources(editor);
 
 		ISelectionProvider selectionProvider = new VisiblePageSelectionProvider();
-		for(DiagramPageContext next : getReloadContexts(DiagramPageContext.class)) {
+		for (DiagramPageContext next : getReloadContexts(DiagramPageContext.class)) {
 			next.restore(selectionProvider);
 		}
 	}
@@ -142,11 +142,11 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 		List<URI> result = null;
 
 		ResourceSet rset = getResourceSet(editor);
-		if(rset != null) {
+		if (rset != null) {
 			result = Lists.newArrayListWithCapacity(rset.getResources().size());
 
-			for(Resource next : rset.getResources()) {
-				if(next.isLoaded()) {
+			for (Resource next : rset.getResources()) {
+				if (next.isLoaded()) {
 					result.add(next.getURI());
 				}
 			}
@@ -156,10 +156,10 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 	}
 
 	protected void reloadResources(IMultiDiagramEditor editor) {
-		if(resourcesToLoad != null) {
+		if (resourcesToLoad != null) {
 			ResourceSet rset = getResourceSet(editor);
-			if(rset != null) {
-				for(URI next : resourcesToLoad) {
+			if (rset != null) {
+				for (URI next : resourcesToLoad) {
 					try {
 						rset.getResource(next, true);
 					} catch (Exception e) {
@@ -173,8 +173,8 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 	protected final ResourceSet getResourceSet(IMultiDiagramEditor editor) {
 		ResourceSet result = null;
 
-		EditingDomain editingDomain = (EditingDomain)editor.getAdapter(EditingDomain.class);
-		if(editingDomain != null) {
+		EditingDomain editingDomain = (EditingDomain) editor.getAdapter(EditingDomain.class);
+		if (editingDomain != null) {
 			result = editingDomain.getResourceSet();
 		}
 
@@ -202,8 +202,8 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 		public void restore(ISelectionProvider structuredSelectionProvider) {
 			IPage page = sashContainer.lookupModelPage(resolveToken(pageRef));
 
-			if((pageContext != null) && (page instanceof IEditorPage)) {
-				pageContext.restore(((IEditorPage)page).getIEditorPart());
+			if ((pageContext != null) && (page instanceof IEditorPage)) {
+				pageContext.restore(((IEditorPage) page).getIEditorPart());
 			}
 
 			super.restore(structuredSelectionProvider);
@@ -211,7 +211,7 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 
 		@Override
 		protected Object deresolveSelectableElement(Object selectableElement) {
-			return (selectableElement instanceof IPage) ? ((IPage)selectableElement).getRawModel() : super.deresolveSelectableElement(selectableElement);
+			return (selectableElement instanceof IPage) ? ((IPage) selectableElement).getRawModel() : super.deresolveSelectableElement(selectableElement);
 		}
 
 		@Override
@@ -271,8 +271,8 @@ class MultiDiagramEditorSelectionContext extends CompositeReloadContext {
 
 		@Override
 		public void setSelection(ISelection selection) {
-			if(!selection.isEmpty()) {
-				IPage page = (IPage)((IStructuredSelection)selection).getFirstElement();
+			if (!selection.isEmpty()) {
+				IPage page = (IPage) ((IStructuredSelection) selection).getFirstElement();
 				sashContainer.selectPage(page);
 			}
 		}

@@ -19,7 +19,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.FeatureInjectionImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.FeatureInjectionImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FeatureInjectionImpl() {
@@ -58,6 +61,7 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,8 +72,10 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -77,25 +83,29 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
-				return getDescription();
+		case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
+			return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,14 +113,15 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
+		case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +129,15 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
+		case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,13 +145,14 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -147,11 +160,14 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -160,4 +176,4 @@ public abstract class FeatureInjectionImpl extends EObjectImpl implements Featur
 		return result.toString();
 	}
 
-} //FeatureInjectionImpl
+} // FeatureInjectionImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -83,7 +83,7 @@ import org.eclipse.uml2.uml.Feature;
 
 /**
  * Abstract LabelEditPart which should be located around of BorderedNodeFigure.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public abstract class BorderItemLabelEditPart extends LabelEditPart implements ITextAwareEditPart, IBorderItemEditPart {
@@ -102,106 +102,111 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public BorderItemLabelEditPart(View view) {
 		super(view);
 	}
 
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE, new LabelDirectEditPolicy());
 		installEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE, new UMLTextSelectionEditPolicy());
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new BorderItemSelectionEditPolicy() {
 
+			@Override
 			protected List createSelectionHandles() {
-				MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+				MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 				mh.setBorder(null);
 				return Collections.singletonList(mh);
 			}
 		});
 	}
 
+	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
-		if(parentFigure != null && parentFigure.getLayoutManager() != null) {
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
 			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
-			return (IBorderItemLocator)constraint;
+			return (IBorderItemLocator) constraint;
 		}
 		return null;
 	}
 
+	@Override
 	public void refreshBounds() {
 		Point location = getLocation();
-		if(location == null) {
+		if (location == null) {
 			location = new Point();
 		}
 		Dimension size = getSize();
-		if(size == null) {
+		if (size == null) {
 			size = new Dimension();
 		}
 		IBorderItemLocator borderItemLocator = getBorderItemLocator();
-		if(borderItemLocator != null) {
+		if (borderItemLocator != null) {
 			borderItemLocator.setConstraint(new Rectangle(location, size));
 		}
 	}
 
 	protected Point getLocation() {
 		Point point = new Point();
-		point.x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		point.y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		point.x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		point.y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 		return point;
 	}
 
 	protected Dimension getSize() {
 		Dimension size = new Dimension();
-		size.width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-		size.height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+		size.width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+		size.height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 		return size;
 	}
 
+	@Override
 	public int getKeyPoint() {
 		return ConnectionLocator.MIDDLE;
 	}
 
 	protected String getLabelTextHelper(IFigure figure) {
-		if(figure instanceof WrappingLabel) {
-			return ((WrappingLabel)figure).getText();
-		} else if(figure instanceof ILabelFigure) {
-			return ((ILabelFigure)figure).getText();
+		if (figure instanceof WrappingLabel) {
+			return ((WrappingLabel) figure).getText();
+		} else if (figure instanceof ILabelFigure) {
+			return ((ILabelFigure) figure).getText();
 		} else {
-			return ((Label)figure).getText();
+			return ((Label) figure).getText();
 		}
 	}
 
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setText(text);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setText(text);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setText(text);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setText(text);
 		} else {
-			((Label)figure).setText(text);
+			((Label) figure).setText(text);
 		}
 	}
 
 	protected Image getLabelIconHelper(IFigure figure) {
-		if(figure instanceof WrappingLabel) {
-			return ((WrappingLabel)figure).getIcon();
-		} else if(figure instanceof ILabelFigure) {
-			return ((ILabelFigure)figure).getIcon();
+		if (figure instanceof WrappingLabel) {
+			return ((WrappingLabel) figure).getIcon();
+		} else if (figure instanceof ILabelFigure) {
+			return ((ILabelFigure) figure).getIcon();
 		} else {
-			return ((Label)figure).getIcon();
+			return ((Label) figure).getIcon();
 		}
 	}
 
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setIcon(icon);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setIcon(icon);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setIcon(icon);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setIcon(icon);
 		} else {
-			((Label)figure).setIcon(icon);
+			((Label) figure).setIcon(icon);
 		}
 	}
 
@@ -213,10 +218,12 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		refreshVisuals();
 	}
 
+	@Override
 	protected List getModelChildren() {
 		return Collections.EMPTY_LIST;
 	}
 
+	@Override
 	public IGraphicalEditPart getChildBySemanticHint(String semanticHint) {
 		return null;
 	}
@@ -232,29 +239,31 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 	protected String getLabelText() {
 		String text = null;
 		EObject parserElement = getParserElement();
-		if(parserElement != null && getParser() != null) {
+		if (parserElement != null && getParser() != null) {
 			text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 		}
-		if(text == null || text.length() == 0) {
+		if (text == null || text.length() == 0) {
 			text = defaultText;
 		}
 		return text;
 	}
 
+	@Override
 	public void setLabelText(String text) {
 		setLabelTextHelper(getFigure(), text);
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
+		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
+			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if(sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
+		if (sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
+			((UMLTextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
 		}
 	}
 
+	@Override
 	public String getEditText() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return getParser().getEditString(new EObjectAdapter(getParserElement()), getParserOptions().intValue());
@@ -264,21 +273,24 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		return getParser() != null;
 	}
 
+	@Override
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
+			@Override
 			public String isValid(final Object value) {
-				if(value instanceof String) {
+				if (value instanceof String) {
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
 					try {
-						IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+						IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+							@Override
 							public void run() {
-								setResult(parser.isValidEditString(new EObjectAdapter(element), (String)value));
+								setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 							}
 						});
-						return valid.getCode() == ParserEditStatus.EDITABLE ? null : valid.getMessage();
+						return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
 					} catch (InterruptedException ie) {
 						ie.printStackTrace();
 					}
@@ -289,19 +301,22 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		};
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return null;
 		}
 		return getParser().getCompletionProcessor(new EObjectAdapter(getParserElement()));
 	}
 
+	@Override
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
 
+	@Override
 	public final IParser getParser() {
-		if(parser == null) {
+		if (parser == null) {
 			parser = createParser();
 		}
 		return parser;
@@ -310,7 +325,7 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 	protected abstract IParser createParser();
 
 	protected DirectEditManager getManager() {
-		if(manager == null) {
+		if (manager == null) {
 			setManager(new MultilineLabelDirectEditManager(this, MultilineLabelDirectEditManager.getTextCellEditorClass(this), UMLEditPartFactory.getTextCellEditorLocator(this)));
 		}
 		return manager;
@@ -325,54 +340,55 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 	}
 
 	protected void performDirectEdit(Point eventLocation) {
-		if(getManager() instanceof TextDirectEditManager) {
-			((TextDirectEditManager)getManager()).show(eventLocation.getSWTPoint());
+		if (getManager() instanceof TextDirectEditManager) {
+			((TextDirectEditManager) getManager()).show(eventLocation.getSWTPoint());
 		}
 	}
 
 	private void performDirectEdit(char initialCharacter) {
-		if(getManager() instanceof TextDirectEditManager) {
-			((TextDirectEditManager)getManager()).show(initialCharacter);
+		if (getManager() instanceof TextDirectEditManager) {
+			((TextDirectEditManager) getManager()).show(initialCharacter);
 		} else {
 			performDirectEdit();
 		}
 	}
 
+	@Override
 	protected void performDirectEditRequest(Request request) {
 		final Request theRequest = request;
-		if(IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
+		if (IDirectEdition.UNDEFINED_DIRECT_EDITOR == directEditionMode) {
 			directEditionMode = getDirectEditionType();
 		}
-		switch(directEditionMode) {
+		switch (directEditionMode) {
 		case IDirectEdition.NO_DIRECT_EDITION:
 			// no direct edition mode => does nothing
 			return;
 		case IDirectEdition.EXTENDED_DIRECT_EDITOR:
 			updateExtendedEditorConfiguration();
-			if(configuration == null || configuration.getLanguage() == null) {
+			if (configuration == null || configuration.getLanguage() == null) {
 				performDefaultDirectEditorEdit(theRequest);
 			} else {
 				configuration.preEditAction(resolveSemanticElement());
 				Dialog dialog = null;
-				if(configuration instanceof IPopupEditorConfiguration) {
-					IPopupEditorHelper helper = ((IPopupEditorConfiguration)configuration).createPopupEditorHelper(this);
+				if (configuration instanceof IPopupEditorConfiguration) {
+					IPopupEditorHelper helper = ((IPopupEditorConfiguration) configuration).createPopupEditorHelper(this);
 					helper.showEditor();
 					return;
-				} else if(configuration instanceof IAdvancedEditorConfiguration) {
-					dialog = ((IAdvancedEditorConfiguration)configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
-				} else if(configuration instanceof IDirectEditorConfiguration) {
-					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), ((IDirectEditorConfiguration)configuration).getTextToEdit(resolveSemanticElement()), (IDirectEditorConfiguration)configuration);
+				} else if (configuration instanceof IAdvancedEditorConfiguration) {
+					dialog = ((IAdvancedEditorConfiguration) configuration).createDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()));
+				} else if (configuration instanceof IDirectEditorConfiguration) {
+					dialog = new ExtendedDirectEditionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), resolveSemanticElement(), configuration.getTextToEdit(resolveSemanticElement()), configuration);
 				} else {
 					return;
 				}
 				final Dialog finalDialog = dialog;
-				if(Window.OK == dialog.open()) {
+				if (Window.OK == dialog.open()) {
 					TransactionalEditingDomain domain = getEditingDomain();
 					RecordingCommand command = new RecordingCommand(domain, "Edit Label") {
 
 						@Override
 						protected void doExecute() {
-							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog)finalDialog).getValue());
+							configuration.postEditAction(resolveSemanticElement(), ((ILabelEditorDialog) finalDialog).getValue());
 						}
 					};
 					domain.getCommandStack().execute(command);
@@ -384,13 +400,14 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 			try {
 				getEditingDomain().runExclusive(new Runnable() {
 
+					@Override
 					public void run() {
-						if(isActive() && isEditable()) {
-							if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-								Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+						if (isActive() && isEditable()) {
+							if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+								Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 								performDirectEdit(initialChar.charValue());
-							} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-								DirectEditRequest editRequest = (DirectEditRequest)theRequest;
+							} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+								DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 								performDirectEdit(editRequest.getLocation());
 							} else {
 								performDirectEdit();
@@ -407,6 +424,7 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		}
 	}
 
+	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 		refreshLabel();
@@ -418,69 +436,73 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 
 	protected void refreshLabel() {
 		EditPolicy maskLabelPolicy = getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-		if(maskLabelPolicy == null) {
+		if (maskLabelPolicy == null) {
 			setLabelTextHelper(getFigure(), getLabelText());
 			setLabelIconHelper(getFigure(), getLabelIcon());
 		}
 		Object pdEditPolicy = getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy)pdEditPolicy).refreshFeedback();
+		if (pdEditPolicy instanceof UMLTextSelectionEditPolicy) {
+			((UMLTextSelectionEditPolicy) pdEditPolicy).refreshFeedback();
 		}
 		Object sfEditPolicy = getEditPolicy(EditPolicy.SELECTION_FEEDBACK_ROLE);
-		if(sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
-			((UMLTextSelectionEditPolicy)sfEditPolicy).refreshFeedback();
+		if (sfEditPolicy instanceof UMLTextSelectionEditPolicy) {
+			((UMLTextSelectionEditPolicy) sfEditPolicy).refreshFeedback();
 		}
 		refreshBounds();
 	}
 
 	protected void refreshUnderline() {
-		FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if(style != null && getFigure() instanceof WrappingLabel) {
-			((WrappingLabel)getFigure()).setTextUnderline(style.isUnderline());
+		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null && getFigure() instanceof WrappingLabel) {
+			((WrappingLabel) getFigure()).setTextUnderline(style.isUnderline());
 		}
-		if(resolveSemanticElement() instanceof Feature) {
-			if(((Feature)resolveSemanticElement()).isStatic()) {
-				((WrappingLabel)getFigure()).setTextUnderline(true);
+		if (resolveSemanticElement() instanceof Feature) {
+			if (((Feature) resolveSemanticElement()).isStatic()) {
+				((WrappingLabel) getFigure()).setTextUnderline(true);
 			} else {
-				((WrappingLabel)getFigure()).setTextUnderline(false);
+				((WrappingLabel) getFigure()).setTextUnderline(false);
 			}
 		}
 	}
 
 	protected void refreshStrikeThrough() {
-		FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if(style != null && getFigure() instanceof WrappingLabel) {
-			((WrappingLabel)getFigure()).setTextStrikeThrough(style.isStrikeThrough());
+		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null && getFigure() instanceof WrappingLabel) {
+			((WrappingLabel) getFigure()).setTextStrikeThrough(style.isStrikeThrough());
 		}
 	}
 
+	@Override
 	protected void refreshFont() {
-		FontStyle style = (FontStyle)getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
-		if(style != null) {
+		FontStyle style = (FontStyle) getFontStyleOwnerView().getStyle(NotationPackage.eINSTANCE.getFontStyle());
+		if (style != null) {
 			FontData fontData = new FontData(style.getFontName(), style.getFontHeight(), (style.isBold() ? SWT.BOLD : SWT.NORMAL) | (style.isItalic() ? SWT.ITALIC : SWT.NORMAL));
 			setFont(fontData);
 		}
 	}
 
+	@Override
 	protected void setFontColor(Color color) {
 		getFigure().setForegroundColor(color);
 	}
 
+	@Override
 	protected void addSemanticListeners() {
-		if(getParser() instanceof ISemanticParser) {
+		if (getParser() instanceof ISemanticParser) {
 			EObject element = resolveSemanticElement();
-			parserElements = ((ISemanticParser)getParser()).getSemanticElementsBeingParsed(element);
-			for(int i = 0; i < parserElements.size(); i++) {
-				addListenerFilter("SemanticModel" + i, this, (EObject)parserElements.get(i)); //$NON-NLS-1$
+			parserElements = ((ISemanticParser) getParser()).getSemanticElementsBeingParsed(element);
+			for (int i = 0; i < parserElements.size(); i++) {
+				addListenerFilter("SemanticModel" + i, this, (EObject) parserElements.get(i)); //$NON-NLS-1$
 			}
 		} else {
 			super.addSemanticListeners();
 		}
 	}
 
+	@Override
 	protected void removeSemanticListeners() {
-		if(parserElements != null) {
-			for(int i = 0; i < parserElements.size(); i++) {
+		if (parserElements != null) {
+			for (int i = 0; i < parserElements.size(); i++) {
 				removeListenerFilter("SemanticModel" + i); //$NON-NLS-1$
 			}
 		} else {
@@ -488,10 +510,12 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		}
 	}
 
+	@Override
 	protected AccessibleEditPart getAccessibleEditPart() {
-		if(accessibleEP == null) {
+		if (accessibleEP == null) {
 			accessibleEP = new AccessibleGraphicalEditPart() {
 
+				@Override
 				public void getName(AccessibleEvent e) {
 					e.result = getLabelTextHelper(getFigure());
 				}
@@ -501,15 +525,15 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 	}
 
 	private View getFontStyleOwnerView() {
-		return (View)getModel();
+		return (View) getModel();
 	}
 
 	public int getDirectEditionType() {
-		if(checkExtendedEditor()) {
+		if (checkExtendedEditor()) {
 			initExtendedEditorConfiguration();
 			return IDirectEdition.EXTENDED_DIRECT_EDITOR;
 		}
-		if(checkDefaultEdition()) {
+		if (checkDefaultEdition()) {
 			return IDirectEdition.DEFAULT_DIRECT_EDITOR;
 		}
 		// not a named element. no specific editor => do nothing
@@ -517,7 +541,7 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 	}
 
 	protected boolean checkExtendedEditor() {
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			return DirectEditorsUtil.hasSpecificEditorConfiguration(resolveSemanticElement().eClass().getInstanceClassName());
 		}
 		return false;
@@ -528,9 +552,9 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 	}
 
 	protected void initExtendedEditorConfiguration() {
-		if(configuration == null) {
+		if (configuration == null) {
 			final String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-			if(languagePreferred != null && !languagePreferred.equals("")) {
+			if (languagePreferred != null && !languagePreferred.equals("")) {
 				configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
 			} else {
 				configuration = DirectEditorsUtil.findEditorConfiguration(IDirectEditorsIds.UML_LANGUAGE, resolveSemanticElement().eClass().getInstanceClassName());
@@ -540,9 +564,9 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 
 	protected void updateExtendedEditorConfiguration() {
 		String languagePreferred = Activator.getDefault().getPreferenceStore().getString(IDirectEditorsIds.EDITOR_FOR_ELEMENT + resolveSemanticElement().eClass().getInstanceClassName());
-		if(languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
+		if (languagePreferred != null && !languagePreferred.equals("") && languagePreferred != configuration.getLanguage()) {
 			configuration = DirectEditorsUtil.findEditorConfiguration(languagePreferred, resolveSemanticElement().eClass().getInstanceClassName());
-		} else if(IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
+		} else if (IDirectEditorsIds.SIMPLE_DIRECT_EDITOR.equals(languagePreferred)) {
 			configuration = null;
 		}
 	}
@@ -552,13 +576,14 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		try {
 			getEditingDomain().runExclusive(new Runnable() {
 
+				@Override
 				public void run() {
-					if(isActive() && isEditable()) {
-						if(theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
-							Character initialChar = (Character)theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
+					if (isActive() && isEditable()) {
+						if (theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR) instanceof Character) {
+							Character initialChar = (Character) theRequest.getExtendedData().get(RequestConstants.REQ_DIRECTEDIT_EXTENDEDDATA_INITIAL_CHAR);
 							performDirectEdit(initialChar.charValue());
-						} else if((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
-							DirectEditRequest editRequest = (DirectEditRequest)theRequest;
+						} else if ((theRequest instanceof DirectEditRequest) && (getEditText().equals(getLabelText()))) {
+							DirectEditRequest editRequest = (DirectEditRequest) theRequest;
 							performDirectEdit(editRequest.getLocation());
 						} else {
 							performDirectEdit();
@@ -571,26 +596,28 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		}
 	}
 
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
-		if(NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
-			Integer c = (Integer)event.getNewValue();
+		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
+			Integer c = (Integer) event.getNewValue();
 			setFontColor(DiagramColorRegistry.getInstance().getColor(c));
-		} else if(NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
 			refreshUnderline();
-		} else if(NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
 			refreshStrikeThrough();
-		} else if(NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
 		} else {
-			if(getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
+			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
 				refreshLabel();
 			}
-			if(getParser() instanceof ISemanticParser) {
-				ISemanticParser modelParser = (ISemanticParser)getParser();
-				if(modelParser.areSemanticElementsAffected(null, event)) {
+			if (getParser() instanceof ISemanticParser) {
+				ISemanticParser modelParser = (ISemanticParser) getParser();
+				if (modelParser.areSemanticElementsAffected(null, event)) {
 					removeSemanticListeners();
-					if(resolveSemanticElement() != null) {
+					if (resolveSemanticElement() != null) {
 						addSemanticListeners();
 					}
 					refreshLabel();
@@ -600,6 +627,7 @@ public abstract class BorderItemLabelEditPart extends LabelEditPart implements I
 		super.handleNotificationEvent(event);
 	}
 
+	@Override
 	protected IFigure createFigure() {
 		final IFigure label = createFigurePrim();
 		defaultText = getLabelTextHelper(label);

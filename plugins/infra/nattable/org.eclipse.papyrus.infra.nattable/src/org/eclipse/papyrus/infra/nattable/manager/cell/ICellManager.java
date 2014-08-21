@@ -23,9 +23,9 @@ import org.eclipse.papyrus.infra.tools.converter.AbstractStringValueConverter;
 
 /**
  * The interface to implements for a cell manager
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public interface ICellManager {
 
@@ -35,68 +35,68 @@ public interface ICellManager {
 	public static final String NOT_AVALAIBLE = Messages.ICellManager_NotAvailable;
 
 	/**
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element as described in the model (you must ignore the invert axis)
+	 *            the column element as described in the model (you must ignore the invert axis)
 	 * @param rowElement
-	 *        the row element as described in the model (you must ignore the invert axis)
+	 *            the row element as described in the model (you must ignore the invert axis)
 	 * @return
 	 */
 	public boolean handles(final Object columnElement, final Object rowElement);
 
 
 	/**
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element as described in the model (you must ignore the invert axis)
+	 *            the column element as described in the model (you must ignore the invert axis)
 	 * @param rowElement
-	 *        the row element as described in the model (you must ignore the invert axis)
+	 *            the row element as described in the model (you must ignore the invert axis)
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @return
 	 *         the value of the cell or {@value #NOT_AVALAIBLE} if the cell is meaningless for the couple of parameters
-	 * 
+	 *
 	 *         THIS METHOD MUST NOT BE USED IN REPLACEMENT OF A SPECIFIC LABEL PROVIDER
 	 */
 	public Object getValue(final Object columnElement, final Object rowElement, final INattableModelManager tableManager);
 
 	/**
 	 * Set the newValue to the intersection of the 2 objects
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param columnElement
-	 *        the column element as described in the model (so you must ignore the invert axis)
+	 *            the column element as described in the model (so you must ignore the invert axis)
 	 * @param rowElement
-	 *        the row element as described in the model (you must ignore the invert axis)
+	 *            the row element as described in the model (you must ignore the invert axis)
 	 * @param newValue
-	 *        the new value
+	 *            the new value
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 */
 	public void setValue(final TransactionalEditingDomain domain, final Object columnElement, final Object rowElement, final Object newValue, final INattableModelManager tableManager);
 
 	/**
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element as described in the model (you must ignore the invert axis)
+	 *            the column element as described in the model (you must ignore the invert axis)
 	 * @param rowElement
-	 *        the row element as described in the model (you must ignore the invert axis)
+	 *            the row element as described in the model (you must ignore the invert axis)
 	 * @return
 	 *         <code>true</code> if the intersection of the 2 objects is editable
 	 */
 	public boolean isCellEditable(final Object columnElement, final Object rowElement);
 
 	/**
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param columnElement
-	 *        the column element as described in the model (you must ignore the invert axis)
+	 *            the column element as described in the model (you must ignore the invert axis)
 	 * @param rowElement
-	 *        the row element as described in the model (you must ignore the invert axis)
+	 *            the row element as described in the model (you must ignore the invert axis)
 	 * @param newValue
-	 *        the new value to set to the intersection of these 2 objects
+	 *            the new value to set to the intersection of these 2 objects
 	 * @param tableManager
 	 * @return
 	 *         the command to set the value or <code>null</code>
@@ -104,29 +104,29 @@ public interface ICellManager {
 	public Command getSetValueCommand(final TransactionalEditingDomain domain, final Object columnElement, final Object rowElement, final Object newValue, final INattableModelManager tableManager);
 
 	/**
-	 * 
+	 *
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param newValue
-	 *        the newValue, represented by a String
+	 *            the newValue, represented by a String
 	 * @param valueConverter
-	 *        the solver used to resolve values
+	 *            the solver used to resolve values
 	 * @param columnElement
-	 *        the columnElement
+	 *            the columnElement
 	 * @param rowElement
-	 *        the rowElement
+	 *            the rowElement
 	 */
 	public Command getSetStringValueCommand(final TransactionalEditingDomain domain, final Object columnElement, final Object rowElement, final String newValue, final AbstractStringValueConverter valueConverter, final INattableModelManager tableManager);
 
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @param existingConverters
-	 *        a map with the existing converters, to avoid to create them too often
+	 *            a map with the existing converters, to avoid to create them too often
 	 * @param multiValueSeparator
-	 *        the separator used for multi values
+	 *            the separator used for multi values
 	 * @return
 	 *         the class to use to converter the string into values. If the method create them, the method must add it to the map existingConverters
 	 */
@@ -134,13 +134,13 @@ public interface ICellManager {
 
 	/**
 	 * This method is used when we are pasting element in detached mode
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element as described in the model (you must ignore the invert axis)
+	 *            the column element as described in the model (you must ignore the invert axis)
 	 * @param rowElement
-	 *        the row element as described in the model (you must ignore the invert axis)
+	 *            the row element as described in the model (you must ignore the invert axis)
 	 * @param sharedMap
-	 *        a map with shared elements
+	 *            a map with shared elements
 	 * @return
 	 *         <code>true</code> if the intersection of the 2 objects is editable
 	 */
@@ -148,21 +148,21 @@ public interface ICellManager {
 
 	/**
 	 * This method is used when we are pasting elements in detached mode
-	 * 
+	 *
 	 * @param columnElement
-	 *        the column element
+	 *            the column element
 	 * @param rowElement
-	 *        the row element
+	 *            the row element
 	 * @param valueAsString
-	 *        the value as string
+	 *            the value as string
 	 * @param valueConverter
-	 *        the value converter to use
+	 *            the value converter to use
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @param sharedMap
-	 *        a map with shared elements. The method may read/add elements to the shared map. These contributions will be managed by a paste post
-	 *        action or by the paste manager itself
-	 * 
+	 *            a map with shared elements. The method may read/add elements to the shared map. These contributions will be managed by a paste post
+	 *            action or by the paste manager itself
+	 *
 	 */
 	public void setStringValue(final Object columnElement, final Object rowElement, final String valueAsString, final AbstractStringValueConverter valueConverter, final INattableModelManager tableManager, final Map<?, ?> sharedMap);
 }

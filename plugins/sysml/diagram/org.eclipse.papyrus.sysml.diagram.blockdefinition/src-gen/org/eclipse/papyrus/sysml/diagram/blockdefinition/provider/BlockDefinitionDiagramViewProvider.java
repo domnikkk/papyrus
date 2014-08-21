@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,7 +25,7 @@ public class BlockDefinitionDiagramViewProvider extends AbstractViewProvider {
 	@Override
 	protected boolean provides(CreateDiagramViewOperation operation) {
 
-		if(ElementTypes.DIAGRAM_ID.equals(operation.getSemanticHint())) {
+		if (ElementTypes.DIAGRAM_ID.equals(operation.getSemanticHint())) {
 			return true;
 		}
 
@@ -34,7 +34,7 @@ public class BlockDefinitionDiagramViewProvider extends AbstractViewProvider {
 
 	@Override
 	protected Class<?> getDiagramViewClass(IAdaptable semanticAdapter, String diagramKind) {
-		if(ElementTypes.DIAGRAM_ID.equals(diagramKind)) {
+		if (ElementTypes.DIAGRAM_ID.equals(diagramKind)) {
 			return BlockDefinitionDiagramViewFactory.class;
 		}
 

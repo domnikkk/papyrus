@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -37,11 +37,10 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 import org.eclipse.papyrus.infra.nattable.model.nattable.provider.NattableEditPlugin;
 
 /**
- * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration}
- * object.
+ * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfiguration.IPasteConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class IPasteConfigurationItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -50,7 +49,7 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IPasteConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -61,12 +60,12 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addPostActionsPropertyDescriptor(object);
@@ -79,33 +78,33 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * This adds a property descriptor for the Post Actions feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addPostActionsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IPasteConfiguration_postActions_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_IPasteConfiguration_postActions_feature", "_UI_IPasteConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			NattableaxisconfigurationPackage.Literals.IPASTE_CONFIGURATION__POST_ACTIONS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IPasteConfiguration_postActions_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IPasteConfiguration_postActions_feature", "_UI_IPasteConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				NattableaxisconfigurationPackage.Literals.IPASTE_CONFIGURATION__POST_ACTIONS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Detached Mode feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addDetachedModePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IPasteConfiguration_detachedMode_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_IPasteConfiguration_detachedMode_feature", "_UI_IPasteConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			NattableaxisconfigurationPackage.Literals.IPASTE_CONFIGURATION__DETACHED_MODE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_IPasteConfiguration_detachedMode_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_IPasteConfiguration_detachedMode_feature", "_UI_IPasteConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				NattableaxisconfigurationPackage.Literals.IPASTE_CONFIGURATION__DETACHED_MODE, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns IPasteConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -117,12 +116,12 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		IPasteConfiguration iPasteConfiguration = (IPasteConfiguration)object;
+		IPasteConfiguration iPasteConfiguration = (IPasteConfiguration) object;
 		return getString("_UI_IPasteConfiguration_type") + " " + iPasteConfiguration.isDetachedMode(); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
@@ -131,14 +130,14 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(IPasteConfiguration.class)) {
+		switch (notification.getFeatureID(IPasteConfiguration.class)) {
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__POST_ACTIONS:
 		case NattableaxisconfigurationPackage.IPASTE_CONFIGURATION__DETACHED_MODE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
@@ -152,7 +151,7 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -164,7 +163,7 @@ public class IPasteConfigurationItemProvider extends ItemProviderAdapter impleme
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

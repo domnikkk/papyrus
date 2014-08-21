@@ -14,7 +14,7 @@ import org.eclipse.uml2.uml.Port;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule#getPort <em>Port</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule#getPort <em>Port</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,30 +24,32 @@ import org.eclipse.uml2.uml.Port;
  */
 public interface SubsetsRule extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Port</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Port</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Port</em>' reference.
-   * @see #setPort(Port)
-   * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getSubsetsRule_Port()
-   * @model
-   * @generated
-   */
-  Port getPort();
+	/**
+	 * Returns the value of the '<em><b>Port</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Port</em>' reference isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Port</em>' reference.
+	 * @see #setPort(Port)
+	 * @see org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.UmlPortPackage#getSubsetsRule_Port()
+	 * @model
+	 * @generated
+	 */
+	Port getPort();
 
-  /**
-   * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule#getPort <em>Port</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Port</em>' reference.
-   * @see #getPort()
-   * @generated
-   */
-  void setPort(Port value);
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.port.xtext.umlPort.SubsetsRule#getPort <em>Port</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Port</em>' reference.
+	 * @see #getPort()
+	 * @generated
+	 */
+	void setPort(Port value);
 
 } // SubsetsRule

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getDefaultStakeholder <em>Default Stakeholder</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getMetamodel <em>Metamodel</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getCategories <em>Categories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getDefaultStakeholder <em>Default Stakeholder</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getMetamodel <em>Metamodel</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getCategories <em>Categories</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,10 +41,10 @@ public interface PapyrusConfiguration extends ArchitectureFramework {
 	 * Returns the value of the '<em><b>Default Stakeholder</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Default Stakeholder</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Default Stakeholder</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Default Stakeholder</em>' reference.
 	 * @see #setDefaultStakeholder(Stakeholder)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusConfiguration_DefaultStakeholder()
@@ -57,7 +57,9 @@ public interface PapyrusConfiguration extends ArchitectureFramework {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getDefaultStakeholder <em>Default Stakeholder</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Default Stakeholder</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Default Stakeholder</em>' reference.
 	 * @see #getDefaultStakeholder()
 	 * @generated
 	 */
@@ -67,10 +69,10 @@ public interface PapyrusConfiguration extends ArchitectureFramework {
 	 * Returns the value of the '<em><b>Metamodel</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Metamodel</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Metamodel</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Metamodel</em>' reference.
 	 * @see #setMetamodel(EPackage)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusConfiguration_Metamodel()
@@ -83,7 +85,9 @@ public interface PapyrusConfiguration extends ArchitectureFramework {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration#getMetamodel <em>Metamodel</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Metamodel</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Metamodel</em>' reference.
 	 * @see #getMetamodel()
 	 * @generated
 	 */
@@ -94,10 +98,10 @@ public interface PapyrusConfiguration extends ArchitectureFramework {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.viewpoints.configuration.Category}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Categories</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Categories</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Categories</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getPapyrusConfiguration_Categories()
 	 * @model containment="true"

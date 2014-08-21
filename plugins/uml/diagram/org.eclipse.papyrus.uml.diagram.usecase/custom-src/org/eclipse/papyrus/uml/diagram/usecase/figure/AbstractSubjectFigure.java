@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,14 +56,14 @@ public abstract class AbstractSubjectFigure extends RectangleFigure implements I
 	 * <li>if this is not <code>null</code>, it creates the stereotype label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypes
-	 *        the string representing the stereotypes to be displayed
+	 *            the string representing the stereotypes to be displayed
 	 * @param image
-	 *        the image representing the stereotypes to be displayed
-	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String,
-	 *      org.eclipse.swt.graphics.Image)
+	 *            the image representing the stereotypes to be displayed
+	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigure#setStereotypeDisplay(java.lang.String, org.eclipse.swt.graphics.Image)
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		stereotypeHelper.setStereotypeDisplay(stereotypes, image);
 		refreshLayout();
@@ -78,10 +78,11 @@ public abstract class AbstractSubjectFigure extends RectangleFigure implements I
 	 * <li>if this is not <code>null</code>, it creates the stereotype properties label if needed and displays the specified string.</li>
 	 * </ul>
 	 * </p>
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string representing the stereotype properties to be displayed
+	 *            the string representing the stereotype properties to be displayed
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 		stereotypeHelper.setStereotypePropertiesInBrace(stereotypeProperties);
 		refreshLayout();
@@ -89,18 +90,20 @@ public abstract class AbstractSubjectFigure extends RectangleFigure implements I
 
 	/**
 	 * displays the new string corresponding to the list of stereotypes.
-	 * 
+	 *
 	 * if the string is <code>null</code>, then the figure that displays the stereotype label is
 	 * removed from the NodeNamedElementFigure.
-	 * 
+	 *
 	 * @param stereotypeProperties
-	 *        the string to be displayed.
+	 *            the string to be displayed.
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 		stereotypeHelper.setStereotypePropertiesInCompartment(stereotypeProperties);
 		refreshLayout();
 	}
 
+	@Override
 	protected boolean useLocalCoordinates() {
 		return myUseLocalCoordinates;
 	}
@@ -111,12 +114,14 @@ public abstract class AbstractSubjectFigure extends RectangleFigure implements I
 
 	/**
 	 * Gets the stereotype label.
-	 * 
+	 *
 	 * @return the stereotype label
 	 * @unused
 	 * @deprecated
 	 */
+	@Deprecated
+	@Override
 	public Label getStereotypesLabel() {
-		return null;//fActionStereotypeLabel;
+		return null;// fActionStereotypeLabel;
 	}
 }

@@ -19,7 +19,7 @@ public final class SWTTestUtils {
 
 	/**
 	 * Find a tree item with the given text among the list of tree items.
-	 * 
+	 *
 	 * @param text
 	 *            the text of the tree item to find
 	 * @param items

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,26 +36,26 @@ public class AdapterUtils {
 
 	/**
 	 * Attempt to get an adapter of the specified target {@code type} from an {@code object} by any means available.
-	 * 
+	 *
 	 * @param object
-	 *        an object to adapt
+	 *            an object to adapt
 	 * @param type
-	 *        the type of adapter to get
-	 * 
+	 *            the type of adapter to get
+	 *
 	 * @return the best-effort adapter of the given {@code type}. Never {@code null}
 	 */
 	public static <T> Optional<T> adapt(Object object, Class<T> type) {
 		Optional<T> result = Optional.absent();
 
-		if(object instanceof IAdaptable) {
-			result = result.or(getIntrinsicAdapter((IAdaptable)object, type));
+		if (object instanceof IAdaptable) {
+			result = result.or(getIntrinsicAdapter((IAdaptable) object, type));
 		}
 
-		if(!result.isPresent()) {
+		if (!result.isPresent()) {
 			result = result.or(getExtrinsicAdapter(object, type));
 
-			if(!result.isPresent() && (object instanceof Notifier)) {
-				result = result.or(getEMFAdapter((Notifier)object, type));
+			if (!result.isPresent() && (object instanceof Notifier)) {
+				result = result.or(getEMFAdapter((Notifier) object, type));
 			}
 		}
 
@@ -66,7 +66,7 @@ public class AdapterUtils {
 		T result = null;
 
 		Object attempt = adaptable.getAdapter(type);
-		if(type.isInstance(attempt)) {
+		if (type.isInstance(attempt)) {
 			result = type.cast(attempt);
 		}
 
@@ -77,7 +77,7 @@ public class AdapterUtils {
 		T result = null;
 
 		Object attempt = Platform.getAdapterManager().getAdapter(object, type);
-		if(type.isInstance(attempt)) {
+		if (type.isInstance(attempt)) {
 			result = type.cast(attempt);
 		}
 
@@ -90,26 +90,26 @@ public class AdapterUtils {
 
 	/**
 	 * Get an adapter of the specified target {@code type} from an {@code object} by any means available.
-	 * 
+	 *
 	 * @param object
-	 *        an object to adapt. May be {@code null}, in which case the {@code defaultAdapter} is returned
+	 *            an object to adapt. May be {@code null}, in which case the {@code defaultAdapter} is returned
 	 * @param type
-	 *        the type of adapter to get
+	 *            the type of adapter to get
 	 * @param defaultAdapter
-	 *        a default adapter to return if none can be obtained (may be {@code null}
-	 * 
+	 *            a default adapter to return if none can be obtained (may be {@code null}
+	 *
 	 * @return the best-effort adapter of the given {@code type}, else the {@code defaultAdapter}
 	 */
 	public static <T> T adapt(Object object, Class<T> type, T defaultAdapter) {
 		T result = defaultAdapter;
-		
+
 		if (object != null) {
 			Optional<T> adapter = adapt(object, type);
 			if (adapter.isPresent()) {
 				result = adapter.get();
 			}
 		}
-		
+
 		return result;
 	}
 

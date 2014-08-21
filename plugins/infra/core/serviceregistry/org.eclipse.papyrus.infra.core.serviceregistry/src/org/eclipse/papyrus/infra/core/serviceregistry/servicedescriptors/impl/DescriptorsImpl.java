@@ -28,8 +28,8 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.DescriptorsImpl#getRegistries <em>Registries</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.DescriptorsImpl#getServiceSets <em>Service Sets</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.DescriptorsImpl#getRegistries <em>Registries</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.impl.DescriptorsImpl#getServiceSets <em>Service Sets</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	 * The cached value of the '{@link #getRegistries() <em>Registries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRegistries()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	 * The cached value of the '{@link #getServiceSets() <em>Service Sets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getServiceSets()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DescriptorsImpl() {
@@ -68,6 +71,7 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,8 +82,10 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<RegistryDesc> getRegistries() {
 		if (registries == null) {
 			registries = new EObjectContainmentEList<RegistryDesc>(RegistryDesc.class, this, ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES);
@@ -90,8 +96,10 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<ServiceSetDesc> getServiceSets() {
 		if (serviceSets == null) {
 			serviceSets = new EObjectContainmentEList<ServiceSetDesc>(ServiceSetDesc.class, this, ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS);
@@ -100,52 +108,57 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	}
 
 	/**
-	 * Return the requested registry. 
+	 * Return the requested registry.
 	 * return null if not found.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public RegistryDesc getRegistryDesc(String name) {
-		
-		for( RegistryDesc desc : getRegistries() ) {
-			if( name.equals(desc.getName())) {
+
+		for (RegistryDesc desc : getRegistries()) {
+			if (name.equals(desc.getName())) {
 				return desc;
 			}
 		}
-		
+
 		return null;
 	}
 
 	/**
-	 * Return the requested serviceSet. 
+	 * Return the requested serviceSet.
 	 * return null if not found.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
+	@Override
 	public ServiceSetDesc getServiceSetDesc(String name) {
-		for( ServiceSetDesc desc : getServiceSets() ) {
-			if( name.equals(desc.getName())) {
+		for (ServiceSetDesc desc : getServiceSets()) {
+			if (name.equals(desc.getName())) {
 				return desc;
 			}
 		}
-		
+
 		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
-				return ((InternalEList<?>)getRegistries()).basicRemove(otherEnd, msgs);
-			case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
-				return ((InternalEList<?>)getServiceSets()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
+			return ((InternalEList<?>) getRegistries()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
+			return ((InternalEList<?>) getServiceSets()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,15 +166,16 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
-				return getRegistries();
-			case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
-				return getServiceSets();
+		case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
+			return getRegistries();
+		case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
+			return getServiceSets();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,20 +183,21 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
-				getRegistries().clear();
-				getRegistries().addAll((Collection<? extends RegistryDesc>)newValue);
-				return;
-			case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
-				getServiceSets().clear();
-				getServiceSets().addAll((Collection<? extends ServiceSetDesc>)newValue);
-				return;
+		case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
+			getRegistries().clear();
+			getRegistries().addAll((Collection<? extends RegistryDesc>) newValue);
+			return;
+		case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
+			getServiceSets().clear();
+			getServiceSets().addAll((Collection<? extends ServiceSetDesc>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -190,17 +205,18 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
-				getRegistries().clear();
-				return;
-			case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
-				getServiceSets().clear();
-				return;
+		case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
+			getRegistries().clear();
+			return;
+		case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
+			getServiceSets().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -208,17 +224,18 @@ public class DescriptorsImpl extends EObjectImpl implements Descriptors {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
-				return registries != null && !registries.isEmpty();
-			case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
-				return serviceSets != null && !serviceSets.isEmpty();
+		case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
+			return registries != null && !registries.isEmpty();
+		case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
+			return serviceSets != null && !serviceSets.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //DescriptorsImpl
+} // DescriptorsImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.EClass;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getElement <em>Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getStereotypes <em>Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getMultiplicity <em>Multiplicity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getNewModelPath <em>New Model Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getElement <em>Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getStereotypes <em>Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getMultiplicity <em>Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getNewModelPath <em>New Model Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +40,10 @@ public interface OwningRule extends Rule {
 	 * Returns the value of the '<em><b>Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Element</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Element</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Element</em>' reference.
 	 * @see #setElement(EClass)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getOwningRule_Element()
@@ -56,7 +56,9 @@ public interface OwningRule extends Rule {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getElement <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Element</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Element</em>' reference.
 	 * @see #getElement()
 	 * @generated
 	 */
@@ -67,10 +69,10 @@ public interface OwningRule extends Rule {
 	 * The list contents are of type {@link org.eclipse.emf.ecore.EClass}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Stereotypes</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Stereotypes</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Stereotypes</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getOwningRule_Stereotypes()
 	 * @model
@@ -83,10 +85,10 @@ public interface OwningRule extends Rule {
 	 * The default value is <code>"-1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Multiplicity</em>' attribute.
 	 * @see #setMultiplicity(int)
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getOwningRule_Multiplicity()
@@ -99,7 +101,9 @@ public interface OwningRule extends Rule {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule#getMultiplicity <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Multiplicity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Multiplicity</em>' attribute.
 	 * @see #getMultiplicity()
 	 * @generated
 	 */
@@ -110,10 +114,10 @@ public interface OwningRule extends Rule {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>New Model Path</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>New Model Path</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>New Model Path</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.viewpoints.configuration.ConfigurationPackage#getOwningRule_NewModelPath()
 	 * @model containment="true"

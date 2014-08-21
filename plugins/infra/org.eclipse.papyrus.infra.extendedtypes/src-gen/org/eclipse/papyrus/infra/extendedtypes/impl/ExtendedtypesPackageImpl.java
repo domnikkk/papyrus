@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ViewTypeConfiguration;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtendedtypesPackageImpl extends EPackageImpl implements ExtendedtypesPackage {
@@ -48,7 +48,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass extendedElementTypeSetEClass = null;
@@ -56,7 +56,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass elementTypeConfigurationEClass = null;
@@ -64,7 +64,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass iconEntryEClass = null;
@@ -72,7 +72,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass configurationElementEClass = null;
@@ -80,7 +80,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass matcherConfigurationEClass = null;
@@ -88,7 +88,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass actionConfigurationEClass = null;
@@ -96,7 +96,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass viewActionConfigurationEClass = null;
@@ -104,7 +104,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass semanticActionConfigurationEClass = null;
@@ -112,7 +112,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass semanticTypeConfigurationEClass = null;
@@ -120,7 +120,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass viewTypeConfigurationEClass = null;
@@ -128,7 +128,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass elementTypeAdviceConfigurationEClass = null;
@@ -136,7 +136,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass aspectSemanticTypeConfigurationEClass = null;
@@ -144,7 +144,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass aspectViewTypeConfigurationEClass = null;
@@ -154,9 +154,8 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	 * package
 	 * package URI value.
 	 * <p>
-	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the
-	 * package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage#eNS_URI
 	 * @see #init()
@@ -169,28 +168,29 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
-	 * This method is used to initialize {@link ExtendedtypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly.
-	 * Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * This method is used to initialize {@link ExtendedtypesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ExtendedtypesPackage init() {
-		if(isInited)
-			return (ExtendedtypesPackage)EPackage.Registry.INSTANCE.getEPackage(ExtendedtypesPackage.eNS_URI);
+		if (isInited) {
+			return (ExtendedtypesPackage) EPackage.Registry.INSTANCE.getEPackage(ExtendedtypesPackage.eNS_URI);
+		}
 		// Obtain or create and register package
-		ExtendedtypesPackageImpl theExtendedtypesPackage = (ExtendedtypesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtendedtypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExtendedtypesPackageImpl());
+		ExtendedtypesPackageImpl theExtendedtypesPackage = (ExtendedtypesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ExtendedtypesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ExtendedtypesPackageImpl());
 		isInited = true;
 		// Initialize simple dependencies
 		EcorePackage.eINSTANCE.eClass();
@@ -208,7 +208,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getExtendedElementTypeSet() {
@@ -218,27 +218,27 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getExtendedElementTypeSet_ElementType() {
-		return (EReference)extendedElementTypeSetEClass.getEStructuralFeatures().get(0);
+		return (EReference) extendedElementTypeSetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getExtendedElementTypeSet_Extensible() {
-		return (EAttribute)extendedElementTypeSetEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) extendedElementTypeSetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElementTypeConfiguration() {
@@ -248,47 +248,47 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getElementTypeConfiguration_Hint() {
-		return (EAttribute)elementTypeConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) elementTypeConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getElementTypeConfiguration_KindName() {
-		return (EAttribute)elementTypeConfigurationEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) elementTypeConfigurationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getElementTypeConfiguration_SpecializedTypesID() {
-		return (EAttribute)elementTypeConfigurationEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) elementTypeConfigurationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getElementTypeConfiguration_MatcherConfiguration() {
-		return (EReference)elementTypeConfigurationEClass.getEStructuralFeatures().get(3);
+		return (EReference) elementTypeConfigurationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getIconEntry() {
@@ -298,27 +298,27 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getIconEntry_IconPath() {
-		return (EAttribute)iconEntryEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) iconEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getIconEntry_BundleId() {
-		return (EAttribute)iconEntryEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) iconEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConfigurationElement() {
@@ -328,47 +328,47 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfigurationElement_Name() {
-		return (EAttribute)configurationElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) configurationElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfigurationElement_Description() {
-		return (EAttribute)configurationElementEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) configurationElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getConfigurationElement_Identifier() {
-		return (EAttribute)configurationElementEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) configurationElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConfigurationElement_IconEntry() {
-		return (EReference)configurationElementEClass.getEStructuralFeatures().get(3);
+		return (EReference) configurationElementEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getMatcherConfiguration() {
@@ -378,7 +378,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getActionConfiguration() {
@@ -388,7 +388,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getViewActionConfiguration() {
@@ -398,7 +398,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSemanticActionConfiguration() {
@@ -408,7 +408,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getSemanticTypeConfiguration() {
@@ -418,7 +418,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getViewTypeConfiguration() {
@@ -428,17 +428,17 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getViewTypeConfiguration_SpecializedDiagramTypeID() {
-		return (EAttribute)viewTypeConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) viewTypeConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElementTypeAdviceConfiguration() {
@@ -448,7 +448,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAspectSemanticTypeConfiguration() {
@@ -458,17 +458,17 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAspectSemanticTypeConfiguration_ActionConfiguration() {
-		return (EReference)aspectSemanticTypeConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EReference) aspectSemanticTypeConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getAspectViewTypeConfiguration() {
@@ -478,27 +478,27 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getAspectViewTypeConfiguration_ActionConfiguration() {
-		return (EReference)aspectViewTypeConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EReference) aspectViewTypeConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedtypesFactory getExtendedtypesFactory() {
-		return (ExtendedtypesFactory)getEFactoryInstance();
+		return (ExtendedtypesFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -508,12 +508,13 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if(isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 		// Create classes and their features
 		extendedElementTypeSetEClass = createEClass(EXTENDED_ELEMENT_TYPE_SET);
@@ -549,7 +550,7 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -559,19 +560,20 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if(isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 		// Initialize package
 		setName(eNAME);
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 		// Create type parameters
 		// Set bounds for type parameters
 		// Add supertypes to classes
@@ -587,13 +589,17 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 		aspectViewTypeConfigurationEClass.getESuperTypes().add(this.getViewTypeConfiguration());
 		// Initialize classes and features; add operations and parameters
 		initEClass(extendedElementTypeSetEClass, ExtendedElementTypeSet.class, "ExtendedElementTypeSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getExtendedElementTypeSet_ElementType(), this.getElementTypeConfiguration(), null, "elementType", null, 1, -1, ExtendedElementTypeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getExtendedElementTypeSet_ElementType(), this.getElementTypeConfiguration(), null,
+				"elementType", null, 1, -1, ExtendedElementTypeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getExtendedElementTypeSet_Extensible(), theEcorePackage.getEBoolean(), "extensible", null, 0, 1, ExtendedElementTypeSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEClass(elementTypeConfigurationEClass, ElementTypeConfiguration.class, "ElementTypeConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getElementTypeConfiguration_Hint(), ecorePackage.getEString(), "hint", "ExtendedElements", 0, 1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEAttribute(getElementTypeConfiguration_KindName(), ecorePackage.getEString(), "kindName", "org.eclipse.gmf.runtime.emf.type.core.IHintedType", 0, 1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
-		initEAttribute(getElementTypeConfiguration_SpecializedTypesID(), ecorePackage.getEString(), "specializedTypesID", null, 1, -1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getElementTypeConfiguration_MatcherConfiguration(), this.getMatcherConfiguration(), null, "matcherConfiguration", null, 0, 1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getElementTypeConfiguration_KindName(), ecorePackage.getEString(),
+				"kindName", "org.eclipse.gmf.runtime.emf.type.core.IHintedType", 0, 1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$ //$NON-NLS-2$
+		initEAttribute(getElementTypeConfiguration_SpecializedTypesID(), ecorePackage.getEString(),
+				"specializedTypesID", null, 1, -1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getElementTypeConfiguration_MatcherConfiguration(), this.getMatcherConfiguration(), null,
+				"matcherConfiguration", null, 0, 1, ElementTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEClass(iconEntryEClass, IconEntry.class, "IconEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEAttribute(getIconEntry_IconPath(), ecorePackage.getEString(), "iconPath", null, 0, 1, IconEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getIconEntry_BundleId(), ecorePackage.getEString(), "bundleId", null, 0, 1, IconEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
@@ -601,20 +607,24 @@ public class ExtendedtypesPackageImpl extends EPackageImpl implements Extendedty
 		initEAttribute(getConfigurationElement_Name(), theEcorePackage.getEString(), "name", null, 1, 1, ConfigurationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getConfigurationElement_Description(), theEcorePackage.getEString(), "description", null, 0, 1, ConfigurationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEAttribute(getConfigurationElement_Identifier(), theEcorePackage.getEString(), "identifier", null, 1, 1, ConfigurationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
-		initEReference(getConfigurationElement_IconEntry(), this.getIconEntry(), null, "iconEntry", null, 0, 1, ConfigurationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getConfigurationElement_IconEntry(), this.getIconEntry(), null,
+				"iconEntry", null, 0, 1, ConfigurationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEClass(matcherConfigurationEClass, MatcherConfiguration.class, "MatcherConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEClass(actionConfigurationEClass, ActionConfiguration.class, "ActionConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEClass(viewActionConfigurationEClass, ViewActionConfiguration.class, "ViewActionConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEClass(semanticActionConfigurationEClass, SemanticActionConfiguration.class, "SemanticActionConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEClass(semanticTypeConfigurationEClass, SemanticTypeConfiguration.class, "SemanticTypeConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEClass(viewTypeConfigurationEClass, ViewTypeConfiguration.class, "ViewTypeConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEAttribute(getViewTypeConfiguration_SpecializedDiagramTypeID(), ecorePackage.getEString(), "specializedDiagramTypeID", null, 0, 1, ViewTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEAttribute(getViewTypeConfiguration_SpecializedDiagramTypeID(), ecorePackage.getEString(),
+				"specializedDiagramTypeID", null, 0, 1, ViewTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEClass(elementTypeAdviceConfigurationEClass, ElementTypeAdviceConfiguration.class, "ElementTypeAdviceConfiguration", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 		initEClass(aspectSemanticTypeConfigurationEClass, AspectSemanticTypeConfiguration.class, "AspectSemanticTypeConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getAspectSemanticTypeConfiguration_ActionConfiguration(), this.getSemanticActionConfiguration(), null, "actionConfiguration", null, 0, -1, AspectSemanticTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getAspectSemanticTypeConfiguration_ActionConfiguration(), this.getSemanticActionConfiguration(), null,
+				"actionConfiguration", null, 0, -1, AspectSemanticTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		initEClass(aspectViewTypeConfigurationEClass, AspectViewTypeConfiguration.class, "AspectViewTypeConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-		initEReference(getAspectViewTypeConfiguration_ActionConfiguration(), this.getViewActionConfiguration(), null, "actionConfiguration", null, 0, -1, AspectViewTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
+		initEReference(getAspectViewTypeConfiguration_ActionConfiguration(), this.getViewActionConfiguration(), null,
+				"actionConfiguration", null, 0, -1, AspectViewTypeConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED); //$NON-NLS-1$
 		// Create resource
 		createResource(eNS_URI);
 	}
-} //ExtendedtypesPackageImpl
+} // ExtendedtypesPackageImpl

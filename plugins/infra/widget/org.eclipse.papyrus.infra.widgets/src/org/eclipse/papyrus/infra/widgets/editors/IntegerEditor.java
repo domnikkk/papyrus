@@ -36,9 +36,9 @@ public class IntegerEditor extends StringEditor {
 	 * Constructs an editor for Integer values. The widget is a Text field.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is created
+	 *            The Composite in which this editor is created
 	 * @param style
-	 *        The Text's style
+	 *            The Text's style
 	 */
 	public IntegerEditor(Composite parent, int style) {
 		this(parent, style, null);
@@ -48,11 +48,11 @@ public class IntegerEditor extends StringEditor {
 	 * Constructs an editor for Integer values. The widget is a Text field.
 	 *
 	 * @param parent
-	 *        The Composite in which this editor is created
+	 *            The Composite in which this editor is created
 	 * @param style
-	 *        The Text's style
+	 *            The Text's style
 	 * @param label
-	 *        The editor's label
+	 *            The editor's label
 	 */
 	public IntegerEditor(Composite parent, int style, String label) {
 		super(parent, style, label);
@@ -73,10 +73,10 @@ public class IntegerEditor extends StringEditor {
 
 			@Override
 			public Integer convert(Object fromObject) {
-				if(fromObject instanceof String) {
-					String newString = ((String)fromObject).replaceAll(" ", ""); //$NON-NLS-1$ //$NON-NLS-2$
+				if (fromObject instanceof String) {
+					String newString = ((String) fromObject).replaceAll(" ", ""); //$NON-NLS-1$ //$NON-NLS-2$
 					try {
-						Integer i = (Integer)StringToNumberConverter.toInteger(false).convert(newString);
+						Integer i = (Integer) StringToNumberConverter.toInteger(false).convert(newString);
 						return i;
 					} catch (Exception ex) {
 
@@ -103,8 +103,8 @@ public class IntegerEditor extends StringEditor {
 			@Override
 			public Object convert(Object fromObject) {
 
-				if(fromObject instanceof Integer) {
-					return Integer.toString((Integer)fromObject);
+				if (fromObject instanceof Integer) {
+					return Integer.toString((Integer) fromObject);
 				}
 				errorBinding = true;
 				return ""; //$NON-NLS-1$
@@ -136,7 +136,7 @@ public class IntegerEditor extends StringEditor {
 	public Integer getValue() {
 		try {
 
-			return (Integer)targetToModelConverter.convert(super.getValue());
+			return (Integer) targetToModelConverter.convert(super.getValue());
 		} catch (Exception ex) {
 			Activator.log.error(ex);
 			return null;

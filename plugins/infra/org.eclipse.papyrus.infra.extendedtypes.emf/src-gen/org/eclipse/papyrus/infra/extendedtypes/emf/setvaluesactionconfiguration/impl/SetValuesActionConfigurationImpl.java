@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.extendedtypes.impl.SemanticActionConfigurationI
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationImpl#getFeaturesToSet <em>Features To Set</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.setvaluesactionconfiguration.impl.SetValuesActionConfigurationImpl#getFeaturesToSet <em>Features To Set</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	 * The cached value of the '{@link #getFeaturesToSet() <em>Features To Set</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFeaturesToSet()
 	 * @generated
 	 * @ordered
@@ -47,6 +48,7 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SetValuesActionConfigurationImpl() {
@@ -56,6 +58,7 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,8 +69,10 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<FeatureToSet> getFeaturesToSet() {
 		if (featuresToSet == null) {
 			featuresToSet = new EObjectContainmentEList<FeatureToSet>(FeatureToSet.class, this, SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET);
@@ -78,13 +83,14 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
-				return ((InternalEList<?>)getFeaturesToSet()).basicRemove(otherEnd, msgs);
+		case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
+			return ((InternalEList<?>) getFeaturesToSet()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -92,13 +98,14 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
-				return getFeaturesToSet();
+		case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
+			return getFeaturesToSet();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,16 +113,17 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
-				getFeaturesToSet().clear();
-				getFeaturesToSet().addAll((Collection<? extends FeatureToSet>)newValue);
-				return;
+		case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
+			getFeaturesToSet().clear();
+			getFeaturesToSet().addAll((Collection<? extends FeatureToSet>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -123,14 +131,15 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
-				getFeaturesToSet().clear();
-				return;
+		case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
+			getFeaturesToSet().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -138,15 +147,16 @@ public class SetValuesActionConfigurationImpl extends SemanticActionConfiguratio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
-				return featuresToSet != null && !featuresToSet.isEmpty();
+		case SetValuesActionConfigurationPackage.SET_VALUES_ACTION_CONFIGURATION__FEATURES_TO_SET:
+			return featuresToSet != null && !featuresToSet.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SetValuesActionConfigurationImpl
+} // SetValuesActionConfigurationImpl

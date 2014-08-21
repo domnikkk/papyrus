@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,19 +58,19 @@ import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 /**
  * Get a registry of all SysML Adapter Factory classified by the UML class their
  * correspond.
- * 
+ *
  * Example:
- * 
+ *
  * <Class.class> ->[ModelelementsItemProviderAdapterFactory,
  * BlocksAdapterItemProviderFactory, RequirementsAdapterItemProviderFactory]
- * 
+ *
  * @generated
  */
 public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type ModelelementsItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -78,7 +78,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type BlocksItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -86,7 +86,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type PortandflowsItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -94,7 +94,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type ConstraintsItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -102,7 +102,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type ActivitiesItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -110,7 +110,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type AllocationsItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -118,7 +118,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Keep track of the item provider of type RequirementsItemProviderAdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 
@@ -126,28 +126,28 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Registry for all SysML AdapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 	private List<AdapterFactory> adapterFactoryRegistry = new ArrayList<AdapterFactory>(7);
 
 	/**
 	 * Registry of all {@link AdapterFactory} classified by corresponding UML element
-	 * 
+	 *
 	 * @generated
 	 */
 	private HashMap<EClass, ArrayList<AdapterFactory>> adapterFactoryRegistryMap = new HashMap<EClass, ArrayList<AdapterFactory>>();
 
 	/**
 	 * Default adapterFactory
-	 * 
+	 *
 	 * @generated
 	 */
 	private UMLItemProviderAdapterFactory defaultAdapterFactory = new UMLItemProviderAdapterFactory();
 
 	/**
 	 * Constructor + initialize
-	 * 
+	 *
 	 * @generated
 	 */
 	private SysmlRegistryAdapterFactoryRegistry() {
@@ -308,7 +308,7 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Singleton holder
-	 * 
+	 *
 	 * @generated
 	 */
 	private static class SingletonHolder {
@@ -328,27 +328,27 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Get the default AdapterFactory
-	 * 
+	 *
 	 * @return List<AdapterFactory> return the default adapter factory (UML)
 	 * @generated
 	 */
 	public AdapterFactory getDefaultAdapterFactory() {
-		return (AdapterFactory)defaultAdapterFactory;
+		return defaultAdapterFactory;
 	}
 
 	/**
 	 * Get the list of all AdapterFactory for this type
-	 * 
+	 *
 	 * @param Object
-	 *        element
+	 *            element
 	 * @return List<AdapterFactory> List of all the adapter factories which can handle the object element
 	 * @generated
 	 */
 	public List<AdapterFactory> getAdapterFactoriesForType(Object element) {
-		if(element instanceof EObject) {
-			EObject eObject = (EObject)element;
+		if (element instanceof EObject) {
+			EObject eObject = (EObject) element;
 			ArrayList<AdapterFactory> result = adapterFactoryRegistryMap.get(eObject.eClass());
-			if(result != null) {
+			if (result != null) {
 				return result;
 			} else {
 				return Collections.singletonList(getDefaultAdapterFactory());
@@ -360,22 +360,22 @@ public class SysmlRegistryAdapterFactoryRegistry {
 
 	/**
 	 * Set the the root AdapterFactory for all registered adapter factory
-	 * 
+	 *
 	 * @param AdapterFactory
-	 *        The adapter factory which will be the root
+	 *            The adapter factory which will be the root
 	 * @generated
 	 */
 	public void setRootAdapterFactory(IRootAdapterFactory adapter) {
-		for(AdapterFactory adap : adapterFactoryRegistry) {
-			if(adap instanceof IComposableAdapterFactory) {
-				((IComposableAdapterFactory)adap).setRootAdapterFactory(adapter);
+		for (AdapterFactory adap : adapterFactoryRegistry) {
+			if (adap instanceof IComposableAdapterFactory) {
+				((IComposableAdapterFactory) adap).setRootAdapterFactory(adapter);
 			}
 		}
 	}
 
 	/**
 	 * Get a map of all UML ItemProvider needed
-	 * 
+	 *
 	 * @generated
 	 */
 	public HashMap<EClass, ItemProviderAdapter> getUMLItemProviderClassifedByUMLElement(AdapterFactory rootAdapterFactory) {
@@ -428,5 +428,5 @@ public class SysmlRegistryAdapterFactoryRegistry {
 		return result;
 	}
 
-} //org.eclipse.papyrus.sysml.registry;
+} // org.eclipse.papyrus.sysml.registry;
 

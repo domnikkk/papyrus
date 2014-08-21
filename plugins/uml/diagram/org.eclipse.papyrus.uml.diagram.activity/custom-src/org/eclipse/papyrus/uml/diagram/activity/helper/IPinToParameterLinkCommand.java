@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.uml2.uml.Pin;
 
 /**
  * Constant used to create link between {@link Pin} and {@link Parameter}
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public interface IPinToParameterLinkCommand {
 

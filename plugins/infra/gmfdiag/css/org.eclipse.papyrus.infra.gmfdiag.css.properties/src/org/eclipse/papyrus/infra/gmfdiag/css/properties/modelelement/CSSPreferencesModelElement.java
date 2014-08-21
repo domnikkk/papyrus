@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ public class CSSPreferencesModelElement extends PreferencesModelElement {
 
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		if(ThemePreferences.CURRENT_THEME.equals(propertyPath)) {
+		if (ThemePreferences.CURRENT_THEME.equals(propertyPath)) {
 			return new CSSThemeLabelProvider();
 		}
 		return super.getLabelProvider(propertyPath);

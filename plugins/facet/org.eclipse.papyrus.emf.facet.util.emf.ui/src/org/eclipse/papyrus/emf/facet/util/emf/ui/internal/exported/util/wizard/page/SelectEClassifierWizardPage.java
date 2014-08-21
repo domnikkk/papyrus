@@ -84,6 +84,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 		this.eClassSelection.updateList(this.metamodelNsUri);
 	}
 
+	@Override
 	public void createControl(final Composite parent) {
 		this.eClassSelection = new EClassifierSelectionControl<T>(parent,
 				this.metamodelNsUri, this.eTypeOption);
@@ -91,6 +92,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 				.getFilteredList();
 
 		filteredList.addSelectionListener(new SelectionListener() {
+			@Override
 			public void widgetSelected(final SelectionEvent event) {
 				if (event.item != null) {
 					updateButton();
@@ -98,6 +100,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 				}
 			}
 
+			@Override
 			public void widgetDefaultSelected(final SelectionEvent event) {
 				if (getWizard().canFinish()) {
 					getWizard().performFinish();
@@ -111,6 +114,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 		this.eClassSelection.getFilterText().addModifyListener(
 				new ModifyListener() {
 
+					@Override
 					public void modifyText(final ModifyEvent event) {
 						updateButton();
 					}
@@ -133,16 +137,18 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 		}
 	}
 
+	@Override
 	public T getSelectedEClassifier() {
 		return this.eClassSelection.getSelectedEClassifier();
 	}
 
 	/**
 	 * Select the <code>eclassifierName</code> into the list.
-	 * 
+	 *
 	 * @param eclassifierName
 	 *            the name of the classifier to select.
 	 */
+	@Override
 	public void selectEClassifier(final String eclassifierName) {
 		DebugUtils.debug(DEBUG);
 		boolean doItNow = true;
@@ -168,6 +174,7 @@ public class SelectEClassifierWizardPage<T extends EClassifier> extends
 
 	private void asyncSelectionClassifier(final String eclassifierName) {
 		Display.getDefault().asyncExec(new Runnable() {
+			@Override
 			public void run() {
 				selectEClassifier(eclassifierName);
 			}

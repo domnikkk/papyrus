@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 
 
-public interface IPapyrusDiagnostician extends  EValidator.SubstitutionLabelProvider, EValidator{
+public interface IPapyrusDiagnostician extends EValidator.SubstitutionLabelProvider, EValidator {
 
 	/**
 	 * comes from {@link org.eclipse.emf.ecore.util.Diagnostician}
@@ -35,8 +35,9 @@ public interface IPapyrusDiagnostician extends  EValidator.SubstitutionLabelProv
 
 	/**
 	 * use to initialize with the good context during the execution of a command
+	 * 
 	 * @param adapterFactory
 	 * @param progressMonitor
 	 */
-	public void initialize (final AdapterFactory adapterFactory, final IProgressMonitor progressMonitor);
+	public void initialize(final AdapterFactory adapterFactory, final IProgressMonitor progressMonitor);
 }

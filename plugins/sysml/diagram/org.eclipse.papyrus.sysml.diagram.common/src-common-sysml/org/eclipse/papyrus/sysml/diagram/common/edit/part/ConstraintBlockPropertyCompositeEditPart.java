@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -122,12 +122,12 @@ public class ConstraintBlockPropertyCompositeEditPart extends AbstractElementEdi
 			return true;
 		}
 		if (childEditPart instanceof ConstraintNodeLabelEditPart) {
-			((ConstraintNodeLabelEditPart) childEditPart).setLabel(((ConstraintBlockPropertyCompositeFigure) getPrimaryShape()).getConstraintLabel());
+			((ConstraintNodeLabelEditPart) childEditPart).setLabel(getPrimaryShape().getConstraintLabel());
 			return true;
 		}
 
 		if (childEditPart instanceof ConstraintParameterAffixedNodeEditPart) {
-			FullInsidePortPositionLocator locator = new FullInsidePortPositionLocator(getMainFigure(), PositionConstants.NONE, ((ConstraintBlockPropertyCompositeFigure) getPrimaryShape()).getCorner());
+			FullInsidePortPositionLocator locator = new FullInsidePortPositionLocator(getMainFigure(), PositionConstants.NONE, getPrimaryShape().getCorner());
 			constraintParameter2FullInsidePortPositionLocator.put(childEditPart, locator); // register the locator in order to reset the corner when changing ConstraintProeprty representation
 			getBorderedFigure().getBorderItemContainer().add(((ConstraintParameterAffixedNodeEditPart) childEditPart).getFigure(), locator);
 			return true;
@@ -243,7 +243,7 @@ public class ConstraintBlockPropertyCompositeEditPart extends AbstractElementEdi
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * {@inheritDoc}
 	 * </pre>
 	 */

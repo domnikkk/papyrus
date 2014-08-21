@@ -54,7 +54,7 @@ public class SaveLayoutBeforeClose implements IService {
 	protected void installSaveOnClose() {
 		try {
 			lifecycleManager = registry.getService(EditorLifecycleManager.class);
-			if(lifecycleManager == null) {
+			if (lifecycleManager == null) {
 				return;
 			}
 		} catch (ServiceException ex) {
@@ -65,12 +65,12 @@ public class SaveLayoutBeforeClose implements IService {
 
 			@Override
 			public void postInit(IMultiDiagramEditor editor) {
-				//Nothing
+				// Nothing
 			}
 
 			@Override
 			public void postDisplay(IMultiDiagramEditor editor) {
-				//Nothing
+				// Nothing
 			}
 
 			@Override
@@ -83,12 +83,12 @@ public class SaveLayoutBeforeClose implements IService {
 	}
 
 	protected void saveBeforeClose(IMultiDiagramEditor editor) {
-		if(editor.isDirty()) {
-			return; //User explicitly quit without saving. Do nothing (And if user wants to save during exit, the sashmodel will be saved anyway)
+		if (editor.isDirty()) {
+			return; // User explicitly quit without saving. Do nothing (And if user wants to save during exit, the sashmodel will be saved anyway)
 		}
 
-		ModelSet modelSet; //Required
-		LifeCycleEventsProvider internalLifecycleEventsProvider = null; //Optional
+		ModelSet modelSet; // Required
+		LifeCycleEventsProvider internalLifecycleEventsProvider = null; // Optional
 
 		try {
 			modelSet = registry.getService(ModelSet.class);
@@ -98,18 +98,18 @@ public class SaveLayoutBeforeClose implements IService {
 
 		try {
 			ILifeCycleEventsProvider eventsProvider = registry.getService(ILifeCycleEventsProvider.class);
-			if(eventsProvider instanceof LifeCycleEventsProvider) {
-				internalLifecycleEventsProvider = (LifeCycleEventsProvider)eventsProvider;
+			if (eventsProvider instanceof LifeCycleEventsProvider) {
+				internalLifecycleEventsProvider = (LifeCycleEventsProvider) eventsProvider;
 			}
 		} catch (ServiceException ex) {
-			//Ignore: the service is optional
+			// Ignore: the service is optional
 		}
 
-		SashModel sashModel = (SashModel)modelSet.getModel(SashModel.MODEL_ID);
+		SashModel sashModel = (SashModel) modelSet.getModel(SashModel.MODEL_ID);
 
 		try {
-			//We need to send pre- and post-save events, but we can only do that with the internal LifecycleEventsProvider
-			//The ISaveAndDirtyService can only save the whole model, but we just want to save the sash
+			// We need to send pre- and post-save events, but we can only do that with the internal LifecycleEventsProvider
+			// The ISaveAndDirtyService can only save the whole model, but we just want to save the sash
 			DoSaveEvent event = new DoSaveEvent(registry, editor, true);
 			internalLifecycleEventsProvider.fireAboutToDoSaveEvent(event);
 			internalLifecycleEventsProvider.fireDoSaveEvent(event);
@@ -123,7 +123,7 @@ public class SaveLayoutBeforeClose implements IService {
 	@Override
 	public void disposeService() throws ServiceException {
 		registry = null;
-		if(lifecycleManager != null) {
+		if (lifecycleManager != null) {
 			lifecycleManager.removeEditorLifecycleEventsListener(lifecycleListener);
 			lifecycleListener = null;
 			lifecycleManager = null;

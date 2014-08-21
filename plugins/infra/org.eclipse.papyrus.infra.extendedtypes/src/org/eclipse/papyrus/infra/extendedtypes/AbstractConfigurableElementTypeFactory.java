@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,18 +43,19 @@ public abstract class AbstractConfigurableElementTypeFactory<T extends ElementTy
 		String displayName = configuration.getName();
 		// Specialized element types
 		List<IElementType> specializedTypes = new ArrayList<IElementType>(configuration.getSpecializedTypesID().size());
-		for(String specializedTypeId : configuration.getSpecializedTypesID()) {
+		for (String specializedTypeId : configuration.getSpecializedTypesID()) {
 			IElementType specializedType = ElementTypeRegistry.getInstance().getType(specializedTypeId);
 			specializedTypes.add(specializedType);
 		}
-		IElementType[] elementTypes = specializedTypes.toArray(new IElementType[]{});
+		IElementType[] elementTypes = specializedTypes.toArray(new IElementType[] {});
 		// icon associated to the element Type (GUI)
 		IconEntry entry = configuration.getIconEntry();
 		URL iconURL = null;
-		if(entry != null) {
+		if (entry != null) {
 			iconURL = getURLFromEntry(entry);
 		}
-		IExtendedHintedElementType type = new ExtendedHintedElementType(id, iconURL, displayName, elementTypes, createElementMatcher(configuration), createContainerDescriptor(configuration), createEditHelperAdvice(configuration), getSemanticHint(configuration), createElementCreationValidator(configuration));
+		IExtendedHintedElementType type = new ExtendedHintedElementType(id, iconURL, displayName, elementTypes, createElementMatcher(configuration), createContainerDescriptor(configuration), createEditHelperAdvice(configuration),
+				getSemanticHint(configuration), createElementCreationValidator(configuration));
 		return type;
 	}
 
@@ -79,14 +80,16 @@ public abstract class AbstractConfigurableElementTypeFactory<T extends ElementTy
 
 	/**
 	 * Creates the element matcher for the given configuration
-	 * @param configuration the configuration from which element matcher should be created
+	 * 
+	 * @param configuration
+	 *            the configuration from which element matcher should be created
 	 * @return the new element matcher for the created element type
 	 */
 	protected IElementMatcher createElementMatcher(T configuration) {
 		MatcherConfiguration matcherConfiguration = configuration.getMatcherConfiguration();
-		if(matcherConfiguration==null) {
+		if (matcherConfiguration == null) {
 			return null;
-		} 
+		}
 		// create matcher from the configuration
 		IElementMatcher matcher = ConfigurableElementMatcherFactoryRegistry.getInstance().createElementMatcher(matcherConfiguration);
 		return matcher;
@@ -95,7 +98,7 @@ public abstract class AbstractConfigurableElementTypeFactory<T extends ElementTy
 	/**
 	 * {@inheritDoc}
 	 */
-	public abstract ICreationElementValidator createElementCreationValidator(T configuration) ;
+	public abstract ICreationElementValidator createElementCreationValidator(T configuration);
 
 	/**
 	 * @param entry
@@ -103,11 +106,11 @@ public abstract class AbstractConfigurableElementTypeFactory<T extends ElementTy
 	 */
 	protected URL getURLFromEntry(IconEntry entry) {
 		Bundle bundle = Platform.getBundle(entry.getBundleId());
-		if(bundle == null) {
+		if (bundle == null) {
 			return null;
 		}
 		URL result = bundle.getEntry(entry.getIconPath());
-		if(result == null) {
+		if (result == null) {
 			try {
 				result = new URL(entry.getIconPath());
 			} catch (MalformedURLException e) {

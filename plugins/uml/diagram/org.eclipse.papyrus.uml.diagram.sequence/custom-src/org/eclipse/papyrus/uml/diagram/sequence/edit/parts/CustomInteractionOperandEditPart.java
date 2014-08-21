@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -128,7 +128,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomInteractionOperandEditPart(View view) {
@@ -139,11 +139,11 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 * Try to use the notifier from super class, if not exist, create new one.
 	 */
 	protected NotificationHelper getNotifierHelper() {
-		if(notifierHelper == null) {
+		if (notifierHelper == null) {
 			try {
 				Field f = InteractionOperandEditPart.class.getDeclaredField("notifier");
 				f.setAccessible(true);
-				notifierHelper = (NotificationHelper)f.get(this);
+				notifierHelper = (NotificationHelper) f.get(this);
 			} catch (Exception e) {
 				notifierHelper = new NotificationHelper(new UIAdapterImpl() {
 
@@ -159,8 +159,8 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof NodeFigure) {
-			((NodeFigure)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof NodeFigure) {
+			((NodeFigure) primaryShape).setLineWidth(width);
 		}
 		super.setLineWidth(width);
 	}
@@ -169,7 +169,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 * Remove EditPolicyRoles.DRAG_DROP_ROLE and EditPolicy.PRIMARY_DRAG_ROLE :
 	 * - adding elements to an interactionOperand doesn't anymore resize the enclosing CF
 	 * - interactionOperand are no longer dNd
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -186,12 +186,12 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	/**
 	 * Overrides to return the contentPane instead of the main figure in case the editPart is not a IBorderItemEditPart.
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#getContentPaneFor(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart)
 	 */
 	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof IBorderItemEditPart) {
+		if (editPart instanceof IBorderItemEditPart) {
 			return getBorderedFigure().getBorderItemContainer();
 		} else {
 			return getContentPane();
@@ -200,13 +200,12 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	/**
 	 * Overrides to add a specific locator on the ContinuationEditPart
-	 * 
-	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart#addBorderItem(org.eclipse.draw2d.IFigure,
-	 *      org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart)
+	 *
+	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderedShapeEditPart#addBorderItem(org.eclipse.draw2d.IFigure, org.eclipse.gmf.runtime.diagram.ui.editparts.IBorderItemEditPart)
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof ContinuationEditPart) {
+		if (borderItemEditPart instanceof ContinuationEditPart) {
 			borderItemContainer.add(borderItemEditPart.getFigure(), new ContinuationLocator(getMainFigure(), getContinuationPosition(borderItemEditPart)));
 			return;
 		}
@@ -215,31 +214,31 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	/**
 	 * Get the initial position of the continuation
-	 * 
+	 *
 	 * @param borderItemEditPart
-	 *        the borderItemEditPart
+	 *            the borderItemEditPart
 	 * @return the initial position. ContinuationLocator.BOTTOM if none found
 	 */
 	private int getContinuationPosition(IBorderItemEditPart borderItemEditPart) {
 		Object model = borderItemEditPart.getModel();
-		if(model instanceof org.eclipse.gmf.runtime.notation.Shape) {
-			org.eclipse.gmf.runtime.notation.Shape shape = (org.eclipse.gmf.runtime.notation.Shape)model;
+		if (model instanceof org.eclipse.gmf.runtime.notation.Shape) {
+			org.eclipse.gmf.runtime.notation.Shape shape = (org.eclipse.gmf.runtime.notation.Shape) model;
 			EObject eObject = shape.getElement();
-			if(eObject instanceof Continuation) {
-				return ((Continuation)eObject).isSetting() ? PositionConstants.SOUTH : PositionConstants.NORTH;
+			if (eObject instanceof Continuation) {
+				return ((Continuation) eObject).isSetting() ? PositionConstants.SOUTH : PositionConstants.NORTH;
 			}
 		}
 		return PositionConstants.NORTH;
 	}
 
 	static String getGuardLabelText(InteractionOperand interactionOperand, boolean edit) {
-		CombinedFragment enclosingCF = (CombinedFragment)interactionOperand.getOwner();
+		CombinedFragment enclosingCF = (CombinedFragment) interactionOperand.getOwner();
 		InteractionOperatorKind cfOperator = enclosingCF.getInteractionOperator();
 		InteractionConstraint guard = interactionOperand.getGuard();
 		String specValue = null;
-		if(guard != null) {
+		if (guard != null) {
 			ValueSpecification specification = guard.getSpecification();
-			if(specification != null) {
+			if (specification != null) {
 				try {
 					specValue = specification.stringValue();
 				} catch (Exception e) {
@@ -247,24 +246,24 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 			}
 		}
 		StringBuilder sb = new StringBuilder("");
-		if(InteractionOperatorKind.LOOP_LITERAL.equals(cfOperator)) {
+		if (InteractionOperatorKind.LOOP_LITERAL.equals(cfOperator)) {
 			String condition = LoopOperatorUtil.getLoopCondition(guard);
-			if(condition != null) {
+			if (condition != null) {
 				sb.append(condition);
 			}
 		}
-		if(specValue == null) {
+		if (specValue == null) {
 			EList<InteractionOperand> operands = enclosingCF.getOperands();
-			if(InteractionOperatorKind.ALT_LITERAL.equals(cfOperator) && interactionOperand.equals(operands.get(operands.size() - 1))) {
+			if (InteractionOperatorKind.ALT_LITERAL.equals(cfOperator) && interactionOperand.equals(operands.get(operands.size() - 1))) {
 				specValue = "else";
 			}
 		}
-		if(specValue != null) {
-			if(!edit) {
+		if (specValue != null) {
+			if (!edit) {
 				sb.append('[');
 			}
 			sb.append(specValue);
-			if(!edit) {
+			if (!edit) {
 				sb.append(']');
 			}
 		}
@@ -280,76 +279,76 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 		final NotificationHelper notifierHelper = getNotifierHelper();
 		Object feature = notification.getFeature();
 		Object newValue = notification.getNewValue();
-		if(UMLPackage.eINSTANCE.getInteractionOperand_Guard().equals(feature)) {
+		if (UMLPackage.eINSTANCE.getInteractionOperand_Guard().equals(feature)) {
 			// Case of add, change or delete guard
-			if(notification.getOldValue() instanceof InteractionConstraint) {
-				InteractionConstraint constraint = (InteractionConstraint)notification.getOldValue();
+			if (notification.getOldValue() instanceof InteractionConstraint) {
+				InteractionConstraint constraint = (InteractionConstraint) notification.getOldValue();
 				notifierHelper.unlistenObject(constraint);
 				notifierHelper.unlistenObject(constraint.getSpecification());
 				notifierHelper.unlistenObject(constraint.getMaxint());
 				notifierHelper.unlistenObject(constraint.getMinint());
 			}
-			if(newValue instanceof InteractionConstraint) {
-				InteractionConstraint constraint = (InteractionConstraint)newValue;
+			if (newValue instanceof InteractionConstraint) {
+				InteractionConstraint constraint = (InteractionConstraint) newValue;
 				notifierHelper.listenObject(constraint);
 				notifierHelper.listenObject(constraint.getSpecification());
 				notifierHelper.listenObject(constraint.getMaxint());
 				notifierHelper.listenObject(constraint.getMinint());
 			}
-		} else if(UMLPackage.eINSTANCE.getConstraint_Specification().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getConstraint_Specification().equals(feature)) {
 			// Case of add, change or delete Specification
-			if(notification.getOldValue() instanceof ValueSpecification) {
-				notifierHelper.unlistenObject((ValueSpecification)notification.getOldValue());
+			if (notification.getOldValue() instanceof ValueSpecification) {
+				notifierHelper.unlistenObject((ValueSpecification) notification.getOldValue());
 			}
-			if(newValue instanceof ValueSpecification) {
-				ValueSpecification newStringValue = (ValueSpecification)newValue;
+			if (newValue instanceof ValueSpecification) {
+				ValueSpecification newStringValue = (ValueSpecification) newValue;
 				notifierHelper.listenObject(newStringValue);
 			}
-		} else if(UMLPackage.eINSTANCE.getInteractionConstraint_Minint().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getInteractionConstraint_Minint().equals(feature)) {
 			// Case of add, change or delete Minint
-			if(notification.getOldValue() instanceof LiteralInteger) {
-				notifierHelper.unlistenObject((LiteralInteger)notification.getOldValue());
+			if (notification.getOldValue() instanceof LiteralInteger) {
+				notifierHelper.unlistenObject((LiteralInteger) notification.getOldValue());
 			}
-			if(newValue instanceof LiteralInteger) {
-				LiteralInteger newIntegerValue = (LiteralInteger)newValue;
+			if (newValue instanceof LiteralInteger) {
+				LiteralInteger newIntegerValue = (LiteralInteger) newValue;
 				notifierHelper.listenObject(newIntegerValue);
 			}
-		} else if(UMLPackage.eINSTANCE.getInteractionConstraint_Maxint().equals(feature)) {
+		} else if (UMLPackage.eINSTANCE.getInteractionConstraint_Maxint().equals(feature)) {
 			// Case of add, change or delete Maxint
-			if(notification.getOldValue() instanceof LiteralInteger) {
-				notifierHelper.unlistenObject((LiteralInteger)notification.getOldValue());
+			if (notification.getOldValue() instanceof LiteralInteger) {
+				notifierHelper.unlistenObject((LiteralInteger) notification.getOldValue());
 			}
-			if(newValue instanceof LiteralInteger) {
-				LiteralInteger newIntegerValue = (LiteralInteger)newValue;
+			if (newValue instanceof LiteralInteger) {
+				LiteralInteger newIntegerValue = (LiteralInteger) newValue;
 				notifierHelper.listenObject(newIntegerValue);
 			}
 		}
 		// handle modification of minint et maxint to match constraints min <= max and min >= 0
-		if(notification.getNotifier() instanceof LiteralInteger && InteractionOperatorKind.LOOP_LITERAL.equals(getInteractionOperator())) {
-			LiteralInteger literalIntNotifier = (LiteralInteger)notification.getNotifier();
+		if (notification.getNotifier() instanceof LiteralInteger && InteractionOperatorKind.LOOP_LITERAL.equals(getInteractionOperator())) {
+			LiteralInteger literalIntNotifier = (LiteralInteger) notification.getNotifier();
 			EStructuralFeature containingFeature = literalIntNotifier.eContainingFeature();
-			if(UMLPackage.eINSTANCE.getInteractionConstraint_Minint().equals(containingFeature)) {
-				InteractionConstraint constraint = (InteractionConstraint)literalIntNotifier.getOwner();
-				if(newValue instanceof Integer) {
-					Integer newMin = (Integer)newValue;
-					if(newMin < 0) {
+			if (UMLPackage.eINSTANCE.getInteractionConstraint_Minint().equals(containingFeature)) {
+				InteractionConstraint constraint = (InteractionConstraint) literalIntNotifier.getOwner();
+				if (newValue instanceof Integer) {
+					Integer newMin = (Integer) newValue;
+					if (newMin < 0) {
 						literalIntNotifier.setValue(0);
 					}
-					if(constraint.getMaxint() instanceof LiteralInteger) {
-						int max = ((LiteralInteger)constraint.getMaxint()).getValue();
-						if(max != -1 && newMin > max) {
+					if (constraint.getMaxint() instanceof LiteralInteger) {
+						int max = ((LiteralInteger) constraint.getMaxint()).getValue();
+						if (max != -1 && newMin > max) {
 							literalIntNotifier.setValue(max);
 						}
 					}
 				}
-			} else if(UMLPackage.eINSTANCE.getInteractionConstraint_Maxint().equals(containingFeature)) {
-				InteractionConstraint constraint = (InteractionConstraint)literalIntNotifier.getOwner();
-				if(newValue instanceof Integer) {
-					Integer newMax = (Integer)newValue;
+			} else if (UMLPackage.eINSTANCE.getInteractionConstraint_Maxint().equals(containingFeature)) {
+				InteractionConstraint constraint = (InteractionConstraint) literalIntNotifier.getOwner();
+				if (newValue instanceof Integer) {
+					Integer newMax = (Integer) newValue;
 					int min = 0;
-					if(constraint.getMinint() instanceof LiteralInteger) {
-						min = ((LiteralInteger)constraint.getMinint()).getValue();
-						if(newMax != -1 && newMax < min) {
+					if (constraint.getMinint() instanceof LiteralInteger) {
+						min = ((LiteralInteger) constraint.getMinint()).getValue();
+						if (newMax != -1 && newMax < min) {
 							literalIntNotifier.setValue(min);
 						}
 					}
@@ -358,27 +357,27 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 		}
 		updateConstraintLabel();
 		// Manage Continuation constraint on covered lifeline :
-		// Continuations are always global in the enclosing InteractionFragment 
-		//(e.g., it always covers all Lifelines covered by the enclosing InteractionFragment)
-		if(UMLPackage.eINSTANCE.getInteractionFragment_Covered().equals(feature)) {
+		// Continuations are always global in the enclosing InteractionFragment
+		// (e.g., it always covers all Lifelines covered by the enclosing InteractionFragment)
+		if (UMLPackage.eINSTANCE.getInteractionFragment_Covered().equals(feature)) {
 			// In case we are in an alternative combined fragment, this interaction operand may have continuation which need to be updated.
-			if(InteractionOperatorKind.ALT_LITERAL.equals(getInteractionOperator())) {
-				InteractionOperand interactionOperand = (InteractionOperand)notification.getNotifier();
+			if (InteractionOperatorKind.ALT_LITERAL.equals(getInteractionOperator())) {
+				InteractionOperand interactionOperand = (InteractionOperand) notification.getNotifier();
 				EList<Lifeline> currentlyCoveredLifeline = interactionOperand.getCovereds();
-				for(InteractionFragment interactionFragment : interactionOperand.getFragments()) {
-					if(interactionFragment instanceof Continuation) {
+				for (InteractionFragment interactionFragment : interactionOperand.getFragments()) {
+					if (interactionFragment instanceof Continuation) {
 						EList<Lifeline> continuationCoveredLifelines = interactionFragment.getCovereds();
-						if(!continuationCoveredLifelines.equals(currentlyCoveredLifeline)) {
+						if (!continuationCoveredLifelines.equals(currentlyCoveredLifeline)) {
 							// Add new covered lifelines (not already covered)
 							List<Lifeline> coveredLifelinesToAdd = new ArrayList<Lifeline>(currentlyCoveredLifeline);
 							coveredLifelinesToAdd.removeAll(continuationCoveredLifelines);
-							if(!coveredLifelinesToAdd.isEmpty()) {
+							if (!coveredLifelinesToAdd.isEmpty()) {
 								CommandHelper.executeCommandWithoutHistory(getEditingDomain(), AddCommand.create(getEditingDomain(), interactionFragment, UMLPackage.eINSTANCE.getInteractionFragment_Covered(), coveredLifelinesToAdd), true);
 							}
 							// Delete old covered lifelines (not covered anymore)
 							List<Lifeline> coveredLifelinesToRemove = new ArrayList<Lifeline>(continuationCoveredLifelines);
 							coveredLifelinesToRemove.removeAll(currentlyCoveredLifeline);
-							if(!coveredLifelinesToRemove.isEmpty()) {
+							if (!coveredLifelinesToRemove.isEmpty()) {
 								CommandHelper.executeCommandWithoutHistory(getEditingDomain(), RemoveCommand.create(getEditingDomain(), interactionFragment, UMLPackage.eINSTANCE.getInteractionFragment_Covered(), coveredLifelinesToRemove), true);
 							}
 						}
@@ -387,15 +386,15 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 			}
 		}
 		super.handleNotificationEvent(notification);
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}
-		if(ElementIconUtil.isIconNotification(notification)) {
+		if (ElementIconUtil.isIconNotification(notification)) {
 			refreshLabelIcon();
 		}
-		if(InteractionOperandModelElementFactory.isGuardVisibilityChanged(notification)) {
+		if (InteractionOperandModelElementFactory.isGuardVisibilityChanged(notification)) {
 			refreshChildren();
 			refreshGuard();
 		}
@@ -403,17 +402,17 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#getModelChildren()
-	 * 
+	 *
 	 * @return
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	protected List getModelChildren() {
 		List modelChildren = new ArrayList(super.getModelChildren());
-		if(!isGuardVisible()) {
+		if (!isGuardVisible()) {
 			List result = new ArrayList();
-			for(Object object : modelChildren) {
-				if(object instanceof View && InteractionOperandGuardEditPart.GUARD_TYPE.equals(((View)object).getType())) {
+			for (Object object : modelChildren) {
+				if (object instanceof View && InteractionOperandGuardEditPart.GUARD_TYPE.equals(((View) object).getType())) {
 					continue;
 				}
 				result.add(object);
@@ -421,13 +420,13 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 			return result;
 		} else {
 			boolean hasGuardChild = false;
-			for(Object object : modelChildren) {
-				if(object instanceof View && InteractionOperandGuardEditPart.GUARD_TYPE.equals(((View)object).getType())) {
+			for (Object object : modelChildren) {
+				if (object instanceof View && InteractionOperandGuardEditPart.GUARD_TYPE.equals(((View) object).getType())) {
 					hasGuardChild = true;
 					break;
 				}
 			}
-			if(!hasGuardChild) {
+			if (!hasGuardChild) {
 				final View view = getNotationView();
 				final DecorationNode guardNode = NotationFactory.eINSTANCE.createDecorationNode();
 				Bounds b = NotationFactory.eINSTANCE.createBounds();
@@ -435,8 +434,8 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 				b.setY(5);
 				guardNode.setLayoutConstraint(b);
 				guardNode.setType(InteractionOperandGuardEditPart.GUARD_TYPE);
-				if(view.getElement() instanceof InteractionOperand) {
-					guardNode.setElement(((InteractionOperand)view.getElement()).getGuard());
+				if (view.getElement() instanceof InteractionOperand) {
+					guardNode.setElement(((InteractionOperand) view.getElement()).getGuard());
 				}
 				CommandHelper.executeCommandWithoutHistory(getEditingDomain(), new DummyCommand() {
 
@@ -469,12 +468,12 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 */
 	public WrappingLabel getInteractionConstraintLabel() {
 		IGraphicalEditPart child = getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE);
-		if(child instanceof InteractionOperandGuardEditPart) {
-			IFigure figure = ((InteractionOperandGuardEditPart)child).getFigure();
-			if(figure instanceof WrappingLabel) {
-				return ((WrappingLabel)figure);
-			} else if(figure instanceof GuardFigure) {
-				return ((GuardFigure)figure).getPrimaryLabel();
+		if (child instanceof InteractionOperandGuardEditPart) {
+			IFigure figure = ((InteractionOperandGuardEditPart) child).getFigure();
+			if (figure instanceof WrappingLabel) {
+				return ((WrappingLabel) figure);
+			} else if (figure instanceof GuardFigure) {
+				return ((GuardFigure) figure).getPrimaryLabel();
 			}
 		}
 		return getPrimaryShape().getInteractionConstraintLabel();
@@ -493,23 +492,23 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 */
 	protected void refreshGuard() {
 		IGraphicalEditPart guard = getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE);
-		if(!(guard instanceof InteractionOperandGuardEditPart)) {
+		if (!(guard instanceof InteractionOperandGuardEditPart)) {
 			return;
 		}
-		((InteractionOperandGuardEditPart)guard).refreshLabel();
+		((InteractionOperandGuardEditPart) guard).refreshLabel();
 		// Refresh Stereotypes.
 		EditPolicy editPolicy = getEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY);
-		if(editPolicy instanceof AppliedStereotypeLabelDisplayEditPolicy) {
-			((AppliedStereotypeLabelDisplayEditPolicy)editPolicy).refreshDisplay();
+		if (editPolicy instanceof AppliedStereotypeLabelDisplayEditPolicy) {
+			((AppliedStereotypeLabelDisplayEditPolicy) editPolicy).refreshDisplay();
 		}
 	}
 
 	@Override
 	protected void refreshBackgroundColor() {
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(style != null) {
-			if((style.getGradient() == null || !supportsGradient())) {
-				if(16777215 == style.getFillColor()) { // default color
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (style != null) {
+			if ((style.getGradient() == null || !supportsGradient())) {
+				if (16777215 == style.getFillColor()) { // default color
 					getPrimaryShape().setTransparency(100);
 					getPrimaryShape().setIsUsingGradient(true);
 					getPrimaryShape().setGradientData(style.getFillColor(), style.getFillColor(), 0);
@@ -535,8 +534,8 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	@Override
 	protected void setGradient(GradientData gradient) {
 		IPapyrusNodeFigure fig = getPrimaryShape();
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(gradient != null) {
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (gradient != null) {
 			setTransparency(0);
 			fig.setIsUsingGradient(true);
 			fig.setGradientData(style.getFillColor(), gradient.getGradientColor1(), gradient.getGradientStyle());
@@ -560,18 +559,18 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	/**
 	 * Get the InteractionOperator of the CombinedFragment.
-	 * 
+	 *
 	 * @return The InteractionOperator
 	 */
 	private InteractionOperatorKind getInteractionOperator() {
 		InteractionOperatorKind interactionOperatorKind = null;
 		EditPart parent = getParent();
-		if(parent instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
+		if (parent instanceof CombinedFragmentCombinedFragmentCompartmentEditPart) {
 			parent = parent.getParent();
-			if(parent instanceof CombinedFragmentEditPart) {
-				EObject element = ((CombinedFragmentEditPart)parent).resolveSemanticElement();
-				if(element instanceof CombinedFragment) {
-					interactionOperatorKind = ((CombinedFragment)element).getInteractionOperator();
+			if (parent instanceof CombinedFragmentEditPart) {
+				EObject element = ((CombinedFragmentEditPart) parent).resolveSemanticElement();
+				if (element instanceof CombinedFragment) {
+					interactionOperatorKind = ((CombinedFragment) element).getInteractionOperator();
 				}
 			}
 		}
@@ -583,7 +582,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 */
 	public void setFirstOperand(boolean firstOperand) {
 		this.firstOperand = firstOperand;
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			getPrimaryShape().setLineSeparator(!firstOperand);
 		}
 	}
@@ -602,7 +601,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 */
 	@Override
 	public void deactivate() {
-		if(notifierHelper != null) {
+		if (notifierHelper != null) {
 			notifierHelper.unlistenAll();
 		}
 		super.deactivate();
@@ -613,7 +612,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 */
 	@Override
 	public void removeNotify() {
-		if(notifierHelper != null) {
+		if (notifierHelper != null) {
 			notifierHelper.unlistenAll();
 		}
 		super.removeNotify();
@@ -625,10 +624,10 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	private void addListeners() {
 		final NotificationHelper notifierHelper = getNotifierHelper();
 		EObject eObject = resolveSemanticElement();
-		if(eObject instanceof InteractionOperand) {
-			InteractionOperand interactionOperand = (InteractionOperand)eObject;
+		if (eObject instanceof InteractionOperand) {
+			InteractionOperand interactionOperand = (InteractionOperand) eObject;
 			InteractionConstraint guard = interactionOperand.getGuard();
-			if(guard != null) {
+			if (guard != null) {
 				notifierHelper.listenObject(guard);
 				notifierHelper.listenObject(guard.getSpecification());
 				notifierHelper.listenObject(guard.getMaxint());
@@ -638,7 +637,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	}
 
 	protected DirectEditManager getManager() {
-		if(manager == null) {
+		if (manager == null) {
 			WrappingLabel label = getInteractionConstraintLabel();
 			manager = new TextDirectEditManager(this, WrapTextCellEditor.class, new TextCellEditorLocator(label));
 		}
@@ -647,15 +646,15 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	@Override
 	protected void performDirectEditRequest(Request request) {
-		if(request instanceof DirectEditRequest) {
-			//Show or Hide Guard: https://bugs.eclipse.org/bugs/show_bug.cgi?id=402966
-			if(!isGuardVisible()) {
+		if (request instanceof DirectEditRequest) {
+			// Show or Hide Guard: https://bugs.eclipse.org/bugs/show_bug.cgi?id=402966
+			if (!isGuardVisible()) {
 				return;
 			}
 			WrappingLabel label = getPrimaryShape().getInteractionConstraintLabel();
-			Point location = ((DirectEditRequest)request).getLocation().getCopy();
-			label.translateToRelative(location); // convert request location to relative			
-			if(label.containsPoint(location)) {
+			Point location = ((DirectEditRequest) request).getLocation().getCopy();
+			label.translateToRelative(location); // convert request location to relative
+			if (label.containsPoint(location)) {
 				getManager().show();
 			}
 		}
@@ -665,49 +664,57 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 		return resolveSemanticElement();
 	}
 
+	@Override
 	public IParser getParser() {
-		if(parser == null) {
+		if (parser == null) {
 			parser = new GuardConditionParser();
 		}
 		return parser;
 	}
 
+	@Override
 	public ParserOptions getParserOptions() {
 		return ParserOptions.NONE;
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return null;
 		}
 		return getParser().getCompletionProcessor(new EObjectAdapter(getParserElement()));
 	}
 
+	@Override
 	public String getEditText() {
-		if(getParserElement() == null || getParser() == null) {
+		if (getParserElement() == null || getParser() == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return getParser().getEditString(new EObjectAdapter(getParserElement()), getParserOptions().intValue());
 	}
 
+	@Override
 	public void setLabelText(String text) {
 		WrappingLabel label = this.getPrimaryShape().getInteractionConstraintLabel();
 		label.setText(text);
 	}
 
+	@Override
 	public ICellEditorValidator getEditTextValidator() {
 		return new ICellEditorValidator() {
 
+			@Override
 			public String isValid(final Object value) {
-				if(value instanceof String) {
+				if (value instanceof String) {
 					final EObject element = getParserElement();
 					final IParser parser = getParser();
-					if(element != null && parser != null) {
+					if (element != null && parser != null) {
 						try {
-							IParserEditStatus valid = (IParserEditStatus)getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
+							IParserEditStatus valid = (IParserEditStatus) getEditingDomain().runExclusive(new RunnableWithResult.Impl() {
 
+								@Override
 								public void run() {
-									setResult(parser.isValidEditString(new EObjectAdapter(element), (String)value));
+									setResult(parser.isValidEditString(new EObjectAdapter(element), (String) value));
 								}
 							});
 							return valid.getCode() == IParserEditStatus.EDITABLE ? null : valid.getMessage();
@@ -721,11 +728,11 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	}
 
 	public boolean ignoreRequest(Request request) {
-		if(request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
-			List parts = ((ChangeBoundsRequest)request).getEditParts();
-			if(parts != null) {
-				for(Object obj : parts) {
-					if(obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart) {
+		if (request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
+			List parts = ((ChangeBoundsRequest) request).getEditParts();
+			if (parts != null) {
+				for (Object obj : parts) {
+					if (obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart) {
 						return true;
 					}
 				}
@@ -736,7 +743,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	@Override
 	public void showTargetFeedback(Request request) {
-		if(ignoreRequest(request)) {
+		if (ignoreRequest(request)) {
 			return;
 		}
 		super.showTargetFeedback(request);
@@ -744,13 +751,13 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	@Override
 	public Command getCommand(Request request) {
-		if(ignoreRequest(request)) {
+		if (ignoreRequest(request)) {
 			return null;
 		}
-		if(request instanceof ReconnectRequest) {
-			if(REQ_RECONNECT_SOURCE.equals(request.getType()) && ((ReconnectRequest)request).getConnectionEditPart().getSource() instanceof GateEditPart) {
+		if (request instanceof ReconnectRequest) {
+			if (REQ_RECONNECT_SOURCE.equals(request.getType()) && ((ReconnectRequest) request).getConnectionEditPart().getSource() instanceof GateEditPart) {
 				return getParent().getParent().getCommand(request);
-			} else if(REQ_RECONNECT_TARGET.equals(request.getType()) && ((ReconnectRequest)request).getConnectionEditPart().getTarget() instanceof GateEditPart) {
+			} else if (REQ_RECONNECT_TARGET.equals(request.getType()) && ((ReconnectRequest) request).getConnectionEditPart().getTarget() instanceof GateEditPart) {
 				return getParent().getParent().getCommand(request);
 			}
 		}
@@ -759,15 +766,15 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	@Override
 	protected void refreshTransparency() {
-		FillStyle style = (FillStyle)getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
-		if(style != null) {
+		FillStyle style = (FillStyle) getPrimaryView().getStyle(NotationPackage.Literals.FILL_STYLE);
+		if (style != null) {
 			setTransparency(style.getTransparency());
 		}
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionOperandEditPart#createNodeShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -777,12 +784,12 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.InteractionOperandEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public CustomCustomInteractionOperandFigure getPrimaryShape() {
-		return (CustomCustomInteractionOperandFigure)primaryShape;
+		return (CustomCustomInteractionOperandFigure) primaryShape;
 	}
 
 	/**
@@ -790,7 +797,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	 */
 	public void updateConstraintLabel() {
 		IGraphicalEditPart child = getChildBySemanticHint(InteractionOperandGuardEditPart.GUARD_TYPE);
-		if(child instanceof InteractionOperandGuardEditPart) {
+		if (child instanceof InteractionOperandGuardEditPart) {
 			child.refresh();
 		}
 	}
@@ -799,19 +806,19 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public CustomCustomInteractionOperandFigure() {
 			super();
 			this.setLineWidth(2);
 			setLineSeparator(!firstOperand);
-			//Make the label as a child now, see InteractionOperandGuardEditPart.
+			// Make the label as a child now, see InteractionOperandGuardEditPart.
 			getInteractionConstraintLabel().setVisible(false);
 		}
 
 		/**
 		 * @see org.eclipse.draw2d.Figure#useLocalCoordinates()
-		 * 
+		 *
 		 * @return
 		 */
 		@Override
@@ -819,6 +826,7 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 			return true;
 		}
 
+		@Override
 		protected void paintBackground(Graphics graphics, Rectangle rectangle) {
 			graphics.pushState();
 			super.paintBackground(graphics, rectangle);
@@ -827,18 +835,18 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		/**
 		 * Update the interaction constraint value
-		 * 
+		 *
 		 * @param interactionOperand
-		 *        The UML Interaction Operand
+		 *            The UML Interaction Operand
 		 */
 		protected void updateConstraintLabel() {
-			//Show or Hide Guard: https://bugs.eclipse.org/bugs/show_bug.cgi?id=402966
-			if(!isGuardVisible()) {
+			// Show or Hide Guard: https://bugs.eclipse.org/bugs/show_bug.cgi?id=402966
+			if (!isGuardVisible()) {
 				getInteractionConstraintLabel().setText("");
 			} else {
 				String text = "";
 				EObject parserElement = getParserElement();
-				if(parserElement != null && getParser() != null) {
+				if (parserElement != null && getParser() != null) {
 					text = getParser().getPrintString(new EObjectAdapter(parserElement), getParserOptions().intValue());
 				}
 				getInteractionConstraintLabel().setText(text);
@@ -850,33 +858,34 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		@Override
 		protected Command getDirectEditCommand(DirectEditRequest edit) {
-			String labelText = (String)edit.getCellEditor().getValue();
-			//for CellEditor, null is always returned for invalid values
-			if(labelText == null) {
+			String labelText = (String) edit.getCellEditor().getValue();
+			// for CellEditor, null is always returned for invalid values
+			if (labelText == null) {
 				return null;
 			}
-			ITextAwareEditPart compartment = (ITextAwareEditPart)getHost();
-			EObject model = (EObject)compartment.getModel();
+			ITextAwareEditPart compartment = (ITextAwareEditPart) getHost();
+			EObject model = (EObject) compartment.getModel();
 			EObjectAdapter elementAdapter = null;
-			if(model instanceof View) {
-				View view = (View)model;
+			if (model instanceof View) {
+				View view = (View) model;
 				elementAdapter = new EObjectAdapterEx(ViewUtil.resolveSemanticElement(view), view);
-			} else
+			} else {
 				elementAdapter = new EObjectAdapterEx(model, null);
+			}
 			String prevText = compartment.getParser().getEditString(elementAdapter, compartment.getParserOptions().intValue());
 			// check to make sure an edit has occurred before returning a command.
-			if(!prevText.equals(labelText)) {
+			if (!prevText.equals(labelText)) {
 				ICommand iCommand = compartment.getParser().getParseCommand(elementAdapter, labelText, 0);
 				return new ICommandProxy(iCommand);
 			}
-			// refresh label again 
+			// refresh label again
 			getPrimaryShape().updateConstraintLabel();
 			return null;
 		}
 
 		@Override
 		protected void showCurrentEditValue(DirectEditRequest request) {
-			String value = (String)request.getCellEditor().getValue();
+			String value = (String) request.getCellEditor().getValue();
 			WrappingLabel label = getPrimaryShape().getInteractionConstraintLabel();
 			label.setText(value);
 		}
@@ -899,33 +908,36 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			CombinedFragment enclosingCF = (CombinedFragment)interactionOperand.getOwner();
+			CombinedFragment enclosingCF = (CombinedFragment) interactionOperand.getOwner();
 			InteractionOperatorKind cfOperator = enclosingCF.getInteractionOperator();
-			if(InteractionOperatorKind.LOOP_LITERAL.equals(cfOperator)) {
-				if(text.contains("]") && text.contains("[")) {
+			if (InteractionOperatorKind.LOOP_LITERAL.equals(cfOperator)) {
+				if (text.contains("]") && text.contains("[")) {
 					String[] parts = text.split("]");
 					String[] nums = parts[0].replaceAll("\\[", "").split(",");
 					int min = 0, max = -1;
 					min = parseInt(nums[0], 0);
 					max = nums.length > 1 ? parseInt(nums[1], -1) : min;
-					if(guard.getMinint() != null)
+					if (guard.getMinint() != null) {
 						setIntValue(guard.getMinint(), min);
-					else
+					} else {
 						guard.setMinint(createLiteralInteger(min));
-					if(guard.getMaxint() != null)
+					}
+					if (guard.getMaxint() != null) {
 						setIntValue(guard.getMaxint(), max);
-					else
+					} else {
 						guard.setMaxint(createLiteralInteger(max));
-					if(parts.length > 1)
+					}
+					if (parts.length > 1) {
 						text = parts[1] == null ? "" : parts[1].trim();
-					else
+					} else {
 						text = "";
+					}
 				} else {
 					guard.setMinint(null);
 					guard.setMaxint(null);
 				}
 			}
-			if(guard.getSpecification() != null || text.length() > 0) {
+			if (guard.getSpecification() != null || text.length() > 0) {
 				LiteralString literalString = UMLFactory.eINSTANCE.createLiteralString();
 				literalString.setValue(text);
 				guard.setSpecification(literalString);
@@ -940,8 +952,8 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 		}
 
 		private void setIntValue(ValueSpecification spec, int val) {
-			if(spec instanceof LiteralInteger) {
-				((LiteralInteger)spec).setValue(val);
+			if (spec instanceof LiteralInteger) {
+				((LiteralInteger) spec).setValue(val);
 			}
 		}
 
@@ -957,33 +969,37 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 	private static class GuardConditionParser extends MessageFormatParser implements ISemanticParser {
 
 		public GuardConditionParser() {
-			super(new EAttribute[]{ UMLPackage.eINSTANCE.getLiteralInteger_Value(), UMLPackage.eINSTANCE.getLiteralString_Value() });
+			super(new EAttribute[] { UMLPackage.eINSTANCE.getLiteralInteger_Value(), UMLPackage.eINSTANCE.getLiteralString_Value() });
 		}
 
+		@Override
 		public List getSemanticElementsBeingParsed(EObject element) {
 			List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-			if(element instanceof InteractionOperand) {
-				InteractionOperand op = (InteractionOperand)element;
+			if (element instanceof InteractionOperand) {
+				InteractionOperand op = (InteractionOperand) element;
 				semanticElementsBeingParsed.add(op);
 				semanticElementsBeingParsed.add(op.getGuard());
 			}
 			return semanticElementsBeingParsed;
 		}
 
+		@Override
 		public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 			EStructuralFeature feature = getEStructuralFeature(notification);
 			return isValidFeature(feature);
 		}
 
+		@Override
 		public boolean isAffectingEvent(Object event, int flags) {
 			EStructuralFeature feature = getEStructuralFeature(event);
 			return isValidFeature(feature);
 		}
 
+		@Override
 		public String getPrintString(IAdaptable element, int flags) {
 			Object adapter = element.getAdapter(EObject.class);
-			if(adapter instanceof InteractionOperand) {
-				InteractionOperand interactionOperand = (InteractionOperand)adapter;
+			if (adapter instanceof InteractionOperand) {
+				InteractionOperand interactionOperand = (InteractionOperand) adapter;
 				return getGuardLabelText(interactionOperand, false);
 			}
 			return "";
@@ -996,12 +1012,12 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		@Override
 		public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
-			EObject element = (EObject)adapter.getAdapter(EObject.class);
+			EObject element = (EObject) adapter.getAdapter(EObject.class);
 			TransactionalEditingDomain editingDomain = TransactionUtil.getEditingDomain(element);
-			if(editingDomain == null || !(element instanceof InteractionOperand)) {
+			if (editingDomain == null || !(element instanceof InteractionOperand)) {
 				return UnexecutableCommand.INSTANCE;
 			}
-			InteractionOperand interactionOperand = (InteractionOperand)element;
+			InteractionOperand interactionOperand = (InteractionOperand) element;
 			InteractionConstraint guard = interactionOperand.getGuard();
 			CompositeTransactionalCommand command = new CompositeTransactionalCommand(editingDomain, "Set Values"); //$NON-NLS-1$
 			command.compose(new UpdateGuardConditionCommand(editingDomain, interactionOperand, guard, newString));
@@ -1011,8 +1027,8 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 		@Override
 		public String getEditString(IAdaptable element, int flags) {
 			Object adapter = element.getAdapter(EObject.class);
-			if(adapter instanceof InteractionOperand) {
-				InteractionOperand interactionOperand = (InteractionOperand)adapter;
+			if (adapter instanceof InteractionOperand) {
+				InteractionOperand interactionOperand = (InteractionOperand) adapter;
 				return getGuardLabelText(interactionOperand, true);
 			}
 			return "";
@@ -1020,10 +1036,10 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		protected EStructuralFeature getEStructuralFeature(Object notification) {
 			EStructuralFeature featureImpl = null;
-			if(notification instanceof Notification) {
-				Object feature = ((Notification)notification).getFeature();
-				if(feature instanceof EStructuralFeature) {
-					featureImpl = (EStructuralFeature)feature;
+			if (notification instanceof Notification) {
+				Object feature = ((Notification) notification).getFeature();
+				if (feature instanceof EStructuralFeature) {
+					featureImpl = (EStructuralFeature) feature;
 				}
 			}
 			return featureImpl;
@@ -1040,22 +1056,24 @@ public class CustomInteractionOperandEditPart extends InteractionOperandEditPart
 
 		/**
 		 * constructor
-		 * 
+		 *
 		 * @param element
-		 *        element to be wrapped
+		 *            element to be wrapped
 		 * @param view
-		 *        view to be wrapped
+		 *            view to be wrapped
 		 */
 		public EObjectAdapterEx(EObject element, View view) {
 			super(element);
 			this.view = view;
 		}
 
+		@Override
 		public Object getAdapter(Class adapter) {
 			Object o = super.getAdapter(adapter);
-			if(o != null)
+			if (o != null) {
 				return o;
-			if(adapter.equals(View.class)) {
+			}
+			if (adapter.equals(View.class)) {
 				return view;
 			}
 			return null;

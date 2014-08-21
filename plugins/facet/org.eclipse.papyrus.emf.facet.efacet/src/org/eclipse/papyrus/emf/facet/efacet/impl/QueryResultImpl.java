@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -42,12 +42,12 @@ import org.eclipse.papyrus.emf.facet.efacet.QueryResult;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getQuery <em>Query</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getScope <em>Scope</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getParameterValues <em>Parameter Values</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getResult <em>Result</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getException <em>Exception</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getSource <em>Source</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getQuery <em>Query</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getScope <em>Scope</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getParameterValues <em>Parameter Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getResult <em>Result</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getException <em>Exception</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryResultImpl#getSource <em>Source</em>}</li>
  * </ul>
  * </p>
  *
@@ -61,6 +61,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The cached value of the '{@link #getQuery() <em>Query</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuery()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -73,6 +74,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The cached value of the '{@link #getScope() <em>Scope</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getScope()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -85,6 +87,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The cached value of the '{@link #getParameterValues() <em>Parameter Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getParameterValues()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -97,6 +100,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The default value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getResult()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -109,6 +113,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The cached value of the '{@link #getResult() <em>Result</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getResult()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -121,6 +126,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The default value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getException()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -133,6 +139,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The cached value of the '{@link #getException() <em>Exception</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getException()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -145,6 +152,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSource()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -156,6 +164,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -167,6 +176,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -179,14 +189,15 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public Query getQuery() {
 		if (this.query != null && this.query.eIsProxy()) {
-			InternalEObject oldQuery = (InternalEObject)this.query;
-			this.query = (Query)eResolveProxy(oldQuery);
+			InternalEObject oldQuery = (InternalEObject) this.query;
+			this.query = (Query) eResolveProxy(oldQuery);
 			if (this.query != oldQuery) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.QUERY_RESULT__QUERY, oldQuery, this.query));
@@ -199,6 +210,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -210,6 +222,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -225,13 +238,14 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public EObject getScope() {
 		if (this.scope != null && this.scope.eIsProxy()) {
-			InternalEObject oldScope = (InternalEObject)this.scope;
+			InternalEObject oldScope = (InternalEObject) this.scope;
 			this.scope = eResolveProxy(oldScope);
 			if (this.scope != oldScope) {
 				if (eNotificationRequired()) {
@@ -245,6 +259,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -256,6 +271,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -271,6 +287,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -285,6 +302,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -296,6 +314,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -311,6 +330,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -322,6 +342,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -337,13 +358,14 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public EObject getSource() {
 		if (this.source != null && this.source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)this.source;
+			InternalEObject oldSource = (InternalEObject) this.source;
 			this.source = eResolveProxy(oldSource);
 			if (this.source != oldSource) {
 				if (eNotificationRequired()) {
@@ -357,6 +379,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -368,6 +391,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -383,6 +407,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -391,7 +416,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case EFacetPackage.QUERY_RESULT__PARAMETER_VALUES:
-			return ((InternalEList<?>)getParameterValues()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getParameterValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -399,6 +424,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -434,6 +460,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -443,23 +470,23 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EFacetPackage.QUERY_RESULT__QUERY:
-			setQuery((Query)newValue);
+			setQuery((Query) newValue);
 			return;
 		case EFacetPackage.QUERY_RESULT__SCOPE:
-			setScope((EObject)newValue);
+			setScope((EObject) newValue);
 			return;
 		case EFacetPackage.QUERY_RESULT__PARAMETER_VALUES:
 			getParameterValues().clear();
-			getParameterValues().addAll((Collection<? extends ParameterValue>)newValue);
+			getParameterValues().addAll((Collection<? extends ParameterValue>) newValue);
 			return;
 		case EFacetPackage.QUERY_RESULT__RESULT:
 			setResult(newValue);
 			return;
 		case EFacetPackage.QUERY_RESULT__EXCEPTION:
-			setException((Exception)newValue);
+			setException((Exception) newValue);
 			return;
 		case EFacetPackage.QUERY_RESULT__SOURCE:
-			setSource((EObject)newValue);
+			setSource((EObject) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -468,6 +495,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -476,10 +504,10 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EFacetPackage.QUERY_RESULT__QUERY:
-			setQuery((Query)null);
+			setQuery((Query) null);
 			return;
 		case EFacetPackage.QUERY_RESULT__SCOPE:
-			setScope((EObject)null);
+			setScope((EObject) null);
 			return;
 		case EFacetPackage.QUERY_RESULT__PARAMETER_VALUES:
 			getParameterValues().clear();
@@ -491,7 +519,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 			setException(QueryResultImpl.EXCEPTION_EDEFAULT);
 			return;
 		case EFacetPackage.QUERY_RESULT__SOURCE:
-			setSource((EObject)null);
+			setSource((EObject) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -500,6 +528,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -526,6 +555,7 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -545,4 +575,4 @@ public class QueryResultImpl extends EObjectImpl implements QueryResult {
 		return result.toString();
 	}
 
-} //QueryResultImpl
+} // QueryResultImpl

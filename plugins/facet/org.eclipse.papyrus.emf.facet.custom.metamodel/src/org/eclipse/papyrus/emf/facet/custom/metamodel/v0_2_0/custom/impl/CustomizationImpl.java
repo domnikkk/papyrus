@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl;
 
@@ -27,8 +27,8 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customizatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl.CustomizationImpl#isMustBeLoadedByDefault <em>Must Be Loaded By Default</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl.CustomizationImpl#getRank <em>Rank</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl.CustomizationImpl#isMustBeLoadedByDefault <em>Must Be Loaded By Default</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.impl.CustomizationImpl#getRank <em>Rank</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,6 +39,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The default value of the '{@link #isMustBeLoadedByDefault() <em>Must Be Loaded By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isMustBeLoadedByDefault()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The cached value of the '{@link #isMustBeLoadedByDefault() <em>Must Be Loaded By Default</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isMustBeLoadedByDefault()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The default value of the '{@link #getRank() <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRank()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	 * The cached value of the '{@link #getRank() <em>Rank</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRank()
 	 * @generated
 	 * @ordered
@@ -78,6 +82,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CustomizationImpl() {
@@ -87,6 +92,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -97,6 +103,7 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isMustBeLoadedByDefault() {
@@ -106,18 +113,21 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMustBeLoadedByDefault(boolean newMustBeLoadedByDefault) {
 		boolean oldMustBeLoadedByDefault = mustBeLoadedByDefault;
 		mustBeLoadedByDefault = newMustBeLoadedByDefault;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT, oldMustBeLoadedByDefault, mustBeLoadedByDefault));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getRank() {
@@ -127,27 +137,30 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRank(int newRank) {
 		int oldRank = rank;
 		rank = newRank;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, CustomPackage.CUSTOMIZATION__RANK, oldRank, rank));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
-				return isMustBeLoadedByDefault();
-			case CustomPackage.CUSTOMIZATION__RANK:
-				return getRank();
+		case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
+			return isMustBeLoadedByDefault();
+		case CustomPackage.CUSTOMIZATION__RANK:
+			return getRank();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -155,17 +168,18 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
-				setMustBeLoadedByDefault((Boolean)newValue);
-				return;
-			case CustomPackage.CUSTOMIZATION__RANK:
-				setRank((Integer)newValue);
-				return;
+		case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
+			setMustBeLoadedByDefault((Boolean) newValue);
+			return;
+		case CustomPackage.CUSTOMIZATION__RANK:
+			setRank((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -173,17 +187,18 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
-				setMustBeLoadedByDefault(MUST_BE_LOADED_BY_DEFAULT_EDEFAULT);
-				return;
-			case CustomPackage.CUSTOMIZATION__RANK:
-				setRank(RANK_EDEFAULT);
-				return;
+		case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
+			setMustBeLoadedByDefault(MUST_BE_LOADED_BY_DEFAULT_EDEFAULT);
+			return;
+		case CustomPackage.CUSTOMIZATION__RANK:
+			setRank(RANK_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -191,15 +206,16 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
-				return mustBeLoadedByDefault != MUST_BE_LOADED_BY_DEFAULT_EDEFAULT;
-			case CustomPackage.CUSTOMIZATION__RANK:
-				return rank != RANK_EDEFAULT;
+		case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
+			return mustBeLoadedByDefault != MUST_BE_LOADED_BY_DEFAULT_EDEFAULT;
+		case CustomPackage.CUSTOMIZATION__RANK:
+			return rank != RANK_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,11 +223,14 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mustBeLoadedByDefault: ");
@@ -222,4 +241,4 @@ public class CustomizationImpl extends FacetSetImpl implements Customization {
 		return result.toString();
 	}
 
-} //CustomizationImpl
+} // CustomizationImpl

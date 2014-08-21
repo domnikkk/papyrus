@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -39,15 +39,15 @@ public class Controller implements Listener, IEventController {
 
 	protected void fireEvent(Event e) {
 		int eventType = e.type;
-		if(eventTypes == null) {
+		if (eventTypes == null) {
 			return;
 		}
 
-		for(int i = 0; i < eventTypes.length; i++) {
-			if(eventTypes[i] == eventType) {
+		for (int i = 0; i < eventTypes.length; i++) {
+			if (eventTypes[i] == eventType) {
 				Object handler = handlers[i];
-				if(handler instanceof IEventInvoker) {
-					IEventInvoker eventInvoker = (IEventInvoker)handler;
+				if (handler instanceof IEventInvoker) {
+					IEventInvoker eventInvoker = (IEventInvoker) handler;
 					try {
 						eventInvoker.invoke(args[i], e);
 					} catch (Exception e1) {
@@ -55,11 +55,11 @@ public class Controller implements Listener, IEventController {
 						return;
 					}
 				} else {
-					Method method = (Method)handler;
+					Method method = (Method) handler;
 					try {
 						method.setAccessible(true);
 						// support old style
-						if(method.getParameterTypes().length == 1) {
+						if (method.getParameterTypes().length == 1) {
 							method.invoke(receivers[i], e);
 						} else {
 							method.invoke(receivers[i], args[i], e);
@@ -80,11 +80,11 @@ public class Controller implements Listener, IEventController {
 	 * org.eclipse.papyrus.xwt.metadata.IEvent)
 	 */
 	public boolean hasEvent(Object receiver, IEvent event) {
-		if(receivers == null) {
+		if (receivers == null) {
 			return false;
 		}
-		for(int i = 0; i < receivers.length; i++) {
-			if(receivers[i] == receiver && names[i].equalsIgnoreCase(event.getName())) {
+		for (int i = 0; i < receivers.length; i++) {
+			if (receivers[i] == receiver && names[i].equalsIgnoreCase(event.getName())) {
 				return true;
 			}
 		}
@@ -108,20 +108,20 @@ public class Controller implements Listener, IEventController {
 	}
 
 	protected void doAddEvent(int eventType, String name, IEvent event, Widget control, Object receiver, Object arg, Object method) {
-		if(eventTypes == null) {
+		if (eventTypes == null) {
 			eventTypes = new int[3];
 			handlers = new Method[3];
 			names = new String[3];
 			receivers = new Object[3];
 			args = new Object[3];
 		} else {
-			for(int i = 0; i < eventTypes.length; i++) {
-				if(eventTypes[i] == eventType && handlers[i] == method && receivers[i] == receivers && args[i] == arg) {
+			for (int i = 0; i < eventTypes.length; i++) {
+				if (eventTypes[i] == eventType && handlers[i] == method && receivers[i] == receivers && args[i] == arg) {
 					return;
 				}
 			}
 		}
-		if(waterMark >= eventTypes.length) {
+		if (waterMark >= eventTypes.length) {
 			int[] oldEventTypes = eventTypes;
 			Object[] oldHandlers = handlers;
 			Object[] oldReceivers = receivers;
@@ -147,16 +147,16 @@ public class Controller implements Listener, IEventController {
 		args[waterMark] = arg;
 		names[waterMark++] = name;
 
-		if(eventType == IEventConstants.XWT_SWT_LOADED) {
+		if (eventType == IEventConstants.XWT_SWT_LOADED) {
 			int swt_paint = XWTMaps.getEvent("swt.paint");
-			if(swt_paint != SWT.None) { // for RAP integration
+			if (swt_paint != SWT.None) { // for RAP integration
 				Listener[] listeners = control.getListeners(swt_paint);
-				if(listeners.length > 0) {
-					for(Listener listener : listeners) {
+				if (listeners.length > 0) {
+					for (Listener listener : listeners) {
 						control.removeListener(swt_paint, listener);
 					}
 					control.addListener(swt_paint, new LoadedEventListener(control));
-					for(Listener listener : listeners) {
+					for (Listener listener : listeners) {
 						control.addListener(swt_paint, listener);
 					}
 				} else {
@@ -178,7 +178,7 @@ public class Controller implements Listener, IEventController {
 		public void handleEvent(Event event) {
 			Event loadedEvent = copy(event);
 			loadedEvent.type = IEventConstants.XWT_SWT_LOADED;
-			if(XWTMaps.getEvent("swt.paint") != SWT.None) {
+			if (XWTMaps.getEvent("swt.paint") != SWT.None) {
 				control.removeListener(XWTMaps.getEvent("swt.paint"), this);
 			}
 			Controller.this.handleEvent(loadedEvent);
@@ -196,7 +196,7 @@ public class Controller implements Listener, IEventController {
 	public void setEvent(IEvent event, Widget control, Object receiver, Object arg, Method method) {
 		String name = event.getName();
 		int eventType = getEventTypeByName(name);
-		if(eventType != SWT.None) {
+		if (eventType != SWT.None) {
 			addEvent(eventType, name, event, control, receiver, arg, method);
 		}
 	}
@@ -204,14 +204,14 @@ public class Controller implements Listener, IEventController {
 	public void setEvent(IEvent event, Widget control, Object arg, IEventInvoker eventInvoker) {
 		String name = event.getName();
 		int eventType = getEventTypeByName(name);
-		if(eventType != SWT.None) {
+		if (eventType != SWT.None) {
 			doAddEvent(eventType, name, event, control, null, arg, eventInvoker);
 		}
 	}
 
 	public static Event copy(Event event) {
 		Event copyEvent = new Event();
-		for(Field field : event.getClass().getDeclaredFields()) {
+		for (Field field : event.getClass().getDeclaredFields()) {
 			try {
 				field.set(copyEvent, field.get(event));
 			} catch (Exception e) {
@@ -222,87 +222,87 @@ public class Controller implements Listener, IEventController {
 	}
 
 	public static int getEventTypeByName(String name) {
-		if(IEventConstants.KEY_DOWN.equalsIgnoreCase(name)) {
+		if (IEventConstants.KEY_DOWN.equalsIgnoreCase(name)) {
 			return SWT.KeyDown;
-		} else if(IEventConstants.KEY_UP.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.KEY_UP.equalsIgnoreCase(name)) {
 			return SWT.KeyUp;
-		} else if(IEventConstants.MOUSE_DOWN.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_DOWN.equalsIgnoreCase(name)) {
 			return SWT.MouseDown;
-		} else if(IEventConstants.MOUSE_UP.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_UP.equalsIgnoreCase(name)) {
 			return SWT.MouseUp;
-		} else if(IEventConstants.MOUSE_MOVE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_MOVE.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.mousemove");
-		} else if(IEventConstants.MOUSE_ENTER.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_ENTER.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.mouseenter");
-		} else if(IEventConstants.MOUSE_EXIT.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_EXIT.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.mouseexit");
-		} else if(IEventConstants.MOUSE_DOUBLE_CLICK.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_DOUBLE_CLICK.equalsIgnoreCase(name)) {
 			return SWT.MouseDoubleClick;
-		} else if(IEventConstants.PAINT.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.PAINT.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.paint");
-		} else if(IEventConstants.MOVE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOVE.equalsIgnoreCase(name)) {
 			return SWT.Move;
-		} else if(IEventConstants.RESIZE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.RESIZE.equalsIgnoreCase(name)) {
 			return SWT.Resize;
-		} else if(IEventConstants.DISPOSE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.DISPOSE.equalsIgnoreCase(name)) {
 			return SWT.Dispose;
-		} else if(IEventConstants.SELECTION.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.SELECTION.equalsIgnoreCase(name)) {
 			return SWT.Selection;
-		} else if(IEventConstants.DEFAULT_SELECTION.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.DEFAULT_SELECTION.equalsIgnoreCase(name)) {
 			return SWT.DefaultSelection;
-		} else if(IEventConstants.FOCUS_IN.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.FOCUS_IN.equalsIgnoreCase(name)) {
 			return SWT.FocusIn;
-		} else if(IEventConstants.FOCUS_OUT.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.FOCUS_OUT.equalsIgnoreCase(name)) {
 			return SWT.FocusOut;
-		} else if(IEventConstants.EXPAND.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.EXPAND.equalsIgnoreCase(name)) {
 			return SWT.Expand;
-		} else if(IEventConstants.COLLAPSE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.COLLAPSE.equalsIgnoreCase(name)) {
 			return SWT.Collapse;
-		} else if(IEventConstants.ICONIFY.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.ICONIFY.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.iconify");
-		} else if(IEventConstants.DEICONIFY.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.DEICONIFY.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.deiconify");
-		} else if(IEventConstants.CLOSE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.CLOSE.equalsIgnoreCase(name)) {
 			return SWT.Close;
-		} else if(IEventConstants.SHOW.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.SHOW.equalsIgnoreCase(name)) {
 			return SWT.Show;
-		} else if(IEventConstants.HIDE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.HIDE.equalsIgnoreCase(name)) {
 			return SWT.Hide;
-		} else if(IEventConstants.MODIFY.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MODIFY.equalsIgnoreCase(name)) {
 			return SWT.Modify;
-		} else if(IEventConstants.VERIFY.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.VERIFY.equalsIgnoreCase(name)) {
 			return SWT.Verify;
-		} else if(IEventConstants.ACTIVATE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.ACTIVATE.equalsIgnoreCase(name)) {
 			return SWT.Activate;
-		} else if(IEventConstants.DEACTIVATE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.DEACTIVATE.equalsIgnoreCase(name)) {
 			return SWT.Deactivate;
-		} else if(IEventConstants.HELP.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.HELP.equalsIgnoreCase(name)) {
 			return SWT.Help;
-		} else if(IEventConstants.DRAG_SELECT.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.DRAG_SELECT.equalsIgnoreCase(name)) {
 			return SWT.DragDetect;
-		} else if(IEventConstants.ARM.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.ARM.equalsIgnoreCase(name)) {
 			return SWT.Arm;
-		} else if(IEventConstants.TRAVERSE.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.TRAVERSE.equalsIgnoreCase(name)) {
 			return SWT.Traverse;
-		} else if(IEventConstants.MOUSE_HOVER.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_HOVER.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.mousehover");
-		} else if(IEventConstants.HARD_KEY_DOWN.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.HARD_KEY_DOWN.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.hardkeydown");
-		} else if(IEventConstants.HARD_KEY_UP.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.HARD_KEY_UP.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.hardkeyup");
-		} else if(IEventConstants.MENU_DETECT.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MENU_DETECT.equalsIgnoreCase(name)) {
 			return SWT.MenuDetect;
-		} else if(IEventConstants.MOUSE_WHEEL.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MOUSE_WHEEL.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.mousewheel");
-		} else if(IEventConstants.SETTINGS.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.SETTINGS.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.settings");
-		} else if(IEventConstants.ERASE_ITEM.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.ERASE_ITEM.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.eraseitem");
-		} else if(IEventConstants.MEASURE_ITEM.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.MEASURE_ITEM.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.measureitem");
-		} else if(IEventConstants.PAINT_ITEM.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.PAINT_ITEM.equalsIgnoreCase(name)) {
 			return XWTMaps.getEvent("swt.paintitem");
-		} else if(IEventConstants.XWT_LOADED.equalsIgnoreCase(name) || IEventConstants.XWT_LOADED_EVENT.equalsIgnoreCase(name)) {
+		} else if (IEventConstants.XWT_LOADED.equalsIgnoreCase(name) || IEventConstants.XWT_LOADED_EVENT.equalsIgnoreCase(name)) {
 			return IEventConstants.XWT_SWT_LOADED;
 		}
 		// case SWT.PaintItem:

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,14 +34,14 @@ import org.eclipse.swt.widgets.Composite;
  * This class implements all Papyrus interfaces extending IContentProvider,
  * and is thus compatible with all papyrus tools, even if the encapsulated
  * provider is not.
- * 
+ *
  * Moreover, the Encapsulated provider can handle temporary elements.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
-//TODO : Move the temporary elements feature to another class. 
-//This feature is only used by multi-reference dialogs
+// TODO : Move the temporary elements feature to another class.
+// This feature is only used by multi-reference dialogs
 public class EncapsulatedContentProvider implements IHierarchicContentProvider, IGraphicalContentProvider, ICommitListener, IAdaptableContentProvider, IRevealSemanticElement, IStrategyBasedContentProvider, IStaticContentProvider {
 
 	/**
@@ -55,20 +55,20 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	private Set<Object> temporaryElements = new LinkedHashSet<Object>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param encapsulated
-	 *        The encapsulated content provider, to which all calls will be forwarded
+	 *            The encapsulated content provider, to which all calls will be forwarded
 	 */
 	public EncapsulatedContentProvider(IStructuredContentProvider encapsulated) {
 		this.encapsulated = encapsulated;
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	protected EncapsulatedContentProvider() {
 	}
@@ -77,14 +77,14 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	 * Returns all elements known by this ContentProvider. This is the union of
 	 * the objects returned by the wrapped StaticContentProvider and the temporary
 	 * elements, which are not known by the wrapped provider.
-	 * 
+	 *
 	 * @param elements
-	 *        The Object[] returned by the encapsulated provider
+	 *            The Object[] returned by the encapsulated provider
 	 * @return
 	 *         All elements known by this ContentProvider
 	 */
 	private Object[] getAllElements(Object[] elements) {
-		if(temporaryElements.isEmpty()) {
+		if (temporaryElements.isEmpty()) {
 			return elements;
 		}
 
@@ -96,9 +96,10 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void dispose() {
-		//encapsulated.dispose();
-		//encapsulated = null;
+		// encapsulated.dispose();
+		// encapsulated = null;
 	}
 
 	protected void addViewerFilter(StructuredViewer viewer, ViewerFilter filter) {
@@ -110,8 +111,9 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(encapsulated != null) {
+		if (encapsulated != null) {
 			encapsulated.inputChanged(viewer, oldInput, newInput);
 		}
 	}
@@ -119,8 +121,9 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getElements(Object inputElement) {
-		if(encapsulated == null) {
+		if (encapsulated == null) {
 			return new Object[0];
 		}
 		return getAllElements(encapsulated.getElements(inputElement));
@@ -128,22 +131,23 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 
 	/**
 	 * Gets the elements for this content provider
-	 * 
+	 *
 	 * @return
 	 *         all elements from the wrapped ContentProvider
 	 */
+	@Override
 	public Object[] getElements() {
-		if(encapsulated instanceof IStaticContentProvider) {
-			return getAllElements(((IStaticContentProvider)encapsulated).getElements());
+		if (encapsulated instanceof IStaticContentProvider) {
+			return getAllElements(((IStaticContentProvider) encapsulated).getElements());
 		}
 		return getElements(null);
 	}
 
 	/**
 	 * Adds a Temporary element to this ContentProvider
-	 * 
+	 *
 	 * @param newObject
-	 *        The temporary element to be added
+	 *            The temporary element to be added
 	 */
 	public void addTemporaryElement(Object newObject) {
 		temporaryElements.add(newObject);
@@ -151,9 +155,9 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 
 	/**
 	 * Removes a Temporary element from this ContentProvider
-	 * 
+	 *
 	 * @param removeObject
-	 *        The temporary element to remove
+	 *            The temporary element to remove
 	 */
 	public void removeTemporaryElement(Object removeObject) {
 		temporaryElements.remove(removeObject);
@@ -169,9 +173,10 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getChildren(Object parentElement) {
-		if(encapsulated instanceof ITreeContentProvider) {
-			return ((ITreeContentProvider)encapsulated).getChildren(parentElement);
+		if (encapsulated instanceof ITreeContentProvider) {
+			return ((ITreeContentProvider) encapsulated).getChildren(parentElement);
 		} else {
 			return new Object[0];
 		}
@@ -180,9 +185,10 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object getParent(Object element) {
-		if(encapsulated instanceof ITreeContentProvider) {
-			return ((ITreeContentProvider)encapsulated).getParent(element);
+		if (encapsulated instanceof ITreeContentProvider) {
+			return ((ITreeContentProvider) encapsulated).getParent(element);
 		} else {
 			return null;
 		}
@@ -191,9 +197,10 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean hasChildren(Object element) {
-		if(encapsulated instanceof ITreeContentProvider) {
-			return ((ITreeContentProvider)encapsulated).hasChildren(element);
+		if (encapsulated instanceof ITreeContentProvider) {
+			return ((ITreeContentProvider) encapsulated).hasChildren(element);
 		} else {
 			return false;
 		}
@@ -202,9 +209,10 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isValidValue(Object element) {
-		if(encapsulated instanceof IHierarchicContentProvider) {
-			return ((IHierarchicContentProvider)encapsulated).isValidValue(element);
+		if (encapsulated instanceof IHierarchicContentProvider) {
+			return ((IHierarchicContentProvider) encapsulated).isValidValue(element);
 		} else {
 			return true;
 		}
@@ -213,50 +221,57 @@ public class EncapsulatedContentProvider implements IHierarchicContentProvider, 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createBefore(Composite parent) {
-		if(encapsulated instanceof IGraphicalContentProvider) {
-			((IGraphicalContentProvider)encapsulated).createBefore(parent);
+		if (encapsulated instanceof IGraphicalContentProvider) {
+			((IGraphicalContentProvider) encapsulated).createBefore(parent);
 		}
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createAfter(Composite parent) {
-		if(encapsulated instanceof IGraphicalContentProvider) {
-			((IGraphicalContentProvider)encapsulated).createAfter(parent);
+		if (encapsulated instanceof IGraphicalContentProvider) {
+			((IGraphicalContentProvider) encapsulated).createAfter(parent);
 		}
 	}
 
+	@Override
 	public void commit(AbstractEditor editor) {
-		if(encapsulated instanceof ICommitListener) {
-			((ICommitListener)encapsulated).commit(editor);
+		if (encapsulated instanceof ICommitListener) {
+			((ICommitListener) encapsulated).commit(editor);
 		}
 	}
 
+	@Override
 	public Object getAdaptedValue(Object selection) {
-		if(encapsulated instanceof IAdaptableContentProvider) {
-			return ((IAdaptableContentProvider)encapsulated).getAdaptedValue(selection);
+		if (encapsulated instanceof IAdaptableContentProvider) {
+			return ((IAdaptableContentProvider) encapsulated).getAdaptedValue(selection);
 		}
 		return selection;
 	}
 
+	@Override
 	public void revealSemanticElement(List<?> elementList) {
-		if(encapsulated instanceof IRevealSemanticElement) {
-			((IRevealSemanticElement)encapsulated).revealSemanticElement(elementList);
+		if (encapsulated instanceof IRevealSemanticElement) {
+			((IRevealSemanticElement) encapsulated).revealSemanticElement(elementList);
 		}
 	}
 
+	@Override
 	public TreeBrowseStrategy getBrowseStrategy() {
-		if(encapsulated instanceof IStrategyBasedContentProvider) {
-			return ((IStrategyBasedContentProvider)encapsulated).getBrowseStrategy();
+		if (encapsulated instanceof IStrategyBasedContentProvider) {
+			return ((IStrategyBasedContentProvider) encapsulated).getBrowseStrategy();
 		}
 		return null;
 	}
 
+	@Override
 	public TreeBrowseStrategy getRevealStrategy() {
-		if(encapsulated instanceof IStrategyBasedContentProvider) {
-			return ((IStrategyBasedContentProvider)encapsulated).getRevealStrategy();
+		if (encapsulated instanceof IStrategyBasedContentProvider) {
+			return ((IStrategyBasedContentProvider) encapsulated).getRevealStrategy();
 		}
 		return null;
 	}

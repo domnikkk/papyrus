@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,18 +46,18 @@ public class DefaultDiagramCopyCommand extends AbstractOverrideableCommand imple
 
 	/**
 	 * Creates a new Command that set the new content of the clipboard
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain for which the clipboard is set.
+	 *            editing domain for which the clipboard is set.
 	 */
 	public DefaultDiagramCopyCommand(EditingDomain domain, PapyrusClipboard<Object> papyrusClipboard, Collection<IGraphicalEditPart> pObjectsToPutInClipboard) {
 		super(domain);
 		objectsToPutInClipboard = new ArrayList<Object>();
-		Boolean keepReferences = Activator.getInstance().getPreferenceStore().getBoolean(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES);	
+		Boolean keepReferences = Activator.getInstance().getPreferenceStore().getBoolean(PastePreferencesPage.KEEP_EXTERNAL_REFERENCES);
 		EcoreUtil.Copier copier = new EcoreUtil.Copier(Boolean.TRUE, keepReferences);
 		List<EObject> objectToCopy = new ArrayList<EObject>();
 
-		for(IGraphicalEditPart iGraphicalEditPart : pObjectsToPutInClipboard) {
+		for (IGraphicalEditPart iGraphicalEditPart : pObjectsToPutInClipboard) {
 			View notationView = iGraphicalEditPart.getNotationView();
 			EObject element = notationView.getElement();
 			objectToCopy.add(notationView);
@@ -71,15 +71,15 @@ public class DefaultDiagramCopyCommand extends AbstractOverrideableCommand imple
 		Map<EObject, Object> mapInternalCopyInClipboard = new HashMap<EObject, Object>();
 		mapInternalCopyInClipboard.putAll(copier);
 		papyrusClipboard.addAllInternalCopyInClipboard(mapInternalCopyInClipboard);
-		
-		
-		if (pObjectsToPutInClipboard!=null && !pObjectsToPutInClipboard.isEmpty()){
+
+
+		if (pObjectsToPutInClipboard != null && !pObjectsToPutInClipboard.isEmpty()) {
 			IGraphicalEditPart next = pObjectsToPutInClipboard.iterator().next();
 			Diagram diagram = next.getNotationView().getDiagram();
 			String type = diagram.getType();
 			papyrusClipboard.setContainerType(type);
 		}
-		
+
 	}
 
 

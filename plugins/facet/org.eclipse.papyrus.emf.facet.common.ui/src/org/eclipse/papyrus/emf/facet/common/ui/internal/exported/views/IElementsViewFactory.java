@@ -29,7 +29,7 @@ public interface IElementsViewFactory {
 
 	/**
 	 * Creates a view with columns. Each column has a default width, and memorizes its width once resized.
-	 * 
+	 *
 	 * @param columnDescriptions
 	 *            describes the columns
 	 * @param contentProvider
@@ -48,10 +48,9 @@ public interface IElementsViewFactory {
 			ITreeContentProvider contentProvider, Object input, String title, Image titleImage, IOpenListener openListener);
 
 	/**
-	 * Creates a column description for
-	 * {@link IElementsViewFactory#createElementsView(Collection, ITreeContentProvider, Object, String, Image, IOpenListener)
+	 * Creates a column description for {@link IElementsViewFactory#createElementsView(Collection, ITreeContentProvider, Object, String, Image, IOpenListener)
 	 * createElementsView}
-	 * 
+	 *
 	 * @param title
 	 *            the column label
 	 * @param uniqueID

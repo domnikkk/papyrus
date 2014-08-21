@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class CreateNattableFromCatalogWizard extends Wizard {
 
 	/**
 	 * Getter for selected configurations.
-	 * 
+	 *
 	 * @return
 	 */
 	public Map<TableConfiguration, Integer> getSelectedConfig() {
@@ -46,16 +46,17 @@ public class CreateNattableFromCatalogWizard extends Wizard {
 
 	/**
 	 * Enables the finish button when there's at least one selected configuration
-	 * 
+	 *
 	 * @see org.eclipse.jface.wizard.Wizard#performFinish()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean performFinish() {
 		this.selectedConfigs = page.getSelectedConfigs();
 		this.tableNames = page.getTableNames();
-		if(this.selectedConfigs != null && this.tableNames != null) {
-			if(this.selectedConfigs.size() > 0) {
+		if (this.selectedConfigs != null && this.tableNames != null) {
+			if (this.selectedConfigs.size() > 0) {
 
 				return true;
 			}
@@ -70,10 +71,11 @@ public class CreateNattableFromCatalogWizard extends Wizard {
 
 	/**
 	 * Create and add the unique page to the wizard
-	 * 
+	 *
 	 * @see org.eclipse.jface.wizard.Wizard#addPages()
-	 * 
+	 *
 	 */
+	@Override
 	public void addPages() {
 		String description = Messages.CreateNattableFromCatalogWizard_0;
 		page = new ChooseNattableConfigWizardPage(description, context);
@@ -84,11 +86,12 @@ public class CreateNattableFromCatalogWizard extends Wizard {
 
 	/**
 	 * Declare wizard title
-	 * 
+	 *
 	 * @see org.eclipse.jface.wizard.Wizard#getWindowTitle()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public String getWindowTitle() {
 		return Messages.CreateNattableFromCatalogWizard_2;
 	}

@@ -20,7 +20,7 @@ import org.eclipse.papyrus.xwt.internal.core.BindingExpressionPath;
 import org.eclipse.papyrus.xwt.internal.core.UpdateSourceTrigger;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public abstract class AbstractDataBinding implements IDataBinding {
@@ -55,7 +55,7 @@ public abstract class AbstractDataBinding implements IDataBinding {
 
 	/**
 	 * @param dataProvider
-	 *        the dataProvider to set
+	 *            the dataProvider to set
 	 */
 	public void setDataProvider(IDataProvider dataProvider) {
 		this.dataProvider = dataProvider;
@@ -71,7 +71,7 @@ public abstract class AbstractDataBinding implements IDataBinding {
 	/**
 	 * Returns the name of the data binding context this binding is associated
 	 * with
-	 * 
+	 *
 	 * @return
 	 */
 	protected IBindingContext getDataBindingContext() {
@@ -100,7 +100,7 @@ public abstract class AbstractDataBinding implements IDataBinding {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public BindingMode getMode() {
@@ -108,7 +108,7 @@ public abstract class AbstractDataBinding implements IDataBinding {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param mode
 	 */
 	public void setMode(BindingMode mode) {
@@ -116,7 +116,7 @@ public abstract class AbstractDataBinding implements IDataBinding {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected String getSourceProperty() {
@@ -124,7 +124,7 @@ public abstract class AbstractDataBinding implements IDataBinding {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected String getTargetProperty() {

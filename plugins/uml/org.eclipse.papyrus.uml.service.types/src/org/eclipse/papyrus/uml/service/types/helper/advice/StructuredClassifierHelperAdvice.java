@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.uml2.uml.Connector;
 /**
  * <pre>
  * This HelperAdvice completes {@link StructuredClassifier} edit commands with:
- * 		- forbidding Connector to be moved to another {@link StructuredClassifier}, 
+ * 		- forbidding Connector to be moved to another {@link StructuredClassifier},
  *        the owner is used to know whether the Connector is valid or not (upon creation).
  * </pre>
  */
@@ -41,8 +41,8 @@ public class StructuredClassifierHelperAdvice extends AbstractEditHelperAdvice {
 		ICommand gmfCommand = super.getBeforeMoveCommand(request);
 
 		// Parse moved objects and detect connector moves
-		for(Object movedObject : request.getElementsToMove().keySet()) {
-			if(movedObject instanceof Connector) {
+		for (Object movedObject : request.getElementsToMove().keySet()) {
+			if (movedObject instanceof Connector) {
 				// Replace default command.
 				gmfCommand = UnexecutableCommand.INSTANCE;
 				break;

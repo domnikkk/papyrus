@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,6 +42,7 @@ public class StereotypeAspectActionProvider extends AbstractAspectActionProvider
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IAspectAction createAction(Node configurationNode) {
 		StereotypePostAction action = new StereotypePostAction();
 		action.init(configurationNode, this);
@@ -54,9 +55,9 @@ public class StereotypeAspectActionProvider extends AbstractAspectActionProvider
 	 * <P>
 	 * This method is used in the customize palette dialog, when pre-creating all available tools with stereotypes applied
 	 * </P>
-	 * 
+	 *
 	 * @param stereotypeList
-	 *        the list of stereotypes to apply
+	 *            the list of stereotypes to apply
 	 * @return the configuration node from the list
 	 */
 	public static NodeList createConfigurationNode(String stereotypeList) {
@@ -84,6 +85,7 @@ public class StereotypeAspectActionProvider extends AbstractAspectActionProvider
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public boolean isEnable(IPaletteEntryProxy entryProxy) {
 		return true;
 	}

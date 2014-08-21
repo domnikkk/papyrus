@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -37,6 +37,6 @@ public class ServiceEditContentProvider extends SemanticUMLContentProvider {
 
 	@Override
 	public boolean isValidValue(Object element) {
-		return super.isValidValue(element) && validator.validate(new Object[]{ getAdaptedValue(element) }).isOK();
+		return super.isValidValue(element) && validator.validate(new Object[] { getAdaptedValue(element) }).isOK();
 	}
 }

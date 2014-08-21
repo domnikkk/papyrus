@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,12 +28,12 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * Allow to select strategies for Papyrus paste
  */
 public class PastePreferencesPage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
-	
+
 	/**
-	 * Keep the references 
+	 * Keep the references
 	 */
-	public final static String KEEP_EXTERNAL_REFERENCES = "KEEP_EXTERNAL_REFERENCES"; //$NON-NLS-1$	
-	
+	public final static String KEEP_EXTERNAL_REFERENCES = "KEEP_EXTERNAL_REFERENCES"; //$NON-NLS-1$
+
 	/**
 	 * Editor for managing paste strategies
 	 */
@@ -43,6 +43,7 @@ public class PastePreferencesPage extends FieldEditorPreferencePage implements I
 		super(Messages.PastePreferencesPage_PageTitle, org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImageDescriptor("/icons/papyrus.png"), FLAT); //$NON-NLS-1$
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getInstance().getPreferenceStore());
 		setDescription(Messages.PastePreferencesPage_PageDescription);
@@ -51,14 +52,14 @@ public class PastePreferencesPage extends FieldEditorPreferencePage implements I
 	@Override
 	protected Control createContents(Composite parent) {
 		Control self = super.createContents(parent);
-		editor = new StrategyEditor((Composite)self, SWT.NONE, PasteStrategyManager.getInstance(), Messages.PastePreferencesPage_StrategiesDescription);
+		editor = new StrategyEditor((Composite) self, SWT.NONE, PasteStrategyManager.getInstance(), Messages.PastePreferencesPage_StrategiesDescription);
 		editor.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		return self;
 	}
 
 	@Override
 	protected void performDefaults() {
-		if(editor != null && !editor.isDisposed()) {
+		if (editor != null && !editor.isDisposed()) {
 			PasteStrategyManager.getInstance().restoreDefaults();
 			editor.refresh();
 		}
@@ -69,5 +70,5 @@ public class PastePreferencesPage extends FieldEditorPreferencePage implements I
 	protected void createFieldEditors() {
 		addField(new BooleanFieldEditor(KEEP_EXTERNAL_REFERENCES, Messages.PastePreferencesPage_KeepReferenceDescription, getFieldEditorParent()));
 	}
-	
+
 }

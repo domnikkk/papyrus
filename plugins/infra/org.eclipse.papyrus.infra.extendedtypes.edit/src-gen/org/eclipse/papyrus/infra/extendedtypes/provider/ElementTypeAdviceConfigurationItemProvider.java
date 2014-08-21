@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ElementTypeAdviceConfiguration;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.ElementTypeAdviceConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ElementTypeAdviceConfigurationItemProvider extends ConfigurationElementItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -40,7 +40,7 @@ public class ElementTypeAdviceConfigurationItemProvider extends ConfigurationEle
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementTypeAdviceConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -51,12 +51,12 @@ public class ElementTypeAdviceConfigurationItemProvider extends ConfigurationEle
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 		}
 		return itemPropertyDescriptors;
@@ -66,14 +66,14 @@ public class ElementTypeAdviceConfigurationItemProvider extends ConfigurationEle
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ElementTypeAdviceConfiguration)object).getName();
+		String label = ((ElementTypeAdviceConfiguration) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_ElementTypeAdviceConfiguration_type") : //$NON-NLS-1$
-		getString("_UI_ElementTypeAdviceConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_ElementTypeAdviceConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class ElementTypeAdviceConfigurationItemProvider extends ConfigurationEle
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class ElementTypeAdviceConfigurationItemProvider extends ConfigurationEle
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

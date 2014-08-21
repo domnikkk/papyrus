@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,6 +26,7 @@ public class PseudostateDeepHistoryFigure extends PapyrusNodeFigure implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Border getDefaultBorder(Color borderColor) {
 		return null;
 	}
@@ -42,6 +43,7 @@ public class PseudostateDeepHistoryFigure extends PapyrusNodeFigure implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Label getStereotypesLabel() {
 		return new Label();
 	}
@@ -49,6 +51,7 @@ public class PseudostateDeepHistoryFigure extends PapyrusNodeFigure implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		// to be in adequation with the figure node plate
 		Rectangle r = getBounds().getCopy().shrink(new Insets(1, 1, 1, 1));
@@ -68,6 +71,7 @@ public class PseudostateDeepHistoryFigure extends PapyrusNodeFigure implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 		// TODO Auto-generated method stub
 	}
@@ -75,6 +79,7 @@ public class PseudostateDeepHistoryFigure extends PapyrusNodeFigure implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 		// TODO Auto-generated method stub
 	}
@@ -82,6 +87,7 @@ public class PseudostateDeepHistoryFigure extends PapyrusNodeFigure implements I
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 		// TODO Auto-generated method stub
 	}

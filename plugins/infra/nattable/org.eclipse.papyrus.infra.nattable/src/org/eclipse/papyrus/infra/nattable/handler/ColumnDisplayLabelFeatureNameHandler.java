@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,16 +18,16 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
 
 /**
  * The handler to change the boolean value used to display the name of the feature in the column label header
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class ColumnDisplayLabelFeatureNameHandler extends AbstractColumnChangeLabelConfigurationValueHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.handler.AbstractChangeLabelConfigurationValueHandler#getEditedFeature()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

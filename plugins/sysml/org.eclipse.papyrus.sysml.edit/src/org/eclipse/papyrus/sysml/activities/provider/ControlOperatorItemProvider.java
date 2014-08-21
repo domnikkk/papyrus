@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.sysml.provider.SysmlEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.activities.ControlOperator} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ControlOperatorItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -44,7 +44,7 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ControlOperatorItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +55,12 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBase_OperationPropertyDescriptor(object);
@@ -73,29 +73,31 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * This adds a property descriptor for the Base Operation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_OperationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ControlOperator_base_Operation_feature"), getString("_UI_PropertyDescriptor_description", "_UI_ControlOperator_base_Operation_feature", "_UI_ControlOperator_type"), ActivitiesPackage.Literals.CONTROL_OPERATOR__BASE_OPERATION, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ControlOperator_base_Operation_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlOperator_base_Operation_feature", "_UI_ControlOperator_type"), ActivitiesPackage.Literals.CONTROL_OPERATOR__BASE_OPERATION, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Base Behavior feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_BehaviorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ControlOperator_base_Behavior_feature"), getString("_UI_PropertyDescriptor_description", "_UI_ControlOperator_base_Behavior_feature", "_UI_ControlOperator_type"), ActivitiesPackage.Literals.CONTROL_OPERATOR__BASE_BEHAVIOR, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ControlOperator_base_Behavior_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_ControlOperator_base_Behavior_feature", "_UI_ControlOperator_type"), ActivitiesPackage.Literals.CONTROL_OPERATOR__BASE_BEHAVIOR, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns ControlOperator.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -107,7 +109,7 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +122,7 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -134,7 +136,7 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -146,7 +148,7 @@ public class ControlOperatorItemProvider extends ItemProviderAdapter implements 
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

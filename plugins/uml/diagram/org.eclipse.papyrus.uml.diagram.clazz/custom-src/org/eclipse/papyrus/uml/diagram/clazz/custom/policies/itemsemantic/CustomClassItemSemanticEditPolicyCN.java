@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,27 +49,29 @@ import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 public class CustomClassItemSemanticEditPolicyCN extends ClassItemSemanticEditPolicyCN {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.clazz.custom.command.CAssociationCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.AssociationClass_4017 == req.getElementType()) {
+		if (UMLElementTypes.AssociationClass_4017 == req.getElementType()) {
 			return getGEFWrapper(new CAssociationClassCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.TemplateBinding_4015 == req.getElementType()) {
+		if (UMLElementTypes.TemplateBinding_4015 == req.getElementType()) {
 			return getGEFWrapper(new CTemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.ConstraintContext_8500 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintContext_8500 == req.getElementType()) {
 			return getGEFWrapper(new CustomContextLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);
 	}
 
+	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case AssociationClassLinkEditPart.VISUAL_ID:
 			return getGEFWrapper(new CAssociationReorientCommand(req));
 		case AssociationEditPart.VISUAL_ID:
@@ -85,21 +87,22 @@ public class CustomClassItemSemanticEditPolicyCN extends ClassItemSemanticEditPo
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.clazz.custom.command.CAssociationCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
 		}
-		if(UMLElementTypes.AssociationClass_4017 == req.getElementType()) {
+		if (UMLElementTypes.AssociationClass_4017 == req.getElementType()) {
 			return getGEFWrapper(new CAssociationClassCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
 		}
-		//forbid creation of association branch from it.
-		if(UMLElementTypes.Association_4019 == req.getElementType()) {
+		// forbid creation of association branch from it.
+		if (UMLElementTypes.Association_4019 == req.getElementType()) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		if(UMLElementTypes.TemplateBinding_4015 == req.getElementType()) {
+		if (UMLElementTypes.TemplateBinding_4015 == req.getElementType()) {
 			return getGEFWrapper(new CTemplateBindingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getStartCreateRelationshipCommand(req);
@@ -109,8 +112,9 @@ public class CustomClassItemSemanticEditPolicyCN extends ClassItemSemanticEditPo
 	 * /*
 	 * * {@inheritDoc}
 	 */
+	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case ContainmentSubLinkEditPart.VISUAL_ID:
 			return getGEFWrapper(new ContainmentLinkReorientCommand(req, getHost()));
 		}
@@ -119,13 +123,13 @@ public class CustomClassItemSemanticEditPolicyCN extends ClassItemSemanticEditPo
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy#getReorientRefRelationshipTargetCommand(org.eclipse.gef.requests.ReconnectRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getReorientRefRelationshipTargetCommand(ReconnectRequest request) {
-		if(ContainmentHelper.isReorientContainmentLink(request)) {
+		if (ContainmentHelper.isReorientContainmentLink(request)) {
 			request = ContainmentHelper.extendReorientTargetRequest(request);
 		}
 		return super.getReorientRefRelationshipTargetCommand(request);
@@ -133,42 +137,43 @@ public class CustomClassItemSemanticEditPolicyCN extends ClassItemSemanticEditPo
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.SemanticEditPolicy#getReorientRefRelationshipSourceCommand(org.eclipse.gef.requests.ReconnectRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getReorientRefRelationshipSourceCommand(ReconnectRequest request) {
-		if(ContainmentHelper.isReorientContainmentLink(request)) {
+		if (ContainmentHelper.isReorientContainmentLink(request)) {
 			request = ContainmentHelper.extendReorientSourceRequest(request);
 		}
 		return super.getReorientRefRelationshipSourceCommand(request);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
-		ICommandProxy command = (ICommandProxy)super.getDestroyElementCommand(req);
+		ICommandProxy command = (ICommandProxy) super.getDestroyElementCommand(req);
 		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.add(command.getICommand());
 		addDestroyIncomingContainmentLinksCommand(cmd);
-		ContainmentHelper.addDeleteOutgoingContainmentLinkViewCommands(getEditingDomain(), (View)getHost().getModel(), cmd);
+		ContainmentHelper.addDeleteOutgoingContainmentLinkViewCommands(getEditingDomain(), (View) getHost().getModel(), cmd);
 		return getGEFWrapper(cmd.reduce());
 	}
 
 	/**
 	 * Adds the destroy incoming containment links command.
-	 * 
+	 *
 	 * @param cmd
-	 *        the cmd
+	 *            the cmd
 	 */
 	private void addDestroyIncomingContainmentLinksCommand(ICompositeCommand cmd) {
-		View view = (View)getHost().getModel();
-		for(Object next : view.getTargetEdges()) {
-			Edge incomingLink = (Edge)next;
-			if(ContainmentHelper.isContainmentLink(incomingLink)) {
+		View view = (View) getHost().getModel();
+		for (Object next : view.getTargetEdges()) {
+			Edge incomingLink = (Edge) next;
+			if (ContainmentHelper.isContainmentLink(incomingLink)) {
 				cmd.add(ContainmentHelper.deleteIncomingContainmentLinkCommand(getEditingDomain(), incomingLink));
 			}
 		}

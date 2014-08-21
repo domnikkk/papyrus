@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -17,7 +17,7 @@ package org.eclipse.papyrus.infra.gmfdiag.common.utils;
 public class CommandIds {
 
 	private CommandIds() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	public static final String VIEW_GRID_COMMAND = "org.eclipse.papyrus.infra.gmfdiag.menu.ViewGridCommand"; //$NON-NLS-1$

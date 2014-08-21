@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration - CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,22 +17,22 @@ import org.eclipse.core.runtime.IAdaptable;
 
 /**
  * Contract for elements bellow an {@link IPapyrusFile}
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public interface ISubResourceFile extends IPapyrusElement, IAdaptable {
 
 	/**
 	 * Returns the IFile associated to the {@link ISubResourceFile}
-	 * 
+	 *
 	 * @return
 	 */
 	IFile getFile();
 
 	/**
 	 * Returns the top-element (onefile) associated with this subresource
-	 * 
+	 *
 	 * @return
 	 */
 	IPapyrusFile getParent();

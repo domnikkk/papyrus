@@ -22,6 +22,7 @@ import org.eclipse.papyrus.infra.constraints.ValueProperty;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsFactory {
@@ -30,16 +31,16 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ConstraintsFactory init() {
 		try {
-			ConstraintsFactory theConstraintsFactory = (ConstraintsFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/constraints/0.9"); 
+			ConstraintsFactory theConstraintsFactory = (ConstraintsFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/constraints/0.9");
 			if (theConstraintsFactory != null) {
 				return theConstraintsFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ConstraintsFactoryImpl();
@@ -49,6 +50,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintsFactoryImpl() {
@@ -58,23 +60,29 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT: return createSimpleConstraint();
-			case ConstraintsPackage.COMPOSITE_CONSTRAINT: return createCompositeConstraint();
-			case ConstraintsPackage.VALUE_PROPERTY: return createValueProperty();
-			case ConstraintsPackage.REFERENCE_PROPERTY: return createReferenceProperty();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ConstraintsPackage.SIMPLE_CONSTRAINT:
+			return createSimpleConstraint();
+		case ConstraintsPackage.COMPOSITE_CONSTRAINT:
+			return createCompositeConstraint();
+		case ConstraintsPackage.VALUE_PROPERTY:
+			return createValueProperty();
+		case ConstraintsPackage.REFERENCE_PROPERTY:
+			return createReferenceProperty();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SimpleConstraint createSimpleConstraint() {
@@ -85,6 +93,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CompositeConstraint createCompositeConstraint() {
@@ -95,6 +104,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ValueProperty createValueProperty() {
@@ -105,6 +115,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ReferenceProperty createReferenceProperty() {
@@ -115,15 +126,17 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintsPackage getConstraintsPackage() {
-		return (ConstraintsPackage)getEPackage();
+		return (ConstraintsPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -132,4 +145,4 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 		return ConstraintsPackage.eINSTANCE;
 	}
 
-} //ConstraintsFactoryImpl
+} // ConstraintsFactoryImpl

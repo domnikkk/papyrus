@@ -131,7 +131,7 @@ public class FacetSetSelectionControl implements IFacetSetSelectionWidget {
 		});
 		getTreeViewer().refresh();
 	}
-	
+
 	protected void checkStateChanged(final CheckStateChangedEvent event) {
 		handleCheckStateChange(event);
 		getTreeViewer().refresh();
@@ -156,7 +156,7 @@ public class FacetSetSelectionControl implements IFacetSetSelectionWidget {
 		}
 		this.treeViewer.refresh();
 	}
-	
+
 	protected boolean isUnderCheckedSuperPackage(final Object element) {
 		boolean result = false;
 		if (element instanceof FacetSet) {
@@ -239,7 +239,7 @@ public class FacetSetSelectionControl implements IFacetSetSelectionWidget {
 		}
 		setValidationStatus(newStatus);
 	}
-	
+
 	protected static IStatus validateElement(final Object checkedElement) {
 		IStatus status = FacetSetSelectionControl.OK_STATUS;
 		if (!(checkedElement instanceof FacetSet)) {

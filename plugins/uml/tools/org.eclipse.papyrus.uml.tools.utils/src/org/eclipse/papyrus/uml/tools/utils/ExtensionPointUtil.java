@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Remi SCHNEKENBURGER (CEA LIST) Remi.schnekenburger@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.uml.tools.utils;
@@ -24,7 +24,7 @@ public class ExtensionPointUtil {
 
 	/**
 	 * Returns the explanation for the extension point element
-	 * 
+	 *
 	 * @return the string defining explanation for the extension point element
 	 */
 	// @unused
@@ -32,7 +32,7 @@ public class ExtensionPointUtil {
 		String explanation = "";
 		final String name = ((extensionPoint.getName() != null) ? extensionPoint.getName() : "");
 		int startIndexOfExplanation = name.lastIndexOf(":");
-		if((startIndexOfExplanation > 0) && (startIndexOfExplanation != name.length())) {
+		if ((startIndexOfExplanation > 0) && (startIndexOfExplanation != name.length())) {
 			explanation = name.substring(startIndexOfExplanation + 1).trim();
 		}
 		return explanation;

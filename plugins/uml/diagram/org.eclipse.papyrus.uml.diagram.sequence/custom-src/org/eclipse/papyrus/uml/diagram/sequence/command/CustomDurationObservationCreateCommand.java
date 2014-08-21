@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class CustomDurationObservationCreateCommand extends DurationObservationC
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -48,7 +48,7 @@ public class CustomDurationObservationCreateCommand extends DurationObservationC
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomDurationObservationCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -60,46 +60,46 @@ public class CustomDurationObservationCreateCommand extends DurationObservationC
 	 */
 	@Override
 	public boolean canExecute() {
-		//Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826
+		// Fix https://bugs.eclipse.org/bugs/show_bug.cgi?id=364826
 		return true;
-		//		// check first occurrence specification
-		//		if(!getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION)) {
-		//			return true; // duration creation is in progress; source is not defined yet
-		//		}
-		//		Object paramOccurrence1 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION);
-		//		List<OccurrenceSpecification> occ1List = SequenceUtil.getAsOccSpecList(paramOccurrence1);
-		//		if(occ1List.isEmpty()) {
-		//			return false;
-		//		}
-		//		// check second occurrence specification
-		//		if(!getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2)) {
-		//			// duration creation is in progress; target is not defined yet
-		//			// enable duration observation only on a message
-		//			for(OccurrenceSpecification occurrence : occ1List) {
-		//				if(occurrence instanceof MessageOccurrenceSpecification) {
-		//					Message mess = ((MessageOccurrenceSpecification)occurrence).getMessage();
-		//					if(mess != null) {
-		//						return true;
-		//					}
-		//				}
-		//			}
-		//			return false;
-		//		}
-		//		Object paramOccurrence2 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2);
-		//		List<OccurrenceSpecification> occ2List = SequenceUtil.getAsOccSpecList(paramOccurrence2);
-		//		if(occ2List.isEmpty()) {
-		//			return false;
-		//		}
-		//		// disable duration observation on a same event
-		//		if(!Collections.disjoint(occ1List, occ2List)) {
-		//			return false;
-		//		}
-		//		// enable duration observation only on a message
-		//		OccurrenceSpecification[] pair = SequenceUtil.getPairOfCorrespondingOccSpec(occ1List, occ2List);
-		//		if(pair != null && pair.length > 1) {
-		//			return DurationObservationHelper.endsOfSameMessage(pair[0], pair[1]);
-		//		}
-		//		return false;
+		// // check first occurrence specification
+		// if(!getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION)) {
+		// return true; // duration creation is in progress; source is not defined yet
+		// }
+		// Object paramOccurrence1 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION);
+		// List<OccurrenceSpecification> occ1List = SequenceUtil.getAsOccSpecList(paramOccurrence1);
+		// if(occ1List.isEmpty()) {
+		// return false;
+		// }
+		// // check second occurrence specification
+		// if(!getRequest().getParameters().containsKey(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2)) {
+		// // duration creation is in progress; target is not defined yet
+		// // enable duration observation only on a message
+		// for(OccurrenceSpecification occurrence : occ1List) {
+		// if(occurrence instanceof MessageOccurrenceSpecification) {
+		// Message mess = ((MessageOccurrenceSpecification)occurrence).getMessage();
+		// if(mess != null) {
+		// return true;
+		// }
+		// }
+		// }
+		// return false;
+		// }
+		// Object paramOccurrence2 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2);
+		// List<OccurrenceSpecification> occ2List = SequenceUtil.getAsOccSpecList(paramOccurrence2);
+		// if(occ2List.isEmpty()) {
+		// return false;
+		// }
+		// // disable duration observation on a same event
+		// if(!Collections.disjoint(occ1List, occ2List)) {
+		// return false;
+		// }
+		// // enable duration observation only on a message
+		// OccurrenceSpecification[] pair = SequenceUtil.getPairOfCorrespondingOccSpec(occ1List, occ2List);
+		// if(pair != null && pair.length > 1) {
+		// return DurationObservationHelper.endsOfSameMessage(pair[0], pair[1]);
+		// }
+		// return false;
 	}
 
 	/**
@@ -110,13 +110,13 @@ public class CustomDurationObservationCreateCommand extends DurationObservationC
 		DurationObservation newElement = UMLFactory.eINSTANCE.createDurationObservation();
 		// get the parent package as owner
 		EObject container = getElementToEdit();
-		while(container != null && !(container instanceof Package)) {
+		while (container != null && !(container instanceof Package)) {
 			container = container.eContainer();
 		}
-		if(container == null) {
+		if (container == null) {
 			return CommandResult.newCancelledCommandResult();
 		}
-		Package owner = (Package)container;
+		Package owner = (Package) container;
 		owner.getPackagedElements().add(newElement);
 		ElementInitializers.getInstance().init_DurationObservation_3024(newElement);
 		// assign the occurrence specification
@@ -125,12 +125,12 @@ public class CustomDurationObservationCreateCommand extends DurationObservationC
 		Object paramOcc2 = getRequest().getParameter(SequenceRequestConstant.NEAREST_OCCURRENCE_SPECIFICATION_2);
 		List<OccurrenceSpecification> occ2List = SequenceUtil.getAsOccSpecList(paramOcc2);
 		OccurrenceSpecification[] pair = SequenceUtil.getPairOfCorrespondingOccSpec(occ1List, occ2List);
-		if(pair != null && pair.length > 1) {
+		if (pair != null && pair.length > 1) {
 			newElement.getEvents().add(pair[0]);
 			newElement.getEvents().add(pair[1]);
 		}
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

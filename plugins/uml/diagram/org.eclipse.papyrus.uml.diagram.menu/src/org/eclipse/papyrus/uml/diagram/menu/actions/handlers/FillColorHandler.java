@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.papyrus.uml.diagram.menu.actions.FillColorAction;
 
 /**
  * The handler for the {@link FillColorAction}
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class FillColorHandler extends AbstractGraphicalCommandHandler {
 
@@ -30,32 +30,32 @@ public class FillColorHandler extends AbstractGraphicalCommandHandler {
 	public static final String parameterID = "color_parameter"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
-	 *        parameter for the arrange action
+	 *            parameter for the arrange action
 	 */
 	public FillColorHandler(String parameter) {
 		super(parameterID, parameter);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameter
-	 *        parameter for the arrange action
+	 *            parameter for the arrange action
 	 */
 	public FillColorHandler() {
-		//when we have no parameter, we fill in black!
+		// when we have no parameter, we fill in black!
 		super(parameterID, AbstractColorAction.BLACK_.colorName);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.handlers.GraphicalCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */

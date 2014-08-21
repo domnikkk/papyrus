@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ public class CreateViewCommand extends CreateCommand {
 	 * @return true, if successful
 	 * @see org.eclipse.gmf.runtime.diagram.ui.commands.CreateCommand#canExecute()
 	 */
-	
+
 	@Override
 	public boolean canExecute() {
 		return true;
@@ -40,9 +40,12 @@ public class CreateViewCommand extends CreateCommand {
 	/**
 	 * Instantiates a new creates the view command.
 	 *
-	 * @param editingDomain the editing domain
-	 * @param viewDescriptor the view descriptor
-	 * @param containerView the container view
+	 * @param editingDomain
+	 *            the editing domain
+	 * @param viewDescriptor
+	 *            the view descriptor
+	 * @param containerView
+	 *            the container view
 	 */
 	public CreateViewCommand(TransactionalEditingDomain editingDomain, ViewDescriptor viewDescriptor, View containerView) {
 		super(editingDomain, viewDescriptor, containerView);

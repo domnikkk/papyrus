@@ -16,7 +16,7 @@ import org.eclipse.papyrus.emf.facet.query.java.core.internal.ParameterValueList
 
 /**
  * Factory for the creation of instances of {@link ParameterValueList}.
- * 
+ *
  * @deprecated cf. https://bugs.eclipse.org/bugs/show_bug.cgi?id=374678
  */
 @Deprecated
@@ -28,9 +28,8 @@ public interface IParameterValueListFactory {
 	public static final IParameterValueListFactory INSTANCE = new ParameterValueListFactoryImpl();
 
 	/**
-	 * This method has to be used to get a new instance of
-	 * {@link IParameterValueList}
-	 * 
+	 * This method has to be used to get a new instance of {@link IParameterValueList}
+	 *
 	 * @param values
 	 *            the list of parameters
 	 * @return an {@link IParameterValueList} instance containing the provided

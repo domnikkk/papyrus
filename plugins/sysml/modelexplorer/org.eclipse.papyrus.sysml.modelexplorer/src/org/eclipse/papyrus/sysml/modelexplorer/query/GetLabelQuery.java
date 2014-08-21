@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,13 +28,13 @@ public class GetLabelQuery implements IJavaQuery2<NamedElement, String> {
 
 	@Override
 	public String evaluate(NamedElement source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
-		ParameterValue parameterValue= (ParameterValue)parameterValues.getParameterValueByName("eObject");
-		if(parameterValue.getValue() instanceof EStructuralFeature){
-			return ((EStructuralFeature)parameterValue.getValue()).getName();
+		ParameterValue parameterValue = parameterValues.getParameterValueByName("eObject");
+		if (parameterValue.getValue() instanceof EStructuralFeature) {
+			return ((EStructuralFeature) parameterValue.getValue()).getName();
 		}
-		
+
 		String label = UNNAMED;
-		if(source.isSetName() && (!"".equals(source.getName().trim()))) {
+		if (source.isSetName() && (!"".equals(source.getName().trim()))) {
 			label = source.getName();
 		}
 		return label;

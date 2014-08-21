@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,6 +51,7 @@ public class RenamePasteStrategy extends AbstractPasteStrategy implements IPaste
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "Rename Strategy"; //$NON-NLS-1$
 	}
@@ -60,6 +61,7 @@ public class RenamePasteStrategy extends AbstractPasteStrategy implements IPaste
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
+	@Override
 	public String getID() {
 		return Activator.ID + ".RenameStrategy"; //$NON-NLS-1$
 	}
@@ -69,6 +71,7 @@ public class RenamePasteStrategy extends AbstractPasteStrategy implements IPaste
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return "Rename elements"; //$NON-NLS-1$
 	}
@@ -81,8 +84,8 @@ public class RenamePasteStrategy extends AbstractPasteStrategy implements IPaste
 	@Override
 	public IPasteStrategy dependsOn() {
 		return DefaultPasteStrategy.getInstance();
-	}	
-	
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -93,19 +96,19 @@ public class RenamePasteStrategy extends AbstractPasteStrategy implements IPaste
 	public org.eclipse.emf.common.command.Command getSemanticCommand(EditingDomain domain, EObject targetOwner, PapyrusClipboard<Object> papyrusClipboard) {
 		CompoundCommand compoundCommand = new CompoundCommand("Rename root paste elements"); //$NON-NLS-1$
 		List<EObject> filterDescendants = EcoreUtil.filterDescendants(papyrusClipboard.getTarget());
-		for(Iterator<EObject> iterator = filterDescendants.iterator(); iterator.hasNext();) {
-			EObject target = (EObject)iterator.next();
-			if(target instanceof NamedElement) {
-				NamedElement namedElement = (NamedElement)target;
-				if(namedElement.getName() != null) {
+		for (Iterator<EObject> iterator = filterDescendants.iterator(); iterator.hasNext();) {
+			EObject target = iterator.next();
+			if (target instanceof NamedElement) {
+				NamedElement namedElement = (NamedElement) target;
+				if (namedElement.getName() != null) {
 					String defaultCopyNameWithIncrement = NamedElementUtil.getDefaultCopyNameWithIncrement(namedElement, targetOwner.eContents());
-					RenameElementCommand renameElementCommand = new RenameElementCommand((TransactionalEditingDomain)domain, namedElement, defaultCopyNameWithIncrement);
+					RenameElementCommand renameElementCommand = new RenameElementCommand((TransactionalEditingDomain) domain, namedElement, defaultCopyNameWithIncrement);
 					compoundCommand.append(renameElementCommand);
 				}
 			}
 		}
-		// An empty can't be executed 
-		if(compoundCommand.getCommandList().isEmpty()) {
+		// An empty can't be executed
+		if (compoundCommand.getCommandList().isEmpty()) {
 			return null;
 		}
 		return compoundCommand;

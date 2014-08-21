@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -131,7 +131,7 @@ public class AbstractLookForEditorShell {
 		createTreeViewcomposite();
 		CTabItem cTabItem = new CTabItem(cTabFolder, SWT.None);
 		cTabItem.setControl(diagramListcomposite);
-		cTabItem.setText(Messages.AbstractLookForEditorShell_EditorsList);//TODO change this name into Editor List
+		cTabItem.setText(Messages.AbstractLookForEditorShell_EditorsList);// TODO change this name into Editor List
 		CTabItem cTabItem1 = new CTabItem(cTabFolder, SWT.None);
 		cTabItem1.setText(Messages.AbstractLookForEditorShell_TreeView);
 		cTabItem1.setControl(treeViewcomposite);
@@ -177,7 +177,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the modeltree.
-	 * 
+	 *
 	 * @return the modeltree
 	 */
 	// @unused
@@ -187,7 +187,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the new diagrambutton.
-	 * 
+	 *
 	 * @return the newDiagrambutton
 	 */
 	protected Button getNewDiagrambutton() {
@@ -196,9 +196,9 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Sets the new diagrambutton.
-	 * 
+	 *
 	 * @param newDiagrambutton
-	 *        the newDiagrambutton to set
+	 *            the newDiagrambutton to set
 	 */
 	// @unused
 	protected void setNewDiagrambutton(Button newDiagrambutton) {
@@ -207,7 +207,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the remove diagrambutton.
-	 * 
+	 *
 	 * @return the removeDiagrambutton
 	 */
 	protected Button getRemoveDiagrambutton() {
@@ -216,9 +216,9 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Sets the remove diagrambutton.
-	 * 
+	 *
 	 * @param removeDiagrambutton
-	 *        the removeDiagrambutton to set
+	 *            the removeDiagrambutton to set
 	 */
 	// @unused
 	protected void setRemoveDiagrambutton(Button removeDiagrambutton) {
@@ -227,7 +227,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the o kbutton.
-	 * 
+	 *
 	 * @return the oKbutton
 	 */
 	protected Button getOKbutton() {
@@ -236,9 +236,9 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Sets the o kbutton.
-	 * 
+	 *
 	 * @param oKbutton
-	 *        the oKbutton to set
+	 *            the oKbutton to set
 	 */
 	// @unused
 	protected void setOKbutton(Button oKbutton) {
@@ -247,7 +247,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the cancelbutton.
-	 * 
+	 *
 	 * @return the cancelbutton
 	 */
 	protected Button getCancelbutton() {
@@ -256,9 +256,9 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Sets the cancelbutton.
-	 * 
+	 *
 	 * @param cancelbutton
-	 *        the cancelbutton to set
+	 *            the cancelbutton to set
 	 */
 	// @unused
 	protected void setCancelbutton(Button cancelbutton) {
@@ -267,7 +267,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the diagram listtree.
-	 * 
+	 *
 	 * @return the diagramListtree
 	 */
 	// @unused
@@ -277,7 +277,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the lookfor shell.
-	 * 
+	 *
 	 * @return the lookforShell
 	 */
 	protected Shell getLookforShell() {
@@ -286,9 +286,9 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Sets the lookfor shell.
-	 * 
+	 *
 	 * @param lookforShell
-	 *        the lookforShell to set
+	 *            the lookforShell to set
 	 */
 	// @unused
 	protected void setLookforShell(Shell lookforShell) {
@@ -325,7 +325,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the diagramfiltered tree.
-	 * 
+	 *
 	 * @return the diagramfilteredTree
 	 */
 	protected FilteredTree getDiagramfilteredTree() {
@@ -334,7 +334,7 @@ public class AbstractLookForEditorShell {
 
 	/**
 	 * Gets the mode filtered tree.
-	 * 
+	 *
 	 * @return the modeFilteredTree
 	 */
 	protected FilteredTree getModeFilteredTree() {

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Arthur Daussy <a href="mailto:arthur.daussy@atos.net"> - initial API and implementation
  ******************************************************************************/
@@ -22,9 +22,9 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * Command to ask the user something. If it selected cancel then the all transaction will be canceled
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class AskUserCommand extends AbstractTransactionalCommand {
 
@@ -75,13 +75,13 @@ public class AskUserCommand extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		boolean confirm = false;
-		if(optional) {
-			int returnButton = OptionalMessageDialog.open(this.id, Display.getDefault().getActiveShell(), this.title, null, message, MessageDialog.WARNING, new String[]{ "Ok", "Cancel" }, 0);
+		if (optional) {
+			int returnButton = OptionalMessageDialog.open(this.id, Display.getDefault().getActiveShell(), this.title, null, message, MessageDialog.WARNING, new String[] { "Ok", "Cancel" }, 0);
 			confirm = returnButton == 0 || OptionalMessageDialog.NOT_SHOWN == returnButton;
 		} else {
 			confirm = MessageDialog.openConfirm(Display.getCurrent().getActiveShell(), title, message);
 		}
-		if(confirm) {
+		if (confirm) {
 			return CommandResult.newOKCommandResult();
 		} else {
 			return CommandResult.newCancelledCommandResult();

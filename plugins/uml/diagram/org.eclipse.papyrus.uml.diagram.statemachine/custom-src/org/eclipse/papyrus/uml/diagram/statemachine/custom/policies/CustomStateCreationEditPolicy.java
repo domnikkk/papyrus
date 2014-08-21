@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -70,7 +70,7 @@ public class CustomStateCreationEditPolicy extends CreationEditPolicy {
 						View stateView = (View) getHost().getModel();
 						View stateCompartmentView = (View) stateView.getChildren().get(1);
 						// get and adaptable for it, to pass on to commands
-						IAdaptable adaptableForStateCompartmentView = (IAdaptable) new SemanticAdapter(null, stateCompartmentView);
+						IAdaptable adaptableForStateCompartmentView = new SemanticAdapter(null, stateCompartmentView);
 						if (!stateCompartmentView.getChildren().isEmpty()) {
 							// CHECK THIS
 							// ENamedElement namedElement = PackageUtil.getElement("notation.View.visible");
@@ -114,10 +114,11 @@ public class CustomStateCreationEditPolicy extends CreationEditPolicy {
 						 */
 						View stateCompartmentView = ViewUtil.getChildBySemanticHint(stateView, String.valueOf(StateCompartmentEditPart.VISUAL_ID));
 						// transfer the request to the super method to deal with regular Entry/ExitPoint creation
-						if (!stateCompartmentView.getChildren().isEmpty() || !((State) stateView.getElement()).getRegions().isEmpty())
+						if (!stateCompartmentView.getChildren().isEmpty() || !((State) stateView.getElement()).getRegions().isEmpty()) {
 							return super.getCommand(request);
+						}
 						// get and adaptable for it, to pass on to commands
-						IAdaptable adaptableForStateCompartmentView = (IAdaptable) new SemanticAdapter(null, stateCompartmentView);
+						IAdaptable adaptableForStateCompartmentView = new SemanticAdapter(null, stateCompartmentView);
 						// do the whole job
 						CustomFirstRegionInCompositeStateCreateElementCommand createNewRegion = new CustomFirstRegionInCompositeStateCreateElementCommand(adaptableForStateCompartmentView, null, ((IGraphicalEditPart) getHost()).getDiagramPreferencesHint(),
 								editingDomain, DiagramUIMessages.CreateCommand_Label, dropLocation);

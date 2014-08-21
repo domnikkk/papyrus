@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,9 +31,9 @@ public class ShapeProviderConfiguration extends AbstractProviderConfiguration {
 	/**
 	 * Creates and builds a new provider contribution descriptor ( <code>ShapeProviderConfiguration</code>) by parsing its configuration
 	 * element.
-	 * 
+	 *
 	 * @param configElement
-	 *        A provider XML configuration element
+	 *            A provider XML configuration element
 	 * @return A provider XML contribution descriptor
 	 */
 	public static ShapeProviderConfiguration parse(IConfigurationElement configElement) {
@@ -44,9 +44,9 @@ public class ShapeProviderConfiguration extends AbstractProviderConfiguration {
 	/**
 	 * Creates a new <code>ProviderContributionDescriptor</code> instance by
 	 * parsing its configuration element.
-	 * 
+	 *
 	 * @param configElement
-	 *        The provider XML configuration element
+	 *            The provider XML configuration element
 	 */
 	protected ShapeProviderConfiguration(IConfigurationElement configElement) {
 		// retrieve only ID, to test if the factory is the right one before
@@ -57,7 +57,7 @@ public class ShapeProviderConfiguration extends AbstractProviderConfiguration {
 
 	/**
 	 * Returns the ID of the factory configured by this configuration
-	 * 
+	 *
 	 * @return the id of the factory
 	 */
 	public String getId() {

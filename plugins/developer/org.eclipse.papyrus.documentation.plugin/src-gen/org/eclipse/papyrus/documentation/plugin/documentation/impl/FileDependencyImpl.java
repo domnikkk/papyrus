@@ -22,7 +22,7 @@ import org.eclipse.papyrus.documentation.plugin.documentation.FileDependency;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.FileDependencyImpl#getFile <em>File</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.FileDependencyImpl#getFile <em>File</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	 * The default value of the '{@link #getFile() <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	 * The cached value of the '{@link #getFile() <em>File</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFile()
 	 * @generated
 	 * @ordered
@@ -52,6 +54,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FileDependencyImpl() {
@@ -61,6 +64,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,6 +75,7 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getFile() {
@@ -80,25 +85,28 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFile(String newFile) {
 		String oldFile = file;
 		file = newFile;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentationPackage.FILE_DEPENDENCY__FILE, oldFile, file));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocumentationPackage.FILE_DEPENDENCY__FILE:
-				return getFile();
+		case DocumentationPackage.FILE_DEPENDENCY__FILE:
+			return getFile();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,14 +114,15 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocumentationPackage.FILE_DEPENDENCY__FILE:
-				setFile((String)newValue);
-				return;
+		case DocumentationPackage.FILE_DEPENDENCY__FILE:
+			setFile((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -121,14 +130,15 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocumentationPackage.FILE_DEPENDENCY__FILE:
-				setFile(FILE_EDEFAULT);
-				return;
+		case DocumentationPackage.FILE_DEPENDENCY__FILE:
+			setFile(FILE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,13 +146,14 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocumentationPackage.FILE_DEPENDENCY__FILE:
-				return FILE_EDEFAULT == null ? file != null : !FILE_EDEFAULT.equals(file);
+		case DocumentationPackage.FILE_DEPENDENCY__FILE:
+			return FILE_EDEFAULT == null ? file != null : !FILE_EDEFAULT.equals(file);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -150,11 +161,14 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (file: ");
@@ -163,4 +177,4 @@ public class FileDependencyImpl extends DependencyImpl implements FileDependency
 		return result.toString();
 	}
 
-} //FileDependencyImpl
+} // FileDependencyImpl

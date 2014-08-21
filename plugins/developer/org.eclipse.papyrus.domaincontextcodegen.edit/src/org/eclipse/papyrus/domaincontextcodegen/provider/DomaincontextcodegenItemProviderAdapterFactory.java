@@ -32,7 +32,7 @@ import org.eclipse.papyrus.domaincontextcodegen.util.DomaincontextcodegenAdapter
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DomaincontextcodegenItemProviderAdapterFactory extends DomaincontextcodegenAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -41,7 +41,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -50,7 +50,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -59,7 +59,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -68,7 +68,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomaincontextcodegenItemProviderAdapterFactory() {
@@ -83,7 +83,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.DomainContext} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomainContextItemProvider domainContextItemProvider;
@@ -92,12 +92,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.DomainContext}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createDomainContextAdapter() {
-		if(domainContextItemProvider == null) {
+		if (domainContextItemProvider == null) {
 			domainContextItemProvider = new DomainContextItemProvider(this);
 		}
 
@@ -108,7 +108,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypes} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypesItemProvider elementTypesItemProvider;
@@ -117,12 +117,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypes}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createElementTypesAdapter() {
-		if(elementTypesItemProvider == null) {
+		if (elementTypesItemProvider == null) {
 			elementTypesItemProvider = new ElementTypesItemProvider(this);
 		}
 
@@ -133,7 +133,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.MetaClassType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MetaClassTypeItemProvider metaClassTypeItemProvider;
@@ -142,12 +142,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.MetaClassType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createMetaClassTypeAdapter() {
-		if(metaClassTypeItemProvider == null) {
+		if (metaClassTypeItemProvider == null) {
 			metaClassTypeItemProvider = new MetaClassTypeItemProvider(this);
 		}
 
@@ -158,7 +158,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected SpecializationTypeItemProvider specializationTypeItemProvider;
@@ -167,12 +167,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createSpecializationTypeAdapter() {
-		if(specializationTypeItemProvider == null) {
+		if (specializationTypeItemProvider == null) {
 			specializationTypeItemProvider = new SpecializationTypeItemProvider(this);
 		}
 
@@ -183,7 +183,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.Advice} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AdviceItemProvider adviceItemProvider;
@@ -192,12 +192,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.Advice}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdviceAdapter() {
-		if(adviceItemProvider == null) {
+		if (adviceItemProvider == null) {
 			adviceItemProvider = new AdviceItemProvider(this);
 		}
 
@@ -208,7 +208,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypeBindingsItemProvider elementTypeBindingsItemProvider;
@@ -217,12 +217,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createElementTypeBindingsAdapter() {
-		if(elementTypeBindingsItemProvider == null) {
+		if (elementTypeBindingsItemProvider == null) {
 			elementTypeBindingsItemProvider = new ElementTypeBindingsItemProvider(this);
 		}
 
@@ -233,7 +233,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypeBindingItemProvider elementTypeBindingItemProvider;
@@ -242,12 +242,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createElementTypeBindingAdapter() {
-		if(elementTypeBindingItemProvider == null) {
+		if (elementTypeBindingItemProvider == null) {
 			elementTypeBindingItemProvider = new ElementTypeBindingItemProvider(this);
 		}
 
@@ -258,7 +258,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.AdviceBinding} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AdviceBindingItemProvider adviceBindingItemProvider;
@@ -267,12 +267,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.AdviceBinding}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdviceBindingAdapter() {
-		if(adviceBindingItemProvider == null) {
+		if (adviceBindingItemProvider == null) {
 			adviceBindingItemProvider = new AdviceBindingItemProvider(this);
 		}
 
@@ -283,7 +283,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.GenHandlers} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GenHandlersItemProvider genHandlersItemProvider;
@@ -292,12 +292,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.GenHandlers}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createGenHandlersAdapter() {
-		if(genHandlersItemProvider == null) {
+		if (genHandlersItemProvider == null) {
 			genHandlersItemProvider = new GenHandlersItemProvider(this);
 		}
 
@@ -308,7 +308,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypedElementMatcherItemProvider stereotypedElementMatcherItemProvider;
@@ -317,12 +317,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createStereotypedElementMatcherAdapter() {
-		if(stereotypedElementMatcherItemProvider == null) {
+		if (stereotypedElementMatcherItemProvider == null) {
 			stereotypedElementMatcherItemProvider = new StereotypedElementMatcherItemProvider(this);
 		}
 
@@ -333,7 +333,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypedElementHelperItemProvider stereotypedElementHelperItemProvider;
@@ -342,12 +342,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createStereotypedElementHelperAdapter() {
-		if(stereotypedElementHelperItemProvider == null) {
+		if (stereotypedElementHelperItemProvider == null) {
 			stereotypedElementHelperItemProvider = new StereotypedElementHelperItemProvider(this);
 		}
 
@@ -358,7 +358,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MenuDeclarationItemProvider menuDeclarationItemProvider;
@@ -367,12 +367,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createMenuDeclarationAdapter() {
-		if(menuDeclarationItemProvider == null) {
+		if (menuDeclarationItemProvider == null) {
 			menuDeclarationItemProvider = new MenuDeclarationItemProvider(this);
 		}
 
@@ -383,7 +383,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommandDeclarationItemProvider commandDeclarationItemProvider;
@@ -392,12 +392,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createCommandDeclarationAdapter() {
-		if(commandDeclarationItemProvider == null) {
+		if (commandDeclarationItemProvider == null) {
 			commandDeclarationItemProvider = new CommandDeclarationItemProvider(this);
 		}
 
@@ -408,7 +408,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.domaincontextcodegen.Command} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommandItemProvider commandItemProvider;
@@ -417,12 +417,12 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This creates an adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.Command}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createCommandAdapter() {
-		if(commandItemProvider == null) {
+		if (commandItemProvider == null) {
 			commandItemProvider = new CommandItemProvider(this);
 		}
 
@@ -433,7 +433,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -444,7 +444,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -454,7 +454,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -466,7 +466,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -477,14 +477,14 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -496,7 +496,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -507,7 +507,7 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -518,13 +518,13 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -533,38 +533,52 @@ public class DomaincontextcodegenItemProviderAdapterFactory extends Domaincontex
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void dispose() {
-		if(domainContextItemProvider != null)
+		if (domainContextItemProvider != null) {
 			domainContextItemProvider.dispose();
-		if(elementTypesItemProvider != null)
+		}
+		if (elementTypesItemProvider != null) {
 			elementTypesItemProvider.dispose();
-		if(metaClassTypeItemProvider != null)
+		}
+		if (metaClassTypeItemProvider != null) {
 			metaClassTypeItemProvider.dispose();
-		if(specializationTypeItemProvider != null)
+		}
+		if (specializationTypeItemProvider != null) {
 			specializationTypeItemProvider.dispose();
-		if(adviceItemProvider != null)
+		}
+		if (adviceItemProvider != null) {
 			adviceItemProvider.dispose();
-		if(elementTypeBindingsItemProvider != null)
+		}
+		if (elementTypeBindingsItemProvider != null) {
 			elementTypeBindingsItemProvider.dispose();
-		if(elementTypeBindingItemProvider != null)
+		}
+		if (elementTypeBindingItemProvider != null) {
 			elementTypeBindingItemProvider.dispose();
-		if(adviceBindingItemProvider != null)
+		}
+		if (adviceBindingItemProvider != null) {
 			adviceBindingItemProvider.dispose();
-		if(genHandlersItemProvider != null)
+		}
+		if (genHandlersItemProvider != null) {
 			genHandlersItemProvider.dispose();
-		if(stereotypedElementMatcherItemProvider != null)
+		}
+		if (stereotypedElementMatcherItemProvider != null) {
 			stereotypedElementMatcherItemProvider.dispose();
-		if(stereotypedElementHelperItemProvider != null)
+		}
+		if (stereotypedElementHelperItemProvider != null) {
 			stereotypedElementHelperItemProvider.dispose();
-		if(menuDeclarationItemProvider != null)
+		}
+		if (menuDeclarationItemProvider != null) {
 			menuDeclarationItemProvider.dispose();
-		if(commandDeclarationItemProvider != null)
+		}
+		if (commandDeclarationItemProvider != null) {
 			commandDeclarationItemProvider.dispose();
-		if(commandItemProvider != null)
+		}
+		if (commandItemProvider != null) {
 			commandItemProvider.dispose();
+		}
 	}
 
 }

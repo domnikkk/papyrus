@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,9 +48,9 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * An editor for multivalued fields.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class MultipleValueEditor extends AbstractListEditor implements SelectionListener, IChangeListener, DisposeListener {
 
@@ -133,44 +133,44 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which this Editor should be displayed
+	 *            The Composite in which this Editor should be displayed
 	 * @param style
-	 *        This editor's tree style
+	 *            This editor's tree style
 	 * @param selector
-	 *        The element selector for this editor's dialog
+	 *            The element selector for this editor's dialog
 	 * @param ordered
-	 *        Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
+	 *            Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
 	 * @param unique
-	 *        Specify if the observed collection values are unique.
+	 *            Specify if the observed collection values are unique.
 	 * @param label
-	 *        The label for this editor. If null, the label isn't created.
+	 *            The label for this editor. If null, the label isn't created.
 	 */
 	public MultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered, boolean unique, String label) {
 		this(parent, style, selector, ordered, unique, label, MANY);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which this Editor should be displayed
+	 *            The Composite in which this Editor should be displayed
 	 * @param style
-	 *        This editor's tree style
+	 *            This editor's tree style
 	 * @param selector
-	 *        The element selector for this editor's dialog
+	 *            The element selector for this editor's dialog
 	 * @param ordered
-	 *        Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
+	 *            Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
 	 * @param unique
-	 *        Specify if the observed collection values are unique.
+	 *            Specify if the observed collection values are unique.
 	 * @param label
-	 *        The label for this editor. If null, the label isn't created.
+	 *            The label for this editor. If null, the label isn't created.
 	 * @param upperBound
-	 *        The maximum number of values that must appear.
+	 *            The maximum number of values that must appear.
 	 */
 	public MultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered, boolean unique, String label, int upperBound) {
 		super(parent, label);
@@ -206,17 +206,17 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	/**
 	 * Creates the dialog for this editor
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which the dialog should be displayed
+	 *            The Composite in which the dialog should be displayed
 	 * @param selector
-	 *        The element selector for this dialog
+	 *            The element selector for this dialog
 	 * @param ordered
-	 *        Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
+	 *            Specify if the observed collection is ordered. If true, Up and Down controls are displayed.
 	 * @param unique
-	 *        Specify if the observed collection values are unique.
+	 *            Specify if the observed collection values are unique.
 	 * @param label
-	 *        The editor's label.
+	 *            The editor's label.
 	 * @return The new dialog for this editor
 	 */
 	protected MultipleValueSelectorDialog createMultipleValueSelectorDialog(Composite parent, IElementSelector selector, boolean ordered, boolean unique, String label) {
@@ -236,8 +236,8 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	protected void updateControls() {
 
 		boolean enableAddAction = true;
-		if(directCreation) {
-			if(referenceFactory == null || !referenceFactory.canCreateObject()) {
+		if (directCreation) {
+			if (referenceFactory == null || !referenceFactory.canCreateObject()) {
 				enableAddAction = false;
 			}
 		}
@@ -249,8 +249,8 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 		edit.setEnabled(this.referenceFactory != null && referenceFactory.canEdit() && !readOnly);
 
 
-		if(modelProperty != null && this.upperBound != MANY) {
-			if(modelProperty.size() >= this.upperBound) {
+		if (modelProperty != null && this.upperBound != MANY) {
+			if (modelProperty.size() >= this.upperBound) {
 				add.setEnabled(false);
 			}
 		}
@@ -258,49 +258,49 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which this Editor should be displayed
+	 *            The Composite in which this Editor should be displayed
 	 * @param style
-	 *        This editor's tree style
+	 *            This editor's tree style
 	 * @param selector
-	 *        The element selector for this editor's dialog
+	 *            The element selector for this editor's dialog
 	 * @param ordered
-	 *        Specify if the observed collection is ordered. If true, Up and Down controls are displayed
+	 *            Specify if the observed collection is ordered. If true, Up and Down controls are displayed
 	 */
 	public MultipleValueEditor(Composite parent, int style, IElementSelector selector, boolean ordered) {
 		this(parent, style, selector, ordered, false, null);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which this Editor should be displayed
+	 *            The Composite in which this Editor should be displayed
 	 * @param style
-	 *        This editor's tree style
+	 *            This editor's tree style
 	 * @param selector
-	 *        The element selector for this editor's dialog
+	 *            The element selector for this editor's dialog
 	 */
 	public MultipleValueEditor(Composite parent, int style, IElementSelector selector) {
 		this(parent, style, selector, false, false, null);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite in which this Editor should be displayed
+	 *            The Composite in which this Editor should be displayed
 	 * @param style
-	 *        This editor's tree style
+	 *            This editor's tree style
 	 * @param selector
-	 *        The element selector for this editor's dialog
+	 *            The element selector for this editor's dialog
 	 * @param label
-	 *        The label for this Editor
+	 *            The label for this Editor
 	 */
 	public MultipleValueEditor(Composite parent, int style, IElementSelector selector, String label) {
 		this(parent, style, selector, false, false, label);
@@ -308,9 +308,9 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	/**
 	 * Sets the label provider for this editor
-	 * 
+	 *
 	 * @param labelProvider
-	 *        The label provider for this editor
+	 *            The label provider for this editor
 	 */
 	public void setLabelProvider(ILabelProvider labelProvider) {
 		treeViewer.setLabelProvider(labelProvider);
@@ -321,7 +321,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 */
 	@Override
 	protected void doBinding() {
-		//We don't do a real Databinding in this case
+		// We don't do a real Databinding in this case
 		treeViewer.setInput(modelProperty);
 		modelProperty.addChangeListener(this);
 	}
@@ -347,7 +347,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	/**
 	 * Creates the Add/Remove controls,
 	 * and the Up/Down controls if the collection is ordered
-	 * 
+	 *
 	 * @param ordered
 	 */
 	protected void createListControls() {
@@ -373,26 +373,27 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	/**
 	 * Handle events occuring on controls
-	 * 
+	 *
 	 * @see org.eclipse.swt.events.SelectionListener#widgetSelected(org.eclipse.swt.events.SelectionEvent)
-	 * 
+	 *
 	 * @param e
 	 */
+	@Override
 	public void widgetSelected(SelectionEvent e) {
-		if(e.widget == null) {
+		if (e.widget == null) {
 			return;
 		}
-		if(e.widget == add) {
-			if(this.upperBound == MANY || modelProperty.size() < this.upperBound) {
+		if (e.widget == add) {
+			if (this.upperBound == MANY || modelProperty.size() < this.upperBound) {
 				addAction();
 			}
-		} else if(e.widget == remove) {
+		} else if (e.widget == remove) {
 			removeAction();
-		} else if(e.widget == up) {
+		} else if (e.widget == up) {
 			upAction();
-		} else if(e.widget == down) {
+		} else if (e.widget == down) {
 			downAction();
-		} else if(e.widget == edit) {
+		} else if (e.widget == edit) {
 			editAction();
 		}
 
@@ -404,15 +405,15 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 */
 	protected void addAction() {
 		final Object context = getContextElement();
-		
-		if(directCreation) {
-			if(referenceFactory != null && referenceFactory.canCreateObject()) {
+
+		if (directCreation) {
+			if (referenceFactory != null && referenceFactory.canCreateObject()) {
 				getOperationExecutor(context).execute(new Runnable() {
 
 					@Override
 					public void run() {
 						Object newElement = referenceFactory.createObject(MultipleValueEditor.this, context);
-						if(newElement != null) {
+						if (newElement != null) {
 							modelProperty.add(newElement);
 							commit();
 						}
@@ -429,22 +430,22 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 			public void run() {
 				String dialogLabel = label == null ? null : label.getText();
 				MultipleValueSelectorDialog dialog = createMultipleValueSelectorDialog(getParent(), selector, ordered, unique, dialogLabel);
-				dialog.setLabelProvider((ILabelProvider)treeViewer.getLabelProvider());
+				dialog.setLabelProvider((ILabelProvider) treeViewer.getLabelProvider());
 				dialog.setFactory(referenceFactory);
 				dialog.setUpperBound(upperBound);
 				dialog.setContextElement(context);
 
-				if(modelProperty != null) {
+				if (modelProperty != null) {
 					dialog.setInitialSelections(modelProperty.toArray());
 				} else {
 					dialog.setInitialSelections(new Object[0]);
 				}
 
 				int returnCode = dialog.open();
-				if(returnCode == Window.CANCEL) {
+				if (returnCode == Window.CANCEL) {
 					// Clear out the element selector in case we open this dialog again
 					selector.clearTemporaryElements();
-					
+
 					// Roll back whatever has been done, so far
 					throw new OperationCanceledException();
 				}
@@ -452,7 +453,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 				modelProperty.clear();
 
 				Object[] result = dialog.getResult();
-				if(result == null) {
+				if (result == null) {
 					return;
 				}
 
@@ -466,7 +467,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	@Override
 	protected void commit() {
 		super.commit();
-		if(!isDisposed()){
+		if (!isDisposed()) {
 			treeViewer.refresh();
 		}
 	}
@@ -475,8 +476,8 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * Handle remove Action
 	 */
 	protected void removeAction() {
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
-		for(Object value : selection.toArray()) {
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
+		for (Object value : selection.toArray()) {
 			modelProperty.remove(value);
 		}
 		treeViewer.setSelection(null);
@@ -488,10 +489,10 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * Handle up Action
 	 */
 	protected void upAction() {
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
-		for(Object o : selection.toArray()) {
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
+		for (Object o : selection.toArray()) {
 			int oldIndex = modelProperty.indexOf(o);
-			if(oldIndex > 0) {
+			if (oldIndex > 0) {
 				modelProperty.move(oldIndex, oldIndex - 1);
 			}
 		}
@@ -506,15 +507,15 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * Handle down Action
 	 */
 	protected void downAction() {
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 
 		int maxIndex = modelProperty.size() - 1;
 
 		Object[] selectionArray = selection.toArray();
-		for(int i = selectionArray.length - 1; i >= 0; i--) {
+		for (int i = selectionArray.length - 1; i >= 0; i--) {
 			Object o = selectionArray[i];
 			int oldIndex = modelProperty.indexOf(o);
-			if(oldIndex < maxIndex) {
+			if (oldIndex < maxIndex) {
 				modelProperty.move(oldIndex, oldIndex + 1);
 			}
 		}
@@ -529,9 +530,9 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * Handle edit Action
 	 */
 	protected void editAction() {
-		IStructuredSelection selection = (IStructuredSelection)treeViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
 
-		if(selection.size() != 1) {
+		if (selection.size() != 1) {
 			return;
 		}
 
@@ -540,19 +541,19 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 		final int index = parentTree.indexOf(selectedItem);
 		final Object currentValue = selection.getFirstElement();
-		
+
 		getOperationExecutor(currentValue).execute(new Runnable() {
-			
+
 			@SuppressWarnings("unchecked")
 			@Override
 			public void run() {
 				Object newValue = referenceFactory.edit(MultipleValueEditor.this.edit, currentValue);
 
-				if(newValue != currentValue && newValue != null) {
+				if (newValue != currentValue && newValue != null) {
 					modelProperty.remove(index);
 					modelProperty.add(index, newValue);
 
-					//commit(); // The commit only occurs in the case where we modify the list (We don't commit direct edition on objects)
+					// commit(); // The commit only occurs in the case where we modify the list (We don't commit direct edition on objects)
 				}
 
 				commit();
@@ -563,9 +564,9 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	/**
 	 * Sets the {@link ReferenceValueFactory} for this editor. The {@link ReferenceValueFactory} is used to create
 	 * new instances and edit existing ones.
-	 * 
+	 *
 	 * @param factory
-	 *        The {@link ReferenceValueFactory} to be used by this editor
+	 *            The {@link ReferenceValueFactory} to be used by this editor
 	 */
 	public void setFactory(ReferenceValueFactory factory) {
 		this.referenceFactory = factory;
@@ -575,15 +576,16 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void widgetDefaultSelected(SelectionEvent e) {
-		if(e.widget == tree && edit.isEnabled()) {
+		if (e.widget == tree && edit.isEnabled()) {
 			editAction();
 		}
 	}
 
 	/**
 	 * Gets the tree viewer associated to this editor
-	 * 
+	 *
 	 * @return the tree viewer associated to this editor
 	 */
 	public TreeViewer getViewer() {
@@ -594,20 +596,21 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * Refreshes the viewer when a change occurs on the ObservableList
 	 * TODO : Problem : a change occurring on an element of the list is not sent here
 	 * TODO : When undoing a command, the change event is not received (Although it modifies the list itself)
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.IChangeListener#handleChange(org.eclipse.core.databinding.observable.ChangeEvent)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void handleChange(ChangeEvent event) {
-		if(!isDisposed()) {
+		if (!isDisposed()) {
 			treeViewer.refresh();
 		}
 	}
 
 	@Override
 	public void dispose() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.removeChangeListener(this);
 		}
 		super.dispose();
@@ -620,7 +623,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	public void setReadOnly(boolean readOnly) {
 		this.readOnly = readOnly;
 		updateControls();
-		//		tree.setEnabled(!readOnly);
+		// tree.setEnabled(!readOnly);
 	}
 
 	/**
@@ -636,7 +639,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 */
 	@Override
 	public void setLabel(String label) {
-		if(this.label == null) {
+		if (this.label == null) {
 			setLayout(new GridLayout(2, false));
 		}
 		super.setLabel(label);
@@ -664,7 +667,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	 * If direct creation is set to true, the {@link ReferenceValueFactory#createObject(org.eclipse.swt.widgets.Control)} method will be called when
 	 * to add button is pressed.
 	 * Otherwise, the dialog will be used.
-	 * 
+	 *
 	 * @param directCreation
 	 */
 	public void setDirectCreation(boolean directCreation) {
@@ -674,7 +677,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	/**
 	 * Adds a ISelectionChangedListener to this widget
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
@@ -683,7 +686,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	/**
 	 * Removes a ISelectionChangedListener from this widget
-	 * 
+	 *
 	 * @param listener
 	 */
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
@@ -692,7 +695,7 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	/**
 	 * Set the maximum number of values selected.
-	 * 
+	 *
 	 * @param upperBound
 	 */
 	public void setUpperBound(int upperBound) {
@@ -701,8 +704,8 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 
 	public void updateBoutons() {
 		/* Disable the bouton 'add' if the upperBound is reached */
-		if(this.upperBound != MANY) {
-			if(modelProperty.size() >= this.upperBound) {
+		if (this.upperBound != MANY) {
+			if (modelProperty.size() >= this.upperBound) {
 				add.setEnabled(false);
 			} else {
 				add.setEnabled(true);
@@ -713,6 +716,6 @@ public class MultipleValueEditor extends AbstractListEditor implements Selection
 	@Override
 	public void changeColorField() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

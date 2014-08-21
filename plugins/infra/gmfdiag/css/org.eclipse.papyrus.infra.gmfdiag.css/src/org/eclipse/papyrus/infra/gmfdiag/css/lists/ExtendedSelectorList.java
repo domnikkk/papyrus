@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.w3c.css.sac.SelectorList;
 
 /**
  * More usable implementation for SelectorList
- * 
+ *
  * @author Camille Letavernier
  */
 public class ExtendedSelectorList extends LinkedList<Selector> implements SelectorList {
@@ -31,7 +31,7 @@ public class ExtendedSelectorList extends LinkedList<Selector> implements Select
 	}
 
 	public ExtendedSelectorList(SelectorList listToCopy) {
-		for(int i = 0; i < listToCopy.getLength(); i++) {
+		for (int i = 0; i < listToCopy.getLength(); i++) {
 			add(listToCopy.item(i));
 		}
 	}
@@ -40,10 +40,12 @@ public class ExtendedSelectorList extends LinkedList<Selector> implements Select
 		super(listToCopy);
 	}
 
+	@Override
 	public int getLength() {
 		return size();
 	}
 
+	@Override
 	public Selector item(int index) {
 		return get(index);
 	}

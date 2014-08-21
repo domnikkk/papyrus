@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,11 +16,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 /**
  * A Factory for reading XWT Files as EMF Resources
- * 
+ *
  * @author Camille Letavernier
  */
 public class XWTModelFactory implements Resource.Factory {
 
+	@Override
 	public Resource createResource(URI uri) {
 		return new XWTResource(uri);
 	}

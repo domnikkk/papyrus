@@ -15,7 +15,7 @@ package org.eclipse.papyrus.infra.emf.newchild;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.CustomFiller#getClassName <em>Class Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.CustomFiller#getClassName <em>Class Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface CustomFiller extends MenuItem {
 	 * Returns the value of the '<em><b>Class Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Class Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Class Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Class Name</em>' attribute.
 	 * @see #setClassName(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.NewchildPackage#getCustomFiller_ClassName()
@@ -44,7 +44,9 @@ public interface CustomFiller extends MenuItem {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.CustomFiller#getClassName <em>Class Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Class Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Class Name</em>' attribute.
 	 * @see #getClassName()
 	 * @generated
 	 */

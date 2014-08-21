@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.contexts.DataContextPackage#getElements <em>Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.contexts.DataContextPackage#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,10 +31,10 @@ public interface DataContextPackage extends DataContextElement {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.views.properties.contexts.DataContextElement#getPackage <em>Package</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.contexts.ContextsPackage#getDataContextPackage_Elements()
 	 * @see org.eclipse.papyrus.views.properties.contexts.DataContextElement#getPackage

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.gmfdiag.properties.modelelement.StyleHandlerPro
 /**
  * A constraint matching an Object on which the Appearance properties can
  * be applied. This constraint dispatches
- * 
+ *
  * @author Camille Letavernier
  */
 public class AppearanceConstraint implements Constraint {
@@ -38,10 +38,10 @@ public class AppearanceConstraint implements Constraint {
 
 	public AppearanceConstraint() {
 		constraints = new LinkedList<Constraint>();
-		for(StyleHandlerProvider provider : StyleHandlerManager.instance.getStyleHandlerProviders()) {
+		for (StyleHandlerProvider provider : StyleHandlerManager.instance.getStyleHandlerProviders()) {
 			try {
 				Constraint constraint = provider.createConstraint();
-				if(constraint == null) {
+				if (constraint == null) {
 					Activator.log.warn("StyleHandlerProvider " + provider.getClass().getName() + " provided an invalid Constraint");
 				} else {
 					constraints.add(constraint);
@@ -53,13 +53,13 @@ public class AppearanceConstraint implements Constraint {
 	}
 
 	public boolean overrides(Constraint constraint) {
-		//Unsupported. The appearance property view constraints are not automatically overrideable
+		// Unsupported. The appearance property view constraints are not automatically overrideable
 		return false;
 	}
 
 	public boolean match(IStructuredSelection selection) {
-		for(Constraint constraint : constraints) {
-			if(constraint.match(selection)) {
+		for (Constraint constraint : constraints) {
+			if (constraint.match(selection)) {
 				return true;
 			}
 		}
@@ -70,7 +70,7 @@ public class AppearanceConstraint implements Constraint {
 		this.descriptor = descriptor;
 		display = getDisplay(descriptor);
 
-		for(Constraint constraint : constraints) {
+		for (Constraint constraint : constraints) {
 			try {
 				constraint.setConstraintDescriptor(descriptor);
 			} catch (Exception ex) {
@@ -84,9 +84,9 @@ public class AppearanceConstraint implements Constraint {
 	}
 
 	private DisplayUnit getDisplay(ConstraintDescriptor descriptor) {
-		if(descriptor.getDisplay() == null) {
-			if(descriptor.eContainer() instanceof ConstraintDescriptor) {
-				return getDisplay((ConstraintDescriptor)descriptor.eContainer());
+		if (descriptor.getDisplay() == null) {
+			if (descriptor.eContainer() instanceof ConstraintDescriptor) {
+				return getDisplay((ConstraintDescriptor) descriptor.eContainer());
 			}
 		}
 		return descriptor.getDisplay();

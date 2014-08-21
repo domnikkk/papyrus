@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,10 +54,11 @@ public class ComponentLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * Gets the source.
 	 *
-	 * @param link the link
-	 * @return the source
-	 * {@inheritDoc}
+	 * @param link
+	 *            the link
+	 * @return the source {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getSource(Element link) {
 		return LinkMappingHelper.getSource(link, new CommonSourceUMLSwitch() {
 
@@ -76,10 +77,11 @@ public class ComponentLinkMappingHelper implements ILinkMappingHelper {
 	/**
 	 * Gets the target.
 	 *
-	 * @param link the link
-	 * @return the target
-	 * {@inheritDoc}
+	 * @param link
+	 *            the link
+	 * @return the target {@inheritDoc}
 	 */
+	@Override
 	public Collection<?> getTarget(Element link) {
 		return LinkMappingHelper.getTarget(link, new CommonTargetUMLSwitch() {
 

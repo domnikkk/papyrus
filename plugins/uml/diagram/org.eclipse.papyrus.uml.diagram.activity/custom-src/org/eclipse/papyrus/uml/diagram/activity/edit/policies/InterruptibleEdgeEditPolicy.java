@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,9 +60,9 @@ import org.eclipse.uml2.uml.ActivityEdge;
 /**
  * InterruptibleEdgeEditPolicy handle all action relative to interruptible Edge.
  * WARNING : All EditPart where this EditPolicy is installed has to implement {@link InterruptibleEdge}
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 
@@ -83,20 +83,20 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 	 */
 	protected void validateConsistency() {
 		try {
-			final IGraphicalEditPart graphicalHost = (IGraphicalEditPart)getHost();
-			final InterruptibleEdge interruptibleEdge = (InterruptibleEdge)getHost();
+			final IGraphicalEditPart graphicalHost = (IGraphicalEditPart) getHost();
+			final InterruptibleEdge interruptibleEdge = (InterruptibleEdge) getHost();
 			EObject resolveSemanticElement = graphicalHost.resolveSemanticElement();
 			ActivityEdge activityEdgeAux;
-			if(resolveSemanticElement instanceof ActivityEdge) {
-				activityEdgeAux = (ActivityEdge)resolveSemanticElement;
+			if (resolveSemanticElement instanceof ActivityEdge) {
+				activityEdgeAux = (ActivityEdge) resolveSemanticElement;
 			} else {
 				activityEdgeAux = null;
 			}
 			final ActivityEdge activityEdge = activityEdgeAux;
 			final View interruptbleEdgeIcon = getInterruptbleEdgeIcon(graphicalHost, interruptibleEdge);
-			//If property == null and there is an view => delete
-			if(activityEdge != null) {
-				if(activityEdge.getInterrupts() == null && interruptbleEdgeIcon != null) {
+			// If property == null and there is an view => delete
+			if (activityEdge != null) {
+				if (activityEdge.getInterrupts() == null && interruptbleEdgeIcon != null) {
 					ICommand destroyCommand = new AbstractTransactionalCommand(graphicalHost.getEditingDomain(), "Destroy Interruptible Edge Icon", null) {
 
 						@Override
@@ -107,16 +107,16 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 					};
 					executeCommand(new ICommandProxy(destroyCommand));
 				}
-				//If property is set and no view exist => create a view
-				if(activityEdge.getInterrupts() != null && interruptbleEdgeIcon == null) {
+				// If property is set and no view exist => create a view
+				if (activityEdge.getInterrupts() != null && interruptbleEdgeIcon == null) {
 					ICommand createCommand = new AbstractTransactionalCommand(graphicalHost.getEditingDomain(), "Create Interruptible Edge Icon", null) {
 
 						@Override
 						protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 							Object model = graphicalHost.getModel();
-							if(model != null) {
-								Node node = ViewService.createNode((View)model, UMLVisualIDRegistry.getType(interruptibleEdge.getInterruptibleEdgeIconVisualID()), UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-								if(node != null) {
+							if (model != null) {
+								Node node = ViewService.createNode((View) model, UMLVisualIDRegistry.getType(interruptibleEdge.getInterruptibleEdgeIconVisualID()), UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+								if (node != null) {
 									return CommandResult.newOKCommandResult(node);
 								} else {
 									return CommandResult.newErrorCommandResult("Unable to create the view for Interruptible Edge label");
@@ -129,7 +129,7 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 				}
 			}
 		} catch (ClassCastException e) {
-			throw new RuntimeException("The host of InterruptibleEdgeEditPolicy should implement IGraphicalEditPart and InterruptibleEdge which refer to an ActivityEdge");////$NON-NLS-0$
+			throw new RuntimeException("The host of InterruptibleEdgeEditPolicy should implement IGraphicalEditPart and InterruptibleEdge which refer to an ActivityEdge");//
 		}
 	}
 
@@ -138,7 +138,7 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 	 */
 	private View getInterruptbleEdgeIcon(IGraphicalEditPart graphicalHost, InterruptibleEdge interruptibleEdge) {
 		View view = graphicalHost.getNotationView();
-		if(view != null) {
+		if (view != null) {
 			return ViewUtil.getChildBySemanticHint(view, String.valueOf(interruptibleEdge.getInterruptibleEdgeIconVisualID()));
 		}
 		return null;
@@ -146,9 +146,9 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * Executes the supplied command inside an <code>unchecked action</code> COPIED FROM CANONICAL EDIT POLICY
-	 * 
+	 *
 	 * @param cmd
-	 *        command that can be executed (i.e., cmd.canExecute() == true)
+	 *            command that can be executed (i.e., cmd.canExecute() == true)
 	 */
 	protected void executeCommand(final Command cmd) {
 		Map<String, Boolean> options = null;
@@ -158,13 +158,15 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 		// do not use the DiagramEditPart.isActivating since ConnectionEditPart's
 		// parent will not be a diagram edit part
 		EditPartViewer viewer = ep.getViewer();
-		if(viewer instanceof DiagramGraphicalViewer) {
-			isActivating = ((DiagramGraphicalViewer)viewer).isInitializing();
+		if (viewer instanceof DiagramGraphicalViewer) {
+			isActivating = ((DiagramGraphicalViewer) viewer).isInitializing();
 		}
-		if(isActivating || !EditPartUtil.isWriteTransactionInProgress((IGraphicalEditPart)getHost(), false, false))
+		if (isActivating || !EditPartUtil.isWriteTransactionInProgress((IGraphicalEditPart) getHost(), false, false)) {
 			options = Collections.singletonMap(Transaction.OPTION_UNPROTECTED, Boolean.TRUE);
-		AbstractEMFOperation operation = new AbstractEMFOperation(((IGraphicalEditPart)getHost()).getEditingDomain(), StringStatics.BLANK, options) {
+		}
+		AbstractEMFOperation operation = new AbstractEMFOperation(((IGraphicalEditPart) getHost()).getEditingDomain(), StringStatics.BLANK, options) {
 
+			@Override
 			protected IStatus doExecute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				cmd.execute();
 				return Status.OK_STATUS;
@@ -185,7 +187,7 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * Get the type of the node to create
-	 * 
+	 *
 	 * @return
 	 */
 	protected int getInterruptibleEdgeIconID() {
@@ -196,36 +198,36 @@ public class InterruptibleEdgeEditPolicy extends AbstractEditPolicy {
 	 * Get the interruptible Edge
 	 */
 	protected InterruptibleEdge getInterruptibleEdgeIcon() {
-		return ((InterruptibleEdge)getHost());
+		return ((InterruptibleEdge) getHost());
 	}
 
 	/**
 	 * Get the Actvity Edge
 	 */
 	protected ActivityEdge getActivtyEdge() {
-		EObject eObject = ((IGraphicalEditPart)getHost()).resolveSemanticElement();
-		if(eObject instanceof ActivityEdge) {
-			return (ActivityEdge)eObject;
+		EObject eObject = ((IGraphicalEditPart) getHost()).resolveSemanticElement();
+		if (eObject instanceof ActivityEdge) {
+			return (ActivityEdge) eObject;
 		}
 		return null;
 	}
 
 	/**
 	 * Get the {@link TransactionalEditingDomain}
-	 * 
+	 *
 	 * @return
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
 		EditPart getHost = getHost();
-		if(getHost instanceof GraphicalEditPart) {
-			GraphicalEditPart host = (GraphicalEditPart)getHost;
+		if (getHost instanceof GraphicalEditPart) {
+			GraphicalEditPart host = (GraphicalEditPart) getHost;
 			return host.getEditingDomain();
 		}
 		Object view = getHost.getModel();
-		if(view instanceof EObject) {
-			EditingDomain editinDomain = AdapterFactoryEditingDomain.getEditingDomainFor((EObject)view);
-			if(editinDomain instanceof TransactionalEditingDomain) {
-				return (TransactionalEditingDomain)editinDomain;
+		if (view instanceof EObject) {
+			EditingDomain editinDomain = AdapterFactoryEditingDomain.getEditingDomainFor((EObject) view);
+			if (editinDomain instanceof TransactionalEditingDomain) {
+				return (TransactionalEditingDomain) editinDomain;
 			}
 		}
 		return null;

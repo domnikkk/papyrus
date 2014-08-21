@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.diagram.component.providers.UMLElementTypes;
 
 /**
  * This class is used to launch command to create associationClass
- * 
+ *
  * @author Patrick Tessier
  */
 public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
@@ -112,13 +112,15 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		// request
 		createElementCommand = targetEP.getCommand(new EditCommandRequestWrapper((CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class), request.getExtendedData()));
 		// create the create semantic element wrapper command
-		if (null == createElementCommand)
+		if (null == createElementCommand) {
 			return null;
+		}
 		SemanticCreateCommand semanticCommand = new SemanticCreateCommand(requestAdapter, createElementCommand);
 		// get the view command
 		Command viewCommand = getConnectionCompleteCommand(request);
-		if (null == viewCommand)
+		if (null == viewCommand) {
 			return null;
+		}
 		// form the compound command and return
 		CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 		cc.compose(semanticCommand);
@@ -127,9 +129,10 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Command getCommand(Request request) {
 		// we have to distinguish the case where this is an association class
 		if (REQ_CONNECTION_END.equals(request.getType())) {
@@ -154,7 +157,7 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * used to obtain the transactional edit domain
-	 * 
+	 *
 	 * @return the current transactional edit domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {

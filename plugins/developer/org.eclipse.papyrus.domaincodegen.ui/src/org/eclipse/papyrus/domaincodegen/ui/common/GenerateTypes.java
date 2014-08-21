@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -41,15 +41,15 @@ public class GenerateTypes {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param modelURI
-	 *        is the URI of the model.
+	 *            is the URI of the model.
 	 * @param targetFolder
-	 *        is the output folder
+	 *            is the output folder
 	 * @param arguments
-	 *        are the other arguments
+	 *            are the other arguments
 	 * @throws IOException
-	 *         Thrown when the output cannot be saved.
+	 *             Thrown when the output cannot be saved.
 	 * @generated
 	 */
 	public GenerateTypes(URI modelURI, File targetFolder, List<? extends Object> arguments) {
@@ -60,15 +60,15 @@ public class GenerateTypes {
 
 	/**
 	 * Launches the generation.
-	 * 
+	 *
 	 * @param monitor
-	 *        This will be used to display progress information to the user.
+	 *            This will be used to display progress information to the user.
 	 * @throws IOException
-	 *         Thrown when the output cannot be saved.
+	 *             Thrown when the output cannot be saved.
 	 * @generated
 	 */
 	public void doGenerate(IProgressMonitor monitor) throws IOException {
-		if(!targetFolder.exists()) {
+		if (!targetFolder.exists()) {
 			targetFolder.mkdirs();
 		}
 

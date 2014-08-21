@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.configuration.impl;
 
@@ -33,9 +33,9 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl#getFeature <em>Feature</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl#getOrigin <em>Origin</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl#getCreationType <em>Creation Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl#getFeature <em>Feature</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl#getOrigin <em>Origin</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.ModelAutoCreateImpl#getCreationType <em>Creation Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +46,7 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFeature()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getCreationType() <em>Creation Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCreationType()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getCreationType() <em>Creation Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCreationType()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ModelAutoCreateImpl() {
@@ -84,6 +88,7 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,15 +99,17 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFeature() {
 		if (feature != null && feature.eIsProxy()) {
-			InternalEObject oldFeature = (InternalEObject)feature;
-			feature = (EReference)eResolveProxy(oldFeature);
+			InternalEObject oldFeature = (InternalEObject) feature;
+			feature = (EReference) eResolveProxy(oldFeature);
 			if (feature != oldFeature) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE, oldFeature, feature));
+				}
 			}
 		}
 		return feature;
@@ -111,6 +118,7 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference basicGetFeature() {
@@ -120,23 +128,26 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFeature(EReference newFeature) {
 		EReference oldFeature = feature;
 		feature = newFeature;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE, oldFeature, feature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getOrigin() {
 		EClass origin = basicGetOrigin();
-		return origin != null && origin.eIsProxy() ? (EClass)eResolveProxy((InternalEObject)origin) : origin;
+		return origin != null && origin.eIsProxy() ? (EClass) eResolveProxy((InternalEObject) origin) : origin;
 	}
 
 	/**
@@ -147,18 +158,21 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 		OwningRule rule = (OwningRule) this.eContainer();
 		EList<ModelAutoCreate> list = rule.getNewModelPath();
 		int index = list.indexOf(this);
-		if (index == 0)
+		if (index == 0) {
 			return rule.getElement();
+		}
 		String id = list.get(index - 1).getCreationType();
 		IElementType etype = ElementTypeRegistry.getInstance().getType(id);
-		if (etype == null)
+		if (etype == null) {
 			return null;
+		}
 		return etype.getEClass();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getCreationType() {
@@ -168,31 +182,38 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCreationType(String newCreationType) {
 		String oldCreationType = creationType;
 		creationType = newCreationType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE, oldCreationType, creationType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
-				if (resolve) return getFeature();
-				return basicGetFeature();
-			case ConfigurationPackage.MODEL_AUTO_CREATE__ORIGIN:
-				if (resolve) return getOrigin();
-				return basicGetOrigin();
-			case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
-				return getCreationType();
+		case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
+			if (resolve) {
+				return getFeature();
+			}
+			return basicGetFeature();
+		case ConfigurationPackage.MODEL_AUTO_CREATE__ORIGIN:
+			if (resolve) {
+				return getOrigin();
+			}
+			return basicGetOrigin();
+		case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
+			return getCreationType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,17 +221,18 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
-				setFeature((EReference)newValue);
-				return;
-			case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
-				setCreationType((String)newValue);
-				return;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
+			setFeature((EReference) newValue);
+			return;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
+			setCreationType((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -218,17 +240,18 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
-				setFeature((EReference)null);
-				return;
-			case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
-				setCreationType(CREATION_TYPE_EDEFAULT);
-				return;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
+			setFeature((EReference) null);
+			return;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
+			setCreationType(CREATION_TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -236,17 +259,18 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
-				return feature != null;
-			case ConfigurationPackage.MODEL_AUTO_CREATE__ORIGIN:
-				return basicGetOrigin() != null;
-			case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
-				return CREATION_TYPE_EDEFAULT == null ? creationType != null : !CREATION_TYPE_EDEFAULT.equals(creationType);
+		case ConfigurationPackage.MODEL_AUTO_CREATE__FEATURE:
+			return feature != null;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__ORIGIN:
+			return basicGetOrigin() != null;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
+			return CREATION_TYPE_EDEFAULT == null ? creationType != null : !CREATION_TYPE_EDEFAULT.equals(creationType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -254,11 +278,14 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (creationType: ");
@@ -267,4 +294,4 @@ public class ModelAutoCreateImpl extends MinimalEObjectImpl.Container implements
 		return result.toString();
 	}
 
-} //ModelAutoCreateImpl
+} // ModelAutoCreateImpl

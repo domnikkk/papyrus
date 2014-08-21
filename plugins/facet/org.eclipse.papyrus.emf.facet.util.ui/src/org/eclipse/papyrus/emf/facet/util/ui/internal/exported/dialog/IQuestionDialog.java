@@ -29,7 +29,7 @@ public interface IQuestionDialog {
 
 	/**
 	 * Get the user's answer
-	 * 
+	 *
 	 * @return <ul>
 	 *         <li><code>true</code> if the user clicked "Yes"
 	 *         <li><code>false</code> if the user clicked "No"

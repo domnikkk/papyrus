@@ -22,12 +22,12 @@ import org.eclipse.swt.graphics.Rectangle;
 /**
  * This object can used as context to find the best label provider and get the text to display.
  * Its allows to have the context of the value to use it in the label provider
- * 
+ *
  * This objects can be used to get the label of an object which is not the current value of the cell, using the label provider used by the cell.
  * example to get the value of the enumeration literal in the combo box for uml stereotype properties
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 
 public class LabelProviderCellContextElementWrapper extends LabelProviderContextElementWrapper implements ILabelProviderCellContextElementWrapper {
@@ -38,26 +38,26 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 	/**
 	 * *
 	 * Constructor.
-	 * 
+	 *
 	 * @param cell
-	 *        the cell for which we want the label/icon, ...
+	 *            the cell for which we want the label/icon, ...
 	 * @param registry
-	 *        the registry used by nattable
+	 *            the registry used by nattable
 	 */
 	public LabelProviderCellContextElementWrapper(ILayerCell cell, final IConfigRegistry registry) {
 		this(cell, cell.getDataValue(), registry);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param cell
-	 *        the cell
+	 *            the cell
 	 * @param value
-	 *        a value
+	 *            a value
 	 * @param registry
-	 *        the registry used by nattable
+	 *            the registry used by nattable
 	 */
 	public LabelProviderCellContextElementWrapper(ILayerCell cell, final Object value, final IConfigRegistry registry) {
 		super(value, registry);
@@ -66,7 +66,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getConfigLabels()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -77,7 +77,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getOriginColumnPosition()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -88,7 +88,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getOriginRowPosition()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -99,7 +99,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getLayer()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -110,7 +110,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * Gets the column position.
-	 * 
+	 *
 	 * @return the column position
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getColumnPosition()
 	 */
@@ -122,7 +122,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getRowPosition()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -133,7 +133,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getColumnIndex()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -144,7 +144,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getRowIndex()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -155,7 +155,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getColumnSpan()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -166,7 +166,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getRowSpan()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -177,7 +177,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#isSpannedCell()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -188,7 +188,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getDisplayMode()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -199,7 +199,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getDataValue()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -209,7 +209,7 @@ public class LabelProviderCellContextElementWrapper extends LabelProviderContext
 
 	/**
 	 * @see org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell#getBounds()
-	 * 
+	 *
 	 * @return
 	 */
 

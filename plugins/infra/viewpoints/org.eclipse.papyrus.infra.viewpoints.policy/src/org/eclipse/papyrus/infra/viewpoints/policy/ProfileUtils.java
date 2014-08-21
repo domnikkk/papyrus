@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 /**
  * Helper class for the ProfileHelper extension point
- * 
+ *
  * @author Laurent Wouters
  */
 class ProfileUtils {
@@ -41,7 +41,7 @@ class ProfileUtils {
 
 	/**
 	 * Gets a instance of the <code>IProfileHelper</code> interface
-	 * 
+	 *
 	 * @return an instance of <code>IProfileHelper</code>
 	 */
 	public static IProfileHelper getProfileHelper() {
@@ -54,8 +54,9 @@ class ProfileUtils {
 			for (int j = 0; j != elements.length; j++) {
 				try {
 					IProfileHelper instance = (IProfileHelper) elements[j].createExecutableExtension("class");
-					if (instance != null)
+					if (instance != null) {
 						return instance;
+					}
 				} catch (CoreException e) {
 				}
 			}
@@ -65,7 +66,7 @@ class ProfileUtils {
 
 	/**
 	 * Represents a default implementation of the profile helper
-	 * 
+	 *
 	 * @author Laurent Wouters
 	 */
 	private static class DefaultProfileHelper implements IProfileHelper {

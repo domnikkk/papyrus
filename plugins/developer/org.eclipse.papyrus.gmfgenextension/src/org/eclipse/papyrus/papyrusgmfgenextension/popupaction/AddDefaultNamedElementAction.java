@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -91,15 +91,16 @@ public class AddDefaultNamedElementAction extends Action {
 
 	/**
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
-	 * 
+	 *
 	 * @param action
 	 */
+	@Override
 	public void run(IAction action) {
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenDiagram) {
-				GenDiagram genDiagram = ((GenDiagram)eObject);
+			if (eObject instanceof GenDiagram) {
+				GenDiagram genDiagram = ((GenDiagram) eObject);
 				createTopNode(genDiagram);
 			}
 		}
@@ -107,9 +108,9 @@ public class AddDefaultNamedElementAction extends Action {
 
 	/**
 	 * Creates the top node.
-	 * 
+	 *
 	 * @param genDiagram
-	 *        the gen diagram
+	 *            the gen diagram
 	 */
 	public void createTopNode(GenDiagram genDiagram) {
 		URI uri_notation = URI.createPlatformPluginURI(URI_NOTATION_GENMODEL, false);
@@ -134,9 +135,9 @@ public class AddDefaultNamedElementAction extends Action {
 
 	/**
 	 * Adds behaviors.
-	 * 
+	 *
 	 * @param topNode
-	 *        the top node
+	 *            the top node
 	 */
 	public void addBehavior(GenTopLevelNode topNode) {
 		// add behavior
@@ -148,9 +149,9 @@ public class AddDefaultNamedElementAction extends Action {
 
 	/**
 	 * Adds the model facet.
-	 * 
+	 *
 	 * @param topNode
-	 *        the top node
+	 *            the top node
 	 */
 	public void addModelFacet(GenTopLevelNode topNode) {
 		URI uri_uml = URI.createPlatformPluginURI(URI_UML_GENMODEL, false);

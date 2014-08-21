@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 AtoS.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,6 +16,7 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.jface.window.Window;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
@@ -25,9 +26,9 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * A Wizard util if clients want to create a wizard for tool actions
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public abstract class AbstractToolWizard extends Wizard implements ITool {
 
@@ -43,8 +44,8 @@ public abstract class AbstractToolWizard extends Wizard implements ITool {
 
 	public EObject getEObject() {
 		Object model = currentEditPart.getModel();
-		if(model instanceof View) {
-			View view = (View)model;
+		if (model instanceof View) {
+			View view = (View) model;
 			return view.getElement();
 		}
 		return null;
@@ -84,9 +85,9 @@ public abstract class AbstractToolWizard extends Wizard implements ITool {
 			final TransactionalEditingDomain editingDomain = ServiceUtilsForEditPart.getInstance().getTransactionalEditingDomain(editPart);
 			setTransactionalEditingDomain(editingDomain);
 			WizardDialog dialog = new WizardDialog(Display.getDefault().getActiveShell(), this);
-			if(dialog.open() == WizardDialog.OK) {
+			if (dialog.open() == Window.OK) {
 				final RecordingCommand iCmd = getCommand();
-				if(iCmd.canExecute()) {
+				if (iCmd.canExecute()) {
 					// execute the command
 					editingDomain.runExclusive(new Runnable() {
 

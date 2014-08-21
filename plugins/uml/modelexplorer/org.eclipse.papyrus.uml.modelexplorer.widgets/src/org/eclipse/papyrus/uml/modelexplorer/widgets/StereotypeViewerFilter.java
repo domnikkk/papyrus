@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,29 +29,29 @@ public class StereotypeViewerFilter extends MetaclassViewerFilter {
 	@Override
 	public boolean isVisible(Viewer viewer, Object parentElement, Object element) {
 
-		if(metaclass == null) {
+		if (metaclass == null) {
 			return false;
 		}
 
-		if(metaclass instanceof EClass) {
+		if (metaclass instanceof EClass) {
 			return super.isVisible(viewer, parentElement, element);
 		}
 
-		if(!(metaclass instanceof Stereotype)) {
+		if (!(metaclass instanceof Stereotype)) {
 			return false;
 		}
 
-		Stereotype stereotype = (Stereotype)metaclass;
+		Stereotype stereotype = (Stereotype) metaclass;
 
-		if(element instanceof IAdaptable) {
-			EObject eObject = (EObject)((IAdaptable)element).getAdapter(EObject.class);
-			if(eObject != null) {
+		if (element instanceof IAdaptable) {
+			EObject eObject = (EObject) ((IAdaptable) element).getAdapter(EObject.class);
+			if (eObject != null) {
 				element = eObject;
 			}
 		}
 
-		if(element instanceof Element) {
-			return !((Element)element).getAppliedSubstereotypes(stereotype).isEmpty();
+		if (element instanceof Element) {
+			return !((Element) element).getAppliedSubstereotypes(stereotype).isEmpty();
 		}
 
 		return false;

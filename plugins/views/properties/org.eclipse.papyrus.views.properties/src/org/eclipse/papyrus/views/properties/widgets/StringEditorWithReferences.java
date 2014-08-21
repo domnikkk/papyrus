@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A StringEditor with support for inserting references to EObjects (Via a TextReferenceHelper)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class StringEditorWithReferences extends org.eclipse.papyrus.infra.widgets.editors.StringEditor implements SelectionListener {
 
@@ -96,14 +96,14 @@ public class StringEditorWithReferences extends org.eclipse.papyrus.infra.widget
 	}
 
 	public void widgetSelected(SelectionEvent e) {
-		if(e.widget == insertReferenceButton) {
+		if (e.widget == insertReferenceButton) {
 			insertReferenceAction();
 		}
 	}
 
 	protected void insertReferenceAction() {
-		if(referenceHelper == null) {
-			//The widget is not properly set. We cannot handle references
+		if (referenceHelper == null) {
+			// The widget is not properly set. We cannot handle references
 			Activator.log.warn("This widget is not properly configured. It cannot handle reference insertion");
 			return;
 		}
@@ -113,37 +113,37 @@ public class StringEditorWithReferences extends org.eclipse.papyrus.infra.widget
 		dialog.setContentProvider(new EncapsulatedContentProvider(referenceContentProvider));
 		dialog.setLabelProvider(labelProvider);
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result.length == 0) {
+			if (result.length == 0) {
 				return;
 			}
 
 			Object resultElement = result[0];
-			if(!(resultElement instanceof EObject)) {
+			if (!(resultElement instanceof EObject)) {
 				return;
 			}
 
-			EObject objectToReference = (EObject)resultElement;
+			EObject objectToReference = (EObject) resultElement;
 
 			String currentText = text.getText();
 			int caretPosition = text.getCaretPosition();
 
 			String newText = referenceHelper.insertReference(objectToReference, currentText, caretPosition);
-			if(newText.length() == currentText.length()) {
+			if (newText.length() == currentText.length()) {
 				return;
 			}
 
 			int caretShift = newText.length() - currentText.length();
 			int newCaretPosition = caretPosition + caretShift;
 
-			//This should not happen with the standard ReferenceHelper as it is supposed to insert additional text into the current text
-			//However, some ReferenceHelper implementations might replace the current text 
-			if(newCaretPosition < 0) {
+			// This should not happen with the standard ReferenceHelper as it is supposed to insert additional text into the current text
+			// However, some ReferenceHelper implementations might replace the current text
+			if (newCaretPosition < 0) {
 				newCaretPosition = 0;
 			}
 
-			if(newCaretPosition > newText.length()) {
+			if (newCaretPosition > newText.length()) {
 				newCaretPosition = newText.length();
 			}
 
@@ -155,7 +155,7 @@ public class StringEditorWithReferences extends org.eclipse.papyrus.infra.widget
 	}
 
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing
+		// Nothing
 	}
 
 	public void setLabelProvider(ILabelProvider labelProvider) {

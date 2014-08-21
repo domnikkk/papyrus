@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -32,7 +32,7 @@ public class LinkLabelDragEditPolicy extends NonResizableLabelEditPolicy {
 	@Override
 	@SuppressWarnings("rawtypes")
 	protected List createSelectionHandles() {
-		MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+		MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 		mh.setBorder(null);
 		return Collections.singletonList(mh);
 	}

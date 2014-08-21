@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,7 +64,7 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -72,9 +72,9 @@ public class Activator extends AbstractUIPlugin implements org.eclipse.ui.IStart
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.IStartup#earlyStartup()
-	 * 
+	 *
 	 */
 	public void earlyStartup() {
 		// TODO Auto-generated method stub

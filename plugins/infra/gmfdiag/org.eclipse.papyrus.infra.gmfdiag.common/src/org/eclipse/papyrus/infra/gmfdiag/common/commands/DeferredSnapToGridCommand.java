@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEALIST - Initial API and implementation (Adapted code from DeferredLayoutCommand)
  *
  *****************************************************************************/
@@ -49,11 +49,11 @@ import org.eclipse.papyrus.infra.gmfdiag.common.snap.NodeSnapHelper;
  * to have the editparts when creating a snap command so this command defers
  * the creation of the layout command until execution time at which point it can
  * get the editparts from the editpart registry using the view adapters.
- * 
+ *
  * @author vlorenzo
  */
-//TODO : creation from the palette should use me
-//TODO : move action could use me???
+// TODO : creation from the palette should use me
+// TODO : move action could use me???
 public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 	/** the IAdaptables from which an View can be retrieved */
@@ -64,13 +64,13 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Constructor for <code>DefferedSnapToGridCommand</code>.
-	 * 
+	 *
 	 * @param editingDomain
-	 *        the editing domain through which model changes are made
+	 *            the editing domain through which model changes are made
 	 * @param viewAdapters
-	 *        the IAdaptables from which an IView can be retrieved
+	 *            the IAdaptables from which an IView can be retrieved
 	 * @param containerEP
-	 *        the container editpart used to get the editpart registry
+	 *            the container editpart used to get the editpart registry
 	 */
 	public DeferredSnapToGridCommand(TransactionalEditingDomain editingDomain, List<?> viewAdapters, IGraphicalEditPart containerEP) {
 		super(editingDomain, "Deferred Snap to grid command", null); //$NON-NLS-1$
@@ -79,16 +79,17 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#getAffectedFiles()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public List getAffectedFiles() {
-		if(containerEP != null) {
-			View view = (View)containerEP.getModel();
-			if(view != null) {
+		if (containerEP != null) {
+			View view = (View) containerEP.getModel();
+			if (view != null) {
 				IFile f = WorkspaceSynchronizer.getFile(view.eResource());
 				return f != null ? Collections.singletonList(f) : Collections.EMPTY_LIST;
 			}
@@ -98,8 +99,9 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Executes a layout command with all the editparts for the view adapters.
-	 * 
+	 *
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 
 		final RunnableWithResult<List<IGraphicalEditPart>> refreshRunnable = new RunnableWithResult<List<IGraphicalEditPart>>() {
@@ -108,18 +110,22 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 			private List<IGraphicalEditPart> result;
 
+			@Override
 			public List<IGraphicalEditPart> getResult() {
 				return result;
 			}
 
+			@Override
 			public void setStatus(IStatus status) {
 				this.status = status;
 			}
 
+			@Override
 			public IStatus getStatus() {
 				return status;
 			}
 
+			@Override
 			public void run() {
 				containerEP.refresh();
 
@@ -129,33 +135,33 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 				List<IGraphicalEditPart> editParts = new ArrayList<IGraphicalEditPart>(viewAdapters.size());
 				Map<?, ?> epRegistry = containerEP.getRoot().getViewer().getEditPartRegistry();
-				for(Iterator<?> iter = viewAdapters.iterator(); iter.hasNext();) {
-					IAdaptable ad = (IAdaptable)iter.next();
-					View view = (View)ad.getAdapter(View.class);
+				for (Iterator<?> iter = viewAdapters.iterator(); iter.hasNext();) {
+					IAdaptable ad = (IAdaptable) iter.next();
+					View view = (View) ad.getAdapter(View.class);
 					Object ep = epRegistry.get(view);
-					if(ep instanceof IGraphicalEditPart) {
-						editParts.add((IGraphicalEditPart)ep);
+					if (ep instanceof IGraphicalEditPart) {
+						editParts.add((IGraphicalEditPart) ep);
 					}
 				}
 
-				if(editParts.isEmpty()) {
+				if (editParts.isEmpty()) {
 					result = editParts;
 					return;
 				}
 
-				//probably useless
-				//				Set<IGraphicalEditPart> layoutSet = new HashSet<IGraphicalEditPart>(editParts.size());
-				//				layoutSet.addAll(editParts);
+				// probably useless
+				// Set<IGraphicalEditPart> layoutSet = new HashSet<IGraphicalEditPart>(editParts.size());
+				// layoutSet.addAll(editParts);
 				//
-				//				// refresh source and target connections of any shapes in the container not being considered for layout
-				//				Iterator<?> iter = containerEP.getChildren().iterator();
-				//				while(iter.hasNext()) {
-				//					Object obj = iter.next();
-				//					if(!layoutSet.contains(obj) && obj instanceof IGraphicalEditPart) {
-				//						IGraphicalEditPart ep = (IGraphicalEditPart)obj;
-				//						ep.refresh();
-				//					}
-				//				}
+				// // refresh source and target connections of any shapes in the container not being considered for layout
+				// Iterator<?> iter = containerEP.getChildren().iterator();
+				// while(iter.hasNext()) {
+				// Object obj = iter.next();
+				// if(!layoutSet.contains(obj) && obj instanceof IGraphicalEditPart) {
+				// IGraphicalEditPart ep = (IGraphicalEditPart)obj;
+				// ep.refresh();
+				// }
+				// }
 
 				result = editParts;
 			}
@@ -163,19 +169,19 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 		EditPartUtil.synchronizeRunnableToMainThread(containerEP, refreshRunnable);
 		List<IGraphicalEditPart> editParts = refreshRunnable.getResult();
-		if(editParts == null || editParts.isEmpty()) {
+		if (editParts == null || editParts.isEmpty()) {
 			return CommandResult.newOKCommandResult();
 		}
 
-		//	add an arrange command, to layout the related shapes
+		// add an arrange command, to layout the related shapes
 		CompoundCommand cc = new CompoundCommand("Snap Command"); //$NON-NLS-1$
-		for(final IGraphicalEditPart current : editParts) {
-			final SnapToHelper snapHelper = (SnapToHelper)((IAdaptable)current).getAdapter(SnapToHelper.class);
+		for (final IGraphicalEditPart current : editParts) {
+			final SnapToHelper snapHelper = (SnapToHelper) ((IAdaptable) current).getAdapter(SnapToHelper.class);
 			final NodeSnapHelper nodeSnapHelper;
-			final PrecisionRectangle boundsFigure = new PrecisionRectangle(((GraphicalEditPart)current).getFigure().getBounds());
+			final PrecisionRectangle boundsFigure = new PrecisionRectangle(((GraphicalEditPart) current).getFigure().getBounds());
 			current.getFigure().translateToAbsolute(boundsFigure);
 			final PrecisionRectangle result = new PrecisionRectangle(boundsFigure);
-			if(current instanceof BorderedBorderItemEditPart) {
+			if (current instanceof BorderedBorderItemEditPart) {
 				nodeSnapHelper = new BorderNodeSnapHelper(snapHelper, boundsFigure);
 			} else {
 				nodeSnapHelper = new NodeSnapHelper(snapHelper, boundsFigure);
@@ -186,30 +192,31 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 			request.setLocation(boundsFigure.getLocation());
 			nodeSnapHelper.snapPoint(request);
 			request.setLocation(result.getLocation());
-			cc.add(((EditPart)current).getCommand(request));
+			cc.add(((EditPart) current).getCommand(request));
 		}
 
 
-		if(!cc.isEmpty() && cc.canExecute()) {
+		if (!cc.isEmpty() && cc.canExecute()) {
 			cc.execute();
 		}
 		return CommandResult.newOKCommandResult();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#cleanup()
-	 * 
+	 *
 	 */
+	@Override
 	protected void cleanup() {
-		containerEP = null;//for garbage collection
+		containerEP = null;// for garbage collection
 		viewAdapters = null;
 		super.cleanup();
 	}
 
 	/**
 	 * gets the container edit part's figure
-	 * 
+	 *
 	 * @return the container figure
 	 */
 	protected IFigure getContainerFigure() {
@@ -218,7 +225,7 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * gets the container edit part
-	 * 
+	 *
 	 * @return the container edit part
 	 */
 	protected IGraphicalEditPart getContainerEP() {
@@ -228,7 +235,7 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 	/**
 	 * gets a list of <code>IAdaptable</code> that can adapt to <code>
 	 * View</code>
-	 * 
+	 *
 	 * @return view adapters
 	 */
 	protected List<?> getViewAdapters() {
@@ -236,9 +243,9 @@ public class DeferredSnapToGridCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

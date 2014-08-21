@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelection#getFields <em>Fields</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelection#getContextElements <em>Context Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelection#getFields <em>Fields</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelection#getContextElements <em>Context Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,6 +36,7 @@ public interface FieldSelection extends EObject {
 	 * If the meaning of the '<em>Fields</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Fields</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getFieldSelection_Fields()
 	 * @model containment="true"
@@ -51,6 +52,7 @@ public interface FieldSelection extends EObject {
 	 * If the meaning of the '<em>Context Elements</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Context Elements</em>' containment reference list.
 	 * @see org.eclipse.papyrus.customization.properties.generation.fieldselection.FieldSelectionPackage#getFieldSelection_ContextElements()
 	 * @model containment="true"

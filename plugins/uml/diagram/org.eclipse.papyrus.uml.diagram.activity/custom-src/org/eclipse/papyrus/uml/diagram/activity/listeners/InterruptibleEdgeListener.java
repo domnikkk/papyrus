@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -68,21 +68,22 @@ import com.google.common.collect.Iterables;
 
 /**
  * This listener handle Interruptible Edge
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTriggerListener {
 
 	/**
 	 * Id of all Visual ID of the interruptible Icon
 	 */
-	private static ImmutableBiMap<EClass, String> INTERRUPTIBLE_EDGE_ICON_VISUAL_ID_COLLECTION = ImmutableBiMap.of(UMLPackage.Literals.OBJECT_FLOW, String.valueOf(ObjectFlowInterruptibleIconEditPart.VISUAL_ID), UMLPackage.Literals.CONTROL_FLOW, String.valueOf(ControlFlowInterruptibleIconEditPart.VISUAL_ID));
+	private static ImmutableBiMap<EClass, String> INTERRUPTIBLE_EDGE_ICON_VISUAL_ID_COLLECTION = ImmutableBiMap.of(UMLPackage.Literals.OBJECT_FLOW, String.valueOf(ObjectFlowInterruptibleIconEditPart.VISUAL_ID), UMLPackage.Literals.CONTROL_FLOW,
+			String.valueOf(ControlFlowInterruptibleIconEditPart.VISUAL_ID));
 
 	private static NotificationFilter FEATURE_FILTER = null;
 
 	public static NotificationFilter getFEATURE_FILTER() {
-		if(FEATURE_FILTER == null) {
+		if (FEATURE_FILTER == null) {
 			FEATURE_FILTER = NotificationFilter.createFeatureFilter(UMLPackage.Literals.ACTIVITY_EDGE__INTERRUPTS);
 		}
 		return FEATURE_FILTER;
@@ -90,41 +91,40 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 
 	/**
 	 * get the edit part registry
-	 * 
+	 *
 	 * @return
 	 */
 	protected DiagramEditPart getDiagramEditPart() {
 		IWorkbench wb = PlatformUI.getWorkbench();
 		IWorkbenchPage page = wb.getActiveWorkbenchWindow().getActivePage();
 		IEditorPart editor = page.getActiveEditor();
-		if(editor instanceof IMultiDiagramEditor) {
-			IMultiDiagramEditor papyrusEditor = (IMultiDiagramEditor)editor;
-			return (DiagramEditPart)papyrusEditor.getAdapter(DiagramEditPart.class);
+		if (editor instanceof IMultiDiagramEditor) {
+			IMultiDiagramEditor papyrusEditor = (IMultiDiagramEditor) editor;
+			return (DiagramEditPart) papyrusEditor.getAdapter(DiagramEditPart.class);
 		}
 		return null;
 	}
 
 	/**
-	 * This command will react on a SET event of the structural feature describe in
-	 * {@link InterruptibleEdgeListener#isCorrectStructuralfeature(EStructuralFeature)} This will create a new view if the newValue != null or delete
+	 * This command will react on a SET event of the structural feature describe in {@link InterruptibleEdgeListener#isCorrectStructuralfeature(EStructuralFeature)} This will create a new view if the newValue != null or delete
 	 * it if null
 	 */
 	@Override
 	protected ICommand getModificationCommand(Notification notif) {
-		if(Notification.SET == notif.getEventType()) {
+		if (Notification.SET == notif.getEventType()) {
 			CompositeCommand cc = new CompositeCommand("Interruptible Edge Command");//
-			//Handling views
-			final Iterable<IGraphicalEditPart> edgesEditPart = DiagramEditPartsUtil.getChildrenByEObject((EObject)notif.getNotifier(), getDiagramEditPart(), true);
+			// Handling views
+			final Iterable<IGraphicalEditPart> edgesEditPart = DiagramEditPartsUtil.getChildrenByEObject((EObject) notif.getNotifier(), getDiagramEditPart(), true);
 			InterruptibleEdgeRequest request = new InterruptibleEdgeRequest();
 			Iterable<View> views = getReferencingView(notif);
-			if(notif.getNewValue() != null) {
-				//handle create view
+			if (notif.getNewValue() != null) {
+				// handle create view
 				request.setType(InterruptibleEdgeRequest.SET_INTERRUPTIBLE_EDGE);
-				for(View view : views) {
+				for (View view : views) {
 					try {
 						String visualID = INTERRUPTIBLE_EDGE_ICON_VISUAL_ID_COLLECTION.get(view.getElement().eClass());
 						ICommand createViewCommand = createInterruptibleEdgeIcon(view, visualID);
-						if(createViewCommand != null && createViewCommand.canExecute()) {
+						if (createViewCommand != null && createViewCommand.canExecute()) {
 							cc.compose(createViewCommand);
 						}
 					} catch (NullPointerException e) {
@@ -132,13 +132,13 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 					}
 				}
 			} else {
-				//handle delete view
+				// handle delete view
 				request.setType(InterruptibleEdgeRequest.UNSET_INTERRUPTIBLE_EDGE);
-				for(View view : views) {
+				for (View view : views) {
 					try {
 						String visualID = INTERRUPTIBLE_EDGE_ICON_VISUAL_ID_COLLECTION.get(view.getElement().eClass());
 						ICommand destroyCommand = destroyInterruptibleIcon(view, visualID);
-						if(destroyCommand != null && destroyCommand.canExecute()) {
+						if (destroyCommand != null && destroyCommand.canExecute()) {
 							cc.compose(destroyCommand);
 						}
 					} catch (NullPointerException e) {
@@ -146,11 +146,11 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 					}
 				}
 			}
-			for(IGraphicalEditPart edgeEditPart : edgesEditPart) {
-				if(edgeEditPart != null && edgeEditPart instanceof InterruptibleEdge && edgeEditPart.getModel() instanceof View) {
-					//Ask for the edit if something more else has to be done
+			for (IGraphicalEditPart edgeEditPart : edgesEditPart) {
+				if (edgeEditPart != null && edgeEditPart instanceof InterruptibleEdge && edgeEditPart.getModel() instanceof View) {
+					// Ask for the edit if something more else has to be done
 					Command command = edgeEditPart.getCommand(request);
-					if(command != null && command.canExecute()) {
+					if (command != null && command.canExecute()) {
 						cc.compose(new CommandProxy(command));
 					}
 				}
@@ -163,7 +163,7 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 	/**
 	 * Get all the view from Notation Model which represent the notifier.
 	 * Will only return the view of the same type than the notifier view
-	 * 
+	 *
 	 * @param notif
 	 * @param edgeEditPart
 	 * @return
@@ -171,9 +171,9 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 	public Iterable<View> getReferencingView(Notification notif) {
 		final ActivityEdge element = getElement(notif);
 		Resource eResource = element.eResource();
-		if(eResource != null) {
+		if (eResource != null) {
 			ECrossReferenceAdapter adapter = ECrossReferenceAdapter.getCrossReferenceAdapter(eResource.getResourceSet());
-			if(adapter == null) {
+			if (adapter == null) {
 				adapter = new ECrossReferenceAdapter();
 			}
 			Collection<Setting> inverseReferences = adapter.getInverseReferences(element);
@@ -187,29 +187,29 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 
 	private TransactionalEditingDomain getEditingDomain(View model) {
 		DiagramEditPart diagramEditPart = getDiagramEditPart();
-		if(diagramEditPart != null) {
+		if (diagramEditPart != null) {
 			return diagramEditPart.getEditingDomain();
 		}
 		EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(model);
-		if(editingDomain instanceof TransactionalEditingDomain) {
-			return (TransactionalEditingDomain)editingDomain;
+		if (editingDomain instanceof TransactionalEditingDomain) {
+			return (TransactionalEditingDomain) editingDomain;
 		}
 		return null;
 	}
 
 	/**
 	 * Create the command to withdraw interruptible edge icon from the activity edge
-	 * 
+	 *
 	 * @return
 	 */
 	private ICommand destroyInterruptibleIcon(final View model, final String visualID) {
 		TransactionalEditingDomain editingDomain = getEditingDomain(model);
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			AbstractTransactionalCommand cmd = new AbstractTransactionalCommand(editingDomain, "Destroy Interruptible Edge Icon", null) {
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					if(model != null) {
+					if (model != null) {
 						View interruptibleEdgeIconView = ViewUtil.getChildBySemanticHint(model, visualID);
 						ViewUtil.destroy(interruptibleEdgeIconView);
 						return CommandResult.newOKCommandResult();
@@ -224,19 +224,19 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 
 	/**
 	 * Create the Interruptible Edge Icon View
-	 * 
+	 *
 	 * @return Command to be executed or {@link UnexecutableCommand#INSTANCE} if unable to create
 	 */
 	private ICommand createInterruptibleEdgeIcon(final View model, final String visualID) {
 		TransactionalEditingDomain editingDomain = getEditingDomain(model);
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			AbstractTransactionalCommand cmd = new AbstractTransactionalCommand(editingDomain, "Create Interruptible Edge Icon", null) {
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					if(model != null) {
+					if (model != null) {
 						Node node = ViewService.createNode(model, visualID, UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
-						if(node != null) {
+						if (node != null) {
 							return CommandResult.newOKCommandResult(node);
 						} else {
 							return CommandResult.newErrorCommandResult("Unable to create the view for Interruptible Edge label");
@@ -282,8 +282,8 @@ public class InterruptibleEdgeListener extends AbstractPapyrusModifcationTrigger
 
 	protected ActivityEdge getElement(Notification notif) {
 		Object element = notif.getNotifier();
-		if(element instanceof ActivityEdge) {
-			return (ActivityEdge)element;
+		if (element instanceof ActivityEdge) {
+			return (ActivityEdge) element;
 		}
 		return null;
 	}

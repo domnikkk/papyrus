@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -40,8 +40,8 @@ import org.eclipse.papyrus.emf.facet.efacet.QuerySet;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl#getQueries <em>Queries</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl#getQueries <em>Queries</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QuerySetImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -55,6 +55,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	 * The cached value of the '{@link #getQueries() <em>Queries</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQueries()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -67,6 +68,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -79,6 +81,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -90,6 +93,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -101,6 +105,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -113,6 +118,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -127,6 +133,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -138,6 +145,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -153,6 +161,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -161,7 +170,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case EFacetPackage.QUERY_SET__QUERIES:
-			return ((InternalEList<?>)getQueries()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getQueries()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,6 +178,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -187,6 +197,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -197,10 +208,10 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 		switch (featureID) {
 		case EFacetPackage.QUERY_SET__QUERIES:
 			getQueries().clear();
-			getQueries().addAll((Collection<? extends Query>)newValue);
+			getQueries().addAll((Collection<? extends Query>) newValue);
 			return;
 		case EFacetPackage.QUERY_SET__NAME:
-			setName((String)newValue);
+			setName((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -209,6 +220,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -229,6 +241,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -247,6 +260,7 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -264,4 +278,4 @@ public class QuerySetImpl extends EObjectImpl implements QuerySet {
 		return result.toString();
 	}
 
-} //QuerySetImpl
+} // QuerySetImpl

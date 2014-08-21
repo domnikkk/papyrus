@@ -30,11 +30,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Descriptors} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DescriptorsItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class DescriptorsItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DescriptorsItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class DescriptorsItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,11 +69,11 @@ public class DescriptorsItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -86,6 +89,7 @@ public class DescriptorsItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,6 +104,7 @@ public class DescriptorsItemProvider
 	 * This returns Descriptors.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +116,7 @@ public class DescriptorsItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,6 +129,7 @@ public class DescriptorsItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,10 +137,10 @@ public class DescriptorsItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Descriptors.class)) {
-			case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
-			case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ServicedescriptorsPackage.DESCRIPTORS__REGISTRIES:
+		case ServicedescriptorsPackage.DESCRIPTORS__SERVICE_SETS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -143,6 +150,7 @@ public class DescriptorsItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -150,20 +158,21 @@ public class DescriptorsItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.DESCRIPTORS__REGISTRIES,
-				 ServicedescriptorsFactory.eINSTANCE.createRegistryDesc()));
+						ServicedescriptorsFactory.eINSTANCE.createRegistryDesc()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.DESCRIPTORS__SERVICE_SETS,
-				 ServicedescriptorsFactory.eINSTANCE.createServiceSetDesc()));
+						ServicedescriptorsFactory.eINSTANCE.createServiceSetDesc()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

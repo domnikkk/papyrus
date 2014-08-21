@@ -1,15 +1,15 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  *    Céline Janssens - inspired by IBM class RubberbandSelectionTool : modify the calculateNewSelection method and add constructors
- *    
+ *
  ****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.selection;
 
@@ -25,6 +25,7 @@ import javax.swing.plaf.basic.BasicComboBoxUI.KeyHandler;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Cursors;
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.FigureCanvas;
 import org.eclipse.draw2d.Graphics;
@@ -144,16 +145,16 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	 * Creates a new MarqueeSelectionTool.
 	 */
 	public PapyrusRubberbandSelectionTool() {
-		setDefaultCursor(SharedCursors.CROSS);
+		setDefaultCursor(Cursors.CROSS);
 		setUnloadWhenFinished(false);
 	}
 
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param behavior
-	 *        <li>BEHAVIOR_OBJECT_INCLUDE = 1</li> <li>BEHAVIOR_OBJECT_TOUCHED = 2</li>
+	 *            <li>BEHAVIOR_OBJECT_INCLUDE = 1</li> <li>BEHAVIOR_OBJECT_TOUCHED = 2</li>
 	 */
 	public PapyrusRubberbandSelectionTool(int behavior) {
 		this();
@@ -163,17 +164,17 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param behavior
-	 *        Define what behavior is expected by the tool.
-	 * 
-	 *        <li>BEHAVIOR_OBJECT_INCLUDE = 1</li> <li>BEHAVIOR_OBJECT_TOUCHED = 2</li>
+	 *            Define what behavior is expected by the tool.
+	 *
+	 *            <li>BEHAVIOR_OBJECT_INCLUDE = 1</li> <li>BEHAVIOR_OBJECT_TOUCHED = 2</li>
 	 * @param nodeSelectable
-	 *        true if Nodes should be selected
+	 *            true if Nodes should be selected
 	 * @param labelSelectable
-	 *        true if Labels should be selected
+	 *            true if Labels should be selected
 	 * @param connectionSelectable
-	 *        true if Connections should be selected
+	 *            true if Connections should be selected
 	 */
 	public PapyrusRubberbandSelectionTool(int behavior, boolean nodeSelectable, boolean labelSelectable, boolean connectionSelectable) {
 		this(behavior);
@@ -186,7 +187,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Defines if Nodes must be part of the selection
-	 * 
+	 *
 	 * @return selectNodes
 	 */
 	public boolean isSelectNodes() {
@@ -195,7 +196,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Set if the Nodes should be part of the selection.
-	 * 
+	 *
 	 * @param selectNodes
 	 */
 	public void setSelectNodes(boolean selectNodes) {
@@ -204,7 +205,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Defines if Labels must be part of the selection
-	 * 
+	 *
 	 * @return selectLabels
 	 */
 	public boolean isSelectLabels() {
@@ -213,7 +214,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Set if the Labels should be part of the selection.
-	 * 
+	 *
 	 * @param selectLabels
 	 */
 	public void setSelectLabels(boolean selectLabels) {
@@ -224,7 +225,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Defines if Connection must be part of the selection
-	 * 
+	 *
 	 * @return selectNodes
 	 */
 	public boolean isSelectConnections() {
@@ -233,7 +234,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Set if the Connections should be part of the selection.
-	 * 
+	 *
 	 * @param selectConnections
 	 */
 	public void setSelectConnections(boolean selectConnections) {
@@ -244,7 +245,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * Calculate the selection of the Rubberband: <li>List all the eligible Edit parts</li> <li>Keep only if include in the Marquee rectangle</li> <li>
 	 * Add in the selection if the EditPart type (connection, Label and node) is requested into the selection</li>
-	 * 
+	 *
 	 * @return List of EditParts which meet the conditions of the selection
 	 */
 	private List calculateNewSelection() {
@@ -253,25 +254,25 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 		Iterator<EditPart> children = getAllChildren().iterator();
 
 		// Calculate new selections based on which children fall
-		// inside the marquee selection rectangle.  
+		// inside the marquee selection rectangle.
 		// Select Nodes, Labels and Connections
-		while(children.hasNext()) {
+		while (children.hasNext()) {
 
-			EditPart child = (EditPart)children.next();
+			EditPart child = children.next();
 
-			if(!child.isSelectable() || child.getTargetEditPart(MARQUEE_REQUEST) != child) {
+			if (!child.isSelectable() || child.getTargetEditPart(MARQUEE_REQUEST) != child) {
 				continue;
 			}
 
 			// if the child is part of the Marquee selection add it to the list of selected EditParts
-			if(isPartOfMarqueeSelection(marqueeBehavior, child)) {
+			if (isPartOfMarqueeSelection(marqueeBehavior, child)) {
 
 				// if the child is a node and the nodes must be selected then add the child to the selection
-				if(isNode(child) && isSelectNodes()) {
+				if (isNode(child) && isSelectNodes()) {
 					newSelections.add(child);
-				} else if(isLabel(child) && isSelectLabels()) {
+				} else if (isLabel(child) && isSelectLabels()) {
 					newSelections.add(child);
-				} else if(isConnection(child) && isSelectConnections()) {
+				} else if (isConnection(child) && isSelectConnections()) {
 					newSelections.add(child);
 				} else {
 					continue;
@@ -284,7 +285,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Check if an edit Part is a Node
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean isNode(EditPart editPart) {
@@ -295,7 +296,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Check if an edit Part is a Label
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean isLabel(EditPart editPart) {
@@ -306,7 +307,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Check if an edit Part is a Connection
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean isConnection(EditPart editPart) {
@@ -316,12 +317,12 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Calculate if the editPart should be part of the selection depending on the wished marquee behavior.
-	 * 
+	 *
 	 * @param marqueeBehavior
-	 *        wished behavior for the selection (BEHAVIOR_OBJECT_INCLUDED, BEHAVIOR_OBJECT_TOUCHED, ...)
+	 *            wished behavior for the selection (BEHAVIOR_OBJECT_INCLUDED, BEHAVIOR_OBJECT_TOUCHED, ...)
 	 * @param editPart
-	 *        EditPart for which the selection is calculated
-	 * 
+	 *            EditPart for which the selection is calculated
+	 *
 	 * @return <b>true</b> if the editPart is part of the selection.
 	 */
 	private boolean isPartOfMarqueeSelection(int marqueeBehaviorType, EditPart editPart) {
@@ -331,15 +332,15 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 		boolean isTouched = false;
 		boolean isPartOfSelection = false;
 
-		IFigure figure = ((GraphicalEditPart)editPart).getFigure();
+		IFigure figure = ((GraphicalEditPart) editPart).getFigure();
 		Rectangle marqueeBounds = getMarqueeBounds();
 
 		Rectangle figureRectangle;
-		if(editPart instanceof ConnectionEditPart) {
-			// RATLC00569348 For connection, get the bounds of connection points rather than connection figure since the 
-			// figure's bounds contain the bounds of all connection editParts and would require selection rectangle 
+		if (editPart instanceof ConnectionEditPart) {
+			// RATLC00569348 For connection, get the bounds of connection points rather than connection figure since the
+			// figure's bounds contain the bounds of all connection editParts and would require selection rectangle
 			// to be larger than expected in some cases
-			figureRectangle = ((Connection)figure).getPoints().getBounds().getCopy();
+			figureRectangle = ((Connection) figure).getPoints().getBounds().getCopy();
 		} else {
 			figureRectangle = figure.getBounds().getCopy();
 		}
@@ -352,11 +353,11 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 		// If the objects are intersected by the Marquee Rectangle
 		isTouched = isTouchedByMarquee(marqueeBounds, figureRectangle);
 
-		if(marqueeBehaviorType == BEHAVIOR_OBJECT_INCLUDED) {
+		if (marqueeBehaviorType == BEHAVIOR_OBJECT_INCLUDED) {
 			// Part of the selection only if inside
 			isPartOfSelection = isInside;
 
-		} else if(marqueeBehaviorType == BEHAVIOR_OBJECT_TOUCHED) {
+		} else if (marqueeBehaviorType == BEHAVIOR_OBJECT_TOUCHED) {
 			// Part of the selection if inside or touched by the marquee
 			isPartOfSelection = isInside || isTouched;
 
@@ -367,11 +368,11 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Define if the EditPart intersects the marquee rectangle.
-	 * 
+	 *
 	 * @param marqueeBounds
-	 *        The Marquee rectangle
+	 *            The Marquee rectangle
 	 * @param figureBounds
-	 *        The EditPart Figure Rectangle
+	 *            The EditPart Figure Rectangle
 	 * @return true if the intersection is not null
 	 */
 	private boolean isTouchedByMarquee(Rectangle marqueeBounds, Rectangle figureBounds) {
@@ -383,7 +384,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Default getter of the Marquee Behavior
-	 * 
+	 *
 	 * @return behavior: <li>BEHAVIOR_OBJECT_INCLUDE = 1</li> <li>BEHAVIOR_OBJECT_TOUCHED = 2</li>
 	 */
 	public int getMarqueeBehavior() {
@@ -392,7 +393,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Default setter
-	 * 
+	 *
 	 * @param marqueeBehavior
 	 */
 	public void setMarqueeBehavior(int marqueeBehavior) {
@@ -407,8 +408,9 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * Erases feedback if necessary and puts the tool into the terminal state.
 	 */
+	@Override
 	public void deactivate() {
-		if(isInState(STATE_DRAG_IN_PROGRESS)) {
+		if (isInState(STATE_DRAG_IN_PROGRESS)) {
 			eraseMarqueeFeedback();
 			eraseTargetFeedback();
 		}
@@ -418,7 +420,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	}
 
 	private void eraseMarqueeFeedback() {
-		if(marqueeRectangleFigure != null) {
+		if (marqueeRectangleFigure != null) {
 			removeFeedback(marqueeRectangleFigure);
 			marqueeRectangleFigure = null;
 		}
@@ -426,12 +428,12 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	}
 
 	protected void eraseTargetFeedback() {
-		if(selectedEditParts == null) {
+		if (selectedEditParts == null) {
 			return;
 		}
 		ListIterator<EditPart> oldEditParts = selectedEditParts.listIterator();
-		while(oldEditParts.hasNext()) {
-			EditPart editPart = (EditPart)oldEditParts.next();
+		while (oldEditParts.hasNext()) {
+			EditPart editPart = oldEditParts.next();
 			editPart.eraseTargetFeedback(getTargetRequest());
 		}
 	}
@@ -447,10 +449,10 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 		// List all the editPart children
 		List<EditPart> children = editPart.getChildren();
 
-		// for each child, add the child and all its connections to the currentSelection 
-		for(int i = 0; i < children.size(); i++) {
+		// for each child, add the child and all its connections to the currentSelection
+		for (int i = 0; i < children.size(); i++) {
 
-			GraphicalEditPart child = (GraphicalEditPart)children.get(i);
+			GraphicalEditPart child = (GraphicalEditPart) children.get(i);
 
 			currentSelection.add(child);
 
@@ -462,21 +464,21 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 			// Add all the connection and they children into the List of all the Objects to be selected
 			// Connection children are all its labels
-			for(int j = 0; j < sourceConnections.size(); j++) {
+			for (int j = 0; j < sourceConnections.size(); j++) {
 
 				// Add the connection
-				currentSelection.add((GraphicalEditPart)sourceConnections.get(j));
+				currentSelection.add((GraphicalEditPart) sourceConnections.get(j));
 				// Add the connection children (Labels)
-				getAllChildren((EditPart)sourceConnections.get(j), currentSelection);
+				getAllChildren((EditPart) sourceConnections.get(j), currentSelection);
 			}
 
 			// Add all the connection and they children into the List of all the Objects to be selected
-			for(int k = 0; k < targetConnections.size(); k++) {
+			for (int k = 0; k < targetConnections.size(); k++) {
 
 				// Add the connection
-				currentSelection.add((GraphicalEditPart)targetConnections.get(k));
+				currentSelection.add((GraphicalEditPart) targetConnections.get(k));
 				// Add the connection children (Labels)
-				getAllChildren((EditPart)targetConnections.get(k), currentSelection);
+				getAllChildren((EditPart) targetConnections.get(k), currentSelection);
 
 			}
 
@@ -491,7 +493,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	 * of the root editpart
 	 */
 	private Set<EditPart> getAllChildren() {
-		if(allChildren.isEmpty()) {
+		if (allChildren.isEmpty()) {
 			allChildren = getAllChildren(getCurrentViewer().getContents(), new HashSet<EditPart>());
 		}
 		return allChildren;
@@ -500,6 +502,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#getCommandName()
 	 */
+	@Override
 	protected String getCommandName() {
 		return REQ_SELECTION;
 	}
@@ -507,12 +510,13 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#getDebugName()
 	 */
+	@Override
 	protected String getDebugName() {
 		return "Marquee Tool";//$NON-NLS-1$
 	}
 
 	protected IFigure getMarqueeFeedbackFigure() {
-		if(marqueeRectangleFigure == null) {
+		if (marqueeRectangleFigure == null) {
 			marqueeRectangleFigure = new MarqueeRectangleFigure();
 			addFeedback(marqueeRectangleFigure);
 		}
@@ -525,15 +529,15 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * Gets the relative bounds of the marquee feedback figure.
-	 * 
+	 *
 	 * @return
 	 */
 	private Rectangle getMarqueeBounds() {
-		if(getMarqueeFeedbackFigure() == null) {
+		if (getMarqueeFeedbackFigure() == null) {
 			return new Rectangle();
 		}
 		Rectangle rect = new Rectangle();
-		if(feedBackStartLocation == null) {
+		if (feedBackStartLocation == null) {
 			rect = getMarqueeSelectionRectangle();
 			getMarqueeFeedbackFigure().translateToRelative(rect);
 			feedBackStartLocation = rect.getLocation();
@@ -552,7 +556,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	}
 
 	protected Request getTargetRequest() {
-		if(targetRequest == null) {
+		if (targetRequest == null) {
 			targetRequest = createTargetRequest();
 		}
 		return targetRequest;
@@ -561,19 +565,21 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonDown(int)
 	 */
+	@Override
 	protected boolean handleButtonDown(int button) {
-		if(!isGraphicalViewer()) {
+		if (!isGraphicalViewer()) {
 			return true;
 		}
-		if(button != 1) {
+		if (button != 1) {
 			setState(STATE_INVALID);
 			handleInvalidInput();
 		}
-		if(stateTransition(STATE_INITIAL, STATE_DRAG_IN_PROGRESS)) {
-			if(getCurrentInput().isControlKeyDown())
+		if (stateTransition(STATE_INITIAL, STATE_DRAG_IN_PROGRESS)) {
+			if (getCurrentInput().isControlKeyDown()) {
 				setSelectionMode(TOGGLE_MODE);
-			else if(getCurrentInput().isShiftKeyDown())
+			} else if (getCurrentInput().isShiftKeyDown()) {
 				setSelectionMode(APPEND_MODE);
+			}
 
 			// RATLC00740277:
 			// clear current focus (if any) before we start computing selections,
@@ -593,7 +599,7 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	private void clearFocus() {
 		EditPart focusPart = getCurrentViewer().getFocusEditPart();
 
-		if(focusPart != null) {
+		if (focusPart != null) {
 			// replace the current focus with the contents edit part, which effectively
 			// blocks unwanted selectability of compartments within the previous
 			// focus edit part
@@ -605,9 +611,10 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	 * Extends the inherited method by first restoring the current viewer's focus
 	 * edit part to the default (which is the last selected edit part). This undoes
 	 * the work-around that sets the diagram root as the focus.
-	 * 
+	 *
 	 * @see #clearFocus()
 	 */
+	@Override
 	protected void handleFinished() {
 		getCurrentViewer().setFocus(null);
 
@@ -618,8 +625,9 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonUp(int)
 	 */
+	@Override
 	protected boolean handleButtonUp(int button) {
-		if(stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
+		if (stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
 			eraseTargetFeedback();
 			performMarqueeSelect();
 			eraseMarqueeFeedback();
@@ -631,14 +639,15 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#handleDragInProgress()
 	 */
+	@Override
 	protected boolean handleDragInProgress() {
-		if(isInState(STATE_DRAG | STATE_DRAG_IN_PROGRESS)) {
+		if (isInState(STATE_DRAG | STATE_DRAG_IN_PROGRESS)) {
 
 			showMarqueeFeedback();
 			eraseTargetFeedback();
 			selectedEditParts = calculateNewSelection();
 			showTargetFeedback();
-			SelectInDiagramHelper.exposeLocation((FigureCanvas)getCurrentViewer().getControl(), getLocation());
+			SelectInDiagramHelper.exposeLocation((FigureCanvas) getCurrentViewer().getControl(), getLocation());
 
 		}
 		return true;
@@ -647,8 +656,9 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#handleFocusLost()
 	 */
+	@Override
 	protected boolean handleFocusLost() {
-		if(isInState(STATE_DRAG | STATE_DRAG_IN_PROGRESS)) {
+		if (isInState(STATE_DRAG | STATE_DRAG_IN_PROGRESS)) {
 			handleFinished();
 			return true;
 		}
@@ -657,9 +667,10 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 	/**
 	 * This method is called when mouse or keyboard input is invalid and erases the feedback.
-	 * 
+	 *
 	 * @return <code>true</code>
 	 */
+	@Override
 	protected boolean handleInvalidInput() {
 		eraseTargetFeedback();
 		eraseMarqueeFeedback();
@@ -670,14 +681,15 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	 * Handles high-level processing of a key down event.
 	 * KeyEvents are forwarded to the current viewer's {@link KeyHandler},
 	 * via {@link KeyHandler#keyPressed(KeyEvent)}.
-	 * 
+	 *
 	 * @see AbstractTool#handleKeyDown(KeyEvent)
 	 */
+	@Override
 	protected boolean handleKeyDown(KeyEvent e) {
-		if(super.handleKeyDown(e)) {
+		if (super.handleKeyDown(e)) {
 			return true;
 		}
-		if(getCurrentViewer().getKeyHandler() != null && getCurrentViewer().getKeyHandler().keyPressed(e)) {
+		if (getCurrentViewer().getKeyHandler() != null && getCurrentViewer().getKeyHandler().keyPressed(e)) {
 			return true;
 		}
 		return false;
@@ -694,16 +706,16 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 		// If in multi select mode, add the new selections to the already
 		// selected group; otherwise, clear the selection and select the new group
-		if(getSelectionMode() == APPEND_MODE) {
-			for(int i = 0; i < newSelections.size(); i++) {
-				EditPart editPart = (EditPart)newSelections.get(i);
+		if (getSelectionMode() == APPEND_MODE) {
+			for (int i = 0; i < newSelections.size(); i++) {
+				EditPart editPart = (EditPart) newSelections.get(i);
 				viewer.appendSelection(editPart);
 			}
-		} else if(getSelectionMode() == TOGGLE_MODE) {
+		} else if (getSelectionMode() == TOGGLE_MODE) {
 			List selected = new ArrayList(viewer.getSelectedEditParts());
-			for(int i = 0; i < newSelections.size(); i++) {
-				EditPart editPart = (EditPart)newSelections.get(i);
-				if(editPart.getSelected() != EditPart.SELECTED_NONE) {
+			for (int i = 0; i < newSelections.size(); i++) {
+				EditPart editPart = (EditPart) newSelections.get(i);
+				if (editPart.getSelected() != EditPart.SELECTED_NONE) {
 					selected.remove(editPart);
 				} else {
 					selected.add(editPart);
@@ -718,18 +730,19 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	/**
 	 * @see org.eclipse.gef.Tool#setViewer(org.eclipse.gef.EditPartViewer)
 	 */
+	@Override
 	public void setViewer(EditPartViewer viewer) {
-		if(viewer == getCurrentViewer()) {
+		if (viewer == getCurrentViewer()) {
 			return;
 		}
 		super.setViewer(viewer);
-		//If cursor is over a Graphical editor it will be a cross to indicate that the selectionTool is a Marquee tool
-		if(viewer instanceof GraphicalViewer) {
-			setDefaultCursor(SharedCursors.CROSS);
+		// If cursor is over a Graphical editor it will be a cross to indicate that the selectionTool is a Marquee tool
+		if (viewer instanceof GraphicalViewer) {
+			setDefaultCursor(Cursors.CROSS);
 		} else {
-			setDefaultCursor(SharedCursors.NO);
+			setDefaultCursor(Cursors.NO);
 		}
-		if(viewer != null) {
+		if (viewer != null) {
 			weakReference = new WeakReference(viewer);
 		}
 	}
@@ -743,27 +756,29 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 	}
 
 	protected void showTargetFeedback() {
-		for(int i = 0; i < selectedEditParts.size(); i++) {
-			EditPart editPart = (EditPart)selectedEditParts.get(i);
+		for (int i = 0; i < selectedEditParts.size(); i++) {
+			EditPart editPart = selectedEditParts.get(i);
 			editPart.showTargetFeedback(getTargetRequest());
 		}
 	}
 
 	/**
 	 * Convenience method to removes a figure from the feedback layer.
-	 * 
+	 *
 	 * @param figure
-	 *        the figure being removed
+	 *            the figure being removed
 	 */
+	@Override
 	protected void removeFeedback(IFigure figure) {
 		EditPartViewer viewer = getCurrentViewer();
-		if((viewer == null) && (weakReference != null)) {
-			viewer = (EditPartViewer)weakReference.get();
+		if ((viewer == null) && (weakReference != null)) {
+			viewer = (EditPartViewer) weakReference.get();
 		}
-		if(viewer != null) {
-			LayerManager lm = (LayerManager)viewer.getEditPartRegistry().get(LayerManager.ID);
-			if(lm == null)
+		if (viewer != null) {
+			LayerManager lm = (LayerManager) viewer.getEditPartRegistry().get(LayerManager.ID);
+			if (lm == null) {
 				return;
+			}
 			lm.getLayer(LayerConstants.FEEDBACK_LAYER).remove(figure);
 		}
 	}
@@ -775,11 +790,12 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 		private boolean schedulePaint = true;
 
-		private static final int DELAY = 110; //animation delay in millisecond
+		private static final int DELAY = 110; // animation delay in millisecond
 
 		/**
 		 * @see org.eclipse.draw2d.Figure#paintFigure(org.eclipse.draw2d.Graphics)
 		 */
+		@Override
 		protected void paintFigure(Graphics graphics) {
 			Rectangle graphicBounds = getBounds().getCopy();
 			graphics.translate(getLocation());
@@ -812,12 +828,13 @@ public class PapyrusRubberbandSelectionTool extends AbstractTool {
 
 			graphics.translate(getLocation().getNegated());
 
-			if(schedulePaint) {
+			if (schedulePaint) {
 				Display.getCurrent().timerExec(DELAY, new Runnable() {
 
+					@Override
 					public void run() {
 						offset++;
-						if(offset > 5) {
+						if (offset > 5) {
 							offset = 0;
 						}
 						schedulePaint = true;

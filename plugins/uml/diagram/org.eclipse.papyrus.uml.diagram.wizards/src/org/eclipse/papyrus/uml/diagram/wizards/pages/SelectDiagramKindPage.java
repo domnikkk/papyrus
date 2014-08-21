@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     Tatiana Fesenko(CEA) - improved look&feel
@@ -50,7 +50,7 @@ import org.eclipse.swt.widgets.Text;
 /**
  * This WizardPage to select the kind of Papyrus Diagram. List all kind of diagrams registered with
  * creationCommand attribute in PapyrusDiagram Eclipse extension.
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  * @author Tatiana Fesenko
  */
@@ -88,9 +88,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Instantiates a new select diagram kind page.
-	 * 
+	 *
 	 * @param categoryProvider
-	 *        the category provider
+	 *            the category provider
 	 */
 	public SelectDiagramKindPage(CategoryProvider categoryProvider) {
 		this(true, categoryProvider, DEFAULT_CREATION_COMMAND_REGISTRY);
@@ -98,13 +98,13 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Instantiates a new select diagram kind page.
-	 * 
+	 *
 	 * @param allowTemplates
-	 *        the allow templates
+	 *            the allow templates
 	 * @param categoryProvider
-	 *        the category provider
+	 *            the category provider
 	 * @param creationCommandRegistry
-	 *        the creation command registry
+	 *            the creation command registry
 	 */
 	public SelectDiagramKindPage(boolean allowTemplates, CategoryProvider categoryProvider, ICreationCommandRegistry creationCommandRegistry) {
 		super(PAGE_ID);
@@ -117,9 +117,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the control.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent {@inheritDoc}
+	 *            the parent {@inheritDoc}
 	 */
 	public void createControl(Composite parent) {
 		Composite plate = new Composite(parent, SWT.NONE);
@@ -157,9 +157,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Sets the settings helper.
-	 * 
+	 *
 	 * @param helper
-	 *        the new settings helper
+	 *            the new settings helper
 	 */
 	protected void setSettingsHelper(SettingsHelper helper) {
 		mySettingsHelper = helper;
@@ -167,18 +167,18 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Sets the visible.
-	 * 
+	 *
 	 * @param visible
-	 *        the new visible
+	 *            the new visible
 	 * @see org.eclipse.jface.dialogs.DialogPage#setVisible(boolean)
 	 */
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
-		if(visible) {
+		if (visible) {
 			fillInTables(getDiagramCategories());
 			validatePage();
-			if(!allowTemplates) {
+			if (!allowTemplates) {
 				selectTemplateComposite.disable();
 			}
 		}
@@ -186,12 +186,12 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Fill in tables.
-	 * 
+	 *
 	 * @param categories
-	 *        the categories
+	 *            the categories
 	 */
 	private void fillInTables(String[] categories) {
-		if(categories == null || categories.length == 0) {
+		if (categories == null || categories.length == 0) {
 			return;
 		}
 		diagramKindTableViewer.setInput(categories);
@@ -203,7 +203,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the uml model template path.
-	 * 
+	 *
 	 * @return the template path
 	 */
 	public String getTemplatePath() {
@@ -212,7 +212,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the notation model template path.
-	 * 
+	 *
 	 * @return the notation template path
 	 */
 	public String getNotationTemplatePath() {
@@ -221,7 +221,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the di model template path.
-	 * 
+	 *
 	 * @return the di template path
 	 */
 	public String getDiTemplatePath() {
@@ -230,7 +230,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the template plugin id.
-	 * 
+	 *
 	 * @return the template plugin id
 	 */
 	public String getTemplatePluginId() {
@@ -239,7 +239,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the diagram category.
-	 * 
+	 *
 	 * @return the diagram category
 	 */
 	private String[] getDiagramCategories() {
@@ -249,7 +249,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the diagram name.
-	 * 
+	 *
 	 * @return the new diagram name
 	 */
 	public String getDiagramName() {
@@ -258,7 +258,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Templates enabled.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	public boolean templatesEnabled() {
@@ -267,15 +267,15 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the selected command descriptors.
-	 * 
+	 *
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 * @return the selected command descriptors
 	 */
 	public List<ViewPrototype> getSelectedPrototypes(String categoryId) {
 		ViewPrototype[] selected = getSelectedPrototypes();
 		List<ViewPrototype> commands = new ArrayList<ViewPrototype>();
-		for(int i = 0; i < selected.length; i++) {
+		for (int i = 0; i < selected.length; i++) {
 			for (Category category : selected[i].getCategories()) {
 				if (category.getName().equals(categoryId)) {
 					commands.add(selected[i]);
@@ -288,9 +288,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the model template composite.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createModelTemplateComposite(Composite composite) {
 		Group group = createGroup(composite, Messages.SelectDiagramKindPage_load_template_group);
@@ -299,9 +299,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the diagram kind form.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createDiagramKindForm(Composite composite) {
 		Group group = createGroup(composite, Messages.SelectDiagramKindPage_select_kind_group);
@@ -326,7 +326,7 @@ public class SelectDiagramKindPage extends WizardPage {
 			 * {@inheritDoc}
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				if(e.detail == SWT.CHECK) {
+				if (e.detail == SWT.CHECK) {
 					validatePage();
 				}
 			}
@@ -345,7 +345,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the diagram kind label provider.
-	 * 
+	 *
 	 * @return the i base label provider
 	 */
 	protected IBaseLabelProvider createDiagramKindLabelProvider() {
@@ -355,11 +355,11 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @return the group
 	 */
 	private static Group createGroup(Composite parent, String name) {
@@ -376,9 +376,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the name form.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createNameForm(Composite composite) {
 		Group group = createGroup(composite, Messages.SelectDiagramKindPage_diagram_name_group);
@@ -397,9 +397,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Creates the remember current selection form.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createRememberCurrentSelectionForm(Composite composite) {
 		Composite plate = new Composite(composite, SWT.NONE);
@@ -419,27 +419,27 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Validate page.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	private boolean validatePage() {
-		if(getDiagramName() == null || getDiagramName().length() == 0) {
+		if (getDiagramName() == null || getDiagramName().length() == 0) {
 			updateStatus(Messages.SelectDiagramKindPage_diagram_name_is_empty);
 			return false;
 		}
-		//		if(getCreationCommands().isEmpty()) {
-		//			updateStatus("At least one diagram kind should be selected.");
-		//			return false;
-		//		}
+		// if(getCreationCommands().isEmpty()) {
+		// updateStatus("At least one diagram kind should be selected.");
+		// return false;
+		// }
 		updateStatus(null);
 		return true;
 	}
 
 	/**
 	 * Update page status.
-	 * 
+	 *
 	 * @param message
-	 *        is the error message.
+	 *            is the error message.
 	 */
 	private void updateStatus(String message) {
 		setErrorMessage(message);
@@ -448,7 +448,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Checks if is remember current selection.
-	 * 
+	 *
 	 * @return true, if is remember current selection
 	 */
 	public boolean isRememberCurrentSelection() {
@@ -457,9 +457,9 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the selected diagram kinds.
-	 * 
+	 *
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 * @return the selected diagram kinds
 	 */
 	public String[] getSelectedDiagramKinds(String categoryId) {
@@ -468,7 +468,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the selected diagram kind descriptors.
-	 * 
+	 *
 	 * @return the selected diagram kind descriptors
 	 */
 	protected ViewPrototype[] getSelectedPrototypes() {
@@ -479,13 +479,13 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Select default diagram kinds.
-	 * 
+	 *
 	 * @param categories
-	 *        the categories
+	 *            the categories
 	 */
 	private void selectDefaultDiagramKinds(String[] categories) {
 		Set<String> kinds = new HashSet<String>();
-		for(String category : categories) {
+		for (String category : categories) {
 			kinds.addAll(mySettingsHelper.getDefaultDiagramKinds(category));
 		}
 		CreationCommandDescriptor[] elementsToCheck = findCreationCommandDescriptorsFor(kinds);
@@ -494,16 +494,16 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Find creation command descriptors for.
-	 * 
+	 *
 	 * @param kinds
-	 *        the kinds
+	 *            the kinds
 	 * @return the creation command descriptor[]
 	 */
 	protected CreationCommandDescriptor[] findCreationCommandDescriptorsFor(Collection<String> kinds) {
 		List<CreationCommandDescriptor> result = new ArrayList<CreationCommandDescriptor>();
 		Collection<CreationCommandDescriptor> availableDescriptors = getCreationCommandRegistry().getCommandDescriptors();
-		for(CreationCommandDescriptor desc : availableDescriptors) {
-			if(kinds.contains(desc.getCommandId())) {
+		for (CreationCommandDescriptor desc : availableDescriptors) {
+			if (kinds.contains(desc.getCommandId())) {
 				result.add(desc);
 			}
 		}
@@ -512,23 +512,23 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Select default diagram templates.
-	 * 
+	 *
 	 * @param categories
-	 *        the categories
+	 *            the categories
 	 */
 	private void selectDefaultDiagramTemplates(String[] categories) {
 		List<String> defaultTemplates = new ArrayList<String>();
 		List<Object> availableTemplates = new ArrayList<Object>();
-		for(String category : categories) {
+		for (String category : categories) {
 			defaultTemplates.addAll(mySettingsHelper.getDefaultTemplates(category));
 		}
 
 		availableTemplates.addAll(Arrays.asList(selectTemplateComposite.getContentProvider().getElements(categories)));
 
-		for(Object next : availableTemplates) {
-			ModelTemplateDescription desc = (ModelTemplateDescription)next;
+		for (Object next : availableTemplates) {
+			ModelTemplateDescription desc = (ModelTemplateDescription) next;
 
-			if(defaultTemplates.contains(desc.getUml_path())) {
+			if (defaultTemplates.contains(desc.getUml_path())) {
 				selectTemplateComposite.selectElement(desc);
 				return;
 			}
@@ -538,7 +538,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 	/**
 	 * Gets the creation command registry.
-	 * 
+	 *
 	 * @return the creation command registry
 	 */
 	protected final ICreationCommandRegistry getCreationCommandRegistry() {
@@ -552,7 +552,7 @@ public class SelectDiagramKindPage extends WizardPage {
 
 		/**
 		 * Gets the current categories.
-		 * 
+		 *
 		 * @return the current categories
 		 */
 		String[] getCurrentCategories();

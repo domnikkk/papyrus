@@ -27,7 +27,7 @@ public class SignalUtil {
 	 * return the custom label of the signal, given UML2 specification and a custom style.
 	 *
 	 * @param style
-	 *        the integer representing the style of the label
+	 *            the integer representing the style of the label
 	 *
 	 * @return the string corresponding to the label of the signal
 	 */
@@ -36,12 +36,12 @@ public class SignalUtil {
 		buffer.append(" "); // adds " " first for correct display considerations
 
 		// visibility
-		if(maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
+		if (maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(signal));
 		}
 
 		// name
-		if(maskValues.contains(ICustomAppearance.DISP_NAME)) {
+		if (maskValues.contains(ICustomAppearance.DISP_NAME)) {
 			buffer.append(" ");
 			buffer.append(signal.getName());
 		}
@@ -63,11 +63,11 @@ public class SignalUtil {
 	private static String getPropertiesAsString(Signal signal, Collection<String> maskValues) {
 		StringBuffer propertiesString = new StringBuffer();
 		boolean firstProperty = true;
-		for(Property property : signal.getOwnedAttributes()) {
+		for (Property property : signal.getOwnedAttributes()) {
 			// get the label for this property
 			String propertyString = PropertyUtil.getCustomLabel(property, maskValues);
-			if(!propertyString.trim().equals("")) {
-				if(!firstProperty) {
+			if (!propertyString.trim().equals("")) {
+				if (!firstProperty) {
 					propertiesString.append(", ");
 				}
 				propertiesString.append(propertyString);

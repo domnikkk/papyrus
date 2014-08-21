@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,15 +49,15 @@ public class PinParser extends MessageFormatParser implements ISemanticParser {
 	}
 
 	public PinParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -70,6 +70,7 @@ public class PinParser extends MessageFormatParser implements ISemanticParser {
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -81,39 +82,40 @@ public class PinParser extends MessageFormatParser implements ISemanticParser {
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		StringBuffer label = new StringBuffer();
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof Pin) {
-			Pin pin = (Pin)obj;
+		if (obj instanceof Pin) {
+			Pin pin = (Pin) obj;
 			String name = pin.getName();
-			if(name == null) {
+			if (name == null) {
 				name = "";
 			}
 			label.append(name);
-			if(pin.getInStates() != null) {
+			if (pin.getInStates() != null) {
 				// manage states
 				StringBuffer stateLabel = new StringBuffer();
-				for(State state : pin.getInStates()) {
-					if(state != null) {
+				for (State state : pin.getInStates()) {
+					if (state != null) {
 						String stateName = state.getName();
-						if(stateName == null) {
+						if (stateName == null) {
 							stateName = "";
 						}
-						if(!"".equals(stateName)) {
-							if(stateLabel.length() > 0) {
+						if (!"".equals(stateName)) {
+							if (stateLabel.length() > 0) {
 								stateLabel.append(STATE_SEPARATOR);
 							}
 							stateLabel.append(stateName);
 						}
 					}
 				}
-				if(stateLabel.length() > 0) {
+				if (stateLabel.length() > 0) {
 					label.append(String.format(STATE_DISPLAY, stateLabel.toString()));
 				}
 			}
 		}
-		if(label.length() == 0) {
+		if (label.length() == 0) {
 			label.append(" ");
 		}
 		return label.toString();
@@ -126,6 +128,7 @@ public class PinParser extends MessageFormatParser implements ISemanticParser {
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -137,14 +140,15 @@ public class PinParser extends MessageFormatParser implements ISemanticParser {
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof Pin) {
-			Pin pin = (Pin)element;
+		if (element instanceof Pin) {
+			Pin pin = (Pin) element;
 			semanticElementsBeingParsed.add(pin);
-			if(pin.getInStates() != null) {
-				for(State state : pin.getInStates()) {
-					if(state != null) {
+			if (pin.getInStates() != null) {
+				for (State state : pin.getInStates()) {
+					if (state != null) {
 						semanticElementsBeingParsed.add(state);
 					}
 				}
@@ -156,9 +160,9 @@ public class PinParser extends MessageFormatParser implements ISemanticParser {
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

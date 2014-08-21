@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,6 +18,7 @@ import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 
 public class BlockDefinitionDiagramViewFactory extends DiagramViewFactory {
 
+	@Override
 	protected MeasurementUnit getMeasurementUnit() {
 		return MeasurementUnit.PIXEL_LITERAL;
 	}

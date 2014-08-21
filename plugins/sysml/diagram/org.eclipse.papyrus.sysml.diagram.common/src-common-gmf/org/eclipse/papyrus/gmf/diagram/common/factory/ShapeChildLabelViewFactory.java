@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -39,17 +39,17 @@ public class ShapeChildLabelViewFactory extends AbstractShapeViewFactory {
 	 */
 	@Override
 	protected void initializeFromPreferences(View view) {
-		//Do not call initializeFromPreferences when the preference initializer is disabled (Typical use case: CSS are installed)
-		if(ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
+		// Do not call initializeFromPreferences when the preference initializer is disabled (Typical use case: CSS are installed)
+		if (ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
 			super.initializeFromPreferences(view);
 		}
 
-		IPreferenceStore store = (IPreferenceStore)getPreferencesHint().getPreferenceStore();
-		if(store == null) {
+		IPreferenceStore store = (IPreferenceStore) getPreferencesHint().getPreferenceStore();
+		if (store == null) {
 			return;
 		}
 
-		//The PreferenceInitializerForElementHelper already checks for usePreferenceInitializer() (When required)
+		// The PreferenceInitializerForElementHelper already checks for usePreferenceInitializer() (When required)
 		String preferenceKey = view.getType();
 		PreferenceInitializerForElementHelper.initForegroundFromPrefs(view, store, preferenceKey);
 		PreferenceInitializerForElementHelper.initFontStyleFromPrefs(view, store, preferenceKey);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -73,6 +73,7 @@ public class ConstraintParameterEditHelperAdvice extends AbstractEditHelperAdvic
 					if (type != null && type instanceof Class && UMLUtil.getStereotypeApplication(type, ConstraintBlock.class) != null) {
 						return new ConfigureElementCommand(request) {
 
+							@Override
 							protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 								NamedElement element = (NamedElement) request.getElementToConfigure();
 								if (element != null) {

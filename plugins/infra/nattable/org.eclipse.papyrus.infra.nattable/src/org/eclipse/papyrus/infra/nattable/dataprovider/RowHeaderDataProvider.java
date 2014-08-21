@@ -15,32 +15,32 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 import org.eclipse.papyrus.infra.nattable.utils.HeaderAxisConfigurationManagementUtils;
 
 /**
- * 
+ *
  * this manager allows to manage the rows of the table. It provides
  * a row header with 0,1 or 2 columns
- * 
+ *
  */
 public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 
 	private int axisCount;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param manager
-	 *        the table manager
+	 *            the table manager
 	 */
 	public RowHeaderDataProvider(final INattableModelManager manager) {
 		super(manager);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.IDataProvider#getColumnCount()
-	 * 
+	 *
 	 * @return
-	 * 
+	 *
 	 */
 	@Override
 	public int getColumnCount() {
@@ -48,47 +48,48 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.IDataProvider#getDataValue(int, int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @param rowIndex
 	 * @return
 	 */
+	@Override
 	public Object getDataValue(final int columnIndex, final int rowIndex) {
-		switch(this.axisCount) {
+		switch (this.axisCount) {
 		case 0:
 			return null;
 		case 1:
-			if(this.displayFilter) {
-				return null;//TODO not tested
-			} else if(this.displayIndex) {
+			if (this.displayFilter) {
+				return null;// TODO not tested
+			} else if (this.displayIndex) {
 				return getAxisIndex(rowIndex);
-			} else if(this.displayLabel) {
+			} else if (this.displayLabel) {
 				return this.manager.getRowElement(rowIndex);
 			}
 		case 2:
-			if(!this.displayFilter) {
-				if(columnIndex == 0) {
+			if (!this.displayFilter) {
+				if (columnIndex == 0) {
 					return getAxisIndex(rowIndex);
 				}
-				if(columnIndex == 1) {
+				if (columnIndex == 1) {
 					return this.manager.getRowElement(rowIndex);
 				}
 			} else {
-				//TODO not tested
+				// TODO not tested
 			}
 			break;
 		case 3:
-			if(!this.displayFilter) {
-				if(columnIndex == 0) {
+			if (!this.displayFilter) {
+				if (columnIndex == 0) {
 					return getAxisIndex(rowIndex);
 				}
-				if(columnIndex == 1) {
+				if (columnIndex == 1) {
 					return this.manager.getRowElement(rowIndex);
 				}
-				if(columnIndex == 2) {
-					//TODO not tested
+				if (columnIndex == 2) {
+					// TODO not tested
 				}
 			}
 			break;
@@ -97,21 +98,22 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.data.IDataProvider#setDataValue(int, int, java.lang.Object)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @param rowIndex
 	 * @param newValue
 	 */
+	@Override
 	public void setDataValue(final int columnIndex, final int rowIndex, final Object newValue) {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.dataprovider.AbstractHeaderDataProvider#getAxisConfiguration()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -120,20 +122,20 @@ public class RowHeaderDataProvider extends AbstractHeaderDataProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.dataprovider.AbstractHeaderDataProvider#updateAxisCount()
-	 * 
+	 *
 	 */
 	@Override
 	protected void updateAxisCount() {
 		int newAxisCOunt = 0;
-		if(this.displayFilter) {
-			//newAxisCOunt++; //we ignore this value for rows headers
+		if (this.displayFilter) {
+			// newAxisCOunt++; //we ignore this value for rows headers
 		}
-		if(this.displayIndex) {
+		if (this.displayIndex) {
 			newAxisCOunt++;
 		}
-		if(this.displayLabel) {
+		if (this.displayLabel) {
 			newAxisCOunt++;
 		}
 		this.axisCount = newAxisCOunt;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,23 +31,24 @@ import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkConstants;
 
 /**
  * this is an helper to manager hyperlink web
+ * 
  * @author PT202707
  *
  */
 public class WebHyperLinkHelper extends AbstractHyperLinkHelper {
 
-	
+
 	@Override
 	public HyperLinkObject getHyperLinkObject(EAnnotation eAnnotation) {
-		if(eAnnotation.getSource().equals(HyperLinkConstants.HYPERLINK_WEB)) {
+		if (eAnnotation.getSource().equals(HyperLinkConstants.HYPERLINK_WEB)) {
 			HyperLinkWeb hyperLinkWeb = new HyperLinkWeb();
 			hyperLinkWeb.setHyperLinkWeb(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_WEB_LINK));
 			hyperLinkWeb.setTooltipText(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_TOOLTYPE_TEXT));
-			if(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION)!=null){
-				boolean isDefaultNaviagation=Boolean.parseBoolean(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION));
+			if (eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION) != null) {
+				boolean isDefaultNaviagation = Boolean.parseBoolean(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION));
 				hyperLinkWeb.setIsDefault(isDefaultNaviagation);
 			}
-			else{
+			else {
 				hyperLinkWeb.setIsDefault(false);
 			}
 
@@ -56,34 +57,40 @@ public class WebHyperLinkHelper extends AbstractHyperLinkHelper {
 
 		return null;
 	}
+
 	@Override
 	public RecordingCommand getAddHyperLinkCommand(TransactionalEditingDomain domain, EModelElement object, HyperLinkObject HyperLinkObject) {
-		if( HyperLinkObject instanceof HyperLinkWeb){
-			HyperLinkWeb hyperLinkWeb= (HyperLinkWeb)HyperLinkObject;
-			return new CreateHyperLinkWebCommand(domain, object, hyperLinkWeb.getTooltipText(), hyperLinkWeb.getHyperLinkWeb(),HyperLinkObject.getIsDefault());
+		if (HyperLinkObject instanceof HyperLinkWeb) {
+			HyperLinkWeb hyperLinkWeb = (HyperLinkWeb) HyperLinkObject;
+			return new CreateHyperLinkWebCommand(domain, object, hyperLinkWeb.getTooltipText(), hyperLinkWeb.getHyperLinkWeb(), HyperLinkObject.getIsDefault());
 		}
-		else{return null;}
+		else {
+			return null;
+		}
 	}
+
 	@Override
 	public String getNameofManagedHyperLink() {
 		return Messages.WebHyperLinkHelper_Web;
 	}
+
 	@Override
 	public void executeNewMousePressed(List<HyperLinkObject> list, EObject aModel) {
 		EditorHyperLinkWebShell editor = new EditorHyperLinkWebShell();
 		editor.open();
-		if(editor.getHyperLinkWeb() != null) {
+		if (editor.getHyperLinkWeb() != null) {
 			list.add(editor.getHyperLinkWeb());
 		}
-		
+
 	}
+
 	@Override
 	public ArrayList<HyperLinkObject> getFilteredObject(List<HyperLinkObject> HyperLinkObjects) {
-		ArrayList<HyperLinkObject> result= new ArrayList<HyperLinkObject>();
-		Iterator<HyperLinkObject> iterator= HyperLinkObjects.iterator();
-		while(iterator.hasNext()) {
-			HyperLinkObject HyperLinkObject = (HyperLinkObject)iterator.next();
-			if(HyperLinkObject instanceof HyperLinkWeb){
+		ArrayList<HyperLinkObject> result = new ArrayList<HyperLinkObject>();
+		Iterator<HyperLinkObject> iterator = HyperLinkObjects.iterator();
+		while (iterator.hasNext()) {
+			HyperLinkObject HyperLinkObject = iterator.next();
+			if (HyperLinkObject instanceof HyperLinkWeb) {
 				result.add(HyperLinkObject);
 			}
 		}

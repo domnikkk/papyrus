@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.window.Window;
 import org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
@@ -61,27 +62,28 @@ public class ManagePortInterfacesHandler extends AbstractHandler {
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection selection = HandlerUtil.getCurrentSelection(event);
 
 		// Do something only if there is a selection
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return null;
 		}
 
-		// Handle structured selection 
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		// Handle structured selection
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 			// Verify if selection is an EditPart
 			Object firstElement = structuredSelection.getFirstElement();
-			if(firstElement instanceof EditPart) {
-				portEditPart = (EditPart)firstElement;
+			if (firstElement instanceof EditPart) {
+				portEditPart = (EditPart) firstElement;
 
 				// Verify if semantic element is a Port
 				EObject selectedElement = EMFHelper.getEObject(portEditPart);
-				if(selectedElement instanceof Port) {
-					Port port = (Port)selectedElement;
+				if (selectedElement instanceof Port) {
+					Port port = (Port) selectedElement;
 
 					// Run action
 					ManageProvidedInterfaceAction action = new ManageProvidedInterfaceAction(port);
@@ -104,7 +106,7 @@ public class ManagePortInterfacesHandler extends AbstractHandler {
 	 * </p>
 	 *
 	 * @param port
-	 *        the port
+	 *            the port
 	 * @return the interface manager dialog
 	 */
 	public IPortInterfaceManagerDialog getInterfaceManagerDialog(Port port) {
@@ -132,11 +134,11 @@ public class ManagePortInterfacesHandler extends AbstractHandler {
 		private Type type = null;
 
 		/**
-		 * 
+		 *
 		 * Constructor.
-		 * 
+		 *
 		 * @param editpart
-		 *        the editpart of the port
+		 *            the editpart of the port
 		 */
 		public ManageProvidedInterfaceAction(Port port) {
 			this.port = port;
@@ -145,23 +147,24 @@ public class ManagePortInterfacesHandler extends AbstractHandler {
 
 		/**
 		 * Returns the command to add/remove provided/required interfaces.
-		 * 
+		 *
 		 * @return the command
 		 *         the command to add/remove provided/required interfaces
 		 */
 		public Command getCommand() {
-			if(type != null && !(type instanceof Classifier)) {
+			if (type != null && !(type instanceof Classifier)) {
 				return UnexecutableCommand.INSTANCE;
-			} else if(type == null) {
-				// Display message if Port type is undefined 
-				MessageDialog dialog = new MessageDialog(DisplayUtils.getDefaultShell(), Messages.InterfaceManagerDialog_Title, null, Messages.ManageProvidedInterfacesHandler_TheTypeOfThePortIsNotDefined, MessageDialog.WARNING, new String[]{ Messages.ManageProvidedInterfacesHandler_OK }, 0);
+			} else if (type == null) {
+				// Display message if Port type is undefined
+				MessageDialog dialog = new MessageDialog(DisplayUtils.getDefaultShell(), Messages.InterfaceManagerDialog_Title, null, Messages.ManageProvidedInterfacesHandler_TheTypeOfThePortIsNotDefined, MessageDialog.WARNING,
+						new String[] { Messages.ManageProvidedInterfacesHandler_OK }, 0);
 				dialog.open();
 
 			} else {
 
 				// Launch manager
 				IPortInterfaceManagerDialog dialog = getInterfaceManagerDialog(port);
-				if(dialog.open() == Dialog.OK) {
+				if (dialog.open() == Window.OK) {
 					return dialog.getCommand();
 				}
 			}

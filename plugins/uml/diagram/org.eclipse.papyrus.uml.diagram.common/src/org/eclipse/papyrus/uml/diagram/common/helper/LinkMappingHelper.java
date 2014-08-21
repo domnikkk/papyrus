@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,10 +37,10 @@ public class LinkMappingHelper {
 
 	/**
 	 * Gets the source.
-	 * 
+	 *
 	 * @param link
-	 *        the link
-	 * 
+	 *            the link
+	 *
 	 * @return the source
 	 */
 	// @unused
@@ -50,12 +50,12 @@ public class LinkMappingHelper {
 
 	/**
 	 * Gets the source.
-	 * 
+	 *
 	 * @param link
-	 *        the link
+	 *            the link
 	 * @param umlSwitch
-	 *        the uml switch
-	 * 
+	 *            the uml switch
+	 *
 	 * @return the source
 	 */
 	public static Collection<?> getSource(Element link, CommonSourceUMLSwitch umlSwitch) {
@@ -64,10 +64,10 @@ public class LinkMappingHelper {
 
 	/**
 	 * Gets the source.
-	 * 
+	 *
 	 * @param link
-	 *        the link
-	 * 
+	 *            the link
+	 *
 	 * @return the source
 	 */
 	// @unused
@@ -77,12 +77,12 @@ public class LinkMappingHelper {
 
 	/**
 	 * Gets the source.
-	 * 
+	 *
 	 * @param link
-	 *        the link
+	 *            the link
 	 * @param umlSwitch
-	 *        the uml switch
-	 * 
+	 *            the uml switch
+	 *
 	 * @return the source
 	 */
 	public static Collection<?> getTarget(Element link, CommonTargetUMLSwitch umlSwitch) {
@@ -91,7 +91,7 @@ public class LinkMappingHelper {
 
 	/**
 	 * Contains diagrams common behavior that need to be redefined
-	 * 
+	 *
 	 * @author eperico
 	 */
 	public static class CommonSourceUMLSwitch extends UMLSwitch<Collection<?>> {
@@ -142,9 +142,9 @@ public class LinkMappingHelper {
 		@Override
 		public Collection<?> caseConnector(final Connector object) {
 			final List<EObject> sources = new ArrayList<EObject>();
-			for(final ConnectorEnd current : object.getEnds()) {
+			for (final ConnectorEnd current : object.getEnds()) {
 				final ConnectableElement role = current.getRole();
-				if(role != null) {
+				if (role != null) {
 					sources.add(role);
 				}
 			}
@@ -164,7 +164,7 @@ public class LinkMappingHelper {
 
 	/**
 	 * Contains diagrams common behavior that need to be redefined
-	 * 
+	 *
 	 * @author eperico
 	 */
 	public static class CommonTargetUMLSwitch extends UMLSwitch<Collection<?>> {
@@ -213,9 +213,9 @@ public class LinkMappingHelper {
 		@Override
 		public Collection<?> caseConnector(final Connector object) {
 			final List<EObject> targets = new ArrayList<EObject>();
-			for(final ConnectorEnd current : object.getEnds()) {
+			for (final ConnectorEnd current : object.getEnds()) {
 				final ConnectableElement role = current.getRole();
-				if(role != null) {
+				if (role != null) {
 					targets.add(role);
 				}
 			}
@@ -235,6 +235,7 @@ public class LinkMappingHelper {
 			targets.addAll(object.getSuppliers());
 			return targets;
 		}
+
 		@Override
 		public Collection<?> defaultCase(org.eclipse.emf.ecore.EObject object) {
 			return Collections.EMPTY_LIST;

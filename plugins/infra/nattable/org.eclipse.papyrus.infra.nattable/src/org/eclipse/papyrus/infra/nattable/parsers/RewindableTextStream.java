@@ -17,7 +17,7 @@ import java.io.Reader;
 
 /**
  * Represents a stream of characters that can be rewound
- * 
+ *
  * @author Laurent Wouters
  */
 public class RewindableTextStream {
@@ -46,9 +46,9 @@ public class RewindableTextStream {
 
 	/**
 	 * Initializes this stream
-	 * 
+	 *
 	 * @param reader
-	 *        The underlying text reader
+	 *            The underlying text reader
 	 */
 	public RewindableTextStream(Reader reader) {
 		this.reader = reader;
@@ -63,7 +63,7 @@ public class RewindableTextStream {
 
 	/**
 	 * Determines whether the end of the input has been reached
-	 * 
+	 *
 	 * @return <code>true</code> if the end of the input has been reached
 	 */
 	public boolean isAtEnd() {
@@ -72,32 +72,32 @@ public class RewindableTextStream {
 
 	/**
 	 * Goes back into the stream of the given number of characters
-	 * 
+	 *
 	 * @param count
-	 *        The number of characters to rewind
+	 *            The number of characters to rewind
 	 */
 	public void rewind(int count) {
 		ringStart -= count;
 		counter -= count;
-		if(ringStart < 0) {
+		if (ringStart < 0) {
 			ringStart += RING_SIZE;
 		}
 	}
 
 	/**
 	 * Reads the next character in the stream
-	 * 
+	 *
 	 * @return The next character
 	 */
 	public char read() {
-		if(atEnd) {
+		if (atEnd) {
 			return 0;
 		}
 		counter++;
-		if(ringStart != ringNextEntry) {
+		if (ringStart != ringNextEntry) {
 			atEnd = false;
 			char value = ring[ringStart++];
-			if(ringStart == RING_SIZE) {
+			if (ringStart == RING_SIZE) {
 				ringStart = 0;
 			}
 			return value;
@@ -107,19 +107,19 @@ public class RewindableTextStream {
 
 	/**
 	 * Reads the next character from the input
-	 * 
+	 *
 	 * @return The next character in the stream
 	 */
 	private char readBuffer() {
-		if(bufferStart == bufferLength) {
+		if (bufferStart == bufferLength) {
 			bufferLength = -1;
 			try {
 				bufferLength = reader.read(buffer, 0, BUFFER_SIZE);
 			} catch (IOException e) {
-				//nothing to report
+				// nothing to report
 			}
 			bufferStart = 0;
-			if(bufferLength <= 0) {
+			if (bufferLength <= 0) {
 				atEnd = true;
 				return 0;
 			}
@@ -127,7 +127,7 @@ public class RewindableTextStream {
 		atEnd = false;
 		char c = buffer[bufferStart++];
 		ring[ringNextEntry++] = c;
-		if(ringNextEntry == RING_SIZE) {
+		if (ringNextEntry == RING_SIZE) {
 			ringNextEntry = 0;
 		}
 		ringStart = ringNextEntry;
@@ -135,7 +135,7 @@ public class RewindableTextStream {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the number of read characters
 	 */

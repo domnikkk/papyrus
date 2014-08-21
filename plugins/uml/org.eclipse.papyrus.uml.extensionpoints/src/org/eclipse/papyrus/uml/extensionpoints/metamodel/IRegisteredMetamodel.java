@@ -10,9 +10,8 @@
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.metamodel;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.uml.extensionpoints.IRegisteredItem;
 
 public interface IRegisteredMetamodel extends IRegisteredItem {
-	
+
 }

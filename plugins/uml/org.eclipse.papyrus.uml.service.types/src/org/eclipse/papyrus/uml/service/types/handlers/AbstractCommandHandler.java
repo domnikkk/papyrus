@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,25 +24,25 @@ import org.eclipse.papyrus.uml.service.types.utils.ICommandContext;
 
 /**
  * <pre>
- * 
+ *
  * This abstract command handler manages:
  * - current selection in order to build a list of the selected {@link EObject}
  * - execute the command (returned by children) in Papyrus {@link TransactionalEditingDomain}
  * - calculate the command enablement and visibility regarding the command executability
  * (the command is now shown in menu if not executable).
- * 
+ *
  * </pre>
  */
 public abstract class AbstractCommandHandler extends AbstractHandler {
 
 	/**
 	 * <pre>
-	 * 
-	 * Returns the command to execute (to be implemented 
+	 *
+	 * Returns the command to execute (to be implemented
 	 * in children implementing this class)
 	 * 
 	 * @return the command to execute
-	 * 
+	 *
 	 * </pre>
 	 */
 	protected abstract Command getCommand();
@@ -57,9 +57,9 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	protected abstract ICommandContext getCommandContext();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return null
 	 * @throws ExecutionException
@@ -71,9 +71,9 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
@@ -84,7 +84,7 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true (visible) when the command can be executed.
 	 */
 	public boolean isVisible() {
@@ -92,13 +92,13 @@ public abstract class AbstractCommandHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the editing domain to use
 	 */
 	protected TransactionalEditingDomain getEditingDomain() {
 		ICommandContext cmdContext = getCommandContext();
-		if(cmdContext != null) {
+		if (cmdContext != null) {
 			try {
 				return ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(cmdContext.getContainer());
 			} catch (ServiceException e) {

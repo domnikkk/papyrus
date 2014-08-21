@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ public abstract class AbstractPreferenceKeyDialog extends org.eclipse.jface.dial
 
 	/**
 	 * Instantiates a new abstract preference key dialog.
-	 * 
+	 *
 	 * @param keys
-	 *        the array of preference jy to display
+	 *            the array of preference jy to display
 	 */
 	public AbstractPreferenceKeyDialog(String[] keys) {
 		super(new Shell());
@@ -63,7 +63,7 @@ public abstract class AbstractPreferenceKeyDialog extends org.eclipse.jface.dial
 	 */
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		keyTable = new Table(composite, SWT.CHECK | SWT.BORDER);
 		tableViewer = new TableViewer(keyTable);
 		tableViewer.setLabelProvider(createLabelProvider());
@@ -89,14 +89,14 @@ public abstract class AbstractPreferenceKeyDialog extends org.eclipse.jface.dial
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the label provider for the table viewer
 	 */
 	protected abstract IBaseLabelProvider createLabelProvider();
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the content provider for the table viewer
 	 */

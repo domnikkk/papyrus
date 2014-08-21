@@ -118,8 +118,8 @@ public class ConfigurationManager {
 	private final static ConfigurationManager instance = new ConfigurationManager();
 
 	public static ConfigurationManager getInstance() {
-		synchronized(instance) {
-			if(!instance.started) {
+		synchronized (instance) {
+			if (!instance.started) {
 				instance.start();
 			}
 		}
@@ -139,7 +139,7 @@ public class ConfigurationManager {
 	}
 
 	private void start() {
-		if(started) {
+		if (started) {
 			return;
 		}
 
@@ -152,7 +152,7 @@ public class ConfigurationManager {
 
 		// now that we have loaded the custom contexts, we can migrate the preferences from a
 		// previous version (if required)
-		if(new PreferencesMigrator(this).process(preferences)) {
+		if (new PreferencesMigrator(this).process(preferences)) {
 			savePreferences();
 		}
 	}
@@ -168,14 +168,14 @@ public class ConfigurationManager {
 
 		try {
 			EObject model = loadEMFModel(preferencesURI);
-			if(model != null && model instanceof Preferences) {
-				return (Preferences)model;
+			if (model != null && model instanceof Preferences) {
+				return (Preferences) model;
 			}
 		} catch (Exception ex) {
-			//File not found : we ignore the exception //TODO : improve the exceptions (FileNotFound is not the only one that can occur)
+			// File not found : we ignore the exception //TODO : improve the exceptions (FileNotFound is not the only one that can occur)
 		}
 
-		//If we're here, then the preferences.xmi doesn't exist or isn't valid : we create it
+		// If we're here, then the preferences.xmi doesn't exist or isn't valid : we create it
 
 		return createPreferences(preferencesURI);
 	}
@@ -192,14 +192,14 @@ public class ConfigurationManager {
 	}
 
 	private void loadCustomContexts() {
-		for(IContextStorageProvider provider : contextStorageRegistry.getStorageProviders()) {
+		for (IContextStorageProvider provider : contextStorageRegistry.getStorageProviders()) {
 			// discover initial contexts
 			try {
-				for(Context context : provider.loadContexts()) {
+				for (Context context : provider.loadContexts()) {
 					addContext(context, findDescriptor(context).isApplied(), true);
 				}
 			} catch (CoreException ex) {
-				//Silent : The file has been removed from the preferences, but the folder still exists
+				// Silent : The file has been removed from the preferences, but the folder still exists
 			}
 
 			// listen for changes
@@ -208,23 +208,23 @@ public class ConfigurationManager {
 	}
 
 	private IContextStorageProviderListener getContextStorageProviderListener() {
-		if(contextStorageProviderListener == null) {
+		if (contextStorageProviderListener == null) {
 			contextStorageProviderListener = new IContextStorageProviderListener() {
 
 				public void contextsAdded(Collection<? extends Context> contexts) {
 					List<Context> appliedContexts = new java.util.ArrayList<Context>(contexts.size());
 
-					for(Context next : contexts) {
+					for (Context next : contexts) {
 						boolean applied = findDescriptor(next).isApplied();
 
 						addContext(next, applied, true);
 
-						if(applied) {
+						if (applied) {
 							appliedContexts.add(next);
 						}
 					}
 
-					if(!appliedContexts.isEmpty()) {
+					if (!appliedContexts.isEmpty()) {
 						notifyContextChanges(appliedContexts, ContextEventType.ADDED);
 					}
 				}
@@ -232,17 +232,17 @@ public class ConfigurationManager {
 				public void contextsChanged(Collection<? extends Context> contexts) {
 					List<Context> appliedContexts = new java.util.ArrayList<Context>(contexts.size());
 
-					for(Context next : contexts) {
+					for (Context next : contexts) {
 						boolean applied = findDescriptor(next).isApplied();
 
 						reloadContext(next);
 
-						if(applied) {
+						if (applied) {
 							appliedContexts.add(next);
 						}
 					}
 
-					if(!appliedContexts.isEmpty()) {
+					if (!appliedContexts.isEmpty()) {
 						notifyContextChanges(appliedContexts, ContextEventType.CHANGED);
 					}
 				}
@@ -250,19 +250,19 @@ public class ConfigurationManager {
 				public void contextsRemoved(Collection<? extends Context> contexts) {
 					List<Context> appliedContexts = new java.util.ArrayList<Context>(contexts.size());
 
-					for(Context next : contexts) {
+					for (Context next : contexts) {
 						boolean wasApplied = findDescriptor(next).isApplied();
 
 						// don't update the preferences on the expectation that this context
 						// is only temporarily unavailable
 						deleteContext(next, false);
 
-						if(wasApplied) {
+						if (wasApplied) {
 							appliedContexts.add(next);
 						}
 					}
 
-					if(!appliedContexts.isEmpty()) {
+					if (!appliedContexts.isEmpty()) {
 						notifyContextChanges(appliedContexts, ContextEventType.REMOVED);
 					}
 				}
@@ -273,23 +273,23 @@ public class ConfigurationManager {
 	}
 
 	private void notifyContextChanges(Collection<Context> contexts, IContextStorageProviderListener.ContextEventType eventType) {
-		if(contexts.size() == 0) {
+		if (contexts.size() == 0) {
 			throw new IllegalArgumentException("Empty contexts collection");
 		}
 
 		StringBuilder list = new StringBuilder();
 		Iterator<Context> iter = contexts.iterator();
-		if(contexts.size() > 1) {
+		if (contexts.size() > 1) {
 			list.append("\n");
 		}
 		list.append(iter.next().getName());
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			list.append("\n");
 			list.append(iter.next().getName());
 		}
 
 		String pattern;
-		switch(eventType) {
+		switch (eventType) {
 		case ADDED:
 			pattern = "New Properties View configurations have been applied: {0}";
 			break;
@@ -316,11 +316,11 @@ public class ConfigurationManager {
 	 * at runtime, to re-load it from persistent storage.
 	 *
 	 * @param context
-	 *        A Context model to re-load
+	 *            A Context model to re-load
 	 */
 	public void refresh(Context context) {
 		IContextStorageProvider provider = contextStorageRegistry.getStorageProvider(context);
-		if(provider != null) {
+		if (provider != null) {
 			try {
 				provider.refreshContext(context);
 				reloadContext(context);
@@ -338,7 +338,7 @@ public class ConfigurationManager {
 
 		URI contextURI = EcoreUtil.getURI(context);
 
-		if(contexts.containsKey(contextURI)) {
+		if (contexts.containsKey(contextURI)) {
 			// Unloads the previous objects corresponding to this context
 			Context previousContext = contexts.get(contextURI);
 			enabledContexts.remove(previousContext);
@@ -366,7 +366,7 @@ public class ConfigurationManager {
 	public boolean isApplied(Context context) {
 		boolean result = !isCustomizable(context) || findDescriptor(context).isApplied();
 
-		if(!result) {
+		if (!result) {
 			// see whether perhaps there's an active descriptor for a missing context that
 			// is based on this context
 			@SuppressWarnings("serial")
@@ -388,18 +388,18 @@ public class ConfigurationManager {
 			Queue<ContextDescriptor> queue = new java.util.LinkedList<ContextDescriptor>();
 			Set<ContextDescriptor> cycleDetect = new java.util.HashSet<ContextDescriptor>();
 			queue.offer(findDescriptor(context));
-			out: while(!queue.isEmpty()) {
+			out: while (!queue.isEmpty()) {
 				ContextDescriptor desc = queue.remove();
 				Collection<EStructuralFeature.Setting> refs = xrefs.get(desc);
-				if((refs != null) && cycleDetect.add(desc)) {
-					for(EStructuralFeature.Setting ref : refs) {
-						ContextDescriptor copy = (ContextDescriptor)ref.getEObject();
-						if(copy.isApplied()) {
-							if(getContext(copy.getName()) == null) {
-								// it's an applied context that is missing.  That's what we're looking for
+				if ((refs != null) && cycleDetect.add(desc)) {
+					for (EStructuralFeature.Setting ref : refs) {
+						ContextDescriptor copy = (ContextDescriptor) ref.getEObject();
+						if (copy.isApplied()) {
+							if (getContext(copy.getName()) == null) {
+								// it's an applied context that is missing. That's what we're looking for
 								result = true;
 							} else {
-								// it's an applied context that is *not* missing.  So, it is in effect
+								// it's an applied context that is *not* missing. So, it is in effect
 								// and the prototype should not implicitly be enabled
 								result = false;
 								break out;
@@ -425,16 +425,16 @@ public class ConfigurationManager {
 	 * @return
 	 */
 	private ContextDescriptor findDescriptor(Context context) {
-		if(context.getName() == null || context.getName().equals("")) { //$NON-NLS-1$
+		if (context.getName() == null || context.getName().equals("")) { //$NON-NLS-1$
 			return null;
 		}
 
-		for(ContextDescriptor descriptor : preferences.getContexts()) {
-			if(descriptor.getName().equals(context.getName())) {
+		for (ContextDescriptor descriptor : preferences.getContexts()) {
+			if (descriptor.getName().equals(context.getName())) {
 				return descriptor;
 			}
 		}
-		//The descriptor hasn't been found : We create it
+		// The descriptor hasn't been found : We create it
 
 		ContextDescriptor descriptor = PreferencesFactory.eINSTANCE.createContextDescriptor();
 		descriptor.setName(context.getName());
@@ -448,17 +448,17 @@ public class ConfigurationManager {
 	 * The model is loaded in the ConfigurationManager's resourceSet.
 	 *
 	 * @param uri
-	 *        The context's URI
+	 *            The context's URI
 	 * @throws IOException
-	 *         If the model behind this URI is not a valid Context
+	 *             If the model behind this URI is not a valid Context
 	 */
 	public void addContext(URI uri, boolean customizable) throws IOException {
 		EObject firstRootObject = loadEMFModel(uri);
 
-		if(firstRootObject != null) {
-			for(EObject rootObject : firstRootObject.eResource().getContents()) {
-				if(rootObject instanceof Context) {
-					Context context = (Context)rootObject;
+		if (firstRootObject != null) {
+			for (EObject rootObject : firstRootObject.eResource().getContents()) {
+				if (rootObject instanceof Context) {
+					Context context = (Context) rootObject;
 					addContext(context, findDescriptor(context).isApplied(), customizable);
 				}
 			}
@@ -470,9 +470,9 @@ public class ConfigurationManager {
 	 * The model is loaded in the ConfigurationManager's resourceSet.
 	 *
 	 * @param uri
-	 *        The context's URI
+	 *            The context's URI
 	 * @throws IOException
-	 *         If the model behind this URI is not a valid Context
+	 *             If the model behind this URI is not a valid Context
 	 */
 	public void addContext(URI uri) throws IOException {
 		addContext(uri, true);
@@ -486,9 +486,9 @@ public class ConfigurationManager {
 	 * All {@link Context} should have unique names
 	 *
 	 * @param context
-	 *        The new context to register
+	 *            The new context to register
 	 * @param apply
-	 *        Whether the context should be enabled or not
+	 *            Whether the context should be enabled or not
 	 *
 	 * @see ConfigurationManager#addContext(URI)
 	 */
@@ -502,18 +502,18 @@ public class ConfigurationManager {
 	 * in this workspace what its prototype is.
 	 *
 	 * @param context
-	 *        a context
+	 *            a context
 	 */
 	private void updatePrototype(Context context) {
 		Context prototype = context.getPrototype();
-		if((prototype == null) || !prototype.eIsProxy()) {
-			// it has no prototype or the prototype is available?  Cache in the preferences
+		if ((prototype == null) || !prototype.eIsProxy()) {
+			// it has no prototype or the prototype is available? Cache in the preferences
 			ContextDescriptor desc = findDescriptor(context);
 			ContextDescriptor oldPrototype = desc.getPrototype();
 
 			desc.setPrototype((prototype == null) ? null : findDescriptor(prototype));
 
-			if(desc.getPrototype() != oldPrototype) {
+			if (desc.getPrototype() != oldPrototype) {
 				savePreferences();
 			}
 		}
@@ -527,16 +527,16 @@ public class ConfigurationManager {
 	 * All {@link Context} should have unique names
 	 *
 	 * @param context
-	 *        The new context to register
+	 *            The new context to register
 	 * @param apply
-	 *        Whether the context should be enabled or not
+	 *            Whether the context should be enabled or not
 	 *
 	 * @see ConfigurationManager#addContext(URI)
 	 */
 	public void addContext(Context context, boolean apply, boolean isCustomizable) {
 
 		URI contextURI = EcoreUtil.getURI(context);
-		if(contexts.containsKey(contextURI)) {
+		if (contexts.containsKey(contextURI)) {
 			throw new IllegalArgumentException("This properties view configuration is already deployed");
 		}
 
@@ -546,13 +546,13 @@ public class ConfigurationManager {
 		updatePrototype(context);
 
 		ContextDescriptor desc = findDescriptor(context);
-		if(desc.isDeleted()) {
+		if (desc.isDeleted()) {
 			desc.setDeleted(false); // can't be deleted any longer
 			savePreferences();
 		}
 
-		//If the context is not customizable, then it must always be applied
-		if(apply || !isCustomizable) {
+		// If the context is not customizable, then it must always be applied
+		if (apply || !isCustomizable) {
 			enableContext(context, true);
 		} else {
 			disableContext(context, true);
@@ -574,12 +574,12 @@ public class ConfigurationManager {
 	 * Disable a Context.
 	 *
 	 * @param context
-	 *        The Context to disable
+	 *            The Context to disable
 	 * @param update
-	 *        If true, the constraint engine will be updated to handle the
-	 *        modification
-	 *        If false, you should call manually {@link #update()} to refresh
-	 *        the constraint engine
+	 *            If true, the constraint engine will be updated to handle the
+	 *            modification
+	 *            If false, you should call manually {@link #update()} to refresh
+	 *            the constraint engine
 	 * @see Preferences
 	 * @see #enableContext(Context, boolean)
 	 */
@@ -590,22 +590,22 @@ public class ConfigurationManager {
 	private void disableContext(Context context, boolean updateEngine, boolean updatePreferences) {
 		final boolean missing = isMissing(context);
 
-		if(!missing && !isCustomizable(context)) {
+		if (!missing && !isCustomizable(context)) {
 			throw new IllegalStateException("Non-customizable contexts cannot be disabled. Trying to disable " + context.getName());
 		}
 
 		// even if it's missing, make sure it's not in the enabledContexts set!
 		updateEngine = enabledContexts.remove(context) && updateEngine;
 
-		//Update the preferences if requested
+		// Update the preferences if requested
 		ContextDescriptor descriptor = findDescriptor(context);
-		if(updatePreferences && descriptor.isApplied()) {
+		if (updatePreferences && descriptor.isApplied()) {
 			descriptor.setApplied(false);
 			savePreferences();
 		}
 
-		if(updateEngine) {
-			//Update the Engine
+		if (updateEngine) {
+			// Update the Engine
 			update();
 		}
 	}
@@ -614,12 +614,12 @@ public class ConfigurationManager {
 	 * Enables a Context
 	 *
 	 * @param context
-	 *        The Context to enable
+	 *            The Context to enable
 	 * @param update
-	 *        If true, the constraint engine will be updated to handle the
-	 *        modification
-	 *        If false, you should call manually {@link #update()} to refresh
-	 *        the constraint engine
+	 *            If true, the constraint engine will be updated to handle the
+	 *            modification
+	 *            If false, you should call manually {@link #update()} to refresh
+	 *            the constraint engine
 	 *
 	 * @see #disableContext(Context, boolean)
 	 */
@@ -630,19 +630,19 @@ public class ConfigurationManager {
 	private void enableContext(Context context, boolean updateEngine, boolean updatePreferences) {
 		final boolean missing = isMissing(context);
 
-		if(!missing) {
+		if (!missing) {
 			enabledContexts.add(context);
 		}
 
-		//Update the preferences if requested
+		// Update the preferences if requested
 		ContextDescriptor descriptor = findDescriptor(context);
-		if(updatePreferences && !descriptor.isApplied()) {
+		if (updatePreferences && !descriptor.isApplied()) {
 			descriptor.setApplied(true);
 			savePreferences();
 		}
 
-		if(updateEngine && !missing) {
-			//Update the Engine
+		if (updateEngine && !missing) {
+			// Update the Engine
 			constraintEngine.addContext(context);
 		}
 	}
@@ -667,7 +667,7 @@ public class ConfigurationManager {
 	 * context that is expected to exist but is (temporarily) unavailable.
 	 *
 	 * @param context
-	 *        a context
+	 *            a context
 	 * @return whether it represents a missing context
 	 */
 	public boolean isMissing(Context context) {
@@ -678,14 +678,14 @@ public class ConfigurationManager {
 	 * Loads a Context from the given URI. The model is loaded in the {@link ConfigurationManager}'s resourceSet
 	 *
 	 * @param uri
-	 *        The URI from which the Context is loaded
+	 *            The URI from which the Context is loaded
 	 * @return
 	 *         The loaded context
 	 * @throws IOException
-	 *         If the URI doesn't represent a valid Context model
+	 *             If the URI doesn't represent a valid Context model
 	 */
 	public Context getContext(URI uri) throws IOException {
-		return (Context)loadEMFModel(uri);
+		return (Context) loadEMFModel(uri);
 	}
 
 	private void addEnvironment(Environment environment) {
@@ -696,12 +696,12 @@ public class ConfigurationManager {
 	 * Adds a new Environment from the given URI.
 	 *
 	 * @param uri
-	 *        The URI from which the Environment is retrieved.
+	 *            The URI from which the Environment is retrieved.
 	 * @throws IOException
-	 *         if the URI doesn't represent a valid Environment model
+	 *             if the URI doesn't represent a valid Environment model
 	 */
 	public void addEnvironment(URI uri) throws IOException {
-		Environment environment = (Environment)loadEMFModel(uri);
+		Environment environment = (Environment) loadEMFModel(uri);
 		addEnvironment(environment);
 	}
 
@@ -718,13 +718,13 @@ public class ConfigurationManager {
 	 * Returns the context from the given context name
 	 *
 	 * @param contextName
-	 *        The name of the context to retrieve
+	 *            The name of the context to retrieve
 	 * @return
 	 *         The context corresponding to the given name
 	 */
 	public Context getContext(String contextName) {
-		for(Context context : getContexts()) {
-			if(context.getName().equals(contextName)) {
+		for (Context context : getContexts()) {
+			if (context.getName().equals(contextName)) {
 				return context;
 			}
 		}
@@ -765,8 +765,8 @@ public class ConfigurationManager {
 	 */
 	public Collection<Context> getCustomizableContexts() {
 		List<Context> result = new LinkedList<Context>();
-		for(Context context : contexts.values()) {
-			if(isCustomizable(context)) {
+		for (Context context : contexts.values()) {
+			if (isCustomizable(context)) {
 				result.add(context);
 			}
 		}
@@ -782,8 +782,8 @@ public class ConfigurationManager {
 	public Collection<Context> getMissingContexts() {
 		List<Context> result = new java.util.ArrayList<Context>();
 
-		for(ContextDescriptor next : preferences.getContexts()) {
-			if(!next.isDeleted() && (getContext(next.getName()) == null)) {
+		for (ContextDescriptor next : preferences.getContexts()) {
+			if (!next.isDeleted() && (getContext(next.getName()) == null)) {
 				Context missing = ContextsFactory.eINSTANCE.createContext();
 				missing.setName(next.getName());
 				result.add(missing);
@@ -795,10 +795,10 @@ public class ConfigurationManager {
 
 	private <T extends WidgetType> T getDefaultWidget(int featureID, Class<T> theClass, String widgetName, String namespacePrefix) {
 		EStructuralFeature feature = EnvironmentPackage.Literals.ENVIRONMENT.getEStructuralFeature(featureID);
-		for(Environment environment : root.getEnvironments()) {
+		for (Environment environment : root.getEnvironments()) {
 			@SuppressWarnings("unchecked")
-			T widget = findWidgetTypeByClassName((EList<T>)environment.eGet(feature), widgetName, namespacePrefix);
-			if(widget != null) {
+			T widget = findWidgetTypeByClassName((EList<T>) environment.eGet(feature), widgetName, namespacePrefix);
+			if (widget != null) {
 				return widget;
 			}
 		}
@@ -807,8 +807,8 @@ public class ConfigurationManager {
 
 
 	private <T extends WidgetType> T findWidgetTypeByClassName(Collection<T> types, String className, String namespacePrefix) {
-		for(T widgetType : types) {
-			if(widgetType.getWidgetClass().equals(className) && PropertiesUtil.namespaceEqualsByName(widgetType.getNamespace(), namespacePrefix)) {
+		for (T widgetType : types) {
+			if (widgetType.getWidgetClass().equals(className) && PropertiesUtil.namespaceEqualsByName(widgetType.getNamespace(), namespacePrefix)) {
 				return widgetType;
 			}
 		}
@@ -844,7 +844,7 @@ public class ConfigurationManager {
 	 */
 	public PropertyEditorType getDefaultEditorType(Type propertyType, boolean multiple) {
 		String propertyEditorName = null;
-		switch(propertyType) {
+		switch (propertyType) {
 		case BOOLEAN:
 			propertyEditorName = multiple ? "MultiBoolean" : "BooleanRadio"; //$NON-NLS-1$ //$NON-NLS-2$
 			break;
@@ -865,7 +865,7 @@ public class ConfigurationManager {
 		}
 
 
-		if(propertyEditorName == null) {
+		if (propertyEditorName == null) {
 			return null;
 		}
 
@@ -891,9 +891,9 @@ public class ConfigurationManager {
 	 *         The namespace corresponding to the given name
 	 */
 	public Namespace getNamespaceByName(String name) {
-		for(Environment environment : root.getEnvironments()) {
-			for(Namespace namespace : environment.getNamespaces()) {
-				if(PropertiesUtil.namespaceEqualsByName(namespace, name)) {
+		for (Environment environment : root.getEnvironments()) {
+			for (Namespace namespace : environment.getNamespaces()) {
+				if (PropertiesUtil.namespaceEqualsByName(namespace, name)) {
 					return namespace;
 				}
 			}
@@ -917,7 +917,7 @@ public class ConfigurationManager {
 	 * on the file system.
 	 *
 	 * @param context
-	 *        The context to delete
+	 *            The context to delete
 	 */
 	public void deleteContext(Context context) {
 		deleteContext(context, true);
@@ -929,10 +929,10 @@ public class ConfigurationManager {
 	 * on the file system.
 	 *
 	 * @param context
-	 *        The context to delete
+	 *            The context to delete
 	 * @param updateEngine
-	 *        If set to true, the ConstraintEngine will be updated.
-	 *        If set to false, you will need to call {@link #update()} manually
+	 *            If set to true, the ConstraintEngine will be updated.
+	 *            If set to false, you will need to call {@link #update()} manually
 	 */
 	public void deleteContext(Context context, boolean updateEngine) {
 		findDescriptor(context).setDeleted(true); // explicitly deleted (not missing)
@@ -940,7 +940,7 @@ public class ConfigurationManager {
 	}
 
 	private void deleteContext(Context context, boolean updateEngine, boolean updatePreferences) {
-		if(!isCustomizable(context)) {
+		if (!isCustomizable(context)) {
 			throw new IllegalStateException("Non-customizable contexts cannot be deleted. Trying to delete " + context.getName());
 		}
 
@@ -960,12 +960,12 @@ public class ConfigurationManager {
 	private boolean reconcileEnabledContexts() {
 		boolean result = false;
 
-		for(Context next : contexts.values()) {
-			if(!next.eIsProxy()) {
+		for (Context next : contexts.values()) {
+			if (!next.eIsProxy()) {
 				boolean isApplied = isApplied(next);
-				if(isApplied != enabledContexts.contains(next)) {
+				if (isApplied != enabledContexts.contains(next)) {
 					// it is implicitly enabled?
-					if(isApplied) {
+					if (isApplied) {
 						result = enabledContexts.add(next) || result;
 					} else {
 						result = enabledContexts.remove(next) || result;
@@ -974,7 +974,7 @@ public class ConfigurationManager {
 			}
 		}
 
-		if(result) {
+		if (result) {
 			update(); // update the engine
 		}
 
@@ -996,20 +996,20 @@ public class ConfigurationManager {
 
 		Collection<Context> allContexts;
 
-		if(context == null) {
+		if (context == null) {
 			allContexts = getContexts();
 		} else {
 			allContexts = PropertiesUtil.getDependencies(context);
 		}
 
-		for(Context ctx : allContexts) {
+		for (Context ctx : allContexts) {
 			elements.addAll(ctx.getDataContexts());
 		}
 
 		DataContextElement element = PropertiesUtil.getContextElementByQualifiedName(elementName, elements);
-		if(element != null) {
-			for(Property property : element.getProperties()) {
-				if(property.getName().equals(propertyName)) {
+		if (element != null) {
+			for (Property property : element.getProperties()) {
+				if (property.getName().equals(propertyName)) {
 					return property;
 				}
 			}
@@ -1038,17 +1038,17 @@ public class ConfigurationManager {
 		Map<String, List<Context>> sections = new HashMap<String, List<Context>>();
 		Map<String, ConfigurationConflict> conflicts = new HashMap<String, ConfigurationConflict>();
 
-		for(Context context : getEnabledContexts()) {
-			for(Tab tab : context.getTabs()) {
-				for(Section section : tab.getSections()) {
+		for (Context context : getEnabledContexts()) {
+			for (Tab tab : context.getTabs()) {
+				for (Section section : tab.getSections()) {
 					String sectionID = section.getName();
 					List<Context> contexts = sections.get(sectionID);
-					if(contexts == null) {
+					if (contexts == null) {
 						contexts = new LinkedList<Context>();
 						sections.put(sectionID, contexts);
 					} else {
 						ConfigurationConflict conflict = conflicts.get(sectionID);
-						if(conflict == null) {
+						if (conflict == null) {
 							conflict = new ConfigurationConflict(sectionID);
 							conflicts.put(sectionID, conflict);
 
@@ -1078,19 +1078,19 @@ public class ConfigurationManager {
 
 	public boolean isCustomizable(Context propertyViewConfiguration) {
 
-		if(isMissing(propertyViewConfiguration)) {
-			// missing contexts are implicitly customizable.  Only customizable
+		if (isMissing(propertyViewConfiguration)) {
+			// missing contexts are implicitly customizable. Only customizable
 			// contexts can go missing in the first place
 			return true;
 		}
 
-		if(customizableContexts.containsKey(propertyViewConfiguration)) {
+		if (customizableContexts.containsKey(propertyViewConfiguration)) {
 			return customizableContexts.get(propertyViewConfiguration);
 		}
 
-		//Default value for isCustomizable is true. However, if the context is
-		//not stored in customizableContexts, then it's an error. We should
-		//disable customization tools for this one...
+		// Default value for isCustomizable is true. However, if the context is
+		// not stored in customizableContexts, then it's an error. We should
+		// disable customization tools for this one...
 		return false;
 	}
 

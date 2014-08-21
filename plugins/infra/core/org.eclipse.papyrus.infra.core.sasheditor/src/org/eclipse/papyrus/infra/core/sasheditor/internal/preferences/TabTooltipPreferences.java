@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.internal.preferences;
 
@@ -11,6 +11,7 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 
 /**
  * An implementation retrieving values from Eclipse preferences
+ * 
  * @author cedric dumoulin
  *
  */
@@ -20,7 +21,7 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 	 * Store used to access preferences.
 	 */
 	protected IPreferenceStore store;
-	
+
 	public TabTooltipPreferences() {
 		IPreferenceStore store = createPreferenceStore();
 		setPreferenceStore(store);
@@ -28,15 +29,16 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 
 	/**
 	 * Subclasses may implements this method in order to provide the requested preferenceStore.
+	 * 
 	 * @return
 	 */
 	protected IPreferenceStore createPreferenceStore() {
 		IPreferenceStore store = new ScopedPreferenceStore(InstanceScope.INSTANCE, Activator.getDefault().getBundle().getSymbolicName());
-		
+
 		return store;
 	}
-	
-	
+
+
 	/**
 	 * @return the store
 	 */
@@ -44,9 +46,10 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 		return store;
 	}
 
-	
+
 	/**
-	 * @param store the store to set
+	 * @param store
+	 *            the store to set
 	 */
 	public void setPreferenceStore(IPreferenceStore store) {
 		this.store = store;
@@ -57,8 +60,9 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 	 *
 	 * @return
 	 */
+	@Override
 	public boolean isTooltipEnable() {
-		
+
 		return store.getBoolean(ITabTooltipPreferences.isTooltipEnable);
 	}
 
@@ -67,6 +71,7 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 	 *
 	 * @return
 	 */
+	@Override
 	public boolean isTooltipForCurrentTabShown() {
 		return store.getBoolean(ITabTooltipPreferences.isTooltipForCurrentTabShown);
 	}
@@ -76,8 +81,9 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 	 *
 	 * @return
 	 */
+	@Override
 	public float getScaledFactor() {
-		return (store.getInt(ITabTooltipPreferences.scaledFactor)/100.0f);
+		return (store.getInt(ITabTooltipPreferences.scaledFactor) / 100.0f);
 
 	}
 
@@ -86,6 +92,7 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 	 *
 	 * @return
 	 */
+	@Override
 	public int getIntScaledFactor() {
 		return store.getInt(ITabTooltipPreferences.scaledFactor);
 
@@ -96,6 +103,7 @@ public class TabTooltipPreferences implements ITabTooltipPreferences {
 	 *
 	 * @return
 	 */
+	@Override
 	public int getTooltipAutoCloseDelay() {
 		return store.getInt(ITabTooltipPreferences.tooltipAutoCloseDelay);
 	}

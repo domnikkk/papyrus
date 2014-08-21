@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ import org.eclipse.uml2.uml.Package;
 /**
  * Define a command to create a new Composite Diagram. This command is used by all UI (toolbar,
  * outline, creation wizards) to create a new Composite Diagram.
- * 
+ *
  */
 public class CreateCompositeDiagramCommand extends AbstractPapyrusGmfCreateDiagramCommandHandler {
 
@@ -55,7 +55,7 @@ public class CreateCompositeDiagramCommand extends AbstractPapyrusGmfCreateDiagr
 	 * Name of the Diagram
 	 */
 	protected static final String CSD_DEFAULT_NAME = "CompositeDiagram"; //$NON-NLS-1$
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -86,9 +86,9 @@ public class CreateCompositeDiagramCommand extends AbstractPapyrusGmfCreateDiagr
 	 */
 	@Override
 	protected void initializeDiagram(EObject diagram) {
-		if(diagram instanceof Diagram) {
-			Diagram currentDiagram = (Diagram)diagram;
-			if(canvasDomainElement != null) {
+		if (diagram instanceof Diagram) {
+			Diagram currentDiagram = (Diagram) diagram;
+			if (canvasDomainElement != null) {
 				currentDiagram.setElement(canvasDomainElement);
 				initializeDiagramContent(currentDiagram);
 			}
@@ -96,19 +96,19 @@ public class CreateCompositeDiagramCommand extends AbstractPapyrusGmfCreateDiagr
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Diagram doCreateDiagram(Resource diagramResource, EObject owner, EObject element, ViewPrototype prototype, String name) {
 		Diagram diagram = null;
 
-		if(element instanceof org.eclipse.uml2.uml.Class || (element instanceof Collaboration)) {
-			canvasDomainElement = (EObject)element;
-			Package owningPackage = ((Element)element).getNearestPackage();
+		if (element instanceof org.eclipse.uml2.uml.Class || (element instanceof Collaboration)) {
+			canvasDomainElement = element;
+			Package owningPackage = ((Element) element).getNearestPackage();
 			diagram = super.doCreateDiagram(diagramResource, owner, owningPackage, prototype, name);
 
-		} else if(element instanceof Package) {
+		} else if (element instanceof Package) {
 			canvasDomainElement = null;
 			diagram = super.doCreateDiagram(diagramResource, owner, element, prototype, name);
 		}
@@ -117,9 +117,9 @@ public class CreateCompositeDiagramCommand extends AbstractPapyrusGmfCreateDiagr
 
 	/**
 	 * Initialize the diagram with the canvas domain element shown.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram to initialize
+	 *            the diagram to initialize
 	 */
 	protected void initializeDiagramContent(Diagram diagram) {
 
@@ -128,7 +128,7 @@ public class CreateCompositeDiagramCommand extends AbstractPapyrusGmfCreateDiagr
 
 		if (view instanceof Node) {
 			// Update the view position and size (should adapt to canvas current size)
-			Bounds viewBounds = (Bounds)((Node)view).getLayoutConstraint();
+			Bounds viewBounds = (Bounds) ((Node) view).getLayoutConstraint();
 			viewBounds.setX(DEFAULT_MARGIN);
 			viewBounds.setY(DEFAULT_MARGIN);
 			viewBounds.setHeight(DEFAULT_HEIGHT);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.notation.datatype.GradientData;
 /**
  * An ObservableValue for GradientData
  * The GradientData is not a pure EMF object
- * 
+ *
  * @author Camille Letavernier
  */
 public class GradientDataObservableValue extends AbstractObservableValue {
@@ -27,13 +27,13 @@ public class GradientDataObservableValue extends AbstractObservableValue {
 	private GradientProperty property;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param data
-	 *        The GradientData to observe
+	 *            The GradientData to observe
 	 * @param property
-	 *        The name of the property to observe
+	 *            The name of the property to observe
 	 */
 	public GradientDataObservableValue(GradientData data, String property) {
 		this.data = data;
@@ -46,11 +46,11 @@ public class GradientDataObservableValue extends AbstractObservableValue {
 
 	@Override
 	protected Object doGetValue() {
-		if(data == null) {
+		if (data == null) {
 			return null;
 		}
 
-		switch(property) {
+		switch (property) {
 		case gradientColor1:
 			return data.getGradientColor1();
 		case gradientColor2:
@@ -58,8 +58,8 @@ public class GradientDataObservableValue extends AbstractObservableValue {
 		case gradientStyle:
 			return data.getGradientStyle();
 		case activate:
-			if(data instanceof ObservableGradientData) {
-				return ((ObservableGradientData)data).getActivate();
+			if (data instanceof ObservableGradientData) {
+				return ((ObservableGradientData) data).getActivate();
 			} else {
 				return true;
 			}
@@ -70,30 +70,30 @@ public class GradientDataObservableValue extends AbstractObservableValue {
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(data == null) {
+		if (data == null) {
 			return;
 		}
 
-		switch(property) {
+		switch (property) {
 		case gradientColor1:
-			data.setGradientColor1((Integer)value);
+			data.setGradientColor1((Integer) value);
 			break;
 		case gradientColor2:
-			data.setGradientColor2((Integer)value);
+			data.setGradientColor2((Integer) value);
 			break;
 		case gradientStyle:
-			data.setGradientStyle((Integer)value);
+			data.setGradientStyle((Integer) value);
 			break;
 		case activate:
-			if(data instanceof ObservableGradientData) {
-				((ObservableGradientData)data).setActivate((Boolean)value);
+			if (data instanceof ObservableGradientData) {
+				((ObservableGradientData) data).setActivate((Boolean) value);
 			}
 		}
 	}
 
 	/**
 	 * The list of properties that can be used by the GradientDataObservableValue
-	 * 
+	 *
 	 * @author Camille Letavernier
 	 */
 	public static enum GradientProperty {

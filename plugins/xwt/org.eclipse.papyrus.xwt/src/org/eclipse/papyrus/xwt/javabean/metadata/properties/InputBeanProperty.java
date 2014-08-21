@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -40,15 +40,15 @@ import org.eclipse.papyrus.xwt.metadata.IProperty;
 /**
  * Handle manually the type conversion. Maybe it can be done using the
  * IConverter. Only the type of IProperty should be IObservableCollection
- * 
+ *
  * @author yyang
- * 
+ *
  */
 public class InputBeanProperty extends DelegateProperty {
 
-	//	public InputBeanProperty(IProperty delegate) {
-	//		super(delegate);
-	//	}
+	// public InputBeanProperty(IProperty delegate) {
+	// super(delegate);
+	// }
 
 	public InputBeanProperty(IProperty delegate, ILoadingType loadingType) {
 		super(delegate, loadingType);
@@ -56,78 +56,78 @@ public class InputBeanProperty extends DelegateProperty {
 
 	@Override
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		if(value == null) {
+		if (value == null) {
 			return;
 		}
 
-		if(value instanceof Class<?>) {
-			Class<?> type = (Class<?>)value;
-			if(type.isEnum()) {
+		if (value instanceof Class<?>) {
+			Class<?> type = (Class<?>) value;
+			if (type.isEnum()) {
 				value = new WritableList(XWT.getRealm(), Arrays.asList(type.getEnumConstants()), type);
 			}
 		}
 
 		Class<?> elementType = getElementType();
-		if(value.getClass().isArray()) {
+		if (value.getClass().isArray()) {
 			elementType = value.getClass().getComponentType();
 		}
-		if(value instanceof IObservableList) {
-			IObservableList list = (IObservableList)value;
+		if (value instanceof IObservableList) {
+			IObservableList list = (IObservableList) value;
 			Object listElementType = list.getElementType();
-			if(listElementType instanceof Class<?>) {
-				elementType = (Class<?>)listElementType;
+			if (listElementType instanceof Class<?>) {
+				elementType = (Class<?>) listElementType;
 			}
-		} else if(elementType == Object.class && value instanceof Collection<?>) {
-			Collection<?> collection = (Collection<?>)value;
-			for(Iterator<?> iterator = collection.iterator(); iterator.hasNext();) {
-				Object object = (Object)iterator.next();
-				if(object != null) {
+		} else if (elementType == Object.class && value instanceof Collection<?>) {
+			Collection<?> collection = (Collection<?>) value;
+			for (Iterator<?> iterator = collection.iterator(); iterator.hasNext();) {
+				Object object = iterator.next();
+				if (object != null) {
 					elementType = object.getClass();
 					break;
 				}
 			}
 		}
 
-		if(target instanceof ContentViewer) {
-			ContentViewer viewer = (ContentViewer)target;
+		if (target instanceof ContentViewer) {
+			ContentViewer viewer = (ContentViewer) target;
 
 			String[] propertyNames = JFacesHelper.getViewerProperties(viewer);
-			if(target instanceof AbstractTreeViewer) {
-				IContentProvider contentProvider = (IContentProvider)viewer.getContentProvider();
-				if(contentProvider instanceof ObservableTreeContentProvider) {
-					ObservableTreeContentProvider xwtContentProvider = (ObservableTreeContentProvider)contentProvider;
+			if (target instanceof AbstractTreeViewer) {
+				IContentProvider contentProvider = viewer.getContentProvider();
+				if (contentProvider instanceof ObservableTreeContentProvider) {
+					ObservableTreeContentProvider xwtContentProvider = (ObservableTreeContentProvider) contentProvider;
 					xwtContentProvider.updateContext(viewer, value);
 				}
-				if(contentProvider instanceof ObservableTreeContentProvider) {
-					ObservableTreeContentProvider listContentProvider = (ObservableTreeContentProvider)contentProvider;
+				if (contentProvider instanceof ObservableTreeContentProvider) {
+					ObservableTreeContentProvider listContentProvider = (ObservableTreeContentProvider) contentProvider;
 					viewer.setLabelProvider(new ObservableMapLabelProvider(viewer, listContentProvider.getKnownElements(), propertyNames));
 				}
 			} else {
 				IContentProvider contentProvider = viewer.getContentProvider();
-				if(value instanceof List<?> || value.getClass().isArray()) {
-					if(contentProvider == null) {
+				if (value instanceof List<?> || value.getClass().isArray()) {
+					if (contentProvider == null) {
 						contentProvider = new ObservableListContentProvider();
 						viewer.setContentProvider(contentProvider);
 					}
-					if(propertyNames != null && propertyNames.length > 0 && hasDefaultLabelProvider(viewer) && contentProvider instanceof ObservableListContentProvider) {
-						ObservableListContentProvider listContentProvider = (ObservableListContentProvider)contentProvider;
+					if (propertyNames != null && propertyNames.length > 0 && hasDefaultLabelProvider(viewer) && contentProvider instanceof ObservableListContentProvider) {
+						ObservableListContentProvider listContentProvider = (ObservableListContentProvider) contentProvider;
 						viewer.setLabelProvider(new ObservableMapLabelProvider(viewer, listContentProvider.getKnownElements(), propertyNames));
 					}
-				} else if(value instanceof Set<?>) {
-					if(contentProvider == null) {
+				} else if (value instanceof Set<?>) {
+					if (contentProvider == null) {
 						contentProvider = new ObservableSetContentProvider();
 						viewer.setContentProvider(contentProvider);
 					}
-					if(propertyNames != null && propertyNames.length > 0 && hasDefaultLabelProvider(viewer) && contentProvider instanceof ObservableSetContentProvider) {
-						ObservableSetContentProvider setContentProvider = (ObservableSetContentProvider)contentProvider;
+					if (propertyNames != null && propertyNames.length > 0 && hasDefaultLabelProvider(viewer) && contentProvider instanceof ObservableSetContentProvider) {
+						ObservableSetContentProvider setContentProvider = (ObservableSetContentProvider) contentProvider;
 						viewer.setLabelProvider(new ObservableMapLabelProvider(viewer, setContentProvider.getKnownElements(), propertyNames));
 					}
 				}
 			}
 		}
-		if(value instanceof CollectionViewSource) {
-			value = ((CollectionViewSource)value).getView();
-		} else if((value instanceof Collection<?>) && !(value instanceof IObservableCollection)) {
+		if (value instanceof CollectionViewSource) {
+			value = ((CollectionViewSource) value).getView();
+		} else if ((value instanceof Collection<?>) && !(value instanceof IObservableCollection)) {
 			value = ObjectUtil.resolveValue(value, IObservableCollection.class, value);
 		}
 		super.setValue(target, value);
@@ -141,10 +141,10 @@ public class InputBeanProperty extends DelegateProperty {
 	protected Class<?> getElementType() {
 		IProperty property = getDelegate();
 		Class<?> type = property.getType();
-		if(type == null) {
+		if (type == null) {
 			return Object.class;
 		}
-		if(type.isArray()) {
+		if (type.isArray()) {
 			return type.getComponentType();
 		}
 		return Object.class;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.infra.gmfdiag.common.editpart.XYLayoutShapeCompartmen
 
 /**
  * this is an abstract editpart used to allow double click on XY layout compartment
- * 
+ *
  */
 @SuppressWarnings("restriction")
 public abstract class AbstractPackageableElementCompartmentEditPart extends XYLayoutShapeCompartmentEditPart {
@@ -34,16 +34,16 @@ public abstract class AbstractPackageableElementCompartmentEditPart extends XYLa
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart#getDragTracker(org.eclipse.gef.Request)
-	 * 
+	 *
 	 */
 	@Override
 	public DragTracker getDragTracker(Request req) {
-		if(!supportsDragSelection()) {
+		if (!supportsDragSelection()) {
 			return super.getDragTracker(req);
 		}
-		if(req instanceof SelectionRequest && ((SelectionRequest)req).getLastButtonPressed() == 3) {
+		if (req instanceof SelectionRequest && ((SelectionRequest) req).getLastButtonPressed() == 3) {
 			return new DeselectAllTracker(this) {
 
 				@Override
@@ -71,7 +71,7 @@ public abstract class AbstractPackageableElementCompartmentEditPart extends XYLa
 
 			@Override
 			protected void handleFinished() {
-				if(getViewer().getSelectedEditParts().isEmpty()) {
+				if (getViewer().getSelectedEditParts().isEmpty()) {
 					getViewer().select(AbstractPackageableElementCompartmentEditPart.this);
 				}
 			}

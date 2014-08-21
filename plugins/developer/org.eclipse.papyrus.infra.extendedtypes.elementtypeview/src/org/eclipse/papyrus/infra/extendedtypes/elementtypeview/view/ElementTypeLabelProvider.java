@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Ansgar Radermacher (CEA LIST) ansgar.radermacher@cea.fr - Initial API and implementation
  *  Based on edit policy view from patrick.tessier@cea.fr
- *  
+ *
  */
 package org.eclipse.papyrus.infra.extendedtypes.elementtypeview.view;
 
@@ -25,7 +25,7 @@ import org.eclipse.swt.widgets.Display;
 
 /**
  * This is the label provider to display figures
- * 
+ *
  */
 public class ElementTypeLabelProvider implements ITableLabelProvider, ITableColorProvider {
 
@@ -33,23 +33,28 @@ public class ElementTypeLabelProvider implements ITableLabelProvider, ITableColo
 
 	protected Color customizableDropEditPolicyColor = new Color(Display.getDefault(), 0, 38, 255);
 
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 	}
 
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return false;
 	}
 
+	@Override
 	public void dispose() {
 	}
 
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 	}
 
+	@Override
 	public String getColumnText(Object element, int columnIndex) {
-		if(element instanceof IElementType) {
-			IElementType elementType = (IElementType)element;
-			switch(columnIndex) {
+		if (element instanceof IElementType) {
+			IElementType elementType = (IElementType) element;
+			switch (columnIndex) {
 			case 0:
 				String name = elementType.getDisplayName();
 				return name;
@@ -60,14 +65,17 @@ public class ElementTypeLabelProvider implements ITableLabelProvider, ITableColo
 		return "cannot display element: " + element;
 	}
 
+	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
 		return null;
 	}
 
+	@Override
 	public Color getForeground(Object element, int columnIndex) {
 		return null;
 	}
 
+	@Override
 	public Color getBackground(Object element, int columnIndex) {
 		return null;
 	}

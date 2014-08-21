@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 Cedric Dumoulin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,14 @@ import org.eclipse.papyrus.infra.core.utils.AbstractServiceUtils;
 
 /**
  * Get the {@link ServicesRegistry} from a {@link EObject} or a {@link Resource}.
- * This class allow to retrieve the {@code ServicesRegistry} associated to the {@link ResourceSet} owning the {@code Resource}
- * containing the {@code EObject}.
+ * This class allow to retrieve the {@code ServicesRegistry} associated to the {@link ResourceSet} owning the {@code Resource} containing the {@code EObject}.
  * <p>
- * To work properly, the EObject should be associated to a {@link Resource}, itself registered in a {@link ResourceSet}.
- * Also, the {@code ServicesRegistry} should be associated to the {@code ResourceSet}.
- * Normally, this is automatically done thanks to the {@link ModelSetServiceFactory} service.
- * If you access this class from a service, you can ensure that the latter service is started by letting your service
- * depend on the <tt>org.eclipse.papyrus.infra.core.editor.ModelSetServiceFactory</tt>.
+ * To work properly, the EObject should be associated to a {@link Resource}, itself registered in a {@link ResourceSet}. Also, the {@code ServicesRegistry} should be associated to the {@code ResourceSet}. Normally, this is automatically done thanks to the
+ * {@link ModelSetServiceFactory} service. If you access this class from a service, you can ensure that the latter service is started by letting your service depend on the <tt>org.eclipse.papyrus.infra.core.editor.ModelSetServiceFactory</tt>.
  * </p>
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ServiceUtilsForResource extends AbstractServiceUtils<Resource> {
 
@@ -43,7 +39,7 @@ public class ServiceUtilsForResource extends AbstractServiceUtils<Resource> {
 
 	/**
 	 * Get the singleton instance of the class.
-	 * 
+	 *
 	 * @return
 	 */
 	public static final ServiceUtilsForResource getInstance() {
@@ -52,16 +48,16 @@ public class ServiceUtilsForResource extends AbstractServiceUtils<Resource> {
 
 	/**
 	 * Get the {@link ServicesRegistry} from a {@link Resource}.
-	 * 
+	 *
 	 * @param from
-	 *        The {@link Resource} from which we want the associated {@link ServicesRegistry}.
+	 *            The {@link Resource} from which we want the associated {@link ServicesRegistry}.
 	 * @return
 	 * @throws ServiceException
-	 *         If there is no {@link ServicesRegistry} associated to the {@link ResourceSet} owning the {@link Resource}.
+	 *             If there is no {@link ServicesRegistry} associated to the {@link ResourceSet} owning the {@link Resource}.
 	 */
 	@Override
 	public ServicesRegistry getServiceRegistry(Resource from) throws ServiceException {
-		if(from == null) {
+		if (from == null) {
 			throw new ServiceNotFoundException("Can't find the ResourceSet needed retrieve the ServiceRegistry."); //$NON-NLS-1$
 		}
 		return ServiceUtilsForResourceSet.getInstance().getServiceRegistry(from.getResourceSet());

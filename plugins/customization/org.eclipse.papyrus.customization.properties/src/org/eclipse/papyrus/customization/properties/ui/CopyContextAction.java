@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.ui.statushandlers.StatusManager;
 
 /**
  * An action to build a new Property view context from an existing one.
- * 
+ *
  * @author Camille Letavernier
  */
 public class CopyContextAction {
@@ -46,14 +46,14 @@ public class CopyContextAction {
 	 * To enable the edition of the context, an invisible project is created
 	 * in the workspace. The files are stored in the runtime plugin's preference
 	 * folder.
-	 * 
+	 *
 	 * @param source
-	 *        The source Context to copy
+	 *            The source Context to copy
 	 * @param targetName
-	 *        The name of the new context
+	 *            The name of the new context
 	 * @param activate
-	 *        If true, the new context will be activated and available immediately,
-	 *        while the previous one will be disabled to avoid conflicts
+	 *            If true, the new context will be activated and available immediately,
+	 *            while the previous one will be disabled to avoid conflicts
 	 * @return
 	 *         The new Context or {@code null} if it was not created (because of error or user cancellation
 	 */
@@ -69,9 +69,9 @@ public class CopyContextAction {
 					try {
 						result[0] = delegate.copy(source, targetName, monitor);
 
-						if(result[0] != null) {
+						if (result[0] != null) {
 							ConfigurationManager.getInstance().addContext(result[0], activate);
-							if(activate) {
+							if (activate) {
 								ConfigurationManager.getInstance().disableContext(source, true);
 							}
 						}
@@ -82,8 +82,8 @@ public class CopyContextAction {
 
 			});
 		} catch (InvocationTargetException ex) {
-			if(ex.getTargetException() instanceof CoreException) {
-				CoreException ce = (CoreException)ex.getTargetException();
+			if (ex.getTargetException() instanceof CoreException) {
+				CoreException ce = (CoreException) ex.getTargetException();
 				Activator.log.error(ce);
 				StatusManager.getManager().handle(ce.getStatus(), StatusManager.SHOW);
 			} else {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,11 +40,11 @@ import org.eclipse.papyrus.uml.diagram.profile.providers.UMLViewProvider;
 
 /**
  * Custom class to create the association node
- * 
+ *
  * @author Patrick Tessier
  */
 
-//In this file, we need of the UMLViewProviderToCreateTheAssociation
+// In this file, we need of the UMLViewProviderToCreateTheAssociation
 public class AssociationDiamondViewCreateCommand extends AbstractTransactionalCommand {
 
 	/** the created association node */
@@ -70,19 +70,19 @@ public class AssociationDiamondViewCreateCommand extends AbstractTransactionalCo
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
-	 *        the request that is used to obtained the associationclass
+	 *            the request that is used to obtained the associationclass
 	 * @param domain
-	 *        the current edit domain
+	 *            the current edit domain
 	 * @param container
-	 *        the container view
+	 *            the container view
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param preferencesHint
-	 *        the preference hint of the diagram
+	 *            the preference hint of the diagram
 	 * @param point
-	 *        the location of the future association node
+	 *            the location of the future association node
 	 */
 	public AssociationDiamondViewCreateCommand(TransactionalEditingDomain domain, View container, EditPartViewer viewer, PreferencesHint preferencesHint, Point point, SemanticAdapter semanticAdapter) {
 		super(domain, "AssociationDiamondViewCreateCommand", null); //$NON-NLS-1$
@@ -96,7 +96,7 @@ public class AssociationDiamondViewCreateCommand extends AbstractTransactionalCo
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -119,7 +119,7 @@ public class AssociationDiamondViewCreateCommand extends AbstractTransactionalCo
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class AssociationDiamondViewCreateCommand extends AbstractTransactionalCo
 
 	/**
 	 * used to obtain the created node
-	 * 
+	 *
 	 * @return the created node
 	 */
 	public View getNode() {

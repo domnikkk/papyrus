@@ -47,7 +47,7 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 	protected void addAdditionalListeners() {
 		super.addAdditionalListeners();
 		Iterator<Classifier> iterator = getUMLElement().getClassifiers().iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Classifier type = iterator.next();
 			getDiagramEventBroker().addNotificationListener(type, this);
 		}
@@ -55,9 +55,9 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 
 	@Override
 	public void deactivate() {
-		if(getUMLElement() != null) {
+		if (getUMLElement() != null) {
 			Iterator<Classifier> iterator = getUMLElement().getClassifiers().iterator();
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Classifier type = iterator.next();
 				getDiagramEventBroker().removeNotificationListener(type, this);
 			}
@@ -68,8 +68,8 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 	@Override
 	public InstanceSpecification getUMLElement() {
 		EObject element = super.getUMLElement();
-		if(element instanceof InstanceSpecification) {
-			return (InstanceSpecification)element;
+		if (element instanceof InstanceSpecification) {
+			return (InstanceSpecification) element;
 		}
 		return null;
 	}
@@ -99,28 +99,28 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 		// - the stereotype application list has changed
 		Object object = notification.getNotifier();
 
-		if(notification.getEventType() == Notification.ADD) {
-			if(notification.getFeature().equals(UMLPackage.eINSTANCE.getInstanceSpecification_Classifier())) {
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+		if (notification.getEventType() == Notification.ADD) {
+			if (notification.getFeature().equals(UMLPackage.eINSTANCE.getInstanceSpecification_Classifier())) {
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 			}
 		}
-		if(notification.getEventType() == Notification.REMOVE) {
-			if(notification.getFeature().equals(UMLPackage.eINSTANCE.getInstanceSpecification_Classifier())) {
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+		if (notification.getEventType() == Notification.REMOVE) {
+			if (notification.getFeature().equals(UMLPackage.eINSTANCE.getInstanceSpecification_Classifier())) {
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 			}
 		}
-		if(object == null) {
+		if (object == null) {
 			return;
 		}
-		if(notification.getFeature().equals(UMLPackage.eINSTANCE.getNamedElement_Name())) {
+		if (notification.getFeature().equals(UMLPackage.eINSTANCE.getNamedElement_Name())) {
 			refreshDisplay();
-		} else if(notification.getFeature().equals(UMLPackage.eINSTANCE.getInstanceSpecification_Classifier())) {
-			refreshDisplay();
-		}
-		if(isMaskManagedAnnotation(object)) {
+		} else if (notification.getFeature().equals(UMLPackage.eINSTANCE.getInstanceSpecification_Classifier())) {
 			refreshDisplay();
 		}
-		if(isRemovedMaskManagedLabelAnnotation(object, notification)) {
+		if (isMaskManagedAnnotation(object)) {
+			refreshDisplay();
+		}
+		if (isRemovedMaskManagedLabelAnnotation(object, notification)) {
 			refreshDisplay();
 		}
 	}
@@ -132,9 +132,9 @@ public class InstanceSpecificationNameLabelEditPolicy extends AbstractMaskManage
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		if(getUMLElement() != null) {
-			((WrappingLabel)((GraphicalEditPart)getHost()).getFigure()).setText(InstanceSpecificationUtil.getCustomLabel(getUMLElement(), getCurrentDisplayValue()));
-			((WrappingLabel)((GraphicalEditPart)getHost()).getFigure()).setTextUnderline(true);
+		if (getUMLElement() != null) {
+			((WrappingLabel) ((GraphicalEditPart) getHost()).getFigure()).setText(InstanceSpecificationUtil.getCustomLabel(getUMLElement(), getCurrentDisplayValue()));
+			((WrappingLabel) ((GraphicalEditPart) getHost()).getFigure()).setTextUnderline(true);
 		}
 	}
 }

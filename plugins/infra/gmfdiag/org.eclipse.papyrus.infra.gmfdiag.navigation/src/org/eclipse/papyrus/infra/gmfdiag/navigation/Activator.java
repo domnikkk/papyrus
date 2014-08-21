@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,7 +65,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -74,12 +74,12 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the active workbench shell
-	 * 
+	 *
 	 * @return the active workbench shell
 	 */
 	public static Shell getActiveWorkbenchShell() {
 		IWorkbenchWindow workBenchWindow = getActiveWorkbenchWindow();
-		if(workBenchWindow == null) {
+		if (workBenchWindow == null) {
 			return null;
 		}
 		return workBenchWindow.getShell();
@@ -87,15 +87,15 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the active workbench window
-	 * 
+	 *
 	 * @return the active workbench window
 	 */
 	public static IWorkbenchWindow getActiveWorkbenchWindow() {
-		if(getDefault() == null) {
+		if (getDefault() == null) {
 			return null;
 		}
 		IWorkbench workBench = getDefault().getWorkbench();
-		if(workBench == null) {
+		if (workBench == null) {
 			return null;
 		}
 		return workBench.getActiveWorkbenchWindow();

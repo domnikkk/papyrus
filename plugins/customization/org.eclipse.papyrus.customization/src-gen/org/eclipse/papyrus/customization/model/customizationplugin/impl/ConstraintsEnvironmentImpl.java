@@ -20,6 +20,7 @@ public class ConstraintsEnvironmentImpl extends FileBasedCustomizableElementImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintsEnvironmentImpl() {
@@ -29,6 +30,7 @@ public class ConstraintsEnvironmentImpl extends FileBasedCustomizableElementImpl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ConstraintsEnvironmentImpl extends FileBasedCustomizableElementImpl
 		return CustomizationPluginPackage.Literals.CONSTRAINTS_ENVIRONMENT;
 	}
 
-} //ConstraintsEnvironmentImpl
+} // ConstraintsEnvironmentImpl

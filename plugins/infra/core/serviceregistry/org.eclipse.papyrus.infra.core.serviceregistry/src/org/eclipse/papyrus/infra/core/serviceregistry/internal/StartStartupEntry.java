@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry.internal;
 
@@ -9,15 +9,15 @@ import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 /**
  * An ServiceEntry managing {@link IService} that should be started when the
  * registry is started.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 * @param registry
 	 */
@@ -26,9 +26,9 @@ public class StartStartupEntry extends ServiceStartupEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.internal.ServiceStartupEntry#getServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -40,7 +40,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -50,7 +50,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -61,7 +61,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * Do nothing.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -71,7 +71,7 @@ public class StartStartupEntry extends ServiceStartupEntry {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.AbstractServiceEntry#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override

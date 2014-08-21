@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 
 	/**
 	 * Creates a new AspectCreationEntry
-	 * 
+	 *
 	 * @param name
 	 * @param desc
 	 * @param id
@@ -71,7 +71,7 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 	 */
 	protected void computeIconPathFromImageDescriptor(ImageDescriptor desc) {
 		String value = desc.toString();
-		if(value.startsWith("URLImageDescriptor(")) {
+		if (value.startsWith("URLImageDescriptor(")) {
 			String url = value.substring(URL_IMAGE_DESCRIPTOR_BEGIN.length(), value.length() - 1);
 			setIconPath(url);
 		}
@@ -79,7 +79,7 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 
 	/**
 	 * Creates a new AspectCreationEntry
-	 * 
+	 *
 	 * @param name
 	 * @param desc
 	 * @param id
@@ -100,7 +100,7 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 	 */
 	@Override
 	public Tool createTool() {
-		if(tool == null) {
+		if (tool == null) {
 			tool = entry.createTool();
 			tool.setProperties(properties);
 		}
@@ -109,9 +109,9 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 
 	/**
 	 * Returns the specific properties for aspect actions
-	 * 
+	 *
 	 * @param key
-	 *        the key of the properties
+	 *            the key of the properties
 	 * @return the specific properties for aspect actions
 	 */
 	public Object getAspectProperties(String key) {
@@ -120,7 +120,7 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 
 	/**
 	 * Returns the referenced entry
-	 * 
+	 *
 	 * @return the referenced entry
 	 */
 	public CombinedTemplateCreationEntry getReferencedEntry() {
@@ -129,17 +129,17 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 
 	/**
 	 * Returns the list of stereotypes to apply post creation
-	 * 
+	 *
 	 * @return the list of stereotypes to apply post creation
 	 */
 	@SuppressWarnings("unchecked")
 	public List<String> getStereotypeList() {
-		return (List<String>)properties.get(IPapyrusPaletteConstant.STEREOTYPES_TO_APPLY_KEY);
+		return (List<String>) properties.get(IPapyrusPaletteConstant.STEREOTYPES_TO_APPLY_KEY);
 	}
 
 	/**
 	 * @param path
-	 *        the iconPath to set
+	 *            the iconPath to set
 	 */
 	public void setIconPath(String path) {
 		iconPath = path;
@@ -157,7 +157,7 @@ public class AspectCreationEntry extends CombinedTemplateCreationEntry implement
 	 */
 	@Override
 	public AspectCreationEntry clone() {
-		if(getIconPath() != null) {
+		if (getIconPath() != null) {
 			return new AspectCreationEntry(this.getLabel(), this.getDescription(), entry.getId() + "_" + System.currentTimeMillis(), this.getIconPath(), this.entry, this.properties);
 		}
 		return new AspectCreationEntry(this.getLabel(), this.getDescription(), entry.getId() + "_" + System.currentTimeMillis(), this.descriptor, this.entry, this.properties);

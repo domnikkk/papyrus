@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 public class ConnectionToolPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
 
+	@Override
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getInstance().getPreferenceStore());
 	}

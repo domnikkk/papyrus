@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ public class ModelExplorerDecorationAdapter {
 
 	/**
 	 * Instantiates a new model explorer decoration adapter.
-	 * 
+	 *
 	 * @param baseImage
-	 *        the base image
+	 *            the base image
 	 */
 	public ModelExplorerDecorationAdapter(Image baseImage) {
 		this.decoratorTarget = baseImage;
@@ -53,7 +53,7 @@ public class ModelExplorerDecorationAdapter {
 
 	/**
 	 * Gets the decorator target.
-	 * 
+	 *
 	 * @return the decorator target
 	 */
 	public Image getDecoratorTarget() {
@@ -62,11 +62,11 @@ public class ModelExplorerDecorationAdapter {
 
 	/**
 	 * Sets the decoration.
-	 * 
+	 *
 	 * @param decoration
-	 *        the decoration
+	 *            the decoration
 	 * @param decorationPosition
-	 *        the decoration position
+	 *            the decoration position
 	 */
 	public void setDecorations(List<IPapyrusDecoration> decorations) {
 		this.decorations = decorations;
@@ -74,9 +74,9 @@ public class ModelExplorerDecorationAdapter {
 
 	/**
 	 * Sets the decorator target.
-	 * 
+	 *
 	 * @param decoratorTarget
-	 *        the new decorator target
+	 *            the new decorator target
 	 */
 	public void setDecoratorTarget(Image decoratorTarget) {
 		this.decoratorTarget = decoratorTarget;
@@ -85,9 +85,9 @@ public class ModelExplorerDecorationAdapter {
 
 	/**
 	 * Sets the decoration position.
-	 * 
+	 *
 	 * @param decorationPosition
-	 *        the new decoration position
+	 *            the new decoration position
 	 */
 	public void setDecorationPosition(int decorationPosition) {
 		this.decorationPosition = decorationPosition;
@@ -95,20 +95,20 @@ public class ModelExplorerDecorationAdapter {
 
 	/**
 	 * Sets the decorated image.
-	 * 
+	 *
 	 * @param baseImage
-	 *        the base image
+	 *            the base image
 	 * @param decoration
-	 *        the decoration
+	 *            the decoration
 	 * @param decorationPosition
-	 *        the decoration position
+	 *            the decoration position
 	 */
 	public Image getDecoratedImage() {
-		if(decoratorTarget == null) {
+		if (decoratorTarget == null) {
 			return null;
 		}
 
-		if(decorations == null) {
+		if (decorations == null) {
 			return decoratorTarget;
 		}
 
@@ -119,13 +119,13 @@ public class ModelExplorerDecorationAdapter {
 
 		decoratedImage = Activator.getDefault().getImageRegistry().get(decoratedImageId);
 		// Return the stored image if we have one
-		if(decoratedImage == null) {
+		if (decoratedImage == null) {
 			// Otherwise create a new image and store it
 			ImageDescriptor[] decorationImages = new ImageDescriptor[5];
-			// Store the decoration by position 
+			// Store the decoration by position
 			IPapyrusDecoration[] decorationByPosition = new IPapyrusDecoration[5];
 
-			for(IPapyrusDecoration decoration : decorations) {
+			for (IPapyrusDecoration decoration : decorations) {
 				IPapyrusDecoration existingDecoration = decorationByPosition[decoration.getPositionForJFace()];
 				if (existingDecoration == null || existingDecoration.getPriority() < decoration.getPriority()) {
 					// if no decoration exists for the current position
@@ -144,7 +144,7 @@ public class ModelExplorerDecorationAdapter {
 
 	public String calcId() {
 		String decoratedImageId = decoratorTarget.toString();
-		for(IPapyrusDecoration decoration : decorations) {
+		for (IPapyrusDecoration decoration : decorations) {
 			decoratedImageId += decoration.getDecorationImageForME().toString() + decoration.getPosition();
 		}
 		return decoratedImageId;

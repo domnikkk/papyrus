@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 LIFL, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ import org.eclipse.ui.part.EditorActionBarContributor;
 /**
  * Base class of GmfEditor factories. Editor should subclass this class and provide a 0 args
  * constructor initializing the super class.
- * 
+ *
  * @author Cedric Dumoulin
  * @author Remi Schnekenburger
  * @author Patrick Tessier
@@ -46,11 +46,11 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 
 	/**
 	 * Creates a new GmfEditorFactory.
-	 * 
+	 *
 	 * @param diagramClass
-	 *        expected Class of the diagram to create.
+	 *            expected Class of the diagram to create.
 	 * @param expectedType
-	 *        expected diagram type (@see {@link Diagram#getType()})
+	 *            expected diagram type (@see {@link Diagram#getType()})
 	 */
 	protected GmfEditorFactory(Class<?> diagramClass, String expectedType) {
 		super(diagramClass, expectedType);
@@ -59,18 +59,19 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 	/**
 	 * Return true if this PageModelFactory can create a PageModel for the specified pageIdentifier.
 	 * The pageIdentifier is an instance of Diagram.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.extension.diagrameditor.IPluggableEditorFactory#isPageModelFactoryFor(java.lang.Object)
 	 * @param pageIdentifier
 	 * @return
-	 * 
+	 *
 	 */
+	@Override
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
 
-		if(pageIdentifier instanceof Diagram) {
-			Diagram diagram = (Diagram)pageIdentifier;
+		if (pageIdentifier instanceof Diagram) {
+			Diagram diagram = (Diagram) pageIdentifier;
 			// disable it when diagram is a proxy (dedicated factory will handle it)
-			if(!diagram.eIsProxy()) {
+			if (!diagram.eIsProxy()) {
 				final String type = diagram.getType();
 				return getExpectedType().equals(type);
 			}
@@ -81,22 +82,23 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.extension.diagrameditor.IPluggableEditorFactory#createIPageModel(java.lang.Object)
 	 * @param pageIdentifier
 	 * @return
-	 * 
+	 *
 	 */
+	@Override
 	public IPageModel createIPageModel(Object pageIdentifier) {
 
-		return new GMFEditorModel((Diagram)pageIdentifier, getServiceRegistry());
+		return new GMFEditorModel((Diagram) pageIdentifier, getServiceRegistry());
 	}
 
 	/**
 	 * IEditorModel handling creation of the requested Editor.
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	class GMFEditorModel implements IEditorModel {
 
@@ -111,9 +113,9 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 		private ServicesRegistry servicesRegistry;
 
 		private Image tabIcon;
-		
+
 		/**
-		 * 
+		 *
 		 * Constructor.
 		 */
 		public GMFEditorModel(Diagram pageIdentifier, ServicesRegistry servicesRegistry) {
@@ -123,21 +125,22 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Create the IEditor for the diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel#createIEditorPart()
 		 * @return
 		 * @throws PartInitException
-		 * 
+		 *
 		 */
+		@Override
 		public IEditorPart createIEditorPart() throws PartInitException {
 			GraphicalEditor editor;
 			try {
 				Constructor<?> c = getDiagramClass().getConstructor(ServicesRegistry.class, Diagram.class);
-				editor = (GraphicalEditor)c.newInstance(servicesRegistry, diagram);
-				
+				editor = (GraphicalEditor) c.newInstance(servicesRegistry, diagram);
+
 				IGraphicalEditorSupport editorSupport = servicesRegistry.getService(IGraphicalEditorSupport.class);
 				editorSupport.initialize(editor);
-				
+
 				return editor;
 
 			} catch (Exception e) {
@@ -150,17 +153,18 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Get the action bar requested by the Editor.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IEditorModel#getActionBarContributor()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public EditorActionBarContributor getActionBarContributor() {
 
 			String actionBarId = editorDescriptor.getActionBarContributorId();
 
 			// Do nothing if no EditorActionBarContributor is specify.
-			if(actionBarId == null || actionBarId.length() == 0) {
+			if (actionBarId == null || actionBarId.length() == 0) {
 				return null;
 			}
 
@@ -170,7 +174,7 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 			// ServicesRegistry serviceRegistry = getServicesRegistry();
 			ActionBarContributorRegistry registry;
 			try {
-				registry = (ActionBarContributorRegistry)servicesRegistry.getService(ActionBarContributorRegistry.class);
+				registry = servicesRegistry.getService(ActionBarContributorRegistry.class);
 			} catch (ServiceException e) {
 				// Service not found
 				// TODO Log the error
@@ -189,26 +193,28 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Get the underlying RawModel. Return the Diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getRawModel()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public Object getRawModel() {
 			return diagram;
 		}
 
 		/**
 		 * Get the icon to be shown by Tabs
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabIcon()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public Image getTabIcon() {
-			if(tabIcon == null) {
+			if (tabIcon == null) {
 				ImageDescriptor imageDescriptor = DiagramUtils.getPrototype(diagram).getIconDescriptor();
-				if(imageDescriptor != null) {
+				if (imageDescriptor != null) {
 					tabIcon = imageDescriptor.createImage();
 				}
 			}
@@ -218,18 +224,19 @@ public class GmfEditorFactory extends AbstractEditorFactory {
 
 		/**
 		 * Get the title of the Diagram.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabTitle()
 		 * @return
-		 * 
+		 *
 		 */
+		@Override
 		public String getTabTitle() {
 			return diagram.getName();
 		}
 
 		@Override
 		public void dispose() {
-			if(tabIcon != null) {
+			if (tabIcon != null) {
 				tabIcon.dispose();
 				tabIcon = null;
 			}

@@ -18,15 +18,15 @@ import org.eclipse.gmf.codegen.gmfgen.GenCommonBase;
  * This element is always linked to a genView (topLevel, or child)
  * Used set if an editPart is abstract.
  * SuperGenViews is a list of all superEditPart.
- * 
+ *
  * Thanks to this, it is possible to factorize code and to decrease the number of generated classes.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.EditPartUsingDeleteService#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.EditPartUsingDeleteService#getGenView <em>Gen View</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.EditPartUsingDeleteService#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.EditPartUsingDeleteService#getGenView <em>Gen View</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public interface EditPartUsingDeleteService extends CommentedElement {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getEditPartUsingDeleteService_Name()
@@ -55,7 +56,9 @@ public interface EditPartUsingDeleteService extends CommentedElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.papyrusgmfgenextension.EditPartUsingDeleteService#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -69,6 +72,7 @@ public interface EditPartUsingDeleteService extends CommentedElement {
 	 * If the meaning of the '<em>Gen View</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Gen View</em>' reference list.
 	 * @see org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage#getEditPartUsingDeleteService_GenView()
 	 * @model ordered="false"

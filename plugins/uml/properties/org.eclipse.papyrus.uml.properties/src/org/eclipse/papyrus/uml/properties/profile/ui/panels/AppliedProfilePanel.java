@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,10 @@ import org.eclipse.uml2.uml.Package;
 // TODO: Auto-generated Javadoc
 /**
  * The Class ProfilePanel.
- * 
+ *
  * @deprecated
  */
+@Deprecated
 public class AppliedProfilePanel extends AppliedStereotypePanel {
 
 	/**
@@ -40,11 +41,11 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 
 	/**
 	 * The default constructor.
-	 * 
+	 *
 	 * @param style
-	 *        the style of this panel
+	 *            the style of this panel
 	 * @param parent
-	 *        the parent Composite for this panel
+	 *            the parent Composite for this panel
 	 */
 	public AppliedProfilePanel(Composite parent, int style) {
 		super(parent, style);
@@ -54,7 +55,7 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 
 	/**
 	 * A constructor parameterized by a factory.
-	 * 
+	 *
 	 * @param style
 	 * @param factory
 	 * @param parent
@@ -66,8 +67,8 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return the factory
 	 */
 	public TabbedPropertySheetWidgetFactory getFactory() {
@@ -76,15 +77,15 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 
 	/**
 	 * Sets the selected.
-	 * 
+	 *
 	 * @param selected
-	 *        The selected to set.
+	 *            The selected to set.
 	 * @param pkg
-	 *        the pkg
+	 *            the pkg
 	 */
 	public void setSelected(Package pkg) {
 		super.setSelected(pkg);
-		if(profileComposite != null) {
+		if (profileComposite != null) {
 			selected = pkg;
 			profileComposite.refresh();
 		}
@@ -94,7 +95,7 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 
 	/**
 	 * Gets the control.
-	 * 
+	 *
 	 * @return the control for this panel
 	 */
 	@Override
@@ -109,7 +110,7 @@ public class AppliedProfilePanel extends AppliedStereotypePanel {
 	 */
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @return the control
 	 */
 	@Override

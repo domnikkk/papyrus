@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,19 +28,23 @@ public class WorkspaceContextStorageActionProvider extends AbstractContextStorag
 		super();
 	}
 
+	@Override
 	public boolean providesFor(Context context) {
 		Resource resource = context.eResource();
 		return (resource != null) && resource.getURI().isPlatformResource() || resource.getURI().isFile();
 	}
 
+	@Override
 	protected IContextCopyAction createContextCopyAction() {
 		return new WorkspaceContextCopyAction();
 	}
 
+	@Override
 	protected IContextEditAction createContextEditAction() {
 		return new WorkspaceContextEditAction();
 	}
 
+	@Override
 	protected IContextDeleteAction createContextDeleteAction() {
 		return new WorkspaceContextDeleteAction();
 	}

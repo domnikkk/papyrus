@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class ApplyProfileAction extends AbstractRepairAction {
 	public ApplyProfileAction(Iterable<? extends Package> packages, Supplier<Profile> profileSupplier) {
 		super(Kind.APPLY_LATEST_PROFILE_DEFINITION);
 
-		if(Iterables.isEmpty(packages)) {
+		if (Iterables.isEmpty(packages)) {
 			throw new IllegalArgumentException("no packages"); //$NON-NLS-1$
 		}
 
@@ -77,13 +77,13 @@ public class ApplyProfileAction extends AbstractRepairAction {
 		boolean result = false;
 
 		Profile profile = profileSupplier.get();
-		if(profile != null) {
+		if (profile != null) {
 			String taskName = NLS.bind("Migrating stereotypes to current version of profile \"{0}\"...", profile.getName());
 			SubMonitor sub = SubMonitor.convert(monitor, taskName, stereotypeApplications.size() * 3 / 2);
 
 			// Apply the profile
 			StereotypeApplicationRepairParticipant.createStereotypeApplicationMigrator(profile, diagnostics).migrate(stereotypeApplications, sub.newChild(stereotypeApplications.size()));
-			for(Package next : packages) {
+			for (Package next : packages) {
 				next.applyProfile(profile);
 			}
 

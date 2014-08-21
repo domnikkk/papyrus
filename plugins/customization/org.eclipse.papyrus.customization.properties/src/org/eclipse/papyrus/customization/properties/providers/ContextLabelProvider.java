@@ -35,30 +35,30 @@ public class ContextLabelProvider extends ResolvingCustomizedLabelProvider {
 
 	@Override
 	public String getText(Object element) {
-		if(!(element instanceof EObjectTreeElement) && element instanceof EObject) {
+		if (!(element instanceof EObjectTreeElement) && element instanceof EObject) {
 			try {
 				//				Method method = CustomizationManager.class.getDeclaredMethod("getAppearanceConfiguration");//$NON-NLS-1$
-				//				method.setAccessible(true);
-				//				AppearanceConfiguration result = (AppearanceConfiguration)method.invoke(Activator.getDefault().getCustomizationManager());
-				//				ITreeElement treeElement = new ModelElementItem((EObject)element, null, result);
+				// method.setAccessible(true);
+				// AppearanceConfiguration result = (AppearanceConfiguration)method.invoke(Activator.getDefault().getCustomizationManager());
+				// ITreeElement treeElement = new ModelElementItem((EObject)element, null, result);
 
-				//Customized label provider can be applied directly on element non useful to create a EObjectTreeElement
+				// Customized label provider can be applied directly on element non useful to create a EObjectTreeElement
 				String text = super.getText(element);
 				return text;
 			} catch (SecurityException ex) {
 				Activator.log.error(ex);
 			}
-			//			catch (NoSuchMethodException ex) {
-			//				Activator.log.error(ex);
-			//			} catch (IllegalArgumentException ex) {
-			//				Activator.log.error(ex);
-			//			} catch (IllegalAccessException ex) {
-			//				Activator.log.error(ex);
-			//			} catch (InvocationTargetException ex) {
-			//				Activator.log.error(ex);
-			//			}
+			// catch (NoSuchMethodException ex) {
+			// Activator.log.error(ex);
+			// } catch (IllegalArgumentException ex) {
+			// Activator.log.error(ex);
+			// } catch (IllegalAccessException ex) {
+			// Activator.log.error(ex);
+			// } catch (InvocationTargetException ex) {
+			// Activator.log.error(ex);
+			// }
 		}
-		if(element != null) {
+		if (element != null) {
 			return super.getText(element);
 		} else {
 			return "";
@@ -67,28 +67,28 @@ public class ContextLabelProvider extends ResolvingCustomizedLabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		if(!(element instanceof EObjectTreeElement) && element instanceof EObject) {
+		if (!(element instanceof EObjectTreeElement) && element instanceof EObject) {
 			try {
 				//				Method method = CustomizationManager.class.getDeclaredMethod("getAppearanceConfiguration");//$NON-NLS-1$
-				//				method.setAccessible(true);
-				//				AppearanceConfiguration result = (AppearanceConfiguration)method.invoke(Activator.getDefault().getCustomizationManager());
-				//				ITreeElement treeElement = new ModelElementItem((EObject)element, null, result);
+				// method.setAccessible(true);
+				// AppearanceConfiguration result = (AppearanceConfiguration)method.invoke(Activator.getDefault().getCustomizationManager());
+				// ITreeElement treeElement = new ModelElementItem((EObject)element, null, result);
 
-				//Customized label provider can be applied directly on element non useful to create a EObjectTreeElement
+				// Customized label provider can be applied directly on element non useful to create a EObjectTreeElement
 				Image image = super.getImage(element);
 				return image;
 			} catch (SecurityException ex) {
 				Activator.log.error(ex);
 			}
-			//			catch (NoSuchMethodException ex) {
-			//				Activator.log.error(ex);
-			//			} catch (IllegalArgumentException ex) {
-			//				Activator.log.error(ex);
-			//			} catch (IllegalAccessException ex) {
-			//				Activator.log.error(ex);
-			//			} catch (InvocationTargetException ex) {
-			//				Activator.log.error(ex);
-			//			}
+			// catch (NoSuchMethodException ex) {
+			// Activator.log.error(ex);
+			// } catch (IllegalArgumentException ex) {
+			// Activator.log.error(ex);
+			// } catch (IllegalAccessException ex) {
+			// Activator.log.error(ex);
+			// } catch (InvocationTargetException ex) {
+			// Activator.log.error(ex);
+			// }
 		}
 		return super.getImage(element);
 	}

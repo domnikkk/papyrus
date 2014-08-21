@@ -16,6 +16,7 @@ import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactioncon
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RuntimeValuesEditionActionConfigurationXMLProcessor extends XMLProcessor {
@@ -24,17 +25,19 @@ public class RuntimeValuesEditionActionConfigurationXMLProcessor extends XMLProc
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RuntimeValuesEditionActionConfigurationXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		RuntimeValuesEditionActionConfigurationPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the RuntimeValuesEditionActionConfigurationResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -47,4 +50,4 @@ public class RuntimeValuesEditionActionConfigurationXMLProcessor extends XMLProc
 		return registrations;
 	}
 
-} //RuntimeValuesEditionActionConfigurationXMLProcessor
+} // RuntimeValuesEditionActionConfigurationXMLProcessor

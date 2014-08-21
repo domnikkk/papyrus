@@ -15,8 +15,9 @@ import org.eclipse.papyrus.infra.export.actions.ExportAllDiagramsAction;
 
 public class PropertyTester extends org.eclipse.core.expressions.PropertyTester {
 
+	@Override
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if("isFileExportable".equals(property) || "isCollectionExportable".equals(property)) {
+		if ("isFileExportable".equals(property) || "isCollectionExportable".equals(property)) {
 			return ExportAllDiagramsAction.getIFile(receiver) != null;
 		}
 		return false;

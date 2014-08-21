@@ -13,6 +13,7 @@ import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.infra.gmfdiag.common.figure.edge.PapyrusEdgeFigure;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.GeneralOrderingItemSemanticEditPolicy;
 
@@ -36,18 +37,19 @@ public class GeneralOrderingEditPart extends ConnectionNodeEditPart implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new GeneralOrderingItemSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof GeneralOrderingAppliedStereotypeEditPart) {
-			((GeneralOrderingAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+		if (childEditPart instanceof GeneralOrderingAppliedStereotypeEditPart) {
+			((GeneralOrderingAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 			return true;
 		}
 		return false;
@@ -56,8 +58,9 @@ public class GeneralOrderingEditPart extends ConnectionNodeEditPart implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -67,7 +70,7 @@ public class GeneralOrderingEditPart extends ConnectionNodeEditPart implements I
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof GeneralOrderingAppliedStereotypeEditPart) {
+		if (childEditPart instanceof GeneralOrderingAppliedStereotypeEditPart) {
 			return true;
 		}
 		return false;
@@ -76,8 +79,9 @@ public class GeneralOrderingEditPart extends ConnectionNodeEditPart implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -85,12 +89,13 @@ public class GeneralOrderingEditPart extends ConnectionNodeEditPart implements I
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new GeneralOrderingDescriptor();
 	}
@@ -99,7 +104,7 @@ public class GeneralOrderingEditPart extends ConnectionNodeEditPart implements I
 	 * @generated
 	 */
 	public GeneralOrderingDescriptor getPrimaryShape() {
-		return (GeneralOrderingDescriptor)getFigure();
+		return (GeneralOrderingDescriptor) getFigure();
 	}
 
 	/**

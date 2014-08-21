@@ -27,31 +27,31 @@ public class ParametricDiagramEditPolicyProvider extends AbstractProvider implem
 
 	public boolean provides(IOperation operation) {
 
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof GraphicalEditPart)) {
 			return false;
 		}
-		GraphicalEditPart gep = (GraphicalEditPart)epOperation.getEditPart();
+		GraphicalEditPart gep = (GraphicalEditPart) epOperation.getEditPart();
 		String diagramType = gep.getNotationView().getDiagram().getType();
-		if(!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
+		if (!ElementTypes.DIAGRAM_ID.equals(diagramType)) {
 			return false;
 		}
 
-		if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConstraintEditPart) {
+		if (gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.ConstraintEditPart) {
 			return true;
-		}	
-		if(gep instanceof PortAffixedNodeEditPart) {
+		}
+		if (gep instanceof PortAffixedNodeEditPart) {
 			return true;
-		}	
-		if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.UseCaseEditPartCN) {
+		}
+		if (gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.UseCaseEditPartCN) {
 			return true;
-		}	
-		if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.CommentEditPart) {
+		}
+		if (gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.CommentEditPart) {
 			return true;
-		}	
-		if(gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.InteractionConstraintEditPartCN) {
+		}
+		if (gep instanceof org.eclipse.papyrus.uml.diagram.composite.edit.parts.InteractionConstraintEditPartCN) {
 			return true;
-		}	
+		}
 
 		return false;
 	}

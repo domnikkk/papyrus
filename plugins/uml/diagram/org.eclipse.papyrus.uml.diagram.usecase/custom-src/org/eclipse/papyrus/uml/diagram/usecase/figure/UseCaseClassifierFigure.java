@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure
 
 /**
  * this figure is the representation of a subject in the usecase diagram
- * 
+ *
  */
 public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 
@@ -32,7 +32,7 @@ public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 
 	/**
 	 * this is the layout manager in charge to place element in the enumeration
-	 * 
+	 *
 	 */
 	private class SubjectLayoutManager extends AbstractLayout {
 
@@ -47,7 +47,7 @@ public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 		protected final int GAP_Y = 5;
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
@@ -55,8 +55,8 @@ public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 			int minimumWith = 0;
 			int minimumHeight = 0;
 			// display name
-			if(getNameLabel() != null) {
-				if(getNameLabel().getPreferredSize().width > minimumWith) {
+			if (getNameLabel() != null) {
+				if (getNameLabel().getPreferredSize().width > minimumWith) {
 					minimumWith = getNameLabel().getPreferredSize().width;
 				}
 				minimumHeight += getNameLabel().getPreferredSize().height;
@@ -65,34 +65,35 @@ public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 		}
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void layout(IFigure container) {
 			List<?> childrenList = container.getChildren();
-			for(int i = 0; i < container.getChildren().size(); i++) {
-				Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
-				IFigure fig = ((IFigure)childrenList.get(i));
+			for (int i = 0; i < container.getChildren().size(); i++) {
+				Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
+				IFigure fig = ((IFigure) childrenList.get(i));
 				fig.invalidate();
-				Dimension prefConstraint = ((IFigure)childrenList.get(i)).getPreferredSize(container.getBounds().width, -1);
+				Dimension prefConstraint = ((IFigure) childrenList.get(i)).getPreferredSize(container.getBounds().width, -1);
 				bound.setSize(prefConstraint);
-				if(i > 0) {
-					bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
+				if (i > 0) {
+					bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y + 1;
 					bound.x = getBounds().x + GAP_X;
 				} else {
 					bound.x = getBounds().x + GAP_X;
 					bound.y = getBounds().y + GAP_Y;
 				}
-				((IFigure)childrenList.get(i)).setBounds(bound);
+				((IFigure) childrenList.get(i)).setBounds(bound);
 			}
 			// container
 			Rectangle lastRectangle = getExtensionPointContainerFigure().getBounds();
 			lastRectangle.height = getBounds().y + getBounds().height - lastRectangle.y;
 			lastRectangle.x = container.getBounds().x;
 			lastRectangle.width = getBounds().width;
-			//getPackageableElementFigure().setBounds(lastRectangle);
-			if(getGMFExtensionPointContainerFigure() != null) {
-				//getGMFPackageableElementContainer().setBounds(lastRectangle);
+			// getPackageableElementFigure().setBounds(lastRectangle);
+			if (getGMFExtensionPointContainerFigure() != null) {
+				// getGMFPackageableElementContainer().setBounds(lastRectangle);
 			}
 		}
 	}
@@ -108,12 +109,12 @@ public class UseCaseClassifierFigure extends NodeNamedElementFigure {
 
 	/**
 	 * get the gmf container figure of the package
-	 * 
+	 *
 	 * @return the gmf container
 	 */
 	public org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure getGMFExtensionPointContainerFigure() {
-		if(shapeCompartment.getChildren().size() > 0) {
-			return (org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure)shapeCompartment.getChildren().get(0);
+		if (shapeCompartment.getChildren().size() > 0) {
+			return (org.eclipse.gmf.runtime.diagram.ui.figures.ResizableCompartmentFigure) shapeCompartment.getChildren().get(0);
 		}
 		return null;
 	}

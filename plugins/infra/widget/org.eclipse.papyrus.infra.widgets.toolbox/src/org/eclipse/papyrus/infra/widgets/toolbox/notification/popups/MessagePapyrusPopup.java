@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * A notification with a message
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class MessagePapyrusPopup extends PapyrusPopup {
 
@@ -34,13 +34,13 @@ public class MessagePapyrusPopup extends PapyrusPopup {
 
 	/**
 	 * Create a Papyrus message popup
-	 * 
+	 *
 	 * @param parentShell
-	 *        , the shell
+	 *            , the shell
 	 * @param toolkit
-	 *        , the toolkit to create elements
+	 *            , the toolkit to create elements
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 */
 	public MessagePapyrusPopup(Shell parentShell, FormToolkit toolkit, String message) {
 		super(parentShell, toolkit);

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Anass RADOUANI (AtoS) 
+ *    Anass RADOUANI (AtoS)
  *******************************************************************************/
 
 package org.eclipse.papyrus.infra.export.wizard;
@@ -34,9 +34,10 @@ public class ExportAllWizard extends Wizard implements IExportWizard {
 	/** Selected file */
 	private IFile file;
 
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		file = convertSelection2File(selection);
-		if(file != null) {
+		if (file != null) {
 			page = new ExportDiagramsPage(file);
 			addPage(page);
 		} else {
@@ -48,7 +49,7 @@ public class ExportAllWizard extends Wizard implements IExportWizard {
 
 	@Override
 	public boolean canFinish() {
-		if(file == null) {
+		if (file == null) {
 			return false;
 		}
 		return super.canFinish();
@@ -56,10 +57,10 @@ public class ExportAllWizard extends Wizard implements IExportWizard {
 
 	@Override
 	public boolean performFinish() {
-		if(file == null) {
+		if (file == null) {
 			return false;
 		} else {
-			if(!page.getExport().getOutputDirectory().isAccessible()) {
+			if (!page.getExport().getOutputDirectory().isAccessible()) {
 				page.setErrorMessage(Messages.ExportAllWizard_0);
 				return false;
 			}
@@ -71,17 +72,17 @@ public class ExportAllWizard extends Wizard implements IExportWizard {
 
 	/**
 	 * Try to retrieve the selected file from the given selection
-	 * 
+	 *
 	 * @param sel
-	 *        the selection
+	 *            the selection
 	 * @return the selected file
 	 */
 	private IFile convertSelection2File(ISelection sel) {
 		// get the selected diagrams file
-		if(sel instanceof IStructuredSelection) {
-			IStructuredSelection ssel = (IStructuredSelection)sel;
+		if (sel instanceof IStructuredSelection) {
+			IStructuredSelection ssel = (IStructuredSelection) sel;
 			// Only one file should be selected
-			if(!ssel.isEmpty() && ssel.size() == 1) {
+			if (!ssel.isEmpty() && ssel.size() == 1) {
 				Object selectedObj = ssel.getFirstElement();
 				return getIFile(selectedObj);
 			}
@@ -91,32 +92,32 @@ public class ExportAllWizard extends Wizard implements IExportWizard {
 
 	/**
 	 * return the IFile corresponding to the selection
-	 * 
+	 *
 	 * @param selectedObj
-	 *        selected file
+	 *            selected file
 	 * @return
 	 */
 	public static IFile getIFile(Object selectedObj) {
 		IFile result = null;
-		if(selectedObj instanceof IFile) {
-			result = (IFile)selectedObj;
+		if (selectedObj instanceof IFile) {
+			result = (IFile) selectedObj;
 		}
 		// Try to adapt
-		if(result == null && selectedObj instanceof IAdaptable) {
-			result = (IFile)((IAdaptable)selectedObj).getAdapter(IFile.class);
+		if (result == null && selectedObj instanceof IAdaptable) {
+			result = (IFile) ((IAdaptable) selectedObj).getAdapter(IFile.class);
 		}
 		// adapt in ifile
-		if(result == null) {
-			result = (IFile)Platform.getAdapterManager().getAdapter(selectedObj, IFile.class);
+		if (result == null) {
+			result = (IFile) Platform.getAdapterManager().getAdapter(selectedObj, IFile.class);
 		}
-		if(result == null) {
+		if (result == null) {
 			// try to check if it is a collection
-			Collection<?> collec = (Collection<?>)Platform.getAdapterManager().getAdapter(selectedObj, Collection.class);
-			if(collec != null) {
-				for(Object o : collec) {
-					if(o instanceof IFile) {
-						IFile f = (IFile)o;
-						if("di".equals(f.getFileExtension())) { //$NON-NLS-1$
+			Collection<?> collec = (Collection<?>) Platform.getAdapterManager().getAdapter(selectedObj, Collection.class);
+			if (collec != null) {
+				for (Object o : collec) {
+					if (o instanceof IFile) {
+						IFile f = (IFile) o;
+						if ("di".equals(f.getFileExtension())) { //$NON-NLS-1$
 							result = f;
 							break;
 						}
@@ -125,7 +126,7 @@ public class ExportAllWizard extends Wizard implements IExportWizard {
 			}
 		}
 		return result != null && "di".equals(result.getFileExtension()) ? result //$NON-NLS-1$
-		: null;
+				: null;
 	}
 
 }

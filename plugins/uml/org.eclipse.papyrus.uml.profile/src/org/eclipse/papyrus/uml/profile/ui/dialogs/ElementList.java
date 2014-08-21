@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import java.util.Set;
 // TODO: Auto-generated Javadoc
 /**
  * The Class ElementList.
- * 
+ *
  * @author Remi Schnekenburger
  */
 public class ElementList {
@@ -53,7 +53,7 @@ public class ElementList {
 
 	/**
 	 * Return the collection of tasks.
-	 * 
+	 *
 	 * @return the elements
 	 */
 	public ArrayList getElements() {
@@ -62,94 +62,94 @@ public class ElementList {
 
 	/**
 	 * Add a new element to the collection of selected elements.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public void addElement(Object element) {
 		elements.add(elements.size(), element);
 		Iterator iterator = changeListeners.iterator();
-		while(iterator.hasNext()) {
-			((IListViewer)iterator.next()).addElement(element);
+		while (iterator.hasNext()) {
+			((IListViewer) iterator.next()).addElement(element);
 		}
 	}
 
 
 	/**
 	 * Removes the element.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public void removeElement(Object element) {
 		elements.remove(element);
 		Iterator iterator = changeListeners.iterator();
-		while(iterator.hasNext()) {
-			((IListViewer)iterator.next()).removeElement(element);
+		while (iterator.hasNext()) {
+			((IListViewer) iterator.next()).removeElement(element);
 		}
 	}
 
 	/**
 	 * Move element up.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public void moveElementUp(Object element) {
 		// remove element, then add it to Min(its last index -1, 0)
 		int index = elements.indexOf(element);
-		if(index > 0) {
+		if (index > 0) {
 			elements.remove(element);
 			elements.add(index - 1, element);
 		}
 
 		Iterator iterator = changeListeners.iterator();
-		while(iterator.hasNext()) {
-			((IListViewer)iterator.next()).updateElement(element);
+		while (iterator.hasNext()) {
+			((IListViewer) iterator.next()).updateElement(element);
 		}
 
 	}
 
 	/**
 	 * Move element down.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public void moveElementDown(Object element) {
 		// remove element, then add it to Max(its last index +1, elements.size())
 		int index = elements.indexOf(element);
-		if(index >= 0 && index < elements.size() - 1) {
+		if (index >= 0 && index < elements.size() - 1) {
 			elements.remove(element);
 			elements.add(index + 1, element);
 		}
 
 		Iterator iterator = changeListeners.iterator();
-		while(iterator.hasNext()) {
-			((IListViewer)iterator.next()).updateElement(element);
+		while (iterator.hasNext()) {
+			((IListViewer) iterator.next()).updateElement(element);
 		}
 	}
 
 
 	/**
 	 * Element changed.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public void elementChanged(Object element) {
 		Iterator iterator = changeListeners.iterator();
-		while(iterator.hasNext()) {
-			((IListViewer)iterator.next()).updateElement(element);
+		while (iterator.hasNext()) {
+			((IListViewer) iterator.next()).updateElement(element);
 		}
 	}
 
 	/**
 	 * Contains.
-	 * 
+	 *
 	 * @param element
-	 *        the element
-	 * 
+	 *            the element
+	 *
 	 * @return true, if contains
 	 */
 	public boolean contains(Object element) {
@@ -158,9 +158,9 @@ public class ElementList {
 
 	/**
 	 * Removes the change listener.
-	 * 
+	 *
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 */
 	public void removeChangeListener(IListViewer viewer) {
 		changeListeners.remove(viewer);
@@ -168,9 +168,9 @@ public class ElementList {
 
 	/**
 	 * Adds the change listener.
-	 * 
+	 *
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 */
 	public void addChangeListener(IListViewer viewer) {
 		changeListeners.add(viewer);

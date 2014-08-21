@@ -44,13 +44,10 @@ public interface ICatalogManager {
 	public void manage(EObject root);
 
 	/**
-	 * This method is called by the {@link CatalogSetManager} after the instantiation of this
-	 * {@link ICatalogManager}. This method must attach the catalog(s) managed by this
-	 * {@link ICatalogManager} to the given <code>catalogSet</code>.
+	 * This method is called by the {@link CatalogSetManager} after the instantiation of this {@link ICatalogManager}. This method must attach the catalog(s) managed by this {@link ICatalogManager} to the given <code>catalogSet</code>.
 	 *
 	 * @param catalogSet
-	 *            the {@link CatalogSet} to which the catalog managed by this
-	 *            {@link ICatalogManager} should be attached
+	 *            the {@link CatalogSet} to which the catalog managed by this {@link ICatalogManager} should be attached
 	 */
 	public void setCatalogSet(CatalogSet catalogSet);
 

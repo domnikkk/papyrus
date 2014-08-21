@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,9 +20,9 @@ import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.papyrus.infra.nattable.utils.CSVPasteHelper;
 
 /**
- * 
+ *
  * This class allows to paste axis from string
- * 
+ *
  */
 public class PasteAxisInNattableManager extends AbstractPasteImportInNattableManager {
 
@@ -32,9 +32,9 @@ public class PasteAxisInNattableManager extends AbstractPasteImportInNattableMan
 	private final String pastedText;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableManager
 	 * @param pasteHelper
 	 * @param useProgressMonitorDialog
@@ -46,9 +46,9 @@ public class PasteAxisInNattableManager extends AbstractPasteImportInNattableMan
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.AbstractPasteImportInNattableManager#createReader()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -57,9 +57,9 @@ public class PasteAxisInNattableManager extends AbstractPasteImportInNattableMan
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.manager.AbstractPasteImportInNattableManager#getDataSize()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

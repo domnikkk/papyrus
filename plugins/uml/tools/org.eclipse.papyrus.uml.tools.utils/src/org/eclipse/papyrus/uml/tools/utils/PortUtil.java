@@ -23,10 +23,10 @@ public class PortUtil extends PropertyUtil {
 
 	/**
 	 * return the custom label of the property, given UML2 specification and a custom style.
-	 * 
+	 *
 	 * @param style
-	 *        the integer representing the style of the label
-	 * 
+	 *            the integer representing the style of the label
+	 *
 	 * @return the string corresponding to the label of the property
 	 */
 	public static String getCustomLabel(Property property, Collection<String> maskValues) {
@@ -34,25 +34,25 @@ public class PortUtil extends PropertyUtil {
 		// visibility
 
 		buffer.append(" ");
-		if(maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
+		if (maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
 			buffer.append(NamedElementUtil.getVisibilityAsSign(property));
 		}
 
 		// derived property
-		if(maskValues.contains(ICustomAppearance.DISP_DERIVE)) {
-			if(property.isDerived()) {
+		if (maskValues.contains(ICustomAppearance.DISP_DERIVE)) {
+			if (property.isDerived()) {
 				buffer.append("/");
 			}
 		}
 		// name
-		if(maskValues.contains(ICustomAppearance.DISP_NAME)) {
+		if (maskValues.contains(ICustomAppearance.DISP_NAME)) {
 			buffer.append(" ");
 			buffer.append(property.getName());
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_TYPE)) {
-			if(maskValues.contains(ICustomAppearance.DISP_CONJUGATED)) {
-				if(((Port)property).isConjugated()) {
+		if (maskValues.contains(ICustomAppearance.DISP_TYPE)) {
+			if (maskValues.contains(ICustomAppearance.DISP_CONJUGATED)) {
+				if (((Port) property).isConjugated()) {
 					buffer.append(": ~");
 				} else {
 					buffer.append(": ");
@@ -61,37 +61,37 @@ public class PortUtil extends PropertyUtil {
 				buffer.append(": ");
 			}
 			// type
-			if(property.getType() != null) {
+			if (property.getType() != null) {
 				buffer.append(property.getType().getName());
 			} else {
 				buffer.append(TypeUtil.UNDEFINED_TYPE_NAME);
 			}
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_MULTIPLICITY)) {
+		if (maskValues.contains(ICustomAppearance.DISP_MULTIPLICITY)) {
 			// multiplicity -> do not display [1]
 			String multiplicity = MultiplicityElementUtil.getMultiplicityAsString(property);
 			buffer.append(multiplicity);
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) {
+		if (maskValues.contains(ICustomAppearance.DISP_DEFAULT_VALUE)) {
 			// default value
-			if(property.getDefault() != null) {
+			if (property.getDefault() != null) {
 				buffer.append(" = ");
 				buffer.append(property.getDefault());
 			}
 		}
 
-		if(maskValues.contains(ICustomAppearance.DISP_MODIFIERS)) {
+		if (maskValues.contains(ICustomAppearance.DISP_MODIFIERS)) {
 			boolean multiLine = maskValues.contains(ICustomAppearance.DISP_MULTI_LINE);
 			// property modifiers
 			String modifiers = PropertyUtil.getModifiersAsString(property, multiLine);
-			if(!modifiers.equals("")) {
-				if(multiLine) {
+			if (!modifiers.equals("")) {
+				if (multiLine) {
 					buffer.append("\n");
 				}
 
-				if(!buffer.toString().endsWith(" ")) {
+				if (!buffer.toString().endsWith(" ")) {
 					buffer.append(" ");
 				}
 

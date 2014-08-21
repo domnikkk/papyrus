@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class CustomCombinedFragment2EditPart extends CombinedFragment2EditPart {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomCombinedFragment2EditPart(View view) {
@@ -53,22 +53,22 @@ public class CustomCombinedFragment2EditPart extends CombinedFragment2EditPart {
 	@Override
 	protected NodeFigure getNodeFigure() {
 		NodeFigure centerFigure = null;
-		if(getContentPane() instanceof CoRegionCombinedFragmentFigure) {
-			centerFigure = ((CoRegionCombinedFragmentFigure)getContentPane()).getCentralVerticalLine();
+		if (getContentPane() instanceof CoRegionCombinedFragmentFigure) {
+			centerFigure = ((CoRegionCombinedFragmentFigure) getContentPane()).getCentralVerticalLine();
 		}
 		return centerFigure;
 	}
 
 	/**
 	 * Get the lifeline element where the CoRegion is drawn
-	 * 
+	 *
 	 * @return the attached lifeline
 	 */
 	public Lifeline getAttachedLifeline() {
 		Lifeline attachedLifeline = null;
 		EditPart editPartParent = getParent();
-		if(editPartParent instanceof LifelineEditPart) {
-			attachedLifeline = (Lifeline)((LifelineEditPart)editPartParent).resolveSemanticElement();
+		if (editPartParent instanceof LifelineEditPart) {
+			attachedLifeline = (Lifeline) ((LifelineEditPart) editPartParent).resolveSemanticElement();
 		}
 		return attachedLifeline;
 	}
@@ -77,8 +77,8 @@ public class CustomCombinedFragment2EditPart extends CombinedFragment2EditPart {
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
 		Object feature = notification.getFeature();
-		if((getModel() != null) && (getModel() == notification.getNotifier())) {
-			if(NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
+		if ((getModel() != null) && (getModel() == notification.getNotifier())) {
+			if (NotationPackage.eINSTANCE.getLineStyle_LineWidth().equals(feature)) {
 				refreshLineWidth();
 			}
 		}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -40,10 +40,10 @@ public abstract class AbstractProperty extends Behavior implements IProperty {
 	}
 
 	public void addSetPostAction(ISetPostAction setPostAction) {
-		if(setPostActions == Collections.EMPTY_LIST) {
+		if (setPostActions == Collections.EMPTY_LIST) {
 			setPostActions = new ArrayList<ISetPostAction>();
 		}
-		if(!setPostActions.contains(setPostAction)) {
+		if (!setPostActions.contains(setPostAction)) {
 			setPostActions.add(setPostAction);
 		}
 	}
@@ -53,7 +53,7 @@ public abstract class AbstractProperty extends Behavior implements IProperty {
 	}
 
 	protected void fireSetPostAction(Object target, IProperty property, Object value) {
-		for(ISetPostAction setPostAction : setPostActions) {
+		for (ISetPostAction setPostAction : setPostActions) {
 			setPostAction.action(target, property, value);
 		}
 	}
@@ -76,21 +76,21 @@ public abstract class AbstractProperty extends Behavior implements IProperty {
 	 * @see org.eclipse.papyrus.xwt.metadata.IProperty#setType(java.lang.Class)
 	 */
 	public void setType(Class<?> type) {
-		if(type == boolean.class) {
+		if (type == boolean.class) {
 			type = Boolean.class;
-		} else if(type == int.class) {
+		} else if (type == int.class) {
 			type = Integer.class;
-		} else if(type == long.class) {
+		} else if (type == long.class) {
 			type = Long.class;
-		} else if(type == char.class) {
+		} else if (type == char.class) {
 			type = Character.class;
-		} else if(type == float.class) {
+		} else if (type == float.class) {
 			type = Float.class;
-		} else if(type == double.class) {
+		} else if (type == double.class) {
 			type = Double.class;
-		} else if(type == byte.class) {
+		} else if (type == byte.class) {
 			type = Byte.class;
-		} else if(type == short.class) {
+		} else if (type == short.class) {
 			type = Short.class;
 		}
 		this.type = type;

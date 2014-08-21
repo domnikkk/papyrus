@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,8 +23,9 @@ public class TimeObservationNodeFigure extends AbstractObservationNodeFigure {
 
 	public static final String IMAGE_OBSERVATION = "TimeObservation.gif"; //$NON-NLS-1$
 
+	@Override
 	public void setAppliedStereotypeIcon(Image image) {
-		if(image == null) {
+		if (image == null) {
 			setIcon(Activator.getPluginIconImage(ID, PATH + IMAGE_OBSERVATION));
 		} else {
 			setIcon(image);

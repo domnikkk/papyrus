@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 
 	/**
 	 * @param request
-	 *        {@link ControlTableCommand#request}
+	 *            {@link ControlTableCommand#request}
 	 */
 	@SuppressWarnings("unchecked")
 	public PapyrusNattableControlCommand(ControlModeRequest request) {
@@ -62,7 +62,7 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 
 	/**
 	 * Get all the tab that need to be moved
-	 * 
+	 *
 	 * @return
 	 * @throws ExecutionException
 	 */
@@ -71,10 +71,9 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -84,15 +83,15 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		EObject objectTOControl = request.getTargetObject();
 		EMFHelper.getUsages(objectTOControl);
-		//Retrieve new notation resource created previously
+		// Retrieve new notation resource created previously
 		Resource newResource = getTargetResource();
-		if(newResource == null) {
+		if (newResource == null) {
 			return CommandResult.newErrorCommandResult(String.format("The target %s model has not been created", getTargetResourceFileExtension()));
 		}
 		List<EObject> tables = getTables();
-		if(!tables.isEmpty()) {
-			for(EObject tab : tables) {
-				if(tab instanceof Table) {
+		if (!tables.isEmpty()) {
+			for (EObject tab : tables) {
+				if (tab instanceof Table) {
 					newResource.getContents().add(tab);
 				}
 			}
@@ -103,13 +102,13 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 
 	/**
 	 * Register the tab being moved to the request in ordert to be used by other participants
-	 * 
+	 *
 	 * @param tables
 	 */
 	public void addMovedTabToRequest(List<EObject> tables) {
 		@SuppressWarnings("unchecked")
-		Collection<EObject> openables = (Collection<EObject>)request.getParameter(ControlModeRequestParameters.MOVED_OPENABLES);
-		if(openables == null) {
+		Collection<EObject> openables = (Collection<EObject>) request.getParameter(ControlModeRequestParameters.MOVED_OPENABLES);
+		if (openables == null) {
 			openables = new ArrayList<EObject>();
 		}
 		openables.addAll(tables);
@@ -118,7 +117,7 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 
 	/**
 	 * Retrieve the target resource from the request
-	 * 
+	 *
 	 * @return
 	 */
 	protected Resource getTargetResource() {
@@ -126,7 +125,7 @@ public class PapyrusNattableControlCommand extends AbstractTransactionalCommand 
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the extension point of the target resource
 	 */

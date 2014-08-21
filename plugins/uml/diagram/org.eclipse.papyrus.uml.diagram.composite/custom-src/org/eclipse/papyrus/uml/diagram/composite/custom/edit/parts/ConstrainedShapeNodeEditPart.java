@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,10 +29,10 @@ public abstract class ConstrainedShapeNodeEditPart extends ShapeNodeEditPart {
 	public ConstrainedShapeNodeEditPart(View view) {
 		super(view);
 	}
+
 	/**
-	 * the drag tracker has been specialized in order to constraint mvt inside its container without 
-	 * scroll bar
-	 * {@inheritDoc}
+	 * the drag tracker has been specialized in order to constraint mvt inside its container without
+	 * scroll bar {@inheritDoc}
 	 */
 	@Override
 	public DragTracker getDragTracker(Request request) {

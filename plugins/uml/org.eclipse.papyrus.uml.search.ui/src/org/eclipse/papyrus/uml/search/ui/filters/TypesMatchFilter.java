@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,20 +23,20 @@ import org.eclipse.search.ui.text.MatchFilter;
 import org.eclipse.uml2.uml.Element;
 
 /**
- * 
+ *
  * A specific kind of filter that can filter UML based results
- * 
+ *
  */
 public class TypesMatchFilter extends MatchFilter {
 
 	private Object[] selectedTypes;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param types
-	 *        the collection of types whose instance are NOT filtered
+	 *            the collection of types whose instance are NOT filtered
 	 */
 	public TypesMatchFilter(Object[] types) {
 		this.selectedTypes = types;
@@ -64,18 +64,18 @@ public class TypesMatchFilter extends MatchFilter {
 
 	@Override
 	public boolean filters(Match match) {
-		if(match instanceof AbstractResultEntry) {
+		if (match instanceof AbstractResultEntry) {
 			List<Object> selectedTypesList = Arrays.asList(selectedTypes);
 
-			Object elementToValidate = ((AbstractResultEntry)match).elementToCheckFilterFor();
+			Object elementToValidate = ((AbstractResultEntry) match).elementToCheckFilterFor();
 
-			if(elementToValidate instanceof Element) {
+			if (elementToValidate instanceof Element) {
 
-				if(selectedTypesList.contains(((Element)elementToValidate).eClass())) {
+				if (selectedTypesList.contains(((Element) elementToValidate).eClass())) {
 					return false;
 				}
-				for(Object object : selectedTypesList) {
-					if(((Element)elementToValidate).getAppliedStereotypes().contains(object)) {
+				for (Object object : selectedTypesList) {
+					if (((Element) elementToValidate).getAppliedStereotypes().contains(object)) {
 						return false;
 					}
 				}

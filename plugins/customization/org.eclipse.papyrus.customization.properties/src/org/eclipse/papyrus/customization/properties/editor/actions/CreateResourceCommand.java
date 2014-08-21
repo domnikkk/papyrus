@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.customization.properties.Activator;
 
 /**
  * A command to create an EMF resource
- * 
+ *
  * @author Camille Letavernier
  */
 public class CreateResourceCommand extends AbstractCommand implements CommandActionDelegate {
@@ -40,15 +40,15 @@ public class CreateResourceCommand extends AbstractCommand implements CommandAct
 	private Resource resource;
 
 	/**
-	 * 
+	 *
 	 * Constructor. A Command to create an EMF Resource. The command can be undone.
-	 * 
+	 *
 	 * @param object
-	 *        The EObject to persist in the resource
+	 *            The EObject to persist in the resource
 	 * @param uri
-	 *        The location of the resource
+	 *            The location of the resource
 	 * @param resourceSet
-	 *        The resourceSet in which the resource should be created
+	 *            The resourceSet in which the resource should be created
 	 */
 	public CreateResourceCommand(EObject object, URI uri, ResourceSet resourceSet) {
 		super("Create new " + object.eClass().getName(), "Creates a new " + object.eClass().getName()); //$NON-NLS-1$ //$NON-NLS-2$
@@ -57,9 +57,10 @@ public class CreateResourceCommand extends AbstractCommand implements CommandAct
 		this.resourceSet = resourceSet;
 	}
 
+	@Override
 	public void execute() {
 		resource = resourceSet.getResource(uri, false);
-		if(resource == null) {
+		if (resource == null) {
 			Activator.log.debug("+++ Creating " + uri);
 			fileAlreadyExists = false;
 			resource = resourceSet.createResource(uri);
@@ -69,14 +70,15 @@ public class CreateResourceCommand extends AbstractCommand implements CommandAct
 		resource.getContents().add(object);
 	}
 
+	@Override
 	public void redo() {
 		execute();
 	}
 
 	@Override
 	public void undo() {
-		//Do not unload the resource if it was created before this command was executed
-		if(!fileAlreadyExists) {
+		// Do not unload the resource if it was created before this command was executed
+		if (!fileAlreadyExists) {
 			Activator.log.debug("--- Deleting " + resource.getURI());
 			try {
 				resourceSet.getResources().remove(resource);
@@ -89,14 +91,17 @@ public class CreateResourceCommand extends AbstractCommand implements CommandAct
 		}
 	}
 
+	@Override
 	public Object getImage() {
 		return null;
 	}
 
+	@Override
 	public String getText() {
 		return getLabel();
 	}
 
+	@Override
 	public String getToolTipText() {
 		return getDescription();
 	}

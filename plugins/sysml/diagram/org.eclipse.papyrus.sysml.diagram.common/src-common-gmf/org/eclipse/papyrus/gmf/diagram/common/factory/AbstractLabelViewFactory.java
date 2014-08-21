@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,8 +24,8 @@ public abstract class AbstractLabelViewFactory extends DecorationNodeViewFactory
 
 	@Override
 	protected void initializeFromPreferences(View view) {
-		//Do not call initializeFromPreferences when the preference initializer is disabled (Typical use case: CSS are installed)
-		if(ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
+		// Do not call initializeFromPreferences when the preference initializer is disabled (Typical use case: CSS are installed)
+		if (ThemeInitializerManager.instance.usePreferenceInitializer(view)) {
 			super.initializeFromPreferences(view);
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,7 +14,7 @@
 package org.eclipse.papyrus.infra.hyperlink.util;
 
 /**
- * this is an exception that can be raised when hyperlinks are manipulated 
+ * this is an exception that can be raised when hyperlinks are manipulated
  *
  */
 public class HyperLinkException extends Exception {
@@ -24,7 +24,7 @@ public class HyperLinkException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	
+
 	/**
 	 * constructor
 	 */

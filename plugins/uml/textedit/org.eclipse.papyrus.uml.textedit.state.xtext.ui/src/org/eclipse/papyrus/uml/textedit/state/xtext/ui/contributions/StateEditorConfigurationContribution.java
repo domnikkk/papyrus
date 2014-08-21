@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,11 +42,11 @@ import com.google.inject.Injector;
 
 /**
  * @author CEA LIST
- * 
+ *
  *         This class is used for contribution to the Papyrus extension point
  *         DirectEditor. It is used for the integration of an xtext generated
  *         editor, for States of UML StateMachines.
- * 
+ *
  */
 public class StateEditorConfigurationContribution extends DefaultXtextDirectEditorConfiguration implements
 		ICustomDirectEditorConfiguration {
@@ -182,7 +182,7 @@ public class StateEditorConfigurationContribution extends DefaultXtextDirectEdit
 
 	/**
 	 * @author CEA LIST
-	 * 
+	 *
 	 *         A command for updating the context UML model
 	 */
 	protected class UpdateUMLStateCommand extends AbstractTransactionalCommand {
@@ -190,13 +190,13 @@ public class StateEditorConfigurationContribution extends DefaultXtextDirectEdit
 		private static final String STATE_UPDATE_CMD = "State Update"; //$NON-NLS-1$
 
 		private State state;
-	
+
 		public UpdateUMLStateCommand(State state) {
 			super(StateEditorConfigurationContribution.getEditingDomain(state), STATE_UPDATE_CMD,
 					getWorkspaceFiles(state));
 			this.state = state;
 		}
-		
+
 		/*
 		 * (non-Javadoc)
 		 * 
@@ -216,7 +216,7 @@ public class StateEditorConfigurationContribution extends DefaultXtextDirectEdit
 			return CommandResult.newOKCommandResult(state);
 		}
 
-	
+
 		private Behavior updateOrCreateBehavior(BehaviorRole_Local role, BehaviorKind kind, String behaviorName) {
 			Behavior behavior = null;
 			switch (role) {

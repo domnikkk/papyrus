@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,10 +45,10 @@ public class DelegatingObservableList extends DelegatingObservableCollection<IOb
 	public static IObservableList wrap(IObservableList observable) {
 		IObservableList result;
 
-		if(observable instanceof IDelegatingObservable) {
-			// Already have a delegator.  Just create another like it
+		if (observable instanceof IDelegatingObservable) {
+			// Already have a delegator. Just create another like it
 			try {
-				result = (IObservableList)observable.getClass().getDeclaredConstructor(IObservableList.class).newInstance(observable);
+				result = observable.getClass().getDeclaredConstructor(IObservableList.class).newInstance(observable);
 			} catch (Exception e) {
 				// Seems unlikely as I must have created the observable in the first place
 				throw new IllegalArgumentException("observable is an invalid implementation of IDelegatingObservable", e); //$NON-NLS-1$
@@ -96,7 +96,7 @@ public class DelegatingObservableList extends DelegatingObservableCollection<IOb
 
 	@SuppressWarnings("unchecked")
 	public void add(int index, Object element) {
-		if(getDelegate() == null) {
+		if (getDelegate() == null) {
 			throw new IndexOutOfBoundsException();
 		}
 		getDelegate().add(index, element);
@@ -104,7 +104,7 @@ public class DelegatingObservableList extends DelegatingObservableCollection<IOb
 
 	@SuppressWarnings("rawtypes")
 	public boolean addAll(int index, Collection c) {
-		if(getDelegate() == null) {
+		if (getDelegate() == null) {
 			throw new IndexOutOfBoundsException();
 		}
 		return getDelegate().addAll(index, c);
@@ -113,21 +113,21 @@ public class DelegatingObservableList extends DelegatingObservableCollection<IOb
 	public Object get(int index) {
 		getterCalled();
 
-		if(getDelegate() == null) {
+		if (getDelegate() == null) {
 			throw new IndexOutOfBoundsException();
 		}
 		return getDelegate().get(index);
 	}
 
 	public Object set(int index, Object element) {
-		if(getDelegate() == null) {
+		if (getDelegate() == null) {
 			throw new IndexOutOfBoundsException();
 		}
 		return getDelegate().set(index, element);
 	}
 
 	public Object move(int oldIndex, int newIndex) {
-		if(getDelegate() == null) {
+		if (getDelegate() == null) {
 			throw new IndexOutOfBoundsException();
 		}
 		return getDelegate().move(oldIndex, newIndex);
@@ -171,7 +171,7 @@ public class DelegatingObservableList extends DelegatingObservableCollection<IOb
 	}
 
 	private IListChangeListener getForwardingListChangeListener() {
-		if(forwardingListChangeListener == null) {
+		if (forwardingListChangeListener == null) {
 			forwardingListChangeListener = new IListChangeListener() {
 
 				public void handleListChange(ListChangeEvent event) {

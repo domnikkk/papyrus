@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.papyrus.views.properties.ui.ValueAttribute;
 /**
  * An Action to create a section's XWT Resource, with a default Composite
  * and layout.
- * 
+ *
  * @author Camille Letavernier
  */
 public class CreateSectionWidgetAction extends StaticSelectionCommandAction {
@@ -43,18 +43,18 @@ public class CreateSectionWidgetAction extends StaticSelectionCommandAction {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param selection
-	 *        The current selection. The first element should be a Section.
+	 *            The current selection. The first element should be a Section.
 	 */
 	public CreateSectionWidgetAction(ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection sSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection sSelection = (IStructuredSelection) selection;
 
 			Object selectedElement = sSelection.getFirstElement();
 
-			if(selectedElement instanceof Section) {
-				section = (Section)selectedElement;
+			if (selectedElement instanceof Section) {
+				section = (Section) selectedElement;
 			}
 		}
 		configureAction(selection);
@@ -62,7 +62,7 @@ public class CreateSectionWidgetAction extends StaticSelectionCommandAction {
 
 	@Override
 	protected Command createActionCommand(EditingDomain editingDomain, Collection<?> collection) {
-		if(section == null) {
+		if (section == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -80,7 +80,7 @@ public class CreateSectionWidgetAction extends StaticSelectionCommandAction {
 		CompositeWidget newWidget = UiFactory.eINSTANCE.createCompositeWidget();
 
 
-		for(Map.Entry<String, String> entry : getNamespaces().entrySet()) {
+		for (Map.Entry<String, String> entry : getNamespaces().entrySet()) {
 			ValueAttribute attribute = UiFactory.eINSTANCE.createValueAttribute();
 			attribute.setName(entry.getKey());
 			attribute.setValue(entry.getValue());
@@ -107,7 +107,7 @@ public class CreateSectionWidgetAction extends StaticSelectionCommandAction {
 
 	private Command getCreateResourceCommand(CompositeWidget newWidget) {
 		URI widgetURI;
-		if(section.getSectionFile() == null || section.getSectionFile().equals("")) { //$NON-NLS-1$
+		if (section.getSectionFile() == null || section.getSectionFile().equals("")) { //$NON-NLS-1$
 			section.setSectionFile(section.getName() + ".xwt"); //$NON-NLS-1$
 		}
 
@@ -119,7 +119,7 @@ public class CreateSectionWidgetAction extends StaticSelectionCommandAction {
 	}
 
 	private Command getSetWidgetCommand(CompositeWidget newWidget) {
-		if(section.getWidget() == null) {
+		if (section.getWidget() == null) {
 			return SetCommand.create(editingDomain, section, section.eClass().getEStructuralFeature("widget"), newWidget); //$NON-NLS-1$
 		} else {
 			return UnexecutableCommand.INSTANCE;

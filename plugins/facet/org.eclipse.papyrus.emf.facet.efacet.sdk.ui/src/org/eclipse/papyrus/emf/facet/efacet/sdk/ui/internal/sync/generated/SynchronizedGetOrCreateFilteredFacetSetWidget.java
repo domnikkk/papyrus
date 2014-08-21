@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -19,11 +19,13 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.Abstr
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
 
 @SuppressWarnings("PMD.ExcessivePublicCount")
-public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedObject<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget> implements org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget {
+public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedObject<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget> implements
+		org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget {
 
 	public SynchronizedGetOrCreateFilteredFacetSetWidget(final org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget object, final Display display) {
 		super(object, display);
 	}
+
 	public final void addListener(final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.AbstractWidget parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -32,7 +34,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final void createWidgetContent() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -41,7 +43,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final java.lang.String getError() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -50,7 +52,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final void notifyChanged() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -59,7 +61,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final <A> A adapt(final java.lang.Class<A> parm0) {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<A>() {
 			@Override
@@ -68,7 +70,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final java.lang.Object getCommand() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.Object>() {
 			@Override
@@ -77,7 +79,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final void onDialogValidation() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -86,7 +88,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet getElementSelected() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet>() {
 			@Override
@@ -95,7 +97,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget<org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet, org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget>> pressNewButton() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<org.eclipse.papyrus.emf.facet.util.ui.internal.exported.dialog.IDialog<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.IENamedElementWidget<org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet, org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.creation.IGetOrCreateFilteredFacetSetWidget>>>() {
 			@Override
@@ -104,7 +106,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final void selectElement(final org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetSet parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -113,7 +115,7 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 	public final void selectElementByName(final java.lang.String parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -122,5 +124,5 @@ public class SynchronizedGetOrCreateFilteredFacetSetWidget extends SynchronizedO
 			}
 		});
 	}
-	
+
 }

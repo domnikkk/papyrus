@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.uml.tools.Activator;
  * A Validator based on the Papyrus EditService
  * Tests whether a given Object is a valid value for a specific
  * feature on an EObject
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class EditServiceValidator {
 
@@ -38,7 +38,7 @@ public class EditServiceValidator {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param editedEObject
 	 * @param editedFeature
 	 */
@@ -46,11 +46,11 @@ public class EditServiceValidator {
 		this.editedEObject = editedEObject;
 		this.editedFeature = editedFeature;
 
-		if(editedEObject != null) {
+		if (editedEObject != null) {
 			this.editingService = ElementEditServiceUtils.getCommandProvider(editedEObject);
 		}
 
-		if(this.editingService == null) {
+		if (this.editingService == null) {
 			// log error service not found...
 			Activator.log.warn("Could not create service for " + EMFCoreUtil.getQualifiedName(editedEObject, true));
 		}
@@ -59,7 +59,7 @@ public class EditServiceValidator {
 	/**
 	 * Tests whether the given element is a valid value,
 	 * i.e. can be used as a value to edit this EObject/Feature pair
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 *         True if the given element is valid
@@ -67,13 +67,13 @@ public class EditServiceValidator {
 	public boolean isValidValue(Object element) {
 		// Get semantic element
 		EObject semanticElement = EMFHelper.getEObject(element);
-		if((semanticElement == null) && (element != null)) {
+		if ((semanticElement == null) && (element != null)) {
 			return false;
 		}
 
 		// Test editing command...
 		SetRequest req = new SetRequest(editedEObject, editedFeature, semanticElement);
-		if((editingService != null) && (editingService.canEdit(req))) {
+		if ((editingService != null) && (editingService.canEdit(req))) {
 			return true;
 		}
 

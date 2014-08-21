@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,12 +29,12 @@ import org.eclipse.ui.internal.dnd.IDropTarget;
  * A sash panel contain 2 children. It shows them in two windows separated by a sash.
  * Implementation use one model, a {@link ISashPanelModel}. This model encapsulate the real model which
  * is of an unknown type.
- * 
- * 
+ *
+ *
  * @author dumoulin
- * 
+ *
  * @param T
- *        Type of the external model representing the sash.
+ *            Type of the external model representing the sash.
  */
 @SuppressWarnings({ "restriction" })
 public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
@@ -77,12 +77,13 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Fill the provided part map with this parts and recursively call children to fillin.
-	 * 
+	 *
 	 * @param partMap
 	 */
+	@Override
 	public void fillPartMap(PartLists partMap) {
 		partMap.addPart(this);
-		for(AbstractPanelPart child : currentChildParts) {
+		for (AbstractPanelPart child : currentChildParts) {
 			child.fillPartMap(partMap);
 		}
 		garbageState = GarbageState.UNVISITED;
@@ -90,20 +91,21 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Create local control, and the tree of children (TileParts AND controls). Create this TilePart control, and then Tile childs of this TilePart.
-	 * 
+	 *
 	 * @param parent
 	 * @return Control
 	 */
+	@Override
 	public void createPartControl(Composite parent) {
 
 		createControl(parent);
-		//		activate();
-		//		createChildrenControl();
+		// activate();
+		// createChildrenControl();
 	}
 
 	/**
 	 * Create local control. Does not create children.
-	 * 
+	 *
 	 */
 	protected void createControl(Composite parent) {
 		// container = new SashForm(parent, sashDirection);
@@ -113,9 +115,9 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 	/**
 	 * Create the part for the specified child model.
 	 * The controls are NOT build.
-	 * 
+	 *
 	 * TODO: delegate to sashContainer, remove duplication from here and RootPart.
-	 * 
+	 *
 	 * @param rootPart
 	 * @param partModel
 	 * @return
@@ -126,10 +128,10 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 		IAbstractPanelModel model = getPartModel().createChildSashModel(rawModel);
 
 		AbstractPanelPart createdPart;
-		if(model instanceof ITabFolderModel) {
-			createdPart = new TabFolderPart(this, (ITabFolderModel)model, rawModel);
-		} else if(model instanceof ISashPanelModel) {
-			createdPart = new SashPanelPart(this, (ISashPanelModel)model, rawModel);
+		if (model instanceof ITabFolderModel) {
+			createdPart = new TabFolderPart(this, (ITabFolderModel) model, rawModel);
+		} else if (model instanceof ISashPanelModel) {
+			createdPart = new SashPanelPart(this, (ISashPanelModel) model, rawModel);
 		} else {
 			// error
 			throw new IllegalArgumentException("Can't create child part for model of type '"
@@ -144,9 +146,9 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 	/**
 	 * Create the part for the specified child model.
 	 * The controls are build.
-	 * 
+	 *
 	 * TODO: delegate to sashContainer, remove duplication from here and RootPart.
-	 * 
+	 *
 	 * @param rootPart
 	 * @param partModel
 	 * @return
@@ -162,18 +164,19 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Get the sash container.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPanelPart#getControl()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Composite getControl() {
 		return container;
 	}
 
 	/**
 	 * Change the parent of this method. Reparent the Tile and the control. Normally, the control already exists.
-	 * 
+	 *
 	 */
 	@Override
 	public void reparent(IPanelParent newParent, Composite swtParent) {
@@ -193,14 +196,15 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Orphan this node, and children. The parent is set to null, but control is left unchanged. The node can be reattached with reparent().
-	 * 
+	 *
 	 * @see
 	 * @return the parent
 	 */
+	@Override
 	public void orphan() {
 
 		// orphan only if we are in UNCHANGED state
-		if(garbageState == GarbageState.UNVISITED) {
+		if (garbageState == GarbageState.UNVISITED) {
 			garbageState = GarbageState.ORPHANED;
 			parent = null;
 		}
@@ -211,7 +215,7 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 	 */
 	@Override
 	public void dispose() {
-		if(container != null && !container.isDisposed()) {
+		if (container != null && !container.isDisposed()) {
 			container.dispose();
 		}
 		container = null;
@@ -223,14 +227,14 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 	 */
 	@Override
 	public void disposeThisAndChildren() {
-		
+
 		// Dispose children if any
-		for( AbstractPanelPart child : currentChildParts) {
-			if(child != null) {
+		for (AbstractPanelPart child : currentChildParts) {
+			if (child != null) {
 				child.disposeThisAndChildren();
 			}
 		}
-		
+
 		// clean up properties to help GC
 		model = null;
 		rawModel = null;
@@ -238,9 +242,9 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Traverses the tree to find the part that intersects the given point
-	 * 
+	 *
 	 * @param toFind
-	 *        Point in display coordinate
+	 *            Point in display coordinate
 	 * @return the part that intersects the given point
 	 * @throws NotFoundException
 	 */
@@ -251,11 +255,11 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 		// Try the left/up pane
 		bounds = DragUtil.getDisplayBounds(container.getLeftParent());
-		if(bounds.contains(toFind)) {
+		if (bounds.contains(toFind)) {
 			return currentChildParts[0].findPart(toFind);
 		}
 		bounds = DragUtil.getDisplayBounds(container.getRightParent());
-		if(bounds.contains(toFind)) {
+		if (bounds.contains(toFind)) {
 			// Return right part
 			return currentChildParts[1].findPart(toFind);
 		}
@@ -267,25 +271,27 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Locates the part that intersects the given point and that have the expected type
-	 * 
+	 *
 	 * @param toFind
-	 *        Position in Display coordinate.
+	 *            Position in Display coordinate.
 	 * @return
 	 */
+	@Override
 	public AbstractPart findPartAt(Point toFind, Class<?> expectedTileType) {
 
-		if(expectedTileType == this.getClass())
+		if (expectedTileType == this.getClass()) {
 			return this;
+		}
 
 		Rectangle bounds = DragUtil.getDisplayBounds(container); // container.getBounds();
 
-		if(isVertical()) {
-			if(toFind.y < bounds.y + (bounds.height / 2)) {
+		if (isVertical()) {
+			if (toFind.y < bounds.y + (bounds.height / 2)) {
 				return currentChildParts[0].findPartAt(toFind, expectedTileType);
 			}
 			return currentChildParts[1].findPartAt(toFind, expectedTileType);
 		} else {
-			if(toFind.x < bounds.x + (bounds.width / 2)) {
+			if (toFind.x < bounds.x + (bounds.width / 2)) {
 				return currentChildParts[0].findPartAt(toFind, expectedTileType);
 			}
 			return currentChildParts[1].findPartAt(toFind, expectedTileType);
@@ -302,21 +308,21 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Find the part associated to the provided control.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.sash.ITilePart#findPart(org.eclipse.swt.widgets.Control)
 	 */
 	@Override
 	public AbstractPart findPart(Object control) {
-		if(this.getControl() == control) {
+		if (this.getControl() == control) {
 			return this;
 		}
 
 		AbstractPart node = currentChildParts[0].findPart(control);
-		if(node != null) {
+		if (node != null) {
 			return node;
 		}
 		node = currentChildParts[1].findPart(control);
-		if(node != null) {
+		if (node != null) {
 			return node;
 		}
 		return null;
@@ -326,24 +332,26 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 	/**
 	 * SashPanelPart can't be a DropTarget. Do nothing.
 	 */
+	@Override
 	public IDropTarget getDropTarget(Object draggedObject, TabFolderPart sourcePart, Point position) {
 		return null;
 	}
 
 	/**
 	 * Return true if the Part is for the specified real model. Return false otherwise.
-	 * 
+	 *
 	 * @param realModel
-	 *        The raw model to check
+	 *            The raw model to check
 	 * @return
 	 */
+	@Override
 	public boolean isPartFor(Object realModel) {
 		return getRawModel() == realModel;
 	}
 
 	/**
 	 * Get the raw model associated to this part.
-	 * 
+	 *
 	 * @return
 	 */
 	protected Object getRawModel() {
@@ -352,23 +360,24 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Synchronize the sash.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.internal.AbstractPanelPart#synchronize2(org.eclipse.papyrus.infra.core.sasheditor.internal.PartLists)
-	 * 
+	 *
 	 * @param partMap
 	 */
+	@Override
 	public void synchronize2(PartLists partMap) {
 
 		// Compare currentChildParts and node model
 		assert (model.getChildren().size() == 2);
 
 		// Synchronize each child
-		for(int i = 0; i < 2 /* model.getChildModels().size() */; i++) {
+		for (int i = 0; i < 2 /* model.getChildModels().size() */; i++) {
 			synchronizeChild(i, partMap);
 		}
 
 		// Now recursively call synchronize on childs.
-		for(int i = 0; i < currentChildParts.length; i++) {
+		for (int i = 0; i < currentChildParts.length; i++) {
 			currentChildParts[i].synchronize2(partMap);
 			// // Set the child controls at the right place
 			// if(i==0)
@@ -382,9 +391,9 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Synchronize the specified child.
-	 * 
+	 *
 	 * @param childIndex
-	 *        index of the child to be synchronized
+	 *            index of the child to be synchronized
 	 * @param existingParts
 	 */
 	private void synchronizeChild(int childIndex, PartLists existingParts) {
@@ -393,11 +402,11 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 		// Check if old child exist
 		// If exist, check if the current part is associated to the checked model
-		// 
+		//
 		AbstractPanelPart currentChildPart = currentChildParts[childIndex];
-		if(currentChildPart != null) {
+		if (currentChildPart != null) {
 			// If the tile is already for the model, there is nothing to do.
-			if(currentChildPart.isPartFor(newModel)) {
+			if (currentChildPart.isPartFor(newModel)) {
 				currentChildPart.unchanged();
 				return;
 			}
@@ -408,7 +417,7 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 		// The child part need to be updated. Do it.
 		// First check if already exist in the map
 		AbstractPanelPart newTile = existingParts.findPartFor(newModel);
-		if(newTile != null) {
+		if (newTile != null) {
 			// Reparent the tile
 			newTile.reparent(this, getChildParent(childIndex));
 		} else {
@@ -423,22 +432,23 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 
 	/**
 	 * Get the Composite parent that will be provided to the child.
-	 * 
+	 *
 	 * @param childIndex
 	 * @return
 	 */
 	private Composite getChildParent(int childIndex) {
 		// return container;
-		if(childIndex == 0)
+		if (childIndex == 0) {
 			return container.getLeftParent();
-		else
+		} else {
 			return container.getRightParent();
+		}
 
 	}
 
 	/**
 	 * Set the provided child at the specified index. If a child already exist at the specified index, it is lost. The controls are set accordingly
-	 * 
+	 *
 	 * @param newTile
 	 * @param childIndex
 	 */
@@ -450,23 +460,25 @@ public class SashPanelPart extends AbstractPanelPart implements IPanelParent {
 	/**
 	 * Accept the provided visitor.
 	 * Call the corresponding accept method in the visitor.
-	 * 
+	 *
 	 * @param visitor
 	 * @return
 	 */
+	@Override
 	public boolean visit(IPartVisitor visitor) {
 		return visitor.accept(this);
 	}
 
 	/**
 	 * Visit the children of this Tile.
-	 * 
+	 *
 	 * @param visitor
 	 */
 	public boolean visitChildren(IPartVisitor visitor) {
-		for(AbstractPanelPart child : currentChildParts) {
-			if(!child.visit(visitor))
+		for (AbstractPanelPart child : currentChildParts) {
+			if (!child.visit(visitor)) {
 				return false;
+			}
 		}
 
 		// All children have accepter the visit, continue visiting.

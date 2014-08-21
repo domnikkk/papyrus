@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.edit.UMLEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.activities.Discrete} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiscreteItemProvider extends RateItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -42,7 +42,7 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiscreteItemProvider(AdapterFactory adapterFactory) {
@@ -53,12 +53,12 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -69,7 +69,7 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	 * This returns Discrete.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -119,17 +119,17 @@ public class DiscreteItemProvider extends RateItemProvider implements IEditingDo
 	/**
 	 * Compose the image with specific visibility logo
 	 * Copied from UML implementation
-	 * 
+	 *
 	 * @param object
 	 * @param composedImage
 	 * @return {@link ComposedImage}
 	 */
 	public ComposedImage composeVisibilityImage(Object object, ComposedImage composedImage) {
-		NamedElement namedElement = (NamedElement)object;
+		NamedElement namedElement = (NamedElement) object;
 
-		if(namedElement.isSetVisibility()) {
+		if (namedElement.isSetVisibility()) {
 			composedImage.getImages().add(UMLEditPlugin.INSTANCE.getImage("full/ovr16/VisibilityKind_" //$NON-NLS-1$
-				+ namedElement.getVisibility().getName()));
+					+ namedElement.getVisibility().getName()));
 		}
 
 		return composedImage;

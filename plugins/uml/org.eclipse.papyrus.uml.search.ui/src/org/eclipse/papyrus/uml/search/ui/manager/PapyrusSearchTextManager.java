@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.search.ui.ISearchQuery;
 import org.eclipse.swt.widgets.Display;
 
 /**
- *Manage the search depending on user choices.
+ * Manage the search depending on user choices.
  *
  */
 public class PapyrusSearchTextManager {
@@ -50,7 +50,7 @@ public class PapyrusSearchTextManager {
 	}
 
 	public ISearchQuery manageSimpleSearch(boolean searchAllStrings, Object[] umlMetaClassesArray) {
-		if(fQueryText.isEmpty()) {
+		if (fQueryText.isEmpty()) {
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_29, Messages.PapyrusSearchPage_30);
 			return null;
 		} else {
@@ -64,14 +64,14 @@ public class PapyrusSearchTextManager {
 		List<ParticipantTypeElement> participantsToEvaluate = getParticipantsToEvaluate(participantsList);
 
 
-		if(participantsToEvaluate.size() == 0) {
+		if (participantsToEvaluate.size() == 0) {
 
 			MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_31, Messages.PapyrusSearchPage_32);
 			return null;
 		} else {
-			if(fQueryText.isEmpty()) {
-				for(Object participantChecked : checkedElements) {
-					if(participantChecked instanceof ParticipantTypeAttribute) {
+			if (fQueryText.isEmpty()) {
+				for (Object participantChecked : checkedElements) {
+					if (participantChecked instanceof ParticipantTypeAttribute) {
 						MessageDialog.openError(Display.getCurrent().getActiveShell(), Messages.PapyrusSearchPage_33, Messages.PapyrusSearchPage_34);
 						return null;
 					}
@@ -86,11 +86,11 @@ public class PapyrusSearchTextManager {
 	private List<ParticipantTypeElement> getParticipantsToEvaluate(HashMap<ParticipantTypeElement, List<ParticipantTypeAttribute>> participantsList) {
 		List<ParticipantTypeElement> participantsToEvaluate = new ArrayList<ParticipantTypeElement>();
 
-		for(ParticipantTypeElement element : participantsList.keySet()) {
-			if(element.isChecked()) {
+		for (ParticipantTypeElement element : participantsList.keySet()) {
+			if (element.isChecked()) {
 				participantsToEvaluate.add(element);
-				for(ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
-					if(attributesToEvaluate.isChecked()) {
+				for (ParticipantTypeAttribute attributesToEvaluate : participantsList.get(element)) {
+					if (attributesToEvaluate.isChecked()) {
 						participantsToEvaluate.add(attributesToEvaluate);
 					}
 				}

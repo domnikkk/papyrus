@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
@@ -41,14 +41,13 @@ import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CustomUMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ModelEditPart;
-import org.eclipse.papyrus.uml.diagram.clazz.part.UMLDiagramUpdater;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLLinkDescriptor;
 import org.eclipse.papyrus.uml.diagram.clazz.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.common.util.CommandUtil;
 
 /**
  * Restore related links to selected element
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 // Inspired from EcoreTools source code
@@ -86,7 +85,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Detect if similar descriptor already exist in given collection.
-	 * 
+	 *
 	 * @param collection
 	 *            the collection of unique ingoing and outgoing links descriptors
 	 * @param umlLinkDescriptor
@@ -108,10 +107,10 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Collects all related links for view
-	 * 
+	 *
 	 * @param view
 	 * @param domain2NotationMap
-	 * 
+	 *
 	 * @return linkdescriptors
 	 */
 	protected Collection<? extends UMLLinkDescriptor> collectPartRelatedLinks(View view, Map<EObject, View> domain2NotationMap) {
@@ -131,7 +130,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Create related links corresponding to linkDescriptions
-	 * 
+	 *
 	 * @param linkDescriptors
 	 * @param domain2NotationMap
 	 */
@@ -147,11 +146,11 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 			}
 			CreateConnectionViewRequest.ConnectionViewDescriptor descriptor = new CreateConnectionViewRequest.ConnectionViewDescriptor(nextLinkDescriptor.getSemanticAdapter(), null, ViewUtil.APPEND, false, host.getDiagramPreferencesHint());
 			CreateConnectionViewRequest ccr = new CreateConnectionViewRequest(descriptor);
-			ccr.setType(RequestConstants.REQ_CONNECTION_START);
+			ccr.setType(org.eclipse.gef.RequestConstants.REQ_CONNECTION_START);
 			ccr.setSourceEditPart(sourceEditPart);
 			sourceEditPart.getCommand(ccr);
 			ccr.setTargetEditPart(targetEditPart);
-			ccr.setType(RequestConstants.REQ_CONNECTION_END);
+			ccr.setType(org.eclipse.gef.RequestConstants.REQ_CONNECTION_END);
 			Command cmd = targetEditPart.getCommand(ccr);
 			if (cmd != null && cmd.canExecute()) {
 				CommandUtil.executeCommand(cmd, host);
@@ -160,7 +159,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
 	 */
 	@Override
@@ -183,7 +182,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Retrieves editpart corresponding to domainModelElement
-	 * 
+	 *
 	 * @param domainModelElement
 	 * @param domain2NotationMap
 	 */
@@ -197,10 +196,10 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Get linkdescriptors of the related links for graphicalEditPart
-	 * 
+	 *
 	 * @param graphicalEditPart
 	 * @param domain2NotationMap
-	 * 
+	 *
 	 * @return linkDescritors
 	 */
 	protected Collection<? extends UMLLinkDescriptor> getLinkDescriptorToProcess(View notationView, Map<EObject, View> domain2NotationMap) {
@@ -265,7 +264,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Maps view
-	 * 
+	 *
 	 * @param view
 	 * @param domain2NotationMap
 	 */
@@ -293,7 +292,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Refresh related links for graphicalEditPart
-	 * 
+	 *
 	 * @param graphicalEditPart
 	 */
 	protected void refreshRelatedLinks(View notationView) {
@@ -305,7 +304,7 @@ public class RestoreRelatedLinksCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Set view visible
-	 * 
+	 *
 	 * @param part
 	 * @param views
 	 */

@@ -85,26 +85,26 @@ public class EnumRadio extends AbstractValueEditor {
 	 * specify the values that can be set for this property
 	 *
 	 * @param contentProvider
-	 *        The Content provider returning the available values for this editor
+	 *            The Content provider returning the available values for this editor
 	 * @param labelProvider
-	 *        The label provider returning a label for each value of the
-	 *        content provider. If null, a default label provider will be used
+	 *            The label provider returning a label for each value of the
+	 *            content provider. If null, a default label provider will be used
 	 */
 	public void setProviders(IStaticContentProvider contentProvider, ILabelProvider labelProvider) {
 		this.contentProvider = contentProvider;
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			this.labelProvider = labelProvider;
 		}
 
 		disposeButtons();
-		if(widgetObservable != null) {
+		if (widgetObservable != null) {
 			widgetObservable.dispose();
 		}
 
 		SelectObservableValue observable = new SelectObservableValue();
-		for(Object value : contentProvider.getElements()) {
+		for (Object value : contentProvider.getElements()) {
 			Button button = factory.createButton(buttonsArea, labelProvider.getText(value), SWT.RADIO);
-			button.setBackground(buttonsArea.getBackground()); //For Radio buttons, we need to force the color
+			button.setBackground(buttonsArea.getBackground()); // For Radio buttons, we need to force the color
 			button.setData(value);
 			button.setToolTipText(toolTipText);
 			IObservableValue buttonObservable = WidgetProperties.selection().observe(button);
@@ -120,10 +120,10 @@ public class EnumRadio extends AbstractValueEditor {
 	}
 
 	protected void disposeButtons() {
-		for(Control control : buttonsArea.getChildren()) {
+		for (Control control : buttonsArea.getChildren()) {
 			control.dispose();
 		}
-		if(binding != null) {
+		if (binding != null) {
 			binding.dispose();
 		}
 		values.clear();
@@ -133,8 +133,8 @@ public class EnumRadio extends AbstractValueEditor {
 	 * Sets the max number of elements per line for this editor
 	 *
 	 * @param numColumns
-	 *        The max number of elements per line. May be -1 if there should
-	 *        be a single line of elements
+	 *            The max number of elements per line. May be -1 if there should
+	 *            be a single line of elements
 	 */
 	public void setNumColumns(int numColumns) {
 		this.numColumns = numColumns;
@@ -142,7 +142,7 @@ public class EnumRadio extends AbstractValueEditor {
 	}
 
 	private void updateLayout() {
-		GridLayout gridLayout = (GridLayout)buttonsArea.getLayout();
+		GridLayout gridLayout = (GridLayout) buttonsArea.getLayout();
 		gridLayout.numColumns = numColumns > 0 ? numColumns : values.size();
 		gridLayout.makeColumnsEqualWidth = numColumns > 0;
 
@@ -150,14 +150,14 @@ public class EnumRadio extends AbstractValueEditor {
 	}
 
 	private void updateLabelLayout() {
-		if(label == null || label.isDisposed()) {
+		if (label == null || label.isDisposed()) {
 			return;
 		}
 
-		if(numColumns == -1) {
-			((GridData)label.getLayoutData()).verticalAlignment = SWT.CENTER;
+		if (numColumns == -1) {
+			((GridData) label.getLayoutData()).verticalAlignment = SWT.CENTER;
 		} else {
-			((GridData)label.getLayoutData()).verticalAlignment = SWT.BEGINNING;
+			((GridData) label.getLayoutData()).verticalAlignment = SWT.BEGINNING;
 		}
 	}
 
@@ -169,8 +169,8 @@ public class EnumRadio extends AbstractValueEditor {
 
 	@Override
 	public Object getValue() {
-		for(Button button : values.keySet()) {
-			if(button.getSelection()) {
+		for (Button button : values.keySet()) {
+			if (button.getSelection()) {
 				return values.get(button);
 			}
 		}
@@ -184,7 +184,7 @@ public class EnumRadio extends AbstractValueEditor {
 
 	@Override
 	public void setReadOnly(boolean readOnly) {
-		for(Button button : values.keySet()) {
+		for (Button button : values.keySet()) {
 			button.setEnabled(!readOnly);
 		}
 		buttonsArea.setEnabled(!readOnly);
@@ -197,21 +197,21 @@ public class EnumRadio extends AbstractValueEditor {
 
 	@Override
 	public void setToolTipText(String text) {
-		for(Button button : values.keySet()) {
+		for (Button button : values.keySet()) {
 			button.setToolTipText(text);
 		}
 		super.setLabelToolTipText(text);
 	}
 
 	public void setValue(Object value) {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.setValue(value);
 		}
-		if(widgetObservable != null) {
+		if (widgetObservable != null) {
 			widgetObservable.setValue(value);
 		} else {
-			for(Button button : values.keySet()) {
-				if(values.get(button) == value) {
+			for (Button button : values.keySet()) {
+				if (values.get(button) == value) {
 					button.setSelection(true);
 					return;
 				}
@@ -234,7 +234,7 @@ public class EnumRadio extends AbstractValueEditor {
 
 	@Override
 	public void updateStatus(IStatus status) {
-		switch(status.getSeverity()) {
+		switch (status.getSeverity()) {
 		case IStatus.OK:
 			controlDecoration.hide();
 			break;

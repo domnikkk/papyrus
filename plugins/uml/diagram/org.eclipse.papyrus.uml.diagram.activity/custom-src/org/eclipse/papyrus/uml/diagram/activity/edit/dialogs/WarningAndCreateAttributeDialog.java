@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -74,20 +74,20 @@ public class WarningAndCreateAttributeDialog extends MessageDialog {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        shell
+	 *            shell
 	 * @param dialogTitle
-	 *        title of the dialog
+	 *            title of the dialog
 	 * @param dialogMessage
-	 *        main message of the dialog
+	 *            main message of the dialog
 	 * @param linkElement
-	 *        element to show
+	 *            element to show
 	 * @param labelProvider
-	 *        label provider
+	 *            label provider
 	 */
 	public WarningAndCreateAttributeDialog(Shell parentShell, String dialogTitle, String dialogMessage, NamedElement linkElement, ILabelProvider labelProvider) {
-		super(parentShell, dialogTitle, null, dialogMessage, WARNING, new String[]{ CREATE_LABEL, IDialogConstants.CLOSE_LABEL }, 0);
+		super(parentShell, dialogTitle, null, dialogMessage, WARNING, new String[] { CREATE_LABEL, IDialogConstants.CLOSE_LABEL }, 0);
 		attributeOwner = linkElement;
 		provider = labelProvider;
 	}
@@ -95,10 +95,10 @@ public class WarningAndCreateAttributeDialog extends MessageDialog {
 	/**
 	 * Create the deactivated link and the warning message for attribute
 	 * creation
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.WarningAndLinkDialog#createCustomArea(org.eclipse.swt.widgets.Composite)
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @return hyperlink
 	 */
 	@Override
@@ -114,7 +114,7 @@ public class WarningAndCreateAttributeDialog extends MessageDialog {
 
 	/**
 	 * Get the text to warn about the impacts of attribute creation
-	 * 
+	 *
 	 * @return text
 	 */
 	private String getImpactedElementsText() {
@@ -124,22 +124,22 @@ public class WarningAndCreateAttributeDialog extends MessageDialog {
 		// explore referencing elements
 		Collection<Setting> references = CacheAdapter.getInstance().getNonNavigableInverseReferences(attributeOwner);
 		HashSet<EObject> impactedElements = new HashSet<EObject>();
-		for(Setting ref : references) {
+		for (Setting ref : references) {
 			EObject referencing = ref.getEObject();
-			if(referencing.eContainer() != null && !(referencing instanceof View) && !impactedElements.contains(referencing)) {
+			if (referencing.eContainer() != null && !(referencing instanceof View) && !impactedElements.contains(referencing)) {
 				impactedElements.add(referencing);
 				String elementText = provider.getText(referencing);
 				elementText = elementText.replaceAll(LT, ESC_LT).replaceAll(GT, ESC_GT);
-				if(referencing instanceof NamedElement) {
-					String qualifiedName = ((NamedElement)referencing).getQualifiedName();
-					if(qualifiedName != null && qualifiedName.length() != 0) {
+				if (referencing instanceof NamedElement) {
+					String qualifiedName = ((NamedElement) referencing).getQualifiedName();
+					if (qualifiedName != null && qualifiedName.length() != 0) {
 						elementText = elementText + " (" + qualifiedName + ")";
 					}
 				}
 				impactText.append(String.format(LIST_FORMAT, elementText));
 			}
 		}
-		if(impactedElements.size() <= 1) {
+		if (impactedElements.size() <= 1) {
 			completeText.append(CustomMessages.CreateAttributeDialog_WarnNoImpact);
 		} else {
 			completeText.append(CustomMessages.CreateAttributeDialog_WarnImpact);
@@ -151,18 +151,18 @@ public class WarningAndCreateAttributeDialog extends MessageDialog {
 
 	/**
 	 * Launch create dialog if needed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.MessageDialog#buttonPressed(int)
 	 * @param buttonId
-	 *        id of pressed button
+	 *            id of pressed button
 	 */
 	@Override
 	protected void buttonPressed(int buttonId) {
-		if(buttonId == OK) {
+		if (buttonId == OK) {
 			// Create button has been pressed
 			CreateAttributeDialog dialog = new CreateAttributeDialog(getShell(), attributeOwner);
 			// close dialog only if attribute has been created
-			if(dialog.open() == OK) {
+			if (dialog.open() == OK) {
 				attribute = dialog.getCreatedAttribute();
 				super.buttonPressed(buttonId);
 			}
@@ -173,7 +173,7 @@ public class WarningAndCreateAttributeDialog extends MessageDialog {
 
 	/**
 	 * Get the created attribute
-	 * 
+	 *
 	 * @return created attribute or null
 	 */
 	public Property getAttribute() {

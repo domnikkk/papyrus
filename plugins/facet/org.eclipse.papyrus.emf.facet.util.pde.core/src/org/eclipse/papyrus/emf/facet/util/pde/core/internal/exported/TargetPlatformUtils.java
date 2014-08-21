@@ -36,7 +36,7 @@ import org.osgi.framework.Version;
 public final class TargetPlatformUtils {
 
 	private static final String BUNDLE_SEPARATOR = ","; //$NON-NLS-1$
-	private static final String JAR_EXT = ".jar";	//$NON-NLS-1$
+	private static final String JAR_EXT = ".jar"; //$NON-NLS-1$
 	private static final String JAR_DIRECTORY = "jarFiles"; //$NON-NLS-1$
 	private static final int BUFFER_SIZE = 4096;
 	private static final String BUNDLE_PREFIX = "reference:file:"; //$NON-NLS-1$
@@ -45,31 +45,30 @@ public final class TargetPlatformUtils {
 	private static final String OSGI_PROP_FRK = "osgi.framework"; //$NON-NLS-1$
 	private static final String ARRAY_PREFIX = "[L"; //$NON-NLS-1$
 
-	private TargetPlatformUtils() { 
-		//Must not be used.
+	private TargetPlatformUtils() {
+		// Must not be used.
 	}
 
 	/**
 	 * Creates and loads a target platform with all needed bundles.
-	 * @throws PdeCoreUtilsException 
-	 * @throws IOException 
+	 * 
+	 * @throws PdeCoreUtilsException
+	 * @throws IOException
 	 */
 	public static void loadTargetPlatform() throws PdeCoreUtilsException {
 		String copyDirectoryPath;
 		try {
-			/*ITargetPlatformService*/
+			/* ITargetPlatformService */
 			final Object targetPlServ = reflexiveCall(
-					true, 
-					"org.eclipse.pde.internal.core.target.TargetPlatformService", //$NON-NLS-1$
+					true, "org.eclipse.pde.internal.core.target.TargetPlatformService", //$NON-NLS-1$
 					"getDefault", //$NON-NLS-1$
 					null);
-			/*ITargetDefinition*/
+			/* ITargetDefinition */
 			final Object targetDefinition = reflexiveCall(
 					false,
-					targetPlServ,
-					"newTarget", //$NON-NLS-1$
+					targetPlServ, "newTarget", //$NON-NLS-1$
 					null);
-			copyDirectoryPath =  Activator.getDefault().getStateLocation()
+			copyDirectoryPath = Activator.getDefault().getStateLocation()
 					+ File.separator + JAR_DIRECTORY;
 
 			final File copyDirectory = new File(copyDirectoryPath);
@@ -77,29 +76,26 @@ public final class TargetPlatformUtils {
 
 			final List<String> dirPaths = parseBundlesList();
 
-			/*IBundleContainer*/
+			/* IBundleContainer */
 			final Object[] dirContainers =
 					copyJarsAndGetContainers(dirPaths, copyDirectory);
 			reflexiveCall(
 					false,
 					targetDefinition,
 					getContainerSetterName(),
-					new Object[]{dirContainers});
+					new Object[] { dirContainers });
 			reflexiveCall(
 					false,
-					targetDefinition,
-					"resolve", //$NON-NLS-1$
-					new Object[]{new NullProgressMonitor()});
+					targetDefinition, "resolve", //$NON-NLS-1$
+					new Object[] { new NullProgressMonitor() });
 			reflexiveCall(
 					true,
-					getLoadTargetDefinitionJobQualifiedName(),
-					"load", //$NON-NLS-1$
-					new Object[]{targetDefinition});
+					getLoadTargetDefinitionJobQualifiedName(), "load", //$NON-NLS-1$
+					new Object[] { targetDefinition });
 			reflexiveCall(
 					false,
-					targetPlServ,
-					"saveTargetDefinition", //$NON-NLS-1$
-					new Object[]{targetDefinition});
+					targetPlServ, "saveTargetDefinition", //$NON-NLS-1$
+					new Object[] { targetDefinition });
 		} catch (Exception e) {
 			throw new PdeCoreUtilsException(e);
 		}
@@ -112,36 +108,33 @@ public final class TargetPlatformUtils {
 		final Version currentVersion = bundle.getVersion();
 		return currentVersion.compareTo(version) > 0;
 	}
-	
+
 	private static String getLoadTargetDefinitionJobQualifiedName() {
 		String lTDefJobName;
 		if (isHigherVersion()) {
-			lTDefJobName = 
-					"org.eclipse.pde.core.target.LoadTargetDefinitionJob"; //$NON-NLS-1$
+			lTDefJobName = "org.eclipse.pde.core.target.LoadTargetDefinitionJob"; //$NON-NLS-1$
 		} else {
-			lTDefJobName = 
-					"org.eclipse.pde.internal.core.target.provisional.LoadTargetDefinitionJob"; //$NON-NLS-1$
+			lTDefJobName = "org.eclipse.pde.internal.core.target.provisional.LoadTargetDefinitionJob"; //$NON-NLS-1$
 		}
 		return lTDefJobName;
 	}
-	
+
 	private static String getContainerSetterName() {
 		String setterName;
 		if (isHigherVersion()) {
-			setterName = 
-					"setTargetLocations"; //$NON-NLS-1$
+			setterName = "setTargetLocations"; //$NON-NLS-1$
 		} else {
-			setterName = 
-					"setBundleContainers"; //$NON-NLS-1$
+			setterName = "setBundleContainers"; //$NON-NLS-1$
 		}
 		return setterName;
 	}
 
 	/**
 	 * Parses osgi.bundles property value to load all required bundles directories.
+	 * 
 	 * @return List<String> array
-	 * @throws PdeCoreUtilsException 
-	 * @throws IOException 
+	 * @throws PdeCoreUtilsException
+	 * @throws IOException
 	 */
 	private static List<String> parseBundlesList()
 			throws PdeCoreUtilsException, IOException {
@@ -149,12 +142,12 @@ public final class TargetPlatformUtils {
 		final String bundlesFromConfig = System.getProperty(OSGI_PROP);
 		final String frwkFromConfig = System.getProperty(OSGI_PROP_FRK);
 		if (bundlesFromConfig != null && !"".equals(bundlesFromConfig)) { //$NON-NLS-1$
-			final String[] bundlesStr = 
+			final String[] bundlesStr =
 					bundlesFromConfig.split(BUNDLE_SEPARATOR);
 			result.addAll(trimPaths(bundlesStr, BUNDLE_PREFIX));
 		}
 		if (frwkFromConfig != null && !"".equals(frwkFromConfig)) { //$NON-NLS-1$
-			final String[] frameworkStr = 
+			final String[] frameworkStr =
 					frwkFromConfig.split(BUNDLE_SEPARATOR);
 			result.addAll(trimPaths(frameworkStr, FRAMEWORK_PREFIX));
 		}
@@ -163,8 +156,11 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns list of trimmed paths;
-	 * @param paths String[]
-	 * @param prefix String
+	 * 
+	 * @param paths
+	 *            String[]
+	 * @param prefix
+	 *            String
 	 * @return List<String>
 	 */
 	private static List<String> trimPaths(final String[] paths,
@@ -177,25 +173,27 @@ public final class TargetPlatformUtils {
 			}
 			result.add(path.substring(prefix.length(),
 					indexSuffix));
-		}	
+		}
 		return result;
 	}
 
 	/**
 	 * Reflexive call of DirectoryBundleContainer constructor.
-	 * @param containerPath String
+	 * 
+	 * @param containerPath
+	 *            String
 	 * @return Object
 	 * @throws PdeCoreUtilsException
 	 */
 	private static Object newDirectoryBundleContainer(
 			final String containerPath)
-					throws PdeCoreUtilsException {
+			throws PdeCoreUtilsException {
 		Object container = null;
 		try {
 			final Bundle bundle = Activator.getDefault().getBundle();
-			final Class<?> classs = 
+			final Class<?> classs =
 					bundle.loadClass("org.eclipse.pde.internal.core.target.DirectoryBundleContainer"); //$NON-NLS-1$
-			final Class<?>[] paramTypes = new Class[] {containerPath.getClass()};
+			final Class<?>[] paramTypes = new Class[] { containerPath.getClass() };
 			final Constructor<?> constructor = classs.getConstructor(paramTypes);
 			final Object[] initargs = new Object[] { containerPath };
 			container = constructor.newInstance(initargs);
@@ -207,15 +205,18 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Copies all needed jar files in a directory and returns set of containers.
-	 * @param bundlesStr List<String>
-	 * @param copyDirectory File
+	 * 
+	 * @param bundlesStr
+	 *            List<String>
+	 * @param copyDirectory
+	 *            File
 	 * @return Object[]
 	 * @throws PdeCoreUtilsException
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	private static Object[] copyJarsAndGetContainers(
 			final List<String> bundlesStr, final File copyDirectory)
-					throws PdeCoreUtilsException, IOException {
+			throws PdeCoreUtilsException, IOException {
 		final List<Object> bundleContainers = new LinkedList<Object>();
 		final Iterator<String> bundlesStrIter = bundlesStr.iterator();
 		while (bundlesStrIter.hasNext()) {
@@ -227,7 +228,7 @@ public final class TargetPlatformUtils {
 							bundleContainers, copyDirectory);
 				} else {
 					try {
-						//FIXME gdupe> is a call to close() required ?
+						// FIXME gdupe> is a call to close() required ?
 						final JarFile jarFile = new JarFile(bundleFile); // NOPMD
 						// NOPMD: gdupe> No other way to write this code
 						copyJarFile(jarFile, copyDirectory);
@@ -237,7 +238,7 @@ public final class TargetPlatformUtils {
 				}
 			}
 		}
-		final Object copyDirContainer = 
+		final Object copyDirContainer =
 				newDirectoryBundleContainer(copyDirectory.getAbsolutePath());
 		bundleContainers.add(copyDirContainer);
 		return bundleContainers.toArray();
@@ -246,18 +247,22 @@ public final class TargetPlatformUtils {
 	/**
 	 * Copies jarFile to the specified directory or creates a container
 	 * if bundleFile is a directory.
-	 * @param bundleFile File
-	 * @param bundleContainers List<Object>
-	 * @param copyDirectory File
+	 * 
+	 * @param bundleFile
+	 *            File
+	 * @param bundleContainers
+	 *            List<Object>
+	 * @param copyDirectory
+	 *            File
 	 * @throws PdeCoreUtilsException
-	 * @throws IOException 
+	 * @throws IOException
 	 */
 	private static void copyJarFileOrAddContainerDirectory(
 			final File bundleFile, final List<Object> bundleContainers,
 			final File copyDirectory)
-					throws PdeCoreUtilsException, IOException {
+			throws PdeCoreUtilsException, IOException {
 		Object container;
-		//FIXME gdupe> is a call to close() required ?
+		// FIXME gdupe> is a call to close() required ?
 		final JarFile jarFile = getFirstMatchingJarFile(bundleFile);
 		if (jarFile == null) {
 			container = newDirectoryBundleContainer(bundleFile.getAbsolutePath());
@@ -265,11 +270,13 @@ public final class TargetPlatformUtils {
 		} else {
 			copyJarFile(jarFile, copyDirectory);
 		}
-	}		
+	}
 
 	/**
 	 * Return first jar file that match with the bundle directory.
-	 * @param bundleFile File
+	 * 
+	 * @param bundleFile
+	 *            File
 	 * @return JarFile
 	 * @throws IOException
 	 */
@@ -288,8 +295,11 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Search jar file in directory and sub-directories.
-	 * @param directory File
-	 * @param fileName String
+	 * 
+	 * @param directory
+	 *            File
+	 * @param fileName
+	 *            String
 	 * @return File
 	 */
 	private static File findJarFile(final File directory,
@@ -320,8 +330,11 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Search jar file and sub-directories.
-	 * @param fileName String
-	 * @param toVisit List<File>
+	 * 
+	 * @param fileName
+	 *            String
+	 * @param toVisit
+	 *            List<File>
 	 * @return File
 	 */
 	private static File searchInSubDirectories(final String fileName,
@@ -338,9 +351,12 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Copies a jarFile into specified directory.
-	 * @param jarFile JarFile
-	 * @param copyTo File
-	 * @throws PdeCoreUtilsException 
+	 * 
+	 * @param jarFile
+	 *            JarFile
+	 * @param copyTo
+	 *            File
+	 * @throws PdeCoreUtilsException
 	 */
 	private static void copyJarFile(final JarFile jarFile, final File copyTo)
 			throws PdeCoreUtilsException {
@@ -375,7 +391,7 @@ public final class TargetPlatformUtils {
 		} catch (IOException e) {
 			throw new PdeCoreUtilsException(e);
 		} finally { // NOPMD gdupe> No other choice if I want to managed the
-		// stream closing
+			// stream closing
 			if (jarOutputStream != null) {
 				try {
 					jarOutputStream.close();
@@ -389,11 +405,16 @@ public final class TargetPlatformUtils {
 	/**
 	 * Calls a method reflexively on an object or a class (static call) with
 	 * specified arguments.
-	 * @param staticCall boolean
-	 * @param callOn Object
-	 * @param calledMethodName String
-	 * @param args Object[]
-	 * @throws ExpException 
+	 * 
+	 * @param staticCall
+	 *            boolean
+	 * @param callOn
+	 *            Object
+	 * @param calledMethodName
+	 *            String
+	 * @param args
+	 *            Object[]
+	 * @throws ExpException
 	 */
 	private static Object reflexiveCall(final boolean staticCall,
 			final Object callOn, final String calledMethodName,
@@ -410,17 +431,15 @@ public final class TargetPlatformUtils {
 							.getBundle().loadClass((String) callOn);
 					aMethod = getMethod(clazz, calledMethodName, classes);
 				} else {
-					throw new ReflexiveDiscouragedAccessException(
-							"Invalid parameter, callOn parameter should be a String. (Static Call)"); //$NON-NLS-1$
+					throw new ReflexiveDiscouragedAccessException("Invalid parameter, callOn parameter should be a String. (Static Call)"); //$NON-NLS-1$
 				}
 			} else {
 				aMethod = getMethod(callOn.getClass(),
 						calledMethodName, classes);
 			}
 			if (aMethod == null) {
-				throw new ReflexiveDiscouragedAccessException(
-						"API break, no method with specified arguments found."); //$NON-NLS-1$
-			} 
+				throw new ReflexiveDiscouragedAccessException("API break, no method with specified arguments found."); //$NON-NLS-1$
+			}
 			result = aMethod.invoke(callOn, manageArguments(args));
 		} catch (Exception e) {
 			throw new ReflexiveDiscouragedAccessException(e);
@@ -431,7 +450,9 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Transforms Object arrays to specific arrays.
-	 * @param arguments Object[]
+	 * 
+	 * @param arguments
+	 *            Object[]
 	 * @return Object[]
 	 */
 	private static Object[] manageArguments(final Object[] arguments) {
@@ -457,12 +478,14 @@ public final class TargetPlatformUtils {
 		} else {
 			result = arguments;
 		}
-		return result;	
+		return result;
 	}
 
 	/**
 	 * Returns true if the parameter represents an array.
-	 * @param obj Object
+	 * 
+	 * @param obj
+	 *            Object
 	 * @return boolean
 	 */
 	private static boolean isArray(final Object obj) {
@@ -471,7 +494,9 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns array of Class that represents types of each arguments.
-	 * @param args Object[]
+	 * 
+	 * @param args
+	 *            Object[]
 	 * @return Class<?>[]
 	 */
 	private static Class<?>[] getClassesFromArgs(final Object[] args) {
@@ -496,9 +521,13 @@ public final class TargetPlatformUtils {
 	/**
 	 * Returns a Method object that correspond to the specified name
 	 * and parameters.
-	 * @param clazz Class<?>
-	 * @param methodName String
-	 * @param parameterTypes Class<?>[]
+	 * 
+	 * @param clazz
+	 *            Class<?>
+	 * @param methodName
+	 *            String
+	 * @param parameterTypes
+	 *            Class<?>[]
 	 * @return Method
 	 * @throws ClassNotFoundException
 	 */
@@ -521,10 +550,11 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Checks if all parameters are the same in both arrays.
+	 * 
 	 * @param refParams
 	 * @param parameterToTest
 	 * @return boolean
-	 * @throws ClassNotFoundException 
+	 * @throws ClassNotFoundException
 	 */
 	private static boolean checkTypes(final Class<?>[] refParams,
 			final Class<?>[] parameterToTest) throws ClassNotFoundException {
@@ -535,7 +565,7 @@ public final class TargetPlatformUtils {
 			String clazzName = null;
 			for (int i = 0; i < parameterToTest.length; i++) {
 				refClazzName = refParams[i].getName();
-				clazzName = parameterToTest[i].getName();	
+				clazzName = parameterToTest[i].getName();
 				if (!clazzName.equals(refClazzName)) {
 					final boolean isRefArray = refClazzName
 							.startsWith(ARRAY_PREFIX);
@@ -551,7 +581,7 @@ public final class TargetPlatformUtils {
 											clazzName.length() - 1);
 						}
 						result = paramExtendsRef(refClazzName, clazzName);
-					} 
+					}
 				}
 			}
 		}
@@ -560,17 +590,20 @@ public final class TargetPlatformUtils {
 
 	/**
 	 * Returns true if className is a SubType of refClassName.
-	 * @param refClassName String
-	 * @param className String
+	 * 
+	 * @param refClassName
+	 *            String
+	 * @param className
+	 *            String
 	 * @return boolean
 	 * @throws ClassNotFoundException
 	 */
 	private static boolean paramExtendsRef(final String refClassName,
 			final String className) throws ClassNotFoundException {
 		final Bundle bundle = Activator.getDefault().getBundle();
-		final Class<?> refClazz =  bundle.loadClass(refClassName);
-		final Class<?> clazz =  bundle.loadClass(className);
-		return refClazz.isAssignableFrom(clazz);		
+		final Class<?> refClazz = bundle.loadClass(refClassName);
+		final Class<?> clazz = bundle.loadClass(className);
+		return refClazz.isAssignableFrom(clazz);
 	}
 
 }

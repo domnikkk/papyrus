@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -96,7 +96,7 @@ public class Activator extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		adapterFactory.dispose();
 		adapterFactory = null;
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			labelProvider.dispose();
 			labelProvider = null;
 		}
@@ -106,7 +106,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getInstance() {
@@ -115,10 +115,10 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns an image descriptor for the image file at the given plug-in relative path.
-	 * 
+	 *
 	 * @generated
 	 * @param path
-	 *        the path
+	 *            the path
 	 * @return the image descriptor
 	 */
 	public static ImageDescriptor getBundledImageDescriptor(String path) {
@@ -126,9 +126,9 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#getPreferenceStore()
-	 * 
+	 *
 	 * @return Shared Preference Store.
 	 */
 	@Override
@@ -139,7 +139,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Get the item provider adapter factory.
-	 * 
+	 *
 	 * @return the adapter factory.
 	 */
 	public AdapterFactory getItemProvidersAdapterFactory() {
@@ -148,14 +148,14 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Get an image descriptor for current item.
-	 * 
+	 *
 	 * @param item
-	 *        the item for which an image descriptor searched.
+	 *            the item for which an image descriptor searched.
 	 * @return the image descriptor.
 	 */
 	public ImageDescriptor getItemImageDescriptor(Object item) {
-		IItemLabelProvider labelProvider = (IItemLabelProvider)adapterFactory.adapt(item, IItemLabelProvider.class);
-		if(labelProvider != null) {
+		IItemLabelProvider labelProvider = (IItemLabelProvider) adapterFactory.adapt(item, IItemLabelProvider.class);
+		if (labelProvider != null) {
 			return ExtendedImageRegistry.getInstance().getImageDescriptor(labelProvider.getImage(item));
 		}
 		return null;
@@ -163,9 +163,9 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Get an image for a ENamedElement in plug-in image registry.
-	 * 
+	 *
 	 * @param element
-	 *        the element.
+	 *            the element.
 	 * @return the image.
 	 */
 	public Image getImage(ENamedElement element) {
@@ -173,9 +173,9 @@ public class Activator extends AbstractUIPlugin {
 		String imageKey = element.getName();
 
 		Image image = getImageRegistry().get(imageKey);
-		if(image == null) {
+		if (image == null) {
 			ImageDescriptor imageDescriptor = getProvidedImageDescriptor(element);
-			if(imageDescriptor == null) {
+			if (imageDescriptor == null) {
 				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
 			}
 			getImageRegistry().put(imageKey, imageDescriptor);
@@ -202,19 +202,19 @@ public class Activator extends AbstractUIPlugin {
 	 *         <li> {@linkplain PositionConstants#SOUTH_EAST}</li>
 	 *         <li> {@linkplain PositionConstants#SOUTH_WEST}</li>
 	 *         </ul>
-	 * 
+	 *
 	 * </pre>
 	 */
 	public Image getFlowPortImage(FlowPort flowport, int side) {
 
 		// Prepare the image key
 		String imageKey = "FlowPort_";
-		if(flowport.isAtomic()) {
-			if(flowport.getDirection() == FlowDirection.IN) {
+		if (flowport.isAtomic()) {
+			if (flowport.getDirection() == FlowDirection.IN) {
 				imageKey = imageKey + "IN_";
-			} else if(flowport.getDirection() == FlowDirection.OUT) {
+			} else if (flowport.getDirection() == FlowDirection.OUT) {
 				imageKey = imageKey + "OUT_";
-			} else if(flowport.getDirection() == FlowDirection.INOUT) {
+			} else if (flowport.getDirection() == FlowDirection.INOUT) {
 				imageKey = imageKey + "INOUT_";
 			}
 
@@ -223,31 +223,31 @@ public class Activator extends AbstractUIPlugin {
 			imageKey = imageKey + "NA_";
 		}
 
-		if(side == PositionConstants.WEST) {
+		if (side == PositionConstants.WEST) {
 			imageKey = imageKey + "WEST";
-		} else if(side == PositionConstants.NORTH) {
+		} else if (side == PositionConstants.NORTH) {
 			imageKey = imageKey + "NORTH";
-		} else if(side == PositionConstants.SOUTH) {
+		} else if (side == PositionConstants.SOUTH) {
 			imageKey = imageKey + "SOUTH";
-		} else if(side == PositionConstants.EAST) {
+		} else if (side == PositionConstants.EAST) {
 			imageKey = imageKey + "EAST";
-		} else if(side == PositionConstants.NORTH_WEST) {
+		} else if (side == PositionConstants.NORTH_WEST) {
 			imageKey = imageKey + "NORTH_WEST";
-		} else if(side == PositionConstants.NORTH_EAST) {
+		} else if (side == PositionConstants.NORTH_EAST) {
 			imageKey = imageKey + "NORTH_EAST";
-		} else if(side == PositionConstants.SOUTH_EAST) {
+		} else if (side == PositionConstants.SOUTH_EAST) {
 			imageKey = imageKey + "SOUTH_EAST";
-		} else if(side == PositionConstants.SOUTH_WEST) {
+		} else if (side == PositionConstants.SOUTH_WEST) {
 			imageKey = imageKey + "SOUTH_WEST";
 		}
 
 		// Retrieve image from registry or add it in the registry
 		Image image = getImageRegistry().get(imageKey);
-		if(image == null) {
+		if (image == null) {
 
 			ImageDescriptor imageDescriptor = imageDescriptorFromPlugin(PLUGIN_ID, "/icons/flowports/" + imageKey + ".gif");
 
-			if(imageDescriptor == null) {
+			if (imageDescriptor == null) {
 				imageDescriptor = ImageDescriptor.getMissingImageDescriptor();
 			}
 			getImageRegistry().put(imageKey, imageDescriptor);
@@ -259,11 +259,11 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns a label provider supported by EMF Facet
-	 * 
+	 *
 	 * @return a label provider supported by EMF Facet
 	 */
 	public ILabelProvider getLabelProvider() {
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			// add a generic label provider for sysml elements
 			labelProvider = new UMLLabelProvider();
 		}
@@ -277,14 +277,14 @@ public class Activator extends AbstractUIPlugin {
 		ArrayList<AdapterFactory> factories = new ArrayList<AdapterFactory>();
 
 		// Add SysML adapters
-//		factories.add(new ActivitiesItemProviderAdapterFactory());
-//		factories.add(new AllocationsItemProviderAdapterFactory());
-//		factories.add(new BlocksItemProviderAdapterFactory());
-//		factories.add(new ConstraintsItemProviderAdapterFactory());
-//		factories.add(new ModelelementsItemProviderAdapterFactory());
-//		factories.add(new PortandflowsItemProviderAdapterFactory());
-//		factories.add(new RequirementsItemProviderAdapterFactory());
-		// Add UML adapter   
+		// factories.add(new ActivitiesItemProviderAdapterFactory());
+		// factories.add(new AllocationsItemProviderAdapterFactory());
+		// factories.add(new BlocksItemProviderAdapterFactory());
+		// factories.add(new ConstraintsItemProviderAdapterFactory());
+		// factories.add(new ModelelementsItemProviderAdapterFactory());
+		// factories.add(new PortandflowsItemProviderAdapterFactory());
+		// factories.add(new RequirementsItemProviderAdapterFactory());
+		// Add UML adapter
 		factories.add(new UMLItemProviderAdapterFactory());
 
 		// Other adapters
@@ -295,19 +295,19 @@ public class Activator extends AbstractUIPlugin {
 	}
 
 	private ImageDescriptor getProvidedImageDescriptor(ENamedElement element) {
-		if(element instanceof EStructuralFeature) {
-			EStructuralFeature feature = ((EStructuralFeature)element);
+		if (element instanceof EStructuralFeature) {
+			EStructuralFeature feature = ((EStructuralFeature) element);
 			EClass eContainingClass = feature.getEContainingClass();
 			EClassifier eType = feature.getEType();
-			if(eContainingClass != null && !eContainingClass.isAbstract()) {
+			if (eContainingClass != null && !eContainingClass.isAbstract()) {
 				element = eContainingClass;
-			} else if(eType instanceof EClass && !((EClass)eType).isAbstract()) {
+			} else if (eType instanceof EClass && !((EClass) eType).isAbstract()) {
 				element = eType;
 			}
 		}
-		if(element instanceof EClass) {
-			EClass eClass = (EClass)element;
-			if(!eClass.isAbstract()) {
+		if (element instanceof EClass) {
+			EClass eClass = (EClass) element;
+			if (!eClass.isAbstract()) {
 				return getItemImageDescriptor(eClass.getEPackage().getEFactoryInstance().create(eClass));
 			}
 		}

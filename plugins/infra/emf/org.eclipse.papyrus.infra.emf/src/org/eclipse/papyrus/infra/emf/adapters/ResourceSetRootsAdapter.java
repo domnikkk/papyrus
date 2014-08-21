@@ -20,15 +20,15 @@ import org.eclipse.emf.ecore.util.EContentAdapter;
 
 /**
  * An EMF Adapter which listens on Resource Set root elements
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public abstract class ResourceSetRootsAdapter extends EContentAdapter {
 
 	@Override
 	public void notifyChanged(Notification msg) {
-		switch(msg.getEventType()) {
+		switch (msg.getEventType()) {
 		case Notification.ADD:
 		case Notification.ADD_MANY:
 		case Notification.REMOVE:
@@ -43,9 +43,9 @@ public abstract class ResourceSetRootsAdapter extends EContentAdapter {
 
 	@Override
 	protected void setTarget(ResourceSet target) {
-		if(target instanceof ResourceSet) {
+		if (target instanceof ResourceSet) {
 			ResourceSet resourceSet = target;
-			if(!resourceSet.eAdapters().contains(this)) {
+			if (!resourceSet.eAdapters().contains(this)) {
 				addAdapter(resourceSet);
 			}
 		}
@@ -54,22 +54,22 @@ public abstract class ResourceSetRootsAdapter extends EContentAdapter {
 
 	@Override
 	protected void setTarget(Resource target) {
-		//Ignore
+		// Ignore
 	}
 
 	@Override
 	protected void setTarget(EObject target) {
-		//Ignore
+		// Ignore
 	}
 
 	@Override
 	protected void unsetTarget(EObject target) {
-		//Ignore
+		// Ignore
 	}
 
 	@Override
 	protected void unsetTarget(Resource target) {
-		//Ignore
+		// Ignore
 	}
 
 	@Override
@@ -84,7 +84,7 @@ public abstract class ResourceSetRootsAdapter extends EContentAdapter {
 
 	@Override
 	protected void unsetTarget(ResourceSet target) {
-		if(target != null) {
+		if (target != null) {
 			removeAdapter(target);
 		}
 		super.unsetTarget(target);
@@ -92,9 +92,9 @@ public abstract class ResourceSetRootsAdapter extends EContentAdapter {
 
 	@Override
 	protected void handleContainment(Notification notification) {
-		if(notification.getEventType() == Notification.ADD || notification.getEventType() == Notification.ADD_MANY) {
-			//Do not propagate listeners to EObjects. We're only interested on events on the ResourceSet (Add/remove resources) and Resources (Add/remove EObjects)
-			if(notification.getNotifier() == getTarget()) {
+		if (notification.getEventType() == Notification.ADD || notification.getEventType() == Notification.ADD_MANY) {
+			// Do not propagate listeners to EObjects. We're only interested on events on the ResourceSet (Add/remove resources) and Resources (Add/remove EObjects)
+			if (notification.getNotifier() == getTarget()) {
 				super.handleContainment(notification);
 			}
 		} else {

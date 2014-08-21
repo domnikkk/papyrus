@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Control;
 
 /**
  * Editor factor for workspace theme.
- * 
+ *
  * @author gpascual
  *
  */
@@ -47,9 +47,9 @@ public class ThemePropertyEditorFactory extends EcorePropertyEditorFactory {
 	protected EObject simpleCreateObject(Control widget) {
 		EObject createdObject = super.simpleCreateObject(widget);
 
-		//Generate an unique ID for created  theme
-		if(createdObject instanceof Theme) {
-			((Theme)createdObject).setId(EcoreUtil.generateUUID());
+		// Generate an unique ID for created theme
+		if (createdObject instanceof Theme) {
+			((Theme) createdObject).setId(EcoreUtil.generateUUID());
 		}
 
 		return createdObject;

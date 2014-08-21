@@ -32,7 +32,7 @@ import org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypeBindingsImpl#getBindings <em>Bindings</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeBindings {
@@ -41,7 +41,7 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	 * The default value of the '{@link #getClientContextID() <em>Client Context ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClientContextID()
 	 * @generated
 	 * @ordered
@@ -52,7 +52,7 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	 * The cached value of the '{@link #getClientContextID() <em>Client Context ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getClientContextID()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	 * The cached value of the '{@link #getBindings() <em>Bindings</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBindings()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypeBindingsImpl() {
@@ -83,7 +83,7 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -94,7 +94,7 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getClientContextID() {
@@ -104,24 +104,25 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setClientContextID(String newClientContextID) {
 		String oldClientContextID = clientContextID;
 		clientContextID = newClientContextID;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID, oldClientContextID, clientContextID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Binding> getBindings() {
-		if(bindings == null) {
+		if (bindings == null) {
 			bindings = new EObjectContainmentWithInverseEList<Binding>(Binding.class, this, DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__BINDINGS, DomaincontextcodegenPackage.BINDING__OWNER);
 		}
 		return bindings;
@@ -130,15 +131,15 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__BINDINGS:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getBindings()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getBindings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -146,14 +147,14 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__BINDINGS:
-			return ((InternalEList<?>)getBindings()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getBindings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,12 +162,12 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID:
 			return getClientContextID();
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__BINDINGS:
@@ -178,19 +179,19 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID:
-			setClientContextID((String)newValue);
+			setClientContextID((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__BINDINGS:
 			getBindings().clear();
-			getBindings().addAll((Collection<? extends Binding>)newValue);
+			getBindings().addAll((Collection<? extends Binding>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,12 +200,12 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID:
 			setClientContextID(CLIENT_CONTEXT_ID_EDEFAULT);
 			return;
@@ -218,12 +219,12 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__CLIENT_CONTEXT_ID:
 			return CLIENT_CONTEXT_ID_EDEFAULT == null ? clientContextID != null : !CLIENT_CONTEXT_ID_EDEFAULT.equals(clientContextID);
 		case DomaincontextcodegenPackage.ELEMENT_TYPE_BINDINGS__BINDINGS:
@@ -235,13 +236,14 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (clientContextID: ");
@@ -250,4 +252,4 @@ public class ElementTypeBindingsImpl extends EObjectImpl implements ElementTypeB
 		return result.toString();
 	}
 
-} //ElementTypeBindingsImpl
+} // ElementTypeBindingsImpl

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,40 +23,40 @@ public interface IAspectActionProvider extends IProvider {
 
 	/**
 	 * Creates an action, given the specified parameters
-	 * 
+	 *
 	 * @param configurationNode
-	 *        the configuration node that specifies parameter to the action
+	 *            the configuration node that specifies parameter to the action
 	 */
 	public IAspectAction createAction(Node configurationNode);
 
 	/**
 	 * Returns the id of this factory
-	 * 
+	 *
 	 * @return the id of this factory
 	 */
 	public String getFactoryId();
 
 	/**
 	 * Returns the name of the factory
-	 * 
+	 *
 	 * @return the name of the factory
 	 */
 	public String getName();
 
 	/**
 	 * Returns the image representing the factory
-	 * 
+	 *
 	 * @return the image representing the factory
 	 */
 	public Image getImage();
 
 	/**
 	 * returns <code>true</code> if this factory is enabled
-	 * 
+	 *
 	 * @param entryProxy
-	 *        the entry proxy for which aspect action will be added or
-	 *        removed
-	 * 
+	 *            the entry proxy for which aspect action will be added or
+	 *            removed
+	 *
 	 * @return <code>true</code> if this factory is enabled
 	 */
 	public boolean isEnable(IPaletteEntryProxy entryProxy);

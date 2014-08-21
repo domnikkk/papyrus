@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.editorsfactory;
 
@@ -11,8 +11,8 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Concrete implementation of the {@link IPageIconsRegistry}. This
  * implementation allows to add and remove {@link IPageIconsRegistry}.
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
  */
 public class PageIconsRegistry implements IPageIconsRegistryExtended {
@@ -22,7 +22,7 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param editorFactoryRegistry
 	 * @param servicesRegistry
 	 */
@@ -34,15 +34,16 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 	 * Walk each registered {@link IEditorFactory} to find the one handling the
 	 * specified pageIdentifier. Call the corresponding method in the found
 	 * pageIdentifier.
-	 * 
+	 *
 	 * TODO Throw an exception to report errors.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.IPageModelFactory#createIPageModel(java.lang.Object)
 	 */
+	@Override
 	public Image getEditorIcon(Object pageIdentifier) {
 
-		for(IEditorIconFactory factory : getPageIcons()) {
-			if(factory.isPageModelFactoryFor(pageIdentifier)) {
+		for (IEditorIconFactory factory : getPageIcons()) {
+			if (factory.isPageModelFactoryFor(pageIdentifier)) {
 				{
 					// return factory.getEditorIcon(pageIdentifier);
 					return factory.getEditorIcon(pageIdentifier);
@@ -65,12 +66,12 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 
 	/**
 	 * Add the specified {@link IEditorFactory}
-	 * 
+	 *
 	 * @param editorIconFactory
 	 */
 	public void add(IEditorIconFactory editorIconFactory) {
 		// This should never happen
-		if(editorIconFactory == null) {
+		if (editorIconFactory == null) {
 			throw new RuntimeException("Parameter should not be null."); //$NON-NLS-1$
 		}
 
@@ -79,7 +80,7 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 
 	/**
 	 * Remove the specified {@link IEditorFactory}
-	 * 
+	 *
 	 * @param editorIconFactory
 	 */
 	public void remove(IEditorIconFactory editorIconFactory) {
@@ -88,18 +89,19 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 
 	/**
 	 * Return the path to the icon ressource.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IPageIconsRegistryExtended#getEditorURLIcon(java.lang.Object)
-	 * 
+	 *
 	 * @param model
 	 * @return
 	 */
+	@Override
 	public String getEditorURLIcon(Object model) {
-		for(IEditorIconFactory factory : getPageIcons()) {
-			if(factory.isPageModelFactoryFor(model)) {
+		for (IEditorIconFactory factory : getPageIcons()) {
+			if (factory.isPageModelFactoryFor(model)) {
 				{
-					if(factory instanceof IEditorIconFactoryExtended) {
-						return ((IEditorIconFactoryExtended)factory).getURLMainIcon(model);
+					if (factory instanceof IEditorIconFactoryExtended) {
+						return ((IEditorIconFactoryExtended) factory).getURLMainIcon(model);
 					}
 				}
 			}
@@ -107,8 +109,9 @@ public class PageIconsRegistry implements IPageIconsRegistryExtended {
 		return "";
 	}
 
+	@Override
 	public void dispose() {
-		for(IEditorIconFactory factory : pageIcons) {
+		for (IEditorIconFactory factory : pageIcons) {
 			factory.dispose();
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,9 +41,9 @@ import org.eclipse.ui.services.IServiceLocator;
 
 /**
  * Abstract Class to create menu from an Eclipse Command category
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public abstract class AbstractCreateMenuFromCommandCategory extends ExtensionContributionFactory {
 
@@ -51,27 +51,26 @@ public abstract class AbstractCreateMenuFromCommandCategory extends ExtensionCon
 	protected final String commandCateogyId;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param commandCategoryId
-	 *        the category of the command contributing to this menu
+	 *            the category of the command contributing to this menu
 	 */
 	public AbstractCreateMenuFromCommandCategory(final String commandCategoryId) {
 		this.commandCateogyId = commandCategoryId;
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.ui.menus.AbstractContributionFactory#createContributionItems(org.eclipse.ui.services.IServiceLocator,
-	 *      org.eclipse.ui.menus.IContributionRoot)
-	 * 
+	 *
+	 * @see org.eclipse.ui.menus.AbstractContributionFactory#createContributionItems(org.eclipse.ui.services.IServiceLocator, org.eclipse.ui.menus.IContributionRoot)
+	 *
 	 * @param serviceLocator
 	 * @param additions
 	 */
 	@Override
 	public void createContributionItems(IServiceLocator serviceLocator, IContributionRoot additions) {
-		//test to know if we can create elements if it is possible...
+		// test to know if we can create elements if it is possible...
 		Expression visibleWhen = new Expression() {
 
 			@Override
@@ -79,25 +78,25 @@ public abstract class AbstractCreateMenuFromCommandCategory extends ExtensionCon
 				return EvaluationResult.TRUE;
 			}
 		};
-		for(final CommandContributionItem item : addCreationItems(serviceLocator, additions, null)) {
+		for (final CommandContributionItem item : addCreationItems(serviceLocator, additions, null)) {
 			additions.addContributionItem(item, visibleWhen);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serviceLocator
 	 * @param additions
 	 * @param parent
 	 * @return
 	 */
 	protected List<CommandContributionItem> addCreationItems(final IServiceLocator serviceLocator, final IContributionRoot additions, IContributionManager parent) {
-		final ICommandService commandService = (ICommandService)PlatformUI.getWorkbench().getService(ICommandService.class);
+		final ICommandService commandService = (ICommandService) PlatformUI.getWorkbench().getService(ICommandService.class);
 		final List<CommandContributionItem> items = new ArrayList<CommandContributionItem>();
 		final Category category = commandService.getCategory(this.commandCateogyId);
 		final Set<Command> commands = new TreeSet<Command>();
 		commands.addAll(Arrays.asList(commandService.getDefinedCommands()));
-		for(Command command : commands) {
+		for (Command command : commands) {
 			Category currentCategory = null;
 			try {
 				currentCategory = command.getCategory();
@@ -105,19 +104,19 @@ public abstract class AbstractCreateMenuFromCommandCategory extends ExtensionCon
 				Activator.log.debug(e.getLocalizedMessage());
 				continue;
 			}
-			if(command.isDefined() && category.equals(currentCategory)) {
+			if (command.isDefined() && category.equals(currentCategory)) {
 				final IHandler handler = command.getHandler();
-				if(handler instanceof AbstractHandler) {
+				if (handler instanceof AbstractHandler) {
 
-					//required!?!?! in some case can avoid the message for handler conflicting (ex : Allocate in SysML NatTable Allocation
-					((AbstractHandler)handler).setEnabled(null);
+					// required!?!?! in some case can avoid the message for handler conflicting (ex : Allocate in SysML NatTable Allocation
+					((AbstractHandler) handler).setEnabled(null);
 					boolean isEnabled = handler.isEnabled();
 					command.setEnabled(null);
-					((AbstractHandler)handler).setEnabled(null);
+					((AbstractHandler) handler).setEnabled(null);
 
 					isEnabled = handler.isEnabled();
 					try {
-						if(isEnabled) {
+						if (isEnabled) {
 							CommandContributionItemParameter p = new CommandContributionItemParameter(serviceLocator, "", command.getId(), SWT.PUSH); //$NON-NLS-1$
 							p.label = command.getDescription();
 							p.icon = EclipseCommandUtils.getCommandIcon(command);

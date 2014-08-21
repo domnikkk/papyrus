@@ -7,11 +7,11 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.common.figure; 
+package org.eclipse.papyrus.sysml.diagram.common.figure;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,8 +33,8 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 
 	protected WrappingLabel constraintLabel;
 	protected WrappingLabel tagLabel;
-	
-	private static final String tagConstraintText = String.valueOf("\u00AB") + "constraint" + String.valueOf("\u00BB"); 
+
+	private static final String tagConstraintText = String.valueOf("\u00AB") + "constraint" + String.valueOf("\u00BB");
 
 	/** main flow page */
 	protected FlowPage page;
@@ -42,20 +42,21 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 	public ConstraintBlockPropertyCompositeFigure() {
 		this(ConstraintBlockPropertyCompositeEditPart.ROUNDED_REPRESENTATION);
 	}
-	
+
 	public ConstraintBlockPropertyCompositeFigure(String representationMode) {
 		super();
 
 		ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout() {
-			
+
 			@Override
 			/**
 			 * Always strech figure for StructureCompartment
 			 * @see org.eclipse.draw2d.LayoutManager#layout(IFigure)
 			 */
 			public void layout(IFigure parent) {
-				if (!parent.isVisible())
+				if (!parent.isVisible()) {
 					return;
+				}
 				List<?> children = getChildren(parent);
 				int numChildren = children.size();
 				Rectangle clientArea = transposer.t(parent.getClientArea());
@@ -67,10 +68,10 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 				Dimension minSizes[] = new Dimension[numChildren];
 				Dimension maxSizes[] = new Dimension[numChildren];
 
-				// Calculate the width and height hints.  If it's a vertical ToolBarLayout,
-				// then ignore the height hint (set it to -1); otherwise, ignore the 
-				// width hint.  These hints will be passed to the children of the parent
-				// figure when getting their preferred size. 
+				// Calculate the width and height hints. If it's a vertical ToolBarLayout,
+				// then ignore the height hint (set it to -1); otherwise, ignore the
+				// width hint. These hints will be passed to the children of the parent
+				// figure when getting their preferred size.
 				int wHint = -1;
 				int hHint = -1;
 				if (isHorizontal()) {
@@ -79,16 +80,16 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 					wHint = parent.getClientArea(Rectangle.SINGLETON).width;
 				}
 
-				/*		
-				 * Calculate sum of preferred heights of all children(totalHeight). 
+				/*
+				 * Calculate sum of preferred heights of all children(totalHeight).
 				 * Calculate sum of minimum heights of all children(minHeight).
 				 * Cache Preferred Sizes and Minimum Sizes of all children.
-				 *
+				 * 
 				 * totalHeight is the sum of the preferred heights of all children
 				 * totalMinHeight is the sum of the minimum heights of all children
 				 * prefMinSumHeight is the sum of the difference between all children's
-				 * preferred heights and minimum heights. (This is used as a ratio to 
-				 * calculate how much each child will shrink). 
+				 * preferred heights and minimum heights. (This is used as a ratio to
+				 * calculate how much each child will shrink).
 				 */
 				IFigure child;
 				int totalHeight = 0;
@@ -122,16 +123,16 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 				prefMinSumHeight = totalHeight - totalMinHeight;
 				prefMaxSumHeight = totalMaxHeight - totalHeight;
 
-				/* 
-				 * The total amount that the children must be shrunk is the 
-				 * sum of the preferred Heights of the children minus  
+				/*
+				 * The total amount that the children must be shrunk is the
+				 * sum of the preferred Heights of the children minus
 				 * Max(the available area and the sum of the minimum heights of the children).
-				 *
+				 * 
 				 * amntShrinkHeight is the combined amount that the children must shrink
-				 * amntShrinkCurrentHeight is the amount each child will shrink respectively  
+				 * amntShrinkCurrentHeight is the amount each child will shrink respectively
 				 */
 				int amntShrinkHeight =
-					totalHeight - Math.max(availableHeight, totalMinHeight);
+						totalHeight - Math.max(availableHeight, totalMinHeight);
 
 				for (int i = 0; i < numChildren; i++) {
 					int amntShrinkCurrentHeight = 0;
@@ -145,35 +146,38 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 
 					child = (IFigure) children.get(i);
 					if (getStretchMajorAxis() || child instanceof ShapeCompartmentFigure) {
-						if (amntShrinkHeight > 0 && prefMinSumHeight != 0)
-		                    amntShrinkCurrentHeight = (int) ((long) (prefHeight - minHeight)
-		                        * amntShrinkHeight / (prefMinSumHeight));
-						else if (amntShrinkHeight < 0 && totalHeight != 0)
+						if (amntShrinkHeight > 0 && prefMinSumHeight != 0) {
+							amntShrinkCurrentHeight = (int) ((long) (prefHeight - minHeight)
+									* amntShrinkHeight / (prefMinSumHeight));
+						} else if (amntShrinkHeight < 0 && totalHeight != 0) {
 							amntShrinkCurrentHeight =
-								(int) (((maxHeight - prefHeight) / prefMaxSumHeight)
+									(int) (((maxHeight - prefHeight) / prefMaxSumHeight)
 									* amntShrinkHeight);
+						}
 					}
 
 					int width = Math.min(prefWidth, maxWidth);
-					if (isStretchMinorAxis())
+					if (isStretchMinorAxis()) {
 						width = maxWidth;
+					}
 					width = Math.max(minWidth, Math.min(clientArea.width, width));
 					newBounds.width = width;
 
 					int adjust = clientArea.width - width;
 					switch (getMinorAlignment()) {
-						case ALIGN_TOPLEFT :
-							adjust = 0;
-							break;
-						case ALIGN_CENTER :
-							adjust /= 2;
-							break;
-						case ALIGN_BOTTOMRIGHT :
-							break;
+					case ALIGN_TOPLEFT:
+						adjust = 0;
+						break;
+					case ALIGN_CENTER:
+						adjust /= 2;
+						break;
+					case ALIGN_BOTTOMRIGHT:
+						break;
 					}
 					newBounds.x += adjust;
-					if (newBounds.height - amntShrinkCurrentHeight > maxHeight)
+					if (newBounds.height - amntShrinkCurrentHeight > maxHeight) {
 						amntShrinkCurrentHeight = newBounds.height - maxHeight;
+					}
 					newBounds.height -= amntShrinkCurrentHeight;
 					child.setBounds(transposer.t(newBounds));
 
@@ -196,20 +200,22 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 					Iterator<?> iter = children.iterator();
 					while (iter.hasNext()) {
 						IFigure f = (IFigure) iter.next();
-						if (!f.isVisible())
+						if (!f.isVisible()) {
 							iter.remove();
+						}
 					}
 				}
-				if (isReversed())
+				if (isReversed()) {
 					Collections.reverse(children);
+				}
 				return children;
 			}
 
 		};
-		
+
 		layout.setStretchMajorAxis(false);
 		setLayoutManager(layout);
-		
+
 		tagLabel = new WrappingLabel();
 		tagLabel.setAlignment(PositionConstants.MIDDLE);
 		add(tagLabel);
@@ -221,33 +227,34 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 			corner = 0;
 			tagLabel.setText(tagConstraintText);
 		}
-		
+
 		add(nameLabel);
 
 		constraintLabel = new WrappingLabel();
 		constraintLabel.setAlignment(PositionConstants.RIGHT);
 		add(constraintLabel);
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusNodeNamedElementFigure#getNameLabel()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public WrappingLabel getNameLabel() {
 		return nameLabel;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @return the textflow of the constraint that contain the string of the
 	 *         specification
 	 */
 	public WrappingLabel getConstraintLabel() {
 		return constraintLabel;
 	}
-	
+
 	public int getCorner() {
 		return corner;
 	}
@@ -263,7 +270,7 @@ public class ConstraintBlockPropertyCompositeFigure extends PapyrusRoundedNodeFi
 	public void setTagLabel(String newTag) {
 		this.tagLabel.setText(newTag);
 	}
-	
+
 	public static boolean isCompleteRepresentation() {
 		return false;
 	}

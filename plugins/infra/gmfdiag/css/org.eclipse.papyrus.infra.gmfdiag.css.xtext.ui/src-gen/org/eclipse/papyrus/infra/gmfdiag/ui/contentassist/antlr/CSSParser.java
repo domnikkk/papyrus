@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012-2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,19 +26,19 @@ import com.google.inject.Inject;
 import org.eclipse.papyrus.infra.gmfdiag.services.CSSGrammarAccess;
 
 public class CSSParser extends AbstractContentAssistParser {
-	
+
 	@Inject
 	private CSSGrammarAccess grammarAccess;
-	
+
 	private Map<AbstractElement, String> nameMappings;
-	
+
 	@Override
 	protected org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.antlr.internal.InternalCSSParser createParser() {
 		org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.antlr.internal.InternalCSSParser result = new org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.antlr.internal.InternalCSSParser(null);
 		result.setGrammarAccess(grammarAccess);
 		return result;
 	}
-	
+
 	@Override
 	protected String getRuleName(AbstractElement element) {
 		if (nameMappings == null) {
@@ -186,27 +186,27 @@ public class CSSParser extends AbstractContentAssistParser {
 		}
 		return nameMappings.get(element);
 	}
-	
+
 	@Override
 	protected Collection<FollowElement> getFollowElements(AbstractInternalContentAssistParser parser) {
 		try {
 			org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.antlr.internal.InternalCSSParser typedParser = (org.eclipse.papyrus.infra.gmfdiag.ui.contentassist.antlr.internal.InternalCSSParser) parser;
 			typedParser.entryRuleStylesheet();
 			return typedParser.getFollowElements();
-		} catch(RecognitionException ex) {
+		} catch (RecognitionException ex) {
 			throw new RuntimeException(ex);
-		}		
+		}
 	}
-	
+
 	@Override
 	protected String[] getInitialHiddenTokens() {
 		return new String[] { "RULE_ML_COMMENT" };
 	}
-	
+
 	public CSSGrammarAccess getGrammarAccess() {
 		return this.grammarAccess;
 	}
-	
+
 	public void setGrammarAccess(CSSGrammarAccess grammarAccess) {
 		this.grammarAccess = grammarAccess;
 	}

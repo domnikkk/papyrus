@@ -29,14 +29,17 @@ public class OpenModelFromEmfRegistryAction implements IWorkbenchWindowActionDel
 
 	private IWorkbenchWindow fWorkbenchWindow;
 
+	@Override
 	public void dispose() {
 		// nothing
 	}
 
+	@Override
 	public void init(final IWorkbenchWindow window) {
 		this.fWorkbenchWindow = window;
 	}
 
+	@Override
 	public void run(final IAction action) {
 		final IWorkbenchPage activePage = this.fWorkbenchWindow.getActivePage();
 		if (activePage != null) {
@@ -52,6 +55,7 @@ public class OpenModelFromEmfRegistryAction implements IWorkbenchWindowActionDel
 		}
 	}
 
+	@Override
 	public void selectionChanged(final IAction action, final ISelection selection) {
 		// nothing
 	}

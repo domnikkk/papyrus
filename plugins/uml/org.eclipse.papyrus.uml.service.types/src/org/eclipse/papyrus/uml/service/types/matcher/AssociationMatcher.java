@@ -35,20 +35,20 @@ public class AssociationMatcher implements IElementMatcher {
 		boolean isMatch = false;
 
 		if (eObject instanceof Association) {
-		
+
 			Association association = (Association) eObject;
 			if (hasValidNature(association) || hasNoNature(association)) {
 				isMatch = true;
 			}
 		}
-		
+
 		return isMatch;
 	}
-	
+
 	private boolean hasValidNature(Element element) {
 		return ElementUtil.hasNature(element, UMLElementTypes.UML_NATURE);
 	}
-	
+
 	private boolean hasNoNature(Element element) {
 		return (ElementUtil.getNature(element) == null);
 	}

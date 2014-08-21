@@ -1,7 +1,7 @@
 /***************************************************
  * Copyright (c) 2010 Atos Origin.
 
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -85,7 +85,7 @@ public class GenericTransformActionProvider extends
 	/**
 	 * From an EObject we get the epackage corresponding to the resource
 	 * extension of the file and get the imported epackage correspondant
-	 * 
+	 *
 	 * @param selectionEObject
 	 */
 	private void fillEClassifiers(EObject selectionEObject) {
@@ -117,7 +117,7 @@ public class GenericTransformActionProvider extends
 
 	/**
 	 * Register all classifiers contained in the package
-	 * 
+	 *
 	 * @param pack
 	 *            the package
 	 * @param result
@@ -131,12 +131,12 @@ public class GenericTransformActionProvider extends
 
 	/**
 	 * Generate the sorted list of transformation actions.
-	 * 
+	 *
 	 * @param descriptors
 	 *            the descriptors
 	 * @param selection
 	 *            the selection
-	 * 
+	 *
 	 * @return the collection< i action>
 	 */
 	protected Collection<IAction> generateTransformActions(ISelection selection) {
@@ -154,12 +154,12 @@ public class GenericTransformActionProvider extends
 
 	/**
 	 * Generate transformation actions.
-	 * 
+	 *
 	 * @param descriptors
 	 *            the descriptors
 	 * @param selection
 	 *            the selection
-	 * 
+	 *
 	 * @return the collection< i action>
 	 */
 	protected Collection<IAction> generateTransformActionsCore(

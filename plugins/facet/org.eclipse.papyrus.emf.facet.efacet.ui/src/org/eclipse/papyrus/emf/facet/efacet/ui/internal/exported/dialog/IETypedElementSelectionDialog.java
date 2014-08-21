@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.ETypedElement;
 
 /**
  * A dialog to let the user select ETypedElements.
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2.0

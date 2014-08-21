@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,6 +15,7 @@ import java.util.HashMap;
 
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.layout.GridLayoutFactory;
+import org.eclipse.papyrus.xwt.IXWTLoader;
 import org.eclipse.papyrus.xwt.XWT;
 import org.eclipse.papyrus.xwt.XWTException;
 import org.eclipse.papyrus.xwt.XWTLoader;
@@ -36,7 +37,7 @@ public abstract class AbstractDialog extends Dialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		if(title != null) {
+		if (title != null) {
 			getShell().setText(title);
 		}
 
@@ -46,12 +47,12 @@ public abstract class AbstractDialog extends Dialog {
 			HashMap<String, Object> newOptions = new HashMap<String, Object>();
 			initOptions(parent, newOptions);
 			Object element = XWT.loadWithOptions(getContentURL(), newOptions);
-			if(!(element instanceof Control)) {
+			if (!(element instanceof Control)) {
 				throw new XWTException("Root element must a control.");
 			}
 			GridLayoutFactory.fillDefaults().generateLayout(parent);
 			parent.layout(true, true);
-			return (Control)element;
+			return (Control) element;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -62,9 +63,9 @@ public abstract class AbstractDialog extends Dialog {
 	}
 
 	protected void initOptions(Composite parent, HashMap<String, Object> newOptions) {
-		newOptions.put(XWTLoader.CONTAINER_PROPERTY, parent);
-		newOptions.put(XWTLoader.DATACONTEXT_PROPERTY, dataContext);
-		newOptions.put(XWTLoader.CLASS_PROPERTY, geCLR());
+		newOptions.put(IXWTLoader.CONTAINER_PROPERTY, parent);
+		newOptions.put(IXWTLoader.DATACONTEXT_PROPERTY, dataContext);
+		newOptions.put(IXWTLoader.CLASS_PROPERTY, geCLR());
 	}
 
 	protected abstract URL getContentURL();

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.views.properties.modelelement.ModelElementFactory;
 /**
  * Default implementation of StyleHandlerProvider
  * Handles the GMF Notation views (With a low priority)
- * 
+ *
  * @author Camille Letavernier
  */
 public class NotationStyleHandlerProvider implements StyleHandlerProvider {
@@ -36,7 +36,7 @@ public class NotationStyleHandlerProvider implements StyleHandlerProvider {
 	}
 
 	public boolean isProviderFor(Object selection) {
-		if(selection instanceof GradientData) {
+		if (selection instanceof GradientData) {
 			return true;
 		}
 		return NotationHelper.findView(selection) != null;

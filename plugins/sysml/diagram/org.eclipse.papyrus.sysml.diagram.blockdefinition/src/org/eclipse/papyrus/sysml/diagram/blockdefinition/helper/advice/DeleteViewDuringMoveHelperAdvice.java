@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.uml.diagram.common.util.CrossReferencerUtil;
  */
 public class DeleteViewDuringMoveHelperAdvice extends AbstractEditHelperAdvice {
 
-	
+
 	@Override
 	protected ICommand getAfterMoveCommand(MoveRequest request) {
 
@@ -47,14 +47,14 @@ public class DeleteViewDuringMoveHelperAdvice extends AbstractEditHelperAdvice {
 
 		@SuppressWarnings("unchecked")
 		Iterator<EObject> it = request.getElementsToMove().keySet().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
 			viewsToDestroy.addAll(getViewsToDestroy(eObject));
 		}
-		Iterator<View> viewToDestroyIterator= viewsToDestroy.iterator();
-		while(viewToDestroyIterator.hasNext()) {
+		Iterator<View> viewToDestroyIterator = viewsToDestroy.iterator();
+		while (viewToDestroyIterator.hasNext()) {
 			View view = viewToDestroyIterator.next();
-			CustomDeleteCommand destroyViewsCommand = new CustomDeleteCommand(request.getEditingDomain(),view);
+			CustomDeleteCommand destroyViewsCommand = new CustomDeleteCommand(request.getEditingDomain(), view);
 			moveCommand = CompositeCommand.compose(moveCommand, destroyViewsCommand);
 		}
 
@@ -63,23 +63,23 @@ public class DeleteViewDuringMoveHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * This methods looks for inconsistent views to delete in case a semantic move done in the model explorer.
-	 * 
+	 *
 	 * @param movedObject
-	 *        the moved {@link EObject}
+	 *            the moved {@link EObject}
 	 * @return the list of {@link View} to delete
 	 */
 	protected Set<View> getViewsToDestroy(EObject movedObject) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(movedObject, ElementTypes.DIAGRAM_ID).iterator();
-		while(viewIt.hasNext()) {
-			View view = (View)viewIt.next();
+		while (viewIt.hasNext()) {
+			View view = viewIt.next();
 
 			// Views are to be destroyed if they are not the diagram itself (containerType == null)
-			// and not a view directly owned by the diagram (the current policy in Papyrus allows 
+			// and not a view directly owned by the diagram (the current policy in Papyrus allows
 			// to drop nearly anything in the diagram whatever the semantic container).
-			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;		
-			if((containerType != null) && !ElementTypes.DIAGRAM_ID.equals(containerType)) {
+			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;
+			if ((containerType != null) && !ElementTypes.DIAGRAM_ID.equals(containerType)) {
 				viewsToDestroy.add(view);
 			}
 		}

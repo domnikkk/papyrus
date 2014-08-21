@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -16,7 +16,7 @@ import org.eclipse.core.databinding.conversion.IConverter;
 
 /**
  * String to Boolean converter
- * 
+ *
  * @author yyang
  */
 public class CollectionToInteger implements IConverter {
@@ -24,7 +24,7 @@ public class CollectionToInteger implements IConverter {
 	public static CollectionToInteger instance = new CollectionToInteger();
 
 	public Object convert(Object fromObject) {
-		Collection<?> collection = (Collection<?>)fromObject;
+		Collection<?> collection = (Collection<?>) fromObject;
 		return collection.size();
 	}
 

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -25,11 +25,10 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElemen
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * Widget for the creation of a case query. This Widget return a command (
- * {@link #getCommand()} for the creation of the element into the model.
- * 
+ * Widget for the creation of a case query. This Widget return a command ( {@link #getCommand()} for the creation of the element into the model.
+ *
  * </p> This widget uses 3 others widgets:
- * 
+ *
  * <li> {@link GetCaseQueryNameWidget} to display the name of the query.</li> <li>
  * {@link GetCaseQueryTypeWidget} to display the type of the query.</li> <li>
  * {@link SelectQueryTypeWidget} to select the query and open the query editor.</li>
@@ -43,7 +42,7 @@ public class AddCaseQueryWidget extends AbstractCommandWidget {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param properties

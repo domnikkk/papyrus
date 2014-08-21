@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *	 Atos Origin - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 392301
  *
@@ -57,7 +57,7 @@ public class UnloadResourcesEditorModel implements IEditorModel {
 	public void dispose() {
 		// Pass. The tab icon is a workbench-shared image
 	}
-	
+
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageModel#getTabTitle()
 	 *

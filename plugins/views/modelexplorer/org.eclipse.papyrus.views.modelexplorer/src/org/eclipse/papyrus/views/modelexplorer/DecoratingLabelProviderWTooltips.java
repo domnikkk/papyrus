@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Ansgar Radermacher (CEA LIST) ansgar.radermacher@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - don't rely on IMarker changes to refresh Model Explorer labels (CDO)
- *  
+ *
  * History:
  *  Renamed from MoDiscoLabelProviderWTooltips - fix for bug 371905
  *
@@ -57,7 +57,7 @@ public class DecoratingLabelProviderWTooltips extends NavigatorDecoratingLabelPr
 	@Override
 	public void dispose() {
 		try {
-			if(decorationService != null) {
+			if (decorationService != null) {
 				decorationService.deleteListener(this);
 			}
 		} finally {
@@ -66,16 +66,16 @@ public class DecoratingLabelProviderWTooltips extends NavigatorDecoratingLabelPr
 	}
 
 	public void update(Observable o, Object arg) {
-		if((decorationService != null) && (o == decorationService)) {
-			
+		if ((decorationService != null) && (o == decorationService)) {
+
 			// fix for bug 409381 - [Validation] Performance issues. Make updates asynchronously so that
 			// most updates are ignored.
 			// TODO: check whether the decoration service should offer a service for listeners that want to
-			//       be notified in this lazy way.
+			// be notified in this lazy way.
 			if (!asyncUpdateRunning) {
 				asyncUpdateRunning = true;
 
-				Display.getDefault().asyncExec(new Runnable () {
+				Display.getDefault().asyncExec(new Runnable() {
 					public void run() {
 						fireLabelProviderChanged(new LabelProviderChangedEvent(DecoratingLabelProviderWTooltips.this));
 						while (updatePending) {
@@ -83,7 +83,7 @@ public class DecoratingLabelProviderWTooltips extends NavigatorDecoratingLabelPr
 							fireLabelProviderChanged(new LabelProviderChangedEvent(DecoratingLabelProviderWTooltips.this));
 						}
 						asyncUpdateRunning = false;
-					
+
 					}
 				});
 			}
@@ -91,12 +91,12 @@ public class DecoratingLabelProviderWTooltips extends NavigatorDecoratingLabelPr
 				updatePending = true;
 			}
 		}
-		
+
 	}
 
 	@Override
 	public String getToolTipText(Object element) {
-		if(decorationService == null) {
+		if (decorationService == null) {
 			return null;
 		}
 
@@ -107,25 +107,25 @@ public class DecoratingLabelProviderWTooltips extends NavigatorDecoratingLabelPr
 	public Image getImage(Object element) {
 		Image baseImage = super.getImage(element);
 
-		if(decorationService == null) {
+		if (decorationService == null) {
 			return baseImage;
 		}
 		// Get the Model Explorer Adapter
 		ModelExplorerDecorationAdapter adapter = new ModelExplorerDecorationAdapter(baseImage);
 
 
-		//Set the adapter decoration with position as indicated by decoration (from decoration service)
-		if(element != null) {
-			if(element instanceof EObject || element instanceof EReferenceTreeElement // fix for bug 391676
-				||  (EMFHelper.getEObject(element) != null)) {
+		// Set the adapter decoration with position as indicated by decoration (from decoration service)
+		if (element != null) {
+			if (element instanceof EObject || element instanceof EReferenceTreeElement // fix for bug 391676
+					|| (EMFHelper.getEObject(element) != null)) {
 				List<IPapyrusDecoration> decorations = decorationService.getDecorations(EMFHelper.getEObject(element), true);
-				if(decorations != null) {
+				if (decorations != null) {
 					adapter.setDecorations(decorations);
 				}
 			}
 		}
 
-		//return the target decorated
+		// return the target decorated
 		return adapter.getDecoratedImage();
 	}
 
@@ -143,9 +143,9 @@ public class DecoratingLabelProviderWTooltips extends NavigatorDecoratingLabelPr
 	public int getToolTipTimeDisplayed(Object object) {
 		return 10000;
 	}
-	
+
 	protected boolean asyncUpdateRunning;
-	
+
 	protected boolean updatePending;
 
 }

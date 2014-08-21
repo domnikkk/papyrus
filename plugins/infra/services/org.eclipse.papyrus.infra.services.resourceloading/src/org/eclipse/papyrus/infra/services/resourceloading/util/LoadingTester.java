@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,9 +46,9 @@ public class LoadingTester extends PropertyTester {
 
 	/**
 	 * Test a property
-	 * 
+	 *
 	 * @see org.eclipse.core.expressions.IPropertyTester#test(java.lang.Object, java.lang.String, java.lang.Object[], java.lang.Object)
-	 * 
+	 *
 	 * @param receiver
 	 * @param property
 	 * @param args
@@ -56,12 +56,12 @@ public class LoadingTester extends PropertyTester {
 	 * @return
 	 */
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(IS_ALL_LOADED.equals(property) && receiver instanceof IStructuredSelection) {
-			boolean answer = isInLoadedResource((IStructuredSelection)receiver);
+		if (IS_ALL_LOADED.equals(property) && receiver instanceof IStructuredSelection) {
+			boolean answer = isInLoadedResource((IStructuredSelection) receiver);
 			return new Boolean(answer).equals(expectedValue);
 		}
-		if(IS_ALL_NOTLOADED.equals(property) && receiver instanceof IStructuredSelection) {
-			boolean answer = isInNotLoadedResource((IStructuredSelection)receiver);
+		if (IS_ALL_NOTLOADED.equals(property) && receiver instanceof IStructuredSelection) {
+			boolean answer = isInNotLoadedResource((IStructuredSelection) receiver);
 			return new Boolean(answer).equals(expectedValue);
 		}
 		return false;
@@ -69,37 +69,37 @@ public class LoadingTester extends PropertyTester {
 
 	/**
 	 * Tests the selection in order to know if it is in a loaded resource
-	 * 
+	 *
 	 * @param selection
-	 *        selected elements
+	 *            selected elements
 	 * @return <code>true</code> if all selected elements are in loaded
 	 *         resources ; <code>false</code otherwise or if empty selection
 	 */
 	private boolean isInLoadedResource(IStructuredSelection selection) {
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			boolean atLeastOneInSubmodel = false;
 			URI mainURI = null;
 			Iterator<?> iter = selection.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				Object obj = iter.next();
 				EObject eObject = EMFHelper.getEObject(obj);
-				if(eObject != null && !eObject.eIsProxy()) {
+				if (eObject != null && !eObject.eIsProxy()) {
 					// test that there is at least one not loaded resource
 					// object
-					if(!atLeastOneInSubmodel) {
+					if (!atLeastOneInSubmodel) {
 						Resource containingResource = eObject.eResource();
-						if(mainURI == null && containingResource != null && containingResource.getResourceSet() instanceof ModelSet) {
+						if (mainURI == null && containingResource != null && containingResource.getResourceSet() instanceof ModelSet) {
 
 							// Bug 366709: Add tests to avoid NPEs
-							NotationModel notationModel = NotationUtils.getNotationModel((ModelSet)containingResource.getResourceSet());
-							if(notationModel != null) {
+							NotationModel notationModel = NotationUtils.getNotationModel((ModelSet) containingResource.getResourceSet());
+							if (notationModel != null) {
 								URI notationModelURI = notationModel.getResourceURI();
-								if(notationModelURI != null) {
+								if (notationModelURI != null) {
 									mainURI = notationModelURI.trimFileExtension();
 								}
 							}
 						}
-						if(mainURI != null) {
+						if (mainURI != null) {
 							URI uriTrim = containingResource.getURI().trimFileExtension();
 							atLeastOneInSubmodel = !uriTrim.equals(mainURI);
 						}
@@ -117,26 +117,26 @@ public class LoadingTester extends PropertyTester {
 
 	/**
 	 * Tests the selection in order to know if it is in a not loaded resource
-	 * 
+	 *
 	 * @param selection
-	 *        selected elements
+	 *            selected elements
 	 * @return <code>true</code> if all selected elements are in not loaded
 	 *         resources ; <code>false</code otherwise or if empty selection
 	 */
 	private boolean isInNotLoadedResource(IStructuredSelection selection) {
-		if(!selection.isEmpty()) {
+		if (!selection.isEmpty()) {
 			Iterator<?> iter = selection.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				Object obj = iter.next();
 				EObject eObject = EMFHelper.getEObject(obj);
-				if(eObject != null && eObject.eIsProxy()) {
+				if (eObject != null && eObject.eIsProxy()) {
 					continue;
-				} else if(obj instanceof IAdaptable) {
-					View view = (View)((IAdaptable)obj).getAdapter(View.class);
+				} else if (obj instanceof IAdaptable) {
+					View view = (View) ((IAdaptable) obj).getAdapter(View.class);
 
-					if(view instanceof Edge) {
-						View target = ((Edge)view).getTarget();
-						if(target != null && ViewUtil.resolveSemanticElement(target) == null) {
+					if (view instanceof Edge) {
+						View target = ((Edge) view).getTarget();
+						if (target != null && ViewUtil.resolveSemanticElement(target) == null) {
 							// there is a backslash decorator
 							continue;
 						}

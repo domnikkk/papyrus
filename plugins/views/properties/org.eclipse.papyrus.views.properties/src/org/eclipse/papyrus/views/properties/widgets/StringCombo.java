@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A Property Editor for editing a String with an editable combo.
  * The combo proposes a set of default values.
- * 
+ *
  * @author Camille Letavernier
  */
 public class StringCombo extends AbstractPropertyEditor {
@@ -29,9 +29,9 @@ public class StringCombo extends AbstractPropertyEditor {
 	protected org.eclipse.papyrus.infra.widgets.editors.StringCombo editor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -42,11 +42,11 @@ public class StringCombo extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the string combo dialog.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the string combo dialog.
 	 */
 	protected org.eclipse.papyrus.infra.widgets.editors.StringCombo createStringCombo(Composite parent, int style) {
@@ -60,7 +60,7 @@ public class StringCombo extends AbstractPropertyEditor {
 		editor.setUnsettable(!input.isMandatory(propertyPath));
 
 		ILabelProvider labelProvider = input.getLabelProvider(propertyPath);
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			editor.setLabelProvider(labelProvider);
 		}
 		super.doBinding();

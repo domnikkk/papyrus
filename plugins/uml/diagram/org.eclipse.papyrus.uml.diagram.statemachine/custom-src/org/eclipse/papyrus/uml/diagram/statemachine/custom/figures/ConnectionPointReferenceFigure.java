@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.AffixedNamedElementFig
 
 /**
  * ConnectionPointReferenceFigure.
- * 
+ *
  */
 public class ConnectionPointReferenceFigure extends AffixedNamedElementFigure {
 	/**
@@ -52,27 +52,33 @@ public class ConnectionPointReferenceFigure extends AffixedNamedElementFigure {
 	public void paint(Graphics graphics) {
 		graphics.pushState();
 		IFigure ancestor = getParent();
-		while ((ancestor != null) && !(ancestor instanceof RegionFigure))
+		while ((ancestor != null) && !(ancestor instanceof RegionFigure)) {
 			ancestor = ancestor.getParent();
+		}
 		if (ancestor != null) {
-			if (((RegionFigure) ancestor).getBorderColor() != null)
+			if (((RegionFigure) ancestor).getBorderColor() != null) {
 				graphics.setForegroundColor(((RegionFigure) ancestor).getBorderColor());
-			if (((RegionFigure) ancestor).getBackgroundColor() != null)
+			}
+			if (((RegionFigure) ancestor).getBackgroundColor() != null) {
 				graphics.setBackgroundColor(((RegionFigure) ancestor).getBackgroundColor());
+			}
 		} else {
 			ancestor = getParent();
 			Iterator<?> it = ancestor.getChildren().iterator();
 			boolean found = false;
 			while (it.hasNext() && !found) {
 				ancestor = (IFigure) it.next();
-				if (ancestor instanceof StateMachineFigure)
+				if (ancestor instanceof StateMachineFigure) {
 					found = true;
+				}
 			}
 			if (found) {
-				if (((StateMachineFigure) ancestor).getBorderColor() != null)
+				if (((StateMachineFigure) ancestor).getBorderColor() != null) {
 					graphics.setForegroundColor(((StateMachineFigure) ancestor).getBorderColor());
-				if (((StateMachineFigure) ancestor).getBackgroundColor() != null)
+				}
+				if (((StateMachineFigure) ancestor).getBackgroundColor() != null) {
 					graphics.setBackgroundColor(((StateMachineFigure) ancestor).getBackgroundColor());
+				}
 			}
 		}
 		graphics.setLineWidth(1);
@@ -97,8 +103,8 @@ public class ConnectionPointReferenceFigure extends AffixedNamedElementFigure {
 			graphics.drawArc(r, 90, 90);
 			r.x -= r.width / 4 - 1;
 			r.y += 0.75 * r.height;
-			r.width = Math.max((int) r.width / 2, 2);
-			r.height = Math.max((int) r.height / 2, 2);
+			r.width = Math.max(r.width / 2, 2);
+			r.height = Math.max(r.height / 2, 2);
 			graphics.fillOval(r);
 		} else {
 			if (kind == 2) {

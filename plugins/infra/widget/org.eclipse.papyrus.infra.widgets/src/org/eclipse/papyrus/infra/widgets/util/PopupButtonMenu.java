@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class PopupButtonMenu {
 
 	/**
 	 * Initializes me with a button on which to present the pop-up menu.
-	 * 
+	 *
 	 * @param button
-	 *        the button on which I attach a pop-up menu
+	 *            the button on which I attach a pop-up menu
 	 */
 	public PopupButtonMenu(Button button) {
 		this.button = button;
@@ -45,9 +45,9 @@ public class PopupButtonMenu {
 
 	/**
 	 * Add an action to the drop-down menu. Note that this explicitly excludes nested menu structures.
-	 * 
+	 *
 	 * @param action
-	 *        an action to add to the menu
+	 *            an action to add to the menu
 	 */
 	public void addAction(IAction action) {
 		menu.add(action);
@@ -58,8 +58,9 @@ public class PopupButtonMenu {
 
 		button.addDisposeListener(new DisposeListener() {
 
+			@Override
 			public void widgetDisposed(DisposeEvent e) {
-				if(menu != null) {
+				if (menu != null) {
 					menu.dispose();
 					menu = null;
 				}
@@ -76,9 +77,9 @@ public class PopupButtonMenu {
 	}
 
 	private void showMenu(int x, int y) {
-		if(menu != null) {
+		if (menu != null) {
 			Menu menu = this.menu.createContextMenu(button);
-			// don't set the menu as the button's context menu!  We don't want right-click to show it
+			// don't set the menu as the button's context menu! We don't want right-click to show it
 
 			menu.setLocation(button.toDisplay(x, y));
 			menu.setVisible(true);

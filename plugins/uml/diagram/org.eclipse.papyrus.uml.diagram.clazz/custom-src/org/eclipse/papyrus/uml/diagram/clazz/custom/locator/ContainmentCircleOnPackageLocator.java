@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 
 	/**
 	 * Instantiates a new containment circle on package locator.
-	 * 
+	 *
 	 * @param parentFigure
-	 *        the parent figure
+	 *            the parent figure
 	 */
 	public ContainmentCircleOnPackageLocator(IFigure parentFigure) {
 		super(parentFigure);
@@ -46,13 +46,13 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 
 	/**
 	 * Instantiates a new containment circle on package locator.
-	 * 
+	 *
 	 * @param borderItem
-	 *        the border item
+	 *            the border item
 	 * @param parentFigure
-	 *        the parent figure
+	 *            the parent figure
 	 * @param constraint
-	 *        the constraint
+	 *            the constraint
 	 */
 	public ContainmentCircleOnPackageLocator(IFigure borderItem, IFigure parentFigure, Rectangle constraint) {
 		super(borderItem, parentFigure, constraint);
@@ -60,11 +60,11 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 
 	/**
 	 * Instantiates a new containment circle on package locator.
-	 * 
+	 *
 	 * @param parentFigure
-	 *        the parent figure
+	 *            the parent figure
 	 * @param preferredSide
-	 *        the preferred side
+	 *            the preferred side
 	 */
 	public ContainmentCircleOnPackageLocator(IFigure parentFigure, int preferredSide) {
 		super(parentFigure, preferredSide);
@@ -73,7 +73,7 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator#setConstraint(org.eclipse.draw2d.geometry.Rectangle)
-	 * 
+	 *
 	 * @param theConstraint
 	 */
 	@Override
@@ -82,9 +82,8 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator#locateOnParent(org.eclipse.draw2d.geometry.Point, int,
-	 *      org.eclipse.draw2d.IFigure)
-	 * 
+	 * @see org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator#locateOnParent(org.eclipse.draw2d.geometry.Point, int, org.eclipse.draw2d.IFigure)
+	 *
 	 * @param suggestedLocation
 	 * @param suggestedSide
 	 * @param borderItem
@@ -92,9 +91,9 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 	 */
 	@Override
 	protected Point locateOnParent(Point suggestedLocation, int suggestedSide, IFigure borderItem) {
-		PackageNodePlateFigure parent = (PackageNodePlateFigure)getParentFigure();
+		PackageNodePlateFigure parent = (PackageNodePlateFigure) getParentFigure();
 		Rectangle headerBounds = parent.getPackageFigure().getHeader();
-		if(suggestedSide == PositionConstants.NORTH && !isOnHeader(suggestedLocation, headerBounds)) {
+		if (suggestedSide == PositionConstants.NORTH && !isOnHeader(suggestedLocation, headerBounds)) {
 			setBorderItemOffset(new Dimension(originalBorderItemOffset.width, headerBounds.height));
 		} else {
 			setBorderItemOffset(originalBorderItemOffset);
@@ -106,11 +105,11 @@ public class ContainmentCircleOnPackageLocator extends BorderItemLocator {
 
 	/**
 	 * Checks if is on header.
-	 * 
+	 *
 	 * @param p
-	 *        the p
+	 *            the p
 	 * @param headerBounds
-	 *        the header bounds
+	 *            the header bounds
 	 * @return true, if is on header
 	 */
 	private boolean isOnHeader(Point p, Rectangle headerBounds) {

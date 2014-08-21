@@ -44,8 +44,8 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	public boolean canHandle(IStructuredSelection initialSelection) {
 		boolean result = false;
 
-		for(Object next : initialSelection.toList()) {
-			if(adapt(next, IResource.class) != null) {
+		for (Object next : initialSelection.toList()) {
+			if (adapt(next, IResource.class) != null) {
 				result = true;
 				break;
 			}
@@ -63,7 +63,7 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	}
 
 	public List<? extends IWizardPage> createPages() {
-		if(newModelFilePage == null) {
+		if (newModelFilePage == null) {
 			return Collections.emptyList();
 		}
 
@@ -72,9 +72,9 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 
 	@Override
 	public IStatus validateDiagramCategories(String... newCategories) {
-		if(newModelFilePage != null) {
+		if (newModelFilePage != null) {
 			String firstCategory = newCategories.length > 0 ? newCategories[0] : null;
-			if(newCategories.length > 0) {
+			if (newCategories.length > 0) {
 				// 316943 - [Wizard] Wrong suffix for file name when creating a
 				// profile model
 				return newModelFilePage.diagramExtensionChanged(wizard.getDiagramFileExtension(firstCategory));
@@ -88,21 +88,21 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	 * Creates the new model file page, if required.
 	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 *
 	 * @return the new model file page, or {@code null} if none
 	 */
 	protected NewModelFilePage createNewModelFilePage(IStructuredSelection selection) {
 
-		if(wizard.isCreateProjectWizard() || wizard.isCreateMultipleModelsWizard()) {
+		if (wizard.isCreateProjectWizard() || wizard.isCreateMultipleModelsWizard()) {
 
 			return null;
 		}
 
-		//		IFile selectedFile = getSelectedFile(selection);
+		// IFile selectedFile = getSelectedFile(selection);
 		URI selectedResourceURI = WizardsHelper.getSelectedResourceURI(selection);
 
-		if(isCreateFromExistingDomainModel() && selectedResourceURI != null) {
+		if (isCreateFromExistingDomainModel() && selectedResourceURI != null) {
 			return new NewDiagramForExistingModelPage(selection, wizard.getModelKindName(), getDiagramFileName(selectedResourceURI) + "." + wizard.getDiagramFileExtension(null), wizard.getDiagramFileExtension(null)); //$NON-NLS-1$
 		}
 
@@ -114,7 +114,7 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	 * extension.
 	 *
 	 * @param domainModel
-	 *        the domain model
+	 *            the domain model
 	 * @return the diagram file name
 	 */
 	protected String getDiagramFileName(URI domainModelURI) {
@@ -122,11 +122,11 @@ public class WorkspaceNewModelStorageProvider extends AbstractNewModelStoragePro
 	}
 
 	protected boolean isCreateFromExistingDomainModel() {
-		return wizard.isInitModelWizard() && ((InitModelWizard)wizard).isCreateFromExistingDomainModel();
+		return wizard.isInitModelWizard() && ((InitModelWizard) wizard).isCreateFromExistingDomainModel();
 	}
 
 	public URI createNewModelURI(String categoryId) {
-		IFile newFile = newModelFilePage.createFileHandle(); //Don't create an empty file, to avoid Resource load exceptions (Empty files are not valid EMF Resources)
+		IFile newFile = newModelFilePage.createFileHandle(); // Don't create an empty file, to avoid Resource load exceptions (Empty files are not valid EMF Resources)
 		return (newFile == null) ? null : URI.createPlatformResourceURI(newFile.getFullPath().toString(), true);
 	}
 

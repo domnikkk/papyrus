@@ -57,9 +57,9 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	@Override
 	public Object getValue() {
 		int totalValue = 0;
-		for(Button button : checkboxes) {
-			int value = (Integer)button.getData("IntValue"); //$NON-NLS-1$
-			if(button.getSelection()) {
+		for (Button button : checkboxes) {
+			int value = (Integer) button.getData("IntValue"); //$NON-NLS-1$
+			if (button.getSelection()) {
 				totalValue |= value;
 			}
 		}
@@ -68,7 +68,7 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 
 	@Override
 	public void dispose() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.removeChangeListener(this);
 		}
 		super.dispose();
@@ -94,7 +94,7 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	public void setMasks(final String[] values) {
 		Map<Integer, String> masks = new HashMap<Integer, String>();
 		int intValue = 1;
-		for(String value : values) {
+		for (String value : values) {
 			masks.put(intValue, value);
 			intValue <<= 1;
 		}
@@ -102,20 +102,20 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	}
 
 	public void setMasks(final Map<Integer, String> values) {
-		if(values.size() > 32) {
+		if (values.size() > 32) {
 			StringLabel label = new StringLabel(checkboxContainer, SWT.NONE);
 			label.getValueLabel().setImage(Activator.getDefault().getImage("/icons/error.gif")); //$NON-NLS-1$
 			label.getValueLabel().setText(Messages.IntegerMask_ErrorTooManyValues);
 			checkboxes = new Button[0];
 		} else {
-			if(checkboxes != null) {
+			if (checkboxes != null) {
 				disposeCheckboxes();
 			}
 
 			checkboxes = new Button[values.size()];
 
 			int i = 0;
-			for(Entry<Integer, String> mask : values.entrySet()) {
+			for (Entry<Integer, String> mask : values.entrySet()) {
 				int intValue = mask.getKey();
 				String value = mask.getValue();
 				checkboxes[i] = new Button(checkboxContainer, SWT.CHECK);
@@ -128,14 +128,14 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	}
 
 	protected void disposeCheckboxes() {
-		for(Button button : checkboxes) {
+		for (Button button : checkboxes) {
 			button.removeSelectionListener(this);
 			button.dispose();
 		}
 	}
 
 	public void setNumColumns(final int numColumns) {
-		((GridLayout)checkboxContainer.getLayout()).numColumns = numColumns;
+		((GridLayout) checkboxContainer.getLayout()).numColumns = numColumns;
 		checkboxContainer.layout();
 		layout();
 	}
@@ -149,13 +149,13 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	}
 
 	protected void refreshCheckboxes() {
-		if(!refreshCheckboxes) {
+		if (!refreshCheckboxes) {
 			return;
 		}
 
 		int totalValue = getCurrentValue();
-		for(Button button : checkboxes) {
-			int value = (Integer)button.getData("IntValue"); //$NON-NLS-1$
+		for (Button button : checkboxes) {
+			int value = (Integer) button.getData("IntValue"); //$NON-NLS-1$
 			button.setSelection((totalValue & value) != 0);
 		}
 	}
@@ -167,10 +167,10 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 
 	@Override
 	public void widgetSelected(final SelectionEvent e) {
-		Button button = (Button)e.widget;
-		int value = (Integer)button.getData("IntValue"); //$NON-NLS-1$
+		Button button = (Button) e.widget;
+		int value = (Integer) button.getData("IntValue"); //$NON-NLS-1$
 		int totalValue = getCurrentValue();
-		if(button.getSelection()) {
+		if (button.getSelection()) {
 			totalValue |= value;
 		} else {
 			totalValue &= ~value;
@@ -179,7 +179,7 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	}
 
 	protected void setCurrentValue(final int value) {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			refreshCheckboxes = false;
 			modelProperty.setValue(value);
 			refreshCheckboxes = true;
@@ -190,9 +190,9 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	}
 
 	protected Integer getCurrentValue() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			Object value = modelProperty.getValue();
-			return value == null ? 0 : (Integer)value;
+			return value == null ? 0 : (Integer) value;
 		} else {
 			return currentValue;
 		}
@@ -204,7 +204,7 @@ public class IntegerMask extends AbstractValueEditor implements SelectionListene
 	}
 
 	public int getNumColumns() {
-		return ((GridLayout)checkboxContainer.getLayout()).numColumns;
+		return ((GridLayout) checkboxContainer.getLayout()).numColumns;
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * A match raised by the value of an attribute
- * 
+ *
  */
 public class AttributeMatch extends ModelMatch {
 
@@ -44,41 +44,41 @@ public class AttributeMatch extends ModelMatch {
 	/**
 	 * Similar to {@link AbstractResultEntry} but adds an information about which attribute raised the match and which element contains the value of
 	 * the attribute that matches
-	 * 
+	 *
 	 * @param offset
 	 * @param lenght
 	 * @param target
-	 *        the element containing the value of the attribute that matches
+	 *            the element containing the value of the attribute that matches
 	 * @param scopeEntry
 	 * @param attribute
-	 *        the attribute that raised the match
+	 *            the attribute that raised the match
 	 */
 	public AttributeMatch(int offset, int lenght, Object target, ScopeEntry scopeEntry, Object attribute, Stereotype stereotype) {
 		super(offset, lenght, target, scopeEntry);
 		this.attribute = attribute;
 		this.stereotype = stereotype;
 
-		//		if(target instanceof EObject) {
-		//			this.uriSource = EcoreUtil.getURI((EObject)target);
-		//		}
+		// if(target instanceof EObject) {
+		// this.uriSource = EcoreUtil.getURI((EObject)target);
+		// }
 		this.parent = new ResultEntry(target, scopeEntry);
-		recursiveHierarchy((AbstractResultEntry)parent);
+		recursiveHierarchy((AbstractResultEntry) parent);
 	}
 
 	/**
 	 * Create an attribute-match in a parent result entry that already exists.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent result entry
+	 *            the parent result entry
 	 * @param offset
 	 * @param lengtt
 	 * @param target
-	 *        the element containing the value of the attribute that matches
+	 *            the element containing the value of the attribute that matches
 	 * @param attribute
-	 *        the attribute that raised the match
+	 *            the attribute that raised the match
 	 */
 	public AttributeMatch(AbstractResultEntry parent, int offset, int length, Object target, Object attribute, Stereotype stereotype) {
-		super(offset, length, target, (ScopeEntry)parent.getElement());
+		super(offset, length, target, (ScopeEntry) parent.getElement());
 
 		this.attribute = attribute;
 		this.stereotype = stereotype;
@@ -86,23 +86,23 @@ public class AttributeMatch extends ModelMatch {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.search.results.AbstractResultEntry#equals(java.lang.Object)
 	 *      In addition, it checks if target is the same as well.
-	 * 
+	 *
 	 * @param obj
 	 * @return
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof AttributeMatch) {
-			if(super.equals(obj)) {
-				if(((AttributeMatch)obj).getSource() instanceof EObject && this.getSource() instanceof EObject) {
-					if(EcoreUtil.equals((EObject)((AttributeMatch)obj).getSource(), (EObject)this.getSource())) {
+		if (obj instanceof AttributeMatch) {
+			if (super.equals(obj)) {
+				if (((AttributeMatch) obj).getSource() instanceof EObject && this.getSource() instanceof EObject) {
+					if (EcoreUtil.equals((EObject) ((AttributeMatch) obj).getSource(), (EObject) this.getSource())) {
 						return true;
 					}
 				} else {
-					if(((AttributeMatch)obj).getSource().equals(this.getSource())) {
+					if (((AttributeMatch) obj).getSource().equals(this.getSource())) {
 						return true;
 					}
 				}
@@ -114,27 +114,27 @@ public class AttributeMatch extends ModelMatch {
 		}
 	}
 
-	//	public Object getTarget() {
-	//		//		ResourceSet resSet = new ResourceSetImpl();
-	//		if(this.uriSource != null) {
-	//			ResourceSet resSet = ((ScopeEntry)this.getElement()).getModelSet();
-	//			return resSet.getEObject(this.uriSource, true);
-	//		}
-	//		return null;
+	// public Object getTarget() {
+	// // ResourceSet resSet = new ResourceSetImpl();
+	// if(this.uriSource != null) {
+	// ResourceSet resSet = ((ScopeEntry)this.getElement()).getModelSet();
+	// return resSet.getEObject(this.uriSource, true);
+	// }
+	// return null;
 	//
-	//	}
+	// }
 	//
-	//	public void setTarget(Object target) {
-	//		if(target instanceof EObject) {
-	//			this.uriSource = EcoreUtil.getURI((EObject)target);
-	//		}
+	// public void setTarget(Object target) {
+	// if(target instanceof EObject) {
+	// this.uriSource = EcoreUtil.getURI((EObject)target);
+	// }
 	//
-	//	}
+	// }
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.search.results.AbstractResultEntry#elementToDisplay()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -144,9 +144,9 @@ public class AttributeMatch extends ModelMatch {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.search.results.AbstractResultEntry#elementToCheckFilterFor()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -155,15 +155,15 @@ public class AttributeMatch extends ModelMatch {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.search.results.AbstractResultEntry#openElement()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Object openElement(OpenElementService service) throws ServiceException, PartInitException {
-		if(this.getSource() instanceof EObject) {
-			return service.openSemanticElement((EObject)this.getSource());
+		if (this.getSource() instanceof EObject) {
+			return service.openSemanticElement((EObject) this.getSource());
 		}
 		return null;
 	}

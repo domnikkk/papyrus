@@ -47,6 +47,7 @@ public class UMLValidationProvider {
 		final Runnable op = operation;
 		Runnable task = new Runnable() {
 
+			@Override
 			public void run() {
 				try {
 					constraintsActive = true;
@@ -56,7 +57,7 @@ public class UMLValidationProvider {
 				}
 			}
 		};
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
@@ -71,11 +72,11 @@ public class UMLValidationProvider {
 	 * @generated
 	 */
 	static boolean isInDefaultEditorContext(Object object) {
-		if(shouldConstraintsBePrivate() && !constraintsActive) {
+		if (shouldConstraintsBePrivate() && !constraintsActive) {
 			return false;
 		}
-		if(object instanceof View) {
-			return constraintsActive && PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID((View)object));
+		if (object instanceof View) {
+			return constraintsActive && PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}
@@ -88,6 +89,7 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean selects(Object object) {
 			return isInDefaultEditorContext(object);
 		}
@@ -100,12 +102,13 @@ public class UMLValidationProvider {
 
 		/**
 		 * select all moved edit parts which are linked to an occurrence specification
-		 * 
+		 *
 		 * @generated
 		 */
+		@Override
 		public boolean selects(Object object) {
-			if(isInDefaultEditorContext(object) && object instanceof View) {
-				final int id = UMLVisualIDRegistry.getVisualID((View)object);
+			if (isInDefaultEditorContext(object) && object instanceof View) {
+				final int id = UMLVisualIDRegistry.getVisualID((View) object);
 				boolean result = false;
 				result = result || id == LifelineEditPart.VISUAL_ID;
 				return result;
@@ -161,13 +164,14 @@ public class UMLValidationProvider {
 		 */
 		CtxSwitchStrategy(IBatchValidator validator) {
 			this.defaultStrategy = validator.getDefaultTraversalStrategy();
-			this.contextSwitchingIdentifiers = new int[]{ LifelineEditPart.VISUAL_ID };
+			this.contextSwitchingIdentifiers = new int[] { LifelineEditPart.VISUAL_ID };
 			Arrays.sort(this.contextSwitchingIdentifiers);
 		}
 
 		/**
 		 * @generated
 		 */
+		@Override
 		public void elementValidated(EObject element, IStatus status) {
 			defaultStrategy.elementValidated(element, status);
 		}
@@ -175,6 +179,7 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean hasNext() {
 			return defaultStrategy.hasNext();
 		}
@@ -182,8 +187,9 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean isClientContextChanged() {
-			if(preFetchedNextTarget == null) {
+			if (preFetchedNextTarget == null) {
 				preFetchedNextTarget = next();
 				prepareNextClientContext(preFetchedNextTarget);
 			}
@@ -193,9 +199,10 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public EObject next() {
 			EObject nextTarget = preFetchedNextTarget;
-			if(nextTarget == null) {
+			if (nextTarget == null) {
 				nextTarget = defaultStrategy.next();
 			}
 			this.preFetchedNextTarget = null;
@@ -205,6 +212,7 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public void startTraversal(Collection traversalRoots, IProgressMonitor monitor) {
 			defaultStrategy.startTraversal(traversalRoots, monitor);
 		}
@@ -213,11 +221,11 @@ public class UMLValidationProvider {
 		 * @generated
 		 */
 		private void prepareNextClientContext(EObject nextTarget) {
-			if(nextTarget != null && currentTarget != null) {
-				if(nextTarget instanceof View) {
-					final int id = UMLVisualIDRegistry.getVisualID((View)nextTarget);
+			if (nextTarget != null && currentTarget != null) {
+				if (nextTarget instanceof View) {
+					final int id = UMLVisualIDRegistry.getVisualID((View) nextTarget);
 					int nextSemanticId = (id != -1 && Arrays.binarySearch(contextSwitchingIdentifiers, id) >= 0) ? id : -1;
-					if((currentSemanticCtxId != -1 && currentSemanticCtxId != nextSemanticId) || (nextSemanticId != -1 && nextSemanticId != currentSemanticCtxId)) {
+					if ((currentSemanticCtxId != -1 && currentSemanticCtxId != nextSemanticId) || (nextSemanticId != -1 && nextSemanticId != currentSemanticCtxId)) {
 						this.ctxChanged = true;
 					}
 					currentSemanticCtxId = nextSemanticId;
@@ -240,8 +248,9 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public IStatus validate(IValidationContext ctx) {
-			Interaction context = (Interaction)ctx.getTarget();
+			Interaction context = (Interaction) ctx.getTarget();
 			return UMLValidationHelper.validateFragmentsOrder(context, ctx);
 		}
 	}
@@ -254,8 +263,9 @@ public class UMLValidationProvider {
 		/**
 		 * @generated
 		 */
+		@Override
 		public IStatus validate(IValidationContext ctx) {
-			InteractionOperand context = (InteractionOperand)ctx.getTarget();
+			InteractionOperand context = (InteractionOperand) ctx.getTarget();
 			return UMLValidationHelper.validateFragmentsOrder(context, ctx);
 		}
 	}
@@ -267,11 +277,12 @@ public class UMLValidationProvider {
 
 		/**
 		 * do not presume on target type
-		 * 
+		 *
 		 * @generated
 		 */
+		@Override
 		public IStatus validate(IValidationContext ctx) {
-			Node context = (Node)ctx.getTarget();
+			Node context = (Node) ctx.getTarget();
 			return UMLValidationHelper.validateFragmentsOrder(context, ctx);
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,36 +39,38 @@ import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedSt
 
 /**
  * Highest priority EditPolicyProvider, which can ensure the installed EditPolicies correctly.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class PostEditPolicyProvider implements IEditPolicyProvider {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#addProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
+	@Override
 	public void addProviderChangeListener(IProviderChangeListener listener) {
 
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#provides(org.eclipse.gmf.runtime.common.core.service.IOperation)
-	 * 
+	 *
 	 * @param operation
 	 * @return
 	 */
 
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
-		if(!(epOperation.getEditPart() instanceof GraphicalEditPart) && !(epOperation.getEditPart() instanceof ConnectionEditPart)) {
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
+		if (!(epOperation.getEditPart() instanceof GraphicalEditPart) && !(epOperation.getEditPart() instanceof ConnectionEditPart)) {
 			return false;
 		}
 		EditPart gep = epOperation.getEditPart();
-		String diagramType = ((View)gep.getModel()).getDiagram().getType();
-		if(PackageEditPart.MODEL_ID.equals(diagramType)) {
+		String diagramType = ((View) gep.getModel()).getDiagram().getType();
+		if (PackageEditPart.MODEL_ID.equals(diagramType)) {
 			return true;
 		}
 		return false;
@@ -76,23 +78,27 @@ public class PostEditPolicyProvider implements IEditPolicyProvider {
 
 	/**
 	 * @see org.eclipse.gmf.runtime.common.core.service.IProvider#removeProviderChangeListener(org.eclipse.gmf.runtime.common.core.service.IProviderChangeListener)
-	 * 
+	 *
 	 * @param listener
 	 */
 
+	@Override
 	public void removeProviderChangeListener(IProviderChangeListener listener) {
 
 	}
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.services.editpolicy.IEditPolicyProvider#createEditPolicies(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param editPart
 	 */
 
+	@Override
 	public void createEditPolicies(EditPart editPart) {
-		//Replace AppliedStereotypeCommentCreationEditPolicy to a custom one.
-		if(editPart instanceof AbstractExecutionSpecificationEditPart || editPart instanceof CustomDestructionOccurrenceSpecificationEditPart || editPart instanceof CustomDurationConstraintEditPart || editPart instanceof CustomDurationConstraintEditPart || editPart instanceof CustomStateInvariantEditPart || editPart instanceof CustomTimeConstraintLabelEditPart || editPart instanceof CustomTimeObservationLabelEditPart || editPart instanceof AbstractMessageEditPart || editPart instanceof GeneralOrderingEditPart || editPart instanceof CustomContinuationEditPart || editPart instanceof CustomInteractionOperandEditPart || editPart instanceof GateEditPart) {
+		// Replace AppliedStereotypeCommentCreationEditPolicy to a custom one.
+		if (editPart instanceof AbstractExecutionSpecificationEditPart || editPart instanceof CustomDestructionOccurrenceSpecificationEditPart || editPart instanceof CustomDurationConstraintEditPart || editPart instanceof CustomDurationConstraintEditPart
+				|| editPart instanceof CustomStateInvariantEditPart || editPart instanceof CustomTimeConstraintLabelEditPart || editPart instanceof CustomTimeObservationLabelEditPart || editPart instanceof AbstractMessageEditPart
+				|| editPart instanceof GeneralOrderingEditPart || editPart instanceof CustomContinuationEditPart || editPart instanceof CustomInteractionOperandEditPart || editPart instanceof GateEditPart) {
 			editPart.installEditPolicy(AppliedStereotypeCommentCreationEditPolicy.APPLIED_STEREOTYPE_COMMENT, new AppliedStereotypeCommentCreationEditPolicyEx());
 		}
 	}

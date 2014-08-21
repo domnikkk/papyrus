@@ -22,8 +22,7 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.internal.registry.BrowserRegi
 /**
  * A registry for the {@link EObject}, {@link EPackage}, and {@link Resource} browser opener
  * extension point. It can be used to open a default model browser (chosen by the user) or get a
- * list of model browsers that can be opened on a model element, {@link EPackage} or
- * {@link Resource}.
+ * list of model browsers that can be opened on a model element, {@link EPackage} or {@link Resource}.
  */
 public interface IBrowserRegistry {
 
@@ -31,7 +30,7 @@ public interface IBrowserRegistry {
 
 	/**
 	 * Browse the given package using the default EPackage browser opener
-	 * 
+	 *
 	 * @param ePackage
 	 *            the element to browse
 	 */
@@ -39,7 +38,7 @@ public interface IBrowserRegistry {
 
 	/**
 	 * Browse the given resource using the default Resource browser opener
-	 * 
+	 *
 	 * @param resource
 	 *            the element to browse
 	 */
@@ -47,7 +46,7 @@ public interface IBrowserRegistry {
 
 	/**
 	 * Browse the given eObject using the default EObject browser opener
-	 * 
+	 *
 	 * @param eObject
 	 *            the element to browse
 	 */

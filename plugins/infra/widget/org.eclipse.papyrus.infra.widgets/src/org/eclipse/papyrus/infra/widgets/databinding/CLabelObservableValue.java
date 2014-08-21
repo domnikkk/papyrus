@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.swt.custom.CLabel;
 /**
  * An IObservableValue to edit a CLabel (Text + Image), based on a LabelProvider
  * It supports AggregatedObservable
- * 
+ *
  * @author Camille Letavernier
  */
 public class CLabelObservableValue extends AbstractObservableValue {
@@ -46,18 +46,18 @@ public class CLabelObservableValue extends AbstractObservableValue {
 	/**
 	 * If the CLabel may represent more than one value,
 	 * use an AggregatedObservable
-	 * 
+	 *
 	 * May be null
 	 */
 	protected AggregatedObservable aggregated;
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param label
-	 *        The observed CLabel
+	 *            The observed CLabel
 	 * @param modelObservable
-	 *        The Model IObservable
+	 *            The Model IObservable
 	 */
 	public CLabelObservableValue(CLabel label, IObservableValue modelObservable) {
 		this(label, modelObservable, null);
@@ -65,35 +65,36 @@ public class CLabelObservableValue extends AbstractObservableValue {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param label
-	 *        The observed CLabel
+	 *            The observed CLabel
 	 * @param modelObservable
-	 *        The Model IObservable
+	 *            The Model IObservable
 	 * @param labelProvider
-	 *        The LabelProvider used to define the CLabel's text/image from the current value
+	 *            The LabelProvider used to define the CLabel's text/image from the current value
 	 */
 	public CLabelObservableValue(CLabel label, IObservableValue modelObservable, ILabelProvider labelProvider) {
 		this.label = label;
 		setLabelProvider(labelProvider);
-		if(modelObservable instanceof AggregatedObservable) {
-			this.aggregated = (AggregatedObservable)modelObservable;
+		if (modelObservable instanceof AggregatedObservable) {
+			this.aggregated = (AggregatedObservable) modelObservable;
 		}
 	}
 
 	/**
 	 * @param labelProvider
-	 *        The LabelProvider used to define the CLabel's text and image,
-	 *        based on the current value
+	 *            The LabelProvider used to define the CLabel's text and image,
+	 *            based on the current value
 	 */
 	public void setLabelProvider(ILabelProvider labelProvider) {
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			this.labelProvider = labelProvider;
 		} else {
 			this.labelProvider = new LabelProvider();
 		}
 	}
 
+	@Override
 	public Object getValueType() {
 		return Object.class;
 	}
@@ -106,10 +107,10 @@ public class CLabelObservableValue extends AbstractObservableValue {
 	@Override
 	protected void doSetValue(Object value) {
 		this.currentValue = value;
-		if(aggregated != null && aggregated.hasDifferentValues()) {
+		if (aggregated != null && aggregated.hasDifferentValues()) {
 			label.setText(Messages.ReferenceDialogObservable_Unchanged);
 			label.setImage(null);
-		} else if(currentValue == null) {
+		} else if (currentValue == null) {
 			label.setText(Messages.ReferenceDialog_Unset);
 			label.setImage(null);
 		} else {

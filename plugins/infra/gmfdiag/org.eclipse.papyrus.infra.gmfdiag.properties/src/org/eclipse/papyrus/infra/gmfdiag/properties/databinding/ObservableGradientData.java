@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.databinding;
 
@@ -21,14 +21,14 @@ import org.eclipse.gmf.runtime.notation.datatype.GradientData;
 /**
  * This class encapsulates a gradient data, which may be null (If the
  * gradient is not activated).
- * 
+ *
  * If the gradient data is null, it will be created just-in-time when
  * setters are called.
- * 
+ *
  * This class has an additional property, {@link #activate}.
  * activate = false implies that the gradient data has not been set
  * (gradient data = null)
- * 
+ *
  * @author Camille Letavernier
  */
 public class ObservableGradientData extends GradientData {
@@ -40,14 +40,14 @@ public class ObservableGradientData extends GradientData {
 	private boolean activate;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The IObservableValue containing the gradient data. It will be
-	 *        notified when the gradient data is changed
+	 *            The IObservableValue containing the gradient data. It will be
+	 *            notified when the gradient data is changed
 	 * @param encapsulated
-	 *        The encapsulated gradient data. May be null
+	 *            The encapsulated gradient data. May be null
 	 */
 	public ObservableGradientData(IObservableValue source, GradientData encapsulated) {
 		this.encapsulated = new GradientData(encapsulated);
@@ -75,7 +75,7 @@ public class ObservableGradientData extends GradientData {
 	 * occurred
 	 */
 	protected void notifySource() {
-		if(activate) {
+		if (activate) {
 			source.setValue(new GradientData(encapsulated));
 		} else {
 			source.setValue(null);
@@ -111,7 +111,7 @@ public class ObservableGradientData extends GradientData {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true if this gradient data is activated
 	 */
 	public boolean getActivate() {
@@ -120,9 +120,9 @@ public class ObservableGradientData extends GradientData {
 
 	/**
 	 * Activates or de-activates this gradient data
-	 * 
+	 *
 	 * @param value
-	 *        Whether the gradient data should be activated or de-activated
+	 *            Whether the gradient data should be activated or de-activated
 	 */
 	public void setActivate(boolean value) {
 		this.activate = value;
@@ -132,10 +132,10 @@ public class ObservableGradientData extends GradientData {
 	public EObject getOwner() {
 		EObject result = null;
 
-		if(source instanceof IObserving) {
-			Object owner = ((IObserving)source).getObserved();
-			if(owner instanceof EObject) {
-				result = (EObject)owner;
+		if (source instanceof IObserving) {
+			Object owner = ((IObserving) source).getObserved();
+			if (owner instanceof EObject) {
+				result = (EObject) owner;
 			}
 		}
 

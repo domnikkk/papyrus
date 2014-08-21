@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,21 +21,21 @@ import org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell;
 
 /**
  * The export formatter to use to export the same text as the text displayed in the cells
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class PapyrusExportFormatter extends DefaultExportFormatter {
 
 	/**
-	 * 
-	 * @see org.eclipse.nebula.widgets.nattable.export.IExportFormatter#formatForExport(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell,
-	 *      org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
-	 * 
+	 *
+	 * @see org.eclipse.nebula.widgets.nattable.export.IExportFormatter#formatForExport(org.eclipse.nebula.widgets.nattable.layer.cell.ILayerCell, org.eclipse.nebula.widgets.nattable.config.IConfigRegistry)
+	 *
 	 * @param cell
 	 * @param configRegistry
 	 * @return
 	 */
+	@Override
 	public Object formatForExport(ILayerCell cell, IConfigRegistry configRegistry) {
 		Object dataValue = cell.getDataValue();
 		IDisplayConverter displayConverter = configRegistry.getConfigAttribute(CellConfigAttributes.DISPLAY_CONVERTER, cell.getDisplayMode(), cell.getConfigLabels().getLabels());

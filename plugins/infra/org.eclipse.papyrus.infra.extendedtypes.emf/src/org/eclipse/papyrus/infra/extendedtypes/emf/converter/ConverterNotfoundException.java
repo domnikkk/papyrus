@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,11 +30,11 @@ public class ConverterNotfoundException extends Exception {
 
 	/**
 	 * Creates a new {@link ConverterNotfoundException}.
-	 * 
+	 *
 	 * @param parameterType
-	 *        the target type of the value
+	 *            the target type of the value
 	 * @param valueInstance
-	 *        the value specification defining the entering value and type
+	 *            the value specification defining the entering value and type
 	 */
 	public ConverterNotfoundException(Class<?> parameterType, ValueSpecification valueInstance) {
 		this.parameterType = parameterType;
@@ -43,7 +43,7 @@ public class ConverterNotfoundException extends Exception {
 
 	/**
 	 * Returns the target parameter type
-	 * 
+	 *
 	 * @return the target parameter type
 	 */
 	public Class<?> getParameterType() {
@@ -52,7 +52,7 @@ public class ConverterNotfoundException extends Exception {
 
 	/**
 	 * Returns the value specification defining the entering value and type
-	 * 
+	 *
 	 * @return the value specification defining the entering value and type
 	 */
 	public ValueSpecification getValueInstance() {

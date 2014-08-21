@@ -1,16 +1,16 @@
 /*****************************************************************************
-* Copyright (c) 2010 CEA LIST.
-*
-* 
+ * Copyright (c) 2010 CEA LIST.
+ *
+ *
  * All rights reserved. This program and the accompanying materials
-* are made available under the terms of the Eclipse Public License v1.0
-* which accompanies this distribution, and is available at
-* http://www.eclipse.org/legal/epl-v10.html
-*
-* Contributors:
-*  Itemis - Initial API and implementation
-*
-*****************************************************************************/ 
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  Itemis - Initial API and implementation
+ *
+ *****************************************************************************/
 
 package org.eclipse.papyrus.uml.xtext.integration;
 
@@ -34,30 +34,28 @@ import org.eclipse.swt.widgets.Listener;
 
 /**
  * This is a stripped copy from {@link ContentProposalAdapter} that delegates
- * the popup to a {@link CompletionProposal} managed by a
- * {@link IContentAssistant}.
- * 
+ * the popup to a {@link CompletionProposal} managed by a {@link IContentAssistant}.
+ *
  * @author patrick.koenemann@itemis.de
- * 
+ *
  *         ansgar.radermacher@cea.fr: added delayedIsPopupOpen()
- * 
+ *
  */
 public class CompletionProposalAdapter implements ICompletionListener {
 
 	private final IContentAssistant contentAssistant;
 
-	protected boolean delayedIsOpen;	
-	
+	protected boolean delayedIsOpen;
+
 	/**
 	 * <p>
-	 * This adapter installs listener on the given control and delegates the
-	 * completion proposal popup request to the given {@link IContentAssistant}.
+	 * This adapter installs listener on the given control and delegates the completion proposal popup request to the given {@link IContentAssistant}.
 	 * </p>
-	 * 
+	 *
 	 * <p>
 	 * FIXME: Parameter <code>autoActivationCharacters</code> is untested.
 	 * </p>
-	 * 
+	 *
 	 * @param control
 	 * @param contentAssistant
 	 * @param keyStroke
@@ -77,14 +75,14 @@ public class CompletionProposalAdapter implements ICompletionListener {
 		this.contentAssistant = contentAssistant;
 		addControlListener(control);
 		addContentProposalListener(new ICompletionProposalListener() {
-			
+
 			public void proposalPopupOpened(CompletionProposalAdapter adapter) {
 			}
-			
+
 			public void proposalPopupClosed(CompletionProposalAdapter adapter) {
 				// reset open status asynchronously.
 				Display.getDefault().asyncExec(new Runnable() {
-					
+
 					public void run() {
 						delayedIsOpen = false;
 					}
@@ -142,7 +140,7 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 	/**
 	 * Get the control on which the content proposal adapter is installed.
-	 * 
+	 *
 	 * @return the control on which the proposal adapter is installed.
 	 */
 	public Control getControl() {
@@ -151,9 +149,8 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 	/**
 	 * Return a boolean indicating whether the receiver is enabled.
-	 * 
-	 * @return <code>true</code> if the adapter is enabled, and
-	 *         <code>false</code> if it is not.
+	 *
+	 * @return <code>true</code> if the adapter is enabled, and <code>false</code> if it is not.
 	 */
 	public boolean isEnabled() {
 		return isEnabled;
@@ -161,12 +158,11 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 	/**
 	 * Return the array of characters on which the popup is autoactivated.
-	 * 
+	 *
 	 * @return An array of characters that trigger auto-activation of content
 	 *         proposal. If specified, these characters will trigger
 	 *         auto-activation of the proposal popup, regardless of whether an
-	 *         explicit invocation keyStroke was specified. If this parameter is
-	 *         <code>null</code>, then only a specified keyStroke will invoke
+	 *         explicit invocation keyStroke was specified. If this parameter is <code>null</code>, then only a specified keyStroke will invoke
 	 *         content proposal. If this value is <code>null</code> and the
 	 *         keyStroke value is <code>null</code>, then all alphanumeric
 	 *         characters will auto-activate content proposal.
@@ -181,18 +177,16 @@ public class CompletionProposalAdapter implements ICompletionListener {
 	/**
 	 * Set the array of characters that will trigger autoactivation of the
 	 * popup.
-	 * 
+	 *
 	 * @param autoActivationCharacters
 	 *            An array of characters that trigger auto-activation of content
 	 *            proposal. If specified, these characters will trigger
 	 *            auto-activation of the proposal popup, regardless of whether
 	 *            an explicit invocation keyStroke was specified. If this
 	 *            parameter is <code>null</code>, then only a specified
-	 *            keyStroke will invoke content proposal. If this parameter is
-	 *            <code>null</code> and the keyStroke value is <code>null</code>
-	 *            , then all alphanumeric characters will auto-activate content
+	 *            keyStroke will invoke content proposal. If this parameter is <code>null</code> and the keyStroke value is <code>null</code> , then all alphanumeric characters will auto-activate content
 	 *            proposal.
-	 * 
+	 *
 	 */
 	public void setAutoActivationCharacters(char[] autoActivationCharacters) {
 		if (autoActivationCharacters == null) {
@@ -205,7 +199,7 @@ public class CompletionProposalAdapter implements ICompletionListener {
 	/**
 	 * Set the delay, in milliseconds, used before any autoactivation is
 	 * triggered.
-	 * 
+	 *
 	 * @return the time in milliseconds that will pass before a popup is
 	 *         automatically opened
 	 */
@@ -216,7 +210,7 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 	/**
 	 * Set the delay, in milliseconds, used before autoactivation is triggered.
-	 * 
+	 *
 	 * @param delay
 	 *            the time in milliseconds that will pass before a popup is
 	 *            automatically opened
@@ -228,11 +222,11 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 	/**
 	 * Set the boolean flag that determines whether the adapter is enabled.
-	 * 
+	 *
 	 * @param enabled
 	 *            <code>true</code> if the adapter is enabled and responding to
 	 *            user input, <code>false</code> if it is ignoring user input.
-	 * 
+	 *
 	 */
 	public void setEnabled(boolean enabled) {
 		// If we are disabling it while it's proposing content, close the
@@ -330,8 +324,8 @@ public class CompletionProposalAdapter implements ICompletionListener {
 						// check the character field...
 						if ((triggerKeyStroke.getModifierKeys() == KeyStroke.NO_KEY && triggerKeyStroke
 								.getNaturalKey() == e.character) ||
-						// ...or there are modifiers, in which case the
-						// keycode and state must match
+								// ...or there are modifiers, in which case the
+								// keycode and state must match
 								(triggerKeyStroke.getNaturalKey() == e.keyCode && ((triggerKeyStroke
 										.getModifierKeys() & e.stateMask) == triggerKeyStroke
 										.getModifierKeys()))) {
@@ -424,15 +418,14 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 			/**
 			 * Dump the given events to "standard" output.
-			 * 
+			 *
 			 * @param who
 			 *            who is dumping the event
 			 * @param e
 			 *            the event
 			 */
 			private void dump(String who, Event e) {
-				StringBuffer sb = new StringBuffer(
-						"--- [ContentProposalAdapter]\n"); //$NON-NLS-1$
+				StringBuffer sb = new StringBuffer("--- [ContentProposalAdapter]\n"); //$NON-NLS-1$
 				sb.append(who);
 				sb.append(" - e: keyCode=" + e.keyCode + hex(e.keyCode)); //$NON-NLS-1$
 				sb.append("; character=" + e.character + hex(e.character)); //$NON-NLS-1$
@@ -462,7 +455,7 @@ public class CompletionProposalAdapter implements ICompletionListener {
 	 * proposal provider. If there are no proposals to be shown, do not show the
 	 * popup. This method returns immediately. That is, it does not wait for the
 	 * popup to open or a proposal to be selected.
-	 * 
+	 *
 	 * @param autoActivated
 	 *            a boolean indicating whether the popup was autoactivated. If
 	 *            false, a beep will sound when no proposals can be shown.
@@ -568,28 +561,28 @@ public class CompletionProposalAdapter implements ICompletionListener {
 
 	/**
 	 * Answers a boolean indicating whether the main proposal popup is open.
-	 * 
-	 * @return <code>true</code> if the proposal popup is open, and
-	 *         <code>false</code> if it is not.
-	 * 
+	 *
+	 * @return <code>true</code> if the proposal popup is open, and <code>false</code> if it is not.
+	 *
 	 * @since 3.6
 	 */
 	public boolean isProposalPopupOpen() {
-		if (isValid() && isProposalPopupActive())
+		if (isValid() && isProposalPopupActive()) {
 			return true;
+		}
 		return false;
 	}
 
 	/**
 	 * @return true, if popup is open. Flag whether is reset asynchronously.
-	 *	This means that it still returns true, when isProposalPopupOpen() already
-	 *  returns false. This is useful to filter for instance the escape key
-	 *  once the popup is open.
+	 *         This means that it still returns true, when isProposalPopupOpen() already
+	 *         returns false. This is useful to filter for instance the escape key
+	 *         once the popup is open.
 	 */
 	public boolean delayedIsPopupOpen() {
 		return delayedIsOpen;
 	}
-	
+
 	/**
 	 * @return <code>true</code> if the content assistant has the completion
 	 *         proposal popup open; <code>false</code> otherwise.

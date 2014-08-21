@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLViewProvider;
 
 /**
  * Custom class to create the associationClass node
- * 
+ *
  */
 public class DependencyDiamonViewCreateCommand extends AbstractTransactionalCommand {
 
@@ -60,19 +60,19 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
-	 *        the request that is used to obtained the associationclass
+	 *            the request that is used to obtained the associationclass
 	 * @param domain
-	 *        the current edit domain
+	 *            the current edit domain
 	 * @param container
-	 *        the container view
+	 *            the container view
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param preferencesHint
-	 *        the preference hint of the diagram
+	 *            the preference hint of the diagram
 	 * @param point
-	 *        the location of the future association node
+	 *            the location of the future association node
 	 */
 	public DependencyDiamonViewCreateCommand(TransactionalEditingDomain domain, View container, EditPartViewer viewer, PreferencesHint preferencesHint, Point point, SemanticAdapter semanticAdapter) {
 		super(domain, "AssociationClassViewCreateCommand", null); //$NON-NLS-1$
@@ -86,9 +86,10 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// / get the factory of the viewer
 		// Dependency2ViewFactory factory = new Dependency2ViewFactory();
@@ -97,27 +98,28 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 		// ((IHintedType) UMLElementTypes.Dependency_2014)
 		// .getSemanticHint(), -1, true, preferenceHint);
 		UMLViewProvider viewProvider = new UMLViewProvider();
-		node = viewProvider.createDependency_2011(((EObject)semanticApdater.getAdapter(EObject.class)), this.containerView, -1, true, preferenceHint);
+		node = viewProvider.createDependency_2011(((EObject) semanticApdater.getAdapter(EObject.class)), this.containerView, -1, true, preferenceHint);
 
 		// put to the good position
 		Location notationLocation = NotationFactory.eINSTANCE.createLocation();
 		notationLocation.setX(location.x);
 		notationLocation.setY(location.y);
-		((Node)node).setLayoutConstraint(notationLocation);
+		((Node) node).setLayoutConstraint(notationLocation);
 		semanticApdater.setView(node);
 		return CommandResult.newOKCommandResult(semanticApdater);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<?> getAffectedFiles() {
-		if(viewer != null) {
+		if (viewer != null) {
 			EditPart editpart = viewer.getRootEditPart().getContents();
-			if(editpart instanceof IGraphicalEditPart) {
-				View view = (View)((IGraphicalEditPart)editpart).getModel();
-				if(view != null) {
+			if (editpart instanceof IGraphicalEditPart) {
+				View view = (View) ((IGraphicalEditPart) editpart).getModel();
+				if (view != null) {
 					IFile f = WorkspaceSynchronizer.getFile(view.eResource());
 					return f != null ? Collections.singletonList(f) : Collections.EMPTY_LIST;
 				}
@@ -128,7 +130,7 @@ public class DependencyDiamonViewCreateCommand extends AbstractTransactionalComm
 
 	/**
 	 * used to obtain the created node
-	 * 
+	 *
 	 * @return the created node
 	 */
 	public View getNode() {

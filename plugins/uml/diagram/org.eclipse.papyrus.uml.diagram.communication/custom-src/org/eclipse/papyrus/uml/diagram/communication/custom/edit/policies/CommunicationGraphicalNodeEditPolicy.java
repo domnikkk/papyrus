@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,25 +46,25 @@ public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolic
 
 	/**
 	 * Overrides to disable uphill message.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the connection complete command
 	 */
 	@SuppressWarnings({ "unchecked" })
 	@Override
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
 		Command command = super.getConnectionCompleteCommand(request);
-		if(command == null) {
+		if (command == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
-		ICommandProxy proxy = (ICommandProxy)request.getStartCommand();
-		CompositeCommand cc = (CompositeCommand)proxy.getICommand();
+		ICommandProxy proxy = (ICommandProxy) request.getStartCommand();
+		CompositeCommand cc = (CompositeCommand) proxy.getICommand();
 		Iterator<?> commandItr = cc.iterator();
-		while(commandItr.hasNext()) {
+		while (commandItr.hasNext()) {
 			Object obj = commandItr.next();
-			if(obj instanceof SetConnectionBendpointsCommand) {
-				SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand)obj;
+			if (obj instanceof SetConnectionBendpointsCommand) {
+				SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand) obj;
 				final PointList pointList = sbbCommand.getNewPointList();
 				request.getExtendedData().put(CommunicationRequestConstant.SOURCE_MODEL_CONTAINER, CommunicationUtil.findInteractionFragmentAt(pointList.getFirstPoint(), getHost()));
 				request.getExtendedData().put(CommunicationRequestConstant.TARGET_MODEL_CONTAINER, CommunicationUtil.findInteractionFragmentAt(pointList.getLastPoint(), getHost()));
@@ -75,37 +75,38 @@ public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolic
 
 	/**
 	 * used to obtain the transactional edit domain.
-	 * 
+	 *
 	 * @return the current transactional edit domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	/**
 	 * Gets the command.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the command {@inheritDoc}
 	 */
+	@Override
 	public Command getCommand(Request request) {
-		if(REQ_CONNECTION_END.equals(request.getType())) {
-			if(request instanceof CreateConnectionViewAndElementRequest) {
+		if (REQ_CONNECTION_END.equals(request.getType())) {
+			if (request instanceof CreateConnectionViewAndElementRequest) {
 				// default behavior
-				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest)request);
+				Command c = getConnectionAndRelationshipCompleteCommand((CreateConnectionViewAndElementRequest) request);
 				// case of Message
-				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest)request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
-				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
-				if(org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes.Message_8009.equals(createElementRequest.getElementType())) {
-					EditPart sourceEditPart = ((CreateConnectionViewAndElementRequest)request).getSourceEditPart();
-					EditPart targetEditPart = ((CreateConnectionViewAndElementRequest)request).getTargetEditPart();
+				CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest) request).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
+				CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
+				if (org.eclipse.papyrus.uml.diagram.communication.providers.UMLElementTypes.Message_8009.equals(createElementRequest.getElementType())) {
+					EditPart sourceEditPart = ((CreateConnectionViewAndElementRequest) request).getSourceEditPart();
+					EditPart targetEditPart = ((CreateConnectionViewAndElementRequest) request).getTargetEditPart();
 					MessageHelper messageHelper = new MessageHelper(getEditingDomain());
-					//test if source and target are already connected
-					if((sourceEditPart instanceof LifelineEditPartCN) && (targetEditPart instanceof LifelineEditPartCN)) {
-						if(CommunicationUtil.verifyIfLifelinesEPConnected(sourceEditPart, targetEditPart) != null) {
+					// test if source and target are already connected
+					if ((sourceEditPart instanceof LifelineEditPartCN) && (targetEditPart instanceof LifelineEditPartCN)) {
+						if (CommunicationUtil.verifyIfLifelinesEPConnected(sourceEditPart, targetEditPart) != null) {
 							ConnectionEditPart link = CommunicationUtil.verifyIfLifelinesEPConnected(sourceEditPart, targetEditPart);
-							return messageHelper.getCommand((CreateConnectionViewAndElementRequest)request, c, link);
+							return messageHelper.getCommand((CreateConnectionViewAndElementRequest) request, c, link);
 						}
 					}
 				}
@@ -119,9 +120,9 @@ public class CommunicationGraphicalNodeEditPolicy extends GraphicalNodeEditPolic
 	 * allow to see the feedback of the connection when it is created. By
 	 * default, the color was the foreground color of the lifeline, which is
 	 * always blank leading to an invisible feedback.
-	 * 
+	 *
 	 * @param req
-	 *        the req
+	 *            the req
 	 * @return the connection
 	 */
 	@Override

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 /**
  * <pre>
  * Command handler for Value (Property) creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class ValuePropertyHandler extends AbstractSysmlNattableCreateCommandHandler {
@@ -39,11 +39,12 @@ public class ValuePropertyHandler extends AbstractSysmlNattableCreateCommandHand
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
 	 * 
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return SysMLElementTypes.VALUE_PROPERTY;
 	}
@@ -54,7 +55,7 @@ public class ValuePropertyHandler extends AbstractSysmlNattableCreateCommandHand
 	@Override
 	protected Command buildCommand() {
 
-		if(getCommandContext() == null) {
+		if (getCommandContext() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -62,12 +63,12 @@ public class ValuePropertyHandler extends AbstractSysmlNattableCreateCommandHand
 		EReference reference = getCommandContext().getReference();
 
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(container);
-		if(provider == null) {
+		if (provider == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		CreateElementRequest createRequest = null;
-		if(reference == null) {
+		if (reference == null) {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate());
 		} else {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate(), reference);
@@ -76,7 +77,7 @@ public class ValuePropertyHandler extends AbstractSysmlNattableCreateCommandHand
 
 		// Retrieve create command from the Element Edit service
 		ICommand createGMFCommand = provider.getEditCommand(createRequest);
-		if(createGMFCommand != null) {
+		if (createGMFCommand != null) {
 			Command emfCommand = new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(createGMFCommand);
 			return emfCommand;
 		}

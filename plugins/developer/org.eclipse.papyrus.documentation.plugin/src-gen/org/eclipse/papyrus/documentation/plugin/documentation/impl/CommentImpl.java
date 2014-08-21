@@ -23,8 +23,8 @@ import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPacka
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl#getContents <em>Contents</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl#getTitle <em>Title</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.CommentImpl#getContents <em>Contents</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
@@ -55,6 +57,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	 * The default value of the '{@link #getContents() <em>Contents</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getContents()
 	 * @generated
 	 * @ordered
@@ -65,6 +68,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	 * The cached value of the '{@link #getContents() <em>Contents</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getContents()
 	 * @generated
 	 * @ordered
@@ -74,6 +78,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CommentImpl() {
@@ -83,6 +88,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -93,6 +99,7 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getTitle() {
@@ -102,18 +109,21 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTitle(String newTitle) {
 		String oldTitle = title;
 		title = newTitle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentationPackage.COMMENT__TITLE, oldTitle, title));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getContents() {
@@ -123,27 +133,30 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setContents(String newContents) {
 		String oldContents = contents;
 		contents = newContents;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentationPackage.COMMENT__CONTENTS, oldContents, contents));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocumentationPackage.COMMENT__TITLE:
-				return getTitle();
-			case DocumentationPackage.COMMENT__CONTENTS:
-				return getContents();
+		case DocumentationPackage.COMMENT__TITLE:
+			return getTitle();
+		case DocumentationPackage.COMMENT__CONTENTS:
+			return getContents();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,17 +164,18 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocumentationPackage.COMMENT__TITLE:
-				setTitle((String)newValue);
-				return;
-			case DocumentationPackage.COMMENT__CONTENTS:
-				setContents((String)newValue);
-				return;
+		case DocumentationPackage.COMMENT__TITLE:
+			setTitle((String) newValue);
+			return;
+		case DocumentationPackage.COMMENT__CONTENTS:
+			setContents((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -169,17 +183,18 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocumentationPackage.COMMENT__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
-			case DocumentationPackage.COMMENT__CONTENTS:
-				setContents(CONTENTS_EDEFAULT);
-				return;
+		case DocumentationPackage.COMMENT__TITLE:
+			setTitle(TITLE_EDEFAULT);
+			return;
+		case DocumentationPackage.COMMENT__CONTENTS:
+			setContents(CONTENTS_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -187,15 +202,16 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocumentationPackage.COMMENT__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case DocumentationPackage.COMMENT__CONTENTS:
-				return CONTENTS_EDEFAULT == null ? contents != null : !CONTENTS_EDEFAULT.equals(contents);
+		case DocumentationPackage.COMMENT__TITLE:
+			return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
+		case DocumentationPackage.COMMENT__CONTENTS:
+			return CONTENTS_EDEFAULT == null ? contents != null : !CONTENTS_EDEFAULT.equals(contents);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -203,11 +219,14 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
@@ -218,4 +237,4 @@ public class CommentImpl extends EModelElementImpl implements Comment {
 		return result.toString();
 	}
 
-} //CommentImpl
+} // CommentImpl

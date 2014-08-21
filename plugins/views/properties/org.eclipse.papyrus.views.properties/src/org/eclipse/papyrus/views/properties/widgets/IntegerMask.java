@@ -29,7 +29,7 @@ public class IntegerMask extends InvalidWidget {
 	 * Constructor.
 	 *
 	 * @param parent
-	 *        The composite in which this widget will be created
+	 *            The composite in which this widget will be created
 	 * @param style
 	 */
 	public IntegerMask(Composite parent, int style) {

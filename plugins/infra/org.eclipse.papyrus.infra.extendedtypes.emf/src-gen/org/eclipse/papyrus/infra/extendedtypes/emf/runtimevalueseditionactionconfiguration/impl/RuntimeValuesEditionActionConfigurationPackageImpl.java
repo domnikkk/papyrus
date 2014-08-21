@@ -25,12 +25,14 @@ import org.eclipse.papyrus.views.properties.ui.UiPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackageImpl implements RuntimeValuesEditionActionConfigurationPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass runtimeValuesEditionActionConfigurationEClass = null;
@@ -38,20 +40,17 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass viewToDisplayEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage#eNS_URI
 	 * @see #init()
@@ -64,27 +63,31 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link RuntimeValuesEditionActionConfigurationPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link RuntimeValuesEditionActionConfigurationPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static RuntimeValuesEditionActionConfigurationPackage init() {
-		if (isInited) return (RuntimeValuesEditionActionConfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(RuntimeValuesEditionActionConfigurationPackage.eNS_URI);
+		if (isInited) {
+			return (RuntimeValuesEditionActionConfigurationPackage) EPackage.Registry.INSTANCE.getEPackage(RuntimeValuesEditionActionConfigurationPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		RuntimeValuesEditionActionConfigurationPackageImpl theRuntimeValuesEditionActionConfigurationPackage = (RuntimeValuesEditionActionConfigurationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RuntimeValuesEditionActionConfigurationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new RuntimeValuesEditionActionConfigurationPackageImpl());
+		RuntimeValuesEditionActionConfigurationPackageImpl theRuntimeValuesEditionActionConfigurationPackage = (RuntimeValuesEditionActionConfigurationPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof RuntimeValuesEditionActionConfigurationPackageImpl ? EPackage.Registry.INSTANCE
+				.get(eNS_URI) : new RuntimeValuesEditionActionConfigurationPackageImpl());
 
 		isInited = true;
 
@@ -103,7 +106,7 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 		// Mark meta-data to indicate it can't be changed
 		theRuntimeValuesEditionActionConfigurationPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(RuntimeValuesEditionActionConfigurationPackage.eNS_URI, theRuntimeValuesEditionActionConfigurationPackage);
 		return theRuntimeValuesEditionActionConfigurationPackage;
@@ -112,8 +115,10 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRuntimeValuesEditionActionConfiguration() {
 		return runtimeValuesEditionActionConfigurationEClass;
 	}
@@ -121,17 +126,21 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getRuntimeValuesEditionActionConfiguration_ViewsToDisplay() {
-		return (EReference)runtimeValuesEditionActionConfigurationEClass.getEStructuralFeatures().get(0);
+		return (EReference) runtimeValuesEditionActionConfigurationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getViewToDisplay() {
 		return viewToDisplayEClass;
 	}
@@ -139,37 +148,45 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getViewToDisplay_View() {
-		return (EReference)viewToDisplayEClass.getEStructuralFeatures().get(0);
+		return (EReference) viewToDisplayEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RuntimeValuesEditionActionConfigurationFactory getRuntimeValuesEditionActionConfigurationFactory() {
-		return (RuntimeValuesEditionActionConfigurationFactory)getEFactoryInstance();
+		return (RuntimeValuesEditionActionConfigurationFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -183,19 +200,23 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -204,8 +225,8 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		ExtendedtypesPackage theExtendedtypesPackage = (ExtendedtypesPackage)EPackage.Registry.INSTANCE.getEPackage(ExtendedtypesPackage.eNS_URI);
-		ContextsPackage theContextsPackage = (ContextsPackage)EPackage.Registry.INSTANCE.getEPackage(ContextsPackage.eNS_URI);
+		ExtendedtypesPackage theExtendedtypesPackage = (ExtendedtypesPackage) EPackage.Registry.INSTANCE.getEPackage(ExtendedtypesPackage.eNS_URI);
+		ContextsPackage theContextsPackage = (ContextsPackage) EPackage.Registry.INSTANCE.getEPackage(ContextsPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -216,7 +237,8 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(runtimeValuesEditionActionConfigurationEClass, RuntimeValuesEditionActionConfiguration.class, "RuntimeValuesEditionActionConfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRuntimeValuesEditionActionConfiguration_ViewsToDisplay(), this.getViewToDisplay(), null, "viewsToDisplay", null, 0, -1, RuntimeValuesEditionActionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuntimeValuesEditionActionConfiguration_ViewsToDisplay(), this.getViewToDisplay(), null, "viewsToDisplay", null, 0, -1, RuntimeValuesEditionActionConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(viewToDisplayEClass, ViewToDisplay.class, "ViewToDisplay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getViewToDisplay_View(), theContextsPackage.getView(), null, "view", null, 1, 1, ViewToDisplay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -225,4 +247,4 @@ public class RuntimeValuesEditionActionConfigurationPackageImpl extends EPackage
 		createResource(eNS_URI);
 	}
 
-} //RuntimeValuesEditionActionConfigurationPackageImpl
+} // RuntimeValuesEditionActionConfigurationPackageImpl

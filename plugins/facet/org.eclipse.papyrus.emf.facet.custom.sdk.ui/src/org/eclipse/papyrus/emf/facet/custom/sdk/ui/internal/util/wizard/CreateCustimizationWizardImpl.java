@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -145,8 +145,7 @@ public class CreateCustimizationWizardImpl extends Wizard implements INewWizard 
 			final FileEditorInput editorInput = new FileEditorInput(modelFile);
 			page.openEditor(editorInput, editorId);
 		} catch (final PartInitException exception) {
-			MessageDialog.openError(workbenchWindow.getShell(),
-					"Open Editor", exception.getMessage()); //$NON-NLS-1$
+			MessageDialog.openError(workbenchWindow.getShell(), "Open Editor", exception.getMessage()); //$NON-NLS-1$
 		}
 	}
 
@@ -182,8 +181,7 @@ public class CreateCustimizationWizardImpl extends Wizard implements INewWizard 
 		final Customization customization = CustomPackage.eINSTANCE
 				.getCustomFactory().createCustomization();
 		final String projectName = getProjectName();
-		final String modelCustomName = getModelFile().getName().replaceAll(
-				".custom", ""); //$NON-NLS-1$ //$NON-NLS-2$
+		final String modelCustomName = getModelFile().getName().replaceAll(".custom", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		customization.setName(projectName + "." + modelCustomName); //$NON-NLS-1$
 		customization.setNsURI(this.propertyWP.getNsUri());
 		customization.setNsPrefix(this.propertyWP.getPrefix());

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.ui.actions.CompoundContributionItem;
 
 /**
  * Represent the dynamic contribution of a policy to some UI elements
- * 
+ *
  * @author Laurent Wouters
  */
 public abstract class DynamicContribution extends CompoundContributionItem {
@@ -55,18 +55,21 @@ public abstract class DynamicContribution extends CompoundContributionItem {
 
 	/**
 	 * Gets the current selection as an EObject
-	 * 
+	 *
 	 * @return The current selection, or <code>null</code> if it is not an EObject
 	 */
 	protected EObject getSelection() {
 		IWorkbenchWindow window = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-		if (window == null)
+		if (window == null) {
 			return null;
+		}
 		ISelection selection = window.getSelectionService().getSelection();
-		if (selection == null)
+		if (selection == null) {
 			return null;
-		if (selection.isEmpty())
+		}
+		if (selection.isEmpty()) {
 			return null;
+		}
 		if (selection instanceof IStructuredSelection) {
 			IStructuredSelection struct = (IStructuredSelection) selection;
 			Object obj = struct.getFirstElement();

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Element Type Bindings</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings#getBindings <em>Bindings</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementTypeBindings()
  * @model
  * @generated
@@ -35,7 +35,7 @@ public interface ElementTypeBindings extends EObject {
 	 * If the meaning of the '<em>Client Context ID</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Client Context ID</em>' attribute.
 	 * @see #setClientContextID(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementTypeBindings_ClientContextID()
@@ -49,9 +49,9 @@ public interface ElementTypeBindings extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Client Context ID</em>' attribute.
+	 *            the new value of the '<em>Client Context ID</em>' attribute.
 	 * @see #getClientContextID()
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface ElementTypeBindings extends EObject {
 	 * If the meaning of the '<em>Bindings</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bindings</em>' containment reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementTypeBindings_Bindings()
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Binding#getOwner

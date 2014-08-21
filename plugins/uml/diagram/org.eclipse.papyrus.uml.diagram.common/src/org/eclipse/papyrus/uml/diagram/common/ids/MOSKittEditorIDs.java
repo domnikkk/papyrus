@@ -25,10 +25,11 @@ import org.eclipse.core.runtime.Platform;
 // TODO: Auto-generated Javadoc
 /**
  * The Class MOSKittEditorIDs.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @deprecated now it is papyrus editor id
  */
+@Deprecated
 public class MOSKittEditorIDs {
 
 	/** Extension Point functionality. */
@@ -52,7 +53,7 @@ public class MOSKittEditorIDs {
 
 	/**
 	 * Gets the all extension model to editor.
-	 * 
+	 *
 	 * @return the all extension model to editor
 	 */
 	public static Map<String, String> getAllExtensionModelToEditor() {
@@ -61,7 +62,7 @@ public class MOSKittEditorIDs {
 
 	/**
 	 * Gets the all extensions editor i ds.
-	 * 
+	 *
 	 * @return the all extensions editor i ds
 	 */
 	// @unused
@@ -71,11 +72,11 @@ public class MOSKittEditorIDs {
 
 	/**
 	 * Gets the extensions map model to editor.
-	 * 
+	 *
 	 * @return the extensions map model to editor
 	 */
 	protected static Map<String, String> getExtensionsMapModelToEditor() {
-		if(cachedMapModelToEditor == null) {
+		if (cachedMapModelToEditor == null) {
 			buildModelToEditorMap();
 		}
 		return cachedMapModelToEditor;
@@ -88,21 +89,21 @@ public class MOSKittEditorIDs {
 		cachedMapModelToEditor = new HashMap<String, String>();
 		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
 		IExtensionPoint extensionPoint = extensionRegistry.getExtensionPoint(mapModelToEditorExtensionPoint);
-		for(IExtension extension : extensionPoint.getExtensions()) {
+		for (IExtension extension : extensionPoint.getExtensions()) {
 			processExtensionEditor(extension, cachedMapModelToEditor);
 		}
 	}
 
 	/**
 	 * Process extension editor.
-	 * 
+	 *
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @param map
-	 *        the map
+	 *            the map
 	 */
 	protected static void processExtensionEditor(IExtension extension, Map<String, String> map) {
-		for(IConfigurationElement configElement : extension.getConfigurationElements()) {
+		for (IConfigurationElement configElement : extension.getConfigurationElements()) {
 			String model = configElement.getAttribute(ATT_MODELID);
 			String editor = configElement.getAttribute(ATT_EDITORID);
 			map.put(model, editor);
@@ -111,11 +112,11 @@ public class MOSKittEditorIDs {
 
 	/**
 	 * Gets the extensions map model to label.
-	 * 
+	 *
 	 * @return the extensions map model to label
 	 */
 	public static Map<String, String> getExtensionsMapModelToLabel() {
-		if(cachedMapModelToLabel == null) {
+		if (cachedMapModelToLabel == null) {
 			buildMapModelToLabel();
 		}
 		return cachedMapModelToLabel;
@@ -128,24 +129,24 @@ public class MOSKittEditorIDs {
 		cachedMapModelToLabel = new HashMap<String, String>();
 		IExtensionRegistry extensionRegistry = Platform.getExtensionRegistry();
 		IExtensionPoint extensionPoint = extensionRegistry.getExtensionPoint(mapModelToEditorExtensionPoint);
-		for(IExtension extension : extensionPoint.getExtensions()) {
+		for (IExtension extension : extensionPoint.getExtensions()) {
 			processExtensionLabel(extension, cachedMapModelToLabel);
 		}
 	}
 
 	/**
 	 * Process extension label.
-	 * 
+	 *
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @param map
-	 *        the map
+	 *            the map
 	 */
 	protected static void processExtensionLabel(IExtension extension, Map<String, String> map) {
-		for(IConfigurationElement configElement : extension.getConfigurationElements()) {
+		for (IConfigurationElement configElement : extension.getConfigurationElements()) {
 			String model = configElement.getAttribute(ATT_MODELID);
 			String label = configElement.getAttribute(ATT_LABEL);
-			if(label != null) {
+			if (label != null) {
 				map.put(model, label);
 			}
 		}

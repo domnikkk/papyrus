@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.TemplateableElement;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * 
+ *
  * custom class in order to fill the propety signature of a template bindinf
- * 
+ *
  */
 public class CTemplateBindingCreateCommand extends org.eclipse.papyrus.uml.diagram.clazz.edit.commands.TemplateBindingCreateCommand {
 
@@ -37,49 +37,50 @@ public class CTemplateBindingCreateCommand extends org.eclipse.papyrus.uml.diagr
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.commands.TemplateBindingCreateCommand#canExecute()
-	 * 
+	 *
 	 */
+	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof TemplateableElement) {
+		if (source != null && false == source instanceof TemplateableElement) {
 			return false;
 		}
-		if(target != null && false == target instanceof TemplateableElement) {
+		if (target != null && false == target instanceof TemplateableElement) {
 			return false;
 		}
-		if(target != null && target instanceof TemplateableElement && ((TemplateableElement)target).getOwnedTemplateSignature() == null) {
+		if (target != null && target instanceof TemplateableElement && ((TemplateableElement) target).getOwnedTemplateSignature() == null) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		if(getContainer() == null) {
+		if (getContainer() == null) {
 			return false;
 		}
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateTemplateBinding_4015(getContainer(), getSource(), getTarget());
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.commands.TemplateBindingCreateCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.uml.diagram.clazz.edit.commands.TemplateBindingCreateCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 		TemplateBinding newElement = UMLFactory.eINSTANCE.createTemplateBinding();
 		getContainer().getTemplateBindings().add(newElement);
 		newElement.setBoundElement(getSource());
-		newElement.setSignature(((TemplateableElement)target).getOwnedTemplateSignature());
+		newElement.setSignature(((TemplateableElement) target).getOwnedTemplateSignature());
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

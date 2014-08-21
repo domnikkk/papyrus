@@ -30,8 +30,8 @@ import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.EditPartUsingReorientServiceImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.EditPartUsingReorientServiceImpl#getGenView <em>Gen View</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.EditPartUsingReorientServiceImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.EditPartUsingReorientServiceImpl#getGenView <em>Gen View</em>}</li>
  * </ul>
  * </p>
  *
@@ -42,6 +42,7 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	 * The cached value of the '{@link #getGenView() <em>Gen View</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenView()
 	 * @generated
 	 * @ordered
@@ -71,6 +74,7 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EditPartUsingReorientServiceImpl() {
@@ -80,6 +84,7 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,8 +95,10 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -99,20 +106,25 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<GenLink> getGenView() {
 		if (genView == null) {
 			genView = new EObjectResolvingEList<GenLink>(GenLink.class, this, PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW);
@@ -123,15 +135,16 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
-				return getName();
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
-				return getGenView();
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
+			return getName();
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
+			return getGenView();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -139,19 +152,20 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
-				setName((String)newValue);
-				return;
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
-				getGenView().clear();
-				getGenView().addAll((Collection<? extends GenLink>)newValue);
-				return;
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
+			setName((String) newValue);
+			return;
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
+			getGenView().clear();
+			getGenView().addAll((Collection<? extends GenLink>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -159,17 +173,18 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
-				getGenView().clear();
-				return;
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
+			getGenView().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -177,15 +192,16 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
-				return genView != null && !genView.isEmpty();
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case PapyrusgmfgenextensionPackage.EDIT_PART_USING_REORIENT_SERVICE__GEN_VIEW:
+			return genView != null && !genView.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -193,11 +209,14 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -206,4 +225,4 @@ public class EditPartUsingReorientServiceImpl extends CommentedElementImpl imple
 		return result.toString();
 	}
 
-} //EditPartUsingReorientServiceImpl
+} // EditPartUsingReorientServiceImpl

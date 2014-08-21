@@ -29,11 +29,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PropertyInjectionItemProvider
-	extends FeatureInjectionItemProvider
-	implements
+		extends FeatureInjectionItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -43,6 +44,7 @@ public class PropertyInjectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PropertyInjectionItemProvider(AdapterFactory adapterFactory) {
@@ -53,6 +55,7 @@ public class PropertyInjectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,30 +72,31 @@ public class PropertyInjectionItemProvider
 	 * This adds a property descriptor for the Property Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addPropertyNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PropertyInjection_propertyName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PropertyInjection_propertyName_feature", "_UI_PropertyInjection_type"),
-				 ServicedescriptorswithidPackage.Literals.PROPERTY_INJECTION__PROPERTY_NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PropertyInjection_propertyName_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PropertyInjection_propertyName_feature", "_UI_PropertyInjection_type"),
+						ServicedescriptorswithidPackage.Literals.PROPERTY_INJECTION__PROPERTY_NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,6 +111,7 @@ public class PropertyInjectionItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,6 +126,7 @@ public class PropertyInjectionItemProvider
 	 * This returns PropertyInjection.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,14 +138,15 @@ public class PropertyInjectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PropertyInjection)object).getPropertyName();
+		String label = ((PropertyInjection) object).getPropertyName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_PropertyInjection_type") :
-			getString("_UI_PropertyInjection_type") + " " + label;
+				getString("_UI_PropertyInjection_type") :
+				getString("_UI_PropertyInjection_type") + " " + label;
 	}
 
 	/**
@@ -147,6 +154,7 @@ public class PropertyInjectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -154,12 +162,12 @@ public class PropertyInjectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PropertyInjection.class)) {
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -169,6 +177,7 @@ public class PropertyInjectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,14 +185,14 @@ public class PropertyInjectionItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorswithidPackage.Literals.PROPERTY_INJECTION__VALUES,
-				 ServicedescriptorswithidFactory.eINSTANCE.createInjectedService()));
+						ServicedescriptorswithidFactory.eINSTANCE.createInjectedService()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorswithidPackage.Literals.PROPERTY_INJECTION__VALUES,
-				 ServicedescriptorswithidFactory.eINSTANCE.createOpaqueInjectedValue()));
+						ServicedescriptorswithidFactory.eINSTANCE.createOpaqueInjectedValue()));
 	}
 
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,16 +27,17 @@ public class PropertyHasNameConstraint extends AbstractModelConstraint {
 		super();
 	}
 
+	@Override
 	public IStatus validate(IValidationContext ctx) {
 
-		if(ProfileConstraintUtils.isStereotypeProperty(ctx.getTarget())) {
-			Property property = (Property)ctx.getTarget();
+		if (ProfileConstraintUtils.isStereotypeProperty(ctx.getTarget())) {
+			Property property = (Property) ctx.getTarget();
 
-			if(!property.isSetName()) {
+			if (!property.isSetName()) {
 				return ctx.createFailureStatus(ctx.getTarget());
 			}
 
-			if("".equals(property.getName())) {
+			if ("".equals(property.getName())) {
 				return ctx.createFailureStatus(ctx.getTarget());
 			}
 		}

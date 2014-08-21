@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.infra.emf.newchild.menu.FillMenuGroup;
 public class MenuHelper {
 
 	public static void add(FillMenuGroup group, IMenuManager manager, IContributionItem item) {
-		if(group == null) {
+		if (group == null) {
 			manager.add(item);
 		} else {
 			manager.appendToGroup(group.getGroupId(), item);

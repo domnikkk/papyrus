@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.xwt.XWTException;
 
 /**
  * String to int[] converter
- * 
+ *
  * @author jliu
  */
 public class StringToIntArray implements IConverter {
@@ -32,10 +32,10 @@ public class StringToIntArray implements IConverter {
 	 * @see org.eclipse.core.databinding.conversion.IConverter#convert(java.lang. Object)
 	 */
 	public Object convert(Object fromObject) {
-		String source = (String)fromObject;
+		String source = (String) fromObject;
 		List<Integer> result = new ArrayList<Integer>();
 		StringTokenizer stk = new StringTokenizer(source, ",");
-		while(stk.hasMoreTokens()) {
+		while (stk.hasMoreTokens()) {
 			String nextToken = stk.nextToken();
 			try {
 				result.add(Integer.parseInt(nextToken.trim()));
@@ -44,7 +44,7 @@ public class StringToIntArray implements IConverter {
 			}
 		}
 		int[] intArray = new int[result.size()];
-		for(int i = 0; i < result.size(); i++) {
+		for (int i = 0; i < result.size(); i++) {
 			intArray[i] = result.get(i);
 		}
 		return intArray;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * this command is used to prefix element by "Copy_Of" during the duplication
- * 
+ *
  */
 public class DuplicateNamedElementCommand extends DuplicateEObjectsCommand {
 
@@ -44,16 +44,17 @@ public class DuplicateNamedElementCommand extends DuplicateEObjectsCommand {
 	 * Executes this command by duplicating the orignal eobjects, adding the
 	 * duplicates to the original's container, and populating the map of
 	 * duplicates to be returned.
-	 * 
+	 *
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		super.doExecuteWithResult(progressMonitor, info);
 		List objectsToBeDuplicated = getObjectsToBeDuplicated();
 		for (Object object : objectsToBeDuplicated) {
-			if(object instanceof NamedElement) {
+			if (object instanceof NamedElement) {
 				Object duplicatedObject = getAllDuplicatedObjectsMap().get(object);
-				NamedElement namedDuplicatedObject = (NamedElement)duplicatedObject;
-				String incrementedName = NamedElementUtil.getDefaultCopyNameWithIncrement(namedDuplicatedObject,diagram.getElement().eContents());
+				NamedElement namedDuplicatedObject = (NamedElement) duplicatedObject;
+				String incrementedName = NamedElementUtil.getDefaultCopyNameWithIncrement(namedDuplicatedObject, diagram.getElement().eContents());
 				namedDuplicatedObject.setName(incrementedName);
 			}
 		}

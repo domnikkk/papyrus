@@ -1,4 +1,4 @@
-/** 
+/**
  * Copyright (c) 2012 Mia-Software.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -16,11 +16,13 @@ import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.Abstr
 import org.eclipse.papyrus.emf.facet.util.ui.internal.exported.displaysync.AbstractExceptionFreeRunnable;
 
 @SuppressWarnings("PMD.ExcessivePublicCount")
-public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.query.ICreateQueryWidget> implements org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.query.ICreateQueryWidget {
+public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.query.ICreateQueryWidget> implements
+		org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.query.ICreateQueryWidget {
 
 	public SynchronizedCreateQueryWidget(final org.eclipse.papyrus.emf.facet.efacet.sdk.ui.internal.exported.widget.component.query.ICreateQueryWidget object, final Display display) {
 		super(object, display);
 	}
+
 	public final void addListener(final org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.AbstractWidget parm0) {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -29,7 +31,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final void createWidgetContent() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -38,7 +40,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final java.lang.String getError() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.String>() {
 			@Override
@@ -47,7 +49,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final void notifyChanged() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -56,7 +58,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final <A> A adapt(final java.lang.Class<A> parm0) {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<A>() {
 			@Override
@@ -65,7 +67,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final java.lang.Object getCommand() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.Object>() {
 			@Override
@@ -74,7 +76,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final void onDialogValidation() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -83,7 +85,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final java.lang.Object getCreateQueryWidget() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<java.lang.Object>() {
 			@Override
@@ -92,7 +94,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		});
 	}
-	
+
 	public final boolean isCanBeCached() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -101,7 +103,7 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		}).booleanValue();
 	}
-	
+
 	public final boolean isHasSideEffect() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -110,5 +112,5 @@ public class SynchronizedCreateQueryWidget extends SynchronizedObject<org.eclips
 			}
 		}).booleanValue();
 	}
-	
+
 }

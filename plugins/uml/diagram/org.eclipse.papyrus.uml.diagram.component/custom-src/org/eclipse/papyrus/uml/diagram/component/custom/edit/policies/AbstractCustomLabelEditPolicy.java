@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,14 +43,15 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
 		Element element = getUMLElement();
-		if(getUMLElement() != null) {
+		if (getUMLElement() != null) {
 			// adds a listener on the view and the element controlled by the editpart
 			getDiagramEventBroker().addNotificationListener(view, this);
 			getDiagramEventBroker().addNotificationListener(element, this);
@@ -73,18 +74,19 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
-		if(view == null) {
+		if (view == null) {
 			return;
 		}
-		Element element = (Element)getUMLElement();
+		Element element = getUMLElement();
 
 		// remove notification on element and view
 		getDiagramEventBroker().removeNotificationListener(view, this);
 
-		if(element == null) {
+		if (element == null) {
 			return;
 		}
 		getDiagramEventBroker().removeNotificationListener(element, this);
@@ -102,12 +104,12 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
@@ -119,7 +121,7 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 	 * @return the uml element controlled by the host edit part
 	 */
 	protected Element getUMLElement() {
-		return (Element)getView().getElement();
+		return (Element) getView().getElement();
 	}
 
 	/**
@@ -128,7 +130,7 @@ public abstract class AbstractCustomLabelEditPolicy extends GraphicalEditPolicy 
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
-		return (View)getHost().getModel();
+		return (View) getHost().getModel();
 	}
 
 	/**

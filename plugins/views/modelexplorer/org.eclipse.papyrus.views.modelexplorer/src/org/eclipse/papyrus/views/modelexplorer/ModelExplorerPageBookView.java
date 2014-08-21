@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 LIFL, CEA LIST, and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,9 +40,9 @@ import com.google.common.collect.Lists;
 
 /**
  * A Page Book containing one {@link ModelExplorerView} for each opened Papyrus Editor.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ModelExplorerPageBookView extends MultiViewPageBookView implements IGotoMarker, ITabbedPropertySheetPageContributor {
 
@@ -55,7 +55,7 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	public void init(IViewSite site, IMemento memento) throws PartInitException {
 		super.init(site, memento);
 
-		if(memento != null) {
+		if (memento != null) {
 			state.load(memento);
 		}
 	}
@@ -84,19 +84,19 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
 
-		if(IPropertySheetPage.class == adapter) {
+		if (IPropertySheetPage.class == adapter) {
 			// Do not test if tabbedPropertySheetPage is null before calling new
 			// this is managed by Eclipse which only call current method when necessary
 			return new TabbedPropertySheetPage(this);
 		}
 
-		if(adapter == ITreeViewerSorting.class) {
+		if (adapter == ITreeViewerSorting.class) {
 			return new DefaultTreeViewerSorting() {
 
 				@Override
 				public void setSorted(boolean sorted) {
 					// Update the shared state
-					if(state != null) {
+					if (state != null) {
 						state.setAlphaSorted(sorted);
 					}
 				}
@@ -124,15 +124,15 @@ public class ModelExplorerPageBookView extends MultiViewPageBookView implements 
 	 */
 	public void gotoMarker(IMarker marker) {
 		String uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE, null);
-		if(uriAttribute != null) {
+		if (uriAttribute != null) {
 			URI uri = URI.createURI(uriAttribute);
 			IViewPart viewPart = getActiveView();
-			if(viewPart instanceof ModelExplorerView) {
-				ModelExplorerView modelExplorerView = (ModelExplorerView)viewPart;
+			if (viewPart instanceof ModelExplorerView) {
+				ModelExplorerView modelExplorerView = (ModelExplorerView) viewPart;
 				EditingDomain domain = modelExplorerView.getEditingDomain();
 				EObject eObject = domain.getResourceSet().getEObject(uri, false);
-				if(eObject != null) {
-					CommonViewer treeViewer = ((ModelExplorerView)viewPart).getCommonViewer();
+				if (eObject != null) {
+					CommonViewer treeViewer = ((ModelExplorerView) viewPart).getCommonViewer();
 					// The common viewer is in fact a tree viewer
 					// bug enhancement: use function in ModelExplorerView instead of findElementForEObject
 					ModelExplorerView.reveal(Lists.newArrayList(eObject), treeViewer);

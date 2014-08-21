@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,10 @@ public class UMLNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public int category(Object element) {
-		if(element instanceof UMLNavigatorItem) {
-			UMLNavigatorItem item = (UMLNavigatorItem)element;
+		if (element instanceof UMLNavigatorItem) {
+			UMLNavigatorItem item = (UMLNavigatorItem) element;
 			return UMLVisualIDRegistry.getVisualID(item.getView());
 		}
 		return GROUP_CATEGORY;

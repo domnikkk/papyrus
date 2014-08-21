@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,7 +44,7 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 	 */
 	@Override
 	public String[] getProvidedSourceNames() {
-		return new String[]{ SHOW_HIDE_RELATED_CONTENTS };
+		return new String[] { SHOW_HIDE_RELATED_CONTENTS };
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 		String oldState = currentState.get(SHOW_HIDE_RELATED_CONTENTS);
 		String newState = (testShowHideRelatedContents() ? ENABLED : DISABLED);
 
-		if(oldState != newState) {
+		if (oldState != newState) {
 			currentState.put(SHOW_HIDE_RELATED_CONTENTS, newState);
 			fireSourceChanged(ISources.WORKBENCH, currentState);
 		}
@@ -62,7 +62,7 @@ public class ActionStateSourceProvider extends AbstractActionStateSourceProvider
 
 	/**
 	 * Tests if the action DeleteFromDiagram (now called Delete Selected Element can be executed
-	 * 
+	 *
 	 * @return <code>true</code> if the action DeleteFromDiagram (now called Delete Selected Element can be
 	 *         executed <code>false</code> if not
 	 */

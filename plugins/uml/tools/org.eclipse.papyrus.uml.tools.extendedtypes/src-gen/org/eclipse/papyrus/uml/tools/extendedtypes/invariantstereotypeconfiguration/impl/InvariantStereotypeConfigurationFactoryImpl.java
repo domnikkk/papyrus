@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -25,6 +25,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.invariantstereotypeconfigurat
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl implements InvariantStereotypeConfigurationFactory {
@@ -33,12 +34,13 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static InvariantStereotypeConfigurationFactory init() {
 		try {
-			InvariantStereotypeConfigurationFactory theInvariantStereotypeConfigurationFactory = (InvariantStereotypeConfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(InvariantStereotypeConfigurationPackage.eNS_URI);
-			if(theInvariantStereotypeConfigurationFactory != null) {
+			InvariantStereotypeConfigurationFactory theInvariantStereotypeConfigurationFactory = (InvariantStereotypeConfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(InvariantStereotypeConfigurationPackage.eNS_URI);
+			if (theInvariantStereotypeConfigurationFactory != null) {
 				return theInvariantStereotypeConfigurationFactory;
 			}
 		} catch (Exception exception) {
@@ -51,6 +53,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InvariantStereotypeConfigurationFactoryImpl() {
@@ -60,11 +63,12 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case InvariantStereotypeConfigurationPackage.INVARIANT_STEREOTYPE_CONFIGURATION:
 			return createInvariantStereotypeConfiguration();
 		default:
@@ -75,6 +79,7 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InvariantStereotypeConfiguration createInvariantStereotypeConfiguration() {
@@ -85,15 +90,17 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InvariantStereotypeConfigurationPackage getInvariantStereotypeConfigurationPackage() {
-		return (InvariantStereotypeConfigurationPackage)getEPackage();
+		return (InvariantStereotypeConfigurationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -101,4 +108,4 @@ public class InvariantStereotypeConfigurationFactoryImpl extends EFactoryImpl im
 	public static InvariantStereotypeConfigurationPackage getPackage() {
 		return InvariantStereotypeConfigurationPackage.eINSTANCE;
 	}
-} //InvariantStereotypeConfigurationFactoryImpl
+} // InvariantStereotypeConfigurationFactoryImpl

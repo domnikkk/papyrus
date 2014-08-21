@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,14 +67,14 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 	protected HashMap<Interface, GraphicalEditPart> initialList = new HashMap<Interface, GraphicalEditPart>();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param parentShell
 	 * @param portEditPart
 	 */
 	public ComponentInterfaceManagerDialog(Shell parentShell, PortEditPart portEditPart) {
-		super(parentShell, (Port)portEditPart.resolveSemanticElement());
+		super(parentShell, (Port) portEditPart.resolveSemanticElement());
 		this.portEditPart = portEditPart;
 		setSelectorLabelProvider(new DisplayedSelectorLabelProvider());
 		initDisplayInterfaceList();
@@ -85,18 +85,18 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 	 */
 	protected void initDisplayInterfaceList() {
 
-		if((portEditPart.getSourceConnections().size() > 0)) {
+		if ((portEditPart.getSourceConnections().size() > 0)) {
 
-			for(Object currentConnection : portEditPart.getSourceConnections()) {
-				ConnectionEditPart connection = (ConnectionEditPart)currentConnection;
-				EObjectValueStyle valueStyle = (EObjectValueStyle)((View)connection.getModel()).getStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
-				if(valueStyle != null) {
-					if(valueStyle.getName().equals("REQUIRED")) {
-						displayedRequiredInterfacesList.add((Interface)((GraphicalEditPart)connection.getTarget()).resolveSemanticElement());
+			for (Object currentConnection : portEditPart.getSourceConnections()) {
+				ConnectionEditPart connection = (ConnectionEditPart) currentConnection;
+				EObjectValueStyle valueStyle = (EObjectValueStyle) ((View) connection.getModel()).getStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
+				if (valueStyle != null) {
+					if (valueStyle.getName().equals("REQUIRED")) {
+						displayedRequiredInterfacesList.add(((GraphicalEditPart) connection.getTarget()).resolveSemanticElement());
 					} else {
-						displayedProvidedInterfacesList.add((Interface)((GraphicalEditPart)connection.getTarget()).resolveSemanticElement());
+						displayedProvidedInterfacesList.add(((GraphicalEditPart) connection.getTarget()).resolveSemanticElement());
 					}
-					initialList.put((Interface)((GraphicalEditPart)connection.getTarget()).resolveSemanticElement(), ((GraphicalEditPart)connection.getTarget()));
+					initialList.put((Interface) ((GraphicalEditPart) connection.getTarget()).resolveSemanticElement(), ((GraphicalEditPart) connection.getTarget()));
 
 				}
 			}
@@ -113,7 +113,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 	public Command getCommand() {
 		CompoundCommand cmd = new CompoundCommand();
 		Command supCmd = super.getCommand();
-		if(supCmd.canExecute()) {
+		if (supCmd.canExecute()) {
 			cmd.add(super.getCommand());
 		}
 		cmd.add(createDisplayedInterfaceCommand());
@@ -122,11 +122,11 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 
 	@Override
 	protected void createEditors() {
-		Composite parent = (Composite)getDialogArea();
+		Composite parent = (Composite) getDialogArea();
 		Composite subComposite = new Composite(parent, SWT.NONE);
 
 		subComposite.setLayout(new FormLayout());
-		//createDisplay button
+		// createDisplay button
 		Button Displaybutton = new Button(subComposite, SWT.PUSH);
 		Displaybutton.setText("Display seletected Interface");
 		DisplayInterfaceListener displayInterfaceListener = new DisplayInterfaceListener();
@@ -137,7 +137,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 		formData.left = new FormAttachment(0, 700);
 		Displaybutton.setLayoutData(formData);
 
-		//create Remove
+		// create Remove
 		Button RemoveDisplaybutton = new Button(subComposite, SWT.PUSH);
 		RemoveDisplaybutton.setText(" Do not Display selected Interface");
 		RemoveDisplayInterfaceListener removeDisplayInterfaceListener = new RemoveDisplayInterfaceListener();
@@ -151,7 +151,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the command that will be used to display interfaces
 	 */
 	protected Command createDisplayedInterfaceCommand() {
@@ -160,20 +160,20 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 		HashSet<Object> requiredInterfaceToDisplay = new HashSet<Object>();
 		HashSet<Object> providedInterfaceToDisplay = new HashSet<Object>();
 		// create the list of provided interface to display
-		for(Object currentInterface : displayedProvidedInterfacesList) {
-			if(!initialList.keySet().contains(currentInterface)) {
+		for (Object currentInterface : displayedProvidedInterfacesList) {
+			if (!initialList.keySet().contains(currentInterface)) {
 				providedInterfaceToDisplay.add(currentInterface);
 			}
 		}
 		// create the list of required interface to display
-		for(Object currentInterface : displayedRequiredInterfacesList) {
-			if(!initialList.keySet().contains(currentInterface)) {
+		for (Object currentInterface : displayedRequiredInterfacesList) {
+			if (!initialList.keySet().contains(currentInterface)) {
 				requiredInterfaceToDisplay.add(currentInterface);
 			}
 		}
 		// create the list of interface to not display
-		for(Interface currentInterface : initialList.keySet()) {
-			if((!displayedRequiredInterfacesList.contains(currentInterface)) && (!displayedProvidedInterfacesList.contains(currentInterface))) {
+		for (Interface currentInterface : initialList.keySet()) {
+			if ((!displayedRequiredInterfacesList.contains(currentInterface)) && (!displayedProvidedInterfacesList.contains(currentInterface))) {
 				viewToRemove.put(currentInterface, initialList.get(currentInterface));
 			}
 		}
@@ -181,7 +181,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 		CompoundCommand cmd = new CompoundCommand();
 		CreateLollipopPortCommand comd = new CreateLollipopPortCommand(this.portEditPart.getEditingDomain(), providedInterfaceToDisplay, requiredInterfaceToDisplay, this.portEditPart);
 		cmd.add(new org.eclipse.papyrus.commands.wrappers.EMFtoGEFCommandWrapper(comd));
-		if(viewToRemove.values().size() > 0) {
+		if (viewToRemove.values().size() > 0) {
 			cmd.add(deleteDisplayInterface(viewToRemove.values()));
 		}
 		return cmd;
@@ -197,7 +197,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 
 	/**
 	 * @param editPartToRemove
-	 *        list of editpart that represents displayed interfaces, never null
+	 *            list of editpart that represents displayed interfaces, never null
 	 * @return the command of interface representation to remove, never null
 	 */
 	protected Command deleteDisplayInterface(Collection<GraphicalEditPart> editPartToRemove) {
@@ -205,7 +205,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 		Request deleteViewRequest = new GroupRequest(RequestConstants.REQ_DELETE);
 
 
-		for(GraphicalEditPart editPart : editPartToRemove) {
+		for (GraphicalEditPart editPart : editPartToRemove) {
 			cmd.add(editPart.getCommand(deleteViewRequest));
 		}
 
@@ -218,16 +218,17 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 	 */
 	class DisplayInterfaceListener extends SelectionAdapter {
 
+		@Override
 		public void widgetSelected(SelectionEvent event) {
-			IStructuredSelection selection = (IStructuredSelection)getProvidedEditor().getSelection();
-			for(Object o : selection.toArray()) {
+			IStructuredSelection selection = (IStructuredSelection) getProvidedEditor().getSelection();
+			for (Object o : selection.toArray()) {
 
 				displayedProvidedInterfacesList.add(o);
 			}
 
 
-			selection = (IStructuredSelection)getRequiredEditor().getSelection();
-			for(Object o : selection.toArray()) {
+			selection = (IStructuredSelection) getRequiredEditor().getSelection();
+			for (Object o : selection.toArray()) {
 				displayedRequiredInterfacesList.add(o);
 			}
 			getProvidedEditor().refresh();
@@ -242,17 +243,18 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 	 */
 	class RemoveDisplayInterfaceListener extends SelectionAdapter {
 
+		@Override
 		public void widgetSelected(SelectionEvent event) {
 
-			// Handle provided interfaces selection 
-			IStructuredSelection structuredSelection = (IStructuredSelection)getProvidedEditor().getSelection();
-			for(Object selection : structuredSelection.toArray()) {
+			// Handle provided interfaces selection
+			IStructuredSelection structuredSelection = (IStructuredSelection) getProvidedEditor().getSelection();
+			for (Object selection : structuredSelection.toArray()) {
 				displayedProvidedInterfacesList.remove(selection);
 			}
 
 			// Handle required interfaces selection
-			structuredSelection = (IStructuredSelection)getRequiredEditor().getSelection();
-			for(Object o : structuredSelection.toArray()) {
+			structuredSelection = (IStructuredSelection) getRequiredEditor().getSelection();
+			for (Object o : structuredSelection.toArray()) {
 
 				displayedRequiredInterfacesList.remove(o);
 			}
@@ -266,11 +268,11 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 
 
 	/**
-	 * 
+	 *
 	 * This class provides a CustomLabelProvider for this dialog.
 	 * This class manages the {@link NewElementRepresentation} and consider them like Interfaces
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public class DisplayedSelectorLabelProvider extends SelectorLabelProvider {
 
@@ -285,7 +287,7 @@ public class ComponentInterfaceManagerDialog extends InterfaceManagerDialog {
 		@Override
 		public Image getImage(Object element) {
 
-			if(displayedRequiredInterfacesList.contains(element) || displayedProvidedInterfacesList.contains(element)) {
+			if (displayedRequiredInterfacesList.contains(element) || displayedProvidedInterfacesList.contains(element)) {
 				return org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(UMLDiagramEditorPlugin.ID, ICONS_OBJ16_LOLLIPOP_GIF);
 			}
 			return super.getImage(element);

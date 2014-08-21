@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public class CustomInteractionInteractionCompartmentEditPart extends Interaction
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomInteractionInteractionCompartmentEditPart(View view) {
@@ -53,7 +53,7 @@ public class CustomInteractionInteractionCompartmentEditPart extends Interaction
 	// TODO Use transparency instead of send to back method
 	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(childEditPart instanceof CombinedFragmentEditPart || childEditPart instanceof ConsiderIgnoreFragmentEditPart || childEditPart instanceof InteractionUseEditPart) {
+		if (childEditPart instanceof CombinedFragmentEditPart || childEditPart instanceof ConsiderIgnoreFragmentEditPart || childEditPart instanceof InteractionUseEditPart) {
 			index = 0;
 		}
 		super.addChildVisual(childEditPart, index);
@@ -67,15 +67,15 @@ public class CustomInteractionInteractionCompartmentEditPart extends Interaction
 	 */
 	@Override
 	public void showTargetFeedback(Request request) {
-		if(!isEditModeEnabled() || !isActive()) {
+		if (!isEditModeEnabled() || !isActive()) {
 			return;
 		}
 		// Avoid default drop feedback by setting background, just highlight it
 		// with bold border.
 		EditPolicyIterator i = getEditPolicyIterator();
-		while(i.hasNext()) {
+		while (i.hasNext()) {
 			EditPolicy next = i.next();
-			if(REQ_CREATE.equals(request.getType()) && next.getClass().getName().equals("org.eclipse.papyrus.infra.gmfdiag.dnd.policy.CustomizableDropEditPolicy")) {
+			if (REQ_CREATE.equals(request.getType()) && next.getClass().getName().equals("org.eclipse.papyrus.infra.gmfdiag.dnd.policy.CustomizableDropEditPolicy")) {
 				HighlightUtil.highlight(this);
 			} else {
 				next.showTargetFeedback(request);

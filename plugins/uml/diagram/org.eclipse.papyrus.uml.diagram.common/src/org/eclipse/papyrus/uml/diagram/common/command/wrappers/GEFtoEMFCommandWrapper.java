@@ -16,16 +16,17 @@ import org.eclipse.gef.commands.Command;
 /**
  * A EMF Command that wraps a GEF command. Each method is redirected to the GEF
  * one.
- * 
+ *
  * @deprecated use {@link org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper} instead
  */
+@Deprecated
 public class GEFtoEMFCommandWrapper extends org.eclipse.papyrus.commands.wrappers.GEFtoEMFCommandWrapper {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param gefCommand
-	 *        the gef command
+	 *            the gef command
 	 */
 	public GEFtoEMFCommandWrapper(Command gefCommand) {
 		super(gefCommand);

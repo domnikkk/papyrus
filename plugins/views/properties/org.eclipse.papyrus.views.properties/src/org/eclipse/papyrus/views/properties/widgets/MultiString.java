@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * A PropertyEditor for editing multiple strings in a list
- * 
+ *
  * @see org.eclipse.papyrus.infra.widgets.editors.MultipleStringEditor
- * 
+ *
  * @author Camille Letavernier
  */
 public class MultiString extends AbstractPropertyEditor {
@@ -34,11 +34,11 @@ public class MultiString extends AbstractPropertyEditor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 */
 	public MultiString(Composite parent, int style) {
 		editor = createMultipleStringEditor(parent, style);
@@ -47,11 +47,11 @@ public class MultiString extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the multiple string editor
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the multiple string editor.
 	 */
 	protected MultipleStringEditor createMultipleStringEditor(Composite parent, int style) {
@@ -64,24 +64,24 @@ public class MultiString extends AbstractPropertyEditor {
 		editor.setUnique(input.isUnique(propertyPath));
 		editor.setDirectCreation(input.getDirectCreation(propertyPath));
 		ReferenceValueFactory factory = input.getValueFactory(propertyPath);
-		if(factory != null) {
+		if (factory != null) {
 			editor.setFactory(input.getValueFactory(propertyPath));
 		}
 
 		IStaticContentProvider provider = input.getContentProvider(propertyPath);
-		if(provider != null) {
+		if (provider != null) {
 			editor.setContentProvider(provider);
 		}
 
-		if(getInputObservableList() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableList());
+		if (getInputObservableList() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableList());
 		}
 
 		super.doBinding();
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the ListViewer associated to this editor
 	 */
 	public TreeViewer getViewer() {

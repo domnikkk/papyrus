@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,7 +25,7 @@ public class GMFCommandUtils {
 
 	/**
 	 * <pre>
-	 * This method return the EObject returned by a command (the first item if the result is a 
+	 * This method return the EObject returned by a command (the first item if the result is a
 	 * Collection), or null if the result contains no value or if the value is not an EObject
 	 * @param command the command.
 	 * @return the EObject result or null.
@@ -35,14 +35,14 @@ public class GMFCommandUtils {
 
 		Object returnValue = command.getCommandResult().getReturnValue();
 
-		if(returnValue instanceof EObject) {
-			return (EObject)returnValue;
+		if (returnValue instanceof EObject) {
+			return (EObject) returnValue;
 		}
 
-		if(returnValue instanceof ArrayList<?>) {
-			ArrayList<?> returnValues = (ArrayList<?>)returnValue;
-			if(!returnValues.isEmpty() && (returnValues.get(0) instanceof EObject)) {
-				return (EObject)returnValues.get(0);
+		if (returnValue instanceof ArrayList<?>) {
+			ArrayList<?> returnValues = (ArrayList<?>) returnValue;
+			if (!returnValues.isEmpty() && (returnValues.get(0) instanceof EObject)) {
+				return (EObject) returnValues.get(0);
 			}
 		}
 		return null;

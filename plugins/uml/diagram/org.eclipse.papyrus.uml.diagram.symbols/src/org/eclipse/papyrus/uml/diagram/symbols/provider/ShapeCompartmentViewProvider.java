@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,7 +31,7 @@ public class ShapeCompartmentViewProvider extends AbstractShapeCompartmentViewPr
 	@Override
 	protected boolean provides(CreateViewForKindOperation op) {
 		// This method should generally not be called (https://bugs.eclipse.org/bugs/show_bug.cgi?id=346739).
-		if((diagramType == null) || (!diagramType.equals(op.getContainerView().getDiagram().getType()))) {
+		if ((diagramType == null) || (!diagramType.equals(op.getContainerView().getDiagram().getType()))) {
 			return false;
 		}
 		throw new UnsupportedOperationException("Should never be called by the " + diagramType + " diagram.");

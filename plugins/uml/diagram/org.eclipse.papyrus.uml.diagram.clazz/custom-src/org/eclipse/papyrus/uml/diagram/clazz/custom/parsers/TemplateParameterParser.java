@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,35 +35,38 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * this parser is used to display parameter of a template
- * 
+ *
  */
 public class TemplateParameterParser implements IParser {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getCompletionProcessor(org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
 
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		ICommand command = UnexecutableCommand.INSTANCE;
-		if(element instanceof EObjectAdapter) {
-			final TemplateParameter templateParam = ((TemplateParameter)((EObjectAdapter)element).getRealObject());
-			if(newString.contains("<UNDEFINED>")) {
+		if (element instanceof EObjectAdapter) {
+			final TemplateParameter templateParam = ((TemplateParameter) ((EObjectAdapter) element).getRealObject());
+			if (newString.contains("<UNDEFINED>")) {
 				return UnexecutableCommand.INSTANCE;
 			}
-			if(templateParam.getParameteredElement() instanceof NamedElement) {
-				NamedElement namedElement = (NamedElement)templateParam.getParameteredElement();
+			if (templateParam.getParameteredElement() instanceof NamedElement) {
+				NamedElement namedElement = (NamedElement) templateParam.getParameteredElement();
 				String name = newString.substring(0, newString.indexOf(":"));
 				SetRequest request = new SetRequest(namedElement, UMLPackage.eINSTANCE.getNamedElement_Name(), name.trim());
 				command = new SetValueCommand(request);
@@ -72,37 +75,38 @@ public class TemplateParameterParser implements IParser {
 		return command;
 	}
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
-		if(element instanceof EObjectAdapter) {
-			final TemplateParameter templateParam = ((TemplateParameter)((EObjectAdapter)element).getRealObject());
-			if(templateParam.getParameteredElement() == null) {
+		if (element instanceof EObjectAdapter) {
+			final TemplateParameter templateParam = ((TemplateParameter) ((EObjectAdapter) element).getRealObject());
+			if (templateParam.getParameteredElement() == null) {
 				return "<UNDEFINED>";
 			}
 			String out = "";
-			if(templateParam.getParameteredElement() instanceof NamedElement) {
-				NamedElement namedElement = (NamedElement)templateParam.getParameteredElement();
+			if (templateParam.getParameteredElement() instanceof NamedElement) {
+				NamedElement namedElement = (NamedElement) templateParam.getParameteredElement();
 				out = namedElement.getName() + ": " + namedElement.eClass().getName();
 			}
-			if(templateParam instanceof OperationTemplateParameter) {
-				if(templateParam.getParameteredElement() != null) {
-					Operation op = (Operation)(templateParam.getParameteredElement());
+			if (templateParam instanceof OperationTemplateParameter) {
+				if (templateParam.getParameteredElement() != null) {
+					Operation op = (Operation) (templateParam.getParameteredElement());
 					out = displayOperation(op);
 				}
-			} else if(templateParam instanceof ClassifierTemplateParameter) {
-				if(!((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().isEmpty()) {
+			} else if (templateParam instanceof ClassifierTemplateParameter) {
+				if (!((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().isEmpty()) {
 					out = out + ">";
-					for(int i = 0; i < ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().size(); i++) {
-						out = out + ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().get(i).getName();
-						if(i < ((ClassifierTemplateParameter)templateParam).getConstrainingClassifiers().size() - 1) {
+					for (int i = 0; i < ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().size(); i++) {
+						out = out + ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().get(i).getName();
+						if (i < ((ClassifierTemplateParameter) templateParam).getConstrainingClassifiers().size() - 1) {
 							out = out + ", ";
 						}
 					}
 				}
 			}
-			if(templateParam.getDefault() instanceof Operation) {
-				out = out + "=" + displayOperation((Operation)templateParam.getDefault());
-			} else if(templateParam.getDefault() instanceof NamedElement) {
-				out = out + "=" + ((NamedElement)templateParam.getDefault()).getName();
+			if (templateParam.getDefault() instanceof Operation) {
+				out = out + "=" + displayOperation((Operation) templateParam.getDefault());
+			} else if (templateParam.getDefault() instanceof NamedElement) {
+				out = out + "=" + ((NamedElement) templateParam.getDefault()).getName();
 			}
 			return out;
 		}
@@ -112,10 +116,10 @@ public class TemplateParameterParser implements IParser {
 	protected String displayOperation(Operation op) {
 		String out = op.getName() + "(";
 		Iterator<Parameter> iter = op.getOwnedParameters().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			Parameter param = iter.next();
 			out = out + param.getName();
-			if(!param.equals(op.getOwnedParameters().get(op.getOwnedParameters().size() - 1))) {
+			if (!param.equals(op.getOwnedParameters().get(op.getOwnedParameters().size() - 1))) {
 				out = out + ", ";
 			}
 		}
@@ -123,10 +127,12 @@ public class TemplateParameterParser implements IParser {
 		return out;
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		return true;
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}

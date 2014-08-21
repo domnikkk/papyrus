@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * Interface providing services to load resources and resolves Proxies
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public interface IProxyManager {
 
@@ -30,7 +30,7 @@ public interface IProxyManager {
 
 	/**
 	 * Returns an eobject from a strategy, the implementation manages itself its resources
-	 * 
+	 *
 	 * @param uri
 	 * @return
 	 */
@@ -38,7 +38,7 @@ public interface IProxyManager {
 
 	/**
 	 * Returns true if the proxy manager will load the resource located at the URI
-	 * 
+	 *
 	 * @param uri
 	 * @return
 	 */

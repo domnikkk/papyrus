@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 - 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,9 +62,9 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 	 * Instantiates a new provided interface observable list.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 */
 	public ProvidedInterfaceObservableList(Port source, EditingDomain domain) {
 		super(EMFProperties.list(UMLPackage.eINSTANCE.getPort_Provided()).observe(source), domain, source, UMLPackage.eINSTANCE.getPort_Provided());
@@ -77,7 +77,7 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 	 * Gets the adds the all command.
 	 *
 	 * @param values
-	 *        the values
+	 *            the values
 	 * @return the adds the all command
 	 * @see org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableList#getAddAllCommand(java.util.Collection)
 	 */
@@ -91,31 +91,31 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 
 
 		// Sort input values
-		for(Object current : values) {
+		for (Object current : values) {
 
-			if(current instanceof Interface) {
-				if(!providedInterfaceList.contains(current)) {
+			if (current instanceof Interface) {
+				if (!providedInterfaceList.contains(current)) {
 					// Added interface
-					IEditCommandRequest request = new CreateRelationshipRequest(port.getType(), port.getType(), (EObject)current, ElementTypeRegistry.getInstance().getType("org.eclipse.papyrus.uml.InterfaceRealization"));
+					IEditCommandRequest request = new CreateRelationshipRequest(port.getType(), port.getType(), (EObject) current, ElementTypeRegistry.getInstance().getType("org.eclipse.papyrus.uml.InterfaceRealization"));
 					requests.add(request);
 				} else {
-					//Common interfaces
-					commonInterfacesList.add((Interface)current);
+					// Common interfaces
+					commonInterfacesList.add((Interface) current);
 				}
 			}
 		}
 
-		if(!requests.isEmpty()) {
+		if (!requests.isEmpty()) {
 			returnedCommand.append(getCommandFromRequests(getProvider(), requests));
 		}
 
 
 		// Handle deleted interfaces
-		if(providedInterfaceList.size() != commonInterfacesList.size()) {
+		if (providedInterfaceList.size() != commonInterfacesList.size()) {
 			List<Interface> removedInterfacesList = new ArrayList<Interface>();
 
-			for(Interface current : providedInterfaceList) {
-				if(!commonInterfacesList.contains(current)) {
+			for (Interface current : providedInterfaceList) {
+				if (!commonInterfacesList.contains(current)) {
 					removedInterfacesList.add(current);
 				}
 			}
@@ -133,7 +133,7 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 	 * Gets the removes the command.
 	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @return the removes the command
 	 * @see org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableList#getRemoveCommand(java.lang.Object)
 	 */
@@ -142,11 +142,11 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 		CompoundCommand commands = null;
 		Dependency realization = getRealization(value);
 
-		if(realization != null) {
+		if (realization != null) {
 			commands = new CompoundCommand();
-			IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain)editingDomain, realization, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject)value, false);
+			IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain) editingDomain, realization, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject) value, false);
 			commands.append(new GMFtoEMFCommandWrapper(getProvider().getEditCommand(request)));
-			commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain)editingDomain, realization, getProvider())));
+			commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain) editingDomain, realization, getProvider())));
 
 		}
 		return commands;
@@ -165,16 +165,16 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 		CompoundCommand commands = new CompoundCommand();
 		Set<Dependency> dependenciesSet = new HashSet<Dependency>();
 
-		for(Object value : values) {
+		for (Object value : values) {
 			Dependency realization = getRealization(value);
-			if(realization != null) {
-				IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain)editingDomain, realization, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject)value, false);
+			if (realization != null) {
+				IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain) editingDomain, realization, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject) value, false);
 				commands.append(new GMFtoEMFCommandWrapper(getProvider().getEditCommand(request)));
 				dependenciesSet.add(realization);
 			}
 		}
 
-		commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain)editingDomain, dependenciesSet, getProvider())));
+		commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain) editingDomain, dependenciesSet, getProvider())));
 
 		return commands;
 	}
@@ -183,25 +183,25 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 	 * Gets the realization.
 	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @return the realization
 	 */
 	private Dependency getRealization(Object value) {
 		Realization realization = null;
-		if(value instanceof Interface) {
-			Interface deletedInterface = (Interface)value;
+		if (value instanceof Interface) {
+			Interface deletedInterface = (Interface) value;
 			List<Realization> realizationsList = ElementUtil.getInstancesFilteredByType(port.getModel(), Realization.class, null);
 
 			// Parse all Realizations of model
 			boolean isRealization = false;
 			Iterator<Realization> realizationsIterator = realizationsList.iterator();
 			Realization current = null;
-			while(realizationsIterator.hasNext() && !isRealization) {
+			while (realizationsIterator.hasNext() && !isRealization) {
 				current = realizationsIterator.next();
 
 				// Check if Realization links port's type to deleted interface
 				isRealization = current.getSuppliers().contains(deletedInterface) && current.getClients().contains(port.getType());
-				if(isRealization) {
+				if (isRealization) {
 					realization = current;
 				}
 			}
@@ -220,7 +220,7 @@ public class ProvidedInterfaceObservableList extends PapyrusObservableList {
 	@Override
 	public Command getClearCommand() {
 
-		return new RecordingCommand((TransactionalEditingDomain)editingDomain) {
+		return new RecordingCommand((TransactionalEditingDomain) editingDomain) {
 
 			@Override
 			protected void doExecute() {

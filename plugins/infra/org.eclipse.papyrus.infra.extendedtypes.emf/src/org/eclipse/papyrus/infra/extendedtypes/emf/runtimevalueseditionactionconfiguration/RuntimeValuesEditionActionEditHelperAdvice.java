@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,12 +46,13 @@ public class RuntimeValuesEditionActionEditHelperAdvice extends AbstractEditHelp
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void init(RuntimeValuesEditionActionConfiguration configuration) {
 		viewsToDisplay = new HashSet<View>();
-		for(ViewToDisplay display : configuration.getViewsToDisplay()) {
+		for (ViewToDisplay display : configuration.getViewsToDisplay()) {
 			View view = display.getView();
-			if(view!=null) {
-				viewsToDisplay.add(view);	
+			if (view != null) {
+				viewsToDisplay.add(view);
 			}
 		}
 	}
@@ -65,6 +66,7 @@ public class RuntimeValuesEditionActionEditHelperAdvice extends AbstractEditHelp
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean approveRequest(IEditCommandRequest request) {
 		return super.approveRequest(request);
 	}
@@ -99,22 +101,22 @@ public class RuntimeValuesEditionActionEditHelperAdvice extends AbstractEditHelp
 	@Override
 	protected ICommand getAfterConfigureCommand(final ConfigureRequest request) {
 		final EObject elementToConfigure = request.getElementToConfigure();
-		if(elementToConfigure==null) {
+		if (elementToConfigure == null) {
 			return null;
 		}
-		
-		return new AbstractTransactionalCommand(request.getEditingDomain(), "Editing "+EMFCoreUtil.getName(elementToConfigure), Collections.singletonList(WorkspaceSynchronizer.getFile((elementToConfigure.eResource())))) {
+
+		return new AbstractTransactionalCommand(request.getEditingDomain(), "Editing " + EMFCoreUtil.getName(elementToConfigure), Collections.singletonList(WorkspaceSynchronizer.getFile((elementToConfigure.eResource())))) {
 			/**
 			 * {@inheritDoc}
 			 */
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				Set<View> viewsToDisplay = getViewsToDisplay();
-				if(!viewsToDisplay.isEmpty()) {
+				if (!viewsToDisplay.isEmpty()) {
 					EditionDialog dialog = new EditionDialog(Display.getCurrent().getActiveShell()) {
-						
+
 					};
-					dialog.setTitle("Edit "+EMFCoreUtil.getName(elementToConfigure));
+					dialog.setTitle("Edit " + EMFCoreUtil.getName(elementToConfigure));
 					dialog.setViews(viewsToDisplay);
 					dialog.setInput(elementToConfigure);
 
@@ -124,10 +126,10 @@ public class RuntimeValuesEditionActionEditHelperAdvice extends AbstractEditHelp
 				return CommandResult.newOKCommandResult(elementToConfigure);
 			}
 		};
-		
+
 	}
 
-	
+
 	/**
 	 * @return the viewsToDisplay
 	 */

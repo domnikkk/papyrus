@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,15 +28,15 @@ public class PapyrusSendNodeShadowBorder extends RectangularShadowBorder {
 	/**
 	 * Creates an instance of this class with the given arc width and arc height
 	 * in pixels
-	 * 
+	 *
 	 * @param borderwidth
-	 *        the width of the border line
+	 *            the width of the border line
 	 * @param color
-	 *        the color or the line
+	 *            the color or the line
 	 * @param arcWidth
-	 *        the width of the corner arc
+	 *            the width of the corner arc
 	 * @param arcHeight
-	 *        the height of the corner arc
+	 *            the height of the corner arc
 	 */
 	public PapyrusSendNodeShadowBorder(int borderwidth, Color color, int corner) {
 		super(borderwidth, color);
@@ -53,13 +53,13 @@ public class PapyrusSendNodeShadowBorder extends RectangularShadowBorder {
 		// draw the normal line border
 		tempRect.setBounds(getPaintRectangle(figure, insets));
 
-		PointList ptList= new PointList();
+		PointList ptList = new PointList();
 		ptList.addPoint(tempRect.getLocation());
-		ptList.addPoint(tempRect.x+tempRect.width-widthArrow, tempRect.y);
-		ptList.addPoint(tempRect.x+tempRect.width, tempRect.y+(tempRect.height/2));
-		ptList.addPoint(tempRect.x+tempRect.width-widthArrow, tempRect.y+(tempRect.height));
+		ptList.addPoint(tempRect.x + tempRect.width - widthArrow, tempRect.y);
+		ptList.addPoint(tempRect.x + tempRect.width, tempRect.y + (tempRect.height / 2));
+		ptList.addPoint(tempRect.x + tempRect.width - widthArrow, tempRect.y + (tempRect.height));
 		ptList.addPoint(tempRect.getBottomLeft());
-		if(getColor() != null) {
+		if (getColor() != null) {
 			graphics.setBackgroundColor(getColor());
 		} else {
 			graphics.setBackgroundColor(ColorConstants.black);

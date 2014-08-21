@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,8 +19,8 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashWindowsCon
 /**
  * Base class of the Part hierarchy.
  * This class provides common methods for sashwindows Parts.
- * 
- * 
+ *
+ *
  * @author dumoulin
  */
 public abstract class AbstractPart {
@@ -28,8 +28,7 @@ public abstract class AbstractPart {
 	/**
 	 * Enumeration used when the parts are synchronized.
 	 * <ul>
-	 * <li>UNVISITED - The part not yet visited. This is the initial state when synchronizing. The part can stay in this state after synchronization
-	 * if one of its parent is ORPHANED.</li>
+	 * <li>UNVISITED - The part not yet visited. This is the initial state when synchronizing. The part can stay in this state after synchronization if one of its parent is ORPHANED.</li>
 	 * <li>ORPHANED - The part is orphaned from its direct parent.</li>
 	 * <li>REPARENTED - The part parent has changed</li>
 	 * <li>CREATED - The part is newly created</li>
@@ -60,7 +59,7 @@ public abstract class AbstractPart {
 
 	/**
 	 * Get the {@link SashWindowsContainer}.
-	 * 
+	 *
 	 * @return
 	 */
 	public SashWindowsContainer getSashWindowContainer() {
@@ -70,7 +69,7 @@ public abstract class AbstractPart {
 
 	/**
 	 * Get the content provider of the sashwindows.
-	 * 
+	 *
 	 * @return
 	 */
 	public ISashWindowsContentProvider getContentProvider() {
@@ -78,7 +77,7 @@ public abstract class AbstractPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isOrphaned() {
@@ -87,7 +86,7 @@ public abstract class AbstractPart {
 
 	/**
 	 * Return true if the page state == {@link GarbageState#UNVISITED}.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isUnchecked() {

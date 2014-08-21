@@ -52,14 +52,14 @@ public class BindingContext implements IBindingContext {
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getContext()
 	 */
 	public org.eclipse.core.databinding.DataBindingContext getContext() {
-		if(this.context == null) {
-			if(this.realm != null) {
+		if (this.context == null) {
+			if (this.realm != null) {
 				this.context = new org.eclipse.core.databinding.DataBindingContext(this.realm);
 			} else {
 				this.context = new org.eclipse.core.databinding.DataBindingContext(XWT.getRealm());
 			}
 
-			if(this.parent != null) {
+			if (this.parent != null) {
 				this.parent.addDisposeListener(new DisposeListener() {
 
 					public void widgetDisposed(DisposeEvent e) {
@@ -86,9 +86,9 @@ public class BindingContext implements IBindingContext {
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#getStatus()
 	 */
 	public AggregateValidationStatus getStatus() {
-		if(this.status == null) {
+		if (this.status == null) {
 			this.status = new AggregateValidationStatus(getContext(), this.statusType);
-			if(this.parent != null) {
+			if (this.parent != null) {
 				this.parent.addDisposeListener(new DisposeListener() {
 
 					public void widgetDisposed(DisposeEvent e) {
@@ -124,15 +124,16 @@ public class BindingContext implements IBindingContext {
 	 * 
 	 * @see org.eclipse.papyrus.xwt.databinding.IDataBindingContext#equals(java.lang.Object)
 	 */
+	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof BindingContext)) {
+		if (!(obj instanceof BindingContext)) {
 			return false;
 		}
 		org.eclipse.core.databinding.DataBindingContext context = getContext();
-		if(context != null) {
-			return context.equals(((BindingContext)obj).getContext());
+		if (context != null) {
+			return context.equals(((BindingContext) obj).getContext());
 		}
-		if(((BindingContext)obj).getContext() != null) {
+		if (((BindingContext) obj).getContext() != null) {
 			return false;
 		}
 		return super.equals(obj);

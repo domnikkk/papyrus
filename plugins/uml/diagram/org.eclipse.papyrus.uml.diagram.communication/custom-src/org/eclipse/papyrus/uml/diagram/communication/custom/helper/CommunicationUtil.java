@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,9 +60,9 @@ import org.eclipse.uml2.uml.TimeConstraint;
 import org.eclipse.uml2.uml.TimeObservation;
 
 /**
- * 
+ *
  * @author This is for special commands for communication diagram
- * 
+ *
  */
 public class CommunicationUtil {
 
@@ -70,16 +70,16 @@ public class CommunicationUtil {
 	 * Find the container interaction fragment at the given location. The
 	 * elements are drawn under the lifeline, but their model container is an
 	 * interaction fragment. It can be of type Interaction or InteractionOperand
-	 * 
+	 *
 	 * @param location
-	 *        the location
+	 *            the location
 	 * @param host
-	 *        the host edit part
+	 *            the host edit part
 	 * @return the interaction fragment or null
 	 */
 	public static InteractionFragment findInteractionFragmentAt(Point location, EditPart host) {
 
-		if(host == null) {
+		if (host == null) {
 			return null;
 		}
 
@@ -87,15 +87,15 @@ public class CommunicationUtil {
 
 		InteractionFragment interactionFragment = null;
 		EditPart ep = host.getRoot().getViewer().findObjectAtExcluding(location, exclusionSet);
-		while(ep instanceof LifelineEditPartCN) {
-			exclusionSet.add(((GraphicalEditPart)ep).getFigure());
+		while (ep instanceof LifelineEditPartCN) {
+			exclusionSet.add(((GraphicalEditPart) ep).getFigure());
 			ep = host.getRoot().getViewer().findObjectAtExcluding(location, exclusionSet);
 		}
 		// Get the rootEditpart Content
-		if(ep != null && ep.getModel() instanceof View) {
-			EObject eObject = ViewUtil.resolveSemanticElement((View)ep.getModel());
-			if(eObject instanceof InteractionOperand || eObject instanceof Interaction) {
-				interactionFragment = (InteractionFragment)eObject;
+		if (ep != null && ep.getModel() instanceof View) {
+			EObject eObject = ViewUtil.resolveSemanticElement((View) ep.getModel());
+			if (eObject instanceof InteractionOperand || eObject instanceof Interaction) {
+				interactionFragment = (InteractionFragment) eObject;
 			}
 		}
 
@@ -107,31 +107,31 @@ public class CommunicationUtil {
 	/**
 	 * Complete an ICommand which destroys an DestructionEvent element to also destroy dependent time/duration constraint/observation linked with
 	 * these ends
-	 * 
+	 *
 	 * @param deleteViewsCmd
-	 *        the command to complete
+	 *            the command to complete
 	 * @param editingDomain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param destructionEventPart
-	 *        the execution specification edit part on which the request is called
+	 *            the execution specification edit part on which the request is called
 	 * @return the deletion command deleteViewsCmd for convenience
 	 */
 	public static CompoundCommand completeDeleteDestructionEventViewCommand(CompoundCommand deleteViewsCmd, TransactionalEditingDomain editingDomain, EditPart destructionEventPart) {
 		Object model = destructionEventPart.getModel();
-		if(model instanceof Node) {
-			EObject obj = ((Node)model).getElement();
+		if (model instanceof Node) {
+			EObject obj = ((Node) model).getElement();
 
-			if(obj instanceof DestructionOccurrenceSpecification) {
+			if (obj instanceof DestructionOccurrenceSpecification) {
 				LifelineEditPartCN lifelinePart = getParentLifelinePart(destructionEventPart);
-				if(lifelinePart != null) {
-					for(Object lifelineChild : lifelinePart.getChildren()) {
-						if(lifelineChild instanceof IBorderItemEditPart) {
-							final IBorderItemEditPart timePart = (IBorderItemEditPart)lifelineChild;
-							//At most one destruction event. Only parts linked to it can not move for now.
+				if (lifelinePart != null) {
+					for (Object lifelineChild : lifelinePart.getChildren()) {
+						if (lifelineChild instanceof IBorderItemEditPart) {
+							final IBorderItemEditPart timePart = (IBorderItemEditPart) lifelineChild;
+							// At most one destruction event. Only parts linked to it can not move for now.
 							boolean isNotLinked = CommunicationUtil.canTimeElementPartBeYMoved(timePart);
-							if(!isNotLinked) {
+							if (!isNotLinked) {
 								// time part is linked, delete the view
-								Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View)timePart.getModel()));
+								Command deleteTimeViewCommand = new ICommandProxy(new DeleteCommand(editingDomain, (View) timePart.getModel()));
 								deleteViewsCmd.add(deleteTimeViewCommand);
 							}
 						}
@@ -145,24 +145,24 @@ public class CommunicationUtil {
 	/**
 	 * Know whether this time element part can be moved within the lifeline or not.
 	 * Parts linked with a destruction event can not be moved since the destruction event is always at the end.
-	 * 
+	 *
 	 * @param timeElementPart
-	 *        the part representing a time/duration constraint/observation
+	 *            the part representing a time/duration constraint/observation
 	 * @return true if the part can be moved
 	 */
 	public static boolean canTimeElementPartBeYMoved(IBorderItemEditPart timeElementPart) {
 		EObject timeElement = timeElementPart.resolveSemanticElement();
 		List<? extends Element> occurrences = Collections.emptyList();
-		if(timeElement instanceof TimeObservation) {
-			NamedElement occurence = ((TimeObservation)timeElement).getEvent();
+		if (timeElement instanceof TimeObservation) {
+			NamedElement occurence = ((TimeObservation) timeElement).getEvent();
 			occurrences = Collections.singletonList(occurence);
-		} else if(timeElement instanceof TimeConstraint || timeElement instanceof DurationConstraint) {
-			occurrences = ((IntervalConstraint)timeElement).getConstrainedElements();
+		} else if (timeElement instanceof TimeConstraint || timeElement instanceof DurationConstraint) {
+			occurrences = ((IntervalConstraint) timeElement).getConstrainedElements();
 		}
 		// check whether one of the time occurrences correspond to a DestructionEvent
-		for(Element occurrence : occurrences) {
-			if(occurrence instanceof DestructionOccurrenceSpecification) {
-					return false;
+		for (Element occurrence : occurrences) {
+			if (occurrence instanceof DestructionOccurrenceSpecification) {
+				return false;
 			}
 		}
 		return true;
@@ -170,16 +170,16 @@ public class CommunicationUtil {
 
 	/**
 	 * Return the lifeline edit part containing this part (directly or indirectly)
-	 * 
+	 *
 	 * @param nodeEditPart
-	 *        the contained edit part or itself
+	 *            the contained edit part or itself
 	 * @return lifeline edit part or null
 	 */
 	public static LifelineEditPartCN getParentLifelinePart(EditPart nodeEditPart) {
 		EditPart parent = nodeEditPart;
-		while(parent != null) {
-			if(parent instanceof LifelineEditPartCN) {
-				return (LifelineEditPartCN)parent;
+		while (parent != null) {
+			if (parent instanceof LifelineEditPartCN) {
+				return (LifelineEditPartCN) parent;
 			} else {
 				parent = parent.getParent();
 			}
@@ -189,55 +189,55 @@ public class CommunicationUtil {
 
 	/**
 	 * Get the edit part which starts or finishes with the event on the given lifeline part
-	 * 
+	 *
 	 * @param lifelinePart
-	 *        the lifeline edit part on which the event is located
+	 *            the lifeline edit part on which the event is located
 	 * @param event
-	 *        the event
+	 *            the event
 	 * @return the edit part of which an end is defined by event on the lifelinePart edit part
 	 */
 	public static EditPart getLinkedEditPart(EditPart lifelinePart, OccurrenceSpecification event) {
-		if(event instanceof MessageOccurrenceSpecification) {
+		if (event instanceof MessageOccurrenceSpecification) {
 			// get parts representing the message linked with the event
-			Message message = ((MessageOccurrenceSpecification)event).getMessage();
-			if(message == null) {
+			Message message = ((MessageOccurrenceSpecification) event).getMessage();
+			if (message == null) {
 				return null;
 			}
 			Collection<Setting> settings = CacheAdapter.getInstance().getNonNavigableInverseReferences(message);
-			for(Setting ref : settings) {
-				if(NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
-					View view = (View)ref.getEObject();
+			for (Setting ref : settings) {
+				if (NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
+					View view = (View) ref.getEObject();
 					EditPart part = DiagramEditPartsUtil.getEditPartFromView(view, lifelinePart);
 					// the message part must start or finish on the lifeline (with the event)
-					if(part instanceof ConnectionEditPart) {
+					if (part instanceof ConnectionEditPart) {
 						EditPart lifelineChild = null;
-						if(event.equals(message.getSendEvent())) {
-							lifelineChild = ((ConnectionEditPart)part).getSource();
-						} else if(event.equals(message.getReceiveEvent())) {
-							lifelineChild = ((ConnectionEditPart)part).getTarget();
+						if (event.equals(message.getSendEvent())) {
+							lifelineChild = ((ConnectionEditPart) part).getSource();
+						} else if (event.equals(message.getReceiveEvent())) {
+							lifelineChild = ((ConnectionEditPart) part).getTarget();
 						}
 						LifelineEditPartCN parentLifeline = CommunicationUtil.getParentLifelinePart(lifelineChild);
-						if(lifelinePart.equals(parentLifeline)) {
+						if (lifelinePart.equals(parentLifeline)) {
 							return part;
 						}
 					}
 				}
 			}
-		} else if(event instanceof ExecutionOccurrenceSpecification) {
+		} else if (event instanceof ExecutionOccurrenceSpecification) {
 			// get parts representing the execution linked with the event
-			ExecutionSpecification execution = ((ExecutionOccurrenceSpecification)event).getExecution();
-			if(execution == null) {
+			ExecutionSpecification execution = ((ExecutionOccurrenceSpecification) event).getExecution();
+			if (execution == null) {
 				return null;
 			}
 			Collection<Setting> settings = CacheAdapter.getInstance().getNonNavigableInverseReferences(execution);
-			for(Setting ref : settings) {
-				if(NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
-					View view = (View)ref.getEObject();
+			for (Setting ref : settings) {
+				if (NotationPackage.eINSTANCE.getView_Element().equals(ref.getEStructuralFeature())) {
+					View view = (View) ref.getEObject();
 					EditPart part = DiagramEditPartsUtil.getEditPartFromView(view, lifelinePart);
 					// the execution part must be on the lifeline
 					EditPart lifelineChild = part;
 					LifelineEditPartCN parentLifeline = CommunicationUtil.getParentLifelinePart(lifelineChild);
-					if(lifelinePart.equals(parentLifeline)) {
+					if (lifelinePart.equals(parentLifeline)) {
 						return part;
 					}
 				}
@@ -248,7 +248,7 @@ public class CommunicationUtil {
 
 	/**
 	 * This methods verifies if two UML Lifelines are already connected
-	 * 
+	 *
 	 * @return
 	 *         the list of messages between the two lifelines if Lifelines are connected
 	 *         else it returns null
@@ -258,14 +258,14 @@ public class CommunicationUtil {
 		EList<InteractionFragment> lifeline1Events = lifeline1.getCoveredBys();
 		EList<InteractionFragment> lifeline2Events = lifeline2.getCoveredBys();
 		Set<Message> messages = null;
-		for(InteractionFragment current1 : lifeline1Events) {
-			MessageEnd me1 = (MessageEnd)current1;
-			if(!(me1.getMessage() == null)) {
-				for(InteractionFragment current2 : lifeline2Events) {
-					MessageEnd me2 = (MessageEnd)current2;
-					if(!(me2.getMessage() == null)) {
-						if(me1.getMessage().equals(me2.getMessage())) {
-							if(messages == null) {
+		for (InteractionFragment current1 : lifeline1Events) {
+			MessageEnd me1 = (MessageEnd) current1;
+			if (!(me1.getMessage() == null)) {
+				for (InteractionFragment current2 : lifeline2Events) {
+					MessageEnd me2 = (MessageEnd) current2;
+					if (!(me2.getMessage() == null)) {
+						if (me1.getMessage().equals(me2.getMessage())) {
+							if (messages == null) {
 								messages = new HashSet<Message>();
 								messages.add(me1.getMessage());
 							} else {
@@ -282,43 +282,43 @@ public class CommunicationUtil {
 
 	/**
 	 * Verify if lifelines Ediparts are connected.
-	 * 
+	 *
 	 * @param lifeline1EditPart
-	 *        the first lifeline edit part
+	 *            the first lifeline edit part
 	 * @param lifeline2EditPart
-	 *        the second lifeline edit part
+	 *            the second lifeline edit part
 	 * @return the connection edit part if lifelines are connected, else it returns null
 	 */
 	@SuppressWarnings({ "rawtypes" })
 	public static ConnectionEditPart verifyIfLifelinesEPConnected(EditPart lifeline1EditPart, EditPart lifeline2EditPart) {
-		List sourceConnectionslifeline1 = ((GraphicalEditPart)lifeline1EditPart).getSourceConnections();
-		List targetConnectionslifeline2 = ((GraphicalEditPart)lifeline2EditPart).getTargetConnections();
-		List sourceConnectionslifeline2 = ((GraphicalEditPart)lifeline2EditPart).getSourceConnections();
-		List targetConnectionslifeline1 = ((GraphicalEditPart)lifeline1EditPart).getTargetConnections();
-		if((!sourceConnectionslifeline1.isEmpty()) && (!targetConnectionslifeline2.isEmpty())) {
+		List sourceConnectionslifeline1 = ((GraphicalEditPart) lifeline1EditPart).getSourceConnections();
+		List targetConnectionslifeline2 = ((GraphicalEditPart) lifeline2EditPart).getTargetConnections();
+		List sourceConnectionslifeline2 = ((GraphicalEditPart) lifeline2EditPart).getSourceConnections();
+		List targetConnectionslifeline1 = ((GraphicalEditPart) lifeline1EditPart).getTargetConnections();
+		if ((!sourceConnectionslifeline1.isEmpty()) && (!targetConnectionslifeline2.isEmpty())) {
 
-			for(int i = 0; i < sourceConnectionslifeline1.size(); i++) {
-				for(int j = 0; j < targetConnectionslifeline2.size(); j++) {
-					ConnectionEditPart link1 = (ConnectionEditPart)sourceConnectionslifeline1.get(i);
-					ConnectionEditPart link2 = (ConnectionEditPart)targetConnectionslifeline2.get(j);
-					//System.err.println("+-> ConnectionEditPart link1:" + link1);
-					if(link1.equals(link2)) {
-						//System.out.println("Source and target have existent same connection");
+			for (int i = 0; i < sourceConnectionslifeline1.size(); i++) {
+				for (int j = 0; j < targetConnectionslifeline2.size(); j++) {
+					ConnectionEditPart link1 = (ConnectionEditPart) sourceConnectionslifeline1.get(i);
+					ConnectionEditPart link2 = (ConnectionEditPart) targetConnectionslifeline2.get(j);
+					// System.err.println("+-> ConnectionEditPart link1:" + link1);
+					if (link1.equals(link2)) {
+						// System.out.println("Source and target have existent same connection");
 						return link1;
 					}
 
 				}
 			}
 
-		} else if((!sourceConnectionslifeline2.isEmpty()) && (!targetConnectionslifeline1.isEmpty())) {
+		} else if ((!sourceConnectionslifeline2.isEmpty()) && (!targetConnectionslifeline1.isEmpty())) {
 
-			for(int i = 0; i < sourceConnectionslifeline2.size(); i++) {
-				for(int j = 0; j < targetConnectionslifeline1.size(); j++) {
-					ConnectionEditPart link1 = (ConnectionEditPart)sourceConnectionslifeline2.get(i);
-					ConnectionEditPart link2 = (ConnectionEditPart)targetConnectionslifeline1.get(j);
-					//System.err.println("+-> ConnectionEditPart link1:" + link1);
-					if(link1.equals(link2)) {
-						//System.out.println("Source and target have existent same connection");
+			for (int i = 0; i < sourceConnectionslifeline2.size(); i++) {
+				for (int j = 0; j < targetConnectionslifeline1.size(); j++) {
+					ConnectionEditPart link1 = (ConnectionEditPart) sourceConnectionslifeline2.get(i);
+					ConnectionEditPart link2 = (ConnectionEditPart) targetConnectionslifeline1.get(j);
+					// System.err.println("+-> ConnectionEditPart link1:" + link1);
+					if (link1.equals(link2)) {
+						// System.out.println("Source and target have existent same connection");
 						return link1;
 					}
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,11 @@ public class DelegatingObservableValue extends DelegatingObservable<IObservableV
 
 	public static IObservableValue wrap(IObservableValue observable) {
 		IObservableValue result;
-		
-		if(observable instanceof IDelegatingObservable) {
-			// Already have a delegator.  Just create another like it
+
+		if (observable instanceof IDelegatingObservable) {
+			// Already have a delegator. Just create another like it
 			try {
-				result = (IObservableValue)observable.getClass().getDeclaredConstructor(IObservableValue.class).newInstance(observable);
+				result = observable.getClass().getDeclaredConstructor(IObservableValue.class).newInstance(observable);
 			} catch (Exception e) {
 				// Seems unlikely as I must have created the observable in the first place
 				throw new IllegalArgumentException("observable is an invalid implementation of IDelegatingObservable", e); //$NON-NLS-1$
@@ -51,7 +51,7 @@ public class DelegatingObservableValue extends DelegatingObservable<IObservableV
 		} else {
 			result = DelegatingInvocationHandler.wrap(new DelegatingObservableValue(observable), IObservableValue.class);
 		}
-		
+
 		return result;
 	}
 
@@ -100,13 +100,13 @@ public class DelegatingObservableValue extends DelegatingObservable<IObservableV
 	}
 
 	public void setValue(Object value) {
-		if(getDelegate() != null) {
+		if (getDelegate() != null) {
 			getDelegate().setValue(value);
 		}
 	}
 
 	private IValueChangeListener getForwardingValueChangeListener() {
-		if(forwardingValueChangeListener == null) {
+		if (forwardingValueChangeListener == null) {
 			forwardingValueChangeListener = new IValueChangeListener() {
 
 				public void handleValueChange(ValueChangeEvent event) {

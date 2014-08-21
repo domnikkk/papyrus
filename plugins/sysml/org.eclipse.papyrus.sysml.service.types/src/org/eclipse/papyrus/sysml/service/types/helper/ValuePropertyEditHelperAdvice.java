@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ public class ValuePropertyEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Check if the creation context is a {@link Block}.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.sysml.service.types.helper.AbstractStereotypedElementEditHelperAdvice#approveRequest(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return true if the request is approved
 	 */
@@ -46,17 +46,17 @@ public class ValuePropertyEditHelperAdvice extends AbstractEditHelperAdvice {
 	public boolean approveRequest(IEditCommandRequest request) {
 		boolean isApproved = super.approveRequest(request);
 
-		if((request != null) && (request instanceof GetEditContextRequest)) {
+		if ((request != null) && (request instanceof GetEditContextRequest)) {
 
 			// Retrieve the edit context from request
-			GetEditContextRequest editContextRequest = (GetEditContextRequest)request;
+			GetEditContextRequest editContextRequest = (GetEditContextRequest) request;
 
 			// Test if the edit context is a Block
-			if(editContextRequest.getEditContext() instanceof Element) {
-				Element contextElement = (Element)editContextRequest.getEditContext();
+			if (editContextRequest.getEditContext() instanceof Element) {
+				Element contextElement = (Element) editContextRequest.getEditContext();
 
 				IElementMatcher matcher = new BlockMatcher();
-				if(!matcher.matches(contextElement)) {
+				if (!matcher.matches(contextElement)) {
 					isApproved = false;
 				}
 			}
@@ -71,9 +71,10 @@ public class ValuePropertyEditHelperAdvice extends AbstractEditHelperAdvice {
 
 		return new ConfigureElementCommand(request) {
 
+			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-				Property element = (Property)request.getElementToConfigure();
-				if(element != null) {
+				Property element = (Property) request.getElementToConfigure();
+				if (element != null) {
 
 					// Set default name
 					String initializedName = NamedElementHelper.getDefaultNameWithIncrementFromBase("value", element.eContainer().eContents());

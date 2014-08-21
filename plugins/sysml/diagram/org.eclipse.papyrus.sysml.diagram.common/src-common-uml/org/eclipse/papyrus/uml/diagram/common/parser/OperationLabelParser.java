@@ -66,21 +66,21 @@ public class OperationLabelParser extends NamedElementLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
-		EObject eObject =EMFHelper.getEObject(element);
+		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof Operation)) {
+		if ((eObject != null) && (eObject instanceof Operation)) {
 
-			Operation operation = (Operation)eObject;
+			Operation operation = (Operation) eObject;
 
 			// manage visibility
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_VISIBILITY)) {
+			if (maskValues.contains(ICustomAppearance.DISP_VISIBILITY)) {
 				String visibility;
-				switch(operation.getVisibility().getValue()) {
+				switch (operation.getVisibility().getValue()) {
 				case VisibilityKind.PACKAGE:
 					visibility = "~";
 					break;
@@ -101,12 +101,12 @@ public class OperationLabelParser extends NamedElementLabelParser {
 			}
 
 			// manage name and parameters
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_NAME)) && (operation.isSetName())) {
+			if ((maskValues.contains(ICustomAppearance.DISP_NAME)) && (operation.isSetName())) {
 				String name = operation.getName();
 
 				StringBuffer params = new StringBuffer();
-				for(Parameter parameter : operation.getOwnedParameters()) {
-					if(parameter.getDirection() != ParameterDirectionKind.RETURN_LITERAL) {
+				for (Parameter parameter : operation.getOwnedParameters()) {
+					if (parameter.getDirection() != ParameterDirectionKind.RETURN_LITERAL) {
 						String currentParamLabel = ParameterLabelUtil.getPrintString(parameter, extractParameterMaskValues(maskValues));
 						params.append(params.length() == 0 ? currentParamLabel : ", " + currentParamLabel);
 					}
@@ -116,38 +116,38 @@ public class OperationLabelParser extends NamedElementLabelParser {
 			}
 
 			// manage type
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_TYPE))) {
+			if ((maskValues.contains(ICustomAppearance.DISP_TYPE))) {
 				String type = "<Undefined>";
-				if(operation.getType() != null) {
+				if (operation.getType() != null) {
 					type = operation.getType().getName();
 				}
 
 				// If type is undefined only show "<Undefined>" when explicitly asked.
-				if((maskValues.contains(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE)) || (!"<Undefined>".equals(type))) {
+				if ((maskValues.contains(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE)) || (!"<Undefined>".equals(type))) {
 					result = String.format(TYPE_FORMAT, result, type);
 				}
 			}
 
 			// manage modifier
-			if(maskValues.contains(ILabelPreferenceConstants.DISP_MODIFIERS)) {
+			if (maskValues.contains(ICustomAppearance.DISP_MODIFIERS)) {
 				StringBuffer sb = new StringBuffer();
-				if(operation.isAbstract()) {
+				if (operation.isAbstract()) {
 					sb.append(sb.length() == 0 ? "abstract" : ", abstract");
 				}
-				if(operation.isStatic()) {
+				if (operation.isStatic()) {
 					sb.append(sb.length() == 0 ? "static" : ", static");
 				}
-				if(operation.isUnique()) {
+				if (operation.isUnique()) {
 					sb.append(sb.length() == 0 ? "unique" : ", unique");
 				}
-				if(operation.isQuery()) {
+				if (operation.isQuery()) {
 					sb.append(sb.length() == 0 ? "query" : ", query");
 				}
-				if(operation.isLeaf()) {
+				if (operation.isLeaf()) {
 					sb.append(sb.length() == 0 ? "leaf" : ", leaf");
 				}
 
-				if(sb.length() != 0) {
+				if (sb.length() != 0) {
 					result = String.format(MODIFIER_FORMAT, result, sb.toString());
 				}
 			}
@@ -158,8 +158,8 @@ public class OperationLabelParser extends NamedElementLabelParser {
 	private static Collection<String> extractParameterMaskValues(Collection<String> operationMaskValues) {
 		Set<String> result = new HashSet<String>();
 
-		for(String maskValue : operationMaskValues) {
-			if(maskValue.startsWith(ICustomAppearance.PARAMETERS_PREFIX)) {
+		for (String maskValue : operationMaskValues) {
+			if (maskValue.startsWith(ICustomAppearance.PARAMETERS_PREFIX)) {
 				String newValue = StringHelper.firstToLower(maskValue.replace(ICustomAppearance.PARAMETERS_PREFIX, ""));
 				result.add(newValue);
 			}
@@ -174,10 +174,12 @@ public class OperationLabelParser extends NamedElementLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				return UMLPackage.eINSTANCE.getNamedElement_Visibility().equals(feature) || UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getBehavioralFeature_IsAbstract().equals(feature) || UMLPackage.eINSTANCE.getFeature_IsStatic().equals(feature) || UMLPackage.eINSTANCE.getOperation_IsUnique().equals(feature) || UMLPackage.eINSTANCE.getOperation_IsQuery().equals(feature) || UMLPackage.eINSTANCE.getRedefinableElement_IsLeaf().equals(feature) || parameterParser.isAffectingEvent(event, flags) || super.isAffectingEvent(event, flags);
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				return UMLPackage.eINSTANCE.getNamedElement_Visibility().equals(feature) || UMLPackage.eINSTANCE.getTypedElement_Type().equals(feature) || UMLPackage.eINSTANCE.getBehavioralFeature_IsAbstract().equals(feature)
+						|| UMLPackage.eINSTANCE.getFeature_IsStatic().equals(feature) || UMLPackage.eINSTANCE.getOperation_IsUnique().equals(feature) || UMLPackage.eINSTANCE.getOperation_IsQuery().equals(feature)
+						|| UMLPackage.eINSTANCE.getRedefinableElement_IsLeaf().equals(feature) || parameterParser.isAffectingEvent(event, flags) || super.isAffectingEvent(event, flags);
 			}
 		}
 
@@ -192,14 +194,14 @@ public class OperationLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof Operation)) {
-			Operation semElement = (Operation)element;
+		if ((element != null) && (element instanceof Operation)) {
+			Operation semElement = (Operation) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getType() != null) {
+			if (semElement.getType() != null) {
 				semanticElementsBeingParsed.add(semElement.getType());
 			}
-			for(Parameter parameter : semElement.getOwnedParameters()) {
+			for (Parameter parameter : semElement.getOwnedParameters()) {
 				semanticElementsBeingParsed.addAll(parameterParser.getSemanticElementsBeingParsed(parameter));
 			}
 		}
@@ -212,23 +214,23 @@ public class OperationLabelParser extends NamedElementLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>(5);
-		masks.put(ILabelPreferenceConstants.DISP_VISIBILITY, "Visibility");
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
-		masks.put(ILabelPreferenceConstants.DISP_TYPE, "Type");
+		masks.put(ICustomAppearance.DISP_VISIBILITY, "Visibility");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_TYPE, "Type");
 		masks.put(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE, "Show <Undefined> type");
-		masks.put(ILabelPreferenceConstants.DISP_MODIFIERS, "Modifiers");
+		masks.put(ICustomAppearance.DISP_MODIFIERS, "Modifiers");
 
-		masks.put(ILabelPreferenceConstants.DISP_PARAMETER_DIRECTION, "Parameter direction");
-		masks.put(ILabelPreferenceConstants.DISP_PARAMETER_NAME, "Parameter name");
-		masks.put(ILabelPreferenceConstants.DISP_PARAMETER_TYPE, "Parameter type");
-		masks.put(ILabelPreferenceConstants.DISP_PARAMETER_MULTIPLICITY, "Parameter multiplicity");
-		masks.put(ILabelPreferenceConstants.DISP_PARAMETER_DEFAULT, "Parameter default value");
-		masks.put(ILabelPreferenceConstants.DISP_PARAMETER_MODIFIERS, "Parameter modifiers");
+		masks.put(ICustomAppearance.DISP_PARAMETER_DIRECTION, "Parameter direction");
+		masks.put(ICustomAppearance.DISP_PARAMETER_NAME, "Parameter name");
+		masks.put(ICustomAppearance.DISP_PARAMETER_TYPE, "Parameter type");
+		masks.put(ICustomAppearance.DISP_PARAMETER_MULTIPLICITY, "Parameter multiplicity");
+		masks.put(ICustomAppearance.DISP_PARAMETER_DEFAULT, "Parameter default value");
+		masks.put(ICustomAppearance.DISP_PARAMETER_MODIFIERS, "Parameter modifiers");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_TYPE, ILabelPreferenceConstants.DISP_PARAMETER_DIRECTION, ILabelPreferenceConstants.DISP_PARAMETER_NAME, ILabelPreferenceConstants.DISP_PARAMETER_TYPE);
+		return Arrays.asList(ICustomAppearance.DISP_NAME, ICustomAppearance.DISP_TYPE, ICustomAppearance.DISP_PARAMETER_DIRECTION, ICustomAppearance.DISP_PARAMETER_NAME, ICustomAppearance.DISP_PARAMETER_TYPE);
 	}
 }

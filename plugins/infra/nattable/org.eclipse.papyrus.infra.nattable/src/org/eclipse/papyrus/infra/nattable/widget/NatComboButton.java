@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * 
+ *
  * This widget provides a Combo with a button
- * 
+ *
  */
 public class NatComboButton extends NatCombo {
 
@@ -43,15 +43,15 @@ public class NatComboButton extends NatCombo {
 	private Button button;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @see NatCombo#NatCombo(Composite, IStyle, int)
 	 * @param parent
 	 * @param cellStyle
 	 * @param style
 	 * @param buttonConfiguration
-	 *        the configuration of the button
+	 *            the configuration of the button
 	 */
 	public NatComboButton(Composite parent, IStyle cellStyle, int style, ButtonConfiguration buttonConfiguration) {
 		super(parent, cellStyle, style);
@@ -60,16 +60,16 @@ public class NatComboButton extends NatCombo {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @see NatCombo#NatCombo(Composite, IStyle, int, int)
 	 * @param parent
 	 * @param cellStyle
 	 * @param maxVisibleItems
 	 * @param style
 	 * @param buttonConfiguration
-	 *        the configuration of the button
+	 *            the configuration of the button
 	 */
 	public NatComboButton(Composite parent, IStyle cellStyle, int maxVisibleItems, int style, ButtonConfiguration buttonConfiguration) {
 		super(parent, cellStyle, maxVisibleItems, style);
@@ -78,9 +78,9 @@ public class NatComboButton extends NatCombo {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @see NatCombo#NatCombo(Composite, IStyle, int, boolean, int)
 	 * @param parent
 	 * @param cellStyle
@@ -88,7 +88,7 @@ public class NatComboButton extends NatCombo {
 	 * @param freeEdit
 	 * @param style
 	 * @param buttonConfiguration
-	 *        the configuration of the button
+	 *            the configuration of the button
 	 * @deprecated freeEdit parameter is deprecated. Use the SWT.READ_ONLY flag to specify freeEdit = false
 	 */
 	@Deprecated
@@ -98,11 +98,11 @@ public class NatComboButton extends NatCombo {
 		configureButton();
 	}
 
-	//NatCombo computes freeEdit from the style
-	//freeEdit == true <=> style | SWT.READ_ONLY = false
+	// NatCombo computes freeEdit from the style
+	// freeEdit == true <=> style | SWT.READ_ONLY = false
 	@Deprecated
 	private static int computeFreeEditStyle(boolean freeEdit, int style) {
-		if(freeEdit) {
+		if (freeEdit) {
 			return style & ~SWT.READ_ONLY;
 		} else {
 			return style | SWT.READ_ONLY;
@@ -111,17 +111,17 @@ public class NatComboButton extends NatCombo {
 
 	@Deprecated
 	private static int computeMultiSelectStyle(boolean multiselect, int style) {
-		if(multiselect) {
-			return style | SWT.MULTI; //Add the SWT.MULTI style
+		if (multiselect) {
+			return style | SWT.MULTI; // Add the SWT.MULTI style
 		} else {
-			return style & ~SWT.MULTI; //Remove the SWT.MULTI style
+			return style & ~SWT.MULTI; // Remove the SWT.MULTI style
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @see NatCombo#NatCombo(Composite, IStyle, int, boolean, boolean, int)
 	 * @param parent
 	 * @param cellStyle
@@ -130,8 +130,8 @@ public class NatComboButton extends NatCombo {
 	 * @param multiselect
 	 * @param style
 	 * @param buttonConfiguration
-	 *        the configuration of the button
-	 * 
+	 *            the configuration of the button
+	 *
 	 * @deprecated multiselect parameter is deprecated. Use the SWT.MULTI flag instead
 	 */
 	@Deprecated
@@ -140,9 +140,9 @@ public class NatComboButton extends NatCombo {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @see NatCombo#NatCombo(Composite, IStyle, int, boolean, boolean, int, Image)
 	 * @param parent
 	 * @param cellStyle
@@ -152,8 +152,8 @@ public class NatComboButton extends NatCombo {
 	 * @param style
 	 * @param iconImage
 	 * @param buttonConfiguration
-	 *        the configuration of the button
-	 * 
+	 *            the configuration of the button
+	 *
 	 * @deprecated The freeEdit and multiselect parameter. Use the SWT.READ_ONLY flag to specify freeEdit = False. Use SWT.MULTI flag to specify
 	 *             multiselect = True
 	 */
@@ -164,7 +164,7 @@ public class NatComboButton extends NatCombo {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param parent
 	 * @param cellStyle
 	 * @param maxVisibleItems
@@ -183,31 +183,31 @@ public class NatComboButton extends NatCombo {
 	 */
 	protected void configureButton() {
 		final String txt = buttonConfiguration.getText();
-		if(txt != null) {
+		if (txt != null) {
 			button.setText(txt);
 		}
 		final String toolTip = buttonConfiguration.getTooltipText();
-		if(toolTip != null) {
+		if (toolTip != null) {
 			button.setToolTipText(toolTip);
 		}
 
 		final Image img = buttonConfiguration.getImage();
-		if(img != null) {
+		if (img != null) {
 			button.setImage(img);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.widget.NatCombo#createTextControl(int)
-	 * 
+	 *
 	 * @param style
 	 */
 	@Override
 	protected void createTextControl(int style) {
 		super.createTextControl(style);
 		createButton();
-		//we change the layout because there is 3 elements now!
+		// we change the layout because there is 3 elements now!
 		GridLayout gridLayout = new GridLayout(3, false);
 		gridLayout.marginWidth = 0;
 		gridLayout.marginHeight = 0;
@@ -223,10 +223,12 @@ public class NatComboButton extends NatCombo {
 		button.setLayoutData(gridData);
 		button.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				runAction();
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
@@ -241,9 +243,9 @@ public class NatComboButton extends NatCombo {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.widget.NatCombo#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {

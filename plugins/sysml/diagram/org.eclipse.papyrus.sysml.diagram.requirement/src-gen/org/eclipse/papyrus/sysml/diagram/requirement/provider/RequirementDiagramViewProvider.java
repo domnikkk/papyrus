@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public class RequirementDiagramViewProvider extends AbstractViewProvider {
 	@Override
 	protected boolean provides(CreateDiagramViewOperation operation) {
 
-		if(ElementTypes.DIAGRAM_ID.equals(operation.getSemanticHint())) {
+		if (ElementTypes.DIAGRAM_ID.equals(operation.getSemanticHint())) {
 			return true;
 		}
 
@@ -34,7 +34,7 @@ public class RequirementDiagramViewProvider extends AbstractViewProvider {
 
 	@Override
 	protected Class<?> getDiagramViewClass(IAdaptable semanticAdapter, String diagramKind) {
-		if(ElementTypes.DIAGRAM_ID.equals(diagramKind)) {
+		if (ElementTypes.DIAGRAM_ID.equals(diagramKind)) {
 			return RequirementDiagramViewFactory.class;
 		}
 

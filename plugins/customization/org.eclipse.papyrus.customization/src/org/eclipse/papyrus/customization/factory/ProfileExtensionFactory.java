@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,21 +43,21 @@ public class ProfileExtensionFactory extends FileBasedExtensionFactory {
 	@Override
 	protected Element createExtension(FileBasedCustomizableElement element, PluginEditor editor) {
 		Element extension = super.createExtension(element, editor);
-		Profile profile = (Profile)element;
+		Profile profile = (Profile) element;
 
 		extension.setAttribute("name", profile.getName()); //$NON-NLS-1$
 
-		if(profile.getDescription() != null) {
+		if (profile.getDescription() != null) {
 			extension.setAttribute("description", profile.getDescription()); //$NON-NLS-1$
 		}
 
-		if(profile.getIconpath() != null && !profile.getIconpath().trim().equals("")) {
+		if (profile.getIconpath() != null && !profile.getIconpath().trim().equals("")) {
 			//extension.setAttribute("iconpath", profile.getIconpath()); //$NON-NLS-1$
 			copyIcon(profile.getIconpath(), editor);
 			extension.setAttribute("iconpath", getIconPath(profile.getIconpath())); //$NON-NLS-1$
 		}
 
-		if(profile.getProvider() != null) {
+		if (profile.getProvider() != null) {
 			extension.setAttribute("provider", profile.getProvider()); //$NON-NLS-1$
 		}
 
@@ -67,7 +67,7 @@ public class ProfileExtensionFactory extends FileBasedExtensionFactory {
 	protected void copyIcon(String path, PluginEditor editor) {
 		File sourceFile = FileUtil.getFile(path);
 		File targetFile = FileUtil.getWorkspaceFile("/" + editor.getProject().getName() + "/" + getIconPath(path)); //$NON-NLS-1$ //$NON-NLS-2$
-		if(!targetFile.getParentFile().exists()) {
+		if (!targetFile.getParentFile().exists()) {
 			targetFile.getParentFile().mkdirs();
 		}
 
@@ -84,10 +84,11 @@ public class ProfileExtensionFactory extends FileBasedExtensionFactory {
 		return "icons/" + getFileName(path); //$NON-NLS-1$
 	}
 
+	@Override
 	protected String getFileName(String path) {
 		String fileName;
 		path = path.replace("\\", "/");
-		if(path.indexOf("/") < 0) { //$NON-NLS-1$
+		if (path.indexOf("/") < 0) { //$NON-NLS-1$
 			fileName = path;
 		} else {
 			fileName = path.substring(path.lastIndexOf("/") + 1, path.length()); //$NON-NLS-1$

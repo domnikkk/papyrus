@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -70,7 +70,7 @@ public class BrowseProfilesDialog extends TrayDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 
 		Composite main = new Composite(contents, SWT.NONE);
 		main.setLayout(new GridLayout(2, false));
@@ -110,6 +110,7 @@ public class BrowseProfilesDialog extends TrayDialog {
 		return contents;
 	}
 
+	@Override
 	protected Control createContents(Composite parent) {
 		setHelpAvailable(false);
 		Control result = super.createContents(parent);
@@ -133,8 +134,8 @@ public class BrowseProfilesDialog extends TrayDialog {
 	}
 
 	protected void updateProfile() {
-		if((profileText != null) && !profileText.isDisposed()) {
-			if(selectedProfileURI == null) {
+		if ((profileText != null) && !profileText.isDisposed()) {
+			if (selectedProfileURI == null) {
 				profileText.setText(""); //$NON-NLS-1$
 			} else {
 				profileText.setText(selectedProfileURI.toString());

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ public interface IPapyrusPaletteConstant {
 	public final String PALETTE_DEFINITION = "paletteDefinition"; //$NON-NLS-1$
 
 	/** Papyrus palette definition full extension point identifier */
-	public final String PALETTE_DEFINITION_FULL_ID = Activator.ID + "." + PALETTE_DEFINITION; //$NON-NLS-1$ //$NON-NLS-2$
+	public final String PALETTE_DEFINITION_FULL_ID = Activator.ID + "." + PALETTE_DEFINITION; //$NON-NLS-1$ 
 
 	/** name for the field giving the path to the XML file */
 	public final String CONTENT = "content"; //$NON-NLS-1$
@@ -85,10 +85,10 @@ public interface IPapyrusPaletteConstant {
 
 	/** id for the preference store for local palette definitions */
 	public final String PALETTE_WORKSPACE_DEFINITIONS = "workspacePaletteDefinition";
-	
+
 	/** id for the preference store for workspace palette definitions based on model */
 	public final String EXTENDED_PALETTE_WORKSPACE_DEFINITIONS = "workspaceExtendedPaletteDefinition";
-	
+
 	/** id for the preference definitions */
 	public final String HIDDEN_PALETTES = "hiddenPalettes";
 

@@ -29,9 +29,9 @@ public class DiagramReconcilersReader extends RegistryReader {
 	private Map<String, Collection<DiagramReconciler>> myReconcilersRO;
 
 	public final static DiagramReconcilersReader getInstance() {
-		if(ourInstance == null) {
-			synchronized(DiagramReconcilersReader.class) {
-				if(ourInstance == null) {
+		if (ourInstance == null) {
+			synchronized (DiagramReconcilersReader.class) {
+				if (ourInstance == null) {
 					ourInstance = new DiagramReconcilersReader();
 				}
 			}
@@ -47,7 +47,7 @@ public class DiagramReconcilersReader extends RegistryReader {
 	 * @return unmodifiable map of loaded reconcilers
 	 */
 	public synchronized Map<String, Collection<DiagramReconciler>> load() {
-		if(myReconcilers == null) {
+		if (myReconcilers == null) {
 			myReconcilers = new HashMap<String, Collection<DiagramReconciler>>();
 			myReconcilersRO = Collections.unmodifiableMap(myReconcilers);
 			readRegistry();
@@ -62,7 +62,7 @@ public class DiagramReconcilersReader extends RegistryReader {
 	 */
 	@Override
 	protected boolean readElement(IConfigurationElement element, boolean add) {
-		if(!TAG_DIAGRAM_RECONCILER.equals(element.getName())) {
+		if (!TAG_DIAGRAM_RECONCILER.equals(element.getName())) {
 			return false;
 		}
 
@@ -71,30 +71,30 @@ public class DiagramReconcilersReader extends RegistryReader {
 		String sourceVersion = element.getAttribute(DiagramReconciler.ATTR_SOURCE_VERSION);
 		String targetVersion = element.getAttribute(DiagramReconciler.ATTR_TARGET_VERSION);
 
-		if(!checkNotEmpty(className)) {
+		if (!checkNotEmpty(className)) {
 			logMissingAttribute(element, DiagramReconciler.ATTR_RECONCILER_CLASS);
 			return false;
 		}
-		if(!checkNotEmpty(diagramTypeString)) {
+		if (!checkNotEmpty(diagramTypeString)) {
 			logMissingAttribute(element, DiagramReconciler.ATTR_DIAGRAM_TYPE);
 			return false;
 		}
-		if(!checkNotEmpty(sourceVersion)) {
+		if (!checkNotEmpty(sourceVersion)) {
 			logMissingAttribute(element, DiagramReconciler.ATTR_SOURCE_VERSION);
 			return false;
 		}
 
-		if(!checkNotEmpty(targetVersion)) {
+		if (!checkNotEmpty(targetVersion)) {
 			logMissingAttribute(element, DiagramReconciler.ATTR_TARGET_VERSION);
 			return false;
 		}
-		if(!DiagramVersioningUtils.isCurrentPapyrusVersion(targetVersion)) {
+		if (!DiagramVersioningUtils.isCurrentPapyrusVersion(targetVersion)) {
 			Activator.log.debug("Reconciler for outdated version is still registered but will never be executed: " + className); //$NON-NLS-1$
 			return false;
 		}
 
 
-		if(add) {
+		if (add) {
 			addDiagramReconciler(element);
 		} else {
 			removeDiagramReconciler(element);
@@ -109,11 +109,11 @@ public class DiagramReconcilersReader extends RegistryReader {
 
 	protected void addDiagramReconciler(IConfigurationElement element) {
 		DiagramReconciler reconciler = createReconciler(element);
-		if(reconciler != null) {
-			synchronized(myReconcilers) {
+		if (reconciler != null) {
+			synchronized (myReconcilers) {
 				String diagramType = reconciler.getDiagramVisualID();
 				Collection<DiagramReconciler> listForType = myReconcilers.get(diagramType);
-				if(listForType == null) {
+				if (listForType == null) {
 					listForType = new LinkedList<DiagramReconciler>();
 					myReconcilers.put(diagramType, listForType);
 				}
@@ -130,22 +130,22 @@ public class DiagramReconcilersReader extends RegistryReader {
 	protected void removeDiagramReconciler(IConfigurationElement element) {
 		String diagramTypeString = element.getAttribute(DiagramReconciler.ATTR_DIAGRAM_TYPE);
 		String fqn = element.getAttribute(DiagramReconciler.ATTR_RECONCILER_CLASS);
-		if(diagramTypeString == null || fqn == null) {
-			//we already have skipped this config at the time of addition
+		if (diagramTypeString == null || fqn == null) {
+			// we already have skipped this config at the time of addition
 			return;
 		}
 
-		synchronized(myReconcilers) {
+		synchronized (myReconcilers) {
 			Collection<DiagramReconciler> reconcilers = myReconcilers.get(diagramTypeString);
-			if(reconcilers != null) {
-				for(Iterator<DiagramReconciler> it = reconcilers.iterator(); it.hasNext();) {
+			if (reconcilers != null) {
+				for (Iterator<DiagramReconciler> it = reconcilers.iterator(); it.hasNext();) {
 					DiagramReconciler next = it.next();
-					if(fqn.equals(next.getClassFqn())) {
+					if (fqn.equals(next.getClassFqn())) {
 						it.remove();
 						break;
 					}
 				}
-				if(reconcilers.size() == 0) {
+				if (reconcilers.size() == 0) {
 					myReconcilers.remove(diagramTypeString);
 				}
 			}
@@ -154,15 +154,15 @@ public class DiagramReconcilersReader extends RegistryReader {
 
 	/**
 	 * Instantiates the reconciler defined by given extension
-	 * 
+	 *
 	 * @param element
 	 * @return configured reconciler instance or <code>null</code> if something bad happens (error is logged in this case)
 	 */
 	private DiagramReconciler createReconciler(IConfigurationElement element) {
 		try {
 			Object diagramReconcilerObject = element.createExecutableExtension(DiagramReconciler.ATTR_RECONCILER_CLASS);
-			if(diagramReconcilerObject instanceof DiagramReconciler) {
-				return (DiagramReconciler)diagramReconcilerObject;
+			if (diagramReconcilerObject instanceof DiagramReconciler) {
+				return (DiagramReconciler) diagramReconcilerObject;
 			} else {
 				Activator.log.error("Diagram reconciler extension does not extend mandatory DiagramReconciler base class: " + element.getAttribute(DiagramReconciler.ATTR_RECONCILER_CLASS), null); //$NON-NLS-1$
 			}

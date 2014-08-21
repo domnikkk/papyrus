@@ -5,9 +5,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  *     Fabien Giquel (Mia-Software) - initial API and implementation
  * *******************************************************************************
  *
@@ -23,7 +23,7 @@ package org.eclipse.papyrus.customization.properties.model.xwt.xwtxml;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,10 +36,10 @@ public interface Attribute extends Node {
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getAttribute_Value()
@@ -52,7 +52,9 @@ public interface Attribute extends Node {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Attribute#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()
 	 * @generated
 	 */

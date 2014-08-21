@@ -4,12 +4,12 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *     Christian W. Damus (CEA) - Fix failure to propagate stream handlers of URLs (CDO)
  *     Christian W. Damus (CEA) - bug 417409
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.internal.xml;
 
@@ -77,7 +77,7 @@ public class ElementManager {
 		this.parserFactory = SAXParserFactory.newInstance();
 		this.parserFactory.setNamespaceAware(true);
 		this.parserFactory.setValidating(true);
-		if(url != null) {
+		if (url != null) {
 			try {
 				documentRoot.init(null, url);
 			} catch (IOException e) {
@@ -98,13 +98,13 @@ public class ElementManager {
 			public void error(SAXParseException exception) throws SAXException {
 				Exception cause = exception.getException();
 				try {
-					if(cause != null) {
+					if (cause != null) {
 						XWT.getLogger().error(cause);
 					} else {
 						XWT.getLogger().error(exception);
 					}
 				} catch (Exception e) {
-					if(cause != null) {
+					if (cause != null) {
 						throw new SAXException(exception.getLocalizedMessage(), cause);
 					} else {
 						throw new SAXException(exception);
@@ -122,13 +122,13 @@ public class ElementManager {
 			public void fatalError(SAXParseException exception) throws SAXException {
 				Exception cause = exception.getException();
 				try {
-					if(cause != null) {
+					if (cause != null) {
 						XWT.getLogger().error(cause);
 					} else {
 						XWT.getLogger().error(exception);
 					}
 				} catch (Exception e) {
-					if(cause != null) {
+					if (cause != null) {
 						throw new SAXException(exception.getLocalizedMessage(), cause);
 					} else {
 						throw new SAXException(exception);
@@ -146,13 +146,13 @@ public class ElementManager {
 			public void warning(SAXParseException exception) throws SAXException {
 				Exception cause = exception.getException();
 				try {
-					if(cause != null) {
+					if (cause != null) {
 						XWT.getLogger().error(cause);
 					} else {
 						XWT.getLogger().error(exception);
 					}
 				} catch (Exception e) {
-					if(cause != null) {
+					if (cause != null) {
 						throw new SAXException(exception.getLocalizedMessage(), cause);
 					} else {
 						throw new SAXException(exception);
@@ -207,12 +207,12 @@ public class ElementManager {
 	public Element getRootElement() {
 		return rootElement;
 	}
-	
+
 	/**
 	 * Sets my root element (either loaded by me or perhaps obtained from some cache or other source).
-	 * 
+	 *
 	 * @param rootElement
-	 *        my root element
+	 *            my root element
 	 */
 	public void setRootElement(Element rootElement) {
 		this.rootElement = rootElement;
@@ -240,7 +240,7 @@ public class ElementManager {
 
 		reset();
 
-		if(callback == null) {
+		if (callback == null) {
 			// Initialize document root
 			documentRoot.init(null, url);
 
@@ -288,9 +288,9 @@ public class ElementManager {
 
 		// Initialize document root
 		PushbackInputStream pis = null;
-		if(stream != null) {
-			if(stream instanceof PushbackInputStream) {
-				pis = (PushbackInputStream)stream;
+		if (stream != null) {
+			if (stream instanceof PushbackInputStream) {
+				pis = (PushbackInputStream) stream;
 			} else {
 				pis = new PushbackInputStream(stream, 4);
 			}
@@ -299,7 +299,7 @@ public class ElementManager {
 		documentRoot.init(pis, url);
 
 		InputStream input = pis;
-		if(pis == null) {
+		if (pis == null) {
 			input = documentRoot.openStream();
 		}
 		doLoad(input);
@@ -329,7 +329,7 @@ public class ElementManager {
 	}
 
 	private void loadXData(InputStream stream) {
-		if(xDataElement != null) {
+		if (xDataElement != null) {
 			try {
 				SAXParser parser = parserFactory.newSAXParser();
 				parser.getXMLReader().setErrorHandler(errorHandler);
@@ -355,7 +355,7 @@ public class ElementManager {
 		elements.put(element.getId(), element);
 
 		// If it is a runnable element, add to top-level cache.
-		if(element.getParent() == null && rootElement == null) {
+		if (element.getParent() == null && rootElement == null) {
 			rootElement = element;
 		}
 	}
@@ -366,7 +366,7 @@ public class ElementManager {
 	protected void postElement(Element element) {
 		assert element != null;
 		assert elements.containsKey(element.getId()) : "Element not found in registry: " + element.getId();
-		if("xdata".equalsIgnoreCase(element.getName()) && IConstants.XWT_X_NAMESPACE.equals(element.getNamespace())) {
+		if ("xdata".equalsIgnoreCase(element.getName()) && IConstants.XWT_X_NAMESPACE.equals(element.getNamespace())) {
 			xDataElement = element;
 		}
 	}

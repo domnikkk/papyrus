@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.wizard.IWizard;
 import org.eclipse.jface.wizard.WizardPage;
+import org.eclipse.osgi.util.NLS;
 import org.eclipse.papyrus.uml.diagram.wizards.CreateModelWizard;
 import org.eclipse.papyrus.uml.diagram.wizards.Messages;
 import org.eclipse.papyrus.uml.diagram.wizards.SettingsHelper;
@@ -63,7 +64,7 @@ public class SelectDiagramCategoryPage extends WizardPage {
 
 	/**
 	 * Instantiates a new select diagram category page.
-	 * 
+	 *
 	 */
 	public SelectDiagramCategoryPage() {
 		this(false);
@@ -72,7 +73,8 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Instantiates a new select diagram category page.
 	 *
-	 * @param allowSeveralCategories the allow several categories
+	 * @param allowSeveralCategories
+	 *            the allow several categories
 	 */
 	public SelectDiagramCategoryPage(boolean allowSeveralCategories) {
 		super(PAGE_ID);
@@ -83,7 +85,8 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Sets the wizard.
 	 *
-	 * @param newWizard the new wizard
+	 * @param newWizard
+	 *            the new wizard
 	 * @see org.eclipse.jface.wizard.WizardPage#setWizard(org.eclipse.jface.wizard.IWizard)
 	 */
 	@Override
@@ -95,7 +98,7 @@ public class SelectDiagramCategoryPage extends WizardPage {
 			if (myAllowSeveralCategories) {
 				setDefaultDiagramCategories(defaultDiagramCategory);
 			} else {
-				setDefaultDiagramCategories(new String[]{defaultDiagramCategory[0]});
+				setDefaultDiagramCategories(new String[] { defaultDiagramCategory[0] });
 			}
 		}
 	}
@@ -103,7 +106,8 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Creates the control.
 	 *
-	 * @param parent the parent
+	 * @param parent
+	 *            the parent
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
 	 */
 	public void createControl(Composite parent) {
@@ -122,20 +126,21 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
-		
+
 		// re-validate in case the user changed the file name on previous page
 		setPageComplete(validatePage());
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * Gets the diagram category.
-	 * 
+	 *
 	 * @return the diagram category
-     * @deprecated Use getDiagramCategories() instead.
+	 * @deprecated Use getDiagramCategories() instead.
 	 */
+	@Deprecated
 	public String getDiagramCategory() {
-		if(!mySelectedDiagramCategoryIds.isEmpty()) {
+		if (!mySelectedDiagramCategoryIds.isEmpty()) {
 			return mySelectedDiagramCategoryIds.get(0);
 		}
 		return null;
@@ -153,7 +158,8 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Sets the default diagram categories.
 	 *
-	 * @param categories the new default diagram categories
+	 * @param categories
+	 *            the new default diagram categories
 	 */
 	protected final void setDefaultDiagramCategories(String[] categories) {
 		mySelectedDiagramCategoryIds.clear();
@@ -163,23 +169,23 @@ public class SelectDiagramCategoryPage extends WizardPage {
 
 	/**
 	 * Validate page.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	protected boolean validatePage() {
 		setMessage(null);
 		setErrorMessage(null);
 		String[] categories = getDiagramCategories();
-		if(categories == null || categories.length == 0) {
+		if (categories == null || categories.length == 0) {
 			setErrorMessage(Messages.SelectDiagramCategoryPage_select_one_category);
 			return false;
 		}
-		for(String newCategory : categories) {
-			if(!validateCategoryExists(newCategory)) {
+		for (String newCategory : categories) {
+			if (!validateCategoryExists(newCategory)) {
 				return false;
 			}
 		}
-		if(!validateFileExtension(categories)) {
+		if (!validateFileExtension(categories)) {
 			return false;
 		}
 		return true;
@@ -188,19 +194,20 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Validate file extension.
 	 *
-	 * @param categories the categories
+	 * @param categories
+	 *            the categories
 	 * @return true, if successful
 	 */
 	protected boolean validateFileExtension(String... categories) {
-		IStatus status = ((CreateModelWizard)getWizard()).diagramCategoryChanged(categories);
-		switch(status.getSeverity()) {
-		case Status.ERROR:
+		IStatus status = ((CreateModelWizard) getWizard()).diagramCategoryChanged(categories);
+		switch (status.getSeverity()) {
+		case IStatus.ERROR:
 			setErrorMessage(status.getMessage());
 			return false;
-		case Status.WARNING:
+		case IStatus.WARNING:
 			setMessage(status.getMessage(), IMessageProvider.WARNING);
 			break;
-		case Status.INFO:
+		case IStatus.INFO:
 			setMessage(status.getMessage(), IMessageProvider.INFORMATION);
 			break;
 		}
@@ -210,13 +217,14 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Validate category exists.
 	 *
-	 * @param newCategory the new category
+	 * @param newCategory
+	 *            the new category
 	 * @return true, if successful
 	 */
 	protected boolean validateCategoryExists(String newCategory) {
 		DiagramCategoryDescriptor selected = getDiagramCategoryMap().get(newCategory);
-		if(selected == null) {
-			setErrorMessage(Messages.bind(Messages.SelectDiagramCategoryPage_cannot_find_category,newCategory));
+		if (selected == null) {
+			setErrorMessage(NLS.bind(Messages.SelectDiagramCategoryPage_cannot_find_category, newCategory));
 			return false;
 		}
 		return true;
@@ -233,9 +241,9 @@ public class SelectDiagramCategoryPage extends WizardPage {
 
 	/**
 	 * Creates the diagram language form.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createDiagramCategoryForm(Composite composite) {
 		Group group = createGroup(composite, Messages.SelectDiagramCategoryPage_diagram_language_group);
@@ -245,11 +253,11 @@ public class SelectDiagramCategoryPage extends WizardPage {
 			private SelectionEvent prevEvent;
 
 			public void widgetSelected(SelectionEvent e) {
-				if(e == prevEvent) {
+				if (e == prevEvent) {
 					return;
 				}
-				Button selected = ((Button)e.widget);
-				diagramCategorySelected((String)selected.getData(), selected.getSelection());
+				Button selected = ((Button) e.widget);
+				diagramCategorySelected((String) selected.getData(), selected.getSelection());
 				setPageComplete(validatePage());
 				prevEvent = e;
 			}
@@ -258,7 +266,7 @@ public class SelectDiagramCategoryPage extends WizardPage {
 			}
 		};
 
-		for(DiagramCategoryDescriptor diagramCategoryDescriptor : getDiagramCategoryMap().values()) {
+		for (DiagramCategoryDescriptor diagramCategoryDescriptor : getDiagramCategoryMap().values()) {
 			Button button = createCategoryButton(diagramCategoryDescriptor, group);
 			button.addSelectionListener(listener);
 			myDiagramKindButtons.add(button);
@@ -269,13 +277,16 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Diagram category selected.
 	 *
-	 * @param category the category
-	 * @param checked the checked
+	 * @param category
+	 *            the category
+	 * @param checked
+	 *            the checked
 	 */
 	protected void diagramCategorySelected(String category, boolean checked) {
-		if(checked) {
-			if (!mySelectedDiagramCategoryIds.contains(category))
+		if (checked) {
+			if (!mySelectedDiagramCategoryIds.contains(category)) {
 				mySelectedDiagramCategoryIds.add(category);
+			}
 		} else {
 			mySelectedDiagramCategoryIds.remove(category);
 		}
@@ -291,15 +302,16 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Check buttons for.
 	 *
-	 * @param diagramCategories the diagram categories
+	 * @param diagramCategories
+	 *            the diagram categories
 	 */
 	protected void checkButtonsFor(String... diagramCategories) {
-		for(Button button : myDiagramKindButtons) {
+		for (Button button : myDiagramKindButtons) {
 			button.setSelection(false);
 		}
-		for(Button button : myDiagramKindButtons) {
-			for(String diagramCategory : diagramCategories) {
-				if(diagramCategory.equals(button.getData())) {
+		for (Button button : myDiagramKindButtons) {
+			for (String diagramCategory : diagramCategories) {
+				if (diagramCategory.equals(button.getData())) {
 					button.setSelection(true);
 				}
 			}
@@ -309,8 +321,10 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Creates the category button.
 	 *
-	 * @param diagramCategoryDescriptor the diagram category descriptor
-	 * @param group the group
+	 * @param diagramCategoryDescriptor
+	 *            the diagram category descriptor
+	 * @param group
+	 *            the group
 	 * @return the button
 	 */
 	private Button createCategoryButton(DiagramCategoryDescriptor diagramCategoryDescriptor, Group group) {
@@ -318,7 +332,7 @@ public class SelectDiagramCategoryPage extends WizardPage {
 		button.setText(diagramCategoryDescriptor.getLabel());
 		button.setData(diagramCategoryDescriptor.getId());
 		Image image = getImage(diagramCategoryDescriptor.getIcon());
-		if(image != null) {
+		if (image != null) {
 			button.setImage(image);
 		}
 		button.setToolTipText(diagramCategoryDescriptor.getDescription());
@@ -328,11 +342,12 @@ public class SelectDiagramCategoryPage extends WizardPage {
 	/**
 	 * Gets the image.
 	 *
-	 * @param imageDescriptor the image descriptor
+	 * @param imageDescriptor
+	 *            the image descriptor
 	 * @return the image
 	 */
 	private static Image getImage(ImageDescriptor imageDescriptor) {
-		if(imageDescriptor != null) {
+		if (imageDescriptor != null) {
 			return new Image(null, imageDescriptor.getImageData());
 		}
 		return null;
@@ -340,11 +355,11 @@ public class SelectDiagramCategoryPage extends WizardPage {
 
 	/**
 	 * Creates the group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @return the group
 	 */
 	private static Group createGroup(Composite parent, String name) {

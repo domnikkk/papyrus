@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,27 +24,28 @@ import org.eclipse.uml2.uml.Association;
 
 /**
  * This is the command in charge to supress the association and associated properties
- * 
+ *
  * @author Patrick Tessier
  */
 public class DestroyAssociationCommand extends DestroyElementCommand {
 
 	/**
 	 * constructor of theis command
-	 * 
+	 *
 	 * @param request
-	 *        see {@link DestroyElementRequest}
+	 *            see {@link DestroyElementRequest}
 	 */
 	public DestroyAssociationCommand(DestroyElementRequest request) {
 		super(request);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Association association = (Association)getElementToDestroy();
+		Association association = (Association) getElementToDestroy();
 		DestroyElementRequest request = new DestroyElementRequest(getEditingDomain(), association.getMemberEnds().get(1), true);
 		DestroyElementCommand c = new DestroyElementCommand(request);
 		try {

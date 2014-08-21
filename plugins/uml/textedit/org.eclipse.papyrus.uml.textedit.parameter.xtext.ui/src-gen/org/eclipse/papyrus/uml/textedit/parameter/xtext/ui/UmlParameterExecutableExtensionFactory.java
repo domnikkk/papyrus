@@ -12,7 +12,7 @@ import org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.internal.UmlParameter
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlParameterExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class UmlParameterExecutableExtensionFactory extends AbstractGuiceAwareEx
 	protected Bundle getBundle() {
 		return UmlParameterActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlParameterActivator.getInstance().getInjector(UmlParameterActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PARAMETER_XTEXT_UMLPARAMETER);
 	}
-	
+
 }

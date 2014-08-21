@@ -23,6 +23,7 @@ public class CompositeWidgetTypeImpl extends WidgetTypeImpl implements Composite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CompositeWidgetTypeImpl() {
@@ -32,6 +33,7 @@ public class CompositeWidgetTypeImpl extends WidgetTypeImpl implements Composite
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public class CompositeWidgetTypeImpl extends WidgetTypeImpl implements Composite
 		return EnvironmentPackage.Literals.COMPOSITE_WIDGET_TYPE;
 	}
 
-} //CompositeWidgetTypeImpl
+} // CompositeWidgetTypeImpl

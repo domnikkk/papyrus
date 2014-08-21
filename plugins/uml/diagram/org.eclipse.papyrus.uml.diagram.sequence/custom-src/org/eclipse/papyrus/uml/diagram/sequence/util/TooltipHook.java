@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class TooltipHook {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public TooltipHook(EditPartViewer viewer) {
 		this.viewer = viewer;
@@ -59,42 +59,44 @@ public class TooltipHook {
 	}
 
 	public boolean isHooked(EditPartViewer viewer) {
-		if(viewer == null) {
+		if (viewer == null) {
 			return false;
 		}
 		return viewer == this.viewer;
 	}
 
 	private void hookViewer() {
-		if(viewer == null) {
+		if (viewer == null) {
 			return;
 		}
 		try {
 			Method m = GraphicalViewerImpl.class.getDeclaredMethod("getLightweightSystem");
 			m.setAccessible(true);
-			LightweightSystem lws = (LightweightSystem)m.invoke(viewer);
+			LightweightSystem lws = (LightweightSystem) m.invoke(viewer);
 			Field f = LightweightSystem.class.getDeclaredField("dispatcher");
 			f.setAccessible(true);
-			EventDispatcher dispatcher = (EventDispatcher)f.get(lws);
-			if(dispatcher instanceof SWTEventDispatcher) {
+			EventDispatcher dispatcher = (EventDispatcher) f.get(lws);
+			if (dispatcher instanceof SWTEventDispatcher) {
 				Field df = SWTEventDispatcher.class.getDeclaredField("toolTipHelper");
 				df.setAccessible(true);
-				toolTipHelper = (ToolTipHelper)df.get(dispatcher);
+				toolTipHelper = (ToolTipHelper) df.get(dispatcher);
 			}
-			if(toolTipHelper == null) {
+			if (toolTipHelper == null) {
 				return;
 			}
 			Method m2 = PopUpHelper.class.getDeclaredMethod("getShell");
 			m2.setAccessible(true);
-			toolTipShell = (Shell)m2.invoke(toolTipHelper);
+			toolTipShell = (Shell) m2.invoke(toolTipHelper);
 		} catch (Exception e) {
 		}
-		if(toolTipShell != null) {
+		if (toolTipShell != null) {
 			toolTipShell.addListener(SWT.Hide, hideListener = new Listener() {
 
+				@Override
 				public void handleEvent(Event event) {
 					event.display.asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
 							manageToolTip();
 						}
@@ -103,9 +105,11 @@ public class TooltipHook {
 			});
 			toolTipShell.addListener(SWT.Show, showListener = new Listener() {
 
+				@Override
 				public void handleEvent(Event event) {
 					event.display.asyncExec(new Runnable() {
 
+						@Override
 						public void run() {
 							toolTipSource = getToolTipSource();
 						}
@@ -116,27 +120,27 @@ public class TooltipHook {
 	}
 
 	private IFigure getToolTipSource() {
-		if(toolTipHelper == null) {
+		if (toolTipHelper == null) {
 			return null;
 		}
 		try {
 			Field f = ToolTipHelper.class.getDeclaredField("currentTipSource");
 			f.setAccessible(true);
-			return (IFigure)f.get(toolTipHelper);
+			return (IFigure) f.get(toolTipHelper);
 		} catch (Exception e) {
 			return null;
 		}
 	}
 
 	private void manageToolTip() {
-		if(toolTipSource == null) {
+		if (toolTipSource == null) {
 			hideToolTip();
 			return;
 		}
 		IFigure currentToolTipSource = getToolTipSource();
-		if(toolTipSource != currentToolTipSource) {
+		if (toolTipSource != currentToolTipSource) {
 			hideToolTip();
-		} else if(toolTipShell != null && !toolTipShell.isDisposed() && !toolTipShell.isVisible()) {
+		} else if (toolTipShell != null && !toolTipShell.isDisposed() && !toolTipShell.isVisible()) {
 			displayToolTip();
 		}
 	}
@@ -152,7 +156,7 @@ public class TooltipHook {
 	}
 
 	private void hideToolTip() {
-		if(toolTipDisplayed) {
+		if (toolTipDisplayed) {
 			toolTipShell.removeListener(SWT.Hide, hideListener);
 			toolTipShell.setVisible(false);
 			toolTipShell.addListener(SWT.Hide, hideListener);
@@ -164,7 +168,7 @@ public class TooltipHook {
 	public void dispose() {
 		toolTipSource = null;
 		toolTipHelper = null;
-		if(toolTipShell != null && !toolTipShell.isDisposed()) {
+		if (toolTipShell != null && !toolTipShell.isDisposed()) {
 			hideToolTip();
 			toolTipShell.removeListener(SWT.Hide, hideListener);
 			toolTipShell.removeListener(SWT.Show, showListener);

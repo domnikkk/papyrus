@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,69 +28,74 @@ public class CSSStandardDiagramImpl extends StandardDiagramImpl implements CSSDi
 	private CSSDiagramStyle diagramStyle;
 
 	protected CSSDiagramStyle getDiagramStyle() {
-		if(diagramStyle == null) {
+		if (diagramStyle == null) {
 			diagramStyle = new CSSDiagramStyleDelegate(this, getEngine());
 		}
 		return diagramStyle;
 	}
 
 	protected ExtendedCSSEngine getEngine() {
-		if(engine == null) {
-			engine = ((CSSDiagramImpl)getDiagram()).getEngine();
+		if (engine == null) {
+			engine = ((CSSDiagramImpl) getDiagram()).getEngine();
 		}
 		return engine;
 	}
 
 
-	//////////////////////////////////////////
-	//	Forwards accesses to CSS properties	//
-	//////////////////////////////////////////
+	// ////////////////////////////////////////
+	// Forwards accesses to CSS properties //
+	// ////////////////////////////////////////
 
 
+	@Override
 	public int getCSSPageX() {
 		int value = super.getPageX();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageX(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageX(), value)) {
 			return value;
 		} else {
 			return getDiagramStyle().getCSSPageX();
 		}
 	}
 
+	@Override
 	public int getCSSPageY() {
 		int value = super.getPageY();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageY(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageY(), value)) {
 			return value;
 		} else {
 			return getDiagramStyle().getCSSPageY();
 		}
 	}
 
+	@Override
 	public int getCSSPageWidth() {
 		int value = super.getPageWidth();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageWidth(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageWidth(), value)) {
 			return value;
 		} else {
 			return getDiagramStyle().getCSSPageWidth();
 		}
 	}
 
+	@Override
 	public int getCSSPageHeight() {
 		int value = super.getPageHeight();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageHeight(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getPageStyle_PageHeight(), value)) {
 			return value;
 		} else {
 			return getDiagramStyle().getCSSPageHeight();
 		}
 	}
 
+	@Override
 	public java.lang.String getCSSDescription() {
 		java.lang.String value = super.getDescription();
 
-		if(ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getDescriptionStyle_Description(), value)) {
+		if (ForceValueHelper.isSet(this, NotationPackage.eINSTANCE.getDescriptionStyle_Description(), value)) {
 			return value;
 		} else {
 			return getDiagramStyle().getCSSDescription();
@@ -100,39 +105,39 @@ public class CSSStandardDiagramImpl extends StandardDiagramImpl implements CSSDi
 
 	@Override
 	public int getPageX() {
-		//return super.getPageX();
+		// return super.getPageX();
 		return getCSSPageX();
 	}
 
 	@Override
 	public int getPageY() {
-		//return super.getPageY();
+		// return super.getPageY();
 		return getCSSPageY();
 	}
 
 	@Override
 	public int getPageWidth() {
-		//return super.getPageWidth();
+		// return super.getPageWidth();
 		return getCSSPageWidth();
 	}
 
 	@Override
 	public int getPageHeight() {
-		//return super.getPageHeight();
+		// return super.getPageHeight();
 		return getCSSPageHeight();
 	}
 
 	@Override
 	public java.lang.String getDescription() {
-		//return super.getDescription();
+		// return super.getDescription();
 		return getCSSDescription();
 	}
 
 
 
-	////////////////////////////////////////////////
-	//	Implements a setter for each CSS property //
-	////////////////////////////////////////////////	
+	// //////////////////////////////////////////////
+	// Implements a setter for each CSS property //
+	// //////////////////////////////////////////////
 
 	@Override
 	public void setVisible(boolean value) {
@@ -214,9 +219,9 @@ public class CSSStandardDiagramImpl extends StandardDiagramImpl implements CSSDi
 		ForceValueHelper.setValue(this, feature, value);
 	}
 
-	//////////////////////////////////
-	//	Implements the unset method //
-	//////////////////////////////////
+	// ////////////////////////////////
+	// Implements the unset method //
+	// ////////////////////////////////
 
 	@Override
 	public void eUnset(int featureId) {

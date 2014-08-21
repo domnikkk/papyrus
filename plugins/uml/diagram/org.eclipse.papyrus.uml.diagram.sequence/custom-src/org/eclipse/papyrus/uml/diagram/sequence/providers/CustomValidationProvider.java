@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,13 +47,14 @@ public class CustomValidationProvider extends UMLValidationProvider {
 		/**
 		 * select all moved edit parts which are linked to an occurrence specification
 		 */
+		@Override
 		public boolean selects(Object object) {
-			if(object instanceof Bounds) {
+			if (object instanceof Bounds) {
 				// validate on resize or move
-				object = ((Bounds)object).eContainer();
+				object = ((Bounds) object).eContainer();
 			}
-			if(object instanceof View && PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID((View)object))) {
-				final int id = UMLVisualIDRegistry.getVisualID((View)object);
+			if (object instanceof View && PackageEditPart.MODEL_ID.equals(UMLVisualIDRegistry.getModelID((View) object))) {
+				final int id = UMLVisualIDRegistry.getVisualID((View) object);
 				boolean result = false;
 				// Lifeline
 				result = result || id == LifelineEditPart.VISUAL_ID;
@@ -65,10 +66,10 @@ public class CustomValidationProvider extends UMLValidationProvider {
 				result = result || id == CombinedFragment2EditPart.VISUAL_ID;
 				result = result || id == InteractionOperandEditPart.VISUAL_ID;
 				// Time related : do nothing, the real event support will be also moved
-				//result = result || id == TimeConstraintEditPart.VISUAL_ID;
-				//result = result || id == TimeObservationEditPart.VISUAL_ID;
-				//result = result || id == DurationConstraintEditPart.VISUAL_ID;
-				//result = result || id == DurationObservationEditPart.VISUAL_ID;
+				// result = result || id == TimeConstraintEditPart.VISUAL_ID;
+				// result = result || id == TimeObservationEditPart.VISUAL_ID;
+				// result = result || id == DurationConstraintEditPart.VISUAL_ID;
+				// result = result || id == DurationObservationEditPart.VISUAL_ID;
 				// Messages
 				result = result || id == MessageEditPart.VISUAL_ID;
 				result = result || id == Message2EditPart.VISUAL_ID;
@@ -78,7 +79,7 @@ public class CustomValidationProvider extends UMLValidationProvider {
 				result = result || id == Message6EditPart.VISUAL_ID;
 				result = result || id == Message7EditPart.VISUAL_ID;
 				// General Ordering : do nothing, the real event support will be also moved
-				//result = result || id == GeneralOrderingEditPart.VISUAL_ID;
+				// result = result || id == GeneralOrderingEditPart.VISUAL_ID;
 				return result;
 			}
 			return false;
@@ -90,6 +91,7 @@ public class CustomValidationProvider extends UMLValidationProvider {
 		/**
 		 * do not presume on target type
 		 */
+		@Override
 		public IStatus validate(IValidationContext ctx) {
 			// do not presume on target type
 			EObject target = ctx.getTarget();

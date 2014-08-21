@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -22,13 +22,9 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * Abstract class for the tree menu item. Each Menu Item had an handler which
- * provide the methods: <li>{@link #isEnabled()} : return if the menu item has
- * to be displayed.</li> <li>{@link #onMenuItemSelection()} : this method will
- * be execute when the item is selected.</li> <li>
- * {@link #getAssociatedTreeItemClass()} : links this class with an
- * {@link AbstractTreeItem}. This item will be instantiate when the user select
- * this element on the tree menu.</li>
- * 
+ * provide the methods: <li>{@link #isEnabled()} : return if the menu item has to be displayed.</li> <li>{@link #onMenuItemSelection()} : this method will be execute when the item is selected.</li> <li>
+ * {@link #getAssociatedTreeItemClass()} : links this class with an {@link AbstractTreeItem}. This item will be instantiate when the user select this element on the tree menu.</li>
+ *
  * @see AbstractTreeItem
  * @see AbstractTreeMenu
  * @since 0.3
@@ -66,7 +62,7 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 
 	/**
 	 * Create a new item {@link TreeItem} into the parent.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the item to create.
 	 */
@@ -76,7 +72,7 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 
 	/**
 	 * Create a new item {@link TreeItem} into the parent.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the item to create.
 	 */
@@ -86,7 +82,7 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 
 	/**
 	 * Create a new item {@link TreeItem} into the parent.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the item to create.
 	 */
@@ -114,7 +110,7 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 
 	/**
 	 * Find the treeItem searching into the all tree.
-	 * 
+	 *
 	 * @param treeItem
 	 *            the treeItem to find.
 	 * @return the corresponding {@link AbstractTreeItem}. Null if not.
@@ -172,7 +168,7 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 
 	/**
 	 * Set a new text to the last item created.
-	 * 
+	 *
 	 * @param newText
 	 *            the new text to set.
 	 */
@@ -184,8 +180,7 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 	}
 
 	/**
-	 * When a modification append, this method has to be called and the method
-	 * {@link #notifyChanged()} is called for the listener of this Tree.
+	 * When a modification append, this method has to be called and the method {@link #notifyChanged()} is called for the listener of this Tree.
 	 */
 	public void fireChanged() {
 		final ExtendedTreeMenu<T> treeMenu = getTreeMenu();
@@ -196,9 +191,8 @@ public abstract class AbstractTreeMenuItem<T extends Object> extends
 
 	/**
 	 * Return the class associated with this menu item. When this menu item will
-	 * be selected, a new instance of this associated {@link AbstractTreeItem}
-	 * will be created.
-	 * 
+	 * be selected, a new instance of this associated {@link AbstractTreeItem} will be created.
+	 *
 	 * @return the associated class.
 	 */
 	public abstract Class<? extends AbstractTreeItem<T>> getAssociatedTreeItemClass();

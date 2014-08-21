@@ -20,6 +20,7 @@ public class ConstructorInjectionImpl extends AbstractMethodInjectionImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstructorInjectionImpl() {
@@ -29,6 +30,7 @@ public class ConstructorInjectionImpl extends AbstractMethodInjectionImpl implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ConstructorInjectionImpl extends AbstractMethodInjectionImpl implem
 		return ServicedescriptorsPackage.Literals.CONSTRUCTOR_INJECTION;
 	}
 
-} //ConstructorInjectionImpl
+} // ConstructorInjectionImpl

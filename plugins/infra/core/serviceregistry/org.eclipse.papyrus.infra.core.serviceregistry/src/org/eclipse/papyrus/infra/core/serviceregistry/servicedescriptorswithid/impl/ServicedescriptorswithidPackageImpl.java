@@ -36,12 +36,14 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements ServicedescriptorswithidPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass registryIdDescEClass = null;
@@ -49,6 +51,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass serviceIdDescEClass = null;
@@ -56,6 +59,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass abstractServiceIdDescEClass = null;
@@ -63,6 +67,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass serviceSetIdDescEClass = null;
@@ -70,6 +75,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass featureInjectionEClass = null;
@@ -77,6 +83,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass aliasIdDescEClass = null;
@@ -84,6 +91,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass idDescriptorsEClass = null;
@@ -91,6 +99,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass propertyInjectionEClass = null;
@@ -98,6 +107,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass injectedValueEClass = null;
@@ -105,6 +115,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass methodInjectionEClass = null;
@@ -112,6 +123,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass abstractMethodInjectionEClass = null;
@@ -119,6 +131,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass parameterInjectionEClass = null;
@@ -126,6 +139,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass injectedServiceEClass = null;
@@ -133,6 +147,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass opaqueInjectedValueEClass = null;
@@ -140,6 +155,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass constructorInjectionEClass = null;
@@ -147,6 +163,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass serviceFactoryIdDescEClass = null;
@@ -154,6 +171,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum startupKindEEnum = null;
@@ -161,6 +179,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType stringEDataType = null;
@@ -168,6 +187,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType booleanEDataType = null;
@@ -175,6 +195,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType objectEDataType = null;
@@ -182,20 +203,17 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType intEDataType = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#eNS_URI
 	 * @see #init()
@@ -208,27 +226,31 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link ServicedescriptorswithidPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link ServicedescriptorswithidPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static ServicedescriptorswithidPackage init() {
-		if (isInited) return (ServicedescriptorswithidPackage)EPackage.Registry.INSTANCE.getEPackage(ServicedescriptorswithidPackage.eNS_URI);
+		if (isInited) {
+			return (ServicedescriptorswithidPackage) EPackage.Registry.INSTANCE.getEPackage(ServicedescriptorswithidPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		ServicedescriptorswithidPackageImpl theServicedescriptorswithidPackage = (ServicedescriptorswithidPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ServicedescriptorswithidPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ServicedescriptorswithidPackageImpl());
+		ServicedescriptorswithidPackageImpl theServicedescriptorswithidPackage = (ServicedescriptorswithidPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ServicedescriptorswithidPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new ServicedescriptorswithidPackageImpl());
 
 		isInited = true;
 
@@ -241,7 +263,7 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 		// Mark meta-data to indicate it can't be changed
 		theServicedescriptorswithidPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ServicedescriptorswithidPackage.eNS_URI, theServicedescriptorswithidPackage);
 		return theServicedescriptorswithidPackage;
@@ -250,8 +272,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getRegistryIdDesc() {
 		return registryIdDescEClass;
 	}
@@ -259,62 +283,76 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistryIdDesc_Name() {
-		return (EAttribute)registryIdDescEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) registryIdDescEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistryIdDesc_Description() {
-		return (EAttribute)registryIdDescEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) registryIdDescEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistryIdDesc_IsUnique() {
-		return (EAttribute)registryIdDescEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) registryIdDescEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistryIdDesc_Sets() {
-		return (EAttribute)registryIdDescEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) registryIdDescEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistryIdDesc_Extends() {
-		return (EAttribute)registryIdDescEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) registryIdDescEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getRegistryIdDesc_Parents() {
-		return (EAttribute)registryIdDescEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) registryIdDescEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceIdDesc() {
 		return serviceIdDescEClass;
 	}
@@ -322,35 +360,43 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceIdDesc_StartKind() {
-		return (EAttribute)serviceIdDescEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) serviceIdDescEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceIdDesc_Classname() {
-		return (EAttribute)serviceIdDescEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) serviceIdDescEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceIdDesc_Injections() {
-		return (EReference)serviceIdDescEClass.getEStructuralFeatures().get(2);
+		return (EReference) serviceIdDescEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractServiceIdDesc() {
 		return abstractServiceIdDescEClass;
 	}
@@ -358,62 +404,76 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractServiceIdDesc_Name() {
-		return (EAttribute)abstractServiceIdDescEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) abstractServiceIdDescEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractServiceIdDesc_Namespace() {
-		return (EReference)abstractServiceIdDescEClass.getEStructuralFeatures().get(1);
+		return (EReference) abstractServiceIdDescEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractServiceIdDesc_Description() {
-		return (EAttribute)abstractServiceIdDescEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) abstractServiceIdDescEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractServiceIdDesc_DependsOn() {
-		return (EAttribute)abstractServiceIdDescEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) abstractServiceIdDescEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractServiceIdDesc_Priority() {
-		return (EAttribute)abstractServiceIdDescEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) abstractServiceIdDescEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractServiceIdDesc_BundleID() {
-		return (EAttribute)abstractServiceIdDescEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) abstractServiceIdDescEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceSetIdDesc() {
 		return serviceSetIdDescEClass;
 	}
@@ -421,44 +481,54 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceSetIdDesc_Name() {
-		return (EAttribute)serviceSetIdDescEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) serviceSetIdDescEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceSetIdDesc_Extends() {
-		return (EAttribute)serviceSetIdDescEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) serviceSetIdDescEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getServiceSetIdDesc_Description() {
-		return (EAttribute)serviceSetIdDescEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) serviceSetIdDescEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getServiceSetIdDesc_ServiceDescriptors() {
-		return (EReference)serviceSetIdDescEClass.getEStructuralFeatures().get(3);
+		return (EReference) serviceSetIdDescEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getFeatureInjection() {
 		return featureInjectionEClass;
 	}
@@ -466,17 +536,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getFeatureInjection_Description() {
-		return (EAttribute)featureInjectionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) featureInjectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getAliasIdDesc() {
 		return aliasIdDescEClass;
 	}
@@ -484,17 +558,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAliasIdDesc_AliasedService() {
-		return (EAttribute)aliasIdDescEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) aliasIdDescEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getIdDescriptors() {
 		return idDescriptorsEClass;
 	}
@@ -502,26 +580,32 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getIdDescriptors_Registries() {
-		return (EReference)idDescriptorsEClass.getEStructuralFeatures().get(0);
+		return (EReference) idDescriptorsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getIdDescriptors_ServiceSets() {
-		return (EReference)idDescriptorsEClass.getEStructuralFeatures().get(1);
+		return (EReference) idDescriptorsEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getPropertyInjection() {
 		return propertyInjectionEClass;
 	}
@@ -529,26 +613,32 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getPropertyInjection_PropertyName() {
-		return (EAttribute)propertyInjectionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) propertyInjectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getPropertyInjection_Values() {
-		return (EReference)propertyInjectionEClass.getEStructuralFeatures().get(1);
+		return (EReference) propertyInjectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getInjectedValue() {
 		return injectedValueEClass;
 	}
@@ -556,17 +646,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInjectedValue_Description() {
-		return (EAttribute)injectedValueEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) injectedValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getMethodInjection() {
 		return methodInjectionEClass;
 	}
@@ -574,17 +668,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getMethodInjection_MethodName() {
-		return (EAttribute)methodInjectionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) methodInjectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractMethodInjection() {
 		return abstractMethodInjectionEClass;
 	}
@@ -592,17 +690,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractMethodInjection_Parameters() {
-		return (EReference)abstractMethodInjectionEClass.getEStructuralFeatures().get(0);
+		return (EReference) abstractMethodInjectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getParameterInjection() {
 		return parameterInjectionEClass;
 	}
@@ -610,26 +712,32 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getParameterInjection_ParameterName() {
-		return (EAttribute)parameterInjectionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) parameterInjectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EReference getParameterInjection_Values() {
-		return (EReference)parameterInjectionEClass.getEStructuralFeatures().get(1);
+		return (EReference) parameterInjectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getInjectedService() {
 		return injectedServiceEClass;
 	}
@@ -637,17 +745,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getInjectedService_ServiceName() {
-		return (EAttribute)injectedServiceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) injectedServiceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getOpaqueInjectedValue() {
 		return opaqueInjectedValueEClass;
 	}
@@ -655,17 +767,21 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EAttribute getOpaqueInjectedValue_Value() {
-		return (EAttribute)opaqueInjectedValueEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) opaqueInjectedValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getConstructorInjection() {
 		return constructorInjectionEClass;
 	}
@@ -673,8 +789,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EClass getServiceFactoryIdDesc() {
 		return serviceFactoryIdDescEClass;
 	}
@@ -682,8 +800,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EEnum getStartupKind() {
 		return startupKindEEnum;
 	}
@@ -691,8 +811,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getString() {
 		return stringEDataType;
 	}
@@ -700,8 +822,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getboolean() {
 		return booleanEDataType;
 	}
@@ -709,8 +833,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getObject() {
 		return objectEDataType;
 	}
@@ -718,8 +844,10 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EDataType getint() {
 		return intEDataType;
 	}
@@ -727,28 +855,34 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ServicedescriptorswithidFactory getServicedescriptorswithidFactory() {
-		return (ServicedescriptorswithidFactory)getEFactoryInstance();
+		return (ServicedescriptorswithidFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -829,19 +963,23 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -876,11 +1014,13 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 		initEClass(serviceIdDescEClass, ServiceIdDesc.class, "ServiceIdDesc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getServiceIdDesc_StartKind(), this.getStartupKind(), "startKind", "lazy", 1, 1, ServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getServiceIdDesc_Classname(), this.getString(), "classname", null, 1, 1, ServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getServiceIdDesc_Injections(), this.getFeatureInjection(), null, "injections", null, 0, -1, ServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getServiceIdDesc_Injections(), this.getFeatureInjection(), null, "injections", null, 0, -1, ServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(abstractServiceIdDescEClass, AbstractServiceIdDesc.class, "AbstractServiceIdDesc", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractServiceIdDesc_Name(), this.getString(), "name", null, 1, 1, AbstractServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAbstractServiceIdDesc_Namespace(), this.getServiceSetIdDesc(), this.getServiceSetIdDesc_ServiceDescriptors(), "namespace", null, 1, 1, AbstractServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractServiceIdDesc_Namespace(), this.getServiceSetIdDesc(), this.getServiceSetIdDesc_ServiceDescriptors(), "namespace", null, 1, 1, AbstractServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAbstractServiceIdDesc_Description(), this.getString(), "description", null, 1, 1, AbstractServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAbstractServiceIdDesc_DependsOn(), this.getString(), "dependsOn", null, 0, -1, AbstractServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbstractServiceIdDesc_Priority(), this.getint(), "priority", null, 1, 1, AbstractServiceIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -890,7 +1030,8 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 		initEAttribute(getServiceSetIdDesc_Name(), this.getString(), "name", null, 1, 1, ServiceSetIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getServiceSetIdDesc_Extends(), this.getString(), "extends", null, 0, -1, ServiceSetIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getServiceSetIdDesc_Description(), this.getString(), "description", null, 1, 1, ServiceSetIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getServiceSetIdDesc_ServiceDescriptors(), this.getAbstractServiceIdDesc(), this.getAbstractServiceIdDesc_Namespace(), "serviceDescriptors", null, 0, -1, ServiceSetIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getServiceSetIdDesc_ServiceDescriptors(), this.getAbstractServiceIdDesc(), this.getAbstractServiceIdDesc_Namespace(), "serviceDescriptors", null, 0, -1, ServiceSetIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = addEOperation(serviceSetIdDescEClass, this.getAbstractServiceIdDesc(), "getService", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getObject(), "serviceId", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -911,12 +1052,15 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 		initEAttribute(getAliasIdDesc_AliasedService(), this.getString(), "aliasedService", null, 1, 1, AliasIdDesc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(idDescriptorsEClass, IdDescriptors.class, "IdDescriptors", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIdDescriptors_Registries(), this.getRegistryIdDesc(), null, "registries", null, 0, -1, IdDescriptors.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIdDescriptors_ServiceSets(), this.getServiceSetIdDesc(), null, "serviceSets", null, 0, -1, IdDescriptors.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIdDescriptors_Registries(), this.getRegistryIdDesc(), null, "registries", null, 0, -1, IdDescriptors.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
+		initEReference(getIdDescriptors_ServiceSets(), this.getServiceSetIdDesc(), null, "serviceSets", null, 0, -1, IdDescriptors.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(propertyInjectionEClass, PropertyInjection.class, "PropertyInjection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPropertyInjection_PropertyName(), this.getString(), "propertyName", null, 1, 1, PropertyInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getPropertyInjection_Values(), this.getInjectedValue(), null, "values", null, 0, -1, PropertyInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPropertyInjection_Values(), this.getInjectedValue(), null, "values", null, 0, -1, PropertyInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(injectedValueEClass, InjectedValue.class, "InjectedValue", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInjectedValue_Description(), this.getString(), "description", null, 1, 1, InjectedValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -925,11 +1069,13 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 		initEAttribute(getMethodInjection_MethodName(), this.getString(), "methodName", null, 1, 1, MethodInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(abstractMethodInjectionEClass, AbstractMethodInjection.class, "AbstractMethodInjection", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAbstractMethodInjection_Parameters(), this.getParameterInjection(), null, "parameters", null, 0, -1, AbstractMethodInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAbstractMethodInjection_Parameters(), this.getParameterInjection(), null, "parameters", null, 0, -1, AbstractMethodInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(parameterInjectionEClass, ParameterInjection.class, "ParameterInjection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameterInjection_ParameterName(), this.getString(), "parameterName", null, 1, 1, ParameterInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getParameterInjection_Values(), this.getInjectedValue(), null, "values", null, 0, -1, ParameterInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getParameterInjection_Values(), this.getInjectedValue(), null, "values", null, 0, -1, ParameterInjection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				!IS_ORDERED);
 
 		initEClass(injectedServiceEClass, InjectedService.class, "InjectedService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInjectedService_ServiceName(), this.getString(), "serviceName", null, 1, 1, InjectedService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -956,4 +1102,4 @@ public class ServicedescriptorswithidPackageImpl extends EPackageImpl implements
 		createResource(eNS_URI);
 	}
 
-} //ServicedescriptorswithidPackageImpl
+} // ServicedescriptorswithidPackageImpl

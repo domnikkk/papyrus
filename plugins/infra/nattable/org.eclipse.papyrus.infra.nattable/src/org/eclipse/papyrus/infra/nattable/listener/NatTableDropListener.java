@@ -39,9 +39,9 @@ import org.eclipse.swt.dnd.DropTargetListener;
 import org.eclipse.swt.graphics.Point;
 
 /**
- * 
+ *
  * This listener allow to manage the drop inside the table
- * 
+ *
  */
 public class NatTableDropListener implements DropTargetListener {
 
@@ -56,60 +56,64 @@ public class NatTableDropListener implements DropTargetListener {
 	private LocationValue dropKindValue;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param manager
-	 *        the table manager
+	 *            the table manager
 	 */
 	public NatTableDropListener(final INattableModelManager manager) {
 		this.manager = manager;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.dnd.DropTargetListener#dragEnter(org.eclipse.swt.dnd.DropTargetEvent)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void dragEnter(final DropTargetEvent event) {
 		validateDropEvent(event);
 	}
 
 	protected void validateDropEvent(final DropTargetEvent event) {
 		event.operations = DND.DROP_COPY | DND.DROP_MOVE;
-		
+
 		// Move and Link semantics don't make sense for tables which, like diagrams, are visualizations
 		// of objects also visualized in other places (such as the Model Explorer)
 		event.detail = DND.DROP_COPY;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.dnd.DropTargetListener#dragLeave(org.eclipse.swt.dnd.DropTargetEvent)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void dragLeave(final DropTargetEvent event) {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.dnd.DropTargetListener#dragOperationChanged(org.eclipse.swt.dnd.DropTargetEvent)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void dragOperationChanged(final DropTargetEvent event) {
 		validateDropEvent(event);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.dnd.DropTargetListener#dragOver(org.eclipse.swt.dnd.DropTargetEvent)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void dragOver(final DropTargetEvent event) {
 		validateDropEvent(event);
 		this.dropKindValue = null;
@@ -119,24 +123,24 @@ public class NatTableDropListener implements DropTargetListener {
 		}
 		this.dropKindValue = this.manager.getLocationInTheTable(new Point(event.x, event.y));
 		int drop = DND.DROP_NONE;
-		switch(this.dropKindValue.getKind()) {
+		switch (this.dropKindValue.getKind()) {
 		case AFTER_COLUMN_HEADER:
-			if(this.manager.canDropColumnsElement(droppedElements)) {
+			if (this.manager.canDropColumnsElement(droppedElements)) {
 				drop = event.detail;
 			}
 			break;
 		case AFTER_ROW_HEADER:
-			if(this.manager.canDropRowElement(droppedElements)) {
+			if (this.manager.canDropRowElement(droppedElements)) {
 				drop = event.detail;
 			}
 			break;
 		case COLUMN_HEADER:
-			if(this.manager.canInsertColumns(droppedElements, this.dropKindValue.getColumnIndex())) {
+			if (this.manager.canInsertColumns(droppedElements, this.dropKindValue.getColumnIndex())) {
 				drop = event.detail;
 			}
 			break;
 		case ROW_HEADER:
-			if(this.manager.canInsertRow(droppedElements, this.dropKindValue.getRowIndex())) {
+			if (this.manager.canInsertRow(droppedElements, this.dropKindValue.getRowIndex())) {
 				drop = event.detail;
 			}
 			break;
@@ -145,10 +149,10 @@ public class NatTableDropListener implements DropTargetListener {
 			int columnIndex = this.dropKindValue.getColumnIndex();
 			final Object rowElement = this.manager.getRowElement(rowIndex);
 			final Object columnElement = this.manager.getColumnElement(columnIndex);
-			if(CellManagerFactory.INSTANCE.isCellEditable(columnElement, rowElement)) {
+			if (CellManagerFactory.INSTANCE.isCellEditable(columnElement, rowElement)) {
 				final TransactionalEditingDomain domain = getEditingDomain();
 				final Command cmd = getDropSetValueCommand(domain, droppedElements);
-				if(cmd.canExecute()) {
+				if (cmd.canExecute()) {
 					drop = event.detail;
 				}
 			}
@@ -162,34 +166,34 @@ public class NatTableDropListener implements DropTargetListener {
 		}
 		event.detail = drop;
 	}
-	
+
 	protected List<Object> getDroppedObjects(DropTargetEvent event) {
 		final LocalTransfer localTransfer = LocalTransfer.getInstance();
 		final Object data = localTransfer.nativeToJava(event.currentDataType);
 		IStructuredSelection structuredSelection = null;
-		if(data instanceof IStructuredSelection) {
-			structuredSelection = (IStructuredSelection)data;
-		} else if(LocalSelectionTransfer.getTransfer().isSupportedType(event.currentDataType)) {
+		if (data instanceof IStructuredSelection) {
+			structuredSelection = (IStructuredSelection) data;
+		} else if (LocalSelectionTransfer.getTransfer().isSupportedType(event.currentDataType)) {
 			// Try the local selection transfer
 			ISelection selection = LocalSelectionTransfer.getTransfer().getSelection();
-			if(selection instanceof IStructuredSelection) {
-				structuredSelection = (IStructuredSelection)selection;
+			if (selection instanceof IStructuredSelection) {
+				structuredSelection = (IStructuredSelection) selection;
 			}
 		}
-		if(structuredSelection == null) {
+		if (structuredSelection == null) {
 			return Collections.emptyList();
 		}
 		return new ArrayList<Object>(extractSelectedObjects(structuredSelection));
 	}
-	
+
 	protected Collection<?> extractSelectedObjects(IStructuredSelection structuredSelection) {
 		return structuredSelection.toList();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param droppedElements
-	 *        the dropped elements
+	 *            the dropped elements
 	 * @return
 	 *         the command to set the value in the selected cell
 	 */
@@ -198,16 +202,16 @@ public class NatTableDropListener implements DropTargetListener {
 		int columnIndex = this.dropKindValue.getColumnIndex();
 		final Object rowElement = this.manager.getRowElement(rowIndex);
 		final Object columnElement = this.manager.getColumnElement(columnIndex);
-		if(CellManagerFactory.INSTANCE.isCellEditable(columnElement, rowElement)) {
+		if (CellManagerFactory.INSTANCE.isCellEditable(columnElement, rowElement)) {
 			Object newValue = null;
 			final Object currentValue = CellManagerFactory.INSTANCE.getCrossValue(columnElement, rowElement, this.manager);
-			if(currentValue instanceof Collection<?>) {
-				//the dropped elements will be added to the current Value in case of multivalued cell
+			if (currentValue instanceof Collection<?>) {
+				// the dropped elements will be added to the current Value in case of multivalued cell
 				final Collection<Object> tmpNewValue = new ArrayList<Object>();
-				tmpNewValue.addAll((Collection<?>)currentValue);
+				tmpNewValue.addAll((Collection<?>) currentValue);
 				tmpNewValue.addAll(droppedElements);
 				newValue = tmpNewValue;
-			} else if(droppedElements.size() == 1) {
+			} else if (droppedElements.size() == 1) {
 				newValue = droppedElements.get(0);
 			} else {
 				newValue = droppedElements;
@@ -219,17 +223,18 @@ public class NatTableDropListener implements DropTargetListener {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.dnd.DropTargetListener#drop(org.eclipse.swt.dnd.DropTargetEvent)
-	 * 
+	 *
 	 * @param event
 	 */
+	@Override
 	public void drop(final DropTargetEvent event) {
-		//we drop the elements into the table
+		// we drop the elements into the table
 		final List<Object> droppedElements = getDroppedObjects(event);
 		if (!droppedElements.isEmpty()) {
-			if(this.dropKindValue != null) {
-				switch(this.dropKindValue.getKind()) {
+			if (this.dropKindValue != null) {
+				switch (this.dropKindValue.getKind()) {
 				case AFTER_COLUMN_HEADER:
 					this.manager.addColumns(droppedElements);
 					break;
@@ -245,7 +250,7 @@ public class NatTableDropListener implements DropTargetListener {
 				case CELL:
 					final TransactionalEditingDomain domain = getEditingDomain();
 					final Command cmd = getDropSetValueCommand(domain, droppedElements);
-					if(cmd.canExecute()) {
+					if (cmd.canExecute()) {
 						domain.getCommandStack().execute(cmd);
 					}
 					break;
@@ -260,12 +265,13 @@ public class NatTableDropListener implements DropTargetListener {
 	}
 
 
+	@Override
 	public void dropAccept(final DropTargetEvent event) {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the Transactional Editing Domain to use to edit the model
 	 */
@@ -278,7 +284,7 @@ public class NatTableDropListener implements DropTargetListener {
 			Activator.log.error(e);
 		}
 
-		if(registry != null) {
+		if (registry != null) {
 			try {
 				domain = registry.getService(TransactionalEditingDomain.class);
 			} catch (ServiceException e) {

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -40,6 +40,7 @@ public class ConnectorLinkLabelEditPart extends AbstractElementLabelEditPart {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "Label"; //$NON-NLS-1$
 	}
@@ -47,6 +48,7 @@ public class ConnectorLinkLabelEditPart extends AbstractElementLabelEditPart {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

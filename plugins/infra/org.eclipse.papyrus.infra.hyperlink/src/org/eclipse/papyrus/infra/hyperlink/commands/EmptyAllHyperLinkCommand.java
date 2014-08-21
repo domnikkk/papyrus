@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,22 +32,22 @@ public class EmptyAllHyperLinkCommand extends AbstractDeleteHyperLinkCommand {
 	/**
 	 * Instantiates a new delete hyper link command used to suppress a link in
 	 * the view
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param link
-	 *        the localization of the link
+	 *            the localization of the link
 	 */
 	public EmptyAllHyperLinkCommand(TransactionalEditingDomain domain, EModelElement object) {
 		super(domain, object);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.commands.AbstractDeleteHyperLinkCommand#getEAnnotationsToRemove()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -55,10 +55,10 @@ public class EmptyAllHyperLinkCommand extends AbstractDeleteHyperLinkCommand {
 		List<EAnnotation> toRemove = super.getEAnnotationsToRemove();
 		Iterator<EAnnotation> iter = getObject().getEAnnotations().iterator();
 		// look for interesting eannotations
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			EAnnotation currentAnnotation = iter.next();
 			String source = currentAnnotation.getSource();
-			if(source.startsWith(HyperLinkConstants.PAPYRUS_HYPERLINK_PREFIX)) {
+			if (source.startsWith(HyperLinkConstants.PAPYRUS_HYPERLINK_PREFIX)) {
 				toRemove.add(currentAnnotation);
 			}
 		}

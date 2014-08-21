@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.uml.diagram.component.edit.parts.UsageEditPart;
 public class CustomUsageEditPart extends UsageEditPart {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param view
@@ -37,10 +37,10 @@ public class CustomUsageEditPart extends UsageEditPart {
 	@Override
 	public void refresh() {
 		super.refresh();
-		if((getTarget() instanceof InterfaceEditPart)||(getTarget() instanceof InterfaceEditPartPCN)){
+		if ((getTarget() instanceof InterfaceEditPart) || (getTarget() instanceof InterfaceEditPartPCN)) {
 			getPrimaryShape().displayAsAlink();
 		}
-		else{
+		else {
 			getPrimaryShape().displayAsUMLShape();
 		}
 	}

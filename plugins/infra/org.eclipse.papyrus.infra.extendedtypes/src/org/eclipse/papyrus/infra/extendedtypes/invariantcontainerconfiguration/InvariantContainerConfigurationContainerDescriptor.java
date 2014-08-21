@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,9 +12,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.infra.extendedtypes.invariantcontainerconfiguration;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
@@ -44,7 +42,7 @@ public class InvariantContainerConfigurationContainerDescriptor implements IInva
 	 * {@inheritDoc}
 	 */
 	public IElementMatcher getMatcher() {
-		if(matcher == null) {
+		if (matcher == null) {
 			matcher = createMatcher();
 		}
 		return matcher;
@@ -57,39 +55,39 @@ public class InvariantContainerConfigurationContainerDescriptor implements IInva
 		return new IElementMatcher() {
 
 			public boolean matches(EObject eObject) {
-				if(eObject==null) {
+				if (eObject == null) {
 					return false;
 				}
-				
+
 				IElementType[] types = ElementTypeRegistry.getInstance().getAllTypesMatching(eObject, sharedContext);
-				if(types == null || types.length == 0) {
+				if (types == null || types.length == 0) {
 					return false;
 				}
 				boolean isValid = false;
-				for(HierarchyPermission permission : permissions) {
+				for (HierarchyPermission permission : permissions) {
 					boolean isPermitted = permission.isIsPermitted();
 					String childType = permission.getChildType();
 					boolean isStrict = permission.isIsStrict();
 					IElementType type = ElementTypeRegistry.getInstance().getType(childType);
-					if(type != null) {
-						if(isStrict) {
-							if(types[0].equals(type)) {
-								if(isPermitted) {
+					if (type != null) {
+						if (isStrict) {
+							if (types[0].equals(type)) {
+								if (isPermitted) {
 									isValid = true;
 								}
-							} else if(!isPermitted) {
+							} else if (!isPermitted) {
 								isValid = false;
 							}
 						} else {
-							// not strict. The super types of typeToCreate should contain the permission type if permitted, or not contain  the permission type if not permitted
+							// not strict. The super types of typeToCreate should contain the permission type if permitted, or not contain the permission type if not permitted
 							List<IElementType> allTypes = Arrays.asList(types);
-							if(allTypes.contains(type)) {
-								if(isPermitted) {
+							if (allTypes.contains(type)) {
+								if (isPermitted) {
 									isValid = true;
-								} else if(!isPermitted) {
+								} else if (!isPermitted) {
 									isValid = false;
 								}
-							} 
+							}
 						}
 					}
 				}

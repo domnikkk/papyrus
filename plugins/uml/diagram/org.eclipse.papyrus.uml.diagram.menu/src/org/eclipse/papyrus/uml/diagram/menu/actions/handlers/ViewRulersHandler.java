@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,18 +17,18 @@ import org.eclipse.gmf.runtime.diagram.ui.internal.properties.WorkspaceViewerPro
 
 /**
  * Handler for the View Ruler Grid Action
- * 
- * 
- * 
+ *
+ *
+ *
  */
 @SuppressWarnings("restriction")
 public class ViewRulersHandler extends AbstractViewHandler {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ViewRulersHandler() {
 		super(WorkspaceViewerProperties.VIEWRULERS);

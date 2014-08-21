@@ -34,7 +34,7 @@ import org.eclipse.papyrus.domaincontextcodegen.ElementTypes;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.ElementTypesImpl#getDomain <em>Domain</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
@@ -43,7 +43,7 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	 * The cached value of the '{@link #getTypes() <em>Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypes()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementTypesImpl() {
@@ -63,7 +63,7 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -74,11 +74,11 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ElementType> getTypes() {
-		if(types == null) {
+		if (types == null) {
 			types = new EObjectContainmentWithInverseEList<ElementType>(ElementType.class, this, DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES, DomaincontextcodegenPackage.ELEMENT_TYPE__OWNER);
 		}
 		return types;
@@ -87,64 +87,71 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomainContext getDomain() {
-		if(eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN)
+		if (eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN) {
 			return null;
-		return (DomainContext)eContainer();
+		}
+		return (DomainContext) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetDomain(DomainContext newDomain, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDomain, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newDomain, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDomain(DomainContext newDomain) {
-		if(newDomain != eInternalContainer() || (eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN && newDomain != null)) {
-			if(EcoreUtil.isAncestor(this, newDomain))
+		if (newDomain != eInternalContainer() || (eContainerFeatureID() != DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN && newDomain != null)) {
+			if (EcoreUtil.isAncestor(this, newDomain)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if(eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if(newDomain != null)
-				msgs = ((InternalEObject)newDomain).eInverseAdd(this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, DomainContext.class, msgs);
+			}
+			if (newDomain != null) {
+				msgs = ((InternalEObject) newDomain).eInverseAdd(this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, DomainContext.class, msgs);
+			}
 			msgs = basicSetDomain(newDomain, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN, newDomain, newDomain));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getTypes()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getTypes()).basicAdd(otherEnd, msgs);
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
-			if(eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			return basicSetDomain((DomainContext)otherEnd, msgs);
+			}
+			return basicSetDomain((DomainContext) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -152,14 +159,14 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES:
-			return ((InternalEList<?>)getTypes()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getTypes()).basicRemove(otherEnd, msgs);
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
 			return basicSetDomain(null, msgs);
 		}
@@ -169,12 +176,12 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch(eContainerFeatureID()) {
+		switch (eContainerFeatureID()) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
 			return eInternalContainer().eInverseRemove(this, DomaincontextcodegenPackage.DOMAIN_CONTEXT__ELEMENT_TYPES, DomainContext.class, msgs);
 		}
@@ -184,12 +191,12 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES:
 			return getTypes();
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
@@ -201,19 +208,19 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES:
 			getTypes().clear();
-			getTypes().addAll((Collection<? extends ElementType>)newValue);
+			getTypes().addAll((Collection<? extends ElementType>) newValue);
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
-			setDomain((DomainContext)newValue);
+			setDomain((DomainContext) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,17 +229,17 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES:
 			getTypes().clear();
 			return;
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
-			setDomain((DomainContext)null);
+			setDomain((DomainContext) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -241,12 +248,12 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__TYPES:
 			return types != null && !types.isEmpty();
 		case DomaincontextcodegenPackage.ELEMENT_TYPES__DOMAIN:
@@ -255,4 +262,4 @@ public class ElementTypesImpl extends EObjectImpl implements ElementTypes {
 		return super.eIsSet(featureID);
 	}
 
-} //ElementTypesImpl
+} // ElementTypesImpl

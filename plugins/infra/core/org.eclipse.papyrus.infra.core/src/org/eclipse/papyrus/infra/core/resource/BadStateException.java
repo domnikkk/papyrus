@@ -1,25 +1,25 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.resource;
 
 /**
  * Exception thrown when a method is called while the object state is not ready
  * for this call.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class BadStateException extends Exception {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public BadStateException() {
 		super();
@@ -28,7 +28,7 @@ public class BadStateException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 * @param cause
 	 */
@@ -39,7 +39,7 @@ public class BadStateException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param message
 	 */
 	public BadStateException(String message) {
@@ -49,7 +49,7 @@ public class BadStateException extends Exception {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param cause
 	 */
 	public BadStateException(Throwable cause) {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -74,10 +74,10 @@ public class CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy exte
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		EObject selectedEObject = req.getElementToDestroy();
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-		if(provider != null) {
+		if (provider != null) {
 			// Retrieve delete command from the Element Edit service
 			ICommand deleteCommand = provider.getEditCommand(req);
-			if(deleteCommand != null) {
+			if (deleteCommand != null) {
 				return new ICommandProxy(deleteCommand);
 			}
 		}
@@ -98,34 +98,34 @@ public class CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy exte
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4003 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4006 == req.getElementType()) {
+		if (UMLElementTypes.Message_4006 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage4CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4007 == req.getElementType()) {
+		if (UMLElementTypes.Message_4007 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage5CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
 			return null;
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
 			return null;
 		}
-		if(UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
+		if (UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
 			return getGEFWrapper(new CustomGeneralOrderingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -136,34 +136,34 @@ public class CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy exte
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_4003 == req.getElementType()) {
+		if (UMLElementTypes.Message_4003 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4004 == req.getElementType()) {
+		if (UMLElementTypes.Message_4004 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage2CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4005 == req.getElementType()) {
+		if (UMLElementTypes.Message_4005 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage3CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4006 == req.getElementType()) {
+		if (UMLElementTypes.Message_4006 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage4CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4007 == req.getElementType()) {
+		if (UMLElementTypes.Message_4007 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage5CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4008 == req.getElementType()) {
+		if (UMLElementTypes.Message_4008 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage6CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.Message_4009 == req.getElementType()) {
+		if (UMLElementTypes.Message_4009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessage7CreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_4010 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_4011 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
+		if (UMLElementTypes.GeneralOrdering_4012 == req.getElementType()) {
 			return getGEFWrapper(new CustomGeneralOrderingCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -172,12 +172,12 @@ public class CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy exte
 	/**
 	 * Returns command to reorient EClass based link. New link target or source
 	 * should be the domain model element associated with this node.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case MessageEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomMessageReorientCommand(req));
 		case Message2EditPart.VISUAL_ID:
@@ -201,12 +201,12 @@ public class CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy exte
 	/**
 	 * Returns command to reorient EReference based link. New link target or source
 	 * should be the domain model element associated with this node.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case CommentAnnotatedElementEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomCommentAnnotatedElementReorientCommand(req));
 		case ConstraintConstrainedElementEditPart.VISUAL_ID:
@@ -217,16 +217,16 @@ public class CustomDestructionOccurrenceSpecificationItemSemanticEditPolicy exte
 
 	/**
 	 * This method has been overridden to also delete linked time/duration views
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
 		CompoundCommand deleteViewsCommand = new CompoundCommand();
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View)getHost().getModel()));
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
 		deleteViewsCommand.add(deleteViewCommand);
 		SequenceDeleteHelper.completeDeleteDestructionOccurenceViewCommand(deleteViewsCommand, getEditingDomain(), getHost());
-		if(mainCommand == null) {
+		if (mainCommand == null) {
 			return deleteViewsCommand;
 		} else {
 			return mainCommand.chain(deleteViewsCommand);

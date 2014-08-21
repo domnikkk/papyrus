@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,20 +17,21 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.jface.viewers.LabelProvider;
 
 /**
- *this is label provider to display the name of an Eclass 
+ * this is label provider to display the name of an Eclass
  *
  */
 
 public class MetaclassLabelProvider extends LabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.LabelProvider#getText(java.lang.Object)
 	 *
 	 */
+	@Override
 	public String getText(Object element) {
-		if(element instanceof EClass){
-			return ((EClass)element).getName();
+		if (element instanceof EClass) {
+			return ((EClass) element).getName();
 		}
 		else {
 			return super.getText(element);

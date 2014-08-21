@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.sysml.statemachines.StatemachinesFactory
  * @model kind="package"
  * @generated
@@ -43,7 +43,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -51,7 +51,7 @@ public interface StatemachinesPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Dummy</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see java.lang.String
 		 * @see org.eclipse.papyrus.sysml.statemachines.internal.impl.StatemachinesPackageImpl#getDummy()
 		 * @generated
@@ -63,7 +63,7 @@ public interface StatemachinesPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "statemachines";
@@ -71,7 +71,7 @@ public interface StatemachinesPackage extends EPackage {
 	/**
 	 * The package namespace URI.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/0.7.0/SysML/StateMachines";
@@ -79,7 +79,7 @@ public interface StatemachinesPackage extends EPackage {
 	/**
 	 * The package namespace name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "StateMachines";
@@ -88,7 +88,7 @@ public interface StatemachinesPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	StatemachinesPackage eINSTANCE = org.eclipse.papyrus.sysml.statemachines.internal.impl.StatemachinesPackageImpl.init();
@@ -96,7 +96,7 @@ public interface StatemachinesPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Dummy</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see java.lang.String
 	 * @see org.eclipse.papyrus.sysml.statemachines.internal.impl.StatemachinesPackageImpl#getDummy()
 	 * @generated
@@ -106,7 +106,7 @@ public interface StatemachinesPackage extends EPackage {
 	/**
 	 * Returns the meta object for data type '{@link java.lang.String <em>Dummy</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Dummy</em>'.
 	 * @see java.lang.String
 	 * @model instanceClass="java.lang.String"
@@ -117,7 +117,7 @@ public interface StatemachinesPackage extends EPackage {
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class LinkedBehaviorLocator extends AdvancedBorderItemLocator {
 	@Override
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		Rectangle realLocation = proposedLocation.getCopy();
-		if(getParentBorder().intersects(proposedLocation)) {
+		if (getParentBorder().intersects(proposedLocation)) {
 			int heightGap = getParentBorder().y - proposedLocation.y - proposedLocation.height - MARGIN;
 			realLocation.translate(0, heightGap);
 		}
@@ -59,9 +59,9 @@ public class LinkedBehaviorLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Re-arrange the location of the border item.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator#relocate(org.eclipse.draw2d.IFigure)
-	 * 
+	 *
 	 * @param borderItem
 	 */
 	@Override
@@ -76,15 +76,15 @@ public class LinkedBehaviorLocator extends AdvancedBorderItemLocator {
 
 	/**
 	 * Get the current location
-	 * 
+	 *
 	 * @param borderItem
-	 *        the item to get location
+	 *            the item to get location
 	 * @return location of item
 	 */
 	public Rectangle getCorrectItemLocation(IFigure borderItem) {
 		Dimension size = getSize(borderItem);
 		Rectangle rectSuggested = getConstraint().getCopy();
-		if(rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
+		if (rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
 			rectSuggested.setLocation(getPreferredLocation(borderItem));
 		} else {
 			// recovered constraint must be translated with the parent location

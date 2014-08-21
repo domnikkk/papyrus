@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) patrick.tessier@cea@cea.fr - Initial API and implementation
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram 
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.providers;
 
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.diagram.common.commands.CommonDeferredCreateConne
 
 /**
  * This class is used to create a connection view.
- * 
+ *
  */
 
 public class CustomDeferredCreateConnectionViewCommand extends CommonDeferredCreateConnectionViewCommand {
@@ -42,7 +42,8 @@ public class CustomDeferredCreateConnectionViewCommand extends CommonDeferredCre
 	/**
 	 * {@inheritDoc}
 	 */
-	public CustomDeferredCreateConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint, ConnectionViewDescriptor viewDescriptor, ICommand command) {
+	public CustomDeferredCreateConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint,
+			ConnectionViewDescriptor viewDescriptor, ICommand command) {
 		super(editingDomain, semanticHint, sourceViewAdapter, targetViewAdapter, viewer, preferencesHint, viewDescriptor, command);
 	}
 
@@ -52,15 +53,15 @@ public class CustomDeferredCreateConnectionViewCommand extends CommonDeferredCre
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		CommandResult commandResult = null;
-		//			if(command != null && command instanceof AssociationClassViewCreateCommand) {
-		//				Map epRegistry = viewer.getEditPartRegistry();
-		//				IGraphicalEditPart sourceEP = (IGraphicalEditPart)epRegistry.get(sourceViewAdapter.getAdapter(View.class));
-		//				IGraphicalEditPart targetEP = (IGraphicalEditPart)epRegistry.get(((AssociationClassViewCreateCommand)command).getNode());
+		// if(command != null && command instanceof AssociationClassViewCreateCommand) {
+		// Map epRegistry = viewer.getEditPartRegistry();
+		// IGraphicalEditPart sourceEP = (IGraphicalEditPart)epRegistry.get(sourceViewAdapter.getAdapter(View.class));
+		// IGraphicalEditPart targetEP = (IGraphicalEditPart)epRegistry.get(((AssociationClassViewCreateCommand)command).getNode());
 		//
-		//				commandResult = super.doExecuteWithResult(progressMonitor, info, sourceEP, targetEP);
-		//			} else {
+		// commandResult = super.doExecuteWithResult(progressMonitor, info, sourceEP, targetEP);
+		// } else {
 		commandResult = super.doExecuteWithResult(progressMonitor, info);
-		//			}
+		// }
 		return commandResult;
 	}
 

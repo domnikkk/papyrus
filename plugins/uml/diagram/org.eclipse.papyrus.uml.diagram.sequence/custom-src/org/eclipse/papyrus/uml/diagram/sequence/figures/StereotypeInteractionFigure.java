@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,32 +34,34 @@ import org.eclipse.swt.graphics.Font;
 
 /**
  * This figure allows to display Stereotypes(both single stereotype name and stereotype in brace) on top of the name label.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public StereotypeInteractionFigure() {
 	}
 
 	/**
 	 * Display stereotype on top of the name.
-	 * 
+	 *
 	 * Return a RectangleFigure has BorderLayout.
 	 */
+	@Override
 	protected RectangleFigure createHeader() {
 		interactionLabel = new WrappingLabel() {
 
+			@Override
 			public void setFont(Font f) {
 				super.setFont(f);
-				if(stereotypesLabel != null) {
+				if (stereotypesLabel != null) {
 					stereotypesLabel.setFont(f);
 				}
-				if(stereotypePropertiesInBraceContent != null) {
+				if (stereotypePropertiesInBraceContent != null) {
 					stereotypePropertiesInBraceContent.setFont(f);
 				}
 			}
@@ -75,19 +77,19 @@ public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 
 				int labelWidth = -1;
 
-				for(Object obj : getChildren()) {
-					if(obj instanceof Label) {//Stereotype labels
-						labelWidth = Math.max(labelWidth, ((Label)obj).getPreferredSize().width);
-					} else if(obj instanceof WrappingLabel) {
-						WrappingLabel wLabel = (WrappingLabel)obj;
+				for (Object obj : getChildren()) {
+					if (obj instanceof Label) {// Stereotype labels
+						labelWidth = Math.max(labelWidth, ((Label) obj).getPreferredSize().width);
+					} else if (obj instanceof WrappingLabel) {
+						WrappingLabel wLabel = (WrappingLabel) obj;
 						labelWidth = Math.max(labelWidth, wLabel.getPreferredSize().width);
 					}
 				}
 
 				// case the size of the label is 0 or -1 (no label)
-				if(labelWidth <= 0) {
+				if (labelWidth <= 0) {
 					labelWidth = r.width / 4;
-				} else if(labelWidth > r.width) {
+				} else if (labelWidth > r.width) {
 					labelWidth = r.width;
 				}
 
@@ -133,7 +135,7 @@ public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 		interactionLabelContainer.add(interactionLabel);
 
 		Figure header = new Figure();
-		//		header.setBorder(new MarginBorder(1, 1, 0, 3));
+		// header.setBorder(new MarginBorder(1, 1, 0, 3));
 		header.setLayoutManager(new ToolbarLayout(false));
 		header.add(interactionLabelContainer);
 
@@ -145,10 +147,11 @@ public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 		return container;
 	}
 
+	@Override
 	public void setStereotypes(String stereotypes) {
-		if(stereotypes == null || stereotypes.trim().equals("")) {
+		if (stereotypes == null || stereotypes.trim().equals("")) {
 			// Remove label if any
-			if(this.stereotypesLabel != null) {
+			if (this.stereotypesLabel != null) {
 				getStereotypeLabelContainer().remove(this.stereotypesLabel);
 				this.stereotypesLabel = null;
 			}
@@ -157,10 +160,11 @@ public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 		super.setStereotypes(stereotypes);
 	}
 
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
-		if(stereotypeProperties == null || stereotypeProperties.trim().equals("")) {
+		if (stereotypeProperties == null || stereotypeProperties.trim().equals("")) {
 			// Remove label if any
-			if(this.stereotypePropertiesInBraceContent != null) {
+			if (this.stereotypePropertiesInBraceContent != null) {
 				getStereotypePropertiesInBraceLabelContainer().remove(this.stereotypePropertiesInBraceContent);
 				this.stereotypePropertiesInBraceContent = null;
 			}
@@ -169,10 +173,12 @@ public class StereotypeInteractionFigure extends InteractionRectangleFigure {
 		super.setStereotypePropertiesInBrace(stereotypeProperties);
 	}
 
+	@Override
 	protected IFigure getStereotypeLabelContainer() {
 		return interactionLabelContainer;
 	}
 
+	@Override
 	protected IFigure getStereotypePropertiesInBraceLabelContainer() {
 		return interactionLabelContainer;
 	}

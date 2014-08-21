@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomCombinedFragmentCombinedFragmentCompartmentEditPart(View view) {
@@ -64,33 +64,33 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 
 	/**
 	 * Not generated for delete borders add stretch children figures.
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure)super.createFigure();
+		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
 		result.getScrollPane().setVerticalScrollBarVisibility(ScrollPane.NEVER);
 		result.setTitleVisibility(false);
 		result.setBorder(null);
 		IFigure contentPane = result.getContentPane();
-		if(contentPane != null) {
+		if (contentPane != null) {
 			contentPane.setBorder(null);
-			//fix Scroll bars(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364697)
+			// fix Scroll bars(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364697)
 			contentPane.setLayoutManager(new XYLayout());
-			//			LayoutManager layout = contentPane.getLayoutManager();
-			//			if(layout instanceof ConstrainedToolbarLayout) {
-			//				ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout)layout;
-			//				constrainedToolbarLayout.setStretchMajorAxis(true);
-			//				constrainedToolbarLayout.setStretchMinorAxis(true);
-			//			}
+			// LayoutManager layout = contentPane.getLayoutManager();
+			// if(layout instanceof ConstrainedToolbarLayout) {
+			// ConstrainedToolbarLayout constrainedToolbarLayout = (ConstrainedToolbarLayout)layout;
+			// constrainedToolbarLayout.setStretchMajorAxis(true);
+			// constrainedToolbarLayout.setStretchMinorAxis(true);
+			// }
 		}
 		return result;
 	}
 
 	/**
 	 * Add RemoveOrphanView role
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -107,40 +107,40 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 
 			@Override
 			protected Command getCreateElementAndViewCommand(CreateViewAndElementRequest request) {
-				//THIS WAS ALREADY DID IN getCreateCommand(), WHY AGAIN?
-				//				Command createCommand = super.getCreateElementAndViewCommand(request);
-				//				if (createCommand == null || !createCommand.canExecute()){
-				//					return createCommand;
-				//				}
-				//				ICommandProxy commandProxy = (ICommandProxy)createCommand;
-				//				CompositeCommand command = (CompositeCommand)commandProxy.getICommand();
-				//				
-				//				IHintedType type = (IHintedType)UMLElementTypes.InteractionOperand_3005;
-				//				if(type.getSemanticHint().equals(request.getViewAndElementDescriptor().getSemanticHint())) {
-				//					//fix Scroll bars(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364697), note that we use XYLayout
-				//					//to relocate both its bounds and combined fragment bounds when operand is added to combined fragment 
-				//					OperandBoundsComputeHelper.addUpdateBoundsForIOCreationCommand(CombinedFragmentCombinedFragmentCompartmentEditPart.this, request.getViewAndElementDescriptor(), command);
-				//				}
-				//				return commandProxy;
+				// THIS WAS ALREADY DID IN getCreateCommand(), WHY AGAIN?
+				// Command createCommand = super.getCreateElementAndViewCommand(request);
+				// if (createCommand == null || !createCommand.canExecute()){
+				// return createCommand;
+				// }
+				// ICommandProxy commandProxy = (ICommandProxy)createCommand;
+				// CompositeCommand command = (CompositeCommand)commandProxy.getICommand();
+				//
+				// IHintedType type = (IHintedType)UMLElementTypes.InteractionOperand_3005;
+				// if(type.getSemanticHint().equals(request.getViewAndElementDescriptor().getSemanticHint())) {
+				// //fix Scroll bars(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364697), note that we use XYLayout
+				// //to relocate both its bounds and combined fragment bounds when operand is added to combined fragment
+				// OperandBoundsComputeHelper.addUpdateBoundsForIOCreationCommand(CombinedFragmentCombinedFragmentCompartmentEditPart.this, request.getViewAndElementDescriptor(), command);
+				// }
+				// return commandProxy;
 				return super.getCreateElementAndViewCommand(request);
 			}
 
 			@Override
 			protected Command getCreateCommand(CreateViewRequest request) {
-				ICommandProxy commandProxy = (ICommandProxy)super.getCreateCommand(request);
+				ICommandProxy commandProxy = (ICommandProxy) super.getCreateCommand(request);
 				ICommand command = commandProxy.getICommand();
 				CompositeCommand compositeCommand = null;
-				if(command instanceof CompositeCommand) {
-					compositeCommand = (CompositeCommand)command;
+				if (command instanceof CompositeCommand) {
+					compositeCommand = (CompositeCommand) command;
 				} else {
 					compositeCommand = new CompositeCommand(commandProxy.getLabel());
 					compositeCommand.add(command);
 				}
-				for(ViewDescriptor viewDescriptor : request.getViewDescriptors()) {
-					IHintedType type = (IHintedType)UMLElementTypes.InteractionOperand_3005;
-					if(type.getSemanticHint().equals(viewDescriptor.getSemanticHint())) {
-						//fix Scroll bars(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364697), note that we use XYLayout
-						//to relocate both its bounds and combined fragment bounds when operand is added to combined fragment 
+				for (ViewDescriptor viewDescriptor : request.getViewDescriptors()) {
+					IHintedType type = (IHintedType) UMLElementTypes.InteractionOperand_3005;
+					if (type.getSemanticHint().equals(viewDescriptor.getSemanticHint())) {
+						// fix Scroll bars(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364697), note that we use XYLayout
+						// to relocate both its bounds and combined fragment bounds when operand is added to combined fragment
 						OperandBoundsComputeHelper.addUpdateBoundsForIOCreationCommand(CustomCombinedFragmentCombinedFragmentCompartmentEditPart.this, viewDescriptor, compositeCommand);
 					}
 				}
@@ -151,13 +151,13 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 
 	/**
 	 * Not generated for handle the first InteractionOperand case (no LineSeparator) {@inheritDoc}
-	 * 
+	 *
 	 */
 	@Override
 	protected EditPart createChild(Object model) {
 		EditPart child = super.createChild(model);
-		if(getChildren() == null || getChildren().isEmpty() && child instanceof CustomInteractionOperandEditPart) {
-			((CustomInteractionOperandEditPart)child).setFirstOperand(true);
+		if (getChildren() == null || getChildren().isEmpty() && child instanceof CustomInteractionOperandEditPart) {
+			((CustomInteractionOperandEditPart) child).setFirstOperand(true);
 		}
 		return child;
 	}
@@ -168,19 +168,19 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 	@Override
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
-		if(feature instanceof EStructuralFeature) {
-			EStructuralFeature ref = (EStructuralFeature)feature;
+		if (feature instanceof EStructuralFeature) {
+			EStructuralFeature ref = (EStructuralFeature) feature;
 			String typeName = ref.getName();
-			if(CHILDREN_TYPE.equals(typeName)) {
-				if(event.getEventType() == Notification.UNSET || event.getEventType() == Notification.REMOVE) {
+			if (CHILDREN_TYPE.equals(typeName)) {
+				if (event.getEventType() == Notification.UNSET || event.getEventType() == Notification.REMOVE) {
 					List<?> children = getChildren();
-					if(children != null && children.size() > 1) {
+					if (children != null && children.size() > 1) {
 						Object firstChild = children.get(0);
-						if(firstChild instanceof CustomInteractionOperandEditPart) {
-							CustomInteractionOperandEditPart firstOperandChild = (CustomInteractionOperandEditPart)firstChild;
+						if (firstChild instanceof CustomInteractionOperandEditPart) {
+							CustomInteractionOperandEditPart firstOperandChild = (CustomInteractionOperandEditPart) firstChild;
 							Object firstChildModel = firstOperandChild.getModel();
-							if(firstChildModel != null && firstChildModel.equals(event.getOldValue()) && children.get(1) instanceof CustomInteractionOperandEditPart) {
-								CustomInteractionOperandEditPart secondOperandChild = (CustomInteractionOperandEditPart)children.get(1);
+							if (firstChildModel != null && firstChildModel.equals(event.getOldValue()) && children.get(1) instanceof CustomInteractionOperandEditPart) {
+								CustomInteractionOperandEditPart secondOperandChild = (CustomInteractionOperandEditPart) children.get(1);
 								secondOperandChild.setFirstOperand(true);
 							}
 						}
@@ -192,11 +192,11 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 	}
 
 	public boolean ignoreRequest(Request request) {
-		if(request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
-			List parts = ((ChangeBoundsRequest)request).getEditParts();
-			if(parts != null) {
-				for(Object obj : parts) {
-					if(obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart) {
+		if (request instanceof ChangeBoundsRequest && (request.getType().equals(org.eclipse.gef.RequestConstants.REQ_ADD) || request.getType().equals(RequestConstants.REQ_DROP))) {
+			List parts = ((ChangeBoundsRequest) request).getEditParts();
+			if (parts != null) {
+				for (Object obj : parts) {
+					if (obj instanceof CommentEditPart || obj instanceof ConstraintEditPart || obj instanceof TimeObservationEditPart) {
 						return true;
 					}
 				}
@@ -207,7 +207,7 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 
 	@Override
 	public void showTargetFeedback(Request request) {
-		if(ignoreRequest(request)) {
+		if (ignoreRequest(request)) {
 			return;
 		}
 		super.showTargetFeedback(request);
@@ -215,7 +215,7 @@ public class CustomCombinedFragmentCombinedFragmentCompartmentEditPart extends C
 
 	@Override
 	public Command getCommand(Request request) {
-		if(ignoreRequest(request)) {
+		if (ignoreRequest(request)) {
 			return null;
 		}
 		return super.getCommand(request);

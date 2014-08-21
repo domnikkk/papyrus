@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,14 +31,14 @@ public class StrategyBasedContentProvider extends EncapsulatedContentProvider {
 	}
 
 	public void setBrowseStrategy(TreeBrowseStrategy strategy) {
-		if(strategy != null) {
+		if (strategy != null) {
 			browseStrategy = strategy;
 			encapsulated = browseStrategy;
 		}
 	}
 
 	public void setRevealStrategy(TreeBrowseStrategy strategy) {
-		if(strategy != null) {
+		if (strategy != null) {
 			revealStrategy = strategy;
 		}
 	}
@@ -46,10 +46,10 @@ public class StrategyBasedContentProvider extends EncapsulatedContentProvider {
 	@Override
 	public void dispose() {
 		super.dispose();
-		if(browseStrategy != null) {
+		if (browseStrategy != null) {
 			browseStrategy.dispose();
 		}
-		if(revealStrategy != null) {
+		if (revealStrategy != null) {
 			revealStrategy.dispose();
 		}
 	}
@@ -57,8 +57,8 @@ public class StrategyBasedContentProvider extends EncapsulatedContentProvider {
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
 		super.inputChanged(viewer, oldInput, newInput);
-		if(viewer instanceof StructuredViewer) {
-			this.viewer = (StructuredViewer)viewer;
+		if (viewer instanceof StructuredViewer) {
+			this.viewer = (StructuredViewer) viewer;
 		} else {
 			this.viewer = null;
 		}
@@ -69,23 +69,23 @@ public class StrategyBasedContentProvider extends EncapsulatedContentProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Reveals and selects the given semantic elements
 	 */
 	@Override
 	public void revealSemanticElement(List<?> semanticElementsList) {
 		revealStrategy.revealSemanticElement(semanticElementsList);
-		//		List<Object> containerElements = new LinkedList<Object>();
+		// List<Object> containerElements = new LinkedList<Object>();
 		//
-		//		for(Object semanticElement : semanticElementsList) {
-		//			TreePath path = revealStrategy.findPath(semanticElement, getElements(viewer.getInput()));
-		//			if(path.getSegmentCount() > 0) {
-		//				viewer.reveal(path);
-		//				containerElements.add(path.getLastSegment());
-		//			}
-		//		}
+		// for(Object semanticElement : semanticElementsList) {
+		// TreePath path = revealStrategy.findPath(semanticElement, getElements(viewer.getInput()));
+		// if(path.getSegmentCount() > 0) {
+		// viewer.reveal(path);
+		// containerElements.add(path.getLastSegment());
+		// }
+		// }
 		//
-		//		viewer.setSelection(new StructuredSelection(containerElements));
+		// viewer.setSelection(new StructuredSelection(containerElements));
 	}
 
 	@Override

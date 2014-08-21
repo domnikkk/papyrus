@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,10 @@ import org.eclipse.uml2.uml.UMLPackage;
 public class OperationTemplateParamaterDisplayEditPolicy extends TemplateParamaterDisplayEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -57,9 +58,10 @@ public class OperationTemplateParamaterDisplayEditPolicy extends TemplateParamat
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -98,6 +100,7 @@ public class OperationTemplateParamaterDisplayEditPolicy extends TemplateParamat
 		hostSemanticElement = null;
 	}
 
+	@Override
 	public void notifyChanged(Notification notification) {
 		if (notification.getEventType() == Notification.SET) {
 			if (notification.getFeature().equals(UMLPackage.eINSTANCE.getTemplateParameter_ParameteredElement())) {

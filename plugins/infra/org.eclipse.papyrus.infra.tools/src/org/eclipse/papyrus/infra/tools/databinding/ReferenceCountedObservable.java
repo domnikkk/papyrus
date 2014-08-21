@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,7 +39,7 @@ public interface ReferenceCountedObservable extends IObservable {
 	/**
 	 * Retains me for use by the caller, which should be sure to {@linkplain #release() release me} when I am no longer needed.
 	 * As long as I have been retained by at least one client, I shall not {@linkplain IObservable#dispose() dispose} myself.
-	 * 
+	 *
 	 * @see #release()
 	 */
 	void retain();
@@ -47,7 +47,7 @@ public interface ReferenceCountedObservable extends IObservable {
 	/**
 	 * Releases me, indicating that I am no longer being used by the caller. When my {@linkplain #retain() retain count} reaches zero,
 	 * I automatically {@linkplain IObservable#dispose() dispose} myself, because no client needs me.
-	 * 
+	 *
 	 * @see #retain()
 	 * @see #autorelease()
 	 * @see IObservable#dispose()
@@ -58,7 +58,7 @@ public interface ReferenceCountedObservable extends IObservable {
 	 * Automatically releases me some time after the current iteration of the UI event loop. This is useful when it is
 	 * expected that the UI will still need to be able to access the observable for refreshes while processing the
 	 * current event.
-	 * 
+	 *
 	 * @see #release()
 	 */
 	void autorelease();
@@ -74,9 +74,9 @@ public interface ReferenceCountedObservable extends IObservable {
 
 		/**
 		 * Creates a new instance to support reference counting on behalf of an {@code observable}.
-		 * 
+		 *
 		 * @param observable
-		 *        the observable for which to provide reference counting
+		 *            the observable for which to provide reference counting
 		 */
 		public Support(IObservable observable) {
 			this.observable = observable;
@@ -87,7 +87,7 @@ public interface ReferenceCountedObservable extends IObservable {
 		}
 
 		public void release() {
-			if((refCount.decrementAndGet() <= 0) && !observable.isDisposed()) {
+			if ((refCount.decrementAndGet() <= 0) && !observable.isDisposed()) {
 				observable.dispose();
 			}
 		}
@@ -169,12 +169,12 @@ public interface ReferenceCountedObservable extends IObservable {
 
 		public static AutoReleasePool get(Realm realm) {
 			AutoReleasePool result = pools.get(realm);
-			if(result == null) {
+			if (result == null) {
 				result = new AutoReleasePool(realm);
 
 				// Double-check
 				AutoReleasePool oops = pools.putIfAbsent(realm, result);
-				if(oops != null) {
+				if (oops != null) {
 					result = oops;
 				}
 			}
@@ -183,7 +183,7 @@ public interface ReferenceCountedObservable extends IObservable {
 		}
 
 		public synchronized void add(IObservable observable) {
-			if(pool == null) {
+			if (pool == null) {
 				pool = Lists.newArrayList();
 			}
 
@@ -193,21 +193,21 @@ public interface ReferenceCountedObservable extends IObservable {
 		public void release() {
 			pools.remove(realm);
 
-			for(;;) {
+			for (;;) {
 				Iterable<IObservable> toDrain;
 
-				synchronized(this) {
+				synchronized (this) {
 					toDrain = pool;
 					pool = null;
 				}
 
-				if(toDrain != null) {
+				if (toDrain != null) {
 					// Drain this pool
-					for(IObservable next : toDrain) {
+					for (IObservable next : toDrain) {
 						Util.release(next);
 					}
 				} else {
-					// Done.  No more pools to drain
+					// Done. No more pools to drain
 					break;
 				}
 			}
@@ -239,18 +239,18 @@ public interface ReferenceCountedObservable extends IObservable {
 		/**
 		 * Provides a unified interface to retaining observables, delegating to the {@link ReferenceCountedObservable} protocol
 		 * for observables that implement it, otherwise providing an external reference-count (which is GC-safe).
-		 * 
+		 *
 		 * @param observable
-		 *        an observable to retain
-		 * 
+		 *            an observable to retain
+		 *
 		 * @return the same {@code observable} (useful for call chaining)
-		 * 
+		 *
 		 * @see ReferenceCountedObservable#retain()
 		 */
 		public static <T extends IObservable> T retain(T observable) {
-			if(observable instanceof ReferenceCountedObservable) {
-				((ReferenceCountedObservable)observable).retain();
-			} else if(!observable.isDisposed()) { // Don't bother counting if already disposed
+			if (observable instanceof ReferenceCountedObservable) {
+				((ReferenceCountedObservable) observable).retain();
+			} else if (!observable.isDisposed()) { // Don't bother counting if already disposed
 				WeakRefCount adapter = adapt(observable, true);
 				adapter.retain();
 			}
@@ -263,22 +263,22 @@ public interface ReferenceCountedObservable extends IObservable {
 		 * for observables that implement it, otherwise providing an external reference-count (which is GC-safe). Note that
 		 * for externally reference-counted observables, they are automatically disposed as usual when the retain count drops
 		 * to zero, just as though they implemented reference counting internally.
-		 * 
+		 *
 		 * @param observable
-		 *        an observable to release. If its retain count is zero as a result (whether intrinsic or extrinsic), it will be disposed
-		 * 
+		 *            an observable to release. If its retain count is zero as a result (whether intrinsic or extrinsic), it will be disposed
+		 *
 		 * @return the same {@code observable} (useful for call chaining)
-		 * 
+		 *
 		 * @see ReferenceCountedObservable#release()
 		 */
 		public static <T extends IObservable> T release(T observable) {
-			if(observable instanceof ReferenceCountedObservable) {
-				((ReferenceCountedObservable)observable).release();
-			} else if(!observable.isDisposed()) { // Don't bother counting if already disposed
+			if (observable instanceof ReferenceCountedObservable) {
+				((ReferenceCountedObservable) observable).release();
+			} else if (!observable.isDisposed()) { // Don't bother counting if already disposed
 				WeakRefCount adapter = adapt(observable, false);
 
 				// There won't be an adapter if there was no prior retain (of course) or if it was already disposed
-				if(adapter != null) {
+				if (adapter != null) {
 					adapter.release();
 				}
 			}
@@ -291,22 +291,22 @@ public interface ReferenceCountedObservable extends IObservable {
 		 * for observables that implement it, otherwise providing an external reference-count (which is GC-safe). Note that
 		 * for externally reference-counted observables, they are automatically disposed as usual when the retain count drops
 		 * to zero, just as though they implemented reference counting internally.
-		 * 
+		 *
 		 * @param observable
-		 *        an observable to release. If its retain count is zero as a result (whether intrinsic or extrinsic), it will be disposed
-		 * 
+		 *            an observable to release. If its retain count is zero as a result (whether intrinsic or extrinsic), it will be disposed
+		 *
 		 * @return the same {@code observable} (useful for call chaining)
-		 * 
+		 *
 		 * @see ReferenceCountedObservable#autorelease()
 		 */
 		public static <T extends IObservable> T autorelease(T observable) {
-			if(observable instanceof ReferenceCountedObservable) {
-				((ReferenceCountedObservable)observable).autorelease();
-			} else if(!observable.isDisposed()) { // Don't bother counting if already disposed
+			if (observable instanceof ReferenceCountedObservable) {
+				((ReferenceCountedObservable) observable).autorelease();
+			} else if (!observable.isDisposed()) { // Don't bother counting if already disposed
 				WeakRefCount adapter = adapt(observable, false);
 
 				// There won't be an adapter if there was no prior retain (of course) or if it was already disposed
-				if(adapter != null) {
+				if (adapter != null) {
 					adapter.autorelease();
 				}
 			}
@@ -317,7 +317,7 @@ public interface ReferenceCountedObservable extends IObservable {
 		private static WeakRefCount adapt(IObservable observable, boolean create) {
 			WeakRefCount result = adapters.get(observable);
 
-			if((result == null) && create) {
+			if ((result == null) && create) {
 				result = new WeakRefCount(observable);
 				adapters.put(observable, result);
 			}
@@ -340,11 +340,11 @@ public interface ReferenceCountedObservable extends IObservable {
 			}
 
 			public void release() {
-				if(refCount.decrementAndGet() <= 0) {
+				if (refCount.decrementAndGet() <= 0) {
 					IObservable observable = get();
 
-					if(observable != null) {
-						if(!observable.isDisposed()) {
+					if (observable != null) {
+						if (!observable.isDisposed()) {
 							observable.dispose();
 						}
 
@@ -357,13 +357,13 @@ public interface ReferenceCountedObservable extends IObservable {
 				IObservable observable = get();
 
 				// If it's null, then it's already disposed, so auto-release is meaningless
-				if(observable != null) {
+				if (observable != null) {
 					AutoReleasePool.get(observable.getRealm()).add(observable);
 				}
 			}
 
 			public void handleDispose(DisposeEvent event) {
-				if(event.getObservable() == get()) {
+				if (event.getObservable() == get()) {
 					clear();
 				}
 			}

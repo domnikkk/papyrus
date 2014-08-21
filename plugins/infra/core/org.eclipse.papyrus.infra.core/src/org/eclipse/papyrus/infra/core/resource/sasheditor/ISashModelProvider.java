@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,15 +18,15 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 
 
 /**
- * This is the ISashModelProvider type.  Enjoy.
+ * This is the ISashModelProvider type. Enjoy.
  */
 public interface ISashModelProvider {
 
 	URI getSashModelURI(URI userModelURI);
-	
+
 	void initialize(ModelSet modelSet);
-	
+
 	Resource loadSashModel(URI sashModelURI);
-	
+
 	void dispose();
 }

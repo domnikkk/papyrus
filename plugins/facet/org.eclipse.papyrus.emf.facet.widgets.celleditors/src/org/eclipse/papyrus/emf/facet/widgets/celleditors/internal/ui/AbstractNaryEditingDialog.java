@@ -44,7 +44,7 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		this.editHandler = editHandler;
 		this.eObject = eObject;
 	}
-	
+
 	public class AssignedValuesContentProvider implements IStructuredContentProvider {
 		public Object[] getElements(final Object inputElement) {
 			if (inputElement instanceof FeatureValuesInput) {
@@ -75,7 +75,8 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		return this.values;
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	public void upButtonClicked() {
 		final IStructuredSelection selection = (IStructuredSelection) getSelection();
 
@@ -88,7 +89,8 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		refresh();
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	public void downButtonClicked() {
 		final IStructuredSelection selection = (StructuredSelection) getSelection();
 
@@ -119,7 +121,7 @@ public abstract class AbstractNaryEditingDialog<T extends Object> extends Dialog
 		super.okPressed();
 		this.editHandler.commit();
 	}
-	
+
 	protected List<T> getValues() {
 		return this.values;
 	}

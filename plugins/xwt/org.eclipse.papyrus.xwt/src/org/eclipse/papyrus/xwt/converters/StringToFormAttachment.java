@@ -3,9 +3,9 @@
  * All rights reserved. This program and the accompanying materials            *
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
- * http://www.eclipse.org/legal/epl-v10.html                                   *  
- * Contributors:                                                               *  
- *     Soyatec - initial API and implementation                                * 
+ * http://www.eclipse.org/legal/epl-v10.html                                   *
+ * Contributors:                                                               *
+ *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.converters;
 
@@ -23,7 +23,7 @@ import org.eclipse.swt.layout.FormAttachment;
  * <li><FormData top="0,100,20"></li> would be parsed to FormAttachment(0, 100, 20).
  * <nl>
  * This converter can not parse some arguments which have Control type.
- * 
+ *
  * @author jliu (jin.liu@soyatec.com)
  */
 public class StringToFormAttachment implements IConverter {
@@ -36,14 +36,14 @@ public class StringToFormAttachment implements IConverter {
 	 * @see org.eclipse.core.databinding.conversion.IConverter#convert(java.lang.Object)
 	 */
 	public Object convert(Object fromObject) {
-		if(fromObject == null) {
+		if (fromObject == null) {
 			return null;
 		}
 		String strValue = fromObject.toString();
 		int numerator = 0, denominator = 100, offset = 0;
 		List<Integer> intValues = new ArrayList<Integer>();
 		String[] split = strValue.split(",");
-		for(int i = 0; i < split.length; i++) {
+		for (int i = 0; i < split.length; i++) {
 			String trim = split[i].trim();
 			try {
 				int value = Integer.parseInt(trim);
@@ -55,9 +55,9 @@ public class StringToFormAttachment implements IConverter {
 		int size = intValues.size();
 		try {
 			numerator = intValues.get(0);
-			if(size == 2) {
+			if (size == 2) {
 				offset = intValues.get(1);
-			} else if(size == 3) {
+			} else if (size == 3) {
 				denominator = intValues.get(1);
 				offset = intValues.get(2);
 			}

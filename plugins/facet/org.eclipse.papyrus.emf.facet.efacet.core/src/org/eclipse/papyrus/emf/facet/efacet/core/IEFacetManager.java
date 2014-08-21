@@ -68,8 +68,7 @@ public interface IEFacetManager {
 			throws QueryException;
 
 	/**
-	 * Evaluate the query on a set of models and model elements described by the
-	 * <code>queryContext</code> parameter.
+	 * Evaluate the query on a set of models and model elements described by the <code>queryContext</code> parameter.
 	 *
 	 * The query is evaluated on each contextually referred model element and on each element of a
 	 * contextually referred model.

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * The metaclass content provider
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider implements IStaticContentProvider {
 
@@ -37,9 +37,9 @@ public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider
 	final private List<Class> possibleMetaclasses;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param element
 	 *            the element used to find the available metaclasses
 	 */
@@ -68,9 +68,9 @@ public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
-	 * 
+	 *
 	 * @return
 	 */
 	public Object[] getElements() {
@@ -78,9 +78,9 @@ public class UMLMetaclassContentProvider extends AbstractFilteredContentProvider
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */

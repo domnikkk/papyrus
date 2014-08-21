@@ -17,6 +17,7 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Paletteconfiguration
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PaletteconfigurationXMLProcessor extends XMLProcessor {
@@ -25,17 +26,19 @@ public class PaletteconfigurationXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PaletteconfigurationXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
 		PaletteconfigurationPackage.eINSTANCE.eClass();
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the PaletteconfigurationResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -48,4 +51,4 @@ public class PaletteconfigurationXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //PaletteconfigurationXMLProcessor
+} // PaletteconfigurationXMLProcessor

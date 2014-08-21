@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,6 +21,7 @@ import org.eclipse.gmf.runtime.common.core.command.CompositeCommand;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.common.core.command.UnexecutableCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
@@ -46,9 +47,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <pre>
- * 
+ *
  * This helper provides edit commands for UML {@link Message}.
- * 
+ *
  * </pre>
  */
 public class MessageEditHelper extends ElementEditHelper {
@@ -58,11 +59,11 @@ public class MessageEditHelper extends ElementEditHelper {
 	 * This method build a re-orient command depending on the kind of Message,
 	 * and compose this basic command with another which updates the MessageEnd.
 	 * </pre>
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelper#getReorientRelationshipCommand(org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest)
-	 * 
+	 *
 	 * @param req
-	 *        the re-orient request
+	 *            the re-orient request
 	 * @return the re-orient command
 	 */
 	@Override
@@ -70,36 +71,36 @@ public class MessageEditHelper extends ElementEditHelper {
 		ICommand reorientCommand = null;
 
 		// Build the initial re-orient command depending on the kind of Message
-		Message msgToReorient = (Message)req.getRelationship();
+		Message msgToReorient = (Message) req.getRelationship();
 
-		if(msgToReorient.getMessageKind() == MessageKind.LOST_LITERAL) {
+		if (msgToReorient.getMessageKind() == MessageKind.LOST_LITERAL) {
 			reorientCommand = new MessageLostReorientCommand(req);
 
-		} else if(msgToReorient.getMessageKind() == MessageKind.FOUND_LITERAL) {
+		} else if (msgToReorient.getMessageKind() == MessageKind.FOUND_LITERAL) {
 			reorientCommand = new MessageFoundReorientCommand(req);
 
-		} else if(msgToReorient.getMessageSort() == MessageSort.SYNCH_CALL_LITERAL) {
+		} else if (msgToReorient.getMessageSort() == MessageSort.SYNCH_CALL_LITERAL) {
 			reorientCommand = new MessageSyncReorientCommand(req);
 
-		} else if(msgToReorient.getMessageSort() == MessageSort.ASYNCH_CALL_LITERAL) {
+		} else if (msgToReorient.getMessageSort() == MessageSort.ASYNCH_CALL_LITERAL) {
 			reorientCommand = new MessageAsyncReorientCommand(req);
 
-		} else if(msgToReorient.getMessageSort() == MessageSort.ASYNCH_SIGNAL_LITERAL) {
+		} else if (msgToReorient.getMessageSort() == MessageSort.ASYNCH_SIGNAL_LITERAL) {
 			reorientCommand = new MessageAsyncReorientCommand(req);
 
-		} else if(msgToReorient.getMessageSort() == MessageSort.REPLY_LITERAL) {
+		} else if (msgToReorient.getMessageSort() == MessageSort.REPLY_LITERAL) {
 			reorientCommand = new MessageReplyReorientCommand(req);
 
-		} else if(msgToReorient.getMessageSort() == MessageSort.CREATE_MESSAGE_LITERAL) {
+		} else if (msgToReorient.getMessageSort() == MessageSort.CREATE_MESSAGE_LITERAL) {
 			reorientCommand = new MessageCreateReorientCommand(req);
 
-		} else if(msgToReorient.getMessageSort() == MessageSort.DELETE_MESSAGE_LITERAL) {
+		} else if (msgToReorient.getMessageSort() == MessageSort.DELETE_MESSAGE_LITERAL) {
 			// Forbid the target re-orient command of delete Message.
 			// The re-orient command is provided but the MessageEnd update is not correctly implemented.
-			if(req.getDirection() == ReorientRelationshipRequest.REORIENT_SOURCE) {
+			if (req.getDirection() == ReorientRequest.REORIENT_SOURCE) {
 				reorientCommand = new MessageDeleteReorientCommand(req);
 
-			} else if(req.getDirection() == ReorientRelationshipRequest.REORIENT_TARGET) {
+			} else if (req.getDirection() == ReorientRequest.REORIENT_TARGET) {
 				// Not correctly implemented - Forbid this kind of re-orient for now.
 				reorientCommand = UnexecutableCommand.INSTANCE;
 			}
@@ -109,13 +110,13 @@ public class MessageEditHelper extends ElementEditHelper {
 		ICommand updateMessageEndCommand = null;
 
 		MessageEnd msgEndToUpdate = null;
-		if(req.getDirection() == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (req.getDirection() == ReorientRequest.REORIENT_SOURCE) {
 			msgEndToUpdate = msgToReorient.getSendEvent();
-		} else if(req.getDirection() == ReorientRelationshipRequest.REORIENT_TARGET) {
+		} else if (req.getDirection() == ReorientRequest.REORIENT_TARGET) {
 			msgEndToUpdate = msgToReorient.getReceiveEvent();
 		}
 
-		updateMessageEndCommand = getUpdateMessageEndCommand(msgEndToUpdate, (Element)req.getOldRelationshipEnd(), (Element)req.getNewRelationshipEnd());
+		updateMessageEndCommand = getUpdateMessageEndCommand(msgEndToUpdate, (Element) req.getOldRelationshipEnd(), (Element) req.getNewRelationshipEnd());
 
 		// Compose both commands
 		reorientCommand = CompositeCommand.compose(reorientCommand, updateMessageEndCommand);
@@ -127,23 +128,23 @@ public class MessageEditHelper extends ElementEditHelper {
 	 * <pre>
 	 * This method provides a command to update the {@link MessageEnd} concerned by a re-orient request.
 	 * </pre>
-	 * 
+	 *
 	 * @param messageEnd
-	 *        the {@link MessageEnd} concerned by the re-orient command
+	 *            the {@link MessageEnd} concerned by the re-orient command
 	 * @param oldElement
-	 *        the old {@link Element} graphically attached to the {@link Message}
+	 *            the old {@link Element} graphically attached to the {@link Message}
 	 * @param newElement
-	 *        the new {@link Element} graphically attached to the {@link Message}
+	 *            the new {@link Element} graphically attached to the {@link Message}
 	 * @return the update command
 	 */
 	private ICommand getUpdateMessageEndCommand(MessageEnd messageEnd, Element oldElement, Element newElement) {
 
 		ICommand updateCommand = null;
 
-		if(messageEnd instanceof MessageOccurrenceSpecification) {
-			updateCommand = getUpdateMessageOccurenceSpecificationCommand((MessageOccurrenceSpecification)messageEnd, oldElement, newElement);
-		} else if(messageEnd instanceof Gate) { // Gate case is not currently implemented
-			updateCommand = getUpdateGateCommand((Gate)messageEnd, oldElement, newElement);
+		if (messageEnd instanceof MessageOccurrenceSpecification) {
+			updateCommand = getUpdateMessageOccurenceSpecificationCommand((MessageOccurrenceSpecification) messageEnd, oldElement, newElement);
+		} else if (messageEnd instanceof Gate) { // Gate case is not currently implemented
+			updateCommand = getUpdateGateCommand((Gate) messageEnd, oldElement, newElement);
 		}
 
 		return updateCommand;
@@ -153,25 +154,25 @@ public class MessageEditHelper extends ElementEditHelper {
 	 * <pre>
 	 * This method provides a command to update the {@link MessageOccurrenceSpecification} concerned by a re-orient request.
 	 * </pre>
-	 * 
+	 *
 	 * @param messageEnd
-	 *        the {@link MessageOccurrenceSpecification} concerned by the re-orient command
+	 *            the {@link MessageOccurrenceSpecification} concerned by the re-orient command
 	 * @param oldElement
-	 *        the old {@link Element} graphically attached to the {@link Message}
+	 *            the old {@link Element} graphically attached to the {@link Message}
 	 * @param newElement
-	 *        the new {@link Element} graphically attached to the {@link Message}
+	 *            the new {@link Element} graphically attached to the {@link Message}
 	 * @return the update command
 	 */
 	private ICommand getUpdateMessageOccurenceSpecificationCommand(MessageOccurrenceSpecification messageEnd, Element oldElement, Element newElement) {
 
 		ICommand updateCommand = null;
 
-		if(newElement instanceof Lifeline) {
-			updateCommand = getUpdateOccurenceSpecificationCommand(messageEnd, (Lifeline)newElement);
+		if (newElement instanceof Lifeline) {
+			updateCommand = getUpdateOccurenceSpecificationCommand(messageEnd, (Lifeline) newElement);
 
-		} else if(newElement instanceof ExecutionSpecification) {
-			Lifeline lifeline = ExecutionSpecificationUtil.getExecutionSpecificationLifeline((ExecutionSpecification)newElement);
-			if(lifeline != null) {
+		} else if (newElement instanceof ExecutionSpecification) {
+			Lifeline lifeline = ExecutionSpecificationUtil.getExecutionSpecificationLifeline((ExecutionSpecification) newElement);
+			if (lifeline != null) {
 				updateCommand = getUpdateOccurenceSpecificationCommand(messageEnd, lifeline);
 			}
 
@@ -184,11 +185,11 @@ public class MessageEditHelper extends ElementEditHelper {
 	 * <pre>
 	 * This method provides a command to update the {@link OccurrenceSpecification} concerned by a re-orient request.
 	 * </pre>
-	 * 
+	 *
 	 * @param os
-	 *        the {@link OccurrenceSpecification} concerned by the re-orient command
+	 *            the {@link OccurrenceSpecification} concerned by the re-orient command
 	 * @param newLifeline
-	 *        the new {@link Lifeline} graphically covered by the {@link OccurrenceSpecification}
+	 *            the new {@link Lifeline} graphically covered by the {@link OccurrenceSpecification}
 	 * @return the update command
 	 */
 	private ICommand getUpdateOccurenceSpecificationCommand(OccurrenceSpecification os, Lifeline newLifeline) {
@@ -199,7 +200,7 @@ public class MessageEditHelper extends ElementEditHelper {
 		covereds.add(newLifeline);
 
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(os);
-		if(provider != null) {
+		if (provider != null) {
 
 			// Create a command the set the OccurenceSpecification covered EReference with the newLifeline
 			SetRequest setCoveredRequest = new SetRequest(os, UMLPackage.eINSTANCE.getInteractionFragment_Covered(), covereds);
@@ -216,13 +217,13 @@ public class MessageEditHelper extends ElementEditHelper {
 	 * 
 	 * TODO : Not currently implemented.
 	 * </pre>
-	 * 
+	 *
 	 * @param gate
-	 *        the {@link Gate} concerned by the re-orient command
+	 *            the {@link Gate} concerned by the re-orient command
 	 * @param oldElement
-	 *        the old {@link Element} graphically attached to the {@link Message}
+	 *            the old {@link Element} graphically attached to the {@link Message}
 	 * @param newElement
-	 *        the new {@link Element} graphically attached to the {@link Message}
+	 *            the new {@link Element} graphically attached to the {@link Message}
 	 * @return the update command
 	 */
 	private ICommand getUpdateGateCommand(Gate gate, Element oldElement, Element newElement) {

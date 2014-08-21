@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
@@ -38,12 +38,12 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Iso42010Package;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getJustifiedBy <em>Justified By</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getDependsUpon <em>Depends Upon</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getDependents <em>Dependents</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getRaises <em>Raises</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getPertainsTo <em>Pertains To</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getAffects <em>Affects</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getJustifiedBy <em>Justified By</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getDependsUpon <em>Depends Upon</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getDependents <em>Dependents</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getRaises <em>Raises</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getPertainsTo <em>Pertains To</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.ArchitectureDecisionImpl#getAffects <em>Affects</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getJustifiedBy() <em>Justified By</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getJustifiedBy()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getDependsUpon() <em>Depends Upon</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependsUpon()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getDependents() <em>Dependents</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependents()
 	 * @generated
 	 * @ordered
@@ -84,6 +87,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getRaises() <em>Raises</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRaises()
 	 * @generated
 	 * @ordered
@@ -94,6 +98,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getPertainsTo() <em>Pertains To</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPertainsTo()
 	 * @generated
 	 * @ordered
@@ -104,6 +109,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	 * The cached value of the '{@link #getAffects() <em>Affects</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAffects()
 	 * @generated
 	 * @ordered
@@ -113,6 +119,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ArchitectureDecisionImpl() {
@@ -122,6 +129,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -132,6 +140,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureRationale> getJustifiedBy() {
@@ -144,6 +153,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getDependsUpon() {
@@ -156,6 +166,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureDecision> getDependents() {
@@ -168,6 +179,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Concern> getRaises() {
@@ -180,6 +192,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Concern> getPertainsTo() {
@@ -192,6 +205,7 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ADElement> getAffects() {
@@ -204,24 +218,25 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJustifiedBy()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDependsUpon()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDependents()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRaises()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPertainsTo()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getAffects()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getJustifiedBy()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDependsUpon()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getDependents()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getRaises()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getPertainsTo()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getAffects()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -229,23 +244,24 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
-				return ((InternalEList<?>)getJustifiedBy()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
-				return ((InternalEList<?>)getDependsUpon()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
-				return ((InternalEList<?>)getDependents()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
-				return ((InternalEList<?>)getRaises()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
-				return ((InternalEList<?>)getPertainsTo()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
-				return ((InternalEList<?>)getAffects()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
+			return ((InternalEList<?>) getJustifiedBy()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
+			return ((InternalEList<?>) getDependsUpon()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
+			return ((InternalEList<?>) getDependents()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
+			return ((InternalEList<?>) getRaises()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
+			return ((InternalEList<?>) getPertainsTo()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
+			return ((InternalEList<?>) getAffects()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -253,23 +269,24 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
-				return getJustifiedBy();
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
-				return getDependsUpon();
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
-				return getDependents();
-			case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
-				return getRaises();
-			case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
-				return getPertainsTo();
-			case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
-				return getAffects();
+		case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
+			return getJustifiedBy();
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
+			return getDependsUpon();
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
+			return getDependents();
+		case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
+			return getRaises();
+		case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
+			return getPertainsTo();
+		case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
+			return getAffects();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -277,36 +294,37 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
-				getJustifiedBy().clear();
-				getJustifiedBy().addAll((Collection<? extends ArchitectureRationale>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
-				getDependsUpon().clear();
-				getDependsUpon().addAll((Collection<? extends ArchitectureDecision>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
-				getDependents().clear();
-				getDependents().addAll((Collection<? extends ArchitectureDecision>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
-				getRaises().clear();
-				getRaises().addAll((Collection<? extends Concern>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
-				getPertainsTo().clear();
-				getPertainsTo().addAll((Collection<? extends Concern>)newValue);
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
-				getAffects().clear();
-				getAffects().addAll((Collection<? extends ADElement>)newValue);
-				return;
+		case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
+			getJustifiedBy().clear();
+			getJustifiedBy().addAll((Collection<? extends ArchitectureRationale>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
+			getDependsUpon().clear();
+			getDependsUpon().addAll((Collection<? extends ArchitectureDecision>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
+			getDependents().clear();
+			getDependents().addAll((Collection<? extends ArchitectureDecision>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
+			getRaises().clear();
+			getRaises().addAll((Collection<? extends Concern>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
+			getPertainsTo().clear();
+			getPertainsTo().addAll((Collection<? extends Concern>) newValue);
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
+			getAffects().clear();
+			getAffects().addAll((Collection<? extends ADElement>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -314,29 +332,30 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
-				getJustifiedBy().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
-				getDependsUpon().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
-				getDependents().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
-				getRaises().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
-				getPertainsTo().clear();
-				return;
-			case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
-				getAffects().clear();
-				return;
+		case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
+			getJustifiedBy().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
+			getDependsUpon().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
+			getDependents().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
+			getRaises().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
+			getPertainsTo().clear();
+			return;
+		case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
+			getAffects().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -344,25 +363,26 @@ public class ArchitectureDecisionImpl extends ADElementImpl implements Architect
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
-				return justifiedBy != null && !justifiedBy.isEmpty();
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
-				return dependsUpon != null && !dependsUpon.isEmpty();
-			case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
-				return dependents != null && !dependents.isEmpty();
-			case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
-				return raises != null && !raises.isEmpty();
-			case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
-				return pertainsTo != null && !pertainsTo.isEmpty();
-			case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
-				return affects != null && !affects.isEmpty();
+		case Iso42010Package.ARCHITECTURE_DECISION__JUSTIFIED_BY:
+			return justifiedBy != null && !justifiedBy.isEmpty();
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDS_UPON:
+			return dependsUpon != null && !dependsUpon.isEmpty();
+		case Iso42010Package.ARCHITECTURE_DECISION__DEPENDENTS:
+			return dependents != null && !dependents.isEmpty();
+		case Iso42010Package.ARCHITECTURE_DECISION__RAISES:
+			return raises != null && !raises.isEmpty();
+		case Iso42010Package.ARCHITECTURE_DECISION__PERTAINS_TO:
+			return pertainsTo != null && !pertainsTo.isEmpty();
+		case Iso42010Package.ARCHITECTURE_DECISION__AFFECTS:
+			return affects != null && !affects.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ArchitectureDecisionImpl
+} // ArchitectureDecisionImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,6 +54,7 @@ public class CustomConstraintEditPartCN extends ConstraintEditPartCN {
 				editPart = (EditPart) getEditingDomain().runExclusive(
 						new RunnableWithResult.Impl<java.lang.Object>() {
 
+							@Override
 							public void run() {
 								// edit body, which can be found in 2nd child, instead of default action (first child)
 								setResult(getChildren().get(1));

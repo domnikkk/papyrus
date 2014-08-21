@@ -51,22 +51,22 @@ public abstract class AbstractUmlModelExplorerCreateCommandHandler extends Abstr
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		Object result = super.execute(event);
 
-		if(result instanceof Element) {
-			handleElementsCreated(Collections.singleton((Element)result), event);
-		} else if(result instanceof Collection<?>) {
-			handleElementsCreated((Collection<?>)result, event);
+		if (result instanceof Element) {
+			handleElementsCreated(Collections.singleton((Element) result), event);
+		} else if (result instanceof Collection<?>) {
+			handleElementsCreated((Collection<?>) result, event);
 		}
 
 		return result;
 	}
 
 	protected void handleElementsCreated(Collection<?> elements, ExecutionEvent event) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return;
 		}
 
 		NavigationTarget target = getNavigationTarget(event);
-		if(target == null) {
+		if (target == null) {
 			return;
 		}
 
@@ -75,17 +75,17 @@ public abstract class AbstractUmlModelExplorerCreateCommandHandler extends Abstr
 
 	protected NavigationTarget getNavigationTarget(ExecutionEvent event) {
 		IWorkbenchPart activePart = HandlerUtil.getActivePart(event);
-		if(activePart == null) {
+		if (activePart == null) {
 			return null;
 		}
 
 		Optional<NavigationTarget> navigationTarget = AdapterUtils.adapt(activePart, NavigationTarget.class);
-		if(navigationTarget.isPresent()) {
+		if (navigationTarget.isPresent()) {
 			return navigationTarget.get();
 		}
 
 		Optional<IRevealSemanticElement> revealSemantic = AdapterUtils.adapt(activePart, IRevealSemanticElement.class);
-		if(revealSemantic.isPresent()) {
+		if (revealSemantic.isPresent()) {
 			return new RevealSemanticElementWrapper(revealSemantic.get());
 		}
 

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,15 +50,15 @@ public class StructuredClassifierLayoutEditPolicy extends LayoutEditPolicy {
 
 	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		View childView = (View)child.getModel();
-		switch(UMLVisualIDRegistry.getVisualID(childView)) {
+		View childView = (View) child.getModel();
+		switch (UMLVisualIDRegistry.getVisualID(childView)) {
 		case PortEditPart.VISUAL_ID:
 
 			return new BorderItemResizableEditPolicy();
 
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;
@@ -66,11 +66,11 @@ public class StructuredClassifierLayoutEditPolicy extends LayoutEditPolicy {
 
 	@Override
 	protected Command getCreateCommand(CreateRequest request) {
-		if(request instanceof CreateViewAndElementRequest) {
+		if (request instanceof CreateViewAndElementRequest) {
 
-			CreateViewAndElementRequest req = (CreateViewAndElementRequest)request;
+			CreateViewAndElementRequest req = (CreateViewAndElementRequest) request;
 
-			TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+			TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 
 			CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, DiagramUIMessages.AddCommand_Label);
 			Iterator<?> iter = req.getViewDescriptors().iterator();
@@ -90,14 +90,15 @@ public class StructuredClassifierLayoutEditPolicy extends LayoutEditPolicy {
 			// Convert the calculated preferred bounds as relative to parent location
 			Rectangle creationBounds = preferredBounds.getTranslated(parentLoc.getNegated());
 
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 
-				CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor)iter.next();
+				CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor) iter.next();
 				cc.compose(new SetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, viewDescriptor, creationBounds));
 			}
 
-			if(cc.reduce() == null)
+			if (cc.reduce() == null) {
 				return null;
+			}
 
 			return new ICommandProxy(cc.reduce());
 		}

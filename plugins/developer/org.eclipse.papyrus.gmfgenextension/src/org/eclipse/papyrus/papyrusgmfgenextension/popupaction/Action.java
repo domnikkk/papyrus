@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2009 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -34,7 +34,7 @@ public abstract class Action implements IObjectActionDelegate {
 
 	/**
 	 * Convert each selected elements from the explorer menu, or modeling view to an EObject and add it to a list
-	 * 
+	 *
 	 * @return list of EObject
 	 */
 	public void updateSelectedEObject(IStructuredSelection selection) {
@@ -42,11 +42,11 @@ public abstract class Action implements IObjectActionDelegate {
 		List<EObject> selectedCurrentListEObjects = new LinkedList<EObject>();
 
 		Iterator<Object> eltIt = selection.iterator();
-		while(eltIt.hasNext()) {
+		while (eltIt.hasNext()) {
 
 			Object currentObject = eltIt.next();
-			if(currentObject instanceof EObject) {
-				selectedCurrentListEObjects.add((EObject)currentObject);
+			if (currentObject instanceof EObject) {
+				selectedCurrentListEObjects.add((EObject) currentObject);
 			}
 		}
 		selectedListEObject = selectedCurrentListEObjects;
@@ -61,22 +61,24 @@ public abstract class Action implements IObjectActionDelegate {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#selectionChanged(org.eclipse.jface.action.IAction, org.eclipse.jface.viewers.ISelection)
 	 */
+	@Override
 	public void selectionChanged(IAction action, ISelection selection) {
 		// Convert selection into EObject list
-		updateSelectedEObject((IStructuredSelection)selection);
+		updateSelectedEObject((IStructuredSelection) selection);
 	}
 
+	@Override
 	public void setActivePart(IAction action, IWorkbenchPart targetPart) {
 		// NO OP.
 	}
 
 	/**
 	 * Check if the CustomBehavior for policyKey is already added
-	 * 
+	 *
 	 * @param genlink
-	 *        the GenLink to test
+	 *            the GenLink to test
 	 * @param policyKey
-	 *        that we look for
+	 *            that we look for
 	 * @return true if the behavior with correct key already exists
 	 */
 	protected boolean hasCustomBehavior(GenCommonBase genCommonBase, String policyKey) {
@@ -84,12 +86,12 @@ public abstract class Action implements IObjectActionDelegate {
 		boolean hasCustomBehavior = false;
 
 		Iterator<Behaviour> it = genCommonBase.getBehaviour().iterator();
-		while(it.hasNext() && !(hasCustomBehavior)) {
+		while (it.hasNext() && !(hasCustomBehavior)) {
 			Behaviour behaviour = it.next();
 
-			if(behaviour instanceof CustomBehaviour) {
-				CustomBehaviour customBehavior = (CustomBehaviour)behaviour;
-				if(policyKey.equals(customBehavior.getKey())) {
+			if (behaviour instanceof CustomBehaviour) {
+				CustomBehaviour customBehavior = (CustomBehaviour) behaviour;
+				if (policyKey.equals(customBehavior.getKey())) {
 					hasCustomBehavior = true;
 				}
 			}
@@ -101,9 +103,9 @@ public abstract class Action implements IObjectActionDelegate {
 	/**
 	 * Add the CustomBehavior for Applied Stereotype label display to the GenLink node given as
 	 * parameter
-	 * 
+	 *
 	 * @param genCommonBase
-	 *        where the CustomBehavior is added
+	 *            where the CustomBehavior is added
 	 */
 	protected void addCustomBehavior(GenCommonBase genCommonBase, String policyKey, String policyValue) {
 
@@ -116,23 +118,23 @@ public abstract class Action implements IObjectActionDelegate {
 
 	/**
 	 * Find the GenClass node with specified name in the resource model (GenModel expected here)
-	 * 
+	 *
 	 * @param resource
-	 *        the genmodel
+	 *            the genmodel
 	 * @param name
-	 *        of the searched GenClass
+	 *            of the searched GenClass
 	 * @return genClass with chosen name or null
 	 */
 	protected GenClass findGenClass(Resource resource, String name) {
 
 		GenClass genClass = null;
 		Iterator<EObject> it = resource.getAllContents();
-		while(it.hasNext() && (genClass == null)) {
+		while (it.hasNext() && (genClass == null)) {
 			EObject eobject = it.next();
 
-			if(eobject instanceof GenClass) {
-				GenClass current = (GenClass)eobject;
-				if(name.equals(current.getName())) {
+			if (eobject instanceof GenClass) {
+				GenClass current = (GenClass) eobject;
+				if (name.equals(current.getName())) {
 					genClass = current;
 				}
 			}
@@ -142,13 +144,13 @@ public abstract class Action implements IObjectActionDelegate {
 
 	/**
 	 * Finds a GenFeature owned by a specified GenClass in the resource (genmodel)
-	 * 
+	 *
 	 * @param resource
-	 *        the genmodel
+	 *            the genmodel
 	 * @param genClassName
-	 *        the name of GenClass owning the searched feature
+	 *            the name of GenClass owning the searched feature
 	 * @param genFeatureName
-	 *        the name of the GenFeature
+	 *            the name of the GenFeature
 	 * @return the found GenFeature node or null
 	 */
 	protected GenFeature findGenFeature(Resource resource, String genClassName, String genFeatureName) {
@@ -156,19 +158,19 @@ public abstract class Action implements IObjectActionDelegate {
 		GenFeature genFeature = null;
 
 		Iterator<EObject> it = resource.getAllContents();
-		while(it.hasNext() && (genFeature == null)) {
+		while (it.hasNext() && (genFeature == null)) {
 			EObject eobject = it.next();
 
-			if(eobject instanceof GenClass) {
-				GenClass genClass = (GenClass)eobject;
+			if (eobject instanceof GenClass) {
+				GenClass genClass = (GenClass) eobject;
 
-				if(genClassName.equals(genClass.getName())) {
+				if (genClassName.equals(genClass.getName())) {
 
 					Iterator<GenFeature> itGF = genClass.getAllGenFeatures().iterator();
-					while(itGF.hasNext() && (genFeature == null)) {
+					while (itGF.hasNext() && (genFeature == null)) {
 						GenFeature currentGenFeature = itGF.next();
 
-						if(genFeatureName.equals(currentGenFeature.getEcoreFeature().getName())) {
+						if (genFeatureName.equals(currentGenFeature.getEcoreFeature().getName())) {
 							genFeature = currentGenFeature;
 						}
 					}

@@ -17,8 +17,8 @@ import org.eclipse.papyrus.infra.constraints.DisplayUnit;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getPolicies <em>Policies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getPolicies <em>Policies</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,10 +31,10 @@ public interface NewChildPolicySet extends DisplayUnit {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewChildPolicySet_Name()
@@ -47,7 +47,9 @@ public interface NewChildPolicySet extends DisplayUnit {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicySet#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -58,10 +60,10 @@ public interface NewChildPolicySet extends DisplayUnit {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Policies</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Policies</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Policies</em>' containment reference list.
 	 * @see org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NcpolicyPackage#getNewChildPolicySet_Policies()
 	 * @model containment="true"

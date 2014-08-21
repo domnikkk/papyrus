@@ -16,7 +16,7 @@ import java.io.Reader;
 
 /**
  * Represents a lexer for a CSV document
- * 
+ *
  * Lexing rules are:
  * LineEnding -> '\n' | '\r' | '\r\n'
  * Separator -> what is given in parameter
@@ -24,10 +24,10 @@ import java.io.Reader;
  * Whitespace -> (Unicode IsWhitespace character class) - (Separator | TextMarker | '\n' | '\r')
  * Cell -> (. - Whitespace)*
  * Cell -> TextMarker ( (.-TextMarker) | (TextMarker TextMarker)* ) TextMarker
- * 
+ *
  * In these rules . represents any character and - represents the language difference operator.
  * The last rule means that inside a quoted cell value the content can be anything except the quote character, in which case it must be doubled.
- * 
+ *
  * @author Laurent Wouters
  */
 public class CSVLexer {
@@ -66,7 +66,7 @@ public class CSVLexer {
 
 	/**
 	 * Initializes this lexer
-	 * 
+	 *
 	 * @param input
 	 *            The input text reader
 	 * @param valueSeparator
@@ -85,7 +85,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets the type of the last matched token
-	 * 
+	 *
 	 * @return The type of the last matched token
 	 */
 	public int getTokenType() {
@@ -94,7 +94,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets the value of the last matched token
-	 * 
+	 *
 	 * @return The value of the last matched token
 	 */
 	public String getTokenValue() {
@@ -103,35 +103,41 @@ public class CSVLexer {
 
 	/**
 	 * Gets the next token in the input
-	 * 
+	 *
 	 * @return The next token
 	 */
 	public String next() {
 		// ignore all whitespaces
 		char c = input.read();
-		if (input.isAtEnd())
+		if (input.isAtEnd()) {
 			return getTokenEOF();
+		}
 		while (isWhitespace(c)) {
 			c = input.read();
-			if (input.isAtEnd())
+			if (input.isAtEnd()) {
 				return getTokenEOF();
+			}
 		}
 
 		// Here c is not whitespace and we are not at the end
-		if (c == separator)
+		if (c == separator) {
 			return getTokenSeparator();
-		if (c == textMarker)
+		}
+		if (c == textMarker) {
 			return onTextMarkerChar();
-		if (c == '\r' || c == '\n')
+		}
+		if (c == '\r' || c == '\n') {
 			return onLineEndingChar(c);
+		}
 
 		// Here we are on normal data
 		int length = 1;
 		builder[0] = c;
 		while (true) {
 			c = input.read();
-			if (input.isAtEnd())
+			if (input.isAtEnd()) {
 				break;
+			}
 			if (c == separator || c == '\r' || c == '\n') {
 				input.rewind(1);
 				break;
@@ -151,48 +157,53 @@ public class CSVLexer {
 
 	/**
 	 * Determines whether the given character is a white space that can be skipped
-	 * 
+	 *
 	 * @param c
 	 *            The character
 	 * @return <code>true</code> if the character can be skipped
 	 */
 	private boolean isWhitespace(char c) {
-		if (c == separator || c == textMarker || c == '\n' || c == '\r')
+		if (c == separator || c == textMarker || c == '\n' || c == '\r') {
 			return false;
+		}
 		return Character.isWhitespace(c);
 	}
 
 	/**
 	 * Lexes the line ending token beginning with the given character
-	 * 
+	 *
 	 * @param c
 	 *            The beginning character
 	 * @return The matched token
 	 */
 	private String onLineEndingChar(char c) {
-		if (c == '\n')
+		if (c == '\n') {
 			return getTokenNewRow();
+		}
 		// This was a '\r' character
 		// Check for windows line ending style
 		char n = input.read();
-		if (input.isAtEnd())
+		if (input.isAtEnd()) {
 			return getTokenNewRow();
-		if (n != '\n')
+		}
+		if (n != '\n') {
 			input.rewind(1);
+		}
 		return getTokenNewRow();
 	}
 
 	/**
 	 * Lexes the raw text between marks
-	 * 
+	 *
 	 * @return The matched token
 	 */
 	private String onTextMarkerChar() {
 		int length = 0;
 		while (true) {
 			char c = input.read();
-			if (input.isAtEnd())
+			if (input.isAtEnd()) {
 				return getTokenError();
+			}
 			if (c != textMarker) {
 				builder[length] = c;
 				length++;
@@ -205,8 +216,9 @@ public class CSVLexer {
 					length++;
 				} else {
 					// This was the end of the quoted text
-					if (!input.isAtEnd())
+					if (!input.isAtEnd()) {
 						input.rewind(1);
+					}
 					return getTokenValue(length);
 				}
 			}
@@ -215,7 +227,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets an error token
-	 * 
+	 *
 	 * @return An error token
 	 */
 	private String getTokenError() {
@@ -226,7 +238,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets an end of input marker token
-	 * 
+	 *
 	 * @return An end of input marker token
 	 */
 	private String getTokenEOF() {
@@ -237,7 +249,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets a cell separator token
-	 * 
+	 *
 	 * @return A cell separator token
 	 */
 	private String getTokenSeparator() {
@@ -248,7 +260,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets a new row token
-	 * 
+	 *
 	 * @return A new row token
 	 */
 	private String getTokenNewRow() {
@@ -259,7 +271,7 @@ public class CSVLexer {
 
 	/**
 	 * Gets a token representing a cell's value
-	 * 
+	 *
 	 * @param length
 	 *            Length of the value
 	 * @return A token
@@ -271,7 +283,7 @@ public class CSVLexer {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the number of read characters
 	 */

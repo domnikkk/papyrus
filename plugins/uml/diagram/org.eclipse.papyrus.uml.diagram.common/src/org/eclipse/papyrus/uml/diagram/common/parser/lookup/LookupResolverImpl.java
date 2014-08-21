@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,8 +45,9 @@ public class LookupResolverImpl implements LookupResolver {
 		myResolvingEditPart = resolvingEditPart;
 	}
 
+	@Override
 	public void addLookupResolveRequest(LookupResolveRequest request, Callback callback) {
-		if(isEmpty()) {
+		if (isEmpty()) {
 			myTheOnlyCallback = callback;
 			myTheOnlyRequest = request;
 		} else {
@@ -54,22 +55,25 @@ public class LookupResolverImpl implements LookupResolver {
 		}
 	}
 
+	@Override
 	public boolean isEmpty() {
 		return myTheOnlyCallback == null && myTheOnlyRequest == null;
 	}
 
+	@Override
 	public boolean canResolve() {
 		return !isEmpty() && !myIsMultipleResolveRequired;
 	}
 
+	@Override
 	public AbstractTransactionalCommand getResolveCommand() {
-		if(!canResolve()) {
+		if (!canResolve()) {
 			return null;
 		}
 		TransactionalEditingDomain domain = myResolvingEditPart.getEditingDomain();
 		final CreateUnspecifiedTypeRequest createRequest = new CreateUnspecifiedTypeRequest(myTheOnlyRequest.getElementTypes(), myResolvingEditPart.getDiagramPreferencesHint());
 		final Command gefCommand = myResolvingEditPart.getCommand(createRequest);
-		if(!gefCommand.canExecute()) {
+		if (!gefCommand.canExecute()) {
 			return null;
 		}
 		// XXX gef inside transactional command???
@@ -79,7 +83,7 @@ public class LookupResolverImpl implements LookupResolver {
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				gefCommand.execute();
 				NamedElement resolution = getNewObject();
-				if(resolution != null) {
+				if (resolution != null) {
 					resolution.eSet(myTheOnlyRequest.getInitFeature(), myTheOnlyRequest.getInitValue());
 					myTheOnlyCallback.lookupResolved(resolution);
 				}
@@ -87,17 +91,17 @@ public class LookupResolverImpl implements LookupResolver {
 			}
 
 			private NamedElement getNewObject() {
-				for(Object next : createRequest.getElementTypes()) {
-					IElementType nextElementType = (IElementType)next;
+				for (Object next : createRequest.getElementTypes()) {
+					IElementType nextElementType = (IElementType) next;
 					CreateRequest nextRequest = createRequest.getRequestForType(nextElementType);
-					List allNew = (List)nextRequest.getNewObject();
-					for(Object nextCreated : allNew) {
-						if(nextCreated instanceof IAdaptable) {
-							View createdView = (View)((IAdaptable)nextCreated).getAdapter(View.class);
-							if(createdView != null) {
+					List allNew = (List) nextRequest.getNewObject();
+					for (Object nextCreated : allNew) {
+						if (nextCreated instanceof IAdaptable) {
+							View createdView = (View) ((IAdaptable) nextCreated).getAdapter(View.class);
+							if (createdView != null) {
 								EObject createdEntity = createdView.getElement();
-								if(createdEntity instanceof NamedElement) {
-									return (NamedElement)createdEntity;
+								if (createdEntity instanceof NamedElement) {
+									return (NamedElement) createdEntity;
 								}
 							}
 						}

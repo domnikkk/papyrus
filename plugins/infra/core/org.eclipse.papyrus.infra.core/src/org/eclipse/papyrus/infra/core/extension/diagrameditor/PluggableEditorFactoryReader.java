@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class PluggableEditorFactoryReader {
 	/**
 	 * Create a new Registry reading extension from the specified namespace. The
 	 * namespace is usually the name of the plugin owning the registry.
-	 * 
+	 *
 	 * @param extensionPointNamespace
 	 */
 	public PluggableEditorFactoryReader(String extensionPointNamespace) {
@@ -59,15 +59,15 @@ public class PluggableEditorFactoryReader {
 	 * Populate the provided {@link PageModelFactoryRegistry} with {@link IPluggableEditorFactory} read from Eclipse extension declarations.
 	 * For each declared editor, create a proxy encapsulating the real
 	 * EditorFactory. Then the proxy is added to the PageModelFactoryRegistry.
-	 * 
+	 *
 	 * @param pageModelFactoryRegistry
-	 *        The object to populate
+	 *            The object to populate
 	 * @param serviceRegistry
-	 *        ServiceRegistry provided to newly instantiated {@link IPluggableEditorFactory}.
+	 *            ServiceRegistry provided to newly instantiated {@link IPluggableEditorFactory}.
 	 */
 	public void populate(PageModelFactoryRegistry pageModelFactoryRegistry, ServicesRegistry serviceRegistry) {
 
-		for(EditorDescriptor desc : getEditorDescriptors()) {
+		for (EditorDescriptor desc : getEditorDescriptors()) {
 
 			// Create and add a proxy encapsulating the EditorFactory.
 			pageModelFactoryRegistry.add(new EditorFactoryProxy(serviceRegistry, desc));
@@ -77,15 +77,15 @@ public class PluggableEditorFactoryReader {
 	/**
 	 * Populate the provided {@link PageIconsRegistry} with icons read from
 	 * Eclipse extension declarations. For each declared editor, create a {@link EditorIconFactory}.
-	 * 
+	 *
 	 * @param pageModelFactoryRegistry
-	 *        The object to populate
+	 *            The object to populate
 	 * @param serviceRegistry
-	 *        ServiceRegistry provided to newly instantiated {@link IPluggableEditorFactory}.
+	 *            ServiceRegistry provided to newly instantiated {@link IPluggableEditorFactory}.
 	 */
 	public void populate(PageIconsRegistry registry) {
 
-		for(EditorDescriptor desc : getEditorDescriptors()) {
+		for (EditorDescriptor desc : getEditorDescriptors()) {
 
 			// Create and add a proxy encapsulating the EditorFactory.
 			registry.add(new EditorIconFactory(desc));
@@ -94,11 +94,11 @@ public class PluggableEditorFactoryReader {
 
 	/**
 	 * Get the list of editor descriptor.
-	 * 
+	 *
 	 * @return the list of editor descriptor.
 	 */
 	public List<EditorDescriptor> getEditorDescriptors() {
-		if(!isExtensionLoaded) {
+		if (!isExtensionLoaded) {
 			isExtensionLoaded = true;
 			initializeEditorDescriptors();
 		}
@@ -112,10 +112,10 @@ public class PluggableEditorFactoryReader {
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(extensionPointNamespace, EDITOR_EXTENSION_ID);
 
-		for(IConfigurationElement ele : configElements) {
+		for (IConfigurationElement ele : configElements) {
 			EditorDescriptor desc;
 			try {
-				if(EditorDescriptorExtensionFactory.EDITOR_DIAGRAM_EXTENSIONPOINT.equals(ele.getName())) {
+				if (EditorDescriptorExtensionFactory.EDITOR_DIAGRAM_EXTENSIONPOINT.equals(ele.getName())) {
 					desc = EditorDescriptorExtensionFactory.eINSTANCE.createNestedEditorDescriptor(ele);
 					editorDescriptors.add(desc);
 				}
@@ -124,7 +124,7 @@ public class PluggableEditorFactoryReader {
 			}
 		}
 
-		if(log.isDebugEnabled()) {
+		if (log.isDebugEnabled()) {
 			log.debug("Read " + editorDescriptors.size() + " editor descriptors from Eclipse extensions"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}

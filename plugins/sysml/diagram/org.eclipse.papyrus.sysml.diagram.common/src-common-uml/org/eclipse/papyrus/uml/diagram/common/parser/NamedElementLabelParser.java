@@ -48,13 +48,14 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		String editString = "";
 
 		EObject eObject = EMFHelper.getEObject(element);
-		if((eObject != null) && (eObject instanceof NamedElement)) {
-			NamedElement semElement = (NamedElement)eObject;
-			if(semElement.isSetName()) {
+		if ((eObject != null) && (eObject instanceof NamedElement)) {
+			NamedElement semElement = (NamedElement) eObject;
+			if (semElement.isSetName()) {
 				editString = semElement.getName();
 			}
 		}
@@ -64,6 +65,7 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
@@ -71,12 +73,13 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 
 		ICommand command = UnexecutableCommand.INSTANCE;
 
-		EObject objectToEdit =EMFHelper.getEObject(element);
-		if(objectToEdit == null) {
+		EObject objectToEdit = EMFHelper.getEObject(element);
+		if (objectToEdit == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -92,12 +95,13 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if(eObject instanceof NamedElement) {
-			return ((NamedElement)eObject).getName();
+		if (eObject instanceof NamedElement) {
+			return ((NamedElement) eObject).getName();
 		}
 
 		return result;
@@ -106,11 +110,12 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return EcorePackage.eINSTANCE.getEAnnotation_Details().equals(feature) || UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
 			}
 		}
@@ -121,6 +126,7 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -128,6 +134,7 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 		semanticElementsBeingParsed.add(element);
@@ -138,6 +145,7 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}
@@ -145,23 +153,25 @@ public class NamedElementLabelParser implements IMaskManagedSemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Map<String, String> getMasks() {
 		return Collections.emptyMap();
 	}
 
 	protected Collection<String> getMaskValues(IAdaptable element) {
-		View view = (View)element.getAdapter(View.class);
-		if(view == null) {
+		View view = (View) element.getAdapter(View.class);
+		if (view == null) {
 			return getDefaultValue(element);
 		}
 
 		Collection<String> result = MaskLabelHelper.getMaskValues(view);
-		if(result == null) {
+		if (result == null) {
 			result = getDefaultValue(element);
 		}
 		return result;
 	}
 
+	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
 		return Collections.emptySet();
 	}

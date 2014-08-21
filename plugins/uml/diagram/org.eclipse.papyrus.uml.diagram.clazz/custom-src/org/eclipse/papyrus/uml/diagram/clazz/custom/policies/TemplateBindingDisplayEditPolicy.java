@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
@@ -56,7 +56,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 
 	/**
 	 * Sets the semantic element which is linked to the edit policy
-	 * 
+	 *
 	 * @return the element linked to the edit policy
 	 */
 	protected Element initSemanticElement() {
@@ -65,7 +65,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
@@ -77,9 +77,10 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -98,7 +99,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 					// add a listener on the substitution and its references in order to have a correct refresh
 					getDiagramEventBroker().addNotificationListener(substitution, this);
 					if (substitution.getFormal() != null && substitution.getFormal().getParameteredElement() instanceof NamedElement) {
-						getDiagramEventBroker().addNotificationListener(((NamedElement) substitution.getFormal().getParameteredElement()), this);
+						getDiagramEventBroker().addNotificationListener((substitution.getFormal().getParameteredElement()), this);
 					}
 					if (substitution.getActual() instanceof NamedElement) {
 						getDiagramEventBroker().addNotificationListener(substitution.getActual(), this);
@@ -112,9 +113,10 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -139,6 +141,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 		getHost().refresh();
 	}
 
+	@Override
 	public void notifyChanged(Notification notification) {
 		if (notification.getEventType() == Notification.SET && notification.getNotifier() instanceof TemplateParameterSubstitution) {
 			if (notification.getFeature().equals(UMLPackage.eINSTANCE.getTemplateParameterSubstitution_Actual())) {
@@ -154,7 +157,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 				TemplateParameterSubstitution substitution = (TemplateParameterSubstitution) notification.getNewValue();
 				getDiagramEventBroker().addNotificationListener(substitution, this);
 				if (substitution.getFormal() != null && substitution.getFormal().getParameteredElement() instanceof NamedElement) {
-					getDiagramEventBroker().addNotificationListener(((NamedElement) substitution.getFormal().getParameteredElement()), this);
+					getDiagramEventBroker().addNotificationListener((substitution.getFormal().getParameteredElement()), this);
 				}
 				if (substitution.getActual() instanceof NamedElement) {
 					getDiagramEventBroker().addNotificationListener(substitution.getActual(), this);
@@ -167,7 +170,7 @@ public class TemplateBindingDisplayEditPolicy extends GraphicalEditPolicy implem
 				TemplateParameterSubstitution substitution = (TemplateParameterSubstitution) notification.getNewValue();
 				getDiagramEventBroker().removeNotificationListener(substitution, this);
 				if (substitution.getFormal() != null && substitution.getFormal().getParameteredElement() instanceof NamedElement) {
-					getDiagramEventBroker().removeNotificationListener(((NamedElement) substitution.getFormal().getParameteredElement()), this);
+					getDiagramEventBroker().removeNotificationListener((substitution.getFormal().getParameteredElement()), this);
 				}
 				if (substitution.getActual() instanceof NamedElement) {
 					getDiagramEventBroker().removeNotificationListener(substitution.getActual(), this);

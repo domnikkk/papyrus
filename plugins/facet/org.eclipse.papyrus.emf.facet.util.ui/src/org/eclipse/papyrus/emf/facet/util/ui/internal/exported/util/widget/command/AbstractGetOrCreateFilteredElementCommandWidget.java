@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -26,15 +26,13 @@ import org.eclipse.swt.widgets.Composite;
  * This abstract class allows the user to select or create an element (the
  * concretes classes extending this abstract class will specify the type for
  * this elements).</p>
- * 
+ *
  * The widget contains two composite:
  * <nl>
- * <li> {@link FilteredElementSelectionWidget} : display a filtered list with the
- * elements returned by {@link #getElements()}</li>
- * <li> {@link CreateElementWidget} : create a "new..." button, and display the
- * dialog returned by {@link #createDialog()} when clicked</li>
+ * <li> {@link FilteredElementSelectionWidget} : display a filtered list with the elements returned by {@link #getElements()}</li>
+ * <li> {@link CreateElementWidget} : create a "new..." button, and display the dialog returned by {@link #createDialog()} when clicked</li>
  * </nl>
- * 
+ *
  * @see GetOrCreateFacetSetWidget
  * @see GetOrCreateFacetWidget
  * @see GetOrCreateOperationWidget
@@ -50,9 +48,8 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 	private CreateElementWidget<W> createElementW;
 
 	/**
-	 * Constructor. Initialize a new layout containing {@value #COLUMN_NUMBER}
-	 * columns.
-	 * 
+	 * Constructor. Initialize a new layout containing {@value #COLUMN_NUMBER} columns.
+	 *
 	 * @param parent
 	 *            the parent of this widget.
 	 * @param editingDomain
@@ -80,9 +77,8 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 
 	/**
 	 * This method must return the all the elements that the user can choose
-	 * (with the name to display has the key to the map). The method
-	 * {@link #getSuperFacetSet(Object)} can be useful.
-	 * 
+	 * (with the name to display has the key to the map). The method {@link #getSuperFacetSet(Object)} can be useful.
+	 *
 	 * @return a map of the elements to display.
 	 */
 	protected abstract Map<String, T> getElements();
@@ -90,7 +86,7 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 	/**
 	 * @return the dialog that the "New..." button of this widget will open.
 	 *         Null if you want no "New..." button.
-	 * 
+	 *
 	 * @see AbstractDialog
 	 */
 	protected abstract IDialog<W> createDialog();
@@ -103,7 +99,9 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 		this.elementSelection.setElements(getElements().keySet().toArray());
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget#getElementSelected()
 	 */
 	public T getElementSelected() {
@@ -117,7 +115,9 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 		return result;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget#selectElement(T)
 	 */
 	public void selectElement(final T element) {
@@ -137,7 +137,9 @@ public abstract class AbstractGetOrCreateFilteredElementCommandWidget<T extends 
 		selectElement(element);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.emf.facet.util.ui.internal.exported.util.widget.command.IGetOrCreateFilteredElementCommmandWidget#pressNewButton()
 	 */
 	public IDialog<W> pressNewButton() {

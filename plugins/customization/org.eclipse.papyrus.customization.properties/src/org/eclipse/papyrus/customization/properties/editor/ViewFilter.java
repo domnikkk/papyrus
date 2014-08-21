@@ -42,24 +42,24 @@ public class ViewFilter extends ViewerFilter {
 
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
-		if(matcher == null) {
+		if (matcher == null) {
 			return true;
 		}
 
 		EObject semantic = EMFHelper.getEObject(element);
 
-		if(semantic != null) {
-			if(semantic instanceof View) {
-				String viewName = ((View)semantic).getName();
-				if(viewName == null) {
+		if (semantic != null) {
+			if (semantic instanceof View) {
+				String viewName = ((View) semantic).getName();
+				if (viewName == null) {
 					return true;
 				}
 				return matcher.match(viewName);
-			} else if(semantic instanceof DataContextPackage) {
-				//FIXME : The filter doesn't work correctly for displaying a DataContextElement in a Package
-				return select((DataContextPackage)semantic);
-			} else if(semantic instanceof DataContextElement) {
-				return select((DataContextElement)semantic);
+			} else if (semantic instanceof DataContextPackage) {
+				// FIXME : The filter doesn't work correctly for displaying a DataContextElement in a Package
+				return select((DataContextPackage) semantic);
+			} else if (semantic instanceof DataContextElement) {
+				return select((DataContextElement) semantic);
 			}
 		}
 
@@ -74,22 +74,22 @@ public class ViewFilter extends ViewerFilter {
 	 * @return
 	 */
 	private boolean select(DataContextPackage dataContextPackage) {
-		if(dataContextPackage.getName() == null) {
+		if (dataContextPackage.getName() == null) {
 			return true;
 		}
 
-		if(matcher.match(dataContextPackage.getName())) {
+		if (matcher.match(dataContextPackage.getName())) {
 			return true;
 		}
 
-		for(DataContextElement subElement : dataContextPackage.getElements()) {
-			if(subElement instanceof DataContextPackage) {
-				if(select((DataContextPackage)subElement)) {
+		for (DataContextElement subElement : dataContextPackage.getElements()) {
+			if (subElement instanceof DataContextPackage) {
+				if (select((DataContextPackage) subElement)) {
 					return true;
 				}
 			}
 
-			if(select(subElement)) {
+			if (select(subElement)) {
 				return true;
 			}
 		}
@@ -98,17 +98,17 @@ public class ViewFilter extends ViewerFilter {
 	}
 
 	private boolean select(DataContextElement dataContextElement) {
-		if(dataContextElement.getName() == null) {
+		if (dataContextElement.getName() == null) {
 			return true;
 		}
 
-		if(matcher.match(dataContextElement.getName())) {
+		if (matcher.match(dataContextElement.getName())) {
 			return true;
 		}
 
 		DataContextPackage dataContextPackage = dataContextElement.getPackage();
-		while(dataContextPackage != null) {
-			if(matcher.match(dataContextPackage.getName())) {
+		while (dataContextPackage != null) {
+			if (matcher.match(dataContextPackage.getName())) {
 				return true;
 			}
 

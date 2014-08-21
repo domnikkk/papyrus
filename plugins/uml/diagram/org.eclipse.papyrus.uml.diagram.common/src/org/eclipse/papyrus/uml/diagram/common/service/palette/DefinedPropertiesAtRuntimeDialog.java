@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ import org.eclipse.uml2.uml.Stereotype;
  * <li> {@link Combo}</li>
  * <li> {@link Button} (checkBox)</li>
  * </ul>
- * 
+ *
  */
 public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
@@ -81,17 +81,17 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 	/**
 	 * Instantiates a new dialog.
-	 * 
+	 *
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param title
-	 *        the title
+	 *            the title
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param runtimeProperties
-	 *        the runtime properties
+	 *            the runtime properties
 	 * @param objectToEdit
-	 *        the object to edit
+	 *            the object to edit
 	 */
 	protected DefinedPropertiesAtRuntimeDialog(Shell shell, String title, String message, List<String> runtimeProperties, EObject objectToEdit) {
 		super(shell);
@@ -99,24 +99,24 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 		this.title = title;
 		this.elementToEdit = objectToEdit;
 		this.message = message;
-		if(elementToEdit instanceof Element) {
-			appliedStereotypes = ((Element)elementToEdit).getAppliedStereotypes();
+		if (elementToEdit instanceof Element) {
+			appliedStereotypes = ((Element) elementToEdit).getAppliedStereotypes();
 		}
-		EClass currentEClass = (EClass)elementToEdit.eClass();
+		EClass currentEClass = elementToEdit.eClass();
 		EList<EAttribute> allAttributs = currentEClass.getEAllAttributes();
-		for(EAttribute eAttribute : allAttributs) {
-			if((!eAttribute.isDerived()) && eAttribute.isChangeable()) {
+		for (EAttribute eAttribute : allAttributs) {
+			if ((!eAttribute.isDerived()) && eAttribute.isChangeable()) {
 				// we class the properties following its type
 				EClassifier eType = eAttribute.getEType();
 				String instanceTypeName = eType.getInstanceClassName();
-				if(runtimeProperties.contains(eAttribute.getName())) {
-					if(eType instanceof EEnum) {
+				if (runtimeProperties.contains(eAttribute.getName())) {
+					if (eType instanceof EEnum) {
 						enumerationMetaProperties.add(eAttribute);
-					} else if(instanceTypeName.equals(Integer.class.getCanonicalName())) {
+					} else if (instanceTypeName.equals(Integer.class.getCanonicalName())) {
 						stringMetaProperties.add(eAttribute);
-					} else if(instanceTypeName.equals("boolean")) { //$NON-NLS-1$
+					} else if (instanceTypeName.equals("boolean")) { //$NON-NLS-1$
 						booleanMetaProperties.add(eAttribute);
-					} else if(instanceTypeName.equals(String.class.getCanonicalName())) {
+					} else if (instanceTypeName.equals(String.class.getCanonicalName())) {
 						stringMetaProperties.add(eAttribute);
 					}
 				}
@@ -127,22 +127,22 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.window.Window#configureShell(org.eclipse.swt.widgets.Shell)
-	 * 
+	 *
 	 * @param shell
 	 */
 	@Override
 	protected void configureShell(Shell shell) {
 		super.configureShell(shell);
-		if(title != null) {
+		if (title != null) {
 			shell.setText(title);
 		}
 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createButtonsForButtonBar(org.eclipse.swt.widgets.Composite)
 	 *      we remove the CANCEL Button
 	 * @param parent
@@ -153,9 +153,9 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#createDialogArea(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 * @return
 	 */
@@ -163,7 +163,7 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 	protected Control createDialogArea(Composite parent) {
 
 		// create the composite
-		Composite composite = (Composite)super.createDialogArea(parent);
+		Composite composite = (Composite) super.createDialogArea(parent);
 		GridLayout layout = new GridLayout(2, false);
 		composite.setLayout(layout);
 		GridData data = new GridData(GridData.FILL_HORIZONTAL);
@@ -182,13 +182,13 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 		label.setText(message);
 
 		// create the editors
-		if(stringMetaProperties.size() != 0) {
+		if (stringMetaProperties.size() != 0) {
 			createTextArea(composite);
 		}
-		if(enumerationMetaProperties.size() != 0) {
+		if (enumerationMetaProperties.size() != 0) {
 			createCombo(composite);
 		}
-		if(booleanMetaProperties.size() != 0) {
+		if (booleanMetaProperties.size() != 0) {
 			createCheckBox(composite);
 		}
 
@@ -197,14 +197,14 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 	/**
 	 * Makes the title, that's to say, put the first letter in upper case
-	 * 
+	 *
 	 * @param name
-	 *        the name
+	 *            the name
 	 * @return the string
 	 */
 	protected String makeTitle(String name) {
 		String title = null;
-		if(name != null) {
+		if (name != null) {
 			title = new String(name);
 			String firstLetter = name.substring(0, 1);
 			title = title.replaceFirst(firstLetter, firstLetter.toUpperCase());
@@ -214,12 +214,12 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 	/**
 	 * Creates the text area.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createTextArea(Composite composite) {
-		for(int iter = 0; iter < stringMetaProperties.size(); iter++) {
+		for (int iter = 0; iter < stringMetaProperties.size(); iter++) {
 			Label label = new Label(composite, SWT.NONE);
 			String fieldTitle = makeTitle(stringMetaProperties.get(iter).getName()) + " :"; //$NON-NLS-1$
 			label.setText(fieldTitle);
@@ -228,7 +228,7 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 			GridData textData = new GridData(GridData.FILL_HORIZONTAL);
 			text.setLayoutData(textData);
 
-			String value = (String)((EObject)elementToEdit).eGet(stringMetaProperties.get(iter));
+			String value = (String) elementToEdit.eGet(stringMetaProperties.get(iter));
 			text.setText(value);
 
 			final int iterFinal = iter;
@@ -237,11 +237,12 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 				/**
 				 * {@inheritDoc}
-				 * 
+				 *
 				 * @see org.eclipse.swt.events.FocusAdapter#focusLost(org.eclipse.swt.events.FocusEvent)
 				 */
+				@Override
 				public void focusLost(FocusEvent e) {
-					((EObject)elementToEdit).eSet(stringMetaProperties.get(iterFinal), textFinal.getText());
+					elementToEdit.eSet(stringMetaProperties.get(iterFinal), textFinal.getText());
 				}
 			});
 
@@ -251,12 +252,12 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 	/**
 	 * Creates the combo.
-	 * 
+	 *
 	 * @param composite
-	 *        the composite
+	 *            the composite
 	 */
 	private void createCombo(Composite composite) {
-		for(int iter = 0; iter < enumerationMetaProperties.size(); iter++) {
+		for (int iter = 0; iter < enumerationMetaProperties.size(); iter++) {
 			Label label = new Label(composite, SWT.NONE);
 			String fieldTitle = makeTitle(enumerationMetaProperties.get(iter).getName()) + " :"; //$NON-NLS-1$
 			label.setText(fieldTitle);
@@ -264,21 +265,21 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 			// get the items
 			EAttribute currentAttributes = enumerationMetaProperties.get(iter);
-			EEnum eType = (EEnum)currentAttributes.getEType();
+			EEnum eType = (EEnum) currentAttributes.getEType();
 
 			final List<EEnumLiteral> literals = eType.getELiterals();
 			final String[] proposals = new String[literals.size() + 1];
 			ArrayList<String> list = new ArrayList<String>();
 			list.add(""); //$NON-NLS-1$
 			proposals[0] = ""; //$NON-NLS-1$
-			for(int i = 0; i < literals.size(); i++) {
+			for (int i = 0; i < literals.size(); i++) {
 				// i+1 because there is already the "" string
 				proposals[i + 1] = literals.get(i).getLiteral();
 				list.add(i + 1, literals.get(i).getLiteral());
 			}
 			combo.setItems(proposals);
 			// get initial value
-			Object selection = ((EObject)elementToEdit).eGet(currentAttributes);
+			Object selection = elementToEdit.eGet(currentAttributes);
 			combo.select(list.indexOf(selection.toString()));
 			GridData textData = new GridData(GridData.FILL_HORIZONTAL);
 			combo.setLayoutData(textData);
@@ -286,15 +287,17 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 			final int iterFinal = iter;
 			combo.addSelectionListener(new SelectionListener() {
 
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					int index = comboFinal.getSelectionIndex();
-					if(index == 0) {
-						((EObject)elementToEdit).eUnset(enumerationMetaProperties.get(iterFinal));
+					if (index == 0) {
+						elementToEdit.eUnset(enumerationMetaProperties.get(iterFinal));
 					} else {
-						((EObject)elementToEdit).eSet(enumerationMetaProperties.get(iterFinal), literals.get(index - 1).getInstance());
+						elementToEdit.eSet(enumerationMetaProperties.get(iterFinal), literals.get(index - 1).getInstance());
 					}
 				}
 
+				@Override
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
 			});
@@ -304,9 +307,9 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 
 	/**
 	 * Creates the check box.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	private void createCheckBox(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
@@ -317,7 +320,7 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 		composite.setLayoutData(data);
 		layout.numColumns = 3;
 		composite.setLayout(layout);
-		for(int iter = 0; iter < booleanMetaProperties.size(); iter++) {
+		for (int iter = 0; iter < booleanMetaProperties.size(); iter++) {
 			Composite grp = new Composite(composite, SWT.NONE);
 			GridLayout layout2 = new GridLayout();
 			layout2.numColumns = 2;
@@ -328,20 +331,21 @@ public class DefinedPropertiesAtRuntimeDialog extends Dialog {
 			String fieldTitle = makeTitle(booleanMetaProperties.get(iter).getName());
 			label.setText(fieldTitle);
 			// get button state
-			Boolean state = (Boolean)((EObject)elementToEdit).eGet(booleanMetaProperties.get(iter));
+			Boolean state = (Boolean) elementToEdit.eGet(booleanMetaProperties.get(iter));
 			button.setSelection(state);
 			final int iterFinal = iter;
 			button.addSelectionListener(new SelectionAdapter() {
 
 				/**
 				 * {@inheritDoc}
-				 * 
+				 *
 				 * @see org.eclipse.swt.events.SelectionAdapter#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 				 */
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					// get the old value
-					Boolean oldValue = (Boolean)((EObject)elementToEdit).eGet(booleanMetaProperties.get(iterFinal));
-					((EObject)elementToEdit).eSet(booleanMetaProperties.get(iterFinal), !oldValue);
+					Boolean oldValue = (Boolean) elementToEdit.eGet(booleanMetaProperties.get(iterFinal));
+					elementToEdit.eSet(booleanMetaProperties.get(iterFinal), !oldValue);
 				}
 			});
 

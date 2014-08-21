@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.uml2.uml.Stereotype;
 /**
  * A constraint to test if the given object is a UML Element and
  * has the given Stereotype
- * 
+ *
  * @author Camille Letavernier
  */
 public class HasStereotypeConstraint extends AbstractConstraint {
@@ -39,7 +39,7 @@ public class HasStereotypeConstraint extends AbstractConstraint {
 	@Override
 	public boolean match(Object selection) {
 		umlElement = UMLUtil.resolveUMLElement(selection);
-		if(umlElement == null) {
+		if (umlElement == null) {
 			return false;
 		}
 
@@ -56,16 +56,16 @@ public class HasStereotypeConstraint extends AbstractConstraint {
 	public boolean overrides(Constraint constraint) {
 		boolean overrides = false;
 
-		if(constraint instanceof HasStereotypeConstraint) {
-			HasStereotypeConstraint stereotypeConstraint = (HasStereotypeConstraint)constraint;
-			if(!stereotypeName.equals(stereotypeConstraint.stereotypeName)) {
+		if (constraint instanceof HasStereotypeConstraint) {
+			HasStereotypeConstraint stereotypeConstraint = (HasStereotypeConstraint) constraint;
+			if (!stereotypeName.equals(stereotypeConstraint.stereotypeName)) {
 				Stereotype thisStereotype = umlElement.getApplicableStereotype(stereotypeName);
 
-				//The otherStereotype can match the constraint without being applicable (e.g. abstract stereotype...)
-				//We can't rely on "getApplicableStereotype"
+				// The otherStereotype can match the constraint without being applicable (e.g. abstract stereotype...)
+				// We can't rely on "getApplicableStereotype"
 				Stereotype otherStereotype = UMLUtil.findStereotype(umlElement, stereotypeConstraint.stereotypeName);
-				//Stereotype otherStereotype = umlElement.getApplicableStereotype(stereotypeConstraint.stereotypeName);
-				if(UMLUtil.getAllSuperStereotypes(thisStereotype).contains(otherStereotype)) {
+				// Stereotype otherStereotype = umlElement.getApplicableStereotype(stereotypeConstraint.stereotypeName);
+				if (UMLUtil.getAllSuperStereotypes(thisStereotype).contains(otherStereotype)) {
 					overrides = true;
 				}
 			}
@@ -81,21 +81,21 @@ public class HasStereotypeConstraint extends AbstractConstraint {
 
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		if(this == constraint) {
+		if (this == constraint) {
 			return true;
 		}
-		if(constraint == null) {
+		if (constraint == null) {
 			return false;
 		}
-		if(!(constraint instanceof HasStereotypeConstraint)) {
+		if (!(constraint instanceof HasStereotypeConstraint)) {
 			return false;
 		}
-		HasStereotypeConstraint other = (HasStereotypeConstraint)constraint;
-		if(stereotypeName == null) {
-			if(other.stereotypeName != null) {
+		HasStereotypeConstraint other = (HasStereotypeConstraint) constraint;
+		if (stereotypeName == null) {
+			if (other.stereotypeName != null) {
 				return false;
 			}
-		} else if(!stereotypeName.equals(other.stereotypeName)) {
+		} else if (!stereotypeName.equals(other.stereotypeName)) {
 			return false;
 		}
 		return true;

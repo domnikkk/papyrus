@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *     Christian W. Damus (CEA) - bug 417409
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.internal.core;
 
@@ -123,8 +123,8 @@ public class Core {
 		public void printInfo(String message, Tracking tracking, Set<Tracking> trackType) {
 			String printMessage = "";
 
-			if(trackType != null && trackType.size() > 0) {
-				if(trackType.contains(tracking)) {
+			if (trackType != null && trackType.size() > 0) {
+				if (trackType.contains(tracking)) {
 					printMessage = messageMap.get(tracking);
 				}
 			}
@@ -132,14 +132,14 @@ public class Core {
 		}
 
 		public void addMessage(String message, Tracking tracking) {
-			if(messageMap.containsKey(tracking)) {
+			if (messageMap.containsKey(tracking)) {
 				messageMap.remove(tracking);
 			}
 			messageMap.put(tracking, message);
 		}
 
 		public void removeMessage(Tracking tracking) {
-			if(messageMap.containsKey(tracking)) {
+			if (messageMap.containsKey(tracking)) {
 				messageMap.remove(tracking);
 			}
 		}
@@ -158,7 +158,7 @@ public class Core {
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLogger()
 	 */
 	public ILogger getLogger() {
-		if(logger == null) {
+		if (logger == null) {
 			return Core.nullLog;
 		}
 		return logger;
@@ -182,7 +182,7 @@ public class Core {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @param handler
 	 */
@@ -191,7 +191,7 @@ public class Core {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 */
 	public void unregisterNamespaceHandler(String nsmapace) {
@@ -199,7 +199,7 @@ public class Core {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -213,7 +213,7 @@ public class Core {
 
 		public IConverter getConverter(Class<?> type) {
 			IConverter converter = converters.get(type);
-			if(converter != null) {
+			if (converter != null) {
 				return converter;
 			}
 
@@ -232,14 +232,14 @@ public class Core {
 	 * java.lang.Class)
 	 */
 	public IConverter findConvertor(Class<?> source, Class<?> target) {
-		if(source == target || (source != Object.class && source.isAssignableFrom(target))) {
+		if (source == target || (source != Object.class && source.isAssignableFrom(target))) {
 			return ObjectToObject.instance;
 		}
-		if(String.class == source && target.isEnum()) {
+		if (String.class == source && target.isEnum()) {
 			return new StringToEnum(target);
 		}
-		ValueConvertorRegister convertorRegister = (ValueConvertorRegister)getService(ValueConvertorRegister.class);
-		if(convertorRegister == null) {
+		ValueConvertorRegister convertorRegister = (ValueConvertorRegister) getService(ValueConvertorRegister.class);
+		if (convertorRegister == null) {
 			return null;
 		}
 		return convertorRegister.findConverter(source, target);
@@ -253,9 +253,9 @@ public class Core {
 	 * .conversion.IConverter)
 	 */
 	public void registerConvertor(IConverter converter) {
-		Class<?> source = (Class<?>)converter.getFromType();
-		Class<?> target = (Class<?>)converter.getToType();
-		ValueConvertorRegister convertorRegister = (ValueConvertorRegister)getService(ValueConvertorRegister.class);
+		Class<?> source = (Class<?>) converter.getFromType();
+		Class<?> target = (Class<?>) converter.getToType();
+		ValueConvertorRegister convertorRegister = (ValueConvertorRegister) getService(ValueConvertorRegister.class);
 		convertorRegister.register(source, target, converter);
 	}
 
@@ -263,8 +263,8 @@ public class Core {
 		try {
 			Method method = converter.getDeclaredMethod(methodName);
 			Object object = method.invoke(null);
-			if(object instanceof IConverter) {
-				registerConvertor((IConverter)object);
+			if (object instanceof IConverter) {
+				registerConvertor((IConverter) object);
 			}
 		} catch (SecurityException e) {
 		} catch (IllegalArgumentException e) {
@@ -276,14 +276,14 @@ public class Core {
 
 	public void registerConvertor(Class<?> converterType, String methodName, boolean value) {
 		IConverter converter = loadConvertor(converterType, methodName, value);
-		if(converter != null) {
+		if (converter != null) {
 			registerConvertor(converter);
 		}
 	}
 
 	public void registerConvertor(ValueConvertorRegister convertorRegister, Class<?> source, Class<?> target, Class<?> converterType, String methodName, boolean value) {
 		IConverter converter = loadConvertor(converterType, methodName, value);
-		if(converter != null) {
+		if (converter != null) {
 			convertorRegister.register(source, target, converter);
 		}
 	}
@@ -292,8 +292,8 @@ public class Core {
 		try {
 			Method method = converter.getDeclaredMethod(methodName);
 			Object object = method.invoke(null, value);
-			if(object instanceof IConverter) {
-				return (IConverter)object;
+			if (object instanceof IConverter) {
+				return (IConverter) object;
 			}
 		} catch (SecurityException e) {
 		} catch (IllegalArgumentException e) {
@@ -310,8 +310,8 @@ public class Core {
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getConverterService()
 	 */
 	public ConverterService getConverterService() {
-		ConverterService service = (ConverterService)getService(ConverterService.class);
-		if(service == null) {
+		ConverterService service = (ConverterService) getService(ConverterService.class);
+		if (service == null) {
 			service = new ConverterService();
 			registerService(ConverterService.class, service);
 			service.register(Object.class, new IConverter() {
@@ -339,7 +339,7 @@ public class Core {
 	 * org.eclipse.papyrus.xwt.IXWTLoader#addTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
 	public void addTracking(Tracking tracking) {
-		if(!trackingSet.contains(tracking)) {
+		if (!trackingSet.contains(tracking)) {
 			trackingSet.add(tracking);
 		}
 	}
@@ -370,7 +370,7 @@ public class Core {
 	 * org.eclipse.papyrus.xwt.IXWTLoader#removeTracking(org.eclipse.papyrus.xwt.Tracking)
 	 */
 	public void removeTracking(Tracking tracking) {
-		if(trackingSet.contains(tracking)) {
+		if (trackingSet.contains(tracking)) {
 			trackingSet.remove(tracking);
 		}
 	}
@@ -450,7 +450,7 @@ public class Core {
 	 * .IDataProviderFactory)
 	 */
 	public void addDataProviderFactory(String name, IDataProviderFactory dataProviderFactory) {
-		if(dataProviderFactory == null) {
+		if (dataProviderFactory == null) {
 			return;
 		}
 		dataProviderFactories.put(name, dataProviderFactory);
@@ -474,7 +474,7 @@ public class Core {
 	 * .xwt.IDataProviderFactory)
 	 */
 	public void removeDataProviderFactory(String name) {
-		if(name == null) {
+		if (name == null) {
 			return;
 		}
 		dataProviderFactories.remove(name);
@@ -488,12 +488,12 @@ public class Core {
 	 * .xwt.IDataProviderFactory)
 	 */
 	public void removeDataProviderFactory(IDataProviderFactory dataProviderFactory) {
-		if(dataProviderFactory == null) {
+		if (dataProviderFactory == null) {
 			return;
 		}
-		for(String name : dataProviderFactories.keySet()) {
+		for (String name : dataProviderFactories.keySet()) {
 			IDataProviderFactory value = dataProviderFactories.get(name);
-			if(dataProviderFactory == value) {
+			if (dataProviderFactory == value) {
 				dataProviderFactories.remove(name);
 			}
 		}
@@ -514,12 +514,12 @@ public class Core {
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#findDataProvider(java.lang.Object)
 	 */
 	public IDataProvider findDataProvider(Object dataContext) {
-		if(dataContext instanceof IDataProvider) {
-			return (IDataProvider)dataContext;
+		if (dataContext instanceof IDataProvider) {
+			return (IDataProvider) dataContext;
 		}
-		for(IDataProviderFactory factory : dataProviderFactories.values()) {
+		for (IDataProviderFactory factory : dataProviderFactories.values()) {
 			IDataProvider dataProvider = factory.create(dataContext);
-			if(dataProvider != null) {
+			if (dataProvider != null) {
 				return dataProvider;
 			}
 		}
@@ -534,7 +534,7 @@ public class Core {
 	 * @see org.eclipse.papyrus.xwt.IXWTLoader#getLoadingContext()
 	 */
 	public ILoadingContext getLoadingContext() {
-		if(_loadingContext == null) {
+		if (_loadingContext == null) {
 			return DefaultLoadingContext.defaultLoadingContext;
 		}
 		return _loadingContext;
@@ -564,22 +564,22 @@ public class Core {
 	}
 
 	public IMetaclass findMetaclass(Object object) {
-		if(object instanceof Class<?>) {
-			return getMetaclassService().findMetaclass((Class<?>)object);
+		if (object instanceof Class<?>) {
+			return getMetaclassService().findMetaclass((Class<?>) object);
 		}
 		return getMetaclassService().findMetaclass(object.getClass());
 	}
 
 	public IMetaclass getMetaclass(Object object) {
-		if(object instanceof Class<?>) {
-			return getMetaclassService().getMetaclass((Class<?>)object);
+		if (object instanceof Class<?>) {
+			return getMetaclassService().getMetaclass((Class<?>) object);
 		}
 		return getMetaclassService().getMetaclass(object.getClass());
 	}
 
 	public IMetaclass getMetaclass(Object object, String namespace) {
-		if(object instanceof Class) {
-			return getMetaclassService().getMetaclass((Class<?>)object, namespace);
+		if (object instanceof Class) {
+			return getMetaclassService().getMetaclass((Class<?>) object, namespace);
 		}
 		return getMetaclassService().getMetaclass(object.getClass(), namespace);
 	}
@@ -618,7 +618,7 @@ public class Core {
 
 	protected Object createCLRElement(IRenderingContext context, Element element, Map<String, Object> options) {
 		IVisualElementLoader loader = findElementLoader(element);
-		if(loader != null) {
+		if (loader != null) {
 			return loader.createUIElement(element, options);
 		}
 		loader = createElementLoader(context, element);
@@ -629,10 +629,10 @@ public class Core {
 
 	protected IVisualElementLoader findElementLoader(DocumentObject element) {
 		IVisualElementLoader loader = elementsLoaders.get(element);
-		if(loader != null) {
+		if (loader != null) {
 			return loader;
 		}
-		if(element.getParent() != null) {
+		if (element.getParent() != null) {
 			return findElementLoader(element.getParent());
 		}
 		return null;
@@ -655,11 +655,11 @@ public class Core {
 	public IUIResource loadAsResource(InputStream stream, URL input, IBeforeParsingCallback parsingCallback) throws Exception {
 		ElementManager manager = new ElementManager();
 		Element element = null;
-		if(stream == null) {
+		if (stream == null) {
 			element = manager.load(input, parsingCallback);
 		} else {
 			InputStream inputStream = stream;
-			if(parsingCallback != null) {
+			if (parsingCallback != null) {
 				int size = stream.read();
 				byte[] buffer = new byte[size];
 				stream.read(buffer);
@@ -675,36 +675,36 @@ public class Core {
 	}
 
 	public Object load(ILoadingContext loadingContext, IUIResource pattern, Map<String, Object> options) throws Exception {
-		UIResource uiResource = (UIResource)pattern;
+		UIResource uiResource = (UIResource) pattern;
 		Control control = null;
 		ElementManager manager = new ElementManager(uiResource.getURL());
 		Element element = uiResource.getContent();
 		IRenderingContext context = new ExtensionContext(loadingContext, manager, element.getNamespace());
 		Object visual = createCLRElement(context, element, options);
-		if(visual instanceof Control) {
-			control = (Control)visual;
-		} else if(visual instanceof Viewer) {
-			control = ((Viewer)visual).getControl();
+		if (visual instanceof Control) {
+			control = (Control) visual;
+		} else if (visual instanceof Viewer) {
+			control = ((Viewer) visual).getControl();
 		} else {
 			Class<?> jfaceWindow = Class.forName("org.eclipse.jface.window.Window");
-			if(jfaceWindow != null && jfaceWindow.isInstance(visual)) {
+			if (jfaceWindow != null && jfaceWindow.isInstance(visual)) {
 				Method createMethod = jfaceWindow.getDeclaredMethod("create");
 				createMethod.invoke(visual);
 				Method method = jfaceWindow.getDeclaredMethod("getShell");
-				control = (Control)method.invoke(visual);
+				control = (Control) method.invoke(visual);
 			}
 		}
 
-		if(control instanceof Composite) {
+		if (control instanceof Composite) {
 			Object parent = options.get(IXWTLoader.CONTAINER_PROPERTY);
 			Object designMode = options.get(IXWTLoader.DESIGN_MODE_PROPERTY);
-			if(parent instanceof Composite) {
-				Composite parentComposite = (Composite)parent;
-				if(parentComposite.getLayout() == null || designMode == Boolean.TRUE) {
+			if (parent instanceof Composite) {
+				Composite parentComposite = (Composite) parent;
+				if (parentComposite.getLayout() == null || designMode == Boolean.TRUE) {
 					autoLayout(parentComposite, element);
 				}
-			} else if(parent == null || designMode == Boolean.TRUE) {
-				if(control instanceof Shell) {
+			} else if (parent == null || designMode == Boolean.TRUE) {
+				if (control instanceof Shell) {
 					autoLayout(control, element);
 				} else {
 					autoLayout(control.getShell(), element);
@@ -719,24 +719,24 @@ public class Core {
 		long start = System.currentTimeMillis();
 		Control control = null;
 		ElementManager manager = new ElementManager();
-		if(input != null) {
+		if (input != null) {
 			Element element = null;
 			IElementCache cache = getCache(options);
 			element = cache.getElement(input);
-			if(element != null) {
+			if (element != null) {
 				manager.setRootElement(element);
-				
+
 				// Got an element from the cache, so we don't need an input stream
-				if(stream != null) {
+				if (stream != null) {
 					stream.close();
 				}
 			} else {
-				if(stream == null) {
-					element = manager.load(input, (IBeforeParsingCallback)options.get(IXWTLoader.BEFORE_PARSING_CALLBACK));
+				if (stream == null) {
+					element = manager.load(input, (IBeforeParsingCallback) options.get(IXWTLoader.BEFORE_PARSING_CALLBACK));
 				} else {
-					IBeforeParsingCallback callback = (IBeforeParsingCallback)options.get(IXWTLoader.BEFORE_PARSING_CALLBACK);
+					IBeforeParsingCallback callback = (IBeforeParsingCallback) options.get(IXWTLoader.BEFORE_PARSING_CALLBACK);
 					InputStream inputStream = stream;
-					if(callback != null) {
+					if (callback != null) {
 						int size = stream.read();
 						byte[] buffer = new byte[size];
 						stream.read(buffer);
@@ -749,46 +749,46 @@ public class Core {
 					element = manager.load(inputStream, input);
 				}
 
-				if(cache != null) {
+				if (cache != null) {
 					cache.cache(input, element);
 				}
 			}
-			
+
 			IRenderingContext context = new ExtensionContext(loadingContext, manager, manager.getRootElement().getNamespace());
 			Object visual = createCLRElement(context, element, options);
-			if(TRACE_BENCH) {
+			if (TRACE_BENCH) {
 				System.out.println("Loaded: " + (System.currentTimeMillis() - start) + "  " + input.toString());
 			}
-			if(visual instanceof Control) {
-				control = (Control)visual;
-			} else if(visual instanceof Viewer) {
-				control = ((Viewer)visual).getControl();
+			if (visual instanceof Control) {
+				control = (Control) visual;
+			} else if (visual instanceof Viewer) {
+				control = ((Viewer) visual).getControl();
 			} else {
 				Class<?> jfaceWindow = Class.forName("org.eclipse.jface.window.Window");
-				if(jfaceWindow != null && jfaceWindow.isInstance(visual)) {
+				if (jfaceWindow != null && jfaceWindow.isInstance(visual)) {
 					Method createMethod = jfaceWindow.getDeclaredMethod("create");
 					createMethod.invoke(visual);
 					Method method = jfaceWindow.getDeclaredMethod("getShell");
-					control = (Control)method.invoke(visual);
+					control = (Control) method.invoke(visual);
 				}
 			}
 
 			Object parent = options.get(IXWTLoader.CONTAINER_PROPERTY);
 			Object designMode = options.get(IXWTLoader.DESIGN_MODE_PROPERTY);
-			if(control instanceof Composite) {
-				if(parent instanceof Composite) {
-					Composite parentComposite = (Composite)parent;
-					if(parentComposite.getLayout() == null || designMode == Boolean.TRUE) {
+			if (control instanceof Composite) {
+				if (parent instanceof Composite) {
+					Composite parentComposite = (Composite) parent;
+					if (parentComposite.getLayout() == null || designMode == Boolean.TRUE) {
 						autoLayout(parentComposite, element);
 					}
-				} else if(parent == null || designMode == Boolean.TRUE) {
-					if(control instanceof Shell) {
+				} else if (parent == null || designMode == Boolean.TRUE) {
+					if (control instanceof Shell) {
 						autoLayout(control, element);
 					} else {
 						autoLayoutShell(control, element);
 					}
 				}
-			} else if(control != null && (parent == null || designMode == Boolean.TRUE)) {
+			} else if (control != null && (parent == null || designMode == Boolean.TRUE)) {
 				autoLayoutShell(control, element);
 			}
 		}
@@ -797,56 +797,56 @@ public class Core {
 
 	private IElementCache getCache(Map<String, Object> options) {
 		Object option = (options == null) ? IElementCache.NULL : options.get(XML_CACHE_PROPERTY);
-		if(option instanceof Boolean) {
+		if (option instanceof Boolean) {
 			// Enable caching according to the option
-			if(((Boolean)option).booleanValue()) {
+			if (((Boolean) option).booleanValue()) {
 				option = new DefaultElementCache();
 			} else {
 				option = IElementCache.NULL;
 			}
 			options.put(XML_CACHE_PROPERTY, option);
-		} else if(option instanceof Number) {
+		} else if (option instanceof Number) {
 			// create a default cache of this size
-			option = new DefaultElementCache(((Number)option).intValue());
+			option = new DefaultElementCache(((Number) option).intValue());
 			options.put(XML_CACHE_PROPERTY, option);
-		} else if(!(option instanceof IElementCache)) {
+		} else if (!(option instanceof IElementCache)) {
 			option = IElementCache.NULL;
 			options.put(XML_CACHE_PROPERTY, option);
 		}
 
-		return (IElementCache)option;
+		return (IElementCache) option;
 	}
-	
+
 	protected void autoLayout(Control composite, Element element) {
-		if(element == null) {
+		if (element == null) {
 			return;
 		}
 		Attribute bounds = element.getAttribute("Bounds");
-		if(bounds == null) {
+		if (bounds == null) {
 			bounds = element.getAttribute("Bounds", IConstants.XWT_NAMESPACE);
 		}
 		Attribute size = element.getAttribute("Size");
-		if(size == null) {
+		if (size == null) {
 			size = element.getAttribute("Size", IConstants.XWT_NAMESPACE);
 		}
-		if(bounds == null && size == null) {
+		if (bounds == null && size == null) {
 			composite.pack();
 		}
 	}
 
 	protected void autoLayoutShell(Control control, Element element) {
-		if(element == null) {
+		if (element == null) {
 			return;
 		}
 		Attribute bounds = element.getAttribute("Bounds");
-		if(bounds == null) {
+		if (bounds == null) {
 			bounds = element.getAttribute("Bounds", IConstants.XWT_NAMESPACE);
 		}
 		Attribute size = element.getAttribute("Size");
-		if(size == null) {
+		if (size == null) {
 			size = element.getAttribute("Size", IConstants.XWT_NAMESPACE);
 		}
-		if(bounds == null && size == null) {
+		if (bounds == null && size == null) {
 			control.pack();
 		} else {
 			Shell shell = control.getShell();
@@ -921,14 +921,14 @@ public class Core {
 
 	/**
 	 * Check if the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public boolean isFileResolveType(Class<?> type) {
-		for(Class<?> resolveType : resolveTypes) {
-			if(resolveType.isAssignableFrom(type)) {
+		for (Class<?> resolveType : resolveTypes) {
+			if (resolveType.isAssignableFrom(type)) {
 				return true;
 			}
 		}
@@ -937,22 +937,22 @@ public class Core {
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public void registerFileResolveType(Class<?> type) {
-		if(!resolveTypes.contains(type)) {
+		if (!resolveTypes.contains(type)) {
 			resolveTypes.add(type);
 		}
 	}
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	public void unregisterFileResolveType(Class<?> type) {

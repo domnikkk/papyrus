@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.swt.widgets.Listener;
 /**
  * A BodyEditor for the natural language.
  * This is a basic text-box.
- * 
+ *
  * @author Camille Letavernier
  */
 public class NaturalLanguageEditor implements BodyEditor {
@@ -56,9 +56,9 @@ public class NaturalLanguageEditor implements BodyEditor {
 
 			public void commit(AbstractEditor editor) {
 				Event event = new Event();
-				currentValue = (String)NaturalLanguageEditor.this.editor.getValue();
-				event.text = (String)NaturalLanguageEditor.this.editor.getValue();
-				for(Listener listener : changeListeners) {
+				currentValue = (String) NaturalLanguageEditor.this.editor.getValue();
+				event.text = (String) NaturalLanguageEditor.this.editor.getValue();
+				for (Listener listener : changeListeners) {
 					listener.handleEvent(event);
 				}
 			}
@@ -84,8 +84,8 @@ public class NaturalLanguageEditor implements BodyEditor {
 
 			@Override
 			protected void doSetValue(Object value) {
-				if(value instanceof String) {
-					currentValue = (String)value;
+				if (value instanceof String) {
+					currentValue = (String) value;
 				}
 			}
 

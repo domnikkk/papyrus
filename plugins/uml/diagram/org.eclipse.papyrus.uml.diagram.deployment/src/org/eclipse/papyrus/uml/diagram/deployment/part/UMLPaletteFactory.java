@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.deployment.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -109,47 +109,48 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATEMODELCREATIONTOOL)) {
+		if (toolId.equals(CREATEMODELCREATIONTOOL)) {
 			return createModelCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_PACKAGE)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_PACKAGE)) {
 			return createPackageCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_NODE)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_NODE)) {
 			return createNodeCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_DEVICE)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_DEVICE)) {
 			return createDeviceCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_EXECUTIONENVIRONMENT)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_EXECUTIONENVIRONMENT)) {
 			return createExecutionEnvironmentCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_ARTIFACT)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_ARTIFACT)) {
 			return createArtifactCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_COMMENT)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_COMMENT)) {
 			return createCommentCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_CONSTRAINT)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_CONSTRAINT)) {
 			return createConstraintCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_LINK)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_LINK)) {
 			return createLinkCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_DEPENDENCY)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_DEPENDENCY)) {
 			return createDependencyCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_DEPENDENCYBRANCH)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_DEPENDENCYBRANCH)) {
 			return createDependencyBranchCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_GENERALIZATION)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_GENERALIZATION)) {
 			return createGeneralizationCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_DEPLOYMENT)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_DEPLOYMENT)) {
 			return createDeploymentCreationTool();
 		}
-		if(toolId.equals(DEPLOYMENT_TOOL_MANIFESTATION)) {
+		if (toolId.equals(DEPLOYMENT_TOOL_MANIFESTATION)) {
 			return createManifestationCreationTool();
 		}
 		// default return: null
@@ -159,6 +160,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 
 		// default return: null

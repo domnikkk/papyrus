@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.iso42010.impl;
 
@@ -41,9 +41,9 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl#getConcerns <em>Concerns</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl#getViewpoints <em>Viewpoints</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl#getHasInterestIn <em>Has Interest In</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl#getConcerns <em>Concerns</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl#getViewpoints <em>Viewpoints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.iso42010.impl.StakeholderImpl#getHasInterestIn <em>Has Interest In</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +54,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	 * The cached value of the '{@link #getConcerns() <em>Concerns</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConcerns()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	 * The cached value of the '{@link #getViewpoints() <em>Viewpoints</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getViewpoints()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	 * The cached value of the '{@link #getHasInterestIn() <em>Has Interest In</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getHasInterestIn()
 	 * @generated
 	 * @ordered
@@ -83,6 +86,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StakeholderImpl() {
@@ -92,6 +96,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,6 +107,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Concern> getConcerns() {
@@ -114,6 +120,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ArchitectureViewpoint> getViewpoints() {
@@ -126,15 +133,17 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System getHasInterestIn() {
 		if (hasInterestIn != null && hasInterestIn.eIsProxy()) {
-			InternalEObject oldHasInterestIn = (InternalEObject)hasInterestIn;
-			hasInterestIn = (org.eclipse.papyrus.infra.viewpoints.iso42010.System)eResolveProxy(oldHasInterestIn);
+			InternalEObject oldHasInterestIn = (InternalEObject) hasInterestIn;
+			hasInterestIn = (org.eclipse.papyrus.infra.viewpoints.iso42010.System) eResolveProxy(oldHasInterestIn);
 			if (hasInterestIn != oldHasInterestIn) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN, oldHasInterestIn, hasInterestIn));
+				}
 			}
 		}
 		return hasInterestIn;
@@ -143,6 +152,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public org.eclipse.papyrus.infra.viewpoints.iso42010.System basicGetHasInterestIn() {
@@ -152,6 +162,7 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetHasInterestIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System newHasInterestIn, NotificationChain msgs) {
@@ -159,7 +170,11 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 		hasInterestIn = newHasInterestIn;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN, oldHasInterestIn, newHasInterestIn);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -167,37 +182,45 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setHasInterestIn(org.eclipse.papyrus.infra.viewpoints.iso42010.System newHasInterestIn) {
 		if (newHasInterestIn != hasInterestIn) {
 			NotificationChain msgs = null;
-			if (hasInterestIn != null)
-				msgs = ((InternalEObject)hasInterestIn).eInverseRemove(this, Iso42010Package.SYSTEM__STAKEHOLDERS, org.eclipse.papyrus.infra.viewpoints.iso42010.System.class, msgs);
-			if (newHasInterestIn != null)
-				msgs = ((InternalEObject)newHasInterestIn).eInverseAdd(this, Iso42010Package.SYSTEM__STAKEHOLDERS, org.eclipse.papyrus.infra.viewpoints.iso42010.System.class, msgs);
+			if (hasInterestIn != null) {
+				msgs = ((InternalEObject) hasInterestIn).eInverseRemove(this, Iso42010Package.SYSTEM__STAKEHOLDERS, org.eclipse.papyrus.infra.viewpoints.iso42010.System.class, msgs);
+			}
+			if (newHasInterestIn != null) {
+				msgs = ((InternalEObject) newHasInterestIn).eInverseAdd(this, Iso42010Package.SYSTEM__STAKEHOLDERS, org.eclipse.papyrus.infra.viewpoints.iso42010.System.class, msgs);
+			}
 			msgs = basicSetHasInterestIn(newHasInterestIn, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN, newHasInterestIn, newHasInterestIn));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.STAKEHOLDER__CONCERNS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConcerns()).basicAdd(otherEnd, msgs);
-			case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
-				if (hasInterestIn != null)
-					msgs = ((InternalEObject)hasInterestIn).eInverseRemove(this, Iso42010Package.SYSTEM__STAKEHOLDERS, org.eclipse.papyrus.infra.viewpoints.iso42010.System.class, msgs);
-				return basicSetHasInterestIn((org.eclipse.papyrus.infra.viewpoints.iso42010.System)otherEnd, msgs);
+		case Iso42010Package.STAKEHOLDER__CONCERNS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConcerns()).basicAdd(otherEnd, msgs);
+		case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
+			if (hasInterestIn != null) {
+				msgs = ((InternalEObject) hasInterestIn).eInverseRemove(this, Iso42010Package.SYSTEM__STAKEHOLDERS, org.eclipse.papyrus.infra.viewpoints.iso42010.System.class, msgs);
+			}
+			return basicSetHasInterestIn((org.eclipse.papyrus.infra.viewpoints.iso42010.System) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -205,15 +228,16 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case Iso42010Package.STAKEHOLDER__CONCERNS:
-				return ((InternalEList<?>)getConcerns()).basicRemove(otherEnd, msgs);
-			case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
-				return basicSetHasInterestIn(null, msgs);
+		case Iso42010Package.STAKEHOLDER__CONCERNS:
+			return ((InternalEList<?>) getConcerns()).basicRemove(otherEnd, msgs);
+		case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
+			return basicSetHasInterestIn(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -221,18 +245,21 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case Iso42010Package.STAKEHOLDER__CONCERNS:
-				return getConcerns();
-			case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
-				return getViewpoints();
-			case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
-				if (resolve) return getHasInterestIn();
-				return basicGetHasInterestIn();
+		case Iso42010Package.STAKEHOLDER__CONCERNS:
+			return getConcerns();
+		case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
+			return getViewpoints();
+		case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
+			if (resolve) {
+				return getHasInterestIn();
+			}
+			return basicGetHasInterestIn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,23 +267,24 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case Iso42010Package.STAKEHOLDER__CONCERNS:
-				getConcerns().clear();
-				getConcerns().addAll((Collection<? extends Concern>)newValue);
-				return;
-			case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
-				getViewpoints().clear();
-				getViewpoints().addAll((Collection<? extends ArchitectureViewpoint>)newValue);
-				return;
-			case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
-				setHasInterestIn((org.eclipse.papyrus.infra.viewpoints.iso42010.System)newValue);
-				return;
+		case Iso42010Package.STAKEHOLDER__CONCERNS:
+			getConcerns().clear();
+			getConcerns().addAll((Collection<? extends Concern>) newValue);
+			return;
+		case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
+			getViewpoints().clear();
+			getViewpoints().addAll((Collection<? extends ArchitectureViewpoint>) newValue);
+			return;
+		case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
+			setHasInterestIn((org.eclipse.papyrus.infra.viewpoints.iso42010.System) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -264,20 +292,21 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.STAKEHOLDER__CONCERNS:
-				getConcerns().clear();
-				return;
-			case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
-				getViewpoints().clear();
-				return;
-			case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
-				setHasInterestIn((org.eclipse.papyrus.infra.viewpoints.iso42010.System)null);
-				return;
+		case Iso42010Package.STAKEHOLDER__CONCERNS:
+			getConcerns().clear();
+			return;
+		case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
+			getViewpoints().clear();
+			return;
+		case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
+			setHasInterestIn((org.eclipse.papyrus.infra.viewpoints.iso42010.System) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -285,19 +314,20 @@ public class StakeholderImpl extends ADElementImpl implements Stakeholder {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case Iso42010Package.STAKEHOLDER__CONCERNS:
-				return concerns != null && !concerns.isEmpty();
-			case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
-				return viewpoints != null && !viewpoints.isEmpty();
-			case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
-				return hasInterestIn != null;
+		case Iso42010Package.STAKEHOLDER__CONCERNS:
+			return concerns != null && !concerns.isEmpty();
+		case Iso42010Package.STAKEHOLDER__VIEWPOINTS:
+			return viewpoints != null && !viewpoints.isEmpty();
+		case Iso42010Package.STAKEHOLDER__HAS_INTEREST_IN:
+			return hasInterestIn != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StakeholderImpl
+} // StakeholderImpl

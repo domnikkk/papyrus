@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ public class CustomEObjectStyleObservableValue extends AbstractCustomStyleObserv
 		super(source, domain, styleName, NotationPackage.eINSTANCE.getEObjectValueStyle(), NotationPackage.eINSTANCE.getEObjectValueStyle_EObjectValue());
 	}
 
+	@Override
 	public Object getValueType() {
 		return EObject.class;
 	}
@@ -31,7 +32,7 @@ public class CustomEObjectStyleObservableValue extends AbstractCustomStyleObserv
 	/**
 	 * Gets the default value when this style is not set.
 	 * Subclasses may override
-	 * 
+	 *
 	 * @return The default value for this EObjectStyleValue
 	 */
 	@Override
@@ -41,7 +42,7 @@ public class CustomEObjectStyleObservableValue extends AbstractCustomStyleObserv
 
 	@Override
 	public Command getCommand(Object value) {
-		if(value instanceof EObject) {
+		if (value instanceof EObject) {
 			return super.getCommand(value);
 		}
 		throw new IllegalArgumentException("The value " + value + " is not a valid EObject Value");

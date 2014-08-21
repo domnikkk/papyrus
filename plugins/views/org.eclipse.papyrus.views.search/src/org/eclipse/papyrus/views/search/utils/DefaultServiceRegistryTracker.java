@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,7 +60,7 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 
 	// requires monitor
 	private void checkActive() {
-		if(!active) {
+		if (!active) {
 			throw new IllegalStateException("not active"); //$NON-NLS-1$
 		}
 	}
@@ -69,7 +69,7 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 		checkActive();
 
 		TrackerReference existing = getReference(serviceRegistry);
-		if(existing == null) {
+		if (existing == null) {
 			// only in this case would we ever track
 			references.add(new TrackerReference(owner, serviceRegistry));
 			count++;
@@ -79,7 +79,7 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 
 			// the reference may have been cleared, in which case we assume the registry
 			// was disposed and the reference did track this owner
-			if((actualOwner != null) && (actualOwner != owner)) {
+			if ((actualOwner != null) && (actualOwner != owner)) {
 				throw new IllegalArgumentException("registry already tracked against a different owner"); //$NON-NLS-1$
 			}
 		}
@@ -89,7 +89,7 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 		checkActive();
 
 		TrackerReference existing = getReference(serviceRegistry);
-		if((existing != null) && (existing.get() == owner)) {
+		if ((existing != null) && (existing.get() == owner)) {
 			references.remove(existing);
 			// it will still be enqueued later, but we will ignore it
 		}
@@ -99,8 +99,8 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 	private TrackerReference getReference(ServicesRegistry serviceRegistry) {
 		TrackerReference result = null;
 
-		for(TrackerReference next : references) {
-			if(next.matches(serviceRegistry)) {
+		for (TrackerReference next : references) {
+			if (next.matches(serviceRegistry)) {
 				result = next;
 			}
 		}
@@ -110,13 +110,13 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 
 	// requires monitor
 	private void reapLater() {
-		if(reaper == null) {
+		if (reaper == null) {
 			reaper = new Runnable() {
 
 				public void run() {
-					for(;;) {
+					for (;;) {
 						try {
-							if(!dequeue()) {
+							if (!dequeue()) {
 								// done!
 								break;
 							}
@@ -134,15 +134,15 @@ public class DefaultServiceRegistryTracker implements IServiceRegistryTracker {
 	private boolean dequeue() throws InterruptedException {
 		boolean result = true;
 
-		TrackerReference ref = (TrackerReference)queue.remove();
+		TrackerReference ref = (TrackerReference) queue.remove();
 
-		synchronized(this) {
-			if(references.remove(ref)) {
+		synchronized (this) {
+			if (references.remove(ref)) {
 				// only dispose the service registry if we didn't untrack it!
 				ref.dispose();
 			}
 
-			if(--count <= 0) {
+			if (--count <= 0) {
 				// nothing more to reap
 				reaper = null;
 				active = false;

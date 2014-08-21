@@ -13,6 +13,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Id Descriptors</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class IdDescriptorsTest extends TestCase {
@@ -21,6 +22,7 @@ public class IdDescriptorsTest extends TestCase {
 	 * The fixture for this Id Descriptors test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IdDescriptors fixture = null;
@@ -28,6 +30,7 @@ public class IdDescriptorsTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,6 +41,7 @@ public class IdDescriptorsTest extends TestCase {
 	 * Constructs a new Id Descriptors test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IdDescriptorsTest(String name) {
@@ -48,6 +52,7 @@ public class IdDescriptorsTest extends TestCase {
 	 * Sets the fixture for this Id Descriptors test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void setFixture(IdDescriptors fixture) {
@@ -58,6 +63,7 @@ public class IdDescriptorsTest extends TestCase {
 	 * Returns the fixture for this Id Descriptors test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IdDescriptors getFixture() {
@@ -67,6 +73,7 @@ public class IdDescriptorsTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -78,6 +85,7 @@ public class IdDescriptorsTest extends TestCase {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +94,4 @@ public class IdDescriptorsTest extends TestCase {
 		setFixture(null);
 	}
 
-} //IdDescriptorsTest
+} // IdDescriptorsTest

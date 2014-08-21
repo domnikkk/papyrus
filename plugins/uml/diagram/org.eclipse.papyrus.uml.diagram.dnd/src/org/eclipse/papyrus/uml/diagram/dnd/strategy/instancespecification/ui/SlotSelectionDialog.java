@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,9 +40,9 @@ import org.eclipse.uml2.uml.Slot;
 /**
  * A dialog which lets the user choose the properties he wishes to instantiate,
  * from a list of classifiers.
- * 
+ *
  * The dialog returns the list of selected properties.
- * 
+ *
  * @author Camille Letavernier
  */
 public class SlotSelectionDialog extends SelectionDialog {
@@ -100,9 +100,9 @@ public class SlotSelectionDialog extends SelectionDialog {
 		viewer.setInput(classifiers);
 		viewer.expandAll();
 
-		for(TreeItem classifierItem : tree.getItems()) {
-			for(TreeItem propertyItem : classifierItem.getItems()) {
-				final Property property = (Property)propertyItem.getData();
+		for (TreeItem classifierItem : tree.getItems()) {
+			for (TreeItem propertyItem : classifierItem.getItems()) {
+				final Property property = (Property) propertyItem.getData();
 				properties.put(property, select(property));
 
 				final Button checkbox = new Button(tree, SWT.CHECK);
@@ -117,7 +117,7 @@ public class SlotSelectionDialog extends SelectionDialog {
 					}
 
 					public void widgetDefaultSelected(SelectionEvent e) {
-						//Nothing
+						// Nothing
 					}
 
 				});
@@ -136,9 +136,9 @@ public class SlotSelectionDialog extends SelectionDialog {
 	}
 
 	protected boolean select(Property property) {
-		//Checks whether a slot already represents the given property
-		for(Slot slot : specification.getSlots()) {
-			if(slot.getDefiningFeature() == property) {
+		// Checks whether a slot already represents the given property
+		for (Slot slot : specification.getSlots()) {
+			if (slot.getDefiningFeature() == property) {
 				return false;
 			}
 		}
@@ -148,8 +148,8 @@ public class SlotSelectionDialog extends SelectionDialog {
 	@Override
 	protected void okPressed() {
 		List<Property> result = new LinkedList<Property>();
-		for(Map.Entry<Property, Boolean> entry : properties.entrySet()) {
-			if(entry.getValue()) {
+		for (Map.Entry<Property, Boolean> entry : properties.entrySet()) {
+			if (entry.getValue()) {
 				result.add(entry.getKey());
 			}
 		}
@@ -159,7 +159,7 @@ public class SlotSelectionDialog extends SelectionDialog {
 
 	@Override
 	public Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	@Override

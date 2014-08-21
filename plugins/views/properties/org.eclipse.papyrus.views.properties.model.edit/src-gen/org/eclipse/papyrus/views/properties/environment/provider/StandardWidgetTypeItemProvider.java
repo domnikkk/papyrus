@@ -24,11 +24,12 @@ import org.eclipse.papyrus.views.properties.environment.StandardWidgetType;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.environment.StandardWidgetType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StandardWidgetTypeItemProvider
-	extends WidgetTypeItemProvider
-	implements
+		extends WidgetTypeItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -38,6 +39,7 @@ public class StandardWidgetTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StandardWidgetTypeItemProvider(AdapterFactory adapterFactory) {
@@ -48,6 +50,7 @@ public class StandardWidgetTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,6 +66,7 @@ public class StandardWidgetTypeItemProvider
 	 * This returns StandardWidgetType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -74,14 +78,15 @@ public class StandardWidgetTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StandardWidgetType)object).getLabel();
+		String label = ((StandardWidgetType) object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_StandardWidgetType_type") :
-			getString("_UI_StandardWidgetType_type") + " " + label;
+				getString("_UI_StandardWidgetType_type") :
+				getString("_UI_StandardWidgetType_type") + " " + label;
 	}
 
 	/**
@@ -89,6 +94,7 @@ public class StandardWidgetTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,6 +108,7 @@ public class StandardWidgetTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

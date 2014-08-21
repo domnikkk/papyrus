@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt.internal.databinding.menuitem;
@@ -18,7 +18,7 @@ import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.widgets.MenuItem;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public abstract class AbstractMenuItemObservableValue extends AbstractObservableValue {
@@ -27,7 +27,7 @@ public abstract class AbstractMenuItemObservableValue extends AbstractObservable
 
 	/**
 	 * Standard constructor for a MenuItem ObservableValue. Makes sure that the observable gets disposed when the MenuItem is disposed.
-	 * 
+	 *
 	 * @param widget
 	 */
 	protected AbstractMenuItemObservableValue(MenuItem menuItem) {
@@ -36,7 +36,7 @@ public abstract class AbstractMenuItemObservableValue extends AbstractObservable
 
 	/**
 	 * Constructor that allows for the setting of the realm. Makes sure that the observable gets disposed when the MenuItem is disposed.
-	 * 
+	 *
 	 * @param realm
 	 * @param widget
 	 * @since 1.2

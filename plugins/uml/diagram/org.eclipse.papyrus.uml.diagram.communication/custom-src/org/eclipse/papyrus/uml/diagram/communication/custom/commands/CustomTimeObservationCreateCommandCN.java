@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,16 +26,16 @@ import org.eclipse.uml2.uml.TimeObservation;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * 
+ *
  * This is for creating time observation
- * 
+ *
  */
 public class CustomTimeObservationCreateCommandCN extends TimeObservationCreateCommandCN {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomTimeObservationCreateCommandCN(CreateElementRequest req, Diagram diagram) {
@@ -45,11 +45,11 @@ public class CustomTimeObservationCreateCommandCN extends TimeObservationCreateC
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		TimeObservation newElement = UMLFactory.eINSTANCE.createTimeObservation();
-		Interaction owner = (Interaction)getElementToEdit();
+		Interaction owner = (Interaction) getElementToEdit();
 		owner.getNearestPackage().getPackagedElements().add(newElement);
 		ElementInitializers.getInstance().init_TimeObservation_8006(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

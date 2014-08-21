@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 /**
- * 
+ *
  * @author vl222926
  *         An eobject class used to represent a link with no semantic element
  */
@@ -40,15 +40,15 @@ public class EdgeWithNoSemanticElementRepresentationImpl extends EObjectImpl {
 	private final EObject target;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        the source of the link
+	 *            the source of the link
 	 * @param target
-	 *        the target of the link
+	 *            the target of the link
 	 * @param semanticHint
-	 *        the semantic hint for the represented element
+	 *            the semantic hint for the represented element
 	 */
 	public EdgeWithNoSemanticElementRepresentationImpl(final EObject source, final EObject target, final String semanticHint) {
 		this.source = source;
@@ -57,7 +57,7 @@ public class EdgeWithNoSemanticElementRepresentationImpl extends EObjectImpl {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the source of the represented link
 	 */
@@ -66,7 +66,7 @@ public class EdgeWithNoSemanticElementRepresentationImpl extends EObjectImpl {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the target of the represented link
 	 */
@@ -75,7 +75,7 @@ public class EdgeWithNoSemanticElementRepresentationImpl extends EObjectImpl {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         a view for this link
 	 */
@@ -86,9 +86,9 @@ public class EdgeWithNoSemanticElementRepresentationImpl extends EObjectImpl {
 	/**
 	 * Calculate the hashcode in order to allows to have the same hashcode for 2 {@link EdgeWithNoSemanticElementRepresentationImpl} with the same
 	 * field values.
-	 * 
+	 *
 	 * @see java.lang.Object#hashCode()
-	 * 
+	 *
 	 * @return
 	 *         the hashcode
 	 */
@@ -98,18 +98,18 @@ public class EdgeWithNoSemanticElementRepresentationImpl extends EObjectImpl {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see java.lang.Object#equals(java.lang.Object)
-	 * 
+	 *
 	 * @param obj
-	 *        an object
+	 *            an object
 	 * @return
 	 *         <code>true</code> if this object is the same than the other one
 	 */
 	@Override
 	public boolean equals(final Object obj) {
-		if(obj instanceof EdgeWithNoSemanticElementRepresentationImpl) {
-			final EdgeWithNoSemanticElementRepresentationImpl otherLink = (EdgeWithNoSemanticElementRepresentationImpl)obj;
+		if (obj instanceof EdgeWithNoSemanticElementRepresentationImpl) {
+			final EdgeWithNoSemanticElementRepresentationImpl otherLink = (EdgeWithNoSemanticElementRepresentationImpl) obj;
 			return this.source == otherLink.getSource() && this.target == otherLink.getTarget() && this.semanticHint.equals(otherLink.getSemanticHint());
 		}
 		return false;

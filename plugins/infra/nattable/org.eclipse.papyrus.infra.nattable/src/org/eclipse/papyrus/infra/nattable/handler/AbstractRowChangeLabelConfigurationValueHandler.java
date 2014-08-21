@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ import org.eclipse.papyrus.infra.nattable.utils.LabelConfigurationManagementUtil
 
 /**
  * The abstract handler used to change the row header label configuration
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractRowChangeLabelConfigurationValueHandler extends AbstractChangeLabelConfigurationValueHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.handler.AbstractChangeLabelConfigurationValueHandler#getLabelProviderConfiguration()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -43,22 +43,22 @@ public abstract class AbstractRowChangeLabelConfigurationValueHandler extends Ab
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.handler.AbstractChangeLabelConfigurationValueHandler#getLocalHeaderAxisConfigurationFeature()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected EStructuralFeature getLocalHeaderAxisConfigurationFeature() {
 		Table table = getCurrentNattableModelManager().getTable();
-		if(table.isInvertAxis()) {
+		if (table.isInvertAxis()) {
 			return NattablePackage.eINSTANCE.getTable_LocalColumnHeaderAxisConfiguration();
 		}
 		return NattablePackage.eINSTANCE.getTable_LocalRowHeaderAxisConfiguration();
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the edited axis configuration
 	 */
@@ -69,12 +69,12 @@ public abstract class AbstractRowChangeLabelConfigurationValueHandler extends Ab
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the table header axis defined in the TableConfiguration and used for edited label axis configuration
 	 */
 	@Override
 	protected TableHeaderAxisConfiguration getTableHeaderAxisConfiguration() {
-		return (TableHeaderAxisConfiguration)HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisInTableConfiguration(getCurrentNattableModelManager().getTable());
+		return (TableHeaderAxisConfiguration) HeaderAxisConfigurationManagementUtils.getRowAbstractHeaderAxisInTableConfiguration(getCurrentNattableModelManager().getTable());
 	}
 }

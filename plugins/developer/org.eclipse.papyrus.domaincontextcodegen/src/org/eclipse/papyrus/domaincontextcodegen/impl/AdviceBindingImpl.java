@@ -24,7 +24,7 @@ import org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.AdviceBindingImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
@@ -33,7 +33,7 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRef()
 	 * @generated
 	 * @ordered
@@ -43,7 +43,7 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AdviceBindingImpl() {
@@ -53,7 +53,7 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -64,16 +64,17 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Advice getRef() {
-		if(ref != null && ref.eIsProxy()) {
-			InternalEObject oldRef = (InternalEObject)ref;
-			ref = (Advice)eResolveProxy(oldRef);
-			if(ref != oldRef) {
-				if(eNotificationRequired())
+		if (ref != null && ref.eIsProxy()) {
+			InternalEObject oldRef = (InternalEObject) ref;
+			ref = (Advice) eResolveProxy(oldRef);
+			if (ref != oldRef) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.ADVICE_BINDING__REF, oldRef, ref));
+				}
 			}
 		}
 		return ref;
@@ -82,7 +83,7 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Advice basicGetRef() {
@@ -92,28 +93,30 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setRef(Advice newRef) {
 		Advice oldRef = ref;
 		ref = newRef;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.ADVICE_BINDING__REF, oldRef, ref));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE_BINDING__REF:
-			if(resolve)
+			if (resolve) {
 				return getRef();
+			}
 			return basicGetRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -122,14 +125,14 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE_BINDING__REF:
-			setRef((Advice)newValue);
+			setRef((Advice) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,14 +141,14 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE_BINDING__REF:
-			setRef((Advice)null);
+			setRef((Advice) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -154,16 +157,16 @@ public class AdviceBindingImpl extends BindingImpl implements AdviceBinding {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.ADVICE_BINDING__REF:
 			return ref != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AdviceBindingImpl
+} // AdviceBindingImpl

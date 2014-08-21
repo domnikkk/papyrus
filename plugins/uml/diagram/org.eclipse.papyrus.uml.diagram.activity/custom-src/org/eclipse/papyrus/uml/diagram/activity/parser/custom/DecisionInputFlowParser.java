@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,15 +47,15 @@ public class DecisionInputFlowParser extends MessageFormatParser implements ISem
 	}
 
 	public DecisionInputFlowParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getActivity_IsSingleExecution() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getActivity_IsSingleExecution() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -68,6 +68,7 @@ public class DecisionInputFlowParser extends MessageFormatParser implements ISem
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -79,13 +80,14 @@ public class DecisionInputFlowParser extends MessageFormatParser implements ISem
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof ObjectFlow) {
-			ActivityNode target = ((ObjectFlow)obj).getTarget();
-			if(target instanceof DecisionNode) {
-				ObjectFlow decisionInputFlow = ((DecisionNode)target).getDecisionInputFlow();
-				if(obj.equals(decisionInputFlow)) {
+		if (obj instanceof ObjectFlow) {
+			ActivityNode target = ((ObjectFlow) obj).getTarget();
+			if (target instanceof DecisionNode) {
+				ObjectFlow decisionInputFlow = ((DecisionNode) target).getDecisionInputFlow();
+				if (obj.equals(decisionInputFlow)) {
 					return DECISION_INPUT_FLOW_LABEL;
 				}
 			}
@@ -100,6 +102,7 @@ public class DecisionInputFlowParser extends MessageFormatParser implements ISem
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -111,13 +114,14 @@ public class DecisionInputFlowParser extends MessageFormatParser implements ISem
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof ObjectFlow) {
-			ObjectFlow flow = (ObjectFlow)element;
+		if (element instanceof ObjectFlow) {
+			ObjectFlow flow = (ObjectFlow) element;
 			semanticElementsBeingParsed.add(flow);
-			if(flow.getTarget() instanceof DecisionNode) {
-				DecisionNode decision = (DecisionNode)flow.getTarget();
+			if (flow.getTarget() instanceof DecisionNode) {
+				DecisionNode decision = (DecisionNode) flow.getTarget();
 				semanticElementsBeingParsed.add(decision);
 			}
 		}
@@ -127,9 +131,9 @@ public class DecisionInputFlowParser extends MessageFormatParser implements ISem
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

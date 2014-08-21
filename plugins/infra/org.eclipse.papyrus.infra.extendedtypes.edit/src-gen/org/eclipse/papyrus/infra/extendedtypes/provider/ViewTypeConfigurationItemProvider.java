@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ViewTypeConfiguration;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.ViewTypeConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ViewTypeConfigurationItemProvider extends ElementTypeConfigurationItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -44,7 +44,7 @@ public class ViewTypeConfigurationItemProvider extends ElementTypeConfigurationI
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ViewTypeConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -55,12 +55,12 @@ public class ViewTypeConfigurationItemProvider extends ElementTypeConfigurationI
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 			addSpecializedDiagramTypeIDPropertyDescriptor(object);
 		}
@@ -71,27 +71,27 @@ public class ViewTypeConfigurationItemProvider extends ElementTypeConfigurationI
 	 * This adds a property descriptor for the Specialized Diagram Type ID feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addSpecializedDiagramTypeIDPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ViewTypeConfiguration_specializedDiagramTypeID_feature"), //$NON-NLS-1$
-			getString("_UI_PropertyDescriptor_description", "_UI_ViewTypeConfiguration_specializedDiagramTypeID_feature", "_UI_ViewTypeConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-			ExtendedtypesPackage.eINSTANCE.getViewTypeConfiguration_SpecializedDiagramTypeID(), true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_ViewTypeConfiguration_specializedDiagramTypeID_feature"), //$NON-NLS-1$
+				getString("_UI_PropertyDescriptor_description", "_UI_ViewTypeConfiguration_specializedDiagramTypeID_feature", "_UI_ViewTypeConfiguration_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+				ExtendedtypesPackage.eINSTANCE.getViewTypeConfiguration_SpecializedDiagramTypeID(), true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ViewTypeConfiguration)object).getName();
+		String label = ((ViewTypeConfiguration) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_ViewTypeConfiguration_type") : //$NON-NLS-1$
-		getString("_UI_ViewTypeConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_ViewTypeConfiguration_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -99,13 +99,13 @@ public class ViewTypeConfigurationItemProvider extends ElementTypeConfigurationI
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		switch(notification.getFeatureID(ViewTypeConfiguration.class)) {
+		switch (notification.getFeatureID(ViewTypeConfiguration.class)) {
 		case ExtendedtypesPackage.VIEW_TYPE_CONFIGURATION__SPECIALIZED_DIAGRAM_TYPE_ID:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -118,7 +118,7 @@ public class ViewTypeConfigurationItemProvider extends ElementTypeConfigurationI
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

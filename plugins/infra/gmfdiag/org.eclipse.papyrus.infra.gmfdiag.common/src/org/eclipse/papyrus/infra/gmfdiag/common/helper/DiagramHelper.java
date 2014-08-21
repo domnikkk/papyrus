@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,8 +32,8 @@ public class DiagramHelper {
 
 	public static void refresh(EditPart editPart, boolean recursive) {
 		editPart.refresh();
-		if(recursive) {
-			for(EditPart childEditPart : (List<EditPart>)editPart.getChildren()) {
+		if (recursive) {
+			for (EditPart childEditPart : (List<EditPart>) editPart.getChildren()) {
 				refresh(childEditPart, true);
 			}
 		}
@@ -41,13 +41,13 @@ public class DiagramHelper {
 
 	public static void refresh(DiagramEditPart diagramEditPart, boolean recursive) {
 		diagramEditPart.refresh();
-		if(recursive) {
+		if (recursive) {
 			List<EditPart> childrenToRefresh = new LinkedList<EditPart>(diagramEditPart.getChildren());
-			for(EditPart childEditPart : childrenToRefresh) {
+			for (EditPart childEditPart : childrenToRefresh) {
 				refresh(childEditPart, true);
 			}
 			List<EditPart> connectionsToRefresh = new LinkedList<EditPart>(diagramEditPart.getConnections());
-			for(EditPart childEditPart : connectionsToRefresh) {
+			for (EditPart childEditPart : connectionsToRefresh) {
 				refresh(childEditPart, true);
 			}
 		}
@@ -55,14 +55,14 @@ public class DiagramHelper {
 
 	/**
 	 * Refreshes all diagrams in this IEditorPart (Including nested editors when necessary)
-	 * 
+	 *
 	 * @param editorPart
 	 */
 	public static void refresh(IEditorPart editorPart) {
 		List<IEditorPart> visibleEditorParts = null;
-		if(editorPart instanceof IMultiDiagramEditor) {
-			ServicesRegistry servicesRegistry = (ServicesRegistry)editorPart.getAdapter(ServicesRegistry.class);
-			if(servicesRegistry != null) {
+		if (editorPart instanceof IMultiDiagramEditor) {
+			ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
+			if (servicesRegistry != null) {
 				try {
 					ISashWindowsContainer container = ServiceUtils.getInstance().getISashWindowsContainer(servicesRegistry);
 					visibleEditorParts = container.getVisibleIEditorParts();
@@ -74,12 +74,12 @@ public class DiagramHelper {
 			visibleEditorParts = Collections.singletonList(editorPart);
 		}
 
-		if(visibleEditorParts != null) {
-			for(IEditorPart visiblePart : visibleEditorParts) {
-				if(visiblePart instanceof DiagramEditor) {
-					DiagramEditor diagramEditor = (DiagramEditor)visiblePart;
+		if (visibleEditorParts != null) {
+			for (IEditorPart visiblePart : visibleEditorParts) {
+				if (visiblePart instanceof DiagramEditor) {
+					DiagramEditor diagramEditor = (DiagramEditor) visiblePart;
 					DiagramEditPart topEditPart = diagramEditor.getDiagramEditPart();
-					if(topEditPart != null) {
+					if (topEditPart != null) {
 						DiagramHelper.refresh(topEditPart, true);
 					}
 				}
@@ -93,18 +93,18 @@ public class DiagramHelper {
 	 * Refreshes all opened diagrams
 	 */
 	public static void refreshDiagrams() {
-		synchronized(DiagramHelper.class) {
-			if(!needsRefresh) {
+		synchronized (DiagramHelper.class) {
+			if (!needsRefresh) {
 				return;
 			}
 			needsRefresh = false;
 		}
 
 		IMultiDiagramEditor[] editors = EditorUtils.getMultiDiagramEditors();
-		if(editors == null || editors.length < 1) {
+		if (editors == null || editors.length < 1) {
 			return;
 		}
-		for(IMultiDiagramEditor activeMultiEditor : editors) {
+		for (IMultiDiagramEditor activeMultiEditor : editors) {
 			refresh(activeMultiEditor);
 		}
 	}

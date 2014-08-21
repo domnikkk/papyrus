@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,8 +34,10 @@ public class Rectangular3DBorder extends LineBorder {
 	/**
 	 * Instantiates a new rectangular3 d border.
 	 *
-	 * @param borderwidth the borderwidth
-	 * @param color the color
+	 * @param borderwidth
+	 *            the borderwidth
+	 * @param color
+	 *            the color
 	 */
 	public Rectangular3DBorder(int borderwidth, Color color) {
 		super(color);
@@ -45,9 +47,9 @@ public class Rectangular3DBorder extends LineBorder {
 
 	/**
 	 * Method for determining the inset the border will take up on the shape.
-	 * 
+	 *
 	 * @param figure
-	 *        Figure that will be inset from the border
+	 *            Figure that will be inset from the border
 	 * @return Insets the Insets for the border on the given figure.
 	 */
 	@Override
@@ -63,9 +65,12 @@ public class Rectangular3DBorder extends LineBorder {
 	/**
 	 * Paint.
 	 *
-	 * @param figure the figure
-	 * @param graphics the graphics
-	 * @param insets the insets
+	 * @param figure
+	 *            the figure
+	 * @param graphics
+	 *            the graphics
+	 * @param insets
+	 *            the insets
 	 * @see org.eclipse.draw2d.Border#paint(IFigure, Graphics, Insets)
 	 */
 	@Override
@@ -74,7 +79,7 @@ public class Rectangular3DBorder extends LineBorder {
 		// draw the normal line border
 		tempRect.setBounds(getPaintRectangle(figure, insets));
 
-		if(getWidth() % 2 == 1) {
+		if (getWidth() % 2 == 1) {
 			tempRect.width--;
 			tempRect.height--;
 		}
@@ -82,10 +87,11 @@ public class Rectangular3DBorder extends LineBorder {
 		tempRect.shrink(getWidth() / 2, getWidth() / 2);
 		graphics.setLineWidth(getWidth());
 
-		if(getColor() != null)
+		if (getColor() != null) {
 			graphics.setForegroundColor(getColor());
-		else
+		} else {
 			graphics.setForegroundColor(ColorConstants.black);
+		}
 
 		graphics.drawRectangle(tempRect);
 
@@ -106,10 +112,11 @@ public class Rectangular3DBorder extends LineBorder {
 		plt.addPoint(tempRect.x, tempRect.y + tempRect.height);
 		plt.addPoint(tempRect.x + tempRect.width, tempRect.y + tempRect.height);
 
-		if(getColor() != null)
+		if (getColor() != null) {
 			graphics.setBackgroundColor(getColor());
-		else
+		} else {
 			graphics.setBackgroundColor(ColorConstants.gray);
+		}
 
 		graphics.fillPolygon(plt);
 		graphics.popState();

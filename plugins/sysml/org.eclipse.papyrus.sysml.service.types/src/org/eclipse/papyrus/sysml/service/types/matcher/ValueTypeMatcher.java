@@ -23,10 +23,10 @@ public class ValueTypeMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof DataType) {
+		if (eObject instanceof DataType) {
 
-			DataType element = (DataType)eObject;
-			if(UMLUtil.getStereotypeApplication(element, ValueType.class) != null) {
+			DataType element = (DataType) eObject;
+			if (UMLUtil.getStereotypeApplication(element, ValueType.class) != null) {
 				isMatch = true;
 			}
 		}

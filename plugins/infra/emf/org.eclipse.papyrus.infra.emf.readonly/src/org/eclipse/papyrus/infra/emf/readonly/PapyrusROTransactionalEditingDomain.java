@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -65,7 +65,7 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 	public PapyrusROTransactionalEditingDomain(AdapterFactory adapterFactory, TransactionalCommandStack stack, ResourceSet resourceSet) {
 		super(adapterFactory, stack, resourceSet);
 
-		if(stack instanceof IWorkspaceCommandStack) {
+		if (stack instanceof IWorkspaceCommandStack) {
 			resourceSet.eAdapters().add(createResourceUndoContextHandler());
 		}
 	}
@@ -97,7 +97,7 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 				// Append to the transaction first
 				super.appendNotification(notification);
 
-				if(!NotificationFilter.READ.matches(notification)) {
+				if (!NotificationFilter.READ.matches(notification)) {
 					// Check whether we are modifying a read-only object
 					assertNotReadOnly(notification.getNotifier());
 				} else {
@@ -107,13 +107,13 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 			}
 		};
 	}
-	
+
 	protected void handleCrossResourceContainmentProxy(Notification notification) {
-		if(notification.getEventType() == Notification.RESOLVE) {
-			EReference reference = (EReference)notification.getFeature();
-			if(reference.isContainment()) {
-				InternalEObject newValue = (InternalEObject)notification.getNewValue();
-				if(newValue.eDirectResource() != null) {
+		if (notification.getEventType() == Notification.RESOLVE) {
+			EReference reference = (EReference) notification.getFeature();
+			if (reference.isContainment()) {
+				InternalEObject newValue = (InternalEObject) notification.getNewValue();
+				if (newValue.eDirectResource() != null) {
 					ControlledResourceTracker.getInstance(this).handleCrossResourceContainment(newValue);
 				}
 			}
@@ -123,26 +123,26 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 	protected void assertNotReadOnly(Object object) {
 		InternalTransaction tx = getActiveTransaction();
 
-		// If there's no transaction, then there will be nothing to roll back.  And if it's unprotected, let the client do whatever.
-		// And, of course, don't interfere with rollback!  Finally, if we're already going to roll back, don't bother
-		if((tx != null) && !tx.isRollingBack() //
-			&& !Boolean.TRUE.equals(tx.getOptions().get(Transaction.OPTION_UNPROTECTED)) //
-			&& !willRollBack(tx)) {
+		// If there's no transaction, then there will be nothing to roll back. And if it's unprotected, let the client do whatever.
+		// And, of course, don't interfere with rollback! Finally, if we're already going to roll back, don't bother
+		if ((tx != null) && !tx.isRollingBack() //
+				&& !Boolean.TRUE.equals(tx.getOptions().get(Transaction.OPTION_UNPROTECTED)) //
+				&& !willRollBack(tx)) {
 
 			final Set<ReadOnlyAxis> axes = TransactionHelper.getReadOnlyAxisOption(tx);
 			boolean readOnly;
 
 			// Check for Resource first because CDO resources *are* EObjects
-			if(object instanceof Resource) {
-				Resource.Internal resource = (Resource.Internal)object;
-				if(resource.isLoading()) {
+			if (object instanceof Resource) {
+				Resource.Internal resource = (Resource.Internal) object;
+				if (resource.isLoading()) {
 					// We must be able to modify read-only resources in order to load them
 					return;
 				}
 				// If it's not an interactive transaction, don't try to make the resource writable because that would prompt the user
 				readOnly = isReadOnly(axes, resource) && !(isInteractive(tx) && makeWritable(axes, resource));
-			} else if(object instanceof EObject) {
-				EObject eObject = (EObject)object;
+			} else if (object instanceof EObject) {
+				EObject eObject = (EObject) object;
 				// If it's not an interactive transaction, don't try to make the object writable because that would prompt the user
 				readOnly = isReadOnly(axes, eObject) && !(isInteractive(tx) && makeWritable(axes, eObject));
 			} else {
@@ -150,7 +150,7 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 				readOnly = false;
 			}
 
-			if(readOnly) {
+			if (readOnly) {
 				String message = "Attempt to modify object(s) in a read-only model."; //$NON-NLS-1$
 				Collection<?> offenders = Collections.singleton(object);
 				tx.abort(new RollbackStatus(Activator.PLUGIN_ID, IRollbackStatus.READ_ONLY_OBJECT, message, offenders));
@@ -164,8 +164,8 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 	}
 
 	protected boolean isReadOnly(Set<ReadOnlyAxis> axes, Resource resource) {
-		if((resource != null) && (resource.getURI() != null)) {
-			return ReadOnlyManager.getReadOnlyHandler(this).anyReadOnly(axes, new URI[]{ resource.getURI() }).get();
+		if ((resource != null) && (resource.getURI() != null)) {
+			return ReadOnlyManager.getReadOnlyHandler(this).anyReadOnly(axes, new URI[] { resource.getURI() }).get();
 		}
 		return false;
 	}
@@ -178,7 +178,7 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 		URI[] uris = getCompositeModelURIs(resource.getURI());
 		IReadOnlyHandler2 handler = ReadOnlyManager.getReadOnlyHandler(this);
 
-		if(!handler.canMakeWritable(axes, uris).or(false)) {
+		if (!handler.canMakeWritable(axes, uris).or(false)) {
 			return false;
 		}
 
@@ -190,7 +190,7 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 
 		IReadOnlyHandler2 handler = ReadOnlyManager.getReadOnlyHandler(this);
 
-		if(!handler.canMakeWritable(axes, object).or(false)) {
+		if (!handler.canMakeWritable(axes, object).or(false)) {
 			result = false;
 		} else {
 			result = handler.makeWritable(axes, object).get();
@@ -201,30 +201,30 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 
 	/**
 	 * Obtains the complete set of URIs for members of the composite model resource of which the given URI is one member.
-	 * 
+	 *
 	 * @param memberURI
-	 *        a member of a composite Papyrus model
-	 * 
+	 *            a member of a composite Papyrus model
+	 *
 	 * @return the complete set of member resources (which could just be the original {@code memberURI})
 	 */
 	protected URI[] getCompositeModelURIs(URI memberURI) {
 		URI[] result = null;
 
-		if(memberURI.isPlatformResource()) {
+		if (memberURI.isPlatformResource()) {
 			// We don't have object-level read-only state in the workspace (perhaps in CDO repositories)
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(memberURI.trimFragment().toPlatformString(true)));
-			if((file != null) && file.exists()) {
+			if ((file != null) && file.exists()) {
 				IPapyrusFile composite = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(file);
 				Set<URI> memberURIs = new HashSet<URI>();
-				for(IFile member : OneFileUtils.getAssociatedFiles(composite)) {
+				for (IFile member : OneFileUtils.getAssociatedFiles(composite)) {
 					memberURIs.add(URI.createPlatformResourceURI(member.getFullPath().toString(), true));
 				}
 				result = memberURIs.toArray(new URI[memberURIs.size()]);
 			}
 		}
 
-		if(result == null) {
-			result = new URI[]{ memberURI };
+		if (result == null) {
+			result = new URI[] { memberURI };
 		}
 
 		return result;
@@ -256,7 +256,7 @@ public class PapyrusROTransactionalEditingDomain extends TransactionalEditingDom
 		protected ResourceUndoContextHandler(CommandStack stack) {
 			super();
 
-			history = ((IWorkspaceCommandStack)stack).getOperationHistory();
+			history = ((IWorkspaceCommandStack) stack).getOperationHistory();
 		}
 
 		@Override

@@ -6,8 +6,8 @@ import org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry;
 
 /**
  * Fake service factory for testing purpose.
- * This service require the 
- * 
+ * This service require the
+ *
  * @author cedric dumoulin
  *
  */
@@ -15,15 +15,15 @@ public class FakeWithRequiredServiceFactory extends FakeServiceFactory implement
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 */
 	public FakeWithRequiredServiceFactory() {
 
-		super( "factoryName" + count++ );
+		super("factoryName" + count++);
 	}
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -33,16 +33,16 @@ public class FakeWithRequiredServiceFactory extends FakeServiceFactory implement
 		super(name);
 	}
 
-	
+
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.FakeService#init(org.eclipse.papyrus.infra.core.serviceregistry.ServicesRegistry)
 	 *
 	 * @param servicesRegistry
 	 */
 	@Override
 	public void init(ServicesRegistry servicesRegistry) {
-		
+
 		trace.addTrace(name, "init");
 		Object foundService = null;
 		try {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA and others
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,9 +54,9 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 	@Override
 	protected AnnotationModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		View view = NotationHelper.findView(sourceElement);
-		if(view != null && view instanceof Edge) {
+		if (view != null && view instanceof Edge) {
 			EditingDomain domain = EMFHelper.resolveEditingDomain(view);
-			LinkRouteModelElement m = new LinkRouteModelElement((Edge)view, domain);
+			LinkRouteModelElement m = new LinkRouteModelElement((Edge) view, domain);
 			elements.put(view, m);
 			return m;
 		}
@@ -64,17 +64,17 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 	}
 
 	public static LinkRouteModelElement getElement(Object sourceElement) {
-		if(elements.get(sourceElement) == null) {
+		if (elements.get(sourceElement) == null) {
 			View view = NotationHelper.findView(sourceElement);
 			EditingDomain domain = EMFHelper.resolveEditingDomain(view);
-			LinkRouteModelElement m = new LinkRouteModelElement((Edge)view, domain);
+			LinkRouteModelElement m = new LinkRouteModelElement((Edge) view, domain);
 			elements.put(view, m);
 		}
 		return elements.get(sourceElement);
 	}
 
 	public static boolean isRoutingNotification(Notification event) {
-		if(event.getNewValue() instanceof EAnnotation && LinkRouteModelElementFactory.ROUTING.equals(((EAnnotation)event.getNewValue()).getSource())) {
+		if (event.getNewValue() instanceof EAnnotation && LinkRouteModelElementFactory.ROUTING.equals(((EAnnotation) event.getNewValue()).getSource())) {
 			return true;
 		}
 		return false;
@@ -82,7 +82,7 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 
 	public static String getRoutingStyle(View view) {
 		EAnnotation ea = view.getEAnnotation(ROUTING);
-		if(ea != null && ea.getDetails().containsKey(STYLE)) {
+		if (ea != null && ea.getDetails().containsKey(STYLE)) {
 			return ea.getDetails().get(STYLE);
 		}
 		return AUTOMATIC;
@@ -93,9 +93,9 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 	}
 
 	public static void switchToManualRouting(View edge) {
-		if(LinkRouteModelElementFactory.isAutomaticRouting(edge)) {
+		if (LinkRouteModelElementFactory.isAutomaticRouting(edge)) {
 			LinkRouteModelElement element = LinkRouteModelElementFactory.getElement(edge);
-			AnnotationObservableValue observable = (AnnotationObservableValue)element.getObservable(STYLE);
+			AnnotationObservableValue observable = (AnnotationObservableValue) element.getObservable(STYLE);
 			observable.setValue(LinkRouteModelElementFactory.MANUAL);
 		}
 	}
@@ -106,12 +106,14 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 			super(source, domain, ROUTING);
 		}
 
+		@Override
 		public IStaticContentProvider getContentProvider(String propertyPath) {
-			if(propertyPath.equals(STYLE)) {
+			if (propertyPath.equals(STYLE)) {
 				return new AbstractStaticContentProvider() {
 
+					@Override
 					public Object[] getElements() {
-						return new String[]{ AUTOMATIC, MANUAL };
+						return new String[] { AUTOMATIC, MANUAL };
 					}
 
 				};
@@ -119,16 +121,18 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 			return EmptyContentProvider.instance;
 		}
 
+		@Override
 		public ILabelProvider getLabelProvider(String propertyPath) {
 			return new org.eclipse.jface.viewers.LabelProvider();
 		}
 
+		@Override
 		public IObservable doGetObservable(String propertyPath) {
 			return new AnnotationObservableValue(source, domain, ROUTING, STYLE) {
 
 				@Override
 				protected Command getCommand(final Object value) {
-					return new CreateEAnnotationCommand((TransactionalEditingDomain)domain, source, ROUTING) {
+					return new CreateEAnnotationCommand((TransactionalEditingDomain) domain, source, ROUTING) {
 
 						@Override
 						protected void doExecute() {
@@ -142,7 +146,7 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 				@Override
 				protected Object doGetValue() {
 					Object value = super.doGetValue();
-					if(value == null) {
+					if (value == null) {
 						return AUTOMATIC;
 					}
 					return value;
@@ -153,7 +157,7 @@ public class LinkRouteModelElementFactory extends AnnotationModelElementFactory 
 					Object oldValue = doGetValue();
 
 					Command emfCommand = getCommand(value);
-					if(emfCommand != null) {
+					if (emfCommand != null) {
 						domain.getCommandStack().execute(emfCommand);
 					}
 					ValueDiff createValueDiff = Diffs.createValueDiff(oldValue, value);

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -27,31 +27,30 @@ import org.eclipse.papyrus.uml.diagram.common.utils.UMLGraphicalTypes;
 
 
 /**
- * Specific edit policy for compartment, to forbid the duplication of ports as affixed children. 
+ * Specific edit policy for compartment, to forbid the duplication of ports as affixed children.
+ * 
  * @see bug 375041
  */
 public class CustomDuplicatePasteEditPolicy extends DuplicatePasteEditPolicy {
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command constructDuplicationCommand(List notationViewsToDuplicate, Set elementsToDuplicate, DuplicateRequest request, TransactionalEditingDomain editingDomain) {
-		if(notationViewsToDuplicate !=null && !notationViewsToDuplicate.isEmpty()) {
-			for(Object o : notationViewsToDuplicate) {
-				if(o instanceof View) {
-					String type = ((View)o).getType();
-					if(SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID.equals(type) || UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID.equals(type)) {
+		if (notationViewsToDuplicate != null && !notationViewsToDuplicate.isEmpty()) {
+			for (Object o : notationViewsToDuplicate) {
+				if (o instanceof View) {
+					String type = ((View) o).getType();
+					if (SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID.equals(type) || UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID.equals(type)) {
 						return UnexecutableCommand.INSTANCE;
 					}
 				}
 			}
 		}
-		
-		
+
+
 		return super.constructDuplicationCommand(notationViewsToDuplicate, elementsToDuplicate, request, editingDomain);
 	}
-	
-}
 
-	 
+}

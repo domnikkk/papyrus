@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.parts.AcceptTimeEventAction
  *
  */
 public class CustomAcceptTimeEventActionAppliedStereotypeEditPart extends AcceptTimeEventActionAppliedStereotypeEditPart {
-	
+
 	public CustomAcceptTimeEventActionAppliedStereotypeEditPart(View view) {
 		super(view);
 		// TODO Auto-generated constructor stub
@@ -30,6 +30,6 @@ public class CustomAcceptTimeEventActionAppliedStereotypeEditPart extends Accept
 
 	@Override
 	protected void refreshLabel() {
-		//do nothing the label is only refresh by the editpolicy
+		// do nothing the label is only refresh by the editpolicy
 	}
 }

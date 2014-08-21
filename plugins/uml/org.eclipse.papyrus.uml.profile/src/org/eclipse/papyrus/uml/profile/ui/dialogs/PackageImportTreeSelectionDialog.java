@@ -49,10 +49,10 @@ public class PackageImportTreeSelectionDialog extends ElementImportTreeSelection
 		Collection<Package> result = new java.util.ArrayList<Package>();
 
 		Iterator<PackageableElement> elemIter = package_.getPackagedElements().iterator();
-		while(elemIter.hasNext()) {
+		while (elemIter.hasNext()) {
 			Element elem = elemIter.next();
-			if(elem instanceof Package) {
-				result.add((Package)elem);
+			if (elem instanceof Package) {
+				result.add((Package) elem);
 			}
 		}
 

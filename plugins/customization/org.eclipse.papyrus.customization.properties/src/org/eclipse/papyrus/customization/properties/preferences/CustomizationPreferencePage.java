@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *****************************************************************************/
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 
 /**
  * This page handles preferences for dialog boxes
- * 
+ *
  * @author Camille Letavernier
  */
 public class CustomizationPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {
@@ -43,22 +43,22 @@ public class CustomizationPreferencePage extends FieldEditorPreferencePage imple
 	public final static String OPEN_CUSTOMIZATION_PERSPECTIVE = "openCustomizationPerspective"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 */
 	public final static String ASK_FOR_CONFIRMATION = "askForConfirmation"; //$NON-NLS-1$
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CustomizationPreferencePage() {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param style
 	 */
 	public CustomizationPreferencePage(int style) {
@@ -66,9 +66,9 @@ public class CustomizationPreferencePage extends FieldEditorPreferencePage imple
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
 	 * @param style
 	 */
@@ -77,9 +77,9 @@ public class CustomizationPreferencePage extends FieldEditorPreferencePage imple
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param title
 	 * @param image
 	 * @param style
@@ -88,6 +88,7 @@ public class CustomizationPreferencePage extends FieldEditorPreferencePage imple
 		super(title, image, style);
 	}
 
+	@Override
 	public void init(IWorkbench workbench) {
 		setPreferenceStore(Activator.getDefault().getPreferenceStore());
 		setDescription(Messages.CustomizationPreferencePage_PropertyViewCustomizationPreferences);
@@ -101,7 +102,7 @@ public class CustomizationPreferencePage extends FieldEditorPreferencePage imple
 
 	/**
 	 * Indicates if the customization perspective should be opened
-	 * 
+	 *
 	 * @return true if the customization perspective should be opened
 	 */
 	public static boolean openCustomizationPerspective() {
@@ -111,7 +112,7 @@ public class CustomizationPreferencePage extends FieldEditorPreferencePage imple
 	/**
 	 * Indicates if a dialog should ask the user for a confirmation before opening
 	 * the customization perspective
-	 * 
+	 *
 	 * @return true if a user confirmation is needed
 	 */
 	public static boolean askForConfirmation() {

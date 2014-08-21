@@ -66,18 +66,18 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
-		View view = (View)getHost().getModel();
-		if(view == null) {
+		View view = (View) getHost().getModel();
+		if (view == null) {
 			return;
 		}
 
 		hostSemanticNamedElement = getNamedElement();
-		if(hostSemanticNamedElement != null) {
+		if (hostSemanticNamedElement != null) {
 			// adds a listener on the view and the element controlled by the
 			// editpart
 			getDiagramEventBroker().addNotificationListener(view, this);
 
-			if(hostSemanticNamedElement == null) {
+			if (hostSemanticNamedElement == null) {
 				return;
 			}
 			getDiagramEventBroker().addNotificationListener(hostSemanticNamedElement, this);
@@ -91,9 +91,9 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 * refresh the qualified name
 	 */
 	protected void refreshQualifiedNameDisplay() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			if(((IPapyrusEditPart)getHost()).getPrimaryShape() instanceof NodeNamedElementFigure) {
-				NodeNamedElementFigure nodeNamedElementFigure = (NodeNamedElementFigure)((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			if (((IPapyrusEditPart) getHost()).getPrimaryShape() instanceof NodeNamedElementFigure) {
+				NodeNamedElementFigure nodeNamedElementFigure = (NodeNamedElementFigure) ((IPapyrusEditPart) getHost()).getPrimaryShape();
 				refreshQualifiedNameDepth(nodeNamedElementFigure);
 				refreshQualifiedName(nodeNamedElementFigure);
 			}
@@ -105,7 +105,7 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 * set the qualified name to display
 	 *
 	 * @param nodeNamedElementFigure
-	 *        the associated figure to the editpart
+	 *            the associated figure to the editpart
 	 */
 	protected void refreshQualifiedName(IPapyrusNodeNamedElementFigure nodeNamedElementFigure) {
 		nodeNamedElementFigure.setQualifiedName(hostSemanticNamedElement.getQualifiedName());
@@ -115,10 +115,10 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 * refresh the editpart with a depth for the qualified name
 	 *
 	 * @param nodeNamedElementFigure
-	 *        the associated figure to the editpart
+	 *            the associated figure to the editpart
 	 */
 	protected void refreshQualifiedNameDepth(NodeNamedElementFigure nodeNamedElementFigure) {
-		nodeNamedElementFigure.setDepth(QualifiedNameHelper.getQualifiedNameDepth((View)getHost().getModel()));
+		nodeNamedElementFigure.setDepth(QualifiedNameHelper.getQualifiedNameDepth((View) getHost().getModel()));
 	}
 
 	/**
@@ -128,11 +128,11 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
-		View view = (View)getHost().getModel();
-		if(view == null) {
+		View view = (View) getHost().getModel();
+		if (view == null) {
 			return;
 		}
-		if(hostSemanticNamedElement != null) {
+		if (hostSemanticNamedElement != null) {
 			// remove notification on element and view
 			getDiagramEventBroker().removeNotificationListener(view, this);
 			getDiagramEventBroker().removeNotificationListener(hostSemanticNamedElement, this);
@@ -149,12 +149,12 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 *         if this not a named element
 	 */
 	protected NamedElement getNamedElement() {
-		View view = (View)getHost().getModel();
-		if(view == null) {
+		View view = (View) getHost().getModel();
+		if (view == null) {
 			return null;
 		}
-		if(view.getElement() != null && view.getElement() instanceof NamedElement) {
-			return (NamedElement)view.getElement();
+		if (view.getElement() != null && view.getElement() instanceof NamedElement) {
+			return (NamedElement) view.getElement();
 		}
 		return null;
 	}
@@ -165,8 +165,8 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
-		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
-		if(theEditingDomain != null) {
+		TransactionalEditingDomain theEditingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
+		if (theEditingDomain != null) {
 			return DiagramEventBroker.getInstance(theEditingDomain);
 		}
 		return null;
@@ -178,20 +178,20 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
-		if(getNamedElement() == null) {
+		if (getNamedElement() == null) {
 			return;
 		}
 
-		if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeatureID(NamedElement.class)) || notification.getNotifier() instanceof EAnnotation) {
+		if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeatureID(NamedElement.class)) || notification.getNotifier() instanceof EAnnotation) {
 			refreshQualifiedNameDisplay();
-		} else if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeature())) {
-			if(parentListeners.contains(notification.getNotifier()) || getNamedElement().equals(notification.getNotifier())) {
+		} else if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(notification.getFeature())) {
+			if (parentListeners.contains(notification.getNotifier()) || getNamedElement().equals(notification.getNotifier())) {
 				refreshQualifiedNameDisplay();
 			}
-		} else if(notification.getFeature() instanceof EReference) {
-			EReference ref = (EReference)notification.getFeature();
-			if(ref.isContainment()) {
-				if(parentListeners.contains(notification.getNotifier())) {
+		} else if (notification.getFeature() instanceof EReference) {
+			EReference ref = (EReference) notification.getFeature();
+			if (ref.isContainment()) {
+				if (parentListeners.contains(notification.getNotifier())) {
 					removeParentListeners();
 				}
 				addParentListeners();
@@ -205,13 +205,13 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 */
 	private void addParentListeners() {
 		DiagramEventBroker diagramEventBroker = getDiagramEventBroker();
-		if(diagramEventBroker != null) {
-			if(parentListeners == null) {
+		if (diagramEventBroker != null) {
+			if (parentListeners == null) {
 				parentListeners = new ArrayList<Object>();
 			}
-			if(getNamedElement() != null) {
+			if (getNamedElement() != null) {
 				EObject parentEOBject = getNamedElement().eContainer();
-				while(parentEOBject != null) {
+				while (parentEOBject != null) {
 					diagramEventBroker.addNotificationListener(parentEOBject, this);
 					parentListeners.add(parentEOBject);
 					parentEOBject = parentEOBject.eContainer();
@@ -224,8 +224,8 @@ public class QualifiedNameDisplayEditPolicy extends GraphicalEditPolicy implemen
 	 * Remove all parents listeners
 	 */
 	public void removeParentListeners() {
-		for(Object listener : parentListeners) {
-			getDiagramEventBroker().removeNotificationListener((EObject)listener, this);
+		for (Object listener : parentListeners) {
+			getDiagramEventBroker().removeNotificationListener((EObject) listener, this);
 		}
 	}
 }

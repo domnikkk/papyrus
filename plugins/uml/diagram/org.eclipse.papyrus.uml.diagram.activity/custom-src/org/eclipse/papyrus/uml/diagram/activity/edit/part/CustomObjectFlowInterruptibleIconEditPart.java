@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Customization to be able to handle specific image label edit part.
  * In this case the label is an InterruptibleEdgeExternalIconFigure which specific handle
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class CustomObjectFlowInterruptibleIconEditPart extends ObjectFlowInterruptibleIconEditPart {
 
@@ -38,7 +38,7 @@ public class CustomObjectFlowInterruptibleIconEditPart extends ObjectFlowInterru
 	 */
 	@Override
 	protected String getLabelTextHelper(IFigure figure) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
 			return "";
 		}
 		return super.getLabelTextHelper(figure);
@@ -49,8 +49,8 @@ public class CustomObjectFlowInterruptibleIconEditPart extends ObjectFlowInterru
 	 */
 	@Override
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
-			//Label can not be set on this figure
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
+			// Label can not be set on this figure
 			return;
 		}
 		super.getLabelTextHelper(figure);
@@ -61,8 +61,8 @@ public class CustomObjectFlowInterruptibleIconEditPart extends ObjectFlowInterru
 	 */
 	@Override
 	protected Image getLabelIconHelper(IFigure figure) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
-			return ((InterruptibleEdgeExternalIconFigure)figure).getImage();
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
+			return ((InterruptibleEdgeExternalIconFigure) figure).getImage();
 		}
 		return super.getLabelIconHelper(figure);
 	}
@@ -72,8 +72,8 @@ public class CustomObjectFlowInterruptibleIconEditPart extends ObjectFlowInterru
 	 */
 	@Override
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof InterruptibleEdgeExternalIconFigure) {
-			//Icon can not be set on this figure
+		if (figure instanceof InterruptibleEdgeExternalIconFigure) {
+			// Icon can not be set on this figure
 			return;
 		}
 		super.setLabelIconHelper(figure, icon);

@@ -20,9 +20,9 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuGroupImpl#getBefore <em>Before</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuGroupImpl#getAfter <em>After</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuGroupImpl#getAbsolutePosition <em>Absolute Position</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuGroupImpl#getBefore <em>Before</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuGroupImpl#getAfter <em>After</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuGroupImpl#getAbsolutePosition <em>Absolute Position</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,6 +33,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The default value of the '{@link #getBefore() <em>Before</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBefore()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The cached value of the '{@link #getBefore() <em>Before</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBefore()
 	 * @generated
 	 * @ordered
@@ -53,6 +55,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The default value of the '{@link #getAfter() <em>After</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAfter()
 	 * @generated
 	 * @ordered
@@ -63,6 +66,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The cached value of the '{@link #getAfter() <em>After</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAfter()
 	 * @generated
 	 * @ordered
@@ -73,6 +77,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The default value of the '{@link #getAbsolutePosition() <em>Absolute Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAbsolutePosition()
 	 * @generated
 	 * @ordered
@@ -83,6 +88,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	 * The cached value of the '{@link #getAbsolutePosition() <em>Absolute Position</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAbsolutePosition()
 	 * @generated
 	 * @ordered
@@ -92,6 +98,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MenuGroupImpl() {
@@ -101,6 +108,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +119,7 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getBefore() {
@@ -120,18 +129,21 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBefore(String newBefore) {
 		String oldBefore = before;
 		before = newBefore;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU_GROUP__BEFORE, oldBefore, before));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getAfter() {
@@ -141,18 +153,21 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAfter(String newAfter) {
 		String oldAfter = after;
 		after = newAfter;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU_GROUP__AFTER, oldAfter, after));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public MenuPosition getAbsolutePosition() {
@@ -162,29 +177,32 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAbsolutePosition(MenuPosition newAbsolutePosition) {
 		MenuPosition oldAbsolutePosition = absolutePosition;
 		absolutePosition = newAbsolutePosition == null ? ABSOLUTE_POSITION_EDEFAULT : newAbsolutePosition;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION, oldAbsolutePosition, absolutePosition));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.MENU_GROUP__BEFORE:
-				return getBefore();
-			case NewchildPackage.MENU_GROUP__AFTER:
-				return getAfter();
-			case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
-				return getAbsolutePosition();
+		case NewchildPackage.MENU_GROUP__BEFORE:
+			return getBefore();
+		case NewchildPackage.MENU_GROUP__AFTER:
+			return getAfter();
+		case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
+			return getAbsolutePosition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,20 +210,21 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.MENU_GROUP__BEFORE:
-				setBefore((String)newValue);
-				return;
-			case NewchildPackage.MENU_GROUP__AFTER:
-				setAfter((String)newValue);
-				return;
-			case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
-				setAbsolutePosition((MenuPosition)newValue);
-				return;
+		case NewchildPackage.MENU_GROUP__BEFORE:
+			setBefore((String) newValue);
+			return;
+		case NewchildPackage.MENU_GROUP__AFTER:
+			setAfter((String) newValue);
+			return;
+		case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
+			setAbsolutePosition((MenuPosition) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -213,20 +232,21 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_GROUP__BEFORE:
-				setBefore(BEFORE_EDEFAULT);
-				return;
-			case NewchildPackage.MENU_GROUP__AFTER:
-				setAfter(AFTER_EDEFAULT);
-				return;
-			case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
-				setAbsolutePosition(ABSOLUTE_POSITION_EDEFAULT);
-				return;
+		case NewchildPackage.MENU_GROUP__BEFORE:
+			setBefore(BEFORE_EDEFAULT);
+			return;
+		case NewchildPackage.MENU_GROUP__AFTER:
+			setAfter(AFTER_EDEFAULT);
+			return;
+		case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
+			setAbsolutePosition(ABSOLUTE_POSITION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,17 +254,18 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_GROUP__BEFORE:
-				return BEFORE_EDEFAULT == null ? before != null : !BEFORE_EDEFAULT.equals(before);
-			case NewchildPackage.MENU_GROUP__AFTER:
-				return AFTER_EDEFAULT == null ? after != null : !AFTER_EDEFAULT.equals(after);
-			case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
-				return absolutePosition != ABSOLUTE_POSITION_EDEFAULT;
+		case NewchildPackage.MENU_GROUP__BEFORE:
+			return BEFORE_EDEFAULT == null ? before != null : !BEFORE_EDEFAULT.equals(before);
+		case NewchildPackage.MENU_GROUP__AFTER:
+			return AFTER_EDEFAULT == null ? after != null : !AFTER_EDEFAULT.equals(after);
+		case NewchildPackage.MENU_GROUP__ABSOLUTE_POSITION:
+			return absolutePosition != ABSOLUTE_POSITION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -252,11 +273,14 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (before: ");
@@ -269,4 +293,4 @@ public class MenuGroupImpl extends MenuContainerImpl implements MenuGroup {
 		return result.toString();
 	}
 
-} //MenuGroupImpl
+} // MenuGroupImpl

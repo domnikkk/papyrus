@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 
 /**
  * This command will create a notification to ask the user to choose the graphical children of an element
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class ChooseChildrenNotificationCommand extends AbstractTransactionalCommand {
 
@@ -85,7 +85,7 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 	/**
 	 * Construct the command for asking to choose graphical children of a adapter
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @see {@link AbstractTransactionalCommand}
 	 * @param label
@@ -109,30 +109,30 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!getEditPartFromEditPartAdapter()) {
-			if(!allChildren.isEmpty()) {
+		if (!getEditPartFromEditPartAdapter()) {
+			if (!allChildren.isEmpty()) {
 				getEditPartFromViewAdapter(allChildren.get(0));
 			}
 		}
-		if(mainEditPart != null) {
+		if (mainEditPart != null) {
 			createdNotificationConfigurator = new ArrayList<ChooseChildrenNotificationConfigurator>();
 			NotificationConfigurator configurator = PendingGroupNotificationsManager.getInstanceForDiagram(diagramPart).getChooseChildrenPendingNotification(mainEditPart);
 			ChooseChildrenNotificationConfigurator notificationConfigurator = null;
-			if(configurator == null) {
-				//If there is no a pending notification for this main edit part then it create one	
-				if(!allChildren.isEmpty() && isChildrenToChoose()) {
+			if (configurator == null) {
+				// If there is no a pending notification for this main edit part then it create one
+				if (!allChildren.isEmpty() && isChildrenToChoose()) {
 					notificationConfigurator = new ChooseChildrenNotificationConfigurator(mainEditPart, allChildren, automaticChildren, host, manager);
 					notificationConfigurator.runConfigurator();
 				}
 			} else {
-				//Else update the old one if needed TODO TODO
+				// Else update the old one if needed TODO TODO
 				// 1 - Compare if there is any modification TODO
-				if(configurator instanceof ChooseChildrenNotificationConfigurator) {
-					notificationConfigurator = (ChooseChildrenNotificationConfigurator)configurator;
-					if(notificationConfigurator.isThereAnyModification(mainEditPart, allChildren, automaticChildren, host)) {
+				if (configurator instanceof ChooseChildrenNotificationConfigurator) {
+					notificationConfigurator = (ChooseChildrenNotificationConfigurator) configurator;
+					if (notificationConfigurator.isThereAnyModification(mainEditPart, allChildren, automaticChildren, host)) {
 						// 2 - There are some update the old notification TODO
 						notificationConfigurator.closeNotification();
-						if(!allChildren.isEmpty() && isChildrenToChoose()) {
+						if (!allChildren.isEmpty() && isChildrenToChoose()) {
 							notificationConfigurator = new ChooseChildrenNotificationConfigurator(mainEditPart, allChildren, automaticChildren, host, manager);
 							notificationConfigurator.runConfigurator();
 						}
@@ -140,7 +140,7 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 					}
 				}
 			}
-			if(notificationConfigurator != null) {
+			if (notificationConfigurator != null) {
 				createdNotificationConfigurator.add(notificationConfigurator);
 			}
 			return CommandResult.newOKCommandResult();
@@ -150,7 +150,7 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 
 	/**
 	 * Return true if there is some children on which the user should choose the graphical parent
-	 * 
+	 *
 	 * @return
 	 */
 	private boolean isChildrenToChoose() {
@@ -159,15 +159,15 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 
 	/**
 	 * Set the main edit part attribute from the adapter
-	 * 
+	 *
 	 * @param any
-	 *        Any {@link IGraphicalEditPart} from which we can get the EditPartRegistery
+	 *            Any {@link IGraphicalEditPart} from which we can get the EditPartRegistery
 	 * @return true if succeed
 	 */
 	private Boolean getEditPartFromEditPartAdapter() {
 		Object _mainEditPart = adapter.getAdapter(EditPart.class);
-		if(_mainEditPart instanceof IGraphicalEditPart) {
-			mainEditPart = (IGraphicalEditPart)_mainEditPart;
+		if (_mainEditPart instanceof IGraphicalEditPart) {
+			mainEditPart = (IGraphicalEditPart) _mainEditPart;
 			return true;
 		}
 		return false;
@@ -175,18 +175,18 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 
 	/**
 	 * Get the {@link IGraphicalEditPart} from view adapter
-	 * 
+	 *
 	 * @param any
 	 * @return
 	 */
 	private Boolean getEditPartFromViewAdapter(IGraphicalEditPart any) {
 		Object view = adapter.getAdapter(View.class);
 		Map<?, ?> registery = any.getViewer().getEditPartRegistry();
-		if(view instanceof View) {
-			View childView = (View)view;
+		if (view instanceof View) {
+			View childView = (View) view;
 			Object auxPart = registery.get(childView);
-			if(auxPart instanceof IGraphicalEditPart) {
-				mainEditPart = (IGraphicalEditPart)auxPart;
+			if (auxPart instanceof IGraphicalEditPart) {
+				mainEditPart = (IGraphicalEditPart) auxPart;
 				return true;
 			}
 		}
@@ -195,14 +195,14 @@ public class ChooseChildrenNotificationCommand extends AbstractTransactionalComm
 
 	/**
 	 * Inform that the command has been undone and delete or update the created notification
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#didUndo(org.eclipse.emf.transaction.Transaction)
 	 * @param tx
-	 *        a transaction that has been undone.
+	 *            a transaction that has been undone.
 	 */
 	@Override
 	protected void didUndo(Transaction tx) {
-		for(ChooseChildrenNotificationConfigurator notifConfigurator : createdNotificationConfigurator) {
+		for (ChooseChildrenNotificationConfigurator notifConfigurator : createdNotificationConfigurator) {
 			notifConfigurator.closeNotification();
 		}
 		super.didUndo(tx);

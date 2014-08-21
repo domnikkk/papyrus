@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * Base class for the different types of service startups (lazy, synchronized).
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public abstract class ServiceStartupEntry {
 
@@ -40,9 +40,9 @@ public abstract class ServiceStartupEntry {
 	protected List<ServiceStartupEntry> requiredServices;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceDescriptor
 	 */
 	public ServiceStartupEntry(ServiceTypeEntry serviceEntry) {
@@ -51,31 +51,31 @@ public abstract class ServiceStartupEntry {
 
 	/**
 	 * Create the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	abstract public void createService() throws ServiceException;
 
 	/**
 	 * Init the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        The servicesRegistry containing this service.
-	 * 
+	 *            The servicesRegistry containing this service.
+	 *
 	 * @throws ServiceException
 	 */
 	abstract public void initService(ServicesRegistry servicesRegistry) throws ServiceException;
 
 	/**
 	 * Start the associated service if not a Lazy Service.
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	abstract public void startService() throws ServiceException;
 
 	/**
 	 * Get the service instance.
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -89,7 +89,7 @@ public abstract class ServiceStartupEntry {
 	/**
 	 * Return the list of the {@link ServiceStartupEntry} required by this
 	 * service.
-	 * 
+	 *
 	 * @return
 	 */
 	public Collection<ServiceStartupEntry> getRequiredServices() {
@@ -100,7 +100,7 @@ public abstract class ServiceStartupEntry {
 
 	/**
 	 * Get {@link ServiceDescriptor} associated to this entry.
-	 * 
+	 *
 	 * @return
 	 */
 	public ServiceDescriptor getDescriptor() {
@@ -116,7 +116,7 @@ public abstract class ServiceStartupEntry {
 
 	/**
 	 * Return true if the service is started. Return false otherwise.
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isStarted() {
@@ -124,9 +124,9 @@ public abstract class ServiceStartupEntry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

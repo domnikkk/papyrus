@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 433371
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.advice;
 
@@ -29,25 +29,25 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
 
 /**
  * A Helper to build the command used to remove the page associated to the destroyed element
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class RemovePageHelper {
 
 	public static ICommand getRemovePageCommand(final TransactionalEditingDomain editingDomain, final EObject elementToDestroy) {
 		try {
 			final IPageManager pageManager = ServiceUtilsForEObject.getInstance().getIPageManager(elementToDestroy);
-			if(pageManager.allPages().contains(elementToDestroy)) {
+			if (pageManager.allPages().contains(elementToDestroy)) {
 				final Command command = IPageUtils.getMemoizedCloseAllPagesCommand(editingDomain, pageManager, elementToDestroy);
 				if (command != null) {
 					return new AbstractTransactionalCommand(editingDomain, "Delete page", null) { //$NON-NLS-1$
-	
+
 						@Override
 						public boolean canExecute() {
 							return command.canExecute();
 						}
-						
+
 						@Override
 						protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 							command.execute();
@@ -57,9 +57,9 @@ public class RemovePageHelper {
 				}
 			}
 		} catch (ServiceException ex) {
-			//Ignore
+			// Ignore
 		} catch (Exception ex) {
-			//Ignore
+			// Ignore
 		}
 
 		return null;

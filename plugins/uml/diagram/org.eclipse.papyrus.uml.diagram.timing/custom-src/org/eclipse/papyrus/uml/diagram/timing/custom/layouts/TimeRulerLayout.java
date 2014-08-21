@@ -17,6 +17,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 public class TimeRulerLayout extends AbstractLayout {
 
+	@Override
 	public void layout(final IFigure container) {
 		// reset the layout so that the BorderItemsAwareFreeFormLayer fills its parent FreeformViewport
 		// if (!(container.getParent().getLayoutManager() instanceof FillLayout)) {
@@ -29,7 +30,7 @@ public class TimeRulerLayout extends AbstractLayout {
 		final Rectangle clientArea = container.getParent().getClientArea();
 		@SuppressWarnings("unchecked")
 		final List<IFigure> children = container.getChildren();
-		for(int i = 0; i < children.size(); i++) {
+		for (int i = 0; i < children.size(); i++) {
 			final IFigure child = children.get(i);
 			child.setBounds(clientArea);
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,15 +21,16 @@ import org.eclipse.uml2.uml.Stereotype;
 
 /**
  * The root (no parent) of the tree: a stereotyped element, i.e. a tree
- * object referencing the UML model element that has a stereotype. 
+ * object referencing the UML model element that has a stereotype.
  * Its children are appliedStereotypeTreeObjects.
  */
 public class StereotypedElementTreeObject extends ParentTreeObject {
 
 	/**
 	 * The Constructor.
-	 * 
-	 * @param element the UML element that should be stereotyped
+	 *
+	 * @param element
+	 *            the UML element that should be stereotyped
 	 */
 	public StereotypedElementTreeObject(Element element) {
 		super(null);
@@ -50,13 +51,13 @@ public class StereotypedElementTreeObject extends ParentTreeObject {
 	}
 
 	protected Element element;
-	
-   /**
-     * Gets the element.
-     * 
-     * @return the element
-     */
-    public Element getElement() {
-        return element;
-    }
+
+	/**
+	 * Gets the element.
+	 *
+	 * @return the element
+	 */
+	public Element getElement() {
+		return element;
+	}
 }

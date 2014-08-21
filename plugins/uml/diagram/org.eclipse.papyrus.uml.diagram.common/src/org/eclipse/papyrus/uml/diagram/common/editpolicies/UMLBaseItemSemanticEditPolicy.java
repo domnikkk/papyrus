@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ package org.eclipse.papyrus.uml.diagram.common.editpolicies;
  * be shared in common as a large part of it is diagram independent.
  * The LinkConstraints nested class should also be generated in a separate
  * class.
- * For now, in order to avoid to much changes in the generator, it only contains 
+ * For now, in order to avoid to much changes in the generator, it only contains
  * the constant use to hold a reoriented edge in the request extended data.
  * </pre>
  */

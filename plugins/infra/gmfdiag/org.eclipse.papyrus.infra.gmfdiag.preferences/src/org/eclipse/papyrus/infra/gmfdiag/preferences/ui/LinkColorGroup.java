@@ -1,15 +1,15 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr 
- *  Thibault Landre (Atos Origin) 
+ *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr
+ *  Thibault Landre (Atos Origin)
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.preferences.ui;
 
@@ -39,13 +39,13 @@ public class LinkColorGroup extends AbstractGroup {
 
 	/**
 	 * creation of a colorGroup Composite.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the composite
+	 *            the parent of the composite
 	 * @param dialogPage
-	 *        to set the page in field editor
+	 *            to set the page in field editor
 	 * @param title
-	 *        the title
+	 *            the title
 	 */
 
 	public LinkColorGroup(Composite parent, String title, DialogPage dialogPage) {
@@ -55,7 +55,7 @@ public class LinkColorGroup extends AbstractGroup {
 
 	/**
 	 * Gets the toolbar.
-	 * 
+	 *
 	 * @return the group that contains editors
 	 */
 	protected Group getToolbar() {
@@ -64,9 +64,9 @@ public class LinkColorGroup extends AbstractGroup {
 
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	protected void createContent(Composite parent) {
 		toolbar = new Group(parent, SWT.SHADOW_NONE);

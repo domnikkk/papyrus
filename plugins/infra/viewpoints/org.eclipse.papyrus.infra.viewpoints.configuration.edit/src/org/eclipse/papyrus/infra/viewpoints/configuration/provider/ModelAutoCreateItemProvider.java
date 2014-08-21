@@ -1,15 +1,15 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Laurent Wouters laurent.wouters@cea.fr - Initial API and implementation
- *  
- * 
+ *
+ *
  */
 package org.eclipse.papyrus.infra.viewpoints.configuration.provider;
 
@@ -42,11 +42,12 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.ModelAutoCreate} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ModelAutoCreateItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -56,6 +57,7 @@ public class ModelAutoCreateItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelAutoCreateItemProvider(AdapterFactory adapterFactory) {
@@ -66,6 +68,7 @@ public class ModelAutoCreateItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -84,72 +87,76 @@ public class ModelAutoCreateItemProvider
 	 * This adds a property descriptor for the Feature feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected void addFeaturePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new EReferencePropertyDescriptor(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelAutoCreate_feature_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelAutoCreate_feature_feature", "_UI_ModelAutoCreate_type"),
-				 ConfigurationPackage.Literals.MODEL_AUTO_CREATE__FEATURE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null)));
+				(new EReferencePropertyDescriptor(createItemPropertyDescriptor
+						(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+								getResourceLocator(),
+								getString("_UI_ModelAutoCreate_feature_feature"),
+								getString("_UI_PropertyDescriptor_description", "_UI_ModelAutoCreate_feature_feature", "_UI_ModelAutoCreate_type"),
+								ConfigurationPackage.Literals.MODEL_AUTO_CREATE__FEATURE,
+								true,
+								false,
+								true,
+								null,
+								null,
+								null)));
 	}
 
 	/**
 	 * This adds a property descriptor for the Origin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addOriginPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelAutoCreate_origin_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelAutoCreate_origin_feature", "_UI_ModelAutoCreate_type"),
-				 ConfigurationPackage.Literals.MODEL_AUTO_CREATE__ORIGIN,
-				 false,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ModelAutoCreate_origin_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ModelAutoCreate_origin_feature", "_UI_ModelAutoCreate_type"),
+						ConfigurationPackage.Literals.MODEL_AUTO_CREATE__ORIGIN,
+						false,
+						false,
+						false,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Creation Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	protected void addCreationTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new ComplexTypePropertyDescriptor(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelAutoCreate_creationType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelAutoCreate_creationType_feature", "_UI_ModelAutoCreate_type"),
-				 ConfigurationPackage.Literals.MODEL_AUTO_CREATE__CREATION_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null)));
+				(new ComplexTypePropertyDescriptor(createItemPropertyDescriptor
+						(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+								getResourceLocator(),
+								getString("_UI_ModelAutoCreate_creationType_feature"),
+								getString("_UI_PropertyDescriptor_description", "_UI_ModelAutoCreate_creationType_feature", "_UI_ModelAutoCreate_type"),
+								ConfigurationPackage.Literals.MODEL_AUTO_CREATE__CREATION_TYPE,
+								true,
+								false,
+								false,
+								ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+								null,
+								null)));
 	}
 
 	/**
 	 * This returns ModelAutoCreate.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT - Custom Image
 	 */
 	@Override
@@ -176,13 +183,14 @@ public class ModelAutoCreateItemProvider
 		builder.append(target != null ? target : "?");
 		return builder.toString();
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -190,9 +198,9 @@ public class ModelAutoCreateItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelAutoCreate.class)) {
-			case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ConfigurationPackage.MODEL_AUTO_CREATE__CREATION_TYPE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -202,6 +210,7 @@ public class ModelAutoCreateItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,11 +222,12 @@ public class ModelAutoCreateItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,14 +21,14 @@ public interface IPaletteAspectToolEntryProxy extends IPaletteEntryProxy {
 
 	/**
 	 * Returns the list of post actions to execute on creation
-	 * 
+	 *
 	 * @return the list of post actions to execute on creation
 	 */
 	public List<IPostAction> getPostActions();
 
 	/**
 	 * Returns the list of pre actions to execute on creation
-	 * 
+	 *
 	 * @return the list of pre actions to execute on creation
 	 */
 	public List<IPreAction> getPreActions();

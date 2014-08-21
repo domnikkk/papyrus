@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,18 +37,18 @@ public class OccurrenceSpecificationHelperAdvice extends AbstractEditHelperAdvic
 	 * - related time elements
 	 * - linked general ordering
 	 * </pre>
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeDestroyDependentsCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest)
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @return the command to execute before the edit helper work is done
 	 */
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
 
-		OccurrenceSpecification os = (OccurrenceSpecification)request.getElementToDestroy();
+		OccurrenceSpecification os = (OccurrenceSpecification) request.getElementToDestroy();
 
 		// delete linked time elements
 		dependentsToDestroy.addAll(TimeObservationHelper.getTimeObservations(os));
@@ -59,13 +59,13 @@ public class OccurrenceSpecificationHelperAdvice extends AbstractEditHelperAdvic
 		// delete linked general ordering
 		/**
 		 * Note: GeneralOrdering should be necessarily removed because the opposite
-		 * references 'GeneralOrdering::before[1]' and 'GeneralOrdering::after[1]' which designate 
-		 * this OccurrenceSpecification are mandatory 
+		 * references 'GeneralOrdering::before[1]' and 'GeneralOrdering::after[1]' which designate
+		 * this OccurrenceSpecification are mandatory
 		 */
 		dependentsToDestroy.addAll(os.getToBefores());
 		dependentsToDestroy.addAll(os.getToAfters());
 
-		if(!dependentsToDestroy.isEmpty()) {
+		if (!dependentsToDestroy.isEmpty()) {
 			return request.getDestroyDependentsCommand(dependentsToDestroy);
 		}
 

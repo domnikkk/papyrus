@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.draw2d.Cursors;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
@@ -55,10 +56,11 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	static final int MODIFIER_CLONE;
 
 	static {
-		if(Platform.OS_MACOSX.equals(Platform.getOS()))
+		if (Platform.OS_MACOSX.equals(Platform.getOS())) {
 			MODIFIER_CLONE = SWT.ALT;
-		else
+		} else {
 			MODIFIER_CLONE = SWT.CTRL;
+		}
 	}
 
 	/**
@@ -83,29 +85,30 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Constructs a new DragEditPartsTracker with the given source edit part.
-	 * 
+	 *
 	 * @param sourceEditPart
-	 *        the source edit part
+	 *            the source edit part
 	 */
 	public CustomDragEditPartsTracker(EditPart sourceEditPart) {
 		super(sourceEditPart);
 
 		cloneActive = false;
-		setDisabledCursor(SharedCursors.NO);
+		setDisabledCursor(Cursors.NO);
 	}
 
 	/**
 	 * Returns true if the control key was the key in the key event and the tool
 	 * is in an acceptable state for this event.
-	 * 
+	 *
 	 * @param e
-	 *        the key event
+	 *            the key event
 	 * @return true if the key was control and can be accepted.
 	 */
 	private boolean acceptClone(KeyEvent e) {
 		int key = e.keyCode;
-		if(!(isInState(STATE_DRAG_IN_PROGRESS | STATE_ACCESSIBLE_DRAG | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)))
+		if (!(isInState(STATE_DRAG_IN_PROGRESS | STATE_ACCESSIBLE_DRAG | STATE_ACCESSIBLE_DRAG_IN_PROGRESS))) {
 			return false;
+		}
 		return (key == MODIFIER_CLONE);
 	}
 
@@ -115,22 +118,25 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Returns the cursor used under normal conditions.
-	 * 
+	 *
 	 * @see #setDefaultCursor(Cursor)
 	 * @return the default cursor
 	 */
+	@Override
 	protected Cursor getDefaultCursor() {
-		if(isCloneActive())
+		if (isCloneActive()) {
 			return SharedCursors.CURSOR_TREE_ADD;
+		}
 		return super.getDefaultCursor();
 	}
 
 	/**
 	 * Erases feedback and calls {@link #performDrag()}. Sets the state to
 	 * terminal.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#commitDrag()
 	 */
+	@Override
 	public void commitDrag() {
 		eraseSourceFeedback();
 		eraseTargetFeedback();
@@ -145,42 +151,46 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	 */
 	private void captureSourceDimensions() {
 		List editparts = getOperationSet();
-		for(int i = 0; i < editparts.size(); i++) {
-			GraphicalEditPart child = (GraphicalEditPart)editparts.get(i);
+		for (int i = 0; i < editparts.size(); i++) {
+			GraphicalEditPart child = (GraphicalEditPart) editparts.get(i);
 			IFigure figure = child.getFigure();
 			PrecisionRectangle bounds = null;
-			if(figure instanceof HandleBounds)
-				bounds = new PrecisionRectangle(((HandleBounds)figure).getHandleBounds());
-			else
+			if (figure instanceof HandleBounds) {
+				bounds = new PrecisionRectangle(((HandleBounds) figure).getHandleBounds());
+			} else {
 				bounds = new PrecisionRectangle(figure.getBounds());
+			}
 			figure.translateToAbsolute(bounds);
 
-			if(compoundSrcRect == null)
+			if (compoundSrcRect == null) {
 				compoundSrcRect = new PrecisionRectangle(bounds);
-			else
+			} else {
 				compoundSrcRect = compoundSrcRect.union(bounds);
-			if(child == getSourceEditPart())
+			}
+			if (child == getSourceEditPart()) {
 				sourceRectangle = bounds;
+			}
 		}
-		if(sourceRectangle == null) {
-			IFigure figure = ((GraphicalEditPart)getSourceEditPart()).getFigure();
-			if(figure instanceof HandleBounds)
-				sourceRectangle = new PrecisionRectangle(((HandleBounds)figure).getHandleBounds());
-			else
+		if (sourceRectangle == null) {
+			IFigure figure = ((GraphicalEditPart) getSourceEditPart()).getFigure();
+			if (figure instanceof HandleBounds) {
+				sourceRectangle = new PrecisionRectangle(((HandleBounds) figure).getHandleBounds());
+			} else {
 				sourceRectangle = new PrecisionRectangle(figure.getBounds());
+			}
 			figure.translateToAbsolute(sourceRectangle);
 		}
 	}
 
 	/**
-	 * Returns a List of top-level edit parts excluding dependants (by calling {@link ToolUtilities#getSelectionWithoutDependants(EditPartViewer)}
-	 * that
+	 * Returns a List of top-level edit parts excluding dependants (by calling {@link ToolUtilities#getSelectionWithoutDependants(EditPartViewer)} that
 	 * understand the current target request (by calling {@link ToolUtilities#filterEditPartsUnderstanding(List, Request)}.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#createOperationSet()
 	 */
+	@Override
 	protected List createOperationSet() {
-		if(getCurrentViewer() != null) {
+		if (getCurrentViewer() != null) {
 			List list = ToolUtilities.getSelectionWithoutDependants(getCurrentViewer());
 			ToolUtilities.filterEditPartsUnderstanding(list, getTargetRequest());
 			return list;
@@ -193,21 +203,24 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	 * Creates a {@link ChangeBoundsRequest}. By default, the type is {@link RequestConstants#REQ_MOVE}. Later on when the edit parts are asked
 	 * to contribute to the overall command, the request type will be either {@link RequestConstants#REQ_MOVE} or {@link RequestConstants#REQ_ORPHAN},
 	 * depending on the result of {@link #isMove()}.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#createTargetRequest()
 	 */
+	@Override
 	protected Request createTargetRequest() {
-		if(isCloneActive())
+		if (isCloneActive()) {
 			return new ChangeBoundsRequest(REQ_CLONE);
-		else
+		} else {
 			return new ChangeBoundsRequest(REQ_MOVE);
+		}
 	}
 
 	/**
 	 * Erases source feedback and sets the autoexpose helper to <code>null</code>.
-	 * 
+	 *
 	 * @see org.eclipse.gef.Tool#deactivate()
 	 */
+	@Override
 	public void deactivate() {
 		eraseSourceFeedback();
 		super.deactivate();
@@ -223,12 +236,13 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	 * operation set} to erase their source feedback.
 	 */
 	protected void eraseSourceFeedback() {
-		if(!getFlag(FLAG_SOURCE_FEEDBACK))
+		if (!getFlag(FLAG_SOURCE_FEEDBACK)) {
 			return;
+		}
 		setFlag(FLAG_SOURCE_FEEDBACK, false);
 		List editParts = getOperationSet();
-		for(int i = 0; i < editParts.size(); i++) {
-			EditPart editPart = (EditPart)editParts.get(i);
+		for (int i = 0; i < editParts.size(); i++) {
+			EditPart editPart = (EditPart) editParts.get(i);
 			editPart.eraseSourceFeedback(getTargetRequest());
 		}
 	}
@@ -236,11 +250,11 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * Asks each edit part in the {@link AbstractTool#getOperationSet()
 	 * operation set} to contribute to a {@link CompoundCommand} after first
-	 * setting the request type to either {@link RequestConstants#REQ_MOVE} or {@link RequestConstants#REQ_ORPHAN}, depending on the result of
-	 * {@link #isMove()}.
-	 * 
+	 * setting the request type to either {@link RequestConstants#REQ_MOVE} or {@link RequestConstants#REQ_ORPHAN}, depending on the result of {@link #isMove()}.
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#getCommand()
 	 */
+	@Override
 	protected Command getCommand() {
 		CompoundCommand command = new CompoundCommand();
 		command.setDebugLabel("Drag Object Tracker");//$NON-NLS-1$
@@ -249,28 +263,31 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 		Request request = getTargetRequest();
 
-		if(isCloneActive())
+		if (isCloneActive()) {
 			request.setType(REQ_CLONE);
-		else if(isMove())
+		} else if (isMove()) {
 			request.setType(REQ_MOVE);
-		else
+		} else {
 			request.setType(REQ_ORPHAN);
+		}
 
-		if(!isCloneActive()) {
-			while(iter.hasNext()) {
-				EditPart editPart = (EditPart)iter.next();
+		if (!isCloneActive()) {
+			while (iter.hasNext()) {
+				EditPart editPart = (EditPart) iter.next();
 				command.add(editPart.getCommand(request));
 			}
 		}
 
-		if(!isMove() || isCloneActive()) {
-			if(!isCloneActive())
+		if (!isMove() || isCloneActive()) {
+			if (!isCloneActive()) {
 				request.setType(REQ_ADD);
+			}
 
-			if(getTargetEditPart() == null)
+			if (getTargetEditPart() == null) {
 				command.add(UnexecutableCommand.INSTANCE);
-			else
+			} else {
 				command.add(getTargetEditPart().getCommand(getTargetRequest()));
+			}
 		}
 
 		return command.unwrap();
@@ -279,38 +296,41 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#getCommandName()
 	 */
+	@Override
 	protected String getCommandName() {
-		if(isCloneActive())
+		if (isCloneActive()) {
 			return REQ_CLONE;
-		else if(isMove())
+		} else if (isMove()) {
 			return REQ_MOVE;
-		else
+		} else {
 			return REQ_ADD;
+		}
 	}
 
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#getDebugName()
 	 */
+	@Override
 	protected String getDebugName() {
 		return "DragEditPartsTracker:" + getCommandName();//$NON-NLS-1$
 	}
 
 	/**
-	 * Returns a list of all the edit parts in the {@link AbstractTool#getOperationSet() operation set}, plus the
-	 * {@link org.eclipse.draw2d.ConnectionLayer}.
-	 * 
+	 * Returns a list of all the edit parts in the {@link AbstractTool#getOperationSet() operation set}, plus the {@link org.eclipse.draw2d.ConnectionLayer}.
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#getExclusionSet()
 	 */
+	@Override
 	protected Collection getExclusionSet() {
-		if(exclusionSet == null) {
+		if (exclusionSet == null) {
 			List set = getOperationSet();
 			exclusionSet = new ArrayList(set.size() + 1);
-			for(int i = 0; i < set.size(); i++) {
-				GraphicalEditPart editpart = (GraphicalEditPart)set.get(i);
+			for (int i = 0; i < set.size(); i++) {
+				GraphicalEditPart editpart = (GraphicalEditPart) set.get(i);
 				exclusionSet.add(editpart.getFigure());
 			}
-			LayerManager layerManager = (LayerManager)getCurrentViewer().getEditPartRegistry().get(LayerManager.ID);
-			if(layerManager != null) {
+			LayerManager layerManager = (LayerManager) getCurrentViewer().getEditPartRegistry().get(LayerManager.ID);
+			if (layerManager != null) {
 				exclusionSet.add(layerManager.getLayer(LayerConstants.CONNECTION_LAYER));
 			}
 		}
@@ -320,6 +340,7 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * @see org.eclipse.gef.tools.TargetingTool#handleAutoexpose()
 	 */
+	@Override
 	protected void handleAutoexpose() {
 		updateTargetRequest();
 		updateTargetUnderMouse();
@@ -330,11 +351,12 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Erases feedback and calls {@link #performDrag()}.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonUp(int)
 	 */
+	@Override
 	protected boolean handleButtonUp(int button) {
-		if(stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
+		if (stateTransition(STATE_DRAG_IN_PROGRESS, STATE_TERMINAL)) {
 			eraseSourceFeedback();
 			eraseTargetFeedback();
 			performDrag();
@@ -346,14 +368,16 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * Updates the target request and mouse target, asks to show feedback, and
 	 * sets the current command.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleDragInProgress()
 	 */
+	@Override
 	protected boolean handleDragInProgress() {
-		if(isInDragInProgress()) {
+		if (isInDragInProgress()) {
 			updateTargetRequest();
-			if(updateTargetUnderMouse())
+			if (updateTargetUnderMouse()) {
 				updateTargetRequest();
+			}
 			showTargetFeedback();
 			showSourceFeedback();
 			setCurrentCommand(getCommand());
@@ -364,20 +388,23 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * Calls {@link TargetingTool#updateAutoexposeHelper()} if a drag is in
 	 * progress.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#handleHover()
 	 */
+	@Override
 	protected boolean handleHover() {
-		if(isInDragInProgress())
+		if (isInDragInProgress()) {
 			updateAutoexposeHelper();
+		}
 		return true;
 	}
 
 	/**
 	 * Erases source feedback.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#handleInvalidInput()
 	 */
+	@Override
 	protected boolean handleInvalidInput() {
 		super.handleInvalidInput();
 		eraseSourceFeedback();
@@ -386,16 +413,18 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Processes arrow keys used to move edit parts.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleKeyDown(org.eclipse.swt.events.KeyEvent)
 	 */
+	@Override
 	protected boolean handleKeyDown(KeyEvent e) {
 		setAutoexposeHelper(null);
-		if(acceptArrowKey(e)) {
+		if (acceptArrowKey(e)) {
 			accStepIncrement();
-			if(stateTransition(STATE_INITIAL, STATE_ACCESSIBLE_DRAG_IN_PROGRESS))
+			if (stateTransition(STATE_INITIAL, STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
 				setStartLocation(getLocation());
-			switch(e.keyCode) {
+			}
+			switch (e.keyCode) {
 			case SWT.ARROW_DOWN:
 				placeMouseInViewer(getLocation().getTranslated(0, accGetStep()));
 				break;
@@ -404,23 +433,25 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 				break;
 			case SWT.ARROW_RIGHT:
 				int stepping = accGetStep();
-				if(isCurrentViewerMirrored())
+				if (isCurrentViewerMirrored()) {
 					stepping = -stepping;
+				}
 				placeMouseInViewer(getLocation().getTranslated(stepping, 0));
 				break;
 			case SWT.ARROW_LEFT:
 				int step = -accGetStep();
-				if(isCurrentViewerMirrored())
+				if (isCurrentViewerMirrored()) {
 					step = -step;
+				}
 				placeMouseInViewer(getLocation().getTranslated(step, 0));
 				break;
 			}
 			return true;
-		} else if(acceptClone(e)) {
+		} else if (acceptClone(e)) {
 			setCloneActive(true);
 			handleDragInProgress();
 			return true;
-		} else if(acceptSHIFT(e)) {
+		} else if (acceptSHIFT(e)) {
 			handleDragInProgress();
 			return true;
 		}
@@ -431,21 +462,23 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	private boolean isCurrentViewerMirrored() {
 		return (getCurrentViewer().getControl().getStyle() & SWT.MIRRORED) != 0;
 	}
+
 	/**
 	 * Interprets and processes clone deactivation, constrained move
 	 * deactivation, and accessibility navigation reset.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleKeyUp(org.eclipse.swt.events.KeyEvent)
 	 */
+	@Override
 	protected boolean handleKeyUp(KeyEvent e) {
-		if(acceptArrowKey(e)) {
+		if (acceptArrowKey(e)) {
 			accStepReset();
 			return true;
-		} else if(acceptClone(e)) {
+		} else if (acceptClone(e)) {
 			setCloneActive(false);
 			handleDragInProgress();
 			return true;
-		} else if(acceptSHIFT(e)) {
+		} else if (acceptSHIFT(e)) {
 			handleDragInProgress();
 			return true;
 		}
@@ -454,7 +487,7 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Returns true if the current drag is a clone operation.
-	 * 
+	 *
 	 * @return true if cloning is enabled and is currently active.
 	 */
 	protected boolean isCloneActive() {
@@ -465,14 +498,15 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	 * Returns <code>true</code> if the source edit part is being moved within
 	 * its parent. If the source edit part is being moved to another parent,
 	 * this returns <code>false</code>.
-	 * 
+	 *
 	 * @return <code>true</code> if the source edit part is not being reparented
 	 */
 	protected boolean isMove() {
 		EditPart part = getSourceEditPart();
-		while(part != getTargetEditPart() && part != null) {
-			if(part.getParent() == getTargetEditPart() && part.getSelected() != EditPart.SELECTED_NONE)
+		while (part != getTargetEditPart() && part != null) {
+			if (part.getParent() == getTargetEditPart() && part.getSelected() != EditPart.SELECTED_NONE) {
 				return true;
+			}
 			part = part.getParent();
 		}
 		return false;
@@ -490,28 +524,32 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	 * location moves during the scroll. This method updates that location.
 	 */
 	protected void repairStartLocation() {
-		if(sourceRelativeStartPoint == null)
+		if (sourceRelativeStartPoint == null) {
 			return;
-		IFigure figure = ((GraphicalEditPart)getSourceEditPart()).getFigure();
-		PrecisionPoint newStart = (PrecisionPoint)sourceRelativeStartPoint.getCopy();
+		}
+		IFigure figure = ((GraphicalEditPart) getSourceEditPart()).getFigure();
+		PrecisionPoint newStart = (PrecisionPoint) sourceRelativeStartPoint.getCopy();
 		figure.translateToAbsolute(newStart);
 		Point delta = new Point(newStart.x - getStartLocation().x, newStart.y - getStartLocation().y);
 		setStartLocation(newStart);
 		// sourceRectangle and compoundSrcRect need to be updated as well when
 		// auto-scrolling
-		if(sourceRectangle != null)
+		if (sourceRectangle != null) {
 			sourceRectangle.translate(delta);
-		if(compoundSrcRect != null)
+		}
+		if (compoundSrcRect != null) {
 			compoundSrcRect.translate(delta);
+		}
 	}
 
 	/**
 	 * @see org.eclipse.gef.tools.TargetingTool#setAutoexposeHelper(org.eclipse.gef.AutoexposeHelper)
 	 */
+	@Override
 	protected void setAutoexposeHelper(AutoexposeHelper helper) {
 		super.setAutoexposeHelper(helper);
-		if(helper != null && sourceRelativeStartPoint == null && isInDragInProgress()) {
-			IFigure figure = ((GraphicalEditPart)getSourceEditPart()).getFigure();
+		if (helper != null && sourceRelativeStartPoint == null && isInDragInProgress()) {
+			IFigure figure = ((GraphicalEditPart) getSourceEditPart()).getFigure();
 			sourceRelativeStartPoint = new PrecisionPoint(getStartLocation());
 			figure.translateToRelative(sourceRelativeStartPoint);
 		}
@@ -519,13 +557,14 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Enables cloning if the value is true.
-	 * 
+	 *
 	 * @param cloneActive
-	 *        <code>true</code> if cloning should be active
+	 *            <code>true</code> if cloning should be active
 	 */
 	protected void setCloneActive(boolean cloneActive) {
-		if(this.cloneActive == cloneActive)
+		if (this.cloneActive == cloneActive) {
 			return;
+		}
 		eraseSourceFeedback();
 		eraseTargetFeedback();
 		this.cloneActive = cloneActive;
@@ -533,16 +572,19 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 
 	/**
 	 * Extended to update the current snap-to strategy.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#setTargetEditPart(org.eclipse.gef.EditPart)
 	 */
+	@Override
 	protected void setTargetEditPart(EditPart editpart) {
-		if(getTargetEditPart() == editpart)
+		if (getTargetEditPart() == editpart) {
 			return;
+		}
 		super.setTargetEditPart(editpart);
 		snapToHelper = null;
-		if(getTargetEditPart() != null && getOperationSet().size() > 0)
-			snapToHelper = (SnapToHelper)getTargetEditPart().getAdapter(SnapToHelper.class);
+		if (getTargetEditPart() != null && getOperationSet().size() > 0) {
+			snapToHelper = (SnapToHelper) getTargetEditPart().getAdapter(SnapToHelper.class);
+		}
 	}
 
 	/**
@@ -551,8 +593,8 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	 */
 	protected void showSourceFeedback() {
 		List editParts = getOperationSet();
-		for(int i = 0; i < editParts.size(); i++) {
-			EditPart editPart = (EditPart)editParts.get(i);
+		for (int i = 0; i < editParts.size(); i++) {
+			EditPart editPart = (EditPart) editParts.get(i);
 			editPart.showSourceFeedback(getTargetRequest());
 		}
 		setFlag(FLAG_SOURCE_FEEDBACK, true);
@@ -561,34 +603,37 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * Extended to activate cloning and to update the captured source dimensions
 	 * when applicable.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#setState(int)
 	 */
+	@Override
 	protected void setState(int state) {
 		boolean check = isInState(STATE_INITIAL);
 		super.setState(state);
 
-		if(isInState(STATE_ACCESSIBLE_DRAG | STATE_DRAG_IN_PROGRESS | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
-			if(getCurrentInput().isModKeyDown(MODIFIER_CLONE)) {
+		if (isInState(STATE_ACCESSIBLE_DRAG | STATE_DRAG_IN_PROGRESS | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
+			if (getCurrentInput().isModKeyDown(MODIFIER_CLONE)) {
 				setCloneActive(true);
 				handleDragInProgress();
 			}
 		}
 
-		if(check && isInState(STATE_DRAG | STATE_ACCESSIBLE_DRAG | STATE_ACCESSIBLE_DRAG_IN_PROGRESS))
+		if (check && isInState(STATE_DRAG | STATE_ACCESSIBLE_DRAG | STATE_ACCESSIBLE_DRAG_IN_PROGRESS)) {
 			captureSourceDimensions();
+		}
 	}
 
 	/**
 	 * Calls {@link #repairStartLocation()} in case auto scroll is being
 	 * performed. Updates the request with the current {@link AbstractTool#getOperationSet() operation set}, move delta,
 	 * location and type.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.TargetingTool#updateTargetRequest()
 	 */
+	@Override
 	protected void updateTargetRequest() {
 		repairStartLocation();
-		ChangeBoundsRequest request = (ChangeBoundsRequest)getTargetRequest();
+		ChangeBoundsRequest request = (ChangeBoundsRequest) getTargetRequest();
 		request.setEditParts(getOperationSet());
 		Dimension delta = getDragMoveDelta();
 
@@ -596,30 +641,34 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 		request.setSnapToEnabled(!getCurrentInput().isModKeyDown(MODIFIER_NO_SNAPPING));
 
 		// constrains the move to dx=0, dy=0, or dx=dy if shift is depressed
-		if(request.isConstrainedMove()) {
+		if (request.isConstrainedMove()) {
 			float ratio = 0;
 
-			if(delta.width != 0)
-				ratio = (float)delta.height / (float)delta.width;
+			if (delta.width != 0) {
+				ratio = (float) delta.height / (float) delta.width;
+			}
 
 			ratio = Math.abs(ratio);
-			if(ratio > 0.5 && ratio < 1.5) {
-				if(Math.abs(delta.height) > Math.abs(delta.width)) {
-					if(delta.height > 0)
+			if (ratio > 0.5 && ratio < 1.5) {
+				if (Math.abs(delta.height) > Math.abs(delta.width)) {
+					if (delta.height > 0) {
 						delta.height = Math.abs(delta.width);
-					else
+					} else {
 						delta.height = -Math.abs(delta.width);
+					}
 				} else {
-					if(delta.width > 0)
+					if (delta.width > 0) {
 						delta.width = Math.abs(delta.height);
-					else
+					} else {
 						delta.width = -Math.abs(delta.height);
+					}
 				}
 			} else {
-				if(Math.abs(delta.width) > Math.abs(delta.height))
+				if (Math.abs(delta.width) > Math.abs(delta.height)) {
 					delta.height = 0;
-				else
+				} else {
 					delta.width = 0;
+				}
 			}
 		}
 
@@ -635,28 +684,28 @@ public class CustomDragEditPartsTracker extends SelectEditPartTracker {
 	/**
 	 * This method can be overridden by clients to customize the snapping
 	 * behavior.
-	 * 
+	 *
 	 * @param request
-	 *        the <code>ChangeBoundsRequest</code> from which the move delta
-	 *        can be extracted and updated
+	 *            the <code>ChangeBoundsRequest</code> from which the move delta
+	 *            can be extracted and updated
 	 * @since 3.4
 	 */
 	protected void snapPoint(ChangeBoundsRequest request) {
 		Point moveDelta = request.getMoveDelta();
-		if(snapToHelper != null && request.isSnapToEnabled()) {
+		if (snapToHelper != null && request.isSnapToEnabled()) {
 			PrecisionRectangle baseRect = sourceRectangle.getPreciseCopy();
 			PrecisionRectangle jointRect = compoundSrcRect.getPreciseCopy();
 			baseRect.translate(moveDelta);
 			jointRect.translate(moveDelta);
 
 			PrecisionPoint preciseDelta = new PrecisionPoint(moveDelta);
-			snapToHelper.snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[]{ baseRect, jointRect }, preciseDelta);
+			snapToHelper.snapPoint(request, PositionConstants.HORIZONTAL | PositionConstants.VERTICAL, new PrecisionRectangle[] { baseRect, jointRect }, preciseDelta);
 			request.setMoveDelta(preciseDelta);
 		}
 	}
 
 
-	//-----------------------------added methods for Papyrus
+	// -----------------------------added methods for Papyrus
 	protected PrecisionRectangle getSourceRectangle() {
 		return this.sourceRectangle.getPreciseCopy();
 	}

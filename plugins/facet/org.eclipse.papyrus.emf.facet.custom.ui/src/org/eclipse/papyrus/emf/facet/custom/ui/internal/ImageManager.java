@@ -7,7 +7,7 @@
  *
  * Contributors:
  *    David Couvrand (Soft-Maint) - Bug 418418 - [Customization] Overlay icons not implemented
- *    Thomas Cicognani (Soft-Maint) - Bug 424414 - ImageManager doesn't cache images 
+ *    Thomas Cicognani (Soft-Maint) - Bug 424414 - ImageManager doesn't cache images
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.ui.internal;
 

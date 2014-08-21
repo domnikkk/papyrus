@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ public class ShadowFigureHelper {
 
 	/**
 	 * get the shadow figure indication true or false
-	 * 
+	 *
 	 * @param modelElement
-	 *        the view where is attach the element
+	 *            the view where is attach the element
 	 */
 	@Deprecated
 	public static boolean getShadowFigureValue(EModelElement modelElement) {
@@ -38,14 +38,14 @@ public class ShadowFigureHelper {
 
 	/**
 	 * Gets the command to set the shadow figure to true are false.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param view
-	 *        the view
+	 *            the view
 	 * @param shadowFigureValue
-	 *        true to display the shadow on the figure
-	 * 
+	 *            true to display the shadow on the figure
+	 *
 	 * @return the command to set the shadow to true or false.
 	 */
 	@Deprecated

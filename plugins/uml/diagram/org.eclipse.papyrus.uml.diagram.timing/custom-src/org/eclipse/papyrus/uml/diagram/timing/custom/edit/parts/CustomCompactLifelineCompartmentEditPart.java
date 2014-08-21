@@ -45,7 +45,7 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 
 	@Override
 	public IFigure createFigure() {
-		final ResizableCompartmentFigure figure = (ResizableCompartmentFigure)super.createFigure();
+		final ResizableCompartmentFigure figure = (ResizableCompartmentFigure) super.createFigure();
 		figure.setBorder(null);
 		figure.getScrollPane().setBorder(null);
 		figure.setLayoutManager(new FillLayout());
@@ -55,7 +55,7 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 			@Override
 			public void layout(final IFigure container) {
 				// reset the layout so that the BorderItemsAwareFreeFormLayer fills its parent FreeformViewport
-				if(!(container.getParent().getLayoutManager() instanceof FillLayout)) {
+				if (!(container.getParent().getLayoutManager() instanceof FillLayout)) {
 					container.getParent().setLayoutManager(new FillLayout());
 				}
 
@@ -75,20 +75,20 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 
 				boolean destruction = false;
 				int destructionX = Integer.MAX_VALUE;
-				for(int i = 0; i < children.size(); i++) {
+				for (int i = 0; i < children.size(); i++) {
 					final IFigure child = children.get(i);
 					final CrossFigure crossFigure = FigureUtils.findChildFigureInstance(child, CrossFigure.class);
-					if(crossFigure != null) {
-						final Rectangle constraint = (Rectangle)getConstraint(child);
+					if (crossFigure != null) {
+						final Rectangle constraint = (Rectangle) getConstraint(child);
 						destruction = true;
 						destructionX = constraint.x;
 					}
 				}
 
 				IFigure nextChild = null;
-				for(int i = 0; i < children.size(); i++) {
+				for (int i = 0; i < children.size(); i++) {
 					final IFigure child = children.get(i);
-					if(i < children.size() - 1) {
+					if (i < children.size() - 1) {
 						nextChild = children.get(i + 1);
 					} else {
 						nextChild = null;
@@ -101,13 +101,13 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 					final GeneralOrderingHorizontalFigure generalOrderingHorizontalFigure = FigureUtils.findChildFigureInstance(figure, GeneralOrderingHorizontalFigure.class);
 
 					// This is the bounds that the user tries to set. We further constrain these bounds.
-					final Rectangle constraint = (Rectangle)getConstraint(child);
+					final Rectangle constraint = (Rectangle) getConstraint(child);
 
 					// OccurrenceSpecification, MessageOccurrenceSpecification or DestructionOccurrenceSpecification
-					if(occurrenceFigure != null) {
+					if (occurrenceFigure != null) {
 						final Dimension preferredSize = occurrenceFigure.getPreferredSize();
 
-						if(nextChild != null && FigureUtils.findChildFigureInstance(nextChild, CompactStateFigure.class) != null) {
+						if (nextChild != null && FigureUtils.findChildFigureInstance(nextChild, CompactStateFigure.class) != null) {
 							// this is an occurrence specification marking a state change
 							// => center it vertically
 							child.setBounds(new Rectangle(constraint.x, centerY - preferredSize.height / 2, preferredSize.width, preferredSize.height));
@@ -127,7 +127,7 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 							final int topPos = centerY - halfHeight - SmallSquareFigure.RADIUS;
 							final int bottomPos = centerY + halfHeight - SmallSquareFigure.RADIUS - 1;
 							int posY;
-							if(Math.abs(constraint.y - topPos) < Math.abs(constraint.y - bottomPos)) {
+							if (Math.abs(constraint.y - topPos) < Math.abs(constraint.y - bottomPos)) {
 								posY = topPos;
 							} else {
 								posY = bottomPos;
@@ -138,18 +138,18 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 						}
 					}
 					// StateInvariant
-					else if(stateInvariantFigure != null) {
+					else if (stateInvariantFigure != null) {
 						final Dimension preferredSize = stateInvariantFigure.getPreferredSize();
 						final int height = Math.min(preferredSize.height, clientArea.height);
 
 						final int width;
 						// the StateInvariant stops where the next state change occurrence begins
 						final IFigure nextStateChangeOccurrence = findNextStateChangeOccurrence(children, i + 1);
-						if(nextStateChangeOccurrence != null) {
+						if (nextStateChangeOccurrence != null) {
 							stateInvariantFigure.setInfinite(false);
 							currentStateInvariantInfinite = false;
-							width = ((Rectangle)getConstraint(nextStateChangeOccurrence)).x - x;
-						} else if(destruction) {
+							width = ((Rectangle) getConstraint(nextStateChangeOccurrence)).x - x;
+						} else if (destruction) {
 							stateInvariantFigure.setInfinite(false);
 							currentStateInvariantInfinite = false;
 							width = destructionX - x;
@@ -164,23 +164,23 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 						currentStateInvariantWidth = width;
 						currentStateInvariantHeight = height;
 						x += width;
-					} else if(verticalMarkFigure != null) {
+					} else if (verticalMarkFigure != null) {
 						// time observation or constraint
 						final Dimension size = verticalMarkFigure.getPreferredSize();
 						final int margin = 3;
 						// put it right above the StateInvariants
 						final int y = centerY - CompactStateFigure.PREFERRED_HEIGHT / 2 - VerticalMarkFigure.PREFERRED_HEIGHT - margin;
 						child.setBounds(new Rectangle(constraint.x, y, size.width, size.height));
-					} else if(dimensioningArrowFigure != null) {
+					} else if (dimensioningArrowFigure != null) {
 						// duration observation or constraint
 						final Dimension size = dimensioningArrowFigure.getPreferredSize();
-						if(constraint.width == Integer.MAX_VALUE) {
+						if (constraint.width == Integer.MAX_VALUE) {
 							// it has no end => set the right side of the compartment as the end
 							child.setBounds(new Rectangle(constraint.x, constraint.y, clientArea.width - constraint.x, size.height));
 						} else {
 							child.setBounds(new Rectangle(constraint.x, constraint.y, constraint.width, size.height));
 						}
-					} else if(generalOrderingHorizontalFigure != null) {
+					} else if (generalOrderingHorizontalFigure != null) {
 						// general ordering
 						final Dimension size = generalOrderingHorizontalFigure.getPreferredSize();
 						child.setBounds(new Rectangle(constraint.x, constraint.y, constraint.width, size.height));
@@ -199,18 +199,18 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 
 	protected static IFigure getOccurrenceChild(final IFigure child) {
 		IFigure occurrenceFigure = FigureUtils.findChildFigureInstance(child, SmallSquareFigure.class);
-		if(occurrenceFigure == null) {
+		if (occurrenceFigure == null) {
 			occurrenceFigure = FigureUtils.findChildFigureInstance(child, CrossFigure.class);
 		}
 		return occurrenceFigure;
 	}
 
 	protected static IFigure findNextStateChangeOccurrence(final List<IFigure> children, final int startIndex) {
-		for(int i = startIndex; i < children.size() - 1; i++) {
+		for (int i = startIndex; i < children.size() - 1; i++) {
 			final IFigure figure1 = children.get(i);
 			final IFigure figure2 = children.get(i + 1);
 			// an OccurrenceSpecification followed by a StateInvariant means a state change
-			if(getOccurrenceChild(figure1) != null && FigureUtils.findChildFigureInstance(figure2, CompactStateFigure.class) != null) {
+			if (getOccurrenceChild(figure1) != null && FigureUtils.findChildFigureInstance(figure2, CompactStateFigure.class) != null) {
 				return figure1;
 			}
 		}
@@ -219,13 +219,13 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 
 	/**
 	 * Hide the scrollbar
-	 * 
+	 *
 	 * @see http://wiki.eclipse.org/Papyrus_Developer_Guide/NoScrollbar
 	 */
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
-		((ResizableCompartmentFigure)getFigure()).getScrollPane().setScrollBarVisibility(org.eclipse.draw2d.ScrollPane.NEVER);
+		((ResizableCompartmentFigure) getFigure()).getScrollPane().setScrollBarVisibility(org.eclipse.draw2d.ScrollPane.NEVER);
 		refreshBounds();
 	}
 
@@ -239,15 +239,15 @@ public class CustomCompactLifelineCompartmentEditPart extends CompactLifelineCom
 	@Override
 	public Command getCommand(final Request request) {
 		// redirect connection requests to the Lifeline (for MessageLost and MessageFound)
-		if(request instanceof CreateConnectionRequest) {
-			final CreateConnectionRequest createConnectionRequest = (CreateConnectionRequest)request;
-			if(RequestConstants.REQ_CONNECTION_START.equals(request.getType())) {
-				if(createConnectionRequest.getTargetEditPart() instanceof CompactLifelineCompartmentEditPartCN) {
+		if (request instanceof CreateConnectionRequest) {
+			final CreateConnectionRequest createConnectionRequest = (CreateConnectionRequest) request;
+			if (RequestConstants.REQ_CONNECTION_START.equals(request.getType())) {
+				if (createConnectionRequest.getTargetEditPart() instanceof CompactLifelineCompartmentEditPartCN) {
 					createConnectionRequest.setTargetEditPart(getParent());
 				}
 				return getParent().getCommand(request);
-			} else if(RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
-				if(createConnectionRequest.getSourceEditPart() instanceof CompactLifelineCompartmentEditPartCN) {
+			} else if (RequestConstants.REQ_CONNECTION_END.equals(request.getType())) {
+				if (createConnectionRequest.getSourceEditPart() instanceof CompactLifelineCompartmentEditPartCN) {
 					createConnectionRequest.setSourceEditPart(getParent());
 				}
 				return getParent().getCommand(request);

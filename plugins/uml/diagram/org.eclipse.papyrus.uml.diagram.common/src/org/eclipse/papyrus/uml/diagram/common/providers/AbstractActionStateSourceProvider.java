@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ import org.eclipse.ui.PlatformUI;
  * This abstract class is used to provide the state of the actions. It's used to
  * refresh the status of these actions in the menu. (in toolbar and popup, it's
  * not needed)
- * 
+ *
  * To get the status, we listen the selection service AND the part service! The
  * part service is used to know if the selection is in the Model Explorer or
  * not! When the selection is not in the model explorer, the handlers listening
@@ -84,9 +84,9 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	private static IWorkbenchPart workbenchPart = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AbstractActionStateSourceProvider() {
 		currentState = new HashMap<String, String>();
@@ -95,25 +95,27 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISourceProvider#dispose()
-	 * 
+	 *
 	 */
+	@Override
 	public void dispose() {
-		if(selectionService != null) {
+		if (selectionService != null) {
 			selectionService.removeSelectionListener(listener);
 		}
-		if(partService != null) {
+		if (partService != null) {
 			partService.removePartListener(partListener);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISourceProvider#getCurrentState()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Map<String, String> getCurrentState() {
 		addSelectionListener();
 		addPartListener();
@@ -121,12 +123,13 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.ISourceProvider#getProvidedSourceNames()
-	 * 
+	 *
 	 * @return
 	 */
 
+	@Override
 	public abstract String[] getProvidedSourceNames();
 
 	// public String[] getProvidedSourceNames() {
@@ -137,17 +140,18 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	 * Adds a listener on the selection service if the field {@link #selectionService} is <code>null</code>
 	 */
 	protected void addSelectionListener() {
-		if(selectionService == null) {
+		if (selectionService == null) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					IWorkbench workbench = PlatformUI.getWorkbench();
 					// selectionService =
 					// (ISelectionService)workbench.getService(ISelectionService.class);
 					IWorkbenchWindow activeWorkbench = workbench.getActiveWorkbenchWindow();
-					if(activeWorkbench != null) {
+					if (activeWorkbench != null) {
 						selectionService = activeWorkbench.getSelectionService();
-						if(selectionService != null) {
+						if (selectionService != null) {
 							selectionService.addSelectionListener(listener);
 						}
 					}
@@ -160,17 +164,18 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	 * Adds a listener on the part service
 	 */
 	protected void addPartListener() {
-		if(partService == null) {
+		if (partService == null) {
 			Display.getDefault().asyncExec(new Runnable() {
 
+				@Override
 				public void run() {
 					IWorkbench workbench = PlatformUI.getWorkbench();
 					// partService =
 					// (IPartService)workbench.getService(IPartService.class);
 					IWorkbenchWindow activeWorkbench = workbench.getActiveWorkbenchWindow();
-					if(activeWorkbench != null) {
+					if (activeWorkbench != null) {
 						partService = activeWorkbench.getPartService();
-						if(partService != null) {
+						if (partService != null) {
 							partService.addPartListener(partListener);
 						}
 					}
@@ -181,7 +186,7 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 
 	/**
 	 * Test if the current ActivePart is the Model Explorer
-	 * 
+	 *
 	 * @return <code>true</code> if the current activePart is the Model Explorer <code>false</code> if not
 	 */
 	protected boolean isSelectionInDiagram() {
@@ -189,61 +194,66 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	}
 
 	/**
-	 * 
+	 *
 	 * The class {@link PartListener}
-	 * 
-	 * 
+	 *
+	 *
 	 */
 	public class PartListener implements IPartListener {
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.ui.IPartListener#partOpened(org.eclipse.ui.IWorkbenchPart)
-		 * 
+		 *
 		 * @param part
 		 */
+		@Override
 		public void partOpened(IWorkbenchPart part) {
 			// TODO Auto-generated method stub
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.ui.IPartListener#partDeactivated(org.eclipse.ui.IWorkbenchPart)
-		 * 
+		 *
 		 * @param part
 		 */
+		@Override
 		public void partDeactivated(IWorkbenchPart part) {
 			// TODO Auto-generated method stub
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.ui.IPartListener#partClosed(org.eclipse.ui.IWorkbenchPart)
-		 * 
+		 *
 		 * @param part
 		 */
+		@Override
 		public void partClosed(IWorkbenchPart part) {
 			// TODO Auto-generated method stub
 
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.ui.IPartListener#partBroughtToTop(org.eclipse.ui.IWorkbenchPart)
-		 * 
+		 *
 		 * @param part
 		 */
+		@Override
 		public void partBroughtToTop(IWorkbenchPart part) {
 			// TODO Auto-generated method stub
 
 		}
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.ui.IPartListener#partActivated(org.eclipse.ui.IWorkbenchPart)
-		 * 
+		 *
 		 * @param part
 		 */
+		@Override
 		public void partActivated(IWorkbenchPart part) {
 			workbenchPart = part;
 			refreshActions();
@@ -252,19 +262,20 @@ public abstract class AbstractActionStateSourceProvider extends AbstractSourcePr
 	}
 
 	/**
-	 * 
+	 *
 	 * This class provides the listener for the selection service
-	 * 
+	 *
 	 */
 	protected class SelectionListener implements ISelectionListener {
 
 		/**
-		 * 
+		 *
 		 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
-		 * 
+		 *
 		 * @param part
 		 * @param selection
 		 */
+		@Override
 		public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 			workbenchPart = part;
 			refreshActions();

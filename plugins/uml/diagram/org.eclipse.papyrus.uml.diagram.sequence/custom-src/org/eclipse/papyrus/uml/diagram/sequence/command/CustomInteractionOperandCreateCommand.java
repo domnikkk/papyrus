@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class CustomInteractionOperandCreateCommand extends InteractionOperandCre
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -50,7 +50,7 @@ public class CustomInteractionOperandCreateCommand extends InteractionOperandCre
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomInteractionOperandCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -59,17 +59,17 @@ public class CustomInteractionOperandCreateCommand extends InteractionOperandCre
 
 	/**
 	 * Generated not for add combined fragment's covered lifelines on interaction operand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	@SuppressWarnings({ "unchecked" })
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		CombinedFragment owner = (CombinedFragment)getElementToEdit();
-		Set<InteractionFragment> coveredInteractionFragments = (Set<InteractionFragment>)getRequest().getParameters().get(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS);
+		CombinedFragment owner = (CombinedFragment) getElementToEdit();
+		Set<InteractionFragment> coveredInteractionFragments = (Set<InteractionFragment>) getRequest().getParameters().get(SequenceRequestConstant.COVERED_INTERACTIONFRAGMENTS);
 		InteractionOperand newElement = createInteractionOperand(owner, coveredInteractionFragments);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
@@ -82,7 +82,7 @@ public class CustomInteractionOperandCreateCommand extends InteractionOperandCre
 		String name = ElementInitializers.getNextNumberedName(cf.getOperands(), base);
 		newIO.setName(name);
 		// Add all combined fragment's covered lifelines on interaction operand
-		for(InteractionOperand operand : cf.getOperands()) {
+		for (InteractionOperand operand : cf.getOperands()) {
 			operand.getCovereds().addAll(cf.getCovereds());
 		}
 		// create guard
@@ -97,19 +97,19 @@ public class CustomInteractionOperandCreateCommand extends InteractionOperandCre
 		LiteralInteger max = UMLFactory.eINSTANCE.createLiteralInteger();
 		max.setValue(1);
 		guard.setMaxint(max);
-		if(coveredInteractionFragments != null) {
+		if (coveredInteractionFragments != null) {
 			InteractionFragment cfOwner = null;
-			if(cf.getEnclosingOperand() != null) {
+			if (cf.getEnclosingOperand() != null) {
 				cfOwner = cf.getEnclosingOperand();
-			} else if(cf.getEnclosingInteraction() != null) {
+			} else if (cf.getEnclosingInteraction() != null) {
 				cfOwner = cf.getEnclosingInteraction();
 			}
-			if(cfOwner != null) {
+			if (cfOwner != null) {
 				// set the enclosing operand to the newly created one if the current enclosing interaction is the enclosing interaction
 				// of the new operand.
 				// => the interaction fragment that are inside an other container (like an enclosed CF) are not modified
-				for(InteractionFragment ift : coveredInteractionFragments) {
-					if(cfOwner.equals(ift.getEnclosingOperand()) || cfOwner.equals(ift.getEnclosingInteraction())) {
+				for (InteractionFragment ift : coveredInteractionFragments) {
+					if (cfOwner.equals(ift.getEnclosingOperand()) || cfOwner.equals(ift.getEnclosingInteraction())) {
 						ift.setEnclosingInteraction(null);
 						ift.setEnclosingOperand(newIO);
 					}

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -130,7 +130,7 @@ public class UIUtilTest {
 
 			ExecutorService executor = Executors.newSingleThreadExecutor();
 			Future<Boolean> waiter = executor.submit(new AwaitTermination(1));
-			
+
 			try {
 				assertResult(waiter, is(false));
 			} finally {
@@ -196,9 +196,9 @@ public class UIUtilTest {
 
 
 	static void flushDisplayEvents() {
-		for(;;) {
+		for (;;) {
 			try {
-				if(!Display.getCurrent().readAndDispatch()) {
+				if (!Display.getCurrent().readAndDispatch()) {
 					break;
 				}
 			} catch (Exception e) {

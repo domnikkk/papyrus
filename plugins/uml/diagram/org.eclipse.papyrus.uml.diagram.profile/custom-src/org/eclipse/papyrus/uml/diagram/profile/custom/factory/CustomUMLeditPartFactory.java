@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram 
+ *  Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Adapted code from the class diagram
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.profile.custom.factory;
 
@@ -50,18 +50,18 @@ import org.eclipse.papyrus.uml.diagram.profile.part.UMLVisualIDRegistry;
 public class CustomUMLeditPartFactory extends UMLEditPartFactory {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.profile.edit.parts.UMLEditPartFactory#createEditPart(org.eclipse.gef.EditPart, java.lang.Object)
-	 * 
+	 *
 	 * @param context
 	 * @param model
 	 * @return
 	 */
 	@Override
 	public EditPart createEditPart(EditPart context, Object model) {
-		if(model instanceof View) {
-			View view = (View)model;
-			switch(UMLVisualIDRegistry.getVisualID(view)) {
+		if (model instanceof View) {
+			View view = (View) model;
+			switch (UMLVisualIDRegistry.getVisualID(view)) {
 			// redefined classes to modify the method createNodePlate
 			case PackageEditPart.VISUAL_ID:
 				return new CustomPackageEditPart(view);
@@ -69,17 +69,17 @@ public class CustomUMLeditPartFactory extends UMLEditPartFactory {
 				return new CustomPackageEditPartCN(view);
 			case ModelEditPartTN.VISUAL_ID:
 				return new CustomModelEditPart(view);
-				//			case ContainmentCircleEditPart.VISUAL_ID:
-				//				return new CContainmentCircleEditPart(view);
+				// case ContainmentCircleEditPart.VISUAL_ID:
+				// return new CContainmentCircleEditPart(view);
 			case ModelEditPartCN.VISUAL_ID:
 				return new CustomModelEditPartCN(view);
 			case AssociationNodeEditPart.VISUAL_ID:
 				return new CustomAssociationNodeEditPart(view);
 			case DependencyNodeEditPart.VISUAL_ID:
 				return new CustomDependencyNodeEditPart(view);
-			case AssociationRoleSourceEditPart.VISUAL_ID: //5 in class diagram
+			case AssociationRoleSourceEditPart.VISUAL_ID: // 5 in class diagram
 				return new AssociationEndSourceEditPart(view);
-			case AssociationRoleTargetEditPart.VISUAL_ID: //3 in class diagramm
+			case AssociationRoleTargetEditPart.VISUAL_ID: // 3 in class diagramm
 				return new AssociationEndTargetEditPart(view);
 
 			case DependencyBranchEditPart.VISUAL_ID:

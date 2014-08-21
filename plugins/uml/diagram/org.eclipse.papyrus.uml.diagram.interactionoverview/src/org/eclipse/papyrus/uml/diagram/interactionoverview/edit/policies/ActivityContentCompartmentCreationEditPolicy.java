@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,16 +32,16 @@ public class ActivityContentCompartmentCreationEditPolicy extends PapyrusCreatio
 
 	@Override
 	protected Command getCreateCommand(final CreateViewRequest request) {
-		final ICommandProxy superCommand = (ICommandProxy)super.getCreateCommand(request);
+		final ICommandProxy superCommand = (ICommandProxy) super.getCreateCommand(request);
 		final List<? extends ViewDescriptor> viewDescriptors = request.getViewDescriptors();
-		if(request instanceof CreateViewAndElementRequest && viewDescriptors.size() == 1) {
+		if (request instanceof CreateViewAndElementRequest && viewDescriptors.size() == 1) {
 			final String semanticHint = viewDescriptors.get(0).getSemanticHint();
-			if(Integer.toString(CallBehaviorActionAsInteractionEditPart.VISUAL_ID).equals(semanticHint)) {
+			if (Integer.toString(CallBehaviorActionAsInteractionEditPart.VISUAL_ID).equals(semanticHint)) {
 				return getCreateCallBehaviorActionAsInteractionCommand(request, superCommand);
 			}
-		} else if(request instanceof CreateViewRequest && viewDescriptors.size() == 1) {
+		} else if (request instanceof CreateViewRequest && viewDescriptors.size() == 1) {
 			final String semanticHint = viewDescriptors.get(0).getSemanticHint();
-			if(Integer.toString(CallBehaviorActionAsInteractionEditPart.VISUAL_ID).equals(semanticHint)) {
+			if (Integer.toString(CallBehaviorActionAsInteractionEditPart.VISUAL_ID).equals(semanticHint)) {
 				return getCreateCallBehaviorActionAsInteractionCommand(request, superCommand);
 			}
 		}
@@ -51,10 +51,10 @@ public class ActivityContentCompartmentCreationEditPolicy extends PapyrusCreatio
 	protected Command getCreateCallBehaviorActionAsInteractionCommand(final CreateViewRequest request, final ICommandProxy superCommand) {
 		final CompoundCommand compoundCommand = new CompoundCommand(Messages.ActivityContentCompartmentCreationEditPolicy_CreateCallBehaviorActionAsInteractionCommand);
 		compoundCommand.add(superCommand);
-		CreateSnapshotForInteractionFromViewDescriptorCommand snapshotCommand = CreateSnapshotForInteractionFromViewDescriptorCommand.create(superCommand.getICommand(), (GraphicalEditPart)getHost()); 
+		CreateSnapshotForInteractionFromViewDescriptorCommand snapshotCommand = CreateSnapshotForInteractionFromViewDescriptorCommand.create(superCommand.getICommand(), (GraphicalEditPart) getHost());
 		compoundCommand.add(new ICommandProxy(snapshotCommand));
 		compoundCommand.add(new ICommandProxy(new AddHyperlinkDiagram(superCommand.getICommand(), snapshotCommand)));
-		compoundCommand.add(new RefreshCommandForDo((org.eclipse.gef.GraphicalEditPart)getHost()));
+		compoundCommand.add(new RefreshCommandForDo((org.eclipse.gef.GraphicalEditPart) getHost()));
 		return compoundCommand;
 	}
 

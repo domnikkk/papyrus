@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,15 +35,15 @@ import org.w3c.dom.Node;
 
 /**
  * The composite for the selection of the wizard tool
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class ToolSelectionComposite extends Composite {
 	private ComboViewer viewer;
 	private final ICallback<Tool> callBack;
 	private final FormToolkit formToolkit = new FormToolkit(Display.getDefault());
-	FormText label = null ;
+	FormText label = null;
 
 	public ToolSelectionComposite(Composite parent,
 			IPaletteEntryProxy entryProxy, int style, ICallback<Tool> call) {
@@ -67,7 +67,7 @@ public class ToolSelectionComposite extends Composite {
 						String description = firstElement.getDescription();
 						if (description != null && description.length() > 0)
 						{
-							label.setText(description,true,true);
+							label.setText(description, true, true);
 						}
 						callBack.callBack(firstElement);
 					}
@@ -78,7 +78,7 @@ public class ToolSelectionComposite extends Composite {
 		group.setText("Description");
 		group.setLayout(new GridLayout(1, false));
 		group.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		
+
 		label = formToolkit.createFormText(group, false);
 		label.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
 		label.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
@@ -105,9 +105,9 @@ public class ToolSelectionComposite extends Composite {
 		if (attr != null) {
 			String value = attr.getNodeValue();
 			Tool wizard = ToolAspectAction.getExtension(value);
-			return wizard ;
+			return wizard;
 		}
-		return null ;
+		return null;
 	}
 
 	public void setSelection(Tool selection) {

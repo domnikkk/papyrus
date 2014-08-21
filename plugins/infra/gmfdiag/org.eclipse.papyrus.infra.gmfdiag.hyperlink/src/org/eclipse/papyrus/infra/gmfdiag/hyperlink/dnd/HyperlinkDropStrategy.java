@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA LIST) - support dropping other kinds of objects to create hyperlinks
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.hyperlink.dnd;
 
@@ -37,9 +37,9 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * A Strategy to create hyperlinks to elements for which we know how to create them.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class HyperlinkDropStrategy extends TransactionalDropStrategy {
 
@@ -69,20 +69,20 @@ public class HyperlinkDropStrategy extends TransactionalDropStrategy {
 
 	@Override
 	public Command doGetCommand(Request request, final EditPart targetEditPart) {
-		if(request instanceof DropObjectsRequest) {
+		if (request instanceof DropObjectsRequest) {
 
 			View view = getTargetView(targetEditPart);
-			if(view == null) {
+			if (view == null) {
 				return null;
 			}
 
 			final View mainView = SemanticElementHelper.findPrimaryView(view);
-			if(mainView instanceof Diagram) {
-				//We cannot create hyperlinks from the root edit part
+			if (mainView instanceof Diagram) {
+				// We cannot create hyperlinks from the root edit part
 				return null;
 			}
 
-			final DropObjectsRequest dropRequest = (DropObjectsRequest)request;
+			final DropObjectsRequest dropRequest = (DropObjectsRequest) request;
 			List<org.eclipse.emf.common.command.Command> hyperlinkCommands = null;
 
 			final ServicesRegistry registry;
@@ -92,14 +92,14 @@ public class HyperlinkDropStrategy extends TransactionalDropStrategy {
 				Collection<AbstractHyperLinkHelper> helpers = HyperLinkHelpersRegistrationUtil.INSTANCE.getAllRegisteredHyperLinkHelper();
 
 				TransactionalEditingDomain domain = ServiceUtils.getInstance().getTransactionalEditingDomain(registry);
-				for(Object droppedObject : dropRequest.getObjects()) {
-					for(AbstractHyperLinkHelper next : helpers) {
-						if(next instanceof IHyperlinkHelperExtension) {
-							IHyperlinkHelperExtension helper = (IHyperlinkHelperExtension)next;
+				for (Object droppedObject : dropRequest.getObjects()) {
+					for (AbstractHyperLinkHelper next : helpers) {
+						if (next instanceof IHyperlinkHelperExtension) {
+							IHyperlinkHelperExtension helper = (IHyperlinkHelperExtension) next;
 							org.eclipse.emf.common.command.Command command = helper.getCreateHyperlinkCommand(domain, mainView, droppedObject);
-							if(command != null) {
+							if (command != null) {
 								// we have something to do. Yay!
-								if(hyperlinkCommands == null) {
+								if (hyperlinkCommands == null) {
 									hyperlinkCommands = new java.util.ArrayList<org.eclipse.emf.common.command.Command>();
 								}
 								hyperlinkCommands.add(command);
@@ -112,13 +112,13 @@ public class HyperlinkDropStrategy extends TransactionalDropStrategy {
 				Activator.log.error(ex);
 			}
 
-			if(hyperlinkCommands != null) {
+			if (hyperlinkCommands != null) {
 				final List<org.eclipse.emf.common.command.Command> _hyperlinkCommands = hyperlinkCommands;
 				return new Command() {
 
 					@Override
 					public void execute() {
-						for(org.eclipse.emf.common.command.Command next : _hyperlinkCommands) {
+						for (org.eclipse.emf.common.command.Command next : _hyperlinkCommands) {
 							next.execute();
 						}
 					}

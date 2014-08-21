@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.infra.emf.newchild.runtime.NewchildManager;
  * The Action bar contributor for the Context Editor
  * Mainly serves as an Adapter for the Ecore actions, as the Ecore actions are
  * not natively compatible with the EMF Facet tree objects
- * 
+ *
  * @author Camille Letavernier
  */
 public class ActionBarContributor extends EcoreActionBarContributor {
@@ -46,9 +46,9 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 	protected IStructuredSelection lastSelection;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ActionBarContributor() {
 		super();
@@ -56,8 +56,8 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 	}
 
 	public void setEditingDomain(EditingDomain domain) {
-		if(validateAction instanceof ValidationAction) {
-			((ValidationAction)validateAction).setEditingDomain(domain);
+		if (validateAction instanceof ValidationAction) {
+			((ValidationAction) validateAction).setEditingDomain(domain);
 		}
 	}
 
@@ -91,8 +91,8 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 
 		super.selectionChanged(newEvent);
 
-		if(newSelection instanceof IStructuredSelection) {
-			this.lastSelection = (IStructuredSelection)newSelection;
+		if (newSelection instanceof IStructuredSelection) {
+			this.lastSelection = (IStructuredSelection) newSelection;
 		} else {
 			this.lastSelection = null;
 		}

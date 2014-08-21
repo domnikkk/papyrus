@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2013 Atos, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,15 +56,15 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 
 		@Override
 		public boolean equals(Object obj) {
-			if(obj instanceof LoadedAuthorizedResource && uri != null) {
-				return uri.equals(((LoadedAuthorizedResource)obj).uri);
+			if (obj instanceof LoadedAuthorizedResource && uri != null) {
+				return uri.equals(((LoadedAuthorizedResource) obj).uri);
 			}
 			return false;
 		}
 
 		@Override
 		public int hashCode() {
-			if(uri != null) {
+			if (uri != null) {
 				return uri.hashCode();
 			}
 			return 0;
@@ -116,12 +116,12 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 	public synchronized void propertyChange(PropertyChangeEvent event) {
 		Object newValue = event.getNewValue();
 		// Insertion of the new value in the PreferenceStore
-		if(event.getProperty().startsWith(URI_PREF_PREFIX) && newValue instanceof String) {
-			String[] newURIs = parseString((String)newValue);
-			if(newURIs.length > 0) {
-				for(int i = 0; i < newURIs.length; i++) {
+		if (event.getProperty().startsWith(URI_PREF_PREFIX) && newValue instanceof String) {
+			String[] newURIs = parseString((String) newValue);
+			if (newURIs.length > 0) {
+				for (int i = 0; i < newURIs.length; i++) {
 					String newURI = newURIs[i];
-					if(!getLoadedAuthorizedResources().containsKey(newURI)) {
+					if (!getLoadedAuthorizedResources().containsKey(newURI)) {
 						getLoadedAuthorizedResources().put(newURI, new LoadedAuthorizedResource(URI.createURI(newURI)));
 					}
 				}
@@ -132,16 +132,16 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 	private void readAuthorizedResources(ModelSet modelSet) {
 		IModel mainDiModel = modelSet.getModel(DiModel.MODEL_ID);
 		URI mainUri = null;
-		if(mainDiModel instanceof AbstractBaseModel) {
-			AbstractBaseModel resourceMainModel = (AbstractBaseModel)mainDiModel;
+		if (mainDiModel instanceof AbstractBaseModel) {
+			AbstractBaseModel resourceMainModel = (AbstractBaseModel) mainDiModel;
 			mainUri = resourceMainModel.getResourceURI();
 
 		}
-		if(loadedAuthorizedResourcesSet == null) {
+		if (loadedAuthorizedResourcesSet == null) {
 			loadedAuthorizedResourcesSet = new HashSet<URI>();
 		}
 
-		if(loadedAuthorizedResources == null) {
+		if (loadedAuthorizedResources == null) {
 			loadedAuthorizedResources = new HashMap<String, LoadedAuthorizedResourceManager.LoadedAuthorizedResource>();
 		}
 
@@ -152,17 +152,17 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 		// models are initialized, the loading of an earlier model than the main DI
 		// model may trigger proxy resolutions in the UML CacheAdapter's crawl
 		IFile currentFile = (mainUri == null) ? null : LoadingUtils.getFile(mainUri);
-		if(currentFile != null) {
+		if (currentFile != null) {
 			IProject project = currentFile.getProject();
 			IEclipsePreferences root = Platform.getPreferencesService().getRootNode();
-			if(project != null && root != null) {
+			if (project != null && root != null) {
 				try {
 					// For the project preferences :
-					if(root.node(ProjectScope.SCOPE).node(project.getName()).nodeExists(pluginId)) {
+					if (root.node(ProjectScope.SCOPE).node(project.getName()).nodeExists(pluginId)) {
 						projectPrefStore = new ScopedPreferenceStore(new ProjectScope(project), pluginId);
 						String s = projectPrefStore.getString(URI_PREF_PREFIX);
 						String[] array = parseString(s);
-						for(int i = 0; i < array.length; i++) {
+						for (int i = 0; i < array.length; i++) {
 							URI uri = URI.createURI(array[i]);
 
 							loadedAuthorizedResources.put(uri.toString(), new LoadedAuthorizedResource(uri));
@@ -178,7 +178,7 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 		// For the workspace preferences :
 		String s = prefStore.getString(URI_PREF_PREFIX);
 		String[] array = parseString(s);
-		for(int i = 0; i < array.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			URI uri = URI.createURI(array[i]);
 
 			loadedAuthorizedResources.put(uri.toString(), new LoadedAuthorizedResource(uri));
@@ -188,20 +188,20 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 	}
 
 	private void readAuthorizedResources() {
-		if(loadedAuthorizedResources == null) {
+		if (loadedAuthorizedResources == null) {
 			loadedAuthorizedResources = new HashMap<String, LoadedAuthorizedResourceManager.LoadedAuthorizedResource>();
 		}
 		String s;
 		loadedAuthorizedResources.clear();
 
-		if(projectPrefStore == null) {
+		if (projectPrefStore == null) {
 			s = prefStore.getString(URI_PREF_PREFIX);
 		} else {
 			s = projectPrefStore.getString(URI_PREF_PREFIX);
 		}
 
 		String[] array = parseString(s);
-		for(int i = 0; i < array.length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			URI uri = URI.createURI(array[i]);
 
 			loadedAuthorizedResources.put(uri.toString(), new LoadedAuthorizedResource(uri));
@@ -212,9 +212,9 @@ public class LoadedAuthorizedResourceManager implements IPropertyChangeListener 
 	protected String[] parseString(String stringList) {
 		StringTokenizer st = new StringTokenizer(stringList, File.pathSeparator + "\n\r");//$NON-NLS-1$
 		ArrayList v = new ArrayList();
-		while(st.hasMoreElements()) {
+		while (st.hasMoreElements()) {
 			v.add(st.nextElement());
 		}
-		return (String[])v.toArray(new String[v.size()]);
+		return (String[]) v.toArray(new String[v.size()]);
 	}
 }

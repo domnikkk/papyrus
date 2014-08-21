@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,16 +23,16 @@ import org.eclipse.papyrus.infra.widgets.selectors.StringSelector;
 
 /**
  * The Multi String Cell Editor
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class MultiStringCellEditor extends AbstractUMLMultiValueCellEditor {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param axisElement
 	 * @param elementProvider
 	 */
@@ -41,9 +41,9 @@ public class MultiStringCellEditor extends AbstractUMLMultiValueCellEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.editor.AbstractUMLMultiValueCellEditor#getFactory()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -52,10 +52,9 @@ public class MultiStringCellEditor extends AbstractUMLMultiValueCellEditor {
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.nattable.editor.AbstractUMLMultiValueCellEditor#getElementSelector(boolean,
-	 *      org.eclipse.jface.viewers.ILabelProvider, org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.uml.nattable.editor.AbstractUMLMultiValueCellEditor#getElementSelector(boolean, org.eclipse.jface.viewers.ILabelProvider, org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider)
+	 *
 	 * @param isUnique
 	 * @param labelProvider
 	 * @param contentProvider

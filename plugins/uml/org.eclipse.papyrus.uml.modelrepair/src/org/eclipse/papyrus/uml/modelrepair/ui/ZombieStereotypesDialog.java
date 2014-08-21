@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2013, 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -146,7 +146,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		Composite contents = (Composite)super.createDialogArea(parent);
+		Composite contents = (Composite) super.createDialogArea(parent);
 
 		Composite self = new Composite(contents, SWT.NONE);
 		self.setLayout(new GridLayout(1, false));
@@ -197,11 +197,11 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	}
 
 	protected List<MissingSchema> getMissingSchemas() {
-		if(missingSchemas == null) {
+		if (missingSchemas == null) {
 			missingSchemas = Lists.newArrayList();
 
-			for(ZombieStereotypesDescriptor next : zombieDescriptors) {
-				for(EPackage schema : next.getZombiePackages()) {
+			for (ZombieStereotypesDescriptor next : zombieDescriptors) {
+				for (EPackage schema : next.getZombiePackages()) {
 					missingSchemas.add(new MissingSchema(schema, next));
 				}
 			}
@@ -212,7 +212,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 	protected void updateControls() {
 		String newTitle = "Repair Stereotypes";
-		if(!actionsToApply.isEmpty()) {
+		if (!actionsToApply.isEmpty()) {
 			newTitle = newTitle + " *";
 		}
 		getShell().setText(newTitle);
@@ -222,7 +222,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	}
 
 	protected void applyPressed() {
-		if(actionsToApply.isEmpty()) {
+		if (actionsToApply.isEmpty()) {
 			return;
 		}
 
@@ -239,8 +239,8 @@ public class ZombieStereotypesDialog extends TrayDialog {
 					public void run(IProgressMonitor monitor) {
 						SubMonitor subMonitor = SubMonitor.convert(monitor, actionsToApply.size());
 
-						for(Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
-							if(!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
+						for (Iterator<MissingSchema> iter = repairActions.iterator(); iter.hasNext();) {
+							if (!iter.next().apply(diagnostics, subMonitor.newChild(1, SubMonitor.SUPPRESS_NONE))) {
 								// Leave this one to try it again
 								iter.remove();
 							}
@@ -258,8 +258,8 @@ public class ZombieStereotypesDialog extends TrayDialog {
 				} catch (Exception e) {
 					getShell().setCursor(null);
 					Throwable t = e;
-					if(e instanceof InvocationTargetException) {
-						t = ((InvocationTargetException)e).getTargetException();
+					if (e instanceof InvocationTargetException) {
+						t = ((InvocationTargetException) e).getTargetException();
 					}
 					StatusManager.getManager().handle(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Failed to repair stereotypes.", t), StatusManager.BLOCK | StatusManager.LOG);
 				} finally {
@@ -268,8 +268,9 @@ public class ZombieStereotypesDialog extends TrayDialog {
 					progress.setVisible(false);
 				}
 
-				if(diagnostics.getSeverity() > Diagnostic.OK) {
-					DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Repairing Stereotypes", "Some repair actions could not be completed normally. Please review the specific details and take any corrective action that may be required.", diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
+				if (diagnostics.getSeverity() > Diagnostic.OK) {
+					DiagnosticDialog dialog = new DiagnosticDialog(getShell(), "Problems in Repairing Stereotypes", "Some repair actions could not be completed normally. Please review the specific details and take any corrective action that may be required.",
+							diagnostics, Diagnostic.ERROR | Diagnostic.WARNING);
 					dialog.setBlockOnOpen(true);
 					dialog.open();
 				}
@@ -288,9 +289,9 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 	@Override
 	protected void buttonPressed(int buttonId) {
-		switch(buttonId) {
+		switch (buttonId) {
 		case IDialogConstants.CANCEL_ID:
-			if(!actionsToApply.isEmpty() && !MessageDialog.openQuestion(getShell(), "Repair Stereotypes", "You have not yet applied the pending repair actions. Are you sure you want to cancel?")) {
+			if (!actionsToApply.isEmpty() && !MessageDialog.openQuestion(getShell(), "Repair Stereotypes", "You have not yet applied the pending repair actions. Are you sure you want to cancel?")) {
 				// don't cancel
 				return;
 			}
@@ -334,7 +335,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 	@Override
 	public boolean close() {
 		zombieDescriptors.clear();
-		if(missingSchemas != null) {
+		if (missingSchemas != null) {
 			missingSchemas.clear();
 		}
 
@@ -353,7 +354,7 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 		@Override
 		public void update(ViewerCell cell) {
-			switch(cell.getColumnIndex()) {
+			switch (cell.getColumnIndex()) {
 			case 0:
 				updateResource(cell);
 				break;
@@ -370,25 +371,25 @@ public class ZombieStereotypesDialog extends TrayDialog {
 		}
 
 		void updateResource(ViewerCell cell) {
-			Resource resource = ((MissingSchema)cell.getElement()).getResource();
+			Resource resource = ((MissingSchema) cell.getElement()).getResource();
 			cell.setText(labelProviderService.getLabelProvider().getText(resource));
 			cell.setImage(labelProviderService.getLabelProvider().getImage(resource));
 		}
 
 		void updateAffected(ViewerCell cell) {
-			int count = ((MissingSchema)cell.getElement()).getAffectedCount();
+			int count = ((MissingSchema) cell.getElement()).getAffectedCount();
 			cell.setText(Integer.toString(count));
 		}
 
 		void updateSchema(ViewerCell cell) {
-			EPackage schema = ((MissingSchema)cell.getElement()).getSchema();
+			EPackage schema = ((MissingSchema) cell.getElement()).getSchema();
 
 			cell.setText(labelProviderService.getLabelProvider().getText(schema));
 			cell.setImage(labelProviderService.getLabelProvider().getImage(schema));
 		}
 
 		void updateAction(ViewerCell cell) {
-			IRepairAction action = ((MissingSchema)cell.getElement()).getSelectedRepairAction();
+			IRepairAction action = ((MissingSchema) cell.getElement()).getSelectedRepairAction();
 			cell.setText(action.getLabel());
 		}
 	}
@@ -446,19 +447,19 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 		@Override
 		protected CellEditor getCellEditor(Object element) {
-			if(editor == null) {
-				editor = new ComboBoxViewerCellEditor((Table)getViewer().getControl(), SWT.BORDER);
+			if (editor == null) {
+				editor = new ComboBoxViewerCellEditor((Table) getViewer().getControl(), SWT.BORDER);
 				editor.setContentProvider(ArrayContentProvider.getInstance());
 				editor.setLabelProvider(new LabelProvider() {
 
 					@Override
 					public String getText(Object element) {
-						return ((IRepairAction)element).getLabel();
+						return ((IRepairAction) element).getLabel();
 					}
 				});
 			}
 
-			editor.setInput(((MissingSchema)element).getRepairActions());
+			editor.setInput(((MissingSchema) element).getRepairActions());
 			return editor;
 		}
 
@@ -469,15 +470,15 @@ public class ZombieStereotypesDialog extends TrayDialog {
 
 		@Override
 		protected Object getValue(Object element) {
-			return ((MissingSchema)element).getSelectedRepairAction();
+			return ((MissingSchema) element).getSelectedRepairAction();
 		}
 
 		@Override
 		protected void setValue(Object element, Object value) {
-			MissingSchema missing = (MissingSchema)element;
-			IRepairAction action = (IRepairAction)value;
+			MissingSchema missing = (MissingSchema) element;
+			IRepairAction action = (IRepairAction) value;
 
-			if(missing.getSelectedRepairAction() != action) {
+			if (missing.getSelectedRepairAction() != action) {
 				missing.setSelectedRepairAction(action);
 
 				editor.getControl().getDisplay().asyncExec(new Runnable() {

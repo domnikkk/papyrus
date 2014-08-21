@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.uml.service.types.utils.RequestParameterConstants;
 /**
  * <pre>
  * Custom semantic edit policy that replace DefaultSemanticEditPolicy
- * in order to manage Class Diagram specific elements (reference 
+ * in order to manage Class Diagram specific elements (reference
  * relationships COMMENT_ANNOTATED_ELEMENT and CONSTRAINT_CONSTRAINED_ELEMENT).
  * </pre>
  */
@@ -50,21 +50,21 @@ public class CustomBlockCompositeSemanticEditPolicy extends BlockCompositeSemant
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if(ElementTypes.COMMENT_ANNOTATED_ELEMENT == req.getElementType()) {
+		if (ElementTypes.COMMENT_ANNOTATED_ELEMENT == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT == req.getElementType()) {
+		if (ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
 		String newEdgeGraphicalType = registry.getEdgeGraphicalType(req.getElementType());
 
-		if(inheritedRegistry.isKnownEdgeType(newEdgeGraphicalType)) {
+		if (inheritedRegistry.isKnownEdgeType(newEdgeGraphicalType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(!registry.isKnownEdgeType(newEdgeGraphicalType)) {
+		if (!registry.isKnownEdgeType(newEdgeGraphicalType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -77,14 +77,14 @@ public class CustomBlockCompositeSemanticEditPolicy extends BlockCompositeSemant
 	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 
-		View reconnectedView = (View)req.getParameter(RequestParameterConstants.GRAPHICAL_RECONNECTED_EDGE);
-		String reconnectedViewType = (reconnectedView != null) ? reconnectedView.getType() : IGraphicalTypeRegistry.UNDEFINED_TYPE;
+		View reconnectedView = (View) req.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.GRAPHICAL_RECONNECTED_EDGE);
+		String reconnectedViewType = (reconnectedView != null) ? reconnectedView.getType() : org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE;
 
-		if(ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
+		if (ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 
-		if(ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
+		if (ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
 			return getGEFWrapper(new ConstraintConstrainedElementReorientCommand(req));
 		}
 

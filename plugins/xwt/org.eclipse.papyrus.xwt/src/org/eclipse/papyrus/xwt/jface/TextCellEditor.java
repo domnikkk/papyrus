@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -31,13 +31,13 @@ public class TextCellEditor extends org.eclipse.jface.viewers.TextCellEditor imp
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(value == null) {
+		if (value == null) {
 			super.doSetValue("");
 		} else {
 			Class<?> targetType = getTargetType();
-			if(targetType != String.class) {
+			if (targetType != String.class) {
 				IConverter converter = XWT.findConvertor(targetType, String.class);
-				if(converter != null) {
+				if (converter != null) {
 					value = converter.convert(value);
 				}
 			}
@@ -49,9 +49,9 @@ public class TextCellEditor extends org.eclipse.jface.viewers.TextCellEditor imp
 	protected Object doGetValue() {
 		Object value = super.doGetValue();
 		Class<?> targetType = getTargetType();
-		if(targetType != value.getClass()) {
+		if (targetType != value.getClass()) {
 			IConverter converter = XWT.findConvertor(value.getClass(), targetType);
-			if(converter != null) {
+			if (converter != null) {
 				value = converter.convert(value);
 			}
 		}
@@ -59,16 +59,16 @@ public class TextCellEditor extends org.eclipse.jface.viewers.TextCellEditor imp
 	}
 
 	protected Class<?> getTargetType() {
-		if(cellEditorHelper != null) {
+		if (cellEditorHelper != null) {
 			return cellEditorHelper.getTargetType();
 		}
 		return Object.class;
 	}
 
 	public void setIndex(Object parent, int index) {
-		if(!(parent instanceof TableViewer)) {
+		if (!(parent instanceof TableViewer)) {
 			throw new XWTException("TableView is expected, not \"" + parent.getClass().getName() + "\"");
 		}
-		cellEditorHelper = new CellEditorHelper((TableViewer)parent, index);
+		cellEditorHelper = new CellEditorHelper((TableViewer) parent, index);
 	}
 }

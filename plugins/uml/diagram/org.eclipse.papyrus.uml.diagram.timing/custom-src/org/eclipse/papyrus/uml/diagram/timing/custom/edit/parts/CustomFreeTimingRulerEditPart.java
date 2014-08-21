@@ -33,16 +33,16 @@ public class CustomFreeTimingRulerEditPart extends FreeTimingRulerEditPartCN {
 
 			@Override
 			public void layout(final IFigure container) {
-				for(final Object child : container.getChildren()) {
-					((IFigure)child).setBounds(container.getBounds());
+				for (final Object child : container.getChildren()) {
+					((IFigure) child).setBounds(container.getBounds());
 				}
 				final ShapeCompartmentFigure compartmentFigure = FigureUtils.findChildFigureInstance(container, ShapeCompartmentFigure.class);
-				if(compartmentFigure != null) {
-					for(final Object child : compartmentFigure.getChildren()) {
-						if(child instanceof ScrollPane) {
-							((ScrollPane)child).setBounds(container.getBounds());
+				if (compartmentFigure != null) {
+					for (final Object child : compartmentFigure.getChildren()) {
+						if (child instanceof ScrollPane) {
+							((ScrollPane) child).setBounds(container.getBounds());
 							// ((ScrollPane) child).setBorder(null);
-							((ScrollPane)child).setScrollBarVisibility(org.eclipse.draw2d.ScrollPane.NEVER);
+							((ScrollPane) child).setScrollBarVisibility(org.eclipse.draw2d.ScrollPane.NEVER);
 							// ((ScrollPane) child).getViewport().setBounds(container.getBounds());
 						}
 					}

@@ -41,30 +41,31 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * This variable is used to avoid reentrant call in canUndo/undo/redo
+	 * 
 	 * @see https://bugs.eclipse.org/bugs/show_bug.cgi?id=389382
 	 */
 	protected boolean isBusy;
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param emfCommand
-	 *        the emf command
+	 *            the emf command
 	 */
 	public EMFtoGMFCommandWrapper(Command emfCommand) {
 		super(emfCommand.getLabel());
 		this.emfCommand = emfCommand;
 	}
-	
+
 	/**
 	 * Wraps the given {@code command}, accounting for possible non-dirty state.
-	 * 
+	 *
 	 * @param command
-	 *        a command to wrap
+	 *            a command to wrap
 	 * @return the best wrapper for the {@code command}
 	 */
 	public static ICommand wrap(Command command) {
-		if(command instanceof org.eclipse.emf.common.command.AbstractCommand.NonDirtying) {
+		if (command instanceof org.eclipse.emf.common.command.AbstractCommand.NonDirtying) {
 			return new NonDirtying(command);
 		}
 		return new EMFtoGMFCommandWrapper(command);
@@ -72,7 +73,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * Returns the wrapped EMF command.
-	 * 
+	 *
 	 * @return the EMF command
 	 */
 	// @unused
@@ -178,7 +179,7 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 					o = ((EObject) o).eResource();
 				}
 				if (o instanceof Resource) {
-					o = WorkspaceSynchronizer.getFile((Resource)o);
+					o = WorkspaceSynchronizer.getFile((Resource) o);
 				}
 				if (o instanceof IFile) {
 					affectedFiles.add(o);
@@ -199,11 +200,11 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 		}
 		return CommandResult.newOKCommandResult();
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A non-dirtying wrapper for non-dirtying commands.
 	 */
@@ -212,10 +213,10 @@ public class EMFtoGMFCommandWrapper extends AbstractCommand {
 		public NonDirtying(org.eclipse.emf.common.command.Command command) {
 			super(command);
 
-			if(!(command instanceof org.eclipse.emf.common.command.AbstractCommand.NonDirtying)) {
+			if (!(command instanceof org.eclipse.emf.common.command.AbstractCommand.NonDirtying)) {
 				throw new IllegalArgumentException("Wrapped command is not non-dirtying"); //$NON-NLS-1$
 			}
 		}
-		
+
 	}
 }

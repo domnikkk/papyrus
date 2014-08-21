@@ -30,9 +30,8 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETyp
  * This interface can be implemented by EMF Facet query implementations that want to handle multiple evaluation
  * themselves, presumably to improve the performance of the evaluation.
  * <p>
- * If only {@link IQueryImplementation} is implemented, then the framework will perform multiple-evaluation by calling
- * the single evaluation multiple times, which may be slow in the case of high-latency implementations.
- * 
+ * If only {@link IQueryImplementation} is implemented, then the framework will perform multiple-evaluation by calling the single evaluation multiple times, which may be slow in the case of high-latency implementations.
+ *
  * @since 0.2
  */
 public interface IQueryCollectionImplementation extends IQueryImplementation {
@@ -41,10 +40,9 @@ public interface IQueryCollectionImplementation extends IQueryImplementation {
 	 * This method must be implemented by each sub-class to evaluate a query on a collection of elements. The query
 	 * should be evaluated on each of the elements in the given collection.
 	 * <p>
-	 * This method should throw a {@link DerivedTypedElementException} only if the eTypedElement is an incorrect
-	 * {@link DerivedTypedElement}. But it must not throw an exception if the evaluation of one element fails. Instead,
-	 * it must set the exception on the corresponding result ({@link ETypedElementResult#setException(Throwable)}).
-	 * 
+	 * This method should throw a {@link DerivedTypedElementException} only if the eTypedElement is an incorrect {@link DerivedTypedElement}. But it must not throw an exception if the evaluation of one element fails. Instead, it must set the exception on the
+	 * corresponding result ({@link ETypedElementResult#setException(Throwable)}).
+	 *
 	 * @param query
 	 *            The query to evaluate
 	 * @param eTypedElement
@@ -52,15 +50,11 @@ public interface IQueryCollectionImplementation extends IQueryImplementation {
 	 * @param sources
 	 *            The model elements on which the feature or operation is evaluated using the query
 	 * @param arguments
-	 *            The parameter values for the eTypedElement (in the case of a {@link FacetOperation}); can be
-	 *            <code>null</code>
+	 *            The parameter values for the eTypedElement (in the case of a {@link FacetOperation}); can be <code>null</code>
 	 * @return the result :
 	 *         <ul>
-	 *         <li> a list of {@link ETypedElementPrimitiveTypeResult} if the eTypedElement is single-valued and returns
-	 *         a primitive type <li> a list of {@link ETypedElementPrimitiveTypeListResult} if the eTypedElement is
-	 *         multi-valued and returns a primitive type <li> a list of {@link ETypedElementEObjectResult} if the
-	 *         eTypedElement is single-valued and returns a model element <li> a list of
-	 *         {@link ETypedElementEObjectListResult} if the eTypedElement is multi-valued and returns model elements
+	 *         <li> a list of {@link ETypedElementPrimitiveTypeResult} if the eTypedElement is single-valued and returns a primitive type <li> a list of {@link ETypedElementPrimitiveTypeListResult} if the eTypedElement is multi-valued and returns a primitive
+	 *         type <li> a list of {@link ETypedElementEObjectResult} if the eTypedElement is single-valued and returns a model element <li> a list of {@link ETypedElementEObjectListResult} if the eTypedElement is multi-valued and returns model elements
 	 *         </ul>
 	 * @throws DerivedTypedElementException
 	 *             if the given derivedTypedElement is incorrect
@@ -72,7 +66,7 @@ public interface IQueryCollectionImplementation extends IQueryImplementation {
 	/**
 	 * This method must be implemented by each sub-class to set the values of a collection of elements. The query should
 	 * be used to set the value of each of the elements in the given collection.
-	 * 
+	 *
 	 * @param query
 	 *            The query to evaluate
 	 * @param feature
@@ -80,8 +74,7 @@ public interface IQueryCollectionImplementation extends IQueryImplementation {
 	 * @param sources
 	 *            The model elements on which the query is evaluated
 	 * @param arguments
-	 *            The parameter values for the derived typed element (in the case of a {@link FacetOperation}); can be
-	 *            <code>null</code>
+	 *            The parameter values for the derived typed element (in the case of a {@link FacetOperation}); can be <code>null</code>
 	 * @param newValues
 	 *            the new values for the sources; the size of this list must match the size of the list of sources
 	 * @throws DerivedTypedElementException

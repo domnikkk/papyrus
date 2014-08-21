@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -18,8 +18,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.BasicCe
 import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCellEditorPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Basic Cell Editor</b></em>'. <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Basic Cell Editor</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
@@ -28,7 +27,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.ModelCe
  * <em>Basic Cell Editor Impl</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements BasicCellEditor {
@@ -36,7 +35,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 	 * The default value of the '{@link #getBasicCellEditorImpl()
 	 * <em>Basic Cell Editor Impl</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBasicCellEditorImpl()
 	 * @generated
 	 * @ordered
@@ -47,7 +46,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 	 * The cached value of the '{@link #getBasicCellEditorImpl()
 	 * <em>Basic Cell Editor Impl</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBasicCellEditorImpl()
 	 * @generated
 	 * @ordered
@@ -56,7 +55,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BasicCellEditorImpl() {
@@ -65,7 +64,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -75,7 +74,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getBasicCellEditorImpl() {
@@ -84,7 +83,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBasicCellEditorImpl(final String newBasicCellEditorImpl) {
@@ -99,7 +98,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -113,7 +112,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -128,7 +127,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +142,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -159,7 +158,7 @@ public class BasicCellEditorImpl extends AbstractModelCellEditorImpl implements 
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

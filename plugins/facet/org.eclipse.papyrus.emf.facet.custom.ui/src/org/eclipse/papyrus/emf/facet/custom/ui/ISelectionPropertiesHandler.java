@@ -13,7 +13,7 @@ package org.eclipse.papyrus.emf.facet.custom.ui;
 import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.FacetOperation;
 
 /**
- * 
+ *
  * @since 0.2
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.

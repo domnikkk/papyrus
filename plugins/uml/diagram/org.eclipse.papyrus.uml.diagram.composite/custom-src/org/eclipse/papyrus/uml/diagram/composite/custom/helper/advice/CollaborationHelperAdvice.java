@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,17 +34,17 @@ import org.eclipse.uml2.uml.ConnectableElement;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- * 
+ *
  * This advice is used to remove the view of the Collaboration roles
- * 
+ *
  */
 public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 
 	/** The hint of Collaboration role (not always possible to distinguish role and property with the model information). */
-	final String COLLABORATION_ROLE_HINT = ((IHintedType)UMLElementTypes.ConnectableElement_3115).getSemanticHint();
+	final String COLLABORATION_ROLE_HINT = ((IHintedType) UMLElementTypes.ConnectableElement_3115).getSemanticHint();
 
 	/** The hint of Collaboration role (not always possible to distinguish role and property with the model information). */
-	final String ROLE_BINDING_HINT = ((IHintedType)UMLElementTypes.Dependency_4017).getSemanticHint();
+	final String ROLE_BINDING_HINT = ((IHintedType) UMLElementTypes.Dependency_4017).getSemanticHint();
 
 	@Override
 	protected ICommand getBeforeDestroyReferenceCommand(DestroyReferenceRequest request) {
@@ -53,16 +53,16 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 		Set<View> viewsToDelete = new HashSet<View>();
 
 		// Test if current destroy reference is removing a Property from Collaboration role
-		if((elementToEdit instanceof Collaboration) && (request.getContainingFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
+		if ((elementToEdit instanceof Collaboration) && (request.getContainingFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
 
-			// Removed referenced ConnectableElement from roles 
-			ConnectableElement refRole = (ConnectableElement)request.getReferencedObject();
-			Collaboration collaborationToEdit = (Collaboration)elementToEdit;
+			// Removed referenced ConnectableElement from roles
+			ConnectableElement refRole = (ConnectableElement) request.getReferencedObject();
+			Collaboration collaborationToEdit = (Collaboration) elementToEdit;
 
 			viewsToDelete.addAll(getViewsForRole(refRole, collaborationToEdit));
 		}
 
-		if((viewsToDelete != null) && !(viewsToDelete.isEmpty())) {
+		if ((viewsToDelete != null) && !(viewsToDelete.isEmpty())) {
 			DestroyDependentsRequest req = new DestroyDependentsRequest(request.getEditingDomain(), elementToEdit, false);
 			req.setClientContext(request.getClientContext());
 			req.addParameters(request.getParameters());
@@ -78,29 +78,29 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 		EObject elementToEdit = request.getElementToEdit();
 		Set<View> viewsToDelete = new HashSet<View>();
 
-		if((elementToEdit instanceof Collaboration) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
+		if ((elementToEdit instanceof Collaboration) && (request.getFeature() == UMLPackage.eINSTANCE.getCollaboration_CollaborationRole())) {
 
-			Collaboration collaborationToEdit = (Collaboration)elementToEdit;
+			Collaboration collaborationToEdit = (Collaboration) elementToEdit;
 
 			// Get the list of roles currently removed
 			Set<ConnectableElement> removedRoles = new HashSet<ConnectableElement>();
 			removedRoles.addAll(collaborationToEdit.getRoles());
-			if(request.getValue() instanceof ConnectableElement) {
+			if (request.getValue() instanceof ConnectableElement) {
 				removedRoles.remove(request.getValue());
-			} else if(request.getValue() instanceof List<?>) {
-				removedRoles.removeAll((List<?>)request.getValue());
+			} else if (request.getValue() instanceof List<?>) {
+				removedRoles.removeAll((List<?>) request.getValue());
 			}
 
 			// Parse removed roles and find views to delete
 			Iterator<ConnectableElement> it = removedRoles.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				ConnectableElement currentRole = it.next();
 				viewsToDelete.addAll(getViewsForRole(currentRole, collaborationToEdit));
 			}
 
 		}
 
-		if((viewsToDelete != null) && !(viewsToDelete.isEmpty())) {
+		if ((viewsToDelete != null) && !(viewsToDelete.isEmpty())) {
 			DestroyDependentsRequest req = new DestroyDependentsRequest(request.getEditingDomain(), elementToEdit, false);
 			req.setClientContext(request.getClientContext());
 			req.addParameters(request.getParameters());
@@ -114,11 +114,11 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 	 * <pre>
 	 * This method retrieves all views (only in Composite Structure Diagrams) that are representing the role.
 	 * </pre>
-	 * 
+	 *
 	 * @param role
-	 *        the {@link ConnectableElement} currently removed from role list
+	 *            the {@link ConnectableElement} currently removed from role list
 	 * @param modifiedCollaboration
-	 *        the {@link Collaboration} currently modified
+	 *            the {@link Collaboration} currently modified
 	 * @return the views that should be deleted
 	 */
 	private Set<View> getViewsForRole(ConnectableElement role, Collaboration modifiedCollaboration) {
@@ -129,15 +129,15 @@ public class CollaborationHelperAdvice extends AbstractEditHelperAdvice {
 		Set<View> collaborationToEditViews = CrossReferencerUtil.getCrossReferencingViews(modifiedCollaboration, CompositeStructureDiagramEditPart.MODEL_ID);
 
 		// Parse views of the edited Collaboration
-		for(View currentCollaborationView : collaborationToEditViews) {
+		for (View currentCollaborationView : collaborationToEditViews) {
 
 			Iterator<EObject> it = currentCollaborationView.eAllContents();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				EObject currentChildObject = it.next();
-				if(currentChildObject instanceof View) {
-					View currentChildView = (View)currentChildObject;
+				if (currentChildObject instanceof View) {
+					View currentChildView = (View) currentChildObject;
 
-					if((COLLABORATION_ROLE_HINT.equals(currentChildView.getType())) && (currentChildView.getElement() == role)) {
+					if ((COLLABORATION_ROLE_HINT.equals(currentChildView.getType())) && (currentChildView.getElement() == role)) {
 						viewsToDelete.add(currentChildView);
 					}
 				}

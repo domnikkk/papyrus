@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,27 +31,27 @@ public class GMFtoGEFCommandWrapper extends Command {
 	 */
 	private final ICommand gmfCommand;
 
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param command
-	 *        the wrapped EMF command
+	 *            the wrapped EMF command
 	 */
 	public GMFtoGEFCommandWrapper(final ICommand command) {
 		super(command.getLabel());
 		gmfCommand = command;
 	}
-	
+
 	/**
 	 * Wraps the given {@code command}, accounting for possible non-dirty state.
-	 * 
+	 *
 	 * @param command
-	 *        a command to wrap
+	 *            a command to wrap
 	 * @return the best wrapper for the {@code command}
 	 */
 	public static Command wrap(ICommand command) {
-		if(command instanceof INonDirtying) {
+		if (command instanceof INonDirtying) {
 			return new NonDirtying(command);
 		}
 		return new GMFtoGEFCommandWrapper(command);
@@ -59,7 +59,7 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Returns the wrapped GMF command.
-	 * 
+	 *
 	 * @return the GMF command
 	 */
 	public ICommand getGMFCommand() {
@@ -68,7 +68,7 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Dispose.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#dispose()
 	 */
 	@Override
@@ -78,9 +78,9 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Can execute.
-	 * 
+	 *
 	 * @return true, if can execute
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canExecute()
 	 */
 	@Override
@@ -90,9 +90,9 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Can undo.
-	 * 
+	 *
 	 * @return true, if can undo
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#canUndo()
 	 */
 	@Override
@@ -102,7 +102,7 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Execute.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#execute()
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Redo.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#redo()
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class GMFtoGEFCommandWrapper extends Command {
 
 	/**
 	 * Undo.
-	 * 
+	 *
 	 * @see org.eclipse.gef.commands.Command#undo()
 	 */
 	@Override
@@ -138,11 +138,11 @@ public class GMFtoGEFCommandWrapper extends Command {
 		} catch (ExecutionException e) {
 		}
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A non-dirtying wrapper for non-dirtying commands.
 	 */
@@ -151,10 +151,10 @@ public class GMFtoGEFCommandWrapper extends Command {
 		public NonDirtying(ICommand command) {
 			super(command);
 
-			if(!(command instanceof INonDirtying)) {
+			if (!(command instanceof INonDirtying)) {
 				throw new IllegalArgumentException("Wrapped command is not non-dirtying"); //$NON-NLS-1$
 			}
 		}
-		
+
 	}
 }

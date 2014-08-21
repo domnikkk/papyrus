@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -63,6 +63,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "ConstraintStrategy"; //$NON-NLS-1$
 	}
@@ -72,6 +73,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
+	@Override
 	public String getID() {
 		return Activator.ID + ".ConstraintStrategy"; //$NON-NLS-1$
 	}
@@ -81,6 +83,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return "Paste constraint elements and context links"; //$NON-NLS-1$
 	}
@@ -103,26 +106,26 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	 */
 	@Override
 	public org.eclipse.emf.common.command.Command getSemanticCommand(EditingDomain domain, EObject targetOwner, PapyrusClipboard<Object> papyrusClipboard) {
-		if(targetOwner instanceof Element) {
-			CompoundCommand compoundCommand = new CompoundCommand("Reassociate constraint context"); 
+		if (targetOwner instanceof Element) {
+			CompoundCommand compoundCommand = new CompoundCommand("Reassociate constraint context");
 			Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
-			for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
-				Object object = (Object)iterator.next();
+			for (Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
+				Object object = iterator.next();
 				// get target Element
 				EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
-				if(target != null && target instanceof Constraint) {
-					ConstraintClipboard constraintClipboard = (ConstraintClipboard)additionalDataMap.get(object);
+				if (target != null && target instanceof Constraint) {
+					ConstraintClipboard constraintClipboard = (ConstraintClipboard) additionalDataMap.get(object);
 					Namespace context = constraintClipboard.getConstraint().getContext();
-					if(checkContext(targetOwner, context)) {
-						RecordingCommand buildSemanticCommand = buildSemanticCommand(domain, (Constraint)target, context);
+					if (checkContext(targetOwner, context)) {
+						RecordingCommand buildSemanticCommand = buildSemanticCommand(domain, (Constraint) target, context);
 						compoundCommand.append(buildSemanticCommand);
 					}
 
 				}
 			}
 
-			// An empty can't be executed 
-			if(compoundCommand.getCommandList().isEmpty()) {
+			// An empty can't be executed
+			if (compoundCommand.getCommandList().isEmpty()) {
 				return null;
 			}
 			return compoundCommand;
@@ -134,27 +137,27 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	@Override
 	public Command getGraphicalCommand(EditingDomain domain, GraphicalEditPart targetEditPart, PapyrusClipboard<Object> papyrusClipboard) {
 		Set<Constraint> alreadyprocesed = new HashSet<Constraint>();
-		View targetView = (View)targetEditPart.getModel();
-		EObject targetOwner = (EObject)targetView.getElement();
+		View targetView = (View) targetEditPart.getModel();
+		EObject targetOwner = targetView.getElement();
 		org.eclipse.gef.commands.CompoundCommand compoundCommand = new org.eclipse.gef.commands.CompoundCommand("Reassociate constraint context");
 		Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
 
-		for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
-			Object object = (Object)iterator.next();
+		for (Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
+			Object object = iterator.next();
 			// get target Element
 			EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
 
-			if(target instanceof View && ((View)target).getElement() instanceof Constraint) {
-				Constraint targetConstraint = (Constraint)((View)target).getElement();
-				if(!alreadyprocesed.contains(targetConstraint)) {
+			if (target instanceof View && ((View) target).getElement() instanceof Constraint) {
+				Constraint targetConstraint = (Constraint) ((View) target).getElement();
+				if (!alreadyprocesed.contains(targetConstraint)) {
 					Object internalFromTarget = getInternalFromTarget(papyrusClipboard, targetConstraint);
-					ConstraintClipboard constraintClipboard = (ConstraintClipboard)additionalDataMap.get(internalFromTarget);
+					ConstraintClipboard constraintClipboard = (ConstraintClipboard) additionalDataMap.get(internalFromTarget);
 					Namespace context = constraintClipboard.getConstraint().getContext();
-					if(checkContext(targetOwner, context)) {
-						RecordingCommand semanticCommand = buildSemanticCommand(domain, (Constraint)targetConstraint, context);
-						if(semanticCommand != null) {
+					if (checkContext(targetOwner, context)) {
+						RecordingCommand semanticCommand = buildSemanticCommand(domain, targetConstraint, context);
+						if (semanticCommand != null) {
 							compoundCommand.add(EMFtoGEFCommandWrapper.wrap(semanticCommand));
-							ShowConstraintContextLink command = new ShowConstraintContextLink((TransactionalEditingDomain)domain, targetEditPart, (View)target);
+							ShowConstraintContextLink command = new ShowConstraintContextLink((TransactionalEditingDomain) domain, targetEditPart, (View) target);
 							compoundCommand.add(GMFtoGEFCommandWrapper.wrap(command));
 							alreadyprocesed.add(targetConstraint);
 						}
@@ -163,15 +166,15 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 				}
 			}
 		}
-		// An empty can't be executed 
-		if(compoundCommand.getChildren().length == 0) {
+		// An empty can't be executed
+		if (compoundCommand.getChildren().length == 0) {
 			return null;
 		}
 		return compoundCommand;
 	}
 
 	protected RecordingCommand buildSemanticCommand(EditingDomain domain, final Constraint targetConstraint, final Namespace context) {
-		RecordingCommand command = new RecordingCommand((TransactionalEditingDomain)domain, "Set Context for constraint") {
+		RecordingCommand command = new RecordingCommand((TransactionalEditingDomain) domain, "Set Context for constraint") {
 			@Override
 			protected void doExecute() {
 				targetConstraint.setContext(context);
@@ -179,17 +182,18 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 		};
 		return command;
 	}
-	
+
 	/**
 	 * Check if the target contains the context
+	 * 
 	 * @param targetOwner
 	 * @param context
 	 * @return
 	 */
 	protected boolean checkContext(EObject targetOwner, Namespace context) {
 		boolean contains = false;
-		if(targetOwner instanceof Namespace) {
-			Namespace targetNamespace = (Namespace)targetOwner;
+		if (targetOwner instanceof Namespace) {
+			Namespace targetNamespace = (Namespace) targetOwner;
 			contains = targetNamespace.getMembers().contains(context);
 		}
 		return contains;
@@ -199,6 +203,7 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 
 	/**
 	 * Get the internal clipboard value from the target value
+	 * 
 	 * @param papyrusClipboard
 	 * @param target
 	 * @return
@@ -206,8 +211,8 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	protected Object getInternalFromTarget(PapyrusClipboard<Object> papyrusClipboard, EObject target) {
 		Map<Object, EObject> internalClipboardToTargetCopy = papyrusClipboard.getInternalClipboardToTargetCopy();
 		Set<Entry<Object, EObject>> entrySet = internalClipboardToTargetCopy.entrySet();
-		for(Entry<Object, EObject> entry : entrySet) {
-			if(entry.getValue().equals(target)) {
+		for (Entry<Object, EObject> entry : entrySet) {
+			if (entry.getValue().equals(target)) {
 				return entry.getKey();
 			}
 		}
@@ -222,9 +227,9 @@ public class ConstraintPasteStrategy extends AbstractPasteStrategy implements IP
 	@Override
 	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection) {
 		Map<Object, IClipboardAdditionalData> mapCopyToConstraintData = new HashMap<Object, IClipboardAdditionalData>();
-		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
-			EObject eObjectSource = (EObject)iterator.next();
-			if(eObjectSource instanceof Constraint) {
+		for (Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
+			EObject eObjectSource = iterator.next();
+			if (eObjectSource instanceof Constraint) {
 				Constraint constraint = (Constraint) eObjectSource;
 				ConstraintClipboard constraintClipboard = new ConstraintClipboard(constraint);
 				Object copy = papyrusClipboard.getCopyFromSource(eObjectSource);

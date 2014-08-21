@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,21 +41,22 @@ public class CustomPackageXYLayoutEditPolicy extends XYLayoutEditPolicy {
 	 * This method analyzes a resize and/or move request and routes the call to
 	 * the appropriate specific ResizeCommand either for a StateMachine
 	 * in other cases passes on the call to the super class method.
-	 * 
+	 *
 	 * @param child
 	 *            the concerned EditPart
 	 * @param constraint
 	 *            the object embedding the constraint rectangle
 	 * @param request
 	 *            the ChangeBoundsRequest
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public Command createChangeConstraintCommand(ChangeBoundsRequest request, EditPart child, Object constraint) {
 		// precautionary test
-		if ((request == null) || (child == null) || (constraint == null))
+		if ((request == null) || (child == null) || (constraint == null)) {
 			throw new IllegalArgumentException();
+		}
 		if (child instanceof StateMachineEditPart) {
 			View stateMachine = (View) child.getModel();
 			// retrieve the deltas of the resize request
@@ -86,11 +87,13 @@ public class CustomPackageXYLayoutEditPolicy extends XYLayoutEditPolicy {
 		// GMF
 		if (child instanceof StateMachineEditPart) {
 			ResizableEditPolicy policy = new ResizableEditPolicy() {
+				@Override
 				public void eraseSourceFeedback(Request request) {
-					if (RequestConstants.REQ_DROP.equals(request.getType()))
+					if (RequestConstants.REQ_DROP.equals(request.getType())) {
 						eraseChangeBoundsFeedback((ChangeBoundsRequest) request);
-					else
+					} else {
 						super.eraseSourceFeedback(request);
+					}
 				}
 			};
 			return policy;
@@ -112,8 +115,9 @@ public class CustomPackageXYLayoutEditPolicy extends XYLayoutEditPolicy {
 			Rectangle rect = getBoundsOffest(req, BOUNDS, viewDescriptor);
 			cc.compose(new CustomStateMachineSetBoundsCommand(editingDomain, DiagramUIMessages.SetLocationCommand_Label_Resize, viewDescriptor, rect));
 		}
-		if (cc.reduce() == null)
+		if (cc.reduce() == null) {
 			return null;
+		}
 		return chainGuideAttachmentCommands(request, new ICommandProxy(cc.reduce()));
 	}
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.infra.core.modelsetquery.IFillableModelSetQueryAdapte
  * This cache creates a map associating EClasses to all the corresponding
  * This implementation takes more space but it is more performant for get and put methods
  * instances
- * 
+ *
  * @author Tristan Faure
  */
 public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements IFillableModelSetQueryAdapter {
@@ -45,10 +45,11 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 		super();
 	}
 
+	@Override
 	protected void addAdapter(Notifier notifier) {
 		super.addAdapter(notifier);
-		if(notifier instanceof EObject) {
-			EObject eobject = (EObject)notifier;
+		if (notifier instanceof EObject) {
+			EObject eobject = (EObject) notifier;
 			addObjectInCache(eobject);
 		}
 	}
@@ -56,8 +57,8 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 	@Override
 	protected void removeAdapter(Notifier notifier) {
 		super.removeAdapter(notifier);
-		if(notifier instanceof EObject) {
-			EObject eobject = (EObject)notifier;
+		if (notifier instanceof EObject) {
+			EObject eobject = (EObject) notifier;
 			removeObjectFromCache(eobject);
 		}
 	}
@@ -65,7 +66,7 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 	private void addObjectInCache(EObject newObj) {
 		EClass eClass = newObj.eClass();
 		putObjectInCache(eClass, newObj);
-		for(EClass eSuperClass : eClass.getEAllSuperTypes()) {
+		for (EClass eSuperClass : eClass.getEAllSuperTypes()) {
 			putObjectInCache(eSuperClass, newObj);
 		}
 	}
@@ -77,7 +78,7 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 			listOfClassifiers = new HashSet<EObject>();
 			cache.put(eClassifier, listOfClassifiers);
 		}
-		if(listOfClassifiers != null) {
+		if (listOfClassifiers != null) {
 			listOfClassifiers.add(newObj);
 		}
 	}
@@ -85,14 +86,14 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 	private void removeObjectFromCache(EObject newObj) {
 		EClass eClass = newObj.eClass();
 		removeObjectFromCache(eClass, newObj);
-		for(EClass eSuperClass : eClass.getEAllSuperTypes()) {
+		for (EClass eSuperClass : eClass.getEAllSuperTypes()) {
 			removeObjectFromCache(eSuperClass, newObj);
 		}
 	}
 
 	private void removeObjectFromCache(EClassifier eClassifier, EObject newObj) {
 		Collection<EObject> listOfClassifiers = cache.get(eClassifier);
-		if(listOfClassifiers != null) {
+		if (listOfClassifiers != null) {
 			listOfClassifiers.remove(newObj);
 		}
 		if (listOfClassifiers.isEmpty())
@@ -101,8 +102,9 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 		}
 	}
 
+	@Override
 	public Collection<EObject> getReachableObjectsOfType(EObject object, EClassifier type) {
-		if(!cache.containsKey(type)) {
+		if (!cache.containsKey(type)) {
 			cache.put(type, new HashSet<EObject>(ItemPropertyDescriptor.getReachableObjectsOfType(object, type)));
 		}
 		return cache.get(type);
@@ -116,10 +118,11 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 	/**
 	 * This method provides a way for user to force first entries in the cache.
 	 * The list of element must be a HashSet to optimize the performances
-	 * 
+	 *
 	 * @param type
 	 * @param list
 	 */
+	@Override
 	public void addEntriesInCache(EClassifier type, HashSet<EObject> list) {
 		for (EObject e : list)
 		{
@@ -127,6 +130,7 @@ public class ModelSetQueryAdapterTimeMatters extends EContentAdapter implements 
 		}
 	}
 
+	@Override
 	public boolean isAlreadyComputed(EClassifier type) {
 		return cache.containsKey(type);
 	}

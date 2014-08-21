@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.papyrus.infra.constraints.constraints.Constraint;
 
 /**
  * Tests if the selection is an EditPart (Excluding DiagramEditPart)
- * 
+ *
  * @author Camille Letavernier
  */
 public class IsEditPartConstraint extends AbstractConstraint {
@@ -33,9 +33,9 @@ public class IsEditPartConstraint extends AbstractConstraint {
 	 */
 	@Override
 	protected boolean equivalent(Constraint constraint) {
-		//TODO : This should probably not always be false
-		//Potential issue : the CompositeConstraint won't be able to
-		//automatically find the overriding constraints
+		// TODO : This should probably not always be false
+		// Potential issue : the CompositeConstraint won't be able to
+		// automatically find the overriding constraints
 		return false;
 	}
 

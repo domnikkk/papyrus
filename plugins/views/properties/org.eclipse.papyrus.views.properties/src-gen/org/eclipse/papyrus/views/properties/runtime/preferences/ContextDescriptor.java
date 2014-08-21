@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Context Descriptor</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor#isDeleted <em>Deleted</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage#getContextDescriptor()
  * @model
  * @generated
@@ -42,7 +42,7 @@ public interface ContextDescriptor extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage#getContextDescriptor_Name()
@@ -55,9 +55,9 @@ public interface ContextDescriptor extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.runtime.preferences.ContextDescriptor#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Name</em>' attribute.
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -71,7 +71,7 @@ public interface ContextDescriptor extends EObject {
 	 * If the meaning of the '<em>Applied</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Applied</em>' attribute.
 	 * @see #setApplied(boolean)
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage#getContextDescriptor_Applied()
@@ -85,9 +85,9 @@ public interface ContextDescriptor extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Applied</em>' attribute.
+	 *            the new value of the '<em>Applied</em>' attribute.
 	 * @see #isApplied()
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public interface ContextDescriptor extends EObject {
 	 * References the descriptor of the context from which a context was copied. This allows the configuration manager to apply the original context
 	 * when the copy is not available. This process is recursive over a chain of missing prototypes.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Prototype</em>' reference.
 	 * @see #setPrototype(ContextDescriptor)
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage#getContextDescriptor_Prototype()
@@ -115,9 +115,9 @@ public interface ContextDescriptor extends EObject {
 	 * reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Prototype</em>' reference.
+	 *            the new value of the '<em>Prototype</em>' reference.
 	 * @see #getPrototype()
 	 * @generated
 	 */
@@ -131,7 +131,7 @@ public interface ContextDescriptor extends EObject {
 	 * Whether the context was explicitly deleted by the user. If not explicitly deleted, and there isn't currently a matching context available, then
 	 * the context is deemed to be missing.
 	 * <!-- end-model-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Deleted</em>' attribute.
 	 * @see #setDeleted(boolean)
 	 * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage#getContextDescriptor_Deleted()
@@ -145,9 +145,9 @@ public interface ContextDescriptor extends EObject {
 	 * attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Deleted</em>' attribute.
+	 *            the new value of the '<em>Deleted</em>' attribute.
 	 * @see #isDeleted()
 	 * @generated
 	 */

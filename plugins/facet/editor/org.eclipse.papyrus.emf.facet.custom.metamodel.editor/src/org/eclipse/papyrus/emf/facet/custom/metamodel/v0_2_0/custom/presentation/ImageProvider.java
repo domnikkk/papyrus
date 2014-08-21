@@ -83,11 +83,11 @@ public final class ImageProvider {
 	private Image errorIcon = null;
 	private Image queryIcon = null;
 	private Image uiCustomIcon = null;
-	private Image grayedUiCustomIcon=null;
+	private Image grayedUiCustomIcon = null;
 	private Image uriIcon = null;
-	
+
 	private Image shortcutIcon = null;
-	
+
 	private Image topLeftOverlay = null;
 	private Image topMiddleOverlay = null;
 	private Image topRightOverlay = null;
@@ -105,7 +105,7 @@ public final class ImageProvider {
 	private Image isItalic = null;
 	private Image isUnderlined = null;
 	private Image isStruckthrough = null;
-	
+
 
 	private static final String LINK_ICON_PATH = "/icons/full/ctool16/link.gif"; //$NON-NLS-1$
 	private static final String LINK_UNIDIR_ICON_PATH = "/icons/full/ctool16/link_unidir.gif"; //$NON-NLS-1$
@@ -153,7 +153,7 @@ public final class ImageProvider {
 	private static final String COLLAPSE_ALL_ICON_PATH = "/icons/full/ctool16/collapseall.gif"; //$NON-NLS-1$
 	private static final String SHORTCUT_ICON_PATH = "/icons/shortcut.png"; //$NON-NLS-1$
 
-	//Customization
+	// Customization
 	private static final String TOP_LEFT_OVERLAY_ICON_PATH = "/icons/full/ctool16/topLeftOverlay.png";
 	private static final String TOP_MIDDLE_OVERLAY_ICON_PATH = "/icons/full/ctool16/topMiddleOverlay.png";
 	private static final String TOP_RIGHT_OVERLAY_ICON_PATH = "/icons/full/ctool16/topRightOverlay.png";
@@ -174,7 +174,7 @@ public final class ImageProvider {
 
 	/**
 	 * Create an image descriptor from a resource
-	 * 
+	 *
 	 * @param resourcePath
 	 *            the path of the resource (in the bundle)
 	 * @return the image descriptor
@@ -574,15 +574,15 @@ public final class ImageProvider {
 		}
 		return this.uiCustomIcon;
 	}
-	
-	/**Return the grayed image for "uiCustom*/
-	public Image getGrayedUiCustomIcon(){
-		if(this.grayedUiCustomIcon==null){
+
+	/** Return the grayed image for "uiCustom */
+	public Image getGrayedUiCustomIcon() {
+		if (this.grayedUiCustomIcon == null) {
 			this.grayedUiCustomIcon = new Image(Display.getCurrent(), getUiCustomIcon(), SWT.IMAGE_GRAY);
 		}
 		return this.grayedUiCustomIcon;
 	}
-	
+
 	/** Return the "error" icon */
 	public Image getErrorIcon() {
 		if (this.errorIcon == null) {
@@ -641,126 +641,126 @@ public final class ImageProvider {
 	public ImageDescriptor getCollapseAllDescriptor() {
 		return createImageDescriptor(ImageProvider.COLLAPSE_ALL_ICON_PATH);
 	}
-	
+
 	public Image getShortcutIcon() {
 		if (this.shortcutIcon == null) {
 			this.shortcutIcon = createImageDescriptor(ImageProvider.SHORTCUT_ICON_PATH).createImage();
 		}
 		return this.shortcutIcon;
 	}
-	
+
 	public Image getTopLeftOverlayIcon() {
 		if (this.topLeftOverlay == null) {
 			this.topLeftOverlay = createImageDescriptor(ImageProvider.TOP_LEFT_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.topLeftOverlay;
 	}
-	
+
 	public Image getTopMiddleOverlayIcon() {
 		if (this.topMiddleOverlay == null) {
 			this.topMiddleOverlay = createImageDescriptor(ImageProvider.TOP_MIDDLE_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.topMiddleOverlay;
 	}
-	
+
 	public Image getTopRightOverlayIcon() {
 		if (this.topRightOverlay == null) {
 			this.topRightOverlay = createImageDescriptor(ImageProvider.TOP_RIGHT_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.topRightOverlay;
 	}
-	
+
 	public Image getMiddleLeftOverlayIcon() {
 		if (this.middleLeftOverlay == null) {
 			this.middleLeftOverlay = createImageDescriptor(ImageProvider.MIDDLE_LEFT_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.middleLeftOverlay;
 	}
-	
+
 	public Image getMiddleRightOverlayIcon() {
 		if (this.middleRightOverlay == null) {
 			this.middleRightOverlay = createImageDescriptor(ImageProvider.MIDDLE_RIGHT_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.middleRightOverlay;
 	}
-	
+
 	public Image getBottomLeftOverlayIcon() {
 		if (this.bottomLeftOverlay == null) {
 			this.bottomLeftOverlay = createImageDescriptor(ImageProvider.BOTTOM_LEFT_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.bottomLeftOverlay;
 	}
-	
+
 	public Image getBottomMiddleOverlayIcon() {
 		if (this.bottomMiddleOverlay == null) {
 			this.bottomMiddleOverlay = createImageDescriptor(ImageProvider.BOTTOM_MIDDLE_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.bottomMiddleOverlay;
 	}
-	
+
 	public Image getBottomRightOverlayIcon() {
 		if (this.bottomRightOverlay == null) {
 			this.bottomRightOverlay = createImageDescriptor(ImageProvider.BOTTOM_RIGHT_OVERLAY_ICON_PATH).createImage();
 		}
 		return this.bottomRightOverlay;
 	}
-	
+
 	public Image getCustomizationLabelIcon() {
 		if (this.customizationLabel == null) {
 			this.customizationLabel = createImageDescriptor(ImageProvider.LABEL_CUSTOMIZATION).createImage();
 		}
 		return this.customizationLabel;
 	}
-	
+
 	public Image getCustomizationImageIcon() {
 		if (this.customizationImage == null) {
 			this.customizationImage = createImageDescriptor(ImageProvider.IMAGE_CUSTOMIZATION).createImage();
 		}
 		return this.customizationImage;
 	}
-	
+
 	public Image getCustomizationColorIcon() {
 		if (this.rgb == null) {
 			this.rgb = createImageDescriptor(ImageProvider.RGB_CUSTOMIZATION).createImage();
 		}
 		return this.rgb;
 	}
-	
+
 	public Image getFontNameIcon() {
 		if (this.fontName == null) {
 			this.fontName = createImageDescriptor(ImageProvider.FONT_NAME).createImage();
 		}
 		return this.fontName;
 	}
-	
+
 	public Image getFontSizeIcon() {
 		if (this.fontSize == null) {
 			this.fontSize = createImageDescriptor(ImageProvider.FONT_SIZE).createImage();
 		}
 		return this.fontSize;
 	}
-	
+
 	public Image getIsBoldIcon() {
 		if (this.isBold == null) {
 			this.isBold = createImageDescriptor(ImageProvider.IS_BOLD).createImage();
 		}
 		return this.isBold;
 	}
-	
+
 	public Image getIsItalicIcon() {
 		if (this.isItalic == null) {
 			this.isItalic = createImageDescriptor(ImageProvider.IS_ITALIC).createImage();
 		}
 		return this.isItalic;
 	}
-	
+
 	public Image getIsUnderlinedIcon() {
 		if (this.isUnderlined == null) {
 			this.isUnderlined = createImageDescriptor(ImageProvider.IS_UNDERLINED).createImage();
 		}
 		return this.isUnderlined;
 	}
-	
+
 	public Image getIsStrukethroughIcon() {
 		if (this.isStruckthrough == null) {
 			this.isStruckthrough = createImageDescriptor(ImageProvider.IS_STRUCKTHROUGH).createImage();

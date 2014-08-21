@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public class CustomCombinedFragment2CreateCommand extends CombinedFragment2Creat
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -43,7 +43,7 @@ public class CustomCombinedFragment2CreateCommand extends CombinedFragment2Creat
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomCombinedFragment2CreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -54,17 +54,17 @@ public class CustomCombinedFragment2CreateCommand extends CombinedFragment2Creat
 	 * Create a CoRegion :
 	 * - creates two operands
 	 * - set the Interaction Operator to parallel
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// Get the model container
-		Object modelContainer = ((CreateElementRequest)getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
-		CombinedFragment combinedFragment = CommandHelper.doCreateCoRegion(modelContainer, (Lifeline)getElementToEdit());
-		if(combinedFragment != null) {
+		Object modelContainer = ((CreateElementRequest) getRequest()).getParameters().get(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER);
+		CombinedFragment combinedFragment = CommandHelper.doCreateCoRegion(modelContainer, (Lifeline) getElementToEdit());
+		if (combinedFragment != null) {
 			doConfigure(combinedFragment, monitor, info);
-			((CreateElementRequest)getRequest()).setNewElement(combinedFragment);
+			((CreateElementRequest) getRequest()).setNewElement(combinedFragment);
 			return CommandResult.newOKCommandResult(combinedFragment);
 		}
 		return CommandResult.newErrorCommandResult("");

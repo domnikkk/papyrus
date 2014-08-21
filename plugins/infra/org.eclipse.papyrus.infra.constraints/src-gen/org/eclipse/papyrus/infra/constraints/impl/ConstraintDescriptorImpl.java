@@ -29,10 +29,10 @@ import org.eclipse.papyrus.infra.constraints.SimpleConstraint;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#getDisplay <em>Display</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#isOverrideable <em>Overrideable</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#getOverriddenConstraints <em>Overridden Constraints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#getDisplay <em>Display</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#isOverrideable <em>Overrideable</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.ConstraintDescriptorImpl#getOverriddenConstraints <em>Overridden Constraints</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +43,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The default value of the '{@link #isOverrideable() <em>Overrideable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isOverrideable()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #isOverrideable() <em>Overrideable</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isOverrideable()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	 * The cached value of the '{@link #getOverriddenConstraints() <em>Overridden Constraints</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOverriddenConstraints()
 	 * @generated
 	 * @ordered
@@ -92,6 +97,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintDescriptorImpl() {
@@ -101,6 +107,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +118,7 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -120,59 +128,73 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DisplayUnit getDisplay() {
-		if (eContainerFeatureID() != ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY) return null;
-		return (DisplayUnit)eContainer();
+		if (eContainerFeatureID() != ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY) {
+			return null;
+		}
+		return (DisplayUnit) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetDisplay(DisplayUnit newDisplay, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDisplay, ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newDisplay, ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDisplay(DisplayUnit newDisplay) {
 		if (newDisplay != eInternalContainer() || (eContainerFeatureID() != ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY && newDisplay != null)) {
-			if (EcoreUtil.isAncestor(this, newDisplay))
+			if (EcoreUtil.isAncestor(this, newDisplay)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDisplay != null)
-				msgs = ((InternalEObject)newDisplay).eInverseAdd(this, ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS, DisplayUnit.class, msgs);
+			}
+			if (newDisplay != null) {
+				msgs = ((InternalEObject) newDisplay).eInverseAdd(this, ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS, DisplayUnit.class, msgs);
+			}
 			msgs = basicSetDisplay(newDisplay, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY, newDisplay, newDisplay));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isOverrideable() {
@@ -182,18 +204,21 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOverrideable(boolean newOverrideable) {
 		boolean oldOverrideable = overrideable;
 		overrideable = newOverrideable;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE, oldOverrideable, overrideable));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<SimpleConstraint> getOverriddenConstraints() {
@@ -206,15 +231,17 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDisplay((DisplayUnit)otherEnd, msgs);
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetDisplay((DisplayUnit) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -222,13 +249,14 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				return basicSetDisplay(null, msgs);
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			return basicSetDisplay(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -236,13 +264,14 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				return eInternalContainer().eInverseRemove(this, ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS, DisplayUnit.class, msgs);
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			return eInternalContainer().eInverseRemove(this, ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS, DisplayUnit.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -250,19 +279,20 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
-				return getName();
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				return getDisplay();
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
-				return isOverrideable();
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
-				return getOverriddenConstraints();
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
+			return getName();
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			return getDisplay();
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
+			return isOverrideable();
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
+			return getOverriddenConstraints();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -270,25 +300,26 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
-				setName((String)newValue);
-				return;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				setDisplay((DisplayUnit)newValue);
-				return;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
-				setOverrideable((Boolean)newValue);
-				return;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
-				getOverriddenConstraints().clear();
-				getOverriddenConstraints().addAll((Collection<? extends SimpleConstraint>)newValue);
-				return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
+			setName((String) newValue);
+			return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			setDisplay((DisplayUnit) newValue);
+			return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
+			setOverrideable((Boolean) newValue);
+			return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
+			getOverriddenConstraints().clear();
+			getOverriddenConstraints().addAll((Collection<? extends SimpleConstraint>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -296,23 +327,24 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				setDisplay((DisplayUnit)null);
-				return;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
-				setOverrideable(OVERRIDEABLE_EDEFAULT);
-				return;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
-				getOverriddenConstraints().clear();
-				return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			setDisplay((DisplayUnit) null);
+			return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
+			setOverrideable(OVERRIDEABLE_EDEFAULT);
+			return;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
+			getOverriddenConstraints().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -320,19 +352,20 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
-				return getDisplay() != null;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
-				return overrideable != OVERRIDEABLE_EDEFAULT;
-			case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
-				return overriddenConstraints != null && !overriddenConstraints.isEmpty();
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__DISPLAY:
+			return getDisplay() != null;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDEABLE:
+			return overrideable != OVERRIDEABLE_EDEFAULT;
+		case ConstraintsPackage.CONSTRAINT_DESCRIPTOR__OVERRIDDEN_CONSTRAINTS:
+			return overriddenConstraints != null && !overriddenConstraints.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -340,11 +373,14 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -355,4 +391,4 @@ public abstract class ConstraintDescriptorImpl extends EObjectImpl implements Co
 		return result.toString();
 	}
 
-} //ConstraintDescriptorImpl
+} // ConstraintDescriptorImpl

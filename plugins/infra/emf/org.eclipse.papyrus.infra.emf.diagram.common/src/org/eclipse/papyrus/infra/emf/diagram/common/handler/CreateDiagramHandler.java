@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,18 +33,18 @@ import org.eclipse.papyrus.infra.gmfdiag.common.model.NotationUtils;
 
 /**
  * Base class for create diagram Handlers.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
-//FIXME: Refactoring. This should not depend on GMF (NotationUtils depends on GMF).
-//This class is not in the Papyrus Build in 0.10
+// FIXME: Refactoring. This should not depend on GMF (NotationUtils depends on GMF).
+// This class is not in the Papyrus Build in 0.10
 public abstract class CreateDiagramHandler extends AbstractHandler implements IHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -77,9 +77,9 @@ public abstract class CreateDiagramHandler extends AbstractHandler implements IH
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -115,27 +115,26 @@ public abstract class CreateDiagramHandler extends AbstractHandler implements IH
 
 	/**
 	 * Add a new Diagram to the graphical model.
-	 * 
+	 *
 	 * @param diagram
-	 *        The diagram to add to graphical model. This will be the diagram provided to
-	 *        {@link IPluggableEditorFactory#createIPageModel(Object, org.eclipse.papyrus.infra.core.services.ServicesRegistry)}
+	 *            The diagram to add to graphical model. This will be the diagram provided to {@link IPluggableEditorFactory#createIPageModel(Object, org.eclipse.papyrus.infra.core.services.ServicesRegistry)}
 	 */
 	protected void addNewDiagram(String name, String type, EObject diagram, ServicesRegistry registry) {
 
-		// TODO Create a special node inside the sash model (di) instead of introducing 
+		// TODO Create a special node inside the sash model (di) instead of introducing
 		// a dependence on notation.
 		// This implies to change the factory also.
 		// The special node creation should be done by methods from sash
-		// create di2node 
+		// create di2node
 		Diagram di2Diagram = NotationFactory.eINSTANCE.createDiagram();
 		di2Diagram.setVisible(true);
 		di2Diagram.setType(type);
-		if(name != null) {
+		if (name != null) {
 			di2Diagram.setName(name);
 		}
 
 		// Add it to resource, so that it will be saved.
-		//		NotationUtils.getNotationResource().getContents().add(di2Diagram);
+		// NotationUtils.getNotationResource().getContents().add(di2Diagram);
 		NotationUtils.getNotationModel().addDiagram(di2Diagram);
 
 		// Attach to sash in order to show it

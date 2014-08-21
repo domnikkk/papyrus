@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 import org.eclipse.swt.SWT;
 
 /**
- * 
+ *
  * This bindings allows to move the columns, only when the manager allows it.
- * 
+ *
  */
 public class CustomDefaultColumnReorderBindings extends DefaultColumnReorderBindings {
 
@@ -33,20 +33,20 @@ public class CustomDefaultColumnReorderBindings extends DefaultColumnReorderBind
 	private final INattableModelManager manager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param manager
-	 *        the table manager
+	 *            the table manager
 	 */
 	public CustomDefaultColumnReorderBindings(final INattableModelManager manager) {
 		this.manager = manager;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.reorder.config.DefaultReorderBindings#configureUiBindings(org.eclipse.nebula.widgets.nattable.ui.binding.UiBindingRegistry)
-	 * 
+	 *
 	 * @param uiBindingRegistry
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
  * from the multi editor
  * This class is registered as a Papyrus service.
  * It then registered itself to the {@link LifeCycleEventsProvider}.
- * 
+ *
  */
 public class ProfileService implements IService {
 
@@ -47,7 +47,7 @@ public class ProfileService implements IService {
 	 * Constructor.
 	 * This constructor is called by the ServiceRegistry when this service is created. The
 	 * parameter is provided by the ServiceRegistry itself.
-	 * 
+	 *
 	 * @param servicesRegistry
 	 */
 	public ProfileService() {
@@ -57,7 +57,7 @@ public class ProfileService implements IService {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 */
 	public void disposeService() {
 		deactivate();
@@ -68,9 +68,9 @@ public class ProfileService implements IService {
 	/**
 	 * Initialize the service. Set the {@link ServicesRegistry} that can be used to retrieve other services.
 	 * This method is called after the object instanciation, and before the service start.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 */
 	public void init(ServicesRegistry servicesRegistry) {
@@ -80,7 +80,7 @@ public class ProfileService implements IService {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 */
 	public void startService() {
 		activate();
@@ -91,7 +91,7 @@ public class ProfileService implements IService {
 	 * Activate listeners.
 	 */
 	private void activate() {
-		//on enregistre un listener auprès du lifecycle
+		// on enregistre un listener auprès du lifecycle
 		try {
 			eventProvider = servicesRegistry.getService(ILifeCycleEventsProvider.class);
 			eventProvider.addAboutToDoSaveListener(aboutToSaveListener);

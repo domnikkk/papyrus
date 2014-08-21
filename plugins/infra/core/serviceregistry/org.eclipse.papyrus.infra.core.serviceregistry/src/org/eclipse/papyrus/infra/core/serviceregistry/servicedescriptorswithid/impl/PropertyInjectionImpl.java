@@ -28,8 +28,8 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl#getPropertyName <em>Property Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl#getValues <em>Values</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl#getPropertyName <em>Property Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.PropertyInjectionImpl#getValues <em>Values</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	 * The default value of the '{@link #getPropertyName() <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPropertyName()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	 * The cached value of the '{@link #getPropertyName() <em>Property Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPropertyName()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
@@ -69,6 +72,7 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyInjectionImpl() {
@@ -78,6 +82,7 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,8 +93,10 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getPropertyName() {
 		return propertyName;
 	}
@@ -97,20 +104,25 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPropertyName(String newPropertyName) {
 		String oldPropertyName = propertyName;
 		propertyName = newPropertyName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME, oldPropertyName, propertyName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<InjectedValue> getValues() {
 		if (values == null) {
 			values = new EObjectContainmentEList<InjectedValue>(InjectedValue.class, this, ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES);
@@ -121,13 +133,14 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
-				return ((InternalEList<?>)getValues()).basicRemove(otherEnd, msgs);
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
+			return ((InternalEList<?>) getValues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -135,15 +148,16 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
-				return getPropertyName();
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
-				return getValues();
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
+			return getPropertyName();
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
+			return getValues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,19 +165,20 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
-				setPropertyName((String)newValue);
-				return;
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
-				getValues().clear();
-				getValues().addAll((Collection<? extends InjectedValue>)newValue);
-				return;
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
+			setPropertyName((String) newValue);
+			return;
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
+			getValues().clear();
+			getValues().addAll((Collection<? extends InjectedValue>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -171,17 +186,18 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
-				setPropertyName(PROPERTY_NAME_EDEFAULT);
-				return;
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
-				getValues().clear();
-				return;
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
+			setPropertyName(PROPERTY_NAME_EDEFAULT);
+			return;
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
+			getValues().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -189,15 +205,16 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
-				return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
-				return values != null && !values.isEmpty();
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__PROPERTY_NAME:
+			return PROPERTY_NAME_EDEFAULT == null ? propertyName != null : !PROPERTY_NAME_EDEFAULT.equals(propertyName);
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION__VALUES:
+			return values != null && !values.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -205,11 +222,14 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (propertyName: ");
@@ -218,4 +238,4 @@ public class PropertyInjectionImpl extends FeatureInjectionImpl implements Prope
 		return result.toString();
 	}
 
-} //PropertyInjectionImpl
+} // PropertyInjectionImpl

@@ -26,10 +26,8 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EStructuralFeatureTreeElementImpl#getParent <em>Parent
- * </em>}</li>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EStructuralFeatureTreeElementImpl#getReferedEObjectTE <em>
- * Refered EObject TE</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EStructuralFeatureTreeElementImpl#getParent <em>Parent </em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EStructuralFeatureTreeElementImpl#getReferedEObjectTE <em> Refered EObject TE</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,7 +46,7 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 	}
 
 	public List<EObjectTreeElement> getReferedEObjectTE() {
-		if(referedEObjectTE == null) {
+		if (referedEObjectTE == null) {
 			referedEObjectTE = new LinkedList<EObjectTreeElement>();
 		}
 		return referedEObjectTE;
@@ -62,7 +60,7 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 	 * @return
 	 */
 	public Object getAdapter(Class key) {
-		if(key == EStructuralFeature.Setting.class) { //Metamodel element
+		if (key == EStructuralFeature.Setting.class) { // Metamodel element
 			return new EStructuralFeature.Setting() {
 
 				public void unset() {
@@ -91,12 +89,12 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 			};
 		}
 
-		//Semantic element
+		// Semantic element
 		// Check if the underlying EObject can request to the adaptation
 		// The semantic EObject of a EReferenceTreeElement is the semantic EObject of it's parent (Which is an EObjectTreeElement)
 		final EObject model = getEObject();
 
-		if(key.isInstance(model)) {
+		if (key.isInstance(model)) {
 			return model;
 		}
 
@@ -106,14 +104,14 @@ public class EStructuralFeatureTreeElementImpl extends TreeElementImpl implement
 	protected EStructuralFeature getEStructuralFeature() {
 		throw new UnsupportedOperationException();
 	}
-	
+
 	// The semantic EObject of a EReferenceTreeElement is the semantic EObject of it's parent (Which is an EObjectTreeElement)
 	protected EObject getEObject() {
 		TreeElement parent = getParent();
-		if(parent instanceof EObjectTreeElement) { //Should always be true
-			return ((EObjectTreeElement)parent).getEObject();
+		if (parent instanceof EObjectTreeElement) { // Should always be true
+			return ((EObjectTreeElement) parent).getEObject();
 		}
 		return null;
 	}
 
-} //EStructuralFeatureTreeElementImpl
+} // EStructuralFeatureTreeElementImpl

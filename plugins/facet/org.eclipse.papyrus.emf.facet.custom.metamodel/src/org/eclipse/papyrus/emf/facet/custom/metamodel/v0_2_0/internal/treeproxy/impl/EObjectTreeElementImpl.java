@@ -24,8 +24,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
  * The following features are implemented:
  * <ul>
  * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EObjectTreeElementImpl#getEObject <em>EObject</em>}</li>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EObjectTreeElementImpl#getSfTreeElmement <em>Sf Tree
- * Elmement</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EObjectTreeElementImpl#getSfTreeElmement <em>Sf Tree Elmement</em>}</li>
  * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EObjectTreeElementImpl#getParent <em>Parent</em>}</li>
  * </ul>
  * </p>
@@ -64,7 +63,7 @@ public class EObjectTreeElementImpl extends TreeElementImpl implements EObjectTr
 	}
 
 	public List<EStructuralFeatureTreeElement> getSfTreeElmement() {
-		if(sfTreeElmement == null) {
+		if (sfTreeElmement == null) {
 			sfTreeElmement = new LinkedList<EStructuralFeatureTreeElement>();
 		}
 		return sfTreeElmement;
@@ -81,13 +80,13 @@ public class EObjectTreeElementImpl extends TreeElementImpl implements EObjectTr
 		// Check if the underlying EObject can request to the adaptation
 		Object model = getEObject();
 
-		if(key.isInstance(model)) {
+		if (key.isInstance(model)) {
 			return model;
 		} else {
 			// Try the platform process
-			//			return Platform.getAdapterManager().getAdapter(model, key);
+			// return Platform.getAdapterManager().getAdapter(model, key);
 			return null;
 		}
 	}
 
-} //EObjectTreeElementImpl
+} // EObjectTreeElementImpl

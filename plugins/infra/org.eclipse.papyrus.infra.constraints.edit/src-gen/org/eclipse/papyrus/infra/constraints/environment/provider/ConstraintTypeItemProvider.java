@@ -35,11 +35,12 @@ import org.eclipse.papyrus.infra.constraints.provider.ConstraintsEditPlugin;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.constraints.environment.ConstraintType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ConstraintTypeItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -49,6 +50,7 @@ public class ConstraintTypeItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintTypeItemProvider(AdapterFactory adapterFactory) {
@@ -59,6 +61,7 @@ public class ConstraintTypeItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,50 +79,53 @@ public class ConstraintTypeItemProvider
 	 * This adds a property descriptor for the Label feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addLabelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstraintType_label_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstraintType_label_feature", "_UI_ConstraintType_type"),
-				 EnvironmentPackage.Literals.CONSTRAINT_TYPE__LABEL,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ConstraintType_label_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ConstraintType_label_feature", "_UI_ConstraintType_type"),
+						EnvironmentPackage.Literals.CONSTRAINT_TYPE__LABEL,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Constraint Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addConstraintClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ConstraintType_constraintClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ConstraintType_constraintClass_feature", "_UI_ConstraintType_type"),
-				 EnvironmentPackage.Literals.CONSTRAINT_TYPE__CONSTRAINT_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ConstraintType_constraintClass_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ConstraintType_constraintClass_feature", "_UI_ConstraintType_type"),
+						EnvironmentPackage.Literals.CONSTRAINT_TYPE__CONSTRAINT_CLASS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns ConstraintType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,14 +137,15 @@ public class ConstraintTypeItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ConstraintType)object).getLabel();
+		String label = ((ConstraintType) object).getLabel();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ConstraintType_type") :
-			getString("_UI_ConstraintType_type") + " " + label;
+				getString("_UI_ConstraintType_type") :
+				getString("_UI_ConstraintType_type") + " " + label;
 	}
 
 	/**
@@ -146,6 +153,7 @@ public class ConstraintTypeItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,10 +161,10 @@ public class ConstraintTypeItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ConstraintType.class)) {
-			case EnvironmentPackage.CONSTRAINT_TYPE__LABEL:
-			case EnvironmentPackage.CONSTRAINT_TYPE__CONSTRAINT_CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case EnvironmentPackage.CONSTRAINT_TYPE__LABEL:
+		case EnvironmentPackage.CONSTRAINT_TYPE__CONSTRAINT_CLASS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -166,6 +174,7 @@ public class ConstraintTypeItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,6 +186,7 @@ public class ConstraintTypeItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

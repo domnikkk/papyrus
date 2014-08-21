@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,33 +21,33 @@ import org.eclipse.papyrus.uml.tools.adapters.PapyrusUMLDerivedSubsetAdapter;
 
 /**
  * *
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractUMLSynchronizedOnFeatureAxisManager extends AbstractSynchronizedOnEStructuralFeatureAxisManager {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.manager.axis.AbstractUMLSynchronizedOnFeatureAxisManager#addContextFeatureValueListener()
-	 * 
+	 *
 	 */
 	@Override
 	protected void addContextFeatureValueListener() {
-		//see bug Bug 394623
-		this.featureListener = new PapyrusUMLDerivedSubsetAdapter() {//this listener allows to receive notification from some derived UML Feature
+		// see bug Bug 394623
+		this.featureListener = new PapyrusUMLDerivedSubsetAdapter() {// this listener allows to receive notification from some derived UML Feature
 
 			@Override
 			public void notifyChanged(Notification notification, EClass eClass, EStructuralFeature derivedUnion) {
-				if(getListenFeatures().contains(derivedUnion)) {
+				if (getListenFeatures().contains(derivedUnion)) {
 					featureValueHasChanged(notification);
 				}
 			}
 
 			@Override
 			public void notifyChanged(Notification msg) {
-				if(getListenFeatures().contains(msg.getFeature())) {
+				if (getListenFeatures().contains(msg.getFeature())) {
 					featureValueHasChanged(msg);
 				}
 				super.notifyChanged(msg);

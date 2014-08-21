@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,48 +40,53 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * Handler to synchronize all call Action of the model
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class GlobalSynchronizePinsParametersHandler extends AbstractSynchronizePinsAndParameters {
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		ISelection selection = HandlerUtil.getActiveMenuSelection(event);
-		if(selection instanceof StructuredSelection) {
-			StructuredSelection structuredSelection = (StructuredSelection)selection;
+		if (selection instanceof StructuredSelection) {
+			StructuredSelection structuredSelection = (StructuredSelection) selection;
 			Object obj = structuredSelection.getFirstElement();
 			EObject element = null;
-			if(obj instanceof IAdaptable) {
-				element = (EObject)((IAdaptable)obj).getAdapter(EObject.class);
-				if(element instanceof View) {
-					element = ((View)element).getElement();
+			if (obj instanceof IAdaptable) {
+				element = (EObject) ((IAdaptable) obj).getAdapter(EObject.class);
+				if (element instanceof View) {
+					element = ((View) element).getElement();
 				}
-				if(element instanceof Package) {
-					Package pack = (Package)element;
+				if (element instanceof Package) {
+					Package pack = (Package) element;
 					final Collection<EObject> objectsOfType = ModelSetQuery.getObjectsOfType(pack, UMLPackage.Literals.INVOCATION_ACTION);
 					new NotificationBuilder().setAsynchronous(false).setType(Type.WARNING).setHTML(true).setMessage(getCallActionToSync(objectsOfType)).addAction(new NotificationRunnable() {
 
+						@Override
 						public void run(IContext context) {
-							for(EObject ca : objectsOfType) {
-								if(ca instanceof InvocationAction) {
+							for (EObject ca : objectsOfType) {
+								if (ca instanceof InvocationAction) {
 									EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(ca);
-									if(!editingDomain.isReadOnly(ca.eResource())) {
-										SynchronizePinsParametersHandler.syncInvocationAction((InvocationAction)ca);
+									if (!editingDomain.isReadOnly(ca.eResource())) {
+										SynchronizePinsParametersHandler.syncInvocationAction((InvocationAction) ca);
 									}
 								}
 							}
 						}
 
+						@Override
 						public String getLabel() {
 							return "Synchronize";
 						}
 					}).addAction(new NotificationRunnable() {
 
+						@Override
 						public void run(IContext context) {
 							// Do Nothing
 						}
 
+						@Override
 						public String getLabel() {
 							return "Cancel";
 						}
@@ -95,24 +100,24 @@ public class GlobalSynchronizePinsParametersHandler extends AbstractSynchronizeP
 	protected String getCallActionToSync(Collection<EObject> objectsOfType) {
 		StringBuilder builder = new StringBuilder("<form><p>The following Call Actions will be synchronized : </p>");////$NON-NLS-1$
 		List<EObject> readOnlyresource = new ArrayList<EObject>();
-		for(EObject e : objectsOfType) {
+		for (EObject e : objectsOfType) {
 			EditingDomain editingDomain = AdapterFactoryEditingDomain.getEditingDomainFor(e);
 			boolean isReadOnly = editingDomain.isReadOnly(e.eResource());
-			if(!isReadOnly) {
-				if(e instanceof NamedElement) {
+			if (!isReadOnly) {
+				if (e instanceof NamedElement) {
 					builder.append("<li>");
-					builder.append(((NamedElement)e).getQualifiedName());
+					builder.append(((NamedElement) e).getQualifiedName());
 					builder.append("</li>");
 				}
 			} else {
 				readOnlyresource.add(e);
 			}
 		}
-		if(!readOnlyresource.isEmpty()) {
+		if (!readOnlyresource.isEmpty()) {
 			builder.append("<p> </p><p>The following Call Actions will not be synchronized because the are is read only mode :</p>");
-			for(EObject e : readOnlyresource) {
-				if(e instanceof NamedElement) {
-					builder.append("<li>").append(((NamedElement)e).getQualifiedName()).append("</li>");
+			for (EObject e : readOnlyresource) {
+				if (e instanceof NamedElement) {
+					builder.append("<li>").append(((NamedElement) e).getQualifiedName()).append("</li>");
 				}
 			}
 		}

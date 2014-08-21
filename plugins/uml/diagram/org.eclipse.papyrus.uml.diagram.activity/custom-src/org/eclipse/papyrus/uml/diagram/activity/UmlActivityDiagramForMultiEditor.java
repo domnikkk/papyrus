@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 Atos Origin, CEA, and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,9 +45,9 @@ import org.eclipse.ui.PartInitException;
 
 /**
  * Editor used in multitabs editor.
- * 
+ *
  * @author Emilien Perico
- * 
+ *
  */
 public class UmlActivityDiagramForMultiEditor extends UMLDiagramEditor {
 
@@ -65,14 +65,14 @@ public class UmlActivityDiagramForMultiEditor extends UMLDiagramEditor {
 	private Composite splitter;
 
 	private Image titleImage;
-	
+
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the
 	 * ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 *
 	 */
 	public UmlActivityDiagramForMultiEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws BackboneException, ServiceException {
@@ -92,11 +92,11 @@ public class UmlActivityDiagramForMultiEditor extends UMLDiagramEditor {
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 
@@ -130,18 +130,18 @@ public class UmlActivityDiagramForMultiEditor extends UMLDiagramEditor {
 	/*
 	 * FIXME create viewer which allow to select element trought group
 	 */
-	//    /**
-	//     * Creates a ScrollingGraphicalViewer without the drop adapter which
-	//     * excludes drag and drop functionality from other defined views (XML)
-	//     * Subclasses must override this method to include the DnD functionality
-	//     *
-	//     * @return ScrollingGraphicalViewer
-	//     */
-	//	@Override
-	//    protected ScrollingGraphicalViewer createScrollingGraphicalViewer() {
-	//       // return new DiagramGraphicalViewer();
-	//        return new GroupGraphicalViewer();
-	//    }
+	// /**
+	// * Creates a ScrollingGraphicalViewer without the drop adapter which
+	// * excludes drag and drop functionality from other defined views (XML)
+	// * Subclasses must override this method to include the DnD functionality
+	// *
+	// * @return ScrollingGraphicalViewer
+	// */
+	// @Override
+	// protected ScrollingGraphicalViewer createScrollingGraphicalViewer() {
+	// // return new DiagramGraphicalViewer();
+	// return new GroupGraphicalViewer();
+	// }
 	/**
 	 * {@inheritDoc}
 	 */
@@ -168,7 +168,7 @@ public class UmlActivityDiagramForMultiEditor extends UMLDiagramEditor {
 		 * To do so, we ask to provide the main activity node with all required details.
 		 */
 		IAdaptable adapter = new SemanticAdapter(getDiagram().getElement(), null);
-		String semanticHint = ((IHintedType)UMLElementTypes.Activity_2001).getSemanticHint();
+		String semanticHint = ((IHintedType) UMLElementTypes.Activity_2001).getSemanticHint();
 		// We already know that result is true. Provider is correctly initialized during the process.
 		ViewService.getInstance().provides(Node.class, adapter, getDiagram(), semanticHint, ViewUtil.APPEND, false, getPreferencesHint());
 		// initialize content

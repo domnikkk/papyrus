@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 Atos Origin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,13 +23,13 @@ import org.eclipse.papyrus.infra.core.resource.IReadOnlyHandler2;
 public class ReadOnlyAdapterFactory implements IAdapterFactory {
 
 	public Object getAdapter(Object adaptableObject, Class adapterType) {
-		if(((IReadOnlyHandler.class == adapterType) || (IReadOnlyHandler2.class == adapterType)) && (adaptableObject instanceof EditingDomain)) {
+		if (((IReadOnlyHandler.class == adapterType) || (IReadOnlyHandler2.class == adapterType)) && (adaptableObject instanceof EditingDomain)) {
 			return ReadOnlyManager.getReadOnlyHandler((EditingDomain) adaptableObject);
 		}
 		return null;
 	}
 
 	public Class[] getAdapterList() {
-		return new Class[]{ EditingDomain.class };
+		return new Class[] { EditingDomain.class };
 	}
 }

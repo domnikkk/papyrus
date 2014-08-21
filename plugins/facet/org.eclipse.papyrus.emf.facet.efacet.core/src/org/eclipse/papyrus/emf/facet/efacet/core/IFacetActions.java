@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.emf.facet.util.emf.core.exception.InvalidFacetSetExce
 
 /**
  * This interface contains methods to create {@link FacetSet}s.
- * 
+ *
  * @since 0.3
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
@@ -32,7 +32,7 @@ public interface IFacetActions {
 	/**
 	 * Add the given facetSet to the given facetSet model file, which will be
 	 * created
-	 * 
+	 *
 	 * @param facetSet
 	 *            the facetSet to be created. Cannot be <code>null</code>
 	 * @param file

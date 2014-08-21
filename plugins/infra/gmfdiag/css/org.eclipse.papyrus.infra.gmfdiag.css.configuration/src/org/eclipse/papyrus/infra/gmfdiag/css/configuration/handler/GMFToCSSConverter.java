@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,14 +58,14 @@ public class GMFToCSSConverter {
 
 	private String twoDigitsHexString(int color) {
 		String hexString = Integer.toHexString(color);
-		if(hexString.length() < 2) {
+		if (hexString.length() < 2) {
 			hexString = "0" + hexString;
 		}
 		return hexString;
 	}
 
 	public Expression convert(GradientData gradient) {
-		if(gradient == null) {
+		if (gradient == null) {
 			Name noGradient = CssFactory.eINSTANCE.createName();
 			noGradient.setValue("none");
 			return getExpression(noGradient);
@@ -76,7 +76,7 @@ public class GMFToCSSConverter {
 		Name gradientStyle = CssFactory.eINSTANCE.createName();
 		int style = gradient.getGradientStyle();
 
-		if(style == GradientStyle.HORIZONTAL) {
+		if (style == GradientStyle.HORIZONTAL) {
 			gradientStyle.setValue("horizontal");
 		} else {
 			gradientStyle.setValue("vertical");
@@ -94,7 +94,7 @@ public class GMFToCSSConverter {
 	public Expression convert(Integer intValue) {
 		Number numberValue = CssFactory.eINSTANCE.createNumber();
 		numberValue.setValue(Integer.toString(Math.abs(intValue)));
-		if(intValue < 0) {
+		if (intValue < 0) {
 			UnaryOperator operator = CssFactory.eINSTANCE.createUnaryOperator();
 			operator.setOperator(UNARY.NEG);
 			numberValue.setOp(operator);
@@ -112,14 +112,14 @@ public class GMFToCSSConverter {
 	}
 
 	private Expression getExpression(Term... values) {
-		if(values.length == 0) {
+		if (values.length == 0) {
 			throw new IllegalArgumentException("An expression must contain at least one value");
 		}
 
 		Expression result = CssFactory.eINSTANCE.createExpression();
 		result.setTerms(values[0]);
 
-		for(int i = 1; i < values.length; i++) {
+		for (int i = 1; i < values.length; i++) {
 			Subterm subterm = CssFactory.eINSTANCE.createSubterm();
 			subterm.setTerm(values[i]);
 			result.getSubterms().add(subterm);

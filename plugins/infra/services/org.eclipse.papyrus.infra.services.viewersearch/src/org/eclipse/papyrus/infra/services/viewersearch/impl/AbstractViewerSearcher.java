@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,10 +28,9 @@ public abstract class AbstractViewerSearcher implements IViewerSearcher {
 
 	/**
 	 * Generic implementation of this method that shouldn't be overridden
-	 * 
-	 * @see org.eclipse.papyrus.infra.services.viewersearch.IViewerSearcher#getViewers(java.util.Collection,
-	 *      org.eclipse.papyrus.infra.core.resource.ModelSet)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.services.viewersearch.IViewerSearcher#getViewers(java.util.Collection, org.eclipse.papyrus.infra.core.resource.ModelSet)
+	 *
 	 * @param modelElements
 	 * @param modelSet
 	 * @return
@@ -47,10 +46,9 @@ public abstract class AbstractViewerSearcher implements IViewerSearcher {
 
 	/**
 	 * Generic implementation of this method that shouldn't be overridden
-	 * 
-	 * @see org.eclipse.papyrus.infra.services.viewersearch.IViewerSearcher#getViewers(java.lang.Object,
-	 *      org.eclipse.papyrus.infra.core.resource.ModelSet)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.services.viewersearch.IViewerSearcher#getViewers(java.lang.Object, org.eclipse.papyrus.infra.core.resource.ModelSet)
+	 *
 	 * @param modelElement
 	 * @param modelSet
 	 * @return
@@ -68,7 +66,7 @@ public abstract class AbstractViewerSearcher implements IViewerSearcher {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.services.viewersearch.IViewerSearcher#getViewers(java.util.Collection, java.util.Collection)
-	 * 
+	 *
 	 * @param modelElements
 	 * @param models
 	 * @return

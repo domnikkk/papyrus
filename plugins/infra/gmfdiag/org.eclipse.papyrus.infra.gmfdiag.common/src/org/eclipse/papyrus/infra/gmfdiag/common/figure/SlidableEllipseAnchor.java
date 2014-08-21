@@ -25,12 +25,13 @@ import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
 
 /**
  * this code comes from eclipse.
- * I have change the figure IOvalAnchorableFigure  by Ifigure for the constructor
+ * I have change the figure IOvalAnchorableFigure by Ifigure for the constructor
+ * 
  * @author oboyko
  *
- * Window - Preferences - Java - Code Style - Code Templates
+ *         Window - Preferences - Java - Code Style - Code Templates
  */
-public class SlidableEllipseAnchor	extends SlidableAnchor {
+public class SlidableEllipseAnchor extends SlidableAnchor {
 
 	/**
 	 * Default constructor
@@ -38,35 +39,39 @@ public class SlidableEllipseAnchor	extends SlidableAnchor {
 	public SlidableEllipseAnchor() {
 		super();
 	}
-	
+
 	/**
 	 * Creates default <Code>SlidableOvalAnchor</Code> with a reference points
 	 * at the center of the figure
-	 * 
-	 * @param f the figure that this anchor will be associated with
+	 *
+	 * @param f
+	 *            the figure that this anchor will be associated with
 	 */
 	public SlidableEllipseAnchor(IFigure f) {
 		super(f);
 	}
-	
+
 	/**
 	 * Creates <Code>SlidableOvalAnchor</Code> with a specified reference points
-	 * 
-	 * @param f the figure that this anchor will be associated with
-	 * @param p the <code>PrecisionPoint</code> that the anchor will initially attach to.
+	 *
+	 * @param f
+	 *            the figure that this anchor will be associated with
+	 * @param p
+	 *            the <code>PrecisionPoint</code> that the anchor will initially attach to.
 	 */
 	public SlidableEllipseAnchor(IFigure f, PrecisionPoint p) {
-		super(f,p);
-	}	
-	
-	/* 
+		super(f, p);
+	}
+
+	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor#getIntersectionPoints(org.eclipse.draw2d.geometry.Point, org.eclipse.draw2d.geometry.Point)
 	 */
+	@Override
 	protected PointList getIntersectionPoints(Point ownReference, Point foreignReference) {
-		Rectangle ellipseBox = new PrecisionRectangle(((IFigure)getOwner()).getBounds());
+		Rectangle ellipseBox = new PrecisionRectangle(getOwner().getBounds());
 		getOwner().translateToAbsolute(ellipseBox);
 		return (new LineSeg(ownReference, foreignReference)).getLineIntersectionsWithEllipse(ellipseBox);
 	}
 }
-

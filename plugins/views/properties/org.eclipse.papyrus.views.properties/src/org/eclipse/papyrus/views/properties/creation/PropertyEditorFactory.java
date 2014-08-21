@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,17 +38,17 @@ import org.eclipse.swt.widgets.Control;
  * This factory cannot instantiate new objects. However, subclasses should override {@link #createObject(Control)} and {@link #canCreateObject()} to
  * enable
  * this behavior.
- * 
+ *
  * @see org.eclipse.papyrus.views.properties.creation.EditionDialog
- * 
+ *
  * @author Camille Letavernier
  */
 public class PropertyEditorFactory implements ReferenceValueFactory {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public PropertyEditorFactory() {
 	}
@@ -56,15 +56,15 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 	/**
 	 * Return a null value. Implementors should override when object creation
 	 * needs to be supported. Implementors may rely on {@link #createObject(Control, Object)}
-	 * 
+	 *
 	 * @param widget
-	 *        The widget from which this method is called. May be used to retrieve the current shell
+	 *            The widget from which this method is called. May be used to retrieve the current shell
 	 * @param context
-	 *        The object being edited, in which context the new object is to be created and which will as a result have a reference to the new object.
-	 *        If there is no context object (creation of a free-floating object) or it cannot be determined, this may be {@code null}
+	 *            The object being edited, in which context the new object is to be created and which will as a result have a reference to the new object.
+	 *            If there is no context object (creation of a free-floating object) or it cannot be determined, this may be {@code null}
 	 * @return
 	 *         The newly created object
-	 * 
+	 *
 	 * @see ReferenceValueFactory#createObject(Control, Object)
 	 * @see #createObject(Control, Object, Object)
 	 */
@@ -75,22 +75,22 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 	/**
 	 * This class cannot instantiate objects. However, this method provides
 	 * a base implementation to be used by subclasses.
-	 * 
+	 *
 	 * Subclasses should instantiate the base object, which will then be
 	 * editable via a property dialog.
-	 * 
+	 *
 	 * @param widget
-	 *        The widget used to open the dialog
+	 *            The widget used to open the dialog
 	 * @param context
-	 *        The object being edited, in which context the new object is to be created and which will as a result have a reference to the new object.
-	 *        If there is no context object (creation of a free-floating object) or it cannot be determined, this may be {@code null}
+	 *            The object being edited, in which context the new object is to be created and which will as a result have a reference to the new object.
+	 *            If there is no context object (creation of a free-floating object) or it cannot be determined, this may be {@code null}
 	 * @param source
-	 *        The created EObject. If null, nothing will happen
+	 *            The created EObject. If null, nothing will happen
 	 * @return
 	 *         The source EObject, which potential in-place modifications
 	 */
 	protected Object createObject(Control widget, Object context, Object source) {
-		if(source == null) {
+		if (source == null) {
 			return null;
 		}
 
@@ -98,7 +98,7 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 
 		ViewConstraintEngine constraintEngine = ConfigurationManager.getInstance().getConstraintEngine();
 		Set<View> views = constraintEngine.getViews(selection);
-		if(!views.isEmpty()) {
+		if (!views.isEmpty()) {
 			CreationContext creationContext = getCreationContext(context);
 			creationContext.pushCreatedElement(source);
 			try {
@@ -110,15 +110,15 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 
 		return source;
 	}
-	
+
 	/**
 	 * Get the creation context for the specified {@code element} in which we are creating a new model element.
 	 * This default implementation simply returns the {@linkplain CreationContext#NULL null implementation}.
 	 * Subclasses should provide implementation suitable to their data model.
-	 * 
+	 *
 	 * @param element
-	 *        an element in which context we are creating a new model element
-	 * 
+	 *            an element in which context we are creating a new model element
+	 *
 	 * @return the encapsulated creation context (never {@code null})
 	 */
 	protected CreationContext getCreationContext(Object element) {
@@ -143,13 +143,13 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 	 * Edits the given object via the matching Property view, if any
 	 * The editing Dialog is directly binded to the underlying object, which means that all modifications are applied
 	 * in real time, and cannot be undone (Except via the "Undo" command). The "Cancel" button is thus disabled.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory#edit(org.eclipse.swt.widgets.Control, java.lang.Object)
-	 * 
+	 *
 	 * @param widget
-	 *        The widget calling the factory. The Dialog for editing the object will open in this widget's shell
+	 *            The widget calling the factory. The Dialog for editing the object will open in this widget's shell
 	 * @param source
-	 *        The object to edit
+	 *            The object to edit
 	 */
 	public Object edit(Control widget, Object source) {
 		IStructuredSelection selection = new StructuredSelection(source);
@@ -157,7 +157,7 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 		ViewConstraintEngine constraintEngine = ConfigurationManager.getInstance().getConstraintEngine();
 
 		Set<View> views = constraintEngine.getViews(selection);
-		if(!views.isEmpty()) {
+		if (!views.isEmpty()) {
 			return doEdit(widget, source, views, getEditionDialogTitle(source));
 		}
 
@@ -174,21 +174,21 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 			handleEditCancelled(widget, source);
 			return null;
 		}
-				
+
 		return source;
 	}
-	
+
 	protected void handleEditCancelled(Control widget, Object source) {
 		// Pass
 	}
-	
+
 	/**
 	 * The standard Property Editor Factory cannot instantiate new objects.
 	 * However, subclasses may override this method to return true if they
 	 * implement {@link #createObject(Control)}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.creation.ReferenceValueFactory#canCreateObject()
-	 * 
+	 *
 	 * @return
 	 *         True if the factory can create a new instance
 	 */
@@ -199,7 +199,7 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 	/**
 	 * @return
 	 *         The title of the dialog used to edit the newly created instance
-	 * 
+	 *
 	 * @see #canCreateObject()
 	 * @see #createObject(Control)
 	 */
@@ -213,22 +213,23 @@ public class PropertyEditorFactory implements ReferenceValueFactory {
 
 	/**
 	 * Obtains the most appropriate operation executor for the object being edited.
-	 * 
-	 * @param context the object being edited
+	 *
+	 * @param context
+	 *            the object being edited
 	 * @return the executor to use to run operations (never {@code null})
 	 */
 	public IAtomicOperationExecutor getOperationExecutor(Object context) {
 		IAtomicOperationExecutor result;
-		if(context instanceof IAdaptable) {
-			result = (IAtomicOperationExecutor)((IAdaptable)context).getAdapter(IAtomicOperationExecutor.class);
+		if (context instanceof IAdaptable) {
+			result = (IAtomicOperationExecutor) ((IAdaptable) context).getAdapter(IAtomicOperationExecutor.class);
 		} else {
-			result = (IAtomicOperationExecutor)Platform.getAdapterManager().getAdapter(context, IAtomicOperationExecutor.class);
+			result = (IAtomicOperationExecutor) Platform.getAdapterManager().getAdapter(context, IAtomicOperationExecutor.class);
 		}
 
 		if (result == null) {
 			result = IAtomicOperationExecutor.DEFAULT;
 		}
-		
+
 		return result;
 	}
 }

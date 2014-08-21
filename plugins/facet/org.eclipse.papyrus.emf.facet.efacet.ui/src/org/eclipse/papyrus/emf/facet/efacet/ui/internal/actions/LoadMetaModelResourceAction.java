@@ -35,7 +35,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 /**
  * @author Gregoire Dupe
- * 
+ *
  */
 public class LoadMetaModelResourceAction extends LoadResourceAction {
 

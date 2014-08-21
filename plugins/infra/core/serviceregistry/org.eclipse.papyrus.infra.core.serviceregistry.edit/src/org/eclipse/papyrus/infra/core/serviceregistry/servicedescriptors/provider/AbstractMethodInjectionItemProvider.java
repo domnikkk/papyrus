@@ -27,11 +27,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractMethodInjection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class AbstractMethodInjectionItemProvider
-	extends FeatureInjectionItemProvider
-	implements
+		extends FeatureInjectionItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -41,6 +42,7 @@ public class AbstractMethodInjectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public AbstractMethodInjectionItemProvider(AdapterFactory adapterFactory) {
@@ -51,6 +53,7 @@ public class AbstractMethodInjectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,11 +66,11 @@ public class AbstractMethodInjectionItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,6 +85,7 @@ public class AbstractMethodInjectionItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,14 +100,15 @@ public class AbstractMethodInjectionItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((AbstractMethodInjection)object).getDescription();
+		String label = ((AbstractMethodInjection) object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_AbstractMethodInjection_type") :
-			getString("_UI_AbstractMethodInjection_type") + " " + label;
+				getString("_UI_AbstractMethodInjection_type") :
+				getString("_UI_AbstractMethodInjection_type") + " " + label;
 	}
 
 	/**
@@ -111,6 +116,7 @@ public class AbstractMethodInjectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,9 +124,9 @@ public class AbstractMethodInjectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AbstractMethodInjection.class)) {
-			case ServicedescriptorsPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ServicedescriptorsPackage.ABSTRACT_METHOD_INJECTION__PARAMETERS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -130,6 +136,7 @@ public class AbstractMethodInjectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,9 +144,9 @@ public class AbstractMethodInjectionItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorsPackage.Literals.ABSTRACT_METHOD_INJECTION__PARAMETERS,
-				 ServicedescriptorsFactory.eINSTANCE.createParameterInjection()));
+						ServicedescriptorsFactory.eINSTANCE.createParameterInjection()));
 	}
 
 }

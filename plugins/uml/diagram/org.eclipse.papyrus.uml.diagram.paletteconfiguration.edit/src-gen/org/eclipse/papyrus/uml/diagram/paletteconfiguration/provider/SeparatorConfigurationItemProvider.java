@@ -9,27 +9,23 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration;
 
 /**
  * This is the item provider adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.SeparatorConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SeparatorConfigurationItemProvider
-	extends LeafConfigurationItemProvider {
+		extends LeafConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SeparatorConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -40,6 +36,7 @@ public class SeparatorConfigurationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -55,6 +52,7 @@ public class SeparatorConfigurationItemProvider
 	 * This returns SeparatorConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -66,22 +64,24 @@ public class SeparatorConfigurationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SeparatorConfiguration)object).getId();
+		String label = ((SeparatorConfiguration) object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_SeparatorConfiguration_type") :
-			getString("_UI_SeparatorConfiguration_type") + " " + label;
+				getString("_UI_SeparatorConfiguration_type") :
+				getString("_UI_SeparatorConfiguration_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,6 +95,7 @@ public class SeparatorConfigurationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

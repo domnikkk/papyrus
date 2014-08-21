@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,16 +19,16 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
 
 /**
  * Observable value for the containment feature for the EObject Paste on Row.
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class RowPasteEObjectContainmentFeatureObservableValue extends AbstractRowPasteEObjectConfigurationObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
 	 */
 	public RowPasteEObjectContainmentFeatureObservableValue(final Table table) {
@@ -36,9 +36,9 @@ public class RowPasteEObjectContainmentFeatureObservableValue extends AbstractRo
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

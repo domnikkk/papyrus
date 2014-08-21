@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.customization.wizard;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.jface.dialogs.DialogPage;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.papyrus.customization.Activator;
@@ -26,7 +27,7 @@ public class CreateNewCustomizationPluginWizard extends NewPluginProjectWizard {
 
 	protected CustomizationPage customizationPage;
 
-	//TODO : Use eclipse contexts when switching to E4
+	// TODO : Use eclipse contexts when switching to E4
 	public static CreateNewCustomizationPluginWizard current;
 
 	private Image defaultImage;
@@ -46,7 +47,7 @@ public class CreateNewCustomizationPluginWizard extends NewPluginProjectWizard {
 
 	@Override
 	public IWizardPage getNextPage(IWizardPage page) {
-		if(page == fContentPage) { //Remove the template page
+		if (page == fContentPage) { // Remove the template page
 			return customizationPage;
 		}
 		return super.getNextPage(page);
@@ -59,19 +60,19 @@ public class CreateNewCustomizationPluginWizard extends NewPluginProjectWizard {
 	@Override
 	public boolean performFinish() {
 		boolean result = super.performFinish();
-		if(result) {
+		if (result) {
 			IProject project = this.fMainPage.getProjectHandle();
 			CustomizationConfiguration configuration = this.customizationPage.getConfiguration();
-			//configuration.setPlugin(project.getName());
+			// configuration.setPlugin(project.getName());
 			try {
 				PluginGenerator.instance.generate(project, configuration);
-				project.refreshLocal(IProject.DEPTH_INFINITE, null);
+				project.refreshLocal(IResource.DEPTH_INFINITE, null);
 			} catch (Exception ex) {
 				Activator.log.error(ex);
 				String errorMessage = "An error occured while generating the customization plug-in: " + ex.getClass().getName() + ": " + ex.getLocalizedMessage(); //$NON-NLS-1$
-				for(IWizardPage page : getPages()) {
-					if(page instanceof DialogPage) {
-						((DialogPage)page).setErrorMessage(errorMessage);
+				for (IWizardPage page : getPages()) {
+					if (page instanceof DialogPage) {
+						((DialogPage) page).setErrorMessage(errorMessage);
 					}
 
 				}

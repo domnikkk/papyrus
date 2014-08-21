@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -8,7 +8,7 @@
  *
  * Contributors:
  *   CEA LIST - Initial API and implementation
- *   
+ *
  *****************************************************************************/
 
 package org.eclipse.papyrus.infra.core.editor;
@@ -51,11 +51,12 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 	@Override
 	public void editorAboutToReload(EditorReloadEvent event) {
 		Object propertySheet = getSite().getService(IViewPart.class);
-		if(propertySheet instanceof IShowInSource) {
-			ShowInContext context = ((IShowInSource)propertySheet).getShowInContext();;
-			if(context instanceof PropertyShowInContext) {
-				IWorkbenchPart inputPart = ((PropertyShowInContext)context).getPart();
-				if(inputPart != null) {
+		if (propertySheet instanceof IShowInSource) {
+			ShowInContext context = ((IShowInSource) propertySheet).getShowInContext();
+			;
+			if (context instanceof PropertyShowInContext) {
+				IWorkbenchPart inputPart = ((PropertyShowInContext) context).getPart();
+				if (inputPart != null) {
 					event.putContext(inputPart);
 				}
 			}
@@ -64,12 +65,12 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 
 	@Override
 	public void editorReloaded(EditorReloadEvent event) {
-		final IWorkbenchPart inputPart = (IWorkbenchPart)event.getContext();
-		if(inputPart != null) {
+		final IWorkbenchPart inputPart = (IWorkbenchPart) event.getContext();
+		if (inputPart != null) {
 			final Object propertySheet = getSite().getService(IViewPart.class);
-			if(propertySheet instanceof IPartListener) {
+			if (propertySheet instanceof IPartListener) {
 				// Kick it with this part
-				((IPartListener)propertySheet).partActivated(inputPart);
+				((IPartListener) propertySheet).partActivated(inputPart);
 
 				// And again later to get its new selection (we don't know when its selection may be restored relative to us)
 				getSite().getShell().getDisplay().asyncExec(new Runnable() {
@@ -77,8 +78,8 @@ class MultiDiagramPropertySheetPage extends TabbedPropertySheetPage implements I
 					@Override
 					public void run() {
 						ISelectionProvider selectionProvider = inputPart.getSite().getSelectionProvider();
-						if(selectionProvider != null) {
-							((ISelectionListener)propertySheet).selectionChanged(inputPart, selectionProvider.getSelection());
+						if (selectionProvider != null) {
+							((ISelectionListener) propertySheet).selectionChanged(inputPart, selectionProvider.getSelection());
 						}
 					}
 				});

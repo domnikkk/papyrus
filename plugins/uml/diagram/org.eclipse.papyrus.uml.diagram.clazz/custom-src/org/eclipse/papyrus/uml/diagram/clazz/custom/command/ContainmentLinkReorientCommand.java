@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.diagram.ui.commands.ICommandProxy;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.edit.part.CContainmentCircleEditPart;
@@ -59,7 +60,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Instantiates a new containment link reorient command.
-	 * 
+	 *
 	 * @param req
 	 *            the req
 	 * @param editPartTarget
@@ -70,9 +71,9 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 		myTargetEditPart = editPartTarget;
 		reorientDirection = req.getDirection();
 		final EObject oldEndView;
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			oldEndView = ((Edge) req.getParameter(ContainmentHelper.KEY_CONNECTION_VIEW)).getSource();
-		} else if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		} else if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			oldEndView = ((Edge) req.getParameter(ContainmentHelper.KEY_CONNECTION_VIEW)).getTarget();
 		} else {
 			throw new IllegalStateException();
@@ -84,7 +85,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -95,10 +96,10 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -106,14 +107,15 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public boolean canExecute() {
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if (reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -121,7 +123,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Can reorient source.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	protected boolean canReorientSource() {
@@ -130,7 +132,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Can reorient target.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	protected boolean canReorientTarget() {
@@ -148,7 +150,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Reorient source.
-	 * 
+	 *
 	 * @return the command result
 	 * @throws ExecutionException
 	 *             the execution exception
@@ -159,7 +161,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Reorient target.
-	 * 
+	 *
 	 * @return the command result
 	 * @throws ExecutionException
 	 *             the execution exception
@@ -177,7 +179,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Delete old link edit part.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	private boolean deleteOldLinkEditPart() {
@@ -201,7 +203,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Gets the old target.
-	 * 
+	 *
 	 * @return the old target
 	 */
 	private PackageableElement getOldTarget() {
@@ -210,7 +212,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Gets the new target.
-	 * 
+	 *
 	 * @return the new target
 	 */
 	private PackageableElement getNewTarget() {
@@ -219,7 +221,7 @@ public class ContainmentLinkReorientCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Gets the old target owner.
-	 * 
+	 *
 	 * @return the old target owner
 	 */
 	private EObject getOldTargetOwner() {

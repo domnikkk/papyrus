@@ -63,7 +63,7 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 		 * Constructor.
 		 *
 		 * @param editingDomain
-		 *        the editing domain
+		 *            the editing domain
 		 */
 		public ImportProfileCommand() {
 			super(new Runnable() {
@@ -78,7 +78,7 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 					// Open Registered ModelLibrary selection dialog
 					FilteredRegisteredProfilesAsLibrarySelectionDialog dialog = new FilteredRegisteredProfilesAsLibrarySelectionDialog(shell, true, allProfiles, getImportedProfiles());
 					dialog.open();
-					if(Dialog.OK == dialog.getReturnCode()) {
+					if (Window.OK == dialog.getReturnCode()) {
 						// get the result, which is the set of libraries to import
 						List<Object> profilesToImport = Arrays.asList(dialog.getResult());
 						importProfiles(profilesToImport.toArray(new IRegisteredProfile[profilesToImport.size()]));
@@ -92,34 +92,34 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 	 * Import the profiles in the model.
 	 *
 	 * @param profilesToImport
-	 *        the profiles to import
+	 *            the profiles to import
 	 */
 	protected void importProfiles(IRegisteredProfile[] profilesToImport) {
 
 		// create a temporary resource set. Be sure to unload it so that we don't leak models in the CacheAdapter!
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 		try {
-			for(int i = 0; i < profilesToImport.length; i++) {
+			for (int i = 0; i < profilesToImport.length; i++) {
 				IRegisteredProfile currentLibrary = (profilesToImport[i]);
 				URI modelUri = currentLibrary.getUri();
 
 				Resource modelResource = resourceSet.getResource(modelUri, true);
-				//			PackageImportTreeSelectionDialog dialog = new PackageImportTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
-				ProfileTreeSelectionDialog dialog = new ProfileTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
+				// PackageImportTreeSelectionDialog dialog = new PackageImportTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package)modelResource.getContents().get(0)));
+				ProfileTreeSelectionDialog dialog = new ProfileTreeSelectionDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), ((Package) modelResource.getContents().get(0)));
 				int ret = dialog.open();
 
-				if(ret == Window.OK) {
+				if (ret == Window.OK) {
 					Collection<ImportSpec<Profile>> result = dialog.getResult();
 					Iterator<ImportSpec<Profile>> resultIter = result.iterator();
-					while(resultIter.hasNext()) {
+					while (resultIter.hasNext()) {
 						Package element = resultIter.next().getElement();
 						PackageImport ei = UMLFactory.eINSTANCE.createPackageImport();
 						ei.setImportedPackage(element);
 
-						//we import only once an element :
-						List<Package> importedPackages = ((Package)getSelectedElement()).getImportedPackages();
-						if(!importedPackages.contains(element)) {
-							((Package)getSelectedElement()).getPackageImports().add(ei);
+						// we import only once an element :
+						List<Package> importedPackages = ((Package) getSelectedElement()).getImportedPackages();
+						if (!importedPackages.contains(element)) {
+							((Package) getSelectedElement()).getPackageImports().add(ei);
 						}
 					}
 				}
@@ -138,11 +138,11 @@ public class ImportRegisteredProfileHandler extends AbstractImportHandler {
 	protected Collection<IRegisteredProfile> getImportedProfiles() {
 		List<IRegisteredProfile> profiles = new ArrayList<IRegisteredProfile>();
 		IRegisteredProfile[] allLibraries = Registry.getRegisteredProfiles().toArray(new IRegisteredProfile[0]);
-		for(int i = 0; i < allLibraries.length; i++) {
+		for (int i = 0; i < allLibraries.length; i++) {
 			IRegisteredProfile registeredProfile = allLibraries[i];
-			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package)getSelectedElement());
+			List<String> importedPackageNames = PackageUtil.getImportedPackagesNames((Package) getSelectedElement());
 			// problem: name of library might be different from name of top-level package
-			if(importedPackageNames.contains(registeredProfile.getName())) {
+			if (importedPackageNames.contains(registeredProfile.getName())) {
 				profiles.add(registeredProfile);
 			}
 		}

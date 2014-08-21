@@ -18,11 +18,11 @@ import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 /**
  * This is a factory for {@link ICustomizedContentProvider} and {@link ICustomizedTreeContentProvider}.
- * 
+ *
  * @author Gregoire Dupe
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
- * 
+ *
  */
 public interface ICustomizedContentProviderFactory {
 	/**
@@ -32,7 +32,7 @@ public interface ICustomizedContentProviderFactory {
 
 	/**
 	 * This method is used to instantiate a {@link ICustomizedContentProvider}
-	 * 
+	 *
 	 * @param customizationMgr
 	 *            the customization manager which has to be used by the content provider.
 	 * @return a content provider
@@ -44,7 +44,7 @@ public interface ICustomizedContentProviderFactory {
 	/**
 	 * Instantiate an {@link ICustomizedTreeContentProvider}. With this content provider, your viewer's input has to be
 	 * an EObject or an array or collection of EObjects.F
-	 * 
+	 *
 	 * @param customManager
 	 *            the customization manager used by the content provider
 	 * @return a tree content provider

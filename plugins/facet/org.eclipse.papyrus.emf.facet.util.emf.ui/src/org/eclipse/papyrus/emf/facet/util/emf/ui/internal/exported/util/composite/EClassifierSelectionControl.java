@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A control to select an {@link EClass}, that can be filtered using the
  * associated text field.
- * 
+ *
  * @since 0.3
  */
 public class EClassifierSelectionControl<T extends EClassifier> extends

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -17,7 +17,7 @@ import org.eclipse.papyrus.xwt.metadata.IMetaclass;
 
 /**
  * String to Type converter
- * 
+ *
  * @author yyang
  */
 public class StringToType implements IConverter {
@@ -25,16 +25,16 @@ public class StringToType implements IConverter {
 	public static StringToType instance = new StringToType();
 
 	public Object convert(Object fromObject) {
-		String str = (String)fromObject;
+		String str = (String) fromObject;
 		String typeName = str;
 		String namespace = IConstants.XWT_NAMESPACE;
 		int index = str.lastIndexOf(':');
-		if(index != -1) {
+		if (index != -1) {
 			typeName = str.substring(index + 1);
 			namespace = str.substring(0, index);
 		}
 		IMetaclass metaclass = XWT.getMetaclass(typeName, namespace);
-		if(metaclass != null) {
+		if (metaclass != null) {
 			return metaclass.getType();
 		}
 		return null;

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ public class CustomRegionResizableEditPolicy extends ResizableEditPolicy {
 
 	/**
 	 * Provides a specific list of SelectionHandles.
-	 * 
+	 *
 	 * @return a list of the Handles
 	 */
 	@Override
@@ -52,12 +52,15 @@ public class CustomRegionResizableEditPolicy extends ResizableEditPolicy {
 		if (dirs > 0) {
 			// resize handles are added depending on a bit-wise test of dirs
 			// in any case we do not provide oblique resize handles
-			if ((dirs & PositionConstants.EAST) != 0)
+			if ((dirs & PositionConstants.EAST) != 0) {
 				ResizableHandleKit.addHandle((GraphicalEditPart) getHost(), list, PositionConstants.EAST);
-			if ((dirs & PositionConstants.SOUTH) != 0)
+			}
+			if ((dirs & PositionConstants.SOUTH) != 0) {
 				ResizableHandleKit.addHandle((GraphicalEditPart) getHost(), list, PositionConstants.SOUTH);
-			if ((dirs & PositionConstants.WEST) != 0)
+			}
+			if ((dirs & PositionConstants.WEST) != 0) {
 				ResizableHandleKit.addHandle((GraphicalEditPart) getHost(), list, PositionConstants.WEST);
+			}
 			if ((dirs & PositionConstants.NORTH) != 0) {
 				ResizableHandleKit.addHandle((GraphicalEditPart) getHost(), list, PositionConstants.NORTH);
 			}
@@ -75,7 +78,7 @@ public class CustomRegionResizableEditPolicy extends ResizableEditPolicy {
 	 * one: thus show a half-sized region located on one of the side of its
 	 * parent region depending on the position of the mouse. In the course of
 	 * this process we assign a corresponding drop location to the region.
-	 * 
+	 *
 	 * @param a
 	 *            rectangle which is the bounds of the ghost figure to be shown
 	 */
@@ -99,32 +102,34 @@ public class CustomRegionResizableEditPolicy extends ResizableEditPolicy {
 			// a list to get all the nodes impacted by the resize
 			List<View> nodes = new ArrayList<View>();
 			// test the direction and call the appropriate method
-			if (direction == PositionConstants.NORTH)
+			if (direction == PositionConstants.NORTH) {
 				// retrieve the list of nodes that are at the BOTTOM of NORTH
 				// border
 				nodes = Zone.getRegionTopBorderInsideNeighbours(region);
-			else if (direction == PositionConstants.SOUTH)
+			} else if (direction == PositionConstants.SOUTH) {
 				// retrieve the list of nodes that are at the TOP of SOUTH
 				// border
 				nodes = Zone.getRegionBottomBorderInsideNeighbours(region);
-			else if (direction == PositionConstants.EAST)
+			} else if (direction == PositionConstants.EAST) {
 				// retrieve the list of nodes that are at the LEFT of EAST
 				// border
 				nodes = Zone.getRegionRightBorderInsideNeighbours(region);
-			else if (direction == PositionConstants.WEST)
+			} else if (direction == PositionConstants.WEST) {
 				// retrieve the list of nodes that are at the RIGHT of WEST
 				// border
 				nodes = Zone.getRegionLeftBorderInsideNeighbours(region);
+			}
 			// now compute the bounds of the node union
 			Rectangle rect = null;
 			Iterator<View> it = nodes.iterator();
 			while (it.hasNext()) {
 				View view = it.next();
 				Rectangle currentBounds = Zone.getBounds(view);
-				if (rect == null)
+				if (rect == null) {
 					rect = currentBounds;
-				else
+				} else {
 					rect = rect.union(currentBounds);
+				}
 			}
 			return rect;
 		}
@@ -133,13 +138,13 @@ public class CustomRegionResizableEditPolicy extends ResizableEditPolicy {
 	/**
 	 * This method is overridden here to save the request and change the figure
 	 * used to perform coordinate change.
-	 * 
+	 *
 	 * @param request
 	 *            the Request
 	 */
 	@Override
 	protected void showChangeBoundsFeedback(ChangeBoundsRequest request) {
-		this.request = (ChangeBoundsRequest) request;
+		this.request = request;
 		IFigure feedback = getDragSourceFeedbackFigure();
 		PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 		// if regions are part of different state machines or state
@@ -159,7 +164,8 @@ public class CustomRegionResizableEditPolicy extends ResizableEditPolicy {
 
 	@Override
 	public void showSourceFeedback(Request request) {
-		if (REQ_RESIZE.equals(request.getType()))
+		if (REQ_RESIZE.equals(request.getType())) {
 			showChangeBoundsFeedback((ChangeBoundsRequest) request);
+		}
 	}
 }

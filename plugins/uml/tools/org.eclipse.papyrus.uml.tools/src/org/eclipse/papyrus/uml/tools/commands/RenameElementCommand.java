@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ public class RenameElementCommand extends RecordingCommand {
 	private String name;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param namedElement
-	 *        The UML Element w
+	 *            The UML Element w
 	 * @param stereotypes
-	 *        The stereotypes to apply
+	 *            The stereotypes to apply
 	 */
 	public RenameElementCommand(TransactionalEditingDomain domain, NamedElement namedElement, String name) {
 		super(domain);

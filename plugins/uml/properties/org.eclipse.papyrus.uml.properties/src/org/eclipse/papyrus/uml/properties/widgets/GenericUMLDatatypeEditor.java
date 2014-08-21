@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,9 +42,9 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A Property Editor to display an instance of DataType
  * TODO: It could actually be used as a generic EObject property editor
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class GenericUMLDatatypeEditor extends AbstractPropertyEditor {
 
@@ -59,21 +59,21 @@ public class GenericUMLDatatypeEditor extends AbstractPropertyEditor {
 	@Override
 	public void setProperty(String path) {
 		this.propertyPath = path;
-		//Do not check input, to avoid calling doBinding() twice
+		// Do not check input, to avoid calling doBinding() twice
 	}
 
 	/**
 	 * This widget is used to edit a full EObject. It does not need a property, nor a ModelElement.
-	 * 
+	 *
 	 * It retrieves all the EStructuralFeatures reflexively
 	 */
 	@Override
 	protected void checkInput() {
-		if(input != null) {
+		if (input != null) {
 			try {
 				doBinding();
 			} catch (Exception ex) {
-				//TODO : Handle the exception here. Display something ?
+				// TODO : Handle the exception here. Display something ?
 				Activator.log.error(ex);
 			}
 		}
@@ -86,14 +86,14 @@ public class GenericUMLDatatypeEditor extends AbstractPropertyEditor {
 	protected void doBinding() {
 		DataSource input = getInput();
 		IStructuredSelection selection = input.getSelection();
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return;
 		}
 
 		Object element = selection.getFirstElement();
 
-		if(element instanceof EObject) {
-			EObject dataTypeInstance = ((EObject)element);
+		if (element instanceof EObject) {
+			EObject dataTypeInstance = ((EObject) element);
 			EClass dataTypeDefinition = dataTypeInstance.eClass();
 
 			ILabelProvider labelProvider;
@@ -104,12 +104,12 @@ public class GenericUMLDatatypeEditor extends AbstractPropertyEditor {
 				labelProvider = new UMLLabelProvider();
 			}
 
-			for(EStructuralFeature feature : dataTypeDefinition.getEAllStructuralFeatures()) {
+			for (EStructuralFeature feature : dataTypeDefinition.getEAllStructuralFeatures()) {
 				EStructuralFeatureEditor propertyEditor = new EStructuralFeatureEditor(self, SWT.NONE);
 
 				propertyEditor.setProviders(new UMLContentProvider(dataTypeInstance, feature), labelProvider);
-				if(feature instanceof EReference) {
-					propertyEditor.setValueFactory(getUMLPropertyEditorFactory(dataTypeInstance, (EReference)feature));
+				if (feature instanceof EReference) {
+					propertyEditor.setValueFactory(getUMLPropertyEditorFactory(dataTypeInstance, (EReference) feature));
 				}
 
 				propertyEditor.setFeatureToEdit(feature, dataTypeInstance);

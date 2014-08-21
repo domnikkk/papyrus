@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.ETypedElement;
  * Called when a {@link IETypedElementSelectionDialog} is closed, either by OK or Cancel.
  * <p>
  * This interface is intended to be implemented by clients.
- * 
+ *
  * @since 0.2.0
  */
 public interface IETypedElementSelectionDialogCallback {

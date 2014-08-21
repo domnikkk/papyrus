@@ -109,11 +109,11 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public EObject getEmfPageIdentifier() {
-		if(emfPageIdentifier != null && emfPageIdentifier.eIsProxy()) {
-			InternalEObject oldEmfPageIdentifier = (InternalEObject)emfPageIdentifier;
+		if (emfPageIdentifier != null && emfPageIdentifier.eIsProxy()) {
+			InternalEObject oldEmfPageIdentifier = (InternalEObject) emfPageIdentifier;
 			emfPageIdentifier = eResolveProxy(oldEmfPageIdentifier);
-			if(emfPageIdentifier != oldEmfPageIdentifier) {
-				if(eNotificationRequired()) {
+			if (emfPageIdentifier != oldEmfPageIdentifier) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DiPackage.PAGE_REF__EMF_PAGE_IDENTIFIER, oldEmfPageIdentifier, emfPageIdentifier));
 				}
 			}
@@ -141,7 +141,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	public void setEmfPageIdentifier(EObject newEmfPageIdentifier) {
 		EObject oldEmfPageIdentifier = emfPageIdentifier;
 		emfPageIdentifier = newEmfPageIdentifier;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.PAGE_REF__EMF_PAGE_IDENTIFIER, oldEmfPageIdentifier, emfPageIdentifier));
 		}
 	}
@@ -156,7 +156,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	public Object getPageIdentifier() {
 		Object res = getEmfPageIdentifier();
 
-		if(res != null) {
+		if (res != null) {
 			return res;
 		} else {
 			return getObjectPageIdentifier();
@@ -171,8 +171,8 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public boolean isForIdentifier(Object pageIdentifier) {
-		//Avoid npe when there is an invalid "availablePage". See Bug 398712: Multiple issues with the PageManager
-		if(getPageIdentifier() == null) {
+		// Avoid npe when there is an invalid "availablePage". See Bug 398712: Multiple issues with the PageManager
+		if (getPageIdentifier() == null) {
 			return false;
 		}
 		return getPageIdentifier().equals(pageIdentifier);
@@ -186,12 +186,12 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DiPackage.PAGE_REF__PARENT:
-			if(eInternalContainer() != null) {
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
-			return basicSetParent((TabFolder)otherEnd, msgs);
+			return basicSetParent((TabFolder) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -204,7 +204,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case DiPackage.PAGE_REF__PARENT:
 			return basicSetParent(null, msgs);
 		}
@@ -219,7 +219,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch(eContainerFeatureID()) {
+		switch (eContainerFeatureID()) {
 		case DiPackage.PAGE_REF__PARENT:
 			return eInternalContainer().eInverseRemove(this, DiPackage.TAB_FOLDER__CHILDREN, TabFolder.class, msgs);
 		}
@@ -234,9 +234,9 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DiPackage.PAGE_REF__EMF_PAGE_IDENTIFIER:
-			if(resolve) {
+			if (resolve) {
 				return getEmfPageIdentifier();
 			}
 			return basicGetEmfPageIdentifier();
@@ -258,9 +258,9 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DiPackage.PAGE_REF__EMF_PAGE_IDENTIFIER:
-			setEmfPageIdentifier((EObject)newValue);
+			setEmfPageIdentifier((EObject) newValue);
 			return;
 		case DiPackage.PAGE_REF__PAGE_IDENTIFIER:
 			setPageIdentifier(newValue);
@@ -269,7 +269,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 			setObjectPageIdentifier(newValue);
 			return;
 		case DiPackage.PAGE_REF__PARENT:
-			setParent((TabFolder)newValue);
+			setParent((TabFolder) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,9 +283,9 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DiPackage.PAGE_REF__EMF_PAGE_IDENTIFIER:
-			setEmfPageIdentifier((EObject)null);
+			setEmfPageIdentifier((EObject) null);
 			return;
 		case DiPackage.PAGE_REF__PAGE_IDENTIFIER:
 			setPageIdentifier(PAGE_IDENTIFIER_EDEFAULT);
@@ -294,7 +294,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 			setObjectPageIdentifier(OBJECT_PAGE_IDENTIFIER_EDEFAULT);
 			return;
 		case DiPackage.PAGE_REF__PARENT:
-			setParent((TabFolder)null);
+			setParent((TabFolder) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -308,7 +308,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DiPackage.PAGE_REF__EMF_PAGE_IDENTIFIER:
 			return emfPageIdentifier != null;
 		case DiPackage.PAGE_REF__PAGE_IDENTIFIER:
@@ -329,7 +329,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy()) {
+		if (eIsProxy()) {
 			return super.toString();
 		}
 
@@ -349,13 +349,13 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	@Override
 	public void setPageIdentifier(Object newPageIdentifier) {
 
-		if(newPageIdentifier instanceof EObject) {
-			setEmfPageIdentifier((EObject)newPageIdentifier);
+		if (newPageIdentifier instanceof EObject) {
+			setEmfPageIdentifier((EObject) newPageIdentifier);
 			return;
 		}
 
 		// if null, unset all
-		if(newPageIdentifier == null && getEmfPageIdentifier() != null) {
+		if (newPageIdentifier == null && getEmfPageIdentifier() != null) {
 			setEmfPageIdentifier(null);
 		}
 
@@ -385,7 +385,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	public void setObjectPageIdentifier(Object newObjectPageIdentifier) {
 		Object oldObjectPageIdentifier = objectPageIdentifier;
 		objectPageIdentifier = newObjectPageIdentifier;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.PAGE_REF__OBJECT_PAGE_IDENTIFIER, oldObjectPageIdentifier, objectPageIdentifier));
 		}
 	}
@@ -398,10 +398,10 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public TabFolder getParent() {
-		if(eContainerFeatureID() != DiPackage.PAGE_REF__PARENT) {
+		if (eContainerFeatureID() != DiPackage.PAGE_REF__PARENT) {
 			return null;
 		}
-		return (TabFolder)eInternalContainer();
+		return (TabFolder) eInternalContainer();
 	}
 
 	/**
@@ -411,7 +411,7 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(TabFolder newParent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParent, DiPackage.PAGE_REF__PARENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newParent, DiPackage.PAGE_REF__PARENT, msgs);
 		return msgs;
 	}
 
@@ -423,24 +423,24 @@ public class PageRefImpl extends EObjectImpl implements PageRef {
 	 */
 	@Override
 	public void setParent(TabFolder newParent) {
-		if(newParent != eInternalContainer() || (eContainerFeatureID() != DiPackage.PAGE_REF__PARENT && newParent != null)) {
-			if(EcoreUtil.isAncestor(this, newParent)) {
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != DiPackage.PAGE_REF__PARENT && newParent != null)) {
+			if (EcoreUtil.isAncestor(this, newParent)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			}
 			NotificationChain msgs = null;
-			if(eInternalContainer() != null) {
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
-			if(newParent != null) {
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, DiPackage.TAB_FOLDER__CHILDREN, TabFolder.class, msgs);
+			if (newParent != null) {
+				msgs = ((InternalEObject) newParent).eInverseAdd(this, DiPackage.TAB_FOLDER__CHILDREN, TabFolder.class, msgs);
 			}
 			msgs = basicSetParent(newParent, msgs);
-			if(msgs != null) {
+			if (msgs != null) {
 				msgs.dispatch();
 			}
-		} else if(eNotificationRequired()) {
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.PAGE_REF__PARENT, newParent, newParent));
 		}
 	}
 
-} //PageRefImpl
+} // PageRefImpl

@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForEObject;
  * An abstract class to get the iconRegistery
  *
  */
-public abstract class AbstractGetEditorIconQuery {//we don't need to implements IJavaModelQuery  here
+public abstract class AbstractGetEditorIconQuery {// we don't need to implements IJavaModelQuery here
 
 	/**
 	 * the icon registry
@@ -42,17 +42,17 @@ public abstract class AbstractGetEditorIconQuery {//we don't need to implements 
 	 */
 	protected IPageIconsRegistryExtended getEditorRegistry(EObject context) {
 		try {
-			return (IPageIconsRegistryExtended)ServiceUtilsForEObject.getInstance().getService(IPageIconsRegistry.class, context);
+			return (IPageIconsRegistryExtended) ServiceUtilsForEObject.getInstance().getService(IPageIconsRegistry.class, context);
 		} catch (Exception ex) {
-			//Skip
+			// Skip
 		}
-		if(editorRegistry == null) {
+		if (editorRegistry == null) {
 			editorRegistry = createEditorRegistry(context);
 		}
-		if(!(editorRegistry instanceof IPageIconsRegistryExtended)) {
+		if (!(editorRegistry instanceof IPageIconsRegistryExtended)) {
 			throw new RuntimeException("The editor registry do not implement IPageIconsRegistryExtended");////$NON-NLS-1$
 		}
-		return (IPageIconsRegistryExtended)editorRegistry;
+		return (IPageIconsRegistryExtended) editorRegistry;
 	}
 
 	/**

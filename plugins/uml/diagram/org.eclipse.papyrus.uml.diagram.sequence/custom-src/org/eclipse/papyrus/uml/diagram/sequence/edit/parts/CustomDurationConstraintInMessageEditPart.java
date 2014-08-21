@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomDurationConstraintInMessageEditPart(View view) {
@@ -64,7 +64,7 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 
 	/**
 	 * Make sure bounds are also refreshed.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#refresh()
 	 * @Override
 	 */
@@ -76,16 +76,16 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 
 	/**
 	 * Handles refresh bounds the same way as for a non resizable label
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected void refreshBounds() {
-		int dx = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-		int dy = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		int dx = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+		int dy = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 		Point offset = new Point(dx, dy);
-		if(getParent() instanceof AbstractConnectionEditPart) {
-			((AbstractGraphicalEditPart)getParent()).setLayoutConstraint(this, getFigure(), new LabelLocator(((AbstractConnectionEditPart)getParent()).getConnectionFigure(), offset, ConnectionLocator.MIDDLE));
+		if (getParent() instanceof AbstractConnectionEditPart) {
+			((AbstractGraphicalEditPart) getParent()).setLayoutConstraint(this, getFigure(), new LabelLocator(((AbstractConnectionEditPart) getParent()).getConnectionFigure(), offset, ConnectionLocator.MIDDLE));
 		} else {
 			getFigure().getParent().setConstraint(getFigure(), new LabelLocator(getFigure().getParent(), offset, ConnectionLocator.MIDDLE));
 		}
@@ -100,14 +100,14 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 
 			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case DurationConstraintInMessageAppliedStereotypeEditPart.VISUAL_ID:
 					// use ExternalLabelPrimaryDragRoleEditPolicy
 					return new ExternalLabelPrimaryDragRoleEditPolicy();
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -131,8 +131,8 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof DurationConstraintInMessageAppliedStereotypeEditPart) {
-			//use ExternalLabelPositionLocator
+		if (borderItemEditPart instanceof DurationConstraintInMessageAppliedStereotypeEditPart) {
+			// use ExternalLabelPositionLocator
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -152,11 +152,11 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 	protected NodeFigure createNodePlate() {
 		// use correct minimum size
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(-1, -1);
-		//String prefElementId = "DurationConstraint";
-		//IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-		//String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
-		//String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
-		//DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
+		// String prefElementId = "DurationConstraint";
+		// IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+		// String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
+		// String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
+		// DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
 		return result;
 	}
 
@@ -164,7 +164,7 @@ public class CustomDurationConstraintInMessageEditPart extends DurationConstrain
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.DurationConstraintInMessageEditPart.DurationObservationConstraint#getDurationLabel()
-		 * 
+		 *
 		 * @return
 		 */
 		@Override

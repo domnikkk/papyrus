@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -41,6 +41,7 @@ public class ConfigureFeatureListCommandFactory extends AbstractConfigureCommand
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ConfigureElementCommand create(ConfigureRequest request) {
 
 		return new ConfigureElementCommand(request) {
@@ -49,7 +50,7 @@ public class ConfigureFeatureListCommandFactory extends AbstractConfigureCommand
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
 				EObject eObject = getElementToEdit();
-				for(EStructuralFeature feature : featureValueMap.keySet()) {
+				for (EStructuralFeature feature : featureValueMap.keySet()) {
 					eObject.eSet(feature, featureValueMap.get(feature));
 				}
 

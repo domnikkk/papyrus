@@ -85,7 +85,7 @@ public class CSSHighlightingConfiguration extends DefaultHighlightingConfigurati
 	@Override
 	public TextStyle stringTextStyle() {
 		TextStyle textStyle = new TextStyle();
-		textStyle.setColor(new RGB(0, 0, 255)); //TODO
+		textStyle.setColor(new RGB(0, 0, 255)); // TODO
 		return textStyle;
 	}
 

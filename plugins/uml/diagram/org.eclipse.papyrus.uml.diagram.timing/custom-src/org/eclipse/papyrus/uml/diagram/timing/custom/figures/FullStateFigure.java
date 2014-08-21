@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,6 +51,7 @@ public class FullStateFigure extends PapyrusNodeFigure implements IPapyrusUMLEle
 		// no border
 	}
 
+	@Override
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
 	}
 }

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -43,6 +43,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.util.Q
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class QueryItemProviderAdapterFactory extends QueryAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -50,6 +51,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -58,6 +60,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -66,6 +69,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -74,6 +78,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public QueryItemProviderAdapterFactory() {
@@ -88,6 +93,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NavigationQueryItemProvider navigationQueryItemProvider;
@@ -96,6 +102,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NavigationQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +118,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IsOneOfQueryItemProvider isOneOfQueryItemProvider;
@@ -119,6 +127,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IsOneOfQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,6 +143,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringLiteralQueryItemProvider stringLiteralQueryItemProvider;
@@ -142,6 +152,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.StringLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -157,6 +168,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TrueLiteralQueryItemProvider trueLiteralQueryItemProvider;
@@ -165,6 +177,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.TrueLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,6 +193,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FalseLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FalseLiteralQueryItemProvider falseLiteralQueryItemProvider;
@@ -188,6 +202,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FalseLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,6 +218,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NullLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NullLiteralQueryItemProvider nullLiteralQueryItemProvider;
@@ -211,6 +227,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.NullLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -226,6 +243,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IntegerLiteralQueryItemProvider integerLiteralQueryItemProvider;
@@ -234,6 +252,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.IntegerLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -249,6 +268,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FloatLiteralQueryItemProvider floatLiteralQueryItemProvider;
@@ -257,6 +277,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.FloatLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,6 +293,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EObjectLiteralQueryItemProvider eObjectLiteralQueryItemProvider;
@@ -280,6 +302,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.EObjectLiteralQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -295,6 +318,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OperationCallQueryItemProvider operationCallQueryItemProvider;
@@ -303,6 +327,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.query.OperationCallQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -318,6 +343,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -328,6 +354,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -337,6 +364,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -348,6 +376,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -358,13 +387,14 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -376,6 +406,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -386,6 +417,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -396,6 +428,7 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -407,22 +440,43 @@ public class QueryItemProviderAdapterFactory extends QueryAdapterFactory impleme
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void dispose() {
-		if (navigationQueryItemProvider != null) navigationQueryItemProvider.dispose();
-		if (isOneOfQueryItemProvider != null) isOneOfQueryItemProvider.dispose();
-		if (stringLiteralQueryItemProvider != null) stringLiteralQueryItemProvider.dispose();
-		if (trueLiteralQueryItemProvider != null) trueLiteralQueryItemProvider.dispose();
-		if (falseLiteralQueryItemProvider != null) falseLiteralQueryItemProvider.dispose();
-		if (nullLiteralQueryItemProvider != null) nullLiteralQueryItemProvider.dispose();
-		if (integerLiteralQueryItemProvider != null) integerLiteralQueryItemProvider.dispose();
-		if (floatLiteralQueryItemProvider != null) floatLiteralQueryItemProvider.dispose();
-		if (eObjectLiteralQueryItemProvider != null) eObjectLiteralQueryItemProvider.dispose();
-		if (operationCallQueryItemProvider != null) operationCallQueryItemProvider.dispose();
+		if (navigationQueryItemProvider != null) {
+			navigationQueryItemProvider.dispose();
+		}
+		if (isOneOfQueryItemProvider != null) {
+			isOneOfQueryItemProvider.dispose();
+		}
+		if (stringLiteralQueryItemProvider != null) {
+			stringLiteralQueryItemProvider.dispose();
+		}
+		if (trueLiteralQueryItemProvider != null) {
+			trueLiteralQueryItemProvider.dispose();
+		}
+		if (falseLiteralQueryItemProvider != null) {
+			falseLiteralQueryItemProvider.dispose();
+		}
+		if (nullLiteralQueryItemProvider != null) {
+			nullLiteralQueryItemProvider.dispose();
+		}
+		if (integerLiteralQueryItemProvider != null) {
+			integerLiteralQueryItemProvider.dispose();
+		}
+		if (floatLiteralQueryItemProvider != null) {
+			floatLiteralQueryItemProvider.dispose();
+		}
+		if (eObjectLiteralQueryItemProvider != null) {
+			eObjectLiteralQueryItemProvider.dispose();
+		}
+		if (operationCallQueryItemProvider != null) {
+			operationCallQueryItemProvider.dispose();
+		}
 	}
 
 }

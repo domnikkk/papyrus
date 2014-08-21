@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *  Remi SCHNEKENBURGER (CEA LIST) Remi.schnekenburger@cea.fr - Initial API and implementation
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
@@ -58,13 +58,13 @@ public class PackageUtil {
 
 	/**
 	 * Apply a profile and every subprofiles to a package. Also import types defined in profile
-	 * 
+	 *
 	 * @param profileToApply
-	 *        profile to apply on package
+	 *            profile to apply on package
 	 * @param package_
-	 *        on which profiles are applied
+	 *            on which profiles are applied
 	 * @param withSubProfiles
-	 *        true if subprofiles must be automatically imported
+	 *            true if subprofiles must be automatically imported
 	 */
 	public static boolean applyProfile(org.eclipse.uml2.uml.Package package_, org.eclipse.uml2.uml.Profile profileToApply, boolean withSubProfiles) {
 
@@ -72,17 +72,17 @@ public class PackageUtil {
 		boolean isChanged = false;
 
 		// if profile is not defined abort treatment
-		if(!profileToApply.isDefined()) {
+		if (!profileToApply.isDefined()) {
 			return isChanged;
 		}
 
 		// if same version of profile is applied do not re-apply it
 		ProfileApplication profileApplication = package_.getProfileApplication(profileToApply);
-		if(profileApplication != null) {
+		if (profileApplication != null) {
 
 			EPackage previous_definition = profileApplication.getAppliedDefinition();
 			EPackage new_definition = profileToApply.getDefinition();
-			if(previous_definition == new_definition) {
+			if (previous_definition == new_definition) {
 				return isChanged;
 			}
 		}
@@ -92,13 +92,13 @@ public class PackageUtil {
 		importTypes(package_, profileToApply);
 		isChanged = true;
 
-		if(withSubProfiles) {
+		if (withSubProfiles) {
 			// Manage sub profiles
 			List<Profile> subProfiles = new ArrayList<Profile>();
 			subProfiles = getSubProfiles(profileToApply);
 
 			Iterator<Profile> iter = subProfiles.iterator();
-			while(iter.hasNext()) {
+			while (iter.hasNext()) {
 				Profile subProfile = iter.next();
 				package_.applyProfile(subProfile);
 				importTypes(package_, subProfile);
@@ -110,24 +110,24 @@ public class PackageUtil {
 
 	/**
 	 * Retrieve recursively the subprofiles of package.
-	 * 
+	 *
 	 * @param profile
-	 * 
+	 *
 	 * @return an arrayList containing the subprofiles
 	 */
 	public static List<Profile> getSubProfiles(org.eclipse.uml2.uml.Package package_) {
 		List<Profile> subProfiles = new ArrayList<Profile>();
 
 		Iterator<Package> iter = package_.getNestedPackages().iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 
 			Object element = iter.next();
-			if(element instanceof Profile) {
-				Profile currentSubProfile = (Profile)element;
+			if (element instanceof Profile) {
+				Profile currentSubProfile = (Profile) element;
 				subProfiles.add(currentSubProfile);
 				subProfiles.addAll(getSubProfiles(currentSubProfile));
-			} else if(element instanceof org.eclipse.uml2.uml.Package) {
-				org.eclipse.uml2.uml.Package currentSubPackage = (org.eclipse.uml2.uml.Package)element;
+			} else if (element instanceof org.eclipse.uml2.uml.Package) {
+				org.eclipse.uml2.uml.Package currentSubPackage = (org.eclipse.uml2.uml.Package) element;
 				subProfiles.addAll(getSubProfiles(currentSubPackage));
 			}
 		}
@@ -136,7 +136,7 @@ public class PackageUtil {
 
 	/**
 	 * Returns the top package of the specified element, i.e. the model or profile that is the root element
-	 * 
+	 *
 	 * @return the top {@link Package} for the specified element
 	 */
 	public static Package getRootPackage(Element element) {
@@ -146,33 +146,33 @@ public class PackageUtil {
 
 	/**
 	 * Returns the top package of the specified package, i.e. the model or profile that is the root element
-	 * 
+	 *
 	 * @return the top {@link Package} for the specified element
 	 */
 	public static Package getRootPackage(Package package_) {
 		Element owner = package_.getOwner();
 
-		//Bug 370412: The package might not be contained in a Package 
-		//(e.g. it can be contained in a Component). Search for the nearest
-		//package, excluding self (Package#getNearestPackage() returns self)
-		while(owner != null && !(owner instanceof Package)) {
+		// Bug 370412: The package might not be contained in a Package
+		// (e.g. it can be contained in a Component). Search for the nearest
+		// package, excluding self (Package#getNearestPackage() returns self)
+		while (owner != null && !(owner instanceof Package)) {
 			owner = owner.getOwner();
 		}
 
-		if(owner == null) {
+		if (owner == null) {
 			return package_;
 		}
 
-		return getRootPackage((Package)owner);
+		return getRootPackage((Package) owner);
 	}
 
 	/**
 	 * Import public type contained in the profileToApply into pkg.
-	 * 
+	 *
 	 * @param profileToApply
-	 *        profile that contains type to import
+	 *            profile that contains type to import
 	 * @param pkg
-	 *        receive the types from profile
+	 *            receive the types from profile
 	 */
 	private static void importTypes(Package pkg, Package profileToApply) {
 
@@ -182,16 +182,16 @@ public class PackageUtil {
 		EList<PackageableElement> visibleMemb = profileToApply.visibleMembers();
 		Iterator<PackageableElement> iterator = visibleMemb.iterator();
 
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Element elemt = iterator.next();
 
-			if(elemt instanceof Package) {
+			if (elemt instanceof Package) {
 
 				// if the package is a model library the import it
 				// in the package on which the profile is applied
-				if(((Package)elemt).isModelLibrary()) {
+				if (((Package) elemt).isModelLibrary()) {
 					PackageImport pi = UMLFactory.eINSTANCE.createPackageImport();
-					pi.setImportedPackage((Package)elemt);
+					pi.setImportedPackage((Package) elemt);
 					pkg.getPackageImports().add(pi);
 				}
 			}
@@ -200,16 +200,16 @@ public class PackageUtil {
 
 	/**
 	 * returns the list of the names of imported packages
-	 * 
+	 *
 	 * @param pkg
-	 *        the package that has element imports
+	 *            the package that has element imports
 	 * @return the list of the name of imported packages
 	 */
 	public static List<String> getImportedPackagesNames(Package pkg) {
 		List<String> packageNames = new ArrayList<String>();
 		// iterate through package imports of the given package
 		Iterator<PackageImport> importedIt = pkg.getPackageImports().iterator();
-		while(importedIt.hasNext()) {
+		while (importedIt.hasNext()) {
 			PackageImport currentImport = importedIt.next();
 			// get name of the imported package and adds it to the result list
 			String currentName = currentImport.getImportedPackage().getName();
@@ -220,9 +220,9 @@ public class PackageUtil {
 
 	/**
 	 * Removes the last definition of a profile, and in its nested profiles
-	 * 
+	 *
 	 * @param thepackage
-	 *        profile to clean
+	 *            profile to clean
 	 */
 	// @unused
 	public static void removeLastDefinition(Package thepackage) {
@@ -231,22 +231,22 @@ public class PackageUtil {
 
 	/**
 	 * Removes the last definition of a profile
-	 * 
+	 *
 	 * @param thepackage
-	 *        profile to clean
+	 *            profile to clean
 	 * @param recursive
-	 *        boolean <code>true</code> if the clean is recursive, i.e. nested profiles must be
-	 *        clean
+	 *            boolean <code>true</code> if the clean is recursive, i.e. nested profiles must be
+	 *            clean
 	 */
 	public static void removeLastDefinition(Package thepackage, boolean recursive) {
 		// he wants to define
-		if(thepackage instanceof Profile) {
-			EPackage pak = ((Profile)thepackage).getDefinition();
-			((EAnnotation)pak.eContainer()).getContents().remove(pak);
+		if (thepackage instanceof Profile) {
+			EPackage pak = ((Profile) thepackage).getDefinition();
+			((EAnnotation) pak.eContainer()).getContents().remove(pak);
 		}
-		if(recursive) {
+		if (recursive) {
 			Iterator<Package> it = thepackage.getNestedPackages().iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Package p = it.next();
 				removeLastDefinition(p, recursive);
 			}
@@ -255,17 +255,17 @@ public class PackageUtil {
 
 	/**
 	 * Define this package if it is a profile and its sub-profiles
-	 * 
+	 *
 	 * @param thePackage
-	 *        the package to define (if it is a profile)
+	 *            the package to define (if it is a profile)
 	 */
 	public static void defineProfiles(Package thePackage) {
 		// he wants to define
-		if(thePackage instanceof Profile) {
-			((Profile)thePackage).define();
+		if (thePackage instanceof Profile) {
+			((Profile) thePackage).define();
 		}
 		Iterator<Package> it = thePackage.getNestedPackages().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Package p = it.next();
 			defineProfiles(p);
 		}
@@ -273,10 +273,10 @@ public class PackageUtil {
 
 	/**
 	 * Retrieve a type accessible in this Package, given its name.
-	 * 
+	 *
 	 * @param name
-	 *        the name of the type to find, which must not be <code>null</code>
-	 * 
+	 *            the name of the type to find, which must not be <code>null</code>
+	 *
 	 * @return the type found or <code>null</code> if not found.
 	 */
 	public static Type findTypeByName(Package pack, String name) {
@@ -289,20 +289,20 @@ public class PackageUtil {
 		// 3. find in all resources
 
 		Iterator<Type> it = getAccessibleTypes(pack).iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Type t = it.next();
-			if(name.equals(t.getName())) {
+			if (name.equals(t.getName())) {
 				return t;
 			}
 		}
 
 		Resource resource = pack.eResource();
 		ResourceSet resourceSet = null;
-		if(resource != null) {
+		if (resource != null) {
 			resourceSet = resource.getResourceSet();
 		}
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			return findTypeByName(resourceSet, name);
 		}
 		return null;
@@ -310,10 +310,10 @@ public class PackageUtil {
 
 	/**
 	 * Retrieve a collaboration accessible in this Package, given its name.
-	 * 
+	 *
 	 * @param name
-	 *        the name of the collaboration to find, which must not be <code>null</code>
-	 * 
+	 *            the name of the collaboration to find, which must not be <code>null</code>
+	 *
 	 * @return the collaboration found or <code>null</code> if not found.
 	 */
 	public static Collaboration findCollaborationByName(Package pack, String name) {
@@ -326,20 +326,20 @@ public class PackageUtil {
 		// 3. find in all resources
 
 		Iterator<Collaboration> it = getAccessibleCollaborations(pack).iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Collaboration t = it.next();
-			if(name.equals(t.getName())) {
+			if (name.equals(t.getName())) {
 				return t;
 			}
 		}
 
 		Resource resource = pack.eResource();
 		ResourceSet resourceSet = null;
-		if(resource != null) {
+		if (resource != null) {
 			resourceSet = resource.getResourceSet();
 		}
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			return findCollaborationByName(resourceSet, name);
 		}
 		return null;
@@ -347,21 +347,21 @@ public class PackageUtil {
 
 	/**
 	 * Returns a type given its name from a resource set.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource Set
+	 *            the resource Set
 	 * @param name
-	 *        the name of the type to find. It must not be <code>null</code>
+	 *            the name of the type to find. It must not be <code>null</code>
 	 * @return the found type or <code>null</code> if the type was not found
 	 */
 	private static Type findTypeByName(ResourceSet resourceSet, String name) {
 		TreeIterator<Notifier> iterator = resourceSet.getAllContents();
 
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Notifier notifier = iterator.next();
-			if(notifier instanceof Type) {
-				Type type = ((Type)notifier);
-				if(name.equals(type.getName())) {
+			if (notifier instanceof Type) {
+				Type type = ((Type) notifier);
+				if (name.equals(type.getName())) {
 					return type;
 				}
 			}
@@ -371,21 +371,21 @@ public class PackageUtil {
 
 	/**
 	 * Returns a collaboration given its name from a resource set.
-	 * 
+	 *
 	 * @param resourceSet
-	 *        the resource Set
+	 *            the resource Set
 	 * @param name
-	 *        the name of the collaboration to find. It must not be <code>null</code>
+	 *            the name of the collaboration to find. It must not be <code>null</code>
 	 * @return the found type or <code>null</code> if the collaboration was not found
 	 */
 	private static Collaboration findCollaborationByName(ResourceSet resourceSet, String name) {
 		TreeIterator<Notifier> iterator = resourceSet.getAllContents();
 
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Notifier notifier = iterator.next();
-			if(notifier instanceof Collaboration) {
-				Collaboration type = ((Collaboration)notifier);
-				if(name.equals(type.getName())) {
+			if (notifier instanceof Collaboration) {
+				Collaboration type = ((Collaboration) notifier);
+				if (name.equals(type.getName())) {
 					return type;
 				}
 			}
@@ -395,9 +395,9 @@ public class PackageUtil {
 
 	/**
 	 * Returns all accessible types in the model
-	 * 
+	 *
 	 * @param element
-	 *        the element from which all resources can be accessed
+	 *            the element from which all resources can be accessed
 	 * @return the list of Types accessible in the model
 	 */
 	public static Set<Type> getAllTypes(Element element) {
@@ -405,17 +405,17 @@ public class PackageUtil {
 
 		Resource resource = element.eResource();
 		ResourceSet resourceSet = null;
-		if(resource != null) {
+		if (resource != null) {
 			resourceSet = resource.getResourceSet();
 		}
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			TreeIterator<Notifier> iterator = resourceSet.getAllContents();
 
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Notifier notifier = iterator.next();
-				if(notifier instanceof Type && ((Type)notifier).getName() != null) {
-					set.add(((Type)notifier));
+				if (notifier instanceof Type && ((Type) notifier).getName() != null) {
+					set.add(((Type) notifier));
 				}
 			}
 		}
@@ -424,7 +424,9 @@ public class PackageUtil {
 
 	/**
 	 * Return all top-level packages within a resource set.
-	 * @param element an element
+	 * 
+	 * @param element
+	 *            an element
 	 * @return the list of top-level packages
 	 */
 	public static List<Package> getTopLevelPackages(Element element) {
@@ -432,18 +434,18 @@ public class PackageUtil {
 		if (element.eResource() != null) {
 			for (Resource resource : element.eResource().getResourceSet().getResources()) {
 				if ((resource.getContents().size() > 0) && (resource.getContents().get(0) instanceof Package)) {
-					topLevelPackages.add((Package) resource.getContents().get(0)); 
+					topLevelPackages.add((Package) resource.getContents().get(0));
 				}
 			}
 		}
 		return topLevelPackages;
 	}
-	
+
 	/**
 	 * Returns all accessible Collaboration in the model
-	 * 
+	 *
 	 * @param element
-	 *        the element from which all resources can be accessed
+	 *            the element from which all resources can be accessed
 	 * @return the list of Collaboration accessible in the model
 	 */
 	public static Set<Collaboration> getAllCollaborations(Element element) {
@@ -451,17 +453,17 @@ public class PackageUtil {
 
 		Resource resource = element.eResource();
 		ResourceSet resourceSet = null;
-		if(resource != null) {
+		if (resource != null) {
 			resourceSet = resource.getResourceSet();
 		}
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			TreeIterator<Notifier> iterator = resourceSet.getAllContents();
 
-			while(iterator.hasNext()) {
+			while (iterator.hasNext()) {
 				Notifier notifier = iterator.next();
-				if(notifier instanceof Collaboration && ((Collaboration)notifier).getName() != null) {
-					set.add(((Collaboration)notifier));
+				if (notifier instanceof Collaboration && ((Collaboration) notifier).getName() != null) {
+					set.add(((Collaboration) notifier));
 				}
 			}
 		}
@@ -470,7 +472,7 @@ public class PackageUtil {
 
 	/**
 	 * Get all possible types for an element owned by this package.
-	 * 
+	 *
 	 * @return a set of all available Types
 	 */
 	public static TreeSet<Type> getAccessibleTypes(Package pack) {
@@ -481,9 +483,9 @@ public class PackageUtil {
 
 		Iterator<NamedElement> it = pack.getMembers().iterator();
 		// get direct members
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			NamedElement element = it.next();
-			if((element instanceof Type) /*
+			if ((element instanceof Type) /*
 										 * && (!(element instanceof Relationship))
 										 */) {
 				// Check for redundant type
@@ -491,16 +493,16 @@ public class PackageUtil {
 				// /umlTypeQNames.add(element.getQualifiedName());
 				// set.add((Type) element);
 				// }
-				set.add((Type)element);
+				set.add((Type) element);
 			}
 		}
 
 		// Recursive call on parents
-		if((pack.getOwner() != null) && (pack.getOwner() instanceof Package)) {
+		if ((pack.getOwner() != null) && (pack.getOwner() instanceof Package)) {
 
 			Iterator<Type> itParent = PackageUtil.getAccessibleTypes(pack.getNestingPackage()).iterator();
 
-			while(itParent.hasNext()) {
+			while (itParent.hasNext()) {
 				set.add(itParent.next());
 				// Type currentType = itParent.next();
 
@@ -517,7 +519,7 @@ public class PackageUtil {
 
 	/**
 	 * Get all possible Collaboration owned by this package.
-	 * 
+	 *
 	 * @return a set of all available Collaborations
 	 */
 	public static TreeSet<Collaboration> getAccessibleCollaborations(Package pack) {
@@ -525,20 +527,20 @@ public class PackageUtil {
 
 		Iterator<NamedElement> it = pack.getMembers().iterator();
 		// Get direct members
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			NamedElement element = it.next();
-			if(element instanceof Collaboration) {
+			if (element instanceof Collaboration) {
 
-				set.add((Collaboration)element);
+				set.add((Collaboration) element);
 			}
 		}
 
 		// Recursive call on parents
-		if((pack.getOwner() != null) && (pack.getOwner() instanceof Package)) {
+		if ((pack.getOwner() != null) && (pack.getOwner() instanceof Package)) {
 
 			Iterator<Collaboration> itParent = PackageUtil.getAccessibleCollaborations(pack.getNestingPackage()).iterator();
 
-			while(itParent.hasNext()) {
+			while (itParent.hasNext()) {
 				set.add(itParent.next());
 			}
 		}
@@ -547,8 +549,8 @@ public class PackageUtil {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return returns all nested elements of a package (classes, packages, interfaces, data types,
 	 *         properties, operations) Returned elements are of type org.eclipse.uml2.uml.Element
 	 */
@@ -556,16 +558,16 @@ public class PackageUtil {
 		Set<org.eclipse.uml2.uml.Element> nestedElements = new HashSet<Element>();
 		Iterator<org.eclipse.uml2.uml.NamedElement> i = thePackage.getOwnedMembers().iterator();
 		org.eclipse.uml2.uml.Element currentElement;
-		while(i.hasNext()) {
+		while (i.hasNext()) {
 			currentElement = i.next();
 			nestedElements.add(currentElement);
 			// Package
-			if(currentElement instanceof org.eclipse.uml2.uml.Package) {
-				nestedElements.addAll((PackageUtil.getAllNestedElements((Package)currentElement)));
+			if (currentElement instanceof org.eclipse.uml2.uml.Package) {
+				nestedElements.addAll((PackageUtil.getAllNestedElements((Package) currentElement)));
 			}
 			// Class
-			else if(currentElement instanceof org.eclipse.uml2.uml.Class) {
-				nestedElements.addAll(((org.eclipse.uml2.uml.Class)currentElement).getMembers());
+			else if (currentElement instanceof org.eclipse.uml2.uml.Class) {
+				nestedElements.addAll(((org.eclipse.uml2.uml.Class) currentElement).getMembers());
 			}
 		}
 		return nestedElements;
@@ -573,11 +575,11 @@ public class PackageUtil {
 
 	/**
 	 * Load Package from a specified URI
-	 * 
+	 *
 	 * @param uri
-	 *        URI of the file to load
+	 *            URI of the file to load
 	 * @param set
-	 *        ResourceSet
+	 *            ResourceSet
 	 * @return the root Package
 	 */
 	public static org.eclipse.uml2.uml.Package loadPackage(URI uri, ResourceSet set) {
@@ -585,8 +587,8 @@ public class PackageUtil {
 		org.eclipse.uml2.uml.Package package_ = null;
 		Resource resource = set.getResource(uri, true);
 
-		if(resource != null) {
-			package_ = (org.eclipse.uml2.uml.Package)EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PACKAGE);
+		if (resource != null) {
+			package_ = (org.eclipse.uml2.uml.Package) EcoreUtil.getObjectByType(resource.getContents(), UMLPackage.Literals.PACKAGE);
 		} else {
 			Activator.logException(new FileNotFoundException("Could not retrieve resource from URI : " + uri + "."));
 		}
@@ -609,13 +611,13 @@ public class PackageUtil {
 			return o1Name.compareTo(o2Name);
 		}
 	}
-	
+
 	/**
 	 * Return the top element of the model that is currently edited. This function is based on the
 	 * assumption that the user model is the first resource that is loaded into the model set.
 	 * Use this function instead of Utils.getTop (or getModel) if you want to avoid navigating to the
 	 * root of an imported model.
-	 * 
+	 *
 	 * @return the top level package of the model currently loaded into an editor.
 	 */
 	public static Package getUserModel(ExecutionEvent event) {
@@ -623,14 +625,14 @@ public class PackageUtil {
 		try {
 			// IPath fn = serviceUtils.getModelSet().getFilenameWithoutExtension();
 			EList<Resource> resources = serviceUtils.getModelSet(event).getResources();
-			if(resources.size() >= 3) {
+			if (resources.size() >= 3) {
 				// check first three resources (di, notation, uml)
-				for(int i = 0; i < 3; i++) {
+				for (int i = 0; i < 3; i++) {
 					Resource userResource = resources.get(i);
-					if(userResource.getContents().size() > 0) {
+					if (userResource.getContents().size() > 0) {
 						EObject topEObj = userResource.getContents().get(0);
-						if((topEObj instanceof Package) && (!(topEObj instanceof Profile))) {
-							return (Package)topEObj;
+						if ((topEObj instanceof Package) && (!(topEObj instanceof Profile))) {
+							return (Package) topEObj;
 						}
 					}
 				}

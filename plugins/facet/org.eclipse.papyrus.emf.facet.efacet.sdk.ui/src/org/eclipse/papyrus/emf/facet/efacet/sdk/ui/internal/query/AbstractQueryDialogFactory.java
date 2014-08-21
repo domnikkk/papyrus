@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -32,17 +32,16 @@ import org.eclipse.swt.widgets.Composite;
  * This abstract class must be extended by the plug-in which has to extend this
  * plug-in. This abstract class must provide a simple way to create an dialog
  * for the creation of the query</p>
- * 
- * The {@link #createWidget()} method must return a widget that extends
- * {@link AbstractQueryWidget} class add provide a widget for the edition of the
+ *
+ * The {@link #createWidget()} method must return a widget that extends {@link AbstractQueryWidget} class add provide a widget for the edition of the
  * query.</p>
- * 
+ *
  * The {@link #createQuery()} method must return the final query created. The query
  * must be a subclass of {@link Query}.</p>
- * 
+ *
  * The {@link #getDialogMessage()} method must return a simple text that will
  * notice the user that he successfully create the query.
- * 
+ *
  * @see WidgetProperties
  * @see PropertyElement
  * @see AbstractQueryWidget
@@ -79,7 +78,7 @@ public abstract class AbstractQueryDialogFactory<Q extends Query> implements
 
 	/**
 	 * Return a map with the specific properties of the query.
-	 * 
+	 *
 	 * @return the properties
 	 */
 	public abstract Map<ETypedElement, PropertyElement> createSpecificProperties();
@@ -145,12 +144,9 @@ public abstract class AbstractQueryDialogFactory<Q extends Query> implements
 	}
 
 	/**
-	 * This method return a singleton of the properties {@link WidgetProperties}
-	 * with the initialization of some standard properties as: </nl> <li>The
-	 * query name : {@link #getQueryNameProperty()}</li> <li>If the query can be
-	 * cached : {@link #getCanBeCachedProperty()}</li> <li>If the query can have
-	 * side effects : {@link #getCanHaveSideEffects()}</li> </nl>
-	 * 
+	 * This method return a singleton of the properties {@link WidgetProperties} with the initialization of some standard properties as: </nl> <li>The query name : {@link #getQueryNameProperty()}</li> <li>If the query can be cached :
+	 * {@link #getCanBeCachedProperty()}</li> <li>If the query can have side effects : {@link #getCanHaveSideEffects()}</li> </nl>
+	 *
 	 * @return the properties
 	 */
 	public WidgetProperties<ETypedElement> getProperties() {
@@ -228,7 +224,8 @@ public abstract class AbstractQueryDialogFactory<Q extends Query> implements
 	}
 
 	/**
-	 * @param initialQuery the initialQuery to set
+	 * @param initialQuery
+	 *            the initialQuery to set
 	 */
 	public void setInitialQuery(final Q initialQuery) {
 		this.initialQuery = initialQuery;

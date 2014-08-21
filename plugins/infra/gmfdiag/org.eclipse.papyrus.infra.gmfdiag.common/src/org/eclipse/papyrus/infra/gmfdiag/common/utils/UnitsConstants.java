@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -16,14 +16,14 @@ package org.eclipse.papyrus.infra.gmfdiag.common.utils;
 import org.eclipse.papyrus.infra.gmfdiag.common.messages.Messages;
 
 /**
- * 
+ *
  * This class provides useful constants for Units
- * 
+ *
  */
 public class UnitsConstants {
 
 	private UnitsConstants() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**

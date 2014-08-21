@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.w3c.dom.css.CSSValue;
 /**
  * A Converter for String values
  * Converts a CSS String to a Java String
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -33,13 +33,15 @@ public class StringConverter extends AbstractCSSValueConverter {
 		super(String.class);
 	}
 
+	@Override
 	public Object convert(CSSValue value, CSSEngine engine, Object context) throws Exception {
-		if(value instanceof CSSPrimitiveValue) {
-			return ((CSSPrimitiveValue)value).getStringValue();
+		if (value instanceof CSSPrimitiveValue) {
+			return ((CSSPrimitiveValue) value).getStringValue();
 		}
 		throw new IllegalArgumentException("The value " + value + " is not a valid String");
 	}
 
+	@Override
 	public String convert(Object value, CSSEngine engine, Object context, ICSSValueConverterConfig config) throws Exception {
 		throw new UnsupportedOperationException();
 	}

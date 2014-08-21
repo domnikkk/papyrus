@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,7 +67,7 @@ import org.eclipse.uml2.uml.OccurrenceSpecification;
 
 /**
  * Add support to connect directly on ExecutionOccurrenceSpecification.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 @SuppressWarnings("restriction")
@@ -76,32 +76,33 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
 		INodeEditPart node = getConnectableEditPart();
-		if(node == null)
+		if (node == null) {
 			return null;
+		}
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		ConnectionAnchor targetAnchor = getTargetConnectionAnchor(request.getTarget(), request);
 		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-		if(targetEP == null) {
+		if (targetEP == null) {
 			return null;
 		}
 		SetConnectionEndsCommand sceCommand = new SetConnectionEndsCommand(editingDomain, StringStatics.BLANK);
-		sceCommand.setEdgeAdaptor(new EObjectAdapter((EObject)request.getConnectionEditPart().getModel()));
+		sceCommand.setEdgeAdaptor(new EObjectAdapter((EObject) request.getConnectionEditPart().getModel()));
 		sceCommand.setNewTargetAdaptor(targetEP);
 		SetConnectionAnchorsCommand scaCommand = new SetConnectionAnchorsCommand(editingDomain, StringStatics.BLANK);
-		scaCommand.setEdgeAdaptor(new EObjectAdapter((EObject)request.getConnectionEditPart().getModel()));
+		scaCommand.setEdgeAdaptor(new EObjectAdapter((EObject) request.getConnectionEditPart().getModel()));
 		scaCommand.setNewTargetTerminal(targetEP.mapConnectionAnchorToTerminal(targetAnchor));
 		CompositeCommand cc = new CompositeCommand(DiagramUIMessages.Commands_SetConnectionEndsCommand_Target);
 		cc.compose(sceCommand);
 		cc.compose(scaCommand);
 		Command cmd = new ICommandProxy(cc);
 		EditPart cep = request.getConnectionEditPart();
-		RoutingStyle style = (RoutingStyle)((View)cep.getModel()).getStyle(NotationPackage.eINSTANCE.getRoutingStyle());
+		RoutingStyle style = (RoutingStyle) ((View) cep.getModel()).getStyle(NotationPackage.eINSTANCE.getRoutingStyle());
 		Routing currentRouter = Routing.MANUAL_LITERAL;
-		if(style != null) {
+		if (style != null) {
 			currentRouter = style.getRouting();
 		}
 		Command cmdRouter = getRoutingAdjustment(request.getConnectionEditPart(), getSemanticHint(request), currentRouter, request.getTarget());
-		if(cmdRouter != null) {
+		if (cmdRouter != null) {
 			cmd = cmd == null ? cmdRouter : cmd.chain(cmdRouter);
 			// reset the bendpoints
 			ConnectionAnchor sourceAnchor = node.getSourceConnectionAnchor(request);
@@ -112,143 +113,150 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 			sbbCommand.setEdgeAdapter(request.getConnectionEditPart());
 			sbbCommand.setNewPointList(pointList, sourceAnchor.getReferencePoint(), targetAnchor.getReferencePoint());
 			Command cmdBP = new ICommandProxy(sbbCommand);
-			if(cmdBP != null) {
+			if (cmdBP != null) {
 				cmd = cmd == null ? cmdBP : cmd.chain(cmdBP);
 			}
 		}
-		if(cmd.canExecute()) {
+		if (cmd.canExecute()) {
 			return cmd.chain(FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request));
 		}
 		return cmd;
 	}
 
+	@Override
 	protected Command getReconnectSourceCommand(ReconnectRequest request) {
 		INodeEditPart node = getConnectableEditPart();
-		if(node == null)
+		if (node == null) {
 			return null;
+		}
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		ConnectionAnchor sourceAnchor = getSourceConnectionAnchor(getHost(), request);
 		SetConnectionEndsCommand sceCommand = new SetConnectionEndsCommand(editingDomain, StringStatics.BLANK);
-		sceCommand.setEdgeAdaptor(new EObjectAdapter((View)request.getConnectionEditPart().getModel()));
-		sceCommand.setNewSourceAdaptor(new EObjectAdapter((View)node.getModel()));
+		sceCommand.setEdgeAdaptor(new EObjectAdapter((View) request.getConnectionEditPart().getModel()));
+		sceCommand.setNewSourceAdaptor(new EObjectAdapter((View) node.getModel()));
 		SetConnectionAnchorsCommand scaCommand = new SetConnectionAnchorsCommand(editingDomain, StringStatics.BLANK);
-		scaCommand.setEdgeAdaptor(new EObjectAdapter((View)request.getConnectionEditPart().getModel()));
+		scaCommand.setEdgeAdaptor(new EObjectAdapter((View) request.getConnectionEditPart().getModel()));
 		scaCommand.setNewSourceTerminal(node.mapConnectionAnchorToTerminal(sourceAnchor));
 		CompositeCommand cc = new CompositeCommand(DiagramUIMessages.Commands_SetConnectionEndsCommand_Source);
 		cc.compose(sceCommand);
 		cc.compose(scaCommand);
 		ICommandProxy result = new ICommandProxy(cc);
-		if(result.canExecute()) {
+		if (result.canExecute()) {
 			return result.chain(FragmentsOrdererHelper.createOrderingFragmentsCommand(node, request));
 		}
 		return result;
 	}
 
+	@Override
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
 		request.getExtendedData().put(SequenceRequestConstant.TARGET_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(getHostFigure().getBounds(), getHost()));
-		ICommandProxy proxy = (ICommandProxy)request.getStartCommand();
-		if(proxy == null) {
+		ICommandProxy proxy = (ICommandProxy) request.getStartCommand();
+		if (proxy == null) {
 			return null;
 		}
 		// reset the target edit-part for the request
 		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-		if(targetEP == null) {
+		if (targetEP == null) {
 			return null;
 		}
-		//Fixed bug about creating MessageSync on same Execution.
+		// Fixed bug about creating MessageSync on same Execution.
 		INodeEditPart sourceEditPart = getSourceEditPart(request.getSourceEditPart());
-		if(request instanceof CreateConnectionViewRequest) {
-			if(((IHintedType)UMLElementTypes.Message_4003).getSemanticHint().equals(((CreateConnectionViewRequest)request).getConnectionViewDescriptor().getSemanticHint())) {
-				if(targetEP == sourceEditPart) {
+		if (request instanceof CreateConnectionViewRequest) {
+			if (((IHintedType) UMLElementTypes.Message_4003).getSemanticHint().equals(((CreateConnectionViewRequest) request).getConnectionViewDescriptor().getSemanticHint())) {
+				if (targetEP == sourceEditPart) {
 					return UnexecutableCommand.INSTANCE;
-				} else if(targetEP instanceof AbstractExecutionSpecificationEditPart && getHost() instanceof ExecutionSpecificationEndEditPart) {
-					EObject parentElement = ((AbstractExecutionSpecificationEditPart)targetEP).resolveSemanticElement();
-					EObject element = ((ExecutionSpecificationEndEditPart)getHost()).resolveSemanticElement();
-					if(parentElement instanceof ExecutionSpecification && element instanceof OccurrenceSpecification && element == ((ExecutionSpecification)parentElement).getFinish()) {
+				} else if (targetEP instanceof AbstractExecutionSpecificationEditPart && getHost() instanceof ExecutionSpecificationEndEditPart) {
+					EObject parentElement = ((AbstractExecutionSpecificationEditPart) targetEP).resolveSemanticElement();
+					EObject element = ((ExecutionSpecificationEndEditPart) getHost()).resolveSemanticElement();
+					if (parentElement instanceof ExecutionSpecification && element instanceof OccurrenceSpecification && element == ((ExecutionSpecification) parentElement).getFinish()) {
 						return UnexecutableCommand.INSTANCE;
 					}
 				}
 			}
 		}
-		CompositeCommand cc = (CompositeCommand)proxy.getICommand();
+		CompositeCommand cc = (CompositeCommand) proxy.getICommand();
 		ConnectionAnchor targetAnchor = getTargetConnectionAnchor(getHost(), request);
 		Iterator commandItr = cc.iterator();
-		commandItr.next(); //0
-		SetConnectionEndsCommand sceCommand = (SetConnectionEndsCommand)commandItr.next(); //1
-		sceCommand.setNewTargetAdaptor(new EObjectAdapter(((IGraphicalEditPart)targetEP).getNotationView()));
-		SetConnectionAnchorsCommand scaCommand = (SetConnectionAnchorsCommand)commandItr.next(); //2
+		commandItr.next(); // 0
+		SetConnectionEndsCommand sceCommand = (SetConnectionEndsCommand) commandItr.next(); // 1
+		sceCommand.setNewTargetAdaptor(new EObjectAdapter(((IGraphicalEditPart) targetEP).getNotationView()));
+		SetConnectionAnchorsCommand scaCommand = (SetConnectionAnchorsCommand) commandItr.next(); // 2
 		scaCommand.setNewTargetTerminal(targetEP.mapConnectionAnchorToTerminal(targetAnchor));
 		setViewAdapter(sceCommand.getEdgeAdaptor());
 		ConnectionAnchor sourceAnchor = sourceEditPart.mapTerminalToConnectionAnchor(scaCommand.getNewSourceTerminal());
 		PointList pointList = new PointList();
-		if(request.getLocation() == null) {
+		if (request.getLocation() == null) {
 			pointList.addPoint(sourceAnchor.getLocation(targetAnchor.getReferencePoint()));
 			pointList.addPoint(targetAnchor.getLocation(sourceAnchor.getReferencePoint()));
 		} else {
 			pointList.addPoint(sourceAnchor.getLocation(request.getLocation()));
 			pointList.addPoint(targetAnchor.getLocation(request.getLocation()));
 		}
-		SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand)commandItr.next(); //3
+		SetConnectionBendpointsCommand sbbCommand = (SetConnectionBendpointsCommand) commandItr.next(); // 3
 		sbbCommand.setNewPointList(pointList, sourceAnchor.getReferencePoint(), targetAnchor.getReferencePoint());
 		return request.getStartCommand();
 	}
 
 	private INodeEditPart getSourceEditPart(EditPart sourceEditPart) {
-		if(sourceEditPart instanceof ExecutionSpecificationEndEditPart) {
-			return (INodeEditPart)((ExecutionSpecificationEndEditPart)sourceEditPart).getParent();
+		if (sourceEditPart instanceof ExecutionSpecificationEndEditPart) {
+			return (INodeEditPart) ((ExecutionSpecificationEndEditPart) sourceEditPart).getParent();
 		}
-		return (INodeEditPart)sourceEditPart;
+		return (INodeEditPart) sourceEditPart;
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	protected Command getConnectionAndRelationshipCompleteCommand(CreateConnectionViewAndElementRequest request) {
 		request.getExtendedData().put(SequenceRequestConstant.TARGET_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(getHostFigure().getBounds(), getHost()));
 		// get the element descriptor
 		CreateElementRequestAdapter requestAdapter = request.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
 		// get the semantic request
-		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class);
+		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
 		createElementRequest.setPrompt(!request.isUISupressed());
 		// complete the semantic request by filling in the source and
 		// destination
-		INodeEditPart targetEP = (INodeEditPart)getHost();
-		View sourceView = (View)request.getSourceEditPart().getModel();
-		View targetView = (View)targetEP.getModel();
+		INodeEditPart targetEP = (INodeEditPart) getHost();
+		View sourceView = (View) request.getSourceEditPart().getModel();
+		View targetView = (View) targetEP.getModel();
 		// resolve the source
 		EObject source = ViewUtil.resolveSemanticElement(sourceView);
-		if(source == null) {
+		if (source == null) {
 			source = sourceView;
 		}
 		createElementRequest.setSource(source);
 		// resolve the target
 		EObject target = ViewUtil.resolveSemanticElement(targetView);
-		if(target == null) {
+		if (target == null) {
 			target = targetView;
 		}
 		createElementRequest.setTarget(target);
 		// get the create element request based on the elementdescriptor's
 		// request
-		Command createElementCommand = targetEP.getCommand(new EditCommandRequestWrapper((CreateRelationshipRequest)requestAdapter.getAdapter(CreateRelationshipRequest.class), request.getExtendedData()));
+		Command createElementCommand = targetEP.getCommand(new EditCommandRequestWrapper((CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class), request.getExtendedData()));
 		// create the create semantic element wrapper command
-		if(null == createElementCommand)
+		if (null == createElementCommand) {
 			return null;
+		}
 		SemanticCreateCommand semanticCommand = new SemanticCreateCommand(requestAdapter, createElementCommand);
 		// get the view command
 		Command viewCommand = getConnectionCompleteCommand(request);
-		if(null == viewCommand)
+		if (null == viewCommand) {
 			return null;
+		}
 		// form the compound command and return
 		CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 		cc.compose(semanticCommand);
 		cc.compose(new CommandProxy(viewCommand));
 		ICommandProxy result = new ICommandProxy(cc);
-		if(result.canExecute()) {
+		if (result.canExecute()) {
 			Command orderFragments = FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost().getParent(), request);
 			return result.chain(orderFragments);
 		}
 		return result;
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	protected Command getConnectionAndRelationshipCreateCommand(CreateConnectionViewAndElementRequest request) {
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(getHostFigure().getBounds(), getHost()));
@@ -256,22 +264,23 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 	}
 
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
+	@Override
 	@SuppressWarnings("unchecked")
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
-		if(!(request instanceof CreateConnectionViewRequest)) {
+		if (!(request instanceof CreateConnectionViewRequest)) {
 			return null;
 		}
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_MODEL_CONTAINER, SequenceUtil.findInteractionFragmentContainerAt(getHostFigure().getBounds(), getHost()));
 		request.getExtendedData().put(SequenceRequestConstant.SOURCE_LOCATION_DATA, request.getLocation());
-		CreateConnectionViewRequest req = (CreateConnectionViewRequest)request;
+		CreateConnectionViewRequest req = (CreateConnectionViewRequest) request;
 		CompositeCommand cc = new CompositeCommand(DiagramUIMessages.Commands_CreateCommand_Connection_Label);
-		Diagram diagramView = ((View)getHost().getModel()).getDiagram();
+		Diagram diagramView = ((View) getHost().getModel()).getDiagram();
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		CreateCommand createCommand = new CreateCommand(editingDomain, req.getConnectionViewDescriptor(), diagramView.getDiagram());
-		setViewAdapter((IAdaptable)createCommand.getCommandResult().getReturnValue());
+		setViewAdapter((IAdaptable) createCommand.getCommandResult().getReturnValue());
 		SetConnectionEndsCommand sceCommand = new SetConnectionEndsCommand(editingDomain, StringStatics.BLANK);
 		sceCommand.setEdgeAdaptor(getViewAdapter());
 		sceCommand.setNewSourceAdaptor(new EObjectAdapter(getView()));
@@ -292,83 +301,87 @@ public class ExecutionSpecificationEndGraphicalNodeEditPolicy extends GraphicalN
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.GraphicalNodeEditPolicy#getView()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected View getView() {
-		return (View)getHost().getParent().getModel();
+		return (View) getHost().getParent().getModel();
 	}
 
+	@Override
 	protected INodeEditPart getConnectableEditPart() {
-		return (INodeEditPart)getHost().getParent();
+		return (INodeEditPart) getHost().getParent();
 	}
 
+	@Override
 	protected INodeEditPart getConnectionCompleteEditPart(Request request) {
-		return (INodeEditPart)getHost().getParent();
+		return (INodeEditPart) getHost().getParent();
 	}
 
+	@Override
 	protected Connection createDummyConnection(Request req) {
 		Connection conn = super.createDummyConnection(req);
 		conn.setForegroundColor(ColorConstants.black);
 		return conn;
 	}
 
-	//	protected ConnectionAnchor getSourceConnectionAnchor(CreateConnectionRequest request) {
-	//		return getSourceConnectionAnchor(request.getSourceEditPart(), request);
-	//	}
+	// protected ConnectionAnchor getSourceConnectionAnchor(CreateConnectionRequest request) {
+	// return getSourceConnectionAnchor(request.getSourceEditPart(), request);
+	// }
 	@SuppressWarnings("unchecked")
 	private ConnectionAnchor getSourceConnectionAnchor(EditPart sourceEditPart, Request request) {
-		if(sourceEditPart instanceof ExecutionSpecificationEndEditPart) {
+		if (sourceEditPart instanceof ExecutionSpecificationEndEditPart) {
 			request.getExtendedData().remove(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION);
-			EObject element = ((ExecutionSpecificationEndEditPart)sourceEditPart).resolveSemanticElement();
-			INodeEditPart parent = (INodeEditPart)sourceEditPart.getParent();
-			if(parent instanceof IGraphicalEditPart) {
-				EObject parentElement = ((IGraphicalEditPart)parent).resolveSemanticElement();
-				if(parentElement instanceof ExecutionSpecification) {
-					if(element == ((ExecutionSpecification)parentElement).getStart()) {
+			EObject element = ((ExecutionSpecificationEndEditPart) sourceEditPart).resolveSemanticElement();
+			INodeEditPart parent = (INodeEditPart) sourceEditPart.getParent();
+			if (parent instanceof IGraphicalEditPart) {
+				EObject parentElement = ((IGraphicalEditPart) parent).resolveSemanticElement();
+				if (parentElement instanceof ExecutionSpecification) {
+					if (element == ((ExecutionSpecification) parentElement).getStart()) {
 						request.getExtendedData().put(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION, PositionConstants.TOP);
-					} else if(element == ((ExecutionSpecification)parentElement).getFinish()) {
+					} else if (element == ((ExecutionSpecification) parentElement).getFinish()) {
 						request.getExtendedData().put(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION, PositionConstants.BOTTOM);
 					}
 				}
 			}
 			ConnectionAnchor sourceConnectionAnchor = parent.getSourceConnectionAnchor(request);
-			//Be sure to remove this key after used.
+			// Be sure to remove this key after used.
 			request.getExtendedData().remove(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION);
 			return sourceConnectionAnchor;
 		}
-		return sourceEditPart instanceof INodeEditPart ? ((INodeEditPart)sourceEditPart).getSourceConnectionAnchor(request) : null;
+		return sourceEditPart instanceof INodeEditPart ? ((INodeEditPart) sourceEditPart).getSourceConnectionAnchor(request) : null;
 	}
 
 	@SuppressWarnings("unchecked")
 	private ConnectionAnchor getTargetConnectionAnchor(EditPart targetEditPart, Request request) {
-		if(targetEditPart instanceof ExecutionSpecificationEndEditPart) {
+		if (targetEditPart instanceof ExecutionSpecificationEndEditPart) {
 			request.getExtendedData().remove(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION);
-			EObject element = ((ExecutionSpecificationEndEditPart)targetEditPart).resolveSemanticElement();
-			INodeEditPart parent = (INodeEditPart)targetEditPart.getParent();
-			if(parent instanceof IGraphicalEditPart) {
-				EObject parentElement = ((IGraphicalEditPart)parent).resolveSemanticElement();
-				if(parentElement instanceof ExecutionSpecification) {
-					if(element == ((ExecutionSpecification)parentElement).getStart()) {
+			EObject element = ((ExecutionSpecificationEndEditPart) targetEditPart).resolveSemanticElement();
+			INodeEditPart parent = (INodeEditPart) targetEditPart.getParent();
+			if (parent instanceof IGraphicalEditPart) {
+				EObject parentElement = ((IGraphicalEditPart) parent).resolveSemanticElement();
+				if (parentElement instanceof ExecutionSpecification) {
+					if (element == ((ExecutionSpecification) parentElement).getStart()) {
 						request.getExtendedData().put(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION, PositionConstants.TOP);
-					} else if(element == ((ExecutionSpecification)parentElement).getFinish()) {
+					} else if (element == ((ExecutionSpecification) parentElement).getFinish()) {
 						request.getExtendedData().put(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION, PositionConstants.BOTTOM);
 					}
 				}
 			}
 			ConnectionAnchor targetConnectionAnchor = parent.getTargetConnectionAnchor(request);
-			//Be sure to remove this key after used.
+			// Be sure to remove this key after used.
 			request.getExtendedData().remove(AbstractExecutionSpecificationEditPart.EXECUTION_FIX_ANCHOR_POSITION);
 			return targetConnectionAnchor;
 		}
-		return targetEditPart instanceof INodeEditPart ? ((INodeEditPart)targetEditPart).getTargetConnectionAnchor(request) : null;
+		return targetEditPart instanceof INodeEditPart ? ((INodeEditPart) targetEditPart).getTargetConnectionAnchor(request) : null;
 	}
 
-	//	protected ConnectionAnchor getTargetConnectionAnchor(CreateConnectionRequest request) {
-	//		EditPart targetEditPart = request.getTargetEditPart();
-	//		return getTargetConnectionAnchor(targetEditPart, request);
-	//	}
+	// protected ConnectionAnchor getTargetConnectionAnchor(CreateConnectionRequest request) {
+	// EditPart targetEditPart = request.getTargetEditPart();
+	// return getTargetConnectionAnchor(targetEditPart, request);
+	// }
+	@Override
 	protected ConnectionRouter getDummyConnectionRouter(CreateConnectionRequest arg0) {
 		return LifelineChildGraphicalNodeEditPolicy.messageRouter;
 	}

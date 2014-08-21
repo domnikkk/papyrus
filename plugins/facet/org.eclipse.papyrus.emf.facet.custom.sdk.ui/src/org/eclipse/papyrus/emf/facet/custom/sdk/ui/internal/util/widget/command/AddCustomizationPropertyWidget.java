@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -31,28 +31,27 @@ import org.eclipse.swt.widgets.Composite;
  * Widget for the selection of a customization property. This Widget return a
  * command ( {@link #getCommand()} for the creation of the element into the
  * model.</p>
- * 
+ *
  * This widget uses the {@link GetOperationFacetWidget} widget to display a
  * dialog where the user select the operation he wants.</p>
- * 
+ *
  * When the operation is selected, a copy of this operation is made and this one
  * will be added to the model.</p>
- * 
+ *
  * Cases are created to be added to the operation:</p>
- * 
- * <li>a <code>null</code> case</li> <li>a case for each
- * {@link EStructuralFeature} of the extended meta-class</li>
+ *
+ * <li>a <code>null</code> case</li> <li>a case for each {@link EStructuralFeature} of the extended meta-class</li>
  */
 public class AddCustomizationPropertyWidget extends
- AbstractCommandWidget {
+		AbstractCommandWidget {
 
 	private final EClassCustomization eClassCustom;
 	private final PropertyElement2<FacetOperation> facetOpProperty;
 	private final EditingDomain editingDomain;
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param properties

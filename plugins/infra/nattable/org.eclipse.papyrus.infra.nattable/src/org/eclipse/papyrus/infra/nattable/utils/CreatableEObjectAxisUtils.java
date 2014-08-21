@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,22 +24,22 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.Table;
 import org.eclipse.papyrus.infra.services.edit.utils.ElementTypeUtils;
 
 /**
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class CreatableEObjectAxisUtils {
 
 	private CreatableEObjectAxisUtils() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param table
-	 *        the table
+	 *            the table
 	 * @param onColumn
-	 *        <code>true</code> if we are working on column, false if not
+	 *            <code>true</code> if we are working on column, false if not
 	 * @return
 	 *         the list of the creatable element on the axis
 	 */
@@ -49,26 +49,26 @@ public class CreatableEObjectAxisUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the tableManager
+	 *            the tableManager
 	 * @param onColumn
-	 *        <code>true</code> if we are working on column, false if not
+	 *            <code>true</code> if we are working on column, false if not
 	 * @return
 	 *         the list of the creatable element on the axis
 	 */
 	public static final Collection<String> getCreatableElementIds(final INattableModelManager nattableModelManager, final boolean onColumn) {
 		final IAxisManager axisManager;
-		if(onColumn) {
+		if (onColumn) {
 			axisManager = nattableModelManager.getColumnAxisManager();
 		} else {
 			axisManager = nattableModelManager.getRowAxisManager();
 		}
 		final Collection<IElementType> possibleValues = ElementTypeUtils.getAllExistingElementTypes();
 		final Collection<String> allowedElements = new TreeSet<String>();
-		for(final IElementType current : possibleValues) {
+		for (final IElementType current : possibleValues) {
 			final String id = current.getId();
-			if(axisManager.canCreateAxisElement(id)) {
+			if (axisManager.canCreateAxisElement(id)) {
 				allowedElements.add(id);
 			}
 		}

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class MarkerDeletionAdvice extends AbstractEditHelperAdvice {
 	// This parameter is set by generated semantic edit policies when delegating to "visual element types" to
 	// decorate the semantic element command with advice targeting the visual element type, which is a hinted
 	// element type specializing the semantic element type to suggest the way in which it should be presented
-	// in the diagram.  Because our advice is already included in the semantic command, it isn't needed in
+	// in the diagram. Because our advice is already included in the semantic command, it isn't needed in
 	// this additional decoration and, therefore, it won't cause problems when the visual element type is
 	// a specialization (dubiously) of the null element type
 	// (see https://www.eclipse.org/forums/index.php/t/781825/ for discussion of that problem)
@@ -52,19 +52,19 @@ public class MarkerDeletionAdvice extends AbstractEditHelperAdvice {
 	protected ICommand getBeforeDestroyElementCommand(DestroyElementRequest request) {
 		ICommand result = null;
 
-		if(request.getParameter(EDIT_POLICY_COMMAND) == null) {
+		if (request.getParameter(EDIT_POLICY_COMMAND) == null) {
 			final EObject object = request.getElementToDestroy();
 			final Resource context = object.eResource();
 
 			// Don't determine up-front exactly which markers to delete, because that can be quite expensive
-			// and will make menu enablement calculations etc. perform badly.  This should be reasonably
+			// and will make menu enablement calculations etc. perform badly. This should be reasonably
 			// efficient.
 
 			// There can't be markers for this object if it's not in a resource, because markers would
 			// be attached to its resource, but there is no resource
-			if(context != null) {
-				for(IMarkerProvider provider : MarkerProviderRegistry.INSTANCE.getMarkerProviders(context)) {
-					if(IMarkerProvider2.Adapter.getExtendedProvider(provider).hasMarkers(context, object)) {
+			if (context != null) {
+				for (IMarkerProvider provider : MarkerProviderRegistry.INSTANCE.getMarkerProviders(context)) {
+					if (IMarkerProvider2.Adapter.getExtendedProvider(provider).hasMarkers(context, object)) {
 						result = new DeleteMarkersCommand(object);
 						break;
 					}
@@ -107,7 +107,7 @@ public class MarkerDeletionAdvice extends AbstractEditHelperAdvice {
 		}
 
 		void disposeDelegate() {
-			if(delegate != null) {
+			if (delegate != null) {
 				delegate.dispose();
 				delegate = null;
 			}
@@ -120,11 +120,11 @@ public class MarkerDeletionAdvice extends AbstractEditHelperAdvice {
 
 			// Initialize our delegate
 			ICommand command = null;
-			for(IMarkerProvider provider : MarkerProviderRegistry.INSTANCE.getMarkerProviders(context)) {
+			for (IMarkerProvider provider : MarkerProviderRegistry.INSTANCE.getMarkerProviders(context)) {
 				ICommand nextCommand = IMarkerProvider2.Adapter.getExtendedProvider(provider).getMarkerDeletionCommand(context, object);
-				if(command == null) {
+				if (command == null) {
 					command = nextCommand;
-				} else if(nextCommand != null) {
+				} else if (nextCommand != null) {
 					command = command.compose(nextCommand);
 				}
 			}
@@ -156,10 +156,10 @@ public class MarkerDeletionAdvice extends AbstractEditHelperAdvice {
 		}
 
 		CommandResult convertResult(IStatus status) {
-			if(status == null) {
+			if (status == null) {
 				return CommandResult.newOKCommandResult();
 			} else {
-				switch(status.getSeverity()) {
+				switch (status.getSeverity()) {
 				case IStatus.OK:
 				case IStatus.INFO:
 					return CommandResult.newOKCommandResult();

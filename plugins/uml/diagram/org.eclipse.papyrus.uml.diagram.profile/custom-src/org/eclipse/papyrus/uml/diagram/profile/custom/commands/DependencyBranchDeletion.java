@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -132,10 +132,10 @@ public class DependencyBranchDeletion implements IObjectActionDelegate {
 	 * {@inheritedDoc}
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedobject instanceof DependencyBranchEditPart) {
-				selectedElement = (DependencyBranchEditPart)selectedobject;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedobject instanceof DependencyBranchEditPart) {
+				selectedElement = (DependencyBranchEditPart) selectedobject;
 			}
 		}
 	}

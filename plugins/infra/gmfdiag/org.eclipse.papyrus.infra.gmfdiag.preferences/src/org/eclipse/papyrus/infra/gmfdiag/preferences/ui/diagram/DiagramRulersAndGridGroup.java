@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -19,16 +19,16 @@ import org.eclipse.papyrus.infra.gmfdiag.preferences.ui.RulersAndGridGroup;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class DiagramRulersAndGridGroup extends RulersAndGridGroup {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param key
 	 * @param dialogPage
@@ -38,12 +38,13 @@ public class DiagramRulersAndGridGroup extends RulersAndGridGroup {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.RulersAndGridGroup#getPreferenceConstant(int)
-	 * 
+	 *
 	 * @param preferenceType
 	 * @return
 	 */
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getDiagramConstant(getKey(), preferenceType);
 	}

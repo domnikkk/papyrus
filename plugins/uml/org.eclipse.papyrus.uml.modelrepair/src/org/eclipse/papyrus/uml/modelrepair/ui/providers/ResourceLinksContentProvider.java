@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,9 +47,9 @@ public class ResourceLinksContentProvider implements ITreeContentProvider {
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		this.viewer = (TreeViewer)viewer;
-		if(newInput instanceof ResourceSet) {
-			this.input = (ResourceSet)newInput;
+		this.viewer = (TreeViewer) viewer;
+		if (newInput instanceof ResourceSet) {
+			this.input = (ResourceSet) newInput;
 		} else {
 			this.input = null;
 		}
@@ -62,9 +62,9 @@ public class ResourceLinksContentProvider implements ITreeContentProvider {
 	}
 
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof Resource) {
+		if (parentElement instanceof Resource) {
 			Set<URI> uris = allLinks.get(parentElement);
-			if(uris == null) {
+			if (uris == null) {
 				return new Object[0];
 			}
 			return uris.toArray();
@@ -78,10 +78,10 @@ public class ResourceLinksContentProvider implements ITreeContentProvider {
 	}
 
 	public boolean hasChildren(Object element) {
-		if(element instanceof Resource) {
-			Resource resource = (Resource)element;
+		if (element instanceof Resource) {
+			Resource resource = (Resource) element;
 			EditingDomain domain = TransactionalEditingDomain.Factory.INSTANCE.getEditingDomain(resource.getResourceSet());
-			if(EMFHelper.isReadOnly(resource, domain)) {
+			if (EMFHelper.isReadOnly(resource, domain)) {
 				return false;
 			}
 		}
@@ -89,43 +89,43 @@ public class ResourceLinksContentProvider implements ITreeContentProvider {
 	}
 
 	protected Map<Resource, Set<URI>> allLinks() {
-		//Do not cache, to recompute the dependencies after a refresh
-		//This may be expensive. TODO: Manually clean the cache before refresh.
+		// Do not cache, to recompute the dependencies after a refresh
+		// This may be expensive. TODO: Manually clean the cache before refresh.
 
-		//		if(allLinks != null) {
-		//			return allLinks;
-		//		}
+		// if(allLinks != null) {
+		// return allLinks;
+		// }
 
 		allLinks = new HashMap<Resource, Set<URI>>();
 
-		if(input == null) {
+		if (input == null) {
 			return allLinks;
 		}
 
-		for(Resource resource : input.getResources()) {
+		for (Resource resource : input.getResources()) {
 
 			Set<URI> allReferencedURIs = new HashSet<URI>();
 			allLinks.put(resource, allReferencedURIs);
 
 			Iterator<EObject> allContents = resource.getAllContents();
 
-			while(allContents.hasNext()) {
+			while (allContents.hasNext()) {
 				EObject nextElement = allContents.next();
 
 				List<EObject> allReferencedEObjects = nextElement.eCrossReferences();
-				EContentsEList.FeatureIterator<EObject> iterator = (EContentsEList.FeatureIterator<EObject>)allReferencedEObjects.iterator();
-				while(iterator.hasNext()) {
+				EContentsEList.FeatureIterator<EObject> iterator = (EContentsEList.FeatureIterator<EObject>) allReferencedEObjects.iterator();
+				while (iterator.hasNext()) {
 					EObject referencedEObject = iterator.next();
-					if(referencedEObject.eIsProxy()) {
+					if (referencedEObject.eIsProxy()) {
 						allReferencedURIs.add(EcoreUtil.getURI(referencedEObject).trimFragment());
 					} else {
-						if(referencedEObject.eResource() == null) {
+						if (referencedEObject.eResource() == null) {
 							continue;
 						}
 
-						//Exclude local references
-						if(referencedEObject.eResource() != resource) {
-							if(iterator.feature().isTransient()) {
+						// Exclude local references
+						if (referencedEObject.eResource() != resource) {
+							if (iterator.feature().isTransient()) {
 								continue;
 							}
 
@@ -137,9 +137,9 @@ public class ResourceLinksContentProvider implements ITreeContentProvider {
 		}
 
 		Iterator<Resource> removeEmptyLinks = allLinks.keySet().iterator();
-		while(removeEmptyLinks.hasNext()) {
+		while (removeEmptyLinks.hasNext()) {
 			Resource current = removeEmptyLinks.next();
-			if(allLinks.get(current).isEmpty()) {
+			if (allLinks.get(current).isEmpty()) {
 				removeEmptyLinks.remove();
 			}
 		}

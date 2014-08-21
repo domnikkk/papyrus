@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 Atos, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,8 +31,8 @@ public class GroupNotifierLabelProvider extends LabelProvider {
 
 	@Override
 	public String getText(Object element) {
-		if(element instanceof IGroupNotifier) {
-			IGroupNotifier notifier = (IGroupNotifier)element;
+		if (element instanceof IGroupNotifier) {
+			IGroupNotifier notifier = (IGroupNotifier) element;
 			return delegate.getText(notifier.getEObject());
 		}
 		return super.getText(element);
@@ -40,18 +40,18 @@ public class GroupNotifierLabelProvider extends LabelProvider {
 
 	@Override
 	public Image getImage(Object element) {
-		if(element instanceof IGroupNotifier) {
-			IGroupNotifier notifier = (IGroupNotifier)element;
+		if (element instanceof IGroupNotifier) {
+			IGroupNotifier notifier = (IGroupNotifier) element;
 			return delegate.getImage(notifier.getEObject());
 		}
 		return super.getImage(element);
 	}
-	
+
 	@Override
 	public void dispose() {
 		delegate.dispose();
 		factory.dispose();
-		
+
 		super.dispose();
 	}
 }

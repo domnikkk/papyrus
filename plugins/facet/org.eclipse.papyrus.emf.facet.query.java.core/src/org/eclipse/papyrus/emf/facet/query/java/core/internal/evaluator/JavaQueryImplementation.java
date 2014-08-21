@@ -63,7 +63,7 @@ public class JavaQueryImplementation implements IQueryImplementation {
 	public boolean isCheckResultType() {
 		return this.checkResultType;
 	}
-	
+
 	public void setCheckResultType(final boolean checkResultType) {
 		this.checkResultType = checkResultType;
 	}

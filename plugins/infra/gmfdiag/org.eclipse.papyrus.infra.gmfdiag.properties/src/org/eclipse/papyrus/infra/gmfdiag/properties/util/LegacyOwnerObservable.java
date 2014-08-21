@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,6 +33,7 @@ import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 
 /**
  * Represents the observable value of a diagram's owner in the case where the diagram does not yet have the viewpoints-compatible style for holding the value itself
+ * 
  * @author Laurent Wouters
  */
 public class LegacyOwnerObservable extends AbstractObservableValue {
@@ -44,11 +45,14 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 	private IChangeListener valueListener;
 	private PapyrusObservableValue styleObservable;
 	private PapyrusObservableValue valueObservable;
-	
+
 	/**
 	 * Initializes the observables
-	 * @param diagram The diagram to be observed
-	 * @param domain The editing domain
+	 * 
+	 * @param diagram
+	 *            The diagram to be observed
+	 * @param domain
+	 *            The editing domain
 	 */
 	public LegacyOwnerObservable(Diagram diagram, EReference feature, EditingDomain domain) {
 		super(Realm.getDefault());
@@ -60,55 +64,74 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 		this.styleObservable.addChangeListener(styleListener);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#isStale()
 	 */
+	@Override
 	public boolean isStale() {
 		return (valueListener != null);
 	}
-	
+
 	/**
 	 * Builds the listener for the styles property of the diagram
 	 */
 	private void buildStyleListener() {
 		this.styleListener = new IChangeListener() {
 			public void handleChange(ChangeEvent event) {
-				if (valueListener != null)
+				if (valueListener != null) {
 					return;
+				}
 				Style style = LegacyOwnerObservable.this.diagram.getStyle(StylePackage.Literals.PAPYRUS_VIEW_STYLE);
-				if (style != null)
+				if (style != null) {
 					buildValueListener(style);
+				}
 			}
 		};
 	}
-	
+
 	/**
 	 * Builds the listener for the EObjectValue property of the style
-	 * @param style The style to be observed
+	 * 
+	 * @param style
+	 *            The style to be observed
 	 */
 	private void buildValueListener(Style style) {
 		this.valueListener = new IChangeListener() {
 			public void handleChange(ChangeEvent event) {
 				fireValueChange(new ValueDiff() {
-					public Object getOldValue() { return null; }
-					public Object getNewValue() { return DiagramUtils.getOwner(diagram); }
+					@Override
+					public Object getOldValue() {
+						return null;
+					}
+
+					@Override
+					public Object getNewValue() {
+						return DiagramUtils.getOwner(diagram);
+					}
 				});
 			}
 		};
 		valueObservable = new PapyrusObservableValue(style, reference, domain);
 		valueObservable.addChangeListener(valueListener);
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
 	 */
 	public Object getValueType() {
 		return EcorePackage.Literals.EOBJECT;
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
 	 */
+	@Override
 	protected Object doGetValue() {
 		return DiagramUtils.getOwner(diagram);
 	}
@@ -118,6 +141,7 @@ public class LegacyOwnerObservable extends AbstractObservableValue {
 	 * 
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
 	 */
+	@Override
 	protected void doSetValue(Object value) {
 		Command emfCommand = getCommand((EObject) value);
 		domain.getCommandStack().execute(emfCommand);

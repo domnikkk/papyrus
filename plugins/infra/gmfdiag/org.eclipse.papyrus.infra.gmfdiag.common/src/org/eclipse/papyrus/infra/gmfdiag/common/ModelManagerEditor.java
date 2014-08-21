@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,9 +62,9 @@ import org.osgi.framework.Bundle;
 /**
  * This class is used as an model manager for regular GMF Editor. All editor capabilities are
  * neutralize, except the model load and save capabilities.
- * 
+ *
  * @author dumoulin
- * 
+ *
  */
 public class ModelManagerEditor {
 
@@ -98,10 +98,12 @@ public class ModelManagerEditor {
 
 		Notifier notifier;
 
+		@Override
 		public Notifier getTarget() {
 			return notifier;
 		}
 
+		@Override
 		public boolean isAdapterForType(Object type) {
 			// TODO Auto-generated method stub
 			return false;
@@ -109,10 +111,11 @@ public class ModelManagerEditor {
 
 		/**
 		 * Notifies that a change to some feature has occurred.
-		 * 
+		 *
 		 * @param notification
-		 *        a description of the change.
+		 *            a description of the change.
 		 */
+		@Override
 		public void notifyChanged(Notification notification) {
 			// System.out.println("notifyChanged("+ notification +")");
 			// System.out.println("getEventType=" + notification.getEventType() );
@@ -120,25 +123,31 @@ public class ModelManagerEditor {
 			// System.out.println("getNotifier=" + notification.getNotifier() );
 
 			int eventType = notification.getEventType();
-			if(eventType == Notification.ADD) {
+			if (eventType == Notification.ADD) {
 				Object newValue = notification.getNewValue();
-				if(newValue instanceof Diagram)
+				if (newValue instanceof Diagram) {
 					diagramListListener.firePropertyChange(DIAGRAM_ADDED, null, newValue);
-			} else if(eventType == Notification.MOVE) {
+				}
+			} else if (eventType == Notification.MOVE) {
 				Object newValue = notification.getNewValue();
-				if(newValue instanceof Diagram)
+				if (newValue instanceof Diagram) {
 					diagramListListener.firePropertyChange(DIAGRAM_MOVED, null, newValue);
+				}
 
-			} else if(eventType == Notification.REMOVE) {
+			} else if (eventType == Notification.REMOVE) {
 				Object newValue = notification.getNewValue();
-				if(newValue == null)
+				if (newValue == null)
+				{
 					Activator.log.debug(getClass().getName() + "- Warning: can't get removed object."); //$NON-NLS-1$
+				}
 
-				if(newValue instanceof Diagram)
+				if (newValue instanceof Diagram) {
 					diagramListListener.firePropertyChange(DIAGRAM_REMOVED, null, newValue);
+				}
 			}
 		}
 
+		@Override
 		public void setTarget(Notifier newTarget) {
 			notifier = newTarget;
 
@@ -158,14 +167,14 @@ public class ModelManagerEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public TransactionalEditingDomain getEditingDomain() {
 		IDocument document = getEditorInput() != null ? getDocumentProvider().getDocument(getEditorInput()) : null;
-		if(document instanceof IDiagramDocument) {
-			return ((IDiagramDocument)document).getEditingDomain();
+		if (document instanceof IDiagramDocument) {
+			return ((IDiagramDocument) document).getEditingDomain();
 		}
-		return getEditorInput() instanceof MEditingDomainElement ? ((MEditingDomainElement)getEditorInput())
+		return getEditorInput() instanceof MEditingDomainElement ? ((MEditingDomainElement) getEditorInput())
 				.getEditingDomain() : null;
 	}
 
@@ -177,7 +186,7 @@ public class ModelManagerEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param site
 	 * @param input
 	 * @throws PartInitException
@@ -200,7 +209,7 @@ public class ModelManagerEditor {
 	/**
 	 * Returns diagram list listener. This listener send event whenever a diagram is added or
 	 * removed to the eResource.
-	 * 
+	 *
 	 * @return the listener
 	 */
 	public PropertyChangeSupport getDiagramListListener() {
@@ -210,7 +219,7 @@ public class ModelManagerEditor {
 	/**
 	 * Called when the editor should be activated. Subclass should implements this method to
 	 * register listeners to the model.
-	 * 
+	 *
 	 */
 	public void activate() {
 		getNotationModelEResource().eAdapters().add(adapter);
@@ -219,7 +228,7 @@ public class ModelManagerEditor {
 
 	/**
 	 * Called when the editor is deactivated.
-	 * 
+	 *
 	 */
 	public void deactivate() {
 		getNotationModelEResource().eAdapters().remove(adapter);
@@ -227,7 +236,7 @@ public class ModelManagerEditor {
 
 	private Resource getNotationModelEResource() {
 		// Get the default diagram document
-		DiagramDocument document = (DiagramDocument)getDocumentProvider().getDocument(getEditorInput());
+		DiagramDocument document = (DiagramDocument) getDocumentProvider().getDocument(getEditorInput());
 		Diagram diagram = document.getDiagram();
 
 		return diagram.eResource();
@@ -235,7 +244,7 @@ public class ModelManagerEditor {
 
 	/**
 	 * Get the resource for notation model.
-	 * 
+	 *
 	 * @return
 	 */
 	public Resource getNotationResource() {
@@ -244,12 +253,12 @@ public class ModelManagerEditor {
 
 	/**
 	 * Get the resource for the domain model.
-	 * 
+	 *
 	 * @return
 	 */
 	public Resource getDomainResource() {
 		// Get the default diagram document
-		DiagramDocument document = (DiagramDocument)getDocumentProvider().getDocument(getEditorInput());
+		DiagramDocument document = (DiagramDocument) getDocumentProvider().getDocument(getEditorInput());
 		Diagram diagram = document.getDiagram();
 
 		EObject rootObject = diagram.getElement();
@@ -266,19 +275,20 @@ public class ModelManagerEditor {
 	/**
 	 * The <code>AbstractDiagramEditor</code> implementation of this <code>IEditorPart</code> method
 	 * may be extended by subclasses.
-	 * 
+	 *
 	 * @param progressMonitor
-	 *        the progress monitor for communicating result state or <code>null</code>
+	 *            the progress monitor for communicating result state or <code>null</code>
 	 */
 	public void doSave(IProgressMonitor progressMonitor) {
 
 		IDocumentProvider p = getDocumentProvider();
-		if(p == null)
+		if (p == null) {
 			return;
+		}
 
-		if(p.isDeleted(getEditorInput())) {
+		if (p.isDeleted(getEditorInput())) {
 
-			if(isSaveAsAllowed()) {
+			if (isSaveAsAllowed()) {
 
 				/*
 				 * 1GEUSSR: ITPUI:ALL - User should never loose changes made in the editors. Changed
@@ -304,10 +314,10 @@ public class ModelManagerEditor {
 
 	/**
 	 * Updates the state of the given editor input such as read-only flag.
-	 * 
+	 *
 	 * @param input
-	 *        the input to be validated
-	 * 
+	 *            the input to be validated
+	 *
 	 */
 	protected void updateState(IEditorInput input) {
 		IDocumentProvider provider = getDocumentProvider();
@@ -332,10 +342,10 @@ public class ModelManagerEditor {
 	/**
 	 * Validates the state of the given editor input. The predominate intent of this method is to
 	 * take any action probably necessary to ensure that the input can persistently be changed.
-	 * 
+	 *
 	 * @param input
-	 *        the input to be validated
-	 * 
+	 *            the input to be validated
+	 *
 	 */
 	protected void validateState(IEditorInput input) {
 
@@ -347,7 +357,7 @@ public class ModelManagerEditor {
 
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
-			if(status == null || status.getSeverity() != IStatus.CANCEL) {
+			if (status == null || status.getSeverity() != IStatus.CANCEL) {
 				Bundle bundle = Platform.getBundle(PlatformUI.PLUGIN_ID);
 				ILog log = Platform.getLog(bundle);
 				log.log(x.getStatus());
@@ -385,18 +395,19 @@ public class ModelManagerEditor {
 
 	/**
 	 * Performs the save and handles errors appropriately.
-	 * 
+	 *
 	 * @param overwrite
-	 *        indicates whether or not overwriting is allowed
+	 *            indicates whether or not overwriting is allowed
 	 * @param progressMonitor
-	 *        the monitor in which to run the operation
-	 * 
+	 *            the monitor in which to run the operation
+	 *
 	 */
 	protected void performSave(boolean overwrite, IProgressMonitor progressMonitor) {
 
 		IDocumentProvider provider = getDocumentProvider();
-		if(provider == null)
+		if (provider == null) {
 			return;
+		}
 
 		try {
 
@@ -407,8 +418,9 @@ public class ModelManagerEditor {
 
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
-			if(status == null || status.getSeverity() != IStatus.CANCEL)
+			if (status == null || status.getSeverity() != IStatus.CANCEL) {
 				handleExceptionOnSave(x, progressMonitor);
+			}
 		} finally {
 			provider.changed(getEditorInput());
 		}
@@ -421,30 +433,30 @@ public class ModelManagerEditor {
 		Shell shell = getSite().getShell();
 		IEditorInput input = getEditorInput();
 		SaveAsDialog dialog = new SaveAsDialog(shell);
-		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput)input).getFile() : null;
-		if(original != null) {
+		IFile original = input instanceof IFileEditorInput ? ((IFileEditorInput) input).getFile() : null;
+		if (original != null) {
 			dialog.setOriginalFile(original);
 		}
 		dialog.create();
 		IDocumentProvider provider = getDocumentProvider();
-		if(provider == null) {
+		if (provider == null) {
 			// editor has been programmatically closed while the dialog was open
 			return;
 		}
-		if(provider.isDeleted(input) && original != null) {
+		if (provider.isDeleted(input) && original != null) {
 			String message = NLS.bind(Messages.ModelManagerEditor_SavingDeletedFile, original.getName());
 			dialog.setErrorMessage(null);
 			dialog.setMessage(message, IMessageProvider.WARNING);
 		}
-		if(dialog.open() == Window.CANCEL) {
-			if(progressMonitor != null) {
+		if (dialog.open() == Window.CANCEL) {
+			if (progressMonitor != null) {
 				progressMonitor.setCanceled(true);
 			}
 			return;
 		}
 		IPath filePath = dialog.getResult();
-		if(filePath == null) {
-			if(progressMonitor != null) {
+		if (filePath == null) {
+			if (progressMonitor != null) {
 				progressMonitor.setCanceled(true);
 			}
 			return;
@@ -456,8 +468,8 @@ public class ModelManagerEditor {
 		IEditorMatchingStrategy matchingStrategy = getEditorDescriptor().getEditorMatchingStrategy();
 		IEditorReference[] editorRefs = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage()
 				.getEditorReferences();
-		for(int i = 0; i < editorRefs.length; i++) {
-			if(matchingStrategy.matches(editorRefs[i], newInput)) {
+		for (int i = 0; i < editorRefs.length; i++) {
+			if (matchingStrategy.matches(editorRefs[i], newInput)) {
 				MessageDialog.openWarning(shell, Messages.ModelManagerEditor_SaveAsErrorTitle,
 						Messages.ModelManagerEditor_SaveAsErrorMessage);
 				return;
@@ -473,24 +485,24 @@ public class ModelManagerEditor {
 			success = true;
 		} catch (CoreException x) {
 			IStatus status = x.getStatus();
-			if(status == null || status.getSeverity() != IStatus.CANCEL) {
+			if (status == null || status.getSeverity() != IStatus.CANCEL) {
 				ErrorDialog.openError(shell, Messages.ModelManagerEditor_SaveErrorTitle,
 						Messages.ModelManagerEditor_SaveErrorMessage, x.getStatus());
 			}
 		} finally {
 			provider.changed(newInput);
-			if(success) {
+			if (success) {
 				setInput(newInput);
 			}
 		}
-		if(progressMonitor != null) {
+		if (progressMonitor != null) {
 			progressMonitor.setCanceled(!success);
 		}
 	}
 
 	/**
 	 * Retrieves the descriptor for this editor
-	 * 
+	 *
 	 * @return the editor descriptor
 	 */
 	final protected IEditorDescriptor getEditorDescriptor() {
@@ -501,18 +513,18 @@ public class ModelManagerEditor {
 
 	/**
 	 * The number of re-entrances into error correction code while saving.
-	 * 
+	 *
 	 */
 	private int fErrorCorrectionOnSave;
 
 	/**
 	 * Handles the given exception. If the exception reports an out-of-sync situation, this is
 	 * reported to the user. Otherwise, the exception is generically reported.
-	 * 
+	 *
 	 * @param exception
-	 *        the exception to handle
+	 *            the exception to handle
 	 * @param progressMonitor
-	 *        the progress monitor
+	 *            the progress monitor
 	 */
 	protected void handleExceptionOnSave(CoreException exception, IProgressMonitor progressMonitor) {
 
@@ -526,19 +538,20 @@ public class ModelManagerEditor {
 
 			isSynchronized = p.isSynchronized(getEditorInput());
 
-			if(isNotSynchronizedException(exception) && fErrorCorrectionOnSave == 1 && !isSynchronized) {
+			if (isNotSynchronizedException(exception) && fErrorCorrectionOnSave == 1 && !isSynchronized) {
 				String title = EditorMessages.Editor_error_save_outofsync_title;
 				String msg = EditorMessages.Editor_error_save_outofsync_message;
 
-				if(MessageDialog.openQuestion(shell, title, msg))
+				if (MessageDialog.openQuestion(shell, title, msg)) {
 					performSave(true, progressMonitor);
-				else {
+				} else {
 					/*
 					 * 1GEUPKR: ITPJUI:ALL - Loosing work with simultaneous edits Set progress
 					 * monitor to canceled in order to report back to enclosing operations.
 					 */
-					if(progressMonitor != null)
+					if (progressMonitor != null) {
 						progressMonitor.setCanceled(true);
+					}
 				}
 			} else {
 				String title = EditorMessages.Editor_error_save_title;
@@ -549,8 +562,9 @@ public class ModelManagerEditor {
 				 * 1GEUPKR: ITPJUI:ALL - Loosing work with simultaneous edits Set progress monitor
 				 * to canceled in order to report back to enclosing operations.
 				 */
-				if(progressMonitor != null)
+				if (progressMonitor != null) {
 					progressMonitor.setCanceled(true);
+				}
 			}
 		} finally {
 			--fErrorCorrectionOnSave;
@@ -563,23 +577,26 @@ public class ModelManagerEditor {
 	 * <p>
 	 * XXX: After 3.1 this method must be delegated to the document provider see
 	 * </p>
-	 * 
+	 *
 	 * @param ex
-	 *        the core exception
+	 *            the core exception
 	 * @return <code>true</code> iff the given core exception is exactly the exception which is
 	 *         thrown for a non-synchronized element
-	 * 
+	 *
 	 */
 	private boolean isNotSynchronizedException(CoreException ex) {
-		if(ex == null)
+		if (ex == null) {
 			return false;
+		}
 
 		IStatus status = ex.getStatus();
-		if(status == null || status instanceof MultiStatus)
+		if (status == null || status instanceof MultiStatus) {
 			return false;
+		}
 
-		if(status.getException() != null)
+		if (status.getException() != null) {
 			return false;
+		}
 
 		// Can't access IResourceStatus.OUT_OF_SYNC_LOCAL, using value: 274
 		return status.getCode() == 274;

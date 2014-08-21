@@ -62,7 +62,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 	protected ModelSet modelSet;
 
-	static int[] handledTypes = new int[]{ IResourceChangeEvent.POST_CHANGE, IResourceChangeEvent.PRE_DELETE, IResourceChangeEvent.PRE_CLOSE };
+	static int[] handledTypes = new int[] { IResourceChangeEvent.POST_CHANGE, IResourceChangeEvent.PRE_DELETE, IResourceChangeEvent.PRE_CLOSE };
 
 	protected boolean isSaving;
 
@@ -119,12 +119,12 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 	protected void closeEditor(final Collection<? extends Resource> triggeringResources, final boolean reopen) {
 		try {
-			if(!reopen) {
+			if (!reopen) {
 				registry.remove(SaveLayoutBeforeClose.class.getName());
 			}
 
 			final IMultiDiagramEditor editor = registry.getService(IMultiDiagramEditor.class);
-			if(editor != null) {
+			if (editor != null) {
 				final IWorkbenchPartSite site = editor.getSite();
 				UIJob closeEditorJob = new UIJob(site.getShell().getDisplay(), NLS.bind("Reload editor {0}", editor.getTitle())) {
 
@@ -140,11 +140,11 @@ public class ResourceUpdateService implements IService, IPartListener {
 							IReloadableEditor.ReloadReason reason = reopen ? IReloadableEditor.ReloadReason.RESOURCES_CHANGED : IReloadableEditor.ReloadReason.RESOURCES_DELETED;
 
 							DirtyPolicy dirtyPolicy = DirtyPolicy.getDefault();
-							if(!reopen && !editor.isDirty()) {
+							if (!reopen && !editor.isDirty()) {
 								// Check whether we're deleting one of our own resources. If so, just close
 								URI principalURI = modelSet.getURIWithoutExtension();
-								for(Resource next : triggeringResources) {
-									if(next.getURI().trimFileExtension().equals(principalURI)) {
+								for (Resource next : triggeringResources) {
+									if (next.getURI().trimFileExtension().equals(principalURI)) {
 										dirtyPolicy = DirtyPolicy.DO_NOT_SAVE;
 										break;
 									}
@@ -166,14 +166,14 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 				// We are notified usually of at least three resources (*.di, *.notation, *.uml) that are unloaded, but
 				// there's no need to close and re-open the same editor three times
-				if(pendingEditorCloseJobs.putIfAbsent(editor, closeEditorJob) == null) {
-					//Async execution to avoid lock conflicts on the Workspace (Probably owned by this thread, and not the UI thread)
-					IWorkbenchSiteProgressService progressService = (IWorkbenchSiteProgressService)site.getService(IWorkbenchSiteProgressService.class);
+				if (pendingEditorCloseJobs.putIfAbsent(editor, closeEditorJob) == null) {
+					// Async execution to avoid lock conflicts on the Workspace (Probably owned by this thread, and not the UI thread)
+					IWorkbenchSiteProgressService progressService = (IWorkbenchSiteProgressService) site.getService(IWorkbenchSiteProgressService.class);
 					progressService.schedule(closeEditorJob);
 				}
 			}
 		} catch (ServiceException ex) {
-			//Nothing
+			// Nothing
 		}
 	}
 
@@ -185,7 +185,7 @@ public class ResourceUpdateService implements IService, IPartListener {
 		closeEditor(emfResources, true);
 	}
 
-	//Copied from org.eclipse.emf.ecore.presentation.EcoreEditor
+	// Copied from org.eclipse.emf.ecore.presentation.EcoreEditor
 	protected IResourceChangeListener resourceChangeListener = new IResourceChangeListener() {
 
 		@Override
@@ -200,29 +200,29 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 					@Override
 					public boolean visit(final IResourceDelta delta) {
-						if(delta.getResource().getType() == IResource.FILE) {
-							if(delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED) {
+						if (delta.getResource().getType() == IResource.FILE) {
+							if (delta.getKind() == IResourceDelta.REMOVED || delta.getKind() == IResourceDelta.CHANGED) {
 								URI resourceURI = URI.createPlatformResourceURI(delta.getFullPath().toString(), true);
 								Resource resource = modelSet.getResource(resourceURI, false);
-								if(resource == null) {
+								if (resource == null) {
 									// try again, with a pluginURI, see bug 418428
 									URI pluginURI = URI.createPlatformPluginURI(delta.getFullPath().toString(), true);
 									resource = modelSet.getResource(pluginURI, false);
 								}
-								if(resource != null) {
+								if (resource != null) {
 
-									if(delta.getKind() == IResourceDelta.REMOVED) {
+									if (delta.getKind() == IResourceDelta.REMOVED) {
 										removedResources.add(resource);
 									} else {
-										if((delta.getFlags() & IResourceDelta.MARKERS) != 0) {
-											//Skip markers
-											//DiagnosticDecorator.DiagnosticAdapter.update(resource, markerHelper.getMarkerDiagnostics(resource, (IFile)delta.getResource()));
+										if ((delta.getFlags() & IResourceDelta.MARKERS) != 0) {
+											// Skip markers
+											// DiagnosticDecorator.DiagnosticAdapter.update(resource, markerHelper.getMarkerDiagnostics(resource, (IFile)delta.getResource()));
 										}
-										if((delta.getFlags() & IResourceDelta.CONTENT) != 0) {
-											//if(!savedResources.remove(resource)) {
-											//		changedResources.add(resource);
-											//}
-											if(!isSaving) {
+										if ((delta.getFlags() & IResourceDelta.CONTENT) != 0) {
+											// if(!savedResources.remove(resource)) {
+											// changedResources.add(resource);
+											// }
+											if (!isSaving) {
 												changedResources.add(resource);
 											}
 										}
@@ -248,11 +248,11 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 				delta.accept(visitor);
 
-				if(!visitor.getRemovedResources().isEmpty()) {
+				if (!visitor.getRemovedResources().isEmpty()) {
 					handleResourcesRemoved(visitor.getRemovedResources());
 				}
 
-				if(!visitor.getChangedResources().isEmpty()) {
+				if (!visitor.getChangedResources().isEmpty()) {
 					handleResourceChanged(visitor.getChangedResources());
 				}
 			} catch (CoreException exception) {
@@ -263,27 +263,27 @@ public class ResourceUpdateService implements IService, IPartListener {
 
 	@Override
 	public void partActivated(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partBroughtToTop(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partClosed(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partDeactivated(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void partOpened(IWorkbenchPart part) {
-		//Nothing
+		// Nothing
 	}
 
 }

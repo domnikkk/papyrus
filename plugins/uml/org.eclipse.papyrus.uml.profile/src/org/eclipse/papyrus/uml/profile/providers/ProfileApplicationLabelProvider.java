@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ public class ProfileApplicationLabelProvider extends StyledCellLabelProvider {
 	 * Update.
 	 *
 	 * @param cell
-	 *        the cell
+	 *            the cell
 	 * @see org.eclipse.jface.viewers.StyledCellLabelProvider#update(org.eclipse.jface.viewers.ViewerCell)
 	 */
 	@Override
@@ -70,39 +70,39 @@ public class ProfileApplicationLabelProvider extends StyledCellLabelProvider {
 	 * Gets the styled text.
 	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param columnIndex
-	 *        the column index
+	 *            the column index
 	 * @return the styled text
 	 */
 	protected StyledString getStyledText(Object element, int columnIndex) {
-		return  new StyledString(getText(element, columnIndex));
+		return new StyledString(getText(element, columnIndex));
 	}
 
 	/**
 	 * Return the last version of profile applied to UML model.
 	 *
 	 * @param profileApplication
-	 *        the profile application
+	 *            the profile application
 	 * @return Known applied version
 	 */
 	private Version extractProfileApplicationVersion(ProfileApplication profileApplication) {
 		Version version = null;
 
 		EAnnotation versionAnnotation = profileApplication.getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
-		if(versionAnnotation == null) {
+		if (versionAnnotation == null) {
 			EPackage appliedDefinition = profileApplication.getAppliedDefinition();
-			if(appliedDefinition != null) {
+			if (appliedDefinition != null) {
 				versionAnnotation = appliedDefinition.getEAnnotation(IPapyrusVersionConstants.PAPYRUS_EANNOTATION_SOURCE);
 			}
 		}
 
-		if(versionAnnotation != null) {
+		if (versionAnnotation != null) {
 			String versionValue = versionAnnotation.getDetails().get(IPapyrusVersionConstants.PAPYRUS_VERSION_KEY);
 			version = new Version(versionValue);
 		}
 
-		if(version == null) {
+		if (version == null) {
 			version = Version.emptyVersion;
 		}
 
@@ -113,19 +113,19 @@ public class ProfileApplicationLabelProvider extends StyledCellLabelProvider {
 	 * Gets the text.
 	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param columnIndex
-	 *        the column index
+	 *            the column index
 	 * @return the text
 	 */
 	protected String getText(Object element, int columnIndex) {
 		String result = null;
 
-		// Case 1:  Element is a Profile Application
-		if(element instanceof ProfileApplication) {
-			ProfileApplication profileApplication = (ProfileApplication)element;
+		// Case 1: Element is a Profile Application
+		if (element instanceof ProfileApplication) {
+			ProfileApplication profileApplication = (ProfileApplication) element;
 
-			switch(columnIndex) {
+			switch (columnIndex) {
 			case PACKAGE_ELEMENT_COLUMN_INDEX:
 				result = umlLabelProvider.getText(profileApplication.getAppliedProfile());
 				break;
@@ -135,12 +135,12 @@ public class ProfileApplicationLabelProvider extends StyledCellLabelProvider {
 				break;
 			case PROFILE_APPLICATION_NAME_COLUMN_INDEX:
 				Profile appliedProfile = profileApplication.getAppliedProfile();
-				
-				if(appliedProfile == null) {
+
+				if (appliedProfile == null) {
 					result = "<Missing Profile>";
 				} else if (appliedProfile.eIsProxy()) {
 					EPackage definition = profileApplication.getAppliedDefinition();
-					if(definition != null) {
+					if (definition != null) {
 						result = umlLabelProvider.getText(definition);
 					} else {
 						result = "<Unresolved Profile>";
@@ -154,16 +154,16 @@ public class ProfileApplicationLabelProvider extends StyledCellLabelProvider {
 				result = latestProfileVersion.toString();
 				break;
 			default:
-				//Nothing to do
+				// Nothing to do
 				break;
 			}
 		} else {
-			switch(columnIndex) {
+			switch (columnIndex) {
 			case PACKAGE_ELEMENT_COLUMN_INDEX:
 				result = umlLabelProvider.getText(element);
 				break;
 			default:
-				//Nothing to do
+				// Nothing to do
 				break;
 			}
 		}
@@ -175,18 +175,18 @@ public class ProfileApplicationLabelProvider extends StyledCellLabelProvider {
 	 * Gets the image.
 	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param columnIndex
-	 *        the column index
+	 *            the column index
 	 * @return the image
 	 */
 	protected Image getImage(Object element, int columnIndex) {
-		switch(columnIndex) {
+		switch (columnIndex) {
 		case PACKAGE_ELEMENT_COLUMN_INDEX:
 			return umlLabelProvider.getImage(element);
 		case PROFILE_APPLICATION_NAME_COLUMN_INDEX:
-			if(element instanceof ProfileApplication) {
-				return umlLabelProvider.getImage(((ProfileApplication)element).getAppliedProfile());
+			if (element instanceof ProfileApplication) {
+				return umlLabelProvider.getImage(((ProfileApplication) element).getAppliedProfile());
 			}
 		default:
 			return null;

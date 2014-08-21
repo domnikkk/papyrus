@@ -35,6 +35,7 @@ import org.eclipse.papyrus.gmf.diagram.common.parser.IMaskManagedSemanticParser;
 import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.helper.MaskLabelHelper;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.papyrus.uml.tools.utils.ValueSpecificationUtil;
 import org.eclipse.uml2.uml.MultiplicityElement;
 import org.eclipse.uml2.uml.Property;
@@ -54,6 +55,7 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		return getPrintString(element, flags);
 	}
@@ -61,6 +63,7 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.UNEDITABLE_STATUS;
 	}
@@ -68,6 +71,7 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		return UnexecutableCommand.INSTANCE;
 	}
@@ -75,31 +79,32 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof MultiplicityElement)) {
+		if ((eObject != null) && (eObject instanceof MultiplicityElement)) {
 
-			MultiplicityElement multElt = (MultiplicityElement)eObject;
+			MultiplicityElement multElt = (MultiplicityElement) eObject;
 
 			// manage multiplicity
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_MULTIPLICITY))) {
+			if ((maskValues.contains(ICustomAppearance.DISP_MULTIPLICITY))) {
 
 				// If multiplicity is [1] (SysML default), only show when explicitly asked.
 				// TODO : add a case for default with multiplicity not set.
 				String lower = (multElt.getLowerValue() != null) ? ValueSpecificationUtil.getSpecificationValue(multElt.getLowerValue()) : "1";
 				String upper = (multElt.getLowerValue() != null) ? ValueSpecificationUtil.getSpecificationValue(multElt.getUpperValue()) : "1";
-				if(maskValues.contains(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY) || !("1".equals(lower) && "1".equals(upper))) {
+				if (maskValues.contains(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY) || !("1".equals(lower) && "1".equals(upper))) {
 
-					if(lower.equals(upper)) {
+					if (lower.equals(upper)) {
 						result = String.format(MULTIPLICITY_FORMAT_ALT, lower, upper);
 					} else {
 						result = String.format(MULTIPLICITY_FORMAT, lower, upper);
@@ -113,11 +118,12 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return EcorePackage.eINSTANCE.getEAnnotation_Details().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_LowerValue().equals(feature) || UMLPackage.eINSTANCE.getMultiplicityElement_UpperValue().equals(feature);
 			}
 		}
@@ -128,6 +134,7 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -135,17 +142,18 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof MultiplicityElement)) {
-			MultiplicityElement semElement = (MultiplicityElement)element;
+		if ((element != null) && (element instanceof MultiplicityElement)) {
+			MultiplicityElement semElement = (MultiplicityElement) element;
 
 			semanticElementsBeingParsed.add(semElement);
-			if(semElement.getLowerValue() != null) {
+			if (semElement.getLowerValue() != null) {
 				semanticElementsBeingParsed.add(semElement.getLowerValue());
 			}
-			if(semElement.getUpperValue() != null) {
+			if (semElement.getUpperValue() != null) {
 				semanticElementsBeingParsed.add(semElement.getUpperValue());
 			}
 		}
@@ -155,31 +163,34 @@ public class MultiplicityElementLabelParser implements IMaskManagedSemanticParse
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}
 
+	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_MULTIPLICITY, "Multiplicity");
+		masks.put(ICustomAppearance.DISP_MULTIPLICITY, "Multiplicity");
 		masks.put(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY, "Show default multiplicity");
 		return masks;
 	}
 
 	protected Collection<String> getMaskValues(IAdaptable element) {
-		View view = (View)element.getAdapter(View.class);
-		if(view == null) {
+		View view = (View) element.getAdapter(View.class);
+		if (view == null) {
 			return getDefaultValue(element);
 		}
 
 		Collection<String> result = MaskLabelHelper.getMaskValues(view);
-		if(result == null) {
+		if (result == null) {
 			result = getDefaultValue(element);
 		}
 		return result;
 	}
 
+	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_MULTIPLICITY);
+		return Arrays.asList(ICustomAppearance.DISP_MULTIPLICITY);
 	}
 }

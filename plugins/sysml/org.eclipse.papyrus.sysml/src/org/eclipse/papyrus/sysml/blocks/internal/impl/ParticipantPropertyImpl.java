@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.Property;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.internal.impl.ParticipantPropertyImpl#getEnd <em>End</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implements ParticipantProperty {
@@ -40,7 +40,7 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Property()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ParticipantPropertyImpl() {
@@ -68,7 +68,7 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetBase_Property() {
@@ -77,7 +77,7 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property basicGetEnd() {
@@ -86,19 +86,21 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
-			if(resolve)
+			if (resolve) {
 				return getBase_Property();
+			}
 			return basicGetBase_Property();
 		case BlocksPackage.PARTICIPANT_PROPERTY__END:
-			if(resolve)
+			if (resolve) {
 				return getEnd();
+			}
 			return basicGetEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -106,12 +108,12 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
 			return base_Property != null;
 		case BlocksPackage.PARTICIPANT_PROPERTY__END:
@@ -122,17 +124,17 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
-			setBase_Property((Property)newValue);
+			setBase_Property((Property) newValue);
 			return;
 		case BlocksPackage.PARTICIPANT_PROPERTY__END:
-			setEnd((Property)newValue);
+			setEnd((Property) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -140,7 +142,7 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -150,17 +152,17 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY:
-			setBase_Property((Property)null);
+			setBase_Property((Property) null);
 			return;
 		case BlocksPackage.PARTICIPANT_PROPERTY__END:
-			setEnd((Property)null);
+			setEnd((Property) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -168,16 +170,17 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getBase_Property() {
-		if(base_Property != null && base_Property.eIsProxy()) {
-			InternalEObject oldBase_Property = (InternalEObject)base_Property;
-			base_Property = (Property)eResolveProxy(oldBase_Property);
-			if(base_Property != oldBase_Property) {
-				if(eNotificationRequired())
+		if (base_Property != null && base_Property.eIsProxy()) {
+			InternalEObject oldBase_Property = (InternalEObject) base_Property;
+			base_Property = (Property) eResolveProxy(oldBase_Property);
+			if (base_Property != oldBase_Property) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));
+				}
 			}
 		}
 		return base_Property;
@@ -185,16 +188,17 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Property getEnd() {
-		if(end != null && end.eIsProxy()) {
-			InternalEObject oldEnd = (InternalEObject)end;
-			end = (Property)eResolveProxy(oldEnd);
-			if(end != oldEnd) {
-				if(eNotificationRequired())
+		if (end != null && end.eIsProxy()) {
+			InternalEObject oldEnd = (InternalEObject) end;
+			end = (Property) eResolveProxy(oldEnd);
+			if (end != oldEnd) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.PARTICIPANT_PROPERTY__END, oldEnd, end));
+				}
 			}
 		}
 		return end;
@@ -202,26 +206,28 @@ public class ParticipantPropertyImpl extends MinimalEObjectImpl.Container implem
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Property(Property newBase_Property) {
 		Property oldBase_Property = base_Property;
 		base_Property = newBase_Property;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.PARTICIPANT_PROPERTY__BASE_PROPERTY, oldBase_Property, base_Property));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setEnd(Property newEnd) {
 		Property oldEnd = end;
 		end = newEnd;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.PARTICIPANT_PROPERTY__END, oldEnd, end));
+		}
 	}
 
 } // ParticipantPropertyImpl

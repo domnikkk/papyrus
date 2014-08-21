@@ -29,11 +29,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.FeatureInjection} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FeatureInjectionItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -43,6 +44,7 @@ public class FeatureInjectionItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureInjectionItemProvider(AdapterFactory adapterFactory) {
@@ -53,6 +55,7 @@ public class FeatureInjectionItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,36 +72,38 @@ public class FeatureInjectionItemProvider
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FeatureInjection_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FeatureInjection_description_feature", "_UI_FeatureInjection_type"),
-				 ServicedescriptorsPackage.Literals.FEATURE_INJECTION__DESCRIPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FeatureInjection_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FeatureInjection_description_feature", "_UI_FeatureInjection_type"),
+						ServicedescriptorsPackage.Literals.FEATURE_INJECTION__DESCRIPTION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FeatureInjection)object).getDescription();
+		String label = ((FeatureInjection) object).getDescription();
 		return label == null || label.length() == 0 ?
-			getString("_UI_FeatureInjection_type") :
-			getString("_UI_FeatureInjection_type") + " " + label;
+				getString("_UI_FeatureInjection_type") :
+				getString("_UI_FeatureInjection_type") + " " + label;
 	}
 
 	/**
@@ -106,6 +111,7 @@ public class FeatureInjectionItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -113,9 +119,9 @@ public class FeatureInjectionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FeatureInjection.class)) {
-			case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ServicedescriptorsPackage.FEATURE_INJECTION__DESCRIPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -125,6 +131,7 @@ public class FeatureInjectionItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -136,6 +143,7 @@ public class FeatureInjectionItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

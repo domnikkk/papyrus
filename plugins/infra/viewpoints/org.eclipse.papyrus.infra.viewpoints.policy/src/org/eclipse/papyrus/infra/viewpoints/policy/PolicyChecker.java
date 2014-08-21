@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.Stakeholder;
 
 /**
  * The <code>PolicyChecker</code> enforces the viewpoints configuration as a policy in the user interface
- * 
+ *
  * @author Laurent Wouters
  */
 public class PolicyChecker {
@@ -99,7 +99,7 @@ public class PolicyChecker {
 
 	/**
 	 * Loads a built-in configuration
-	 * 
+	 *
 	 * @param name
 	 *            The name of the configuration
 	 * @return The loaded configuration
@@ -112,17 +112,19 @@ public class PolicyChecker {
 
 	/**
 	 * Loads a viewpoints configuration from the given location.
-	 * 
+	 *
 	 * @param location
 	 *            The location from where to load the configuration
 	 * @return The loaded configuration, or <code>null</code> if the operation failed
 	 */
 	public static PapyrusConfiguration loadConfigurationFrom(String location) {
 		try {
-			if (location == null)
+			if (location == null) {
 				return null;
-			if (location.isEmpty())
+			}
+			if (location.isEmpty()) {
 				return null;
+			}
 			URI uri = null;
 			if (location.startsWith("platform:/")) {
 				uri = URI.createURI(location);
@@ -131,8 +133,9 @@ public class PolicyChecker {
 			}
 			location = uri.toString();
 			PapyrusConfiguration config = CONFIGURATIONS_CACHE.get(location);
-			if (config != null)
+			if (config != null) {
 				return config;
+			}
 			Resource res = CONFIGURATIONS_RESOURCE_SET.getResource(uri, true);
 			config = (PapyrusConfiguration) res.getContents().get(0);
 			CONFIGURATIONS_CACHE.put(location, config);
@@ -144,7 +147,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the default configuration
-	 * 
+	 *
 	 * @return The default configuration
 	 */
 	public static PapyrusConfiguration getDefaultConfiguration() {
@@ -157,7 +160,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the viewpoints contributing to the given viewpoint
-	 * 
+	 *
 	 * @param viewpoint
 	 *            A viewpoint
 	 * @return A collection of the other viewpoints contributing to the given one
@@ -177,25 +180,29 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the configurations contributing to the given configuration
-	 * 
+	 *
 	 * @param config
 	 *            A configuration
 	 * @return A collection of the contributing configurations
 	 */
 	private static Collection<PapyrusConfiguration> getContributionsTo(PapyrusConfiguration config) {
-		if (CONTRIBUTIONS_CACHE == null)
+		if (CONTRIBUTIONS_CACHE == null) {
 			loadContributions();
+		}
 		Collection<PapyrusConfiguration> result = CONTRIBUTIONS_CACHE.get(config);
-		if (result != null)
+		if (result != null) {
 			return result;
+		}
 		result = new ArrayList<PapyrusConfiguration>();
 		CONTRIBUTIONS_CACHE.put(config, result);
 		for (Map.Entry<String, PapyrusConfiguration> entry : CONFIGURATIONS_CACHE.entrySet()) {
 			if (entry.getValue() == config) {
 				Collection<String> contribURIs = CONTRIBUTIONS_DEFINITON.get(entry.getKey());
-				if (contribURIs != null)
-					for (String uri : contribURIs)
+				if (contribURIs != null) {
+					for (String uri : contribURIs) {
 						result.add(loadConfigurationFrom(uri));
+					}
+				}
 				return result;
 			}
 		}
@@ -233,7 +240,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the canonical (absolute) URI from a potentially plugin-relative URI
-	 * 
+	 *
 	 * @param plugin
 	 *            The container plugin
 	 * @param uri
@@ -241,15 +248,16 @@ public class PolicyChecker {
 	 * @return The canonical (absolute) URI
 	 */
 	private static String getCanonicalURI(String plugin, String uri) {
-		if (uri.startsWith(PreferenceConstants.P_CONF_PATH_SCHEME_PLUGIN_VALUE))
+		if (uri.startsWith(PreferenceConstants.P_CONF_PATH_SCHEME_PLUGIN_VALUE)) {
 			return uri;
+		}
 		return PreferenceConstants.P_CONF_PATH_SCHEME_PLUGIN_VALUE + plugin + "/" + uri;
 	}
 
 
 	/**
 	 * Gets the preference store for the viewpoints-related preferences
-	 * 
+	 *
 	 * @return The preference store for the viewpoints-related preferences
 	 */
 	public static IPreferenceStore getPreferences() {
@@ -264,18 +272,19 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the policy checker currently enforcing the viewpoints configuration
-	 * 
+	 *
 	 * @return The current policy checker
 	 */
 	public static PolicyChecker getCurrent() {
-		if (currentPolicyChecker == null)
+		if (currentPolicyChecker == null) {
 			currentPolicyChecker = new PolicyChecker();
+		}
 		return currentPolicyChecker;
 	}
 
 	/**
 	 * Sets the policy checker currently enforcing the viewpoints configuration
-	 * 
+	 *
 	 * @param pc
 	 *            The new policy checker
 	 */
@@ -316,7 +325,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the configuration enforced by this object
-	 * 
+	 *
 	 * @return The configuration
 	 */
 	public PapyrusConfiguration getConfiguration() {
@@ -325,7 +334,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the stakeholder represented by this object
-	 * 
+	 *
 	 * @return The stakeholder
 	 */
 	public Stakeholder getStakeholder() {
@@ -334,7 +343,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the viewpoint enforced by this object
-	 * 
+	 *
 	 * @return The enforced viewpoint
 	 */
 	public PapyrusViewpoint getViewpoint() {
@@ -360,12 +369,14 @@ public class PolicyChecker {
 		} else {
 			String scheme = store.getString(PreferenceConstants.P_CONF_PATH_SCHEME);
 			String path = store.getString(PreferenceConstants.P_CONF_PATH);
-			if (PreferenceConstants.P_CONF_PATH_SCHEME_WORKSPACE_VALUE.equals(scheme))
+			if (PreferenceConstants.P_CONF_PATH_SCHEME_WORKSPACE_VALUE.equals(scheme)) {
 				path = PreferenceConstants.P_CONF_PATH_SCHEME_WORKSPACE_VALUE + path;
+			}
 			this.configuration = loadConfigurationFrom(path);
 		}
-		if (this.configuration == null)
+		if (this.configuration == null) {
 			this.configuration = CONFIG_BUILTIN_DEFAULT;
+		}
 
 		if (prefViewpoint != null && !prefViewpoint.isEmpty()) {
 			for (Stakeholder stakeholder : this.configuration.getStakeholders()) {
@@ -386,7 +397,7 @@ public class PolicyChecker {
 
 	/**
 	 * Initializes this policy checker with the default configuration and viewpoint
-	 * 
+	 *
 	 * @param oneViewPerElem
 	 *            Force only one type of view per model element
 	 */
@@ -401,7 +412,7 @@ public class PolicyChecker {
 
 	/**
 	 * Initializes this policy checker with the given configuration and viewpoint
-	 * 
+	 *
 	 * @param config
 	 *            The configuration to enforce
 	 * @param viewpoint
@@ -430,13 +441,14 @@ public class PolicyChecker {
 	private void buildApplicableViewpoints() {
 		applicableViewpoints = new ArrayList<PapyrusViewpoint>();
 		buildApplicableViewpoints(selectedViewpoint);
-		for (PapyrusViewpoint vp : getContributionsTo(selectedViewpoint))
+		for (PapyrusViewpoint vp : getContributionsTo(selectedViewpoint)) {
 			buildApplicableViewpoints(vp);
+		}
 	}
 
 	/**
 	 * Builds the <code>applicableViewpoints</code> member from the given viewpoint by adding it, as well as its parent
-	 * 
+	 *
 	 * @param from
 	 *            The top viewpoint
 	 */
@@ -450,7 +462,7 @@ public class PolicyChecker {
 
 	/**
 	 * Determines whether the given element can be the root of a view owned by the given object
-	 * 
+	 *
 	 * @param element
 	 *            The possible root element
 	 * @param owner
@@ -460,20 +472,24 @@ public class PolicyChecker {
 	 * @return <code>true</code> if the element can be the root
 	 */
 	public boolean canHaveNewView(EObject element, EObject owner, ViewPrototype prototype) {
-		if (prototype == null)
+		if (prototype == null) {
 			return false;
-		if (!matchesProfiles(prototype.configuration, profileHelper.getAppliedProfiles(owner)))
+		}
+		if (!matchesProfiles(prototype.configuration, profileHelper.getAppliedProfiles(owner))) {
 			return false;
-		if (!matchesProfiles(prototype.configuration, profileHelper.getAppliedProfiles(element)))
+		}
+		if (!matchesProfiles(prototype.configuration, profileHelper.getAppliedProfiles(element))) {
 			return false;
-		if (!matchesCreationRoot(prototype.configuration, element, profileHelper.getAppliedStereotypes(element), prototype.getViewCountOn(element)))
+		}
+		if (!matchesCreationRoot(prototype.configuration, element, profileHelper.getAppliedStereotypes(element), prototype.getViewCountOn(element))) {
 			return false;
+		}
 		return true;
 	}
 
 	/**
 	 * Gets the insertion data of the given element in the given diagram
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram
 	 * @param parent
@@ -484,17 +500,19 @@ public class PolicyChecker {
 	 */
 	public ModelAddData getChildAddData(Diagram diagram, EObject parent, EObject child) {
 		ViewPrototype prototype = ViewPrototype.get(diagram);
-		if (prototype == null)
+		if (prototype == null) {
 			// This diagram is not in the current policy
 			return new ModelAddData(false);
+		}
 
 		PapyrusDiagram config = (PapyrusDiagram) prototype.configuration;
 		Collection<EClass> stereotypes = profileHelper.getAppliedStereotypes(child);
 		while (config != null) {
 			for (ChildRule rule : config.getChildRules()) {
 				int result = allows(rule, parent.eClass(), child.eClass(), stereotypes);
-				if (result != RESULT_UNKNOWN)
+				if (result != RESULT_UNKNOWN) {
 					return new ModelAddData((result == RESULT_PERMIT), rule.getInsertionPath());
+				}
 			}
 			config = (PapyrusDiagram) config.getParent();
 		}
@@ -503,7 +521,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the insertion data of the given element in the given diagram
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram
 	 * @param parentType
@@ -514,16 +532,18 @@ public class PolicyChecker {
 	 */
 	public ModelAddData getChildAddData(Diagram diagram, EClass parentType, EClass childType) {
 		ViewPrototype prototype = ViewPrototype.get(diagram);
-		if (prototype == null)
+		if (prototype == null) {
 			// This diagram is not in the current policy
 			return new ModelAddData(false);
+		}
 
 		PapyrusDiagram config = (PapyrusDiagram) prototype.configuration;
 		while (config != null) {
 			for (ChildRule rule : config.getChildRules()) {
 				int result = allows(rule, parentType, childType, new ArrayList<EClass>(0));
-				if (result != RESULT_UNKNOWN)
+				if (result != RESULT_UNKNOWN) {
 					return new ModelAddData((result == RESULT_PERMIT), rule.getInsertionPath());
+				}
 			}
 			config = (PapyrusDiagram) config.getParent();
 		}
@@ -532,7 +552,7 @@ public class PolicyChecker {
 
 	/**
 	 * Determines whether the given diagram can have the palette element with the given entry ID
-	 * 
+	 *
 	 * @param diagram
 	 *            The diagram
 	 * @param entryID
@@ -541,16 +561,18 @@ public class PolicyChecker {
 	 */
 	public boolean isInPalette(Diagram diagram, String entryID) {
 		ViewPrototype prototype = ViewPrototype.get(diagram);
-		if (prototype == null)
+		if (prototype == null) {
 			// This diagram is not in the current policy
 			return false;
+		}
 
 		PapyrusDiagram config = (PapyrusDiagram) prototype.configuration;
 		while (config != null) {
 			for (PaletteRule rule : config.getPaletteRules()) {
 				int result = allows(rule, entryID);
-				if (result != RESULT_UNKNOWN)
+				if (result != RESULT_UNKNOWN) {
 					return (result == RESULT_PERMIT);
+				}
 			}
 			config = (PapyrusDiagram) config.getParent();
 		}
@@ -559,7 +581,7 @@ public class PolicyChecker {
 
 	/**
 	 * Determines whether the given view configuration element is part of the current viewpoint
-	 * 
+	 *
 	 * @param config
 	 *            A view configuration element
 	 * @return <code>true</code> if the element is part of the current viewpoint
@@ -568,8 +590,9 @@ public class PolicyChecker {
 		for (PapyrusViewpoint viewpoint : applicableViewpoints) {
 			for (ModelKind kind : viewpoint.getModelKinds()) {
 				PapyrusView view = (PapyrusView) kind;
-				if (EcoreUtil.equals(view, config))
+				if (EcoreUtil.equals(view, config)) {
 					return true;
+				}
 			}
 		}
 		return false;
@@ -577,7 +600,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets a collection of all the view prototypes allowed by the active policy
-	 * 
+	 *
 	 * @return A collection of view prototypes
 	 */
 	public Collection<ViewPrototype> getAllPrototypes() {
@@ -586,8 +609,9 @@ public class PolicyChecker {
 			for (ModelKind kind : viewpoint.getModelKinds()) {
 				PapyrusView view = (PapyrusView) kind;
 				ViewPrototype proto = ViewPrototype.get(view);
-				if (proto != null)
+				if (proto != null) {
 					result.add(proto);
+				}
 			}
 		}
 		return result;
@@ -595,7 +619,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets a list of the prototypes that can be instantiated with the given element as owner according to the policy
-	 * 
+	 *
 	 * @param element
 	 *            The element to test
 	 * @return A list of the prototypes that can be instantiated
@@ -607,15 +631,18 @@ public class PolicyChecker {
 		for (PapyrusViewpoint viewpoint : applicableViewpoints) {
 			for (ModelKind kind : viewpoint.getModelKinds()) {
 				PapyrusView view = (PapyrusView) kind;
-				if (!matchesProfiles(view, profiles))
+				if (!matchesProfiles(view, profiles)) {
 					continue;
+				}
 				ViewPrototype proto = ViewPrototype.get(view);
-				if (proto == null)
+				if (proto == null) {
 					continue;
+				}
 				int count = proto.getOwnedViewCount(element);
 				OwningRule rule = matchesCreationOwner(view, element, stereotypes, count);
-				if (rule == null)
+				if (rule == null) {
 					continue;
+				}
 				if (rule.getNewModelPath() != null && !rule.getNewModelPath().isEmpty()) {
 					// Auto-created root => always OK
 					result.add(proto);
@@ -634,7 +661,7 @@ public class PolicyChecker {
 
 	/**
 	 * Gets the owning rule relevant for the given view prototype and owner
-	 * 
+	 *
 	 * @param prototype
 	 *            The view prototype
 	 * @param owner
@@ -650,7 +677,7 @@ public class PolicyChecker {
 
 	/**
 	 * Tries to match a view configuration from the given info
-	 * 
+	 *
 	 * @param implem
 	 *            The implementation ID
 	 * @param owner
@@ -663,8 +690,9 @@ public class PolicyChecker {
 		for (PapyrusViewpoint viewpoint : applicableViewpoints) {
 			for (ModelKind kind : viewpoint.getModelKinds()) {
 				PapyrusView view = (PapyrusView) kind;
-				if (matches(view, implem, owner, root))
+				if (matches(view, implem, owner, root)) {
 					return view;
+				}
 			}
 		}
 		return null;
@@ -672,7 +700,7 @@ public class PolicyChecker {
 
 	/**
 	 * Tries to match a view configuration with the given info
-	 * 
+	 *
 	 * @param view
 	 *            A view configuration
 	 * @param implem
@@ -684,28 +712,34 @@ public class PolicyChecker {
 	 * @return <code>true</code> if the configuration matches
 	 */
 	private boolean matches(PapyrusView view, String implem, EObject owner, EObject root) {
-		if (!ViewPrototype.isNatural(view))
+		if (!ViewPrototype.isNatural(view)) {
 			return false;
-		if (!view.getImplementationID().equals(implem))
+		}
+		if (!view.getImplementationID().equals(implem)) {
 			return false;
+		}
 		if (owner != null) {
-			if (!matchesProfiles(view, profileHelper.getAppliedProfiles(owner)))
+			if (!matchesProfiles(view, profileHelper.getAppliedProfiles(owner))) {
 				return false;
-			if (!matchesExistingOwner(view, owner, profileHelper.getAppliedStereotypes(owner)))
+			}
+			if (!matchesExistingOwner(view, owner, profileHelper.getAppliedStereotypes(owner))) {
 				return false;
+			}
 		}
 		if (root != null) {
-			if (!matchesProfiles(view, profileHelper.getAppliedProfiles(root)))
+			if (!matchesProfiles(view, profileHelper.getAppliedProfiles(root))) {
 				return false;
-			if (!matchesExistingRoot(view, root, profileHelper.getAppliedStereotypes(root)))
+			}
+			if (!matchesExistingRoot(view, root, profileHelper.getAppliedStereotypes(root))) {
 				return false;
+			}
 		}
 		return true;
 	}
 
 	/**
 	 * Checks whether the given set of profiles matches the requirements of the given view
-	 * 
+	 *
 	 * @param view
 	 *            The view to check against
 	 * @param profiles
@@ -715,9 +749,11 @@ public class PolicyChecker {
 	private boolean matchesProfiles(PapyrusView view, Collection<EPackage> profiles) {
 		PapyrusView current = view;
 		while (current != null) {
-			for (EPackage profile : view.getProfiles())
-				if (!profiles.contains(profile))
+			for (EPackage profile : view.getProfiles()) {
+				if (!profiles.contains(profile)) {
 					return false;
+				}
+			}
 			current = current.getParent();
 		}
 		return true;
@@ -725,7 +761,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks whether the given type of owning element with applied stereotypes is allowed for the given view
-	 * 
+	 *
 	 * @param view
 	 *            The view to check against
 	 * @param type
@@ -739,10 +775,12 @@ public class PolicyChecker {
 		while (current != null) {
 			for (OwningRule rule : current.getOwningRules()) {
 				int result = allows(rule, owner, stereotypes);
-				if (result == RESULT_DENY)
+				if (result == RESULT_DENY) {
 					return false;
-				if (result == RESULT_PERMIT)
+				}
+				if (result == RESULT_PERMIT) {
 					return true;
+				}
 			}
 			current = current.getParent();
 		}
@@ -751,7 +789,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks whether the given view can be owned by an element of the given type, applied with the given stereotypes if the cardinality is already the given amount
-	 * 
+	 *
 	 * @param view
 	 *            The view to check against
 	 * @param owner
@@ -767,10 +805,12 @@ public class PolicyChecker {
 		while (current != null) {
 			for (OwningRule rule : current.getOwningRules()) {
 				int allow = allows(rule, owner, stereotypes);
-				if (allow == RESULT_DENY)
+				if (allow == RESULT_DENY) {
 					return null;
-				if (allow == RESULT_UNKNOWN)
+				}
+				if (allow == RESULT_UNKNOWN) {
 					continue;
+				}
 				int multiplicity = rule.getMultiplicity();
 				if (multiplicity == -1 || count < multiplicity) {
 					if (allows(rule, owner)) {
@@ -785,7 +825,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks whether the given type of root element with applied stereotypes is allowed for the given view
-	 * 
+	 *
 	 * @param view
 	 *            The view to check against
 	 * @param root
@@ -799,10 +839,12 @@ public class PolicyChecker {
 		while (current != null) {
 			for (ModelRule rule : current.getModelRules()) {
 				int result = allows(rule, root, stereotypes);
-				if (result == RESULT_DENY)
+				if (result == RESULT_DENY) {
 					return false;
-				if (result == RESULT_PERMIT)
+				}
+				if (result == RESULT_PERMIT) {
 					return true;
+				}
 			}
 			current = current.getParent();
 		}
@@ -811,7 +853,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks whether the given view can have the given root element of the given type, applied with the given stereotypes if the cardinality is already the given amount
-	 * 
+	 *
 	 * @param view
 	 *            The view to check against
 	 * @param root
@@ -827,13 +869,16 @@ public class PolicyChecker {
 		while (current != null) {
 			for (ModelRule rule : current.getModelRules()) {
 				int allow = allows(rule, root, stereotypes);
-				if (allow == RESULT_DENY)
+				if (allow == RESULT_DENY) {
 					return false;
-				if (allow == RESULT_UNKNOWN)
+				}
+				if (allow == RESULT_UNKNOWN) {
 					continue;
+				}
 				int multiplicity = (oneViewPerElem ? 1 : rule.getMultiplicity());
-				if (multiplicity == -1 || count < multiplicity)
+				if (multiplicity == -1 || count < multiplicity) {
 					return true;
+				}
 			}
 			current = current.getParent();
 		}
@@ -842,7 +887,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks an owner's type against a rule
-	 * 
+	 *
 	 * @param rule
 	 *            The owning rule
 	 * @param owner
@@ -855,9 +900,11 @@ public class PolicyChecker {
 		EClass c = rule.getElement();
 		if (c == null || c.isSuperTypeOf(owner.eClass())) {
 			// matching type => check the application of the required stereotypes
-			for (EClass stereotype : rule.getStereotypes())
-				if (!stereotypes.contains(stereotype))
+			for (EClass stereotype : rule.getStereotypes()) {
+				if (!stereotypes.contains(stereotype)) {
 					return RESULT_UNKNOWN;
+				}
+			}
 			return rule.isPermit() ? RESULT_PERMIT : RESULT_DENY;
 		} else {
 			// type is not matching => unknown
@@ -867,7 +914,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks whether the given owning rule will allow to derive an auto-created root
-	 * 
+	 *
 	 * @param rule
 	 *            The owning rule
 	 * @param owner
@@ -876,16 +923,19 @@ public class PolicyChecker {
 	 */
 	private boolean allows(OwningRule rule, EObject owner) {
 		List<ModelAutoCreate> list = rule.getNewModelPath();
-		if (list == null || list.isEmpty())
+		if (list == null || list.isEmpty()) {
 			return true;
+		}
 		EObject current = owner;
 		for (ModelAutoCreate elem : list) {
 			EReference ref = elem.getFeature();
-			if (ref.isMany())
+			if (ref.isMany()) {
 				return true;
+			}
 			Object e = current.eGet(ref);
-			if (e == null)
+			if (e == null) {
 				return true;
+			}
 			current = (EObject) e;
 		}
 		return false;
@@ -893,7 +943,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks a root element's type against a rule
-	 * 
+	 *
 	 * @param rule
 	 *            The modeling rule
 	 * @param element
@@ -907,14 +957,14 @@ public class PolicyChecker {
 		if (c == null || c.isSuperTypeOf(element.eClass())) {
 			// matching type => check the application of the required stereotypes
 			// each stereotype required to match the model rule should be applied on the element
-			for (EClass stereotype : rule.getStereotypes()){
+			for (EClass stereotype : rule.getStereotypes()) {
 				if (!stereotypes.contains(stereotype)) {
 					return RESULT_UNKNOWN;
 				}
 			}
 			// check the rule
 			boolean ruleMatches = RuleConstraintManager.getInstance().matchRule(rule, element);
-			if(!ruleMatches) {
+			if (!ruleMatches) {
 				return RESULT_UNKNOWN;
 			}
 			return rule.isPermit() ? RESULT_PERMIT : RESULT_DENY;
@@ -926,7 +976,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks a child insertion against a rule
-	 * 
+	 *
 	 * @param rule
 	 *            The insertion rule
 	 * @param origin
@@ -943,9 +993,11 @@ public class PolicyChecker {
 		if ((ce == null || ce.isSuperTypeOf(element))
 				&& (co == null || co.isSuperTypeOf(origin))) {
 			// matching type => check the application of the required stereotypes
-			for (EClass stereotype : rule.getStereotypes())
-				if (!stereotypes.contains(stereotype))
+			for (EClass stereotype : rule.getStereotypes()) {
+				if (!stereotypes.contains(stereotype)) {
 					return RESULT_UNKNOWN;
+				}
+			}
 			return rule.isPermit() ? RESULT_PERMIT : RESULT_DENY;
 		} else {
 			// type is not matching => unknown
@@ -955,7 +1007,7 @@ public class PolicyChecker {
 
 	/**
 	 * Checks a palette element against a rule
-	 * 
+	 *
 	 * @param rule
 	 *            The palette rule
 	 * @param toolID
@@ -968,8 +1020,9 @@ public class PolicyChecker {
 		applies = applies || (elem.length() == 0);
 		applies = applies || (elem != null && elem.equals(toolID));
 		applies = applies || (elem != null && elem.endsWith("*") && toolID.startsWith(elem.substring(0, elem.length() - 1)));
-		if (applies)
+		if (applies) {
 			return rule.isPermit() ? RESULT_PERMIT : RESULT_DENY;
+		}
 		return RESULT_UNKNOWN;
 	}
 }

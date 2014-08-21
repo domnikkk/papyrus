@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class DoubleClickListener implements Listener {
 	protected TreeViewer treeViewer;
 
 	/**
-	 * 
+	 *
 	 */
 	public DoubleClickListener() {
 		super();
@@ -42,62 +42,63 @@ public class DoubleClickListener implements Listener {
 
 	/**
 	 * Handle event.
-	 * 
+	 *
 	 * @param e
-	 *        the e
+	 *            the e
 	 */
 	public void handleEvent(Event e) {
-		if((e.widget != null) && (e.widget.getData() != null) && (e.widget.getData() instanceof AppliedStereotypePropertyTreeObject)) {
-			AppliedStereotypePropertyTreeObject pto = (AppliedStereotypePropertyTreeObject)e.widget.getData();
-			if((pto.getProperty() != null) && pto.getProperty().isReadOnly())
+		if ((e.widget != null) && (e.widget.getData() != null) && (e.widget.getData() instanceof AppliedStereotypePropertyTreeObject)) {
+			AppliedStereotypePropertyTreeObject pto = (AppliedStereotypePropertyTreeObject) e.widget.getData();
+			if ((pto.getProperty() != null) && pto.getProperty().isReadOnly()) {
 				return;
+			}
 		}
 		int index = getSelectionIndex();
 		TreeItem item = getSelection();
-		if(item != null) {
+		if (item != null) {
 			itemDClicked(item, index);
 		}
 	}
 
 	/**
 	 * When doubleclicked : opens a dialog to allow edition of a new PrimitiveType.
-	 * 
+	 *
 	 * @param item
-	 *        the item
+	 *            the item
 	 * @param index
-	 *        the index
+	 *            the index
 	 * @param selectedElt
-	 *        the element that owns the stereotype
+	 *            the element that owns the stereotype
 	 * @param value
-	 *        the current value or list of values of the property if isMultivalued
+	 *            the current value or list of values of the property if isMultivalued
 	 * @param isMultivalued
-	 *        is the property multivalued or not
+	 *            is the property multivalued or not
 	 * @param selectedProp
-	 *        the selected property
+	 *            the selected property
 	 * @param currentStereotype
-	 *        the stereotype associated to selectedProp
+	 *            the stereotype associated to selectedProp
 	 */
 	protected void itemDClicked(TreeItem item, int index) {
-		if(!(item.getData() instanceof ValueTreeObject)) {
+		if (!(item.getData() instanceof ValueTreeObject)) {
 			return;
 		}
-		ValueTreeObject object = (ValueTreeObject)item.getData();
+		ValueTreeObject object = (ValueTreeObject) item.getData();
 
-		if(object instanceof ValueTreeObject) {
-			((ValueTreeObject)object).editMe();
+		if (object instanceof ValueTreeObject) {
+			object.editMe();
 		}
 	}
 
 	/**
 	 * Gets the selection index.
-	 * 
+	 *
 	 * @return the selection index
 	 */
 	private int getSelectionIndex() {
 		int index = -1;
 
 		TreeItem selectedItem = getSelection();
-		if(selectedItem != null) {
+		if (selectedItem != null) {
 			index = treeViewer.getTree().indexOf(selectedItem);
 		}
 		return index;
@@ -105,15 +106,15 @@ public class DoubleClickListener implements Listener {
 
 	/**
 	 * Gets the selection.
-	 * 
+	 *
 	 * @return the selection
 	 */
 	private TreeItem getSelection() {
 		TreeItem item = null;
 
-		if(treeViewer != null) {
+		if (treeViewer != null) {
 			TreeItem[] selectedItems = treeViewer.getTree().getSelection();
-			if((selectedItems != null) && (selectedItems.length == 1)) {
+			if ((selectedItems != null) && (selectedItems.length == 1)) {
 				item = selectedItems[0];
 			}
 		}

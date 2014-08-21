@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,35 +52,35 @@ public interface IGroupRequest {
 
 	/**
 	 * Get the label of the request
-	 * 
+	 *
 	 * @return
 	 */
 	public String getLabel();
 
 	public IContainerNodeDescriptor getNodeDescpitor();
 
-	//	/**
-	//	 * Get the absolute bounds of the initial target.
-	//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
-	//	 * @return
-	//	 */
-	//	public Rectangle getIntialTargetAbsoluteBounds();
-	//	/**
-	//	 * Set the absolute bounds of the initial target.
-	//	 * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
-	//	 * @return
-	//	 */
-	//	public void setIntialTargetAbsoluteBounds(Rectangle bounds);
+	// /**
+	// * Get the absolute bounds of the initial target.
+	// * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
+	// * @return
+	// */
+	// public Rectangle getIntialTargetAbsoluteBounds();
+	// /**
+	// * Set the absolute bounds of the initial target.
+	// * For example for changeBoudnsRequest in group. This will represent the bounds of the group after the bounds have changed
+	// * @return
+	// */
+	// public void setIntialTargetAbsoluteBounds(Rectangle bounds);
 	/**
 	 * Map which link an An Reference to it's values
-	 * 
+	 *
 	 * @return
 	 */
 	public Multimap<EReference, EObject> getParentEReferenceMap();
 
 	/**
 	 * Map which link an EObject to its {@link EReference} of the current target
-	 * 
+	 *
 	 * @return
 	 */
 	public Multimap<EReference, EObject> getChildrenEReferenceMap();

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,41 +38,43 @@ public class CustomLinkMappingHelper implements ILinkMappingHelper {
 	public Collection<?> getSource(Element link) {
 		CommonSourceUMLSwitch umlSwitch = new CommonSourceUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseAssociation(org.eclipse.uml2.uml.Association object) {
 
 				java.util.Collection<?> ends = Collections.emptySet();
-				
+
 				// Binary associations only in this diagram.
 				// Other expectation:
 				// - property ends are typed by Classifiers
 				// - property ends are type is not null
-				
-				if(object.getMemberEnds().size() == 2) {
-					
+
+				if (object.getMemberEnds().size() == 2) {
+
 					Property semanticTarget = object.getMemberEnds().get(1);
-					
+
 					// The proposed graphical target is a representation of the type of
 					// the semantic source.
 					Type sourceType = semanticTarget.getType();
 					if ((sourceType != null) && (sourceType instanceof Classifier)) {
-						ends = Arrays.asList(new EObject[]{sourceType});
+						ends = Arrays.asList(new EObject[] { sourceType });
 					}
-					
+
 				} else {
 					// TODO: log warning here - can only drop binary associations in this diagram...
 				}
-				
+
 				return ends;
 			};
 
-			//			public java.util.Collection<?> caseAssociationClass(org.eclipse.uml2.uml.AssociationClass object) {
-			//				return object.getEndTypes();
-			//			};
+			// public java.util.Collection<?> caseAssociationClass(org.eclipse.uml2.uml.AssociationClass object) {
+			// return object.getEndTypes();
+			// };
 
-			//			public java.util.Collection<?> caseGeneralizationSet(org.eclipse.uml2.uml.GeneralizationSet object) {
-			//				return object.getGeneralizations();
-			//			};
+			// public java.util.Collection<?> caseGeneralizationSet(org.eclipse.uml2.uml.GeneralizationSet object) {
+			// return object.getGeneralizations();
+			// };
 
+			@Override
 			public java.util.Collection<?> caseInterfaceRealization(org.eclipse.uml2.uml.InterfaceRealization object) {
 				ArrayList<EObject> result = new ArrayList<EObject>();
 				result.add(object.getImplementingClassifier());
@@ -89,41 +91,43 @@ public class CustomLinkMappingHelper implements ILinkMappingHelper {
 	public Collection<?> getTarget(Element link) {
 		CommonTargetUMLSwitch umlSwitch = new CommonTargetUMLSwitch() {
 
+			@Override
 			public java.util.Collection<?> caseAssociation(org.eclipse.uml2.uml.Association object) {
-				
+
 				java.util.Collection<?> ends = Collections.emptySet();
-				
+
 				// Binary associations only in this diagram.
 				// Other expectation:
 				// - property ends are typed by Classifiers
 				// - property ends are type is not null
-				
-				if(object.getMemberEnds().size() == 2) {
-					
+
+				if (object.getMemberEnds().size() == 2) {
+
 					Property semanticSource = object.getMemberEnds().get(0);
-					
+
 					// The proposed graphical target is a representation of the type of
 					// the semantic source.
 					Type sourceType = semanticSource.getType();
 					if ((sourceType != null) && (sourceType instanceof Classifier)) {
-						ends = Arrays.asList(new EObject[]{sourceType});
+						ends = Arrays.asList(new EObject[] { sourceType });
 					}
-										
+
 				} else {
 					// TODO: log warning here - can only drop binary associations in this diagram...
 				}
-				
+
 				return ends;
 			};
 
-			//			public java.util.Collection<?> caseAssociationClass(org.eclipse.uml2.uml.AssociationClass object) {
-			//				return object.getEndTypes();
-			//			};
+			// public java.util.Collection<?> caseAssociationClass(org.eclipse.uml2.uml.AssociationClass object) {
+			// return object.getEndTypes();
+			// };
 
-			//			public java.util.Collection<?> caseGeneralizationSet(org.eclipse.uml2.uml.GeneralizationSet object) {
-			//				return object.getGeneralizations();
-			//			};
+			// public java.util.Collection<?> caseGeneralizationSet(org.eclipse.uml2.uml.GeneralizationSet object) {
+			// return object.getGeneralizations();
+			// };
 
+			@Override
 			public java.util.Collection<?> caseInterfaceRealization(org.eclipse.uml2.uml.InterfaceRealization object) {
 				ArrayList<EObject> result = new ArrayList<EObject>();
 				result.add(object.getContract());

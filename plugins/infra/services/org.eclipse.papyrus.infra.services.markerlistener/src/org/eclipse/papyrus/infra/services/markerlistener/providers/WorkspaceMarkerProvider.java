@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 431618
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.markerlistener.providers;
 
@@ -62,9 +62,9 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 
 		IFile file = getFile(resource);
 
-		if(file != null) {
+		if (file != null) {
 			// TODO: quite inefficient, since requested for each element (could cache markers, already done
-			// by findMarkers operation?) 
+			// by findMarkers operation?)
 			IMarker[] markers = file.findMarkers(type, true, 0);
 			return PapyrusMarkerAdapter.wrap(resource, Arrays.asList(markers));
 		}
@@ -78,7 +78,7 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 	@Override
 	protected void doCreateMarker(Resource resource, Diagnostic diagnostic) throws CoreException {
 
-		if(MarkerListenerUtils.eclipseResourcesUtil != null) {
+		if (MarkerListenerUtils.eclipseResourcesUtil != null) {
 			MarkerListenerUtils.eclipseResourcesUtil.createMarkers(resource, diagnostic);
 		}
 	}
@@ -93,14 +93,14 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 	}
 
 	public void deleteMarkers(Resource resource, IProgressMonitor monitor, String markerType, boolean includeSubtypes) throws CoreException {
-		if(MarkerListenerUtils.eclipseResourcesUtil != null) {
+		if (MarkerListenerUtils.eclipseResourcesUtil != null) {
 			SubMonitor sub = SubMonitor.convert(monitor, IProgressMonitor.UNKNOWN);
-			//FIXME Shall only delete markers of the given markerType 
+			// FIXME Shall only delete markers of the given markerType
 			MarkerListenerUtils.eclipseResourcesUtil.deleteMarkers(resource);
 			sub.done();
 		}
 	}
-	
+
 	public boolean hasMarkers(Resource context, EObject object) {
 		// Yes, it's an inaccurate answer, but false positives are explicitly permitted by the contract.
 		// We can't take the time to iterate the list, and the cache only has to be populated once anyways
@@ -151,7 +151,7 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 			Collection<? extends IPapyrusMarker> markers = markerCache.getMarkers(context, object);
-			if(markers.isEmpty()) {
+			if (markers.isEmpty()) {
 				// Nothing to do
 				return CommandResult.newOKCommandResult();
 			}
@@ -160,21 +160,21 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 
 			Collection<MarkerData> markerData = new ArrayList<MarkerData>();
 
-			for(IPapyrusMarker marker : markers) {
+			for (IPapyrusMarker marker : markers) {
 				try {
 					// Capture the marker details for undo, to recreate the marker
 					markerData.add(new MarkerData(marker.getType(), marker.getAttributes()));
 
 					marker.delete();
 				} catch (CoreException e) {
-					if(exception == null) {
+					if (exception == null) {
 						// Record the first one (others should be similar)
 						exception = e;
 					}
 				}
 			}
 
-			if(!markerData.isEmpty()) {
+			if (!markerData.isEmpty()) {
 				// Initialize undo information
 				markerDataForUndo = markerData;
 			}
@@ -184,7 +184,7 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 
 		@Override
 		protected CommandResult doUndoWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
-			if(markerDataForUndo == null) {
+			if (markerDataForUndo == null) {
 				// Nothing to do
 				return CommandResult.newOKCommandResult();
 			}
@@ -196,21 +196,21 @@ public class WorkspaceMarkerProvider extends AbstractMarkerProvider implements I
 			markerDataForUndo = null;
 
 			Resource resource = object.eResource();
-			if(resource != null) { // Should have been reattached by now
+			if (resource != null) { // Should have been reattached by now
 				context = resource;
 
 				try {
 					final IFile file = MarkerListenerUtils.getFile(resource);
-					if(file != null) {
+					if (file != null) {
 						file.getWorkspace().run(new IWorkspaceRunnable() {
 
 							public void run(IProgressMonitor monitor) throws CoreException {
 
-								for(MarkerData data : markerData) {
+								for (MarkerData data : markerData) {
 									file.createMarker(data.type).setAttributes(data.attributes);
 								}
 
-								if(monitor != null) {
+								if (monitor != null) {
 									monitor.done();
 								}
 							}

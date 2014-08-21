@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2007 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2007 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Gabriel Merin Cubero (Prodevelop) – Sequence Diagram Implementation
  * Thibault Landré (Atos Origin) - Add crossAtEnd and dashLine figure
  *
@@ -19,7 +19,7 @@ import org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure;
 
 /**
  * The Class LifelineDotLineFigure.
- * 
+ *
  * @author <a href="mailto:gmerin@prodevelop.es">Gabriel Merin</a>
  */
 public class LifelineDotLineFigure extends Shape {
@@ -86,10 +86,10 @@ public class LifelineDotLineFigure extends Shape {
 		// Create the dash line
 		pAux = pStart.getCopy();
 
-		while(pAux.y <= pEnd.y) {
+		while (pAux.y <= pEnd.y) {
 			// The drawing limit is pEnd.y
 			int yEnd = pAux.y + SOLID_SIZE;
-			if(yEnd > pEnd.y) {
+			if (yEnd > pEnd.y) {
 				yEnd = pEnd.y;
 			}
 			graphics.drawLine(pAux, new Point(pAux.x, yEnd));
@@ -104,12 +104,12 @@ public class LifelineDotLineFigure extends Shape {
 		dashLineRectangle.setLocation(pStart);
 
 	}
-	
+
 	/**
 	 * Set the bounds on the figure and fix bounds for child dash line
-	 * 
+	 *
 	 * @param rect
-	 *        the new bounds
+	 *            the new bounds
 	 */
 	@Override
 	public void setBounds(Rectangle rect) {
@@ -134,14 +134,14 @@ public class LifelineDotLineFigure extends Shape {
 	/**
 	 * Create a cross at the end of the figure. The cross will be drawn at the
 	 * pEnd - pixels position
-	 * 
+	 *
 	 * @param graphics
-	 *        the graphics
+	 *            the graphics
 	 * @param pEnd
-	 *        the point used to position the cross
+	 *            the point used to position the cross
 	 * @param pixels
-	 *        the height which will be deduce from the pEnd to position the
-	 *        cross
+	 *            the height which will be deduce from the pEnd to position the
+	 *            cross
 	 */
 	private void drawCrossAtEnd(Graphics graphics, Point pEnd, int pixels) {
 		Point p1Start = new Point();

@@ -11,7 +11,7 @@
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 440108
  *  Gabriel Pascual (ALL4TEC) gabriel.pascual@all4tec.net - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -70,31 +70,31 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * A ModelElement representing a UML Element
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class UMLModelElement extends EMFModelElement {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The EObject represented by this ModelElement
+	 *            The EObject represented by this ModelElement
 	 */
 	public UMLModelElement(EObject source) {
 		super(source);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The EObject represented by this ModelElement
+	 *            The EObject represented by this ModelElement
 	 * @param domain
-	 *        The EditingDomain on which the commands will be executed
+	 *            The EditingDomain on which the commands will be executed
 	 */
 	public UMLModelElement(EObject source, EditingDomain domain) {
 		super(source, domain);
@@ -105,32 +105,32 @@ public class UMLModelElement extends EMFModelElement {
 		FeaturePath featurePath = getFeaturePath(propertyPath);
 		EStructuralFeature feature = getFeature(propertyPath);
 
-		if(feature == UMLPackage.eINSTANCE.getExtension_IsRequired()) {
-			return new ExtensionRequiredObservableValue((Extension)source, domain);
+		if (feature == UMLPackage.eINSTANCE.getExtension_IsRequired()) {
+			return new ExtensionRequiredObservableValue((Extension) source, domain);
 		}
 
-		if(feature == UMLPackage.eINSTANCE.getPort_Provided()) {
-			return new ProvidedInterfaceObservableList((Port)source, domain);
+		if (feature == UMLPackage.eINSTANCE.getPort_Provided()) {
+			return new ProvidedInterfaceObservableList((Port) source, domain);
 		}
 
-		if(feature == UMLPackage.eINSTANCE.getPort_Required()) {
-			return new RequiredInterfaceObservableList((Port)source, domain);
+		if (feature == UMLPackage.eINSTANCE.getPort_Required()) {
+			return new RequiredInterfaceObservableList((Port) source, domain);
 		}
 
-		if(feature == null) {
+		if (feature == null) {
 			return null;
 		}
 
-		if(feature.getUpperBound() != 1) {
+		if (feature.getUpperBound() != 1) {
 			IObservableList list = domain == null ? EMFProperties.list(featurePath).observe(source) : new PapyrusObservableList(EMFProperties.list(featurePath).observe(source), domain, getSource(featurePath), feature);
 			return list;
 		}
 
-		if((feature == UMLPackage.Literals.NAMED_ELEMENT__NAME) && (domain != null)) {
+		if ((feature == UMLPackage.Literals.NAMED_ELEMENT__NAME) && (domain != null)) {
 			// Empty string as a name is not useful, so we unset instead
 			return new UnsettableStringValue(getSource(featurePath), feature, domain);
 		}
-		
+
 		IObservableValue value = domain == null ? EMFProperties.value(featurePath).observe(source) : new PapyrusObservableValue(getSource(featurePath), feature, domain);
 		return value;
 	}
@@ -138,15 +138,15 @@ public class UMLModelElement extends EMFModelElement {
 	@Override
 	protected boolean isFeatureEditable(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == UMLPackage.eINSTANCE.getMessage_Signature()) {
+		if (feature == UMLPackage.eINSTANCE.getMessage_Signature()) {
 			return true;
 		}
-		if(feature == UMLPackage.eINSTANCE.getExtension_IsRequired()) {
+		if (feature == UMLPackage.eINSTANCE.getExtension_IsRequired()) {
 			return true;
 		}
-		if(feature == UMLPackage.eINSTANCE.getPort_Provided() || feature == UMLPackage.eINSTANCE.getPort_Required()) {
-			if(source instanceof Port) {
-				return ((Port)source).getType() != null;
+		if (feature == UMLPackage.eINSTANCE.getPort_Provided() || feature == UMLPackage.eINSTANCE.getPort_Required()) {
+			if (source instanceof Port) {
+				return ((Port) source).getType() != null;
 			}
 		}
 
@@ -157,13 +157,13 @@ public class UMLModelElement extends EMFModelElement {
 	public IStaticContentProvider getContentProvider(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
 
-		if(feature == null) {
+		if (feature == null) {
 			return EmptyContentProvider.instance;
 		}
 
-		//Workaround: the standard ContentProvider does not correctly hide the selected elements in ReferenceSelector. 
-		//With a ContainmentBasedBrowseStrategy, it works better (But we don't have the infinite tree in the selection dialog).
-		if(feature == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
+		// Workaround: the standard ContentProvider does not correctly hide the selected elements in ReferenceSelector.
+		// With a ContainmentBasedBrowseStrategy, it works better (But we don't have the infinite tree in the selection dialog).
+		if (feature == UMLPackage.eINSTANCE.getConstraint_ConstrainedElement()) {
 			return new ConstrainedElementContentProvider(source, feature);
 		}
 
@@ -173,7 +173,7 @@ public class UMLModelElement extends EMFModelElement {
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature != null && feature.getEType() instanceof EEnum) {
+		if (feature != null && feature.getEType() instanceof EEnum) {
 			return super.getLabelProvider(propertyPath);
 		}
 		return new UMLFilteredLabelProvider();
@@ -182,7 +182,7 @@ public class UMLModelElement extends EMFModelElement {
 	@Override
 	public boolean isOrdered(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == UMLPackage.eINSTANCE.getStereotype_Icon()) {
+		if (feature == UMLPackage.eINSTANCE.getStereotype_Icon()) {
 			return true;
 		}
 		return super.isOrdered(propertyPath);
@@ -191,38 +191,38 @@ public class UMLModelElement extends EMFModelElement {
 	@Override
 	public ReferenceValueFactory getValueFactory(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(!(feature instanceof EReference)) {
+		if (!(feature instanceof EReference)) {
 			return null;
 		}
-		EReference reference = (EReference)feature;
-		if(reference == UMLPackage.eINSTANCE.getMessage_Argument()) {
-			if(source instanceof Message) {
+		EReference reference = (EReference) feature;
+		if (reference == UMLPackage.eINSTANCE.getMessage_Argument()) {
+			if (source instanceof Message) {
 				Set<ParameterDirectionKind> directions = new HashSet<ParameterDirectionKind>();
-				switch(((Message)source).getMessageSort()) {
+				switch (((Message) source).getMessageSort()) {
 				case REPLY_LITERAL:
 					directions.add(OUT_LITERAL);
 					directions.add(INOUT_LITERAL);
 					directions.add(RETURN_LITERAL);
-					return new MessageValueSpecificationFactory(reference, (Message)source, directions);
+					return new MessageValueSpecificationFactory(reference, (Message) source, directions);
 				case SYNCH_CALL_LITERAL:
 				case ASYNCH_CALL_LITERAL:
 				case ASYNCH_SIGNAL_LITERAL:
 					directions.add(IN_LITERAL);
 					directions.add(INOUT_LITERAL);
-					return new MessageValueSpecificationFactory(reference, (Message)source, directions);
+					return new MessageValueSpecificationFactory(reference, (Message) source, directions);
 				}
 			}
 		}
 
 		boolean isOwnedRuleSubset = ownedRuleSubsets.contains(reference);
 
-		if(isOwnedRuleSubset) {
+		if (isOwnedRuleSubset) {
 			return new OwnedRuleCreationFactory(reference);
 		}
 
 		UMLPropertyEditorFactory factory;
 
-		if(reference == UMLPackage.eINSTANCE.getConnector_Type() && source instanceof Connector) {
+		if (reference == UMLPackage.eINSTANCE.getConnector_Type() && source instanceof Connector) {
 			factory = new ConnectorTypeEditorFactory(reference);
 		} else {
 			factory = new UMLPropertyEditorFactory(reference);
@@ -247,13 +247,13 @@ public class UMLModelElement extends EMFModelElement {
 	public boolean isMandatory(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
 
-		//Avoid unsetting container references (i.e. reference to the parent) 
-		//(Which would result in detaching the edited object from the model)
-		//See Bug 404445: [Constraint] Unsetting the context of a constraint destroys it (Semantically)
-		//https://bugs.eclipse.org/bugs/show_bug.cgi?id=404445
-		if(feature instanceof EReference) {
-			EReference reference = (EReference)feature;
-			if(reference.isContainer()) {
+		// Avoid unsetting container references (i.e. reference to the parent)
+		// (Which would result in detaching the edited object from the model)
+		// See Bug 404445: [Constraint] Unsetting the context of a constraint destroys it (Semantically)
+		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=404445
+		if (feature instanceof EReference) {
+			EReference reference = (EReference) feature;
+			if (reference.isContainer()) {
 				return true;
 			}
 		}
@@ -266,31 +266,32 @@ public class UMLModelElement extends EMFModelElement {
 	 */
 	public final static Set<EStructuralFeature> ownedRuleSubsets = new HashSet<EStructuralFeature>();
 	static {
-		//Behavior
+		// Behavior
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getBehavior_Precondition());
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getBehavior_Postcondition());
 
-		//Operation
+		// Operation
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getOperation_BodyCondition());
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getOperation_Precondition());
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getOperation_Postcondition());
 
-		//ProtocolTransition
+		// ProtocolTransition
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getProtocolTransition_PreCondition());
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getProtocolTransition_PostCondition());
 
-		//Transition
+		// Transition
 		ownedRuleSubsets.add(UMLPackage.eINSTANCE.getTransition_Guard());
 	}
-	
-	public IValidator getValidator(String propertyPath){
+
+	@Override
+	public IValidator getValidator(String propertyPath) {
 		EStructuralFeature feature = getFeature(propertyPath);
-		if(feature == UMLPackage.eINSTANCE.getNamedElement_Name()){
+		if (feature == UMLPackage.eINSTANCE.getNamedElement_Name()) {
 
 			return new org.eclipse.papyrus.uml.tools.databinding.NamedElementValidator(source);
 		}
 
-		//TODO improve if our model add his own constraint
+		// TODO improve if our model add his own constraint
 		return null;
 	}
 

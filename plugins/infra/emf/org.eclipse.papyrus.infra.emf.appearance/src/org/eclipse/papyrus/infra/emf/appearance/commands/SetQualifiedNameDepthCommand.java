@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,13 +29,13 @@ public class SetQualifiedNameDepthCommand extends CreateEAnnotationCommand {
 
 	/**
 	 * Instantiates a new sets the qualified name depth command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param depth
-	 *        the depth
+	 *            the depth
 	 */
 	public SetQualifiedNameDepthCommand(TransactionalEditingDomain domain, EModelElement object, int depth) {
 		super(domain, object, VisualInformationPapyrusConstants.QUALIFIED_NAME);

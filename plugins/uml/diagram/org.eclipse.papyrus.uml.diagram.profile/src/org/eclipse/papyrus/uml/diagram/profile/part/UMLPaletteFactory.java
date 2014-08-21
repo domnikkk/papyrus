@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.uml.diagram.profile.providers.UMLElementTypes;
  */
 public class UMLPaletteFactory extends PaletteFactory.Adapter {
 
-	//RS: New Palette generation
-	//Generates the ID for the tool elements
-	//Generate the tool factory (if(ID) createtool...)
+	// RS: New Palette generation
+	// Generates the ID for the tool elements
+	// Generate the tool factory (if(ID) createtool...)
 	/**
 	 * @generated
 	 */
@@ -133,62 +133,63 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Tool createTool(String toolId) {
-		if(toolId.equals(CREATECLASS6CREATIONTOOL)) {
+		if (toolId.equals(CREATECLASS6CREATIONTOOL)) {
 			return createClass6CreationTool();
 		}
-		if(toolId.equals(CREATECOMMENT2CREATIONTOOL)) {
+		if (toolId.equals(CREATECOMMENT2CREATIONTOOL)) {
 			return createComment2CreationTool();
 		}
-		if(toolId.equals(CREATECONSTRAINT3CREATIONTOOL)) {
+		if (toolId.equals(CREATECONSTRAINT3CREATIONTOOL)) {
 			return createConstraint3CreationTool();
 		}
-		if(toolId.equals(CREATEDATATYPE4CREATIONTOOL)) {
+		if (toolId.equals(CREATEDATATYPE4CREATIONTOOL)) {
 			return createDataType4CreationTool();
 		}
-		if(toolId.equals(CREATEENUMERATION5CREATIONTOOL)) {
+		if (toolId.equals(CREATEENUMERATION5CREATIONTOOL)) {
 			return createEnumeration5CreationTool();
 		}
-		if(toolId.equals(CREATEENUMERATIONLITERAL6CREATIONTOOL)) {
+		if (toolId.equals(CREATEENUMERATIONLITERAL6CREATIONTOOL)) {
 			return createEnumerationLiteral6CreationTool();
 		}
-		if(toolId.equals(CREATEIMPORTMETACLASS7CREATIONTOOL)) {
+		if (toolId.equals(CREATEIMPORTMETACLASS7CREATIONTOOL)) {
 			return createImportMetaclass7CreationTool();
 		}
-		if(toolId.equals(CREATEOPERATION8CREATIONTOOL)) {
+		if (toolId.equals(CREATEOPERATION8CREATIONTOOL)) {
 			return createOperation8CreationTool();
 		}
-		if(toolId.equals(CREATEPACKAGE9CREATIONTOOL)) {
+		if (toolId.equals(CREATEPACKAGE9CREATIONTOOL)) {
 			return createPackage9CreationTool();
 		}
-		if(toolId.equals(CREATEPROFILE10CREATIONTOOL)) {
+		if (toolId.equals(CREATEPROFILE10CREATIONTOOL)) {
 			return createProfile10CreationTool();
 		}
-		if(toolId.equals(CREATEPRIMITIVETYPE11CREATIONTOOL)) {
+		if (toolId.equals(CREATEPRIMITIVETYPE11CREATIONTOOL)) {
 			return createPrimitiveType11CreationTool();
 		}
-		if(toolId.equals(CREATEPROPERTY12CREATIONTOOL)) {
+		if (toolId.equals(CREATEPROPERTY12CREATIONTOOL)) {
 			return createProperty12CreationTool();
 		}
-		if(toolId.equals(CREATESTEREOTYPE13CREATIONTOOL)) {
+		if (toolId.equals(CREATESTEREOTYPE13CREATIONTOOL)) {
 			return createStereotype13CreationTool();
 		}
-		if(toolId.equals(CREATEASSOCIATION1CREATIONTOOL)) {
+		if (toolId.equals(CREATEASSOCIATION1CREATIONTOOL)) {
 			return createAssociation1CreationTool();
 		}
-		if(toolId.equals(CREATECONTEXTLINK6CREATIONTOOL)) {
+		if (toolId.equals(CREATECONTEXTLINK6CREATIONTOOL)) {
 			return createContextLink6CreationTool();
 		}
-		if(toolId.equals(CREATEEXTENSION3CREATIONTOOL)) {
+		if (toolId.equals(CREATEEXTENSION3CREATIONTOOL)) {
 			return createExtension3CreationTool();
 		}
-		if(toolId.equals(CREATEGENERALIZATION4CREATIONTOOL)) {
+		if (toolId.equals(CREATEGENERALIZATION4CREATIONTOOL)) {
 			return createGeneralization4CreationTool();
 		}
-		if(toolId.equals(CREATELINK5CREATIONTOOL)) {
+		if (toolId.equals(CREATELINK5CREATIONTOOL)) {
 			return createLink5CreationTool();
 		}
-		if(toolId.equals(CREATEPROFILEAPPLICATION6CREATIONTOOL)) {
+		if (toolId.equals(CREATEPROFILEAPPLICATION6CREATIONTOOL)) {
 			return createProfileApplication6CreationTool();
 		}
 		// default return: null
@@ -198,6 +199,7 @@ public class UMLPaletteFactory extends PaletteFactory.Adapter {
 	/**
 	 * @generated
 	 */
+	@Override
 	public Object getTemplate(String templateId) {
 		// default return: null
 		return null;

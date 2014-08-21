@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ import org.eclipse.uml2.uml.UMLFactory;
 /**
  * This class fixed the bug when reconnecting message from the end of an execution to the execution, at this moment, the model of the source and
  * target are not changed, but the UML2 model must be changed from message end to execution occurrence specification.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessageEditPolicy {
@@ -48,7 +48,7 @@ public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessage
 	@Override
 	protected Command getReconnectSourceCommand(ReconnectRequest request) {
 		Command command = super.getReconnectSourceCommand(request);
-		if(command != null && command.canExecute() && !relationshipSourceHasChanged(request)) {
+		if (command != null && command.canExecute() && !relationshipSourceHasChanged(request)) {
 			command = appendUpdateExecutionEndCommand(request, command, false);
 		}
 		return command;
@@ -57,7 +57,7 @@ public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessage
 	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
 		Command command = super.getReconnectTargetCommand(request);
-		if(command != null && command.canExecute() && !relationshipTargetHasChanged(request)) {
+		if (command != null && command.canExecute() && !relationshipTargetHasChanged(request)) {
 			command = appendUpdateExecutionEndCommand(request, command, true);
 		}
 		return command;
@@ -71,31 +71,31 @@ public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessage
 	private Command appendUpdateExecutionEndCommand(ReconnectRequest request, Command command, boolean messageTarget) {
 		EditPart target = request.getTarget();
 		ExecutionSpecification execution = null;
-		if(target instanceof AbstractExecutionSpecificationEditPart) {
-			EObject elt = ((AbstractExecutionSpecificationEditPart)target).resolveSemanticElement();
-			if(elt instanceof ExecutionSpecification) {
-				execution = (ExecutionSpecification)elt;
+		if (target instanceof AbstractExecutionSpecificationEditPart) {
+			EObject elt = ((AbstractExecutionSpecificationEditPart) target).resolveSemanticElement();
+			if (elt instanceof ExecutionSpecification) {
+				execution = (ExecutionSpecification) elt;
 			}
 		}
 		MessageEnd messageEnd = null;
 		ConnectionEditPart conn = request.getConnectionEditPart();
-		if(conn instanceof AbstractMessageEditPart) {
-			EObject elt = ((AbstractMessageEditPart)conn).resolveSemanticElement();
-			if(elt instanceof Message) {
-				messageEnd = messageTarget ? ((Message)elt).getReceiveEvent() : ((Message)elt).getSendEvent();
+		if (conn instanceof AbstractMessageEditPart) {
+			EObject elt = ((AbstractMessageEditPart) conn).resolveSemanticElement();
+			if (elt instanceof Message) {
+				messageEnd = messageTarget ? ((Message) elt).getReceiveEvent() : ((Message) elt).getSendEvent();
 			}
 		}
-		if(execution != null && messageEnd != null) {
+		if (execution != null && messageEnd != null) {
 			OccurrenceSpecification start = execution.getStart();
 			OccurrenceSpecification finish = execution.getFinish();
-			if(start != null && start == messageEnd) {
-				command = command.chain(new ICommandProxy(new ResetExecutionEndCommand(((IGraphicalEditPart)target).getEditingDomain(), execution, true)));
-			} else if(finish != null && finish == messageEnd) {
-				command = command.chain(new ICommandProxy(new ResetExecutionEndCommand(((IGraphicalEditPart)target).getEditingDomain(), execution, false)));
+			if (start != null && start == messageEnd) {
+				command = command.chain(new ICommandProxy(new ResetExecutionEndCommand(((IGraphicalEditPart) target).getEditingDomain(), execution, true)));
+			} else if (finish != null && finish == messageEnd) {
+				command = command.chain(new ICommandProxy(new ResetExecutionEndCommand(((IGraphicalEditPart) target).getEditingDomain(), execution, false)));
 			}
 		}
-		//ordering fragments.
-		//fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=417374
+		// ordering fragments.
+		// fixed bug: https://bugs.eclipse.org/bugs/show_bug.cgi?id=417374
 		Command orderingFragmentsCommand = FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request);
 		return command.chain(orderingFragmentsCommand);
 	}
@@ -116,7 +116,7 @@ public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessage
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param domain
 		 * @param label
 		 * @param affectedFiles
@@ -128,9 +128,8 @@ public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessage
 		}
 
 		/**
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-		 *      org.eclipse.core.runtime.IAdaptable)
-		 * 
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *
 		 * @param monitor
 		 * @param info
 		 * @return
@@ -139,8 +138,8 @@ public class ExecutionGraphicalNodeEditPolicy extends ElementCreationWithMessage
 
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			if(execution != null) {
-				if(resetStart) {
+			if (execution != null) {
+				if (resetStart) {
 					OccurrenceSpecificationHelper.resetExecutionStart(execution, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());
 				} else {
 					OccurrenceSpecificationHelper.resetExecutionFinish(execution, UMLFactory.eINSTANCE.createExecutionOccurrenceSpecification());

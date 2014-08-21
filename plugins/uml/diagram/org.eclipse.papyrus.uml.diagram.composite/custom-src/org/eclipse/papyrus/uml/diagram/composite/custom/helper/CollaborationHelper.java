@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,11 +55,11 @@ public class CollaborationHelper extends ElementHelper {
 	/**
 	 * This method returns drop command for a Collaboration dropped on Another Collaboration or Class in the diagram.
 	 * This should result in the creation of a CollaborationUse typed by the dropped Collaboration.
-	 * 
+	 *
 	 * @param dropRequest
-	 *        the drop request
+	 *            the drop request
 	 * @param semanticElement
-	 *        the element to drop
+	 *            the element to drop
 	 * @return a CompositeCommand for Drop
 	 */
 	public CompoundCommand dropCollaborationAsCollaborationUse(GraphicalEditPart graphicalTarget, Collaboration semanticElement, Point location) {
@@ -68,21 +68,21 @@ public class CollaborationHelper extends ElementHelper {
 		GraphicalEditPart graphicalParentEditPart = graphicalTarget;
 		EObject graphicalParentObject = graphicalParentEditPart.resolveSemanticElement();
 
-		IHintedType elementType = (IHintedType)UMLElementTypes.getElementType(CollaborationUseEditPartCN.VISUAL_ID);
+		IHintedType elementType = (IHintedType) UMLElementTypes.getElementType(CollaborationUseEditPartCN.VISUAL_ID);
 
-		if(graphicalParentObject instanceof StructuredClassifier) {
+		if (graphicalParentObject instanceof StructuredClassifier) {
 
 			SemanticAdapter semanticAdapter = new SemanticAdapter(null, null);
 
 			// Prepare a command for the Property creation and the drop in diagram
 			// 1. Prepare creation command
 			CreateElementRequest req = new CreateElementRequest(getEditingDomain(), graphicalParentObject, elementType);
-			CollaborationUseFromTypeCreateCommand cUseCreateCommand = new CollaborationUseFromTypeCreateCommand(req, (StructuredClassifier)graphicalParentObject, semanticElement, semanticAdapter);
+			CollaborationUseFromTypeCreateCommand cUseCreateCommand = new CollaborationUseFromTypeCreateCommand(req, (StructuredClassifier) graphicalParentObject, semanticElement, semanticAdapter);
 
 			// 2. Prepare the drop command
-			ViewDescriptor descriptor = new ViewDescriptor((IAdaptable)cUseCreateCommand.getCommandResult().getReturnValue(), Node.class, elementType.getSemanticHint(), ViewUtil.APPEND, true, graphicalTarget.getDiagramPreferencesHint());
-			CreateViewCommand viewCreateCommand = new CreateViewCommand(getEditingDomain(), descriptor, ((View)(reTarget(graphicalTarget).getModel())));
-			SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable)viewCreateCommand.getCommandResult().getReturnValue(), location);
+			ViewDescriptor descriptor = new ViewDescriptor((IAdaptable) cUseCreateCommand.getCommandResult().getReturnValue(), Node.class, elementType.getSemanticHint(), ViewUtil.APPEND, true, graphicalTarget.getDiagramPreferencesHint());
+			CreateViewCommand viewCreateCommand = new CreateViewCommand(getEditingDomain(), descriptor, ((View) (reTarget(graphicalTarget).getModel())));
+			SetBoundsCommand setBoundsCommand = new SetBoundsCommand(getEditingDomain(), "move", (IAdaptable) viewCreateCommand.getCommandResult().getReturnValue(), location);
 
 			// 3. Create the compound command
 			cc.add(new ICommandProxy(cUseCreateCommand));
@@ -97,20 +97,20 @@ public class CollaborationHelper extends ElementHelper {
 		CompoundCommand cc = new CompoundCommand("DropCollaborationOnCollaborationUse");
 
 		EObject graphicalParentObject = graphicalTarget.resolveSemanticElement();
-		if(graphicalParentObject instanceof CollaborationUse) {
+		if (graphicalParentObject instanceof CollaborationUse) {
 			SetRequest req = new SetRequest(graphicalParentObject, UMLPackage.eINSTANCE.getCollaborationUse_Type(), semanticElement);
 			// Set type with confirmation dialog is currently disabled as it causes transaction issue (transaction is
 			// never committed) in case of a DND from the diagram to the diagram (is work well from Explorer to Diagram).
 			// The command is temporary replaced by a basic set value command without confirmation dialog.
-			//SetTypeWithDialogCommand setTypeCommand = new SetTypeWithDialogCommand(req);
-			//			SetValueCommand setTypeCommand = new SetValueCommand(req);
-			//			cc.add(new ICommandProxy(setTypeCommand));
+			// SetTypeWithDialogCommand setTypeCommand = new SetTypeWithDialogCommand(req);
+			// SetValueCommand setTypeCommand = new SetValueCommand(req);
+			// cc.add(new ICommandProxy(setTypeCommand));
 			EObject selectedEObject = req.getElementToEdit();
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(selectedEObject);
-			if(provider != null) {
+			if (provider != null) {
 				ICommand setCommand = provider.getEditCommand(req);
 
-				if(setCommand != null && setCommand.canExecute()) {
+				if (setCommand != null && setCommand.canExecute()) {
 					cc.add(new ICommandProxy(setCommand));
 				}
 			}
@@ -121,15 +121,15 @@ public class CollaborationHelper extends ElementHelper {
 
 	/**
 	 * Re-target the target EditPart to the real expected target (e.g.: one of its compartment)
-	 * 
+	 *
 	 * @param initialTarget
-	 *        The original target
+	 *            The original target
 	 * @return the real expected target edit part (can return null)
 	 */
 	protected IGraphicalEditPart reTarget(IGraphicalEditPart initialTarget) {
 		IGraphicalEditPart newTarget = null;
 
-		if(!(initialTarget instanceof ShapeCompartmentEditPart)) {
+		if (!(initialTarget instanceof ShapeCompartmentEditPart)) {
 			newTarget = CompositeEditPartUtil.getCompositeCompartmentEditPart(initialTarget);
 		} else {
 			// No need to re-target here

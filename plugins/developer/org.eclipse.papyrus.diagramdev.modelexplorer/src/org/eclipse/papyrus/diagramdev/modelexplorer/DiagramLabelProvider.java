@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,36 +26,37 @@ import org.osgi.framework.ServiceException;
 
 /**
  * the label provider that inherits of modisco label provider
- * 
+ *
  */
 public class DiagramLabelProvider extends StandardEMFLabelProvider {
-	
+
 	/** icon registry */
-	private IPageIconsRegistry editorRegistry=null;
-	
+	private IPageIconsRegistry editorRegistry = null;
+
 	/**
 	 * return the image of an element in the model browser
 	 * evaluates error markers.
 	 */
 	@Override
 	public Image getImage(Object element) {
-		if( element instanceof IAdaptable){
-			if(( ((IAdaptable)element).getAdapter(EObject.class)) instanceof Diagram){
-				return getEditorRegistry().getEditorIcon(((IAdaptable)element).getAdapter(EObject.class));
+		if (element instanceof IAdaptable) {
+			if ((((IAdaptable) element).getAdapter(EObject.class)) instanceof Diagram) {
+				return getEditorRegistry().getEditorIcon(((IAdaptable) element).getAdapter(EObject.class));
 			}
 		}
 		return super.getImage(element);
 	}
+
 	/**
 	 * Get the EditorRegistry used to create editor instances. This default
 	 * implementation return the singleton eINSTANCE. This method can be
 	 * subclassed to return another registry.
-	 * 
+	 *
 	 * @return the singleton eINSTANCE of editor registry
 	 * @throws ServiceException
 	 */
 	protected IPageIconsRegistry getEditorRegistry() {
-		if(editorRegistry == null) {
+		if (editorRegistry == null) {
 			editorRegistry = createEditorRegistry();
 		}
 		return editorRegistry;
@@ -65,7 +66,7 @@ public class DiagramLabelProvider extends StandardEMFLabelProvider {
 	 * Return the EditorRegistry for nested editor descriptors. Subclass should
 	 * implements this method in order to return the registry associated to the
 	 * extension point namespace.
-	 * 
+	 *
 	 * @return the EditorRegistry for nested editor descriptors
 	 * @throws ServiceException
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  * Contributors:
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 440263
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
@@ -54,7 +54,7 @@ public class NamedElementUtil {
 
 	/**
 	 * A helper method to calculate the max depth of an element
-	 * 
+	 *
 	 * @param the
 	 *            named element
 	 * @return the maximum depth found in qualified name
@@ -76,7 +76,7 @@ public class NamedElementUtil {
 	/**
 	 * generate a default name for the eobject in parameter the format is :
 	 * "eclassName"+"max(elementOfTheSameName in the container)" + 1
-	 * 
+	 *
 	 * @param newElement
 	 * @return
 	 */
@@ -91,7 +91,7 @@ public class NamedElementUtil {
 	 * generate a default name for the eobject in parameter the format is :
 	 * "eclassName"+"max(elementOfTheSameName in the container)" + 1 the method checks already
 	 * existing element in contents parameter
-	 * 
+	 *
 	 * @param newElement
 	 */
 	public static String getDefaultNameWithIncrement(EObject newElement, Collection<?> contents) {
@@ -128,8 +128,9 @@ public class NamedElementUtil {
 
 	public static String getDefaultNameWithIncrementFromBase(String base, Collection<?> contents, EObject elementToRename, String separator) {
 		return (elementToRename != null) ? //
-		getDefaultNameSwitch(base, contents, separator).doSwitch(elementToRename).orNull(): //
-		computeDefaultNameWithIncrementFromBase(base, contents, elementToRename, separator);
+		getDefaultNameSwitch(base, contents, separator).doSwitch(elementToRename).orNull()
+				: //
+				computeDefaultNameWithIncrementFromBase(base, contents, elementToRename, separator);
 	}
 
 	private static UMLSwitch<Optional<String>> getDefaultNameSwitch(final String base, final Collection<?> contents, final String separator) {
@@ -158,6 +159,7 @@ public class NamedElementUtil {
 				return Optional.absent();
 			}
 
+			@Override
 			public Optional<String> caseAssociationClass(AssociationClass object) {
 				return defaultCase(object);
 			}
@@ -197,6 +199,7 @@ public class NamedElementUtil {
 				return Boolean.FALSE;
 			}
 
+			@Override
 			public Boolean caseAssociationClass(AssociationClass object) {
 				return Boolean.TRUE;
 			}
@@ -248,14 +251,14 @@ public class NamedElementUtil {
 		}
 
 		int nextNumber = 1;
-		
-		// specific value for properties. default name is Attribute. 
-		// Note: That could be set in a specific advice rather than the default initializer. 
+
+		// specific value for properties. default name is Attribute.
+		// Note: That could be set in a specific advice rather than the default initializer.
 		// Note2: The name of operations / properties could be set by default with a first lower case letter.
 		if ("property".equalsIgnoreCase(base)) {
 			base = "Attribute";
 		}
-		
+
 		for (Object o : contents) {
 			if (o instanceof EObject && o != elementToRename) {
 				String name = EMFCoreUtil.getName((EObject) o);
@@ -280,7 +283,7 @@ public class NamedElementUtil {
 
 	/**
 	 * Give the visibility of the {@link NamedElement} as a string, as defined in the UML2 standard.
-	 * 
+	 *
 	 * @return A String representing the visibility of the {@link NamedElement}. Possible values:
 	 *         <ul>
 	 *         <li>public: <code>"+"</code>
@@ -311,7 +314,7 @@ public class NamedElementUtil {
 
 	/**
 	 * Returns the name of an element, given its qualified name
-	 * 
+	 *
 	 * @param qualifiedName
 	 *            the qualified name of the element
 	 * @return the name of the element. It shall never be <code>null</code>.
@@ -322,7 +325,7 @@ public class NamedElementUtil {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param childQualifiedName
 	 *            the qualifiedName of an element
 	 * @return

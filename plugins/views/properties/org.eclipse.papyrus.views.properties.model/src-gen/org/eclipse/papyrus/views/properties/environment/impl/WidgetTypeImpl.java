@@ -22,9 +22,9 @@ import org.eclipse.papyrus.views.properties.environment.WidgetType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl#getWidgetClass <em>Widget Class</em>}</li>
- *   <li>{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl#getNamespace <em>Namespace</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl#getLabel <em>Label</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl#getWidgetClass <em>Widget Class</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.environment.impl.WidgetTypeImpl#getNamespace <em>Namespace</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +35,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -45,6 +46,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -55,6 +57,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The default value of the '{@link #getWidgetClass() <em>Widget Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWidgetClass()
 	 * @generated
 	 * @ordered
@@ -65,6 +68,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The cached value of the '{@link #getWidgetClass() <em>Widget Class</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWidgetClass()
 	 * @generated
 	 * @ordered
@@ -75,6 +79,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	 * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNamespace()
 	 * @generated
 	 * @ordered
@@ -84,6 +89,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected WidgetTypeImpl() {
@@ -93,6 +99,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,8 +110,10 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -112,20 +121,25 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setLabel(String newLabel) {
 		String oldLabel = label;
 		label = newLabel;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.WIDGET_TYPE__LABEL, oldLabel, label));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getWidgetClass() {
 		return widgetClass;
 	}
@@ -133,27 +147,33 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setWidgetClass(String newWidgetClass) {
 		String oldWidgetClass = widgetClass;
 		widgetClass = newWidgetClass;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS, oldWidgetClass, widgetClass));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public Namespace getNamespace() {
 		if (namespace != null && namespace.eIsProxy()) {
-			InternalEObject oldNamespace = (InternalEObject)namespace;
-			namespace = (Namespace)eResolveProxy(oldNamespace);
+			InternalEObject oldNamespace = (InternalEObject) namespace;
+			namespace = (Namespace) eResolveProxy(oldNamespace);
 			if (namespace != oldNamespace) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EnvironmentPackage.WIDGET_TYPE__NAMESPACE, oldNamespace, namespace));
+				}
 			}
 		}
 		return namespace;
@@ -162,6 +182,7 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Namespace basicGetNamespace() {
@@ -171,30 +192,36 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNamespace(Namespace newNamespace) {
 		Namespace oldNamespace = namespace;
 		namespace = newNamespace;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, EnvironmentPackage.WIDGET_TYPE__NAMESPACE, oldNamespace, namespace));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case EnvironmentPackage.WIDGET_TYPE__LABEL:
-				return getLabel();
-			case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
-				return getWidgetClass();
-			case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
-				if (resolve) return getNamespace();
-				return basicGetNamespace();
+		case EnvironmentPackage.WIDGET_TYPE__LABEL:
+			return getLabel();
+		case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
+			return getWidgetClass();
+		case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
+			if (resolve) {
+				return getNamespace();
+			}
+			return basicGetNamespace();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,20 +229,21 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case EnvironmentPackage.WIDGET_TYPE__LABEL:
-				setLabel((String)newValue);
-				return;
-			case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
-				setWidgetClass((String)newValue);
-				return;
-			case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
-				setNamespace((Namespace)newValue);
-				return;
+		case EnvironmentPackage.WIDGET_TYPE__LABEL:
+			setLabel((String) newValue);
+			return;
+		case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
+			setWidgetClass((String) newValue);
+			return;
+		case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
+			setNamespace((Namespace) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,20 +251,21 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.WIDGET_TYPE__LABEL:
-				setLabel(LABEL_EDEFAULT);
-				return;
-			case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
-				setWidgetClass(WIDGET_CLASS_EDEFAULT);
-				return;
-			case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
-				setNamespace((Namespace)null);
-				return;
+		case EnvironmentPackage.WIDGET_TYPE__LABEL:
+			setLabel(LABEL_EDEFAULT);
+			return;
+		case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
+			setWidgetClass(WIDGET_CLASS_EDEFAULT);
+			return;
+		case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
+			setNamespace((Namespace) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,17 +273,18 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case EnvironmentPackage.WIDGET_TYPE__LABEL:
-				return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-			case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
-				return WIDGET_CLASS_EDEFAULT == null ? widgetClass != null : !WIDGET_CLASS_EDEFAULT.equals(widgetClass);
-			case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
-				return namespace != null;
+		case EnvironmentPackage.WIDGET_TYPE__LABEL:
+			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+		case EnvironmentPackage.WIDGET_TYPE__WIDGET_CLASS:
+			return WIDGET_CLASS_EDEFAULT == null ? widgetClass != null : !WIDGET_CLASS_EDEFAULT.equals(widgetClass);
+		case EnvironmentPackage.WIDGET_TYPE__NAMESPACE:
+			return namespace != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -262,11 +292,14 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (label: ");
@@ -277,4 +310,4 @@ public abstract class WidgetTypeImpl extends EObjectImpl implements WidgetType {
 		return result.toString();
 	}
 
-} //WidgetTypeImpl
+} // WidgetTypeImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,18 +23,18 @@ public class SetNodeVisibilityCommand extends RecordingCommand {
 	protected View view;
 	protected Boolean isVisible;
 
-	public SetNodeVisibilityCommand(TransactionalEditingDomain domain, View view,Boolean isVisible ) {
+	public SetNodeVisibilityCommand(TransactionalEditingDomain domain, View view, Boolean isVisible) {
 		super(domain);
-		this.view=view;
-		this.isVisible=isVisible;
+		this.view = view;
+		this.isVisible = isVisible;
 	}
 
 	@Override
 	protected void doExecute() {
-		if(view.isVisible()!=isVisible){
+		if (view.isVisible() != isVisible) {
 			view.setVisible(isVisible);
 		}
-		
+
 
 	}
 

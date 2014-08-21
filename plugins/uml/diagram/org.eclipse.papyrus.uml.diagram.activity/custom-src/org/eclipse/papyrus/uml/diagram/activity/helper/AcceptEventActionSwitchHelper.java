@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,10 +51,10 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 	/**
 	 * Construct a new switch helper which will automatically manage the switch
 	 * when properties are edited.
-	 * 
+	 *
 	 * @param acceptEventActionEditPart
-	 *        the part of an AcceptEventAction, for which the switch must be
-	 *        managed.
+	 *            the part of an AcceptEventAction, for which the switch must be
+	 *            managed.
 	 */
 	public AcceptEventActionSwitchHelper(AcceptEventActionEditPart acceptEventActionEditPart) {
 		editPart = acceptEventActionEditPart;
@@ -70,35 +70,35 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 		/**
 		 * Notify the changes by updating listened elements if necessary and
 		 * performing the switch if necessary.
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.uml.diagram.common.providers.UIAdapterImpl#safeNotifyChanged(org.eclipse.emf.common.notify.Notification)
 		 * @param msg
-		 *        the notification message
+		 *            the notification message
 		 */
 		@Override
 		protected void safeNotifyChanged(Notification msg) {
-			if(UMLPackage.eINSTANCE.getAcceptEventAction_Trigger().equals(msg.getFeature())) {
+			if (UMLPackage.eINSTANCE.getAcceptEventAction_Trigger().equals(msg.getFeature())) {
 				// listen trigger once the list is modified
-				if(msg.getNewValue() instanceof List<?>) {
-					for(Object value : (List<?>)msg.getNewValue()) {
-						if(value instanceof Notifier) {
-							listenObject((Notifier)value);
+				if (msg.getNewValue() instanceof List<?>) {
+					for (Object value : (List<?>) msg.getNewValue()) {
+						if (value instanceof Notifier) {
+							listenObject((Notifier) value);
 						}
 					}
-				} else if(msg.getNewValue() instanceof Notifier) {
-					listenObject((Notifier)msg.getNewValue());
+				} else if (msg.getNewValue() instanceof Notifier) {
+					listenObject((Notifier) msg.getNewValue());
 				}
-				if(msg.getOldValue() instanceof List<?>) {
-					for(Object value : (List<?>)msg.getOldValue()) {
-						if(value instanceof Notifier) {
-							unlistenObject((Notifier)value);
+				if (msg.getOldValue() instanceof List<?>) {
+					for (Object value : (List<?>) msg.getOldValue()) {
+						if (value instanceof Notifier) {
+							unlistenObject((Notifier) value);
 						}
 					}
-				} else if(msg.getOldValue() instanceof Notifier) {
-					unlistenObject((Notifier)msg.getNewValue());
+				} else if (msg.getOldValue() instanceof Notifier) {
+					unlistenObject((Notifier) msg.getNewValue());
 				}
 				updateAcceptEventActionFigure();
-			} else if(UMLPackage.eINSTANCE.getTrigger_Event().equals(msg.getFeature())) {
+			} else if (UMLPackage.eINSTANCE.getTrigger_Event().equals(msg.getFeature())) {
 				updateAcceptEventActionFigure();
 			}
 		}
@@ -106,13 +106,13 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 
 	/**
 	 * Get the AcceptEventAction model element managed by the edit part
-	 * 
+	 *
 	 * @return AcceptEventAction model element
 	 */
 	public AcceptEventAction getAction() {
 		EObject resolveSemanticElement = editPart.resolveSemanticElement();
-		if(resolveSemanticElement instanceof AcceptEventAction) {
-			return (AcceptEventAction)resolveSemanticElement;
+		if (resolveSemanticElement instanceof AcceptEventAction) {
+			return (AcceptEventAction) resolveSemanticElement;
 		}
 		return null;
 	}
@@ -125,19 +125,19 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 		AcceptEventActionFigure actionFigure = editPart.getPrimaryShape();
 		boolean useHourglassFigure = CustomAcceptEventActionEditHelper.isAcceptTimeEventAction(getAction());
 		boolean hourglassAlreadyUsed = actionFigure.isTemplateForAcceptTimeEventActionUsed();
-		
-		
-		if(useHourglassFigure != hourglassAlreadyUsed) {
-			
+
+
+		if (useHourglassFigure != hourglassAlreadyUsed) {
+
 			// set usage of the correct figure
 			actionFigure.useTemplateForAcceptTimeEventAction(useHourglassFigure);
-		
+
 			// arrange the figure so that style remains coherent
-			if(editPart.getModel() instanceof View) {
+			if (editPart.getModel() instanceof View) {
 				int locX = actionFigure.getLocation().x;
 				int width = actionFigure.getSize().width;
 				int newWidth = width;
-				if(useHourglassFigure) {
+				if (useHourglassFigure) {
 					// switching to hourglass, reduce width
 					newWidth = width / REDUCE_WIDTH_FACTOR_FOR_HOURGLASS;
 				} else {
@@ -145,8 +145,8 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 					newWidth = width * REDUCE_WIDTH_FACTOR_FOR_HOURGLASS;
 				}
 				// adapt location to keep same center
-				ViewUtil.setStructuralFeatureValue((View)editPart.getModel(), NotationPackage.eINSTANCE.getLocation_X(), locX + (width - newWidth) / 2);
-				ViewUtil.setStructuralFeatureValue((View)editPart.getModel(), NotationPackage.eINSTANCE.getSize_Width(), newWidth);
+				ViewUtil.setStructuralFeatureValue((View) editPart.getModel(), NotationPackage.eINSTANCE.getLocation_X(), locX + (width - newWidth) / 2);
+				ViewUtil.setStructuralFeatureValue((View) editPart.getModel(), NotationPackage.eINSTANCE.getSize_Width(), newWidth);
 			}
 		}
 	}
@@ -154,16 +154,16 @@ public class AcceptEventActionSwitchHelper extends NotificationHelper {
 	/**
 	 * Add listener on an element and its appropriate children in case of an
 	 * AcceptEventAction
-	 * 
+	 *
 	 * @param element
-	 *        The object to listen
+	 *            The object to listen
 	 */
 	@Override
 	public void listenObject(Notifier element) {
 		super.listenObject(element);
-		if(element instanceof AcceptEventAction) {
+		if (element instanceof AcceptEventAction) {
 			// also listen at children triggers of the action
-			for(Trigger trigger : ((AcceptEventAction)element).getTriggers()) {
+			for (Trigger trigger : ((AcceptEventAction) element).getTriggers()) {
 				super.listenObject(trigger);
 			}
 		}

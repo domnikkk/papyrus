@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -80,7 +80,7 @@ public class ThemeManager {
 	 * Default constructor.
 	 */
 	private ThemeManager() {
-		//Singleton
+		// Singleton
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class ThemeManager {
 	 */
 	public List<StyleSheet> getWorkspaceStyleSheets() {
 		Theme current = findCurrentTheme();
-		if(current == null) {
+		if (current == null) {
 			return Collections.emptyList();
 		}
 		return current.getStylesheets();
@@ -118,12 +118,12 @@ public class ThemeManager {
 	public Theme getTheme(String themeId) {
 		Theme registeredTheme = null;
 
-		if(getAllThemes().containsKey(themeId)) {
+		if (getAllThemes().containsKey(themeId)) {
 			registeredTheme = getAllThemes().get(themeId);
 		}
 
 		// Bug 434956 : Patch to ensure that one theme is returned.
-		if(registeredTheme == null) {
+		if (registeredTheme == null) {
 			registeredTheme = EmptyTheme.instance;
 		}
 
@@ -143,18 +143,18 @@ public class ThemeManager {
 	public void refreshThemes() {
 
 		// Handle added themes
-		for(Theme addedTheme : temporaryThemesList) {
+		for (Theme addedTheme : temporaryThemesList) {
 
 			String key = addedTheme.getId();
-			if(!allThemes.containsKey(key)) {
+			if (!allThemes.containsKey(key)) {
 				allThemes.put(key, addedTheme);
 			}
 		}
 
 		// Handle deleted themes
-		for(Theme deletedTheme : deletedThemesList) {
+		for (Theme deletedTheme : deletedThemesList) {
 			String key = deletedTheme.getId();
-			if(allThemes.containsKey(key)) {
+			if (allThemes.containsKey(key)) {
 				allThemes.remove(key);
 			}
 		}
@@ -178,10 +178,10 @@ public class ThemeManager {
 
 	/**
 	 * Add a temporary theme.
-	 * 
+	 *
 	 * @param temporaryTheme
-	 *        Theme to add in workspace themes preference
-	 * 
+	 *            Theme to add in workspace themes preference
+	 *
 	 */
 	public void addTemporaryTheme(Theme temporaryTheme) {
 		temporaryThemesList.add(temporaryTheme);
@@ -189,14 +189,14 @@ public class ThemeManager {
 
 	/**
 	 * Delete theme from preferences.
-	 * 
+	 *
 	 * @param theme
-	 *        Theme to delete
+	 *            Theme to delete
 	 */
 	public void delete(Theme theme) {
 
 		// If theme is temporary don't maintain in associated list
-		if(temporaryThemesList.contains(theme)) {
+		if (temporaryThemesList.contains(theme)) {
 			temporaryThemesList.remove(theme);
 		} else {
 			// Else store in a list to be able to cancel
@@ -206,9 +206,9 @@ public class ThemeManager {
 
 	/**
 	 * Get icon from a theme. Icon can register with plugin URI or file URI.
-	 * 
+	 *
 	 * @param theme
-	 *        Theme which can have an icon
+	 *            Theme which can have an icon
 	 * @return Loaded image, otherwise <code>null</code>
 	 */
 	public Image getThemeIcon(Theme theme) {
@@ -216,18 +216,18 @@ public class ThemeManager {
 
 
 		String iconPath = theme.getIcon();
-		if(iconPath != null) {
+		if (iconPath != null) {
 
 			// First : looking for theme in contribution
 			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 			icon = handleThemeDefinition(theme, config);
 
-			// Second : Try to load image from its path 
-			if(icon == null) {
+			// Second : Try to load image from its path
+			if (icon == null) {
 
-				// Test path to icon 
+				// Test path to icon
 				IPath path = new Path(iconPath);
-				if(path.toFile().exists()) {
+				if (path.toFile().exists()) {
 					icon = new Image(PlatformUI.getWorkbench().getDisplay(), iconPath);
 				}
 
@@ -239,7 +239,7 @@ public class ThemeManager {
 
 	/**
 	 * Return only workspace themes preference.
-	 * 
+	 *
 	 * @return Workspace themes preference (instance of {@link WorkspaceThemes}) if it exist, otherwise <code>null</code>
 	 */
 	public WorkspaceThemes getWorkspaceThemesPreferences() {
@@ -250,7 +250,7 @@ public class ThemeManager {
 		IPath path = workspaceThemesHelper.getThemeWorkspacePreferenceFilePath();
 
 		// If file exist, themes can load
-		if(path.toFile().exists()) {
+		if (path.toFile().exists()) {
 			// Resolve URI
 			URI fileURI = CommonPlugin.resolve(URI.createFileURI(path.toOSString()));
 
@@ -261,7 +261,7 @@ public class ThemeManager {
 
 
 			// Get workspace theme
-			workspaceThemes = (WorkspaceThemes)EcoreUtil.getObjectByType(resource.getContents(), StylesheetsPackage.eINSTANCE.getWorkspaceThemes());
+			workspaceThemes = (WorkspaceThemes) EcoreUtil.getObjectByType(resource.getContents(), StylesheetsPackage.eINSTANCE.getWorkspaceThemes());
 		}
 
 		return workspaceThemes;
@@ -270,9 +270,9 @@ public class ThemeManager {
 
 	/**
 	 * Know if theme is editable. Only themes of workspace or temporary can be edited.
-	 * 
+	 *
 	 * @param id
-	 *        Id of theme to check
+	 *            Id of theme to check
 	 * @return <code>true</code> if theme can be edited, otherwise <code>false<code>
 	 */
 	public boolean isEditable(String id) {
@@ -282,11 +282,11 @@ public class ThemeManager {
 
 		// Check if theme is in persisted workspace themes
 		WorkspaceThemes workspacePreference = getWorkspaceThemesPreferences();
-		if(workspacePreference != null && !isEditable) {
+		if (workspacePreference != null && !isEditable) {
 
-			//Check if theme comes from workspace preferences
+			// Check if theme comes from workspace preferences
 			Iterator<Theme> themesIterator = workspacePreference.getThemes().iterator();
-			while(themesIterator.hasNext() && !isEditable) {
+			while (themesIterator.hasNext() && !isEditable) {
 				isEditable = id.equals(themesIterator.next().getId());
 			}
 
@@ -314,8 +314,8 @@ public class ThemeManager {
 	private Theme[] getEditableThemes() {
 		List<Theme> editableThemeList = new ArrayList<Theme>();
 
-		for(Theme theme : allThemes.values()) {
-			if(isEditable(theme.getId())) {
+		for (Theme theme : allThemes.values()) {
+			if (isEditable(theme.getId())) {
 				editableThemeList.add(theme);
 			}
 		}
@@ -324,29 +324,29 @@ public class ThemeManager {
 
 	/**
 	 * Look for corresponding theme in theme definition contribution and load its image.
-	 * 
+	 *
 	 * @param theme
-	 *        Theme to find in all contribution
+	 *            Theme to find in all contribution
 	 * @param config
-	 *        Configuration of all theme contribution
+	 *            Configuration of all theme contribution
 	 * @return Loaded image if theme is came from contribution, otherwise <code>null</code>
 	 */
 	private Image handleThemeDefinition(Theme theme, IConfigurationElement[] config) {
 		Image icon = null;
 
-		for(IConfigurationElement themeContribution : config) {
+		for (IConfigurationElement themeContribution : config) {
 
 			// Verify that contribution is a theme definition
-			if(!themeContribution.getName().equals("themeDefinition")) {
+			if (!themeContribution.getName().equals("themeDefinition")) {
 				continue;
 			}
 
-			// Get label and Id of definition to compare to parameter 
+			// Get label and Id of definition to compare to parameter
 			String themeId = themeContribution.getAttribute("id");
 			String themeLabel = themeContribution.getAttribute("label");
 
-			if(themeId != null && themeId.equals(theme.getId()) && themeLabel != null && themeLabel.equals(theme.getLabel())) {
-				//FIXME: Use the Papyrus Image service when it is available
+			if (themeId != null && themeId.equals(theme.getId()) && themeLabel != null && themeLabel.equals(theme.getLabel())) {
+				// FIXME: Use the Papyrus Image service when it is available
 				icon = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(themeContribution.getContributor().getName(), theme.getIcon());
 			}
 		}
@@ -355,8 +355,8 @@ public class ThemeManager {
 	}
 
 	private Map<String, Theme> getAllThemes() {
-		if(allThemes == null) {
-			allThemes = new LinkedHashMap<String, Theme>(); //Keep the themes ordered, to avoid nondeterministic behavior
+		if (allThemes == null) {
+			allThemes = new LinkedHashMap<String, Theme>(); // Keep the themes ordered, to avoid nondeterministic behavior
 			allThemes.put(EmptyTheme.instance.getId(), EmptyTheme.instance);
 			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
@@ -366,9 +366,9 @@ public class ThemeManager {
 			loadTemporaryThemes();
 
 			// Remove deleted themes
-			for(Theme theme : deletedThemesList) {
+			for (Theme theme : deletedThemesList) {
 				String themeId = theme.getId();
-				if(allThemes.containsKey(themeId)) {
+				if (allThemes.containsKey(themeId)) {
 					allThemes.remove(themeId);
 				}
 			}
@@ -381,24 +381,24 @@ public class ThemeManager {
 	 * Load theme definitions.
 	 *
 	 * @param config
-	 *        configuration of all contribution definition
+	 *            configuration of all contribution definition
 	 */
 	private void loadThemeDefinitions(IConfigurationElement[] config) {
 
 		// For all theme definitions
-		for(IConfigurationElement themeConfig : config) {
+		for (IConfigurationElement themeConfig : config) {
 
-			if(!themeConfig.getName().equals("themeDefinition")) {
+			if (!themeConfig.getName().equals("themeDefinition")) {
 				continue;
 			}
 
 			final String themeId = themeConfig.getAttribute("id");
-			if(themeId == null) {
+			if (themeId == null) {
 				Activator.log.warn("Cannot define a CSS Theme with an empty id (Contributed by " + themeConfig.getContributor() + ")");
 				continue;
 			}
 
-			//Create theme 
+			// Create theme
 			Theme theme = StylesheetsFactory.eINSTANCE.createTheme();
 			theme.setId(themeId);
 
@@ -406,7 +406,7 @@ public class ThemeManager {
 			theme.setLabel(themeLabel);
 
 			String themeIcon = themeConfig.getAttribute("icon");
-			if(themeIcon != null) {
+			if (themeIcon != null) {
 
 				theme.setIcon(themeIcon);
 
@@ -420,18 +420,18 @@ public class ThemeManager {
 	 * Load theme contributions.
 	 *
 	 * @param config
-	 *        configuration of all contribution definition
+	 *            configuration of all contribution definition
 	 */
 	private void loadThemeContributions(IConfigurationElement[] config) {
-		for(IConfigurationElement themeConfig : config) {
+		for (IConfigurationElement themeConfig : config) {
 
-			// Verify that 
-			if(!themeConfig.getName().equals("themeContribution")) {
+			// Verify that
+			if (!themeConfig.getName().equals("themeContribution")) {
 				continue;
 			}
 
 			final String themeId = themeConfig.getAttribute("id");
-			if(themeId == null || !allThemes.containsKey(themeId)) {
+			if (themeId == null || !allThemes.containsKey(themeId)) {
 				Activator.log.warn("Cannot contribute to an undefined theme: " + themeId);
 				continue;
 			}
@@ -439,7 +439,7 @@ public class ThemeManager {
 			Theme theme = allThemes.get(themeId);
 
 			IConfigurationElement[] stylesheets = themeConfig.getChildren("stylesheet");
-			for(IConfigurationElement stylesheetConfig : stylesheets) {
+			for (IConfigurationElement stylesheetConfig : stylesheets) {
 				String path = stylesheetConfig.getAttribute("stylesheetPath");
 				try {
 					URL url = new URL("platform:/plugin/" + themeConfig.getContributor().getName() + "/" + path);
@@ -461,11 +461,11 @@ public class ThemeManager {
 		WorkspaceThemes workspaceThemes = getWorkspaceThemesPreferences();
 
 		// If file exist, themes can load
-		if(workspaceThemes != null) {
+		if (workspaceThemes != null) {
 
 
 			// Add each themme to current list
-			for(Theme theme : workspaceThemes.getThemes()) {
+			for (Theme theme : workspaceThemes.getThemes()) {
 				allThemes.put(theme.getId(), theme);
 			}
 
@@ -476,7 +476,7 @@ public class ThemeManager {
 	 * Add temporary themes in current themes list.
 	 */
 	private void loadTemporaryThemes() {
-		for(Theme theme : temporaryThemesList) {
+		for (Theme theme : temporaryThemesList) {
 			allThemes.put(theme.getId(), theme);
 		}
 
@@ -485,22 +485,22 @@ public class ThemeManager {
 	private Theme findCurrentTheme() {
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 
-		if(store.contains(ThemePreferences.CURRENT_THEME)) {
+		if (store.contains(ThemePreferences.CURRENT_THEME)) {
 			String themeId = store.getString(ThemePreferences.CURRENT_THEME);
 			return getTheme(themeId);
 		}
 
-		//The theme has not been defined: return the first one, and store it
+		// The theme has not been defined: return the first one, and store it
 		List<Theme> sortedThemes = new ArrayList<Theme>(getAllThemes().values());
-		if(sortedThemes.size() < 2) {
+		if (sortedThemes.size() < 2) {
 			return EmptyTheme.instance;
 		}
 
-		//Index 0 is EmptyTheme ; we return the first non-empty theme
+		// Index 0 is EmptyTheme ; we return the first non-empty theme
 		Theme theme = sortedThemes.get(1);
 		store.setValue(ThemePreferences.CURRENT_THEME, theme.getId());
 		try {
-			((IPersistentPreferenceStore)store).save();
+			((IPersistentPreferenceStore) store).save();
 		} catch (IOException e) {
 			Activator.log.error(e);
 		}
@@ -531,10 +531,10 @@ public class ThemeManager {
 
 		@Override
 		public int compare(Theme o1, Theme o2) {
-			if(o1 == EmptyTheme.instance) {
+			if (o1 == EmptyTheme.instance) {
 				return -1;
 			}
-			if(o2 == EmptyTheme.instance) {
+			if (o2 == EmptyTheme.instance) {
 				return 1;
 			}
 

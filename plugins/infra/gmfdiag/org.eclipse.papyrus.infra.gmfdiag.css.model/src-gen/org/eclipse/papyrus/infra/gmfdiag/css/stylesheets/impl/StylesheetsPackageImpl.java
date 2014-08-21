@@ -21,12 +21,14 @@ import org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.WorkspaceThemes;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass modelStyleSheetsEClass = null;
@@ -34,6 +36,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass styleSheetEClass = null;
@@ -41,6 +44,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass styleSheetReferenceEClass = null;
@@ -48,6 +52,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass embeddedStyleSheetEClass = null;
@@ -55,6 +60,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass workspaceThemesEClass = null;
@@ -62,20 +68,17 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass themeEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage#eNS_URI
 	 * @see #init()
@@ -88,27 +91,29 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link StylesheetsPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link StylesheetsPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static StylesheetsPackage init() {
-		if (isInited) return (StylesheetsPackage)EPackage.Registry.INSTANCE.getEPackage(StylesheetsPackage.eNS_URI);
+		if (isInited) {
+			return (StylesheetsPackage) EPackage.Registry.INSTANCE.getEPackage(StylesheetsPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		StylesheetsPackageImpl theStylesheetsPackage = (StylesheetsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof StylesheetsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new StylesheetsPackageImpl());
+		StylesheetsPackageImpl theStylesheetsPackage = (StylesheetsPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof StylesheetsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new StylesheetsPackageImpl());
 
 		isInited = true;
 
@@ -124,7 +129,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 		// Mark meta-data to indicate it can't be changed
 		theStylesheetsPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(StylesheetsPackage.eNS_URI, theStylesheetsPackage);
 		return theStylesheetsPackage;
@@ -133,6 +138,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getModelStyleSheets() {
@@ -142,15 +148,17 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelStyleSheets_Stylesheets() {
-		return (EReference)modelStyleSheetsEClass.getEStructuralFeatures().get(0);
+		return (EReference) modelStyleSheetsEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getStyleSheet() {
@@ -160,6 +168,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getStyleSheetReference() {
@@ -169,15 +178,17 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getStyleSheetReference_Path() {
-		return (EAttribute)styleSheetReferenceEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) styleSheetReferenceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getEmbeddedStyleSheet() {
@@ -187,24 +198,27 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEmbeddedStyleSheet_Label() {
-		return (EAttribute)embeddedStyleSheetEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) embeddedStyleSheetEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEmbeddedStyleSheet_Content() {
-		return (EAttribute)embeddedStyleSheetEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) embeddedStyleSheetEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getWorkspaceThemes() {
@@ -214,15 +228,17 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getWorkspaceThemes_Themes() {
-		return (EReference)workspaceThemesEClass.getEStructuralFeatures().get(0);
+		return (EReference) workspaceThemesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTheme() {
@@ -232,64 +248,73 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getTheme_Id() {
-		return (EAttribute)themeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) themeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getTheme_Label() {
-		return (EAttribute)themeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) themeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getTheme_Icon() {
-		return (EAttribute)themeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) themeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTheme_Stylesheets() {
-		return (EReference)themeEClass.getEStructuralFeatures().get(3);
+		return (EReference) themeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StylesheetsFactory getStylesheetsFactory() {
-		return (StylesheetsFactory)getEFactoryInstance();
+		return (StylesheetsFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -318,19 +343,23 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -339,7 +368,7 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
+		EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -353,7 +382,8 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(modelStyleSheetsEClass, ModelStyleSheets.class, "ModelStyleSheets", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelStyleSheets_Stylesheets(), this.getStyleSheet(), null, "stylesheets", null, 0, -1, ModelStyleSheets.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelStyleSheets_Stylesheets(), this.getStyleSheet(), null, "stylesheets", null, 0, -1, ModelStyleSheets.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(styleSheetEClass, StyleSheet.class, "StyleSheet", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -377,4 +407,4 @@ public class StylesheetsPackageImpl extends EPackageImpl implements StylesheetsP
 		createResource(eNS_URI);
 	}
 
-} //StylesheetsPackageImpl
+} // StylesheetsPackageImpl

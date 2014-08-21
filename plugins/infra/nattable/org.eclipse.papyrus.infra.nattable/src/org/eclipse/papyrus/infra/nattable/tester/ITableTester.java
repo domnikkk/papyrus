@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,14 +17,14 @@ import org.eclipse.core.runtime.IStatus;
 
 /**
  * The interface to implements for the table creation tester
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public interface ITableTester {
 
 	/**
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 *         a status indicating if the table can be created

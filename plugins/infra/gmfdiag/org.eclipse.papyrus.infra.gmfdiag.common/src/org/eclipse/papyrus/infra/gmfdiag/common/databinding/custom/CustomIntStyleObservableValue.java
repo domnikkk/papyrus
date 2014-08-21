@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ public class CustomIntStyleObservableValue extends AbstractCustomStyleObservable
 		super(source, domain, styleName, NotationPackage.eINSTANCE.getIntValueStyle(), NotationPackage.eINSTANCE.getIntValueStyle_IntValue());
 	}
 
+	@Override
 	public Object getValueType() {
 		return Integer.class;
 	}
@@ -30,7 +31,7 @@ public class CustomIntStyleObservableValue extends AbstractCustomStyleObservable
 	/**
 	 * Gets the default value when this style is not set.
 	 * Subclasses may override
-	 * 
+	 *
 	 * @return The default value for this IntegerStyleValue
 	 */
 	@Override
@@ -40,7 +41,7 @@ public class CustomIntStyleObservableValue extends AbstractCustomStyleObservable
 
 	@Override
 	public Command getCommand(Object value) {
-		if(value instanceof Integer) {
+		if (value instanceof Integer) {
 			return super.getCommand(value);
 		}
 		throw new IllegalArgumentException("The value " + value + " is not a valid Integer Value");

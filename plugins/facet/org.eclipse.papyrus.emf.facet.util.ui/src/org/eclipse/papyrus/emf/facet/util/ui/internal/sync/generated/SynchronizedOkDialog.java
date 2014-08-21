@@ -1,11 +1,11 @@
-/** 
+/**
  * Copyright (c) Soft-Maint.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 		Thomas Cicognani (Soft-Maint) - Bug 406565 - Ok Dialog
  */
@@ -25,6 +25,7 @@ public class SynchronizedOkDialog extends SynchronizedObject<IOkDialog>
 	public SynchronizedOkDialog(final IOkDialog object, final Display display) {
 		super(object, display);
 	}
+
 	public final void commit() {
 		voidExceptionFreeRunnable(new AbstractVoidExceptionFreeRunnable() {
 			@Override
@@ -33,7 +34,7 @@ public class SynchronizedOkDialog extends SynchronizedObject<IOkDialog>
 			}
 		});
 	}
-	
+
 	public final boolean isError() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -42,7 +43,7 @@ public class SynchronizedOkDialog extends SynchronizedObject<IOkDialog>
 			}
 		}).booleanValue();
 	}
-	
+
 	public final boolean isInformation() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -51,7 +52,7 @@ public class SynchronizedOkDialog extends SynchronizedObject<IOkDialog>
 			}
 		}).booleanValue();
 	}
-	
+
 	public final boolean isWarning() {
 		return safeSyncExec(new AbstractExceptionFreeRunnable<Boolean>() {
 			@Override
@@ -60,5 +61,5 @@ public class SynchronizedOkDialog extends SynchronizedObject<IOkDialog>
 			}
 		}).booleanValue();
 	}
-	
+
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * looks like org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest
- * 
+ *
  * This class was created to use the CustomCreateElementRequestAdapter
- * 
+ *
  */
 public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequest {
 	/**
@@ -66,7 +66,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Creates a new view descriptor using element adapter
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param preferencesHint
@@ -81,7 +81,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Creates a new view descriptor using element adapter and a view kind
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param viewkind
@@ -99,7 +99,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Creates a new view descriptor using element adapter and a view kind
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param viewkind
@@ -121,7 +121,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 		/**
 		 * Creates a new view descriptor using element adapter, a view kind and
 		 * a factory hint
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param viewkind
@@ -141,7 +141,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 		/**
 		 * Creates a new view descriptor using element adapter, a view kind and
 		 * a factory hint
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param viewkind
@@ -166,7 +166,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 		 * view kind, factory hint and index.
 		 * <P>
 		 * Same as calling <code>new ViewDescriptor(elementAdapter, viewKind, factoryHint, index, true);</code>
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param viewKind
@@ -183,7 +183,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 		/**
 		 * Creates a new view descriptor using the supplied element adapter,
 		 * view kind, factory hint, index and persistence flag.
-		 * 
+		 *
 		 * @param elementAdapter
 		 *            the element adapter referened by the view
 		 * @param viewKind
@@ -208,19 +208,20 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Adapts to IView
-		 * 
+		 *
 		 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(Class)
 		 */
 		@SuppressWarnings("rawtypes")
 		public Object getAdapter(Class adapter) {
-			if (adapter.isInstance(view))
+			if (adapter.isInstance(view)) {
 				return view;
+			}
 			return null;
 		}
 
 		/**
 		 * Method setView.
-		 * 
+		 *
 		 * @param view
 		 */
 		public void setView(View view) {
@@ -229,7 +230,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Method setPersisted.
-		 * 
+		 *
 		 * @param persisted
 		 */
 		public void setPersisted(boolean persisted) {
@@ -238,7 +239,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Method getelementAdapter.
-		 * 
+		 *
 		 * @return IAdaptable
 		 */
 		public IAdaptable getElementAdapter() {
@@ -247,7 +248,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Method getViewKind.
-		 * 
+		 *
 		 * @return Class
 		 */
 		public Class<?> getViewKind() {
@@ -256,7 +257,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Method getSemanticHint.
-		 * 
+		 *
 		 * @return String
 		 */
 		public String getSemanticHint() {
@@ -265,7 +266,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Method getIndex.
-		 * 
+		 *
 		 * @return int
 		 */
 		public int getIndex() {
@@ -274,7 +275,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 		/**
 		 * Return <tt>true</tt> if the view will be persisted; otherwise <tt>false</tt>
-		 * 
+		 *
 		 * @return <code>true</code> or <code>false</code>
 		 */
 		public final boolean isPersisted() {
@@ -286,7 +287,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 		 * preference store from which to retrieve diagram preference values. The
 		 * preference hint is mapped to a preference store in the preference
 		 * registry <@link DiagramPreferencesRegistry>.
-		 * 
+		 *
 		 * @return the preferences hint
 		 */
 		public PreferencesHint getPreferencesHint() {
@@ -317,7 +318,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * Convenience constructor for CreateViewRequest using a <code>IElement</code>
-	 * 
+	 *
 	 * @param element
 	 *            a semantic element
 	 * @param preferencesHint
@@ -332,7 +333,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * Constructor for CreateViewRequest using a <code>ViewDescriptor</code>
-	 * 
+	 *
 	 * @param viewDescriptor
 	 *            a view descriptor
 	 */
@@ -342,7 +343,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * Constructor for CreateViewRequest using a list of <code>ViewDescriptor</code> s
-	 * 
+	 *
 	 * @param viewDescriptors
 	 *            a list of view descriptors
 	 */
@@ -354,7 +355,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * Constructor for CreateViewRequest using a request type and a <code>ViewDescriptor</code>
-	 * 
+	 *
 	 * @param type
 	 *            request type
 	 * @param viewDescriptor
@@ -366,7 +367,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * Constructor for CreateViewRequest using a request type and list of <code>ViewDescriptor</code> s
-	 * 
+	 *
 	 * @param type
 	 *            the request type
 	 * @param viewDescriptors
@@ -380,7 +381,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * Returns the viewDescriptors list
-	 * 
+	 *
 	 * @return List of <code>ViewDescriptor</code> s
 	 */
 	public List<? extends ViewDescriptor> getViewDescriptors() {
@@ -389,27 +390,30 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 
 	/**
 	 * A list of <code>IAdaptable</code> objects that adapt to <code>View</code> .class
-	 * 
+	 *
 	 * @see org.eclipse.gef.requests.CreateRequest#getNewObject()
 	 */
+	@Override
 	public Object getNewObject() {
 		return getViewDescriptors();
 	}
 
 	/**
 	 * The type is a List of <code>IAdaptable</code> objects that adapt to <code>IView</code> .class
-	 * 
+	 *
 	 * @see org.eclipse.gef.requests.CreateRequest#getNewObjectType()
 	 */
+	@Override
 	public Object getNewObjectType() {
 		return List.class;
 	}
 
 	/**
 	 * The factory mechanism is not used
-	 * 
+	 *
 	 * @throws UnsupportedOperationException
 	 */
+	@Override
 	protected CreationFactory getFactory() {
 		throw new UnsupportedOperationException("The Factory mechanism is not used"); //$NON-NLS-1$
 	}
@@ -417,6 +421,7 @@ public class CustomCreateViewRequest extends org.eclipse.gef.requests.CreateRequ
 	/**
 	 * The factory mechanism is not used
 	 */
+	@Override
 	public void setFactory(CreationFactory factory) {
 		throw new UnsupportedOperationException("The Factory mechanism is not used"); //$NON-NLS-1$
 	}

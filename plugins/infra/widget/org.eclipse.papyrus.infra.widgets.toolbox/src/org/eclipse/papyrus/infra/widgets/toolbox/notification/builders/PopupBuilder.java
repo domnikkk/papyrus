@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * A Builder able to create {@link PapyrusPopup} instances
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class PopupBuilder implements IBuilder {
 
@@ -38,29 +38,29 @@ public class PopupBuilder implements IBuilder {
 	public INotification build(PropertyWrapper wrapper, FormToolkit toolkit) {
 		PapyrusPopup popup = null;
 		String title = "Papyrus";
-		if(wrapper.getTitle() != null) {
+		if (wrapper.getTitle() != null) {
 			title = wrapper.getTitle();
 		}
 		String message = null;
-		if(wrapper.getMessage() != null) {
+		if (wrapper.getMessage() != null) {
 			message = wrapper.getMessage();
 		}
 		Shell activeShell = new Shell(Display.getDefault());
-		if(wrapper.getType() != null) {
+		if (wrapper.getType() != null) {
 			popup = new IconAndMessagePapyrusPopup(activeShell, toolkit, message, wrapper.getType());
-		} else if(wrapper.getImage() != null) {
+		} else if (wrapper.getImage() != null) {
 			popup = new IconAndMessagePapyrusPopup(activeShell, toolkit, message);
-			((IconAndMessagePapyrusPopup)popup).setImage(wrapper.getImage());
+			((IconAndMessagePapyrusPopup) popup).setImage(wrapper.getImage());
 		} else {
 			popup = new MessagePapyrusPopup(activeShell, toolkit, message);
 		}
 		popup.setTitle(title);
 		popup.setUseHtml(wrapper.isHtml());
-		if(wrapper.getComposite() != null) {
+		if (wrapper.getComposite() != null) {
 			popup.setCompositeCreator(wrapper.getComposite());
 			popup.setTitle(title);
 		}
-		if(wrapper.getActions() != null) {
+		if (wrapper.getActions() != null) {
 			popup.addRunnables(wrapper.getActions());
 		}
 		PopupNotification result = new PopupNotification(popup);
@@ -76,35 +76,35 @@ public class PopupBuilder implements IBuilder {
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.IBuilder#accept(java.lang.String, java.lang.Object)
 	 */
 	public boolean accept(String parameterName, Object value) {
-		if(NotificationBuilder.ASYNCHRONOUS.equals(parameterName)) {
-			return value instanceof Boolean && !((Boolean)value);
+		if (NotificationBuilder.ASYNCHRONOUS.equals(parameterName)) {
+			return value instanceof Boolean && !((Boolean) value);
 		}
-		if(NotificationBuilder.DELAY.equals(parameterName)) {
+		if (NotificationBuilder.DELAY.equals(parameterName)) {
 			return false;
 		}
-		if(NotificationBuilder.TITLE.equals(parameterName)) {
+		if (NotificationBuilder.TITLE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.TYPE.equals(parameterName)) {
+		if (NotificationBuilder.TYPE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.IMAGE.equals(parameterName)) {
+		if (NotificationBuilder.IMAGE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.MESSAGE.equals(parameterName)) {
+		if (NotificationBuilder.MESSAGE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.COMPOSITE.equals(parameterName)) {
+		if (NotificationBuilder.COMPOSITE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.HTML.equals(parameterName)) {
+		if (NotificationBuilder.HTML.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.ACTION.equals(parameterName)) {
+		if (NotificationBuilder.ACTION.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.TEMPORARY.equals(parameterName)) {
-			return value instanceof Boolean && !((Boolean)value);
+		if (NotificationBuilder.TEMPORARY.equals(parameterName)) {
+			return value instanceof Boolean && !((Boolean) value);
 		}
 		return false;
 	}

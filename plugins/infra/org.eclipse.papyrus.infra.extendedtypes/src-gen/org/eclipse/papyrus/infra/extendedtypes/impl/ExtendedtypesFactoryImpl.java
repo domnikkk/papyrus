@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.extendedtypes.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtendedtypesFactoryImpl extends EFactoryImpl implements ExtendedtypesFactory {
@@ -35,13 +35,13 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ExtendedtypesFactory init() {
 		try {
-			ExtendedtypesFactory theExtendedtypesFactory = (ExtendedtypesFactory)EPackage.Registry.INSTANCE.getEFactory(ExtendedtypesPackage.eNS_URI);
-			if(theExtendedtypesFactory != null) {
+			ExtendedtypesFactory theExtendedtypesFactory = (ExtendedtypesFactory) EPackage.Registry.INSTANCE.getEFactory(ExtendedtypesPackage.eNS_URI);
+			if (theExtendedtypesFactory != null) {
 				return theExtendedtypesFactory;
 			}
 		} catch (Exception exception) {
@@ -54,7 +54,7 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedtypesFactoryImpl() {
@@ -64,12 +64,12 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case ExtendedtypesPackage.EXTENDED_ELEMENT_TYPE_SET:
 			return createExtendedElementTypeSet();
 		case ExtendedtypesPackage.ICON_ENTRY:
@@ -86,7 +86,7 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedElementTypeSet createExtendedElementTypeSet() {
@@ -97,7 +97,7 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IconEntry createIconEntry() {
@@ -108,7 +108,7 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AspectSemanticTypeConfiguration createAspectSemanticTypeConfiguration() {
@@ -119,7 +119,7 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AspectViewTypeConfiguration createAspectViewTypeConfiguration() {
@@ -130,17 +130,17 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedtypesPackage getExtendedtypesPackage() {
-		return (ExtendedtypesPackage)getEPackage();
+		return (ExtendedtypesPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -148,4 +148,4 @@ public class ExtendedtypesFactoryImpl extends EFactoryImpl implements Extendedty
 	public static ExtendedtypesPackage getPackage() {
 		return ExtendedtypesPackage.eINSTANCE;
 	}
-} //ExtendedtypesFactoryImpl
+} // ExtendedtypesFactoryImpl

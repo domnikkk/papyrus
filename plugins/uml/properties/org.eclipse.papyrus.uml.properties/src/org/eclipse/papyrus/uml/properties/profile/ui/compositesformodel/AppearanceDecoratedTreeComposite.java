@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -66,7 +66,7 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 
 	/**
 	 * returns the element that is selected in Papyrus tool, for which properties are displayed in the property section.
-	 * 
+	 *
 	 * @return the element
 	 */
 	public Element getElement() {
@@ -75,9 +75,9 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 
 	/**
 	 * Sets the element that holds property displyed in property section.
-	 * 
+	 *
 	 * @param element
-	 *        the element to set
+	 *            the element to set
 	 */
 	public void setElement(Element element) {
 		this.element = element;
@@ -85,11 +85,11 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param style
 	 * @param isStereotypeTree
 	 * @param name
-	 *        text of the Label on the top left of this composite
+	 *            text of the Label on the top left of this composite
 	 * @param parent
 	 */
 	public AppearanceDecoratedTreeComposite(Composite parent, int style, String name, boolean isStereotypeTree) {
@@ -97,7 +97,7 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 		this.name = name;
 		this.setLayout(new FormLayout());
 
-		if(isStereotypeTree) {
+		if (isStereotypeTree) {
 			treeViewer = new ProfileElementTreeViewer(this);
 		} else {
 			// Property tree
@@ -112,11 +112,11 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 	 * org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param factory
 	 * @param parent
-	 * 
+	 *
 	 * @return
 	 */
 	public Composite createContent(Composite parent, TabbedPropertySheetWidgetFactory factory) {
@@ -130,7 +130,7 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 	 * @see com.cea.papyrus.ui.composites.ISectionComposite#refresh()
 	 */
 	/**
-	 * 
+	 *
 	 */
 	public void refresh() {
 	}
@@ -139,22 +139,22 @@ public abstract class AppearanceDecoratedTreeComposite extends Composite impleme
 		Element element = getElement();
 		return (element == null) || EMFHelper.isReadOnly(element);
 	}
-	
+
 	/**
 	 * Returns the CommmandStack of the current editor.
-	 * 
+	 *
 	 * @return the CommmandStack of the current editor
 	 */
 	public CommandStack getCommandStack() {
-		if(getActiveEditor() != null) {
-			return (CommandStack)getActiveEditor().getAdapter(CommandStack.class);
+		if (getActiveEditor() != null) {
+			return (CommandStack) getActiveEditor().getAdapter(CommandStack.class);
 		}
 		return null;
 	}
 
 	/**
 	 * Returns the current Editor.
-	 * 
+	 *
 	 * @return the current editor
 	 */
 	public IEditorPart getActiveEditor() {

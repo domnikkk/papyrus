@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.PapyrusNodeFigure;
 /**
  * this is the figure of a template signature
  * It contains only a compartment for template paramater.
- * 
+ *
  */
 public class TemplateFigure extends PapyrusNodeFigure {
 
@@ -31,19 +31,19 @@ public class TemplateFigure extends PapyrusNodeFigure {
 		Dimension prefDim = new Dimension(60, 40);
 		// TODO Auto-generated method stub
 		Dimension contentDim = templateParameterRectangle.getPreferredSize();
-		if(contentDim.width + 10 > prefDim.width) {
+		if (contentDim.width + 10 > prefDim.width) {
 			prefDim.width = contentDim.width + 10;
 		}
-		if(contentDim.height + 10 > prefDim.height) {
+		if (contentDim.height + 10 > prefDim.height) {
 			prefDim.height = contentDim.height + 10;
 		}
 		return prefDim;
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public TemplateFigure() {
 		templateParameterRectangle = new RectangleFigure();

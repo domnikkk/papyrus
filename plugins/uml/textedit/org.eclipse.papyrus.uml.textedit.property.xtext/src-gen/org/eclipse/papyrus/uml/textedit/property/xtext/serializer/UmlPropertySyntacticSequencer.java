@@ -15,21 +15,23 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class UmlPropertySyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected UmlPropertyGrammarAccess grammarAccess;
-	
+
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (UmlPropertyGrammarAccess) access;
 	}
-	
+
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		return "";
 	}
-	
-	
+
+
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
-		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
+		if (transition.getAmbiguousSyntaxes().isEmpty()) {
+			return;
+		}
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);

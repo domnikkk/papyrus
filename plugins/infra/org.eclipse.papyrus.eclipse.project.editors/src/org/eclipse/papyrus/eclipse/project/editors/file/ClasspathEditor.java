@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,9 +39,9 @@ import org.eclipse.papyrus.eclipse.project.editors.Activator;
 import org.eclipse.papyrus.eclipse.project.editors.interfaces.IClasspathEditor;
 
 /**
- * 
+ *
  * The editor for the classpath file
- * 
+ *
  */
 public class ClasspathEditor extends AbstractFileEditor implements IClasspathEditor {
 
@@ -52,9 +52,9 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param project
 	 */
 	public ClasspathEditor(final IProject project) throws AssertionFailedException {
@@ -63,11 +63,11 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param javaProject
-	 *        a java project
+	 *            a java project
 	 */
 	public ClasspathEditor(final IJavaProject javaProject) {
 		super(javaProject.getProject());
@@ -76,12 +76,12 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 
 	@Override
 	public void init() {
-		//nothing to do here
+		// nothing to do here
 	}
 
 	/**
 	 * save the modification
-	 * 
+	 *
 	 * @throws Throwable
 	 */
 	public void save() {
@@ -93,16 +93,16 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IClasspathEditor#addSourceFolderToClasspath(java.lang.String)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void addSourceFolderToClasspath(final String folderPath) {
 
-		if(exists() && !isSourceFolderRegistered(folderPath)) {
+		if (exists() && !isSourceFolderRegistered(folderPath)) {
 
-			//parameters for the new ClasspathEntry
+			// parameters for the new ClasspathEntry
 			boolean isExported = false;
 			IPath[] exclusionPatterns = new IPath[0];
 			IPath sourceAttachmentPath = null;
@@ -124,10 +124,11 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 			}
 
 			IClasspathEntry[] entries = new IClasspathEntry[classpathes.length + 1];
-			for(int i = 0; i < classpathes.length; i++) {
+			for (int i = 0; i < classpathes.length; i++) {
 				entries[i] = classpathes[i];
 			}
-			entries[classpathes.length] = new ClasspathEntry(contentKind, entryKind, path2, inclusionPatterns, exclusionPatterns, sourceAttachmentPath, sourceAttachmentRootPath, specificOutputLocation, isExported, accessRules, combineAccessRules, extraAttributes);
+			entries[classpathes.length] = new ClasspathEntry(contentKind, entryKind, path2, inclusionPatterns, exclusionPatterns, sourceAttachmentPath, sourceAttachmentRootPath, specificOutputLocation, isExported, accessRules, combineAccessRules,
+					extraAttributes);
 			try {
 				this.javaProject.setRawClasspath(entries, new NullProgressMonitor());
 			} catch (JavaModelException e) {
@@ -137,9 +138,9 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IClasspathEditor#isSourceFolderRegistered(java.lang.String)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public boolean isSourceFolderRegistered(final String folderPath) {
@@ -150,10 +151,10 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 			Activator.log.error(e);
 		}
 
-		for(int i = 0; i < entries.length; i++) {
+		for (int i = 0; i < entries.length; i++) {
 			IClasspathEntry entry = entries[i];
-			if(entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
-				if(entry.getPath().equals(new Path(folderPath))) {
+			if (entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
+				if (entry.getPath().equals(new Path(folderPath))) {
 					return true;
 				}
 			}
@@ -163,9 +164,9 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 
 	/**
 	 * Tests if the classpath file exists
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.AbstractProjectEditor.plugin.AbstractEditor#exists()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
@@ -175,31 +176,31 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#getMissingFiles()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public Set<String> getMissingFiles() {
 		Set<String> files = super.getMissingFiles();
 		IFile classpath = getProject().getFile(CLASSPATH_FILE);
-		if(!classpath.exists()) {
+		if (!classpath.exists()) {
 			files.add(CLASSPATH_FILE);
 		}
 		return files;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.project.ProjectEditor#createFiles(Set)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void createFiles(final Set<String> files) {
-		if(files.contains(CLASSPATH_FILE)) {
+		if (files.contains(CLASSPATH_FILE)) {
 			IFile classpath = getProject().getFile(CLASSPATH_FILE);
-			if(!classpath.exists()) {
+			if (!classpath.exists()) {
 				InputStream is = getInputStream("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + "<?eclipse version=\"3.4\"?>\n" + "<classpath>\n" + "</classpath>\n"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
 				try {
@@ -220,9 +221,9 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 			Activator.log.error(e);
 		}
 
-		for(int i = 0; i < entries.length; i++) {
+		for (int i = 0; i < entries.length; i++) {
 			IClasspathEntry entry = entries[i];
-			if(entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
+			if (entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
 				sourceFolders.add(entry.getPath().makeRelativeTo(javaProject.getPath()).toString());
 			}
 		}
@@ -233,7 +234,7 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 	public String[] getBinFolders() {
 		List<String> binFolders = new LinkedList<String>();
 		try {
-			//General bin folder
+			// General bin folder
 			binFolders.add(javaProject.getOutputLocation().makeRelativeTo(javaProject.getPath()).toString());
 		} catch (JavaModelException ex) {
 			Activator.log.error(ex);
@@ -245,11 +246,11 @@ public class ClasspathEditor extends AbstractFileEditor implements IClasspathEdi
 			Activator.log.error(e);
 		}
 
-		for(int i = 0; i < entries.length; i++) {
+		for (int i = 0; i < entries.length; i++) {
 			IClasspathEntry entry = entries[i];
-			if(entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
-				if(entry.getOutputLocation() != null) {
-					//Bin folder associated to each source folder
+			if (entry.getEntryKind() == IClasspathEntry.CPE_SOURCE) {
+				if (entry.getOutputLocation() != null) {
+					// Bin folder associated to each source folder
 					binFolders.add(entry.getOutputLocation().makeRelativeTo(javaProject.getPath()).toString());
 				}
 			}

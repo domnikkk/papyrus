@@ -11,6 +11,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Service Desc</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServiceDescTest extends AbstractServiceDescTest {
@@ -18,6 +19,7 @@ public class ServiceDescTest extends AbstractServiceDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class ServiceDescTest extends AbstractServiceDescTest {
 	 * Constructs a new Service Desc test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServiceDescTest(String name) {
@@ -38,16 +41,18 @@ public class ServiceDescTest extends AbstractServiceDescTest {
 	 * Returns the fixture for this Service Desc test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected ServiceDesc getFixture() {
-		return (ServiceDesc)fixture;
+		return (ServiceDesc) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class ServiceDescTest extends AbstractServiceDescTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class ServiceDescTest extends AbstractServiceDescTest {
 		setFixture(null);
 	}
 
-} //ServiceDescTest
+} // ServiceDescTest

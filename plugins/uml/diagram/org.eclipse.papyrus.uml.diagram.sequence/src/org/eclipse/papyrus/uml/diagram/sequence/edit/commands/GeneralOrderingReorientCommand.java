@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.GeneralOrdering;
 import org.eclipse.uml2.uml.InteractionFragment;
@@ -45,14 +46,15 @@ public class GeneralOrderingReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof GeneralOrdering) {
+		if (false == getElementToEdit() instanceof GeneralOrdering) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -62,14 +64,14 @@ public class GeneralOrderingReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof OccurrenceSpecification && newEnd instanceof OccurrenceSpecification)) {
+		if (!(oldEnd instanceof OccurrenceSpecification && newEnd instanceof OccurrenceSpecification)) {
 			return false;
 		}
 		OccurrenceSpecification target = getLink().getAfter();
-		if(!(getLink().eContainer() instanceof InteractionFragment)) {
+		if (!(getLink().eContainer() instanceof InteractionFragment)) {
 			return false;
 		}
-		InteractionFragment container = (InteractionFragment)getLink().eContainer();
+		InteractionFragment container = (InteractionFragment) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistGeneralOrdering_4012(container, getLink(), getNewSource(), target);
 	}
 
@@ -77,28 +79,29 @@ public class GeneralOrderingReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof OccurrenceSpecification && newEnd instanceof OccurrenceSpecification)) {
+		if (!(oldEnd instanceof OccurrenceSpecification && newEnd instanceof OccurrenceSpecification)) {
 			return false;
 		}
 		OccurrenceSpecification source = getLink().getBefore();
-		if(!(getLink().eContainer() instanceof InteractionFragment)) {
+		if (!(getLink().eContainer() instanceof InteractionFragment)) {
 			return false;
 		}
-		InteractionFragment container = (InteractionFragment)getLink().eContainer();
+		InteractionFragment container = (InteractionFragment) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistGeneralOrdering_4012(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -124,34 +127,34 @@ public class GeneralOrderingReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected GeneralOrdering getLink() {
-		return (GeneralOrdering)getElementToEdit();
+		return (GeneralOrdering) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected OccurrenceSpecification getOldSource() {
-		return (OccurrenceSpecification)oldEnd;
+		return (OccurrenceSpecification) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected OccurrenceSpecification getNewSource() {
-		return (OccurrenceSpecification)newEnd;
+		return (OccurrenceSpecification) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected OccurrenceSpecification getOldTarget() {
-		return (OccurrenceSpecification)oldEnd;
+		return (OccurrenceSpecification) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected OccurrenceSpecification getNewTarget() {
-		return (OccurrenceSpecification)newEnd;
+		return (OccurrenceSpecification) newEnd;
 	}
 }

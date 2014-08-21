@@ -19,35 +19,35 @@ import com.google.inject.Module;
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlParameterActivator extends AbstractUIPlugin {
-	
+
 	public static final String ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PARAMETER_XTEXT_UMLPARAMETER = "org.eclipse.papyrus.uml.textedit.parameter.xtext.UmlParameter";
-	
+
 	private static final Logger logger = Logger.getLogger(UmlParameterActivator.class);
-	
+
 	private static UmlParameterActivator INSTANCE;
-	
+
 	private Map<String, Injector> injectors = Collections.synchronizedMap(Maps.<String, Injector> newHashMapWithExpectedSize(1));
-	
+
 	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		INSTANCE = this;
 	}
-	
+
 	@Override
 	public void stop(BundleContext context) throws Exception {
 		injectors.clear();
 		INSTANCE = null;
 		super.stop(context);
 	}
-	
+
 	public static UmlParameterActivator getInstance() {
 		return INSTANCE;
 	}
-	
+
 	public Injector getInjector(String language) {
 		synchronized (injectors) {
 			Injector injector = injectors.get(language);
@@ -57,7 +57,7 @@ public class UmlParameterActivator extends AbstractUIPlugin {
 			return injector;
 		}
 	}
-	
+
 	protected Injector createInjector(String language) {
 		try {
 			Module runtimeModule = getRuntimeModule(language);
@@ -76,20 +76,20 @@ public class UmlParameterActivator extends AbstractUIPlugin {
 		if (ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PARAMETER_XTEXT_UMLPARAMETER.equals(grammar)) {
 			return new org.eclipse.papyrus.uml.textedit.parameter.xtext.UmlParameterRuntimeModule();
 		}
-		
+
 		throw new IllegalArgumentException(grammar);
 	}
-	
+
 	protected Module getUiModule(String grammar) {
 		if (ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PARAMETER_XTEXT_UMLPARAMETER.equals(grammar)) {
 			return new org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.UmlParameterUiModule(this);
 		}
-		
+
 		throw new IllegalArgumentException(grammar);
 	}
-	
+
 	protected Module getSharedStateModule() {
 		return new SharedStateModule();
 	}
-	
+
 }

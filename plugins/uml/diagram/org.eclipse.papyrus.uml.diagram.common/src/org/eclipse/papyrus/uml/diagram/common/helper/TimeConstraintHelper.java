@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,18 +30,18 @@ public class TimeConstraintHelper {
 
 	/**
 	 * Get the list of all TimeConstraint constraining a given element
-	 * 
+	 *
 	 * @param element
-	 *        the constrained element
+	 *            the constrained element
 	 * @return list of TimeConstraint
 	 */
 	public static List<TimeConstraint> getTimeConstraintsOn(NamedElement element) {
 		Collection<Setting> inverseReferences = EMFHelper.getUsages(element);
 		// TimeConstraint referencing element
 		List<TimeConstraint> referencing = new LinkedList<TimeConstraint>();
-		for(Setting ref : inverseReferences) {
-			if(UMLPackage.eINSTANCE.getConstraint_ConstrainedElement().equals(ref.getEStructuralFeature()) && ref.getEObject() instanceof TimeConstraint && ref.getEObject().eContainer() != null) {
-				referencing.add((TimeConstraint)ref.getEObject());
+		for (Setting ref : inverseReferences) {
+			if (UMLPackage.eINSTANCE.getConstraint_ConstrainedElement().equals(ref.getEStructuralFeature()) && ref.getEObject() instanceof TimeConstraint && ref.getEObject().eContainer() != null) {
+				referencing.add((TimeConstraint) ref.getEObject());
 			}
 		}
 		return referencing;

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -58,13 +58,13 @@ public class InternalBlockDiagramNodePreferencePage extends AbstractPapyrusNodeP
 		super.createPageContents(parent);
 
 		// Add compartments visibility group
-		if(!compartmentNamesList.isEmpty()) {
+		if (!compartmentNamesList.isEmpty()) {
 			OrderedCompartmentGroup compartmentGroup = new OrderedCompartmentGroup(parent, getPreferenceKey(), this, compartmentNamesList, compartmentTitlesList, getPreferenceStore());
 			addAbstractGroup(compartmentGroup);
 		}
 
 		// Add label visibility group
-		if(!labelsList.isEmpty()) {
+		if (!labelsList.isEmpty()) {
 			OrderedLabelGroup compartmentGroup = new OrderedLabelGroup(parent, getPreferenceKey(), this, labelsList);
 			addAbstractGroup(compartmentGroup);
 		}
@@ -80,17 +80,17 @@ public class InternalBlockDiagramNodePreferencePage extends AbstractPapyrusNodeP
 
 	/** Initialize the list containing names of labels. */
 	protected void initializeLabelsList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
 
 	/** Initialize the list containing the names of compartments. */
 	protected void initializeCompartmentNamesList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
 
 	/** Initialize the list containing the names of compartment that have titles. */
 	protected void initializeCompartmentTitlesList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
 
 	/**

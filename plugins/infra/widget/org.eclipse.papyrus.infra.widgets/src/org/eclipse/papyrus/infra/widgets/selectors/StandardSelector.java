@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * Creates an element selector from an AbstractValueEditor. This class is a
  * generic implementation for element selectors.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class StandardSelector implements IElementSelector {
 
@@ -48,9 +48,9 @@ public class StandardSelector implements IElementSelector {
 
 	/**
 	 * Instantiates this selector, using the specified editor class
-	 * 
+	 *
 	 * @param editorClass
-	 *        The AbstractValueEditor Class used to instantiate this selector
+	 *            The AbstractValueEditor Class used to instantiate this selector
 	 */
 	public StandardSelector(Class<? extends AbstractValueEditor> editorClass) {
 		Assert.isNotNull(editorClass, "The StandardSelector editor class should not be null"); //$NON-NLS-1$
@@ -60,46 +60,51 @@ public class StandardSelector implements IElementSelector {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getSelectedElements() {
 		Object value = editor.getValue();
-		if(value == null) {
-			return new Object[]{};
+		if (value == null) {
+			return new Object[] {};
 		}
 
-		return new Object[]{ value };
+		return new Object[] { value };
 	}
 
 	/**
 	 * Ignored. The generic selectors can't be filtered.
 	 */
+	@Override
 	public void setSelectedElements(Object[] elements) {
-		//Ignored
+		// Ignored
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Object[] getAllElements() {
 		return getSelectedElements();
 	}
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * The control for this selector is obtained by instantiating the generic class with a parent
 	 * composite and a default style
 	 */
+	@Override
 	public void createControls(Composite parent) {
 		try {
 			Constructor<? extends AbstractValueEditor> construct = editorClass.getDeclaredConstructor(Composite.class, Integer.TYPE);
 			editor = construct.newInstance(parent, SWT.BORDER);
 			editor.addCommitListener(new ICommitListener() {
 
+				@Override
 				public void commit(AbstractEditor editor) {
-					if(!elementSelectionListeners.isEmpty()) {
+					if (!elementSelectionListeners.isEmpty()) {
 						Object value = StandardSelector.this.editor.getValue();
-						for(IElementSelectionListener listener : elementSelectionListeners) {
-							listener.addElements(new Object[]{ value });
+						for (IElementSelectionListener listener : elementSelectionListeners) {
+							listener.addElements(new Object[] { value });
 						}
 					}
 				}
@@ -110,18 +115,22 @@ public class StandardSelector implements IElementSelector {
 		}
 	}
 
+	@Override
 	public void newObjectCreated(Object newObject) {
-		//Ignored
+		// Ignored
 	}
 
+	@Override
 	public void clearTemporaryElements() {
-		//Ignored
+		// Ignored
 	}
 
+	@Override
 	public void addElementSelectionListener(IElementSelectionListener listener) {
 		elementSelectionListeners.add(listener);
 	}
 
+	@Override
 	public void removeElementSelectionListener(IElementSelectionListener listener) {
 		elementSelectionListeners.remove(listener);
 	}

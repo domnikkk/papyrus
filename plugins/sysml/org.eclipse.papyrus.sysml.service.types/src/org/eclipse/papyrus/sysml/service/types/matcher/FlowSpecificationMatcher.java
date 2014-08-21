@@ -23,10 +23,10 @@ public class FlowSpecificationMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isFlowSpec = false;
-		if(eObject instanceof Interface) {
+		if (eObject instanceof Interface) {
 
-			Interface element = (Interface)eObject;
-			if(UMLUtil.getStereotypeApplication(element, FlowSpecification.class) != null) {
+			Interface element = (Interface) eObject;
+			if (UMLUtil.getStereotypeApplication(element, FlowSpecification.class) != null) {
 				isFlowSpec = true;
 			}
 		}

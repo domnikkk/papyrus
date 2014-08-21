@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,15 +35,16 @@ import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 
 /**
  * This class is used to launch command to create associationClass
- * 
+ *
  * @author Patrick Tessier
  */
 public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Command getCommand(Request request) {
 		// we have to distinguish the case where this is an association class
 		if (REQ_CONNECTION_END.equals(request.getType())) {
@@ -81,13 +82,14 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 
 	/**
 	 * used to obtain the transactional edit domain
-	 * 
+	 *
 	 * @return the current transactional edit domain
 	 */
 	private TransactionalEditingDomain getEditingDomain() {
 		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
+	@Override
 	protected Command getReconnectSourceCommand(ReconnectRequest request) {
 		if (request.getConnectionEditPart() instanceof GeneralizationSetEditPart) {
 			GeneralizationSetHelper generalizationSetHelper = new GeneralizationSetHelper(getEditingDomain());
@@ -96,6 +98,7 @@ public class CustomGraphicalNodeEditPolicy extends GraphicalNodeEditPolicy {
 		return super.getReconnectSourceCommand(request);
 	}
 
+	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
 		Command command = super.getReconnectTargetCommand(request);
 		if (request.getConnectionEditPart() instanceof GeneralizationSetEditPart) {

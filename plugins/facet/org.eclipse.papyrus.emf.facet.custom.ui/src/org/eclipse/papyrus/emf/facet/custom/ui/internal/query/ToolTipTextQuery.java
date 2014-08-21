@@ -1,14 +1,14 @@
 /*******************************************************************************
  *  Copyright (c) 2012 CEA LIST.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Vincent Lorenzo (CEA-LIST) - Bug 373255 - Add tooltips providing a documentation for the selected elements in the Select ETypedElement Dialog
- *    
+ *
  *******************************************************************************/
 
 package org.eclipse.papyrus.emf.facet.custom.ui.internal.query;
@@ -24,10 +24,10 @@ import org.eclipse.papyrus.emf.facet.query.java.core.IParameterValueList2;
 import org.eclipse.osgi.util.NLS;
 
 /**
- * 
+ *
  * This query returns the tooltip to display for DocumentedElement and
  * EModelElement
- * 
+ *
  */
 public class ToolTipTextQuery implements IJavaQuery2<EObject, String> {
 
@@ -47,13 +47,13 @@ public class ToolTipTextQuery implements IJavaQuery2<EObject, String> {
 		final String documentation = getDocumentation(source);
 		if (documentation != null) {
 			result = NLS.bind(Messages.ToolTipTextQuery_Documentation,
-				documentation);
+					documentation);
 		}
 		return result;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 * @param parameterValues
 	 * @param facetManager

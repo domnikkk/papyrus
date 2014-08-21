@@ -33,7 +33,7 @@ import org.eclipse.ui.IEditorPart;
  *
  * @author Camille Letavernier
  */
-//TODO: To be refactored. Move to infra/gmfdiag/menu when the plugin exists
+// TODO: To be refactored. Move to infra/gmfdiag/menu when the plugin exists
 public class RefreshHandler extends AbstractHandler {
 
 	/**
@@ -46,7 +46,7 @@ public class RefreshHandler extends AbstractHandler {
 	 * Register a refresher part that is not attached to any editor
 	 *
 	 * @param refresher
-	 *        The refresher part
+	 *            The refresher part
 	 */
 	public static synchronized void register(IRefreshHandlerPart refresher) {
 		PARTS.add(new WeakReference<IRefreshHandlerPart>(refresher));
@@ -65,7 +65,7 @@ public class RefreshHandler extends AbstractHandler {
 			return null;
 		}
 
-		//Hooks must be called before the actual refresh, because they typically reset cache
+		// Hooks must be called before the actual refresh, because they typically reset cache
 		// Call the relevant hooks
 		callRefresherHooks(activeEditor);
 
@@ -77,10 +77,10 @@ public class RefreshHandler extends AbstractHandler {
 
 	private synchronized void callRefresherHooks(IEditorPart activeEditor) {
 		Iterator<WeakReference<IRefreshHandlerPart>> iterator = PARTS.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			WeakReference<IRefreshHandlerPart> wr = iterator.next();
 			IRefreshHandlerPart part = wr.get();
-			if(part != null) {
+			if (part != null) {
 				part.refresh(activeEditor);
 			} else {
 				iterator.remove();

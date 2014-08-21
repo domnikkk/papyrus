@@ -23,7 +23,7 @@ import org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPacka
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.views.properties.runtime.preferences.PreferencesPackage
  * @generated
  */
@@ -33,7 +33,7 @@ public class PreferencesSwitch<T> {
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static PreferencesPackage modelPackage;
@@ -42,11 +42,11 @@ public class PreferencesSwitch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public PreferencesSwitch() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = PreferencesPackage.eINSTANCE;
 		}
 	}
@@ -55,7 +55,7 @@ public class PreferencesSwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
@@ -67,12 +67,12 @@ public class PreferencesSwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	protected T doSwitch(EClass theEClass, EObject theEObject) {
-		if(theEClass.eContainer() == modelPackage) {
+		if (theEClass.eContainer() == modelPackage) {
 			return doSwitch(theEClass.getClassifierID(), theEObject);
 		} else {
 			List<EClass> eSuperTypes = theEClass.getESuperTypes();
@@ -84,26 +84,26 @@ public class PreferencesSwitch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch(classifierID) {
-		case PreferencesPackage.CONTEXT_DESCRIPTOR:
-		{
-			ContextDescriptor contextDescriptor = (ContextDescriptor)theEObject;
+		switch (classifierID) {
+		case PreferencesPackage.CONTEXT_DESCRIPTOR: {
+			ContextDescriptor contextDescriptor = (ContextDescriptor) theEObject;
 			T result = caseContextDescriptor(contextDescriptor);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case PreferencesPackage.PREFERENCES:
-		{
-			Preferences preferences = (Preferences)theEObject;
+		case PreferencesPackage.PREFERENCES: {
+			Preferences preferences = (Preferences) theEObject;
 			T result = casePreferences(preferences);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:
@@ -117,9 +117,9 @@ public class PreferencesSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Context Descriptor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -134,9 +134,9 @@ public class PreferencesSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Preferences</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -151,9 +151,9 @@ public class PreferencesSwitch<T> {
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch, but this is the last case anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -162,4 +162,4 @@ public class PreferencesSwitch<T> {
 		return null;
 	}
 
-} //PreferencesSwitch
+} // PreferencesSwitch

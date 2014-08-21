@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,7 +40,7 @@ public class CustomMessageCreateCommand extends MessageCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
 	 * @param source
 	 * @param target
@@ -51,68 +51,68 @@ public class CustomMessageCreateCommand extends MessageCreateCommand {
 
 	/**
 	 * Add a condition on the MOS container
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof Element) {
+		if (source != null && false == source instanceof Element) {
 			return false;
 		}
-		if(target != null && false == target instanceof Element) {
+		if (target != null && false == target instanceof Element) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
-		if(getContainer() == null) {
+		if (getContainer() == null) {
 			return false;
 		}
-		if(getSource() != null && getTarget() != null) {
-			if(!CommandHelper.hasValidContainer(getRequest())) {
+		if (getSource() != null && getTarget() != null) {
+			if (!CommandHelper.hasValidContainer(getRequest())) {
 				return false;
 			}
 		}
-		if(!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMessage_4003(getContainer(), getSource(), getTarget())) {
+		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canCreateMessage_4003(getContainer(), getSource(), getTarget())) {
 			return false;
 		}
-		return MessageConnectionHelper.canExist(MessageSort.SYNCH_CALL_LITERAL, (Element)source, (Element)target);
+		return MessageConnectionHelper.canExist(MessageSort.SYNCH_CALL_LITERAL, (Element) source, (Element) target);
 	}
 
 	/**
 	 * Create a MessageOccurenceSpecification and the call event when a message is created
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		InteractionFragment sourceContainer = (InteractionFragment)getRequest().getParameters().get(SequenceRequestConstant.SOURCE_MODEL_CONTAINER);
-		InteractionFragment targetContainer = (InteractionFragment)getRequest().getParameters().get(SequenceRequestConstant.TARGET_MODEL_CONTAINER);
+		InteractionFragment sourceContainer = (InteractionFragment) getRequest().getParameters().get(SequenceRequestConstant.SOURCE_MODEL_CONTAINER);
+		InteractionFragment targetContainer = (InteractionFragment) getRequest().getParameters().get(SequenceRequestConstant.TARGET_MODEL_CONTAINER);
 		Element source = getSource();
-		if(source instanceof ExecutionOccurrenceSpecification) {
-			source = ((ExecutionOccurrenceSpecification)source).getExecution();
+		if (source instanceof ExecutionOccurrenceSpecification) {
+			source = ((ExecutionOccurrenceSpecification) source).getExecution();
 		}
 		Message message = CommandHelper.doCreateMessage(container, MessageSort.SYNCH_CALL_LITERAL, source, getTarget(), sourceContainer, targetContainer);
-		if(message != null) {
-			//Do reset message end to target ExecutionSpecification. See https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
-			if(getTarget() instanceof ExecutionSpecification) {
-				OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification)getTarget(), message.getReceiveEvent());
+		if (message != null) {
+			// Do reset message end to target ExecutionSpecification. See https://bugs.eclipse.org/bugs/show_bug.cgi?id=402975
+			if (getTarget() instanceof ExecutionSpecification) {
+				OccurrenceSpecificationHelper.resetExecutionStart((ExecutionSpecification) getTarget(), message.getReceiveEvent());
 			}
-			if(getSource() instanceof ExecutionOccurrenceSpecification) {
-				ExecutionSpecification execution = ((ExecutionOccurrenceSpecification)getSource()).getExecution();
-				if(execution != null) {
+			if (getSource() instanceof ExecutionOccurrenceSpecification) {
+				ExecutionSpecification execution = ((ExecutionOccurrenceSpecification) getSource()).getExecution();
+				if (execution != null) {
 					OccurrenceSpecificationHelper.resetExecutionStart(execution, message.getSendEvent());
 				}
 			}
 			doConfigure(message, monitor, info);
-			((CreateElementRequest)getRequest()).setNewElement(message);
+			((CreateElementRequest) getRequest()).setNewElement(message);
 			return CommandResult.newOKCommandResult(message);
 		}
 		return CommandResult.newErrorCommandResult("There is now valid container for events"); //$NON-NLS-1$

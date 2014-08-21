@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 LIFL & CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,9 @@ import org.eclipse.ui.part.PageBookView;
 /**
  * Base class for PageBookView in Papyrus.
  * The PageBook mechanism can be moved in the core, as it can be reused by other Views.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public abstract class MultiViewPageBookView extends PageBookView {
 
@@ -47,7 +47,7 @@ public abstract class MultiViewPageBookView extends PageBookView {
 
 	/**
 	 * @see org.eclipse.ui.part.PageBookView#createDefaultPage(org.eclipse.ui.part.PageBook)
-	 * 
+	 *
 	 * @param book
 	 * @return
 	 */
@@ -70,7 +70,7 @@ public abstract class MultiViewPageBookView extends PageBookView {
 	 * <li>call page.createControl(getPageBook());</li>
 	 * <li>return new PageRec(part, page);</li>
 	 * </ul>
-	 * 
+	 *
 	 * @param part
 	 * @return
 	 */
@@ -79,13 +79,13 @@ public abstract class MultiViewPageBookView extends PageBookView {
 
 	/**
 	 * @see org.eclipse.ui.part.PageBookView#doDestroyPage(org.eclipse.ui.IWorkbenchPart, org.eclipse.ui.part.PageBookView.PageRec)
-	 * 
+	 *
 	 * @param part
 	 * @param pageRecord
 	 */
 	@Override
 	protected void doDestroyPage(IWorkbenchPart part, PageRec pageRecord) {
-		
+
 		// Dispose the associated page.
 		pageRecord.page.dispose();
 
@@ -94,9 +94,9 @@ public abstract class MultiViewPageBookView extends PageBookView {
 	/**
 	 * Check if the currently active part is a {@link IMultiDiagramEditor}.
 	 * If true, return it.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.PageBookView#getBootstrapPart()
-	 * 
+	 *
 	 * @return The currently active editor if it is a IMultiDiagramEditor, null otherwise.
 	 */
 	@Override
@@ -106,9 +106,9 @@ public abstract class MultiViewPageBookView extends PageBookView {
 		IWorkbenchPart part = null;
 		try {
 			IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
-			if(activeWorkbenchWindow != null) {
+			if (activeWorkbenchWindow != null) {
 				IWorkbenchPage activePage = activeWorkbenchWindow.getActivePage();
-				if(activePage != null) {
+				if (activePage != null) {
 					part = activePage.getActiveEditor();
 				}
 			}
@@ -116,7 +116,7 @@ public abstract class MultiViewPageBookView extends PageBookView {
 			// An element is not active yet
 			return null;
 		}
-		if(isImportant(part)) {
+		if (isImportant(part)) {
 			return part;
 		}
 		// The current active part is not for us.
@@ -125,9 +125,9 @@ public abstract class MultiViewPageBookView extends PageBookView {
 
 	/**
 	 * return true if the activated part is a {@link IMultiDiagramEditor}.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.PageBookView#isImportant(org.eclipse.ui.IWorkbenchPart)
-	 * 
+	 *
 	 * @param part
 	 * @return
 	 */
@@ -135,17 +135,18 @@ public abstract class MultiViewPageBookView extends PageBookView {
 	protected boolean isImportant(IWorkbenchPart part) {
 
 
-		if(part instanceof IMultiDiagramEditor)
+		if (part instanceof IMultiDiagramEditor) {
 			return true;
+		}
 
 		return false;
 	}
 
 	/**
 	 * Record the IMemento to use it when pages are created
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.ViewPart#init(org.eclipse.ui.IViewSite, org.eclipse.ui.IMemento)
-	 * 
+	 *
 	 * @param site
 	 * @param memento
 	 * @throws PartInitException
@@ -158,9 +159,9 @@ public abstract class MultiViewPageBookView extends PageBookView {
 
 	/**
 	 * Create a Site that is also a {@link IViewSite}.
-	 * 
+	 *
 	 * @see org.eclipse.ui.part.PageBookView#initPage(org.eclipse.ui.part.IPageBookViewPage)
-	 * 
+	 *
 	 * @param page
 	 */
 	protected void initPage(ViewPartPage page, IWorkbenchPart part) {
@@ -177,13 +178,14 @@ public abstract class MultiViewPageBookView extends PageBookView {
 
 	/**
 	 * Get the currently nested active view.
-	 * 
+	 *
 	 * @return The active Viewer, or null if none.
 	 */
 	public IViewPart getActiveView() {
 		IPage page = getCurrentPage();
-		if(page instanceof ViewPartPage)
-			return ((ViewPartPage)page).getViewer();
+		if (page instanceof ViewPartPage) {
+			return ((ViewPartPage) page).getViewer();
+		}
 
 		// not found
 		return null;

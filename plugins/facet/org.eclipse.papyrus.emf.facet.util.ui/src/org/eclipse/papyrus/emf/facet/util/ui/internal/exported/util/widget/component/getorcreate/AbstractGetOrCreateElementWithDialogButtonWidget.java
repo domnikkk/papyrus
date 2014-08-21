@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Text;
 /**
  * Has the same goal than {@link AbstractGetOrCreateElementWithButtonWidget} but
  * especially for dialogs.
- * 
+ *
  * @since 0.3
  */
 public abstract class AbstractGetOrCreateElementWithDialogButtonWidget<T extends ENamedElement, W extends Object>
@@ -42,6 +42,7 @@ public abstract class AbstractGetOrCreateElementWithDialogButtonWidget<T extends
 			public void commited(final T result) {
 				onCommited(result);
 			}
+
 			public void canceled(final T result) {
 				onCanceled();
 			}
@@ -71,7 +72,7 @@ public abstract class AbstractGetOrCreateElementWithDialogButtonWidget<T extends
 	/**
 	 * Create and return the dialog that will be display when the [...] button
 	 * is pressed.
-	 * 
+	 *
 	 * @return the dialog.
 	 */
 	protected abstract IDialog<W> getCreationDialog(
@@ -79,7 +80,7 @@ public abstract class AbstractGetOrCreateElementWithDialogButtonWidget<T extends
 
 	/**
 	 * Create the synchronized dialog for the selection of the type.
-	 * 
+	 *
 	 * @return the dialog.
 	 */
 	private IDialog<W> createSynchronizedDialog(final IDialog<W> dialog) {

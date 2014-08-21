@@ -20,7 +20,7 @@ import org.eclipse.papyrus.xwt.internal.core.ScopeManager;
 import org.eclipse.papyrus.xwt.internal.utils.UserData;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class ControlDataBinding extends AbstractDataBinding {
@@ -38,31 +38,31 @@ public class ControlDataBinding extends AbstractDataBinding {
 	public Object getValue(Class<?> targetType) {
 		IObservableValue targetWidget = null;
 		Object target = getControl();
-		if(target != null) {
+		if (target != null) {
 			targetWidget = ScopeManager.observeValue(target, target, getTargetProperty(), getUpdateSourceTrigger());
 		}
-		if(source == null) {
+		if (source == null) {
 			return null;
 		}
 
 		Object control = UserData.getWidget(source);
-		if(control == null) {
+		if (control == null) {
 			control = getControl();
 		}
 
 		IObservableValue sourceWidget = ScopeManager.observeValue(control, source, getSourceProperty(), getUpdateSourceTrigger());
 
-		if(targetWidget == null) {
-			if(sourceWidget != null) {
-				if(targetType != null && !targetType.isInstance(sourceWidget)) {
+		if (targetWidget == null) {
+			if (sourceWidget != null) {
+				if (targetType != null && !targetType.isInstance(sourceWidget)) {
 					return sourceWidget;
 				}
 				Object value = sourceWidget.getValue();
-				while(value instanceof IObservableValue) {
-					value = ((IObservableValue)value).getValue();
+				while (value instanceof IObservableValue) {
+					value = ((IObservableValue) value).getValue();
 				}
 				IValueConverter converter = getConverter();
-				if(converter != null) {
+				if (converter != null) {
 					value = converter.convert(value);
 				}
 				return value;
@@ -73,17 +73,17 @@ public class ControlDataBinding extends AbstractDataBinding {
 		IBindingContext dataBindingContext = getDataBindingContext();
 		BindingGate bindingGate = new BindingGate(dataBindingContext);
 		bindingGate.bind(sourceWidget, targetWidget, this);
-		if(sourceWidget != null) {
-			if(targetType != null && !targetType.isInstance(sourceWidget)) {
+		if (sourceWidget != null) {
+			if (targetType != null && !targetType.isInstance(sourceWidget)) {
 				return sourceWidget;
 			}
 			// convert to final value
 			Object value = sourceWidget.getValue();
-			while(value instanceof IObservableValue) {
-				value = ((IObservableValue)value).getValue();
+			while (value instanceof IObservableValue) {
+				value = ((IObservableValue) value).getValue();
 			}
 			IValueConverter converter = getConverter();
-			if(converter != null) {
+			if (converter != null) {
 				value = converter.convert(value);
 			}
 			return value;
@@ -92,7 +92,7 @@ public class ControlDataBinding extends AbstractDataBinding {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	protected Object getSource() {

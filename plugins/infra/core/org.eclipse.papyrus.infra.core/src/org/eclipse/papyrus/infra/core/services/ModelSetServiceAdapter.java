@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 Cedric Dumoulin, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,10 +52,10 @@ public class ModelSetServiceAdapter extends AdapterFactoryImpl implements IServi
 	public static ModelSetServiceAdapter getInstance(ResourceSet resourceSet) {
 		ModelSetServiceAdapter result = null;
 
-		if(resourceSet != null) {
+		if (resourceSet != null) {
 			AdapterFactory factory = EcoreUtil.getAdapterFactory(resourceSet.getAdapterFactories(), TYPE_ID);
-			if(factory instanceof ModelSetServiceAdapter) {
-				result = (ModelSetServiceAdapter)factory;
+			if (factory instanceof ModelSetServiceAdapter) {
+				result = (ModelSetServiceAdapter) factory;
 			}
 		}
 
@@ -84,7 +84,7 @@ public class ModelSetServiceAdapter extends AdapterFactoryImpl implements IServi
 	public void startService() throws ServiceException {
 		// First, remove any existing adapter
 		AdapterFactory factory = EcoreUtil.getAdapterFactory(modelSet.getAdapterFactories(), TYPE_ID);
-		if(factory != null) {
+		if (factory != null) {
 			modelSet.getAdapterFactories().remove(factory);
 		}
 
@@ -94,16 +94,16 @@ public class ModelSetServiceAdapter extends AdapterFactoryImpl implements IServi
 	public void stopService() {
 		modelSet.getAdapterFactories().remove(this);
 	}
-	
+
 	@Override
 	public void disposeService() throws ServiceException {
 		try {
 			stopService();
 		} finally {
-			if(modelSet instanceof ModelSet) {
-				((ModelSet)modelSet).unload();
+			if (modelSet instanceof ModelSet) {
+				((ModelSet) modelSet).unload();
 			} else {
-				for(Resource next : ImmutableList.copyOf(modelSet.getResources())) {
+				for (Resource next : ImmutableList.copyOf(modelSet.getResources())) {
 					next.unload();
 					next.eAdapters().clear();
 				}
@@ -134,9 +134,9 @@ public class ModelSetServiceAdapter extends AdapterFactoryImpl implements IServi
 		public Object getAdapter(Object adaptableObject, @SuppressWarnings("rawtypes") Class adapterType) {
 			Object result = null;
 
-			if(adapterType == IService.class) {
-				if((adaptableObject instanceof ModelSet)) {
-					result = new ModelSetServiceAdapter((ModelSet)adaptableObject);
+			if (adapterType == IService.class) {
+				if ((adaptableObject instanceof ModelSet)) {
+					result = new ModelSetServiceAdapter((ModelSet) adaptableObject);
 				}
 			}
 

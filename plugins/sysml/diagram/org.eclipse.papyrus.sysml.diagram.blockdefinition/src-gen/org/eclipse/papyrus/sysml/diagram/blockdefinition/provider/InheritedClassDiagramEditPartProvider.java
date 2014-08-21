@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -26,11 +26,11 @@ public class InheritedClassDiagramEditPartProvider extends UMLEditPartProvider {
 
 	@Override
 	public synchronized boolean provides(IOperation operation) {
-		if(operation instanceof CreateGraphicEditPartOperation) {
-			View view = ((IEditPartOperation)operation).getView();
+		if (operation instanceof CreateGraphicEditPartOperation) {
+			View view = ((IEditPartOperation) operation).getView();
 
 			// Ensure current diagram is a BlockDefinition Diagram
-			if(!ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType())) {
+			if (!ElementTypes.DIAGRAM_ID.equals(view.getDiagram().getType())) {
 				return false;
 			}
 
@@ -38,22 +38,22 @@ public class InheritedClassDiagramEditPartProvider extends UMLEditPartProvider {
 			EObject eobject = view.getElement();
 
 			/** Nodes (and ChildLabelNodes) *********** */
-			if(eobject instanceof org.eclipse.uml2.uml.Model) {
+			if (eobject instanceof org.eclipse.uml2.uml.Model) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Package) {
+			if (eobject instanceof org.eclipse.uml2.uml.Package) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.InstanceSpecification) {
+			if (eobject instanceof org.eclipse.uml2.uml.InstanceSpecification) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Constraint) {
+			if (eobject instanceof org.eclipse.uml2.uml.Constraint) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Comment) {
+			if (eobject instanceof org.eclipse.uml2.uml.Comment) {
 				return true;
 			}
-			if(eobject instanceof org.eclipse.uml2.uml.Slot) {
+			if (eobject instanceof org.eclipse.uml2.uml.Slot) {
 				return true;
 			}
 
@@ -65,11 +65,11 @@ public class InheritedClassDiagramEditPartProvider extends UMLEditPartProvider {
 			String hint = view.getType();
 
 			/** Edges (Feature) : COMMENT_ANNOTATED_ELEMENT *********** */
-			if(ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(hint)) {
+			if (ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(hint)) {
 				return true;
 			}
 			/** Edges (Feature) : CONSTRAINT_CONSTRAINED_ELEMENT *********** */
-			if(ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT.getSemanticHint().equals(hint)) {
+			if (ElementTypes.CONSTRAINT_CONSTRAINED_ELEMENT.getSemanticHint().equals(hint)) {
 				return true;
 			}
 
@@ -83,8 +83,9 @@ public class InheritedClassDiagramEditPartProvider extends UMLEditPartProvider {
 	 * EditPart replacement for ChildLabelNodes from inherited diagram.
 	 * https://bugs.eclipse.org/bugs/show_bug.cgi?id=351433
 	 */
+	@Override
 	protected IGraphicalEditPart createEditPart(View view) {
-		if(ElementTypes.INSTANCE_SPECIFICATION_SLOT_CLN.getSemanticHint().equals(view.getType())) {
+		if (ElementTypes.INSTANCE_SPECIFICATION_SLOT_CLN.getSemanticHint().equals(view.getType())) {
 			return new SlotChildLabelEditPart(view);
 		}
 		return super.createEditPart(view);

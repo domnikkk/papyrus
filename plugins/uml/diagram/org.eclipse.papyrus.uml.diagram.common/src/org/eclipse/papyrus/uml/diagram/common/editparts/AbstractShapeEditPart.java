@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.Stereotype;
 /**
  * this is an abstract class used to display an element as a shape. it looks for
  * image in the associated stereotype
- * 
+ *
  */
 public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPart implements IPapyrusEditPart {
 
@@ -55,9 +55,9 @@ public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPar
 	 * Return the EditorRegistry for nested editor descriptors. Subclass should
 	 * implements this method in order to return the registry associated to the
 	 * extension point namespace.
-	 * 
+	 *
 	 * @return the EditorRegistry for nested editor descriptors
-	 * 
+	 *
 	 */
 	protected IPageIconsRegistry createEditorRegistry() {
 		try {
@@ -78,12 +78,12 @@ public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPar
 	 * Get the EditorRegistry used to create editor instances. This default
 	 * implementation return the singleton eINSTANCE. This method can be
 	 * subclassed to return another registry.
-	 * 
+	 *
 	 * @return the singleton eINSTANCE of editor registry
-	 * 
+	 *
 	 */
 	protected IPageIconsRegistry getEditorRegistry() {
-		if(editorRegistry == null) {
+		if (editorRegistry == null) {
 			editorRegistry = createEditorRegistry();
 		}
 		return editorRegistry;
@@ -91,13 +91,14 @@ public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPar
 
 	/**
 	 * get the figure
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public abstract ShapeNamedElementFigure getPrimaryShape();
 
 	protected Element getUMLElement() {
-		return (Element)resolveSemanticElement();
+		return (Element) resolveSemanticElement();
 	}
 
 	@Override
@@ -112,14 +113,14 @@ public abstract class AbstractShapeEditPart extends AbstractBorderedShapeEditPar
 	 * refresh the icon by taking in account the type of the diagram
 	 */
 	private void refreshIcons() {
-		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View)getModel());
+		String stereotypesToDisplay = AppliedStereotypeHelper.getStereotypesToDisplay((View) getModel());
 		StringTokenizer tokenizer = new StringTokenizer(stereotypesToDisplay, ",");
-		if(tokenizer.hasMoreTokens()) {
+		if (tokenizer.hasMoreTokens()) {
 			String firstStereotypeName = tokenizer.nextToken();
 			Stereotype stereotype = getUMLElement().getAppliedStereotype(firstStereotypeName);
 			org.eclipse.uml2.uml.Image icon = ElementUtil.getStereotypeImage(getUMLElement(), stereotype, SHAPE_CONSTANT);
-			if(icon != null) {
-				if(icon.getLocation() != "" && icon.getLocation() != null) {
+			if (icon != null) {
+				if (icon.getLocation() != "" && icon.getLocation() != null) {
 					try {
 						getPrimaryShape().setIcon(icon.getLocation());
 					} catch (MalformedURLException e) {

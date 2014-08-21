@@ -34,6 +34,7 @@ import org.eclipse.papyrus.infra.constraints.environment.util.EnvironmentAdapter
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -41,6 +42,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -49,6 +51,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -57,6 +60,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -65,6 +69,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnvironmentItemProviderAdapterFactory() {
@@ -79,6 +84,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.constraints.environment.ConstraintEnvironment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintEnvironmentItemProvider constraintEnvironmentItemProvider;
@@ -87,6 +93,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.constraints.environment.ConstraintEnvironment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,6 +109,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.constraints.environment.ConstraintType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstraintTypeItemProvider constraintTypeItemProvider;
@@ -110,6 +118,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.constraints.environment.ConstraintType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,8 +134,10 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -135,8 +146,10 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -144,6 +157,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,6 +169,7 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -165,13 +180,14 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -183,8 +199,10 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -193,8 +211,10 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -203,8 +223,10 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -214,14 +236,20 @@ public class EnvironmentItemProviderAdapterFactory extends EnvironmentAdapterFac
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (constraintEnvironmentItemProvider != null) constraintEnvironmentItemProvider.dispose();
-		if (constraintTypeItemProvider != null) constraintTypeItemProvider.dispose();
+		if (constraintEnvironmentItemProvider != null) {
+			constraintEnvironmentItemProvider.dispose();
+		}
+		if (constraintTypeItemProvider != null) {
+			constraintTypeItemProvider.dispose();
+		}
 	}
 
 }

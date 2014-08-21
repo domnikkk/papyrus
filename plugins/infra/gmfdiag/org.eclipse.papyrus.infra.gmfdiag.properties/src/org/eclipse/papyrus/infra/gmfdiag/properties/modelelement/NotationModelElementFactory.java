@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.modelelement;
 
@@ -28,7 +28,7 @@ import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFac
 
 /**
  * A factory for handling the GMF Notation elements
- * 
+ *
  * @author Camille Letavernier
  */
 public class NotationModelElementFactory extends AbstractModelElementFactory<AbstractModelElement> {
@@ -36,14 +36,14 @@ public class NotationModelElementFactory extends AbstractModelElementFactory<Abs
 	protected AbstractModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 
 		if (sourceElement instanceof ObservableGradientData) {
-			ObservableGradientData gradientData = (ObservableGradientData)sourceElement;
+			ObservableGradientData gradientData = (ObservableGradientData) sourceElement;
 			return new GradientDataModelElement(gradientData, gradientData.getOwner());
-		} else if(sourceElement instanceof GradientData) {
-			return new GradientDataModelElement((GradientData)sourceElement);
+		} else if (sourceElement instanceof GradientData) {
+			return new GradientDataModelElement((GradientData) sourceElement);
 		}
 		View view = NotationHelper.findView(sourceElement);
 
-		if(view != null) {
+		if (view != null) {
 			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(view);
 			return new GMFModelElement(view, domain);
 		}
@@ -54,32 +54,32 @@ public class NotationModelElementFactory extends AbstractModelElementFactory<Abs
 
 	@Override
 	protected void updateModelElement(AbstractModelElement modelElement, Object newSourceElement) {
-		if(modelElement instanceof GMFModelElement) {
-			updateModelElement((GMFModelElement)modelElement, newSourceElement);
-		} else if(modelElement instanceof GradientDataModelElement) {
-			updateModelElement((GradientDataModelElement)modelElement, newSourceElement);
+		if (modelElement instanceof GMFModelElement) {
+			updateModelElement((GMFModelElement) modelElement, newSourceElement);
+		} else if (modelElement instanceof GradientDataModelElement) {
+			updateModelElement((GradientDataModelElement) modelElement, newSourceElement);
 		}
 	}
-	
+
 	void updateModelElement(GradientDataModelElement modelElement, Object newSourceElement) {
-		if(newSourceElement instanceof ObservableGradientData) {
-			ObservableGradientData ogd = (ObservableGradientData)newSourceElement;
+		if (newSourceElement instanceof ObservableGradientData) {
+			ObservableGradientData ogd = (ObservableGradientData) newSourceElement;
 			modelElement.sourceElement = ogd;
 			modelElement.owner = ogd.getOwner();
-		} else if(newSourceElement instanceof GradientData) {
-			modelElement.sourceElement = (GradientData)newSourceElement;
+		} else if (newSourceElement instanceof GradientData) {
+			modelElement.sourceElement = (GradientData) newSourceElement;
 			modelElement.owner = null;
 		} else {
 			throw new IllegalArgumentException("Cannot resolve GradientData selection: " + newSourceElement);
 		}
 	}
-	
+
 	void updateModelElement(GMFModelElement modelElement, Object newSourceElement) {
 		View view = NotationHelper.findView(newSourceElement);
-		if(view == null) {
+		if (view == null) {
 			throw new IllegalArgumentException("Cannot resolve View selection: " + newSourceElement);
 		}
-		
+
 		AbstractEMFModelElementFactory.updateEMFModelElement(modelElement, view);
 	}
 }

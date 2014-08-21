@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,16 +32,16 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * This listener will handle the creation of visual for element for behavior (/do /entry /exit).
- * 
+ *
  * @author Arthur Daussy
- * 
+ *
  */
 public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Return one of the following {@link EStructuralFeature} (UMLPackage.Literals.STATE__DO_ACTIVITY.equals(eStructuralFeature) ||
 	 * UMLPackage.Literals.STATE__EXIT.equals(eStructuralFeature) || UMLPackage.Literals.STATE__ENTRY.equals(eStructuralFeature))or null if the {@link EStructuralFeature} in argument do concern behaviors
-	 * 
+	 *
 	 * @param eStructuralFeature
 	 * @return
 	 */
@@ -55,7 +55,7 @@ public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Handle modification on behavior attribute of state (entry , exit , do activity)
-	 * 
+	 *
 	 * @param notif
 	 */
 	@Override
@@ -76,7 +76,7 @@ public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 				// Get the request to delete the editPart
 				deleteRequest = getDeleteRequest(oldObject, stateEditPart);
 				// handle both request if needed
-				CompositeCommand cc = new CompositeCommand("Modification command triggered by modedication of one of the behaviros of selected state");//$NON-NLS-0$
+				CompositeCommand cc = new CompositeCommand("Modification command triggered by modedication of one of the behaviros of selected state");
 				org.eclipse.gef.commands.Command cmd1 = getCommandFromRequest(createRequest, stateEditPart);
 				if (cmd1 != null && cmd1.canExecute()) {
 					cc.compose(new CommandProxy(cmd1));
@@ -98,7 +98,7 @@ public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 	 * Handle the request passed in argument
 	 * 1. Look for the command
 	 * 2. Execute the command
-	 * 
+	 *
 	 * @param request
 	 */
 	protected org.eclipse.gef.commands.Command getCommandFromRequest(Request request, IGraphicalEditPart editPart) {
@@ -110,7 +110,7 @@ public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Get the request to delete the EditPart of corresponding behavior
-	 * 
+	 *
 	 * @param notif
 	 * @param request
 	 *            (
@@ -141,7 +141,7 @@ public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Get the containing edit part (stateEditPart)
-	 * 
+	 *
 	 * @param oldBehavior
 	 * @return
 	 */
@@ -159,7 +159,7 @@ public class StateBehaviorsListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Refresh all needed EditParts {@link AbstractModifcationTriggerListener#needRefresh()} and {@link AbstractModifcationTriggerListener#getEditPartsToRefresh()}
-	 * 
+	 *
 	 * @param cc
 	 * @param set
 	 */

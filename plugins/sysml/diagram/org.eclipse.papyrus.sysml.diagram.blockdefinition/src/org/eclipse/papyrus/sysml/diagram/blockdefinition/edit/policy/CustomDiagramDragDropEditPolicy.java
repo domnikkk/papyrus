@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -50,20 +50,20 @@ public class CustomDiagramDragDropEditPolicy extends CommonDiagramDragDropEditPo
 	protected Set<String> getSpecificDropBehaviorTypes() {
 		return Collections.emptySet();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected ICommand getUnknownDropCommand(DropObjectsRequest dropRequest, EObject droppedEObject) {
-		
+
 		// Add a notification message in case an attempt to drop a UML Association in this diagram occurs.
 		if ((droppedEObject instanceof Association) && !(droppedEObject instanceof AssociationClass)) {
 			if (!((ISpecializationType) SysMLElementTypes.ASSOCIATION).getMatcher().matches(droppedEObject)) {
 				return new IdentityCommandWithNotification(Messages.Notification_Drop_Title, NLS.bind(Messages.Notification_Drop_UMLAssociationWarning, EMFCoreUtil.getQualifiedName(droppedEObject, true)), Type.WARNING);
 			}
 		}
-		
+
 		return super.getUnknownDropCommand(dropRequest, droppedEObject);
 	}
 }

@@ -29,7 +29,7 @@ import org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.Command} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CommandItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -38,7 +38,7 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CommandItemProvider(AdapterFactory adapterFactory) {
@@ -49,12 +49,12 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addElementTypePropertyDescriptor(object);
@@ -67,29 +67,31 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * This adds a property descriptor for the Element Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addElementTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Command_elementType_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Command_elementType_feature", "_UI_Command_type"), DomaincontextcodegenPackage.Literals.COMMAND__ELEMENT_TYPE, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Command_elementType_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Command_elementType_feature", "_UI_Command_type"), DomaincontextcodegenPackage.Literals.COMMAND__ELEMENT_TYPE, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Icon feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addIconPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Command_icon_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Command_icon_feature", "_UI_Command_type"), DomaincontextcodegenPackage.Literals.COMMAND__ICON, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Command_icon_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Command_icon_feature", "_UI_Command_type"), DomaincontextcodegenPackage.Literals.COMMAND__ICON, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
 	 * This returns Command.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -101,12 +103,12 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Command)object).getIcon();
+		String label = ((Command) object).getIcon();
 		return label == null || label.length() == 0 ? getString("_UI_Command_type") : getString("_UI_Command_type") + " " + label;
 	}
 
@@ -115,14 +117,14 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch(notification.getFeatureID(Command.class)) {
+		switch (notification.getFeatureID(Command.class)) {
 		case DomaincontextcodegenPackage.COMMAND__ICON:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
@@ -135,7 +137,7 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -147,7 +149,7 @@ public class CommandItemProvider extends ItemProviderAdapter implements IEditing
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

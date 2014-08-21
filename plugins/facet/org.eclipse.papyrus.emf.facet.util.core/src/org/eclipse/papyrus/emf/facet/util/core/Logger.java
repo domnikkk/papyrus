@@ -24,9 +24,9 @@ import org.eclipse.papyrus.emf.facet.util.core.internal.Activator;
 
 /**
  * Helper for logging using Eclipse API
- * 
+ *
  * @author fgiquel
- * 
+ *
  */
 public final class Logger {
 

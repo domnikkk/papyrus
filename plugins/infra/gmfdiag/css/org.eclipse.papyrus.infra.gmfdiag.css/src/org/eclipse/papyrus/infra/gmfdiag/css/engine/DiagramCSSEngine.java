@@ -44,9 +44,9 @@ public class DiagramCSSEngine extends ExtendedCSSEngineImpl implements IChangeLi
 	 * Builds a DiagramCSSEngine for a given CSSDiagram
 	 *
 	 * @param parent
-	 *        The diagram's parent CSSEngine. Its stylesheets will be inherited
+	 *            The diagram's parent CSSEngine. Its stylesheets will be inherited
 	 * @param diagram
-	 *        This engine's diagram
+	 *            This engine's diagram
 	 */
 	public DiagramCSSEngine(ExtendedCSSEngine parent, CSSDiagram diagram) {
 		super(parent);
@@ -58,8 +58,8 @@ public class DiagramCSSEngine extends ExtendedCSSEngineImpl implements IChangeLi
 	@Override
 	protected void reloadStyleSheets() {
 		styleSheets.clear();
-		for(StyleSheet styleSheet : diagram.getStyleSheets()) {
-			//Do not call super#addStyleSheet(styleSheet) to avoid a StackOverFlow
+		for (StyleSheet styleSheet : diagram.getStyleSheets()) {
+			// Do not call super#addStyleSheet(styleSheet) to avoid a StackOverFlow
 			styleSheets.add(styleSheet);
 		}
 	}
@@ -67,7 +67,7 @@ public class DiagramCSSEngine extends ExtendedCSSEngineImpl implements IChangeLi
 	@Override
 	protected void parseStyleSheet(StyleSheetReference styleSheet) throws IOException {
 		String path = styleSheet.getPath();
-		if(path.startsWith("/")) { //Either plug-in or workspace
+		if (path.startsWith("/")) { // Either plug-in or workspace
 			path = "platform:/resource" + path;
 			URL url = new URL(path);
 			try {
@@ -77,7 +77,7 @@ public class DiagramCSSEngine extends ExtendedCSSEngineImpl implements IChangeLi
 			}
 		} else {
 			URI uri = URI.createURI(styleSheet.getPath());
-			if(uri.isRelative()) {
+			if (uri.isRelative()) {
 				uri = uri.resolve(diagram.eResource().getURI());
 			}
 
@@ -96,42 +96,42 @@ public class DiagramCSSEngine extends ExtendedCSSEngineImpl implements IChangeLi
 	public EObject getNativeWidget(Object element) {
 		element = super.getNativeWidget(element);
 
-		if(element == null) {
+		if (element == null) {
 			return null;
 		}
 
-		if(!(element instanceof EObject)) {
+		if (!(element instanceof EObject)) {
 			throw new IllegalArgumentException("Unknown element : " + element);
 		}
 
-		return (EObject)element; //GMFElement
+		return (EObject) element; // GMFElement
 	}
 
 	@Override
 	public void handleChange(ChangeEvent event) {
 		resetCache();
 		DiagramHelper.setNeedsRefresh();
-		DiagramHelper.refreshDiagrams(); //FIXME: Should be contextual. We should only refresh the editor(s) containing this Diagram
+		DiagramHelper.refreshDiagrams(); // FIXME: Should be contextual. We should only refresh the editor(s) containing this Diagram
 	}
 
 	@Override
 	public Element getElement(Object node) {
-		if(node == null) {
+		if (node == null) {
 			return null;
 		}
 
 		EObject notationElement = getNativeWidget(node);
 		View canonicalNotationElement = CSSDOMSemanticElementHelper.findPrimaryView(notationElement);
 
-		//Orphaned view
-		if(canonicalNotationElement.getDiagram() == null) {
+		// Orphaned view
+		if (canonicalNotationElement.getDiagram() == null) {
 			return null;
 		}
 
-		//A View and a Compartment associated to the same Semantic Element
-		//must have the same XML Element. They share the same children.
-		//This is required to map the Semantic model (Used by the CSS selectors)
-		//to the Notation model (Used by the CSS properties)
+		// A View and a Compartment associated to the same Semantic Element
+		// must have the same XML Element. They share the same children.
+		// This is required to map the Semantic model (Used by the CSS selectors)
+		// to the Notation model (Used by the CSS properties)
 		return super.getElement(canonicalNotationElement);
 	}
 

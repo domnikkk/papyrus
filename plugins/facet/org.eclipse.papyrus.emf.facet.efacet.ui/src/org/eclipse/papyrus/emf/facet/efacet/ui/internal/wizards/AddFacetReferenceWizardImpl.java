@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  */
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.emf.facet.efacet.ui.internal.wizards.pages.CreateQuer
 import org.eclipse.jface.viewers.ISelection;
 
 @Deprecated
-//TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
+// TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
 public class AddFacetReferenceWizardImpl extends AbstractAddFacetChildrenWizard {
 
 	public AddFacetReferenceWizardImpl(final ISelection selection, final EditingDomain editingDomain) {

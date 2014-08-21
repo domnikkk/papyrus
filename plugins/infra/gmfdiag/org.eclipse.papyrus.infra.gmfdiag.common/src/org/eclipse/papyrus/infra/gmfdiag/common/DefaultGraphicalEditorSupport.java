@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,22 @@ public class DefaultGraphicalEditorSupport implements IGraphicalEditorSupport, I
 		super();
 	}
 
+	@Override
 	public void initialize(GraphicalEditor editor) {
 		// pass
 	}
 
+	@Override
 	public void init(ServicesRegistry servicesRegistry) {
 		// pass
 	}
 
+	@Override
 	public void startService() {
 		// pass
 	}
 
+	@Override
 	public void disposeService() {
 		// pass
 	}

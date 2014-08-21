@@ -18,7 +18,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.OpaqueInjectedValueImpl#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.OpaqueInjectedValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,6 +29,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -39,6 +40,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -48,6 +50,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OpaqueInjectedValueImpl() {
@@ -57,6 +60,7 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -67,8 +71,10 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getValue() {
 		return value;
 	}
@@ -76,25 +82,29 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
-				return getValue();
+		case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
+			return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -102,14 +112,15 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
-				setValue((String)newValue);
-				return;
+		case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
+			setValue((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -117,14 +128,15 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
+		case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
+			setValue(VALUE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -132,13 +144,14 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+		case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE__VALUE:
+			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -146,11 +159,14 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
@@ -159,4 +175,4 @@ public class OpaqueInjectedValueImpl extends InjectedValueImpl implements Opaque
 		return result.toString();
 	}
 
-} //OpaqueInjectedValueImpl
+} // OpaqueInjectedValueImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ public class PropertyCommandForAssociation extends ClassPropertyCreateCommand {
 
 	/**
 	 * Instantiates a new property command for association.
-	 * 
+	 *
 	 * @param req
-	 *        the req to launch the command
+	 *            the req to launch the command
 	 */
 	public PropertyCommandForAssociation(CreateElementRequest req, Diagram diagram) {
 		super(req, diagram);
@@ -50,17 +50,17 @@ public class PropertyCommandForAssociation extends ClassPropertyCreateCommand {
 	protected EObject doDefaultElementCreation() {
 		Property newElement = UMLFactory.eINSTANCE.createProperty();
 
-		Association owner = (Association)getElementToEdit();
+		Association owner = (Association) getElementToEdit();
 
 		Object type = getRequest().getParameter("type");
-		if(type != null && type instanceof Type) {
-			newElement.setType((Type)type);
-			newElement.setName(((Type)type).getName());
+		if (type != null && type instanceof Type) {
+			newElement.setType((Type) type);
+			newElement.setName(((Type) type).getName());
 		}
 		owner.getOwnedEnds().add(newElement);
 		ElementInitializers.getInstance().init_Property_3002(newElement);
-		if(type != null && type instanceof Type) {
-			newElement.setName(((Type)type).getName());
+		if (type != null && type instanceof Type) {
+			newElement.setName(((Type) type).getName());
 		}
 		return newElement;
 	}
@@ -70,14 +70,14 @@ public class PropertyCommandForAssociation extends ClassPropertyCreateCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		Property newElement = (Property)doDefaultElementCreation();
+		Property newElement = (Property) doDefaultElementCreation();
 
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override

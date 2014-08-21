@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -33,11 +33,10 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.F
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.FeatureIdAxisImpl#getLocalLabelConfiguration <em>Local Label
- * Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.FeatureIdAxisImpl#getLocalLabelConfiguration <em>Local Label Configuration</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
@@ -46,7 +45,7 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	 * The cached value of the '{@link #getLocalLabelConfiguration() <em>Local Label Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocalLabelConfiguration()
 	 * @generated
 	 * @ordered
@@ -56,7 +55,7 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureIdAxisImpl() {
@@ -66,7 +65,7 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -77,9 +76,10 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public FeatureLabelProviderConfiguration getLocalLabelConfiguration() {
 		return localLabelConfiguration;
 	}
@@ -87,18 +87,19 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLocalLabelConfiguration(FeatureLabelProviderConfiguration newLocalLabelConfiguration, NotificationChain msgs) {
 		FeatureLabelProviderConfiguration oldLocalLabelConfiguration = localLabelConfiguration;
 		localLabelConfiguration = newLocalLabelConfiguration;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION, oldLocalLabelConfiguration, newLocalLabelConfiguration);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -106,32 +107,37 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLocalLabelConfiguration(FeatureLabelProviderConfiguration newLocalLabelConfiguration) {
-		if(newLocalLabelConfiguration != localLabelConfiguration) {
+		if (newLocalLabelConfiguration != localLabelConfiguration) {
 			NotificationChain msgs = null;
-			if(localLabelConfiguration != null)
-				msgs = ((InternalEObject)localLabelConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
-			if(newLocalLabelConfiguration != null)
-				msgs = ((InternalEObject)newLocalLabelConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
+			if (localLabelConfiguration != null) {
+				msgs = ((InternalEObject) localLabelConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
+			}
+			if (newLocalLabelConfiguration != null) {
+				msgs = ((InternalEObject) newLocalLabelConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
+			}
 			msgs = basicSetLocalLabelConfiguration(newLocalLabelConfiguration, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION, newLocalLabelConfiguration, newLocalLabelConfiguration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
 			return basicSetLocalLabelConfiguration(null, msgs);
 		}
@@ -141,12 +147,12 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
 			return getLocalLabelConfiguration();
 		}
@@ -156,14 +162,14 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
-			setLocalLabelConfiguration((FeatureLabelProviderConfiguration)newValue);
+			setLocalLabelConfiguration((FeatureLabelProviderConfiguration) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -172,14 +178,14 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
-			setLocalLabelConfiguration((FeatureLabelProviderConfiguration)null);
+			setLocalLabelConfiguration((FeatureLabelProviderConfiguration) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -188,12 +194,12 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
 			return localLabelConfiguration != null;
 		}
@@ -203,13 +209,13 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if(baseClass == FeatureAxis.class) {
-			switch(derivedFeatureID) {
+		if (baseClass == FeatureAxis.class) {
+			switch (derivedFeatureID) {
 			case NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION:
 				return NattableaxisPackage.FEATURE_AXIS__LOCAL_LABEL_CONFIGURATION;
 			default:
@@ -222,13 +228,13 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if(baseClass == FeatureAxis.class) {
-			switch(baseFeatureID) {
+		if (baseClass == FeatureAxis.class) {
+			switch (baseFeatureID) {
 			case NattableaxisPackage.FEATURE_AXIS__LOCAL_LABEL_CONFIGURATION:
 				return NattableaxisPackage.FEATURE_ID_AXIS__LOCAL_LABEL_CONFIGURATION;
 			default:
@@ -238,4 +244,4 @@ public class FeatureIdAxisImpl extends IdAxisImpl implements FeatureIdAxis {
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
-} //FeatureIdAxisImpl
+} // FeatureIdAxisImpl

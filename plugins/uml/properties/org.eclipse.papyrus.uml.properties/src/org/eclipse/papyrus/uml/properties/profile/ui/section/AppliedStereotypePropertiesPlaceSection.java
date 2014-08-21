@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
 // TODO: Auto-generated Javadoc
 /**
  * The Class StereotypePropertiesPlaceSection allows users to select the way to display stereotype properties.
- * 
+ *
  */
 public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySection implements Adapter {
 
@@ -69,11 +69,11 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 
 	/**
 	 * Creates the controls.
-	 * 
+	 *
 	 * @param tabbedPropertySheetPage
-	 *        the tabbed property sheet page
+	 *            the tabbed property sheet page
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	@Override
 	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
@@ -101,7 +101,7 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 		comboStereotypePropertiesPlaceListener = new SelectionListener() {
 
 			public void widgetSelected(SelectionEvent e) {
-				if(diagramElement != null) {
+				if (diagramElement != null) {
 					stereotypePlacePresentation = comboStereotypePropertiesPlace.getText();
 
 					RecordingCommand command = AppliedStereotypeHelper.getSetAppliedStereotypePropertiesLocalizationCommand(domain, diagramElement, stereotypePlacePresentation);
@@ -121,12 +121,12 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 	 */
 	@Override
 	public void refresh() {
-		if((!comboStereotypePropertiesPlace.isDisposed())) {
+		if ((!comboStereotypePropertiesPlace.isDisposed())) {
 
 			comboStereotypePropertiesPlace.removeSelectionListener(comboStereotypePropertiesPlaceListener);
 
-			if(diagramElement != null) {
-				if(isComboEnabled()) {
+			if (diagramElement != null) {
+				if (isComboEnabled()) {
 					comboStereotypePropertiesPlace.setEnabled(true);
 					stereotypePlacePresentation = AppliedStereotypeHelper.getAppliedStereotypesPropertiesLocalization(diagramElement);
 					comboStereotypePropertiesPlace.setText(stereotypePlacePresentation);
@@ -140,7 +140,7 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -148,7 +148,7 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 
 		super.dispose();
 		diagramElement.eAdapters().remove(this);
-		if(comboStereotypePropertiesPlace != null && !comboStereotypePropertiesPlace.isDisposed()) {
+		if (comboStereotypePropertiesPlace != null && !comboStereotypePropertiesPlace.isDisposed()) {
 			comboStereotypePropertiesPlace.removeSelectionListener(comboStereotypePropertiesPlaceListener);
 		}
 	}
@@ -159,24 +159,24 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 	 */
 
 	private boolean isComboEnabled() {
-		if(!AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay(diagramElement).equals("")) {
+		if (!AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay(diagramElement).equals("")) {
 			return true;
 		}
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
-		if(selection instanceof IStructuredSelection) {
-			Object input = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object input = ((IStructuredSelection) selection).getFirstElement();
 
-			if(input instanceof GraphicalEditPart && ((GraphicalEditPart)input).getModel() instanceof View) {
-				diagramElement = (EModelElement)((GraphicalEditPart)input).getModel();
+			if (input instanceof GraphicalEditPart && ((GraphicalEditPart) input).getModel() instanceof View) {
+				diagramElement = (EModelElement) ((GraphicalEditPart) input).getModel();
 				diagramElement.eAdapters().add(this);
 			} else {
 				// re-init the diagram element. Else, could cause a bug,
@@ -185,15 +185,15 @@ public class AppliedStereotypePropertiesPlaceSection extends AbstractPropertySec
 				diagramElement = null;
 			}
 			// When the selection is computed from the outline, get the associated editor
-			if(part instanceof ContentOutline) {
-				IContributedContentsView contributedView = ((IContributedContentsView)((ContentOutline)part).getAdapter(IContributedContentsView.class));
-				if(contributedView != null) {
+			if (part instanceof ContentOutline) {
+				IContributedContentsView contributedView = ((IContributedContentsView) ((ContentOutline) part).getAdapter(IContributedContentsView.class));
+				if (contributedView != null) {
 					part = contributedView.getContributingPart();
 				}
 			}
 
-			if(part instanceof IAdaptable) {
-				domain = (TransactionalEditingDomain)((IAdaptable)part).getAdapter(TransactionalEditingDomain.class);
+			if (part instanceof IAdaptable) {
+				domain = (TransactionalEditingDomain) ((IAdaptable) part).getAdapter(TransactionalEditingDomain.class);
 			}
 		}
 	}

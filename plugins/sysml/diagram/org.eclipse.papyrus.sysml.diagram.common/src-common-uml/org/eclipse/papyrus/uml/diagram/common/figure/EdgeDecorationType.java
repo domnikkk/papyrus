@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -24,7 +24,7 @@ import org.eclipse.gmf.runtime.notation.ArrowType;
  */
 public final class EdgeDecorationType {
 
-	public static final int NONE = ArrowType.NONE; //0
+	public static final int NONE = ArrowType.NONE; // 0
 
 	public static final int OPEN_ARROW = ArrowType.OPEN_ARROW; // 1
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,18 +21,18 @@ import org.eclipse.uml2.uml.Package;
 
 /**
  * A Property editor for Profile Application
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ProfileApplicationPropertyEditor extends AbstractPropertyEditor {
 
 	private ProfileApplicationEditor editor;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -46,16 +46,16 @@ public class ProfileApplicationPropertyEditor extends AbstractPropertyEditor {
 
 		Object firstSelection = input.getSelection().getFirstElement();
 		Element umlElement = UMLUtil.resolveUMLElement(firstSelection);
-		if(umlElement == null || !(umlElement instanceof Package)) {
+		if (umlElement == null || !(umlElement instanceof Package)) {
 			Activator.log.warn("This editor can only be used with UML Packages"); //$NON-NLS-1$
 			return;
 		}
 
 		editor.setLabelProvider(input.getLabelProvider(propertyPath));
-		editor.setPackage((Package)umlElement);
+		editor.setPackage((Package) umlElement);
 
-		if(getInputObservableList() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableList());
+		if (getInputObservableList() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableList());
 		}
 
 		super.doBinding();

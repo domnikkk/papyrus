@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.util.RuntimeValuesEditionActionConfigurationResourceImpl
  * @generated
  */
@@ -20,6 +21,7 @@ public class RuntimeValuesEditionActionConfigurationResourceFactoryImpl extends 
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RuntimeValuesEditionActionConfigurationResourceFactoryImpl() {
@@ -30,6 +32,7 @@ public class RuntimeValuesEditionActionConfigurationResourceFactoryImpl extends 
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -38,4 +41,4 @@ public class RuntimeValuesEditionActionConfigurationResourceFactoryImpl extends 
 		return result;
 	}
 
-} //RuntimeValuesEditionActionConfigurationResourceFactoryImpl
+} // RuntimeValuesEditionActionConfigurationResourceFactoryImpl

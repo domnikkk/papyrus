@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  
+ *
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.policies;
@@ -43,9 +43,11 @@ import org.eclipse.uml2.uml.PackageableElement;
 
 public class CustomViewComponentEditPolicy extends ViewComponentEditPolicy {
 
+	@Override
 	public Command getCommand(Request request) {
-		if (REQ_ORPHAN.equals(request.getType()))
+		if (REQ_ORPHAN.equals(request.getType())) {
 			return getOrphanCommand();
+		}
 		if (REQ_DELETE.equals(request.getType())) {
 			return getDeleteCommand((GroupRequest) request);
 		}
@@ -55,11 +57,12 @@ public class CustomViewComponentEditPolicy extends ViewComponentEditPolicy {
 	/**
 	 * Return a command to delete the host's view. The host's primary view is deleted if {@link GroupRequest#getEditParts()} returns a <tt>null</tt> or empty list; otherwise each
 	 * editpart's view is deleted.
-	 * 
+	 *
 	 * @param deleteRequest
 	 *            the original delete request.
 	 * @return Command
 	 */
+	@Override
 	protected Command createDeleteViewCommand(GroupRequest deleteRequest) {
 		CompositeCommand cc = new CompositeCommand(StringStatics.BLANK);
 		TransactionalEditingDomain editingDomain = getEditingDomain();
@@ -92,10 +95,10 @@ public class CustomViewComponentEditPolicy extends ViewComponentEditPolicy {
 				while (addedLinkIterator.hasNext()) {
 					Connector currentConnector = addedLinkIterator.next();
 					Shape containmentCircleShape = (Shape) ((Edge) currentConnector).getSource();
-					if (((View) containmentCircleShape).getType().equals(Integer.toString(CContainmentCircleEditPart.VISUAL_ID))) {
+					if (((View) containmentCircleShape).getType().equals(Integer.toString(ContainmentCircleEditPart.VISUAL_ID))) {
 						/* The containment circle node is deleted only if any other link is connected */
 						if (((View) containmentCircleShape).getSourceEdges().size() == 1) {
-							cc.compose(new DeleteCommand(editingDomain, (View) containmentCircleShape));
+							cc.compose(new DeleteCommand(editingDomain, containmentCircleShape));
 						}
 					}
 				}
@@ -116,10 +119,10 @@ public class CustomViewComponentEditPolicy extends ViewComponentEditPolicy {
 				while (addedLinkIterator.hasNext()) {
 					Connector currentConnector = addedLinkIterator.next();
 					Shape containmentCircleShape = (Shape) ((Edge) currentConnector).getSource();
-					if (((View) containmentCircleShape).getType().equals(Integer.toString(CContainmentCircleEditPart.VISUAL_ID))) {
+					if (((View) containmentCircleShape).getType().equals(Integer.toString(ContainmentCircleEditPart.VISUAL_ID))) {
 						/* The containment circle node is deleted only if any other link is connected */
 						if (((View) containmentCircleShape).getSourceEdges().size() == 1) {
-							cc.compose(new DeleteCommand(editingDomain, (View) containmentCircleShape));
+							cc.compose(new DeleteCommand(editingDomain, containmentCircleShape));
 						}
 					}
 				}

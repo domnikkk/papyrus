@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,9 +41,9 @@ import org.eclipse.papyrus.infra.hyperlink.util.HyperLinkConstants;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 
 /**
- * 
+ *
  * The helper for editors
- * 
+ *
  */
 public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IHyperlinkHelperExtension {
 
@@ -54,9 +54,9 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper#executeNewMousePressed(java.util.List, org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param list
 	 * @param aModel
 	 */
@@ -71,15 +71,15 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 		}
 		EditorHyperLinkEditorShell editor = new EditorHyperLinkEditorShell(editorRegistry, aModel);
 		editor.open();
-		if(editor.getHyperLinkEditor() != null) {
+		if (editor.getHyperLinkEditor() != null) {
 			list.add(editor.getHyperLinkEditor());
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper#getFilteredObject(java.util.List)
-	 * 
+	 *
 	 * @param hyperLinkObjects
 	 * @return
 	 */
@@ -87,9 +87,9 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 	public List<HyperLinkObject> getFilteredObject(final List<HyperLinkObject> hyperLinkObjects) {
 		ArrayList<HyperLinkObject> result = new ArrayList<HyperLinkObject>();
 		Iterator<HyperLinkObject> iterator = hyperLinkObjects.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			HyperLinkObject current = iterator.next();
-			if(current instanceof HyperLinkEditor) {
+			if (current instanceof HyperLinkEditor) {
 				result.add(current);
 			}
 		}
@@ -97,9 +97,9 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper#getHyperLinkObject(org.eclipse.emf.ecore.EAnnotation)
-	 * 
+	 *
 	 * @param eAnnotation
 	 * @return
 	 */
@@ -109,10 +109,9 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper#getAddHyperLinkCommand(org.eclipse.emf.transaction.TransactionalEditingDomain,
-	 *      org.eclipse.emf.ecore.EModelElement, org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.hyperlink.helper.AbstractHyperLinkHelper#getAddHyperLinkCommand(org.eclipse.emf.transaction.TransactionalEditingDomain, org.eclipse.emf.ecore.EModelElement, org.eclipse.papyrus.infra.hyperlink.object.HyperLinkObject)
+	 *
 	 * @param domain
 	 * @param object
 	 * @param HyperLinkObject
@@ -120,20 +119,20 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 	 */
 	@Override
 	public RecordingCommand getAddHyperLinkCommand(TransactionalEditingDomain domain, EModelElement object, HyperLinkObject hyperLinkObject) {
-		if(hyperLinkObject instanceof HyperLinkEditor) {
-			HyperLinkEditor hyperLinkEditor = (HyperLinkEditor)hyperLinkObject;
-			return new CreateHyperLinkPageCommand(domain, object, hyperLinkEditor.getTooltipText(), HyperLinkConstants.PAPYRUS_HYPERLINK_PAGE, (EObject)hyperLinkEditor.getObject(), hyperLinkObject.getIsDefault());
+		if (hyperLinkObject instanceof HyperLinkEditor) {
+			HyperLinkEditor hyperLinkEditor = (HyperLinkEditor) hyperLinkObject;
+			return new CreateHyperLinkPageCommand(domain, object, hyperLinkEditor.getTooltipText(), HyperLinkConstants.PAPYRUS_HYPERLINK_PAGE, (EObject) hyperLinkEditor.getObject(), hyperLinkObject.getIsDefault());
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editor
-	 *        an editor
+	 *            an editor
 	 * @return
 	 *         the HyperLinkEditor corresponding to this object
-	 * 
+	 *
 	 */
 	public HyperLinkEditor getHyperLinkObjectFor(final Object editor) {// create an interface for this method?
 		HyperLinkEditor hyperLinkEditor = new HyperLinkEditor();
@@ -142,16 +141,16 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 	}
 
 	/**
-	 * 
+	 *
 	 * @param eAnnotation
-	 *        an eAnnotation
+	 *            an eAnnotation
 	 * @return
 	 *         the HyperLinkEditor corresponding to this eAnnotation
 	 */
 	public HyperLinkEditor getHyperLinkObjectFor(final EAnnotation eAnnotation) {
-		for(String source : HyperLinkConstants.validHyperLinkPageSources) {
-			if(source.equals(eAnnotation.getSource())) {
-				if(!eAnnotation.getReferences().isEmpty()) {
+		for (String source : HyperLinkConstants.validHyperLinkPageSources) {
+			if (source.equals(eAnnotation.getSource())) {
+				if (!eAnnotation.getReferences().isEmpty()) {
 					HyperLinkEditor editor = new HyperLinkEditor();
 					editor.setObject(eAnnotation.getReferences().get(0));
 					editor.setIsDefault(Boolean.parseBoolean(eAnnotation.getDetails().get(HyperLinkConstants.HYPERLINK_IS_DEFAULT_NAVIGATION)));
@@ -172,11 +171,11 @@ public class EditorHyperLinkHelper extends AbstractHyperLinkHelper implements IH
 			registry = ServiceUtilsForEObject.getInstance().getServiceRegistry(linkOwner);
 			IPageManager pageManager = ServiceUtils.getInstance().getIPageManager(registry);
 
-			if((linkTarget instanceof EObject) && pageManager.allPages().contains(linkTarget)) {
+			if ((linkTarget instanceof EObject) && pageManager.allPages().contains(linkTarget)) {
 				ILabelProvider labelProvider = registry.getService(LabelProviderService.class).getLabelProvider();
 
 				String text = labelProvider.getText(linkTarget);
-				result = new CreateHyperLinkPageCommand(domain, linkOwner, text, text, (EObject)linkTarget, true);
+				result = new CreateHyperLinkPageCommand(domain, linkOwner, text, text, (EObject) linkTarget, true);
 			}
 		} catch (ServiceException ex) {
 			Activator.log.error(ex);

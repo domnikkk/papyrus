@@ -35,10 +35,10 @@ import org.eclipse.papyrus.documentation.plugin.documentation.Person;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getImplicitDependencies <em>Implicit Dependencies</em>}</li>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getReferent <em>Referent</em>}</li>
- *   <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getAdditionalComments <em>Additional Comments</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getImplicitDependencies <em>Implicit Dependencies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getReferent <em>Referent</em>}</li>
+ * <li>{@link org.eclipse.papyrus.documentation.plugin.documentation.impl.DocumentationImpl#getAdditionalComments <em>Additional Comments</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +49,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -59,6 +60,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -69,6 +71,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getImplicitDependencies() <em>Implicit Dependencies</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getImplicitDependencies()
 	 * @generated
 	 * @ordered
@@ -79,6 +82,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getReferent() <em>Referent</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getReferent()
 	 * @generated
 	 * @ordered
@@ -89,6 +93,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	 * The cached value of the '{@link #getAdditionalComments() <em>Additional Comments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAdditionalComments()
 	 * @generated
 	 * @ordered
@@ -98,6 +103,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DocumentationImpl() {
@@ -107,6 +113,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,6 +124,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDescription() {
@@ -126,18 +134,21 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DocumentationPackage.DOCUMENTATION__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Dependency> getImplicitDependencies() {
@@ -150,6 +161,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Person> getReferent() {
@@ -162,6 +174,7 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Comment> getAdditionalComments() {
@@ -174,17 +187,18 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
-				return ((InternalEList<?>)getImplicitDependencies()).basicRemove(otherEnd, msgs);
-			case DocumentationPackage.DOCUMENTATION__REFERENT:
-				return ((InternalEList<?>)getReferent()).basicRemove(otherEnd, msgs);
-			case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
-				return ((InternalEList<?>)getAdditionalComments()).basicRemove(otherEnd, msgs);
+		case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
+			return ((InternalEList<?>) getImplicitDependencies()).basicRemove(otherEnd, msgs);
+		case DocumentationPackage.DOCUMENTATION__REFERENT:
+			return ((InternalEList<?>) getReferent()).basicRemove(otherEnd, msgs);
+		case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
+			return ((InternalEList<?>) getAdditionalComments()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,19 +206,20 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
-				return getDescription();
-			case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
-				return getImplicitDependencies();
-			case DocumentationPackage.DOCUMENTATION__REFERENT:
-				return getReferent();
-			case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
-				return getAdditionalComments();
+		case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
+			return getDescription();
+		case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
+			return getImplicitDependencies();
+		case DocumentationPackage.DOCUMENTATION__REFERENT:
+			return getReferent();
+		case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
+			return getAdditionalComments();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,27 +227,28 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
-				getImplicitDependencies().clear();
-				getImplicitDependencies().addAll((Collection<? extends Dependency>)newValue);
-				return;
-			case DocumentationPackage.DOCUMENTATION__REFERENT:
-				getReferent().clear();
-				getReferent().addAll((Collection<? extends Person>)newValue);
-				return;
-			case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
-				getAdditionalComments().clear();
-				getAdditionalComments().addAll((Collection<? extends Comment>)newValue);
-				return;
+		case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
+			getImplicitDependencies().clear();
+			getImplicitDependencies().addAll((Collection<? extends Dependency>) newValue);
+			return;
+		case DocumentationPackage.DOCUMENTATION__REFERENT:
+			getReferent().clear();
+			getReferent().addAll((Collection<? extends Person>) newValue);
+			return;
+		case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
+			getAdditionalComments().clear();
+			getAdditionalComments().addAll((Collection<? extends Comment>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -240,23 +256,24 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
-				getImplicitDependencies().clear();
-				return;
-			case DocumentationPackage.DOCUMENTATION__REFERENT:
-				getReferent().clear();
-				return;
-			case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
-				getAdditionalComments().clear();
-				return;
+		case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
+			getImplicitDependencies().clear();
+			return;
+		case DocumentationPackage.DOCUMENTATION__REFERENT:
+			getReferent().clear();
+			return;
+		case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
+			getAdditionalComments().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -264,19 +281,20 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
-				return implicitDependencies != null && !implicitDependencies.isEmpty();
-			case DocumentationPackage.DOCUMENTATION__REFERENT:
-				return referent != null && !referent.isEmpty();
-			case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
-				return additionalComments != null && !additionalComments.isEmpty();
+		case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
+			return implicitDependencies != null && !implicitDependencies.isEmpty();
+		case DocumentationPackage.DOCUMENTATION__REFERENT:
+			return referent != null && !referent.isEmpty();
+		case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
+			return additionalComments != null && !additionalComments.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -284,11 +302,14 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -297,4 +318,4 @@ public class DocumentationImpl extends EModelElementImpl implements Documentatio
 		return result.toString();
 	}
 
-} //DocumentationImpl
+} // DocumentationImpl

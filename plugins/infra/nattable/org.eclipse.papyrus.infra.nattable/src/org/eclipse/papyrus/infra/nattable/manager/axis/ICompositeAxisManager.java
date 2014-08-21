@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,16 +22,16 @@ import org.eclipse.nebula.widgets.nattable.ui.NatEventData;
 
 
 /**
- * 
+ *
  * This interfaces provides the methods for the CompositeAxisManager
- * 
+ *
  */
 public interface ICompositeAxisManager extends IAxisManager {
 
 	/**
-	 * 
+	 *
 	 * @param subAxisManager
-	 *        the managed axis manager
+	 *            the managed axis manager
 	 */
 	public void setSubAxisManager(final List<IAxisManager> subAxisManager);
 
@@ -41,34 +41,34 @@ public interface ICompositeAxisManager extends IAxisManager {
 	public void updateAxisContents();
 
 	/**
-	 * 
+	 *
 	 * @param alpabeticOrder
-	 *        <code>true</code> if we sort the axis by alphabetic order, <code>false</code> if not
+	 *            <code>true</code> if we sort the axis by alphabetic order, <code>false</code> if not
 	 * @param iConfigRegistry
-	 *        the config registry used to find the label provider
+	 *            the config registry used to find the label provider
 	 */
 	public void sortAxisByName(final boolean alpabeticOrder, IConfigRegistry iConfigRegistry);
 
 	public boolean canEditAxisHeader(NatEventData evaluationContext);
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         <code>true</code> if the axis managed by this manager are sorted
 	 */
 	public boolean isInSortedState();
 
 	/**
-	 * 
+	 *
 	 * @param comp
-	 *        the comparator to use to sort the axis. this comparator may be null
+	 *            the comparator to use to sort the axis. this comparator may be null
 	 */
 	public void setAxisComparator(final Comparator<Object> comp);
 
 	/**
-	 * 
+	 *
 	 * @param newOrder
-	 *        the new order for the objects : the objects can be IAxis or objects, or objects represented by IAxis in the model
+	 *            the new order for the objects : the objects can be IAxis or objects, or objects represented by IAxis in the model
 	 * @return
 	 *         the command to use to set this new order
 	 */

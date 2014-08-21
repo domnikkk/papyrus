@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,11 +27,11 @@ public class MultiReferencePropertyEditorWithPropertyView extends AbstractProper
 
 	/**
 	 * Creates the multi reference editor with property view.
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the multi reference editor with property view.
 	 */
 	protected MultiReferenceEditorWithPropertyView createMultiReferenceEditorWithPropertyView(Composite parent, int style) {
@@ -40,14 +40,14 @@ public class MultiReferencePropertyEditorWithPropertyView extends AbstractProper
 
 	@Override
 	protected void doBinding() {
-		//		IStaticContentProvider contentProvider = input.getContentProvider(propertyPath);
+		// IStaticContentProvider contentProvider = input.getContentProvider(propertyPath);
 		ILabelProvider labelProvider = input.getLabelProvider(propertyPath);
 
-		if(getInputObservableList() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableList());
+		if (getInputObservableList() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableList());
 		}
 
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			editor.setLabelProvider(labelProvider);
 		}
 

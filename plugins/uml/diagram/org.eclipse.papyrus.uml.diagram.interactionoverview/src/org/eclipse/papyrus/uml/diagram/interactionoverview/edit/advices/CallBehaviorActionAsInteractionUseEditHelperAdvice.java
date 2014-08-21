@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,25 +41,25 @@ public class CallBehaviorActionAsInteractionUseEditHelperAdvice extends Abstract
 		// get the activity containing the new element
 		Activity parentActivity = null;
 		EObject parent = request.getElementToConfigure();
-		while(parent != null && parentActivity == null) {
-			if(parent instanceof Activity) {
-				parentActivity = (Activity)parent;
+		while (parent != null && parentActivity == null) {
+			if (parent instanceof Activity) {
+				parentActivity = (Activity) parent;
 			}
 			parent = parent.eContainer();
 		}
-		if(CALL_BEHAVIOR_ACTION_AS_INTERACTION_USE.equals(request.getParameter(CallBehaviorActionEditHelperAdvice.POPUP_TYPE))) {
-			final CreateInteractionUseDialog dialog = new CreateInteractionUseDialog(Display.getDefault().getActiveShell(), parentActivity, (InvocationAction)request.getElementToConfigure());
-			if(IDialogConstants.OK_ID == dialog.open()) {
+		if (CALL_BEHAVIOR_ACTION_AS_INTERACTION_USE.equals(request.getParameter(CallBehaviorActionEditHelperAdvice.POPUP_TYPE))) {
+			final CreateInteractionUseDialog dialog = new CreateInteractionUseDialog(Display.getDefault().getActiveShell(), parentActivity, (InvocationAction) request.getElementToConfigure());
+			if (IDialogConstants.OK_ID == dialog.open()) {
 				// initialize the invoked element (no need to use a command, since action is being created)
 				final CompositeCommand command = new CompositeCommand(Messages.CallBehaviorActionAsInteractionUseEditHelperAdvice_ConfigureCreatedInteraction);
 				final IElementEditService service = ElementEditServiceUtils.getCommandProvider(request.getElementToConfigure());
 				final EObject behavior = dialog.getSelectedInvoked();
-				if(behavior instanceof Behavior) {
+				if (behavior instanceof Behavior) {
 					final SetRequest setBehaviorRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getCallBehaviorAction_Behavior(), behavior);
 					command.add(service.getEditCommand(setBehaviorRequest));
 				}
 				return command;
-			}else{
+			} else {
 				return new UnexecutableCommand(Status.CANCEL_STATUS);
 			}
 		}

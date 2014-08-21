@@ -31,10 +31,10 @@ import org.eclipse.papyrus.infra.emf.newchild.NewchildPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getElementMultiplicity <em>Element Multiplicity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getGroups <em>Groups</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getConstraints <em>Constraints</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getElementMultiplicity <em>Element Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getGroups <em>Groups</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.impl.MenuRootImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getConstraints() <em>Constraints</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConstraints()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The default value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -65,6 +67,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getElementMultiplicity() <em>Element Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getElementMultiplicity()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getGroups() <em>Groups</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGroups()
 	 * @generated
 	 * @ordered
@@ -85,6 +89,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -95,6 +100,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -104,6 +110,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MenuRootImpl() {
@@ -113,6 +120,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,6 +131,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ConstraintDescriptor> getConstraints() {
@@ -135,6 +144,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getElementMultiplicity() {
@@ -144,18 +154,21 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setElementMultiplicity(int newElementMultiplicity) {
 		int oldElementMultiplicity = elementMultiplicity;
 		elementMultiplicity = newElementMultiplicity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY, oldElementMultiplicity, elementMultiplicity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<MenuGroup> getGroups() {
@@ -168,6 +181,7 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -177,26 +191,29 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NewchildPackage.MENU_ROOT__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConstraints()).basicAdd(otherEnd, msgs);
+		case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getConstraints()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -204,15 +221,16 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
-				return ((InternalEList<?>)getConstraints()).basicRemove(otherEnd, msgs);
-			case NewchildPackage.MENU_ROOT__GROUPS:
-				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
+		case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+			return ((InternalEList<?>) getConstraints()).basicRemove(otherEnd, msgs);
+		case NewchildPackage.MENU_ROOT__GROUPS:
+			return ((InternalEList<?>) getGroups()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -220,19 +238,20 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
-				return getConstraints();
-			case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
-				return getElementMultiplicity();
-			case NewchildPackage.MENU_ROOT__GROUPS:
-				return getGroups();
-			case NewchildPackage.MENU_ROOT__NAME:
-				return getName();
+		case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+			return getConstraints();
+		case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
+			return getElementMultiplicity();
+		case NewchildPackage.MENU_ROOT__GROUPS:
+			return getGroups();
+		case NewchildPackage.MENU_ROOT__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,26 +259,27 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
-				getConstraints().clear();
-				getConstraints().addAll((Collection<? extends ConstraintDescriptor>)newValue);
-				return;
-			case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
-				setElementMultiplicity((Integer)newValue);
-				return;
-			case NewchildPackage.MENU_ROOT__GROUPS:
-				getGroups().clear();
-				getGroups().addAll((Collection<? extends MenuGroup>)newValue);
-				return;
-			case NewchildPackage.MENU_ROOT__NAME:
-				setName((String)newValue);
-				return;
+		case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+			getConstraints().clear();
+			getConstraints().addAll((Collection<? extends ConstraintDescriptor>) newValue);
+			return;
+		case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
+			setElementMultiplicity((Integer) newValue);
+			return;
+		case NewchildPackage.MENU_ROOT__GROUPS:
+			getGroups().clear();
+			getGroups().addAll((Collection<? extends MenuGroup>) newValue);
+			return;
+		case NewchildPackage.MENU_ROOT__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,23 +287,24 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
-				getConstraints().clear();
-				return;
-			case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
-				setElementMultiplicity(ELEMENT_MULTIPLICITY_EDEFAULT);
-				return;
-			case NewchildPackage.MENU_ROOT__GROUPS:
-				getGroups().clear();
-				return;
-			case NewchildPackage.MENU_ROOT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+			getConstraints().clear();
+			return;
+		case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
+			setElementMultiplicity(ELEMENT_MULTIPLICITY_EDEFAULT);
+			return;
+		case NewchildPackage.MENU_ROOT__GROUPS:
+			getGroups().clear();
+			return;
+		case NewchildPackage.MENU_ROOT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,19 +312,20 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
-				return constraints != null && !constraints.isEmpty();
-			case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
-				return elementMultiplicity != ELEMENT_MULTIPLICITY_EDEFAULT;
-			case NewchildPackage.MENU_ROOT__GROUPS:
-				return groups != null && !groups.isEmpty();
-			case NewchildPackage.MENU_ROOT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+			return constraints != null && !constraints.isEmpty();
+		case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
+			return elementMultiplicity != ELEMENT_MULTIPLICITY_EDEFAULT;
+		case NewchildPackage.MENU_ROOT__GROUPS:
+			return groups != null && !groups.isEmpty();
+		case NewchildPackage.MENU_ROOT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -311,15 +333,19 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == DisplayUnit.class) {
 			switch (derivedFeatureID) {
-				case NewchildPackage.MENU_ROOT__CONSTRAINTS: return ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS;
-				case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY: return ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY;
-				default: return -1;
+			case NewchildPackage.MENU_ROOT__CONSTRAINTS:
+				return ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS;
+			case NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY:
+				return ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY;
+			default:
+				return -1;
 			}
 		}
 		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
@@ -328,15 +354,19 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == DisplayUnit.class) {
 			switch (baseFeatureID) {
-				case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS: return NewchildPackage.MENU_ROOT__CONSTRAINTS;
-				case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY: return NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY;
-				default: return -1;
+			case ConstraintsPackage.DISPLAY_UNIT__CONSTRAINTS:
+				return NewchildPackage.MENU_ROOT__CONSTRAINTS;
+			case ConstraintsPackage.DISPLAY_UNIT__ELEMENT_MULTIPLICITY:
+				return NewchildPackage.MENU_ROOT__ELEMENT_MULTIPLICITY;
+			default:
+				return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
@@ -345,11 +375,14 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (elementMultiplicity: ");
@@ -360,4 +393,4 @@ public class MenuRootImpl extends MenuContainerImpl implements MenuRoot {
 		return result.toString();
 	}
 
-} //MenuRootImpl
+} // MenuRootImpl

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,11 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 	 * ()
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
+	@Override
 	public String getPropertyName() {
 		return "";
 	}
@@ -41,10 +42,11 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 	 * @see com.cea.papyrus.core.common.directedit.IPropertyAccessor#getValue()
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
+	@Override
 	public abstract String getValue();
 
 	/*
@@ -55,9 +57,10 @@ public abstract class PropertyAccessor implements IPropertyAccessor {
 	 * .lang.String)
 	 */
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param value
 	 */
+	@Override
 	public abstract void setValue(String value);
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.swt.widgets.Listener;
 
 /**
  * A "Null" implementation of the BodyEditor
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class NullBodyEditor implements BodyEditor {
 
@@ -33,34 +33,34 @@ public class NullBodyEditor implements BodyEditor {
 	}
 
 	public void setInput(String value) {
-		//Ignore
+		// Ignore
 	}
 
 	public void dispose() {
-		if(messageLabel != null) {
+		if (messageLabel != null) {
 			messageLabel.dispose();
 			messageLabel = null;
 		}
 	}
 
 	public void addChangeListener(Listener listener) {
-		//Ignore
+		// Ignore
 	}
 
 	public void removeChangeListener(Listener listener) {
-		//Ignore
+		// Ignore
 	}
 
 	public String getValue() {
-		return null; //Ignore
+		return null; // Ignore
 	}
 
 	public void setReadOnly(boolean readOnly) {
-		//Ignore
+		// Ignore
 	}
 
 	public void setContext(ModelElement context) {
-		//Ignore
+		// Ignore
 	}
 
 }

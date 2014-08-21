@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -106,9 +106,9 @@ public class AspectActionsInformationComposite {
 
 	/**
 	 * Creates the content for this composite
-	 * 
+	 *
 	 * @param parent
-	 *        the conainer of the created content
+	 *            the conainer of the created content
 	 * @return the created composite
 	 */
 	public Composite createComposite(Composite parent, List<Profile> appliedProfiles) {
@@ -163,13 +163,13 @@ public class AspectActionsInformationComposite {
 			 */
 			public void mouseUp(MouseEvent e) {
 				// remove the selected aspect action(s)
-				ITreeSelection selection = (ITreeSelection)viewer.getSelection();
-				if(selection != null && selection.size() > 0) {
-					for(Object selected : selection.toList()) {
-						if(selected instanceof IPostAction && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
-							((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().remove(selected);
-						} else if(selected instanceof IPreAction && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
-							((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().remove(selected);
+				ITreeSelection selection = (ITreeSelection) viewer.getSelection();
+				if (selection != null && selection.size() > 0) {
+					for (Object selected : selection.toList()) {
+						if (selected instanceof IPostAction && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
+							((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions().remove(selected);
+						} else if (selected instanceof IPreAction && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
+							((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions().remove(selected);
 						}
 					}
 				}
@@ -199,19 +199,19 @@ public class AspectActionsInformationComposite {
 			 * @{inheritDoc
 			 */
 			public void mouseUp(MouseEvent e) {
-				IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
-				if(selection != null && selection.size() > 0 && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
-					IAspectAction action = (IAspectAction)selection.getFirstElement();
-					List<IPreAction> initialPreList = ((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions();
-					List<IPostAction> initialPostList = ((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions();
+				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
+				if (selection != null && selection.size() > 0 && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
+					IAspectAction action = (IAspectAction) selection.getFirstElement();
+					List<IPreAction> initialPreList = ((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions();
+					List<IPostAction> initialPostList = ((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions();
 
-					if(action instanceof IPreAction) {
+					if (action instanceof IPreAction) {
 						// move from pre action list
-						if(initialPreList.indexOf(action) > 0) {
+						if (initialPreList.indexOf(action) > 0) {
 							Collections.swap(initialPreList, initialPreList.indexOf(action), initialPreList.indexOf(action) - 1);
 						}
-					} else if(action instanceof IPostAction) {
-						if(initialPostList.indexOf(action) > 0) {
+					} else if (action instanceof IPostAction) {
+						if (initialPostList.indexOf(action) > 0) {
 							Collections.swap(initialPostList, initialPostList.indexOf(action), initialPostList.indexOf(action) - 1);
 						}
 					}
@@ -247,19 +247,19 @@ public class AspectActionsInformationComposite {
 			 * @{inheritDoc
 			 */
 			public void mouseUp(MouseEvent e) {
-				IStructuredSelection selection = (IStructuredSelection)viewer.getSelection();
-				if(selection != null && selection.size() > 0 && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
-					IAspectAction action = (IAspectAction)selection.getFirstElement();
-					List<IPreAction> initialPreList = ((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions();
-					List<IPostAction> initialPostList = ((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions();
+				IStructuredSelection selection = (IStructuredSelection) viewer.getSelection();
+				if (selection != null && selection.size() > 0 && selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
+					IAspectAction action = (IAspectAction) selection.getFirstElement();
+					List<IPreAction> initialPreList = ((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions();
+					List<IPostAction> initialPostList = ((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions();
 
-					if(action instanceof IPreAction) {
+					if (action instanceof IPreAction) {
 						// move from pre action list
-						if(initialPreList.indexOf(action) < initialPreList.size() - 1) {
+						if (initialPreList.indexOf(action) < initialPreList.size() - 1) {
 							Collections.swap(initialPreList, initialPreList.indexOf(action), initialPreList.indexOf(action) + 1);
 						}
-					} else if(action instanceof IPostAction) {
-						if(initialPostList.indexOf(action) < initialPostList.size() - 1) {
+					} else if (action instanceof IPostAction) {
+						if (initialPostList.indexOf(action) < initialPostList.size() - 1) {
 							Collections.swap(initialPostList, initialPostList.indexOf(action), initialPostList.indexOf(action) + 1);
 						}
 					}
@@ -316,10 +316,10 @@ public class AspectActionsInformationComposite {
 	 */
 	protected void addButtonPressed() {
 		Menu menu = new Menu(addActionButton);
-		for(IAspectActionProvider factory : AspectToolService.getInstance().getProviders()) {
+		for (IAspectActionProvider factory : AspectToolService.getInstance().getProviders()) {
 
 			// check if action can be added (not present if one instance allowed)
-			if(factory.isEnable(selectedEntryProxy)) {
+			if (factory.isEnable(selectedEntryProxy)) {
 				MenuItem item = new MenuItem(menu, SWT.NONE);
 				item.setText(factory.getName());
 				item.setImage(factory.getImage());
@@ -330,13 +330,13 @@ public class AspectActionsInformationComposite {
 					 * @{inheritDoc
 					 */
 					public void widgetSelected(SelectionEvent e) {
-						IAspectActionProvider factory = (IAspectActionProvider)((MenuItem)e.getSource()).getData();
+						IAspectActionProvider factory = (IAspectActionProvider) ((MenuItem) e.getSource()).getData();
 						IAspectAction action = factory.createAction(null);
-						if(selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
-							if(action instanceof IPostAction) {
-								((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().add((IPostAction)action);
-							} else if(action instanceof IPreAction) {
-								((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().add((IPreAction)action);
+						if (selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
+							if (action instanceof IPostAction) {
+								((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions().add((IPostAction) action);
+							} else if (action instanceof IPreAction) {
+								((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions().add((IPreAction) action);
 							}
 							setSelectedEntryProxy(selectedEntryProxy);
 						}
@@ -357,19 +357,19 @@ public class AspectActionsInformationComposite {
 
 	/**
 	 * Handles the selection changed event in the tree viewer of actions
-	 * 
+	 *
 	 * @param event
-	 *        the event fired by the tree viewer or <code>null</code>
+	 *            the event fired by the tree viewer or <code>null</code>
 	 */
 	protected void handleActionListSelectionChanged(SelectionChangedEvent event) {
-		if(event == null) {
+		if (event == null) {
 			actionDescriptionComposite.showPage(new Composite(actionDescriptionComposite, SWT.NONE));
 			removeActionButton.setEnabled(false);
 		} else {
-			IStructuredSelection selection = (IStructuredSelection)event.getSelection();
-			if(selection != null && selection.getFirstElement() instanceof IAspectAction) {
+			IStructuredSelection selection = (IStructuredSelection) event.getSelection();
+			if (selection != null && selection.getFirstElement() instanceof IAspectAction) {
 				// udpate the page book where parameters are handled
-				actionDescriptionComposite.showPage(((IAspectAction)selection.getFirstElement()).createConfigurationComposite(actionDescriptionComposite, selectedEntryProxy, appliedProfiles));
+				actionDescriptionComposite.showPage(((IAspectAction) selection.getFirstElement()).createConfigurationComposite(actionDescriptionComposite, selectedEntryProxy, appliedProfiles));
 				removeActionButton.setEnabled(true);
 			} else {
 				actionDescriptionComposite.showPage(new Composite(actionDescriptionComposite, SWT.NONE));
@@ -380,27 +380,27 @@ public class AspectActionsInformationComposite {
 
 	/**
 	 * Sets the new Selected entry
-	 * 
+	 *
 	 * @param selectedConfiguration
-	 *        the selectedConfiguration to set
+	 *            the selectedConfiguration to set
 	 */
 	public void setSelectedEntryProxy(PaletteEntryProxy selectedEntryProxy) {
 		// should save the content for the previous selected entry proxy...
 		this.selectedEntryProxy = selectedEntryProxy;
 
-		if(viewer != null) {
+		if (viewer != null) {
 			viewer.setInput(selectedEntryProxy);
 
 			// select first action
 			handleActionListSelectionChanged(null);
 
 			// select first post action
-			if(selectedEntryProxy instanceof IPaletteAspectToolEntryProxy && ((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().size() > 0) {
-				viewer.setSelection(new StructuredSelection(((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().get(0)), true);
+			if (selectedEntryProxy instanceof IPaletteAspectToolEntryProxy && ((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions().size() > 0) {
+				viewer.setSelection(new StructuredSelection(((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions().get(0)), true);
 			}
-			//select first pre action
-			else if(selectedEntryProxy instanceof IPaletteAspectToolEntryProxy && ((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().size() > 0) {
-				viewer.setSelection(new StructuredSelection(((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().get(0)), true);
+			// select first pre action
+			else if (selectedEntryProxy instanceof IPaletteAspectToolEntryProxy && ((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions().size() > 0) {
+				viewer.setSelection(new StructuredSelection(((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions().get(0)), true);
 			}
 
 			updateButtons();
@@ -411,9 +411,9 @@ public class AspectActionsInformationComposite {
 	 * Call this method to update the buttons enablement.
 	 */
 	protected void updateButtons() {
-		if(selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
+		if (selectedEntryProxy instanceof IPaletteAspectToolEntryProxy) {
 			addActionButton.setEnabled(true);
-			if(((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPreActions().isEmpty() && !((IPaletteAspectToolEntryProxy)selectedEntryProxy).getPostActions().isEmpty()) {
+			if (((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPreActions().isEmpty() && !((IPaletteAspectToolEntryProxy) selectedEntryProxy).getPostActions().isEmpty()) {
 				removeActionButton.setEnabled(true);
 				moveUpActionButton.setEnabled(true);
 				moveDownActionButton.setEnabled(true);
@@ -440,10 +440,10 @@ public class AspectActionsInformationComposite {
 		 * @{inheritDoc
 		 */
 		public Object[] getChildren(Object parentElement) {
-			if(parentElement instanceof IPaletteAspectToolEntryProxy) {
+			if (parentElement instanceof IPaletteAspectToolEntryProxy) {
 				List<IAspectAction> actions = new ArrayList<IAspectAction>();
-				actions.addAll(((IPaletteAspectToolEntryProxy)parentElement).getPostActions());
-				actions.addAll(((IPaletteAspectToolEntryProxy)parentElement).getPreActions());
+				actions.addAll(((IPaletteAspectToolEntryProxy) parentElement).getPostActions());
+				actions.addAll(((IPaletteAspectToolEntryProxy) parentElement).getPreActions());
 				return actions.toArray();
 			}
 			return new Object[0];
@@ -453,7 +453,7 @@ public class AspectActionsInformationComposite {
 		 * @{inheritDoc
 		 */
 		public Object getParent(Object element) {
-			if(element instanceof IAspectAction) {
+			if (element instanceof IAspectAction) {
 				return selectedEntryProxy;
 			}
 			return null;
@@ -498,8 +498,8 @@ public class AspectActionsInformationComposite {
 		 * @{inheritDoc
 		 */
 		public Image getImage(Object element) {
-			if(element instanceof IAspectAction) {
-				return ((IAspectAction)element).getImage();
+			if (element instanceof IAspectAction) {
+				return ((IAspectAction) element).getImage();
 			}
 			return null;
 		}
@@ -508,8 +508,8 @@ public class AspectActionsInformationComposite {
 		 * @{inheritDoc
 		 */
 		public String getText(Object element) {
-			if(element instanceof IAspectAction) {
-				return ((IAspectAction)element).getLabel();
+			if (element instanceof IAspectAction) {
+				return ((IAspectAction) element).getLabel();
 			}
 			return "notAnAction";
 		}

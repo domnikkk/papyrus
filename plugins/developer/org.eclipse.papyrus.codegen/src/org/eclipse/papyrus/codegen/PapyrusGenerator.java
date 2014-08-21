@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,7 +13,6 @@
 package org.eclipse.papyrus.codegen;
 
 import org.eclipse.gmf.codegen.gmfgen.GenEditorGenerator;
-import org.eclipse.gmf.codegen.xtend.ui.handlers.GeneratorWithXtend2;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
 
 public class PapyrusGenerator extends GeneratorWithXtend2 {

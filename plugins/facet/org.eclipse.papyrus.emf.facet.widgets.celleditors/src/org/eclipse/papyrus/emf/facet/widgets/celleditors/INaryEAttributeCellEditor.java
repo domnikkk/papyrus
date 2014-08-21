@@ -23,25 +23,24 @@ public interface INaryEAttributeCellEditor<T extends Object> {
 	/**
 	 * Initialize a cell for edition of a n-ary feature. This method must create
 	 * a control inside the given parent to let the user edit the value.
-	 * 
+	 *
 	 * @param parent
 	 *            the SWT control that must contain the cell editor
 	 * @param values
-	 * 			  the actual values of the reference
+	 *            the actual values of the reference
 	 * @param feature
-	 * 			  the feature 
+	 *            the feature
 	 * @param eObject
-	 * 			  the {@link EObject} being currently edited.
+	 *            the {@link EObject} being currently edited.
 	 * @param editHandler
 	 * @return the SWT {@link Control} to be used for capturing the new cell
 	 *         value
 	 */
 	Control activateCell(Composite parent, List<T> values, IModelCellEditHandler editHandler, EObject eObject, EStructuralFeature feature);
-	
+
 	/**
 	 * @return the value currently in the control. This is the value that will
-	 *         be set on the model element when
-	 *         {@link IModelCellEditHandler#commit()} is called.
+	 *         be set on the model element when {@link IModelCellEditHandler#commit()} is called.
 	 */
 	List<T> getValue();
 }

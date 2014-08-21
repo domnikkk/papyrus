@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,6 +31,7 @@ public class CPackageEditPartCN extends PackageEditPartCN {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new PackageNodePlateFigure(200, 100);
 		return result;

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -77,6 +77,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 	 * This is a callback that will allow us
 	 * to create the viewer and initialize it.
 	 */
+	@Override
 	public void createPartControl(Composite parent) {
 		setTitleImage(PapyrusImageUtils.getDefaultIcon());
 		createContent(parent);
@@ -88,11 +89,11 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * Add a composite in the view
-	 * 
+	 *
 	 * @param creator
-	 *        , the composite creator
+	 *            , the composite creator
 	 * @param collection
-	 *        , the collection of actions
+	 *            , the collection of actions
 	 * @return the composite
 	 */
 	public AbstractInsideComposite setComposite(final ICompositeCreator creator, Collection<NotificationRunnable> collection) {
@@ -112,13 +113,13 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * Add a composite in the view
-	 * 
+	 *
 	 * @param creator
-	 *        , the composite creator
+	 *            , the composite creator
 	 * @param messageTitle
-	 *        , the message in the section
+	 *            , the message in the section
 	 * @param collection
-	 *        , the collection of actions
+	 *            , the collection of actions
 	 * @return the composite
 	 */
 	public AbstractInsideComposite setComposite(final ICompositeCreator creator, final String messageTitle, Collection<NotificationRunnable> runnables) {
@@ -127,13 +128,13 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * Add a composite in the view
-	 * 
+	 *
 	 * @param creator
-	 *        , the composite creator
+	 *            , the composite creator
 	 * @param messageTitle
-	 *        , the message in the section
+	 *            , the message in the section
 	 * @param collection
-	 *        , the collection of actions
+	 *            , the collection of actions
 	 * @return the composite
 	 */
 	public AbstractInsideComposite setComposite(final ICompositeCreator creator, final String messageTitle, Collection<NotificationRunnable> runnables, final Type type) {
@@ -142,7 +143,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 			@Override
 			protected Control doCreateContents(FormToolkit toolkit, Composite composite) {
 				Composite compo = null;
-				if(type != null) {
+				if (type != null) {
 					compo = PapyrusControlsFactory.createCompositeWithType(Display.getDefault().getActiveShell(), toolkit, composite, type, null, null, false, creator, context);
 				} else {
 					compo = creator.createComposite(composite, toolkit);
@@ -153,7 +154,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 			@Override
 			protected String getSectionName() {
-				if(messageTitle == null) {
+				if (messageTitle == null) {
 					return super.getSectionName();
 				} else {
 					return messageTitle;
@@ -166,13 +167,13 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * Add a composite in the view
-	 * 
+	 *
 	 * @param message
-	 *        , the message in the composite
+	 *            , the message in the composite
 	 * @param title
-	 *        , the title of the section
+	 *            , the title of the section
 	 * @param runnables
-	 *        , the actions
+	 *            , the actions
 	 * @return
 	 */
 	public AbstractInsideComposite setMessage(String message, final String title, Collection<NotificationRunnable> runnables) {
@@ -180,7 +181,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 			@Override
 			protected String getSectionName() {
-				if(title == null) {
+				if (title == null) {
 					return super.getSectionName();
 				} else {
 					return title;
@@ -194,9 +195,9 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * Add a message in the view
-	 * 
+	 *
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 */
 	public void setMessage(String message) {
 		setMessage(message, null);
@@ -204,11 +205,11 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * Add a message with a collection of actions
-	 * 
+	 *
 	 * @param message
-	 *        , the message to display
+	 *            , the message to display
 	 * @param runnables
-	 *        , a collection of actions
+	 *            , a collection of actions
 	 */
 	public void setMessage(String message, Collection<NotificationRunnable> runnables) {
 		MessageComposite compo = new MessageComposite(this, form, toolkit, runnables);
@@ -217,7 +218,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 	}
 
 	private void manageComposite(AbstractInsideComposite compo) {
-		if(form.getBody().getChildren().length > 1) {
+		if (form.getBody().getChildren().length > 1) {
 			Control previous = form.getBody().getChildren()[form.getBody().getChildren().length - 2];
 			manageComposite(compo, previous);
 		} else {
@@ -228,7 +229,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	private void manageComposite(Control created, Control previous) {
 		FormData data = new FormData();
-		if(previous != null) {
+		if (previous != null) {
 			data.bottom = new FormAttachment(previous, -5);
 		} else {
 			data.bottom = new FormAttachment(98, -5);
@@ -238,12 +239,12 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 		data.right = new FormAttachment(100, -5);
 		created.setLayoutData(data);
 		form.reflow(true);
-		if(created instanceof AbstractInsideComposite) {
-			AbstractInsideComposite inside = (AbstractInsideComposite)created;
+		if (created instanceof AbstractInsideComposite) {
+			AbstractInsideComposite inside = (AbstractInsideComposite) created;
 			inside.setPrevious(previous);
 		}
-		if(previous instanceof AbstractInsideComposite) {
-			AbstractInsideComposite inside = (AbstractInsideComposite)previous;
+		if (previous instanceof AbstractInsideComposite) {
+			AbstractInsideComposite inside = (AbstractInsideComposite) previous;
 			inside.setAfter(created);
 		}
 		created.setFocus();
@@ -292,10 +293,11 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 	private void makeActions() {
 		allDefaultAction = new Action() {
 
+			@Override
 			public void run() {
-				for(Control c : form.getBody().getChildren()) {
-					if(c instanceof AbstractInsideComposite) {
-						AbstractInsideComposite compo = (AbstractInsideComposite)c;
+				for (Control c : form.getBody().getChildren()) {
+					if (c instanceof AbstractInsideComposite) {
+						AbstractInsideComposite compo = (AbstractInsideComposite) c;
 						compo.runDefault();
 					}
 				}
@@ -308,8 +310,9 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 		allDefaultAction.setImageDescriptor(ToolbooxImageUtils.getImageDescriptor(org.eclipse.papyrus.infra.widgets.toolbox.utils.ISharedImages.IMG_RUN));
 		closeAllAction = new Action() {
 
+			@Override
 			public void run() {
-				for(Control c : form.getBody().getChildren()) {
+				for (Control c : form.getBody().getChildren()) {
 					c.dispose();
 				}
 				form.getBody().layout(true, true);
@@ -321,11 +324,12 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 		closeAllAction.setImageDescriptor(PlatformUI.getWorkbench().getSharedImages().getImageDescriptor(ISharedImages.IMG_ETOOL_DELETE));
 		collapseAllAction = new Action() {
 
+			@Override
 			public void run() {
-				for(Control c : form.getBody().getChildren()) {
-					if(c instanceof AbstractInsideComposite) {
-						AbstractInsideComposite compo = (AbstractInsideComposite)c;
-						if(isCollapse) {
+				for (Control c : form.getBody().getChildren()) {
+					if (c instanceof AbstractInsideComposite) {
+						AbstractInsideComposite compo = (AbstractInsideComposite) c;
+						if (isCollapse) {
 							compo.collapse();
 						} else {
 							compo.expand();
@@ -333,7 +337,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 					}
 				}
 				isCollapse = !isCollapse;
-				if(isCollapse) {
+				if (isCollapse) {
 					collapseAllAction.setText("Collapse all the messages");
 					collapseAllAction.setToolTipText("Collapse all the messages");
 				} else {
@@ -355,6 +359,7 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
+	@Override
 	public void setFocus() {
 		form.setFocus();
 	}
@@ -371,37 +376,37 @@ public class PapyrusNotificationView extends ViewPart implements ICallBack {
 
 	/**
 	 * This method destroy the object if it is contained in the view
-	 * 
+	 *
 	 * @param element
 	 */
 	protected void destroy(Object element) {
-		if(element instanceof AbstractInsideComposite) {
-			AbstractInsideComposite inside = (AbstractInsideComposite)element;
+		if (element instanceof AbstractInsideComposite) {
+			AbstractInsideComposite inside = (AbstractInsideComposite) element;
 
 			if (inside != null) {
 				Control previous = inside.getPrevious();
 				Control after = inside.getAfter();
-				
-				if((after != null) && !(after.isDisposed()) 
-					&& ((previous == null) || !(previous.isDisposed()))) {
-				
+
+				if ((after != null) && !(after.isDisposed())
+						&& ((previous == null) || !(previous.isDisposed()))) {
+
 					// previous can be null but can not be disposed when not null
 					// after can not be null nor disposed
 					manageComposite(after, previous);
-				
+
 				} else if ((previous instanceof AbstractInsideComposite) && !(previous.isDisposed())) {
-						AbstractInsideComposite compo = (AbstractInsideComposite)previous;
-						compo.setAfter(null);
-//						FormData data = new FormData();
-//						data.bottom = new FormAttachment(previous, -5);
-//						data.left = new FormAttachment(0, 5);
-//						data.right = new FormAttachment(100, -5);
-//						compo.setLayoutData(data);
-//						form.reflow(true);
+					AbstractInsideComposite compo = (AbstractInsideComposite) previous;
+					compo.setAfter(null);
+					// FormData data = new FormData();
+					// data.bottom = new FormAttachment(previous, -5);
+					// data.left = new FormAttachment(0, 5);
+					// data.right = new FormAttachment(100, -5);
+					// compo.setLayoutData(data);
+					// form.reflow(true);
 				}
 			}
 
-			if(!inside.isDisposed()) {
+			if (!inside.isDisposed()) {
 				inside.dispose();
 			}
 

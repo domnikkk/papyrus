@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gmf.runtime.diagram.ui.figures.BorderItemLocator;
 import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 import org.eclipse.papyrus.uml.diagram.common.locator.AdvancedBorderItemLocator;
 
@@ -60,18 +61,18 @@ public class ActivityParameterNodePositionLocator extends AdvancedBorderItemLoca
 
 	/**
 	 * Find the closest side when x,y is inside parent.
-	 * 
+	 *
 	 * @param proposedLocation
 	 * @param parentBorder
 	 * @return draw constant
 	 */
 	public static int findClosestSideOfParent(Rectangle proposedLocation, Rectangle parentBorder) {
-		int side = AdvancedBorderItemLocator.findClosestSideOfParent(proposedLocation, parentBorder);
+		int side = BorderItemLocator.findClosestSideOfParent(proposedLocation, parentBorder);
 		// relocate side for North
-		if(side == PositionConstants.NORTH) {
+		if (side == PositionConstants.NORTH) {
 			Point parentCenter = parentBorder.getCenter();
 			Point childCenter = proposedLocation.getCenter();
-			if(childCenter.x < parentCenter.x) {
+			if (childCenter.x < parentCenter.x) {
 				return PositionConstants.WEST;
 			} else {
 				return PositionConstants.EAST;
@@ -83,11 +84,12 @@ public class ActivityParameterNodePositionLocator extends AdvancedBorderItemLoca
 	/**
 	 * Ensure the suggested location actually lies on the parent boundary. The
 	 * side takes precedence.
-	 * 
+	 *
 	 * @param suggestedLocation
 	 * @param suggestedSide
 	 * @return point
 	 */
+	@Override
 	protected Point locateOnParent(Point suggestedLocation, int suggestedSide, IFigure borderItem) {
 		Rectangle bounds = getParentBorder();
 		int parentFigureWidth = bounds.width;
@@ -101,40 +103,40 @@ public class ActivityParameterNodePositionLocator extends AdvancedBorderItemLoca
 		int eastX = parentFigureX + parentFigureWidth - getBorderItemOffset().width - borderItemSize.width;
 		int southY = parentFigureY + parentFigureHeight - getBorderItemOffset().height - borderItemSize.height;
 		int northY = parentFigureY + getBorderItemOffset().height + borderItemSize.height;
-		if(suggestedSide == PositionConstants.WEST) {
-			if(suggestedLocation.x != westX) {
+		if (suggestedSide == PositionConstants.WEST) {
+			if (suggestedLocation.x != westX) {
 				newX = westX;
 			}
-			if(suggestedLocation.y < borderItemSize.height) {
+			if (suggestedLocation.y < borderItemSize.height) {
 				newY = northY + borderItemSize.height;
-			} else if(suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
+			} else if (suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
 				newY = southY - borderItemSize.height;
 			}
-		} else if(suggestedSide == PositionConstants.EAST) {
-			if(suggestedLocation.x != eastX) {
+		} else if (suggestedSide == PositionConstants.EAST) {
+			if (suggestedLocation.x != eastX) {
 				newX = eastX;
 			}
-			if(suggestedLocation.y < borderItemSize.height) {
+			if (suggestedLocation.y < borderItemSize.height) {
 				newY = northY + borderItemSize.height;
-			} else if(suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
+			} else if (suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
 				newY = southY - borderItemSize.height;
 			}
-		} else if(suggestedSide == PositionConstants.SOUTH) {
-			if(suggestedLocation.y != southY) {
+		} else if (suggestedSide == PositionConstants.SOUTH) {
+			if (suggestedLocation.y != southY) {
 				newY = southY;
 			}
-			if(suggestedLocation.x < bounds.getBottomLeft().x) {
+			if (suggestedLocation.x < bounds.getBottomLeft().x) {
 				newX = westX + borderItemSize.width;
-			} else if(suggestedLocation.x > bounds.getBottomRight().x - borderItemSize.width) {
+			} else if (suggestedLocation.x > bounds.getBottomRight().x - borderItemSize.width) {
 				newX = eastX - borderItemSize.width;
 			}
 		} else { // NORTH should not be suggested, consider WEST instead
-			if(suggestedLocation.x != westX) {
+			if (suggestedLocation.x != westX) {
 				newX = westX;
 			}
-			if(suggestedLocation.y < bounds.getTopLeft().y) {
+			if (suggestedLocation.y < bounds.getTopLeft().y) {
 				newY = northY + borderItemSize.height;
-			} else if(suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
+			} else if (suggestedLocation.y > bounds.getBottomLeft().y - borderItemSize.height) {
 				newY = southY - borderItemSize.height;
 			}
 		}
@@ -146,7 +148,7 @@ public class ActivityParameterNodePositionLocator extends AdvancedBorderItemLoca
 		// reset bounds of borderItem
 		Dimension size = getSize(borderItem);
 		Rectangle rectSuggested = getConstraint().getCopy();
-		if(rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
+		if (rectSuggested.getTopLeft().x == 0 && rectSuggested.getTopLeft().y == 0) {
 			rectSuggested.setLocation(getPreferredLocation(borderItem));
 		} else {
 			// recovered constraint must be translated with the parent location
@@ -199,9 +201,9 @@ public class ActivityParameterNodePositionLocator extends AdvancedBorderItemLoca
 	}
 
 	/**
-	 * 
+	 *
 	 * @param proposedLocation
-	 *        the proposed location
+	 *            the proposed location
 	 * @return a possible location on parent figure border
 	 */
 	public Rectangle getPreferredLocation(Rectangle proposedLocation) {
@@ -217,24 +219,24 @@ public class ActivityParameterNodePositionLocator extends AdvancedBorderItemLoca
 		int yMin = parentRec.y - borderItemOffset;
 		int yMax = parentRec.y - borderItemOffset + parentRec.height;
 		// Modify Port location if MAX X or Y are exceeded
-		if(realLocation.x < xMin) {
+		if (realLocation.x < xMin) {
 			realLocation.x = xMin;
 		}
-		if(realLocation.x > xMax) {
+		if (realLocation.x > xMax) {
 			realLocation.x = xMax;
 		}
-		if(realLocation.y < yMin) {
+		if (realLocation.y < yMin) {
 			realLocation.y = yMin;
 		}
-		if(realLocation.y > yMax) {
+		if (realLocation.y > yMax) {
 			realLocation.y = yMax;
 		}
 		// Ensure the port is positioned on its parent borders and not in the
 		// middle.
 		// Modify position if needed.
-		if((realLocation.y != yMin) && (realLocation.y != yMax)) {
-			if((realLocation.x != xMin) && (realLocation.x != xMax)) {
-				if(realLocation.x <= (xMin + (parentRec.width / 2))) {
+		if ((realLocation.y != yMin) && (realLocation.y != yMax)) {
+			if ((realLocation.x != xMin) && (realLocation.x != xMax)) {
+				if (realLocation.x <= (xMin + (parentRec.width / 2))) {
 					realLocation.x = xMin;
 				} else {
 					realLocation.x = xMax;

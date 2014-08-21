@@ -27,7 +27,7 @@ import org.w3c.dom.css.CSSValue;
  *
  * @author Camille Letavernier
  */
-//FIXME: Use constants for the CSS Properties elementIcon, qualifiedNameDepth and shadow
+// FIXME: Use constants for the CSS Properties elementIcon, qualifiedNameDepth and shadow
 @SuppressWarnings("restriction")
 public class CSSCustomStyleDelegate implements CustomStyle {
 
@@ -51,9 +51,9 @@ public class CSSCustomStyleDelegate implements CustomStyle {
 	 * Constructor
 	 *
 	 * @param view
-	 *        The GMF view on which the custom style is applied
+	 *            The GMF view on which the custom style is applied
 	 * @param engine
-	 *        The CSS engine used to handle the custom properties
+	 *            The CSS engine used to handle the custom properties
 	 */
 	public CSSCustomStyleDelegate(View view, ExtendedCSSEngine engine) {
 		this.view = CSSDOMSemanticElementHelper.findPrimaryView(view);
@@ -64,36 +64,36 @@ public class CSSCustomStyleDelegate implements CustomStyle {
 	@Override
 	public boolean showElementIcon() {
 		EAnnotation displayNameLabelIcon = view.getEAnnotation(VisualInformationPapyrusConstants.DISPLAY_NAMELABELICON);
-		if(displayNameLabelIcon != null) {
+		if (displayNameLabelIcon != null) {
 			return provider.showElementIcon(view);
 		}
 
 		CSSValue cssValue = engine.retrievePropertyValue(element, "elementIcon");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			return false;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
 	@Override
 	public int getQualifiedNameDepth() {
 		EAnnotation qualifiedNameAnnotation = view.getEAnnotation(VisualInformationPapyrusConstants.QUALIFIED_NAME);
-		if(qualifiedNameAnnotation != null) {
+		if (qualifiedNameAnnotation != null) {
 			return provider.getQualifiedNameDepth(view);
 		}
 
 		CSSValue cssValue = engine.retrievePropertyValue(element, "qualifiedNameDepth");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			return NONE_VALUE;
 		}
 
 		String cssText = cssValue.getCssText();
 
-		if(StringHelper.equals(FULL, cssText)) {
+		if (StringHelper.equals(FULL, cssText)) {
 			return FULL_VALUE;
 		}
 
-		if(StringHelper.equals(NONE, cssText)) {
+		if (StringHelper.equals(NONE, cssText)) {
 			return NONE_VALUE;
 		}
 
@@ -110,15 +110,15 @@ public class CSSCustomStyleDelegate implements CustomStyle {
 	public boolean showShadow() {
 		EAnnotation shadowAnnotation = view.getEAnnotation(VisualInformationPapyrusConstants.SHADOWFIGURE);
 
-		if(shadowAnnotation != null) {
+		if (shadowAnnotation != null) {
 			return provider.showShadow(view);
 		}
 
 		CSSValue cssValue = engine.retrievePropertyValue(element, "shadow");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			return false;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
 }

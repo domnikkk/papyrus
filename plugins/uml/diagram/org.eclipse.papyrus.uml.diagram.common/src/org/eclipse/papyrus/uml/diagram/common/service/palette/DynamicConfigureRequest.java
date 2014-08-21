@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,11 @@ public class DynamicConfigureRequest extends AbstractEditCommandRequest {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param objectToEdit
-	 *        the object that will be modified
+	 *            the object that will be modified
 	 * @param propertiesToDefine
-	 *        the list of properties to define, using their name
+	 *            the list of properties to define, using their name
 	 */
 	protected DynamicConfigureRequest(EObject objectToEdit, List<String> propertiesToDefine) {
 		super(TransactionUtil.getEditingDomain(objectToEdit));
@@ -48,10 +48,11 @@ public class DynamicConfigureRequest extends AbstractEditCommandRequest {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Object getEditHelperContext() {
 		IClientContext context = getClientContext();
 
-		if(context == null) {
+		if (context == null) {
 			return elementToEdit;
 		} else {
 			return new EditHelperContext(elementToEdit, context);
@@ -60,7 +61,7 @@ public class DynamicConfigureRequest extends AbstractEditCommandRequest {
 
 	/**
 	 * Gets the owner of the structural feature.
-	 * 
+	 *
 	 * @return the owner of the structural feature
 	 */
 	public EObject getElementToEdit() {
@@ -69,7 +70,7 @@ public class DynamicConfigureRequest extends AbstractEditCommandRequest {
 
 	/**
 	 * Returns the list of properties to define, identified by their name
-	 * 
+	 *
 	 * @return the list of properties to define
 	 */
 	public List<String> getPropertiesToDefine() {

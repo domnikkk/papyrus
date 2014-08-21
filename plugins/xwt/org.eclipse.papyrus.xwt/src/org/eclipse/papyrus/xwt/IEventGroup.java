@@ -4,8 +4,8 @@
  * are made available under the terms of the Eclipse Public License v1.0       *
  * which accompanies this distribution, and is available at                    *
  * http://www.eclipse.org/legal/epl-v10.html                                   *
- *                                                                             *  
- * Contributors:                                                               *        
+ *                                                                             *
+ * Contributors:                                                               *
  *     Soyatec - initial API and implementation                                *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt;
@@ -14,7 +14,7 @@ import org.eclipse.papyrus.xwt.metadata.IProperty;
 
 /**
  * This class manages the coordination between events' state
- * 
+ *
  * @author yyang
  */
 public interface IEventGroup {
@@ -23,7 +23,7 @@ public interface IEventGroup {
 
 	/**
 	 * Fire the event to update other when an event occurs
-	 * 
+	 *
 	 * @param object
 	 * @param property
 	 */
@@ -31,7 +31,7 @@ public interface IEventGroup {
 
 	/**
 	 * Register the event
-	 * 
+	 *
 	 * @param manager
 	 * @param property
 	 */

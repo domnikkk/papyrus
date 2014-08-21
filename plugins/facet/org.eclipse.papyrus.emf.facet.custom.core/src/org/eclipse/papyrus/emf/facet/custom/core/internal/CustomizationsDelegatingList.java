@@ -8,7 +8,7 @@
  * Contributors:
  *    Nicolas Bros (Mia-Software) - Bug 374758 - [Table] repair the table
  *    Gregoire Dupe (Mia-Software) - Bug 372626 - Aggregates
- *    Thomas Cicognani (Soft-Maint) - Bug 420192 - UnsupportedOperationException in a usefull method 
+ *    Thomas Cicognani (Soft-Maint) - Bug 420192 - UnsupportedOperationException in a usefull method
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.custom.core.internal;
 
@@ -42,45 +42,45 @@ public class CustomizationsDelegatingList implements List<Customization> {
 	}
 
 	public Iterator<Customization> iterator() {
-		ArrayList<Customization> tmp= new ArrayList<Customization>();
-		for(Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
-			FacetSet facetSet = (FacetSet)iterator.next();
-			if( facetSet instanceof Customization){
-				tmp.add((Customization)facetSet);
+		ArrayList<Customization> tmp = new ArrayList<Customization>();
+		for (Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
+			FacetSet facetSet = iterator.next();
+			if (facetSet instanceof Customization) {
+				tmp.add((Customization) facetSet);
 			}
-			
+
 		}
-		
-		
-		return   tmp.iterator(); //$NON-NLS-1$
+
+
+		return tmp.iterator();
 	}
 
 	public Object[] toArray() {
-		ArrayList<Customization> tmp= new ArrayList<Customization>();
-		for(Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
-			FacetSet facetSet = (FacetSet)iterator.next();
-			if( facetSet instanceof Customization){
-				tmp.add((Customization)facetSet);
+		ArrayList<Customization> tmp = new ArrayList<Customization>();
+		for (Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
+			FacetSet facetSet = iterator.next();
+			if (facetSet instanceof Customization) {
+				tmp.add((Customization) facetSet);
 			}
-			
+
 		}
-		
-		
-		return   tmp.toArray(); //$NON-NLS-1$
+
+
+		return tmp.toArray();
 	}
 
 	public <T> T[] toArray(final T[] a) {
-		ArrayList<Customization> tmp= new ArrayList<Customization>();
-		for(Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
-			FacetSet facetSet = (FacetSet)iterator.next();
-			if( facetSet instanceof Customization){
-				tmp.add((Customization)facetSet);
+		ArrayList<Customization> tmp = new ArrayList<Customization>();
+		for (Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
+			FacetSet facetSet = iterator.next();
+			if (facetSet instanceof Customization) {
+				tmp.add((Customization) facetSet);
 			}
-			
+
 		}
-		
-		
-		return   tmp.toArray(a);
+
+
+		return tmp.toArray(a);
 	}
 
 	public boolean add(final Customization o) {
@@ -92,15 +92,15 @@ public class CustomizationsDelegatingList implements List<Customization> {
 	}
 
 	public boolean containsAll(final Collection<?> c) {
-		ArrayList<Customization> tmp= new ArrayList<Customization>();
-		for(Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
-			FacetSet facetSet = (FacetSet)iterator.next();
-			if( facetSet instanceof Customization){
-				tmp.add((Customization)facetSet);
+		ArrayList<Customization> tmp = new ArrayList<Customization>();
+		for (Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
+			FacetSet facetSet = iterator.next();
+			if (facetSet instanceof Customization) {
+				tmp.add((Customization) facetSet);
 			}
-			
-		}		
-		return   tmp.containsAll(c); 
+
+		}
+		return tmp.containsAll(c);
 	}
 
 	public boolean addAll(final Collection<? extends Customization> c) {
@@ -132,15 +132,15 @@ public class CustomizationsDelegatingList implements List<Customization> {
 	}
 
 	public Customization get(final int index) {
-		ArrayList<Customization> tmp= new ArrayList<Customization>();
-		for(Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
-			FacetSet facetSet = (FacetSet)iterator.next();
-			if( facetSet instanceof Customization){
-				tmp.add((Customization)facetSet);
+		ArrayList<Customization> tmp = new ArrayList<Customization>();
+		for (Iterator<FacetSet> iterator = this.delegate.iterator(); iterator.hasNext();) {
+			FacetSet facetSet = iterator.next();
+			if (facetSet instanceof Customization) {
+				tmp.add((Customization) facetSet);
 			}
-			
-		}		
-		return   tmp.get(index); 
+
+		}
+		return tmp.get(index);
 	}
 
 	public Customization set(final int index, final Customization element) {

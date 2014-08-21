@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Sebastien Poissonnet (CEA LIST) sebastien.poissonnet@cea.fr
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -26,7 +26,7 @@ public class CommentModelElementFactory extends AbstractEMFModelElementFactory<C
 	@Override
 	protected CommentModelElement doCreateFromSource(Object source, DataContextElement context) {
 		Element umlSource = UMLUtil.resolveUMLElement(source);
-		if(umlSource == null) {
+		if (umlSource == null) {
 			Activator.log.warn("Unable to resolve the selected element to a UML Element"); //$NON-NLS-1$
 			return null;
 		}

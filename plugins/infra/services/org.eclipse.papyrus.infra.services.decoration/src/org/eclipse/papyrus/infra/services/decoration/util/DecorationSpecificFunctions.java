@@ -40,7 +40,7 @@ public class DecorationSpecificFunctions {
 	public static Map<String, IDecorationSpecificFunctions> decorationFunctions;
 
 	public static IDecorationSpecificFunctions getDecorationInterface(String decorationType) {
-		if(decorationFunctions == null) {
+		if (decorationFunctions == null) {
 			parseDecorationFunctions();
 		}
 
@@ -52,16 +52,16 @@ public class DecorationSpecificFunctions {
 
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
 		IConfigurationElement[] configElements = reg.getConfigurationElementsFor(DECORATION_SPECIFIC_FUNCTIONS_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			try {
 				final String iConfiguratorIDext = configElement.getAttribute(DECORATION_TYPE_ID);
-				if(iConfiguratorIDext != null) {
+				if (iConfiguratorIDext != null) {
 					final Object obj = configElement.createExecutableExtension("class");
-					if(obj instanceof IDecorationSpecificFunctions) {
-						decorationFunctions.put(iConfiguratorIDext, (IDecorationSpecificFunctions)obj);
+					if (obj instanceof IDecorationSpecificFunctions) {
+						decorationFunctions.put(iConfiguratorIDext, (IDecorationSpecificFunctions) obj);
 					} else {
 						Activator.log.warn(String.format("The plug-in %s contributed an invalid class to the %s extension point. Contributions should extend %s", //$NON-NLS-1$
-							configElement.getContributor(), DECORATION_SPECIFIC_FUNCTIONS_ID, IDecorationSpecificFunctions.class.getSimpleName()));
+								configElement.getContributor(), DECORATION_SPECIFIC_FUNCTIONS_ID, IDecorationSpecificFunctions.class.getSimpleName()));
 					}
 				}
 			} catch (CoreException exception) {

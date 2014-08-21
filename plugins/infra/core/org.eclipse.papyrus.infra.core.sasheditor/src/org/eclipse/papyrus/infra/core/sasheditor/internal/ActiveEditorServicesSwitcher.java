@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,9 +34,8 @@ import org.eclipse.ui.services.IServiceLocator;
 
 /**
  * This class is used to switch the services of a nested editor when the active nested editor change.
- * This class is a {@link IActiveEditorChangedListener} registered to the {@link ActivePageTracker} 
- * by the {@link SashWindowsContainer}.
- * 
+ * This class is a {@link IActiveEditorChangedListener} registered to the {@link ActivePageTracker} by the {@link SashWindowsContainer}.
+ *
  * When a new Editor is set active, by calling {@link #setActiveEditor(PagePart)}, following actions are
  * performed:
  * <ul>
@@ -45,10 +44,10 @@ import org.eclipse.ui.services.IServiceLocator;
  * <li>Send {@link SelectionChangedEvent} to the main editor. The event contains the current selection of the new active editor.</li>
  * <li>Connect the keybinding service to the new Editor.</li>
  * </ul>
- * 
- * 
+ *
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListener {
 
@@ -68,9 +67,9 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param outerEditorSite
-	 *        {@link IEditorSite} of the main editor.
+	 *            {@link IEditorSite} of the main editor.
 	 */
 	public ActiveEditorServicesSwitcher(IEditorSite outerEditorSite) {
 		this.outerEditorSite = outerEditorSite;
@@ -80,7 +79,7 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 	 * Get the currently active IEditorPart, if any.
 	 * Return null if there is no active IeditorPart.
 	 * Method check if the active leaf encapsulate an IEditorPart. Return it if true.
-	 * 
+	 *
 	 * @return The currentlyactive IEditorPart or null.
 	 */
 	private IEditorPart getActiveIEditorPart() {
@@ -91,15 +90,16 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 	 * Get IEditorPart of the specified PagePart, if any.
 	 * Return null if there is no IeditorPart.
 	 * Method check if the leaf encapsulate an IEditorPart. Return it if true.
-	 * 
+	 *
 	 * @return The IEditorPart or null.
 	 */
 	private IEditorPart getIEditorPart(PagePart pagePart) {
-		if(pagePart == null)
+		if (pagePart == null) {
 			return null;
+		}
 
-		if(pagePart instanceof EditorPart) {
-			return ((EditorPart)pagePart).getIEditorPart();
+		if (pagePart instanceof EditorPart) {
+			return ((EditorPart) pagePart).getIEditorPart();
 		}
 		// not found
 		return null;
@@ -108,22 +108,23 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 	/**
 	 * Called when the active editor is changed.
 	 * Perform requested operations.
-	 * 
+	 *
 	 * @param oldEditor
 	 * @param newEditor
 	 */
+	@Override
 	public void activeEditorChanged(PagePart oldEditor, PagePart newEditor) {
-		if(activeEditor == newEditor) {
+		if (activeEditor == newEditor) {
 			return;
 		}
 
-		//		System.out.println(getClass().getSimpleName() + ".activeEditorChange('" + (newEditor != null ? newEditor.getPageTitle() : "null") + "')");
+		// System.out.println(getClass().getSimpleName() + ".activeEditorChange('" + (newEditor != null ? newEditor.getPageTitle() : "null") + "')");
 
 		activeEditor = newEditor;
 
 		// Set focus
-		IPartService partService = (IPartService)getOuterEditorSite().getService(IPartService.class);
-		if(newEditor != null && partService.getActivePart() == getOuterEditorSite().getPart()) {
+		IPartService partService = (IPartService) getOuterEditorSite().getService(IPartService.class);
+		if (newEditor != null && partService.getActivePart() == getOuterEditorSite().getPart()) {
 			newEditor.setFocus();
 		}
 
@@ -133,18 +134,19 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 		propagateSelectionChanged();
 		activateServices();
 
-		// 
-		if(newEditor != null)
+		//
+		if (newEditor != null) {
 			newEditor.setFocus();
+		}
 	}
 
 	/**
 	 * Change the current selection of the outermost editor (the main editor).
 	 * Send a {@link SelectionChangedEvent} event to the outerProvider. The event contains the current selection
 	 * of the new activeEditor.
-	 * 
+	 *
 	 * @param editor
-	 *        The new activeEditor.
+	 *            The new activeEditor.
 	 */
 	private void propagateSelectionChanged() {
 
@@ -152,22 +154,22 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 		IEditorPart editorPart = getActiveIEditorPart();
 
 		// Propagate the selection change event.
-		// Get the selection of the new activeEditor and send an SelectionChangedEvent to the outerProvider (provider of the main 
+		// Get the selection of the new activeEditor and send an SelectionChangedEvent to the outerProvider (provider of the main
 		// editor) with the selection.
-		if(editorPart != null) {
+		if (editorPart != null) {
 			ISelectionProvider selectionProvider = editorPart.getSite().getSelectionProvider();
-			if(selectionProvider != null) {
+			if (selectionProvider != null) {
 				ISelectionProvider outerProvider = getOuterEditorSite().getSelectionProvider();
-				if(outerProvider instanceof MultiPageSelectionProvider) {
+				if (outerProvider instanceof MultiPageSelectionProvider) {
 					SelectionChangedEvent event = new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection());
 
-					MultiPageSelectionProvider provider = (MultiPageSelectionProvider)outerProvider;
+					MultiPageSelectionProvider provider = (MultiPageSelectionProvider) outerProvider;
 					provider.fireSelectionChanged(event);
 					provider.firePostSelectionChanged(event);
-				} else {		
+				} else {
 					Activator.log.warn(this.getClass().getSimpleName()
-								+ " did not propogate selection for " //$NON-NLS-1$
-								+ editorPart.getTitle());			
+							+ " did not propogate selection for " //$NON-NLS-1$
+							+ editorPart.getTitle());
 				}
 			}
 		}
@@ -180,7 +182,7 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 	@SuppressWarnings({ "restriction", "deprecation" })
 	private void activateServices() {
 		// Deactivate old active site
-		if(activeServiceLocator != null) {
+		if (activeServiceLocator != null) {
 			activeServiceLocator.deactivate();
 			activeServiceLocator = null;
 		}
@@ -192,10 +194,10 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 
 		final IEditorPart editor = getActiveIEditorPart();
 
-		if(editor != null) {
+		if (editor != null) {
 			// active the service for this inner editor
-			if(service instanceof INestableKeyBindingService) {
-				final INestableKeyBindingService nestableService = (INestableKeyBindingService)service;
+			if (service instanceof INestableKeyBindingService) {
+				final INestableKeyBindingService nestableService = (INestableKeyBindingService) service;
 				nestableService.activateKeyBindingService(editor.getEditorSite());
 
 			} else {
@@ -203,8 +205,8 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 			}
 			// Activate the services for the new service locator.
 			final IServiceLocator serviceLocator = editor.getEditorSite();
-			if(serviceLocator instanceof INestable) {
-				activeServiceLocator = (INestable)serviceLocator;
+			if (serviceLocator instanceof INestable) {
+				activeServiceLocator = (INestable) serviceLocator;
 				activeServiceLocator.activate();
 			}
 
@@ -219,17 +221,17 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 	@SuppressWarnings({ "restriction", "deprecation" })
 	private void deactivateServices(boolean immediate) {
 		// Deactivate the nested services from the last active service locator.
-		if(activeServiceLocator != null) {
+		if (activeServiceLocator != null) {
 			activeServiceLocator.deactivate();
 			activeServiceLocator = null;
 		}
 
 		final IEditorPart editor = getActiveIEditorPart();
 		final IKeyBindingService service = getOuterEditorSite().getKeyBindingService();
-		if(editor != null || immediate) {
+		if (editor != null || immediate) {
 			// There is no selected page, so deactivate the active service.
-			if(service instanceof INestableKeyBindingService) {
-				final INestableKeyBindingService nestableService = (INestableKeyBindingService)service;
+			if (service instanceof INestableKeyBindingService) {
+				final INestableKeyBindingService nestableService = (INestableKeyBindingService) service;
 				nestableService.activateKeyBindingService(null);
 			} else {
 				WorkbenchPlugin.log("MultiPageEditorPart.deactivateSite()   Parent key binding service was not an instance of INestableKeyBindingService.  It was an instance of " + service.getClass().getName() + " instead."); //$NON-NLS-1$ //$NON-NLS-2$
@@ -242,20 +244,20 @@ public class ActiveEditorServicesSwitcher implements IActiveEditorChangedListene
 	 */
 	private void fireChangeEventToActionBarContributor() {
 		IEditorActionBarContributor contributor = getOuterEditorSite().getActionBarContributor();
-		if(contributor != null && contributor instanceof IMultiPageEditorActionBarContributor) {
-			((IMultiPageEditorActionBarContributor)contributor).setActivePage(getActiveIEditorPart());
+		if (contributor != null && contributor instanceof IMultiPageEditorActionBarContributor) {
+			((IMultiPageEditorActionBarContributor) contributor).setActivePage(getActiveIEditorPart());
 		}
 
 		// Ensure compatibility with Eclipse MultiPageEditorActionBarContributor
-		else if(contributor != null && contributor instanceof MultiPageEditorActionBarContributor) {
-			((MultiPageEditorActionBarContributor)contributor).setActivePage(getActiveIEditorPart());
+		else if (contributor != null && contributor instanceof MultiPageEditorActionBarContributor) {
+			((MultiPageEditorActionBarContributor) contributor).setActivePage(getActiveIEditorPart());
 		}
 
 	}
 
 	/**
 	 * Return the MultipageEditorSite
-	 * 
+	 *
 	 * @return
 	 */
 	private IEditorSite getOuterEditorSite() {

@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.ui.UIComponent#getAttributes <em>Attributes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.ui.UIComponent#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,10 +30,10 @@ public interface UIComponent extends Element {
 	 * The list contents are of type {@link org.eclipse.papyrus.views.properties.ui.WidgetAttribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see org.eclipse.papyrus.views.properties.ui.UiPackage#getUIComponent_Attributes()
 	 * @model containment="true"

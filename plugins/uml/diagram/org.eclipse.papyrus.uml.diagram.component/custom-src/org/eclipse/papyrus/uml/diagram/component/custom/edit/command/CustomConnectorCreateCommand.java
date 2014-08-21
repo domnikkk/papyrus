@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,12 +40,12 @@ import org.eclipse.uml2.uml.UMLFactory;
  * This class is a custom creation command for Connector.
  * 
  * Difficulties for Connector creation:
- * - differences between semantic (ConnectableEnd) graphical (ConnectableElement) ends of Connector 
+ * - differences between semantic (ConnectableEnd) graphical (ConnectableElement) ends of Connector
  * - requires to know not only the graphical end (Port, Property) but also the graphical parent in case of Port.
  * 
  * The Connector source and target are declared as ConnectorEnd in the GMFGEN model to ensure correct validation,
  * but the real source and target are ConnectableElement.
- * 
+ *
  * </pre>
  */
 public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagram.component.edit.commands.ConnectorCreateCommand {
@@ -60,7 +60,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 
 	/**
 	 * Constructor of Connector custom creation command
-	 * 
+	 *
 	 * @param req
 	 *            the creation request
 	 * @param source
@@ -89,7 +89,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 
 	/**
 	 * Replaces the original getter which is cast as ConnectorEnd (expected end of Connector)
-	 * 
+	 *
 	 * @return the element that is graphically connected to Connector as source
 	 */
 	protected ConnectableElement _getSource() {
@@ -98,7 +98,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 
 	/**
 	 * Replaces the original getter which is cast as ConnectorEnd (expected end of Connector)
-	 * 
+	 *
 	 * @return the element that is graphically connected to Connector as target
 	 */
 	protected ConnectableElement _getTarget() {
@@ -155,10 +155,10 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 		end0.setLower(1);
 		end0.setUpper(1);
 		if (_getSource() instanceof Port) {
-			end0.setRole((Port) _getSource());
+			end0.setRole(_getSource());
 			end0.setPartWithPort(sourcePartWithPort);
 		} else if (_getSource() instanceof ConnectableElement) {
-			end0.setRole((ConnectableElement) _getSource());
+			end0.setRole(_getSource());
 		} else {
 			throw new ExecutionException("Invalid source in create Connector command");
 		}
@@ -166,10 +166,10 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 		end1.setLower(1);
 		end1.setUpper(1);
 		if (_getTarget() instanceof Port) {
-			end1.setRole((Port) _getTarget());
+			end1.setRole(_getTarget());
 			end1.setPartWithPort(targetPartWithPort);
 		} else if (_getTarget() instanceof ConnectableElement) {
-			end1.setRole((ConnectableElement) _getTarget());
+			end1.setRole(_getTarget());
 		} else {
 			throw new ExecutionException("Invalid target in create Connector command");
 		}
@@ -184,7 +184,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 	/**
 	 * <pre>
 	 * This method is the exact copy of the inherited method, except that it uses the local getters
-	 * (_getSource(), _getTarget()). 
+	 * (_getSource(), _getTarget()).
 	 * 
 	 * {@inheritDoc}
 	 * </pre>
@@ -204,11 +204,11 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 	}
 
 	/**
-	 * 
+	 *
 	 * Tries to find a common StructuredClassifier container to add the new Connector.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.CustomConnectorCreateCommand.edit.commands.ConnectorCreateCommand#deduceContainer(org.eclipse.emf.ecore.EObject, org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param source
 	 *            the source object
 	 * @param target
@@ -231,7 +231,7 @@ public class CustomConnectorCreateCommand extends org.eclipse.papyrus.uml.diagra
 
 	/**
 	 * Parse graphical parent of the graphicalEditPart until a StructureClassifier is found.
-	 * 
+	 *
 	 * @param graphicalEditPart
 	 *            the graphical edit part
 	 * @return null or a StructuredClassifier that graphically contains the graphicalEditPart

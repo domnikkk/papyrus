@@ -12,7 +12,7 @@ import org.eclipse.papyrus.uml.textedit.common.xtext.ui.internal.UmlCommonActiva
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlCommonExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class UmlCommonExecutableExtensionFactory extends AbstractGuiceAwareExecu
 	protected Bundle getBundle() {
 		return UmlCommonActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlCommonActivator.getInstance().getInjector(UmlCommonActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_COMMON_XTEXT_UMLCOMMON);
 	}
-	
+
 }

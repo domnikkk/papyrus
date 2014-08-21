@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -15,6 +15,7 @@ package org.eclipse.papyrus.uml.diagram.paletteconfiguration.provider;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.Activator;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 
 /**
@@ -24,25 +25,25 @@ public class ExtendedPaletteDrawer extends org.eclipse.gef.palette.PaletteDrawer
 
 	/**
 	 * Creates a new PaletteDrawerEx, with the default icon
-	 * 
+	 *
 	 * @param label
-	 *        the label of the drawer
+	 *            the label of the drawer
 	 * @param id
-	 *        the unique identifier of this drawer.
+	 *            the unique identifier of this drawer.
 	 */
 	public ExtendedPaletteDrawer(String label, String id) {
-		this(label, Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/drawer.gif"), id);
+		this(label, AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "/icons/drawer.gif"), id);
 	}
 
 	/**
 	 * Creates a new PaletteDrawerEx.
-	 * 
+	 *
 	 * @param label
-	 *        the label of the drawer
+	 *            the label of the drawer
 	 * @param icon
-	 *        the icon of the drawer
+	 *            the icon of the drawer
 	 * @param id
-	 *        the unique identifier of this drawer.
+	 *            the unique identifier of this drawer.
 	 */
 	public ExtendedPaletteDrawer(String label, ImageDescriptor icon, String id) {
 		super(label, icon);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.uml.diagram.common.groups.groupcontainment.AbstractCo
 /**
  * Update all references of a parent group.
  * This class will set or unset references of the parent from a given child list
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 
 public class UpdateReferencesCommand extends AbstractTransactionalCommand {
@@ -69,9 +69,9 @@ public class UpdateReferencesCommand extends AbstractTransactionalCommand {
 	private boolean setMode = true;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @see {@link AbstractTransactionalCommand}
 	 * @param label
@@ -92,9 +92,9 @@ public class UpdateReferencesCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @see {@link AbstractTransactionalCommand}
 	 * @param label
@@ -118,28 +118,28 @@ public class UpdateReferencesCommand extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor arg0, IAdaptable arg1) throws ExecutionException {
 		Object createdElement = elementAdapter.getAdapter(EObject.class);
-		if(createdElement instanceof EObject) {
-			EObject eObjectCreatedElement = (EObject)createdElement;
-			for(IGraphicalEditPart part : childrenPart) {
+		if (createdElement instanceof EObject) {
+			EObject eObjectCreatedElement = (EObject) createdElement;
+			for (IGraphicalEditPart part : childrenPart) {
 				EObject childElement = part.resolveSemanticElement();
 				List<EReference> refs = descriptor.getReferenceFor(childElement.eClass());
-				for(EReference ref : refs) {
-					//Add reference to the father
-					if(ref != null && ref.isMany()) {
-						//ref.getEOpposite()
-						Collection<EObject> collection = (Collection<EObject>)eObjectCreatedElement.eGet(ref);
-						if(setMode) {
-							if(!collection.contains(childElement)) {
+				for (EReference ref : refs) {
+					// Add reference to the father
+					if (ref != null && ref.isMany()) {
+						// ref.getEOpposite()
+						Collection<EObject> collection = (Collection<EObject>) eObjectCreatedElement.eGet(ref);
+						if (setMode) {
+							if (!collection.contains(childElement)) {
 								collection.add(childElement);
 							}
 						} else {
-							if(collection.contains(childElement)) {
+							if (collection.contains(childElement)) {
 								collection.remove(childElement);
 							}
 						}
-						//Remove all element which have a model sons in the collection
-					} else if(ref != null && !ref.isMany()) {
-						if(setMode) {
+						// Remove all element which have a model sons in the collection
+					} else if (ref != null && !ref.isMany()) {
+						if (setMode) {
 							eObjectCreatedElement.eSet(ref, childElement);
 						} else {
 							eObjectCreatedElement.eUnset(ref);

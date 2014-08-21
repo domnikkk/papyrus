@@ -32,7 +32,7 @@ import org.eclipse.gmf.runtime.notation.View;
  * Command to change the ZOrdering of the new created EditPart. The possible
  * actions are Send to back, Bring to the front, Send backward and Bring
  * forward. Check ZOrderRequest class for the list of strings.
- * 
+ *
  * @author <a href="mailto:gmerin@prodevelop.es">Gabriel Merin</a>
  */
 // @unused
@@ -50,21 +50,21 @@ public class ChangeZOrderOfCreatedEP extends AbstractTransactionalCommand {
 	/**
 	 * Constructor. If reqString is not a valid ZOrderRequest string, then
 	 * ZOrderRequest.REQ_SEND_TO_BACK is the default request string.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param descriptor
-	 *        the descriptor
+	 *            the descriptor
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param reqString
-	 *        the req string
+	 *            the req string
 	 */
 	public ChangeZOrderOfCreatedEP(TransactionalEditingDomain domain, ViewDescriptor descriptor, EditPartViewer viewer, String reqString) {
 		super(domain, "Change ZOrder of Created Node", null);
 		viewDescriptor = descriptor;
 		this.viewer = viewer;
-		if(isAllowedReqString(reqString)) {
+		if (isAllowedReqString(reqString)) {
 			requestString = reqString;
 		} else {
 			requestString = ZOrderRequest.REQ_SEND_TO_BACK;
@@ -73,23 +73,23 @@ public class ChangeZOrderOfCreatedEP extends AbstractTransactionalCommand {
 
 	/**
 	 * Checks if the parameter reqString is a valid ZOrderRequest string.
-	 * 
+	 *
 	 * @param reqString
-	 *        the req string
-	 * 
+	 *            the req string
+	 *
 	 * @return true if a valid string, false otherwise.
 	 */
 	private boolean isAllowedReqString(String reqString) {
-		if(ZOrderRequest.REQ_SEND_TO_BACK.equals(reqString)) {
+		if (ZOrderRequest.REQ_SEND_TO_BACK.equals(reqString)) {
 			return true;
 		}
-		if(ZOrderRequest.REQ_SEND_BACKWARD.equals(reqString)) {
+		if (ZOrderRequest.REQ_SEND_BACKWARD.equals(reqString)) {
 			return true;
 		}
-		if(ZOrderRequest.REQ_BRING_FORWARD.equals(reqString)) {
+		if (ZOrderRequest.REQ_BRING_FORWARD.equals(reqString)) {
 			return true;
 		}
-		if(ZOrderRequest.REQ_BRING_TO_FRONT.equals(reqString)) {
+		if (ZOrderRequest.REQ_BRING_TO_FRONT.equals(reqString)) {
 			return true;
 		}
 		return false;
@@ -106,13 +106,13 @@ public class ChangeZOrderOfCreatedEP extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 
-		View view = (View)viewDescriptor.getAdapter(View.class);
-		if(view == null) {
+		View view = (View) viewDescriptor.getAdapter(View.class);
+		if (view == null) {
 			return CommandResult.newErrorCommandResult("Element view not created");
 		}
 
 		Command command = getZOrderCommand(view);
-		if(command != null) {
+		if (command != null) {
 			command.execute();
 		}
 
@@ -122,15 +122,15 @@ public class ChangeZOrderOfCreatedEP extends AbstractTransactionalCommand {
 
 	/**
 	 * Creates a new ZOrdering command to move the new created View accordingly.
-	 * 
+	 *
 	 * @param view
-	 *        the view
-	 * 
+	 *            the view
+	 *
 	 * @return the appropriate ZOrder command depending on the requestString
 	 *         passed during the constructor of the class.
 	 */
 	private Command getZOrderCommand(View view) {
-		IGraphicalEditPart newElementEP = (IGraphicalEditPart)viewer.getEditPartRegistry().get(view);
+		IGraphicalEditPart newElementEP = (IGraphicalEditPart) viewer.getEditPartRegistry().get(view);
 		newElementEP.getFigure().getUpdateManager().performUpdate();
 
 		ZOrderRequest zOrderReq = new ZOrderRequest(requestString);

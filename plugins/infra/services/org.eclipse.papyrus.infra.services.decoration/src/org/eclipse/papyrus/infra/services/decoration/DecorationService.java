@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,11 +10,11 @@
  * Contributors:
  *	Amine EL KOUHEN (CEA LIST/LIFL) - Amine.Elkouhen@cea.fr
  *  Ansgar Radermacher (CEA LIST) - ansgar.radermacher@cea.fr (major revision in context of bug 400593)
- *   
+ *
  *  Arnaud Cuccuru (CEA LIST) - arnaud.cuccuru@cea.fr
  *  Christian W. Damus (CEA) - refactor for non-workspace abstraction of problem markers (CDO)
  *  Christian W. Damus (CEA) - bug 432813
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.services.decoration;
 
@@ -49,11 +49,11 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Inits the.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        the services registry
+	 *            the services registry
 	 * @throws ServiceException
-	 *         the service exception
+	 *             the service exception
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
 	 */
 
@@ -68,9 +68,9 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Start service.
-	 * 
+	 *
 	 * @throws ServiceException
-	 *         the service exception
+	 *             the service exception
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#startService()
 	 */
 
@@ -79,17 +79,17 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Dispose service.
-	 * 
+	 *
 	 * @throws ServiceException
-	 *         the service exception
+	 *             the service exception
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#disposeService()
 	 */
 	public void disposeService() throws ServiceException {
 		List<Decoration> removed = null;
 
-		synchronized(this) {
-			if(!decorations.isEmpty()) {
-				if(countObservers() > 0) {
+		synchronized (this) {
+			if (!decorations.isEmpty()) {
+				if (countObservers() > 0) {
 					// Will have to notify listeners
 					removed = new ArrayList<Decoration>(decorations.values());
 				}
@@ -97,10 +97,10 @@ public class DecorationService extends Observable implements IDecorationService 
 			}
 		}
 
-		if(removed != null) {
+		if (removed != null) {
 			// Notify listeners
-			for(Decoration next : removed) {
-				synchronized(this) {
+			for (Decoration next : removed) {
+				synchronized (this) {
 					setChanged();
 					notifyObservers(new DecorationChange(DecorationChangeKind.DecorationRemoved, next));
 				}
@@ -110,7 +110,7 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Gets the decorations.
-	 * 
+	 *
 	 * @return the decorations
 	 */
 	public Map<String, Decoration> getDecorations() {
@@ -119,9 +119,9 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Adds the listener.
-	 * 
+	 *
 	 * @param o
-	 *        the o
+	 *            the o
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#addListener(java.util.Observer)
 	 */
 
@@ -131,9 +131,9 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Delete listener.
-	 * 
+	 *
 	 * @param o
-	 *        the o
+	 *            the o
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#deleteListener(java.util.Observer)
 	 */
 
@@ -143,16 +143,16 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Removes the decoration.
-	 * 
+	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#removeDecoration(java.lang.String)
 	 */
 
 	public synchronized void removeDecoration(String id) {
 
 		Decoration decoration = decorations.get(id);
-		if(decoration != null) {
+		if (decoration != null) {
 
 			decorations.remove(id);
 			setChanged();
@@ -162,24 +162,23 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Adds the decoration from a marker
-	 * 
+	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param decoration
-	 *        the decoration
+	 *            the decoration
 	 * @param message
-	 *        the message
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#addDecoration(java.lang.String, org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.jface.resource.ImageDescriptor, java.lang.String)
+	 *            the message
+	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#addDecoration(java.lang.String, org.eclipse.emf.ecore.EObject, org.eclipse.jface.resource.ImageDescriptor, java.lang.String)
 	 */
 	public synchronized IPapyrusDecoration addDecoration(IPapyrusMarker marker, EObject element) {
 
 		try {
 			// obtain marker type specific function
 			IDecorationSpecificFunctions infoUtil = DecorationSpecificFunctions.getDecorationInterface(marker.getType());
-			if(infoUtil != null) {
+			if (infoUtil != null) {
 				ImageDescriptor imageForGE = infoUtil.getImageDescriptorForGE(marker);
 				ImageDescriptor imageForME = infoUtil.getImageDescriptorForME(marker);
 				PreferedPosition position = infoUtil.getPreferedPosition(marker);
@@ -197,27 +196,26 @@ public class DecorationService extends Observable implements IDecorationService 
 
 	/**
 	 * Adds the decoration.
-	 * 
+	 *
 	 * @param id
-	 *        the id
+	 *            the id
 	 * @param type
-	 *        the decoration type, currently corresponding to the marker type
+	 *            the decoration type, currently corresponding to the marker type
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param decoration
-	 *        the decoration
+	 *            the decoration
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param priority
-	 *        the priority
-	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#addDecoration(java.lang.String, org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.jface.resource.ImageDescriptor, java.lang.String)
+	 *            the priority
+	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#addDecoration(java.lang.String, org.eclipse.emf.ecore.EObject, org.eclipse.jface.resource.ImageDescriptor, java.lang.String)
 	 */
 	public synchronized IPapyrusDecoration addDecoration(String id, String type, EObject element, ImageDescriptor decorationImageForGE, ImageDescriptor decorationImageForME, PreferedPosition position, String message, int priority) {
 
 		Decoration decoration = decorations.get(id);
 		DecorationChangeKind decorationChangeKind;
-		if(decoration == null) {
+		if (decoration == null) {
 			decorationChangeKind = DecorationChangeKind.DecorationAdded;
 			decoration = new Decoration(id, type, decorationImageForGE, decorationImageForME, message, element, priority);
 			decorations.put(id, decoration);
@@ -241,11 +239,11 @@ public class DecorationService extends Observable implements IDecorationService 
 	 * Gets the decoration.
 	 * use "synchronized" to assure that no decoration modifications are done while this operation is running
 	 * (which would result in a concurrent modification operation)
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param navigateToParents
-	 *        the navigate to parents
+	 *            the navigate to parents
 	 * @return the decoration
 	 * @see org.eclipse.papyrus.infra.services.decoration.IDecorationService#getDecoration(java.lang.Object, boolean)
 	 */
@@ -261,7 +259,7 @@ public class DecorationService extends Observable implements IDecorationService 
 	 * org.eclipse.core.resources.IMarker, int)
 	 */
 	public void notifyMarkerChange(EObject eObjectOfMarker, IPapyrusMarker marker, int addedOrRemoved) {
-		if(addedOrRemoved == IMarkerEventListener.MARKER_ADDED) {
+		if (addedOrRemoved == IMarkerEventListener.MARKER_ADDED) {
 			this.addDecoration(marker, eObjectOfMarker);
 		} else { // IMarkerEventListener.MARKER_REMOVED
 			this.removeDecoration(marker.toString());

@@ -17,37 +17,37 @@ import org.eclipse.papyrus.infra.nattable.utils.ILabelProviderContextElementWrap
 
 /**
  * The label provider used for the index of the header
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class IndexHeaderLabelProvider extends AbstractNattableCellLabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public boolean accept(Object element) {
-		if(element instanceof ILabelProviderContextElementWrapper) {
-			Object object = ((ILabelProviderContextElementWrapper)element).getObject();
+		if (element instanceof ILabelProviderContextElementWrapper) {
+			Object object = ((ILabelProviderContextElementWrapper) element).getObject();
 			return object instanceof String || object instanceof Integer;
 		}
 		return false;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.provider.AbstractNattableCellLabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public String getText(Object element) {
-		return ((ILabelProviderContextElementWrapper)element).getObject().toString();
+		return ((ILabelProviderContextElementWrapper) element).getObject().toString();
 	}
 }

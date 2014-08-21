@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.uml.tools.providers.UMLContainmentBrowseStrategy;
 
 /**
  * A Helper class for UML Content Providers
- * 
+ *
  * @author Camille Letavernier
  */
 public class UMLProviderHelper {
@@ -36,14 +36,14 @@ public class UMLProviderHelper {
 	 * Encapsulates the given content provider in a higher-level content provider
 	 * The returned provider uses two different strategies to display and search
 	 * elements, and adds a pattern filter and an History
-	 * 
+	 *
 	 * @param provider
-	 *        The ContentProvider to encapsulate
+	 *            The ContentProvider to encapsulate
 	 * @return
 	 */
 	public static EMFGraphicalContentProvider encapsulateProvider(IStructuredContentProvider provider, EObject editedEObject, EStructuralFeature feature, ResourceSet root) {
 		String historyId;
-		if(editedEObject != null && feature != null) {
+		if (editedEObject != null && feature != null) {
 			historyId = HistoryUtil.getHistoryID(editedEObject, feature);
 		} else {
 			historyId = "DefaultHistory";
@@ -51,8 +51,8 @@ public class UMLProviderHelper {
 
 		IStructuredContentProvider contentProvider;
 
-		if(provider instanceof ITreeContentProvider) {
-			contentProvider = getStrategyProvider((ITreeContentProvider)provider);
+		if (provider instanceof ITreeContentProvider) {
+			contentProvider = getStrategyProvider((ITreeContentProvider) provider);
 		} else {
 			contentProvider = provider;
 		}

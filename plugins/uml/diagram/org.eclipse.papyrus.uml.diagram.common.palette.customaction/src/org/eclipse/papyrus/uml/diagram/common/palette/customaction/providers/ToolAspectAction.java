@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 AtoS.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ import com.google.common.collect.Lists;
 
 /**
  * Action managing all the Custom actions registered
- * 
+ *
  * @author tfaure
- * 
+ *
  */
 public class ToolAspectAction extends ModelPostAction implements
 		ICallback<Tool>, IFeatureSetterAspectAction {
@@ -122,6 +122,7 @@ public class ToolAspectAction extends ModelPostAction implements
 		return null;
 	}
 
+	@Override
 	public boolean needsPostCommitRun() {
 		return true;
 	}
@@ -134,7 +135,7 @@ public class ToolAspectAction extends ModelPostAction implements
 
 	/**
 	 * Return all the custom tool registered
-	 * 
+	 *
 	 * @return a {@link Tool}
 	 */
 	public static Collection<Tool> getAllExtensions() {
@@ -143,7 +144,7 @@ public class ToolAspectAction extends ModelPostAction implements
 
 	/**
 	 * Get the extension with the given id
-	 * 
+	 *
 	 * @param id
 	 *            , the id of the tool
 	 * @return a {@link Tool}
@@ -178,7 +179,9 @@ public class ToolAspectAction extends ModelPostAction implements
 		selection = object;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.uml.diagram.common.service.palette.IFeatureSetterAspectAction#getAllImpactedFeatures()
 	 */
 	public EStructuralFeature[] getAllImpactedFeatures() {

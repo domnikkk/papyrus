@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,9 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * <pre>
  * Command handler for Problem creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class ConstraintBlockParameterHandler extends AbstractSysmlModelExplorerCreateCommandHandler {
@@ -42,11 +42,12 @@ public class ConstraintBlockParameterHandler extends AbstractSysmlModelExplorerC
 	 * @see org.eclipse.papyrus.uml.service.types.handlers.AbstractCreateCommandHandler#getElementTypeToCreate()
 	 * 
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return UMLElementTypes.PROPERTY;
 	}
@@ -57,35 +58,35 @@ public class ConstraintBlockParameterHandler extends AbstractSysmlModelExplorerC
 	@Override
 	protected Command buildCommand() {
 
-		if(getCommandContext() == null) {
+		if (getCommandContext() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		EObject container = getCommandContext().getContainer();
 		EReference reference = getCommandContext().getReference();
 
-		if(!(container instanceof Element)) {
+		if (!(container instanceof Element)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(container);
-		if(provider == null) {
+		if (provider == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		CreateElementRequest createRequest = null;
-		if(reference == null) {
+		if (reference == null) {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate());
 		} else {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate(), reference);
 		}
 
-		String name = NamedElementUtil.getDefaultNameWithIncrementFromBase("parameter", ((Element)container).eContents()); //$NON-NLS-1$
+		String name = NamedElementUtil.getDefaultNameWithIncrementFromBase("parameter", ((Element) container).eContents()); //$NON-NLS-1$
 		createRequest.setParameter(IConfigureCommandFactory.CONFIGURE_COMMAND_FACTORY_ID, new ConfigureFeatureCommandFactory(UMLPackage.eINSTANCE.getNamedElement_Name(), name));
 
 		// Retrieve create command from the Element Edit service
 		ICommand createGMFCommand = provider.getEditCommand(createRequest);
-		if(createGMFCommand != null) {
+		if (createGMFCommand != null) {
 			Command emfCommand = new org.eclipse.papyrus.commands.wrappers.GMFtoEMFCommandWrapper(createGMFCommand);
 			return emfCommand;
 		}

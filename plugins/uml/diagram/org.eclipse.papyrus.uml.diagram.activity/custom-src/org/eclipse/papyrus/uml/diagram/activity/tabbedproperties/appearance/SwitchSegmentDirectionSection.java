@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -94,6 +94,7 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				// do nothing
 			}
@@ -101,6 +102,7 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 			/**
 			 * {@inheritDoc}
 			 */
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				switchSelectedSegmentsOrientation();
 				refresh();
@@ -119,27 +121,27 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 	protected void switchSelectedSegmentsOrientation() {
 		CompositeCommand globalCommand = new CompositeCommand(CustomMessages.ForkJoinSegmentSwitchOrientation_actionLabel);
 		List<?> editparts = getInput();
-		for(Object part : editparts) {
+		for (Object part : editparts) {
 			Object view = null;
 			Figure figure = null;
-			if(part instanceof JoinNodeEditPart) {
-				view = ((JoinNodeEditPart)part).getModel();
-				figure = ((JoinNodeEditPart)part).getPrimaryShape();
-			} else if(part instanceof ForkNodeEditPart) {
-				view = ((ForkNodeEditPart)part).getModel();
-				figure = ((ForkNodeEditPart)part).getPrimaryShape();
+			if (part instanceof JoinNodeEditPart) {
+				view = ((JoinNodeEditPart) part).getModel();
+				figure = ((JoinNodeEditPart) part).getPrimaryShape();
+			} else if (part instanceof ForkNodeEditPart) {
+				view = ((ForkNodeEditPart) part).getModel();
+				figure = ((ForkNodeEditPart) part).getPrimaryShape();
 			}
 			// append a command for selected part only if correct configuration
-			if(view instanceof View && figure != null) {
+			if (view instanceof View && figure != null) {
 				TransactionalEditingDomain editingdomain = EditorUtils.getTransactionalEditingDomain();
-				SwitchSegmentOrientation switchCom = new SwitchSegmentOrientation(editingdomain, figure, (View)view);
+				SwitchSegmentOrientation switchCom = new SwitchSegmentOrientation(editingdomain, figure, (View) view);
 				globalCommand.add(switchCom);
 			}
 		}
 		// execute the command for all parts
-		if(!globalCommand.isEmpty() && globalCommand.canExecute()) {
-			CommandStack stack = (CommandStack)EditorUtils.getMultiDiagramEditor().getAdapter(CommandStack.class);
-			if(stack != null) {
+		if (!globalCommand.isEmpty() && globalCommand.canExecute()) {
+			CommandStack stack = (CommandStack) EditorUtils.getMultiDiagramEditor().getAdapter(CommandStack.class);
+			if (stack != null) {
 				stack.execute(new ICommandProxy(globalCommand));
 			}
 		}
@@ -160,13 +162,13 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 
 		/**
 		 * Construct a switch orientation command.
-		 * 
+		 *
 		 * @param domain
-		 *        transactional editing domain
+		 *            transactional editing domain
 		 * @param figure
-		 *        the figure to rotate
+		 *            the figure to rotate
 		 * @param view
-		 *        the view which is the model of the figure
+		 *            the view which is the model of the figure
 		 */
 		SwitchSegmentOrientation(TransactionalEditingDomain domain, Figure figure, View view) {
 			super(domain, CustomMessages.ForkJoinSegmentSwitchOrientation_actionLabel, null);
@@ -176,20 +178,19 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 
 		/**
 		 * Execute the command, rotating the figure.
-		 * 
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-		 *      org.eclipse.core.runtime.IAdaptable)
-		 * 
+		 *
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *
 		 * @param monitor
-		 *        progress monitor
+		 *            progress monitor
 		 * @param info
-		 *        adapter for information
+		 *            adapter for information
 		 * @return the result of the command
 		 * @throws ExecutionException
 		 */
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			if(selectedFigure == null || selectedView == null) {
+			if (selectedFigure == null || selectedView == null) {
 				return CommandResult.newCancelledCommandResult();
 			}
 			Dimension newSize = selectedFigure.getSize().getTransposed();
@@ -222,14 +223,13 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 
 		/**
 		 * Undo the switch (by switching again)
-		 * 
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doUndo(org.eclipse.core.runtime.IProgressMonitor,
-		 *      org.eclipse.core.runtime.IAdaptable)
-		 * 
+		 *
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doUndo(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *
 		 * @param monitor
-		 *        progress monitor
+		 *            progress monitor
 		 * @param info
-		 *        adapter for information
+		 *            adapter for information
 		 * @return the result of the command
 		 * @throws ExecutionException
 		 */
@@ -240,14 +240,13 @@ public class SwitchSegmentDirectionSection extends AbstractNotationPropertiesSec
 
 		/**
 		 * Redo the switch (by switching again)
-		 * 
-		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doRedo(org.eclipse.core.runtime.IProgressMonitor,
-		 *      org.eclipse.core.runtime.IAdaptable)
-		 * 
+		 *
+		 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doRedo(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+		 *
 		 * @param monitor
-		 *        progress monitor
+		 *            progress monitor
 		 * @param info
-		 *        adapter for information
+		 *            adapter for information
 		 * @return the result of the command
 		 * @throws ExecutionException
 		 */

@@ -5,9 +5,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  *     Fabien Giquel (Mia-Software) - initial API and implementation
  * *******************************************************************************
  *
@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent <em>Parent</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent <em>Parent</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,10 +38,10 @@ public interface Node extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getNode_Name()
@@ -54,7 +54,9 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -65,10 +67,10 @@ public interface Node extends EObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Element#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parent</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(Element)
 	 * @see org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPackage#getNode_Parent()
@@ -82,7 +84,9 @@ public interface Node extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.Node#getParent <em>Parent</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' container reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Parent</em>' container reference.
 	 * @see #getParent()
 	 * @generated
 	 */

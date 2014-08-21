@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,30 +32,30 @@ public class QueryInfo {
 	private boolean searchAllStringAttributes;
 
 	private Collection<? extends ParticipantTypeElement> participantTypes;
-	
+
 	private boolean searchForAllSter;
 
 	private Collection<URI> scope;
 
 	/**
 	 * Creates a query info for simple query.
-	 * 
+	 *
 	 * @param queryText
-	 *        the user-supplied search query text
+	 *            the user-supplied search query text
 	 * @param caseSensitive
-	 *        whether the {@code queryText} is to be applied in case-sensitive fashion
+	 *            whether the {@code queryText} is to be applied in case-sensitive fashion
 	 * @param regularExpression
-	 *        whether the {@code queryText} is to be taken as a regular expression
+	 *            whether the {@code queryText} is to be taken as a regular expression
 	 * @param searchAllStringAttributes
-	 *        whether to search all string attributes of UML metaclasses ({@code true}), or just named element {@linkplain NamedElement#getName()
-	 *        names} ({@code false})
+	 *            whether to search all string attributes of UML metaclasses ({@code true}), or just named element {@linkplain NamedElement#getName()
+	 *            names} ({@code false})
 	 * @param scope
-	 *        the domain-specific search scope
+	 *            the domain-specific search scope
 	 */
 	public QueryInfo(String queryText, boolean caseSensitive, boolean regularExpression, boolean searchAllStringAttributes, Collection<URI> scope) {
 		super();
 
-		
+
 		this.queryText = queryText;
 		this.caseSensitive = caseSensitive;
 		this.regularExpression = regularExpression;
@@ -66,21 +66,21 @@ public class QueryInfo {
 
 	/**
 	 * Creates a query info for advanced query.
-	 * 
+	 *
 	 * @param queryText
-	 *        the user-supplied search query text
+	 *            the user-supplied search query text
 	 * @param caseSensitive
-	 *        whether the {@code queryText} is to be applied in case-sensitive fashion
+	 *            whether the {@code queryText} is to be applied in case-sensitive fashion
 	 * @param regularExpression
-	 *        whether the {@code queryText} is to be taken as a regular expression
+	 *            whether the {@code queryText} is to be taken as a regular expression
 	 * @param participantTypes
-	 *        the participant types (identifying specific metaclasses and/or attributes) to include in the search
+	 *            the participant types (identifying specific metaclasses and/or attributes) to include in the search
 	 * @param searchForAllSter
-	 *        stereotype application must all applied or not
+	 *            stereotype application must all applied or not
 	 * @param scope
-	 *        the domain-specific search scope
+	 *            the domain-specific search scope
 	 */
-	public QueryInfo(String queryText, boolean caseSensitive, boolean regularExpression, Collection<? extends ParticipantTypeElement> participantTypes, Collection<URI> scope,boolean searchForAllSter) {
+	public QueryInfo(String queryText, boolean caseSensitive, boolean regularExpression, Collection<? extends ParticipantTypeElement> participantTypes, Collection<URI> scope, boolean searchForAllSter) {
 		super();
 
 		this.queryText = queryText;
@@ -91,7 +91,7 @@ public class QueryInfo {
 		this.scope = scope;
 		this.searchForAllSter = searchForAllSter;
 	}
-	
+
 	/**
 	 * Partition copy constructor.
 	 */
@@ -130,7 +130,7 @@ public class QueryInfo {
 	public Collection<URI> getScope() {
 		return scope;
 	}
-	
+
 	public boolean isSearchForAllSter() {
 		return searchForAllSter;
 	}
@@ -138,11 +138,12 @@ public class QueryInfo {
 
 	/**
 	 * Creates a new instance encapsulating query parameters for the specified partition (strict subset) of my {@linkplain #getScope() scope}.
-	 * 
-	 * @param scopePartition a partition of my scope
-	 * 
+	 *
+	 * @param scopePartition
+	 *            a partition of my scope
+	 *
 	 * @return the partition query info
-	 * 
+	 *
 	 * @see #getScope()
 	 */
 	public QueryInfo partition(Collection<URI> scopePartition) {

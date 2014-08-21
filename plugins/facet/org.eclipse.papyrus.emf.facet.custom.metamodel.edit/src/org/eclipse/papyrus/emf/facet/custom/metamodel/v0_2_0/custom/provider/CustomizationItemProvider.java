@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.provider;
 
@@ -39,11 +39,12 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customizatio
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class CustomizationItemProvider
-	extends FacetSetItemProvider
-	implements
+		extends FacetSetItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -53,6 +54,7 @@ public class CustomizationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CustomizationItemProvider(AdapterFactory adapterFactory) {
@@ -63,6 +65,7 @@ public class CustomizationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -80,50 +83,53 @@ public class CustomizationItemProvider
 	 * This adds a property descriptor for the Must Be Loaded By Default feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addMustBeLoadedByDefaultPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Customization_mustBeLoadedByDefault_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Customization_mustBeLoadedByDefault_feature", "_UI_Customization_type"),
-				 CustomPackage.Literals.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Customization_mustBeLoadedByDefault_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Customization_mustBeLoadedByDefault_feature", "_UI_Customization_type"),
+						CustomPackage.Literals.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Rank feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addRankPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Customization_rank_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Customization_rank_feature", "_UI_Customization_type"),
-				 CustomPackage.Literals.CUSTOMIZATION__RANK,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Customization_rank_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Customization_rank_feature", "_UI_Customization_type"),
+						CustomPackage.Literals.CUSTOMIZATION__RANK,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns Customization.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -135,14 +141,15 @@ public class CustomizationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Customization)object).getName();
+		String label = ((Customization) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Customization_type") :
-			getString("_UI_Customization_type") + " " + label;
+				getString("_UI_Customization_type") :
+				getString("_UI_Customization_type") + " " + label;
 	}
 
 	/**
@@ -150,6 +157,7 @@ public class CustomizationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -157,10 +165,10 @@ public class CustomizationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Customization.class)) {
-			case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
-			case CustomPackage.CUSTOMIZATION__RANK:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case CustomPackage.CUSTOMIZATION__MUST_BE_LOADED_BY_DEFAULT:
+		case CustomPackage.CUSTOMIZATION__RANK:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -170,6 +178,7 @@ public class CustomizationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,25 +186,26 @@ public class CustomizationItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EcorePackage.Literals.EPACKAGE__ECLASSIFIERS,
-				 CustomFactory.eINSTANCE.createEClassCustomization()));
+						CustomFactory.eINSTANCE.createEClassCustomization()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EcorePackage.Literals.EPACKAGE__ECLASSIFIERS,
-				 CustomFactory.eINSTANCE.createFacetCustomization()));
+						CustomFactory.eINSTANCE.createFacetCustomization()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(EcorePackage.Literals.EPACKAGE__ESUBPACKAGES,
-				 CustomFactory.eINSTANCE.createCustomization()));
+						CustomFactory.eINSTANCE.createCustomization()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ public abstract class AbstractPanelModel extends AbstractModel implements IAbstr
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent2
 	 */
 	public AbstractPanelModel(AbstractModel parent) {
@@ -39,9 +39,10 @@ public abstract class AbstractPanelModel extends AbstractModel implements IAbstr
 
 	/**
 	 * Return the parent of the model. Can be null in the case of rootModel.
-	 * 
+	 *
 	 * @return the parent
 	 */
+	@Override
 	public AbstractModel getParent() {
 		return parent;
 	}
@@ -49,8 +50,9 @@ public abstract class AbstractPanelModel extends AbstractModel implements IAbstr
 
 	/**
 	 * @param parent
-	 *        the parent to set
+	 *            the parent to set
 	 */
+	@Override
 	public void setParent(AbstractModel parent) {
 		this.parent = parent;
 	}
@@ -58,7 +60,7 @@ public abstract class AbstractPanelModel extends AbstractModel implements IAbstr
 
 	/**
 	 * Lookup the folder containing the specified tabItem.
-	 * 
+	 *
 	 * @param tabItem
 	 * @return
 	 */

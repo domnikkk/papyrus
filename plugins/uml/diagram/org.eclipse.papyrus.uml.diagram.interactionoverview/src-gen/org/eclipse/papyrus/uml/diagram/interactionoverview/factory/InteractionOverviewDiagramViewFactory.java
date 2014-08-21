@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,11 @@ public class InteractionOverviewDiagramViewFactory extends DiagramViewFactory {
 	protected MeasurementUnit getMeasurementUnit() {
 		return MeasurementUnit.PIXEL_LITERAL;
 	}
+
 	@Override
 	protected Diagram createDiagramView() {
 		// TODO Auto-generated method stub
-		Diagram diagram= super.createDiagramView();
+		Diagram diagram = super.createDiagramView();
 		DiagramVersioningUtils.stampCurrentVersion(diagram);
 		return diagram;
 	}

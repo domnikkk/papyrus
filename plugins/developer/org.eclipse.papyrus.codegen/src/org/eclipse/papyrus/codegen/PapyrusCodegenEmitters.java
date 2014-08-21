@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -12,7 +12,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.codegen;
 
-import org.eclipse.gmf.codegen.xtend.ui.handlers.CodegenEmittersWithXtend2;
 import org.eclipse.gmf.common.UnexpectedBehaviourException;
 import org.eclipse.gmf.internal.common.codegen.JavaClassEmitter;
 

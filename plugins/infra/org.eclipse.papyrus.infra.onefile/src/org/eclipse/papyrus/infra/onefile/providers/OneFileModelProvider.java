@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin Integration.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,10 +33,10 @@ public class OneFileModelProvider extends ModelProvider {
 
 	@Override
 	public ResourceMapping[] getMappings(IResource resource, ResourceMappingContext context, IProgressMonitor monitor) {
-		if(OneFileUtils.isDi(resource)) {
-			return new ResourceMapping[]{ new PapyrusResourceMapping((IFile)resource) };
+		if (OneFileUtils.isDi(resource)) {
+			return new ResourceMapping[] { new PapyrusResourceMapping((IFile) resource) };
 		}
-		return new ResourceMapping[]{ new SimpleResourceMapping(resource) };
+		return new ResourceMapping[] { new SimpleResourceMapping(resource) };
 	}
 
 	@Override

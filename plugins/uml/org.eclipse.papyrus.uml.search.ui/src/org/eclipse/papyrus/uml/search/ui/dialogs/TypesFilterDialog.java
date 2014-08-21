@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,9 +36,9 @@ import org.eclipse.ui.dialogs.PatternFilter;
 import com.swtdesigner.ResourceManager;
 
 /**
- * 
+ *
  * A dialog that let user select the types of the elements that must be filtered
- * 
+ *
  */
 public class TypesFilterDialog extends Dialog {
 
@@ -49,14 +49,14 @@ public class TypesFilterDialog extends Dialog {
 	private CheckboxTreeViewer filterTypesTreeViewer;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell, or <code>null</code> to create a top-level
-	 *        shell
+	 *            the parent shell, or <code>null</code> to create a top-level
+	 *            shell
 	 * @param page
-	 *        the result page whose results while be filtered
+	 *            the result page whose results while be filtered
 	 */
 	public TypesFilterDialog(Shell parentShell, AbstractTextSearchViewPage page) {
 		super(parentShell);
@@ -85,7 +85,7 @@ public class TypesFilterDialog extends Dialog {
 
 		parent.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 0, 0));
 
-		filterTypesTreeViewer = (CheckboxTreeViewer)filterTypesTree.getViewer();
+		filterTypesTreeViewer = (CheckboxTreeViewer) filterTypesTree.getViewer();
 
 		filterTypesTreeViewer.setContentProvider(new FilterTypeContentProvider());
 		filterTypesTreeViewer.setLabelProvider(new FilterTypeLabelProvider());
@@ -104,9 +104,9 @@ public class TypesFilterDialog extends Dialog {
 		MatchFilter[] filters = new MatchFilter[1];
 		filters[0] = typeFilter;
 		AbstractTextSearchResult input = fPage.getInput();
-		if(input instanceof PapyrusSearchResult) {
+		if (input instanceof PapyrusSearchResult) {
 			input.setActiveMatchFilters(filters);
-			((PapyrusSearchResult)input).setPossibleMatchFilter(filters);
+			((PapyrusSearchResult) input).setPossibleMatchFilter(filters);
 		}
 
 		super.okPressed();

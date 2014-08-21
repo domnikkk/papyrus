@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class UMLPropertyTester extends PropertyTester {
 	}
 
 	public boolean test(Object receiver, String property, Object[] args, Object expectedValue) {
-		if(IS_ROOT.equals(property)) {
+		if (IS_ROOT.equals(property)) {
 			return Boolean.valueOf(isRoot(receiver)).equals(asBoolean(expectedValue));
 		}
 		return false;
@@ -43,17 +43,17 @@ public class UMLPropertyTester extends PropertyTester {
 
 	protected Boolean asBoolean(Object value) {
 		// the implicit expected-value for boolean properties is true
-		return (value == null) ? Boolean.TRUE : (value instanceof Boolean) ? (Boolean)value : Boolean.FALSE;
+		return (value == null) ? Boolean.TRUE : (value instanceof Boolean) ? (Boolean) value : Boolean.FALSE;
 	}
 
 	protected boolean isRoot(Object object) {
 		boolean result = false;
 
 		EObject eObject = EMFHelper.getEObject(object);
-		if(eObject != null) {
+		if (eObject != null) {
 			try {
 				ModelSet modelSet = ServiceUtilsForEObject.getInstance().getModelSet(eObject);
-				UmlModel uml = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
+				UmlModel uml = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
 
 				try {
 					result = (uml != null) && (uml.lookupRoot() == eObject);

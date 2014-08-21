@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 
 /**
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class ResolvedProblemHandler extends AbstractTableHandler {
 
@@ -50,80 +50,80 @@ public class ResolvedProblemHandler extends AbstractTableHandler {
 	private Problem problemToDestroy;
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		final TransactionalEditingDomain domain = (TransactionalEditingDomain)getTableEditingDomain();
+		final TransactionalEditingDomain domain = getTableEditingDomain();
 		DestroyElementRequest request = new DestroyElementRequest(domain, problemToDestroy, false);
-		final Cell cell = (Cell)problemToDestroy.eContainer();
+		final Cell cell = (Cell) problemToDestroy.eContainer();
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(cell);
 		CompositeCommand composite = new CompositeCommand("Destroy Problem Command"); //$NON-NLS-1$
 		composite.add(provider.getEditCommand(request));
 
-		//TODO : improve me and move me into an edit helper when we will have customization for the cell
+		// TODO : improve me and move me into an edit helper when we will have customization for the cell
 		composite.add(new AbstractTransactionalCommand(domain, "Clean Table Model : remove empty Cell", null) { //$NON-NLS-1$
 
-			@Override
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-				boolean isEmpty = true;
-				if(cell.getProblems().size() == 0) {
-					Collection<EStructuralFeature> featureToIgnore = new ArrayList<EStructuralFeature>();
-					featureToIgnore.add(EcorePackage.eINSTANCE.getEModelElement_EAnnotations());
-					featureToIgnore.add(NattablecellPackage.eINSTANCE.getCell_ColumnWrapper());
-					featureToIgnore.add(NattablecellPackage.eINSTANCE.getCell_RowWrapper());
-					Collection<EStructuralFeature> allFeatures = new ArrayList<EStructuralFeature>(cell.eClass().getEAllStructuralFeatures());
-					allFeatures.removeAll(featureToIgnore);
-					for(EStructuralFeature eStructuralFeature : allFeatures) {
-						if(eStructuralFeature.isMany()) {
-							if(!((Collection<?>)cell.eGet(eStructuralFeature)).isEmpty()) {
-								isEmpty = false;
-							}
-						} else {
-							if(cell.eGet(eStructuralFeature) != eStructuralFeature.getDefaultValue()) {
-								isEmpty = false;
+					@Override
+					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+						boolean isEmpty = true;
+						if (cell.getProblems().size() == 0) {
+							Collection<EStructuralFeature> featureToIgnore = new ArrayList<EStructuralFeature>();
+							featureToIgnore.add(EcorePackage.eINSTANCE.getEModelElement_EAnnotations());
+							featureToIgnore.add(NattablecellPackage.eINSTANCE.getCell_ColumnWrapper());
+							featureToIgnore.add(NattablecellPackage.eINSTANCE.getCell_RowWrapper());
+							Collection<EStructuralFeature> allFeatures = new ArrayList<EStructuralFeature>(cell.eClass().getEAllStructuralFeatures());
+							allFeatures.removeAll(featureToIgnore);
+							for (EStructuralFeature eStructuralFeature : allFeatures) {
+								if (eStructuralFeature.isMany()) {
+									if (!((Collection<?>) cell.eGet(eStructuralFeature)).isEmpty()) {
+										isEmpty = false;
+									}
+								} else {
+									if (cell.eGet(eStructuralFeature) != eStructuralFeature.getDefaultValue()) {
+										isEmpty = false;
+									}
+								}
+
 							}
 						}
-
+						if (isEmpty) {
+							DestroyElementRequest request = new DestroyElementRequest(domain, cell, false);
+							// final Cell cell = (Cell)problemToDestroy.eContainer();
+							IElementEditService provider = ElementEditServiceUtils.getCommandProvider(cell.eContainer());
+							provider.getEditCommand(request).execute(null, null);
+						}
+						return null;
 					}
-				}
-				if(isEmpty) {
-					DestroyElementRequest request = new DestroyElementRequest(domain, cell, false);
-					//					final Cell cell = (Cell)problemToDestroy.eContainer();
-					IElementEditService provider = ElementEditServiceUtils.getCommandProvider(cell.eContainer());
-					provider.getEditCommand(request).execute(null, null);
-				}
-				return null;
-			}
-		});
+				});
 		Command cmd = new GMFtoEMFCommandWrapper(composite);
 		domain.getCommandStack().execute(cmd);
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.handler.AbstractTableHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
 		super.setEnabled(evaluationContext);
 		problemToDestroy = null;
-		if(isEnabled() && wrapper != null) {
+		if (isEnabled() && wrapper != null) {
 			Collection<PositionCoordinate> selectionCells = wrapper.getSelectedCells();
-			if(selectionCells.size() == 1) {
+			if (selectionCells.size() == 1) {
 				final PositionCoordinate positionCoordinate = selectionCells.iterator().next();
 				final INattableModelManager nattableManager = getCurrentNattableModelManager();
 				final Object rowElement;
 				final Object columnElement;
-				if(!nattableManager.getTable().isInvertAxis()) {
+				if (!nattableManager.getTable().isInvertAxis()) {
 					rowElement = nattableManager.getRowElement(positionCoordinate.getRowPosition());
 					columnElement = nattableManager.getColumnElement(positionCoordinate.getColumnPosition());
 				} else {
@@ -132,9 +132,9 @@ public class ResolvedProblemHandler extends AbstractTableHandler {
 				}
 
 				final Cell cell = nattableManager.getCell(columnElement, rowElement);
-				if(cell != null) {
+				if (cell != null) {
 					final Collection<Problem> problems = cell.getProblems();
-					if(problems.size() == 1) {
+					if (problems.size() == 1) {
 						problemToDestroy = problems.iterator().next();
 					}
 				}

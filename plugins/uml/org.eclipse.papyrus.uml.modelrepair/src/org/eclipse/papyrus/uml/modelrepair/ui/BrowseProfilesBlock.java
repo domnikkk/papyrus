@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -82,14 +82,14 @@ public class BrowseProfilesBlock {
 		final boolean useText = (style & TEXT) == TEXT;
 
 		browseWorkspace = new Button(control, SWT.PUSH);
-		if(useText) {
+		if (useText) {
 			browseWorkspace.setText("Workspace...");
 		} else {
 			browseWorkspace.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage("icons/Add_12x12.gif"));
 		}
 
 		browseRegistered = new Button(control, SWT.PUSH);
-		if(useText) {
+		if (useText) {
 			browseRegistered.setText("Registered...");
 		} else {
 			browseRegistered.setImage(org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.PLUGIN_ID, "icons/AddReg.gif"));
@@ -99,7 +99,7 @@ public class BrowseProfilesBlock {
 
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(e.widget == browseWorkspace) {
+				if (e.widget == browseWorkspace) {
 					browseWorkspaceProfiles();
 				} else {
 					browseRegisteredProfiles();
@@ -115,7 +115,7 @@ public class BrowseProfilesBlock {
 	}
 
 	public void setEnabled(boolean enabled) {
-		if(enabled != this.enabled) {
+		if (enabled != this.enabled) {
 			this.enabled = enabled;
 			updateEnablement();
 		}
@@ -130,7 +130,7 @@ public class BrowseProfilesBlock {
 	}
 
 	protected void updateEnablement() {
-		if((browseWorkspace != null) && !browseWorkspace.isDisposed()) {
+		if ((browseWorkspace != null) && !browseWorkspace.isDisposed()) {
 			browseWorkspace.setEnabled(enabled);
 			browseRegistered.setEnabled(enabled);
 		}
@@ -152,16 +152,16 @@ public class BrowseProfilesBlock {
 		dialog.setLabelProvider(labelProviderService.getLabelProvider());
 
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result == null || result.length == 0) {
+			if (result == null || result.length == 0) {
 				return;
 			}
 
 			Object selectedFile = result[0];
 
-			if(selectedFile instanceof IFile) {
-				bus.post((IFile)selectedFile);
+			if (selectedFile instanceof IFile) {
+				bus.post(selectedFile);
 			}
 		}
 	}
@@ -175,8 +175,8 @@ public class BrowseProfilesBlock {
 
 			@Override
 			public Image getImage(Object element) {
-				if(element instanceof IRegisteredProfile) {
-					IRegisteredProfile profile = (IRegisteredProfile)element;
+				if (element instanceof IRegisteredProfile) {
+					IRegisteredProfile profile = (IRegisteredProfile) element;
 					return profile.getImage();
 				}
 				return super.getImage(element);
@@ -184,8 +184,8 @@ public class BrowseProfilesBlock {
 
 			@Override
 			public String getText(Object element) {
-				if(element instanceof IRegisteredProfile) {
-					IRegisteredProfile profile = (IRegisteredProfile)element;
+				if (element instanceof IRegisteredProfile) {
+					IRegisteredProfile profile = (IRegisteredProfile) element;
 					return profile.getName();
 				}
 
@@ -193,15 +193,15 @@ public class BrowseProfilesBlock {
 			}
 		});
 
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object[] result = dialog.getResult();
-			if(result == null || result.length == 0) {
+			if (result == null || result.length == 0) {
 				return;
 			}
 
 			Object selectedElement = result[0];
-			if(selectedElement instanceof IRegisteredProfile) {
-				bus.post((IRegisteredProfile)selectedElement);
+			if (selectedElement instanceof IRegisteredProfile) {
+				bus.post(selectedElement);
 			}
 		}
 	}

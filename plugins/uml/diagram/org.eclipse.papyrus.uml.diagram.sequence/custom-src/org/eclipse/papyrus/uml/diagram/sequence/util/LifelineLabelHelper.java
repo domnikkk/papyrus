@@ -37,7 +37,7 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 	 * @return the singleton instance.
 	 */
 	public static LifelineLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new LifelineLabelHelper();
 		}
 		return labelHelper;
@@ -71,17 +71,17 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 	 */
 	@Override
 	public Lifeline getUMLElement(GraphicalEditPart editPart) {
-		return (Lifeline)UMLUtil.resolveUMLElement(editPart);
+		return (Lifeline) UMLUtil.resolveUMLElement(editPart);
 	}
 
 	@Override
 	protected String elementLabel(GraphicalEditPart editPart) {
-		if(editPart instanceof LifelineNameEditPart) {
-			editPart = (GraphicalEditPart)editPart.getParent();
+		if (editPart instanceof LifelineNameEditPart) {
+			editPart = (GraphicalEditPart) editPart.getParent();
 		}
 		Collection<String> displayValue = DEFAULT_LABEL_DISPLAY;
-		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-		if(policy != null) {
+		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (policy != null) {
 			displayValue = policy.getCurrentDisplayValue();
 		}
 		return getCustomLabel(getUMLElement(editPart), displayValue);
@@ -91,15 +91,15 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 
 	private static final String UNDEFINED = "<Undefined>";
 
-	//https://bugs.eclipse.org/bugs/show_bug.cgi?id=383722
+	// https://bugs.eclipse.org/bugs/show_bug.cgi?id=383722
 	private String getCustomLabel(Lifeline lifeline, Collection<String> displayValue) {
 		StringBuilder sb = new StringBuilder();
 		appendName(lifeline, displayValue, sb);
 		boolean displayType = displayValue.contains(SHOW_REPRESENT_TYPE);
-		if(lifeline.getRepresents() == null || displayValue.contains(LifelineLabelHelper.SHOW_LIFELINE_NAME)) {
+		if (lifeline.getRepresents() == null || displayValue.contains(LifelineLabelHelper.SHOW_LIFELINE_NAME)) {
 			displayType = false;
 		}
-		if(displayType) {
+		if (displayType) {
 			// handle represent type label
 			appendType(lifeline, displayValue, sb);
 		}
@@ -109,16 +109,16 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 	protected void appendName(Lifeline lifeline, Collection<String> displayValue, StringBuilder sb) {
 		ConnectableElement element = lifeline.getRepresents();
 		String lifelineName = lifeline.getName();
-		if(element == null || displayValue.contains(SHOW_LIFELINE_NAME)) {
+		if (element == null || displayValue.contains(SHOW_LIFELINE_NAME)) {
 			appendString(sb, lifelineName, UNAMED);
 			return;
 		} else {
 			// represents is not null
-			if(displayValue.contains(SHOW_REPRESENT_NAME)) {
+			if (displayValue.contains(SHOW_REPRESENT_NAME)) {
 				appendString(sb, element.getName(), UNAMED);
 			}
-			//  if neither <1> or <2> are checked, show lifeline name (or <unnamed> when the lifeline has no name)
-			else if(!displayValue.contains(SHOW_REPRESENT_TYPE)) {
+			// if neither <1> or <2> are checked, show lifeline name (or <unnamed> when the lifeline has no name)
+			else if (!displayValue.contains(SHOW_REPRESENT_TYPE)) {
 				appendString(sb, lifelineName, UNAMED);
 			}
 		}
@@ -126,13 +126,13 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 
 	protected void appendType(Lifeline lifeline, Collection<String> displayValue, StringBuilder sb) {
 		ConnectableElement element = lifeline.getRepresents();
-		if(element == null) {
+		if (element == null) {
 			return;
 		}
 		Type type = element.getType();
-		if(displayValue.contains(SHOW_REPRESENT_TYPE)) {
-			if(type == null) {
-				if(displayValue.contains(SHOW_UNDEFINED_TYPE)) {
+		if (displayValue.contains(SHOW_REPRESENT_TYPE)) {
+			if (type == null) {
+				if (displayValue.contains(SHOW_UNDEFINED_TYPE)) {
 					sb.append(":").append(UNDEFINED);
 				}
 			} else {
@@ -142,7 +142,7 @@ public class LifelineLabelHelper extends StereotypedElementLabelHelper {
 	}
 
 	private void appendString(StringBuilder sb, String str, String defaultValue) {
-		if(str != null) {
+		if (str != null) {
 			sb.append(str);
 		} else {
 			sb.append(defaultValue);

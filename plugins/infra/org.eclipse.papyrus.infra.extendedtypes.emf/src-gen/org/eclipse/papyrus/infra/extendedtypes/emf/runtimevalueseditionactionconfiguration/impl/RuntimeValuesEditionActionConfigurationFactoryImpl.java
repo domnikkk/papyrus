@@ -16,6 +16,7 @@ import org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactioncon
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactoryImpl implements RuntimeValuesEditionActionConfigurationFactory {
@@ -23,16 +24,16 @@ public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactory
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static RuntimeValuesEditionActionConfigurationFactory init() {
 		try {
-			RuntimeValuesEditionActionConfigurationFactory theRuntimeValuesEditionActionConfigurationFactory = (RuntimeValuesEditionActionConfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(RuntimeValuesEditionActionConfigurationPackage.eNS_URI);
+			RuntimeValuesEditionActionConfigurationFactory theRuntimeValuesEditionActionConfigurationFactory = (RuntimeValuesEditionActionConfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(RuntimeValuesEditionActionConfigurationPackage.eNS_URI);
 			if (theRuntimeValuesEditionActionConfigurationFactory != null) {
 				return theRuntimeValuesEditionActionConfigurationFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new RuntimeValuesEditionActionConfigurationFactoryImpl();
@@ -42,6 +43,7 @@ public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactory
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RuntimeValuesEditionActionConfigurationFactoryImpl() {
@@ -51,23 +53,28 @@ public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RuntimeValuesEditionActionConfigurationPackage.RUNTIME_VALUES_EDITION_ACTION_CONFIGURATION: return createRuntimeValuesEditionActionConfiguration();
-			case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY: return createViewToDisplay();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case RuntimeValuesEditionActionConfigurationPackage.RUNTIME_VALUES_EDITION_ACTION_CONFIGURATION:
+			return createRuntimeValuesEditionActionConfiguration();
+		case RuntimeValuesEditionActionConfigurationPackage.VIEW_TO_DISPLAY:
+			return createViewToDisplay();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RuntimeValuesEditionActionConfiguration createRuntimeValuesEditionActionConfiguration() {
 		RuntimeValuesEditionActionConfigurationImpl runtimeValuesEditionActionConfiguration = new RuntimeValuesEditionActionConfigurationImpl();
 		return runtimeValuesEditionActionConfiguration;
@@ -76,8 +83,10 @@ public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ViewToDisplay createViewToDisplay() {
 		ViewToDisplayImpl viewToDisplay = new ViewToDisplayImpl();
 		return viewToDisplay;
@@ -86,15 +95,18 @@ public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactory
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RuntimeValuesEditionActionConfigurationPackage getRuntimeValuesEditionActionConfigurationPackage() {
-		return (RuntimeValuesEditionActionConfigurationPackage)getEPackage();
+		return (RuntimeValuesEditionActionConfigurationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -103,4 +115,4 @@ public class RuntimeValuesEditionActionConfigurationFactoryImpl extends EFactory
 		return RuntimeValuesEditionActionConfigurationPackage.eINSTANCE;
 	}
 
-} //RuntimeValuesEditionActionConfigurationFactoryImpl
+} // RuntimeValuesEditionActionConfigurationFactoryImpl

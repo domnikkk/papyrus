@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,17 +29,17 @@ import org.eclipse.papyrus.infra.nattable.sort.IPapyrusSortModel;
 import org.eclipse.papyrus.infra.nattable.utils.DefaultSizeUtils;
 
 /**
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class ColumnHeaderLayerStack extends AbstractLayerTransform {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param dataProvider
 	 * @param bodyLayer
 	 * @param bodyDataProvider

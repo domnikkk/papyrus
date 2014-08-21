@@ -60,7 +60,7 @@ public final class StringUtils {
 	 * Truncate the given String before the first newline or a maximum number of
 	 * characters, whichever comes first. Adds an ellipsis ("...") if it was
 	 * effectively truncated.
-	 * 
+	 *
 	 * @param str
 	 *            the string to truncate
 	 * @return the part of the given string before the first newline

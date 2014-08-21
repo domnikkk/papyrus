@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,32 +23,32 @@ import org.eclipse.papyrus.infra.nattable.utils.LabelProviderCellContextElementW
 
 /**
  * Axis Comparator used to sort the rows according to the selected column
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class RowComparator extends AbstractAxisComparator {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param selectedColumn
-	 *        the selected column
+	 *            the selected column
 	 * @param direction
-	 *        the direction to do the sort
+	 *            the direction to do the sort
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 */
 	public RowComparator(final Object selectedColumn, final SortDirectionEnum direction, final INattableModelManager tableManager) {
 		super(selectedColumn, direction, tableManager);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param o1
 	 * @param o2
 	 * @return
@@ -58,7 +58,7 @@ public class RowComparator extends AbstractAxisComparator {
 		int index_01 = tableManager.getRowElementsList().indexOf(o1);
 		int index_02 = tableManager.getRowElementsList().indexOf(o2);
 		int columnIndex = tableManager.getColumnElementsList().indexOf(selectedColumn);
-		if(columnIndex == -1) {
+		if (columnIndex == -1) {
 			return 0;
 		}
 		final ILayerCell cell_O1 = stack.getSelectionLayer().getCellByPosition(columnIndex, index_01);
@@ -70,7 +70,7 @@ public class RowComparator extends AbstractAxisComparator {
 		final String txt1 = serv.getLabelProvider(Constants.TABLE_LABEL_PROVIDER_CONTEXT).getText(wrapper1);
 		final String txt2 = serv.getLabelProvider(Constants.TABLE_LABEL_PROVIDER_CONTEXT).getText(wrapper2);
 		final int res;
-		if(direction == SortDirectionEnum.DESC) {
+		if (direction == SortDirectionEnum.DESC) {
 			res = Collator.getInstance().compare(txt2, txt1);
 		} else {
 			res = Collator.getInstance().compare(txt1, txt2);

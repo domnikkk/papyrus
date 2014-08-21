@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ISashPanelModel
 
 /**
  * Simple implementation of the {@link ISashPanelModel}.
- * 
+ *
  * @author dumoulin
  */
 public class SashPanelModel extends AbstractPanelModel implements ISashPanelModel {
@@ -53,7 +53,7 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 
 	/**
 	 * Set the left child.
-	 * 
+	 *
 	 * @param child
 	 */
 	public void setLeftChild(AbstractPanelModel child) {
@@ -62,7 +62,7 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 
 	/**
 	 * Get the left child
-	 * 
+	 *
 	 * @return
 	 */
 	private AbstractPanelModel getLeftChild() {
@@ -71,7 +71,7 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 
 	/**
 	 * Set the left child.
-	 * 
+	 *
 	 * @param child
 	 */
 	public void setRightChild(AbstractPanelModel child) {
@@ -80,7 +80,7 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 
 	/**
 	 * Get the right child
-	 * 
+	 *
 	 * @return
 	 */
 	private AbstractPanelModel getRightChild() {
@@ -94,21 +94,24 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 	 * In this implementation, the rawModel is the SashPanelModel.
 	 * This default implementation return directly the child which is already of the appropriate type.
 	 */
+	@Override
 	public IAbstractPanelModel createChildSashModel(Object rawModel) {
-		return (IAbstractPanelModel)rawModel;
+		return (IAbstractPanelModel) rawModel;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<?> getChildren() {
 		return childrenList;
 	}
 
 	/**
 	 * Return the direction of the sash:
-	 * 
+	 *
 	 */
+	@Override
 	public int getSashDirection() {
 		return sashDirection;
 	}
@@ -116,26 +119,29 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 	/**
 	 * Replace specified child with the new child. {@inheritDoc}
 	 */
+	@Override
 	public void replaceChild(AbstractPanelModel oldChild, AbstractPanelModel newChild) {
 
 
-		if(getLeftChild() == oldChild)
+		if (getLeftChild() == oldChild) {
 			setLeftChild(newChild);
-		else if(getRightChild() == oldChild)
+		} else if (getRightChild() == oldChild) {
 			setRightChild(newChild);
+		}
 
 	}
 
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected TabFolderModel lookupTabFolder(IPageModel tabItem) {
 		TabFolderModel parent = getLeftChild().lookupTabFolder(tabItem);
-		if(parent != null)
+		if (parent != null) {
 			return parent;
+		}
 
 		return getRightChild().lookupTabFolder(tabItem);
 	}
@@ -144,7 +150,7 @@ public class SashPanelModel extends AbstractPanelModel implements ISashPanelMode
 	/**
 	 * Delete the sashModel.
 	 * The childToDelete is removed from the tree, bypass the sashnode : the other child parent is set to sashnode parent.
-	 * 
+	 *
 	 * @param tabFolder
 	 */
 	protected void delete(AbstractPanelModel childToDelete) {

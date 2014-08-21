@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public class DeleteHyperLinkPageCommand extends RecordingCommand {
 	/**
 	 * Instantiates a new delete hyper link command used to suppress a link in
 	 * the view
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param object
-	 *        the object
+	 *            the object
 	 * @param page
-	 *        the target of the link
+	 *            the target of the link
 	 */
 	public DeleteHyperLinkPageCommand(TransactionalEditingDomain domain, EModelElement object, EObject page) {
 		super(domain);
@@ -60,12 +60,12 @@ public class DeleteHyperLinkPageCommand extends RecordingCommand {
 	protected void doExecute() {
 		Iterator<EAnnotation> iter = sourceElement.getEAnnotations().iterator();
 
-		//Remove interesting eannotations
-		while(iter.hasNext()) {
+		// Remove interesting eannotations
+		while (iter.hasNext()) {
 			EAnnotation currentAnnotation = iter.next();
-			for(String annotationName : HyperLinkConstants.validHyperLinkPageSources) {
-				if(annotationName.equals(currentAnnotation.getSource())) {
-					if(currentAnnotation.getReferences().contains(page)) {
+			for (String annotationName : HyperLinkConstants.validHyperLinkPageSources) {
+				if (annotationName.equals(currentAnnotation.getSource())) {
+					if (currentAnnotation.getReferences().contains(page)) {
 						iter.remove();
 					}
 				}

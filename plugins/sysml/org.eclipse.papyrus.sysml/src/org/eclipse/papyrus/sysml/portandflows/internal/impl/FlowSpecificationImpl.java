@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Interface;
  * <li>{@link org.eclipse.papyrus.sysml.portandflows.internal.impl.FlowSpecificationImpl#getBase_Interface <em>Base Interface</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implements FlowSpecification {
@@ -39,7 +39,7 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 	 * The cached value of the '{@link #getBase_Interface() <em>Base Interface</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Interface()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FlowSpecificationImpl() {
@@ -57,7 +57,7 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Interface basicGetBase_Interface() {
@@ -66,15 +66,16 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
-			if(resolve)
+			if (resolve) {
 				return getBase_Interface();
+			}
 			return basicGetBase_Interface();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -82,12 +83,12 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
 			return base_Interface != null;
 		}
@@ -96,14 +97,14 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
-			setBase_Interface((Interface)newValue);
+			setBase_Interface((Interface) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,7 +112,7 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +122,14 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_SPECIFICATION__BASE_INTERFACE:
-			setBase_Interface((Interface)null);
+			setBase_Interface((Interface) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -136,16 +137,17 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Interface getBase_Interface() {
-		if(base_Interface != null && base_Interface.eIsProxy()) {
-			InternalEObject oldBase_Interface = (InternalEObject)base_Interface;
-			base_Interface = (Interface)eResolveProxy(oldBase_Interface);
-			if(base_Interface != oldBase_Interface) {
-				if(eNotificationRequired())
+		if (base_Interface != null && base_Interface.eIsProxy()) {
+			InternalEObject oldBase_Interface = (InternalEObject) base_Interface;
+			base_Interface = (Interface) eResolveProxy(oldBase_Interface);
+			if (base_Interface != oldBase_Interface) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortandflowsPackage.FLOW_SPECIFICATION__BASE_INTERFACE, oldBase_Interface, base_Interface));
+				}
 			}
 		}
 		return base_Interface;
@@ -153,14 +155,15 @@ public class FlowSpecificationImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Interface(Interface newBase_Interface) {
 		Interface oldBase_Interface = base_Interface;
 		base_Interface = newBase_Interface;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PortandflowsPackage.FLOW_SPECIFICATION__BASE_INTERFACE, oldBase_Interface, base_Interface));
+		}
 	}
 
 } // FlowSpecificationImpl

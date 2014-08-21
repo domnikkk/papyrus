@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,14 +29,16 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PaletteRule} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PaletteRuleItemProvider
-	extends RuleItemProvider {
+		extends RuleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PaletteRuleItemProvider(AdapterFactory adapterFactory) {
@@ -47,6 +49,7 @@ public class PaletteRuleItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,28 +66,30 @@ public class PaletteRuleItemProvider
 	 * This adds a property descriptor for the Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PaletteRule_element_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PaletteRule_element_feature", "_UI_PaletteRule_type"),
-				 ConfigurationPackage.Literals.PALETTE_RULE__ELEMENT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PaletteRule_element_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PaletteRule_element_feature", "_UI_PaletteRule_type"),
+						ConfigurationPackage.Literals.PALETTE_RULE__ELEMENT,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns PaletteRule.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT - Custom Image
 	 */
 	@Override
@@ -101,8 +106,9 @@ public class PaletteRuleItemProvider
 	public String getText(Object object) {
 		PaletteRule rule = (PaletteRule) object;
 		String data = "*";
-		if (rule.getElement() != null && !rule.getElement().isEmpty())
+		if (rule.getElement() != null && !rule.getElement().isEmpty()) {
 			data = rule.getElement();
+		}
 		return "Palette: " + data + " => " + (rule.isPermit() ? "allow" : "deny");
 	}
 
@@ -111,6 +117,7 @@ public class PaletteRuleItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -118,9 +125,9 @@ public class PaletteRuleItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PaletteRule.class)) {
-			case ConfigurationPackage.PALETTE_RULE__ELEMENT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case ConfigurationPackage.PALETTE_RULE__ELEMENT:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -130,6 +137,7 @@ public class PaletteRuleItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

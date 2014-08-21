@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -17,7 +17,7 @@ package org.eclipse.papyrus.views.modelexplorer.matching;
 
 /***
  * An IMatchingItem implementation that matches for IReferencables
- * 
+ *
  * @author proland
  */
 public class ReferencableMatchingItem implements IMatchingItem {
@@ -29,15 +29,15 @@ public class ReferencableMatchingItem implements IMatchingItem {
 	}
 
 	public boolean matchingItemEquals(Object obj) {
-		if(obj instanceof IReferencable) {
-			IReferencable referencable = (IReferencable)obj;
+		if (obj instanceof IReferencable) {
+			IReferencable referencable = (IReferencable) obj;
 			return referencable.getElementBehind().equals(object);
 		}
 		return super.equals(obj);
 	}
 
 	public int matchingItemHashcode() {
-		if(object != null) {
+		if (object != null) {
 			return object.hashCode();
 		}
 		return 0;

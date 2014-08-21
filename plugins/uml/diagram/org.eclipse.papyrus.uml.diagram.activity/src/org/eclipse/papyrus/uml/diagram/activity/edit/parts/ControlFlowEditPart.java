@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,6 +26,7 @@ import org.eclipse.papyrus.uml.diagram.activity.edit.policies.ControlFlowItemSem
 import org.eclipse.papyrus.uml.diagram.activity.edit.policies.InterruptibleEdgeEditPolicy;
 import org.eclipse.papyrus.uml.diagram.activity.figures.ActivityEdgeFigure;
 import org.eclipse.papyrus.uml.diagram.common.editparts.UMLConnectionNodeEditPart;
+import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.editpolicies.AppliedStereotypeLinkLabelDisplayEditPolicy;
 import org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure;
 
@@ -49,10 +50,11 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ControlFlowItemSemanticEditPolicy());
-		installEditPolicy(AppliedStereotypeLinkLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
+		installEditPolicy(AppliedStereotypeLabelDisplayEditPolicy.STEREOTYPE_LABEL_POLICY, new AppliedStereotypeLinkLabelDisplayEditPolicy());
 		installEditPolicy(InterruptibleEdgeEditPolicy.INTERRUPTIBLE_ICON_POLICY, new InterruptibleEdgeEditPolicy());
 	}
 
@@ -60,8 +62,8 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ControlFlowAppliedStereotypeEditPart) {
-			((ControlFlowAppliedStereotypeEditPart)childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
+		if (childEditPart instanceof ControlFlowAppliedStereotypeEditPart) {
+			((ControlFlowAppliedStereotypeEditPart) childEditPart).setLabel(getPrimaryShape().getAppliedStereotypeLabel());
 			return true;
 		}
 		return false;
@@ -70,8 +72,9 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -81,7 +84,7 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ControlFlowAppliedStereotypeEditPart) {
+		if (childEditPart instanceof ControlFlowAppliedStereotypeEditPart) {
 			return true;
 		}
 		return false;
@@ -90,8 +93,9 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -99,12 +103,13 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new ActivityEdgeFigure();
 	}
@@ -112,8 +117,9 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 	/**
 	 * @generated
 	 */
+	@Override
 	public ActivityEdgeFigure getPrimaryShape() {
-		return (ActivityEdgeFigure)getFigure();
+		return (ActivityEdgeFigure) getFigure();
 	}
 
 	/**
@@ -133,11 +139,12 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 		/**
 		 * @generated NOT
 		 */
+		@Override
 		protected void createContents() {
 			super.createContents();
-			//fAppliedStereotypeLabel = new WrappingLabel();
-			//fAppliedStereotypeLabel.setText("");
-			//this.add(fAppliedStereotypeLabel);
+			// fAppliedStereotypeLabel = new WrappingLabel();
+			// fAppliedStereotypeLabel.setText("");
+			// this.add(fAppliedStereotypeLabel);
 		}
 
 		@Override
@@ -164,6 +171,7 @@ public class ControlFlowEditPart extends UMLConnectionNodeEditPart implements IT
 		/**
 		 * @generated NOT get the stereotype label of super class
 		 */
+		@Override
 		public WrappingLabel getAppliedStereotypeLabel() {
 			return super.getAppliedStereotypeLabel();
 		}

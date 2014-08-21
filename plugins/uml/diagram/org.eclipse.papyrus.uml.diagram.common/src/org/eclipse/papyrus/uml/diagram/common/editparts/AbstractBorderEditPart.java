@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ public abstract class AbstractBorderEditPart extends BorderNamedElementEditPart 
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.BorderNamedElementEditPart#handleNotificationEvent(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param event
 	 */
 	@Override
@@ -38,7 +38,7 @@ public abstract class AbstractBorderEditPart extends BorderNamedElementEditPart 
 		super.handleNotificationEvent(event);
 
 		// set the figure active when the feature of the of a class is true
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshFontColor();
 		}
 

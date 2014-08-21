@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -39,7 +39,7 @@ public class Event {
 
 	/**
 	 * @param eventTarget
-	 *        the eventTarget to set
+	 *            the eventTarget to set
 	 */
 	public void setEventTarget(Object eventTarget) {
 		this.eventTarget = eventTarget;
@@ -54,7 +54,7 @@ public class Event {
 
 	/**
 	 * @param oldValue
-	 *        the oldValue to set
+	 *            the oldValue to set
 	 */
 	public void setOldValue(Object oldValue) {
 		this.oldValue = oldValue;
@@ -69,7 +69,7 @@ public class Event {
 
 	/**
 	 * @param newValue
-	 *        the newValue to set
+	 *            the newValue to set
 	 */
 	public void setNewValue(Object newValue) {
 		this.newValue = newValue;
@@ -84,7 +84,7 @@ public class Event {
 
 	/**
 	 * @param eventType
-	 *        the eventType to set
+	 *            the eventType to set
 	 */
 	public void setEventType(String eventType) {
 		this.eventType = eventType;

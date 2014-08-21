@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLViewProvider;
 
 /**
  * Custom class to create the associationClass node.
- * 
+ *
  */
 public class AssociationClassViewCreateCommand extends AbstractCustomCommand {
 
@@ -53,7 +53,7 @@ public class AssociationClassViewCreateCommand extends AbstractCustomCommand {
 
 	/**
 	 * constructor.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the request that is used to obtained the associationclass
 	 * @param domain
@@ -77,15 +77,16 @@ public class AssociationClassViewCreateCommand extends AbstractCustomCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// / get the factory of the viewer
 		// AssociationClassViewFactory factory = new
 		// AssociationClassViewFactory();
 		// creation of the element
-		CreateElementRequestAdapter requestAdapter = ((CreateConnectionViewAndElementRequest) createConnectionViewAndElementRequest).getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
+		CreateElementRequestAdapter requestAdapter = createConnectionViewAndElementRequest.getConnectionViewAndElementDescriptor().getCreateElementRequestAdapter();
 		CreateRelationshipRequest createElementRequest = (CreateRelationshipRequest) requestAdapter.getAdapter(CreateRelationshipRequest.class);
 		UMLViewProvider viewProvider = new UMLViewProvider();
 		setNode(viewProvider.createAssociationClass_2013(createElementRequest.getNewElement(), this.containerView, -1, true, preferenceHint));

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 Atos Origin, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,13 +34,13 @@ public class LoadControlledResources implements ILoadingStrategy {
 	 */
 	public boolean loadResource(ModelSet modelSet, URI uri) {
 		boolean result = !modelSet.isUserModelResource(uri);
-		if(!result) {
+		if (!result) {
 			URI initialURI = SashModelUtils.getInitialURI(modelSet).trimFileExtension().appendFileExtension(uri.fileExtension());
 			URI uriInitialTrimFragment = initialURI.trimFragment();
 			URI uritrimFragment = uri.trimFragment();
 			result = uritrimFragment.equals(uriInitialTrimFragment);
 			// if !result it is necessary to navigate into the history to find if the uri searched is a controlled
-			if(!result) {
+			if (!result) {
 				HistoryModel model = HistoryUtils.getHistoryModel(modelSet);
 				URI path = HistoryUtils.getURIFullPath(uriInitialTrimFragment);
 				URI resolve = URI.createURI(HistoryUtils.resolve(path, uriInitialTrimFragment));

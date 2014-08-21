@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,15 +32,17 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void init(ICommonContentExtensionSite aConfig) {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public Image getImage(Object element) {
-		if(element instanceof UMLDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getImage(((UMLDomainNavigatorItem)element).getEObject());
+		if (element instanceof UMLDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getImage(((UMLDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -48,9 +50,10 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public String getText(Object element) {
-		if(element instanceof UMLDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider.getText(((UMLDomainNavigatorItem)element).getEObject());
+		if (element instanceof UMLDomainNavigatorItem) {
+			return myAdapterFactoryLabelProvider.getText(((UMLDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -58,6 +61,7 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void addListener(ILabelProviderListener listener) {
 		myAdapterFactoryLabelProvider.addListener(listener);
 	}
@@ -65,6 +69,7 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		myAdapterFactoryLabelProvider.dispose();
 	}
@@ -72,6 +77,7 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean isLabelProperty(Object element, String property) {
 		return myAdapterFactoryLabelProvider.isLabelProperty(element, property);
 	}
@@ -79,6 +85,7 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void removeListener(ILabelProviderListener listener) {
 		myAdapterFactoryLabelProvider.removeListener(listener);
 	}
@@ -86,18 +93,21 @@ public class UMLDomainNavigatorLabelProvider implements ICommonLabelProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void restoreState(IMemento aMemento) {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public void saveState(IMemento aMemento) {
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public String getDescription(Object anElement) {
 		return null;
 	}

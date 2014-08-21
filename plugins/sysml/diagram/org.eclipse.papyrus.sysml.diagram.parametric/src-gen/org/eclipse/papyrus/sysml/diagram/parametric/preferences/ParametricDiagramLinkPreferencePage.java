@@ -27,14 +27,14 @@ public class ParametricDiagramLinkPreferencePage extends AbstractPapyrusLinkPref
 
 	/** The list of label names for this link */
 	protected List<String> labelsList;
-	
+
 	/** Constructor */
 	public ParametricDiagramLinkPreferencePage() {
 		labelsList = new ArrayList<String>();
 		initializeLabelsList();
 		Collections.unmodifiableList(labelsList);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -43,26 +43,26 @@ public class ParametricDiagramLinkPreferencePage extends AbstractPapyrusLinkPref
 		super.createPageContents(parent);
 
 		// Add label visibility group
-		if(!labelsList.isEmpty()) {
+		if (!labelsList.isEmpty()) {
 			OrderedLabelGroup compartmentGroup = new OrderedLabelGroup(parent, getPreferenceKey(), this, labelsList);
 			addAbstractGroup(compartmentGroup);
 		}
 
 	}
-	
+
 	/**
 	 * {@inheritDoc}
-	 */	
+	 */
 	@Override
 	protected String getBundleId() {
 		return Activator.PLUGIN_ID;
 	}
-	
+
 	/** Initialize the list containing names of labels. */
 	protected void initializeLabelsList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,7 +54,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <li>{@link org.eclipse.papyrus.sysml.requirements.internal.impl.RequirementImpl#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class RequirementImpl extends MinimalEObjectImpl.Container implements Requirement {
@@ -62,7 +62,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getText()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * The cached value of the '{@link #getBase_Class() <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Class()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RequirementImpl() {
@@ -120,7 +120,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class basicGetBase_Class() {
@@ -129,7 +129,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public Requirement basicGetMaster() {
@@ -140,20 +140,20 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		Requirement master = null;
 		Copy currentCopy = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<Dependency> itDep = getBase_Class().getClientDependencies().iterator();
 
 			// Find Copy link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				Dependency currentDep = itDep.next();
 				currentCopy = UMLUtil.getStereotypeApplication(currentDep, Copy.class);
 
-				if(currentCopy != null) {
+				if (currentCopy != null) {
 					EList<NamedElement> suppliers = currentCopy.getBase_Abstraction().getSuppliers();
 					Iterator<NamedElement> it = suppliers.iterator();
-					while(it.hasNext() && (master == null)) {
+					while (it.hasNext() && (master == null)) {
 						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);
-						if(currentRequirement != null) {
+						if (currentRequirement != null) {
 							master = currentRequirement;
 						}
 					}
@@ -165,12 +165,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case RequirementsPackage.REQUIREMENT__TEXT:
 			return getText();
 		case RequirementsPackage.REQUIREMENT__ID:
@@ -188,12 +188,14 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		case RequirementsPackage.REQUIREMENT__VERIFIED_BY:
 			return getVerifiedBy();
 		case RequirementsPackage.REQUIREMENT__MASTER:
-			if(resolve)
+			if (resolve) {
 				return getMaster();
+			}
 			return basicGetMaster();
 		case RequirementsPackage.REQUIREMENT__BASE_CLASS:
-			if(resolve)
+			if (resolve) {
 				return getBase_Class();
+			}
 			return basicGetBase_Class();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -201,12 +203,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case RequirementsPackage.REQUIREMENT__TEXT:
 			return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 		case RequirementsPackage.REQUIREMENT__ID:
@@ -233,20 +235,20 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case RequirementsPackage.REQUIREMENT__TEXT:
-			setText((String)newValue);
+			setText((String) newValue);
 			return;
 		case RequirementsPackage.REQUIREMENT__ID:
-			setId((String)newValue);
+			setId((String) newValue);
 			return;
 		case RequirementsPackage.REQUIREMENT__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)newValue);
+			setBase_Class((org.eclipse.uml2.uml.Class) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,7 +256,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -264,12 +266,12 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case RequirementsPackage.REQUIREMENT__TEXT:
 			setText(TEXT_EDEFAULT);
 			return;
@@ -277,7 +279,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 			setId(ID_EDEFAULT);
 			return;
 		case RequirementsPackage.REQUIREMENT__BASE_CLASS:
-			setBase_Class((org.eclipse.uml2.uml.Class)null);
+			setBase_Class((org.eclipse.uml2.uml.Class) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -285,16 +287,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public org.eclipse.uml2.uml.Class getBase_Class() {
-		if(base_Class != null && base_Class.eIsProxy()) {
-			InternalEObject oldBase_Class = (InternalEObject)base_Class;
-			base_Class = (org.eclipse.uml2.uml.Class)eResolveProxy(oldBase_Class);
-			if(base_Class != oldBase_Class) {
-				if(eNotificationRequired())
+		if (base_Class != null && base_Class.eIsProxy()) {
+			InternalEObject oldBase_Class = (InternalEObject) base_Class;
+			base_Class = (org.eclipse.uml2.uml.Class) eResolveProxy(oldBase_Class);
+			if (base_Class != oldBase_Class) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RequirementsPackage.REQUIREMENT__BASE_CLASS, oldBase_Class, base_Class));
+				}
 			}
 		}
 		return base_Class;
@@ -302,7 +305,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<Requirement> getDerived() {
@@ -310,20 +313,20 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		EList<Requirement> derived = new BasicEList<Requirement>();
 		DeriveReqt currentDeriveReqt = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find DeriveReqt link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDirectedRelationship = itDep.next();
 				currentDeriveReqt = UMLUtil.getStereotypeApplication(currentDirectedRelationship, DeriveReqt.class);
 
-				if(currentDeriveReqt != null) {
+				if (currentDeriveReqt != null) {
 					EList<NamedElement> clients = currentDeriveReqt.getBase_Abstraction().getClients();
 					Iterator<NamedElement> it = clients.iterator();
-					while(it.hasNext()) {
+					while (it.hasNext()) {
 						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);
-						if(currentRequirement != null) {
+						if (currentRequirement != null) {
 							derived.add(currentRequirement);
 						}
 					}
@@ -337,7 +340,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<Requirement> getDerivedFrom() {
@@ -345,20 +348,20 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		// from
 		EList<Requirement> derivedFrom = new BasicEList<Requirement>();
 		DeriveReqt currentDeriveReqt = null;
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getSourceDirectedRelationships().iterator();
 
 			// Find DeriveReqt link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDRelationship = itDep.next();
 				currentDeriveReqt = UMLUtil.getStereotypeApplication(currentDRelationship, DeriveReqt.class);
 
-				if(currentDeriveReqt != null) {
+				if (currentDeriveReqt != null) {
 					EList<NamedElement> suppliers = currentDeriveReqt.getBase_Abstraction().getSuppliers();
 					Iterator<NamedElement> it = suppliers.iterator();
-					while(it.hasNext()) {
+					while (it.hasNext()) {
 						Requirement currentRequirement = UMLUtil.getStereotypeApplication(it.next(), Requirement.class);
-						if(currentRequirement != null) {
+						if (currentRequirement != null) {
 							derivedFrom.add(currentRequirement);
 						}
 					}
@@ -372,7 +375,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getId() {
@@ -381,17 +384,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Requirement getMaster() {
 		Requirement master = basicGetMaster();
-		return master != null && master.eIsProxy() ? (Requirement)eResolveProxy((InternalEObject)master) : master;
+		return master != null && master.eIsProxy() ? (Requirement) eResolveProxy((InternalEObject) master) : master;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<NamedElement> getRefinedBy() {
@@ -400,15 +403,15 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		EList<NamedElement> refinedBy = new BasicEList<NamedElement>();
 		Refine currentRefine = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find Refine link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDRelationship = itDep.next();
 				currentRefine = UMLUtil.getStereotypeApplication(currentDRelationship, Refine.class);
 
-				if(currentRefine != null) {
+				if (currentRefine != null) {
 					refinedBy.addAll(currentRefine.getBase_Abstraction().getClients());
 				}
 			}
@@ -421,7 +424,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getRefinedBy(String name) {
@@ -431,15 +434,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getRefinedBy(String name, boolean ignoreCase, EClass eClass) {
-		refinedByLoop: for(NamedElement refinedBy : getRefinedBy()) {
-			if(eClass != null && !eClass.isInstance(refinedBy))
+		refinedByLoop: for (NamedElement refinedBy : getRefinedBy()) {
+			if (eClass != null && !eClass.isInstance(refinedBy)) {
 				continue refinedByLoop;
-			if(name != null && !(ignoreCase ? name.equalsIgnoreCase(refinedBy.getName()) : name.equals(refinedBy.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(refinedBy.getName()) : name.equals(refinedBy.getName()))) {
 				continue refinedByLoop;
+			}
 			return refinedBy;
 		}
 		return null;
@@ -447,7 +452,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<NamedElement> getSatisfiedBy() {
@@ -456,15 +461,15 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		EList<NamedElement> satisfyBy = new BasicEList<NamedElement>();
 		Satisfy currentSatisfy = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find Satisfy link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDRelationship = itDep.next();
 				currentSatisfy = UMLUtil.getStereotypeApplication(currentDRelationship, Satisfy.class);
 
-				if(currentSatisfy != null) {
+				if (currentSatisfy != null) {
 					satisfyBy.addAll(currentSatisfy.getBase_Abstraction().getClients());
 				}
 			}
@@ -477,7 +482,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getSatisfiedBy(String name) {
@@ -487,15 +492,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getSatisfiedBy(String name, boolean ignoreCase, EClass eClass) {
-		satisfiedByLoop: for(NamedElement satisfiedBy : getSatisfiedBy()) {
-			if(eClass != null && !eClass.isInstance(satisfiedBy))
+		satisfiedByLoop: for (NamedElement satisfiedBy : getSatisfiedBy()) {
+			if (eClass != null && !eClass.isInstance(satisfiedBy)) {
 				continue satisfiedByLoop;
-			if(name != null && !(ignoreCase ? name.equalsIgnoreCase(satisfiedBy.getName()) : name.equals(satisfiedBy.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(satisfiedBy.getName()) : name.equals(satisfiedBy.getName()))) {
 				continue satisfiedByLoop;
+			}
 			return satisfiedBy;
 		}
 		return null;
@@ -503,7 +510,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getText() {
@@ -512,7 +519,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<NamedElement> getTracedTo() {
@@ -523,16 +530,16 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		EList<NamedElement> tracedTo = new BasicEList<NamedElement>();
 		Trace currentTrace = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find Trace link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDR = itDep.next();
 				currentTrace = UMLUtil.getStereotypeApplication(currentDR, Trace.class);
 
 				// Must be a Trace not a subtype (see bug #352563).
-				if((currentTrace != null) && (currentTrace.eClass() == StandardPackage.eINSTANCE.getTrace())) {
+				if ((currentTrace != null) && (currentTrace.eClass() == StandardPackage.eINSTANCE.getTrace())) {
 					EList<NamedElement> suppliers = currentTrace.getBase_Abstraction().getClients();
 					tracedTo.addAll(suppliers);
 				}
@@ -546,7 +553,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getTracedTo(String name) {
@@ -556,15 +563,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getTracedTo(String name, boolean ignoreCase, EClass eClass) {
-		tracedToLoop: for(NamedElement tracedTo : getTracedTo()) {
-			if(eClass != null && !eClass.isInstance(tracedTo))
+		tracedToLoop: for (NamedElement tracedTo : getTracedTo()) {
+			if (eClass != null && !eClass.isInstance(tracedTo)) {
 				continue tracedToLoop;
-			if(name != null && !(ignoreCase ? name.equalsIgnoreCase(tracedTo.getName()) : name.equals(tracedTo.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(tracedTo.getName()) : name.equals(tracedTo.getName()))) {
 				continue tracedToLoop;
+			}
 			return tracedTo;
 		}
 		return null;
@@ -572,7 +581,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public EList<NamedElement> getVerifiedBy() {
@@ -581,15 +590,15 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 		EList<NamedElement> verifiedBy = new BasicEList<NamedElement>();
 		Verify currentVerify = null;
 
-		if(getBase_Class() != null) {
+		if (getBase_Class() != null) {
 			Iterator<DirectedRelationship> itDep = getBase_Class().getTargetDirectedRelationships().iterator();
 
 			// Find Verify link
-			while(itDep.hasNext()) {
+			while (itDep.hasNext()) {
 				DirectedRelationship currentDRelationship = itDep.next();
 				currentVerify = UMLUtil.getStereotypeApplication(currentDRelationship, Verify.class);
 
-				if(currentVerify != null) {
+				if (currentVerify != null) {
 					verifiedBy.addAll(currentVerify.getBase_Abstraction().getClients());
 				}
 			}
@@ -602,7 +611,7 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getVerifiedBy(String name) {
@@ -612,15 +621,17 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NamedElement getVerifiedBy(String name, boolean ignoreCase, EClass eClass) {
-		verifiedByLoop: for(NamedElement verifiedBy : getVerifiedBy()) {
-			if(eClass != null && !eClass.isInstance(verifiedBy))
+		verifiedByLoop: for (NamedElement verifiedBy : getVerifiedBy()) {
+			if (eClass != null && !eClass.isInstance(verifiedBy)) {
 				continue verifiedByLoop;
-			if(name != null && !(ignoreCase ? name.equalsIgnoreCase(verifiedBy.getName()) : name.equals(verifiedBy.getName())))
+			}
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(verifiedBy.getName()) : name.equals(verifiedBy.getName()))) {
 				continue verifiedByLoop;
+			}
 			return verifiedBy;
 		}
 		return null;
@@ -628,31 +639,33 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Class(org.eclipse.uml2.uml.Class newBase_Class) {
 		org.eclipse.uml2.uml.Class oldBase_Class = base_Class;
 		base_Class = newBase_Class;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__BASE_CLASS, oldBase_Class, base_Class));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__ID, oldId, id));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public void setMaster(Requirement newMaster) {
@@ -661,25 +674,27 @@ public class RequirementImpl extends MinimalEObjectImpl.Container implements Req
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setText(String newText) {
 		String oldText = text;
 		text = newText;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, RequirementsPackage.REQUIREMENT__TEXT, oldText, text));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (text: ");

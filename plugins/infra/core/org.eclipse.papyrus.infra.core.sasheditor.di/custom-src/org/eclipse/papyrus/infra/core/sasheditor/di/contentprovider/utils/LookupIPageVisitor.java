@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,25 +24,27 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.PageRef;
 
 /**
  * Visitor used to lookup an {@link IPage} in the {@link ISashWindowsContainer}.
- * 
+ *
  * The visitor walk all IPage of the container, and compare the "rawmodel" of the IPage with the identifier.
  * Take into account the fact the the identifier can be a 'Diagram', and that the Diagram type is available in
  * a {@link PageRef#getPageIdentifier()}
+ * 
  * @author cedric dumoulin
  *
  */
 public class LookupIPageVisitor implements IPageVisitor {
 
-	
+
 	/**
 	 * Identifier to compare with specified page
 	 */
 	protected Object identifier;
-	
+
 	/**
 	 * The found page.
 	 */
 	protected IPage result = null;
+
 	/**
 	 * Constructor.
 	 *
@@ -52,7 +54,7 @@ public class LookupIPageVisitor implements IPageVisitor {
 		this.identifier = identifier;
 	}
 
-	
+
 	/**
 	 * @return the result
 	 */
@@ -65,13 +67,14 @@ public class LookupIPageVisitor implements IPageVisitor {
 	 *
 	 * @param page
 	 */
+	@Override
 	public void accept(IComponentPage page) {
-		
-		if(result !=null) {
+
+		if (result != null) {
 			return;
-			
+
 		}
-		if(IPageUtils.getRawModel(page) == identifier) {
+		if (IPageUtils.getRawModel(page) == identifier) {
 			result = page;
 		}
 
@@ -82,13 +85,14 @@ public class LookupIPageVisitor implements IPageVisitor {
 	 *
 	 * @param page
 	 */
+	@Override
 	public void accept(IEditorPage page) {
-		
-		if(result !=null) {
+
+		if (result != null) {
 			return;
-			
+
 		}
-		if(IPageUtils.getRawModel(page) == identifier) {
+		if (IPageUtils.getRawModel(page) == identifier) {
 			result = page;
 		}
 

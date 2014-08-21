@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.infra.extendedtypes.ViewActionConfiguration;
  * <li>{@link org.eclipse.papyrus.infra.extendedtypes.impl.AspectViewTypeConfigurationImpl#getActionConfiguration <em>Action Configuration</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl implements AspectViewTypeConfiguration {
@@ -47,7 +47,7 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	 * The cached value of the '{@link #getActionConfiguration() <em>Action Configuration</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getActionConfiguration()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AspectViewTypeConfigurationImpl() {
@@ -67,7 +67,7 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -78,11 +78,11 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<ViewActionConfiguration> getActionConfiguration() {
-		if(actionConfiguration == null) {
+		if (actionConfiguration == null) {
 			actionConfiguration = new EObjectContainmentEList<ViewActionConfiguration>(ViewActionConfiguration.class, this, ExtendedtypesPackage.ASPECT_VIEW_TYPE_CONFIGURATION__ACTION_CONFIGURATION);
 		}
 		return actionConfiguration;
@@ -91,14 +91,14 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.ASPECT_VIEW_TYPE_CONFIGURATION__ACTION_CONFIGURATION:
-			return ((InternalEList<?>)getActionConfiguration()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getActionConfiguration()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -106,12 +106,12 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.ASPECT_VIEW_TYPE_CONFIGURATION__ACTION_CONFIGURATION:
 			return getActionConfiguration();
 		}
@@ -121,16 +121,16 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.ASPECT_VIEW_TYPE_CONFIGURATION__ACTION_CONFIGURATION:
 			getActionConfiguration().clear();
-			getActionConfiguration().addAll((Collection<? extends ViewActionConfiguration>)newValue);
+			getActionConfiguration().addAll((Collection<? extends ViewActionConfiguration>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,12 +139,12 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.ASPECT_VIEW_TYPE_CONFIGURATION__ACTION_CONFIGURATION:
 			getActionConfiguration().clear();
 			return;
@@ -155,15 +155,15 @@ public class AspectViewTypeConfigurationImpl extends ViewTypeConfigurationImpl i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case ExtendedtypesPackage.ASPECT_VIEW_TYPE_CONFIGURATION__ACTION_CONFIGURATION:
 			return actionConfiguration != null && !actionConfiguration.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
-} //AspectViewTypeConfigurationImpl
+} // AspectViewTypeConfigurationImpl

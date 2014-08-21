@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -29,7 +29,7 @@ import org.eclipse.swt.dnd.TransferData;
 
 /**
  * This class is used to handle drop event on diagram
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public abstract class DropTargetListener extends DiagramDropTargetListener {
@@ -47,21 +47,21 @@ public abstract class DropTargetListener extends DiagramDropTargetListener {
 		HashSet<URI> uris = new HashSet<URI>();
 
 		Object transferedObject = getJavaObject(data);
-		if(transferedObject instanceof IStructuredSelection) {
-			IStructuredSelection selection = (IStructuredSelection)transferedObject;
-			for(Iterator<?> it = selection.iterator(); it.hasNext();) {
+		if (transferedObject instanceof IStructuredSelection) {
+			IStructuredSelection selection = (IStructuredSelection) transferedObject;
+			for (Iterator<?> it = selection.iterator(); it.hasNext();) {
 				Object nextSelectedObject = it.next();
 				// if (nextSelectedObject instanceof UMLNavigatorItem) {
 				// View view = ((UMLNavigatorItem)
 				// nextSelectedObject).getView();
 				// nextSelectedObject = view.getElement();
 				// } else
-				if(nextSelectedObject instanceof IAdaptable) {
-					IAdaptable adaptable = (IAdaptable)nextSelectedObject;
+				if (nextSelectedObject instanceof IAdaptable) {
+					IAdaptable adaptable = (IAdaptable) nextSelectedObject;
 					nextSelectedObject = adaptable.getAdapter(EObject.class);
 				}
-				if(nextSelectedObject instanceof EObject) {
-					EObject modelElement = (EObject)nextSelectedObject;
+				if (nextSelectedObject instanceof EObject) {
+					EObject modelElement = (EObject) nextSelectedObject;
 					Resource modelElementResource = modelElement.eResource();
 					uris.add(modelElementResource.getURI().appendFragment(modelElementResource.getURIFragment(modelElement)));
 					// TODO check visualID supported by class diagram
@@ -70,7 +70,7 @@ public abstract class DropTargetListener extends DiagramDropTargetListener {
 		}
 
 		ArrayList<EObject> result = new ArrayList<EObject>();
-		for(URI uri : uris) {
+		for (URI uri : uris) {
 			EObject modelObject = getTransactionalEditingDomain().getResourceSet().getEObject(uri, true);
 			result.add(modelObject);
 		}

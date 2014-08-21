@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,35 +47,35 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	private INattableModelManager tableManager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param tableManager
-	 *        the table manager to use
+	 *            the table manager to use
 	 */
 	public ColumnSortModel(final INattableModelManager tableManager) {
 		this.tableManager = tableManager;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#getSortedColumnIndexes()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public List<Integer> getSortedColumnIndexes() {
 		final List<Integer> sortedColumnsIndex = new ArrayList<Integer>();
-		for(final Object current : sortedColumns) {
+		for (final Object current : sortedColumns) {
 			sortedColumnsIndex.add(getColumnIndex(current));
 		}
 		return sortedColumnsIndex;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#isColumnIndexSorted(int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -85,9 +85,9 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#getSortDirection(int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -95,16 +95,16 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	public SortDirectionEnum getSortDirection(int columnIndex) {
 		Object object = getObject(columnIndex);
 		SortDirectionEnum direction = sortedColumnsAndDirection.get(object);
-		if(direction == null) {
+		if (direction == null) {
 			direction = SortDirectionEnum.NONE;
 		}
 		return direction;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#getSortOrder(int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -115,9 +115,9 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#getComparatorsForColumnIndex(int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -129,9 +129,9 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#sort(int, org.eclipse.nebula.widgets.nattable.sort.SortDirectionEnum, boolean)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @param sortDirection
 	 * @param accumulate
@@ -140,18 +140,18 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	public void sort(int columnIndex, SortDirectionEnum sortDirection, boolean accumulate) {
 		final Object columnElement = getObject(columnIndex);
 
-		if(!accumulate) {
+		if (!accumulate) {
 			clear();
 		}
 
 		this.sortedColumns.remove(columnElement);
 		this.sortedColumnsAndDirection.remove(columnElement);
-		if(sortDirection != SortDirectionEnum.NONE) {
+		if (sortDirection != SortDirectionEnum.NONE) {
 			this.sortedColumnsAndDirection.put(columnElement, sortDirection);
 			this.sortedColumns.add(0, columnElement);
 		}
 		List<Comparator<Object>> comparators = new ArrayList<Comparator<Object>>();
-		for(final Object current : sortedColumns) {
+		for (final Object current : sortedColumns) {
 			Comparator<Object> newOne = new RowComparator(current, this.sortedColumnsAndDirection.get(current), tableManager);
 			comparators.add(newOne);
 		}
@@ -163,24 +163,24 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	 */
 	protected void setAxisComparator() {
 		final Comparator<Object> comp = createComparator();
-		final ICompositeAxisManager manager = (ICompositeAxisManager)tableManager.getRowAxisManager();
-		manager.setAxisComparator(comp);//the sort is done by the manager when we change its comparator
+		final ICompositeAxisManager manager = (ICompositeAxisManager) tableManager.getRowAxisManager();
+		manager.setAxisComparator(comp);// the sort is done by the manager when we change its comparator
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the created axis comparator to use or <code>null</code>
 	 */
 	protected final Comparator<Object> createComparator() {
 		List<Comparator<Object>> comparators = new ArrayList<Comparator<Object>>();
-		for(final Object current : sortedColumns) {
+		for (final Object current : sortedColumns) {
 			Comparator<Object> newOne = new RowComparator(current, this.sortedColumnsAndDirection.get(current), tableManager);
 			comparators.add(newOne);
 		}
 
 		final Comparator<Object> comp;
-		if(comparators.isEmpty()) {
+		if (comparators.isEmpty()) {
 			comp = null;
 		} else {
 			comp = new CompositeComparator<Object>(comparators);
@@ -189,9 +189,9 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.sort.ISortModel#clear()
-	 * 
+	 *
 	 */
 	@Override
 	public void clear() {
@@ -200,7 +200,7 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param columnIndex
 	 * @return
 	 */
@@ -209,7 +209,7 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -220,11 +220,12 @@ public class ColumnSortModel implements IPapyrusSortModel {
 	/**
 	 * clear the comparator list, according to the removed columns
 	 */
+	@Override
 	public void updateSort() {
 		final ListIterator<Object> iterator = this.sortedColumns.listIterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			final Object current = iterator.next();
-			if(-1 == tableManager.getColumnElementsList().indexOf(current)) {
+			if (-1 == tableManager.getColumnElementsList().indexOf(current)) {
 				iterator.remove();
 				this.sortedColumnsAndDirection.remove(current);
 				this.sortedColumns.remove(current);

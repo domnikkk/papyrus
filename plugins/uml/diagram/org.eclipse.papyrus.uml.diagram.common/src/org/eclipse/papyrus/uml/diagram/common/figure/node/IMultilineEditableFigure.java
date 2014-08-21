@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,14 +26,14 @@ public interface IMultilineEditableFigure extends IFigure {
 
 	/**
 	 * Gets the text of the multi-line field
-	 * 
+	 *
 	 * @return the text
 	 */
 	public String getText();
 
 	/**
 	 * Gets the location of the multi-line field
-	 * 
+	 *
 	 * @return the edition location
 	 */
 	public Point getEditionLocation();

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Anass RADOUANI (AtoS) 
+ *    Anass RADOUANI (AtoS)
  *******************************************************************************/
 
 package org.eclipse.papyrus.infra.export.wizard;
@@ -42,9 +42,10 @@ public class ExportDiagramsPage extends WizardPage {
 
 	/**
 	 * Create contents of the wizard.
-	 * 
+	 *
 	 * @param parent
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		export = new ExportComposite(parent, SWT.NONE);
 		export.setSelectedDiagramFile(file);

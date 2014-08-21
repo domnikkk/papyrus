@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,13 +42,14 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		String editString = "";
 
 		EObject eObject = EMFHelper.getEObject(element);
-		if((eObject != null) && (eObject instanceof NamedElement)) {
-			NamedElement semElement = (NamedElement)eObject;
-			if(semElement.isSetName()) {
+		if ((eObject != null) && (eObject instanceof NamedElement)) {
+			NamedElement semElement = (NamedElement) eObject;
+			if (semElement.isSetName()) {
 				editString = semElement.getName();
 			}
 		}
@@ -58,6 +59,7 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		return ParserEditStatus.EDITABLE_STATUS;
 	}
@@ -65,12 +67,13 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 
 		ICommand command = UnexecutableCommand.INSTANCE;
 
 		EObject objectToEdit = EMFHelper.getEObject(element);
-		if(objectToEdit == null) {
+		if (objectToEdit == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -86,12 +89,13 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if(eObject instanceof NamedElement) {
-			return ((NamedElement)eObject).getName();
+		if (eObject instanceof NamedElement) {
+			return ((NamedElement) eObject).getName();
 		}
 
 		return result;
@@ -100,11 +104,12 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return UMLPackage.eINSTANCE.getNamedElement_Name().equals(feature);
 			}
 		}
@@ -115,6 +120,7 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		return null;
 	}
@@ -122,6 +128,7 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 		semanticElementsBeingParsed.add(element);
@@ -132,6 +139,7 @@ public class NamedElementLabelParser implements ISemanticParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		return true;
 	}

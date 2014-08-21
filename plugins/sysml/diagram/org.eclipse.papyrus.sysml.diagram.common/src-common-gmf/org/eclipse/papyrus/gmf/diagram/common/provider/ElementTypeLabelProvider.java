@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -20,7 +20,7 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * A label provider that provides the name and image for <code>IElementType</code> objects.
- * 
+ *
  * @author cmahoney
  */
 public class ElementTypeLabelProvider extends LabelProvider {
@@ -28,24 +28,26 @@ public class ElementTypeLabelProvider extends LabelProvider {
 	/**
 	 * Retrieves the image for <code>IElementType</code> objects using
 	 * the <code>IconService</code>.
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getImage(java.lang.Object)
 	 */
+	@Override
 	public Image getImage(Object object) {
-		if(object instanceof IElementType) {
-			return IconService.getInstance().getIcon((IElementType)object);
+		if (object instanceof IElementType) {
+			return IconService.getInstance().getIcon((IElementType) object);
 		}
 		return null;
 	}
 
 	/**
 	 * Uses <code>IElementType.getDisplayName()</code> for the text.
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.ILabelProvider#getText(java.lang.Object)
 	 */
+	@Override
 	public String getText(Object object) {
-		if(object instanceof IElementType) {
-			return ((IElementType)object).getDisplayName();
+		if (object instanceof IElementType) {
+			return ((IElementType) object).getDisplayName();
 		} else {
 			return object.toString();
 		}

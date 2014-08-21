@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009, 2014 Atos Origin, CEA LIST, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *  <a href="mailto:thomas.szadel@atosorigin.com">Thomas Szadel</a> - Initial API and implementation
  *	Camille Letavernier (CEA LIST) camille.letavernier@cea.fr
  *  Christian W. Damus (CEA) - bug 436377
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.ui.resources.refactoring;
 
@@ -42,9 +42,9 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * Participant that is aware of the renaming of a model.
- * 
+ *
  * @author <a href="mailto:thomas.szadel@atosorigin.com">Thomas Szadel</a>
- * 
+ *
  */
 public class RenameModelParticipant extends RenameParticipant {
 
@@ -53,14 +53,14 @@ public class RenameModelParticipant extends RenameParticipant {
 	private IFile newFile;
 
 	private Collection<? extends IResource> impacted;
-	
+
 	private boolean cancelled;
 
 	/**
 	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#createPreChange(org.eclipse.core.runtime.IProgressMonitor)
-	 * 
+	 *
 	 * @param pm
-	 *        The progress monitor.
+	 *            The progress monitor.
 	 * @return The change.
 	 * @throws CoreException
 	 * @throws OperationCanceledException
@@ -73,40 +73,39 @@ public class RenameModelParticipant extends RenameParticipant {
 
 	/**
 	 * Overrides checkConditions.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
-	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#checkConditions(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext)
+	 *
+	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#checkConditions(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.ltk.core.refactoring.participants.CheckConditionsContext)
 	 */
 	@Override
 	public RefactoringStatus checkConditions(IProgressMonitor pm, CheckConditionsContext context) throws OperationCanceledException {
-		if(cancelled) {
+		if (cancelled) {
 			throw new OperationCanceledException();
 		}
-		
-		if(isDiFile(fileToRename) && DiModel.DI_FILE_EXTENSION.equals(newFile.getFileExtension())) {
+
+		if (isDiFile(fileToRename) && DiModel.DI_FILE_EXTENSION.equals(newFile.getFileExtension())) {
 			Collection<IResource> conflictingFiles = findConflictingFiles();
-			if(!conflictingFiles.isEmpty()) {
-				//Conflicts have been detected. Warn the user.
+			if (!conflictingFiles.isEmpty()) {
+				// Conflicts have been detected. Warn the user.
 
 				final String[] fileNames = new String[conflictingFiles.size()];
 
 				int i = 0;
-				for(IResource resource : conflictingFiles) {
+				for (IResource resource : conflictingFiles) {
 					fileNames[i++] = resource.getName();
 				}
 
 				String defaultMessage;
 
-				if(fileNames.length == 1) {
+				if (fileNames.length == 1) {
 					defaultMessage = "The file " + fileNames[0] + " already exists. Delete it or choose another name";
 				} else {
 					defaultMessage = "Some files alreay exist. Delete them or choose another name. Files: " + Arrays.deepToString(fileNames);
 				}
 
 				Display display = Display.getDefault();
-				if(display != null) {
+				if (display != null) {
 
 					RunnableWithResult<Boolean> runnable;
 					Display.getDefault().syncExec(runnable = new RunnableWithResult.Impl<Boolean>() {
@@ -114,10 +113,10 @@ public class RenameModelParticipant extends RenameParticipant {
 						public void run() {
 							setResult(false);
 							final Shell shell = Display.getDefault().getActiveShell();
-							if(shell != null) {
+							if (shell != null) {
 								String title, message;
 
-								if(fileNames.length == 1) {
+								if (fileNames.length == 1) {
 									title = "The file " + fileNames[0] + " already exists.";
 									message = "The file " + fileNames[0] + " already exists. Do you want to delete it? (Warning: This operation cannot be undone)";
 								} else {
@@ -133,19 +132,19 @@ public class RenameModelParticipant extends RenameParticipant {
 
 					});
 
-					if(runnable.getResult()) {
+					if (runnable.getResult()) {
 						try {
-							for(IResource resource : conflictingFiles) {
+							for (IResource resource : conflictingFiles) {
 								resource.delete(true, new NullProgressMonitor());
 								impacted.remove(resource);
 							}
 						} catch (CoreException ex) {
-							//FIXME: Inconsistent state. Use a DeleteResourceChange to allow valid Undo/Redo
-							//Use preChange?
+							// FIXME: Inconsistent state. Use a DeleteResourceChange to allow valid Undo/Redo
+							// Use preChange?
 							return RefactoringStatus.createFatalErrorStatus(ex.getMessage());
 						}
 					} else {
-						pm.setCanceled(true); //Cancel the refactoring
+						pm.setCanceled(true); // Cancel the refactoring
 						return new RefactoringStatus();
 					}
 				} else {
@@ -160,15 +159,15 @@ public class RenameModelParticipant extends RenameParticipant {
 	private Collection<IResource> findConflictingFiles() {
 		List<IResource> conflictingFiles = new LinkedList<IResource>();
 
-		if(isDiFile(fileToRename)) {
-			//Check whether conflicting files exist.
+		if (isDiFile(fileToRename)) {
+			// Check whether conflicting files exist.
 			Collection<IResource> participants = ModelParticipantHelpers.getRelatedFiles(fileToRename);
 			participants.add(fileToRename);
-			for(IResource participant : participants) {
+			for (IResource participant : participants) {
 				IContainer parent = participant.getParent();
 				String targetName = newFile.getFullPath().removeFileExtension().addFileExtension(participant.getFileExtension()).lastSegment();
 				IFile targetFile = parent.getFile(new Path(targetName));
-				if(targetFile.exists()) {
+				if (targetFile.exists()) {
 					conflictingFiles.add(targetFile);
 				}
 			}
@@ -179,9 +178,9 @@ public class RenameModelParticipant extends RenameParticipant {
 
 	/**
 	 * Overrides createChange.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#createChange(org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	@Override
@@ -191,9 +190,9 @@ public class RenameModelParticipant extends RenameParticipant {
 
 	/**
 	 * Overrides getName.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#getName()
 	 */
 	@Override
@@ -203,63 +202,63 @@ public class RenameModelParticipant extends RenameParticipant {
 
 	/**
 	 * Overrides initialize.
-	 * 
+	 *
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ltk.core.refactoring.participants.RefactoringParticipant#initialize(java.lang.Object)
 	 */
 	@Override
 	protected boolean initialize(Object element) {
 		cancelled = false;
-		
-		if(!(element instanceof IFile)) {
+
+		if (!(element instanceof IFile)) {
 			return false;
 		}
 
-		if(!isDiFile((IFile)element)) {
+		if (!isDiFile((IFile) element)) {
 			return false;
 		}
 
-		fileToRename = (IFile)element;
+		fileToRename = (IFile) element;
 		String ext = fileToRename.getFileExtension();
 
 		IContainer parent = fileToRename.getParent();
 		String newName = getArguments().getNewName();
 
 		int idx = newName.lastIndexOf('.');
-		//Do not refactor when the user remove or changes the extension: This is not a valid Papyrus model anymore
-		if(idx > 0) {
+		// Do not refactor when the user remove or changes the extension: This is not a valid Papyrus model anymore
+		if (idx > 0) {
 			String extension = newName.substring(idx + 1);
-			if(!DiModel.DI_FILE_EXTENSION.equals(extension)) { //Extension changed
+			if (!DiModel.DI_FILE_EXTENSION.equals(extension)) { // Extension changed
 				return false;
 			}
 			newName = newName.substring(0, idx);
 		} else {
-			return false; //No extension
+			return false; // No extension
 		}
 
 		boolean otherFiles = false;
-		for(IResource file : ModelParticipantHelpers.getRelatedFiles(fileToRename)) {
+		for (IResource file : ModelParticipantHelpers.getRelatedFiles(fileToRename)) {
 			IPath path = file.getFullPath();
 			// Only add the change if the resource exists
 			IFile renFile = parent.getFile(path.makeRelativeTo(parent.getFullPath()));
-			if(!path.equals(fileToRename.getFullPath()) && renFile.exists()) {
+			if (!path.equals(fileToRename.getFullPath()) && renFile.exists()) {
 				otherFiles = true;
 				break;
 			}
 		}
-		if(otherFiles) {
+		if (otherFiles) {
 			// Get the new file
 			IPath newDiPath = fileToRename.getFullPath().removeLastSegments(1);
 			newDiPath = newDiPath.append(newName).addFileExtension(ext);
 			newFile = parent.getFile(newDiPath.makeRelativeTo(parent.getFullPath()));
-			
+
 			try {
 				impacted = ModelParticipantHelpers.getResourceToFix(fileToRename);
 			} catch (OperationCanceledException e) {
 				cancelled = true;
 			}
-			
+
 			return true;
 		} else {
 			return false;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,16 +21,16 @@ import org.eclipse.nebula.widgets.nattable.selection.SelectionLayer;
 
 /**
  * Papyrus selection layer
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class PapyrusSelectionLayer extends SelectionLayer {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param underlyingLayer
 	 * @param useDefaultConfiguration
 	 */
@@ -39,9 +39,9 @@ public class PapyrusSelectionLayer extends SelectionLayer {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param underlyingLayer
 	 * @param selectionModel
 	 * @param useDefaultConfiguration
@@ -52,9 +52,9 @@ public class PapyrusSelectionLayer extends SelectionLayer {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param underlyingLayer
 	 * @param selectionModel
 	 * @param useDefaultConfiguration
@@ -64,9 +64,9 @@ public class PapyrusSelectionLayer extends SelectionLayer {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param underlyingLayer
 	 */
 	public PapyrusSelectionLayer(IUniqueIndexLayer underlyingLayer) {
@@ -74,10 +74,11 @@ public class PapyrusSelectionLayer extends SelectionLayer {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.selection.SelectionLayer#registerCommandHandlers()
-	 * 
+	 *
 	 */
+	@Override
 	protected void registerCommandHandlers() {
 		super.registerCommandHandlers();
 		unregisterCommandHandler(CopyDataToClipboardCommand.class);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -90,6 +90,7 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ActivityPartitionItemSemanticEditPolicy());
@@ -103,9 +104,10 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 
 	/**
 	 * Papyrus codeGen
-	 * 
+	 *
 	 * @generated
 	 **/
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 	}
@@ -116,18 +118,21 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -138,6 +143,7 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new ActivityPartitionFigure();
 	}
@@ -145,22 +151,23 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public ActivityPartitionFigure getPrimaryShape() {
-		return (ActivityPartitionFigure)primaryShape;
+		return (ActivityPartitionFigure) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ActivityPartitionNameEditPart) {
-			((ActivityPartitionNameEditPart)childEditPart).setLabel(getPrimaryShape().getPartitionLabel());
+		if (childEditPart instanceof ActivityPartitionNameEditPart) {
+			((ActivityPartitionNameEditPart) childEditPart).setLabel(getPrimaryShape().getPartitionLabel());
 			return true;
 		}
-		if(childEditPart instanceof ActivityPartitionActivityPartitionContentCompartmentEditPart) {
+		if (childEditPart instanceof ActivityPartitionActivityPartitionContentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getActivityPartitionCompartment();
-			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way 
-			pane.add(((ActivityPartitionActivityPartitionContentCompartmentEditPart)childEditPart).getFigure());
+			setupContentPane(pane); // FIXME each comparment should handle his content pane in his own way
+			pane.add(((ActivityPartitionActivityPartitionContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -170,12 +177,12 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof ActivityPartitionNameEditPart) {
+		if (childEditPart instanceof ActivityPartitionNameEditPart) {
 			return true;
 		}
-		if(childEditPart instanceof ActivityPartitionActivityPartitionContentCompartmentEditPart) {
+		if (childEditPart instanceof ActivityPartitionActivityPartitionContentCompartmentEditPart) {
 			IFigure pane = getPrimaryShape().getActivityPartitionCompartment();
-			pane.remove(((ActivityPartitionActivityPartitionContentCompartmentEditPart)childEditPart).getFigure());
+			pane.remove(((ActivityPartitionActivityPartitionContentCompartmentEditPart) childEditPart).getFigure());
 			return true;
 		}
 		return false;
@@ -184,8 +191,9 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -194,8 +202,9 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -204,8 +213,9 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure getContentPaneFor(IGraphicalEditPart editPart) {
-		if(editPart instanceof ActivityPartitionActivityPartitionContentCompartmentEditPart) {
+		if (editPart instanceof ActivityPartitionActivityPartitionContentCompartmentEditPart) {
 			return getPrimaryShape().getActivityPartitionCompartment();
 		}
 		return getContentPane();
@@ -214,6 +224,7 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		String prefElementId = "ActivityPartition";
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
@@ -225,12 +236,13 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodeFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -243,13 +255,14 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(5);
 			nodeShape.setLayoutManager(layout);
@@ -260,8 +273,9 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -270,8 +284,9 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -279,24 +294,27 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ActivityPartitionNameEditPart.VISUAL_ID));
 	}
@@ -316,9 +334,9 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+		if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
-		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
+		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
 			types.add(UMLElementTypes.DurationConstraint_3034);
 			types.add(UMLElementTypes.DurationConstraint_3035);
 			types.add(UMLElementTypes.TimeConstraint_3036);
@@ -337,28 +355,28 @@ public class ActivityPartitionEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ActivityPartition", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ActivityPartition", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ActivityPartition", PreferencesConstantsHelper.COLOR_FILL);
 			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 			String prefGradient = PreferencesConstantsHelper.getElementConstant("ActivityPartition", PreferencesConstantsHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 			}
 		}
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;

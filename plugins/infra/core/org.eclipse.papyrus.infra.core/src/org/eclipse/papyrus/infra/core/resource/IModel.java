@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,33 +28,33 @@ import org.eclipse.emf.common.util.URI;
  * root. Elements of a model can be contained in one or several resources. A
  * model is identified by an id, usually the id from the metamodel package
  * (ModelPackage.eCONTENT_TYPE).
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public interface IModel {
 
 	/**
 	 * Initialize the model and set its associated model manager.
-	 * 
+	 *
 	 * @param modelManager
-	 *        The associated model manager.
+	 *            The associated model manager.
 	 */
 	public void init(ModelSet modelManager);
 
 	/**
 	 * Get the identifier identifying this model (aka: uml, notation, ...)
-	 * 
+	 *
 	 * @return
 	 */
 	public String getIdentifier();
 
 	/**
 	 * Create the model repository.
-	 * 
+	 *
 	 * @param fullPath
-	 *        The full path, without extension where the model should be
-	 *        saved.
+	 *            The full path, without extension where the model should be
+	 *            saved.
 	 * @deprecated Use the {@link #createModel(URI)} API, instead.
 	 */
 	@Deprecated
@@ -62,18 +62,18 @@ public interface IModel {
 
 	/**
 	 * Create the model resource(s).
-	 * 
+	 *
 	 * @param uri
-	 *        the URI, without file extension, where the model should be saved.
+	 *            the URI, without file extension, where the model should be saved.
 	 */
 	public void createModel(URI uri);
 
 	/**
 	 * Load the model from the specified path..
-	 * 
+	 *
 	 * @param path
-	 *        The full path, without extension where the model should be
-	 *        saved. Should be used as a bases to guess the model IPath.
+	 *            The full path, without extension where the model should be
+	 *            saved. Should be used as a bases to guess the model IPath.
 	 * @deprecated Use the {@link #createModel(URI)} API, instead.
 	 */
 	@Deprecated
@@ -81,18 +81,18 @@ public interface IModel {
 
 	/**
 	 * Load the model from the specified path..
-	 * 
+	 *
 	 * @param uri
-	 *        the URI, without file extension, where the model should be saved.
-	 *        Should be used as a basis to guess the model URI.
+	 *            the URI, without file extension, where the model should be saved.
+	 *            Should be used as a basis to guess the model URI.
 	 */
 	public void loadModel(URI uri);
 
 	/**
 	 * Import the model from the specified path.
-	 * 
+	 *
 	 * @param path
-	 *        The full path, without extension.
+	 *            The full path, without extension.
 	 * @deprecated Use the {@link #importModel(URI)} API, instead.
 	 */
 	@Deprecated
@@ -100,24 +100,24 @@ public interface IModel {
 
 	/**
 	 * Import the model from the specified URI.
-	 * 
+	 *
 	 * @param uri
-	 *        the URI, without file extension, where the model is.
+	 *            the URI, without file extension, where the model is.
 	 */
 	public void importModel(URI uri);
 
 	/**
 	 * Save the model in its repository.
-	 * 
+	 *
 	 * @throws IOException
-	 * 
+	 *
 	 */
 	public void saveModel() throws IOException;
 
 	/**
 	 * Change the path under which the model should be save. Do not save it now
 	 * !
-	 * 
+	 *
 	 * @deprecated Use the {@link #setModelURI(URI)} API, instead.
 	 */
 	@Deprecated
@@ -125,9 +125,9 @@ public interface IModel {
 
 	/**
 	 * Sets the path under which the model should be saved. Does not save it.
-	 * 
+	 *
 	 * @param uri
-	 *        the new base model URI, without file extension
+	 *            the new base model URI, without file extension
 	 */
 	public void setModelURI(URI uri);
 
@@ -140,31 +140,31 @@ public interface IModel {
 	 * Add a snippet to this model. The snippet is called just after model is
 	 * initialized, and before it is disposed or unloaded. Snippet can be shared
 	 * among models.
-	 * 
+	 *
 	 * @param snippet
-	 *        The snippet to add.
+	 *            The snippet to add.
 	 */
 	public void addModelSnippet(IModelSnippet snippet);
 
 	/**
 	 * return uris of this model resources that had been modified since the last save.
-	 * 
+	 *
 	 * @return
 	 */
 	public Set<URI> getModifiedURIs();
 
 	/**
 	 * Sets the list of Model (referenced by identifiers) that should be loaded before this one is loaded.
-	 * 
+	 *
 	 * @param afterLoadModelIdentifiers
-	 *        the list of Model (referenced by identifiers) that should be loaded before this one can be loaded, or <code>null</code> if there are no
-	 *        dependencies
+	 *            the list of Model (referenced by identifiers) that should be loaded before this one can be loaded, or <code>null</code> if there are no
+	 *            dependencies
 	 */
 	public void setAfterLoadModelDependencies(List<String> afterLoadModelIdentifiers);
 
 	/**
 	 * Returns the Models (referenced by identifiers) that should be loaded before this one is loaded.
-	 * 
+	 *
 	 * @return the Models (referenced by identifiers) that should be loaded before this one can be loaded, or <code>null</code> if there are no
 	 *         dependencies
 	 */
@@ -172,16 +172,16 @@ public interface IModel {
 
 	/**
 	 * Sets the list of Model (referenced by identifiers) that should not be unloaded before this one is unloaded.
-	 * 
+	 *
 	 * @param unloadBeforeModelIdentifiers
-	 *        the Models (referenced by identifiers) that should not be unloaded before this one is unloaded, or <code>null</code> if there are no
-	 *        dependencies
+	 *            the Models (referenced by identifiers) that should not be unloaded before this one is unloaded, or <code>null</code> if there are no
+	 *            dependencies
 	 */
 	public void setBeforeUnloadDependencies(List<String> unloadBeforeModelIdentifiers);
 
 	/**
 	 * Returns the Models (referenced by identifiers) that should not be unloaded before this one is unloaded.
-	 * 
+	 *
 	 * @return the Models (referenced by identifiers) that should not be unloaded before this one is loaded, or <code>null</code> if there are no
 	 *         dependencies
 	 */
@@ -189,7 +189,7 @@ public interface IModel {
 
 	/**
 	 * Tests whether this model provides the specified element
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import org.eclipse.core.runtime.Status;
 
 /**
  * This status is used y the String Value solvers
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class StringValueConverterStatus extends Status {
 
@@ -31,17 +31,17 @@ public class StringValueConverterStatus extends Status {
 	private Collection<String> unresolvedString;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param severity
-	 *        the severity of the status
+	 *            the severity of the status
 	 * @param pluginId
-	 *        the plugin id providing this status
+	 *            the plugin id providing this status
 	 * @param message
-	 *        the message for this status
+	 *            the message for this status
 	 * @param unresolvedString
-	 *        the list of the unresolved string
+	 *            the list of the unresolved string
 	 */
 	public StringValueConverterStatus(int severity, String pluginId, String message, Collection<String> unresolvedString) {
 		super(severity, pluginId, message);
@@ -50,7 +50,7 @@ public class StringValueConverterStatus extends Status {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the list of the unresolved string
 	 */

@@ -20,6 +20,7 @@ import org.eclipse.papyrus.infra.constraints.environment.EnvironmentPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentFactory {
@@ -27,16 +28,16 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static EnvironmentFactory init() {
 		try {
-			EnvironmentFactory theEnvironmentFactory = (EnvironmentFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/constraints/environment/0.9"); 
+			EnvironmentFactory theEnvironmentFactory = (EnvironmentFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/constraints/environment/0.9");
 			if (theEnvironmentFactory != null) {
 				return theEnvironmentFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new EnvironmentFactoryImpl();
@@ -46,6 +47,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnvironmentFactoryImpl() {
@@ -55,21 +57,25 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case EnvironmentPackage.CONSTRAINT_ENVIRONMENT: return createConstraintEnvironment();
-			case EnvironmentPackage.CONSTRAINT_TYPE: return createConstraintType();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case EnvironmentPackage.CONSTRAINT_ENVIRONMENT:
+			return createConstraintEnvironment();
+		case EnvironmentPackage.CONSTRAINT_TYPE:
+			return createConstraintType();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintEnvironment createConstraintEnvironment() {
@@ -80,6 +86,7 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintType createConstraintType() {
@@ -90,15 +97,17 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnvironmentPackage getEnvironmentPackage() {
-		return (EnvironmentPackage)getEPackage();
+		return (EnvironmentPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -107,4 +116,4 @@ public class EnvironmentFactoryImpl extends EFactoryImpl implements EnvironmentF
 		return EnvironmentPackage.eINSTANCE;
 	}
 
-} //EnvironmentFactoryImpl
+} // EnvironmentFactoryImpl

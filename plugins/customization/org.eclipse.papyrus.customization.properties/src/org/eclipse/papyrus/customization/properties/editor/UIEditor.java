@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -88,7 +88,7 @@ import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetPage;
  * A customization editor for Contexts from the Papyrus Property View.
  * The Editor is based on the Ecore reflective editor and the EMF Facet
  * customizable content & label providers
- * 
+ *
  * @author Camille Letavernier
  */
 public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageContributor, CommandStackListener {
@@ -109,15 +109,15 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 		Composite gParent = new Composite(getContainer(), SWT.NONE);
 		gParent.setLayout(new FillLayout());
 
-		//SashForm parent = new SashForm(gParent, SWT.VERTICAL | SWT.V_SCROLL | SWT.H_SCROLL);
-		//parent.setLayout(new FillLayout());
+		// SashForm parent = new SashForm(gParent, SWT.VERTICAL | SWT.V_SCROLL | SWT.H_SCROLL);
+		// parent.setLayout(new FillLayout());
 
 		Composite parent = new Composite(gParent, SWT.NONE);
 		parent.setLayout(new PropertiesLayout());
 
 		// Only creates the other pages if there is something that can be edited
 		//
-		if(!getEditingDomain().getResourceSet().getResources().isEmpty()) {
+		if (!getEditingDomain().getResourceSet().getResources().isEmpty()) {
 			// Create a page for the selection tree view.
 			//
 
@@ -128,7 +128,7 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 				@Override
 				public void commit(AbstractEditor editor) {
-					filter.setPattern((String)filterPattern.getValue());
+					filter.setPattern((String) filterPattern.getValue());
 					selectionViewer.refresh();
 				}
 
@@ -138,10 +138,10 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 			tree.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 
 			selectionViewer = new TreeViewer(tree);
-			selectionViewer.setFilters(new ViewerFilter[]{ filter });
+			selectionViewer.setFilters(new ViewerFilter[] { filter });
 			setCurrentViewer(selectionViewer);
 			ContextContentProvider contentProvider = new ContextContentProvider();
-			//contentProvider.getCustomizationManager().installCustomPainter(tree);
+			// contentProvider.getCustomizationManager().installCustomPainter(tree);
 
 			ILabelProvider labelProvider = new ContextLabelProvider();
 
@@ -161,9 +161,9 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 			setActivePage(0);
 
-			//			Preview preview = new Preview(this);
-			//			preview.createPartControl(parent);
-			//			addPreview(preview);
+			// Preview preview = new Preview(this);
+			// preview.createPartControl(parent);
+			// addPreview(preview);
 
 			parent.layout();
 		}
@@ -177,7 +177,7 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 			@Override
 			public void controlResized(ControlEvent event) {
-				if(!guard) {
+				if (!guard) {
 					guard = true;
 					hideTabs();
 					guard = false;
@@ -189,36 +189,37 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 		changePerspective();
 
-		//FIXME ppe:/ conversion
-		//This is a hack. The ppe:/ URIs are not correctly converted when the model is saved.
+		// FIXME ppe:/ conversion
+		// This is a hack. The ppe:/ URIs are not correctly converted when the model is saved.
 		getEditingDomain().getResourceSet().getURIConverter().getURIHandlers().add(0, new PropertiesURIHandler());
 	}
 
 	protected void changePerspective() {
 		IWorkbenchPage activePage = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
-		if(activePage == null) {
+		if (activePage == null) {
 			return;
 		}
 
 		IPerspectiveDescriptor descriptor = activePage.getPerspective();
 
-		if(descriptor.getId().equals(Activator.CUSTOMIZATION_PERSPECTIVE_ID)) {
+		if (descriptor.getId().equals(Activator.CUSTOMIZATION_PERSPECTIVE_ID)) {
 			return;
 		}
 
 		boolean openPerspective = false;
 
-		//		if(CustomizationPreferencePage.askForConfirmation()) {
-		//			int defaultIndex = CustomizationPreferencePage.openCustomizationPerspective() ? 0 : 1;
-		//			System.out.println(getContainer().getShell());
-		//			MessageDialog confirmationDialog = new MessageDialog(getContainer().getShell(), Messages.UIEditor_ChangePerspective, null, Messages.UIEditor_ChangePerspectiveMessage, MessageDialog.QUESTION, new String[]{ IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL }, defaultIndex);
-		//			confirmationDialog.open();
-		//			openPerspective = confirmationDialog.getReturnCode() == 0;
-		//		} else {
-		//			openPerspective = CustomizationPreferencePage.openCustomizationPerspective();
-		//		}
+		// if(CustomizationPreferencePage.askForConfirmation()) {
+		// int defaultIndex = CustomizationPreferencePage.openCustomizationPerspective() ? 0 : 1;
+		// System.out.println(getContainer().getShell());
+		// MessageDialog confirmationDialog = new MessageDialog(getContainer().getShell(), Messages.UIEditor_ChangePerspective, null, Messages.UIEditor_ChangePerspectiveMessage, MessageDialog.QUESTION, new String[]{ IDialogConstants.YES_LABEL,
+		// IDialogConstants.NO_LABEL }, defaultIndex);
+		// confirmationDialog.open();
+		// openPerspective = confirmationDialog.getReturnCode() == 0;
+		// } else {
+		// openPerspective = CustomizationPreferencePage.openCustomizationPerspective();
+		// }
 
-		if(openPerspective) {
+		if (openPerspective) {
 			try {
 				PlatformUI.getWorkbench().showPerspective(Activator.CUSTOMIZATION_PERSPECTIVE_ID, PlatformUI.getWorkbench().getActiveWorkbenchWindow());
 			} catch (WorkbenchException ex) {
@@ -238,7 +239,7 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 		getSite().registerContextMenu(contextMenu, new UnwrappingSelectionProvider(viewer));
 
 		int dndOperations = DND.DROP_COPY | DND.DROP_MOVE | DND.DROP_LINK;
-		Transfer[] transfers = new Transfer[]{ LocalTransfer.getInstance() };
+		Transfer[] transfers = new Transfer[] { LocalTransfer.getInstance() };
 		viewer.addDragSupport(dndOperations, transfers, new ViewerDragAdapter(viewer));
 		viewer.addDropSupport(dndOperations, transfers, new MoDiscoDropAdapter(editingDomain, viewer));
 	}
@@ -256,9 +257,9 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 		saveAsDialog.setMessage(EcoreEditorPlugin.INSTANCE.getString("_UI_SaveAs_message")); //$NON-NLS-1$
 		saveAsDialog.open();
 		IPath path = saveAsDialog.getResult();
-		if(path != null) {
+		if (path != null) {
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-			if(file != null) {
+			if (file != null) {
 				ResourceSet resourceSet = editingDomain.getResourceSet();
 				Resource currentResource = resourceSet.getResources().get(0);
 				String currentExtension = currentResource.getURI().fileExtension();
@@ -267,13 +268,13 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 				URI newURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
 				String newExtension = newURI.fileExtension();
 
-				if(currentExtension.equals(ECORE_FILE_EXTENSION) && newExtension.equals(EMOF_FILE_EXTENSION) || currentExtension.equals(EMOF_FILE_EXTENSION) && newExtension.equals(ECORE_FILE_EXTENSION)) {
+				if (currentExtension.equals(ECORE_FILE_EXTENSION) && newExtension.equals(EMOF_FILE_EXTENSION) || currentExtension.equals(EMOF_FILE_EXTENSION) && newExtension.equals(ECORE_FILE_EXTENSION)) {
 					Resource newResource = resourceSet.createResource(newURI);
 					newResource.getContents().addAll(currentResource.getContents());
 					resourceSet.getResources().remove(0);
 					resourceSet.getResources().move(0, newResource);
 				} else {
-					//System.out.println("Replace " + currentURI + " by " + newURI);
+					// System.out.println("Replace " + currentURI + " by " + newURI);
 					currentResource.setURI(newURI);
 				}
 
@@ -282,13 +283,13 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 				setPartName(file.getName());
 
 				Context context = getContext();
-				if(context != null) {
+				if (context != null) {
 					EcoreUtil.resolveAll(context);
-					for(Resource resource : currentResource.getResourceSet().getResources()) {
-						if(resource != currentResource) {
-							if(isRelative(currentURI, resource)) {
+					for (Resource resource : currentResource.getResourceSet().getResources()) {
+						if (resource != currentResource) {
+							if (isRelative(currentURI, resource)) {
 								URI newResourceURI = resource.getURI().deresolve(currentURI).resolve(newURI);
-								//System.out.println("Replace " + resource.getURI() + " by " + newResourceURI);
+								// System.out.println("Replace " + resource.getURI() + " by " + newResourceURI);
 								resource.setURI(newResourceURI);
 							}
 						}
@@ -303,8 +304,8 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 	private boolean isRelative(URI baseURI, Resource resource) {
 		URI resourceURI = resource.getURI();
 		URI uri = resourceURI.deresolve(baseURI);
-		if(uri.isRelative()) {
-			if(!(uri.toString().startsWith("..") || uri.toString().startsWith("/"))) { //$NON-NLS-1$ //$NON-NLS-2$
+		if (uri.isRelative()) {
+			if (!(uri.toString().startsWith("..") || uri.toString().startsWith("/"))) { //$NON-NLS-1$ //$NON-NLS-2$
 				return true;
 			}
 		}
@@ -313,22 +314,22 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 	protected Context getContext() {
 		EObject object = getEditingDomain().getResourceSet().getResources().get(0).getContents().get(0);
-		if(object instanceof Context) {
-			return (Context)object;
+		if (object instanceof Context) {
+			return (Context) object;
 		}
 		return null;
 	}
 
 	private void refreshContext() {
 		Context context = getContext();
-		if(context != null) {
+		if (context != null) {
 			ConfigurationManager.getInstance().refresh(context);
 		}
 	}
 
 	@Override
 	public IPropertySheetPage getPropertySheetPage() {
-		if(iPropertySheetPage == null) {
+		if (iPropertySheetPage == null) {
 			iPropertySheetPage = new TabbedPropertySheetPage(this);
 		}
 		return iPropertySheetPage;
@@ -341,7 +342,7 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 	/**
 	 * Registers a Preview to this Editor
-	 * 
+	 *
 	 * @param preview
 	 */
 	public void addPreview(Preview preview) {
@@ -352,7 +353,7 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 	/**
 	 * Unregisters a Preview from this editor
-	 * 
+	 *
 	 * @param preview
 	 */
 	public void removePreview(Preview preview) {
@@ -362,11 +363,11 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 	@Override
 	public void dispose() {
-		for(Preview preview : previews) {
+		for (Preview preview : previews) {
 			selectionViewer.removeSelectionChangedListener(preview);
 		}
 		previews.clear();
-		if(iPropertySheetPage != null) {
+		if (iPropertySheetPage != null) {
 			iPropertySheetPage.dispose();
 		}
 		super.dispose();
@@ -380,20 +381,20 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 	@Override
 	public void commandStackChanged(EventObject event) {
 		getViewer().refresh();
-		for(Preview preview : previews) {
+		for (Preview preview : previews) {
 			preview.displayView();
 		}
 	}
 
 	@Override
 	public void createModel() {
-		if(getEditorInput() instanceof ResourceEditorInput) {
+		if (getEditorInput() instanceof ResourceEditorInput) {
 			// override the editing domain with one that uses the resource's
 			// resource set, which already exists
 
-			ResourceSet resourceSet = ((ResourceEditorInput)getEditorInput()).getResource().getResourceSet();
+			ResourceSet resourceSet = ((ResourceEditorInput) getEditorInput()).getResource().getResourceSet();
 
-			if(resourceSet != null) {
+			if (resourceSet != null) {
 				editingDomain = new AdapterFactoryEditingDomain(editingDomain.getAdapterFactory(), editingDomain.getCommandStack(), resourceSet);
 			}
 		}
@@ -429,13 +430,13 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 
 						// Try to select the affected objects.
 						//
-						Command mostRecentCommand = ((CommandStack)event.getSource()).getMostRecentCommand();
-						if(mostRecentCommand != null) {
+						Command mostRecentCommand = ((CommandStack) event.getSource()).getMostRecentCommand();
+						if (mostRecentCommand != null) {
 							setSelectionToViewer(mostRecentCommand.getAffectedObjects());
 						}
-						for(Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
+						for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext();) {
 							PropertySheetPage propertySheetPage = i.next();
-							if(propertySheetPage.getControl().isDisposed()) {
+							if (propertySheetPage.getControl().isDisposed()) {
 								i.remove();
 							} else {
 								propertySheetPage.refresh();
@@ -446,7 +447,7 @@ public class UIEditor extends EcoreEditor implements ITabbedPropertySheetPageCon
 			}
 		});
 
-		//Replace the parent editing domain with a standard one. We don't want to override the isReadOnly() method.
+		// Replace the parent editing domain with a standard one. We don't want to override the isReadOnly() method.
 		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack);
 	}
 }

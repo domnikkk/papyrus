@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,11 +49,11 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * An editpolicy for handling connections end from Comment, Constraint and Observations.
- * 
+ *
  * The semantic element of the Host should be a instance of {@link NamedElement}.
- * 
+ *
  * @see AnnotatedLinkStartEditPolicy
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
@@ -66,31 +66,31 @@ public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(REQ_ANNOTATED_LINK_END.equals(request.getType()) || REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
-			Point location = ((DropRequest)request).getLocation();
+		if (REQ_ANNOTATED_LINK_END.equals(request.getType()) || REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
+			Point location = ((DropRequest) request).getLocation();
 			EditPart host = getHost();
-			//Fixed bugs when link with PartDecomposition.
-			if(host instanceof CustomLifelineEditPart && ((CustomLifelineEditPart)host).isInlineMode()) {
-				List children = ((CustomLifelineEditPart)host).getChildren();
-				for(Object object : children) {
-					if(object instanceof CustomLifelineEditPart) {
-						CustomLifelineFigure figure = ((CustomLifelineEditPart)object).getPrimaryShape();
+			// Fixed bugs when link with PartDecomposition.
+			if (host instanceof CustomLifelineEditPart && ((CustomLifelineEditPart) host).isInlineMode()) {
+				List children = ((CustomLifelineEditPart) host).getChildren();
+				for (Object object : children) {
+					if (object instanceof CustomLifelineEditPart) {
+						CustomLifelineFigure figure = ((CustomLifelineEditPart) object).getPrimaryShape();
 						Point pt = location.getCopy();
 						figure.translateToRelative(pt);
-						if(figure.containsPoint(pt)) {
-							return (EditPart)object;
+						if (figure.containsPoint(pt)) {
+							return (EditPart) object;
 						}
 					}
 				}
-				IFigure nameFigure = ((CustomLifelineEditPart)host).getPrimaryShape().getFigureLifelineNameContainerFigure();
+				IFigure nameFigure = ((CustomLifelineEditPart) host).getPrimaryShape().getFigureLifelineNameContainerFigure();
 				Point pt = location.getCopy();
 				nameFigure.translateToRelative(pt);
-				if(nameFigure.containsPoint(pt)) {
+				if (nameFigure.containsPoint(pt)) {
 					return host;
 				}
 				return null;
 			}
-			if(isEnterAnchorArea(host, location)) {
+			if (isEnterAnchorArea(host, location)) {
 				return host;
 			}
 		}
@@ -99,12 +99,12 @@ public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
 
 	private boolean isEnterAnchorArea(EditPart editPart, Point location) {
 		Point p = location.getCopy();
-		if(editPart instanceof InteractionEditPart || editPart instanceof CombinedFragmentEditPart || editPart instanceof InteractionOperandEditPart) {
-			IFigure figure = ((AbstractGraphicalEditPart)editPart).getFigure();
+		if (editPart instanceof InteractionEditPart || editPart instanceof CombinedFragmentEditPart || editPart instanceof InteractionOperandEditPart) {
+			IFigure figure = ((AbstractGraphicalEditPart) editPart).getFigure();
 			figure.translateToRelative(p);
-			// if mouse location is far from border, do not handle connection event 
+			// if mouse location is far from border, do not handle connection event
 			Rectangle innerRetangle = figure.getBounds().getCopy().shrink(10, 10);
-			if(innerRetangle.contains(p)) {
+			if (innerRetangle.contains(p)) {
 				return false;
 			}
 		}
@@ -113,24 +113,24 @@ public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	public Command getCommand(Request request) {
-		if(REQ_ANNOTATED_LINK_END.equals(request.getType())) {
-			return getConnectionCompleteCommand((CreateConnectionRequest)request);
-		} else if(REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
-			return getReconnectTargetCommand((ReconnectRequest)request);
+		if (REQ_ANNOTATED_LINK_END.equals(request.getType())) {
+			return getConnectionCompleteCommand((CreateConnectionRequest) request);
+		} else if (REQ_ANNOTATED_LINK_REORIENT_END.equals(request.getType())) {
+			return getReconnectTargetCommand((ReconnectRequest) request);
 		}
 		return null;
 	}
 
 	@Override
 	protected Command getReconnectTargetCommand(ReconnectRequest request) {
-		ICommandProxy c = (ICommandProxy)super.getReconnectTargetCommand(request);
-		if(c == null) {
+		ICommandProxy c = (ICommandProxy) super.getReconnectTargetCommand(request);
+		if (c == null) {
 			return null;
 		}
-		if(request.getConnectionEditPart() instanceof AnnotatedLinkEditPart) {
-			CompositeCommand cc = (CompositeCommand)c.getICommand();
+		if (request.getConnectionEditPart() instanceof AnnotatedLinkEditPart) {
+			CompositeCommand cc = (CompositeCommand) c.getICommand();
 			AnnotatedLinkEditCommand ac = new AnnotatedLinkEditCommand(getEditingDomain());
-			ac.setAnnotatedLink((AnnotatedLinkEditPart)request.getConnectionEditPart());
+			ac.setAnnotatedLink((AnnotatedLinkEditPart) request.getConnectionEditPart());
 			ac.setTarget(getHost());
 			cc.add(ac);
 			return c;
@@ -139,95 +139,95 @@ public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
 	@Override
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
-		ICommandProxy proxy = (ICommandProxy)super.getConnectionCompleteCommand(request);
-		if(proxy == null) {
+		ICommandProxy proxy = (ICommandProxy) super.getConnectionCompleteCommand(request);
+		if (proxy == null) {
 			return null;
 		}
-		CompositeCommand cc = (CompositeCommand)proxy.getICommand();
+		CompositeCommand cc = (CompositeCommand) proxy.getICommand();
 		@SuppressWarnings("rawtypes")
 		Iterator it = cc.iterator();
 		AnnotatedLinkEditCommand command = null;
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Object next = it.next();
-			if(next instanceof AnnotatedLinkEditCommand) {
-				command = (AnnotatedLinkEditCommand)next;
+			if (next instanceof AnnotatedLinkEditCommand) {
+				command = (AnnotatedLinkEditCommand) next;
 				break;
 			}
 		}
-		if(command == null) {
+		if (command == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		command.setTarget(getHost());
-		//update bendpoints 
-		//		if((request.getSourceEditPart() instanceof CustomDurationConstraintEditPart) && !(request.getTargetEditPart() instanceof CustomDurationConstraintEditPart)) {
-		//			updateConnectionBendpoints(request, proxy);
-		//		}
+		// update bendpoints
+		// if((request.getSourceEditPart() instanceof CustomDurationConstraintEditPart) && !(request.getTargetEditPart() instanceof CustomDurationConstraintEditPart)) {
+		// updateConnectionBendpoints(request, proxy);
+		// }
 		return proxy;
 	}
 
-	//	private void updateConnectionBendpoints(CreateConnectionRequest request, ICommandProxy proxy) {
-	//		ICommand iCommand = proxy.getICommand();
-	//		if(!(iCommand instanceof CompositeCommand)) {
-	//			return;
-	//		}
-	//		INodeEditPart targetEP = getConnectionCompleteEditPart(request);
-	//		if(targetEP == null) {
-	//			return;
-	//		}
-	//		CompositeCommand cc = (CompositeCommand)iCommand;
-	//		SetConnectionAnchorsCommand scaCommand = null;
-	//		SetConnectionBendpointsCommand sbbCommand = null;
-	//		Iterator it = cc.iterator();
-	//		while(it.hasNext()) {
-	//			Object next = it.next();
-	//			if(next instanceof SetConnectionBendpointsCommand) {
-	//				sbbCommand = (SetConnectionBendpointsCommand)next;
-	//			} else if(next instanceof SetConnectionAnchorsCommand) {
-	//				scaCommand = (SetConnectionAnchorsCommand)next;
-	//			}
-	//			if(sbbCommand != null && scaCommand != null) {
-	//				break;
-	//			}
-	//		}
-	//		if(sbbCommand == null || scaCommand == null) {
-	//			return;
-	//		}
-	//		ConnectionAnchor targetAnchor = targetEP.getTargetConnectionAnchor(request);
-	//		INodeEditPart sourceEditPart = (INodeEditPart)request.getSourceEditPart();
-	//		ConnectionAnchor sourceAnchor = sourceEditPart.getSourceConnectionAnchor(request);//  sourceEditPart.mapTerminalToConnectionAnchor(scaCommand.getNewSourceTerminal());
-	//		Point sourcePoint = sourceAnchor.getLocation(sourceAnchor.getReferencePoint());
-	//		Point targetPoint = targetAnchor.getLocation(targetAnchor.getReferencePoint());
+	// private void updateConnectionBendpoints(CreateConnectionRequest request, ICommandProxy proxy) {
+	// ICommand iCommand = proxy.getICommand();
+	// if(!(iCommand instanceof CompositeCommand)) {
+	// return;
+	// }
+	// INodeEditPart targetEP = getConnectionCompleteEditPart(request);
+	// if(targetEP == null) {
+	// return;
+	// }
+	// CompositeCommand cc = (CompositeCommand)iCommand;
+	// SetConnectionAnchorsCommand scaCommand = null;
+	// SetConnectionBendpointsCommand sbbCommand = null;
+	// Iterator it = cc.iterator();
+	// while(it.hasNext()) {
+	// Object next = it.next();
+	// if(next instanceof SetConnectionBendpointsCommand) {
+	// sbbCommand = (SetConnectionBendpointsCommand)next;
+	// } else if(next instanceof SetConnectionAnchorsCommand) {
+	// scaCommand = (SetConnectionAnchorsCommand)next;
+	// }
+	// if(sbbCommand != null && scaCommand != null) {
+	// break;
+	// }
+	// }
+	// if(sbbCommand == null || scaCommand == null) {
+	// return;
+	// }
+	// ConnectionAnchor targetAnchor = targetEP.getTargetConnectionAnchor(request);
+	// INodeEditPart sourceEditPart = (INodeEditPart)request.getSourceEditPart();
+	// ConnectionAnchor sourceAnchor = sourceEditPart.getSourceConnectionAnchor(request);// sourceEditPart.mapTerminalToConnectionAnchor(scaCommand.getNewSourceTerminal());
+	// Point sourcePoint = sourceAnchor.getLocation(sourceAnchor.getReferencePoint());
+	// Point targetPoint = targetAnchor.getLocation(targetAnchor.getReferencePoint());
 	//
-	//		if(sourcePoint.y != targetPoint.y) {
-	//			PointList newList = new PointList(3);
-	//			newList.addPoint(sourcePoint);
-	//			Point p = new Point(DurationConstraintAutomaticRouter.BENDPOINT_GATE,0);//addBendpoint(sourcePoint.x, targetPoint.x, sourcePoint.y);
-	//			newList.addPoint(p);
-	//			newList.addPoint(targetPoint);
-	//			sbbCommand.setNewPointList(newList, sourceAnchor.getReferencePoint(), targetAnchor.getReferencePoint());
-	//		}
-	//	}
+	// if(sourcePoint.y != targetPoint.y) {
+	// PointList newList = new PointList(3);
+	// newList.addPoint(sourcePoint);
+	// Point p = new Point(DurationConstraintAutomaticRouter.BENDPOINT_GATE,0);//addBendpoint(sourcePoint.x, targetPoint.x, sourcePoint.y);
+	// newList.addPoint(p);
+	// newList.addPoint(targetPoint);
+	// sbbCommand.setNewPointList(newList, sourceAnchor.getReferencePoint(), targetAnchor.getReferencePoint());
+	// }
+	// }
 	//
-	//	private Point addBendpoint(int x, int x2, int y) {
-	//		if(Math.abs(x - x2) > 20) {
-	//			return new PrecisionPoint(x2 + 20 * Math.signum(x - x2), y);
-	//		} else {
-	//			return new PrecisionPoint(x2 + (x - x2) * 0.5, y);
-	//		}
-	//	}
+	// private Point addBendpoint(int x, int x2, int y) {
+	// if(Math.abs(x - x2) > 20) {
+	// return new PrecisionPoint(x2 + 20 * Math.signum(x - x2), y);
+	// } else {
+	// return new PrecisionPoint(x2 + (x - x2) * 0.5, y);
+	// }
+	// }
 	@Override
 	public void eraseTargetFeedback(Request request) {
-		if(REQ_ANNOTATED_LINK_END.equals(request.getType())) {
-			CreateConnectionRequest connReq = (CreateConnectionRequest)request;
+		if (REQ_ANNOTATED_LINK_END.equals(request.getType())) {
+			CreateConnectionRequest connReq = (CreateConnectionRequest) request;
 			EditPart sourceEditPart = connReq.getSourceEditPart();
 			EditPolicy editPolicy = sourceEditPart.getEditPolicy(AnnotatedLinkStartEditPolicy.ANNOTATED_LINK_START_ROLE);
-			PolylineConnection connectionFeedback = (PolylineConnection)getConnectionFeedback(editPolicy);
-			if(connectionFeedback != null) {
+			PolylineConnection connectionFeedback = (PolylineConnection) getConnectionFeedback(editPolicy);
+			if (connectionFeedback != null) {
 				connectionFeedback.setTargetDecoration(null);
 			}
 		}
@@ -235,26 +235,26 @@ public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	public void showSourceFeedback(Request request) {
-		//do nothing, this is not the primary GraphicalNodeEditPolicy.
+		// do nothing, this is not the primary GraphicalNodeEditPolicy.
 	}
 
 	@Override
 	public void eraseSourceFeedback(Request request) {
-		//do nothing, this is not the primary GraphicalNodeEditPolicy.
+		// do nothing, this is not the primary GraphicalNodeEditPolicy.
 	}
 
 	@Override
 	public void showTargetFeedback(Request request) {
-		if(REQ_ANNOTATED_LINK_END.equals(request.getType())) {
-			//Show circle feedback at target anchor
-			CreateConnectionRequest connReq = (CreateConnectionRequest)request;
+		if (REQ_ANNOTATED_LINK_END.equals(request.getType())) {
+			// Show circle feedback at target anchor
+			CreateConnectionRequest connReq = (CreateConnectionRequest) request;
 			EditPart sourceEditPart = connReq.getSourceEditPart();
 			EditPolicy editPolicy = sourceEditPart.getEditPolicy(AnnotatedLinkStartEditPolicy.ANNOTATED_LINK_START_ROLE);
 			editPolicy.showSourceFeedback(request);
-			PolylineConnection connectionFeedback = (PolylineConnection)getConnectionFeedback(editPolicy);
-			if(connectionFeedback != null) {
+			PolylineConnection connectionFeedback = (PolylineConnection) getConnectionFeedback(editPolicy);
+			if (connectionFeedback != null) {
 				Command command = getHost().getCommand(request);
-				if(command != null && command.canExecute()) {
+				if (command != null && command.canExecute()) {
 					EllipseDecoration dec = new EllipseDecoration();
 					dec.setPreferredSize(10, 10);
 					dec.setSize(10, 10);
@@ -269,11 +269,11 @@ public class AnnotatedLinkEndEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	private Connection getConnectionFeedback(EditPolicy policy) {
-		if(policy != null) {
+		if (policy != null) {
 			try {
 				Field f = org.eclipse.gef.editpolicies.GraphicalNodeEditPolicy.class.getDeclaredField("connectionFeedback");
 				f.setAccessible(true);
-				return (Connection)f.get(policy);
+				return (Connection) f.get(policy);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

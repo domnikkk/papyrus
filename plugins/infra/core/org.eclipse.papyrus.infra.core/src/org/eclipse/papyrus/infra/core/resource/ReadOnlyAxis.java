@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,11 +46,11 @@ public enum ReadOnlyAxis {
 
 	/**
 	 * Efficiently obtains me as a singleton set.
-	 * 
+	 *
 	 * @return a singleton set containing me only
 	 */
 	public Set<ReadOnlyAxis> singleton() {
-		switch(this) {
+		switch (this) {
 		case PERMISSION:
 			return PERMISSION_AXES;
 		case DISCRETION:

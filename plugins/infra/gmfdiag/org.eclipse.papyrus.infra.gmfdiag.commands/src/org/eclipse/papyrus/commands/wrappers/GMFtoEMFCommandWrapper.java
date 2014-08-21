@@ -28,16 +28,16 @@ import org.eclipse.papyrus.commands.INonDirtying;
 public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/**
-	 * 
+	 *
 	 * Wraps the GMF command return value to be returned by this method.
-	 * 
+	 *
 	 * @return the possible return value from the GMF command
 	 */
 	@Override
 	public Collection<?> getResult() {
 
 		Collection<Object> result = new ArrayList<Object>();
-		if(getGMFReturnValue() != null) {
+		if (getGMFReturnValue() != null) {
 			result.add(getGMFReturnValue());
 		} // else return an empty collection
 
@@ -45,7 +45,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 	}
 
 	private Object getGMFReturnValue() {
-		if(getGMFCommand().getCommandResult() != null) {
+		if (getGMFCommand().getCommandResult() != null) {
 			return getGMFCommand().getCommandResult().getReturnValue();
 		}
 
@@ -60,24 +60,24 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param gmfCommand
-	 *        the gmf command
+	 *            the gmf command
 	 */
 	public GMFtoEMFCommandWrapper(ICommand gmfCommand) {
 		super(gmfCommand.getLabel());
 		this.gmfCommand = gmfCommand;
 	}
-	
+
 	/**
 	 * Wraps the given {@code command}, accounting for possible non-dirty state.
-	 * 
+	 *
 	 * @param command
-	 *        a command to wrap
+	 *            a command to wrap
 	 * @return the best wrapper for the {@code command}
 	 */
 	public static Command wrap(ICommand command) {
-		if(command instanceof INonDirtying) {
+		if (command instanceof INonDirtying) {
 			return new NonDirtying(command);
 		}
 		return new GMFtoEMFCommandWrapper(command);
@@ -85,7 +85,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 
 	/**
 	 * Returns the wrapped GMF command.
-	 * 
+	 *
 	 * @return the GMF command
 	 */
 	// @unused
@@ -168,6 +168,7 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 	 * 
 	 * @see org.eclipse.emf.common.command.Command#getAffectedObjects()
 	 */
+	@Override
 	public Collection<?> getAffectedObjects() {
 		return gmfCommand.getAffectedFiles();
 	}
@@ -177,14 +178,15 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 	 * 
 	 * @see org.eclipse.emf.common.command.Command#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return gmfCommand.getLabel();
 	}
-	
+
 	//
 	// Nested types
 	//
-	
+
 	/**
 	 * A non-dirtying wrapper for non-dirtying commands.
 	 */
@@ -193,11 +195,11 @@ public class GMFtoEMFCommandWrapper extends AbstractCommand {
 		public NonDirtying(ICommand command) {
 			super(command);
 
-			if(!(command instanceof INonDirtying)) {
+			if (!(command instanceof INonDirtying)) {
 				throw new IllegalArgumentException("Wrapped command is not non-dirtying"); //$NON-NLS-1$
 			}
 		}
-		
+
 	}
 
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,11 +40,11 @@ import org.eclipse.ui.PlatformUI;
  * The Action bar contributor for the Context Editor
  * Mainly serves as an Adapter for the Ecore actions, as the Ecore actions are
  * not natively compatible with the EMF Facet tree objects
- * 
+ *
  * @author Camille Letavernier
  */
 
-//TODO : Remove the EcoreActionBarContributor extension
+// TODO : Remove the EcoreActionBarContributor extension
 public class ActionBarContributor extends EcoreActionBarContributor {
 
 	protected IStructuredSelection lastSelection;
@@ -88,9 +88,9 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ActionBarContributor() {
 		super();
@@ -146,8 +146,8 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 
 	@Override
 	public void selectionChanged(SelectionChangedEvent event) {
-		if(event.getSelection() instanceof IStructuredSelection) {
-			lastSelection = (IStructuredSelection)event.getSelection();
+		if (event.getSelection() instanceof IStructuredSelection) {
+			lastSelection = (IStructuredSelection) event.getSelection();
 		}
 	}
 
@@ -158,7 +158,7 @@ public class ActionBarContributor extends EcoreActionBarContributor {
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
 
 		String key = (style & ADDITIONS_LAST_STYLE) == 0 ? "additions-end" : "additions";
-		if(validateAction != null) {
+		if (validateAction != null) {
 			menuManager.insertBefore(key, new ActionContributionItem(validateAction));
 		}
 	}

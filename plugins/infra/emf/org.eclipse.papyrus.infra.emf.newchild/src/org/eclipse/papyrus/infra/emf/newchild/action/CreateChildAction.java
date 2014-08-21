@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,13 +52,13 @@ public class CreateChildAction extends StaticSelectionCommandAction {
 
 		Command createInFeature = CreateChildCommand.create(domain, parent, creationParameter, collection);
 
-		//		super.setText(createInFeature.getLabel());
+		// super.setText(createInFeature.getLabel());
 		super.setDescription(createInFeature.getDescription());
-		if(createInFeature instanceof CommandActionDelegate) {
+		if (createInFeature instanceof CommandActionDelegate) {
 
-			Object image = ((CommandActionDelegate)createInFeature).getImage();
-			if(image instanceof URL) {
-				ImageDescriptor descriptor = ImageDescriptor.createFromURL((URL)image);
+			Object image = ((CommandActionDelegate) createInFeature).getImage();
+			if (image instanceof URL) {
+				ImageDescriptor descriptor = ImageDescriptor.createFromURL((URL) image);
 				super.setImageDescriptor(descriptor);
 			}
 		}

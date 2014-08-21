@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008-2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,7 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 
 	/**
 	 * Get the compartment layout.
-	 * 
+	 *
 	 * @return the compartmentLayoutHelper
 	 */
 	protected ICompartmentLayoutHelper getCompartmentLayoutHelper() {
@@ -64,9 +64,9 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 
 	/**
 	 * Set the compartment layout.
-	 * 
+	 *
 	 * @param compartmentLayoutHelper
-	 *        the compartmentLayoutHelper to set
+	 *            the compartmentLayoutHelper to set
 	 */
 	protected void setCompartmentLayoutHelper(ICompartmentLayoutHelper compartmentLayoutHelper) {
 		this.compartmentLayoutHelper = compartmentLayoutHelper;
@@ -74,9 +74,9 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
-	 *        the view controlled by this edit part
+	 *            the view controlled by this edit part
 	 */
 	public BorderUMLNodeEditPart(View view) {
 		super(view);
@@ -95,8 +95,9 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Element getUMLElement() {
-		return (Element)resolveSemanticElement();
+		return (Element) resolveSemanticElement();
 	}
 
 	/**
@@ -106,14 +107,14 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 
-		if(event.getNotifier() instanceof EAnnotation) {
-			if(VisualInformationPapyrusConstants.LAYOUTFIGURE.equals(((EAnnotation)event.getNotifier()).getSource())) {
+		if (event.getNotifier() instanceof EAnnotation) {
+			if (VisualInformationPapyrusConstants.LAYOUTFIGURE.equals(((EAnnotation) event.getNotifier()).getSource())) {
 				changeLayoutCompartment();
 			}
 		}
 
 		Object feature = event.getFeature();
-		if(NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
 			refreshFontColor();
 		}
 	}
@@ -132,12 +133,12 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 	 * this method has in charge to apply the good layout policy on compartments
 	 */
 	protected void changeLayoutCompartment() {
-		if(getCompartmentLayoutHelper() != null) {
+		if (getCompartmentLayoutHelper() != null) {
 			Iterator<?> childrenIterator = getChildren().iterator();
-			while(childrenIterator.hasNext()) {
-				EditPart currentEditPart = (EditPart)childrenIterator.next();
-				if(currentEditPart instanceof ListCompartmentEditPart) {
-					getCompartmentLayoutHelper().applyLayout((ListCompartmentEditPart)currentEditPart);
+			while (childrenIterator.hasNext()) {
+				EditPart currentEditPart = (EditPart) childrenIterator.next();
+				if (currentEditPart instanceof ListCompartmentEditPart) {
+					getCompartmentLayoutHelper().applyLayout((ListCompartmentEditPart) currentEditPart);
 				}
 			}
 		}
@@ -148,7 +149,7 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 	 */
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(ApplyStereotypeRequest.APPLY_STEREOTYPE_REQUEST.equals(request.getType())) {
+		if (ApplyStereotypeRequest.APPLY_STEREOTYPE_REQUEST.equals(request.getType())) {
 			return this;
 		}
 		return super.getTargetEditPart(request);
@@ -167,16 +168,16 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 
 	/**
 	 * <pre>
-	 * Refresh used font. This method should not be overridden by subclasses. 
-	 * To refresh labels font, the method refreshLabelsFont should be used. 
+	 * Refresh used font. This method should not be overridden by subclasses.
+	 * To refresh labels font, the method refreshLabelsFont should be used.
 	 * 
 	 * {@inheritDoc}
 	 * </pre>
 	 */
 	@Override
 	protected void refreshFont() {
-		FontStyle style = (FontStyle)getPrimaryView().getStyle(NotationPackage.Literals.FONT_STYLE);
-		if(style != null) {
+		FontStyle style = (FontStyle) getPrimaryView().getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (style != null) {
 			// Get the font
 			FontDescriptor fontDescriptor = FontDescriptor.createFrom(getFontData(style));
 			Font newFont = getResourceManager().createFont(fontDescriptor);
@@ -184,7 +185,7 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 			refreshLabelsFont(newFont);
 
 			// Dispose previous Font and FontDescriptor
-			if(cachedFontDescriptor != null) {
+			if (cachedFontDescriptor != null) {
 				getResourceManager().destroyFont(cachedFontDescriptor);
 			}
 			cachedFontDescriptor = fontDescriptor;
@@ -193,25 +194,25 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 
 	/**
 	 * <pre>
-	 * A method to specify the labels to be update when the font is refreshed. 
+	 * A method to specify the labels to be update when the font is refreshed.
 	 * Subclasses should call super.refreshLabelsFont(font).
 	 * </pre>
-	 * 
+	 *
 	 * @param font
-	 *        the font to use
+	 *            the font to use
 	 */
 	protected void refreshLabelsFont(Font font) {
-		Label stereotypesLabel = ((IPapyrusNodeUMLElementFigure)getPrimaryShape()).getStereotypesLabel();
-		if(stereotypesLabel != null) {
+		Label stereotypesLabel = ((IPapyrusNodeUMLElementFigure) getPrimaryShape()).getStereotypesLabel();
+		if (stereotypesLabel != null) {
 			stereotypesLabel.setFont(font);
 		}
 	}
 
 	/**
 	 * Get the fontData
-	 * 
+	 *
 	 * @param style
-	 *        the font style of the figure
+	 *            the font style of the figure
 	 * @return the new font data to use
 	 */
 	protected FontData getFontData(FontStyle style) {
@@ -225,8 +226,8 @@ public abstract class BorderUMLNodeEditPart extends BorderNodeEditPart implement
 	protected void setFontColor(Color color) {
 		super.setFontColor(color);
 
-		Label stereotypesLabel = ((IPapyrusNodeUMLElementFigure)getPrimaryShape()).getStereotypesLabel();
-		if(stereotypesLabel != null) {
+		Label stereotypesLabel = ((IPapyrusNodeUMLElementFigure) getPrimaryShape()).getStereotypesLabel();
+		if (stereotypesLabel != null) {
 			stereotypesLabel.setForegroundColor(color);
 		}
 	}

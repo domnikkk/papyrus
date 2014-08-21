@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.usecase.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Extend;
 import org.eclipse.uml2.uml.UseCase;
@@ -55,14 +56,15 @@ public class ExtendReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof Extend) {
+		if (false == getElementToEdit() instanceof Extend) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -72,14 +74,14 @@ public class ExtendReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof UseCase && newEnd instanceof UseCase)) {
+		if (!(oldEnd instanceof UseCase && newEnd instanceof UseCase)) {
 			return false;
 		}
 		UseCase target = getLink().getExtendedCase();
-		if(!(getLink().eContainer() instanceof UseCase)) {
+		if (!(getLink().eContainer() instanceof UseCase)) {
 			return false;
 		}
-		UseCase container = (UseCase)getLink().eContainer();
+		UseCase container = (UseCase) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistExtend_4009(container, getLink(), getNewSource(), target);
 	}
 
@@ -87,28 +89,29 @@ public class ExtendReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof UseCase && newEnd instanceof UseCase)) {
+		if (!(oldEnd instanceof UseCase && newEnd instanceof UseCase)) {
 			return false;
 		}
 		UseCase source = getLink().getExtension();
-		if(!(getLink().eContainer() instanceof UseCase)) {
+		if (!(getLink().eContainer() instanceof UseCase)) {
 			return false;
 		}
-		UseCase container = (UseCase)getLink().eContainer();
+		UseCase container = (UseCase) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistExtend_4009(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -134,34 +137,34 @@ public class ExtendReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Extend getLink() {
-		return (Extend)getElementToEdit();
+		return (Extend) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected UseCase getOldSource() {
-		return (UseCase)oldEnd;
+		return (UseCase) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected UseCase getNewSource() {
-		return (UseCase)newEnd;
+		return (UseCase) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected UseCase getOldTarget() {
-		return (UseCase)oldEnd;
+		return (UseCase) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected UseCase getNewTarget() {
-		return (UseCase)newEnd;
+		return (UseCase) newEnd;
 	}
 }

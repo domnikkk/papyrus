@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
@@ -59,7 +59,7 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 
 	/**
 	 * Sets the semantic element which is linked to the edit policy
-	 * 
+	 *
 	 * @return the element linked to the edit policy
 	 */
 	protected Element initSemanticElement() {
@@ -68,7 +68,7 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
@@ -80,9 +80,10 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -104,9 +105,10 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -125,14 +127,14 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 
 	/**
 	 * return the end of the Instance specification that it listen
-	 * 
+	 *
 	 * @return an instancespecification
 	 */
 	public abstract InstanceSpecification getEnd();
 
 	/**
 	 * It look for the property that has to be listen o norder to refresh the role in the instancespecification Link
-	 * 
+	 *
 	 * @return the property
 	 */
 	public Property getInterestingProperty() {
@@ -166,7 +168,7 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 
 	/**
 	 * get the property that are interesting from a list for example for a source or label
-	 * 
+	 *
 	 * @param array
 	 *            the list of properties
 	 * @return the property
@@ -185,11 +187,12 @@ public abstract class InstanceSpecificationRoleDisplayEditPolicy extends Graphic
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.core.listener.NotificationListener#notifyChanged(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param notification
 	 */
+	@Override
 	public void notifyChanged(Notification notification) {
 		refreshDisplay();
 	}

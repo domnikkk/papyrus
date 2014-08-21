@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.swt.widgets.Display;
  * A listener for save actions. The goal is to track te editors save operations
  * in order to distinguish external resource modifications and those triggered
  * by the save operation
- * 
+ *
  * @author Ansgar Radermacher (CEA LIST)
  */
 public class SaveListener {
@@ -35,10 +35,12 @@ public class SaveListener {
 
 	class PreSaveListener implements ISaveEventListener {
 
+		@Override
 		public void doSaveAs(DoSaveEvent event) {
 			saveActive = true;
 		}
 
+		@Override
 		public void doSave(DoSaveEvent event) {
 			saveActive = true;
 		}
@@ -47,6 +49,7 @@ public class SaveListener {
 
 	class PostSaveListener implements ISaveEventListener {
 
+		@Override
 		public void doSaveAs(DoSaveEvent event) {
 			// do not reset saveActive directly to avoid eventual race
 			// conditions (avoid that the
@@ -54,6 +57,7 @@ public class SaveListener {
 			Display.getDefault().asyncExec(postSaveRunnable);
 		}
 
+		@Override
 		public void doSave(DoSaveEvent event) {
 			Display.getDefault().asyncExec(postSaveRunnable);
 		}
@@ -61,6 +65,7 @@ public class SaveListener {
 
 	class PostSaveRunnable implements Runnable {
 
+		@Override
 		public void run() {
 			saveActive = false;
 		};

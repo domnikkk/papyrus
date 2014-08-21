@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *   CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 422257
- *   
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.customization.properties.storage.actions;
 
@@ -46,8 +46,8 @@ public class ContextStorageActionRegistry {
 	public IContextStorageActionProvider getStorageActionProvider(Context context) {
 		IContextStorageActionProvider result = IContextStorageActionProvider.READ_ONLY;
 
-		for(IContextStorageActionProvider next : providers) {
-			if(next.providesFor(context)) {
+		for (IContextStorageActionProvider next : providers) {
+			if (next.providesFor(context)) {
 				result = next;
 				break;
 			}
@@ -91,12 +91,13 @@ public class ContextStorageActionRegistry {
 			// sort any providers contributed by this plug-in to the front
 			Collections.sort(providers, new Comparator<IContextStorageActionProvider>() {
 
+				@Override
 				public int compare(IContextStorageActionProvider o1, IContextStorageActionProvider o2) {
 					int result = 0;
 
-					if(isOurs(o1)) {
+					if (isOurs(o1)) {
 						result = isOurs(o2) ? 0 : -1;
-					} else if(isOurs(o2)) {
+					} else if (isOurs(o2)) {
 						result = +1;
 					}
 
@@ -109,7 +110,7 @@ public class ContextStorageActionRegistry {
 			boolean result = false;
 
 			IConfigurationElement config = providerElements.get(provider);
-			if(config != null) {
+			if (config != null) {
 				Activator.PLUGIN_ID.equals(config.getContributor().getName());
 			}
 
@@ -120,9 +121,9 @@ public class ContextStorageActionRegistry {
 		protected boolean readElement(IConfigurationElement element) {
 			boolean result = true;
 
-			if(E_ACTION_PROVIDER.equals(element.getName())) {
+			if (E_ACTION_PROVIDER.equals(element.getName())) {
 				try {
-					providers.add((IContextStorageActionProvider)element.createExecutableExtension(A_CLASS));
+					providers.add((IContextStorageActionProvider) element.createExecutableExtension(A_CLASS));
 				} catch (Exception e) {
 					result = false;
 					Activator.log.error("Failed to instantiate context storage action provider extension.", e); //$NON-NLS-1$

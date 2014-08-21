@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,11 @@ import org.eclipse.uml2.uml.ElementImport;
 import org.eclipse.uml2.uml.Type;
 
 /**
- * 
+ *
  * This command is used to set visible the Stereotype <<Metaclass>> on a metaclass after a drop.
- * 
+ *
  * We call this command when we can't call directly AppliedStereotypeHelper.getAddAppliedStereotypeCommand, because the view is not yet created!
- * 
+ *
  */
 public class SetStereotypeVisibleOnMetaclassCommand extends AbstractTransactionalCommand {
 
@@ -48,19 +48,19 @@ public class SetStereotypeVisibleOnMetaclassCommand extends AbstractTransactiona
 	private CreateViewRequest.ViewDescriptor cmdResult = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
-	 *        the {@link TransactionalEditingDomain}
+	 *            the {@link TransactionalEditingDomain}
 	 * @param label
-	 *        the label for the command
+	 *            the label for the command
 	 * @param affectedFiles
-	 *        the affected files
+	 *            the affected files
 	 * @param semanticElement
-	 *        the Element Import or the Metaclass (i.e. a Class)
+	 *            the Element Import or the Metaclass (i.e. a Class)
 	 * @param descriptor
-	 *        the view descriptor for the metaclass
+	 *            the view descriptor for the metaclass
 	 */
 	public SetStereotypeVisibleOnMetaclassCommand(TransactionalEditingDomain domain, String label, List<?> affectedFiles, Element semanticElement, CreateViewRequest.ViewDescriptor descriptor) {
 		super(domain, label, affectedFiles);
@@ -69,10 +69,9 @@ public class SetStereotypeVisibleOnMetaclassCommand extends AbstractTransactiona
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -80,22 +79,22 @@ public class SetStereotypeVisibleOnMetaclassCommand extends AbstractTransactiona
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(semanticElement instanceof ElementImport) {
-			Class metaclass = (Class)((ElementImport)semanticElement).getImportedElement();
-			View node = (View)(this.cmdResult).getAdapter(View.class);
+		if (semanticElement instanceof ElementImport) {
+			Class metaclass = (Class) ((ElementImport) semanticElement).getImportedElement();
+			View node = (View) (this.cmdResult).getAdapter(View.class);
 			Element UMLelement = metaclass;
 			String stereotypeName = UMLelement.getAppliedStereotypes().get(0).getQualifiedName();
 			Command command = AppliedStereotypeHelper.getAddAppliedStereotypeCommand(getEditingDomain(), node, stereotypeName, UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION);
-			if(command.canExecute()) {
+			if (command.canExecute()) {
 				command.execute();
 			}
-		} else if(semanticElement instanceof Class && semanticElement instanceof Type && Util.isMetaclass((Type)semanticElement)) {
-			Class metaclass = (Class)semanticElement;
-			View node = (View)(this.cmdResult).getAdapter(View.class);
+		} else if (semanticElement instanceof Class && semanticElement instanceof Type && Util.isMetaclass((Type) semanticElement)) {
+			Class metaclass = (Class) semanticElement;
+			View node = (View) (this.cmdResult).getAdapter(View.class);
 			Element UMLelement = metaclass;
 			String stereotypeName = UMLelement.getAppliedStereotypes().get(0).getQualifiedName();
 			Command command = AppliedStereotypeHelper.getAddAppliedStereotypeCommand(getEditingDomain(), node, stereotypeName, UMLVisualInformationPapyrusConstant.STEREOTYPE_TEXT_HORIZONTAL_PRESENTATION);
-			if(command.canExecute()) {
+			if (command.canExecute()) {
 				command.execute();
 			}
 		}

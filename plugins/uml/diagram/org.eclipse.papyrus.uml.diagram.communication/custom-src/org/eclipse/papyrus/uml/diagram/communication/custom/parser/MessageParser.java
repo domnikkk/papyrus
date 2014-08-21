@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -60,14 +60,14 @@ public class MessageParser implements IParser {
 	 * @see org.eclipse.gmf.runtime.common.ui.services.parser.IParser#getPrintString(org.eclipse.core.runtime.IAdaptable, int)
 	 */
 	public String getPrintString(IAdaptable element, int flags) {
-		if(element instanceof EObjectAdapter) {
+		if (element instanceof EObjectAdapter) {
 			String result = ""; //$NON-NLS-1$
-			final Message message = ((Message)((EObjectAdapter)element).getRealObject());
-			if(message == null) {
+			final Message message = ((Message) ((EObjectAdapter) element).getRealObject());
+			if (message == null) {
 				return Messages.MessageParser_undefined;
 			}
-			if(message.getEAnnotations() != null) {
-				//	EList<EAnnotation> an = message.getEAnnotations();
+			if (message.getEAnnotations() != null) {
+				// EList<EAnnotation> an = message.getEAnnotations();
 				/*
 				 * if (an.isEmpty())
 				 * System.out.print("List is empty");
@@ -78,8 +78,9 @@ public class MessageParser implements IParser {
 				// + ":" + message.getName();
 				// else
 				result = message.getName();
-			} else
+			} else {
 				result = message.getName();
+			}
 			// result = "1:" + result;
 			return result;
 		}

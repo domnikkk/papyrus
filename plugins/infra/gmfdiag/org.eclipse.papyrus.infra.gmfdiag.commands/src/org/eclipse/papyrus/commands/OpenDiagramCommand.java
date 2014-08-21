@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,11 +36,11 @@ public class OpenDiagramCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Instantiates a new open diagram command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	public OpenDiagramCommand(TransactionalEditingDomain editingDomain, EObject diagram) {
 		super(editingDomain, "Open diagram", null);
@@ -58,14 +58,14 @@ public class OpenDiagramCommand extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		try {
-			if(diagramToOpen == null && previousCreateDiagramCommand != null) {
+			if (diagramToOpen == null && previousCreateDiagramCommand != null) {
 				Object possibleDiagramToOpen = previousCreateDiagramCommand.getCommandResult().getReturnValue();
-				if(possibleDiagramToOpen instanceof EObject) {
-					diagramToOpen = (EObject)possibleDiagramToOpen;
+				if (possibleDiagramToOpen instanceof EObject) {
+					diagramToOpen = (EObject) possibleDiagramToOpen;
 				}
 			}
 
-			if(diagramToOpen != null) {
+			if (diagramToOpen != null) {
 				IPageManager pageManager;
 
 				// bug 358799
@@ -81,7 +81,7 @@ public class OpenDiagramCommand extends AbstractTransactionalCommand {
 				 */
 				pageManager = ServiceUtilsForEObject.getInstance().getIPageManager(diagramToOpen);
 
-				if(pageManager.isOpen(diagramToOpen)) {
+				if (pageManager.isOpen(diagramToOpen)) {
 					pageManager.selectPage(diagramToOpen);
 				} else {
 					pageManager.openPage(diagramToOpen);

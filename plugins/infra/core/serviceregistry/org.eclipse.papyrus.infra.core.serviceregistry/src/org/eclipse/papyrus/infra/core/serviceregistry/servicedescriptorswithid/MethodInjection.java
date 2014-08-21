@@ -11,7 +11,7 @@ package org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection#getMethodName <em>Method Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection#getMethodName <em>Method Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,10 +24,10 @@ public interface MethodInjection extends AbstractMethodInjection {
 	 * Returns the value of the '<em><b>Method Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Method Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Method Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Method Name</em>' attribute.
 	 * @see #setMethodName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage#getMethodInjection_MethodName()
@@ -40,7 +40,9 @@ public interface MethodInjection extends AbstractMethodInjection {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection#getMethodName <em>Method Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Method Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Method Name</em>' attribute.
 	 * @see #getMethodName()
 	 * @generated
 	 */

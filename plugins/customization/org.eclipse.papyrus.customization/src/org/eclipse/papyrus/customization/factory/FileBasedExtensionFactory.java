@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,9 +48,9 @@ public abstract class FileBasedExtensionFactory implements ExtensionFactory {
 	}
 
 	public void addElement(CustomizableElement element, PluginEditor editor) {
-		createExtension((FileBasedCustomizableElement)element, editor);
+		createExtension((FileBasedCustomizableElement) element, editor);
 		try {
-			copyFile((FileBasedCustomizableElement)element, editor);
+			copyFile((FileBasedCustomizableElement) element, editor);
 		} catch (IOException ex) {
 			Activator.log.error(ex);
 		}
@@ -58,7 +58,7 @@ public abstract class FileBasedExtensionFactory implements ExtensionFactory {
 
 	protected Element createExtension(FileBasedCustomizableElement element, PluginEditor editor) {
 		Element extensionElement = null;
-		if(element instanceof FileBasedCustomizableElement) {
+		if (element instanceof FileBasedCustomizableElement) {
 			Element extension = editor.getPluginEditor().addExtension(extensionPoint);
 			extensionElement = editor.getPluginEditor().addChild(extension, fileElementName);
 			editor.getPluginEditor().setAttribute(extensionElement, fileAttributeName, getTargetPath(element));
@@ -74,15 +74,15 @@ public abstract class FileBasedExtensionFactory implements ExtensionFactory {
 		File sourceFile = FileUtil.getFile(sourcePath);
 		File targetFile = FileUtil.getWorkspaceFile("/" + editor.getProject().getName() + "/" + targetPath); //$NON-NLS-1$ //$NON-NLS-2$
 
-		if(sourceFile == null) {
+		if (sourceFile == null) {
 			throw new IllegalArgumentException("The source path " + sourcePath + " is not valid");
 		}
 
-		if(targetFile == null) {
+		if (targetFile == null) {
 			throw new IllegalArgumentException("The target path " + targetPath + " is not valid");
 		}
 
-		if(!targetFile.getParentFile().exists()) {
+		if (!targetFile.getParentFile().exists()) {
 			targetFile.getParentFile().mkdirs();
 		}
 
@@ -100,12 +100,12 @@ public abstract class FileBasedExtensionFactory implements ExtensionFactory {
 	}
 
 	protected String getFileName(String path) {
-		if(path == null) {
+		if (path == null) {
 			throw new IllegalArgumentException("File path should not be null");
 		}
 		String fileName;
 		path = path.replace("\\", "/");
-		if(path.indexOf("/") < 0) { //$NON-NLS-1$
+		if (path.indexOf("/") < 0) { //$NON-NLS-1$
 			fileName = path;
 		} else {
 			fileName = path.substring(path.lastIndexOf("/") + 1, path.length()); //$NON-NLS-1$
@@ -114,7 +114,7 @@ public abstract class FileBasedExtensionFactory implements ExtensionFactory {
 	}
 
 	protected void copy(InputStream source, File target) throws IOException {
-		if(!target.getParentFile().exists()) {
+		if (!target.getParentFile().exists()) {
 			target.getParentFile().mkdirs();
 		}
 
@@ -122,7 +122,7 @@ public abstract class FileBasedExtensionFactory implements ExtensionFactory {
 		try {
 			int c;
 
-			while((c = source.read()) != -1) {
+			while ((c = source.read()) != -1) {
 				out.write(c);
 			}
 

@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,8 +30,8 @@ public class CenterLayout extends StackLayout {
 		final int centerY = r.y + r.height / 2;
 		List children = figure.getChildren();
 		IFigure child;
-		for(int i = 0; i < children.size(); i++) {
-			child = (IFigure)children.get(i);
+		for (int i = 0; i < children.size(); i++) {
+			child = (IFigure) children.get(i);
 			Dimension prefSize = child.getPreferredSize(r.width, r.height);
 			RECTANGLE.x = centerX - prefSize.width / 2;
 			RECTANGLE.y = centerY - prefSize.height / 2;

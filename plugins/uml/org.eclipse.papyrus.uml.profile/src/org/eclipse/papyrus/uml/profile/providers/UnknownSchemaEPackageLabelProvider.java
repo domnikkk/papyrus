@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class UnknownSchemaEPackageLabelProvider extends EMFLabelProvider impleme
 		boolean result = false;
 
 		EObject eobject = EMFHelper.getEObject(element);
-		if(eobject instanceof EPackage) {
+		if (eobject instanceof EPackage) {
 			// Typically the only EPackages that don't have names are unknown schema but they do have namespace prefixes
-			EPackage epackage = (EPackage)eobject;
+			EPackage epackage = (EPackage) eobject;
 			result = (epackage.getName() == null) && (epackage.getNsPrefix() != null);
 		}
 
@@ -41,14 +41,14 @@ public class UnknownSchemaEPackageLabelProvider extends EMFLabelProvider impleme
 	@Override
 	protected String getText(EObject element) {
 		String result;
-		
-		if(element instanceof EPackage) {
-			EPackage epackage = (EPackage)element;
-			result =NLS.bind("({0}) - unknown schema", epackage.getNsPrefix());
+
+		if (element instanceof EPackage) {
+			EPackage epackage = (EPackage) element;
+			result = NLS.bind("({0}) - unknown schema", epackage.getNsPrefix());
 		} else {
 			result = super.getText(element);
 		}
-		
+
 		return result;
 	}
 

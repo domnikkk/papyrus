@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -44,7 +44,7 @@ public class InternalStateListener extends AbstractModifcationTriggerListener {
 
 	@Override
 	protected boolean isCorrectStructuralfeature(EStructuralFeature eStructuralFeature) {
-		if(UMLPackage.Literals.TRANSITION__KIND.equals(eStructuralFeature)) {
+		if (UMLPackage.Literals.TRANSITION__KIND.equals(eStructuralFeature)) {
 			return true;
 		}
 		return false;
@@ -54,23 +54,23 @@ public class InternalStateListener extends AbstractModifcationTriggerListener {
 	protected CompositeCommand getModificationCommand(Notification notif) {
 		Object newValue = notif.getNewValue();
 		Object notifier = notif.getNotifier();
-		if(newValue instanceof TransitionKind && notifier instanceof EObject) {
-			CompositeCommand cc = new CompositeCommand("Modification command triggered by modification of the kind of the current selected transition");//$NON-NLS-0$
-			EObject eNotifier = (EObject)notifier;
-			//Handle deletion of the old EditPart
+		if (newValue instanceof TransitionKind && notifier instanceof EObject) {
+			CompositeCommand cc = new CompositeCommand("Modification command triggered by modification of the kind of the current selected transition");
+			EObject eNotifier = (EObject) notifier;
+			// Handle deletion of the old EditPart
 			boolean becomingInternal = isBecomingInternal(notif);
 			IGraphicalEditPart availableEditPart = getChildByEObject(eNotifier, getDiagramEditPart(), becomingInternal);
-			//If there no current represent nothing has to be done
-			if(availableEditPart == null) {
+			// If there no current represent nothing has to be done
+			if (availableEditPart == null) {
 				return null;
 			}
 			Command deleteCommand = getDeleteCommand(becomingInternal, availableEditPart);
 			Command creationCommand = getCreationCommand(becomingInternal, eNotifier);
-			if(deleteCommand != null && deleteCommand.canExecute() &&
-				creationCommand != null && creationCommand.canExecute()) {
+			if (deleteCommand != null && deleteCommand.canExecute() &&
+					creationCommand != null && creationCommand.canExecute()) {
 				// only delete, if addition is possible, see bug 407736
 				cc.compose(new CommandProxy(deleteCommand));
-				//handle addition of the new EditPart
+				// handle addition of the new EditPart
 				cc.compose(new CommandProxy(creationCommand));
 			}
 
@@ -81,16 +81,15 @@ public class InternalStateListener extends AbstractModifcationTriggerListener {
 	}
 
 	/**
-	 * Refresh all needed EditParts {@link AbstractModifcationTriggerListener#needRefresh()} and
-	 * {@link AbstractModifcationTriggerListener#getEditPartsToRefresh()}
-	 * 
+	 * Refresh all needed EditParts {@link AbstractModifcationTriggerListener#needRefresh()} and {@link AbstractModifcationTriggerListener#getEditPartsToRefresh()}
+	 *
 	 * @param cc
 	 * @param set
 	 */
 	protected void refreshEditParts(CompositeCommand cc, Set<IGraphicalEditPart> set) {
-		for(IGraphicalEditPart part : set) {
+		for (IGraphicalEditPart part : set) {
 			RefreshEditPartCommand refreshEditPart = new RefreshEditPartCommand(part, true);
-			if(refreshEditPart != null && refreshEditPart.canExecute()) {
+			if (refreshEditPart != null && refreshEditPart.canExecute()) {
 				cc.compose(refreshEditPart);
 			}
 		}
@@ -98,14 +97,14 @@ public class InternalStateListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Return true if the the current feature indicate that the new value of the feature is {@link TransitionKind#INTERNAL}
-	 * 
+	 *
 	 * @param notif
 	 * @return
 	 */
 	protected boolean isBecomingInternal(Notification notif) {
 		Object newValue = notif.getNewValue();
-		if(newValue instanceof TransitionKind) {
-			TransitionKind newKind = (TransitionKind)newValue;
+		if (newValue instanceof TransitionKind) {
+			TransitionKind newKind = (TransitionKind) newValue;
 			return TransitionKind.INTERNAL_LITERAL.equals(newKind);
 		}
 		return false;
@@ -114,49 +113,49 @@ public class InternalStateListener extends AbstractModifcationTriggerListener {
 
 	/**
 	 * Get the command to delete the old EditPart
-	 * 
+	 *
 	 * @param isBecomingInternal
-	 *        Boolean true if transition is going to kind X -> Internal
+	 *            Boolean true if transition is going to kind X -> Internal
 	 * @param availableEditPart
-	 *        Existing editpart of the transition
+	 *            Existing editpart of the transition
 	 * @return
 	 */
 	private Command getDeleteCommand(boolean isBecomingInternal, IGraphicalEditPart availableEditPart) {
-		if(isBecomingInternal) {
-			//Get the old transition editpart
-			if(!(availableEditPart instanceof TransitionEditPart)) {
+		if (isBecomingInternal) {
+			// Get the old transition editpart
+			if (!(availableEditPart instanceof TransitionEditPart)) {
 				return null;
 			}
 		} else {
-			if(!(availableEditPart instanceof InternalTransitionEditPart)) {
+			if (!(availableEditPart instanceof InternalTransitionEditPart)) {
 				return null;
 			}
 		}
 		Request request = new GroupRequest(RequestConstants.REQ_DELETE);
-		((GroupRequest)request).setEditParts(availableEditPart);
+		((GroupRequest) request).setEditParts(availableEditPart);
 		return availableEditPart.getCommand(request);
 	}
 
 	private Command getCreationCommand(boolean isBecomingInternal, EObject eNotifier) {
-		//		IGraphicalEditPart
-		if(eNotifier instanceof Transition) {
-			Transition transition = (Transition)eNotifier;
+		// IGraphicalEditPart
+		if (eNotifier instanceof Transition) {
+			Transition transition = (Transition) eNotifier;
 			IGraphicalEditPart dropTarget = null;
 			dropTarget = getChildByEObject(transition.getSource(), getDiagramEditPart(), isBecomingInternal);
-			if(isBecomingInternal) {
+			if (isBecomingInternal) {
 				dropTarget = getChildByEObject(transition.getSource(), getDiagramEditPart(), false);
 			} else {
-				//get the region
+				// get the region
 				dropTarget = getChildByEObject(transition.getContainer(), getDiagramEditPart(), false);
-				//get the compartment
+				// get the compartment
 				dropTarget = dropTarget.getChildBySemanticHint(String.valueOf(RegionCompartmentEditPart.VISUAL_ID));
 			}
-			if(dropTarget != null) {
+			if (dropTarget != null) {
 				Request request = new DropObjectsRequest();
-				((DropObjectsRequest)request).setLocation(new Point(1, 1));
-				((DropObjectsRequest)request).setObjects(Collections.singletonList(transition));
+				((DropObjectsRequest) request).setLocation(new Point(1, 1));
+				((DropObjectsRequest) request).setObjects(Collections.singletonList(transition));
 				Command cmd = dropTarget.getCommand(request);
-				if(cmd != null && cmd.canExecute()) {
+				if (cmd != null && cmd.canExecute()) {
 					CompositeCommand cc = new CompositeCommand(DROP_INTERNAL_TRANSITION_COMMAND_LABEL);
 					cc.compose(new CommandProxy(cmd));
 					refreshEditParts(cc, Collections.singleton(dropTarget));

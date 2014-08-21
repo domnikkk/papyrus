@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,24 +22,25 @@ import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 
 /**
  * The handler for the copy selection to clipboard action
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class CopySelectionToClipboardAction extends AbstractTableHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
 	 */
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		INattableModelManager manager = getCurrentNattableModelManager();
-		((AbstractNattableWidgetManager)manager).copyToClipboard();
+		((AbstractNattableWidgetManager) manager).copyToClipboard();
 		return null;
 	}
 

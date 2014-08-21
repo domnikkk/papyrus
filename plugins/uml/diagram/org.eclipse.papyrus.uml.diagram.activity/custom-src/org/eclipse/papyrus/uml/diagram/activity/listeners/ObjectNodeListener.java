@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * @author tfaure
- * 
+ *
  */
 public class ObjectNodeListener extends AbstractPapyrusModifcationTriggerListener {
 
@@ -42,10 +42,10 @@ public class ObjectNodeListener extends AbstractPapyrusModifcationTriggerListene
 	@Override
 	protected CompositeCommand getModificationCommand(Notification notif) {
 		CompositeCommand cc = null;
-		if(notif.getNewValue() instanceof ObjectNode && notif.getFeature() instanceof EReference && ((EReference)notif.getFeature()).isContainment()) {
+		if (notif.getNewValue() instanceof ObjectNode && notif.getFeature() instanceof EReference && ((EReference) notif.getFeature()).isContainment()) {
 			cc = new CompositeCommand("Modify Pin");
-			final ObjectNode object = (ObjectNode)notif.getNewValue();
-			if(object.getUpperBound() == null) {
+			final ObjectNode object = (ObjectNode) notif.getNewValue();
+			if (object.getUpperBound() == null) {
 				LiteralInteger literalInteger = UMLFactory.eINSTANCE.createLiteralInteger();
 				literalInteger.setValue(1);
 				cc.compose(new EMFtoGMFCommandWrapper(SetCommand.create(AdapterFactoryEditingDomain.getEditingDomainFor(object), object, UMLPackage.Literals.OBJECT_NODE__UPPER_BOUND, literalInteger)));

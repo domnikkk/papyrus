@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  Saadia Dhouib saadia.dhouib@cea.fr  
+ *  Saadia Dhouib saadia.dhouib@cea.fr
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.communication.custom.commands;
@@ -40,6 +40,7 @@ import org.eclipse.gmf.runtime.notation.NotationFactory;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
 import org.eclipse.papyrus.uml.diagram.communication.custom.edit.parts.CustomMessageNameEditPart;
+import org.eclipse.papyrus.uml.diagram.communication.edit.parts.MessageNameEditPart;
 import org.eclipse.papyrus.uml.diagram.communication.part.UMLVisualIDRegistry;
 
 /**
@@ -52,7 +53,7 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 	private static View node;
 
 	/** The container view. */
-	//private View containerView;
+	// private View containerView;
 	/** The location. */
 	@SuppressWarnings("unused")
 	private Point location;
@@ -78,25 +79,25 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 
 	/**
 	 * Instantiates a new custom message view create command.
-	 * 
+	 *
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 * @param container
-	 *        the container
+	 *            the container
 	 * @param viewer
-	 *        the viewer
+	 *            the viewer
 	 * @param preferencesHint
-	 *        the preferences hint
+	 *            the preferences hint
 	 * @param point
-	 *        the point
+	 *            the point
 	 * @param semanticAdapter
-	 *        the semantic adapter
+	 *            the semantic adapter
 	 * @param link
-	 *        the link
+	 *            the link
 	 */
 	public CustomMessageViewCreateCommand(TransactionalEditingDomain domain, EditPartViewer viewer, PreferencesHint preferencesHint, Point point, IAdaptable semanticAdapter, ConnectionEditPart link) {
 		super(domain, "MessageClassViewCreateCommand", null); //$NON-NLS-1$
-		//this.containerView = container;
+		// this.containerView = container;
 		this.viewer = viewer;
 		this.preferenceHint = preferencesHint;
 		this.location = point;
@@ -107,9 +108,8 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -118,33 +118,34 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 	@SuppressWarnings("static-access")
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		//IFigure linkEditPart = (IFigure)existingLink.getFigure();
-		View linkView = ((IGraphicalEditPart)existingLink).getNotationView();
-		//Connector linkConnector = linkView.get
-		this.node = customCreateLabel(((EObject)semanticApdater.getAdapter(EObject.class)), linkView, UMLVisualIDRegistry.getType(CustomMessageNameEditPart.VISUAL_ID));
+		// IFigure linkEditPart = (IFigure)existingLink.getFigure();
+		View linkView = ((IGraphicalEditPart) existingLink).getNotationView();
+		// Connector linkConnector = linkView.get
+		CustomMessageViewCreateCommand.node = customCreateLabel(((EObject) semanticApdater.getAdapter(EObject.class)), linkView, UMLVisualIDRegistry.getType(MessageNameEditPart.VISUAL_ID));
 		// put to the good position
 		Location notationLocation = NotationFactory.eINSTANCE.createLocation();
-		//notationLocation.setX(location.x);
-		//notationLocation.setY(location.y);
+		// notationLocation.setX(location.x);
+		// notationLocation.setY(location.y);
 		notationLocation.setX(1);
 		notationLocation.setY(-23);
-		((Node)this.node).setLayoutConstraint(notationLocation);
-		semanticViewApdater.setView(this.node);
+		((Node) CustomMessageViewCreateCommand.node).setLayoutConstraint(notationLocation);
+		semanticViewApdater.setView(CustomMessageViewCreateCommand.node);
 		return CommandResult.newOKCommandResult(semanticViewApdater);
 	}
 
 	/**
 	 * Gets the affected files.
-	 * 
+	 *
 	 * @return the affected files {@inheritDoc}
 	 */
+	@Override
 	@SuppressWarnings("rawtypes")
 	public List getAffectedFiles() {
-		if(viewer != null) {
+		if (viewer != null) {
 			EditPart editpart = viewer.getRootEditPart().getContents();
-			if(editpart instanceof IGraphicalEditPart) {
-				View view = (View)((IGraphicalEditPart)editpart).getModel();
-				if(view != null) {
+			if (editpart instanceof IGraphicalEditPart) {
+				View view = (View) ((IGraphicalEditPart) editpart).getModel();
+				if (view != null) {
 					IFile f = WorkspaceSynchronizer.getFile(view.eResource());
 					return f != null ? Collections.singletonList(f) : Collections.EMPTY_LIST;
 				}
@@ -155,7 +156,7 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 
 	/**
 	 * used to obtain the created node.
-	 * 
+	 *
 	 * @return the created node
 	 */
 	public View getNode() {
@@ -165,15 +166,15 @@ public class CustomMessageViewCreateCommand extends AbstractTransactionalCommand
 	/**
 	 * Custom create label.
 	 * this custom create label enables to associate a semantic element with a label
-	 * 
+	 *
 	 * @param domainElement
-	 *        the domain element
+	 *            the domain element
 	 * @param owner
-	 *        the owner
+	 *            the owner
 	 * @param hint
-	 *        the hint
+	 *            the hint
 	 * @return the node
-	 * 
+	 *
 	 */
 	public Node customCreateLabel(EObject domainElement, View owner, String hint) {
 		DecorationNode rv = NotationFactory.eINSTANCE.createDecorationNode();

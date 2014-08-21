@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,6 +58,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 import org.eclipse.ui.forms.FormDialog;
 import org.eclipse.ui.forms.IManagedForm;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.ImageHyperlink;
 import org.eclipse.ui.forms.widgets.ScrolledForm;
@@ -73,7 +74,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * DialogBox in order to link a parameter with the new ActivityParameterNode
  * that will be created
- * 
+ *
  */
 public class CreateActivityParameterNodeDialog extends FormDialog {
 
@@ -109,11 +110,11 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Create a new dialog to initialize an ActivityParameterNode.
-	 * 
+	 *
 	 * @param shell
-	 *        parent shell
+	 *            parent shell
 	 * @param owner
-	 *        the activity that owns the action
+	 *            the activity that owns the action
 	 */
 	public CreateActivityParameterNodeDialog(Shell shell, Activity owner) {
 		super(shell);
@@ -123,9 +124,9 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Create the form to :
-	 * 
+	 *
 	 * - ask the user to choose or create an existing element.
-	 * 
+	 *
 	 * @see org.eclipse.ui.forms.FormDialog#createFormContent(org.eclipse.ui.forms.IManagedForm)
 	 */
 	@Override
@@ -147,9 +148,9 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Adds buttons to this dialog's button bar.
-	 * 
+	 *
 	 * @param parent
-	 *        the button bar composite
+	 *            the button bar composite
 	 */
 	@Override
 	protected void createButtonsForButtonBar(Composite parent) {
@@ -159,18 +160,18 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to choose an existing element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createInvocationSelectionSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = CustomMessages.CreateActivityParameterNodeDialog_ParameterSelectionTitle;
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, CustomMessages.CreateActivityParameterNodeDialog_ParameterSelectionHelp);
@@ -199,18 +200,18 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Create the section to ask the user to create an invoked element.
-	 * 
+	 *
 	 * @param pParent
-	 *        the section's parent widget
+	 *            the section's parent widget
 	 * @param pToolkit
-	 *        the form toolkit
+	 *            the form toolkit
 	 */
 	private void createInvocationCreationSection(Composite pParent, FormToolkit pToolkit) {
 		// create the section
 		String lSectionTitle = CustomMessages.CreateActivityParameterNodeDialog_ParameterCreationTitle;
-		Section lSection = pToolkit.createSection(pParent, Section.EXPANDED | Section.TITLE_BAR);
+		Section lSection = pToolkit.createSection(pParent, ExpandableComposite.EXPANDED | ExpandableComposite.TITLE_BAR);
 		lSection.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-		if(lSectionTitle != null) {
+		if (lSectionTitle != null) {
 			lSection.setText(lSectionTitle);
 		}
 		ImageHyperlink componentHelp = HelpComponentFactory.createHelpComponent(lSection, pToolkit, CustomMessages.CreateActivityParameterNodeDialog_ParameterCreationHelp);
@@ -255,18 +256,18 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 	/**
 	 * Set correctly the invoked object, by creating it if needed. Then,
 	 * notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		boolean isSelectionSelected = selectionRadio.getSelection();
 		// create element if needed
-		if(!isSelectionSelected) {
+		if (!isSelectionSelected) {
 			selectedParameter = UMLFactory.eINSTANCE.createParameter();
 			selectedParameter.setName(selectedName);
-			selectedParameter.setType((Type)selectedType);
+			selectedParameter.setType((Type) selectedType);
 			selectedParameter.setDirection(selectedDirection);
 			addParameter(selectedParameter);
 		}
@@ -275,7 +276,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Get the invoked object that have been selected or created.
-	 * 
+	 *
 	 * @return the invoked object to use.
 	 */
 	public EObject getSelectedInvoked() {
@@ -294,7 +295,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 			 */
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if(creationRadio.equals(e.getSource())) {
+				if (creationRadio.equals(e.getSource())) {
 					refreshSectionsEnable(false);
 				} else {
 					refreshSectionsEnable(true);
@@ -317,17 +318,18 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 			}
 		};
 		selectionButton.addSelectionListener(selectBtnListener);
-		if(creationDirectionCombo != null && directionComboViewer != null) {
+		if (creationDirectionCombo != null && directionComboViewer != null) {
 			// listener to select direction
 			ModifyListener lTypeListener = new ModifyListener() {
 
 				/**
 				 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 				 */
+				@Override
 				public void modifyText(ModifyEvent e) {
 					ISelection sel = directionComboViewer.getSelection();
-					if(sel instanceof StructuredSelection) {
-						String firstElement = ((StructuredSelection)sel).getFirstElement().toString();
+					if (sel instanceof StructuredSelection) {
+						String firstElement = ((StructuredSelection) sel).getFirstElement().toString();
 						selectedDirection = ParameterDirectionKind.getByName(firstElement);
 					} else {
 						selectedDirection = null;
@@ -345,6 +347,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 			/**
 			 * @see org.eclipse.swt.events.ModifyListener#modifyText(org.eclipse.swt.events.ModifyEvent)
 			 */
+			@Override
 			public void modifyText(ModifyEvent e) {
 				setInvokedName(creationNameText.getText());
 			}
@@ -360,7 +363,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 			public void widgetSelected(SelectionEvent e) {
 				handleChooseType();
 				// reset name if not set
-				if(selectedName == null) {
+				if (selectedName == null) {
 					setInvokedName(null);
 				}
 				refreshOkButton();
@@ -371,17 +374,17 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Set the name chosen for the invoked element
-	 * 
+	 *
 	 * @param text
-	 *        the text string or null for auto-initialization
+	 *            the text string or null for auto-initialization
 	 */
 	private void setInvokedName(String text) {
 		String name = text;
-		if(text == null) {
+		if (text == null) {
 			name = LabelHelper.INSTANCE.findName(activityOwner, UMLPackage.eINSTANCE.getParameter());
 			// the name assignment will be performed by listener's call
 			creationNameText.setText(name);
-		} else if(name != null && !"".equals(name.trim())) {
+		} else if (name != null && !"".equals(name.trim())) {
 			selectedName = name.trim();
 			Color black = creationNameText.getDisplay().getSystemColor(SWT.COLOR_BLACK);
 			creationNameText.setForeground(black);
@@ -396,14 +399,14 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the existing parameter to select
-	 * 
+	 *
 	 */
 	private void handleChooseParameter() {
 		Collection<EObject> elements = ModelSetQuery.getObjectsOfType(activityOwner, getParameterFeature().getEType());
 		// only keep parameter that are children of the activity
-		for(Iterator<EObject> it = elements.iterator(); it.hasNext();) {
-			EObject eObject = (EObject)it.next();
-			if(!(activityOwner.equals(((Parameter)eObject).getOwner()))) {
+		for (Iterator<EObject> it = elements.iterator(); it.hasNext();) {
+			EObject eObject = it.next();
+			if (!(activityOwner.equals(((Parameter) eObject).getOwner()))) {
 				it.remove();
 			}
 		}
@@ -413,21 +416,21 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 		dialog.setFilter("*");
 		dialog.setMultipleSelection(false);
 		dialog.setElements(elements.toArray(new EObject[elements.size()]));
-		if(dialog.open() == Window.OK) {
-			setParameterSelection((EObject)dialog.getFirstResult());
+		if (dialog.open() == Window.OK) {
+			setParameterSelection((EObject) dialog.getFirstResult());
 		}
 	}
 
 	/**
 	 * Define the parameter that will be set for the parameter node (if
 	 * selection mode is chosen)
-	 * 
+	 *
 	 * @param invokedElement
-	 *        the selected element
+	 *            the selected element
 	 */
 	private void setParameterSelection(EObject invokedElement) {
-		if(invokedElement instanceof Parameter) {
-			selectedParameter = (Parameter)invokedElement;
+		if (invokedElement instanceof Parameter) {
+			selectedParameter = (Parameter) invokedElement;
 			selectionText.setText(labelProvider.getText(selectedParameter));
 		} else {
 			selectionText.setText("");
@@ -436,7 +439,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Open the dialog to choose the type of element to create
-	 * 
+	 *
 	 */
 	private void handleChooseType() {
 		Set<Object> types = getAvailableTypes();
@@ -446,10 +449,10 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 		dialog.setTitle(Messages.UMLModelingAssistantProviderTitle);
 		dialog.setMultipleSelection(false);
 		dialog.setElements(types.toArray());
-		if(dialog.open() == Window.OK) {
+		if (dialog.open() == Window.OK) {
 			Object firstResult = dialog.getFirstResult();
-			if(firstResult instanceof EObject) {
-				setSelectedType((EObject)dialog.getFirstResult());
+			if (firstResult instanceof EObject) {
+				setSelectedType((EObject) dialog.getFirstResult());
 			} else {
 				setSelectedType(null);
 			}
@@ -459,13 +462,13 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 	/**
 	 * Define the type of the object that will be created (if creation mode is
 	 * chosen)
-	 * 
+	 *
 	 * @param the
-	 *        selected parent
+	 *            selected parent
 	 */
 	private void setSelectedType(EObject invokedType) {
 		selectedType = invokedType;
-		if(selectedType instanceof NamedElement) {
+		if (selectedType instanceof NamedElement) {
 			creationTypeText.setText(labelProvider.getText(selectedType));
 		} else {
 			creationTypeText.setText("");
@@ -474,28 +477,28 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Refresh the enabled and disabled elements in various sections
-	 * 
+	 *
 	 * @param isSelectionSelected
-	 *        true if we choose to select an existing element, false if we
-	 *        choose to create an element
+	 *            true if we choose to select an existing element, false if we
+	 *            choose to create an element
 	 */
 	private void refreshSectionsEnable(boolean isSelectionSelected) {
 		// handle radio button value
-		if(isSelectionSelected) {
+		if (isSelectionSelected) {
 			creationRadio.setSelection(false);
-			if(!selectionRadio.getSelection()) {
+			if (!selectionRadio.getSelection()) {
 				selectionRadio.setSelection(true);
 			}
 		} else {
 			selectionRadio.setSelection(false);
-			if(!creationRadio.getSelection()) {
+			if (!creationRadio.getSelection()) {
 				creationRadio.setSelection(true);
 			}
 		}
 		// handle disabled section
 		selectionText.setEnabled(isSelectionSelected);
 		selectionButton.setEnabled(isSelectionSelected);
-		if(creationDirectionCombo != null) {
+		if (creationDirectionCombo != null) {
 			creationDirectionCombo.setEnabled(!isSelectionSelected);
 		}
 		creationNameText.setEnabled(!isSelectionSelected);
@@ -509,8 +512,8 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 	 */
 	private void refreshOkButton() {
 		boolean isSelectionSelected = selectionRadio.getSelection();
-		if(getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
-			if(isSelectionSelected) {
+		if (getButton(IDialogConstants.OK_ID) != null && !getButton(IDialogConstants.OK_ID).isDisposed()) {
+			if (isSelectionSelected) {
 				getButton(IDialogConstants.OK_ID).setEnabled(selectedParameter != null);
 			} else {
 				getButton(IDialogConstants.OK_ID).setEnabled(selectedDirection != null && selectedName != null);
@@ -520,7 +523,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Gets the parameter feature.
-	 * 
+	 *
 	 * @return the parameter feature
 	 */
 	private EReference getParameterFeature() {
@@ -539,7 +542,7 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Gets the available types for the parameter
-	 * 
+	 *
 	 * @return the available types
 	 */
 	private Set<Object> getAvailableTypes() {
@@ -552,13 +555,13 @@ public class CreateActivityParameterNodeDialog extends FormDialog {
 
 	/**
 	 * Gets the possible directions.
-	 * 
+	 *
 	 * @return the possible directions
 	 */
 	private String[] getDirections() {
 		List<ParameterDirectionKind> values = ParameterDirectionKind.VALUES;
 		String[] ret = new String[values.size()];
-		for(int i = 0; i < values.size(); i++) {
+		for (int i = 0; i < values.size(); i++) {
 			ret[i] = values.get(i).getName();
 		}
 		return ret;

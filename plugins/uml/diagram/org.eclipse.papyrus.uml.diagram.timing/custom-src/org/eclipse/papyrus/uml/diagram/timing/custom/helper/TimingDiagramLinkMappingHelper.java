@@ -25,11 +25,11 @@ public class TimingDiagramLinkMappingHelper implements ILinkMappingHelper {
 
 	/**
 	 * Gets the single instance of {@link TimingDiagramLinkMappingHelper}.
-	 * 
+	 *
 	 * @return single instance of {@link TimingDiagramLinkMappingHelper}
 	 */
 	public static TimingDiagramLinkMappingHelper getInstance() {
-		if(INSTANCE == null) {
+		if (INSTANCE == null) {
 			INSTANCE = new TimingDiagramLinkMappingHelper();
 		}
 		return INSTANCE;
@@ -39,6 +39,7 @@ public class TimingDiagramLinkMappingHelper implements ILinkMappingHelper {
 		// singleton helper
 	}
 
+	@Override
 	public Collection<?> getSource(final Element link) {
 		// TODO: define source link mapping
 		return LinkMappingHelper.getSource(link, new CommonSourceUMLSwitch() {
@@ -49,6 +50,7 @@ public class TimingDiagramLinkMappingHelper implements ILinkMappingHelper {
 		});
 	}
 
+	@Override
 	public Collection<?> getTarget(final Element link) {
 		// TODO: define target link mapping
 		return LinkMappingHelper.getTarget(link, new CommonTargetUMLSwitch() {

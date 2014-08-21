@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,9 +19,9 @@ import java.util.LinkedList;
 
 /**
  * A wrapper to convert a IRevealSemanticElement to an INavigationTarget
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class RevealSemanticElementWrapper implements NavigationTarget {
 
@@ -31,10 +31,12 @@ public class RevealSemanticElementWrapper implements NavigationTarget {
 		this.revealSemanticElement = revealSemanticElement;
 	}
 
+	@Override
 	public boolean revealElement(Object element) {
 		return revealElement(Collections.singletonList(element));
 	}
 
+	@Override
 	public boolean revealElement(Collection<?> elements) {
 		revealSemanticElement.revealSemanticElement(new LinkedList<Object>(elements));
 		return false;

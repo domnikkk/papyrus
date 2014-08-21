@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 
 /**
  * This class is used to supplement a gmf connection command.
- * 
+ *
  * @author Patrick Tessier
  */
 public abstract class SupplementCommand {
@@ -32,18 +32,18 @@ public abstract class SupplementCommand {
 	private final EObject target;
 
 	protected final Diagram diagram;
-	
+
 	/**
 	 * the supplement command has the same parameter as connection create
 	 * command of gmf command
-	 * 
+	 *
 	 * @param container
-	 *        the container of the link
+	 *            the container of the link
 	 * @param source
-	 *        the source of the link
-	 * 
+	 *            the source of the link
+	 *
 	 * @param target
-	 *        the target of the link
+	 *            the target of the link
 	 */
 	public SupplementCommand(EObject container, EObject source, EObject target, Diagram diagram) {
 		super();
@@ -55,7 +55,7 @@ public abstract class SupplementCommand {
 
 	/**
 	 * this is the same fucntionnality as {@link IUndoableOperation}
-	 * 
+	 *
 	 * @return true if the command ca be executed
 	 */
 	// @unused
@@ -63,7 +63,7 @@ public abstract class SupplementCommand {
 
 	/**
 	 * Creates the request to configure the new element.
-	 * 
+	 *
 	 * @see EditElementCommand
 	 * @return the request
 	 */
@@ -72,16 +72,16 @@ public abstract class SupplementCommand {
 
 	/**
 	 * this is the method tat realize the execution of the command
-	 * 
+	 *
 	 * @param newElement
-	 *        the new element ro configure
+	 *            the new element ro configure
 	 * @return the new element
 	 */
 	public abstract EObject doDefaultElementCreation(TransactionalEditingDomain domain, EObject newElement);
 
 	/**
 	 * use to obtain the container of the link
-	 * 
+	 *
 	 * @return the container of the link
 	 */
 	public EObject getContainer() {
@@ -90,7 +90,7 @@ public abstract class SupplementCommand {
 
 	/**
 	 * use to obtain the source of the link
-	 * 
+	 *
 	 * @return the source of the link
 	 */
 	public EObject getSource() {
@@ -99,7 +99,7 @@ public abstract class SupplementCommand {
 
 	/**
 	 * use to obtain the target of the link
-	 * 
+	 *
 	 * @return the target of the link
 	 */
 	public EObject getTarget() {

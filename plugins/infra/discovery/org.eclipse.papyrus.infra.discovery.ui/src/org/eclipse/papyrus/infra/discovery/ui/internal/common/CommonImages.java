@@ -27,63 +27,63 @@ import org.eclipse.swt.graphics.Image;
  */
 public class CommonImages {
 
-    private static final URL baseURL = Activator.getDefault().getBundle().getEntry("/icons/full/"); //$NON-NLS-1$
+	private static final URL baseURL = Activator.getDefault().getBundle().getEntry("/icons/full/"); //$NON-NLS-1$
 
-    private static ImageRegistry imageRegistry;
+	private static ImageRegistry imageRegistry;
 
-    private static final String T_TOOL = "etool16"; //$NON-NLS-1$
+	private static final String T_TOOL = "etool16"; //$NON-NLS-1$
 
-    private static final String T_WIZBAN = "wizban"; //$NON-NLS-1$
+	private static final String T_WIZBAN = "wizban"; //$NON-NLS-1$
 
-    // Discovery
+	// Discovery
 
-    public static final ImageDescriptor BANNER_DISCOVERY = create(T_WIZBAN, "banner-discovery-papyrus.png"); //$NON-NLS-1$
+	public static final ImageDescriptor BANNER_DISCOVERY = create(T_WIZBAN, "banner-discovery-papyrus.png"); //$NON-NLS-1$
 
-    public static final ImageDescriptor FIND_CLEAR = create(T_TOOL, "find-clear.gif"); //$NON-NLS-1$
+	public static final ImageDescriptor FIND_CLEAR = create(T_TOOL, "find-clear.gif"); //$NON-NLS-1$
 
-    public static final ImageDescriptor FIND_CLEAR_DISABLED = create(T_TOOL, "find-clear-disabled.gif"); //$NON-NLS-1$
+	public static final ImageDescriptor FIND_CLEAR_DISABLED = create(T_TOOL, "find-clear-disabled.gif"); //$NON-NLS-1$
 
-    private static ImageDescriptor create(String prefix, String name) {
-        try {
-            return ImageDescriptor.createFromURL(makeIconFileURL(prefix, name));
-        } catch (MalformedURLException e) {
-            return ImageDescriptor.getMissingImageDescriptor();
-        }
-    }
+	private static ImageDescriptor create(String prefix, String name) {
+		try {
+			return ImageDescriptor.createFromURL(makeIconFileURL(prefix, name));
+		} catch (MalformedURLException e) {
+			return ImageDescriptor.getMissingImageDescriptor();
+		}
+	}
 
-    /**
-     * Lazily initializes image map.
-     * 
-     * @param imageDescriptor
-     * @return Image
-     */
-    public static Image getImage(ImageDescriptor imageDescriptor) {
-        ImageRegistry imageRegistry = getImageRegistry();
-        Image image = imageRegistry.get("" + imageDescriptor.hashCode()); //$NON-NLS-1$
-        if (image == null) {
-            image = imageDescriptor.createImage(true);
-            imageRegistry.put("" + imageDescriptor.hashCode(), image); //$NON-NLS-1$
-        }
-        return image;
-    }
+	/**
+	 * Lazily initializes image map.
+	 *
+	 * @param imageDescriptor
+	 * @return Image
+	 */
+	public static Image getImage(ImageDescriptor imageDescriptor) {
+		ImageRegistry imageRegistry = getImageRegistry();
+		Image image = imageRegistry.get("" + imageDescriptor.hashCode()); //$NON-NLS-1$
+		if (image == null) {
+			image = imageDescriptor.createImage(true);
+			imageRegistry.put("" + imageDescriptor.hashCode(), image); //$NON-NLS-1$
+		}
+		return image;
+	}
 
-    private static ImageRegistry getImageRegistry() {
-        if (imageRegistry == null) {
-            imageRegistry = new ImageRegistry();
-        }
+	private static ImageRegistry getImageRegistry() {
+		if (imageRegistry == null) {
+			imageRegistry = new ImageRegistry();
+		}
 
-        return imageRegistry;
-    }
+		return imageRegistry;
+	}
 
-    private static URL makeIconFileURL(String prefix, String name) throws MalformedURLException {
-        if (baseURL == null) {
-            throw new MalformedURLException();
-        }
+	private static URL makeIconFileURL(String prefix, String name) throws MalformedURLException {
+		if (baseURL == null) {
+			throw new MalformedURLException();
+		}
 
-        StringBuffer buffer = new StringBuffer(prefix);
-        buffer.append('/');
-        buffer.append(name);
-        return new URL(baseURL, buffer.toString());
-    }
+		StringBuffer buffer = new StringBuffer(prefix);
+		buffer.append('/');
+		buffer.append(name);
+		return new URL(baseURL, buffer.toString());
+	}
 
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,6 +52,7 @@ import org.eclipse.papyrus.uml.diagram.common.Messages;
 import org.eclipse.papyrus.uml.diagram.common.part.PaletteUtil;
 import org.eclipse.papyrus.uml.diagram.common.part.PapyrusPaletteCustomizer;
 import org.eclipse.papyrus.uml.diagram.common.part.PapyrusPalettePreferences;
+import org.eclipse.papyrus.uml.diagram.common.service.IPapyrusPaletteConstant;
 import org.eclipse.papyrus.uml.diagram.common.service.PapyrusPaletteService;
 import org.eclipse.papyrus.uml.diagram.common.service.PapyrusPaletteService.ExtendedProviderDescriptor;
 import org.eclipse.swt.SWT;
@@ -130,13 +131,13 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Creates a new PapyrusPaletteCustomizerDialog
-	 * 
+	 *
 	 * @param shell
-	 *        the shell that hosts the dialog window
+	 *            the shell that hosts the dialog window
 	 * @param customizer
-	 *        the customizer used to customize the palette
+	 *            the customizer used to customize the palette
 	 * @param root
-	 *        the root of the palette
+	 *            the root of the palette
 	 */
 	public PapyrusPaletteCustomizerDialog(Shell shell, PaletteCustomizer customizer, PaletteRoot root) {
 		super(shell, customizer, root);
@@ -214,7 +215,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 		// add listeners
 		ISelectionChangedListener listener = createSelectionChangedListener();
-		if(listener != null) {
+		if (listener != null) {
 			availablePalettesTableViewer.addSelectionChangedListener(listener);
 		}
 		return mainComposite;
@@ -228,13 +229,13 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 			 */
 			public void selectionChanged(SelectionChangedEvent event) {
 				// retrieve element selected
-				Object selectedElement = ((IStructuredSelection)event.getSelection()).getFirstElement();
+				Object selectedElement = ((IStructuredSelection) event.getSelection()).getFirstElement();
 
-				if(selectedElement instanceof PapyrusPaletteService.ExtendedProviderDescriptor) {
+				if (selectedElement instanceof PapyrusPaletteService.ExtendedProviderDescriptor) {
 					paletteButtonsMap.get(DELETE_PALETTE_BUTTON_ID).setEnabled(false);
 					paletteButtonsMap.get(EDIT_PALETTE_BUTTON_ID).setEnabled(true);
 					paletteButtonsMap.get(RESTORE_DEFAULT_PALETTE_BUTTON_ID).setEnabled(true);
-				} else if(selectedElement instanceof PapyrusPaletteService.LocalProviderDescriptor) {
+				} else if (selectedElement instanceof PapyrusPaletteService.LocalProviderDescriptor) {
 					paletteButtonsMap.get(DELETE_PALETTE_BUTTON_ID).setEnabled(true);
 					paletteButtonsMap.get(EDIT_PALETTE_BUTTON_ID).setEnabled(true);
 					paletteButtonsMap.get(RESTORE_DEFAULT_PALETTE_BUTTON_ID).setEnabled(false);
@@ -244,21 +245,21 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 					paletteButtonsMap.get(RESTORE_DEFAULT_PALETTE_BUTTON_ID).setEnabled(false);
 				}
 
-				//				if(selectedElement instanceof PapyrusPaletteService.LocalProviderDescriptor) {
-				//					deletePaletteButton.setEnabled(true);
-				//					// check if the palette is in good configuration to be edited...
-				//					if(PaletteUtil.areRequiredProfileApplied(getActiveSashPage(), (PapyrusPaletteService.LocalProviderDescriptor)selectedElement)) {
-				//						editPaletteButton.setEnabled(true);
-				//						editPaletteButton.setToolTipText(Messages.PapyrusPaletteCustomizerDialog_EditButtonTooltip_LocalPaletteSelected);
-				//					} else {
-				//						editPaletteButton.setEnabled(false);
-				//						editPaletteButton.setToolTipText(Messages.PapyrusPaletteCustomizerDialog_EditButtonTooltip_MissingProfile);
-				//					}
-				//				} else {
-				//					deletePaletteButton.setEnabled(false);
-				//					editPaletteButton.setEnabled(false);
-				//					editPaletteButton.setToolTipText(Messages.PapyrusPaletteCustomizerDialog_EditButtonTooltip_LocalPaletteNotSelected);
-				//				}
+				// if(selectedElement instanceof PapyrusPaletteService.LocalProviderDescriptor) {
+				// deletePaletteButton.setEnabled(true);
+				// // check if the palette is in good configuration to be edited...
+				// if(PaletteUtil.areRequiredProfileApplied(getActiveSashPage(), (PapyrusPaletteService.LocalProviderDescriptor)selectedElement)) {
+				// editPaletteButton.setEnabled(true);
+				// editPaletteButton.setToolTipText(Messages.PapyrusPaletteCustomizerDialog_EditButtonTooltip_LocalPaletteSelected);
+				// } else {
+				// editPaletteButton.setEnabled(false);
+				// editPaletteButton.setToolTipText(Messages.PapyrusPaletteCustomizerDialog_EditButtonTooltip_MissingProfile);
+				// }
+				// } else {
+				// deletePaletteButton.setEnabled(false);
+				// editPaletteButton.setEnabled(false);
+				// editPaletteButton.setToolTipText(Messages.PapyrusPaletteCustomizerDialog_EditButtonTooltip_LocalPaletteNotSelected);
+				// }
 			}
 		};
 	}
@@ -266,12 +267,12 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 	protected void addEntry(MouseEvent e) {
 		ISelection selection = availableToolsTreeViewer.getSelection();
 		PaletteEntry entry = null;
-		if(selection instanceof IStructuredSelection) {
-			Object firstElement = ((IStructuredSelection)selection).getFirstElement();
-			if(!(firstElement instanceof PaletteEntry)) {
+		if (selection instanceof IStructuredSelection) {
+			Object firstElement = ((IStructuredSelection) selection).getFirstElement();
+			if (!(firstElement instanceof PaletteEntry)) {
 				return;
 			} else {
-				entry = ((PaletteEntry)firstElement);
+				entry = ((PaletteEntry) firstElement);
 			}
 		}
 		// sets the active entry, to have the page useful for saving modification
@@ -279,27 +280,27 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		// add entry to the selected container
 		// retrieve the selection in the palette viewer
 		PaletteEntry destContainer = getSelectedPaletteEntry();
-		((PapyrusPaletteCustomizer)getCustomizer()).storePaletteState(entry);
-		if(destContainer instanceof PaletteContainer) {
+		((PapyrusPaletteCustomizer) getCustomizer()).storePaletteState(entry);
+		if (destContainer instanceof PaletteContainer) {
 			PaletteContainer oldParent = entry.getParent();
 
 			// checks if the parent is already changed. If not, must store the standard parent (the
 			// one given by the factory)
-			PaletteContainer stdParent = ((PapyrusPaletteCustomizer)getCustomizer()).getChangedParents().get(entry);
-			if(stdParent == null) {
-				((PapyrusPaletteCustomizer)getCustomizer()).getChangedParents().put(entry, entry.getParent());
+			PaletteContainer stdParent = ((PapyrusPaletteCustomizer) getCustomizer()).getChangedParents().get(entry);
+			if (stdParent == null) {
+				((PapyrusPaletteCustomizer) getCustomizer()).getChangedParents().put(entry, entry.getParent());
 			}
 			oldParent.remove(entry);
-			entry.setParent((PaletteContainer)destContainer);
-			((PaletteContainer)destContainer).add(entry);
+			entry.setParent((PaletteContainer) destContainer);
+			((PaletteContainer) destContainer).add(entry);
 		} else {
 			// add it to the palette root
-			PaletteRoot root = (PaletteRoot)PaletteUtil.getRoot(entry);
-			if(root != null) {
+			PaletteRoot root = (PaletteRoot) PaletteUtil.getRoot(entry);
+			if (root != null) {
 				PaletteContainer oldParent = entry.getParent();
-				PaletteContainer stdParent = ((PapyrusPaletteCustomizer)getCustomizer()).getChangedParents().get(entry);
-				if(stdParent == null) {
-					((PapyrusPaletteCustomizer)getCustomizer()).getChangedParents().put(entry, stdParent);
+				PaletteContainer stdParent = ((PapyrusPaletteCustomizer) getCustomizer()).getChangedParents().get(entry);
+				if (stdParent == null) {
+					((PapyrusPaletteCustomizer) getCustomizer()).getChangedParents().put(entry, stdParent);
 				}
 				oldParent.remove(entry);
 				entry.setParent(root);
@@ -310,9 +311,9 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Creates the available palettes viewer part of the dialog.
-	 * 
+	 *
 	 * @param container
-	 *        The Composite within which the viewer has to be created
+	 *            The Composite within which the viewer has to be created
 	 * @return The newly created Control that has the viewer
 	 */
 	protected Control createAvailablePalettesViewer(Composite container) {
@@ -331,7 +332,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		GridData data = new GridData(SWT.FILL, SWT.CENTER, true, false);
 		nameLabel.setLayoutData(data);
 
-		// Create action buttons 
+		// Create action buttons
 		createEditionPaletteButton(composite, NEW_LOCAL_PALETTE_BUTTON_ID, Activator.getImage(NEW_LOCAL_DESC_IMAGE), Messages.Dialog_Create_Palette_Tooltip);
 		createEditionPaletteButton(composite, EDIT_PALETTE_BUTTON_ID, Activator.getImage(EDIT_LOCAL_DESC_IMAGE), Messages.Dialog_Edit_Palette_Tooltip);
 		createEditionPaletteButton(composite, DELETE_PALETTE_BUTTON_ID, Activator.getImage(DELETE_LOCAL_DESC_IMAGE), Messages.Dialog_Delete_Palette_Tooltip);
@@ -345,10 +346,10 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 			 * {@inheritDoc}
 			 */
 			public void widgetSelected(SelectionEvent e) {
-				if(e.detail == SWT.CHECK) {
-					TableItem item = (TableItem)e.item;
+				if (e.detail == SWT.CHECK) {
+					TableItem item = (TableItem) e.item;
 					// one item was checked => display/hide the given provider
-					changeProviderVisibility((PapyrusPaletteService.ProviderDescriptor)item.getData(), item.getChecked());
+					changeProviderVisibility((PapyrusPaletteService.ProviderDescriptor) item.getData(), item.getChecked());
 				}
 			}
 
@@ -377,7 +378,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 			public void doubleClick(DoubleClickEvent event) {
 				// get selection. if local palette: open the wizard to edit this local palette
-				IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
 				editSelectedPalette(selection);
 			}
 		});
@@ -387,7 +388,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Create button to edit palette in table.
-	 * 
+	 *
 	 * @param parentConposite
 	 * @return
 	 */
@@ -409,7 +410,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 			}
 
 			public void mouseUp(MouseEvent e) {
-				buttonPressed(((Integer)e.widget.getData()).intValue());
+				buttonPressed(((Integer) e.widget.getData()).intValue());
 
 			}
 
@@ -428,9 +429,9 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 	 */
 	@Override
 	protected void buttonPressed(int buttonId) {
-		if(paletteButtonsMap.containsKey(buttonId)) {
+		if (paletteButtonsMap.containsKey(buttonId)) {
 
-			switch(buttonId) {
+			switch (buttonId) {
 			case NEW_LOCAL_PALETTE_BUTTON_ID:
 				createNewLocalPalette();
 				break;
@@ -454,15 +455,15 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Get selection in palettes table viewer.
-	 * 
+	 *
 	 * @return The {@link IStructuredSelection} if there is one, otherwise <code>null</code>
 	 */
 	private IStructuredSelection getPalettesTableSelection() {
 		IStructuredSelection structuredSelection = null;
-		if(availablePalettesTableViewer != null) {
+		if (availablePalettesTableViewer != null) {
 			ISelection selection = availablePalettesTableViewer.getSelection();
-			if(selection instanceof IStructuredSelection) {
-				structuredSelection = (IStructuredSelection)selection;
+			if (selection instanceof IStructuredSelection) {
+				structuredSelection = (IStructuredSelection) selection;
 			}
 		}
 
@@ -477,7 +478,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 	 */
 	@Override
 	protected void setButtonLayoutData(Button button) {
-		if(paletteButtonsMap.containsValue(button)) {
+		if (paletteButtonsMap.containsValue(button)) {
 			GridData data = new GridData(SWT.CENTER, SWT.CENTER, false, false);
 			button.setLayoutData(data);
 			button.setEnabled(false);
@@ -488,9 +489,9 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Launch the wizard for the palette creation
-	 * 
+	 *
 	 * @param shell
-	 *        the shell where to display the wizard
+	 *            the shell where to display the wizard
 	 */
 	protected void createNewLocalPalette() {
 		NewLocalPaletteWizard wizard = new NewLocalPaletteWizard(getActiveSashPage(), getCustomizer());
@@ -502,11 +503,11 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 	 * Deletes the current selected local palette
 	 */
 	protected void deleteLocalPalette() {
-		IStructuredSelection selection = (IStructuredSelection)availablePalettesTableViewer.getSelection();
-		if(selection == null || !(selection.getFirstElement() instanceof PapyrusPaletteService.LocalProviderDescriptor)) {
+		IStructuredSelection selection = (IStructuredSelection) availablePalettesTableViewer.getSelection();
+		if (selection == null || !(selection.getFirstElement() instanceof PapyrusPaletteService.LocalProviderDescriptor)) {
 			MessageDialog.openError(getShell(), Messages.Dialog_Not_Local_Palette_Title, Messages.Dialog_Not_Local_Palette_Message);
 		} else {
-			PapyrusPaletteService.LocalProviderDescriptor descriptor = ((PapyrusPaletteService.LocalProviderDescriptor)selection.getFirstElement());
+			PapyrusPaletteService.LocalProviderDescriptor descriptor = ((PapyrusPaletteService.LocalProviderDescriptor) selection.getFirstElement());
 			String id = descriptor.getContributionID();
 			PapyrusPalettePreferences.deleteLocalPalette(id);
 		}
@@ -516,11 +517,11 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 	 * Reset the current selected extended palette to the initial configurtion in the plugin
 	 */
 	protected void restoreExtendedPaletteToDefault() {
-		IStructuredSelection selection = (IStructuredSelection)availablePalettesTableViewer.getSelection();
-		if(selection == null || !(selection.getFirstElement() instanceof PapyrusPaletteService.ExtendedProviderDescriptor)) {
+		IStructuredSelection selection = (IStructuredSelection) availablePalettesTableViewer.getSelection();
+		if (selection == null || !(selection.getFirstElement() instanceof PapyrusPaletteService.ExtendedProviderDescriptor)) {
 			MessageDialog.openError(getShell(), Messages.Dialog_Not_Extended_Palette_Title, Messages.Dialog_Not_Extended_Palette_Message);
 		} else {
-			PapyrusPaletteService.ExtendedProviderDescriptor descriptor = ((PapyrusPaletteService.ExtendedProviderDescriptor)selection.getFirstElement());
+			PapyrusPaletteService.ExtendedProviderDescriptor descriptor = ((PapyrusPaletteService.ExtendedProviderDescriptor) selection.getFirstElement());
 			String id = descriptor.getContributionID();
 			PapyrusPalettePreferences.unregisterLocalRedefinition(id);
 		}
@@ -528,16 +529,16 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Method to launch edition dialog according to selection.
-	 * 
+	 *
 	 * @param selection
-	 *        Selection which determine kind of edition
+	 *            Selection which determine kind of edition
 	 */
 	protected void editSelectedPalette(IStructuredSelection selection) {
-		if(selection != null) {
-			if((selection.getFirstElement() instanceof PapyrusPaletteService.LocalProviderDescriptor)) {
-				editLocalPalette((PapyrusPaletteService.LocalProviderDescriptor)selection.getFirstElement());
-			} else if(selection.getFirstElement() instanceof PapyrusPaletteService.ExtendedProviderDescriptor) {
-				editExtendedPalette((PapyrusPaletteService.ExtendedProviderDescriptor)selection.getFirstElement());
+		if (selection != null) {
+			if ((selection.getFirstElement() instanceof PapyrusPaletteService.LocalProviderDescriptor)) {
+				editLocalPalette((PapyrusPaletteService.LocalProviderDescriptor) selection.getFirstElement());
+			} else if (selection.getFirstElement() instanceof PapyrusPaletteService.ExtendedProviderDescriptor) {
+				editExtendedPalette((PapyrusPaletteService.ExtendedProviderDescriptor) selection.getFirstElement());
 			}
 		}
 
@@ -560,7 +561,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		String contributionID = descriptor.getContributionID();
 		String paletteRedefinition = PapyrusPalettePreferences.getPaletteRedefinition(contributionID);
 
-		if(paletteRedefinition == null) {
+		if (paletteRedefinition == null) {
 			// create a local redefinition of this palette contribution
 			PapyrusPalettePreferences.createPaletteRedefinition(descriptor);
 		}
@@ -574,11 +575,11 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Changes the visibility of the given provider
-	 * 
+	 *
 	 * @param descriptor
-	 *        the provider to hide/show
+	 *            the provider to hide/show
 	 * @param isChecked
-	 *        <code>true</code> if the descriptor should be visible
+	 *            <code>true</code> if the descriptor should be visible
 	 */
 	protected void changeProviderVisibility(PapyrusPaletteService.ProviderDescriptor descriptor, boolean isChecked) {
 		PapyrusPalettePreferences.changePaletteVisibility(descriptor.getContributionID(), getActiveSashPage().getClass().getName(), isChecked);
@@ -586,9 +587,9 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Creates the main composite for the dialog area
-	 * 
+	 *
 	 * @param parent
-	 *        the parent of the createrd composite
+	 *            the parent of the createrd composite
 	 * @return the newly created Composite
 	 */
 	protected Composite createMainComposite(Composite parent) {
@@ -617,9 +618,9 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 		/**
 		 * Constructor
-		 * 
+		 *
 		 * @param tableViewer
-		 *        The TableViewer whose ContentProvider this PaletteTreeProvider is
+		 *            The TableViewer whose ContentProvider this PaletteTreeProvider is
 		 */
 		public PalettesTableContentProvider(TableViewer tableViewer) {
 			this.viewer = tableViewer;
@@ -636,8 +637,8 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		 * {@inheritDoc}
 		 */
 		public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-			if(newInput != null) {
-				paletteService = (PapyrusPaletteService)newInput;
+			if (newInput != null) {
+				paletteService = (PapyrusPaletteService) newInput;
 			}
 		}
 
@@ -645,8 +646,8 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		 * {@inheritDoc}
 		 */
 		public Object[] getElements(Object inputElement) {
-			if(inputElement instanceof PapyrusPaletteService) {
-				List<PapyrusPaletteService.ProviderDescriptor> providers = ((PapyrusPaletteService)inputElement).getContributingProviders(getActiveSashPage(), getPaletteRoot());
+			if (inputElement instanceof PapyrusPaletteService) {
+				List<PapyrusPaletteService.ProviderDescriptor> providers = ((PapyrusPaletteService) inputElement).getContributingProviders(getActiveSashPage(), getPaletteRoot());
 
 				return providers.toArray();
 			}
@@ -656,7 +657,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 	/**
 	 * Returns the current active sash page
-	 * 
+	 *
 	 * @return the current active sash page
 	 */
 	protected IEditorPart getActiveSashPage() {
@@ -664,8 +665,8 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorPart editorPart = page.getActiveEditor();
 		assert editorPart != null;
-		ISashWindowsContainer sashWindowsContainer = (ISashWindowsContainer)editorPart.getAdapter(ISashWindowsContainer.class);
-		if(sashWindowsContainer != null) {
+		ISashWindowsContainer sashWindowsContainer = (ISashWindowsContainer) editorPart.getAdapter(ISashWindowsContainer.class);
+		if (sashWindowsContainer != null) {
 			return sashWindowsContainer.getActiveEditor();
 		}
 		return null;
@@ -680,8 +681,8 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		 * {@inheritDoc}
 		 */
 		public boolean isChecked(Object element) {
-			if(element instanceof PapyrusPaletteService.ProviderDescriptor) {
-				return !PapyrusPalettePreferences.getHiddenPalettes(getActiveSashPage()).contains(((PapyrusPaletteService.ProviderDescriptor)element).getContributionID());
+			if (element instanceof PapyrusPaletteService.ProviderDescriptor) {
+				return !PapyrusPalettePreferences.getHiddenPalettes(getActiveSashPage()).contains(((PapyrusPaletteService.ProviderDescriptor) element).getContributionID());
 			}
 			return false;
 		}
@@ -702,9 +703,9 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 
 		/**
 		 * Creates a new PaletteLabelProvider.
-		 * 
+		 *
 		 * @param viewer
-		 *        the table viewer where the labels are displayed
+		 *            the table viewer where the labels are displayed
 		 */
 		public PaletteLabelProvider(TableViewer viewer) {
 		}
@@ -715,12 +716,12 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		 * {@inheritDoc}
 		 */
 		public Image getImage(Object element) {
-			if(element instanceof PapyrusPaletteService.LocalProviderDescriptor) {
+			if (element instanceof PapyrusPaletteService.LocalProviderDescriptor) {
 				return Activator.getImage(LOCAL_DESCRIPTOR);
-			} else if(element instanceof PapyrusPaletteService.ExtendedProviderDescriptor) {
+			} else if (element instanceof PapyrusPaletteService.ExtendedProviderDescriptor) {
 				// icon should be decorated if it is already defined in a local way or not.
 				return Activator.getImage(EXTENDED_PLUGIN_DESCRIPTOR);
-			} else if(element instanceof PapyrusPaletteService.ProviderDescriptor) {
+			} else if (element instanceof PapyrusPaletteService.ProviderDescriptor) {
 				return Activator.getImage(PLUGIN_DESCRIPTOR);
 			}
 			return Activator.getImage(Activator.DEFAULT_IMAGE);
@@ -730,8 +731,8 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		 * {@inheritDoc}
 		 */
 		public String getText(Object element) {
-			if(element instanceof PapyrusPaletteService.ProviderDescriptor) {
-				return ((PapyrusPaletteService.ProviderDescriptor)element).getContributionName();
+			if (element instanceof PapyrusPaletteService.ProviderDescriptor) {
+				return ((PapyrusPaletteService.ProviderDescriptor) element).getContributionName();
 			}
 			return "<undefined>";
 		}
@@ -747,7 +748,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 		 */
 		public void dispose() {
 			Iterator<Image> images = imageCache.values().iterator();
-			while(images.hasNext()) {
+			while (images.hasNext()) {
 				images.next().dispose();
 			}
 			imageCache = null;
@@ -773,7 +774,7 @@ public class PapyrusPaletteCustomizerDialog extends PaletteCustomizerDialogEx im
 	 */
 	public void preferenceChange(PreferenceChangeEvent event) {
 		String id = event.getKey();
-		if(PapyrusPalettePreferences.PALETTE_CUSTOMIZATIONS_ID.equals(id) || PapyrusPalettePreferences.PALETTE_LOCAL_DEFINITIONS.equals(id)) {
+		if (IPapyrusPaletteConstant.PALETTE_CUSTOMIZATIONS_ID.equals(id) || IPapyrusPaletteConstant.PALETTE_LOCAL_DEFINITIONS.equals(id)) {
 			// refresh available palette table viewer
 			availablePalettesTableViewer.setInput(PapyrusPaletteService.getInstance());
 		}

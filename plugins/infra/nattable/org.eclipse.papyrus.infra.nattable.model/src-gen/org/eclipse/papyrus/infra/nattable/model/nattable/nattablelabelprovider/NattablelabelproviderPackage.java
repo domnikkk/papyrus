@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EcorePackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.NattablelabelproviderFactory
  * @model kind="package"
  * @generated
@@ -40,7 +40,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "nattablelabelprovider"; //$NON-NLS-1$
@@ -49,7 +49,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.eclipse.org/papyrus/nattable/model/table/nattablecontentprovider"; //$NON-NLS-1$
@@ -58,7 +58,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "nattablelabelprovider"; //$NON-NLS-1$
@@ -67,7 +67,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	NattablelabelproviderPackage eINSTANCE = org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl.init();
@@ -77,7 +77,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * <em>ILabel Provider Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl#getILabelProviderConfiguration()
 	 * @generated
@@ -88,7 +88,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -98,7 +98,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The number of structural features of the '<em>ILabel Provider Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -108,7 +108,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -118,19 +118,18 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The number of operations of the '<em>ILabel Provider Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int ILABEL_PROVIDER_CONFIGURATION_OPERATION_COUNT = EcorePackage.EMODEL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl
 	 * <em>Object Label Provider Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl#getObjectLabelProviderConfiguration()
 	 * @generated
@@ -141,7 +140,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +150,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -161,7 +160,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -171,7 +170,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The number of structural features of the '<em>Object Label Provider Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -181,7 +180,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -191,19 +190,18 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The number of operations of the '<em>Object Label Provider Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int OBJECT_LABEL_PROVIDER_CONFIGURATION_OPERATION_COUNT = ILABEL_PROVIDER_CONFIGURATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl
+	 * The meta object id for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl
 	 * <em>Feature Label Provider Configuration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl#getFeatureLabelProviderConfiguration()
 	 * @generated
@@ -214,7 +212,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -224,7 +222,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Icon</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -234,7 +232,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Label</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -244,7 +242,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Is Derived</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -254,7 +252,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -264,7 +262,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Multiplicity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -274,7 +272,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -284,7 +282,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The number of structural features of the '<em>Feature Label Provider Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -294,7 +292,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -304,7 +302,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * The number of operations of the '<em>Feature Label Provider Configuration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -316,7 +314,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * <em>ILabel Provider Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>ILabel Provider Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration
 	 * @generated
@@ -324,12 +322,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EClass getILabelProviderConfiguration();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration
 	 * <em>Feature Label Provider Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Feature Label Provider Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration
 	 * @generated
@@ -337,12 +334,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EClass getFeatureLabelProviderConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived
 	 * <em>Display Is Derived</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Is Derived</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayIsDerived()
 	 * @see #getFeatureLabelProviderConfiguration()
@@ -351,12 +347,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EAttribute getFeatureLabelProviderConfiguration_DisplayIsDerived();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType
 	 * <em>Display Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Type</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayType()
 	 * @see #getFeatureLabelProviderConfiguration()
@@ -365,12 +360,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EAttribute getFeatureLabelProviderConfiguration_DisplayType();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity
 	 * <em>Display Multiplicity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Multiplicity</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayMultiplicity()
 	 * @see #getFeatureLabelProviderConfiguration()
@@ -379,12 +373,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EAttribute getFeatureLabelProviderConfiguration_DisplayMultiplicity();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName
 	 * <em>Display Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Name</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.FeatureLabelProviderConfiguration#isDisplayName()
 	 * @see #getFeatureLabelProviderConfiguration()
@@ -393,12 +386,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EAttribute getFeatureLabelProviderConfiguration_DisplayName();
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration
+	 * Returns the meta object for class ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration
 	 * <em>Object Label Provider Configuration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Object Label Provider Configuration</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration
 	 * @generated
@@ -406,12 +398,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EClass getObjectLabelProviderConfiguration();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon
 	 * <em>Display Icon</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Icon</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayIcon()
 	 * @see #getObjectLabelProviderConfiguration()
@@ -420,12 +411,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 	EAttribute getObjectLabelProviderConfiguration_DisplayIcon();
 
 	/**
-	 * Returns the meta object for the attribute '
-	 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayLabel
+	 * Returns the meta object for the attribute ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayLabel
 	 * <em>Display Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Display Label</em>'.
 	 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ObjectLabelProviderConfiguration#isDisplayLabel()
 	 * @see #getObjectLabelProviderConfiguration()
@@ -437,7 +427,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -454,18 +444,17 @@ public interface NattablelabelproviderPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration
 		 * <em>ILabel Provider Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.ILabelProviderConfiguration
 		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl#getILabelProviderConfiguration()
 		 * @generated
@@ -473,12 +462,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 		EClass ILABEL_PROVIDER_CONFIGURATION = eINSTANCE.getILabelProviderConfiguration();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl
 		 * <em>Feature Label Provider Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.FeatureLabelProviderConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl#getFeatureLabelProviderConfiguration()
 		 * @generated
@@ -489,7 +477,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Is Derived</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_IS_DERIVED = eINSTANCE.getFeatureLabelProviderConfiguration_DisplayIsDerived();
@@ -498,7 +486,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_TYPE = eINSTANCE.getFeatureLabelProviderConfiguration_DisplayType();
@@ -507,7 +495,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Multiplicity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_MULTIPLICITY = eINSTANCE.getFeatureLabelProviderConfiguration_DisplayMultiplicity();
@@ -516,18 +504,17 @@ public interface NattablelabelproviderPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute FEATURE_LABEL_PROVIDER_CONFIGURATION__DISPLAY_NAME = eINSTANCE.getFeatureLabelProviderConfiguration_DisplayName();
 
 		/**
-		 * The meta object literal for the '
-		 * {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl
+		 * The meta object literal for the ' {@link org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl
 		 * <em>Object Label Provider Configuration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.ObjectLabelProviderConfigurationImpl
 		 * @see org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.impl.NattablelabelproviderPackageImpl#getObjectLabelProviderConfiguration()
 		 * @generated
@@ -538,7 +525,7 @@ public interface NattablelabelproviderPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Icon</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute OBJECT_LABEL_PROVIDER_CONFIGURATION__DISPLAY_ICON = eINSTANCE.getObjectLabelProviderConfiguration_DisplayIcon();
@@ -547,11 +534,11 @@ public interface NattablelabelproviderPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Label</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute OBJECT_LABEL_PROVIDER_CONFIGURATION__DISPLAY_LABEL = eINSTANCE.getObjectLabelProviderConfiguration_DisplayLabel();
 
 	}
 
-} //NattablelabelproviderPackage
+} // NattablelabelproviderPackage

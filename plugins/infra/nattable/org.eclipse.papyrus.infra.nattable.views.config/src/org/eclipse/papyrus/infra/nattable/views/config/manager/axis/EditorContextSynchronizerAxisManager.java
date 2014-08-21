@@ -55,7 +55,7 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 
 			@Override
 			protected void doNotify(Notification msg) {
-				switch(msg.getEventType()) {
+				switch (msg.getEventType()) {
 				case Notification.ADD:
 				case Notification.ADD_MANY:
 				case Notification.REMOVE:
@@ -68,7 +68,7 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 		try {
 			modelSet = ServiceUtilsForEObject.getInstance().getModelSet(getTableManager().getTable());
 			this.featureListener.setTarget(modelSet);
-			//modelSet.eAdapters().add(this.featureListener);
+			// modelSet.eAdapters().add(this.featureListener);
 		} catch (Exception ex) {
 			Activator.log.error("An error occurred when trying to install a listener on the available pages", ex);
 		}
@@ -76,8 +76,8 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 
 	@Override
 	protected void removeListeners() {
-		if(modelSet != null && featureListener != null) {
-			((ResourceSetRootsAdapter)featureListener).unsetTarget(modelSet);
+		if (modelSet != null && featureListener != null) {
+			((ResourceSetRootsAdapter) featureListener).unsetTarget(modelSet);
 		}
 	}
 
@@ -89,7 +89,7 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 	 */
 	@Override
 	protected List<Object> getFeaturesValue() {
-		if(pageManager == null) {
+		if (pageManager == null) {
 			try {
 				pageManager = ServiceUtilsForEObject.getInstance().getIPageManager(getTableManager().getTable());
 			} catch (Exception ex) {
@@ -107,7 +107,7 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 	 */
 	@Override
 	protected void verifyValues() {
-		//nothing to do
+		// nothing to do
 	}
 
 	/**
@@ -119,8 +119,8 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 	 */
 	@Override
 	public boolean isAllowedContents(Object object) {
-		if(object instanceof PageRef) {
-			return mustBeDisplayedInThisTable(((PageRef)object).getPageIdentifier());
+		if (object instanceof PageRef) {
+			return mustBeDisplayedInThisTable(((PageRef) object).getPageIdentifier());
 		}
 		return mustBeDisplayedInThisTable(object);
 	}
@@ -128,17 +128,17 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 	/**
 	 *
 	 * @param page
-	 *        a page
+	 *            a page
 	 * @return
 	 *         <code>true</code> if the page is referenced by a child of the context of the table or by the context itself
 	 */
 	private boolean mustBeDisplayedInThisTable(final Object page) {
 		final Object value = Utils.getEditorContext(page);
-		if(value instanceof EObject) {
+		if (value instanceof EObject) {
 			final EObject tableContext = getTableContext();
-			EObject container = (EObject)value;
-			while(container != null) {
-				if(container == tableContext) {
+			EObject container = (EObject) value;
+			while (container != null) {
+				if (container == tableContext) {
 					return true;
 				}
 				container = container.eContainer();
@@ -200,36 +200,36 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 	/**
 	 *
 	 * @param notification
-	 *        update the list of the managed objects if its required
+	 *            update the list of the managed objects if its required
 	 */
 	@Override
 	protected void featureValueHasChanged(final Notification notification) {
-		if(notification.isTouch()) {
+		if (notification.isTouch()) {
 			return;
 		}
 
 		int eventType = notification.getEventType();
 		List<Object> toAdd = new ArrayList<Object>();
 		List<Object> toRemove = new ArrayList<Object>();
-		switch(eventType) {
+		switch (eventType) {
 		case Notification.REMOVING_ADAPTER:
-			break;//nothing to do
+			break;// nothing to do
 		case Notification.ADD:
 			Object newValue = notification.getNewValue();
-			if(newValue instanceof PageRef) {
-				newValue = ((PageRef)newValue).getPageIdentifier();
+			if (newValue instanceof PageRef) {
+				newValue = ((PageRef) newValue).getPageIdentifier();
 			}
-			if(isAllowedContents(newValue)) {
+			if (isAllowedContents(newValue)) {
 				toAdd.add(newValue);
 			}
 			break;
 		case Notification.ADD_MANY:
-			Collection<?> newValues = (Collection<?>)notification.getNewValue();
-			for(Object current : newValues) {
-				if(current instanceof PageRef) {
-					current = ((PageRef)current).getPageIdentifier();
+			Collection<?> newValues = (Collection<?>) notification.getNewValue();
+			for (Object current : newValues) {
+				if (current instanceof PageRef) {
+					current = ((PageRef) current).getPageIdentifier();
 				}
-				if(isAllowedContents(current)) {
+				if (isAllowedContents(current)) {
 					toAdd.add(current);
 				}
 			}
@@ -237,24 +237,24 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 		case Notification.EVENT_TYPE_COUNT:
 			break;
 		case Notification.MOVE:
-			//we ignore it
+			// we ignore it
 			break;
 		case Notification.REMOVE:
 			Object oldValue = notification.getOldValue();
-			if(oldValue instanceof PageRef) {
-				oldValue = ((PageRef)oldValue).getPageIdentifier();
+			if (oldValue instanceof PageRef) {
+				oldValue = ((PageRef) oldValue).getPageIdentifier();
 			}
-			if(this.managedObject.contains(oldValue)) {
+			if (this.managedObject.contains(oldValue)) {
 				toRemove.add(oldValue);
 			}
 			break;
 		case Notification.REMOVE_MANY:
-			Collection<?> oldValues = (Collection<?>)notification.getOldValue();
-			for(Object current : oldValues) {
-				if(current instanceof PageRef) {
-					current = ((PageRef)current).getPageIdentifier();
+			Collection<?> oldValues = (Collection<?>) notification.getOldValue();
+			for (Object current : oldValues) {
+				if (current instanceof PageRef) {
+					current = ((PageRef) current).getPageIdentifier();
 				}
-				if(this.managedObject.contains(current)) {
+				if (this.managedObject.contains(current)) {
 					toRemove.add(current);
 				}
 			}
@@ -262,13 +262,13 @@ public class EditorContextSynchronizerAxisManager extends AbstractSynchronizedOn
 		case Notification.RESOLVE:
 		case Notification.SET:
 		case Notification.UNSET:
-			//case Notification.NO_FEATURE_ID:
-			//case Notification.NO_INDEX:
+			// case Notification.NO_FEATURE_ID:
+			// case Notification.NO_INDEX:
 
 		default:
 			break;
 		}
-		if(toAdd.size() > 0 || toRemove.size() > 0) {
+		if (toAdd.size() > 0 || toRemove.size() > 0) {
 			updateManagedList(toAdd, toRemove);
 		}
 	}

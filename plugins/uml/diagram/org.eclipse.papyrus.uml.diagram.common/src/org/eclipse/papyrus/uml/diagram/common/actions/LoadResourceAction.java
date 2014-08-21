@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
- *  Francisco Javier Cano Muñoz (Prodevelop) - prepared the hadler for IDiagramWorkbenchParts 
+ *  Francisco Javier Cano Muñoz (Prodevelop) - prepared the hadler for IDiagramWorkbenchParts
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.actions;
@@ -25,21 +25,22 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Load resource action hnalder. Works with any {@link IDiagramWorkbenchPart}.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
- * 
+ *
  */
 public class LoadResourceAction extends AbstractHandler {
 
+	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		IEditorPart diagramEditor = HandlerUtil.getActiveEditorChecked(event);
 		Shell shell = diagramEditor.getEditorSite().getShell();
 
 		IDiagramWorkbenchPart workbenchPart;
-		if(diagramEditor instanceof IDiagramWorkbenchPart) {
-			workbenchPart = (IDiagramWorkbenchPart)diagramEditor;
+		if (diagramEditor instanceof IDiagramWorkbenchPart) {
+			workbenchPart = (IDiagramWorkbenchPart) diagramEditor;
 		} else {
-			workbenchPart = (IDiagramWorkbenchPart)diagramEditor.getAdapter(IDiagramWorkbenchPart.class);
+			workbenchPart = (IDiagramWorkbenchPart) diagramEditor.getAdapter(IDiagramWorkbenchPart.class);
 		}
 		assert diagramEditor != null;
 		TransactionalEditingDomain editingDomain = workbenchPart.getDiagramEditPart().getEditingDomain();

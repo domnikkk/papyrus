@@ -23,10 +23,10 @@ public class ViewMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Package) {
+		if (eObject instanceof Package) {
 
-			Package element = (Package)eObject;
-			if(UMLUtil.getStereotypeApplication(element, View.class) != null) {
+			Package element = (Package) eObject;
+			if (UMLUtil.getStereotypeApplication(element, View.class) != null) {
 				isMatch = true;
 			}
 		}

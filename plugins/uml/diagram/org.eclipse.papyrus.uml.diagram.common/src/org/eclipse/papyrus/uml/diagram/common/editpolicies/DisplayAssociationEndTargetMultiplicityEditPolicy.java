@@ -20,14 +20,14 @@ import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 
 /**
  * this class enables to refresh the multiplicity label of the association end (target)
- * 
+ *
  */
 public class DisplayAssociationEndTargetMultiplicityEditPolicy extends DisplayAssociationEndTargetEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.DisplayAssociationEndEditPolicy#getDefaultDisplayValue()
-	 * 
+	 *
 	 */
 	@Override
 	public Collection<String> getDefaultDisplayValue() {

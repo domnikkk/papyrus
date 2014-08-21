@@ -210,11 +210,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * Constructor.
 	 *
 	 * @param part
-	 *        The part associated to this ModelExplorer
+	 *            The part associated to this ModelExplorer
 	 */
 	public ModelExplorerView(IMultiDiagramEditor part) {
 
-		if(part == null) {
+		if (part == null) {
 			throw new IllegalArgumentException("A part should be provided.");
 		}
 
@@ -239,7 +239,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				initCommonViewer(getCommonViewer());
 
 				// Restore expansion and selection state of the common viewer
-				((TreeViewerContext<?>)event.getContext()).restore(getCommonViewer());
+				((TreeViewerContext<?>) event.getContext()).restore(getCommonViewer());
 			}
 		});
 	}
@@ -247,7 +247,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	private void init(IMultiDiagramEditor editor) {
 		// Try to get the ServicesRegistry
 		serviceRegistry = editor.getServicesRegistry();
-		if(serviceRegistry == null) {
+		if (serviceRegistry == null) {
 			throw new IllegalArgumentException("The editor should have a ServiceRegistry.");
 		}
 
@@ -268,15 +268,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 */
 	private void handleSelectionChangedFromDiagramEditor(IWorkbenchPart part, ISelection selection) {
 		// Handle selection from diagram editor
-		if(isLinkingEnabled()) {
-			if(part instanceof IEditorPart) {
-				if(selection instanceof IStructuredSelection) {
-					Iterator<?> selectionIterator = ((IStructuredSelection)selection).iterator();
+		if (isLinkingEnabled()) {
+			if (part instanceof IEditorPart) {
+				if (selection instanceof IStructuredSelection) {
+					Iterator<?> selectionIterator = ((IStructuredSelection) selection).iterator();
 					ArrayList<Object> semanticElementList = new ArrayList<Object>();
-					while(selectionIterator.hasNext()) {
+					while (selectionIterator.hasNext()) {
 						Object currentSelection = selectionIterator.next();
 						Object semanticElement = EMFHelper.getEObject(currentSelection);
-						if(semanticElement != null) {
+						if (semanticElement != null) {
 							semanticElementList.add(semanticElement);
 						}
 
@@ -288,14 +288,14 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			}
 
 			// Selections from the Model Explorer result in a part from the ModelExplorerPageBookView instance which is not an IEditorPart
-			if(part instanceof ModelExplorerPageBookView && !selection.isEmpty()) {
-				if(selection instanceof IStructuredSelection) {
+			if (part instanceof ModelExplorerPageBookView && !selection.isEmpty()) {
+				if (selection instanceof IStructuredSelection) {
 					// Extracted from org.eclipse.ui.internal.navigator.actions.LinkEditorAction activateEditorJob
-					// 	the problem was that multi-element selections were disabled as only selections of 1 could clear the condition size()==1
-					IStructuredSelection sSelection = (IStructuredSelection)selection;
+					// the problem was that multi-element selections were disabled as only selections of 1 could clear the condition size()==1
+					IStructuredSelection sSelection = (IStructuredSelection) selection;
 					LinkHelperService linkService = getLinkHelperService();
 					ILinkHelper[] helpers = linkService.getLinkHelpersFor(sSelection.getFirstElement()); // LinkHelper in org.eclipse.papyrus.views.modelexplorer
-					if(helpers.length > 0) {
+					if (helpers.length > 0) {
 						helpers[0].activateEditor(part.getSite().getPage(), sSelection);
 					}
 				}
@@ -307,16 +307,16 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * look for the path the list of element (comes from the content provider) to go the eObject
 	 *
 	 * @param eobject
-	 *        that we look for.
+	 *            that we look for.
 	 * @param objects
-	 *        a list of elements where eobject can be wrapped.
+	 *            a list of elements where eobject can be wrapped.
 	 * @return the list of modelElementItem ( from the root to the element that wrap the eobject)
 	 */
 	protected List<Object> searchPath(EObject eobject, List<Object> objects) {
 		SemanticFromModelExplorer semanticGetter = new SemanticFromModelExplorer();
 		List<Object> path = new ArrayList<Object>();
-		ITreeContentProvider contentProvider = (ITreeContentProvider)getCommonViewer().getContentProvider();
-		//		IPageMngr iPageMngr = EditorUtils.getIPageMngr();
+		ITreeContentProvider contentProvider = (ITreeContentProvider) getCommonViewer().getContentProvider();
+		// IPageMngr iPageMngr = EditorUtils.getIPageMngr();
 		IPageManager iPageMngr;
 		try {
 			iPageMngr = ServiceUtils.getInstance().getIPageManager(serviceRegistry);
@@ -328,24 +328,24 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		List<Object> editors = Arrays.asList(result);
 
 
-		for(Object o : objects) {
+		for (Object o : objects) {
 			// Search matches in this level
-			if(!editors.contains(o)) {
-				if(eobject.equals(EMFHelper.getEObject(o))) {
+			if (!editors.contains(o)) {
+				if (eobject.equals(EMFHelper.getEObject(o))) {
 					path.add(o);
 					return path;
 				}
 			}
 
 			// Find childs only for feature container
-			for(int i = 0; i < contentProvider.getChildren(o).length; i++) {
+			for (int i = 0; i < contentProvider.getChildren(o).length; i++) {
 				Object treeItem = contentProvider.getChildren(o)[i];
 
 				List<Object> tmppath = new ArrayList<Object>();
 				Object element = semanticGetter.getSemanticElement(treeItem);
-				if(element != null) {
-					if(element instanceof EReference) {
-						if(((EReference)element).isContainment() && (!((EReference)element).isDerived())) {
+				if (element != null) {
+					if (element instanceof EReference) {
+						if (((EReference) element).isContainment() && (!((EReference) element).isDerived())) {
 							List<Object> childs = new ArrayList<Object>();
 							childs.add(treeItem);
 							tmppath = searchPath(eobject, childs);
@@ -353,7 +353,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 					}
 
 					else {
-						if(element instanceof EObject) {
+						if (element instanceof EObject) {
 							List<Object> childs = new ArrayList<Object>();
 							childs.add(treeItem);
 							tmppath = searchPath(eobject, childs);
@@ -362,8 +362,8 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				}
 
 				// if tmppath contains the wrapped eobject we have find the good path
-				if(tmppath.size() > 0) {
-					if(eobject.equals((EMFHelper.getEObject((tmppath.get(tmppath.size() - 1)))))) {
+				if (tmppath.size() > 0) {
+					if (eobject.equals((EMFHelper.getEObject((tmppath.get(tmppath.size() - 1)))))) {
 						path.add(o);
 						path.addAll(tmppath);
 						return path;
@@ -400,19 +400,19 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 	private void installEMFFacetTreePainter(Tree tree) {
 		// Install the EMFFacet Custom Tree Painter
-		//org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager().installCustomPainter(tree);
+		// org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager().installCustomPainter(tree);
 
 		// The EMF Facet MeasureItem Listener is incompatible with the NavigatorDecoratingLabelProvider. Remove it.
 		// Symptoms: ModelElementItems with an EMF Facet Overlay have a small selection size
 		// Removal also fixes bug 400012: no scrollbar although tree is larger than visible area
 		Collection<Listener> listenersToRemove = new LinkedList<Listener>();
-		for(Listener listener : tree.getListeners(SWT.MeasureItem)) {
-			if(listener.getClass().getName().contains("org.eclipse.papyrus.emf.facet.infra.browser.uicore.internal.CustomTreePainter")) {
+		for (Listener listener : tree.getListeners(SWT.MeasureItem)) {
+			if (listener.getClass().getName().contains("org.eclipse.papyrus.emf.facet.infra.browser.uicore.internal.CustomTreePainter")) {
 				listenersToRemove.add(listener);
 			}
 		}
 
-		for(Listener listener : listenersToRemove) {
+		for (Listener listener : listenersToRemove) {
 			tree.removeListener(SWT.MeasureItem, listener);
 		}
 	}
@@ -428,22 +428,22 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// function of the input)
 		Object input = getInitialInput();
 		Set<Object> descriptors = contentService.findDescriptorsByTriggerPoint(input, false);
-		for(Object descriptor : descriptors) {
-			if(descriptor instanceof NavigatorContentDescriptor) {
+		for (Object descriptor : descriptors) {
+			if (descriptor instanceof NavigatorContentDescriptor) {
 				ILabelProvider labelProvider = null;
 
-				if(input instanceof ServicesRegistry) {
-					ServicesRegistry registry = (ServicesRegistry)input;
+				if (input instanceof ServicesRegistry) {
+					ServicesRegistry registry = (ServicesRegistry) input;
 					try {
 						labelProvider = registry.getService(LabelProviderService.class).getLabelProvider(LABEL_PROVIDER_SERVICE_CONTEXT);
 					} catch (ServiceException ex) {
 						Activator.log.error(ex);
 					}
 
-					labelProvider = new DecoratingLabelProviderWTooltips(labelProvider, (ServicesRegistry)input);
+					labelProvider = new DecoratingLabelProviderWTooltips(labelProvider, (ServicesRegistry) input);
 				}
 
-				if(labelProvider == null) {
+				if (labelProvider == null) {
 					labelProvider = new LabelProvider();
 				}
 
@@ -459,7 +459,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		super.createPartControl(aParent);
 
 		getCommonViewer().setSorter(null);
-		((CustomCommonViewer)getCommonViewer()).getDropAdapter().setFeedbackEnabled(true);
+		((CustomCommonViewer) getCommonViewer()).getDropAdapter().setFeedbackEnabled(true);
 		getCommonViewer().addDoubleClickListener(new DoubleClickListener(serviceRegistry));
 
 		Tree tree = getCommonViewer().getTree();
@@ -467,19 +467,19 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		tree.addKeyListener(new KeyListener() {
 
 			public void keyReleased(KeyEvent e) {
-				if(e.keyCode == SWT.ALT) {
+				if (e.keyCode == SWT.ALT) {
 					exitItem();
 				}
 			}
 
 			public void keyPressed(KeyEvent e) {
-				if(e.keyCode != SWT.ALT) {
+				if (e.keyCode != SWT.ALT) {
 					return;
 				}
 
 				Tree tree = getCommonViewer().getTree();
 
-				//Generate a basic mouse event
+				// Generate a basic mouse event
 				Event event = new Event();
 				event.widget = tree;
 				event.stateMask = SWT.ALT;
@@ -490,7 +490,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				event.y = tree.getDisplay().getCursorLocation().y - absoluteTreeLocation.y;
 
 				MouseEvent mouseEvent = new MouseEvent(event);
-				if(isEnterState(mouseEvent)) {
+				if (isEnterState(mouseEvent)) {
 					enterItem(currentItem);
 				}
 			}
@@ -500,20 +500,20 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 			@Override
 			public void mouseUp(MouseEvent e) {
-				if((e.stateMask & SWT.ALT) == 0) {
+				if ((e.stateMask & SWT.ALT) == 0) {
 					return;
 				}
 
 				TreeItem currentItem = getTreeItem(e);
-				if(currentItem != null) {
+				if (currentItem != null) {
 					Object data = currentItem.getData();
 					try {
 						NavigationService service = serviceRegistry.getService(NavigationService.class);
 						List<NavigableElement> navigableElements = service.getNavigableElements(data);
 
-						//TODO: Implement a priority on NavigableElements and navigate the element with the highest priority
-						for(NavigableElement navigableElement : navigableElements) {
-							if(navigableElement.isEnabled()) {
+						// TODO: Implement a priority on NavigableElements and navigate the element with the highest priority
+						for (NavigableElement navigableElement : navigableElements) {
+							if (navigableElement.isEnabled()) {
 								service.navigate(navigableElement);
 							}
 						}
@@ -528,11 +528,11 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 			public void mouseMove(MouseEvent e) {
 
-				if(isExitState(e)) {
+				if (isExitState(e)) {
 					exitItem();
 				}
 
-				if(isEnterState(e)) {
+				if (isEnterState(e)) {
 					enterItem(currentItem);
 				}
 
@@ -545,10 +545,10 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			ISashWindowsContainer sashWindowsContainer = serviceRegistry.getService(ISashWindowsContainer.class);
 			sashWindowsContainer.addPageLifeCycleListener(this);
 		} catch (ServiceException ex) {
-			//Ignore
+			// Ignore
 		}
 
-		if(sharedState != null) {
+		if (sharedState != null) {
 			initSharedState(sharedState);
 		}
 	}
@@ -556,7 +556,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	@Override
 	protected CommonViewer createCommonViewer(Composite aParent) {
 		CommonViewer viewer = super.createCommonViewer(aParent);
-		ViewerColumn column = (ViewerColumn)viewer.getTree().getData(Policy.JFACE + ".columnViewer");
+		ViewerColumn column = (ViewerColumn) viewer.getTree().getData(Policy.JFACE + ".columnViewer");
 		column.setEditingSupport(new DirectEditorEditingSupport(viewer));
 		return viewer;
 	}
@@ -567,20 +567,20 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	SelectionMenu selectionMenu;
 
 	private boolean isExitState(MouseEvent e) {
-		if(currentItem == null) {
+		if (currentItem == null) {
 			return false;
 		}
 
 		TreeItem item = getTreeItem(e);
-		if(item == null) {
+		if (item == null) {
 			return true;
 		}
 
-		if(item != currentItem) {
+		if (item != currentItem) {
 			return true;
 		}
 
-		if((e.stateMask & SWT.ALT) == 0) {
+		if ((e.stateMask & SWT.ALT) == 0) {
 			return true;
 		}
 
@@ -589,15 +589,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 	private boolean isEnterState(MouseEvent e) {
 		TreeItem item = getTreeItem(e);
-		if(item == currentItem) {
+		if (item == currentItem) {
 			return false;
 		}
 
-		if(item == null) {
+		if (item == null) {
 			return false;
 		}
 
-		if((e.stateMask & SWT.ALT) == 0) {
+		if ((e.stateMask & SWT.ALT) == 0) {
 			return false;
 		}
 
@@ -607,7 +607,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	}
 
 	private void disposeCurrentMenu() {
-		if(selectionMenu != null) {
+		if (selectionMenu != null) {
 			selectionMenu.dispose();
 			selectionMenu = null;
 		}
@@ -623,21 +623,21 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			final NavigationService navigation = serviceRegistry.getService(NavigationService.class);
 			disposeCurrentMenu();
 			selectionMenu = navigation.createNavigationList(item.getData(), item.getParent());
-			if(selectionMenu == null) {
+			if (selectionMenu == null) {
 				return;
 			}
 
 			selectionMenu.addSelectionChangedListener(new ISelectionChangedListener() {
 
 				public void selectionChanged(SelectionChangedEvent event) {
-					if(event.getSelection().isEmpty()) {
+					if (event.getSelection().isEmpty()) {
 						return;
 					}
-					Object selectedElement = ((IStructuredSelection)event.getSelection()).getFirstElement();
-					if(selectedElement instanceof NavigableElement) {
-						NavigableElement navigableElement = (NavigableElement)selectedElement;
-						if(navigableElement.isEnabled()) {
-							navigation.navigate((NavigableElement)selectedElement);
+					Object selectedElement = ((IStructuredSelection) event.getSelection()).getFirstElement();
+					if (selectedElement instanceof NavigableElement) {
+						NavigableElement navigableElement = (NavigableElement) selectedElement;
+						if (navigableElement.isEnabled()) {
+							navigation.navigate((NavigableElement) selectedElement);
 							exitItem();
 						}
 					}
@@ -649,7 +649,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	}
 
 	private TreeItem getTreeItem(MouseEvent e) {
-		return ((Tree)e.widget).getItem(new Point(e.x, e.y));
+		return ((Tree) e.widget).getItem(new Point(e.x, e.y));
 	}
 
 
@@ -677,7 +677,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		addPropertyListener(new IPropertyListener() {
 
 			public void propertyChanged(Object source, int propId) {
-				switch(propId) {
+				switch (propId) {
 				case IS_LINKING_ENABLED_PROPERTY:
 					// Propagate to other instances
 					sharedState.setLinkingEnabled(isLinkingEnabled());
@@ -726,7 +726,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	private void handleResourceSetChanged(ResourceSetChangeEvent event) {
 		// avoid refreshing N times for the same transaction (called for each object in resource)
 		Transaction curTrans = event.getTransaction();
-		if(lastTrans != null && lastTrans.equals(curTrans)) {
+		if (lastTrans != null && lastTrans.equals(curTrans)) {
 			return;
 		}
 		lastTrans = curTrans;
@@ -741,7 +741,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * Schedule a runnable which will refresh the view if necessary
 	 */
 	protected void scheduleRefresh() {
-		synchronized(this) {
+		synchronized (this) {
 			needsRefresh = true;
 		}
 
@@ -751,8 +751,8 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			 * {@inheritDoc}
 			 */
 			public void run() {
-				synchronized(ModelExplorerView.this) {
-					if(!needsRefresh) {
+				synchronized (ModelExplorerView.this) {
+					if (!needsRefresh) {
 						return;
 					}
 					needsRefresh = false;
@@ -780,14 +780,14 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	protected void refreshInUIThread() {
 		// Need to refresh, even if (temporarily) invisible
 		// (Better alternative?: store refresh event and execute once visible again)
-		if(getControl().isDisposed()) {
+		if (getControl().isDisposed()) {
 			return;
 		}
 
 		// avoid reentrant call
 		// Refresh only of we are not already refreshing.
-		if(isRefreshing.compareAndSet(false, true)) {
-			if(!getCommonViewer().isBusy()) {
+		if (isRefreshing.compareAndSet(false, true)) {
+			if (!getCommonViewer().isBusy()) {
 				getCommonViewer().refresh();
 			}
 
@@ -801,7 +801,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	@Override
 	protected Object getInitialInput() {
 
-		if(serviceRegistry != null) {
+		if (serviceRegistry != null) {
 			return serviceRegistry;
 		} else {
 			return super.getInitialInput();
@@ -817,12 +817,12 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			this.editingDomain = ServiceUtils.getInstance().getTransactionalEditingDomain(serviceRegistry);
 
 			// Set Viewer input if it already exist
-			if(getCommonViewer() != null) {
+			if (getCommonViewer() != null) {
 				getCommonViewer().setInput(serviceRegistry);
 			}
 			editingDomain.addResourceSetListener(resourceSetListener);
 			IReadOnlyHandler2 readOnlyHandler = AdapterUtils.adapt(editingDomain, IReadOnlyHandler2.class, null);
-			if(readOnlyHandler != null) {
+			if (readOnlyHandler != null) {
 				readOnlyHandler.addReadOnlyListener(createReadOnlyListener());
 			}
 		} catch (ServiceException e) {
@@ -832,7 +832,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// Listen to isDirty flag
 		saveAndDirtyService.addInputChangedListener(editorInputChangedListener);
 
-		if(this.getCommonViewer() != null) {
+		if (this.getCommonViewer() != null) {
 			syncRefresh();
 		}
 	}
@@ -842,17 +842,17 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 */
 	private void deactivate() {
 		// deactivate global handler
-		if(Activator.log.isDebugEnabled()) {
+		if (Activator.log.isDebugEnabled()) {
 			Activator.log.debug("deactivate ModelExplorerView"); //$NON-NLS-1$
 		}
 
 		try {
 			ISashWindowsContainer sashWindowsContainer = serviceRegistry.getService(ISashWindowsContainer.class);
-			if(sashWindowsContainer != null) {
+			if (sashWindowsContainer != null) {
 				sashWindowsContainer.removePageLifeCycleListener(this);
 			}
 		} catch (ServiceException ex) {
-			//Ignore
+			// Ignore
 		}
 
 		// Stop listening on change events
@@ -860,7 +860,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		// Stop Listening to isDirty flag
 		saveAndDirtyService.removeInputChangedListener(editorInputChangedListener);
 
-		if(editingDomain != null) {
+		if (editingDomain != null) {
 			editingDomain.removeResourceSetListener(resourceSetListener);
 			editingDomain = null;
 		}
@@ -879,21 +879,21 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	public void dispose() {
 
 		// Stop if we are already disposed
-		if(isDisposed()) {
+		if (isDisposed()) {
 			return;
 		}
 
-		if((sharedStateListener != null) && (sharedState != null)) {
+		if ((sharedStateListener != null) && (sharedState != null)) {
 			sharedState.removeListener(sharedStateListener);
 		}
 
-		if(getSite() != null) {
+		if (getSite() != null) {
 			getSite().getPage().removeSelectionListener(pageSelectionListener);
 		}
 
 		deactivate();
 
-		for(IPropertySheetPage propertySheetPage : this.propertySheetPages) {
+		for (IPropertySheetPage propertySheetPage : this.propertySheetPages) {
 			propertySheetPage.dispose();
 		}
 
@@ -926,9 +926,9 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 		try {
 			final IMultiDiagramEditor multiDiagramEditor = ServiceUtils.getInstance().getService(IMultiDiagramEditor.class, serviceRegistry);
 
-			if(multiDiagramEditor != null) {
-				if(multiDiagramEditor instanceof ITabbedPropertySheetPageContributor) {
-					ITabbedPropertySheetPageContributor contributor = (ITabbedPropertySheetPageContributor)multiDiagramEditor;
+			if (multiDiagramEditor != null) {
+				if (multiDiagramEditor instanceof ITabbedPropertySheetPageContributor) {
+					ITabbedPropertySheetPageContributor contributor = (ITabbedPropertySheetPageContributor) multiDiagramEditor;
 					IPropertySheetPage propertySheetPage = new TabbedPropertySheetPage(contributor);
 					this.propertySheetPages.add(propertySheetPage);
 					return propertySheetPage;
@@ -946,16 +946,16 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	@Override
 	@SuppressWarnings("rawtypes")
 	public Object getAdapter(Class adapter) {
-		if(IPropertySheetPage.class.equals(adapter)) {
+		if (IPropertySheetPage.class.equals(adapter)) {
 			return getPropertySheetPage();
 		}
 
-		if(IUndoContext.class == adapter) {
+		if (IUndoContext.class == adapter) {
 			// Return the IUndoContext of associated model.
 			return undoContext;
 		}
 
-		if(ISaveablePart.class.equals(adapter)) {
+		if (ISaveablePart.class.equals(adapter)) {
 			try {
 				return serviceRegistry.getService(IMultiDiagramEditor.class);
 			} catch (ServiceException ex) {
@@ -964,7 +964,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 			return saveAndDirtyService;
 		}
 
-		if(ServicesRegistry.class == adapter) {
+		if (ServicesRegistry.class == adapter) {
 			return serviceRegistry;
 		}
 
@@ -986,15 +986,15 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	@Override
 	public void selectReveal(ISelection selection) {
 		syncRefresh();
-		if(getCommonViewer() != null) {
+		if (getCommonViewer() != null) {
 			getCommonViewer().setSelection(selection, true);
 		}
 	}
 
 	public void revealSemanticElement(List<?> elementList) {
-		//Ensure that the ModelExplorer is refreshed before
-		//trying to display an element. Useful if the element has just been created,
-		//and the model explorer has not yet been refreshed
+		// Ensure that the ModelExplorer is refreshed before
+		// trying to display an element. Useful if the element has just been created,
+		// and the model explorer has not yet been refreshed
 		syncRefresh();
 		reveal(elementList, getCommonViewer());
 	}
@@ -1003,25 +1003,25 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * Expands the given CommonViewer to reveal the given elements
 	 *
 	 * @param elementList
-	 *        The elements to reveal
+	 *            The elements to reveal
 	 * @param commonViewer
-	 *        The CommonViewer they are to be revealed in
+	 *            The CommonViewer they are to be revealed in
 	 */
 	public static void reveal(Iterable<?> elementList, final CommonViewer commonViewer) {
 		ArrayList<IMatchingItem> matchingItemsToSelect = new ArrayList<IMatchingItem>();
 		// filter out non EMF objects
 		Iterable<EObject> list = Iterables.filter(elementList, EObject.class);
 
-		for(EObject currentEObject : list) {
+		for (EObject currentEObject : list) {
 			matchingItemsToSelect.add(new ModelElementItemMatchingItem(currentEObject));
 
 			// the content provider exist?
-			if(commonViewer.getContentProvider() != null) {
+			if (commonViewer.getContentProvider() != null) {
 				// retrieve the ancestors to reveal them
 				// and allow the selection of the object
 				ArrayList<EObject> parents = new ArrayList<EObject>();
 				EObject tmp = currentEObject.eContainer();
-				while(tmp != null) {
+				while (tmp != null) {
 					parents.add(tmp);
 					tmp = tmp.eContainer();
 				}
@@ -1030,16 +1030,16 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 				// reveal the resource if necessary
 				Resource r = null;
-				if(!parents.isEmpty()) {
+				if (!parents.isEmpty()) {
 					r = parents.get(parents.size() - 1).eResource();
 				} else {
 					r = currentEObject.eResource();
 				}
 
-				if(r != null) {
+				if (r != null) {
 					final ResourceSet rs = r.getResourceSet();
 					final Resource resource = r;
-					if(rs instanceof ModelSet && AdditionalResourcesModel.isAdditionalResource((ModelSet)rs, r.getURI())) {
+					if (rs instanceof ModelSet && AdditionalResourcesModel.isAdditionalResource((ModelSet) rs, r.getURI())) {
 						commonViewer.getControl().getDisplay().syncExec(new Runnable() {
 
 							public void run() {
@@ -1064,8 +1064,8 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				 * Please refer to MatchingItem for more infos.
 				 */
 				EObject previousParent = null;
-				for(EObject parent : reverseParents) {
-					if(parent.eContainingFeature() != null && previousParent != null) {
+				for (EObject parent : reverseParents) {
+					if (parent.eContainingFeature() != null && previousParent != null) {
 						commonViewer.expandToLevel(new LinkItemMatchingItem(previousParent, parent.eContainmentFeature()), 1);
 					}
 
@@ -1099,9 +1099,9 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * Selects the given ISelection in the given CommonViwer
 	 *
 	 * @param structuredSelection
-	 *        The ISelection to select
+	 *            The ISelection to select
 	 * @param commonViewer
-	 *        The ComonViewer to select it in
+	 *            The ComonViewer to select it in
 	 */
 	public static void selectReveal(final ISelection structuredSelection, final Viewer commonViewer) {
 		Display.getDefault().syncExec(new Runnable() {
@@ -1116,13 +1116,13 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	 * Selects and, if possible, reveals the given ISelection in the given CommonViwer
 	 *
 	 * @param selection
-	 *        The ISelection to select
+	 *            The ISelection to select
 	 * @param viewer
-	 *        The ComonViewer to select it in
+	 *            The ComonViewer to select it in
 	 */
 	public static void reveal(final ISelection selection, final CommonViewer viewer) {
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structured = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structured = (IStructuredSelection) selection;
 			reveal(Lists.newArrayList(structured.iterator()), viewer);
 		} else {
 			viewer.getControl().getDisplay().syncExec(new Runnable() {
@@ -1147,43 +1147,43 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 			public void run() {
 				getCommonViewer().refresh(true);
-				//Force redraw to refresh facet overlay
+				// Force redraw to refresh facet overlay
 				getCommonViewer().getTree().redraw();
 			}
 		});
 	}
 
 	public void pageChanged(IPage newPage) {
-		//Nothing
+		// Nothing
 	}
 
 	public void pageActivated(IPage page) {
-		//Nothing
+		// Nothing
 	}
 
 	public void pageDeactivated(IPage page) {
-		//Nothing
+		// Nothing
 	}
 
 	public void pageAboutToBeOpened(IPage page) {
-		//Nothing
+		// Nothing
 	}
 
 	public void pageAboutToBeClosed(IPage page) {
-		//Nothing
+		// Nothing
 	}
 
 	private IReadOnlyListener createReadOnlyListener() {
 		return new IReadOnlyListener() {
 
 			public void readOnlyStateChanged(ReadOnlyEvent event) {
-				switch(event.getEventType()) {
+				switch (event.getEventType()) {
 				case ReadOnlyEvent.RESOURCE_READ_ONLY_STATE_CHANGED:
 					scheduleRefresh();
 					break;
 				case ReadOnlyEvent.OBJECT_READ_ONLY_STATE_CHANGED:
 					CommonViewer viewer = getCommonViewer();
-					if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+					if ((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
 						viewer.refresh(event.getObject());
 					}
 					break;
@@ -1196,13 +1196,13 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 	}
 
 	void setSharedState(SharedModelExplorerState state) {
-		if(this.sharedState != null) {
+		if (this.sharedState != null) {
 			this.sharedState.removeListener(getSharedStateListener());
 		}
 
 		this.sharedState = state;
 
-		if(state != null) {
+		if (state != null) {
 			state.addListener(getSharedStateListener());
 			initSharedState(state);
 		}
@@ -1215,29 +1215,29 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 
 	void setAlphaSorted(boolean sorted) {
 		CommonViewer viewer = getCommonViewer();
-		if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
-			if(sorted) {
+		if ((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+			if (sorted) {
 				viewer.setSorter(new CommonViewerSorter());
-				if(viewer instanceof CustomCommonViewer) {
-					((CustomCommonViewer)viewer).getDropAdapter().setFeedbackEnabled(false);
+				if (viewer instanceof CustomCommonViewer) {
+					((CustomCommonViewer) viewer).getDropAdapter().setFeedbackEnabled(false);
 				}
 			} else {
 				viewer.setSorter(null);
-				if(viewer instanceof CustomCommonViewer) {
-					((CustomCommonViewer)viewer).getDropAdapter().setFeedbackEnabled(true);
+				if (viewer instanceof CustomCommonViewer) {
+					((CustomCommonViewer) viewer).getDropAdapter().setFeedbackEnabled(true);
 				}
 			}
 		}
 	}
 
 	SharedModelExplorerState.StateChangedListener getSharedStateListener() {
-		if(sharedStateListener == null) {
+		if (sharedStateListener == null) {
 			sharedStateListener = new SharedModelExplorerState.StateChangedListener() {
 
 				private volatile Runnable contentUpdate;
 
 				public void sharedStateChanged(StateChangedEvent event) {
-					switch(event.getEventType()) {
+					switch (event.getEventType()) {
 					case StateChangedEvent.LINKING_ENABLED:
 						setLinkingEnabled(event.getSource().isLinkingEnabled());
 						break;
@@ -1245,7 +1245,7 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 						setAlphaSorted(event.getSource().isAlphaSorted());
 						break;
 					case StateChangedEvent.CONTENT_EXTENSIONS:
-						if(contentUpdate == null) {
+						if (contentUpdate == null) {
 							getCommonViewer().getControl().getDisplay().asyncExec(getContentUpdate());
 						}
 						break;
@@ -1253,12 +1253,12 @@ public class ModelExplorerView extends CommonNavigator implements IRevealSemanti
 				}
 
 				private Runnable getContentUpdate() {
-					if(contentUpdate == null) {
+					if (contentUpdate == null) {
 						contentUpdate = new Runnable() {
 
 							public void run() {
 								CommonViewer viewer = getCommonViewer();
-								if((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
+								if ((viewer != null) && (viewer.getControl() != null) && !viewer.getControl().isDisposed()) {
 									viewer.getNavigatorContentService().getActivationService().activateExtensions(sharedState.getNavigatorContentExtensions(), true);
 								}
 

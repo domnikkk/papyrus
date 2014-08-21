@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -21,34 +21,34 @@ import org.eclipse.swt.widgets.Display;
 import com.ibm.icu.text.NumberFormat;
 
 /**
- * 
+ *
  * This class allows to convert easily units (Centimeters, Pixels and Inches)
- * 
+ *
  */
 public class UnitsConverterUtils {
 
 	private UnitsConverterUtils() {
-		//to avoid instanciation
+		// to avoid instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param fromUnits
-	 *        the initial unity
+	 *            the initial unity
 	 * @param toUnits
-	 *        the new unity
+	 *            the new unity
 	 * @param valueStr
-	 *        the value to convert
+	 *            the value to convert
 	 * @return
 	 *         the new String
 	 */
 	public static final String convertUnits(final int fromUnits, final int toUnits, final String valueStr) {
-		//		String valueStr = gridSpacing.getStringValue();
-		if(fromUnits == toUnits) {
+		// String valueStr = gridSpacing.getStringValue();
+		if (fromUnits == toUnits) {
 			return valueStr;
 		}
 
-		//Double value = Double.valueOf( valueStr );
+		// Double value = Double.valueOf( valueStr );
 		NumberFormat numberFormatter = NumberFormat.getInstance();
 		Double value = new Double(0.125);
 		try {
@@ -60,7 +60,7 @@ public class UnitsConverterUtils {
 
 		Display display = Display.getDefault();
 
-		switch(fromUnits) {
+		switch (fromUnits) {
 		case RulerProvider.UNIT_INCHES:
 			pixelValue = value.doubleValue() * display.getDPI().x;
 			break;
@@ -75,7 +75,7 @@ public class UnitsConverterUtils {
 		}
 
 		double returnValue = 0;
-		switch(toUnits) {
+		switch (toUnits) {
 		case RulerProvider.UNIT_INCHES:
 			returnValue = pixelValue / display.getDPI().x;
 			break;
@@ -93,16 +93,16 @@ public class UnitsConverterUtils {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param number
-	 *        a number
+	 *            a number
 	 * @return
 	 *         a double
 	 */
 	private static final Double forceDouble(final Number number) {
-		if(!(number instanceof Double)) {
+		if (!(number instanceof Double)) {
 			return new Double(number.doubleValue());
 		}
-		return (Double)number;
+		return (Double) number;
 	}
 }

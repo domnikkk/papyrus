@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     AtosOrigin - initial API and implementation
  *******************************************************************************/
@@ -43,9 +43,9 @@ public abstract class CreateBehavioredClassifierDiagramCommand extends AbstractP
 	 */
 	@Override
 	protected void initializeDiagram(EObject diagram) {
-		if(diagram instanceof Diagram) {
-			Diagram diag = (Diagram)diagram;
-			if(behavior != null) {
+		if (diagram instanceof Diagram) {
+			Diagram diag = (Diagram) diagram;
+			if (behavior != null) {
 				diag.setElement(behavior);
 				createBehaviorView(diag);
 			}
@@ -56,18 +56,18 @@ public abstract class CreateBehavioredClassifierDiagramCommand extends AbstractP
 
 	/**
 	 * Create the associated behavior
-	 * 
+	 *
 	 * @return
 	 */
 	protected Behavior createBehavior() {
-		Behavior newBehavior = (Behavior)UMLFactory.eINSTANCE.create(getBehaviorEClass());
+		Behavior newBehavior = (Behavior) UMLFactory.eINSTANCE.create(getBehaviorEClass());
 
 		return newBehavior;
 	}
 
 	/**
 	 * Get the kind of behavior associated to the diagram
-	 * 
+	 *
 	 * @return the EClass of the behavior supposed to own the diagram.
 	 */
 	protected abstract EClass getBehaviorEClass();
@@ -77,18 +77,18 @@ public abstract class CreateBehavioredClassifierDiagramCommand extends AbstractP
 	 */
 	protected void initializeModel(EObject owner) {
 
-		if(owner.eClass() == getBehaviorEClass()) {
-			behavior = (Behavior)owner;
+		if (owner.eClass() == getBehaviorEClass()) {
+			behavior = (Behavior) owner;
 
 		} else {
-			behavior = (Behavior)UMLFactory.eINSTANCE.create(getBehaviorEClass());
+			behavior = (Behavior) UMLFactory.eINSTANCE.create(getBehaviorEClass());
 
-			if(owner instanceof BehavioredClassifier) {
-				BehavioredClassifier behaviorClassifier = (BehavioredClassifier)owner;
+			if (owner instanceof BehavioredClassifier) {
+				BehavioredClassifier behaviorClassifier = (BehavioredClassifier) owner;
 				behaviorClassifier.getOwnedBehaviors().add(behavior);
 
-			} else if(owner instanceof Package) {
-				org.eclipse.uml2.uml.Package pack = (org.eclipse.uml2.uml.Package)owner;
+			} else if (owner instanceof Package) {
+				org.eclipse.uml2.uml.Package pack = (org.eclipse.uml2.uml.Package) owner;
 				pack.getPackagedElements().add(behavior);
 
 			}
@@ -106,18 +106,19 @@ public abstract class CreateBehavioredClassifierDiagramCommand extends AbstractP
 	@Override
 	protected Diagram doCreateDiagram(Resource diagramResource, EObject owner, EObject element, ViewPrototype prototype, String name) {
 		Diagram diagram = null;
-		if(element instanceof org.eclipse.uml2.uml.Package) {
+		if (element instanceof org.eclipse.uml2.uml.Package) {
 			diagram = ViewService.createDiagram(element, getDiagramNotationID(), getPreferenceHint());
-		} else if(element instanceof BehavioredClassifier) {
-			diagram = ViewService.createDiagram(((BehavioredClassifier)element).getNearestPackage(), getDiagramNotationID(), getPreferenceHint());
+		} else if (element instanceof BehavioredClassifier) {
+			diagram = ViewService.createDiagram(((BehavioredClassifier) element).getNearestPackage(), getDiagramNotationID(), getPreferenceHint());
 		}
 		// create diagram
-		if(diagram != null) {
+		if (diagram != null) {
 			setName(name);
 			diagram.setElement(element);
 			DiagramUtils.setOwner(diagram, owner);
-			if (!prototype.isNatural())
+			if (!prototype.isNatural()) {
 				DiagramUtils.setPrototype(diagram, prototype);
+			}
 			initializeModel(element);
 			initializeDiagram(diagram);
 			diagramResource.getContents().add(diagram);
@@ -127,11 +128,11 @@ public abstract class CreateBehavioredClassifierDiagramCommand extends AbstractP
 
 	/**
 	 * Set the name of the diagram and its containing element
-	 * 
+	 *
 	 * @param newName
 	 */
 	protected void setName(String newName) {
-		if(newName == null || newName.equals(name)) {
+		if (newName == null || newName.equals(name)) {
 			return;
 		}
 		name = newName;

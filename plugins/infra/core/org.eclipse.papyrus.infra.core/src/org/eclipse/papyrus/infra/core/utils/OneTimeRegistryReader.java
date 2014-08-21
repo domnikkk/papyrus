@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import com.google.common.collect.ImmutableSet;
  */
 public class OneTimeRegistryReader extends RegistryReader {
 
-	private static Class<?>[] REGISTRY_API = new Class<?>[]{ IExtensionRegistry.class };
+	private static Class<?>[] REGISTRY_API = new Class<?>[] { IExtensionRegistry.class };
 
 	private static Set<String> ADD_LISTENER_METHOD_NAMES = ImmutableSet.of("addListener", "addRegistryChangeListener"); //$NON-NLS-1$ //$NON-NLS-2$
 
@@ -38,12 +38,12 @@ public class OneTimeRegistryReader extends RegistryReader {
 	}
 
 	private static IExtensionRegistry wrap(final IExtensionRegistry pluginRegistry) {
-		return (IExtensionRegistry)Proxy.newProxyInstance(OneTimeRegistryReader.class.getClassLoader(), REGISTRY_API, new InvocationHandler() {
+		return (IExtensionRegistry) Proxy.newProxyInstance(OneTimeRegistryReader.class.getClassLoader(), REGISTRY_API, new InvocationHandler() {
 
 			@Override
 			public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 				// Don't forward the add-listener methods, so that the registry reader cannot add any listeners
-				if(!isAddListenerMethod(method)) {
+				if (!isAddListenerMethod(method)) {
 					return method.invoke(pluginRegistry, args);
 				}
 				return null;

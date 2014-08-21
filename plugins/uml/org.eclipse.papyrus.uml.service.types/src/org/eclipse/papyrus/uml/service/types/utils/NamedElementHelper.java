@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Namespace;
 /**
  * This singleton is used to find a new element name with
  * no duplication in the same workspace.
- * 
+ *
  * @deprecated Use the {@link NamedElementUtil} API, instead.
  */
 @Deprecated
@@ -40,7 +40,7 @@ public class NamedElementHelper {
 
 	/**
 	 * Get the base string to use for default name creation
-	 * 
+	 *
 	 * @return the base string
 	 * @deprecated should not be used.
 	 */
@@ -51,12 +51,12 @@ public class NamedElementHelper {
 
 	/**
 	 * Generic method that returns a new unique name within a {@link Namespace}.
-	 * 
+	 *
 	 * @param umlParent
-	 *        the parent of the element to create
+	 *            the parent of the element to create
 	 * @param eclass
-	 *        the eClass of the element to name
-	 * 
+	 *            the eClass of the element to name
+	 *
 	 * @return a distinguishable name within the {@link Namespace} of the umlParent
 	 * @deprecated should not be used.
 	 */
@@ -67,12 +67,12 @@ public class NamedElementHelper {
 
 	/**
 	 * Generic method that returns a new unique name within a {@link Namespace}.
-	 * 
+	 *
 	 * @param umlParent
-	 *        the parent of the element to create
+	 *            the parent of the element to create
 	 * @param baseString
-	 *        the base string for the new element name
-	 * 
+	 *            the base string for the new element name
+	 *
 	 * @return a distinguishable name within the {@link Namespace} of the umlParent
 	 * @deprecated use {@link #getDefaultNameWithIncrementFromBase(String, Collection)} directly.
 	 */
@@ -83,9 +83,9 @@ public class NamedElementHelper {
 
 	/**
 	 * set the base string for the name
-	 * 
+	 *
 	 * @param baseString
-	 *        a string that is the prefix
+	 *            a string that is the prefix
 	 * @deprecated should not be used.
 	 */
 	@Deprecated
@@ -100,7 +100,7 @@ public class NamedElementHelper {
 	public static String getDefaultNameWithIncrementFromBase(String base, Collection<?> contents, String separator) {
 		return getDefaultNameWithIncrementFromBase(base, contents, null, separator);
 	}
-	
+
 	public static String getDefaultNameWithIncrementFromBase(String base, Collection<?> contents, EObject elementToRename) {
 		return getDefaultNameWithIncrementFromBase(base, contents, elementToRename, "");
 	}

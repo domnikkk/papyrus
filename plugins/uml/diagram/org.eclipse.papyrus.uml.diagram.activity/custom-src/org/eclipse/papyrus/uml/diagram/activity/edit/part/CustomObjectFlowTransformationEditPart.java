@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *   Atos - Initial API and implementation
- *   Arthur Daussy Bug 366026 - [ActivityDiagram] Refactoring in order to try respect Generation Gap Pattern 
+ *   Arthur Daussy Bug 366026 - [ActivityDiagram] Refactoring in order to try respect Generation Gap Pattern
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.activity.edit.part;
@@ -53,74 +53,79 @@ public class CustomObjectFlowTransformationEditPart extends ObjectFlowTransforma
 	/**
 	 * handle LinkAndCornerBentWithTextFigure
 	 */
+	@Override
 	protected String getLabelTextHelper(IFigure figure) {
-		if(figure instanceof WrappingLabel) {
-			return ((WrappingLabel)figure).getText();
-		} else if(figure instanceof ILabelFigure) {
-			return ((ILabelFigure)figure).getText();
-		} else if(figure instanceof CustomLinkAndCornerBentWithTextFigure) {
-			return ((CustomLinkAndCornerBentWithTextFigure)figure).getCornerBentContent().getText();
+		if (figure instanceof WrappingLabel) {
+			return ((WrappingLabel) figure).getText();
+		} else if (figure instanceof ILabelFigure) {
+			return ((ILabelFigure) figure).getText();
+		} else if (figure instanceof CustomLinkAndCornerBentWithTextFigure) {
+			return ((CustomLinkAndCornerBentWithTextFigure) figure).getCornerBentContent().getText();
 		} else {
-			return ((Label)figure).getText();
+			return ((Label) figure).getText();
 		}
 	}
 
 	/**
 	 * handle CustomLinkAndCornerBentWithTextFigure
 	 */
+	@Override
 	protected void setLabelTextHelper(IFigure figure, String text) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setText(text);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setText(text);
-		} else if(figure instanceof CustomLinkAndCornerBentWithTextFigure) {
-			((CustomLinkAndCornerBentWithTextFigure)figure).getCornerBentContent().setText(text);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setText(text);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setText(text);
+		} else if (figure instanceof CustomLinkAndCornerBentWithTextFigure) {
+			((CustomLinkAndCornerBentWithTextFigure) figure).getCornerBentContent().setText(text);
 		} else {
-			((Label)figure).setText(text);
+			((Label) figure).setText(text);
 		}
 	}
 
 	/**
 	 * handle CustomLinkAndCornerBentWithTextFigure
 	 */
+	@Override
 	protected Image getLabelIconHelper(IFigure figure) {
-		if(figure instanceof WrappingLabel) {
-			return ((WrappingLabel)figure).getIcon();
-		} else if(figure instanceof ILabelFigure) {
-			return ((ILabelFigure)figure).getIcon();
-		} else if(figure instanceof CustomLinkAndCornerBentWithTextFigure) {
-			return ((CustomLinkAndCornerBentWithTextFigure)figure).getCornerBentContent().getIcon();
+		if (figure instanceof WrappingLabel) {
+			return ((WrappingLabel) figure).getIcon();
+		} else if (figure instanceof ILabelFigure) {
+			return ((ILabelFigure) figure).getIcon();
+		} else if (figure instanceof CustomLinkAndCornerBentWithTextFigure) {
+			return ((CustomLinkAndCornerBentWithTextFigure) figure).getCornerBentContent().getIcon();
 		} else {
-			return ((Label)figure).getIcon();
+			return ((Label) figure).getIcon();
 		}
 	}
 
 	/**
 	 * handle CustomLinkAndCornerBentWithTextFigure
 	 */
+	@Override
 	protected void setLabelIconHelper(IFigure figure, Image icon) {
-		if(figure instanceof WrappingLabel) {
-			((WrappingLabel)figure).setIcon(icon);
-		} else if(figure instanceof ILabelFigure) {
-			((ILabelFigure)figure).setIcon(icon);
-		} else if(figure instanceof CustomLinkAndCornerBentWithTextFigure) {
-			((CustomLinkAndCornerBentWithTextFigure)figure).getCornerBentContent().setIcon(icon);
+		if (figure instanceof WrappingLabel) {
+			((WrappingLabel) figure).setIcon(icon);
+		} else if (figure instanceof ILabelFigure) {
+			((ILabelFigure) figure).setIcon(icon);
+		} else if (figure instanceof CustomLinkAndCornerBentWithTextFigure) {
+			((CustomLinkAndCornerBentWithTextFigure) figure).getCornerBentContent().setIcon(icon);
 		} else {
-			((Label)figure).setIcon(icon);
+			((Label) figure).setIcon(icon);
 		}
 	}
 
 	/**
 	 * sets the visibility of this edit part
-	 * 
+	 *
 	 * @param vis
-	 *        the new value of the visibility
+	 *            the new value of the visibility
 	 */
+	@Override
 	protected void setVisibility(boolean vis) {
 		EObject element = resolveSemanticElement();
-		if(element instanceof ObjectFlow) {
-			Behavior transformation = ((ObjectFlow)element).getTransformation();
-			if(transformation == null) {
+		if (element instanceof ObjectFlow) {
+			Behavior transformation = ((ObjectFlow) element).getTransformation();
+			if (transformation == null) {
 				vis = false;
 			}
 		}
@@ -131,26 +136,28 @@ public class CustomObjectFlowTransformationEditPart extends ObjectFlowTransforma
 	 * Refresh the visibility in case the transformation
 	 * assignment changed
 	 */
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		Object feature = event.getFeature();
-		if(NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
-			Integer c = (Integer)event.getNewValue();
+		if (NotationPackage.eINSTANCE.getFontStyle_FontColor().equals(feature)) {
+			Integer c = (Integer) event.getNewValue();
 			setFontColor(DiagramColorRegistry.getInstance().getColor(c));
-		} else if(NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_Underline().equals(feature)) {
 			refreshUnderline();
-		} else if(NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_StrikeThrough().equals(feature)) {
 			refreshStrikeThrough();
-		} else if(NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
+		} else if (NotationPackage.eINSTANCE.getFontStyle_FontHeight().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_FontName().equals(feature) || NotationPackage.eINSTANCE.getFontStyle_Bold().equals(feature)
+				|| NotationPackage.eINSTANCE.getFontStyle_Italic().equals(feature)) {
 			refreshFont();
 		} else {
-			if(getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
+			if (getParser() != null && getParser().isAffectingEvent(event, getParserOptions().intValue())) {
 				refreshLabel();
 			}
-			if(getParser() instanceof ISemanticParser) {
-				ISemanticParser modelParser = (ISemanticParser)getParser();
-				if(modelParser.areSemanticElementsAffected(null, event)) {
+			if (getParser() instanceof ISemanticParser) {
+				ISemanticParser modelParser = (ISemanticParser) getParser();
+				if (modelParser.areSemanticElementsAffected(null, event)) {
 					removeSemanticListeners();
-					if(resolveSemanticElement() != null) {
+					if (resolveSemanticElement() != null) {
 						addSemanticListeners();
 					}
 					refreshLabel();
@@ -190,16 +197,16 @@ public class CustomObjectFlowTransformationEditPart extends ObjectFlowTransforma
 
 		/**
 		 * Customization cause to Bug 354622 - [ActivityDiagram] Object Flows selection prevent selecting other close elements
-		 * 
+		 *
 		 * @see org.eclipse.draw2d.Figure#containsPoint(int, int)
-		 * 
+		 *
 		 * @param x
 		 * @param y
 		 * @return
 		 */
 		@Override
 		public boolean containsPoint(int x, int y) {
-			if(isVisible()) {
+			if (isVisible()) {
 				return super.containsPoint(x, y);
 			}
 			return false;
@@ -214,6 +221,7 @@ public class CustomObjectFlowTransformationEditPart extends ObjectFlowTransforma
 			// do not add link in this figure but refresh it when figure moves
 			addFigureListener(new FigureListener() {
 
+				@Override
 				public void figureMoved(IFigure source) {
 					refreshLinkToBehaviorProperty();
 				}
@@ -232,15 +240,15 @@ public class CustomObjectFlowTransformationEditPart extends ObjectFlowTransforma
 
 		/**
 		 * Refresh the link between parent figure and this one
-		 * 
-		 * 
+		 *
+		 *
 		 */
 		private void refreshLinkToBehaviorProperty() {
-			if(getLinkToBehaviorProperty().getParent() == null) {
+			if (getLinkToBehaviorProperty().getParent() == null) {
 				// add in appropriate figure
 				getParent().add(getLinkToBehaviorProperty());
 			}
-			if(getParent() != null && getParent() instanceof ActivityEdgeFigure) {
+			if (getParent() != null && getParent() instanceof ActivityEdgeFigure) {
 				Point parentCenter = getReferencePoint();
 				Rectangle currentBounds = getBounds();
 				Point end = BehaviorPropertyNodeEditPolicy.getAppropriateBorderPoint(parentCenter, currentBounds);
@@ -253,7 +261,7 @@ public class CustomObjectFlowTransformationEditPart extends ObjectFlowTransforma
 		}
 
 		/**
-		 * 
+		 *
 		 */
 		public WrappedLabel getCornerBentContent() {
 			return fCornerBentContent;

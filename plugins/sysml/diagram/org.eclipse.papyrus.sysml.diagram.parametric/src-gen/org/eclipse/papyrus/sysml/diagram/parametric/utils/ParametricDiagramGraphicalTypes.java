@@ -11,7 +11,7 @@
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.sysml.diagram.parametric.utils; 
+package org.eclipse.papyrus.sysml.diagram.parametric.utils;
 
 public class ParametricDiagramGraphicalTypes {
 

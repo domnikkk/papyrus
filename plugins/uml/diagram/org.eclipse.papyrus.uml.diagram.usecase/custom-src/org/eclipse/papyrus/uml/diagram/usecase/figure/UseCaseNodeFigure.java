@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ public class UseCaseNodeFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/**
 	 * Instantiates a new use case node figure.
-	 * 
+	 *
 	 * @param defSize
-	 *        the default size
+	 *            the default size
 	 */
 	public UseCaseNodeFigure(Dimension defSize) {
 		super(defSize);
@@ -38,11 +38,11 @@ public class UseCaseNodeFigure extends DefaultSizeNodeFigure implements IOvalAnc
 
 	/**
 	 * Instantiates a new use case node figure.
-	 * 
+	 *
 	 * @param width
-	 *        the specific width
+	 *            the specific width
 	 * @param height
-	 *        the specific height
+	 *            the specific height
 	 */
 	public UseCaseNodeFigure(int width, int height) {
 		super(width, height);
@@ -61,14 +61,16 @@ public class UseCaseNodeFigure extends DefaultSizeNodeFigure implements IOvalAnc
 	 */
 	@Override
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-		if(p == null)
+		if (p == null) {
 			return createDefaultAnchor();
+		}
 		return new SlidableOvalAnchor(this, p);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Rectangle getOvalBounds() {
 		return getBounds();
 	}

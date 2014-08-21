@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -46,7 +46,7 @@ import org.eclipse.swt.widgets.Text;
 import com.ibm.icu.text.NumberFormat;
 
 /**
- * 
+ *
  * This group provides the elements to manage the grid of a diagram
  * Adapter code from the Preference Page Rulers And Grid
  */
@@ -81,6 +81,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 
 	private String GRID_SPACING_LABEL_PIXELS = DiagramUIMessages.GridRulerPreferencePage_gridSpacing_label_pixels;
 
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getElementConstant(getKey(), preferenceType);
 	}
@@ -108,18 +109,18 @@ public class RulersAndGridGroup extends AbstractGroup {
 	private ColorFieldEditor gridColorEditor = null;
 
 	/**
-	 * 
+	 *
 	 * @param store
-	 *        the preference store to initialize
+	 *            the preference store to initialize
 	 */
 	public static void initDefaults(IPreferenceStore store) {
-		//rulers and grid
-		//		String defaultCountry = Locale.getDefault().getCountry();
-		//		if(defaultCountry == null || defaultCountry.equals(Locale.US.getCountry()) || defaultCountry.equals(Locale.CANADA.getCountry())) {
-		//			store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.RULER_UNITS), RulerProvider.UNIT_INCHES);
-		//		} else {
-		//			store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.RULER_UNITS), RulerProvider.UNIT_CENTIMETERS);
-		//		}
+		// rulers and grid
+		// String defaultCountry = Locale.getDefault().getCountry();
+		// if(defaultCountry == null || defaultCountry.equals(Locale.US.getCountry()) || defaultCountry.equals(Locale.CANADA.getCountry())) {
+		// store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.RULER_UNITS), RulerProvider.UNIT_INCHES);
+		// } else {
+		// store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.RULER_UNITS), RulerProvider.UNIT_CENTIMETERS);
+		// }
 		store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.RULER_UNITS), RulerProvider.UNIT_PIXELS);
 		store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.VIEW_RULER), false);
 		store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.VIEW_GRID), false);
@@ -127,7 +128,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 		store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.SNAP_TO_GEOMETRY), false);
 		store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.GRID_LINE_STYLE), Graphics.LINE_CUSTOM);
 		store.setDefault(PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.GRID_ORDER), false);
-		//to force the refresh of the value
+		// to force the refresh of the value
 		PreferenceConverter.setDefault(store, PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.GRID_LINE_COLOR), new org.eclipse.swt.graphics.RGB(250, 0, 0));
 		final int rgbValue = 50;
 		PreferenceConverter.setDefault(store, PreferencesConstantsHelper.getPapyrusEditorConstant(PreferencesConstantsHelper.GRID_LINE_COLOR), new org.eclipse.swt.graphics.RGB(rgbValue, rgbValue, rgbValue));
@@ -136,9 +137,9 @@ public class RulersAndGridGroup extends AbstractGroup {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param key
 	 * @param dialogPage
@@ -149,7 +150,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param parent
 	 */
 	public void createContents(final Composite parent) {
@@ -182,7 +183,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 		rulerUnitsCombo.addSelectionListener(new SelectionListener() {
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//do nothing
+				// do nothing
 			}
 
 			public void widgetSelected(SelectionEvent e) {
@@ -288,21 +289,22 @@ public class RulersAndGridGroup extends AbstractGroup {
 	 * We are storing all values related to the page setup as doubles
 	 * so we call this function when ever we are getting values from
 	 * the dialog.
-	 * 
+	 *
 	 * @param number
 	 * @return
 	 */
 	private Double forceDouble(Number number) {
-		if(!(number instanceof Double))
+		if (!(number instanceof Double)) {
 			return new Double(number.doubleValue());
-		return (Double)number;
+		}
+		return (Double) number;
 	}
 
 	private void updateUnits() {
 
 		int units = getUnits();
 
-		switch(units) {
+		switch (units) {
 		case RulerProvider.UNIT_INCHES:
 			gridSpacing.setLabelText(GRID_SPACING_LABEL_INCHES);
 			break;
@@ -327,72 +329,72 @@ public class RulersAndGridGroup extends AbstractGroup {
 		int units = rulerUnits.getComboControl().getSelectionIndex();
 
 		// IF no selection has been made
-		if(units == -1) {
+		if (units == -1) {
 			// Read the preference store
-			units = 1;//FIXME;
+			units = 1;// FIXME;
 			oldUnits = units;
 		}
 		return units;
 	}
 
-	//	private String convertUnits(int fromUnits, int toUnits) {
-	//		String valueStr = gridSpacing.getStringValue();
-	//		if(fromUnits == toUnits) {
-	//			return valueStr;
-	//		}
+	// private String convertUnits(int fromUnits, int toUnits) {
+	// String valueStr = gridSpacing.getStringValue();
+	// if(fromUnits == toUnits) {
+	// return valueStr;
+	// }
 	//
-	//		//Double value = Double.valueOf( valueStr );
-	//		NumberFormat numberFormatter = NumberFormat.getInstance();
-	//		Double value = new Double(0.125);
-	//		try {
-	//			value = forceDouble(numberFormatter.parse(valueStr));
-	//		} catch (ParseException e) {
-	//			// Use the default
-	//		}
-	//		double pixelValue = 0;
+	// //Double value = Double.valueOf( valueStr );
+	// NumberFormat numberFormatter = NumberFormat.getInstance();
+	// Double value = new Double(0.125);
+	// try {
+	// value = forceDouble(numberFormatter.parse(valueStr));
+	// } catch (ParseException e) {
+	// // Use the default
+	// }
+	// double pixelValue = 0;
 	//
-	//		Display display = getDisplay();
+	// Display display = getDisplay();
 	//
-	//		switch(fromUnits) {
-	//		case RulerProvider.UNIT_INCHES:
-	//			pixelValue = value.doubleValue() * display.getDPI().x;
-	//			break;
-	//		case RulerProvider.UNIT_CENTIMETERS:
-	//			pixelValue = value.doubleValue() * display.getDPI().x / UnitsUtils.INCH2CM;
-	//			break;
-	//		case RulerProvider.UNIT_PIXELS:
-	//			pixelValue = value.intValue();
-	//		}
+	// switch(fromUnits) {
+	// case RulerProvider.UNIT_INCHES:
+	// pixelValue = value.doubleValue() * display.getDPI().x;
+	// break;
+	// case RulerProvider.UNIT_CENTIMETERS:
+	// pixelValue = value.doubleValue() * display.getDPI().x / UnitsUtils.INCH2CM;
+	// break;
+	// case RulerProvider.UNIT_PIXELS:
+	// pixelValue = value.intValue();
+	// }
 	//
-	//		double returnValue = 0;
+	// double returnValue = 0;
 	//
-	//		switch(toUnits) {
-	//		case RulerProvider.UNIT_INCHES:
-	//			returnValue = pixelValue / display.getDPI().x;
-	//			break;
-	//		case RulerProvider.UNIT_CENTIMETERS:
-	//			returnValue = pixelValue * UnitsUtils.INCH2CM / display.getDPI().x;
-	//			break;
-	//		case RulerProvider.UNIT_PIXELS:
-	//			returnValue = pixelValue;
-	//		}
+	// switch(toUnits) {
+	// case RulerProvider.UNIT_INCHES:
+	// returnValue = pixelValue / display.getDPI().x;
+	// break;
+	// case RulerProvider.UNIT_CENTIMETERS:
+	// returnValue = pixelValue * UnitsUtils.INCH2CM / display.getDPI().x;
+	// break;
+	// case RulerProvider.UNIT_PIXELS:
+	// returnValue = pixelValue;
+	// }
 	//
-	//		return numberFormatter.format(returnValue);
-	//	}
+	// return numberFormatter.format(returnValue);
+	// }
 
 
 	/**
-	 * 
+	 *
 	 * converts the current units used to a base unit value to be used (e.g. in validation)
-	 * 
+	 *
 	 * @param number
-	 *        Units to be converted to the base unit
+	 *            Units to be converted to the base unit
 	 * @return
 	 */
 	private double convertToBase(double number) {
 
 		double returnValue = 0;
-		switch(getUnits()) {
+		switch (getUnits()) {
 		case RulerProvider.UNIT_INCHES:
 			returnValue = number;
 			break;
@@ -420,18 +422,20 @@ public class RulersAndGridGroup extends AbstractGroup {
 		 * 
 		 * @see org.eclipse.jface.preference.StringFieldEditor#doCheckState()
 		 */
+		@Override
 		protected boolean doCheckState() {
 			Text text = getTextControl();
 
-			if(text == null)
+			if (text == null) {
 				return false;
+			}
 
 			try {
 				NumberFormat numberFormatter = NumberFormat.getInstance();
 				ParsePosition parsePosition = new ParsePosition(0);
 				Number parsedNumber = numberFormatter.parse(text.getText(), parsePosition);
 
-				if(parsedNumber == null) {
+				if (parsedNumber == null) {
 					showErrorMessage();
 					return false;
 				}
@@ -439,7 +443,7 @@ public class RulersAndGridGroup extends AbstractGroup {
 				Double pageHeight = forceDouble(parsedNumber);
 				double number = pageHeight.doubleValue();
 				number = convertToBase(number);
-				if(number >= minValidValue && number <= maxValidValue && parsePosition.getIndex() == text.getText().length()) {
+				if (number >= minValidValue && number <= maxValidValue && parsePosition.getIndex() == text.getText().length()) {
 					clearErrorMessage();
 					return true;
 				} else {
@@ -458,9 +462,10 @@ public class RulersAndGridGroup extends AbstractGroup {
 		 * 
 		 * @see org.eclipse.jface.preference.StringFieldEditor#doLoadDefault()
 		 */
+		@Override
 		protected void doLoadDefault() {
 			Text text = getTextControl();
-			if(text != null) {
+			if (text != null) {
 				double value = getPreferenceStore().getDefaultDouble(getPreferenceName());
 				NumberFormat numberFormatter = NumberFormat.getNumberInstance();
 				text.setText(numberFormatter.format(value));
@@ -472,15 +477,17 @@ public class RulersAndGridGroup extends AbstractGroup {
 		 * (non-Javadoc)
 		 * Method declared on FieldEditor.
 		 */
+		@Override
 		protected void doLoad() {
 			Text text = getTextControl();
-			if(text != null) {
+			if (text != null) {
 				double value = getPreferenceStore().getDouble(getPreferenceName());
 				NumberFormat numberFormatter = NumberFormat.getNumberInstance();
 				text.setText(numberFormatter.format(value));
 			}
 		}
 
+		@Override
 		protected void doStore() {
 			NumberFormat numberFormatter = NumberFormat.getInstance();
 			Double gridWidth;

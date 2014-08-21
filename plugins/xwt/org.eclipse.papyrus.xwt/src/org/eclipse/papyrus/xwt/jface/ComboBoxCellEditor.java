@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -35,17 +35,17 @@ public class ComboBoxCellEditor extends org.eclipse.jface.viewers.ComboBoxCellEd
 
 	@Override
 	protected void doSetValue(Object value) {
-		if(value != null) {
+		if (value != null) {
 			Class<?> targetType = getTargetType();
-			if(targetType != String.class) {
+			if (targetType != String.class) {
 				IConverter converter = XWT.findConvertor(targetType, String.class);
-				if(converter != null) {
+				if (converter != null) {
 					value = converter.convert(value);
 				}
 			}
 			String[] items = getItems();
-			for(int i = 0; i < items.length; i++) {
-				if(items[i].equals(value)) {
+			for (int i = 0; i < items.length; i++) {
+				if (items[i].equals(value)) {
 					super.doSetValue(i);
 					return;
 				}
@@ -58,15 +58,15 @@ public class ComboBoxCellEditor extends org.eclipse.jface.viewers.ComboBoxCellEd
 	protected Object doGetValue() {
 		Object value = super.doGetValue();
 		String[] items = getItems();
-		int selected = (Integer)value;
-		if(selected < 0) {
+		int selected = (Integer) value;
+		if (selected < 0) {
 			return null;
 		}
 		String selectedString = items[selected];
 		Class<?> targetType = getTargetType();
-		if(targetType != String.class) {
+		if (targetType != String.class) {
 			IConverter converter = XWT.findConvertor(String.class, targetType);
-			if(converter != null) {
+			if (converter != null) {
 				return converter.convert(value);
 			}
 		}
@@ -74,16 +74,16 @@ public class ComboBoxCellEditor extends org.eclipse.jface.viewers.ComboBoxCellEd
 	}
 
 	protected Class<?> getTargetType() {
-		if(cellEditorHelper != null) {
+		if (cellEditorHelper != null) {
 			return cellEditorHelper.getTargetType();
 		}
 		return Object.class;
 	}
 
 	public void setIndex(Object parent, int index) {
-		if(!(parent instanceof TableViewer)) {
+		if (!(parent instanceof TableViewer)) {
 			throw new XWTException("TableView is expected, not \"" + parent.getClass().getName() + "\"");
 		}
-		cellEditorHelper = new CellEditorHelper((TableViewer)parent, index);
+		cellEditorHelper = new CellEditorHelper((TableViewer) parent, index);
 	}
 }

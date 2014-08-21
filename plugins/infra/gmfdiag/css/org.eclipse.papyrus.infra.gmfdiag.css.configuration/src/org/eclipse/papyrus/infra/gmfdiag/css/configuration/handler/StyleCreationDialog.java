@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,12 +51,12 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 	private StyleSheet stylesheet;
 
 	/**
-	 * 
+	 *
 	 * @param shell
 	 * @param conditions
-	 *        inout
+	 *            inout
 	 * @param declarations
-	 *        inout
+	 *            inout
 	 * @param selectorName
 	 */
 	public StyleCreationDialog(Shell shell, Map<Attribute, Boolean> conditions, Map<Declaration, Boolean> declarations, String selectorName, View context) {
@@ -87,14 +87,14 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 	protected boolean isValid() {
 		boolean result = true;
 
-		//There must be a stylesheet
-		if(getStyleSheet() == null) {
+		// There must be a stylesheet
+		if (getStyleSheet() == null) {
 			setError("You must select a Stylesheet");
 			result = false;
 		}
 
-		//EmbeddedStyleSheets are not yet supported
-		if(getStyleSheet() instanceof EmbeddedStyleSheet) {
+		// EmbeddedStyleSheets are not yet supported
+		if (getStyleSheet() instanceof EmbeddedStyleSheet) {
 			setError("Edition of embedded stylesheets is not yet supported. Please select an external stylesheet");
 			result = false;
 		}
@@ -103,13 +103,13 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 	}
 
 	protected void createStylesheet(Composite parent) {
-		//TODO: Use a preference to remember the last edited Stylesheet (Per model? Diagram? Workspace? With user choice?)
+		// TODO: Use a preference to remember the last edited Stylesheet (Per model? Diagram? Workspace? With user choice?)
 
 		parent.setLayout(new GridLayout(1, false));
 
-		//Create or use an existing External Stylesheet
+		// Create or use an existing External Stylesheet
 		externalStylesheetEditor = new StringFileSelector(parent, SWT.NONE);
-		externalStylesheetEditor.setFilters(new String[]{ "*.css", "*" }, new String[]{ "CSS Stylesheets (*.css)", "All (*)" });
+		externalStylesheetEditor.setFilters(new String[] { "*.css", "*" }, new String[] { "CSS Stylesheets (*.css)", "All (*)" });
 		externalStylesheetEditor.setAllowFileSystem(false);
 		externalStylesheetEditor.setLabel("External stylesheet:");
 		externalStylesheetEditor.setToolTipText("Create or use an existing external CSS Stylesheet");
@@ -117,12 +117,12 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 		externalStylesheetEditor.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				String path = (String)((StringEditor)editor).getValue();
+				String path = (String) ((StringEditor) editor).getValue();
 
 
-				if((path != null && !"".equals(path)) || stylesheetSource == externalStylesheetEditor) {
+				if ((path != null && !"".equals(path)) || stylesheetSource == externalStylesheetEditor) {
 					StyleSheetReference stylesheetReference = null;
-					if(path != null && !"".equals(path)) {
+					if (path != null && !"".equals(path)) {
 						stylesheetReference = StylesheetsFactory.eINSTANCE.createStyleSheetReference();
 						stylesheetReference.setPath(path);
 					}
@@ -137,22 +137,22 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 		Label orLabel = new Label(parent, SWT.NONE);
 		orLabel.setText("-- OR --");
 
-		//Create a new Embedded Stylesheet
+		// Create a new Embedded Stylesheet
 		embeddedStylesheetEditor = new StringEditor(parent, SWT.NONE);
 		embeddedStylesheetEditor.setLabel("New local stylesheet:");
 
-		//FIXME: Change the tooltip text when the X-Text editor can edit local stylesheets 
+		// FIXME: Change the tooltip text when the X-Text editor can edit local stylesheets
 		embeddedStylesheetEditor.setToolTipText("Enter the new local stylesheet's name");
-		//		embeddedStylesheetEditor.setToolTipText("Create a new local stylesheet. The stylesheet will be embedded in the current model. Unsupported yet");
+		// embeddedStylesheetEditor.setToolTipText("Create a new local stylesheet. The stylesheet will be embedded in the current model. Unsupported yet");
 
-		//FIXME: Set read only to false when the X-Text editor can edit local stylesheets
+		// FIXME: Set read only to false when the X-Text editor can edit local stylesheets
 		embeddedStylesheetEditor.setReadOnly(true);
 		embeddedStylesheetEditor.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 		embeddedStylesheetEditor.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				//TODO: Check empty names & set the stylesheet to null when the name is null/empty
-				String name = (String)((StringEditor)editor).getValue();
+				// TODO: Check empty names & set the stylesheet to null when the name is null/empty
+				String name = (String) ((StringEditor) editor).getValue();
 				EmbeddedStyleSheet embeddedStylesheet = StylesheetsFactory.eINSTANCE.createEmbeddedStyleSheet();
 				embeddedStylesheet.setLabel(name);
 				stylesheet = embeddedStylesheet;
@@ -164,7 +164,7 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 		orLabel = new Label(parent, SWT.NONE);
 		orLabel.setText("-- OR --");
 
-		//Use an existing applied stylesheet (Either Reference or Embedded)
+		// Use an existing applied stylesheet (Either Reference or Embedded)
 		appliedStylesheetEditor = new ReferenceDialog(parent, SWT.NONE);
 		appliedStylesheetEditor.setLabel("Applied stylesheet:");
 		appliedStylesheetEditor.setToolTipText("Use an existing stylesheet, from the stylesheets applied to the current model");
@@ -174,8 +174,8 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 		appliedStylesheetEditor.addCommitListener(new ICommitListener() {
 
 			public void commit(AbstractEditor editor) {
-				StyleSheet value = (StyleSheet)((ReferenceDialog)editor).getValue();
-				if(!(ignoreEvents && value == null)) {
+				StyleSheet value = (StyleSheet) ((ReferenceDialog) editor).getValue();
+				if (!(ignoreEvents && value == null)) {
 					stylesheet = value;
 					resetStylesheetEditors(appliedStylesheetEditor);
 				}
@@ -186,20 +186,20 @@ public class StyleCreationDialog extends AbstractStyleDialog {
 	}
 
 	private void resetStylesheetEditors(AbstractEditor stylesheetSource) {
-		if(ignoreEvents) {
+		if (ignoreEvents) {
 			return;
 		}
 
 		ignoreEvents = true;
-		if(stylesheetSource != externalStylesheetEditor) {
+		if (stylesheetSource != externalStylesheetEditor) {
 			externalStylesheetEditor.setValue(null);
 		}
 
-		if(stylesheetSource != embeddedStylesheetEditor) {
+		if (stylesheetSource != embeddedStylesheetEditor) {
 			embeddedStylesheetEditor.setValue(null);
 		}
 
-		if(stylesheetSource != appliedStylesheetEditor) {
+		if (stylesheetSource != appliedStylesheetEditor) {
 			appliedStylesheetEditor.setValue(null);
 		}
 

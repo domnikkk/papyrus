@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Control;
 // TODO: Auto-generated Javadoc
 /**
  * Abstract panel for the Accord/UML view.<br>
- * 
+ *
  */
 public abstract class AbstractPanel extends Composite {
 
@@ -31,11 +31,11 @@ public abstract class AbstractPanel extends Composite {
 
 	/**
 	 * Default constructor.
-	 * 
+	 *
 	 * @param style
-	 *        the style of this composite
+	 *            the style of this composite
 	 * @param parent
-	 *        the parent of this composite
+	 *            the parent of this composite
 	 */
 	public AbstractPanel(Composite parent, int style) {
 		super(parent, style);
@@ -44,7 +44,7 @@ public abstract class AbstractPanel extends Composite {
 
 	/**
 	 * Creates the content for this panel, and returns its Control.
-	 * 
+	 *
 	 * @return the Control for this panel
 	 */
 	public abstract Control createContent();

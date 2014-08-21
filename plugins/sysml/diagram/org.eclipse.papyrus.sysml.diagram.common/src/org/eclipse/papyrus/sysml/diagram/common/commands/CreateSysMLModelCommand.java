@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -31,7 +31,7 @@ public class CreateSysMLModelCommand extends ModelCreationCommandBase {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#createRootElement()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -42,25 +42,25 @@ public class CreateSysMLModelCommand extends ModelCreationCommandBase {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#initializeModel(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param owner
 	 */
 
 	@Override
 	protected void initializeModel(EObject owner) {
 		super.initializeModel(owner);
-		((org.eclipse.uml2.uml.Package)owner).setName(getModelName());
+		((org.eclipse.uml2.uml.Package) owner).setName(getModelName());
 
 		// Retrieve SysML profile and apply with Sub-profile
-		Profile sysml = (Profile)PackageUtil.loadPackage(URI.createURI(SysmlResource.SYSML_PROFILE_URI), owner.eResource().getResourceSet());
-		if(sysml != null) {
-			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package)owner), sysml, true);
+		Profile sysml = (Profile) PackageUtil.loadPackage(URI.createURI(SysmlResource.SYSML_PROFILE_URI), owner.eResource().getResourceSet());
+		if (sysml != null) {
+			PackageUtil.applyProfile(((org.eclipse.uml2.uml.Package) owner), sysml, true);
 		}
 	}
 
 	/**
 	 * Gets the model name.
-	 * 
+	 *
 	 * @return the model name
 	 */
 	protected String getModelName() {

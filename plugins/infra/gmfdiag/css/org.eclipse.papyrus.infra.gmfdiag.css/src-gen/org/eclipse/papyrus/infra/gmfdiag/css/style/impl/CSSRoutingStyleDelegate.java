@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,79 +32,87 @@ public class CSSRoutingStyleDelegate implements CSSRoutingStyle {
 		this.engine = engine;
 	}
 
-	////////////////////////////////////////////////
-	//	Implements a getter for each CSS property //
-	////////////////////////////////////////////////
+	// //////////////////////////////////////////////
+	// Implements a getter for each CSS property //
+	// //////////////////////////////////////////////
 
+	@Override
 	public int getCSSRoundedBendpointsRadius() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "roundedBendpointsRadius");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoundedCornersStyle_RoundedBendpointsRadius().getDefaultValue();
-			return (Integer)defaultValue;
+			return (Integer) defaultValue;
 		}
-		return (Integer)engine.convert(cssValue, Integer.class, null);
+		return (Integer) engine.convert(cssValue, Integer.class, null);
 	}
 
+	@Override
 	public Routing getCSSRouting() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "routing");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_Routing().getDefaultValue();
-			return (Routing)defaultValue;
+			return (Routing) defaultValue;
 		}
 		return Routing.get(cssValue.getCssText());
 	}
 
+	@Override
 	public Smoothness getCSSSmoothness() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "smoothness");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_Smoothness().getDefaultValue();
-			return (Smoothness)defaultValue;
+			return (Smoothness) defaultValue;
 		}
 		return Smoothness.get(cssValue.getCssText());
 	}
 
+	@Override
 	public boolean isCSSAvoidObstructions() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "avoidObstructions");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_AvoidObstructions().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
+	@Override
 	public boolean isCSSClosestDistance() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "closestDistance");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_ClosestDistance().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 
+	@Override
 	public JumpLinkStatus getCSSJumpLinkStatus() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "jumpLinkStatus");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkStatus().getDefaultValue();
-			return (JumpLinkStatus)defaultValue;
+			return (JumpLinkStatus) defaultValue;
 		}
 		return JumpLinkStatus.get(cssValue.getCssText());
 	}
 
+	@Override
 	public JumpLinkType getCSSJumpLinkType() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "jumpLinkType");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_JumpLinkType().getDefaultValue();
-			return (JumpLinkType)defaultValue;
+			return (JumpLinkType) defaultValue;
 		}
 		return JumpLinkType.get(cssValue.getCssText());
 	}
 
+	@Override
 	public boolean isCSSJumpLinksReverse() {
 		CSSValue cssValue = engine.retrievePropertyValue(routingStyle, "jumpLinksReverse");
-		if(cssValue == null) {
+		if (cssValue == null) {
 			Object defaultValue = NotationPackage.eINSTANCE.getRoutingStyle_JumpLinksReverse().getDefaultValue();
-			return (Boolean)defaultValue;
+			return (Boolean) defaultValue;
 		}
-		return (Boolean)engine.convert(cssValue, Boolean.class, null);
+		return (Boolean) engine.convert(cssValue, Boolean.class, null);
 	}
 }

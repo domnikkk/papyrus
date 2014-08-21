@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -47,8 +47,8 @@ public class DependencyEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementLinkLabelNameEditPart) {
-			((NamedElementLinkLabelNameEditPart)childEditPart).setLabel(getPrimaryShape().getNameLabel());
+		if (childEditPart instanceof NamedElementLinkLabelNameEditPart) {
+			((NamedElementLinkLabelNameEditPart) childEditPart).setLabel(getPrimaryShape().getNameLabel());
 			return true;
 		}
 		return super.addFixedChild(childEditPart);
@@ -59,7 +59,7 @@ public class DependencyEditPart extends AbstractElementLinkEditPart {
 	 */
 	@Override
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if(childEditPart instanceof NamedElementLinkLabelNameEditPart) {
+		if (childEditPart instanceof NamedElementLinkLabelNameEditPart) {
 			return true;
 		}
 		return super.removeFixedChild(childEditPart);
@@ -68,6 +68,7 @@ public class DependencyEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates figure for this edit part.
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new NamedElementEdgeFigure();
 	}
@@ -75,8 +76,9 @@ public class DependencyEditPart extends AbstractElementLinkEditPart {
 	/**
 	 * Creates primary shape for this edit part.
 	 */
+	@Override
 	public NamedElementEdgeFigure getPrimaryShape() {
-		return (NamedElementEdgeFigure)getFigure();
+		return (NamedElementEdgeFigure) getFigure();
 	}
 
 	/**

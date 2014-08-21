@@ -1,11 +1,11 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] EMF Facet customization meta-model
  *      Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
@@ -31,9 +31,9 @@ import org.eclipse.papyrus.emf.facet.util.emf.catalog.CatalogSet;
 /**
  * Customization catalog implementation using the catalog manager features
  * provided by the plug-in org.eclipse.papyrus.emf.facet.util.emf.core
- * 
+ *
  * @author Gregoire Dupe
- * 
+ *
  */
 public class CustomizationPropertiesCatalogManager implements ICatalogManager,
 		ICustomizationPropertiesCatalogManager {
@@ -57,8 +57,7 @@ public class CustomizationPropertiesCatalogManager implements ICatalogManager,
 				this.catalog.getInstalledEntries().add(customProperties);
 			}
 		} else {
-			throw new CustomizationCatalogRuntimeException(
-					"Only facetSets must be stored in the customization properties catalog"); //$NON-NLS-1$
+			throw new CustomizationCatalogRuntimeException("Only facetSets must be stored in the customization properties catalog"); //$NON-NLS-1$
 		}
 	}
 
@@ -73,8 +72,7 @@ public class CustomizationPropertiesCatalogManager implements ICatalogManager,
 				final FacetSet facetSet = (FacetSet) eObject;
 				result.add(facetSet);
 			} else {
-				throw new RuntimeException(
-						"Only facetSets must be stored in the customization properties catalog"); //$NON-NLS-1$
+				throw new RuntimeException("Only facetSets must be stored in the customization properties catalog"); //$NON-NLS-1$
 			}
 		}
 		return result;
@@ -90,7 +88,7 @@ public class CustomizationPropertiesCatalogManager implements ICatalogManager,
 				if (eObject instanceof FacetOperation) {
 					final FacetOperation customProperty = (FacetOperation) eObject;
 					if (customPropName.equals(customProperty.getName())) {
-						result.add(customProperty);	
+						result.add(customProperty);
 					}
 				}
 			}

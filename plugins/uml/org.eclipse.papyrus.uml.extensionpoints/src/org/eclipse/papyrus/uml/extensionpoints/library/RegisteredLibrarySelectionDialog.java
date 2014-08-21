@@ -8,7 +8,7 @@
  * Contributors:
  *     CEA List - initial API and implementation
  *     Christian W. Damus (CEA) - bug 422257
- *     Dr. David H. Akehurst - enable programmatic registration 
+ *     Dr. David H. Akehurst - enable programmatic registration
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.library;
 
@@ -31,33 +31,33 @@ import org.eclipse.uml2.uml.PackageImport;
 import org.eclipse.uml2.uml.UMLFactory;
 
 /**
- * 
+ *
  */
 public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog {
 
 	/**
-	 * 
+	 *
 	 */
 	private EList<PackageImport> importedLibraries;
 
 	/**
-	 * 
+	 *
 	 */
 	private List<String> importedLibrariesNames;
 
 	/**
-	 * 
+	 *
 	 */
 	private IRegisteredLibrary[] regLibraries;
 
 	/**
-	 * 
+	 *
 	 */
 	private Package currentModel;
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param umlModel
 	 * @param parent
 	 */
@@ -78,7 +78,7 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public void run() {
 		this.open();
@@ -86,10 +86,10 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param appliedLibraries
-	 * 
+	 *
 	 * @return
 	 */
 	private List<String> getImportedLibraryNames(EList<? extends PackageImport> appliedLibraries) {
@@ -97,7 +97,7 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 		List<String> Libraries = new ArrayList<String>();
 		Iterator<? extends PackageImport> importedIt = appliedLibraries.iterator();
 
-		while(importedIt.hasNext()) {
+		while (importedIt.hasNext()) {
 			PackageImport currentImport = importedIt.next();
 			String currentName = currentImport.getImportedPackage().getName();
 			Libraries.add(currentName);
@@ -107,18 +107,18 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @return
 	 */
 	private IRegisteredLibrary[] removeAlreadyImportededFromSelection() {
 
 		List<IRegisteredLibrary> Libraries = new ArrayList<IRegisteredLibrary>();
 
-		for(int i = 0; i < regLibraries.length; i++) {
+		for (int i = 0; i < regLibraries.length; i++) {
 
 			String currentName = regLibraries[i].getName();
-			if(!importedLibrariesNames.contains(currentName)) {
+			if (!importedLibrariesNames.contains(currentName)) {
 				Libraries.add(regLibraries[i]);
 			}
 		}
@@ -130,19 +130,19 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	private void treatSelection() {
 
 		// User selection
 		Object[] selection = this.getResult();
 
-		if(selection == null) { // Cancel was selected
+		if (selection == null) { // Cancel was selected
 			return;
 		}
 
-		for(int i = 0; i < selection.length; i++) {
-			IRegisteredLibrary currentLibrary = (IRegisteredLibrary)(selection[i]);
+		for (int i = 0; i < selection.length; i++) {
+			IRegisteredLibrary currentLibrary = (IRegisteredLibrary) (selection[i]);
 			URI modelUri = currentLibrary.getUri();
 			addModelLibraryImportFromURI(currentModel, modelUri);
 
@@ -152,18 +152,18 @@ public class RegisteredLibrarySelectionDialog extends ElementListSelectionDialog
 	protected boolean addModelLibraryImportFromURI(Package currentModel, URI modelUri) {
 		Resource modelResource = EMFHelper.getResourceSet(currentModel).getResource(modelUri, true);
 
-		if(modelResource.getContents().size() <= 0) {
+		if (modelResource.getContents().size() <= 0) {
 			Activator.log("The selected uri (" + modelUri.toString() + ") does not contain any model library !");
 			return false;
 		}
 
 		// Try to reach model
-		Element root = (Element)modelResource.getContents().get(0);
+		Element root = (Element) modelResource.getContents().get(0);
 
-		if(root instanceof Package) {
+		if (root instanceof Package) {
 
 			// Import model library
-			Package libToImport = (Package)(modelResource.getContents().get(0));
+			Package libToImport = (Package) (modelResource.getContents().get(0));
 			// create import package
 			PackageImport modelLibImport = UMLFactory.eINSTANCE.createPackageImport();
 			modelLibImport.setImportedPackage(libToImport);

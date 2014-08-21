@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,6 +36,7 @@ public class PropertyNodeLabelEditPart extends AbstractElementNodeLabelEditPart 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getLabelRole() {
 		return "Label"; //$NON-NLS-1$
 	}
@@ -43,6 +44,7 @@ public class PropertyNodeLabelEditPart extends AbstractElementNodeLabelEditPart 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getIconPathRole() {
 		return ""; //$NON-NLS-1$
 	}

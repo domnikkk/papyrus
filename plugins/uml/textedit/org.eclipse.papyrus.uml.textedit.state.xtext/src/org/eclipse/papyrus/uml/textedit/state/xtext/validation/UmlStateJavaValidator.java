@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,25 +39,25 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 	 * First checks if the new name being attributed to the edited state is already used by another state in the region.
 	 * Then, notifies (via warning) any of the potential Behavior deletion implied by the textual specification
 	 * (either DoActivity, Enty, or Exit behaviors)
-	 * 
+	 *
 	 * @param stateRule
 	 */
 	@Check
 	public void checkStateName(StateRule stateRule) {
-		if(stateRule.getName() == null || stateRule.getName().equals("")) {
+		if (stateRule.getName() == null || stateRule.getName().equals("")) {
 			return;
 		}
 
 		//
 		// first, checks if the new name of the State is already used by another state in the region
 		//
-		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State)ContextElementUtil.getContextElement(stateRule.eResource());
+		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State) ContextElementUtil.getContextElement(stateRule.eResource());
 		List<String> alreadyUsedNames = new ArrayList<String>();
 
-		for(Vertex v : editedState.getContainer().getSubvertices()) {
-			if(v instanceof org.eclipse.uml2.uml.State) {
-				org.eclipse.uml2.uml.State s = (org.eclipse.uml2.uml.State)v;
-				if(s != editedState) {
+		for (Vertex v : editedState.getContainer().getSubvertices()) {
+			if (v instanceof org.eclipse.uml2.uml.State) {
+				org.eclipse.uml2.uml.State s = (org.eclipse.uml2.uml.State) v;
+				if (s != editedState) {
 					alreadyUsedNames.add("" + s.getName());
 				}
 			}
@@ -65,13 +65,13 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 
 		String newName = "" + stateRule.getName();
 
-		if(alreadyUsedNames.contains("" + newName)) {
+		if (alreadyUsedNames.contains("" + newName)) {
 			warning("Name " + newName + " is already used by another State in this Region", UmlStatePackage.eINSTANCE.getStateRule_Name());
 		}
 
 
 		// Check if ConnectionPointReference exist when one delete the submachine reference: not allowed!
-		if((stateRule.getSubmachine() == null) && !editedState.getConnections().isEmpty()) {
+		if ((stateRule.getSubmachine() == null) && !editedState.getConnections().isEmpty()) {
 			error(getErrorMessageForSubmachineState(), UmlStatePackage.eINSTANCE.getStateRule_Submachine());
 		}
 		//
@@ -83,15 +83,15 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 		boolean deletionOfExit = editedState.getExit() != null && stateRule.getExit() == null;
 		boolean deletionOfEntry = editedState.getEntry() != null && stateRule.getEntry() == null;
 
-		if(deletionOfDoActivity) {
+		if (deletionOfDoActivity) {
 			warning(getBehaviorKindAsString(getBehaviorKind(editedState.getDoActivity())) + " " + editedState.getDoActivity().getName() + " will be deleted", UmlStatePackage.eINSTANCE.getStateRule_Name());
 		}
 
-		if(deletionOfExit) {
+		if (deletionOfExit) {
 			warning(getBehaviorKindAsString(getBehaviorKind(editedState.getExit())) + " " + editedState.getExit().getName() + " will be deleted", UmlStatePackage.eINSTANCE.getStateRule_Name());
 		}
 
-		if(deletionOfEntry) {
+		if (deletionOfEntry) {
 			warning(getBehaviorKindAsString(getBehaviorKind(editedState.getEntry())) + " " + editedState.getEntry().getName() + " will be deleted", UmlStatePackage.eINSTANCE.getStateRule_Name());
 		}
 	}
@@ -99,24 +99,25 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 	/**
 	 * Notifies (via a Warning) the potential impact of changing the kind (i.e., Activity, StateMachine or OpaqueBehavior)
 	 * of the DoActivity behavior.
-	 * 
+	 *
 	 * @param doRule
 	 */
 	@Check
 	public void checkDoRule(DoRule doRule) {
-		if(doRule.getKind() == null) {
+		if (doRule.getKind() == null) {
 			return;
 		}
-		if(doRule.getBehaviorName() == null || doRule.getBehaviorName().equals("")) {
+		if (doRule.getBehaviorName() == null || doRule.getBehaviorName().equals("")) {
 			return;
 		}
 
-		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State)ContextElementUtil.getContextElement(doRule.eResource());
+		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State) ContextElementUtil.getContextElement(doRule.eResource());
 		BehaviorKind oldDoKind = getBehaviorKind(editedState.getDoActivity());
 		BehaviorKind newDoKind = doRule.getKind();
-		if(oldDoKind != null) {
-			if(oldDoKind != newDoKind) {
-				warning("Changing the kind of " + doRule.getBehaviorName() + " from <<" + getBehaviorKindAsString(oldDoKind) + ">> to <<" + getBehaviorKindAsString(newDoKind) + ">> will cause the deletion of " + getBehaviorKindAsString(oldDoKind) + " " + doRule.getBehaviorName() + ". Any changes made to " + getBehaviorKindAsString(oldDoKind) + " " + doRule.getBehaviorName() + " will be lost", UmlStatePackage.eINSTANCE.getDoRule_Kind());
+		if (oldDoKind != null) {
+			if (oldDoKind != newDoKind) {
+				warning("Changing the kind of " + doRule.getBehaviorName() + " from <<" + getBehaviorKindAsString(oldDoKind) + ">> to <<" + getBehaviorKindAsString(newDoKind) + ">> will cause the deletion of " + getBehaviorKindAsString(oldDoKind) + " "
+						+ doRule.getBehaviorName() + ". Any changes made to " + getBehaviorKindAsString(oldDoKind) + " " + doRule.getBehaviorName() + " will be lost", UmlStatePackage.eINSTANCE.getDoRule_Kind());
 			}
 		}
 	}
@@ -124,24 +125,25 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 	/**
 	 * Notifies (via a Warning) the potential impact of changing the kind (i.e., Activity, StateMachine or OpaqueBehavior)
 	 * of the Entry behavior.
-	 * 
+	 *
 	 * @param entryRule
 	 */
 	@Check
 	public void checkEntryRule(EntryRule entryRule) {
-		if(entryRule.getKind() == null) {
+		if (entryRule.getKind() == null) {
 			return;
 		}
-		if(entryRule.getBehaviorName() == null || entryRule.getBehaviorName().equals("")) {
+		if (entryRule.getBehaviorName() == null || entryRule.getBehaviorName().equals("")) {
 			return;
 		}
 
-		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State)ContextElementUtil.getContextElement(entryRule.eResource());
+		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State) ContextElementUtil.getContextElement(entryRule.eResource());
 		BehaviorKind oldDoKind = getBehaviorKind(editedState.getEntry());
 		BehaviorKind newDoKind = entryRule.getKind();
-		if(oldDoKind != null) {
-			if(oldDoKind != newDoKind) {
-				warning("Changing the kind of " + entryRule.getBehaviorName() + " from <<" + getBehaviorKindAsString(oldDoKind) + ">> to <<" + getBehaviorKindAsString(newDoKind) + ">> will cause the deletion of " + getBehaviorKindAsString(oldDoKind) + " " + entryRule.getBehaviorName() + ". Any changes made to " + getBehaviorKindAsString(oldDoKind) + " " + entryRule.getBehaviorName() + " will be lost", UmlStatePackage.eINSTANCE.getEntryRule_Kind());
+		if (oldDoKind != null) {
+			if (oldDoKind != newDoKind) {
+				warning("Changing the kind of " + entryRule.getBehaviorName() + " from <<" + getBehaviorKindAsString(oldDoKind) + ">> to <<" + getBehaviorKindAsString(newDoKind) + ">> will cause the deletion of " + getBehaviorKindAsString(oldDoKind) + " "
+						+ entryRule.getBehaviorName() + ". Any changes made to " + getBehaviorKindAsString(oldDoKind) + " " + entryRule.getBehaviorName() + " will be lost", UmlStatePackage.eINSTANCE.getEntryRule_Kind());
 			}
 		}
 	}
@@ -149,24 +151,25 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 	/**
 	 * Notifies (via a Warning) the potential impact of changing the kind (i.e., Activity, StateMachine or OpaqueBehavior)
 	 * of the Entry behavior.
-	 * 
+	 *
 	 * @param exitRule
 	 */
 	@Check
 	public void checkExitRule(ExitRule exitRule) {
-		if(exitRule.getKind() == null) {
+		if (exitRule.getKind() == null) {
 			return;
 		}
-		if(exitRule.getBehaviorName() == null || exitRule.getBehaviorName().equals("")) {
+		if (exitRule.getBehaviorName() == null || exitRule.getBehaviorName().equals("")) {
 			return;
 		}
 
-		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State)ContextElementUtil.getContextElement(exitRule.eResource());
+		org.eclipse.uml2.uml.State editedState = (org.eclipse.uml2.uml.State) ContextElementUtil.getContextElement(exitRule.eResource());
 		BehaviorKind oldDoKind = getBehaviorKind(editedState.getExit());
 		BehaviorKind newDoKind = exitRule.getKind();
-		if(oldDoKind != null) {
-			if(oldDoKind != newDoKind) {
-				warning("Changing the kind of " + exitRule.getBehaviorName() + " from <<" + getBehaviorKindAsString(oldDoKind) + ">> to <<" + getBehaviorKindAsString(newDoKind) + ">> will cause the deletion of " + getBehaviorKindAsString(oldDoKind) + " " + exitRule.getBehaviorName() + ". Any changes made to " + getBehaviorKindAsString(oldDoKind) + " " + exitRule.getBehaviorName() + " will be lost", UmlStatePackage.eINSTANCE.getExitRule_Kind());
+		if (oldDoKind != null) {
+			if (oldDoKind != newDoKind) {
+				warning("Changing the kind of " + exitRule.getBehaviorName() + " from <<" + getBehaviorKindAsString(oldDoKind) + ">> to <<" + getBehaviorKindAsString(newDoKind) + ">> will cause the deletion of " + getBehaviorKindAsString(oldDoKind) + " "
+						+ exitRule.getBehaviorName() + ". Any changes made to " + getBehaviorKindAsString(oldDoKind) + " " + exitRule.getBehaviorName() + " will be lost", UmlStatePackage.eINSTANCE.getExitRule_Kind());
 			}
 		}
 	}
@@ -174,21 +177,21 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 	@Check
 	public void checkSubmachineRule(SubmachineRule rule) {
 		EObject contextElement = ContextElementUtil.getContextElement(rule.eResource());
-		if(contextElement == null || !(contextElement instanceof org.eclipse.uml2.uml.State)) {
+		if (contextElement == null || !(contextElement instanceof org.eclipse.uml2.uml.State)) {
 			return;
 		}
-		org.eclipse.uml2.uml.State contextState = (org.eclipse.uml2.uml.State)contextElement;
-		if(contextState.isOrthogonal()) {
+		org.eclipse.uml2.uml.State contextState = (org.eclipse.uml2.uml.State) contextElement;
+		if (contextState.isOrthogonal()) {
 			error(getErrorMessageForOrthogonalState(), UmlStatePackage.eINSTANCE.getSubmachineRule_Submachine());
 		}
-		if(contextState.isComposite()) {
+		if (contextState.isComposite()) {
 			error(getErrorMessageForCompositeState(), UmlStatePackage.eINSTANCE.getSubmachineRule_Submachine());
 		}
 	}
 
-	//*****************//
+	// *****************//
 	// Utility methods //
-	//*****************//
+	// *****************//
 
 	private String getErrorMessageForOrthogonalState() {
 		return "An orthogonal state cannot reference a submachine.";
@@ -203,29 +206,29 @@ public class UmlStateJavaValidator extends AbstractUmlStateJavaValidator {
 	}
 
 	private static BehaviorKind getBehaviorKind(Behavior behavior) {
-		if(behavior == null) {
+		if (behavior == null) {
 			return null;
 		}
-		if(behavior instanceof Activity) {
+		if (behavior instanceof Activity) {
 			return BehaviorKind.ACTIVITY;
 		}
-		if(behavior instanceof OpaqueBehavior) {
+		if (behavior instanceof OpaqueBehavior) {
 			return BehaviorKind.OPAQUE_BEHAVIOR;
 		}
-		if(behavior instanceof StateMachine) {
+		if (behavior instanceof StateMachine) {
 			return BehaviorKind.STATE_MACHINE;
 		}
 		return null;
 	}
 
 	private static String getBehaviorKindAsString(BehaviorKind behaviorKind) {
-		if(behaviorKind == BehaviorKind.ACTIVITY) {
+		if (behaviorKind == BehaviorKind.ACTIVITY) {
 			return "Activity";
 		}
-		if(behaviorKind == BehaviorKind.OPAQUE_BEHAVIOR) {
+		if (behaviorKind == BehaviorKind.OPAQUE_BEHAVIOR) {
 			return "OpaqueBehavior";
 		}
-		if(behaviorKind == BehaviorKind.STATE_MACHINE) {
+		if (behaviorKind == BehaviorKind.STATE_MACHINE) {
 			return "StateMachine";
 		}
 		return "";

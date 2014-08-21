@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -98,7 +98,7 @@ public abstract class AbstractEditHyperlinkShell {
 		editHyperlinkShell.setToolTipText(Messages.AbstractEditHyperlinkShell_EditionOfAHyperLink);
 		editHyperlinkShell.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
 		editHyperlinkShell.setLayout(gridLayout);
-		//		editHyperlinkShell.setSize(new Point(601, 119));
+		// editHyperlinkShell.setSize(new Point(601, 119));
 		ObjectcLabel = new CLabel(editHyperlinkShell, SWT.NONE);
 		ObjectcLabel.setText(OBJECT_LABEL);
 		ObjectcLabel.setBackground(Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
@@ -130,7 +130,7 @@ public abstract class AbstractEditHyperlinkShell {
 
 	/**
 	 * Gets the edit hyperlink shell.
-	 * 
+	 *
 	 * @return the editHyperlinkShell
 	 */
 	public Shell getEditHyperlinkShell() {
@@ -139,7 +139,7 @@ public abstract class AbstractEditHyperlinkShell {
 
 	/**
 	 * Gets the ok button.
-	 * 
+	 *
 	 * @return the okButton
 	 */
 	protected Button getOkButton() {
@@ -148,7 +148,7 @@ public abstract class AbstractEditHyperlinkShell {
 
 	/**
 	 * Gets the cancel button.
-	 * 
+	 *
 	 * @return the cancelButton
 	 */
 	protected Button getCancelButton() {
@@ -157,7 +157,7 @@ public abstract class AbstractEditHyperlinkShell {
 
 	/**
 	 * Gets the tooltip input text.
-	 * 
+	 *
 	 * @return the tooltipInputText
 	 */
 	protected Text getTooltipInputText() {
@@ -166,7 +166,7 @@ public abstract class AbstractEditHyperlinkShell {
 
 	/**
 	 * Gets the object labeltext.
-	 * 
+	 *
 	 * @return the objectLabeltext
 	 */
 	protected Text getObjectLabeltext() {

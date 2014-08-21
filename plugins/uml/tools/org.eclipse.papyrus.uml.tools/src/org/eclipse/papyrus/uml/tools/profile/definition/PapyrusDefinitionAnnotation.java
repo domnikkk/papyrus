@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,17 +44,17 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Creates a new PapyrusDefinitionAnnotation.
-	 * 
+	 *
 	 * @param version
-	 *        the version of the definition
+	 *            the version of the definition
 	 * @param comment
-	 *        the comment associated to this definition
+	 *            the comment associated to this definition
 	 * @param copyright
-	 *        the copyright of this definition
+	 *            the copyright of this definition
 	 * @param date
-	 *        the date this definition was generated
+	 *            the date this definition was generated
 	 * @param the
-	 *        author responsible of this definition
+	 *            author responsible of this definition
 	 */
 	public PapyrusDefinitionAnnotation(Version version, String comment, String copyright, String date, String author) {
 		this.version = version;
@@ -66,7 +66,7 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Creates a Eannotation from the given configuration
-	 * 
+	 *
 	 * @return the eAnnotation corresponding to this configuration
 	 */
 	public EAnnotation convertToEAnnotation() {
@@ -84,9 +84,9 @@ public class PapyrusDefinitionAnnotation {
 	/**
 	 * Return the PapyrusDefinitionAnnotation corresponding to the given
 	 * EAnnotation
-	 * 
+	 *
 	 * @param annotation
-	 *        the annotation to parse
+	 *            the annotation to parse
 	 * @return a image of the given annotation, with default values if needed.
 	 */
 	public static PapyrusDefinitionAnnotation parseEAnnotation(EAnnotation annotation) {
@@ -107,7 +107,7 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Returns the version of the definition of the profile
-	 * 
+	 *
 	 * @return the version of the definition of the profile
 	 */
 	public Version getVersion() {
@@ -116,7 +116,7 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Returns the comment associated to the definition of the profile
-	 * 
+	 *
 	 * @return the comment associated to the definition of the profile
 	 */
 	public String getComment() {
@@ -125,7 +125,7 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Returns the copyright associated to the definition of the profile
-	 * 
+	 *
 	 * @return the copyright associated to the definition of the profile
 	 */
 	public String getCopyright() {
@@ -134,7 +134,7 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Returns the date associated to the definition of the profile
-	 * 
+	 *
 	 * @return the date associated to the definition of the profile
 	 */
 	public String getDate() {
@@ -143,7 +143,7 @@ public class PapyrusDefinitionAnnotation {
 
 	/**
 	 * Returns the author responsible to the definition of the profile
-	 * 
+	 *
 	 * @return the author responsible to the definition of the profile
 	 */
 	public String getAuthor() {

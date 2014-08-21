@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,18 +24,18 @@ import org.eclipse.swt.graphics.Image;
 /**
  * This class extends the WrappingLabel class to permit the rotation of the
  * WrappingLabel icon
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class CustomWrappingLabel extends WrappingLabel
 
 {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CustomWrappingLabel() {
 		super();
@@ -45,9 +45,9 @@ public class CustomWrappingLabel extends WrappingLabel
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param text
 	 */
 	public CustomWrappingLabel(String text) {
@@ -55,9 +55,9 @@ public class CustomWrappingLabel extends WrappingLabel
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param image
 	 */
 	public CustomWrappingLabel(Image image) {
@@ -65,9 +65,9 @@ public class CustomWrappingLabel extends WrappingLabel
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param text
 	 * @param image
 	 */
@@ -80,11 +80,11 @@ public class CustomWrappingLabel extends WrappingLabel
 
 	/**
 	 * This method Sets the angle of the rotation.<BR>
-	 * 
-	 * 
+	 *
+	 *
 	 * @param angle
-	 *        angle of the rotation in radians
-	 * 
+	 *            angle of the rotation in radians
+	 *
 	 */
 	public void setRotation(double angle) {
 
@@ -96,25 +96,25 @@ public class CustomWrappingLabel extends WrappingLabel
 
 	/**
 	 * Paints the custom icon that has been rotated
-	 * 
+	 *
 	 * @param graphics
-	 *        The graphics context
+	 *            The graphics context
 	 */
 	private void CustomPaintIcons(Graphics graphics) {
 		Point p = Point.SINGLETON;
 		graphics.pushState();
 
-		if(getIconLocation() != null) {
+		if (getIconLocation() != null) {
 			p.setLocation(getIconLocation());
 
 			Rectangle figBounds = getBounds();
 			graphics.translate(figBounds.x, figBounds.y);
 
 			int num = getNumberofIcons();
-			for(int i = 0; i < num; i++) {
+			for (int i = 0; i < num; i++) {
 				// Image icon = getIcon(i);
 				Image icon = org.eclipse.papyrus.uml.diagram.common.Activator.getPluginIconImage(UMLDiagramEditorPlugin.ID, PATH);
-				if(icon != null) {
+				if (icon != null) {
 					icon.setBackground(getBackgroundColor());
 					// Image image1 = new Image(PlatformUI.getWorkbench().getDisplay(), RotationHelper.rotateImage(icon, getRotation()));
 					Image image1 = RotationHelper.rotateImage(icon, getRotation());
@@ -141,16 +141,16 @@ public class CustomWrappingLabel extends WrappingLabel
 	public void paintFigure(Graphics graphics) {
 		// super.paintFigure(graphics);
 
-		if(hasIcons()) {
+		if (hasIcons()) {
 			CustomPaintIcons(graphics);
-			//call repaint to refresh (This repaint is no more needed, it consumes a lot of CPU resource)
-			//repaint();
+			// call repaint to refresh (This repaint is no more needed, it consumes a lot of CPU resource)
+			// repaint();
 		}
 	}
 
 	/**
 	 * gets the class member rotation
-	 * 
+	 *
 	 * @return the angle of rotation in degrees
 	 */
 	public double getRotation() {

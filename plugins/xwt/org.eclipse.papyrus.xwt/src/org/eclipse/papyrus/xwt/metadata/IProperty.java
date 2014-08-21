@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -14,12 +14,12 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * UI property
- * 
+ *
  * @author yyang
  */
 public interface IProperty extends IBehavior {
 
-	IProperty[] EMPTY_ARRAY = new IProperty[]{};
+	IProperty[] EMPTY_ARRAY = new IProperty[] {};
 
 	public Class<?> getType();
 
@@ -27,7 +27,7 @@ public interface IProperty extends IBehavior {
 
 	/**
 	 * Can generate event
-	 * 
+	 *
 	 * @return
 	 */
 	public void setValue(Object target, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException;
@@ -46,7 +46,7 @@ public interface IProperty extends IBehavior {
 
 	/**
 	 * use the value ad parent for the children. Table.table, Form.setHeadClient etc
-	 * 
+	 *
 	 * @return
 	 */
 	public boolean isValueAsParent();

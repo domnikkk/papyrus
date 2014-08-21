@@ -4,10 +4,10 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- *     Vincent Lorenzo (CEA-LIST)  - duplicated and adapted code from nattable project. 
- *  
+ *     Vincent Lorenzo (CEA-LIST)  - duplicated and adapted code from nattable project.
+ *
  ******************************************************************************/
 package org.eclipse.papyrus.infra.nattable.celleditor;
 
@@ -38,7 +38,7 @@ import org.eclipse.swt.widgets.Text;
  * {@link ICellEditor} implementation that wraps a SWT {@link Text} control to support
  * text editing. This is also the default editor in NatTable if you didn't configure
  * something else.
- * 
+ *
  * duplicated and adapted code from nattable project. Add the method {@link #keyPressed(Composite, KeyEvent)} to allow to ovveride it
  */
 public class TextCellEditor extends AbstractCellEditor {
@@ -71,11 +71,10 @@ public class TextCellEditor extends AbstractCellEditor {
 	 * if the text editor control is activated with an initial value. If it is activated
 	 * only specifying the original canonical value, the default behaviour is to select
 	 * the whole text contained in the text editor control.
-	 * 
+	 *
 	 * <p>
-	 * You can override this default behaviour by setting an {@link EditorSelectionEnum} explicitly. With this you are able e.g. to set the selection
-	 * at the beginning of the contained text, so writing in the text control will result in prefixing.
-	 * 
+	 * You can override this default behaviour by setting an {@link EditorSelectionEnum} explicitly. With this you are able e.g. to set the selection at the beginning of the contained text, so writing in the text control will result in prefixing.
+	 *
 	 * <p>
 	 * Note that on overriding the behaviour, you override both activation cases.
 	 */
@@ -118,10 +117,10 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * Creates a TextCellEditor that will not move the selection on committing a value by pressing enter.
-	 * 
+	 *
 	 * @param commitOnUpDown
-	 *        Flag to configure whether the editor should commit
-	 *        and move the selection in the corresponding way if the up or down key is pressed.
+	 *            Flag to configure whether the editor should commit
+	 *            and move the selection in the corresponding way if the up or down key is pressed.
 	 */
 	public TextCellEditor(boolean commitOnUpDown) {
 		this(commitOnUpDown, false);
@@ -129,13 +128,13 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * Creates a TextCellEditor.
-	 * 
+	 *
 	 * @param commitOnUpDown
-	 *        Flag to configure whether the editor should commit
-	 *        and move the selection in the corresponding way if the up or down key is pressed.
+	 *            Flag to configure whether the editor should commit
+	 *            and move the selection in the corresponding way if the up or down key is pressed.
 	 * @param moveSelectionOnEnter
-	 *        Flag to configure whether the selection should move after a value was
-	 *        committed after pressing enter.
+	 *            Flag to configure whether the selection should move after a value was
+	 *            committed after pressing enter.
 	 */
 	public TextCellEditor(boolean commitOnUpDown, boolean moveSelectionOnEnter) {
 		this.commitOnUpDown = commitOnUpDown;
@@ -147,37 +146,37 @@ public class TextCellEditor extends AbstractCellEditor {
 		this.text = createEditorControl(parent);
 
 		// If the originalCanonicalValue is a Character it is possible the editor is activated by keypress
-		if(originalCanonicalValue instanceof Character) {
+		if (originalCanonicalValue instanceof Character) {
 			this.text.setText(originalCanonicalValue.toString());
 			selectText(this.selectionMode != null ? this.selectionMode : EditorSelectionEnum.END);
 		}
-		//if there is no initial value, handle the original canonical value to transfer it to the text control
+		// if there is no initial value, handle the original canonical value to transfer it to the text control
 		else {
 			setCanonicalValue(originalCanonicalValue);
 			selectText(this.selectionMode != null ? this.selectionMode : EditorSelectionEnum.ALL);
 		}
 
-		if(!isEditable()) {
+		if (!isEditable()) {
 			this.text.setEditable(false);
 		}
 
-		//show an error decoration if this is enabled
+		// show an error decoration if this is enabled
 		this.decorationProvider.createErrorDecorationIfRequired(this.text);
 
-		//if the input error handlers are of type RenderErrorHandler (default) than
-		//we also check for a possible configured error styling in the configuration
-		//Note: this is currently only implemented in here, as the TextCellEditor is
-		//		the only editor that supports just in time conversion/validation
-		if(this.inputConversionErrorHandler instanceof RenderErrorHandling) {
+		// if the input error handlers are of type RenderErrorHandler (default) than
+		// we also check for a possible configured error styling in the configuration
+		// Note: this is currently only implemented in here, as the TextCellEditor is
+		// the only editor that supports just in time conversion/validation
+		if (this.inputConversionErrorHandler instanceof RenderErrorHandling) {
 			IStyle conversionErrorStyle = this.configRegistry.getConfigAttribute(EditConfigAttributes.CONVERSION_ERROR_STYLE, DisplayMode.EDIT, this.labelStack.getLabels());
 
-			((RenderErrorHandling)this.inputConversionErrorHandler).setErrorStyle(conversionErrorStyle);
+			((RenderErrorHandling) this.inputConversionErrorHandler).setErrorStyle(conversionErrorStyle);
 		}
 
-		if(this.inputValidationErrorHandler instanceof RenderErrorHandling) {
+		if (this.inputValidationErrorHandler instanceof RenderErrorHandling) {
 			IStyle validationErrorStyle = this.configRegistry.getConfigAttribute(EditConfigAttributes.VALIDATION_ERROR_STYLE, DisplayMode.EDIT, this.labelStack.getLabels());
 
-			((RenderErrorHandling)this.inputValidationErrorHandler).setErrorStyle(validationErrorStyle);
+			((RenderErrorHandling) this.inputValidationErrorHandler).setErrorStyle(validationErrorStyle);
 		}
 
 		this.text.forceFocus();
@@ -203,7 +202,7 @@ public class TextCellEditor extends AbstractCellEditor {
 	@Override
 	public Text createEditorControl(Composite parent) {
 		int style = HorizontalAlignmentEnum.getSWTStyle(this.cellStyle);
-		if(this.editMode == EditModeEnum.DIALOG) {
+		if (this.editMode == EditModeEnum.DIALOG) {
 			style = style | SWT.BORDER;
 		}
 		return createEditorControl(parent, style);
@@ -212,27 +211,27 @@ public class TextCellEditor extends AbstractCellEditor {
 	/**
 	 * Creates the editor control that is wrapped by this ICellEditor.
 	 * Will use the style configurations in ConfigRegistry for styling the control.
-	 * 
+	 *
 	 * @param parent
-	 *        The Composite that will be the parent of the new editor control.
-	 *        Can not be <code>null</code>
+	 *            The Composite that will be the parent of the new editor control.
+	 *            Can not be <code>null</code>
 	 * @param style
-	 *        The SWT style of the text control to create.
+	 *            The SWT style of the text control to create.
 	 * @return The created editor control that is wrapped by this ICellEditor.
 	 */
 	protected Text createEditorControl(final Composite parent, int style) {
-		//create the Text control based on the specified style
+		// create the Text control based on the specified style
 		final Text textControl = new Text(parent, style);
 
-		//set style information configured in the associated cell style
+		// set style information configured in the associated cell style
 		textControl.setBackground(this.cellStyle.getAttributeValue(CellStyleAttributes.BACKGROUND_COLOR));
 		textControl.setForeground(this.cellStyle.getAttributeValue(CellStyleAttributes.FOREGROUND_COLOR));
 		textControl.setFont(this.cellStyle.getAttributeValue(CellStyleAttributes.FONT));
 
 		textControl.setCursor(new Cursor(Display.getDefault(), SWT.CURSOR_IBEAM));
 
-		//add a key listener that will commit or close the editor for special key strokes
-		//and executes conversion/validation on input to the editor
+		// add a key listener that will commit or close the editor for special key strokes
+		// and executes conversion/validation on input to the editor
 		textControl.addKeyListener(new KeyAdapter() {
 
 			@Override
@@ -243,17 +242,17 @@ public class TextCellEditor extends AbstractCellEditor {
 			@Override
 			public void keyReleased(KeyEvent e) {
 				try {
-					//always do the conversion
+					// always do the conversion
 					Object canonicalValue = getCanonicalValue(inputConversionErrorHandler);
-					//and always do the validation
-					//even if for commiting the validation should be skipped, on editing
-					//a validation failure should be made visible
-					//otherwise there would be no need for validation!
+					// and always do the validation
+					// even if for commiting the validation should be skipped, on editing
+					// a validation failure should be made visible
+					// otherwise there would be no need for validation!
 					validateCanonicalValue(canonicalValue, inputValidationErrorHandler);
 				} catch (Exception ex) {
-					//do nothing as exceptions caused by conversion or validation are handled already
-					//we just need this catch block for stopping the process if conversion failed with
-					//an exception
+					// do nothing as exceptions caused by conversion or validation are handled already
+					// we just need this catch block for stopping the process if conversion failed with
+					// an exception
 				}
 			}
 		});
@@ -262,28 +261,28 @@ public class TextCellEditor extends AbstractCellEditor {
 	}
 
 	protected void keyPressed(Composite parent, Text text, KeyEvent event) {
-		if(commitOnEnter && (event.keyCode == SWT.CR || event.keyCode == SWT.KEYPAD_CR)) {
+		if (commitOnEnter && (event.keyCode == SWT.CR || event.keyCode == SWT.KEYPAD_CR)) {
 
 			MoveDirectionEnum move = MoveDirectionEnum.NONE;
-			if(moveSelectionOnEnter && editMode == EditModeEnum.INLINE) {
-				if(event.stateMask == 0) {
+			if (moveSelectionOnEnter && editMode == EditModeEnum.INLINE) {
+				if (event.stateMask == 0) {
 					move = MoveDirectionEnum.DOWN;
-				} else if(event.stateMask == SWT.SHIFT) {
+				} else if (event.stateMask == SWT.SHIFT) {
 					move = MoveDirectionEnum.UP;
 				}
 			}
 
 			commit(move);
 
-			if(editMode == EditModeEnum.DIALOG) {
+			if (editMode == EditModeEnum.DIALOG) {
 				parent.forceFocus();
 			}
-		} else if(event.keyCode == SWT.ESC && event.stateMask == 0) {
+		} else if (event.keyCode == SWT.ESC && event.stateMask == 0) {
 			close();
-		} else if(commitOnUpDown && editMode == EditModeEnum.INLINE) {
-			if(event.keyCode == SWT.ARROW_UP) {
+		} else if (commitOnUpDown && editMode == EditModeEnum.INLINE) {
+			if (event.keyCode == SWT.ARROW_UP) {
 				commit(MoveDirectionEnum.UP);
-			} else if(event.keyCode == SWT.ARROW_DOWN) {
+			} else if (event.keyCode == SWT.ARROW_DOWN) {
 				commit(MoveDirectionEnum.DOWN);
 			}
 		}
@@ -304,9 +303,9 @@ public class TextCellEditor extends AbstractCellEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param editable
-	 *        <code>true</code> if the wrapped Text control should be editable, <code>false</code> if not.
+	 *            <code>true</code> if the wrapped Text control should be editable, <code>false</code> if not.
 	 */
 	public void setEditable(boolean editable) {
 		this.editable = editable;
@@ -319,7 +318,7 @@ public class TextCellEditor extends AbstractCellEditor {
 	 * the selection is set at the end of the containing text. If it is activated
 	 * only specifying the original canonical value, the default behaviour is to select
 	 * the whole text contained in the text editor control.
-	 * 
+	 *
 	 * @return The current configured selection mode, <code>null</code> for default behaviour.
 	 */
 	public final EditorSelectionEnum getSelectionMode() {
@@ -332,10 +331,10 @@ public class TextCellEditor extends AbstractCellEditor {
 	 * both cases, activating the wrapped text editor control with and without an initial value.
 	 * Setting this value to <code>null</code> will reactivate the default behaviour like described
 	 * here {@link TextCellEditor#getSelectionMode()}.
-	 * 
+	 *
 	 * @param selectionMode
-	 *        The selection mode that should be used on the content of the
-	 *        wrapped text editor control when it gets activated.
+	 *            The selection mode that should be used on the content of the
+	 *            wrapped text editor control when it gets activated.
 	 */
 	public final void setSelectionMode(EditorSelectionEnum selectionMode) {
 		this.selectionMode = selectionMode;
@@ -343,20 +342,20 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * Will set the selection to the wrapped text control regarding the configured {@link EditorSelectionEnum}.
-	 * 
+	 *
 	 * <p>
 	 * This method is called
-	 * 
+	 *
 	 * @see Text#setSelection(int, int)
 	 */
 	private void selectText(EditorSelectionEnum selectionMode) {
 		int textLength = this.text.getText().length();
-		if(textLength > 0) {
-			if(selectionMode == EditorSelectionEnum.ALL) {
+		if (textLength > 0) {
+			if (selectionMode == EditorSelectionEnum.ALL) {
 				this.text.setSelection(0, textLength);
-			} else if(selectionMode == EditorSelectionEnum.END) {
+			} else if (selectionMode == EditorSelectionEnum.END) {
 				this.text.setSelection(textLength, textLength);
-			} else if(selectionMode == EditorSelectionEnum.START) {
+			} else if (selectionMode == EditorSelectionEnum.START) {
 				this.text.setSelection(0);
 			}
 		}
@@ -371,10 +370,10 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * Enables/disables the error decoration for the wrapped text control.
-	 * 
+	 *
 	 * @param enabled
-	 *        <code>true</code> if an error decoration should be added to
-	 *        the wrapped text control, <code>false</code> if not.
+	 *            <code>true</code> if an error decoration should be added to
+	 *            the wrapped text control, <code>false</code> if not.
 	 */
 	public void setErrorDecorationEnabled(boolean enabled) {
 		this.decorationProvider.setErrorDecorationEnabled(enabled);
@@ -382,10 +381,10 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * Set the error description text that will be shown in the decoration hover.
-	 * 
+	 *
 	 * @param errorText
-	 *        The text to be shown as a description for the decoration, or <code>null</code> if there should be no description.
-	 * 
+	 *            The text to be shown as a description for the decoration, or <code>null</code> if there should be no description.
+	 *
 	 * @see ControlDecoration#setDescriptionText(String)
 	 */
 	public void setErrorDecorationText(String errorText) {
@@ -394,10 +393,10 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * Force the error decoration hover to show immediately.
-	 * 
+	 *
 	 * @param customErrorText
-	 *        The text to show in the hover popup.
-	 * 
+	 *            The text to show in the hover popup.
+	 *
 	 * @see ControlDecoration#show()
 	 * @see ControlDecoration#showHoverText(String)
 	 */
@@ -408,11 +407,10 @@ public class TextCellEditor extends AbstractCellEditor {
 	/**
 	 * Set the position of the control decoration relative to the control.
 	 * It should include style bits describing both the vertical and horizontal orientation.
-	 * 
+	 *
 	 * @param decorationPositionOverride
-	 *        bit-wise or of position constants (<code>SWT.TOP</code>, <code>SWT.BOTTOM</code>, <code>SWT.LEFT</code>, <code>SWT.RIGHT</code>, and
-	 *        <code>SWT.CENTER</code>).
-	 * 
+	 *            bit-wise or of position constants (<code>SWT.TOP</code>, <code>SWT.BOTTOM</code>, <code>SWT.LEFT</code>, <code>SWT.RIGHT</code>, and <code>SWT.CENTER</code>).
+	 *
 	 * @see ControlDecoration#ControlDecoration(Control, int)
 	 */
 	public void setDecorationPositionOverride(int decorationPositionOverride) {
@@ -430,8 +428,8 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * @param inputConversionErrorHandler
-	 *        The {@link IEditErrorHandler} that is should be used for showing
-	 *        conversion errors on typing into this editor.
+	 *            The {@link IEditErrorHandler} that is should be used for showing
+	 *            conversion errors on typing into this editor.
 	 */
 	public void setInputConversionErrorHandler(IEditErrorHandler inputConversionErrorHandler) {
 		this.inputConversionErrorHandler = inputConversionErrorHandler;
@@ -448,8 +446,8 @@ public class TextCellEditor extends AbstractCellEditor {
 
 	/**
 	 * @param inputValidationErrorHandler
-	 *        The {@link IEditErrorHandler} that is should used for showing
-	 *        validation errors on typing into this editor.
+	 *            The {@link IEditErrorHandler} that is should used for showing
+	 *            validation errors on typing into this editor.
 	 */
 	public void setInputValidationErrorHandler(IEditErrorHandler inputValidationErrorHandler) {
 		this.inputValidationErrorHandler = inputValidationErrorHandler;

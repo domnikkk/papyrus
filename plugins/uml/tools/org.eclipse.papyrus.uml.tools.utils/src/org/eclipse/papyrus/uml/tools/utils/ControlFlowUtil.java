@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,18 +23,21 @@ import org.eclipse.uml2.uml.ObjectFlow;
  * Utility class for {@link ObjectFlow}
  */
 public class ControlFlowUtil {
-	
+
 	/**
 	 * Check condition on control flows
-	 * @param container container of the object flow
-	 * @param linkInstance object flow itself
-	 * @param source 
+	 * 
+	 * @param container
+	 *            container of the object flow
+	 * @param linkInstance
+	 *            object flow itself
+	 * @param source
 	 * @param target
 	 * @return
 	 */
 	public static boolean canExistControlFlow(Activity container, ControlFlow linkInstance, ActivityNode source, ActivityNode target) {
 		try {
-			if(target instanceof InitialNode) {
+			if (target instanceof InitialNode) {
 				return false;
 			}
 			return true;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ public class DisplayAllAssociationBranchCommand implements IObjectActionDelegate
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	public void run(IAction action) {
@@ -49,10 +49,10 @@ public class DisplayAllAssociationBranchCommand implements IObjectActionDelegate
 	 * {@inheritedDoc}
 	 */
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			Object selectedobject = ((IStructuredSelection)selection).getFirstElement();
-			if(selectedobject instanceof AssociationNodeEditPart) {
-				selectedElement = (AssociationNodeEditPart)selectedobject;
+		if (selection instanceof IStructuredSelection) {
+			Object selectedobject = ((IStructuredSelection) selection).getFirstElement();
+			if (selectedobject instanceof AssociationNodeEditPart) {
+				selectedElement = (AssociationNodeEditPart) selectedobject;
 			}
 		}
 	}

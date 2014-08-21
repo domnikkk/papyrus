@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class AffixedNamedElementFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Get the figure containing the icon (for stereotype)
-	 * 
+	 *
 	 * @return the image figure
 	 */
 	protected ImageFigure getIconContainer() {
@@ -56,13 +56,13 @@ public class AffixedNamedElementFigure extends NodeNamedElementFigure {
 
 	/**
 	 * Set the icon with a new image (for stereotype)
-	 * 
+	 *
 	 * @param image
-	 *        the new
+	 *            the new
 	 */
 	protected void setIcon(Image image) {
 		icon.setImage(image);
-		if(image == null) {
+		if (image == null) {
 			icon.setScale(1.0);
 			// icon.setImage(new Image(Display.getCurrent(), 2, 2));
 			return;
@@ -70,13 +70,13 @@ public class AffixedNamedElementFigure extends NodeNamedElementFigure {
 
 		Dimension imageDim = new Rectangle(image.getBounds()).getSize();
 		int imageMax = imageDim.width;
-		if(imageDim.height > imageMax) {
+		if (imageDim.height > imageMax) {
 			imageMax = imageDim.height;
 		}
 		// size of enclosing box
 		Dimension size = getParent().getBounds().getSize();
 
-		if((imageDim.width >= size.width) || (imageDim.height >= size.height)) {
+		if ((imageDim.width >= size.width) || (imageDim.height >= size.height)) {
 			// 5 = border width
 			icon.setScale((size.width - 5.0) / imageMax);
 		}

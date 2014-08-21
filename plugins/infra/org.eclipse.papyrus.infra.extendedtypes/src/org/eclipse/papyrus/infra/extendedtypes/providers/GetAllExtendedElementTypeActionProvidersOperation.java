@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ public class GetAllExtendedElementTypeActionProvidersOperation implements IOpera
 
 	/**
 	 * Creates a new GetAllExtendedElementTypeActionProvidersOperation.
-	 * 
+	 *
 	 * @param providers
-	 *        the list of providers to fill
+	 *            the list of providers to fill
 	 */
 	public GetAllExtendedElementTypeActionProvidersOperation(List<IExtendedElementTypeActionProvider> providers) {
 		this.providers = providers;
@@ -39,8 +39,8 @@ public class GetAllExtendedElementTypeActionProvidersOperation implements IOpera
 	 * {@inheritDoc}
 	 */
 	public Object execute(IProvider provider) {
-		if(provider instanceof IExtendedElementTypeActionProvider) {
-			providers.add((IExtendedElementTypeActionProvider)provider);
+		if (provider instanceof IExtendedElementTypeActionProvider) {
+			providers.add((IExtendedElementTypeActionProvider) provider);
 		}
 		return providers;
 	}

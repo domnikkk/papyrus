@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ public class CustomInteractionUseCreateCommand extends InteractionUseCreateComma
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -44,7 +44,7 @@ public class CustomInteractionUseCreateCommand extends InteractionUseCreateComma
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomInteractionUseCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -53,7 +53,7 @@ public class CustomInteractionUseCreateCommand extends InteractionUseCreateComma
 
 	/**
 	 * The creation command can only be executed if the elementToEdit (i.e the container) is an Interaction or an InteractionOperand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -63,23 +63,23 @@ public class CustomInteractionUseCreateCommand extends InteractionUseCreateComma
 
 	/**
 	 * Handle creation on InteractionOperand
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		InteractionUse newElement = UMLFactory.eINSTANCE.createInteractionUse();
 		EObject elementToEdit = getElementToEdit();
-		if(elementToEdit instanceof InteractionOperand) {
-			InteractionOperand owner = (InteractionOperand)elementToEdit;
+		if (elementToEdit instanceof InteractionOperand) {
+			InteractionOperand owner = (InteractionOperand) elementToEdit;
 			owner.getFragments().add(newElement);
 		} else {
-			Interaction owner = (Interaction)elementToEdit;
+			Interaction owner = (Interaction) elementToEdit;
 			owner.getFragments().add(newElement);
 		}
 		ElementInitializers.getInstance().init_InteractionUse_3002(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

@@ -41,9 +41,9 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	/**
 	 * Constructs a new SelectEditPartTracker with the given edit part as the
 	 * source.
-	 * 
+	 *
 	 * @param owner
-	 *        the source edit part
+	 *            the source edit part
 	 */
 	public SelectEditPartTracker(EditPart owner) {
 		setSourceEditPart(owner);
@@ -52,15 +52,18 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#calculateCursor()
 	 */
+	@Override
 	protected Cursor calculateCursor() {
-		if(isInState(STATE_INITIAL | STATE_DRAG | STATE_ACCESSIBLE_DRAG))
+		if (isInState(STATE_INITIAL | STATE_DRAG | STATE_ACCESSIBLE_DRAG)) {
 			return getDefaultCursor();
+		}
 		return super.calculateCursor();
 	}
 
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#getCommandName()
 	 */
+	@Override
 	protected String getCommandName() {
 		return "Select Tracker";//$NON-NLS-1$
 	}
@@ -68,13 +71,14 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#getDebugName()
 	 */
+	@Override
 	protected String getDebugName() {
 		return "Select Tracker";//$NON-NLS-1$
 	}
 
 	/**
 	 * Returns the source edit part.
-	 * 
+	 *
 	 * @return the source edit part
 	 */
 	protected EditPart getSourceEditPart() {
@@ -85,20 +89,24 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	 * Performs a conditional selection if needed (if right or left mouse button
 	 * have been pressed) and goes into the drag state. If any other button has
 	 * been pressed, the tool goes into the invalid state.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonDown(int)
 	 */
+	@Override
 	protected boolean handleButtonDown(int button) {
-		if((button == 3 || button == 1) && isInState(STATE_INITIAL))
+		if ((button == 3 || button == 1) && isInState(STATE_INITIAL)) {
 			performConditionalSelection();
+		}
 
-		if(button != 1) {
+		if (button != 1) {
 			setState(STATE_INVALID);
-			if(button == 3)
+			if (button == 3) {
 				setState(STATE_TERMINAL);
+			}
 			handleInvalidInput();
-		} else
+		} else {
 			stateTransition(STATE_INITIAL, STATE_DRAG);
+		}
 		return true;
 	}
 
@@ -107,16 +115,19 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	 * part was already selected, {@link #performDirectEdit()} is called. If the
 	 * edit part is newly selected and not completely visible, {@link EditPartViewer#reveal(EditPart)} is called to show the selected
 	 * edit part.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleButtonUp(int)
 	 */
+	@Override
 	protected boolean handleButtonUp(int button) {
-		if(isInState(STATE_DRAG)) {
+		if (isInState(STATE_DRAG)) {
 			performSelection();
-			if(getFlag(FLAG_ENABLE_DIRECT_EDIT))
+			if (getFlag(FLAG_ENABLE_DIRECT_EDIT)) {
 				performDirectEdit();
-			if(button == 1 && getSourceEditPart().getSelected() != EditPart.SELECTED_NONE)
+			}
+			if (button == 1 && getSourceEditPart().getSelected() != EditPart.SELECTED_NONE) {
 				getCurrentViewer().reveal(getSourceEditPart());
+			}
 			setState(STATE_TERMINAL);
 			return true;
 		}
@@ -125,12 +136,13 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 
 	/**
 	 * Calls {@link #performOpen()} if the double click was with mouse button 1.
-	 * 
+	 *
 	 * @see org.eclipse.gef.tools.AbstractTool#handleDoubleClick(int)
 	 */
+	@Override
 	protected boolean handleDoubleClick(int button) {
 		setFlag(FLAG_ENABLE_DIRECT_EDIT, false);
-		if(button == 1) {
+		if (button == 1) {
 			// Prevent selection from happening later on mouse up
 			setFlag(FLAG_SELECTION_PERFORMED, true);
 			performOpen();
@@ -141,13 +153,14 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#handleDragStarted()
 	 */
+	@Override
 	protected boolean handleDragStarted() {
 		return stateTransition(STATE_DRAG, STATE_DRAG_IN_PROGRESS);
 	}
 
 	/**
 	 * Returns <code>true</code> if selection has already occured.
-	 * 
+	 *
 	 * @return <code>true</code> if selection has occured
 	 */
 	protected boolean hasSelectionOccurred() {
@@ -162,10 +175,11 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	 * be performed.
 	 */
 	protected void performConditionalSelection() {
-		if(getSourceEditPart().getSelected() == EditPart.SELECTED_NONE)
+		if (getSourceEditPart().getSelected() == EditPart.SELECTED_NONE) {
 			performSelection();
-		else if(getCurrentInput().getModifiers() == 0)
+		} else if (getCurrentInput().getModifiers() == 0) {
 			setFlag(FLAG_ENABLE_DIRECT_EDIT, true);
+		}
 	}
 
 	/**
@@ -202,26 +216,30 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 	 * will be appended to the selection.
 	 */
 	protected void performSelection() {
-		if(hasSelectionOccurred())
+		if (hasSelectionOccurred()) {
 			return;
+		}
 		setFlag(FLAG_SELECTION_PERFORMED, true);
 		EditPartViewer viewer = getCurrentViewer();
 		List selectedObjects = viewer.getSelectedEditParts();
 
-		if(getCurrentInput().isModKeyDown(SWT.MOD1)) {
-			if(selectedObjects.contains(getSourceEditPart()))
+		if (getCurrentInput().isModKeyDown(SWT.MOD1)) {
+			if (selectedObjects.contains(getSourceEditPart())) {
 				viewer.deselect(getSourceEditPart());
-			else
+			} else {
 				viewer.appendSelection(getSourceEditPart());
-		} else if(getCurrentInput().isShiftKeyDown())
+			}
+		} else if (getCurrentInput().isShiftKeyDown()) {
 			viewer.appendSelection(getSourceEditPart());
-		else
+		} else {
 			viewer.select(getSourceEditPart());
+		}
 	}
 
 	/**
 	 * @see org.eclipse.gef.tools.AbstractTool#resetFlags()
 	 */
+	@Override
 	protected void resetFlags() {
 		super.resetFlags();
 		setFlag(FLAG_SELECTION_PERFORMED, false);
@@ -230,9 +248,9 @@ public class SelectEditPartTracker extends TargetingTool implements DragTracker 
 
 	/**
 	 * Sets the source edit part.
-	 * 
+	 *
 	 * @param part
-	 *        the source edit part
+	 *            the source edit part
 	 */
 	protected void setSourceEditPart(EditPart part) {
 		this.editpart = part;

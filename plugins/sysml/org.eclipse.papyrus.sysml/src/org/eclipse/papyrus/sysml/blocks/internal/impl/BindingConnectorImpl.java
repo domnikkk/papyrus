@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Connector;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.internal.impl.BindingConnectorImpl#getBase_Connector <em>Base Connector</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class BindingConnectorImpl extends MinimalEObjectImpl.Container implements BindingConnector {
@@ -39,7 +39,7 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getBase_Connector() <em>Base Connector</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Connector()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected BindingConnectorImpl() {
@@ -57,7 +57,7 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector basicGetBase_Connector() {
@@ -66,15 +66,16 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
-			if(resolve)
+			if (resolve) {
 				return getBase_Connector();
+			}
 			return basicGetBase_Connector();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -82,12 +83,12 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
 			return base_Connector != null;
 		}
@@ -96,14 +97,14 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
-			setBase_Connector((Connector)newValue);
+			setBase_Connector((Connector) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,7 +112,7 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +122,14 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR:
-			setBase_Connector((Connector)null);
+			setBase_Connector((Connector) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -136,16 +137,17 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector getBase_Connector() {
-		if(base_Connector != null && base_Connector.eIsProxy()) {
-			InternalEObject oldBase_Connector = (InternalEObject)base_Connector;
-			base_Connector = (Connector)eResolveProxy(oldBase_Connector);
-			if(base_Connector != oldBase_Connector) {
-				if(eNotificationRequired())
+		if (base_Connector != null && base_Connector.eIsProxy()) {
+			InternalEObject oldBase_Connector = (InternalEObject) base_Connector;
+			base_Connector = (Connector) eResolveProxy(oldBase_Connector);
+			if (base_Connector != oldBase_Connector) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
+				}
 			}
 		}
 		return base_Connector;
@@ -153,14 +155,15 @@ public class BindingConnectorImpl extends MinimalEObjectImpl.Container implement
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Connector(Connector newBase_Connector) {
 		Connector oldBase_Connector = base_Connector;
 		base_Connector = newBase_Connector;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.BINDING_CONNECTOR__BASE_CONNECTOR, oldBase_Connector, base_Connector));
+		}
 	}
 
 } // BindingConnectorImpl

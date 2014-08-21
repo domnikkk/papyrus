@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -25,7 +25,7 @@ public class BindingExpressionPath {
 	protected String[] segments;
 
 	public BindingExpressionPath(String value) {
-		if(value == null) {
+		if (value == null) {
 			return;
 		}
 		this.fullPath = value;
@@ -38,40 +38,37 @@ public class BindingExpressionPath {
 		int stripStart = 0;
 		int stripEnd = 0;
 		char[] array = value.toCharArray();
-		for(int i = 0; i < array.length; i++) {
-			switch(array[i]) {
-			case '}':
-			{
+		for (int i = 0; i < array.length; i++) {
+			switch (array[i]) {
+			case '}': {
 				Character character = separators.pop();
-				if(character.charValue() != '{') {
+				if (character.charValue() != '{') {
 					throw new XWTException("Syntax error is binding expression " + value + " at " + i);
 				}
 			}
 				level--;
 				break;
-			case ']':
-			{
+			case ']': {
 				Character character = separators.pop();
-				if(character.charValue() != '[') {
+				if (character.charValue() != '[') {
 					throw new XWTException("Syntax error is binding expression " + value + " at " + i);
 				}
 			}
 				level--;
 				break;
-			case ')':
-			{
+			case ')': {
 				Character character = separators.pop();
-				if(character.charValue() != '(') {
+				if (character.charValue() != '(') {
 					throw new XWTException("Syntax error is binding expression " + value + " at " + i);
 				}
 			}
 				level--;
-				if(level == 0) {
+				if (level == 0) {
 					stripEnd = i - 1;
 				}
 				break;
 			case '(':
-				if(level == 0) {
+				if (level == 0) {
 					stripStart = i + 1;
 				}
 				separators.push(array[i]);
@@ -83,7 +80,7 @@ public class BindingExpressionPath {
 				level++;
 				break;
 			case '.':
-				if(level == 0) {
+				if (level == 0) {
 					String element = value.substring(start, i);
 					element = ModelUtils.normalizePropertyName(element);
 					collector.add(element);
@@ -93,7 +90,7 @@ public class BindingExpressionPath {
 				break;
 			}
 		}
-		if(level == 0) {
+		if (level == 0) {
 			String element = value.substring(start, array.length);
 			element = ModelUtils.normalizePropertyName(element);
 			collector.add(element);
@@ -105,16 +102,16 @@ public class BindingExpressionPath {
 	}
 
 	private void updateStripped(String value, int stripStart, int stripEnd, String element) {
-		if(stripStart != 0) {
+		if (stripStart != 0) {
 			element = value.substring(stripStart, stripEnd + 1);
 			int index = element.lastIndexOf('.');
-			if(index != -1) {
+			if (index != -1) {
 				element = element.substring(index + 1);
 			}
 			element = ModelUtils.normalizePropertyName(element);
 		}
 
-		if(this.stripedPath == null) {
+		if (this.stripedPath == null) {
 			this.stripedPath = element;
 		} else {
 			this.stripedPath += "." + element;
@@ -145,30 +142,27 @@ public class BindingExpressionPath {
 		int level = 0;
 		Stack<Character> separators = new Stack<Character>();
 		char[] array = value.toCharArray();
-		for(int i = array.length - 1; i >= 0; i--) {
-			switch(array[i]) {
-			case '{':
-			{
+		for (int i = array.length - 1; i >= 0; i--) {
+			switch (array[i]) {
+			case '{': {
 				Character character = separators.pop();
-				if(character.charValue() != '}') {
+				if (character.charValue() != '}') {
 					throw new XWTException("Syntax error is binding expression " + value + " at " + i);
 				}
 			}
 				level--;
 				break;
-			case '[':
-			{
+			case '[': {
 				Character character = separators.pop();
-				if(character.charValue() != '}') {
+				if (character.charValue() != '}') {
 					throw new XWTException("Syntax error is binding expression " + value + " at " + i);
 				}
 			}
 				level--;
 				break;
-			case '(':
-			{
+			case '(': {
 				Character character = separators.pop();
-				if(character.charValue() != ')') {
+				if (character.charValue() != ')') {
 					throw new XWTException("Syntax error is binding expression " + value + " at " + i);
 				}
 			}
@@ -181,13 +175,13 @@ public class BindingExpressionPath {
 				level++;
 				break;
 			case '.':
-				if(level == 0) {
+				if (level == 0) {
 					return i;
 				}
 				break;
 			}
 
-			if(array[i] == '.') {
+			if (array[i] == '.') {
 			}
 		}
 		return -1;

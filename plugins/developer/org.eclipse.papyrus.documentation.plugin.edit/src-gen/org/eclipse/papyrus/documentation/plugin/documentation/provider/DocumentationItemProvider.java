@@ -37,11 +37,12 @@ import org.eclipse.papyrus.documentation.plugin.documentation.DocumentationPacka
  * This is the item provider adapter for a {@link org.eclipse.papyrus.documentation.plugin.documentation.Documentation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class DocumentationItemProvider
-	extends EModelElementItemProvider
-	implements
+		extends EModelElementItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -51,6 +52,7 @@ public class DocumentationItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocumentationItemProvider(AdapterFactory adapterFactory) {
@@ -61,6 +63,7 @@ public class DocumentationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,30 +80,31 @@ public class DocumentationItemProvider
 	 * This adds a property descriptor for the Description feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDescriptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Documentation_description_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Documentation_description_feature", "_UI_Documentation_type"),
-				 DocumentationPackage.Literals.DOCUMENTATION__DESCRIPTION,
-				 true,
-				 true,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_Documentation_description_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Documentation_description_feature", "_UI_Documentation_type"),
+						DocumentationPackage.Literals.DOCUMENTATION__DESCRIPTION,
+						true,
+						true,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -117,6 +121,7 @@ public class DocumentationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,6 +136,7 @@ public class DocumentationItemProvider
 	 * This returns Documentation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -142,14 +148,15 @@ public class DocumentationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = crop(((Documentation)object).getDescription());
+		String label = crop(((Documentation) object).getDescription());
 		return label == null || label.length() == 0 ?
-			getString("_UI_Documentation_type") :
-			getString("_UI_Documentation_type") + " " + label;
+				getString("_UI_Documentation_type") :
+				getString("_UI_Documentation_type") + " " + label;
 	}
 
 	/**
@@ -157,6 +164,7 @@ public class DocumentationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -164,14 +172,14 @@ public class DocumentationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Documentation.class)) {
-			case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
-			case DocumentationPackage.DOCUMENTATION__REFERENT:
-			case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case DocumentationPackage.DOCUMENTATION__DESCRIPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case DocumentationPackage.DOCUMENTATION__IMPLICIT_DEPENDENCIES:
+		case DocumentationPackage.DOCUMENTATION__REFERENT:
+		case DocumentationPackage.DOCUMENTATION__ADDITIONAL_COMMENTS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -181,6 +189,7 @@ public class DocumentationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,30 +197,31 @@ public class DocumentationItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(DocumentationPackage.Literals.DOCUMENTATION__IMPLICIT_DEPENDENCIES,
-				 DocumentationFactory.eINSTANCE.createDependency()));
+						DocumentationFactory.eINSTANCE.createDependency()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(DocumentationPackage.Literals.DOCUMENTATION__IMPLICIT_DEPENDENCIES,
-				 DocumentationFactory.eINSTANCE.createFileDependency()));
+						DocumentationFactory.eINSTANCE.createFileDependency()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(DocumentationPackage.Literals.DOCUMENTATION__REFERENT,
-				 DocumentationFactory.eINSTANCE.createPerson()));
+						DocumentationFactory.eINSTANCE.createPerson()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(DocumentationPackage.Literals.DOCUMENTATION__ADDITIONAL_COMMENTS,
-				 DocumentationFactory.eINSTANCE.createComment()));
+						DocumentationFactory.eINSTANCE.createComment()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *	 CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 392301
  *
@@ -39,7 +39,7 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 
 	/**
 	 * @param infinite
-	 *        Whether the state has an end cap (the last state doesn't end)
+	 *            Whether the state has an end cap (the last state doesn't end)
 	 */
 	public void setInfinite(final boolean infinite) {
 		this.infinite = infinite;
@@ -70,23 +70,23 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 		g.setLineWidth(1);
 		final int cornerSize = Math.min(h / 3, w / 3);
 		final int[] polygon;
-		if(this.infinite) {
-			polygon = new int[]{ x, middleY, x + cornerSize, y, x + w + 1, y, x + w + 1, y + h, x + cornerSize, y + h };
+		if (this.infinite) {
+			polygon = new int[] { x, middleY, x + cornerSize, y, x + w + 1, y, x + w + 1, y + h, x + cornerSize, y + h };
 		} else {
-			polygon = new int[]{ x, middleY, x + cornerSize, y, x + w - cornerSize, y, x + w, middleY, x + w - cornerSize, y + h, x + cornerSize, y + h };
+			polygon = new int[] { x, middleY, x + cornerSize, y, x + w - cornerSize, y, x + w, middleY, x + w - cornerSize, y + h, x + cornerSize, y + h };
 		}
 		g.setAntialias(SWT.ON);
-		if(isUsingGradient()) {
+		if (isUsingGradient()) {
 			applyTransparency(g);
 			final Pattern pattern;
 			// apparently, patterns are not scaled automatically, so we need to scale the pattern so that it fits the
 			// current zoom level
 			final double scale = g.getAbsoluteScale();
-			final int xScaled = (int)(this.bounds.x * scale);
-			final int yScaled = (int)(this.bounds.y * scale);
-			final int widthScaled = (int)(this.bounds.width * scale);
-			final int heightScaled = (int)(height * scale);
-			if(getGradientStyle() == GradientStyle.VERTICAL) {
+			final int xScaled = (int) (this.bounds.x * scale);
+			final int yScaled = (int) (this.bounds.y * scale);
+			final int widthScaled = (int) (this.bounds.width * scale);
+			final int heightScaled = (int) (height * scale);
+			if (getGradientStyle() == GradientStyle.VERTICAL) {
 				pattern = new Pattern(Display.getCurrent(), xScaled, yScaled, xScaled, yScaled + heightScaled, ColorRegistry.getInstance().getColor(getGradientColor2()), ColorRegistry.getInstance().getColor(getGradientColor1()));
 			} else {
 				pattern = new Pattern(Display.getCurrent(), xScaled, yScaled, xScaled + widthScaled, this.bounds.y, ColorRegistry.getInstance().getColor(getGradientColor2()), ColorRegistry.getInstance().getColor(getGradientColor1()));
@@ -120,15 +120,15 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 	 * Compute the half height of a CompactStateFigure with the given width and height, at the given abscissa.
 	 * <p>
 	 * This function is useful in order to place an OccurrenceSpecification along the border of a StateInvariant.
-	 * 
+	 *
 	 * @param x
-	 *        the x coordinate at which to compute the height
+	 *            the x coordinate at which to compute the height
 	 * @param figureWidth
-	 *        the width of the CompactStateFigure
+	 *            the width of the CompactStateFigure
 	 * @param figureHeight
-	 *        the height of the CompactStateFigure
+	 *            the height of the CompactStateFigure
 	 * @param infinite
-	 *        whether the figure ends with a cap (not infinite) or not (infinite)
+	 *            whether the figure ends with a cap (not infinite) or not (infinite)
 	 * @return the half height at the given position
 	 */
 	public static int computeHalfHeightAtAbscissa(final int x, final int figureWidth, final int figureHeight, final boolean infinite) {
@@ -137,20 +137,20 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 		final int halfHeight = figureHeight / 2;
 		final int cornerSize = Math.min(height / 3, width / 3);
 		final int resultY;
-		if(x < cornerSize) {
+		if (x < cornerSize) {
 			// on the left corner
 			final double slope = (height / 2.0) / cornerSize;
-			resultY = (int)(x * slope);
-		} else if(infinite) {
+			resultY = (int) (x * slope);
+		} else if (infinite) {
 			// on the straight border
 			resultY = halfHeight;
-		} else if(x < width - cornerSize) {
+		} else if (x < width - cornerSize) {
 			// on the straight border
 			resultY = halfHeight;
 		} else {
 			// on the right corner
-			final double slope = (double)halfHeight / cornerSize;
-			resultY = (int)(halfHeight - ((x - width + cornerSize) * slope));
+			final double slope = (double) halfHeight / cornerSize;
+			resultY = (int) (halfHeight - ((x - width + cornerSize) * slope));
 		}
 		return resultY;
 	}
@@ -169,6 +169,7 @@ public class CompactStateFigure extends PapyrusNodeFigure implements IPapyrusUML
 		// no border
 	}
 
+	@Override
 	public void setStereotypeDisplay(final String stereotypes, final Image image) {
 	}
 }

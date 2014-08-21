@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -41,11 +41,10 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.O
  * <ul>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.ObjectAxisImpl#getManager <em>Manager</em>}</li>
  * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.ObjectAxisImpl#getAlias <em>Alias</em>}</li>
- * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.ObjectAxisImpl#getLocalLabelConfiguration <em>Local Label
- * Configuration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxis.impl.ObjectAxisImpl#getLocalLabelConfiguration <em>Local Label Configuration</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implements ObjectAxis {
@@ -54,7 +53,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getManager() <em>Manager</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getManager()
 	 * @generated
 	 * @ordered
@@ -65,7 +64,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	 * The default value of the '{@link #getAlias() <em>Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlias()
 	 * @generated
 	 * @ordered
@@ -76,7 +75,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getAlias() <em>Alias</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAlias()
 	 * @generated
 	 * @ordered
@@ -87,7 +86,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getLocalLabelConfiguration() <em>Local Label Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLocalLabelConfiguration()
 	 * @generated
 	 * @ordered
@@ -97,7 +96,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ObjectAxisImpl() {
@@ -107,7 +106,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -118,16 +117,18 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public AxisManagerRepresentation getManager() {
-		if(manager != null && manager.eIsProxy()) {
-			InternalEObject oldManager = (InternalEObject)manager;
-			manager = (AxisManagerRepresentation)eResolveProxy(oldManager);
-			if(manager != oldManager) {
-				if(eNotificationRequired())
+		if (manager != null && manager.eIsProxy()) {
+			InternalEObject oldManager = (InternalEObject) manager;
+			manager = (AxisManagerRepresentation) eResolveProxy(oldManager);
+			if (manager != oldManager) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NattableaxisPackage.OBJECT_AXIS__MANAGER, oldManager, manager));
+				}
 			}
 		}
 		return manager;
@@ -136,7 +137,7 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AxisManagerRepresentation basicGetManager() {
@@ -146,22 +147,25 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setManager(AxisManagerRepresentation newManager) {
 		AxisManagerRepresentation oldManager = manager;
 		manager = newManager;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.OBJECT_AXIS__MANAGER, oldManager, manager));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public String getAlias() {
 		return alias;
 	}
@@ -169,22 +173,25 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setAlias(String newAlias) {
 		String oldAlias = alias;
 		alias = newAlias;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.OBJECT_AXIS__ALIAS, oldAlias, alias));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public ObjectLabelProviderConfiguration getLocalLabelConfiguration() {
 		return localLabelConfiguration;
 	}
@@ -192,18 +199,19 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NotificationChain basicSetLocalLabelConfiguration(ObjectLabelProviderConfiguration newLocalLabelConfiguration, NotificationChain msgs) {
 		ObjectLabelProviderConfiguration oldLocalLabelConfiguration = localLabelConfiguration;
 		localLabelConfiguration = newLocalLabelConfiguration;
-		if(eNotificationRequired()) {
+		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, oldLocalLabelConfiguration, newLocalLabelConfiguration);
-			if(msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
@@ -211,29 +219,35 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setLocalLabelConfiguration(ObjectLabelProviderConfiguration newLocalLabelConfiguration) {
-		if(newLocalLabelConfiguration != localLabelConfiguration) {
+		if (newLocalLabelConfiguration != localLabelConfiguration) {
 			NotificationChain msgs = null;
-			if(localLabelConfiguration != null)
-				msgs = ((InternalEObject)localLabelConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
-			if(newLocalLabelConfiguration != null)
-				msgs = ((InternalEObject)newLocalLabelConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
+			if (localLabelConfiguration != null) {
+				msgs = ((InternalEObject) localLabelConfiguration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
+			}
+			if (newLocalLabelConfiguration != null) {
+				msgs = ((InternalEObject) newLocalLabelConfiguration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, null, msgs);
+			}
 			msgs = basicSetLocalLabelConfiguration(newLocalLabelConfiguration, msgs);
-			if(msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if(eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION, newLocalLabelConfiguration, newLocalLabelConfiguration));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public Object getElement() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -243,12 +257,12 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION:
 			return basicSetLocalLabelConfiguration(null, msgs);
 		}
@@ -258,15 +272,16 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.OBJECT_AXIS__MANAGER:
-			if(resolve)
+			if (resolve) {
 				return getManager();
+			}
 			return basicGetManager();
 		case NattableaxisPackage.OBJECT_AXIS__ALIAS:
 			return getAlias();
@@ -279,20 +294,20 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.OBJECT_AXIS__MANAGER:
-			setManager((AxisManagerRepresentation)newValue);
+			setManager((AxisManagerRepresentation) newValue);
 			return;
 		case NattableaxisPackage.OBJECT_AXIS__ALIAS:
-			setAlias((String)newValue);
+			setAlias((String) newValue);
 			return;
 		case NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION:
-			setLocalLabelConfiguration((ObjectLabelProviderConfiguration)newValue);
+			setLocalLabelConfiguration((ObjectLabelProviderConfiguration) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,20 +316,20 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.OBJECT_AXIS__MANAGER:
-			setManager((AxisManagerRepresentation)null);
+			setManager((AxisManagerRepresentation) null);
 			return;
 		case NattableaxisPackage.OBJECT_AXIS__ALIAS:
 			setAlias(ALIAS_EDEFAULT);
 			return;
 		case NattableaxisPackage.OBJECT_AXIS__LOCAL_LABEL_CONFIGURATION:
-			setLocalLabelConfiguration((ObjectLabelProviderConfiguration)null);
+			setLocalLabelConfiguration((ObjectLabelProviderConfiguration) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -323,12 +338,12 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisPackage.OBJECT_AXIS__MANAGER:
 			return manager != null;
 		case NattableaxisPackage.OBJECT_AXIS__ALIAS:
@@ -342,12 +357,12 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case NattableaxisPackage.OBJECT_AXIS___GET_ELEMENT:
 			return getElement();
 		}
@@ -357,13 +372,14 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (alias: "); //$NON-NLS-1$
@@ -372,4 +388,4 @@ public abstract class ObjectAxisImpl extends MinimalEObjectImpl.Container implem
 		return result.toString();
 	}
 
-} //ObjectAxisImpl
+} // ObjectAxisImpl

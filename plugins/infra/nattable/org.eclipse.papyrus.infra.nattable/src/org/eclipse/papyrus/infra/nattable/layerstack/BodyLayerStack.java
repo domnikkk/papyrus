@@ -46,7 +46,7 @@ public class BodyLayerStack extends AbstractLayerTransform {
 
 	private final ColumnReorderLayer columnReorderLayer;
 
-	//	private final RowReorderLayer rowReoderLayer;
+	// private final RowReorderLayer rowReoderLayer;
 
 	public BodyLayerStack(final IDataProvider dataProvider, final INattableModelManager manager) {
 		this.bodyDataLayer = new DataLayer(dataProvider, DefaultSizeUtils.getDefaultCellWidth(), DefaultSizeUtils.getDefaultCellHeight());
@@ -54,23 +54,23 @@ public class BodyLayerStack extends AbstractLayerTransform {
 
 		this.columnReorderLayer = new ColumnReorderLayer(this.bodyDataLayer, false);
 
-		//we register a custom configuration to manage the case where the reorder is forbidden
+		// we register a custom configuration to manage the case where the reorder is forbidden
 		this.columnReorderLayer.addConfiguration(new CustomDefaultColumnReorderBindings(manager));
 
 
-		//to allow the reorder on the lines
-		//		this.rowReoderLayer = null;
-		//		this.rowReoderLayer = new RowReorderLayer(columnReorderLayer);
-		//		this.columnHideShowLayer = new ColumnHideShowLayer(this.rowReoderLayer);
+		// to allow the reorder on the lines
+		// this.rowReoderLayer = null;
+		// this.rowReoderLayer = new RowReorderLayer(columnReorderLayer);
+		// this.columnHideShowLayer = new ColumnHideShowLayer(this.rowReoderLayer);
 
 		this.columnHideShowLayer = new ColumnHideShowLayer(this.columnReorderLayer);
 
 
 
 		this.selectionLayer = new PapyrusSelectionLayer(this.columnHideShowLayer);
-		//		CopyDataCommandHandler handler = new CopyDataCommandHandler(this.selectionLayer);
-		////		handler.setCopyFormattedText(true);//to do the paste using the label provider
-		//		this.selectionLayer.registerCommandHandler(handler);
+		// CopyDataCommandHandler handler = new CopyDataCommandHandler(this.selectionLayer);
+		// // handler.setCopyFormattedText(true);//to do the paste using the label provider
+		// this.selectionLayer.registerCommandHandler(handler);
 
 		this.viewportLayer = new ViewportLayer(this.selectionLayer);
 		setUnderlyingLayer(this.viewportLayer);
@@ -102,14 +102,14 @@ public class BodyLayerStack extends AbstractLayerTransform {
 	public void configure(ConfigRegistry configRegistry, UiBindingRegistry uiBindingRegistry) {
 		super.configure(configRegistry, uiBindingRegistry);
 		uiBindingRegistry.registerKeyBinding(new KeyEventMatcher(SWT.NONE, SWT.F2), new KeyEditAction());
-		//		configRegistry.registerConfigAttribute(EditConfigAttributes.CELL_EDITABLE_RULE, IEditableRule.ALWAYS_EDITABLE);
-		//		uiBindingRegistry.registerKeyBinding(new Mouse, new KeyEditAction());
-		//		uiBindingRegistry.
-		//		configRegistry.registerConfigAttribute(CellConfigAttributes.CELL_PAINTER, new CustomizedCellPainter(), DisplayMode.NORMAL, GridRegion.BODY);
+		// configRegistry.registerConfigAttribute(EditConfigAttributes.CELL_EDITABLE_RULE, IEditableRule.ALWAYS_EDITABLE);
+		// uiBindingRegistry.registerKeyBinding(new Mouse, new KeyEditAction());
+		// uiBindingRegistry.
+		// configRegistry.registerConfigAttribute(CellConfigAttributes.CELL_PAINTER, new CustomizedCellPainter(), DisplayMode.NORMAL, GridRegion.BODY);
 	}
 
 
-	//	public RowReorderLayer getRowReoderLayer() {
-	//		return this.rowReoderLayer;
-	//	}
+	// public RowReorderLayer getRowReoderLayer() {
+	// return this.rowReoderLayer;
+	// }
 }

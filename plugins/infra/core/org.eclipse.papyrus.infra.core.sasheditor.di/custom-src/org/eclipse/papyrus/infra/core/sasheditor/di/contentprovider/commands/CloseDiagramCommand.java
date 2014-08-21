@@ -24,7 +24,7 @@ public class CloseDiagramCommand extends AbstractHandler {
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		//		System.out.println("call to CloseDiagramCommand.setEnable(" + evaluationContext + ")");
+		// System.out.println("call to CloseDiagramCommand.setEnable(" + evaluationContext + ")");
 	}
 
 	/**
@@ -36,12 +36,12 @@ public class CloseDiagramCommand extends AbstractHandler {
 
 		try {
 			IEditorPart part = HandlerUtil.getActiveEditor(event);
-			IPageManager pageManager = (IPageManager)part.getAdapter(IPageManager.class);
-			ISashWindowsContainer container = (ISashWindowsContainer)part.getAdapter(ISashWindowsContainer.class);
+			IPageManager pageManager = (IPageManager) part.getAdapter(IPageManager.class);
+			ISashWindowsContainer container = (ISashWindowsContainer) part.getAdapter(ISashWindowsContainer.class);
 			Object pageIdentifier = container.getActiveSashWindowsPage().getRawModel();
-			//FIXME Bug from sash Di to be corrected
-			if(pageIdentifier instanceof PageRef) {
-				pageIdentifier = ((PageRef)pageIdentifier).getPageIdentifier();
+			// FIXME Bug from sash Di to be corrected
+			if (pageIdentifier instanceof PageRef) {
+				pageIdentifier = ((PageRef) pageIdentifier).getPageIdentifier();
 			}
 
 			pageManager.closePage(pageIdentifier);

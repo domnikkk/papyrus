@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -52,7 +52,7 @@ import org.eclipse.swt.widgets.Shell;
  * A Dialog to display the operations available to customize
  * the property view, such as "Copy", "Edit" or "Delete" an
  * existing configuration.
- * 
+ *
  * @author Camille Letavernier
  */
 public class CustomizationDialog extends TrayDialog implements SelectionListener {
@@ -70,11 +70,11 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 	private Button removeContext;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param shell
-	 *        The shell in which the dialog will be opened
+	 *            The shell in which the dialog will be opened
 	 */
 	public CustomizationDialog(final Shell shell) {
 		super(shell);
@@ -107,8 +107,8 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 
 			@Override
 			public String getText(final Object element) {
-				if(element != null && element instanceof Context) {
-					Context context = (Context)element;
+				if (element != null && element instanceof Context) {
+					Context context = (Context) element;
 					return context.getName() + (ConfigurationManager.getInstance().isPlugin(context) ? Messages.CustomizationDialog_plugin : ""); //$NON-NLS-1$
 				}
 				return super.getText(element);
@@ -122,9 +122,9 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 
 		Collection<IContextStorageActionProvider> providers = actionRegistry.getStorageActionProviders();
 		copyContextButtons = new java.util.ArrayList<Button>(providers.size());
-		for(IContextStorageActionProvider next : providers) {
+		for (IContextStorageActionProvider next : providers) {
 			IContextCopyAction copyAction = next.getContextCopyAction();
-			if(copyAction != null) {
+			if (copyAction != null) {
 				Button copyContext = new Button(controls, SWT.PUSH);
 				copyContext.setText(copyAction.getLabel());
 				copyContext.setToolTipText(copyAction.getToolTip());
@@ -135,8 +135,8 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 				copyContextButtons.add(copyContext);
 			}
 		}
-		if(copyContextButtons.size() == 1) {
-			// special case:  use a simpler label than "Copy to Workspace..."
+		if (copyContextButtons.size() == 1) {
+			// special case: use a simpler label than "Copy to Workspace..."
 			copyContextButtons.get(0).setText(Messages.CustomizationDialog_copy);
 		}
 
@@ -156,12 +156,12 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 
 			@Override
 			public void selectionChanged(final SelectionChangedEvent event) {
-				IStructuredSelection selection = (IStructuredSelection)event.getSelection();
+				IStructuredSelection selection = (IStructuredSelection) event.getSelection();
 				boolean activate = false;
 
 				IContextStorageActionProvider provider = null;
-				if(!selection.isEmpty()) {
-					Context context = (Context)selection.getFirstElement();
+				if (!selection.isEmpty()) {
+					Context context = (Context) selection.getFirstElement();
 					activate = !ConfigurationManager.getInstance().isPlugin(context);
 					provider = actionRegistry.getStorageActionProvider(context);
 				}
@@ -169,7 +169,7 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 				editContext.setEnabled(activate);
 				IContextEditAction editAction = provider.getContextEditAction();
 				editContext.setToolTipText((editAction == null) ? null : editAction.getToolTip());
-				for(Button next : copyContextButtons) {
+				for (Button next : copyContextButtons) {
 					next.setEnabled(!selection.isEmpty());
 				}
 				removeContext.setEnabled(activate);
@@ -179,26 +179,26 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 
 		});
 
-		//		generateContext = new Button(controls, SWT.PUSH);
-		//		generateContext.setText("Generate");
-		//		generateContext.setToolTipText("Generates a new Context from a Metamodel");
-		//		generateContext.setEnabled(false);
+		// generateContext = new Button(controls, SWT.PUSH);
+		// generateContext.setText("Generate");
+		// generateContext.setToolTipText("Generates a new Context from a Metamodel");
+		// generateContext.setEnabled(false);
 
 		getShell().pack();
 	}
 
 	protected void editAction() {
-		IStructuredSelection selection = (IStructuredSelection)availableContextsViewer.getSelection();
-		if(selection.isEmpty()) {
+		IStructuredSelection selection = (IStructuredSelection) availableContextsViewer.getSelection();
+		if (selection.isEmpty()) {
 			return;
 		}
 
 		Object element = selection.getFirstElement();
-		if(element instanceof Context) {
-			Context sourceContext = (Context)element;
+		if (element instanceof Context) {
+			Context sourceContext = (Context) element;
 
 			IContextEditAction editAction = actionRegistry.getContextEditAction(sourceContext);
-			if(editAction == null) {
+			if (editAction == null) {
 				MessageDialog.openError(getShell(), Messages.CustomizationDialog_0, Messages.CustomizationDialog_1);
 				return;
 			}
@@ -215,14 +215,14 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 	}
 
 	protected void copyAction(IContextCopyAction copyAction) {
-		IStructuredSelection selection = (IStructuredSelection)availableContextsViewer.getSelection();
-		if(selection.isEmpty()) {
+		IStructuredSelection selection = (IStructuredSelection) availableContextsViewer.getSelection();
+		if (selection.isEmpty()) {
 			return;
 		}
 
 		Object element = selection.getFirstElement();
-		if(element instanceof Context) {
-			Context sourceContext = (Context)element;
+		if (element instanceof Context) {
+			Context sourceContext = (Context) element;
 			CopyContextAction action = new CopyContextAction(copyAction);
 
 			try {
@@ -230,10 +230,10 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 
 					@Override
 					public String isValid(final String newText) {
-						if(newText.trim().equals("")) { //$NON-NLS-1$
+						if (newText.trim().equals("")) { //$NON-NLS-1$
 							return Messages.CustomizationDialog_configurationNameNotEmpty;
 						}
-						if(ConfigurationManager.getInstance().getContext(newText) != null) {
+						if (ConfigurationManager.getInstance().getContext(newText) != null) {
 							return Messages.CustomizationDialog_configurationWithSameNameExists;
 						}
 						return null;
@@ -242,10 +242,10 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 				});
 				dialog.setTitle(Messages.CustomizationDialog_configurationName);
 				int result = dialog.open();
-				if(result == Window.OK) {
+				if (result == Window.OK) {
 					String targetName = dialog.getText();
 					Context newContext = action.copy(sourceContext, targetName, false);
-					if(newContext != null) {
+					if (newContext != null) {
 						availableContextsViewer.setInput(ConfigurationManager.getInstance().getContexts());
 						availableContextsViewer.setSelection(new StructuredSelection(newContext), true);
 					}
@@ -257,29 +257,30 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 	}
 
 	protected void deleteAction() {
-		IStructuredSelection selection = (IStructuredSelection)availableContextsViewer.getSelection();
-		if(selection.isEmpty()) {
+		IStructuredSelection selection = (IStructuredSelection) availableContextsViewer.getSelection();
+		if (selection.isEmpty()) {
 			return;
 		}
 
 		Object element = selection.getFirstElement();
-		if(element instanceof Context) {
-			Context sourceContext = (Context)element;
-			if(ConfigurationManager.getInstance().isPlugin(sourceContext)) {
+		if (element instanceof Context) {
+			Context sourceContext = (Context) element;
+			if (ConfigurationManager.getInstance().isPlugin(sourceContext)) {
 				Activator.log.warn(Messages.CustomizationDialog_cannotDeletePluginContext);
-				//Plugin context cannot be deleted
+				// Plugin context cannot be deleted
 				return;
 			}
 
 			IContextDeleteAction deleteAction = actionRegistry.getContextDeleteAction(sourceContext);
-			if(deleteAction == null) {
+			if (deleteAction == null) {
 				MessageDialog.openError(getShell(), Messages.CustomizationDialog_deleteContext, Messages.CustomizationDialog_2);
 				return;
 			}
 
-			MessageDialog dialog = new MessageDialog(getShell(), Messages.CustomizationDialog_deleteContext, null, Messages.CustomizationDialog_deleteContextConfirmation1 + sourceContext.getName() + Messages.CustomizationDialog_deleteContextConfirmation2, MessageDialog.CONFIRM, new String[]{ IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 2);
+			MessageDialog dialog = new MessageDialog(getShell(), Messages.CustomizationDialog_deleteContext, null, Messages.CustomizationDialog_deleteContextConfirmation1 + sourceContext.getName() + Messages.CustomizationDialog_deleteContextConfirmation2,
+					MessageDialog.CONFIRM, new String[] { IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL, IDialogConstants.CANCEL_LABEL }, 2);
 			int result = dialog.open();
-			if(result == 0) { //0 is "Yes" (It is *not* the same 0 as Window.OK)
+			if (result == 0) { // 0 is "Yes" (It is *not* the same 0 as Window.OK)
 				RemoveContextAction action = new RemoveContextAction(deleteAction);
 				action.removeContext(sourceContext);
 				availableContextsViewer.setInput(ConfigurationManager.getInstance().getContexts());
@@ -294,30 +295,30 @@ public class CustomizationDialog extends TrayDialog implements SelectionListener
 
 	@Override
 	protected Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 
 	@Override
 	public void widgetSelected(final SelectionEvent e) {
-		if(e.widget == editContext) {
+		if (e.widget == editContext) {
 			editAction();
-		} else if(e.widget == removeContext) {
+		} else if (e.widget == removeContext) {
 			deleteAction();
-		} else if(e.widget.getData() instanceof IContextCopyAction) {
-			copyAction((IContextCopyAction)e.widget.getData());
+		} else if (e.widget.getData() instanceof IContextCopyAction) {
+			copyAction((IContextCopyAction) e.widget.getData());
 		}
 	}
 
 	@Override
 	public void widgetDefaultSelected(final SelectionEvent e) {
-		if(e.widget == availableContexts) {
-			IStructuredSelection selection = (IStructuredSelection)availableContextsViewer.getSelection();
-			if(!selection.isEmpty()) {
-				Context context = (Context)selection.getFirstElement();
-				if(ConfigurationManager.getInstance().isPlugin(context)) {
-					if(copyContextButtons.size() == 1) {
-						copyAction((IContextCopyAction)copyContextButtons.get(0).getData());
+		if (e.widget == availableContexts) {
+			IStructuredSelection selection = (IStructuredSelection) availableContextsViewer.getSelection();
+			if (!selection.isEmpty()) {
+				Context context = (Context) selection.getFirstElement();
+				if (ConfigurationManager.getInstance().isPlugin(context)) {
+					if (copyContextButtons.size() == 1) {
+						copyAction((IContextCopyAction) copyContextButtons.get(0).getData());
 					}
 				} else {
 					editAction();

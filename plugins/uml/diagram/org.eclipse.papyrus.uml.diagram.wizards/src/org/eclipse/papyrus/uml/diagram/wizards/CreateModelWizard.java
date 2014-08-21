@@ -70,8 +70,8 @@ import org.eclipse.ui.services.IEvaluationService;
 
 /**
  * Create new model file and initialize a selected diagram. This wizard create
- * several files : <li>*.di : the DI file to store Di diagrams and references all external diagrams like GMF diagrams.</li> <li>*.notation : the file
- * to store pure GMF diagrams</li> <li>*.uml : the standard UML file to store UML semantics elements. (Model, Package, Class,...)</li>
+ * several files : <li>*.di : the DI file to store Di diagrams and references all external diagrams like GMF diagrams.</li> <li>*.notation : the file to store pure GMF diagrams</li> <li>*.uml : the standard UML file to store UML semantics elements. (Model,
+ * Package, Class,...)</li>
  *
  * Those files can be used with the PapyrusEditor (see plugin.xml).
  */
@@ -124,10 +124,10 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 		addPageIfNotNull(selectStorageProviderPage);
 
 		startProviderPageIndex = getPageCount() - 1;
-		for(INewModelStorageProvider next : getStorageProviders()) {
+		for (INewModelStorageProvider next : getStorageProviders()) {
 			List<IWizardPage> pageList = new java.util.ArrayList<IWizardPage>(3);
-			for(IWizardPage page : next.createPages()) {
-				if(page != null) {
+			for (IWizardPage page : next.createPages()) {
+				if (page != null) {
 					pageList.add(page);
 					providersByPage.put(page, next);
 					addPage(page);
@@ -145,10 +145,10 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Adds the page if not null.
 	 *
 	 * @param page
-	 *        the page
+	 *            the page
 	 */
 	protected final void addPageIfNotNull(IWizardPage page) {
-		if(page != null) {
+		if (page != null) {
 			addPage(page);
 		}
 	}
@@ -169,9 +169,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Inits the.
 	 *
 	 * @param workbench
-	 *        the workbench
+	 *            the workbench
 	 * @param selection
-	 *        the selection {@inheritDoc}
+	 *            the selection {@inheritDoc}
 	 */
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
@@ -180,14 +180,14 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 
 		IDialogSettings workbenchSettings = Activator.getDefault().getDialogSettings();
 		IDialogSettings section = workbenchSettings.getSection(NEW_MODEL_SETTINGS);
-		if(section == null) {
+		if (section == null) {
 			section = workbenchSettings.addNewSection(NEW_MODEL_SETTINGS);
 		}
 		setDialogSettings(section);
 
 		selectStorageProviderPage = createSelectStorageProviderPage();
 
-		for(INewModelStorageProvider next : getStorageProviders()) {
+		for (INewModelStorageProvider next : getStorageProviders()) {
 			next.init(this, selection);
 		}
 
@@ -203,7 +203,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 		String[] diagramCategoryIds = getDiagramCategoryIds();
-		if(diagramCategoryIds.length == 0) {
+		if (diagramCategoryIds.length == 0) {
 			return false;
 		}
 		String diagramCategoryId = diagramCategoryIds[0];
@@ -225,21 +225,21 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Creates the and open papyrus model.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param newURI
-	 *        the URI of the new model's principal resource
+	 *            the URI of the new model's principal resource
 	 * @param diagramCategoryId
-	 *        the diagram category id
+	 *            the diagram category id
 	 * @return true, if successful
 	 */
 	protected boolean createAndOpenPapyrusModel(URI newURI, String diagramCategoryId) {
 
-		if(newURI == null) {
+		if (newURI == null) {
 			return false;
 		}
 
 		ServicesRegistry registry = createServicesRegistry();
-		if(registry == null) {
+		if (registry == null) {
 			return false;
 		}
 
@@ -312,7 +312,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * @return the diagram category ids
 	 */
 	protected String[] getDiagramCategoryIds() {
-		if(selectDiagramCategoryPage != null) {
+		if (selectDiagramCategoryPage != null) {
 			return selectDiagramCategoryPage.getDiagramCategories();
 		}
 		return null;
@@ -322,7 +322,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Gets the diagram file extension.
 	 *
 	 * @param diagramCategoryId
-	 *        the diagram category id
+	 *            the diagram category id
 	 * @return the diagram file extension
 	 */
 	public String getDiagramFileExtension(String diagramCategoryId) {
@@ -333,9 +333,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Gets the diagram file extension.
 	 *
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 * @param defaultExtension
-	 *        the default extension
+	 *            the default extension
 	 * @return the diagram file extension
 	 */
 	public String getDiagramFileExtension(String categoryId, String defaultExtension) {
@@ -372,16 +372,16 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Inits the domain model.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param newURI
-	 *        the URI of the new model's principal resource
+	 *            the URI of the new model's principal resource
 	 * @param diagramCategoryId
-	 *        the diagram category id
+	 *            the diagram category id
 	 */
 	protected void initDomainModel(ModelSet modelSet, final URI newURI, String diagramCategoryId) {
 
 		boolean isToInitFromTemplate = selectDiagramKindPage.getTemplatePath() != null;
-		if(isToInitFromTemplate) {
+		if (isToInitFromTemplate) {
 			initDomainModelFromTemplate(modelSet);
 		} else {
 			createEmptyDomainModel(modelSet, diagramCategoryId);
@@ -392,20 +392,23 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Inits the domain model from template.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 */
 	protected void initDomainModelFromTemplate(ModelSet modelSet) {
-		//getCommandStack(modelSet).execute(new InitFromTemplateCommand(modelSet.getTransactionalEditingDomain(), modelSet.getModelResource(), modelSet.getDiResource(), modelSet.getNotationResource(), selectDiagramKindPage.getTemplatePluginId(), selectDiagramKindPage.getTemplatePath(),selectDiagramKindPage.getNotationTemplatePath(),selectDiagramKindPage.getDiTemplatePath()));
-		getCommandStack(modelSet).execute(new InitFromTemplateCommand(modelSet.getTransactionalEditingDomain(), modelSet, selectDiagramKindPage.getTemplatePluginId(), selectDiagramKindPage.getTemplatePath(), selectDiagramKindPage.getNotationTemplatePath(), selectDiagramKindPage.getDiTemplatePath()));
+		// getCommandStack(modelSet).execute(new InitFromTemplateCommand(modelSet.getTransactionalEditingDomain(), modelSet.getModelResource(), modelSet.getDiResource(), modelSet.getNotationResource(), selectDiagramKindPage.getTemplatePluginId(),
+		// selectDiagramKindPage.getTemplatePath(),selectDiagramKindPage.getNotationTemplatePath(),selectDiagramKindPage.getDiTemplatePath()));
+		getCommandStack(modelSet).execute(
+				new InitFromTemplateCommand(modelSet.getTransactionalEditingDomain(), modelSet, selectDiagramKindPage.getTemplatePluginId(), selectDiagramKindPage.getTemplatePath(), selectDiagramKindPage.getNotationTemplatePath(), selectDiagramKindPage
+						.getDiTemplatePath()));
 	}
 
 	/**
 	 * Creates the empty domain model.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param diagramCategoryId
-	 *        the diagram category id
+	 *            the diagram category id
 	 */
 	protected void createEmptyDomainModel(ModelSet modelSet, String diagramCategoryId) {
 		try {
@@ -420,9 +423,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Creates the papyrus models.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param newURI
-	 *        the URI of the new model's principal resource
+	 *            the URI of the new model's principal resource
 	 */
 	protected void createPapyrusModels(ModelSet modelSet, URI newURI) {
 		RecordingCommand command = new NewPapyrusModelCommand(modelSet, newURI);
@@ -434,7 +437,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 */
 	protected void saveDiagramCategorySettings() {
 		IDialogSettings settings = getDialogSettings();
-		if(settings != null) {
+		if (settings != null) {
 			SettingsHelper settingsHelper = new SettingsHelper(settings);
 			settingsHelper.saveDefaultDiagramCategory(getDiagramCategoryIds());
 		}
@@ -445,12 +448,12 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 */
 	protected void saveDiagramKindSettings() {
 		IDialogSettings settings = getDialogSettings();
-		if(settings == null) {
+		if (settings == null) {
 			return;
 		}
 		SettingsHelper settingsHelper = new SettingsHelper(settings);
-		for(String category : getDiagramCategoryIds()) {
-			if(selectDiagramKindPage.isRememberCurrentSelection()) {
+		for (String category : getDiagramCategoryIds()) {
+			if (selectDiagramKindPage.isRememberCurrentSelection()) {
 				saveDefaultDiagramKinds(settingsHelper, category);
 				saveDefaultTemplates(settingsHelper, category);
 			} else {
@@ -465,9 +468,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Save default diagram kinds.
 	 *
 	 * @param settingsHelper
-	 *        the settings helper
+	 *            the settings helper
 	 * @param category
-	 *        the category
+	 *            the category
 	 */
 	private void saveDefaultDiagramKinds(SettingsHelper settingsHelper, String category) {
 		String[] selected = selectDiagramKindPage.getSelectedDiagramKinds(category);
@@ -478,12 +481,12 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Save default templates.
 	 *
 	 * @param settingsHelper
-	 *        the settings helper
+	 *            the settings helper
 	 * @param category
-	 *        the category
+	 *            the category
 	 */
 	private void saveDefaultTemplates(SettingsHelper settingsHelper, String category) {
-		if(!selectDiagramKindPage.templatesEnabled()) {
+		if (!selectDiagramKindPage.templatesEnabled()) {
 			return;
 		}
 		String path = selectDiagramKindPage.getTemplatePath();
@@ -494,11 +497,11 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Open diagram.
 	 *
 	 * @param newURI
-	 *        the URI of the new model's principal resource
+	 *            the URI of the new model's principal resource
 	 */
 	protected void openDiagram(final URI newURI) {
 		IWorkbenchPage page = workbench.getActiveWorkbenchWindow().getActivePage();
-		if(page != null) {
+		if (page != null) {
 			try {
 				IEditorInput editorInput = createEditorInput(newURI);
 				IDE.openEditor(page, editorInput, getPreferredEditorID(editorInput), true);
@@ -515,18 +518,18 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	protected String getPreferredEditorID(IEditorInput input) throws PartInitException {
 		IEditorDescriptor desc;
 
-		if(input instanceof IFileEditorInput) {
-			desc = IDE.getEditorDescriptor(((IFileEditorInput)input).getFile());
+		if (input instanceof IFileEditorInput) {
+			desc = IDE.getEditorDescriptor(((IFileEditorInput) input).getFile());
 		} else {
 			// try to get a URI
 			URI uri = null;
-			if(input instanceof IURIEditorInput) {
-				uri = URI.createURI(((IURIEditorInput)input).getURI().toString(), true);
-			} else if(input instanceof URIEditorInput) {
-				uri = ((URIEditorInput)input).getURI();
+			if (input instanceof IURIEditorInput) {
+				uri = URI.createURI(((IURIEditorInput) input).getURI().toString(), true);
+			} else if (input instanceof URIEditorInput) {
+				uri = ((URIEditorInput) input).getURI();
 			}
 
-			if(uri != null) {
+			if (uri != null) {
 				desc = IDE.getEditorDescriptor(uri.lastSegment());
 			} else {
 				// hope that the input name is the file name
@@ -541,9 +544,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Inits the diagram model.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 */
 	protected void initDiagramModel(ModelSet modelSet, String categoryId) {
 		initDiagrams(modelSet, categoryId);
@@ -554,14 +557,14 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Save diagram.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 */
 	private void saveDiagram(ModelSet modelSet) {
 		try {
 			modelSet.save(new NullProgressMonitor());
 		} catch (IOException e) {
 			log.error(e);
-			//			return false;
+			// return false;
 		}
 	}
 
@@ -569,9 +572,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Inits the diagrams.
 	 *
 	 * @param modelSet
-	 *        the di resource set
+	 *            the di resource set
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 */
 	protected void initDiagrams(ModelSet modelSet, String categoryId) {
 		initDiagrams(modelSet, null, categoryId);
@@ -581,26 +584,26 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Inits the diagrams.
 	 *
 	 * @param resourceSet
-	 *        the resource set
+	 *            the resource set
 	 * @param root
-	 *        the root
+	 *            the root
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 */
 	protected void initDiagrams(ModelSet resourceSet, EObject root, String categoryId) {
-		//FIXME we cannot properly set the root object
-		UmlModel model = (UmlModel)resourceSet.getModel(UmlModel.MODEL_ID);
+		// FIXME we cannot properly set the root object
+		UmlModel model = (UmlModel) resourceSet.getModel(UmlModel.MODEL_ID);
 		EList<EObject> roots = model.getResource().getContents();
-		if(!roots.isEmpty()) {
+		if (!roots.isEmpty()) {
 
 			root = roots.get(0);
 		}
 		List<ViewPrototype> creationCommands = getPrototypesFor(categoryId);
 		String diagramName = selectDiagramKindPage.getDiagramName();
-		if(creationCommands.isEmpty()) {
+		if (creationCommands.isEmpty()) {
 			createEmptyDiagramEditor(resourceSet);
 		} else {
-			for(int i = 0; i < creationCommands.size(); i++) {
+			for (int i = 0; i < creationCommands.size(); i++) {
 				creationCommands.get(i).instantiateOn(root, diagramName);
 			}
 		}
@@ -610,7 +613,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Gets the diagram kinds for.
 	 *
 	 * @param categoryId
-	 *        the category id
+	 *            the category id
 	 * @return the diagram kinds for
 	 */
 	protected List<ViewPrototype> getPrototypesFor(String categoryId) {
@@ -622,7 +625,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Creates the empty diagram editor.
 	 *
 	 * @param modelSet
-	 *        the model set
+	 *            the model set
 	 */
 	private void createEmptyDiagramEditor(ModelSet modelSet) {
 		// Create an empty editor (no diagrams opened)
@@ -635,7 +638,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Gets the command stack.
 	 *
 	 * @param modelSet
-	 *        the model set
+	 *            the model set
 	 * @return the command stack
 	 */
 	protected final CommandStack getCommandStack(ModelSet modelSet) {
@@ -655,7 +658,7 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	 * Diagram category changed.
 	 *
 	 * @param newCategories
-	 *        the new categories
+	 *            the new categories
 	 * @return the i status
 	 */
 	public IStatus diagramCategoryChanged(String... newCategories) {
@@ -664,33 +667,33 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 
 	protected void initStorageProvider(IWorkbench workbench, IStructuredSelection selection) {
 
-		NewModelStorageProviderRegistry registry = new NewModelStorageProviderRegistry((IEvaluationService)workbench.getService(IEvaluationService.class));
+		NewModelStorageProviderRegistry registry = new NewModelStorageProviderRegistry((IEvaluationService) workbench.getService(IEvaluationService.class));
 
 		// if we are creating a project, then it is in the workspace
-		if(isCreateProjectWizard()) {
+		if (isCreateProjectWizard()) {
 			this.selectedStorageProvider = new WorkspaceNewModelStorageProvider();
 		} else {
 			// look for a pre-determined selection
 			INewModelStorageProvider firstProvider = null;
-			for(INewModelStorageProvider next : registry) {
-				if(firstProvider == null) {
+			for (INewModelStorageProvider next : registry) {
+				if (firstProvider == null) {
 					firstProvider = next;
 				}
 
 				// don't match on empty selections because there is
 				// then no context to match against
-				if(!selection.isEmpty() && next.canHandle(selection)) {
+				if (!selection.isEmpty() && next.canHandle(selection)) {
 					this.selectedStorageProvider = next;
 					break;
 				}
 			}
 
 			// if the choice is pre-determined, don't show the selection page
-			if(this.selectedStorageProvider == null) {
+			if (this.selectedStorageProvider == null) {
 				this.selectedStorageProvider = firstProvider;
 
 				// don't need the selection page if only one choice
-				if(registry.size() > 1) {
+				if (registry.size() > 1) {
 					this.storageProviderRegistry = registry;
 				}
 			}
@@ -700,11 +703,11 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	protected SelectStorageProviderPage createSelectStorageProviderPage() {
 		SelectStorageProviderPage result = (storageProviderRegistry == null) ? null : new SelectStorageProviderPage(storageProviderRegistry);
 
-		if(result != null) {
+		if (result != null) {
 			result.addSelectionChangedListener(new ISelectionChangedListener() {
 
 				public void selectionChanged(SelectionChangedEvent event) {
-					INewModelStorageProvider provider = (INewModelStorageProvider)((IStructuredSelection)event.getSelection()).getFirstElement();
+					INewModelStorageProvider provider = (INewModelStorageProvider) ((IStructuredSelection) event.getSelection()).getFirstElement();
 					setSelectedStorageProvider(provider);
 				}
 			});
@@ -716,9 +719,9 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 	protected Iterable<? extends INewModelStorageProvider> getStorageProviders() {
 		Iterable<? extends INewModelStorageProvider> result;
 
-		if(storageProviderRegistry != null) {
+		if (storageProviderRegistry != null) {
 			result = storageProviderRegistry;
-		} else if(selectedStorageProvider != null) {
+		} else if (selectedStorageProvider != null) {
 			result = Collections.singletonList(selectedStorageProvider);
 		} else {
 			result = Collections.emptyList();
@@ -744,26 +747,26 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 		IWizardPage result = null;
 
 		INewModelStorageProvider provider = providersByPage.get(page);
-		if(provider != null) {
+		if (provider != null) {
 			// it's contributed by a provider. Get the next in the list
 			List<IWizardPage> pages = providerPages.get(provider);
 			int index = pages.indexOf(page);
-			if((index >= 0) && (index < (pages.size() - 1))) {
+			if ((index >= 0) && (index < (pages.size() - 1))) {
 				result = pages.get(index + 1);
 			} else {
 				// get the first page after the provider pages
-				if(endProviderPageIndex < allPages.size()) {
+				if (endProviderPageIndex < allPages.size()) {
 					result = allPages.get(endProviderPageIndex);
 				}
 			}
-		} else if(allPages.indexOf(page) == startProviderPageIndex) {
+		} else if (allPages.indexOf(page) == startProviderPageIndex) {
 			// get the first page of the selected provider
 			List<IWizardPage> pages = providerPages.get(getSelectedStorageProvider());
-			if(!pages.isEmpty()) {
+			if (!pages.isEmpty()) {
 				result = pages.get(0);
 			} else {
 				// get the first page after the provider pages
-				if(endProviderPageIndex < allPages.size()) {
+				if (endProviderPageIndex < allPages.size()) {
 					result = allPages.get(endProviderPageIndex);
 				}
 			}
@@ -781,26 +784,26 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 		IWizardPage result = null;
 
 		INewModelStorageProvider provider = providersByPage.get(page);
-		if(provider != null) {
+		if (provider != null) {
 			// it's contributed by a provider. Get the previous in the list
 			List<IWizardPage> pages = providerPages.get(provider);
 			int index = pages.indexOf(page);
-			if(index > 0) {
+			if (index > 0) {
 				result = pages.get(index - 1);
 			} else {
 				// get the last page before the provider pages
-				if(startProviderPageIndex >= 0) {
+				if (startProviderPageIndex >= 0) {
 					result = allPages.get(startProviderPageIndex);
 				}
 			}
-		} else if(allPages.indexOf(page) == endProviderPageIndex) {
+		} else if (allPages.indexOf(page) == endProviderPageIndex) {
 			// get the last page of the selected provider
 			List<IWizardPage> pages = providerPages.get(getSelectedStorageProvider());
-			if(!pages.isEmpty()) {
+			if (!pages.isEmpty()) {
 				result = pages.get(pages.size() - 1);
 			} else {
 				// get the last page before the provider pages
-				if(startProviderPageIndex >= 0) {
+				if (startProviderPageIndex >= 0) {
 					result = allPages.get(startProviderPageIndex);
 				}
 			}
@@ -820,20 +823,20 @@ public class CreateModelWizard extends Wizard implements INewWizard {
 		// only look at the universal pages and those contributed by the current
 		// storage provider
 
-		for(int i = 0; result && (i <= startProviderPageIndex); i++) {
+		for (int i = 0; result && (i <= startProviderPageIndex); i++) {
 			result = allPages[i].isPageComplete();
 		}
 
-		if(result) {
-			for(IWizardPage next : providerPages.get(selectedStorageProvider)) {
-				if(!next.isPageComplete()) {
+		if (result) {
+			for (IWizardPage next : providerPages.get(selectedStorageProvider)) {
+				if (!next.isPageComplete()) {
 					result = false;
 					break;
 				}
 			}
 		}
 
-		for(int i = endProviderPageIndex; result && (i < allPages.length); i++) {
+		for (int i = endProviderPageIndex; result && (i < allPages.length); i++) {
 			result = allPages[i].isPageComplete();
 		}
 

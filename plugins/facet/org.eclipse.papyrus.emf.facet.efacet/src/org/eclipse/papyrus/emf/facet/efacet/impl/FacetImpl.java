@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -43,10 +43,10 @@ import org.eclipse.papyrus.emf.facet.efacet.Query;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getFacetSet <em>Facet Set</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getConformanceQuery <em>Conformance Query</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getExtendedMetaclass <em>Extended Metaclass</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getFacetElements <em>Facet Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getFacetSet <em>Facet Set</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getConformanceQuery <em>Conformance Query</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getExtendedMetaclass <em>Extended Metaclass</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.FacetImpl#getFacetElements <em>Facet Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +60,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getConformanceQuery() <em>Conformance Query</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConformanceQuery()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -72,6 +73,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getExtendedMetaclass() <em>Extended Metaclass</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getExtendedMetaclass()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -84,6 +86,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	 * The cached value of the '{@link #getFacetElements() <em>Facet Elements</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFacetElements()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -95,6 +98,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -106,6 +110,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -118,6 +123,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -126,24 +132,26 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 		if (eContainerFeatureID() != EFacetPackage.FACET__FACET_SET) {
 			return null;
 		}
-		return (FacetSet)eContainer();
+		return (FacetSet) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public NotificationChain basicSetFacetSet(final FacetSet newFacetSet, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newFacetSet, EFacetPackage.FACET__FACET_SET, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newFacetSet, EFacetPackage.FACET__FACET_SET, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -151,7 +159,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	public void setFacetSet(final FacetSet newFacetSet) {
 		if (newFacetSet != eInternalContainer() || (eContainerFeatureID() != EFacetPackage.FACET__FACET_SET && newFacetSet != null)) {
 			if (EcoreUtil.isAncestor(this, newFacetSet))
-			 {
+			{
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString()); //$NON-NLS-1$
 			}
 			NotificationChain msgs = null;
@@ -159,7 +167,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
 			if (newFacetSet != null) {
-				msgs = ((InternalEObject)newFacetSet).eInverseAdd(this, EFacetPackage.FACET_SET__FACETS, FacetSet.class, msgs);
+				msgs = ((InternalEObject) newFacetSet).eInverseAdd(this, EFacetPackage.FACET_SET__FACETS, FacetSet.class, msgs);
 			}
 			msgs = basicSetFacetSet(newFacetSet, msgs);
 			if (msgs != null) {
@@ -174,6 +182,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -185,6 +194,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -206,6 +216,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -214,10 +225,10 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 		if (newConformanceQuery != this.conformanceQuery) {
 			NotificationChain msgs = null;
 			if (this.conformanceQuery != null) {
-				msgs = ((InternalEObject)this.conformanceQuery).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.FACET__CONFORMANCE_QUERY, null, msgs);
+				msgs = ((InternalEObject) this.conformanceQuery).eInverseRemove(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.FACET__CONFORMANCE_QUERY, null, msgs);
 			}
 			if (newConformanceQuery != null) {
-				msgs = ((InternalEObject)newConformanceQuery).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.FACET__CONFORMANCE_QUERY, null, msgs);
+				msgs = ((InternalEObject) newConformanceQuery).eInverseAdd(this, InternalEObject.EOPPOSITE_FEATURE_BASE - EFacetPackage.FACET__CONFORMANCE_QUERY, null, msgs);
 			}
 			msgs = basicSetConformanceQuery(newConformanceQuery, msgs);
 			if (msgs != null) {
@@ -232,14 +243,15 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public EClass getExtendedMetaclass() {
 		if (this.extendedMetaclass != null && this.extendedMetaclass.eIsProxy()) {
-			InternalEObject oldExtendedMetaclass = (InternalEObject)this.extendedMetaclass;
-			this.extendedMetaclass = (EClass)eResolveProxy(oldExtendedMetaclass);
+			InternalEObject oldExtendedMetaclass = (InternalEObject) this.extendedMetaclass;
+			this.extendedMetaclass = (EClass) eResolveProxy(oldExtendedMetaclass);
 			if (this.extendedMetaclass != oldExtendedMetaclass) {
 				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, EFacetPackage.FACET__EXTENDED_METACLASS, oldExtendedMetaclass, this.extendedMetaclass));
@@ -252,6 +264,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -263,6 +276,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -278,6 +292,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -292,6 +307,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -304,9 +320,9 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
 			}
-			return basicSetFacetSet((FacetSet)otherEnd, msgs);
+			return basicSetFacetSet((FacetSet) otherEnd, msgs);
 		case EFacetPackage.FACET__FACET_ELEMENTS:
-			return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacetElements()).basicAdd(otherEnd, msgs);
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getFacetElements()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -314,6 +330,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -326,7 +343,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 		case EFacetPackage.FACET__CONFORMANCE_QUERY:
 			return basicSetConformanceQuery(null, msgs);
 		case EFacetPackage.FACET__FACET_ELEMENTS:
-			return ((InternalEList<?>)getFacetElements()).basicRemove(otherEnd, msgs);
+			return ((InternalEList<?>) getFacetElements()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -334,6 +351,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -350,6 +368,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -375,6 +394,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -384,17 +404,17 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EFacetPackage.FACET__FACET_SET:
-			setFacetSet((FacetSet)newValue);
+			setFacetSet((FacetSet) newValue);
 			return;
 		case EFacetPackage.FACET__CONFORMANCE_QUERY:
-			setConformanceQuery((Query)newValue);
+			setConformanceQuery((Query) newValue);
 			return;
 		case EFacetPackage.FACET__EXTENDED_METACLASS:
-			setExtendedMetaclass((EClass)newValue);
+			setExtendedMetaclass((EClass) newValue);
 			return;
 		case EFacetPackage.FACET__FACET_ELEMENTS:
 			getFacetElements().clear();
-			getFacetElements().addAll((Collection<? extends FacetElement>)newValue);
+			getFacetElements().addAll((Collection<? extends FacetElement>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -403,6 +423,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -411,13 +432,13 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EFacetPackage.FACET__FACET_SET:
-			setFacetSet((FacetSet)null);
+			setFacetSet((FacetSet) null);
 			return;
 		case EFacetPackage.FACET__CONFORMANCE_QUERY:
-			setConformanceQuery((Query)null);
+			setConformanceQuery((Query) null);
 			return;
 		case EFacetPackage.FACET__EXTENDED_METACLASS:
-			setExtendedMetaclass((EClass)null);
+			setExtendedMetaclass((EClass) null);
 			return;
 		case EFacetPackage.FACET__FACET_ELEMENTS:
 			getFacetElements().clear();
@@ -429,6 +450,7 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -448,4 +470,4 @@ public class FacetImpl extends EClassifierImpl implements Facet {
 		return super.eIsSet(featureID);
 	}
 
-} //FacetImpl
+} // FacetImpl

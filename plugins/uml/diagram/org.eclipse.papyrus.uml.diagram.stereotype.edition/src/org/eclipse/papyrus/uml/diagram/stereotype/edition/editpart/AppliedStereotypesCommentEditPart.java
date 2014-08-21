@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpolicies.AppliedSt
  * that represents the semantic element. In this manner, it is possible to reuse mechanism of stereotype edition.
  * To ensure the creation of the comment and the synchronization of eannotation information from the Semantic editpart
  * an editpolicy will be added: the AppliedStereotypeCommentEditPolicy.
- * 
+ *
  */
 
 public class AppliedStereotypesCommentEditPart extends NodeEditPart implements IGraphicalEditPart, IPrimaryEditPart {
@@ -67,10 +67,10 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -85,7 +85,7 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 
 	@Override
 	public String toString() {
-		//return super.toString();
+		// return super.toString();
 		ILabelProvider labelProvider;
 		try {
 			labelProvider = ServiceUtilsForEditPart.getInstance().getService(LabelProviderService.class, this).getLabelProvider();
@@ -102,7 +102,7 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 	 */
 	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -120,6 +120,7 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(100, 50);
 		return result;
@@ -128,13 +129,14 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
-		if(nodeShape.getLayoutManager() == null) {
+		if (nodeShape.getLayoutManager() == null) {
 			ConstrainedToolbarLayout layout = new ConstrainedToolbarLayout();
 			layout.setSpacing(0);
 			nodeShape.setLayoutManager(layout);
@@ -150,6 +152,7 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		primaryShape = new CornerBentFigure();
 		return primaryShape;
@@ -160,7 +163,7 @@ public class AppliedStereotypesCommentEditPart extends NodeEditPart implements I
 	 */
 	@Override
 	public CornerBentFigure getPrimaryShape() {
-		return (CornerBentFigure)primaryShape;
+		return (CornerBentFigure) primaryShape;
 	}
 
 

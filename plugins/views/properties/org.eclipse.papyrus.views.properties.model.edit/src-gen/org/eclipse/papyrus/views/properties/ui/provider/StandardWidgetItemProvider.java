@@ -25,11 +25,12 @@ import org.eclipse.papyrus.views.properties.ui.UiPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.ui.StandardWidget} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StandardWidgetItemProvider
-	extends WidgetItemProvider
-	implements
+		extends WidgetItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -39,6 +40,7 @@ public class StandardWidgetItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StandardWidgetItemProvider(AdapterFactory adapterFactory) {
@@ -49,6 +51,7 @@ public class StandardWidgetItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -65,28 +68,30 @@ public class StandardWidgetItemProvider
 	 * This adds a property descriptor for the Widget Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addWidgetTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_StandardWidget_widgetType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_StandardWidget_widgetType_feature", "_UI_StandardWidget_type"),
-				 UiPackage.Literals.STANDARD_WIDGET__WIDGET_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_StandardWidget_widgetType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_StandardWidget_widgetType_feature", "_UI_StandardWidget_type"),
+						UiPackage.Literals.STANDARD_WIDGET__WIDGET_TYPE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns StandardWidget.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,6 +103,7 @@ public class StandardWidgetItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -110,6 +116,7 @@ public class StandardWidgetItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,6 +130,7 @@ public class StandardWidgetItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

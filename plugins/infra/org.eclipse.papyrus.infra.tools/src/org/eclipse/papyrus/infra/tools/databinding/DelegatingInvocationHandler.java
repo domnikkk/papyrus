@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,24 +50,24 @@ class DelegatingInvocationHandler implements InvocationHandler {
 
 		IObservable delegate = delegator.getDelegate();
 
-		for(Class<?> next : allInterfaces(delegate.getClass())) {
+		for (Class<?> next : allInterfaces(delegate.getClass())) {
 			// Already have the core observable interfaces covered
-			if(!next.isAssignableFrom(delegatedInterface)) {
-				if(mixins == null) {
+			if (!next.isAssignableFrom(delegatedInterface)) {
+				if (mixins == null) {
 					mixins = new ArrayList<Class<?>>(1);
 				}
 				mixins.add(next);
 			}
 		}
 
-		if(mixins == null) {
+		if (mixins == null) {
 			result = delegatedInterface.cast(delegator);
 		} else {
 			// This class loader is sure to be able to see all of the interfaces implemented by the delegate.
 			// But the question is, can it see the IDelegatingObservable interface?
 			ClassLoader loader = delegator.getDelegate().getClass().getClassLoader();
 			try {
-				if(loader.loadClass(IDelegatingObservable.class.getName()) != IDelegatingObservable.class) {
+				if (loader.loadClass(IDelegatingObservable.class.getName()) != IDelegatingObservable.class) {
 					// This loader can't see the same class. Use my loader, instead
 					loader = DelegatingInvocationHandler.class.getClassLoader();
 				}
@@ -90,14 +90,14 @@ class DelegatingInvocationHandler implements InvocationHandler {
 
 	private static void collectAllInterfaces(Class<?> clazz, Collection<Class<?>> result) {
 		Class<?>[] interfaces = clazz.getInterfaces();
-		for(int i = 0; i < interfaces.length; i++) {
+		for (int i = 0; i < interfaces.length; i++) {
 			// Don't need to collect super-interfaces because they are inherited
 			result.add(interfaces[i]);
 		}
 
 		// Climb the type hierarchy to get interfaces of superclasses (which may be unrelated to direct interfaces)
 		Class<?> zuper = clazz.getSuperclass();
-		if(zuper != null) {
+		if (zuper != null) {
 			collectAllInterfaces(zuper, result);
 		}
 	}
@@ -106,7 +106,7 @@ class DelegatingInvocationHandler implements InvocationHandler {
 	public static <T extends IObservable> T wrap(IDelegatingObservable delegator, Class<T> delegatedInterface, ClassLoader loader, Class<?>... mixins) {
 		T result;
 
-		if((loader == null) || (mixins.length == 0)) {
+		if ((loader == null) || (mixins.length == 0)) {
 			// Nothing to wrap
 			result = delegatedInterface.cast(delegator);
 		} else {
@@ -117,7 +117,7 @@ class DelegatingInvocationHandler implements InvocationHandler {
 			InvocationHandler handler = new DelegatingInvocationHandler(delegator, delegatedInterface);
 
 			result = delegatedInterface.cast(Proxy.newProxyInstance(loader, interfaces.toArray(new Class<?>[interfaces.size()]), handler));
-			((DelegatingObservable<T>)delegator).setRealObservable(result);
+			((DelegatingObservable<T>) delegator).setRealObservable(result);
 		}
 
 		return result;
@@ -125,28 +125,28 @@ class DelegatingInvocationHandler implements InvocationHandler {
 
 	/**
 	 * The interesting case of wrapping an observable that is already one of our delegating dynamic proxies.
-	 * 
+	 *
 	 * @param proxy
-	 *        a dynamic proxy implementing the {@link IDelegatingObservable} interface
-	 * 
+	 *            a dynamic proxy implementing the {@link IDelegatingObservable} interface
+	 *
 	 * @return another dynamic proxy of the same class, which delegates to the supplied {@code proxy}
-	 * 
+	 *
 	 * @throws Exception
-	 *         on failure to create a new dynamic proxy of the same kind as the delegate {@code proxy}
+	 *             on failure to create a new dynamic proxy of the same kind as the delegate {@code proxy}
 	 */
 	@SuppressWarnings("unchecked")
 	static <T extends IObservable> T wrapDynamicProxy(T proxy) throws Exception {
-		final DelegatingInvocationHandler proxyHandler = (DelegatingInvocationHandler)Proxy.getInvocationHandler(proxy);
-		
+		final DelegatingInvocationHandler proxyHandler = (DelegatingInvocationHandler) Proxy.getInvocationHandler(proxy);
+
 		// Create a new delegator of the appropriate class
-		DelegatingObservable<T> proxyDelegator = (DelegatingObservable<T>)proxyHandler.delegator;
+		DelegatingObservable<T> proxyDelegator = (DelegatingObservable<T>) proxyHandler.delegator;
 		DelegatingObservable<T> delegator = proxyDelegator.getClass().getDeclaredConstructor(proxyHandler.delegatedInterface).newInstance(proxy);
-		
+
 		// Create an invocation handler for the same delegated interface as the wrapped proxy
 		DelegatingInvocationHandler handler = new DelegatingInvocationHandler(delegator, proxyHandler.delegatedInterface);
 
 		// And create a new delegating proxy of the same class
-		return (T)proxy.getClass().getDeclaredConstructor(InvocationHandler.class).newInstance(handler);
+		return (T) proxy.getClass().getDeclaredConstructor(InvocationHandler.class).newInstance(handler);
 	}
 
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -155,7 +155,7 @@ class DelegatingInvocationHandler implements InvocationHandler {
 		Class<?> owner = method.getDeclaringClass();
 
 		try {
-			if((owner == delegatedInterface) || (owner == IDelegatingObservable.class) || (owner == ReferenceCountedObservable.class) || (owner == Object.class) || owner.isAssignableFrom(delegatedInterface)) {
+			if ((owner == delegatedInterface) || (owner == IDelegatingObservable.class) || (owner == ReferenceCountedObservable.class) || (owner == Object.class) || owner.isAssignableFrom(delegatedInterface)) {
 				// Refer this to our delegate
 				result = method.invoke(delegator, args);
 			} else {

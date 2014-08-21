@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 323802
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.properties.modelelement;
 
@@ -38,7 +38,7 @@ public class CustomStyleModelElement extends EMFModelElement {
 
 	private DataContextElement element;
 
-	//this.view == super.source
+	// this.view == super.source
 	private View view;
 
 	public CustomStyleModelElement(View source, DataContextElement context) {
@@ -52,8 +52,8 @@ public class CustomStyleModelElement extends EMFModelElement {
 	}
 
 	protected Property findProperty(String propertyPath) {
-		for(Property property : element.getProperties()) {
-			if(propertyPath.equals(property.getName())) {
+		for (Property property : element.getProperties()) {
+			if (propertyPath.equals(property.getName())) {
 				return property;
 			}
 		}
@@ -63,11 +63,11 @@ public class CustomStyleModelElement extends EMFModelElement {
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
 		Property property = findProperty(propertyPath);
-		if(property == null) {
+		if (property == null) {
 			return null;
 		}
-		if(property.getMultiplicity() == 1) {
-			switch(property.getType()) {
+		if (property.getMultiplicity() == 1) {
+			switch (property.getType()) {
 			case BOOLEAN:
 				return new CustomBooleanStyleObservableValue(view, domain, propertyPath);
 			case INTEGER:
@@ -80,7 +80,7 @@ public class CustomStyleModelElement extends EMFModelElement {
 				return null;
 			}
 		} else {
-			switch(property.getType()) {
+			switch (property.getType()) {
 			case BOOLEAN:
 				return new CustomBooleanStyleObservableList(view, domain, propertyPath);
 			case INTEGER:
@@ -101,7 +101,7 @@ public class CustomStyleModelElement extends EMFModelElement {
 	}
 
 
-	//TODO: Implement these methods for multivalued properties (XxxListStyle)
+	// TODO: Implement these methods for multivalued properties (XxxListStyle)
 
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
@@ -136,11 +136,11 @@ public class CustomStyleModelElement extends EMFModelElement {
 	@Override
 	public ReferenceValueFactory getValueFactory(String propertyPath) {
 		Property property = findProperty(propertyPath);
-		if(property == null) {
+		if (property == null) {
 			return null;
 		}
 
-		switch(property.getType()) {
+		switch (property.getType()) {
 		case STRING:
 			return new StringEditionFactory();
 		case INTEGER:
@@ -161,7 +161,7 @@ public class CustomStyleModelElement extends EMFModelElement {
 	@Override
 	public boolean getDirectCreation(String propertyPath) {
 		Property property = findProperty(propertyPath);
-		if(property == null) {
+		if (property == null) {
 			return false;
 		}
 

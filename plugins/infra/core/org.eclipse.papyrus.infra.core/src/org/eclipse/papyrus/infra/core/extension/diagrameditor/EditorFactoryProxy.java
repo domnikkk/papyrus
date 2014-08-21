@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.extension.diagrameditor;
 
@@ -11,9 +11,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
  * A proxy implementation of {@link IEditorFactory} used to do lazy
  * instantiation of concrete {@link IPluggableEditorFactory}. This class is used
  * by the {@link PluggableEditorFactoryReader}
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class EditorFactoryProxy implements IEditorFactory {
 
@@ -34,7 +34,7 @@ public class EditorFactoryProxy implements IEditorFactory {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param serviceRegistry
 	 * @param editorDescriptor
 	 */
@@ -45,30 +45,32 @@ public class EditorFactoryProxy implements IEditorFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#createIPageModel(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public IPageModel createIPageModel(Object pageIdentifier) {
 		try {
 			return getEditorFactory().createIPageModel(pageIdentifier);
 		} catch (Exception ex) {
-			//An error occurred in a contribution. Do not use this factory
+			// An error occurred in a contribution. Do not use this factory
 			return null;
 		}
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.editorsfactory.IEditorFactory#isPageModelFactoryFor(java.lang.Object)
-	 * 
+	 *
 	 * @param pageIdentifier
 	 * @return
 	 */
+	@Override
 	public boolean isPageModelFactoryFor(Object pageIdentifier) {
 		try {
 			return getEditorFactory().isPageModelFactoryFor(pageIdentifier);
 		} catch (Exception ex) {
-			//An error occurred in a contribution. Do not use this factory
+			// An error occurred in a contribution. Do not use this factory
 			return false;
 		}
 	}
@@ -78,7 +80,7 @@ public class EditorFactoryProxy implements IEditorFactory {
 	 */
 	protected IPluggableEditorFactory getEditorFactory() {
 
-		if(editorFactory == null) {
+		if (editorFactory == null) {
 			editorFactory = createEditorFactory();
 		}
 
@@ -89,7 +91,7 @@ public class EditorFactoryProxy implements IEditorFactory {
 	/**
 	 * Create an instance of IPluggableEditorFactory as described in the
 	 * editorDescriptor. TODO let propagate the exceptions.
-	 * 
+	 *
 	 * @return
 	 */
 	private IPluggableEditorFactory createEditorFactory() {

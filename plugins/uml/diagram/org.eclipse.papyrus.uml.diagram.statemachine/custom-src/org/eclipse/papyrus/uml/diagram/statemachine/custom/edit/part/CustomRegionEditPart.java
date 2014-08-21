@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,10 +41,10 @@ public class CustomRegionEditPart extends RegionEditPart {
 
 	/**
 	 * This method is overridden to store the DragTracker locally.
-	 * 
+	 *
 	 * @param request
-	 *        the associated Request
-	 * 
+	 *            the associated Request
+	 *
 	 * @return the DragTracker created by the superclass
 	 */
 	@Override
@@ -56,27 +56,29 @@ public class CustomRegionEditPart extends RegionEditPart {
 	/**
 	 * This method provides access to the RegionDragTracker if any or returns
 	 * null.
-	 * 
+	 *
 	 * @return the RegionDragTracker
 	 */
 	public CustomRegionDragTracker getRegionDragTracker() {
-		if((tracker != null) && (tracker instanceof CustomRegionDragTracker))
-			return (CustomRegionDragTracker)tracker;
+		if ((tracker != null) && (tracker instanceof CustomRegionDragTracker)) {
+			return (CustomRegionDragTracker) tracker;
+		}
 		return null;
 	}
 
 	@Override
 	protected void handleNotificationEvent(Notification notification) {
 		super.handleNotificationEvent(notification);
-		if(getParent() != null)
+		if (getParent() != null) {
 			refreshVisuals();
+		}
 	}
 
 	@Override
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 
-		View view = (View)getModel();
+		View view = (View) getModel();
 		RegionFigure f = getPrimaryShape();
 
 		// check the region zone
@@ -84,21 +86,24 @@ public class CustomRegionEditPart extends RegionEditPart {
 		if (zone != null) {
 			// check the neighbours if any and change the corresponding flags in the
 			// figure
-			if(Zone.hasRightNeighbours(zone))
+			if (Zone.hasRightNeighbours(zone)) {
 				f.setDisplayRightBorder(true);
-			else
+			} else {
 				f.setDisplayRightBorder(false);
-			if(Zone.hasBottomNeighbours(zone))
+			}
+			if (Zone.hasBottomNeighbours(zone)) {
 				f.setDisplayBottomBorder(true);
-			else
+			} else {
 				f.setDisplayBottomBorder(false);
-			
-			CustomRegionResizableEditPolicy policy = (CustomRegionResizableEditPolicy)getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+			}
+
+			CustomRegionResizableEditPolicy policy = (CustomRegionResizableEditPolicy) getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 			// test for allowed directions
 			int dirs = Zone.getAllowedResizeDirections(zone);
 			// constrain the edit policy with these directions
-			if(policy != null)
+			if (policy != null) {
 				policy.setResizeDirections(dirs);
+			}
 		}
 		else {
 			f.setDisplayBottomBorder(false);

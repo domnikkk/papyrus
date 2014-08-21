@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,7 +51,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * this class is used to overload specific parsers
- * 
+ *
  * @author patrick Tessier
  */
 public class CustomUMLParserProvider extends UMLParserProvider {
@@ -70,7 +70,7 @@ public class CustomUMLParserProvider extends UMLParserProvider {
 	}
 
 	protected IParser getAssociationBranchRole() {
-		EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		IParser parser = new CustomMessageFormatParser(features, UMLPackage.eINSTANCE.getAssociation_MemberEnd(), 0);
 		return parser;
 	}
@@ -79,7 +79,7 @@ public class CustomUMLParserProvider extends UMLParserProvider {
 	 * @generated
 	 */
 	protected IParser getAssociationName_6002Parser() {
-		EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name(), };
+		EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name(), };
 		MessageFormatParser parser = new MessageFormatParser(features);
 		return parser;
 	}
@@ -113,7 +113,7 @@ public class CustomUMLParserProvider extends UMLParserProvider {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	protected IParser getCustomPropertyParser() {
@@ -128,8 +128,9 @@ public class CustomUMLParserProvider extends UMLParserProvider {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IParser getParser(int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case PropertyForComponentEditPart.VISUAL_ID:
 			return getCustomPropertyParser();
 		case OperationForComponentEditPart.VISUAL_ID:

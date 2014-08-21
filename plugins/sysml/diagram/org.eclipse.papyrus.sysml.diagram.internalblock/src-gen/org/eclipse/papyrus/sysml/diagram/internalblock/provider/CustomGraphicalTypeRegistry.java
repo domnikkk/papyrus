@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -56,82 +56,82 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 	 */
 	@Override
 	public String getNodeGraphicalType(EObject domainElement, String containerType) {
-		// Start of user code getNodeGraphicalType(EObject domainElement, String containerType)	
-		if(((ISpecializationType)SysMLElementTypes.PART_PROPERTY).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.REFERENCE_PROPERTY).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.ACTOR_PART_PROPERTY).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.VALUE_PROPERTY).getMatcher().matches(domainElement)
-			|| ((domainElement instanceof org.eclipse.uml2.uml.Property) && !(domainElement instanceof org.eclipse.uml2.uml.Port))) {
+		// Start of user code getNodeGraphicalType(EObject domainElement, String containerType)
+		if (((ISpecializationType) SysMLElementTypes.PART_PROPERTY).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.REFERENCE_PROPERTY).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.ACTOR_PART_PROPERTY).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.VALUE_PROPERTY).getMatcher().matches(domainElement)
+				|| ((domainElement instanceof org.eclipse.uml2.uml.Property) && !(domainElement instanceof org.eclipse.uml2.uml.Port))) {
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			
+
 			return UNDEFINED_TYPE;
 		}
 
-		if(((ISpecializationType)SysMLElementTypes.FLOW_PORT).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.FLOW_PORT_IN).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.FLOW_PORT_OUT).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.FLOW_PORT_IN_OUT).getMatcher().matches(domainElement)
-			|| ((ISpecializationType)SysMLElementTypes.FLOW_PORT_NA).getMatcher().matches(domainElement)) {
+		if (((ISpecializationType) SysMLElementTypes.FLOW_PORT).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.FLOW_PORT_IN).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.FLOW_PORT_OUT).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.FLOW_PORT_IN_OUT).getMatcher().matches(domainElement)
+				|| ((ISpecializationType) SysMLElementTypes.FLOW_PORT_NA).getMatcher().matches(domainElement)) {
 
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
 			/*
-			if(SysMLGraphicalTypes.SHAPE_SYSML_NESTEDBLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
-				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
-			}
-			*/
+			 * if(SysMLGraphicalTypes.SHAPE_SYSML_NESTEDBLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			 * return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
+			 * }
+			 */
 			return UNDEFINED_TYPE;
 		}
 		// End of user code
 
-		if(((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(domainElement)) {
-			if(ElementTypes.DIAGRAM_ID.equals(containerType)) {
+		if (((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(domainElement)) {
+			if (ElementTypes.DIAGRAM_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID;
 			}
 			return UNDEFINED_TYPE;
 		}
-		if(((ISpecializationType)SysMLElementTypes.PART_PROPERTY).getMatcher().matches(domainElement)) {
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+		if (((ISpecializationType) SysMLElementTypes.PART_PROPERTY).getMatcher().matches(domainElement)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
 			/*
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
-				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
-			}
-			*/
+			 * if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			 * return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
+			 * }
+			 */
 			return UNDEFINED_TYPE;
 		}
-		if(((ISpecializationType)SysMLElementTypes.FLOW_PORT).getMatcher().matches(domainElement)) {
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+		if (((ISpecializationType) SysMLElementTypes.FLOW_PORT).getMatcher().matches(domainElement)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
 			return UNDEFINED_TYPE;
 		}
-		if(UMLElementTypes.PORT.getEClass().isInstance(domainElement)) {
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+		if (UMLElementTypes.PORT.getEClass().isInstance(domainElement)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID;
 			}
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
 				return UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID;
 			}
 			return UNDEFINED_TYPE;
@@ -142,34 +142,35 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getNodeGraphicalType(String proposedType, String containerType) {
 		// Start of user code getNodeGraphicalType(String proposedType, String containerType)
-		if(SysMLElementTypes.PART_PROPERTY.getSemanticHint().equals(proposedType)
-			|| SysMLElementTypes.REFERENCE_PROPERTY.getSemanticHint().equals(proposedType)
-			|| SysMLElementTypes.ACTOR_PART_PROPERTY.getSemanticHint().equals(proposedType)
-			|| SysMLElementTypes.VALUE_PROPERTY.getSemanticHint().equals(proposedType)
-			|| UMLElementTypes.PROPERTY.getSemanticHint().equals(proposedType)) {
+		if (SysMLElementTypes.PART_PROPERTY.getSemanticHint().equals(proposedType)
+				|| SysMLElementTypes.REFERENCE_PROPERTY.getSemanticHint().equals(proposedType)
+				|| SysMLElementTypes.ACTOR_PART_PROPERTY.getSemanticHint().equals(proposedType)
+				|| SysMLElementTypes.VALUE_PROPERTY.getSemanticHint().equals(proposedType)
+				|| UMLElementTypes.PROPERTY.getSemanticHint().equals(proposedType)) {
 
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
 
 			return UNDEFINED_TYPE;
 		}
 
-		if(SysMLElementTypes.FLOW_PORT.getSemanticHint().equals(proposedType)
-			|| SysMLElementTypes.FLOW_PORT_IN.getSemanticHint().equals(proposedType)
-			|| SysMLElementTypes.FLOW_PORT_OUT.getSemanticHint().equals(proposedType)
-			|| SysMLElementTypes.FLOW_PORT_IN_OUT.getSemanticHint().matches(proposedType)
-			|| SysMLElementTypes.FLOW_PORT_NA.getSemanticHint().matches(proposedType)) {
+		if (SysMLElementTypes.FLOW_PORT.getSemanticHint().equals(proposedType)
+				|| SysMLElementTypes.FLOW_PORT_IN.getSemanticHint().equals(proposedType)
+				|| SysMLElementTypes.FLOW_PORT_OUT.getSemanticHint().equals(proposedType)
+				|| SysMLElementTypes.FLOW_PORT_IN_OUT.getSemanticHint().matches(proposedType)
+				|| SysMLElementTypes.FLOW_PORT_NA.getSemanticHint().matches(proposedType)) {
 
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
 
@@ -178,43 +179,43 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 
 		// End of user code
 
-		if(SysMLElementTypes.BLOCK.getSemanticHint().equals(proposedType)) {
-			if(ElementTypes.DIAGRAM_ID.equals(containerType)) {
+		if (SysMLElementTypes.BLOCK.getSemanticHint().equals(proposedType)) {
+			if (ElementTypes.DIAGRAM_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID;
 			}
 			return UNDEFINED_TYPE;
 		}
-		if(SysMLElementTypes.PART_PROPERTY.getSemanticHint().equals(proposedType)) {
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+		if (SysMLElementTypes.PART_PROPERTY.getSemanticHint().equals(proposedType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.COMPARTMENT_SYSML_STRUCTURE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
 			}
 			/*
-			if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
-				return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
-			}
-			*/
+			 * if(SysMLGraphicalTypes.COMPARTMENT_SYSML_BLOCKPROPERTY_STRUCTURE_ID.equals(containerType)) {
+			 * return SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID;
+			 * }
+			 */
 			return UNDEFINED_TYPE;
 		}
-		if(SysMLElementTypes.FLOW_PORT.getSemanticHint().equals(proposedType)) {
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+		if (SysMLElementTypes.FLOW_PORT.getSemanticHint().equals(proposedType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
 				return SysMLGraphicalTypes.SHAPE_SYSML_FLOWPORT_AS_AFFIXED_ID;
 			}
 			return UNDEFINED_TYPE;
 		}
-		if(UMLElementTypes.PORT.getSemanticHint().equals(proposedType)) {
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
+		if (UMLElementTypes.PORT.getSemanticHint().equals(proposedType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCK_AS_COMPOSITE_ID.equals(containerType)) {
 				return UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID;
 			}
-			if(SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
+			if (SysMLGraphicalTypes.SHAPE_SYSML_BLOCKPROPERTY_AS_COMPOSITE_ID.equals(containerType)) {
 				return UMLGraphicalTypes.SHAPE_UML_PORT_AS_AFFIXED_ID;
 			}
 			return UNDEFINED_TYPE;
@@ -227,13 +228,13 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 	 */
 	@Override
 	public String getEdgeGraphicalType(EObject domainElement) {
-		// Start of user code getEdgeGraphicalType(EObject domainElement)	
+		// Start of user code getEdgeGraphicalType(EObject domainElement)
 		// End of user code
 
-		if(UMLElementTypes.CONNECTOR.getEClass().isInstance(domainElement)) {
+		if (UMLElementTypes.CONNECTOR.getEClass().isInstance(domainElement)) {
 			return UMLGraphicalTypes.LINK_UML_CONNECTOR_ID;
 		}
-		if(UMLElementTypes.DEPENDENCY.getEClass().isInstance(domainElement)) {
+		if (UMLElementTypes.DEPENDENCY.getEClass().isInstance(domainElement)) {
 			return UMLGraphicalTypes.LINK_UML_DEPENDENCY_ID;
 		}
 		return super.getEdgeGraphicalType(domainElement);
@@ -242,14 +243,15 @@ public class CustomGraphicalTypeRegistry extends GraphicalTypeRegistry {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEdgeGraphicalType(String proposedType) {
 		// Start of user code getEdgeGraphicalType(String proposedType)
 		// End of user code
 
-		if(UMLElementTypes.CONNECTOR.getSemanticHint().equals(proposedType)) {
+		if (UMLElementTypes.CONNECTOR.getSemanticHint().equals(proposedType)) {
 			return UMLGraphicalTypes.LINK_UML_CONNECTOR_ID;
 		}
-		if(UMLElementTypes.DEPENDENCY.getSemanticHint().equals(proposedType)) {
+		if (UMLElementTypes.DEPENDENCY.getSemanticHint().equals(proposedType)) {
 			return UMLGraphicalTypes.LINK_UML_DEPENDENCY_ID;
 		}
 		return super.getEdgeGraphicalType(proposedType);

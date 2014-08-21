@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.gef.NodeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.commands.SetBoundsCommand;
+import org.eclipse.gmf.runtime.draw2d.ui.figures.BaseSlidableAnchor;
 import org.eclipse.gmf.runtime.gef.ui.figures.SlidableAnchor;
 import org.eclipse.gmf.runtime.notation.Anchor;
 import org.eclipse.gmf.runtime.notation.Edge;
@@ -47,14 +48,14 @@ public class InteractionHeadImpactLayoutEditPolicy extends AbstractHeadImpactLay
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.policies.AbstractHeadImpactLayoutEditPolicy#getHeadHeight()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected int getHeadHeight() {
 		IFigure primaryShape = getPrimaryShape();
-		if(primaryShape instanceof StereotypeInteractionFigure) {
-			IFigure headContainer = ((StereotypeInteractionFigure)primaryShape).getHeaderLabel().getParent();
+		if (primaryShape instanceof StereotypeInteractionFigure) {
+			IFigure headContainer = ((StereotypeInteractionFigure) primaryShape).getHeaderLabel().getParent();
 			Rectangle boundsRect = getBoundsRect();
 			return headContainer.getPreferredSize(boundsRect.width, -1).height;
 		}
@@ -63,45 +64,45 @@ public class InteractionHeadImpactLayoutEditPolicy extends AbstractHeadImpactLay
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.policies.AbstractHeadImpactLayoutEditPolicy#doImpactLayout(int)
-	 * 
+	 *
 	 * @param resizeDelta
 	 */
 
 	@Override
 	protected void doImpactLayout(int resizeDelta) {
 		CompoundCommand commands = new CompoundCommand();
-		//1. move gate
+		// 1. move gate
 		{
 			List children = getHost().getChildren();
 			List<GateEditPart> gates = new ArrayList<GateEditPart>();
-			for(Object object : children) {
-				if(object instanceof GateEditPart) {
-					gates.add((GateEditPart)object);
+			for (Object object : children) {
+				if (object instanceof GateEditPart) {
+					gates.add((GateEditPart) object);
 				}
 			}
-			if(!gates.isEmpty()) {
+			if (!gates.isEmpty()) {
 				Rectangle rect = getBoundsRect();
-				for(GateEditPart gateEditPart : gates) {
-					Node view = (Node)gateEditPart.getNotationView();
-					Location location = (Location)view.getLayoutConstraint();
+				for (GateEditPart gateEditPart : gates) {
+					Node view = (Node) gateEditPart.getNotationView();
+					Location location = (Location) view.getLayoutConstraint();
 					Point pt = new Point(location.getX(), location.getY());
-					if(pt.x == rect.x - GateEditPart.DEFAULT_SIZE.width / 2 || pt.x == rect.right() - GateEditPart.DEFAULT_SIZE.width / 2) {
+					if (pt.x == rect.x - GateEditPart.DEFAULT_SIZE.width / 2 || pt.x == rect.right() - GateEditPart.DEFAULT_SIZE.width / 2) {
 						commands.appendIfCanExecute(new GMFtoEMFCommandWrapper(new SetBoundsCommand(getEditingDomain(), "Move gate", gateEditPart, pt.getTranslated(0, resizeDelta))));
 					}
 				}
 			}
 		}
-		//2. move FoundMessage
+		// 2. move FoundMessage
 		{
-			List sourceConnections = ((NodeEditPart)getHost()).getSourceConnections();
-			for(Object object : sourceConnections) {
-				if(object instanceof Message7EditPart) {
-					Edge edge = (Edge)((Message7EditPart)object).getNotationView();
+			List sourceConnections = ((NodeEditPart) getHost()).getSourceConnections();
+			for (Object object : sourceConnections) {
+				if (object instanceof Message7EditPart) {
+					Edge edge = (Edge) ((Message7EditPart) object).getNotationView();
 					Anchor sourceAnchor = edge.getSourceAnchor();
-					if(sourceAnchor instanceof IdentityAnchor) {
-						String terminal = ((IdentityAnchor)sourceAnchor).getId();
-						PrecisionPoint pt = SlidableAnchor.parseTerminalString(terminal);
-						if(pt.preciseY() > 1) {
+					if (sourceAnchor instanceof IdentityAnchor) {
+						String terminal = ((IdentityAnchor) sourceAnchor).getId();
+						PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
+						if (pt.preciseY() > 1) {
 							pt.translate(0, resizeDelta);
 							commands.appendIfCanExecute(SetCommand.create(getEditingDomain(), sourceAnchor, NotationPackage.eINSTANCE.getIdentityAnchor_Id(), "(" + pt.preciseX() + "," + pt.preciseY() + ")"));
 						}
@@ -109,18 +110,18 @@ public class InteractionHeadImpactLayoutEditPolicy extends AbstractHeadImpactLay
 				}
 			}
 		}
-		//3. Move LostMessage
+		// 3. Move LostMessage
 		{
-			List targetConnections = ((NodeEditPart)getHost()).getTargetConnections();
-			for(Object object : targetConnections) {
-				if(object instanceof Message6EditPart) {
-					AbstractMessageEditPart message = (AbstractMessageEditPart)object;
-					Edge edge = (Edge)message.getNotationView();
+			List targetConnections = ((NodeEditPart) getHost()).getTargetConnections();
+			for (Object object : targetConnections) {
+				if (object instanceof Message6EditPart) {
+					AbstractMessageEditPart message = (AbstractMessageEditPart) object;
+					Edge edge = (Edge) message.getNotationView();
 					Anchor targetAnchor = edge.getTargetAnchor();
-					if(targetAnchor instanceof IdentityAnchor) {
-						String terminal = ((IdentityAnchor)targetAnchor).getId();
-						PrecisionPoint pt = SlidableAnchor.parseTerminalString(terminal);
-						if(pt.preciseY() > 1) {
+					if (targetAnchor instanceof IdentityAnchor) {
+						String terminal = ((IdentityAnchor) targetAnchor).getId();
+						PrecisionPoint pt = BaseSlidableAnchor.parseTerminalString(terminal);
+						if (pt.preciseY() > 1) {
 							pt.translate(0, resizeDelta);
 							commands.appendIfCanExecute(SetCommand.create(getEditingDomain(), targetAnchor, NotationPackage.eINSTANCE.getIdentityAnchor_Id(), "(" + pt.preciseX() + "," + pt.preciseY() + ")"));
 						}
@@ -128,7 +129,7 @@ public class InteractionHeadImpactLayoutEditPolicy extends AbstractHeadImpactLay
 				}
 			}
 		}
-		if(commands.isEmpty() || !commands.canExecute()) {
+		if (commands.isEmpty() || !commands.canExecute()) {
 			return;
 		}
 		CommandHelper.executeCommandWithoutHistory(getEditingDomain(), commands, true);

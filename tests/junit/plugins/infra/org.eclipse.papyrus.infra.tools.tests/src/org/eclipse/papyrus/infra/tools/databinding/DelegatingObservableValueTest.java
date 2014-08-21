@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -51,11 +51,12 @@ public abstract class DelegatingObservableValueTest extends DelegatingObservable
 
 			@Override
 			public void handleValueChange(ValueChangeEvent event) {
-				assertThat(event.getObservable(), sameInstance((IObservable)fixture));
+				assertThat(event.getObservable(), sameInstance((IObservable) fixture));
 
 				count++;
 			}
-		};
+		}
+		;
 
 		final TestListener l = new TestListener();
 
@@ -69,7 +70,7 @@ public abstract class DelegatingObservableValueTest extends DelegatingObservable
 
 	@Test
 	public void testGetValueType() {
-		assertThat(fixture.getValueType(), is((Object)expectedValue.getClass()));
+		assertThat(fixture.getValueType(), is((Object) expectedValue.getClass()));
 	}
 
 	@Test
@@ -135,9 +136,10 @@ public abstract class DelegatingObservableValueTest extends DelegatingObservable
 
 		private IObservableValue master;
 
+		@Override
 		@Test
 		public void testGetObserved() {
-			assertThat(((IObserving)fixture).getObserved(), is((Object)bean));
+			assertThat(((IObserving) fixture).getObserved(), is((Object) bean));
 		}
 
 		//

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.widgets;
 
@@ -60,7 +60,7 @@ public class StereotypeApplication extends AbstractPropertyEditor {
 		// No Databinding here ; the AppliedStereotypeCompositeWithView is responsible
 		// for editing the data
 		ModelElement element = input.getModelElement(propertyPath);
-		if(element instanceof StereotypeApplicationModelElement) {
+		if (element instanceof StereotypeApplicationModelElement) {
 			internalDoBinding();
 
 			input.getObservable(propertyPath).addChangeListener(new IChangeListener() {
@@ -72,17 +72,17 @@ public class StereotypeApplication extends AbstractPropertyEditor {
 			});
 		}
 	}
-	
+
 	protected void internalDoBinding() {
 		ModelElement element = input.getModelElement(propertyPath);
-		if(element instanceof StereotypeApplicationModelElement) {
-			StereotypeApplicationModelElement modelElement = (StereotypeApplicationModelElement)element;
+		if (element instanceof StereotypeApplicationModelElement) {
+			StereotypeApplicationModelElement modelElement = (StereotypeApplicationModelElement) element;
 
-			View diagramElement = (View)modelElement.getGraphicalElement();
-			//EditPart editPart = ((StereotypeApplicationModelElement)element).getEditPart();
+			View diagramElement = (View) modelElement.getGraphicalElement();
+			// EditPart editPart = ((StereotypeApplicationModelElement)element).getEditPart();
 			final Element umlElement = modelElement.getUMLElement();
 
-			if(stereotypeComposite.getElement() != umlElement) {
+			if (stereotypeComposite.getElement() != umlElement) {
 				stereotypeComposite.setElement(umlElement);
 				stereotypeComposite.setInput(new StereotypedElementTreeObject(umlElement));
 			}

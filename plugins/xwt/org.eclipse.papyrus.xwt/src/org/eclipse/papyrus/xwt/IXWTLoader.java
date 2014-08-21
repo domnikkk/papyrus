@@ -8,7 +8,7 @@
  * Contributors:
  *     Soyatec - initial API and implementation
  *     Christian W. Damus (CEA) - bug 417409
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.xwt;
 
@@ -40,7 +40,7 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * XWT loader interface
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public interface IXWTLoader {
@@ -49,7 +49,7 @@ public interface IXWTLoader {
 
 	/**
 	 * The URL which open XWT file
-	 * 
+	 *
 	 */
 	String URL_PROPERTY = "XWT.URL";
 
@@ -68,100 +68,101 @@ public interface IXWTLoader {
 	/**
 	 * Default styles to apply. The value should be a collection or Array of
 	 * IStyle
-	 * 
+	 *
 	 */
 	String DEFAULT_STYLES_PROPERTY = "XWT.DefaultStyles";
 
 	/**
 	 * Enabled or disabled the styles. By default, it is enabled
-	 * 
+	 *
 	 */
 	String DISABLE_STYLES_PROPERTY = "XWT.DisabledStyles";
 
 	/**
 	 * The DataContext to setup in root element
-	 * 
+	 *
 	 */
 	String DATACONTEXT_PROPERTY = "XWT.DataContext";
 
 	/**
 	 * The BindingContext to setup in root element
-	 * 
+	 *
 	 */
 	String BINDING_CONTEXT_PROPERTY = "XWT.BindingContext";
 
 	/**
 	 * The CLR class
-	 * 
+	 *
 	 */
 	String CLASS_PROPERTY = "XWT.Class";
 
 	/**
 	 * The CLR class factory
-	 * 
+	 *
 	 */
 	String CLASS_FACTORY_PROPERTY = "XWT.ClassFactory";
 
 	/**
 	 * Resources to associate to root element
-	 * 
+	 *
 	 */
 	String RESOURCE_DICTIONARY_PROPERTY = "XWT.Resources";
 
 	/**
 	 * Resources to associate to root element
-	 * 
+	 *
 	 */
 	String LOADED_CALLBACK = ILoadedCallback.class.getName();
 
 	/**
 	 * Action to invoke after the creation of each UI element before the properties setting
-	 * 
+	 *
 	 */
 	String CREATED_CALLBACK = ICreatedCallback.class.getName();
 
 	/**
 	 * Action to invoke before parsing the XML file
-	 * 
+	 *
 	 */
 	String BEFORE_PARSING_CALLBACK = IBeforeParsingCallback.class.getName();
-	
+
 	/**
 	 * Parsed XML element caching option. In the public API, this may be only either a {@link Boolean} indicating whether to cache the XML content
 	 * parsed from XWT resources (the cache having some unspecified default size) or a positive {@link Integer} indicating the size of XML cache.
 	 * This load option is a bit odd in that, if specified, it is replaced by the actual cache, which then should be supplied as the option value
 	 * for subsequent calls. Thus, the following idiom is recommended:
-	 * 
+	 *
 	 * <pre>
-	 *   private Object xmlCache; // the XML cache
-	 *   
-	 *   // other fields ...
-	 *   
-	 *   void whatever() {
-	 *       Map<String, Object> options = new HashMap&lt;String, Object&gt;();
-	 *       options.put(IXWTLoader.XML_CACHE_PROPERTY, (xmlCache != null) ? xmlCache : Boolean.TRUE);
-	 *       // ... set other options as needed ...
-	 *   
-	 *       URL url = getResourceURL(); // however this is obtained
-	 *       
-	 *       Object ui = XWT.loadWithOptions(url, options);
-	 *       
-	 *       // Get the cache to reuse next time
-	 *       xmlCache = options.get(IXWTLoader.XML_CACHE_PROPERTY);
-	 *       
-	 *       doSomethingWithTheUI(ui);
-	 *   }
+	 * private Object xmlCache; // the XML cache
+	 * 
+	 * // other fields ...
+	 * 
+	 * void whatever() {
+	 * 	Map&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();
+	 * 	options.put(IXWTLoader.XML_CACHE_PROPERTY, (xmlCache != null) ? xmlCache : Boolean.TRUE);
+	 * 	// ... set other options as needed ...
+	 * 
+	 * 	URL url = getResourceURL(); // however this is obtained
+	 * 
+	 * 	Object ui = XWT.loadWithOptions(url, options);
+	 * 
+	 * 	// Get the cache to reuse next time
+	 * 	xmlCache = options.get(IXWTLoader.XML_CACHE_PROPERTY);
+	 * 
+	 * 	doSomethingWithTheUI(ui);
+	 * }
 	 * </pre>
 	 */
 	String XML_CACHE_PROPERTY = IElementCache.class.getName();
 
 
-	String[] ALL_PROPERTIES = { URL_PROPERTY, CONTAINER_PROPERTY, INIT_STYLE_PROPERTY, DATACONTEXT_PROPERTY, BINDING_CONTEXT_PROPERTY, RESOURCE_DICTIONARY_PROPERTY, CLASS_PROPERTY, CLASS_FACTORY_PROPERTY, LOADED_CALLBACK, CREATED_CALLBACK, BEFORE_PARSING_CALLBACK, DESIGN_MODE_PROPERTY, XML_CACHE_PROPERTY };
+	String[] ALL_PROPERTIES = { URL_PROPERTY, CONTAINER_PROPERTY, INIT_STYLE_PROPERTY, DATACONTEXT_PROPERTY, BINDING_CONTEXT_PROPERTY, RESOURCE_DICTIONARY_PROPERTY, CLASS_PROPERTY, CLASS_FACTORY_PROPERTY, LOADED_CALLBACK, CREATED_CALLBACK,
+			BEFORE_PARSING_CALLBACK, DESIGN_MODE_PROPERTY, XML_CACHE_PROPERTY };
 
 	/**
 	 * Register an Observable IChangeListener for a given UI element. The second
 	 * registration of the same listener on the same UI Element has no effect.
-	 * 
+	 *
 	 * @param control
 	 * @param listener
 	 * @return
@@ -171,7 +172,7 @@ public interface IXWTLoader {
 	/**
 	 * Undo the registration of the Observable IChangeListener for a given UI
 	 * element.
-	 * 
+	 *
 	 * @param context
 	 * @param listener
 	 */
@@ -179,7 +180,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the used IObservable value for given data.
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -187,7 +188,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the used IObservableFactory value for given data.
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -195,7 +196,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the used IObservableValue value for given data.
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -203,7 +204,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the used IObservableList value for given data.
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -211,7 +212,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the used IObservableList value for given data.
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
@@ -219,7 +220,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the used IObservableValue value for given data.
-	 * 
+	 *
 	 * @param context
 	 * @param data
 	 * @param propertyName
@@ -230,7 +231,7 @@ public interface IXWTLoader {
 	/**
 	 * Find the resource in Resources Dictionary attached in the UI Element.
 	 * If the key isn't found, the research will be propagated in its parent.
-	 * 
+	 *
 	 * @param object
 	 * @param key
 	 * @return
@@ -239,48 +240,48 @@ public interface IXWTLoader {
 
 	/**
 	 * Get the Resources Dictionary attached in the UI Element.
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
 	Map<String, Object> getResources(Object object);
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @param handler
 	 */
 	void registerNamespaceHandler(String nsmapace, INamespaceHandler handler);
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 */
 	void unregisterNamespaceHandler(String nsmapace);
 
 	/**
-	 * 
+	 *
 	 * @param nsmapace
 	 * @return
 	 */
 	INamespaceHandler getNamespaceHandler(String nsmapace);
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	Realm getRealm();
 
 	/**
 	 * Get the system logger.
-	 * 
+	 *
 	 * @return
 	 */
 	ILogger getLogger();
 
 	/**
 	 * Change the system logger
-	 * 
+	 *
 	 * @param logger
 	 */
 	void setLogger(ILogger log);
@@ -288,7 +289,7 @@ public interface IXWTLoader {
 	/**
 	 * This namespace service returns the associated or declared namespace for a
 	 * given class.
-	 * 
+	 *
 	 * @param javaclass
 	 * @return
 	 */
@@ -296,7 +297,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Get the name of the element, which is defined by <code>Name</code> or <code>x:Name</code>. Return <code>null</code>
-	 * 
+	 *
 	 * @param object
 	 * @return
 	 */
@@ -304,9 +305,9 @@ public interface IXWTLoader {
 
 	/**
 	 * Find a named UI element.
-	 * 
+	 *
 	 * @param context
-	 *        the start point of research.
+	 *            the start point of research.
 	 * @param name
 	 * @return
 	 */
@@ -314,7 +315,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Get the DataContext of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -322,7 +323,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Get the Triggers of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -330,7 +331,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Change the DataContext of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -338,7 +339,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Changes the default data context of given element
-	 * 
+	 *
 	 * @param widget
 	 * @param dataBindingContext
 	 */
@@ -346,7 +347,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Change the Triggers of given element
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -354,7 +355,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find the closet parent of type Composite
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -362,7 +363,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Get the Metaclass of the given object
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */
@@ -371,7 +372,7 @@ public interface IXWTLoader {
 	/**
 	 * Load the file content. All widget will be created but they are showed.
 	 * This method return the root element.
-	 * 
+	 *
 	 */
 	Object load(URL file) throws Exception;
 
@@ -472,7 +473,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Data conversion service from String to a given type
-	 * 
+	 *
 	 * @param type
 	 * @param string
 	 * @return
@@ -481,7 +482,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Data conversion service from String to a given type
-	 * 
+	 *
 	 * @param targetType
 	 * @param string
 	 * @return
@@ -491,7 +492,7 @@ public interface IXWTLoader {
 	Object loadWithOptions(URL url, Map<String, Object> options) throws Exception;
 
 	/**
-	 * 
+	 *
 	 * @param stream
 	 * @param url
 	 * @param options
@@ -512,7 +513,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Generic load method
-	 * 
+	 *
 	 * @param stream
 	 * @param url
 	 * @param loadData
@@ -525,7 +526,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Metaclass services to return all registered Metaclasses.
-	 * 
+	 *
 	 * @param stream
 	 * @param url
 	 * @param loadData
@@ -536,66 +537,66 @@ public interface IXWTLoader {
 
 	/**
 	 * Get the corresponding Metaclass
-	 * 
+	 *
 	 * @param tagName
 	 * @param ns
-	 *        The namespace
+	 *            The namespace
 	 * @return
 	 */
 	IMetaclass getMetaclass(String tagName, String ns);
 
 	/**
 	 * Register UI type
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	IMetaclass registerMetaclass(Class<?> type);
 
 	/**
 	 * Register UI type
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	void registerMetaclass(IMetaclass type);
 
 	/**
 	 * Get the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	Object getPropertyValue(Object uiElement, IProperty property);
 
 	/**
 	 * Set the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	void setPropertyValue(Object uiElement, IProperty property, Object value);
 
 	/**
 	 * Remove the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	void removePropertyValue(Object uiElement, IProperty property);
 
 	/**
 	 * Remove the dynamic property value
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	boolean hasPropertyValue(Object uiElement, IProperty property);
 
 	/**
 	 * Register Metaclass factory
-	 * 
+	 *
 	 * @param javaclass
 	 */
 	void registerMetaclassFactory(IMetaclassFactory metaclassFactory);
 
 	/**
 	 * Find a Data converter
-	 * 
+	 *
 	 * @param converter
 	 * @param type
 	 */
@@ -603,7 +604,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Register a Data converter
-	 * 
+	 *
 	 * @param converter
 	 * @param type
 	 */
@@ -611,14 +612,14 @@ public interface IXWTLoader {
 
 	/**
 	 * Add a tracking option
-	 * 
+	 *
 	 * @param tracking
 	 */
 	void addTracking(Tracking tracking);
 
 	/**
 	 * Test if the tracking on argument is enabled.
-	 * 
+	 *
 	 * @param tracking
 	 * @return
 	 */
@@ -626,21 +627,21 @@ public interface IXWTLoader {
 
 	/**
 	 * Get all tracking options
-	 * 
+	 *
 	 * @return
 	 */
 	Set<Tracking> getTrackings();
 
 	/**
 	 * Remove a tracking option.
-	 * 
+	 *
 	 * @param tracking
 	 */
 	void removeTracking(Tracking tracking);
 
 	/**
 	 * Register a command to a name
-	 * 
+	 *
 	 * @param name
 	 * @param command
 	 */
@@ -648,7 +649,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Register a command to a name
-	 * 
+	 *
 	 * @param name
 	 * @param command
 	 */
@@ -656,7 +657,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Find a command by name
-	 * 
+	 *
 	 * @param name
 	 * @return
 	 */
@@ -664,21 +665,21 @@ public interface IXWTLoader {
 
 	/**
 	 * Return all registered commands
-	 * 
+	 *
 	 * @return
 	 */
 	Map<String, ICommand> getCommands();
 
 	/**
 	 * Unregister a command
-	 * 
+	 *
 	 * @param name
 	 */
 	void unregisterCommand(String name);
 
 	/**
 	 * Add a default style
-	 * 
+	 *
 	 * @param style
 	 * @return
 	 */
@@ -686,7 +687,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Remove a default style
-	 * 
+	 *
 	 * @param style
 	 * @return
 	 */
@@ -714,7 +715,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Create a UI Profile with the provide data and apply it immediately.
-	 * 
+	 *
 	 * @param profileData
 	 * @return
 	 */
@@ -722,7 +723,7 @@ public interface IXWTLoader {
 
 	/**
 	 * Put the Profile in place
-	 * 
+	 *
 	 * @param profile
 	 * @return
 	 */
@@ -730,28 +731,28 @@ public interface IXWTLoader {
 
 	/**
 	 * Restore the previous profile
-	 * 
+	 *
 	 * @return
 	 */
 	public Object restoreProfile();
 
 	/**
 	 * Set up the default ICLRFactory
-	 * 
+	 *
 	 * @param factory
 	 */
 	public void setCLRFactory(ICLRFactory factory);
 
 	/**
 	 * The default CLRFactory.
-	 * 
+	 *
 	 * @return
 	 */
 	public ICLRFactory getCLRFactory();
 
 	/**
 	 * Returns the {@link BindingContext} of the element
-	 * 
+	 *
 	 * @param element
 	 * @param contextName
 	 * @return
@@ -760,27 +761,27 @@ public interface IXWTLoader {
 
 	/**
 	 * Check if the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	boolean isFileResolveType(Class<?> type);
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	void registerFileResolveType(Class<?> type);
 
 	/**
 	 * Register the value of a property is to resolve.
-	 * 
+	 *
 	 * @param type
-	 *        type of property
+	 *            type of property
 	 * @return
 	 */
 	void unregisterFileResolveType(Class<?> type);
@@ -788,8 +789,8 @@ public interface IXWTLoader {
 	public class Utilities {
 
 		public static boolean isPropertyName(String name) {
-			for(String propertyName : ALL_PROPERTIES) {
-				if(propertyName.equalsIgnoreCase(name)) {
+			for (String propertyName : ALL_PROPERTIES) {
+				if (propertyName.equalsIgnoreCase(name)) {
 					return true;
 				}
 			}

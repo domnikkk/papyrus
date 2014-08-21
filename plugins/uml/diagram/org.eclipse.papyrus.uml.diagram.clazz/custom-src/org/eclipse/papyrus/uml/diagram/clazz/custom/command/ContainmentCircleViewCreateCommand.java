@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
 
 /**
  * Custom class to create the containment circle node.
- * 
+ *
  */
 public class ContainmentCircleViewCreateCommand extends AbstractCustomCommand {
 
@@ -52,7 +52,7 @@ public class ContainmentCircleViewCreateCommand extends AbstractCustomCommand {
 
 	/**
 	 * constructor.
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the request that is used to obtained the containmentCircle
 	 * @param domain
@@ -78,9 +78,10 @@ public class ContainmentCircleViewCreateCommand extends AbstractCustomCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		UMLViewProvider viewProvider = new UMLViewProvider();
 		setNode(viewProvider.createNode_3032(null, this.containerView, -1, true, preferenceHint));

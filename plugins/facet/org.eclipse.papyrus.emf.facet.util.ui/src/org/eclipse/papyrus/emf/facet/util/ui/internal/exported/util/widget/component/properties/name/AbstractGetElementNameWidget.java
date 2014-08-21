@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -20,14 +20,14 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * This abstract class provide the creation of:</p>
- * 
+ *
  * Label : [ TextFiled ]</p>
- * 
+ *
  * Where the label is getted by {@link #getLabel()}. The TextField will set the
  * value of the {@link PropertyElement} when edited. If the field is not setted,
  * an error will be displayed at the top of the dialog when the 'ok' button is
  * pressed.
- * 
+ *
  * @see GetAttributeNameWidget
  * @see GetFacetNameWidget
  * @see GetFacetSetNameWidget
@@ -41,7 +41,7 @@ public abstract class AbstractGetElementNameWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param editingDomain

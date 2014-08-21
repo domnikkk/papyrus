@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ public class AssociationEndAspectActionProvider extends AbstractAspectActionProv
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AssociationEndAspectActionProvider() {
 	}
@@ -40,6 +40,7 @@ public class AssociationEndAspectActionProvider extends AbstractAspectActionProv
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IAspectAction createAction(Node configurationNode) {
 		AssociationEndPostAction action = new AssociationEndPostAction();
 		action.init(configurationNode, this);
@@ -49,28 +50,29 @@ public class AssociationEndAspectActionProvider extends AbstractAspectActionProv
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public boolean isEnable(IPaletteEntryProxy entryProxy) {
 		PaletteEntry entry = entryProxy.getEntry();
 
 		// check unicity
-		if(entryProxy instanceof IPaletteAspectToolEntryProxy) {
-			List<IPostAction> postActions = ((IPaletteAspectToolEntryProxy)entryProxy).getPostActions();
-			for(IPostAction action : postActions) {
-				if(action instanceof AssociationEndPostAction) {
+		if (entryProxy instanceof IPaletteAspectToolEntryProxy) {
+			List<IPostAction> postActions = ((IPaletteAspectToolEntryProxy) entryProxy).getPostActions();
+			for (IPostAction action : postActions) {
+				if (action instanceof AssociationEndPostAction) {
 					return false;
 				}
 			}
 		}
 
 		// check meta-element is an association
-		if(entry instanceof CombinedTemplateCreationEntry) {
-			EClass eClass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry)entry);
+		if (entry instanceof CombinedTemplateCreationEntry) {
+			EClass eClass = PaletteUtil.getToolMetaclass((CombinedTemplateCreationEntry) entry);
 			List<EClass> superClasses = eClass.getEAllSuperTypes();
-			if(ASSOCIATION.equals(eClass.getName())) {
+			if (ASSOCIATION.equals(eClass.getName())) {
 				return true;
 			}
-			for(EClass superClass : superClasses) {
-				if(ASSOCIATION.equals(superClass.getName())) {
+			for (EClass superClass : superClasses) {
+				if (ASSOCIATION.equals(superClass.getName())) {
 					return true;
 				}
 			}

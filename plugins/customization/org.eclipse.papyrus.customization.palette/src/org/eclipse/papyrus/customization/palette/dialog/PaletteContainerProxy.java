@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,9 +27,9 @@ public class PaletteContainerProxy extends PaletteEntryProxy {
 
 	/**
 	 * Creates a new PaletteContainer
-	 * 
+	 *
 	 * @param drawer
-	 *        the drawer to cache
+	 *            the drawer to cache
 	 */
 	public PaletteContainerProxy(PaletteContainer drawer) {
 		super(drawer);
@@ -48,14 +48,14 @@ public class PaletteContainerProxy extends PaletteEntryProxy {
 	 */
 	@Override
 	public PaletteContainer getEntry() {
-		return (PaletteContainer)super.getEntry();
+		return (PaletteContainer) super.getEntry();
 	}
 
 	/**
 	 * Method to add a child proxy to this proxy
-	 * 
+	 *
 	 * @param entry
-	 *        the entry to add
+	 *            the entry to add
 	 */
 	@Override
 	public void addChild(PaletteEntryProxy entry) {
@@ -66,11 +66,11 @@ public class PaletteContainerProxy extends PaletteEntryProxy {
 
 	/**
 	 * Method to add a child proxy to this proxy, before the given element
-	 * 
+	 *
 	 * @param entry
-	 *        the entry to add
+	 *            the entry to add
 	 * @param nextElement
-	 *        the element that should be just after the entry
+	 *            the element that should be just after the entry
 	 */
 	@Override
 	public void addChild(PaletteEntryProxy entry, PaletteEntryProxy nextElement) {
@@ -81,9 +81,9 @@ public class PaletteContainerProxy extends PaletteEntryProxy {
 
 	/**
 	 * Remove the specified children from its parent
-	 * 
+	 *
 	 * @param proxy
-	 *        the proxy to remove
+	 *            the proxy to remove
 	 */
 	@Override
 	public void removeChild(PaletteEntryProxy proxy) {

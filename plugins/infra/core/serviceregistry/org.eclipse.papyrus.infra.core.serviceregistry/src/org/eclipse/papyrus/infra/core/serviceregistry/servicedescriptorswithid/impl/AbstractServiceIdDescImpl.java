@@ -29,12 +29,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getNamespace <em>Namespace</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getDependsOn <em>Depends On</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getPriority <em>Priority</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getBundleID <em>Bundle ID</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getNamespace <em>Namespace</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getDependsOn <em>Depends On</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getPriority <em>Priority</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.impl.AbstractServiceIdDescImpl#getBundleID <em>Bundle ID</em>}</li>
  * </ul>
  * </p>
  *
@@ -45,6 +45,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -55,6 +56,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -65,6 +67,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -85,6 +89,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The cached value of the '{@link #getDependsOn() <em>Depends On</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependsOn()
 	 * @generated
 	 * @ordered
@@ -95,6 +100,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The default value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -105,6 +111,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The cached value of the '{@link #getPriority() <em>Priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getPriority()
 	 * @generated
 	 * @ordered
@@ -115,6 +122,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The default value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -125,6 +133,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	 * The cached value of the '{@link #getBundleID() <em>Bundle ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBundleID()
 	 * @generated
 	 * @ordered
@@ -134,6 +143,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractServiceIdDescImpl() {
@@ -143,6 +153,7 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,8 +164,10 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -162,61 +175,79 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ServiceSetIdDesc getNamespace() {
-		if (eContainerFeatureID() != ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE) return null;
-		return (ServiceSetIdDesc)eContainer();
+		if (eContainerFeatureID() != ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE) {
+			return null;
+		}
+		return (ServiceSetIdDesc) eContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetNamespace(ServiceSetIdDesc newNamespace, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newNamespace, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE, msgs);
+		msgs = eBasicSetContainer((InternalEObject) newNamespace, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE, msgs);
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setNamespace(ServiceSetIdDesc newNamespace) {
 		if (newNamespace != eInternalContainer() || (eContainerFeatureID() != ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE && newNamespace != null)) {
-			if (EcoreUtil.isAncestor(this, newNamespace))
+			if (EcoreUtil.isAncestor(this, newNamespace)) {
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newNamespace != null)
-				msgs = ((InternalEObject)newNamespace).eInverseAdd(this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS, ServiceSetIdDesc.class, msgs);
+			}
+			if (newNamespace != null) {
+				msgs = ((InternalEObject) newNamespace).eInverseAdd(this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS, ServiceSetIdDesc.class, msgs);
+			}
 			msgs = basicSetNamespace(newNamespace, msgs);
-			if (msgs != null) msgs.dispatch();
+			if (msgs != null) {
+				msgs.dispatch();
+			}
 		}
-		else if (eNotificationRequired())
+		else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE, newNamespace, newNamespace));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getDescription() {
 		return description;
 	}
@@ -224,20 +255,25 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setDescription(String newDescription) {
 		String oldDescription = description;
 		description = newDescription;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION, oldDescription, description));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<String> getDependsOn() {
 		if (dependsOn == null) {
 			dependsOn = new EDataTypeUniqueEList<String>(String.class, this, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON);
@@ -248,8 +284,10 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public int getPriority() {
 		return priority;
 	}
@@ -257,20 +295,25 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setPriority(int newPriority) {
 		int oldPriority = priority;
 		priority = newPriority;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY, oldPriority, priority));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getBundleID() {
 		return bundleID;
 	}
@@ -278,27 +321,32 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setBundleID(String newBundleID) {
 		String oldBundleID = bundleID;
 		bundleID = newBundleID;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID, oldBundleID, bundleID));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetNamespace((ServiceSetIdDesc)otherEnd, msgs);
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			if (eInternalContainer() != null) {
+				msgs = eBasicRemoveFromContainer(msgs);
+			}
+			return basicSetNamespace((ServiceSetIdDesc) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -306,13 +354,14 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				return basicSetNamespace(null, msgs);
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			return basicSetNamespace(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -320,13 +369,14 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				return eInternalContainer().eInverseRemove(this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS, ServiceSetIdDesc.class, msgs);
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			return eInternalContainer().eInverseRemove(this, ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC__SERVICE_DESCRIPTORS, ServiceSetIdDesc.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -334,23 +384,24 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
-				return getName();
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				return getNamespace();
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
-				return getDescription();
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
-				return getDependsOn();
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
-				return getPriority();
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
-				return getBundleID();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
+			return getName();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			return getNamespace();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
+			return getDescription();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
+			return getDependsOn();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
+			return getPriority();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
+			return getBundleID();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,31 +409,32 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
-				setName((String)newValue);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				setNamespace((ServiceSetIdDesc)newValue);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
-				getDependsOn().clear();
-				getDependsOn().addAll((Collection<? extends String>)newValue);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
-				setPriority((Integer)newValue);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
-				setBundleID((String)newValue);
-				return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
+			setName((String) newValue);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			setNamespace((ServiceSetIdDesc) newValue);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
+			getDependsOn().clear();
+			getDependsOn().addAll((Collection<? extends String>) newValue);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
+			setPriority((Integer) newValue);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
+			setBundleID((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -390,29 +442,30 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				setNamespace((ServiceSetIdDesc)null);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
-				getDependsOn().clear();
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
-				setPriority(PRIORITY_EDEFAULT);
-				return;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
-				setBundleID(BUNDLE_ID_EDEFAULT);
-				return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			setNamespace((ServiceSetIdDesc) null);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
+			getDependsOn().clear();
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
+			setPriority(PRIORITY_EDEFAULT);
+			return;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
+			setBundleID(BUNDLE_ID_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -420,23 +473,24 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
-				return getNamespace() != null;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
-				return dependsOn != null && !dependsOn.isEmpty();
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
-				return priority != PRIORITY_EDEFAULT;
-			case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
-				return BUNDLE_ID_EDEFAULT == null ? bundleID != null : !BUNDLE_ID_EDEFAULT.equals(bundleID);
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__NAMESPACE:
+			return getNamespace() != null;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__DEPENDS_ON:
+			return dependsOn != null && !dependsOn.isEmpty();
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__PRIORITY:
+			return priority != PRIORITY_EDEFAULT;
+		case ServicedescriptorswithidPackage.ABSTRACT_SERVICE_ID_DESC__BUNDLE_ID:
+			return BUNDLE_ID_EDEFAULT == null ? bundleID != null : !BUNDLE_ID_EDEFAULT.equals(bundleID);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -444,11 +498,14 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -465,4 +522,4 @@ public abstract class AbstractServiceIdDescImpl extends EObjectImpl implements A
 		return result.toString();
 	}
 
-} //AbstractServiceIdDescImpl
+} // AbstractServiceIdDescImpl

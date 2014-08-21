@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * Query to check that an element is contained directly or indirectly by a profile
- * 
+ *
  * @author Remi Schnekenburger
  */
 public class IsContainedByProfileQuery implements JavaQuery {
@@ -31,43 +31,43 @@ public class IsContainedByProfileQuery implements JavaQuery {
 	 */
 	public boolean match(Object selection) {
 		EObject eObject = null;
-		if(selection instanceof IStructuredSelection) {
-			Object o = ((IStructuredSelection)selection).getFirstElement();
-			if(o instanceof EObject) {
-				eObject = (EObject)o;
+		if (selection instanceof IStructuredSelection) {
+			Object o = ((IStructuredSelection) selection).getFirstElement();
+			if (o instanceof EObject) {
+				eObject = (EObject) o;
 			}
 		} else {
 			// try to edapt into eobject
 			eObject = EMFHelper.getEObject(selection);
 		}
-		
+
 		return hasProfileInHierarchy(eObject);
 	}
 
 	protected boolean hasProfileInHierarchy(EObject eObject) {
-		if(eObject == null) {
+		if (eObject == null) {
 			return false;
 		}
-		if(isProfileMetaclass(eObject)) {
+		if (isProfileMetaclass(eObject)) {
 			return true;
 		}
-		
+
 		// ask to its container recursively
 		return hasProfileInHierarchy(eObject.eContainer());
 	}
 
 	protected boolean isProfileMetaclass(EObject eObject) {
 		EClass eclass = eObject.eClass();
-		if(eclass==null) {
+		if (eclass == null) {
 			return false;
 		}
-		
+
 		String eclassName = eclass.getName();
-		if("Profile".equals(eclassName)) {
+		if ("Profile".equals(eclassName)) {
 			return true;
 		}
 		return false;
-		
+
 	}
 
 }

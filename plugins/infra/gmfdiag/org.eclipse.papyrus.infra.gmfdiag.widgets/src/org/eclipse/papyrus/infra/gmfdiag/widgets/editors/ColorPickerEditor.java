@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -64,7 +64,7 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 				Rectangle r = colorPicker.getBounds();
 				Point location = colorPicker.getParent().toDisplay(r.x, r.y);
 				colorPickerPopup.open(new Point(location.x, location.y + r.height));
-				if(colorPickerPopup.getSelectedColor() == null && !colorPickerPopup.useDefaultColor()) {
+				if (colorPickerPopup.getSelectedColor() == null && !colorPickerPopup.useDefaultColor()) {
 					return;
 				}
 				setColor(colorPickerPopup.getSelectedColor());
@@ -72,15 +72,15 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 		});
 	}
 
 	@Override
 	protected void doBinding() {
-		//We don't do a real databinding here
-		if(modelProperty != null) {
+		// We don't do a real databinding here
+		if (modelProperty != null) {
 			getParent().addDisposeListener(new DisposeListener() {
 
 				public void widgetDisposed(DisposeEvent e) {
@@ -94,7 +94,7 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 
 	@Override
 	public void dispose() {
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.removeChangeListener(this);
 		}
 		super.dispose();
@@ -106,7 +106,7 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 
 		doSetColor(colorValue);
 
-		if(modelProperty != null) {
+		if (modelProperty != null) {
 			modelProperty.setValue(colorValue);
 		}
 	}
@@ -119,13 +119,13 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 
 	/**
 	 * Sets the image for a color button (square filled with the color that button represents)
-	 * 
+	 *
 	 * @see GradientFieldEditor#setButtonImage(RGB)
 	 */
 	private void updateButton() {
 		// First, dispose the current image, if any
 		Image image = colorPicker.getImage();
-		if(image != null) {
+		if (image != null) {
 			image.dispose();
 		}
 
@@ -133,7 +133,7 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 		// Now set the new image based on rgbColor
 		Color color = new Color(display, this.color);
 
-		//TODO : Find a way to instantiate a transparent image (Instead of a default-white one)
+		// TODO : Find a way to instantiate a transparent image (Instead of a default-white one)
 		image = backgroundImage == null ? new Image(display, 16, 16) : new Image(display, backgroundImage.getBounds());
 
 		GC gc = new GC(image);
@@ -145,7 +145,7 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 		gc.setBackground(color);
 		gc.setForeground(color);
 
-		if(backgroundImage != null) {
+		if (backgroundImage != null) {
 			gc.fillRectangle(defaultColorBoundsWithImage);
 			gc.drawImage(backgroundImage, 0, 0);
 		} else {
@@ -169,7 +169,7 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 
 	@Override
 	public Integer getValue() {
-		if(color == null) {
+		if (color == null) {
 			return defaultColor;
 		}
 
@@ -197,9 +197,9 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 	}
 
 	public void handleChange(ChangeEvent event) {
-		if(modelProperty != null) {
-			Integer value = (Integer)modelProperty.getValue();
-			if(value == null) {
+		if (modelProperty != null) {
+			Integer value = (Integer) modelProperty.getValue();
+			if (value == null) {
 				value = 0;
 			}
 
@@ -215,9 +215,9 @@ public class ColorPickerEditor extends AbstractValueEditor implements IChangeLis
 	/**
 	 * Sets the default color for this Editor. The default color
 	 * will be set when the "Default" button is pressed.
-	 * 
+	 *
 	 * @param color
-	 *        The default color for this editor
+	 *            The default color for this editor
 	 */
 	public void setDefaultColor(int color) {
 		this.defaultColor = color;

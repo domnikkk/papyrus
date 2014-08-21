@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,6 +18,7 @@ import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.LayoutManager;
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gmf.runtime.diagram.ui.util.MeasurementUnitHelper;
@@ -35,9 +36,9 @@ import org.eclipse.swt.graphics.Color;
 
 /**
  * Figure for structured activity node and its derived element
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 
@@ -79,7 +80,7 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 
 	/**
 	 * Custom border (Used to avoid the alpha setting affect the border)
-	 * 
+	 *
 	 * @return
 	 */
 	private org.eclipse.draw2d.LineBorder createBorder0() {
@@ -93,8 +94,8 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 	public LayoutManager getLayoutManager() {
 		FlowLayoutAdvanced layoutThis = new FlowLayoutAdvanced();
 		layoutThis.setStretchMinorAxis(true);
-		layoutThis.setMinorAlignment(FlowLayout.ALIGN_CENTER);
-		layoutThis.setMajorAlignment(FlowLayout.ALIGN_TOPLEFT);
+		layoutThis.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
+		layoutThis.setMajorAlignment(OrderedLayout.ALIGN_TOPLEFT);
 		layoutThis.setMajorSpacing(0);
 		layoutThis.setMinorSpacing(0);
 		layoutThis.setHorizontal(false);
@@ -130,13 +131,13 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 	@Override
 	protected Object getNameLabelConstraint() {
 		GravityConstrainedFlowLayoutConstraint constraintFKeyword = new GravityConstrainedFlowLayoutConstraint();
-		constraintFKeyword.setAlign(GravityConstrainedFlowLayout.ALIGN_TOPLEFT);
+		constraintFKeyword.setAlign(OrderedLayout.ALIGN_TOPLEFT);
 		return constraintFKeyword;
 	}
 
 	@Override
 	protected IFigure getDefaultLabelsContainer() {
-		if(fFigureCompartmentLabelStructuredActivityNode == null) {
+		if (fFigureCompartmentLabelStructuredActivityNode == null) {
 			fFigureCompartmentLabelStructuredActivityNode = new RoundedRectangle();
 			fFigureCompartmentLabelStructuredActivityNode.setCornerDimensions(new Dimension(mapNode.DPtoLP(8), mapNode.DPtoLP(8)));
 			fFigureCompartmentLabelStructuredActivityNode.setFill(false);
@@ -159,7 +160,7 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 	@Override
 	public void paintFigure(Graphics graphics) {
 		int transparency = getTransparency();
-		if(transparency == 0) {
+		if (transparency == 0) {
 			transparency = UMLDiagramEditorPlugin.getInstance().getPreferenceStore().getInt(IActivityPreferenceConstants.PREF_STRUCTURED_NODE_ALPHA);
 		} else {
 			transparency = 100 - getTransparency();
@@ -177,7 +178,7 @@ public class StructuredActivityNodeFigure extends PapyrusRoundedNodeFigure {
 
 	/**
 	 * Get the keywork compartment
-	 * 
+	 *
 	 * @return
 	 */
 	public WrappingLabel getKeyword() {

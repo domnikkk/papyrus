@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 410346
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.emf.providers.strategy;
 
@@ -68,7 +68,7 @@ public class SemanticEMFContentProvider extends CustomizedTreeContentProvider im
 	}
 
 	protected void configureMetaclasses(EStructuralFeature feature) {
-		if(feature != null) {
+		if (feature != null) {
 			setWantedMetaclasses(Collections.singletonList(feature.getEType()));
 		}
 	}
@@ -92,13 +92,13 @@ public class SemanticEMFContentProvider extends CustomizedTreeContentProvider im
 	public SemanticEMFContentProvider(EObject editedEObject, EStructuralFeature feature, ResourceSet root) {
 		this(editedEObject, feature, getRoots(root));
 	}
-	
+
 	@Override
 	public void dispose() {
 		try {
 			// Because we created this adapter factory, we must dispose it
-			if(factory instanceof IDisposable) {
-				((IDisposable)factory).dispose();
+			if (factory instanceof IDisposable) {
+				((IDisposable) factory).dispose();
 			}
 		} finally {
 			super.dispose();
@@ -107,8 +107,8 @@ public class SemanticEMFContentProvider extends CustomizedTreeContentProvider im
 
 	protected static EObject[] getRoots(ResourceSet root) {
 		List<EObject> roots = new LinkedList<EObject>();
-		if(root != null) {
-			for(Resource resource : root.getResources()) {
+		if (root != null) {
+			for (Resource resource : root.getResources()) {
 				roots.addAll(resource.getContents());
 			}
 		}
@@ -117,21 +117,21 @@ public class SemanticEMFContentProvider extends CustomizedTreeContentProvider im
 
 	protected static EObject[] findRoots(EObject source) {
 
-		//The EObject is not contained in a resource : we return the top-level EObject
-		if(source.eResource() == null) {
-			while(source.eContainer() != null) {
+		// The EObject is not contained in a resource : we return the top-level EObject
+		if (source.eResource() == null) {
+			while (source.eContainer() != null) {
 				source = source.eContainer();
 			}
 
-			return new EObject[]{ source };
+			return new EObject[] { source };
 		}
 
-		//The resource is not contained in a resource set : we return the resource's contents
-		if(source.eResource().getResourceSet() == null) {
+		// The resource is not contained in a resource set : we return the resource's contents
+		if (source.eResource().getResourceSet() == null) {
 			return source.eResource().getContents().toArray(new EObject[0]);
 		}
 
-		//We have a full resourceSet : we return its contents
+		// We have a full resourceSet : we return its contents
 		return getRoots(source.eResource().getResourceSet());
 	}
 
@@ -146,7 +146,7 @@ public class SemanticEMFContentProvider extends CustomizedTreeContentProvider im
 
 	@Override
 	public boolean hasChildren(Object parent) {
-		//May be expensive
+		// May be expensive
 		Object[] children = getChildren(parent);
 		return children != null && children.length > 0;
 	}
@@ -155,41 +155,41 @@ public class SemanticEMFContentProvider extends CustomizedTreeContentProvider im
 		// get the semantic object form the element
 		Object semanticObject = getAdaptedValue(containerElement);
 
-		//return false for EReference and non-semantic objects
-		if(semanticObject instanceof EReference || semanticObject == null) {
+		// return false for EReference and non-semantic objects
+		if (semanticObject instanceof EReference || semanticObject == null) {
 			return false;
 		}
 
-		//Tests whether the element is compatible with at least one metaclass
-		if(metaclasses != null && !metaclasses.isEmpty()) {
+		// Tests whether the element is compatible with at least one metaclass
+		if (metaclasses != null && !metaclasses.isEmpty()) {
 			boolean compatible = false;
 
-			for(Object metaclass : metaclasses) {
-				if(isCompatibleMetaclass(containerElement, metaclass)) {
+			for (Object metaclass : metaclasses) {
+				if (isCompatibleMetaclass(containerElement, metaclass)) {
 					compatible = true;
 					break;
 				}
 			}
 
-			if(!compatible) {
+			if (!compatible) {
 				return false;
 			}
 		}
 
-		//If the element is compatible with at least one metaclass from notWanted, then it is not valid
-		for(Object metaclass : notWantedMetaclasses) {
-			if(isCompatibleMetaclass(containerElement, metaclass)) {
+		// If the element is compatible with at least one metaclass from notWanted, then it is not valid
+		for (Object metaclass : notWantedMetaclasses) {
+			if (isCompatibleMetaclass(containerElement, metaclass)) {
 				return false;
 			}
-		}			
+		}
 
 		return true;
 	}
 
 	protected boolean isCompatibleMetaclass(Object containerElement, Object metaclass) {
-		if(metaclass instanceof EClassifier) {
+		if (metaclass instanceof EClassifier) {
 			Object semanticElement = getAdaptedValue(containerElement);
-			return ((EClassifier)metaclass).isInstance(semanticElement);
+			return ((EClassifier) metaclass).isInstance(semanticElement);
 		}
 		return false;
 	}

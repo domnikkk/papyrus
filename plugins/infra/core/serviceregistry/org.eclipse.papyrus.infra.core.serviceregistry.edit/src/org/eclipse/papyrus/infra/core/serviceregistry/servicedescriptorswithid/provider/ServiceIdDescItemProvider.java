@@ -29,11 +29,12 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.S
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServiceIdDescItemProvider
-	extends AbstractServiceIdDescItemProvider
-	implements
+		extends AbstractServiceIdDescItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -43,6 +44,7 @@ public class ServiceIdDescItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServiceIdDescItemProvider(AdapterFactory adapterFactory) {
@@ -53,6 +55,7 @@ public class ServiceIdDescItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,52 +73,54 @@ public class ServiceIdDescItemProvider
 	 * This adds a property descriptor for the Start Kind feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addStartKindPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceIdDesc_startKind_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceIdDesc_startKind_feature", "_UI_ServiceIdDesc_type"),
-				 ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__START_KIND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ServiceIdDesc_startKind_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ServiceIdDesc_startKind_feature", "_UI_ServiceIdDesc_type"),
+						ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__START_KIND,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Classname feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addClassnamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ServiceIdDesc_classname_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ServiceIdDesc_classname_feature", "_UI_ServiceIdDesc_type"),
-				 ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__CLASSNAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ServiceIdDesc_classname_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ServiceIdDesc_classname_feature", "_UI_ServiceIdDesc_type"),
+						ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__CLASSNAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,6 +135,7 @@ public class ServiceIdDescItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,6 +150,7 @@ public class ServiceIdDescItemProvider
 	 * This returns ServiceIdDesc.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -155,14 +162,15 @@ public class ServiceIdDescItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ServiceIdDesc)object).getName();
+		String label = ((ServiceIdDesc) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ServiceIdDesc_type") :
-			getString("_UI_ServiceIdDesc_type") + " " + label;
+				getString("_UI_ServiceIdDesc_type") :
+				getString("_UI_ServiceIdDesc_type") + " " + label;
 	}
 
 	/**
@@ -170,6 +178,7 @@ public class ServiceIdDescItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -177,13 +186,13 @@ public class ServiceIdDescItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ServiceIdDesc.class)) {
-			case ServicedescriptorswithidPackage.SERVICE_ID_DESC__START_KIND:
-			case ServicedescriptorswithidPackage.SERVICE_ID_DESC__CLASSNAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case ServicedescriptorswithidPackage.SERVICE_ID_DESC__INJECTIONS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ServicedescriptorswithidPackage.SERVICE_ID_DESC__START_KIND:
+		case ServicedescriptorswithidPackage.SERVICE_ID_DESC__CLASSNAME:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case ServicedescriptorswithidPackage.SERVICE_ID_DESC__INJECTIONS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -193,6 +202,7 @@ public class ServiceIdDescItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -200,19 +210,19 @@ public class ServiceIdDescItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__INJECTIONS,
-				 ServicedescriptorswithidFactory.eINSTANCE.createPropertyInjection()));
+						ServicedescriptorswithidFactory.eINSTANCE.createPropertyInjection()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__INJECTIONS,
-				 ServicedescriptorswithidFactory.eINSTANCE.createMethodInjection()));
+						ServicedescriptorswithidFactory.eINSTANCE.createMethodInjection()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ServicedescriptorswithidPackage.Literals.SERVICE_ID_DESC__INJECTIONS,
-				 ServicedescriptorswithidFactory.eINSTANCE.createConstructorInjection()));
+						ServicedescriptorswithidFactory.eINSTANCE.createConstructorInjection()));
 	}
 
 }

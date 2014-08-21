@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * Abstract class providing the creation of any item into the menu.
- * 
+ *
  * @see AbstractTreeMenuItem
  * @see AbstractTreeSubMenu
  * @since 0.3
@@ -60,8 +60,8 @@ public abstract class AbstractTreeMenu<T extends Object> {
 			if (this.isMenuItemCreated()) {
 				deleteMenuItem();
 			}
-				this.setMenuItemCreated(true);
-				this.menuItem = createMenuItem(menu);
+			this.setMenuItemCreated(true);
+			this.menuItem = createMenuItem(menu);
 		} else {
 			deleteMenuItem();
 			this.setMenuItemCreated(false);
@@ -71,7 +71,7 @@ public abstract class AbstractTreeMenu<T extends Object> {
 	/**
 	 * Return if the menu item has to be enabled or not (by checking if the
 	 * associated AbstractTreeItem is enabled or not).
-	 * 
+	 *
 	 * @return if the menu item has to be enabled or not.
 	 */
 	public boolean isEnabled(final ExtendedTreeMenu<T> menuTree) {
@@ -82,7 +82,7 @@ public abstract class AbstractTreeMenu<T extends Object> {
 	/**
 	 * Return if the menu item has to be enabled or not (by checking if the
 	 * associated AbstractTreeItem is enabled or not).
-	 * 
+	 *
 	 * @return if the menu item has to be enabled or not.
 	 */
 	public abstract boolean isEnabled();
@@ -90,7 +90,7 @@ public abstract class AbstractTreeMenu<T extends Object> {
 	/**
 	 * Create the concrete item. Has to be overrided by the classes extending
 	 * this abstract class.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the item.
 	 * @return the item created.
@@ -119,7 +119,7 @@ public abstract class AbstractTreeMenu<T extends Object> {
 
 	/**
 	 * This method is called when the menu item is selected.
-	 * 
+	 *
 	 * @return can return an instance of T.
 	 */
 	public abstract T onMenuItemSelection();
@@ -146,10 +146,10 @@ public abstract class AbstractTreeMenu<T extends Object> {
 
 	/**
 	 * Set the properties to pass to the new items.
-	 * 
+	 *
 	 * @param extraProperties
 	 *            the properties to pass.
-	 * 
+	 *
 	 */
 	public void setExtraProperties(final Map<String, Object> extraProperties) {
 		this.properties = extraProperties;
@@ -186,18 +186,17 @@ public abstract class AbstractTreeMenu<T extends Object> {
 
 	/**
 	 * Return the {@link AbstractTreeItem} according to the {@link TreeItem}.
-	 * 
+	 *
 	 * @param treeItem
 	 *            the treeItem related.
-	 * @return the {@link AbstractTreeItem} related to the <code>treeItem</code>
-	 *         .
+	 * @return the {@link AbstractTreeItem} related to the <code>treeItem</code> .
 	 */
 	public abstract AbstractTreeItem<T> getTreeItemExtended(
 			final TreeItem treeItem);
 
 	/**
 	 * Remove the item in parameter of the tree.
-	 * 
+	 *
 	 * @param item
 	 *            the item to remove.
 	 */

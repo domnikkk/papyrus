@@ -23,12 +23,14 @@ import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreference
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class languagepreferencesPackageImpl extends EPackageImpl implements languagepreferencesPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass languageEClass = null;
@@ -36,6 +38,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass editorEClass = null;
@@ -43,20 +46,17 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass preferencesEClass = null;
 
 	/**
-	 * Creates an instance of the model <b>Package</b>, registered with
-	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
+	 * Creates an instance of the model <b>Package</b>, registered with {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
-	 * factory method {@link #init init()}, which also performs
-	 * initialization of the package, or returns the registered package,
-	 * if one already exists.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <p>
+	 * Note: the correct way to create the package is via the static factory method {@link #init init()}, which also performs initialization of the package, or returns the registered package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.uml.properties.languagepreferences.languagepreferencesPackage#eNS_URI
 	 * @see #init()
@@ -69,27 +69,31 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
+	 *
+	 * <p>
+	 * This method is used to initialize {@link languagepreferencesPackage#eINSTANCE} when that field is accessed. Clients should not invoke it directly. Instead, they should simply access that field to obtain the package. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * 
-	 * <p>This method is used to initialize {@link languagepreferencesPackage#eINSTANCE} when that field is accessed.
-	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static languagepreferencesPackage init() {
-		if (isInited) return (languagepreferencesPackage)EPackage.Registry.INSTANCE.getEPackage(languagepreferencesPackage.eNS_URI);
+		if (isInited) {
+			return (languagepreferencesPackage) EPackage.Registry.INSTANCE.getEPackage(languagepreferencesPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		languagepreferencesPackageImpl thelanguagepreferencesPackage = (languagepreferencesPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof languagepreferencesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new languagepreferencesPackageImpl());
+		languagepreferencesPackageImpl thelanguagepreferencesPackage = (languagepreferencesPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof languagepreferencesPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
+				: new languagepreferencesPackageImpl());
 
 		isInited = true;
 
@@ -102,7 +106,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 		// Mark meta-data to indicate it can't be changed
 		thelanguagepreferencesPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(languagepreferencesPackage.eNS_URI, thelanguagepreferencesPackage);
 		return thelanguagepreferencesPackage;
@@ -111,6 +115,7 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getLanguage() {
@@ -120,24 +125,27 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getLanguage_Name() {
-		return (EAttribute)languageEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) languageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getLanguage_PreferedEditor() {
-		return (EReference)languageEClass.getEStructuralFeatures().get(1);
+		return (EReference) languageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getEditor() {
@@ -147,15 +155,17 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEditor_Class() {
-		return (EAttribute)editorEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) editorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getPreferences() {
@@ -165,55 +175,63 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPreferences_Languages() {
-		return (EReference)preferencesEClass.getEStructuralFeatures().get(0);
+		return (EReference) preferencesEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPreferences_Editors() {
-		return (EReference)preferencesEClass.getEStructuralFeatures().get(1);
+		return (EReference) preferencesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getPreferences_DefaultEditor() {
-		return (EReference)preferencesEClass.getEStructuralFeatures().get(2);
+		return (EReference) preferencesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public languagepreferencesFactory getlanguagepreferencesFactory() {
-		return (languagepreferencesFactory)getEFactoryInstance();
+		return (languagepreferencesFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated) {
+			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -233,19 +251,23 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized) {
+			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -276,4 +298,4 @@ public class languagepreferencesPackageImpl extends EPackageImpl implements lang
 		createResource(eNS_URI);
 	}
 
-} //languagepreferencesPackageImpl
+} // languagepreferencesPackageImpl

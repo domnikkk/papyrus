@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,21 +27,21 @@ import org.eclipse.papyrus.infra.services.markerlistener.util.MarkerListenerUtil
  * This is the PapyrusMarkerAdapter type. Enjoy.
  */
 public class PapyrusMarkerAdapter
-implements IPapyrusMarker {
+		implements IPapyrusMarker {
 
 	private final Resource resource;
 
 	private final IMarker marker;
 
 	@SuppressWarnings("rawtypes")
-	private final Map attributes ;
+	private final Map attributes;
 
 	protected PapyrusMarkerAdapter(Resource resource, IMarker marker) {
 		super();
 
 		this.resource = resource;
 		this.marker = marker;
-		this.attributes = null ;
+		this.attributes = null;
 	}
 
 	protected PapyrusMarkerAdapter(Resource resource, IMarker marker, @SuppressWarnings("rawtypes") Map attributes) {
@@ -49,7 +49,7 @@ implements IPapyrusMarker {
 
 		this.resource = resource;
 		this.marker = marker;
-		this.attributes = attributes ;
+		this.attributes = attributes;
 	}
 
 	public static final PapyrusMarkerAdapter wrap(Resource resource,
@@ -88,9 +88,9 @@ implements IPapyrusMarker {
 	public EObject getEObject() {
 		EObject result = null;
 
-		String uriAttribute = null ;
+		String uriAttribute = null;
 		if (this.attributes != null) { // attributes is not null when the PapyrusMarkerAdapter has been wrapped from WorkspaceMarkerMonitor.handleMarkerDeleted
-			uriAttribute = (String)attributes.get(EValidator.URI_ATTRIBUTE) ;
+			uriAttribute = (String) attributes.get(EValidator.URI_ATTRIBUTE);
 		}
 		else {
 			uriAttribute = marker.getAttribute(EValidator.URI_ATTRIBUTE,
@@ -197,8 +197,8 @@ implements IPapyrusMarker {
 		return String.format("WorkspaceMarker:%s:%s", marker.getResource(),
 				marker.getId());
 	}
-	
+
 	public boolean isSubtypeOf(String type) throws CoreException {
-		return marker.isSubtypeOf(type) ;
+		return marker.isSubtypeOf(type);
 	}
 }

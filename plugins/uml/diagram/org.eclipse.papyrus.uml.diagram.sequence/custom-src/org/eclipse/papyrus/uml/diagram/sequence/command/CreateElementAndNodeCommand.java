@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,9 +38,9 @@ import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * Command to create an element and its associated view.
- * 
+ *
  * @author Mathieu Velten
- * 
+ *
  */
 public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 
@@ -65,17 +65,17 @@ public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 	private List affectedFiles;
 
 	/**
-	 * 
+	 *
 	 * @param editingDomain
-	 *        editingDomain the editing domain.
+	 *            editingDomain the editing domain.
 	 * @param nodeEditPart
-	 *        the editpart of the graphical parent of the node to create.
+	 *            the editpart of the graphical parent of the node to create.
 	 * @param parent
-	 *        the parent of the element to create.
+	 *            the parent of the element to create.
 	 * @param elementType
-	 *        the GMF type of the element which will be created.
+	 *            the GMF type of the element which will be created.
 	 * @param location
-	 *        the location where to create the element figure.
+	 *            the location where to create the element figure.
 	 */
 	public CreateElementAndNodeCommand(TransactionalEditingDomain editingDomain, ShapeNodeEditPart nodeEditPart, EObject parent, IHintedType elementType, Point location) {
 		super(editingDomain, "Create element and node command", null);
@@ -88,8 +88,8 @@ public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 
 	@Override
 	public List getAffectedFiles() {
-		if(affectedFiles == null) {
-			if(getCreatedView() != null) {
+		if (affectedFiles == null) {
+			if (getCreatedView() != null) {
 				affectedFiles = getWorkspaceFiles(getCreatedView());
 			} else {
 				affectedFiles = super.getAffectedFiles();
@@ -100,7 +100,7 @@ public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * put a parameter which will be add to the parameters of the element creation request.
-	 * 
+	 *
 	 * @param key
 	 * @param value
 	 */
@@ -110,41 +110,41 @@ public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * retrieve the view associated with the created execution specification
-	 * 
+	 *
 	 * @return the view or null if not created/founded
 	 */
 	public View getCreatedView() {
-		if(createViewRequest != null) {
-			List l = (List)createViewRequest.getNewObject();
-			if(!l.isEmpty() && l.get(0) instanceof ViewDescriptor) {
-				return (View)((ViewDescriptor)l.get(0)).getAdapter(View.class);
+		if (createViewRequest != null) {
+			List l = (List) createViewRequest.getNewObject();
+			if (!l.isEmpty() && l.get(0) instanceof ViewDescriptor) {
+				return (View) ((ViewDescriptor) l.get(0)).getAdapter(View.class);
 			}
 		}
 		return null;
 	}
 
 	public void undo() {
-		if(nodeCreationCommand != null && nodeCreationCommand.canUndo()) {
+		if (nodeCreationCommand != null && nodeCreationCommand.canUndo()) {
 			nodeCreationCommand.undo();
 		}
-		if(elementCreationCommand != null && elementCreationCommand.canUndo()) {
+		if (elementCreationCommand != null && elementCreationCommand.canUndo()) {
 			elementCreationCommand.undo();
 		}
 	}
 
 	/**
 	 * Create the element in the model.
-	 * 
+	 *
 	 * @return the element.
 	 */
 	protected EObject createModelElement() {
 		CreateElementRequest req = new CreateElementRequest(editingDomain, parent, elementType);
 		req.addParameters(createElementRequestParameters);
 		elementCreationCommand = nodeEditPart.getCommand(new EditCommandRequestWrapper(req));
-		if(elementCreationCommand != null) {
+		if (elementCreationCommand != null) {
 			elementCreationCommand.execute();
 			EObject result = req.getNewElement();
-			if(result instanceof EObject) {
+			if (result instanceof EObject) {
 				return result;
 			}
 		}
@@ -156,14 +156,14 @@ public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 	 * The element needs to be created first using createModelElement.
 	 */
 	protected void createElementView() {
-		if(nodeEditPart != null) {
+		if (nodeEditPart != null) {
 			// check if execution specification is already drawn
-			if(getCreatedView() == null) {
+			if (getCreatedView() == null) {
 				ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(new EObjectAdapter(element), Node.class, elementType.getSemanticHint(), nodeEditPart.getDiagramPreferencesHint());
 				createViewRequest = new CreateViewRequest(descriptor);
 				createViewRequest.setLocation(location);
 				nodeCreationCommand = nodeEditPart.getCommand(createViewRequest);
-				if(nodeCreationCommand != null && nodeCreationCommand.canExecute()) {
+				if (nodeCreationCommand != null && nodeCreationCommand.canExecute()) {
 					nodeCreationCommand.execute();
 				}
 			}
@@ -174,7 +174,7 @@ public class CreateElementAndNodeCommand extends AbstractTransactionalCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		element = createModelElement();
 		// create the view for the execution specification
-		if(element != null) {
+		if (element != null) {
 			createElementView();
 		}
 		return CommandResult.newOKCommandResult();

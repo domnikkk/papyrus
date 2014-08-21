@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -62,7 +62,7 @@ public class Activator extends AbstractUIPlugin {
 	@Override
 	public IPreferenceStore getPreferenceStore() {
 		// Create the preference store lazily.
-		if(papyrusPreferenceStore == null) {
+		if (papyrusPreferenceStore == null) {
 			papyrusPreferenceStore = new PapyrusPreferenceStore(new InstanceScope(), getBundle().getSymbolicName());
 
 		}
@@ -83,7 +83,7 @@ public class Activator extends AbstractUIPlugin {
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -95,7 +95,7 @@ public class Activator extends AbstractUIPlugin {
 		ImageRegistry registry = getDefault().getImageRegistry();
 		Image image = registry.get(key);
 
-		if(image == null) {
+		if (image == null) {
 
 			ImageDescriptor desc = AbstractUIPlugin.imageDescriptorFromPlugin(pluginId, iconPath);
 

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,10 +20,10 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
 /**
  * A Preference page to let the user choose which editors are associated to
  * which languages, when editing UML expressions with the {@link ExpressionLanguageEditor}
- * 
+ *
  * @author Camille Letavernier
  */
-//TODO : this class need to be implemented
+// TODO : this class need to be implemented
 public class LanguagePreferences extends PreferencePage implements IWorkbenchPreferencePage {
 
 	@Override
@@ -32,7 +32,7 @@ public class LanguagePreferences extends PreferencePage implements IWorkbenchPre
 	}
 
 	public void init(IWorkbench workbench) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
@@ -43,12 +43,12 @@ public class LanguagePreferences extends PreferencePage implements IWorkbenchPre
 
 	@Override
 	public void performApply() {
-		//TODO
+		// TODO
 	}
 
 	@Override
 	public void performDefaults() {
-		//TODO
+		// TODO
 	}
 
 }

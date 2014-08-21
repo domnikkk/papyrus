@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -137,7 +137,7 @@ public final class JdtUtils {
 		contents.append("public class " + name + " implements IJavaQuery2<" + shortScopeType + ", " + shortReturnType + "> {\n"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		contents.append("	public " + shortReturnType + " evaluate(final " + shortScopeType + " context, \n"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		contents.append("			final IParameterValueList2 parameterValues,\n"); //$NON-NLS-1$
-		contents.append("			final IFacetManager facetManager)\n"); //$NON-NLS-1$ 
+		contents.append("			final IFacetManager facetManager)\n"); //$NON-NLS-1$
 		contents.append("			throws DerivedTypedElementException {\n"); //$NON-NLS-1$
 		contents.append("		// TODO Auto-generated method stub\n"); //$NON-NLS-1$
 		contents.append("		return null;\n"); //$NON-NLS-1$
@@ -168,14 +168,12 @@ public final class JdtUtils {
 			missingBundles.add("org.eclipse.papyrus.emf.facet.query.java.core"); //$NON-NLS-1$
 
 			PluginUtils.configureAsPluginProject(project);
-			final IFile manifestResource = (IFile) project.findMember(new Path(
-					"/META-INF/MANIFEST.MF")); //$NON-NLS-1$
+			final IFile manifestResource = (IFile) project.findMember(new Path("/META-INF/MANIFEST.MF")); //$NON-NLS-1$
 			manifestResource.refreshLocal(IResource.DEPTH_ONE,
 					new NullProgressMonitor());
 			final InputStream contents = manifestResource.getContents();
 			final Manifest manifest = new Manifest(contents);
-			final String requires = manifest.getMainAttributes().getValue(
-					"Require-Bundle"); //$NON-NLS-1$
+			final String requires = manifest.getMainAttributes().getValue("Require-Bundle"); //$NON-NLS-1$
 			if (requires != null) {
 				final ManifestElement[] manifestElements = ManifestElement
 						.parseHeader("Require-Bundle", requires); //$NON-NLS-1$
@@ -197,8 +195,7 @@ public final class JdtUtils {
 				newRequires.append(missingBundle);
 			}
 
-			manifest.getMainAttributes().putValue(
-					"Require-Bundle", newRequires.toString()); //$NON-NLS-1$
+			manifest.getMainAttributes().putValue("Require-Bundle", newRequires.toString()); //$NON-NLS-1$
 
 			final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 			manifest.write(outputStream);

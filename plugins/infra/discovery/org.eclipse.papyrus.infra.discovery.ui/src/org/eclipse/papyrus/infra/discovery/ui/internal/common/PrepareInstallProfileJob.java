@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Tasktop Technologies - initial API and implementation
  *     Obeo - adaptation for Amalgamation, EMF based and no Mylyn dependency
@@ -60,7 +60,7 @@ import org.eclipse.swt.widgets.Display;
  * repository metadata and selects the appropriate features to install. After
  * running the job the {@link #getInstallAction() install action} must be run to
  * perform the installation.
- * 
+ *
  * @author David Green
  * @author Steffen Pingel
  */
@@ -373,8 +373,9 @@ public class PrepareInstallProfileJob implements IRunnableWithProgress {
 		Iterator<String> it = descriptor.getSitesURLS().iterator();
 		while (it.hasNext() && !found) {
 			String url = it.next();
-			if (location.toString().equals(url))
+			if (location.toString().equals(url)) {
 				found = true;
+			}
 		}
 		return found;
 	}

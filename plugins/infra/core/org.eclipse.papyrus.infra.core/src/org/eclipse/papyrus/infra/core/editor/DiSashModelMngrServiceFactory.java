@@ -16,9 +16,9 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 
 /**
  * Service Factory to create the {@link DiSashModelMngr} service.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class DiSashModelMngrServiceFactory implements IServiceFactory {
 
@@ -32,7 +32,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#init(org.eclipse.papyrus.infra.core.services.ServicesRegistry)
-	 * 
+	 *
 	 * @param servicesRegistry
 	 * @throws ServiceException
 	 */
@@ -50,7 +50,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#startService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 		PluggableEditorFactoryReader editorReader = new PluggableEditorFactoryReader(Activator.PLUGIN_ID);
 		editorReader.populate(pageModelRegistry, servicesRegistry);
 
-		if(sashModel.getResource() == null) {
+		if (sashModel.getResource() == null) {
 			throw new ServiceException("Can't start " + this.getClass().getSimpleName() + "'. Required model (SashModel) should be loaded prior starting the service."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 
@@ -72,7 +72,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IService#disposeService()
-	 * 
+	 *
 	 * @throws ServiceException
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.services.IServiceFactory#createServiceInstance()
-	 * 
+	 *
 	 * @return
 	 * @throws ServiceException
 	 */
@@ -91,7 +91,7 @@ public class DiSashModelMngrServiceFactory implements IServiceFactory {
 		// Start locally the service if needed.
 		// Question: Can createServiceInstance() method be called before
 		// startService() is called ?
-		if(sashModelMngr == null) {
+		if (sashModelMngr == null) {
 			startService();
 		}
 

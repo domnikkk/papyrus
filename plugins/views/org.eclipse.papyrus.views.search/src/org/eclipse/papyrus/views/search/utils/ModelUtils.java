@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.core.resource.ModelsReader;
 public class ModelUtils {
 
 	public final static ModelSet openResource(URI resourceURI) throws ModelMultiException {
-		if(resourceURI != null) {
+		if (resourceURI != null) {
 			// TODO: Need to be able to create CDOAwareModelSet
 			ModelSet modelSet = new ModelSet();
 			ModelsReader reader = new ModelsReader();
@@ -33,5 +33,5 @@ public class ModelUtils {
 			return null;
 		}
 	}
-	
+
 }

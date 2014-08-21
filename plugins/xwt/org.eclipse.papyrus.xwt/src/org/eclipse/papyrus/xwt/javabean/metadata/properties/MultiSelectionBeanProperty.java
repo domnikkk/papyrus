@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.xwt.metadata.ILoadingType;
 /**
  * Handle manually the type conversion. Maybe it can be done using the
  * IConverter. Only the type of IProperty should be IObservableCollection
- * 
+ *
  * @author yyang
- * 
+ *
  */
 public class MultiSelectionBeanProperty extends AbstractProperty {
 
@@ -39,25 +39,25 @@ public class MultiSelectionBeanProperty extends AbstractProperty {
 	}
 
 	public Object getValue(Object source) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		ISelection selection = ((ISelectionProvider)source).getSelection();
-		if(selection instanceof IStructuredSelection) {
-			return ((IStructuredSelection)selection).toList();
+		ISelection selection = ((ISelectionProvider) source).getSelection();
+		if (selection instanceof IStructuredSelection) {
+			return ((IStructuredSelection) selection).toList();
 		}
 		return Collections.EMPTY_LIST;
 	}
 
 	public void setValue(Object source, Object value) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, SecurityException, NoSuchFieldException {
-		if(value instanceof List<?>) {
-			List<?> list = (List<?>)value;
-			((ISelectionProvider)source).setSelection(new StructuredSelection(list));
-		} else if(value instanceof Set<?>) {
-			Set<?> set = (Set<?>)value;
-			((ISelectionProvider)source).setSelection(new StructuredSelection(set.toArray()));
+		if (value instanceof List<?>) {
+			List<?> list = (List<?>) value;
+			((ISelectionProvider) source).setSelection(new StructuredSelection(list));
+		} else if (value instanceof Set<?>) {
+			Set<?> set = (Set<?>) value;
+			((ISelectionProvider) source).setSelection(new StructuredSelection(set.toArray()));
 			return;
-		} else if(value.getClass().isArray()) {
-			((ISelectionProvider)source).setSelection(new StructuredSelection((Object[])value));
+		} else if (value.getClass().isArray()) {
+			((ISelectionProvider) source).setSelection(new StructuredSelection((Object[]) value));
 			return;
 		}
-		((ISelectionProvider)source).setSelection(StructuredSelection.EMPTY);
+		((ISelectionProvider) source).setSelection(StructuredSelection.EMPTY);
 	}
 }

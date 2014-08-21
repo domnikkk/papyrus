@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -37,22 +37,22 @@ import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.UMLPackage;
 
 /**
- * 
+ *
  * This advice is used to remove the view of the parts which become inconsistent when we change the type of the property
- * 
+ *
  */
 public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Returns the command to destroy the views of the parts which are not owned by the new type
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeSetCommand(org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest)
-	 * 
+	 *
 	 * @param request
-	 *        the request to modify the model
+	 *            the request to modify the model
 	 * @return
 	 *         the command to destroy the views of the parts which are not owned by the new type
-	 * 
+	 *
 	 */
 	@Override
 	protected ICommand getBeforeSetCommand(SetRequest request) {
@@ -61,17 +61,17 @@ public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 
 		EObject elementToEdit = request.getElementToEdit();
 		Set<View> viewsToDelete = new HashSet<View>();
-		if((elementToEdit instanceof Property) && (request.getFeature() == UMLPackage.eINSTANCE.getTypedElement_Type()) && ((request.getValue() == null) || (request.getValue() instanceof Type))) {
+		if ((elementToEdit instanceof Property) && (request.getFeature() == UMLPackage.eINSTANCE.getTypedElement_Type()) && ((request.getValue() == null) || (request.getValue() instanceof Type))) {
 
-			Property propertyToEdit = (Property)elementToEdit;
+			Property propertyToEdit = (Property) elementToEdit;
 
 			oldType = propertyToEdit.getType();
-			newType = (Type)request.getValue();
+			newType = (Type) request.getValue();
 
-			if((oldType != null) && (oldType instanceof Classifier) && ((request.getValue() == null) || (newType instanceof Classifier))) {
+			if ((oldType != null) && (oldType instanceof Classifier) && ((request.getValue() == null) || (newType instanceof Classifier))) {
 
-				EList<NamedElement> newTypeMembers = (newType != null) ? ((Classifier)newType).getMembers() : new BasicEList<NamedElement>();
-				EList<NamedElement> oldTypeMembers = ((Classifier)oldType).getMembers();
+				EList<NamedElement> newTypeMembers = (newType != null) ? ((Classifier) newType).getMembers() : new BasicEList<NamedElement>();
+				EList<NamedElement> oldTypeMembers = ((Classifier) oldType).getMembers();
 
 				// Remove members of the new type from the list.
 				// oldTypeMembers now contains the list of members for which views will become
@@ -80,22 +80,22 @@ public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 				possiblyInconsistentMembers.addAll(oldTypeMembers);
 				possiblyInconsistentMembers.removeAll(newTypeMembers);
 
-				if(!possiblyInconsistentMembers.isEmpty()) {
+				if (!possiblyInconsistentMembers.isEmpty()) {
 
 					Set<View> propertyToEditViews = null;
 
 					// Parse the list of possibly inconsistent members
-					for(NamedElement possiblyInconsistentMember : possiblyInconsistentMembers) {
+					for (NamedElement possiblyInconsistentMember : possiblyInconsistentMembers) {
 
 						// Retrieve views of the current possiblyInconsistentMember
 						Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(possiblyInconsistentMember, ElementTypes.DIAGRAM_ID).iterator();
-						while(viewIt.hasNext()) {
-							if(propertyToEditViews == null) {
+						while (viewIt.hasNext()) {
+							if (propertyToEditViews == null) {
 								propertyToEditViews = CrossReferencerUtil.getCrossReferencingViews(propertyToEdit, ElementTypes.DIAGRAM_ID);
 							}
 
 							View possiblyInconsistentMemberView = viewIt.next();
-							if(isConcerned(possiblyInconsistentMemberView, propertyToEditViews)) {
+							if (isConcerned(possiblyInconsistentMemberView, propertyToEditViews)) {
 								viewsToDelete.add(possiblyInconsistentMemberView);
 							}
 						}
@@ -104,7 +104,7 @@ public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 			}
 		}
 
-		if((viewsToDelete != null) && !(viewsToDelete.isEmpty())) {
+		if ((viewsToDelete != null) && !(viewsToDelete.isEmpty())) {
 			DestroyDependentsRequest req = new DestroyDependentsRequest(request.getEditingDomain(), elementToEdit, false);
 			req.setClientContext(request.getClientContext());
 			req.addParameters(request.getParameters());
@@ -116,18 +116,18 @@ public class PropertyHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Tests if the view must be deleted
-	 * 
+	 *
 	 * @param view
-	 *        the view to test
+	 *            the view to test
 	 * @param list
-	 *        the list of the property view
+	 *            the list of the property view
 	 * @return
 	 *         <code>true</code> if the view need to be removed <code>false</code> if not
 	 */
 	protected boolean isConcerned(View view, Set<View> propertyViews) {
 
 		EObject parentView = view.eContainer();
-		if(parentView instanceof DecorationNode) {
+		if (parentView instanceof DecorationNode) {
 			parentView = parentView.eContainer();
 		}
 		return propertyViews.contains(parentView);

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ import org.eclipse.swt.events.SelectionListener;
  * <li>SelectionEditor</li>
  * <li>ExtendedSelectionEditor</li>
  * </ul>
- * 
+ *
  * @author Gabriel Pascual (ALL4TEC)
  *
  */
@@ -43,9 +43,9 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 * Instantiates a new selection editor wrapper.
 	 *
 	 * @param selectionEditor
-	 *        the selection editor
+	 *            the selection editor
 	 * @param editorClass
-	 *        the editor class
+	 *            the editor class
 	 */
 	public SelectionEditorWrapper(SelectionListener selectionEditor, Class<?> editorClass) {
 		wrappedSelectionEditor = selectionEditor;
@@ -56,10 +56,10 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 * Creates the.
 	 */
 	public void create() {
-		if(SelectionEditor.class.equals(wrappedEditorClass)) {
-			((SelectionEditor)wrappedSelectionEditor).create();
-		} else if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			((ExtendedSelectionEditor)wrappedSelectionEditor).create();
+		if (SelectionEditor.class.equals(wrappedEditorClass)) {
+			((SelectionEditor) wrappedSelectionEditor).create();
+		} else if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			((ExtendedSelectionEditor) wrappedSelectionEditor).create();
 		}
 
 	}
@@ -68,13 +68,13 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 * Sets the layout data.
 	 *
 	 * @param layoutData
-	 *        the new layout data
+	 *            the new layout data
 	 */
 	public void setLayoutData(Object layoutData) {
-		if(SelectionEditor.class.equals(wrappedEditorClass)) {
-			((SelectionEditor)wrappedSelectionEditor).setLayoutData(layoutData);
-		} else if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			((ExtendedSelectionEditor)wrappedSelectionEditor).setLayoutData(layoutData);
+		if (SelectionEditor.class.equals(wrappedEditorClass)) {
+			((SelectionEditor) wrappedSelectionEditor).setLayoutData(layoutData);
+		} else if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			((ExtendedSelectionEditor) wrappedSelectionEditor).setLayoutData(layoutData);
 		}
 
 	}
@@ -87,10 +87,10 @@ public class SelectionEditorWrapper implements SelectionListener {
 	public Collection<?> getSelectedElements() {
 
 		Collection<?> selectedElements = null;
-		if(SelectionEditor.class.equals(wrappedEditorClass)) {
-			selectedElements = ((SelectionEditor)wrappedSelectionEditor).getSelectedElements();
-		} else if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			selectedElements = ((ExtendedSelectionEditor)wrappedSelectionEditor).getSelectedElements();
+		if (SelectionEditor.class.equals(wrappedEditorClass)) {
+			selectedElements = ((SelectionEditor) wrappedSelectionEditor).getSelectedElements();
+		} else if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			selectedElements = ((ExtendedSelectionEditor) wrappedSelectionEditor).getSelectedElements();
 		}
 
 		return selectedElements;
@@ -103,10 +103,10 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 */
 	public List<Object> getElementToRemove() {
 		List<Object> elementsToRemove = null;
-		if(SelectionEditor.class.equals(wrappedEditorClass)) {
-			elementsToRemove = ((SelectionEditor)wrappedSelectionEditor).getElementToRemove();
-		} else if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			elementsToRemove = ((ExtendedSelectionEditor)wrappedSelectionEditor).getElementToRemove();
+		if (SelectionEditor.class.equals(wrappedEditorClass)) {
+			elementsToRemove = ((SelectionEditor) wrappedSelectionEditor).getElementToRemove();
+		} else if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			elementsToRemove = ((ExtendedSelectionEditor) wrappedSelectionEditor).getElementToRemove();
 		} else {
 			elementsToRemove = new ArrayList<Object>();
 		}
@@ -121,10 +121,10 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 */
 	public List<Object> getElementToAdd() {
 		List<Object> elementsToAdd = null;
-		if(SelectionEditor.class.equals(wrappedEditorClass)) {
-			elementsToAdd = ((SelectionEditor)wrappedSelectionEditor).getElementToAdd();
-		} else if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			elementsToAdd = ((ExtendedSelectionEditor)wrappedSelectionEditor).getElementToAdd();
+		if (SelectionEditor.class.equals(wrappedEditorClass)) {
+			elementsToAdd = ((SelectionEditor) wrappedSelectionEditor).getElementToAdd();
+		} else if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			elementsToAdd = ((ExtendedSelectionEditor) wrappedSelectionEditor).getElementToAdd();
 		} else {
 			elementsToAdd = new ArrayList<Object>();
 		}
@@ -138,8 +138,8 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 * @return the selection
 	 */
 	public ISelection getSelection() {
-		if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			return ((ExtendedSelectionEditor)wrappedSelectionEditor).getSelectedElementsViewer().getSelection();
+		if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			return ((ExtendedSelectionEditor) wrappedSelectionEditor).getSelectedElementsViewer().getSelection();
 		}
 		return null;
 	}
@@ -148,8 +148,8 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 * Refresh.
 	 */
 	public void refresh() {
-		if(ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
-			((ExtendedSelectionEditor)wrappedSelectionEditor).getSelectedElementsViewer().refresh();
+		if (ExtendedSelectionEditor.class.equals(wrappedEditorClass)) {
+			((ExtendedSelectionEditor) wrappedSelectionEditor).getSelectedElementsViewer().refresh();
 		}
 
 	}
@@ -169,7 +169,7 @@ public class SelectionEditorWrapper implements SelectionListener {
 	 * Widget default selected.
 	 *
 	 * @param e
-	 *        the e
+	 *            the e
 	 * @see org.eclipse.swt.events.SelectionListener#widgetDefaultSelected(org.eclipse.swt.events.SelectionEvent)
 	 */
 	@Override

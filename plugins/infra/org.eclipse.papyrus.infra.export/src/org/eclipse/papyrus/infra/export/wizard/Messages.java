@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Anass RADOUANI (AtoS) 
+ *    Anass RADOUANI (AtoS)
  *******************************************************************************/
 
 package org.eclipse.papyrus.infra.export.wizard;

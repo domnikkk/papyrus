@@ -88,13 +88,13 @@ public class TooltipUtil {
 	}
 
 	public static void manageTooltipEditPolicy(EditPart editPart) {
-		if(editPart == null || !(editPart instanceof GraphicalEditPart)) {
+		if (editPart == null || !(editPart instanceof GraphicalEditPart)) {
 			return;
 		}
-		IFigure figure = ((GraphicalEditPart)editPart).getFigure();
+		IFigure figure = ((GraphicalEditPart) editPart).getFigure();
 		EClass semanticElementType = getSemanticElementType(editPart);
-		if(supportTooltips(semanticElementType)) {
-			editPart.installEditPolicy(TOOLTIP_ROLE, new TooltipEditPolicy(new EditPartTooltipUpdater((GraphicalEditPart)editPart)));
+		if (supportTooltips(semanticElementType)) {
+			editPart.installEditPolicy(TOOLTIP_ROLE, new TooltipEditPolicy(new EditPartTooltipUpdater((GraphicalEditPart) editPart)));
 		} else {
 			editPart.removeEditPolicy(TOOLTIP_ROLE);
 			figure.setToolTip(null);
@@ -102,14 +102,14 @@ public class TooltipUtil {
 	}
 
 	private static boolean supportTooltips(EClass semanticType) {
-		if(semanticType == null) {
+		if (semanticType == null) {
 			return false;
 		}
-		if(ELEMENT_SUPPORT_TOOLTIPS.contains(semanticType)) {
+		if (ELEMENT_SUPPORT_TOOLTIPS.contains(semanticType)) {
 			return true;
 		}
-		for(EClass type : ELEMENT_SUPPORT_TOOLTIPS) {
-			if(type.isSuperTypeOf(semanticType)) {
+		for (EClass type : ELEMENT_SUPPORT_TOOLTIPS) {
+			if (type.isSuperTypeOf(semanticType)) {
 				return true;
 			}
 		}
@@ -122,29 +122,29 @@ public class TooltipUtil {
 	}
 
 	private static EObject getSemanticElement(EditPart editPart) {
-		if(editPart == null) {
+		if (editPart == null) {
 			return null;
 		}
 		Object model = editPart.getModel();
-		if(model instanceof View) {
-			return ViewUtil.resolveSemanticElement((View)model);
+		if (model instanceof View) {
+			return ViewUtil.resolveSemanticElement((View) model);
 		}
 		return null;
 	}
 
 	public static View getTopNodeView(Object model, EObject semanticElement) {
-		if(model == null || !(model instanceof View)) {
+		if (model == null || !(model instanceof View)) {
 			return null;
 		}
-		View view = (View)model;
+		View view = (View) model;
 		EObject elt = ViewUtil.resolveSemanticElement(view);
-		if(elt == null || elt != semanticElement) {
+		if (elt == null || elt != semanticElement) {
 			return null;
 		}
 		View containerView = ViewUtil.getContainerView(view);
-		if(containerView != null) {
+		if (containerView != null) {
 			EObject containerElement = ViewUtil.resolveSemanticElement(containerView);
-			if(containerElement == null || containerElement != semanticElement) {
+			if (containerElement == null || containerElement != semanticElement) {
 				return view;
 			}
 		}
@@ -180,12 +180,12 @@ public class TooltipUtil {
 					tooltipFigure.update();
 				}
 			});
-			if(getHost() instanceof LifelineEditPart) {
-				((LifelineEditPart)getHost()).getPrimaryView().eAdapters().add(modelListener = new AdapterImpl() {
+			if (getHost() instanceof LifelineEditPart) {
+				((LifelineEditPart) getHost()).getPrimaryView().eAdapters().add(modelListener = new AdapterImpl() {
 
 					@Override
 					public void notifyChanged(Notification msg) {
-						if(msg.isTouch()) {
+						if (msg.isTouch()) {
 							return;
 						}
 						tooltipFigure.update();
@@ -198,8 +198,8 @@ public class TooltipUtil {
 		public void deactivate() {
 			super.deactivate();
 			getHostFigure().removeMouseMotionListener(updateListener);
-			if(getHost() instanceof LifelineEditPart) {
-				((LifelineEditPart)getHost()).getPrimaryView().eAdapters().remove(modelListener);
+			if (getHost() instanceof LifelineEditPart) {
+				((LifelineEditPart) getHost()).getPrimaryView().eAdapters().remove(modelListener);
 			}
 		}
 	}
@@ -229,7 +229,7 @@ public class TooltipUtil {
 			namePage.add(nameFigure = new TextFlow());
 			add(namePage);
 			namePage.setFont(JFaceResources.getBannerFont());
-			//description
+			// description
 			FlowPage descPage = new FlowPage();
 			descPage.setOpaque(true);
 			descPage.add(descriptionFigure = new TextFlow());
@@ -247,8 +247,8 @@ public class TooltipUtil {
 		@Override
 		public Dimension getPreferredSize(int wHint, int hHint) {
 			Dimension d = super.getPreferredSize(-1, -1);
-			//			if(d.width > 150)
-			//				d = super.getPreferredSize(150, -1);
+			// if(d.width > 150)
+			// d = super.getPreferredSize(150, -1);
 			return d;
 		}
 
@@ -277,7 +277,7 @@ public class TooltipUtil {
 		}
 
 		public void update() {
-			if(updater == null) {
+			if (updater == null) {
 				return;
 			}
 			setName(updater.getTooltipName());
@@ -312,21 +312,20 @@ public class TooltipUtil {
 		 */
 		@Override
 		public String getTooltipName() {
-			if(editPart instanceof CombinedFragment2EditPart) {
+			if (editPart instanceof CombinedFragment2EditPart) {
 				return "Co Region";
 			}
 			EObject semanticElement = getSemanticElement(editPart);
-			if(semanticElement instanceof Message) {
-				Message message = (Message)semanticElement;
+			if (semanticElement instanceof Message) {
+				Message message = (Message) semanticElement;
 				MessageSort messageSort = message.getMessageSort();
-				switch(messageSort) {
+				switch (messageSort) {
 				case ASYNCH_CALL_LITERAL:
 					return "Asynchronous Message";
-				case ASYNCH_SIGNAL_LITERAL:
-				{
-					if(message.getSendEvent() == null) {
+				case ASYNCH_SIGNAL_LITERAL: {
+					if (message.getSendEvent() == null) {
 						return "Found Message";
-					} else if(message.getReceiveEvent() == null) {
+					} else if (message.getReceiveEvent() == null) {
 						return "Lost Message";
 					}
 				}
@@ -339,10 +338,10 @@ public class TooltipUtil {
 				case SYNCH_CALL_LITERAL:
 					return "Synchronous Message";
 				}
-			} else if(semanticElement instanceof DestructionOccurrenceSpecification) {
+			} else if (semanticElement instanceof DestructionOccurrenceSpecification) {
 				return "Destruction Event";
 			}
-			if(semanticElement != null) {
+			if (semanticElement != null) {
 				return getDisplayName(semanticElement.eClass().getName());
 			}
 			return null;
@@ -351,8 +350,8 @@ public class TooltipUtil {
 		private String getDisplayName(String name) {
 			StringBuffer displayName = new StringBuffer();
 			char[] charArray = name.toCharArray();
-			for(int i = 0; i < charArray.length; i++) {
-				if(Character.isUpperCase(charArray[i])) {
+			for (int i = 0; i < charArray.length; i++) {
+				if (Character.isUpperCase(charArray[i])) {
 					displayName.append(" ");
 				}
 				displayName.append(charArray[i]);
@@ -367,97 +366,97 @@ public class TooltipUtil {
 		 */
 		@Override
 		public String getTooltipDescription() {
-			//CoRegion
-			//			if(editPart instanceof CombinedFragment2EditPart) {
-			//				return null;
-			//			}
+			// CoRegion
+			// if(editPart instanceof CombinedFragment2EditPart) {
+			// return null;
+			// }
 			EObject semanticElement = getSemanticElement(editPart);
-			if(semanticElement instanceof StateInvariant || semanticElement instanceof DestructionOccurrenceSpecification || semanticElement instanceof GeneralOrdering) {
+			if (semanticElement instanceof StateInvariant || semanticElement instanceof DestructionOccurrenceSpecification || semanticElement instanceof GeneralOrdering) {
 				return null;
 			}
 			StringBuffer descBuf = new StringBuffer();
-			//			if(semanticElement instanceof Lifeline) {
-			//				descBuf.append("label: ");
-			//			} else {
+			// if(semanticElement instanceof Lifeline) {
+			// descBuf.append("label: ");
+			// } else {
 			descBuf.append("name: ");
-			//			}
+			// }
 			UMLNavigatorLabelProvider labelProvider = new UMLNavigatorLabelProvider();
 			Object model = editPart.getModel();
 			String label = null;
 			View topNodeView = getTopNodeView(model, semanticElement);
-			if(topNodeView != null) {
+			if (topNodeView != null) {
 				label = labelProvider.getText(topNodeView);
-				if(label.startsWith("<UnknownElement")) {
+				if (label.startsWith("<UnknownElement")) {
 					label = null;
 				}
 			}
-			//Try to use the real name of InteractionUse.
-			if(semanticElement instanceof InteractionUse) {
-				label = ((InteractionUse)semanticElement).getLabel();
-			} else if(semanticElement instanceof Lifeline) {
-				label = ((Lifeline)semanticElement).getLabel();
+			// Try to use the real name of InteractionUse.
+			if (semanticElement instanceof InteractionUse) {
+				label = ((InteractionUse) semanticElement).getLabel();
+			} else if (semanticElement instanceof Lifeline) {
+				label = ((Lifeline) semanticElement).getLabel();
 			}
-			if((label == null) && semanticElement instanceof NamedElement) {
-				label = ((NamedElement)semanticElement).getLabel();
+			if ((label == null) && semanticElement instanceof NamedElement) {
+				label = ((NamedElement) semanticElement).getLabel();
 			}
 			descBuf.append(label);
 			descBuf.append("\n");
-			if(semanticElement instanceof CombinedFragment && !(editPart instanceof CombinedFragment2EditPart)) {
+			if (semanticElement instanceof CombinedFragment && !(editPart instanceof CombinedFragment2EditPart)) {
 				descBuf.append("operator: ");
-				InteractionOperatorKind operator = ((CombinedFragment)semanticElement).getInteractionOperator();
-				if(operator != null) {
+				InteractionOperatorKind operator = ((CombinedFragment) semanticElement).getInteractionOperator();
+				if (operator != null) {
 					descBuf.append(operator.getName());
 				}
 				descBuf.append("\n");
-			} else if(semanticElement instanceof InteractionOperand) {
+			} else if (semanticElement instanceof InteractionOperand) {
 				descBuf.append("parent:name: ");
-				InteractionOperand interactionOperand = (InteractionOperand)semanticElement;
+				InteractionOperand interactionOperand = (InteractionOperand) semanticElement;
 				Element owner = interactionOperand.getOwner();
-				while(owner != null && !(owner instanceof CombinedFragment)) {
+				while (owner != null && !(owner instanceof CombinedFragment)) {
 					owner = owner.getOwner();
 				}
-				CombinedFragment parent = (CombinedFragment)owner;
-				if(parent != null) {
+				CombinedFragment parent = (CombinedFragment) owner;
+				if (parent != null) {
 					descBuf.append(parent.getLabel());
 				}
 				descBuf.append("\n");
 				descBuf.append("parent:operator: ");
-				if(parent != null) {
+				if (parent != null) {
 					InteractionOperatorKind operator = parent.getInteractionOperator();
-					if(operator != null) {
+					if (operator != null) {
 						descBuf.append(operator.getName());
 					}
 				}
 				descBuf.append("\n");
-			} else if(semanticElement instanceof InteractionUse) {
-				Interaction refersTo = ((InteractionUse)semanticElement).getRefersTo();
-				if(refersTo != null) {
+			} else if (semanticElement instanceof InteractionUse) {
+				Interaction refersTo = ((InteractionUse) semanticElement).getRefersTo();
+				if (refersTo != null) {
 					descBuf.append("ref: ");
 					descBuf.append(refersTo.getLabel());
 					descBuf.append("\n");
 				}
 			}
-			if(semanticElement instanceof Lifeline) {
-				//Bug 417396
-				//FIXME: Refactored the displayValue as-is (int -> Collection<String>), although it is not used anymore to configure the tooltip. Remove?
+			if (semanticElement instanceof Lifeline) {
+				// Bug 417396
+				// FIXME: Refactored the displayValue as-is (int -> Collection<String>), although it is not used anymore to configure the tooltip. Remove?
 				Collection<String> displayValue = LifelineLabelHelper.DEFAULT_LABEL_DISPLAY;
 				IMaskManagedLabelEditPolicy policy = null;
-				if(editPart instanceof LifelineEditPart) {
-					policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-				} else if(editPart instanceof LifelineNameEditPart) {
-					policy = (IMaskManagedLabelEditPolicy)editPart.getParent().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+				if (editPart instanceof LifelineEditPart) {
+					policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+				} else if (editPart instanceof LifelineNameEditPart) {
+					policy = (IMaskManagedLabelEditPolicy) editPart.getParent().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
 				}
-				if(policy != null) {
+				if (policy != null) {
 					displayValue = policy.getCurrentDisplayValue();
 				}
-				Lifeline lifeline = (Lifeline)semanticElement;
+				Lifeline lifeline = (Lifeline) semanticElement;
 				ConnectableElement represents = lifeline.getRepresents();
-				if(represents != null) {
+				if (represents != null) {
 					descBuf.append("represent: ");
 					descBuf.append(represents.getLabel());
 					descBuf.append("\n");
 					Type type = represents.getType();
-					if(type != null) {
+					if (type != null) {
 						descBuf.append("represent type: ");
 						descBuf.append(type.getLabel());
 						descBuf.append("\n");

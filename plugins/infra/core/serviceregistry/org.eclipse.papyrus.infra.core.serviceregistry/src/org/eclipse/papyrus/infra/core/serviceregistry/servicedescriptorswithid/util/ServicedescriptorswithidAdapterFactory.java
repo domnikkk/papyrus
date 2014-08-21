@@ -16,6 +16,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.*
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServicedescriptorswithidPackage
  * @generated
  */
@@ -24,6 +25,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static ServicedescriptorswithidPackage modelPackage;
@@ -32,6 +34,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServicedescriptorswithidAdapterFactory() {
@@ -45,6 +48,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -54,7 +58,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -63,91 +67,110 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServicedescriptorswithidSwitch<Adapter> modelSwitch =
-		new ServicedescriptorswithidSwitch<Adapter>() {
-			@Override
-			public Adapter caseRegistryIdDesc(RegistryIdDesc object) {
-				return createRegistryIdDescAdapter();
-			}
-			@Override
-			public Adapter caseServiceIdDesc(ServiceIdDesc object) {
-				return createServiceIdDescAdapter();
-			}
-			@Override
-			public Adapter caseAbstractServiceIdDesc(AbstractServiceIdDesc object) {
-				return createAbstractServiceIdDescAdapter();
-			}
-			@Override
-			public Adapter caseServiceSetIdDesc(ServiceSetIdDesc object) {
-				return createServiceSetIdDescAdapter();
-			}
-			@Override
-			public Adapter caseFeatureInjection(FeatureInjection object) {
-				return createFeatureInjectionAdapter();
-			}
-			@Override
-			public Adapter caseAliasIdDesc(AliasIdDesc object) {
-				return createAliasIdDescAdapter();
-			}
-			@Override
-			public Adapter caseIdDescriptors(IdDescriptors object) {
-				return createIdDescriptorsAdapter();
-			}
-			@Override
-			public Adapter casePropertyInjection(PropertyInjection object) {
-				return createPropertyInjectionAdapter();
-			}
-			@Override
-			public Adapter caseInjectedValue(InjectedValue object) {
-				return createInjectedValueAdapter();
-			}
-			@Override
-			public Adapter caseMethodInjection(MethodInjection object) {
-				return createMethodInjectionAdapter();
-			}
-			@Override
-			public Adapter caseAbstractMethodInjection(AbstractMethodInjection object) {
-				return createAbstractMethodInjectionAdapter();
-			}
-			@Override
-			public Adapter caseParameterInjection(ParameterInjection object) {
-				return createParameterInjectionAdapter();
-			}
-			@Override
-			public Adapter caseInjectedService(InjectedService object) {
-				return createInjectedServiceAdapter();
-			}
-			@Override
-			public Adapter caseOpaqueInjectedValue(OpaqueInjectedValue object) {
-				return createOpaqueInjectedValueAdapter();
-			}
-			@Override
-			public Adapter caseConstructorInjection(ConstructorInjection object) {
-				return createConstructorInjectionAdapter();
-			}
-			@Override
-			public Adapter caseServiceFactoryIdDesc(ServiceFactoryIdDesc object) {
-				return createServiceFactoryIdDescAdapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+			new ServicedescriptorswithidSwitch<Adapter>() {
+				@Override
+				public Adapter caseRegistryIdDesc(RegistryIdDesc object) {
+					return createRegistryIdDescAdapter();
+				}
+
+				@Override
+				public Adapter caseServiceIdDesc(ServiceIdDesc object) {
+					return createServiceIdDescAdapter();
+				}
+
+				@Override
+				public Adapter caseAbstractServiceIdDesc(AbstractServiceIdDesc object) {
+					return createAbstractServiceIdDescAdapter();
+				}
+
+				@Override
+				public Adapter caseServiceSetIdDesc(ServiceSetIdDesc object) {
+					return createServiceSetIdDescAdapter();
+				}
+
+				@Override
+				public Adapter caseFeatureInjection(FeatureInjection object) {
+					return createFeatureInjectionAdapter();
+				}
+
+				@Override
+				public Adapter caseAliasIdDesc(AliasIdDesc object) {
+					return createAliasIdDescAdapter();
+				}
+
+				@Override
+				public Adapter caseIdDescriptors(IdDescriptors object) {
+					return createIdDescriptorsAdapter();
+				}
+
+				@Override
+				public Adapter casePropertyInjection(PropertyInjection object) {
+					return createPropertyInjectionAdapter();
+				}
+
+				@Override
+				public Adapter caseInjectedValue(InjectedValue object) {
+					return createInjectedValueAdapter();
+				}
+
+				@Override
+				public Adapter caseMethodInjection(MethodInjection object) {
+					return createMethodInjectionAdapter();
+				}
+
+				@Override
+				public Adapter caseAbstractMethodInjection(AbstractMethodInjection object) {
+					return createAbstractMethodInjectionAdapter();
+				}
+
+				@Override
+				public Adapter caseParameterInjection(ParameterInjection object) {
+					return createParameterInjectionAdapter();
+				}
+
+				@Override
+				public Adapter caseInjectedService(InjectedService object) {
+					return createInjectedServiceAdapter();
+				}
+
+				@Override
+				public Adapter caseOpaqueInjectedValue(OpaqueInjectedValue object) {
+					return createOpaqueInjectedValueAdapter();
+				}
+
+				@Override
+				public Adapter caseConstructorInjection(ConstructorInjection object) {
+					return createConstructorInjectionAdapter();
+				}
+
+				@Override
+				public Adapter caseServiceFactoryIdDesc(ServiceFactoryIdDesc object) {
+					return createServiceFactoryIdDescAdapter();
+				}
+
+				@Override
+				public Adapter defaultCase(EObject object) {
+					return createEObjectAdapter();
+				}
+			};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -157,6 +180,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc
 	 * @generated
@@ -171,6 +195,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc
 	 * @generated
@@ -185,6 +210,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractServiceIdDesc
 	 * @generated
@@ -199,6 +225,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc
 	 * @generated
@@ -213,6 +240,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.FeatureInjection
 	 * @generated
@@ -227,6 +255,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc
 	 * @generated
@@ -241,6 +270,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors
 	 * @generated
@@ -255,6 +285,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection
 	 * @generated
@@ -269,6 +300,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedValue
 	 * @generated
@@ -283,6 +315,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection
 	 * @generated
@@ -297,6 +330,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AbstractMethodInjection
 	 * @generated
@@ -311,6 +345,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection
 	 * @generated
@@ -325,6 +360,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService
 	 * @generated
@@ -339,6 +375,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue
 	 * @generated
@@ -353,6 +390,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection
 	 * @generated
@@ -367,6 +405,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceFactoryIdDesc
 	 * @generated
@@ -380,6 +419,7 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -387,4 +427,4 @@ public class ServicedescriptorswithidAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ServicedescriptorswithidAdapterFactory
+} // ServicedescriptorswithidAdapterFactory

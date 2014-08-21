@@ -21,8 +21,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EAttributeTreeElementImpl#getEAttribute <em>EAttribute
- * </em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy.impl.EAttributeTreeElementImpl#getEAttribute <em>EAttribute </em>}</li>
  * </ul>
  * </p>
  *
@@ -47,10 +46,10 @@ public class EAttributeTreeElementImpl extends EStructuralFeatureTreeElementImpl
 	public void setEAttribute(EAttribute newEAttribute) {
 		eAttribute = newEAttribute;
 	}
-	
+
 	@Override
 	protected EStructuralFeature getEStructuralFeature() {
 		return getEAttribute();
 	}
 
-} //EAttributeTreeElementImpl
+} // EAttributeTreeElementImpl

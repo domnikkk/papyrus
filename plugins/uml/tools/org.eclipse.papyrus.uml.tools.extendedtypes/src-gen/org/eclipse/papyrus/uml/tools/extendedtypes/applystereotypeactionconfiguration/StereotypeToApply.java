@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#isUpdateName <em>Update Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getRequiredProfiles <em>Required Profiles</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getFeaturesToSet <em>Features To Set</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#isUpdateName <em>Update Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getRequiredProfiles <em>Required Profiles</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getFeaturesToSet <em>Features To Set</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,10 +40,10 @@ public interface StereotypeToApply extends EObject {
 	 * Returns the value of the '<em><b>Stereotype Qualified Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Stereotype Qualified Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Stereotype Qualified Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Stereotype Qualified Name</em>' attribute.
 	 * @see #setStereotypeQualifiedName(String)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_StereotypeQualifiedName()
@@ -56,7 +56,9 @@ public interface StereotypeToApply extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#getStereotypeQualifiedName <em>Stereotype Qualified Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stereotype Qualified Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Stereotype Qualified Name</em>' attribute.
 	 * @see #getStereotypeQualifiedName()
 	 * @generated
 	 */
@@ -66,10 +68,10 @@ public interface StereotypeToApply extends EObject {
 	 * Returns the value of the '<em><b>Update Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Update Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Update Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Update Name</em>' attribute.
 	 * @see #setUpdateName(boolean)
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_UpdateName()
@@ -82,7 +84,9 @@ public interface StereotypeToApply extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.StereotypeToApply#isUpdateName <em>Update Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Update Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Update Name</em>' attribute.
 	 * @see #isUpdateName()
 	 * @generated
 	 */
@@ -93,10 +97,10 @@ public interface StereotypeToApply extends EObject {
 	 * The list contents are of type {@link java.lang.String}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Required Profiles</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Required Profiles</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Required Profiles</em>' attribute list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_RequiredProfiles()
 	 * @model required="true"
@@ -109,10 +113,10 @@ public interface StereotypeToApply extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.FeatureToSet}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Features To Set</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Features To Set</em>' containment reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Features To Set</em>' containment reference list.
 	 * @see org.eclipse.papyrus.uml.tools.extendedtypes.applystereotypeactionconfiguration.ApplyStereotypeActionConfigurationPackage#getStereotypeToApply_FeaturesToSet()
 	 * @model containment="true"

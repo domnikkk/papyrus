@@ -17,7 +17,7 @@ package org.eclipse.papyrus.emf.facet.util.emf.core.exception;
 public final class DebugRuntimeException extends RuntimeException {
 
 	private static final long serialVersionUID = -2130942266962627760L;
-	
+
 	public DebugRuntimeException(final Throwable throwable) {
 		super(throwable);
 	}

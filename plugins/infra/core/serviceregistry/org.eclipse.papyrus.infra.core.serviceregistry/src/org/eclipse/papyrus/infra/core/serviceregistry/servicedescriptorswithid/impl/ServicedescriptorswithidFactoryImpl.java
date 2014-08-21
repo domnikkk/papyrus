@@ -17,6 +17,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.*
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements ServicedescriptorswithidFactory {
@@ -24,16 +25,16 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static ServicedescriptorswithidFactory init() {
 		try {
-			ServicedescriptorswithidFactory theServicedescriptorswithidFactory = (ServicedescriptorswithidFactory)EPackage.Registry.INSTANCE.getEFactory("org.eclipse.papyrus..infra.core.servicedescriptorswithid"); 
+			ServicedescriptorswithidFactory theServicedescriptorswithidFactory = (ServicedescriptorswithidFactory) EPackage.Registry.INSTANCE.getEFactory("org.eclipse.papyrus..infra.core.servicedescriptorswithid");
 			if (theServicedescriptorswithidFactory != null) {
 				return theServicedescriptorswithidFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new ServicedescriptorswithidFactoryImpl();
@@ -43,6 +44,7 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServicedescriptorswithidFactoryImpl() {
@@ -52,79 +54,96 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ServicedescriptorswithidPackage.REGISTRY_ID_DESC: return createRegistryIdDesc();
-			case ServicedescriptorswithidPackage.SERVICE_ID_DESC: return createServiceIdDesc();
-			case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC: return createServiceSetIdDesc();
-			case ServicedescriptorswithidPackage.ALIAS_ID_DESC: return createAliasIdDesc();
-			case ServicedescriptorswithidPackage.ID_DESCRIPTORS: return createIdDescriptors();
-			case ServicedescriptorswithidPackage.PROPERTY_INJECTION: return createPropertyInjection();
-			case ServicedescriptorswithidPackage.METHOD_INJECTION: return createMethodInjection();
-			case ServicedescriptorswithidPackage.PARAMETER_INJECTION: return createParameterInjection();
-			case ServicedescriptorswithidPackage.INJECTED_SERVICE: return createInjectedService();
-			case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE: return createOpaqueInjectedValue();
-			case ServicedescriptorswithidPackage.CONSTRUCTOR_INJECTION: return createConstructorInjection();
-			case ServicedescriptorswithidPackage.SERVICE_FACTORY_ID_DESC: return createServiceFactoryIdDesc();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case ServicedescriptorswithidPackage.REGISTRY_ID_DESC:
+			return createRegistryIdDesc();
+		case ServicedescriptorswithidPackage.SERVICE_ID_DESC:
+			return createServiceIdDesc();
+		case ServicedescriptorswithidPackage.SERVICE_SET_ID_DESC:
+			return createServiceSetIdDesc();
+		case ServicedescriptorswithidPackage.ALIAS_ID_DESC:
+			return createAliasIdDesc();
+		case ServicedescriptorswithidPackage.ID_DESCRIPTORS:
+			return createIdDescriptors();
+		case ServicedescriptorswithidPackage.PROPERTY_INJECTION:
+			return createPropertyInjection();
+		case ServicedescriptorswithidPackage.METHOD_INJECTION:
+			return createMethodInjection();
+		case ServicedescriptorswithidPackage.PARAMETER_INJECTION:
+			return createParameterInjection();
+		case ServicedescriptorswithidPackage.INJECTED_SERVICE:
+			return createInjectedService();
+		case ServicedescriptorswithidPackage.OPAQUE_INJECTED_VALUE:
+			return createOpaqueInjectedValue();
+		case ServicedescriptorswithidPackage.CONSTRUCTOR_INJECTION:
+			return createConstructorInjection();
+		case ServicedescriptorswithidPackage.SERVICE_FACTORY_ID_DESC:
+			return createServiceFactoryIdDesc();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ServicedescriptorswithidPackage.STARTUP_KIND:
-				return createStartupKindFromString(eDataType, initialValue);
-			case ServicedescriptorswithidPackage.STRING:
-				return createStringFromString(eDataType, initialValue);
-			case ServicedescriptorswithidPackage.BOOLEAN:
-				return createbooleanFromString(eDataType, initialValue);
-			case ServicedescriptorswithidPackage.OBJECT:
-				return createObjectFromString(eDataType, initialValue);
-			case ServicedescriptorswithidPackage.INT:
-				return createintFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case ServicedescriptorswithidPackage.STARTUP_KIND:
+			return createStartupKindFromString(eDataType, initialValue);
+		case ServicedescriptorswithidPackage.STRING:
+			return createStringFromString(eDataType, initialValue);
+		case ServicedescriptorswithidPackage.BOOLEAN:
+			return createbooleanFromString(eDataType, initialValue);
+		case ServicedescriptorswithidPackage.OBJECT:
+			return createObjectFromString(eDataType, initialValue);
+		case ServicedescriptorswithidPackage.INT:
+			return createintFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ServicedescriptorswithidPackage.STARTUP_KIND:
-				return convertStartupKindToString(eDataType, instanceValue);
-			case ServicedescriptorswithidPackage.STRING:
-				return convertStringToString(eDataType, instanceValue);
-			case ServicedescriptorswithidPackage.BOOLEAN:
-				return convertbooleanToString(eDataType, instanceValue);
-			case ServicedescriptorswithidPackage.OBJECT:
-				return convertObjectToString(eDataType, instanceValue);
-			case ServicedescriptorswithidPackage.INT:
-				return convertintToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case ServicedescriptorswithidPackage.STARTUP_KIND:
+			return convertStartupKindToString(eDataType, instanceValue);
+		case ServicedescriptorswithidPackage.STRING:
+			return convertStringToString(eDataType, instanceValue);
+		case ServicedescriptorswithidPackage.BOOLEAN:
+			return convertbooleanToString(eDataType, instanceValue);
+		case ServicedescriptorswithidPackage.OBJECT:
+			return convertObjectToString(eDataType, instanceValue);
+		case ServicedescriptorswithidPackage.INT:
+			return convertintToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public RegistryIdDesc createRegistryIdDesc() {
 		RegistryIdDescImpl registryIdDesc = new RegistryIdDescImpl();
 		return registryIdDesc;
@@ -133,8 +152,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ServiceIdDesc createServiceIdDesc() {
 		ServiceIdDescImpl serviceIdDesc = new ServiceIdDescImpl();
 		return serviceIdDesc;
@@ -143,8 +164,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ServiceSetIdDesc createServiceSetIdDesc() {
 		ServiceSetIdDescImpl serviceSetIdDesc = new ServiceSetIdDescImpl();
 		return serviceSetIdDesc;
@@ -153,8 +176,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public AliasIdDesc createAliasIdDesc() {
 		AliasIdDescImpl aliasIdDesc = new AliasIdDescImpl();
 		return aliasIdDesc;
@@ -163,8 +188,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public IdDescriptors createIdDescriptors() {
 		IdDescriptorsImpl idDescriptors = new IdDescriptorsImpl();
 		return idDescriptors;
@@ -173,8 +200,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public PropertyInjection createPropertyInjection() {
 		PropertyInjectionImpl propertyInjection = new PropertyInjectionImpl();
 		return propertyInjection;
@@ -183,8 +212,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public MethodInjection createMethodInjection() {
 		MethodInjectionImpl methodInjection = new MethodInjectionImpl();
 		return methodInjection;
@@ -193,8 +224,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ParameterInjection createParameterInjection() {
 		ParameterInjectionImpl parameterInjection = new ParameterInjectionImpl();
 		return parameterInjection;
@@ -203,8 +236,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public InjectedService createInjectedService() {
 		InjectedServiceImpl injectedService = new InjectedServiceImpl();
 		return injectedService;
@@ -213,8 +248,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public OpaqueInjectedValue createOpaqueInjectedValue() {
 		OpaqueInjectedValueImpl opaqueInjectedValue = new OpaqueInjectedValueImpl();
 		return opaqueInjectedValue;
@@ -223,8 +260,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ConstructorInjection createConstructorInjection() {
 		ConstructorInjectionImpl constructorInjection = new ConstructorInjectionImpl();
 		return constructorInjection;
@@ -233,8 +272,10 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ServiceFactoryIdDesc createServiceFactoryIdDesc() {
 		ServiceFactoryIdDescImpl serviceFactoryIdDesc = new ServiceFactoryIdDescImpl();
 		return serviceFactoryIdDesc;
@@ -243,17 +284,21 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StartupKind createStartupKindFromString(EDataType eDataType, String initialValue) {
 		StartupKind result = StartupKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null) {
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertStartupKindToString(EDataType eDataType, Object instanceValue) {
@@ -263,15 +308,17 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String createStringFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
+		return (String) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertStringToString(EDataType eDataType, Object instanceValue) {
@@ -281,15 +328,17 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Boolean createbooleanFromString(EDataType eDataType, String initialValue) {
-		return (Boolean)super.createFromString(eDataType, initialValue);
+		return (Boolean) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertbooleanToString(EDataType eDataType, Object instanceValue) {
@@ -299,6 +348,7 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Object createObjectFromString(EDataType eDataType, String initialValue) {
@@ -308,6 +358,7 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertObjectToString(EDataType eDataType, Object instanceValue) {
@@ -317,15 +368,17 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Integer createintFromString(EDataType eDataType, String initialValue) {
-		return (Integer)super.createFromString(eDataType, initialValue);
+		return (Integer) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertintToString(EDataType eDataType, Object instanceValue) {
@@ -335,15 +388,18 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ServicedescriptorswithidPackage getServicedescriptorswithidPackage() {
-		return (ServicedescriptorswithidPackage)getEPackage();
+		return (ServicedescriptorswithidPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -352,4 +408,4 @@ public class ServicedescriptorswithidFactoryImpl extends EFactoryImpl implements
 		return ServicedescriptorswithidPackage.eINSTANCE;
 	}
 
-} //ServicedescriptorswithidFactoryImpl
+} // ServicedescriptorswithidFactoryImpl

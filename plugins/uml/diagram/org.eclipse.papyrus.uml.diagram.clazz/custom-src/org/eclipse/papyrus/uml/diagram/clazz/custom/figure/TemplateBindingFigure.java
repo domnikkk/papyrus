@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,9 +20,9 @@ import org.eclipse.swt.SWT;
 
 /**
  * this is the link that is a template binding it contains a label that can be edited in multiline
- * 
+ *
  * @author PT202707
- * 
+ *
  */
 public class TemplateBindingFigure extends UMLEdgeFigure {
 
@@ -33,10 +33,11 @@ public class TemplateBindingFigure extends UMLEdgeFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.figure.edge.UMLEdgeFigure#createContents()
-	 * 
+	 *
 	 */
+	@Override
 	protected void createContents() {
 		super.createContents();
 		PolygonDecoration dec = new PolygonDecoration();
@@ -61,7 +62,7 @@ public class TemplateBindingFigure extends UMLEdgeFigure {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the label multiline
 	 */
 	public BindingSubstitutionFigure getBindingSubstitutionFigure() {

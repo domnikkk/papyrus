@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.sysml.activities.Rate;
  * starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the
  * result of the switch. <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.sysml.activities.ActivitiesPackage
  * @generated
  */
@@ -41,7 +41,7 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static ActivitiesPackage modelPackage;
@@ -50,11 +50,11 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ActivitiesSwitch() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = ActivitiesPackage.eINSTANCE;
 		}
 	}
@@ -62,7 +62,7 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	/**
 	 * Checks whether this is a switch for the given package. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
@@ -77,9 +77,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Continuous</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -93,9 +93,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation
 	 * returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Control Operator</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -109,9 +109,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Discrete</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -125,9 +125,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>No Buffer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -141,9 +141,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Overwrite</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -157,9 +157,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation
 	 * returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Probability</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -172,9 +172,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * Returns the result of interpreting the object as an instance of ' <em>Rate</em>'. <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of ' <em>Rate</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
@@ -188,9 +188,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch, but this is
 	 * the last case anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>EObject</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
 	 * @generated
@@ -204,79 +204,81 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns a non null result; it yields that result.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code> call.
 	 * @generated
 	 */
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
-		switch(classifierID) {
-		case ActivitiesPackage.OPTIONAL:
-		{
-			Optional optional = (Optional)theEObject;
+		switch (classifierID) {
+		case ActivitiesPackage.OPTIONAL: {
+			Optional optional = (Optional) theEObject;
 			T result = caseOptional(optional);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.RATE:
-		{
-			Rate rate = (Rate)theEObject;
+		case ActivitiesPackage.RATE: {
+			Rate rate = (Rate) theEObject;
 			T result = caseRate(rate);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.PROBABILITY:
-		{
-			Probability probability = (Probability)theEObject;
+		case ActivitiesPackage.PROBABILITY: {
+			Probability probability = (Probability) theEObject;
 			T result = caseProbability(probability);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.CONTINUOUS:
-		{
-			Continuous continuous = (Continuous)theEObject;
+		case ActivitiesPackage.CONTINUOUS: {
+			Continuous continuous = (Continuous) theEObject;
 			T result = caseContinuous(continuous);
-			if(result == null)
+			if (result == null) {
 				result = caseRate(continuous);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.DISCRETE:
-		{
-			Discrete discrete = (Discrete)theEObject;
+		case ActivitiesPackage.DISCRETE: {
+			Discrete discrete = (Discrete) theEObject;
 			T result = caseDiscrete(discrete);
-			if(result == null)
+			if (result == null) {
 				result = caseRate(discrete);
-			if(result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.CONTROL_OPERATOR:
-		{
-			ControlOperator controlOperator = (ControlOperator)theEObject;
+		case ActivitiesPackage.CONTROL_OPERATOR: {
+			ControlOperator controlOperator = (ControlOperator) theEObject;
 			T result = caseControlOperator(controlOperator);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.NO_BUFFER:
-		{
-			NoBuffer noBuffer = (NoBuffer)theEObject;
+		case ActivitiesPackage.NO_BUFFER: {
+			NoBuffer noBuffer = (NoBuffer) theEObject;
 			T result = caseNoBuffer(noBuffer);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
-		case ActivitiesPackage.OVERWRITE:
-		{
-			Overwrite overwrite = (Overwrite)theEObject;
+		case ActivitiesPackage.OVERWRITE: {
+			Overwrite overwrite = (Overwrite) theEObject;
 			T result = caseOverwrite(overwrite);
-			if(result == null)
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:
@@ -289,9 +291,9 @@ public class ActivitiesSwitch<T> extends Switch<T> {
 	 * <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
-	 *        the target of the switch.
+	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '<em>Optional</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated

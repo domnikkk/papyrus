@@ -25,7 +25,7 @@ import org.eclipse.papyrus.domaincontextcodegen.MetaClassType;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.domaincontextcodegen.MetaClassType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MetaClassTypeItemProvider extends ElementTypeItemProvider implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
@@ -34,7 +34,7 @@ public class MetaClassTypeItemProvider extends ElementTypeItemProvider implement
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MetaClassTypeItemProvider(AdapterFactory adapterFactory) {
@@ -45,12 +45,12 @@ public class MetaClassTypeItemProvider extends ElementTypeItemProvider implement
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addMetaClassPropertyDescriptor(object);
@@ -62,23 +62,24 @@ public class MetaClassTypeItemProvider extends ElementTypeItemProvider implement
 	 * This adds a property descriptor for the Meta Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addMetaClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_MetaClassType_metaClass_feature"), getString("_UI_PropertyDescriptor_description", "_UI_MetaClassType_metaClass_feature", "_UI_MetaClassType_type"), DomaincontextcodegenPackage.Literals.META_CLASS_TYPE__META_CLASS, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_MetaClassType_metaClass_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_MetaClassType_metaClass_feature", "_UI_MetaClassType_type"), DomaincontextcodegenPackage.Literals.META_CLASS_TYPE__META_CLASS, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns MetaClassType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		if (((MetaClassType)object).getHelper() != null) {
+		if (((MetaClassType) object).getHelper() != null) {
 			return overlayImage(object, getResourceLocator().getImage("full/obj16/MetaClassType_Modified"));
 		}
 		return overlayImage(object, getResourceLocator().getImage("full/obj16/MetaClassType"));
@@ -88,15 +89,15 @@ public class MetaClassTypeItemProvider extends ElementTypeItemProvider implement
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((MetaClassType)object).getName();
+		String label = ((MetaClassType) object).getName();
 		String prefix = getString("_UI_MetaClassType_type");
-		if (((MetaClassType)object).getHelper() != null) {
-			prefix = "* "+prefix;
+		if (((MetaClassType) object).getHelper() != null) {
+			prefix = "* " + prefix;
 		}
 		return label == null || label.length() == 0 ? prefix : prefix + " " + label;
 	}
@@ -106,7 +107,7 @@ public class MetaClassTypeItemProvider extends ElementTypeItemProvider implement
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -120,7 +121,7 @@ public class MetaClassTypeItemProvider extends ElementTypeItemProvider implement
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

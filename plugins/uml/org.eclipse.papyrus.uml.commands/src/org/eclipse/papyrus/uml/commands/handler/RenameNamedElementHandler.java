@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,34 +34,33 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * This handler allows to rename {@link NamedElement}
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class RenameNamedElementHandler extends AbstractCommandHandler {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.views.modelexplorer.handler.AbstractCommandHandler#getCommand()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected Command getCommand() {
 		TransactionalEditingDomain editingDomain = getEditingDomain();
 		List<EObject> selectedElements = getSelectedElements();
-		if(selectedElements.size() == 1 && selectedElements.get(0) instanceof NamedElement) {
-			final NamedElement namedElement = (NamedElement)selectedElements.get(0);
+		if (selectedElements.size() == 1 && selectedElements.get(0) instanceof NamedElement) {
+			final NamedElement namedElement = (NamedElement) selectedElements.get(0);
 			final String currentName = namedElement.getName();
-			if(currentName != null) {
+			if (currentName != null) {
 
 				AbstractTransactionalCommand cmd = new AbstractTransactionalCommand(editingDomain, "RenameCommand", null) { //$NON-NLS-1$
 
 					/**
-					 * 
-					 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-					 *      org.eclipse.core.runtime.IAdaptable)
-					 * 
+					 *
+					 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+					 *
 					 * @param monitor
 					 * @param info
 					 * @return
@@ -70,9 +69,9 @@ public class RenameNamedElementHandler extends AbstractCommandHandler {
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 						InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), "Rename...", "New name:", currentName, null);
-						if(dialog.open() == Window.OK) {
+						if (dialog.open() == Window.OK) {
 							final String name = dialog.getValue();
-							if(name != null && name.length() > 0) {
+							if (name != null && name.length() > 0) {
 								namedElement.setName(name);
 							}
 							return CommandResult.newOKCommandResult();
@@ -95,7 +94,7 @@ public class RenameNamedElementHandler extends AbstractCommandHandler {
 	@Override
 	protected boolean computeEnabled() {
 		boolean enabled = super.computeEnabled();
-		if(enabled) {
+		if (enabled) {
 			List<EObject> selectedElements = getSelectedElements();
 			EObject selection = selectedElements.get(0);
 			enabled = !EMFHelper.isReadOnly(selection) && !isHandledByDirectEditor(selection);
@@ -106,7 +105,9 @@ public class RenameNamedElementHandler extends AbstractCommandHandler {
 	/**
 	 * Check whether the editing of an element is handled by a direct editor. In this case, we do
 	 * not want to open the rename pop-up.
-	 * @param element an element that should be edited.
+	 * 
+	 * @param element
+	 *            an element that should be edited.
 	 * @return true, if handled by a direct editor
 	 */
 	protected boolean isHandledByDirectEditor(EObject element) {

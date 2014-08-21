@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,8 +58,8 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 			List<Object> additions() {
 				List<Object> result = Lists.newArrayList();
 
-				for(ListDiffEntry next : diff.getDifferences()) {
-					if(next.isAddition()) {
+				for (ListDiffEntry next : diff.getDifferences()) {
+					if (next.isAddition()) {
 						result.add(next.getElement());
 					}
 				}
@@ -69,7 +69,7 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 
 			@Override
 			public void handleListChange(ListChangeEvent event) {
-				assertThat(event.getObservable(), sameInstance((IObservable)fixture));
+				assertThat(event.getObservable(), sameInstance((IObservable) fixture));
 
 				diff = event.diff;
 			}
@@ -124,15 +124,15 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 	public void testGet_index() {
 		addToDelegate();
 
-		assertThat(fixture.get(2), is((Object)"Cathy"));
+		assertThat(fixture.get(2), is((Object) "Cathy"));
 	}
 
 	@Test
 	public void testSet_index() {
 		addToDelegate();
 
-		assertThat(fixture.set(2, "Colleen"), is((Object)"Cathy"));
-		assertThat(delegate.get(2), is((Object)"Colleen"));
+		assertThat(fixture.set(2, "Colleen"), is((Object) "Cathy"));
+		assertThat(delegate.get(2), is((Object) "Colleen"));
 	}
 
 	@Test
@@ -140,7 +140,7 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 		addToDelegate();
 
 		fixture.move(2, 1);
-		assertThat(delegateList(), is((List<Object>)ImmutableList.<Object> of("Alice", "Cathy", "Bert", "Dave")));
+		assertThat(delegateList(), is((List<Object>) ImmutableList.<Object> of("Alice", "Cathy", "Bert", "Dave")));
 	}
 
 	@Test
@@ -182,9 +182,9 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 		@SuppressWarnings("unchecked")
 		ListIterator<Object> iter = fixture.listIterator();
 		assertThat(iter.hasNext(), is(true));
-		assertThat(iter.next(), is((Object)"Alice"));
+		assertThat(iter.next(), is((Object) "Alice"));
 		assertThat(iter.hasNext(), is(true));
-		assertThat(iter.next(), is((Object)"Bert"));
+		assertThat(iter.next(), is((Object) "Bert"));
 	}
 
 	@TrackedGetterTest
@@ -195,9 +195,9 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 		@SuppressWarnings("unchecked")
 		ListIterator<Object> iter = fixture.listIterator(delegate.size());
 		assertThat(iter.hasPrevious(), is(true));
-		assertThat(iter.previous(), is((Object)"Dave"));
+		assertThat(iter.previous(), is((Object) "Dave"));
 		assertThat(iter.hasPrevious(), is(true));
-		assertThat(iter.previous(), is((Object)"Cathy"));
+		assertThat(iter.previous(), is((Object) "Cathy"));
 	}
 
 	@TrackedGetterTest
@@ -208,7 +208,7 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 		@SuppressWarnings("unchecked")
 		List<Object> subList = fixture.subList(1, 3);
 
-		assertThat(subList, is((List<Object>)ImmutableList.<Object> of("Bert", "Cathy")));
+		assertThat(subList, is((List<Object>) ImmutableList.<Object> of("Bert", "Cathy")));
 	}
 
 	//
@@ -226,7 +226,7 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 	}
 
 	List<Object> delegateList() {
-		return (List<Object>)delegateCollection();
+		return (List<Object>) delegateCollection();
 	}
 
 	//
@@ -264,9 +264,10 @@ public abstract class DelegatingObservableListTest extends DelegatingObservableC
 
 		private IObservableValue master;
 
+		@Override
 		@Test
 		public void testGetObserved() {
-			assertThat(((IObserving)fixture).getObserved(), is((Object)list));
+			assertThat(((IObserving) fixture).getObserved(), is((Object) list));
 		}
 
 		//

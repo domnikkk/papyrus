@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Nicolas Guyomar (Mia-Software) - Bug 349546 - EMF Facet facetSet editor
  *  Gregoire Dupe (Mia-Software) - Bug 373248 - Clean PMD errors
@@ -35,7 +35,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 @Deprecated
-//TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
+// TODO @Deprecated must be removed after a refactoring planed by https://bugs.eclipse.org/bugs/show_bug.cgi?id=364601
 public class CreateQueryWizardPage extends WizardPage {
 
 	private static final int NUMBER_COLUMN = 3;
@@ -84,7 +84,7 @@ public class CreateQueryWizardPage extends WizardPage {
 				String childrenNameFirstLetterToUpperCase = childrenName.substring(0, 1).toUpperCase()
 						+ childrenName.substring(1);
 				if (previousPage instanceof CreateFacetInFacetSetWizardPage) {
-					setQueryName("is" + childrenNameFirstLetterToUpperCase); //$NON-NLS-1$	
+					setQueryName("is" + childrenNameFirstLetterToUpperCase); //$NON-NLS-1$
 				} else if (previousPage instanceof AddReferenceInFacetWizardPage
 						|| previousPage instanceof AddAttributeInFacetWizardPage) {
 					setQueryName("get" + childrenNameFirstLetterToUpperCase); //$NON-NLS-1$

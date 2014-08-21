@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 
 /**
  * Abtract content provider for containement feature for the paste
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public abstract class AbstractContainmentFeatureContentProvider implements IStaticContentProvider {
 
@@ -49,11 +49,11 @@ public abstract class AbstractContainmentFeatureContentProvider implements IStat
 	private final boolean onColumn;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
-	 *        the table used to get the available features
+	 *            the table used to get the available features
 	 */
 	public AbstractContainmentFeatureContentProvider(final Table table, final boolean onColumn) {
 		this.table = table;
@@ -63,51 +63,52 @@ public abstract class AbstractContainmentFeatureContentProvider implements IStat
 	/**
 	 * @Override
 	 * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
-	 * 
+	 *
 	 * @param inputElement
 	 * @return
 	 */
+	@Override
 	public Object[] getElements(Object inputElement) {
 		final Collection<EStructuralFeature> allFeatures = table.getContext().eClass().getEAllStructuralFeatures();
 		final Collection<EStructuralFeature> availableFeatures = new TreeSet<EStructuralFeature>(new ENamedElementComparator());
-		for(EStructuralFeature eStructuralFeature : allFeatures) {
-			if(eStructuralFeature instanceof EReference && ((EReference)eStructuralFeature).isContainment() && eStructuralFeature.isChangeable() && eStructuralFeature.isMany()) {
+		for (EStructuralFeature eStructuralFeature : allFeatures) {
+			if (eStructuralFeature instanceof EReference && ((EReference) eStructuralFeature).isContainment() && eStructuralFeature.isChangeable() && eStructuralFeature.isMany()) {
 				availableFeatures.add(eStructuralFeature);
 			}
 		}
 
 		final Collection<IFillingConfiguration> fillingConfigurations = FillingConfigurationUtils.getFillingConfigurationUsedInTable(table, onColumn);
 		List<EStructuralFeature> listenFeatures = new ArrayList<EStructuralFeature>();
-		for(final IFillingConfiguration current : fillingConfigurations) {
-			if(current instanceof EStructuralFeatureValueFillingConfiguration) {
-				listenFeatures.add(((EStructuralFeatureValueFillingConfiguration)current).getListenFeature());
+		for (final IFillingConfiguration current : fillingConfigurations) {
+			if (current instanceof EStructuralFeatureValueFillingConfiguration) {
+				listenFeatures.add(((EStructuralFeatureValueFillingConfiguration) current).getListenFeature());
 			}
 		}
 
 		List<EClassifier> types = new ArrayList<EClassifier>();
 		ListIterator<EStructuralFeature> iter = listenFeatures.listIterator();
 		boolean hasFillingMode = listenFeatures.size() != 0;
-		//the filling configuration can be done on a derived feature, that's why we must verify it!
-		while(iter.hasNext()) {
+		// the filling configuration can be done on a derived feature, that's why we must verify it!
+		while (iter.hasNext()) {
 			EStructuralFeature current = iter.next();
-			if(current.isDerived() && !current.isChangeable() && !((EReference)current).isContainment()) {
+			if (current.isDerived() && !current.isChangeable() && !((EReference) current).isContainment()) {
 				iter.remove();
 				types.add(current.getEType());
 			}
 		}
 
-		if(hasFillingMode) {
-			//we look for features referenced by availabales feature and consistent with the filling feature
+		if (hasFillingMode) {
+			// we look for features referenced by availabales feature and consistent with the filling feature
 			Set<EStructuralFeature> bestFeatures = new HashSet<EStructuralFeature>();
 			bestFeatures.addAll(listenFeatures);
-			for(final EClassifier eClassifier : types) {
-				for(final EStructuralFeature availableFeature : availableFeatures) {
+			for (final EClassifier eClassifier : types) {
+				for (final EStructuralFeature availableFeature : availableFeatures) {
 					EClassifier currentEType = availableFeature.getEType();
-					if(eClassifier instanceof EClass && currentEType instanceof EClass) {
-						if(eClassifier == currentEType || ((EClass)eClassifier).isSuperTypeOf((EClass)currentEType)) {
+					if (eClassifier instanceof EClass && currentEType instanceof EClass) {
+						if (eClassifier == currentEType || ((EClass) eClassifier).isSuperTypeOf((EClass) currentEType)) {
 							bestFeatures.add(availableFeature);
 						}
-					} else if(currentEType == eClassifier) {
+					} else if (currentEType == eClassifier) {
 						bestFeatures.add(availableFeature);
 					}
 				}
@@ -115,16 +116,16 @@ public abstract class AbstractContainmentFeatureContentProvider implements IStat
 			return bestFeatures.toArray();
 		}
 
-		if(listenFeatures.size() != 0) {
+		if (listenFeatures.size() != 0) {
 			availableFeatures.retainAll(listenFeatures);
 		}
 		return availableFeatures.toArray();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public final void dispose() {
@@ -132,9 +133,9 @@ public abstract class AbstractContainmentFeatureContentProvider implements IStat
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.viewers.IContentProvider#inputChanged(org.eclipse.jface.viewers.Viewer, java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param viewer
 	 * @param oldInput
 	 * @param newInput
@@ -144,9 +145,9 @@ public abstract class AbstractContainmentFeatureContentProvider implements IStat
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

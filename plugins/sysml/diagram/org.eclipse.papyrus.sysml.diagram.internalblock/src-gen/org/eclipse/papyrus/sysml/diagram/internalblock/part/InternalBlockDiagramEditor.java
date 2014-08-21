@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -129,8 +129,8 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	protected void verifyDiagramCompatibilityVersion(Diagram diagram) {
 		IDiagramVersionUpdater updater = new DiagramVersionUpdater();
 
-		String currentVersion = DiagramVersioningUtils.getCompatibilityVersion(diagram);
-		if(!InternalBlockDiagramViewFactory.INTERNAL_VERSION.equals(currentVersion)) {
+		String currentVersion = org.eclipse.papyrus.infra.gmfdiag.common.reconciler.DiagramVersioningUtils.getCompatibilityVersion(diagram);
+		if (!InternalBlockDiagramViewFactory.INTERNAL_VERSION.equals(currentVersion)) {
 			updater.update(diagram, currentVersion, InternalBlockDiagramViewFactory.INTERNAL_VERSION);
 		}
 	}
@@ -141,7 +141,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	@Override
 	protected PaletteRoot createPaletteRoot(PaletteRoot existingPaletteRoot) {
 		PaletteRoot paletteRoot;
-		if(existingPaletteRoot == null) {
+		if (existingPaletteRoot == null) {
 			paletteRoot = PapyrusPaletteService.getInstance().createPalette(this, getDefaultPaletteContent());
 		} else {
 			PapyrusPaletteService.getInstance().updatePalette(existingPaletteRoot, this, getDefaultPaletteContent());
@@ -154,6 +154,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected PreferencesHint getPreferencesHint() {
 		return Activator.DIAGRAM_PREFERENCES_HINT;
 	}
@@ -161,6 +162,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public String getContributorId() {
 		return Activator.PLUGIN_ID;
 	}
@@ -168,6 +170,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected final IDocumentProvider getDocumentProvider(IEditorInput input) {
 		return documentProvider;
 	}
@@ -175,6 +178,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public TransactionalEditingDomain getEditingDomain() {
 		return editingDomain;
 	}
@@ -182,6 +186,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected final void setDocumentProvider(IEditorInput input) {
 		// Already set in the constructor
 	}
@@ -196,6 +201,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean isSaveAsAllowed() {
 		return true;
 	}
@@ -203,6 +209,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public void doSaveAs() {
 		performSaveAs(new NullProgressMonitor());
 	}
@@ -210,6 +217,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void performSaveAs(IProgressMonitor progressMonitor) {
 		// Nothing
 	}
@@ -217,6 +225,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public ShowInContext getShowInContext() {
 		return new ShowInContext(getEditorInput(), getGraphicalViewer().getSelection());
 	}
@@ -224,12 +233,13 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void configureGraphicalViewer() {
 		super.configureGraphicalViewer();
 
 		// Replace diagram contextual menu removing default
 		// delete from model action.
-		DiagramContextMenuProvider provider = (DiagramContextMenuProvider)getDiagramGraphicalViewer().getContextMenu();
+		DiagramContextMenuProvider provider = (DiagramContextMenuProvider) getDiagramGraphicalViewer().getContextMenu();
 		Set<String> menuExclusions = provider.getExclusionSet();
 		menuExclusions.add(ActionIds.ACTION_DELETE_FROM_MODEL);
 		provider.setExclusionSet(menuExclusions);
@@ -238,6 +248,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected TransactionalEditingDomain createEditingDomain() {
 		// Already configured
 		return editingDomain;
@@ -246,6 +257,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void configureDiagramEditDomain() {
 		super.configureDiagramEditDomain();
 		getDiagramEditDomain().getDiagramCommandStack().addCommandStackListener(new CommandStackListener() {
@@ -259,6 +271,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public void doSave(IProgressMonitor progressMonitor) {
 		// The saving of the resource is done by the CoreMultiDiagramEditor
 		getDirtyState().saved();
@@ -268,7 +281,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	 * @generated
 	 */
 	protected OperationHistoryDirtyState getDirtyState() {
-		if(dirtyState == null) {
+		if (dirtyState == null) {
 			dirtyState = OperationHistoryDirtyState.newInstance(getUndoContext(), getOperationHistory());
 		}
 		return dirtyState;
@@ -279,17 +292,18 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	 */
 	@Override
 	protected void setUndoContext(IUndoContext context) {
-		if(dirtyState != null) {
+		if (dirtyState != null) {
 			dirtyState.dispose();
 			dirtyState = null;
 		}
-		
+
 		super.setUndoContext(context);
 	}
-	
+
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean isDirty() {
 		return getDirtyState().isDirty();
 	}
@@ -299,7 +313,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	 */
 	public void providerChanged(ProviderChangeEvent event) {
 		// update the palette if the palette service has changed
-		if(PapyrusPaletteService.getInstance().equals(event.getSource())) {
+		if (PapyrusPaletteService.getInstance().equals(event.getSource())) {
 			PapyrusPaletteService.getInstance().updatePalette(getPaletteViewer().getPaletteRoot(), this, getDefaultPaletteContent());
 		}
 	}
@@ -307,16 +321,17 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		// remove palette service listener
 		// remove preference listener
 		PapyrusPaletteService.getInstance().removeProviderChangeListener(this);
 
-		if(dirtyState != null) {
+		if (dirtyState != null) {
 			dirtyState.dispose();
 			dirtyState = null;
 		}
-		
+
 		super.dispose();
 	}
 
@@ -330,6 +345,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected PaletteViewer constructPaletteViewer() {
 		return new PapyrusPaletteViewer();
 	}
@@ -337,6 +353,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	/**
 	 * @generated
 	 */
+	@Override
 	protected PaletteViewerProvider createPaletteViewerProvider() {
 		getEditDomain().setPaletteRoot(createPaletteRoot(null));
 		return new PaletteViewerProvider(getEditDomain()) {
@@ -348,6 +365,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 			 * with a defaultTool that is the SelectToolEx that undestands how to handle the enter
 			 * key which will result in the creation of the shape also.
 			 */
+			@Override
 			protected void configurePaletteViewer(PaletteViewer viewer) {
 				super.configurePaletteViewer(viewer);
 
@@ -365,6 +383,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 				viewer.setCustomizer(createPaletteCustomizer());
 			}
 
+			@Override
 			public PaletteViewer createPaletteViewer(Composite parent) {
 				PaletteViewer pViewer = constructPaletteViewer();
 				pViewer.createControl(parent);
@@ -378,7 +397,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 			 */
 			private KeyHandler getPaletteKeyHandler() {
 
-				if(paletteKeyHandler == null) {
+				if (paletteKeyHandler == null) {
 
 					paletteKeyHandler = new KeyHandler() {
 
@@ -387,18 +406,19 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 						 * whenever a key is released, and the Tool is in the proper state. Override
 						 * to support pressing the enter key to create a shape or connection
 						 * (between two selected shapes)
-						 * 
+						 *
 						 * @param event
-						 *        the KeyEvent
+						 *            the KeyEvent
 						 * @return <code>true</code> if KeyEvent was handled in some way
 						 */
+						@Override
 						public boolean keyReleased(KeyEvent event) {
 
-							if(event.keyCode == SWT.Selection) {
+							if (event.keyCode == SWT.Selection) {
 
 								Tool tool = getPaletteViewer().getActiveTool().createTool();
 
-								if(toolSupportsAccessibility(tool)) {
+								if (toolSupportsAccessibility(tool)) {
 
 									tool.keyUp(event, getDiagramGraphicalViewer());
 
@@ -423,7 +443,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 			 */
 			private MouseListener getPaletteMouseListener() {
 
-				if(paletteMouseListener == null) {
+				if (paletteMouseListener == null) {
 
 					paletteMouseListener = new MouseListener() {
 
@@ -436,13 +456,13 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 						/**
 						 * Override to support double-clicking a palette tool entry to create a
 						 * shape or connection (between two selected shapes).
-						 * 
+						 *
 						 * @see MouseListener#mouseDoubleClick(MouseEvent)
 						 */
 						public void mouseDoubleClick(MouseEvent e) {
 							Tool tool = getPaletteViewer().getActiveTool().createTool();
 
-							if(toolSupportsAccessibility(tool)) {
+							if (toolSupportsAccessibility(tool)) {
 
 								tool.setViewer(getDiagramGraphicalViewer());
 								tool.setEditDomain(getDiagramGraphicalViewer().getEditDomain());
@@ -463,7 +483,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 						public void mouseUp(MouseEvent e) {
 							// Deactivate current active tool here if a
 							// double-click was handled.
-							if(clearActiveTool) {
+							if (clearActiveTool) {
 								getPaletteViewer().setActiveTool(null);
 								clearActiveTool = false;
 							}
@@ -514,10 +534,10 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 	 */
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if(getSite().getPage().getActiveEditor() instanceof IMultiDiagramEditor) {
-			IMultiDiagramEditor editor = (IMultiDiagramEditor)getSite().getPage().getActiveEditor();
+		if (getSite().getPage().getActiveEditor() instanceof IMultiDiagramEditor) {
+			IMultiDiagramEditor editor = (IMultiDiagramEditor) getSite().getPage().getActiveEditor();
 			// If not the active editor, ignore selection changed.
-			if(this.equals(editor.getActiveEditor())) {
+			if (this.equals(editor.getActiveEditor())) {
 				updateActions(getSelectionActions());
 				super.selectionChanged(part, selection);
 			} else {
@@ -529,7 +549,7 @@ public class InternalBlockDiagramEditor extends UmlGmfDiagramEditor implements I
 		// from
 		// org.eclipse.gmf.runtime.diagram.ui.resources.editor.parts.DiagramDocumentEditor.selectionChanged(IWorkbenchPart,
 		// ISelection)
-		if(part == this) {
+		if (part == this) {
 			rebuildStatusLine();
 		}
 	}

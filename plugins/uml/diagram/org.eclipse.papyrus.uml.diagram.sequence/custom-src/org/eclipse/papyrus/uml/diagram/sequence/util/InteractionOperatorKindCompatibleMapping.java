@@ -28,7 +28,7 @@ public class InteractionOperatorKindCompatibleMapping {
 
 	/**
 	 * Check if the InteractionOperator supports multi operand
-	 * 
+	 *
 	 * @param kind
 	 * @return
 	 */

@@ -56,15 +56,15 @@ public class BindingGate {
 	 * org.eclipse.core.databinding.observable.value.IObservableValue)
 	 */
 	public Binding bind(IObservable source, IObservable target, IDataBindingInfo dataBinding) {
-		if(source instanceof IObservableValue && target instanceof IObservableValue) {
-			return bindValue((IObservableValue)source, (IObservableValue)target, dataBinding);
-		} else if(source instanceof IObservableSet && target instanceof IObservableSet) {
+		if (source instanceof IObservableValue && target instanceof IObservableValue) {
+			return bindValue((IObservableValue) source, (IObservableValue) target, dataBinding);
+		} else if (source instanceof IObservableSet && target instanceof IObservableSet) {
 			IValueConverter converter = null;
 			int sourceToTargetPolicy = UpdateSetStrategy.POLICY_UPDATE;
 			int targetToSourcePolicy = UpdateSetStrategy.POLICY_UPDATE;
 			// Set policy to UpdateValueStrategy.
-			if(dataBinding != null) {
-				switch(dataBinding.getMode()) {
+			if (dataBinding != null) {
+				switch (dataBinding.getMode()) {
 				case OneWay:
 					targetToSourcePolicy = UpdateSetStrategy.POLICY_NEVER;
 					break;
@@ -79,14 +79,14 @@ public class BindingGate {
 			}
 			UpdateSetStrategy sourceToTarget = new UpdateSetStrategy(sourceToTargetPolicy);
 			UpdateSetStrategy targetToSource = new UpdateSetStrategy(targetToSourcePolicy);
-			return bindSet((IObservableSet)target, (IObservableSet)source, targetToSource, sourceToTarget, converter);
-		} else if(source instanceof IObservableList && target instanceof IObservableList) {
+			return bindSet((IObservableSet) target, (IObservableSet) source, targetToSource, sourceToTarget, converter);
+		} else if (source instanceof IObservableList && target instanceof IObservableList) {
 			IValueConverter converter = null;
 			int sourceToTargetPolicy = UpdateListStrategy.POLICY_UPDATE;
 			int targetToSourcePolicy = UpdateListStrategy.POLICY_UPDATE;
 			// Set policy to UpdateValueStrategy.
-			if(dataBinding != null) {
-				switch(dataBinding.getMode()) {
+			if (dataBinding != null) {
+				switch (dataBinding.getMode()) {
 				case OneWay:
 					targetToSourcePolicy = UpdateListStrategy.POLICY_NEVER;
 					break;
@@ -101,7 +101,7 @@ public class BindingGate {
 			}
 			UpdateListStrategy sourceToTarget = new UpdateListStrategy(sourceToTargetPolicy);
 			UpdateListStrategy targetToSource = new UpdateListStrategy(targetToSourcePolicy);
-			return bindList((IObservableList)target, (IObservableList)source, targetToSource, sourceToTarget, converter);
+			return bindList((IObservableList) target, (IObservableList) source, targetToSource, sourceToTarget, converter);
 		}
 		throw new IllegalStateException();
 
@@ -116,7 +116,7 @@ public class BindingGate {
 	 * org.eclipse.core.databinding.observable.value.IObservableValue)
 	 */
 	public Binding bindList(IObservableList source, IObservableList target, UpdateListStrategy sourceToTarget, UpdateListStrategy targetToSource, IValueConverter converter) {
-		if(converter != null) {
+		if (converter != null) {
 			return bindList(source, target, sourceToTarget, targetToSource, converter, new InverseValueConverter(converter));
 		} else {
 			return bindList(source, target, sourceToTarget, targetToSource, null, null);
@@ -124,32 +124,32 @@ public class BindingGate {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 * @param target
 	 * @param sourceToTarget
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param targetToSource
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param sourceToTargetConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 * @param targetToSourceConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 */
 	public Binding bindList(IObservableList source, IObservableList target, UpdateListStrategy sourceToTarget, UpdateListStrategy targetToSource, IConverter sourceToTargetConvertor, IConverter targetToSourceConvertor) {
-		if(source != null && target != null) {
-			if(sourceToTarget == null) {
+		if (source != null && target != null) {
+			if (sourceToTarget == null) {
 				sourceToTarget = new UpdateListStrategy(UpdateListStrategy.POLICY_UPDATE);
 			}
-			if(targetToSource == null) {
+			if (targetToSource == null) {
 				targetToSource = new UpdateListStrategy(UpdateListStrategy.POLICY_UPDATE);
 			}
 
-			if(sourceToTargetConvertor != null) {
+			if (sourceToTargetConvertor != null) {
 				sourceToTarget.setConverter(sourceToTargetConvertor);
 			}
 
-			if(targetToSourceConvertor != null) {
+			if (targetToSourceConvertor != null) {
 				targetToSource.setConverter(targetToSourceConvertor);
 			}
 
@@ -167,7 +167,7 @@ public class BindingGate {
 	 * org.eclipse.core.databinding.observable.value.IObservableValue)
 	 */
 	public Binding bindSet(IObservableSet source, IObservableSet target, UpdateSetStrategy sourceToTarget, UpdateSetStrategy targetToSource, IValueConverter converter) {
-		if(converter != null) {
+		if (converter != null) {
 			return bindSet(source, target, sourceToTarget, targetToSource, converter, new InverseValueConverter(converter));
 		} else {
 			return bindSet(source, target, sourceToTarget, targetToSource, null, null);
@@ -175,32 +175,32 @@ public class BindingGate {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 * @param target
 	 * @param sourceToTarget
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param targetToSource
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param sourceToTargetConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 * @param targetToSourceConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 */
 	public Binding bindSet(IObservableSet source, IObservableSet target, UpdateSetStrategy sourceToTarget, UpdateSetStrategy targetToSource, IConverter sourceToTargetConvertor, IConverter targetToSourceConvertor) {
-		if(source != null && target != null) {
-			if(sourceToTarget == null) {
+		if (source != null && target != null) {
+			if (sourceToTarget == null) {
 				sourceToTarget = new UpdateSetStrategy(UpdateSetStrategy.POLICY_UPDATE);
 			}
-			if(targetToSource == null) {
+			if (targetToSource == null) {
 				targetToSource = new UpdateSetStrategy(UpdateSetStrategy.POLICY_UPDATE);
 			}
 
-			if(sourceToTargetConvertor != null) {
+			if (sourceToTargetConvertor != null) {
 				sourceToTarget.setConverter(sourceToTargetConvertor);
 			}
 
-			if(targetToSourceConvertor != null) {
+			if (targetToSourceConvertor != null) {
 				targetToSource.setConverter(targetToSourceConvertor);
 			}
 
@@ -210,32 +210,32 @@ public class BindingGate {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 * @param target
 	 * @param sourceToTarget
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param targetToSource
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param sourceToTargetConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 * @param targetToSourceConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 */
 	public Binding bind(IObservableList source, IObservableList target, UpdateListStrategy sourceToTarget, UpdateListStrategy targetToSource, IConverter sourceToTargetConvertor, IConverter targetToSourceConvertor) {
-		if(source != null && target != null) {
-			if(sourceToTarget == null) {
+		if (source != null && target != null) {
+			if (sourceToTarget == null) {
 				sourceToTarget = new UpdateListStrategy(UpdateListStrategy.POLICY_UPDATE);
 			}
-			if(targetToSource == null) {
+			if (targetToSource == null) {
 				targetToSource = new UpdateListStrategy(UpdateListStrategy.POLICY_UPDATE);
 			}
 
-			if(sourceToTargetConvertor != null) {
+			if (sourceToTargetConvertor != null) {
 				sourceToTarget.setConverter(sourceToTargetConvertor);
 			}
 
-			if(targetToSourceConvertor != null) {
+			if (targetToSourceConvertor != null) {
 				targetToSource.setConverter(targetToSourceConvertor);
 			}
 
@@ -258,8 +258,8 @@ public class BindingGate {
 		int sourceToTargetPolicy = UpdateValueStrategy.POLICY_UPDATE;
 		int targetToSourcePolicy = UpdateValueStrategy.POLICY_UPDATE;
 		// Set policy to UpdateValueStrategy.
-		if(dataBinding != null) {
-			switch(dataBinding.getMode()) {
+		if (dataBinding != null) {
+			switch (dataBinding.getMode()) {
 			case OneWay:
 				targetToSourcePolicy = UpdateValueStrategy.POLICY_NEVER;
 				break;
@@ -282,9 +282,9 @@ public class BindingGate {
 	}
 
 	private void bindValidators(IValidationRule[] validators, UpdateValueStrategy sourceToTarget, UpdateValueStrategy targetToSource) {
-		if(validators != null) {
-			for(IValidationRule validator : validators) {
-				switch(validator.getBindingMode()) {
+		if (validators != null) {
+			for (IValidationRule validator : validators) {
+				switch (validator.getBindingMode()) {
 				case SourceToTarget:
 					addValidatorToStrategy(sourceToTarget, validator);
 					break;
@@ -301,7 +301,7 @@ public class BindingGate {
 	}
 
 	private void addValidatorToStrategy(UpdateValueStrategy strategy, IValidationRule validator) {
-		switch(validator.getPhase()) {
+		switch (validator.getPhase()) {
 		case AfterGet:
 			strategy.setAfterGetValidator(validator);
 			break;
@@ -323,7 +323,7 @@ public class BindingGate {
 	 * org.eclipse.core.databinding.observable.value.IObservableValue)
 	 */
 	public Binding bind(IObservableValue source, IObservableValue target, UpdateValueStrategy sourceToTarget, UpdateValueStrategy targetToSource, IValueConverter converter) {
-		if(converter != null) {
+		if (converter != null) {
 			return bind(source, target, sourceToTarget, targetToSource, converter, new InverseValueConverter(converter));
 		} else {
 			return bind(source, target, sourceToTarget, targetToSource, null, null);
@@ -331,69 +331,69 @@ public class BindingGate {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param source
 	 * @param target
 	 * @param sourceToTarget
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param targetToSource
-	 *        if it is null, the default converter will be update policy
+	 *            if it is null, the default converter will be update policy
 	 * @param sourceToTargetConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 * @param targetToSourceConvertor
-	 *        if it is null, the default converter will be used
+	 *            if it is null, the default converter will be used
 	 */
 	public Binding bind(IObservableValue source, IObservableValue target, UpdateValueStrategy sourceToTarget, UpdateValueStrategy targetToSource, IConverter sourceToTargetConvertor, IConverter targetToSourceConvertor) {
-		if(source != null && target != null) {
-			if(sourceToTarget == null) {
+		if (source != null && target != null) {
+			if (sourceToTarget == null) {
 				sourceToTarget = new UpdateValueStrategy(UpdateValueStrategy.POLICY_UPDATE);
 			}
-			if(targetToSource == null) {
+			if (targetToSource == null) {
 				targetToSource = new UpdateValueStrategy(UpdateValueStrategy.POLICY_UPDATE);
 			}
 
 			// Add converter to UpdateValueStrategy.
 			IDataProvider sourceDataProvider = XWT.findDataProvider(source);
 			Object sourceValueType = sourceDataProvider.getDataType(null);
-			if(sourceValueType == null) {
+			if (sourceValueType == null) {
 				sourceValueType = Object.class;
 			}
 			IDataProvider targetDataProvider = XWT.findDataProvider(target);
 			Object targetValueType = targetDataProvider.getDataType(null);
-			if(targetValueType == null) {
+			if (targetValueType == null) {
 				targetValueType = Object.class;
 			}
-			Class<?> sourceType = (sourceValueType instanceof Class<?>) ? (Class<?>)sourceValueType : sourceValueType.getClass();
-			Class<?> targetType = (targetValueType instanceof Class<?>) ? (Class<?>)targetValueType : targetValueType.getClass();
-			if(sourceType == null) {
+			Class<?> sourceType = (sourceValueType instanceof Class<?>) ? (Class<?>) sourceValueType : sourceValueType.getClass();
+			Class<?> targetType = (targetValueType instanceof Class<?>) ? (Class<?>) targetValueType : targetValueType.getClass();
+			if (sourceType == null) {
 				sourceType = Object.class;
 			} else {
 				sourceType = ObjectUtil.normalizedType(sourceType);
 			}
 
-			if(targetType == null) {
+			if (targetType == null) {
 				targetType = Object.class;
 			} else {
 				targetType = ObjectUtil.normalizedType(targetType);
 			}
 
-			if(sourceToTarget.getUpdatePolicy() != UpdateValueStrategy.POLICY_NEVER) {
-				if(sourceToTargetConvertor != null) {
+			if (sourceToTarget.getUpdatePolicy() != UpdateValueStrategy.POLICY_NEVER) {
+				if (sourceToTargetConvertor != null) {
 					sourceToTarget.setConverter(sourceToTargetConvertor);
-				} else if(!targetType.isAssignableFrom(sourceType)) {
+				} else if (!targetType.isAssignableFrom(sourceType)) {
 					IConverter m2t = XWT.findConvertor(sourceType, targetType);
-					if(m2t != null) {
+					if (m2t != null) {
 						sourceToTarget.setConverter(m2t);
 					}
 				}
 			}
 
-			if(targetToSource.getUpdatePolicy() != UpdateValueStrategy.POLICY_NEVER) {
-				if(targetToSourceConvertor != null) {
+			if (targetToSource.getUpdatePolicy() != UpdateValueStrategy.POLICY_NEVER) {
+				if (targetToSourceConvertor != null) {
 					targetToSource.setConverter(targetToSourceConvertor);
-				} else if(!sourceType.isAssignableFrom(targetType)) {
+				} else if (!sourceType.isAssignableFrom(targetType)) {
 					IConverter t2m = XWT.findConvertor(targetType, sourceType);
-					if(t2m != null) {
+					if (t2m != null) {
 						targetToSource.setConverter(t2m);
 					}
 				}

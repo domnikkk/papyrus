@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,6 +23,7 @@ public class CustomBooleanStyleObservableValue extends AbstractCustomStyleObserv
 		super(source, domain, styleName, NotationPackage.eINSTANCE.getBooleanValueStyle(), NotationPackage.eINSTANCE.getBooleanValueStyle_BooleanValue());
 	}
 
+	@Override
 	public Object getValueType() {
 		return Boolean.class;
 	}
@@ -30,7 +31,7 @@ public class CustomBooleanStyleObservableValue extends AbstractCustomStyleObserv
 	/**
 	 * Gets the default value when this style is not set.
 	 * Subclasses may override
-	 * 
+	 *
 	 * @return The default value for this BooleanStyleValue
 	 */
 	@Override
@@ -40,7 +41,7 @@ public class CustomBooleanStyleObservableValue extends AbstractCustomStyleObserv
 
 	@Override
 	public Command getCommand(Object value) {
-		if(value instanceof Boolean) {
+		if (value instanceof Boolean) {
 			return super.getCommand(value);
 		}
 		throw new IllegalArgumentException("The value " + value + " is not a valid Boolean Value");

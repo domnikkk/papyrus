@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.serviceregistry;
 
@@ -9,41 +9,46 @@ import java.util.List;
 
 /**
  * A class used to record traces for tests
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class TestTrace {
 
-	public List<TraceRecord>traces = new ArrayList<TraceRecord>();
-	
+	public List<TraceRecord> traces = new ArrayList<TraceRecord>();
+
 	/**
 	 * Record a new trace.
+	 * 
 	 * @param trace
 	 */
 	public void addTrace(String trace) {
 		addTrace(null, trace, null);
 	}
-	
+
 	/**
 	 * Record a new trace.
+	 * 
 	 * @param trace
 	 */
 	public void addTrace(String name, String trace) {
 		addTrace(name, trace, null);
 	}
-	
+
 	/**
 	 * Record a new trace.
+	 * 
 	 * @param trace
 	 */
 	public void addTrace(String name, String trace, Object value) {
-		traces.add(new TraceRecord( name, trace, value));
+		traces.add(new TraceRecord(name, trace, value));
 	}
-	
+
 	/**
 	 * Return the name and the trace in one concatenated string ("name,trace").
-	 * @param i Index of the requested trace
+	 * 
+	 * @param i
+	 *            Index of the requested trace
 	 * @return
 	 */
 	public String getNameTrace(int i) {
@@ -52,6 +57,7 @@ public class TestTrace {
 
 	/**
 	 * Get the value
+	 * 
 	 * @param i
 	 * @return
 	 */
@@ -61,76 +67,81 @@ public class TestTrace {
 
 	/**
 	 * Return true if the trace contains the specified events.
+	 * 
 	 * @return
 	 */
-	public boolean contains( String name, String trace) {
-		
+	public boolean contains(String name, String trace) {
+
 		return indexOfNameTrace(name, trace) >= 0;
 	}
-	
-    /**
-     * Returns the index of the first occurrence of the specified elements
-     * in these lists, or -1 if this list does not contain the element.
-     */
-    public int indexOf(String name, String trace, Object value) {
 
-    	for (int i = 0; i < traces.size(); i++) {
-    		TraceRecord record = traces.get(i);
+	/**
+	 * Returns the index of the first occurrence of the specified elements
+	 * in these lists, or -1 if this list does not contain the element.
+	 */
+	public int indexOf(String name, String trace, Object value) {
 
-    		if( name.equals(record.name) && trace.equals(record.trace) )
-    			return i;
-    	}
+		for (int i = 0; i < traces.size(); i++) {
+			TraceRecord record = traces.get(i);
 
-    	return -1;
-      }
+			if (name.equals(record.name) && trace.equals(record.trace)) {
+				return i;
+			}
+		}
 
-    /**
-     * Returns the index of the first occurrence of the specified elements
-     * in these lists, or -1 if this list does not contain the element.
-     */
-    public int indexOfNameTrace(String name, String trace) {
+		return -1;
+	}
 
-    	for (int i = 0; i < traces.size(); i++) {
-    		TraceRecord record = traces.get(i);
+	/**
+	 * Returns the index of the first occurrence of the specified elements
+	 * in these lists, or -1 if this list does not contain the element.
+	 */
+	public int indexOfNameTrace(String name, String trace) {
 
-    		if( name.equals(record.name) && trace.equals(record.trace) )
-    			return i;
-    	}
+		for (int i = 0; i < traces.size(); i++) {
+			TraceRecord record = traces.get(i);
 
-    	return -1;
-      }
+			if (name.equals(record.name) && trace.equals(record.trace)) {
+				return i;
+			}
+		}
 
-    /**
-     * Returns the index of the first occurrence of the specified elements
-     * in these lists, or -1 if this list does not contain the element.
-     */
-    public int indexOfTrace(String trace) {
+		return -1;
+	}
 
-    	for (int i = 0; i < traces.size(); i++) {
-    		TraceRecord record = traces.get(i);
+	/**
+	 * Returns the index of the first occurrence of the specified elements
+	 * in these lists, or -1 if this list does not contain the element.
+	 */
+	public int indexOfTrace(String trace) {
 
-    		if( trace.equals(record.trace) )
-    			return i;
-    	}
+		for (int i = 0; i < traces.size(); i++) {
+			TraceRecord record = traces.get(i);
 
-    	return -1;
-      }
+			if (trace.equals(record.trace)) {
+				return i;
+			}
+		}
 
-    /**
-     * Returns the index of the first occurrence of the specified elements
-     * in these lists, or -1 if this list does not contain the element.
-     */
-    public int indexOfName(String name) {
+		return -1;
+	}
 
-    	for (int i = 0; i < traces.size(); i++) {
-    		TraceRecord record = traces.get(i);
+	/**
+	 * Returns the index of the first occurrence of the specified elements
+	 * in these lists, or -1 if this list does not contain the element.
+	 */
+	public int indexOfName(String name) {
 
-    		if( name.equals(record.name)  )
-    			return i;
-    	}
+		for (int i = 0; i < traces.size(); i++) {
+			TraceRecord record = traces.get(i);
 
-    	return -1;
-      }
+			if (name.equals(record.name)) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
 
 	/**
 	 * Reset the trace.
@@ -139,14 +150,14 @@ public class TestTrace {
 		traces.clear();
 	}
 
-	
+
 	/**
 	 * @return the traces
 	 */
 	public List<TraceRecord> getTraces() {
 		return traces;
 	}
-	
+
 	/**
 	 * A Record of the trace.
 	 */
@@ -154,6 +165,7 @@ public class TestTrace {
 		public String name;
 		public String trace;
 		public Object value;
+
 		/**
 		 * Constructor.
 		 *
@@ -166,16 +178,16 @@ public class TestTrace {
 			this.trace = trace;
 			this.value = value;
 		}
-		
+
 		/**
-		 * 
+		 *
 		 * @return
 		 */
 		public String getNameTrace() {
 			// TODO Auto-generated method stub
 			return name + "," + trace;
 		}
-		
+
 	}
 
 }

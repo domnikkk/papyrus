@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2010 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *    Nicolas Bros (Mia-Software) - initial API and implementation
  */
@@ -26,14 +26,14 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.modelCellEditor.UnaryRe
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCellEditorFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ModelCellEditorFactory init() {
@@ -52,7 +52,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelCellEditorFactoryImpl() {
@@ -61,7 +61,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelCellEditorDeclarations createModelCellEditorDeclarations() {
@@ -93,7 +93,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public BasicCellEditor createBasicCellEditor() {
@@ -103,7 +103,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public UnaryReferenceCellEditor createUnaryReferenceCellEditor() {
@@ -113,7 +113,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public NaryFeatureCellEditor createNaryFeatureCellEditor() {
@@ -123,7 +123,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ModelCellEditorPackage getModelCellEditorPackage() {
@@ -132,7 +132,7 @@ public class ModelCellEditorFactoryImpl extends EFactoryImpl implements ModelCel
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

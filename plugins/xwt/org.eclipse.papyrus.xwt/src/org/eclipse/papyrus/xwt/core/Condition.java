@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -18,7 +18,7 @@ import org.eclipse.papyrus.xwt.metadata.IMetaclass;
 import org.eclipse.papyrus.xwt.metadata.IProperty;
 
 /**
- * 
+ *
  * @author yyang (yves.yang@soyatec.com)
  */
 public class Condition {
@@ -89,17 +89,17 @@ public class Condition {
 		String sourceName = getSourceName();
 		IBinding binding = getBinding();
 		Object value = getValue();
-		if(value == null) {
+		if (value == null) {
 			return false;
 		}
-		while(value instanceof IObservableValue) {
-			value = ((IObservableValue)value).getValue();
+		while (value instanceof IObservableValue) {
+			value = ((IObservableValue) value).getValue();
 		}
 
 		Object dataObject = TriggerBase.getElementByName(element, sourceName);
 
-		if(propertyName != null) {
-			if(cacheData != null) {
+		if (propertyName != null) {
+			if (cacheData != null) {
 				try {
 					Object existingValue = cacheData.property.getValue(dataObject);
 					return Operator.compare(existingValue, operator, cacheData.value);
@@ -111,12 +111,12 @@ public class Condition {
 
 			IMetaclass metaclass = XWT.getMetaclass(dataObject);
 			IProperty prop = metaclass.findProperty(propertyName);
-			if(prop != null && value != null) {
+			if (prop != null && value != null) {
 				cacheData.property = prop;
 				Class<?> valueType = value.getClass();
 				IConverter converter = XWT.findConvertor(valueType, prop.getType());
 				Object trueValue = value;
-				if(converter != null) {
+				if (converter != null) {
 					trueValue = converter.convert(trueValue);
 				}
 				cacheData.value = trueValue;
@@ -127,31 +127,31 @@ public class Condition {
 					LoggerManager.log(e);
 				}
 			}
-		} else if(binding != null) {
+		} else if (binding != null) {
 			Object existingValue = binding.getValue(null);
-			if(existingValue == null) {
+			if (existingValue == null) {
 				return false;
 			}
-			while(existingValue instanceof IObservableValue) {
-				existingValue = ((IObservableValue)existingValue).getValue();
+			while (existingValue instanceof IObservableValue) {
+				existingValue = ((IObservableValue) existingValue).getValue();
 			}
 			Class<?> existingValueType = existingValue.getClass();
 			Class<?> valueType = value.getClass();
 			Object normalizedValue = value;
-			if(!existingValueType.isAssignableFrom(valueType) && !valueType.isAssignableFrom(existingValueType)) {
+			if (!existingValueType.isAssignableFrom(valueType) && !valueType.isAssignableFrom(existingValueType)) {
 				IConverter converter = XWT.findConvertor(valueType, existingValueType);
-				if(converter != null) {
+				if (converter != null) {
 					normalizedValue = converter.convert(normalizedValue);
-				} else if(value.toString().trim().length() > 0) {
+				} else if (value.toString().trim().length() > 0) {
 					boolean found = false;
 					// in case where the value is a boolean
 					converter = XWT.findConvertor(valueType, Boolean.class);
-					if(converter != null) {
+					if (converter != null) {
 						try {
 							Object booleanValue = converter.convert(value);
-							if(booleanValue != null) {
+							if (booleanValue != null) {
 								converter = XWT.findConvertor(existingValueType, Boolean.class);
-								if(converter != null) {
+								if (converter != null) {
 									existingValue = converter.convert(existingValue);
 									normalizedValue = booleanValue;
 									found = true;
@@ -160,14 +160,14 @@ public class Condition {
 						} catch (RuntimeException e) {
 						}
 					}
-					if(!found) {
+					if (!found) {
 						converter = XWT.findConvertor(valueType, int.class);
-						if(converter != null) {
+						if (converter != null) {
 							try {
 								Object booleanValue = converter.convert(value);
-								if(booleanValue != null) {
+								if (booleanValue != null) {
 									converter = XWT.findConvertor(existingValueType, int.class);
-									if(converter != null) {
+									if (converter != null) {
 										existingValue = converter.convert(existingValue);
 										normalizedValue = booleanValue;
 										found = true;
@@ -177,14 +177,14 @@ public class Condition {
 							}
 						}
 					}
-					if(!found) {
+					if (!found) {
 						converter = XWT.findConvertor(valueType, double.class);
-						if(converter != null) {
+						if (converter != null) {
 							try {
 								Object booleanValue = converter.convert(value);
-								if(booleanValue != null) {
+								if (booleanValue != null) {
 									converter = XWT.findConvertor(existingValueType, double.class);
-									if(converter != null) {
+									if (converter != null) {
 										existingValue = converter.convert(existingValue);
 										normalizedValue = booleanValue;
 										found = true;
@@ -194,14 +194,14 @@ public class Condition {
 							}
 						}
 					}
-					if(!found) {
+					if (!found) {
 						converter = XWT.findConvertor(valueType, String.class);
-						if(converter != null) {
+						if (converter != null) {
 							try {
 								Object booleanValue = converter.convert(value);
-								if(booleanValue != null) {
+								if (booleanValue != null) {
 									converter = XWT.findConvertor(existingValueType, String.class);
-									if(converter != null) {
+									if (converter != null) {
 										existingValue = converter.convert(existingValue);
 										normalizedValue = booleanValue;
 										found = true;

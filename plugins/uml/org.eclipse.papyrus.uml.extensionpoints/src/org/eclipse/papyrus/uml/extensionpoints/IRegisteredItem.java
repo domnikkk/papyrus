@@ -14,21 +14,21 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.swt.graphics.Image;
 
 public interface IRegisteredItem {
-	
+
 	/** Name of the registered item */
 	String getName();
-	
+
 	/** URI to the file that is the registered item */
 	URI getUri();
-	
+
 	/** Path of the file that implements the registered element */
 	String getPath();
-	
+
 	/** Identifier for the provider of this item */
 	String getProvider();
-	
+
 	/** Long description of the registered item */
 	String getDescription();
-	
+
 	Image getImage();
 }

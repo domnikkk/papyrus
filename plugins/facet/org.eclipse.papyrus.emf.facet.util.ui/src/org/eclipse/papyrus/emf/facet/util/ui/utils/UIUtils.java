@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Text;
 /**
  * This util class provides methods for the creation of basics ui components
  * like buttons or text field.
- * 
+ *
  * @since 0.3
  */
 public final class UIUtils {
@@ -42,7 +42,7 @@ public final class UIUtils {
 	/**
 	 * Create the label (with the given labelName) in the given composite. The
 	 * layoutData of the label is {@link #getLabelGridData()}.
-	 * 
+	 *
 	 * @param parent
 	 *            the composite parent.
 	 * @param labelName
@@ -58,7 +58,7 @@ public final class UIUtils {
 
 	/**
 	 * Create and return a new button.
-	 * 
+	 *
 	 * @param parent
 	 *            the button parent.
 	 * @param text
@@ -83,7 +83,7 @@ public final class UIUtils {
 
 	/**
 	 * Create and return a new text field.
-	 * 
+	 *
 	 * @param parent
 	 *            the text field parent.
 	 * @param text
@@ -111,7 +111,7 @@ public final class UIUtils {
 
 	/**
 	 * Create a combobox with a label.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the combobox.
 	 * @param enabled
@@ -149,7 +149,7 @@ public final class UIUtils {
 
 	/**
 	 * Create and return a new text field.
-	 * 
+	 *
 	 * @param parent
 	 *            the text field parent.
 	 * @param text
@@ -187,7 +187,7 @@ public final class UIUtils {
 
 	/**
 	 * Create and return a new checkbox.
-	 * 
+	 *
 	 * @param parent
 	 *            the checkbox parent.
 	 * @param enabled
@@ -213,7 +213,7 @@ public final class UIUtils {
 
 	/**
 	 * Create and return a new spinner.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of the spinner.
 	 * @param maxValue
@@ -227,7 +227,7 @@ public final class UIUtils {
 	 * @param modifyListener
 	 *            the listener when the spinner is changed (can be null).
 	 * @return the new spinner.
-	 * 
+	 *
 	 * @see Spinner
 	 */
 	public static Spinner createSpinner(final Composite parent,

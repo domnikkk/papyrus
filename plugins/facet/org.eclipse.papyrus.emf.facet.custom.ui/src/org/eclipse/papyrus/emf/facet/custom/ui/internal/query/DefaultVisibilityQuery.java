@@ -38,31 +38,31 @@ public class DefaultVisibilityQuery implements IJavaQuery2<EObject, Boolean> {
 
 	public Boolean evaluate(EObject source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
 		ParameterValue paramValue = parameterValues.getParameterValueByName("eStructuralFeature");
-		if(paramValue == null) {
+		if (paramValue == null) {
 			return true;
 		}
 
-		EStructuralFeature feature = (EStructuralFeature)paramValue.getValue();
+		EStructuralFeature feature = (EStructuralFeature) paramValue.getValue();
 
-		if(feature == null) {
+		if (feature == null) {
 			return true;
 		}
 
-		if(feature instanceof EAttribute) {
+		if (feature instanceof EAttribute) {
 			return false;
 		}
 
-		if(feature instanceof FacetReference) {
+		if (feature instanceof FacetReference) {
 			return true;
 		}
 
-		if(feature instanceof EReference) {
+		if (feature instanceof EReference) {
 			Object value = source.eGet(feature);
-			if(value == null) {
+			if (value == null) {
 				return false;
 			}
-			if(value instanceof Collection<?>) {
-				return !((Collection<?>)value).isEmpty();
+			if (value instanceof Collection<?>) {
+				return !((Collection<?>) value).isEmpty();
 			}
 		}
 

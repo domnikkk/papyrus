@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -16,7 +16,7 @@ import org.eclipse.swt.graphics.Font;
 
 /**
  * String to Font converter
- * 
+ *
  * @author yyang
  */
 public class StringToFont implements IConverter {
@@ -24,7 +24,7 @@ public class StringToFont implements IConverter {
 	public static StringToFont instance = new StringToFont();
 
 	public Object convert(Object fromObject) {
-		return ResourceManager.resources.getFont((String)fromObject);
+		return ResourceManager.resources.getFont((String) fromObject);
 	}
 
 	public Object getFromType() {

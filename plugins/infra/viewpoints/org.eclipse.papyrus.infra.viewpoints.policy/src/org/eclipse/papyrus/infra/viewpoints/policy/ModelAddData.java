@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.PathElement;
 
 /**
  * Represents the set of data related to the insertion of a new model element in a view
- * 
+ *
  * @author Laurent Wouters
  */
 public class ModelAddData {
@@ -38,7 +38,7 @@ public class ModelAddData {
 
 	/**
 	 * Determines whether the insertion is permitted
-	 * 
+	 *
 	 * @return <code>true</code> if it is permitted
 	 */
 	public boolean isPermitted() {
@@ -47,7 +47,7 @@ public class ModelAddData {
 
 	/**
 	 * Determines whether an insertion path for the new element has been defined
-	 * 
+	 *
 	 * @return <code>true</code> if an insertion path has been defined
 	 */
 	public boolean isPathDefined() {
@@ -56,7 +56,7 @@ public class ModelAddData {
 
 	/**
 	 * Initializes this set of data without an insertion path
-	 * 
+	 *
 	 * @param permit
 	 *            Is the insertion permitted?
 	 */
@@ -66,7 +66,7 @@ public class ModelAddData {
 
 	/**
 	 * Initializes this set of data
-	 * 
+	 *
 	 * @param permit
 	 *            Is the insertion permitted?
 	 * @param insertionPath
@@ -76,14 +76,15 @@ public class ModelAddData {
 		this.permit = permit;
 		if (insertionPath != null && !insertionPath.isEmpty()) {
 			this.path = new ArrayList<EReference>(insertionPath.size());
-			for (int i = 0; i != insertionPath.size(); i++)
+			for (int i = 0; i != insertionPath.size(); i++) {
 				path.add(insertionPath.get(i).getFeature());
+			}
 		}
 	}
 
 	/**
 	 * Execute the insertion represented by this object on the given origin object
-	 * 
+	 *
 	 * @param origin
 	 *            The origin object
 	 * @param target
@@ -95,8 +96,9 @@ public class ModelAddData {
 		int index = 0;
 		while (index < path.size() - 1) {
 			current = buildPathStep(current, path.get(index));
-			if (current == null)
+			if (current == null) {
 				return false;
+			}
 			index++;
 		}
 		EReference feature = path.get(path.size() - 1);
@@ -135,7 +137,7 @@ public class ModelAddData {
 
 	/**
 	 * Executes a step in the insertion path
-	 * 
+	 *
 	 * @param current
 	 *            The current object
 	 * @param feature
@@ -148,7 +150,9 @@ public class ModelAddData {
 			// Try to create an instance of the type
 			EClass type = feature.getEReferenceType();
 			if (type.isAbstract())
+			{
 				return null; // Too bad, we can't fix this
+			}
 			EObject inst = EcoreUtil.create(type);
 			current.eSet(feature, inst);
 			setUndo(current, feature, null, inst);
@@ -162,7 +166,9 @@ public class ModelAddData {
 			// We have to create one
 			EClass type = feature.getEReferenceType();
 			if (type.isAbstract())
+			{
 				return null; // Too bad, we can't fix this
+			}
 			EObject inst = EcoreUtil.create(type);
 			list.add(inst);
 			setUndo(current, feature, null, inst);
@@ -174,7 +180,7 @@ public class ModelAddData {
 
 	/**
 	 * Sets up the undo data if necessary
-	 * 
+	 *
 	 * @param origin
 	 *            The modified object
 	 * @param feature
@@ -185,8 +191,9 @@ public class ModelAddData {
 	 *            The target value
 	 */
 	private void setUndo(EObject origin, EReference feature, EObject previous, EObject next) {
-		if (undoReference == null)
+		if (undoReference == null) {
 			return;
+		}
 		undoOrigin = origin;
 		undoReference = feature;
 		undoValuePrevious = previous;

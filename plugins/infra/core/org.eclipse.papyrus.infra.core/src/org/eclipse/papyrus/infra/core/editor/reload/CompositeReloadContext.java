@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,9 +56,9 @@ public class CompositeReloadContext implements IDisposableReloadContext, IAdapta
 
 	@Override
 	public void dispose() {
-		for(Object next : reloadContexts) {
-			if(next instanceof IDisposableReloadContext) {
-				((IDisposableReloadContext)next).dispose();
+		for (Object next : reloadContexts) {
+			if (next instanceof IDisposableReloadContext) {
+				((IDisposableReloadContext) next).dispose();
 			}
 		}
 
@@ -73,8 +73,8 @@ public class CompositeReloadContext implements IDisposableReloadContext, IAdapta
 	private IInternalEMFSelectionContext getEMFContext() {
 		IInternalEMFSelectionContext result = null;
 
-		for(Object next : reloadContexts) {
-			if(AdapterUtils.adapt(next, IInternalEMFSelectionContext.class, null) != null) {
+		for (Object next : reloadContexts) {
+			if (AdapterUtils.adapt(next, IInternalEMFSelectionContext.class, null) != null) {
 				// We need the adapter
 				result = new IInternalEMFSelectionContext.Composite(this);
 				break;

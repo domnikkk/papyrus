@@ -24,10 +24,9 @@ import org.eclipse.swt.dnd.DropTargetListener;
 
 /**
  * Implements a {@link DropTargetListener} that accepts {@link EObject}s
- * transferred locally (i.e. through {@link LocalTransfer}), and calls the given
- * {@link DropAction} with the dropped {@link EObject}s.
+ * transferred locally (i.e. through {@link LocalTransfer}), and calls the given {@link DropAction} with the dropped {@link EObject}s.
  */
-//Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.internal.DropAdapter
+// Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.views.queryExecution.internal.DropAdapter
 public class DropAdapter implements DropTargetListener {
 
 	private final DropAction dropAction;

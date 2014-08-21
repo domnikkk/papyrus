@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.papyrus.infra.nattable.utils.TableClipboardUtils;
 
 /**
  * Paste Handler
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class PasteInTableHandler extends AbstractTableHandler {
 
@@ -35,9 +35,9 @@ public class PasteInTableHandler extends AbstractTableHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return
 	 * @throws ExecutionException
@@ -53,9 +53,10 @@ public class PasteInTableHandler extends AbstractTableHandler {
 	/**
 	 * @Override
 	 * @see org.eclipse.papyrus.infra.nattable.handler.AbstractTableHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
+	@Override
 	public void setEnabled(Object evaluationContext) {
 		setBaseEnabled(getCurrentNattableModelManager() != null);
 	}

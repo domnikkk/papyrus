@@ -29,25 +29,25 @@ import org.eclipse.swt.graphics.Image;
 
 /**
  * The label provider used for ModelView header
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class ModelViewsHeaderLabelProvider extends EMFFeatureHeaderLabelProvider {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.nattable.provider.EMFFeatureHeaderLabelProvider#accept(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public boolean accept(final Object element) {
-		if(element instanceof ILabelProviderContextElementWrapper) {
-			final Object object = ((ILabelProviderContextElementWrapper)element).getObject();
+		if (element instanceof ILabelProviderContextElementWrapper) {
+			final Object object = ((ILabelProviderContextElementWrapper) element).getObject();
 			final String id = AxisUtils.getPropertyId(object);
-			if(id != null) {
+			if (id != null) {
 				return id.startsWith(Utils.NATTABLE_EDITOR_PAGE_ID);
 			}
 		}
@@ -55,15 +55,15 @@ public class ModelViewsHeaderLabelProvider extends EMFFeatureHeaderLabelProvider
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.nattable.provider.EMFFeatureHeaderLabelProvider#getText(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public String getText(final Object element) {
-		final ILabelProviderContextElementWrapper contextElement = (ILabelProviderContextElementWrapper)element;
+		final ILabelProviderContextElementWrapper contextElement = (ILabelProviderContextElementWrapper) element;
 		final Object object = contextElement.getObject();
 		final IConfigRegistry configRegistry = contextElement.getConfigRegistry();
 		final String id = AxisUtils.getPropertyId(object);
@@ -72,61 +72,61 @@ public class ModelViewsHeaderLabelProvider extends EMFFeatureHeaderLabelProvider
 		boolean isDerived = false;
 		int lowerBounds = 1;
 		int upperBounds = 1;
-		if(Utils.VIEW_NAME.equals(name)) {
+		if (Utils.VIEW_NAME.equals(name)) {
 			lowerBounds = 0;
 			type = EcorePackage.eINSTANCE.getEString();
-		} else if(Utils.VIEW_IS_OPEN.equals(name)) {
+		} else if (Utils.VIEW_IS_OPEN.equals(name)) {
 			isDerived = true;
 			type = EcorePackage.eINSTANCE.getEBoolean();
-		} else if(Utils.VIEW_CONTEXT.equals(name)) {
+		} else if (Utils.VIEW_CONTEXT.equals(name)) {
 			isDerived = true;
 			type = EcorePackage.eINSTANCE.getEObject();
-		} else if(Utils.VIEW_EDITOR_TYPE.equals(name)) {
+		} else if (Utils.VIEW_EDITOR_TYPE.equals(name)) {
 			type = EcorePackage.eINSTANCE.getEString();
 		}
 		ILabelProviderConfiguration conf = null;
-		if(element instanceof LabelProviderCellContextElementWrapper) {
-			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper)element);
+		if (element instanceof LabelProviderCellContextElementWrapper) {
+			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper) element);
 		}
-		if(conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration)conf).isDisplayLabel()) {
+		if (conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration) conf).isDisplayLabel()) {
 			return ""; //$NON-NLS-1$
 		}
 		String alias = ""; //$NON-NLS-1$
-		if(object instanceof FeatureAxis) {
-			alias = ((FeatureAxis)object).getAlias();
+		if (object instanceof FeatureAxis) {
+			alias = ((FeatureAxis) object).getAlias();
 		}
-		if(alias != null && !alias.equals("")) { //$NON-NLS-1$
+		if (alias != null && !alias.equals("")) { //$NON-NLS-1$
 			name = alias;
 		}
-		if(conf instanceof FeatureLabelProviderConfiguration) {
-			return getText((FeatureLabelProviderConfiguration)conf, configRegistry, name, type, isDerived, lowerBounds, upperBounds);
+		if (conf instanceof FeatureLabelProviderConfiguration) {
+			return getText((FeatureLabelProviderConfiguration) conf, configRegistry, name, type, isDerived, lowerBounds, upperBounds);
 		} else {
 			return super.getText(element);
 		}
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.nattable.provider.EMFFeatureHeaderLabelProvider#getImage(java.lang.Object)
-	 * 
+	 *
 	 * @param element
 	 * @return
 	 */
 	@Override
 	public Image getImage(final Object element) {
 		ILabelProviderConfiguration conf = null;
-		if(element instanceof LabelProviderCellContextElementWrapper) {
-			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper)element);
+		if (element instanceof LabelProviderCellContextElementWrapper) {
+			conf = getLabelConfiguration((LabelProviderCellContextElementWrapper) element);
 		}
-		if(conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration)conf).isDisplayIcon()) {
+		if (conf instanceof ObjectLabelProviderConfiguration && !((ObjectLabelProviderConfiguration) conf).isDisplayIcon()) {
 			return null;
 		}
-		final Object object = ((ILabelProviderContextElementWrapper)element).getObject();
+		final Object object = ((ILabelProviderContextElementWrapper) element).getObject();
 		final String id = AxisUtils.getPropertyId(object);
 		final String columnName = id.replaceFirst(Utils.NATTABLE_EDITOR_PAGE_ID, ""); //$NON-NLS-1$
-		if(Utils.VIEW_NAME.equals(columnName) || Utils.VIEW_IS_OPEN.equals(columnName) || Utils.VIEW_EDITOR_TYPE.equals(columnName)) {
+		if (Utils.VIEW_NAME.equals(columnName) || Utils.VIEW_IS_OPEN.equals(columnName) || Utils.VIEW_EDITOR_TYPE.equals(columnName)) {
 			return EStructuralFeatureImageRegistry.getAttributeIcon();
-		} else if(Utils.VIEW_CONTEXT.equals(columnName)) {
+		} else if (Utils.VIEW_CONTEXT.equals(columnName)) {
 			return EStructuralFeatureImageRegistry.getLinkIcon();
 		}
 		return null;

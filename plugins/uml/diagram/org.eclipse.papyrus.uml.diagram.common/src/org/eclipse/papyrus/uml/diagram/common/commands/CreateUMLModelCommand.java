@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,11 +21,11 @@ import org.eclipse.uml2.uml.UMLFactory;
  */
 public class CreateUMLModelCommand extends ModelCreationCommandBase {
 
-	public static final String COMMAND_ID = "uml"; 
+	public static final String COMMAND_ID = "uml";
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#createRootElement()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -36,19 +36,19 @@ public class CreateUMLModelCommand extends ModelCreationCommandBase {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.extension.commands.ModelCreationCommandBase#initializeModel(org.eclipse.emf.ecore.EObject)
-	 * 
+	 *
 	 * @param owner
 	 */
 
 	@Override
 	protected void initializeModel(EObject owner) {
 		super.initializeModel(owner);
-		((org.eclipse.uml2.uml.Package)owner).setName(getModelName());
+		((org.eclipse.uml2.uml.Package) owner).setName(getModelName());
 	}
 
 	/**
 	 * Gets the model name.
-	 * 
+	 *
 	 * @return the model name
 	 */
 	protected String getModelName() {

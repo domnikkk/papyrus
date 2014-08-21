@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public class PartDecompositionHelperAdvice extends AbstractEditHelperAdvice {
 	 */
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
-		PartDecomposition decomposition = (PartDecomposition)request.getElementToDestroy();
+		PartDecomposition decomposition = (PartDecomposition) request.getElementToDestroy();
 		// destroy the decomposed lifelines
 		return request.getDestroyDependentsCommand(decomposition.getCovereds());
 	}

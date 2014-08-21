@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.swt.graphics.Point;
 
 /**
  * Computes completion proposals for given context EObject.
- * 
+ *
  * Intended to be used in case if the whole set of proposals does not depend on
  * the suggested prefix text and only filtering by given string prefix is
  * required to compute the result list.
@@ -49,8 +49,9 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		myContext = context;
 	}
 
+	@Override
 	public ICompletionProposal[] computeCompletionProposals(IContentAssistSubjectControl subjectControl, int offset) {
-		if(myContext == null) {
+		if (myContext == null) {
 			return NO_PROPOSALS;
 		}
 		Point selection = subjectControl.getSelectedRange();
@@ -60,8 +61,8 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		int prefixLength = prefix.length();
 
 		List<ICompletionProposal> result = new LinkedList<ICompletionProposal>();
-		for(String next : computeContextProposals(myContext)) {
-			if(next == null || !next.startsWith(prefix)) {
+		for (String next : computeContextProposals(myContext)) {
+			if (next == null || !next.startsWith(prefix)) {
 				continue;
 			}
 			ICompletionProposal proposal = new CompletionProposal(next, selectionStart - prefixLength, selectionLength + prefixLength, next.length(), null, next, null, null);
@@ -70,37 +71,44 @@ public abstract class EObjectCompletionProcessor implements IContentAssistProces
 		return result.toArray(NO_PROPOSALS);
 	}
 
+	@Override
 	public IContextInformation[] computeContextInformation(IContentAssistSubjectControl contentAssistSubjectControl, int documentOffset) {
 		return NO_CONTEXTS;
 	}
 
+	@Override
 	public ICompletionProposal[] computeCompletionProposals(ITextViewer viewer, int offset) {
 		throw new UnsupportedOperationException("use ISubjectControlContentAssistProcessor instead");
 	}
 
+	@Override
 	public IContextInformation[] computeContextInformation(ITextViewer viewer, int offset) {
 		return NO_CONTEXTS;
 	}
 
+	@Override
 	public char[] getCompletionProposalAutoActivationCharacters() {
 		return null;
 	}
 
+	@Override
 	public char[] getContextInformationAutoActivationCharacters() {
 		return null;
 	}
 
+	@Override
 	public IContextInformationValidator getContextInformationValidator() {
 		return null;
 	}
 
+	@Override
 	public String getErrorMessage() {
 		return null;
 	}
 
 	private String getPrefix(IContentAssistSubjectControl subjectControl, int offset) {
 		IDocument doc = subjectControl.getDocument();
-		if(doc == null || offset > doc.getLength()) {
+		if (doc == null || offset > doc.getLength()) {
 			throw new IllegalStateException("Bad content assist subject control: " + doc);
 		}
 		try {

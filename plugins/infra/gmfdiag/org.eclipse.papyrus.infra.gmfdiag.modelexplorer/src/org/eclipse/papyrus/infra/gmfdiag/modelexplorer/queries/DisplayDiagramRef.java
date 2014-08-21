@@ -1,14 +1,14 @@
 /**
  *  Copyright (c) 2011 Atos.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Atos - Initial API and implementation
- * 
+ *
  */
 package org.eclipse.papyrus.infra.gmfdiag.modelexplorer.queries;
 
@@ -35,18 +35,18 @@ public class DisplayDiagramRef extends AbstractEditorContainerQuery implements I
 	 */
 
 	public Boolean evaluate(EObject source, IParameterValueList2 parameterValues, IFacetManager facetManager) throws DerivedTypedElementException {
-		ParameterValue parameterValue= (ParameterValue)parameterValues.getParameterValueByName("eStructuralFeature");
-		EStructuralFeature eStructuralFeature=(EStructuralFeature)parameterValue.getValue();
-		if((eStructuralFeature instanceof FacetReference)&&("diagrams".equals((eStructuralFeature).getName()))){
+		ParameterValue parameterValue = parameterValues.getParameterValueByName("eStructuralFeature");
+		EStructuralFeature eStructuralFeature = (EStructuralFeature) parameterValue.getValue();
+		if ((eStructuralFeature instanceof FacetReference) && ("diagrams".equals((eStructuralFeature).getName()))) {
 
 			Iterator<EObject> roots = NavigatorUtils.getNotationRoots(source);
-			if(roots == null) {
+			if (roots == null) {
 				return false;
 			}
 
-			while(roots.hasNext()) {
+			while (roots.hasNext()) {
 				EObject root = roots.next();
-				if(root instanceof Diagram) {
+				if (root instanceof Diagram) {
 					if (EcoreUtil.equals(DiagramUtils.getOwner((Diagram) root), source)) {
 						return true;
 					}

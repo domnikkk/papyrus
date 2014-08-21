@@ -60,21 +60,21 @@ public class GenericXMLResourceImpl extends ResourceImpl {
 			SAXParserFactory f = SAXParserFactory.newInstance();
 			f.setValidating(false);
 			SAXParser p = f.newSAXParser();
-			DefaultHandler handler = new GenericXMLHandler(this, (Map<String, Object>)options);
+			DefaultHandler handler = new GenericXMLHandler(this, (Map<String, Object>) options);
 
 			final XMLReader reader = p.getXMLReader();
 			try {
 				reader.setProperty("http://xml.org/sax/properties/lexical-handler", //$NON-NLS-1$
-					handler);
+						handler);
 			} catch (SAXNotRecognizedException e) {
 				String message = "Default XML sax parser does not support lexical handling.\n" //$NON-NLS-1$
-					+ "DTDs and comment informations will not be available."; //$NON-NLS-1$
+						+ "DTDs and comment informations will not be available."; //$NON-NLS-1$
 				Activator.log.warn(message);
 			}
 
 			try {
 				reader.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd" //$NON-NLS-1$
-				, false);
+						, false);
 			} catch (SAXNotRecognizedException e) {
 				// go on without this feature,
 				// UnknownHostException may occur when
@@ -96,8 +96,8 @@ public class GenericXMLResourceImpl extends ResourceImpl {
 	@Override
 	protected final void doSave(final OutputStream outputStream, final Map<?, ?> options) throws IOException {
 		GenericXMLWriter writer = new GenericXMLWriter(outputStream);
-		for(EObject topLevelObject : getContents()) {
-			writer.serialize((Element)topLevelObject);
+		for (EObject topLevelObject : getContents()) {
+			writer.serialize((Element) topLevelObject);
 		}
 		writer.flush();
 		writer.close();

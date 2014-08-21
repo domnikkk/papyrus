@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,7 +38,7 @@ public class ModelValidationView
 	public static final String VIEW_ID = "org.eclipse.papyrus.views.validation.ModelValidationView"; //$NON-NLS-1$
 
 	private ViewSettings settings;
-	
+
 	public ModelValidationView() {
 		super();
 	}
@@ -46,23 +46,23 @@ public class ModelValidationView
 	@Override
 	public void init(IViewSite site, IMemento memento)
 			throws PartInitException {
-		
+
 		super.init(site, memento);
-		
+
 		this.settings = new ViewSettings(memento);
 	}
-	
+
 	@Override
 	public void saveState(IMemento memento) {
 		super.saveState(memento);
-		
+
 		settings.save(memento);
 	}
-	
+
 	@Override
 	protected IPage createDefaultPage(PageBook book) {
 		IPageBookViewPage result = new MessagePage(
-			"No model editor is currently active.");
+				"No model editor is currently active.");
 
 		initPage(result);
 		result.createControl(book);
@@ -77,8 +77,8 @@ public class ModelValidationView
 		IPageBookViewPage result;
 		try {
 			result = (services == null)
-				? new MessagePage("Invalid model editor selected.")
-				: new ModelValidationPage(services, settings);
+					? new MessagePage("Invalid model editor selected.")
+					: new ModelValidationPage(services, settings);
 		} catch (ServiceException e) {
 			String message = "Failed to obtain services required for Model Validation View.";
 			Activator.log.error(message, e);

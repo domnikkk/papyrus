@@ -12,27 +12,29 @@ import org.eclipse.ui.preferences.ScopedPreferenceStore;
 public class TabTooltipPreferenceInitializer extends AbstractPreferenceInitializer {
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 */
+	@Override
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = createPreferenceStore();
 		store.setDefault(ITabTooltipPreferences.isTooltipEnable, true);
 		store.setDefault(ITabTooltipPreferences.isTooltipForCurrentTabShown, false);
 		store.setDefault(ITabTooltipPreferences.scaledFactor, 50);
 		store.setDefault(ITabTooltipPreferences.tooltipAutoCloseDelay, 5000);
-		
+
 
 	}
 
 	/**
 	 * Subclasses may implements this method in order to provide the requested preferenceStore.
+	 * 
 	 * @return
 	 */
 	protected IPreferenceStore createPreferenceStore() {
 		IPreferenceStore store = new ScopedPreferenceStore(DefaultScope.INSTANCE, Activator.getDefault().getBundle().getSymbolicName());
-		
+
 		return store;
 	}
-	
+
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
@@ -34,47 +34,47 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
  * on each sub-element, when this makes sense (i.e. for booleans)
  * When an aggregation is not possible, the result of the same method
  * call on the first element is returned (e.g. for Content and Label providers)
- * 
+ *
  * @author Camille Letavernier
  */
 public class CompositeModelElement extends AbstractModelElement {
 
 	private final BoundModelElementFactory subModelElementFactory;
-	
-	
+
+
 	public CompositeModelElement(BoundModelElementFactory subModelElementFactory) {
 		super();
-		
+
 		this.subModelElementFactory = subModelElementFactory;
 	}
-	
+
 	@Override
 	public IObservable doGetObservable(String propertyPath) {
 
 		AggregatedObservable observableComposite = null;
 
-		for(ModelElement element : elements) {
+		for (ModelElement element : elements) {
 			IObservable observable = element.getObservable(propertyPath);
 
-			//Otherwise, we use a standard AggregatedComposite
-			if(observableComposite == null) {
-				if(observable instanceof AggregatedObservable) {
-					observableComposite = (AggregatedObservable)observable;
+			// Otherwise, we use a standard AggregatedComposite
+			if (observableComposite == null) {
+				if (observable instanceof AggregatedObservable) {
+					observableComposite = (AggregatedObservable) observable;
 				} else {
-					if(observable instanceof IObservableValue) {
+					if (observable instanceof IObservableValue) {
 						observableComposite = new MultipleObservableValue().aggregate(observable);
-						if(observableComposite == null) {
+						if (observableComposite == null) {
 							return null;
 						}
 					} else {
-						return null; //The support for CompositeObservableList is too complicated.
-						//There are too many non-trivial choices (Union or Intersection display,
-						//unadapted behavior of MultipleValueEditors, ...)
-						//observableComposite = new MultipleObservableList();
+						return null; // The support for CompositeObservableList is too complicated.
+						// There are too many non-trivial choices (Union or Intersection display,
+						// unadapted behavior of MultipleValueEditors, ...)
+						// observableComposite = new MultipleObservableList();
 					}
 				}
 			} else {
-				if((observableComposite = observableComposite.aggregate(observable)) == null) {
+				if ((observableComposite = observableComposite.aggregate(observable)) == null) {
 					return null;
 				}
 			}
@@ -89,18 +89,18 @@ public class CompositeModelElement extends AbstractModelElement {
 		Iterator<?> newSourceElements = selection.iterator();
 
 		// Re-use existing sub-elements, just updating them
-		while(newSourceElements.hasNext() && subElements.hasNext()) {
+		while (newSourceElements.hasNext() && subElements.hasNext()) {
 			ModelElement nextSubElement = subElements.next();
-			if(nextSubElement instanceof AbstractModelElement) {
+			if (nextSubElement instanceof AbstractModelElement) {
 				// Can reuse it
-				AbstractModelElement reusable = (AbstractModelElement)nextSubElement;
+				AbstractModelElement reusable = (AbstractModelElement) nextSubElement;
 				reusable.factory.updateModelElement(reusable, newSourceElements.next());
 			} else {
 				// Replace it
 				nextSubElement.dispose();
 
 				ModelElement newSubElement = subModelElementFactory.createModelElement(newSourceElements.next());
-				if(newSubElement != null) {
+				if (newSubElement != null) {
 					subElements.set(newSubElement);
 				} else {
 					// TODO: Report a warning?
@@ -110,25 +110,25 @@ public class CompositeModelElement extends AbstractModelElement {
 		}
 
 		// And create new ones if necessary
-		while(newSourceElements.hasNext()) {
+		while (newSourceElements.hasNext()) {
 			ModelElement newSubElement = subModelElementFactory.createModelElement(newSourceElements.next());
-			if(newSubElement != null) {
+			if (newSubElement != null) {
 				subElements.add(newSubElement);
 			} // TODO: Else report a warning?
 		}
 
 		// And destroy any unneeded sub-elements
-		while(subElements.hasNext()) {
+		while (subElements.hasNext()) {
 			subElements.next().dispose();
 			subElements.remove();
 		}
 	}
-	
+
 	/**
 	 * Adds a sub-model element to this CompositeModelElement
-	 * 
+	 *
 	 * @param element
-	 *        The sub-model element to be added
+	 *            The sub-model element to be added
 	 */
 	public void addModelElement(ModelElement element) {
 		elements.add(element);
@@ -136,7 +136,7 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public IStaticContentProvider getContentProvider(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return EmptyContentProvider.instance;
 		}
 
@@ -145,7 +145,7 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public ILabelProvider getLabelProvider(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return null;
 		}
 
@@ -154,12 +154,12 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isOrdered(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return false;
 		}
 
-		for(ModelElement element : elements) {
-			if(element.isOrdered(propertyPath)) {
+		for (ModelElement element : elements) {
+			if (element.isOrdered(propertyPath)) {
 				return true;
 			}
 		}
@@ -169,12 +169,12 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isUnique(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return false;
 		}
 
-		for(ModelElement element : elements) {
-			if(!element.isUnique(propertyPath)) {
+		for (ModelElement element : elements) {
+			if (!element.isUnique(propertyPath)) {
 				return false;
 			}
 		}
@@ -184,12 +184,12 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isMandatory(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return false;
 		}
 
-		for(ModelElement element : elements) {
-			if(!element.isMandatory(propertyPath)) {
+		for (ModelElement element : elements) {
+			if (!element.isMandatory(propertyPath)) {
 				return false;
 			}
 		}
@@ -199,12 +199,12 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean isEditable(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return false;
 		}
 
-		for(ModelElement element : elements) {
-			if(!element.isEditable(propertyPath)) {
+		for (ModelElement element : elements) {
+			if (!element.isEditable(propertyPath)) {
 				return false;
 			}
 		}
@@ -216,12 +216,12 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public boolean forceRefresh(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return false;
 		}
 
-		for(ModelElement element : elements) {
-			if(element.forceRefresh(propertyPath)) {
+		for (ModelElement element : elements) {
+			if (element.forceRefresh(propertyPath)) {
 				return true;
 			}
 		}
@@ -231,7 +231,7 @@ public class CompositeModelElement extends AbstractModelElement {
 
 	@Override
 	public Object getDefaultValue(String propertyPath) {
-		if(elements.isEmpty()) {
+		if (elements.isEmpty()) {
 			return null;
 		}
 		return elements.get(0).getDefaultValue(propertyPath);
@@ -240,7 +240,7 @@ public class CompositeModelElement extends AbstractModelElement {
 	public List<ModelElement> getSubElements() {
 		return elements;
 	}
-	
+
 	//
 	// Nested types
 	//

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    David Sciamma (Anyware Technologies), 
+ *    David Sciamma (Anyware Technologies),
  *    Nicolas Lalevee (Anyware Technologies),
  *    Jacques Lescot (Anyware Technologies) - initial API and implementation
  *******************************************************************************/
@@ -19,18 +19,19 @@ import org.eclipse.swt.widgets.Display;
 /**
  * This EMF listener receives an event and then handles this event in the UI
  * thread
- * 
+ *
  * @author <a href="david.sciamma@anyware-tech.com">David Sciamma</a>
  */
 public abstract class UIAdapterImpl extends AdapterImpl {
 
 	/**
 	 * Call the handlePropertyChanged method in the UI thread
-	 * 
+	 *
 	 * @see org.eclipse.emf.common.notify.Adapter#notifyChanged(org.eclipse.emf.common.notify.Notification)
 	 */
+	@Override
 	public final void notifyChanged(Notification msg) {
-		if(Display.getCurrent() != Display.getDefault()) {
+		if (Display.getCurrent() != Display.getDefault()) {
 			syncNotifyChanged(msg);
 		} else {
 			safeNotifyChanged(msg);
@@ -39,13 +40,14 @@ public abstract class UIAdapterImpl extends AdapterImpl {
 
 	/**
 	 * Handles the event notification in the UI thread
-	 * 
+	 *
 	 * @param msg
-	 *        the event notification
+	 *            the event notification
 	 */
 	private void syncNotifyChanged(final Notification msg) {
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				safeNotifyChanged(msg);
 			}
@@ -55,9 +57,9 @@ public abstract class UIAdapterImpl extends AdapterImpl {
 	/**
 	 * This method is called when an event occured on the model objects.<br>
 	 * This method is always called in the Ui thread
-	 * 
+	 *
 	 * @param msg
-	 *        the event notification
+	 *            the event notification
 	 */
 	protected abstract void safeNotifyChanged(Notification msg);
 }

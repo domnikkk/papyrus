@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,9 +44,9 @@ import org.eclipse.uml2.uml.Profile;
 /**
  * A listener for resource changes, used to trigger an update of models whose
  * underlying resources have been changed.
- * 
+ *
  * @author Ansgar Radermacher (CEA LIST)
- * 
+ *
  * @deprecated The equivalent behavior has been implemented in oep.infra.core
  */
 @Deprecated
@@ -56,6 +56,7 @@ public class ResourceUpdateService implements IService, IResourceChangeListener,
 
 	// public init (CoreMultiDiagramEditor editor, ISaveAndDirtyService
 	// saveAndDirty, ModelSet modelSet) {
+	@Override
 	public void init(ServicesRegistry serviceRegistry) throws ServiceException {
 		modelSet = serviceRegistry.getService(ModelSet.class);
 		editor = serviceRegistry.getService(IMultiDiagramEditor.class);
@@ -70,8 +71,9 @@ public class ResourceUpdateService implements IService, IResourceChangeListener,
 	/**
 	 * The listener operation that is called by the workspace
 	 */
+	@Override
 	public void resourceChanged(IResourceChangeEvent event) {
-		switch(event.getType()) {
+		switch (event.getType()) {
 		case IResourceChangeEvent.PRE_CLOSE:
 		case IResourceChangeEvent.PRE_BUILD:
 		case IResourceChangeEvent.POST_BUILD:
@@ -96,23 +98,24 @@ public class ResourceUpdateService implements IService, IResourceChangeListener,
 	 * A visitor for resource changes. Detects, whether a changed resource
 	 * belongs to an opened editor
 	 */
+	@Override
 	public boolean visit(IResourceDelta delta) {
 		IResource changedResource = delta.getResource();
-		if(delta.getFlags() == IResourceDelta.MARKERS) {
+		if (delta.getFlags() == IResourceDelta.MARKERS) {
 			// only markers have been changed. The marker-listener service takes
 			// care of this
 			return false;
 		}
 		// only proceed in case of Files (not projects, folders, ...) for the
 		// moment
-		if(!(changedResource instanceof IFile)) {
+		if (!(changedResource instanceof IFile)) {
 			return true;
 		}
 		final String changedResourcePath = changedResource.getFullPath().toString();
 		URI changedResourceURIWOExt = URI.createPlatformResourceURI(changedResource.getFullPath().toString(), true).trimFileExtension();
 		URIConverter uriConverter = modelSet.getURIConverter();
 
-		for(Resource resource : modelSet.getResources()) {
+		for (Resource resource : modelSet.getResources()) {
 			URI uri = resource.getURI();
 			URI normalizedURI = uriConverter.normalize(uri);
 
@@ -124,12 +127,12 @@ public class ResourceUpdateService implements IService, IResourceChangeListener,
 			// identical. The latter is a generic system resource (File, ...),
 			// the former a
 			// model-aware representation of the resource
-			if(normalizedURI.path().endsWith(changedResourcePath)) {
-				if(changedResourceURIWOExt.equals(modelSet.getURIWithoutExtension())) {
+			if (normalizedURI.path().endsWith(changedResourcePath)) {
+				if (changedResourceURIWOExt.equals(modelSet.getURIWithoutExtension())) {
 					// model itself has changed.
 					// mark main resource as changed. User will asked later,
 					// when he activates the editor.
-					if(!saveListener.isSaveActive()) {
+					if (!saveListener.isSaveActive()) {
 						partActivationListener.setModificationData(changedResource.getFullPath(), delta, true, resource.isModified());
 					}
 				}
@@ -137,11 +140,11 @@ public class ResourceUpdateService implements IService, IResourceChangeListener,
 				// Since the referenced model may be editable (case of controlled sub-model with write access),
 				// it must not be unloaded without asking the user. User will be asked when activating the editor.
 
-				else if(resource.isLoaded()) {
+				else if (resource.isLoaded()) {
 					EList<EObject> contents = resource.getContents();
-					if((contents.size() > 0) && (contents.get(0) instanceof Profile)) {
+					if ((contents.size() > 0) && (contents.get(0) instanceof Profile)) {
 						// don't touch profiles
-					} else if(!saveListener.isSaveActive()) {
+					} else if (!saveListener.isSaveActive()) {
 						partActivationListener.setModificationData(changedResource.getFullPath(), delta, false, resource.isModified());
 					}
 				}
@@ -177,10 +180,12 @@ public class ResourceUpdateService implements IService, IResourceChangeListener,
 		page.removePartListener(partActivationListener);
 	}
 
+	@Override
 	public void startService() throws ServiceException {
 		activate();
 	}
 
+	@Override
 	public void disposeService() throws ServiceException {
 		deactivate();
 		// lifeCycleEvents.removeDoSaveListener(listener);

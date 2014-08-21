@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,27 +50,28 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 
 	public void hostSizeChanged() {
 		IGraphicalEditPart host = getHostImpl();
-		Integer width = (Integer)host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width());
-		Integer height = (Integer)host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height());
-		if(width == null) {
+		Integer width = (Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width());
+		Integer height = (Integer) host.getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height());
+		if (width == null) {
 			width = Integer.valueOf(0);
 		}
-		if(height == null) {
+		if (height == null) {
 			height = Integer.valueOf(0);
 		}
 		Dimension size = new Dimension(width, height);
 		correctEditPolicy(size);
 	}
 
+	@Override
 	public void notifyChanged(Notification notification) {
 		Object feature = notification.getFeature();
-		if(NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature)) {
+		if (NotationPackage.eINSTANCE.getSize_Width().equals(feature) || NotationPackage.eINSTANCE.getSize_Height().equals(feature)) {
 			hostSizeChanged();
 		}
 	}
 
 	private void correctEditPolicy(Dimension size) {
-		if(isChanged(size)) {
+		if (isChanged(size)) {
 			hideSelection();
 			setState(size);
 			showSelection();
@@ -78,7 +79,7 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 	}
 
 	private IGraphicalEditPart getHostImpl() {
-		return (IGraphicalEditPart)getHost();
+		return (IGraphicalEditPart) getHost();
 	}
 
 	private boolean isChanged(Dimension size) {
@@ -87,10 +88,10 @@ public class DynamicResizeDirectionsEditPolicy extends ResizableShapeEditPolicy 
 
 	private void setState(Dimension size) {
 		int delta = size.height - size.width;
-		if(delta > 0) {
+		if (delta > 0) {
 			myCurrentState = VERTICAL;
 			setResizeDirections(PositionConstants.NORTH | PositionConstants.SOUTH);
-		} else if(delta < 0) {
+		} else if (delta < 0) {
 			myCurrentState = HORIZONTAL;
 			setResizeDirections(PositionConstants.WEST | PositionConstants.EAST);
 		} else {

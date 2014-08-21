@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -67,6 +67,7 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return "StereotypeStrategy"; //$NON-NLS-1$
 	}
@@ -76,6 +77,7 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getID()
 	 */
+	@Override
 	public String getID() {
 		return Activator.ID + ".StereotypeStrategy"; //".ClassifierToStructureCompDrop"; //$NON-NLS-1$
 	}
@@ -85,6 +87,7 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.strategy.paste.IPasteStrategy#getDescription()
 	 */
+	@Override
 	public String getDescription() {
 		return "Paste stereotype elements"; //$NON-NLS-1$
 	}
@@ -97,8 +100,8 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	@Override
 	public IPasteStrategy dependsOn() {
 		return DefaultPasteStrategy.getInstance();
-	}	
-	
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -107,39 +110,39 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	 */
 	@Override
 	public org.eclipse.emf.common.command.Command getSemanticCommand(EditingDomain domain, EObject targetOwner, PapyrusClipboard<Object> papyrusClipboard) {
-		
-		if (targetOwner instanceof Element){
+
+		if (targetOwner instanceof Element) {
 			CompoundCommand compoundCommand = new CompoundCommand("Copy all stereotypes"); //$NON-NLS-1$
-			
-			Map<Profile,List<ApplyStereotypeCommand>> missingProfiles = new HashMap<Profile,List<ApplyStereotypeCommand>>();
-			Package targetPackage = ((Element)targetOwner).getNearestPackage();
-			
+
+			Map<Profile, List<ApplyStereotypeCommand>> missingProfiles = new HashMap<Profile, List<ApplyStereotypeCommand>>();
+			Package targetPackage = ((Element) targetOwner).getNearestPackage();
+
 			// 1. init all ApplyStereotypeCommand
-			for(Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
-				Object object = (Object)iterator.next();
+			for (Iterator<Object> iterator = papyrusClipboard.iterator(); iterator.hasNext();) {
+				Object object = iterator.next();
 				// get target Element
 				EObject target = papyrusClipboard.getTragetCopyFromInternalClipboardCopy(object);
-				if(target != null && target instanceof Element) {
+				if (target != null && target instanceof Element) {
 					// get affiliate StereotypeClipboard
 					Map<Object, ?> additionalDataMap = papyrusClipboard.getAdditionalDataForStrategy(getID());
 					Object additionnalData = additionalDataMap.get(object);
-					if(additionnalData instanceof StereotypeClipboard) {
-						StereotypeClipboard stereotypeClipboard = (StereotypeClipboard)additionnalData;
+					if (additionnalData instanceof StereotypeClipboard) {
+						StereotypeClipboard stereotypeClipboard = (StereotypeClipboard) additionnalData;
 						Collection<Stereotype> stereotypes = stereotypeClipboard.getStereotypes();
-//						Collection<Stereotype> stereotypeListInTargetContext = new ArrayList<Stereotype>();
-						for(Stereotype stereotype : stereotypes) {
+						// Collection<Stereotype> stereotypeListInTargetContext = new ArrayList<Stereotype>();
+						for (Stereotype stereotype : stereotypes) {
 							// reload the stereotype in the new Contex-ResourceSet (Required because in org.eclipse.uml2.uml.internal.operations.PackageOperations
 							// L960 in getProfileApplication the test is using == instead of equals)
 							Stereotype stereotypeInTargetContext = EMFHelper.reloadIntoContext(stereotype, targetOwner);
-							
+
 							Profile profile = stereotypeInTargetContext.getProfile();
-							ApplyStereotypeCommand applyStereotypeCommand = new ApplyStereotypeCommand((Element)target, stereotypeInTargetContext, (TransactionalEditingDomain)domain);
-							if (isProfileAppliedRecursive(targetPackage, profile)){		
+							ApplyStereotypeCommand applyStereotypeCommand = new ApplyStereotypeCommand((Element) target, stereotypeInTargetContext, (TransactionalEditingDomain) domain);
+							if (isProfileAppliedRecursive(targetPackage, profile)) {
 								compoundCommand.append(applyStereotypeCommand);
 							} else { // Profile is missing
-//								Activator.getDefault().logWarning(profile.getName()+" is missing", null);
+							// Activator.getDefault().logWarning(profile.getName()+" is missing", null);
 								List<ApplyStereotypeCommand> stereotypeListMissingProfiles = missingProfiles.get(profile);
-								if (stereotypeListMissingProfiles!= null && !stereotypeListMissingProfiles.isEmpty()){
+								if (stereotypeListMissingProfiles != null && !stereotypeListMissingProfiles.isEmpty()) {
 									stereotypeListMissingProfiles.add(applyStereotypeCommand);
 								} else {
 									stereotypeListMissingProfiles = new ArrayList<ApplyStereotypeCommand>();
@@ -151,32 +154,32 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 					}
 				}
 			}
-			
+
 			// 2. user preferences (Apply profiles, data...)
 			IPreferenceStore preferenceStore = Activator.getDefault().getPreferenceStore();
-			String preferenceProfileStrategy = preferenceStore.getString(IStereotypePasteStrategyPreferenceConstant.PROFILE_STRATEGY);	
-		
-			if (IStereotypePasteStrategyPreferenceConstant.ASK_POPUP.equals(preferenceProfileStrategy)){// Ask user for instruction
-				// TODO:  2. user choices (Apply profiles, data...)
-			} else if (IStereotypePasteStrategyPreferenceConstant.IMPORT_MISSING_PROFILE.equals(preferenceProfileStrategy)){ // apply profile
+			String preferenceProfileStrategy = preferenceStore.getString(IStereotypePasteStrategyPreferenceConstant.PROFILE_STRATEGY);
+
+			if (IStereotypePasteStrategyPreferenceConstant.ASK_POPUP.equals(preferenceProfileStrategy)) {// Ask user for instruction
+				// TODO: 2. user choices (Apply profiles, data...)
+			} else if (IStereotypePasteStrategyPreferenceConstant.IMPORT_MISSING_PROFILE.equals(preferenceProfileStrategy)) { // apply profile
 				Set<Profile> keySet = missingProfiles.keySet();
-				Package rootPackage = PackageUtil.getRootPackage((Element)targetOwner);
-				ApplyProfileCommand applyProfileCommand = new ApplyProfileCommand(rootPackage, keySet, (TransactionalEditingDomain)domain);
+				Package rootPackage = PackageUtil.getRootPackage((Element) targetOwner);
+				ApplyProfileCommand applyProfileCommand = new ApplyProfileCommand(rootPackage, keySet, (TransactionalEditingDomain) domain);
 				compoundCommand.append(applyProfileCommand);
-				for(Profile profile : keySet) {
+				for (Profile profile : keySet) {
 					List<ApplyStereotypeCommand> list = missingProfiles.get(profile);
-					for(ApplyStereotypeCommand applyStereotypeCommand : list) {
+					for (ApplyStereotypeCommand applyStereotypeCommand : list) {
 						compoundCommand.append(applyStereotypeCommand);
 					}
 				}
 			}
-			
-			
-			// An empty can't be executed 
-			if(compoundCommand.getCommandList().isEmpty()) {
+
+
+			// An empty can't be executed
+			if (compoundCommand.getCommandList().isEmpty()) {
 				return null;
 			}
-			return compoundCommand;			
+			return compoundCommand;
 		}
 		return UnexecutableCommand.INSTANCE;
 
@@ -186,21 +189,21 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	 * Checks recursively if a profile is applied .
 	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @param profile
-	 *        the profile
+	 *            the profile
 	 * @return true, if is profile applied recursive
 	 */
 	protected boolean isProfileAppliedRecursive(Element element, Profile profile) {
-		if(element instanceof Package) {
-			Package pkg = (Package)element;
+		if (element instanceof Package) {
+			Package pkg = (Package) element;
 			boolean profileApplied = pkg.isProfileApplied(profile);
 
-			if(pkg instanceof Model) {
+			if (pkg instanceof Model) {
 				return profileApplied;
 			}
 
-			if(!profileApplied) {
+			if (!profileApplied) {
 				return isProfileAppliedRecursive(element.getOwner(), profile);
 			} else {
 				return true;
@@ -221,14 +224,14 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	@Override
 	public void prepare(PapyrusClipboard<Object> papyrusClipboard, Collection<EObject> selection) {
 		Map<Object, IClipboardAdditionalData> mapCopyToStereotypeData = new HashMap<Object, IClipboardAdditionalData>();
-		for(Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
-			EObject eObjectSource = (EObject)iterator.next();
-			if(eObjectSource instanceof Element) {
-				Element element = (Element)eObjectSource;
+		for (Iterator<EObject> iterator = papyrusClipboard.iterateOnSource(); iterator.hasNext();) {
+			EObject eObjectSource = iterator.next();
+			if (eObjectSource instanceof Element) {
+				Element element = (Element) eObjectSource;
 				EList<EObject> stereotypeApplications = element.getStereotypeApplications();
-				if(stereotypeApplications != null && !stereotypeApplications.isEmpty()) {
+				if (stereotypeApplications != null && !stereotypeApplications.isEmpty()) {
 					List<Stereotype> stereotypeList = new ArrayList<Stereotype>();
-					for(EObject stereotypeApplication : stereotypeApplications) {
+					for (EObject stereotypeApplication : stereotypeApplications) {
 						Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
 						stereotypeList.add(stereotype);
 					}
@@ -242,28 +245,30 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	}
 
 
-	//	protected ICommand getOpenDialogCommand(final TransactionalEditingDomain domain, final Collection<EditPart> selectedEditPart, final Map<EditPart, Set<EObject>> availableLinks, final Collection<EObject> initialSelection, final Map<EObject, LinkEndsMapper> linkMapping) {
+	// protected ICommand getOpenDialogCommand(final TransactionalEditingDomain domain, final Collection<EditPart> selectedEditPart, final Map<EditPart, Set<EObject>> availableLinks, final Collection<EObject> initialSelection, final Map<EObject,
+	// LinkEndsMapper> linkMapping) {
 	//		final ICommand cmd = new AbstractTransactionalCommand(domain, "Open Show/HideDialogCommand", null) {//$NON-NLS-1$
 	//
-	//			@Override
-	//			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-	//				final ShowHideRelatedLinkSelectionDialog dialog = new ShowHideRelatedLinkSelectionDialog(Display.getDefault().getActiveShell(), new UMLLabelProvider(), new AbstractShowHideRelatedLinkEditPolicy.LinkContentProvider(availableLinks), availableLinks, linkMapping);
+	// @Override
+	// protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	// final ShowHideRelatedLinkSelectionDialog dialog = new ShowHideRelatedLinkSelectionDialog(Display.getDefault().getActiveShell(), new UMLLabelProvider(), new AbstractShowHideRelatedLinkEditPolicy.LinkContentProvider(availableLinks), availableLinks,
+	// linkMapping);
 	//				dialog.setTitle("Show/Hide Links");//$NON-NLS-1$
 	//				dialog.setMessage("Choose the links to show.");//$NON-NLS-1$
-	//				dialog.setInput(selectedEditPart);
-	//				dialog.setInitialSelection(initialSelection);
-	//				dialog.setExpandedElements(selectedEditPart.toArray());
-	//				dialog.setContainerMode(true);
-	//				int status = dialog.open();
-	//				if(status == Window.CANCEL) {
-	//					return CommandResult.newCancelledCommandResult();
-	//				}
-	//				return CommandResult.newOKCommandResult(Arrays.asList(dialog.getResult()));
-	//			}
-	//		};
+	// dialog.setInput(selectedEditPart);
+	// dialog.setInitialSelection(initialSelection);
+	// dialog.setExpandedElements(selectedEditPart.toArray());
+	// dialog.setContainerMode(true);
+	// int status = dialog.open();
+	// if(status == Window.CANCEL) {
+	// return CommandResult.newCancelledCommandResult();
+	// }
+	// return CommandResult.newOKCommandResult(Arrays.asList(dialog.getResult()));
+	// }
+	// };
 	//
-	//		return cmd;
-	//	}
+	// return cmd;
+	// }
 
 
 	/**
@@ -272,7 +277,7 @@ public class StereotypePasteStrategy extends AbstractPasteStrategy implements IP
 	protected class StereotypeClipboard implements IClipboardAdditionalData {
 
 		/** The stereotype. */
-		protected  Collection<Stereotype> stereotypes;
+		protected Collection<Stereotype> stereotypes;
 
 		/**
 		 * @param stereotypes

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class CallBehaviorActionEditHelperAdvice extends AbstractEditHelperAdvice
 
 	public static String CALL_BEHAVIOR_ACTION = "CallBehaviorAction";
 	public static String POPUP_TYPE = "popupType";
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -45,32 +45,32 @@ public class CallBehaviorActionEditHelperAdvice extends AbstractEditHelperAdvice
 		// get the activity containing the new element
 		Activity parentActivity = null;
 		EObject parent = request.getElementToConfigure();
-		while(parent != null && parentActivity == null) {
-			if(parent instanceof Activity) {
-				parentActivity = (Activity)parent;
+		while (parent != null && parentActivity == null) {
+			if (parent instanceof Activity) {
+				parentActivity = (Activity) parent;
 			}
 			parent = parent.eContainer();
 		}
-		if(CALL_BEHAVIOR_ACTION.equals(request.getParameter(POPUP_TYPE))){
-		CreateCallBehaviorActionDialog dialog = new CreateCallBehaviorActionDialog(Display.getDefault().getActiveShell(), parentActivity, (InvocationAction)request.getElementToConfigure());
-		if(IDialogConstants.OK_ID == dialog.open()) {
-			// initialize the invoked element (no need to use a command, since action is being created)
-			CompositeCommand command = new CompositeCommand("Configure created element");
-			IElementEditService service = ElementEditServiceUtils.getCommandProvider(request.getElementToConfigure());
-			EObject behavior = dialog.getSelectedInvoked();
-			if(behavior instanceof Behavior) {
-				SetRequest setBehaviorRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getCallBehaviorAction_Behavior(), (Behavior)behavior);
-				command.add(service.getEditCommand(setBehaviorRequest));
+		if (CALL_BEHAVIOR_ACTION.equals(request.getParameter(POPUP_TYPE))) {
+			CreateCallBehaviorActionDialog dialog = new CreateCallBehaviorActionDialog(Display.getDefault().getActiveShell(), parentActivity, (InvocationAction) request.getElementToConfigure());
+			if (IDialogConstants.OK_ID == dialog.open()) {
+				// initialize the invoked element (no need to use a command, since action is being created)
+				CompositeCommand command = new CompositeCommand("Configure created element");
+				IElementEditService service = ElementEditServiceUtils.getCommandProvider(request.getElementToConfigure());
+				EObject behavior = dialog.getSelectedInvoked();
+				if (behavior instanceof Behavior) {
+					SetRequest setBehaviorRequest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getCallBehaviorAction_Behavior(), behavior);
+					command.add(service.getEditCommand(setBehaviorRequest));
+				}
+				// initialize synchronous
+				SetRequest setSynchronousReqest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getCallAction_IsSynchronous(), dialog.getIsSynchronous());
+				command.add(service.getEditCommand(setSynchronousReqest));
+				return command;
 			}
-			// initialize synchronous
-			SetRequest setSynchronousReqest = new SetRequest(request.getElementToConfigure(), UMLPackage.eINSTANCE.getCallAction_IsSynchronous(), dialog.getIsSynchronous());
-			command.add(service.getEditCommand(setSynchronousReqest));
-			return command;
-		} 
 		}
 		return null;
 	}
-	
+
 	@Override
 	public void configureRequest(IEditCommandRequest request) {
 		request.getParameters().put(POPUP_TYPE, CALL_BEHAVIOR_ACTION);

@@ -51,34 +51,34 @@ public class DependencyManagementHelper {
 	 * Simplified pseudo code algorithm: fromResources.replaceAll(uriToReplace, targetURI)
 	 *
 	 * @param uriToReplace
-	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
-	 *        Must not be null
+	 *            The URI of the resource which initially contains the referenced elements. May or may not exist.
+	 *            Must not be null
 	 * @param targetURI
-	 *        The URI of the resource which contains the newly referenced elements.
-	 *        May or may not exist. In the later case, the values will be proxies to the un-existing target URI
-	 *        Must not be null
+	 *            The URI of the resource which contains the newly referenced elements.
+	 *            May or may not exist. In the later case, the values will be proxies to the un-existing target URI
+	 *            Must not be null
 	 * @param fromResources
-	 *        The list of resources to edit. Only the objects of these resources will be modified.
-	 *        Must not be empty
+	 *            The list of resources to edit. Only the objects of these resources will be modified.
+	 *            Must not be empty
 	 * @param editingDomain
-	 *        The editing domain. May be null.
+	 *            The editing domain. May be null.
 	 *
 	 * @return
 	 *         The collection of replacements
 	 */
 	public static Collection<Replacement> updateDependencies(URI uriToReplace, URI targetURI, Collection<Resource> fromResources, EditingDomain editingDomain) {
-		if(fromResources == null || fromResources.isEmpty()) {
+		if (fromResources == null || fromResources.isEmpty()) {
 			throw new IllegalArgumentException("There is no resource to modify"); //$NON-NLS-1$
 		}
 
 		Collection<Replacement> replacements = new LinkedList<Replacement>();
 
-		for(Resource currentResource : fromResources) {
-			if(currentResource == null) {
+		for (Resource currentResource : fromResources) {
+			if (currentResource == null) {
 				continue;
 			}
 
-			if(EMFHelper.isReadOnly(currentResource, editingDomain)) {
+			if (EMFHelper.isReadOnly(currentResource, editingDomain)) {
 				continue;
 			}
 
@@ -94,34 +94,34 @@ public class DependencyManagementHelper {
 	 * Simplified pseudo code algorithm: fromResources.replaceAll(uriToReplace, targetURI)
 	 *
 	 * @param uriToReplace
-	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
-	 *        Must not be null
+	 *            The URI of the resource which initially contains the referenced elements. May or may not exist.
+	 *            Must not be null
 	 * @param targetURI
-	 *        The URI of the resource which contains the newly referenced elements.
-	 *        May or may not exist. In the later case, the values will be proxies to the un-existing target URI
-	 *        Must not be null
+	 *            The URI of the resource which contains the newly referenced elements.
+	 *            May or may not exist. In the later case, the values will be proxies to the un-existing target URI
+	 *            Must not be null
 	 * @param fromResource
-	 *        The resource to edit. Only the objects of this resource will be modified.
-	 *        Must not be null
+	 *            The resource to edit. Only the objects of this resource will be modified.
+	 *            Must not be null
 	 * @param editingDomain
-	 *        The editing domain. May be null.
+	 *            The editing domain. May be null.
 	 * @return
 	 *         The collection of replacements
 	 */
 	public static Collection<Replacement> updateDependencies(URI uriToReplace, URI targetURI, Resource fromResource, EditingDomain editingDomain) {
-		if(uriToReplace == null) {
+		if (uriToReplace == null) {
 			throw new IllegalArgumentException("There is no URI to replace"); //$NON-NLS-1$
 		}
 
-		if(targetURI == null) {
+		if (targetURI == null) {
 			throw new IllegalArgumentException("There is no target URI"); //$NON-NLS-1$
 		}
 
-		if(uriToReplace.equals(targetURI)) {
+		if (uriToReplace.equals(targetURI)) {
 			throw new IllegalArgumentException("The source and target URIs are identical"); //$NON-NLS-1$
 		}
 
-		if(fromResource == null) {
+		if (fromResource == null) {
 			throw new IllegalArgumentException("The edited resource must not be null"); //$NON-NLS-1$
 		}
 
@@ -129,60 +129,60 @@ public class DependencyManagementHelper {
 
 		Collection<Replacement> replacements = new LinkedList<Replacement>();
 
-		while(allContentsIterator.hasNext()) {
+		while (allContentsIterator.hasNext()) {
 			EObject eObject = allContentsIterator.next();
 
-			for(EReference reference : eObject.eClass().getEAllReferences()) {
-				if(reference.isContainment()) {
+			for (EReference reference : eObject.eClass().getEAllReferences()) {
+				if (reference.isContainment()) {
 					continue;
 				}
 
-				if(!reference.isChangeable()) {
+				if (!reference.isChangeable()) {
 					continue;
 				}
 
 				Object value = eObject.eGet(reference);
-				if(value instanceof EObject) {
-					EObject eObjectToReplace = (EObject)value;
+				if (value instanceof EObject) {
+					EObject eObjectToReplace = (EObject) value;
 
 					EObject newEObject = checkAndReplace(eObjectToReplace, uriToReplace, targetURI);
-					if(newEObject == null) {
+					if (newEObject == null) {
 						continue;
 					}
 
 					try {
-						//System.out.println("Replace " + EcoreUtil.getURI(eObjectToReplace) + " with " + EcoreUtil.getURI(newEObject));
+						// System.out.println("Replace " + EcoreUtil.getURI(eObjectToReplace) + " with " + EcoreUtil.getURI(newEObject));
 						eObject.eSet(reference, newEObject);
 						replacements.add(new ReplacementImpl(eObject, reference, eObjectToReplace, newEObject));
 					} catch (Exception ex) {
 						Activator.log.error(ex);
 					}
 
-				} else if(value instanceof Collection<?>) {
+				} else if (value instanceof Collection<?>) {
 					Map<EObject, EObject> previousToNewValue = new HashMap<EObject, EObject>();
 
-					Collection<?> collection = (Collection<?>)value;
+					Collection<?> collection = (Collection<?>) value;
 
-					for(Object collectionElement : (Collection<?>)value) {
-						if(collectionElement instanceof EObject) {
-							EObject eObjectToReplace = (EObject)collectionElement;
+					for (Object collectionElement : (Collection<?>) value) {
+						if (collectionElement instanceof EObject) {
+							EObject eObjectToReplace = (EObject) collectionElement;
 							EObject newEObject = checkAndReplace(eObjectToReplace, uriToReplace, targetURI);
-							if(newEObject == null) {
+							if (newEObject == null) {
 								continue;
 							}
 
-							//System.out.println("Replace " + EcoreUtil.getURI(eObjectToReplace) + " with " + EcoreUtil.getURI(newEObject));
+							// System.out.println("Replace " + EcoreUtil.getURI(eObjectToReplace) + " with " + EcoreUtil.getURI(newEObject));
 							previousToNewValue.put(eObjectToReplace, newEObject);
 						}
 					}
 
-					if(previousToNewValue.isEmpty()) {
+					if (previousToNewValue.isEmpty()) {
 						continue;
 					}
 
-					if(collection instanceof EStructuralFeature.Setting) {
-						EStructuralFeature.Setting setting = (EStructuralFeature.Setting)collection;
-						for(Map.Entry<EObject, EObject> entry : previousToNewValue.entrySet()) {
+					if (collection instanceof EStructuralFeature.Setting) {
+						EStructuralFeature.Setting setting = (EStructuralFeature.Setting) collection;
+						for (Map.Entry<EObject, EObject> entry : previousToNewValue.entrySet()) {
 							EcoreUtil.replace(setting, entry.getKey(), entry.getValue());
 							replacements.add(new ReplacementImpl(eObject, reference, entry.getKey(), entry.getValue()));
 						}
@@ -199,12 +199,12 @@ public class DependencyManagementHelper {
 	 * Returns null if the "currentValueToReplace" doesn't belong to the resource represented by "uriToReplace".
 	 *
 	 * @param currentValueToReplace
-	 *        The current value, to be replaced. May be a proxy
+	 *            The current value, to be replaced. May be a proxy
 	 * @param uriToReplace
-	 *        The URI of the resource to be replaced.
+	 *            The URI of the resource to be replaced.
 	 * @param targetURI
-	 *        The URI of the target resource (Which will contain the resulting EObject).
-	 *        The resource doesn't need to exist (and won't be created). If it doesn't exist, this method will return a Proxy
+	 *            The URI of the target resource (Which will contain the resulting EObject).
+	 *            The resource doesn't need to exist (and won't be created). If it doesn't exist, this method will return a Proxy
 	 * @return
 	 *         The EObject equivalent to the replaced EObject, in the target resource.
 	 */
@@ -212,7 +212,7 @@ public class DependencyManagementHelper {
 		URI eObjectURIToReplace = EcoreUtil.getURI(currentValueToReplace);
 		URI resourceURI = eObjectURIToReplace.trimFragment();
 
-		if(!uriToReplace.equals(resourceURI)) {
+		if (!uriToReplace.equals(resourceURI)) {
 			return null;
 		}
 
@@ -223,10 +223,10 @@ public class DependencyManagementHelper {
 	 * Replaces the EObject (Which may be a proxy) by its equivalent in the given Resource's URI.
 	 *
 	 * @param currentValueToReplace
-	 *        The current value, to be replaced. May be a proxy
+	 *            The current value, to be replaced. May be a proxy
 	 * @param targetURI
-	 *        The URI of the target resource (Which will contain the resulting EObject).
-	 *        The resource doesn't need to exist (and won't be created). If it doesn't exist, this method will return a Proxy
+	 *            The URI of the target resource (Which will contain the resulting EObject).
+	 *            The resource doesn't need to exist (and won't be created). If it doesn't exist, this method will return a Proxy
 	 * @return
 	 *         The EObject equivalent to the replaced EObject, in the target resource.
 	 */
@@ -237,12 +237,12 @@ public class DependencyManagementHelper {
 
 		InternalEObject proxyEObject;
 
-		//Try to instantiate the Proxy from the same EClass.
+		// Try to instantiate the Proxy from the same EClass.
 		EObject newEObject = targetEClass.getEPackage().getEFactoryInstance().create(targetEClass);
-		if(newEObject instanceof InternalEObject) {
-			proxyEObject = (InternalEObject)newEObject;
+		if (newEObject instanceof InternalEObject) {
+			proxyEObject = (InternalEObject) newEObject;
 		} else {
-			//If the result is not an InternalEObject, create a basic EObject instead
+			// If the result is not an InternalEObject, create a basic EObject instead
 			proxyEObject = new DynamicEObjectImpl(targetEClass);
 		}
 
@@ -259,23 +259,23 @@ public class DependencyManagementHelper {
 	 * Simplified pseudo code algorithm: resourceSet.getResources().replaceAll(uriToReplace, targetURI)
 	 *
 	 * @param uriToReplace
-	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
-	 *        Must not be null
+	 *            The URI of the resource which initially contains the referenced elements. May or may not exist.
+	 *            Must not be null
 	 * @param targetURI
-	 *        The URI of the resource which contains the newly referenced elements.
-	 *        May or may not exist. In the later case, the values will be proxies to the un-existing target URI
-	 *        Must not be null
+	 *            The URI of the resource which contains the newly referenced elements.
+	 *            May or may not exist. In the later case, the values will be proxies to the un-existing target URI
+	 *            Must not be null
 	 * @param resourceSet
-	 *        The resourceSet to edit. Its resources will be modified.
+	 *            The resourceSet to edit. Its resources will be modified.
 	 * @param editingDomain
-	 *        The editing domain. May be null.
+	 *            The editing domain. May be null.
 	 * @return
 	 *         The collection of replacements
 	 */
 	public static Collection<Replacement> updateDependencies(URI uriToReplace, URI targetURI, ResourceSet resourceSet, EditingDomain editingDomain) {
 		Set<Resource> resourcesToEdit = new HashSet<Resource>(resourceSet.getResources());
 		Resource resourceToReplace = resourceSet.getResource(uriToReplace, false);
-		if(resourceToReplace != null) {
+		if (resourceToReplace != null) {
 			resourcesToEdit.remove(resourceToReplace);
 		}
 		return updateDependencies(uriToReplace, targetURI, resourcesToEdit, editingDomain);
@@ -287,15 +287,15 @@ public class DependencyManagementHelper {
 	 * Simplified pseudo code algorithm: fromResources.replaceAll(uriToReplace, targetURI)
 	 *
 	 * @param uriToReplace
-	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
-	 *        Must not be null
+	 *            The URI of the resource which initially contains the referenced elements. May or may not exist.
+	 *            Must not be null
 	 * @param targetURI
-	 *        The URI of the resource which contains the newly referenced elements.
-	 *        May or may not exist. In the later case, the values will be proxies to the un-existing target URI
-	 *        Must not be null
+	 *            The URI of the resource which contains the newly referenced elements.
+	 *            May or may not exist. In the later case, the values will be proxies to the un-existing target URI
+	 *            Must not be null
 	 * @param fromResource
-	 *        The resource to edit. Only the objects of this resource will be modified.
-	 *        Must not be null
+	 *            The resource to edit. Only the objects of this resource will be modified.
+	 *            Must not be null
 	 * @return
 	 *         The collection of replacements
 	 */
@@ -309,15 +309,15 @@ public class DependencyManagementHelper {
 	 * Simplified pseudo code algorithm: fromResource.replaceAll(uriToReplace, targetURI)
 	 *
 	 * @param uriToReplace
-	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
-	 *        Must not be null
+	 *            The URI of the resource which initially contains the referenced elements. May or may not exist.
+	 *            Must not be null
 	 * @param targetURI
-	 *        The URI of the resource which contains the newly referenced elements.
-	 *        May or may not exist. In the later case, the values will be proxies to the un-existing target URI
-	 *        Must not be null
+	 *            The URI of the resource which contains the newly referenced elements.
+	 *            May or may not exist. In the later case, the values will be proxies to the un-existing target URI
+	 *            Must not be null
 	 * @param fromResource
-	 *        The resource to edit. Only the objects of this resource will be modified.
-	 *        Must not be null
+	 *            The resource to edit. Only the objects of this resource will be modified.
+	 *            Must not be null
 	 * @return
 	 *         The collection of replacements
 	 */
@@ -331,13 +331,13 @@ public class DependencyManagementHelper {
 	 * Simplified pseudo code algorithm: resourceSet.getResources().replaceAll(uriToReplace, targetURI)
 	 *
 	 * @param uriToReplace
-	 *        The URI of the resource which initially contains the referenced elements. May or may not exist.
-	 *        Must not be null
+	 *            The URI of the resource which initially contains the referenced elements. May or may not exist.
+	 *            Must not be null
 	 * @param targetURI
-	 *        The URI of the resource which contains the newly referenced elements.
-	 *        May or may not exist. In the later case, the values will be proxies to the un-existing target URI
+	 *            The URI of the resource which contains the newly referenced elements.
+	 *            May or may not exist. In the later case, the values will be proxies to the un-existing target URI
 	 * @param resourceSet
-	 *        The resourceSet to edit. Its resources will be modified.
+	 *            The resourceSet to edit. Its resources will be modified.
 	 * @return
 	 *         The collection of replacements
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.papyrus.uml.diagram.common.commands.SemanticAdapter;
 
 /**
  * Custom class to create the associationClass node
- * 
+ *
  */
 public class DependencyDiamonViewCreateCommand extends AbstractCustomCommand {
 
@@ -48,7 +48,7 @@ public class DependencyDiamonViewCreateCommand extends AbstractCustomCommand {
 
 	/**
 	 * constructor
-	 * 
+	 *
 	 * @param createConnectionViewAndElementRequest
 	 *            the request that is used to obtained the associationclass
 	 * @param domain
@@ -73,9 +73,10 @@ public class DependencyDiamonViewCreateCommand extends AbstractCustomCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		// / get the factory of the viewer
 		// Dependency2ViewFactory factory = new Dependency2ViewFactory();

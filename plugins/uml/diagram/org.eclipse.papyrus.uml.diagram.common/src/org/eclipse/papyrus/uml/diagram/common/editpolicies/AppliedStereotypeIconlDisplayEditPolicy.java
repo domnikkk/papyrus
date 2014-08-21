@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ import org.eclipse.papyrus.uml.diagram.common.figure.node.IPapyrusUMLElementFigu
 public class AppliedStereotypeIconlDisplayEditPolicy extends AppliedStereotypeLabelDisplayEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void refreshStereotypeDisplay() {
-		if(getHost() instanceof IPapyrusEditPart) {
-			IFigure figure = ((IPapyrusEditPart)getHost()).getPrimaryShape();
+		if (getHost() instanceof IPapyrusEditPart) {
+			IFigure figure = ((IPapyrusEditPart) getHost()).getPrimaryShape();
 
-			if(figure instanceof IPapyrusUMLElementFigure) {
-				((IPapyrusUMLElementFigure)figure).setStereotypeDisplay(null, stereotypeIconToDisplay());
+			if (figure instanceof IPapyrusUMLElementFigure) {
+				((IPapyrusUMLElementFigure) figure).setStereotypeDisplay(null, stereotypeIconToDisplay());
 			}
 		}
 	}

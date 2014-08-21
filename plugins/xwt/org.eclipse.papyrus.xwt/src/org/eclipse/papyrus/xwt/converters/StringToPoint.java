@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,7 +15,7 @@ import org.eclipse.swt.graphics.Point;
 
 /**
  * String to Point converter
- * 
+ *
  * @author yyang
  */
 public class StringToPoint implements IConverter {
@@ -25,10 +25,10 @@ public class StringToPoint implements IConverter {
 	public Object convert(Object fromObject) {
 		int x = 0;
 		int y = 0;
-		if(fromObject != null) {
+		if (fromObject != null) {
 			StringToIntArray convArray = new StringToIntArray();
-			int[] array = (int[])convArray.convert(fromObject);
-			if(array.length == 2) {
+			int[] array = (int[]) convArray.convert(fromObject);
+			if (array.length == 2) {
 				x = array[0];
 				y = array[1];
 			}

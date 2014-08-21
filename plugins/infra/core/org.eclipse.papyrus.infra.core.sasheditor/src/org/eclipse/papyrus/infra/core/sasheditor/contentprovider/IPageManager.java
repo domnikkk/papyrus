@@ -38,11 +38,12 @@ public interface IPageManager extends IPageMngr {
 	 * one instance will be closed.
 	 *
 	 * @param pageIdentifier
-	 *        The object identifying the page
+	 *            The object identifying the page
 	 *
 	 *
 	 * @see {@link #closeAllOpenedPages(Object)}
 	 */
+	@Override
 	public void closePage(Object pageIdentifier);
 
 
@@ -50,6 +51,7 @@ public interface IPageManager extends IPageMngr {
 	 * Close all opened pages.
 	 *
 	 */
+	@Override
 	public void closeAllOpenedPages();
 
 	/**
@@ -57,6 +59,7 @@ public interface IPageManager extends IPageMngr {
 	 *
 	 * @param pageIdentifier
 	 */
+	@Override
 	public void closeOtherPages(Object pageIdentifier);
 
 	/**
@@ -67,10 +70,11 @@ public interface IPageManager extends IPageMngr {
 	 * If
 	 *
 	 * @param page
-	 *        The object identifying the page to add. This object will be passed to the {@link IPageModelFactory#createIPageModel(EObject)}. This
-	 *        identifier is stored in the sash model.
-	 *        It should be a reference on a EMF object identifying the page.
+	 *            The object identifying the page to add. This object will be passed to the {@link IPageModelFactory#createIPageModel(EObject)}. This
+	 *            identifier is stored in the sash model.
+	 *            It should be a reference on a EMF object identifying the page.
 	 */
+	@Override
 	public void openPage(Object pageIdentifier);
 
 	/**
@@ -78,6 +82,7 @@ public interface IPageManager extends IPageMngr {
 	 *
 	 * @return List of registered page identifiers.
 	 */
+	@Override
 	public List<Object> allPages();
 
 	/**
@@ -86,6 +91,7 @@ public interface IPageManager extends IPageMngr {
 	 * @param diagram
 	 * @return
 	 */
+	@Override
 	public boolean isOpen(Object pageIdentifier);
 
 	/**
@@ -110,6 +116,6 @@ public interface IPageManager extends IPageMngr {
 	 *
 	 * @return
 	 */
-	//	public Object getActivePage();
+	// public Object getActivePage();
 
 }

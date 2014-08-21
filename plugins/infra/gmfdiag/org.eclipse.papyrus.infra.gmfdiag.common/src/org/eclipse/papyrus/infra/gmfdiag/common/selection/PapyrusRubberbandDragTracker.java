@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,7 @@ import org.eclipse.gef.DragTracker;
 /**
  * This DragTracker extends the PapyrusRubberbandSelectionTool.
  * This class is called by the method getDragTracker() in the PapyrusDiagramEditPart.
- * 
+ *
  * @author cjanssens
  */
 public class PapyrusRubberbandDragTracker extends PapyrusRubberbandSelectionTool implements DragTracker {
@@ -38,8 +38,9 @@ public class PapyrusRubberbandDragTracker extends PapyrusRubberbandSelectionTool
 	 * 
 	 * @see org.eclipse.gef.tools.AbstractTool#handleFinished()
 	 */
+	@Override
 	protected void handleFinished() {
-		//nothing goes here
+		// nothing goes here
 
 	}
 

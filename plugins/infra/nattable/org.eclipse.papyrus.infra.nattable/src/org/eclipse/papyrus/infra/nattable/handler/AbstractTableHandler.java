@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,9 +39,9 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * The abstract handler to use for the table actions
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public abstract class AbstractTableHandler extends AbstractHandler {
 
@@ -52,7 +52,7 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 	 * the event which have declenched the call to setEnable(Object evaluationContext. This event contains the location of the mouse pointer when
 	 * the popup menu for this handler have been created
 	 */
-	//TODO : should maybe be remove with the future usage of e4 and the Eclispe Context
+	// TODO : should maybe be remove with the future usage of e4 and the Eclispe Context
 	protected NatEventData eventData;
 
 	/**
@@ -61,7 +61,7 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 	protected TableSelectionWrapper wrapper = null;
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the current active part
 	 */
@@ -70,14 +70,14 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the current table manager or <code>null</code> if not found
 	 */
 	protected INattableModelManager getCurrentNattableModelManager() {
 		final IWorkbenchPart currentPart = getActivePart();
-		if(currentPart != null) {
-			final INattableModelManager manager = (INattableModelManager)currentPart.getAdapter(INattableModelManager.class);
+		if (currentPart != null) {
+			final INattableModelManager manager = (INattableModelManager) currentPart.getAdapter(INattableModelManager.class);
 			return manager;
 		}
 		return null;
@@ -86,46 +86,46 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 
 	/**
 	 * Returns the EditingDomain associated to the table
-	 * 
+	 *
 	 * @return
 	 */
-	protected TransactionalEditingDomain getTableEditingDomain() {//duplicated code from NattableModelManager
+	protected TransactionalEditingDomain getTableEditingDomain() {// duplicated code from NattableModelManager
 		return TableEditingDomainUtils.getTableEditingDomain(getCurrentNattableModelManager().getTable());
 	}
 
 	/**
 	 * Returns the EditingDomain associated to the context
-	 * 
+	 *
 	 * @return
 	 */
-	protected TransactionalEditingDomain getContextEditingDomain() {//duplicated code from NattableModelManager
+	protected TransactionalEditingDomain getContextEditingDomain() {// duplicated code from NattableModelManager
 		return TableEditingDomainUtils.getTableContextEditingDomain(getCurrentNattableModelManager().getTable());
 	}
 
 	/**
-	 * 
+	 *
 	 * @param evaluationContext
-	 *        the evaluation context
+	 *            the evaluation context
 	 * @return
 	 *         the NatEventData from this evaluation context
 	 */
 	protected NatEventData getNatEventData(final Object evaluationContext) {
-		if(evaluationContext instanceof NatEventData) {
-			return (NatEventData)evaluationContext;
+		if (evaluationContext instanceof NatEventData) {
+			return (NatEventData) evaluationContext;
 		}
 		NatEventData eventData = null;
-		if(evaluationContext instanceof IEvaluationContext) {
-			Object value = ((IEvaluationContext)evaluationContext).getVariable(NAT_EVENT_DATA_PARAMETER_ID);
-			if(value instanceof NatEventData) {
-				eventData = (NatEventData)value;
+		if (evaluationContext instanceof IEvaluationContext) {
+			Object value = ((IEvaluationContext) evaluationContext).getVariable(NAT_EVENT_DATA_PARAMETER_ID);
+			if (value instanceof NatEventData) {
+				eventData = (NatEventData) value;
 			}
 		}
-		//TODO : currently we can't have dependency on org.eclipse.e4.... 
-		//that's why we can't add the variable NAT_EVENT_DATA_PARAMETER_ID and we need to create a NatEventData instead of to get it in evaluationContext
-		if(eventData == null) {
+		// TODO : currently we can't have dependency on org.eclipse.e4....
+		// that's why we can't add the variable NAT_EVENT_DATA_PARAMETER_ID and we need to create a NatEventData instead of to get it in evaluationContext
+		if (eventData == null) {
 			Point cursorLocation = Display.getDefault().getCursorLocation();
-			Control control = Display.getDefault().getCursorControl();//TODO doesn't work when we are selecting a command in a menu!
-			if(control instanceof NatTable) {//TODO : not nice, but required
+			Control control = Display.getDefault().getCursorControl();// TODO doesn't work when we are selecting a command in a menu!
+			if (control instanceof NatTable) {// TODO : not nice, but required
 				cursorLocation = control.toControl(cursorLocation);
 				Event e = new Event();
 				e.x = cursorLocation.x;
@@ -140,20 +140,20 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param evaluationContext
 	 * @return
 	 *         the index of the rows which are fully selected
 	 */
 	protected List<Integer> getFullSelectedRowsIndex(Object evaluationContext) {
 		final INattableModelManager manager = getCurrentNattableModelManager();
-		if(manager != null) {
+		if (manager != null) {
 			final NatEventData data = getNatEventData(evaluationContext);
-			if(data != null) {
+			if (data != null) {
 				final SelectionLayer layer = manager.getBodyLayerStack().getSelectionLayer();
 				int[] fullSelectedColumnsPosition = layer.getFullySelectedRowPositions();
 				List<Integer> positions = new ArrayList<Integer>();
-				for(int i : fullSelectedColumnsPosition) {
+				for (int i : fullSelectedColumnsPosition) {
 					positions.add(layer.getRowIndexByPosition(i));
 				}
 				return positions;
@@ -163,20 +163,20 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param evaluationContext
 	 * @return
 	 *         the index of the columns which are fully selected
 	 */
 	protected List<Integer> getFullSelectedColumnsIndex(Object evaluationContext) {
 		final INattableModelManager manager = getCurrentNattableModelManager();
-		if(manager != null) {
+		if (manager != null) {
 			final NatEventData data = getNatEventData(evaluationContext);
-			if(data != null) {
+			if (data != null) {
 				final SelectionLayer layer = manager.getBodyLayerStack().getSelectionLayer();
 				int[] fullSelectedColumnsPosition = layer.getFullySelectedColumnPositions();
 				List<Integer> positions = new ArrayList<Integer>();
-				for(int i : fullSelectedColumnsPosition) {
+				for (int i : fullSelectedColumnsPosition) {
 					positions.add(layer.getColumnIndexByPosition(i));
 				}
 				return positions;
@@ -187,35 +187,35 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the row axis manager
 	 */
 	protected IAxisManager getRowAxisManager() {
 		final INattableModelManager manager = getCurrentNattableModelManager();
-		if(manager != null) {
+		if (manager != null) {
 			return manager.getRowAxisManager();
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the column axis manager
 	 */
 	protected IAxisManager getColumnAxisManager() {
 		final INattableModelManager manager = getCurrentNattableModelManager();
-		if(manager != null) {
+		if (manager != null) {
 			return manager.getColumnAxisManager();
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
@@ -224,19 +224,19 @@ public abstract class AbstractTableHandler extends AbstractHandler {
 		setBaseEnabled(getCurrentNattableModelManager() != null);
 		wrapper = null;
 
-		if(evaluationContext instanceof IEvaluationContext) {
+		if (evaluationContext instanceof IEvaluationContext) {
 			Object selection = HandlerUtil.getVariable(evaluationContext, "selection"); //$NON-NLS-1$
-			//			if(selection instanceof IStructuredSelection) {
-			//				Iterator<?> iter = ((IStructuredSelection)selection).iterator();
-			//				while(iter.hasNext() && wrapper == null) {
-			//					Object current = iter.next();
-			//					if(current instanceof TableSelectionWrapper) {
-			//						wrapper = (TableSelectionWrapper)current;
-			//					}
-			//				}
-			//			}
-			if(selection instanceof IAdaptable) {
-				wrapper = (TableSelectionWrapper)((IAdaptable)selection).getAdapter(TableSelectionWrapper.class);
+			// if(selection instanceof IStructuredSelection) {
+			// Iterator<?> iter = ((IStructuredSelection)selection).iterator();
+			// while(iter.hasNext() && wrapper == null) {
+			// Object current = iter.next();
+			// if(current instanceof TableSelectionWrapper) {
+			// wrapper = (TableSelectionWrapper)current;
+			// }
+			// }
+			// }
+			if (selection instanceof IAdaptable) {
+				wrapper = (TableSelectionWrapper) ((IAdaptable) selection).getAdapter(TableSelectionWrapper.class);
 			}
 		}
 	}

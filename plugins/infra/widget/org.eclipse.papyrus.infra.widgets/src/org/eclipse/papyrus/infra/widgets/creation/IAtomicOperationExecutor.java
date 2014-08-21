@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,21 +28,21 @@ public interface IAtomicOperationExecutor {
 
 	/**
 	 * Execute a runnable (an operation returning no result).
-	 * 
+	 *
 	 * @param operation
-	 *        the operation to execute
+	 *            the operation to execute
 	 * @param label
-	 *        an optional label to associate with the operation for presentation in, for example, the Edit menu's Undo/Redo operations
+	 *            an optional label to associate with the operation for presentation in, for example, the Edit menu's Undo/Redo operations
 	 */
 	void execute(Runnable operation, String label);
 
 	/**
 	 * Execute a callable (an operation returning a result).
-	 * 
+	 *
 	 * @param operation
-	 *        the operation to execute
+	 *            the operation to execute
 	 * @param label
-	 *        an optional label to associate with the operation for presentation in, for example, the Edit menu's Undo/Redo operations
+	 *            an optional label to associate with the operation for presentation in, for example, the Edit menu's Undo/Redo operations
 	 * @return the {@code operation}'s result
 	 */
 	<V> V execute(Callable<V> operation, String label);
@@ -53,6 +53,7 @@ public interface IAtomicOperationExecutor {
 
 	class Default implements IAtomicOperationExecutor {
 
+		@Override
 		public void execute(final Runnable operation, String label) {
 			try {
 				operation.run();
@@ -61,6 +62,7 @@ public interface IAtomicOperationExecutor {
 			}
 		}
 
+		@Override
 		public <V> V execute(final Callable<V> operation, String label) {
 			class CallableWrapper implements Runnable {
 

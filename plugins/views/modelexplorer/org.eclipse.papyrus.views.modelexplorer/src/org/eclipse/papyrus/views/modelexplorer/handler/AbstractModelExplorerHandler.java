@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,7 +19,6 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
@@ -34,15 +33,15 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * This provides facilities to get the TransactionEditingDomain and the PageManager from the Model Explorer
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 
 	/**
 	 * Returns the
-	 * 
+	 *
 	 * @return
 	 *         the current editing domain
 	 */
@@ -51,15 +50,15 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 		try {
 			editingDomain = org.eclipse.papyrus.infra.core.utils.ServiceUtilsForActionHandlers.getInstance().getTransactionalEditingDomain();
 		} catch (ServiceException e) {
-			//we are closing the editor, so the model explorer has nothing to display
-			//			e.printStackTrace();
+			// we are closing the editor, so the model explorer has nothing to display
+			// e.printStackTrace();
 		}
 		return editingDomain;
 	}
 
 	/**
 	 * Returns the page manager
-	 * 
+	 *
 	 * @return
 	 *         the page manager
 	 */
@@ -68,8 +67,8 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 		try {
 			pageManager = ServiceUtilsForActionHandlers.getInstance().getIPageManager();
 		} catch (ServiceException e) {
-			//we are closing the editor, so the model explorer has nothing to display
-			//			e.printStackTrace();
+			// we are closing the editor, so the model explorer has nothing to display
+			// e.printStackTrace();
 		}
 		return pageManager;
 	}
@@ -77,7 +76,7 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 	/**
 	 * Adapt the specified object to the requested type, if possible.
 	 * Return null if the object can't be adapted.
-	 * 
+	 *
 	 * @param object
 	 * @param expectedClassType
 	 * @return The adapted object, or null.
@@ -88,26 +87,26 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 
 		EObject eobject = EMFHelper.getEObject(object);
 
-		if(eobject != null && expectedClassType.isInstance(eobject)) {
-			return (T)eobject;
+		if (eobject != null && expectedClassType.isInstance(eobject)) {
+			return (T) eobject;
 		}
 
 
 
 		// Try global mechanism
 		{
-			T ele = (T)Platform.getAdapterManager().getAdapter(object, expectedClassType);
-			if(ele != null) {
+			T ele = (T) Platform.getAdapterManager().getAdapter(object, expectedClassType);
+			if (ele != null) {
 				return ele;
 			}
 			// Try as EObject if the expectedClasType is sub-type of EObject.
-			if(EObject.class.isAssignableFrom(expectedClassType)) {
+			if (EObject.class.isAssignableFrom(expectedClassType)) {
 				// to EObject
-				eobject = (EObject)Platform.getAdapterManager().getAdapter(object, EObject.class);
+				eobject = (EObject) Platform.getAdapterManager().getAdapter(object, EObject.class);
 
-				if(eobject != null && expectedClassType.isInstance(eobject)) {
+				if (eobject != null && expectedClassType.isInstance(eobject)) {
 
-					return (T)eobject;
+					return (T) eobject;
 				}
 			}
 		}
@@ -118,7 +117,7 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 
 	/**
 	 * Filter the list, and only retain objects that can be adapted to the specified type
-	 * 
+	 *
 	 * @param objects
 	 * @param class1
 	 * @return
@@ -127,10 +126,10 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 
 		List<T> res = new ArrayList<T>();
 
-		for(Object cur : list) {
+		for (Object cur : list) {
 
 			T adapted = adapt(cur, expectedClassType);
-			if(adapted != null) {
+			if (adapted != null) {
 				res.add(adapted);
 			}
 		}
@@ -139,7 +138,7 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 
 	/**
 	 * Get all selected element of the specified type.
-	 * 
+	 *
 	 * @param expectedType
 	 * @return
 	 * @throws ExecutionException
@@ -151,11 +150,11 @@ public abstract class AbstractModelExplorerHandler extends AbstractHandler {
 		ISelection selection = HandlerUtil.getCurrentSelectionChecked(event);
 
 		// Get the selected objects according to the type of the selected
-		if(selection instanceof IStructuredSelection) {
-			IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 			return getAllElementAdaptedToType(structuredSelection.toList(), expectedType);
-		} else if(selection instanceof TreeSelection) {
-			TreeSelection treeSelection = (TreeSelection)selection;
+		} else if (selection instanceof TreeSelection) {
+			TreeSelection treeSelection = (TreeSelection) selection;
 			return getAllElementAdaptedToType(treeSelection.toList(), expectedType);
 
 		}

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Jerome Benois (Obeo) jerome.benois@obeo.fr - initial API and implementation
  *******************************************************************************/
@@ -26,7 +26,7 @@ import org.eclipse.papyrus.infra.core.utils.PapyrusTrace;
 
 /**
  * {@inheritDoc}
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  */
 public class CreationCommandRegistry implements ICreationCommandRegistry {
@@ -36,14 +36,14 @@ public class CreationCommandRegistry implements ICreationCommandRegistry {
 	/**
 	 * This static method returns an instance of this class for a specified
 	 * namespace
-	 * 
+	 *
 	 * @param extensionPointNamespace
 	 * @return
 	 */
 	public static CreationCommandRegistry getInstance(String extensionPointNamespace) {
-		synchronized(registriesMap) {
+		synchronized (registriesMap) {
 			CreationCommandRegistry registry = registriesMap.get(extensionPointNamespace);
-			if(registry == null) {
+			if (registry == null) {
 				registry = new CreationCommandRegistry(extensionPointNamespace);
 				registriesMap.put(extensionPointNamespace, registry);
 			}
@@ -81,7 +81,7 @@ public class CreationCommandRegistry implements ICreationCommandRegistry {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @throws NotFoundException
 	 */
 	public ICreationCommand getCommand(String commandId) throws NotFoundException {
@@ -95,7 +95,7 @@ public class CreationCommandRegistry implements ICreationCommandRegistry {
 
 	/**
 	 * get the command icon path
-	 * 
+	 *
 	 * @return the editor icon path
 	 */
 	public String getIcon() {
@@ -104,9 +104,9 @@ public class CreationCommandRegistry implements ICreationCommandRegistry {
 
 	/**
 	 * set the command icon
-	 * 
+	 *
 	 * @param icon
-	 *        the icon path
+	 *            the icon path
 	 */
 	public void setIcon(String icon) {
 		this.icon = icon;
@@ -123,10 +123,10 @@ public class CreationCommandRegistry implements ICreationCommandRegistry {
 
 		CreationCommandExtensionFactory extensionReader = new CreationCommandExtensionFactory();
 
-		for(IConfigurationElement ele : configElements) {
+		for (IConfigurationElement ele : configElements) {
 			CreationCommandDescriptor desc;
 			try {
-				if(CreationCommandExtensionFactory.CREATION_COMMAND_EXTENSIONPOINT.equals(ele.getName())) {
+				if (CreationCommandExtensionFactory.CREATION_COMMAND_EXTENSIONPOINT.equals(ele.getName())) {
 					desc = extensionReader.createCreationCommand(ele);
 					creationCommandDescriptors.put(desc.commandId, desc);
 				}

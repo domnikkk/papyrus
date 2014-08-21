@@ -1,11 +1,11 @@
 /**********************************************************************************
  * Copyright (c) 2011 Mia-Software.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Gabriel Barbier (Mia-Software) - initial API and implementation
  * 		Nicolas Guyomar (Mia-Software) - Bug 333652 Extension point offering the possibility to declare an EPackage browser
@@ -31,7 +31,7 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 /**
  * A dialog which displays a list of URIs from the EMF package registry, and
  * allows the user to open one of them.
- * 
+ *
  * @author Gabriel Barbier
  */
 public class UriSelectionDialog extends ElementListSelectionDialog {
@@ -41,7 +41,7 @@ public class UriSelectionDialog extends ElementListSelectionDialog {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent shell
 	 */
@@ -69,7 +69,7 @@ public class UriSelectionDialog extends ElementListSelectionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.ui.dialogs.SelectionStatusDialog#okPressed()
 	 */
 	@Override

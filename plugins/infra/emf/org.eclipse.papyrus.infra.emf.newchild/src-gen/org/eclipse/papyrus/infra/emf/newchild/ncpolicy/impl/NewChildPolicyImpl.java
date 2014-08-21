@@ -25,9 +25,9 @@ import org.eclipse.papyrus.infra.emf.newchild.ncpolicy.NewChildPolicy;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl#getRoles <em>Roles</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl#getEClasses <em>EClasses</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl#getRoles <em>Roles</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl#getEClasses <em>EClasses</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.emf.newchild.ncpolicy.impl.NewChildPolicyImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +38,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRoles()
 	 * @generated
 	 * @ordered
@@ -48,6 +49,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The cached value of the '{@link #getEClasses() <em>EClasses</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEClasses()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -68,6 +71,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -77,6 +81,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected NewChildPolicyImpl() {
@@ -86,6 +91,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -96,6 +102,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<String> getRoles() {
@@ -108,6 +115,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<EClass> getEClasses() {
@@ -120,6 +128,7 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -129,29 +138,32 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NcpolicyPackage.NEW_CHILD_POLICY__NAME, oldName, name));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
-				return getRoles();
-			case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
-				return getEClasses();
-			case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
-				return getName();
+		case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
+			return getRoles();
+		case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
+			return getEClasses();
+		case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,23 +171,24 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
-				getRoles().clear();
-				getRoles().addAll((Collection<? extends String>)newValue);
-				return;
-			case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
-				getEClasses().clear();
-				getEClasses().addAll((Collection<? extends EClass>)newValue);
-				return;
-			case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
-				setName((String)newValue);
-				return;
+		case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
+			getRoles().clear();
+			getRoles().addAll((Collection<? extends String>) newValue);
+			return;
+		case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
+			getEClasses().clear();
+			getEClasses().addAll((Collection<? extends EClass>) newValue);
+			return;
+		case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -183,20 +196,21 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
-				getRoles().clear();
-				return;
-			case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
-				getEClasses().clear();
-				return;
-			case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
+			getRoles().clear();
+			return;
+		case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
+			getEClasses().clear();
+			return;
+		case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -204,17 +218,18 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
-				return roles != null && !roles.isEmpty();
-			case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
-				return eClasses != null && !eClasses.isEmpty();
-			case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case NcpolicyPackage.NEW_CHILD_POLICY__ROLES:
+			return roles != null && !roles.isEmpty();
+		case NcpolicyPackage.NEW_CHILD_POLICY__ECLASSES:
+			return eClasses != null && !eClasses.isEmpty();
+		case NcpolicyPackage.NEW_CHILD_POLICY__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -222,11 +237,14 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (roles: ");
@@ -237,4 +255,4 @@ public abstract class NewChildPolicyImpl extends EObjectImpl implements NewChild
 		return result.toString();
 	}
 
-} //NewChildPolicyImpl
+} // NewChildPolicyImpl

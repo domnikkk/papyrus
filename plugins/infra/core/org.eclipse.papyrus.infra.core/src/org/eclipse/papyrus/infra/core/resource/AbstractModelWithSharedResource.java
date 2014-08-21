@@ -23,7 +23,7 @@ import org.eclipse.papyrus.infra.core.Activator;
  * @author cedric dumoulin
  *
  * @param T
- *        Type of the roots of the model.
+ *            Type of the roots of the model.
  */
 public abstract class AbstractModelWithSharedResource<T extends EObject> extends EMFLogicalModel {
 
@@ -68,14 +68,14 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 			lookupResource(uriWithoutExtension);
 
 			// Check if model is loaded.
-			if(resourceIsSet()) {
+			if (resourceIsSet()) {
 				configureResource(resource);
 				return;
 			}
 			// model is not loaded, do it.
 			super.loadModel(uriWithoutExtension);
 		} catch (Exception ex) {
-			if(modelKind == ModelKind.master) {
+			if (modelKind == ModelKind.master) {
 				Activator.log.error(ex);
 			}
 		}
@@ -91,13 +91,13 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 			lookupResource(uri);
 
 			// Check if model is loaded.
-			if(resourceIsSet()) {
+			if (resourceIsSet()) {
 				configureResource(resource);
 				return;
 			}
 			super.createModel(uri);
 		} catch (Exception ex) {
-			if(modelKind == ModelKind.master) {
+			if (modelKind == ModelKind.master) {
 				Activator.log.error(ex);
 			}
 		}
@@ -107,7 +107,7 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 	 * Lookup for the resource in the resourceSet.
 	 *
 	 * @param uri
-	 *        the URI (without extension) of the resource to look for
+	 *            the URI (without extension) of the resource to look for
 	 */
 	private void lookupResource(URI uriWithoutExtension) {
 
@@ -129,7 +129,7 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 	public void saveModel() throws IOException {
 
 		// Do nothing if we are a slave
-		if(modelKind == ModelKind.slave) {
+		if (modelKind == ModelKind.slave) {
 			return;
 		}
 
@@ -140,11 +140,11 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 	@Override
 	public void saveCopy(IPath targetPathWithoutExtension, Map<Object, Object> targetMap) {
 		// Do nothing if we are a slave
-		if(modelKind == ModelKind.slave) {
+		if (modelKind == ModelKind.slave) {
 			return;
 		}
 
-		//Do the save
+		// Do the save
 		super.saveCopy(targetPathWithoutExtension, targetMap);
 	}
 
@@ -158,10 +158,10 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 	@SuppressWarnings("unchecked")
 	public T getModelRoot() {
 
-		for(EObject object : getResource().getContents()) {
+		for (EObject object : getResource().getContents()) {
 
-			if(isModelRoot(object)) {
-				return (T)object;
+			if (isModelRoot(object)) {
+				return (T) object;
 			}
 		}
 
@@ -180,9 +180,9 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 
 		List<T> roots = new ArrayList<T>();
 
-		for(EObject object : getResource().getContents()) {
-			if(isModelRoot(object)) {
-				roots.add((T)object);
+		for (EObject object : getResource().getContents()) {
+			if (isModelRoot(object)) {
+				roots.add((T) object);
 			}
 		}
 
@@ -209,7 +209,7 @@ public abstract class AbstractModelWithSharedResource<T extends EObject> extends
 
 	@Override
 	protected Map<Object, Object> getSaveOptions() {
-		if(modelKind == ModelKind.master) {
+		if (modelKind == ModelKind.master) {
 			return super.getSaveOptions();
 		} else {
 			return Collections.emptyMap();

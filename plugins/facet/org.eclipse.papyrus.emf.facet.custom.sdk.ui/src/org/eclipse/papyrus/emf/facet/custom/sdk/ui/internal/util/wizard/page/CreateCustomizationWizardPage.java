@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  */
@@ -17,15 +17,10 @@ import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Path;
-import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Activator;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.Messages;
 import org.eclipse.papyrus.emf.facet.custom.sdk.ui.internal.wizard.page.ICreateCustomizationWizardPage;
-import org.eclipse.papyrus.emf.facet.util.core.Logger;
-//import org.eclipse.papyrus.emf.facet.util.core.internal.exported.PluginUtils;
-import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 
@@ -96,15 +91,15 @@ public class CreateCustomizationWizardPage extends WizardNewFileCreationPage
 				valid = false;
 			}
 			final IPath containerFullPath = getContainerFullPath();
-//			try {
-//				if (!PluginUtils.isInPluginProject(containerFullPath)) {
-//					setMessage(
-//							Messages.CreateCustomizationWizardPage_Not_a_Plugin_project,
-//							IMessageProvider.WARNING);
-//				}
-//			} catch (final CoreException e) {
-//				Logger.logError(e, Activator.getDefault());
-//			}
+			// try {
+			// if (!PluginUtils.isInPluginProject(containerFullPath)) {
+			// setMessage(
+			// Messages.CreateCustomizationWizardPage_Not_a_Plugin_project,
+			// IMessageProvider.WARNING);
+			// }
+			// } catch (final CoreException e) {
+			// Logger.logError(e, Activator.getDefault());
+			// }
 		}
 
 		return valid;

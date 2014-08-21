@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,10 +38,10 @@ import org.eclipse.uml2.uml.UMLPackage;
  * An ObservableValue for manipulating the UML Multiplicity property.
  * Multiplicity is a simple, virtual property, aggregating both lowerBound and upperBound,
  * and presenting them as an Enumeration with 4 values : 1, 0-1, 0-*, 1-*
- * 
+ *
  * The values are edited with commands executed on the given editing domain.
  * These commands will probably only work in a Papyrus context.
- * 
+ *
  * @author Camille Letavernier
  */
 public class MultiplicityObservableValue extends ReferenceCountedObservable.Value implements IChangeListener, CommandBasedObservableValue, AggregatedObservable, IObserving {
@@ -56,11 +56,11 @@ public class MultiplicityObservableValue extends ReferenceCountedObservable.Valu
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param eObject
-	 *        The EObject which the multiplicity is being edited
+	 *            The EObject which the multiplicity is being edited
 	 * @param domain
-	 *        The Editing Domain on which the commands will be executed
+	 *            The Editing Domain on which the commands will be executed
 	 */
 	public MultiplicityObservableValue(EObject eObject, EditingDomain domain) {
 		this.eObject = eObject;
@@ -88,46 +88,46 @@ public class MultiplicityObservableValue extends ReferenceCountedObservable.Valu
 		lowerValue.addChangeListener(this);
 		upperValue.addChangeListener(this);
 
-		if(lowerValueSpecification != null) {
+		if (lowerValueSpecification != null) {
 			lowerValueSpecification.addChangeListener(this);
 		}
-		if(upperValueSpecification != null) {
+		if (upperValueSpecification != null) {
 			upperValueSpecification.addChangeListener(this);
 		}
 	}
 
 	private IObservableValue getValueSpecification(IObservableValue source, EStructuralFeature specificationFeature, EditingDomain domain) {
-		if(source.getValue() == null) {
+		if (source.getValue() == null) {
 			return null;
 		}
-		return UMLDatabindingHelper.getObservableValue((EObject)source.getValue(), specificationFeature, domain);
+		return UMLDatabindingHelper.getObservableValue((EObject) source.getValue(), specificationFeature, domain);
 
 	}
 
 	/**
 	 * @see org.eclipse.core.databinding.observable.IChangeListener#handleChange(org.eclipse.core.databinding.observable.ChangeEvent)
-	 * 
+	 *
 	 * @param event
 	 */
 	public void handleChange(ChangeEvent event) {
 		boolean fireChange = false;
-		if(event.getSource() == lowerValue || event.getSource() == upperValue) {
+		if (event.getSource() == lowerValue || event.getSource() == upperValue) {
 			fireChange = true;
 			lowerValueSpecification = getValueSpecification(lowerValue, UMLPackage.eINSTANCE.getLiteralInteger_Value(), domain);
 			upperValueSpecification = getValueSpecification(upperValue, UMLPackage.eINSTANCE.getLiteralUnlimitedNatural_Value(), domain);
 		}
 
-		if(event.getSource() == lowerValueSpecification || event.getSource() == upperValueSpecification) {
+		if (event.getSource() == lowerValueSpecification || event.getSource() == upperValueSpecification) {
 			fireChange = true;
 		}
 
-		if(fireChange) {
+		if (fireChange) {
 			final Object value = getValue();
 			fireValueChange(new ValueDiff() {
 
 				@Override
 				public Object getOldValue() {
-					return null; //Unknown
+					return null; // Unknown
 				}
 
 				@Override
@@ -142,16 +142,16 @@ public class MultiplicityObservableValue extends ReferenceCountedObservable.Valu
 	public Object getObserved() {
 		return eObject;
 	}
-	
+
 	@Override
 	public synchronized void dispose() {
 		lowerValue.removeChangeListener(this);
 		upperValue.removeChangeListener(this);
-		if(lowerValueSpecification != null) {
+		if (lowerValueSpecification != null) {
 			lowerValueSpecification.removeChangeListener(this);
 			lowerValueSpecification.dispose();
 		}
-		if(upperValueSpecification != null) {
+		if (upperValueSpecification != null) {
 			upperValueSpecification.removeChangeListener(this);
 			upperValueSpecification.dispose();
 		}
@@ -176,8 +176,8 @@ public class MultiplicityObservableValue extends ReferenceCountedObservable.Valu
 
 		Object lowerValue = lowerBound.getValue();
 		Object upperValue = upperBound.getValue();
-		lower = (Integer)lowerValue;
-		upper = (Integer)upperValue;
+		lower = (Integer) lowerValue;
+		upper = (Integer) upperValue;
 
 		return MultiplicityParser.getMultiplicity(lower, upper);
 	}
@@ -189,17 +189,17 @@ public class MultiplicityObservableValue extends ReferenceCountedObservable.Valu
 	}
 
 	public Command getCommand(Object value) {
-		String val = (String)value;
+		String val = (String) value;
 
 		int[] lowerUpper = MultiplicityParser.getBounds(val);
-		if(lowerUpper == null || lowerUpper.length < 2) {
-			return UnexecutableCommand.INSTANCE; //Invalid multiplicity
+		if (lowerUpper == null || lowerUpper.length < 2) {
+			return UnexecutableCommand.INSTANCE; // Invalid multiplicity
 		}
 
 		int lower = lowerUpper[0], upper = lowerUpper[1];
-		if(MultiplicityParser.isValidMultiplicity(lower, upper)) {
+		if (MultiplicityParser.isValidMultiplicity(lower, upper)) {
 			try {
-				return new SetMultiplicityCommand((MultiplicityElement)eObject, val);
+				return new SetMultiplicityCommand((MultiplicityElement) eObject, val);
 			} catch (Exception ex) {
 				Activator.log.error(ex);
 			}
@@ -212,7 +212,7 @@ public class MultiplicityObservableValue extends ReferenceCountedObservable.Valu
 		try {
 			return new AggregatedPapyrusObservableValue(domain, this, observable);
 		} catch (IllegalArgumentException ex) {
-			return null; //The observable cannot be aggregated
+			return null; // The observable cannot be aggregated
 		}
 	}
 

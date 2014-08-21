@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,9 +40,9 @@ public class NotationUtils {
 
 	/**
 	 * Get the notation Resource.
-	 * 
+	 *
 	 * @return
-	 * 
+	 *
 	 * @deprecated Usage of the internal Resource is discouraged.
 	 */
 	@Deprecated
@@ -55,16 +55,16 @@ public class NotationUtils {
 	 * Warning: This method is designed to be call from ui.handlers. It is not
 	 * designed to be call from Editors. This method can return null if called
 	 * during the MultiEditor initialization.
-	 * 
+	 *
 	 * @see ServiceUtilsForActionHandlers.getInstance().getModelSet()
-	 * 
+	 *
 	 * @return The {@link NotationModel} of the current editor, or null if not
 	 *         found.
 	 */
 	public static NotationModel getNotationModel() {
 
 		try {
-			return (NotationModel)ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(NotationModel.MODEL_ID);
+			return (NotationModel) ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(NotationModel.MODEL_ID);
 		} catch (ServiceException e) {
 			return null;
 		}
@@ -75,48 +75,49 @@ public class NotationUtils {
 	 * Warning: This method is designed to be call from ui.handlers. It is not
 	 * designed to be call from Editors. This method can return null if called
 	 * during the MultiEditor initialization.
-	 * 
+	 *
 	 * @see ServiceUtilsForActionHandlers.getInstance().getModelSet()
-	 * 
+	 *
 	 * @return The {@link NotationModel} of the current editor, or null if not
 	 *         found.
 	 * @throws ServiceException
-	 *         If an error occurs while getting or starting the service.
+	 *             If an error occurs while getting or starting the service.
 	 */
 	public static NotationModel getNotationModelChecked() throws ServiceException {
 
-		return (NotationModel)ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(NotationModel.MODEL_ID);
+		return (NotationModel) ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(NotationModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the NotationModel from the {@link ModelSet}. <br>
-	 * 
+	 *
 	 * @param modelsManager
-	 *        The modelManager containing the requested model.
-	 * 
+	 *            The modelManager containing the requested model.
+	 *
 	 * @return The {@link NotationModel} registered in modelManager, or null if
 	 *         not found.
 	 */
 	public static NotationModel getNotationModel(ModelSet modelsManager) {
 
-		return (NotationModel)modelsManager.getModel(NotationModel.MODEL_ID);
+		return (NotationModel) modelsManager.getModel(NotationModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the direct associated diagram of the specified eObject.
-	 * 
+	 *
 	 * @param eObject
 	 * @param notationResource
-	 * 
+	 *
 	 * @return the associated diagram
 	 */
 	public static Diagram getAssociatedDiagram(Resource notationResource, EObject eObject) {
-		if(notationResource != null) {
-			for(EObject obj : notationResource.getContents()) {
-				if(obj instanceof Diagram) {
-					Diagram diagram = (Diagram)obj;
-					if (DiagramUtils.getOwner(diagram) == eObject)
+		if (notationResource != null) {
+			for (EObject obj : notationResource.getContents()) {
+				if (obj instanceof Diagram) {
+					Diagram diagram = (Diagram) obj;
+					if (DiagramUtils.getOwner(diagram) == eObject) {
 						return diagram;
+					}
 				}
 			}
 		}
@@ -125,16 +126,16 @@ public class NotationUtils {
 
 	/**
 	 * Gets the direct associated diagram of the specified eObject.
-	 * 
+	 *
 	 * @param eObject
 	 * @param notationResource
 	 * @param resolve
-	 *        the resource if true
-	 * 
+	 *            the resource if true
+	 *
 	 * @return the associated diagram
 	 */
 	public static Diagram getAssociatedDiagram(Resource notationResource, EObject eObject, boolean resolve) {
-		if(notationResource != null && resolve) {
+		if (notationResource != null && resolve) {
 			EcoreUtil.resolveAll(notationResource);
 		}
 		return getAssociatedDiagram(notationResource, eObject);
@@ -142,21 +143,22 @@ public class NotationUtils {
 
 	/**
 	 * Gets the all the diagrams contained in the specified ancestor eObject
-	 * 
+	 *
 	 * @param notationResource
 	 * @param eObject
-	 * 
+	 *
 	 * @return all the contained diagrams
-	 * 
+	 *
 	 */
 	public static List<Diagram> getDiagrams(Resource notationResource, EObject eObject) {
 		List<Diagram> diagrams = new LinkedList<Diagram>();
-		if(notationResource != null) {
-			for(EObject obj : notationResource.getContents()) {
-				if(obj instanceof Diagram) {
-					Diagram diagram = (Diagram)obj;
-					if (EcoreUtil.isAncestor(eObject, DiagramUtils.getOwner(diagram)))
+		if (notationResource != null) {
+			for (EObject obj : notationResource.getContents()) {
+				if (obj instanceof Diagram) {
+					Diagram diagram = (Diagram) obj;
+					if (EcoreUtil.isAncestor(eObject, DiagramUtils.getOwner(diagram))) {
 						diagrams.add(diagram);
+					}
 				}
 			}
 		}
@@ -165,16 +167,16 @@ public class NotationUtils {
 
 	/**
 	 * Gets the all the diagrams contained in the specified ancestor eObject
-	 * 
+	 *
 	 * @param notationResource
 	 * @param eObject
 	 * @param resolve
-	 *        the resource if true
-	 * 
+	 *            the resource if true
+	 *
 	 * @return all the contained diagrams
 	 */
 	public static List<Diagram> getDiagrams(Resource notationResource, EObject eObject, boolean resolve) {
-		if(notationResource != null && resolve) {
+		if (notationResource != null && resolve) {
 			EcoreUtil.resolveAll(notationResource);
 		}
 		return getDiagrams(notationResource, eObject);
@@ -182,21 +184,21 @@ public class NotationUtils {
 
 	/**
 	 * Helper to retrieve the Notation resource associated to a ModelSet. May be null.
-	 * 
+	 *
 	 * @param from
 	 * @return
 	 */
 	public static Resource getNotationResource(ModelSet from) {
 		IModel notationModel = from.getModel(NotationModel.MODEL_ID);
-		if(notationModel instanceof NotationModel) {
-			return ((NotationModel)notationModel).getResource();
+		if (notationModel instanceof NotationModel) {
+			return ((NotationModel) notationModel).getResource();
 		}
 		return null;
 	}
 
 	/**
 	 * Helper to retrieve the Notation resource associated to a ServicesRegistry. May be null.
-	 * 
+	 *
 	 * @param from
 	 * @return
 	 */
@@ -209,42 +211,41 @@ public class NotationUtils {
 			return null;
 		}
 	}
-	
-	
+
+
 	/**
 	 * Returns the notation resource where to add the new diagram
 	 *
 	 * @param eObject
-	 *        the semantic object linked to the diagram or the diagram itself.
+	 *            the semantic object linked to the diagram or the diagram itself.
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @return the resource where the diagram should be added or <code>null</code> if no resource was found
-	 *         
+	 *
 	 */
 	public static Resource getNotationResourceForDiagram(EObject eObject, TransactionalEditingDomain domain) {
 		Object object = BusinessModelResolver.getInstance().getBusinessModel(eObject);
 		EObject semanticObject;
-		if(!(object instanceof EObject)) {
+		if (!(object instanceof EObject)) {
 			semanticObject = eObject;
 		} else {
-			semanticObject = (EObject)object;
+			semanticObject = (EObject) object;
 		}
 
 		Resource containerResource = semanticObject.eResource();
-		if(containerResource == null) {
+		if (containerResource == null) {
 			return null;
 		}
 		// retrieve the model set from the container resource
 		ResourceSet resourceSet = containerResource.getResourceSet();
 
-		if(resourceSet instanceof ModelSet) {
-			ModelSet modelSet = (ModelSet)resourceSet;
+		if (resourceSet instanceof ModelSet) {
+			ModelSet modelSet = (ModelSet) resourceSet;
 			Resource destinationResource = modelSet.getAssociatedResource(semanticObject, NotationModel.NOTATION_FILE_EXTENSION, true);
 			return destinationResource;
 		} else {
-			throw new RuntimeException("Resource Set is not a ModelSet or is null");  //$NON-NLS-1$
+			throw new RuntimeException("Resource Set is not a ModelSet or is null"); //$NON-NLS-1$
 		}
-	}		
-	
-}
+	}
 
+}

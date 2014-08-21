@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -57,7 +57,7 @@ import org.eclipse.ui.PartInitException;
  * This is the action bar contributor for the Extendedtypes model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtendedtypesActionBarContributor extends EditingDomainActionBarContributor implements ISelectionChangedListener {
@@ -66,7 +66,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IEditorPart activeEditorPart;
@@ -75,7 +75,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This keeps track of the current selection provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ISelectionProvider selectionProvider;
@@ -84,7 +84,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This action opens the Properties view.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IAction showPropertiesViewAction = new Action(ExtendedTypesEditorPlugin.INSTANCE.getString("_UI_ShowPropertiesView_menu_item")) //$NON-NLS-1$
@@ -105,7 +105,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IAction refreshViewerAction = new Action(ExtendedTypesEditorPlugin.INSTANCE.getString("_UI_RefreshViewer_menu_item")) //$NON-NLS-1$
@@ -118,9 +118,9 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 
 		@Override
 		public void run() {
-			if(activeEditorPart instanceof IViewerProvider) {
-				Viewer viewer = ((IViewerProvider)activeEditorPart).getViewer();
-				if(viewer != null) {
+			if (activeEditorPart instanceof IViewerProvider) {
+				Viewer viewer = ((IViewerProvider) activeEditorPart).getViewer();
+				if (viewer != null) {
 					viewer.refresh();
 				}
 			}
@@ -132,7 +132,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> createChildActions;
@@ -141,7 +141,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This will contain a map of {@link org.eclipse.emf.edit.ui.action.CreateChildAction}s, keyed by sub-menu text.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map<String, Collection<IAction>> createChildSubmenuActions;
@@ -150,7 +150,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
@@ -160,7 +160,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
@@ -169,7 +169,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This will contain a map of {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction}s, keyed by submenu text.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map<String, Collection<IAction>> createSiblingSubmenuActions;
@@ -178,7 +178,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
@@ -187,7 +187,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This creates an instance of the contributor.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedtypesActionBarContributor() {
@@ -201,7 +201,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This adds Separators for editor additions to the tool bar.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -215,7 +215,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * as well as the sub-menus for object creation items.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -250,7 +250,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * When the active editor changes, this remembers the change and registers with it as a selection provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -259,17 +259,17 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 		activeEditorPart = part;
 		// Switch to the new selection provider.
 		//
-		if(selectionProvider != null) {
+		if (selectionProvider != null) {
 			selectionProvider.removeSelectionChangedListener(this);
 		}
-		if(part == null) {
+		if (part == null) {
 			selectionProvider = null;
 		} else {
 			selectionProvider = part.getSite().getSelectionProvider();
 			selectionProvider.addSelectionChangedListener(this);
 			// Fake a selection changed event to update the menus.
 			//
-			if(selectionProvider.getSelection() != null) {
+			if (selectionProvider.getSelection() != null) {
 				selectionChanged(new SelectionChangedEvent(selectionProvider, selectionProvider.getSelection()));
 			}
 		}
@@ -281,17 +281,17 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * that can be added to the selected object and updating the menus accordingly.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
 		//
-		if(createChildMenuManager != null) {
+		if (createChildMenuManager != null) {
 			depopulateManager(createChildMenuManager, createChildSubmenuActions);
 			depopulateManager(createChildMenuManager, createChildActions);
 		}
-		if(createSiblingMenuManager != null) {
+		if (createSiblingMenuManager != null) {
 			depopulateManager(createSiblingMenuManager, createSiblingSubmenuActions);
 			depopulateManager(createSiblingMenuManager, createSiblingActions);
 		}
@@ -300,9 +300,9 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 		Collection<?> newChildDescriptors = null;
 		Collection<?> newSiblingDescriptors = null;
 		ISelection selection = event.getSelection();
-		if(selection instanceof IStructuredSelection && ((IStructuredSelection)selection).size() == 1) {
-			Object object = ((IStructuredSelection)selection).getFirstElement();
-			EditingDomain domain = ((IEditingDomainProvider)activeEditorPart).getEditingDomain();
+		if (selection instanceof IStructuredSelection && ((IStructuredSelection) selection).size() == 1) {
+			Object object = ((IStructuredSelection) selection).getFirstElement();
+			EditingDomain domain = ((IEditingDomainProvider) activeEditorPart).getEditingDomain();
 			newChildDescriptors = domain.getNewChildDescriptors(object, null);
 			newSiblingDescriptors = domain.getNewChildDescriptors(null, object);
 		}
@@ -312,12 +312,12 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 		createChildSubmenuActions = extractSubmenuActions(createChildActions);
 		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
 		createSiblingSubmenuActions = extractSubmenuActions(createSiblingActions);
-		if(createChildMenuManager != null) {
+		if (createChildMenuManager != null) {
 			populateManager(createChildMenuManager, createChildSubmenuActions, null);
 			populateManager(createChildMenuManager, createChildActions, null);
 			createChildMenuManager.update(true);
 		}
-		if(createSiblingMenuManager != null) {
+		if (createSiblingMenuManager != null) {
 			populateManager(createSiblingMenuManager, createSiblingSubmenuActions, null);
 			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
@@ -329,13 +329,13 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * and returns the collection of these actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateChildActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
-		if(descriptors != null) {
-			for(Object descriptor : descriptors) {
+		if (descriptors != null) {
+			for (Object descriptor : descriptors) {
 				actions.add(new CreateChildAction(activeEditorPart, selection, descriptor));
 			}
 		}
@@ -347,13 +347,13 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * and returns the collection of these actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<IAction> generateCreateSiblingActions(Collection<?> descriptors, ISelection selection) {
 		Collection<IAction> actions = new ArrayList<IAction>();
-		if(descriptors != null) {
-			for(Object descriptor : descriptors) {
+		if (descriptors != null) {
+			for (Object descriptor : descriptors) {
 				actions.add(new CreateSiblingAction(activeEditorPart, selection, descriptor));
 			}
 		}
@@ -367,13 +367,13 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
-		if(actions != null) {
-			for(IAction action : actions) {
-				if(contributionID != null) {
+		if (actions != null) {
+			for (IAction action : actions) {
+				if (contributionID != null) {
 					manager.insertBefore(contributionID, action);
 				} else {
 					manager.add(action);
@@ -387,24 +387,24 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * based on the {@link org.eclipse.jface.action.IAction}s contained in the <code>actions</code> collection.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager, Collection<? extends IAction> actions) {
-		if(actions != null) {
+		if (actions != null) {
 			IContributionItem[] items = manager.getItems();
-			for(int i = 0; i < items.length; i++) {
+			for (int i = 0; i < items.length; i++) {
 				// Look into SubContributionItems
 				//
 				IContributionItem contributionItem = items[i];
-				while(contributionItem instanceof SubContributionItem) {
-					contributionItem = ((SubContributionItem)contributionItem).getInnerItem();
+				while (contributionItem instanceof SubContributionItem) {
+					contributionItem = ((SubContributionItem) contributionItem).getInnerItem();
 				}
 				// Delete the ActionContributionItems with matching action.
 				//
-				if(contributionItem instanceof ActionContributionItem) {
-					IAction action = ((ActionContributionItem)contributionItem).getAction();
-					if(actions.contains(action)) {
+				if (contributionItem instanceof ActionContributionItem) {
+					IAction action = ((ActionContributionItem) contributionItem).getAction();
+					if (actions.contains(action)) {
 						manager.remove(contributionItem);
 					}
 				}
@@ -417,19 +417,19 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * a map of these actions, keyed by submenu text.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Map<String, Collection<IAction>> extractSubmenuActions(Collection<IAction> createActions) {
 		Map<String, Collection<IAction>> createSubmenuActions = new LinkedHashMap<String, Collection<IAction>>();
-		if(createActions != null) {
-			for(Iterator<IAction> actions = createActions.iterator(); actions.hasNext();) {
+		if (createActions != null) {
+			for (Iterator<IAction> actions = createActions.iterator(); actions.hasNext();) {
 				IAction action = actions.next();
 				StringTokenizer st = new StringTokenizer(action.getText(), "|"); //$NON-NLS-1$
-				if(st.countTokens() == 2) {
+				if (st.countTokens() == 2) {
 					String text = st.nextToken().trim();
 					Collection<IAction> submenuActions = createSubmenuActions.get(text);
-					if(submenuActions == null) {
+					if (submenuActions == null) {
 						createSubmenuActions.put(text, submenuActions = new ArrayList<IAction>());
 					}
 					action.setText(st.nextToken().trim());
@@ -442,21 +442,20 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	}
 
 	/**
-	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.MenuManager}s containing
-	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s
+	 * This populates the specified <code>manager</code> with {@link org.eclipse.jface.action.MenuManager}s containing {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s
 	 * contained in the <code>submenuActions</code> collection, by inserting them before the specified contribution
 	 * item <code>contributionID</code>.
 	 * If <code>contributionID</code> is <code>null</code>, they are simply added.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void populateManager(IContributionManager manager, Map<String, Collection<IAction>> submenuActions, String contributionID) {
-		if(submenuActions != null) {
-			for(Map.Entry<String, Collection<IAction>> entry : submenuActions.entrySet()) {
+		if (submenuActions != null) {
+			for (Map.Entry<String, Collection<IAction>> entry : submenuActions.entrySet()) {
 				MenuManager submenuManager = new MenuManager(entry.getKey());
-				if(contributionID != null) {
+				if (contributionID != null) {
 					manager.insertBefore(contributionID, submenuManager);
 				} else {
 					manager.add(submenuManager);
@@ -467,22 +466,21 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	}
 
 	/**
-	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.MenuManager}s and their
-	 * {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s
+	 * This removes from the specified <code>manager</code> all {@link org.eclipse.jface.action.MenuManager}s and their {@link org.eclipse.jface.action.ActionContributionItem}s based on the {@link org.eclipse.jface.action.IAction}s
 	 * contained in the <code>submenuActions</code> map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void depopulateManager(IContributionManager manager, Map<String, Collection<IAction>> submenuActions) {
-		if(submenuActions != null) {
+		if (submenuActions != null) {
 			IContributionItem[] items = manager.getItems();
-			for(int i = 0; i < items.length; i++) {
+			for (int i = 0; i < items.length; i++) {
 				IContributionItem contributionItem = items[i];
-				if(contributionItem instanceof MenuManager) {
-					MenuManager submenuManager = (MenuManager)contributionItem;
-					if(submenuActions.containsKey(submenuManager.getMenuText())) {
+				if (contributionItem instanceof MenuManager) {
+					MenuManager submenuManager = (MenuManager) contributionItem;
+					if (submenuActions.containsKey(submenuManager.getMenuText())) {
 						depopulateManager(submenuManager, submenuActions.get(contributionItem));
 						manager.remove(contributionItem);
 					}
@@ -495,7 +493,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This populates the pop-up menu before it appears.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -516,7 +514,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -532,7 +530,7 @@ public class ExtendedtypesActionBarContributor extends EditingDomainActionBarCon
 	 * This ensures that a delete action will clean up all references to deleted objects.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

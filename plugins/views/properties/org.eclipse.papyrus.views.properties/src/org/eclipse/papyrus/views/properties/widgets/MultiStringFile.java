@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,11 +39,11 @@ public class MultiStringFile extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the multiple string file editor
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the multiple string file editor.
 	 */
 	protected MultipleStringFileEditor createMultipleStringFileEditor(Composite parent, int style) {
@@ -55,15 +55,15 @@ public class MultiStringFile extends AbstractPropertyEditor {
 		editor.setOrdered(input.isOrdered(propertyPath));
 		editor.setUnique(input.isUnique(propertyPath));
 
-		if(getInputObservableList() instanceof ICommitListener) {
-			editor.addCommitListener((ICommitListener)getInputObservableList());
+		if (getInputObservableList() instanceof ICommitListener) {
+			editor.addCommitListener((ICommitListener) getInputObservableList());
 		}
 
 		super.doBinding();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filterExtensions
 	 */
 	public void setFilterExtensions(String[] filterExtensions) {
@@ -76,7 +76,7 @@ public class MultiStringFile extends AbstractPropertyEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filterNames
 	 */
 	public void setFilterNames(String[] filterNames) {
@@ -92,7 +92,7 @@ public class MultiStringFile extends AbstractPropertyEditor {
 	 * Checks if the filters are valid
 	 */
 	protected void checkFilters() {
-		if(filterExtensions != null && filterNames != null) {
+		if (filterExtensions != null && filterNames != null) {
 			editor.setFilters(filterExtensions, filterNames);
 		}
 	}

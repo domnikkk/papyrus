@@ -20,6 +20,7 @@ public class GenerateUsingElementTypeCreationCommandImpl extends CommentedElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected GenerateUsingElementTypeCreationCommandImpl() {
@@ -29,6 +30,7 @@ public class GenerateUsingElementTypeCreationCommandImpl extends CommentedElemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class GenerateUsingElementTypeCreationCommandImpl extends CommentedElemen
 		return PapyrusgmfgenextensionPackage.Literals.GENERATE_USING_ELEMENT_TYPE_CREATION_COMMAND;
 	}
 
-} //GenerateUsingElementTypeCreationCommandImpl
+} // GenerateUsingElementTypeCreationCommandImpl

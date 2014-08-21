@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Element Type</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getIcon <em>Icon</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementType()
  * @model abstract="true"
  * @generated
@@ -36,7 +36,7 @@ public interface ElementType extends EObject {
 	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementType_Name()
@@ -49,9 +49,9 @@ public interface ElementType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Name</em>' attribute.
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface ElementType extends EObject {
 	 * If the meaning of the '<em>Helper</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Helper</em>' attribute.
 	 * @see #setHelper(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementType_Helper()
@@ -77,9 +77,9 @@ public interface ElementType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getHelper <em>Helper</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Helper</em>' attribute.
+	 *            the new value of the '<em>Helper</em>' attribute.
 	 * @see #getHelper()
 	 * @generated
 	 */
@@ -93,7 +93,7 @@ public interface ElementType extends EObject {
 	 * If the meaning of the '<em>Owner</em>' container reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Owner</em>' container reference.
 	 * @see #setOwner(ElementTypes)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementType_Owner()
@@ -107,9 +107,9 @@ public interface ElementType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getOwner <em>Owner</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Owner</em>' container reference.
+	 *            the new value of the '<em>Owner</em>' container reference.
 	 * @see #getOwner()
 	 * @generated
 	 */
@@ -122,7 +122,7 @@ public interface ElementType extends EObject {
 	 * If the meaning of the '<em>Icon</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Icon</em>' attribute.
 	 * @see #setIcon(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getElementType_Icon()
@@ -135,9 +135,9 @@ public interface ElementType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.ElementType#getIcon <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Icon</em>' attribute.
+	 *            the new value of the '<em>Icon</em>' attribute.
 	 * @see #getIcon()
 	 * @generated
 	 */

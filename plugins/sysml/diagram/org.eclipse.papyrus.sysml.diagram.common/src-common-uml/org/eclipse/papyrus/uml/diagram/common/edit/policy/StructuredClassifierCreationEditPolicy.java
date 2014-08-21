@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -82,14 +82,14 @@ public class StructuredClassifierCreationEditPolicy extends CreationEditPolicy {
 
 		// CreateViewCommand replace the semantic adapter in its call to ViewService to know if a provider exists.
 
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, DiagramUIMessages.AddCommand_Label);
 
 		Iterator<? extends ViewDescriptor> descriptors = request.getViewDescriptors().iterator();
-		while(descriptors.hasNext()) {
+		while (descriptors.hasNext()) {
 
-			CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor)descriptors.next();
-			ICommand createCommand = new CreateViewCommand(editingDomain, descriptor, (View)(getHost().getModel()));
+			CreateViewRequest.ViewDescriptor descriptor = descriptors.next();
+			ICommand createCommand = new CreateViewCommand(editingDomain, descriptor, (View) (getHost().getModel()));
 
 			// Add SetBounds
 			createCommand = CompositeCommand.compose(createCommand, getSetBoundsCommand(request, descriptor));
@@ -105,28 +105,28 @@ public class StructuredClassifierCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Get a SetBoundsCommand to move a new view at current mouse position.
-	 * 
+	 *
 	 * @param request
-	 *        The creation request.
+	 *            The creation request.
 	 * @param descriptor
-	 *        The descriptor of the new element.
+	 *            The descriptor of the new element.
 	 * @return The set bounds command.
 	 */
 	private ICommand getSetBoundsCommand(CreateViewRequest request, CreateViewRequest.ViewDescriptor descriptor) {
 		ICommand setBoundsCommand = null;
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 
 		// Retrieve parent location
 		Point parentLoc = getHostFigure().getBounds().getLocation().getCopy();
 
-		
+
 		final Point realWantedLocation;
 		Map<?, ?> params = request.getExtendedData();
-		Point realLocation = (Point)params.get(AspectUnspecifiedTypeCreationTool.INITIAL_MOUSE_LOCATION_FOR_CREATION);
-		if(realLocation != null) {
+		Point realLocation = (Point) params.get(AspectUnspecifiedTypeCreationTool.INITIAL_MOUSE_LOCATION_FOR_CREATION);
+		if (realLocation != null) {
 			realWantedLocation = realLocation.getCopy();
 		} else {
-			//we use this location to be able to create Port in the corners of the figure
+			// we use this location to be able to create Port in the corners of the figure
 			realWantedLocation = request.getLocation().getCopy();
 		}
 
@@ -141,18 +141,19 @@ public class StructuredClassifierCreationEditPolicy extends CreationEditPolicy {
 		PortPositionLocator locator = new PortPositionLocator(getHostFigure(), PositionConstants.NONE);
 		final Rectangle preferredBounds = locator.getPreferredLocation(new Rectangle(requestedLocation, new Dimension(20, 20)));
 		Rectangle retainedBounds = preferredBounds.getCopy();
-		
-		//find the current side of the wanted position
+
+		// find the current side of the wanted position
 		final Rectangle parentBounds = getHostFigure().getBounds().getCopy();
-		//break all!!! getHostFigure().translateToAbsolute(parentBounds);
+		// break all!!! getHostFigure().translateToAbsolute(parentBounds);
 		locator.setConstraint(preferredBounds.getCopy().translate(parentBounds.getLocation().getNegated()));
 		int currentSide = locator.getCurrentSideOfParent();
-		if(request.isSnapToEnabled() && currentSide != PositionConstants.NORTH_EAST && currentSide != PositionConstants.NORTH_WEST && currentSide != PositionConstants.SOUTH_EAST && currentSide != PositionConstants.SOUTH_WEST) { //request for snap port at the creation
-			//we find the best location with snap
+		if (request.isSnapToEnabled() && currentSide != PositionConstants.NORTH_EAST && currentSide != PositionConstants.NORTH_WEST && currentSide != PositionConstants.SOUTH_EAST && currentSide != PositionConstants.SOUTH_WEST) { // request for snap port at the
+																																																										// creation
+			// we find the best location with snap
 			Point wantedPoint = preferredBounds.getLocation();
 			getHostFigure().translateToAbsolute(wantedPoint);
 			Rectangle portBounds = new Rectangle(wantedPoint, new Dimension(20, 20));
-			NodeSnapHelper helper = new NodeSnapHelper((SnapToHelper)getHost().getAdapter(SnapToHelper.class), portBounds, false, false, true);
+			NodeSnapHelper helper = new NodeSnapHelper((SnapToHelper) getHost().getAdapter(SnapToHelper.class), portBounds, false, false, true);
 			final ChangeBoundsRequest tmpRequest = new ChangeBoundsRequest("move"); //$NON-NLS-1$
 			tmpRequest.setEditParts(Collections.emptyList());
 			tmpRequest.setSnapToEnabled(true);
@@ -160,7 +161,7 @@ public class StructuredClassifierCreationEditPolicy extends CreationEditPolicy {
 			helper.snapPoint(tmpRequest);
 			preferredBounds.translate(tmpRequest.getMoveDelta());
 
-			switch(currentSide) {
+			switch (currentSide) {
 			case PositionConstants.NORTH:
 			case PositionConstants.SOUTH:
 				preferredBounds.y = retainedBounds.y;
@@ -181,10 +182,10 @@ public class StructuredClassifierCreationEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Convenience method to return the host's Figure.
-	 * 
+	 *
 	 * @return The host GraphicalEditPart's Figure
 	 */
 	private IFigure getHostFigure() {
-		return ((GraphicalEditPart)getHost()).getFigure();
+		return ((GraphicalEditPart) getHost()).getFigure();
 	}
 }

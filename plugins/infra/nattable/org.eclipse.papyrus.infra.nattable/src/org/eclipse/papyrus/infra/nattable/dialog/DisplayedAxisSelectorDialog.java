@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * This dialog adds a specific action on the okPressed() (opening a dialog)
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWithCheckBox {
 
@@ -39,7 +39,7 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param unique
@@ -50,7 +50,7 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param title
@@ -64,7 +64,7 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param title
@@ -77,7 +77,7 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 * @param title
@@ -88,7 +88,7 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parentShell
 	 * @param selector
 	 */
@@ -97,11 +97,11 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 	}
 
 	/**
-	 * 
+	 *
 	 * @param title
-	 *        the title for the information dialog
+	 *            the title for the information dialog
 	 * @param message
-	 *        the message for the information dialog
+	 *            the message for the information dialog
 	 */
 	public void setInformationDialogValues(final String title, final String message) {
 		this.informationDialogTitle = title;
@@ -109,17 +109,18 @@ public class DisplayedAxisSelectorDialog extends MultipleValueSelectorDialogWith
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.editors.MultipleValueSelectorDialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
-		boolean mustContinue = true;;
-		if(displayCheckBox && !isChecked) {
+		boolean mustContinue = true;
+		;
+		if (displayCheckBox && !isChecked) {
 			mustContinue = MessageDialog.openQuestion(Display.getDefault().getActiveShell(), informationDialogTitle, informationDialogMessage);
 		}
-		if(mustContinue) {
+		if (mustContinue) {
 			super.okPressed();
 		}
 	}

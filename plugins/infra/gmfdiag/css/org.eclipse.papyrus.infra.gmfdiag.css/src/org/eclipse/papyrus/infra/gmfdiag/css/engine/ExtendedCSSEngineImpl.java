@@ -56,7 +56,7 @@ import org.w3c.dom.stylesheets.StyleSheetList;
  *
  * @author Camille Letavernier
  */
-//TODO : Listen on stylesheet modifications
+// TODO : Listen on stylesheet modifications
 @SuppressWarnings("restriction")
 public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements ExtendedCSSEngine, StyleSheetChangeListener {
 
@@ -99,7 +99,7 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	}
 
 	private void init(ExtendedCSSEngine parent) {
-		if(parent != null) {
+		if (parent != null) {
 			parent.addStyleSheetChangeListener(this);
 		}
 		viewCSS = new ExtendedViewCSSImpl(this);
@@ -119,13 +119,13 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	@Override
 	public String retrieveCSSProperty(Object widget, String property, String pseudo) {
 		Element element;
-		if(widget instanceof Element) {
-			element = (Element)widget;
+		if (widget instanceof Element) {
+			element = (Element) widget;
 		} else {
 			element = getElement(widget);
 		}
 		CSSValue value = retrievePropertyValue(element, property);
-		if(value == null) {
+		if (value == null) {
 			return null;
 		}
 		return value.getCssText();
@@ -136,7 +136,7 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	 */
 	@Override
 	public CSSValue retrievePropertyValue(Object node, String property) {
-		if(node == null || property == null) {
+		if (node == null || property == null) {
 			return null;
 		}
 
@@ -151,10 +151,10 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 
 	private CSSStyleDeclaration getStyleDeclaration(Object node, String pseudo) {
 		Element element = getElement(node);
-		if(element == null) {
+		if (element == null) {
 			return new CSSStyleDeclarationImpl(null);
 		}
-		if(!declarationsCache.containsKey(element)) {
+		if (!declarationsCache.containsKey(element)) {
 			declarationsCache.put(element, getViewCSS().getComputedStyle(element, pseudo));
 		}
 		return declarationsCache.get(element);
@@ -177,11 +177,11 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	 * not added dynamically.
 	 */
 	protected void reloadStyleSheets() {
-		//Do nothing
+		// Do nothing
 	}
 
-	//FIXME : Determine precisely the lifecycle of the cache
-	//When is it built ; when is it cleaned
+	// FIXME : Determine precisely the lifecycle of the cache
+	// When is it built ; when is it cleaned
 	/**
 	 * {@inheritDoc}
 	 */
@@ -196,19 +196,19 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	 */
 	protected void parseStyleSheets() {
 		reloadStyleSheets();
-		for(URL styleSheet : styleSheetURLs) {
+		for (URL styleSheet : styleSheetURLs) {
 			try {
 				parseStyleSheet(styleSheet.openStream());
 			} catch (IOException ex) {
 				handleExceptions(ex);
 			}
 		}
-		for(StyleSheet styleSheet : styleSheets) {
+		for (StyleSheet styleSheet : styleSheets) {
 			try {
-				if(styleSheet instanceof EmbeddedStyleSheet) {
-					parseStyleSheet((EmbeddedStyleSheet)styleSheet);
-				} else if(styleSheet instanceof StyleSheetReference) {
-					parseStyleSheet((StyleSheetReference)styleSheet);
+				if (styleSheet instanceof EmbeddedStyleSheet) {
+					parseStyleSheet((EmbeddedStyleSheet) styleSheet);
+				} else if (styleSheet instanceof StyleSheetReference) {
+					parseStyleSheet((StyleSheetReference) styleSheet);
 				}
 			} catch (IOException ex) {
 				handleExceptions(ex);
@@ -225,7 +225,7 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 
 	protected void parseStyleSheet(StyleSheetReference styleSheet) throws IOException {
 		String path = styleSheet.getPath();
-		if(path.startsWith("/")) {
+		if (path.startsWith("/")) {
 			path = "platform:/resource" + path;
 		}
 
@@ -235,10 +235,10 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 
 	@Override
 	public CSSParser makeCSSParser() {
-		//TODO : Extended parser (CSSX)
-		//if(isExtended) {
-		//		return makeExtendedCSSParser();
-		//}
+		// TODO : Extended parser (CSSX)
+		// if(isExtended) {
+		// return makeExtendedCSSParser();
+		// }
 
 		// Create CSS Parser
 		ICSSParserFactory factory = CSSParserFactory.newInstance();
@@ -272,7 +272,7 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	 * {@inheritDoc}
 	 */
 	private void fireStyleSheetChanged() {
-		for(StyleSheetChangeListener listener : styleSheetListeners) {
+		for (StyleSheetChangeListener listener : styleSheetListeners) {
 			listener.styleSheetChanged(this);
 		}
 	}
@@ -298,11 +298,11 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	 */
 	@Override
 	public ExtendedStyleSheetList getAllStylesheets() {
-		if(styleSheetsList == null) {
+		if (styleSheetsList == null) {
 			parseStyleSheets();
 			styleSheetsList = new ExtendedStyleSheetList();
-			if(parent != null) {
-				styleSheetsList.addAll((StyleSheetList)parent.getAllStylesheets());
+			if (parent != null) {
+				styleSheetsList.addAll((StyleSheetList) parent.getAllStylesheets());
 			}
 			styleSheetsList.addAll(getDocumentCSS().getStyleSheets());
 		}
@@ -318,16 +318,16 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 		try {
 			return super.convert(value, toType, context);
 		} catch (Exception ex) {
-			//Activator.log.warn("Unsupported CSS value: " + value.getCssText() + ". Trying to convert it...");
-			return convert(value, toType); //FIXME: Sometimes, the conversion is not supported by the AbstractCSSEngine
+			// Activator.log.warn("Unsupported CSS value: " + value.getCssText() + ". Trying to convert it...");
+			return convert(value, toType); // FIXME: Sometimes, the conversion is not supported by the AbstractCSSEngine
 		}
 	}
 
-	//Smaller implementation of convert(). Doesn't rely on cache nor any kind of registry
-	//Call this method when the super implementation fails (UnsupportedOperationException...)
+	// Smaller implementation of convert(). Doesn't rely on cache nor any kind of registry
+	// Call this method when the super implementation fails (UnsupportedOperationException...)
 	protected Object convert(CSSValue value, Object toType) {
 		ICSSValueConverter converter = getCSSValueConverter(toType);
-		if(converter != null) {
+		if (converter != null) {
 			try {
 				return converter.convert(value, this, null);
 			} catch (Exception ex) {
@@ -343,11 +343,11 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	@Override
 	public void dispose() {
 		styleSheetListeners.clear();
-		if(parent != null) {
+		if (parent != null) {
 			parent.removeStyleSheetChangedListener(this);
 		}
 
-		getElementsContext(); //FIXME: Avoid a NullPointerException in super.dispose()...
+		getElementsContext(); // FIXME: Avoid a NullPointerException in super.dispose()...
 		super.dispose();
 	}
 
@@ -360,16 +360,16 @@ public abstract class ExtendedCSSEngineImpl extends AbstractCSSEngine implements
 	 */
 	@Override
 	public void notifyChange(Element elementAdapter) {
-		resetCache(); //TODO: We should only refresh a subset of the cache
+		resetCache(); // TODO: We should only refresh a subset of the cache
 
-		//FIXME: It seems the refresh can create a deadlock in some cases
+		// FIXME: It seems the refresh can create a deadlock in some cases
 
 		DiagramHelper.setNeedsRefresh();
 		Display.getDefault().asyncExec(new Runnable() {
 
 			@Override
 			public void run() {
-				DiagramHelper.refreshDiagrams(); //TODO: Contextual refresh
+				DiagramHelper.refreshDiagrams(); // TODO: Contextual refresh
 			}
 		});
 

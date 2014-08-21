@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,22 +21,22 @@ import org.eclipse.search.ui.ISearchPageScoreComputer;
 
 /**
  * Computes the search page score for the Papyrus Search Page
- * 
+ *
  * @author Camille Letavernier
  */
 public class PapyrusSearchPageScoreComputer implements ISearchPageScoreComputer {
 
 	public int computeScore(String pageId, Object input) {
-		if("org.eclipse.papyrus.search.ui.pages.PapyrusSearchPage".equals(pageId)) { //$NON-NLS-1$
+		if ("org.eclipse.papyrus.search.ui.pages.PapyrusSearchPage".equals(pageId)) { //$NON-NLS-1$
 			EObject currentEObject = EMFHelper.getEObject(input);
-			if(currentEObject != null) {
+			if (currentEObject != null) {
 				try {
 					ServicesRegistry registry = ServiceUtilsForEObject.getInstance().getServiceRegistry(currentEObject);
-					if(registry != null) {
+					if (registry != null) {
 						return 99;
 					}
 				} catch (Exception ex) {
-					//Nothing
+					// Nothing
 				}
 			}
 		}

@@ -28,13 +28,13 @@ public class ParametricDiagramNodePreferencePage extends AbstractPapyrusNodePref
 
 	/** The list owning the names of compartments */
 	protected List<String> compartmentNamesList;
-	
+
 	/** The list owning the names of compartment that have a title */
 	protected List<String> compartmentTitlesList;
 
 	/** The list of label names for this node */
 	protected List<String> labelsList;
-	
+
 	/** Constructor */
 	public ParametricDiagramNodePreferencePage() {
 		this.labelsList = new ArrayList<String>();
@@ -49,27 +49,27 @@ public class ParametricDiagramNodePreferencePage extends AbstractPapyrusNodePref
 		Collections.unmodifiableList(compartmentNamesList);
 		Collections.unmodifiableList(compartmentTitlesList);
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected void createPageContents(Composite parent) {
 		super.createPageContents(parent);
-		
+
 		// Add compartments visibility group
-		if(!compartmentNamesList.isEmpty()) {
+		if (!compartmentNamesList.isEmpty()) {
 			OrderedCompartmentGroup compartmentGroup = new OrderedCompartmentGroup(parent, getPreferenceKey(), this, compartmentNamesList, compartmentTitlesList, getPreferenceStore());
 			addAbstractGroup(compartmentGroup);
 		}
 
 		// Add label visibility group
-		if(!labelsList.isEmpty()) {
+		if (!labelsList.isEmpty()) {
 			OrderedLabelGroup compartmentGroup = new OrderedLabelGroup(parent, getPreferenceKey(), this, labelsList);
 			addAbstractGroup(compartmentGroup);
 		}
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -80,17 +80,17 @@ public class ParametricDiagramNodePreferencePage extends AbstractPapyrusNodePref
 
 	/** Initialize the list containing names of labels. */
 	protected void initializeLabelsList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
 
 	/** Initialize the list containing the names of compartments. */
 	protected void initializeCompartmentNamesList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
-	
+
 	/** Initialize the list containing the names of compartment that have titles. */
 	protected void initializeCompartmentTitlesList() {
-		//  Implemented by subclasses.
+		// Implemented by subclasses.
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class ParametricDiagramNodePreferencePage extends AbstractPapyrusNodePref
 	protected final TreeMap<String, Boolean> getCompartmentTitleVisibilityPreferences() {
 		return new TreeMap<String, Boolean>();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */

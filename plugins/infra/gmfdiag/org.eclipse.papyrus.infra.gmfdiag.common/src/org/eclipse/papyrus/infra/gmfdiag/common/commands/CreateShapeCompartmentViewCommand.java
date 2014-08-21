@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -36,13 +36,13 @@ public class CreateShapeCompartmentViewCommand extends RecordingCommand {
 
 	/**
 	 * Creates a new CreateShapeCompartmentViewCommand.
-	 * 
+	 *
 	 * @param domain
-	 *        editing domain used to manipulate model
+	 *            editing domain used to manipulate model
 	 * @param label
-	 *        the label of the command
+	 *            the label of the command
 	 * @param description
-	 *        description of the command
+	 *            description of the command
 	 */
 	public CreateShapeCompartmentViewCommand(TransactionalEditingDomain domain, String label, String description, View owner, boolean isVisible) {
 		super(domain, label, description);
@@ -64,9 +64,9 @@ public class CreateShapeCompartmentViewCommand extends RecordingCommand {
 		compartment.setType(IShapeCompartmentEditPart.VIEW_TYPE);
 		ViewUtil.insertChildView(owner, compartment, ViewUtil.APPEND, false);
 
-		//Bug 417178: The CSS Engine shall support compartments
-		//Avoid preference-based or hard-coded initialization (CSS Compatibility)
-		if(ThemeInitializerManager.instance.usePreferenceInitializer(compartment)) {
+		// Bug 417178: The CSS Engine shall support compartments
+		// Avoid preference-based or hard-coded initialization (CSS Compatibility)
+		if (ThemeInitializerManager.instance.usePreferenceInitializer(compartment)) {
 			ts.setShowTitle(false);
 			compartment.setVisible(isVisible());
 			compartment.setMutable(false);
@@ -75,7 +75,7 @@ public class CreateShapeCompartmentViewCommand extends RecordingCommand {
 
 	/**
 	 * Returns <code>true</code> if the created compartment should be visible
-	 * 
+	 *
 	 * @return <code>true</code> if the created compartment should be visible
 	 */
 	public boolean isVisible() {
@@ -84,9 +84,9 @@ public class CreateShapeCompartmentViewCommand extends RecordingCommand {
 
 	/**
 	 * Sets the visiblity of the created compartment
-	 * 
+	 *
 	 * @param isVisible
-	 *        <code>true</code> if the compartment should be visible
+	 *            <code>true</code> if the compartment should be visible
 	 */
 	public void setVisible(boolean isVisible) {
 		this.isVisible = isVisible;

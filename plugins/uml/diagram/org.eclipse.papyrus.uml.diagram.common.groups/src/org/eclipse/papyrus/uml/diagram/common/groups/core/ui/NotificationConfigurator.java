@@ -60,7 +60,7 @@ public abstract class NotificationConfigurator implements ICompositeCreator, Not
 		this.mainEditPart = _mainEdipart;
 		this.manager = _manager;
 		this.label = _label;
-		switch(mode) {
+		switch (mode) {
 		case WARNING_MODE:
 			notificationBuilder = GroupNotificationBuilderFactory.getWarningBuilder(_label);
 			break;
@@ -73,9 +73,9 @@ public abstract class NotificationConfigurator implements ICompositeCreator, Not
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.ui.toolbox.notification.NotificationRunnable#getLabel()
-	 * 
+	 *
 	 * @return
 	 */
 	public String getLabel() {
@@ -90,19 +90,19 @@ public abstract class NotificationConfigurator implements ICompositeCreator, Not
 
 	/**
 	 * Run the notification
-	 * 
+	 *
 	 * @return
 	 */
 	public INotification runConfigurator() {
 		notification = notificationBuilder.setComposite(this).addAction(this).run();
-		if(notification != null) {
-			if(manager != null) {
+		if (notification != null) {
+			if (manager != null) {
 				manager.storeNotification(this);
 			}
 			try {
 				IViewPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().showView(PapyrusNotificationView.ID);
-				if(part instanceof PapyrusNotificationView) {
-					PapyrusNotificationView view = (PapyrusNotificationView)part;
+				if (part instanceof PapyrusNotificationView) {
+					PapyrusNotificationView view = (PapyrusNotificationView) part;
 					Collection<NotificationRunnable> singleton = new ArrayList<NotificationRunnable>(1);
 					singleton.add(this);
 					AbstractInsideComposite viewCompo = view.setComposite(this, getLabel(), singleton);
@@ -120,7 +120,7 @@ public abstract class NotificationConfigurator implements ICompositeCreator, Not
 
 	/**
 	 * Get the current notification
-	 * 
+	 *
 	 * @return the notification
 	 */
 	public INotification getNotification() {
@@ -131,9 +131,9 @@ public abstract class NotificationConfigurator implements ICompositeCreator, Not
 
 	/**
 	 * Close the notification
-	 * 
+	 *
 	 * @param context
-	 * 
+	 *
 	 */
 	protected abstract void closeNotitfication(IContext context);
 
@@ -147,7 +147,7 @@ public abstract class NotificationConfigurator implements ICompositeCreator, Not
 
 	/**
 	 * Get the {@link IGraphicalEditPart} of the Notification
-	 * 
+	 *
 	 * @return
 	 */
 	public IGraphicalEditPart getMainEditPart() {

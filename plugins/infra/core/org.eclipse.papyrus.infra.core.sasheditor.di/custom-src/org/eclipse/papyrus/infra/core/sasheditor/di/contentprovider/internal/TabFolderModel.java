@@ -1,7 +1,7 @@
 /*****************************************************************************
- * Copyright (c) 2009 CEA LIST & LIFL 
+ * Copyright (c) 2009 CEA LIST & LIFL
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class TabFolderModel implements ITabFolderModel {
 	private IPageModelFactory pageModelFactory;
 
 	/**
-	 * 
+	 *
 	 * @param root
 	 */
 	public TabFolderModel(TabFolder tabFolder, IPageModelFactory pageModelFactory) {
@@ -46,30 +46,32 @@ public class TabFolderModel implements ITabFolderModel {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel#getChildren()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public List<?> getChildren() {
 		return tabFolder.getChildren();
 	}
 
 	/**
 	 * @see org.eclipse.papyrus.infra.core.sasheditor.contentprovider.ITabFolderModel#createChildSashModel(java.lang.Object)
-	 * 
+	 *
 	 * @param child
-	 *        The child object returned by {@link TabFolderModel#getChildren}
+	 *            The child object returned by {@link TabFolderModel#getChildren}
 	 * @return
 	 */
+	@Override
 	public IPageModel createChildSashModel(Object child) {
 
-		PageRef pageRef = (PageRef)child;
+		PageRef pageRef = (PageRef) child;
 
 		Object pageIdentifier = pageRef.getPageIdentifier();
-		if(pageIdentifier != null) {
+		if (pageIdentifier != null) {
 			return pageModelFactory.createIPageModel(pageIdentifier);
 		} else {
 			return null;
-	}
+		}
 	}
 
 	/**

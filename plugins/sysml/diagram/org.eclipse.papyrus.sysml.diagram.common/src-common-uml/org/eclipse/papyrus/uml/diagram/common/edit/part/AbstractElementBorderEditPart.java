@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -59,6 +59,7 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 		super(view);
 	}
 
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new DefaultSemanticEditPolicy());
@@ -72,8 +73,9 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 		return primaryShape = new AffixedNamedElementFigure();
 	}
 
+	@Override
 	public AffixedNamedElementFigure getPrimaryShape() {
-		return (AffixedNamedElementFigure)primaryShape;
+		return (AffixedNamedElementFigure) primaryShape;
 	}
 
 	/**
@@ -82,9 +84,9 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 	@Override
 	public IBorderItemLocator getBorderItemLocator() {
 		IFigure parentFigure = getFigure().getParent();
-		if(parentFigure != null && parentFigure.getLayoutManager() != null) {
+		if (parentFigure != null && parentFigure.getLayoutManager() != null) {
 			Object constraint = parentFigure.getLayoutManager().getConstraint(getFigure());
-			return (IBorderItemLocator)constraint;
+			return (IBorderItemLocator) constraint;
 		}
 		return null;
 	}
@@ -98,17 +100,17 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 		// edit part from the registry. Once removed from the registry the visibility cannot be set back to visible.
 
 		// Copied from generated code for Affixed nodes to fix:
-		//		366504: [SysML Block Definition Diagram] Cannot make masked labels of border items (Port) visible
-		//		https://bugs.eclipse.org/bugs/show_bug.cgi?id=366504
-		//		366503: [SysML Internal Block Diagram] Cannot make masked labels of border items (Port) visible
-		//		https://bugs.eclipse.org/bugs/show_bug.cgi?id=366503
+		// 366504: [SysML Block Definition Diagram] Cannot make masked labels of border items (Port) visible
+		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=366504
+		// 366503: [SysML Internal Block Diagram] Cannot make masked labels of border items (Port) visible
+		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=366503
 
 		// (this sounds strange as the "Show all labels" manages to get labels back without trouble...).
-		if(NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
+		if (NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
 			Object notifier = event.getNotifier();
-			List<?> modelChildren = ((View)getModel()).getChildren();
-			if(!(notifier instanceof Edge)) {
-				if(modelChildren.contains(event.getNotifier())) {
+			List<?> modelChildren = ((View) getModel()).getChildren();
+			if (!(notifier instanceof Edge)) {
+				if (modelChildren.contains(event.getNotifier())) {
 					return;
 				}
 			}
@@ -121,13 +123,13 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 	 */
 	@Override
 	protected void refreshBounds() {
-		if(getBorderItemLocator() != null) {
-			int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-			int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		if (getBorderItemLocator() != null) {
+			int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+			int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 			Point loc = new Point(x, y);
 
-			int width = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
-			int height = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
+			int width = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Width())).intValue();
+			int height = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getSize_Height())).intValue();
 			Dimension size = new Dimension(width, height);
 
 			// Update locator constraint
@@ -149,11 +151,12 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 		String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
 
-		//FIXME: workaround for #154536
+		// FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
 		return result;
 	}
 
+	@Override
 	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -170,57 +173,60 @@ public abstract class AbstractElementBorderEditPart extends AbstractBorderEditPa
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
 	}
 
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
 
+	@Override
 	public abstract EditPart getPrimaryChildEditPart();
 
 	@Override
 	public Object getPreferredValue(EStructuralFeature feature) {
 		String prefKey = getNotationView().getType();
 
-		IPreferenceStore store = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore store = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
 
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_LINE);
 
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_FONT);
 
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_FILL);
 
 			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)store, prefColor));
+			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(store, prefColor));
 
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 
 			String prefGradient = PreferencesConstantsHelper.getElementConstant(prefKey, PreferencesConstantsHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(store.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
 
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 
 			}
 		}
 
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;

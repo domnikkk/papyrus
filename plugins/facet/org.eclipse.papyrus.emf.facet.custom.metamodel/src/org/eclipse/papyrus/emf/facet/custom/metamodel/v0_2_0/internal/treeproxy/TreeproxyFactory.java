@@ -13,7 +13,7 @@ package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.internal.treeproxy
 
 
 /**
- * 
+ *
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  *
@@ -55,4 +55,4 @@ public interface TreeproxyFactory {
 	 */
 	EStructuralFeatureTreeElement createEStructuralFeatureTreeElement();
 
-} //TreeproxyFactory
+} // TreeproxyFactory

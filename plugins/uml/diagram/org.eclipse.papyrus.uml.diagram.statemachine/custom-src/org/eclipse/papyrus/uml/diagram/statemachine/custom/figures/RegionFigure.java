@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -53,9 +53,9 @@ public class RegionFigure extends CompartmentFigure {
 
 	/**
 	 * Create a new Region figure with the given tag
-	 * 
+	 *
 	 * @param tagLabel
-	 *        a String that will be displayed at the top of the figure
+	 *            a String that will be displayed at the top of the figure
 	 */
 	public RegionFigure(String tagLabel) {
 		super(COMPARTMENT, tagLabel);
@@ -66,7 +66,7 @@ public class RegionFigure extends CompartmentFigure {
 
 	/**
 	 * Get the region compartment figure
-	 * 
+	 *
 	 * @return
 	 */
 	public RectangleFigure getRegionCompartmentFigure() {
@@ -84,13 +84,13 @@ public class RegionFigure extends CompartmentFigure {
 		graphics.setForegroundColor(getForegroundColor());
 		Rectangle rect = getBounds();
 		// the specific drawing of borders
-		if(displayRightBorder) {
+		if (displayRightBorder) {
 			graphics.setLineStyle(SWT.BORDER_DASH);
 			graphics.setLineWidth(SWT.BOLD);
 
 			graphics.drawLine(rect.x + rect.width - 1, rect.y - 2, rect.x + rect.width - 1, rect.y - 2 + rect.height);
 		}
-		if(displayBottomBorder) {
+		if (displayBottomBorder) {
 			graphics.setLineStyle(SWT.BORDER_DASH);
 			graphics.setLineWidth(SWT.BOLD);
 
@@ -100,7 +100,7 @@ public class RegionFigure extends CompartmentFigure {
 
 	/**
 	 * Specific flags to turn on/off of a dashed border on the BOTTOM side.
-	 * 
+	 *
 	 * @param b
 	 */
 	public void setDisplayBottomBorder(boolean b) {
@@ -109,7 +109,7 @@ public class RegionFigure extends CompartmentFigure {
 
 	/**
 	 * Specific flags to turn on/off of a dashed border on the RIGHT side.
-	 * 
+	 *
 	 * @param b
 	 */
 	public void setDisplayRightBorder(boolean b) {

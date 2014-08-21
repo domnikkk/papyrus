@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -32,8 +32,8 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.Se
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.impl.SetTypeActionConfigurationImpl#getValidTypes <em>Valid Types</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.impl.SetTypeActionConfigurationImpl#getCreationTypes <em>Creation Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.impl.SetTypeActionConfigurationImpl#getValidTypes <em>Valid Types</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.tools.extendedtypes.settypeactionconfiguration.impl.SetTypeActionConfigurationImpl#getCreationTypes <em>Creation Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -44,6 +44,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	 * The cached value of the '{@link #getValidTypes() <em>Valid Types</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValidTypes()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	 * The cached value of the '{@link #getCreationTypes() <em>Creation Types</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCreationTypes()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SetTypeActionConfigurationImpl() {
@@ -72,6 +75,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -82,6 +86,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<String> getValidTypes() {
@@ -94,6 +99,7 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<String> getCreationTypes() {
@@ -106,15 +112,16 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
-				return getValidTypes();
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
-				return getCreationTypes();
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
+			return getValidTypes();
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
+			return getCreationTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,20 +129,21 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
-				getValidTypes().clear();
-				getValidTypes().addAll((Collection<? extends String>)newValue);
-				return;
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
-				getCreationTypes().clear();
-				getCreationTypes().addAll((Collection<? extends String>)newValue);
-				return;
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
+			getValidTypes().clear();
+			getValidTypes().addAll((Collection<? extends String>) newValue);
+			return;
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
+			getCreationTypes().clear();
+			getCreationTypes().addAll((Collection<? extends String>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -143,17 +151,18 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
-				getValidTypes().clear();
-				return;
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
-				getCreationTypes().clear();
-				return;
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
+			getValidTypes().clear();
+			return;
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
+			getCreationTypes().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -161,15 +170,16 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
-				return validTypes != null && !validTypes.isEmpty();
-			case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
-				return creationTypes != null && !creationTypes.isEmpty();
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__VALID_TYPES:
+			return validTypes != null && !validTypes.isEmpty();
+		case SetTypeActionConfigurationPackage.SET_TYPE_ACTION_CONFIGURATION__CREATION_TYPES:
+			return creationTypes != null && !creationTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -177,11 +187,14 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (validTypes: ");
@@ -192,4 +205,4 @@ public class SetTypeActionConfigurationImpl extends SemanticActionConfigurationI
 		return result.toString();
 	}
 
-} //SetTypeActionConfigurationImpl
+} // SetTypeActionConfigurationImpl

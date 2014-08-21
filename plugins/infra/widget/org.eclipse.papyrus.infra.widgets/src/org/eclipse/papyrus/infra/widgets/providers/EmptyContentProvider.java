@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -14,9 +14,9 @@ package org.eclipse.papyrus.infra.widgets.providers;
 
 /**
  * A ContentProvider returning empty collections
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class EmptyContentProvider extends AbstractStaticContentProvider {
 
@@ -33,10 +33,11 @@ public class EmptyContentProvider extends AbstractStaticContentProvider {
 
 	/**
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
-	 * 
+	 *
 	 * @return
 	 *         an empty array
 	 */
+	@Override
 	public Object[] getElements() {
 		return value;
 	}

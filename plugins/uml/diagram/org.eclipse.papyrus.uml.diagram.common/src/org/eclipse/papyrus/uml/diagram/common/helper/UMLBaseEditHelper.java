@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,9 +46,10 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IEditHelperAdvice[] getEditHelperAdvice(IEditCommandRequest req) {
-		if(req.getParameter(CONTEXT_ELEMENT_TYPE) instanceof IElementType) {
-			return ElementTypeRegistry.getInstance().getEditHelperAdvice((IElementType)req.getParameter(CONTEXT_ELEMENT_TYPE));
+		if (req.getParameter(CONTEXT_ELEMENT_TYPE) instanceof IElementType) {
+			return ElementTypeRegistry.getInstance().getEditHelperAdvice((IElementType) req.getParameter(CONTEXT_ELEMENT_TYPE));
 		}
 		return super.getEditHelperAdvice(req);
 	}
@@ -56,14 +57,15 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected ICommand getInsteadCommand(IEditCommandRequest req) {
-		ICommand epCommand = (ICommand)req.getParameter(EDIT_POLICY_COMMAND);
+		ICommand epCommand = (ICommand) req.getParameter(EDIT_POLICY_COMMAND);
 		req.setParameter(EDIT_POLICY_COMMAND, null);
 		ICommand ehCommand = super.getInsteadCommand(req);
-		if(epCommand == null) {
+		if (epCommand == null) {
 			return ehCommand;
 		}
-		if(ehCommand == null) {
+		if (ehCommand == null) {
 			return epCommand;
 		}
 		CompositeCommand command = new CompositeCommand(null);
@@ -75,6 +77,7 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected ICommand getCreateCommand(CreateElementRequest req) {
 		return null;
 	}
@@ -82,6 +85,7 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected ICommand getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		return null;
 	}
@@ -89,11 +93,12 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	/**
 	 * @generated NOT handle unapply stereotypes before delete
 	 */
+	@Override
 	protected ICommand getDestroyElementCommand(DestroyElementRequest req) {
 		EObject elementToDestroy = req.getElementToDestroy();
-		if(elementToDestroy instanceof Element) {
-			UnapplyAllStereotypesCommand command = new UnapplyAllStereotypesCommand(req.getEditingDomain(), req.getLabel(), (Element)elementToDestroy);
-			if(!command.isEmpty()) {
+		if (elementToDestroy instanceof Element) {
+			UnapplyAllStereotypesCommand command = new UnapplyAllStereotypesCommand(req.getEditingDomain(), req.getLabel(), (Element) elementToDestroy);
+			if (!command.isEmpty()) {
 				return command;
 			}
 		}
@@ -103,6 +108,7 @@ public class UMLBaseEditHelper extends AbstractEditHelper {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected ICommand getDestroyReferenceCommand(DestroyReferenceRequest req) {
 		return null;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,21 +34,21 @@ public class LifelineEditPartUtil {
 	/**
 	 * This operation returns the ExecutionSpecification EditParts contained in the Lifeline
 	 * EditPart
-	 * 
+	 *
 	 * @return the list of ExecutionSpecification EditParts
 	 */
 	public static List<ShapeNodeEditPart> getChildShapeNodeEditPart(LifelineEditPart lifeline) {
-		if(lifeline == null) {
+		if (lifeline == null) {
 			return Collections.emptyList();
 		}
 		List<ShapeNodeEditPart> executionSpecificationList = new ArrayList<ShapeNodeEditPart>();
-		for(Object obj : lifeline.getChildren()) {
-			if(obj instanceof BehaviorExecutionSpecificationEditPart) {
-				executionSpecificationList.add((ShapeNodeEditPart)obj);
-			} else if(obj instanceof ActionExecutionSpecificationEditPart) {
-				executionSpecificationList.add((ShapeNodeEditPart)obj);
-			} else if(obj instanceof CombinedFragment2EditPart) {
-				executionSpecificationList.add((ShapeNodeEditPart)obj);
+		for (Object obj : lifeline.getChildren()) {
+			if (obj instanceof BehaviorExecutionSpecificationEditPart) {
+				executionSpecificationList.add((ShapeNodeEditPart) obj);
+			} else if (obj instanceof ActionExecutionSpecificationEditPart) {
+				executionSpecificationList.add((ShapeNodeEditPart) obj);
+			} else if (obj instanceof CombinedFragment2EditPart) {
+				executionSpecificationList.add((ShapeNodeEditPart) obj);
 			}
 		}
 		return executionSpecificationList;
@@ -57,37 +57,37 @@ public class LifelineEditPartUtil {
 	/**
 	 * This operation returns the InnerConnectableElement EditParts contained in the Lifeline
 	 * EditPart
-	 * 
+	 *
 	 * @return the list of InnerConnectableElement EditParts
 	 */
 	public static List<LifelineEditPart> getInnerConnectableElementList(LifelineEditPart lifeline) {
-		if(lifeline == null) {
+		if (lifeline == null) {
 			return Collections.emptyList();
 		}
 		List<LifelineEditPart> propertyList = new ArrayList<LifelineEditPart>();
-		for(Object obj : lifeline.getChildren()) {
-			if(obj instanceof LifelineEditPart) {
-				propertyList.add((LifelineEditPart)obj);
+		for (Object obj : lifeline.getChildren()) {
+			if (obj instanceof LifelineEditPart) {
+				propertyList.add((LifelineEditPart) obj);
 			}
 		}
 		return propertyList;
 	}
 
 	public static NodeFigure getNodeFigure(LifelineEditPart lifelineEditPart) {
-		if(lifelineEditPart == null) {
+		if (lifelineEditPart == null) {
 			return null;
 		}
 		IFigure contentPane = lifelineEditPart.getContentPane();
 		NodeFigure centerFigure = null;
-		if(contentPane instanceof LifelineDotLineCustomFigure) {
-			return ((LifelineDotLineCustomFigure)contentPane).getDashLineRectangle();
+		if (contentPane instanceof LifelineDotLineCustomFigure) {
+			return ((LifelineDotLineCustomFigure) contentPane).getDashLineRectangle();
 		}
 		return null;
 	}
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	private LifelineEditPartUtil() {
 	}

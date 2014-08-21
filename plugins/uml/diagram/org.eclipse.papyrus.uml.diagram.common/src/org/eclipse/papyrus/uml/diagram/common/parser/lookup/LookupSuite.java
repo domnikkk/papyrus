@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2006 Borland Software Corporation
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,10 +24,12 @@ public interface LookupSuite {
 
 	public static final Lookup NULL_LOOKUP = new Lookup() {
 
+		@Override
 		public Object lookup(String name, EObject context) {
 			return null;
 		}
 
+		@Override
 		public List getResolutionElementTypes() {
 			return Collections.emptyList();
 		}
@@ -36,6 +38,7 @@ public interface LookupSuite {
 	// @unused
 	public static final LookupSuite NULL_SUITE = new LookupSuite() {
 
+		@Override
 		public <T> Lookup<T> getLookup(Class<T> clazz) {
 			return NULL_LOOKUP;
 		}

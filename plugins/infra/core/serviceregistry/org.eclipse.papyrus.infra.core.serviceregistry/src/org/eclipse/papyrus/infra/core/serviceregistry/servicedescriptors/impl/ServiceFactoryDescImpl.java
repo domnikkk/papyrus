@@ -20,6 +20,7 @@ public class ServiceFactoryDescImpl extends ServiceDescImpl implements ServiceFa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceFactoryDescImpl() {
@@ -29,6 +30,7 @@ public class ServiceFactoryDescImpl extends ServiceDescImpl implements ServiceFa
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -36,4 +38,4 @@ public class ServiceFactoryDescImpl extends ServiceDescImpl implements ServiceFa
 		return ServicedescriptorsPackage.Literals.SERVICE_FACTORY_DESC;
 	}
 
-} //ServiceFactoryDescImpl
+} // ServiceFactoryDescImpl

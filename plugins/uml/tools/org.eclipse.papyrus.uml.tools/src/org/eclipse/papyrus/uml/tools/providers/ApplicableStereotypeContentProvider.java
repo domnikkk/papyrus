@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * A content provider for stereotypes that can be applied on a UML Element
- * 
+ *
  * @author Camille Letavernier
  */
 public class ApplicableStereotypeContentProvider extends AbstractStaticContentProvider {
@@ -24,12 +24,12 @@ public class ApplicableStereotypeContentProvider extends AbstractStaticContentPr
 	private Element umlElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param umlElement
-	 *        The UML Element for which we want to retrieve the applicable
-	 *        stereotypes
+	 *            The UML Element for which we want to retrieve the applicable
+	 *            stereotypes
 	 */
 	public ApplicableStereotypeContentProvider(Element umlElement) {
 		this.umlElement = umlElement;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,10 +37,10 @@ import org.eclipse.papyrus.infra.viewpoints.configuration.OwningRule;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getElement <em>Element</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getStereotypes <em>Stereotypes</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getMultiplicity <em>Multiplicity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getNewModelPath <em>New Model Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getElement <em>Element</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getStereotypes <em>Stereotypes</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.viewpoints.configuration.impl.OwningRuleImpl#getNewModelPath <em>New Model Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +51,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getElement() <em>Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -61,6 +62,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getStereotypes() <em>Stereotypes</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStereotypes()
 	 * @generated
 	 * @ordered
@@ -71,6 +73,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -81,6 +84,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMultiplicity()
 	 * @generated
 	 * @ordered
@@ -91,6 +95,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	 * The cached value of the '{@link #getNewModelPath() <em>New Model Path</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNewModelPath()
 	 * @generated
 	 * @ordered
@@ -100,6 +105,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OwningRuleImpl() {
@@ -109,6 +115,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -119,15 +126,17 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getElement() {
 		if (element != null && element.eIsProxy()) {
-			InternalEObject oldElement = (InternalEObject)element;
-			element = (EClass)eResolveProxy(oldElement);
+			InternalEObject oldElement = (InternalEObject) element;
+			element = (EClass) eResolveProxy(oldElement);
 			if (element != oldElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConfigurationPackage.OWNING_RULE__ELEMENT, oldElement, element));
+				}
 			}
 		}
 		return element;
@@ -136,6 +145,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass basicGetElement() {
@@ -145,18 +155,21 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setElement(EClass newElement) {
 		EClass oldElement = element;
 		element = newElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.OWNING_RULE__ELEMENT, oldElement, element));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<EClass> getStereotypes() {
@@ -169,6 +182,7 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getMultiplicity() {
@@ -178,18 +192,21 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMultiplicity(int newMultiplicity) {
 		int oldMultiplicity = multiplicity;
 		multiplicity = newMultiplicity;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConfigurationPackage.OWNING_RULE__MULTIPLICITY, oldMultiplicity, multiplicity));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ModelAutoCreate> getNewModelPath() {
@@ -202,13 +219,14 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
-				return ((InternalEList<?>)getNewModelPath()).basicRemove(otherEnd, msgs);
+		case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
+			return ((InternalEList<?>) getNewModelPath()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -216,20 +234,23 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConfigurationPackage.OWNING_RULE__ELEMENT:
-				if (resolve) return getElement();
-				return basicGetElement();
-			case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
-				return getStereotypes();
-			case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
-				return getMultiplicity();
-			case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
-				return getNewModelPath();
+		case ConfigurationPackage.OWNING_RULE__ELEMENT:
+			if (resolve) {
+				return getElement();
+			}
+			return basicGetElement();
+		case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
+			return getStereotypes();
+		case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
+			return getMultiplicity();
+		case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
+			return getNewModelPath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -237,26 +258,27 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConfigurationPackage.OWNING_RULE__ELEMENT:
-				setElement((EClass)newValue);
-				return;
-			case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
-				getStereotypes().clear();
-				getStereotypes().addAll((Collection<? extends EClass>)newValue);
-				return;
-			case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
-				setMultiplicity((Integer)newValue);
-				return;
-			case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
-				getNewModelPath().clear();
-				getNewModelPath().addAll((Collection<? extends ModelAutoCreate>)newValue);
-				return;
+		case ConfigurationPackage.OWNING_RULE__ELEMENT:
+			setElement((EClass) newValue);
+			return;
+		case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
+			getStereotypes().clear();
+			getStereotypes().addAll((Collection<? extends EClass>) newValue);
+			return;
+		case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
+			setMultiplicity((Integer) newValue);
+			return;
+		case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
+			getNewModelPath().clear();
+			getNewModelPath().addAll((Collection<? extends ModelAutoCreate>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -264,23 +286,24 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.OWNING_RULE__ELEMENT:
-				setElement((EClass)null);
-				return;
-			case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
-				getStereotypes().clear();
-				return;
-			case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
-				setMultiplicity(MULTIPLICITY_EDEFAULT);
-				return;
-			case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
-				getNewModelPath().clear();
-				return;
+		case ConfigurationPackage.OWNING_RULE__ELEMENT:
+			setElement((EClass) null);
+			return;
+		case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
+			getStereotypes().clear();
+			return;
+		case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
+			setMultiplicity(MULTIPLICITY_EDEFAULT);
+			return;
+		case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
+			getNewModelPath().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -288,19 +311,20 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConfigurationPackage.OWNING_RULE__ELEMENT:
-				return element != null;
-			case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
-				return stereotypes != null && !stereotypes.isEmpty();
-			case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
-				return multiplicity != MULTIPLICITY_EDEFAULT;
-			case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
-				return newModelPath != null && !newModelPath.isEmpty();
+		case ConfigurationPackage.OWNING_RULE__ELEMENT:
+			return element != null;
+		case ConfigurationPackage.OWNING_RULE__STEREOTYPES:
+			return stereotypes != null && !stereotypes.isEmpty();
+		case ConfigurationPackage.OWNING_RULE__MULTIPLICITY:
+			return multiplicity != MULTIPLICITY_EDEFAULT;
+		case ConfigurationPackage.OWNING_RULE__NEW_MODEL_PATH:
+			return newModelPath != null && !newModelPath.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -308,11 +332,14 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (multiplicity: ");
@@ -321,4 +348,4 @@ public class OwningRuleImpl extends RuleImpl implements OwningRule {
 		return result.toString();
 	}
 
-} //OwningRuleImpl
+} // OwningRuleImpl

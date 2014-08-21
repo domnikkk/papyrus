@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class SetTypeActionEditHelperAdvice extends AbstractEditHelperAdvice impl
 	public void init(SetTypeActionConfiguration configuration) {
 		this.configuration = configuration;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -72,29 +72,29 @@ public class SetTypeActionEditHelperAdvice extends AbstractEditHelperAdvice impl
 	 */
 	@Override
 	protected ICommand getAfterConfigureCommand(ConfigureRequest request) {
-		if(configuration==null) {
+		if (configuration == null) {
 			return null;
 		}
 		ICommand resultCommand = null;
-		// retrieve eobject 
+		// retrieve eobject
 		final EObject elementToConfigure = request.getElementToConfigure();
-		if(!(elementToConfigure instanceof Element)) {
+		if (!(elementToConfigure instanceof Element)) {
 			return null;
 		}
-		
+
 		final TransactionalEditingDomain editingDomain = request.getEditingDomain();
-		if(editingDomain ==null) {
+		if (editingDomain == null) {
 			return null;
 		}
 		// retrieve edit service to get features from configure command
 		IElementEditService service = ElementEditServiceUtils.getCommandProvider(elementToConfigure);
-		if(service == null) {
+		if (service == null) {
 			Activator.log.error("Impossible to get edit service from element: " + elementToConfigure, null);
 			return null;
 		}
-		
-		 resultCommand = new AbstractTransactionalCommand(editingDomain, "Editing type", Arrays.asList((WorkspaceSynchronizer.getFile(elementToConfigure.eResource())))) {
-			
+
+		resultCommand = new AbstractTransactionalCommand(editingDomain, "Editing type", Arrays.asList((WorkspaceSynchronizer.getFile(elementToConfigure.eResource())))) {
+
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 				UMLModelElement umlModelElement = new UMLModelElement(elementToConfigure, editingDomain);
@@ -103,7 +103,7 @@ public class SetTypeActionEditHelperAdvice extends AbstractEditHelperAdvice impl
 				return CommandResult.newOKCommandResult(elemObject);
 			}
 		};
-		
+
 		return resultCommand;
 	}
 
@@ -111,11 +111,11 @@ public class SetTypeActionEditHelperAdvice extends AbstractEditHelperAdvice impl
 	 * @return
 	 */
 	protected EObject getDefaultTypeContainer(ConfigureRequest request) {
-		if(request.getElementToConfigure() instanceof Element) {
-			return ((Element)request.getElementToConfigure()).getNearestPackage();
+		if (request.getElementToConfigure() instanceof Element) {
+			return ((Element) request.getElementToConfigure()).getNearestPackage();
 		}
 		return request.getElementToConfigure().eContainer();
 	}
 
-	
+
 }

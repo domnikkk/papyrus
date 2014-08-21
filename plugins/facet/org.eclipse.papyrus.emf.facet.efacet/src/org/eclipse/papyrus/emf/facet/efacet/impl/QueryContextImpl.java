@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -37,8 +37,8 @@ import org.eclipse.papyrus.emf.facet.efacet.QueryContext;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl#getSelectedModelElements <em>Selected Model Elements</em>}</li>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl#getSelectedModels <em>Selected Models</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl#getSelectedModelElements <em>Selected Model Elements</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.impl.QueryContextImpl#getSelectedModels <em>Selected Models</em>}</li>
  * </ul>
  * </p>
  *
@@ -52,6 +52,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	 * The cached value of the '{@link #getSelectedModelElements() <em>Selected Model Elements</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSelectedModelElements()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -64,6 +65,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	 * The cached value of the '{@link #getSelectedModels() <em>Selected Models</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSelectedModels()
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -75,6 +77,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -86,6 +89,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -98,6 +102,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -112,6 +117,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -126,6 +132,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -144,6 +151,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -154,11 +162,11 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 		switch (featureID) {
 		case EFacetPackage.QUERY_CONTEXT__SELECTED_MODEL_ELEMENTS:
 			getSelectedModelElements().clear();
-			getSelectedModelElements().addAll((Collection<? extends EObject>)newValue);
+			getSelectedModelElements().addAll((Collection<? extends EObject>) newValue);
 			return;
 		case EFacetPackage.QUERY_CONTEXT__SELECTED_MODELS:
 			getSelectedModels().clear();
-			getSelectedModels().addAll((Collection<? extends Resource>)newValue);
+			getSelectedModels().addAll((Collection<? extends Resource>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -167,6 +175,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -187,6 +196,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -205,6 +215,7 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -222,4 +233,4 @@ public class QueryContextImpl extends EObjectImpl implements QueryContext {
 		return result.toString();
 	}
 
-} //QueryContextImpl
+} // QueryContextImpl

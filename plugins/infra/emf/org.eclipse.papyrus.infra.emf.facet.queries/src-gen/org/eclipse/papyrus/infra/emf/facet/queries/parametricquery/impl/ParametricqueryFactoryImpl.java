@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2012 CEA LIST.
- * 
- *  
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *   Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *   Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.infra.emf.facet.queries.parametricquery.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ParametricqueryFactoryImpl extends EFactoryImpl implements ParametricqueryFactory {
@@ -36,13 +36,13 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ParametricqueryFactory init() {
 		try {
-			ParametricqueryFactory theParametricqueryFactory = (ParametricqueryFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/infra/emf/facet/parametric/query/0.9.1"); //$NON-NLS-1$ 
-			if(theParametricqueryFactory != null) {
+			ParametricqueryFactory theParametricqueryFactory = (ParametricqueryFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/infra/emf/facet/parametric/query/0.9.1"); //$NON-NLS-1$
+			if (theParametricqueryFactory != null) {
 				return theParametricqueryFactory;
 			}
 		} catch (Exception exception) {
@@ -55,7 +55,7 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ParametricqueryFactoryImpl() {
@@ -65,12 +65,12 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case ParametricqueryPackage.PARAMETRIC_QUERY:
 			return createParametricQuery();
 		case ParametricqueryPackage.STRING_ARGUMENT:
@@ -85,7 +85,7 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ParametricQuery createParametricQuery() {
@@ -96,7 +96,7 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public StringArgument createStringArgument() {
@@ -107,7 +107,7 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EStructuralFeatureArgument createEStructuralFeatureArgument() {
@@ -118,17 +118,17 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ParametricqueryPackage getParametricqueryPackage() {
-		return (ParametricqueryPackage)getEPackage();
+		return (ParametricqueryPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -137,4 +137,4 @@ public class ParametricqueryFactoryImpl extends EFactoryImpl implements Parametr
 		return ParametricqueryPackage.eINSTANCE;
 	}
 
-} //ParametricqueryFactoryImpl
+} // ParametricqueryFactoryImpl

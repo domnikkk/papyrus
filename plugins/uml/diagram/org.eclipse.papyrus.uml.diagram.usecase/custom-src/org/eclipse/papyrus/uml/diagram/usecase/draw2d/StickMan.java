@@ -82,10 +82,10 @@ public class StickMan extends AbstractProportionalShape {
 
 	/**
 	 * Setup the points to draw the stickMan figure.
-	 * 
+	 *
 	 * @param rectangle
 	 *            the specified rectangle
-	 * 
+	 *
 	 * @return the point list
 	 */
 	protected PointList setupPoints(Rectangle rectangle) {

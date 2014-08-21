@@ -3,14 +3,14 @@
  * All rights reserved. This program and the accompanying materials are made
  * available under the terms of the Eclipse Public License v1.0 which accompanies
  * this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Jacques Lescot (Anyware Technologies) - initial API and implementation
  * Thibault Landre (Atos Origin) - refactor to extract the exportAllDiagram from ExportAllDiagramsAction
  * Alexia Allanic (Atos Origin) - Add margin to not truncate images
  * Anass Radouani (AtoS) - add use GMF exporting tool and remove manual extraction
  * Christian W. Damus (CEA) - bug 431411
  * Christian W. Damus (CEA) - bug 410346
- * 
+ *
  ******************************************************************************/
 package org.eclipse.papyrus.infra.export;
 
@@ -91,17 +91,17 @@ public class ExportAllDiagrams {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param file
-	 *        the *.*di file where the diagrams are stored, can be null if
-	 *        you use export method with diagrams in parameter
+	 *            the *.*di file where the diagrams are stored, can be null if
+	 *            you use export method with diagrams in parameter
 	 * @param outputDirectoryPath
-	 *        the directory in which the images will be saved
+	 *            the directory in which the images will be saved
 	 * @param extension
-	 *        the image extension
+	 *            the image extension
 	 * @param imageExporter
-	 *        the image exporter used. The image exporter should be coherent
-	 *        with the file extension
+	 *            the image exporter used. The image exporter should be coherent
+	 *            with the file extension
 	 */
 	public ExportAllDiagrams(IFile file, String outputDirectoryPath, String extension, boolean qualifiedName) {
 		this.file = file;
@@ -126,7 +126,7 @@ public class ExportAllDiagrams {
 
 			@Override
 			protected void execute(IProgressMonitor monitor) throws CoreException, InvocationTargetException, InterruptedException {
-				if(monitor == null) {
+				if (monitor == null) {
 					monitor = new NullProgressMonitor();
 				}
 				final IProgressMonitor newMonitor = monitor;
@@ -155,47 +155,47 @@ public class ExportAllDiagrams {
 
 	/**
 	 * Export all diagrams of the IFile
-	 * 
+	 *
 	 * @param newMonitor
 	 */
 	private void export(IProgressMonitor newMonitor) {
 		// Then iterates on all the diagrams and export them one by one
 		newMonitor.beginTask(Messages.ExportAllDiagrams_1, 10);
 		newMonitor.subTask(Messages.ExportAllDiagrams_2);
-		if(file != null) {
+		if (file != null) {
 			final ResourceSetImpl resourceSet = new ResourceSetImpl();
 			TransactionalEditingDomain editingDomain = null;
 			try {
 				resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_IDREF_RESOLUTION, true);
 				resourceSet.getLoadOptions().put(XMLResource.OPTION_DEFER_ATTACHMENT, true);
-				
+
 				// Since the *.di file is empty as of Luna, we cannot rely on it to find all diagrams by resolving cross-references
 				IPapyrusFile logical = PapyrusModelHelper.getPapyrusModelFactory().createIPapyrusFile(file);
-				if(logical != null) {
-					for(IResource component : logical.getAssociatedResources()) {
-						if(component.getType() == IResource.FILE) {
+				if (logical != null) {
+					for (IResource component : logical.getAssociatedResources()) {
+						if (component.getType() == IResource.FILE) {
 							resourceSet.getResource(URI.createPlatformResourceURI(component.getFullPath().toString(), true), true);
 						}
 					}
 				}
-				
+
 				// create transactional editing domain
 				editingDomain = TransactionalEditingDomain.Factory.INSTANCE.createEditingDomain(resourceSet);
-	
+
 				AbstractTransactionalCommand com = new AbstractTransactionalCommand(editingDomain, "Resolve", Collections.emptyList()) {
-	
+
 					@Override
 					protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 						EcoreUtil.resolveAll(resourceSet);
 						return null;
 					}
 				};
-	
+
 				// bypass all the transaction/validate/notification mechanisms, it is a lot faster and it has no impact
 				// since we do not modify the model
 				CommandStack commandStack = editingDomain.getCommandStack();
-				if(commandStack instanceof TransactionalCommandStack) {
-					TransactionalCommandStack stack = (TransactionalCommandStack)commandStack;
+				if (commandStack instanceof TransactionalCommandStack) {
+					TransactionalCommandStack stack = (TransactionalCommandStack) commandStack;
 					Map<Object, Object> options = new HashMap<Object, Object>();
 					options.put(Transaction.OPTION_NO_NOTIFICATIONS, Boolean.TRUE);
 					options.put(Transaction.OPTION_NO_UNDO, Boolean.TRUE);
@@ -212,18 +212,18 @@ public class ExportAllDiagrams {
 				} else {
 					Activator.log.warn("no transactional editing domain found");
 				}
-	
+
 				List<Diagram> diagrams = new ArrayList<Diagram>();
-				if(newMonitor.isCanceled()) {
+				if (newMonitor.isCanceled()) {
 					return;
 				}
-				for(Iterator<Notifier> i = resourceSet.getAllContents(); i.hasNext();) {
+				for (Iterator<Notifier> i = resourceSet.getAllContents(); i.hasNext();) {
 					Notifier n = i.next();
-					if(n instanceof Diagram) {
-						diagrams.add((Diagram)n);
+					if (n instanceof Diagram) {
+						diagrams.add((Diagram) n);
 					}
 				}
-				if(newMonitor.isCanceled()) {
+				if (newMonitor.isCanceled()) {
 					return;
 				}
 				newMonitor.worked(1);
@@ -231,7 +231,7 @@ public class ExportAllDiagrams {
 			} finally {
 				// Unload the resource set so that we don't leak loads of UML content in the CacheAdapter
 				unload(resourceSet);
-				if(editingDomain != null) {
+				if (editingDomain != null) {
 					editingDomain.dispose();
 				}
 			}
@@ -246,18 +246,18 @@ public class ExportAllDiagrams {
 			next.unload();
 			next.eAdapters().clear();
 		}
-		
+
 		resourceSet.getResources().clear();
 		resourceSet.eAdapters().clear();
 	}
-	
+
 	/**
 	 * export all the diagrams in image
-	 * 
+	 *
 	 * @param newMonitor
-	 *        , the monitor
+	 *            , the monitor
 	 * @param diagrams
-	 *        , the emf element diagrams
+	 *            , the emf element diagrams
 	 */
 	public void export(IProgressMonitor newMonitor, List<Diagram> diagrams) {
 		boolean duplicates;
@@ -266,10 +266,10 @@ public class ExportAllDiagrams {
 		unloadResources(new SubProgressMonitor(newMonitor, 1), diagrams);
 
 		// Alert the user that file names have been changed to avoid duplicates
-		if(duplicates && displayRenamingInformation) {
+		if (duplicates && displayRenamingInformation) {
 
 			final String message = Messages.ExportAllDiagrams_5;
-			if(workbenchWindow != null && workbenchWindow.getShell() != null) {
+			if (workbenchWindow != null && workbenchWindow.getShell() != null) {
 
 				BasicDiagnostic newDiagnostic = new BasicDiagnostic(Diagnostic.WARNING, "", 0, message, null); //$NON-NLS-1$
 				diagnostic.add(newDiagnostic);
@@ -280,18 +280,19 @@ public class ExportAllDiagrams {
 
 		}
 		int severity = diagnostic.recomputeSeverity();
-		if(severity == Diagnostic.ERROR) {
+		if (severity == Diagnostic.ERROR) {
 			BasicDiagnostic oldDiagnostic = diagnostic;
 			diagnostic = new BasicDiagnostic(Diagnostic.ERROR, "", 0, Messages.ExportAllDiagrams_22, null); //$NON-NLS-1$
 			diagnostic.addAll(oldDiagnostic);
-		} else if(severity == Diagnostic.WARNING) {
+		} else if (severity == Diagnostic.WARNING) {
 			BasicDiagnostic oldDiagnostic = diagnostic;
 			diagnostic = new BasicDiagnostic(Diagnostic.WARNING, "", 0, Messages.ExportAllDiagrams_24, null); //$NON-NLS-1$
 			diagnostic.addAll(oldDiagnostic);
-		} else if(severity == Diagnostic.OK) {
-			if(workbenchWindow != null && workbenchWindow.getShell() != null) {
+		} else if (severity == Diagnostic.OK) {
+			if (workbenchWindow != null && workbenchWindow.getShell() != null) {
 				Display.getDefault().syncExec(new Runnable() {
 
+					@Override
 					public void run() {
 						MessageDialog.openInformation(Activator.getActiveWorkbenchShell(), Messages.ExportAllDiagrams_25, Messages.ExportAllDiagrams_26 + outputDirectoryPath);
 					}
@@ -301,6 +302,7 @@ public class ExportAllDiagrams {
 
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				DiagnosticDialog.open(Activator.getActiveWorkbenchShell(), Messages.ExportAllDiagrams_27, "", diagnostic); //$NON-NLS-1$
 			}
@@ -310,7 +312,7 @@ public class ExportAllDiagrams {
 
 	/**
 	 * Browse all the diagrams and export them
-	 * 
+	 *
 	 * @param newMonitor
 	 * @param findAllDiagrams
 	 * @return
@@ -322,34 +324,34 @@ public class ExportAllDiagrams {
 			List<String> diagramNames = new ArrayList<String>();
 			try {
 				newMonitor.beginTask(Messages.ExportAllDiagrams_7, diagrams.size());
-				for(final Diagram diagram : diagrams) {
-					if(newMonitor.isCanceled()) {
+				for (final Diagram diagram : diagrams) {
+					if (newMonitor.isCanceled()) {
 						break;
 					}
 					String label = ""; //$NON-NLS-1$
-					if(qualifiedName) {
+					if (qualifiedName) {
 						ComposedAdapterFactory composedAdapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 						composedAdapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
-						
+
 						try {
-							IItemLabelProvider itemLabelFactory = (IItemLabelProvider)composedAdapterFactory.adapt(diagram.getElement(), IItemLabelProvider.class);
-							label = itemLabelFactory.getText(diagram.getElement()).replace(Messages.ExportAllDiagrams_16, "") + "_"; //$NON-NLS-1$//$NON-NLS-2$ 
+							IItemLabelProvider itemLabelFactory = (IItemLabelProvider) composedAdapterFactory.adapt(diagram.getElement(), IItemLabelProvider.class);
+							label = itemLabelFactory.getText(diagram.getElement()).replace(Messages.ExportAllDiagrams_16, "") + "_"; //$NON-NLS-1$//$NON-NLS-2$
 						} finally {
 							// Don't leak the adapters created by this factory
 							composedAdapterFactory.dispose();
 						}
 					}
 					String uniqueFileName = encodeFileName(label + diagram.getName());
-					if(uniqueFileName.length() > 150) {
+					if (uniqueFileName.length() > 150) {
 						nameCut = true;
 						uniqueFileName = uniqueFileName.substring(0, 150);
 					}
-					if(diagramNames.contains(uniqueFileName)) {
+					if (diagramNames.contains(uniqueFileName)) {
 						duplicates = true;
 						uniqueFileName = getFirstAvailableName(uniqueFileName, diagramNames, 1);
 					}
 
-					if(nameCut) {
+					if (nameCut) {
 
 						BasicDiagnostic newDiagnostic = new BasicDiagnostic(Diagnostic.WARNING, "", 0, Messages.ExportAllDiagrams_10 + uniqueFileName, null); //$NON-NLS-1$
 						diagnostic.add(newDiagnostic);
@@ -360,9 +362,10 @@ public class ExportAllDiagrams {
 					final String finalUniqueFileName = uniqueFileName;
 					diagramNames.add(uniqueFileName);
 					newMonitor.subTask(Messages.ExportAllDiagrams_8 + uniqueFileName);
-					if(useDisplayRunnable) {
+					if (useDisplayRunnable) {
 						Display.getDefault().syncExec(new Runnable() {
 
+							@Override
 							public void run() {
 								exportDiagram(finalUniqueFileName, diagram, newMonitor);
 							}
@@ -386,7 +389,7 @@ public class ExportAllDiagrams {
 		CopyToImageUtil copyImageUtil = new CopyToImageUtil();
 		try {
 			copyImageUtil.copyToImage(diagram, new Path(outputDirectoryPath + File.separator + uniqueFileName + "." //$NON-NLS-1$
-				+ ImageFileFormat.resolveImageFormat(extension)), ImageFileFormat.resolveImageFormat(extension), new SubProgressMonitor(newMonitor, 1), PreferencesHint.USE_DEFAULTS);
+					+ ImageFileFormat.resolveImageFormat(extension)), ImageFileFormat.resolveImageFormat(extension), new SubProgressMonitor(newMonitor, 1), PreferencesHint.USE_DEFAULTS);
 		} catch (Throwable e) {
 			BasicDiagnostic newDiagnostic = new BasicDiagnostic(Diagnostic.ERROR, "", 0, String.format(Messages.ExportAllDiagrams_11, uniqueFileName, diagram.eResource().getURI().toString()), null); //$NON-NLS-1$
 			diagnostic.add(newDiagnostic);
@@ -396,17 +399,17 @@ public class ExportAllDiagrams {
 	}
 
 	public void unloadResources(IProgressMonitor newMonitor, List<Diagram> diagrams) {
-		if(newMonitor == null) {
+		if (newMonitor == null) {
 			newMonitor = new NullProgressMonitor();
 		}
 		newMonitor.subTask(Messages.ExportAllDiagrams_12);
-		if(diagrams != null && !diagrams.isEmpty()) {
+		if (diagrams != null && !diagrams.isEmpty()) {
 			ResourceSet resourceSet2 = diagrams.get(0).eResource().getResourceSet();
 			newMonitor.beginTask(Messages.ExportAllDiagrams_13, resourceSet2.getResources().size());
-			for(int i = resourceSet2.getResources().size() - 1; i >= 0; i--) {
+			for (int i = resourceSet2.getResources().size() - 1; i >= 0; i--) {
 				try {
 					Resource r = resourceSet2.getResources().get(i);
-					if(r.isLoaded()) {
+					if (r.isLoaded()) {
 						r.unload();
 					}
 				} catch (Exception e) {
@@ -420,22 +423,22 @@ public class ExportAllDiagrams {
 
 	/**
 	 * Escape all characters that may result in a wrong file name
-	 * 
+	 *
 	 * @param pathName
-	 *        a file name to encode
+	 *            a file name to encode
 	 * @return The encoded file name
 	 */
 	private String encodeFileName(String pathName) {
 		pathName = pathName.trim();
 		pathName = pathName.replaceAll(Messages.ExportAllDiagrams_14, Messages.ExportAllDiagrams_15);
 		pathName = pathName.replaceAll("_-_", "-"); //$NON-NLS-1$ //$NON-NLS-2$
-		while(pathName.contains("__")) { //$NON-NLS-1$
+		while (pathName.contains("__")) { //$NON-NLS-1$
 			pathName = pathName.replaceAll("__", "_"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		if(pathName.startsWith("_")) { //$NON-NLS-1$
+		if (pathName.startsWith("_")) { //$NON-NLS-1$
 			pathName = pathName.replaceFirst("_", ""); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		if(pathName.endsWith("_")) { //$NON-NLS-1$
+		if (pathName.endsWith("_")) { //$NON-NLS-1$
 			pathName = pathName.substring(0, pathName.length() - 1);
 		}
 
@@ -444,7 +447,7 @@ public class ExportAllDiagrams {
 	}
 
 	private String getFirstAvailableName(String commonBasis, List<String> existingNames, int cpt) {
-		if(existingNames.contains(commonBasis + cpt)) {
+		if (existingNames.contains(commonBasis + cpt)) {
 			return getFirstAvailableName(commonBasis, existingNames, cpt + 1);
 		}
 		return commonBasis + cpt;

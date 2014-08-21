@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -41,6 +41,7 @@ public class UsageEditPart extends UMLConnectionNodeEditPart implements ITreeBra
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new UsageItemSemanticEditPolicy());
@@ -49,12 +50,13 @@ public class UsageEditPart extends UMLConnectionNodeEditPart implements ITreeBra
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new UsageLinkFigure();
 	}
@@ -62,7 +64,8 @@ public class UsageEditPart extends UMLConnectionNodeEditPart implements ITreeBra
 	/**
 	 * @generated
 	 */
+	@Override
 	public UsageLinkFigure getPrimaryShape() {
-		return (UsageLinkFigure)getFigure();
+		return (UsageLinkFigure) getFigure();
 	}
 }

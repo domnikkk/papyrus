@@ -7,13 +7,12 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.common.editpolicies;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -52,9 +51,9 @@ import org.eclipse.papyrus.infra.gmfdiag.common.helper.FixAnchorHelper;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.ServiceUtilsForEditPart;
 
 /**
- * 
+ *
  * This edit policy allows to resize parent from NORTH, NORTH_WEST or WEST without moving its children
- * 
+ *
  */
 public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy {
 
@@ -63,37 +62,38 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 	/**
 	 * Called in response to a <tt>REQ_CREATE</tt> request. Returns a command
 	 * to set each created element bounds and auto-size properties.
-	 * 
+	 *
 	 * @param request
-	 *        a create request (understands instances of {@link CreateViewRequest}).
+	 *            a create request (understands instances of {@link CreateViewRequest}).
 	 * @return a command to satisfy the request; <tt>null</tt> if the request is not
 	 *         understood.
 	 */
+	@Override
 	protected Command getCreateCommand(CreateRequest request) {
-		CreateViewRequest req = (CreateViewRequest)request;
+		CreateViewRequest req = (CreateViewRequest) request;
 
 
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, DiagramUIMessages.AddCommand_Label);
 		Iterator<?> iter = req.getViewDescriptors().iterator();
-		final Rectangle BOUNDS = (Rectangle)getConstraintFor(request);
+		final Rectangle BOUNDS = (Rectangle) getConstraintFor(request);
 		boolean couldBeSnaped = request.getLocation().equals(LayoutHelper.UNDEFINED.getLocation()) && req.isSnapToEnabled();
-		while(iter.hasNext()) {
-			CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor)iter.next();
+		while (iter.hasNext()) {
+			CreateViewRequest.ViewDescriptor viewDescriptor = (CreateViewRequest.ViewDescriptor) iter.next();
 			Rectangle rect = getBoundsOffest(req, BOUNDS, viewDescriptor);
 
-			//see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
-			if(couldBeSnaped) {
-				//this code fix the bug in some case...
+			// see bug 427129: Figures newly created via the palette should be snapped to grid if "snap to grid" is activated
+			if (couldBeSnaped) {
+				// this code fix the bug in some case...
 				int add = 0;
-				DiagramRootEditPart drep = (DiagramRootEditPart)getHost().getRoot();
+				DiagramRootEditPart drep = (DiagramRootEditPart) getHost().getRoot();
 				double spacing = drep.getGridSpacing();
 				final double max_value = spacing * 20;
-				final SnapToHelper helper = (SnapToHelper)getHost().getAdapter(SnapToHelper.class);
-				if(helper != null) {
+				final SnapToHelper helper = (SnapToHelper) getHost().getAdapter(SnapToHelper.class);
+				if (helper != null) {
 					final LayoutHelper layoutHelper = new LayoutHelper();
-					while(add < max_value) {//we define a max value to do test
+					while (add < max_value) {// we define a max value to do test
 						Rectangle LOCAL_BOUNDS = BOUNDS.getCopy();
 						LOCAL_BOUNDS.translate(add, add);
 						Rectangle tmp_rect = getBoundsOffest(req, LOCAL_BOUNDS, viewDescriptor);
@@ -103,8 +103,8 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 						PrecisionPoint res1 = new PrecisionPoint(tmp_rect.getLocation());
 						helper.snapPoint(request, PositionConstants.NORTH_WEST, res1.getPreciseCopy(), res1);
 						final Point pt = layoutHelper.validatePosition(getHostFigure(), resultRect.setLocation(res1));
-						if(couldBeSnaped) {
-							if(pt.equals(resultRect.getLocation())) {
+						if (couldBeSnaped) {
+							if (pt.equals(resultRect.getLocation())) {
 								rect.setLocation(resultRect.getLocation());
 								break;
 							} else {
@@ -122,7 +122,7 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 
 		}
 
-		if(cc.reduce() == null) {
+		if (cc.reduce() == null) {
 			return null;
 		}
 		return chainGuideAttachmentCommands(request, new ICommandProxy(cc.reduce()));
@@ -130,35 +130,37 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 
 	/**
 	 * Returns the <code>Command</code> to resize a group of children.
-	 * 
+	 *
 	 * @param request
-	 *        the ChangeBoundsRequest
+	 *            the ChangeBoundsRequest
 	 * @return the Command
 	 */
+	@Override
 	protected Command getChangeConstraintCommand(ChangeBoundsRequest request) {
 		final CompoundCommand resize = new CompoundCommand("Resize Command");//$NON-NLS-1$
 		IGraphicalEditPart child;
 		final List<?> children = request.getEditParts();
 		final int direction = request.getResizeDirection();
 		boolean isConstrainedResize = request.isConstrainedResize();
-		boolean forceLocation = isConstrainedResize;//&& (direction == PositionConstants.WEST || direction == PositionConstants.NORTH || direction == PositionConstants.NORTH_WEST );//|| direction == PositionConstants.NORTH_EAST || direction == PositionConstants.SOUTH_WEST);
-		for(int i = 0; i < children.size(); i++) {
-			child = (IGraphicalEditPart)children.get(i);
+		boolean forceLocation = isConstrainedResize;// && (direction == PositionConstants.WEST || direction == PositionConstants.NORTH || direction == PositionConstants.NORTH_WEST );//|| direction == PositionConstants.NORTH_EAST || direction ==
+													// PositionConstants.SOUTH_WEST);
+		for (int i = 0; i < children.size(); i++) {
+			child = (IGraphicalEditPart) children.get(i);
 			resize.add(createChangeConstraintCommand(request, child, translateToModelConstraint(getConstraintFor(request, child))));
 			final Point move = request.getMoveDelta();
-			if(forceLocation) {
-				for(Object object : child.getChildren()) {
-					if(object instanceof CompartmentEditPart) {
-						final EditPolicy layoutPolicy = ((CompartmentEditPart)object).getEditPolicy(EditPolicy.LAYOUT_ROLE);
-						if(layoutPolicy instanceof org.eclipse.gef.editpolicies.XYLayoutEditPolicy) {
-							for(final Object current : ((CompartmentEditPart)object).getChildren()) {
-								if(current instanceof NodeEditPart) {
+			if (forceLocation) {
+				for (Object object : child.getChildren()) {
+					if (object instanceof CompartmentEditPart) {
+						final EditPolicy layoutPolicy = ((CompartmentEditPart) object).getEditPolicy(EditPolicy.LAYOUT_ROLE);
+						if (layoutPolicy instanceof org.eclipse.gef.editpolicies.XYLayoutEditPolicy) {
+							for (final Object current : ((CompartmentEditPart) object).getChildren()) {
+								if (current instanceof NodeEditPart) {
 									final ChangeBoundsRequest forceLocationRequest = new ChangeBoundsRequest();
 									forceLocationRequest.setType("move");//$NON-NLS-1$
 									forceLocationRequest.setMoveDelta(move.getNegated());
-									forceLocationRequest.setEditParts((EditPart)current);
-									final Command tmp = ((NodeEditPart)current).getCommand(forceLocationRequest);
-									if(tmp != null) {
+									forceLocationRequest.setEditParts((EditPart) current);
+									final Command tmp = ((NodeEditPart) current).getCommand(forceLocationRequest);
+									if (tmp != null) {
 										resize.add(tmp);
 									}
 								}
@@ -167,9 +169,9 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 					}
 				}
 			}
-			//we add the command to fix the anchor
-			if(isConstrainedResize && child instanceof INodeEditPart) {
-				if(helper == null) {
+			// we add the command to fix the anchor
+			if (isConstrainedResize && child instanceof INodeEditPart) {
+				if (helper == null) {
 					TransactionalEditingDomain domain = null;
 					try {
 						domain = ServiceUtilsForEditPart.getInstance().getTransactionalEditingDomain(child);
@@ -178,8 +180,8 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 					}
 					this.helper = new FixAnchorHelper(domain);
 				}
-				final Command fixAnchorCommand = this.helper.getFixIdentityAnchorCommand((INodeEditPart)child, request.getMoveDelta(), request.getSizeDelta(), request.getResizeDirection());
-				if(fixAnchorCommand != null) {
+				final Command fixAnchorCommand = this.helper.getFixIdentityAnchorCommand((INodeEditPart) child, request.getMoveDelta(), request.getSizeDelta(), request.getResizeDirection());
+				if (fixAnchorCommand != null) {
 					resize.add(fixAnchorCommand);
 				}
 			}
@@ -190,17 +192,17 @@ public class XYLayoutWithConstrainedResizedEditPolicy extends XYLayoutEditPolicy
 	@Override
 	protected Command createChangeConstraintCommand(ChangeBoundsRequest request, EditPart child, Object constraint) {
 		final Command cmd = super.createChangeConstraintCommand(request, child, constraint);
-		if(RequestConstants.REQ_MOVE_CHILDREN.equals(request.getType()) && child instanceof INodeEditPart) {
-			List<?> sources = ((INodeEditPart)child).getSourceConnections();
-			List<?> targets = ((INodeEditPart)child).getTargetConnections();
+		if (org.eclipse.gef.RequestConstants.REQ_MOVE_CHILDREN.equals(request.getType()) && child instanceof INodeEditPart) {
+			List<?> sources = ((INodeEditPart) child).getSourceConnections();
+			List<?> targets = ((INodeEditPart) child).getTargetConnections();
 			Set<Object> connections = new HashSet<Object>();
 			connections.addAll(sources);
 			connections.addAll(targets);
-			if(!connections.isEmpty()) {
+			if (!connections.isEmpty()) {
 				final CompoundCommand cc = new CompoundCommand();
 				cc.add(cmd);
-				//see bug 430702: [Diagram] Moving source of a link moves the target too.	
-				cc.add(new ICommandProxy(new FixEdgeAnchorsDeferredCommand(getEditingDomain(), (IGraphicalEditPart)getHost(), connections)));
+				// see bug 430702: [Diagram] Moving source of a link moves the target too.
+				cc.add(new ICommandProxy(new FixEdgeAnchorsDeferredCommand(getEditingDomain(), (IGraphicalEditPart) getHost(), connections)));
 				return cc;
 			}
 		}

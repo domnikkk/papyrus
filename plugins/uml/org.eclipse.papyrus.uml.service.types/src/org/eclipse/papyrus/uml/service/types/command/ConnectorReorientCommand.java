@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.diagram.core.util.ViewUtil;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelationshipRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.service.types.utils.RequestParameterUtils;
@@ -48,7 +49,7 @@ public class ConnectorReorientCommand extends ConnectorReorientSemanticCommand {
 	 */
 	private Edge reorientedEdgeView;
 
-	//	private ConnectorUtils utils = new ConnectorUtils();
+	// private ConnectorUtils utils = new ConnectorUtils();
 
 	/**
 	 * Constructor.
@@ -58,9 +59,9 @@ public class ConnectorReorientCommand extends ConnectorReorientSemanticCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
 	 */
 	public ConnectorReorientCommand(ReorientReferenceRelationshipRequest request) {
@@ -68,178 +69,178 @@ public class ConnectorReorientCommand extends ConnectorReorientSemanticCommand {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.service.types.command.ConnectorReorientSemanticCommand#initFields()
-	 * 
+	 *
 	 */
 	@Override
 	protected void initFields() {
 		super.initFields();
 		reorientedEdgeView = RequestParameterUtils.getReconnectedEdge(getRequest());
 		newEndView = RequestParameterUtils.getReconnectedEndView(getRequest());
-		if(this.reorientedEdgeView != null) {
-			oppositeEndView = (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();
+		if (this.reorientedEdgeView != null) {
+			oppositeEndView = (reorientDirection == ReorientRequest.REORIENT_SOURCE) ? reorientedEdgeView.getTarget() : reorientedEdgeView.getSource();
 		} else {
 			oppositeEndView = null;
 		}
-		if(getNewPartWithPort() == null) {
+		if (getNewPartWithPort() == null) {
 			setNewPartWithPort(findNewPartWithPort());
 		}
-		if(getOppositePartWithPort() == null) {
+		if (getOppositePartWithPort() == null) {
 			setOppositePartWithPort(findNewOppositePartWithPort());
 		}
 	}
 
-	//	/**
-	//	 * Test if the command can be executed.
-	//	 */
-	//	public boolean canExecute() {
-	//		if(!(getElementToEdit() instanceof Connector)) {
-	//			return false;
-	//		}
+	// /**
+	// * Test if the command can be executed.
+	// */
+	// public boolean canExecute() {
+	// if(!(getElementToEdit() instanceof Connector)) {
+	// return false;
+	// }
 	//
-	//		if(getLink().getEnds().size() != 2) {
-	//			return false;
-	//		}
+	// if(getLink().getEnds().size() != 2) {
+	// return false;
+	// }
 	//
-	//		return canReorient(newEndView, oppositeEndView);
-	//	}
+	// return canReorient(newEndView, oppositeEndView);
+	// }
 	//
-	//	private boolean canReorient(View newEndView, View oppositeEndView) {
+	// private boolean canReorient(View newEndView, View oppositeEndView) {
 	//
-	//		// Verify possible type of new source
-	//		if((newEndView.getElement() == null) || !(newEndView.getElement() instanceof ConnectableElement)) {
-	//			return false;
-	//		}
+	// // Verify possible type of new source
+	// if((newEndView.getElement() == null) || !(newEndView.getElement() instanceof ConnectableElement)) {
+	// return false;
+	// }
 	//
-	//		if((newEndView != null) && (oppositeEndView != null)) {
-	//			// Cannot create a self connector on a view
-	//			if(newEndView == oppositeEndView) {
-	//				return false;
-	//			}
+	// if((newEndView != null) && (oppositeEndView != null)) {
+	// // Cannot create a self connector on a view
+	// if(newEndView == oppositeEndView) {
+	// return false;
+	// }
 	//
-	//			// Cannot create a connector from a view representing a Part to its own Port (or the opposite)
-	//			if((newEndView.getChildren().contains(oppositeEndView)) || (oppositeEndView.getChildren().contains(newEndView))) {
-	//				return false;
-	//			}
+	// // Cannot create a connector from a view representing a Part to its own Port (or the opposite)
+	// if((newEndView.getChildren().contains(oppositeEndView)) || (oppositeEndView.getChildren().contains(newEndView))) {
+	// return false;
+	// }
 	//
-	//			// Cannot connect two Port owned by the same view
-	//			if((newEndView.getElement() instanceof Port) && (oppositeEndView.getElement() instanceof Port)) {
-	//				if(ViewUtil.getContainerView(newEndView) == ViewUtil.getContainerView(oppositeEndView)) {
-	//					return false;
-	//				}
-	//			}
+	// // Cannot connect two Port owned by the same view
+	// if((newEndView.getElement() instanceof Port) && (oppositeEndView.getElement() instanceof Port)) {
+	// if(ViewUtil.getContainerView(newEndView) == ViewUtil.getContainerView(oppositeEndView)) {
+	// return false;
+	// }
+	// }
 	//
-	//			// Cannot connect a Part to one of its (possibly indirect) containment, must connect to one of its Port.
-	//			if(utils.getStructureContainers(newEndView).contains(oppositeEndView) || utils.getStructureContainers(oppositeEndView).contains(newEndView)) {
-	//				return false;
-	//			}
+	// // Cannot connect a Part to one of its (possibly indirect) containment, must connect to one of its Port.
+	// if(utils.getStructureContainers(newEndView).contains(oppositeEndView) || utils.getStructureContainers(oppositeEndView).contains(newEndView)) {
+	// return false;
+	// }
 	//
-	//			// Ensure container can be deduced
-	//			if(deduceContainer(newEndView, oppositeEndView) == null) {
-	//				return false;
-	//			}
-	//		}
+	// // Ensure container can be deduced
+	// if(deduceContainer(newEndView, oppositeEndView) == null) {
+	// return false;
+	// }
+	// }
 	//
-	//		return true;
-	//	}
+	// return true;
+	// }
 	//
-	//	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-	//		if(!canExecute()) {
+	// protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+	// if(!canExecute()) {
 	//			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
-	//		}
+	// }
 	//
-	//		EObject oldOwner = getLink().eContainer();
+	// EObject oldOwner = getLink().eContainer();
 	//
-	//		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
-	//			StructuredClassifier newOwner = deduceContainer(reorientedEdgeView.getTarget(), newEndView);
-	//			if(oldOwner != newOwner) {
-	//				replaceOwner(getLink(), newOwner);
-	//			}
-	//			return reorientSource();
-	//		}
+	// if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+	// StructuredClassifier newOwner = deduceContainer(reorientedEdgeView.getTarget(), newEndView);
+	// if(oldOwner != newOwner) {
+	// replaceOwner(getLink(), newOwner);
+	// }
+	// return reorientSource();
+	// }
 	//
-	//		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
-	//			StructuredClassifier newOwner = deduceContainer(reorientedEdgeView.getSource(), newEndView);
-	//			if(oldOwner != newOwner) {
-	//				replaceOwner(getLink(), newOwner);
-	//			}
-	//			return reorientTarget();
-	//		}
+	// if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+	// StructuredClassifier newOwner = deduceContainer(reorientedEdgeView.getSource(), newEndView);
+	// if(oldOwner != newOwner) {
+	// replaceOwner(getLink(), newOwner);
+	// }
+	// return reorientTarget();
+	// }
 	//
-	//		throw new IllegalStateException();
-	//	}
+	// throw new IllegalStateException();
+	// }
 	//
-	//	protected CommandResult reorientSource() throws ExecutionException {
-	//		// Nothing to do here on the connector itself, the connector end remains
-	//		// the same but related to new Port or PartWithPort.
-	//		ConnectorEnd reorientedEnd = getLink().getEnds().get(0);
-	//		ConnectorEnd oppositeEnd = getLink().getEnds().get(1);
-	//		return reorientEnd(reorientedEnd, oppositeEnd, (ConnectableElement)getNewSource(), getNewPartWithPort(), getNewOppositePartWithPort());
-	//	}
+	// protected CommandResult reorientSource() throws ExecutionException {
+	// // Nothing to do here on the connector itself, the connector end remains
+	// // the same but related to new Port or PartWithPort.
+	// ConnectorEnd reorientedEnd = getLink().getEnds().get(0);
+	// ConnectorEnd oppositeEnd = getLink().getEnds().get(1);
+	// return reorientEnd(reorientedEnd, oppositeEnd, (ConnectableElement)getNewSource(), getNewPartWithPort(), getNewOppositePartWithPort());
+	// }
 	//
-	//	protected CommandResult reorientTarget() throws ExecutionException {
-	//		// Nothing to do here on the connector itself, the connector end remains
-	//		// the same but related to new Port or PartWithPort.		
-	//		ConnectorEnd reorientedEnd = getLink().getEnds().get(1);
-	//		ConnectorEnd oppositeEnd = getLink().getEnds().get(0);
-	//		return reorientEnd(reorientedEnd, oppositeEnd, (ConnectableElement)getNewTarget(), getNewPartWithPort(), getNewOppositePartWithPort());
-	//	}
+	// protected CommandResult reorientTarget() throws ExecutionException {
+	// // Nothing to do here on the connector itself, the connector end remains
+	// // the same but related to new Port or PartWithPort.
+	// ConnectorEnd reorientedEnd = getLink().getEnds().get(1);
+	// ConnectorEnd oppositeEnd = getLink().getEnds().get(0);
+	// return reorientEnd(reorientedEnd, oppositeEnd, (ConnectableElement)getNewTarget(), getNewPartWithPort(), getNewOppositePartWithPort());
+	// }
 	//
-	//	private CommandResult reorientEnd(ConnectorEnd end, ConnectorEnd oppositeEnd, ConnectableElement role, Property partWithPort, Property oppositePartWithPort) throws ExecutionException {
-	//		end.setRole(role);
-	//		end.setPartWithPort(partWithPort);
-	//		oppositeEnd.setPartWithPort(oppositePartWithPort);
-	//		return CommandResult.newOKCommandResult();
-	//	}
+	// private CommandResult reorientEnd(ConnectorEnd end, ConnectorEnd oppositeEnd, ConnectableElement role, Property partWithPort, Property oppositePartWithPort) throws ExecutionException {
+	// end.setRole(role);
+	// end.setPartWithPort(partWithPort);
+	// oppositeEnd.setPartWithPort(oppositePartWithPort);
+	// return CommandResult.newOKCommandResult();
+	// }
 	//
 	//
 	//
-	//	/**
-	//	 * Get the old {@link Connector} source.
-	//	 * 
-	//	 * @return the previous {@link Connector} source.
-	//	 */
-	//	protected Element getOldSource() {
-	//		return (Element)oldEnd;
-	//	}
+	// /**
+	// * Get the old {@link Connector} source.
+	// *
+	// * @return the previous {@link Connector} source.
+	// */
+	// protected Element getOldSource() {
+	// return (Element)oldEnd;
+	// }
 	//
-	//	/**
-	//	 * Get the new {@link Connector} source.
-	//	 * 
-	//	 * @return the new {@link Connector} source.
-	//	 */
-	//	protected Element getNewSource() {
-	//		return (Element)newEnd;
-	//	}
+	// /**
+	// * Get the new {@link Connector} source.
+	// *
+	// * @return the new {@link Connector} source.
+	// */
+	// protected Element getNewSource() {
+	// return (Element)newEnd;
+	// }
 	//
-	//	/**
-	//	 * Get the old {@link Connector} target.
-	//	 * 
-	//	 * @return the previous {@link Connector} target.
-	//	 */
-	//	protected Element getOldTarget() {
-	//		return (Element)oldEnd;
-	//	}
+	// /**
+	// * Get the old {@link Connector} target.
+	// *
+	// * @return the previous {@link Connector} target.
+	// */
+	// protected Element getOldTarget() {
+	// return (Element)oldEnd;
+	// }
 	//
-	//	/**
-	//	 * Get the new {@link Connector} target.
-	//	 * 
-	//	 * @return the new {@link Connector} target.
-	//	 */
-	//	protected Element getNewTarget() {
-	//		return (Element)newEnd;
-	//	}
+	// /**
+	// * Get the new {@link Connector} target.
+	// *
+	// * @return the new {@link Connector} target.
+	// */
+	// protected Element getNewTarget() {
+	// return (Element)newEnd;
+	// }
 	//
 	/**
 	 * Get the new {@link Connector} end graphical parent.
-	 * 
+	 *
 	 * @return the new {@link Connector} end graphical parent.
 	 */
 	protected Element getEndParent(View endView) {
-		if(endView != null) {
+		if (endView != null) {
 			EObject parent = ViewUtil.getContainerView(endView).getElement();
-			return (parent instanceof Element) ? (Element)parent : null;
+			return (parent instanceof Element) ? (Element) parent : null;
 		}
 		return null;
 	}
@@ -247,19 +248,19 @@ public class ConnectorReorientCommand extends ConnectorReorientSemanticCommand {
 
 	/**
 	 * Get the new {@link Connector} end part with port.
-	 * 
+	 *
 	 * @return the new {@link Connector} end part with port.
 	 */
 	protected Property findNewPartWithPort() {
 		Property partWithPort = null;
 		Element newEndParent = getEndParent(this.newEndView);
-		if(getNewEnd() instanceof Port) {
+		if (getNewEnd() instanceof Port) {
 			// Only look for PartWithPort if the role is a Port.
 
-			if((newEndParent != null) && (newEndParent instanceof Property) && !(newEndParent instanceof Port)) {
+			if ((newEndParent != null) && (newEndParent instanceof Property) && !(newEndParent instanceof Port)) {
 				// Only add PartWithPort for assembly (not for delegation)
-				if(!EcoreUtil.isAncestor(ViewUtil.getContainerView(this.newEndView), this.oppositeEndView)) {
-					partWithPort = (Property)newEndParent;
+				if (!EcoreUtil.isAncestor(ViewUtil.getContainerView(this.newEndView), this.oppositeEndView)) {
+					partWithPort = (Property) newEndParent;
 				}
 			}
 		}
@@ -268,26 +269,26 @@ public class ConnectorReorientCommand extends ConnectorReorientSemanticCommand {
 
 	/**
 	 * Get the new {@link Connector} opposite end part with port.
-	 * 
+	 *
 	 * @return the new {@link Connector} opposite end part with port.
 	 */
 	protected Property findNewOppositePartWithPort() {
 		Property partWithPort = null;
 		Element oppositeEndParent = getEndParent(this.oppositeEndView);
-		if(this.oppositeEndView != null && this.oppositeEndView.getElement() instanceof Port) {
+		if (this.oppositeEndView != null && this.oppositeEndView.getElement() instanceof Port) {
 			// Only look for PartWithPort if the role is a Port.
 
-			if((oppositeEndParent != null) && (oppositeEndParent instanceof Property) && !(oppositeEndParent instanceof Port)) {
+			if ((oppositeEndParent != null) && (oppositeEndParent instanceof Property) && !(oppositeEndParent instanceof Port)) {
 				// Only add PartWithPort for assembly (not for delegation)
-				if(!EcoreUtil.isAncestor(ViewUtil.getContainerView(this.oppositeEndView), this.newEndView)) {
-					partWithPort = (Property)oppositeEndParent;
+				if (!EcoreUtil.isAncestor(ViewUtil.getContainerView(this.oppositeEndView), this.newEndView)) {
+					partWithPort = (Property) oppositeEndParent;
 				}
 			}
 		}
 		return partWithPort;
 	}
 	//
-	//	private StructuredClassifier deduceContainer(View source, View target) {
-	//		return new ConnectorUtils().deduceContainer(source, target);
-	//	}
+	// private StructuredClassifier deduceContainer(View source, View target) {
+	// return new ConnectorUtils().deduceContainer(source, target);
+	// }
 }

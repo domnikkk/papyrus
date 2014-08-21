@@ -7,16 +7,16 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.nattable.utils;
 
 /**
- * 
+ *
  * This class provides utils method to split a string to do a paste in the table
- * 
+ *
  */
 public class PasteHelper {
 
@@ -43,24 +43,24 @@ public class PasteHelper {
 	private final String multiValueSeparator;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public PasteHelper() {
 		this(DEFAULT_COLUMN_SEPARATOR, DEFAULT_ROW_SEPARATOR, DEFAULT_MULTI_VALUE_SEPARATOR);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param columnSeparator
-	 *        the column separator to use
+	 *            the column separator to use
 	 * @param rowSeparator
-	 *        the row separator to use
+	 *            the row separator to use
 	 * @param multiValueSeparator
-	 *        the multi value separator to use
+	 *            the multi value separator to use
 	 */
 	public PasteHelper(final String columnSeparator, final String rowSeparator, final String multiValueSeparator) {
 		this.columnSeparator = columnSeparator;
@@ -69,11 +69,11 @@ public class PasteHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param axisAsString
-	 *        an full axis represented by a String
-	 * 
-	 * 
+	 *            an full axis represented by a String
+	 *
+	 *
 	 * @return
 	 *         the cells using the specified cell separator
 	 */
@@ -83,10 +83,10 @@ public class PasteHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param fullContents
-	 *        the string to split
-	 * 
+	 *            the string to split
+	 *
 	 * @return
 	 *         the rows
 	 */
@@ -96,33 +96,33 @@ public class PasteHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param fullContents
 	 * @param rowSeparator
 	 * @param columnSeparator
 	 * @return
 	 *         an array of the pasted columns
 	 */
-	//TODO refactor me the paste in column should be the same as the paste in row!
+	// TODO refactor me the paste in column should be the same as the paste in row!
 	public final String[] getColumns(final String fullContents) {
 		final String[] rows = fullContents.split(rowSeparator);
-		if(rows.length > 0) {
+		if (rows.length > 0) {
 			int nbColumn = rows[0].split(columnSeparator).length;
 			String[] columns = new String[nbColumn];
-			for(int columnIndex = 0; columnIndex < nbColumn; columnIndex++) {
+			for (int columnIndex = 0; columnIndex < nbColumn; columnIndex++) {
 				columns[columnIndex] = "";
 			}
 
-			for(int rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+			for (int rowIndex = 0; rowIndex < rows.length; rowIndex++) {
 				String row = rows[rowIndex];
 				String[] currentColumns = row.split(columnSeparator);
-				for(int columnIndex = 0; columnIndex < nbColumn; columnIndex++) {
-					if(currentColumns.length != 0) {
+				for (int columnIndex = 0; columnIndex < nbColumn; columnIndex++) {
+					if (currentColumns.length != 0) {
 						columns[columnIndex] += currentColumns[columnIndex];
 					} else {
 						columns[columnIndex] += ""; //$NON-NLS-1$
 					}
-					if(rowIndex < rows.length + 1) {
+					if (rowIndex < rows.length + 1) {
 						columns[columnIndex] += columnSeparator;
 					} else {
 						columns[columnIndex] += rowSeparator;

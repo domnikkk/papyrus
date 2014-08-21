@@ -7,8 +7,8 @@
  *
  * Contributors:
  *     Tasktop Technologies - initial API and implementation
- *     Obeo - adaptation for Amalgamation, EMF based and no Mylyn dependency     
- *     CEA LIST - adaptation to Papyrus 
+ *     Obeo - adaptation for Amalgamation, EMF based and no Mylyn dependency
+ *     CEA LIST - adaptation to Papyrus
  *******************************************************************************/
 
 package org.eclipse.papyrus.infra.discovery.ui.internal.common;
@@ -19,8 +19,8 @@ package org.eclipse.papyrus.infra.discovery.ui.internal.common;
  */
 public class CommonThemes {
 
-    public static final String COLOR_CATEGORY_GRADIENT_START = "org.eclipse.mylyn.tasks.ui.colors.category.gradient.start"; //$NON-NLS-1$
+	public static final String COLOR_CATEGORY_GRADIENT_START = "org.eclipse.mylyn.tasks.ui.colors.category.gradient.start"; //$NON-NLS-1$
 
-    public static final String COLOR_CATEGORY_GRADIENT_END = "org.eclipse.mylyn.tasks.ui.colors.category.gradient.end"; //$NON-NLS-1$
+	public static final String COLOR_CATEGORY_GRADIENT_END = "org.eclipse.mylyn.tasks.ui.colors.category.gradient.end"; //$NON-NLS-1$
 
 }

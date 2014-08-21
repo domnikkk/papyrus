@@ -23,10 +23,10 @@ public class RationaleMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Comment) {
+		if (eObject instanceof Comment) {
 
-			Comment element = (Comment)eObject;
-			if(UMLUtil.getStereotypeApplication(element, Rationale.class) != null) {
+			Comment element = (Comment) eObject;
+			if (UMLUtil.getStereotypeApplication(element, Rationale.class) != null) {
 				isMatch = true;
 			}
 		}

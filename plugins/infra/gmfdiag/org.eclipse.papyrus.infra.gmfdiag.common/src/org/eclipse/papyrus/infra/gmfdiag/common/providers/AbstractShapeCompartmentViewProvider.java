@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -46,7 +46,7 @@ public abstract class AbstractShapeCompartmentViewProvider extends CustomAbstrac
 	/**
 	 * Initialize the diagram type. This should be set in the constructor, and not called again after that.
 	 */
-	protected abstract void initDiagramType() ;
+	protected abstract void initDiagramType();
 
 	/**
 	 * {@inheritDoc}
@@ -63,5 +63,5 @@ public abstract class AbstractShapeCompartmentViewProvider extends CustomAbstrac
 	protected Class<?> getEdgeViewClass(IAdaptable semanticAdapter, View containerView, String graphicalType) {
 		return edgeMap.get(graphicalType);
 	}
-	
+
 }

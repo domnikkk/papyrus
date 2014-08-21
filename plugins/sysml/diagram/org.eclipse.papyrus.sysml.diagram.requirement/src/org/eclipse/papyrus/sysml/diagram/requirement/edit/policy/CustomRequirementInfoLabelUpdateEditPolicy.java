@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 ATOS.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Element;
 
 /**
  * Edit policy used to refresh the label that display the id and the text of a requirement.
- * 
+ *
  */
 public class CustomRequirementInfoLabelUpdateEditPolicy extends AbstractAppliedStereotypeDisplayEditPolicy {
 
@@ -33,11 +33,11 @@ public class CustomRequirementInfoLabelUpdateEditPolicy extends AbstractAppliedS
 	@Override
 	protected Element getUMLElement() {
 		EditPart host = this.getHost();
-		//Reminder : the label is in the compartment, which is in the class edit part.
+		// Reminder : the label is in the compartment, which is in the class edit part.
 		EditPart compartment = host.getParent();
 		EditPart classEditPart = compartment.getParent();
-		//Getting the class out of the edit part.
-		Element clazz = (Element)((View)classEditPart.getModel()).getElement();
+		// Getting the class out of the edit part.
+		Element clazz = (Element) ((View) classEditPart.getModel()).getElement();
 		return clazz;
 	}
 

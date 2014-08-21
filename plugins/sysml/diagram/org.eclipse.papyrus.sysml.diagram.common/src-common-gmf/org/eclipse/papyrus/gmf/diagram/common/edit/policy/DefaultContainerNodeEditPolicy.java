@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -46,24 +46,25 @@ public class DefaultContainerNodeEditPolicy extends ContainerNodeEditPolicy {
 	 */
 	@Override
 	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
-		if (!(request instanceof CreateConnectionViewRequest))
+		if (!(request instanceof CreateConnectionViewRequest)) {
 			return null;
+		}
 		CreateConnectionViewRequest req = (CreateConnectionViewRequest) request;
 		CompositeCommand cc = new CompositeCommand(
-			DiagramUIMessages.Commands_CreateCommand_Connection_Label);
-		Diagram diagramView = ((View)getHost().getModel())
+				DiagramUIMessages.Commands_CreateCommand_Connection_Label);
+		Diagram diagramView = ((View) getHost().getModel())
 				.getDiagram();
-        
+
 		// TransactionalEditingDomain editingDomain = getEditingDomain();
 		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
-        CreateCommand createCommand = new CreateViewCommand(editingDomain, req
+		CreateCommand createCommand = new CreateViewCommand(editingDomain, req
 				.getConnectionViewDescriptor(), diagramView.getDiagram());
-        //
+		//
 		setViewAdapter((IAdaptable) createCommand.getCommandResult()
 				.getReturnValue());
-        
-        
-        SetConnectionEndsCommand sceCommand = new SetConnectionEndsCommand(editingDomain, StringStatics.BLANK);
+
+
+		SetConnectionEndsCommand sceCommand = new SetConnectionEndsCommand(editingDomain, StringStatics.BLANK);
 		sceCommand.setEdgeAdaptor(getViewAdapter());
 		sceCommand.setNewSourceAdaptor(new EObjectAdapter(getView()));
 		ConnectionAnchor sourceAnchor = getConnectableEditPart()

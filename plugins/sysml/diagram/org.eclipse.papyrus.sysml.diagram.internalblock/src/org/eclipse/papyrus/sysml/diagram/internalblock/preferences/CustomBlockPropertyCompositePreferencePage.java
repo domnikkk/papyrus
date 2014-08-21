@@ -70,13 +70,13 @@ public class CustomBlockPropertyCompositePreferencePage extends InternalBlockDia
 		// End of user code
 
 		// Initialize default visibility for compartments in preference page.
-		for(String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentDefaultVisibilityMap.keySet()) {
 			String showCompartmentKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_VISIBILITY);
 			store.setDefault(showCompartmentKey, compartmentDefaultVisibilityMap.get(compartmentName));
 		}
 
 		// Initialize default title visibility for compartments in preference page.
-		for(String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String compartmentName : compartmentTitleDefaultVisibilityMap.keySet()) {
 			String showCompartmentTitleKey = PreferencesConstantsHelper.getCompartmentElementConstant(prefKey, compartmentName, PreferencesConstantsHelper.COMPARTMENT_NAME_VISIBILITY);
 			store.setDefault(showCompartmentTitleKey, compartmentTitleDefaultVisibilityMap.get(compartmentName));
 		}
@@ -87,7 +87,7 @@ public class CustomBlockPropertyCompositePreferencePage extends InternalBlockDia
 	 */
 	@Override
 	protected void initializeCompartmentNamesList() {
-		for(String name : compartmentDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentDefaultVisibilityMap.keySet()) {
 			this.compartmentNamesList.add(name);
 		}
 	}
@@ -97,7 +97,7 @@ public class CustomBlockPropertyCompositePreferencePage extends InternalBlockDia
 	 */
 	@Override
 	protected void initializeCompartmentTitlesList() {
-		for(String name : compartmentTitleDefaultVisibilityMap.keySet()) {
+		for (String name : compartmentTitleDefaultVisibilityMap.keySet()) {
 			this.compartmentTitlesList.add(name);
 		}
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,16 +38,16 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 		super(new OCLEValidatorAdapter());
 		validateStereotype = false;
 	}
-	
+
 	@Override
 	public Map<Object, Object> createDefaultContext() {
 		Map<Object, Object> context = super.createDefaultContext();
-	    if (context != null) {
-	    	OCLDelegateDomain.initializePivotOnlyDiagnosticianContext(context);
-	    }
+		if (context != null) {
+			OCLDelegateDomain.initializePivotOnlyDiagnosticianContext(context);
+		}
 		return context;
 	}
-	
+
 	@Override
 	public BasicDiagnostic createDefaultDiagnostic(EObject eObject) {
 		ResourceSet resourceSet = eObject.eResource().getResourceSet();
@@ -56,19 +56,19 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 		}
 		return super.createDefaultDiagnostic(eObject);
 	}
-	
+
 	protected boolean doValidateStereotypeApplications(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (validateStereotype) {
 			// this function is called recursively. Avoid trying to obtain stereotype applications, if we are
 			// already examining a stereotype
 			return true;
 		}
-		List<EObject> stereotypeApplications = eObject instanceof Element ? ((Element)eObject).getStereotypeApplications() : Collections.<EObject> emptyList();
-		if(!stereotypeApplications.isEmpty()) {
+		List<EObject> stereotypeApplications = eObject instanceof Element ? ((Element) eObject).getStereotypeApplications() : Collections.<EObject> emptyList();
+		if (!stereotypeApplications.isEmpty()) {
 			Iterator<EObject> i = stereotypeApplications.iterator();
 			validateStereotype = true;
 			boolean result = validate(i.next(), diagnostics, context);
-			while(i.hasNext() && (result || diagnostics != null)) {
+			while (i.hasNext() && (result || diagnostics != null)) {
 				result &= validate(i.next(), diagnostics, context);
 			}
 			validateStereotype = false;
@@ -81,12 +81,12 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 	@Override
 	protected boolean doValidateContents(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean result = doValidateStereotypeApplications(eObject, diagnostics, context);
-		if(result || diagnostics != null) {
+		if (result || diagnostics != null) {
 			result &= super.doValidateContents(eObject, diagnostics, context);
 		}
 		return result;
 	}
-	
+
 	@Override
 	public boolean validate(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		if (!context.containsKey(this)) {
@@ -97,7 +97,7 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 			boolean ok = super.validate(eObject, newDiagChain, context);
 			// replace markers here instead of using a validation adapter, see
 			// bug 410457 - [Validation] Ghost markers when validating profile constraints
-			// bug 410119 - [Validation] markers related to stereotype applications are not updated in diagrams 
+			// bug 410119 - [Validation] markers related to stereotype applications are not updated in diagrams
 			// bug 410059 - [Validation] delete subtree does not remove markers associated with stereotypes
 			for (Diagnostic d : newDiagChain.getChildren()) {
 				Object data[] = d.getData().toArray();
@@ -110,8 +110,8 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 						}
 					}
 				}
-			    diagnostics.add(new BasicDiagnostic(
-			    	d.getSeverity(), d.getSource(), d.getCode(), d.getMessage(), data));
+				diagnostics.add(new BasicDiagnostic(
+						d.getSeverity(), d.getSource(), d.getCode(), d.getMessage(), data));
 			}
 			return ok;
 		}
@@ -119,7 +119,7 @@ public class UMLDiagnostician extends EcoreDiagnostician {
 			return super.validate(eObject, diagnostics, context);
 		}
 	}
-	
+
 	protected boolean validateStereotype;
 
 }

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -33,62 +33,69 @@ public class XDataHandler extends DefaultHandler implements ContentHandler {
 		this.out = out;
 	}
 
+	@Override
 	public void startPrefixMapping(String prefix, String uri) {
 		namespaceBegin = true;
 		currentNamespace = prefix;
 		currentNamespaceUri = uri;
 	}
 
+	@Override
 	public void startElement(String namespaceURI, String localName, String qName, Attributes atts) {
-		if(started) {
+		if (started) {
 			out.append("<" + qName);
-			if(namespaceBegin) {
+			if (namespaceBegin) {
 				out.append(" xmlns:" + currentNamespace + "=\"" + currentNamespaceUri + "\"");
 				namespaceBegin = false;
 			}
-			for(int i = 0; i < atts.getLength(); i++) {
+			for (int i = 0; i < atts.getLength(); i++) {
 				out.append(" " + atts.getQName(i) + "=\"" + atts.getValue(i) + "\"");
 			}
 			out.append(">");
 		}
-		if(localName.equalsIgnoreCase("xdata")) {
+		if (localName.equalsIgnoreCase("xdata")) {
 			started = true;
 		}
 	}
 
+	@Override
 	public void endElement(String namespaceURI, String localName, String qName) {
-		if(localName.equalsIgnoreCase("xdata")) {
+		if (localName.equalsIgnoreCase("xdata")) {
 			started = false;
 		}
-		if(started) {
+		if (started) {
 			out.append("</" + qName + ">");
 		}
 	}
 
+	@Override
 	public void characters(char[] ch, int start, int length) {
-		if(started) {
-			for(int i = start; i < start + length; i++) {
+		if (started) {
+			for (int i = start; i < start + length; i++) {
 				out.append(ch[i]);
 			}
 		}
 	}
 
+	@Override
 	public void ignorableWhitespace(char[] ch, int start, int length) {
-		if(started) {
-			for(int i = start; i < start + length; i++) {
+		if (started) {
+			for (int i = start; i < start + length; i++) {
 				out.append(ch[i]);
 			}
 		}
 	}
 
+	@Override
 	public void processingInstruction(String target, String data) {
-		if(started) {
+		if (started) {
 			out.append("<?" + target + " " + data + "?>");
 		}
 	}
 
+	@Override
 	public void skippedEntity(String name) {
-		if(started) {
+		if (started) {
 			out.append("&" + name + ";");
 		}
 	}

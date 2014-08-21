@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,16 +28,16 @@ import org.eclipse.papyrus.infra.nattable.utils.TableEditingDomainUtils;
 
 /**
  * Abstract class for Paste EObject on column configuration
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public abstract class AbstractColumnPasteEObjectConfigurationObservableValue extends AbstractConfigurationElementObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
 	 * @param managedFeature
 	 */
@@ -46,9 +46,9 @@ public abstract class AbstractColumnPasteEObjectConfigurationObservableValue ext
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.properties.observable.AbstractColumnPasteEObjectConfigurationObservableValue#getEditedEObject()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -58,15 +58,15 @@ public abstract class AbstractColumnPasteEObjectConfigurationObservableValue ext
 
 	/**
 	 * Do set value.
-	 * 
+	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
 	 */
 	@Override
 	protected void doSetValue(Object value) {
-		IAxisConfiguration editedEObject = (IAxisConfiguration)getEditedEObject();
-		if(editedEObject == null) {
+		IAxisConfiguration editedEObject = (IAxisConfiguration) getEditedEObject();
+		if (editedEObject == null) {
 			editedEObject = NattableaxisconfigurationFactory.eINSTANCE.createPasteEObjectConfiguration();
 		}
 		final ICommand cmd = TableCommands.getSetIAxisConfigurationValueCommand(getTable(), editedEObject, getManagedFeature(), value, true);

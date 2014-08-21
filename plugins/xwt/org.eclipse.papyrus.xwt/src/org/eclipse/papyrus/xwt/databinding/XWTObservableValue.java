@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.xwt.XWT;
 
 /**
  * Notes: Binding type is java.lang.String.
- * 
+ *
  * @author jliu (jin.liu@soyatec.com)
  */
 public abstract class XWTObservableValue extends AbstractObservableValue implements IObserving {
@@ -38,7 +38,7 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 	private boolean updating = false;
 
 	/**
-	 * 
+	 *
 	 */
 	public XWTObservableValue(Class<?> valueType, Object observed, String path) {
 		super(XWT.getRealm());
@@ -52,11 +52,11 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 	 * Add listener to observed.
 	 */
 	private void init() {
-		if(eventListener == null) {
+		if (eventListener == null) {
 			eventListener = new EventListener() {
 
 				public void handleEvent(Event evt) {
-					if(!updating) {
+					if (!updating) {
 						final ValueDiff diff = Diffs.createValueDiff(evt.getOldValue(), evt.getNewValue());
 						getRealm().exec(new Runnable() {
 
@@ -84,11 +84,12 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 	 * 
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
 	 */
+	@Override
 	protected void doSetValue(Object value) {
 		updating = true;
 		Object oldValue = doGetValue();
 		value = convert(oldValue == null ? null : oldValue.getClass(), value);
-		if(!Util.equals(oldValue, value)) {
+		if (!Util.equals(oldValue, value)) {
 			doSetApprovedValue(value);
 			fireValueChange(Diffs.createValueDiff(oldValue, value));
 			eventManager.dispatchEvent(new Event(observed, oldValue, value, getPath()));
@@ -101,12 +102,12 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 	 * @return
 	 */
 	protected Object convert(Class type, Object value) {
-		if(value != null) {
-			if(type != null && type.isEnum() && value instanceof String) {
-				return Enum.valueOf(type, (String)value);
+		if (value != null) {
+			if (type != null && type.isEnum() && value instanceof String) {
+				return Enum.valueOf(type, (String) value);
 			}
-			IConverter c = XWT.findConvertor(value.getClass(), (Class<?>)getValueType());
-			if(c != null) {
+			IConverter c = XWT.findConvertor(value.getClass(), getValueType());
+			if (c != null) {
 				return c.convert(value);
 			}
 		}
@@ -123,6 +124,7 @@ public abstract class XWTObservableValue extends AbstractObservableValue impleme
 	 * 
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
 	 */
+	@Override
 	protected Object doGetValue() {
 		return observed;
 	}

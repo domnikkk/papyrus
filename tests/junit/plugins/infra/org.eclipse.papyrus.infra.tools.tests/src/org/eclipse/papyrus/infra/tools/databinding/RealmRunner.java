@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,7 +53,7 @@ public class RealmRunner extends ClassificationRunner {
 				try {
 					base.evaluate();
 				} finally {
-					((TestRealm)DelegatingObservableTest.realm).dispose();
+					((TestRealm) DelegatingObservableTest.realm).dispose();
 					DelegatingObservableTest.realm = null;
 				}
 			}
@@ -86,7 +86,7 @@ public class RealmRunner extends ClassificationRunner {
 		final Statement base = super.methodInvoker(method, test);
 		Statement result = base;
 
-		if(method.getAnnotation(TrackedGetterTest.class) != null) {
+		if (method.getAnnotation(TrackedGetterTest.class) != null) {
 			result = new Statement() {
 
 				@Override
@@ -108,7 +108,7 @@ public class RealmRunner extends ClassificationRunner {
 					IObservable observable = getObservableFixture(test);
 
 					boolean found = false;
-					for(int i = 0; !found && (i < tracked.length); i++) {
+					for (int i = 0; !found && (i < tracked.length); i++) {
 						found = tracked[i] == observable;
 					}
 					assertThat("Observable fixture did not invoke ObservableTracker::getterCalled()", found, is(true));
@@ -155,7 +155,7 @@ public class RealmRunner extends ClassificationRunner {
 		}
 
 		void dispose() {
-			if(executor != null) {
+			if (executor != null) {
 				executor.shutdown();
 				executor = null;
 				realmThread = null;
@@ -189,17 +189,17 @@ public class RealmRunner extends ClassificationRunner {
 				fail(e.getLocalizedMessage());
 			}
 
-			if(thrown instanceof Error) {
-				throw (Error)thrown;
-			} else if(thrown instanceof RuntimeException) {
-				throw (RuntimeException)thrown;
-			} else if(thrown instanceof Exception) {
+			if (thrown instanceof Error) {
+				throw (Error) thrown;
+			} else if (thrown instanceof RuntimeException) {
+				throw (RuntimeException) thrown;
+			} else if (thrown instanceof Exception) {
 				throw new RuntimeException(thrown);
 			}
 		}
 
 		void throwCaughtThrowable() throws Throwable {
-			if(thrown != null) {
+			if (thrown != null) {
 				throw thrown;
 			}
 		}

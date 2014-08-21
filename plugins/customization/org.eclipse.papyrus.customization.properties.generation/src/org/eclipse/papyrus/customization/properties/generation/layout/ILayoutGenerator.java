@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.views.properties.ui.PropertyEditor;
  * An interface for defining Layout generators.
  * Layout generators are responsible for building a List of sections from a list
  * of Property editors.
- * 
+ *
  * @author Camille Letavernier
  */
 public interface ILayoutGenerator {
@@ -30,11 +30,11 @@ public interface ILayoutGenerator {
 	/**
 	 * Return a list of Sections from a list of property editors.
 	 * Each section should be placed in the parent's resourceSet
-	 * 
+	 *
 	 * @param editors
-	 *        The list of editors to layout
+	 *            The list of editors to layout
 	 * @param parent
-	 *        The view owning the resulting list of sections
+	 *            The view owning the resulting list of sections
 	 * @return
 	 *         The list of sections owning the input editors
 	 */
@@ -47,11 +47,11 @@ public interface ILayoutGenerator {
 
 	/**
 	 * Sets the generator used to generate the Property view configuration
-	 * 
+	 *
 	 * @param generator
 	 */
-	//TODO : This method has been added for a specific case (Profile layout).
-	//It should be removed when we have a better way to retrieve the source
-	//profile
+	// TODO : This method has been added for a specific case (Profile layout).
+	// It should be removed when we have a better way to retrieve the source
+	// profile
 	public void setGenerator(IGenerator generator);
 }

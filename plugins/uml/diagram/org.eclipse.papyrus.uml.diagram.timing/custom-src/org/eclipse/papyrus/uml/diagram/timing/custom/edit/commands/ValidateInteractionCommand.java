@@ -27,11 +27,11 @@ public class ValidateInteractionCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * @param domain
-	 *        the editing domain
+	 *            the editing domain
 	 * @param interaction
-	 *        the interaction to validate
+	 *            the interaction to validate
 	 * @param interactive
-	 *        whether to display notifications to the user, and ask for confirmation using dialog boxes
+	 *            whether to display notifications to the user, and ask for confirmation using dialog boxes
 	 */
 	public ValidateInteractionCommand(final TransactionalEditingDomain domain, final Interaction interaction, final boolean interactive) {
 		super(domain, Messages.ValidateInteractionCommand_ValidateInteraction, null);
@@ -44,6 +44,7 @@ public class ValidateInteractionCommand extends AbstractTransactionalCommand {
 		final boolean[] result = new boolean[1];
 		Display.getDefault().syncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				result[0] = validate();
 			}

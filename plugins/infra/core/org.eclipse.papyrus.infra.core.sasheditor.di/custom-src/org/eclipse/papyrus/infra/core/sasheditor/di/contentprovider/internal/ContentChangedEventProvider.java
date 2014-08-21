@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.core.sasheditor.di.contentprovider.internal;
 
@@ -20,12 +20,12 @@ import org.eclipse.papyrus.infra.core.sashwindows.di.Window;
 
 /**
  * A class listening on changes on the internal model and delivering events to registered listeners.
- * 
+ *
  * @author cedric dumoulin
  *
  */
 public class ContentChangedEventProvider implements IContentChangedProvider {
-	
+
 	private List<IContentChangedListener> listeners;
 
 	/** Is this mngr delivering events ? */
@@ -40,9 +40,9 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 	 * The model firing events
 	 */
 	private SashModel diSashModel;
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param diSashModel
@@ -51,9 +51,9 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 		this.diSashModel = diSashModel;
 		activate();
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param diSashModel
@@ -61,7 +61,7 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 	public ContentChangedEventProvider(SashWindowsMngr sashWindowMngr) {
 		this(sashWindowMngr.getSashModel());
 	}
-	
+
 	/**
 	 * Connect EMF changeListener to the {@link ContentChangeListenerManager}.
 	 * Changes in the EMF di model will be fired by the ContentChangeListenerManager.
@@ -85,22 +85,25 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 
 	/**
 	 * @param isDeliverEnable
-	 *        the isDeliverEnable to set
+	 *            the isDeliverEnable to set
 	 */
 	protected void setDeliver(boolean isDeliverEnable) {
 
-		if(this.isDeliverEnable == isDeliverEnable)
+		if (this.isDeliverEnable == isDeliverEnable) {
 			return;
+		}
 
 		// Check if the old value is not delivering event
-		if(!this.isDeliverEnable) {
+		if (!this.isDeliverEnable) {
 			this.isDeliverEnable = true;
 			// reenable events. Check if an event is stored
-			if(storedEvent != null)
+			if (storedEvent != null) {
 				fireContentChanged(storedEvent);
+			}
 
-		} else
+		} else {
 			this.isDeliverEnable = isDeliverEnable;
+		}
 
 		storedEvent = null;
 	}
@@ -108,16 +111,19 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 	/**
 	 * Add a listener listening on content changed. This listener will be
 	 * notified each time the content change.
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void addListener(IContentChangedListener listener) {
-		if(listeners == null)
+		if (listeners == null) {
 			createListeners();
+		}
 
 		// Check if already exists.
-		if(listeners.contains(listener))
+		if (listeners.contains(listener)) {
 			return;
+		}
 
 		listeners.add(listener);
 	}
@@ -125,12 +131,14 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 	/**
 	 * Add a listener listening on content changed. This listener will be
 	 * notified each time the content change.
-	 * 
+	 *
 	 * @param listener
 	 */
+	@Override
 	public void removeListener(IContentChangedListener listener) {
-		if(listeners == null)
+		if (listeners == null) {
 			return;
+		}
 
 		listeners.remove(listener);
 	}
@@ -139,26 +147,28 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 	 * Create the list of listeners.
 	 */
 	private void createListeners() {
-		if(listeners == null)
+		if (listeners == null) {
 			listeners = new ArrayList<IContentChangedListener>();
+		}
 
 	}
 
 	/**
 	 * Fire the changed event.
-	 * 
+	 *
 	 * @param event
 	 */
 	protected void fireContentChanged(ContentEvent event) {
-		if(listeners == null)
+		if (listeners == null) {
 			return;
+		}
 
-		if(!isDeliverEnable) {
+		if (!isDeliverEnable) {
 			storedEvent = event;
 			return;
 		}
 
-		for(IContentChangedListener listener : listeners) {
+		for (IContentChangedListener listener : listeners) {
 			listener.contentChanged(event);
 		}
 	}
@@ -166,7 +176,7 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 	/**
 	 * Change event Adapter.
 	 * Forward EMF changeEvent to the {@link ContentChangeListenerManager}.
-	 * 
+	 *
 	 * @author cedric dumoulin
 	 */
 	public class EMFAdapter extends EContentAdapter {
@@ -174,9 +184,9 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 		/**
 		 * ContentProvider Model has changed.
 		 * Changes includes : ADD, REMOVE and MOVE of elements
-		 * 
+		 *
 		 * @see org.eclipse.emf.common.notify.impl.AdapterImpl#notifyChanged(org.eclipse.emf.common.notify.Notification)
-		 * 
+		 *
 		 * @param msg
 		 */
 		@Override
@@ -185,13 +195,15 @@ public class ContentChangedEventProvider implements IContentChangedProvider {
 
 			// Filter out notification of type RESOLVE
 			// We don't need to be noti
-			if(msg.getEventType() == Notification.RESOLVE)
+			if (msg.getEventType() == Notification.RESOLVE) {
 				return;
+			}
 
 			// W
 			Object sender = msg.getNotifier();
-			if(sender instanceof AbstractPanel || sender instanceof Window || sender instanceof PageRef)
+			if (sender instanceof AbstractPanel || sender instanceof Window || sender instanceof PageRef) {
 				fireContentChanged(new ContentEvent(msg.getEventType(), sender, null));
+			}
 		}
 	}
 

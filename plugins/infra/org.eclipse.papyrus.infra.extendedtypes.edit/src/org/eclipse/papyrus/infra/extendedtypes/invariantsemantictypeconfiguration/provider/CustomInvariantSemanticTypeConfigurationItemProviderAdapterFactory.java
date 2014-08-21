@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.extendedtypes.invariantsemantictypeconfiguration.provider;
 

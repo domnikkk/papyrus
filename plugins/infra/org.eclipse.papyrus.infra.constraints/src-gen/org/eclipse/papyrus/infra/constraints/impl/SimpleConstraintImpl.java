@@ -28,8 +28,8 @@ import org.eclipse.papyrus.infra.constraints.environment.ConstraintType;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.SimpleConstraintImpl#getConstraintType <em>Constraint Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.constraints.impl.SimpleConstraintImpl#getProperties <em>Properties</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.SimpleConstraintImpl#getConstraintType <em>Constraint Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.constraints.impl.SimpleConstraintImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -40,6 +40,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	 * The cached value of the '{@link #getConstraintType() <em>Constraint Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getConstraintType()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getProperties()
 	 * @generated
 	 * @ordered
@@ -59,6 +61,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SimpleConstraintImpl() {
@@ -68,6 +71,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -78,15 +82,17 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintType getConstraintType() {
 		if (constraintType != null && constraintType.eIsProxy()) {
-			InternalEObject oldConstraintType = (InternalEObject)constraintType;
-			constraintType = (ConstraintType)eResolveProxy(oldConstraintType);
+			InternalEObject oldConstraintType = (InternalEObject) constraintType;
+			constraintType = (ConstraintType) eResolveProxy(oldConstraintType);
 			if (constraintType != oldConstraintType) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE, oldConstraintType, constraintType));
+				}
 			}
 		}
 		return constraintType;
@@ -95,6 +101,7 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintType basicGetConstraintType() {
@@ -104,18 +111,21 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setConstraintType(ConstraintType newConstraintType) {
 		ConstraintType oldConstraintType = constraintType;
 		constraintType = newConstraintType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE, oldConstraintType, constraintType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ConfigProperty> getProperties() {
@@ -128,13 +138,14 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
-				return ((InternalEList<?>)getProperties()).basicRemove(otherEnd, msgs);
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
+			return ((InternalEList<?>) getProperties()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -142,16 +153,19 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
-				if (resolve) return getConstraintType();
-				return basicGetConstraintType();
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
-				return getProperties();
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
+			if (resolve) {
+				return getConstraintType();
+			}
+			return basicGetConstraintType();
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
+			return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -159,19 +173,20 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
-				setConstraintType((ConstraintType)newValue);
-				return;
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
-				getProperties().clear();
-				getProperties().addAll((Collection<? extends ConfigProperty>)newValue);
-				return;
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
+			setConstraintType((ConstraintType) newValue);
+			return;
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
+			getProperties().clear();
+			getProperties().addAll((Collection<? extends ConfigProperty>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -179,17 +194,18 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
-				setConstraintType((ConstraintType)null);
-				return;
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
-				getProperties().clear();
-				return;
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
+			setConstraintType((ConstraintType) null);
+			return;
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
+			getProperties().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,17 +213,18 @@ public class SimpleConstraintImpl extends ConstraintDescriptorImpl implements Si
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
-				return constraintType != null;
-			case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
-				return properties != null && !properties.isEmpty();
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__CONSTRAINT_TYPE:
+			return constraintType != null;
+		case ConstraintsPackage.SIMPLE_CONSTRAINT__PROPERTIES:
+			return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //SimpleConstraintImpl
+} // SimpleConstraintImpl

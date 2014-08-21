@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,19 +33,21 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class PackageRule implements INavigationRule {
 
+	@Override
 	public boolean handle(EObject element) {
 		return element instanceof Package;
 	}
 
+	@Override
 	public List<NavigableElement> getNextPossibleElements(NavigableElement currentNavElement) {
 		List<NavigableElement> nextPossibleElements = new LinkedList<NavigableElement>();
 
 		EStructuralFeature packagedFeature = UMLPackage.Literals.PACKAGE__PACKAGED_ELEMENT;
 
-		final Package pack = (Package)currentNavElement.getElement();
+		final Package pack = (Package) currentNavElement.getElement();
 
-		for(PackageableElement element : pack.getPackagedElements()) {
-			if(element instanceof Collaboration) {
+		for (PackageableElement element : pack.getPackagedElements()) {
+			if (element instanceof Collaboration) {
 				nextPossibleElements.add(new ExistingNavigableElement(element, packagedFeature));
 			}
 		}
@@ -53,17 +55,19 @@ public class PackageRule implements INavigationRule {
 		Collaboration collab = UMLFactory.eINSTANCE.createCollaboration();
 		nextPossibleElements.add(new CreatedNavigableElement(collab, currentNavElement, packagedFeature, new IModelLinker() {
 
+			@Override
 			public void linkToModel(EObject toLink) {
-				pack.getPackagedElements().add((PackageableElement)toLink);
+				pack.getPackagedElements().add((PackageableElement) toLink);
 			}
 		}, UMLBaseNameSetter.instance));
 
-		// provide the possibility to create behavior in package as structural element : 
+		// provide the possibility to create behavior in package as structural element :
 		// this allows to easily share behavior between elements using a package as library
 		UMLRuleHelper.addBehaviorCreatedNavigableElements(nextPossibleElements, currentNavElement, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT, new IModelLinker() {
 
+			@Override
 			public void linkToModel(EObject toLink) {
-				pack.getPackagedElements().add((Behavior)toLink);
+				pack.getPackagedElements().add((Behavior) toLink);
 			}
 		});
 

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011, 2012 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -46,11 +46,12 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.Runt
  * This is the item provider adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.runtime.ETypedElementResult} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ETypedElementResultItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -60,6 +61,7 @@ public class ETypedElementResultItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ETypedElementResultItemProvider(AdapterFactory adapterFactory) {
@@ -70,6 +72,7 @@ public class ETypedElementResultItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -88,74 +91,77 @@ public class ETypedElementResultItemProvider
 	 * This adds a property descriptor for the Derived Typed Element feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDerivedTypedElementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ETypedElementResult_derivedTypedElement_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementResult_derivedTypedElement_feature", "_UI_ETypedElementResult_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ETypedElementResult_derivedTypedElement_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementResult_derivedTypedElement_feature", "_UI_ETypedElementResult_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__DERIVED_TYPED_ELEMENT,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Source feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addSourcePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ETypedElementResult_source_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementResult_source_feature", "_UI_ETypedElementResult_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__SOURCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ETypedElementResult_source_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementResult_source_feature", "_UI_ETypedElementResult_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__SOURCE,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Exception feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addExceptionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ETypedElementResult_exception_feature"), //$NON-NLS-1$
-				 getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementResult_exception_feature", "_UI_ETypedElementResult_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				 RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__EXCEPTION,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ETypedElementResult_exception_feature"), //$NON-NLS-1$
+						getString("_UI_PropertyDescriptor_description", "_UI_ETypedElementResult_exception_feature", "_UI_ETypedElementResult_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+						RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__EXCEPTION,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -170,6 +176,7 @@ public class ETypedElementResultItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -184,15 +191,16 @@ public class ETypedElementResultItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Throwable labelValue = ((ETypedElementResult)object).getException();
+		Throwable labelValue = ((ETypedElementResult) object).getException();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ETypedElementResult_type") : //$NON-NLS-1$
-			getString("_UI_ETypedElementResult_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				getString("_UI_ETypedElementResult_type") : //$NON-NLS-1$
+				getString("_UI_ETypedElementResult_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -200,6 +208,7 @@ public class ETypedElementResultItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -207,12 +216,12 @@ public class ETypedElementResultItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ETypedElementResult.class)) {
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__EXCEPTION:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
+		case RuntimePackage.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -222,6 +231,7 @@ public class ETypedElementResultItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -229,15 +239,16 @@ public class ETypedElementResultItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(RuntimePackage.Literals.ETYPED_ELEMENT_RESULT__PARAMETER_VALUES,
-				 EFacetFactory.eINSTANCE.createParameterValue()));
+						EFacetFactory.eINSTANCE.createParameterValue()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

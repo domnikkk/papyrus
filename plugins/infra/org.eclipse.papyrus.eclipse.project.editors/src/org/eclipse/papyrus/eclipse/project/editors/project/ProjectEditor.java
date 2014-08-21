@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,19 +27,19 @@ import org.eclipse.papyrus.eclipse.project.editors.Activator;
 import org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor;
 
 /**
- * 
+ *
  * This class allows to manage the eclipse project
- * 
+ *
  */
 public class ProjectEditor extends AbstractProjectEditor implements IProjectEditor {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param project
-	 *        the eclipse project
+	 *            the eclipse project
 	 * @throws CoreException
 	 */
 	public ProjectEditor(final IProject project) throws CoreException {
@@ -47,17 +47,17 @@ public class ProjectEditor extends AbstractProjectEditor implements IProjectEdit
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param folder
-	 *        a folder
+	 *            a folder
 	 * @throws CoreException
 	 */
 	public ProjectEditor(final IFolder folder) throws CoreException {
 		super(null);
-		//TODO : create an action to import a folder as a project!
-		//this will allow to test the create method
+		// TODO : create an action to import a folder as a project!
+		// this will allow to test the create method
 		throw new UnsupportedOperationException();
 	}
 
@@ -66,15 +66,15 @@ public class ProjectEditor extends AbstractProjectEditor implements IProjectEdit
 	/**
 	 * Create the project file
 	 * TODO NOT TESTED
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#createFiles(Set)
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	public void createFiles(final Set<String> files) {
-		if(files.contains(PROJECT_FILE)) {
+		if (files.contains(PROJECT_FILE)) {
 			final IFile file = getProject().getFile(PROJECT_FILE);
-			if(!file.exists()) {
+			if (!file.exists()) {
 				String input = ""; //$NON-NLS-1$
 				input += AbstractProjectEditor.XML_HEADER;
 				input += "<" + NAME + ">"; //$NON-NLS-1$ //$NON-NLS-2$
@@ -98,33 +98,33 @@ public class ProjectEditor extends AbstractProjectEditor implements IProjectEdit
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#getMissingFiles()
-	 * 
+	 *
 	 *      {@inheritDoc}
 	 */
 	@Override
 	public Set<String> getMissingFiles() {
 		final Set<String> missingFile = super.getMissingFiles();
 		final IFile projectFile = getProject().getFile(PROJECT_FILE);
-		if(!projectFile.exists()) {
+		if (!projectFile.exists()) {
 			missingFile.add(IProjectEditor.PROJECT_FILE);
 		}
 		return missingFile;
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.eclipse.project.editors.interfaces.IProjectEditor#addFile(java.net.URL, java.lang.String)
-	 * 
+	 *
 	 * @param url
 	 * @param fileDestinationPath
 	 * @param eraseExitingFile
 	 */
 	public void addFile(final URL url, final String fileDestinationPath, final boolean eraseExitingFile) {
 		final IFile targetFile = getProject().getFile(new Path(fileDestinationPath));
-		if(targetFile.exists()) {
-			if(eraseExitingFile) {
+		if (targetFile.exists()) {
+			if (eraseExitingFile) {
 				try {
 					targetFile.delete(true, new NullProgressMonitor());
 				} catch (final CoreException e) {
@@ -135,7 +135,8 @@ public class ProjectEditor extends AbstractProjectEditor implements IProjectEdit
 			}
 		}
 		try {
-			final InputStream is = url.openStream();;
+			final InputStream is = url.openStream();
+			;
 			targetFile.create(is, false, new NullProgressMonitor());
 			is.close();
 			targetFile.refreshLocal(IResource.DEPTH_ZERO, new NullProgressMonitor());

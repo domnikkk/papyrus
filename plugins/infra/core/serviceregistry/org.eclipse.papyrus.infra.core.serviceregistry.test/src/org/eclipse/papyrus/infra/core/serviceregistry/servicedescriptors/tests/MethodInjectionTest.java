@@ -11,6 +11,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.Service
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Method Injection</b></em>'.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class MethodInjectionTest extends AbstractMethodInjectionTest {
@@ -18,6 +19,7 @@ public class MethodInjectionTest extends AbstractMethodInjectionTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class MethodInjectionTest extends AbstractMethodInjectionTest {
 	 * Constructs a new Method Injection test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public MethodInjectionTest(String name) {
@@ -38,16 +41,18 @@ public class MethodInjectionTest extends AbstractMethodInjectionTest {
 	 * Returns the fixture for this Method Injection test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	protected MethodInjection getFixture() {
-		return (MethodInjection)fixture;
+		return (MethodInjection) fixture;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,6 +64,7 @@ public class MethodInjectionTest extends AbstractMethodInjectionTest {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -67,4 +73,4 @@ public class MethodInjectionTest extends AbstractMethodInjectionTest {
 		setFixture(null);
 	}
 
-} //MethodInjectionTest
+} // MethodInjectionTest

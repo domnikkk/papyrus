@@ -30,11 +30,12 @@ import org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescr
  * This is the item provider adapter for a {@link org.eclipse.papyrus.views.properties.environment.ModelElementFactoryDescriptor} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ModelElementFactoryDescriptorItemProvider
-	extends ItemProviderAdapter
-	implements
+		extends ItemProviderAdapter
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelElementFactoryDescriptorItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -71,50 +74,53 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelElementFactoryDescriptor_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementFactoryDescriptor_name_feature", "_UI_ModelElementFactoryDescriptor_type"),
-				 EnvironmentPackage.Literals.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ModelElementFactoryDescriptor_name_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ModelElementFactoryDescriptor_name_feature", "_UI_ModelElementFactoryDescriptor_type"),
+						EnvironmentPackage.Literals.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Factory Class feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addFactoryClassPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ModelElementFactoryDescriptor_factoryClass_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ModelElementFactoryDescriptor_factoryClass_feature", "_UI_ModelElementFactoryDescriptor_type"),
-				 EnvironmentPackage.Literals.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_ModelElementFactoryDescriptor_factoryClass_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ModelElementFactoryDescriptor_factoryClass_feature", "_UI_ModelElementFactoryDescriptor_type"),
+						EnvironmentPackage.Literals.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns ModelElementFactoryDescriptor.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -126,14 +132,15 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ModelElementFactoryDescriptor)object).getName();
+		String label = ((ModelElementFactoryDescriptor) object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ModelElementFactoryDescriptor_type") :
-			getString("_UI_ModelElementFactoryDescriptor_type") + " " + label;
+				getString("_UI_ModelElementFactoryDescriptor_type") :
+				getString("_UI_ModelElementFactoryDescriptor_type") + " " + label;
 	}
 
 	/**
@@ -141,6 +148,7 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -148,10 +156,10 @@ public class ModelElementFactoryDescriptorItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ModelElementFactoryDescriptor.class)) {
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
-			case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__NAME:
+		case EnvironmentPackage.MODEL_ELEMENT_FACTORY_DESCRIPTOR__FACTORY_CLASS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -161,6 +169,7 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -172,6 +181,7 @@ public class ModelElementFactoryDescriptorItemProvider
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

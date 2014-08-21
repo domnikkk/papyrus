@@ -15,9 +15,9 @@ import java.util.Map;
 
 /**
  * An interface for providing Masks for editing mask-based integer values
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @see StringMask
  */
 public interface MaskProvider {

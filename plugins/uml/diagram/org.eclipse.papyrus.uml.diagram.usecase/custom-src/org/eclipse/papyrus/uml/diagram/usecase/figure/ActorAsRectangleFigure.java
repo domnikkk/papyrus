@@ -1,5 +1,6 @@
 package org.eclipse.papyrus.uml.diagram.usecase.figure;
 
+import org.eclipse.draw2d.OrderedLayout;
 import org.eclipse.papyrus.uml.diagram.common.figure.node.NodeNamedElementFigure;
 
 public class ActorAsRectangleFigure extends NodeNamedElementFigure {
@@ -9,7 +10,7 @@ public class ActorAsRectangleFigure extends NodeNamedElementFigure {
 	public ActorAsRectangleFigure() {
 		org.eclipse.draw2d.ToolbarLayout layoutThis = new org.eclipse.draw2d.ToolbarLayout();
 		layoutThis.setStretchMinorAxis(true);
-		layoutThis.setMinorAlignment(org.eclipse.draw2d.ToolbarLayout.ALIGN_CENTER);
+		layoutThis.setMinorAlignment(OrderedLayout.ALIGN_CENTER);
 		layoutThis.setSpacing(0);
 		layoutThis.setHorizontal(false);
 		this.setLayoutManager(layoutThis);
@@ -35,6 +36,7 @@ public class ActorAsRectangleFigure extends NodeNamedElementFigure {
 
 	private boolean myUseLocalCoordinates = false;
 
+	@Override
 	protected boolean useLocalCoordinates() {
 		return myUseLocalCoordinates;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,29 +25,28 @@ import org.eclipse.gmf.runtime.notation.View;
 
 /**
  * This command allows to show/hide the compartment title
- * 
- * 
+ *
+ *
  */
 public class ShowHideTitleOfCompartmentCommand extends SetPropertyCommand {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
-	 *        the compartment view
+	 *            the compartment view
 	 * @param visibility
-	 *        the visibility of the title
+	 *            the visibility of the title
 	 */
 	public ShowHideTitleOfCompartmentCommand(TransactionalEditingDomain domain, View view, boolean visibility) {
 		super(domain, new EObjectAdapter(view), Properties.ID_SHOWCOMPARTMENTTITLE, "Show/Hide Compartment Title", Boolean.valueOf(visibility)); //$NON-NLS-1$
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 *
+	 * @see org.eclipse.gmf.runtime.diagram.core.commands.SetPropertyCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param progressMonitor
 	 * @param info
 	 * @return

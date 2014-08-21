@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,17 +29,18 @@ public class ObjectToIntegerConverter extends Converter implements IConverter {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Integer convert(Object fromObject) {
-		if(fromObject == null) {
+		if (fromObject == null) {
 			return null;
 		}
 
-		if(fromObject instanceof Integer) {
-			return (Integer)fromObject;
+		if (fromObject instanceof Integer) {
+			return (Integer) fromObject;
 		}
 
-		if(fromObject instanceof String) {
-			return Integer.parseInt((String)fromObject);
+		if (fromObject instanceof String) {
+			return Integer.parseInt((String) fromObject);
 		}
 
 		return null;

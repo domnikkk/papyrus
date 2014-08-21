@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -49,17 +49,18 @@ public class TimeObservationEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(source == null && target == null) {
+		if (source == null && target == null) {
 			return false;
 		}
-		if(source != null && false == source instanceof TimeObservation) {
+		if (source != null && false == source instanceof TimeObservation) {
 			return false;
 		}
-		if(target != null && false == target instanceof NamedElement) {
+		if (target != null && false == target instanceof NamedElement) {
 			return false;
 		}
-		if(getSource() == null) {
+		if (getSource() == null) {
 			return true; // link creation is in progress; source is not defined yet
 		}
 		// target may be null here but it's possible to check constraint
@@ -69,11 +70,12 @@ public class TimeObservationEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		if(getSource() != null && getTarget() != null) {
+		if (getSource() != null && getTarget() != null) {
 			getSource().setEvent(getTarget());
 		}
 		return CommandResult.newOKCommandResult();
@@ -82,6 +84,7 @@ public class TimeObservationEventCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setElementToEdit(EObject element) {
 		throw new UnsupportedOperationException();
 	}
@@ -90,13 +93,13 @@ public class TimeObservationEventCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected TimeObservation getSource() {
-		return (TimeObservation)source;
+		return (TimeObservation) source;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected NamedElement getTarget() {
-		return (NamedElement)target;
+		return (NamedElement) target;
 	}
 }

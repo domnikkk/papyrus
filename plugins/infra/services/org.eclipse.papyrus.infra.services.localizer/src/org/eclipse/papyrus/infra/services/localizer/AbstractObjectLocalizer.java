@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,7 +33,7 @@ public abstract class AbstractObjectLocalizer implements IObjectLocalizer {
 	public Map<EObject, EObject> getLocalEObjects(ResourceSet localSet, Iterable<? extends EObject> remoteObjects) {
 		ImmutableMap.Builder<EObject, EObject> result = ImmutableMap.builder();
 
-		for(EObject next : remoteObjects) {
+		for (EObject next : remoteObjects) {
 			result.put(next, getLocalEObject(localSet, next));
 		}
 
@@ -44,7 +44,7 @@ public abstract class AbstractObjectLocalizer implements IObjectLocalizer {
 	public Map<Resource, Resource> getLocalResources(ResourceSet localSet, Iterable<? extends Resource> remoteResources) {
 		ImmutableMap.Builder<Resource, Resource> result = ImmutableMap.builder();
 
-		for(Resource next : remoteResources) {
+		for (Resource next : remoteResources) {
 			result.put(next, getLocalResource(localSet, next));
 		}
 
@@ -55,9 +55,9 @@ public abstract class AbstractObjectLocalizer implements IObjectLocalizer {
 		Resource resource = null;
 
 		// in CDO, resources are EObjects
-		if(object instanceof Resource) {
-			resource = (Resource)object;
-		} else if(object != null) {
+		if (object instanceof Resource) {
+			resource = (Resource) object;
+		} else if (object != null) {
 			resource = object.eResource();
 		}
 

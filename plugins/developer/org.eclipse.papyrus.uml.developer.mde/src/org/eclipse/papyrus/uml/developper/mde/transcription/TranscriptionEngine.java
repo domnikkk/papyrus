@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,17 +36,20 @@ import org.eclipse.uml2.uml.Stereotype;
  */
 public class TranscriptionEngine {
 	protected static final String INTERNAL_DIRECTORY = "doc/"; //$NON-NLS-1$
-	Model model=null;
+	Model model = null;
 	IProject project;
-	ITranscription transcription=null;
-	
+	ITranscription transcription = null;
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
-	 * @param model the root model
-	 * @param project the project where we want to put the new file
-	 * @param transcription the object in charge to do the transcription
+	 * @param model
+	 *            the root model
+	 * @param project
+	 *            the project where we want to put the new file
+	 * @param transcription
+	 *            the object in charge to do the transcription
 	 */
 	public TranscriptionEngine(Model model, IProject project, ITranscription transcription) {
 		super();
@@ -59,15 +62,16 @@ public class TranscriptionEngine {
 	 * execute the transcription
 	 */
 	public void traduce() {
-		IFile file = project.getFile(INTERNAL_DIRECTORY+transcription.getNameFile());
-		//at this point, no resources have been created
-		if (!project.isOpen())
+		IFile file = project.getFile(INTERNAL_DIRECTORY + transcription.getNameFile());
+		// at this point, no resources have been created
+		if (!project.isOpen()) {
 			try {
 				project.open(null);
 			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		}
 		if (file.exists()) {
 			try {
 				file.delete(true, new NullProgressMonitor());
@@ -76,7 +80,7 @@ public class TranscriptionEngine {
 			}
 		}
 		if (!file.exists()) {
-			StringBuffer buffer=getText(model);
+			StringBuffer buffer = getText(model);
 			InputStream source = new ByteArrayInputStream(buffer.toString().getBytes());
 			try {
 				file.create(source, IResource.NONE, null);
@@ -85,26 +89,27 @@ public class TranscriptionEngine {
 			}
 		}
 	}
-	
+
 	/**
-	 * 
-	 * @param model that will be traduced
+	 *
+	 * @param model
+	 *            that will be traduced
 	 * @return the stringBuffer that will be obtained from the transcription
 	 */
-	public StringBuffer getText(Model model){
+	public StringBuffer getText(Model model) {
 
 		StringBuffer out = new StringBuffer();
 		transcription.writeBeginningDocument(out);
-		Model documentModel=null;
-		for(Iterator<PackageableElement> iterator = model.getPackagedElements().iterator(); iterator.hasNext();) {
-			PackageableElement packageableElement = (PackageableElement)iterator.next();
-			if((packageableElement.getAppliedStereotype(I_DocumentStereotype.DOCUMENT_STEREOTYPE))!=null){
-				documentModel=(Model)packageableElement;
+		Model documentModel = null;
+		for (Iterator<PackageableElement> iterator = model.getPackagedElements().iterator(); iterator.hasNext();) {
+			PackageableElement packageableElement = iterator.next();
+			if ((packageableElement.getAppliedStereotype(I_DocumentStereotype.DOCUMENT_STEREOTYPE)) != null) {
+				documentModel = (Model) packageableElement;
 			}
 		}
-		if(documentModel!=null){
+		if (documentModel != null) {
 			transcription.writeDocumentTitle(out, documentModel);
-			writeContent(out, documentModel,2);
+			writeContent(out, documentModel, 2);
 		}
 
 		transcription.writeEndingDocument(out);
@@ -113,31 +118,35 @@ public class TranscriptionEngine {
 
 	/**
 	 * create a content from a package
-	 * @param out the result
-	 * @param documentModel the package where its content will be translated
-	 * @param level the depth of  the current package
+	 * 
+	 * @param out
+	 *            the result
+	 * @param documentModel
+	 *            the package where its content will be translated
+	 * @param level
+	 *            the depth of the current package
 	 */
 	public void writeContent(StringBuffer out, Package documentModel, int level) {
-		for(Iterator<Element> iteComment = (documentModel).getOwnedElements().iterator(); iteComment.hasNext();) {
-			Element packageableElement = (Element)iteComment.next();
-			if(((Element)packageableElement).getAppliedStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE)!=null){
-				if(((Comment)packageableElement).getBody()!=null){
+		for (Iterator<Element> iteComment = (documentModel).getOwnedElements().iterator(); iteComment.hasNext();) {
+			Element packageableElement = iteComment.next();
+			if (packageableElement.getAppliedStereotype(I_DocumentStereotype.CONTENT_STEREOTYPE) != null) {
+				if (((Comment) packageableElement).getBody() != null) {
 					transcription.writeParagraph(out, packageableElement);
 				}
 			}
-			if(((Element)packageableElement).getAppliedStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE)!=null){
-				Stereotype imgRefStereotype=((Element)packageableElement).getAppliedStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE);
-				if(((Comment)packageableElement).getBody()!=null){
+			if (packageableElement.getAppliedStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE) != null) {
+				Stereotype imgRefStereotype = packageableElement.getAppliedStereotype(I_DocumentStereotype.IMAGEREF_STEREOTYPE);
+				if (((Comment) packageableElement).getBody() != null) {
 					transcription.writeImageRef(out, packageableElement, imgRefStereotype);
 				}
 			}
-			if(((Element)packageableElement).getAppliedStereotype(I_DocumentStereotype.SECTION_STEREOTYPE)!=null){
+			if (packageableElement.getAppliedStereotype(I_DocumentStereotype.SECTION_STEREOTYPE) != null) {
 				transcription.writesectionTitle(out, level, packageableElement);
-				writeContent(out, ((Package)packageableElement), level+1);
+				writeContent(out, ((Package) packageableElement), level + 1);
 
 			}
 		}
 
 	}
-	
+
 }

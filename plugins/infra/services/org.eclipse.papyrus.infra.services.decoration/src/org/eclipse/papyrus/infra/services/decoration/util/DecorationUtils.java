@@ -47,10 +47,10 @@ public class DecorationUtils {
 	 * Create instance of class DecorationUtils.
 	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 */
 	public DecorationUtils(Object element) {
-		if(element == null) {
+		if (element == null) {
 			throw new IllegalArgumentException("The decorated element shall not be null");
 		}
 
@@ -58,13 +58,13 @@ public class DecorationUtils {
 		eObjects = new BasicEList<EObject>();
 
 		this.element = element;
-		if(eObject != null) {
+		if (eObject != null) {
 			eObjects.add(eObject);
-		} else if(element instanceof EReferenceTreeElement) {
+		} else if (element instanceof EReferenceTreeElement) {
 			// for bug 391676
-			for(Object child : ((EReferenceTreeElement)element).getReferedEObjectTE()) {
-				if(child instanceof EObject) {
-					eObjects.add((EObject)child);
+			for (Object child : ((EReferenceTreeElement) element).getReferedEObjectTE()) {
+				if (child instanceof EObject) {
+					eObjects.add((EObject) child);
 				}
 			}
 		}
@@ -75,10 +75,10 @@ public class DecorationUtils {
 	 * Instantiates a new decoration utils.
 	 *
 	 * @param eObject
-	 *        the e object
+	 *            the e object
 	 */
 	public DecorationUtils(EObject eObject) {
-		if(eObject == null) {
+		if (eObject == null) {
 			throw new IllegalArgumentException("The decorated EObject shall not be null");
 		}
 		eObjects = new BasicEList<EObject>();
@@ -96,7 +96,7 @@ public class DecorationUtils {
 	 * Gets the decorations.
 	 *
 	 * @param decorationService
-	 *        the decoration service
+	 *            the decoration service
 	 * @return the decorations
 	 */
 	public Map<String, Decoration> getDecorations(DecorationService decorationService) {
@@ -111,9 +111,9 @@ public class DecorationUtils {
 	 * If current element is a folder or link-item, decorations from childs are propagated.
 	 *
 	 * @param decorationService
-	 *        the decoration service
+	 *            the decoration service
 	 * @param navigateToParents
-	 *        the navigate to parents
+	 *            the navigate to parents
 	 * @return the decoration severity
 	 */
 	public EList<IPapyrusDecoration> getDecorations(DecorationService decorationService, boolean navigateToParents) {
@@ -121,12 +121,12 @@ public class DecorationUtils {
 		// child decorations are organized in a map indexed by the decoration type
 		EList<IPapyrusDecoration> foundDecorations = new BasicEList<IPapyrusDecoration>();
 		Map<String, EList<IPapyrusDecoration>> childDecorationMap = new HashMap<String, EList<IPapyrusDecoration>>();
-		if(decorations != null) {
-			for(Decoration decoration : decorations.values()) {
+		if (decorations != null) {
+			for (Decoration decoration : decorations.values()) {
 				EObject eObjectOfDecorator = decoration.getElement();
-				if(getEObjects().contains(eObjectOfDecorator)) {
+				if (getEObjects().contains(eObjectOfDecorator)) {
 					// decoration is for this element
-					if(decoration.getMessage() == null) {
+					if (decoration.getMessage() == null) {
 						decoration.setMessage("");
 					}
 					foundDecorations.add(decoration);
@@ -135,16 +135,16 @@ public class DecorationUtils {
 				// (technically, we check the parents of a decoration)
 				IDecorationSpecificFunctions decoUtil = DecorationSpecificFunctions.getDecorationInterface(decoration.getType());
 
-				if(navigateToParents && (decoUtil != null) && decoUtil.supportsMarkerPropagation() != MarkChildren.NO) {
+				if (navigateToParents && (decoUtil != null) && decoUtil.supportsMarkerPropagation() != MarkChildren.NO) {
 					MarkChildren markChildren = decoUtil.supportsMarkerPropagation();
 					boolean first = true;
 
 					eObjectOfDecorator = eObjectOfDecorator.eContainer();
-					while(eObjectOfDecorator != null) {
-						if(getEObjects().contains(eObjectOfDecorator)) {
+					while (eObjectOfDecorator != null) {
+						if (getEObjects().contains(eObjectOfDecorator)) {
 							String type = decoration.getType();
 							EList<IPapyrusDecoration> childDecorations = childDecorationMap.get(type);
-							if(childDecorations == null) {
+							if (childDecorations == null) {
 								// does not exist yet => create
 								childDecorations = new BasicEList<IPapyrusDecoration>();
 								childDecorationMap.put(type, childDecorations);
@@ -153,8 +153,8 @@ public class DecorationUtils {
 						}
 						// navigate to parents, since parent folder is concerned by error as well
 						eObjectOfDecorator = eObjectOfDecorator.eContainer();
-						if(markChildren != MarkChildren.ALL) {
-							if(!first) {
+						if (markChildren != MarkChildren.ALL) {
+							if (!first) {
 								break;
 							}
 						}
@@ -165,12 +165,12 @@ public class DecorationUtils {
 		}
 
 		// now process map of children
-		for(String type : childDecorationMap.keySet()) {
+		for (String type : childDecorationMap.keySet()) {
 			EList<IPapyrusDecoration> childDecorations = childDecorationMap.get(type);
-			if(childDecorations != null) {
+			if (childDecorations != null) {
 				IDecorationSpecificFunctions decoUtil = DecorationSpecificFunctions.getDecorationInterface(type);
 				IPapyrusDecoration propagatedDecoration = decoUtil.markerPropagation(childDecorations);
-				if(propagatedDecoration != null) {
+				if (propagatedDecoration != null) {
 					foundDecorations.add(propagatedDecoration);
 				}
 			}
@@ -182,21 +182,21 @@ public class DecorationUtils {
 	/**
 	 * Gets the decoration message.
 	 * Caveat: Decoration.getMessageFromDecorations is used instead of this operation
-	 * 
+	 *
 	 * @param decorationService
-	 *        the decoration service
+	 *            the decoration service
 	 * @return the decoration message
 	 */
 	@Deprecated
 	public String getDecorationMessage(DecorationService decorationService) {
 
 		Map<String, Decoration> decorations = getDecorations(decorationService);
-		if(decorations != null) {
+		if (decorations != null) {
 			String message = "";
-			for(Decoration decoration : decorations.values()) {
+			for (Decoration decoration : decorations.values()) {
 				EObject eObjectOfDecorator = decoration.getElement();
-				if(getEObjects().contains(eObjectOfDecorator)) {
-					if(message.length() > 0) {
+				if (getEObjects().contains(eObjectOfDecorator)) {
+					if (message.length() > 0) {
 						message += "\n";
 					}
 					message += "- " + WordUtils.wrap(decoration.getMessage(), 100, "\n  ", true);

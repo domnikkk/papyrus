@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -17,7 +17,6 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart;
 import org.eclipse.gmf.runtime.draw2d.ui.figures.FigureUtilities;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -35,9 +34,9 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 
 /**
- * 
+ *
  * The button used to reset the preference of the diagram to the defaut values
- * 
+ *
  */
 public class DiagramPreferencesDefaultButton extends Composite {
 
@@ -48,9 +47,9 @@ public class DiagramPreferencesDefaultButton extends Composite {
 	protected DataSource input;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -73,7 +72,7 @@ public class DiagramPreferencesDefaultButton extends Composite {
 
 	/**
 	 * Sets the input DataSource for this Property editor.
-	 * 
+	 *
 	 * @param input
 	 */
 	public void setInput(DataSource input) {
@@ -88,7 +87,7 @@ public class DiagramPreferencesDefaultButton extends Composite {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the listener to use for the button
 	 */
 	private SelectionListener createListener() {
@@ -106,9 +105,9 @@ public class DiagramPreferencesDefaultButton extends Composite {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.widgets.Widget#dispose()
-	 * 
+	 *
 	 */
 	@Override
 	public void dispose() {
@@ -125,7 +124,7 @@ public class DiagramPreferencesDefaultButton extends Composite {
 		final IPreferenceStore store = getPreferencesStore();
 		final IPreferenceStore globalPreferenceStore = Activator.getDefault().getPreferenceStore();
 		final String diagramType = getDiagramType();
-		if(store != null && diagramType != null && !diagramType.equals("")) { //$NON-NLS-1$
+		if (store != null && diagramType != null && !diagramType.equals("")) { //$NON-NLS-1$
 			store.setValue(PreferencesConstantsHelper.VIEW_GRID_CONSTANT, globalPreferenceStore.getBoolean(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.VIEW_GRID)));
 			store.setValue(PreferencesConstantsHelper.VIEW_RULERS_CONSTANT, globalPreferenceStore.getBoolean(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.VIEW_RULER)));
 			store.setValue(PreferencesConstantsHelper.GRID_ORDER_CONSTANT, globalPreferenceStore.getBoolean(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.GRID_ORDER)));
@@ -141,29 +140,29 @@ public class DiagramPreferencesDefaultButton extends Composite {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the preference store
 	 */
 	protected IPreferenceStore getPreferencesStore() {
 		final IStructuredSelection selection = this.input.getSelection();
 		final Object firstElement = selection.getFirstElement();
-		if(firstElement instanceof EditPart) {
-			return DiagramEditPartsUtil.getDiagramWorkspacePreferenceStore((EditPart)firstElement);
+		if (firstElement instanceof EditPart) {
+			return DiagramEditPartsUtil.getDiagramWorkspacePreferenceStore((EditPart) firstElement);
 		}
 		return null;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the type of the diagram
 	 */
 	protected String getDiagramType() {
 		final IStructuredSelection selection = this.input.getSelection();
 		final Object firstElement = selection.getFirstElement();
-		if(firstElement instanceof EditPart) {
-			final DiagramEditPart diagramEditPart = DiagramEditPartsUtil.getDiagramEditPart((EditPart)firstElement);
-			final Diagram diagram = (Diagram)diagramEditPart.getAdapter(Diagram.class);
+		if (firstElement instanceof EditPart) {
+			final DiagramEditPart diagramEditPart = DiagramEditPartsUtil.getDiagramEditPart((EditPart) firstElement);
+			final Diagram diagram = (Diagram) diagramEditPart.getAdapter(Diagram.class);
 			return diagram.getType();
 		}
 		return ""; //$NON-NLS-1$

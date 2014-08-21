@@ -46,9 +46,9 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 	 * Instantiates a new new model file page.
 	 *
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 * @param modelKindName
-	 *        the kind of model to be created (translatable)
+	 *            the kind of model to be created (translatable)
 	 */
 	public NewModelFilePage(IStructuredSelection selection, String modelKindName) {
 		this(PAGE_ID, selection, modelKindName);
@@ -58,11 +58,11 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 	 * Instantiates a new new model file page.
 	 *
 	 * @param pageId
-	 *        the page id
+	 *            the page id
 	 * @param selection
-	 *        the selection
+	 *            the selection
 	 * @param modelKindName
-	 *        the kind of model to be created (translatable)
+	 *            the kind of model to be created (translatable)
 	 */
 	public NewModelFilePage(String pageId, IStructuredSelection selection, String modelKindName) {
 		super(pageId, selection);
@@ -75,7 +75,7 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 	 * Creates the control.
 	 *
 	 * @param parent
-	 *        the parent {@inheritDoc}
+	 *            the parent {@inheritDoc}
 	 */
 	@Override
 	public void createControl(Composite parent) {
@@ -88,12 +88,12 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 	 * Diagram extension changed.
 	 *
 	 * @param newExtension
-	 *        the new extension
+	 *            the new extension
 	 * @return the i status
 	 */
 	public IStatus diagramExtensionChanged(String newExtension) {
 		String currentExtension = getFileExtension();
-		if(!currentExtension.equals(newExtension)) {
+		if (!currentExtension.equals(newExtension)) {
 
 			String oldFileName = getFileName();
 			String newFileName = NewModelFilePage.getUniqueFileName(getContainerFullPath(), getFileName(), newExtension);
@@ -102,13 +102,13 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 			setFileExtension(newExtension);
 
 			String message1 = Messages.NewModelFilePage_new_diagram_category_needs_specific_extension;
-			String message2 = Messages.bind(Messages.NewModelFilePage_diagram_file_was_renamed, oldFileName, newFileName);
+			String message2 = NLS.bind(Messages.NewModelFilePage_diagram_file_was_renamed, oldFileName, newFileName);
 			String message = message1 + message2;
-			Status resultStatus = new Status(Status.INFO, Activator.PLUGIN_ID, message);
+			Status resultStatus = new Status(IStatus.INFO, Activator.PLUGIN_ID, message);
 
 			String errorMessage = getErrorMessage();
-			if(errorMessage != null) {
-				resultStatus = new Status(Status.ERROR, Activator.PLUGIN_ID, errorMessage);
+			if (errorMessage != null) {
+				resultStatus = new Status(IStatus.ERROR, Activator.PLUGIN_ID, errorMessage);
 			}
 			return resultStatus;
 		}
@@ -126,26 +126,26 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 	 * Gets the unique file name.
 	 *
 	 * @param containerFullPath
-	 *        the container full path
+	 *            the container full path
 	 * @param fileName
-	 *        the file name
+	 *            the file name
 	 * @param extension
-	 *        the extension
+	 *            the extension
 	 * @return the unique file name
 	 */
 	protected static String getUniqueFileName(IPath containerFullPath, String fileName, String extension) {
-		if(extension == null) {
+		if (extension == null) {
 			extension = ""; //$NON-NLS-1$
 		}
 
-		if(containerFullPath == null) {
+		if (containerFullPath == null) {
 			containerFullPath = new Path(""); //$NON-NLS-1$
 		}
-		if(fileName == null || fileName.trim().length() == 0) {
+		if (fileName == null || fileName.trim().length() == 0) {
 			fileName = DEFAULT_NAME;
 		}
 
-		if(fileName.contains(".")) { //$NON-NLS-1$
+		if (fileName.contains(".")) { //$NON-NLS-1$
 			fileName = fileName.substring(0, fileName.indexOf(".")); //$NON-NLS-1$
 		}
 
@@ -154,10 +154,10 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 		filePath = filePath.addFileExtension(extension);
 
 		int i = 1;
-		while(ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
+		while (ResourcesPlugin.getWorkspace().getRoot().exists(filePath)) {
 			i++;
 			filePath = containerFullPath.append(fileName + i);
-			if(extension != null) {
+			if (extension != null) {
 				filePath = filePath.addFileExtension(extension);
 			}
 		}
@@ -166,18 +166,18 @@ public class NewModelFilePage extends WizardNewFileCreationPage {
 
 	@Override
 	protected void createAdvancedControls(Composite parent) {
-		//Nothing: the standard "createAdvancedControls" method adds an option to "Link to file in the file system".
-		//It is not properly integrated with Papyrus (Which creates 3 different files, and only one of them is actually linked to the file system)
+		// Nothing: the standard "createAdvancedControls" method adds an option to "Link to file in the file system".
+		// It is not properly integrated with Papyrus (Which creates 3 different files, and only one of them is actually linked to the file system)
 	}
 
 	@Override
 	protected IStatus validateLinkedResource() {
-		return Status.OK_STATUS; //Disable this method to avoid NPE (Because we override #createAdvancedControls)
+		return Status.OK_STATUS; // Disable this method to avoid NPE (Because we override #createAdvancedControls)
 	}
 
 	@Override
 	protected void createLinkTarget() {
-		//Disable this method to avoid NPE (Because we override #createAdvancedControls)
+		// Disable this method to avoid NPE (Because we override #createAdvancedControls)
 	}
 
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,14 +28,14 @@ public class CSSModelElementFactory extends CustomStyleModelElementFactory {
 	@Override
 	protected CustomStyleModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		View view = NotationHelper.findView(sourceElement);
-		if(view == null) {
+		if (view == null) {
 			Activator.log.warn("The selected element cannot be resolved to a GMF View");
 			return null;
 		}
 
 		EditingDomain domain = EMFHelper.resolveEditingDomain(view);
 
-		if(domain == null) {
+		if (domain == null) {
 			return new CSSModelElement(view, context);
 		} else {
 			return new CSSModelElement(view, domain, context);

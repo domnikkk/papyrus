@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -60,20 +60,25 @@ public class SetNestedPathCommand extends EditElementCommand {
 	public final static int NESTED_TARGET = 2;
 
 	/**
-	 * Indicates whether or not the source of the target of the {@link Connector} is nested. 
+	 * Indicates whether or not the source of the target of the {@link Connector} is nested.
 	 * One of {@link #NESTED_SOURCE} or {@link #NESTED_TARGET}.
 	 */
 	private final int nestedEndDirection;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
-	 * @param label the command label.
-	 * @param elementToEdit the element to edit.
-	 * @param request the request this command contribute to ({@link CreateRelationshipRequest} or {@link ReorientRelationshipRequest})
-	 * @param nestedPath the property path to set (in {@link NestedConnectorEnd#getPropertyPath()} ).
-	 * @param nestedEndDirection the direction ({@link #NESTED_SOURCE} or {@link #NESTED_TARGET}) of the {@link ConnectorEnd} to modify.
+	 * @param label
+	 *            the command label.
+	 * @param elementToEdit
+	 *            the element to edit.
+	 * @param request
+	 *            the request this command contribute to ({@link CreateRelationshipRequest} or {@link ReorientRelationshipRequest})
+	 * @param nestedPath
+	 *            the property path to set (in {@link NestedConnectorEnd#getPropertyPath()} ).
+	 * @param nestedEndDirection
+	 *            the direction ({@link #NESTED_SOURCE} or {@link #NESTED_TARGET}) of the {@link ConnectorEnd} to modify.
 	 */
 	public SetNestedPathCommand(String label, EObject elementToEdit, IEditCommandRequest request, List<Property> nestedPath, int nestedEndDirection) {
 		super(label, elementToEdit, request);
@@ -84,59 +89,62 @@ public class SetNestedPathCommand extends EditElementCommand {
 	/**
 	 * Test whether the command can be executed or not.
 	 */
+	@Override
 	public boolean canExecute() {
 
 		// Verify the kind of request
-		if(! (getRequest() instanceof CreateRelationshipRequest) 
-			&& ! (getRequest() instanceof ReorientRelationshipRequest)) {
-			
+		if (!(getRequest() instanceof CreateRelationshipRequest)
+				&& !(getRequest() instanceof ReorientRelationshipRequest)) {
+
 			return false;
 		}
 
 		// Verify (basic) that the related Connector well-formed.
 		// In case of Connector creation, the connector is most probably not created yet
 		if ((getConnector() != null)
-			&& (getConnector().getEnds().size() != 2)) {
-			
+				&& (getConnector().getEnds().size() != 2)) {
+
 			return false; // binary connector expected.
 		}
-		
+
 		return true;
 	}
 
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Unexecutable command."); //$NON-NLS-1$
 		}
 
 		ConnectorEnd modifiedEnd = getModifiedConnectorEnd();
 		NestedConnectorEnd nestedConnectorEnd = UMLUtil.getStereotypeApplication(modifiedEnd, NestedConnectorEnd.class);
 
-		if(nestedPath.isEmpty()) {
+		if (nestedPath.isEmpty()) {
 			// Remove stereotype if applied
-			if(nestedConnectorEnd != null) {
+			if (nestedConnectorEnd != null) {
 				EcoreUtil.delete(nestedConnectorEnd, true);
 			}
 
 		} else {
 			// Add stereotype if not applied and set new path if different from existing
-			if(nestedConnectorEnd == null) {
+			if (nestedConnectorEnd == null) {
 				// apply stereotype
-				nestedConnectorEnd = (NestedConnectorEnd)StereotypeApplicationHelper.INSTANCE.applyStereotype(modifiedEnd, BlocksPackage.eINSTANCE.getNestedConnectorEnd());
+				nestedConnectorEnd = (NestedConnectorEnd) StereotypeApplicationHelper.INSTANCE.applyStereotype(modifiedEnd, BlocksPackage.eINSTANCE.getNestedConnectorEnd());
 			}
 
 			// Set path
-			if(!nestedConnectorEnd.getPropertyPath().equals(nestedPath)) {
+			if (!nestedConnectorEnd.getPropertyPath().equals(nestedPath)) {
 				nestedConnectorEnd.getPropertyPath().clear();
 				nestedConnectorEnd.getPropertyPath().addAll(nestedPath);
 			}
 		}
-		
+
 		return CommandResult.newOKCommandResult(getConnector());
 	}
 
 	/**
 	 * Get the {@link ConnectorEnd} currently modified by the command.
+	 * 
 	 * @return the modified {@link ConnectorEnd}.
 	 */
 	private ConnectorEnd getModifiedConnectorEnd() {
@@ -145,16 +153,17 @@ public class SetNestedPathCommand extends EditElementCommand {
 
 	/**
 	 * Get the {@link Connector} currently under creation or re-orient that hold {@link ConnectorEnd} to update.
+	 * 
 	 * @return the related {@link Connector}.
 	 */
 	private Connector getConnector() {
 		Connector connector = null;
-		if(getRequest() instanceof CreateRelationshipRequest) {
-			connector = (Connector)((CreateRelationshipRequest)getRequest()).getNewElement();
+		if (getRequest() instanceof CreateRelationshipRequest) {
+			connector = (Connector) ((CreateRelationshipRequest) getRequest()).getNewElement();
 		}
 
-		if(getRequest() instanceof ReorientRelationshipRequest) {
-			connector = (Connector)((ReorientRelationshipRequest)getRequest()).getRelationship();
+		if (getRequest() instanceof ReorientRelationshipRequest) {
+			connector = (Connector) ((ReorientRelationshipRequest) getRequest()).getRelationship();
 		}
 		return connector;
 	}

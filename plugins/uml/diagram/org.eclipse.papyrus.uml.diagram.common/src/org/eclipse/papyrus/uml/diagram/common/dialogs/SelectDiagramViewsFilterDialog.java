@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – initial API and
  * implementation
  *
@@ -37,7 +37,7 @@ import org.eclipse.swt.widgets.TreeItem;
 
 /**
  * The Class SelectDiagramViewsFilterDialog.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class SelectDiagramViewsFilterDialog extends Dialog {
@@ -56,11 +56,11 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Instantiates a new select diagram views filter dialog.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	public SelectDiagramViewsFilterDialog(IShellProvider parentShell, DiagramEditPart diagram) {
 		super(parentShell);
@@ -69,11 +69,11 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Instantiates a new select diagram views filter dialog.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	public SelectDiagramViewsFilterDialog(Shell parentShell, DiagramEditPart diagram) {
 		super(parentShell);
@@ -93,7 +93,7 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Gets the diagram edit part.
-	 * 
+	 *
 	 * @return the diagram edit part
 	 */
 	public DiagramEditPart getDiagramEditPart() {
@@ -102,14 +102,14 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Gets the view info.
-	 * 
+	 *
 	 * @return the view info
 	 */
 	public ViewInfo getViewInfo() {
-		if(viewInfo == null) {
+		if (viewInfo == null) {
 			Object adapter = getDiagramEditPart().getAdapter(ViewInfo.class);
-			if(adapter instanceof ViewInfo) {
-				viewInfo = (ViewInfo)adapter;
+			if (adapter instanceof ViewInfo) {
+				viewInfo = (ViewInfo) adapter;
 			}
 		}
 		return viewInfo;
@@ -117,7 +117,7 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Gets the tree viewer.
-	 * 
+	 *
 	 * @return the tree viewer
 	 */
 	public TreeViewer getTreeViewer() {
@@ -126,11 +126,11 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Gets the selected.
-	 * 
+	 *
 	 * @return the selected
 	 */
 	public Collection<Integer> getSelected() {
-		if(selected == null) {
+		if (selected == null) {
 			buildSelected();
 		}
 		return selected;
@@ -141,14 +141,14 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 	 */
 	protected void buildSelected() {
 		selected = new ArrayList<Integer>();
-		if(getTreeViewer() == null || getTreeViewer().getTree() == null || getTreeViewer().getTree().getItems().length <= 0) {
+		if (getTreeViewer() == null || getTreeViewer().getTree() == null || getTreeViewer().getTree().getItems().length <= 0) {
 			return;
 		}
-		for(TreeItem item : getTreeViewer().getTree().getItems()) {
-			if(item.getChecked() == false) {
+		for (TreeItem item : getTreeViewer().getTree().getItems()) {
+			if (item.getChecked() == false) {
 				Object data = item.getData();
-				if(data instanceof ViewInfo) {
-					selected.add(((ViewInfo)data).getVisualID());
+				if (data instanceof ViewInfo) {
+					selected.add(((ViewInfo) data).getVisualID());
 				}
 			}
 			addViewInfos(item, selected);
@@ -158,18 +158,18 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Adds the view infos.
-	 * 
+	 *
 	 * @param root
-	 *        the root
+	 *            the root
 	 * @param infos
-	 *        the infos
+	 *            the infos
 	 */
 	protected void addViewInfos(TreeItem root, Collection<Integer> infos) {
-		for(TreeItem item : root.getItems()) {
-			if(item.getChecked() == false) {
+		for (TreeItem item : root.getItems()) {
+			if (item.getChecked() == false) {
 				Object data = item.getData();
-				if(data instanceof ViewInfo) {
-					infos.add(((ViewInfo)data).getVisualID());
+				if (data instanceof ViewInfo) {
+					infos.add(((ViewInfo) data).getVisualID());
 				}
 			}
 			addViewInfos(item, infos);
@@ -178,12 +178,12 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Gets the diagram.
-	 * 
+	 *
 	 * @return the diagram
 	 */
 	protected Diagram getDiagram() {
-		if(getDiagramEditPart() != null) {
-			return (Diagram)getDiagramEditPart().getNotationView();
+		if (getDiagramEditPart() != null) {
+			return (Diagram) getDiagramEditPart().getNotationView();
 		}
 		return null;
 	}
@@ -211,10 +211,12 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 		treeViewer.setInput(getViewInfo());
 		treeViewer.getTree().addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				// should not be called
 			}
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				treeItemSelected(e);
 			}
@@ -232,21 +234,21 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 	 * Populate tree.
 	 */
 	protected void populateTree() {
-		if(getTreeViewer() == null || getTreeViewer().getTree() == null || getViewInfo() == null || getDiagram() == null) {
+		if (getTreeViewer() == null || getTreeViewer().getTree() == null || getViewInfo() == null || getDiagram() == null) {
 			return;
 		}
 		Diagram diagram = getDiagram();
 		Collection<Integer> filters = MDTUtil.getAllViewsToFilterFromDiagram(diagram);
-		for(TreeItem item : getTreeViewer().getTree().getItems()) {
+		for (TreeItem item : getTreeViewer().getTree().getItems()) {
 			Object data = item.getData();
-			if(data instanceof ViewInfo) {
-				ViewInfo info = (ViewInfo)data;
-				if(filters.contains(info.getVisualID())) {
+			if (data instanceof ViewInfo) {
+				ViewInfo info = (ViewInfo) data;
+				if (filters.contains(info.getVisualID())) {
 					item.setChecked(false);
 				} else {
 					item.setChecked(true);
 				}
-				if(((ViewInfo)data).isSelectable() == false) {
+				if (((ViewInfo) data).isSelectable() == false) {
 					item.setForeground(ColorConstants.gray);
 				}
 			}
@@ -256,18 +258,18 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 
 	/**
 	 * Sets the checked.
-	 * 
+	 *
 	 * @param root
-	 *        the root
+	 *            the root
 	 * @param filters
-	 *        the filters
+	 *            the filters
 	 */
 	protected void setChecked(TreeItem root, Collection<Integer> filters) {
-		for(TreeItem item : root.getItems()) {
+		for (TreeItem item : root.getItems()) {
 			Object data = item.getData();
-			if(data instanceof ViewInfo) {
-				ViewInfo info = (ViewInfo)data;
-				if(filters.contains(info.getVisualID())) {
+			if (data instanceof ViewInfo) {
+				ViewInfo info = (ViewInfo) data;
+				if (filters.contains(info.getVisualID())) {
 					item.setChecked(false);
 				} else {
 					item.setChecked(true);
@@ -280,14 +282,14 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 	protected boolean isChecking = false;
 
 	protected void treeItemSelected(SelectionEvent e) {
-		if(e.detail == SWT.CHECK && isChecking == false) {
+		if (e.detail == SWT.CHECK && isChecking == false) {
 			isChecking = true;
 			try {
 				Object data = e.item.getData();
-				ViewInfo viewInfo = (ViewInfo)Platform.getAdapterManager().getAdapter(data, ViewInfo.class);
-				TreeItem item = (TreeItem)Platform.getAdapterManager().getAdapter(e.item, TreeItem.class);
-				if(viewInfo != null && item != null && getTreeViewer().getTree().getItems() != null) {
-					if(viewInfo.isSelectable()) {
+				ViewInfo viewInfo = (ViewInfo) Platform.getAdapterManager().getAdapter(data, ViewInfo.class);
+				TreeItem item = (TreeItem) Platform.getAdapterManager().getAdapter(e.item, TreeItem.class);
+				if (viewInfo != null && item != null && getTreeViewer().getTree().getItems() != null) {
+					if (viewInfo.isSelectable()) {
 						setAllVisualIDsChecked(getTreeViewer().getTree().getItems(), viewInfo.getVisualID(), item.getChecked());
 					} else {
 						item.setChecked(!item.getChecked());
@@ -302,20 +304,20 @@ public class SelectDiagramViewsFilterDialog extends Dialog {
 	/**
 	 * When one element from the tree is selected, all elements with the same
 	 * VisualID are put into the same state (checked or unchecked).
-	 * 
+	 *
 	 * @param items
 	 * @param visualID
 	 * @param check
 	 */
 	protected void setAllVisualIDsChecked(TreeItem[] items, int visualID, boolean check) {
 		ViewInfo viewInfo = null;
-		for(TreeItem item : items) {
-			if(item != null) {
-				viewInfo = (ViewInfo)Platform.getAdapterManager().getAdapter(item.getData(), ViewInfo.class);
-				if(viewInfo != null && visualID == viewInfo.getVisualID()) {
+		for (TreeItem item : items) {
+			if (item != null) {
+				viewInfo = (ViewInfo) Platform.getAdapterManager().getAdapter(item.getData(), ViewInfo.class);
+				if (viewInfo != null && visualID == viewInfo.getVisualID()) {
 					item.setChecked(check);
 				}
-				if(item.getItems() != null) {
+				if (item.getItems() != null) {
 					setAllVisualIDsChecked(item.getItems(), visualID, check);
 				}
 			}

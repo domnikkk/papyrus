@@ -12,7 +12,7 @@ import org.eclipse.papyrus.uml.textedit.property.xtext.ui.internal.UmlPropertyAc
 
 /**
  * This class was generated. Customizations should only happen in a newly
- * introduced subclass. 
+ * introduced subclass.
  */
 public class UmlPropertyExecutableExtensionFactory extends AbstractGuiceAwareExecutableExtensionFactory {
 
@@ -20,10 +20,10 @@ public class UmlPropertyExecutableExtensionFactory extends AbstractGuiceAwareExe
 	protected Bundle getBundle() {
 		return UmlPropertyActivator.getInstance().getBundle();
 	}
-	
+
 	@Override
 	protected Injector getInjector() {
 		return UmlPropertyActivator.getInstance().getInjector(UmlPropertyActivator.ORG_ECLIPSE_PAPYRUS_UML_TEXTEDIT_PROPERTY_XTEXT_UMLPROPERTY);
 	}
-	
+
 }

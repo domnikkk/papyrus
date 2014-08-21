@@ -80,7 +80,7 @@ public class XWTResource extends ResourceImpl {
 	 * Constructs a new XWTResource with the given URI
 	 *
 	 * @param uri
-	 *        The resource's URI
+	 *            The resource's URI
 	 */
 	public XWTResource(URI uri) {
 		super(uri);
@@ -90,10 +90,10 @@ public class XWTResource extends ResourceImpl {
 	@Override
 	protected void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException {
 		xmlResource.load(inputStream, options);
-		Root root = (Root)xmlResource.getContents().get(0);
+		Root root = (Root) xmlResource.getContents().get(0);
 		try {
 			CompositeWidget widget = xmlToUISection(root);
-			if(widget == null) {
+			if (widget == null) {
 				Activator.log.warn("Cannot load the XWT Widget");
 			} else {
 				getContents().add(widget);
@@ -105,7 +105,7 @@ public class XWTResource extends ResourceImpl {
 
 	@Override
 	public void save(Map<?, ?> options) throws IOException {
-		if(options == null || options.isEmpty()) {
+		if (options == null || options.isEmpty()) {
 			Map<String, String> optionsMap = new HashMap<String, String>();
 			optionsMap.put(OPTION_SAVE_ONLY_IF_CHANGED, OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 			super.save(optionsMap);
@@ -114,8 +114,8 @@ public class XWTResource extends ResourceImpl {
 		}
 
 		Object formatValue = options.get(OPTION_FORMAT);
-		if(formatValue == null || formatValue == Boolean.TRUE) {
-			if(uri.isPlatform()) {
+		if (formatValue == null || formatValue == Boolean.TRUE) {
+			if (uri.isPlatform()) {
 				IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
 				XMLFormatter.format(file);
 			}
@@ -125,11 +125,11 @@ public class XWTResource extends ResourceImpl {
 	@Override
 	protected void doSave(OutputStream outputStream, Map<?, ?> options) throws IOException {
 		try {
-			if(getContents().isEmpty()) {
+			if (getContents().isEmpty()) {
 				Activator.log.warn("Cannot save an Empty XWT resource : " + getURI());
 				return;
 			}
-			Root root = uiSectionToXML((CompositeWidget)getContents().get(0));
+			Root root = uiSectionToXML((CompositeWidget) getContents().get(0));
 			xmlResource.getContents().clear();
 			xmlResource.getContents().add(root);
 			xmlResource.save(outputStream, options);
@@ -143,20 +143,20 @@ public class XWTResource extends ResourceImpl {
 
 	private Collection<Context> findContexts() {
 		Set<Context> rootContexts = new HashSet<Context>();
-		if(resourceSet == null) {
+		if (resourceSet == null) {
 			return Collections.emptyList();
 		}
 
-		for(Resource resource : resourceSet.getResources()) {
-			if(!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Context) {
-				Context context = (Context)resource.getContents().get(0);
+		for (Resource resource : resourceSet.getResources()) {
+			if (!resource.getContents().isEmpty() && resource.getContents().get(0) instanceof Context) {
+				Context context = (Context) resource.getContents().get(0);
 				rootContexts.add(context);
 			}
 		}
 
 		Set<Context> allContexts = new HashSet<Context>();
 
-		for(Context context : rootContexts) {
+		for (Context context : rootContexts) {
 			allContexts.addAll(PropertiesUtil.getDependencies(context));
 		}
 
@@ -180,14 +180,14 @@ public class XWTResource extends ResourceImpl {
 
 		ExecutionDiagnostic result = executor.execute(context, inXml, inRoot, inContexts, outUI);
 
-		if(result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
+		if (result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
 			List<EObject> outObjects = outUI.getContents();
 			Object objectResult = outObjects.get(0);
-			if(!(objectResult instanceof CompositeWidget)) {
+			if (!(objectResult instanceof CompositeWidget)) {
 				return null;
 			}
 
-			return (CompositeWidget)outObjects.get(0);
+			return (CompositeWidget) outObjects.get(0);
 		} else {
 			IStatus status = BasicDiagnostic.toIStatus(result);
 			Activator.getDefault().getLog().log(status);
@@ -236,10 +236,10 @@ public class XWTResource extends ResourceImpl {
 
 		ExecutionDiagnostic result = executor.execute(context, inWidget, outXML);
 
-		if(result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
+		if (result.getSeverity() == org.eclipse.emf.common.util.Diagnostic.OK) {
 			List<EObject> outObjects = outXML.getContents();
 
-			return (Root)outObjects.get(0);
+			return (Root) outObjects.get(0);
 		} else {
 			IStatus status = BasicDiagnostic.toIStatus(result);
 			Activator.getDefault().getLog().log(status);
@@ -248,7 +248,7 @@ public class XWTResource extends ResourceImpl {
 	}
 
 	private ModelExtent getModelExtent(EObject source) {
-		if(source == null) {
+		if (source == null) {
 			return new BasicModelExtent();
 		}
 

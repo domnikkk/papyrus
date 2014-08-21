@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.NamedElement;
 // TODO: Auto-generated Javadoc
 /**
  * The Class SelectModelElementsForDiagramDialog.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  */
 public class SelectModelElementsForDiagramDialog extends WizardPage {
@@ -62,13 +62,13 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Instantiates a new select model elements for diagram dialog.
-	 * 
+	 *
 	 * @param elementProvider
-	 *        the element provider
+	 *            the element provider
 	 * @param contentProvider
-	 *        the content provider
+	 *            the content provider
 	 * @param labelProvider
-	 *        the label provider
+	 *            the label provider
 	 */
 	// @unused
 	public SelectModelElementsForDiagramDialog(IWizardModelElementProvider elementProvider, IContentProvider contentProvider, IBaseLabelProvider labelProvider) {
@@ -88,14 +88,14 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 	@Override
 	public void setVisible(boolean visible) {
 		super.setVisible(visible);
-		if(visible) {
+		if (visible) {
 			EObject input = elementProvider.getModelElement();
 			selectionTree.setInput(input);
 
 			String label = "";
 			label += "<" + input.eClass().getName() + "> ";
-			if(input instanceof NamedElement) {
-				label += ((NamedElement)input).getName() + " ";
+			if (input instanceof NamedElement) {
+				label += ((NamedElement) input).getName() + " ";
 			}
 			label += " is the root element";
 			rootElementLabel.setText(label);
@@ -112,6 +112,7 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 	 * org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets
 	 * .Composite)
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		Composite root = new Composite(parent, SWT.NONE);
 		GridLayout gridLayout = new GridLayout();
@@ -126,16 +127,16 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Gets the selected e objects.
-	 * 
+	 *
 	 * @return the selected e objects
 	 */
 	// @unused
 	public List<EObject> getSelectedEObjects() {
-		if(selectionTree == null) {
+		if (selectionTree == null) {
 			return Collections.EMPTY_LIST;
 		}
 
-		if(!wasShown) {
+		if (!wasShown) {
 			EObject input = elementProvider.getModelElement();
 			selectionTree.setInput(input);
 			selectionTree.expandAll();
@@ -145,7 +146,7 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 		TreeItem[] items = selectionTree.getTree().getItems();
 		List<EObject> selectedEObjects = new ArrayList<EObject>();
 
-		for(TreeItem item : items) {
+		for (TreeItem item : items) {
 			addCheckedEObjectsToList(selectedEObjects, item);
 		}
 
@@ -154,29 +155,29 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Adds the checked e objects to list.
-	 * 
+	 *
 	 * @param list
-	 *        the list
+	 *            the list
 	 * @param item
-	 *        the item
+	 *            the item
 	 */
 	private void addCheckedEObjectsToList(List<EObject> list, TreeItem item) {
-		if(item.getChecked()) {
+		if (item.getChecked()) {
 			Object data = item.getData();
-			if(data instanceof EObject) {
-				list.add((EObject)data);
+			if (data instanceof EObject) {
+				list.add((EObject) data);
 			}
 		}
-		for(TreeItem treeItem : item.getItems()) {
+		for (TreeItem treeItem : item.getItems()) {
 			addCheckedEObjectsToList(list, treeItem);
 		}
 	}
 
 	/**
 	 * Creates the dialog area.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	protected void createDialogArea(Composite parent) {
 		createLabel(parent);
@@ -186,9 +187,9 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Creates the label.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	private void createLabel(Composite parent) {
 		rootElementLabel = new Label(parent, 0);
@@ -198,9 +199,9 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Creates the tree selector.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	private void createTreeSelector(Composite parent) {
 		Tree tree = new Tree(parent, SWT.CHECK | SWT.SINGLE | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
@@ -216,10 +217,12 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 		tree.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 				return;
 			}
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				treeSelectionChanged(e);
 			}
@@ -228,9 +231,9 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Creates the buttons.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	private void createButtons(Composite parent) {
 		Composite composite = new Composite(parent, SWT.NONE);
@@ -244,9 +247,11 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 		selectAllButton.setLayoutData(data);
 		selectAllButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				selectAllSelected();
 			}
@@ -258,9 +263,11 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 		deselectAllButton.setLayoutData(data);
 		deselectAllButton.addSelectionListener(new SelectionListener() {
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 
+			@Override
 			public void widgetSelected(SelectionEvent e) {
 				deselectAllSelected();
 			}
@@ -276,7 +283,7 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 	private void selectAllSelected() {
 		Tree tree = selectionTree.getTree();
 		TreeItem[] items = tree.getItems();
-		for(TreeItem item : items) {
+		for (TreeItem item : items) {
 			setTreeItemSelection(item, true);
 		}
 	}
@@ -287,27 +294,27 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 	private void deselectAllSelected() {
 		Tree tree = selectionTree.getTree();
 		TreeItem[] items = tree.getItems();
-		for(TreeItem item : items) {
+		for (TreeItem item : items) {
 			setTreeItemSelection(item, false);
 		}
 	}
 
 	/**
 	 * Tree selection changed.
-	 * 
+	 *
 	 * @param event
-	 *        the event
+	 *            the event
 	 */
 	private void treeSelectionChanged(SelectionEvent event) {
 		Widget item = event.item;
-		if(changing || !(item instanceof TreeItem)) {
+		if (changing || !(item instanceof TreeItem)) {
 			return;
 		}
 
 		changing = true;
-		TreeItem treeItem = (TreeItem)item;
+		TreeItem treeItem = (TreeItem) item;
 		setTreeItemSelection(treeItem, treeItem.getChecked());
-		if(treeItem.getChecked() && treeItem.getParentItem() != null) {
+		if (treeItem.getChecked() && treeItem.getParentItem() != null) {
 			setTreeItemParentChecked(treeItem.getParentItem());
 		}
 		changing = false;
@@ -315,29 +322,29 @@ public class SelectModelElementsForDiagramDialog extends WizardPage {
 
 	/**
 	 * Sets the tree item selection.
-	 * 
+	 *
 	 * @param item
-	 *        the item
+	 *            the item
 	 * @param checked
-	 *        the checked
+	 *            the checked
 	 */
 	private void setTreeItemSelection(TreeItem item, boolean checked) {
 		item.setChecked(checked);
 		TreeItem[] items = item.getItems();
-		for(TreeItem ti : items) {
+		for (TreeItem ti : items) {
 			setTreeItemSelection(ti, checked);
 		}
 	}
 
 	/**
 	 * Sets the tree item parent checked.
-	 * 
+	 *
 	 * @param parent
-	 *        the new tree item parent checked
+	 *            the new tree item parent checked
 	 */
 	private void setTreeItemParentChecked(TreeItem parent) {
 		parent.setChecked(true);
-		if(parent.getParentItem() != null) {
+		if (parent.getParentItem() != null) {
 			setTreeItemParentChecked(parent.getParentItem());
 		}
 	}

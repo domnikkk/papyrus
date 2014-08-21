@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Arthur Daussy <a href="mailto:arthur.daussy@atos.net"> - initial API and implementation
  ******************************************************************************/
@@ -26,6 +26,7 @@ import org.eclipse.papyrus.infra.services.controlmode.participants.IUncontrolCom
 
 /**
  * Particiant that will and diagram control
+ * 
  * @author adaussy
  *
  */
@@ -33,31 +34,31 @@ public class GMFDiagramControlParticipant implements IControlCommandParticipant,
 
 	/**
 	 * Init target request to have the DIModel resource references
-	 * 
+	 *
 	 * @param request
 	 */
 	protected boolean setNotationTargetRequest(ControlModeRequest request) {
 		URI notationURI = request.getNewURI().trimFileExtension().appendFileExtension(NotationModel.NOTATION_FILE_EXTENSION);
 		ModelSet modelSet = request.getModelSet();
-		if(modelSet != null) {
+		if (modelSet != null) {
 			Resource notationResource = null;
 			try {
 				notationResource = modelSet.getResource(notationURI, true);
 			} catch (Exception e) {
 				notationResource = null;
 			}
-			if(notationResource == null) {
+			if (notationResource == null) {
 				return false;
 			}
 			request.setTargetResource(notationResource, NotationModel.NOTATION_FILE_EXTENSION);
-			//Nothing to do but everything is ok
+			// Nothing to do but everything is ok
 			return true;
 		}
 		return false;
 	}
 
 	public String getID() {
-		return "org.eclipse.papyrus.infra.gmfdiag.controlmode.GMFDiagramControlParticipant";////$NON-NLS-0$
+		return "org.eclipse.papyrus.infra.gmfdiag.controlmode.GMFDiagramControlParticipant";//
 	}
 
 	public ICommand getPostControlCommand(ControlModeRequest request) {
@@ -69,7 +70,7 @@ public class GMFDiagramControlParticipant implements IControlCommandParticipant,
 	}
 
 	public ICommand getPreControlCommand(ControlModeRequest request) {
-		//Create notation resource
+		// Create notation resource
 		return new CreateControlResource(request, NotationModel.NOTATION_FILE_EXTENSION);
 	}
 

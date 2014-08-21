@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *	 CEA LIST - Initial API and implementation
  *   Christian W. Damus (CEA) - bug 392301
  *
@@ -45,13 +45,13 @@ public class UmlTimingDiagramForMultiEditor extends org.eclipse.papyrus.uml.diag
 	private Composite splitter;
 
 	private Image titleImage;
-	
+
 	/**
 	 * Constructor for SashSystem v2. Context and required objects are retrieved from the ServiceRegistry.
-	 * 
+	 *
 	 * @throws BackboneException
 	 * @throws ServiceException
-	 * 
+	 *
 	 */
 	public UmlTimingDiagramForMultiEditor(final ServicesRegistry servicesRegistry, final Diagram diagram) throws BackboneException, ServiceException {
 		super(servicesRegistry, diagram);
@@ -70,11 +70,11 @@ public class UmlTimingDiagramForMultiEditor extends org.eclipse.papyrus.uml.diag
 
 	@Override
 	public void dispose() {
-		if(titleImage != null) {
+		if (titleImage != null) {
 			titleImage.dispose();
 			titleImage = null;
 		}
-		
+
 		super.dispose();
 	}
 

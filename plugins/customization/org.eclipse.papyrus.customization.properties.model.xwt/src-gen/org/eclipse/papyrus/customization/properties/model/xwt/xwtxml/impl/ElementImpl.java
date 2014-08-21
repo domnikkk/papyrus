@@ -5,9 +5,9 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
- * 
+ *
  *     Fabien Giquel (Mia-Software) - initial API and implementation
  * *******************************************************************************
  *
@@ -37,7 +37,7 @@ import org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.XwtxmlPacka
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ElementImpl#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.customization.properties.model.xwt.xwtxml.impl.ElementImpl#getChildren <em>Children</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +48,7 @@ public class ElementImpl extends NodeImpl implements Element {
 	 * The cached value of the '{@link #getChildren() <em>Children</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getChildren()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ElementImpl() {
@@ -66,6 +68,7 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,8 +79,10 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public EList<Node> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentWithInverseEList<Node>(Node.class, this, XwtxmlPackage.ELEMENT__CHILDREN, XwtxmlPackage.NODE__PARENT);
@@ -88,14 +93,15 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case XwtxmlPackage.ELEMENT__CHILDREN:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildren()).basicAdd(otherEnd, msgs);
+		case XwtxmlPackage.ELEMENT__CHILDREN:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getChildren()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -103,13 +109,14 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case XwtxmlPackage.ELEMENT__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
+		case XwtxmlPackage.ELEMENT__CHILDREN:
+			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -117,13 +124,14 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case XwtxmlPackage.ELEMENT__CHILDREN:
-				return getChildren();
+		case XwtxmlPackage.ELEMENT__CHILDREN:
+			return getChildren();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,16 +139,17 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case XwtxmlPackage.ELEMENT__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends Node>)newValue);
-				return;
+		case XwtxmlPackage.ELEMENT__CHILDREN:
+			getChildren().clear();
+			getChildren().addAll((Collection<? extends Node>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -148,14 +157,15 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case XwtxmlPackage.ELEMENT__CHILDREN:
-				getChildren().clear();
-				return;
+		case XwtxmlPackage.ELEMENT__CHILDREN:
+			getChildren().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -163,15 +173,16 @@ public class ElementImpl extends NodeImpl implements Element {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case XwtxmlPackage.ELEMENT__CHILDREN:
-				return children != null && !children.isEmpty();
+		case XwtxmlPackage.ELEMENT__CHILDREN:
+			return children != null && !children.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ElementImpl
+} // ElementImpl

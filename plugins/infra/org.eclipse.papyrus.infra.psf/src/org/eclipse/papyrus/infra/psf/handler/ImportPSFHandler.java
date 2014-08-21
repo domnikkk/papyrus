@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,9 +39,9 @@ import org.eclipse.ui.handlers.HandlerUtil;
 
 /**
  * Handles the ImportPSF command: org.eclipse.papyrus.infra.psf.import
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ImportPSFHandler extends AbstractHandler {
 
@@ -49,17 +49,17 @@ public class ImportPSFHandler extends AbstractHandler {
 		final Shell activeShell = HandlerUtil.getActiveShell(event);
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
 
-		if(currentSelection instanceof IStructuredSelection) {
-			IStructuredSelection selection = (IStructuredSelection)currentSelection;
-			if(selection.isEmpty()) {
+		if (currentSelection instanceof IStructuredSelection) {
+			IStructuredSelection selection = (IStructuredSelection) currentSelection;
+			if (selection.isEmpty()) {
 				return null;
 			}
 
 			Iterator<?> selectionIterator = selection.iterator();
-			while(selectionIterator.hasNext()) {
+			while (selectionIterator.hasNext()) {
 				Object selectedElement = selectionIterator.next();
-				IFile file = (IFile)Platform.getAdapterManager().getAdapter(selectedElement, IFile.class);
-				if(file != null && "psf".equals(file.getLocation().getFileExtension())) { //$NON-NLS-1$
+				IFile file = (IFile) Platform.getAdapterManager().getAdapter(selectedElement, IFile.class);
+				if (file != null && "psf".equals(file.getLocation().getFileExtension())) { //$NON-NLS-1$
 					final String fileName = file.getLocation().toString();
 
 					Job job = new Job(String.format("Import %s", file.getName())) {
@@ -71,8 +71,8 @@ public class ImportPSFHandler extends AbstractHandler {
 							try {
 								final IStatus result = OperationHistoryFactory.getOperationHistory().execute(operation, monitor, null);
 
-								if(monitor.isCanceled() || result.getSeverity() == IStatus.CANCEL) {
-									//TODO: Abort or Undo
+								if (monitor.isCanceled() || result.getSeverity() == IStatus.CANCEL) {
+									// TODO: Abort or Undo
 								}
 
 								return result;
@@ -111,10 +111,10 @@ public class ImportPSFHandler extends AbstractHandler {
 
 		@Override
 		public IStatus undo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-			if(importedProjects == null || importedProjects.length == 0) {
+			if (importedProjects == null || importedProjects.length == 0) {
 				return Status.OK_STATUS;
 			}
-			for(IProject project : importedProjects) {
+			for (IProject project : importedProjects) {
 				try {
 					project.delete(false, true, monitor);
 				} catch (CoreException e) {
@@ -132,17 +132,17 @@ public class ImportPSFHandler extends AbstractHandler {
 		@Override
 		public IStatus execute(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 			try {
-				if(ProjectSetImporter.isValidProjectSetFile(psfFileName)) {
+				if (ProjectSetImporter.isValidProjectSetFile(psfFileName)) {
 					ImportResult result = ProjectSetImporter.importProjectSet(psfFileName, shell, monitor);
 					importedProjects = result.getImportedProjects();
-					if(!result.getDiagnostic().isEmpty()) {
-						if(result.getDiagnostic().size() == 1) {
+					if (!result.getDiagnostic().isEmpty()) {
+						if (result.getDiagnostic().size() == 1) {
 							return result.getDiagnostic().get(0);
 						} else {
 							IStatus[] status = result.getDiagnostic().toArray(new IStatus[0]);
 							int code = IStatus.OK;
-							for(IStatus currentStatus : status) {
-								if(currentStatus.getSeverity() > code) {
+							for (IStatus currentStatus : status) {
+								if (currentStatus.getSeverity() > code) {
 									code = currentStatus.getSeverity();
 								}
 							}

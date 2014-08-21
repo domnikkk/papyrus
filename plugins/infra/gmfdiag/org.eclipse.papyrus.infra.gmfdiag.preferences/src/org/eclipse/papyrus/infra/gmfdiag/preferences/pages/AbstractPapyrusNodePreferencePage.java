@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,7 +29,7 @@ import org.eclipse.swt.widgets.Composite;
  * <p>
  * This Preference page adds the preference for {@link org.eclipse.gmf.runtime.notation.FillStyle#getFillColor() <em>FillColor</em>}
  * </p>
- * 
+ *
  * @author tlandre
  */
 public abstract class AbstractPapyrusNodePreferencePage extends AbstractPapyrusElementPreferencePage {
@@ -38,9 +38,9 @@ public abstract class AbstractPapyrusNodePreferencePage extends AbstractPapyrusE
 	protected List<String> compartmentsList;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public AbstractPapyrusNodePreferencePage() {
 		compartmentsList = new ArrayList<String>();
@@ -48,9 +48,9 @@ public abstract class AbstractPapyrusNodePreferencePage extends AbstractPapyrusE
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.pages.AbstractPapyrusElementPreferencePage#createPageContents(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -62,13 +62,13 @@ public abstract class AbstractPapyrusNodePreferencePage extends AbstractPapyrusE
 		addAbstractGroup(backgroundColorGroup);
 		DecorationGroup decorationGroup = new DecorationGroup(parent, getPreferenceKey(), this);
 		addAbstractGroup(decorationGroup);
-		if(!compartmentsList.isEmpty()) {
+		if (!compartmentsList.isEmpty()) {
 			NodeCompartmentGroup compartmentGroup = new NodeCompartmentGroup(parent, getPreferenceKey(), this, compartmentsList, getCompartmentTitleVisibilityPreferences().keySet(), getPreferenceStore());
 			addAbstractGroup(compartmentGroup);
 		}
 
-		//Label role group
-		if(!getLabelRole().isEmpty()) {
+		// Label role group
+		if (!getLabelRole().isEmpty()) {
 			LabelGroup compartmentGroup = new LabelGroup(parent, getPreferenceKey(), this, getLabelRole());
 			addAbstractGroup(compartmentGroup);
 		}
@@ -78,11 +78,11 @@ public abstract class AbstractPapyrusNodePreferencePage extends AbstractPapyrusE
 	 * Initialize {@link #compartmentsList} with the name of the compartment owned by the node
 	 */
 	protected void initializeCompartmentsList() {
-		// TODO Auto-generated method stub	
+		// TODO Auto-generated method stub
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the label roles
 	 */
@@ -91,7 +91,7 @@ public abstract class AbstractPapyrusNodePreferencePage extends AbstractPapyrusE
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the compartment title visibility
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,14 +37,16 @@ import org.eclipse.papyrus.infra.viewpoints.iso42010.provider.ArchitectureFramew
  * This is the item provider adapter for a {@link org.eclipse.papyrus.infra.viewpoints.configuration.PapyrusConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class PapyrusConfigurationItemProvider
-	extends ArchitectureFrameworkItemProvider {
+		extends ArchitectureFrameworkItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public PapyrusConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -55,6 +57,7 @@ public class PapyrusConfigurationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -72,53 +75,54 @@ public class PapyrusConfigurationItemProvider
 	 * This adds a property descriptor for the Default Stakeholder feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDefaultStakeholderPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PapyrusConfiguration_defaultStakeholder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusConfiguration_defaultStakeholder_feature", "_UI_PapyrusConfiguration_type"),
-				 ConfigurationPackage.Literals.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_PapyrusConfiguration_defaultStakeholder_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_PapyrusConfiguration_defaultStakeholder_feature", "_UI_PapyrusConfiguration_type"),
+						ConfigurationPackage.Literals.PAPYRUS_CONFIGURATION__DEFAULT_STAKEHOLDER,
+						true,
+						false,
+						true,
+						null,
+						null,
+						null));
 	}
 
 	/**
 	 * This adds a property descriptor for the Metamodel feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected void addMetamodelPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(new EPackagePropertyDescriptor(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PapyrusConfiguration_metamodel_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PapyrusConfiguration_metamodel_feature", "_UI_PapyrusConfiguration_type"),
-				 ConfigurationPackage.Literals.PAPYRUS_CONFIGURATION__METAMODEL,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null)));
+				(new EPackagePropertyDescriptor(createItemPropertyDescriptor
+						(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+								getResourceLocator(),
+								getString("_UI_PapyrusConfiguration_metamodel_feature"),
+								getString("_UI_PropertyDescriptor_description", "_UI_PapyrusConfiguration_metamodel_feature", "_UI_PapyrusConfiguration_type"),
+								ConfigurationPackage.Literals.PAPYRUS_CONFIGURATION__METAMODEL,
+								true,
+								false,
+								true,
+								null,
+								null,
+								null)));
 	}
-	
+
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -133,6 +137,7 @@ public class PapyrusConfigurationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -147,6 +152,7 @@ public class PapyrusConfigurationItemProvider
 	 * This returns PapyrusConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated NOT - Custom Image
 	 */
 	@Override
@@ -162,8 +168,9 @@ public class PapyrusConfigurationItemProvider
 	@Override
 	public String getText(Object object) {
 		PapyrusConfiguration config = (PapyrusConfiguration) object;
-		if (config.getMetamodel() != null)
+		if (config.getMetamodel() != null) {
 			return "Papyrus Configuration (" + config.getMetamodel().getNsURI() + ")";
+		}
 		return "Papyrus Configuration (?)";
 	}
 
@@ -172,6 +179,7 @@ public class PapyrusConfigurationItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -179,9 +187,9 @@ public class PapyrusConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PapyrusConfiguration.class)) {
-			case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case ConfigurationPackage.PAPYRUS_CONFIGURATION__CATEGORIES:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -195,30 +203,31 @@ public class PapyrusConfigurationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__VIEWPOINTS,
-				 ConfigurationFactory.eINSTANCE.createPapyrusViewpoint()));
-		
+						ConfigurationFactory.eINSTANCE.createPapyrusViewpoint()));
+
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(Iso42010Package.Literals.ARCHITECTURE_FRAMEWORK__STAKEHOLDERS,
-				 Iso42010Factory.eINSTANCE.createStakeholder()));
-		
+						Iso42010Factory.eINSTANCE.createStakeholder()));
+
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(ConfigurationPackage.Literals.PAPYRUS_CONFIGURATION__CATEGORIES,
-					ConfigurationFactory.eINSTANCE.createCategory()));
+						ConfigurationFactory.eINSTANCE.createCategory()));
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return ((IChildCreationExtender)adapterFactory).getResourceLocator();
+		return ((IChildCreationExtender) adapterFactory).getResourceLocator();
 	}
 
 }

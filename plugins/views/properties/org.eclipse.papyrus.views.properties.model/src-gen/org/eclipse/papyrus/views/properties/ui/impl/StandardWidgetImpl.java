@@ -21,7 +21,7 @@ import org.eclipse.papyrus.views.properties.ui.UiPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.ui.impl.StandardWidgetImpl#getWidgetType <em>Widget Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.ui.impl.StandardWidgetImpl#getWidgetType <em>Widget Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,6 +32,7 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	 * The cached value of the '{@link #getWidgetType() <em>Widget Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getWidgetType()
 	 * @generated
 	 * @ordered
@@ -41,6 +42,7 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StandardWidgetImpl() {
@@ -50,6 +52,7 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -60,15 +63,18 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public StandardWidgetType getWidgetType() {
 		if (widgetType != null && widgetType.eIsProxy()) {
-			InternalEObject oldWidgetType = (InternalEObject)widgetType;
-			widgetType = (StandardWidgetType)eResolveProxy(oldWidgetType);
+			InternalEObject oldWidgetType = (InternalEObject) widgetType;
+			widgetType = (StandardWidgetType) eResolveProxy(oldWidgetType);
 			if (widgetType != oldWidgetType) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UiPackage.STANDARD_WIDGET__WIDGET_TYPE, oldWidgetType, widgetType));
+				}
 			}
 		}
 		return widgetType;
@@ -77,6 +83,7 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StandardWidgetType basicGetWidgetType() {
@@ -86,26 +93,32 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setWidgetType(StandardWidgetType newWidgetType) {
 		StandardWidgetType oldWidgetType = widgetType;
 		widgetType = newWidgetType;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UiPackage.STANDARD_WIDGET__WIDGET_TYPE, oldWidgetType, widgetType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
-				if (resolve) return getWidgetType();
-				return basicGetWidgetType();
+		case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
+			if (resolve) {
+				return getWidgetType();
+			}
+			return basicGetWidgetType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,14 +126,15 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
-				setWidgetType((StandardWidgetType)newValue);
-				return;
+		case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
+			setWidgetType((StandardWidgetType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -128,14 +142,15 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
-				setWidgetType((StandardWidgetType)null);
-				return;
+		case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
+			setWidgetType((StandardWidgetType) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,15 +158,16 @@ public class StandardWidgetImpl extends WidgetImpl implements StandardWidget {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
-				return widgetType != null;
+		case UiPackage.STANDARD_WIDGET__WIDGET_TYPE:
+			return widgetType != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //StandardWidgetImpl
+} // StandardWidgetImpl

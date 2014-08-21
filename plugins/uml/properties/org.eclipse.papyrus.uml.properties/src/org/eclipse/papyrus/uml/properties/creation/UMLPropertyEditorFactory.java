@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -39,13 +39,13 @@ public class UMLPropertyEditorFactory extends EcorePropertyEditorFactory {
 	 */
 	@Override
 	public Collection<Object> validateObjects(Collection<Object> objectsToValidate) {
-		if(!referenceIn.isContainment()) {
-			for(Object objectToValidate : objectsToValidate) {
-				//We add the object to the containment reference
-				//They will be automatically added to the edited reference
-				//(referenceIn) after this method returns
+		if (!referenceIn.isContainment()) {
+			for (Object objectToValidate : objectsToValidate) {
+				// We add the object to the containment reference
+				// They will be automatically added to the edited reference
+				// (referenceIn) after this method returns
 				CreateIn creationInformation = this.createIn.get(objectToValidate);
-				if(creationInformation != null) {
+				if (creationInformation != null) {
 					set(creationInformation.createInObject, creationInformation.createInReference, objectToValidate);
 				} else {
 					Activator.log.warn("Unknown object : " + objectToValidate);
@@ -59,15 +59,15 @@ public class UMLPropertyEditorFactory extends EcorePropertyEditorFactory {
 	protected void set(EObject container, EReference reference, Object value) {
 		try {
 			EditingDomain domain = EMFHelper.resolveEditingDomain(container);
-			if(domain == null) {
+			if (domain == null) {
 				container.eSet(reference, value);
 				return;
 			}
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(container);
 
-			if(provider != null) {
-				SetRequest request = new SetRequest((TransactionalEditingDomain)domain, container, reference, value);
+			if (provider != null) {
+				SetRequest request = new SetRequest((TransactionalEditingDomain) domain, container, reference, value);
 				ICommand createGMFCommand = provider.getEditCommand(request);
 
 				Command emfCommand = new GMFtoEMFCommandWrapper(createGMFCommand);

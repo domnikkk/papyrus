@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,16 +36,16 @@ public class EObjectAdapterFactory implements IAdapterFactory {
 	public Object getAdapter(Object adaptable, @SuppressWarnings("rawtypes") Class adapterType) {
 		Object result = null;
 
-		if(adaptable instanceof EObject) {
-			if(adapterType == IAtomicOperationExecutor.class) {
-				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain((EObject)adaptable);
-				if(domain == null) {
+		if (adaptable instanceof EObject) {
+			if (adapterType == IAtomicOperationExecutor.class) {
+				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain((EObject) adaptable);
+				if (domain == null) {
 					ResourceSet rset = NestedEditingDialogContext.getInstance().getResourceSet();
-					if(rset != null) {
+					if (rset != null) {
 						domain = TransactionUtil.getEditingDomain(rset);
 					}
 				}
-				if(domain != null) {
+				if (domain != null) {
 					result = new EMFAtomicOperationExecutor(domain);
 				}
 			}

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -44,7 +44,7 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 	 */
 	@Override
 	protected List createSelectionHandles() {
-		MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+		MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 		mh.setBorder(null);
 		return Collections.singletonList(mh);
 	}
@@ -54,7 +54,7 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 	 */
 	@Override
 	protected Command getMoveCommand(ChangeBoundsRequest request) {
-		LabelEditPart editPart = (LabelEditPart)getHost();
+		LabelEditPart editPart = (LabelEditPart) getHost();
 
 		// FeedBack - Parent + Delta
 		Rectangle updatedRect = new Rectangle();
@@ -69,7 +69,7 @@ public class ExternalLabelPrimaryDragRoleEditPolicy extends NonResizableLabelEdi
 		rect.resize(request.getSizeDelta());
 		getHostFigure().translateToRelative(rect);
 
-		ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View)editPart.getModel()), updatedRect);
+		ICommand moveCommand = new SetBoundsCommand(editPart.getEditingDomain(), DiagramUIMessages.MoveLabelCommand_Label_Location, new EObjectAdapter((View) editPart.getModel()), updatedRect);
 		return new ICommandProxy(moveCommand);
 	}
 }

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -63,32 +63,32 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		// adapt the view of the existing region
-		View targetRegion = (View)adaptableForTargetRegion.getAdapter(View.class);
+		View targetRegion = (View) adaptableForTargetRegion.getAdapter(View.class);
 		// adapt the view of the dropped region
-		View regionToMove = (View)adaptableForRegionToMove.getAdapter(View.class);
+		View regionToMove = (View) adaptableForRegionToMove.getAdapter(View.class);
 
 		// manage the fake removal of regionToMove
-		View compartment = (View)regionToMove.eContainer();
-		if(compartment.getChildren().size() != 1) {
+		View compartment = (View) regionToMove.eContainer();
+		if (compartment.getChildren().size() != 1) {
 			int regionWidth = Zone.getWidth(regionToMove);
 			int regionHeight = Zone.getHeight(regionToMove);
 
 			String s = Zone.getZone(regionToMove);
 			List<View> neighbours = null;
-			if(Zone.isRight(s)) {
+			if (Zone.isRight(s)) {
 				neighbours = Zone.getRegionLeftBorderOutsideNeighbours(regionToMove);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionWidth to their width
 					int width = Zone.getWidth(view);
 					width += regionWidth;
 					Zone.setWidth(view, width);
 				}
-			} else if(Zone.isLeft(s)) {
+			} else if (Zone.isLeft(s)) {
 				neighbours = Zone.getRegionRightBorderOutsideNeighbours(regionToMove);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionWidth to their width and
 					// translate their x of
@@ -100,10 +100,10 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 					x -= regionWidth;
 					Zone.setX(view, x);
 				}
-			} else if(Zone.isTop(s)) {
+			} else if (Zone.isTop(s)) {
 				neighbours = Zone.getRegionBottomBorderOutsideNeighbours(regionToMove);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionHeight to their height and
 					// -regionHeight to their
@@ -115,10 +115,10 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 					y -= regionHeight;
 					Zone.setY(view, y);
 				}
-			} else if(Zone.isBottom(s)) {
+			} else if (Zone.isBottom(s)) {
 				neighbours = Zone.getRegionTopBorderOutsideNeighbours(regionToMove);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionHeight to their height
 					int height = Zone.getHeight(view);
@@ -140,7 +140,7 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 		int y = Zone.getY(targetRegion);
 
 		// the test itself and change of bounds
-		if(Zone.isRight(dropLocation)) {
+		if (Zone.isRight(dropLocation)) {
 			// the new region zone should reflect that of other branch
 			Zone.copyZone(targetRegion, regionToMove);
 			// now set new region as RIGHT
@@ -159,7 +159,7 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 			// moved)
 			Zone.setX(regionToMove, x + width);
 			Zone.setY(regionToMove, y);
-		} else if(Zone.isLeft(dropLocation)) {
+		} else if (Zone.isLeft(dropLocation)) {
 			// the new region zone should reflect that of existing region
 			Zone.copyZone(targetRegion, regionToMove);
 			// now set new region as LEFT
@@ -179,7 +179,7 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 			Zone.setX(targetRegion, x + width);
 			Zone.setX(regionToMove, x);
 			Zone.setY(regionToMove, y);
-		} else if(Zone.isBottom(dropLocation)) {
+		} else if (Zone.isBottom(dropLocation)) {
 			// the new region zone should reflect that of existing region
 			Zone.copyZone(targetRegion, regionToMove);
 			// now set new region as BOTTOM
@@ -198,7 +198,7 @@ public class CustomRegionMoveCommand extends AbstractTransactionalCommand {
 			// moved)
 			Zone.setX(regionToMove, x);
 			Zone.setY(regionToMove, y + height);
-		} else if(Zone.isTop(dropLocation)) {
+		} else if (Zone.isTop(dropLocation)) {
 			// the new region zone should reflect that of existing region
 			Zone.copyZone(targetRegion, regionToMove);
 			// now set new region as TOP

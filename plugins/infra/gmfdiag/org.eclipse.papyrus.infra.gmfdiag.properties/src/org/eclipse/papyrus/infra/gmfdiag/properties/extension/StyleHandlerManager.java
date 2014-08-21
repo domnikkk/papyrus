@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,9 +33,9 @@ public class StyleHandlerManager {
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
-				StyleHandlerProvider provider = (StyleHandlerProvider)e.createExecutableExtension("provider"); //$NON-NLS-1$
+				StyleHandlerProvider provider = (StyleHandlerProvider) e.createExecutableExtension("provider"); //$NON-NLS-1$
 				String priorityString = e.getAttribute("priority");
 				int priority = Integer.parseInt(priorityString);
 				providersMap.put(priority, provider);

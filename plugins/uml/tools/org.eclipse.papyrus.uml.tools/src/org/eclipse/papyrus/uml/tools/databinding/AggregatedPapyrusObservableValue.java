@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,8 +30,8 @@ public class AggregatedPapyrusObservableValue extends MultipleObservableValue {
 
 	public AggregatedPapyrusObservableValue(EditingDomain domain, IObservable... observableValues) {
 		this.domain = domain;
-		for(IObservable value : observableValues) {
-			if(aggregate(value) == null) {
+		for (IObservable value : observableValues) {
+			if (aggregate(value) == null) {
 				throw new IllegalArgumentException("The input ObservableValues have an incorrect type"); //$NON-NLS-1$
 			}
 		}
@@ -39,26 +39,26 @@ public class AggregatedPapyrusObservableValue extends MultipleObservableValue {
 
 	@Override
 	public AggregatedObservable aggregate(IObservable observable) {
-		if(observable instanceof CommandBasedObservableValue) {
-			if(!observables.isEmpty()) {
+		if (observable instanceof CommandBasedObservableValue) {
+			if (!observables.isEmpty()) {
 				Object valueType = observables.get(0).getValueType();
-				if(((IObservableValue)observable).getValueType() != valueType) {
+				if (((IObservableValue) observable).getValueType() != valueType) {
 					return null;
 				}
 			}
 
-			observables.add((CommandBasedObservableValue)observable);
+			observables.add((CommandBasedObservableValue) observable);
 			super.aggregate(observable);
 			return this;
 		}
 
-		return null; //TODO : maybe we can support some other types
+		return null; // TODO : maybe we can support some other types
 	}
 
 	@Override
 	public void doSetValue(Object value) {
 		CompoundCommand command = new CompoundCommand();
-		for(CommandBasedObservableValue observableValue : observables) {
+		for (CommandBasedObservableValue observableValue : observables) {
 			command.append(observableValue.getCommand(value));
 		}
 		domain.getCommandStack().execute(command);

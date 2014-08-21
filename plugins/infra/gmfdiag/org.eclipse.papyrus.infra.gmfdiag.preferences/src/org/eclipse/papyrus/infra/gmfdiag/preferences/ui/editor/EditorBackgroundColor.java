@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,13 +25,13 @@ public class EditorBackgroundColor extends BackgroundColor {
 
 	/**
 	 * Instantiates a new editor background color.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent composite
+	 *            the parent composite
 	 * @param key
-	 *        the key of the preference
+	 *            the key of the preference
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 */
 	public EditorBackgroundColor(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -42,6 +42,7 @@ public class EditorBackgroundColor extends BackgroundColor {
 	 * 
 	 * @see org.eclipse.papyrus.infra.gmfdiag.preferences.ui.AbstractGroup#getPreferenceConstant(int)
 	 */
+	@Override
 	protected String getPreferenceConstant(int preferenceType) {
 		return PreferencesConstantsHelper.getPapyrusEditorConstant(preferenceType);
 	}

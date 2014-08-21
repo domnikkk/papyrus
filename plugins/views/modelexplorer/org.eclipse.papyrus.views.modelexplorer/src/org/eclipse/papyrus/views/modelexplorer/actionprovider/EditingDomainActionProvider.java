@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Obeo - initial API and implementation
  *     Emilien Perico - use extension point to define dynamically registered actions
@@ -37,7 +37,7 @@ import org.osgi.framework.Bundle;
 
 /**
  * Provider used to create actions applicable on semantic elements
- * 
+ *
  * @author <a href="mailto:jerome.benois@obeo.fr">Jerome Benois</a>
  * @author Emilien Perico - see extension point
  *         org.eclipse.papyrus.navigator.actionHandler to add specific action
@@ -62,14 +62,14 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 		TransactionalEditingDomain editingDomain = EditorUtils.getTransactionalEditingDomain();
 
 		IConfigurationElement[] registry = Platform.getExtensionRegistry().getConfigurationElementsFor(ACTION_HANDLER_EXTENSION_POINT_ID);
-		for(IConfigurationElement elt : registry) {
+		for (IConfigurationElement elt : registry) {
 			try {
 				final String actionId = elt.getAttribute("actionId");
 				final String afterAction = elt.getAttribute("afterAction");
 				boolean needSeparator = Boolean.valueOf(elt.getAttribute("needSeparator"));
 				ActionProperties properties = new ActionProperties(actionId, afterAction, needSeparator);
 
-				IActionHandlerFactory factory = (IActionHandlerFactory)createExtension(elt, elt.getAttribute("actionHandler"));
+				IActionHandlerFactory factory = (IActionHandlerFactory) createExtension(elt, elt.getAttribute("actionHandler"));
 				// create registered actions
 				factory.createActions(editingDomain);
 
@@ -86,21 +86,21 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 	@Override
 	public void fillActionBars(IActionBars actionBars) {
 		super.fillActionBars(actionBars);
-		for(IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
+		for (IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
 			factory.fillActionBars(actionBars);
 		}
 	}
 
 	/**
 	 * Load an instance of a class
-	 * 
+	 *
 	 * @param element
-	 *        the extension point
+	 *            the extension point
 	 * @param classAttribute
-	 *        the name of the class to load
+	 *            the name of the class to load
 	 * @return the loaded Class
 	 * @throws Exception
-	 *         if the class is not loaded
+	 *             if the class is not loaded
 	 */
 	@SuppressWarnings("rawtypes")
 	private static Object createExtension(final IConfigurationElement element, final String classAttribute) throws Exception {
@@ -125,12 +125,12 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 		List<IActionHandlerFactory> sortedFactories = sortFactories(actionsFactoriesMap);
 
 		// Add the edit menu actions
-		for(IActionHandlerFactory factory : sortedFactories) {
+		for (IActionHandlerFactory factory : sortedFactories) {
 			ActionProperties actionProperties = actionsFactoriesMap.get(factory);
-			if(actionProperties != null && actionProperties.isNeedSeparator()) {
+			if (actionProperties != null && actionProperties.isNeedSeparator()) {
 				menu.add(new Separator());
 			}
-			for(Action action : factory.getActions()) {
+			for (Action action : factory.getActions()) {
 				menu.add(new ActionContributionItem(action));
 			}
 		}
@@ -143,11 +143,11 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 	public void update() {
 		ISelection selection = getCommonNavigator().getCommonViewer().getSelection();
 		IStructuredSelection structuredSelection = StructuredSelection.EMPTY;
-		if(selection instanceof IStructuredSelection) {
-			structuredSelection = (IStructuredSelection)selection;
+		if (selection instanceof IStructuredSelection) {
+			structuredSelection = (IStructuredSelection) selection;
 		}
 
-		for(IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
+		for (IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
 			factory.update(structuredSelection);
 		}
 	}
@@ -156,7 +156,7 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 	 * Activate actions
 	 */
 	public void activate() {
-		for(IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
+		for (IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
 			factory.activate(activeViewPart);
 		}
 		update();
@@ -167,7 +167,7 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 	 */
 	// @unused
 	public void deactivate() {
-		for(IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
+		for (IActionHandlerFactory factory : actionsFactoriesMap.keySet()) {
 			factory.deactivate(activeViewPart);
 		}
 	}
@@ -184,10 +184,10 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 
 	/**
 	 * Sort factories.
-	 * 
+	 *
 	 * @param actionsFactoriesMap
-	 *        the actions factories map
-	 * 
+	 *            the actions factories map
+	 *
 	 * @return the sorted list of factories
 	 */
 	private List<IActionHandlerFactory> sortFactories(final Map<IActionHandlerFactory, ActionProperties> actionsFactoriesMap) {
@@ -203,22 +203,22 @@ public class EditingDomainActionProvider extends AbstractSubmenuActionProvider {
 				String after1 = properties1.getAfterAction();
 				String after2 = properties2.getAfterAction();
 
-				if(properties1.getActionId().equals(properties2.getActionId())) {
+				if (properties1.getActionId().equals(properties2.getActionId())) {
 					return 0;
-				} else if(properties1.getActionId().equals(after2)) {
+				} else if (properties1.getActionId().equals(after2)) {
 					return -1;
-				} else if(properties2.getActionId().equals(after1)) {
+				} else if (properties2.getActionId().equals(after1)) {
 					return 1;
-				} else if(after1 == null) {
+				} else if (after1 == null) {
 					return -1;
-				} else if(after2 == null) {
+				} else if (after2 == null) {
 					return 1;
 				}
 				return 0;
 			}
 
 			private ActionProperties getDefaultForNull(ActionProperties actionProperties) {
-				if(actionProperties == null) {
+				if (actionProperties == null) {
 					actionProperties = new ActionProperties("", "", false);
 				}
 				return actionProperties;

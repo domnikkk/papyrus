@@ -15,11 +15,11 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.RGB;
 
 /**
- * 
- * 
+ *
+ *
  * @author Patrick Tessier
  * @since 20 sept. 06
- * 
+ *
  *        this aclass manage all colors of Papyrus. It is forbidden in this
  *        application to create a color. SymbolicName is "R"_"G"_"B" where "R"
  *        "G" "B" are string that represent color (int)
@@ -27,16 +27,16 @@ import org.eclipse.swt.graphics.RGB;
 public class ColorManager extends ColorRegistry {
 
 	/**
-	 * 
+	 *
 	 */
 	private static String separator = "_";
 
 	/**
 	 * get Color from a RGB.
-	 * 
+	 *
 	 * @param rgb
-	 *        the rGB thath wen want
-	 * 
+	 *            the rGB thath wen want
+	 *
 	 * @return the color obtaine from the RGB
 	 */
 
@@ -44,7 +44,7 @@ public class ColorManager extends ColorRegistry {
 	public Color get(RGB rgb) {
 		String symbolicName = "" + rgb.red + separator + rgb.green + separator + rgb.blue;
 		Color resultColor = super.get(symbolicName);
-		if(resultColor == null) {
+		if (resultColor == null) {
 			super.put(symbolicName, rgb);
 			resultColor = super.get(symbolicName);
 		}

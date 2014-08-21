@@ -29,9 +29,9 @@ import org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager;
 
 /**
  * The Paste Post Action registry
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public final class PastePostActionRegistry {
 
@@ -49,7 +49,7 @@ public final class PastePostActionRegistry {
 	public static final PastePostActionRegistry INSTANCE = new PastePostActionRegistry();
 
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 * Initialize the field of the class
 	 */
@@ -57,9 +57,9 @@ public final class PastePostActionRegistry {
 		this.postActions = new ArrayList<IPastePostAction>();
 		final IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(final IConfigurationElement iConfigurationElement : configElements) {
+		for (final IConfigurationElement iConfigurationElement : configElements) {
 			try {
-				final IPastePostAction solver = (IPastePostAction)iConfigurationElement.createExecutableExtension(CLASS_MANAGER);
+				final IPastePostAction solver = (IPastePostAction) iConfigurationElement.createExecutableExtension(CLASS_MANAGER);
 				this.postActions.add(solver);
 			} catch (final CoreException e) {
 				Activator.log.error(e);
@@ -68,22 +68,22 @@ public final class PastePostActionRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @param postActionId
-	 *        the post action id
+	 *            the post action id
 	 * @param tableContext
 	 * @param objectToEdit
-	 *        the object to edit
+	 *            the object to edit
 	 * @param sharedMap
-	 *        the map where the class managing the paste and the set value can store interesting information
+	 *            the map where the class managing the paste and the set value can store interesting information
 	 * @param axisAsString
-	 * 
+	 *
 	 */
 	public void doPostAction(final INattableModelManager tableManager, final String postActionId, final EObject tableContext, final Object objectToEdit, final Map<Object, Object> sharedMap, final String axisAsString) {
 		final IPastePostAction postAction = getPostAction(postActionId);
-		if(postAction != null) {
+		if (postAction != null) {
 			postAction.doPostAction(tableManager, postActionId, objectToEdit, sharedMap);
 		} else {
 			Activator.log.warn(NLS.bind("No Manager were found to manage {0}", postActionId)); //$NON-NLS-1$
@@ -91,17 +91,17 @@ public final class PastePostActionRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the table manager
+	 *            the table manager
 	 * @param postActionId
-	 *        the id of the post action
+	 *            the id of the post action
 	 * @param sharedMap
-	 *        the map where the class managing the paste and the set value can store interesting information
+	 *            the map where the class managing the paste and the set value can store interesting information
 	 */
 	public void concludePostAction(final INattableModelManager tableManager, final String postActionId, final Map<Object, Object> sharedMap) {
 		final IPastePostAction postAction = getPostAction(postActionId);
-		if(postAction != null) {
+		if (postAction != null) {
 			postAction.concludePostAction(tableManager, postActionId, sharedMap);
 		} else {
 			Activator.log.warn(NLS.bind("No Manager were found to manage {0}", postActionId)); //$NON-NLS-1$
@@ -110,14 +110,14 @@ public final class PastePostActionRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param postActionId
 	 * @return
 	 *         the post action managing this id
 	 */
 	private IPastePostAction getPostAction(final String postActionId) {
-		for(final IPastePostAction current : this.postActions) {
-			if(current.accept(postActionId)) {
+		for (final IPastePostAction current : this.postActions) {
+			if (current.accept(postActionId)) {
 				return current;
 			}
 		}
@@ -125,17 +125,17 @@ public final class PastePostActionRegistry {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param tableManager
-	 *        the current table manager
+	 *            the current table manager
 	 * @param object
-	 *        an object
+	 *            an object
 	 * @return
 	 *         the possible post actions for this objects
 	 */
 	public Collection<String> getAvailablePostActionIds(final INattableModelManager tableManager, final Object object) {
 		final List<String> postActions = new ArrayList<String>();
-		for(final IPastePostAction current : this.postActions) {
+		for (final IPastePostAction current : this.postActions) {
 			postActions.addAll(current.getAvailablePostActionIds(tableManager, object));
 		}
 		Collections.sort(postActions);

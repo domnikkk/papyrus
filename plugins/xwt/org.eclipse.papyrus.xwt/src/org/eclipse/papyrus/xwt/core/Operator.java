@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -22,7 +22,7 @@ public enum Operator {
 
 	/**
 	 * The utility helper method, to implement the compare between two objects
-	 * 
+	 *
 	 * @param operant1
 	 * @param operator
 	 * @param operant2
@@ -32,35 +32,37 @@ public enum Operator {
 	public static boolean compare(Object operant1, Operator operator, Object operant2) throws XWTException {
 		boolean result = false;
 
-		switch(operator) {
+		switch (operator) {
 		case EQ:
 			result = objectCompare(operant1, operant2);
 			break;
 
 		case NE:
-			if(!objectCompare(operant1, operant2))
+			if (!objectCompare(operant1, operant2)) {
 				result = true;
+			}
 			break;
 
 		case GT:
-			if(numberCompare(operant1, operant2) == 1)
+			if (numberCompare(operant1, operant2) == 1) {
 				return true;
+			}
 			break;
 
 		case LT:
-			if(numberCompare(operant1, operant2) == -1) {
+			if (numberCompare(operant1, operant2) == -1) {
 				result = true;
 			}
 			break;
 
 		case GE:
-			if(numberCompare(operant1, operant2) == 1 || numberCompare(operant1, operant2) == 0) {
+			if (numberCompare(operant1, operant2) == 1 || numberCompare(operant1, operant2) == 0) {
 				result = true;
 			}
 			break;
 
 		case LE:
-			if(numberCompare(operant1, operant2) == -1 || numberCompare(operant1, operant2) == 0) {
+			if (numberCompare(operant1, operant2) == -1 || numberCompare(operant1, operant2) == 0) {
 				result = true;
 			}
 			break;
@@ -69,8 +71,8 @@ public enum Operator {
 			return LikeCompare(operant1, operant2);
 
 		case IS_A:
-			if(operant2 instanceof Class<?>) {
-				return ISACompare(operant1, (Class<?>)operant2);
+			if (operant2 instanceof Class<?>) {
+				return ISACompare(operant1, (Class<?>) operant2);
 			} else {
 				throw new XWTException(OperatorExceptionMessage.TYPE_WRONG);
 			}
@@ -92,7 +94,7 @@ public enum Operator {
 	 * @throws XWTException
 	 */
 	private static int numberCompare(Object operant1, Object operant2) throws XWTException {
-		if(operant1 == null || operant2 == null) {
+		if (operant1 == null || operant2 == null) {
 			throw new XWTException(OperatorExceptionMessage.OPRERANR_NULL);
 		}
 		Double longoperant1 = convertToDouble(operant1);
@@ -102,63 +104,64 @@ public enum Operator {
 
 	/**
 	 * convert the type of operant to the Double
-	 * 
+	 *
 	 * @param operant
 	 * @return
 	 * @throws XWTException
 	 */
 	private static Double convertToDouble(Object operant) throws XWTException {
-		if(operant instanceof Double) {
-			return (Double)operant;
+		if (operant instanceof Double) {
+			return (Double) operant;
 		}
-		if(operant instanceof Float) {
-			Float floatvalue = (Float)operant;
+		if (operant instanceof Float) {
+			Float floatvalue = (Float) operant;
 			return Double.parseDouble(String.valueOf(floatvalue));
 		}
-		if(operant instanceof Integer) {
-			Integer integer = (Integer)operant;
+		if (operant instanceof Integer) {
+			Integer integer = (Integer) operant;
 			return Double.parseDouble(String.valueOf(integer));
 		}
-		if(operant instanceof Character) {
-			Character character = (Character)operant;
-			if(Character.isDigit(character)) {
+		if (operant instanceof Character) {
+			Character character = (Character) operant;
+			if (Character.isDigit(character)) {
 				int numericValue = Character.getNumericValue(character);
 				return Double.parseDouble(String.valueOf(numericValue));
 			}
 		}
-		if(operant instanceof Short) {
-			Short shortvalue = (Short)operant;
+		if (operant instanceof Short) {
+			Short shortvalue = (Short) operant;
 			return Double.parseDouble(String.valueOf(shortvalue));
 		}
-		if(operant instanceof Byte) {
-			Byte bytevalue = (Byte)operant;
+		if (operant instanceof Byte) {
+			Byte bytevalue = (Byte) operant;
 			return Double.parseDouble(String.valueOf(bytevalue));
 		}
-		if(operant instanceof Long) {
-			Long floatvalue = (Long)operant;
+		if (operant instanceof Long) {
+			Long floatvalue = (Long) operant;
 			return Double.parseDouble(String.valueOf(floatvalue));
 		}
-		if(operant instanceof BigDecimal) {
-			BigDecimal bigdecimalvalue = (BigDecimal)operant;
+		if (operant instanceof BigDecimal) {
+			BigDecimal bigdecimalvalue = (BigDecimal) operant;
 			return Double.parseDouble(String.valueOf(bigdecimalvalue));
-		} else
+		} else {
 			throw new XWTException(OperatorExceptionMessage.TYPE_WRONG);
+		}
 	}
 
 	/**
 	 * the compare of two object for NE,EQ
-	 * 
+	 *
 	 * @param operant1
 	 * @param operant2
 	 * @return
 	 */
 	private static boolean objectCompare(Object operant1, Object operant2) {
-		if(operant1 == operant2) {
+		if (operant1 == operant2) {
 			return true;
 		}
-		if(operant1 != null) {
+		if (operant1 != null) {
 			return operant1.equals(operant2);
-		} else if(operant1 != null) {
+		} else if (operant1 != null) {
 			return operant2.equals(operant1);
 		}
 		return false;
@@ -166,7 +169,7 @@ public enum Operator {
 
 	/**
 	 * the compare of two object for ISA
-	 * 
+	 *
 	 * @param operant1
 	 * @param operant2
 	 * @return
@@ -178,7 +181,7 @@ public enum Operator {
 
 	/**
 	 * the compare of two Double
-	 * 
+	 *
 	 * @param operant1
 	 * @param operant2
 	 * @return
@@ -189,19 +192,19 @@ public enum Operator {
 
 	/**
 	 * the compare of two String for Like
-	 * 
+	 *
 	 * @param operant1
 	 * @param operant2
 	 * @return
 	 * @throws XWTException
 	 */
 	private static boolean LikeCompare(Object operant1, Object operant2) throws XWTException {
-		if(operant1 == null || operant2 == null) {
+		if (operant1 == null || operant2 == null) {
 			throw new XWTException(OperatorExceptionMessage.OPRERANR_NULL);
 		}
-		if(operant1 instanceof String && operant2 instanceof String) {
-			String operant1String = (String)operant1;
-			String operant2String = (String)operant2;
+		if (operant1 instanceof String && operant2 instanceof String) {
+			String operant1String = (String) operant1;
+			String operant2String = (String) operant2;
 			String queryString = parseRegularExpressionString(operant1String);
 			Pattern pattern = Pattern.compile(queryString);
 			Matcher matcher = pattern.matcher(operant2String);
@@ -212,7 +215,7 @@ public enum Operator {
 
 	/**
 	 * build the regular expressions
-	 * 
+	 *
 	 * @param queryString
 	 * @return
 	 */

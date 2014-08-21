@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ public class ValidationFunctions implements IDecorationSpecificFunctions {
 	public ImageDescriptor getImageDescriptorForGE(int severity) {
 		ISharedImages sharedImages = PlatformUI.getWorkbench().getSharedImages();
 		ImageDescriptor overlay = null;
-		switch(severity) {
+		switch (severity) {
 		case IPapyrusMarker.SEVERITY_ERROR:
 			overlay = sharedImages.getImageDescriptor(ISharedImages.IMG_OBJS_ERROR_TSK);
 			break;
@@ -74,19 +74,19 @@ public class ValidationFunctions implements IDecorationSpecificFunctions {
 		ImageDescriptor overlay = null;
 
 		org.eclipse.papyrus.infra.widgets.Activator widgetsActivator =
-			org.eclipse.papyrus.infra.widgets.Activator.getDefault();
-		switch(severity) {
+				org.eclipse.papyrus.infra.widgets.Activator.getDefault();
+		switch (severity) {
 		case IPapyrusMarker.SEVERITY_ERROR:
 			overlay = sharedImages.getImageDescriptor(ISharedImages.IMG_DEC_FIELD_ERROR);
 			// workaround for bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=383810
-			if(overlay == null) {
+			if (overlay == null) {
 				overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, error_co);
 			}
 			break;
 		case IPapyrusMarker.SEVERITY_WARNING:
 			overlay = sharedImages.getImageDescriptor(ISharedImages.IMG_DEC_FIELD_WARNING);
 			// workaround for bug https://bugs.eclipse.org/bugs/show_bug.cgi?id=383810
-			if(overlay == null) {
+			if (overlay == null) {
 				overlay = widgetsActivator.getImageDescriptor(Activator.PLUGIN_ID, warning_co);
 			}
 			break;
@@ -122,34 +122,34 @@ public class ValidationFunctions implements IDecorationSpecificFunctions {
 		int childWarnings = 0;
 		int childErrors = 0;
 		// loop over children. Use the "highest" level for parent decoration
-		for(IPapyrusDecoration childDecoration : childDecorations) {
-			if(childDecoration.getDecorationImageForME() == getImageDescriptorForME(IPapyrusMarker.SEVERITY_WARNING)) {
-				childWarnings ++;
+		for (IPapyrusDecoration childDecoration : childDecorations) {
+			if (childDecoration.getDecorationImageForME() == getImageDescriptorForME(IPapyrusMarker.SEVERITY_WARNING)) {
+				childWarnings++;
 			}
-			else if(childDecoration.getDecorationImageForME() == getImageDescriptorForME(IPapyrusMarker.SEVERITY_ERROR)) {
-				childErrors ++;
+			else if (childDecoration.getDecorationImageForME() == getImageDescriptorForME(IPapyrusMarker.SEVERITY_ERROR)) {
+				childErrors++;
 			}
 		}
-		if(childWarnings > 0 || childErrors > 0) {
+		if (childWarnings > 0 || childErrors > 0) {
 			String message = ""; //$NON-NLS-1$
 			int childSeverity = 0;
 			String msgErrors = childErrors + " error(s)"; //$NON-NLS-1$
-			String msgWarnings =  childWarnings + " warnings(s)"; //$NON-NLS-1$
-			if(childErrors > 0 && childWarnings > 0) {
-				message =  msgErrors + " and " + msgWarnings; //$NON-NLS-1$
+			String msgWarnings = childWarnings + " warnings(s)"; //$NON-NLS-1$
+			if (childErrors > 0 && childWarnings > 0) {
+				message = msgErrors + " and " + msgWarnings; //$NON-NLS-1$
 				childSeverity = IPapyrusMarker.SEVERITY_ERROR;
 			}
-			else if(childErrors > 0) {
+			else if (childErrors > 0) {
 				message = msgErrors;
 				childSeverity = IPapyrusMarker.SEVERITY_ERROR;
 			}
-			else if(childWarnings > 0) {
+			else if (childWarnings > 0) {
 				message = msgWarnings;
 				childSeverity = IPapyrusMarker.SEVERITY_WARNING;
 			}
 			message += " in the children"; //$NON-NLS-1$
 			IPapyrusDecoration deco = new Decoration(null, EValidator.MARKER,
-				getImageDescriptorForGE(childSeverity), getImageDescriptorForME(childSeverity), message, null, childSeverity);
+					getImageDescriptorForGE(childSeverity), getImageDescriptorForME(childSeverity), message, null, childSeverity);
 			deco.setPosition(PreferedPosition.NORTH_WEST);
 			return deco;
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,12 +41,12 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	public void addAdditionalListeners() {
 		super.addAdditionalListeners();
 		Parameter parameter = getUMLElement();
-		if(parameter == null) {
+		if (parameter == null) {
 			// check semantic element is not null and this is really an instance of Parameter
 			return;
 		}
 		// adds a listener to the element itself, and to linked elements, like Type
-		if(parameter.getType() != null) {
+		if (parameter.getType() != null) {
 			getDiagramEventBroker().addNotificationListener(parameter.getType(), this);
 		}
 	}
@@ -72,7 +72,7 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 */
 	@Override
 	public Parameter getUMLElement() {
-		return (Parameter)super.getUMLElement();
+		return (Parameter) super.getUMLElement();
 	}
 
 	/**
@@ -87,23 +87,23 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 		// - the annotation corresponding to the display of the stereotype changes
 		// - the stereotype application list has changed
 		Object object = notification.getNotifier();
-		Parameter parameter = (Parameter)hostSemanticElement;
+		Parameter parameter = (Parameter) hostSemanticElement;
 
-		if((object == null) || (hostSemanticElement == null)) {
+		if ((object == null) || (hostSemanticElement == null)) {
 			return;
 		}
 
-		if(object.equals(parameter)) {
+		if (object.equals(parameter)) {
 			notifyParameterChanged(parameter, notification);
-		} else if(object.equals(parameter.getType())) {
+		} else if (object.equals(parameter.getType())) {
 			notifyParameterTypeChanged(parameter.getType(), notification);
 		}
 
-		if(isMaskManagedAnnotation(object)) {
+		if (isMaskManagedAnnotation(object)) {
 			refreshDisplay();
 		}
 
-		if(isRemovedMaskManagedLabelAnnotation(object, notification)) {
+		if (isRemovedMaskManagedLabelAnnotation(object, notification)) {
 			refreshDisplay();
 		}
 
@@ -113,12 +113,12 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 * notifies that the the parameter has changed.
 	 *
 	 * @param parameter
-	 *        the parameter that has changed
+	 *            the parameter that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyParameterChanged(Parameter parameter, Notification notification) {
-		switch(notification.getFeatureID(Parameter.class)) {
+		switch (notification.getFeatureID(Parameter.class)) {
 		case UMLPackage.PARAMETER__NAME:
 		case UMLPackage.PARAMETER__VISIBILITY:
 		case UMLPackage.PARAMETER__DIRECTION:
@@ -136,34 +136,34 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			break;
 		case UMLPackage.PARAMETER__TYPE:
 
-			switch(notification.getEventType()) {
+			switch (notification.getEventType()) {
 			// if it is added => adds listener to the type element
 			case Notification.ADD:
-				getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				refreshDisplay();
 				// if it is removed => removes listener from the type element
 				break;
 			case Notification.ADD_MANY: // should never happen
-				if(notification.getNewValue() instanceof List<?>) {
-					List<?> addedElements = (List<?>)notification.getNewValue();
-					for(Object addedElement : addedElements) {
-						if(addedElement instanceof EObject) {
-							getDiagramEventBroker().addNotificationListener((EObject)addedElement, this);
+				if (notification.getNewValue() instanceof List<?>) {
+					List<?> addedElements = (List<?>) notification.getNewValue();
+					for (Object addedElement : addedElements) {
+						if (addedElement instanceof EObject) {
+							getDiagramEventBroker().addNotificationListener((EObject) addedElement, this);
 						}
 					}
 				}
 				refreshDisplay();
 				break;
 			case Notification.REMOVE:
-				getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				refreshDisplay();
 				break;
 			case Notification.REMOVE_MANY: // should never happen
-				if(notification.getOldValue() instanceof List<?>) {
-					List<?> removedElements = (List<?>)notification.getOldValue();
-					for(Object removedElement : removedElements) {
-						if(removedElement instanceof EObject) {
-							getDiagramEventBroker().removeNotificationListener((EObject)removedElement, this);
+				if (notification.getOldValue() instanceof List<?>) {
+					List<?> removedElements = (List<?>) notification.getOldValue();
+					for (Object removedElement : removedElements) {
+						if (removedElement instanceof EObject) {
+							getDiagramEventBroker().removeNotificationListener((EObject) removedElement, this);
 						}
 					}
 				}
@@ -172,11 +172,11 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 			// if it is set, remove the old one and adds the new one. this is the method use when
 			// the type is set or removed...
 			case Notification.SET:
-				if(notification.getNewValue() != null) {
-					getDiagramEventBroker().addNotificationListener((EObject)notification.getNewValue(), this);
+				if (notification.getNewValue() != null) {
+					getDiagramEventBroker().addNotificationListener((EObject) notification.getNewValue(), this);
 				}
-				if(notification.getOldValue() != null) {
-					getDiagramEventBroker().removeNotificationListener((EObject)notification.getOldValue(), this);
+				if (notification.getOldValue() != null) {
+					getDiagramEventBroker().removeNotificationListener((EObject) notification.getOldValue(), this);
 				}
 				refreshDisplay();
 
@@ -196,12 +196,12 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	 * notifies that the type of the parameter has changed.
 	 *
 	 * @param type
-	 *        the type of the parameter that has changed
+	 *            the type of the parameter that has changed
 	 * @param notification
-	 *        the notification send when the element has been changed
+	 *            the notification send when the element has been changed
 	 */
 	protected void notifyParameterTypeChanged(Type type, Notification notification) {
-		switch(notification.getFeatureID(Parameter.class)) {
+		switch (notification.getFeatureID(Parameter.class)) {
 		case UMLPackage.TYPE__NAME:
 			refreshDisplay(); // type name has changed => refresh the parameter display
 			break;
@@ -217,7 +217,7 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	@Override
 	public void refreshDisplay() {
 		// calls the helper for this edit Part
-		ParameterLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart)getHost());
+		ParameterLabelHelper.getInstance().refreshEditPartDisplay((GraphicalEditPart) getHost());
 	}
 
 	/**
@@ -227,11 +227,11 @@ public class ParameterLabelEditPolicy extends AbstractMaskManagedEditPolicy {
 	protected void removeAdditionalListeners() {
 		super.removeAdditionalListeners();
 		Parameter parameter = getUMLElement();
-		if(parameter == null) {
+		if (parameter == null) {
 			// check semantic element is not null and this is really an instance of Parameter
 			return;
 		}
-		if(parameter.getType() != null) {
+		if (parameter.getType() != null) {
 			getDiagramEventBroker().removeNotificationListener(parameter.getType(), this);
 		}
 	}

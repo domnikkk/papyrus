@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,7 +27,7 @@ public class CustomMessage6ReorientCommand extends Message6ReorientCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
 	 */
 	public CustomMessage6ReorientCommand(ReorientRelationshipRequest request) {
@@ -39,18 +39,18 @@ public class CustomMessage6ReorientCommand extends Message6ReorientCommand {
 	 */
 	@Override
 	protected boolean canReorientSource() {
-		if(!(getOldSource() instanceof Element && getNewSource() instanceof Element)) {
+		if (!(getOldSource() instanceof Element && getNewSource() instanceof Element)) {
 			return false;
 		}
-		if(getLink().getOwnedElements().size() != 1) {
+		if (getLink().getOwnedElements().size() != 1) {
 			return false;
 		}
 		Element target = getLink().getOwnedElements().get(0);
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
-		if(!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4008(container, getLink(), getNewSource(), target)) {
+		Interaction container = (Interaction) getLink().eContainer();
+		if (!UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4008(container, getLink(), getNewSource(), target)) {
 			return false;
 		}
 		return MessageConnectionHelper.canReorientSource(getLink(), getNewSource());

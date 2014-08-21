@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,73 +27,73 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * An utility class to create event elements.
- * 
+ *
  */
 public class EventHelper {
 
 	/**
 	 * Create an event
-	 * 
+	 *
 	 * @param eventContainer
-	 *        the container
+	 *            the container
 	 * @param eClass
 	 * @return the event
 	 */
 	public static Event doCreateEvent(Package eventContainer, EClass eClass) {
-		Event event = (Event)eventContainer.createPackagedElement(null, eClass);
+		Event event = (Event) eventContainer.createPackagedElement(null, eClass);
 		ElementInitializers.init_NamedElement(event);
 		return event;
 	}
 
 	/**
 	 * Create an event
-	 * 
+	 *
 	 * @param eventContainer
-	 *        the container
+	 *            the container
 	 * @param operation
 	 * @return the event
 	 */
 	public static CallEvent doCreateCallEvent(Package eventContainer, Operation operation) {
-		CallEvent event = (CallEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getCallEvent());
+		CallEvent event = (CallEvent) doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getCallEvent());
 		event.setOperation(operation);
 		return event;
 	}
 
 	/**
 	 * Create a SendOperation event and initializes its name
-	 * 
+	 *
 	 * @param eventContainer
-	 *        the container
+	 *            the container
 	 * @param operation
-	 *        the operation of the event. Can't be null
+	 *            the operation of the event. Can't be null
 	 * @return the sendOperation event
 	 */
-	// Does not exist anymore in UML 2.4		
-	//	public static SendOperationEvent doCreateSendOperationEvent(Package eventContainer, Operation operation) {
-	//		SendOperationEvent sendOperationEvent = (SendOperationEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getSendOperationEvent());
-	//		sendOperationEvent.setOperation(operation);
-	//		return sendOperationEvent;
-	//	}
+	// Does not exist anymore in UML 2.4
+	// public static SendOperationEvent doCreateSendOperationEvent(Package eventContainer, Operation operation) {
+	// SendOperationEvent sendOperationEvent = (SendOperationEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getSendOperationEvent());
+	// sendOperationEvent.setOperation(operation);
+	// return sendOperationEvent;
+	// }
 	/**
 	 * Create a ReceiveOperation event and initializes its name
-	 * 
+	 *
 	 * @param eventContainer
-	 *        the container
+	 *            the container
 	 * @param operation
-	 *        the operation of the event. Can't be null
+	 *            the operation of the event. Can't be null
 	 * @return the receiveOperation event
 	 */
-	// Does not exist anymore in UML 2.4	
-	//	public static ReceiveOperationEvent doCreateReceiveOperationEvent(Package eventContainer, Operation operation) {
-	//		ReceiveOperationEvent receiveOperationEvent = (ReceiveOperationEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getReceiveOperationEvent());
-	//		receiveOperationEvent.setOperation(operation);
-	//		return receiveOperationEvent;
-	//	}
+	// Does not exist anymore in UML 2.4
+	// public static ReceiveOperationEvent doCreateReceiveOperationEvent(Package eventContainer, Operation operation) {
+	// ReceiveOperationEvent receiveOperationEvent = (ReceiveOperationEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getReceiveOperationEvent());
+	// receiveOperationEvent.setOperation(operation);
+	// return receiveOperationEvent;
+	// }
 	/**
 	 * @param eventContainer
-	 *        the container
+	 *            the container
 	 * @param signal
-	 *        the signal of the event. Can't be null
+	 *            the signal of the event. Can't be null
 	 * @return the send signal event
 	 *         // Does not exist anymore in UML 2.4
 	 *         // public static SendSignalEvent doCreateSendSignalEvent(Package eventContainer, Signal signal) {
@@ -101,53 +101,53 @@ public class EventHelper {
 	 *         // sendSignalEvent.setSignal(signal);
 	 *         // return sendSignalEvent;
 	 *         // }
-	 * 
+	 *
 	 *         /**
 	 * @param eventContainer
-	 *        the container
+	 *            the container
 	 * @param signal
-	 *        the signal of the event. Can't be null
+	 *            the signal of the event. Can't be null
 	 * @return the ReceiveSignal event
 	 */
-	// Does not exist anymore in UML 2.4	
-	//	public static ReceiveSignalEvent doCreateReceiveSignalEvent(Package eventContainer, Signal signal) {
-	//		ReceiveSignalEvent receiveSignalEvent = (ReceiveSignalEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getReceiveSignalEvent());
-	//		receiveSignalEvent.setSignal(signal);
-	//		return receiveSignalEvent;
-	//	}
-	// Does not exist anymore in UML 2.4	
-	//	/**
-	//	 * Create a receive signal event
-	//	 * 
-	//	 * @param eventContainer
-	//	 *        the container
-	//	 * @return the receive signal event
-	//	 */
-	//	public static CreationEvent doCreateCreationEvent(Package eventContainer) {
-	//		return (CreationEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getCreationEvent());
-	//	}
+	// Does not exist anymore in UML 2.4
+	// public static ReceiveSignalEvent doCreateReceiveSignalEvent(Package eventContainer, Signal signal) {
+	// ReceiveSignalEvent receiveSignalEvent = (ReceiveSignalEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getReceiveSignalEvent());
+	// receiveSignalEvent.setSignal(signal);
+	// return receiveSignalEvent;
+	// }
+	// Does not exist anymore in UML 2.4
+	// /**
+	// * Create a receive signal event
+	// *
+	// * @param eventContainer
+	// * the container
+	// * @return the receive signal event
+	// */
+	// public static CreationEvent doCreateCreationEvent(Package eventContainer) {
+	// return (CreationEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getCreationEvent());
+	// }
 	//
-	//	/**
-	//	 * Create a destruction event
-	//	 * 
-	//	 * @param eventContainer
-	//	 *        the container
-	//	 * @return the destruction event
-	//	 */
-	//	public static DestructionEvent doCreateDestructionEvent(Package eventContainer) {
-	//		return (DestructionEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getDestructionEvent());
-	//	}
+	// /**
+	// * Create a destruction event
+	// *
+	// * @param eventContainer
+	// * the container
+	// * @return the destruction event
+	// */
+	// public static DestructionEvent doCreateDestructionEvent(Package eventContainer) {
+	// return (DestructionEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getDestructionEvent());
+	// }
 	//
-	//	/**
-	//	 * Create an execution event
-	//	 * 
-	//	 * @param eventContainer
-	//	 *        the container
-	//	 * @return the executionEvent
-	//	 */
-	//	public static ExecutionEvent doCreateExecutionEvent(Package eventContainer) {
-	//		return (ExecutionEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getExecutionEvent());
-	//	}
+	// /**
+	// * Create an execution event
+	// *
+	// * @param eventContainer
+	// * the container
+	// * @return the executionEvent
+	// */
+	// public static ExecutionEvent doCreateExecutionEvent(Package eventContainer) {
+	// return (ExecutionEvent)doCreateEvent(eventContainer, UMLPackage.eINSTANCE.getExecutionEvent());
+	// }
 	/**
 	 * Create a receive event in the package containing the interaction If the
 	 * messageSort is ASYNCH_SIGNAL, it creates a ReceiveSignalEvent If the
@@ -155,31 +155,31 @@ public class EventHelper {
 	 * ReceiveOperationEvent If the messageSort is CREATE_MESSAGE, it creates a
 	 * CreationEvent. If the messageSort is DELETE_MESSAGE, it creates a
 	 * DestructionEvent.
-	 * 
+	 *
 	 * @param messageSort
-	 *        the messageSort
+	 *            the messageSort
 	 * @param interaction
-	 *        the interaction
+	 *            the interaction
 	 * @param signature
-	 *        the signature of the message
+	 *            the signature of the message
 	 * @return the created receive event or null
 	 */
 	public static Event doCreateReceiveEvent(MessageSort messageSort, Interaction interaction, NamedElement signature) {
 		Event event = null;
-		switch(messageSort) {
+		switch (messageSort) {
 		case ASYNCH_SIGNAL_LITERAL:
-			//event = doCreateReceiveSignalEvent(eventContainer, (Signal)signature);
+			// event = doCreateReceiveSignalEvent(eventContainer, (Signal)signature);
 			break;
 		case ASYNCH_CALL_LITERAL:
 		case SYNCH_CALL_LITERAL:
 		case REPLY_LITERAL:
-			//event = doCreateReceiveOperationEvent(eventContainer, (Operation)signature);
+			// event = doCreateReceiveOperationEvent(eventContainer, (Operation)signature);
 			break;
 		case CREATE_MESSAGE_LITERAL:
-			//event = doCreateCreationEvent(eventContainer);
+			// event = doCreateCreationEvent(eventContainer);
 			break;
 		case DELETE_MESSAGE_LITERAL:
-			//event = doCreateDestructionEvent(eventContainer);
+			// event = doCreateDestructionEvent(eventContainer);
 			break;
 		default:
 			break;
@@ -192,27 +192,27 @@ public class EventHelper {
 	 * messageSort is ASYNCH_SIGNAL, CREATE_MESSAGE, DELETE_MESSAGE, it creates
 	 * a SendSignalEvent If the messageSort is ASYNCH_CALL, SYNCH_CALL,
 	 * REPLY_LITERAL, it creates a SendOperationEvent.
-	 * 
+	 *
 	 * @param messageSort
-	 *        the messageSort
+	 *            the messageSort
 	 * @param interaction
-	 *        the interaction
+	 *            the interaction
 	 * @param signature
-	 *        the signature of the message
+	 *            the signature of the message
 	 * @return the created send event or null
 	 */
 	public static Event doCreateSendEvent(MessageSort messageSort, Interaction interaction, NamedElement signature) {
 		Event event = null;
-		switch(messageSort) {
+		switch (messageSort) {
 		case ASYNCH_SIGNAL_LITERAL:
 		case CREATE_MESSAGE_LITERAL:
 		case DELETE_MESSAGE_LITERAL:
-			//event = doCreateSendSignalEvent(eventContainer, (Signal)signature);
+			// event = doCreateSendSignalEvent(eventContainer, (Signal)signature);
 			break;
 		case ASYNCH_CALL_LITERAL:
 		case SYNCH_CALL_LITERAL:
 		case REPLY_LITERAL:
-			//event = doCreateSendOperationEvent(eventContainer, (Operation)signature);
+			// event = doCreateSendOperationEvent(eventContainer, (Operation)signature);
 			break;
 		default:
 			break;
@@ -223,17 +223,17 @@ public class EventHelper {
 	/**
 	 * Retrieve the event container. A recursive method that test if a given
 	 * element is a Package.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @return the first package found in the hierarchy or null if nothing has
 	 *         been found
 	 */
 	public static Package getEventContainer(Element element) {
 		Package container = null;
-		if(element instanceof Package) {
-			container = (Package)element;
-		} else if(element != null) {
+		if (element instanceof Package) {
+			container = (Package) element;
+		} else if (element != null) {
 			container = getEventContainer(element.getOwner());
 		}
 		return container;

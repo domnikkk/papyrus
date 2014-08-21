@@ -14,7 +14,7 @@ import org.eclipse.papyrus.views.properties.contexts.View;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay#getView <em>View</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay#getView <em>View</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,10 +27,10 @@ public interface ViewToDisplay extends EObject {
 	 * Returns the value of the '<em><b>View</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' reference isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>View</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>View</em>' reference.
 	 * @see #setView(View)
 	 * @see org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.RuntimeValuesEditionActionConfigurationPackage#getViewToDisplay_View()
@@ -43,7 +43,9 @@ public interface ViewToDisplay extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.extendedtypes.emf.runtimevalueseditionactionconfiguration.ViewToDisplay#getView <em>View</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>View</em>' reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>View</em>' reference.
 	 * @see #getView()
 	 * @generated
 	 */

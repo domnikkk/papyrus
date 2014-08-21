@@ -23,16 +23,17 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  * @author Grégoire Dupé (Mia-Software)
  */
 @Deprecated
-//Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.ImageProvider
+// Copied from org.eclipse.papyrus.emf.facet.infra.query.ui.ImageProvider
 public final class ImageProvider {
 	//	private static final String MODEL_QUERY = "icons/modelQuery.png"; //$NON-NLS-1$
 	private static final String REMOVE = "icons/remove.gif"; //$NON-NLS-1$
 	private static final String REMOVE_ALL = "icons/removeAll.gif"; //$NON-NLS-1$
-	private static final String MODEL_QUERY_SET = "icons/ModelQuerySet.gif";  //$NON-NLS-1$
+	private static final String MODEL_QUERY_SET = "icons/ModelQuerySet.gif"; //$NON-NLS-1$
 
 	private static ImageProvider singleton;
 
-	 private Image modelQuerySet;
+	private Image modelQuerySet;
+
 	// private Image modelQuery;
 	// private Image remove;
 	// private Image removeAll;
@@ -43,7 +44,7 @@ public final class ImageProvider {
 
 	/**
 	 * Create an image descriptor from a resource
-	 * 
+	 *
 	 * @param resourcePath
 	 *            the path of the resource (in the bundle)
 	 * @return the image descriptor
@@ -72,6 +73,7 @@ public final class ImageProvider {
 		}
 		return this.modelQuerySet;
 	}
+
 	//
 	// public Image getModelQuery() {
 	// if (this.modelQuery == null) {

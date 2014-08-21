@@ -30,6 +30,7 @@ import org.eclipse.papyrus.sysml.blocks.Dimension;
 import org.eclipse.papyrus.sysml.blocks.Unit;
 import org.eclipse.papyrus.sysml.diagram.common.preferences.ILabelPreferenceConstants;
 import org.eclipse.papyrus.uml.diagram.common.parser.NamedElementLabelParser;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
@@ -52,31 +53,31 @@ public class UnitLabelParser extends NamedElementLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = "";
 		EObject eObject = EMFHelper.getEObject(element);
 
-		if((eObject != null) && (eObject instanceof InstanceSpecification)) {
+		if ((eObject != null) && (eObject instanceof InstanceSpecification)) {
 
-			InstanceSpecification iSpec = (InstanceSpecification)eObject;
+			InstanceSpecification iSpec = (InstanceSpecification) eObject;
 
 			Unit unit = UMLUtil.getStereotypeApplication(iSpec, Unit.class);
 
 			// manage name
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_NAME)) && (iSpec.isSetName())) {
+			if ((maskValues.contains(ICustomAppearance.DISP_NAME)) && (iSpec.isSetName())) {
 				String name = iSpec.getName();
 				result = String.format(NAME_FORMAT, name);
 			}
 
 			// manage dimension
-			if((maskValues.contains(ILabelPreferenceConstants.DISP_DIMENSION))) {
+			if ((maskValues.contains(ILabelPreferenceConstants.DISP_DIMENSION))) {
 				String dimensionName = "<Undefined>";
-				if((unit != null) && (unit.getDimension() != null)) {
+				if ((unit != null) && (unit.getDimension() != null)) {
 					Dimension dim = unit.getDimension();
-					if((dim.getBase_InstanceSpecification() != null) && (dim.getBase_InstanceSpecification().isSetName())) {
+					if ((dim.getBase_InstanceSpecification() != null) && (dim.getBase_InstanceSpecification().isSetName())) {
 						dimensionName = dim.getBase_InstanceSpecification().getName();
 					}
 				}
@@ -94,9 +95,9 @@ public class UnitLabelParser extends NamedElementLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return BlocksPackage.eINSTANCE.getUnit_Dimension().equals(feature) || super.isAffectingEvent(event, flags);
 			}
 		}
@@ -111,13 +112,13 @@ public class UnitLabelParser extends NamedElementLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = new ArrayList<EObject>();
 
-		if((element != null) && (element instanceof InstanceSpecification)) {
-			InstanceSpecification semElement = (InstanceSpecification)element;
+		if ((element != null) && (element instanceof InstanceSpecification)) {
+			InstanceSpecification semElement = (InstanceSpecification) element;
 
 			semanticElementsBeingParsed.add(semElement);
 
 			Unit unit = UMLUtil.getStereotypeApplication(semElement, Unit.class);
-			if(unit != null) {
+			if (unit != null) {
 				semanticElementsBeingParsed.add(unit);
 			}
 		}
@@ -128,13 +129,13 @@ public class UnitLabelParser extends NamedElementLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>();
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
 		masks.put(ILabelPreferenceConstants.DISP_DIMENSION, "Dimension");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_DIMENSION);
+		return Arrays.asList(ICustomAppearance.DISP_NAME, ILabelPreferenceConstants.DISP_DIMENSION);
 	}
 }

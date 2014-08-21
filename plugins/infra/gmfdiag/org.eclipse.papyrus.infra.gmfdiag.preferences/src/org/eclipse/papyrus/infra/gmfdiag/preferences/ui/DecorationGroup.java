@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,13 +46,13 @@ public class DecorationGroup extends AbstractGroup {
 
 	/**
 	 * Instantiates a new decoration group.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 * @param key
-	 *        the key
+	 *            the key
 	 * @param dialogPage
-	 *        the dialog page
+	 *            the dialog page
 	 */
 	public DecorationGroup(Composite parent, String key, DialogPage dialogPage) {
 		super(parent, key, dialogPage);
@@ -61,9 +61,9 @@ public class DecorationGroup extends AbstractGroup {
 
 	/**
 	 * Creates the content.
-	 * 
+	 *
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public void createContent(Composite parent) {
 		Group decorationGroup = new Group(parent, 2);

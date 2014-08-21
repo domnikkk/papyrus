@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,12 +54,12 @@ public class NavigationHelper {
 	private NavigationHelper() {
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
-		for(IConfigurationElement configElement : configElements) {
-			if(NAVIGATIONRULE_ID.equals(configElement.getName())) {
+		for (IConfigurationElement configElement : configElements) {
+			if (NAVIGATIONRULE_ID.equals(configElement.getName())) {
 				try {
 					Object obj = configElement.createExecutableExtension(RULE_ID);
-					if(obj instanceof INavigationRule) {
-						navigationRules.add((INavigationRule)obj);
+					if (obj instanceof INavigationRule) {
+						navigationRules.add((INavigationRule) obj);
 					}
 				} catch (CoreException e) {
 				}
@@ -71,10 +71,10 @@ public class NavigationHelper {
 
 		navElements.add(currentNavElement);
 
-		for(INavigationRule navigationRule : navigationRules) {
-			if(navigationRule.handle(currentNavElement.getElement())) {
+		for (INavigationRule navigationRule : navigationRules) {
+			if (navigationRule.handle(currentNavElement.getElement())) {
 				List<NavigableElement> nextNavigableElements = navigationRule.getNextPossibleElements(currentNavElement);
-				for(NavigableElement nextNavigableElement : nextNavigableElements) {
+				for (NavigableElement nextNavigableElement : nextNavigableElements) {
 					addNextNavigableElements(nextNavigableElement, navElements);
 				}
 			}
@@ -84,14 +84,14 @@ public class NavigationHelper {
 	/**
 	 * get all navigation possibilities (existing or "to create" elements) from
 	 * the specified element.
-	 * 
+	 *
 	 * @param element
-	 *        the element
+	 *            the element
 	 * @return a list of navigation possibilities
 	 */
 	public List<NavigableElement> getAllNavigableElements(EObject element) {
 		ArrayList<NavigableElement> navElements = new ArrayList<NavigableElement>();
-		if(element != null) {
+		if (element != null) {
 			addNextNavigableElements(new ExistingNavigableElement(element, null), navElements);
 		}
 		return navElements;
@@ -102,13 +102,13 @@ public class NavigationHelper {
 	 * hierarchy to link the parents between them. Ultimately the hierarchy will
 	 * be attached to an {@link ExistingNavigableElement}, so to the original
 	 * model.
-	 * 
+	 *
 	 * @param createdNavElement
 	 */
 	public static void linkToModel(CreatedNavigableElement createdNavElement) {
 		NavigableElement navElement = createdNavElement;
-		while(navElement instanceof CreatedNavigableElement) {
-			CreatedNavigableElement cne = (CreatedNavigableElement)navElement;
+		while (navElement instanceof CreatedNavigableElement) {
+			CreatedNavigableElement cne = (CreatedNavigableElement) navElement;
 			cne.linkToModel();
 			navElement = cne.getPreviousNavigableElement();
 		}
@@ -117,14 +117,14 @@ public class NavigationHelper {
 	/**
 	 * Same behavior as {@link NavigationHelper#linkToModel(CreatedNavigableElement)} but set the
 	 * base name of the elements.
-	 * 
+	 *
 	 * @param createdNavElement
 	 * @param base
 	 */
 	public static void setBaseName(CreatedNavigableElement createdNavElement, String base) {
 		NavigableElement navElement = createdNavElement;
-		while(navElement instanceof CreatedNavigableElement) {
-			CreatedNavigableElement cne = (CreatedNavigableElement)navElement;
+		while (navElement instanceof CreatedNavigableElement) {
+			CreatedNavigableElement cne = (CreatedNavigableElement) navElement;
 			cne.setBaseName(base);
 			navElement = cne.getPreviousNavigableElement();
 		}
@@ -133,13 +133,13 @@ public class NavigationHelper {
 	public static CompositeCommand getLinkCreateAndOpenNavigableDiagramCommand(final NavigableElement navElement, ICreationCommand creationCommandInterface, final String diagramName, ModelSet modelSet) {
 		CompositeCommand compositeCommand = new CompositeCommand("Create diagram");
 
-		if(navElement instanceof CreatedNavigableElement) {
+		if (navElement instanceof CreatedNavigableElement) {
 			compositeCommand.add(new AbstractTransactionalCommand(modelSet.getTransactionalEditingDomain(), "Create hierarchy", null) {
 
 				@Override
 				protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-					NavigationHelper.linkToModel((CreatedNavigableElement)navElement);
-					NavigationHelper.setBaseName((CreatedNavigableElement)navElement, "");
+					NavigationHelper.linkToModel((CreatedNavigableElement) navElement);
+					NavigationHelper.setBaseName((CreatedNavigableElement) navElement, "");
 					return CommandResult.newOKCommandResult();
 				}
 			});

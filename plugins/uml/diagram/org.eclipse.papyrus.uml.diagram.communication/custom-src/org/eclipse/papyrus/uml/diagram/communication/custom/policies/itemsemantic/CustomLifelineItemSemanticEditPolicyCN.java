@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,23 +49,23 @@ public class CustomLifelineItemSemanticEditPolicyCN extends LifelineItemSemantic
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if(UMLElementTypes.Message_8009 == req.getElementType()) {
+		if (UMLElementTypes.Message_8009 == req.getElementType()) {
 
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(UMLElementTypes.CommentAnnotatedElement_8010 == req.getElementType()) {
+		if (UMLElementTypes.CommentAnnotatedElement_8010 == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if(UMLElementTypes.ConstraintConstrainedElement_8011 == req.getElementType()) {
+		if (UMLElementTypes.ConstraintConstrainedElement_8011 == req.getElementType()) {
 			return getGEFWrapper(new ConstraintConstrainedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(UMLElementTypes.DurationObservationEvent_8012 == req.getElementType()) {
+		if (UMLElementTypes.DurationObservationEvent_8012 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorDurationObservationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(UMLElementTypes.TimeObservationEvent_8013 == req.getElementType()) {
+		if (UMLElementTypes.TimeObservationEvent_8013 == req.getElementType()) {
 			return getGEFWrapper(new ConnectorTimeObservationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
@@ -74,7 +74,7 @@ public class CustomLifelineItemSemanticEditPolicyCN extends LifelineItemSemantic
 
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Message_8009 == req.getElementType()) {
+		if (UMLElementTypes.Message_8009 == req.getElementType()) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
@@ -84,32 +84,32 @@ public class CustomLifelineItemSemanticEditPolicyCN extends LifelineItemSemantic
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 
-		//System.err.println("getReorientRelationshipCommand VisualID of element to reorient :" + getVisualID(req));
-		switch(getVisualID(req)) {
+		// System.err.println("getReorientRelationshipCommand VisualID of element to reorient :" + getVisualID(req));
+		switch (getVisualID(req)) {
 		case MessageEditPart.VISUAL_ID:
 
-			//return getGEFWrapper(new CustomMessagesReorientCommand(req));
-			View connector = (View)req.getParameter(UMLBaseItemSemanticEditPolicy.GRAPHICAL_RECONNECTED_EDGE);
+			// return getGEFWrapper(new CustomMessagesReorientCommand(req));
+			View connector = (View) req.getParameter(UMLBaseItemSemanticEditPolicy.GRAPHICAL_RECONNECTED_EDGE);
 			Object elementToedit = UMLPackage.eINSTANCE.getMessage();
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(elementToedit);
-			if(provider == null) {
+			if (provider == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 
 			ICommand reorientCommand = null;
-			//1. add the reorient messages command 
+			// 1. add the reorient messages command
 			reorientCommand = CompositeCommand.compose(reorientCommand, new CustomMessagesReorientCommand(req));
 
 			Iterator<?> it = connector.getChildren().iterator();
-			while(it.hasNext()) {
-				Object object = (Object)it.next();
+			while (it.hasNext()) {
+				Object object = it.next();
 
-				if(object instanceof View) {
-					View child = (View)object;
+				if (object instanceof View) {
+					View child = (View) object;
 
-					if((child.getElement() != null) && (child.getElement() instanceof Message)) {
+					if ((child.getElement() != null) && (child.getElement() instanceof Message)) {
 
-						Message messageToReorient = (Message)child.getElement();
+						Message messageToReorient = (Message) child.getElement();
 						ReorientRequest reorientMessageRequest = new ReorientRelationshipRequest(messageToReorient, req.getNewRelationshipEnd(), req.getOldRelationshipEnd(), req.getDirection());
 						reorientMessageRequest.setParameter(UMLBaseItemSemanticEditPolicy.GRAPHICAL_RECONNECTED_EDGE, connector);
 						ICommand reorientMessageCommand = provider.getEditCommand(reorientMessageRequest);
@@ -120,7 +120,7 @@ public class CustomLifelineItemSemanticEditPolicyCN extends LifelineItemSemantic
 
 			}
 
-			if(reorientCommand == null) {
+			if (reorientCommand == null) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			return getGEFWrapper(reorientCommand.reduce());

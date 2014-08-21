@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
 /**
  * This class is used to constrain the position of Port when they are added on a Property or a
  * StructuredClassifier
- * 
+ *
  * <pre>
  * +-------------------+
  * |    [Class]        |
@@ -34,12 +34,14 @@ import org.eclipse.gmf.runtime.diagram.ui.figures.IBorderItemLocator;
  * |                  +-+
  * |                   |
  * +-------------------+
- * 
+ *
  * </pre>
- * 
+ *
  * <pre>
  * TODO  : The port is not re-sizable
- * </pre>.
+ * </pre>
+ * 
+ * .
  */
 public class PortPositionLocator implements IBorderItemLocator {
 
@@ -64,11 +66,13 @@ public class PortPositionLocator implements IBorderItemLocator {
 	/**
 	 * Constructor *.
 	 *
-	 * @param parentFigure the parent figure
-	 * @param preferredSide the preferred side
+	 * @param parentFigure
+	 *            the parent figure
+	 * @param preferredSide
+	 *            the preferred side
 	 */
 	public PortPositionLocator(IFigure parentFigure, int preferredSide) {
-		// The preferredSide parameter is not used, just kept here to ensure compatibility 
+		// The preferredSide parameter is not used, just kept here to ensure compatibility
 		// with GMF generated code.
 		this.parentFigure = parentFigure;
 	}
@@ -76,12 +80,14 @@ public class PortPositionLocator implements IBorderItemLocator {
 	/**
 	 * Gets the valid location.
 	 *
-	 * @param proposedLocation the proposed location
-	 * @param borderItem the border item
+	 * @param proposedLocation
+	 *            the proposed location
+	 * @param borderItem
+	 *            the border item
 	 * @return a valid location
-	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle,
-	 * org.eclipse.draw2d.IFigure)
+	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getValidLocation(org.eclipse.draw2d.geometry.Rectangle, org.eclipse.draw2d.IFigure)
 	 */
+	@Override
 	public Rectangle getValidLocation(Rectangle proposedLocation, IFigure borderItem) {
 		return getPreferredLocation(proposedLocation);
 	}
@@ -89,7 +95,8 @@ public class PortPositionLocator implements IBorderItemLocator {
 	/**
 	 * Gets the preferred location.
 	 *
-	 * @param proposedLocation the proposed location
+	 * @param proposedLocation
+	 *            the proposed location
 	 * @return a possible location on parent figure border
 	 */
 	public Rectangle getPreferredLocation(Rectangle proposedLocation) {
@@ -108,28 +115,28 @@ public class PortPositionLocator implements IBorderItemLocator {
 		int yMax = parentRec.y - borderItemOffset + parentRec.height;
 
 		// Modify Port location if MAX X or Y are exceeded
-		if(realLocation.x < xMin) {
+		if (realLocation.x < xMin) {
 			realLocation.x = xMin;
 		}
 
-		if(realLocation.x > xMax) {
+		if (realLocation.x > xMax) {
 			realLocation.x = xMax;
 		}
 
-		if(realLocation.y < yMin) {
+		if (realLocation.y < yMin) {
 			realLocation.y = yMin;
 		}
 
-		if(realLocation.y > yMax) {
+		if (realLocation.y > yMax) {
 			realLocation.y = yMax;
 		}
 
 		// Ensure the port is positioned on its parent borders and not in the middle.
 		// Modify position if needed.
-		if((realLocation.y != yMin) && (realLocation.y != yMax)) {
-			if((realLocation.x != xMin) && (realLocation.x != xMax)) {
+		if ((realLocation.y != yMin) && (realLocation.y != yMax)) {
+			if ((realLocation.x != xMin) && (realLocation.x != xMax)) {
 
-				if(realLocation.x <= (xMin + (parentRec.width / 2))) {
+				if (realLocation.x <= (xMin + (parentRec.width / 2))) {
 					realLocation.x = xMin;
 				} else {
 					realLocation.x = xMax;
@@ -146,51 +153,52 @@ public class PortPositionLocator implements IBorderItemLocator {
 	 *
 	 * @return the current side of parent
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#getCurrentSideOfParent()
-	 * the position of the port around its parent. This position can be
-	 * <ul>
-	 * <li>{@linkplain PositionConstants#NORTH}</li>
-	 * <li> {@linkplain PositionConstants#SOUTH}</li>
-	 * <li> {@linkplain PositionConstants#EAST}</li>
-	 * <li> {@linkplain PositionConstants#WEST}</li>
-	 * <li> {@linkplain PositionConstants#NORTH_EAST}</li>
-	 * <li> {@linkplain PositionConstants#NORTH_WEST}</li>
-	 * <li> {@linkplain PositionConstants#SOUTH_EAST}</li>
-	 * <li> {@linkplain PositionConstants#SOUTH_WEST}</li>
-	 * </ul>
+	 *      the position of the port around its parent. This position can be
+	 *      <ul>
+	 *      <li>{@linkplain PositionConstants#NORTH}</li>
+	 *      <li> {@linkplain PositionConstants#SOUTH}</li>
+	 *      <li> {@linkplain PositionConstants#EAST}</li>
+	 *      <li> {@linkplain PositionConstants#WEST}</li>
+	 *      <li> {@linkplain PositionConstants#NORTH_EAST}</li>
+	 *      <li> {@linkplain PositionConstants#NORTH_WEST}</li>
+	 *      <li> {@linkplain PositionConstants#SOUTH_EAST}</li>
+	 *      <li> {@linkplain PositionConstants#SOUTH_WEST}</li>
+	 *      </ul>
 	 */
+	@Override
 	public int getCurrentSideOfParent() {
 		int position = PositionConstants.NONE;
 
-		//we are not on EAST, not on WEST, but we are on the NORTH
-		if((constraint.x != parentFigure.getBounds().width - borderItemOffset) && (constraint.x != -this.borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
+		// we are not on EAST, not on WEST, but we are on the NORTH
+		if ((constraint.x != parentFigure.getBounds().width - borderItemOffset) && (constraint.x != -this.borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
 			position = PositionConstants.NORTH;
 
-			//we are not on the EAST and not on the WEST, but we are on the SOUTH			
-		} else if((constraint.x != parentFigure.getBounds().width - borderItemOffset) && (constraint.x != -this.borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
+			// we are not on the EAST and not on the WEST, but we are on the SOUTH
+		} else if ((constraint.x != parentFigure.getBounds().width - borderItemOffset) && (constraint.x != -this.borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.SOUTH;
 
-			//we are on the EAST, but we are not on the NORTH and not on the SOUTH
-		} else if((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y != -this.borderItemOffset) && (constraint.y != parentFigure.getBounds().height - borderItemOffset)) {
+			// we are on the EAST, but we are not on the NORTH and not on the SOUTH
+		} else if ((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y != -this.borderItemOffset) && (constraint.y != parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.EAST;
 
-			//we are on the WEST, but we are not on the on the NORTH and not on the SOUTH
-		} else if((constraint.x == -this.borderItemOffset) && (constraint.y != -this.borderItemOffset) && (constraint.y != parentFigure.getBounds().height - borderItemOffset)) {
+			// we are on the WEST, but we are not on the on the NORTH and not on the SOUTH
+		} else if ((constraint.x == -this.borderItemOffset) && (constraint.y != -this.borderItemOffset) && (constraint.y != parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.WEST;
 
-			//we are on the NORTH and on the EAST
-		} else if((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
+			// we are on the NORTH and on the EAST
+		} else if ((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
 			position = PositionConstants.NORTH_EAST;
 
-			//we are on the NORTH and on the WEST
-		} else if((constraint.x == -this.borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
+			// we are on the NORTH and on the WEST
+		} else if ((constraint.x == -this.borderItemOffset) && (constraint.y == -this.borderItemOffset)) {
 			position = PositionConstants.NORTH_WEST;
 
-			//we are on the EAST and on the SOUTH
-		} else if((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
+			// we are on the EAST and on the SOUTH
+		} else if ((constraint.x == parentFigure.getBounds().width - borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.SOUTH_EAST;
 
-			//we are on the WEST and on the SOUTH
-		} else if((constraint.x == -this.borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
+			// we are on the WEST and on the SOUTH
+		} else if ((constraint.x == -this.borderItemOffset) && (constraint.y == parentFigure.getBounds().height - borderItemOffset)) {
 			position = PositionConstants.SOUTH_WEST;
 		}
 
@@ -200,9 +208,11 @@ public class PortPositionLocator implements IBorderItemLocator {
 	/**
 	 * Sets the constraint.
 	 *
-	 * @param constraint the new constraint
+	 * @param constraint
+	 *            the new constraint
 	 * @see org.eclipse.gmf.runtime.draw2d.ui.figures.IBorderItemLocator#setConstraint(org.eclipse.draw2d.geometry.Rectangle)
 	 */
+	@Override
 	public void setConstraint(Rectangle constraint) {
 		this.constraint = constraint;
 
@@ -211,9 +221,11 @@ public class PortPositionLocator implements IBorderItemLocator {
 	/**
 	 * Relocate.
 	 *
-	 * @param target the target
+	 * @param target
+	 *            the target
 	 * @see org.eclipse.draw2d.Locator#relocate(org.eclipse.draw2d.IFigure)
 	 */
+	@Override
 	public void relocate(IFigure target) {
 
 		Rectangle proposedLocation = constraint.getCopy();

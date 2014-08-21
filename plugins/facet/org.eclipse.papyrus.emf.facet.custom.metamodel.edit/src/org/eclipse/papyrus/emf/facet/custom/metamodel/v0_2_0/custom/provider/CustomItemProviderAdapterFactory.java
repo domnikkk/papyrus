@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  *  Contributors:
  *  	Gregoire Dupe (Mia-Software) - Bug 361794 - [Restructuring] New customization meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 369987 - [Restructuring][Table] Switch to the new customization and facet framework
- *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning 
+ *       Gregoire Dupe (Mia-Software) - Bug 373078 - API Cleaning
  */
 package org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.provider;
 
@@ -39,6 +39,7 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.util.CustomA
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class CustomItemProviderAdapterFactory extends CustomAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -46,6 +47,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -54,6 +56,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -62,6 +65,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -70,6 +74,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CustomItemProviderAdapterFactory() {
@@ -84,6 +89,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CustomizationItemProvider customizationItemProvider;
@@ -92,6 +98,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,6 +114,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EClassCustomizationItemProvider eClassCustomizationItemProvider;
@@ -115,6 +123,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.EClassCustomization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -130,6 +139,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FacetCustomizationItemProvider facetCustomizationItemProvider;
@@ -138,6 +148,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.FacetCustomization}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -153,6 +164,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ETypedElementSwitchQueryItemProvider eTypedElementSwitchQueryItemProvider;
@@ -161,6 +173,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementSwitchQuery}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,6 +189,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ETypedElementCaseItemProvider eTypedElementCaseItemProvider;
@@ -184,6 +198,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.ETypedElementCase}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -199,6 +214,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -209,6 +225,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -218,6 +235,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -229,6 +247,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -239,13 +258,14 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -257,6 +277,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -267,6 +288,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -277,6 +299,7 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -288,17 +311,28 @@ public class CustomItemProviderAdapterFactory extends CustomAdapterFactory imple
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void dispose() {
-		if (customizationItemProvider != null) customizationItemProvider.dispose();
-		if (eClassCustomizationItemProvider != null) eClassCustomizationItemProvider.dispose();
-		if (facetCustomizationItemProvider != null) facetCustomizationItemProvider.dispose();
-		if (eTypedElementSwitchQueryItemProvider != null) eTypedElementSwitchQueryItemProvider.dispose();
-		if (eTypedElementCaseItemProvider != null) eTypedElementCaseItemProvider.dispose();
+		if (customizationItemProvider != null) {
+			customizationItemProvider.dispose();
+		}
+		if (eClassCustomizationItemProvider != null) {
+			eClassCustomizationItemProvider.dispose();
+		}
+		if (facetCustomizationItemProvider != null) {
+			facetCustomizationItemProvider.dispose();
+		}
+		if (eTypedElementSwitchQueryItemProvider != null) {
+			eTypedElementSwitchQueryItemProvider.dispose();
+		}
+		if (eTypedElementCaseItemProvider != null) {
+			eTypedElementCaseItemProvider.dispose();
+		}
 	}
 
 }

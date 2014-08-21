@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.DataType;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Value Type</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -27,7 +27,7 @@ import org.eclipse.uml2.uml.DataType;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.ValueType#getDimension <em>Dimension</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getValueType()
  * @model
  * @generated
@@ -41,7 +41,7 @@ public interface ValueType extends EObject {
 	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Data Type</em>' reference.
 	 * @see #setBase_DataType(DataType)
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getValueType_Base_DataType()
@@ -57,7 +57,7 @@ public interface ValueType extends EObject {
 	 * If the meaning of the '<em>Dimension</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Dimension</em>' reference.
 	 * @see #setDimension(Dimension)
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getValueType_Dimension()
@@ -73,7 +73,7 @@ public interface ValueType extends EObject {
 	 * If the meaning of the '<em>Unit</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unit</em>' reference.
 	 * @see #setUnit(Unit)
 	 * @see org.eclipse.papyrus.sysml.blocks.BlocksPackage#getValueType_Unit()
@@ -86,9 +86,9 @@ public interface ValueType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.blocks.ValueType#getBase_DataType <em>Base Data Type</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Data Type</em>' reference.
+	 *            the new value of the '<em>Base Data Type</em>' reference.
 	 * @see #getBase_DataType()
 	 * @generated
 	 */
@@ -98,9 +98,9 @@ public interface ValueType extends EObject {
 	 * Sets the value of the ' {@link org.eclipse.papyrus.sysml.blocks.ValueType#getDimension
 	 * <em>Dimension</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Dimension</em>' reference.
+	 *            the new value of the '<em>Dimension</em>' reference.
 	 * @see #getDimension()
 	 * @generated
 	 */
@@ -109,9 +109,9 @@ public interface ValueType extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.blocks.ValueType#getUnit <em>Unit</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Unit</em>' reference.
+	 *            the new value of the '<em>Unit</em>' reference.
 	 * @see #getUnit()
 	 * @generated
 	 */

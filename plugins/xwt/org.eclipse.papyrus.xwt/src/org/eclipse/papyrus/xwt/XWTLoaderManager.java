@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *     Anyware-tech - add multiple loaders
@@ -24,11 +24,11 @@ public class XWTLoaderManager {
 
 	/**
 	 * Returns the default instance of the XWT loader
-	 * 
+	 *
 	 * @return the default instance of the XWT loader
 	 */
 	public static IXWTLoader getDefault() {
-		if(defaultXWTLoader == null) {
+		if (defaultXWTLoader == null) {
 			defaultXWTLoader = new XWTLoader();
 			XWT.runInitializers(defaultXWTLoader);
 		}
@@ -41,12 +41,12 @@ public class XWTLoaderManager {
 
 	/**
 	 * Returns the instance of the XWT loader active. If no XWT loader are active, returns the default XWT loader
-	 * 
+	 *
 	 * @return the instance of the XWT loader active
 	 */
 	public static IXWTLoader getActive() {
 		IXWTLoader xwtLoader = activeXWTLoader;
-		if(xwtLoader == null) {
+		if (xwtLoader == null) {
 			xwtLoader = getDefault();
 		}
 		return xwtLoader;
@@ -54,16 +54,16 @@ public class XWTLoaderManager {
 
 	/**
 	 * Sets the active XWT loader
-	 * 
+	 *
 	 * @param xwtLoader
-	 *        the XWT loader
+	 *            the XWT loader
 	 * @param active
-	 *        true if the XWT loader is active, otherwise false
+	 *            true if the XWT loader is active, otherwise false
 	 */
 	public static void setActive(IXWTLoader xwtLoader, boolean active) {
-		if(active) {
+		if (active) {
 			activeXWTLoader = xwtLoader;
-		} else if(xwtLoader != null && xwtLoader.equals(activeXWTLoader)) {
+		} else if (xwtLoader != null && xwtLoader.equals(activeXWTLoader)) {
 			activeXWTLoader = null;
 		}
 	}

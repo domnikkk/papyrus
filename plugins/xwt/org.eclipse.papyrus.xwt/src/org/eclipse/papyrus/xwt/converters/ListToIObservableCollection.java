@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -19,7 +19,7 @@ import org.eclipse.papyrus.xwt.XWT;
 
 /**
  * List to IObservableCollection converter
- * 
+ *
  * @author yyang
  */
 public class ListToIObservableCollection implements IConverter {
@@ -27,8 +27,8 @@ public class ListToIObservableCollection implements IConverter {
 	public static ListToIObservableCollection instance = new ListToIObservableCollection();
 
 	public Object convert(Object fromObject) {
-		List<?> list = (List<?>)fromObject;
-		return new WritableList(XWT.getRealm(), (List<?>)list, Object.class);
+		List<?> list = (List<?>) fromObject;
+		return new WritableList(XWT.getRealm(), list, Object.class);
 	}
 
 	public Object getFromType() {

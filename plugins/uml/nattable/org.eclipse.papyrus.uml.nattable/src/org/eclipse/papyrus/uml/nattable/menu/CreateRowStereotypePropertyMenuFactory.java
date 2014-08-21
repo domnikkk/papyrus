@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.Property;
 
 /**
  * Menu factory to add/remove easily stereotype property columns
- * 
+ *
  * @author VL222926
- * 
+ *
  */
 public class CreateRowStereotypePropertyMenuFactory extends AbstractCreateStereotypePropertyMenuFactory {
 
@@ -44,40 +44,41 @@ public class CreateRowStereotypePropertyMenuFactory extends AbstractCreateStereo
 	private static final String ICON_PATH = "/icons/stereotypePropertyRow.gif";
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CreateRowStereotypePropertyMenuFactory() {
 		super(MENU_LABEL, ICON_PATH);
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.nattable.menu.AbstractCreateStereotypePropertyMenuFactory#fillMenu(org.eclipse.swt.widgets.Menu,
-	 *      org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager, java.util.Collection, java.util.Map)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.uml.nattable.menu.AbstractCreateStereotypePropertyMenuFactory#fillMenu(org.eclipse.swt.widgets.Menu, org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager, java.util.Collection, java.util.Map)
+	 *
 	 * @param menu
 	 * @param tableManager
 	 * @param initialSelection
 	 * @param nameToPropertyMap
 	 */
+	@Override
 	protected void fillMenu(final Menu menu, final INattableModelManager tableManager, final Collection<String> initialSelection, final Map<String, Property> nameToPropertyMap) {
-		for(final String current : nameToPropertyMap.keySet()) {
+		for (final String current : nameToPropertyMap.keySet()) {
 			final MenuItem menuItem = new MenuItem(menu, SWT.CHECK);
-			menuItem.setText(current); //$NON-NLS-1$
-			if(initialSelection.contains(current)) {
+			menuItem.setText(current);
+			if (initialSelection.contains(current)) {
 				menuItem.setSelection(true);
 			}
 			menuItem.addSelectionListener(new SelectionAdapter() {
 
+				@Override
 				public void widgetSelected(SelectionEvent e) {
 					final boolean toAdd = menuItem.getSelection();
-					if(toAdd) {
-						Collection<Object> toAdds = Collections.singleton((Object)nameToPropertyMap.get(current));
+					if (toAdd) {
+						Collection<Object> toAdds = Collections.singleton((Object) nameToPropertyMap.get(current));
 						tableManager.addRows(toAdds);
 					} else {
-						Collection<Object> toRemove = Collections.singleton((Object)nameToPropertyMap.get(current));
+						Collection<Object> toRemove = Collections.singleton((Object) nameToPropertyMap.get(current));
 						tableManager.removeRows(toRemove);
 					}
 				}
@@ -91,20 +92,20 @@ public class CreateRowStereotypePropertyMenuFactory extends AbstractCreateStereo
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.menu.AbstractCreateStereotypePropertyMenuFactory#getStereotypeAxisManager()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected UMLStereotypePropertyAxisManager getStereotypeAxisManager(final INattableModelManager tableManager) {
-		return (UMLStereotypePropertyAxisManager)tableManager.getRowAxisManager().getAdapter(UMLStereotypePropertyAxisManager.class);
+		return (UMLStereotypePropertyAxisManager) tableManager.getRowAxisManager().getAdapter(UMLStereotypePropertyAxisManager.class);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.nattable.menu.AbstractCreateStereotypePropertyMenuFactory#getAxisElementList(org.eclipse.papyrus.infra.nattable.manager.table.INattableModelManager)
-	 * 
+	 *
 	 * @param tableManager
 	 * @return
 	 */

@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -25,13 +25,12 @@ import org.eclipse.papyrus.emf.facet.custom.metamodel.v0_2_0.custom.Customizatio
 
 /**
  * Provide a dialog where the user can select a {@link Customization} in the
- * list. This class use the specific widget
- * {@link GetOrCreateCustomizationWidget} and return the selected element with
+ * list. This class use the specific widget {@link GetOrCreateCustomizationWidget} and return the selected element with
  * the method {@link #getCustomizationSelected()}.</p>
- * 
+ *
  * When the "ok" button is pressed, the parent property is set with the selected
  * element.
- * 
+ *
  * @see GetOrCreateCustomizationWidget
  */
 public class GetOrCreateCustomizationDialog
@@ -42,7 +41,7 @@ public class GetOrCreateCustomizationDialog
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param properties
 	 *            properties that parent widget had.
 	 */
@@ -55,7 +54,7 @@ public class GetOrCreateCustomizationDialog
 
 	@Override
 	protected IGetOrCreateFilteredElementCommmandWidget<Customization, ICommandWidget> createWidget() {
-		final GetOrCreateCustomizationWidget widget =  new GetOrCreateCustomizationWidget(this.getDialogComposite(),
+		final GetOrCreateCustomizationWidget widget = new GetOrCreateCustomizationWidget(this.getDialogComposite(),
 				getEditingDomain(), this.customProperty);
 		return new SynchronizedGetOrCreateFilteredElementCommmandWidget<Customization, ICommandWidget>(
 				widget, widget.getDisplay());

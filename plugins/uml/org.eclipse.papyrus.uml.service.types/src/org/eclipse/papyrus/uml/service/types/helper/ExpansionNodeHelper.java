@@ -11,24 +11,22 @@ import org.eclipse.uml2.uml.ExpansionRegion;
 
 public class ExpansionNodeHelper extends ActivityNodeHelper {
 
-	/** 
-	 * Parameter name for {@link ConfigureRequest}
-	 * Used to pass the parent EObject to actual new element to set it in referenced not containment list.
+	/**
+	 * Parameter name for {@link ConfigureRequest} Used to pass the parent EObject to actual new element to set it in referenced not containment list.
 	 */
 	public static final String IN_EXPANSION_REGION = "IN_EXPANSION_REGION";
-	
-	/** 
-	 * Parameter name for {@link ConfigureRequest}
-	 * Used to determine feature to add new element in referenced not containment parent list.
+
+	/**
+	 * Parameter name for {@link ConfigureRequest} Used to determine feature to add new element in referenced not containment parent list.
 	 */
 	public static final String EXPANSION_REGION_FEATURE = "EXPANSION_REGION_FEATURE";
-	
+
 	@Override
 	protected ICommand getConfigureCommand(ConfigureRequest req) {
-		EObject expectedExpansionRegion = (EObject)req.getParameter(IN_EXPANSION_REGION);
+		EObject expectedExpansionRegion = (EObject) req.getParameter(IN_EXPANSION_REGION);
 		if (expectedExpansionRegion instanceof ExpansionRegion) {
-			EObject feature = (EObject)req.getParameter(EXPANSION_REGION_FEATURE);
-			return new SetValueCommand(new SetRequest(expectedExpansionRegion, (EReference)feature, req.getElementToConfigure()));
+			EObject feature = (EObject) req.getParameter(EXPANSION_REGION_FEATURE);
+			return new SetValueCommand(new SetRequest(expectedExpansionRegion, (EReference) feature, req.getElementToConfigure()));
 		}
 		return super.getConfigureCommand(req);
 	}

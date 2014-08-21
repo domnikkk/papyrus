@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -16,16 +16,16 @@ package org.eclipse.papyrus.infra.gmfdiag.common.snap;
 import org.eclipse.gef.EditPart;
 
 /**
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public class PapyrusDragBorderNodeEditPartTrackerEx extends PapyrusDragEditPartsTrackerEx {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param sourceEditPart
 	 */
 	public PapyrusDragBorderNodeEditPartTrackerEx(EditPart sourceEditPart) {
@@ -33,9 +33,9 @@ public class PapyrusDragBorderNodeEditPartTrackerEx extends PapyrusDragEditParts
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param sourceEditPart
 	 * @param snapOnCorners
 	 * @param snapOnMiddles
@@ -46,14 +46,14 @@ public class PapyrusDragBorderNodeEditPartTrackerEx extends PapyrusDragEditParts
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.gmfdiag.common.snap.copy.CustomDragEditPartsTracker#isMove()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected boolean isMove() {
-		return true;//see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart.getEditPartTracker
+		return true;// see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart.getEditPartTracker
 	}
 
 }

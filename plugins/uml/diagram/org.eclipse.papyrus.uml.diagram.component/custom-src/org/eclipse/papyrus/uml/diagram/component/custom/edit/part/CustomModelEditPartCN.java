@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,8 +31,9 @@ import org.eclipse.papyrus.uml.diagram.component.part.UMLDiagramEditorPlugin;
 public class CustomModelEditPartCN extends ModelEditPartCN {
 
 	protected static final String ICONS_PATH = "icons/Triangle.gif"; //$NON-NLS-1$
+
 	/**
-	 * 
+	 *
 	 * Constructor.
 	 *
 	 * @param view
@@ -44,6 +45,7 @@ public class CustomModelEditPartCN extends ModelEditPartCN {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		String prefElementId = "Model";
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
@@ -56,9 +58,10 @@ public class CustomModelEditPartCN extends ModelEditPartCN {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		primaryShape = new PackageFigure();
-		((PackageFigure)primaryShape).setTagIcon(Activator.getPluginIconImage(Activator.ID, ICONS_PATH));
+		((PackageFigure) primaryShape).setTagIcon(Activator.getPluginIconImage(Activator.ID, ICONS_PATH));
 		return primaryShape;
 	}
 }

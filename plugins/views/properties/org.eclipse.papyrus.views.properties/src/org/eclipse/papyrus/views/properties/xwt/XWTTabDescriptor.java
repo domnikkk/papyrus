@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.xwt;
 
@@ -26,7 +26,7 @@ import org.eclipse.ui.views.properties.tabbed.AbstractTabDescriptor;
 /**
  * A Tab descriptor implementation for the TabbedPropertyView.
  * The property view is described by XWT files.
- * 
+ *
  * @author Camille Letavernier
  */
 public class XWTTabDescriptor extends AbstractTabDescriptor {
@@ -35,9 +35,9 @@ public class XWTTabDescriptor extends AbstractTabDescriptor {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param tab
-	 *        The Tab model object containing the Metadata for the tab
+	 *            The Tab model object containing the Metadata for the tab
 	 */
 	public XWTTabDescriptor(Tab tab) {
 		this.tab = tab;
@@ -45,13 +45,13 @@ public class XWTTabDescriptor extends AbstractTabDescriptor {
 
 	/**
 	 * Adds a section to this tab
-	 * 
+	 *
 	 * @param section
-	 *        The Section model object
+	 *            The Section model object
 	 * @param view
-	 *        The View model object to which the section belongs
+	 *            The View model object to which the section belongs
 	 * @param display
-	 *        The display engine that will be used to display the section
+	 *            The display engine that will be used to display the section
 	 */
 	@SuppressWarnings("unchecked")
 	public void addSection(Section section, View view, DisplayEngine display) {
@@ -75,7 +75,7 @@ public class XWTTabDescriptor extends AbstractTabDescriptor {
 	public Image getImage() {
 		String imagePath = tab.getImage();
 
-		if(imagePath == null || imagePath.trim().equals("")) { //$NON-NLS-1$
+		if (imagePath == null || imagePath.trim().equals("")) { //$NON-NLS-1$
 			return null;
 		}
 
@@ -89,7 +89,7 @@ public class XWTTabDescriptor extends AbstractTabDescriptor {
 
 	@Override
 	public String getAfterTab() {
-		if(tab.getAfterTab() != null) {
+		if (tab.getAfterTab() != null) {
 			return tab.getAfterTab().getId();
 		}
 		return super.getAfterTab();
@@ -126,15 +126,15 @@ public class XWTTabDescriptor extends AbstractTabDescriptor {
 	public boolean equals(Object obj) {
 		boolean result;
 
-		if(this == obj) {
+		if (this == obj) {
 			result = true;
-		} else if((obj == null) || (obj.getClass() != this.getClass())) {
+		} else if ((obj == null) || (obj.getClass() != this.getClass())) {
 			result = false;
 		} else {
-			XWTTabDescriptor other = (XWTTabDescriptor)obj;
+			XWTTabDescriptor other = (XWTTabDescriptor) obj;
 
 			result = (other.getId() == null) ? this.getId() == null : (other.getId().equals(this.getId()));
-			if(result) {
+			if (result) {
 				result = (other.getSectionDescriptors() == null) ? this.getSectionDescriptors() == null : other.getSectionDescriptors().equals(this.getSectionDescriptors());
 			}
 		}

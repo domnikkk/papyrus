@@ -34,6 +34,7 @@ import org.eclipse.papyrus.infra.constraints.util.ConstraintsAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -41,6 +42,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -49,6 +51,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -57,6 +60,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -65,6 +69,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ConstraintsItemProviderAdapterFactory() {
@@ -79,6 +84,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.constraints.SimpleConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SimpleConstraintItemProvider simpleConstraintItemProvider;
@@ -87,6 +93,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.constraints.SimpleConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -102,6 +109,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.constraints.CompositeConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CompositeConstraintItemProvider compositeConstraintItemProvider;
@@ -110,6 +118,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.constraints.CompositeConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,6 +134,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.constraints.ValueProperty} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ValuePropertyItemProvider valuePropertyItemProvider;
@@ -133,6 +143,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.constraints.ValueProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -148,6 +159,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.constraints.ReferenceProperty} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ReferencePropertyItemProvider referencePropertyItemProvider;
@@ -156,6 +168,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.constraints.ReferenceProperty}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -171,8 +184,10 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -181,8 +196,10 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -190,6 +207,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -201,6 +219,7 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -211,13 +230,14 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -229,8 +249,10 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -239,8 +261,10 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -249,8 +273,10 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -260,16 +286,26 @@ public class ConstraintsItemProviderAdapterFactory extends ConstraintsAdapterFac
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (simpleConstraintItemProvider != null) simpleConstraintItemProvider.dispose();
-		if (compositeConstraintItemProvider != null) compositeConstraintItemProvider.dispose();
-		if (valuePropertyItemProvider != null) valuePropertyItemProvider.dispose();
-		if (referencePropertyItemProvider != null) referencePropertyItemProvider.dispose();
+		if (simpleConstraintItemProvider != null) {
+			simpleConstraintItemProvider.dispose();
+		}
+		if (compositeConstraintItemProvider != null) {
+			compositeConstraintItemProvider.dispose();
+		}
+		if (valuePropertyItemProvider != null) {
+			valuePropertyItemProvider.dispose();
+		}
+		if (referencePropertyItemProvider != null) {
+			referencePropertyItemProvider.dispose();
+		}
 	}
 
 }

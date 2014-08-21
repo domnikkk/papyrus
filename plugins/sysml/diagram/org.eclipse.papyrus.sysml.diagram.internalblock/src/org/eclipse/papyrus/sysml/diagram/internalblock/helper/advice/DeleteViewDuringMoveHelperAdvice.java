@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.diagram.common.util.CrossReferencerUtil;
  * Edit helper advice that delete views from diagram when an element is
  * moved in a new container (in the model explorer).
  * 
- * Block is an exception as the IBD is attached to the Block itself, removing it 
+ * Block is an exception as the IBD is attached to the Block itself, removing it
  * would result in an unusable IBD.
  * </pre>
  */
@@ -50,18 +50,18 @@ public class DeleteViewDuringMoveHelperAdvice extends AbstractEditHelperAdvice {
 
 		@SuppressWarnings("unchecked")
 		Iterator<EObject> it = request.getElementsToMove().keySet().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
 
 			// If current eObject is a Block do nothing.
-			if(((ISpecializationType)SysMLElementTypes.BLOCK).getMatcher().matches(eObject)) {
+			if (((ISpecializationType) SysMLElementTypes.BLOCK).getMatcher().matches(eObject)) {
 				continue;
 			}
 
 			viewsToDestroy.addAll(getViewsToDestroy(eObject));
 		}
 
-		if(!viewsToDestroy.isEmpty()) {
+		if (!viewsToDestroy.isEmpty()) {
 			DestroyDependentsRequest ddr = new DestroyDependentsRequest(request.getEditingDomain(), request.getTargetContainer(), false);
 			ddr.setClientContext(request.getClientContext());
 			ddr.addParameters(request.getParameters());
@@ -74,24 +74,24 @@ public class DeleteViewDuringMoveHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * This methods looks for inconsistent views to delete in case a semantic move done in the model explorer.
-	 * 
+	 *
 	 * @param movedObject
-	 *        the moved {@link EObject}
+	 *            the moved {@link EObject}
 	 * @return the list of {@link View} to delete
 	 */
 	protected Set<View> getViewsToDestroy(EObject movedObject) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		Iterator<View> viewIt = CrossReferencerUtil.getCrossReferencingViews(movedObject, ElementTypes.DIAGRAM_ID).iterator();
-		while(viewIt.hasNext()) {
-			View view = (View)viewIt.next();
+		while (viewIt.hasNext()) {
+			View view = viewIt.next();
 
 			String containerType = ViewUtil.getViewContainer(view) != null ? ViewUtil.getViewContainer(view).getType() : null;
 
 			// Views are to be destroyed if they are not the diagram itself (containerType == null)
-			// and not a view directly owned by the diagram (the current policy in Papyrus allows 
+			// and not a view directly owned by the diagram (the current policy in Papyrus allows
 			// to drop nearly anything in the diagram whatever the semantic container).
-			if((containerType != null) && !ElementTypes.DIAGRAM_ID.equals(containerType)) {
+			if ((containerType != null) && !ElementTypes.DIAGRAM_ID.equals(containerType)) {
 				viewsToDestroy.add(view);
 			}
 		}

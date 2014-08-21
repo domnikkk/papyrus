@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,7 @@
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 435103
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.views.properties.modelelement;
 
@@ -31,7 +31,7 @@ import org.eclipse.papyrus.views.properties.util.PropertiesUtil;
 
 /**
  * A Factory to build and populate DataSource with the right ModelElements
- * 
+ *
  * @author Camille Letavernier
  */
 public class DataSourceFactory {
@@ -43,18 +43,18 @@ public class DataSourceFactory {
 
 	/**
 	 * Creates a new DataSource from a selection and a view.
-	 * 
+	 *
 	 * @param selection
-	 *        The selection of Objects
+	 *            The selection of Objects
 	 * @param view
-	 *        The view to display
+	 *            The view to display
 	 * @return The DataSource that can be passed to the DisplayEngine to display
 	 *         the view
 	 */
 	public DataSource createDataSourceFromSelection(IStructuredSelection selection, View view) {
 		SelectionEntry selectionEntry = new SelectionEntry(selection, view);
 
-		if(!sources.containsKey(selectionEntry)) {
+		if (!sources.containsKey(selectionEntry)) {
 			DataSource source = new DataSource(view, selection);
 			sources.put(selectionEntry, source);
 		}
@@ -63,7 +63,7 @@ public class DataSourceFactory {
 	}
 
 	public void removeFromCache(IStructuredSelection selection, View view) {
-		if(selection == null || view == null) {
+		if (selection == null || view == null) {
 			return;
 		}
 
@@ -74,22 +74,22 @@ public class DataSourceFactory {
 	/**
 	 * Returns the ModelElement corresponding to the given propertyPath and
 	 * DataSource
-	 * 
+	 *
 	 * @param source
-	 *        The DataSource used to retrieved informations such as the View
-	 *        and the Selection
+	 *            The DataSource used to retrieved informations such as the View
+	 *            and the Selection
 	 * @param propertyPath
-	 *        The path describing the property for which we want a
-	 *        ModelElement
+	 *            The path describing the property for which we want a
+	 *            ModelElement
 	 * @return The matching modelElement
 	 */
 	public ModelElement getModelElementFromPropertyPath(DataSource source, String propertyPath) {
 		String key = propertyPath.substring(0, propertyPath.lastIndexOf(":")); //$NON-NLS-1$
-		for(Context context : PropertiesUtil.getDependencies(source.getView().getContext())) {
+		for (Context context : PropertiesUtil.getDependencies(source.getView().getContext())) {
 			DataContextElement element = PropertiesUtil.getContextElementByQualifiedName(key, context.getDataContexts());
-			if(element != null) {
+			if (element != null) {
 				ModelElement modelElement = DataSourceFactory.instance.createModelElement(element, source.getSelection());
-				if(modelElement != null) {
+				if (modelElement != null) {
 					modelElement.setDataSource(source);
 				}
 				return modelElement;
@@ -100,31 +100,31 @@ public class DataSourceFactory {
 
 	/**
 	 * Creates a ModelElement from the given DataContextElement and Selection.
-	 * 
+	 *
 	 * @param contextElement
-	 *        The contextElement for which we are creating a ModelElement
+	 *            The contextElement for which we are creating a ModelElement
 	 * @param selection
-	 *        The list of objects currently selected
+	 *            The list of objects currently selected
 	 * @return The model element corresponding to the given contextElement and
 	 *         selection
 	 */
 	private ModelElement createModelElement(final DataContextElement contextElement, IStructuredSelection selection) {
-		if(selection.size() == 1) { // Single Selection
+		if (selection.size() == 1) { // Single Selection
 			ModelElement modelElement = createFromSource(selection.getFirstElement(), contextElement);
 			return modelElement;
 		} else { // MultiSelection
 			// Bind the context element in a factory for the composite to create sub-elements
 			CompositeModelElement composite = new CompositeModelElement(new CompositeModelElement.BoundModelElementFactory() {
-				
+
 				public ModelElement createModelElement(Object sourceElement) {
 					return createFromSource(sourceElement, contextElement);
 				}
 			});
 
 			Iterator<?> it = selection.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				ModelElement element = createFromSource(it.next(), contextElement);
-				if(element != null) {
+				if (element != null) {
 					composite.addModelElement(element);
 				}
 			}
@@ -137,10 +137,10 @@ public class DataSourceFactory {
 	 * Retrieves the ModelElementFactory for the given DataContextElement. The
 	 * ModelElementFactory is declared by the DataContextRoot owning the given
 	 * DataContextElement
-	 * 
+	 *
 	 * @param context
-	 *        The DataContextElement for which we want to retrieve the
-	 *        ModelElementFactory
+	 *            The DataContextElement for which we want to retrieve the
+	 *            ModelElementFactory
 	 * @return The ModelElementFactory corresponding to the given
 	 *         DataContextElement
 	 */
@@ -148,11 +148,11 @@ public class DataSourceFactory {
 		DataContextRoot rootPackage = getRootPackage(context);
 		ModelElementFactoryDescriptor factoryDescriptor = rootPackage.getModelElementFactory();
 
-		if(factoryDescriptor == null) {
+		if (factoryDescriptor == null) {
 			Activator.log.warn("No ModelElementFactory is attached to DataContextElement " + getQualifiedName(context)); //$NON-NLS-1$
 			return null;
 		}
-		if(factoryDescriptor.eIsProxy()) {
+		if (factoryDescriptor.eIsProxy()) {
 			Activator.log.warn("Unresolved reference to the ModelElementFactory: " + EcoreUtil.getURI(factoryDescriptor)); //$NON-NLS-1$
 			return null;
 		}
@@ -166,7 +166,7 @@ public class DataSourceFactory {
 	private ModelElement createFromSource(Object source, DataContextElement context) {
 		ModelElementFactory factory = getFactory(context);
 
-		if(factory == null) {
+		if (factory == null) {
 			return null;
 		}
 
@@ -174,14 +174,14 @@ public class DataSourceFactory {
 	}
 
 	private DataContextRoot getRootPackage(DataContextElement context) {
-		if(context.getPackage() == null) {
-			return (DataContextRoot)context;
+		if (context.getPackage() == null) {
+			return (DataContextRoot) context;
 		}
 		return getRootPackage(context.getPackage());
 	}
 
 	private String getQualifiedName(DataContextElement context) {
-		if(context.getPackage() == null) {
+		if (context.getPackage() == null) {
 			return context.getName();
 		}
 		return getQualifiedName(context.getPackage()) + ":" + context.getName(); //$NON-NLS-1$
@@ -201,10 +201,10 @@ public class DataSourceFactory {
 		private View view;
 
 		public SelectionEntry(IStructuredSelection selection, View view) {
-			if(selection == null) {
+			if (selection == null) {
 				throw new IllegalArgumentException("The selection must not be null");
 			}
-			if(view == null) {
+			if (view == null) {
 				throw new IllegalArgumentException("The view must not be null");
 			}
 			this.selection = selection;
@@ -213,11 +213,11 @@ public class DataSourceFactory {
 
 		@Override
 		public boolean equals(Object obj) {
-			if(!(obj instanceof SelectionEntry)) {
+			if (!(obj instanceof SelectionEntry)) {
 				return false;
 			}
 
-			SelectionEntry other = (SelectionEntry)obj;
+			SelectionEntry other = (SelectionEntry) obj;
 			return other.view.equals(view) && selection.equals(other.selection);
 		}
 
@@ -231,11 +231,11 @@ public class DataSourceFactory {
 	 * More than one {@link XWTSection} may share the same DataSource.
 	 * They all need to listen on the same source, so that they can correctly
 	 * refresh themselves. We maintain a cache for each Selection/View pair.
-	 * 
+	 *
 	 * The cache is cleaned when the sections are disposed.
 	 */
-	//TODO : More than one view can be displayed at the same time. The cache should only
-	//rely on a selection ; not on a selection-view pair.
-	//We may use a (ISelection, Context) key : the DataSource must be associated to a single context
+	// TODO : More than one view can be displayed at the same time. The cache should only
+	// rely on a selection ; not on a selection-view pair.
+	// We may use a (ISelection, Context) key : the DataSource must be associated to a single context
 	private Map<SelectionEntry, DataSource> sources = new HashMap<SelectionEntry, DataSource>();
 }

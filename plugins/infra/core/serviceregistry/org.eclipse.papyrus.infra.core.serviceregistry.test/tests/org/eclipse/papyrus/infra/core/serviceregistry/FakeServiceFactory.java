@@ -4,17 +4,17 @@ package org.eclipse.papyrus.infra.core.serviceregistry;
 
 /**
  * Fake service factory for testing purpose.
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class FakeServiceFactory extends FakeService implements IServiceFactory {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public FakeServiceFactory() {
 
@@ -23,7 +23,7 @@ public class FakeServiceFactory extends FakeService implements IServiceFactory {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param name
 	 */
 	public FakeServiceFactory(String name) {
@@ -41,11 +41,12 @@ public class FakeServiceFactory extends FakeService implements IServiceFactory {
 
 	/**
 	 * Create the service
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.IServiceFactory#createServiceInstance()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public Object createServiceInstance() {
 		trace.addTrace(getName(), "createInstance");
 		return new FakeCreatedService();
@@ -53,9 +54,9 @@ public class FakeServiceFactory extends FakeService implements IServiceFactory {
 
 	/**
 	 * Pseudo service created by the factory.
-	 * 
+	 *
 	 * @author dumoulin
-	 * 
+	 *
 	 */
 	public class FakeCreatedService {
 

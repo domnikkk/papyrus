@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ class TabModel<V> {
 	public Set<String> tabIDs() {
 		Set<String> result = new HashSet<String>();
 
-		for(Path next : model.keySet()) {
+		for (Path next : model.keySet()) {
 			result.add(next.tabID);
 		}
 
@@ -51,8 +51,8 @@ class TabModel<V> {
 		List<V> result = new ArrayList<V>(4);
 
 		Path key = new Path(tabID);
-		for(Map.Entry<Path, V> next : model.entrySet()) {
-			if(next.getKey().equals(key)) {
+		for (Map.Entry<Path, V> next : model.entrySet()) {
+			if (next.getKey().equals(key)) {
 				result.add(next.getValue());
 			}
 		}
@@ -72,7 +72,7 @@ class TabModel<V> {
 		List<V> result = new ArrayList<V>(4);
 
 		Path key = new Path(tabID);
-		for(V next = model.remove(key); next != null; next = model.remove(key)) {
+		for (V next = model.remove(key); next != null; next = model.remove(key)) {
 			result.add(next);
 		}
 
@@ -125,7 +125,7 @@ class TabModel<V> {
 
 		static void checkWildcard(String id) {
 			// Deliberately testing for identity of non-interned string
-			if((id == null) || (id == WILDCARD)) {
+			if ((id == null) || (id == WILDCARD)) {
 				throw new IllegalArgumentException("Attempt to create a wildcard path explicitly"); //$NON-NLS-1$
 			}
 		}
@@ -144,14 +144,14 @@ class TabModel<V> {
 
 		@Override
 		public boolean equals(Object obj) {
-			if(this == obj) {
+			if (this == obj) {
 				return true;
 			}
-			if(!(obj instanceof Path)) {
+			if (!(obj instanceof Path)) {
 				return false;
 			}
 
-			Path other = (Path)obj;
+			Path other = (Path) obj;
 			return equals(tabID, other.tabID) && equals(sectionID, other.sectionID);
 		}
 

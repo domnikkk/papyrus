@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,9 +28,9 @@ import org.eclipse.papyrus.sysml.service.types.element.SysMLElementTypes;
 /**
  * <pre>
  * Command handler for ActorPart (Property) creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class ActorPartPropertyHandler extends AbstractSysmlModelExplorerCreateCommandHandler {
@@ -40,11 +40,12 @@ public class ActorPartPropertyHandler extends AbstractSysmlModelExplorerCreateCo
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
 	 * 
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return SysMLElementTypes.ACTOR_PART_PROPERTY;
 	}
@@ -55,7 +56,7 @@ public class ActorPartPropertyHandler extends AbstractSysmlModelExplorerCreateCo
 	@Override
 	protected Command buildCommand() {
 
-		if(getCommandContext() == null) {
+		if (getCommandContext() == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -63,12 +64,12 @@ public class ActorPartPropertyHandler extends AbstractSysmlModelExplorerCreateCo
 		EReference reference = getCommandContext().getReference();
 
 		IElementEditService provider = ElementEditServiceUtils.getCommandProvider(container);
-		if(provider == null) {
+		if (provider == null) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
 		CreateElementRequest createRequest = null;
-		if(reference == null) {
+		if (reference == null) {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate());
 		} else {
 			createRequest = new CreateElementRequest(container, getElementTypeToCreate(), reference);
@@ -77,7 +78,7 @@ public class ActorPartPropertyHandler extends AbstractSysmlModelExplorerCreateCo
 
 		// Retrieve create command from the Element Edit service
 		ICommand createGMFCommand = provider.getEditCommand(createRequest);
-		if(createGMFCommand != null) {
+		if (createGMFCommand != null) {
 			Command emfCommand = new GMFtoEMFCommandWrapper(createGMFCommand);
 			return emfCommand;
 		}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013, 2014 Soyatec, CEA, and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,9 +58,9 @@ import org.eclipse.uml2.uml.Lifeline;
 
 /**
  * Rewrite the CreateAppliedStereotypeCommentViewCommand to create all Comment View on the Interaction, but not the container of current node.
- * 
+ *
  * Because we can not add any Node on some container view such as Lifeline.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereotypeCommentCreationEditPolicy {
@@ -72,7 +72,7 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 * @param domain
 		 * @param owner
 		 * @param x
@@ -84,9 +84,10 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 			super(domain, owner, x, y, base_Element, isABordererElement);
 		}
 
+		@Override
 		public void doExecute() {
 
-			//create the node
+			// create the node
 			Node node = NotationFactory.eINSTANCE.createShape();
 			node.setVisible(true);
 			Bounds bounds = NotationFactory.eINSTANCE.createBounds();
@@ -101,11 +102,11 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 
 			connectCommentNode(owner, node);
 
-			EObjectValueStyle eObjectValueStyle = (EObjectValueStyle)node.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
+			EObjectValueStyle eObjectValueStyle = (EObjectValueStyle) node.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
 			eObjectValueStyle.setEObjectValue(base_element);
 			eObjectValueStyle.setName("BASE_ELEMENT");
 
-			//create the link
+			// create the link
 			Connector edge = NotationFactory.eINSTANCE.createConnector();
 			edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
 			RelativeBendpoints bendpoints = NotationFactory.eINSTANCE.createRelativeBendpoints();
@@ -122,17 +123,17 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 			anchor = NotationFactory.eINSTANCE.createIdentityAnchor();
 			edge.setTargetAnchor(anchor);
 			View source = owner;
-			while(source != null && !(source instanceof Shape || source instanceof Edge)) {
-				source = (View)source.eContainer();
+			while (source != null && !(source instanceof Shape || source instanceof Edge)) {
+				source = (View) source.eContainer();
 			}
 			edge.setSource(source);
 			edge.setTarget(node);
 			edge.setElement(null);
-			eObjectValueStyle = (EObjectValueStyle)edge.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
+			eObjectValueStyle = (EObjectValueStyle) edge.createStyle(NotationPackage.eINSTANCE.getEObjectValueStyle());
 			eObjectValueStyle.setEObjectValue(base_element);
 			eObjectValueStyle.setName("BASE_ELEMENT");
 
-			//copy EAnnotation
+			// copy EAnnotation
 			final EAnnotation stereotypeAnnotation = owner.getEAnnotation(UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION);
 			EAnnotation stereotypeAnnotationCopy = EcoreUtil.copy(stereotypeAnnotation);
 			node.getEAnnotations().add(stereotypeAnnotationCopy);
@@ -146,65 +147,65 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 
 		/**
 		 * add the comment node form the owner
-		 * 
+		 *
 		 * @param owner
-		 *        the view from which we want to display a comment stereotype, cannot be null
+		 *            the view from which we want to display a comment stereotype, cannot be null
 		 * @param commentNode
-		 *        node that represent the comment , cannot be null
+		 *            node that represent the comment , cannot be null
 		 */
 		private void connectCommentNode(View owner, Node commentNode) {
 
-			//in the case of the edge the comment has to be placed into the common parent of each end
-			//			if(owner instanceof Edge) {
-			//				View viewSource = ((Edge)owner).getSource();
-			//				View viewTarget = ((Edge)owner).getSource();
-			//				//list of source parents
-			//				ArrayList<View> parentsSource = getParentTree(viewSource);
-			//				//list of source targets
-			//				ArrayList<View> parentsTarget = getParentTree(viewTarget);
-			//				View commonParent = null;
-			//				int index = 0;
-			//				//find the common
-			//				while(commonParent == null && index < parentsSource.size()) {
-			//					if(parentsTarget.contains(parentsSource.get(index))) {
-			//						commonParent = parentsSource.get(index);
-			//						if(!(commonParent instanceof BasicCompartment)) {
-			//							commonParent = null;
-			//						}
-			//					}
-			//					index++;
-			//				}
-			//				// a common has been found
-			//				if(commonParent != null) {
-			//					((Bounds)commentNode.getLayoutConstraint()).setX(100);
-			//					((Bounds)commentNode.getLayoutConstraint()).setY(100);
-			//					ViewUtil.insertChildView(commonParent, commentNode, ViewUtil.APPEND, true);
-			//					return;
-			//				}
-			//			}
-			//generic case
-			View econtainer = (View)owner.eContainer();
-			if(owner instanceof Edge) {
-				econtainer = (View)((Edge)owner).getSource().eContainer();
-				((Bounds)commentNode.getLayoutConstraint()).setX(100);
-				((Bounds)commentNode.getLayoutConstraint()).setY(100);
-				while(econtainer instanceof Edge) {
-					econtainer = (View)((Edge)econtainer).getSource().eContainer();
+			// in the case of the edge the comment has to be placed into the common parent of each end
+			// if(owner instanceof Edge) {
+			// View viewSource = ((Edge)owner).getSource();
+			// View viewTarget = ((Edge)owner).getSource();
+			// //list of source parents
+			// ArrayList<View> parentsSource = getParentTree(viewSource);
+			// //list of source targets
+			// ArrayList<View> parentsTarget = getParentTree(viewTarget);
+			// View commonParent = null;
+			// int index = 0;
+			// //find the common
+			// while(commonParent == null && index < parentsSource.size()) {
+			// if(parentsTarget.contains(parentsSource.get(index))) {
+			// commonParent = parentsSource.get(index);
+			// if(!(commonParent instanceof BasicCompartment)) {
+			// commonParent = null;
+			// }
+			// }
+			// index++;
+			// }
+			// // a common has been found
+			// if(commonParent != null) {
+			// ((Bounds)commentNode.getLayoutConstraint()).setX(100);
+			// ((Bounds)commentNode.getLayoutConstraint()).setY(100);
+			// ViewUtil.insertChildView(commonParent, commentNode, ViewUtil.APPEND, true);
+			// return;
+			// }
+			// }
+			// generic case
+			View econtainer = (View) owner.eContainer();
+			if (owner instanceof Edge) {
+				econtainer = (View) ((Edge) owner).getSource().eContainer();
+				((Bounds) commentNode.getLayoutConstraint()).setX(100);
+				((Bounds) commentNode.getLayoutConstraint()).setY(100);
+				while (econtainer instanceof Edge) {
+					econtainer = (View) ((Edge) econtainer).getSource().eContainer();
 				}
 			}
-			//for the case of a port
-			if(isBorderedElement) {
-				if(econtainer.eContainer() != null) {
-					econtainer = (View)econtainer.eContainer();
+			// for the case of a port
+			if (isBorderedElement) {
+				if (econtainer.eContainer() != null) {
+					econtainer = (View) econtainer.eContainer();
 				}
 			}
-			//Ignore to create on self container.
-			if(ViewUtil.resolveSemanticElement(owner) == ViewUtil.resolveSemanticElement(econtainer)) {
-				econtainer = (View)econtainer.eContainer();
+			// Ignore to create on self container.
+			if (ViewUtil.resolveSemanticElement(owner) == ViewUtil.resolveSemanticElement(econtainer)) {
+				econtainer = (View) econtainer.eContainer();
 			}
-			//We should NOT add any child to Lifeline Directly.
-			while(econtainer != null && (ViewUtil.resolveSemanticElement(econtainer) instanceof Lifeline || ViewUtil.resolveSemanticElement(econtainer) instanceof CombinedFragment || ViewUtil.resolveSemanticElement(econtainer) instanceof InteractionOperand)) {
-				econtainer = (View)econtainer.eContainer();
+			// We should NOT add any child to Lifeline Directly.
+			while (econtainer != null && (ViewUtil.resolveSemanticElement(econtainer) instanceof Lifeline || ViewUtil.resolveSemanticElement(econtainer) instanceof CombinedFragment || ViewUtil.resolveSemanticElement(econtainer) instanceof InteractionOperand)) {
+				econtainer = (View) econtainer.eContainer();
 			}
 			ViewUtil.insertChildView(econtainer, commentNode, ViewUtil.APPEND, true);
 
@@ -212,17 +213,17 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 
 		/**
 		 * @param view
-		 *        the view for which we look for its parents, cannot be null
+		 *            the view for which we look for its parents, cannot be null
 		 * @return the list of parents of a view
 		 */
 		private ArrayList<View> getParentTree(View view) {
 			ArrayList<View> parents = new ArrayList<View>();
 			View currentView = view;
-			while(currentView != null) {
-				currentView = (View)currentView.eContainer();
-				if(currentView != null) {
-					if(!(currentView instanceof DecorationNode) && !(currentView instanceof BasicCompartment)) {
-						//parents.addAll(currentView.getChildren());
+			while (currentView != null) {
+				currentView = (View) currentView.eContainer();
+				if (currentView != null) {
+					if (!(currentView instanceof DecorationNode) && !(currentView instanceof BasicCompartment)) {
+						// parents.addAll(currentView.getChildren());
 					}
 					parents.add(currentView);
 				}
@@ -232,38 +233,40 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 		}
 	}
 
+	@Override
 	protected void executeAppliedStereotypeCommentCreation(final EditPart editPart, final TransactionalEditingDomain domain, final EObject semanticElement) {
 		Display.getCurrent().asyncExec(new Runnable() {
 
+			@Override
 			public void run() {
 				int x = 200;
 				int y = 100;
-				if(editPart.getModel() instanceof Node) {
-					LayoutConstraint constraint = ((Node)editPart.getModel()).getLayoutConstraint();
-					if(constraint instanceof Bounds) {
-						x = x + ((Bounds)constraint).getX();
-						y = ((Bounds)constraint).getY();
+				if (editPart.getModel() instanceof Node) {
+					LayoutConstraint constraint = ((Node) editPart.getModel()).getLayoutConstraint();
+					if (constraint instanceof Bounds) {
+						x = x + ((Bounds) constraint).getX();
+						y = ((Bounds) constraint).getY();
 					}
 
 				}
-				if(editPart.getModel() instanceof Edge && ((((Edge)editPart.getModel()).getSource()) instanceof Node)) {
+				if (editPart.getModel() instanceof Edge && ((((Edge) editPart.getModel()).getSource()) instanceof Node)) {
 
-					LayoutConstraint constraint = ((Node)((Edge)editPart.getModel()).getSource()).getLayoutConstraint();
-					if(constraint instanceof Bounds) {
-						x = x + ((Bounds)constraint).getX();
-						y = ((Bounds)constraint).getY() - 100;
+					LayoutConstraint constraint = ((Node) ((Edge) editPart.getModel()).getSource()).getLayoutConstraint();
+					if (constraint instanceof Bounds) {
+						x = x + ((Bounds) constraint).getX();
+						y = ((Bounds) constraint).getY() - 100;
 					}
 
 				}
 				boolean isBorderElement = false;
-				if(!(editPart instanceof CustomDurationConstraintEditPart)) {
-					if(editPart instanceof BorderedBorderItemEditPart) {
+				if (!(editPart instanceof CustomDurationConstraintEditPart)) {
+					if (editPart instanceof BorderedBorderItemEditPart) {
 						isBorderElement = true;
 					}
 				}
-				if(getAppliedStereotypeCommentNode() == null) {
-					CreateAppliedStereotypeCommentViewCommandEx command = new CreateAppliedStereotypeCommentViewCommandEx(domain, (View)editPart.getModel(), x, y, semanticElement, isBorderElement);
-					//use to avoid to put it in the command stack
+				if (getAppliedStereotypeCommentNode() == null) {
+					CreateAppliedStereotypeCommentViewCommandEx command = new CreateAppliedStereotypeCommentViewCommandEx(domain, (View) editPart.getModel(), x, y, semanticElement, isBorderElement);
+					// use to avoid to put it in the command stack
 					try {
 						GMFUnsafe.write(domain, command);
 					} catch (Exception e) {
@@ -275,34 +278,35 @@ public class AppliedStereotypeCommentCreationEditPolicyEx extends AppliedStereot
 		});
 	}
 
+	@Override
 	protected Node getAppliedStereotypeCommentNode() {
 		Node node = super.getAppliedStereotypeCommentNode();
-		if(node != null) {
+		if (node != null) {
 			return node;
 		}
-		View view = (View)getHost().getModel();
+		View view = (View) getHost().getModel();
 		View semanticView = view;
-		while(semanticView != null && !(semanticView instanceof Shape || semanticView instanceof Edge)) {
-			semanticView = (View)semanticView.eContainer();
+		while (semanticView != null && !(semanticView instanceof Shape || semanticView instanceof Edge)) {
+			semanticView = (View) semanticView.eContainer();
 		}
-		if(semanticView == null) {
+		if (semanticView == null) {
 			return null;
 		}
 		Edge appliedStereotypeLink = null;
-		//look for all links with the id AppliedStereotypesCommentLinkEditPart.ID
+		// look for all links with the id AppliedStereotypesCommentLinkEditPart.ID
 		@SuppressWarnings("unchecked")
 		Iterator<Edge> edgeIterator = semanticView.getSourceEdges().iterator();
-		while(edgeIterator.hasNext()) {
-			Edge edge = (Edge)edgeIterator.next();
-			if(edge.getType().equals(AppliedStereotypesCommentLinkEditPart.ID)) {
+		while (edgeIterator.hasNext()) {
+			Edge edge = edgeIterator.next();
+			if (edge.getType().equals(AppliedStereotypesCommentLinkEditPart.ID)) {
 				appliedStereotypeLink = edge;
 			}
 
 		}
-		if(appliedStereotypeLink == null) {
+		if (appliedStereotypeLink == null) {
 			return null;
 		}
-		return (Node)appliedStereotypeLink.getTarget();
+		return (Node) appliedStereotypeLink.getTarget();
 
 	}
 }

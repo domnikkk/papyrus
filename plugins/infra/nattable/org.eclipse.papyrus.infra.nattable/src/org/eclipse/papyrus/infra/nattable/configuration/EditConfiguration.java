@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,9 +43,9 @@ import org.eclipse.papyrus.infra.nattable.utils.NattableConfigAttributes;
 
 
 /**
- * 
+ *
  * The configuration for the edition of the table
- * 
+ *
  */
 public class EditConfiguration extends DefaultEditConfiguration {
 
@@ -57,7 +57,7 @@ public class EditConfiguration extends DefaultEditConfiguration {
 	@Override
 	public void configureRegistry(IConfigRegistry configRegistry) {
 		super.configureRegistry(configRegistry);
-		//we remove the default cell editor
+		// we remove the default cell editor
 		configRegistry.unregisterConfigAttribute(EditConfigAttributes.CELL_EDITOR, DisplayMode.NORMAL, null);
 
 		INattableModelManager modelManager = configRegistry.getConfigAttribute(NattableConfigAttributes.NATTABLE_MODEL_MANAGER_CONFIG_ATTRIBUTE, DisplayMode.NORMAL, NattableConfigAttributes.NATTABLE_MODEL_MANAGER_ID);
@@ -65,9 +65,9 @@ public class EditConfiguration extends DefaultEditConfiguration {
 		final BodyLayerStack bodyLayerStack = modelManager.getBodyLayerStack();
 		final Table table = modelManager.getTable();
 		final CellEditorDeclaration editorDeclaration = modelManager.getTable().getTableConfiguration().getCellEditorDeclaration();
-		if(editorDeclaration.equals(CellEditorDeclaration.COLUMN)) {
-			if(table.isInvertAxis()) {
-				//we declared celleditor on row
+		if (editorDeclaration.equals(CellEditorDeclaration.COLUMN)) {
+			if (table.isInvertAxis()) {
+				// we declared celleditor on row
 				final CustomRowOverrideLabelAccumulator accumulator = new CustomRowOverrideLabelAccumulator(bodyLayerStack);
 				declaredCellEditors(modelManager.getRowElementsList(), configRegistry, null, accumulator);
 				bodyLayerStack.setConfigLabelAccumulator(accumulator);
@@ -76,9 +76,9 @@ public class EditConfiguration extends DefaultEditConfiguration {
 				declaredCellEditors(modelManager.getColumnElementsList(), configRegistry, accumulator, null);
 				bodyLayerStack.setConfigLabelAccumulator(accumulator);
 			}
-		} else if(editorDeclaration.equals(CellEditorDeclaration.ROW)) {
-			if(table.isInvertAxis()) {
-				//we declared celleditor on column
+		} else if (editorDeclaration.equals(CellEditorDeclaration.ROW)) {
+			if (table.isInvertAxis()) {
+				// we declared celleditor on column
 				final ColumnOverrideLabelAccumulator accumulator = new ColumnOverrideLabelAccumulator(bodyLayerStack);
 				declaredCellEditors(modelManager.getColumnElementsList(), configRegistry, accumulator, null);
 				bodyLayerStack.setConfigLabelAccumulator(accumulator);
@@ -87,8 +87,8 @@ public class EditConfiguration extends DefaultEditConfiguration {
 				declaredCellEditors(modelManager.getRowElementsList(), configRegistry, null, accumulator);
 				bodyLayerStack.setConfigLabelAccumulator(accumulator);
 			}
-		} else if(editorDeclaration.equals(CellEditorDeclaration.CELL)) {
-			//not yet supported
+		} else if (editorDeclaration.equals(CellEditorDeclaration.CELL)) {
+			// not yet supported
 			throw new UnsupportedOperationException(Messages.EditConfiguration_DeclarationNotYetSupported);
 		}
 
@@ -102,21 +102,21 @@ public class EditConfiguration extends DefaultEditConfiguration {
 		assert declareOnColumn != declareOnRow;
 		final CellEditorConfigurationFactory factory = CellEditorConfigurationFactory.INSTANCE;
 		List<String> existingEditorIds = new ArrayList<String>();
-		for(int i = 0; i < elements.size(); i++) {
-			//TODO : for containement feature : see oep.views.properties.
-			// example : create Usecase in a class from the property view : EcorePropertyEditorFactory create a popup to display available type 
-			//then EditionDialog to edit the created object
+		for (int i = 0; i < elements.size(); i++) {
+			// TODO : for containement feature : see oep.views.properties.
+			// example : create Usecase in a class from the property view : EcorePropertyEditorFactory create a popup to display available type
+			// then EditionDialog to edit the created object
 			Object current = elements.get(i);
-			if(current instanceof IAxis) {
-				current = ((IAxis)current).getElement();
+			if (current instanceof IAxis) {
+				current = ((IAxis) current).getElement();
 			}
 			final Table table = modelManager.getTable();
 			final IAxisCellEditorConfiguration config = factory.getFirstCellEditorConfiguration(table, current);
-			if(config != null) {
+			if (config != null) {
 				final ICellEditor editor = config.getICellEditor(table, current, modelManager.getTableAxisElementProvider());
-				if(editor != null) {
+				if (editor != null) {
 					final String editorId = config.getEditorConfigId() + Integer.toString(i);
-					if(existingEditorIds.contains(editorId)) {
+					if (existingEditorIds.contains(editorId)) {
 						org.eclipse.papyrus.infra.nattable.Activator.log.warn("Several editor have the same id");
 					} else {
 						existingEditorIds.add(editorId);
@@ -126,30 +126,30 @@ public class EditConfiguration extends DefaultEditConfiguration {
 
 					final ICellPainter painter = config.getCellPainter(table, current);
 					final String displayMode = config.getDisplayMode(table, current);
-					final IDisplayConverter converter = config.getDisplayConvert(table, current, new EMFLabelProvider());//TODO : label provider
+					final IDisplayConverter converter = config.getDisplayConvert(table, current, new EMFLabelProvider());// TODO : label provider
 
 					final IDataValidator validator = config.getDataValidator(table, current);
 					assert !cellId.equals(editorId);
-					if(declareOnColumn) {
+					if (declareOnColumn) {
 						columnAccumulator.registerColumnOverrides(i, editorId, cellId);
 					} else {
 						rowAccumulator.registerRowOverrides(i, editorId, cellId);
 					}
-					if(painter != null) {
+					if (painter != null) {
 						configRegistry.registerConfigAttribute(CellConfigAttributes.CELL_PAINTER, painter, displayMode, cellId);
 					}
 					configRegistry.registerConfigAttribute(EditConfigAttributes.CELL_EDITOR, editor, displayMode, editorId);
 
-					if(converter != null) {
+					if (converter != null) {
 						configRegistry.registerConfigAttribute(CellConfigAttributes.DISPLAY_CONVERTER, converter, displayMode, cellId);
 					}
 
-					if(validator != null) {
+					if (validator != null) {
 						configRegistry.registerConfigAttribute(EditConfigAttributes.DATA_VALIDATOR, validator, displayMode, cellId);
 					}
 				} else {
 					final String errorMessage = NLS.bind(Messages.EditConfiguration_FactoryHandlesElementButDoesntProvideEditor, config.getEditorConfigId(), current);
-					if(!this.messagesAlreadyDisplayed.contains(errorMessage)) {
+					if (!this.messagesAlreadyDisplayed.contains(errorMessage)) {
 						Activator.log.warn(errorMessage);
 						this.messagesAlreadyDisplayed.add(errorMessage);
 					}
@@ -157,7 +157,7 @@ public class EditConfiguration extends DefaultEditConfiguration {
 				}
 			} else {
 				final String errorMessage = NLS.bind(Messages.EditConfiguration_ConfigurationNotFound, current);
-				if(!this.messagesAlreadyDisplayed.contains(errorMessage)) {
+				if (!this.messagesAlreadyDisplayed.contains(errorMessage)) {
 					Activator.log.warn(errorMessage);
 					this.messagesAlreadyDisplayed.add(errorMessage);
 				}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,10 +36,10 @@ import org.osgi.service.prefs.BackingStoreException;
 /**
  * Singleton instance. This class is used to read and manage the various
  * DropStrategies: activation, order (priority)
- * 
- * 
+ *
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class DropStrategyManager {
 
@@ -66,7 +66,7 @@ public class DropStrategyManager {
 	/**
 	 * All DropStrategies, defined through an extension point
 	 * The values are grouped by priority.
-	 * 
+	 *
 	 * (Including the DefaultDropStrategy)
 	 */
 	private final SortedMap<Integer, List<DropStrategy>> allAvailableStrategies;
@@ -84,9 +84,9 @@ public class DropStrategyManager {
 	/**
 	 * Stores a map of String/Integer (Strategy id / priority)
 	 * and String/Boolean (Strategy id / boolean)
-	 * 
+	 *
 	 * The ids are suffixed by the property name, e.g. :
-	 * 
+	 *
 	 * oep.myStrategy.isActive=true
 	 * oep.myStrategy.priority=12
 	 */
@@ -101,20 +101,20 @@ public class DropStrategyManager {
 	}
 
 	private void init() {
-		initStrategies(); //Init all available strategies, reads the priorities
-		initActiveStrategies(); //Reads whether each available strategy is active 
-		initDefaultPreferences(); //Inits the preference store's default values (priority + isActive)
-		initDefaultDropStrategies(); //Inits the default drop strategies
+		initStrategies(); // Init all available strategies, reads the priorities
+		initActiveStrategies(); // Reads whether each available strategy is active
+		initDefaultPreferences(); // Inits the preference store's default values (priority + isActive)
+		initDefaultDropStrategies(); // Inits the default drop strategies
 	}
 
 	private void initStrategies() {
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		//Loads all strategies from the extension point.
-		for(IConfigurationElement e : config) {
+		// Loads all strategies from the extension point.
+		for (IConfigurationElement e : config) {
 			try {
-				if("strategy".equals(e.getName())) {
-					DropStrategy strategy = (DropStrategy)e.createExecutableExtension("strategy"); //$NON-NLS-1$
+				if ("strategy".equals(e.getName())) {
+					DropStrategy strategy = (DropStrategy) e.createExecutableExtension("strategy"); //$NON-NLS-1$
 					int priority = findPriority(strategy);
 					getStrategies(priority).add(strategy);
 				}
@@ -125,16 +125,16 @@ public class DropStrategyManager {
 	}
 
 	private void initActiveStrategies() {
-		for(List<DropStrategy> strategies : allAvailableStrategies.values()) {
-			for(DropStrategy strategy : strategies) {
+		for (List<DropStrategy> strategies : allAvailableStrategies.values()) {
+			for (DropStrategy strategy : strategies) {
 				activeStrategies.put(strategy, isActive(strategy));
 			}
 		}
 	}
 
 	private void initDefaultPreferences() {
-		for(Collection<DropStrategy> strategies : allAvailableStrategies.values()) {
-			for(DropStrategy strategy : strategies) {
+		for (Collection<DropStrategy> strategies : allAvailableStrategies.values()) {
+			for (DropStrategy strategy : strategies) {
 				preferences.setDefault(getPriorityKey(strategy), strategy.getPriority());
 				preferences.setDefault(getIsActiveKey(strategy), true);
 			}
@@ -143,8 +143,8 @@ public class DropStrategyManager {
 
 	private void initDefaultDropStrategies() {
 		try {
-			for(String key : InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID).keys()) {
-				if(key.endsWith(DEFAULT_STRATEGY_KEY)) {
+			for (String key : InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID).keys()) {
+				if (key.endsWith(DEFAULT_STRATEGY_KEY)) {
 					parseDefaultDropStrategy(key);
 				}
 			}
@@ -154,8 +154,8 @@ public class DropStrategyManager {
 	}
 
 	public DropStrategy findStrategy(String id) {
-		for(DropStrategy strategy : getAllStrategies()) {
-			if(strategy.getID().equals(id)) {
+		for (DropStrategy strategy : getAllStrategies()) {
+			if (strategy.getID().equals(id)) {
 				return strategy;
 			}
 		}
@@ -166,15 +166,15 @@ public class DropStrategyManager {
 		String[] strategyIds = key.substring(0, key.lastIndexOf(":")).split(":");
 
 		Set<DropStrategy> strategies = new HashSet<DropStrategy>();
-		for(String strategyId : strategyIds) {
+		for (String strategyId : strategyIds) {
 			DropStrategy strategy = findStrategy(strategyId);
-			if(strategy == null) {
-				return; //Invalid preference ; skip
+			if (strategy == null) {
+				return; // Invalid preference ; skip
 			}
 			strategies.add(strategy);
 		}
 
-		if(strategies.size() > 1) {
+		if (strategies.size() > 1) {
 			defaultStrategies.put(strategies, findStrategy(preferences.getString(key)));
 		}
 	}
@@ -182,12 +182,12 @@ public class DropStrategyManager {
 	/**
 	 * Returns a collection of all DropStrategy with the given priority.
 	 * Never returns null
-	 * 
+	 *
 	 * @param priority
 	 * @return
 	 */
 	private List<DropStrategy> getStrategies(int priority) {
-		if(!allAvailableStrategies.containsKey(priority)) {
+		if (!allAvailableStrategies.containsKey(priority)) {
 			allAvailableStrategies.put(priority, new LinkedList<DropStrategy>());
 		}
 		return allAvailableStrategies.get(priority);
@@ -195,14 +195,14 @@ public class DropStrategyManager {
 
 	/**
 	 * Returns a list of all active DropStrategy, ordered by priority. Never returns null.
-	 * 
+	 *
 	 * @return
 	 */
 	public List<DropStrategy> getActiveStrategies() {
 		List<DropStrategy> orderedActiveStrategies = new LinkedList<DropStrategy>();
-		for(List<DropStrategy> strategies : allAvailableStrategies.values()) {
-			for(DropStrategy strategy : strategies) {
-				if(isActive(strategy)) {
+		for (List<DropStrategy> strategies : allAvailableStrategies.values()) {
+			for (DropStrategy strategy : strategies) {
+				if (isActive(strategy)) {
 					orderedActiveStrategies.add(strategy);
 				}
 			}
@@ -213,7 +213,7 @@ public class DropStrategyManager {
 	/**
 	 * All DropStrategies
 	 * The values are grouped by priority.
-	 * 
+	 *
 	 * (Including the DefaultDropStrategy)
 	 */
 	public Map<Integer, List<DropStrategy>> getAllAvailableStrategies() {
@@ -240,7 +240,7 @@ public class DropStrategyManager {
 		});
 
 		String key = ""; //$NON-NLS-1$
-		for(DropStrategy strategy : conflict) {
+		for (DropStrategy strategy : conflict) {
 			key += strategy.getID() + ":";
 		}
 		key += DEFAULT_STRATEGY_KEY;
@@ -250,20 +250,20 @@ public class DropStrategyManager {
 
 	public int findPriority(DropStrategy strategy) {
 		String preferenceKey = getPriorityKey(strategy);
-		if(preferences.contains(preferenceKey)) {
+		if (preferences.contains(preferenceKey)) {
 			return preferences.getInt(preferenceKey);
 		}
 
-		return strategy.getPriority(); //Default
+		return strategy.getPriority(); // Default
 	}
 
 	public boolean isActive(DropStrategy strategy) {
 		String preferenceKey = getIsActiveKey(strategy);
-		if(preferences.contains(preferenceKey)) {
+		if (preferences.contains(preferenceKey)) {
 			return preferences.getBoolean(preferenceKey);
 		}
 
-		return true; //Default
+		return true; // Default
 	}
 
 	public void setActive(DropStrategy strategy, boolean active) {
@@ -272,10 +272,10 @@ public class DropStrategyManager {
 	}
 
 	public void setPriority(DropStrategy strategy, int priority) {
-		//Remove the DropStrategy from its previous priority
+		// Remove the DropStrategy from its previous priority
 		getStrategies(findPriority(strategy)).remove(strategy);
 
-		//Add it again at the right priority
+		// Add it again at the right priority
 		preferences.setValue(getPriorityKey(strategy), priority);
 		getStrategies(priority).add(strategy);
 	}
@@ -284,14 +284,14 @@ public class DropStrategyManager {
 
 	/**
 	 * Returns a flat list of all available strategies.
-	 * 
+	 *
 	 * The strategies are ordered by priority
-	 * 
+	 *
 	 * @return
 	 */
 	public List<DropStrategy> getAllStrategies() {
 		List<DropStrategy> result = new LinkedList<DropStrategy>();
-		for(List<DropStrategy> strategies : allAvailableStrategies.values()) {
+		for (List<DropStrategy> strategies : allAvailableStrategies.values()) {
 			result.addAll(strategies);
 		}
 		return result;
@@ -319,25 +319,25 @@ public class DropStrategyManager {
 	/**
 	 * Returns the default drop strategy among the given list, or null if there is
 	 * no default.
-	 * 
+	 *
 	 * @param strategies
 	 * @return
 	 */
 	public DropStrategy getDefaultDropStrategy(Collection<DropStrategy> strategies) {
-		if(strategies.isEmpty()) {
+		if (strategies.isEmpty()) {
 			return null;
 		}
 
 		DropStrategy defaultStrategy;
 
-		if(strategies.size() == 1) {
+		if (strategies.size() == 1) {
 			defaultStrategy = strategies.iterator().next();
 		} else {
 			Set<DropStrategy> conflictingStrategies = new HashSet<DropStrategy>(strategies);
 			defaultStrategy = defaultStrategies.get(conflictingStrategies);
 		}
 
-		if(defaultStrategy == null) {
+		if (defaultStrategy == null) {
 			return null;
 		}
 
@@ -346,12 +346,12 @@ public class DropStrategyManager {
 
 	/**
 	 * Sets the default drop strategy for a set of conflicting strategies
-	 * 
+	 *
 	 * @param conflictingStrategies
 	 * @param defaultStrategy
 	 */
 	public void setDefaultDropStrategy(Collection<DropStrategy> conflictingStrategies, DropStrategy defaultStrategy) {
-		if(conflictingStrategies.size() < 2) {
+		if (conflictingStrategies.size() < 2) {
 			return;
 		}
 
@@ -359,7 +359,7 @@ public class DropStrategyManager {
 		defaultStrategies.put(conflict, defaultStrategy);
 		preferences.putValue(getDefaultStrategyKey(conflict), defaultStrategy.getID());
 
-		//Save the preferences
+		// Save the preferences
 		IEclipsePreferences preferenceStore = InstanceScope.INSTANCE.getNode(Activator.PLUGIN_ID);
 		try {
 			preferenceStore.flush();

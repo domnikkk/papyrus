@@ -28,7 +28,7 @@ public final class ImageProvider {
 	private static final ImageProvider SINGLETON = new ImageProvider();
 	public static final IImageProvider DEFAULT = IImageProviderFactory.DEFAULT
 			.createIImageProvider(Activator.getDefault());
-	
+
 	private ImageProvider() {
 		// Must not be used
 	}

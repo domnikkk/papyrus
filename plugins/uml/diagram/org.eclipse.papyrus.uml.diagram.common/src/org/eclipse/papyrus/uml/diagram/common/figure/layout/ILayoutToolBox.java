@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,21 +24,21 @@ public interface ILayoutToolBox {
 
 	/**
 	 * Gets the figure layout.
-	 * 
+	 *
 	 * @return the figure layout
 	 */
 	public AbstractLayout getFigureLayout();
 
 	/**
 	 * Gets the edits the policy.
-	 * 
+	 *
 	 * @return the edits the policy
 	 */
 	public EditPolicy getEditPolicy();
 
 	/**
 	 * Gets the layout, this is the constant is is put in the eannotation.
-	 * 
+	 *
 	 * @return the layout constant
 	 */
 	public String getLayout();

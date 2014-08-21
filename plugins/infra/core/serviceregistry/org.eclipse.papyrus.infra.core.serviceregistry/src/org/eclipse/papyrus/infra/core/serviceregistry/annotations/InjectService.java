@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,11 @@ import java.lang.annotation.Target;
  * @author cedric dumoulin
  *
  */
-//Annotation accessible at runtime
+// Annotation accessible at runtime
 @Retention(RetentionPolicy.RUNTIME)
-//Annotation associated to elements:
-@Target({ElementType.FIELD, ElementType.METHOD})
+// Annotation associated to elements:
+@Target({ ElementType.FIELD, ElementType.METHOD })
 public @interface InjectService {
 
-	
+
 }

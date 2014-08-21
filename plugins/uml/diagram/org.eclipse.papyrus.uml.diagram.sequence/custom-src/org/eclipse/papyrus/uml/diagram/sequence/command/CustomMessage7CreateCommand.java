@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class CustomMessage7CreateCommand extends Message7CreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param request
 	 * @param source
 	 * @param target
@@ -46,16 +46,16 @@ public class CustomMessage7CreateCommand extends Message7CreateCommand {
 
 	/**
 	 * Add a condition on the MOS container
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	public boolean canExecute() {
-		if(!super.canExecute()) {
+		if (!super.canExecute()) {
 			return false;
 		}
-		if(getSource() != null && getTarget() != null) {
-			if(!CommandHelper.hasValidContainer(getRequest())) {
+		if (getSource() != null && getTarget() != null) {
+			if (!CommandHelper.hasValidContainer(getRequest())) {
 				return false;
 			}
 		}
@@ -64,20 +64,20 @@ public class CustomMessage7CreateCommand extends Message7CreateCommand {
 
 	/**
 	 * Create a MessageOccurenceSpecification and the call event when a message is created
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		InteractionFragment sourceContainer = (InteractionFragment)getRequest().getParameters().get(SequenceRequestConstant.SOURCE_MODEL_CONTAINER);
-		InteractionFragment targetContainer = (InteractionFragment)getRequest().getParameters().get(SequenceRequestConstant.TARGET_MODEL_CONTAINER);
+		InteractionFragment sourceContainer = (InteractionFragment) getRequest().getParameters().get(SequenceRequestConstant.SOURCE_MODEL_CONTAINER);
+		InteractionFragment targetContainer = (InteractionFragment) getRequest().getParameters().get(SequenceRequestConstant.TARGET_MODEL_CONTAINER);
 		Message message = CommandHelper.doCreateMessage(container, MessageSort.ASYNCH_SIGNAL_LITERAL, null, getTarget(), sourceContainer, targetContainer);
-		if(message != null) {
+		if (message != null) {
 			doConfigure(message, monitor, info);
-			((CreateElementRequest)getRequest()).setNewElement(message);
+			((CreateElementRequest) getRequest()).setNewElement(message);
 			return CommandResult.newOKCommandResult(message);
 		}
 		return CommandResult.newErrorCommandResult("There is now valid container for events"); //$NON-NLS-1$

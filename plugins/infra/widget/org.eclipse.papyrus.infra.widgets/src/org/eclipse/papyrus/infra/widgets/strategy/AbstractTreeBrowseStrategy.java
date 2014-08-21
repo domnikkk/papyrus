@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,14 +18,17 @@ import org.eclipse.jface.viewers.Viewer;
 
 public abstract class AbstractTreeBrowseStrategy implements TreeBrowseStrategy {
 
+	@Override
 	public void dispose() {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		//Nothing
+		// Nothing
 	}
 
+	@Override
 	abstract public void revealSemanticElement(List<?> elementsList);
 
 }

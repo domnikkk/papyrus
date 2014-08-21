@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 ATOS ORIGIN.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,9 +25,9 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 /**
  * A Builder able to create {@link PapyrusAsyncNotificationPopup} instances
- * 
+ *
  * @author tristan faure
- * 
+ *
  */
 public class AsyncNotifierBuilder implements IBuilder {
 
@@ -39,10 +39,10 @@ public class AsyncNotifierBuilder implements IBuilder {
 	 */
 	public INotification build(PropertyWrapper wrapper, final FormToolkit toolkit) {
 		PapyrusAsyncNotificationPopup popup = null;
-		if(wrapper.getComposite() != null) {
+		if (wrapper.getComposite() != null) {
 			final ICompositeCreator composite = wrapper.getComposite();
 			// use the creator to a notification with image
-			if(wrapper.getType() != null) {
+			if (wrapper.getType() != null) {
 				popup = new ImagePapyrusAsyncNotificationPopup(Display.getDefault(), toolkit, wrapper.getType()) {
 
 					@Override
@@ -63,21 +63,21 @@ public class AsyncNotifierBuilder implements IBuilder {
 				};
 			}
 		} else {
-			if(wrapper.getType() != null) {
+			if (wrapper.getType() != null) {
 				popup = new ImagePapyrusAsyncNotificationPopup(Display.getDefault(), toolkit, wrapper.getType());
 			} else {
 				popup = new PapyrusAsyncNotificationPopup(Display.getDefault(), toolkit);
 			}
 			String text = wrapper.getMessage();
-			if(text == null) {
+			if (text == null) {
 				text = "no text";
 			}
 			popup.setText(text);
 		}
-		if(wrapper.getDelay() != null) {
-			popup.setDelayClose((Long)wrapper.getDelay());
+		if (wrapper.getDelay() != null) {
+			popup.setDelayClose(wrapper.getDelay());
 		}
-		if(wrapper.getActions() != null) {
+		if (wrapper.getActions() != null) {
 			popup.addAllRunnable(wrapper.getActions());
 		}
 		popup.setTitle(wrapper.getTitle() == null ? "Papyrus" : wrapper.getTitle());
@@ -93,34 +93,34 @@ public class AsyncNotifierBuilder implements IBuilder {
 	 * @see org.eclipse.papyrus.infra.widgets.toolbox.notification.IBuilder#accept(java.lang.String, java.lang.Object)
 	 */
 	public boolean accept(String parameterName, Object value) {
-		if(NotificationBuilder.ASYNCHRONOUS.equals(parameterName)) {
-			return value instanceof Boolean && ((Boolean)value);
+		if (NotificationBuilder.ASYNCHRONOUS.equals(parameterName)) {
+			return value instanceof Boolean && ((Boolean) value);
 		}
-		if(NotificationBuilder.TEMPORARY.equals(parameterName)) {
-			return value instanceof Boolean && (Boolean)value;
+		if (NotificationBuilder.TEMPORARY.equals(parameterName)) {
+			return value instanceof Boolean && (Boolean) value;
 		}
-		if(NotificationBuilder.MESSAGE.equals(parameterName)) {
+		if (NotificationBuilder.MESSAGE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.COMPOSITE.equals(parameterName)) {
+		if (NotificationBuilder.COMPOSITE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.ACTION.equals(parameterName)) {
+		if (NotificationBuilder.ACTION.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.DELAY.equals(parameterName)) {
+		if (NotificationBuilder.DELAY.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.IMAGE.equals(parameterName)) {
+		if (NotificationBuilder.IMAGE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.TYPE.equals(parameterName)) {
+		if (NotificationBuilder.TYPE.equals(parameterName)) {
 			return true;
 		}
-		if(NotificationBuilder.HTML.equals(parameterName)) {
-			return value instanceof Boolean && !(Boolean)value;
+		if (NotificationBuilder.HTML.equals(parameterName)) {
+			return value instanceof Boolean && !(Boolean) value;
 		}
-		if(NotificationBuilder.TITLE.equals(parameterName)) {
+		if (NotificationBuilder.TITLE.equals(parameterName)) {
 			return true;
 		}
 		return false;

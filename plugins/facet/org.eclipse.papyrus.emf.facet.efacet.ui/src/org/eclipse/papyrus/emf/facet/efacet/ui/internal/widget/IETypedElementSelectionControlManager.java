@@ -28,7 +28,7 @@ public interface IETypedElementSelectionControlManager extends
 
 	/**
 	 * Set the available elements
-	 * 
+	 *
 	 * @param eTypedElements
 	 *            available eTypedElements
 	 */
@@ -36,14 +36,14 @@ public interface IETypedElementSelectionControlManager extends
 			Collection<? extends ETypedElement> eTypedElements);
 
 	/**
-	 * 
+	 *
 	 * @param selection
 	 *            the selection
 	 */
 	void setSelection(final IStructuredSelection selection);
 
 	/**
-	 * 
+	 *
 	 * @return the selection
 	 */
 	List<ETypedElement> computeResult();

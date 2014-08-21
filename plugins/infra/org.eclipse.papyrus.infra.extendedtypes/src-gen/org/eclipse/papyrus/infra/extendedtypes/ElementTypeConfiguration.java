@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Element Type Configuration</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -28,7 +28,7 @@ import org.eclipse.emf.common.util.EList;
  * <li>{@link org.eclipse.papyrus.infra.extendedtypes.ElementTypeConfiguration#getMatcherConfiguration <em>Matcher Configuration</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage#getElementTypeConfiguration()
  * @model abstract="true"
  * @generated
@@ -43,7 +43,7 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * If the meaning of the '<em>Hint</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Hint</em>' attribute.
 	 * @see #setHint(String)
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage#getElementTypeConfiguration_Hint()
@@ -56,9 +56,9 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.extendedtypes.ElementTypeConfiguration#getHint <em>Hint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Hint</em>' attribute.
+	 *            the new value of the '<em>Hint</em>' attribute.
 	 * @see #getHint()
 	 * @generated
 	 */
@@ -72,7 +72,7 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * If the meaning of the '<em>Kind Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Kind Name</em>' attribute.
 	 * @see #setKindName(String)
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage#getElementTypeConfiguration_KindName()
@@ -85,9 +85,9 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.extendedtypes.ElementTypeConfiguration#getKindName <em>Kind Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Kind Name</em>' attribute.
+	 *            the new value of the '<em>Kind Name</em>' attribute.
 	 * @see #getKindName()
 	 * @generated
 	 */
@@ -101,7 +101,7 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * If the meaning of the '<em>Specialized Types ID</em>' attribute list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Specialized Types ID</em>' attribute list.
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage#getElementTypeConfiguration_SpecializedTypesID()
 	 * @model required="true"
@@ -116,7 +116,7 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * If the meaning of the '<em>Matcher Configuration</em>' containment reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Matcher Configuration</em>' containment reference.
 	 * @see #setMatcherConfiguration(MatcherConfiguration)
 	 * @see org.eclipse.papyrus.infra.extendedtypes.ExtendedtypesPackage#getElementTypeConfiguration_MatcherConfiguration()
@@ -130,9 +130,9 @@ public interface ElementTypeConfiguration extends ConfigurationElement {
 	 * <em>Matcher Configuration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Matcher Configuration</em>' containment reference.
+	 *            the new value of the '<em>Matcher Configuration</em>' containment reference.
 	 * @see #getMatcherConfiguration()
 	 * @generated
 	 */

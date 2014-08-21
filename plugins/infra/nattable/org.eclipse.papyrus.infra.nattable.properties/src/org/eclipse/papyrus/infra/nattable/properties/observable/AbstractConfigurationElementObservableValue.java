@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,9 +23,9 @@ import org.eclipse.swt.widgets.Listener;
 
 /**
  * Abstract Observable Value to update axis configuration
- * 
+ *
  * @author vl222926
- * 
+ *
  */
 public abstract class AbstractConfigurationElementObservableValue extends AbstractObservableValue implements Listener {
 
@@ -45,13 +45,13 @@ public abstract class AbstractConfigurationElementObservableValue extends Abstra
 	private Object oldValue;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
-	 *        the managed table
+	 *            the managed table
 	 * @param managedFeature
-	 *        the managed feature
+	 *            the managed feature
 	 */
 	public AbstractConfigurationElementObservableValue(final Table table, final EStructuralFeature managedFeature) {
 		this.table = table;
@@ -60,16 +60,16 @@ public abstract class AbstractConfigurationElementObservableValue extends Abstra
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
-	 * 
+	 *
 	 * @return
 	 *         the current value
 	 */
 	@Override
 	protected Object doGetValue() {
 		EObject editedObject = getEditedEObject();
-		if(editedObject != null) {
+		if (editedObject != null) {
 			return editedObject.eGet(getManagedFeature());
 		}
 		return null;
@@ -77,7 +77,7 @@ public abstract class AbstractConfigurationElementObservableValue extends Abstra
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the managed feature
 	 */
@@ -86,23 +86,23 @@ public abstract class AbstractConfigurationElementObservableValue extends Abstra
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the managed axis configuration
 	 */
 	protected abstract EObject getEditedEObject();
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.swt.widgets.Listener#handleEvent(org.eclipse.swt.widgets.Event)
-	 * 
+	 *
 	 * @param event
 	 */
 	@Override
 	public void handleEvent(Event event) {
 		final Object newValue = doGetValue();
-		//big test required to avoid NPE when we receive event during the exchange of the axis
-		if((newValue != oldValue) && ((newValue != null && oldValue == null) || newValue == null && oldValue != null || (oldValue != null && !oldValue.equals(newValue)))) {
+		// big test required to avoid NPE when we receive event during the exchange of the axis
+		if ((newValue != oldValue) && ((newValue != null && oldValue == null) || newValue == null && oldValue != null || (oldValue != null && !oldValue.equals(newValue)))) {
 			final Object localOldValue = oldValue;
 			oldValue = newValue;
 			fireValueChange(new ValueDiff() {
@@ -121,7 +121,7 @@ public abstract class AbstractConfigurationElementObservableValue extends Abstra
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the managed table
 	 */

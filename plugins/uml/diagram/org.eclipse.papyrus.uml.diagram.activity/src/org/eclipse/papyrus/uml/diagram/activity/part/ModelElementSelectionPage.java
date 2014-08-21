@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import org.eclipse.swt.widgets.Label;
 
 /**
  * Wizard page that allows to select element from model.
- * 
+ *
  * @generated
  */
 public class ModelElementSelectionPage extends WizardPage {
@@ -66,8 +66,8 @@ public class ModelElementSelectionPage extends WizardPage {
 	 */
 	public void setModelElement(EObject modelElement) {
 		selectedModelElement = modelElement;
-		if(modelViewer != null) {
-			if(selectedModelElement != null) {
+		if (modelViewer != null) {
+			if (selectedModelElement != null) {
 				modelViewer.setInput(selectedModelElement.eResource());
 				modelViewer.setSelection(new StructuredSelection(selectedModelElement));
 			} else {
@@ -80,6 +80,7 @@ public class ModelElementSelectionPage extends WizardPage {
 	/**
 	 * @generated
 	 */
+	@Override
 	public void createControl(Composite parent) {
 		initializeDialogUnits(parent);
 		Composite plate = new Composite(parent, SWT.NONE);
@@ -98,14 +99,15 @@ public class ModelElementSelectionPage extends WizardPage {
 		modelViewer.getTree().setLayoutData(layoutData);
 		modelViewer.setContentProvider(new AdapterFactoryContentProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory()));
 		modelViewer.setLabelProvider(new AdapterFactoryLabelProvider(UMLDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory()));
-		if(selectedModelElement != null) {
+		if (selectedModelElement != null) {
 			modelViewer.setInput(selectedModelElement.eResource());
 			modelViewer.setSelection(new StructuredSelection(selectedModelElement));
 		}
 		modelViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 
+			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				ModelElementSelectionPage.this.updateSelection((IStructuredSelection)event.getSelection());
+				ModelElementSelectionPage.this.updateSelection((IStructuredSelection) event.getSelection());
 			}
 		});
 		setPageComplete(validatePage());
@@ -113,7 +115,7 @@ public class ModelElementSelectionPage extends WizardPage {
 
 	/**
 	 * Override to provide custom model element description.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected String getSelectionTitle() {
@@ -125,16 +127,16 @@ public class ModelElementSelectionPage extends WizardPage {
 	 */
 	protected void updateSelection(IStructuredSelection selection) {
 		selectedModelElement = null;
-		if(selection.size() == 1) {
+		if (selection.size() == 1) {
 			Object selectedElement = selection.getFirstElement();
-			if(selectedElement instanceof IWrapperItemProvider) {
-				selectedElement = ((IWrapperItemProvider)selectedElement).getValue();
+			if (selectedElement instanceof IWrapperItemProvider) {
+				selectedElement = ((IWrapperItemProvider) selectedElement).getValue();
 			}
-			if(selectedElement instanceof FeatureMap.Entry) {
-				selectedElement = ((FeatureMap.Entry)selectedElement).getValue();
+			if (selectedElement instanceof FeatureMap.Entry) {
+				selectedElement = ((FeatureMap.Entry) selectedElement).getValue();
 			}
-			if(selectedElement instanceof EObject) {
-				selectedModelElement = (EObject)selectedElement;
+			if (selectedElement instanceof EObject) {
+				selectedModelElement = (EObject) selectedElement;
 			}
 		}
 		setPageComplete(validatePage());
@@ -142,7 +144,7 @@ public class ModelElementSelectionPage extends WizardPage {
 
 	/**
 	 * Override to provide specific validation of the selected model element.
-	 * 
+	 *
 	 * @generated
 	 */
 	protected boolean validatePage() {

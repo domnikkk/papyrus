@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,11 +25,12 @@ import org.eclipse.uml2.uml.Element;
  */
 public class UMLBaseEditHelper extends GeneratedEditHelperBase {
 
+	@Override
 	protected ICommand getDestroyElementCommand(DestroyElementRequest req) {
 		EObject elementToDestroy = req.getElementToDestroy();
-		if(elementToDestroy instanceof Element) {
-			UnapplyAllStereotypesCommand command = new UnapplyAllStereotypesCommand(req.getEditingDomain(), req.getLabel(), (Element)elementToDestroy);
-			if(!command.isEmpty()) {
+		if (elementToDestroy instanceof Element) {
+			UnapplyAllStereotypesCommand command = new UnapplyAllStereotypesCommand(req.getEditingDomain(), req.getLabel(), (Element) elementToDestroy);
+			if (!command.isEmpty()) {
 				return command;
 			}
 		}

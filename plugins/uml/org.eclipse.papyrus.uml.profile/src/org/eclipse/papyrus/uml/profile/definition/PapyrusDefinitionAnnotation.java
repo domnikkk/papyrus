@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EAnnotation;
 /**
  * Class that defines various information about a profile definition (author,
  * version, etc.)
- * 
- * 
+ *
+ *
  * @deprecated API was moved to the plugin org.eclipse.papyrus.uml.tools for Bug 435995.
  *             It was preserved for standard releases of Papyrus 1.0.0
  * @see org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation
@@ -38,20 +38,20 @@ public class PapyrusDefinitionAnnotation extends org.eclipse.papyrus.uml.tools.p
 	 * Instantiates a new papyrus definition annotation.
 	 *
 	 * @param version
-	 *        the version
+	 *            the version
 	 * @param comment
-	 *        the comment
+	 *            the comment
 	 * @param copyright
-	 *        the copyright
+	 *            the copyright
 	 * @param date
-	 *        the date
+	 *            the date
 	 * @param author
-	 *        the author
+	 *            the author
 	 */
 	public PapyrusDefinitionAnnotation(Version version, String comment, String copyright, String date, String author) {
 		super(version, comment, copyright, date, author);
 	}
-	
+
 	/** Copy constructor for legacy support. */
 	PapyrusDefinitionAnnotation(org.eclipse.papyrus.uml.tools.profile.definition.PapyrusDefinitionAnnotation annotation) {
 		this(new Version(annotation.getVersion()), annotation.getComment(), annotation.getCopyright(), annotation.getDate(), annotation.getAuthor());
@@ -60,9 +60,9 @@ public class PapyrusDefinitionAnnotation extends org.eclipse.papyrus.uml.tools.p
 	/**
 	 * Return the PapyrusDefinitionAnnotation corresponding to the given
 	 * EAnnotation
-	 * 
+	 *
 	 * @param annotation
-	 *        the annotation to parse
+	 *            the annotation to parse
 	 * @return a image of the given annotation, with default values if needed.
 	 */
 	@Deprecated

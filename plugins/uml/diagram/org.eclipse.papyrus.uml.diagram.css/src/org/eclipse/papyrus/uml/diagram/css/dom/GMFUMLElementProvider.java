@@ -24,21 +24,22 @@ import org.w3c.dom.Element;
  *
  * @author Camille Letavernier
  */
-@SuppressWarnings("restriction") //e4 CSS
+@SuppressWarnings("restriction")
+// e4 CSS
 public class GMFUMLElementProvider implements IElementProvider {
 
 	@Override
 	public Element getElement(Object element, CSSEngine engine) {
 
-		if(!(element instanceof View)) {
+		if (!(element instanceof View)) {
 			throw new IllegalArgumentException("Unknown element : " + element);
 		}
 
-		if(!(engine instanceof ExtendedCSSEngine)) {
+		if (!(engine instanceof ExtendedCSSEngine)) {
 			throw new IllegalArgumentException("Invalid CSS Engine : " + engine);
 		}
 
-		return new GMFUMLElementAdapter((View)element, (ExtendedCSSEngine)engine);
+		return new GMFUMLElementAdapter((View) element, (ExtendedCSSEngine) engine);
 	}
 
 }

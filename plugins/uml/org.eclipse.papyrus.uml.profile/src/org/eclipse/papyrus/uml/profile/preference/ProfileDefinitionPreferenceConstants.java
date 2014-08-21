@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ public class ProfileDefinitionPreferenceConstants {
 
 	/**
 	 * initialize default preferences
-	 * 
+	 *
 	 * @param store
-	 *        the preference store to modify
+	 *            the preference store to modify
 	 */
 	public static void setDefaultPreferences(IPreferenceStore store) {
 		String name = "";

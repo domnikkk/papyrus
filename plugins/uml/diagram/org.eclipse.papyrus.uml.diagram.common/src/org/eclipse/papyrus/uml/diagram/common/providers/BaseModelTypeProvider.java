@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation
  *
  ******************************************************************************/
@@ -18,7 +18,7 @@ import org.eclipse.swt.graphics.Image;
 /**
  * Provides images (icons) and text (labels) for IAdaptable elements. This implementation can handle
  * IElementType elements.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @NOT-generated
  */
@@ -27,6 +27,7 @@ public class BaseModelTypeProvider implements IModelTypesProvider {
 	/**
 	 * Returns null.
 	 */
+	@Override
 	public Image getImageHelper(IAdaptable hint) {
 		return null;
 	}
@@ -39,9 +40,10 @@ public class BaseModelTypeProvider implements IModelTypesProvider {
 	/**
 	 * Returns the display name of the given IElementType
 	 */
+	@Override
 	public String getTextHelper(IAdaptable hint) {
-		IElementType elementType = (IElementType)Platform.getAdapterManager().getAdapter(hint, IElementType.class);
-		if(elementType != null) {
+		IElementType elementType = (IElementType) Platform.getAdapterManager().getAdapter(hint, IElementType.class);
+		if (elementType != null) {
 			return elementType.getDisplayName();
 		}
 		return UNKNOWN_TEXT;

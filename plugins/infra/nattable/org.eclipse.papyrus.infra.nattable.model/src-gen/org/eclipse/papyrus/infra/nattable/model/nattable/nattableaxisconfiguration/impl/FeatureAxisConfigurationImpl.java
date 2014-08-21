@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  * 	Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  */
@@ -33,7 +33,7 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattableaxisconfigurati
  * <em>Show Only Common Feature</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container implements FeatureAxisConfiguration {
@@ -42,7 +42,7 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	 * The default value of the '{@link #isShowOnlyCommonFeature() <em>Show Only Common Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isShowOnlyCommonFeature()
 	 * @generated
 	 * @ordered
@@ -53,7 +53,7 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	 * The cached value of the '{@link #isShowOnlyCommonFeature() <em>Show Only Common Feature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isShowOnlyCommonFeature()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FeatureAxisConfigurationImpl() {
@@ -73,7 +73,7 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -84,9 +84,10 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public boolean isShowOnlyCommonFeature() {
 		return showOnlyCommonFeature;
 	}
@@ -94,25 +95,27 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void setShowOnlyCommonFeature(boolean newShowOnlyCommonFeature) {
 		boolean oldShowOnlyCommonFeature = showOnlyCommonFeature;
 		showOnlyCommonFeature = newShowOnlyCommonFeature;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, NattableaxisconfigurationPackage.FEATURE_AXIS_CONFIGURATION__SHOW_ONLY_COMMON_FEATURE, oldShowOnlyCommonFeature, showOnlyCommonFeature));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.FEATURE_AXIS_CONFIGURATION__SHOW_ONLY_COMMON_FEATURE:
 			return isShowOnlyCommonFeature();
 		}
@@ -122,14 +125,14 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.FEATURE_AXIS_CONFIGURATION__SHOW_ONLY_COMMON_FEATURE:
-			setShowOnlyCommonFeature((Boolean)newValue);
+			setShowOnlyCommonFeature((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -138,12 +141,12 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.FEATURE_AXIS_CONFIGURATION__SHOW_ONLY_COMMON_FEATURE:
 			setShowOnlyCommonFeature(SHOW_ONLY_COMMON_FEATURE_EDEFAULT);
 			return;
@@ -154,12 +157,12 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case NattableaxisconfigurationPackage.FEATURE_AXIS_CONFIGURATION__SHOW_ONLY_COMMON_FEATURE:
 			return showOnlyCommonFeature != SHOW_ONLY_COMMON_FEATURE_EDEFAULT;
 		}
@@ -169,13 +172,14 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (showOnlyCommonFeature: "); //$NON-NLS-1$
@@ -184,4 +188,4 @@ public class FeatureAxisConfigurationImpl extends MinimalEObjectImpl.Container i
 		return result.toString();
 	}
 
-} //FeatureAxisConfigurationImpl
+} // FeatureAxisConfigurationImpl

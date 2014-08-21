@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- *  
+ *
  */
 package org.eclipse.papyrus.emf.facet.efacet.impl;
 
@@ -28,6 +28,7 @@ import org.eclipse.papyrus.emf.facet.efacet.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  * @deprecated use the new eFacet metamodel in org.eclipse.papyrus.emf.facet.efacet.metamodel. Cf.
  *             https://bugs.eclipse.org/bugs/show_bug.cgi?id=373672
@@ -38,18 +39,18 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public static EFacetFactory init() {
 		try {
-			EFacetFactory theEFacetFactory = (EFacetFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/emf/facet/efacet/0.1.incubation"); //$NON-NLS-1$ 
+			EFacetFactory theEFacetFactory = (EFacetFactory) EPackage.Registry.INSTANCE.getEFactory("http://www.eclipse.org/papyrus/emf/facet/efacet/0.1.incubation"); //$NON-NLS-1$
 			if (theEFacetFactory != null) {
 				return theEFacetFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new EFacetFactoryImpl();
@@ -59,6 +60,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -70,6 +72,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -77,20 +80,34 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	@Override
 	public EObject create(final EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case EFacetPackage.FACET_ATTRIBUTE: return createFacetAttribute();
-		case EFacetPackage.FACET_REFERENCE: return createFacetReference();
-		case EFacetPackage.FACET_OPERATION: return createFacetOperation();
-		case EFacetPackage.FACET_SET: return createFacetSet();
-		case EFacetPackage.FACET: return createFacet();
-		case EFacetPackage.QUERY_RESULT: return createQueryResult();
-		case EFacetPackage.CATEGORY: return createCategory();
-		case EFacetPackage.OPPOSITE_REFERENCE: return createOppositeReference();
-		case EFacetPackage.QUERY_SET: return createQuerySet();
-		case EFacetPackage.LITERAL: return createLiteral();
-		case EFacetPackage.TYPED_ELEMENT_REF: return createTypedElementRef();
-		case EFacetPackage.PARAMETER: return createParameter();
-		case EFacetPackage.PARAMETER_VALUE: return createParameterValue();
-		case EFacetPackage.QUERY_CONTEXT: return createQueryContext();
+		case EFacetPackage.FACET_ATTRIBUTE:
+			return createFacetAttribute();
+		case EFacetPackage.FACET_REFERENCE:
+			return createFacetReference();
+		case EFacetPackage.FACET_OPERATION:
+			return createFacetOperation();
+		case EFacetPackage.FACET_SET:
+			return createFacetSet();
+		case EFacetPackage.FACET:
+			return createFacet();
+		case EFacetPackage.QUERY_RESULT:
+			return createQueryResult();
+		case EFacetPackage.CATEGORY:
+			return createCategory();
+		case EFacetPackage.OPPOSITE_REFERENCE:
+			return createOppositeReference();
+		case EFacetPackage.QUERY_SET:
+			return createQuerySet();
+		case EFacetPackage.LITERAL:
+			return createLiteral();
+		case EFacetPackage.TYPED_ELEMENT_REF:
+			return createTypedElementRef();
+		case EFacetPackage.PARAMETER:
+			return createParameter();
+		case EFacetPackage.PARAMETER_VALUE:
+			return createParameterValue();
+		case EFacetPackage.QUERY_CONTEXT:
+			return createQueryContext();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
 		}
@@ -99,6 +116,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -116,6 +134,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -133,6 +152,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -145,6 +165,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -157,6 +178,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -169,6 +191,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -181,6 +204,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -193,6 +217,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -205,6 +230,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -217,6 +243,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -229,6 +256,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -241,6 +269,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -253,6 +282,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -265,6 +295,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -277,6 +308,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -289,6 +321,7 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -301,17 +334,19 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public Exception createJavaExceptionFromString(final EDataType eDataType, final String initialValue) {
-		return (Exception)super.createFromString(eDataType, initialValue);
+		return (Exception) super.createFromString(eDataType, initialValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
@@ -323,17 +358,19 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
 	 */
 	@Deprecated
 	public EFacetPackage getEFacetPackage() {
-		return (EFacetPackage)getEPackage();
+		return (EFacetPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 * @deprecated use the new eFacet2 metamodel in org.eclipse.papyrus.emf.facet.efacet2.metamodel
@@ -343,4 +380,4 @@ public class EFacetFactoryImpl extends EFactoryImpl implements EFacetFactory {
 		return EFacetPackage.eINSTANCE;
 	}
 
-} //EFacetFactoryImpl
+} // EFacetFactoryImpl

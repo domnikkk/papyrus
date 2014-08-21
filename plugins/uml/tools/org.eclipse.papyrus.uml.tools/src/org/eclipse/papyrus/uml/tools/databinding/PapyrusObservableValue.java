@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *  Thibault Le Ouay t.leouay@sherpa-eng.com - Add binding implementation
  *  Christian W. Damus (CEA) - bug 440108
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.databinding;
 
@@ -40,56 +40,55 @@ import org.eclipse.papyrus.uml.tools.Activator;
 /**
  * An ObservableValue used to edit EObject properties through
  * Papyrus commands
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class PapyrusObservableValue extends EMFObservableValue implements AggregatedObservable, CommandBasedObservableValue, ReferenceCountedObservable {
 
 	private final ReferenceCountedObservable.Support refCount = new ReferenceCountedObservable.Support(this);
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param eObject
-	 *        The EObject to edit
+	 *            The EObject to edit
 	 * @param eStructuralFeature
-	 *        The structural feature to edit
+	 *            The structural feature to edit
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 */
 	public PapyrusObservableValue(EObject eObject, EStructuralFeature eStructuralFeature, EditingDomain domain) {
 		this(Realm.getDefault(), eObject, eStructuralFeature, domain);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param realm
 	 * @param eObject
-	 *        The EObject to edit
+	 *            The EObject to edit
 	 * @param eStructuralFeature
-	 *        The structural feature to edit
+	 *            The structural feature to edit
 	 * @param domain
-	 *        The editing domain on which the commands will be executed
+	 *            The editing domain on which the commands will be executed
 	 */
 	public PapyrusObservableValue(Realm realm, EObject eObject, EStructuralFeature eStructuralFeature, EditingDomain domain) {
 		super(eObject, eStructuralFeature, domain);
 	}
 
 	@Override
-	protected void doSetValue  (Object value) {
+	protected void doSetValue(Object value) {
 
-		try{
+		try {
 			Command emfCommand = getCommand(value);
 			domain.getCommandStack().execute(emfCommand);
+		} catch (Exception ex) {
+			//
 		}
-		catch(Exception ex){
-		//
-		}
-//		throw new IllegalArgumentException("an error occured");
+		// throw new IllegalArgumentException("an error occured");
 	}
 
 	/**
@@ -97,7 +96,7 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 	 */
 	public Command getCommand(Object value) {
 		EObject eObjectValue = EMFHelper.getEObject(value);
-		if(eObjectValue != null) {
+		if (eObjectValue != null) {
 			value = eObjectValue;
 		}
 
@@ -106,14 +105,14 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 		try {
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(getObserved());
 
-			if(provider != null) {
+			if (provider != null) {
 				CompositeCommand cc = new CompositeCommand("Edit value");
 
-				if (oldValue instanceof EObject && eStructuralFeature instanceof EReference && ((EReference)eStructuralFeature).isContainment()) {
-					cc.add(provider.getEditCommand(new DestroyElementRequest((TransactionalEditingDomain)domain, (EObject)oldValue, false)));
+				if (oldValue instanceof EObject && eStructuralFeature instanceof EReference && ((EReference) eStructuralFeature).isContainment()) {
+					cc.add(provider.getEditCommand(new DestroyElementRequest((TransactionalEditingDomain) domain, (EObject) oldValue, false)));
 				}
 
-				cc.add(provider.getEditCommand(createSetRequest((TransactionalEditingDomain)domain, eObject, eStructuralFeature, value)));
+				cc.add(provider.getEditCommand(createSetRequest((TransactionalEditingDomain) domain, eObject, eStructuralFeature, value)));
 
 				return new GMFtoEMFCommandWrapper(cc);
 			}
@@ -129,7 +128,7 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the {@link EStructuralFeature} observed by this object
 	 */
 	public EStructuralFeature getEStructuralFeature() {
@@ -137,7 +136,7 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the {@link EObject} observed by this object
 	 */
 	public EObject getEObject() {
@@ -148,22 +147,22 @@ public class PapyrusObservableValue extends EMFObservableValue implements Aggreg
 		try {
 			return new AggregatedPapyrusObservableValue(domain, this, observable);
 		} catch (IllegalArgumentException ex) {
-			return null; //The observable cannot be aggregated
+			return null; // The observable cannot be aggregated
 		}
 	}
 
 	public boolean hasDifferentValues() {
-		return false; //The value is not aggregated yet
+		return false; // The value is not aggregated yet
 	}
-	
+
 	public void retain() {
 		refCount.retain();
 	}
-	
+
 	public void release() {
 		refCount.release();
 	}
-	
+
 	public void autorelease() {
 		refCount.autorelease();
 	}

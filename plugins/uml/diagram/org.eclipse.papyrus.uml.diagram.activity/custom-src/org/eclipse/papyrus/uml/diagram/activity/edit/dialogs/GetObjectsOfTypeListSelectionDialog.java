@@ -23,13 +23,13 @@ public class GetObjectsOfTypeListSelectionDialog extends ElementListSelectionDia
 
 	/**
 	 * Constructs the dialog instance with default generic message and title.
-	 * 
+	 *
 	 * @param renderer
-	 *        label provider to render the element options
+	 *            label provider to render the element options
 	 * @param sourceObject
-	 *        fixed source object that will be used as an anchor for all type queries using {@link ModelSetQuery}
+	 *            fixed source object that will be used as an anchor for all type queries using {@link ModelSetQuery}
 	 * @param needNullObject
-	 *        if <code>true</code>, the dialog will include additional null element (shown as empty string)
+	 *            if <code>true</code>, the dialog will include additional null element (shown as empty string)
 	 */
 	public GetObjectsOfTypeListSelectionDialog(Shell parent, ILabelProvider renderer, EObject sourceObject, boolean needNullObject) {
 		super(parent, renderer);
@@ -52,11 +52,11 @@ public class GetObjectsOfTypeListSelectionDialog extends ElementListSelectionDia
 	public int open() {
 		Object[] elements = myNeedsNullObject ? new Object[myElementsOfType.size() + 1] : new Object[myElementsOfType.size()];
 		myElementsOfType.toArray(elements);
-		if(myNeedsNullObject) {
+		if (myNeedsNullObject) {
 			elements[elements.length - 1] = "";
 		}
 		setElements(elements);
-		setInitialSelections(new Object[]{ mySourceObject });
+		setInitialSelections(new Object[] { mySourceObject });
 		return super.open();
 	}
 }

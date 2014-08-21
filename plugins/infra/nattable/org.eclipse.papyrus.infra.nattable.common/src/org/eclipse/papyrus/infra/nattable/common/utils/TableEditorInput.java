@@ -20,7 +20,7 @@ import org.eclipse.ui.IPersistableElement;
 
 /**
  * Comes from org.eclipse.emf.facet.widget.nattable.workbench.
- * 
+ *
  * This class should not be used by others plugins
  */
 public class TableEditorInput implements IEditorInput {
@@ -47,26 +47,32 @@ public class TableEditorInput implements IEditorInput {
 		return this.description;
 	}
 
+	@Override
 	public boolean exists() {
 		return false;
 	}
 
+	@Override
 	public ImageDescriptor getImageDescriptor() {
 		return null;
 	}
 
+	@Override
 	public String getName() {
 		return "Model Table"; //$NON-NLS-1$
 	}
 
+	@Override
 	public IPersistableElement getPersistable() {
 		return null;
 	}
 
+	@Override
 	public String getToolTipText() {
 		return "Model Table"; //$NON-NLS-1$
 	}
 
+	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
 		return null;
 	}

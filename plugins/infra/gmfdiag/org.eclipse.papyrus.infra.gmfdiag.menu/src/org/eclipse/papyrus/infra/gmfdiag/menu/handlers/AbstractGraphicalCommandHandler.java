@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -11,7 +11,7 @@
  *  Patrick Tessier (CEA LIST) Patrick.tessier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 430701
  *  Christian W. Damus (CEA) - bug 433320
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.menu.handlers;
 
@@ -40,7 +40,7 @@ import org.eclipse.ui.handlers.HandlerUtil;
  * This abstract command handler: - calculates the current selection -
  * calculates the visibility and enablement based on command executability -
  * executes the command in Papyrus command stack
- * 
+ *
  */
 public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 
@@ -48,14 +48,14 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 
 	/**
 	 * Iterate over current selection and build a list of the {@link IGraphicalEditPart} contained in the selection.
-	 * 
+	 *
 	 * @return the currently selected {@link IGraphicalEditPart}
 	 */
 	protected List<IGraphicalEditPart> getSelectedElements() {
 		List<IGraphicalEditPart> result = new LinkedList<IGraphicalEditPart>();
-		for(Object element : getSelection()) {
-			if(element instanceof IGraphicalEditPart) {
-				result.add((IGraphicalEditPart)element);
+		for (Object element : getSelection()) {
+			if (element instanceof IGraphicalEditPart) {
+				result.add((IGraphicalEditPart) element);
 			}
 		}
 
@@ -63,9 +63,9 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#execute(org.eclipse.core.commands.ExecutionEvent)
-	 * 
+	 *
 	 * @param event
 	 * @return null
 	 * @throws ExecutionException
@@ -73,7 +73,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		try {
 			ISelection selection = HandlerUtil.getCurrentSelection(event);
-			this.selection = (selection instanceof IStructuredSelection) ? ((IStructuredSelection)selection).toList() : Collections.EMPTY_LIST;
+			this.selection = (selection instanceof IStructuredSelection) ? ((IStructuredSelection) selection).toList() : Collections.EMPTY_LIST;
 
 			getEditingDomain(event).getCommandStack().execute(GEFtoEMFCommandWrapper.wrap(getCommand()));
 		} finally {
@@ -94,28 +94,28 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 
 	protected TransactionalEditingDomain getEditingDomain() {
 		TransactionalEditingDomain editingDomain = null;
-		for(IGraphicalEditPart editPart : getSelectedElements()) {
+		for (IGraphicalEditPart editPart : getSelectedElements()) {
 			try {
 				editingDomain = ServiceUtilsForEditPart.getInstance().getTransactionalEditingDomain(editPart);
-				if(editingDomain != null) {
+				if (editingDomain != null) {
 					break;
 				}
 			} catch (ServiceException ex) {
-				//Keep searching
+				// Keep searching
 			}
 		}
 
-		//TODO: From active editor?
+		// TODO: From active editor?
 
 		return editingDomain;
 	}
 
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(evaluationContext instanceof IEvaluationContext) {
-			Object selection = ((IEvaluationContext)evaluationContext).getDefaultVariable();
-			if(selection instanceof Collection<?>) {
-				this.selection = (selection instanceof List<?>) ? (List<?>)selection : new java.util.ArrayList<Object>((Collection<?>)selection);
+		if (evaluationContext instanceof IEvaluationContext) {
+			Object selection = ((IEvaluationContext) evaluationContext).getDefaultVariable();
+			if (selection instanceof Collection<?>) {
+				this.selection = (selection instanceof List<?>) ? (List<?>) selection : new java.util.ArrayList<Object>((Collection<?>) selection);
 				setBaseEnabled(computeEnabled());
 				this.selection = Collections.EMPTY_LIST;
 			}
@@ -127,14 +127,14 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 		boolean result = false;
 
 		TransactionalEditingDomain domain = getEditingDomain();
-		if((domain != null) && !TransactionHelper.isDisposed(domain)) {
+		if ((domain != null) && !TransactionHelper.isDisposed(domain)) {
 			Command command = getCommand();
-			if(command != null) {
+			if (command != null) {
 				result = getCommand().canExecute();
 				command.dispose();
 			}
 		}
-		
+
 		return result;
 	}
 
@@ -145,7 +145,7 @@ public abstract class AbstractGraphicalCommandHandler extends AbstractHandler {
 	private List<?> selection = Collections.EMPTY_LIST;
 
 	/**
-	 * 
+	 *
 	 * @return true if the command can be executed
 	 */
 	public boolean isVisible() {

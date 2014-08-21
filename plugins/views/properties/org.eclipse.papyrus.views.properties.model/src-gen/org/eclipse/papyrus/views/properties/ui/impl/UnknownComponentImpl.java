@@ -19,7 +19,7 @@ import org.eclipse.papyrus.views.properties.ui.UnknownComponent;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.ui.impl.UnknownComponentImpl#getTypeName <em>Type Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.ui.impl.UnknownComponentImpl#getTypeName <em>Type Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,6 +30,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	 * The default value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
@@ -40,6 +41,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	 * The cached value of the '{@link #getTypeName() <em>Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeName()
 	 * @generated
 	 * @ordered
@@ -49,6 +51,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UnknownComponentImpl() {
@@ -58,6 +61,7 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -68,8 +72,10 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public String getTypeName() {
 		return typeName;
 	}
@@ -77,25 +83,29 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setTypeName(String newTypeName) {
 		String oldTypeName = typeName;
 		typeName = newTypeName;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, UiPackage.UNKNOWN_COMPONENT__TYPE_NAME, oldTypeName, typeName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
-				return getTypeName();
+		case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
+			return getTypeName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -103,14 +113,15 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
-				setTypeName((String)newValue);
-				return;
+		case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
+			setTypeName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -118,14 +129,15 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
-				setTypeName(TYPE_NAME_EDEFAULT);
-				return;
+		case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
+			setTypeName(TYPE_NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -133,13 +145,14 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
-				return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
+		case UiPackage.UNKNOWN_COMPONENT__TYPE_NAME:
+			return TYPE_NAME_EDEFAULT == null ? typeName != null : !TYPE_NAME_EDEFAULT.equals(typeName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -147,11 +160,14 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy()) {
+			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (typeName: ");
@@ -160,4 +176,4 @@ public class UnknownComponentImpl extends WidgetImpl implements UnknownComponent
 		return result.toString();
 	}
 
-} //UnknownComponentImpl
+} // UnknownComponentImpl

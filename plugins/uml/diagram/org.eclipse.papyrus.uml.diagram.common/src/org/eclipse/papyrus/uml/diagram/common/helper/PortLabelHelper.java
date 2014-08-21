@@ -28,7 +28,7 @@ public class PortLabelHelper extends PropertyLabelHelper {
 	private static PortLabelHelper labelHelper;
 
 	public static PortLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new PortLabelHelper();
 		}
 		return labelHelper;
@@ -43,7 +43,7 @@ public class PortLabelHelper extends PropertyLabelHelper {
 	protected String parseString(GraphicalEditPart editPart, Collection<String> maskValues) {
 		Port port = getUMLElement(editPart);
 
-		if(port != null) {
+		if (port != null) {
 			return PortUtil.getCustomLabel(port, maskValues);
 		}
 
@@ -55,10 +55,10 @@ public class PortLabelHelper extends PropertyLabelHelper {
 	 */
 	@Override
 	public Port getUMLElement(GraphicalEditPart editPart) {
-		if(editPart.getModel() instanceof View) {
-			View view = (View)editPart.getModel();
-			if(view.getElement() instanceof Port) {
-				return (Port)view.getElement();
+		if (editPart.getModel() instanceof View) {
+			View view = (View) editPart.getModel();
+			if (view.getElement() instanceof Port) {
+				return (Port) view.getElement();
 			}
 		}
 		return null;

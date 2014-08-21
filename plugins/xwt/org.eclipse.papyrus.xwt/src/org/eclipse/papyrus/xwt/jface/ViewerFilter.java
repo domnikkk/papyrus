@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -28,11 +28,11 @@ public class ViewerFilter extends org.eclipse.jface.viewers.ViewerFilter {
 	@Override
 	public boolean select(Viewer viewer, Object parentElement, Object element) {
 		// No condition is same as no filter
-		if(conditions.length == 0) {
+		if (conditions.length == 0) {
 			return false;
 		}
-		for(Condition condition : conditions) {
-			if(!condition.evaluate(element)) {
+		for (Condition condition : conditions) {
+			if (!condition.evaluate(element)) {
 				return false;
 			}
 		}

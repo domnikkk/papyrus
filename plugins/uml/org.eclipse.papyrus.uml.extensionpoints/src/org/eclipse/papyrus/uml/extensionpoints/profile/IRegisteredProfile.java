@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.eclipse.papyrus.uml.extensionpoints.profile;
 
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.papyrus.uml.extensionpoints.IRegisteredItem;
 
 public interface IRegisteredProfile extends IRegisteredItem {

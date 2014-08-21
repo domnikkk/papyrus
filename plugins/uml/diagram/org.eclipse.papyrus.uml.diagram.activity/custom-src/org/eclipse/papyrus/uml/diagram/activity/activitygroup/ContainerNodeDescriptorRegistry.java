@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -76,11 +76,11 @@ public final class ContainerNodeDescriptorRegistry {
 	public IContainerNodeDescriptor getContainerNodeDescriptor(EClass eclass) {
 		try {
 			IContainerNodeDescriptor result = registry.get(eclass);
-			if(result == null) {
+			if (result == null) {
 				ArrayList<EClass> superTypes = Lists.newArrayList(eclass.getEAllSuperTypes());
-				for(EClass aux : Lists.reverse(superTypes)) {
+				for (EClass aux : Lists.reverse(superTypes)) {
 					result = registry.get(aux);
-					if(result != null) {
+					if (result != null) {
 						return result;
 					}
 				}

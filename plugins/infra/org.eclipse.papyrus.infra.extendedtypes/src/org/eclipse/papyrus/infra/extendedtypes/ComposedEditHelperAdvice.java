@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,7 +41,7 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Returns the list of composed advices for this edit helper advice.
-	 * 
+	 *
 	 * @return the list of composed advices
 	 */
 	protected List<IEditHelperAdvice> getComposedAdvices() {
@@ -53,9 +53,9 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	 */
 	@Override
 	public boolean approveRequest(IEditCommandRequest request) {
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			// each composed advice should approve the request
-			if(!advice.approveRequest(request)) {
+			if (!advice.approveRequest(request)) {
 				return false;
 			}
 		}
@@ -68,10 +68,10 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getBeforeConfigureCommand(ConfigureRequest request) {
 		ICommand resultCommand = null;
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			ICommand command = advice.getBeforeEditCommand(request);
-			if(command != null) {
-				if(resultCommand != null) {
+			if (command != null) {
+				if (resultCommand != null) {
 					resultCommand = resultCommand.compose(command);
 				} else {
 					resultCommand = command;
@@ -87,10 +87,10 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getAfterConfigureCommand(ConfigureRequest request) {
 		ICommand resultCommand = null;
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			ICommand command = advice.getAfterEditCommand(request);
-			if(command != null) {
-				if(resultCommand != null) {
+			if (command != null) {
+				if (resultCommand != null) {
 					resultCommand = resultCommand.compose(command);
 				} else {
 					resultCommand = command;
@@ -106,10 +106,10 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getBeforeCreateCommand(CreateElementRequest request) {
 		ICommand resultCommand = null;
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			ICommand command = advice.getBeforeEditCommand(request);
-			if(command != null) {
-				if(resultCommand != null) {
+			if (command != null) {
+				if (resultCommand != null) {
 					resultCommand = resultCommand.compose(command);
 				} else {
 					resultCommand = command;
@@ -125,10 +125,10 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getAfterCreateCommand(CreateElementRequest request) {
 		ICommand resultCommand = null;
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			ICommand command = advice.getAfterEditCommand(request);
-			if(command != null) {
-				if(resultCommand != null) {
+			if (command != null) {
+				if (resultCommand != null) {
 					resultCommand = resultCommand.compose(command);
 				} else {
 					resultCommand = command;
@@ -144,10 +144,10 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getBeforeCreateRelationshipCommand(CreateRelationshipRequest request) {
 		ICommand resultCommand = null;
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			ICommand command = advice.getBeforeEditCommand(request);
-			if(command != null) {
-				if(resultCommand != null) {
+			if (command != null) {
+				if (resultCommand != null) {
 					resultCommand = resultCommand.compose(command);
 				} else {
 					resultCommand = command;
@@ -163,10 +163,10 @@ public class ComposedEditHelperAdvice extends AbstractEditHelperAdvice {
 	@Override
 	protected ICommand getAfterCreateRelationshipCommand(CreateRelationshipRequest request) {
 		ICommand resultCommand = null;
-		for(IEditHelperAdvice advice : getComposedAdvices()) {
+		for (IEditHelperAdvice advice : getComposedAdvices()) {
 			ICommand command = advice.getAfterEditCommand(request);
-			if(command != null) {
-				if(resultCommand != null) {
+			if (command != null) {
+				if (resultCommand != null) {
 					resultCommand = resultCommand.compose(command);
 				} else {
 					resultCommand = command;

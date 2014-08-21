@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,9 +41,10 @@ public class CustomMessageFormatParser extends MessageFormatParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getEditString(IAdaptable adapter, int flags) {
 		IAdaptable reachedObject = obtainObject(adapter);
-		if(reachedObject != null) {
+		if (reachedObject != null) {
 			return super.getEditString(reachedObject, flags);
 		}
 		return null;
@@ -52,9 +53,10 @@ public class CustomMessageFormatParser extends MessageFormatParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public ICommand getParseCommand(IAdaptable adapter, String newString, int flags) {
 		IAdaptable reachedObject = obtainObject(adapter);
-		if(reachedObject != null) {
+		if (reachedObject != null) {
 			return super.getParseCommand(reachedObject, newString, flags);
 		}
 		return null;
@@ -63,9 +65,10 @@ public class CustomMessageFormatParser extends MessageFormatParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getPrintString(IAdaptable adapter, int flags) {
 		IAdaptable reachedObject = obtainObject(adapter);
-		if(reachedObject != null) {
+		if (reachedObject != null) {
 			return super.getPrintString(reachedObject, flags);
 		}
 		return null;
@@ -74,9 +77,10 @@ public class CustomMessageFormatParser extends MessageFormatParser {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable adapter, String editString) {
 		IAdaptable reachedObject = obtainObject(adapter);
-		if(reachedObject != null) {
+		if (reachedObject != null) {
 			return super.isValidEditString(reachedObject, editString);
 		}
 		return null;
@@ -84,27 +88,27 @@ public class CustomMessageFormatParser extends MessageFormatParser {
 
 	/**
 	 * this method returns the object that is link to the elemtn by an Ereference
-	 * 
+	 *
 	 * @param adapter
-	 *        the element where we look for the good element
+	 *            the element where we look for the good element
 	 * @return the associated element
 	 */
 	protected IAdaptable obtainObject(IAdaptable adapter) {
-		EObject element = (EObject)adapter.getAdapter(EObject.class);
+		EObject element = (EObject) adapter.getAdapter(EObject.class);
 		Object result = element.eGet(eRefFeature);
 		// this is a collection
-		if(result instanceof List<?>) {
+		if (result instanceof List<?>) {
 			// the index is coherent
-			if(((List<?>)result).size() > objectIndex) {
-				EObject object = (EObject)((List<?>)result).get(objectIndex);
+			if (((List<?>) result).size() > objectIndex) {
+				EObject object = (EObject) ((List<?>) result).get(objectIndex);
 				return new EObjectAdapter(object);
 			}
 			// the index is not coherent
 			return null;
 		} else {
 			// this not a collection
-			if(objectIndex == 0) {
-				return new EObjectAdapter((EObject)result);
+			if (objectIndex == 0) {
+				return new EObjectAdapter((EObject) result);
 			}
 		}
 		return null;

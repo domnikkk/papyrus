@@ -68,7 +68,7 @@ import org.eclipse.ui.part.ISetSelectionTarget;
  * This is a simple wizard for creating a new model file.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DocumentationModelWizard extends Wizard implements INewWizard {
@@ -77,7 +77,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * The supported extensions for created files.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays.asList(PluginDocEditorPlugin.INSTANCE.getString("_UI_DocumentationEditorFilenameExtensions").split("\\s*,\\s*")));
@@ -86,7 +86,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * A formatted list of supported file extensions, suitable for display.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS = PluginDocEditorPlugin.INSTANCE.getString("_UI_DocumentationEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
@@ -95,7 +95,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This caches an instance of the model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentationPackage documentationPackage = DocumentationPackage.eINSTANCE;
@@ -104,7 +104,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This caches an instance of the model factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentationFactory documentationFactory = documentationPackage.getDocumentationFactory();
@@ -113,7 +113,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This is the file creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentationModelWizardNewFileCreationPage newFileCreationPage;
@@ -122,7 +122,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This is the initial object creation page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DocumentationModelWizardInitialObjectCreationPage initialObjectCreationPage;
@@ -131,7 +131,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * Remember the selection during initialization for populating the default container.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IStructuredSelection selection;
@@ -140,7 +140,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * Remember the workbench during initialization.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IWorkbench workbench;
@@ -149,7 +149,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * Caches the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected List<String> initialObjectNames;
@@ -158,9 +158,10 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This just records the information.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
@@ -172,16 +173,16 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * Returns the names of the types that can be created as the root object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<String> getInitialObjectNames() {
-		if(initialObjectNames == null) {
+		if (initialObjectNames == null) {
 			initialObjectNames = new ArrayList<String>();
-			for(EClassifier eClassifier : documentationPackage.getEClassifiers()) {
-				if(eClassifier instanceof EClass) {
-					EClass eClass = (EClass)eClassifier;
-					if(!eClass.isAbstract()) {
+			for (EClassifier eClassifier : documentationPackage.getEClassifiers()) {
+				if (eClassifier instanceof EClass) {
+					EClass eClass = (EClass) eClassifier;
+					if (!eClass.isAbstract()) {
 						initialObjectNames.add(eClass.getName());
 					}
 				}
@@ -195,7 +196,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * Create a new model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	protected EObject createInitialModel() {
@@ -206,7 +207,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * Do the work after everything is specified.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -238,7 +239,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 						// Add the initial model object to the contents.
 						//
 						EObject rootObject = createInitialModel();
-						if(rootObject != null) {
+						if (rootObject != null) {
 							resource.getContents().add(rootObject);
 						}
 
@@ -262,12 +263,13 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
 			IWorkbenchPage page = workbenchWindow.getActivePage();
 			final IWorkbenchPart activePart = page.getActivePart();
-			if(activePart instanceof ISetSelectionTarget) {
+			if (activePart instanceof ISetSelectionTarget) {
 				final ISelection targetSelection = new StructuredSelection(modelFile);
 				getShell().getDisplay().asyncExec(new Runnable() {
 
+					@Override
 					public void run() {
-						((ISetSelectionTarget)activePart).selectReveal(targetSelection);
+						((ISetSelectionTarget) activePart).selectReveal(targetSelection);
 					}
 				});
 			}
@@ -292,7 +294,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This is the one page of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class DocumentationModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
@@ -301,7 +303,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public DocumentationModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
@@ -312,16 +314,16 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		 * The framework calls this to see if the file is correct.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
 		protected boolean validatePage() {
-			if(super.validatePage()) {
+			if (super.validatePage()) {
 				String extension = new Path(getFileName()).getFileExtension();
-				if(extension == null || !FILE_EXTENSIONS.contains(extension)) {
+				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(PluginDocEditorPlugin.INSTANCE.getString(key, new Object[]{ FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(PluginDocEditorPlugin.INSTANCE.getString(key, new Object[] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -332,7 +334,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public IFile getModelFile() {
@@ -344,7 +346,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * This is the page where the type of object to create is selected.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public class DocumentationModelWizardInitialObjectCreationPage extends WizardPage {
@@ -352,7 +354,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Combo initialObjectField;
@@ -367,7 +369,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Combo encodingField;
@@ -376,7 +378,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		 * Pass in the selection.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public DocumentationModelWizardInitialObjectCreationPage(String pageId) {
@@ -386,9 +388,10 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
+		@Override
 		public void createControl(Composite parent) {
 			Composite composite = new Composite(parent, SWT.NONE);
 			{
@@ -421,11 +424,11 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 				initialObjectField.setLayoutData(data);
 			}
 
-			for(String objectName : getInitialObjectNames()) {
+			for (String objectName : getInitialObjectNames()) {
 				initialObjectField.add(getLabel(objectName));
 			}
 
-			if(initialObjectField.getItemCount() == 1) {
+			if (initialObjectField.getItemCount() == 1) {
 				initialObjectField.select(0);
 			}
 			initialObjectField.addModifyListener(validator);
@@ -446,7 +449,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 				encodingField.setLayoutData(data);
 			}
 
-			for(String encoding : getEncodings()) {
+			for (String encoding : getEncodings()) {
 				encodingField.add(encoding);
 			}
 
@@ -460,11 +463,12 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected ModifyListener validator = new ModifyListener() {
 
+			@Override
 			public void modifyText(ModifyEvent e) {
 				setPageComplete(validatePage());
 			}
@@ -473,7 +477,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected boolean validatePage() {
@@ -483,14 +487,14 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		@Override
 		public void setVisible(boolean visible) {
 			super.setVisible(visible);
-			if(visible) {
-				if(initialObjectField.getItemCount() == 1) {
+			if (visible) {
+				if (initialObjectField.getItemCount() == 1) {
 					initialObjectField.clearSelection();
 					encodingField.setFocus();
 				} else {
@@ -503,14 +507,14 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		public String getInitialObjectName() {
 			String label = initialObjectField.getText();
 
-			for(String name : getInitialObjectNames()) {
-				if(getLabel(name).equals(label)) {
+			for (String name : getInitialObjectNames()) {
+				if (getLabel(name).equals(label)) {
 					return name;
 				}
 			}
@@ -520,7 +524,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated NOT
 		 */
 		public String getEncoding() {
@@ -531,7 +535,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		 * Returns the label for the specified type name.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected String getLabel(String typeName) {
@@ -546,13 +550,13 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		protected Collection<String> getEncodings() {
-			if(encodings == null) {
+			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for(StringTokenizer stringTokenizer = new StringTokenizer(PluginDocEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(PluginDocEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens();) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -564,7 +568,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 	 * The framework calls this to create the contents of the wizard.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	@Override
@@ -579,21 +583,21 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
 		//
-		if(selection != null && !selection.isEmpty()) {
+		if (selection != null && !selection.isEmpty()) {
 			// Get the resource...
 			//
 			Object selectedElement = selection.iterator().next();
-			if(selectedElement instanceof IResource) {
+			if (selectedElement instanceof IResource) {
 				// Get the resource parent, if its a file.
 				//
-				IResource selectedResource = (IResource)selectedElement;
-				if(selectedResource.getType() == IResource.FILE) {
+				IResource selectedResource = (IResource) selectedElement;
+				if (selectedResource.getType() == IResource.FILE) {
 					selectedResource = selectedResource.getParent();
 				}
 
 				// This gives us a directory...
 				//
-				if(selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
 					// Set this for the container.
 					//
 					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
@@ -603,7 +607,7 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 					String defaultModelBaseFilename = PluginDocEditorPlugin.INSTANCE.getString("_UI_DocumentationEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for(int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
+					for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
 						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
 					}
 					newFileCreationPage.setFileName(modelFilename);
@@ -611,16 +615,16 @@ public class DocumentationModelWizard extends Wizard implements INewWizard {
 			}
 		}
 		initialObjectCreationPage = new DocumentationModelWizardInitialObjectCreationPage("Whatever2");
-		//		initialObjectCreationPage.setTitle(PluginDocEditorPlugin.INSTANCE.getString("_UI_DocumentationModelWizard_label"));
-		//		initialObjectCreationPage.setDescription(PluginDocEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
-		//		addPage(initialObjectCreationPage);
+		// initialObjectCreationPage.setTitle(PluginDocEditorPlugin.INSTANCE.getString("_UI_DocumentationModelWizard_label"));
+		// initialObjectCreationPage.setDescription(PluginDocEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		// addPage(initialObjectCreationPage);
 	}
 
 	/**
 	 * Get the file from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public IFile getModelFile() {

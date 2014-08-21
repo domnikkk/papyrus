@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,10 +45,10 @@ public class CreateSnapshotFromContextMenuCommand extends CreateSnapshotForInter
 
 	public CreateSnapshotFromContextMenuCommand(final TransactionalEditingDomain editingDomain, final CallBehaviorActionAsInteractionEditPart callBehaviorActionEditPart) {
 
-		super(editingDomain, (View)callBehaviorActionEditPart.getModel(), (GraphicalEditPart)EditPartUtils.findParentEditPartWithId(callBehaviorActionEditPart, ActivityActivityContentCompartmentEditPart.VISUAL_ID));
+		super(editingDomain, (View) callBehaviorActionEditPart.getModel(), (GraphicalEditPart) EditPartUtils.findParentEditPartWithId(callBehaviorActionEditPart, ActivityActivityContentCompartmentEditPart.VISUAL_ID));
 		setLabel(Messages.CreateSnapshotFromContextMenuCommand_createNewSnapshot);
 		callBehaviorEditPart = callBehaviorActionEditPart;
-		//Force update in command super class doExecute even though the ImageFigure already has an image
+		// Force update in command super class doExecute even though the ImageFigure already has an image
 		isOverrideImage = true;
 	}
 
@@ -61,9 +61,9 @@ public class CreateSnapshotFromContextMenuCommand extends CreateSnapshotForInter
 	@Override
 	protected Diagram findSequenceDiagram() {
 		final TreeSelectorDialog dialog = new TreeSelectorDialog(Display.getDefault().getActiveShell());
-		final ServicesRegistry servicesRegistry = ((IMultiDiagramEditor)(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor())).getServicesRegistry();
-		final Interaction interaction = (Interaction)((CallBehaviorAction)(callBehaviorView.getElement())).getBehavior();
-		if(interaction != null) {
+		final ServicesRegistry servicesRegistry = ((IMultiDiagramEditor) (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor())).getServicesRegistry();
+		final Interaction interaction = (Interaction) ((CallBehaviorAction) (callBehaviorView.getElement())).getBehavior();
+		if (interaction != null) {
 			dialog.setContentProvider(new DiagramContentProvider(interaction));
 			dialog.setInput(servicesRegistry);
 			try {
@@ -73,10 +73,11 @@ public class CreateSnapshotFromContextMenuCommand extends CreateSnapshotForInter
 			}
 			dialog.setMessage(Messages.CreateSnapshotForInteractionFromViewDescriptorCommand_DiagramSelectorMessage);
 			dialog.setTitle(Messages.CreateSnapshotForInteractionFromViewDescriptorCommand_DiagramSelectorTitle);
-			if(dialog.open() == org.eclipse.jface.window.Window.OK) {
+			if (dialog.open() == org.eclipse.jface.window.Window.OK) {
 				final Object[] result = dialog.getResult();
-				if(result != null && result.length > 0)
-					return (Diagram)EMFHelper.getEObject(result[0]);
+				if (result != null && result.length > 0) {
+					return (Diagram) EMFHelper.getEObject(result[0]);
+				}
 			}
 		}
 		return null;
@@ -86,8 +87,8 @@ public class CreateSnapshotFromContextMenuCommand extends CreateSnapshotForInter
 	protected IStatus doUndo(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 		final IStatus status = super.doUndo(monitor, info);
 
-		//force update of the snapshot
-		final InteractionWithSnapshotFigure snapshotFigure = (InteractionWithSnapshotFigure)callBehaviorEditPart.getPrimaryShape();
+		// force update of the snapshot
+		final InteractionWithSnapshotFigure snapshotFigure = (InteractionWithSnapshotFigure) callBehaviorEditPart.getPrimaryShape();
 		snapshotFigure.resetImage();
 		callBehaviorEditPart.refresh();
 		return status;
@@ -97,8 +98,8 @@ public class CreateSnapshotFromContextMenuCommand extends CreateSnapshotForInter
 	protected IStatus doRedo(final IProgressMonitor monitor, final IAdaptable info) throws ExecutionException {
 		final IStatus status = super.doRedo(monitor, info);
 
-		//force update of the snapshot
-		final InteractionWithSnapshotFigure snapshotFigure = (InteractionWithSnapshotFigure)callBehaviorEditPart.getPrimaryShape();
+		// force update of the snapshot
+		final InteractionWithSnapshotFigure snapshotFigure = (InteractionWithSnapshotFigure) callBehaviorEditPart.getPrimaryShape();
 		snapshotFigure.resetImage();
 		callBehaviorEditPart.refresh();
 		return status;

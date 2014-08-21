@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,6 +22,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 
 /**
  * A LabelProvider for a single Profile Definition (EPackage)
+ * 
  * @author Camille Letavernier
  *
  */
@@ -29,8 +30,8 @@ public class ProfileDefinitionLabelProvider extends EMFLabelProvider implements 
 
 	@Override
 	protected String getText(EObject element) {
-		if(element instanceof EPackage) {
-			EPackage definition = (EPackage)element;
+		if (element instanceof EPackage) {
+			EPackage definition = (EPackage) element;
 			String label = String.format("%s (%s)", definition.getName(), Util.getDefinitionVersion(definition).toString());
 			return label;
 
@@ -41,8 +42,8 @@ public class ProfileDefinitionLabelProvider extends EMFLabelProvider implements 
 
 	public boolean accept(Object element) {
 		EObject eObject = EMFHelper.getEObject(element);
-		if(eObject instanceof EPackage) {
-			EPackage ePackage = (EPackage)eObject;
+		if (eObject instanceof EPackage) {
+			EPackage ePackage = (EPackage) eObject;
 			return UMLUtil.getProfile(ePackage) != null;
 		}
 

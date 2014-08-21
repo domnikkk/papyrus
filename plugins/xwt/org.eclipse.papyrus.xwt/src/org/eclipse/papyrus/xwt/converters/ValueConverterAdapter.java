@@ -16,9 +16,9 @@ import org.eclipse.papyrus.xwt.XWT;
 
 /**
  * The operation to inverse the converter direction.
- * 
+ *
  * @author yyang
- * 
+ *
  */
 public class ValueConverterAdapter implements IValueConverter {
 
@@ -49,11 +49,11 @@ public class ValueConverterAdapter implements IValueConverter {
 
 	public static ValueConverterAdapter create(Class<?> sourceType, Class<?> targetType) {
 		IConverter fromConvertor = XWT.findConvertor(sourceType, targetType);
-		if(fromConvertor == null) {
+		if (fromConvertor == null) {
 			return null;
 		}
 		IConverter toConvertor = XWT.findConvertor(targetType, sourceType);
-		if(toConvertor == null) {
+		if (toConvertor == null) {
 			return null;
 		}
 		return new ValueConverterAdapter(fromConvertor, toConvertor);

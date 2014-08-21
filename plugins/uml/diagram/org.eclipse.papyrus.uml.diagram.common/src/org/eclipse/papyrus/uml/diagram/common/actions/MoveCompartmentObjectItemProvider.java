@@ -1,11 +1,11 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors: Francisco Javier Cano Muñoz (Prodevelop) - initial api implementation 
+ *
+ * Contributors: Francisco Javier Cano Muñoz (Prodevelop) - initial api implementation
  *
  ******************************************************************************/
 package org.eclipse.papyrus.uml.diagram.common.actions;
@@ -20,9 +20,9 @@ import org.eclipse.ui.IWorkbenchPage;
 
 /**
  * Provides the text for the menu group, and the actions contained inside
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
- * 
+ *
  */
 public class MoveCompartmentObjectItemProvider extends AbstractContributionItemProvider implements IProvider {
 
@@ -34,7 +34,7 @@ public class MoveCompartmentObjectItemProvider extends AbstractContributionItemP
 	 */
 	@Override
 	protected IMenuManager createMenuManager(String menuId, IWorkbenchPartDescriptor partDescriptor) {
-		if(!MENU_CREATE_DIAGRAM.equals(menuId)) {
+		if (!MENU_CREATE_DIAGRAM.equals(menuId)) {
 			return super.createMenuManager(menuId, partDescriptor);
 		}
 		MenuManager menuManager = new MenuManager("Compartment Order");
@@ -55,9 +55,9 @@ public class MoveCompartmentObjectItemProvider extends AbstractContributionItemP
 
 		/**
 		 * Instantiates a new menu builder.
-		 * 
+		 *
 		 * @param workbenchPart
-		 *        the workbench part
+		 *            the workbench part
 		 */
 		public MenuBuilder(IWorkbenchPartDescriptor workbenchPart) {
 			myWorkbenchPart = workbenchPart;
@@ -66,15 +66,16 @@ public class MoveCompartmentObjectItemProvider extends AbstractContributionItemP
 		/**
 		 * Create the menu before showing.
 		 */
+		@Override
 		public void menuAboutToShow(IMenuManager manager) {
 			buildMenu(manager);
 		}
 
 		/**
 		 * Builds the menu.
-		 * 
+		 *
 		 * @param manager
-		 *        the manager
+		 *            the manager
 		 */
 		public void buildMenu(IMenuManager manager) {
 			manager.removeAll();
@@ -103,7 +104,7 @@ public class MoveCompartmentObjectItemProvider extends AbstractContributionItemP
 
 		/**
 		 * Gets the workbench page.
-		 * 
+		 *
 		 * @return the workbench page
 		 */
 		private IWorkbenchPage getWorkbenchPage() {

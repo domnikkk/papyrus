@@ -30,11 +30,12 @@ import org.eclipse.papyrus.documentation.plugin.documentation.FileDependency;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.documentation.plugin.documentation.FileDependency} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FileDependencyItemProvider
-	extends DependencyItemProvider
-	implements
+		extends DependencyItemProvider
+		implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
 		ITreeItemContentProvider,
@@ -44,6 +45,7 @@ public class FileDependencyItemProvider
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FileDependencyItemProvider(AdapterFactory adapterFactory) {
@@ -54,6 +56,7 @@ public class FileDependencyItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -70,28 +73,30 @@ public class FileDependencyItemProvider
 	 * This adds a property descriptor for the File feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addFilePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_FileDependency_file_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_FileDependency_file_feature", "_UI_FileDependency_type"),
-				 DocumentationPackage.Literals.FILE_DEPENDENCY__FILE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
+				(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(),
+						getString("_UI_FileDependency_file_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FileDependency_file_feature", "_UI_FileDependency_type"),
+						DocumentationPackage.Literals.FILE_DEPENDENCY__FILE,
+						true,
+						false,
+						false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+						null,
+						null));
 	}
 
 	/**
 	 * This returns FileDependency.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -103,14 +108,15 @@ public class FileDependencyItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FileDependency)object).getPlugin();
+		String label = ((FileDependency) object).getPlugin();
 		return label == null || label.length() == 0 ?
-			getString("_UI_FileDependency_type") :
-			getString("_UI_FileDependency_type") + " " + label;
+				getString("_UI_FileDependency_type") :
+				getString("_UI_FileDependency_type") + " " + label;
 	}
 
 	/**
@@ -118,6 +124,7 @@ public class FileDependencyItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -125,9 +132,9 @@ public class FileDependencyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(FileDependency.class)) {
-			case DocumentationPackage.FILE_DEPENDENCY__FILE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
+		case DocumentationPackage.FILE_DEPENDENCY__FILE:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -137,6 +144,7 @@ public class FileDependencyItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

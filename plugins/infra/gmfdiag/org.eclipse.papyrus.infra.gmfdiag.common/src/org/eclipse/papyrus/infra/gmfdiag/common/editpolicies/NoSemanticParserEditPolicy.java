@@ -25,29 +25,29 @@ public class NoSemanticParserEditPolicy extends AbstractEditPolicy implements IM
 
 	@Override
 	public Map<String, String> getMasks() {
-		//Nothing
+		// Nothing
 		return null;
 	}
 
 	@Override
 	public Collection<String> getCurrentDisplayValue() {
-		//Nothing
+		// Nothing
 		return null;
 	}
 
 	@Override
 	public void refreshDisplay() {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void updateDisplayValue(Collection<String> newValue) {
-		//Nothing
+		// Nothing
 	}
 
 	@Override
 	public void setDefaultDisplayValue() {
-		//Nothing
+		// Nothing
 	}
 
 }

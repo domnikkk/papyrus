@@ -23,7 +23,7 @@ import org.eclipse.papyrus.papyrusgmfgenextension.PapyrusgmfgenextensionPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.ExternalMetamodelTypeImpl#getElementTypeRef <em>Element Type Ref</em>}</li>
+ * <li>{@link org.eclipse.papyrus.papyrusgmfgenextension.impl.ExternalMetamodelTypeImpl#getElementTypeRef <em>Element Type Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,6 +34,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	 * The cached value of the '{@link #getElementTypeRef() <em>Element Type Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getElementTypeRef()
 	 * @generated
 	 * @ordered
@@ -43,6 +44,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ExternalMetamodelTypeImpl() {
@@ -52,6 +54,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -62,15 +65,18 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ElementType getElementTypeRef() {
 		if (elementTypeRef != null && elementTypeRef.eIsProxy()) {
-			InternalEObject oldElementTypeRef = (InternalEObject)elementTypeRef;
-			elementTypeRef = (ElementType)eResolveProxy(oldElementTypeRef);
+			InternalEObject oldElementTypeRef = (InternalEObject) elementTypeRef;
+			elementTypeRef = (ElementType) eResolveProxy(oldElementTypeRef);
 			if (elementTypeRef != oldElementTypeRef) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF, oldElementTypeRef, elementTypeRef));
+				}
 			}
 		}
 		return elementTypeRef;
@@ -79,6 +85,7 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ElementType basicGetElementTypeRef() {
@@ -88,26 +95,32 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setElementTypeRef(ElementType newElementTypeRef) {
 		ElementType oldElementTypeRef = elementTypeRef;
 		elementTypeRef = newElementTypeRef;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF, oldElementTypeRef, elementTypeRef));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
-				if (resolve) return getElementTypeRef();
-				return basicGetElementTypeRef();
+		case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
+			if (resolve) {
+				return getElementTypeRef();
+			}
+			return basicGetElementTypeRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -115,14 +128,15 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
-				setElementTypeRef((ElementType)newValue);
-				return;
+		case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
+			setElementTypeRef((ElementType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -130,14 +144,15 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
-				setElementTypeRef((ElementType)null);
-				return;
+		case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
+			setElementTypeRef((ElementType) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,15 +160,16 @@ public class ExternalMetamodelTypeImpl extends MetamodelTypeImpl implements Exte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
-				return elementTypeRef != null;
+		case PapyrusgmfgenextensionPackage.EXTERNAL_METAMODEL_TYPE__ELEMENT_TYPE_REF:
+			return elementTypeRef != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ExternalMetamodelTypeImpl
+} // ExternalMetamodelTypeImpl

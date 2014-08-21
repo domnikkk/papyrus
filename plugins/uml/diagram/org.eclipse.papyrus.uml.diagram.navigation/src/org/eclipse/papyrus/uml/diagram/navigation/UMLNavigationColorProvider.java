@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,11 +20,13 @@ import org.eclipse.swt.graphics.Color;
 
 public class UMLNavigationColorProvider implements IColorProvider {
 
+	@Override
 	public Color getForeground(Object element) {
 		// not used
 		return getBackground(element);
 	}
 
+	@Override
 	public Color getBackground(Object element) {
 		if (element instanceof NavigableElement) {
 			String navType = UMLNavigationHelper.getNavigationType((NavigableElement) element);

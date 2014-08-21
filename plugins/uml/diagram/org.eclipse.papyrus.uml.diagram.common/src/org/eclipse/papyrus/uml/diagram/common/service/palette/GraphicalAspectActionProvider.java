@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ public class GraphicalAspectActionProvider extends AbstractAspectActionProvider 
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public GraphicalAspectActionProvider() {
 	}
@@ -31,6 +31,7 @@ public class GraphicalAspectActionProvider extends AbstractAspectActionProvider 
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public IAspectAction createAction(Node configurationNode) {
 		GraphicalPostAction action = new GraphicalPostAction();
 		action.init(configurationNode, this);
@@ -40,6 +41,7 @@ public class GraphicalAspectActionProvider extends AbstractAspectActionProvider 
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public boolean isEnable(IPaletteEntryProxy entryProxy) {
 		return true;
 	}

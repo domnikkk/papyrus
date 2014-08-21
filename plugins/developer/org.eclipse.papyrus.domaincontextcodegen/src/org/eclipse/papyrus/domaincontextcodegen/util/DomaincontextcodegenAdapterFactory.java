@@ -35,7 +35,7 @@ import org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage
  * @generated
  */
@@ -45,7 +45,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static DomaincontextcodegenPackage modelPackage;
@@ -54,11 +54,11 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DomaincontextcodegenAdapterFactory() {
-		if(modelPackage == null) {
+		if (modelPackage == null) {
 			modelPackage = DomaincontextcodegenPackage.eINSTANCE;
 		}
 	}
@@ -68,17 +68,17 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
 	@Override
 	public boolean isFactoryForType(Object object) {
-		if(object == modelPackage) {
+		if (object == modelPackage) {
 			return true;
 		}
-		if(object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+		if (object instanceof EObject) {
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -87,7 +87,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DomaincontextcodegenSwitch<Adapter> modelSwitch = new DomaincontextcodegenSwitch<Adapter>() {
@@ -192,15 +192,15 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
-	 *        the object to adapt.
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 	/**
@@ -209,7 +209,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomainContext
 	 * @generated
@@ -224,7 +224,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypes
 	 * @generated
@@ -239,7 +239,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementType
 	 * @generated
@@ -254,7 +254,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MetaClassType
 	 * @generated
@@ -264,13 +264,12 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType <em>Specialization Type</em>}
-	 * '.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.domaincontextcodegen.SpecializationType <em>Specialization Type</em>} '.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.SpecializationType
 	 * @generated
@@ -285,7 +284,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Advice
 	 * @generated
@@ -301,7 +300,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBindings
 	 * @generated
@@ -316,7 +315,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.AdviceBinding
 	 * @generated
@@ -331,7 +330,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Binding
 	 * @generated
@@ -341,13 +340,12 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding <em>Element Type Binding</em>}
-	 * '.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding <em>Element Type Binding</em>} '.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.ElementTypeBinding
 	 * @generated
@@ -362,7 +360,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHandlers
 	 * @generated
@@ -377,7 +375,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenMatcher
 	 * @generated
@@ -392,7 +390,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.GenHelper
 	 * @generated
@@ -408,7 +406,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementMatcher
 	 * @generated
@@ -424,7 +422,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper
 	 * @generated
@@ -439,7 +437,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration
 	 * @generated
@@ -449,13 +447,12 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration <em>Command Declaration</em>}
-	 * '.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration <em>Command Declaration</em>} '.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.CommandDeclaration
 	 * @generated
@@ -470,7 +467,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.Command
 	 * @generated
@@ -484,7 +481,7 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -492,4 +489,4 @@ public class DomaincontextcodegenAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //DomaincontextcodegenAdapterFactory
+} // DomaincontextcodegenAdapterFactory

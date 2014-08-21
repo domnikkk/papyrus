@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,7 +46,7 @@ import org.eclipse.uml2.uml.Package;
  * </ul>
  * .
  *
- * 
+ *
  * @deprecated API was moved to the plugin org.eclipse.papyrus.uml.tools for Bug 435995.
  *             It was preserved for standard releases of Papyrus 1.0.0
  * @see org.eclipse.papyrus.uml.tools.profile.definition.ProfileRedefinition
@@ -59,9 +59,9 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * Redefine profile.
 	 *
 	 * @param thepackage
-	 *        the thepackage
+	 *            the thepackage
 	 * @param definitionAnnotation
-	 *        the definition annotation
+	 *            the definition annotation
 	 */
 	@Deprecated
 	public static void redefineProfile(Package thepackage, org.eclipse.papyrus.uml.profile.definition.PapyrusDefinitionAnnotation definitionAnnotation) {
@@ -72,7 +72,7 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * redefine only real definition or do nothing.
 	 *
 	 * @param eclass
-	 *        the given eclass that we want to redefine
+	 *            the given eclass that we want to redefine
 	 */
 	@Deprecated
 	public static void redefineEclass(EClass eclass) {
@@ -83,9 +83,9 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * Redefine e reference.
 	 *
 	 * @param eReference
-	 *        the e reference
+	 *            the e reference
 	 * @param profileDefinition
-	 *        the profile definition
+	 *            the profile definition
 	 */
 	@Deprecated
 	public static void redefineEReference(EReference eReference, EPackage profileDefinition) {
@@ -97,7 +97,7 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * return id this Eclass is the real Definition.
 	 *
 	 * @param eclass
-	 *        the eclass that we want to test
+	 *            the eclass that we want to test
 	 * @return true if this is the real definition or not is this is a local
 	 *         copy
 	 */
@@ -111,7 +111,7 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * the definition.
 	 *
 	 * @param eClassifier
-	 *        the e classifier
+	 *            the e classifier
 	 * @return the real definition or the itself
 	 */
 	@Deprecated
@@ -122,9 +122,9 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 
 	/**
 	 * this method is used to suppress all local copy of EClass in each Profile.
-	 * 
+	 *
 	 * @param thePackage
-	 *        that we want to clean
+	 *            that we want to clean
 	 */
 	@Deprecated
 	public static void cleanProfile(Package thePackage) {
@@ -136,9 +136,9 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * this method is used to created an EAttribute from an Ereference.
 	 *
 	 * @param container
-	 *        the Eclass that will contain the eattribute
+	 *            the Eclass that will contain the eattribute
 	 * @param eReference
-	 *        from this, the eattribute will be created
+	 *            from this, the eattribute will be created
 	 * @return the created Eattribute
 	 */
 	@Deprecated
@@ -152,7 +152,7 @@ public class ProfileRedefinition extends org.eclipse.papyrus.uml.tools.profile.d
 	 * this method is used to obtain the classifier from its definition.
 	 *
 	 * @param eclass
-	 *        that is a definition
+	 *            that is a definition
 	 * @return the classifier that produce this definition
 	 */
 	@Deprecated

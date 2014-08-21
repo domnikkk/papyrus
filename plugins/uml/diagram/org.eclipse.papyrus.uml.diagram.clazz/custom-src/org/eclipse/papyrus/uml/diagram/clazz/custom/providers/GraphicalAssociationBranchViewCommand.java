@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -28,6 +28,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.papyrus.uml.diagram.clazz.custom.helper.CustomMultiAssociationHelper;
 import org.eclipse.papyrus.uml.diagram.clazz.providers.UMLElementTypes;
 import org.eclipse.papyrus.uml.diagram.common.commands.CommonDeferredCreateConnectionViewCommand;
+import org.eclipse.papyrus.uml.diagram.common.helper.MultiAssociationHelper;
 import org.eclipse.uml2.uml.Property;
 
 public class GraphicalAssociationBranchViewCommand extends CommonDeferredCreateConnectionViewCommand {
@@ -46,6 +47,7 @@ public class GraphicalAssociationBranchViewCommand extends CommonDeferredCreateC
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		CommandResult commandResult = null;
 		commandResult = super.doExecuteWithResult(progressMonitor, info);
@@ -59,7 +61,7 @@ public class GraphicalAssociationBranchViewCommand extends CommonDeferredCreateC
 			associationEnd = (Property) associationEndWrapper;
 		}
 		if (associationEnd != null && associationEnd instanceof Property) {
-			CustomMultiAssociationHelper.setSemanticBranchEnd(view, (Property) associationEnd);
+			MultiAssociationHelper.setSemanticBranchEnd(view, (Property) associationEnd);
 		}
 		return commandResult;
 	}

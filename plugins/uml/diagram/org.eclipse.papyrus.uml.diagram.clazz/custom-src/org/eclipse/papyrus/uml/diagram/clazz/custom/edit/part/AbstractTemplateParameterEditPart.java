@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,9 +30,10 @@ public class AbstractTemplateParameterEditPart extends UMLCompartmentEditPart {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		super.activate();
 		addOwnedParamListeners();
@@ -42,8 +43,8 @@ public class AbstractTemplateParameterEditPart extends UMLCompartmentEditPart {
 	 * to listen parameters
 	 */
 	protected void addOwnedParamListeners() {
-		EObject ownedParam = ((TemplateParameter)resolveSemanticElement()).getOwnedParameteredElement();
-		if(ownedParam != null) {
+		EObject ownedParam = ((TemplateParameter) resolveSemanticElement()).getOwnedParameteredElement();
+		if (ownedParam != null) {
 			addListenerFilter(LISTEN_OWNED_PARAM, this, ownedParam);
 		}
 	}
@@ -51,6 +52,7 @@ public class AbstractTemplateParameterEditPart extends UMLCompartmentEditPart {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		removeOwnedParamListeners();
 		super.deactivate();

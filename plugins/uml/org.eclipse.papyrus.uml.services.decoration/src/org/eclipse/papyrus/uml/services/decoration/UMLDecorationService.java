@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,15 +18,17 @@ import org.eclipse.uml2.uml.NamedElement;
 
 
 /**
- * Providing qualified name in the tool-tip message shown in the model explorer 
+ * Providing qualified name in the tool-tip message shown in the model explorer
  *
  * Originally, this class was intended for stereotypes, now the handling of stereotypes is done in
+ * 
  * @see org.eclipse.papyrus.uml.service.validation.UMLDiagnostician.
  */
 public class UMLDecorationService extends DecorationService {
 
 	/**
 	 * Initial message for UML elements
+	 * 
 	 * @return the qualified name of the element, if it is a named element
 	 */
 	@Override

@@ -41,9 +41,9 @@ public abstract class AbstractParametricAction {
 	 * Constructor.
 	 *
 	 * @param parameter
-	 *        parameter for the action
+	 *            parameter for the action
 	 * @param selectedEditPart
-	 *        the selectedEditPart for the action
+	 *            the selectedEditPart for the action
 	 */
 	public AbstractParametricAction(String parameter, List<IGraphicalEditPart> selectedEditPart) {
 		this.parameter = parameter;
@@ -84,7 +84,7 @@ public abstract class AbstractParametricAction {
 	 * Sets the parameter.
 	 *
 	 * @param parameter
-	 *        the new parameter
+	 *            the new parameter
 	 */
 	public void setParameter(String parameter) {
 		this.parameter = parameter;
@@ -94,7 +94,7 @@ public abstract class AbstractParametricAction {
 	 * executes the action
 	 */
 	public void doRun(IProgressMonitor progressMonitor) {
-		//may be implemented by inherited class
+		// may be implemented by inherited class
 	};
 
 	/**
@@ -107,11 +107,11 @@ public abstract class AbstractParametricAction {
 		IDiagramWorkbenchPart diagramPart = null;
 		IWorkbenchPart part = getWorkbenchPart();
 
-		if(part instanceof IDiagramWorkbenchPart) {
-			diagramPart = (IDiagramWorkbenchPart)part;
+		if (part instanceof IDiagramWorkbenchPart) {
+			diagramPart = (IDiagramWorkbenchPart) part;
 
-		} else if(part != null) {
-			diagramPart = (IDiagramWorkbenchPart)part.getAdapter(IDiagramWorkbenchPart.class);
+		} else if (part != null) {
+			diagramPart = (IDiagramWorkbenchPart) part.getAdapter(IDiagramWorkbenchPart.class);
 		}
 
 		return diagramPart;

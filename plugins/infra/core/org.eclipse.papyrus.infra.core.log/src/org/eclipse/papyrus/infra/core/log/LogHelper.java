@@ -4,11 +4,11 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Atos Origin - initial API and implementation
  *     Christian W. Damus (CEA) - bug 422257
- *     
+ *
  *******************************************************************************/
 package org.eclipse.papyrus.infra.core.log;
 
@@ -22,9 +22,9 @@ import org.eclipse.core.runtime.Status;
 
 /**
  * A Log Helper.
- * 
+ *
  * @author tszadel
- * 
+ *
  */
 public class LogHelper {
 
@@ -34,8 +34,8 @@ public class LogHelper {
 	/** The plugin related to that helper. */
 	private Plugin activator;
 
-	
-	
+
+
 	/**
 	 * Default Constructor.
 	 * The associated plugin can be set later.
@@ -43,12 +43,12 @@ public class LogHelper {
 	 */
 	public LogHelper() {
 	}
-	
+
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param activator
-	 *        The activator.
+	 *            The activator.
 	 */
 	public LogHelper(Plugin activator) {
 		setPlugin(activator);
@@ -57,18 +57,19 @@ public class LogHelper {
 	/**
 	 * Set the associated plugin.
 	 * This plugin log will be used as log.
+	 * 
 	 * @param activator
 	 */
-	public void setPlugin( Plugin activator ) {
+	public void setPlugin(Plugin activator) {
 		this.pluginId = activator.getBundle().getSymbolicName();
-		this.activator = activator;		
+		this.activator = activator;
 	}
-	
+
 	/**
 	 * Log an informative message into the Eclipse log file
-	 * 
+	 *
 	 * @param message
-	 *        the message to log
+	 *            the message to log
 	 */
 	public void info(String message) {
 		log(message, IStatus.INFO);
@@ -76,59 +77,60 @@ public class LogHelper {
 
 	/**
 	 * Log a debug message into the Eclipse log file
-	 * 
+	 *
 	 * @param message
-	 *        the message to log
+	 *            the message to log
 	 */
 	public void debug(String message) {
-		if(isDebugEnabled()) {
+		if (isDebugEnabled()) {
 			log("[DEBUG] " + message, IStatus.INFO);
 		}
 	}
 
 	/**
 	 * Test if the platform is in debug mode.
-	 * 
+	 *
 	 * @return True if the platform is in debug mode.
 	 */
 	public boolean isDebugEnabled() {
-		if( activator != null)
-		  return Platform.inDebugMode();
-		
+		if (activator != null) {
+			return Platform.inDebugMode();
+		}
+
 		return false;
 	}
 
 	/**
 	 * Log a message with given level into the Eclipse log file
-	 * 
+	 *
 	 * @param message
-	 *        the message to log
+	 *            the message to log
 	 * @param level
-	 *        the message priority
+	 *            the message priority
 	 */
 	private void log(String message, int level) {
-		log( new Status(level, pluginId, message ));
+		log(new Status(level, pluginId, message));
 	}
 
 	/**
-	 * 
+	 *
 	 * @param status
 	 */
-	private void log( IStatus status ) {
-		
-		if( activator == null) {
+	private void log(IStatus status) {
+
+		if (activator == null) {
 			// TODO Do log with java ?
 		}
 		else {
-			activator.getLog().log(status );
+			activator.getLog().log(status);
 		}
 	}
-	
+
 	/**
 	 * Log a warning message.
-	 * 
+	 *
 	 * @param e
-	 *        the exception to log
+	 *            the exception to log
 	 */
 	public void warn(String message) {
 		log(message, IStatus.WARNING);
@@ -137,9 +139,9 @@ public class LogHelper {
 
 	/**
 	 * Log an exception into the Eclipse log file
-	 * 
+	 *
 	 * @param e
-	 *        the exception to log
+	 *            the exception to log
 	 */
 	public void error(Throwable e) {
 		error("Unexpected Error", e);
@@ -147,33 +149,33 @@ public class LogHelper {
 
 	/**
 	 * Log an exception into the Eclipse log file
-	 * 
+	 *
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param e
-	 *        the exception to log
+	 *            the exception to log
 	 */
 	public void error(String message, Throwable e) {
 
 		Throwable t = e;
-		if(e instanceof InvocationTargetException) {
-			t = ((InvocationTargetException)e).getTargetException();
+		if (e instanceof InvocationTargetException) {
+			t = ((InvocationTargetException) e).getTargetException();
 		}
 
 		IStatus status;
-		if(t instanceof CoreException) {
-			status = ((CoreException)t).getStatus();
+		if (t instanceof CoreException) {
+			status = ((CoreException) t).getStatus();
 		} else {
 			status = new Status(IStatus.ERROR, pluginId, message, e);
 		}
 
 		log(status);
 	}
-	
+
 	/**
 	 * Obtains the stack-trace description of the caller of the calling method (that is, the method that
 	 * called the method using this helper method). Useful for logging warning messages etc.
-	 * 
+	 *
 	 * @return the caller of my caller, or a placeholder in case the JVM cannot provide the necessary
 	 *         stack information (which is a documented possibility)
 	 */

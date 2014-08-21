@@ -27,12 +27,12 @@ public class NamedElementValidator extends AbstractUMLValidator {
 	private EObject source;
 
 	public NamedElementValidator() {
-		//nothing
+		// nothing
 
 	}
 
 	public NamedElementValidator(EObject source) {
-		if(source != null) {
+		if (source != null) {
 			this.source = source;
 		} else {
 			this.source = null;
@@ -42,37 +42,37 @@ public class NamedElementValidator extends AbstractUMLValidator {
 	public IStatus validate(Object value) {
 		boolean status = true;
 		String string = null;
-		if(value instanceof String) {
-			string = (String)value;
+		if (value instanceof String) {
+			string = (String) value;
 		}
 
-		if(string == null) {
+		if (string == null) {
 			return Status.OK_STATUS;
 		}
 
-		if(this.source instanceof NamedElement) {
-			final NamedElement self = (NamedElement)this.source;
+		if (this.source instanceof NamedElement) {
+			final NamedElement self = (NamedElement) this.source;
 			final Namespace ns = self.getNamespace();
-			
-			if(ns != null) {
+
+			if (ns != null) {
 				final boolean deliver = self.eDeliver();
 				final boolean wasSet = self.isSetName();
 				final String oldName = self.getName();
-				
+
 				try {
 					// Set up the prospective name
 					self.eSetDeliver(false);
 					self.setName(string);
-					
+
 					EList<NamedElement> listElement = ns.getMembers();
-					for(NamedElement namedElement : listElement) {
-						if((self != namedElement) && !self.isDistinguishableFrom(namedElement, ns)) {
+					for (NamedElement namedElement : listElement) {
+						if ((self != namedElement) && !self.isDistinguishableFrom(namedElement, ns)) {
 							return warning("Name is indistinguishable from another element in the Namespace");
 						}
 					}
 				} finally {
 					// Restore the current name
-					if(wasSet) {
+					if (wasSet) {
 						self.setName(oldName);
 					} else {
 						self.unsetName();
@@ -81,7 +81,7 @@ public class NamedElementValidator extends AbstractUMLValidator {
 				}
 			}
 
-			if(status) {
+			if (status) {
 				return Status.OK_STATUS;
 			}
 		}

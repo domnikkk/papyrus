@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -55,10 +55,10 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 		Map<IPapyrusQueryProvider, Collection<URI>> partitions = partitionSearchScope(queryInfo.getScope());
 		List<AbstractPapyrusQuery> result = new java.util.ArrayList<AbstractPapyrusQuery>(partitions.size());
 
-		for(Map.Entry<IPapyrusQueryProvider, Collection<URI>> next : partitions.entrySet()) {
+		for (Map.Entry<IPapyrusQueryProvider, Collection<URI>> next : partitions.entrySet()) {
 			AbstractPapyrusQuery query = next.getKey().createSimpleSearchQuery(queryInfo.partition(next.getValue()));
 
-			if(query != null) {
+			if (query != null) {
 				result.add(query);
 			}
 		}
@@ -70,10 +70,10 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 		Map<IPapyrusQueryProvider, Collection<URI>> partitions = partitionSearchScope(queryInfo.getScope());
 		List<AbstractPapyrusQuery> result = new java.util.ArrayList<AbstractPapyrusQuery>(partitions.size());
 
-		for(Map.Entry<IPapyrusQueryProvider, Collection<URI>> next : partitions.entrySet()) {
+		for (Map.Entry<IPapyrusQueryProvider, Collection<URI>> next : partitions.entrySet()) {
 			AbstractPapyrusQuery query = next.getKey().createAdvancedSearchQuery(queryInfo.partition(next.getValue()));
 
-			if(query != null) {
+			if (query != null) {
 				result.add(query);
 			}
 		}
@@ -84,9 +84,9 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 	private AbstractPapyrusQuery composite(final List<? extends AbstractPapyrusQuery> queries) {
 		AbstractPapyrusQuery result;
 
-		if(queries.isEmpty()) {
+		if (queries.isEmpty()) {
 			result = AbstractPapyrusQuery.Empty.INSTANCE;
-		} else if(queries.size() == 1) {
+		} else if (queries.size() == 1) {
 			result = queries.get(0);
 		} else {
 			result = new CompositePapyrusQuery(queries);
@@ -99,12 +99,12 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 		Map<IPapyrusQueryProvider, Collection<URI>> result = new java.util.HashMap<IPapyrusQueryProvider, Collection<URI>>();
 
 		Iterable<? extends IPapyrusQueryProvider> providers = getQueryProviders();
-		for(URI next : scope) {
-			for(IPapyrusQueryProvider provider : providers) {
-				if(provider.canProvideFor(next)) {
+		for (URI next : scope) {
+			for (IPapyrusQueryProvider provider : providers) {
+				if (provider.canProvideFor(next)) {
 					Collection<URI> myScope = result.get(provider);
 
-					if(myScope == null) {
+					if (myScope == null) {
 						// preserve order but ensure uniqueness
 						myScope = new java.util.LinkedHashSet<URI>();
 						result.put(provider, myScope);
@@ -126,8 +126,8 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 	final Iterable<? extends IPapyrusQueryProvider> getQueryProviders() {
 		List<IPapyrusQueryProvider> result = new ArrayList<IPapyrusQueryProvider>();
 
-		synchronized(queryProviders) {
-			for(IPapyrusQueryProvider next : queryProviders) {
+		synchronized (queryProviders) {
+			for (IPapyrusQueryProvider next : queryProviders) {
 				result.add(next);
 			}
 		}
@@ -162,7 +162,7 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 
 		@Override
 		public boolean equals(Object obj) {
-			return (obj instanceof PriorityQueryProvider) && ((PriorityQueryProvider)obj).delegate.equals(delegate);
+			return (obj instanceof PriorityQueryProvider) && ((PriorityQueryProvider) obj).delegate.equals(delegate);
 		}
 
 		//
@@ -200,7 +200,7 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 		}
 
 		Iterable<? extends IPapyrusQueryProvider> load() {
-			synchronized(providers) {
+			synchronized (providers) {
 				providers.clear();
 				readRegistry();
 			}
@@ -212,13 +212,13 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 		protected boolean readElement(IConfigurationElement element, boolean add) {
 			boolean result = false;
 
-			if(TAG_PROVIDER.equals(element.getName())) {
+			if (TAG_PROVIDER.equals(element.getName())) {
 				result = true;
 
 				String className = element.getAttribute(ATTR_CLASS);
-				if((className == null) || (className.length() == 0)) {
+				if ((className == null) || (className.length() == 0)) {
 					logMissingAttribute(element, ATTR_CLASS);
-				} else if(add) {
+				} else if (add) {
 					addProvider(element, className);
 				} else {
 					removeProvider(element, className);
@@ -232,16 +232,16 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 			try {
 				Object provider = element.createExecutableExtension(ATTR_CLASS);
 
-				if(!(provider instanceof IPapyrusQueryProvider)) {
+				if (!(provider instanceof IPapyrusQueryProvider)) {
 					Activator.log.error("Query provider extension does not implement IPapyrusQueryProvider interface: " + className, null); //$NON-NLS-1$
 				} else {
 					String priorityString = element.getAttribute(ATTR_PRIORITY);
 					int priority = 0;
 
 					try {
-						if((priorityString) != null && (priorityString.length() > 0)) {
+						if ((priorityString) != null && (priorityString.length() > 0)) {
 							priority = Integer.parseInt(priorityString);
-							if(priority < 0) {
+							if (priority < 0) {
 								Activator.log.warn("Negative priority in query provider " + className); //$NON-NLS-1$
 								priority = 0;
 							}
@@ -250,8 +250,8 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 						Activator.log.warn("Not an integer priority in query provider " + className); //$NON-NLS-1$
 					}
 
-					synchronized(providers) {
-						providers.add(new PriorityQueryProvider((IPapyrusQueryProvider)provider, priority));
+					synchronized (providers) {
+						providers.add(new PriorityQueryProvider((IPapyrusQueryProvider) provider, priority));
 					}
 				}
 			} catch (CoreException e) {
@@ -260,9 +260,9 @@ public class CompositePapyrusQueryProvider implements IPapyrusQueryProvider {
 		}
 
 		private void removeProvider(IConfigurationElement element, String className) {
-			synchronized(providers) {
-				for(Iterator<PriorityQueryProvider> iter = providers.iterator(); iter.hasNext();) {
-					if(iter.next().delegate.getClass().getName().equals(className)) {
+			synchronized (providers) {
+				for (Iterator<PriorityQueryProvider> iter = providers.iterator(); iter.hasNext();) {
+					if (iter.next().delegate.getClass().getName().equals(className)) {
 						iter.remove();
 					}
 				}

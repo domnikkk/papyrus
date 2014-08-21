@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana, CEA, and others . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
  * 				 Gabriel Merin Cubero (Prodevelop) – Added version to diagrams
  *               Christian W. Damus (CEA) - bug 422257
@@ -73,10 +73,10 @@ import org.osgi.framework.Constants;
 
 /**
  * The Class MultiDiagramUtil.
- * 
+ *
  * @author <a href="fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @author <a href="gmerin@prodevelop.es">Grabriel Merin Cubero</a>
- * 
+ *
  */
 public class MultiDiagramUtil {
 
@@ -94,13 +94,13 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Associate diagram to view.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 */
 	public static void associateDiagramToView(Diagram diagram) {
 		EAnnotation eAnnotation = diagram.getEAnnotation(DiagramsRelatedToElement);
-		if(eAnnotation == null) {
+		if (eAnnotation == null) {
 			eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 			eAnnotation.setSource(DiagramsRelatedToElement);
 			diagram.getEAnnotations().add(eAnnotation);
@@ -110,10 +110,10 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Gets the diagrams associated to view.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return the diagrams associated to view
 	 */
 	// @unused
@@ -121,16 +121,16 @@ public class MultiDiagramUtil {
 		EObject domainElement = diagram != null ? diagram.getElement() : null;
 		Resource resource = diagram != null ? diagram.eResource() : null;
 		String diagramKind = diagram != null ? diagram.getType() : null;
-		if(domainElement == null || resource == null || diagramKind == null) {
+		if (domainElement == null || resource == null || diagramKind == null) {
 			return Collections.EMPTY_LIST;
 		}
 		List<Diagram> diagrams = new ArrayList<Diagram>();
-		for(EObject eObject : resource.getContents()) {
-			if(eObject instanceof Diagram) {
-				Diagram containedDiagram = (Diagram)eObject;
+		for (EObject eObject : resource.getContents()) {
+			if (eObject instanceof Diagram) {
+				Diagram containedDiagram = (Diagram) eObject;
 				EAnnotation eAnnotation = containedDiagram.getEAnnotation(DiagramsRelatedToElement);
-				if(eAnnotation != null) {
-					if(eAnnotation.getReferences().contains(domainElement)) {
+				if (eAnnotation != null) {
+					if (eAnnotation.getReferences().contains(domainElement)) {
 						diagrams.add(containedDiagram);
 					}
 				}
@@ -142,12 +142,12 @@ public class MultiDiagramUtil {
 	// //****////
 	/**
 	 * Adds the e annotation reference to diagram.
-	 * 
+	 *
 	 * @param plugin
-	 *        the plugin
+	 *            the plugin
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean addEAnnotationReferenceToDiagram(AbstractUIPlugin plugin, EObject eObject) {
@@ -156,12 +156,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Adds the e annotation reference to diagram.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part
+	 *            the edit part
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
@@ -171,19 +171,19 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Adds the e annotation reference to diagram.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean AddEAnnotationReferenceToDiagram(Diagram diagram, EObject eObject) {
 
-		if(diagram != null) {
+		if (diagram != null) {
 			EAnnotation eAnnotation = diagram.getEAnnotation(BelongToDiagramSource);
-			if(eAnnotation == null) {
+			if (eAnnotation == null) {
 				eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 				eAnnotation.setSource(BelongToDiagramSource);
 				diagram.getEAnnotations().add(eAnnotation);
@@ -198,19 +198,19 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Adds the eAnnotation Upper Diagram to diagram.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean addEAnnotationUpperDiagramToDiagram(Diagram diagram, EObject eObject) {
 
-		if(diagram != null) {
+		if (diagram != null) {
 			EAnnotation eAnnotation = diagram.getEAnnotation(UpperDiagram);
-			if(eAnnotation == null) {
+			if (eAnnotation == null) {
 				eAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
 				eAnnotation.setSource(UpperDiagram);
 				diagram.getEAnnotations().add(eAnnotation);
@@ -223,12 +223,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Removes the e annotation reference from diagram.
-	 * 
+	 *
 	 * @param plugin
-	 *        the plugin
+	 *            the plugin
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
@@ -238,12 +238,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Removes the e annotation reference from diagram.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part
+	 *            the edit part
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
@@ -253,22 +253,22 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Removes the e annotation reference from diagram.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean RemoveEAnnotationReferenceFromDiagram(Diagram diagram, EObject eObject) {
 
-		if(diagram != null) {
+		if (diagram != null) {
 			EAnnotation eAnnotation = diagram.getEAnnotation(BelongToDiagramSource);
-			if(eAnnotation == null) {
+			if (eAnnotation == null) {
 				return false;
 			}
-			if(eAnnotation.getReferences().contains(eObject) == true) {
+			if (eAnnotation.getReferences().contains(eObject) == true) {
 				eAnnotation.getReferences().remove(eObject);
 				return true;
 			}
@@ -278,12 +278,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Find e object referenced in e annotation.
-	 * 
+	 *
 	 * @param editPart
-	 *        the edit part
+	 *            the edit part
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
@@ -293,12 +293,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Find e object referenced in e annotation.
-	 * 
+	 *
 	 * @param plugin
-	 *        the plugin
+	 *            the plugin
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
@@ -308,19 +308,19 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Find e object referenced in e annotation.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param eObject
-	 *        the e object
-	 * 
+	 *            the e object
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean findEObjectReferencedInEAnnotation(Diagram diagram, EObject eObject) {
 
-		if(diagram != null) {
+		if (diagram != null) {
 			EAnnotation eAnnotation = diagram.getEAnnotation(BelongToDiagramSource);
-			if(eAnnotation == null || !eAnnotation.getReferences().contains(eObject)) {
+			if (eAnnotation == null || !eAnnotation.getReferences().contains(eObject)) {
 				return false;
 			}
 			return true;
@@ -330,16 +330,16 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Gets the all references in e annotation.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return the all references in e annotation
 	 */
 	// @unused
 	public static List<EObject> getAllReferencesInEAnnotation(Diagram diagram) {
 		EAnnotation eAnnotation = diagram.getEAnnotation(BelongToDiagramSource);
-		if(eAnnotation != null) {
+		if (eAnnotation != null) {
 			return eAnnotation.getReferences();
 		}
 		return Collections.EMPTY_LIST;
@@ -349,50 +349,52 @@ public class MultiDiagramUtil {
 	/**
 	 * Add to a diagram the version of the first editor that will modify the diagram. It uses
 	 * MOSKittEditorsIDs.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @author gmerin
 	 * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
 	 */
 	public static void addMultiDiagramVersion(Diagram diagram) {
 		String diagramKind = diagram.getType();
-		if(diagramKind == null)
+		if (diagramKind == null) {
 			return;
+		}
 		String editorId = MOSKittEditorIDs.getAllExtensionModelToEditor().get(diagramKind);
-		if(editorId == null)
+		if (editorId == null) {
 			return;
+		}
 
-		IPluginContribution pluginContribution = (IPluginContribution)PlatformUI.getWorkbench().getEditorRegistry().findEditor(editorId);
-		if(pluginContribution == null) {
+		IPluginContribution pluginContribution = (IPluginContribution) PlatformUI.getWorkbench().getEditorRegistry().findEditor(editorId);
+		if (pluginContribution == null) {
 			return;
 		}
 		Bundle bundle = Platform.getBundle(pluginContribution.getPluginId());
-		if(bundle == null) {
+		if (bundle == null) {
 			return;
 		}
-		String version = (String)bundle.getHeaders().get(Constants.BUNDLE_VERSION);
+		String version = bundle.getHeaders().get(Constants.BUNDLE_VERSION);
 
 		MDTUtil.addDiagramVersion(diagram, version);
 	}
 
 	/**
 	 * Intialize new diagram.
-	 * 
+	 *
 	 * @param kind
-	 *        the kind
+	 *            the kind
 	 * @param domainElement
-	 *        the domain element
+	 *            the domain element
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param initializers
-	 *        the initializers
-	 * 
+	 *            the initializers
+	 *
 	 * @return the diagram
-	 * 
+	 *
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
 	// @unused
 	public static Diagram intializeNewDiagram(String kind, EObject domainElement, Resource resource, Map<String, IDiagramInitializer> initializers) throws ExecutionException {
@@ -401,34 +403,34 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Intialize new diagram.
-	 * 
+	 *
 	 * @param kind
-	 *        the kind
+	 *            the kind
 	 * @param domainElement
-	 *        the domain element
+	 *            the domain element
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param initializers
-	 *        the initializers
+	 *            the initializers
 	 * @param askName
-	 *        the ask name
-	 * 
+	 *            the ask name
+	 *
 	 * @return the diagram
-	 * 
+	 *
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
 	public static Diagram intializeNewDiagram(String kind, EObject domainElement, Resource resource, Map<String, IDiagramInitializer> initializers, boolean askName) throws ExecutionException {
 		Diagram d = null;
 		try {
 			d = ViewService.createDiagram(domainElement, kind, MDTUtil.getPreferencesHint(kind));
-			if(askName && !setDigramName(d)) {
+			if (askName && !setDigramName(d)) {
 				return null;
 			}
 		} catch (ExecutionException ex) {
 			return null;
 		}
-		if(d == null) {
+		if (d == null) {
 			throw new ExecutionException("Can't create diagram of '" + kind + "' kind");
 		}
 		// add the diagram to its container resource
@@ -438,13 +440,13 @@ public class MultiDiagramUtil {
 		// OpenUpper action
 		IEditorPart activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
 		Diagram activeDiagram = null;
-		if(activeEditor instanceof DiagramEditor) {
-			DiagramEditor diagramEditor = (DiagramEditor)activeEditor;
+		if (activeEditor instanceof DiagramEditor) {
+			DiagramEditor diagramEditor = (DiagramEditor) activeEditor;
 			activeDiagram = diagramEditor.getDiagram();
-		} else if(activeEditor != null) {
-			activeDiagram = (Diagram)activeEditor.getAdapter(Diagram.class);
+		} else if (activeEditor != null) {
+			activeDiagram = (Diagram) activeEditor.getAdapter(Diagram.class);
 		}
-		if(activeDiagram != null) {
+		if (activeDiagram != null) {
 			addEAnnotationUpperDiagramToDiagram(d, activeDiagram);
 		}
 
@@ -458,10 +460,10 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Sets the digram name.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return true, if successful
 	 */
 	protected static boolean setDigramName(Diagram diagram) {
@@ -469,7 +471,7 @@ public class MultiDiagramUtil {
 		message += "New " + diagram.getType() + " diagram name";
 		InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), "Diagram name", message, diagram.getType(), null);
 		int result = dialog.open();
-		if(result == Window.OK) {
+		if (result == Window.OK) {
 			String name = dialog.getValue();
 			diagram.setName(name);
 			return true;
@@ -479,24 +481,24 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Intialize new diagram.
-	 * 
+	 *
 	 * @param kind
-	 *        the kind
+	 *            the kind
 	 * @param domainElement
-	 *        the domain element
+	 *            the domain element
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param initializers
-	 *        the initializers
+	 *            the initializers
 	 * @param askName
-	 *        the ask name
+	 *            the ask name
 	 * @param name
-	 *        the name
-	 * 
+	 *            the name
+	 *
 	 * @return the diagram
-	 * 
+	 *
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
 	// @unused
 	public static Diagram intializeNewDiagram(String kind, EObject domainElement, Resource resource, Map<String, IDiagramInitializer> initializers, boolean askName, String name) throws ExecutionException {
@@ -505,49 +507,49 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Intialize new diagram.
-	 * 
+	 *
 	 * @param kind
-	 *        the kind
+	 *            the kind
 	 * @param domainElement
-	 *        the domain element
+	 *            the domain element
 	 * @param resource
-	 *        the resource
+	 *            the resource
 	 * @param initializers
-	 *        the initializers
+	 *            the initializers
 	 * @param askName
-	 *        the ask name
+	 *            the ask name
 	 * @param name
-	 *        the name
-	 * 
+	 *            the name
+	 *
 	 * @param upperDiagram
-	 *        the upper diagram
-	 * 
+	 *            the upper diagram
+	 *
 	 * @return the diagram
-	 * 
+	 *
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
 	public static Diagram intializeNewDiagram(String kind, EObject domainElement, Resource resource, Map<String, IDiagramInitializer> initializers, boolean askName, String name, Diagram upperDiagram) throws ExecutionException {
 
 		Diagram d = null;
 		try {
 			d = ViewService.createDiagram(domainElement, kind, MDTUtil.getPreferencesHint(kind));
-			if(askName && !setDigramName(d, name)) {
+			if (askName && !setDigramName(d, name)) {
 				return null;
 			}
 		} catch (ExecutionException ex) {
 			return null;
 		}
-		if(d == null) {
+		if (d == null) {
 			throw new ExecutionException("Can't create diagram of '" + kind + "' kind");
 		}
 
 		// insert the eAnnotation to set the diagram to be opened in the
 		// OpenUpper action
-		if(upperDiagram == null) {
+		if (upperDiagram == null) {
 			IEditorPart activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-			if(activeEditor != null) {
-				upperDiagram = (Diagram)activeEditor.getAdapter(Diagram.class);
+			if (activeEditor != null) {
+				upperDiagram = (Diagram) activeEditor.getAdapter(Diagram.class);
 			}
 		}
 		addEAnnotationUpperDiagramToDiagram(d, upperDiagram);
@@ -562,12 +564,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Sets the digram name.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param name
-	 *        the name
-	 * 
+	 *            the name
+	 *
 	 * @return true, if successful
 	 */
 	protected static boolean setDigramName(Diagram diagram, String name) {
@@ -575,7 +577,7 @@ public class MultiDiagramUtil {
 		message += "New " + diagram.getType() + " diagram name";
 		InputDialog dialog = new InputDialog(Display.getCurrent().getActiveShell(), "Diagram name", message, name, null);
 		int result = dialog.open();
-		if(result == Window.OK) {
+		if (result == Window.OK) {
 			String n = dialog.getValue();
 			diagram.setName(n);
 			return true;
@@ -585,14 +587,14 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Sets the editor for diagram.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @param editorID
-	 *        the editor id
-	 * 
+	 *            the editor id
+	 *
 	 * @throws CoreException
-	 *         the core exception
+	 *             the core exception
 	 */
 	// @unused
 	public static void setEditorForDiagram(URI uri, String editorID) throws CoreException {
@@ -600,7 +602,7 @@ public class MultiDiagramUtil {
 		IPath path = new Path(part1);
 		ResourcesPlugin.getWorkspace().getRoot().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 		IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(path);
-		if(file != null) {
+		if (file != null) {
 			file.setPersistentProperty(IDE.EDITOR_KEY, editorID);
 			return;
 		}
@@ -609,16 +611,16 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Creates the initial elements.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param initializers
-	 *        the initializers
+	 *            the initializers
 	 */
 	private static void createInitialElements(Diagram diagram, Map<String, IDiagramInitializer> initializers) {
-		if(initializers != null) {
+		if (initializers != null) {
 			String kind = diagram.getType();
-			if(initializers.containsKey(kind)) {
+			if (initializers.containsKey(kind)) {
 				IDiagramInitializer initializer = initializers.get(kind);
 				initializer.init(diagram);
 			}
@@ -627,7 +629,7 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Gets the save options.
-	 * 
+	 *
 	 * @return the save options
 	 */
 	public static Map getSaveOptions() {
@@ -639,41 +641,41 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Perform delete diagram.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param confirm
-	 *        the confirm
-	 * 
+	 *            the confirm
+	 *
 	 * @return the diagram
 	 */
 	// @unused
 	public static Diagram performDeleteDiagram(Diagram diagram, boolean confirm) {
-		if(diagram == null) {
+		if (diagram == null) {
 			return null;
 		}
 		// Get upper diagram to open in case the one deleted is active.
 		Diagram diagramToOpen = getUpperDiagram(diagram);
-		if(diagramToOpen == null || diagramToOpen.equals(diagram)) {
+		if (diagramToOpen == null || diagramToOpen.equals(diagram)) {
 			// This is the uppest diagram we'll look for a diagram at the same
 			// level
 			diagramToOpen = getOtherDiagram(diagram);
-			if(diagramToOpen == null) {
+			if (diagramToOpen == null) {
 				// no suitable diagram to open
 				return null;
 			}
 		}
 
 		// The diagram is Ok to be deleted. Ask user confirmation.
-		if(confirm) {
-			MessageDialog confirmDialog = new MessageDialog(Display.getCurrent().getActiveShell(), "Delete diagram?", null, "Are oyu sure you want to delete the selected diagram?", MessageDialog.WARNING, new String[]{ "Yes", "No" }, 1);
+		if (confirm) {
+			MessageDialog confirmDialog = new MessageDialog(Display.getCurrent().getActiveShell(), "Delete diagram?", null, "Are oyu sure you want to delete the selected diagram?", MessageDialog.WARNING, new String[] { "Yes", "No" }, 1);
 			int result = confirmDialog.open();
-			if(result == Window.CANCEL) {
+			if (result == Window.CANCEL) {
 				return null;
 			}
 		}
 
-		if(!isDiagramActive(diagram)) {
+		if (!isDiagramActive(diagram)) {
 			// If the diagram to delete is not active it can be deleted without
 			// problems.
 			deleteDiagramAndSave(diagram);
@@ -702,23 +704,23 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Checks if is diagram active.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return true, if is diagram active
 	 */
 	public static boolean isDiagramActive(Diagram diagram) {
 		IEditorPart activeEditor = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(activeEditor instanceof DiagramEditor) {
-			DiagramEditor diagramEditor = (DiagramEditor)activeEditor;
+		if (activeEditor instanceof DiagramEditor) {
+			DiagramEditor diagramEditor = (DiagramEditor) activeEditor;
 			Diagram activeDiagram = diagramEditor.getDiagram();
-			if(diagram.equals(activeDiagram)) {
+			if (diagram.equals(activeDiagram)) {
 				return true;
 			}
-		} else if(activeEditor != null) {
-			Diagram activeDiagram = (Diagram)activeEditor.getAdapter(Diagram.class);
-			if(activeDiagram != null && activeDiagram.equals(diagram)) {
+		} else if (activeEditor != null) {
+			Diagram activeDiagram = (Diagram) activeEditor.getAdapter(Diagram.class);
+			if (activeDiagram != null && activeDiagram.equals(diagram)) {
 				return true;
 			}
 		}
@@ -727,7 +729,7 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Adds a diagram to a resource and saves the resource.
-	 * 
+	 *
 	 * @param diagram
 	 * @param resource
 	 * @return
@@ -739,18 +741,18 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Adds a diagram to a resource and saves the resource.
-	 * 
+	 *
 	 * @param diagram
 	 * @param resource
 	 * @param save
 	 * @return
 	 */
 	public static boolean addDiagramAndSave(Diagram diagram, Resource resource, boolean save) {
-		if(diagram == null || resource == null) {
+		if (diagram == null || resource == null) {
 			return false;
 		}
 		resource.getContents().add(diagram);
-		if(save) {
+		if (save) {
 			try {
 				resource.save(getSaveOptions());
 			} catch (IOException ex) {
@@ -764,10 +766,10 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Delete diagram and save.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean deleteDiagramAndSave(Diagram diagram) {
@@ -776,21 +778,21 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Delete diagram and save.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return true, if successful
 	 */
 	public static boolean deleteDiagramAndSave(Diagram diagram, boolean save) {
-		if(diagram != null && diagram.eResource() != null) {
+		if (diagram != null && diagram.eResource() != null) {
 			Resource diagramResource = diagram.eResource();
 			MDTUtil.removeLastOpenedDiagramProperty(diagram);
 			MDTUtil.removeEditorForDiagramProperty(diagram.eResource().getURI());
-			if(deleteDiagramFromResource(diagram, diagram.eResource()) == false) {
+			if (deleteDiagramFromResource(diagram, diagram.eResource()) == false) {
 				return false;
 			}
-			if(save) {
+			if (save) {
 				try {
 					diagramResource.save(getSaveOptions());
 				} catch (IOException ex) {
@@ -805,16 +807,16 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Deletes a <Diagram> in the given <Resource>.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param resource
-	 *        the resource
-	 * 
+	 *            the resource
+	 *
 	 * @return true, if delete diagram from resource
 	 */
 	public static boolean deleteDiagramFromResource(Diagram diagram, Resource resource) {
-		if(diagram == null || resource == null) {
+		if (diagram == null || resource == null) {
 			return false;
 		}
 		resource.getContents().remove(diagram);
@@ -823,22 +825,22 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Closes all diagram editors that are showing the given <Diagram>.
-	 * 
+	 *
 	 * @param diagram
-	 *        diagram to be closed
+	 *            diagram to be closed
 	 */
 	public static void closeEditorsThatShowDiagram(Diagram diagram) {
-		if(diagram == null) {
+		if (diagram == null) {
 			return;
 		}
 		IWorkbenchPage page = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage();
 		IEditorReference[] editors = page.getEditorReferences();
-		for(IEditorReference editorReference : editors) {
+		for (IEditorReference editorReference : editors) {
 			IEditorPart editorPart = editorReference.getEditor(false);
-			if(editorPart instanceof DiagramEditor) {
-				DiagramEditor diagramEditor = (DiagramEditor)editorPart;
+			if (editorPart instanceof DiagramEditor) {
+				DiagramEditor diagramEditor = (DiagramEditor) editorPart;
 				Diagram editorDiagram = diagramEditor.getDiagram();
-				if(diagram.equals(editorDiagram)) {
+				if (diagram.equals(editorDiagram)) {
 					page.closeEditor(diagramEditor, true);
 				}
 			}
@@ -847,24 +849,24 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Delete and save e object in resource.
-	 * 
+	 *
 	 * @param uri
-	 *        the uri
+	 *            the uri
 	 * @param fragment
-	 *        the fragment
-	 * 
+	 *            the fragment
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
 	public static boolean deleteAndSaveEObjectInResource(URI uri, String fragment) {
 		URI resourceURI = uri;
 		final ResourceSet resourceSet = new ResourceSetImpl();
-		
+
 		try {
 			resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 			Resource resource = resourceSet.getResource(resourceURI, true);
 			EObject toDelete = resource.getEObject(fragment);
-			if(toDelete != null && resource.getContents().contains(toDelete)) {
+			if (toDelete != null && resource.getContents().contains(toDelete)) {
 				resource.getContents().remove(toDelete);
 				try {
 					resource.save(getSaveOptions());
@@ -876,7 +878,7 @@ public class MultiDiagramUtil {
 		} finally {
 			EMFHelper.unload(resourceSet);
 		}
-		
+
 		return true;
 	}
 
@@ -884,14 +886,14 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Open diagram and close the one we come from.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return the i editor part
-	 * 
+	 *
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
 	public static IEditorPart openDiagram(Diagram diagram) throws ExecutionException {
 		return openDiagram(diagram, false);
@@ -899,14 +901,14 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Open diagram and optionally close the one we come from.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return the i editor part
-	 * 
+	 *
 	 * @throws ExecutionException
-	 *         the execution exception
+	 *             the execution exception
 	 */
 	public static IEditorPart openDiagram(Diagram diagram, boolean openInNew) throws ExecutionException {
 		//
@@ -921,7 +923,7 @@ public class MultiDiagramUtil {
 		// close other diagrams using the same resource
 		// and open the new one
 		EditingDomainRegistry.getInstance().setChangingCachedEditors(true);
-		if(openInNew == false) {
+		if (openInNew == false) {
 			page.closeEditor(activeEditor, true);
 			// closeOtherDiagrams(diagram, page, !sameResource);
 		}
@@ -939,12 +941,12 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Check diagram for editor.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param editor
-	 *        the editor
-	 * 
+	 *            the editor
+	 *
 	 * @return true, if successful
 	 */
 	// @unused
@@ -960,16 +962,16 @@ public class MultiDiagramUtil {
 		boolean openInNewEditor = false;
 
 		CachedResourcesEditorInput newCachedEditorInput = null;
-		if(newInput instanceof CachedResourcesEditorInput) {
-			newCachedEditorInput = (CachedResourcesEditorInput)newInput;
+		if (newInput instanceof CachedResourcesEditorInput) {
+			newCachedEditorInput = (CachedResourcesEditorInput) newInput;
 			openInNewEditor = newCachedEditorInput.isOpenInNewEditor();
 		}
 
-		if(openInNewEditor) {
+		if (openInNewEditor) {
 			// we want to open in a new editor, alas if the IEditorInput is
 			// exactly the same (the same resource AND diagram) we can reuse
 			// this editor
-			if(CachedResourcesEditorInput.checkSameEditorInput(oldInput, newCachedEditorInput)) {
+			if (CachedResourcesEditorInput.checkSameEditorInput(oldInput, newCachedEditorInput)) {
 				return true;
 			}
 			return false;
@@ -979,7 +981,7 @@ public class MultiDiagramUtil {
 		URI oldUri = URIUtil.getUri(oldInput).trimFragment();
 		URI newUri = URIUtil.getUri(newInput).trimFragment();
 
-		if(oldUri != null && newUri != null) {
+		if (oldUri != null && newUri != null) {
 			return oldUri.equals(newUri);
 		}
 
@@ -988,33 +990,33 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Close other diagrams.
-	 * 
+	 *
 	 * @param diagramToOpen
-	 *        the diagram to open
+	 *            the diagram to open
 	 * @param page
-	 *        the page
+	 *            the page
 	 * @param unload
-	 *        the unload
+	 *            the unload
 	 */
 	// @unused
 	protected static void closeOtherDiagrams(Diagram diagramToOpen, IWorkbenchPage page, boolean unload) {
 		EObject rootEObject = diagramToOpen.getElement();
-		if(rootEObject == null) {
+		if (rootEObject == null) {
 			return;
 		}
 		Resource activeResource = rootEObject.eResource();
 		String activeUri = activeResource.getURI().trimFragment().toString();
-		for(IEditorReference editorReference : page.getEditorReferences()) {
+		for (IEditorReference editorReference : page.getEditorReferences()) {
 			IEditorPart editor = editorReference.getEditor(true);
 			Resource resource = MDTUtil.getRootElementResource(editor);
-			if(resource == null) {
+			if (resource == null) {
 				continue;
 			}
 			String uri = resource.getURI().trimFragment().toString();
-			if(activeUri.equals(uri)) {
+			if (activeUri.equals(uri)) {
 				editor.doSave(new NullProgressMonitor());
-				if(editor instanceof CachedResourcesDiagramEditor) {
-					((CachedResourcesDiagramEditor)editor).setUnloadOnDispose(unload);
+				if (editor instanceof CachedResourcesDiagramEditor) {
+					((CachedResourcesDiagramEditor) editor).setUnloadOnDispose(unload);
 				}
 				page.closeEditor(editor, true);
 			}
@@ -1025,61 +1027,61 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Gets the upper diagram.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return the upper diagram
 	 */
 	public static Diagram getUpperDiagram(Diagram diagram) {
-		if(diagram == null) {
+		if (diagram == null) {
 			return null;
 		}
 
 		EAnnotation eAnnotation = diagram.getEAnnotation(UpperDiagram);
-		if(eAnnotation != null && eAnnotation.getReferences().size() > 0) {
-			if(eAnnotation.getReferences().get(0) instanceof Diagram) {
-				return (Diagram)eAnnotation.getReferences().get(0);
+		if (eAnnotation != null && eAnnotation.getReferences().size() > 0) {
+			if (eAnnotation.getReferences().get(0) instanceof Diagram) {
+				return (Diagram) eAnnotation.getReferences().get(0);
 			}
 		}
 
 		EObject domainElement = diagram.getElement();
 		Resource gmfResource = diagram.eResource();
 		do {
-			for(EObject eObject : gmfResource.getContents()) {
-				if(eObject instanceof Diagram) {
-					if(diagram.equals(eObject) == false && diagramHasElement((Diagram)eObject, domainElement)) {
-						return (Diagram)eObject;
+			for (EObject eObject : gmfResource.getContents()) {
+				if (eObject instanceof Diagram) {
+					if (diagram.equals(eObject) == false && diagramHasElement((Diagram) eObject, domainElement)) {
+						return (Diagram) eObject;
 					}
 				}
 			}
 			// no diagram that includes this element was found
 			// search for diagrams that include the parent element
 			domainElement = domainElement.eContainer();
-		} while(domainElement != null);
+		} while (domainElement != null);
 
 		return null;
 	}
 
 	/**
 	 * Gets the other diagram.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
-	 * 
+	 *            the diagram
+	 *
 	 * @return the other diagram
 	 */
 	public static Diagram getOtherDiagram(Diagram diagram) {
-		if(diagram == null) {
+		if (diagram == null) {
 			return null;
 		}
 
 		EObject domainElement = diagram.getElement();
 		Resource gmfResource = diagram.eResource();
-		for(EObject eObject : gmfResource.getContents()) {
-			if(eObject instanceof Diagram) {
-				Diagram newDiagram = (Diagram)eObject;
-				if(diagram.equals(newDiagram) == false && domainElement.equals(newDiagram.getElement())) {
+		for (EObject eObject : gmfResource.getContents()) {
+			if (eObject instanceof Diagram) {
+				Diagram newDiagram = (Diagram) eObject;
+				if (diagram.equals(newDiagram) == false && domainElement.equals(newDiagram.getElement())) {
 					return newDiagram;
 				}
 			}
@@ -1093,20 +1095,20 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Checks whether a <Diagram> contains a <View> of the given element.
-	 * 
+	 *
 	 * @param diagram
-	 *        the diagram
+	 *            the diagram
 	 * @param element
-	 *        the element
-	 * 
+	 *            the element
+	 *
 	 * @return true, if successful
 	 */
 	private static boolean diagramHasElement(Diagram diagram, EObject element) {
 
-		for(TreeIterator<EObject> iterator = diagram.eAllContents(); iterator.hasNext();) {
+		for (TreeIterator<EObject> iterator = diagram.eAllContents(); iterator.hasNext();) {
 			EObject eObject = iterator.next();
-			if(eObject instanceof View) {
-				if(((View)eObject).getElement() != null && ((View)eObject).getElement().equals(element)) {
+			if (eObject instanceof View) {
+				if (((View) eObject).getElement() != null && ((View) eObject).getElement().equals(element)) {
 					return true;
 				}
 			}
@@ -1128,7 +1130,7 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Stores the list of given diagrams in their resources' IFiles' properties.
-	 * 
+	 *
 	 * @param openDiagrams
 	 */
 	// @unused
@@ -1136,9 +1138,9 @@ public class MultiDiagramUtil {
 		List<Resource> affectedResources = new ArrayList<Resource>();
 		List<EObject> affectedEObjects = new ArrayList<EObject>();
 
-		for(EObject eObject : openDiagrams) {
-			if(eObject != null && eObject.eResource() != null) {
-				if(!affectedResources.contains(eObject.eResource())) {
+		for (EObject eObject : openDiagrams) {
+			if (eObject != null && eObject.eResource() != null) {
+				if (!affectedResources.contains(eObject.eResource())) {
 					affectedResources.add(eObject.eResource());
 				}
 				affectedEObjects.add(eObject);
@@ -1146,9 +1148,9 @@ public class MultiDiagramUtil {
 		}
 
 		String openToStore = "";
-		for(Resource resource : affectedResources) {
-			for(EObject eObject : affectedEObjects) {
-				if(eObject.eResource() == resource) {
+		for (Resource resource : affectedResources) {
+			for (EObject eObject : affectedEObjects) {
+				if (eObject.eResource() == resource) {
 					openToStore += (resource.getURIFragment(eObject) + OpenDiagramsSeparator);
 				}
 			}
@@ -1165,7 +1167,7 @@ public class MultiDiagramUtil {
 
 	/**
 	 * Gets the list of open diagrams for the given {@link IEditorInput}.
-	 * 
+	 *
 	 * @param editorInput
 	 * @return
 	 */
@@ -1173,24 +1175,24 @@ public class MultiDiagramUtil {
 	public static List<EObject> getOpenDiagrams(IEditorInput editorInput) {
 		List<EObject> openDiagrams = new ArrayList<EObject>();
 		String path = PathsUtil.getRelativeWorkspaceFromEditorInput(editorInput);
-		if(path != null) {
+		if (path != null) {
 			IFile file = ResourcesPlugin.getWorkspace().getRoot().getFile(new Path(path));
 			try {
 				String diagramsToOpenProperty = file.getPersistentProperty(OpenDiagramsFileProperty);
-				if(diagramsToOpenProperty == null || diagramsToOpenProperty.length() <= 0) {
+				if (diagramsToOpenProperty == null || diagramsToOpenProperty.length() <= 0) {
 					return Collections.emptyList();
 				}
 				List<String> diagramsToOpen = Arrays.asList(diagramsToOpenProperty.split(OpenDiagramsSeparator));
-				if(diagramsToOpen == null || diagramsToOpen.size() <= 0) {
+				if (diagramsToOpen == null || diagramsToOpen.size() <= 0) {
 					return openDiagrams;
 				}
 				List<EObject> rootEObjects = MDTUtil.getRootElementsFromFile(editorInput);
 				Diagram diagram = null;
-				for(EObject eObject : rootEObjects) {
-					diagram = (Diagram)Platform.getAdapterManager().getAdapter(eObject, Diagram.class);
-					if(diagram != null && diagram.eResource() != null) {
+				for (EObject eObject : rootEObjects) {
+					diagram = (Diagram) Platform.getAdapterManager().getAdapter(eObject, Diagram.class);
+					if (diagram != null && diagram.eResource() != null) {
 						String fragment = diagram.eResource().getURIFragment(diagram);
-						if(diagramsToOpen.contains(fragment)) {
+						if (diagramsToOpen.contains(fragment)) {
 							openDiagrams.add(diagram);
 						}
 					}

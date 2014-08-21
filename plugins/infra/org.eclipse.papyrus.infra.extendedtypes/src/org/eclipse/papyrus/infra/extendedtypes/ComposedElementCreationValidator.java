@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -22,23 +22,25 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
  */
 public class ComposedElementCreationValidator implements ICreationElementValidator {
 
-	
+
 	private final List<ICreationElementValidator> composedValidators;
 
 	/**
 	 * Default Constructor
-	 * @param composedValidators the list of composed validators
+	 * 
+	 * @param composedValidators
+	 *            the list of composed validators
 	 */
 	public ComposedElementCreationValidator(List<ICreationElementValidator> composedValidators) {
 		this.composedValidators = composedValidators;
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	public boolean canCreate(CreateElementRequest request) {
-		for(ICreationElementValidator validator : getComposedValidators()) {
-			if(!validator.canCreate(request)) {
+		for (ICreationElementValidator validator : getComposedValidators()) {
+			if (!validator.canCreate(request)) {
 				return false;
 			}
 		}
@@ -48,6 +50,7 @@ public class ComposedElementCreationValidator implements ICreationElementValidat
 
 	/**
 	 * Returns the list of composed validators
+	 * 
 	 * @return the list of composed validators
 	 */
 	protected List<ICreationElementValidator> getComposedValidators() {

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,14 +26,14 @@ import org.eclipse.papyrus.uml.diagram.common.groups.core.groupcontainment.Group
  * If A is an ancestor of B in the graphical model or in the model then A<B
  * If B is an ancestor of A in the graphical model or in the model then A<B
  * else A=B (there is no parent link between them)
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class GraphicalAndModelElementComparator implements Comparator<IGraphicalEditPart> {
 
 	/**
-	 * 
+	 *
 	 * @author adaussy
 	 */
 	public static enum Mode {
@@ -45,7 +45,7 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 
 	/**
 	 * Current mode of the comparator
-	 * 
+	 *
 	 * @see {@link GraphicalAndModelElementComparator.Mode}
 	 */
 	private Mode mode;
@@ -66,7 +66,7 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 
 	/**
 	 * Get the current mode
-	 * 
+	 *
 	 * @return Current Mode
 	 */
 	public Mode getMode() {
@@ -75,9 +75,9 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 
 	/**
 	 * Set the current mode
-	 * 
+	 *
 	 * @param mode
-	 *        we want to set @see {@link GraphicalAndModelElementComparator.Mode}
+	 *            we want to set @see {@link GraphicalAndModelElementComparator.Mode}
 	 */
 	public void setMode(Mode mode) {
 		this.mode = mode;
@@ -88,18 +88,18 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 	 * If o1 is an ancestor of o2 in the graphical model or in the model then o2>o1
 	 * If o2 is an ancestor of o1 in the graphical model or in the model then o2<o1
 	 * else o2 = o1
-	 * 
+	 *
 	 * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
-	 * 
+	 *
 	 * @param o1
 	 * @param o2
 	 * @return
 	 */
 	public int compare(IGraphicalEditPart o1, IGraphicalEditPart o2) {
-		if(o1.equals(o2)) {
+		if (o1.equals(o2)) {
 			return 0;
 		} else {
-			if(Mode.GRAPHICAL_AND_MODEL.equals(mode)) {
+			if (Mode.GRAPHICAL_AND_MODEL.equals(mode)) {
 				/*
 				 * Compute the Graphic comparison
 				 */
@@ -109,8 +109,8 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 				 * Look if o1 is an ancestor of o2 (graphical model)
 				 */
 				EditPart graphicalParent = o2Graphic.getParent();
-				while(graphicalParent != null) {
-					if(graphicalParent.equals(o1Graphic)) {
+				while (graphicalParent != null) {
+					if (graphicalParent.equals(o1Graphic)) {
 						return -1;
 					}
 					graphicalParent = graphicalParent.getParent();
@@ -119,8 +119,8 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 				 * Look if o2 is an ancestor of o1 (graphical model)
 				 */
 				graphicalParent = o1Graphic.getParent();
-				while(graphicalParent != null) {
-					if(graphicalParent == o2Graphic) {
+				while (graphicalParent != null) {
+					if (graphicalParent == o2Graphic) {
 						return 1;
 					}
 					graphicalParent = graphicalParent.getParent();
@@ -145,13 +145,13 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 		/*
 		 * Find the edit part of the modelParent
 		 */
-		IGraphicalEditPart modelParentEditPart = (IGraphicalEditPart)registery.get(modelParent);
-		while(modelParent != null || GroupContainmentRegistry.isContainerConcerned(modelParentEditPart)) {
-			if(modelParent == o1model) {
+		IGraphicalEditPart modelParentEditPart = (IGraphicalEditPart) registery.get(modelParent);
+		while (modelParent != null || GroupContainmentRegistry.isContainerConcerned(modelParentEditPart)) {
+			if (modelParent == o1model) {
 				return -1;
 			}
 			modelParent = modelParent.eContainer();
-			modelParentEditPart = (IGraphicalEditPart)registery.get(modelParent);
+			modelParentEditPart = (IGraphicalEditPart) registery.get(modelParent);
 		}
 		/*
 		 * Look if o2 is an ancestor on the model of o2
@@ -160,13 +160,13 @@ public class GraphicalAndModelElementComparator implements Comparator<IGraphical
 		/*
 		 * Find the edit part of the modelParent
 		 */
-		modelParentEditPart = (IGraphicalEditPart)registery.get(modelParent);
-		while(modelParent != null) {
-			if(modelParent == o2model || GroupContainmentRegistry.isContainerConcerned(modelParentEditPart)) {
+		modelParentEditPart = (IGraphicalEditPart) registery.get(modelParent);
+		while (modelParent != null) {
+			if (modelParent == o2model || GroupContainmentRegistry.isContainerConcerned(modelParentEditPart)) {
 				return -1;
 			}
 			modelParent = modelParent.eContainer();
-			modelParentEditPart = (IGraphicalEditPart)registery.get(modelParent);
+			modelParentEditPart = (IGraphicalEditPart) registery.get(modelParent);
 		}
 		return 0;
 	}

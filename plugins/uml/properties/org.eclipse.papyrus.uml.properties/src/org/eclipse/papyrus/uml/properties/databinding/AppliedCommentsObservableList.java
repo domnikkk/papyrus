@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,31 +48,31 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 	 * Gets the applied comments list.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @return the applied comments list
 	 */
 	private static List<Comment> getAppliedCommentsList(Element source) {
 		List<Comment> result = new LinkedList<Comment>();
 		Iterator<Setting> it = UML2Util.getNonNavigableInverseReferences(source).iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Setting setting = it.next();
-			if(setting.getEStructuralFeature() == UMLPackage.Literals.COMMENT__ANNOTATED_ELEMENT) {
-				if(setting.getEObject() instanceof Comment) {
-					Comment comment = (Comment)setting.getEObject();
+			if (setting.getEStructuralFeature() == UMLPackage.Literals.COMMENT__ANNOTATED_ELEMENT) {
+				if (setting.getEObject() instanceof Comment) {
+					Comment comment = (Comment) setting.getEObject();
 					// small bugfix...
 					// UML2Util.getNonNavigableInverseReferences returns more element than
 					// needed, especially elements that are not real ones
 					// so we must check if they are contained by the current resource or
 					// not...
 					boolean isProxy = false;
-					for(Element annotatedElement : comment.getAnnotatedElements()) {
-						if(annotatedElement.eResource() == null) {
+					for (Element annotatedElement : comment.getAnnotatedElements()) {
+						if (annotatedElement.eResource() == null) {
 							isProxy = true;
 						}
 					}
 					// this is the real element, not a ghost one. display it in the list
-					if(!isProxy) {
-						if(comment.getAnnotatedElements().contains(source)) {
+					if (!isProxy) {
+						if (comment.getAnnotatedElements().contains(source)) {
 							result.add(comment);
 						}
 					}
@@ -86,17 +86,17 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 	 * <p>
 	 * Redefine refresh cache because applied comments list is a subset of {@link Element#getOwnedComments <em>Owned Comments</em>}.
 	 * </p>
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.emf.databinding.EMFObservableList#refreshCacheList()
 	 *
 	 */
 	@Override
 	protected void refreshCacheList() {
-		if(isDisposed()) {
+		if (isDisposed()) {
 			return;
 		}
 		wrappedList.clear();
-		wrappedList.addAll(getAppliedCommentsList((Element)source));
+		wrappedList.addAll(getAppliedCommentsList((Element) source));
 		fireListChange(null);
 	}
 
@@ -112,18 +112,18 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 	public Command getAddCommand(Object value) {
 		CompoundCommand addAppliedCommentCommand = null;
 
-		if(value instanceof Comment) {
+		if (value instanceof Comment) {
 
 			addAppliedCommentCommand = new CompoundCommand("Add applied comment");
 
-			//Add the comment to source#ownedComment
+			// Add the comment to source#ownedComment
 			SetRequest setRequest = new SetRequest(source, feature, value);
 			addAppliedCommentCommand.append(getCommandFromRequests(getProvider(), Collections.singletonList(setRequest)));
 
-			//Check if source was already had to comment 
-			if(!((Comment)value).getAnnotatedElements().contains(source)) {
+			// Check if source was already had to comment
+			if (!((Comment) value).getAnnotatedElements().contains(source)) {
 				// Add comment to element
-				AddCommand addCommand = new AddCommand(editingDomain, (EObject)value, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), source);
+				AddCommand addCommand = new AddCommand(editingDomain, (EObject) value, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), source);
 				addAppliedCommentCommand.append(addCommand);
 			}
 		}
@@ -141,20 +141,20 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 	public Command getRemoveCommand(Object value) {
 
 		Command removeAppliedCommentCommand = null;
-		if(value instanceof Comment) {
+		if (value instanceof Comment) {
 
-			Comment comment = (Comment)value;
+			Comment comment = (Comment) value;
 
-			if(comment.getAnnotatedElements().size() > 1) {
-				//Remove on link between source and comment
+			if (comment.getAnnotatedElements().size() > 1) {
+				// Remove on link between source and comment
 				List<Element> values = new LinkedList<Element>(comment.getAnnotatedElements());
 				values.remove(source);
 				SetRequest setRequest = new SetRequest(comment, UMLPackage.eINSTANCE.getComment_AnnotatedElement(), values);
 				removeAppliedCommentCommand = getCommandFromRequests(getProvider(), Collections.singletonList(setRequest));
 
 			} else {
-				//Remove comment in element
-				DestroyElementRequest detroyRequest = new DestroyElementRequest((TransactionalEditingDomain)editingDomain, comment, false);
+				// Remove comment in element
+				DestroyElementRequest detroyRequest = new DestroyElementRequest((TransactionalEditingDomain) editingDomain, comment, false);
 				removeAppliedCommentCommand = getCommandFromRequests(getProvider(), Collections.singleton(detroyRequest));
 			}
 
@@ -174,8 +174,8 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 		Iterator<?> itr = values.iterator();
 		Element value;
 		CompoundCommand removeAppliedCommentCommand = new CompoundCommand("Remove applied comment");
-		while(itr.hasNext()) {
-			value = (Element)itr.next();
+		while (itr.hasNext()) {
+			value = (Element) itr.next();
 			Assert.isTrue(value instanceof Comment);
 			removeAppliedCommentCommand.append(getRemoveCommand(value));
 		}
@@ -188,42 +188,42 @@ public class AppliedCommentsObservableList extends PapyrusObservableList {
 	@Override
 	public Command getClearCommand() {
 		throw new UnsupportedOperationException();
-		//		return super.getClearCommand();
+		// return super.getClearCommand();
 	}
 
 	@Override
 	public List<Command> getMoveCommands(int oldIndex, int newIndex) {
 		throw new UnsupportedOperationException();
-		//		return super.getMoveCommands(oldIndex, newIndex);
+		// return super.getMoveCommands(oldIndex, newIndex);
 	}
 
 	@Override
 	public Command getRemoveCommand(int index) {
 		throw new UnsupportedOperationException();
-		//		return super.getRemoveCommand(index);
+		// return super.getRemoveCommand(index);
 	}
 
 	@Override
 	public Command getSetCommand(int index, Object value) {
 		throw new UnsupportedOperationException();
-		//		return super.getSetCommand(index, value);
+		// return super.getSetCommand(index, value);
 	}
 
 	@Override
 	public Command getAddAllCommand(Collection<?> values) {
 		throw new UnsupportedOperationException();
-		//		return super.getAddAllCommand(values);
+		// return super.getAddAllCommand(values);
 	}
 
 	@Override
 	public Command getAddAllCommand(int index, Collection<?> values) {
 		throw new UnsupportedOperationException();
-		//		return super.getAddAllCommand(index, values);
+		// return super.getAddAllCommand(index, values);
 	}
 
 	@Override
 	public Command getAddCommand(int index, Object value) {
 		throw new UnsupportedOperationException();
-		//		return super.getAddCommand(index, value);
+		// return super.getAddCommand(index, value);
 	}
 }

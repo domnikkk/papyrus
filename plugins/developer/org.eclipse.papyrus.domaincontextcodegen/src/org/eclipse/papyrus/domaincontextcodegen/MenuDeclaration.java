@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Menu Declaration</b></em>'.
  * <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration#getCommands <em>Commands</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getMenuDeclaration()
  * @model
  * @generated
@@ -35,7 +35,7 @@ public interface MenuDeclaration extends EObject {
 	 * If the meaning of the '<em>Location URI</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Location URI</em>' attribute.
 	 * @see #setLocationURI(String)
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getMenuDeclaration_LocationURI()
@@ -48,9 +48,9 @@ public interface MenuDeclaration extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.domaincontextcodegen.MenuDeclaration#getLocationURI <em>Location URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Location URI</em>' attribute.
+	 *            the new value of the '<em>Location URI</em>' attribute.
 	 * @see #getLocationURI()
 	 * @generated
 	 */
@@ -64,7 +64,7 @@ public interface MenuDeclaration extends EObject {
 	 * If the meaning of the '<em>Commands</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Commands</em>' reference list.
 	 * @see org.eclipse.papyrus.domaincontextcodegen.DomaincontextcodegenPackage#getMenuDeclaration_Commands()
 	 * @model

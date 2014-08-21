@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.NamedElement;
  * <li>the request to build the new element (optional)</li>
  * <li>the element itself when it has been created</li>
  * </ul>
- * 
- * 
- * 
+ *
+ *
+ *
  */
 public class NewElementRepresentation {
 
@@ -51,17 +51,17 @@ public class NewElementRepresentation {
 	private CreateElementRequest request;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param name
-	 *        the name of the new element
+	 *            the name of the new element
 	 * @param parent
-	 *        the parent of the new element
+	 *            the parent of the new element
 	 * @param hintedType
-	 *        the hinted type of the new element
+	 *            the hinted type of the new element
 	 * @param request
-	 *        the request to build the new element (can be <code>null</code>)
+	 *            the request to build the new element (can be <code>null</code>)
 	 */
 	public NewElementRepresentation(String name, Object parent, IElementType hintedType, CreateElementRequest request) {
 		this.name = name;
@@ -73,7 +73,7 @@ public class NewElementRepresentation {
 
 	/**
 	 * Getter for {@link #hintedType}
-	 * 
+	 *
 	 * @return
 	 *         {@link #hintedType}
 	 */
@@ -83,7 +83,7 @@ public class NewElementRepresentation {
 
 	/**
 	 * Getter for {@link #name}
-	 * 
+	 *
 	 * @return
 	 *         {@link #name}
 	 */
@@ -93,7 +93,7 @@ public class NewElementRepresentation {
 
 	/**
 	 * Getter for {@link #parent}
-	 * 
+	 *
 	 * @return
 	 *         {@link #parent}
 	 */
@@ -103,28 +103,28 @@ public class NewElementRepresentation {
 
 	/**
 	 * Returns the parent of this element
-	 * 
+	 *
 	 * @return
 	 *         the parent of this element or <code>null</code> if the parent is a {@link NewElementRepresentation} itself and if it has not been
 	 *         created
 	 */
 	public EObject getEObjectParent() {
-		if(parent instanceof EObject) {
-			return (EObject)this.parent;
-		} else if(parent instanceof NewElementRepresentation) {
-			return ((NewElementRepresentation)parent).getEObject();
+		if (parent instanceof EObject) {
+			return (EObject) this.parent;
+		} else if (parent instanceof NewElementRepresentation) {
+			return ((NewElementRepresentation) parent).getEObject();
 		}
 		return null;
 	}
 
 	/**
 	 * Returns the created object
-	 * 
+	 *
 	 * @return
 	 *         the created Object or <code>null</code> if the object has not been created
 	 */
 	public EObject getEObject() {
-		if(this.request != null) {
+		if (this.request != null) {
 			return this.request.getNewElement();
 		}
 		return this.createdElement;
@@ -132,9 +132,9 @@ public class NewElementRepresentation {
 
 	/**
 	 * Setter for {@link #createdElement}
-	 * 
+	 *
 	 * @param newElement
-	 * 
+	 *
 	 */
 	public void setCreateElement(EObject newElement) {
 		this.createdElement = newElement;
@@ -142,7 +142,7 @@ public class NewElementRepresentation {
 
 	/**
 	 * Setter for {@link #request}
-	 * 
+	 *
 	 * @return
 	 *         {@link #request}
 	 */
@@ -151,9 +151,9 @@ public class NewElementRepresentation {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -163,10 +163,10 @@ public class NewElementRepresentation {
 
 	public String getQualifiedName() {
 		String qualifiedName = "";
-		if(parent instanceof NewElementRepresentation) {
-			qualifiedName = ((NewElementRepresentation)parent).getQualifiedName();
-		} else if(parent instanceof NamedElement) {
-			qualifiedName = ((NamedElement)parent).getQualifiedName() + "::" + this.name;
+		if (parent instanceof NewElementRepresentation) {
+			qualifiedName = ((NewElementRepresentation) parent).getQualifiedName();
+		} else if (parent instanceof NamedElement) {
+			qualifiedName = ((NamedElement) parent).getQualifiedName() + "::" + this.name;
 		}
 		return qualifiedName;
 	}

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -34,7 +34,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
 /**
- * 
+ *
  * @author Vincent Lorenzo
  *         This class provides the contents to display for single reference in the combobox
  */
@@ -51,13 +51,13 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 	private Object axisElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param axisElement
-	 *        the axis element on which the combobox is declared
+	 *            the axis element on which the combobox is declared
 	 * @param elementProvider
-	 *        The table axis element provider
+	 *            The table axis element provider
 	 */
 	public UMLSingleReferenceComboBoxDataProvider(final Object axisElement, final ITableAxisElementProvider elementProvider) {
 		this.elementProvider = elementProvider;
@@ -65,13 +65,14 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.nebula.widgets.nattable.edit.editor.IComboBoxDataProvider#getValues(int, int)
-	 * 
+	 *
 	 * @param columnIndex
 	 * @param rowIndex
 	 * @return
 	 */
+	@Override
 	public List<?> getValues(int columnIndex, int rowIndex) {
 		Object colElement = this.elementProvider.getColumnElement(columnIndex);
 		Object rowElement = this.elementProvider.getRowElement(rowIndex);
@@ -80,17 +81,17 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 		rowElement = AxisUtils.getRepresentedElement(rowElement);
 		Element editedElement = null;
 		Object axis = null;
-		if(colElement == this.axisElement && rowElement instanceof EObject) {
-			editedElement = (Element)rowElement;
+		if (colElement == this.axisElement && rowElement instanceof EObject) {
+			editedElement = (Element) rowElement;
 			axis = colElement;
-		} else if(colElement instanceof EObject && rowElement == this.axisElement) {
-			editedElement = (Element)colElement;
+		} else if (colElement instanceof EObject && rowElement == this.axisElement) {
+			editedElement = (Element) colElement;
 			axis = rowElement;
 		}
 
-		if(editedElement != null && axis != null) {
-			if(axis instanceof EReference) {
-				return getPossibleValues(editedElement, (EReference)axis);
+		if (editedElement != null && axis != null) {
+			if (axis instanceof EReference) {
+				return getPossibleValues(editedElement, (EReference) axis);
 			} else {
 				final String id = AxisUtils.getPropertyId(this.axisElement);
 				return getPossibleValuesForStereotypeProperty(editedElement, id);
@@ -102,11 +103,11 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 	/**
 	 * TODO : should be merge with the specific method for stereotype property
 	 * TODO : this method should be stored in another plugin specific for UML
-	 * 
+	 *
 	 * @param element
-	 *        the edited element
+	 *            the edited element
 	 * @param feature
-	 *        the edited feature
+	 *            the edited feature
 	 * @return
 	 *         the list of the possible values for this element
 	 */
@@ -116,21 +117,21 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 		final TreeToFlatContentProvider flatP = new HierarchicToFlatContentProvider(provider);
 		final List<Object> list = Arrays.asList(flatP.getElements());
 		final Iterator<Object> iter = list.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			final Object current = iter.next();
-			if(current instanceof EObject) {
-				availableValues.add((EObject)current);
+			if (current instanceof EObject) {
+				availableValues.add((EObject) current);
 			}
 		}
 		return availableValues;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param element
-	 *        the element which are editing
+	 *            the element which are editing
 	 * @param id
-	 *        the id of the stereotype property
+	 *            the id of the stereotype property
 	 * @return
 	 *         the list of the possible values for this element
 	 */
@@ -147,10 +148,10 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 		final TreeToFlatContentProvider flatP = new HierarchicToFlatContentProvider(provider);
 		final List<Object> list = Arrays.asList(flatP.getElements());
 		final Iterator<Object> iter = list.iterator();
-		while(iter.hasNext()) {
+		while (iter.hasNext()) {
 			final Object current = iter.next();
-			if(current instanceof EObject) {
-				availableValues.add((EObject)current);
+			if (current instanceof EObject) {
+				availableValues.add((EObject) current);
 			}
 		}
 
@@ -159,42 +160,42 @@ public class UMLSingleReferenceComboBoxDataProvider implements IComboBoxDataProv
 
 
 	/**
-	 * 
+	 *
 	 * @param columnIndex
-	 *        the column index
+	 *            the column index
 	 * @param rowIndex
-	 *        the rowindex
+	 *            the rowindex
 	 * @return
 	 *         the edited object located at this place
 	 */
-	//	TODO : try to remove this method, improving the ComboAction...
+	// TODO : try to remove this method, improving the ComboAction...
 	public EObject getEditedEObject(int columnIndex, int rowIndex) {
 		Object colElement = this.elementProvider.getColumnElement(columnIndex);
 		Object rowElement = this.elementProvider.getRowElement(rowIndex);
 		colElement = AxisUtils.getRepresentedElement(colElement);
 		rowElement = AxisUtils.getRepresentedElement(rowElement);
-		Element el = (Element)rowElement;
+		Element el = (Element) rowElement;
 
-		if(colElement == this.axisElement) {
-			el = (Element)rowElement;
-		} else if(rowElement == this.axisElement) {
-			el = (Element)colElement;
+		if (colElement == this.axisElement) {
+			el = (Element) rowElement;
+		} else if (rowElement == this.axisElement) {
+			el = (Element) colElement;
 		} else {
-			//There is a problem in the declaration of the editor...
+			// There is a problem in the declaration of the editor...
 		}
 		return el;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param columnIndex
-	 *        the column index
+	 *            the column index
 	 * @param rowIndex
-	 *        the row index
+	 *            the row index
 	 * @return
 	 *         the edited feature located at this place
 	 */
-	//TODO : try to remove this method, improving the ComboAction...
+	// TODO : try to remove this method, improving the ComboAction...
 	public Object getEditedFeature(int columnIndex, int rowIndex) {
 		return this.axisElement;
 	}

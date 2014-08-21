@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,9 +21,9 @@ import com.google.common.base.Predicate;
 
 /**
  * Same as {@link EcoreUtil#filterDescendants(java.util.Collection)}
- * 
+ *
  * @author arthur daussy
- * 
+ *
  */
 public class DescendantsFilter implements Predicate<EObject> {
 
@@ -34,12 +34,13 @@ public class DescendantsFilter implements Predicate<EObject> {
 		this.initialCollection = initialCollection;
 	}
 
+	@Override
 	public boolean apply(EObject input) {
-		for(EObject target : initialCollection) {
-			if(target == input) {
+		for (EObject target : initialCollection) {
+			if (target == input) {
 				continue;
 			}
-			if(EcoreUtil.isAncestor(input, target)) {
+			if (EcoreUtil.isAncestor(input, target)) {
 				return false;
 			}
 		}

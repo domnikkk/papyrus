@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,22 +22,23 @@ import org.eclipse.papyrus.uml.diagram.clazz.edit.parts.ClassNameEditPart;
 import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
 import org.eclipse.swt.graphics.Image;
 
-public class CustomRequirementNameEditPart  extends ClassNameEditPart{ //NamedElementNodeLabelNameEditPart {
+public class CustomRequirementNameEditPart extends ClassNameEditPart { // NamedElementNodeLabelNameEditPart {
 
 	/** Constructor */
 	public CustomRequirementNameEditPart(View view) {
 		super(view);
 	}
 
+	@Override
 	protected Image getLabelIcon() {
 		EObject parserElement = getParserElement();
-		if(parserElement == null) {
+		if (parserElement == null) {
 			return null;
 		}
 
 		List<View> views = DiagramEditPartsUtil.findViews(parserElement, getViewer());
-		for(View view : views) {
-			if( AppearanceHelper.showElementIcon(view)) {
+		for (View view : views) {
+			if (AppearanceHelper.showElementIcon(view)) {
 				return org.eclipse.papyrus.sysml.diagram.common.Activator.getInstance().getLabelProvider().getImage(parserElement);
 			}
 		}

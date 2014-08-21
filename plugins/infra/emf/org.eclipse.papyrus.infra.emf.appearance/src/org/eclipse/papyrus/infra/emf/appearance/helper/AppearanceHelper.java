@@ -38,17 +38,17 @@ public class AppearanceHelper {
 	}
 
 	private static AppearanceStyleProvider findStyleProvider() {
-		//Default style provider
+		// Default style provider
 		AppearanceStyleProvider provider = new AnnotationStyleProvider();
 
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
 		int currentPriority = Integer.MAX_VALUE;
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
 				int priority = Integer.parseInt(e.getAttribute("priority")); //$NON-NLS-1$
-				if(priority < currentPriority) {
-					provider = (AppearanceStyleProvider)e.createExecutableExtension("styleProvider"); //$NON-NLS-1$
+				if (priority < currentPriority) {
+					provider = (AppearanceStyleProvider) e.createExecutableExtension("styleProvider"); //$NON-NLS-1$
 					currentPriority = priority;
 				}
 			} catch (Exception ex) {

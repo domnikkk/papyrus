@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -24,7 +24,7 @@ import org.eclipse.core.databinding.observable.value.IObservableValue;
 
 /**
  * Manage the Array to List and then update from List to Array
- * 
+ *
  * @author yyang
  */
 public class ListToArrayObservableValue extends AbstractObservableValue {
@@ -57,10 +57,12 @@ public class ListToArrayObservableValue extends AbstractObservableValue {
 		});
 	}
 
+	@Override
 	protected Object doGetValue() {
 		return source;
 	}
 
+	@Override
 	protected void doSetValue(Object value) {
 		super.doSetValue(value);
 	}
@@ -80,9 +82,9 @@ public class ListToArrayObservableValue extends AbstractObservableValue {
 
 	protected void handleChange() {
 		try {
-			Object elements = Array.newInstance((Class<?>)getValueType(), source.size());
-			Object[] objects = source.toArray((Object[])elements);
-			if(cacheData == null) {
+			Object elements = Array.newInstance((Class<?>) getValueType(), source.size());
+			Object[] objects = source.toArray((Object[]) elements);
+			if (cacheData == null) {
 				cacheData = target.getValue();
 			}
 			target.setValue(objects);

@@ -29,7 +29,7 @@ import org.eclipse.papyrus.uml.tools.databinding.CommandBasedObservableValue;
 /**
  * An IObservableValue for custom Papyrus properties.
  * This enables to edit a few preferences-based values.
- * 
+ *
  * @author Camille Letavernier
  */
 public class ElementCustomizationObservableValue extends AbstractUMLAggregatedObservableValue implements CommandBasedObservableValue, AggregatedObservable {
@@ -43,28 +43,28 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 	private View notationElement;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param sourceElement
-	 *        The selected EditPart
+	 *            The selected EditPart
 	 * @param property
-	 *        The Property to edit
+	 *            The Property to edit
 	 */
 	public ElementCustomizationObservableValue(EditPart sourceElement, Property property) {
 		super(EMFHelper.resolveEditingDomain(sourceElement));
 		this.sourceElement = sourceElement;
 		this.property = property;
-		notationElement = (View)sourceElement.getModel();
-		if(domain instanceof TransactionalEditingDomain) {
-			transactionalDomain = (TransactionalEditingDomain)domain;
+		notationElement = (View) sourceElement.getModel();
+		if (domain instanceof TransactionalEditingDomain) {
+			transactionalDomain = (TransactionalEditingDomain) domain;
 		}
 	}
 
-	//TODO : The value is not correctly refreshed when someone else edits it
-	//Some listeners need to be added
+	// TODO : The value is not correctly refreshed when someone else edits it
+	// Some listeners need to be added
 	public Object getValueType() {
-		switch(property) {
+		switch (property) {
 		case QUALIFIED_NAME:
 			return Integer.class;
 		case ELEMENT_ICON:
@@ -80,7 +80,7 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 	 */
 	@Override
 	protected Object doGetValue() {
-		switch(property) {
+		switch (property) {
 		case ELEMENT_ICON:
 			return AppearanceHelper.showElementIcon(notationElement);
 		case SHADOW:
@@ -105,24 +105,24 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 	 * {@inheritDoc}
 	 */
 	public Command getCommand(Object value) {
-		switch(property) {
+		switch (property) {
 		case ELEMENT_ICON:
-			if(value instanceof Boolean) {
-				return new SetNameLabelIconCommand(transactionalDomain, notationElement, (Boolean)value);
+			if (value instanceof Boolean) {
+				return new SetNameLabelIconCommand(transactionalDomain, notationElement, (Boolean) value);
 			} else {
 				Activator.log.warn(value + " is not a valid value for ElementIcon ; need a Boolean"); //$NON-NLS-1$
 			}
 			break;
 		case SHADOW:
-			if(value instanceof Boolean) {
-				return new SetShadowFigureCommand(transactionalDomain, notationElement, (Boolean)value);
+			if (value instanceof Boolean) {
+				return new SetShadowFigureCommand(transactionalDomain, notationElement, (Boolean) value);
 			} else {
 				Activator.log.warn(value + " is not a valid value for Shadow ; need a Boolean"); //$NON-NLS-1$
 			}
 			break;
 		case QUALIFIED_NAME:
-			if(value instanceof Integer) {
-				return new SetQualifiedNameDepthCommand(transactionalDomain, notationElement, (Integer)value);
+			if (value instanceof Integer) {
+				return new SetQualifiedNameDepthCommand(transactionalDomain, notationElement, (Integer) value);
 			} else {
 				Activator.log.warn(value + " is not a valid value for QualifiedNameDepth ; need an Integer"); //$NON-NLS-1$
 			}
@@ -134,9 +134,9 @@ public class ElementCustomizationObservableValue extends AbstractUMLAggregatedOb
 
 	/**
 	 * The list of valid properties for {@link ElementCustomizationObservableValue}
-	 * 
+	 *
 	 * @author Camille Letavernier
-	 * 
+	 *
 	 */
 	public enum Property {
 

@@ -22,7 +22,7 @@ import org.eclipse.papyrus.xwt.XWT;
 
 /**
  * @since 3.2
- * 
+ *
  */
 public class AggregateObservableValue extends AbstractObservableValue {
 
@@ -37,7 +37,7 @@ public class AggregateObservableValue extends AbstractObservableValue {
 	private IValueChangeListener listener = new IValueChangeListener() {
 
 		public void handleValueChange(ValueChangeEvent event) {
-			if(!updating) {
+			if (!updating) {
 				fireValueChange(Diffs.createValueDiff(currentValue, doGetValue()));
 			}
 		}
@@ -52,27 +52,28 @@ public class AggregateObservableValue extends AbstractObservableValue {
 		this.converter = converter;
 
 		this.observableValues = observableValues;
-		for(int i = 0; i < observableValues.length; i++) {
+		for (int i = 0; i < observableValues.length; i++) {
 			observableValues[i].addValueChangeListener(listener);
 		}
 		doGetValue();
 	}
 
 	private static Realm findRealm(IObservableValue[] observableValues) {
-		for(IObservableValue observableValue : observableValues) {
+		for (IObservableValue observableValue : observableValues) {
 			return observableValue.getRealm();
 		}
 		return XWT.getRealm();
 	}
 
+	@Override
 	public void doSetValue(Object value) {
 		Object oldValue = doGetValue();
 
 		try {
 			updating = true;
 			Object[] values = converter.convertBack(value);
-			for(int i = 0; i < observableValues.length; i++) {
-				if(i < values.length) {
+			for (int i = 0; i < observableValues.length; i++) {
+				if (i < values.length) {
 					observableValues[i].setValue(values[i]);
 				} else {
 					observableValues[i].setValue(null);
@@ -86,9 +87,10 @@ public class AggregateObservableValue extends AbstractObservableValue {
 		fireValueChange(Diffs.createValueDiff(oldValue, value));
 	}
 
+	@Override
 	public Object doGetValue() {
 		Object[] values = new Object[observableValues.length];
-		for(int i = 0; i < values.length; i++) {
+		for (int i = 0; i < values.length; i++) {
 			values[i] = observableValues[i].getValue();
 		}
 		return converter.convert(values);
@@ -98,8 +100,9 @@ public class AggregateObservableValue extends AbstractObservableValue {
 		return String[].class;
 	}
 
+	@Override
 	public synchronized void dispose() {
-		for(int i = 0; i < observableValues.length; i++) {
+		for (int i = 0; i < observableValues.length; i++) {
 			observableValues[i].removeValueChangeListener(listener);
 		}
 		super.dispose();

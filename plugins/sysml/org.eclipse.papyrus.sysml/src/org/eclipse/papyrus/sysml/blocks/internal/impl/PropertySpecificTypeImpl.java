@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ import org.eclipse.uml2.uml.Classifier;
  * <li>{@link org.eclipse.papyrus.sysml.blocks.internal.impl.PropertySpecificTypeImpl#getBase_Classifier <em>Base Classifier</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container implements PropertySpecificType {
@@ -39,7 +39,7 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 	 * The cached value of the '{@link #getBase_Classifier() <em>Base Classifier</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Classifier()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected PropertySpecificTypeImpl() {
@@ -57,7 +57,7 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier basicGetBase_Classifier() {
@@ -66,15 +66,16 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER:
-			if(resolve)
+			if (resolve) {
 				return getBase_Classifier();
+			}
 			return basicGetBase_Classifier();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -82,12 +83,12 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER:
 			return base_Classifier != null;
 		}
@@ -96,14 +97,14 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER:
-			setBase_Classifier((Classifier)newValue);
+			setBase_Classifier((Classifier) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -111,7 +112,7 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -121,14 +122,14 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case BlocksPackage.PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER:
-			setBase_Classifier((Classifier)null);
+			setBase_Classifier((Classifier) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -136,16 +137,17 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Classifier getBase_Classifier() {
-		if(base_Classifier != null && base_Classifier.eIsProxy()) {
-			InternalEObject oldBase_Classifier = (InternalEObject)base_Classifier;
-			base_Classifier = (Classifier)eResolveProxy(oldBase_Classifier);
-			if(base_Classifier != oldBase_Classifier) {
-				if(eNotificationRequired())
+		if (base_Classifier != null && base_Classifier.eIsProxy()) {
+			InternalEObject oldBase_Classifier = (InternalEObject) base_Classifier;
+			base_Classifier = (Classifier) eResolveProxy(oldBase_Classifier);
+			if (base_Classifier != oldBase_Classifier) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BlocksPackage.PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER, oldBase_Classifier, base_Classifier));
+				}
 			}
 		}
 		return base_Classifier;
@@ -153,14 +155,15 @@ public class PropertySpecificTypeImpl extends MinimalEObjectImpl.Container imple
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Classifier(Classifier newBase_Classifier) {
 		Classifier oldBase_Classifier = base_Classifier;
 		base_Classifier = newBase_Classifier;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, BlocksPackage.PROPERTY_SPECIFIC_TYPE__BASE_CLASSIFIER, oldBase_Classifier, base_Classifier));
+		}
 	}
 
 } // PropertySpecificTypeImpl

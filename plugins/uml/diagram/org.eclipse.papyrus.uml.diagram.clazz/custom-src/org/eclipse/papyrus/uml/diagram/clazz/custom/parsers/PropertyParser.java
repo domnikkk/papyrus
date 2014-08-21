@@ -19,6 +19,7 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
@@ -58,8 +59,8 @@ public class PropertyParser implements IParser {
 	 */
 	@Override
 	public String getEditString(final IAdaptable element, int flags) {
-		if(element instanceof EObjectAdapter) {
-			final Property property = ((Property)((EObjectAdapter)element).getRealObject());
+		if (element instanceof EObjectAdapter) {
+			final Property property = ((Property) ((EObjectAdapter) element).getRealObject());
 			return property.getName();
 		}
 		return "";
@@ -71,7 +72,7 @@ public class PropertyParser implements IParser {
 	 */
 	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
-		final Property property = ((Property)((EObjectAdapter)element).getRealObject());
+		final Property property = ((Property) ((EObjectAdapter) element).getRealObject());
 		final String result = newString;
 		final TransactionalEditingDomain editingDomain;
 		try {
@@ -80,7 +81,7 @@ public class PropertyParser implements IParser {
 			return null;
 		}
 
-		AbstractTransactionalCommand tc = new AbstractTransactionalCommand(editingDomain, "Edit Property", (List<?>)null) {
+		AbstractTransactionalCommand tc = new AbstractTransactionalCommand(editingDomain, "Edit Property", (List<?>) null) {
 
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
@@ -128,6 +129,6 @@ public class PropertyParser implements IParser {
 	 */
 	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
-		return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IParserEditStatus.OK, "");
+		return new ParserEditStatus(UMLDiagramEditorPlugin.ID, IStatus.OK, "");
 	}
 }

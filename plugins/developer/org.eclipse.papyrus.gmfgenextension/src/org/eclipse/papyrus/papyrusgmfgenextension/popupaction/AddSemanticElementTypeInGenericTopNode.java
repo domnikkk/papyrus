@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2009 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -28,7 +28,6 @@ import org.eclipse.gmf.codegen.gmfgen.TypeModelFacet;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.ui.IViewPart;
 
 /**
@@ -48,9 +47,9 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 	public static final String URI_NOTATION_GENMODEL = "org.eclipse.gmf.runtime.notation/model/notation.genmodel"; //$NON-NLS-1$
 
 	public static final String URI_UML_GENMODEL = "org.eclipse.uml2.uml/model/UML.genmodel"; //$NON-NLS-1$
-	
-	
-	
+
+
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -65,61 +64,63 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 
 		// Parse selected GenLink(s) and add the desired CustomBehavior
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenDiagram) {
+			if (eObject instanceof GenDiagram) {
 
-				GenDiagram genDiagram = (GenDiagram)eObject;
+				GenDiagram genDiagram = (GenDiagram) eObject;
 				ResourceSet resourceSet = genDiagram.eResource().getResourceSet();
 				int updated = 0;
 				int created = 0;
-				
+
 				// create and set values for top node and sub children
 				List<GenClass> concreteUMLMetaclasses = getAllUMLConcreteClasses(resourceSet);
-				for(GenClass currentGenClass : concreteUMLMetaclasses) {
+				for (GenClass currentGenClass : concreteUMLMetaclasses) {
 					boolean needsCreation = false;
-					
+
 					String metaclassName = currentGenClass.getEcoreClass().getName();
 					GenTopLevelNode node = findTopLevelNode(genDiagram, currentGenClass);
-					if(node == null)  {
+					if (node == null) {
 						needsCreation = true;
 						node = createNewTopNode(genDiagram, metaclassName);
 						created++;
 					}
 					updateToplevelNode(node, resourceSet, currentGenClass);
-					
-					if(needsCreation) {
+
+					if (needsCreation) {
 						genDiagram.getTopLevelNodes().add(node);
 					}
 					updated++;
 				}
-				
-				MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Generation", created+ " nodes were created.\n "+updated+" nodes were updated");
+
+				MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Generation", created + " nodes were created.\n " + updated + " nodes were updated");
 			}
 		}
 	}
-	
-	
-	
+
+
+
 	/**
-	 * Returns all the UML {@link GenClass} that are related to UML constructs which are not abstract  
+	 * Returns all the UML {@link GenClass} that are related to UML constructs which are not abstract
+	 * 
 	 * @param resourceSet
 	 * @return
 	 */
 	protected List<GenClass> getAllUMLConcreteClasses(ResourceSet resourceSet) {
-		Resource umlResource = resourceSet.getResource( URI.createPlatformPluginURI(URI_UML_GENMODEL, false), true);
+		Resource umlResource = resourceSet.getResource(URI.createPlatformPluginURI(URI_UML_GENMODEL, false), true);
 		List<GenClass> classes = new ArrayList<GenClass>();
-		Iterator<EObject> it =  umlResource.getAllContents();
-		while(it.hasNext()) {
+		Iterator<EObject> it = umlResource.getAllContents();
+		while (it.hasNext()) {
 			EObject next = it.next();
-			if(next instanceof GenClass) {
-				GenClass genClass = (GenClass)next;
+			if (next instanceof GenClass) {
+				GenClass genClass = (GenClass) next;
 				EClass umlEClass = genClass.getEcoreClass();
-				if(umlEClass !=null && !umlEClass.isAbstract() && !umlEClass.isInterface()) {
+				if (umlEClass != null && !umlEClass.isAbstract() && !umlEClass.isInterface()) {
 					classes.add(genClass);
 				}
 			}
@@ -129,16 +130,19 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 
 	/**
 	 * Returns the top level node that corresponds to this metaclass
-	 * @param metaclassName name of the metaclass for which element type has to be defined
+	 * 
+	 * @param metaclassName
+	 *            name of the metaclass for which element type has to be defined
 	 * @return the top level node found or <code>null</code>;
 	 */
 	protected GenTopLevelNode findTopLevelNode(GenDiagram genDiagram, GenClass genClass) {
-		for(GenTopLevelNode topNode : genDiagram.getTopLevelNodes()) {
+		for (GenTopLevelNode topNode : genDiagram.getTopLevelNodes()) {
 			TypeModelFacet facet = topNode.getModelFacet();
-			if(facet !=null) {
-				if(genClass.equals(facet.getMetaClass())) {
+			if (facet != null) {
+				if (genClass.equals(facet.getMetaClass())) {
 					return topNode;
-				};
+				}
+				;
 			}
 		}
 		return null;
@@ -147,31 +151,31 @@ public class AddSemanticElementTypeInGenericTopNode extends Action {
 	protected void updateToplevelNode(GenTopLevelNode topLevelNode, ResourceSet resourceSet, GenClass genClass) {
 		String metaclassName = genClass.getEcoreClass().getName();
 		topLevelNode.setDiagramRunTimeClass(getNodeViewClass(resourceSet));
-		
+
 		TypeModelFacet typeModelFacet = topLevelNode.getModelFacet();
-		if(typeModelFacet == null) {
+		if (typeModelFacet == null) {
 			typeModelFacet = GMFGenFactory.eINSTANCE.createTypeModelFacet();
 			topLevelNode.setModelFacet(typeModelFacet);
 		}
-		
+
 		typeModelFacet.setMetaClass(genClass);
-		
+
 		ElementType type = topLevelNode.getElementType();
-		if(type == null) {
+		if (type == null) {
 			type = GMFGenFactory.eINSTANCE.createMetamodelType();
 			topLevelNode.setElementType(type);
 		}
 		type.setDefinedExternally(true);
-		type.setDisplayName(metaclassName+"_Semantic");
-		type.setUniqueIdentifier(ORG_ECLIPSE_PAPYRUS_UML+metaclassName);
+		type.setDisplayName(metaclassName + "_Semantic");
+		type.setUniqueIdentifier(ORG_ECLIPSE_PAPYRUS_UML + metaclassName);
 	}
-	
+
 	public GenTopLevelNode createNewTopNode(GenDiagram genDiagram, String metaclassName) {
 		GenTopLevelNode topLevelNode = GMFGenFactory.eINSTANCE.createGenTopLevelNode();
 		return topLevelNode;
 	}
- 
-	
+
+
 	protected GenClass getNodeViewClass(ResourceSet resourceSet) {
 		URI uri_notation = URI.createPlatformPluginURI(URI_NOTATION_GENMODEL, false);
 		Resource notation = resourceSet.getResource(uri_notation, true);

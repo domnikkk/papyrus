@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -47,27 +47,27 @@ public class CustomRegionPreDeleteCommand extends DeleteCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		// get the region to delete
 		View region = getView();
-		View compartment = (View)region.eContainer();
-		if(compartment.getChildren().size() != 1) {
+		View compartment = (View) region.eContainer();
+		if (compartment.getChildren().size() != 1) {
 			int regionWidth = Zone.getWidth(region);
 			int regionHeight = Zone.getHeight(region);
 
 			String s = Zone.getZone(region);
 			List<View> neighbours = null;
-			if(Zone.isRight(s)) {
+			if (Zone.isRight(s)) {
 				neighbours = Zone.getRegionLeftBorderOutsideNeighbours(region);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionWidth to their width
 					int width = Zone.getWidth(view);
 					width += regionWidth;
 					Zone.setWidth(view, width);
 				}
-			} else if(Zone.isLeft(s)) {
+			} else if (Zone.isLeft(s)) {
 				neighbours = Zone.getRegionRightBorderOutsideNeighbours(region);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionWidth to their width and
 					// translate their x of
@@ -79,10 +79,10 @@ public class CustomRegionPreDeleteCommand extends DeleteCommand {
 					x -= regionWidth;
 					Zone.setX(view, x);
 				}
-			} else if(Zone.isTop(s)) {
+			} else if (Zone.isTop(s)) {
 				neighbours = Zone.getRegionBottomBorderOutsideNeighbours(region);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionHeight to their height and
 					// -regionHeight to their
@@ -94,10 +94,10 @@ public class CustomRegionPreDeleteCommand extends DeleteCommand {
 					y -= regionHeight;
 					Zone.setY(view, y);
 				}
-			} else if(Zone.isBottom(s)) {
+			} else if (Zone.isBottom(s)) {
 				neighbours = Zone.getRegionTopBorderOutsideNeighbours(region);
 				Iterator<View> it = neighbours.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					View view = it.next();
 					// for each of these we add regionHeight to their height
 					int height = Zone.getHeight(view);

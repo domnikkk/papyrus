@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ public class ButtonConfiguration {
 
 	/**
 	 * Gets the image.
-	 * 
+	 *
 	 * @return the image
 	 */
 	public Image getImage() {
@@ -46,9 +46,9 @@ public class ButtonConfiguration {
 
 	/**
 	 * Sets the image.
-	 * 
+	 *
 	 * @param image
-	 *        the new image
+	 *            the new image
 	 */
 	public void setImage(Image image) {
 		this.image = image;
@@ -57,7 +57,7 @@ public class ButtonConfiguration {
 
 	/**
 	 * Gets the text.
-	 * 
+	 *
 	 * @return the text
 	 */
 	public String getText() {
@@ -67,9 +67,9 @@ public class ButtonConfiguration {
 
 	/**
 	 * Sets the text.
-	 * 
+	 *
 	 * @param text
-	 *        the new text
+	 *            the new text
 	 */
 	public void setText(String text) {
 		this.text = text;
@@ -78,7 +78,7 @@ public class ButtonConfiguration {
 
 	/**
 	 * Gets the tooltip text.
-	 * 
+	 *
 	 * @return the tooltip text
 	 */
 	public String getTooltipText() {
@@ -88,9 +88,9 @@ public class ButtonConfiguration {
 
 	/**
 	 * Sets the tooltip text.
-	 * 
+	 *
 	 * @param tooltipText
-	 *        the new tooltip text
+	 *            the new tooltip text
 	 */
 	public void setTooltipText(String tooltipText) {
 		this.tooltipText = tooltipText;
@@ -99,7 +99,7 @@ public class ButtonConfiguration {
 
 	/**
 	 * Gets the action.
-	 * 
+	 *
 	 * @return the action
 	 */
 	public AbstractComboAction getAction() {
@@ -109,9 +109,9 @@ public class ButtonConfiguration {
 
 	/**
 	 * Sets the action.
-	 * 
+	 *
 	 * @param action
-	 *        the new action
+	 *            the new action
 	 */
 	public void setAction(AbstractComboAction action) {
 		this.action = action;

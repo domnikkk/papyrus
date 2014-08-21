@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,11 +37,11 @@ public class ExtensionFactoryRegistry {
 	private void loadExtensionFactories() {
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			ExtensionFactory factory;
 			try {
-				factory = (ExtensionFactory)e.createExecutableExtension("factory"); //$NON-NLS-1$
-				if(!CustomizationPluginPackage.eINSTANCE.getCustomizableElement().isSuperTypeOf(factory.getCustomizableElementClass())) {
+				factory = (ExtensionFactory) e.createExecutableExtension("factory"); //$NON-NLS-1$
+				if (!CustomizationPluginPackage.eINSTANCE.getCustomizableElement().isSuperTypeOf(factory.getCustomizableElementClass())) {
 					Activator.log.warn(String.format("The plugin %s contributed an invalid factory (%s).\nThe associated EClass must implement CustomizableElement", e.getContributor().getName(), e.getAttribute("factory")));
 					continue;
 				}

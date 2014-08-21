@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -41,13 +41,13 @@ public class RequirementDiagramEditor extends org.eclipse.papyrus.uml.diagram.cl
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param servicesRegistry
-	 *        registry to find services (label providers, editing domain, etc.)
+	 *            registry to find services (label providers, editing domain, etc.)
 	 * @param diagram
-	 *        edited diagram
+	 *            edited diagram
 	 * @throws ServiceException
-	 *         exception thrown ni case of issue during initialization
+	 *             exception thrown ni case of issue during initialization
 	 */
 	public RequirementDiagramEditor(ServicesRegistry servicesRegistry, Diagram diagram) throws ServiceException {
 		super(servicesRegistry, diagram);

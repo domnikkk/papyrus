@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,52 +21,61 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
 
 /**
- * this figure is fill circle 
+ * this figure is fill circle
  */
-public class InitialNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure{
+public class InitialNode extends PapyrusNodeFigure implements IPapyrusNodeUMLElementFigure {
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Border getDefaultBorder(Color borderColor) {
 		return null;
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Dimension getPreferredSize(int wHint, int hHint) {
-		return new Dimension(20,20);
+		return new Dimension(20, 20);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void paintFigure(Graphics graphics) {
 		Rectangle r = getBounds().getCopy();
 		graphics.setBackgroundColor(getForegroundColor());
 		graphics.fillOval(r);
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypeDisplay(String stereotypes, Image image) {
 	}
+
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInBrace(String stereotypeProperties) {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setStereotypePropertiesInCompartment(String stereotypeProperties) {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Label getStereotypesLabel() {
 		return new Label();
 	}

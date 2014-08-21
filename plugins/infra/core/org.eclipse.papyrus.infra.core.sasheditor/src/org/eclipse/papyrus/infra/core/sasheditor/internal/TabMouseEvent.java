@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Cedric Dumoulin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.swt.events.MouseEvent;
 
 /**
  * Event sent by the TabEventProvider, through the {@link TabMouseEventsListener} interface.
- * 
+ *
  * @author cedric dumoulin
  *
  */
@@ -34,12 +34,12 @@ public class TabMouseEvent implements ITabMouseEvent {
 	 * The folder containing the page.
 	 */
 	TabFolderPart folder;
-	
+
 	/**
 	 * The mouse event sent on the tab.
 	 */
 	MouseEvent mouseEvent;
-	
+
 	/**
 	 * Constructor.
 	 *
@@ -55,19 +55,22 @@ public class TabMouseEvent implements ITabMouseEvent {
 	/**
 	 * @return the page
 	 */
+	@Override
 	public PagePart getPage() {
 		return page;
 	}
-	
+
 	/**
 	 * @return the folder
 	 */
+	@Override
 	public TabFolderPart getFolder() {
 		return folder;
 	}
 
+	@Override
 	public MouseEvent getMouseEvent() {
 		return mouseEvent;
 	}
-	
+
 }

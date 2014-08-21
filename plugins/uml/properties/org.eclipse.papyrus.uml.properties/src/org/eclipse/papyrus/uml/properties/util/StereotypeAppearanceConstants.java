@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -13,11 +13,11 @@ package org.eclipse.papyrus.uml.properties.util;
 
 /**
  * A list of constants for Stereotype appearance
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
-//TODO : Move this interface to UML Tools or UML Utils
+// TODO : Move this interface to UML Tools or UML Utils
 public interface StereotypeAppearanceConstants {
 
 	/** constant for stereotype text alignement */

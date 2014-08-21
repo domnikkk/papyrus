@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.views.properties.modelelement.AbstractModelElementFac
 /**
  * A Factory for building ModelElements for specific UML properties
  * (Virtual properties, such as Multiplicity or Navigability)
- * 
+ *
  * @author Camille Letavernier
  */
 public class UMLEditorFactory extends AbstractModelElementFactory<MemberEndModelElement> {
@@ -31,7 +31,7 @@ public class UMLEditorFactory extends AbstractModelElementFactory<MemberEndModel
 	@Override
 	protected MemberEndModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		EObject source = EMFHelper.getEObject(sourceElement);
-		if(source == null) {
+		if (source == null) {
 			Activator.log.warn("Unable to resolve the selected element to an EObject"); //$NON-NLS-1$
 			return null;
 		}
@@ -44,7 +44,7 @@ public class UMLEditorFactory extends AbstractModelElementFactory<MemberEndModel
 	@Override
 	protected void updateModelElement(MemberEndModelElement modelElement, Object newSourceElement) {
 		EObject eObject = EMFHelper.getEObject(newSourceElement);
-		if(eObject == null) {
+		if (eObject == null) {
 			throw new IllegalArgumentException("Cannot resolve EObject selection: " + newSourceElement);
 		}
 		modelElement.source = eObject;

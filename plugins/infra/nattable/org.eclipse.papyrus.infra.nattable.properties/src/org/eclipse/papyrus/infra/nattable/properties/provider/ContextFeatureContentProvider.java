@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,6 +24,7 @@ import org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider;
 
 /**
  * Represents a simple ECore model content provider for the selection of a table's root model element
+ * 
  * @author Laurent Wouters
  */
 public class ContextFeatureContentProvider extends ECoreModelContentProvider implements IStaticContentProvider, IHierarchicContentProvider {
@@ -31,35 +32,47 @@ public class ContextFeatureContentProvider extends ECoreModelContentProvider imp
 	 * The diagram
 	 */
 	private Table table;
-	
+
 	/**
 	 * Initializes the provider with the given root
-	 * @param diagram The diagram for which a root model element is to be provided
-	 * @param root The root object
+	 * 
+	 * @param diagram
+	 *            The diagram for which a root model element is to be provided
+	 * @param root
+	 *            The root object
 	 */
 	public ContextFeatureContentProvider(Table table, EObject root) {
 		super(root);
 		this.table = table;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IStaticContentProvider#getElements()
 	 */
+	@Override
 	public Object[] getElements() {
 		return getElements(null);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.papyrus.infra.widgets.providers.IHierarchicContentProvider#isValidValue(java.lang.Object)
 	 */
+	@Override
 	public boolean isValidValue(Object element) {
-		if (element == null)
+		if (element == null) {
 			return false;
-		if (!(element instanceof EObject))
+		}
+		if (!(element instanceof EObject)) {
 			return false;
-		ViewPrototype prototype = ViewPrototype.get((PapyrusView)table.getPrototype());
-		if (prototype == null)
+		}
+		ViewPrototype prototype = ViewPrototype.get((PapyrusView) table.getPrototype());
+		if (prototype == null) {
 			return false;
-		return PolicyChecker.getCurrent().canHaveNewView((EObject)element, table.getOwner(), prototype);
+		}
+		return PolicyChecker.getCurrent().canHaveNewView((EObject) element, table.getOwner(), prototype);
 	}
 }

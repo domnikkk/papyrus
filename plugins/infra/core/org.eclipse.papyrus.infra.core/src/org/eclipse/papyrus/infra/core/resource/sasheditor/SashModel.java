@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.emf.ecore.xmi.XMIResource;
+import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.resource.EMFLogicalModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
@@ -80,7 +81,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	 */
 	@Override
 	protected String getModelFileExtension() {
-		if(isLegacy((resourceURI == null) ? resourceURI : resourceURI.trimFileExtension())) {
+		if (isLegacy((resourceURI == null) ? resourceURI : resourceURI.trimFileExtension())) {
 			return DiModel.MODEL_FILE_EXTENSION;
 		} else {
 			return SASH_MODEL_FILE_EXTENSION;
@@ -96,7 +97,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 
 	@Override
 	public void unload() {
-		if(providerManager != null) {
+		if (providerManager != null) {
 			providerManager.dispose();
 			providerManager = null;
 		}
@@ -106,7 +107,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 
 	@Override
 	protected boolean isRelatedResource(Resource resource) {
-		return resource != null && this.resource == resource; //We only handle the main Sash resource. Imported *.sash are not relevant
+		return resource != null && this.resource == resource; // We only handle the main Sash resource. Imported *.sash are not relevant
 	}
 
 	/**
@@ -134,14 +135,14 @@ public class SashModel extends EMFLogicalModel implements IModel {
 			createModel(sashModelURI.trimFileExtension());
 		}
 
-		if(resource == null) {
+		if (resource == null) {
 			createModel(sashModelURI.trimFileExtension());
 		}
 	}
 
 	@Override
 	public void createModel(URI uriWithoutExtension) {
-		if(isLegacy(uriWithoutExtension)) {
+		if (isLegacy(uriWithoutExtension)) {
 			super.createModel(getSashModelStoreURI(uriWithoutExtension).trimFileExtension());
 		} else {
 			super.createModel(uriWithoutExtension);
@@ -151,7 +152,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	@Override
 	public void setModelURI(URI uriWithoutExtension) {
 		URI newURI;
-		if((resourceURI != null) && isLegacy(resourceURI.trimFileExtension())) {
+		if ((resourceURI != null) && isLegacy(resourceURI.trimFileExtension())) {
 			newURI = getLegacyURI(uriWithoutExtension);
 		} else {
 			newURI = getSashModelStoreURI(uriWithoutExtension);
@@ -161,7 +162,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 	}
 
 	protected boolean isLegacy(URI uriWithoutExtension) {
-		if(uriWithoutExtension == null) {
+		if (uriWithoutExtension == null) {
 			return false;
 		}
 		return Objects.equal(uriWithoutExtension, getModelManager().getURIWithoutExtension());
@@ -181,17 +182,17 @@ public class SashModel extends EMFLogicalModel implements IModel {
 		URIConverter converter = getModelManager().getURIConverter();
 		URI legacyURI = getLegacyURI(uriWithoutExtension);
 
-		//If the DI file exists and contains a SashWindowsMngr, this is a legacy model
-		if(converter.exists(legacyURI, Collections.emptyMap())) {
+		// If the DI file exists and contains a SashWindowsMngr, this is a legacy model
+		if (converter.exists(legacyURI, Collections.emptyMap())) {
 			try {
 				Resource diResource = getModelManager().getResource(legacyURI, true);
-				if(DiUtils.lookupSashWindowsMngr(diResource) != null) {
+				if (DiUtils.lookupSashWindowsMngr(diResource) != null) {
 					return legacyURI;
 				}
 			} catch (Exception ex) {
-				//Temporary workaround: the DI file may exist and be empty
-				//(DiModel is currently disabled and doesn't properly init the di file)
-				//Log the error and continue
+				// Temporary workaround: the DI file may exist and be empty
+				// (DiModel is currently disabled and doesn't properly init the di file)
+				// Log the error and continue
 				Activator.log.error(ex);
 			}
 		}
@@ -215,7 +216,7 @@ public class SashModel extends EMFLogicalModel implements IModel {
 		Map<Object, Object> saveOptions = super.getSaveOptions();
 
 		saveOptions.put(XMIResource.OPTION_USE_XMI_TYPE, Boolean.FALSE);
-		saveOptions.put(XMIResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.FALSE);
+		saveOptions.put(XMLResource.OPTION_SAVE_TYPE_INFORMATION, Boolean.FALSE);
 		saveOptions.put(Resource.OPTION_SAVE_ONLY_IF_CHANGED, Resource.OPTION_SAVE_ONLY_IF_CHANGED_MEMORY_BUFFER);
 
 		return saveOptions;

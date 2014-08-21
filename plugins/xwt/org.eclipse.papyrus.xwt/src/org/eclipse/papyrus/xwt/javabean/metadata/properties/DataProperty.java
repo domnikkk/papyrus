@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *     Soyatec - initial API and implementation
  *******************************************************************************/
@@ -15,9 +15,9 @@ import org.eclipse.papyrus.xwt.metadata.ILoadingType;
 
 /**
  * Additional property to store in user data in widget
- * 
+ *
  * @author yyang
- * 
+ *
  */
 public class DataProperty extends AbstractProperty {
 
@@ -45,7 +45,7 @@ public class DataProperty extends AbstractProperty {
 
 	public Object getValue(Object target) {
 		Object object = UserData.getLocalData(target, key);
-		if(object == null) {
+		if (object == null) {
 			return defaultValue;
 		}
 		return object;

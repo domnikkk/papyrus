@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *  	Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -26,12 +26,12 @@ import org.eclipse.swt.widgets.Composite;
 
 /**
  * This class provide the selection or the creation of a FacetSet.</p>
- * 
+ *
  * FaceSet : [ TextField ][...]</p>
- * 
+ *
  * The {@link GetOrCreateFacetSetDialog} dialog will be displayed when the
  * button is pressed.
- * 
+ *
  * @see GetOrCreateFacetSetDialog
  */
 public class GetOrCreateFacetSetWidget extends
@@ -44,7 +44,7 @@ public class GetOrCreateFacetSetWidget extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent of this composite.
 	 * @param facetSetProperty

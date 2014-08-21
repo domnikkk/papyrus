@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *  
+ *
  *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.diagram.clazz.custom.command;
@@ -37,7 +37,7 @@ import org.eclipse.uml2.uml.PackageableElement;
 /**
  * This class is used to create a containment link view.
  * It construct the link and the semantic transformation the target become an owned element
- * 
+ *
  */
 public class CustomCreateContainmentLinkCommand extends CommonDeferredCreateConnectionViewCommand {
 
@@ -91,6 +91,7 @@ public class CustomCreateContainmentLinkCommand extends CommonDeferredCreateConn
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command");
@@ -114,7 +115,7 @@ public class CustomCreateContainmentLinkCommand extends CommonDeferredCreateConn
 			// } else if(sourceEP instanceof PackageEditPart && !(sourceEP instanceof ModelEditPart)) {
 		} else if (sourceElement instanceof org.eclipse.uml2.uml.Package) {
 			org.eclipse.uml2.uml.Package container = (org.eclipse.uml2.uml.Package) sourceElement;
-			container.getPackagedElements().add((PackageableElement) targetElement);
+			container.getPackagedElements().add(targetElement);
 		} else {
 			throw new ExecutionException("Invalid source " + sourceEP);
 		}

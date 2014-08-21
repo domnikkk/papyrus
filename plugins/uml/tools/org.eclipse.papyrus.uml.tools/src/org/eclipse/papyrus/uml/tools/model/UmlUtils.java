@@ -33,28 +33,28 @@ import org.eclipse.papyrus.uml.tools.Activator;
 
 /**
  * Set of utility methods linked to Trace for ControlMode
- * 
+ *
  * @author cedric dumoulin
- * 
+ *
  */
 public class UmlUtils {
 	private static final String ANNOTATION_SUBSETS = "subsets"; //$NON-NLS-1$
-	
+
 	/**
 	 * Gets the UmlModel for the currently selected editor. <br>
 	 * Warning: This method is designed to be call from ui.handlers. It is not
 	 * designed to be call from Editors. This method can return null if called
 	 * during the MultiEditor initialization.
-	 * 
+	 *
 	 * @see ServiceUtilsForActionHandlers.getInstance().getModelSet()
-	 * 
-	 * 
+	 *
+	 *
 	 * @return The {@link UmlModel} of the current editor, or null if not found.
 	 */
 	public static UmlModel getUmlModel() {
 
 		try {
-			return (UmlModel)ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(UmlModel.MODEL_ID);
+			return (UmlModel) ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(UmlModel.MODEL_ID);
 		} catch (ServiceException e) {
 			return null;
 		}
@@ -64,34 +64,34 @@ public class UmlUtils {
 	 * Gets the UmlModel for the currently selected editor. <br>
 	 * Warning: this method can return null if called during the MultiEditor
 	 * initialization.
-	 * 
-	 * 
+	 *
+	 *
 	 * @return The {@link UmlModel} of the current editor, or null if not found.
 	 * @throws ServiceException
-	 *         If an error occurs while getting or starting the service.
+	 *             If an error occurs while getting or starting the service.
 	 */
 	public static UmlModel getUmlModelChecked() throws ServiceException {
 
-		return (UmlModel)ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(UmlModel.MODEL_ID);
+		return (UmlModel) ServiceUtilsForActionHandlers.getInstance().getModelSet().getModel(UmlModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the UmlModel from the {@link ModelSet}. <br>
-	 * 
+	 *
 	 * @param modelSet
-	 *        The modelManager containing the requested model.
-	 * 
+	 *            The modelManager containing the requested model.
+	 *
 	 * @return The {@link SashModel} registered in modelManager, or null if not
 	 *         found.
 	 */
 	public static UmlModel getUmlModel(ModelSet modelSet) {
 
-		return (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
+		return (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
 	}
 
 	/**
 	 * Gets the UmlModel from the {@link ServiceRegistry}.
-	 * 
+	 *
 	 * @return ServicesRegistry The service registry under which the ModelSet is
 	 *         registered.
 	 */
@@ -106,19 +106,19 @@ public class UmlUtils {
 
 	/**
 	 * Gets the UmlModel from the {@link ServiceRegistry}.
-	 * 
+	 *
 	 * @return ServicesRegistry The service registry under which the ModelSet is
 	 *         registered.
 	 * @throws ServiceException
-	 *         If the service can't be returned.
+	 *             If the service can't be returned.
 	 */
 	public static UmlModel getUmlModelChecked(ServicesRegistry servicesRegistry) throws ServiceException {
-		return (UmlModel)ModelUtils.getModelSetChecked(servicesRegistry).getModel(UmlModel.MODEL_ID);
+		return (UmlModel) ModelUtils.getModelSetChecked(servicesRegistry).getModel(UmlModel.MODEL_ID);
 	}
 
 	/**
 	 * Return the UML Resource associated to the Services Registry. May be null.
-	 * 
+	 *
 	 * @param modelSet
 	 * @return
 	 */
@@ -134,13 +134,13 @@ public class UmlUtils {
 
 	/**
 	 * Return the UML Resource associated to the ModelSet. May be null.
-	 * 
+	 *
 	 * @param modelSet
 	 * @return
 	 */
 	public static Resource getUmlResource(ModelSet modelSet) {
 		UmlModel umlModel = getUmlModel(modelSet);
-		if(umlModel != null) {
+		if (umlModel != null) {
 			return umlModel.getResource();
 		}
 		return null;
@@ -148,63 +148,63 @@ public class UmlUtils {
 
 	public static Collection<EReference> getAllChangeableSupersets(EReference subset) {
 		Collection<EReference> result = null;
-		
+
 		// null has no supersets
 		EAnnotation supersets = (subset == null) ? null : subset.getEAnnotation(ANNOTATION_SUBSETS);
-		if(supersets != null) {
+		if (supersets != null) {
 			result = collectChangeableSupersets(supersets.getReferences(), new HashSet<EReference>());
 		}
-		
-		return (result == null) ? Collections.<EReference>emptyList() : result;
+
+		return (result == null) ? Collections.<EReference> emptyList() : result;
 	}
-	
+
 	private static Collection<EReference> collectChangeableSupersets(Collection<EObject> supersets, Set<EReference> result) {
-		for(EObject next : supersets) {
-			if(next instanceof EReference) {
-				EReference superset = (EReference)next;
-				if(superset.isChangeable() && result.add(superset)) {
+		for (EObject next : supersets) {
+			if (next instanceof EReference) {
+				EReference superset = (EReference) next;
+				if (superset.isChangeable() && result.add(superset)) {
 					EAnnotation recursive = (superset == null) ? null : superset.getEAnnotation(ANNOTATION_SUBSETS);
-					if(recursive != null) {
+					if (recursive != null) {
 						collectChangeableSupersets(recursive.getReferences(), result);
 					}
 				}
 			}
 		}
-		
+
 		return result;
 	}
-	
+
 	public static boolean isSubset(EReference subset) {
 		boolean result = false;
-		
+
 		// null is not a subset of anything
 		EAnnotation supersets = (subset == null) ? null : subset.getEAnnotation(ANNOTATION_SUBSETS);
-		if(supersets != null) {
+		if (supersets != null) {
 			result = !supersets.getReferences().isEmpty();
 		}
-		
+
 		return result;
 	}
-	
+
 	public static boolean isSubsetOf(EReference subset, EReference superset) {
 		boolean result = false;
-		
+
 		// null is not a subset of anything
 		EAnnotation supersets = (subset == null) ? null : subset.getEAnnotation(ANNOTATION_SUBSETS);
-		if(supersets != null) {
+		if (supersets != null) {
 			result = supersets.getReferences().contains(superset);
-			if(!result) {
+			if (!result) {
 				// Look for transitive subset, which is at least plausible
 				// considering that we do have some superset
-				for(Iterator<EObject> iter = supersets.getReferences().iterator(); !result && iter.hasNext();) {
+				for (Iterator<EObject> iter = supersets.getReferences().iterator(); !result && iter.hasNext();) {
 					EObject next = iter.next();
-					if(next instanceof EReference) {
-						result = isSubsetOf((EReference)next, superset);
+					if (next instanceof EReference) {
+						result = isSubsetOf((EReference) next, superset);
 					}
 				}
 			}
 		}
-		
+
 		return result;
 	}
 }

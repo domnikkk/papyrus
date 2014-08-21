@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,9 +46,9 @@ import org.eclipse.papyrus.infra.nattable.painter.CustomCheckBoxPainter;
 
 /**
  * The configuration to edit EMF properties
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfiguration {
 
@@ -84,19 +84,19 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getICellEditor(org.eclipse.papyrus.infra.nattable.model.nattable.Table,
-	 *      java.lang.Object, org.eclipse.papyrus.infra.nattable.manager.table.ITableAxisElementProvider)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getICellEditor(org.eclipse.papyrus.infra.nattable.model.nattable.Table, java.lang.Object, org.eclipse.papyrus.infra.nattable.manager.table.ITableAxisElementProvider)
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @param elementProvider
 	 * @return
 	 */
+	@Override
 	public ICellEditor getICellEditor(Table table, final Object axisElement, final ITableAxisElementProvider elementProvider) {
 		int editorKind = getFeatureIdentifier(table, axisElement);
 		ICellEditor editor = null;
-		switch(editorKind) {
+		switch (editorKind) {
 		case SINGLE_STRING:
 			editor = new MultiLineTextCellEditorEx(true);
 			break;
@@ -110,9 +110,10 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 			editor = new ComboBoxCellEditor(new IComboBoxDataProvider() {
 
 
+				@Override
 				public List<?> getValues(int columnIndex, int rowIndex) {
 					final List<Object> literals = new ArrayList<Object>();
-					for(final EEnumLiteral instances : ((EEnum)((EStructuralFeature)axisElement).getEType()).getELiterals()) {
+					for (final EEnumLiteral instances : ((EEnum) ((EStructuralFeature) axisElement).getEType()).getELiterals()) {
 						literals.add(instances.getInstance());
 					}
 					return literals;
@@ -127,11 +128,12 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getEditorConfigId()
-	 * 
+	 *
 	 * @return
 	 */
+	@Override
 	public String getEditorConfigId() {
 		return EDITOR_CONFIG_ID;
 	}
@@ -139,13 +141,13 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 	/**
 	 * Return the combo data provider. This method is not in the interface, because it can't be generalized to all editors. It is used only by
 	 * ComboBox
-	 * 
+	 *
 	 * @param table
-	 *        the edited table
+	 *            the edited table
 	 * @param axisElement
-	 *        the axis element
+	 *            the axis element
 	 * @param elementProvider
-	 *        the element provider
+	 *            the element provider
 	 * @return
 	 *         the combo data provider
 	 */
@@ -154,19 +156,19 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 	}
 
 	/**
-	 * 
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @param provider
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getDisplayConvert(org.eclipse.papyrus.infra.nattable.model.nattable.Table,
-	 *      java.lang.Object, org.eclipse.jface.viewers.ILabelProvider)
-	 * 
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getDisplayConvert(org.eclipse.papyrus.infra.nattable.model.nattable.Table, java.lang.Object, org.eclipse.jface.viewers.ILabelProvider)
+	 *
 	 * @return
 	 */
+	@Override
 	public IDisplayConverter getDisplayConvert(final Table table, final Object axisElement, final ILabelProvider provider) {
 		int editorKind = getFeatureIdentifier(table, axisElement);
 		IDisplayConverter displayConverter = null;
-		switch(editorKind) {
+		switch (editorKind) {
 		case SINGLE_BOOLEAN:
 			displayConverter = new DefaultBooleanDisplayConverter();
 			break;
@@ -193,18 +195,18 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getCellPainter(org.eclipse.papyrus.infra.nattable.model.nattable.Table,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getCellPainter(org.eclipse.papyrus.infra.nattable.model.nattable.Table, java.lang.Object)
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @return
 	 */
+	@Override
 	public ICellPainter getCellPainter(Table table, Object axisElement) {
 		int editorKind = getFeatureIdentifier(table, axisElement);
 		ICellPainter cellPainter = null;
-		switch(editorKind) {
+		switch (editorKind) {
 		case SINGLE_BOOLEAN:
 			cellPainter = new CustomCheckBoxPainter();
 			break;
@@ -212,25 +214,25 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 			cellPainter = new ComboBoxPainter();
 			break;
 		default:
-			cellPainter = new TextPainter();//TODO : seems overriden by the CustomizedCellPainter... -> the result is correct, but our code is maybe incorrect
+			cellPainter = new TextPainter();// TODO : seems overriden by the CustomizedCellPainter... -> the result is correct, but our code is maybe incorrect
 			break;
 		}
 		return cellPainter;
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getDisplayMode(org.eclipse.papyrus.infra.nattable.model.nattable.Table,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#getDisplayMode(org.eclipse.papyrus.infra.nattable.model.nattable.Table, java.lang.Object)
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @return
 	 */
+	@Override
 	public String getDisplayMode(Table table, Object axisElement) {
 		int editorKind = getFeatureIdentifier(table, axisElement);
 		String displayMode = DisplayMode.EDIT;
-		switch(editorKind) {
+		switch (editorKind) {
 		case SINGLE_BOOLEAN:
 			displayMode = DisplayMode.NORMAL;
 			break;
@@ -240,10 +242,9 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.AbstractCellEditorConfiguration#getDataValidator(org.eclipse.papyrus.infra.nattable.model.nattable.Table,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.AbstractCellEditorConfiguration#getDataValidator(org.eclipse.papyrus.infra.nattable.model.nattable.Table, java.lang.Object)
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @return
@@ -254,44 +255,44 @@ public class EStructuralFeatureEditorConfig extends AbstractCellEditorConfigurat
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#handles(org.eclipse.papyrus.infra.nattable.model.nattable.Table,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.infra.nattable.celleditor.config.IAxisCellEditorConfiguration#handles(org.eclipse.papyrus.infra.nattable.model.nattable.Table, java.lang.Object)
+	 *
 	 * @param table
 	 * @param axisElement
 	 * @return
 	 *         <code>true</code> if axisElement is a {@link EStructuralFeature}
 	 */
+	@Override
 	public boolean handles(Table table, Object axisElement) {
 		return axisElement instanceof EStructuralFeature;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param table
-	 *        the edited table
+	 *            the edited table
 	 * @param axisElement
-	 *        the edited feature
+	 *            the edited feature
 	 * @return
 	 *         an integer which identify the type of the feature or {@value #UNKNOWN_TYPE} if we can't found it
 	 */
 	protected int getFeatureIdentifier(final Table table, final Object axisElement) {
 		int editorKind = UNKNOWN_TYPE;
 		assert axisElement instanceof EStructuralFeature;
-		final EStructuralFeature feature = (EStructuralFeature)axisElement;
+		final EStructuralFeature feature = (EStructuralFeature) axisElement;
 		final EClassifier eType = feature.getEType();
 		boolean isMany = feature.isMany();
-		if(eType instanceof EEnum) {
-			if(isMany) {
+		if (eType instanceof EEnum) {
+			if (isMany) {
 				editorKind = MULTI_EENUM_TYPE;
 			} else {
 				editorKind = SINGLE_EENUM_TYPE;
 			}
-		} else if(eType instanceof EDataType) {
+		} else if (eType instanceof EDataType) {
 
-		} else if(EMFHelper.isSuperType(EcorePackage.eINSTANCE.getEObject(), eType)) {
-			if(isMany) {
+		} else if (EMFHelper.isSuperType(EcorePackage.eINSTANCE.getEObject(), eType)) {
+			if (isMany) {
 				editorKind = MULTI_EMF_REFERENCE;
 			} else {
 				editorKind = SINGLE_EMF_REFERENCE;

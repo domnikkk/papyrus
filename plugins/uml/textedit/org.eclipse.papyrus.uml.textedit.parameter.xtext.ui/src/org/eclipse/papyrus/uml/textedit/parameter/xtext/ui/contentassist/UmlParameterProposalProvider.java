@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 
 	/**
 	 * Provides custom completion for the specifying the type of a {@link Parameter}
-	 * 
+	 *
 	 * @param model
 	 * @param assignment
 	 * @param context
@@ -54,26 +54,25 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 		List<Type> allType = new ArrayList<Type>();
 		allType.addAll(getRecursivelyOwnedType(getModel()));
 		allType.addAll(getRecursivelyImportedType(getModel()));
-		for(Type c : allType) {
-			if(c.getName().contains(context.getPrefix())) {
+		for (Type c : allType) {
+			if (c.getName().contains(context.getPrefix())) {
 				String displayString = c.getQualifiedName();
 				String completionString = UMLParameterEditorUtil.getTypeLabel(c, getModel());
 				ICompletionProposal completionProposal = createCompletionProposalWithReplacementOfPrefix(c, completionString, displayString, context);
 				acceptor.accept(completionProposal);
 			}
 		}
-		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);
+		completeRuleCall(((RuleCall) assignment.getTerminal()), context, acceptor);
 	}
 
 
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.ui.contentassist.UmlCommonProposalProvider#completeTypeRule_Type(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.ui.contentassist.UmlCommonProposalProvider#completeTypeRule_Type(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.Assignment, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
 	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
-	 * 
+	 *
 	 * @param model
 	 * @param assignment
 	 * @param context
@@ -81,7 +80,7 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 	 */
 	@Override
 	public void completeTypeRule_Type(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		if(!(model instanceof ParameterRule)) {
+		if (!(model instanceof ParameterRule)) {
 			return;
 		} else {
 			super.completeTypeRule_Type(model, assignment, context, acceptor);
@@ -90,11 +89,10 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 
 
 	/**
-	 * 
-	 * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.contentassist.AbstractUmlParameterProposalProvider#complete_MultiplicityRule(org.eclipse.emf.ecore.EObject,
-	 *      org.eclipse.xtext.RuleCall, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
-	 * 
+	 *
+	 * @see org.eclipse.papyrus.uml.textedit.parameter.xtext.ui.contentassist.AbstractUmlParameterProposalProvider#complete_MultiplicityRule(org.eclipse.emf.ecore.EObject, org.eclipse.xtext.RuleCall,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext, org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
 	 * @param model
 	 * @param ruleCall
 	 * @param context
@@ -102,9 +100,9 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 	 */
 	@Override
 	public void complete_MultiplicityRule(EObject model, RuleCall ruleCall, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		//we complete the multiplicity only when a type is specified
-		if(model instanceof ParameterRule) {
-			if(!typeExists((ParameterRule)model)) {
+		// we complete the multiplicity only when a type is specified
+		if (model instanceof ParameterRule) {
+			if (!typeExists((ParameterRule) model)) {
 				return;
 			}
 		}
@@ -113,43 +111,43 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 
 	/**
 	 * Provides custom completion for keywords, in the context of "modifiers" specification
-	 * 
-	 * @see org.eclipse.xtext.ui.editor.contentassist.AbstractJavaBasedContentProposalProvider#completeKeyword(org.eclipse.xtext.Keyword,
-	 *      org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext, org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
+	 *
+	 * @see org.eclipse.xtext.ui.editor.contentassist.AbstractJavaBasedContentProposalProvider#completeKeyword(org.eclipse.xtext.Keyword, org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext,
+	 *      org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor)
 	 */
 	@Override
 	public void completeKeyword(Keyword keyword, ContentAssistContext contentAssistContext, ICompletionProposalAcceptor acceptor) {
 		// TODO Auto-generated method stub
 		EObject model = contentAssistContext.getCurrentModel();
-		if(!(model instanceof ModifiersRule)) {
-			if(model instanceof ParameterRule) {
-				if("::".equals(keyword.getValue())) {// :: is proposed only if the Type is a Namespace and if this namespace contains possible element to type the parameter //$NON-NLS-1$
-					TypeRule typeRule = ((ParameterRule)model).getType();
+		if (!(model instanceof ModifiersRule)) {
+			if (model instanceof ParameterRule) {
+				if ("::".equals(keyword.getValue())) {// :: is proposed only if the Type is a Namespace and if this namespace contains possible element to type the parameter //$NON-NLS-1$
+					TypeRule typeRule = ((ParameterRule) model).getType();
 					Type type = null;
-					if(typeRule != null) {
+					if (typeRule != null) {
 						type = typeRule.getType();
 					}
 
-					if(type != null && typeExists((ParameterRule)model)) {
-						if(type instanceof Namespace) {
-							List<Type> includedType = getRecursivelyOwnedType((Namespace)type);
-							includedType.addAll(getRecursivelyImportedType((Namespace)type));
-							if(includedType.isEmpty()) {
+					if (type != null && typeExists((ParameterRule) model)) {
+						if (type instanceof Namespace) {
+							List<Type> includedType = getRecursivelyOwnedType((Namespace) type);
+							includedType.addAll(getRecursivelyImportedType((Namespace) type));
+							if (includedType.isEmpty()) {
 								return;
 							}
 						}
 					}
-				} else if("[".equals(keyword.getValue())) { //$NON-NLS-1$
-					if(!typeExists((ParameterRule)model)) {
+				} else if ("[".equals(keyword.getValue())) { //$NON-NLS-1$
+					if (!typeExists((ParameterRule) model)) {
 						return;
 					}
 
-				} else if("]".equals(keyword.getValue())) { //$NON-NLS-1$
-					if(!typeExists((ParameterRule)model)) {
+				} else if ("]".equals(keyword.getValue())) { //$NON-NLS-1$
+					if (!typeExists((ParameterRule) model)) {
 						return;
 					}
-				} else if("{".equals(keyword.getValue())) { //$NON-NLS-1$
-					if(!typeExists((ParameterRule)model)) {
+				} else if ("{".equals(keyword.getValue())) { //$NON-NLS-1$
+					if (!typeExists((ParameterRule) model)) {
 						return;
 					}
 				}
@@ -157,14 +155,14 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 			super.completeKeyword(keyword, contentAssistContext, acceptor);
 			return;
 		}
-		ModifiersRule modifiersRule = (ModifiersRule)model;
+		ModifiersRule modifiersRule = (ModifiersRule) model;
 		boolean isOrdered = false;
 		boolean isException = false;
 		boolean isStream = false;
 		boolean isUnique = false;
-		for(ModifierSpecification spec : modifiersRule.getValues()) {
-			if(spec.getValue() != null) {
-				switch(spec.getValue()) {
+		for (ModifierSpecification spec : modifiersRule.getValues()) {
+			if (spec.getValue() != null) {
+				switch (spec.getValue()) {
 				case ORDERED:
 					isOrdered = true;
 					break;
@@ -183,44 +181,49 @@ public class UmlParameterProposalProvider extends AbstractUmlParameterProposalPr
 			}
 		}
 		String value = keyword.getValue();
-		if(value.equals("ordered")) { //$NON-NLS-1$
-			if(!isOrdered)
+		if (value.equals("ordered")) { //$NON-NLS-1$
+			if (!isOrdered) {
 				super.completeKeyword(keyword, contentAssistContext, acceptor);
-		} else if(value.equals("exception")) { //$NON-NLS-1$
-			if(!isException)
+			}
+		} else if (value.equals("exception")) { //$NON-NLS-1$
+			if (!isException) {
 				super.completeKeyword(keyword, contentAssistContext, acceptor);
-		} else if(value.equals("unique")) { //$NON-NLS-1$
-			if(!isUnique)
+			}
+		} else if (value.equals("unique")) { //$NON-NLS-1$
+			if (!isUnique) {
 				super.completeKeyword(keyword, contentAssistContext, acceptor);
-		} else if(value.equals("stream")) { //$NON-NLS-1$
-			if(!isStream)
+			}
+		} else if (value.equals("stream")) { //$NON-NLS-1$
+			if (!isStream) {
 				super.completeKeyword(keyword, contentAssistContext, acceptor);
-		} else
+			}
+		} else {
 			super.completeKeyword(keyword, contentAssistContext, acceptor);
+		}
 	}
 
 
 	/**
 	 * Tests if the type of the {@link ParameterRule} is set
-	 * 
+	 *
 	 * @param parameterRule
-	 *        ( a {@link ParameterRule}) to complete)
+	 *            ( a {@link ParameterRule}) to complete)
 	 * @return
 	 *         <code>true</code> if the type of the parameter is specified, <code>false</code> if not
 	 */
 
 	protected boolean typeExists(ParameterRule parameterRule) {
-		if(parameterRule instanceof ParameterRule) {
+		if (parameterRule instanceof ParameterRule) {
 			ParameterRule currentModel = parameterRule;
 			TypeRule ruleType = currentModel.getType();
-			if(ruleType == null) {
-				return true; //<Undefined>
+			if (ruleType == null) {
+				return true; // <Undefined>
 			}
 			Type type = ruleType.getType();
-			if(type == null) {
+			if (type == null) {
 				return false;
 			}
-			if(type.eContainer() == null && type.getName() == null) {
+			if (type.eContainer() == null && type.getName() == null) {
 				return false;
 			}
 		}

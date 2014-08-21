@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ public class PropertiesCompartmentLayoutManager extends AbstractLayout {
 	protected static int MARGIN_Y = 10;
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -34,45 +34,46 @@ public class PropertiesCompartmentLayoutManager extends AbstractLayout {
 		int minimumWith = 0;
 		int minimumHeight = 0;
 		// display name
-		for(int i = 0; i < container.getChildren().size(); i++) {
-			
-			IFigure fig=((IFigure)container.getChildren().get(i));
-			if( fig instanceof AppliedStereotypeCompartmentFigure){
-				if(((AppliedStereotypeCompartmentFigure)fig).isExpanded()){
+		for (int i = 0; i < container.getChildren().size(); i++) {
+
+			IFigure fig = ((IFigure) container.getChildren().get(i));
+			if (fig instanceof AppliedStereotypeCompartmentFigure) {
+				if (((AppliedStereotypeCompartmentFigure) fig).isExpanded()) {
 					minimumHeight = minimumHeight + fig.getPreferredSize(hint, hint2).height + MARGIN_Y;
 					minimumWith = Math.max(minimumWith, fig.getPreferredSize(hint, hint2).width);
 				}
-				else{
+				else {
 					minimumHeight = minimumHeight + fig.getPreferredSize().height + MARGIN_Y;
 					minimumWith = Math.max(minimumWith, fig.getPreferredSize().width);
 				}
 			}
-			else{
+			else {
 				minimumWith = Math.max(minimumWith, fig.getPreferredSize(hint, hint2).width);
 				minimumHeight = minimumHeight + fig.getPreferredSize().height + MARGIN_Y;
 			}
-			
+
 		}
 
 		return new Dimension(minimumWith + MARGIN_X, minimumHeight + MARGIN_Y);
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void layout(IFigure container) {
 		List childrenList = container.getChildren();
-		for(int i = 0; i < container.getChildren().size(); i++) {
-			Rectangle bound = new Rectangle(((IFigure)childrenList.get(i)).getBounds());
+		for (int i = 0; i < container.getChildren().size(); i++) {
+			Rectangle bound = new Rectangle(((IFigure) childrenList.get(i)).getBounds());
 
-			bound.setSize(((IFigure)childrenList.get(i)).getPreferredSize(container.getBounds().width-40,-1));
-			
-			
-			
-			if(i > 0) {
+			bound.setSize(((IFigure) childrenList.get(i)).getPreferredSize(container.getBounds().width - 40, -1));
+
+
+
+			if (i > 0) {
 				bound.x = container.getBounds().x;
-				bound.y = ((IFigure)childrenList.get(i - 1)).getBounds().getBottomLeft().y - 1;
+				bound.y = ((IFigure) childrenList.get(i - 1)).getBounds().getBottomLeft().y - 1;
 				bound.width = container.getBounds().width;
 				bound.height = bound.height + MARGIN_Y;
 			} else {
@@ -82,7 +83,7 @@ public class PropertiesCompartmentLayoutManager extends AbstractLayout {
 				bound.height = bound.height + MARGIN_Y;
 
 			}
-			((IFigure)childrenList.get(i)).setBounds(bound);
+			((IFigure) childrenList.get(i)).setBounds(bound);
 		}
 
 	}

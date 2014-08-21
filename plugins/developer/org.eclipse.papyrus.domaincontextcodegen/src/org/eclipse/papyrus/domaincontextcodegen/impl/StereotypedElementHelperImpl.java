@@ -25,7 +25,7 @@ import org.eclipse.papyrus.domaincontextcodegen.StereotypedElementHelper;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.StereotypedElementHelperImpl#getBaseElementPackage <em>Base Element Package</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class StereotypedElementHelperImpl extends GenHelperImpl implements StereotypedElementHelper {
@@ -34,7 +34,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The default value of the '{@link #getStereotypeName() <em>Stereotype Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypeName()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The cached value of the '{@link #getStereotypeName() <em>Stereotype Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypeName()
 	 * @generated
 	 * @ordered
@@ -56,7 +56,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The default value of the '{@link #getStereotypePackage() <em>Stereotype Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypePackage()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The cached value of the '{@link #getStereotypePackage() <em>Stereotype Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStereotypePackage()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The default value of the '{@link #getBaseElementName() <em>Base Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseElementName()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The cached value of the '{@link #getBaseElementName() <em>Base Element Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseElementName()
 	 * @generated
 	 * @ordered
@@ -100,7 +100,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The default value of the '{@link #getBaseElementPackage() <em>Base Element Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseElementPackage()
 	 * @generated
 	 * @ordered
@@ -111,7 +111,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	 * The cached value of the '{@link #getBaseElementPackage() <em>Base Element Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBaseElementPackage()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected StereotypedElementHelperImpl() {
@@ -131,7 +131,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -142,7 +142,7 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStereotypeName() {
@@ -152,20 +152,21 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStereotypeName(String newStereotypeName) {
 		String oldStereotypeName = stereotypeName;
 		stereotypeName = newStereotypeName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_NAME, oldStereotypeName, stereotypeName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getStereotypePackage() {
@@ -175,20 +176,21 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setStereotypePackage(String newStereotypePackage) {
 		String oldStereotypePackage = stereotypePackage;
 		stereotypePackage = newStereotypePackage;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_PACKAGE, oldStereotypePackage, stereotypePackage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getBaseElementName() {
@@ -198,20 +200,21 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBaseElementName(String newBaseElementName) {
 		String oldBaseElementName = baseElementName;
 		baseElementName = newBaseElementName;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__BASE_ELEMENT_NAME, oldBaseElementName, baseElementName));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getBaseElementPackage() {
@@ -221,25 +224,26 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBaseElementPackage(String newBaseElementPackage) {
 		String oldBaseElementPackage = baseElementPackage;
 		baseElementPackage = newBaseElementPackage;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__BASE_ELEMENT_PACKAGE, oldBaseElementPackage, baseElementPackage));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_NAME:
 			return getStereotypeName();
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_PACKAGE:
@@ -255,23 +259,23 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_NAME:
-			setStereotypeName((String)newValue);
+			setStereotypeName((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_PACKAGE:
-			setStereotypePackage((String)newValue);
+			setStereotypePackage((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__BASE_ELEMENT_NAME:
-			setBaseElementName((String)newValue);
+			setBaseElementName((String) newValue);
 			return;
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__BASE_ELEMENT_PACKAGE:
-			setBaseElementPackage((String)newValue);
+			setBaseElementPackage((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -280,12 +284,12 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_NAME:
 			setStereotypeName(STEREOTYPE_NAME_EDEFAULT);
 			return;
@@ -305,12 +309,12 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_NAME:
 			return STEREOTYPE_NAME_EDEFAULT == null ? stereotypeName != null : !STEREOTYPE_NAME_EDEFAULT.equals(stereotypeName);
 		case DomaincontextcodegenPackage.STEREOTYPED_ELEMENT_HELPER__STEREOTYPE_PACKAGE:
@@ -326,13 +330,14 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (stereotypeName: ");
@@ -347,4 +352,4 @@ public class StereotypedElementHelperImpl extends GenHelperImpl implements Stere
 		return result.toString();
 	}
 
-} //StereotypedElementHelperImpl
+} // StereotypedElementHelperImpl

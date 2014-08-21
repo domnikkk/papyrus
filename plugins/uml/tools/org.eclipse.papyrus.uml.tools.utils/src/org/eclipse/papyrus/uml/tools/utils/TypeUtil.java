@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  Yann TANGUY (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.tools.utils;
 
@@ -31,7 +31,7 @@ public class TypeUtil {
 	 * Get a string that displays the name of the type, and then its namespace.
 	 * <p>
 	 * For example: "String - UMLPrimitiveType"
-	 * 
+	 *
 	 * @return a string that displays information about the type
 	 */
 	public static String getInfoString(Type type) {
@@ -40,9 +40,9 @@ public class TypeUtil {
 		buffer.append(" - ");
 		String tmp = "";
 		Iterator<Namespace> it = type.allNamespaces().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			Namespace namespace = it.next();
-			if(it.hasNext()) {
+			if (it.hasNext()) {
 				tmp = NamedElement.SEPARATOR + namespace.getName() + tmp;
 			} else {
 				tmp = namespace.getName() + tmp;
@@ -53,17 +53,18 @@ public class TypeUtil {
 	}
 
 	/**
-	 * 
-	 * 
+	 *
+	 *
 	 * @param type
-	 *        to check
-	 * 
+	 *            to check
+	 *
 	 * @return true if type is metaclass, else false
 	 */
-	@Deprecated //use {@link Class#isMetaclass()} Check if a type is a metaclass.
+	@Deprecated
+	// use {@link Class#isMetaclass()} Check if a type is a metaclass.
 	public static boolean isMetaclass(Type type) {
-		if(type instanceof Class) {
-			return ((Class)type).isMetaclass();
+		if (type instanceof Class) {
+			return ((Class) type).isMetaclass();
 		}
 		return false;
 	}

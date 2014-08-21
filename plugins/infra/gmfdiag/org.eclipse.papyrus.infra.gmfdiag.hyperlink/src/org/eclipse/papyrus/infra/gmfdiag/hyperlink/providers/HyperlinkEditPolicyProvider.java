@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,30 +27,30 @@ import org.eclipse.papyrus.infra.gmfdiag.hyperlink.editpolicies.NavigationEditPo
 
 /**
  * An EditPolicyProvider for Navigation and Hyperlinks
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class HyperlinkEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * This provider can handle GraphicalEditParts
 	 */
 	public boolean provides(IOperation operation) {
-		if(operation instanceof CreateEditPoliciesOperation) {
-			CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		if (operation instanceof CreateEditPoliciesOperation) {
+			CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 			EditPart editPart = epOperation.getEditPart();
 			try {
 				ServicesRegistry registry = ServiceUtilsForEditPart.getInstance().getServiceRegistry(editPart);
-				if(registry == null) {
-					//We're not in the Papyrus context
+				if (registry == null) {
+					// We're not in the Papyrus context
 					return false;
 				}
 			} catch (ServiceException ex) {
-				//We're not in the Papyrus context
-				//Ignore the exception and do not provide the EditPolicy
+				// We're not in the Papyrus context
+				// Ignore the exception and do not provide the EditPolicy
 				return false;
 			}
 			return editPart instanceof IGraphicalEditPart;
@@ -60,11 +60,11 @@ public class HyperlinkEditPolicyProvider extends AbstractProvider implements IEd
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Installs the Hyperlink and Navigation edit policies
 	 */
 	public void createEditPolicies(EditPart editPart) {
-		if(editPart instanceof IPrimaryEditPart) {
+		if (editPart instanceof IPrimaryEditPart) {
 			editPart.installEditPolicy(EditPolicyRoles.POPUPBAR_ROLE, new HyperLinkPopupBarEditPolicy());
 		}
 		editPart.installEditPolicy(NavigationEditPolicy.NAVIGATION_POLICY, new NavigationEditPolicy());

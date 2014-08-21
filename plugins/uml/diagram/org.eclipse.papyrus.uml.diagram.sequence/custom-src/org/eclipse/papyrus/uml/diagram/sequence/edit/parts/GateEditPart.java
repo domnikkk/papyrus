@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -90,7 +90,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public GateEditPart(View view) {
@@ -99,7 +99,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#activate()
-	 * 
+	 *
 	 */
 	@Override
 	public void activate() {
@@ -113,42 +113,43 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 	 */
 	protected void hookExternalGates() {
 		EObject resolveSemanticElement = resolveSemanticElement();
-		if(!(resolveSemanticElement instanceof Gate)) {
+		if (!(resolveSemanticElement instanceof Gate)) {
 			return;
 		}
-		Gate gate = (Gate)resolveSemanticElement;
-		if(gate.eContainer() instanceof CombinedFragment) {
-			if(!GateHelper.isInnerCFGate(gate)) {
+		Gate gate = (Gate) resolveSemanticElement;
+		if (gate.eContainer() instanceof CombinedFragment) {
+			if (!GateHelper.isInnerCFGate(gate)) {
 				Message message = gate.getMessage();
-				if(message != null) {
+				if (message != null) {
 					notifier.listenObject(message);
 				}
 			} else {
-				//For CombinedFragment
+				// For CombinedFragment
 				Gate outerGate = GateHelper.getOuterCFGate(gate);
-				if(outerGate != null) {
+				if (outerGate != null) {
 					notifier.listenObject(outerGate);
 					Message message = outerGate.getMessage();
-					if(message != null) {
+					if (message != null) {
 						notifier.listenObject(message);
 					}
 				}
 			}
-		} else if(gate.eContainer() instanceof Interaction) {
-			//For gate on interaction
+		} else if (gate.eContainer() instanceof Interaction) {
+			// For gate on interaction
 			Gate actualGate = GateHelper.getActualGate(gate);
-			if(actualGate != null) {
+			if (actualGate != null) {
 				notifier.listenObject(actualGate);
 				Message message = actualGate.getMessage();
-				if(message != null) {
+				if (message != null) {
 					notifier.listenObject(message);
 				}
 			}
 		}
 	}
 
+	@Override
 	public void deactivate() {
-		if(notifier != null) {
+		if (notifier != null) {
 			notifier.unlistenAll();
 		}
 		super.deactivate();
@@ -156,7 +157,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.BorderUMLNodeEditPart#createDefaultEditPolicies()
-	 * 
+	 *
 	 */
 	@Override
 	protected void createDefaultEditPolicies() {
@@ -167,13 +168,15 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE, new GateGraphicalNodeEditPolicy());
 	}
 
+	@Override
 	public EditPolicy getPrimaryDragEditPolicy() {
 		return new BorderItemSelectionEditPolicy() {
 
+			@Override
 			protected Command getMoveCommand(ChangeBoundsRequest request) {
-				IBorderItemEditPart borderItemEP = (IBorderItemEditPart)getHost();
+				IBorderItemEditPart borderItemEP = (IBorderItemEditPart) getHost();
 				IBorderItemLocator borderItemLocator = borderItemEP.getBorderItemLocator();
-				if(borderItemLocator != null) {
+				if (borderItemLocator != null) {
 					PrecisionRectangle rect = new PrecisionRectangle(getInitialFeedbackBounds().getCopy());
 					getHostFigure().translateToAbsolute(rect);
 					rect.translate(request.getMoveDelta());
@@ -181,7 +184,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 					getHostFigure().translateToRelative(rect);
 					Rectangle realLocation = borderItemLocator.getValidLocation(rect.getCopy(), borderItemEP.getFigure());
 					Point location = realLocation.getLocation();
-					ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View)getHost().getModel()), location);
+					ICommand moveCommand = new SetBoundsCommand(borderItemEP.getEditingDomain(), DiagramUIMessages.Commands_MoveElement, new EObjectAdapter((View) getHost().getModel()), location);
 					return new ICommandProxy(moveCommand);
 				}
 				return null;
@@ -192,28 +195,32 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				if(child instanceof GateNameEditPart) {
+				if (child instanceof GateNameEditPart) {
 					return new BorderItemSelectionEditPolicy() {
 
+						@Override
 						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
 					};
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -223,7 +230,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.BorderNodeEditPart#createMainFigure()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -233,17 +240,17 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart#addChildVisual(org.eclipse.gef.EditPart, int)
-	 * 
+	 *
 	 * @param childEditPart
 	 * @param index
 	 */
 	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(childEditPart instanceof GateNameEditPart) {
-			//			BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
-			//			locator.setBorderItemOffset(new Dimension(-20, 0));
+		if (childEditPart instanceof GateNameEditPart) {
+			// BorderItemLocator locator = new BorderItemLocator(getMainFigure(), PositionConstants.SOUTH);
+			// locator.setBorderItemOffset(new Dimension(-20, 0));
 			ExternalLabelPositionLocator locator = new ExternalLabelPositionLocator(getMainFigure());
-			getContentPaneFor((GateNameEditPart)childEditPart).add(((GateNameEditPart)childEditPart).getFigure(), locator);
+			getContentPaneFor((GateNameEditPart) childEditPart).add(((GateNameEditPart) childEditPart).getFigure(), locator);
 			return;
 		}
 		super.addChildVisual(childEditPart, index);
@@ -251,7 +258,7 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.BorderNodeEditPart#getPrimaryShape()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -261,13 +268,13 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.BorderedBorderItemEditPart#removeChildVisual(org.eclipse.gef.EditPart)
-	 * 
+	 *
 	 * @param child
 	 */
 	@Override
 	protected void removeChildVisual(EditPart child) {
-		if(child instanceof GateNameEditPart) {
-			getContentPaneFor((GateNameEditPart)child).remove(((GateNameEditPart)child).getFigure());
+		if (child instanceof GateNameEditPart) {
+			getContentPaneFor((GateNameEditPart) child).remove(((GateNameEditPart) child).getFigure());
 			return;
 		}
 		super.removeChildVisual(child);
@@ -275,17 +282,17 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.AbstractBorderItemEditPart#refreshBounds()
-	 * 
+	 *
 	 */
 	@Override
 	protected void refreshBounds() {
-		if(getBorderItemLocator() != null) {
-			int x = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
-			int y = ((Integer)getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
+		if (getBorderItemLocator() != null) {
+			int x = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_X())).intValue();
+			int y = ((Integer) getStructuralFeatureValue(NotationPackage.eINSTANCE.getLocation_Y())).intValue();
 			Point loc = new Point(x, y);
 			getBorderItemLocator().setConstraint(new Rectangle(loc, DEFAULT_SIZE));
 			GateNameEditPart labelEditPart = getLabelEditPart();
-			if(labelEditPart != null) {
+			if (labelEditPart != null) {
 				labelEditPart.refreshBounds();
 			}
 		}
@@ -293,39 +300,39 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editparts.AbstractBorderEditPart#handleNotificationEvent(org.eclipse.emf.common.notify.Notification)
-	 * 
+	 *
 	 * @param event
 	 */
 	@Override
 	protected void handleNotificationEvent(Notification event) {
-		if(event.isTouch()) {
+		if (event.isTouch()) {
 			return;
 		}
-		if(GateModelElementFactory.isShowNameChanged(event)) {
-			//refresh name child.
+		if (GateModelElementFactory.isShowNameChanged(event)) {
+			// refresh name child.
 			refreshChildren();
 			return;
 		}
 		hookExternalGates();
-		if(UMLPackage.eINSTANCE.getNamedElement_Name().equals(event.getFeature())) {
-			//Update gate name when the name of message is changed.
+		if (UMLPackage.eINSTANCE.getNamedElement_Name().equals(event.getFeature())) {
+			// Update gate name when the name of message is changed.
 			EObject element = resolveSemanticElement();
-			if(element instanceof Gate && event.getNotifier() instanceof Message) {
-				//				Gate gate = (Gate)element;
-				//				String gateLabel = GateHelper.getGateLabel(gate);
-				//				if(gateLabel != null && !gateLabel.equals(gate.getName())) {
-				//					gate.setName(gateLabel);
-				//					Gate innerCFGate = GateHelper.getInnerCFGate(gate);
-				//					if(innerCFGate != null && !gateLabel.equals(innerCFGate.getName())) {
-				//						innerCFGate.setName(gateLabel);
-				//					}
-				//				}
+			if (element instanceof Gate && event.getNotifier() instanceof Message) {
+				// Gate gate = (Gate)element;
+				// String gateLabel = GateHelper.getGateLabel(gate);
+				// if(gateLabel != null && !gateLabel.equals(gate.getName())) {
+				// gate.setName(gateLabel);
+				// Gate innerCFGate = GateHelper.getInnerCFGate(gate);
+				// if(innerCFGate != null && !gateLabel.equals(innerCFGate.getName())) {
+				// innerCFGate.setName(gateLabel);
+				// }
+				// }
 			} else {
 				refreshGateLabel();
 			}
-		} else if(UMLPackage.eINSTANCE.getMessageEnd_Message().equals(event.getFeature())) {
-			notifier.unlistenObject((Notifier)event.getOldValue());
-			notifier.listenObject((Notifier)event.getNewValue());
+		} else if (UMLPackage.eINSTANCE.getMessageEnd_Message().equals(event.getFeature())) {
+			notifier.unlistenObject((Notifier) event.getOldValue());
+			notifier.listenObject((Notifier) event.getNewValue());
 			refreshGateLabel();
 		}
 		super.handleNotificationEvent(event);
@@ -333,20 +340,20 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#getModelChildren()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	protected List getModelChildren() {
-		if(GateModelElementFactory.isShowName(getPrimaryView())) {
+		if (GateModelElementFactory.isShowName(getPrimaryView())) {
 			return super.getModelChildren();
 		} else {
-			//Hide name with property changes.
+			// Hide name with property changes.
 			List modelChildren = new ArrayList(super.getModelChildren());
 			Iterator iterator = modelChildren.iterator();
-			while(iterator.hasNext()) {
-				View next = (View)iterator.next();
-				if(GateNameEditPart.GATE_NAME_TYPE.equals(next.getType())) {
+			while (iterator.hasNext()) {
+				View next = (View) iterator.next();
+				if (GateNameEditPart.GATE_NAME_TYPE.equals(next.getType())) {
 					iterator.remove();
 					break;
 				}
@@ -360,41 +367,41 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 	 */
 	protected void refreshGateLabel() {
 		GateNameEditPart labelEditPart = getLabelEditPart();
-		if(labelEditPart != null) {
+		if (labelEditPart != null) {
 			labelEditPart.refreshLabel();
 		}
 	}
 
 	/**
 	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#refreshSourceConnections()
-	 * 
+	 *
 	 */
 	@Override
 	protected void refreshSourceConnections() {
 		super.refreshSourceConnections();
 		GateNameEditPart labelEditPart = getLabelEditPart();
-		if(labelEditPart != null) {
+		if (labelEditPart != null) {
 			labelEditPart.refreshBounds();
 		}
 	}
 
 	/**
 	 * @see org.eclipse.gef.editparts.AbstractGraphicalEditPart#refreshTargetConnections()
-	 * 
+	 *
 	 */
 	@Override
 	protected void refreshTargetConnections() {
 		super.refreshTargetConnections();
 		GateNameEditPart labelEditPart = getLabelEditPart();
-		if(labelEditPart != null) {
+		if (labelEditPart != null) {
 			labelEditPart.refreshBounds();
 		}
 	}
 
 	public GateNameEditPart getLabelEditPart() {
 		IGraphicalEditPart labelEditPart = getChildBySemanticHint(GateNameEditPart.GATE_NAME_TYPE);
-		if(labelEditPart instanceof GateNameEditPart) {
-			return (GateNameEditPart)labelEditPart;
+		if (labelEditPart instanceof GateNameEditPart) {
+			return (GateNameEditPart) labelEditPart;
 		}
 		return null;
 	}
@@ -403,20 +410,21 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 
 		/**
 		 * Constructor.
-		 * 
+		 *
 		 */
 		public GateFigure() {
 			setBorder(new LineBorder(ColorConstants.black));
 			setPreferredSize(DEFAULT_SIZE);
 		}
 
+		@Override
 		protected ConnectionAnchor createDefaultAnchor() {
 			return new SlidableAnchor(this) {
 
 				@Override
 				public Point getLocation(Point reference) {
 					Point location = getLocation(new PrecisionPoint(getBox().getCenter()), reference);
-					if(location == null) {
+					if (location == null) {
 						location = getBox().getCenter();
 					}
 					return location;
@@ -424,16 +432,18 @@ public class GateEditPart extends AbstractBorderEditPart implements IBorderItemE
 			};
 		}
 
+		@Override
 		protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-			if(p == null) {
+			if (p == null) {
 				return createDefaultAnchor();
 			}
 			return new SlidableAnchor(this, p) {
 
+				@Override
 				public Point getLocation(Point reference) {
 					Rectangle box = getBox();
 					Point location = getLocation(new PrecisionPoint(box.getCenter()), reference);
-					if(location == null) {
+					if (location == null) {
 						location = getBox().getCenter();
 					}
 					return location;

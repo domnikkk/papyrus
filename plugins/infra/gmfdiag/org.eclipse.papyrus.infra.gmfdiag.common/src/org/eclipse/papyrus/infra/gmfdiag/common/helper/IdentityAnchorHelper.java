@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,9 +16,9 @@ package org.eclipse.papyrus.infra.gmfdiag.common.helper;
 import org.eclipse.gmf.runtime.notation.IdentityAnchor;
 
 /**
- * 
+ *
  * Helper used for identity anchor
- * 
+ *
  */
 public class IdentityAnchorHelper {
 
@@ -41,21 +41,21 @@ public class IdentityAnchorHelper {
 	/**
 	 * the char separating percentage as string in ids of {@link IdentityAnchor}
 	 */
-	public static final String X_Y_SEPARATOR_AS_STRING = new String(new char[]{ X_Y_SEPARATOR });
+	public static final String X_Y_SEPARATOR_AS_STRING = new String(new char[] { X_Y_SEPARATOR });
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	private IdentityAnchorHelper() {
-		//to prevent instanciation
+		// to prevent instanciation
 	}
 
 	/**
-	 * 
+	 *
 	 * @param anchor
-	 *        an anchor
+	 *            an anchor
 	 * @return
 	 *         the value of x percentage
 	 */
@@ -66,9 +66,9 @@ public class IdentityAnchorHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param anchor
-	 *        an anchor
+	 *            an anchor
 	 * @return
 	 *         the value of y percentage
 	 */
@@ -80,11 +80,11 @@ public class IdentityAnchorHelper {
 
 
 	/**
-	 * 
+	 *
 	 * @param percentageOnX
-	 *        the percentage on x
+	 *            the percentage on x
 	 * @param percentageOnY
-	 *        the percentage on y
+	 *            the percentage on y
 	 * @return
 	 *         the string representing the new id for an anchor
 	 */

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,9 +47,10 @@ public class CustomModelEditPart extends ModelEditPartTN {
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		primaryShape = new PackageFigure();
-		((PackageFigure)primaryShape).setTagIcon(Activator.getPluginIconImage(Activator.ID, ICONS_PATH));
+		((PackageFigure) primaryShape).setTagIcon(Activator.getPluginIconImage(Activator.ID, ICONS_PATH));
 		return primaryShape;
 	}
 }

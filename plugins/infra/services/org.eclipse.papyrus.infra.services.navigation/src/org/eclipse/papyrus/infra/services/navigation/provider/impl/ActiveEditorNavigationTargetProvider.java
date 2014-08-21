@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,35 +24,35 @@ import org.eclipse.ui.IEditorPart;
 
 /**
  * A NavigationTargetProvider to navigate in the current nested active editor
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class ActiveEditorNavigationTargetProvider implements NavigationTargetProvider {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * Returns the current active nestedEditor
 	 */
 	public NavigationTarget getNavigationTarget(ServicesRegistry registry) {
 		IMultiDiagramEditor editor;
 		try {
 			editor = registry.getService(IMultiDiagramEditor.class);
-			if(editor == null) {
+			if (editor == null) {
 				return null;
 			}
 		} catch (ServiceException ex) {
-			//We're not in the context of the multi diagram editor. We have nothing to contribute.
-			//Ignore the exception and do not do anything.
+			// We're not in the context of the multi diagram editor. We have nothing to contribute.
+			// Ignore the exception and do not do anything.
 			return null;
 		}
 
 		IEditorPart activeEditor = editor.getActiveEditor();
-		if(activeEditor instanceof NavigationTarget) {
-			return (NavigationTarget)activeEditor;
-		} else if(activeEditor instanceof IRevealSemanticElement) {
-			return new RevealSemanticElementWrapper((IRevealSemanticElement)activeEditor);
+		if (activeEditor instanceof NavigationTarget) {
+			return (NavigationTarget) activeEditor;
+		} else if (activeEditor instanceof IRevealSemanticElement) {
+			return new RevealSemanticElementWrapper((IRevealSemanticElement) activeEditor);
 		}
 
 		return null;

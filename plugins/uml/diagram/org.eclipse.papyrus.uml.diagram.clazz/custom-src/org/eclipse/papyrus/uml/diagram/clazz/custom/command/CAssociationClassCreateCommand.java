@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,23 +33,24 @@ import org.eclipse.uml2.uml.Type;
 public class CAssociationClassCreateCommand extends AssociationClassLinkCreateCommand {
 
 	private final Diagram diagram;
-	
+
 	public CAssociationClassCreateCommand(CreateRelationshipRequest request, EObject source, EObject target, Diagram diagram) {
 		super(request, source, target);
 		this.diagram = diagram;
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
-		if(source instanceof Type && target instanceof Type && container instanceof Package) {
-			AssociationClass newElement = (AssociationClass)AssociationClassHelper.createAssociationClass(getEditingDomain(), (Type)source, (Type)target, (Package)container, diagram);
-			((CreateElementRequest)getRequest()).setNewElement(newElement);
+		if (source instanceof Type && target instanceof Type && container instanceof Package) {
+			AssociationClass newElement = (AssociationClass) AssociationClassHelper.createAssociationClass(getEditingDomain(), (Type) source, (Type) target, container, diagram);
+			((CreateElementRequest) getRequest()).setNewElement(newElement);
 			return CommandResult.newOKCommandResult(newElement);
 		}
 		return null;

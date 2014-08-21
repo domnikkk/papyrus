@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,7 +21,7 @@ import org.eclipse.papyrus.uml.diagram.common.editparts.UMLNodeEditPart;
 /**
  * A resizable editpolicy for shape editparts. It ensure that the resize keeps
  * the shape as a fork or a join
- * 
+ *
  * @see ResizableShapeEditPolicy
  */
 public class ForkJoinResizeEditPolicy extends ResizableShapeEditPolicy {
@@ -29,20 +29,20 @@ public class ForkJoinResizeEditPolicy extends ResizableShapeEditPolicy {
 	/**
 	 * Shows or updates feedback for a change bounds request. The request is
 	 * updated by the way so that the shape stays a square.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 */
 	@Override
 	protected void showChangeBoundsFeedback(ChangeBoundsRequest request) {
 		// adapt the request for a square resize
-		if(request.getType().equals(RequestConstants.REQ_RESIZE) && getHost() instanceof UMLNodeEditPart) {
+		if (request.getType().equals(RequestConstants.REQ_RESIZE) && getHost() instanceof UMLNodeEditPart) {
 			Dimension dim = getHostFigure().getBounds().getSize();
-			Dimension preferedDim = ((UMLNodeEditPart)getHost()).getPrimaryShape().getPreferredSize();
+			Dimension preferedDim = ((UMLNodeEditPart) getHost()).getPrimaryShape().getPreferredSize();
 			Dimension delta = request.getSizeDelta();
 			int dH = delta.height;
 			int dW = delta.width;
-			if(dH > dW) {
+			if (dH > dW) {
 				dW = preferedDim.width - dim.width;
 			} else {
 				dH = preferedDim.height - dim.height;

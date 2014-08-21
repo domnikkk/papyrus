@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -69,8 +69,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityName_5001Parser() {
-		if(activityName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (activityName_5001Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			activityName_5001Parser = parser;
 		}
@@ -86,7 +86,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityIsSingleExecution_5002Parser() {
-		if(activityIsSingleExecution_5002Parser == null) {
+		if (activityIsSingleExecution_5002Parser == null) {
 			activityIsSingleExecution_5002Parser = new ActivitySingleExecutionParser();
 		}
 		return activityIsSingleExecution_5002Parser;
@@ -101,7 +101,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getParameter_3001Parser() {
-		if(parameter_3001Parser == null) {
+		if (parameter_3001Parser == null) {
 			parameter_3001Parser = new ParameterParser();
 		}
 		return parameter_3001Parser;
@@ -116,7 +116,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraint_3002Parser() {
-		if(constraint_3002Parser == null) {
+		if (constraint_3002Parser == null) {
 			constraint_3002Parser = new PreConditionConstraintLabelParser();
 		}
 		return constraint_3002Parser;
@@ -131,7 +131,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraint_3003Parser() {
-		if(constraint_3003Parser == null) {
+		if (constraint_3003Parser == null) {
 			constraint_3003Parser = new PostConditionConstraintLabelParser();
 		}
 		return constraint_3003Parser;
@@ -146,7 +146,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInitialNodeLabel_5080Parser() {
-		if(initialNodeLabel_5080Parser == null) {
+		if (initialNodeLabel_5080Parser == null) {
 			initialNodeLabel_5080Parser = new AppliedStereotypeParser();
 		}
 		return initialNodeLabel_5080Parser;
@@ -161,7 +161,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityFinalNodeLabel_5081Parser() {
-		if(activityFinalNodeLabel_5081Parser == null) {
+		if (activityFinalNodeLabel_5081Parser == null) {
 			activityFinalNodeLabel_5081Parser = new AppliedStereotypeParser();
 		}
 		return activityFinalNodeLabel_5081Parser;
@@ -176,7 +176,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getFlowFinalNodeLabel_5082Parser() {
-		if(flowFinalNodeLabel_5082Parser == null) {
+		if (flowFinalNodeLabel_5082Parser == null) {
 			flowFinalNodeLabel_5082Parser = new AppliedStereotypeParser();
 		}
 		return flowFinalNodeLabel_5082Parser;
@@ -191,8 +191,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOpaqueActionName_5003Parser() {
-		if(opaqueActionName_5003Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (opaqueActionName_5003Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			opaqueActionName_5003Parser = parser;
 		}
@@ -208,7 +208,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5011Parser() {
-		if(valuePinLabel_5011Parser == null) {
+		if (valuePinLabel_5011Parser == null) {
 			valuePinLabel_5011Parser = new PinParser();
 		}
 		return valuePinLabel_5011Parser;
@@ -223,7 +223,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5024Parser() {
-		if(valuePinLabel_5024Parser == null) {
+		if (valuePinLabel_5024Parser == null) {
 			valuePinLabel_5024Parser = new PinValueParser();
 		}
 		return valuePinLabel_5024Parser;
@@ -238,7 +238,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5083Parser() {
-		if(valuePinLabel_5083Parser == null) {
+		if (valuePinLabel_5083Parser == null) {
 			valuePinLabel_5083Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5083Parser;
@@ -253,7 +253,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5012Parser() {
-		if(actionInputPinLabel_5012Parser == null) {
+		if (actionInputPinLabel_5012Parser == null) {
 			actionInputPinLabel_5012Parser = new PinParser();
 		}
 		return actionInputPinLabel_5012Parser;
@@ -268,7 +268,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5025Parser() {
-		if(actionInputPinLabel_5025Parser == null) {
+		if (actionInputPinLabel_5025Parser == null) {
 			actionInputPinLabel_5025Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5025Parser;
@@ -283,7 +283,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5084Parser() {
-		if(actionInputPinLabel_5084Parser == null) {
+		if (actionInputPinLabel_5084Parser == null) {
 			actionInputPinLabel_5084Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5084Parser;
@@ -298,7 +298,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5009Parser() {
-		if(inputPinLabel_5009Parser == null) {
+		if (inputPinLabel_5009Parser == null) {
 			inputPinLabel_5009Parser = new PinParser();
 		}
 		return inputPinLabel_5009Parser;
@@ -313,7 +313,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5085Parser() {
-		if(inputPinLabel_5085Parser == null) {
+		if (inputPinLabel_5085Parser == null) {
 			inputPinLabel_5085Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5085Parser;
@@ -328,7 +328,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5010Parser() {
-		if(outputPinLabel_5010Parser == null) {
+		if (outputPinLabel_5010Parser == null) {
 			outputPinLabel_5010Parser = new PinParser();
 		}
 		return outputPinLabel_5010Parser;
@@ -343,7 +343,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5086Parser() {
-		if(outputPinLabel_5086Parser == null) {
+		if (outputPinLabel_5086Parser == null) {
 			outputPinLabel_5086Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5086Parser;
@@ -358,7 +358,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCallBehaviorActionLabel_5004Parser() {
-		if(callBehaviorActionLabel_5004Parser == null) {
+		if (callBehaviorActionLabel_5004Parser == null) {
 			callBehaviorActionLabel_5004Parser = new CallBehaviorActionParser();
 		}
 		return callBehaviorActionLabel_5004Parser;
@@ -373,7 +373,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5013Parser() {
-		if(valuePinLabel_5013Parser == null) {
+		if (valuePinLabel_5013Parser == null) {
 			valuePinLabel_5013Parser = new PinParser();
 		}
 		return valuePinLabel_5013Parser;
@@ -388,7 +388,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5026Parser() {
-		if(valuePinLabel_5026Parser == null) {
+		if (valuePinLabel_5026Parser == null) {
 			valuePinLabel_5026Parser = new PinValueParser();
 		}
 		return valuePinLabel_5026Parser;
@@ -403,7 +403,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5087Parser() {
-		if(valuePinLabel_5087Parser == null) {
+		if (valuePinLabel_5087Parser == null) {
 			valuePinLabel_5087Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5087Parser;
@@ -418,7 +418,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5014Parser() {
-		if(actionInputPinLabel_5014Parser == null) {
+		if (actionInputPinLabel_5014Parser == null) {
 			actionInputPinLabel_5014Parser = new PinParser();
 		}
 		return actionInputPinLabel_5014Parser;
@@ -433,7 +433,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5027Parser() {
-		if(actionInputPinLabel_5027Parser == null) {
+		if (actionInputPinLabel_5027Parser == null) {
 			actionInputPinLabel_5027Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5027Parser;
@@ -448,7 +448,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5088Parser() {
-		if(actionInputPinLabel_5088Parser == null) {
+		if (actionInputPinLabel_5088Parser == null) {
 			actionInputPinLabel_5088Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5088Parser;
@@ -463,7 +463,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5015Parser() {
-		if(inputPinLabel_5015Parser == null) {
+		if (inputPinLabel_5015Parser == null) {
 			inputPinLabel_5015Parser = new PinParser();
 		}
 		return inputPinLabel_5015Parser;
@@ -478,7 +478,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5089Parser() {
-		if(inputPinLabel_5089Parser == null) {
+		if (inputPinLabel_5089Parser == null) {
 			inputPinLabel_5089Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5089Parser;
@@ -493,7 +493,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5016Parser() {
-		if(outputPinLabel_5016Parser == null) {
+		if (outputPinLabel_5016Parser == null) {
 			outputPinLabel_5016Parser = new PinParser();
 		}
 		return outputPinLabel_5016Parser;
@@ -508,7 +508,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5090Parser() {
-		if(outputPinLabel_5090Parser == null) {
+		if (outputPinLabel_5090Parser == null) {
 			outputPinLabel_5090Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5090Parser;
@@ -523,7 +523,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCallOperationActionLabel_5006Parser() {
-		if(callOperationActionLabel_5006Parser == null) {
+		if (callOperationActionLabel_5006Parser == null) {
 			callOperationActionLabel_5006Parser = new CallOperationActionParser();
 		}
 		return callOperationActionLabel_5006Parser;
@@ -538,7 +538,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5017Parser() {
-		if(actionInputPinLabel_5017Parser == null) {
+		if (actionInputPinLabel_5017Parser == null) {
 			actionInputPinLabel_5017Parser = new PinParser();
 		}
 		return actionInputPinLabel_5017Parser;
@@ -553,7 +553,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5028Parser() {
-		if(actionInputPinLabel_5028Parser == null) {
+		if (actionInputPinLabel_5028Parser == null) {
 			actionInputPinLabel_5028Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5028Parser;
@@ -568,7 +568,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5091Parser() {
-		if(actionInputPinLabel_5091Parser == null) {
+		if (actionInputPinLabel_5091Parser == null) {
 			actionInputPinLabel_5091Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5091Parser;
@@ -583,7 +583,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5018Parser() {
-		if(valuePinLabel_5018Parser == null) {
+		if (valuePinLabel_5018Parser == null) {
 			valuePinLabel_5018Parser = new PinParser();
 		}
 		return valuePinLabel_5018Parser;
@@ -598,7 +598,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5029Parser() {
-		if(valuePinLabel_5029Parser == null) {
+		if (valuePinLabel_5029Parser == null) {
 			valuePinLabel_5029Parser = new PinValueParser();
 		}
 		return valuePinLabel_5029Parser;
@@ -613,7 +613,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5092Parser() {
-		if(valuePinLabel_5092Parser == null) {
+		if (valuePinLabel_5092Parser == null) {
 			valuePinLabel_5092Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5092Parser;
@@ -628,7 +628,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5019Parser() {
-		if(inputPinLabel_5019Parser == null) {
+		if (inputPinLabel_5019Parser == null) {
 			inputPinLabel_5019Parser = new PinParser();
 		}
 		return inputPinLabel_5019Parser;
@@ -643,7 +643,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5093Parser() {
-		if(inputPinLabel_5093Parser == null) {
+		if (inputPinLabel_5093Parser == null) {
 			inputPinLabel_5093Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5093Parser;
@@ -658,7 +658,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5020Parser() {
-		if(outputPinLabel_5020Parser == null) {
+		if (outputPinLabel_5020Parser == null) {
 			outputPinLabel_5020Parser = new PinParser();
 		}
 		return outputPinLabel_5020Parser;
@@ -673,7 +673,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5094Parser() {
-		if(outputPinLabel_5094Parser == null) {
+		if (outputPinLabel_5094Parser == null) {
 			outputPinLabel_5094Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5094Parser;
@@ -688,7 +688,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5021Parser() {
-		if(valuePinLabel_5021Parser == null) {
+		if (valuePinLabel_5021Parser == null) {
 			valuePinLabel_5021Parser = new PinParser();
 		}
 		return valuePinLabel_5021Parser;
@@ -703,7 +703,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5030Parser() {
-		if(valuePinLabel_5030Parser == null) {
+		if (valuePinLabel_5030Parser == null) {
 			valuePinLabel_5030Parser = new PinValueParser();
 		}
 		return valuePinLabel_5030Parser;
@@ -718,7 +718,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5095Parser() {
-		if(valuePinLabel_5095Parser == null) {
+		if (valuePinLabel_5095Parser == null) {
 			valuePinLabel_5095Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5095Parser;
@@ -733,7 +733,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5022Parser() {
-		if(actionInputPinLabel_5022Parser == null) {
+		if (actionInputPinLabel_5022Parser == null) {
 			actionInputPinLabel_5022Parser = new PinParser();
 		}
 		return actionInputPinLabel_5022Parser;
@@ -748,7 +748,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5031Parser() {
-		if(actionInputPinLabel_5031Parser == null) {
+		if (actionInputPinLabel_5031Parser == null) {
 			actionInputPinLabel_5031Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5031Parser;
@@ -763,7 +763,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5096Parser() {
-		if(actionInputPinLabel_5096Parser == null) {
+		if (actionInputPinLabel_5096Parser == null) {
 			actionInputPinLabel_5096Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5096Parser;
@@ -778,7 +778,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5023Parser() {
-		if(inputPinLabel_5023Parser == null) {
+		if (inputPinLabel_5023Parser == null) {
 			inputPinLabel_5023Parser = new PinParser();
 		}
 		return inputPinLabel_5023Parser;
@@ -793,7 +793,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5097Parser() {
-		if(inputPinLabel_5097Parser == null) {
+		if (inputPinLabel_5097Parser == null) {
 			inputPinLabel_5097Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5097Parser;
@@ -808,8 +808,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintName_5007Parser() {
-		if(constraintName_5007Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (constraintName_5007Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			constraintName_5007Parser = parser;
 		}
@@ -825,7 +825,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintLabel_5136Parser() {
-		if(constraintLabel_5136Parser == null) {
+		if (constraintLabel_5136Parser == null) {
 			constraintLabel_5136Parser = new ConstraintParser();
 		}
 		return constraintLabel_5136Parser;
@@ -840,8 +840,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintName_5008Parser() {
-		if(constraintName_5008Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (constraintName_5008Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			constraintName_5008Parser = parser;
 		}
@@ -857,7 +857,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintLabel_5137Parser() {
-		if(constraintLabel_5137Parser == null) {
+		if (constraintLabel_5137Parser == null) {
 			constraintLabel_5137Parser = new ConstraintParser();
 		}
 		return constraintLabel_5137Parser;
@@ -872,7 +872,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDecisionNodeLabel_5043Parser() {
-		if(decisionNodeLabel_5043Parser == null) {
+		if (decisionNodeLabel_5043Parser == null) {
 			decisionNodeLabel_5043Parser = new InputDecisionParser();
 		}
 		return decisionNodeLabel_5043Parser;
@@ -887,7 +887,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDecisionNodeLabel_5098Parser() {
-		if(decisionNodeLabel_5098Parser == null) {
+		if (decisionNodeLabel_5098Parser == null) {
 			decisionNodeLabel_5098Parser = new AppliedStereotypeParser();
 		}
 		return decisionNodeLabel_5098Parser;
@@ -902,7 +902,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getMergeNodeLabel_5099Parser() {
-		if(mergeNodeLabel_5099Parser == null) {
+		if (mergeNodeLabel_5099Parser == null) {
 			mergeNodeLabel_5099Parser = new AppliedStereotypeParser();
 		}
 		return mergeNodeLabel_5099Parser;
@@ -917,7 +917,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getForkNodeLabel_5100Parser() {
-		if(forkNodeLabel_5100Parser == null) {
+		if (forkNodeLabel_5100Parser == null) {
 			forkNodeLabel_5100Parser = new AppliedStereotypeParser();
 		}
 		return forkNodeLabel_5100Parser;
@@ -932,7 +932,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getJoinNodeLabel_5042Parser() {
-		if(joinNodeLabel_5042Parser == null) {
+		if (joinNodeLabel_5042Parser == null) {
 			joinNodeLabel_5042Parser = new JoinSpecParser();
 		}
 		return joinNodeLabel_5042Parser;
@@ -947,7 +947,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getJoinNodeLabel_5101Parser() {
-		if(joinNodeLabel_5101Parser == null) {
+		if (joinNodeLabel_5101Parser == null) {
 			joinNodeLabel_5101Parser = new AppliedStereotypeParser();
 		}
 		return joinNodeLabel_5101Parser;
@@ -962,8 +962,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getSendObjectActionName_5059Parser() {
-		if(sendObjectActionName_5059Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (sendObjectActionName_5059Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			sendObjectActionName_5059Parser = parser;
 		}
@@ -979,7 +979,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5049Parser() {
-		if(valuePinLabel_5049Parser == null) {
+		if (valuePinLabel_5049Parser == null) {
 			valuePinLabel_5049Parser = new PinParser();
 		}
 		return valuePinLabel_5049Parser;
@@ -994,7 +994,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5050Parser() {
-		if(valuePinLabel_5050Parser == null) {
+		if (valuePinLabel_5050Parser == null) {
 			valuePinLabel_5050Parser = new PinValueParser();
 		}
 		return valuePinLabel_5050Parser;
@@ -1009,7 +1009,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5102Parser() {
-		if(valuePinLabel_5102Parser == null) {
+		if (valuePinLabel_5102Parser == null) {
 			valuePinLabel_5102Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5102Parser;
@@ -1024,7 +1024,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5051Parser() {
-		if(actionInputPinLabel_5051Parser == null) {
+		if (actionInputPinLabel_5051Parser == null) {
 			actionInputPinLabel_5051Parser = new PinParser();
 		}
 		return actionInputPinLabel_5051Parser;
@@ -1039,7 +1039,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5052Parser() {
-		if(actionInputPinLabel_5052Parser == null) {
+		if (actionInputPinLabel_5052Parser == null) {
 			actionInputPinLabel_5052Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5052Parser;
@@ -1054,7 +1054,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5103Parser() {
-		if(actionInputPinLabel_5103Parser == null) {
+		if (actionInputPinLabel_5103Parser == null) {
 			actionInputPinLabel_5103Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5103Parser;
@@ -1069,7 +1069,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5053Parser() {
-		if(inputPinLabel_5053Parser == null) {
+		if (inputPinLabel_5053Parser == null) {
 			inputPinLabel_5053Parser = new PinParser();
 		}
 		return inputPinLabel_5053Parser;
@@ -1084,7 +1084,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5104Parser() {
-		if(inputPinLabel_5104Parser == null) {
+		if (inputPinLabel_5104Parser == null) {
 			inputPinLabel_5104Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5104Parser;
@@ -1099,7 +1099,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5054Parser() {
-		if(valuePinLabel_5054Parser == null) {
+		if (valuePinLabel_5054Parser == null) {
 			valuePinLabel_5054Parser = new PinParser();
 		}
 		return valuePinLabel_5054Parser;
@@ -1114,7 +1114,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5055Parser() {
-		if(valuePinLabel_5055Parser == null) {
+		if (valuePinLabel_5055Parser == null) {
 			valuePinLabel_5055Parser = new PinValueParser();
 		}
 		return valuePinLabel_5055Parser;
@@ -1129,7 +1129,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5105Parser() {
-		if(valuePinLabel_5105Parser == null) {
+		if (valuePinLabel_5105Parser == null) {
 			valuePinLabel_5105Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5105Parser;
@@ -1144,7 +1144,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5056Parser() {
-		if(actionInputPinLabel_5056Parser == null) {
+		if (actionInputPinLabel_5056Parser == null) {
 			actionInputPinLabel_5056Parser = new PinParser();
 		}
 		return actionInputPinLabel_5056Parser;
@@ -1159,7 +1159,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5057Parser() {
-		if(actionInputPinLabel_5057Parser == null) {
+		if (actionInputPinLabel_5057Parser == null) {
 			actionInputPinLabel_5057Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5057Parser;
@@ -1174,7 +1174,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5106Parser() {
-		if(actionInputPinLabel_5106Parser == null) {
+		if (actionInputPinLabel_5106Parser == null) {
 			actionInputPinLabel_5106Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5106Parser;
@@ -1189,7 +1189,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5058Parser() {
-		if(inputPinLabel_5058Parser == null) {
+		if (inputPinLabel_5058Parser == null) {
 			inputPinLabel_5058Parser = new PinParser();
 		}
 		return inputPinLabel_5058Parser;
@@ -1204,7 +1204,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5107Parser() {
-		if(inputPinLabel_5107Parser == null) {
+		if (inputPinLabel_5107Parser == null) {
 			inputPinLabel_5107Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5107Parser;
@@ -1219,8 +1219,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getSendSignalActionName_5060Parser() {
-		if(sendSignalActionName_5060Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (sendSignalActionName_5060Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			sendSignalActionName_5060Parser = parser;
 		}
@@ -1236,7 +1236,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5061Parser() {
-		if(actionInputPinLabel_5061Parser == null) {
+		if (actionInputPinLabel_5061Parser == null) {
 			actionInputPinLabel_5061Parser = new PinParser();
 		}
 		return actionInputPinLabel_5061Parser;
@@ -1251,7 +1251,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5062Parser() {
-		if(actionInputPinLabel_5062Parser == null) {
+		if (actionInputPinLabel_5062Parser == null) {
 			actionInputPinLabel_5062Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5062Parser;
@@ -1266,7 +1266,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5108Parser() {
-		if(actionInputPinLabel_5108Parser == null) {
+		if (actionInputPinLabel_5108Parser == null) {
 			actionInputPinLabel_5108Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5108Parser;
@@ -1281,7 +1281,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5063Parser() {
-		if(valuePinLabel_5063Parser == null) {
+		if (valuePinLabel_5063Parser == null) {
 			valuePinLabel_5063Parser = new PinParser();
 		}
 		return valuePinLabel_5063Parser;
@@ -1296,7 +1296,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5064Parser() {
-		if(valuePinLabel_5064Parser == null) {
+		if (valuePinLabel_5064Parser == null) {
 			valuePinLabel_5064Parser = new PinValueParser();
 		}
 		return valuePinLabel_5064Parser;
@@ -1311,7 +1311,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5109Parser() {
-		if(valuePinLabel_5109Parser == null) {
+		if (valuePinLabel_5109Parser == null) {
 			valuePinLabel_5109Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5109Parser;
@@ -1326,7 +1326,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5065Parser() {
-		if(inputPinLabel_5065Parser == null) {
+		if (inputPinLabel_5065Parser == null) {
 			inputPinLabel_5065Parser = new PinParser();
 		}
 		return inputPinLabel_5065Parser;
@@ -1341,7 +1341,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5110Parser() {
-		if(inputPinLabel_5110Parser == null) {
+		if (inputPinLabel_5110Parser == null) {
 			inputPinLabel_5110Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5110Parser;
@@ -1356,7 +1356,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5072Parser() {
-		if(valuePinLabel_5072Parser == null) {
+		if (valuePinLabel_5072Parser == null) {
 			valuePinLabel_5072Parser = new PinParser();
 		}
 		return valuePinLabel_5072Parser;
@@ -1371,7 +1371,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5073Parser() {
-		if(valuePinLabel_5073Parser == null) {
+		if (valuePinLabel_5073Parser == null) {
 			valuePinLabel_5073Parser = new PinValueParser();
 		}
 		return valuePinLabel_5073Parser;
@@ -1386,7 +1386,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValuePinLabel_5111Parser() {
-		if(valuePinLabel_5111Parser == null) {
+		if (valuePinLabel_5111Parser == null) {
 			valuePinLabel_5111Parser = new AppliedStereotypeParser();
 		}
 		return valuePinLabel_5111Parser;
@@ -1401,7 +1401,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5074Parser() {
-		if(actionInputPinLabel_5074Parser == null) {
+		if (actionInputPinLabel_5074Parser == null) {
 			actionInputPinLabel_5074Parser = new PinParser();
 		}
 		return actionInputPinLabel_5074Parser;
@@ -1416,7 +1416,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5075Parser() {
-		if(actionInputPinLabel_5075Parser == null) {
+		if (actionInputPinLabel_5075Parser == null) {
 			actionInputPinLabel_5075Parser = new PinValueParser();
 		}
 		return actionInputPinLabel_5075Parser;
@@ -1431,7 +1431,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActionInputPinLabel_5112Parser() {
-		if(actionInputPinLabel_5112Parser == null) {
+		if (actionInputPinLabel_5112Parser == null) {
 			actionInputPinLabel_5112Parser = new AppliedStereotypeParser();
 		}
 		return actionInputPinLabel_5112Parser;
@@ -1446,7 +1446,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5076Parser() {
-		if(inputPinLabel_5076Parser == null) {
+		if (inputPinLabel_5076Parser == null) {
 			inputPinLabel_5076Parser = new PinParser();
 		}
 		return inputPinLabel_5076Parser;
@@ -1461,7 +1461,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5113Parser() {
-		if(inputPinLabel_5113Parser == null) {
+		if (inputPinLabel_5113Parser == null) {
 			inputPinLabel_5113Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5113Parser;
@@ -1476,7 +1476,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityParameterNodeLabel_5071Parser() {
-		if(activityParameterNodeLabel_5071Parser == null) {
+		if (activityParameterNodeLabel_5071Parser == null) {
 			activityParameterNodeLabel_5071Parser = new ActivityParameterNodeParser();
 		}
 		return activityParameterNodeLabel_5071Parser;
@@ -1491,7 +1491,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getAcceptEventActionLabel_5078Parser() {
-		if(acceptEventActionLabel_5078Parser == null) {
+		if (acceptEventActionLabel_5078Parser == null) {
 			acceptEventActionLabel_5078Parser = new AcceptEventActionParser();
 		}
 		return acceptEventActionLabel_5078Parser;
@@ -1506,7 +1506,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getAcceptEventActionLabel_5079Parser() {
-		if(acceptEventActionLabel_5079Parser == null) {
+		if (acceptEventActionLabel_5079Parser == null) {
 			acceptEventActionLabel_5079Parser = new AcceptTimeEventActionParser();
 		}
 		return acceptEventActionLabel_5079Parser;
@@ -1521,7 +1521,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getAcceptEventActionLabel_5115Parser() {
-		if(acceptEventActionLabel_5115Parser == null) {
+		if (acceptEventActionLabel_5115Parser == null) {
 			acceptEventActionLabel_5115Parser = new AppliedStereotypeParser();
 		}
 		return acceptEventActionLabel_5115Parser;
@@ -1536,7 +1536,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5077Parser() {
-		if(outputPinLabel_5077Parser == null) {
+		if (outputPinLabel_5077Parser == null) {
 			outputPinLabel_5077Parser = new PinParser();
 		}
 		return outputPinLabel_5077Parser;
@@ -1551,7 +1551,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5114Parser() {
-		if(outputPinLabel_5114Parser == null) {
+		if (outputPinLabel_5114Parser == null) {
 			outputPinLabel_5114Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5114Parser;
@@ -1566,7 +1566,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getStructuredActivityNodeLabel_5117Parser() {
-		if(structuredActivityNodeLabel_5117Parser == null) {
+		if (structuredActivityNodeLabel_5117Parser == null) {
 			structuredActivityNodeLabel_5117Parser = new StructuredActivityNodeKeywordParser();
 		}
 		return structuredActivityNodeLabel_5117Parser;
@@ -1581,7 +1581,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5178Parser() {
-		if(inputPinLabel_5178Parser == null) {
+		if (inputPinLabel_5178Parser == null) {
 			inputPinLabel_5178Parser = new PinParser();
 		}
 		return inputPinLabel_5178Parser;
@@ -1596,7 +1596,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5179Parser() {
-		if(inputPinLabel_5179Parser == null) {
+		if (inputPinLabel_5179Parser == null) {
 			inputPinLabel_5179Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5179Parser;
@@ -1611,8 +1611,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityPartitionName_5118Parser() {
-		if(activityPartitionName_5118Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (activityPartitionName_5118Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			activityPartitionName_5118Parser = parser;
 		}
@@ -1628,7 +1628,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getNamedElementName_5129Parser() {
-		if(namedElementName_5129Parser == null) {
+		if (namedElementName_5129Parser == null) {
 			namedElementName_5129Parser = new ActivitySingleExecutionParser();
 		}
 		return namedElementName_5129Parser;
@@ -1643,8 +1643,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCreateObjectActionName_5148Parser() {
-		if(createObjectActionName_5148Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (createObjectActionName_5148Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			createObjectActionName_5148Parser = parser;
 		}
@@ -1660,7 +1660,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5146Parser() {
-		if(outputPinLabel_5146Parser == null) {
+		if (outputPinLabel_5146Parser == null) {
 			outputPinLabel_5146Parser = new PinParser();
 		}
 		return outputPinLabel_5146Parser;
@@ -1675,7 +1675,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5147Parser() {
-		if(outputPinLabel_5147Parser == null) {
+		if (outputPinLabel_5147Parser == null) {
 			outputPinLabel_5147Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5147Parser;
@@ -1690,8 +1690,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getReadStructuralFeatureActionName_5153Parser() {
-		if(readStructuralFeatureActionName_5153Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (readStructuralFeatureActionName_5153Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			readStructuralFeatureActionName_5153Parser = parser;
 		}
@@ -1707,7 +1707,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5149Parser() {
-		if(inputPinLabel_5149Parser == null) {
+		if (inputPinLabel_5149Parser == null) {
 			inputPinLabel_5149Parser = new PinParser();
 		}
 		return inputPinLabel_5149Parser;
@@ -1722,7 +1722,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5150Parser() {
-		if(inputPinLabel_5150Parser == null) {
+		if (inputPinLabel_5150Parser == null) {
 			inputPinLabel_5150Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5150Parser;
@@ -1737,7 +1737,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5151Parser() {
-		if(outputPinLabel_5151Parser == null) {
+		if (outputPinLabel_5151Parser == null) {
 			outputPinLabel_5151Parser = new PinParser();
 		}
 		return outputPinLabel_5151Parser;
@@ -1752,7 +1752,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5152Parser() {
-		if(outputPinLabel_5152Parser == null) {
+		if (outputPinLabel_5152Parser == null) {
 			outputPinLabel_5152Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5152Parser;
@@ -1767,8 +1767,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getAddStructuralFeatureValueActionName_5160Parser() {
-		if(addStructuralFeatureValueActionName_5160Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (addStructuralFeatureValueActionName_5160Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			addStructuralFeatureValueActionName_5160Parser = parser;
 		}
@@ -1784,7 +1784,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5154Parser() {
-		if(inputPinLabel_5154Parser == null) {
+		if (inputPinLabel_5154Parser == null) {
 			inputPinLabel_5154Parser = new PinParser();
 		}
 		return inputPinLabel_5154Parser;
@@ -1799,7 +1799,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5155Parser() {
-		if(inputPinLabel_5155Parser == null) {
+		if (inputPinLabel_5155Parser == null) {
 			inputPinLabel_5155Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5155Parser;
@@ -1814,7 +1814,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5156Parser() {
-		if(inputPinLabel_5156Parser == null) {
+		if (inputPinLabel_5156Parser == null) {
 			inputPinLabel_5156Parser = new PinParser();
 		}
 		return inputPinLabel_5156Parser;
@@ -1829,7 +1829,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5157Parser() {
-		if(inputPinLabel_5157Parser == null) {
+		if (inputPinLabel_5157Parser == null) {
 			inputPinLabel_5157Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5157Parser;
@@ -1844,7 +1844,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5158Parser() {
-		if(outputPinLabel_5158Parser == null) {
+		if (outputPinLabel_5158Parser == null) {
 			outputPinLabel_5158Parser = new PinParser();
 		}
 		return outputPinLabel_5158Parser;
@@ -1859,7 +1859,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5159Parser() {
-		if(outputPinLabel_5159Parser == null) {
+		if (outputPinLabel_5159Parser == null) {
 			outputPinLabel_5159Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5159Parser;
@@ -1874,8 +1874,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDestroyObjectActionName_5163Parser() {
-		if(destroyObjectActionName_5163Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (destroyObjectActionName_5163Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			destroyObjectActionName_5163Parser = parser;
 		}
@@ -1891,7 +1891,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5161Parser() {
-		if(inputPinLabel_5161Parser == null) {
+		if (inputPinLabel_5161Parser == null) {
 			inputPinLabel_5161Parser = new PinParser();
 		}
 		return inputPinLabel_5161Parser;
@@ -1906,7 +1906,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5162Parser() {
-		if(inputPinLabel_5162Parser == null) {
+		if (inputPinLabel_5162Parser == null) {
 			inputPinLabel_5162Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5162Parser;
@@ -1921,8 +1921,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getReadVariableActionName_5166Parser() {
-		if(readVariableActionName_5166Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (readVariableActionName_5166Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			readVariableActionName_5166Parser = parser;
 		}
@@ -1938,7 +1938,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5164Parser() {
-		if(outputPinLabel_5164Parser == null) {
+		if (outputPinLabel_5164Parser == null) {
 			outputPinLabel_5164Parser = new PinParser();
 		}
 		return outputPinLabel_5164Parser;
@@ -1953,7 +1953,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5165Parser() {
-		if(outputPinLabel_5165Parser == null) {
+		if (outputPinLabel_5165Parser == null) {
 			outputPinLabel_5165Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5165Parser;
@@ -1968,8 +1968,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getAddVariableValueActionName_5171Parser() {
-		if(addVariableValueActionName_5171Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (addVariableValueActionName_5171Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			addVariableValueActionName_5171Parser = parser;
 		}
@@ -1985,7 +1985,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5167Parser() {
-		if(inputPinLabel_5167Parser == null) {
+		if (inputPinLabel_5167Parser == null) {
 			inputPinLabel_5167Parser = new PinParser();
 		}
 		return inputPinLabel_5167Parser;
@@ -2000,7 +2000,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5168Parser() {
-		if(inputPinLabel_5168Parser == null) {
+		if (inputPinLabel_5168Parser == null) {
 			inputPinLabel_5168Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5168Parser;
@@ -2015,7 +2015,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5169Parser() {
-		if(inputPinLabel_5169Parser == null) {
+		if (inputPinLabel_5169Parser == null) {
 			inputPinLabel_5169Parser = new PinParser();
 		}
 		return inputPinLabel_5169Parser;
@@ -2030,7 +2030,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5170Parser() {
-		if(inputPinLabel_5170Parser == null) {
+		if (inputPinLabel_5170Parser == null) {
 			inputPinLabel_5170Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5170Parser;
@@ -2045,8 +2045,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getBroadcastSignalActionName_5175Parser() {
-		if(broadcastSignalActionName_5175Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (broadcastSignalActionName_5175Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			broadcastSignalActionName_5175Parser = parser;
 		}
@@ -2062,7 +2062,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5172Parser() {
-		if(inputPinLabel_5172Parser == null) {
+		if (inputPinLabel_5172Parser == null) {
 			inputPinLabel_5172Parser = new PinParser();
 		}
 		return inputPinLabel_5172Parser;
@@ -2077,7 +2077,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5173Parser() {
-		if(inputPinLabel_5173Parser == null) {
+		if (inputPinLabel_5173Parser == null) {
 			inputPinLabel_5173Parser = new PinValueParser();
 		}
 		return inputPinLabel_5173Parser;
@@ -2092,7 +2092,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getInputPinLabel_5174Parser() {
-		if(inputPinLabel_5174Parser == null) {
+		if (inputPinLabel_5174Parser == null) {
 			inputPinLabel_5174Parser = new AppliedStereotypeParser();
 		}
 		return inputPinLabel_5174Parser;
@@ -2107,7 +2107,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCentralBufferNodeLabel_5176Parser() {
-		if(centralBufferNodeLabel_5176Parser == null) {
+		if (centralBufferNodeLabel_5176Parser == null) {
 			centralBufferNodeLabel_5176Parser = new ObjectNodeParser();
 		}
 		return centralBufferNodeLabel_5176Parser;
@@ -2122,7 +2122,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCentralBufferNodeLabel_5177Parser() {
-		if(centralBufferNodeLabel_5177Parser == null) {
+		if (centralBufferNodeLabel_5177Parser == null) {
 			centralBufferNodeLabel_5177Parser = new ObjectNodeSelectionParser();
 		}
 		return centralBufferNodeLabel_5177Parser;
@@ -2137,8 +2137,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintName_5189Parser() {
-		if(constraintName_5189Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (constraintName_5189Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			constraintName_5189Parser = parser;
 		}
@@ -2154,7 +2154,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConstraintSpecification_5190Parser() {
-		if(constraintSpecification_5190Parser == null) {
+		if (constraintSpecification_5190Parser == null) {
 			constraintSpecification_5190Parser = new ConstraintParser();
 		}
 		return constraintSpecification_5190Parser;
@@ -2169,7 +2169,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getCommentBody_5138Parser() {
-		if(commentBody_5138Parser == null) {
+		if (commentBody_5138Parser == null) {
 			commentBody_5138Parser = new CommentParser();
 		}
 		return commentBody_5138Parser;
@@ -2184,8 +2184,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getReadSelfActionName_5139Parser() {
-		if(readSelfActionName_5139Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (readSelfActionName_5139Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			readSelfActionName_5139Parser = parser;
 		}
@@ -2201,7 +2201,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5144Parser() {
-		if(outputPinLabel_5144Parser == null) {
+		if (outputPinLabel_5144Parser == null) {
 			outputPinLabel_5144Parser = new PinParser();
 		}
 		return outputPinLabel_5144Parser;
@@ -2216,7 +2216,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5145Parser() {
-		if(outputPinLabel_5145Parser == null) {
+		if (outputPinLabel_5145Parser == null) {
 			outputPinLabel_5145Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5145Parser;
@@ -2231,8 +2231,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityName_5142Parser() {
-		if(activityName_5142Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (activityName_5142Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			activityName_5142Parser = parser;
 		}
@@ -2248,7 +2248,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getActivityIsSingleExecution_5143Parser() {
-		if(activityIsSingleExecution_5143Parser == null) {
+		if (activityIsSingleExecution_5143Parser == null) {
 			activityIsSingleExecution_5143Parser = new ActivitySingleExecutionParser();
 		}
 		return activityIsSingleExecution_5143Parser;
@@ -2263,8 +2263,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getValueSpecificationActionName_5126Parser() {
-		if(valueSpecificationActionName_5126Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (valueSpecificationActionName_5126Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			valueSpecificationActionName_5126Parser = parser;
 		}
@@ -2280,7 +2280,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5124Parser() {
-		if(outputPinLabel_5124Parser == null) {
+		if (outputPinLabel_5124Parser == null) {
 			outputPinLabel_5124Parser = new PinParser();
 		}
 		return outputPinLabel_5124Parser;
@@ -2295,7 +2295,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5125Parser() {
-		if(outputPinLabel_5125Parser == null) {
+		if (outputPinLabel_5125Parser == null) {
 			outputPinLabel_5125Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5125Parser;
@@ -2310,7 +2310,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDataStoreNodeLabel_5127Parser() {
-		if(dataStoreNodeLabel_5127Parser == null) {
+		if (dataStoreNodeLabel_5127Parser == null) {
 			dataStoreNodeLabel_5127Parser = new ObjectNodeParser();
 		}
 		return dataStoreNodeLabel_5127Parser;
@@ -2325,7 +2325,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDataStoreNodeLabel_5128Parser() {
-		if(dataStoreNodeLabel_5128Parser == null) {
+		if (dataStoreNodeLabel_5128Parser == null) {
 			dataStoreNodeLabel_5128Parser = new ObjectNodeSelectionParser();
 		}
 		return dataStoreNodeLabel_5128Parser;
@@ -2340,7 +2340,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getConditionalNodeLabel_5119Parser() {
-		if(conditionalNodeLabel_5119Parser == null) {
+		if (conditionalNodeLabel_5119Parser == null) {
 			conditionalNodeLabel_5119Parser = new StructuredActivityNodeKeywordParser();
 		}
 		return conditionalNodeLabel_5119Parser;
@@ -2355,7 +2355,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getExpansionRegionLabel_5120Parser() {
-		if(expansionRegionLabel_5120Parser == null) {
+		if (expansionRegionLabel_5120Parser == null) {
 			expansionRegionLabel_5120Parser = new StructuredActivityNodeKeywordParser();
 		}
 		return expansionRegionLabel_5120Parser;
@@ -2370,7 +2370,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getLoopNodeLabel_5121Parser() {
-		if(loopNodeLabel_5121Parser == null) {
+		if (loopNodeLabel_5121Parser == null) {
 			loopNodeLabel_5121Parser = new StructuredActivityNodeKeywordParser();
 		}
 		return loopNodeLabel_5121Parser;
@@ -2385,7 +2385,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5184Parser() {
-		if(outputPinLabel_5184Parser == null) {
+		if (outputPinLabel_5184Parser == null) {
 			outputPinLabel_5184Parser = new PinParser();
 		}
 		return outputPinLabel_5184Parser;
@@ -2400,7 +2400,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5185Parser() {
-		if(outputPinLabel_5185Parser == null) {
+		if (outputPinLabel_5185Parser == null) {
 			outputPinLabel_5185Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5185Parser;
@@ -2415,7 +2415,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5186Parser() {
-		if(outputPinLabel_5186Parser == null) {
+		if (outputPinLabel_5186Parser == null) {
 			outputPinLabel_5186Parser = new PinParser();
 		}
 		return outputPinLabel_5186Parser;
@@ -2430,7 +2430,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5183Parser() {
-		if(outputPinLabel_5183Parser == null) {
+		if (outputPinLabel_5183Parser == null) {
 			outputPinLabel_5183Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5183Parser;
@@ -2445,7 +2445,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5187Parser() {
-		if(outputPinLabel_5187Parser == null) {
+		if (outputPinLabel_5187Parser == null) {
 			outputPinLabel_5187Parser = new PinParser();
 		}
 		return outputPinLabel_5187Parser;
@@ -2460,7 +2460,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getOutputPinLabel_5188Parser() {
-		if(outputPinLabel_5188Parser == null) {
+		if (outputPinLabel_5188Parser == null) {
 			outputPinLabel_5188Parser = new AppliedStereotypeParser();
 		}
 		return outputPinLabel_5188Parser;
@@ -2475,7 +2475,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getSequenceNodeLabel_5123Parser() {
-		if(sequenceNodeLabel_5123Parser == null) {
+		if (sequenceNodeLabel_5123Parser == null) {
 			sequenceNodeLabel_5123Parser = new StructuredActivityNodeKeywordParser();
 		}
 		return sequenceNodeLabel_5123Parser;
@@ -2490,8 +2490,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getIntervalConstraintName_5036Parser() {
-		if(intervalConstraintName_5036Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (intervalConstraintName_5036Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			intervalConstraintName_5036Parser = parser;
 		}
@@ -2507,7 +2507,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getIntervalConstraintLabel_5134Parser() {
-		if(intervalConstraintLabel_5134Parser == null) {
+		if (intervalConstraintLabel_5134Parser == null) {
 			intervalConstraintLabel_5134Parser = new ConstraintParser();
 		}
 		return intervalConstraintLabel_5134Parser;
@@ -2522,8 +2522,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getIntervalConstraintName_5037Parser() {
-		if(intervalConstraintName_5037Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (intervalConstraintName_5037Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			intervalConstraintName_5037Parser = parser;
 		}
@@ -2539,7 +2539,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getIntervalConstraintLabel_5135Parser() {
-		if(intervalConstraintLabel_5135Parser == null) {
+		if (intervalConstraintLabel_5135Parser == null) {
 			intervalConstraintLabel_5135Parser = new ConstraintParser();
 		}
 		return intervalConstraintLabel_5135Parser;
@@ -2554,8 +2554,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintName_5038Parser() {
-		if(durationConstraintName_5038Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (durationConstraintName_5038Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			durationConstraintName_5038Parser = parser;
 		}
@@ -2571,7 +2571,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintLabel_5130Parser() {
-		if(durationConstraintLabel_5130Parser == null) {
+		if (durationConstraintLabel_5130Parser == null) {
 			durationConstraintLabel_5130Parser = new ConstraintParser();
 		}
 		return durationConstraintLabel_5130Parser;
@@ -2586,8 +2586,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintName_5039Parser() {
-		if(durationConstraintName_5039Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (durationConstraintName_5039Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			durationConstraintName_5039Parser = parser;
 		}
@@ -2603,7 +2603,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getDurationConstraintLabel_5131Parser() {
-		if(durationConstraintLabel_5131Parser == null) {
+		if (durationConstraintLabel_5131Parser == null) {
 			durationConstraintLabel_5131Parser = new ConstraintParser();
 		}
 		return durationConstraintLabel_5131Parser;
@@ -2618,8 +2618,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeConstraintName_5040Parser() {
-		if(timeConstraintName_5040Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (timeConstraintName_5040Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			timeConstraintName_5040Parser = parser;
 		}
@@ -2635,7 +2635,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeConstraintLabel_5132Parser() {
-		if(timeConstraintLabel_5132Parser == null) {
+		if (timeConstraintLabel_5132Parser == null) {
 			timeConstraintLabel_5132Parser = new ConstraintParser();
 		}
 		return timeConstraintLabel_5132Parser;
@@ -2650,8 +2650,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeConstraintName_5041Parser() {
-		if(timeConstraintName_5041Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (timeConstraintName_5041Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			timeConstraintName_5041Parser = parser;
 		}
@@ -2667,7 +2667,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getTimeConstraintLabel_5133Parser() {
-		if(timeConstraintLabel_5133Parser == null) {
+		if (timeConstraintLabel_5133Parser == null) {
 			timeConstraintLabel_5133Parser = new ConstraintParser();
 		}
 		return timeConstraintLabel_5133Parser;
@@ -2682,8 +2682,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowName_6001Parser() {
-		if(objectFlowName_6001Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (objectFlowName_6001Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			objectFlowName_6001Parser = parser;
 		}
@@ -2699,7 +2699,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowLabel_6002Parser() {
-		if(objectFlowLabel_6002Parser == null) {
+		if (objectFlowLabel_6002Parser == null) {
 			objectFlowLabel_6002Parser = new ActivityEdgeWeightParser();
 		}
 		return objectFlowLabel_6002Parser;
@@ -2714,7 +2714,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowLabel_6005Parser() {
-		if(objectFlowLabel_6005Parser == null) {
+		if (objectFlowLabel_6005Parser == null) {
 			objectFlowLabel_6005Parser = new ObjectFlowSelectionParser();
 		}
 		return objectFlowLabel_6005Parser;
@@ -2729,7 +2729,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowLabel_6006Parser() {
-		if(objectFlowLabel_6006Parser == null) {
+		if (objectFlowLabel_6006Parser == null) {
 			objectFlowLabel_6006Parser = new ObjectFlowTransformationParser();
 		}
 		return objectFlowLabel_6006Parser;
@@ -2744,7 +2744,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowLabel_6007Parser() {
-		if(objectFlowLabel_6007Parser == null) {
+		if (objectFlowLabel_6007Parser == null) {
 			objectFlowLabel_6007Parser = new DecisionInputFlowParser();
 		}
 		return objectFlowLabel_6007Parser;
@@ -2759,7 +2759,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowLabel_6008Parser() {
-		if(objectFlowLabel_6008Parser == null) {
+		if (objectFlowLabel_6008Parser == null) {
 			objectFlowLabel_6008Parser = new EdgeGuardParser();
 		}
 		return objectFlowLabel_6008Parser;
@@ -2774,7 +2774,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getObjectFlowLabel_6010Parser() {
-		if(objectFlowLabel_6010Parser == null) {
+		if (objectFlowLabel_6010Parser == null) {
 			objectFlowLabel_6010Parser = new AppliedStereotypeParser();
 		}
 		return objectFlowLabel_6010Parser;
@@ -2789,8 +2789,8 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getControlFlowName_6003Parser() {
-		if(controlFlowName_6003Parser == null) {
-			EAttribute[] features = new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() };
+		if (controlFlowName_6003Parser == null) {
+			EAttribute[] features = new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			controlFlowName_6003Parser = parser;
 		}
@@ -2806,7 +2806,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getControlFlowLabel_6004Parser() {
-		if(controlFlowLabel_6004Parser == null) {
+		if (controlFlowLabel_6004Parser == null) {
 			controlFlowLabel_6004Parser = new ActivityEdgeWeightParser();
 		}
 		return controlFlowLabel_6004Parser;
@@ -2821,7 +2821,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getControlFlowLabel_6009Parser() {
-		if(controlFlowLabel_6009Parser == null) {
+		if (controlFlowLabel_6009Parser == null) {
 			controlFlowLabel_6009Parser = new EdgeGuardParser();
 		}
 		return controlFlowLabel_6009Parser;
@@ -2836,7 +2836,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getControlFlowLabel_6011Parser() {
-		if(controlFlowLabel_6011Parser == null) {
+		if (controlFlowLabel_6011Parser == null) {
 			controlFlowLabel_6011Parser = new AppliedStereotypeParser();
 		}
 		return controlFlowLabel_6011Parser;
@@ -2851,7 +2851,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	private IParser getExceptionHandlerLabel_6012Parser() {
-		if(exceptionHandlerLabel_6012Parser == null) {
+		if (exceptionHandlerLabel_6012Parser == null) {
 			exceptionHandlerLabel_6012Parser = new ExceptionHandlerTypeParser();
 		}
 		return exceptionHandlerLabel_6012Parser;
@@ -2861,7 +2861,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	 * @generated
 	 */
 	protected IParser getParser(int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case ActivityNameEditPart.VISUAL_ID:
 			return getActivityName_5001Parser();
 		case ActivityIsSingleExecutionEditPart.VISUAL_ID:
@@ -3234,7 +3234,7 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 
 	/**
 	 * Utility method that consults ParserService
-	 * 
+	 *
 	 * @generated
 	 */
 	public static IParser getParser(IElementType type, EObject object, String parserHint) {
@@ -3244,13 +3244,14 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	@Override
 	public IParser getParser(IAdaptable hint) {
-		String vid = (String)hint.getAdapter(String.class);
-		if(vid != null) {
+		String vid = (String) hint.getAdapter(String.class);
+		if (vid != null) {
 			return getParser(UMLVisualIDRegistry.getVisualID(vid));
 		}
-		View view = (View)hint.getAdapter(View.class);
-		if(view != null) {
+		View view = (View) hint.getAdapter(View.class);
+		if (view != null) {
 			return getParser(UMLVisualIDRegistry.getVisualID(view));
 		}
 		return null;
@@ -3259,10 +3260,11 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
-		if(operation instanceof GetParserOperation) {
-			IAdaptable hint = ((GetParserOperation)operation).getHint();
-			if(UMLElementTypes.getElement(hint) == null) {
+		if (operation instanceof GetParserOperation) {
+			IAdaptable hint = ((GetParserOperation) operation).getHint();
+			if (UMLElementTypes.getElement(hint) == null) {
 				return false;
 			}
 			return getParser(hint) != null;
@@ -3292,8 +3294,9 @@ public class UMLParserProvider extends AbstractProvider implements IParserProvid
 		/**
 		 * @generated
 		 */
+		@Override
 		public Object getAdapter(Class adapter) {
-			if(IElementType.class.equals(adapter)) {
+			if (IElementType.class.equals(adapter)) {
 				return elementType;
 			}
 			return super.getAdapter(adapter);

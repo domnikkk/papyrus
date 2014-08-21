@@ -35,7 +35,7 @@ import org.eclipse.ui.dialogs.SelectionStatusDialog;
 
 /**
  * A dialog to select {@link FacetSet}s
- * 
+ *
  * @param <T>
  *            the type of a pre-commit dialog
  */
@@ -222,7 +222,7 @@ public class FacetSetSelectionDialog<T> extends SelectionStatusDialog implements
 	protected void computeResult() {
 		// nothing : the dialog is not used in a standard way : use the callback
 	}
-	
+
 	public TreeViewer getTreeViewer() {
 		return this.selectionControl.getTreeViewer();
 	}

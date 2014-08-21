@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 402525
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.widgets.messages;
 
@@ -24,7 +24,7 @@ public class Messages extends NLS {
 	private static final String BUNDLE_NAME = "org.eclipse.papyrus.infra.widgets.messages.messages"; //$NON-NLS-1$
 
 	public static String BooleanInputValidator_NotABoolean;
-	
+
 	public static String IntegerInputValidator_NotAnIntegerMessage;
 
 	public static String RealInputValidator_NotaRealMessage;

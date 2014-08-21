@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 * @param eObject
 	 */
@@ -60,7 +60,7 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param req
 	 */
 	public CustomLifelineCreateCommand(CreateElementRequest req, Diagram diagram) {
@@ -69,7 +69,7 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 
 	/**
 	 * Add generated NOT to constrain the creation of a lifeline
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 
 	/**
 	 * Generated not for add lifelines on lifeline
-	 * 
+	 *
 	 * @Override
 	 */
 	@Override
@@ -88,17 +88,17 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 		Interaction interactionOwner = null;
 		Property property = null;
 		Lifeline newElement = UMLFactory.eINSTANCE.createLifeline();
-		if(object instanceof Lifeline) {
-			Lifeline parentLifeline = (Lifeline)object;
+		if (object instanceof Lifeline) {
+			Lifeline parentLifeline = (Lifeline) object;
 			property = CommandHelper.getProperties(availableProperties);
-			if(property == null) {
+			if (property == null) {
 				return CommandResult.newCancelledCommandResult();
 			}
 			newElement.setRepresents(property);
 			interactionOwner = parentLifeline.getInteraction();
 			// create or retrieve a PartDecomposition
 			PartDecomposition partDecomposition = parentLifeline.getDecomposedAs();
-			if(partDecomposition == null) {
+			if (partDecomposition == null) {
 				List<InteractionFragment> ifts = interactionOwner.getFragments();
 				partDecomposition = UMLFactory.eINSTANCE.createPartDecomposition();
 				partDecomposition.setName(ElementInitializers.getNextNumberedName(ifts, partDecomposition.eClass().getName()));
@@ -107,12 +107,12 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 			}
 			partDecomposition.getCovereds().add(newElement);
 		} else {
-			interactionOwner = (Interaction)getElementToEdit();
+			interactionOwner = (Interaction) getElementToEdit();
 		}
 		interactionOwner.getLifelines().add(newElement);
 		ElementInitializers.getInstance().init_Lifeline_3001(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 
@@ -121,26 +121,26 @@ public class CustomLifelineCreateCommand extends LifelineCreateCommand {
 	 */
 	@Override
 	protected void doConfigure(Lifeline newElement, IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest)getRequest()).getElementType();
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
 		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest)getRequest()).getClientContext());
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		// fix bug 364696(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364696) 
+		// fix bug 364696(https://bugs.eclipse.org/bugs/show_bug.cgi?id=364696)
 		Object object = getRequest().getParameters().get(SequenceRequestConstant.CONNECTABLE_ELEMENT);
-		if(object instanceof ConnectableElement) {
-			newElement.setRepresents((ConnectableElement)object);
+		if (object instanceof ConnectableElement) {
+			newElement.setRepresents((ConnectableElement) object);
 		}
 		ICommand configureCommand = elementType.getEditCommand(configureRequest);
-		if(configureCommand != null && configureCommand.canExecute()) {
+		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}
 	}
 
 	/**
 	 * Set available property
-	 * 
+	 *
 	 * @param availableProperties
-	 *        The available properties
+	 *            The available properties
 	 */
 	public void setAvailableProperties(List<Property> availableProperties) {
 		this.availableProperties = availableProperties;

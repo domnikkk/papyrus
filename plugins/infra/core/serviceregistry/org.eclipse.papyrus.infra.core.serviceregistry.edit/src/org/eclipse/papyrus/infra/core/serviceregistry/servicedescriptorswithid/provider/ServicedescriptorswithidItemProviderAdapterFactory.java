@@ -30,6 +30,7 @@ import org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.u
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class ServicedescriptorswithidItemProviderAdapterFactory extends ServicedescriptorswithidAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -37,6 +38,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -45,6 +47,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -53,6 +56,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -61,6 +65,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ServicedescriptorswithidItemProviderAdapterFactory() {
@@ -75,6 +80,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RegistryIdDescItemProvider registryIdDescItemProvider;
@@ -83,6 +89,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.RegistryIdDesc}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,6 +105,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceIdDescItemProvider serviceIdDescItemProvider;
@@ -106,6 +114,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceIdDesc}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -121,6 +130,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceSetIdDescItemProvider serviceSetIdDescItemProvider;
@@ -129,6 +139,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceSetIdDesc}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -144,6 +155,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AliasIdDescItemProvider aliasIdDescItemProvider;
@@ -152,6 +164,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.AliasIdDesc}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -167,6 +180,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IdDescriptorsItemProvider idDescriptorsItemProvider;
@@ -175,6 +189,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.IdDescriptors}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -190,6 +205,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PropertyInjectionItemProvider propertyInjectionItemProvider;
@@ -198,6 +214,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.PropertyInjection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -213,6 +230,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MethodInjectionItemProvider methodInjectionItemProvider;
@@ -221,6 +239,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.MethodInjection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -236,6 +255,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ParameterInjectionItemProvider parameterInjectionItemProvider;
@@ -244,6 +264,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ParameterInjection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -259,6 +280,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected InjectedServiceItemProvider injectedServiceItemProvider;
@@ -267,6 +289,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.InjectedService}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -282,6 +305,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected OpaqueInjectedValueItemProvider opaqueInjectedValueItemProvider;
@@ -290,6 +314,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.OpaqueInjectedValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -305,6 +330,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ConstructorInjectionItemProvider constructorInjectionItemProvider;
@@ -313,6 +339,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ConstructorInjection}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -328,6 +355,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceFactoryIdDesc} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ServiceFactoryIdDescItemProvider serviceFactoryIdDescItemProvider;
@@ -336,6 +364,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptorswithid.ServiceFactoryIdDesc}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -351,8 +380,10 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -361,8 +392,10 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -370,6 +403,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -381,6 +415,7 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -391,13 +426,14 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -409,8 +445,10 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -419,8 +457,10 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -429,8 +469,10 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -440,24 +482,50 @@ public class ServicedescriptorswithidItemProviderAdapterFactory extends Serviced
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
-		if (registryIdDescItemProvider != null) registryIdDescItemProvider.dispose();
-		if (serviceIdDescItemProvider != null) serviceIdDescItemProvider.dispose();
-		if (serviceSetIdDescItemProvider != null) serviceSetIdDescItemProvider.dispose();
-		if (aliasIdDescItemProvider != null) aliasIdDescItemProvider.dispose();
-		if (idDescriptorsItemProvider != null) idDescriptorsItemProvider.dispose();
-		if (propertyInjectionItemProvider != null) propertyInjectionItemProvider.dispose();
-		if (methodInjectionItemProvider != null) methodInjectionItemProvider.dispose();
-		if (parameterInjectionItemProvider != null) parameterInjectionItemProvider.dispose();
-		if (injectedServiceItemProvider != null) injectedServiceItemProvider.dispose();
-		if (opaqueInjectedValueItemProvider != null) opaqueInjectedValueItemProvider.dispose();
-		if (constructorInjectionItemProvider != null) constructorInjectionItemProvider.dispose();
-		if (serviceFactoryIdDescItemProvider != null) serviceFactoryIdDescItemProvider.dispose();
+		if (registryIdDescItemProvider != null) {
+			registryIdDescItemProvider.dispose();
+		}
+		if (serviceIdDescItemProvider != null) {
+			serviceIdDescItemProvider.dispose();
+		}
+		if (serviceSetIdDescItemProvider != null) {
+			serviceSetIdDescItemProvider.dispose();
+		}
+		if (aliasIdDescItemProvider != null) {
+			aliasIdDescItemProvider.dispose();
+		}
+		if (idDescriptorsItemProvider != null) {
+			idDescriptorsItemProvider.dispose();
+		}
+		if (propertyInjectionItemProvider != null) {
+			propertyInjectionItemProvider.dispose();
+		}
+		if (methodInjectionItemProvider != null) {
+			methodInjectionItemProvider.dispose();
+		}
+		if (parameterInjectionItemProvider != null) {
+			parameterInjectionItemProvider.dispose();
+		}
+		if (injectedServiceItemProvider != null) {
+			injectedServiceItemProvider.dispose();
+		}
+		if (opaqueInjectedValueItemProvider != null) {
+			opaqueInjectedValueItemProvider.dispose();
+		}
+		if (constructorInjectionItemProvider != null) {
+			constructorInjectionItemProvider.dispose();
+		}
+		if (serviceFactoryIdDescItemProvider != null) {
+			serviceFactoryIdDescItemProvider.dispose();
+		}
 	}
 
 }

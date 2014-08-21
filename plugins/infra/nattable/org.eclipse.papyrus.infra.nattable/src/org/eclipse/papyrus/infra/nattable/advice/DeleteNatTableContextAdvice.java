@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,40 +31,40 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 
 /**
  * Destroy the NatTable
- * 
- * 
+ *
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class DeleteNatTableContextAdvice extends AbstractEditHelperAdvice {
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice#getBeforeDestroyDependentsCommand(org.eclipse.gmf.runtime.emf.type.core.requests.DestroyDependentsRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 		final EObject objectToDestroy = request.getElementToDestroy();
-		if(objectToDestroy == null) {
+		if (objectToDestroy == null) {
 			return null;
 		}
 
-		final ECrossReferenceAdapter crossReferencerAdapter = CrossReferenceAdapter.getCrossReferenceAdapter(objectToDestroy);
+		final ECrossReferenceAdapter crossReferencerAdapter = ECrossReferenceAdapter.getCrossReferenceAdapter(objectToDestroy);
 		final Collection<Setting> settings = crossReferencerAdapter.getNonNavigableInverseReferences(objectToDestroy);
 		CompositeCommand cmd = new CompositeCommand(Messages.DeleteNatTableContextAdvice_DestroyNattableCommand);
-		for(Setting currentSetting : settings) {
+		for (Setting currentSetting : settings) {
 			final EObject currentEObject = currentSetting.getEObject();
 			final EStructuralFeature currentfeature = currentSetting.getEStructuralFeature();
-			if(currentEObject instanceof Table && currentfeature == NattablePackage.eINSTANCE.getTable_Context()) {
+			if (currentEObject instanceof Table && currentfeature == NattablePackage.eINSTANCE.getTable_Context()) {
 				final DestroyElementRequest request2 = new DestroyElementRequest(currentEObject, false);
 				final IElementEditService provider = ElementEditServiceUtils.getCommandProvider(currentEObject);
 				cmd.add(provider.getEditCommand(request2));
 			}
 		}
-		if(!cmd.isEmpty()) {
+		if (!cmd.isEmpty()) {
 			return cmd;
 		}
 		return null;

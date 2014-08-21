@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * This is the Object use to manipulate into hyperlinks
- * 
+ *
  */
 public abstract class HyperLinkObject {
 
@@ -46,7 +46,7 @@ public abstract class HyperLinkObject {
 
 	/**
 	 * set a string that is the associated tool tup
-	 * 
+	 *
 	 * @param tooltipText
 	 */
 	public void setTooltipText(String tooltipText) {
@@ -54,7 +54,7 @@ public abstract class HyperLinkObject {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return the object that is the target of the hyperlink
 	 */
 	public Object getObject() {
@@ -63,9 +63,9 @@ public abstract class HyperLinkObject {
 
 	/**
 	 * set the object that will be the target of the hyperlink
-	 * 
+	 *
 	 * @param object
-	 *        the targeted object
+	 *            the targeted object
 	 */
 	public void setObject(Object object) {
 		this.object = object;
@@ -73,16 +73,16 @@ public abstract class HyperLinkObject {
 
 	/**
 	 * set a boolean in order to make this hyperlink as default
-	 * 
+	 *
 	 * @param isDefault
-	 *        true or false
+	 *            true or false
 	 */
 	public void setIsDefault(boolean isDefault) {
 		this.isDefault = isDefault;
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true is the hyperlink is default
 	 */
 	public boolean getIsDefault() {
@@ -91,17 +91,17 @@ public abstract class HyperLinkObject {
 
 	/**
 	 * Used to execute an action when the hyperlink object is selected and clicked to be edited
-	 * 
+	 *
 	 * @param list
-	 *        of hyperlink that are containted by a graphical element
+	 *            of hyperlink that are containted by a graphical element
 	 * @param amodel
-	 *        the top package root element
+	 *            the top package root element
 	 */
 	public abstract void executeEditMousePressed(List<HyperLinkObject> list, EObject amodel);
 
 	/**
 	 * Tells whether openLink() should be called within an EMF command
-	 * 
+	 *
 	 * @return
 	 */
 	public abstract boolean needsOpenCommand();

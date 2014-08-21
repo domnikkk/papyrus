@@ -15,7 +15,7 @@ package org.eclipse.papyrus.views.properties.ui;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.views.properties.ui.WidgetAttribute#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.views.properties.ui.WidgetAttribute#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,10 +28,10 @@ public interface WidgetAttribute extends Element {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.views.properties.ui.UiPackage#getWidgetAttribute_Name()
@@ -44,7 +44,9 @@ public interface WidgetAttribute extends Element {
 	 * Sets the value of the '{@link org.eclipse.papyrus.views.properties.ui.WidgetAttribute#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

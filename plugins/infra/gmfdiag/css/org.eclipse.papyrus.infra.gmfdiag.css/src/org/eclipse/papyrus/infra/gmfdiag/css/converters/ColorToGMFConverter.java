@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 392301
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.infra.gmfdiag.css.converters;
 
@@ -25,7 +25,7 @@ import org.w3c.dom.css.RGBColor;
 /**
  * A Converter for GMF Colors
  * Converts a CSS Color to a GMF-compatible color (RGB Integer)
- * 
+ *
  * @author Camille Letavernier
  */
 @SuppressWarnings("restriction")
@@ -43,12 +43,13 @@ public class ColorToGMFConverter extends AbstractCSSValueConverter {
 		super(GMFColor);
 	}
 
+	@Override
 	public Object convert(CSSValue value, CSSEngine engine, Object context) throws Exception {
 		RGBColor color;
-		if(value instanceof RGBColor) {
-			color = (RGBColor)value;
-		} else if(value instanceof CSSPrimitiveValue) {
-			CSSPrimitiveValue cssValue = (CSSPrimitiveValue)value;
+		if (value instanceof RGBColor) {
+			color = (RGBColor) value;
+		} else if (value instanceof CSSPrimitiveValue) {
+			CSSPrimitiveValue cssValue = (CSSPrimitiveValue) value;
 			color = CSS2ColorHelper.getRGBColor(cssValue.getStringValue());
 		} else {
 			throw new IllegalArgumentException("Cannot convert " + value + " to GMF Color");
@@ -57,15 +58,16 @@ public class ColorToGMFConverter extends AbstractCSSValueConverter {
 		return getIntColor(color);
 	}
 
+	@Override
 	public String convert(Object value, CSSEngine engine, Object context, ICSSValueConverterConfig config) throws Exception {
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * Returns a GMF-compatible integer color from a CSS RGBColor object
-	 * 
+	 *
 	 * @param color
-	 *        The CSS RGBColor to convert
+	 *            The CSS RGBColor to convert
 	 * @return
 	 *         A GMF-compatible integer color
 	 */
@@ -79,32 +81,32 @@ public class ColorToGMFConverter extends AbstractCSSValueConverter {
 
 	/**
 	 * Returns an integer from a CSSPrimitiveValue
-	 * 
+	 *
 	 * @param value
-	 *        The CSSPrimitiveValue to convert
+	 *            The CSSPrimitiveValue to convert
 	 * @return
 	 *         A Java integer equivalent to the CSSPrimitiveValue
 	 */
 	public static int getInt(CSSPrimitiveValue value) {
-		if(value instanceof Measure) {
-			Measure measure = (Measure)value;
+		if (value instanceof Measure) {
+			Measure measure = (Measure) value;
 			return measure.getIntegerValue(CSSValue.CSS_PRIMITIVE_VALUE);
 		}
-		return (int)value.getFloatValue(CSSValue.CSS_PRIMITIVE_VALUE);
+		return (int) value.getFloatValue(CSSValue.CSS_PRIMITIVE_VALUE);
 	}
 
-	//Unused
+	// Unused
 	public static int getIntColor(String value, CSSValue cssValue) {
 		RGBColor color;
-		if(cssValue instanceof RGBColor) {
-			//color:rgb(125, 255, 0);
-			color = (RGBColor)cssValue;
+		if (cssValue instanceof RGBColor) {
+			// color:rgb(125, 255, 0);
+			color = (RGBColor) cssValue;
 		} else {
-			//color:red; || color:#FFFFFF;
+			// color:red; || color:#FFFFFF;
 			color = CSS2ColorHelper.getRGBColor(value);
 		}
 
-		if(color == null) {
+		if (color == null) {
 			try {
 				return Integer.parseInt(value);
 			} catch (NumberFormatException ex) {

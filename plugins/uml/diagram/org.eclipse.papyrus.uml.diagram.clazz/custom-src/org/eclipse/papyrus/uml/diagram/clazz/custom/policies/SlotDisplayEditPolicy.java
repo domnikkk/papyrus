@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,7 +45,7 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 
 	/**
 	 * Returns the view controlled by the host edit part
-	 * 
+	 *
 	 * @return the view controlled by the host edit part
 	 */
 	protected View getView() {
@@ -54,7 +54,7 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 
 	/**
 	 * Sets the semantic element which is linked to the edit policy
-	 * 
+	 *
 	 * @return the element linked to the edit policy
 	 */
 	protected Element initSemanticElement() {
@@ -63,7 +63,7 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 
 	/**
 	 * Gets the diagram event broker from the editing domain.
-	 * 
+	 *
 	 * @return the diagram event broker
 	 */
 	protected DiagramEventBroker getDiagramEventBroker() {
@@ -75,9 +75,10 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void activate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -93,7 +94,7 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 				Slot slot = (Slot) hostSemanticElement;
 				Iterator<ValueSpecification> iterator = slot.getValues().iterator();
 				while (iterator.hasNext()) {
-					ValueSpecification valueSpecification = (ValueSpecification) iterator.next();
+					ValueSpecification valueSpecification = iterator.next();
 					getDiagramEventBroker().addNotificationListener(valueSpecification, this);
 				}
 			}
@@ -104,9 +105,10 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void deactivate() {
 		// retrieve the view and the element managed by the edit part
 		View view = getView();
@@ -119,7 +121,7 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 			Slot slot = (Slot) hostSemanticElement;
 			Iterator<ValueSpecification> iterator = slot.getValues().iterator();
 			while (iterator.hasNext()) {
-				ValueSpecification valueSpecification = (ValueSpecification) iterator.next();
+				ValueSpecification valueSpecification = iterator.next();
 				getDiagramEventBroker().removeNotificationListener(valueSpecification, this);
 			}
 		}
@@ -131,6 +133,7 @@ public class SlotDisplayEditPolicy extends GraphicalEditPolicy implements Notifi
 		getHost().refresh();
 	}
 
+	@Override
 	public void notifyChanged(Notification notification) {
 		if (notification.getEventType() == Notification.ADD) {
 			if (notification.getFeature().equals(UMLPackage.eINSTANCE.getSlot_Value())) {

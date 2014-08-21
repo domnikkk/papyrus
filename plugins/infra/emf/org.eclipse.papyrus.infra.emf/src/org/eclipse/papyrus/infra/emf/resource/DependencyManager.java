@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2014 CEA and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -71,7 +71,7 @@ public class DependencyManager {
 	public Collection<Replacement> updateDependencies(final URI oldURI, URI newURI, DiagnosticChain diagnostics, IProgressMonitor monitor) {
 		final List<? extends IDependencyReplacementParticipant> participants = loadParticipants(oldURI, newURI);
 		final SubMonitor subMonitor = SubMonitor.convert(monitor, (participants.size() * 2) + 1);
-		
+
 		// Don't attempt to update references within the resource whose URI we are replacing!
 		Collection<Resource> resourcesToUpdate = ImmutableList.copyOf(Iterables.filter(resources, new Predicate<Resource>() {
 
@@ -84,10 +84,10 @@ public class DependencyManager {
 		child.beginTask("Updating references ...", IProgressMonitor.UNKNOWN);
 		Collection<Replacement> result = DependencyManagementHelper.updateDependencies(oldURI, newURI, resourcesToUpdate, editingDomain);
 		child.done();
-		
+
 		// Don't need participants if no replacements were made
-		if(!result.isEmpty()) {
-			for(IDependencyReplacementParticipant participant : participants) {
+		if (!result.isEmpty()) {
+			for (IDependencyReplacementParticipant participant : participants) {
 				try {
 					participant.postProcessReplacements(result, resourcesToUpdate, subMonitor.newChild(1), diagnostics);
 				} catch (Exception e) {
@@ -95,7 +95,7 @@ public class DependencyManager {
 				}
 			}
 		}
-		
+
 		subMonitor.done();
 
 		return result;
@@ -108,12 +108,12 @@ public class DependencyManager {
 		context.addVariable("oldURI", oldURI); //$NON-NLS-1$
 		context.addVariable("newURI", newURI);//$NON-NLS-1$
 
-		for(IConfigurationElement next : Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, "dependencyUpdateParticipant")) { //$NON-NLS-1$
-			if("replaceParticipant".equals(next.getName())) { //$NON-NLS-1$
+		for (IConfigurationElement next : Platform.getExtensionRegistry().getConfigurationElementsFor(Activator.PLUGIN_ID, "dependencyUpdateParticipant")) { //$NON-NLS-1$
+			if ("replaceParticipant".equals(next.getName())) { //$NON-NLS-1$
 				IConfigurationElement[] enablement = next.getChildren("enablement"); //$NON-NLS-1$
-				if((enablement == null) || (enablement.length == 0) || matches(enablement[0], context)) {
+				if ((enablement == null) || (enablement.length == 0) || matches(enablement[0], context)) {
 					try {
-						result.add((IDependencyReplacementParticipant)next.createExecutableExtension("class")); //$NON-NLS-1$ 
+						result.add((IDependencyReplacementParticipant) next.createExecutableExtension("class")); //$NON-NLS-1$
 					} catch (Exception e) {
 						Activator.log.error("Invalid replaceParticipant extension in " + next.getContributor().getName(), e); //$NON-NLS-1$
 					}

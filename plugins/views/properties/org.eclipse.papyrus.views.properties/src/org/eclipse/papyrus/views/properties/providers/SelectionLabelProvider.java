@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ import org.eclipse.papyrus.views.properties.Activator;
  * A class for providing labels for a selected element.
  * This label provider dispatchs the calls to the label providers
  * registered through an extension point, according to the given selection
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  * @deprecated Use PropertiesHeaderLabelProvider instead
  */
 @Deprecated
@@ -48,9 +48,9 @@ public class SelectionLabelProvider extends ExtensibleLabelProvider {
 	protected void readExtensionPoint() {
 		IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
 
-		for(IConfigurationElement e : config) {
+		for (IConfigurationElement e : config) {
 			try {
-				final IFilteredLabelProvider provider = (IFilteredLabelProvider)e.createExecutableExtension(LABEL_PROVIDER_PROPERTY);
+				final IFilteredLabelProvider provider = (IFilteredLabelProvider) e.createExecutableExtension(LABEL_PROVIDER_PROPERTY);
 				final int priority = Integer.parseInt(e.getAttribute(PRIORITY_PROPERTY));
 				registerProvider(priority, provider);
 			} catch (Exception ex) {

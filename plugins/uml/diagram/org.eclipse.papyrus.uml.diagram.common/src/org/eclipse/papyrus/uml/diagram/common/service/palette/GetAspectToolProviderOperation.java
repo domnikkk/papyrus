@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,9 +24,9 @@ public class GetAspectToolProviderOperation implements IOperation {
 
 	/**
 	 * Creates a new GetAspectToolProviderOperation.
-	 * 
+	 *
 	 * @param identifier
-	 *        the identifier of the operation to retrieve
+	 *            the identifier of the operation to retrieve
 	 */
 	protected GetAspectToolProviderOperation(String identifier) {
 		assert null != identifier : "GetAspectToolOperation constructor received NULL as argument"; //$NON-NLS-1$
@@ -37,14 +37,15 @@ public class GetAspectToolProviderOperation implements IOperation {
 	/**
 	 * @{inheritDoc
 	 */
+	@Override
 	public Object execute(IProvider provider) {
-		String id = ((IAspectActionProvider)provider).getFactoryId();
+		String id = ((IAspectActionProvider) provider).getFactoryId();
 		return (identifier.equals(id) ? provider : null);
 	}
 
 	/**
 	 * Returns the identifier of the provider this operation is looking for
-	 * 
+	 *
 	 * @return the identifier of the provider this operation is looking for
 	 */
 	public String getIdentifier() {

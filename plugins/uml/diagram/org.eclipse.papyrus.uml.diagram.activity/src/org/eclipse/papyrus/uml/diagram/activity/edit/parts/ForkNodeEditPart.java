@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -91,7 +91,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 
 	/**
 	 * Return the edit policy to resize figure as a fork or a join
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart#getPrimaryDragEditPolicy()
 	 * @return EditPolicy
 	 * @generated NOT
@@ -104,6 +104,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ForkNodeItemSemanticEditPolicy());
@@ -116,19 +117,20 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 
 	/**
 	 * Papyrus codeGen
-	 * 
+	 *
 	 * @generated
 	 **/
+	@Override
 	protected void handleNotificationEvent(Notification event) {
 		/*
 		 * when a node have external node labels, the methods refreshChildren() remove the EditPart corresponding to the Label from the EditPart
 		 * Registry. After that, we can't reset the visibility to true (using the Show/Hide Label Action)!
 		 */
-		if(NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
+		if (NotationPackage.eINSTANCE.getView_Visible().equals(event.getFeature())) {
 			Object notifier = event.getNotifier();
-			List<?> modelChildren = ((View)getModel()).getChildren();
-			if(!(notifier instanceof Edge)) {
-				if(modelChildren.contains(event.getNotifier())) {
+			List<?> modelChildren = ((View) getModel()).getChildren();
+			if (!(notifier instanceof Edge)) {
+				if (modelChildren.contains(event.getNotifier())) {
 					return;
 				}
 			}
@@ -142,30 +144,34 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	protected LayoutEditPolicy createLayoutEditPolicy() {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
+			@Override
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case ForkNodeAppliedStereotypeEditPart.VISUAL_ID:
 					return new BorderItemSelectionEditPolicy() {
 
+						@Override
 						protected List createSelectionHandles() {
-							MoveHandle mh = new MoveHandle((GraphicalEditPart)getHost());
+							MoveHandle mh = new MoveHandle((GraphicalEditPart) getHost());
 							mh.setBorder(null);
 							return Collections.singletonList(mh);
 						}
 					};
 				}
 				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
 			}
 
+			@Override
 			protected Command getMoveChildrenCommand(Request request) {
 				return null;
 			}
 
+			@Override
 			protected Command getCreateCommand(CreateRequest request) {
 				return null;
 			}
@@ -176,6 +182,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected IFigure createNodeShape() {
 		return primaryShape = new ForkNode();
 	}
@@ -183,15 +190,17 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public ForkNode getPrimaryShape() {
-		return (ForkNode)primaryShape;
+		return (ForkNode) primaryShape;
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof ForkNodeAppliedStereotypeEditPart) {
+		if (borderItemEditPart instanceof ForkNodeAppliedStereotypeEditPart) {
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -202,6 +211,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createNodePlate() {
 		String prefElementId = "ForkNode";
 		IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
@@ -213,12 +223,13 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected NodeFigure createMainFigure() {
 		NodeFigure figure = createNodePlate();
 		figure.setLayoutManager(new StackLayout());
@@ -231,11 +242,12 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * Default implementation treats passed figure as content pane.
 	 * Respects layout one may have set for generated figure.
-	 * 
+	 *
 	 * @param nodeShape
-	 *        instance of generated figure class
+	 *            instance of generated figure class
 	 * @generated
 	 */
+	@Override
 	protected IFigure setupContentPane(IFigure nodeShape) {
 		return nodeShape; // use nodeShape itself as contentPane
 	}
@@ -243,8 +255,9 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	public IFigure getContentPane() {
-		if(contentPane != null) {
+		if (contentPane != null) {
 			return contentPane;
 		}
 		return super.getContentPane();
@@ -253,8 +266,9 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setForegroundColor(Color color) {
-		if(primaryShape != null) {
+		if (primaryShape != null) {
 			primaryShape.setForegroundColor(color);
 		}
 	}
@@ -262,24 +276,27 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineWidth(int width) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineWidth(width);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineWidth(width);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void setLineType(int style) {
-		if(primaryShape instanceof Shape) {
-			((Shape)primaryShape).setLineStyle(style);
+		if (primaryShape instanceof Shape) {
+			((Shape) primaryShape).setLineStyle(style);
 		}
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(UMLVisualIDRegistry.getType(ForkNodeAppliedStereotypeEditPart.VISUAL_ID));
 	}
@@ -299,466 +316,466 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSourceAndTarget(IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(targetEditPart instanceof InitialNodeEditPart) {
+		if (targetEditPart instanceof InitialNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActivityFinalNodeEditPart) {
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof FlowFinalNodeEditPart) {
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OpaqueActionEditPart) {
+		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInOpaqueActEditPart) {
+		if (targetEditPart instanceof ValuePinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof InputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof OutputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof CallBehaviorActionEditPart) {
+		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInCallBeActEditPart) {
+		if (targetEditPart instanceof ValuePinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof InputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof OutputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof CallOperationActionEditPart) {
+		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInCallOpActEditPart) {
+		if (targetEditPart instanceof ValuePinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof InputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof OutputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof DecisionNodeEditPart) {
+		if (targetEditPart instanceof DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof MergeNodeEditPart) {
+		if (targetEditPart instanceof MergeNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.activity.edit.parts.ForkNodeEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.activity.edit.parts.ForkNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof JoinNodeEditPart) {
+		if (targetEditPart instanceof JoinNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof DataStoreNodeEditPart) {
+		if (targetEditPart instanceof DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof SendObjectActionEditPart) {
+		if (targetEditPart instanceof SendObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof ValuePinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof InputPinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof SendSignalActionEditPart) {
+		if (targetEditPart instanceof SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendSigActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInSendSigActEditPart) {
+		if (targetEditPart instanceof ValuePinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInSendSigActEditPart) {
+		if (targetEditPart instanceof InputPinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValuePinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ActivityParameterNodeEditPart) {
+		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof AcceptEventActionEditPart) {
+		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInAcceptEventActionEditPart) {
+		if (targetEditPart instanceof OutputPinInAcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInValSpecActEditPart) {
+		if (targetEditPart instanceof OutputPinInValSpecActEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ConditionalNodeEditPart) {
+		if (targetEditPart instanceof ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ExpansionRegionEditPart) {
+		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ExpansionNodeAsInEditPart) {
+		if (targetEditPart instanceof ExpansionNodeAsInEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ExpansionNodeAsOutEditPart) {
+		if (targetEditPart instanceof ExpansionNodeAsOutEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof LoopNodeEditPart) {
+		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof SequenceNodeEditPart) {
+		if (targetEditPart instanceof SequenceNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof StructuredActivityNodeEditPart) {
+		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
+		if (targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ReadSelfActionEditPart) {
+		if (targetEditPart instanceof ReadSelfActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ReadSelfActionOutputPinEditPart) {
+		if (targetEditPart instanceof ReadSelfActionOutputPinEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof CreateObjectActionEditPart) {
+		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInCreateObjectActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInCreateObjectActionAsResultEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ReadStructuralFeatureActionEditPart) {
+		if (targetEditPart instanceof ReadStructuralFeatureActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInReadStructuralFeatureAsObjectEditPart) {
+		if (targetEditPart instanceof InputPinInReadStructuralFeatureAsObjectEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInReadStructuralFeatureAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInReadStructuralFeatureAsResultEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsObjectEditPart) {
+		if (targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsObjectEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsValueEditPart) {
+		if (targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsValueEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInAddStructuralFeatureValueActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInAddStructuralFeatureValueActionAsResultEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof DestroyObjectActionEditPart) {
+		if (targetEditPart instanceof DestroyObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInDestroyObjectActionEditPart) {
+		if (targetEditPart instanceof InputPinInDestroyObjectActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof ReadVariableActionEditPart) {
+		if (targetEditPart instanceof ReadVariableActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof OutputPinInReadVariableActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInReadVariableActionAsResultEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof AddVariableValueActionEditPart) {
+		if (targetEditPart instanceof AddVariableValueActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInAddVariableValueActionAsInsertAtEditPart) {
+		if (targetEditPart instanceof InputPinInAddVariableValueActionAsInsertAtEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
+		if (targetEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof BroadcastSignalActionEditPart) {
+		if (targetEditPart instanceof BroadcastSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
+		if (targetEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof CentralBufferNodeEditPart) {
+		if (targetEditPart instanceof CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ObjectFlow_4003);
 		}
-		if(targetEditPart instanceof InitialNodeEditPart) {
+		if (targetEditPart instanceof InitialNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActivityFinalNodeEditPart) {
+		if (targetEditPart instanceof ActivityFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof FlowFinalNodeEditPart) {
+		if (targetEditPart instanceof FlowFinalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OpaqueActionEditPart) {
+		if (targetEditPart instanceof OpaqueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInOpaqueActEditPart) {
+		if (targetEditPart instanceof ValuePinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof InputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInOpaqueActEditPart) {
+		if (targetEditPart instanceof OutputPinInOpaqueActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CallBehaviorActionEditPart) {
+		if (targetEditPart instanceof CallBehaviorActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInCallBeActEditPart) {
+		if (targetEditPart instanceof ValuePinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof InputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInCallBeActEditPart) {
+		if (targetEditPart instanceof OutputPinInCallBeActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CallOperationActionEditPart) {
+		if (targetEditPart instanceof CallOperationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInCallOpActEditPart) {
+		if (targetEditPart instanceof ValuePinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof InputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInCallOpActEditPart) {
+		if (targetEditPart instanceof OutputPinInCallOpActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInCallOpActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof DecisionNodeEditPart) {
+		if (targetEditPart instanceof DecisionNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof MergeNodeEditPart) {
+		if (targetEditPart instanceof MergeNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof org.eclipse.papyrus.uml.diagram.activity.edit.parts.ForkNodeEditPart) {
+		if (targetEditPart instanceof org.eclipse.papyrus.uml.diagram.activity.edit.parts.ForkNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof JoinNodeEditPart) {
+		if (targetEditPart instanceof JoinNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof DataStoreNodeEditPart) {
+		if (targetEditPart instanceof DataStoreNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof SendObjectActionEditPart) {
+		if (targetEditPart instanceof SendObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof ValuePinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendObjActAsReqEditPart) {
+		if (targetEditPart instanceof InputPinInSendObjActAsReqEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendObjActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInSendObjActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof SendSignalActionEditPart) {
+		if (targetEditPart instanceof SendSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendSigActEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendSigActEditPart) {
+		if (targetEditPart instanceof ValuePinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendSigActEditPart) {
+		if (targetEditPart instanceof InputPinInSendSigActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValuePinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof ValuePinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActionInputPinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof ActionInputPinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInSendSigActAsTargetEditPart) {
+		if (targetEditPart instanceof InputPinInSendSigActAsTargetEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ActivityParameterNodeEditPart) {
+		if (targetEditPart instanceof ActivityParameterNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof AcceptEventActionEditPart) {
+		if (targetEditPart instanceof AcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInAcceptEventActionEditPart) {
+		if (targetEditPart instanceof OutputPinInAcceptEventActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ValueSpecificationActionEditPart) {
+		if (targetEditPart instanceof ValueSpecificationActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInValSpecActEditPart) {
+		if (targetEditPart instanceof OutputPinInValSpecActEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ConditionalNodeEditPart) {
+		if (targetEditPart instanceof ConditionalNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ExpansionRegionEditPart) {
+		if (targetEditPart instanceof ExpansionRegionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ExpansionNodeAsInEditPart) {
+		if (targetEditPart instanceof ExpansionNodeAsInEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ExpansionNodeAsOutEditPart) {
+		if (targetEditPart instanceof ExpansionNodeAsOutEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof LoopNodeEditPart) {
+		if (targetEditPart instanceof LoopNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsBodyOutputEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsLoopVariableEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInLoopNodeAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof SequenceNodeEditPart) {
+		if (targetEditPart instanceof SequenceNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof StructuredActivityNodeEditPart) {
+		if (targetEditPart instanceof StructuredActivityNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
+		if (targetEditPart instanceof InputPinInLoopNodeAsVariableEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadSelfActionEditPart) {
+		if (targetEditPart instanceof ReadSelfActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadSelfActionOutputPinEditPart) {
+		if (targetEditPart instanceof ReadSelfActionOutputPinEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CreateObjectActionEditPart) {
+		if (targetEditPart instanceof CreateObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInCreateObjectActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInCreateObjectActionAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadStructuralFeatureActionEditPart) {
+		if (targetEditPart instanceof ReadStructuralFeatureActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInReadStructuralFeatureAsObjectEditPart) {
+		if (targetEditPart instanceof InputPinInReadStructuralFeatureAsObjectEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInReadStructuralFeatureAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInReadStructuralFeatureAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
+		if (targetEditPart instanceof AddStructuralFeatureValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsObjectEditPart) {
+		if (targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsObjectEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsValueEditPart) {
+		if (targetEditPart instanceof InputPinInAddStructuralFeatureValueActionAsValueEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInAddStructuralFeatureValueActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInAddStructuralFeatureValueActionAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof DestroyObjectActionEditPart) {
+		if (targetEditPart instanceof DestroyObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInDestroyObjectActionEditPart) {
+		if (targetEditPart instanceof InputPinInDestroyObjectActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof ReadVariableActionEditPart) {
+		if (targetEditPart instanceof ReadVariableActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof OutputPinInReadVariableActionAsResultEditPart) {
+		if (targetEditPart instanceof OutputPinInReadVariableActionAsResultEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof AddVariableValueActionEditPart) {
+		if (targetEditPart instanceof AddVariableValueActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddVariableValueActionAsInsertAtEditPart) {
+		if (targetEditPart instanceof InputPinInAddVariableValueActionAsInsertAtEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
+		if (targetEditPart instanceof InputPinInAddVariableValueActionAsValueEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof BroadcastSignalActionEditPart) {
+		if (targetEditPart instanceof BroadcastSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
+		if (targetEditPart instanceof InputPinInBroadcastSignalActionEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
-		if(targetEditPart instanceof CentralBufferNodeEditPart) {
+		if (targetEditPart instanceof CentralBufferNodeEditPart) {
 			types.add(UMLElementTypes.ControlFlow_4004);
 		}
 		return types;
@@ -769,7 +786,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.ObjectFlow_4003) {
+		if (relationshipType == UMLElementTypes.ObjectFlow_4003) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
 			types.add(UMLElementTypes.FlowFinalNode_3006);
@@ -847,7 +864,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
-		} else if(relationshipType == UMLElementTypes.ControlFlow_4004) {
+		} else if (relationshipType == UMLElementTypes.ControlFlow_4004) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
 			types.add(UMLElementTypes.FlowFinalNode_3006);
@@ -946,7 +963,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if(relationshipType == UMLElementTypes.ObjectFlow_4003) {
+		if (relationshipType == UMLElementTypes.ObjectFlow_4003) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
 			types.add(UMLElementTypes.FlowFinalNode_3006);
@@ -1024,7 +1041,7 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
-		} else if(relationshipType == UMLElementTypes.ControlFlow_4004) {
+		} else if (relationshipType == UMLElementTypes.ControlFlow_4004) {
 			types.add(UMLElementTypes.InitialNode_3004);
 			types.add(UMLElementTypes.ActivityFinalNode_3005);
 			types.add(UMLElementTypes.FlowFinalNode_3006);
@@ -1102,9 +1119,9 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 			types.add(UMLElementTypes.BroadcastSignalAction_3102);
 			types.add(UMLElementTypes.InputPin_3103);
 			types.add(UMLElementTypes.CentralBufferNode_3104);
-		} else if(relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
+		} else if (relationshipType == UMLElementTypes.CommentAnnotatedElement_4006) {
 			types.add(UMLElementTypes.Comment_3080);
-		} else if(relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
+		} else if (relationshipType == UMLElementTypes.ConstraintConstrainedElement_4007) {
 			types.add(UMLElementTypes.DurationConstraint_3034);
 			types.add(UMLElementTypes.DurationConstraint_3035);
 			types.add(UMLElementTypes.TimeConstraint_3036);
@@ -1123,28 +1140,28 @@ public class ForkNodeEditPart extends UMLNodeEditPart {
 	 */
 	@Override
 	public Object getPreferredValue(EStructuralFeature feature) {
-		IPreferenceStore preferenceStore = (IPreferenceStore)getDiagramPreferencesHint().getPreferenceStore();
+		IPreferenceStore preferenceStore = (IPreferenceStore) getDiagramPreferencesHint().getPreferenceStore();
 		Object result = null;
-		if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+		if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor() || feature == NotationPackage.eINSTANCE.getFontStyle_FontColor() || feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 			String prefColor = null;
-			if(feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
+			if (feature == NotationPackage.eINSTANCE.getLineStyle_LineColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ForkNode", PreferencesConstantsHelper.COLOR_LINE);
-			} else if(feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFontStyle_FontColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ForkNode", PreferencesConstantsHelper.COLOR_FONT);
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_FillColor()) {
 				prefColor = PreferencesConstantsHelper.getElementConstant("ForkNode", PreferencesConstantsHelper.COLOR_FILL);
 			}
-			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor((IPreferenceStore)preferenceStore, prefColor));
-		} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			result = FigureUtilities.RGBToInteger(PreferenceConverter.getColor(preferenceStore, prefColor));
+		} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency() || feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 			String prefGradient = PreferencesConstantsHelper.getElementConstant("ForkNode", PreferencesConstantsHelper.COLOR_GRADIENT);
 			GradientPreferenceConverter gradientPreferenceConverter = new GradientPreferenceConverter(preferenceStore.getString(prefGradient));
-			if(feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
+			if (feature == NotationPackage.eINSTANCE.getFillStyle_Transparency()) {
 				result = new Integer(gradientPreferenceConverter.getTransparency());
-			} else if(feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
+			} else if (feature == NotationPackage.eINSTANCE.getFillStyle_Gradient()) {
 				result = gradientPreferenceConverter.getGradientData();
 			}
 		}
-		if(result == null) {
+		if (result == null) {
 			result = getStructuralFeatureValue(feature);
 		}
 		return result;

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,10 +27,10 @@ import org.eclipse.ui.IWorkbenchPart;
 
 /**
  * <pre>
- * 
+ *
  * Automated generation of ElementTypes (in the domain model), an ElementType generated for
  * each element of the domain model.
- * 
+ *
  * </pre>
  */
 public class GenerateElementTypeModelAction implements IObjectActionDelegate {
@@ -45,16 +45,16 @@ public class GenerateElementTypeModelAction implements IObjectActionDelegate {
 		ElementTypes elementTypeList = DomaincontextcodegenFactory.eINSTANCE.createElementTypes();
 		selectedContext.setElementTypes(elementTypeList);
 
-		if(selectedContext.getSpecializationOf() == null) {
-			if(selectedContext.getMetamodel() != null) {
+		if (selectedContext.getSpecializationOf() == null) {
+			if (selectedContext.getMetamodel() != null) {
 				Iterator<EClassifier> iterClass = selectedContext.getMetamodel().getEClassifiers().iterator();
 				ArrayList<MetaClassType> result = new ArrayList<MetaClassType>();
-				while(iterClass.hasNext()) {
-					EClassifier eClassifier = (EClassifier)iterClass.next();
-					if(eClassifier instanceof EClass) {
+				while (iterClass.hasNext()) {
+					EClassifier eClassifier = iterClass.next();
+					if (eClassifier instanceof EClass) {
 						MetaClassType elemenType = DomaincontextcodegenFactory.eINSTANCE.createMetaClassType();
-						//elemenType.setHelper(selectedContext.getDefaultHelperPath());
-						elemenType.setMetaClass((EClass)eClassifier);
+						// elemenType.setHelper(selectedContext.getDefaultHelperPath());
+						elemenType.setMetaClass((EClass) eClassifier);
 						elemenType.setIcon("platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/" + eClassifier.getName() + ".gif");
 
 						// Convert name to upper case with '_' separator between name parts e.g. NamedElement -> NAMED_ELEMENT
@@ -75,14 +75,14 @@ public class GenerateElementTypeModelAction implements IObjectActionDelegate {
 
 			}
 		}
-		//to Do in the case of specialization with a profile
+		// to Do in the case of specialization with a profile
 
 	}
 
 	public void selectionChanged(IAction action, ISelection selection) {
-		if(selection instanceof IStructuredSelection) {
-			if(((IStructuredSelection)selection).getFirstElement() instanceof DomainContext) {
-				selectedContext = (DomainContext)((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			if (((IStructuredSelection) selection).getFirstElement() instanceof DomainContext) {
+				selectedContext = (DomainContext) ((IStructuredSelection) selection).getFirstElement();
 			}
 		}
 

@@ -21,7 +21,7 @@ import org.eclipse.swt.widgets.Shell;
 
 /**
  * A factory to create {@link IFacetSetSelectionDialog}s
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2.0
@@ -33,7 +33,7 @@ public interface IFacetSetSelectionDialogFactory {
 
 	/**
 	 * Open a dialog to let the user select facet sets.
-	 * 
+	 *
 	 * @param available
 	 *            the {@link FacetSet}s the user will be able to select in the dialog
 	 * @param selectionMaxSize
@@ -49,11 +49,11 @@ public interface IFacetSetSelectionDialogFactory {
 	IFacetSetSelectionDialog<?> openFacetSetSelectionDialog(Collection<FacetSet> available,
 			int selectionMaxSize, boolean allowEmpty, IDialogCallback<List<FacetSet>> callback,
 			Shell parentShell);
-	
+
 	/**
 	 * Open a dialog to let the user select facet sets. The callback will be called before the dialog closes, to let you
 	 * open a "pre-commit" dialog, to ask the user for confirmation for example.
-	 * 
+	 *
 	 * @param available
 	 *            the {@link FacetSet}s the user will be able to select in the dialog
 	 * @param selectionMaxSize

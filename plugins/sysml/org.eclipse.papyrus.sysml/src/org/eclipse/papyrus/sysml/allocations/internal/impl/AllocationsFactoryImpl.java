@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,14 +27,14 @@ import org.eclipse.papyrus.sysml.allocations.AllocationsPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */
@@ -47,13 +47,13 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static AllocationsFactory init() {
 		try {
-			AllocationsFactory theAllocationsFactory = (AllocationsFactory)EPackage.Registry.INSTANCE.getEFactory(AllocationsPackage.eNS_URI);
-			if(theAllocationsFactory != null) {
+			AllocationsFactory theAllocationsFactory = (AllocationsFactory) EPackage.Registry.INSTANCE.getEFactory(AllocationsPackage.eNS_URI);
+			if (theAllocationsFactory != null) {
 				return theAllocationsFactory;
 			}
 		} catch (Exception exception) {
@@ -66,7 +66,7 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocationsFactoryImpl() {
@@ -75,12 +75,12 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
-		switch(eClass.getClassifierID()) {
+		switch (eClass.getClassifierID()) {
 		case AllocationsPackage.ALLOCATE:
 			return createAllocate();
 		case AllocationsPackage.ALLOCATED:
@@ -94,7 +94,7 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Allocate createAllocate() {
@@ -104,7 +104,7 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocateActivityPartition createAllocateActivityPartition() {
@@ -114,7 +114,7 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Allocated createAllocated() {
@@ -124,11 +124,11 @@ public class AllocationsFactoryImpl extends EFactoryImpl implements AllocationsF
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public AllocationsPackage getAllocationsPackage() {
-		return (AllocationsPackage)getEPackage();
+		return (AllocationsPackage) getEPackage();
 	}
 
 } // AllocationsFactoryImpl

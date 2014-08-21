@@ -66,47 +66,47 @@ public class Activator extends AbstractUIPlugin {
 		return Activator.plugin;
 	}
 
-	//	private ICustomizationManager fCustomizationManager;
+	// private ICustomizationManager fCustomizationManager;
 
 	/**
 	 *
 	 * @return the customization manager in charge to adapt element in modisco
 	 */
-	//	public ICustomizationManager getCustomizationManager() {
-	//		if(this.fCustomizationManager == null) {
-	//			this.fCustomizationManager = ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(new ResourceSetImpl());
-	//			init(this.fCustomizationManager);
-	//		}
-	//		return this.fCustomizationManager;
+	// public ICustomizationManager getCustomizationManager() {
+	// if(this.fCustomizationManager == null) {
+	// this.fCustomizationManager = ICustomizationManagerFactory.DEFAULT.getOrCreateICustomizationManager(new ResourceSetImpl());
+	// init(this.fCustomizationManager);
+	// }
+	// return this.fCustomizationManager;
 	//
-	//		return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
-	//	}
+	// return org.eclipse.papyrus.infra.emf.Activator.getDefault().getCustomizationManager();
+	// }
 
-	//	private void init(final ICustomizationManager customizationManager) {
-	//		customizationManager.setShowContainer(false);
-	//		customizationManager.setShowDerivedLinks(true);
-	//		customizationManager.setShowEmptyLinks(true);
+	// private void init(final ICustomizationManager customizationManager) {
+	// customizationManager.setShowContainer(false);
+	// customizationManager.setShowDerivedLinks(true);
+	// customizationManager.setShowEmptyLinks(true);
 	//
-	//		try {
-	//			List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
-	//			for(MetamodelView metamodelView : registryDefaultCustomizations) {
-	//				//FIXME: One of the default uiCustom files in Papyrus has a side effect to call resolveAll on the resource set. While this is generally not a problem in Papyrus,
-	//				//it becomes critical with the properties view customization, as the resource set contains hundreds of proxies to xwt files (Which are really expensive to load)
-	//				//It seems that this uiCustom query cannot be easily fixed, so we disable it in this context.
-	//				//The query which tries to (indirectly) resolve all: org.eclipse.papyrus.infra.gmfdiag.modelexplorer.queries.IsDiagramContainer
-	//				//Used by: PapyrusNotationFacet.querySet -> PapyrusNotationFacet.uiCustom
-	//				if("PapyrusNotationFacet".equals(metamodelView.getName())) {
-	//					continue; //Disable this specific uiCustom
-	//				}
+	// try {
+	// List<MetamodelView> registryDefaultCustomizations = CustomizationsCatalog.getInstance().getRegistryDefaultCustomizations();
+	// for(MetamodelView metamodelView : registryDefaultCustomizations) {
+	// //FIXME: One of the default uiCustom files in Papyrus has a side effect to call resolveAll on the resource set. While this is generally not a problem in Papyrus,
+	// //it becomes critical with the properties view customization, as the resource set contains hundreds of proxies to xwt files (Which are really expensive to load)
+	// //It seems that this uiCustom query cannot be easily fixed, so we disable it in this context.
+	// //The query which tries to (indirectly) resolve all: org.eclipse.papyrus.infra.gmfdiag.modelexplorer.queries.IsDiagramContainer
+	// //Used by: PapyrusNotationFacet.querySet -> PapyrusNotationFacet.uiCustom
+	// if("PapyrusNotationFacet".equals(metamodelView.getName())) {
+	// continue; //Disable this specific uiCustom
+	// }
 	//
-	//				customizationManager.registerCustomization(metamodelView);
-	//			}
+	// customizationManager.registerCustomization(metamodelView);
+	// }
 	//
-	//			customizationManager.loadCustomizations();
-	//		} catch (Throwable e) {
+	// customizationManager.loadCustomizations();
+	// } catch (Throwable e) {
 	//			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Error initializing customizations", e)); //$NON-NLS-1$
-	//		}
-	//	}
+	// }
+	// }
 
 	/**
 	 * @return The IPath representing the plugin's preferences folder location
@@ -119,7 +119,7 @@ public class Activator extends AbstractUIPlugin {
 	 * Returns the image at the given path from this plugin
 	 *
 	 * @param path
-	 *        the path of the image to be displayed
+	 *            the path of the image to be displayed
 	 * @return The Image at the given location, or null if it couldn't be found
 	 */
 	public Image getImage(String path) {
@@ -130,9 +130,9 @@ public class Activator extends AbstractUIPlugin {
 	 * Returns the image from the given image descriptor
 	 *
 	 * @param pluginId
-	 *        The plugin in which the image is located
+	 *            The plugin in which the image is located
 	 * @param path
-	 *        The path to the image from the plugin
+	 *            The path to the image from the plugin
 	 * @return
 	 *         The Image at the given location, or null if it couldn't be found
 	 */
@@ -140,7 +140,7 @@ public class Activator extends AbstractUIPlugin {
 		final ImageRegistry registry = getImageRegistry();
 		String key = pluginId + "/" + path; //$NON-NLS-1$
 		Image image = registry.get(key);
-		if(image == null) {
+		if (image == null) {
 			registry.put(key, AbstractUIPlugin.imageDescriptorFromPlugin(pluginId, path));
 			image = registry.get(key);
 		}

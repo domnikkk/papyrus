@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Nicolas Guyomar (Mia-Software) - Bug 339554 - org.eclipse.papyrus.emf.facet.widgets.celleditors API cleaning 
+ *    Nicolas Guyomar (Mia-Software) - Bug 339554 - org.eclipse.papyrus.emf.facet.widgets.celleditors API cleaning
  *******************************************************************************/
 package org.eclipse.papyrus.emf.facet.widgets.celleditors.core.composite.registries;
 
@@ -15,7 +15,7 @@ import org.eclipse.papyrus.emf.facet.widgets.celleditors.internal.composite.regi
 
 /**
  * Registry for the "compositeEditorFactories" extension point
- * 
+ *
  * @deprecated replaced by
  *             org.eclipse.papyrus.emf.facet.widgets.celleditors.core.composite
  *             .registry.ICompositeEditorFactoriesRegistry

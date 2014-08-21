@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.ETypedElement;
 
 /**
  * A widget to select one or more {@link ETypedElement}s from a list
- * 
+ *
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.
  * @since 0.2.0
@@ -27,7 +27,7 @@ public interface IETypedElementSelectionWidget {
 
 	/**
 	 * This method can be called at any time to change the {@link ETypedElement}s which can be selected by the user.
-	 * 
+	 *
 	 * @param available
 	 *            the {@link ETypedElement}s that can be selected in this widget
 	 */

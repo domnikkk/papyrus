@@ -34,7 +34,7 @@ public class SynchronizedObject<O extends Object> {
 		this.display = display;
 		this.widgetThread = this.display.getThread();
 	}
-	
+
 	protected final <T, E extends Exception> T syncExecWithResult(
 			final IRunnable<T, E> runnable) throws E {
 		T result;
@@ -71,7 +71,7 @@ public class SynchronizedObject<O extends Object> {
 		}
 		return result;
 	}
-	
+
 	protected class ExceptionHandler {
 
 		private Exception exception;
@@ -107,7 +107,7 @@ public class SynchronizedObject<O extends Object> {
 			throw new DisplaySyncRuntimeException(e);
 		}
 	}
-	
+
 	public O getSynchronizedObject() {
 		return this.object;
 	}

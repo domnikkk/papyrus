@@ -15,7 +15,7 @@ import org.eclipse.papyrus.emf.facet.custom.core.ICustomizationManager;
 
 /**
  * Factory for {@link ISelectionPropertiesHandler}
- * 
+ *
  * @since 0.2
  * @noextend This interface is not intended to be extended by clients.
  * @noimplement This interface is not intended to be implemented by clients.

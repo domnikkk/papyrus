@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,9 +29,9 @@ import org.eclipse.papyrus.infra.services.controlmode.ControlModeRequest;
 /**
  * This command do the basic operation of the control. That is to say move the semantic element to a new resource previously created.
  * This resource id got thanks to the request.
- * 
+ *
  * @author adaussy
- * 
+ *
  */
 public class BasicControlCommand extends AbstractControlCommand {
 
@@ -52,12 +52,12 @@ public class BasicControlCommand extends AbstractControlCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		ResourceSet currentResourceSet = getRequest().getModelSet();
 		Resource resource = currentResourceSet.getResource(getNewURI(), false);
-		if(resource == null) {
+		if (resource == null) {
 			throw new ExecutionException("The resource was not created");
 		}
 		EObject objectToControl = getObjectToControl();
 		// as a safeguard, add this object's resource so it is tagged as modified and savable
-		if(objectToControl != null && objectToControl.eResource() != null) {
+		if (objectToControl != null && objectToControl.eResource() != null) {
 			objectToControl.eResource().setModified(true);
 		}
 		resource.getContents().add(objectToControl);

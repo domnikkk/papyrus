@@ -22,6 +22,7 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FeatureValueImpl() {
@@ -31,6 +32,7 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -38,4 +40,4 @@ public abstract class FeatureValueImpl extends EObjectImpl implements FeatureVal
 		return SetValuesActionConfigurationPackage.Literals.FEATURE_VALUE;
 	}
 
-} //FeatureValueImpl
+} // FeatureValueImpl

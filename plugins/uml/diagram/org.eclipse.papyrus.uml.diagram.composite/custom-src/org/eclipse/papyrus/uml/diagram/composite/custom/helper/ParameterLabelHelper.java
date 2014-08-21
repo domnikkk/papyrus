@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,7 +35,7 @@ public class ParameterLabelHelper extends StereotypedElementLabelHelper {
 
 	/** Single instance getter */
 	public static ParameterLabelHelper getInstance() {
-		if(labelHelper == null) {
+		if (labelHelper == null) {
 			labelHelper = new ParameterLabelHelper();
 		}
 		return labelHelper;
@@ -79,12 +79,12 @@ public class ParameterLabelHelper extends StereotypedElementLabelHelper {
 	protected String elementLabel(GraphicalEditPart editPart) {
 		Collection<String> displayValue = ICustomAppearance.DEFAULT_UML_PARAMETER;
 
-		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy)editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-		if(policy != null) {
+		IMaskManagedLabelEditPolicy policy = (IMaskManagedLabelEditPolicy) editPart.getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+		if (policy != null) {
 			displayValue = policy.getCurrentDisplayValue();
 		}
 		Parameter elem = getUMLElement(editPart);
-		if(elem != null) {
+		if (elem != null) {
 			return ParameterUtil.getCustomLabel(elem, displayValue);
 		}
 		return "";
@@ -95,7 +95,7 @@ public class ParameterLabelHelper extends StereotypedElementLabelHelper {
 	 */
 	@Override
 	public Parameter getUMLElement(GraphicalEditPart editPart) {
-		return (Parameter)((View)editPart.getModel()).getElement();
+		return (Parameter) ((View) editPart.getModel()).getElement();
 	}
 
 }

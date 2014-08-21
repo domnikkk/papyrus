@@ -26,7 +26,7 @@ import org.eclipse.papyrus.domaincontextcodegen.ElementType;
  * <li>{@link org.eclipse.papyrus.domaincontextcodegen.impl.CommandImpl#getIcon <em>Icon</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class CommandImpl extends EObjectImpl implements Command {
@@ -35,7 +35,7 @@ public class CommandImpl extends EObjectImpl implements Command {
 	 * The cached value of the '{@link #getElementType() <em>Element Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementType()
 	 * @generated
 	 * @ordered
@@ -46,7 +46,7 @@ public class CommandImpl extends EObjectImpl implements Command {
 	 * The default value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -57,7 +57,7 @@ public class CommandImpl extends EObjectImpl implements Command {
 	 * The cached value of the '{@link #getIcon() <em>Icon</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getIcon()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommandImpl() {
@@ -77,7 +77,7 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -88,16 +88,17 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType getElementType() {
-		if(elementType != null && elementType.eIsProxy()) {
-			InternalEObject oldElementType = (InternalEObject)elementType;
-			elementType = (ElementType)eResolveProxy(oldElementType);
-			if(elementType != oldElementType) {
-				if(eNotificationRequired())
+		if (elementType != null && elementType.eIsProxy()) {
+			InternalEObject oldElementType = (InternalEObject) elementType;
+			elementType = (ElementType) eResolveProxy(oldElementType);
+			if (elementType != oldElementType) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomaincontextcodegenPackage.COMMAND__ELEMENT_TYPE, oldElementType, elementType));
+				}
 			}
 		}
 		return elementType;
@@ -106,7 +107,7 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ElementType basicGetElementType() {
@@ -116,20 +117,21 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setElementType(ElementType newElementType) {
 		ElementType oldElementType = elementType;
 		elementType = newElementType;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.COMMAND__ELEMENT_TYPE, oldElementType, elementType));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getIcon() {
@@ -139,28 +141,30 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIcon(String newIcon) {
 		String oldIcon = icon;
 		icon = newIcon;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, DomaincontextcodegenPackage.COMMAND__ICON, oldIcon, icon));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND__ELEMENT_TYPE:
-			if(resolve)
+			if (resolve) {
 				return getElementType();
+			}
 			return basicGetElementType();
 		case DomaincontextcodegenPackage.COMMAND__ICON:
 			return getIcon();
@@ -171,17 +175,17 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND__ELEMENT_TYPE:
-			setElementType((ElementType)newValue);
+			setElementType((ElementType) newValue);
 			return;
 		case DomaincontextcodegenPackage.COMMAND__ICON:
-			setIcon((String)newValue);
+			setIcon((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,14 +194,14 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND__ELEMENT_TYPE:
-			setElementType((ElementType)null);
+			setElementType((ElementType) null);
 			return;
 		case DomaincontextcodegenPackage.COMMAND__ICON:
 			setIcon(ICON_EDEFAULT);
@@ -209,12 +213,12 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case DomaincontextcodegenPackage.COMMAND__ELEMENT_TYPE:
 			return elementType != null;
 		case DomaincontextcodegenPackage.COMMAND__ICON:
@@ -226,13 +230,14 @@ public class CommandImpl extends EObjectImpl implements Command {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (icon: ");
@@ -241,4 +246,4 @@ public class CommandImpl extends EObjectImpl implements Command {
 		return result.toString();
 	}
 
-} //CommandImpl
+} // CommandImpl

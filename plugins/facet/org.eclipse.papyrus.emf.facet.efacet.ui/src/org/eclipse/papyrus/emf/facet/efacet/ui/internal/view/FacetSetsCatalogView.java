@@ -130,7 +130,7 @@ public class FacetSetsCatalogView implements IExecutableExtensionFactory, IOpenL
 						if (strCategories.length() > 0) {
 							strCategories.append("; "); //$NON-NLS-1$
 						}
-						strCategories.append(category.getName()); 
+						strCategories.append(category.getName());
 					}
 					result = strCategories.toString();
 				}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,11 +24,11 @@ import org.eclipse.jface.viewers.Viewer;
 /**
  * A Content Provider returning all subclasses of the given
  * class, contained in the input EPackage.
- * 
+ *
  * The metaclassNotWanted are removed from the result.
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class MetaclassContentProvider implements IStructuredContentProvider {
 
@@ -55,25 +55,25 @@ public class MetaclassContentProvider implements IStructuredContentProvider {
 	}
 
 	public Object[] getElements(Object inputElement) {
-		if(type == null || !(type instanceof EClass)) {
+		if (type == null || !(type instanceof EClass)) {
 			return new Object[0];
 		}
 
-		EClass wantedEClass = (EClass)type;
+		EClass wantedEClass = (EClass) type;
 
 		EPackage ePackage;
-		if(inputElement instanceof EPackage) {
-			ePackage = (EPackage)inputElement;
+		if (inputElement instanceof EPackage) {
+			ePackage = (EPackage) inputElement;
 		} else {
 			return new Object[0];
 		}
 
 		List<EClass> result = new LinkedList<EClass>();
 
-		for(EClassifier eClassifier : ePackage.getEClassifiers()) {
-			if(eClassifier instanceof EClass) {
-				EClass eClass = (EClass)eClassifier;
-				if(wantedEClass.isSuperTypeOf(eClass)) {
+		for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+			if (eClassifier instanceof EClass) {
+				EClass eClass = (EClass) eClassifier;
+				if (wantedEClass.isSuperTypeOf(eClass)) {
 					result.add(eClass);
 				}
 			}

@@ -65,37 +65,37 @@ public class LabelCustomizationMaskProvider implements XWTCompliantMaskProvider 
 	}
 
 	protected void checkInput() {
-		if(input != null && propertyPath != null) {
+		if (input != null && propertyPath != null) {
 			ModelElement element = input.getModelElement(propertyPath);
-			if(element instanceof UMLNotationModelElement) {
-				UMLNotationModelElement modelElement = (UMLNotationModelElement)element;
-				editPolicy = (IMaskManagedLabelEditPolicy)modelElement.getEditPart().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-				if(editPolicy != null) {
+			if (element instanceof UMLNotationModelElement) {
+				UMLNotationModelElement modelElement = (UMLNotationModelElement) element;
+				editPolicy = (IMaskManagedLabelEditPolicy) modelElement.getEditPart().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+				if (editPolicy != null) {
 					notifyListeners();
 				}
-			} else if(element instanceof CompositeModelElement) {
+			} else if (element instanceof CompositeModelElement) {
 				editPolicy = null;
 				IMaskManagedLabelEditPolicy currentEditPolicy = null;
-				//Check that all elements have the same edit policy
-				for(ModelElement subElement : ((CompositeModelElement)element).getSubElements()) {
-					if(subElement instanceof UMLNotationModelElement) {
-						UMLNotationModelElement modelElement = (UMLNotationModelElement)subElement;
-						currentEditPolicy = (IMaskManagedLabelEditPolicy)modelElement.getEditPart().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
-						if(currentEditPolicy == null) {
+				// Check that all elements have the same edit policy
+				for (ModelElement subElement : ((CompositeModelElement) element).getSubElements()) {
+					if (subElement instanceof UMLNotationModelElement) {
+						UMLNotationModelElement modelElement = (UMLNotationModelElement) subElement;
+						currentEditPolicy = (IMaskManagedLabelEditPolicy) modelElement.getEditPart().getEditPolicy(IMaskManagedLabelEditPolicy.MASK_MANAGED_LABEL_EDIT_POLICY);
+						if (currentEditPolicy == null) {
 							editPolicy = null;
 							break;
 						}
-						if(editPolicy != null && !editPolicy.getMasks().equals(currentEditPolicy.getMasks())) {
+						if (editPolicy != null && !editPolicy.getMasks().equals(currentEditPolicy.getMasks())) {
 							editPolicy = null;
 							break;
 						}
-						if(editPolicy == null) {
+						if (editPolicy == null) {
 							editPolicy = currentEditPolicy;
 							continue;
 						}
 					}
 				}
-				if(editPolicy != null) {
+				if (editPolicy != null) {
 					notifyListeners();
 				}
 			}
@@ -103,7 +103,7 @@ public class LabelCustomizationMaskProvider implements XWTCompliantMaskProvider 
 	}
 
 	private void notifyListeners() {
-		for(XWTCompliantMaskProviderListener listener : listeners) {
+		for (XWTCompliantMaskProviderListener listener : listeners) {
 			listener.notifyReady(this);
 		}
 	}

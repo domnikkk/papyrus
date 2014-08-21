@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012, 2014 CEA LIST and others.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -56,7 +56,7 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 
 	/**
 	 * Returns the uml element controlled by the host edit part
-	 * 
+	 *
 	 * @return the uml element controlled by the host edit part
 	 */
 	@Override
@@ -64,11 +64,11 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 		Element element = null;
 
 		View view = getView();
-		if(view != null) {
+		if (view != null) {
 
 			EObject container = view.eContainer();
-			if(container instanceof View) {
-				element = (Element)((View)container).getElement();
+			if (container instanceof View) {
+				element = (Element) ((View) container).getElement();
 			}
 		}
 
@@ -76,9 +76,9 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.AbstractAppliedStereotypeDisplayEditPolicy#getView()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -86,11 +86,11 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 		View view = null;
 
 		Object model = getHost().getModel();
-		if(model instanceof View) {
+		if (model instanceof View) {
 
-			EObject container = ((View)model).eContainer();
-			if(container instanceof View) {
-				view = (View)container;
+			EObject container = ((View) model).eContainer();
+			if (container instanceof View) {
+				view = (View) container;
 			}
 		}
 		return view;
@@ -99,15 +99,15 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 
 	/**
 	 * this method is used to create a notation node for the property of the stereotype
-	 * 
+	 *
 	 * @param editPart
-	 *        the editpart container
+	 *            the editpart container
 	 * @param stereotypesPropertiesToDisplay
-	 *        list of applied stereotype properties to display
+	 *            list of applied stereotype properties to display
 	 * @param node
-	 *        the comaprtment node that contains all properties
+	 *            the comaprtment node that contains all properties
 	 * @param stereotype
-	 *        the stereotype associated to compartment node
+	 *            the stereotype associated to compartment node
 	 */
 	protected void executeAppliedStereotypePropertytCreation(final GraphicalEditPart editPart, final String stereotypesPropertiesToDisplay, final View node, final Stereotype stereotype) {
 		try {
@@ -119,27 +119,27 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 						public void run() {
 
 							StringTokenizer propStringTokenizer = new StringTokenizer(stereotypesPropertiesToDisplay, ",");
-							while(propStringTokenizer.hasMoreElements()) {
+							while (propStringTokenizer.hasMoreElements()) {
 								// extract property to display
 								String propertyQN = propStringTokenizer.nextToken();
-								//get a property that is interesting for us
-								if(propertyQN.startsWith(stereotype.getQualifiedName())) {
+								// get a property that is interesting for us
+								if (propertyQN.startsWith(stereotype.getQualifiedName())) {
 
 									String propertyName = propertyQN.substring(propertyQN.lastIndexOf(".") + 1);
 									Property stereotypeProperty = StereotypeUtil.getPropertyByName(stereotype, propertyName);
 
-									if(stereotypeProperty == null) {
+									if (stereotypeProperty == null) {
 										return;
 									}
 
 									Node sterotypePropertyNode = null;
 									int i = 0;
-									//we go through all sub nodes to get sub node that is link to this property
-									while(i < node.getChildren().size() && sterotypePropertyNode == null) {
-										if((node.getChildren().get(i)) instanceof Node) {
-											final Node currentNode = (Node)(node.getChildren().get(i));
-											if(AppliedStereotypePropertyEditPart.ID.equals(currentNode.getType())) {
-												if(stereotypeProperty.equals(currentNode.getElement())) {
+									// we go through all sub nodes to get sub node that is link to this property
+									while (i < node.getChildren().size() && sterotypePropertyNode == null) {
+										if ((node.getChildren().get(i)) instanceof Node) {
+											final Node currentNode = (Node) (node.getChildren().get(i));
+											if (AppliedStereotypePropertyEditPart.ID.equals(currentNode.getType())) {
+												if (stereotypeProperty.equals(currentNode.getElement())) {
 													sterotypePropertyNode = currentNode;
 												}
 											}
@@ -147,8 +147,8 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 										i++;
 									}
 
-									if(sterotypePropertyNode == null) {
-										//use to avoid to put it in the command stack
+									if (sterotypePropertyNode == null) {
+										// use to avoid to put it in the command stack
 										CreateAppliedStereotypePropertyViewCommand command = new CreateAppliedStereotypePropertyViewCommand(editPart.getEditingDomain(), editPart.getNotationView(), stereotypeProperty);
 										try {
 											GMFUnsafe.write(editPart.getEditingDomain(), command);
@@ -169,7 +169,7 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritedDoc}
 	 */
 	@Override
@@ -179,8 +179,8 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 
 
 		// if element that has changed is a stereotype => refresh the label.
-		if(notification.getNotifier() instanceof Node && (notification.getEventType() == Notification.ADD) && (notification.getNewValue() instanceof EAnnotation)) {
-			if(UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION == ((EAnnotation)notification.getNewValue()).getSource()) {
+		if (notification.getNotifier() instanceof Node && (notification.getEventType() == Notification.ADD) && (notification.getNewValue() instanceof EAnnotation)) {
+			if (UMLVisualInformationPapyrusConstant.STEREOTYPE_ANNOTATION == ((EAnnotation) notification.getNewValue()).getSource()) {
 				// stereotype annotation has changed => refresh label display
 				refreshDisplay();
 			}
@@ -192,8 +192,8 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 	 * maybe to remove
 	 */
 	protected void refreshEAnnotation() {
-		final GraphicalEditPart editPart = (GraphicalEditPart)getHost();
-		String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind((View)editPart.getNotationView().eContainer());
+		final GraphicalEditPart editPart = (GraphicalEditPart) getHost();
+		String presentationKind = AppliedStereotypeHelper.getAppliedStereotypePresentationKind((View) editPart.getNotationView().eContainer());
 		EObject stereotypeApplication = editPart.resolveSemanticElement();
 		Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
 		final RecordingCommand command = AppliedStereotypeHelper.getAddAppliedStereotypeCommand(editPart.getEditingDomain(), editPart.getNotationView(), stereotype.getQualifiedName(), presentationKind);
@@ -226,20 +226,20 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 	 */
 	@Override
 	public void refreshDisplay() {
-		if(((View)getHost().getModel()).eContainer() != null) {
-			String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View)((View)getHost().getModel()).eContainer());
-			final GraphicalEditPart editPart = (GraphicalEditPart)getHost();
+		if (((View) getHost().getModel()).eContainer() != null) {
+			String stereotypesPropertiesToDisplay = AppliedStereotypeHelper.getAppliedStereotypesPropertiesToDisplay((View) ((View) getHost().getModel()).eContainer());
+			final GraphicalEditPart editPart = (GraphicalEditPart) getHost();
 			final View node = editPart.getNotationView();
 
-			//1. Manage adding of application stereotype properties
+			// 1. Manage adding of application stereotype properties
 			EObject stereotypeApplication = editPart.resolveSemanticElement();
 			Stereotype stereotype = UMLUtil.getStereotype(stereotypeApplication);
-			//if stereotype is null all property of stereotype has to be removed!
-			if(stereotype != null) {
-				//go through each stereotype property
+			// if stereotype is null all property of stereotype has to be removed!
+			if (stereotype != null) {
+				// go through each stereotype property
 				executeAppliedStereotypePropertytCreation(editPart, stereotypesPropertiesToDisplay, node, stereotype);
 
-				//Manage removing of Stereotype application properties
+				// Manage removing of Stereotype application properties
 				manageRemovingPropertiesNodes(stereotypesPropertiesToDisplay, editPart, node, stereotype);
 
 
@@ -251,8 +251,8 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 							Display.getCurrent().syncExec(new Runnable() {
 
 								public void run() {
-									DeleteCommand command = new DeleteCommand((View)getHost().getModel());
-									//use to avoid to put it in the command stack
+									DeleteCommand command = new DeleteCommand((View) getHost().getModel());
+									// use to avoid to put it in the command stack
 									try {
 										GMFUnsafe.write(editPart.getEditingDomain(), command);
 									} catch (Exception e) {
@@ -275,37 +275,37 @@ public class AppliedStereotypePropertiesEditPolicy extends AppliedStereotypeNode
 
 	/**
 	 * this method is used to remove nodes of property that are not in a given list
-	 * 
+	 *
 	 * @param stereotypesPropertiesToDisplay
-	 *        a list of qualified name of properties
+	 *            a list of qualified name of properties
 	 * @param editPart
-	 *        the graphical editpart that is the container
+	 *            the graphical editpart that is the container
 	 * @param node
-	 *        the notation node that is the container
+	 *            the notation node that is the container
 	 * @param stereotype
-	 *        the stereotype that is display in this container
+	 *            the stereotype that is display in this container
 	 */
 	protected void manageRemovingPropertiesNodes(String stereotypesPropertiesToDisplay, final GraphicalEditPart editPart, final View node, Stereotype stereotype) {
 		int i = 0;
-		while(i < node.getChildren().size()) {
-			if((node.getChildren().get(i)) instanceof Node) {
-				final Node currentNode = (Node)(node.getChildren().get(i));
-				if(currentNode.getType().equals(AppliedStereotypePropertyEditPart.ID)) {
-					Property property = (Property)currentNode.getElement();
+		while (i < node.getChildren().size()) {
+			if ((node.getChildren().get(i)) instanceof Node) {
+				final Node currentNode = (Node) (node.getChildren().get(i));
+				if (currentNode.getType().equals(AppliedStereotypePropertyEditPart.ID)) {
+					Property property = (Property) currentNode.getElement();
 					final String propertyQN = stereotype.getQualifiedName() + "." + property.getName();
-					if(!stereotypesPropertiesToDisplay.contains(propertyQN)) {
+					if (!stereotypesPropertiesToDisplay.contains(propertyQN)) {
 						try {
-							//yes, Execution of the Deletion command
+							// yes, Execution of the Deletion command
 							editPart.getEditingDomain().runExclusive(new Runnable() {
 
 								public void run() {
 									Display.getCurrent().syncExec(new Runnable() {
 
 										public void run() {
-											if(currentNode.eContainer() != null) {
+											if (currentNode.eContainer() != null) {
 
 												DeleteCommand command = new DeleteCommand(currentNode);
-												//use to avoid to put it in the command stack
+												// use to avoid to put it in the command stack
 												try {
 													GMFUnsafe.write(editPart.getEditingDomain(), command);
 												} catch (Exception e) {

@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -18,31 +18,31 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.preference.IPreferenceStore;
 
 /**
- * 
+ *
  * Class used to edit integer preferences
- * 
+ *
  */
 public class IntegerDiagramViewObservableValue extends AbstractDiagramPreferencesObservableValue {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param diagram
-	 *        the edited diagram
+	 *            the edited diagram
 	 * @param preferenceName
-	 *        the name of the edited preference
+	 *            the name of the edited preference
 	 * @param store
-	 *        the edited preference store
+	 *            the edited preference store
 	 */
 	public IntegerDiagramViewObservableValue(final Diagram diagram, final String preferenceName, final IPreferenceStore store) {
 		super(diagram, preferenceName, store);
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
-	 * 
+	 *
 	 * @return
 	 */
 	public final Object getValueType() {
@@ -50,9 +50,9 @@ public class IntegerDiagramViewObservableValue extends AbstractDiagramPreference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doGetValue()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -62,16 +62,16 @@ public class IntegerDiagramViewObservableValue extends AbstractDiagramPreference
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.databinding.observable.value.AbstractObservableValue#doSetValue(java.lang.Object)
-	 * 
+	 *
 	 * @param value
 	 */
 	@Override
 	protected void doSetValue(Object value) {
-		if(value instanceof Integer) {
+		if (value instanceof Integer) {
 			final IPreferenceStore wsPreferenceStore = getEditedPreferenceStore();
-			wsPreferenceStore.setValue(getEditedPreference(), ((Integer)value).intValue());
+			wsPreferenceStore.setValue(getEditedPreference(), ((Integer) value).intValue());
 		}
 	}
 

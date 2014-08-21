@@ -34,9 +34,9 @@ import org.eclipse.papyrus.uml.properties.languagepreferences.languagepreference
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl#getLanguages <em>Languages</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl#getEditors <em>Editors</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl#getDefaultEditor <em>Default Editor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl#getLanguages <em>Languages</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl#getEditors <em>Editors</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.properties.languagepreferences.impl.PreferencesImpl#getDefaultEditor <em>Default Editor</em>}</li>
  * </ul>
  * </p>
  *
@@ -47,6 +47,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getLanguages() <em>Languages</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLanguages()
 	 * @generated
 	 * @ordered
@@ -57,6 +58,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getEditors() <em>Editors</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEditors()
 	 * @generated
 	 * @ordered
@@ -67,6 +69,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	 * The cached value of the '{@link #getDefaultEditor() <em>Default Editor</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDefaultEditor()
 	 * @generated
 	 * @ordered
@@ -76,6 +79,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected PreferencesImpl() {
@@ -85,6 +89,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -95,6 +100,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Language> getLanguages() {
@@ -107,6 +113,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Editor> getEditors() {
@@ -119,15 +126,17 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Editor getDefaultEditor() {
 		if (defaultEditor != null && defaultEditor.eIsProxy()) {
-			InternalEObject oldDefaultEditor = (InternalEObject)defaultEditor;
-			defaultEditor = (Editor)eResolveProxy(oldDefaultEditor);
+			InternalEObject oldDefaultEditor = (InternalEObject) defaultEditor;
+			defaultEditor = (Editor) eResolveProxy(oldDefaultEditor);
 			if (defaultEditor != oldDefaultEditor) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR, oldDefaultEditor, defaultEditor));
+				}
 			}
 		}
 		return defaultEditor;
@@ -136,6 +145,7 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Editor basicGetDefaultEditor() {
@@ -145,27 +155,30 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDefaultEditor(Editor newDefaultEditor) {
 		Editor oldDefaultEditor = defaultEditor;
 		defaultEditor = newDefaultEditor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR, oldDefaultEditor, defaultEditor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case languagepreferencesPackage.PREFERENCES__LANGUAGES:
-				return ((InternalEList<?>)getLanguages()).basicRemove(otherEnd, msgs);
-			case languagepreferencesPackage.PREFERENCES__EDITORS:
-				return ((InternalEList<?>)getEditors()).basicRemove(otherEnd, msgs);
+		case languagepreferencesPackage.PREFERENCES__LANGUAGES:
+			return ((InternalEList<?>) getLanguages()).basicRemove(otherEnd, msgs);
+		case languagepreferencesPackage.PREFERENCES__EDITORS:
+			return ((InternalEList<?>) getEditors()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -173,18 +186,21 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case languagepreferencesPackage.PREFERENCES__LANGUAGES:
-				return getLanguages();
-			case languagepreferencesPackage.PREFERENCES__EDITORS:
-				return getEditors();
-			case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
-				if (resolve) return getDefaultEditor();
-				return basicGetDefaultEditor();
+		case languagepreferencesPackage.PREFERENCES__LANGUAGES:
+			return getLanguages();
+		case languagepreferencesPackage.PREFERENCES__EDITORS:
+			return getEditors();
+		case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
+			if (resolve) {
+				return getDefaultEditor();
+			}
+			return basicGetDefaultEditor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -192,23 +208,24 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case languagepreferencesPackage.PREFERENCES__LANGUAGES:
-				getLanguages().clear();
-				getLanguages().addAll((Collection<? extends Language>)newValue);
-				return;
-			case languagepreferencesPackage.PREFERENCES__EDITORS:
-				getEditors().clear();
-				getEditors().addAll((Collection<? extends Editor>)newValue);
-				return;
-			case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
-				setDefaultEditor((Editor)newValue);
-				return;
+		case languagepreferencesPackage.PREFERENCES__LANGUAGES:
+			getLanguages().clear();
+			getLanguages().addAll((Collection<? extends Language>) newValue);
+			return;
+		case languagepreferencesPackage.PREFERENCES__EDITORS:
+			getEditors().clear();
+			getEditors().addAll((Collection<? extends Editor>) newValue);
+			return;
+		case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
+			setDefaultEditor((Editor) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -216,20 +233,21 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case languagepreferencesPackage.PREFERENCES__LANGUAGES:
-				getLanguages().clear();
-				return;
-			case languagepreferencesPackage.PREFERENCES__EDITORS:
-				getEditors().clear();
-				return;
-			case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
-				setDefaultEditor((Editor)null);
-				return;
+		case languagepreferencesPackage.PREFERENCES__LANGUAGES:
+			getLanguages().clear();
+			return;
+		case languagepreferencesPackage.PREFERENCES__EDITORS:
+			getEditors().clear();
+			return;
+		case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
+			setDefaultEditor((Editor) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -237,19 +255,20 @@ public class PreferencesImpl extends EObjectImpl implements Preferences {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case languagepreferencesPackage.PREFERENCES__LANGUAGES:
-				return languages != null && !languages.isEmpty();
-			case languagepreferencesPackage.PREFERENCES__EDITORS:
-				return editors != null && !editors.isEmpty();
-			case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
-				return defaultEditor != null;
+		case languagepreferencesPackage.PREFERENCES__LANGUAGES:
+			return languages != null && !languages.isEmpty();
+		case languagepreferencesPackage.PREFERENCES__EDITORS:
+			return editors != null && !editors.isEmpty();
+		case languagepreferencesPackage.PREFERENCES__DEFAULT_EDITOR:
+			return defaultEditor != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PreferencesImpl
+} // PreferencesImpl

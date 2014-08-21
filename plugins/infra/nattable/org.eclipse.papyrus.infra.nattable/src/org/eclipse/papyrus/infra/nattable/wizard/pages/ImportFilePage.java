@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -33,16 +33,16 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 
 /**
- * 
+ *
  * Import page
- * 
+ *
  */
 public class ImportFilePage extends WizardPage {
 
 	/**
 	 * allowed file to import table
 	 */
-	private static final String[] allowedFiles = new String[]{ "*.csv" }; //$NON-NLS-1$
+	private static final String[] allowedFiles = new String[] { "*.csv" }; //$NON-NLS-1$
 
 	/**
 	 * the selected file path
@@ -55,17 +55,17 @@ public class ImportFilePage extends WizardPage {
 	private final INattableModelManager tableManager;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param pageName
-	 *        the name of the import page
+	 *            the name of the import page
 	 * @param title
-	 *        the title of the page
+	 *            the title of the page
 	 * @param titleImage
-	 *        the image for this page
+	 *            the image for this page
 	 * @param tableManager
-	 *        the table manager where the import will be done
+	 *            the table manager where the import will be done
 	 */
 	public ImportFilePage(final String pageName, final String title, final ImageDescriptor titleImage, final INattableModelManager tableManager) {
 		super(pageName, title, titleImage);
@@ -75,9 +75,9 @@ public class ImportFilePage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.IDialogPage#createControl(org.eclipse.swt.widgets.Composite)
-	 * 
+	 *
 	 * @param parent
 	 */
 	@Override
@@ -114,8 +114,8 @@ public class ImportFilePage extends WizardPage {
 			@Override
 			public void commit(final AbstractEditor editor) {
 				final Object value = selector.getValue();
-				if(value instanceof String && ((String)value).length() > 0) {
-					setFilePath((String)value);
+				if (value instanceof String && ((String) value).length() > 0) {
+					setFilePath((String) value);
 					setPageComplete(isPageComplete());
 				}
 			}
@@ -127,7 +127,7 @@ public class ImportFilePage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the label provider to use or <code>null</code> if not found
 	 */
@@ -139,7 +139,7 @@ public class ImportFilePage extends WizardPage {
 		} catch (ServiceException e) {
 			Activator.log.error("Label Provider Service Not Found", e); //$NON-NLS-1$
 		}
-		if(labelService != null) {
+		if (labelService != null) {
 			return labelService.getLabelProvider();
 		}
 		return null;
@@ -147,9 +147,9 @@ public class ImportFilePage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.wizard.WizardPage#isPageComplete()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -159,7 +159,7 @@ public class ImportFilePage extends WizardPage {
 
 
 	/**
-	 * 
+	 *
 	 * @return
 	 *         the selected file
 	 */
@@ -168,12 +168,12 @@ public class ImportFilePage extends WizardPage {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filePath
-	 *        find the file from the filePath and set it
+	 *            find the file from the filePath and set it
 	 */
 	protected void setFilePath(final String filePath) {
-		if(filePath == null || filePath.length() == 0) {
+		if (filePath == null || filePath.length() == 0) {
 			this.selectedFilePath = null;
 		} else {
 			this.selectedFilePath = filePath;

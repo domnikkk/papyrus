@@ -60,16 +60,16 @@ public class MarkerProviderRegistry {
 	 * delegation.
 	 */
 	private void prune() {
-		if(needPrune) {
+		if (needPrune) {
 			needPrune = false;
-			for(ListIterator<IMarkerProvider> iter = providers.listIterator(); iter.hasNext();) {
+			for (ListIterator<IMarkerProvider> iter = providers.listIterator(); iter.hasNext();) {
 
 				IMarkerProvider next = iter.next();
-				if(next == IMarkerProvider.NULL) {
+				if (next == IMarkerProvider.NULL) {
 					iter.remove();
-				} else if(next instanceof MyRegistryReader.Descriptor) {
-					MyRegistryReader.Descriptor desc = (MyRegistryReader.Descriptor)next;
-					if(desc.instance != null) {
+				} else if (next instanceof MyRegistryReader.Descriptor) {
+					MyRegistryReader.Descriptor desc = (MyRegistryReader.Descriptor) next;
+					if (desc.instance != null) {
 						iter.set(desc.instance);
 					}
 				}
@@ -88,11 +88,11 @@ public class MarkerProviderRegistry {
 	public IMarkerProvider getMarkerProvider(Resource resource) {
 		IMarkerProvider result = IMarkerProvider.NULL;
 
-		synchronized(providers) {
+		synchronized (providers) {
 			prune();
 
-			for(IMarkerProvider next : providers) {
-				if(next.canProvideMarkersFor(resource)) {
+			for (IMarkerProvider next : providers) {
+				if (next.canProvideMarkersFor(resource)) {
 					result = next;
 					break;
 				}
@@ -105,11 +105,11 @@ public class MarkerProviderRegistry {
 	public List<IMarkerProvider> getMarkerProviders(Resource resource) {
 		List<IMarkerProvider> result = new LinkedList<IMarkerProvider>();
 
-		synchronized(providers) {
+		synchronized (providers) {
 			prune();
 
-			for(IMarkerProvider next : providers) {
-				if(next.canProvideMarkersFor(resource)) {
+			for (IMarkerProvider next : providers) {
+				if (next.canProvideMarkersFor(resource)) {
 					result.add(next);
 				}
 			}
@@ -119,17 +119,17 @@ public class MarkerProviderRegistry {
 	}
 
 	private void removeProvider(String className) {
-		synchronized(providers) {
-			for(Iterator<IMarkerProvider> iter = providers.iterator(); iter.hasNext();) {
+		synchronized (providers) {
+			for (Iterator<IMarkerProvider> iter = providers.iterator(); iter.hasNext();) {
 
 				IMarkerProvider next = iter.next();
-				if(next instanceof MyRegistryReader.Descriptor) {
-					MyRegistryReader.Descriptor desc = (MyRegistryReader.Descriptor)next;
-					if(className.equals(desc.getClassName())) {
+				if (next instanceof MyRegistryReader.Descriptor) {
+					MyRegistryReader.Descriptor desc = (MyRegistryReader.Descriptor) next;
+					if (className.equals(desc.getClassName())) {
 						iter.remove();
 						break;
 					}
-				} else if(className.equals(next.getClass().getName())) {
+				} else if (className.equals(next.getClass().getName())) {
 					iter.remove();
 					break;
 				}
@@ -165,10 +165,10 @@ public class MarkerProviderRegistry {
 		private boolean handleAdd(IConfigurationElement element) {
 			boolean result = false;
 
-			if(E_PROVIDER.equals(element.getName())) {
+			if (E_PROVIDER.equals(element.getName())) {
 				inEnablement = false;
 
-				if(element.getAttribute(A_CLASS) == null) {
+				if (element.getAttribute(A_CLASS) == null) {
 					logMissingAttribute(element, A_CLASS);
 				} else {
 					currentDescriptor = new Descriptor(element, A_CLASS);
@@ -176,8 +176,8 @@ public class MarkerProviderRegistry {
 				}
 
 				result = true;
-			} else if(E_ENABLEMENT.equals(element.getName())) {
-				if(currentDescriptor != null) {
+			} else if (E_ENABLEMENT.equals(element.getName())) {
+				if (currentDescriptor != null) {
 					inEnablement = true;
 					try {
 						currentDescriptor.setMatchResourceExpression(ExpressionConverter.getDefault().perform(element));
@@ -196,9 +196,9 @@ public class MarkerProviderRegistry {
 		private boolean handleRemove(IConfigurationElement element) {
 			boolean result = true;
 
-			if(E_PROVIDER.equals(element.getName())) {
+			if (E_PROVIDER.equals(element.getName())) {
 				String className = element.getAttribute(A_CLASS);
-				if(className == null) {
+				if (className == null) {
 					logMissingAttribute(element, A_CLASS);
 					result = false;
 				} else {
@@ -228,9 +228,9 @@ public class MarkerProviderRegistry {
 			}
 
 			IMarkerProvider getInstance() {
-				if(instance == null) {
+				if (instance == null) {
 					try {
-						instance = (IMarkerProvider)createInstance();
+						instance = (IMarkerProvider) createInstance();
 					} catch (Exception e) {
 						Activator.log.error("Failed to instantiate marker provider extension.", e);
 						instance = IMarkerProvider.NULL;
@@ -249,7 +249,7 @@ public class MarkerProviderRegistry {
 			private boolean evaluateEnablement(Resource resource) {
 				boolean result;
 
-				if(matchResource != null) {
+				if (matchResource != null) {
 					IEvaluationContext ctx = new EvaluationContext(null, resource);
 
 					ctx.addVariable("isFile", getFile(resource) != null);

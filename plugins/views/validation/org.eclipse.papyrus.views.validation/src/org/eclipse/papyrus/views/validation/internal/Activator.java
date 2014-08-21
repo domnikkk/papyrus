@@ -30,6 +30,7 @@ public class Activator
 		super();
 	}
 
+	@Override
 	public void start(BundleContext context)
 			throws Exception {
 
@@ -40,6 +41,7 @@ public class Activator
 		log.setPlugin(plugin);
 	}
 
+	@Override
 	public void stop(BundleContext context)
 			throws Exception {
 
@@ -50,7 +52,7 @@ public class Activator
 
 	/**
 	 * Returns the shared instance
-	 * 
+	 *
 	 * @return the shared instance
 	 */
 	public static Activator getDefault() {
@@ -62,7 +64,7 @@ public class Activator
 		super.initializeImageRegistry(reg);
 
 		reg.put(ICON_GOTO_MARKER,
-			getImageDescriptor("full/elcl16/goto_marker.gif")); //$NON-NLS-1$
+				getImageDescriptor("full/elcl16/goto_marker.gif")); //$NON-NLS-1$
 	}
 
 	protected ImageDescriptor getImageDescriptor(String path) {

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    IBM Corporation - initial API and implementation 
+ *    IBM Corporation - initial API and implementation
  ****************************************************************************/
 
 package org.eclipse.papyrus.uml.diagram.common.figure.node;
@@ -21,8 +21,9 @@ import org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure;
 import org.eclipse.gmf.runtime.gef.ui.figures.SlidableOvalAnchor;
 
 /**
- * Draws a circle figure.  The figures bounds are guaranteed to be the circle
+ * Draws a circle figure. The figures bounds are guaranteed to be the circle
  * diameter
+ * 
  * @author mhanner
  */
 public class EllipseFigure extends DefaultSizeNodeFigure implements IOvalAnchorableFigure {
@@ -30,36 +31,46 @@ public class EllipseFigure extends DefaultSizeNodeFigure implements IOvalAnchora
 
 	/**
 	 * Constructor for StateLineFigure.
-	 * @param width figure width
-	 * @param height figure height
+	 * 
+	 * @param width
+	 *            figure width
+	 * @param height
+	 *            figure height
 	 */
 	public EllipseFigure(int width, int height) {
-		super( width, height );
+		super(width, height);
 	}
 
 
 
 	/** Return <code>getBounds()</code>. */
+	@Override
 	public final Rectangle getOvalBounds() {
 		return getBounds();
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createAnchor(org.eclipse.draw2d.geometry.PrecisionPoint)
 	 */
+	@Override
 	protected ConnectionAnchor createAnchor(PrecisionPoint p) {
-		if (p==null)
+		if (p == null) {
 			// If the old terminal for the connection anchor cannot be resolved (by SlidableAnchor) a null
 			// PrecisionPoint will passed in - this is handled here
 			return createDefaultAnchor();
+		}
 		return new SlidableOvalAnchor(this, p);
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure#createDefaultAnchor()
 	 */
+	@Override
 	protected ConnectionAnchor createDefaultAnchor() {
 		return new SlidableOvalAnchor(this);
 	}
 }
-

@@ -23,10 +23,10 @@ public class ProblemMatcher implements IElementMatcher {
 	public boolean matches(EObject eObject) {
 
 		boolean isMatch = false;
-		if(eObject instanceof Comment) {
+		if (eObject instanceof Comment) {
 
-			Comment element = (Comment)eObject;
-			if(UMLUtil.getStereotypeApplication(element, Problem.class) != null) {
+			Comment element = (Comment) eObject;
+			if (UMLUtil.getStereotypeApplication(element, Problem.class) != null) {
 				isMatch = true;
 			}
 		}

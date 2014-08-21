@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -10,7 +10,8 @@
  * Contributors:
  *  Tatiana Fesenko (CEA LIST) - Initial API and implementation
  *
- *****************************************************************************/package org.eclipse.papyrus.uml.diagram.wizards;
+ *****************************************************************************/
+package org.eclipse.papyrus.uml.diagram.wizards;
 
 import java.util.Properties;
 
@@ -28,13 +29,16 @@ public class NewProjectAction implements IIntroAction {
 	/**
 	 * Run.
 	 *
-	 * @param site the site
-	 * @param params the params
+	 * @param site
+	 *            the site
+	 * @param params
+	 *            the params
 	 * @see org.eclipse.ui.intro.config.IIntroAction#run(org.eclipse.ui.intro.IIntroSite, java.util.Properties)
 	 */
 	public void run(IIntroSite site, Properties params) {
-		IntroPlugin.getDefault().closeIntro();
-		
+		IntroPlugin.getDefault();
+		IntroPlugin.closeIntro();
+
 		NewPapyrusProjectWizard wizard = new NewPapyrusProjectWizard();
 		wizard.init(site.getWorkbenchWindow().getWorkbench(), new StructuredSelection());
 		WizardDialog dialog = new WizardDialog(site.getShell(), wizard);

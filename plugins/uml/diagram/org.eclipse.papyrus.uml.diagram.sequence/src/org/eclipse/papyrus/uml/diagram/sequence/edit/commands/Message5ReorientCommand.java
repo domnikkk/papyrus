@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.sequence.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Interaction;
@@ -58,14 +59,15 @@ public class Message5ReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof Message) {
+		if (false == getElementToEdit() instanceof Message) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -75,17 +77,17 @@ public class Message5ReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Element && newEnd instanceof Element)) {
+		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
-		if(getLink().getOwnedElements().size() != 1) {
+		if (getLink().getOwnedElements().size() != 1) {
 			return false;
 		}
-		Element target = (Element)getLink().getOwnedElements().get(0);
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		Element target = getLink().getOwnedElements().get(0);
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4007(container, getLink(), getNewSource(), target);
 	}
 
@@ -93,28 +95,29 @@ public class Message5ReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Element && newEnd instanceof Element)) {
+		if (!(oldEnd instanceof Element && newEnd instanceof Element)) {
 			return false;
 		}
 		Element source = getLink().getOwner();
-		if(!(getLink().eContainer() instanceof Interaction)) {
+		if (!(getLink().eContainer() instanceof Interaction)) {
 			return false;
 		}
-		Interaction container = (Interaction)getLink().eContainer();
+		Interaction container = (Interaction) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistMessage_4007(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -138,34 +141,34 @@ public class Message5ReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected Message getLink() {
-		return (Message)getElementToEdit();
+		return (Message) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getOldSource() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getNewSource() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getOldTarget() {
-		return (Element)oldEnd;
+		return (Element) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Element getNewTarget() {
-		return (Element)newEnd;
+		return (Element) newEnd;
 	}
 }

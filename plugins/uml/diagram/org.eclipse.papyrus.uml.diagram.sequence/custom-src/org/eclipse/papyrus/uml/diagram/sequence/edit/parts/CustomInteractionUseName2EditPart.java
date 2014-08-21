@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -23,7 +23,7 @@ public class CustomInteractionUseName2EditPart extends InteractionUseName2EditPa
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomInteractionUseName2EditPart(View view) {
@@ -32,7 +32,7 @@ public class CustomInteractionUseName2EditPart extends InteractionUseName2EditPa
 
 	@Override
 	public void performRequest(Request request) {
-		if(request.getType().equals(REQ_OPEN)) {
+		if (request.getType().equals(REQ_OPEN)) {
 			getParent().performRequest(request);
 			return;
 		}

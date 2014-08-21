@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class NavigationDecoratorProvider extends AbstractProvider implements IDe
 	static {
 		// Reading data from plugins
 		IConfigurationElement[] configElements = Platform.getExtensionRegistry().getConfigurationElementsFor(EXTENSION_ID);
-		for(IConfigurationElement configElement : configElements) {
+		for (IConfigurationElement configElement : configElements) {
 			String className = configElement.getAttribute(CLASS_ID);
 			Class<?> class_ = null;
 			try {
@@ -55,10 +55,10 @@ public class NavigationDecoratorProvider extends AbstractProvider implements IDe
 			} catch (Exception e) {
 			}
 
-			if(class_ != null) {
-				if(FORBIDDENCLASS_ID.equals(configElement.getName())) {
+			if (class_ != null) {
+				if (FORBIDDENCLASS_ID.equals(configElement.getName())) {
 					forbiddenClasses.add(class_);
-				} else if(DECORATEDCLASS_ID.equals(configElement.getName())) {
+				} else if (DECORATEDCLASS_ID.equals(configElement.getName())) {
 					decoratedClasses.add(class_);
 				}
 			}
@@ -67,20 +67,20 @@ public class NavigationDecoratorProvider extends AbstractProvider implements IDe
 
 	public boolean provides(IOperation operation) {
 		String decoratorVisibility = Activator.getDefault().getPreferenceStore().getString(INavigationPreferenceConstant.PAPYRUS_NAVIGATION_DECORATOR_VISIBILITY);
-		if(operation instanceof CreateDecoratorsOperation && !INavigationPreferenceConstant.DISABLED.equals(decoratorVisibility)) {
-			IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation)operation).getDecoratorTarget();
-			EditPart editPart = (EditPart)decoratorTarget.getAdapter(EditPart.class);
-			if(editPart instanceof IPrimaryEditPart) {
-				EObject element = ((IGraphicalEditPart)editPart).resolveSemanticElement();
+		if (operation instanceof CreateDecoratorsOperation && !INavigationPreferenceConstant.DISABLED.equals(decoratorVisibility)) {
+			IDecoratorTarget decoratorTarget = ((CreateDecoratorsOperation) operation).getDecoratorTarget();
+			EditPart editPart = (EditPart) decoratorTarget.getAdapter(EditPart.class);
+			if (editPart instanceof IPrimaryEditPart) {
+				EObject element = ((IGraphicalEditPart) editPart).resolveSemanticElement();
 				boolean decorate = false;
-				for(Class<?> class_ : decoratedClasses) {
-					if(class_.isInstance(element)) {
+				for (Class<?> class_ : decoratedClasses) {
+					if (class_.isInstance(element)) {
 						decorate = true;
 						break;
 					}
 				}
-				for(Class<?> class_ : forbiddenClasses) {
-					if(class_.isInstance(element)) {
+				for (Class<?> class_ : forbiddenClasses) {
+					if (class_.isInstance(element)) {
 						decorate = false;
 						break;
 					}

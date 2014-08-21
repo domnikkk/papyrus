@@ -29,4 +29,3 @@ public class QuestionDialogFactory implements IQuestionDialogFactory {
 	}
 
 }
-

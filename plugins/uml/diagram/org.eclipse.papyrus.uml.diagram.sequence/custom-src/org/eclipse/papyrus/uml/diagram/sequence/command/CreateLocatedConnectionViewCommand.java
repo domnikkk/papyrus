@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.diagram.sequence.util.SequenceUtil;
 /**
  * This class is used to create a connection view which source and target locations are defined. This is useful for connections linked to an
  * Occurrence Specification, which is located at a particular predefined point.
- * 
+ *
  * @author vhemery
  */
 public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConnectionViewCommand {
@@ -49,7 +49,8 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 	/**
 	 * {@inheritDoc}
 	 */
-	public CreateLocatedConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint, ConnectionViewDescriptor viewDescriptor, ICommand command) {
+	public CreateLocatedConnectionViewCommand(TransactionalEditingDomain editingDomain, String semanticHint, IAdaptable sourceViewAdapter, IAdaptable targetViewAdapter, EditPartViewer viewer, PreferencesHint preferencesHint,
+			ConnectionViewDescriptor viewDescriptor, ICommand command) {
 		super(editingDomain, semanticHint, sourceViewAdapter, targetViewAdapter, viewer, preferencesHint, viewDescriptor, command);
 	}
 
@@ -62,7 +63,7 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 
 	/**
 	 * Creates a connection view between the source and target.
-	 * 
+	 *
 	 * @throws ExecutionException
 	 */
 	@Override
@@ -75,10 +76,10 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 		// modification in order to fix the bug
 		CreateConnectionViewRequest createRequest = new CreateConnectionViewRequest(viewDescriptor);
 		createConnectionCmd = getCreateCommand(createRequest, sourceEditPart, targetEditPart);
-		if(createConnectionCmd != null && createConnectionCmd.canExecute()) {
+		if (createConnectionCmd != null && createConnectionCmd.canExecute()) {
 			createConnectionCmd.execute();
-			if(element != null) {
-				((View)(createRequest.getConnectionViewDescriptor().getAdapter(View.class))).setElement(element);
+			if (element != null) {
+				((View) (createRequest.getConnectionViewDescriptor().getAdapter(View.class))).setElement(element);
 			}
 		} else {
 			// connection can not be created
@@ -92,25 +93,25 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 	 * Method getCreateCommand Gets the command given a request, source and target edit parts. (No semantic element required.)
 	 * This method is similar to {@link CreateConnectionViewRequest#getCreateCommand(CreateConnectionViewRequest, EditPart, EditPart)}, except it
 	 * fixes source and target locations
-	 * 
+	 *
 	 * @param request
-	 *        creation request
+	 *            creation request
 	 * @param sourceEditPart
-	 *        source edit part
+	 *            source edit part
 	 * @param targetEditPart
-	 *        target edit part
+	 *            target edit part
 	 * @return <code>Command</code> to create the connection at appropriate locations
 	 */
 	protected Command getCreateCommand(CreateConnectionViewRequest request, EditPart sourceEditPart, EditPart targetEditPart) {
 		EditPart newSourceEditPart = sourceEditPart;
 		// set appropriated source edit part
-		if(sourceEditPart instanceof LifelineEditPart && sourceLocation != null) {
-			newSourceEditPart = SequenceUtil.findPartToReconnectTo((LifelineEditPart)sourceEditPart, sourceLocation);
+		if (sourceEditPart instanceof LifelineEditPart && sourceLocation != null) {
+			newSourceEditPart = SequenceUtil.findPartToReconnectTo((LifelineEditPart) sourceEditPart, sourceLocation);
 		}
 		EditPart newTargetEditPart = targetEditPart;
 		// set appropriated target edit part
-		if(targetEditPart instanceof LifelineEditPart && targetLocation != null) {
-			newTargetEditPart = SequenceUtil.findPartToReconnectTo((LifelineEditPart)targetEditPart, targetLocation);
+		if (targetEditPart instanceof LifelineEditPart && targetLocation != null) {
+			newTargetEditPart = SequenceUtil.findPartToReconnectTo((LifelineEditPart) targetEditPart, targetLocation);
 		}
 		Assert.isNotNull(request);
 		Assert.isNotNull(sourceEditPart);
@@ -118,7 +119,7 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 		Assert.isNotNull(newSourceEditPart);
 		Assert.isNotNull(newTargetEditPart);
 		request.setSourceEditPart(sourceEditPart);
-		//We need the same source and target at beginning of connection.
+		// We need the same source and target at beginning of connection.
 		request.setTargetEditPart(sourceEditPart);
 		request.setType(RequestConstants.REQ_CONNECTION_START);
 		// set source location
@@ -133,11 +134,11 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 
 	/**
 	 * Set the locations where source and target points must be drawn.
-	 * 
+	 *
 	 * @param sourcePoint
-	 *        point where to draw source or null
+	 *            point where to draw source or null
 	 * @param targetPoint
-	 *        point where to draw target or null
+	 *            point where to draw target or null
 	 */
 	public void setLocations(Point sourcePoint, Point targetPoint) {
 		sourceLocation = sourcePoint;
@@ -146,19 +147,19 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 
 	/**
 	 * Handle the failure by reporting an adequate error message
-	 * 
+	 *
 	 * @param createRequest
-	 *        the creation request that didn't success
+	 *            the creation request that didn't success
 	 * @param sourceEditPart
-	 *        the link source edit part
+	 *            the link source edit part
 	 * @param targetEditPart
-	 *        the target source edit part
+	 *            the target source edit part
 	 */
 	private void handleErrorMessage(CreateConnectionViewRequest createRequest, IGraphicalEditPart sourceEditPart, IGraphicalEditPart targetEditPart) {
 		String hint = createRequest.getConnectionViewDescriptor().getSemanticHint();
 		boolean isMessage = isMessageHint(hint);
 		boolean uphill = sourceLocation != null && targetLocation != null && sourceLocation.y > targetLocation.y;
-		if(isMessage && uphill) {
+		if (isMessage && uphill) {
 			reportCanNotDropUphillMessage(sourceLocation.y - targetLocation.y, sourceEditPart, targetEditPart);
 		} else {
 			reportDefaultMessage(sourceEditPart, targetEditPart);
@@ -167,46 +168,46 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 
 	/**
 	 * Test if hint is for a message creation
-	 * 
+	 *
 	 * @param hint
-	 *        hint to test
+	 *            hint to test
 	 * @return true if message hint
 	 */
 	private boolean isMessageHint(String hint) {
 		List<String> messageHints = new ArrayList<String>(7);
-		String messageHint = ((IHintedType)UMLElementTypes.Message_4003).getSemanticHint();
+		String messageHint = ((IHintedType) UMLElementTypes.Message_4003).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4004).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4004).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4005).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4005).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4006).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4006).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4007).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4007).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4008).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4008).getSemanticHint();
 		messageHints.add(messageHint);
-		messageHint = ((IHintedType)UMLElementTypes.Message_4009).getSemanticHint();
+		messageHint = ((IHintedType) UMLElementTypes.Message_4009).getSemanticHint();
 		messageHints.add(messageHint);
 		return messageHints.contains(hint);
 	}
 
 	/**
 	 * Report a message telling that the message can not be dropped because it goes uphill.
-	 * 
+	 *
 	 * @param delta
-	 *        the missing delta between the two lifelines
+	 *            the missing delta between the two lifelines
 	 * @param sourceEditPart
-	 *        the source of the message
+	 *            the source of the message
 	 * @param targetEditPart
-	 *        the target of the message
+	 *            the target of the message
 	 */
 	private void reportCanNotDropUphillMessage(int delta, IGraphicalEditPart sourceEditPart, IGraphicalEditPart targetEditPart) {
 		EObject source = sourceEditPart.resolveSemanticElement();
 		String sourceText = EMFCoreUtil.getQualifiedName(source, true);
 		EObject target = targetEditPart.resolveSemanticElement();
 		String targetText = EMFCoreUtil.getQualifiedName(target, true);
-		String txt = NLS.bind(CustomMessages.DropError_UphillMessageTxt, new Object[]{ sourceText, targetText, delta });
+		String txt = NLS.bind(CustomMessages.DropError_UphillMessageTxt, new Object[] { sourceText, targetText, delta });
 		NotificationBuilder notif = NotificationBuilder.createAsyncPopup(CustomMessages.DropError_UphillMessageTitle, txt);
 		notif.setType(Type.WARNING);
 		notif.run();
@@ -214,11 +215,11 @@ public class CreateLocatedConnectionViewCommand extends CommonDeferredCreateConn
 
 	/**
 	 * Report a message telling that the link drop unexpectedly failed.
-	 * 
+	 *
 	 * @param sourceEditPart
-	 *        the source of the link
+	 *            the source of the link
 	 * @param targetEditPart
-	 *        the target of the link
+	 *            the target of the link
 	 */
 	private void reportDefaultMessage(IGraphicalEditPart sourceEditPart, IGraphicalEditPart targetEditPart) {
 		EObject source = sourceEditPart.resolveSemanticElement();

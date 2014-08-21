@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,12 +29,13 @@ public class UMLBaseNameSetter implements IBaseNameSetter {
 	private UMLBaseNameSetter() {
 	}
 
+	@Override
 	public void setBaseName(String base, EObject toName) {
-		if(toName instanceof NamedElement) {
-			NamedElement namedElement = (NamedElement)toName;
+		if (toName instanceof NamedElement) {
+			NamedElement namedElement = (NamedElement) toName;
 
 			List<EObject> contents;
-			if(namedElement.eContainer() != null) {
+			if (namedElement.eContainer() != null) {
 				contents = namedElement.eContainer().eContents();
 			} else {
 				contents = Collections.EMPTY_LIST;

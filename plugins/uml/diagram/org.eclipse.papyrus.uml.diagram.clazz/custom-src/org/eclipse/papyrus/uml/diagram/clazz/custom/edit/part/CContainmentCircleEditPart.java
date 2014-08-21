@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,10 @@ public class CContainmentCircleEditPart extends ContainmentCircleEditPart {
 
 	/**
 	 * Papyrus codeGen
-	 * 
-	 * 
+	 *
+	 *
 	 **/
+	@Override
 	protected void handleNotificationEvent(org.eclipse.emf.common.notify.Notification event) {
 		super.handleNotificationEvent(event);
 		// set the good ends for the association figure
@@ -38,6 +39,7 @@ public class CContainmentCircleEditPart extends ContainmentCircleEditPart {
 	/**
 	 * Modify the default size of the containment circle node
 	 */
+	@Override
 	protected org.eclipse.gmf.runtime.gef.ui.figures.NodeFigure createNodePlate() {
 		org.eclipse.gmf.runtime.gef.ui.figures.DefaultSizeNodeFigure result = new EllipseFigure(20, 20);
 		// FIXME: workaround for #154536

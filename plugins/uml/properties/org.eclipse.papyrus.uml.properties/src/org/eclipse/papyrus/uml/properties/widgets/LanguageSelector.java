@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -31,7 +31,7 @@ import org.eclipse.swt.widgets.Text;
  * This selectors allows the user to select a language from a list of
  * registered languages, or to type directly the name of a language
  * (Which may have been registered or not).
- * 
+ *
  * @author Camille Letavernier
  */
 public class LanguageSelector extends StringSelector {
@@ -42,19 +42,19 @@ public class LanguageSelector extends StringSelector {
 
 	/**
 	 * Returns a single-element array containing the current text
-	 * 
+	 *
 	 * {@link IElementSelector#getSelectedElements()}
 	 */
 	@Override
 	public Object[] getSelectedElements() {
 		java.util.List<String> languageNames = new LinkedList<String>();
 
-		if(text.getText() != null && !text.getText().trim().equals("")) { //$NON-NLS-1$
+		if (text.getText() != null && !text.getText().trim().equals("")) { //$NON-NLS-1$
 			languageNames.add(text.getText());
 		} else {
 			String[] selection = list.getSelection();
-			if(selection.length > 0) {
-				for(String languageName : selection) {
+			if (selection.length > 0) {
+				for (String languageName : selection) {
 					languageNames.add(languageName);
 				}
 			}
@@ -63,7 +63,7 @@ public class LanguageSelector extends StringSelector {
 
 		java.util.List<Expression> result = new LinkedList<Expression>();
 
-		for(String languageName : languageNames) {
+		for (String languageName : languageNames) {
 			Expression expression = new Expression();
 			expression.setLanguage(languageName);
 			result.add(expression);
@@ -84,20 +84,20 @@ public class LanguageSelector extends StringSelector {
 		text = new Text(container, SWT.NONE | SWT.BORDER);
 		list = new List(container, SWT.MULTI | SWT.BORDER);
 		list.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
-		for(String language : LanguageRegistry.instance.getLanguages()) {
+		for (String language : LanguageRegistry.instance.getLanguages()) {
 			list.add(language);
 		}
 
 		list.addSelectionListener(new SelectionListener() {
 
 			public void widgetSelected(SelectionEvent e) {
-				//Nothing
+				// Nothing
 			}
 
 			public void widgetDefaultSelected(SelectionEvent e) {
-				if(!elementSelectionListeners.isEmpty()) {
+				if (!elementSelectionListeners.isEmpty()) {
 					Object[] value = getSelectedElements();
-					for(IElementSelectionListener listener : elementSelectionListeners) {
+					for (IElementSelectionListener listener : elementSelectionListeners) {
 						listener.addElements(value);
 					}
 				}
@@ -108,13 +108,13 @@ public class LanguageSelector extends StringSelector {
 
 	/**
 	 * Returns all the known languages
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.widgets.editors.IElementSelector#getAllElements()
 	 */
 	@Override
 	public Object[] getAllElements() {
 		java.util.List<Expression> result = new LinkedList<Expression>();
-		for(String language : list.getItems()) {
+		for (String language : list.getItems()) {
 			Expression expression = new Expression();
 			expression.setLanguage(language);
 			result.add(expression);

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Atos.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  *  Atos - Initial API and implementation
- *  Patrick Tessier (CEA LIST) Modification 
- * 
+ *  Patrick Tessier (CEA LIST) Modification
+ *
  */
 package org.eclipse.papyrus.infra.gmfdiag.modelexplorer.queries;
 

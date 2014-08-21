@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -38,15 +38,16 @@ public class AddNodeShowHideCompartmentBehavior extends Action {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 		// Parse selected GenLink(s) and add the desired CustomBehavior
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenNode) {
-				//test if it has got a external node to display applied stereotype
-				if(!hasCustomBehavior(((GenNode)eObject), SHOW_HIDE_COMPARTMENT_POLICY_KEY)) {
-					addCustomBehavior((GenNode)eObject, SHOW_HIDE_COMPARTMENT_POLICY_KEY, SHOW_HIDE_COMPARTMENT_POLICY_CLASS);
+			if (eObject instanceof GenNode) {
+				// test if it has got a external node to display applied stereotype
+				if (!hasCustomBehavior(((GenNode) eObject), SHOW_HIDE_COMPARTMENT_POLICY_KEY)) {
+					addCustomBehavior((GenNode) eObject, SHOW_HIDE_COMPARTMENT_POLICY_KEY, SHOW_HIDE_COMPARTMENT_POLICY_CLASS);
 				}
 			}
 		}

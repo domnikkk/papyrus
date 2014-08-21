@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -29,19 +29,19 @@ import org.eclipse.uml2.uml.PackageImport;
 public class LibraryHelper {
 
 	public static Set<PackageImport> getAllImportedPackages(ModelSet modelSet) {
-		UmlModel umlModel = (UmlModel)modelSet.getModel(UmlModel.MODEL_ID);
+		UmlModel umlModel = (UmlModel) modelSet.getModel(UmlModel.MODEL_ID);
 
-		if(umlModel != null) {
+		if (umlModel != null) {
 			Resource mainUMLResource = umlModel.getResource();
 
 			final Set<PackageImport> allImportedPackages = new HashSet<PackageImport>();
 
 			Iterator<EObject> allContents = mainUMLResource.getAllContents();
 
-			while(allContents.hasNext()) {
+			while (allContents.hasNext()) {
 				EObject currentElement = allContents.next();
-				if(currentElement instanceof Package) {
-					Package currentPackage = (Package)currentElement;
+				if (currentElement instanceof Package) {
+					Package currentPackage = (Package) currentElement;
 					allImportedPackages.addAll(currentPackage.getPackageImports());
 				}
 			}

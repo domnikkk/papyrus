@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *   Andreas Muelder - Initial contribution and API
  *
  *****************************************************************************/
@@ -81,21 +81,25 @@ public class DirectEditorEditingSupport extends EditingSupport {
 	/**
 	 * Obtain direct editor configuration for an element that can be adapted to
 	 * an EObject
-	 * @param element an adaptable element
+	 * 
+	 * @param element
+	 *            an adaptable element
 	 * @return The direct editor configuration, if it exists.
 	 */
 	public static ICustomDirectEditorConfiguration getConfigurationAE(Object element) {
-			EObject semanticObject = EMFHelper.getEObject(element);
-			return getConfiguration(semanticObject);
+		EObject semanticObject = EMFHelper.getEObject(element);
+		return getConfiguration(semanticObject);
 	}
-	
+
 	/**
 	 * Obtain direct editor configuration for a semantic element
-	 * @param element a sementic element
+	 * 
+	 * @param element
+	 *            a sementic element
 	 * @return The direct editor configuration, if it exists.
 	 */
 	public static ICustomDirectEditorConfiguration getConfiguration(EObject semanticElement) {
-		
+
 		IPreferenceStore store = Activator.getDefault()
 				.getPreferenceStore();
 		String semanticClassName = semanticElement.eClass()
@@ -106,7 +110,7 @@ public class DirectEditorEditingSupport extends EditingSupport {
 
 		if (languagePreferred != null && !languagePreferred.equals("")) { //$NON-NLS-1$
 			IDirectEditorConfiguration configuration = DirectEditorsUtil
-					.findEditorConfiguration(languagePreferred,	semanticClassName);
+					.findEditorConfiguration(languagePreferred, semanticClassName);
 			if (configuration instanceof ICustomDirectEditorConfiguration) {
 				return (ICustomDirectEditorConfiguration) configuration;
 			}

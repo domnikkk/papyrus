@@ -56,9 +56,9 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	 * Constructor.
 	 *
 	 * @param umlSource
-	 *        The Package on which the profiles are applied or unapplied
+	 *            The Package on which the profiles are applied or unapplied
 	 * @param domain
-	 *        The editing domain on which the commands are executed
+	 *            The editing domain on which the commands are executed
 	 */
 	public ProfileApplicationObservableList(Package umlSource, EditingDomain domain) {
 		super(new LinkedList<Object>(umlSource.getAppliedProfiles()), Profile.class);
@@ -74,7 +74,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 
 					@Override
 					public ListDiffEntry[] getDifferences() {
-						return new ListDiffEntry[]{ new ListDiffEntry() {
+						return new ListDiffEntry[] { new ListDiffEntry() {
 
 							@Override
 							public int getPosition() {
@@ -103,7 +103,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 
 					@Override
 					public ListDiffEntry[] getDifferences() {
-						return new ListDiffEntry[]{ new ListDiffEntry() {
+						return new ListDiffEntry[] { new ListDiffEntry() {
 
 							@Override
 							public int getPosition() {
@@ -139,7 +139,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	}
 
 	public void commit(AbstractEditor editor) {
-		if(commands.isEmpty()) {
+		if (commands.isEmpty()) {
 			return;
 		}
 
@@ -173,19 +173,19 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 			public boolean canExecute() {
 				return commandList.isEmpty() ? false : commandList.get(0).canExecute();
 			}
-			//TODO : edit the execute() method to call the remaining canExecute() checks
-			//during the execution
-			//(n).canExecute()
-			//(n).execute()
-			//(n+1).canExecute()
-			//(n+1).execute()
+			// TODO : edit the execute() method to call the remaining canExecute() checks
+			// during the execution
+			// (n).canExecute()
+			// (n).execute()
+			// (n+1).canExecute()
+			// (n+1).execute()
 
-			//Problem : this is the StrictCompoundCommand's behavior. However, in the
-			//StrictCompoundCommand implementation, the execute() is called outside of
-			//the current CommandStack, which is forbidden
+			// Problem : this is the StrictCompoundCommand's behavior. However, in the
+			// StrictCompoundCommand implementation, the execute() is called outside of
+			// the current CommandStack, which is forbidden
 		};
 
-		for(Command cmd : commands) {
+		for (Command cmd : commands) {
 			compoundCommand.append(cmd);
 		}
 
@@ -213,12 +213,12 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	 */
 	@Override
 	public boolean add(Object o) {
-		if(!(o instanceof Profile)) {
+		if (!(o instanceof Profile)) {
 			return false;
 		}
 
-		Profile profile = EMFHelper.reloadIntoContext((Profile)o, umlSource);
-		Command command = new ApplyProfileCommand(umlSource, profile, (TransactionalEditingDomain)domain);
+		Profile profile = EMFHelper.reloadIntoContext((Profile) o, umlSource);
+		Command command = new ApplyProfileCommand(umlSource, profile, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -232,12 +232,12 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	@Override
 	public boolean remove(Object o) {
 
-		if(!(o instanceof Profile)) {
+		if (!(o instanceof Profile)) {
 			return false;
 		}
 
-		final Profile profile = (Profile)o;
-		Command command = new UnapplyProfileCommand(umlSource, profile, (TransactionalEditingDomain)domain);
+		final Profile profile = (Profile) o;
+		Command command = new UnapplyProfileCommand(umlSource, profile, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -249,18 +249,18 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	 */
 	@Override
 	public boolean addAll(Collection c) {
-		//We only apply the profiles that are not applied yet (To avoid removing them when undo is called)
+		// We only apply the profiles that are not applied yet (To avoid removing them when undo is called)
 		c.removeAll(wrappedList);
 
 		Collection<Profile> profiles = new LinkedList<Profile>();
-		for(Object element : c) {
-			if(element instanceof Profile) {
-				profiles.add(EMFHelper.reloadIntoContext((Profile)element, umlSource));
+		for (Object element : c) {
+			if (element instanceof Profile) {
+				profiles.add(EMFHelper.reloadIntoContext((Profile) element, umlSource));
 			} else {
 				throw new IllegalArgumentException("The new value should only contain profiles");
 			}
 		}
-		Command command = new ApplyProfileCommand(umlSource, profiles, (TransactionalEditingDomain)domain);
+		Command command = new ApplyProfileCommand(umlSource, profiles, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -272,7 +272,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	 */
 	@Override
 	public boolean removeAll(Collection c) {
-		Command command = new UnapplyProfileCommand(umlSource, c, (TransactionalEditingDomain)domain);
+		Command command = new UnapplyProfileCommand(umlSource, c, (TransactionalEditingDomain) domain);
 
 		commands.add(command);
 
@@ -285,22 +285,22 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	@Override
 	public boolean retainAll(Collection c) {
 		List<Object> objectsToRemove = new LinkedList<Object>();
-		for(Object object : c) {
-			if(!contains(object)) {
+		for (Object object : c) {
+			if (!contains(object)) {
 				objectsToRemove.add(object);
 			}
 		}
 		return removeAll(objectsToRemove);
 	}
 
-	//Unsupported operations. Some of them have a "proxy" implementation
+	// Unsupported operations. Some of them have a "proxy" implementation
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void add(int index, Object value) {
-		add(value); //The list is not ordered
+		add(value); // The list is not ordered
 	}
 
 	/**
@@ -308,7 +308,7 @@ public class ProfileApplicationObservableList extends WritableList implements IC
 	 */
 	@Override
 	public boolean addAll(int index, Collection c) {
-		return addAll(c); //The list is not ordered
+		return addAll(c); // The list is not ordered
 	}
 
 	/**

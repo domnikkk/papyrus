@@ -22,6 +22,7 @@ public abstract class CustomizableElementImpl extends EObjectImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CustomizableElementImpl() {
@@ -31,6 +32,7 @@ public abstract class CustomizableElementImpl extends EObjectImpl implements Cus
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -38,4 +40,4 @@ public abstract class CustomizableElementImpl extends EObjectImpl implements Cus
 		return CustomizationPluginPackage.Literals.CUSTOMIZABLE_ELEMENT;
 	}
 
-} //CustomizableElementImpl
+} // CustomizableElementImpl

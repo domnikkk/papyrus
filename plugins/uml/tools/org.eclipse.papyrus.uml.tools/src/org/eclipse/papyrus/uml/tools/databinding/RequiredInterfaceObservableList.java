@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,9 +46,9 @@ import org.eclipse.uml2.uml.Usage;
 
 /**
  * An IObservableList to edit the UML Derived feature {@link Port#getRequireds()}
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class RequiredInterfaceObservableList extends PapyrusObservableList {
 
@@ -62,9 +62,9 @@ public class RequiredInterfaceObservableList extends PapyrusObservableList {
 	 * Instantiates a new required interface observable list.
 	 *
 	 * @param source
-	 *        the source
+	 *            the source
 	 * @param domain
-	 *        the domain
+	 *            the domain
 	 */
 	public RequiredInterfaceObservableList(Port source, EditingDomain domain) {
 		super(EMFProperties.list(UMLPackage.eINSTANCE.getPort_Required()).observe(source), domain, source, UMLPackage.eINSTANCE.getPort_Required());
@@ -86,32 +86,32 @@ public class RequiredInterfaceObservableList extends PapyrusObservableList {
 		List<Interface> commonInterfacesList = new ArrayList<Interface>();
 		EList<Interface> requiredInterfacesList = port.getRequireds();
 
-		for(Object current : values) {
-			if(current instanceof Interface) {
+		for (Object current : values) {
+			if (current instanceof Interface) {
 
-				if(!requiredInterfacesList.contains(current)) {
+				if (!requiredInterfacesList.contains(current)) {
 
 					// Added interface
-					IEditCommandRequest request = new CreateRelationshipRequest(port.getType().eContainer(), port.getType(), (EObject)current, ElementTypeRegistry.getInstance().getType("org.eclipse.papyrus.uml.Usage"));
+					IEditCommandRequest request = new CreateRelationshipRequest(port.getType().eContainer(), port.getType(), (EObject) current, ElementTypeRegistry.getInstance().getType("org.eclipse.papyrus.uml.Usage"));
 					requests.add(request);
 				} else {
 
 					// Conserved interface
-					commonInterfacesList.add((Interface)current);
+					commonInterfacesList.add((Interface) current);
 				}
 			}
 		}
 
-		if(!requests.isEmpty()) {
+		if (!requests.isEmpty()) {
 			returnedCommand.append(getCommandFromRequests(getProvider(), requests));
 		}
 
 		// Handle deleted interfaces
-		if(requiredInterfacesList.size() != commonInterfacesList.size()) {
+		if (requiredInterfacesList.size() != commonInterfacesList.size()) {
 			List<Interface> removedInterfacesList = new ArrayList<Interface>();
 
-			for(Interface current : requiredInterfacesList) {
-				if(!commonInterfacesList.contains(current)) {
+			for (Interface current : requiredInterfacesList) {
+				if (!commonInterfacesList.contains(current)) {
 					removedInterfacesList.add(current);
 				}
 			}
@@ -132,11 +132,11 @@ public class RequiredInterfaceObservableList extends PapyrusObservableList {
 	public Command getRemoveCommand(Object value) {
 		CompoundCommand commands = null;
 		Dependency usage = getUsage(value);
-		if(usage != null) {
+		if (usage != null) {
 			commands = new CompoundCommand();
-			IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain)editingDomain, usage, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject)value, false);
+			IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain) editingDomain, usage, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject) value, false);
 			commands.append(new GMFtoEMFCommandWrapper(getProvider().getEditCommand(request)));
-			commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain)editingDomain, usage, getProvider())));
+			commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain) editingDomain, usage, getProvider())));
 
 		}
 
@@ -154,16 +154,16 @@ public class RequiredInterfaceObservableList extends PapyrusObservableList {
 		CompoundCommand commands = new CompoundCommand();
 		Set<Dependency> dependenciesSet = new HashSet<Dependency>();
 
-		for(Object value : values) {
+		for (Object value : values) {
 			Dependency usage = getUsage(value);
-			if(usage != null) {
-				IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain)editingDomain, usage, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject)value, false);
+			if (usage != null) {
+				IEditCommandRequest request = new DestroyReferenceRequest((TransactionalEditingDomain) editingDomain, usage, UMLPackage.eINSTANCE.getDependency_Supplier(), (EObject) value, false);
 				commands.append(new GMFtoEMFCommandWrapper(getProvider().getEditCommand(request)));
 				dependenciesSet.add(usage);
 			}
 		}
 
-		commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain)editingDomain, dependenciesSet, getProvider())));
+		commands.append(new GMFtoEMFCommandWrapper(new DestroyDependencyWithoutSupplierCommand((TransactionalEditingDomain) editingDomain, dependenciesSet, getProvider())));
 
 		return commands;
 	}
@@ -175,7 +175,7 @@ public class RequiredInterfaceObservableList extends PapyrusObservableList {
 	 */
 	@Override
 	public Command getClearCommand() {
-		return new RecordingCommand((TransactionalEditingDomain)editingDomain) {
+		return new RecordingCommand((TransactionalEditingDomain) editingDomain) {
 
 			@Override
 			protected void doExecute() {
@@ -190,25 +190,25 @@ public class RequiredInterfaceObservableList extends PapyrusObservableList {
 	 * Gets the usage.
 	 *
 	 * @param value
-	 *        the value
+	 *            the value
 	 * @return the usage
 	 */
 	private Dependency getUsage(Object value) {
 		Usage usage = null;
-		if(value instanceof Interface) {
-			Interface deletedInterface = (Interface)value;
+		if (value instanceof Interface) {
+			Interface deletedInterface = (Interface) value;
 			List<Usage> usagesList = ElementUtil.getInstancesFilteredByType(port.getModel(), Usage.class, null);
 
 			// Parse all Usages of model
 			boolean isUsage = false;
 			Iterator<Usage> usagesIterator = usagesList.iterator();
 			Usage current = null;
-			while(usagesIterator.hasNext() && !isUsage) {
+			while (usagesIterator.hasNext() && !isUsage) {
 				current = usagesIterator.next();
 
 				// Check if Usage links port's type to deleted interface
 				isUsage = current.getSuppliers().contains(deletedInterface) && current.getClients().contains(port.getType());
-				if(isUsage) {
+				if (isUsage) {
 					usage = current;
 				}
 			}

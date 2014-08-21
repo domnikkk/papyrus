@@ -1,14 +1,14 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- * 
+ *
  * 		Yann Tanguy (CEA LIST) yann.tanguy@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -22,7 +22,7 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 
 /**
  * <pre>
- * 
+ *
  * This class implements {@link IElementEditService}.
  * 
  * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService
@@ -31,11 +31,11 @@ import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
  * a specific type of element.
  * 
  * This class relies for a large part on the GMF ExtensibleType framework,
- * mostly as a wrapper of {@link IElementType} for Papyrus. No added value 
+ * mostly as a wrapper of {@link IElementType} for Papyrus. No added value
  * for Papyrus is expected in using this wrapper, except the fact that it ensures
- * Papyrus shared {@link IClientContext} is always explicitly used or set in 
+ * Papyrus shared {@link IClientContext} is always explicitly used or set in
  * request while retrieving commands.
- * 
+ *
  * </pre>
  */
 public class ElementEditService implements IElementEditService {
@@ -48,12 +48,12 @@ public class ElementEditService implements IElementEditService {
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * Constructor.
 	 * 
 	 * @param elementType the {@link IElementType} this service will use to provide edit commands
 	 * @param sharedClientContext the shared {@link IClientContext}
-	 * 
+	 *
 	 * </pre>
 	 */
 	public ElementEditService(IElementType elementType, IClientContext sharedClientContext) {
@@ -64,7 +64,7 @@ public class ElementEditService implements IElementEditService {
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * This method creates an edit command in response to an edit request.
 	 * This method directly uses the ElementType framework (through {@link IElementType} api,
 	 * making sure that the Papyrus shared {@link IClientContext} is explicitly set in the request.
@@ -73,9 +73,10 @@ public class ElementEditService implements IElementEditService {
 	 * 
 	 * @param request the edit request
 	 * @return the edit command corresponding to the edit request
-	 * 
+	 *
 	 * </pre>
 	 */
+	@Override
 	public ICommand getEditCommand(IEditCommandRequest request) {
 		// Make sure the share client context in passed in the request
 		request.setClientContext(sharedClientContext);
@@ -88,28 +89,30 @@ public class ElementEditService implements IElementEditService {
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * Get the display name of the element type.
 	 * 
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService#getDisplayName()
 	 * 
 	 * @return the display name of the {@link IElementType} used by current service.
-	 * 
+	 *
 	 * </pre>
 	 */
+	@Override
 	public String getDisplayName() {
 		return elementType.getDisplayName();
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.runtime.IAdaptable#getAdapter(java.lang.Class)
-	 * 
+	 *
 	 * @param adapter
 	 * @return the adapted object
 	 */
+	@Override
 	public Object getAdapter(Class adapter) {
-		if(adapter == IElementType.class) {
+		if (adapter == IElementType.class) {
 			return elementType;
 		}
 		return null;
@@ -117,16 +120,17 @@ public class ElementEditService implements IElementEditService {
 
 	/**
 	 * <pre>
-	 * 
+	 *
 	 * Test if current service can provide an edit command in response to the request.
 	 * 
 	 * @see org.eclipse.papyrus.infra.services.edit.service.IElementEditService#canEdit(org.eclipse.gmf.runtime.emf.type.core.requests.IEditCommandRequest)
 	 * 
 	 * @param req the edit request to test
 	 * @return true is this service can provide edit command for the request
-	 * 
+	 *
 	 * </pre>
 	 */
+	@Override
 	public boolean canEdit(IEditCommandRequest req) {
 		// Make sure the share client context in passed in the request
 		req.setClientContext(sharedClientContext);

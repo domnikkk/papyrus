@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -43,7 +43,7 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public CustomDurationObservationEditPart(View view) {
@@ -64,7 +64,7 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 	/**
 	 * Make sure bounds are also refreshed.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart#refresh()
 	 * @Override
 	 */
@@ -83,14 +83,14 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 			@Override
 			protected org.eclipse.gef.EditPolicy createChildEditPolicy(EditPart child) {
-				View childView = (View)child.getModel();
-				switch(UMLVisualIDRegistry.getVisualID(childView)) {
+				View childView = (View) child.getModel();
+				switch (UMLVisualIDRegistry.getVisualID(childView)) {
 				case DurationObservationAppliedStereotypeEditPart.VISUAL_ID:
 					// use ExternalLabelPrimaryDragRoleEditPolicy
 					return new CustomExternalLabelPrimaryDragRoleEditPolicy();
 				}
 				org.eclipse.gef.EditPolicy result = child.getEditPolicy(org.eclipse.gef.EditPolicy.PRIMARY_DRAG_ROLE);
-				if(result == null) {
+				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
 				return result;
@@ -114,8 +114,8 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 	 */
 	@Override
 	protected void addBorderItem(IFigure borderItemContainer, IBorderItemEditPart borderItemEditPart) {
-		if(borderItemEditPart instanceof DurationObservationAppliedStereotypeEditPart) {
-			//use ExternalLabelPositionLocator
+		if (borderItemEditPart instanceof DurationObservationAppliedStereotypeEditPart) {
+			// use ExternalLabelPositionLocator
 			IBorderItemLocator locator = new ExternalLabelPositionLocator(getMainFigure());
 			borderItemContainer.add(borderItemEditPart.getFigure(), locator);
 		} else {
@@ -130,11 +130,11 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 	protected NodeFigure createNodePlate() {
 		// use correct minimum size
 		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(-1, -1);
-		//String prefElementId = "DurationObservation";
-		//IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
-		//String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
-		//String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
-		//DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
+		// String prefElementId = "DurationObservation";
+		// IPreferenceStore store = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
+		// String preferenceConstantWitdh = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.WIDTH);
+		// String preferenceConstantHeight = PreferenceInitializerForElementHelper.getpreferenceKey(getNotationView(), prefElementId, PreferencesConstantsHelper.HEIGHT);
+		// DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(store.getInt(preferenceConstantWitdh), store.getInt(preferenceConstantHeight));
 		return result;
 	}
 
@@ -147,7 +147,7 @@ public class CustomDurationObservationEditPart extends DurationObservationEditPa
 
 		/**
 		 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.DurationObservationEditPart.DurationObservationConstraint#getDurationLabel()
-		 * 
+		 *
 		 * @return
 		 */
 		@Override

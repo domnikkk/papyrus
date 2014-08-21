@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2014 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.emf.type.core.commands.EditElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.papyrus.uml.diagram.profile.edit.policies.UMLBaseItemSemanticEditPolicy;
 import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Profile;
@@ -56,14 +57,15 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
+	@Override
 	public boolean canExecute() {
-		if(false == getElementToEdit() instanceof ProfileApplication) {
+		if (false == getElementToEdit() instanceof ProfileApplication) {
 			return false;
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return canReorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return canReorientTarget();
 		}
 		return false;
@@ -73,14 +75,14 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientSource() {
-		if(!(oldEnd instanceof Package && newEnd instanceof Package)) {
+		if (!(oldEnd instanceof Package && newEnd instanceof Package)) {
 			return false;
 		}
 		Profile target = getLink().getAppliedProfile();
-		if(!(getLink().eContainer() instanceof Package)) {
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
+		Package container = (Package) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistProfileApplication_1045(container, getLink(), getNewSource(), target);
 	}
 
@@ -88,28 +90,29 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected boolean canReorientTarget() {
-		if(!(oldEnd instanceof Profile && newEnd instanceof Profile)) {
+		if (!(oldEnd instanceof Profile && newEnd instanceof Profile)) {
 			return false;
 		}
 		Package source = getLink().getApplyingPackage();
-		if(!(getLink().eContainer() instanceof Package)) {
+		if (!(getLink().eContainer() instanceof Package)) {
 			return false;
 		}
-		Package container = (Package)getLink().eContainer();
+		Package container = (Package) getLink().eContainer();
 		return UMLBaseItemSemanticEditPolicy.getLinkConstraints().canExistProfileApplication_1045(container, getLink(), source, getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
+	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		if(!canExecute()) {
+		if (!canExecute()) {
 			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
+		if (reorientDirection == ReorientRequest.REORIENT_SOURCE) {
 			return reorientSource();
 		}
-		if(reorientDirection == ReorientRelationshipRequest.REORIENT_TARGET) {
+		if (reorientDirection == ReorientRequest.REORIENT_TARGET) {
 			return reorientTarget();
 		}
 		throw new IllegalStateException();
@@ -135,34 +138,34 @@ public class ProfileApplicationReorientCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected ProfileApplication getLink() {
-		return (ProfileApplication)getElementToEdit();
+		return (ProfileApplication) getElementToEdit();
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Package getOldSource() {
-		return (Package)oldEnd;
+		return (Package) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Package getNewSource() {
-		return (Package)newEnd;
+		return (Package) newEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Profile getOldTarget() {
-		return (Profile)oldEnd;
+		return (Profile) oldEnd;
 	}
 
 	/**
 	 * @generated
 	 */
 	protected Profile getNewTarget() {
-		return (Profile)newEnd;
+		return (Profile) newEnd;
 	}
 }

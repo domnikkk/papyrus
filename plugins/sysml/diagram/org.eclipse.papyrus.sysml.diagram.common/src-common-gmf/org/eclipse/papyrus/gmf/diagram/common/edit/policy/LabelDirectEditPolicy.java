@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.gmf.diagram.common.edit.part.ITextAwareEditPart;
  * Overrides {@link org.eclipse.gmf.runtime.diagram.ui.editpolicies.LabelDirectEditPolicy} in
  * order to pass parser options to the method that returns the modification command.
  * (always pass 0 - ParserOptions.NONE in the original class).
- * 
+ *
  * Also this uses (or tries to) the EObject given by {@link org.eclipse.papyrus.gmf.diagram.common.edit.part.ITextAwareEditPart#getParserElement()} to
  * get the edit command instead of using the EObject associated to the edited edit part.
  */
@@ -43,23 +43,25 @@ public class LabelDirectEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.ed
 
 		/**
 		 * constructor
-		 * 
+		 *
 		 * @param element
-		 *        element to be wrapped
+		 *            element to be wrapped
 		 * @param view
-		 *        view to be wrapped
+		 *            view to be wrapped
 		 */
 		public EObjectAdapterEx(EObject element, View view) {
 			super(element);
 			this.view = view;
 		}
 
+		@Override
 		@SuppressWarnings("rawtypes")
 		public Object getAdapter(Class adapter) {
 			Object o = super.getAdapter(adapter);
-			if(o != null)
+			if (o != null) {
 				return o;
-			if(adapter.equals(View.class)) {
+			}
+			if (adapter.equals(View.class)) {
 				return view;
 			}
 			return null;
@@ -69,37 +71,40 @@ public class LabelDirectEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.ed
 	/**
 	 * @see DirectEditPolicy#getDirectEditCommand(DirectEditRequest)
 	 */
+	@Override
 	protected Command getDirectEditCommand(DirectEditRequest edit) {
-		if(edit.getCellEditor() instanceof TextCellEditorEx)
-			if(!((TextCellEditorEx)edit.getCellEditor()).hasValueChanged())
+		if (edit.getCellEditor() instanceof TextCellEditorEx) {
+			if (!((TextCellEditorEx) edit.getCellEditor()).hasValueChanged()) {
 				return null;
+			}
+		}
 
-		String labelText = (String)edit.getCellEditor().getValue();
+		String labelText = (String) edit.getCellEditor().getValue();
 
-		//for CellEditor, null is always returned for invalid values
-		if(labelText == null) {
+		// for CellEditor, null is always returned for invalid values
+		if (labelText == null) {
 			return null;
 		}
 
 		// Papyrus - using org.eclipse.papyrus.gmf.diagram.common.edit.part.ITextAwareEditPart here
-		ITextAwareEditPart compartment = (ITextAwareEditPart)getHost();
+		ITextAwareEditPart compartment = (ITextAwareEditPart) getHost();
 		EObjectAdapter elementAdapter = new EObjectAdapterEx(compartment.getParserElement(), null);
 		//
 
 		// Papyrus - elementAdapter created with compartment.getParserElement(), no need to use the view here.
-		//		EObject model = (EObject)compartment.getModel();
-		//		EObjectAdapter elementAdapter = null;
-		//		if(model instanceof View) {
-		//			View view = (View)model;
-		//			elementAdapter = new EObjectAdapterEx(ViewUtil.resolveSemanticElement(view), view);
-		//		} else
-		//			elementAdapter = new EObjectAdapterEx(model, null);
+		// EObject model = (EObject)compartment.getModel();
+		// EObjectAdapter elementAdapter = null;
+		// if(model instanceof View) {
+		// View view = (View)model;
+		// elementAdapter = new EObjectAdapterEx(ViewUtil.resolveSemanticElement(view), view);
+		// } else
+		// elementAdapter = new EObjectAdapterEx(model, null);
 
 		// check to make sure an edit has occurred before returning a command.
 		String prevText = compartment.getParser().getEditString(elementAdapter, compartment.getParserOptions().intValue());
-		if(!prevText.equals(labelText)) {
+		if (!prevText.equals(labelText)) {
 			ICommand iCommand = compartment.getParser().getParseCommand(elementAdapter, labelText, compartment.getParserOptions().intValue());
-			// Papyrus - use parser options to build command 
+			// Papyrus - use parser options to build command
 			// compartment.getParser().getParseCommand(elementAdapter, labelText, 0);
 			return new ICommandProxy(iCommand);
 		}

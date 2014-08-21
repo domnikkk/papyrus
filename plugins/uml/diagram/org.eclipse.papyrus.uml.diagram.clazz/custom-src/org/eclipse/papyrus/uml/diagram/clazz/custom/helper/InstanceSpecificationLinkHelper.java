@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.InstanceSpecification;
 
 public class InstanceSpecificationLinkHelper {
 
-	protected static final String INSTANCE_END = "InstanceEnd";////$NON-NLS-N$
+	protected static final String INSTANCE_END = "InstanceEnd";//
 
 	/**
-	 * 
+	 *
 	 * @param instance
 	 *            link where instance end end are look for
 	 * @return a list of two elements that are instance specfication : ends of this instance Link
@@ -43,7 +43,7 @@ public class InstanceSpecificationLinkHelper {
 
 	/**
 	 * add an end in the instancespecification link by adding a eannotation if not exist
-	 * 
+	 *
 	 * @param instanceLink
 	 * @param end
 	 *            to add
@@ -58,7 +58,7 @@ public class InstanceSpecificationLinkHelper {
 
 	/**
 	 * remove an end in the instancespecification link by adding a eannotation if not exist
-	 * 
+	 *
 	 * @param instanceLink
 	 * @param end
 	 *            to add

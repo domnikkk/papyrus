@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -40,7 +40,7 @@ import org.eclipse.papyrus.infra.extendedtypes.util.ExtendedtypesAdapterFactory;
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -49,7 +49,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -58,7 +58,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -67,7 +67,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -76,7 +76,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ExtendedtypesItemProviderAdapterFactory() {
@@ -91,7 +91,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSet} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ExtendedElementTypeSetItemProvider extendedElementTypeSetItemProvider;
@@ -100,12 +100,12 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.ExtendedElementTypeSet}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createExtendedElementTypeSetAdapter() {
-		if(extendedElementTypeSetItemProvider == null) {
+		if (extendedElementTypeSetItemProvider == null) {
 			extendedElementTypeSetItemProvider = new ExtendedElementTypeSetItemProvider(this);
 		}
 		return extendedElementTypeSetItemProvider;
@@ -115,7 +115,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.IconEntry} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IconEntryItemProvider iconEntryItemProvider;
@@ -124,12 +124,12 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.IconEntry}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createIconEntryAdapter() {
-		if(iconEntryItemProvider == null) {
+		if (iconEntryItemProvider == null) {
 			iconEntryItemProvider = new IconEntryItemProvider(this);
 		}
 		return iconEntryItemProvider;
@@ -139,7 +139,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.AspectSemanticTypeConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AspectSemanticTypeConfigurationItemProvider aspectSemanticTypeConfigurationItemProvider;
@@ -148,12 +148,12 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.AspectSemanticTypeConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createAspectSemanticTypeConfigurationAdapter() {
-		if(aspectSemanticTypeConfigurationItemProvider == null) {
+		if (aspectSemanticTypeConfigurationItemProvider == null) {
 			aspectSemanticTypeConfigurationItemProvider = new AspectSemanticTypeConfigurationItemProvider(this);
 		}
 		return aspectSemanticTypeConfigurationItemProvider;
@@ -163,7 +163,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.infra.extendedtypes.AspectViewTypeConfiguration} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected AspectViewTypeConfigurationItemProvider aspectViewTypeConfigurationItemProvider;
@@ -172,12 +172,12 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.infra.extendedtypes.AspectViewTypeConfiguration}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Adapter createAspectViewTypeConfigurationAdapter() {
-		if(aspectViewTypeConfigurationItemProvider == null) {
+		if (aspectViewTypeConfigurationItemProvider == null) {
 			aspectViewTypeConfigurationItemProvider = new AspectViewTypeConfigurationItemProvider(this);
 		}
 		return aspectViewTypeConfigurationItemProvider;
@@ -187,7 +187,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -198,7 +198,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -208,7 +208,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -220,7 +220,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -231,14 +231,14 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
-		if(isFactoryForType(type)) {
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if(!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -249,7 +249,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -260,7 +260,7 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -271,12 +271,12 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
-		if(parentAdapterFactory != null) {
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}
@@ -285,17 +285,21 @@ public class ExtendedtypesItemProviderAdapterFactory extends ExtendedtypesAdapte
 	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void dispose() {
-		if(extendedElementTypeSetItemProvider != null)
+		if (extendedElementTypeSetItemProvider != null) {
 			extendedElementTypeSetItemProvider.dispose();
-		if(iconEntryItemProvider != null)
+		}
+		if (iconEntryItemProvider != null) {
 			iconEntryItemProvider.dispose();
-		if(aspectSemanticTypeConfigurationItemProvider != null)
+		}
+		if (aspectSemanticTypeConfigurationItemProvider != null) {
 			aspectSemanticTypeConfigurationItemProvider.dispose();
-		if(aspectViewTypeConfigurationItemProvider != null)
+		}
+		if (aspectViewTypeConfigurationItemProvider != null) {
 			aspectViewTypeConfigurationItemProvider.dispose();
+		}
 	}
 }

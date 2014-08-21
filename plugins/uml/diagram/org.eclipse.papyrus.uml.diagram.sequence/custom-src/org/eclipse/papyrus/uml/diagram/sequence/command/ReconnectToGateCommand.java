@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class ReconnectToGateCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param domain
 	 * @param label
 	 * @param affectedFiles
@@ -64,7 +64,7 @@ public class ReconnectToGateCommand extends AbstractTransactionalCommand {
 
 	/**
 	 * @see org.eclipse.core.commands.operations.AbstractOperation#canExecute()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -72,14 +72,15 @@ public class ReconnectToGateCommand extends AbstractTransactionalCommand {
 		return editPartViewer != null && newEndAdapter != null && reconnectRequest != null;
 	}
 
+	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public List getAffectedFiles() {
-		if(newEndAdapter != null) {
-			View view = (View)newEndAdapter.getAdapter(View.class);
-			if(view != null) {
+		if (newEndAdapter != null) {
+			View view = (View) newEndAdapter.getAdapter(View.class);
+			if (view != null) {
 				List result = new ArrayList();
 				IFile file = WorkspaceSynchronizer.getFile(view.eResource());
-				if(file != null) {
+				if (file != null) {
 					result.add(file);
 				}
 				return result;
@@ -89,9 +90,8 @@ public class ReconnectToGateCommand extends AbstractTransactionalCommand {
 	}
 
 	/**
-	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor,
-	 *      org.eclipse.core.runtime.IAdaptable)
-	 * 
+	 * @see org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand#doExecuteWithResult(org.eclipse.core.runtime.IProgressMonitor, org.eclipse.core.runtime.IAdaptable)
+	 *
 	 * @param monitor
 	 * @param info
 	 * @return
@@ -99,26 +99,26 @@ public class ReconnectToGateCommand extends AbstractTransactionalCommand {
 	 */
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		View view = (View)newEndAdapter.getAdapter(View.class);
-		EditPart target = (EditPart)editPartViewer.getEditPartRegistry().get(view);
+		View view = (View) newEndAdapter.getAdapter(View.class);
+		EditPart target = (EditPart) editPartViewer.getEditPartRegistry().get(view);
 		boolean redirected = false;
 		EditPart oldTarget = reconnectRequest.getTarget();
 		Point location = reconnectRequest.getLocation();
-		if(target != null) {
+		if (target != null) {
 			reconnectRequest.setTargetEditPart(target);
-			reconnectRequest.setLocation(SequenceUtil.getAbsoluteBounds((IGraphicalEditPart)target).getCenter());
+			reconnectRequest.setLocation(SequenceUtil.getAbsoluteBounds((IGraphicalEditPart) target).getCenter());
 			command = target.getCommand(reconnectRequest);
-			if(command != null && command.canExecute()) {
+			if (command != null && command.canExecute()) {
 				command.execute();
 				redirected = true;
 			}
 		}
-		if(!redirected) {
+		if (!redirected) {
 			reconnectRequest.setTargetEditPart(oldTarget);
 			reconnectRequest.setLocation(location);
 			reconnectRequest.getExtendedData().put(REDIRECT_GATE_FAILED, Boolean.TRUE);
 			command = oldTarget.getCommand(reconnectRequest);
-			if(command != null && command.canExecute()) {
+			if (command != null && command.canExecute()) {
 				command.execute();
 			}
 		}

@@ -77,15 +77,15 @@ public class NaryReferenceEditingDialog<T extends EObject> extends AbstractNaryE
 	/**
 	 *
 	 * @param parent
-	 *              the parent {@link Shell}
+	 *            the parent {@link Shell}
 	 * @param values
-	 * 				the list of current values.
+	 *            the list of current values.
 	 * @param feature
 	 *            the feature to edit
 	 * @param eObject
-	 * 				the eObject being currently edited. Should not be modified in this dialog.
+	 *            the eObject being currently edited. Should not be modified in this dialog.
 	 * @param editHandler
-	 *  			The editHandler which has to be called when the edition is completed
+	 *            The editHandler which has to be called when the edition is completed
 	 */
 	public NaryReferenceEditingDialog(final Shell shell, final List<T> values,
 			final List<T> availableValues, final IModelCellEditHandler editHandler,
@@ -207,8 +207,8 @@ public class NaryReferenceEditingDialog<T extends EObject> extends AbstractNaryE
 	}
 
 	@SuppressWarnings({ "unchecked", "static-method" })
-	//unchecked: the selection in not type parameterized, then we cannot get a cleaned cast iterator
-	//static-method: this method cannot be static to be able to use the T type.
+	// unchecked: the selection in not type parameterized, then we cannot get a cleaned cast iterator
+	// static-method: this method cannot be static to be able to use the T type.
 	private Iterator<T> getTCastedStructuredSelectionIterator(final IStructuredSelection selection) {
 		return selection.iterator();
 	}
@@ -273,7 +273,8 @@ public class NaryReferenceEditingDialog<T extends EObject> extends AbstractNaryE
 		return true;
 	}
 
-	@SuppressWarnings("unchecked") // type erasure on generic
+	@SuppressWarnings("unchecked")
+	// type erasure on generic
 	private void createInstanceButtonClicked() {
 		EClassifier eType = getFeature().getEType();
 		if (eType instanceof EClass) {

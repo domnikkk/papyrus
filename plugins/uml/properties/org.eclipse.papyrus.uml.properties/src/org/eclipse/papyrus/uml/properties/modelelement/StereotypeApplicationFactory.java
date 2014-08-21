@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011, 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -9,7 +9,7 @@
  * Contributors:
  *  Camille Letavernier (CEA LIST) camille.letavernier@cea.fr - Initial API and implementation
  *  Christian W. Damus (CEA) - bug 417409
- *  
+ *
  *****************************************************************************/
 package org.eclipse.papyrus.uml.properties.modelelement;
 
@@ -25,23 +25,23 @@ import org.eclipse.uml2.uml.Element;
 /**
  * A ModelElementFactory for manipulating Stereotype and Profile
  * applications
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class StereotypeApplicationFactory extends AbstractEMFModelElementFactory<StereotypeApplicationModelElement> {
 
 	@Override
 	protected StereotypeApplicationModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
 		Element umlSource = UMLUtil.resolveUMLElement(sourceElement);
-		if(umlSource == null) {
+		if (umlSource == null) {
 			Activator.log.warn("Unable to resolve the selected element to a UML Element"); //$NON-NLS-1$
 			return null;
 		}
 
 		EditingDomain domain = EMFHelper.resolveEditingDomain(umlSource);
-		if(sourceElement instanceof EditPart) {
-			return new StereotypeApplicationModelElement((EditPart)sourceElement, domain);
+		if (sourceElement instanceof EditPart) {
+			return new StereotypeApplicationModelElement((EditPart) sourceElement, domain);
 		} else {
 			return new StereotypeApplicationModelElement(umlSource, domain);
 		}
@@ -50,12 +50,12 @@ public class StereotypeApplicationFactory extends AbstractEMFModelElementFactory
 	@Override
 	protected void updateModelElement(StereotypeApplicationModelElement modelElement, Object newSourceElement) {
 		Element element = UMLUtil.resolveUMLElement(newSourceElement);
-		if(element == null) {
+		if (element == null) {
 			throw new IllegalArgumentException("Cannot resolve UML element selection: " + newSourceElement);
 		}
 		modelElement.umlSource = element;
 		modelElement.domain = EMFHelper.resolveEditingDomain(element);
-		modelElement.sourceElement = (newSourceElement instanceof EditPart) ? (EditPart)newSourceElement : null;
+		modelElement.sourceElement = (newSourceElement instanceof EditPart) ? (EditPart) newSourceElement : null;
 
 		super.updateModelElement(modelElement, newSourceElement);
 	}

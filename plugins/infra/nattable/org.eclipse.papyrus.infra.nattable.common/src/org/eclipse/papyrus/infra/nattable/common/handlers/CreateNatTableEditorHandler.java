@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,9 +26,9 @@ import org.eclipse.papyrus.infra.nattable.nattableconfiguration.NattableConfigur
 
 /**
  * The handler used to create a nattable editor
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class CreateNatTableEditorHandler extends AbstractCreateNattableEditorHandler implements IExecutableExtension {
 
@@ -43,9 +43,9 @@ public class CreateNatTableEditorHandler extends AbstractCreateNattableEditorHan
 	private String type;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public CreateNatTableEditorHandler() {
 		super();
@@ -54,7 +54,7 @@ public class CreateNatTableEditorHandler extends AbstractCreateNattableEditorHan
 
 	/**
 	 * Set the type of table to be created by this handler
-	 * 
+	 *
 	 * @param type
 	 */
 	public void setType(String type) {
@@ -63,9 +63,9 @@ public class CreateNatTableEditorHandler extends AbstractCreateNattableEditorHan
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.nattable.common.handlers.AbstractCreateNattableEditorHandler2#getTableEditorConfigurationURI()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
@@ -74,16 +74,16 @@ public class CreateNatTableEditorHandler extends AbstractCreateNattableEditorHan
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.core.commands.AbstractHandler#setEnabled(java.lang.Object)
-	 * 
+	 *
 	 * @param evaluationContext
 	 */
 	@Override
 	public void setEnabled(Object evaluationContext) {
-		if(this.type != null) {
+		if (this.type != null) {
 			List<EObject> selection = getSelection();
-			if(selection.size() == 1) {
+			if (selection.size() == 1) {
 				IStatus status = NattableConfigurationRegistry.INSTANCE.canCreateTable(this.type, selection.get(0));
 				setBaseEnabled(status.isOK());
 				return;
@@ -93,18 +93,18 @@ public class CreateNatTableEditorHandler extends AbstractCreateNattableEditorHan
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
+	 *
 	 * @param config
 	 * @param propertyName
 	 * @param data
 	 * @throws CoreException
 	 */
+	@Override
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
-		if(data instanceof Hashtable) {
-			this.type = (String)((Hashtable<?, ?>)data).get(TABLE_TYPE_PARAMETER);
+		if (data instanceof Hashtable) {
+			this.type = (String) ((Hashtable<?, ?>) data).get(TABLE_TYPE_PARAMETER);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,47 +25,50 @@ import org.eclipse.papyrus.views.properties.contexts.Property;
 /**
  * A Content provider to retrieve all available properties in the current
  * contexts
- * 
+ *
  * @author Camille Letavernier
  */
 public class PropertyContentProvider extends AbstractContextualContentProvider implements IHierarchicContentProvider {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param source
-	 *        The source from which the contexts will be retrieved
+	 *            The source from which the contexts will be retrieved
 	 */
 	public PropertyContentProvider(EObject source) {
 		super(source);
 	}
 
+	@Override
 	public Object[] getElements() {
 		return contexts.toArray();
 	}
 
+	@Override
 	public Object[] getElements(Object inputElement) {
 		return getElements();
 	}
 
 
+	@Override
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object[] getChildren(Object parentElement) {
-		if(parentElement instanceof Context) {
-			Context parent = (Context)parentElement;
+		if (parentElement instanceof Context) {
+			Context parent = (Context) parentElement;
 			return parent.getDataContexts().toArray();
-		} else if(parentElement instanceof DataContextElement) {
+		} else if (parentElement instanceof DataContextElement) {
 			List result = new LinkedList();
-			if(parentElement instanceof DataContextPackage) {
-				DataContextPackage contextPackage = (DataContextPackage)parentElement;
+			if (parentElement instanceof DataContextPackage) {
+				DataContextPackage contextPackage = (DataContextPackage) parentElement;
 				result.addAll(contextPackage.getElements());
 			}
-			DataContextElement element = (DataContextElement)parentElement;
+			DataContextElement element = (DataContextElement) parentElement;
 			result.addAll(element.getProperties());
 			Iterator<?> it = result.iterator();
-			while(it.hasNext()) {
+			while (it.hasNext()) {
 				Object value = it.next();
-				if(isEmpty(value)) {
+				if (isEmpty(value)) {
 					it.remove();
 				}
 			}
@@ -76,32 +79,35 @@ public class PropertyContentProvider extends AbstractContextualContentProvider i
 	}
 
 	protected boolean isEmpty(Object element) {
-		if(element instanceof DataContextPackage) {
-			DataContextPackage dcPackage = (DataContextPackage)element;
+		if (element instanceof DataContextPackage) {
+			DataContextPackage dcPackage = (DataContextPackage) element;
 			return dcPackage.getElements().isEmpty() && dcPackage.getProperties().isEmpty();
-		} else if(element instanceof DataContextElement) {
-			return ((DataContextElement)element).getProperties().isEmpty();
-		} else if(element instanceof Context) {
-			return ((Context)element).getDataContexts().isEmpty();
+		} else if (element instanceof DataContextElement) {
+			return ((DataContextElement) element).getProperties().isEmpty();
+		} else if (element instanceof Context) {
+			return ((Context) element).getDataContexts().isEmpty();
 		}
 
 		return false;
 	}
 
+	@Override
 	public Object getParent(Object element) {
-		if(element instanceof Property) {
-			return ((Property)element).getContextElement();
-		} else if(element instanceof DataContextElement) {
-			return ((DataContextElement)element).getPackage();
+		if (element instanceof Property) {
+			return ((Property) element).getContextElement();
+		} else if (element instanceof DataContextElement) {
+			return ((DataContextElement) element).getPackage();
 		} else {
 			return null;
 		}
 	}
 
+	@Override
 	public boolean hasChildren(Object element) {
 		return getChildren(element).length > 0;
 	}
 
+	@Override
 	public boolean isValidValue(Object element) {
 		return element instanceof Property;
 	}

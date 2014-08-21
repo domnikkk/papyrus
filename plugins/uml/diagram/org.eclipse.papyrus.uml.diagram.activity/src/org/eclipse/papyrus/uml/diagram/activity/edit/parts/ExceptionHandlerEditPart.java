@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,6 +42,7 @@ public class ExceptionHandlerEditPart extends ConnectionEditPart implements ITre
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ExceptionHandlerItemSemanticEditPolicy());
@@ -57,8 +58,9 @@ public class ExceptionHandlerEditPart extends ConnectionEditPart implements ITre
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void addChildVisual(EditPart childEditPart, int index) {
-		if(addFixedChild(childEditPart)) {
+		if (addFixedChild(childEditPart)) {
 			return;
 		}
 		super.addChildVisual(childEditPart, -1);
@@ -74,8 +76,9 @@ public class ExceptionHandlerEditPart extends ConnectionEditPart implements ITre
 	/**
 	 * @generated
 	 */
+	@Override
 	protected void removeChildVisual(EditPart childEditPart) {
-		if(removeFixedChild(childEditPart)) {
+		if (removeFixedChild(childEditPart)) {
 			return;
 		}
 		super.removeChildVisual(childEditPart);
@@ -83,12 +86,13 @@ public class ExceptionHandlerEditPart extends ConnectionEditPart implements ITre
 
 	/**
 	 * Creates figure for this edit part.
-	 * 
+	 *
 	 * Body of this method does not depend on settings in generation model
 	 * so you may safely remove <i>generated</i> tag and modify it.
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected Connection createConnectionFigure() {
 		return new ExceptionHandlerFigure();
 	}
@@ -96,7 +100,8 @@ public class ExceptionHandlerEditPart extends ConnectionEditPart implements ITre
 	/**
 	 * @generated
 	 */
+	@Override
 	public ExceptionHandlerFigure getPrimaryShape() {
-		return (ExceptionHandlerFigure)getFigure();
+		return (ExceptionHandlerFigure) getFigure();
 	}
 }

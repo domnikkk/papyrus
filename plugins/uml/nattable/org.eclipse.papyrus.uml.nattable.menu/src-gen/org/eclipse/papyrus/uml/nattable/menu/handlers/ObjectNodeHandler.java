@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -18,9 +18,9 @@ import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
 /**
  * <pre>
  * Command handler for ObjectNode creation
- * 
+ *
  * </pre>
- * 
+ *
  * @generated
  */
 public class ObjectNodeHandler extends AbstractUmlNattableCreateCommandHandler implements IHandler {
@@ -30,11 +30,12 @@ public class ObjectNodeHandler extends AbstractUmlNattableCreateCommandHandler i
 	 * @see org.eclipse.papyrus.uml.service.creation.handler.CreateHandler#getElementTypeToCreate()
 	 * 
 	 * @return the IElementType this handler is supposed to create
-	 * 
+	 *
 	 * </pre>
-	 * 
+	 *
 	 * @generated
 	 */
+	@Override
 	protected IElementType getElementTypeToCreate() {
 		return UMLElementTypes.OBJECT_NODE;
 	}

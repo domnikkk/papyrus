@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,16 +19,16 @@ import org.eclipse.papyrus.infra.nattable.model.nattable.nattablelabelprovider.N
 
 /**
  * The Class RowFeatureLabelDisplayIconObservableValue.
- * 
+ *
  * @author VL222926
  */
 public class RowFeatureLabelDisplayIconObservableValue extends AbstractRowFeatureLabelProviderConfigurationObservableValue {
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param table
-	 *        the table
+	 *            the table
 	 */
 	public RowFeatureLabelDisplayIconObservableValue(Table table) {
 		super(table, NattablelabelproviderPackage.eINSTANCE.getObjectLabelProviderConfiguration_DisplayIcon());
@@ -36,7 +36,7 @@ public class RowFeatureLabelDisplayIconObservableValue extends AbstractRowFeatur
 
 	/**
 	 * Gets the value type.
-	 * 
+	 *
 	 * @return the value type
 	 * @see org.eclipse.core.databinding.observable.value.IObservableValue#getValueType()
 	 */

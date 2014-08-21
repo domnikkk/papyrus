@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -40,15 +40,15 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 	private MultipleReferenceEditor editor;
 
 	/** The property composite. */
-//	private AppliedStereotypePropertyCompositeWithView propertyComposite;
+	// private AppliedStereotypePropertyCompositeWithView propertyComposite;
 
 	/**
 	 * Creates the controls.
-	 * 
+	 *
 	 * @param tabbedPropertySheetPage
-	 *        the tabbed property sheet page
+	 *            the tabbed property sheet page
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	@Override
 	public void createControls(Composite parent, TabbedPropertySheetPage tabbedPropertySheetPage) {
@@ -57,10 +57,10 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 		appliedStereotypeComposite.createContent(parent, getWidgetFactory());
 
 		editor = new MultipleReferenceEditor(parent, 0);
-//		propertyComposite = new AppliedStereotypePropertyCompositeWithView(parent, appliedStereotypeComposite);
-//		propertyComposite.createContent(parent, getWidgetFactory());
+		// propertyComposite = new AppliedStereotypePropertyCompositeWithView(parent, appliedStereotypeComposite);
+		// propertyComposite.createContent(parent, getWidgetFactory());
 
-//		appliedStereotypeComposite.setPropertyComposite(propertyComposite);
+		// appliedStereotypeComposite.setPropertyComposite(propertyComposite);
 	}
 
 	/**
@@ -74,7 +74,7 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 
 	/**
 	 * Should use extra space.
-	 * 
+	 *
 	 * @return true, if successful
 	 */
 	@Override
@@ -83,31 +83,31 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	public void setInput(IWorkbenchPart part, ISelection selection) {
 		super.setInput(part, selection);
-		if(selection instanceof IStructuredSelection) {
-			Object input = ((IStructuredSelection)selection).getFirstElement();
+		if (selection instanceof IStructuredSelection) {
+			Object input = ((IStructuredSelection) selection).getFirstElement();
 
-			if(input instanceof GraphicalEditPart && ((GraphicalEditPart)input).getModel() instanceof View) {
-				GraphicalEditPart graphicalEditPart = (GraphicalEditPart)input;
-				View view = (View)graphicalEditPart.getModel();
-				Element UMLElement = (Element)view.getElement();
-				if(UMLElement != null) {
+			if (input instanceof GraphicalEditPart && ((GraphicalEditPart) input).getModel() instanceof View) {
+				GraphicalEditPart graphicalEditPart = (GraphicalEditPart) input;
+				View view = (View) graphicalEditPart.getModel();
+				Element UMLElement = (Element) view.getElement();
+				if (UMLElement != null) {
 					appliedStereotypeComposite.setDiagramElement(view);
-//					propertyComposite.setDiagramElement(view);
+					// propertyComposite.setDiagramElement(view);
 					appliedStereotypeComposite.setElement(UMLElement);
 					appliedStereotypeComposite.setInput(new StereotypedElementTreeObject(UMLElement));
 				}
-			} 
-			else{
-				EObject eobject=resolveSemanticObject(input);
+			}
+			else {
+				EObject eobject = resolveSemanticObject(input);
 
-				if(eobject instanceof Element) {
-					Element UMLElement = (Element)eobject;
+				if (eobject instanceof Element) {
+					Element UMLElement = (Element) eobject;
 					appliedStereotypeComposite.setDiagramElement(null);
 					appliedStereotypeComposite.setElement(UMLElement);
 					appliedStereotypeComposite.setInput(new StereotypedElementTreeObject(UMLElement));
@@ -116,9 +116,10 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 
 		}
 	}
+
 	/**
 	 * Resolve semantic element
-	 * 
+	 *
 	 * @param object
 	 *            the object to resolve
 	 * @return <code>null</code> or the semantic element associated to the specified object
@@ -128,7 +129,7 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 			return (EObject) object;
 		} else if (object instanceof IAdaptable) {
 			IAdaptable adaptable = (IAdaptable) object;
-			if( EMFHelper.getEObject(adaptable) != null) {
+			if (EMFHelper.getEObject(adaptable) != null) {
 				return EMFHelper.getEObject(adaptable);
 			}
 		}
@@ -144,11 +145,14 @@ public class AppliedStereotypeSectionWithView extends AbstractPropertySection {
 	/**
 	 * Dispose.
 	 */
+	@Override
 	public void dispose() {
 		super.dispose();
-		if(appliedStereotypeComposite != null)
+		if (appliedStereotypeComposite != null)
+		{
 			appliedStereotypeComposite.disposeListeners();
-//		if(propertyComposite != null)
-//			propertyComposite.disposeListeners();
+			// if(propertyComposite != null)
+			// propertyComposite.disposeListeners();
+		}
 	}
 }

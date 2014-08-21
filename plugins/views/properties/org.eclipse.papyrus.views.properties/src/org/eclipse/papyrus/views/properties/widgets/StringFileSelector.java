@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * A Widget for selecting Files on the workspace or on the file system.
  * The widgets only edits String values : it uses the path of the files
- * 
+ *
  * @author Camille Letavernier
  */
 public class StringFileSelector extends AbstractPropertyEditor {
@@ -49,9 +49,9 @@ public class StringFileSelector extends AbstractPropertyEditor {
 	protected boolean allowFileSystem = true;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parent
 	 * @param style
 	 */
@@ -62,11 +62,11 @@ public class StringFileSelector extends AbstractPropertyEditor {
 
 	/**
 	 * Creates the selector
-	 * 
+	 *
 	 * @param parent
-	 *        The composite in which the widget will be displayed
+	 *            The composite in which the widget will be displayed
 	 * @param style
-	 *        The style for the widget
+	 *            The style for the widget
 	 * @return the selector
 	 */
 	protected org.eclipse.papyrus.infra.widgets.editors.StringFileSelector createSelector(Composite parent, int style) {
@@ -74,7 +74,7 @@ public class StringFileSelector extends AbstractPropertyEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filterExtensions
 	 */
 	public void setFilterExtensions(String[] filterExtensions) {
@@ -87,7 +87,7 @@ public class StringFileSelector extends AbstractPropertyEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param filterNames
 	 */
 	public void setFilterNames(String[] filterNames) {
@@ -103,14 +103,14 @@ public class StringFileSelector extends AbstractPropertyEditor {
 	 * Checks if the filters are valid
 	 */
 	protected void checkFilters() {
-		if(filterExtensions != null && filterNames != null) {
+		if (filterExtensions != null && filterNames != null) {
 			selector.setFilters(filterExtensions, filterNames);
 		}
 	}
 
 	/**
 	 * Indicates whether the editor should allow browsing the workspace or not
-	 * 
+	 *
 	 * @param allowWorkspace
 	 */
 	public void setAllowWorkspace(boolean allowWorkspace) {
@@ -119,7 +119,7 @@ public class StringFileSelector extends AbstractPropertyEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true if the editor can browse the workspace
 	 */
 	public boolean getAllowWorkspace() {
@@ -128,7 +128,7 @@ public class StringFileSelector extends AbstractPropertyEditor {
 
 	/**
 	 * Indicates whether the editor should allow browsing the file system or not
-	 * 
+	 *
 	 * @param allowFileSystem
 	 */
 	public void setAllowFileSystem(boolean allowFileSystem) {
@@ -137,7 +137,7 @@ public class StringFileSelector extends AbstractPropertyEditor {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return true if the editor can browse the fileSystem
 	 */
 	public boolean getAllowFileSystem() {

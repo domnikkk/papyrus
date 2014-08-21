@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,27 +20,28 @@ import org.eclipse.papyrus.infra.widgets.messages.Messages;
 
 /**
  * InputValidator for Integer
- * 
+ *
  * @author Vincent Lorenzo
- * 
+ *
  */
 public class IntegerValidator extends AbstractValidator {
 
 
 	/**
-	 * 
+	 *
 	 * @param newValue
 	 * @return {@link Status#OK_STATUS} if the newValue is valid and {@link IStatus#ERROR} when newValue is
 	 *         invalid
 	 */
+	@Override
 	public IStatus validate(Object newValue) {
-		if(newValue instanceof Integer) {
+		if (newValue instanceof Integer) {
 			return Status.OK_STATUS;
 		}
 
-		if(newValue instanceof String) {
+		if (newValue instanceof String) {
 			try {
-				Integer.parseInt((String)newValue);
+				Integer.parseInt((String) newValue);
 				return Status.OK_STATUS;
 			} catch (NumberFormatException ex) {
 				return error(Messages.IntegerInputValidator_NotAnIntegerMessage);

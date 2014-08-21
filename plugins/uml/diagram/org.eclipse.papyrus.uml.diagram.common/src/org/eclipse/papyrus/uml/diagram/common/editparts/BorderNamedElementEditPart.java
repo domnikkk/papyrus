@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008-2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,16 +25,16 @@ import org.eclipse.uml2.uml.NamedElement;
 /**
  * <pre>
  * Abstract EditPart supporting font and icon management of name and qualified name labels.
- * Similar implementation to {@link NamedElementEditPart} but indirectly inheriting from 
+ * Similar implementation to {@link NamedElementEditPart} but indirectly inheriting from
  * {@link BorderedBorderItemEditPart} in order to provide support for Affixed Child nodes.
  * </pre>
  */
 public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart implements IUMLNamedElementEditPart {
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public BorderNamedElementEditPart(View view) {
@@ -44,8 +44,9 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public NamedElement getNamedElement() {
-		return (NamedElement)getUMLElement();
+		return (NamedElement) getUMLElement();
 	}
 
 	/**
@@ -55,7 +56,7 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 	protected void handleNotificationEvent(Notification event) {
 		super.handleNotificationEvent(event);
 
-		if(resolveSemanticElement() != null) {
+		if (resolveSemanticElement() != null) {
 			refreshIconNamedLabel();
 			refreshFontColor();
 		}
@@ -65,7 +66,7 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 	 * Refresh the icon in name label
 	 */
 	private void refreshIconNamedLabel() {
-		getNodeNamedElementFigure().setNameLabelIcon(NameLabelIconHelper.showLabelIcon((View)getModel()));
+		getNodeNamedElementFigure().setNameLabelIcon(NameLabelIconHelper.showLabelIcon((View) getModel()));
 	}
 
 	/**
@@ -75,7 +76,7 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 	protected void refreshVisuals() {
 		super.refreshVisuals();
 
-		if((getNodeNamedElementFigure() != null) && (resolveSemanticElement() != null)) {
+		if ((getNodeNamedElementFigure() != null) && (resolveSemanticElement() != null)) {
 			refreshIconNamedLabel();
 			refreshFontColor();
 		}
@@ -85,10 +86,11 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 	/**
 	 * A method to specify the labels to be update when the font is refreshed.
 	 * Subclasses should call super.refreshLabelsFont(font)
-	 * 
+	 *
 	 * @param font
-	 *        the font to use
+	 *            the font to use
 	 */
+	@Override
 	protected void refreshLabelsFont(Font font) {
 		super.refreshLabelsFont(font);
 
@@ -97,24 +99,24 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 
 		// Apply the font to the Qualified Name
 		Label qualifiedNameLabel = getNodeNamedElementFigure().getQualifiedNameLabel();
-		if(qualifiedNameLabel != null) {
+		if (qualifiedNameLabel != null) {
 			qualifiedNameLabel.setFont(font);
 		}
 
 		// Apply the font to the tagged Label
 		Label tagLabel = getNodeNamedElementFigure().getTaggedLabel();
-		if(tagLabel != null) {
+		if (tagLabel != null) {
 			tagLabel.setFont(font);
 		}
 	}
 
 	/**
 	 * Get EditPart figure.
-	 * 
+	 *
 	 * @return the EditPart figure
 	 */
 	private IPapyrusNodeNamedElementFigure getNodeNamedElementFigure() {
-		return (IPapyrusNodeNamedElementFigure)getPrimaryShape();
+		return (IPapyrusNodeNamedElementFigure) getPrimaryShape();
 	}
 
 	/**
@@ -126,12 +128,12 @@ public abstract class BorderNamedElementEditPart extends BorderUMLNodeEditPart i
 
 		// Qualified Name
 		Label qualifiedNameLabel = getNodeNamedElementFigure().getQualifiedNameLabel();
-		if(qualifiedNameLabel != null) {
+		if (qualifiedNameLabel != null) {
 			qualifiedNameLabel.setForegroundColor(color);
 		}
 		// Tagged Label
 		Label tagLabel = getNodeNamedElementFigure().getTaggedLabel();
-		if(tagLabel != null) {
+		if (tagLabel != null) {
 			tagLabel.setForegroundColor(color);
 		}
 	}

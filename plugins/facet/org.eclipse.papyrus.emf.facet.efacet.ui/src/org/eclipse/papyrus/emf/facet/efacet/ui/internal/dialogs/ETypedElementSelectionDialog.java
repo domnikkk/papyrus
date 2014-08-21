@@ -47,8 +47,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.SelectionStatusDialog;
 
 /**
- * A dialog to select an {@link ETypedElement} among a tree of {@link EObject}s that are children of a given set of root
- * {@link EObject}s
+ * A dialog to select an {@link ETypedElement} among a tree of {@link EObject}s that are children of a given set of root {@link EObject}s
  */
 public class ETypedElementSelectionDialog<T2, D> extends SelectionStatusDialog
 		implements IETypedElementSelectionDialogInternal<D> { // NOPMD

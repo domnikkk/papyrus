@@ -29,7 +29,7 @@ public abstract class AbstractProportionalShape extends NodeNamedElementFigure {
 
 	/**
 	 * Sets the w2 h ratio.
-	 * 
+	 *
 	 * @param w2hRatio
 	 *            the new w2 h ratio
 	 */
@@ -40,7 +40,7 @@ public abstract class AbstractProportionalShape extends NodeNamedElementFigure {
 
 	/**
 	 * Sets the keeping proportions.
-	 * 
+	 *
 	 * @param newValue
 	 *            the new keeping proportions
 	 */
@@ -50,7 +50,7 @@ public abstract class AbstractProportionalShape extends NodeNamedElementFigure {
 
 	/**
 	 * Checks if is keeping proportions.
-	 * 
+	 *
 	 * @return true, if is keeping proportions
 	 */
 	protected boolean isKeepingProportions() {

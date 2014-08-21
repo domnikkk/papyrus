@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		 Vincent Lorenzo (CEA LIST) vincent.lorenzo@cea.fr - Initial API and implementation
  *
  *****************************************************************************/
@@ -35,9 +35,9 @@ import org.eclipse.ui.IImportWizard;
 import org.eclipse.ui.IWorkbench;
 
 /**
- * 
+ *
  * This wizard allows to import a table in the Papyrus nattable editor
- * 
+ *
  */
 public class ImportTableWizard extends Wizard implements IImportWizard {
 
@@ -58,9 +58,9 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 */
 	public ImportTableWizard() {
 		setWindowTitle(Messages.ImportTableWizard_ImportTableFromFileInPapyrusModel);
@@ -71,9 +71,9 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.ui.IWorkbenchWizard#init(org.eclipse.ui.IWorkbench, org.eclipse.jface.viewers.IStructuredSelection)
-	 * 
+	 *
 	 * @param workbench
 	 * @param selection
 	 */
@@ -83,16 +83,16 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 	}
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.wizard.Wizard#addPages()
-	 * 
+	 *
 	 */
 	@Override
 	public void addPages() {
 		final String pageTitle = Messages.ImportTableWizard_ImportTable;
 		final ImageDescriptor desc = null;
-		if(manager != null) {
-			if(manager.getTable().isInvertAxis()) {
+		if (manager != null) {
+			if (manager.getTable().isInvertAxis()) {
 				addPage(new ImportInvertedTableErrorPage(Messages.ImportTableWizard_ImportTableError, pageTitle, desc));
 			} else {
 				this.importPage = new ImportFilePage(pageTitle, pageTitle, desc, this.manager);
@@ -107,14 +107,14 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 
 
 	/**
-	 * 
+	 *
 	 * @see org.eclipse.jface.wizard.Wizard#performFinish()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override
 	public boolean performFinish() {
-		//the import file
+		// the import file
 		final File file = FileUtil.getFile(this.importPage.getFilePath());
 		final CSVPasteHelper pasteHelper = new CSVPasteHelper(this.csvConfigurationPage.getSeparator(), this.csvConfigurationPage.getTextDelimiter(), ","); //$NON-NLS-1$
 		final ImportAxisInNattableManager pasteManager = new ImportAxisInNattableManager(this.manager, pasteHelper, file, true);
@@ -122,18 +122,18 @@ public class ImportTableWizard extends Wizard implements IImportWizard {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param workbench
-	 *        the current workbench
+	 *            the current workbench
 	 * @param selection
-	 *        the current selection
+	 *            the current selection
 	 * @return
 	 *         the nattable manager to use to do the import
 	 */
 	private INattableModelManager getNattableModelManager(final IWorkbench workbench, final IStructuredSelection selection) {
 		final IEditorPart editorPart = workbench.getActiveWorkbenchWindow().getActivePage().getActiveEditor();
-		if(editorPart != null) {
-			return (INattableModelManager)editorPart.getAdapter(INattableModelManager.class);
+		if (editorPart != null) {
+			return (INattableModelManager) editorPart.getAdapter(INattableModelManager.class);
 		}
 		return null;
 	}

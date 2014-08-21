@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.eclipse.papyrus.infra.widgets.util;
 
@@ -14,16 +14,16 @@ import org.eclipse.jface.resource.ImageDescriptor;
 public class ImageDescriptorManager {
 
 	protected Map<ImageDescriptor, String> imageDescriptor2Key = new HashMap<ImageDescriptor, String>();
-	
+
 	protected int value;
-	
+
 	public void reset() {
 		imageDescriptor2Key.clear();
 	}
-	
+
 	public String getKey(ImageDescriptor descriptor) {
 		String key = null;
-		if(!imageDescriptor2Key.containsKey(descriptor)) {
+		if (!imageDescriptor2Key.containsKey(descriptor)) {
 			key = computeKey(descriptor);
 			imageDescriptor2Key.put(descriptor, key);
 		} else {
@@ -33,8 +33,8 @@ public class ImageDescriptorManager {
 	}
 
 	protected String computeKey(ImageDescriptor descriptor) {
-		return ""+descriptor.hashCode();
+		return "" + descriptor.hashCode();
 	}
-	
-	
+
+
 }

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,6 +25,7 @@ import org.eclipse.uml2.uml.Slot;
 
 public class RoleInstanceSpecificationLinkSourceParser implements IParser {
 
+	@Override
 	public String getEditString(IAdaptable element, int flags) {
 		InstanceSpecification instanceSpecification = ((InstanceSpecification) ((EObjectAdapter) element).getRealObject());
 		if (instanceSpecification.getClassifiers().size() > 0) {
@@ -36,16 +37,19 @@ public class RoleInstanceSpecificationLinkSourceParser implements IParser {
 		return "<UNSPECIFIED>";
 	}
 
+	@Override
 	public IParserEditStatus isValidEditString(IAdaptable element, String editString) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public ICommand getParseCommand(IAdaptable element, String newString, int flags) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		InstanceSpecification instanceSpecification = ((InstanceSpecification) ((EObjectAdapter) element).getRealObject());
 		if (instanceSpecification.getClassifiers().size() > 0) {
@@ -57,11 +61,13 @@ public class RoleInstanceSpecificationLinkSourceParser implements IParser {
 		return "<UNSPECIFIED>";
 	}
 
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
+	@Override
 	public IContentAssistProcessor getCompletionProcessor(IAdaptable element) {
 		// TODO Auto-generated method stub
 		return null;

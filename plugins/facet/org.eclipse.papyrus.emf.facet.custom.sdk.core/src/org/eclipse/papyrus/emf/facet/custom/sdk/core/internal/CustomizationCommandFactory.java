@@ -1,11 +1,11 @@
 /**
  * Copyright (c) 2012 Mia-Software.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  	Alban Ménager (Soft-Maint) - Bug 387470 - [EFacet][Custom] Editors
  *		Grégoire Dupé (Mia-Software) - Bug 387470 - [EFacet][Custom] Editors
@@ -34,15 +34,14 @@ public class CustomizationCommandFactory implements
 
 	public CustomizationCommandFactory(final EditingDomain editingDomain) {
 		if (editingDomain == null) {
-			throw new IllegalArgumentException(
-					"The given EditingDomain cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given EditingDomain cannot be null"); //$NON-NLS-1$
 		}
 		this.editingDomain = editingDomain;
 	}
 
 	/**
 	 * Create an {@link AddCommand} to add the element to the owner.
-	 * 
+	 *
 	 * @param owner
 	 *            the owner.
 	 * @param element
@@ -54,8 +53,7 @@ public class CustomizationCommandFactory implements
 			throw new IllegalArgumentException("The given owner cannot be null"); //$NON-NLS-1$
 		}
 		if (element == null) {
-			throw new IllegalArgumentException(
-					"The given element cannot be null"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given element cannot be null"); //$NON-NLS-1$
 		}
 		return AddCommand.create(this.editingDomain, owner,
 				getEStructuralFeature(element), element);
@@ -63,7 +61,7 @@ public class CustomizationCommandFactory implements
 
 	/**
 	 * Return the {@link EStructuralFeature} for a given element.
-	 * 
+	 *
 	 * @param element
 	 *            the element.
 	 * @return the eStructuralFeature for the element.

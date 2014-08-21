@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 /**
  * Add new Label EditPart for display behavior of an
  * BehaviorExecutionSpecification.
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class BehaviorExecutionSpecificationBehaviorEditPart extends
@@ -49,7 +49,7 @@ public class BehaviorExecutionSpecificationBehaviorEditPart extends
 
 	/**
 	 * Constructor.
-	 * 
+	 *
 	 * @param view
 	 */
 	public BehaviorExecutionSpecificationBehaviorEditPart(View view) {
@@ -68,7 +68,7 @@ public class BehaviorExecutionSpecificationBehaviorEditPart extends
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.BorderItemLabelEditPart#createFigurePrim()
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -86,7 +86,7 @@ public class BehaviorExecutionSpecificationBehaviorEditPart extends
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.edit.parts.BorderItemLabelEditPart#createParser()
-	 * 
+	 *
 	 * @return
 	 */
 	@Override

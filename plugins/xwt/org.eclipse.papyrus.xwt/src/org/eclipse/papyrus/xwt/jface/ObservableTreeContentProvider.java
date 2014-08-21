@@ -41,14 +41,14 @@ public class ObservableTreeContentProvider implements ITreeContentProvider {
 	}
 
 	public void dispose() {
-		if(delegate == null) {
+		if (delegate == null) {
 			return;
 		}
 		delegate.dispose();
 	}
 
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		if(newInput == null) {
+		if (newInput == null) {
 			return;
 		}
 		updateContext(viewer, newInput);
@@ -57,7 +57,7 @@ public class ObservableTreeContentProvider implements ITreeContentProvider {
 
 
 	public Object[] getChildren(Object parentElement) {
-		if(delegate == null) {
+		if (delegate == null) {
 			return Core.EMPTY_ARRAY;
 		}
 		return delegate.getChildren(parentElement);
@@ -68,36 +68,36 @@ public class ObservableTreeContentProvider implements ITreeContentProvider {
 	}
 
 	public boolean hasChildren(Object element) {
-		if(delegate == null) {
+		if (delegate == null) {
 			return false;
 		}
 		return delegate.hasChildren(element);
 	}
 
 	public Object getParent(Object element) {
-		if(delegate == null) {
+		if (delegate == null) {
 			return null;
 		}
 		return delegate.getParent(element);
 	}
 
 	public IObservableSet getKnownElements() {
-		if(delegate == null) {
+		if (delegate == null) {
 			return null;
 		}
-		if(delegate instanceof ObservableSetTreeContentProvider) {
-			ObservableSetTreeContentProvider contentProvider = (ObservableSetTreeContentProvider)delegate;
+		if (delegate instanceof ObservableSetTreeContentProvider) {
+			ObservableSetTreeContentProvider contentProvider = (ObservableSetTreeContentProvider) delegate;
 			return contentProvider.getKnownElements();
 		}
-		if(delegate instanceof ObservableListTreeContentProvider) {
-			ObservableListTreeContentProvider contentProvider = (ObservableListTreeContentProvider)delegate;
+		if (delegate instanceof ObservableListTreeContentProvider) {
+			ObservableListTreeContentProvider contentProvider = (ObservableListTreeContentProvider) delegate;
 			return contentProvider.getKnownElements();
 		}
 		throw new IllegalStateException();
 	}
 
 	public void updateContext(Object context, Object value) {
-		if(context == this.context && this.value == value) {
+		if (context == this.context && this.value == value) {
 			return;
 		}
 		this.context = context;
@@ -105,9 +105,9 @@ public class ObservableTreeContentProvider implements ITreeContentProvider {
 		IObservableFactory observableFactory = XWT.observableFactory(context, getContentPath(), UpdateSourceTrigger.Default);
 		IObservable observable = observableFactory.createObservable(value);
 
-		if(observable instanceof IObservableList) {
+		if (observable instanceof IObservableList) {
 			delegate = new ObservableListTreeContentProvider(observableFactory, null);
-		} else if(observable instanceof IObservableSet) {
+		} else if (observable instanceof IObservableSet) {
 			delegate = new ObservableSetTreeContentProvider(observableFactory, null);
 		} else {
 			throw new UnsupportedOperationException(observable.getClass().getName());

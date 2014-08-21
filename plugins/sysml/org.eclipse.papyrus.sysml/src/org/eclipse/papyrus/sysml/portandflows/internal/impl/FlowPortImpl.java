@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,7 +42,7 @@ import org.eclipse.uml2.uml.util.UMLUtil;
  * <li>{@link org.eclipse.papyrus.sysml.portandflows.internal.impl.FlowPortImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @generated
  */
 public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPort {
@@ -50,7 +50,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBase_Port()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * The default value of the '{@link #isAtomic() <em>Is Atomic</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isAtomic()
 	 * @generated
 	 * @ordered
@@ -71,7 +71,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	 * The default value of the '{@link #isConjugated() <em>Is Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isConjugated()
 	 * @generated
 	 * @ordered
@@ -81,7 +81,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * The cached value of the '{@link #isConjugated() <em>Is Conjugated</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isConjugated()
 	 * @generated
 	 * @ordered
@@ -91,7 +91,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getDirection()
 	 * @generated
 	 * @ordered
@@ -110,7 +110,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected FlowPortImpl() {
@@ -119,7 +119,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port basicGetBase_Port() {
@@ -128,15 +128,16 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_PORT__BASE_PORT:
-			if(resolve)
+			if (resolve) {
 				return getBase_Port();
+			}
 			return basicGetBase_Port();
 		case PortandflowsPackage.FLOW_PORT__IS_ATOMIC:
 			return isAtomic();
@@ -150,12 +151,12 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_PORT__BASE_PORT:
 			return base_Port != null;
 		case PortandflowsPackage.FLOW_PORT__IS_ATOMIC:
@@ -171,12 +172,12 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch(operationID) {
+		switch (operationID) {
 		case PortandflowsPackage.FLOW_PORT___GET_ICON:
 			return getIcon();
 		}
@@ -185,20 +186,20 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_PORT__BASE_PORT:
-			setBase_Port((Port)newValue);
+			setBase_Port((Port) newValue);
 			return;
 		case PortandflowsPackage.FLOW_PORT__IS_CONJUGATED:
-			setIsConjugated((Boolean)newValue);
+			setIsConjugated((Boolean) newValue);
 			return;
 		case PortandflowsPackage.FLOW_PORT__DIRECTION:
-			setDirection((FlowDirection)newValue);
+			setDirection((FlowDirection) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -206,7 +207,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -216,14 +217,14 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
-		switch(featureID) {
+		switch (featureID) {
 		case PortandflowsPackage.FLOW_PORT__BASE_PORT:
-			setBase_Port((Port)null);
+			setBase_Port((Port) null);
 			return;
 		case PortandflowsPackage.FLOW_PORT__IS_CONJUGATED:
 			setIsConjugated(IS_CONJUGATED_EDEFAULT);
@@ -237,16 +238,17 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Port getBase_Port() {
-		if(base_Port != null && base_Port.eIsProxy()) {
-			InternalEObject oldBase_Port = (InternalEObject)base_Port;
-			base_Port = (Port)eResolveProxy(oldBase_Port);
-			if(base_Port != oldBase_Port) {
-				if(eNotificationRequired())
+		if (base_Port != null && base_Port.eIsProxy()) {
+			InternalEObject oldBase_Port = (InternalEObject) base_Port;
+			base_Port = (Port) eResolveProxy(oldBase_Port);
+			if (base_Port != oldBase_Port) {
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PortandflowsPackage.FLOW_PORT__BASE_PORT, oldBase_Port, base_Port));
+				}
 			}
 		}
 		return base_Port;
@@ -254,7 +256,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FlowDirection getDirection() {
@@ -265,25 +267,25 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	 * <!-- begin-user-doc --> Images registered in Profile are : 0 - FlowPort
 	 * (default, similar to INOUT) 1 - FlowPort IN 2 - FlowPort OUT 3 - FlowPort
 	 * INOUT 4 - FlowPort NA (Non Atomic) <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public Image getIcon() {
 
 		Image ImageNotFound = null;
 
-		if(getBase_Port() != null) {
+		if (getBase_Port() != null) {
 
 			Stereotype st = UMLUtil.getStereotype(this);
 
 			Image image = st.getIcons().get(0);
 
-			if(isAtomic()) {
-				if(getDirection() == FlowDirection.IN) {
+			if (isAtomic()) {
+				if (getDirection() == FlowDirection.IN) {
 					image = st.getIcons().get(1);
-				} else if(getDirection() == FlowDirection.OUT) {
+				} else if (getDirection() == FlowDirection.OUT) {
 					image = st.getIcons().get(2);
-				} else if(getDirection() == FlowDirection.INOUT) {
+				} else if (getDirection() == FlowDirection.INOUT) {
 					image = st.getIcons().get(3);
 				}
 
@@ -300,20 +302,21 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setBase_Port(Port newBase_Port) {
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PortandflowsPackage.FLOW_PORT__BASE_PORT, oldBase_Port, base_Port));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public boolean isAtomic() {
@@ -321,14 +324,14 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 		Boolean isAtomic = true;
 		FlowSpecification flowSpec = null;
 
-		if(getBase_Port() != null) {
+		if (getBase_Port() != null) {
 			// Find FlowPort type
 			Type type = getBase_Port().getType();
-			if((type != null) && (type instanceof Interface)) {
+			if ((type != null) && (type instanceof Interface)) {
 				flowSpec = UMLUtil.getStereotypeApplication(type, FlowSpecification.class);
 			}
 
-			if(flowSpec != null) {
+			if (flowSpec != null) {
 				isAtomic = false;
 			}
 		}
@@ -338,7 +341,7 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isConjugated() {
@@ -347,19 +350,20 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setDirection(FlowDirection newDirection) {
 		FlowDirection oldDirection = direction;
 		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PortandflowsPackage.FLOW_PORT__DIRECTION, oldDirection, direction));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
 	public void setIsAtomic(boolean newIsAtomic) {
@@ -370,25 +374,27 @@ public class FlowPortImpl extends MinimalEObjectImpl.Container implements FlowPo
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setIsConjugated(boolean newIsConjugated) {
 		boolean oldIsConjugated = isConjugated;
 		isConjugated = newIsConjugated;
-		if(eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, PortandflowsPackage.FLOW_PORT__IS_CONJUGATED, oldIsConjugated, isConjugated));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if(eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (isConjugated: ");

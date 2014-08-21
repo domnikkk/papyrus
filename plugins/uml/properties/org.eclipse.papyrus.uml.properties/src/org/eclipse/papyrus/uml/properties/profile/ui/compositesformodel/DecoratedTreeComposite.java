@@ -54,8 +54,8 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 
 	// child composites for the table composite
 
-	//	/** main composite of this complex composite */
-	//	protected Composite composite;
+	// /** main composite of this complex composite */
+	// protected Composite composite;
 	/**
 	 * Label above the table.
 	 */
@@ -143,7 +143,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 	 * Sets the element that holds property displyed in property section.
 	 *
 	 * @param element
-	 *        the element to set
+	 *            the element to set
 	 */
 	public void setElement(Element element) {
 		this.element = element;
@@ -157,7 +157,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 	 * @param style
 	 * @param isStereotypeTree
 	 * @param name
-	 *        text of the Label on the top left of this composite
+	 *            text of the Label on the top left of this composite
 	 * @param parent
 	 */
 	public DecoratedTreeComposite(Composite parent, int style, String name, boolean isStereotypeTree) {
@@ -170,7 +170,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 		this.upButtonlistener = new UpButtonlistener();
 		this.downButtonlistener = new DownButtonlistener();
 
-		if(isStereotypeTree) {
+		if (isStereotypeTree) {
 			treeViewer = new ProfileElementTreeViewer(this);
 		} else {
 			// Property tree
@@ -196,7 +196,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 
 		FormData data;
 
-		/////////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////////
 		// Create and place button vertically on the left side
 		// Button : Add Element
 		// Button Delete Element
@@ -255,7 +255,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 		data.top = new FormAttachment(0, 0);
 		label.setLayoutData(data);
 
-		/////////////////////////////////////////////////////////////////////////////
+		// ///////////////////////////////////////////////////////////////////////////
 		// Create and place Table
 		tree = treeViewer.getTree();
 		tree.setLayout(new FormLayout());
@@ -287,7 +287,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 	protected void updateEnablement() {
 		boolean isEditable = isEditable();
 
-		if((addButton != null) && !addButton.isDisposed()) {
+		if ((addButton != null) && !addButton.isDisposed()) {
 			addButton.setEnabled(isEditable);
 			removeButton.setEnabled(isEditable);
 			upButton.setEnabled(isEditable);
@@ -295,17 +295,17 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 		}
 	}
 
-	//	/**
-	//	 * Sets the layout data to the main composite of this complex element
-	//	 * @param data the new LayoutData
-	//	 */
-	//	public void setLayoutData(Object data) {
-	//		composite.setLayoutData(data);
-	//	}
+	// /**
+	// * Sets the layout data to the main composite of this complex element
+	// * @param data the new LayoutData
+	// */
+	// public void setLayoutData(Object data) {
+	// composite.setLayoutData(data);
+	// }
 	//
-	//	public Composite getMainComposite() {
-	//		return composite;
-	//	}
+	// public Composite getMainComposite() {
+	// return composite;
+	// }
 
 	/**
 	 * Returns the CommmandStack of the current editor.
@@ -313,8 +313,8 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 	 * @return the CommmandStack of the current editor
 	 */
 	public CommandStack getCommandStack() {
-		if(getActiveEditor() != null) {
-			return (CommandStack)getActiveEditor().getAdapter(CommandStack.class);
+		if (getActiveEditor() != null) {
+			return (CommandStack) getActiveEditor().getAdapter(CommandStack.class);
 		}
 		return null;
 	}
@@ -530,7 +530,7 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 		 * @param event
 		 */
 		public void handleEvent(Event event) {
-			if(tree.getSelection().length > 0) {
+			if (tree.getSelection().length > 0) {
 				TreeItem item = tree.getSelection()[0];
 				editItem(item);
 			}
@@ -541,19 +541,19 @@ public abstract class DecoratedTreeComposite extends Composite implements ISecti
 	 * Dipose listeners.
 	 */
 	public void disposeListeners() {
-		if(addButton != null && !addButton.isDisposed()) {
+		if (addButton != null && !addButton.isDisposed()) {
 			addButton.removeMouseListener(addButtonlistener);
 		}
-		if(removeButton != null && !removeButton.isDisposed()) {
+		if (removeButton != null && !removeButton.isDisposed()) {
 			removeButton.removeMouseListener(removeButtonlistener);
 		}
-		if(upButton != null && !upButton.isDisposed()) {
+		if (upButton != null && !upButton.isDisposed()) {
 			upButton.removeMouseListener(upButtonlistener);
 		}
-		if(downButton != null && !downButton.isDisposed()) {
+		if (downButton != null && !downButton.isDisposed()) {
 			downButton.removeMouseListener(downButtonlistener);
 		}
-		if(tree != null && !tree.isDisposed()) {
+		if (tree != null && !tree.isDisposed()) {
 			tree.removeListener(SWT.MouseDoubleClick, treeListener);
 		}
 	}

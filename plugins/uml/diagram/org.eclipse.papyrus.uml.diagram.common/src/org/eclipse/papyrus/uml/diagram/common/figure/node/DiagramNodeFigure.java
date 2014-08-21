@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,10 +37,11 @@ public class DiagramNodeFigure extends PapyrusNodeFigure {
 	 * @deprecated use org.eclipse.papyrus.uml.diagram.common.figure.layout.
 	 *             PropertiesCompartmentLayoutManager instead
 	 */
+	@Deprecated
 	private class PropertiesCompatmentLayoutManager extends AbstractLayout {
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
 		@Override
@@ -57,9 +58,10 @@ public class DiagramNodeFigure extends PapyrusNodeFigure {
 		}
 
 		/**
-		 * 
+		 *
 		 * {@inheritDoc}
 		 */
+		@Override
 		public void layout(IFigure container) {
 			List childrenList = container.getChildren();
 			for (int i = 0; i < container.getChildren().size(); i++) {
@@ -108,7 +110,7 @@ public class DiagramNodeFigure extends PapyrusNodeFigure {
 	}
 
 	public void setIcon(Image image) {
-		Image imageVis = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.ID, ICONS_OBJ16_CALL_GIF); 
+		Image imageVis = org.eclipse.papyrus.infra.widgets.Activator.getDefault().getImage(Activator.ID, ICONS_OBJ16_CALL_GIF);
 
 		// Overlay custom image over base image
 		// OverlayVisibilityIcon overlayIcon = new

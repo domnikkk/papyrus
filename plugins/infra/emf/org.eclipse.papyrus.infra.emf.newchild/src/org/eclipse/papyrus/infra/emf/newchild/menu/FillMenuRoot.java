@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,7 +30,7 @@ public class FillMenuRoot extends FillMenuContainer {
 	public void fill(IMenuManager menuManager) {
 		super.fill(menuManager);
 
-		for(MenuGroup group : root.getGroups()) {
+		for (MenuGroup group : root.getGroups()) {
 			FillerFactory.instance.getFiller(group, selectedObject).fill(menuManager);
 		}
 	}

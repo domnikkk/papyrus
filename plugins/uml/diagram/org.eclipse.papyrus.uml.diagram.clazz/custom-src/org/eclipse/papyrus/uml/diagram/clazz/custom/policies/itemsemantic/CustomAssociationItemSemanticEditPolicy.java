@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -46,9 +46,10 @@ import org.eclipse.uml2.uml.Property;
 public class CustomAssociationItemSemanticEditPolicy extends AssociationItemSemanticEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new CAssociationCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));
@@ -62,6 +63,7 @@ public class CustomAssociationItemSemanticEditPolicy extends AssociationItemSema
 		return super.getCompleteCreateRelationshipCommand(req);
 	}
 
+	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case AssociationClassLinkEditPart.VISUAL_ID:
@@ -105,9 +107,10 @@ public class CustomAssociationItemSemanticEditPolicy extends AssociationItemSema
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
 		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.clazz.custom.command.CAssociationCreateCommand(req, req.getSource(), req.getTarget(), DiagramUtils.getDiagramFrom(getHost())));

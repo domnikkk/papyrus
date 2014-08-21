@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,15 +48,15 @@ public class ParameterParser extends MessageFormatParser implements ISemanticPar
 	}
 
 	public ParameterParser() {
-		super(new EAttribute[]{ UMLPackage.eINSTANCE.getNamedElement_Name() });
+		super(new EAttribute[] { UMLPackage.eINSTANCE.getNamedElement_Name() });
 	}
 
 	protected EStructuralFeature getEStructuralFeature(Object notification) {
 		EStructuralFeature featureImpl = null;
-		if(notification instanceof Notification) {
-			Object feature = ((Notification)notification).getFeature();
-			if(feature instanceof EStructuralFeature) {
-				featureImpl = (EStructuralFeature)feature;
+		if (notification instanceof Notification) {
+			Object feature = ((Notification) notification).getFeature();
+			if (feature instanceof EStructuralFeature) {
+				featureImpl = (EStructuralFeature) feature;
 			}
 		}
 		return featureImpl;
@@ -69,6 +69,7 @@ public class ParameterParser extends MessageFormatParser implements ISemanticPar
 	 * org.eclipse.papyrus.uml.diagram.sequence.parsers.AbstractParser#isAffectingEvent
 	 * (java.lang.Object , int)
 	 */
+	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 		EStructuralFeature feature = getEStructuralFeature(event);
 		return isValidFeature(feature);
@@ -80,17 +81,18 @@ public class ParameterParser extends MessageFormatParser implements ISemanticPar
 	 * @see org.eclipse.papyrus.uml.diagram.sequence.parsers.MessageFormatParser#
 	 * getPrintString(org.eclipse .core.runtime.IAdaptable, int)
 	 */
+	@Override
 	public String getPrintString(IAdaptable element, int flags) {
 		Object obj = element.getAdapter(EObject.class);
-		if(obj instanceof Parameter) {
-			Parameter parameter = (Parameter)obj;
+		if (obj instanceof Parameter) {
+			Parameter parameter = (Parameter) obj;
 			String name = parameter.getName();
-			if(name == null) {
+			if (name == null) {
 				name = " ";
 			}
-			if(parameter.getType() != null) {
+			if (parameter.getType() != null) {
 				String type = parameter.getType().getName();
-				if(type == null) {
+				if (type == null) {
 					type = "";
 				}
 				return String.format(TYPED_PARAMETER_FORMAT, name, type);
@@ -108,6 +110,7 @@ public class ParameterParser extends MessageFormatParser implements ISemanticPar
 	 * areSemanticElementsAffected (org.eclipse.emf.ecore.EObject,
 	 * java.lang.Object)
 	 */
+	@Override
 	public boolean areSemanticElementsAffected(EObject listener, Object notification) {
 		EStructuralFeature feature = getEStructuralFeature(notification);
 		return isValidFeature(feature);
@@ -119,12 +122,13 @@ public class ParameterParser extends MessageFormatParser implements ISemanticPar
 	 * @see org.eclipse.gmf.runtime.emf.ui.services.parser.ISemanticParser#
 	 * getSemanticElementsBeingParsed (org.eclipse.emf.ecore.EObject)
 	 */
+	@Override
 	public List<?> getSemanticElementsBeingParsed(EObject element) {
 		List<Element> semanticElementsBeingParsed = new ArrayList<Element>();
-		if(element instanceof Parameter) {
-			Parameter parameter = (Parameter)element;
+		if (element instanceof Parameter) {
+			Parameter parameter = (Parameter) element;
 			semanticElementsBeingParsed.add(parameter);
-			if(parameter.getType() != null) {
+			if (parameter.getType() != null) {
 				semanticElementsBeingParsed.add(parameter.getType());
 			}
 		}
@@ -134,9 +138,9 @@ public class ParameterParser extends MessageFormatParser implements ISemanticPar
 	/**
 	 * Determines if the given feature has to be taken into account in this
 	 * parser
-	 * 
+	 *
 	 * @param feature
-	 *        the feature to test
+	 *            the feature to test
 	 * @return true if is valid, false otherwise
 	 */
 	private boolean isValidFeature(EStructuralFeature feature) {

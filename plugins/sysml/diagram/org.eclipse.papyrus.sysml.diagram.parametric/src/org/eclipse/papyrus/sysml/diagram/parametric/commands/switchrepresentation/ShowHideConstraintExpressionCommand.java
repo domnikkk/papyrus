@@ -24,7 +24,7 @@ import org.eclipse.papyrus.uml.diagram.common.edit.part.ConstraintNodeLabelEditP
 /**
  * This command allow to show/hide the Constraint expression of a ConstraintProperty
  */
-public class ShowHideConstraintExpressionCommand  extends Command {
+public class ShowHideConstraintExpressionCommand extends Command {
 
 	private final GraphicalEditPart editPartToSwitch;
 
@@ -39,22 +39,22 @@ public class ShowHideConstraintExpressionCommand  extends Command {
 	@Override
 	public void execute() {
 		if (this.getEditPartToSwitch() instanceof CustomConstraintBlockPropertyCompositeEditPart) {
-			CustomConstraintBlockPropertyCompositeEditPart constraintBlockPropertyCompositeEditPart = (CustomConstraintBlockPropertyCompositeEditPart)this.getEditPartToSwitch();
+			CustomConstraintBlockPropertyCompositeEditPart constraintBlockPropertyCompositeEditPart = (CustomConstraintBlockPropertyCompositeEditPart) this.getEditPartToSwitch();
 			// get the Constraint expression graphical label
-			WrappingLabel constraintLabel = ((ConstraintBlockPropertyCompositeFigure)constraintBlockPropertyCompositeEditPart.getPrimaryShape()).getConstraintLabel();
+			WrappingLabel constraintLabel = constraintBlockPropertyCompositeEditPart.getPrimaryShape().getConstraintLabel();
 			ConstraintNodeLabelEditPart constraintNodeLabelEditPart = null;
 			// get the EditPart which contains this label
 			for (Object currentEditPart : constraintBlockPropertyCompositeEditPart.getChildren()) {
 				if (currentEditPart instanceof ConstraintNodeLabelEditPart) {
 					if (((ConstraintNodeLabelEditPart) currentEditPart).getFigure() == constraintLabel) {
-						constraintNodeLabelEditPart = (ConstraintNodeLabelEditPart)currentEditPart;
+						constraintNodeLabelEditPart = (ConstraintNodeLabelEditPart) currentEditPart;
 					}
 				}
 			}
-			
+
 			// switch visibility of this EditPart
 			if (constraintNodeLabelEditPart != null) {
-				View constraintLabelView = (View)constraintNodeLabelEditPart.getModel();
+				View constraintLabelView = (View) constraintNodeLabelEditPart.getModel();
 				constraintLabelView.setVisible(!constraintLabelView.isVisible());
 			}
 		}
@@ -64,10 +64,10 @@ public class ShowHideConstraintExpressionCommand  extends Command {
 	public void undo() {
 		execute(); // switch
 	}
-	
+
 	@Override
 	public void redo() {
 		execute(); // switch
 	}
-	
+
 }

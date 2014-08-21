@@ -35,7 +35,7 @@ import org.eclipse.papyrus.uml.service.types.command.ConnectorReorientCommand;
 /**
  * <pre>
  * Custom semantic edit policy that replace DefaultSemanticEditPolicy
- * in order to manage Class Diagram specific elements (reference 
+ * in order to manage Class Diagram specific elements (reference
  * relationships COMMENT_ANNOTATED_ELEMENT and CONSTRAINT_CONSTRAINED_ELEMENT).
  * </pre>
  */
@@ -53,21 +53,21 @@ public class CustomDefaultSemanticEditPolicy extends DefaultSemanticEditPolicy {
 	@Override
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 
-		if(ElementTypes.COMMENT_ANNOTATED_ELEMENT == req.getElementType()) {
+		if (ElementTypes.COMMENT_ANNOTATED_ELEMENT == req.getElementType()) {
 			return getGEFWrapper(new CommentAnnotatedElementCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
-		if(ElementTypes.CONTEXT_LINK == req.getElementType()) {
+		if (ElementTypes.CONTEXT_LINK == req.getElementType()) {
 			return getGEFWrapper(new CustomParametricContextLinkCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 
 		String newEdgeGraphicalType = registry.getEdgeGraphicalType(req.getElementType());
 
-		if(inheritedRegistry.isKnownEdgeType(newEdgeGraphicalType)) {
+		if (inheritedRegistry.isKnownEdgeType(newEdgeGraphicalType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
-		if(!registry.isKnownEdgeType(newEdgeGraphicalType)) {
+		if (!registry.isKnownEdgeType(newEdgeGraphicalType)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -80,16 +80,16 @@ public class CustomDefaultSemanticEditPolicy extends DefaultSemanticEditPolicy {
 	@Override
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 
-		View reconnectedView = (View)req.getParameter(RequestParameterConstants.GRAPHICAL_RECONNECTED_EDGE);
-		String reconnectedViewType = (reconnectedView != null) ? reconnectedView.getType() : IGraphicalTypeRegistry.UNDEFINED_TYPE;
+		View reconnectedView = (View) req.getParameter(RequestParameterConstants.GRAPHICAL_RECONNECTED_EDGE);
+		String reconnectedViewType = (reconnectedView != null) ? reconnectedView.getType() : org.eclipse.papyrus.infra.gmfdiag.common.providers.IGraphicalTypeRegistry.UNDEFINED_TYPE;
 
-		if(ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
+		if (ElementTypes.COMMENT_ANNOTATED_ELEMENT.getSemanticHint().equals(reconnectedViewType)) {
 			return getGEFWrapper(new CommentAnnotatedElementReorientCommand(req));
 		}
 
-		if(UMLGraphicalTypes.LINK_UML_CONNECTOR_ID.equals(reconnectedViewType)) {
+		if (UMLGraphicalTypes.LINK_UML_CONNECTOR_ID.equals(reconnectedViewType)) {
 			if (req instanceof ReorientReferenceRelationshipRequestWithGraphical) {
-				return getGEFWrapper(new CustomBindingConnectorReorientCommand((ReorientReferenceRelationshipRequestWithGraphical)req));
+				return getGEFWrapper(new CustomBindingConnectorReorientCommand((ReorientReferenceRelationshipRequestWithGraphical) req));
 			}
 			else {
 				return getGEFWrapper(new ConnectorReorientCommand(req));

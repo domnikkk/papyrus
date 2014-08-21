@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,17 +26,17 @@ import org.eclipse.uml2.uml.Package;
 import org.eclipse.uml2.uml.Type;
 
 /**
- * 
+ *
  * This class provides method to manipulate {@link CollaborationUse}
- * 
+ *
  */
 public class UMLCollaborationUseEditorUtil {
 
 	/**
 	 * Returns a String representing the {@link CollaborationUse}
-	 * 
+	 *
 	 * @param collaborationUse
-	 *        the {@link CollaborationUse}
+	 *            the {@link CollaborationUse}
 	 * @return
 	 *         A String representing the {@link CollaborationUse}
 	 */
@@ -51,7 +51,7 @@ public class UMLCollaborationUseEditorUtil {
 		buffer.append(getName(collaborationUse));
 
 		// type
-		if(collaborationUse.getType() != null) {
+		if (collaborationUse.getType() != null) {
 			EList<Namespace> namespaces = collaborationUse.allNamespaces();
 			buffer.append(" : " + getTypeLabel(collaborationUse.getType(), namespaces.get(namespaces.size() - 1))); //$NON-NLS-1$
 		} else {
@@ -62,14 +62,14 @@ public class UMLCollaborationUseEditorUtil {
 
 	/**
 	 * Returns the name of the {@link CollaborationUse}
-	 * 
+	 *
 	 * @param collaborationUse
-	 *        the {@link CollaborationUse}
+	 *            the {@link CollaborationUse}
 	 * @return
 	 *         The name of the {@link CollaborationUse}
 	 */
 	public static String getName(CollaborationUse collaborationUse) {
-		if(collaborationUse.getName() != null) {
+		if (collaborationUse.getName() != null) {
 			return collaborationUse.getName();
 		} else {
 			return (NamedElementUtil.getDefaultNameWithIncrement(collaborationUse));
@@ -78,9 +78,9 @@ public class UMLCollaborationUseEditorUtil {
 
 	/**
 	 * Returns a string representing the Type of the {@link CollaborationUse}
-	 * 
+	 *
 	 * @param type
-	 *        the type of the CollaborationUse
+	 *            the type of the CollaborationUse
 	 * @return
 	 *         A string representing the Type of the {@link CollaborationUse}
 	 */
@@ -94,19 +94,20 @@ public class UMLCollaborationUseEditorUtil {
 
 		boolean rootFound = false;
 
-		while(currentPackage != null && !rootFound) {
+		while (currentPackage != null && !rootFound) {
 			visitedPackages.add(currentPackage);
-			if(importedPackages.contains(currentPackage) || currentPackage == model) {
+			if (importedPackages.contains(currentPackage) || currentPackage == model) {
 				rootFound = true;
 			}
 			Element owner = currentPackage.getOwner();
-			while(owner != null && !(owner instanceof Package))
+			while (owner != null && !(owner instanceof Package)) {
 				owner = owner.getOwner();
+			}
 
-			currentPackage = owner != null ? (Package)owner : null;
+			currentPackage = owner != null ? (Package) owner : null;
 		}
 
-		for(int i = visitedPackages.size() - 1; i >= 0; i--) {
+		for (int i = visitedPackages.size() - 1; i >= 0; i--) {
 			label += visitedPackages.get(i).getName() + "::"; //$NON-NLS-1$
 		}
 

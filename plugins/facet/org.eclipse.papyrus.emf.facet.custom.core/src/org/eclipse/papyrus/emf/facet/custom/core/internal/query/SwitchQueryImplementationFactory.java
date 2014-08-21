@@ -27,8 +27,7 @@ public class SwitchQueryImplementationFactory implements
 			final IDerivedTypedElementManager manager)
 			throws DerivedTypedElementException {
 		if (!(query instanceof ETypedElementSwitchQuery)) {
-			throw new IllegalArgumentException(
-					"The given DerivedTypedElement does not have a ETypedElementSwitchQuery"); //$NON-NLS-1$
+			throw new IllegalArgumentException("The given DerivedTypedElement does not have a ETypedElementSwitchQuery"); //$NON-NLS-1$
 		}
 		final ETypedElementSwitchQuery switchQuery = (ETypedElementSwitchQuery) query;
 		return new SwitchQueryImplementation(switchQuery);

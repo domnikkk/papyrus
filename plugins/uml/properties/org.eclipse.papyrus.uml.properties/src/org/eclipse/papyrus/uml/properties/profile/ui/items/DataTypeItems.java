@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,20 +25,20 @@ public class DataTypeItems {
 
 	/**
 	 * Creates new DataType items in the property table.
-	 * 
+	 *
 	 * @param table
-	 *        the table
+	 *            the table
 	 * @param value
-	 *        current value of the property
+	 *            current value of the property
 	 * @param property
-	 *        currently selected property
+	 *            currently selected property
 	 */
 	public DataTypeItems(Table table, Property property, Object value) {
-		if(property.isMultivalued()) {
+		if (property.isMultivalued()) {
 			// property is multivalued
-			final List propValues = (List)value;
+			final List propValues = (List) value;
 
-			for(int i = 0; i < propValues.size(); i++) {
+			for (int i = 0; i < propValues.size(); i++) {
 				// Create item in property table
 				TableItem propValueItem = new TableItem(table, SWT.NONE);
 				propValueItem.setText(propValues.get(i).toString());
@@ -48,7 +48,7 @@ public class DataTypeItems {
 		} else { // property is not multivalued
 
 			// if the property has a value
-			if(value != null) {
+			if (value != null) {
 				TableItem propValueItem = new TableItem(table, SWT.NONE);
 				propValueItem.setText(value.toString());
 			}

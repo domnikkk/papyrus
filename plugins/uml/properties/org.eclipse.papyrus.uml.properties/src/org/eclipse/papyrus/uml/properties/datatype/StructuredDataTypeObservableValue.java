@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.papyrus.uml.tools.databinding.PapyrusObservableValue;
 
 /**
  * Allows the manipulation of a UML DataType from a static profile (Implemented by an EMF EDataType)
- * 
+ *
  * @author Camille Letavernier
  */
 public class StructuredDataTypeObservableValue extends PapyrusObservableValue implements IAdaptable {
@@ -41,7 +41,7 @@ public class StructuredDataTypeObservableValue extends PapyrusObservableValue im
 
 	@Override
 	protected Object doGetValue() {
-		if(observable == null) {
+		if (observable == null) {
 			observable = DataTypeProvider.instance.getObservableDataType(type);
 			observable.setOwner(eObject, eStructuralFeature, domain, type);
 			observable.setValue(super.doGetValue());
@@ -54,9 +54,9 @@ public class StructuredDataTypeObservableValue extends PapyrusObservableValue im
 	}
 
 	@Override
-	protected void doSetValue(Object value) { //value = dataType instance
-		super.doSetValue(value); //TODO : type réel de value ? compatibilité des types ?
-		
+	protected void doSetValue(Object value) { // value = dataType instance
+		super.doSetValue(value); // TODO : type réel de value ? compatibilité des types ?
+
 	}
 
 	public Object getAdapter(Class adapter) {

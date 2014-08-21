@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle Rouillé (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  *       Gregoire Dupe (Mia-Software) - Bug 366055 - NavigationQuery
  *       Gregoire Dupe (Mia-Software) - Bug 369673 - [Facet] IsOneOfQuery
@@ -43,6 +43,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * Note that most of the adapters are shared among multiple instances.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class SerializationItemProviderAdapterFactory extends SerializationAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
@@ -50,6 +51,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -58,6 +60,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -66,6 +69,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -74,6 +78,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SerializationItemProviderAdapterFactory() {
@@ -88,6 +93,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractReferenceInstanceItemProvider abstractReferenceInstanceItemProvider;
@@ -96,6 +102,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractReferenceInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -111,6 +118,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedContainmentReferenceInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MultiValuedContainmentReferenceInstanceItemProvider multiValuedContainmentReferenceInstanceItemProvider;
@@ -119,6 +127,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedContainmentReferenceInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -134,6 +143,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedReferenceInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MultiValuedReferenceInstanceItemProvider multiValuedReferenceInstanceItemProvider;
@@ -142,6 +152,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedReferenceInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -157,6 +168,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedAttributeInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SingleValuedAttributeInstanceItemProvider singleValuedAttributeInstanceItemProvider;
@@ -165,6 +177,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedAttributeInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -180,6 +193,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ExtendedEObjectReferenceItemProvider extendedEObjectReferenceItemProvider;
@@ -188,6 +202,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.ExtendedEObjectReference}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -203,6 +218,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SingleValuedContainmentReferenceInstanceItemProvider singleValuedContainmentReferenceInstanceItemProvider;
@@ -211,6 +227,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedContainmentReferenceInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -226,6 +243,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected SingleValuedReferenceInstanceItemProvider singleValuedReferenceInstanceItemProvider;
@@ -234,6 +252,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.SingleValuedReferenceInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -249,6 +268,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedAttributeInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected MultiValuedAttributeInstanceItemProvider multiValuedAttributeInstanceItemProvider;
@@ -257,6 +277,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.MultiValuedAttributeInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -272,6 +293,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This keeps track of the one adapter used for all {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractAttributeInstanceItemProvider abstractAttributeInstanceItemProvider;
@@ -280,6 +302,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This creates an adapter for a {@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.AbstractAttributeInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -295,6 +318,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -305,6 +329,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This sets the composed adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
@@ -314,6 +339,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -325,6 +351,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This implementation substitutes the factory itself as the key for the adapter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -335,13 +362,14 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object adapt(Object object, Object type) {
 		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
+			if (!(type instanceof Class<?>) || (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -353,6 +381,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void addListener(INotifyChangedListener notifyChangedListener) {
@@ -363,6 +392,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This removes a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
@@ -373,6 +403,7 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	 * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void fireNotifyChanged(Notification notification) {
@@ -384,21 +415,40 @@ public class SerializationItemProviderAdapterFactory extends SerializationAdapte
 	}
 
 	/**
-	 * This disposes all of the item providers created by this factory. 
+	 * This disposes all of the item providers created by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void dispose() {
-		if (abstractReferenceInstanceItemProvider != null) abstractReferenceInstanceItemProvider.dispose();
-		if (multiValuedContainmentReferenceInstanceItemProvider != null) multiValuedContainmentReferenceInstanceItemProvider.dispose();
-		if (multiValuedReferenceInstanceItemProvider != null) multiValuedReferenceInstanceItemProvider.dispose();
-		if (singleValuedAttributeInstanceItemProvider != null) singleValuedAttributeInstanceItemProvider.dispose();
-		if (extendedEObjectReferenceItemProvider != null) extendedEObjectReferenceItemProvider.dispose();
-		if (singleValuedContainmentReferenceInstanceItemProvider != null) singleValuedContainmentReferenceInstanceItemProvider.dispose();
-		if (singleValuedReferenceInstanceItemProvider != null) singleValuedReferenceInstanceItemProvider.dispose();
-		if (multiValuedAttributeInstanceItemProvider != null) multiValuedAttributeInstanceItemProvider.dispose();
-		if (abstractAttributeInstanceItemProvider != null) abstractAttributeInstanceItemProvider.dispose();
+		if (abstractReferenceInstanceItemProvider != null) {
+			abstractReferenceInstanceItemProvider.dispose();
+		}
+		if (multiValuedContainmentReferenceInstanceItemProvider != null) {
+			multiValuedContainmentReferenceInstanceItemProvider.dispose();
+		}
+		if (multiValuedReferenceInstanceItemProvider != null) {
+			multiValuedReferenceInstanceItemProvider.dispose();
+		}
+		if (singleValuedAttributeInstanceItemProvider != null) {
+			singleValuedAttributeInstanceItemProvider.dispose();
+		}
+		if (extendedEObjectReferenceItemProvider != null) {
+			extendedEObjectReferenceItemProvider.dispose();
+		}
+		if (singleValuedContainmentReferenceInstanceItemProvider != null) {
+			singleValuedContainmentReferenceInstanceItemProvider.dispose();
+		}
+		if (singleValuedReferenceInstanceItemProvider != null) {
+			singleValuedReferenceInstanceItemProvider.dispose();
+		}
+		if (multiValuedAttributeInstanceItemProvider != null) {
+			multiValuedAttributeInstanceItemProvider.dispose();
+		}
+		if (abstractAttributeInstanceItemProvider != null) {
+			abstractAttributeInstanceItemProvider.dispose();
+		}
 	}
 
 }

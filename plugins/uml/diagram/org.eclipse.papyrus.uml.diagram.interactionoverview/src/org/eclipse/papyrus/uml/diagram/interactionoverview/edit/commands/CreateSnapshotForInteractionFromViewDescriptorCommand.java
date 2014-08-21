@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -75,7 +75,7 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 	}
 
 	public static CreateSnapshotForInteractionFromViewDescriptorCommand create(final ICommand createElementCommand, final GraphicalEditPart host) {
-		return new CreateSnapshotForInteractionFromViewDescriptorCommand(((AbstractEMFOperation)createElementCommand).getEditingDomain(), createElementCommand, host);
+		return new CreateSnapshotForInteractionFromViewDescriptorCommand(((AbstractEMFOperation) createElementCommand).getEditingDomain(), createElementCommand, host);
 	}
 
 	@Override
@@ -83,11 +83,11 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 
 		final View callBehaviorActionView = getViewFromCommandResult(createElementCommand);
 		Diagram diagram = null;
-		if(host instanceof CustomActivityActivityContentCompartmentEditPart) {
+		if (host instanceof CustomActivityActivityContentCompartmentEditPart) {
 
-			final CallBehaviorAction callBehaviorAction = (CallBehaviorAction)callBehaviorActionView.getElement();
+			final CallBehaviorAction callBehaviorAction = (CallBehaviorAction) callBehaviorActionView.getElement();
 			final Behavior behavior = callBehaviorAction.getBehavior();
-			diagram = findSequenceDiagram((Interaction)behavior);
+			diagram = findSequenceDiagram((Interaction) behavior);
 			final ResourceSet resourceSet = behavior.eResource().getResourceSet();
 
 			Resource newResource = null;
@@ -96,30 +96,30 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 				newResource = resourceSet.createResource(org.eclipse.emf.common.util.URI.createURI(URIUtils.getTimestampedURI()));
 
 				final Copier copier = new Copier(true, true);
-				cloneDiagram = (Diagram)copier.copy(diagram);
+				cloneDiagram = (Diagram) copier.copy(diagram);
 				copier.copyReferences();
-				if(cloneDiagram != null) {
+				if (cloneDiagram != null) {
 					newResource.getContents().add(cloneDiagram);
 				}
 				final GraphicalEditPart behaviorEditPart = findBehaviorEditPart(host, callBehaviorAction);
 				final IFigure borderedNodeImage = behaviorEditPart.getFigure();
 				final IFigure callActionBehaviorImage = findInteractionWithSnapshotInFigure(borderedNodeImage);
-				if(callActionBehaviorImage instanceof InteractionWithSnapshotFigure) {
+				if (callActionBehaviorImage instanceof InteractionWithSnapshotFigure) {
 
-					final ImageFigure imageFigure = ((InteractionWithSnapshotFigure)callActionBehaviorImage).getImageFigure();
+					final ImageFigure imageFigure = ((InteractionWithSnapshotFigure) callActionBehaviorImage).getImageFigure();
 					final PreferencesHint preferenceHint = getReferenceHint(diagram.getType());
 					final Image image = CreateDiagramImage.getDiagramImage(cloneDiagram, preferenceHint, imageFigure, callBehaviorActionView);
 
 
-					((InteractionWithSnapshotFigure)callActionBehaviorImage).setSnapshot(image);
+					((InteractionWithSnapshotFigure) callActionBehaviorImage).setSnapshot(image);
 				}
 				CallBehaviorUtil.setDiagramLinked(callBehaviorActionView, diagram);
 				behaviorEditPart.refresh();
 			} finally {
-				if(newResource != null) {
+				if (newResource != null) {
 					resourceSet.getResources().remove(newResource);
 				}
-				if(cloneDiagram != null) {
+				if (cloneDiagram != null) {
 					cloneDiagram.unsetElement();
 					EcoreUtil.delete(cloneDiagram, true);
 				}
@@ -131,33 +131,33 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 	protected View getViewFromCommandResult(final ICommand createElementCommand2) {
 		final CommandResult commandResult = createElementCommand.getCommandResult();
 		final Object resultAsObject = commandResult.getReturnValue();
-		if(resultAsObject instanceof ViewDescriptor) {
-			final ViewDescriptor viewDescriptor = (ViewDescriptor)resultAsObject;
-			return (View)viewDescriptor.getAdapter(View.class);
-		}else if(resultAsObject instanceof View){
-			return (View)resultAsObject;
+		if (resultAsObject instanceof ViewDescriptor) {
+			final ViewDescriptor viewDescriptor = (ViewDescriptor) resultAsObject;
+			return (View) viewDescriptor.getAdapter(View.class);
+		} else if (resultAsObject instanceof View) {
+			return (View) resultAsObject;
 		}
 		return null;
 	}
 
 	protected PreferencesHint getReferenceHint(final String type) {
-		if(PackageEditPart.MODEL_ID.equals(type)) {
+		if (PackageEditPart.MODEL_ID.equals(type)) {
 			return UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-		} else if(TimingDiagramEditPart.MODEL_ID.equals(type)) {
+		} else if (TimingDiagramEditPart.MODEL_ID.equals(type)) {
 			return org.eclipse.papyrus.uml.diagram.timing.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
-		} else if(InteractionOverviewDiagramEditPart.MODEL_ID.equals(type)) {
+		} else if (InteractionOverviewDiagramEditPart.MODEL_ID.equals(type)) {
 			return Activator.DIAGRAM_PREFERENCES_HINT;
-		} else if(ModelEditPart.MODEL_ID.equals(type)) {
+		} else if (ModelEditPart.MODEL_ID.equals(type)) {
 			return org.eclipse.papyrus.uml.diagram.communication.part.UMLDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT;
 		}
 		return null;
 	}
 
 	protected GraphicalEditPart findBehaviorEditPart(final EditPart parentEditPart, final CallBehaviorAction callBehaviorAction) {
-		for(final Object child : parentEditPart.getChildren()) {
-			if(child instanceof GraphicalEditPart) {
-				final GraphicalEditPart editPartChild = (GraphicalEditPart)child;
-				if(editPartChild.resolveSemanticElement() == callBehaviorAction) {
+		for (final Object child : parentEditPart.getChildren()) {
+			if (child instanceof GraphicalEditPart) {
+				final GraphicalEditPart editPartChild = (GraphicalEditPart) child;
+				if (editPartChild.resolveSemanticElement() == callBehaviorAction) {
 					return editPartChild;
 				}
 			}
@@ -166,13 +166,13 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 	}
 
 	protected IFigure findInteractionWithSnapshotInFigure(final IFigure containerFigure) {
-		for(final Object childFigureAsObject : containerFigure.getChildren()) {
-			if(childFigureAsObject instanceof IFigure) {
-				final IFigure childFigure = (IFigure)childFigureAsObject;
-				if(childFigure instanceof InteractionWithSnapshotFigure) {
+		for (final Object childFigureAsObject : containerFigure.getChildren()) {
+			if (childFigureAsObject instanceof IFigure) {
+				final IFigure childFigure = (IFigure) childFigureAsObject;
+				if (childFigure instanceof InteractionWithSnapshotFigure) {
 					return childFigure;
 				} else {
-					if(!childFigure.getChildren().isEmpty()) {
+					if (!childFigure.getChildren().isEmpty()) {
 						return findInteractionWithSnapshotInFigure(childFigure);
 					}
 				}
@@ -184,7 +184,7 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 	protected Diagram findSequenceDiagram(final Interaction interaction) {
 
 		final TreeSelectorDialog dialog = new TreeSelectorDialog(Display.getDefault().getActiveShell());
-		final ServicesRegistry servicesRegistry = ((IMultiDiagramEditor)(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor())).getServicesRegistry();
+		final ServicesRegistry servicesRegistry = ((IMultiDiagramEditor) (PlatformUI.getWorkbench().getActiveWorkbenchWindow().getActivePage().getActiveEditor())).getServicesRegistry();
 
 		dialog.setContentProvider(new DiagramContentProvider(interaction));
 		dialog.setInput(servicesRegistry);
@@ -195,10 +195,12 @@ public class CreateSnapshotForInteractionFromViewDescriptorCommand extends Abstr
 		}
 		dialog.setMessage(Messages.CreateSnapshotForInteractionFromViewDescriptorCommand_DiagramSelectorMessage);
 		dialog.setTitle(Messages.CreateSnapshotForInteractionFromViewDescriptorCommand_DiagramSelectorTitle);
-		if(dialog.open() == org.eclipse.jface.window.Window.OK) {
+		if (dialog.open() == org.eclipse.jface.window.Window.OK) {
 			final Object[] result = dialog.getResult();
-			if(result != null && result.length > 0)// && result[0] instanceof ModelElementItem)
-				return (Diagram)EMFHelper.getEObject(result[0]);//(Diagram)(((ModelElementItem)result[0]).getEObject());
+			if (result != null && result.length > 0)
+			{
+				return (Diagram) EMFHelper.getEObject(result[0]);// (Diagram)(((ModelElementItem)result[0]).getEObject());
+			}
 		}
 
 		return null;

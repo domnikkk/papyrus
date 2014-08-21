@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,12 +30,12 @@ import org.eclipse.papyrus.uml.diagram.profile.providers.UMLElementTypes;
 public class CustomPrimitiveTypeItemSemanticEditPolicy extends PrimitiveTypeItemSemanticEditPolicy {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.profile.custom.commands.CustomAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return super.getCompleteCreateRelationshipCommand(req);
@@ -43,7 +43,7 @@ public class CustomPrimitiveTypeItemSemanticEditPolicy extends PrimitiveTypeItem
 
 	@Override
 	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
-		switch(getVisualID(req)) {
+		switch (getVisualID(req)) {
 		case AssociationEditPart.VISUAL_ID:
 			return getGEFWrapper(new CustomAssociationReorientCommand(req));
 		}
@@ -51,16 +51,16 @@ public class CustomPrimitiveTypeItemSemanticEditPolicy extends PrimitiveTypeItem
 	}
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
 	@Override
 	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
-		if(UMLElementTypes.Association_4001 == req.getElementType()) {
+		if (UMLElementTypes.Association_4001 == req.getElementType()) {
 			return getGEFWrapper(new org.eclipse.papyrus.uml.diagram.profile.custom.commands.CustomAssociationCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		//forbid creation of association branch from it.
-		if(UMLElementTypes.Association_4019 == req.getElementType()) {
+		// forbid creation of association branch from it.
+		if (UMLElementTypes.Association_4019 == req.getElementType()) {
 			return UnexecutableCommand.INSTANCE;
 		}
 

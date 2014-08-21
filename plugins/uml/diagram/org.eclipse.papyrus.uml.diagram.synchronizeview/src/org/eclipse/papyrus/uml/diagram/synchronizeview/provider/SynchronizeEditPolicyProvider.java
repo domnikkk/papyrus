@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,13 +32,14 @@ import org.eclipse.papyrus.uml.diagram.synchronizeview.editpolicy.SynchronizeVie
 public class SynchronizeEditPolicyProvider extends AbstractProvider implements IEditPolicyProvider {
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void createEditPolicies(EditPart editPart) {
 
-		if(!(editPart instanceof ITextAwareEditPart)) {
-			if(editPart instanceof DiagramEditPart || editPart instanceof CompartmentEditPart || editPart instanceof IBorderedShapeEditPart) {
+		if (!(editPart instanceof ITextAwareEditPart)) {
+			if (editPart instanceof DiagramEditPart || editPart instanceof CompartmentEditPart || editPart instanceof IBorderedShapeEditPart) {
 				editPart.installEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CANONICAL_ROLE, new SynchronizeViewEditPolicy());
 			}
 		}
@@ -47,16 +48,17 @@ public class SynchronizeEditPolicyProvider extends AbstractProvider implements I
 
 
 	/**
-	 * 
+	 *
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean provides(IOperation operation) {
-		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation)operation;
+		CreateEditPoliciesOperation epOperation = (CreateEditPoliciesOperation) operation;
 
 		EditPart gep = epOperation.getEditPart();
 		// test if the edipart is a papyrus editpart
 		try {
-			if(ServiceUtilsForEditPart.getInstance().getServiceRegistry(gep) == null) {
+			if (ServiceUtilsForEditPart.getInstance().getServiceRegistry(gep) == null) {
 				return false;
 			}
 		} catch (org.osgi.framework.ServiceException ex) {
@@ -64,9 +66,9 @@ public class SynchronizeEditPolicyProvider extends AbstractProvider implements I
 		} catch (ServiceException e) {
 			return false;
 		}
-		//we are sure that this is a papyrus editpart
-		if(!(gep instanceof ITextAwareEditPart)) {
-			if(gep instanceof DiagramEditPart || gep instanceof CompartmentEditPart || gep instanceof IBorderedShapeEditPart) {
+		// we are sure that this is a papyrus editpart
+		if (!(gep instanceof ITextAwareEditPart)) {
+			if (gep instanceof DiagramEditPart || gep instanceof CompartmentEditPart || gep instanceof IBorderedShapeEditPart) {
 				return true;
 			}
 		}

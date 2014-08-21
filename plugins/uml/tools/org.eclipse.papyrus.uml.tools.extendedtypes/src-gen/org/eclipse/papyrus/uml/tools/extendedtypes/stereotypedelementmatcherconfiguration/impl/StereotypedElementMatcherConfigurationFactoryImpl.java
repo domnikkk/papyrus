@@ -1,12 +1,12 @@
 /**
  * Copyright (c) 2013 CEA LIST.
- * 
- * 
+ *
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors:
  *  CEA LIST - Initial API and implementation
  */
@@ -25,6 +25,7 @@ import org.eclipse.papyrus.uml.tools.extendedtypes.stereotypedelementmatcherconf
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryImpl implements StereotypedElementMatcherConfigurationFactory {
@@ -32,16 +33,16 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static StereotypedElementMatcherConfigurationFactory init() {
 		try {
-			StereotypedElementMatcherConfigurationFactory theStereotypedElementMatcherConfigurationFactory = (StereotypedElementMatcherConfigurationFactory)EPackage.Registry.INSTANCE.getEFactory(StereotypedElementMatcherConfigurationPackage.eNS_URI);
+			StereotypedElementMatcherConfigurationFactory theStereotypedElementMatcherConfigurationFactory = (StereotypedElementMatcherConfigurationFactory) EPackage.Registry.INSTANCE.getEFactory(StereotypedElementMatcherConfigurationPackage.eNS_URI);
 			if (theStereotypedElementMatcherConfigurationFactory != null) {
 				return theStereotypedElementMatcherConfigurationFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new StereotypedElementMatcherConfigurationFactoryImpl();
@@ -51,6 +52,7 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfigurationFactoryImpl() {
@@ -60,20 +62,23 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION: return createStereotypedElementMatcherConfiguration();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case StereotypedElementMatcherConfigurationPackage.STEREOTYPED_ELEMENT_MATCHER_CONFIGURATION:
+			return createStereotypedElementMatcherConfiguration();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfiguration createStereotypedElementMatcherConfiguration() {
@@ -84,15 +89,17 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StereotypedElementMatcherConfigurationPackage getStereotypedElementMatcherConfigurationPackage() {
-		return (StereotypedElementMatcherConfigurationPackage)getEPackage();
+		return (StereotypedElementMatcherConfigurationPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -101,4 +108,4 @@ public class StereotypedElementMatcherConfigurationFactoryImpl extends EFactoryI
 		return StereotypedElementMatcherConfigurationPackage.eINSTANCE;
 	}
 
-} //StereotypedElementMatcherConfigurationFactoryImpl
+} // StereotypedElementMatcherConfigurationFactoryImpl

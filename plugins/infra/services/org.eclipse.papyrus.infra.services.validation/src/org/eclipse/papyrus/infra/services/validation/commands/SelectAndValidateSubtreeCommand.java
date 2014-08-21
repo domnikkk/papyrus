@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -42,14 +42,14 @@ public class SelectAndValidateSubtreeCommand extends AbstractValidateCommand {
 		String idRootPage = "org.eclipse.emf.validation.ui.rootPage"; //$NON-NLS-1$
 		String idConstraints = "org.eclipse.emf.validation.constraintsPrefs"; //$NON-NLS-1$
 		String filter[] = {
-			idRootPage,
-			idConstraints
+				idRootPage,
+				idConstraints
 		};
 		PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(null, idConstraints, filter, null);
 
 		int result = dialog.open();
 
-		if(result == IDialogConstants.OK_ID) {
+		if (result == IDialogConstants.OK_ID) {
 			runValidation(selectedElement);
 		}
 		return null;

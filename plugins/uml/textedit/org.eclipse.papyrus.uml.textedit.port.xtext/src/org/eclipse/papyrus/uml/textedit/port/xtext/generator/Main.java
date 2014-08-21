@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -32,7 +32,7 @@ import com.google.inject.Provider;
 public class Main {
 
 	public static void main(String[] args) {
-		if(args.length == 0) {
+		if (args.length == 0) {
 			System.err.println("Aborting: no path to EMF resource provided!");
 			return;
 		}
@@ -60,8 +60,8 @@ public class Main {
 
 		// validate the resource
 		List<Issue> list = validator.validate(resource, CheckMode.ALL, CancelIndicator.NullImpl);
-		if(!list.isEmpty()) {
-			for(Issue issue : list) {
+		if (!list.isEmpty()) {
+			for (Issue issue : list) {
 				System.err.println(issue);
 			}
 			return;

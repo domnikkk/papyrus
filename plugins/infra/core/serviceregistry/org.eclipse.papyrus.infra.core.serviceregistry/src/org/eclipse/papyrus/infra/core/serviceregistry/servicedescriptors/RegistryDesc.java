@@ -14,14 +14,14 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getParents <em>Parents</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getChildren <em>Children</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getExtends <em>Extends</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServiceSets <em>Service Sets</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#isUnique <em>Is Unique</em>}</li>
- *   <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServices <em>Services</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getParents <em>Parents</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getChildren <em>Children</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getExtends <em>Extends</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServiceSets <em>Service Sets</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#isUnique <em>Is Unique</em>}</li>
+ * <li>{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getServices <em>Services</em>}</li>
  * </ul>
  * </p>
  *
@@ -34,10 +34,10 @@ public interface RegistryDesc extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_Name()
@@ -50,7 +50,9 @@ public interface RegistryDesc extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -62,10 +64,10 @@ public interface RegistryDesc extends EObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Parents</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Parents</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Parents</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_Parents()
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getChildren
@@ -80,10 +82,10 @@ public interface RegistryDesc extends EObject {
 	 * It is bidirectional and its opposite is '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getParents <em>Parents</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Children</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Children</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Children</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_Children()
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getParents
@@ -97,10 +99,10 @@ public interface RegistryDesc extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Extends</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Extends</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Extends</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_Extends()
 	 * @model ordered="false"
@@ -112,10 +114,10 @@ public interface RegistryDesc extends EObject {
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_Description()
@@ -128,7 +130,9 @@ public interface RegistryDesc extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -139,10 +143,10 @@ public interface RegistryDesc extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServiceSetDesc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Service Sets</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Service Sets</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Service Sets</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_ServiceSets()
 	 * @model ordered="false"
@@ -154,10 +158,10 @@ public interface RegistryDesc extends EObject {
 	 * Returns the value of the '<em><b>Is Unique</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Is Unique</em>' attribute isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Is Unique</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Is Unique</em>' attribute.
 	 * @see #setIsUnique(boolean)
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_IsUnique()
@@ -170,7 +174,9 @@ public interface RegistryDesc extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.RegistryDesc#isUnique <em>Is Unique</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Unique</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Is Unique</em>' attribute.
 	 * @see #isUnique()
 	 * @generated
 	 */
@@ -181,10 +187,10 @@ public interface RegistryDesc extends EObject {
 	 * The list contents are of type {@link org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.AbstractServiceDesc}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Services</em>' reference list isn't clear,
-	 * there really should be more of a description here...
+	 * If the meaning of the '<em>Services</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Services</em>' reference list.
 	 * @see org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.ServicedescriptorsPackage#getRegistryDesc_Services()
 	 * @model ordered="false"
@@ -195,6 +201,7 @@ public interface RegistryDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @model required="true" ordered="false" serviceIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" serviceIdRequired="true" serviceIdOrdered="false"
 	 * @generated
 	 */
@@ -203,6 +210,7 @@ public interface RegistryDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @model required="true" ordered="false" serviceSetsIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" serviceSetsIdRequired="true" serviceSetsIdOrdered="false"
 	 * @generated
 	 */
@@ -211,7 +219,9 @@ public interface RegistryDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.boolean" required="true" ordered="false" serviceIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" serviceIdRequired="true" serviceIdOrdered="false"
+	 * 
+	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.boolean" required="true" ordered="false" serviceIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" serviceIdRequired="true"
+	 *        serviceIdOrdered="false"
 	 * @generated
 	 */
 	boolean servicesContains(String serviceId);
@@ -219,7 +229,9 @@ public interface RegistryDesc extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.boolean" required="true" ordered="false" serviceSetsIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" serviceSetsIdRequired="true" serviceSetsIdOrdered="false"
+	 * 
+	 * @model dataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.boolean" required="true" ordered="false" serviceSetsIdDataType="org.eclipse.papyrus.infra.core.serviceregistry.servicedescriptors.String" serviceSetsIdRequired="true"
+	 *        serviceSetsIdOrdered="false"
 	 * @generated
 	 */
 	boolean serviceSetsContains(String serviceSetsId);

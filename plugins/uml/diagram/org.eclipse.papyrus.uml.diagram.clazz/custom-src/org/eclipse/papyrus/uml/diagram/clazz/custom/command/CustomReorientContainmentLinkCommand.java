@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -44,8 +44,8 @@ public class CustomReorientContainmentLinkCommand extends AbstractTransactionalC
 
 	@Override
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
-		EditPart target = (EditPart) ((ReconnectRequest) req).getConnectionEditPart().getTarget();
-		EditPart source = (EditPart) ((ReconnectRequest) req).getTarget().getParent();
+		EditPart target = ((ReconnectRequest) req).getConnectionEditPart().getTarget();
+		EditPart source = ((ReconnectRequest) req).getTarget().getParent();
 		PackageableElement sourceClassifier = (PackageableElement) ((View) source.getModel()).getElement();
 		PackageableElement targetClassifier = (PackageableElement) ((View) target.getModel()).getElement();
 		if (sourceClassifier instanceof org.eclipse.uml2.uml.Class) {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -27,15 +27,15 @@ public class EditingDomainProviderAdapter implements IEditingDomainProvider, Ada
 	}
 
 	public void notifyChanged(Notification notification) {
-		//Nothing
+		// Nothing
 	}
 
 	public Notifier getTarget() {
-		return null; //Nothing
+		return null; // Nothing
 	}
 
 	public void setTarget(Notifier newTarget) {
-		//Nothing
+		// Nothing
 	}
 
 	public boolean isAdapterForType(Object type) {

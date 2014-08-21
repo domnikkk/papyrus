@@ -34,25 +34,25 @@ public class ConnectionPointReferenceEditorConfiguration extends DefaultXtextDir
 
 	@Override
 	public String getTextToEdit(Object editedObject) {
-		if(editedObject instanceof ConnectionPointReference) {
-			ConnectionPointReference ref = (ConnectionPointReference)editedObject;
+		if (editedObject instanceof ConnectionPointReference) {
+			ConnectionPointReference ref = (ConnectionPointReference) editedObject;
 			String label = "";
-			if(!ref.getEntries().isEmpty()) {
+			if (!ref.getEntries().isEmpty()) {
 				label += "entry ";
 				boolean first = true;
-				for(Pseudostate p : ref.getEntries()) {
-					if(!first) {
+				for (Pseudostate p : ref.getEntries()) {
+					if (!first) {
 						label += ", ";
 					} else {
 						first = false;
 					}
 					label += p.getName();
 				}
-			} else if(!ref.getExits().isEmpty()) {
+			} else if (!ref.getExits().isEmpty()) {
 				label += "exit ";
 				boolean first = true;
-				for(Pseudostate p : ref.getExits()) {
-					if(!first) {
+				for (Pseudostate p : ref.getExits()) {
+					if (!first) {
 						label += ", ";
 					} else {
 						first = false;
@@ -66,63 +66,63 @@ public class ConnectionPointReferenceEditorConfiguration extends DefaultXtextDir
 	}
 
 	/*
-	@Override
-	public IPopupEditorHelper createPopupEditorHelper(Object editPart) {
-		// resolves the edit part, and the associated semantic element
-		IGraphicalEditPart graphicalEditPart = null;
-		if(!(editPart instanceof IGraphicalEditPart)) {
-			return null;
-		}
-		graphicalEditPart = (IGraphicalEditPart)editPart;
-		if(!(graphicalEditPart.resolveSemanticElement() instanceof ConnectionPointReference)) {
-			return null;
-		}
-		connectionPoint = (ConnectionPointReference)graphicalEditPart.resolveSemanticElement();
+	 * @Override
+	 * public IPopupEditorHelper createPopupEditorHelper(Object editPart) {
+	 * // resolves the edit part, and the associated semantic element
+	 * IGraphicalEditPart graphicalEditPart = null;
+	 * if(!(editPart instanceof IGraphicalEditPart)) {
+	 * return null;
+	 * }
+	 * graphicalEditPart = (IGraphicalEditPart)editPart;
+	 * if(!(graphicalEditPart.resolveSemanticElement() instanceof ConnectionPointReference)) {
+	 * return null;
+	 * }
+	 * connectionPoint = (ConnectionPointReference)graphicalEditPart.resolveSemanticElement();
+	 * 
+	 * UMLConnectionPointReferenceJavaValidator.init(connectionPoint);
+	 * 
+	 * // retrieves the XText injector
+	 * Injector injector = UMLConnectionPointReferenceActivator.getInstance().getInjector("org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.UMLConnectionPointReference");
+	 * 
+	 * // builds the text content and extension for a temporary file, to be edited by the xtext editor
+	 * String textToEdit = "" + this.getTextToEdit(graphicalEditPart.resolveSemanticElement());
+	 * String fileExtension = "" + ".conncectionpointreference";
+	 * 
+	 * // builds a new IXtextEMFReconciler.
+	 * // Its purpose is to extract any relevant information from the textual specification,
+	 * // and then merge it in the context UML model if necessary
+	 * IXtextEMFReconciler reconciler = new IXtextEMFReconciler() {
+	 * 
+	 * public void reconcile(EObject modelObject, EObject xtextObject) {
+	 * 
+	 * newEntries = new ArrayList<Pseudostate>();
+	 * newExits = new ArrayList<Pseudostate>();
+	 * 
+	 * ConnectionPointReferenceRule rule = (ConnectionPointReferenceRule)xtextObject;
+	 * if(!rule.getEntry().isEmpty()) {
+	 * newEntries.addAll(rule.getEntry());
+	 * } else if(!rule.getExit().isEmpty()) {
+	 * newExits.addAll(rule.getExit());
+	 * }
+	 * 
+	 * // Creates and executes the update command
+	 * UpdateConnectionPointReferenceCommand updateCommand = new UpdateConnectionPointReferenceCommand(connectionPoint);
+	 * 
+	 * try {
+	 * TransactionalEditingDomain domain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(modelObject);
+	 * domain.getCommandStack().execute(new GMFtoEMFCommandWrapper(updateCommand));
+	 * } catch (ServiceException ex) {
+	 * ex.printStackTrace(System.err);
+	 * }
+	 * }
+	 * };
+	 * return super.createPopupEditorHelper(graphicalEditPart, injector, reconciler, textToEdit, fileExtension, new DefaultXtextSemanticValidator());
+	 * }
+	 */
 
-		UMLConnectionPointReferenceJavaValidator.init(connectionPoint);
-
-		// retrieves the XText injector
-		Injector injector = UMLConnectionPointReferenceActivator.getInstance().getInjector("org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.UMLConnectionPointReference");
-
-		// builds the text content and extension for a temporary file, to be edited by the xtext editor
-		String textToEdit = "" + this.getTextToEdit(graphicalEditPart.resolveSemanticElement());
-		String fileExtension = "" + ".conncectionpointreference";
-
-		// builds a new IXtextEMFReconciler.
-		// Its purpose is to extract any relevant information from the textual specification,
-		// and then merge it in the context UML model if necessary
-		IXtextEMFReconciler reconciler = new IXtextEMFReconciler() {
-
-			public void reconcile(EObject modelObject, EObject xtextObject) {
-
-				newEntries = new ArrayList<Pseudostate>();
-				newExits = new ArrayList<Pseudostate>();
-
-				ConnectionPointReferenceRule rule = (ConnectionPointReferenceRule)xtextObject;
-				if(!rule.getEntry().isEmpty()) {
-					newEntries.addAll(rule.getEntry());
-				} else if(!rule.getExit().isEmpty()) {
-					newExits.addAll(rule.getExit());
-				}
-
-				// Creates and executes the update command
-				UpdateConnectionPointReferenceCommand updateCommand = new UpdateConnectionPointReferenceCommand(connectionPoint);
-
-				try {
-					TransactionalEditingDomain domain = ServiceUtilsForEObject.getInstance().getTransactionalEditingDomain(modelObject);
-					domain.getCommandStack().execute(new GMFtoEMFCommandWrapper(updateCommand));
-				} catch (ServiceException ex) {
-					ex.printStackTrace(System.err);
-				}
-			}
-		};
-		return super.createPopupEditorHelper(graphicalEditPart, injector, reconciler, textToEdit, fileExtension, new DefaultXtextSemanticValidator());
-	}
-	*/
-	
 	/**
 	 * @author CEA LIST
-	 * 
+	 *
 	 *         A command for updating the context UML model
 	 */
 	protected class UpdateConnectionPointReferenceCommand extends AbstractTransactionalCommand {

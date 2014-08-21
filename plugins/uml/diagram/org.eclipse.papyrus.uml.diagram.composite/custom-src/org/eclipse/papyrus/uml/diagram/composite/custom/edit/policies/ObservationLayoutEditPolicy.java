@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009-2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,10 @@ import org.eclipse.papyrus.uml.diagram.composite.part.UMLVisualIDRegistry;
  */
 public class ObservationLayoutEditPolicy extends LayoutEditPolicy {
 
+	@Override
 	protected EditPolicy createChildEditPolicy(EditPart child) {
-		View childView = (View)child.getModel();
-		switch(UMLVisualIDRegistry.getVisualID(childView)) {
+		View childView = (View) child.getModel();
+		switch (UMLVisualIDRegistry.getVisualID(childView)) {
 		case DurationObservationNameEditPart.VISUAL_ID:
 		case DurationObservationStereotypeLabelEditPart.VISUAL_ID:
 		case TimeObservationNameEditPart.VISUAL_ID:
@@ -45,16 +46,18 @@ public class ObservationLayoutEditPolicy extends LayoutEditPolicy {
 			return new ExternalLabelPrimaryDragRoleEditPolicy();
 		}
 		EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
-		if(result == null) {
+		if (result == null) {
 			result = new NonResizableEditPolicy();
 		}
 		return result;
 	}
 
+	@Override
 	protected Command getMoveChildrenCommand(Request request) {
 		return null;
 	}
 
+	@Override
 	protected Command getCreateCommand(CreateRequest request) {
 		return null;
 	}

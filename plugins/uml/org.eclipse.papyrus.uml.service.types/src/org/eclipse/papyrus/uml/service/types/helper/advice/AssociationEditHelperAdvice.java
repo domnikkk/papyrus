@@ -7,7 +7,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *		
+ *
  *		CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
@@ -38,6 +38,7 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DestroyReferenceRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.MoveRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRelationshipRequest;
+import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.NotationPackage;
 import org.eclipse.gmf.runtime.notation.View;
@@ -63,14 +64,14 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * This method provides the source type provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target role
 	 */
 	protected Classifier getSourceOwnerType(ConfigureRequest req) {
 		Classifier result = null;
 		Object paramObject = req.getParameter(CreateRelationshipRequest.SOURCE);
-		if(paramObject instanceof Classifier) {
-			result = (Classifier)paramObject;
+		if (paramObject instanceof Classifier) {
+			result = (Classifier) paramObject;
 		}
 
 		return result;
@@ -78,14 +79,14 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * This method provides the target type provided as {@link ConfigureRequest} parameter.
-	 * 
+	 *
 	 * @return the target role
 	 */
 	protected Classifier getTargetOwnerType(ConfigureRequest req) {
 		Classifier result = null;
 		Object paramObject = req.getParameter(CreateRelationshipRequest.TARGET);
-		if(paramObject instanceof Classifier) {
-			result = (Classifier)paramObject;
+		if (paramObject instanceof Classifier) {
+			result = (Classifier) paramObject;
 		}
 
 		return result;
@@ -93,9 +94,9 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Creates a new source {@link Property} from the targetType.
-	 * 
+	 *
 	 * @param targetType
-	 *        the type of the {@link Property}
+	 *            the type of the {@link Property}
 	 * @return the new {@link Property}
 	 */
 	protected Property createSourceProperty(Type targetType) {
@@ -109,9 +110,9 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Creates a new target {@link Property} from the sourceType.
-	 * 
+	 *
 	 * @param sourceType
-	 *        the type of the {@link Property}
+	 *            the type of the {@link Property}
 	 * @return the new {@link Property}
 	 */
 	protected Property createTargetProperty(Type sourceType) {
@@ -126,42 +127,42 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Add the source {@link Property} in the correct container.
-	 * 
+	 *
 	 * @param sourceEnd
-	 *        the semantic end
+	 *            the semantic end
 	 * @param owner
-	 *        the end container
+	 *            the end container
 	 * @param targetType
-	 *        the target type
+	 *            the target type
 	 * @param association
-	 *        the association
+	 *            the association
 	 * @throws UnsupportedOperationException
 	 */
 	protected void addSourceInModel(final Property sourceEnd, Classifier owner, Classifier targetType, Association association) throws UnsupportedOperationException {
 		boolean added = ClassifierUtils.addOwnedAttribute(owner, sourceEnd);
 
-		if(!added) {
+		if (!added) {
 			throw new UnsupportedOperationException("Cannot add a Property on Classifier " + owner.getQualifiedName());
 		}
 	}
 
 	/**
 	 * Add the source {@link Property} in the correct container.
-	 * 
+	 *
 	 * @param targetEnd
-	 *        the semantic end
+	 *            the semantic end
 	 * @param owner
-	 *        the end container
+	 *            the end container
 	 * @param sourceType
-	 *        the source type
+	 *            the source type
 	 * @param association
-	 *        the association
+	 *            the association
 	 * @throws UnsupportedOperationException
 	 */
 	protected void addTargetInModel(Property targetEnd, Classifier owner, Classifier sourceType, Association association) {
 		boolean added = ClassifierUtils.addOwnedAttribute(owner, targetEnd);
 
-		if(!added) {
+		if (!added) {
 			throw new UnsupportedOperationException("Cannot add a Property on Classifier " + owner.getQualifiedName());
 		}
 	}
@@ -173,17 +174,17 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	 * Complete the {@link Association} creation by:
 	 * 		adding its {@link Property} ends in the model
 	 * 		adding the UML Nature on the {@link Association}.
-	 * 
+	 *
 	 * </pre>
 	 */
 	@Override
 	protected ICommand getBeforeConfigureCommand(final ConfigureRequest request) {
 
-		final Association association = (Association)request.getElementToConfigure();
+		final Association association = (Association) request.getElementToConfigure();
 		final Classifier sourceType = getSourceOwnerType(request);
 		final Classifier targetType = getTargetOwnerType(request);
 
-		if((sourceType == null) || (targetType == null)) {
+		if ((sourceType == null) || (targetType == null)) {
 			return UnexecutableCommand.INSTANCE;
 		}
 
@@ -221,26 +222,27 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	 * <pre>
 	 * {@inheritDoc}
 	 * 
-	 * Add a command to destroy {@link Association} ends referenced by the {@link Association} 
+	 * Add a command to destroy {@link Association} ends referenced by the {@link Association}
 	 * to delete.
-	 * 
+	 *
 	 * </pre>
 	 */
 	@Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest req) {
 		List<EObject> dependentsToDestroy = new ArrayList<EObject>();
 
-		List<EObject> dependentsToKeep = (req.getParameter(RequestParameterConstants.DEPENDENTS_TO_KEEP) != null) ? (List<EObject>)req.getParameter(RequestParameterConstants.DEPENDENTS_TO_KEEP) : new ArrayList<EObject>();
+		List<EObject> dependentsToKeep = (req.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.DEPENDENTS_TO_KEEP) != null) ? (List<EObject>) req
+				.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.DEPENDENTS_TO_KEEP) : new ArrayList<EObject>();
 
-		Association association = (Association)req.getElementToDestroy();
-		for(Property end : association.getMemberEnds()) {
-			if(!dependentsToKeep.contains(end)) {
+		Association association = (Association) req.getElementToDestroy();
+		for (Property end : association.getMemberEnds()) {
+			if (!dependentsToKeep.contains(end)) {
 				dependentsToDestroy.add(end);
 			}
 		}
 
-		// Return command to destroy dependents ends 
-		if(!dependentsToDestroy.isEmpty()) {
+		// Return command to destroy dependents ends
+		if (!dependentsToDestroy.isEmpty()) {
 			return req.getDestroyDependentsCommand(dependentsToDestroy);
 		}
 
@@ -252,24 +254,24 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	 * {@inheritDoc}
 	 * 
 	 * Add a command to destroy {@link Association} when only 1 end remains.
-	 * 
+	 *
 	 * </pre>
 	 */
 	@Override
 	protected ICommand getBeforeDestroyReferenceCommand(DestroyReferenceRequest request) {
 		ICommand gmfCommand = super.getBeforeDestroyReferenceCommand(request);
 
-		Association association = (Association)request.getContainer();
-		if((request.getContainingFeature() == UMLPackage.eINSTANCE.getAssociation_MemberEnd()) && (association.getMemberEnds().contains(request.getReferencedObject()))) {
+		Association association = (Association) request.getContainer();
+		if ((request.getContainingFeature() == UMLPackage.eINSTANCE.getAssociation_MemberEnd()) && (association.getMemberEnds().contains(request.getReferencedObject()))) {
 			Set<Property> ends = new HashSet<Property>();
 			ends.addAll(association.getMemberEnds());
 			ends.remove(request.getReferencedObject());
 
-			if(ends.size() <= 2) {
+			if (ends.size() <= 2) {
 
 				DestroyElementRequest destroyRequest = new DestroyElementRequest(association, false);
 				IElementEditService provider = ElementEditServiceUtils.getCommandProvider(association);
-				if(provider != null) {
+				if (provider != null) {
 					ICommand destroyCommand = provider.getEditCommand(destroyRequest);
 					gmfCommand = CompositeCommand.compose(gmfCommand, destroyCommand);
 				}
@@ -285,7 +287,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 	 * {@inheritDoc}
 	 * 
 	 * Add a command to related association end during re-orient.
-	 * 
+	 *
 	 * </pre>
 	 */
 	@Override
@@ -297,16 +299,17 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 		SetRequest setTypeRequest = null;
 
 		// Retrieve re-oriented association and add it to the list of re-factored elements
-		Association association = (Association)request.getRelationship();
-		List<EObject> currentlyRefactoredElements = (request.getParameter(RequestParameterConstants.ASSOCIATION_REFACTORED_ELEMENTS) != null) ? (List<EObject>)request.getParameter(RequestParameterConstants.ASSOCIATION_REFACTORED_ELEMENTS) : new ArrayList<EObject>();
+		Association association = (Association) request.getRelationship();
+		List<EObject> currentlyRefactoredElements = (request.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.ASSOCIATION_REFACTORED_ELEMENTS) != null) ? (List<EObject>) request
+				.getParameter(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.ASSOCIATION_REFACTORED_ELEMENTS) : new ArrayList<EObject>();
 
-		if(currentlyRefactoredElements.contains(association)) {
-			// Abort - already treated 
+		if (currentlyRefactoredElements.contains(association)) {
+			// Abort - already treated
 			return null;
 
 		} else {
 			currentlyRefactoredElements.add(association);
-			request.getParameters().put(RequestParameterConstants.ASSOCIATION_REFACTORED_ELEMENTS, currentlyRefactoredElements);
+			request.getParameters().put(org.eclipse.papyrus.infra.services.edit.utils.RequestParameterConstants.ASSOCIATION_REFACTORED_ELEMENTS, currentlyRefactoredElements);
 		}
 
 		// Retrieve property ends of the Association (assumed to be binary)
@@ -315,8 +318,8 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 		EObject modifiedPropertyType = null;
 
-		if(request.getDirection() == ReorientRelationshipRequest.REORIENT_SOURCE) {
-			if(!association.getOwnedEnds().contains(semanticSource)) {
+		if (request.getDirection() == ReorientRequest.REORIENT_SOURCE) {
+			if (!association.getOwnedEnds().contains(semanticSource)) {
 				moveRequest = new MoveRequest(request.getNewRelationshipEnd(), semanticSource);
 			}
 
@@ -324,8 +327,8 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 			setTypeRequest = new SetRequest(modifiedPropertyType, UMLPackage.eINSTANCE.getTypedElement_Type(), request.getNewRelationshipEnd());
 		}
 
-		if(request.getDirection() == ReorientRelationshipRequest.REORIENT_TARGET) {
-			if(!association.getOwnedEnds().contains(semanticTarget)) {
+		if (request.getDirection() == ReorientRequest.REORIENT_TARGET) {
+			if (!association.getOwnedEnds().contains(semanticTarget)) {
 				moveRequest = new MoveRequest(request.getNewRelationshipEnd(), semanticTarget);
 			}
 
@@ -333,23 +336,23 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 			setTypeRequest = new SetRequest(modifiedPropertyType, UMLPackage.eINSTANCE.getTypedElement_Type(), request.getNewRelationshipEnd());
 		}
 
-		if(moveRequest != null) {
+		if (moveRequest != null) {
 			// Propagate parameters to the move request
 			moveRequest.addParameters(request.getParameters());
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(request.getNewRelationshipEnd());
-			if(provider != null) {
+			if (provider != null) {
 				ICommand moveCommand = provider.getEditCommand(moveRequest);
 				gmfCommand = CompositeCommand.compose(gmfCommand, moveCommand);
 			}
 		}
 
-		if(setTypeRequest != null) {
+		if (setTypeRequest != null) {
 			// Propagate parameters to the set request
 			setTypeRequest.addParameters(request.getParameters());
 
 			IElementEditService provider = ElementEditServiceUtils.getCommandProvider(modifiedPropertyType);
-			if(provider != null) {
+			if (provider != null) {
 				ICommand setTypeCommand = provider.getEditCommand(setTypeRequest);
 				gmfCommand = CompositeCommand.compose(gmfCommand, setTypeCommand);
 			}
@@ -359,8 +362,8 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 		Set<View> viewsToDestroy = new HashSet<View>();
 		viewsToDestroy.addAll(getViewsToDestroy(association, request));
 
-		//return the command to destroy all these views
-		if(!viewsToDestroy.isEmpty()) {
+		// return the command to destroy all these views
+		if (!viewsToDestroy.isEmpty()) {
 			DestroyDependentsRequest ddr = new DestroyDependentsRequest(request.getEditingDomain(), request.getRelationship(), false);
 			ddr.setClientContext(request.getClientContext());
 			ddr.addParameters(request.getParameters());
@@ -368,7 +371,7 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 			gmfCommand = CompositeCommand.compose(gmfCommand, destroyViewsCommand);
 		}
 
-		if(gmfCommand != null) {
+		if (gmfCommand != null) {
 			gmfCommand.reduce();
 		}
 		return gmfCommand;
@@ -376,18 +379,18 @@ public class AssociationEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	/**
 	 * Returns all views referencing Association except the view currently re-oriented.
-	 * 
+	 *
 	 * @param association
-	 *        the association referenced by views
+	 *            the association referenced by views
 	 * @param request
-	 *        the re-orient relationship request
+	 *            the re-orient relationship request
 	 * @return the list of views to be destroy
 	 */
 	private Set<View> getViewsToDestroy(Association association, ReorientRelationshipRequest request) {
 		Set<View> viewsToDestroy = new HashSet<View>();
 
 		// Find all views representing the Associations
-		EReference[] refs = new EReference[]{ NotationPackage.eINSTANCE.getView_Element() };
+		EReference[] refs = new EReference[] { NotationPackage.eINSTANCE.getView_Element() };
 		@SuppressWarnings("unchecked")
 		Collection<View> associationViews = EMFCoreUtil.getReferencers(association, refs);
 

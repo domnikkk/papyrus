@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -49,7 +49,7 @@ public class UMLNavigationHelper {
 	}
 
 	public static String getNavigationTypeFromFeature(EStructuralFeature feature) {
-		if(feature == null) {
+		if (feature == null) {
 			// no feature specified, report structural
 			// because it is the root element
 			return STRUCTURAL_NAVIGATION;

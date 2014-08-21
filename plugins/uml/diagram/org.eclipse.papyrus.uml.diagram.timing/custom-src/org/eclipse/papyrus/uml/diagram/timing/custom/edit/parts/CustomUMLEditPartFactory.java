@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2012 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,10 +53,10 @@ public class CustomUMLEditPartFactory extends UMLEditPartFactory {
 
 	@Override
 	public EditPart createEditPart(final EditPart context, final Object model) {
-		if(model instanceof View) {
-			final View view = (View)model;
+		if (model instanceof View) {
+			final View view = (View) model;
 			final int visualID = UMLVisualIDRegistry.getVisualID(view);
-			switch(visualID) {
+			switch (visualID) {
 			case TimingDiagramEditPart.VISUAL_ID:// 1
 				return new CustomTimingDiagramEditPart(view);
 			case InteractionEditPartTN.VISUAL_ID:// 2

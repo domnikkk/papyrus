@@ -16,91 +16,100 @@ import org.eclipse.papyrus.uml.textedit.connectionpointreference.xtext.uMLConnec
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class UMLConnectionPointReferenceFactoryImpl extends EFactoryImpl implements UMLConnectionPointReferenceFactory
 {
-  /**
-   * Creates the default factory implementation.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public static UMLConnectionPointReferenceFactory init()
-  {
-    try
-    {
-      UMLConnectionPointReferenceFactory theUMLConnectionPointReferenceFactory = (UMLConnectionPointReferenceFactory)EPackage.Registry.INSTANCE.getEFactory(UMLConnectionPointReferencePackage.eNS_URI);
-      if (theUMLConnectionPointReferenceFactory != null)
-      {
-        return theUMLConnectionPointReferenceFactory;
-      }
-    }
-    catch (Exception exception)
-    {
-      EcorePlugin.INSTANCE.log(exception);
-    }
-    return new UMLConnectionPointReferenceFactoryImpl();
-  }
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public static UMLConnectionPointReferenceFactory init()
+	{
+		try
+		{
+			UMLConnectionPointReferenceFactory theUMLConnectionPointReferenceFactory = (UMLConnectionPointReferenceFactory) EPackage.Registry.INSTANCE.getEFactory(UMLConnectionPointReferencePackage.eNS_URI);
+			if (theUMLConnectionPointReferenceFactory != null)
+			{
+				return theUMLConnectionPointReferenceFactory;
+			}
+		} catch (Exception exception)
+		{
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new UMLConnectionPointReferenceFactoryImpl();
+	}
 
-  /**
-   * Creates an instance of the factory.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UMLConnectionPointReferenceFactoryImpl()
-  {
-    super();
-  }
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public UMLConnectionPointReferenceFactoryImpl()
+	{
+		super();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EObject create(EClass eClass)
-  {
-    switch (eClass.getClassifierID())
-    {
-      case UMLConnectionPointReferencePackage.CONNECTION_POINT_REFERENCE_RULE: return createConnectionPointReferenceRule();
-      default:
-        throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass)
+	{
+		switch (eClass.getClassifierID())
+		{
+		case UMLConnectionPointReferencePackage.CONNECTION_POINT_REFERENCE_RULE:
+			return createConnectionPointReferenceRule();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConnectionPointReferenceRule createConnectionPointReferenceRule()
-  {
-    ConnectionPointReferenceRuleImpl connectionPointReferenceRule = new ConnectionPointReferenceRuleImpl();
-    return connectionPointReferenceRule;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public ConnectionPointReferenceRule createConnectionPointReferenceRule()
+	{
+		ConnectionPointReferenceRuleImpl connectionPointReferenceRule = new ConnectionPointReferenceRuleImpl();
+		return connectionPointReferenceRule;
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UMLConnectionPointReferencePackage getUMLConnectionPointReferencePackage()
-  {
-    return (UMLConnectionPointReferencePackage)getEPackage();
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public UMLConnectionPointReferencePackage getUMLConnectionPointReferencePackage()
+	{
+		return (UMLConnectionPointReferencePackage) getEPackage();
+	}
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @deprecated
-   * @generated
-   */
-  @Deprecated
-  public static UMLConnectionPointReferencePackage getPackage()
-  {
-    return UMLConnectionPointReferencePackage.eINSTANCE;
-  }
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static UMLConnectionPointReferencePackage getPackage()
+	{
+		return UMLConnectionPointReferencePackage.eINSTANCE;
+	}
 
-} //UMLConnectionPointReferenceFactoryImpl
+} // UMLConnectionPointReferenceFactoryImpl

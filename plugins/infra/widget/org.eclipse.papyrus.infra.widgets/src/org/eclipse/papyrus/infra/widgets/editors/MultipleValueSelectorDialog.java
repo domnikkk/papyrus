@@ -178,9 +178,9 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Constructor.
 	 *
 	 * @param parentShell
-	 *        The shell in which this dialog should be opened
+	 *            The shell in which this dialog should be opened
 	 * @param selector
-	 *        The element selector used by this dialog
+	 *            The element selector used by this dialog
 	 */
 	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector) {
 		this(parentShell, selector, null, false, false);
@@ -190,11 +190,11 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Constructor.
 	 *
 	 * @param parentShell
-	 *        The shell in which this dialog should be opened
+	 *            The shell in which this dialog should be opened
 	 * @param selector
-	 *        The element selector used by this dialog
+	 *            The element selector used by this dialog
 	 * @param title
-	 *        The title of this dialog
+	 *            The title of this dialog
 	 */
 	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector, String title) {
 		this(parentShell, selector, title, false, false);
@@ -205,11 +205,11 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Constructor.
 	 *
 	 * @param parentShell
-	 *        The shell in which this dialog should be opened
+	 *            The shell in which this dialog should be opened
 	 * @param selector
-	 *        The element selector used by this dialog
+	 *            The element selector used by this dialog
 	 * @param unique
-	 *        True if the values returned by this dialog should be unique
+	 *            True if the values returned by this dialog should be unique
 	 */
 	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector, boolean unique) {
 		this(parentShell, selector, null, unique, false);
@@ -220,13 +220,13 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Constructor.
 	 *
 	 * @param parentShell
-	 *        The shell in which this dialog should be opened
+	 *            The shell in which this dialog should be opened
 	 * @param selector
-	 *        The element selector used by this dialog
+	 *            The element selector used by this dialog
 	 * @param title
-	 *        The title of this dialog
+	 *            The title of this dialog
 	 * @param unique
-	 *        True if the values returned by this dialog should be unique
+	 *            True if the values returned by this dialog should be unique
 	 */
 	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector, String title, boolean unique, boolean ordered) {
 		this(parentShell, selector, title, unique, false, MANY);
@@ -237,15 +237,15 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Constructor.
 	 *
 	 * @param parentShell
-	 *        The shell in which this dialog should be opened
+	 *            The shell in which this dialog should be opened
 	 * @param selector
-	 *        The element selector used by this dialog
+	 *            The element selector used by this dialog
 	 * @param title
-	 *        The title of this dialog
+	 *            The title of this dialog
 	 * @param unique
-	 *        True if the values returned by this dialog should be unique
+	 *            True if the values returned by this dialog should be unique
 	 * @param upperBound
-	 *        The maximum number of values selected.
+	 *            The maximum number of values selected.
 	 */
 	public MultipleValueSelectorDialog(Shell parentShell, IElementSelector selector, String title, boolean unique, boolean ordered, int upperBound) {
 		super(parentShell);
@@ -284,7 +284,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 */
 	protected void createDialogContents() {
 		Composite parent = getDialogArea();
-		GridLayout layout = (GridLayout)parent.getLayout();
+		GridLayout layout = (GridLayout) parent.getLayout();
 		layout.numColumns = 2;
 		layout.makeColumnsEqualWidth = true;
 
@@ -307,14 +307,14 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 */
 	@Override
 	protected Composite getDialogArea() {
-		return (Composite)super.getDialogArea();
+		return (Composite) super.getDialogArea();
 	}
 
 	/**
 	 * Creates the selector section
 	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	private void createSelectorSection(Composite parent) {
 		selectorSection = new Composite(parent, SWT.NONE);
@@ -327,7 +327,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Creates the main controls section (Add, remove, Add all, remove all)
 	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	private void createControlsSection(Composite parent) {
 		buttonsSection = new Composite(parent, SWT.NONE);
@@ -349,7 +349,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 		addAll.setToolTipText(Messages.MultipleValueSelectorDialog_AddAllElements);
 
 		/* Disable the bouton 'addAll' if currently chosen elements is greater than the maximum number of values selected */
-		if(this.upperBound != MANY && allElements.size() > this.upperBound) {
+		if (this.upperBound != MANY && allElements.size() > this.upperBound) {
 			addAll.setEnabled(false);
 		}
 
@@ -364,12 +364,12 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Creates the list displaying the currently selected elements
 	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	private void createListSection(Composite parent) {
 
 		selectedElements = new Tree(parent, SWT.MULTI | SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL);
-		//		selectedElements.addSelectionListener(this);
+		// selectedElements.addSelectionListener(this);
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		selectedElements.setLayoutData(data);
 		selectedElementsViewer = new TreeViewer(selectedElements);
@@ -379,7 +379,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 
 		selectedElementsViewer.setContentProvider(CollectionContentProvider.instance);
 
-		if(labelProvider != null) {
+		if (labelProvider != null) {
 			selectedElementsViewer.setLabelProvider(labelProvider);
 		}
 
@@ -391,7 +391,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Creates the up/down controls section
 	 *
 	 * @param parent
-	 *        The composite in which the section is created
+	 *            The composite in which the section is created
 	 */
 	private void createRightButtonsSection(Composite parent) {
 		rightButtonsSection = new Composite(parent, SWT.NONE);
@@ -434,23 +434,23 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * @see org.eclipse.swt.events.SelectionListener#widgetSelected(org.eclipse.swt.events.SelectionEvent)
 	 *
 	 * @param e
-	 *        The event that occurred
+	 *            The event that occurred
 	 */
 	@Override
 	public void widgetSelected(SelectionEvent e) {
-		if(e.widget == add) {
+		if (e.widget == add) {
 			addAction();
-		} else if(e.widget == remove) {
+		} else if (e.widget == remove) {
 			removeAction();
-		} else if(e.widget == addAll) {
+		} else if (e.widget == addAll) {
 			addAllAction();
-		} else if(e.widget == removeAll) {
+		} else if (e.widget == removeAll) {
 			removeAllAction();
-		} else if(e.widget == up) {
+		} else if (e.widget == up) {
 			upAction();
-		} else if(e.widget == down) {
+		} else if (e.widget == down) {
 			downAction();
-		} else if(e.widget == create) {
+		} else if (e.widget == create) {
 			createAction();
 		}
 
@@ -462,7 +462,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * new instances and edit existing ones.
 	 *
 	 * @param factory
-	 *        The {@link ReferenceValueFactory} to be used by this editor
+	 *            The {@link ReferenceValueFactory} to be used by this editor
 	 */
 	public void setFactory(ReferenceValueFactory factory) {
 		this.factory = factory;
@@ -492,13 +492,13 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Handles the "Up" action
 	 */
 	protected void upAction() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsViewer.getSelection();
 
-		//We need a list to move objects. LinkedHashSet can't do that
+		// We need a list to move objects. LinkedHashSet can't do that
 		java.util.List<Object> list = new LinkedList<Object>(allElements);
-		for(Object o : selection.toArray()) {
+		for (Object o : selection.toArray()) {
 			int oldIndex = list.indexOf(o);
-			if(oldIndex > 0) {
+			if (oldIndex > 0) {
 				move(list, oldIndex, oldIndex - 1);
 			}
 		}
@@ -515,18 +515,18 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Handles the "Down" action
 	 */
 	protected void downAction() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsViewer.getSelection();
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsViewer.getSelection();
 
-		//We need a list to move objects. LinkedHashSet can't do that
+		// We need a list to move objects. LinkedHashSet can't do that
 		java.util.List<Object> list = new LinkedList<Object>(allElements);
 
 		int maxIndex = list.size() - 1;
 
 		Object[] selectionArray = selection.toArray();
-		for(int i = selectionArray.length - 1; i >= 0; i--) {
+		for (int i = selectionArray.length - 1; i >= 0; i--) {
 			Object o = selectionArray[i];
 			int oldIndex = list.indexOf(o);
-			if(oldIndex < maxIndex) {
+			if (oldIndex < maxIndex) {
 				move(list, oldIndex, oldIndex + 1);
 			}
 		}
@@ -543,7 +543,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Handles the "Create" action
 	 */
 	protected void createAction() {
-		if(factory == null) {
+		if (factory == null) {
 			return;
 		}
 
@@ -556,14 +556,14 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 			newObject = null;
 		}
 
-		if(newObject == null) {
+		if (newObject == null) {
 			return;
 		}
 
 		newObjects.add(newObject);
 		selector.newObjectCreated(newObject);
 
-		Object[] createdObjects = new Object[]{ newObject };
+		Object[] createdObjects = new Object[] { newObject };
 		addElements(createdObjects);
 
 		selector.setSelectedElements(allElements.toArray());
@@ -573,17 +573,17 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Moves an element from oldIndex to newIndex
 	 *
 	 * @param list
-	 *        The list in which to move the object
+	 *            The list in which to move the object
 	 * @param oldIndex
 	 * @param newIndex
 	 */
 	private void move(java.util.List<Object> list, int oldIndex, int newIndex) {
 		int size = list.size();
 
-		if(oldIndex < 0 || oldIndex >= size) {
+		if (oldIndex < 0 || oldIndex >= size) {
 			throw new IndexOutOfBoundsException("oldIndex: " + oldIndex + ", size:" + size); //$NON-NLS-1$ //$NON-NLS-2$
 		}
-		if(newIndex < 0 || newIndex >= size) {
+		if (newIndex < 0 || newIndex >= size) {
 			throw new IndexOutOfBoundsException("newIndex: " + newIndex + ", size:" + size); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		Object element = list.remove(oldIndex);
@@ -594,12 +594,12 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Handles the "Remove" action
 	 */
 	protected void removeAction() {
-		IStructuredSelection selection = (IStructuredSelection)selectedElementsViewer.getSelection();
-		if(selection.isEmpty()) {
+		IStructuredSelection selection = (IStructuredSelection) selectedElementsViewer.getSelection();
+		if (selection.isEmpty()) {
 			return;
 		}
 
-		for(Object element : selection.toArray()) {
+		for (Object element : selection.toArray()) {
 			allElements.remove(element);
 		}
 
@@ -612,7 +612,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Handles the "Delete" action
 	 */
 	protected void deleteAction() {
-		//TODO
+		// TODO
 	}
 
 	/**
@@ -638,11 +638,11 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * "Add" and "Add all" actions)
 	 *
 	 * @param elements
-	 *        The elements to be added
+	 *            The elements to be added
 	 */
 	@Override
 	public void addElements(Object[] elements) {
-		if(elements != null) {
+		if (elements != null) {
 			allElements.addAll(Arrays.asList(elements));
 			selectedElementsViewer.refresh();
 		}
@@ -650,10 +650,10 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 
 	@Override
 	protected void okPressed() {
-		if(factory != null) {
+		if (factory != null) {
 			java.util.List<Object> objectsToValidate = new LinkedList<Object>();
-			for(Object object : newObjects) {
-				if(allElements.contains(object)) {
+			for (Object object : newObjects) {
+				if (allElements.contains(object)) {
 					objectsToValidate.add(object);
 				}
 			}
@@ -668,7 +668,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 
 	@Override
 	public void widgetDefaultSelected(SelectionEvent e) {
-		//Nothing (see #doubleClick())
+		// Nothing (see #doubleClick())
 	}
 
 	/**
@@ -698,8 +698,8 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 
 		/* Disable the bouton 'add' if the upperBound is reached */
 		boolean canAdd = true;
-		if(this.upperBound != MANY) {
-			if(allElements.size() >= this.upperBound) {
+		if (this.upperBound != MANY) {
+			if (allElements.size() >= this.upperBound) {
 				canAdd = false;
 			}
 		}
@@ -708,7 +708,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	}
 
 	private void updateControl(Control control, boolean enabled) {
-		if(control != null) {
+		if (control != null) {
 			control.setEnabled(enabled);
 		}
 	}
@@ -730,7 +730,7 @@ public class MultipleValueSelectorDialog extends SelectionDialog implements ISel
 	 * Sets the optional context of the element that is being edited, in which others will be added and removed.
 	 *
 	 * @param contextElement
-	 *        the model element that is being edited
+	 *            the model element that is being edited
 	 */
 	public void setContextElement(Object contextElement) {
 		this.contextElement = contextElement;

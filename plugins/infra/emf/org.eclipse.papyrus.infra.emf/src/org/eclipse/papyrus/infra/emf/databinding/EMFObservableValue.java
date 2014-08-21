@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -25,7 +25,7 @@ import org.eclipse.papyrus.infra.emf.utils.EMFHelper;
 
 /**
  * An Observable value to edit EMF values through EMF commands.
- * 
+ *
  * @author Camille Letavernier
  */
 public class EMFObservableValue extends EObjectObservableValue {
@@ -36,31 +36,31 @@ public class EMFObservableValue extends EObjectObservableValue {
 	protected EditingDomain domain;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param eObject
-	 *        The eObject being edited
+	 *            The eObject being edited
 	 * @param eStructuralFeature
-	 *        The structuralFeature being edited
+	 *            The structuralFeature being edited
 	 * @param domain
-	 *        The Editing domain on which the commands will be executed
+	 *            The Editing domain on which the commands will be executed
 	 */
 	public EMFObservableValue(EObject eObject, EStructuralFeature eStructuralFeature, EditingDomain domain) {
 		this(Realm.getDefault(), eObject, eStructuralFeature, domain);
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param realm
 	 * @param eObject
-	 *        The eObject being edited
+	 *            The eObject being edited
 	 * @param eStructuralFeature
-	 *        The structuralFeature being edited
+	 *            The structuralFeature being edited
 	 * @param domain
-	 *        The Editing domain on which the commands will be executed
+	 *            The Editing domain on which the commands will be executed
 	 */
 	public EMFObservableValue(Realm realm, EObject eObject, EStructuralFeature eStructuralFeature, EditingDomain domain) {
 		super(realm, eObject, eStructuralFeature);
@@ -70,7 +70,7 @@ public class EMFObservableValue extends EObjectObservableValue {
 	@Override
 	protected void doSetValue(Object value) {
 		EObject eObject = EMFHelper.getEObject(value);
-		if(eObject != null) {
+		if (eObject != null) {
 			value = eObject;
 		}
 
@@ -80,9 +80,9 @@ public class EMFObservableValue extends EObjectObservableValue {
 
 	/**
 	 * Returns the command used to edit the value
-	 * 
+	 *
 	 * @param value
-	 *        The new value
+	 *            The new value
 	 * @return
 	 *         The Set command used to edit the value
 	 */
@@ -91,8 +91,8 @@ public class EMFObservableValue extends EObjectObservableValue {
 
 		CompoundCommand cc = new CompoundCommand("Edit value"); //$NON-NLS-1$
 
-		if (oldValue instanceof EObject && eStructuralFeature instanceof EReference && ((EReference)eStructuralFeature).isContainment()) {
-			cc.append(DeleteCommand.create(domain, (EObject)oldValue));
+		if (oldValue instanceof EObject && eStructuralFeature instanceof EReference && ((EReference) eStructuralFeature).isContainment()) {
+			cc.append(DeleteCommand.create(domain, oldValue));
 		}
 
 		cc.append(new SetCommand(domain, eObject, eStructuralFeature, value));

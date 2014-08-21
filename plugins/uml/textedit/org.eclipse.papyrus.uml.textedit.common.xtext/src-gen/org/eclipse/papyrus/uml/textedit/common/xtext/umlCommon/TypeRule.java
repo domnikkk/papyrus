@@ -14,8 +14,8 @@ import org.eclipse.uml2.uml.Type;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getPath <em>Path</em>}</li>
- *   <li>{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getType <em>Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getPath <em>Path</em>}</li>
+ * <li>{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,56 +25,60 @@ import org.eclipse.uml2.uml.Type;
  */
 public interface TypeRule extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Path</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Path</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Path</em>' containment reference.
-   * @see #setPath(QualifiedName)
-   * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage#getTypeRule_Path()
-   * @model containment="true"
-   * @generated
-   */
-  QualifiedName getPath();
+	/**
+	 * Returns the value of the '<em><b>Path</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Path</em>' containment reference isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Path</em>' containment reference.
+	 * @see #setPath(QualifiedName)
+	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage#getTypeRule_Path()
+	 * @model containment="true"
+	 * @generated
+	 */
+	QualifiedName getPath();
 
-  /**
-   * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getPath <em>Path</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Path</em>' containment reference.
-   * @see #getPath()
-   * @generated
-   */
-  void setPath(QualifiedName value);
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getPath <em>Path</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Path</em>' containment reference.
+	 * @see #getPath()
+	 * @generated
+	 */
+	void setPath(QualifiedName value);
 
-  /**
-   * Returns the value of the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Type</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(Type)
-   * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage#getTypeRule_Type()
-   * @model
-   * @generated
-   */
-  Type getType();
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' reference isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Type</em>' reference.
+	 * @see #setType(Type)
+	 * @see org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.UmlCommonPackage#getTypeRule_Type()
+	 * @model
+	 * @generated
+	 */
+	Type getType();
 
-  /**
-   * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getType <em>Type</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' reference.
-   * @see #getType()
-   * @generated
-   */
-  void setType(Type value);
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.uml.textedit.common.xtext.umlCommon.TypeRule#getType <em>Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Type</em>' reference.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(Type value);
 
 } // TypeRule

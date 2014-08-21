@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 Atos.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -35,9 +35,9 @@ public abstract class AbstractControlResourceCommand extends AbstractControlComm
 
 	/**
 	 * @param request
-	 *        {@link CreateControlResource#request}
+	 *            {@link CreateControlResource#request}
 	 * @param newFileExtension
-	 *        {@link CreateControlResource#newFileExtension}
+	 *            {@link CreateControlResource#newFileExtension}
 	 */
 	@SuppressWarnings("rawtypes")
 	public AbstractControlResourceCommand(ControlModeRequest request, String newFileExtension, String label, List affectedFiles) {
@@ -50,7 +50,7 @@ public abstract class AbstractControlResourceCommand extends AbstractControlComm
 	 */
 	public ResourceSet getResourceSet() {
 		Resource eResource = getRequest().getTargetObject().eResource();
-		if(eResource == null) {
+		if (eResource == null) {
 			throw new RuntimeException("EObject not link to resource set");
 		}
 		return eResource.getResourceSet();
@@ -60,7 +60,7 @@ public abstract class AbstractControlResourceCommand extends AbstractControlComm
 	 * @return {@link CreateControlResource#newFileExtension}
 	 */
 	protected String getFileExtension() {
-		if(newFileExtension == null) {
+		if (newFileExtension == null) {
 			return getTargetUri().fileExtension();
 		}
 		return newFileExtension;
@@ -70,7 +70,7 @@ public abstract class AbstractControlResourceCommand extends AbstractControlComm
 	 * Return the new URI using the request
 	 */
 	public URI getTargetUri() {
-		if(newFileExtension == null) {
+		if (newFileExtension == null) {
 			return getRequest().getNewURI();
 		}
 		return getRequest().getNewURI().trimFileExtension().appendFileExtension(newFileExtension);
@@ -78,11 +78,11 @@ public abstract class AbstractControlResourceCommand extends AbstractControlComm
 
 	/**
 	 * Get the URI from the source using the request and the file extension
-	 * 
+	 *
 	 * @return
 	 */
 	public URI getSourceUri() {
-		if(newFileExtension == null) {
+		if (newFileExtension == null) {
 			return getRequest().getSourceURI();
 		}
 		return getRequest().getSourceURI().trimFileExtension().appendFileExtension(newFileExtension);

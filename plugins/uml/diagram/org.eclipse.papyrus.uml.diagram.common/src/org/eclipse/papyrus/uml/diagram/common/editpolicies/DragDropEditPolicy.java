@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2008 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation.
  *
  ******************************************************************************/
@@ -39,10 +39,11 @@ import org.eclipse.papyrus.uml.diagram.common.util.MDTUtil;
  * A DragAndDropEditPolicy for compartment nodes. Checks whether the dropped elements can be shown
  * as views in the compartment and if so, created their views and add their references to the
  * diagram's list of references.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @deprecated
  */
+@Deprecated
 public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy {
 
 	/** The view resolver. */
@@ -50,9 +51,9 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Instantiates a new drag drop edit policy.
-	 * 
+	 *
 	 * @param resolver
-	 *        the resolver
+	 *            the resolver
 	 */
 	public DragDropEditPolicy(ViewResolver resolver) {
 		this.viewResolver = resolver;
@@ -60,7 +61,7 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Gets the view resolver.
-	 * 
+	 *
 	 * @return the view resolver
 	 */
 	protected ViewResolver getViewResolver() {
@@ -69,12 +70,12 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Gets the graphical host.
-	 * 
+	 *
 	 * @return the graphical host
 	 */
 	public IGraphicalEditPart getGraphicalHost() {
-		if(getHost() instanceof IGraphicalEditPart) {
-			return (IGraphicalEditPart)getHost();
+		if (getHost() instanceof IGraphicalEditPart) {
+			return (IGraphicalEditPart) getHost();
 		}
 		return null;
 	}
@@ -87,12 +88,12 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 	 */
 	@Override
 	protected Command getDropCommand(ChangeBoundsRequest request) {
-		if(request.getType() != null && request.getType().equals(RequestConstants.REQ_DROP)) {
+		if (request.getType() != null && request.getType().equals(RequestConstants.REQ_DROP)) {
 			// for each EditPart, get its semantic element and check if there's
 			// any View available for that kind of element in this container.
-			for(Object o : request.getEditParts()) {
+			for (Object o : request.getEditParts()) {
 				EObject element = MDTUtil.resolveSemantic(o);
-				if(getViewResolver().isEObjectNode(element) == false) {
+				if (getViewResolver().isEObjectNode(element) == false) {
 					return UnexecutableCommand.INSTANCE;
 				}
 			}
@@ -119,18 +120,18 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Find nodes in drop.
-	 * 
+	 *
 	 * @param request
-	 *        the request
-	 * 
+	 *            the request
+	 *
 	 * @return the list< e object>
 	 */
 	protected List<EObject> findNodesInDrop(DropObjectsRequest request) {
 		List<EObject> nodes = new ArrayList<EObject>();
-		for(Object object : request.getObjects()) {
-			if(object instanceof EObject) {
-				EObject element = (EObject)object;
-				if(getViewResolver().isEObjectNode(element)) {
+		for (Object object : request.getObjects()) {
+			if (object instanceof EObject) {
+				EObject element = (EObject) object;
+				if (getViewResolver().isEObjectNode(element)) {
 					nodes.add(element);
 				}
 			}
@@ -140,18 +141,18 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Find edges in drop.
-	 * 
+	 *
 	 * @param request
-	 *        the request
-	 * 
+	 *            the request
+	 *
 	 * @return the list< e object>
 	 */
 	protected List<EObject> findEdgesInDrop(DropObjectsRequest request) {
 		List<EObject> edges = new ArrayList<EObject>();
-		for(Object object : request.getObjects()) {
-			if(object instanceof EObject) {
-				EObject element = (EObject)object;
-				if(getViewResolver().isEObjectLink(element)) {
+		for (Object object : request.getObjects()) {
+			if (object instanceof EObject) {
+				EObject element = (EObject) object;
+				if (getViewResolver().isEObjectLink(element)) {
 					edges.add(element);
 				}
 			}
@@ -161,17 +162,17 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Creates the view descriptors.
-	 * 
+	 *
 	 * @param elements
-	 *        the elements
-	 * 
+	 *            the elements
+	 *
 	 * @return the list< view descriptor>
 	 */
 	protected List<ViewDescriptor> createViewDescriptors(List<EObject> elements) {
 		List<ViewDescriptor> viewDescriptors = new ArrayList<ViewDescriptor>();
-		for(EObject element : elements) {
+		for (EObject element : elements) {
 			int semanticHint = viewResolver.getEObjectSemanticHint(element);
-			if(semanticHint > -1) {
+			if (semanticHint > -1) {
 				ViewDescriptor viewDescriptor = new ViewDescriptor(new EObjectAdapter(element), Node.class, String.valueOf(semanticHint), getGraphicalHost().getDiagramPreferencesHint());
 				viewDescriptors.add(viewDescriptor);
 			}
@@ -181,16 +182,16 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Builds the drop command.
-	 * 
+	 *
 	 * @param request
-	 *        the request
+	 *            the request
 	 * @param nodes
-	 *        the nodes
+	 *            the nodes
 	 * @param views
-	 *        the views
+	 *            the views
 	 * @param edges
-	 *        the edges
-	 * 
+	 *            the edges
+	 *
 	 * @return the command
 	 */
 	protected Command buildDropCommand(DropObjectsRequest request, List<EObject> nodes, List<ViewDescriptor> views, List<EObject> edges) {
@@ -199,12 +200,12 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 		Command edgesCommand = buildAddEObjectsReferencesCommand(edges);
 		command = command == null ? edgesCommand : command.chain(edgesCommand);
 		// if no nodes or edges are to be added, there is nothing to do.
-		if(command == null) {
+		if (command == null) {
 			return null;
 		}
 		// build the create views commands.
 		Command viewsCommand = createViewsAndArrangeCommand(request, views);
-		if(viewsCommand != null && viewsCommand.canExecute()) {
+		if (viewsCommand != null && viewsCommand.canExecute()) {
 			command = command.chain(viewsCommand);
 		}
 		// update diagram.
@@ -215,17 +216,17 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 
 	/**
 	 * Builds the add e objects references command.
-	 * 
+	 *
 	 * @param elements
-	 *        the elements
-	 * 
+	 *            the elements
+	 *
 	 * @return the command
 	 */
 	protected Command buildAddEObjectsReferencesCommand(List<EObject> elements) {
-		if(elements != null && elements.size() > 0) {
+		if (elements != null && elements.size() > 0) {
 			TransactionalEditingDomain domain = getGraphicalHost().getEditingDomain();
 			View view = getGraphicalHost().getNotationView();
-			if(view != null) {
+			if (view != null) {
 				return new ICommandProxy(new AddEObjectReferencesToDiagram(domain, view.getDiagram(), elements));
 			}
 		}
@@ -235,12 +236,12 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 	/**
 	 * createViewsAndArrangeCommand Method to create all the view based on the
 	 * viewDescriptors list and provide a default arrangement of them.
-	 * 
+	 *
 	 * @param dropRequest
-	 *        the drop request
+	 *            the drop request
 	 * @param viewDescriptors
-	 *        the view descriptors
-	 * 
+	 *            the view descriptors
+	 *
 	 * @return command
 	 */
 	protected Command createViewsAndArrangeCommand(DropObjectsRequest dropRequest, List viewDescriptors) {
@@ -248,8 +249,8 @@ public class DragDropEditPolicy extends org.eclipse.gmf.runtime.diagram.ui.editp
 		createViewRequest.setLocation(dropRequest.getLocation());
 		Command createCommand = getHost().getCommand(createViewRequest);
 
-		if(createCommand != null) {
-			List result = (List)createViewRequest.getNewObject();
+		if (createCommand != null) {
+			List result = (List) createViewRequest.getNewObject();
 			dropRequest.setResult(result);
 
 			RefreshConnectionsRequest refreshRequest = new RefreshConnectionsRequest(result);

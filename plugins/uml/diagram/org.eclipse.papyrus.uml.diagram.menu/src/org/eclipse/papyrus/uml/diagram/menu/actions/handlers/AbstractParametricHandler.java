@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -33,11 +33,11 @@ import org.eclipse.ui.PlatformUI;
 
 /**
  * This handler can use a parameter
- * 
+ *
  * He provides a method to get the selection
- * 
+ *
  * The handler can use parameter
- * 
+ *
  */
 public abstract class AbstractParametricHandler extends AbstractHandler implements IExecutableExtension {
 
@@ -48,9 +48,9 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	protected String parameterID = null;
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameterID
 	 */
 	public AbstractParametricHandler(String parameterID) {
@@ -58,13 +58,13 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	}
 
 	/**
-	 * 
+	 *
 	 * Constructor.
-	 * 
+	 *
 	 * @param parameterID
-	 *        the id of the parameter
+	 *            the id of the parameter
 	 * @param parameter
-	 *        the value of the parameter
+	 *            the value of the parameter
 	 */
 	public AbstractParametricHandler(String parameterID, String parameter) {
 		this.parameterID = parameterID;
@@ -72,10 +72,9 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	}
 
 	/**
-	 * 
-	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String,
-	 *      java.lang.Object)
-	 * 
+	 *
+	 * @see org.eclipse.core.runtime.IExecutableExtension#setInitializationData(org.eclipse.core.runtime.IConfigurationElement, java.lang.String, java.lang.Object)
+	 *
 	 * @param config
 	 * @param propertyName
 	 * @param data
@@ -83,15 +82,15 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	 */
 	@SuppressWarnings("rawtypes")
 	public void setInitializationData(IConfigurationElement config, String propertyName, Object data) throws CoreException {
-		if(data instanceof Hashtable && this.parameterID != null) {
-			this.parameter = (String)((Hashtable)data).get(this.parameterID);
+		if (data instanceof Hashtable && this.parameterID != null) {
+			this.parameter = (String) ((Hashtable) data).get(this.parameterID);
 		}
 	}
 
 	/**
 	 * Iterate over current selection and build a list of the {@link IGraphicalEditPart} contained in
 	 * the selection.
-	 * 
+	 *
 	 * @return the currently selected {@link IGraphicalEditPart}
 	 */
 	protected List<IGraphicalEditPart> getSelectedElements() {
@@ -103,21 +102,21 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 		Object selection = (activeWorkbenchWindow != null) ? activeWorkbenchWindow.getSelectionService().getSelection() : null;
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if(selection != null) {
-			if(selection instanceof IStructuredSelection) {
+		if (selection != null) {
+			if (selection instanceof IStructuredSelection) {
 
-				IStructuredSelection structuredSelection = (IStructuredSelection)selection;
+				IStructuredSelection structuredSelection = (IStructuredSelection) selection;
 
 				Iterator<?> it = structuredSelection.iterator();
-				while(it.hasNext()) {
+				while (it.hasNext()) {
 					Object object = it.next();
-					if(object instanceof IGraphicalEditPart) {
-						editparts.add((IGraphicalEditPart)object);
+					if (object instanceof IGraphicalEditPart) {
+						editparts.add((IGraphicalEditPart) object);
 					}
 				}
 
-			} else if(selection instanceof IGraphicalEditPart) {
-				editparts.add((IGraphicalEditPart)selection);
+			} else if (selection instanceof IGraphicalEditPart) {
+				editparts.add((IGraphicalEditPart) selection);
 			}
 		}
 		return editparts;
@@ -134,7 +133,7 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	/**
 	 * A utility method to return the active <code>DiagramEditPart</code> if
 	 * the current part implements <code>IDiagramWorkbenchPart</code>
-	 * 
+	 *
 	 * @return The current diagram if the parts implements <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	protected IDiagramGraphicalViewer getDiagramGraphicalViewer() {
@@ -145,18 +144,18 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	/**
 	 * A utility method to return the active part if it implements
 	 * or adapts to the <code>IDiagramWorkbenchPart</code> interface
-	 * 
+	 *
 	 * @return The current part if it implements or adapts to <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	protected IDiagramWorkbenchPart getDiagramWorkbenchPart() {
 		IDiagramWorkbenchPart diagramPart = null;
 		IWorkbenchPart part = getWorkbenchPart();
 
-		if(part instanceof IDiagramWorkbenchPart) {
-			diagramPart = (IDiagramWorkbenchPart)part;
+		if (part instanceof IDiagramWorkbenchPart) {
+			diagramPart = (IDiagramWorkbenchPart) part;
 
-		} else if(part != null) {
-			diagramPart = (IDiagramWorkbenchPart)part.getAdapter(IDiagramWorkbenchPart.class);
+		} else if (part != null) {
+			diagramPart = (IDiagramWorkbenchPart) part.getAdapter(IDiagramWorkbenchPart.class);
 		}
 
 		return diagramPart;
@@ -165,7 +164,7 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	/**
 	 * Retrieves the value of the <code>workbenchPart</code> instance
 	 * variable.
-	 * 
+	 *
 	 * @return The value of the <code>workbenchPart</code> instance variable.
 	 */
 	protected final IWorkbenchPart getWorkbenchPart() {
@@ -174,7 +173,7 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 		IWorkbenchWindow activeWorkbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
 
 		// Treat non-null selected object (try to adapt and return EObject)
-		if((activeWorkbenchWindow != null) && (activeWorkbenchWindow.getActivePage() != null)) {
+		if ((activeWorkbenchWindow != null) && (activeWorkbenchWindow.getActivePage() != null)) {
 			return activeWorkbenchWindow.getActivePage().getActivePart();
 		}
 
@@ -184,7 +183,7 @@ public abstract class AbstractParametricHandler extends AbstractHandler implemen
 	/**
 	 * A utility method to return the active <code>DiagramEditPart</code> if
 	 * the current part implements <code>IDiagramWorkbenchPart</code>
-	 * 
+	 *
 	 * @return The current diagram if the parts implements <code>IDiagramWorkbenchPart</code>; <code>null</code> otherwise
 	 */
 	protected DiagramEditPart getDiagramEditPart() {

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2011 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -19,21 +19,21 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.IFilteredLabelPr
 
 /**
  * A LabelProvider which only accepts EMF Objects (EObject, or objects which can be adapted to EObjects)
- * 
+ *
  * @author Camille Letavernier
- * 
+ *
  */
 public class EMFFilteredLabelProvider extends EMFLabelProvider implements IFilteredLabelProvider {
 
 	public boolean accept(IStructuredSelection selection) {
-		if(selection.isEmpty()) {
+		if (selection.isEmpty()) {
 			return false;
 		}
 
 		Iterator<?> iterator = selection.iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			Object element = iterator.next();
-			if(!accept(element)) {
+			if (!accept(element)) {
 				return false;
 			}
 		}
@@ -42,11 +42,11 @@ public class EMFFilteredLabelProvider extends EMFLabelProvider implements IFilte
 	}
 
 	public boolean accept(Object element) {
-		if(element instanceof IStructuredSelection) {
-			return accept((IStructuredSelection)element);
+		if (element instanceof IStructuredSelection) {
+			return accept((IStructuredSelection) element);
 		}
 
-		//The element is an EObject or can be adapted to an EObject
+		// The element is an EObject or can be adapted to an EObject
 		return EMFHelper.getEObject(element) != null;
 	}
 

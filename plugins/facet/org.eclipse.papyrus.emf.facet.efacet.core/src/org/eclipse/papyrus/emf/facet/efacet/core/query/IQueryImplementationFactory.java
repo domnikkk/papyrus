@@ -19,26 +19,25 @@ import org.osgi.framework.Bundle;
 /**
  * This factory allows clients to create a {@link IQueryImplementation} for queries corresponding to this type of
  * factory.
- * 
+ *
  * @since 0.2
  */
 public interface IQueryImplementationFactory {
 
 	/**
 	 * Create a query implementation for the given query.
-	 * 
+	 *
 	 * @param query
 	 *            the query to create an implementation for
 	 * @param queryBundle
-	 *            the bundle in which the query is defined. May be <code>null</code> if the query is not defined in a
-	 *            {@link Bundle}.
+	 *            the bundle in which the query is defined. May be <code>null</code> if the query is not defined in a {@link Bundle}.
 	 */
 	IQueryImplementation create(Query query, Bundle queryBundle, IDerivedTypedElementManager manager)
 			throws DerivedTypedElementException;
 
 	/**
 	 * Return the type of query handled by this implementation.
-	 * 
+	 *
 	 * @return the type of query this implementation handles.
 	 */
 	EClass getManagedQueryType();

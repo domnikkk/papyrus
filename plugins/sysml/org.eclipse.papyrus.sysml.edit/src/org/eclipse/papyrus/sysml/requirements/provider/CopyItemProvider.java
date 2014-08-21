@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -36,7 +36,7 @@ import org.eclipse.uml2.uml.profile.standard.StandardPackage;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.sysml.requirements.Copy} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class CopyItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource
@@ -47,7 +47,7 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CopyItemProvider(AdapterFactory adapterFactory) {
@@ -58,12 +58,12 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if(itemPropertyDescriptors == null) {
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addBase_AbstractionPropertyDescriptor(object);
@@ -75,18 +75,19 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This adds a property descriptor for the Base Abstraction feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void addBase_AbstractionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Trace_base_Abstraction_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Trace_base_Abstraction_feature", "_UI_Trace_type"), StandardPackage.Literals.TRACE__BASE_ABSTRACTION, true, false, true, null, null, null));
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(), getString("_UI_Trace_base_Abstraction_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_Trace_base_Abstraction_feature", "_UI_Trace_type"), StandardPackage.Literals.TRACE__BASE_ABSTRACTION, true, false, true, null, null, null));
 	}
 
 	/**
 	 * This returns Copy.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -98,7 +99,7 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +112,7 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -125,7 +126,7 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -137,7 +138,7 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	 * Return the resource locator for this item provider's resources.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -148,17 +149,17 @@ public class CopyItemProvider extends ItemProviderAdapter implements IEditingDom
 	/**
 	 * Compose the image with specific visibility logo
 	 * Copied from UML implementation
-	 * 
+	 *
 	 * @param object
 	 * @param composedImage
 	 * @return {@link ComposedImage}
 	 */
 	public ComposedImage composeVisibilityImage(Object object, ComposedImage composedImage) {
-		NamedElement namedElement = (NamedElement)object;
+		NamedElement namedElement = (NamedElement) object;
 
-		if(namedElement.isSetVisibility()) {
+		if (namedElement.isSetVisibility()) {
 			composedImage.getImages().add(UMLEditPlugin.INSTANCE.getImage("full/ovr16/VisibilityKind_" //$NON-NLS-1$
-				+ namedElement.getVisibility().getName()));
+					+ namedElement.getVisibility().getName()));
 		}
 
 		return composedImage;

@@ -23,6 +23,7 @@ public abstract class ChildConfigurationImpl extends ConfigurationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ChildConfigurationImpl() {
@@ -32,6 +33,7 @@ public abstract class ChildConfigurationImpl extends ConfigurationImpl implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -39,4 +41,4 @@ public abstract class ChildConfigurationImpl extends ConfigurationImpl implement
 		return PaletteconfigurationPackage.Literals.CHILD_CONFIGURATION;
 	}
 
-} //ChildConfigurationImpl
+} // ChildConfigurationImpl

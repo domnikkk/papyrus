@@ -11,12 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.eclipse.papyrus.uml.diagram.paletteconfiguration.PaletteconfigurationFactory;
@@ -27,14 +22,16 @@ import org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration;
  * This is the item provider adapter for a {@link org.eclipse.papyrus.uml.diagram.paletteconfiguration.StackConfiguration} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class StackConfigurationItemProvider
-	extends ChildConfigurationItemProvider {
+		extends ChildConfigurationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StackConfigurationItemProvider(AdapterFactory adapterFactory) {
@@ -45,6 +42,7 @@ public class StackConfigurationItemProvider
 	 * This returns the property descriptors for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -57,11 +55,11 @@ public class StackConfigurationItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,6 +74,7 @@ public class StackConfigurationItemProvider
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -90,6 +89,7 @@ public class StackConfigurationItemProvider
 	 * This returns StackConfiguration.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,22 +101,24 @@ public class StackConfigurationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((StackConfiguration)object).getId();
+		String label = ((StackConfiguration) object).getId();
 		return label == null || label.length() == 0 ?
-			getString("_UI_StackConfiguration_type") :
-			getString("_UI_StackConfiguration_type") + " " + label;
+				getString("_UI_StackConfiguration_type") :
+				getString("_UI_StackConfiguration_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -124,9 +126,9 @@ public class StackConfigurationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(StackConfiguration.class)) {
-			case PaletteconfigurationPackage.STACK_CONFIGURATION__OWNED_CONFIGURATIONS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
-				return;
+		case PaletteconfigurationPackage.STACK_CONFIGURATION__OWNED_CONFIGURATIONS:
+			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			return;
 		}
 		super.notifyChanged(notification);
 	}
@@ -136,6 +138,7 @@ public class StackConfigurationItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -143,14 +146,14 @@ public class StackConfigurationItemProvider
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(PaletteconfigurationPackage.Literals.STACK_CONFIGURATION__OWNED_CONFIGURATIONS,
-				 PaletteconfigurationFactory.eINSTANCE.createToolConfiguration()));
+						PaletteconfigurationFactory.eINSTANCE.createToolConfiguration()));
 
 		newChildDescriptors.add
-			(createChildParameter
+				(createChildParameter
 				(PaletteconfigurationPackage.Literals.STACK_CONFIGURATION__OWNED_CONFIGURATIONS,
-				 PaletteconfigurationFactory.eINSTANCE.createSeparatorConfiguration()));
+						PaletteconfigurationFactory.eINSTANCE.createSeparatorConfiguration()));
 	}
 
 }

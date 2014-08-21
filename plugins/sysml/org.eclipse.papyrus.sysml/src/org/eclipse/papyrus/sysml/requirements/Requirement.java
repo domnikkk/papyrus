@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc --> A representation of the model object ' <em><b>Requirement</b></em>'. <!-- end-user-doc -->
- * 
+ *
  * <p>
  * The following features are supported:
  * <ul>
@@ -36,7 +36,7 @@ import org.eclipse.uml2.uml.NamedElement;
  * <li>{@link org.eclipse.papyrus.sysml.requirements.Requirement#getBase_Class <em>Base Class</em>}</li>
  * </ul>
  * </p>
- * 
+ *
  * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement()
  * @model
  * @generated
@@ -50,7 +50,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Base Class</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Base Class</em>' reference.
 	 * @see #setBase_Class(org.eclipse.uml2.uml.Class)
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_Base_Class()
@@ -67,7 +67,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Derived</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Derived</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_Derived()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -84,7 +84,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Derived From</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Derived From</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_DerivedFrom()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -100,7 +100,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Id</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_Id()
@@ -116,7 +116,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Master</em>' reference isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Master</em>' reference.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_Master()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -133,7 +133,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Refined By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Refined By</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_RefinedBy()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -147,9 +147,9 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getRefinedBy()
 	 * @generated
@@ -161,13 +161,13 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getRefinedBy()
 	 * @generated
@@ -182,7 +182,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Satisfied By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Satisfied By</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_SatisfiedBy()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -195,9 +195,9 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getSatisfiedBy()
 	 * @generated
@@ -209,13 +209,13 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getSatisfiedBy()
 	 * @generated
@@ -229,7 +229,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Text</em>' attribute isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Text</em>' attribute.
 	 * @see #setText(String)
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_Text()
@@ -246,7 +246,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Traced To</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Traced To</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_TracedTo()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
@@ -260,9 +260,9 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getTracedTo()
 	 * @generated
@@ -274,13 +274,13 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getTracedTo()
 	 * @generated
@@ -295,7 +295,7 @@ public interface Requirement extends EObject {
 	 * If the meaning of the '<em>Verified By</em>' reference list isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Verified By</em>' reference list.
 	 * @see org.eclipse.papyrus.sysml.requirements.RequirementsPackage#getRequirement_VerifiedBy()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
@@ -308,9 +308,9 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getVerifiedBy()
 	 * @generated
@@ -322,13 +322,13 @@ public interface Requirement extends EObject {
 	 * reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param name
-	 *        The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @param ignoreCase
-	 *        Whether to ignore case in {@link java.lang.String} comparisons.
+	 *            Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @param eClass
-	 *        The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
+	 *            The Ecore class of the {@link org.eclipse.uml2.uml.NamedElement} to retrieve, or <code>null</code>.
 	 * @return The first {@link org.eclipse.uml2.uml.NamedElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getVerifiedBy()
 	 * @generated
@@ -339,9 +339,9 @@ public interface Requirement extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.requirements.Requirement#getBase_Class <em>Base Class</em>}' reference.
 	 * <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Base Class</em>' reference.
+	 *            the new value of the '<em>Base Class</em>' reference.
 	 * @see #getBase_Class()
 	 * @generated
 	 */
@@ -350,9 +350,9 @@ public interface Requirement extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.requirements.Requirement#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Id</em>' attribute.
+	 *            the new value of the '<em>Id</em>' attribute.
 	 * @see #getId()
 	 * @generated
 	 */
@@ -361,9 +361,9 @@ public interface Requirement extends EObject {
 	/**
 	 * Sets the value of the '{@link org.eclipse.papyrus.sysml.requirements.Requirement#getText <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
-	 *        the new value of the '<em>Text</em>' attribute.
+	 *            the new value of the '<em>Text</em>' attribute.
 	 * @see #getText()
 	 * @generated
 	 */

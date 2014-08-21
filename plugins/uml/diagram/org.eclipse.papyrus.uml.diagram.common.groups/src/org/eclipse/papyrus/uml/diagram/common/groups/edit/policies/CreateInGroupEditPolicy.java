@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2011 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -53,10 +53,9 @@ import org.eclipse.papyrus.uml.diagram.common.util.DiagramEditPartsUtil;
  * This Edit Policy applies on the compartment of a group (which hold elements by reference or containment). It enables to recover the correct model
  * container in
  * order to create the element at the right place in the model, before linking it to the referencing group.
- * 
- * In order to do so, the semantic creation command, inheriting {@link EditElementCommand}, must recover the
- * {@link GroupRequestConstants#MODEL_CONTAINER} parameter from the request to know the model container of the created element and assign it itself.
- * 
+ *
+ * In order to do so, the semantic creation command, inheriting {@link EditElementCommand}, must recover the {@link GroupRequestConstants#MODEL_CONTAINER} parameter from the request to know the model container of the created element and assign it itself.
+ *
  * @author vhemery and adaussy
  */
 public class CreateInGroupEditPolicy extends CreationEditPolicy {
@@ -69,36 +68,36 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Get the command to create a group referenced child and create it in the appropriate place.
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getCreateElementAndViewCommand(org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest)
-	 * 
+	 *
 	 * @param request
-	 *        the creation request
+	 *            the creation request
 	 * @return the creation command or null
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	protected Command getCreateElementAndViewCommand(CreateViewAndElementRequest request) {
 		CreateElementRequestAdapter requestAdapter = request.getViewAndElementDescriptor().getCreateElementRequestAdapter();
-		CreateElementRequest createElementRequest = (CreateElementRequest)requestAdapter.getAdapter(CreateElementRequest.class);
-		//Needed to create transactionnal command
-		TransactionalEditingDomain editingDomain = ((GraphicalEditPart)getHost()).getEditingDomain();
-		//Command in creation
+		CreateElementRequest createElementRequest = (CreateElementRequest) requestAdapter.getAdapter(CreateElementRequest.class);
+		// Needed to create transactionnal command
+		TransactionalEditingDomain editingDomain = ((GraphicalEditPart) getHost()).getEditingDomain();
+		// Command in creation
 		CompositeCommand handleChildren = null;
 
 
-		View view = (View)getHost().getModel();
+		View view = (View) getHost().getModel();
 		EObject hostElement = ViewUtil.resolveSemanticElement(view);
-		if(hostElement == null && view.getElement() == null) {
+		if (hostElement == null && view.getElement() == null) {
 			hostElement = view;
 		}
 		// Returns null if host is unresolvable so that trying to create a
 		// new element in an unresolved shape will not be allowed.
-		if(hostElement == null) {
+		if (hostElement == null) {
 			return null;
 		}
 		EditPart currentEditPart = getHost();
-		if(currentEditPart instanceof IGraphicalEditPart) {
+		if (currentEditPart instanceof IGraphicalEditPart) {
 			/*
 			 * Handling parents
 			 */
@@ -115,8 +114,8 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 			/*
 			 * If the current host is not a model parent of the element in creation then the request is send to suitable one
 			 */
-			Command relocatedCommand = CommandsUtils.sendRequestSuitableHost(request, createElementRequest, (IGraphicalEditPart)getHost(), modelParents);
-			if(relocatedCommand != null) {
+			Command relocatedCommand = CommandsUtils.sendRequestSuitableHost(request, createElementRequest, (IGraphicalEditPart) getHost(), modelParents);
+			if (relocatedCommand != null) {
 				return relocatedCommand;
 			}
 
@@ -124,7 +123,7 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 			 * handling sons if the creation is a group
 			 */
 			Set<AbstractContainerNodeDescriptor> descriptors = GroupContainmentRegistry.getDescriptorsWithContainerEClass(createElementRequest.getElementType().getEClass());
-			handleChildren = CommandsUtils.getHandleChildrenCommand(descriptors, request, diagramPart, editingDomain, requestAdapter, modelParents, (IGraphicalEditPart)getHost());
+			handleChildren = CommandsUtils.getHandleChildrenCommand(descriptors, request, diagramPart, editingDomain, requestAdapter, modelParents, (IGraphicalEditPart) getHost());
 
 			/*
 			 * Request Part Creation
@@ -132,9 +131,9 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 			 * 2 - Create View Request
 			 * 3 - Create Choice request (If there is any choice to make)
 			 */
-			Command createElementCommand = getHost().getCommand(new EditCommandRequestWrapper((CreateElementRequest)requestAdapter.getAdapter(CreateElementRequest.class), request.getExtendedData()));
+			Command createElementCommand = getHost().getCommand(new EditCommandRequestWrapper((CreateElementRequest) requestAdapter.getAdapter(CreateElementRequest.class), request.getExtendedData()));
 
-			if(createElementCommand == null || !createElementCommand.canExecute()) {
+			if (createElementCommand == null || !createElementCommand.canExecute()) {
 				return UnexecutableCommand.INSTANCE;
 			}
 			/*
@@ -144,7 +143,7 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 			/*
 			 * Refresh Connection command
 			 */
-			Command refreshConnectionCommand = getHost().getCommand(new RefreshConnectionsRequest(((List<?>)request.getNewObject())));
+			Command refreshConnectionCommand = getHost().getCommand(new RefreshConnectionsRequest(((List<?>) request.getNewObject())));
 			/*
 			 * create the semantic global command
 			 */
@@ -152,20 +151,20 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 			/*
 			 * ChooseParentNotificationCommand
 			 */
-			CompositeCommand choiceCommand = CommandsUtils.getChooseParentNotification(editingDomain, request, graphicalParents, modelParents, (IGraphicalEditPart)getHost());
+			CompositeCommand choiceCommand = CommandsUtils.getChooseParentNotification(editingDomain, request, graphicalParents, modelParents, (IGraphicalEditPart) getHost());
 			/*
 			 * form the compound command and return
 			 */
 			CompositeCommand cc = new CompositeCommand(semanticCommand.getLabel());
 			cc.compose(semanticCommand);
 			cc.compose(new CommandProxy(viewCommand));
-			if(choiceCommand != null) {
+			if (choiceCommand != null) {
 				cc.compose(choiceCommand);
 			}
-			if(handleChildren != null) {
+			if (handleChildren != null) {
 				cc.compose(handleChildren);
 			}
-			if(refreshConnectionCommand != null) {
+			if (refreshConnectionCommand != null) {
 				cc.compose(new CommandProxy(refreshConnectionCommand));
 			}
 
@@ -176,9 +175,9 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 
 	/**
 	 * Create a request in order to handle graphic creation
-	 * 
+	 *
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getCreateCommand(org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewRequest)
-	 * 
+	 *
 	 * @param request
 	 * @param getHost
 	 * @return
@@ -188,22 +187,22 @@ public class CreateInGroupEditPolicy extends CreationEditPolicy {
 		/*
 		 * Get default graphical parent
 		 */
-		IGraphicalEditPart newParentPart = (IGraphicalEditPart)getHost();
+		IGraphicalEditPart newParentPart = (IGraphicalEditPart) getHost();
 		Object graphicalParents = request.getExtendedData().get(GroupRequestConstants.GRAPHICAL_CONTAINERS);
-		if(graphicalParents instanceof List<?> && !((List<?>)graphicalParents).isEmpty()) {
-			Object parentPart = ((List<?>)graphicalParents).get(0);
-			if(parentPart instanceof IGraphicalEditPart) {
-				newParentPart = (IGraphicalEditPart)parentPart;
+		if (graphicalParents instanceof List<?> && !((List<?>) graphicalParents).isEmpty()) {
+			Object parentPart = ((List<?>) graphicalParents).get(0);
+			if (parentPart instanceof IGraphicalEditPart) {
+				newParentPart = (IGraphicalEditPart) parentPart;
 			}
 		}
 		request.getExtendedData().put(CommandsUtils.GRAPHICAL_PARENT, newParentPart);
-		View parent = (View)newParentPart.getModel();
+		View parent = (View) newParentPart.getModel();
 		// construct command as in super method (except parent)
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, DiagramUIMessages.AddCommand_Label);
 		Iterator<? extends CreateViewRequest.ViewDescriptor> descriptors = request.getViewDescriptors().iterator();
-		while(descriptors.hasNext()) {
-			CreateViewRequest.ViewDescriptor descriptor = (CreateViewRequest.ViewDescriptor)descriptors.next();
+		while (descriptors.hasNext()) {
+			CreateViewRequest.ViewDescriptor descriptor = descriptors.next();
 			CreateCommand createCommand = new CreateCommand(editingDomain, descriptor, parent);
 			cc.compose(createCommand);
 		}

@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST and others.
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -24,7 +24,7 @@ import org.eclipse.papyrus.views.properties.modelelement.EMFModelElement;
 /**
  * Theme ModelElement to provide corresponding label provider because EMF model
  * is not register in service registry.
- * 
+ *
  * @author gpascual
  *
  */
@@ -55,12 +55,12 @@ public class CSSThemesModelElement extends EMFModelElement {
 		ILabelProvider labelProvider = null;
 
 
-		if(THEME_STYLESHEETS_PATH.equals(propertyPath)) {
+		if (THEME_STYLESHEETS_PATH.equals(propertyPath)) {
 			labelProvider = new CSSStyleSheetLabelProvider();
 		}
 
 		// If label provider was not instantiated, we use this ancestor one
-		if(labelProvider == null) {
+		if (labelProvider == null) {
 			labelProvider = super.getLabelProvider(propertyPath);
 		}
 

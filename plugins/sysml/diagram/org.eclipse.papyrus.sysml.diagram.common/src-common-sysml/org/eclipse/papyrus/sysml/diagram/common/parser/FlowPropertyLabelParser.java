@@ -29,6 +29,7 @@ import org.eclipse.papyrus.sysml.portandflows.FlowDirection;
 import org.eclipse.papyrus.sysml.portandflows.FlowProperty;
 import org.eclipse.papyrus.sysml.portandflows.PortandflowsPackage;
 import org.eclipse.papyrus.uml.diagram.common.parser.PropertyLabelParser;
+import org.eclipse.papyrus.uml.tools.utils.ICustomAppearance;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.util.UMLUtil;
 
@@ -48,23 +49,23 @@ public class FlowPropertyLabelParser extends PropertyLabelParser {
 
 		Collection<String> maskValues = getMaskValues(element);
 
-		if(maskValues.isEmpty()) {
+		if (maskValues.isEmpty()) {
 			return MaskedLabel;
 		}
 
 		String result = super.getPrintString(element, flags);
 
 		EObject eObject = EMFHelper.getEObject(element);
-		if((eObject != null) && (eObject instanceof Property)) {
+		if ((eObject != null) && (eObject instanceof Property)) {
 
-			Property property = (Property)eObject;
+			Property property = (Property) eObject;
 			FlowProperty flowProperty = UMLUtil.getStereotypeApplication(property, FlowProperty.class);
-			if(flowProperty != null) {
+			if (flowProperty != null) {
 
 				// manage direction
-				if(maskValues.contains(ILabelPreferenceConstants.DISP_DIRECTION)) {
+				if (maskValues.contains(ICustomAppearance.DISP_DIRECTION)) {
 					String direction;
-					switch(flowProperty.getDirection().getValue()) {
+					switch (flowProperty.getDirection().getValue()) {
 					case FlowDirection.IN_VALUE:
 						direction = "in";
 						break;
@@ -92,9 +93,9 @@ public class FlowPropertyLabelParser extends PropertyLabelParser {
 	@Override
 	public boolean isAffectingEvent(Object event, int flags) {
 
-		if(event instanceof Notification) {
-			Object feature = ((Notification)event).getFeature();
-			if(feature instanceof EStructuralFeature) {
+		if (event instanceof Notification) {
+			Object feature = ((Notification) event).getFeature();
+			if (feature instanceof EStructuralFeature) {
 				return PortandflowsPackage.eINSTANCE.getFlowProperty_Direction().equals(feature) || super.isAffectingEvent(event, flags);
 			}
 		}
@@ -109,11 +110,11 @@ public class FlowPropertyLabelParser extends PropertyLabelParser {
 	public List<EObject> getSemanticElementsBeingParsed(EObject element) {
 		List<EObject> semanticElementsBeingParsed = super.getSemanticElementsBeingParsed(element);
 
-		if((element != null) && (element instanceof Property)) {
-			Property semElement = (Property)element;
+		if ((element != null) && (element instanceof Property)) {
+			Property semElement = (Property) element;
 
 			FlowProperty flowProperty = UMLUtil.getStereotypeApplication(semElement, FlowProperty.class);
-			if(flowProperty != null) {
+			if (flowProperty != null) {
 				semanticElementsBeingParsed.add(flowProperty);
 			}
 		}
@@ -123,21 +124,21 @@ public class FlowPropertyLabelParser extends PropertyLabelParser {
 	@Override
 	public Map<String, String> getMasks() {
 		Map<String, String> masks = new HashMap<String, String>(10);
-		masks.put(ILabelPreferenceConstants.DISP_DIRECTION, "Direction");
-		masks.put(ILabelPreferenceConstants.DISP_VISIBILITY, "Visibility");
-		masks.put(ILabelPreferenceConstants.DISP_DERIVE, "Is Derived");
-		masks.put(ILabelPreferenceConstants.DISP_NAME, "Name");
-		masks.put(ILabelPreferenceConstants.DISP_TYPE, "Type");
+		masks.put(ICustomAppearance.DISP_DIRECTION, "Direction");
+		masks.put(ICustomAppearance.DISP_VISIBILITY, "Visibility");
+		masks.put(ICustomAppearance.DISP_DERIVE, "Is Derived");
+		masks.put(ICustomAppearance.DISP_NAME, "Name");
+		masks.put(ICustomAppearance.DISP_TYPE, "Type");
 		masks.put(ILabelPreferenceConstants.DISP_UNDEFINED_TYPE, "Show <Undefined> type");
-		masks.put(ILabelPreferenceConstants.DISP_MULTIPLICITY, "Multiplicity");
+		masks.put(ICustomAppearance.DISP_MULTIPLICITY, "Multiplicity");
 		masks.put(ILabelPreferenceConstants.DISP_DEFAULT_MULTIPLICITY, "Show default multiplicity");
-		masks.put(ILabelPreferenceConstants.DISP_DEFAULT_VALUE, "Default Value");
-		masks.put(ILabelPreferenceConstants.DISP_MODIFIERS, "Modifiers");
+		masks.put(ICustomAppearance.DISP_DEFAULT_VALUE, "Default Value");
+		masks.put(ICustomAppearance.DISP_MODIFIERS, "Modifiers");
 		return masks;
 	}
 
 	@Override
 	public Collection<String> getDefaultValue(IAdaptable element) {
-		return Arrays.asList(ILabelPreferenceConstants.DISP_DIRECTION, ILabelPreferenceConstants.DISP_NAME, ILabelPreferenceConstants.DISP_TYPE, ILabelPreferenceConstants.DISP_UNDEFINED_TYPE);
+		return Arrays.asList(ICustomAppearance.DISP_DIRECTION, ICustomAppearance.DISP_NAME, ICustomAppearance.DISP_TYPE, ILabelPreferenceConstants.DISP_UNDEFINED_TYPE);
 	}
 }

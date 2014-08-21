@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2014 CEA LIST
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -50,7 +50,7 @@ public class BDDReconcilier extends DiagramReconciler {
 		@Override
 		protected CommandResult doExecuteWithResult(IProgressMonitor progressMonitor, IAdaptable info) throws ExecutionException {
 			EObject element = diagram.getElement();
-			if(element instanceof org.eclipse.uml2.uml.Class) { // Block
+			if (element instanceof org.eclipse.uml2.uml.Class) { // Block
 				org.eclipse.uml2.uml.Class clazz = (org.eclipse.uml2.uml.Class) element;
 				diagram.setElement(clazz.getNearestPackage());
 				DiagramUtils.setOwner(diagram, element);

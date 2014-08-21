@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 Atos Origin.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -271,12 +271,12 @@ public class UMLElementTypes {
 
 	/**
 	 * Returns 'type' of the ecore object associated with the hint.
-	 * 
+	 *
 	 * @generated
 	 */
 	public static ENamedElement getElement(IAdaptable hint) {
 		Object type = hint.getAdapter(IElementType.class);
-		if(elements == null) {
+		if (elements == null) {
 			elements = new IdentityHashMap<IElementType, ENamedElement>();
 			elements.put(Package_1000, UMLPackage.eINSTANCE.getPackage());
 			elements.put(Interaction_2001, UMLPackage.eINSTANCE.getInteraction());
@@ -310,7 +310,7 @@ public class UMLElementTypes {
 			elements.put(GeneralOrdering_4012, UMLPackage.eINSTANCE.getGeneralOrdering());
 			elements.put(ConstraintContext_8500, UMLPackage.eINSTANCE.getConstraint_Context());
 		}
-		return (ENamedElement)elements.get(type);
+		return elements.get(type);
 	}
 
 	/**
@@ -324,7 +324,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static boolean isKnownElementType(IElementType elementType) {
-		if(KNOWN_ELEMENT_TYPES == null) {
+		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(Package_1000);
 			KNOWN_ELEMENT_TYPES.add(Interaction_2001);
@@ -365,7 +365,7 @@ public class UMLElementTypes {
 	 * @generated
 	 */
 	public static IElementType getElementType(int visualID) {
-		switch(visualID) {
+		switch (visualID) {
 		case PackageEditPart.VISUAL_ID:
 			return Package_1000;
 		case InteractionEditPart.VISUAL_ID:
@@ -440,6 +440,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
+		@Override
 		public boolean isKnownElementType(IElementType elementType) {
 			return org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes.isKnownElementType(elementType);
 		}
@@ -447,6 +448,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
+		@Override
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes.getElementType(visualID);
 		}
@@ -454,6 +456,7 @@ public class UMLElementTypes {
 		/**
 		 * @generated
 		 */
+		@Override
 		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
 			return org.eclipse.papyrus.uml.diagram.sequence.providers.UMLElementTypes.getElement(elementTypeAdapter);
 		}

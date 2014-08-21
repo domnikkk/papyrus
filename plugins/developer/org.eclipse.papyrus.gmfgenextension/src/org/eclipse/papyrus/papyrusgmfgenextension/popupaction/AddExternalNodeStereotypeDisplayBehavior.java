@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -81,16 +81,17 @@ public class AddExternalNodeStereotypeDisplayBehavior extends Action {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 
 		// Parse selected GenLink(s) and add the desired CustomBehavior
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(eObject instanceof GenNode) {
-				//test if it has got a external node to display applied stereotype
-				if(!hasAnAppliedStereotypExternalNode((GenNode)eObject)) {
-					createAnAppliedStereotypExternalNode((GenNode)eObject);
+			if (eObject instanceof GenNode) {
+				// test if it has got a external node to display applied stereotype
+				if (!hasAnAppliedStereotypExternalNode((GenNode) eObject)) {
+					createAnAppliedStereotypExternalNode((GenNode) eObject);
 				}
 			}
 		}
@@ -99,9 +100,9 @@ public class AddExternalNodeStereotypeDisplayBehavior extends Action {
 
 	/**
 	 * creation an external node stereotype
-	 * 
+	 *
 	 * @param eObject
-	 *        the parent genNode
+	 *            the parent genNode
 	 */
 	private void createAnAppliedStereotypExternalNode(GenNode eObject) {
 		GenExternalNodeLabel label = GMFGenFactory.eINSTANCE.createGenExternalNodeLabel();
@@ -146,10 +147,10 @@ public class AddExternalNodeStereotypeDisplayBehavior extends Action {
 
 	public boolean hasAnAppliedStereotypExternalNode(GenNode node) {
 		Iterator<GenNodeLabel> iterator = node.getLabels().iterator();
-		while(iterator.hasNext()) {
+		while (iterator.hasNext()) {
 			GenNodeLabel currentGenNodeLabel = iterator.next();
-			if(currentGenNodeLabel instanceof GenExternalNodeLabel) {
-				if(isAnAppliedStereotypExternalNode((GenExternalNodeLabel)currentGenNodeLabel)) {
+			if (currentGenNodeLabel instanceof GenExternalNodeLabel) {
+				if (isAnAppliedStereotypExternalNode((GenExternalNodeLabel) currentGenNodeLabel)) {
 					return true;
 				}
 			}

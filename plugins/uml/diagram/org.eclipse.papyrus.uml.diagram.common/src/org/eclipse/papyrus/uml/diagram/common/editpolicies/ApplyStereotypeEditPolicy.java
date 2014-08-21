@@ -1,6 +1,6 @@
 /*****************************************************************************
  * Copyright (c) 2009 CEA LIST.
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -48,10 +48,11 @@ public class ApplyStereotypeEditPolicy extends AbstractEditPolicy {
 	 */
 	@Override
 	public Command getCommand(Request request) {
-		if(understandsRequest(request)) {
-			return getApplyStereotypeCommand((ApplyStereotypeRequest)request);
-		} else
+		if (understandsRequest(request)) {
+			return getApplyStereotypeCommand((ApplyStereotypeRequest) request);
+		} else {
 			return super.getCommand(request);
+		}
 	}
 
 	/**
@@ -59,7 +60,7 @@ public class ApplyStereotypeEditPolicy extends AbstractEditPolicy {
 	 */
 	@Override
 	public boolean understandsRequest(Request req) {
-		if(ApplyStereotypeRequest.APPLY_STEREOTYPE_REQUEST.equals(req.getType())) {
+		if (ApplyStereotypeRequest.APPLY_STEREOTYPE_REQUEST.equals(req.getType())) {
 			return true;
 		}
 		return super.understandsRequest(req);
@@ -70,7 +71,7 @@ public class ApplyStereotypeEditPolicy extends AbstractEditPolicy {
 	 */
 	@Override
 	public EditPart getTargetEditPart(Request request) {
-		if(understandsRequest(request)) {
+		if (understandsRequest(request)) {
 			return getHost();
 		}
 		return super.getTargetEditPart(request);
@@ -78,16 +79,16 @@ public class ApplyStereotypeEditPolicy extends AbstractEditPolicy {
 
 	/**
 	 * Returns the <code>Command</code> contribution for the given <code>ApplyStereotypeRequest</code>
-	 * 
+	 *
 	 * @param request
-	 *        the request linked to this edit policy
+	 *            the request linked to this edit policy
 	 * @return the command that applies the stereotype or <code>null</code>
 	 */
 	protected Command getApplyStereotypeCommand(ApplyStereotypeRequest request) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart)getHost()).getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		CompositeTransactionalCommand cc = new CompositeTransactionalCommand(editingDomain, "Apply Stereotype");
-		final Element element = (Element)(((View)getHost().getModel()).getElement());
-		
+		final Element element = (Element) (((View) getHost().getModel()).getElement());
+
 		if (request.getElement() == null) {
 			request.setElement(element);
 		}

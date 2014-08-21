@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -47,7 +47,7 @@ public class CreateInteractionUseDialog extends CreateInvocationActionDialog {
 	/**
 	 * Get the id of the preference storing whether selection is the default
 	 * choice.
-	 * 
+	 *
 	 * @return preference id
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class CreateInteractionUseDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * Get the id of the preference storing the last selected owner.
-	 * 
+	 *
 	 * @return preference id
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class CreateInteractionUseDialog extends CreateInvocationActionDialog {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.uml.diagram.activity.edit.dialogs.CreateCallActionDialog#getTitle()
 	 */
 	@Override
@@ -101,7 +101,7 @@ public class CreateInteractionUseDialog extends CreateInvocationActionDialog {
 
 	@Override
 	protected EClass[] getPossibleInvokedTypes() {
-		return new EClass[]{ UMLPackage.eINSTANCE.getInteraction() };
+		return new EClass[] { UMLPackage.eINSTANCE.getInteraction() };
 	}
 
 	@Override
@@ -141,26 +141,26 @@ public class CreateInteractionUseDialog extends CreateInvocationActionDialog {
 	/**
 	 * Set correctly the invoked object, by creating it if needed. Then,
 	 * notifies that the ok button of this dialog has been pressed.
-	 * 
+	 *
 	 * @see org.eclipse.jface.dialogs.Dialog#okPressed()
-	 * 
+	 *
 	 */
 	@Override
 	protected void okPressed() {
 		final boolean isSelectionSelected = selectionRadio.getSelection();
 		// create element if needed
-		if(!isSelectionSelected) {
+		if (!isSelectionSelected) {
 			selectedInvoked = UMLFactory.eINSTANCE.createInteraction();
-			if(selectedInvoked instanceof NamedElement) {
-				((NamedElement)selectedInvoked).setName(selectedName);
+			if (selectedInvoked instanceof NamedElement) {
+				((NamedElement) selectedInvoked).setName(selectedName);
 			}
 			addInvokedInParent(selectedParent, selectedInvoked);
 		}
 
 		// InteractionUse
 		final InteractionUse interactionUse = UMLFactory.eINSTANCE.createInteractionUse();
-		interactionUse.setRefersTo((Interaction)selectedInvoked);
-		interactionUse.setName(Messages.CreateInteractionUseDialog_InteractionUsePrefix + ((Interaction)selectedInvoked).getName());
+		interactionUse.setRefersTo((Interaction) selectedInvoked);
+		interactionUse.setName(Messages.CreateInteractionUseDialog_InteractionUsePrefix + ((Interaction) selectedInvoked).getName());
 
 		addInvokedInParent(selectedInvoked, interactionUse);
 
@@ -168,7 +168,7 @@ public class CreateInteractionUseDialog extends CreateInvocationActionDialog {
 		final IPreferenceStore prefStore = UMLDiagramEditorPlugin.getInstance().getPreferenceStore();
 		// store choice between selection and creation
 		prefStore.setValue(getSelectionIsDefaultPreference(), isSelectionSelected);
-		if(!isSelectionSelected) {
+		if (!isSelectionSelected) {
 			// store the owner choice
 			final String ressUri = selectedParent.eResource().getURI().toString();
 			final String parentURI = selectedParent.eResource().getURIFragment(selectedParent);

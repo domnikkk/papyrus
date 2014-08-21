@@ -54,24 +54,24 @@ public class InputDialogPrimitiveType {
 	 * The Constructor.
 	 *
 	 * @param index
-	 *        the index
+	 *            the index
 	 * @param property
-	 *        the property
+	 *            the property
 	 * @param shell
-	 *        the shell
+	 *            the shell
 	 * @param initialValue
-	 *        the initial value
+	 *            the initial value
 	 */
 	public InputDialogPrimitiveType(Shell shell, Property property, Object initialValue) {
 
-		if(initialValue != null) {
+		if (initialValue != null) {
 			// Call dialog constructor
 			iDialog = new InputDialog(shell, TITLE, LABEL, initialValue.toString(), null);
 
-		} else if(property.getDefaultValue() != null) {
+		} else if (property.getDefaultValue() != null) {
 			iDialog = new InputDialog(shell, TITLE, LABEL, property.getDefault(), null);
 
-		} else if(property.getType().getName().equals("Boolean")) {
+		} else if (property.getType().getName().equals("Boolean")) {
 			iDialog = new InputDialog(shell, TITLE, LABEL, "true", null);
 
 		} else {

@@ -1,15 +1,15 @@
 /**
  *  Copyright (c) 2011 Mia-Software.
- *  
+ *
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v1.0
  *  which accompanies this distribution, and is available at
  *  http://www.eclipse.org/legal/epl-v10.html
- *  
+ *
  *  Contributors:
  * 	Gregoire Dupe (Mia-Software) - Design
  * 	Nicolas Guyomar (Mia-Software) - Implementation
- * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values. 
+ * 	Emmanuelle RouillÃ© (Mia-Software) - Bug 352618 - To be able to use non derived facet structural features and save them values.
  * 	Nicolas Bros (Mia-Software) - Bug 361823 - [Restructuring] eFacet2 meta-model
  */
 package org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl;
@@ -30,7 +30,7 @@ import org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serializatio
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractAttributeInstanceImpl#getEAttribute <em>EAttribute</em>}</li>
+ * <li>{@link org.eclipse.papyrus.emf.facet.efacet.metamodel.v0_2_0.efacet.serialization.impl.AbstractAttributeInstanceImpl#getEAttribute <em>EAttribute</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +41,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	 * The cached value of the '{@link #getEAttribute() <em>EAttribute</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEAttribute()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected AbstractAttributeInstanceImpl() {
@@ -59,6 +61,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -69,15 +72,17 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEAttribute() {
 		if (eAttribute != null && eAttribute.eIsProxy()) {
-			InternalEObject oldEAttribute = (InternalEObject)eAttribute;
-			eAttribute = (EAttribute)eResolveProxy(oldEAttribute);
+			InternalEObject oldEAttribute = (InternalEObject) eAttribute;
+			eAttribute = (EAttribute) eResolveProxy(oldEAttribute);
 			if (eAttribute != oldEAttribute) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE, oldEAttribute, eAttribute));
+				}
 			}
 		}
 		return eAttribute;
@@ -86,6 +91,7 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute basicGetEAttribute() {
@@ -95,26 +101,31 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setEAttribute(EAttribute newEAttribute) {
 		EAttribute oldEAttribute = eAttribute;
 		eAttribute = newEAttribute;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET, SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE, oldEAttribute, eAttribute));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
-				if (resolve) return getEAttribute();
-				return basicGetEAttribute();
+		case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
+			if (resolve) {
+				return getEAttribute();
+			}
+			return basicGetEAttribute();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -122,14 +133,15 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
-				setEAttribute((EAttribute)newValue);
-				return;
+		case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
+			setEAttribute((EAttribute) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -137,14 +149,15 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
-				setEAttribute((EAttribute)null);
-				return;
+		case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
+			setEAttribute((EAttribute) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -152,15 +165,16 @@ public class AbstractAttributeInstanceImpl extends EObjectImpl implements Abstra
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
-				return eAttribute != null;
+		case SerializationPackage.ABSTRACT_ATTRIBUTE_INSTANCE__EATTRIBUTE:
+			return eAttribute != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //AbstractAttributeInstanceImpl
+} // AbstractAttributeInstanceImpl

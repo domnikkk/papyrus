@@ -1,6 +1,6 @@
 /****************************************************************************
  * Copyright (c) 2008 Atos Origin.
- *  
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -37,7 +37,7 @@ import org.eclipse.swt.widgets.Composite;
  * </ul>
  * This field editor is inspired by the class {@link org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ColorsAndFontsPropertySection
  * <em>ColorsAndFontsPropertySection</em>}
- * 
+ *
  * @author tlandre
  */
 public class FontFieldEditor extends FieldEditor {
@@ -65,11 +65,11 @@ public class FontFieldEditor extends FieldEditor {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param preferenceName
-	 *        the preference used for the Font
+	 *            the preference used for the Font
 	 * @param parent
-	 *        the parent composite in which this field editor will be placed.
+	 *            the parent composite in which this field editor will be placed.
 	 */
 	public FontFieldEditor(String preferenceName, Composite parent) {
 		super(preferenceName, "", parent); //$NON-NLS-1$
@@ -120,13 +120,13 @@ public class FontFieldEditor extends FieldEditor {
 
 		int style = fontData.getStyle();
 		// Bold Button
-		if((style & SWT.BOLD) == SWT.BOLD) {
+		if ((style & SWT.BOLD) == SWT.BOLD) {
 			fontBoldButton.setSelection(true);
 		} else {
 			fontBoldButton.setSelection(false);
 		}
 		// Italic Button
-		if((style & SWT.ITALIC) == SWT.ITALIC) {
+		if ((style & SWT.ITALIC) == SWT.ITALIC) {
 			fontItalicButton.setSelection(true);
 		} else {
 			fontItalicButton.setSelection(false);
@@ -148,10 +148,10 @@ public class FontFieldEditor extends FieldEditor {
 
 	private int getStyle() {
 		int style = SWT.NORMAL;
-		if(fontBoldButton.getSelection()) {
+		if (fontBoldButton.getSelection()) {
 			style |= SWT.BOLD;
 		}
-		if(fontItalicButton.getSelection()) {
+		if (fontItalicButton.getSelection()) {
 			style |= SWT.ITALIC;
 		}
 		return style;

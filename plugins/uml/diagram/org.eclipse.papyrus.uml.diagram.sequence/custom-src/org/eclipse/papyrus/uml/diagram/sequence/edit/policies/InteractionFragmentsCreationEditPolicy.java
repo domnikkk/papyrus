@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -26,23 +26,23 @@ import org.eclipse.papyrus.uml.diagram.stereotype.edition.editpart.AppliedStereo
 /**
  * Ordering fragments after creation.
  * See https://bugs.eclipse.org/bugs/show_bug.cgi?id=403233
- * 
+ *
  * @author Jin Liu (jin.liu@soyatec.com)
  */
 public class InteractionFragmentsCreationEditPolicy extends PapyrusCreationEditPolicy {
 
 	/**
 	 * @see org.eclipse.papyrus.uml.diagram.common.editpolicies.PapyrusCreationEditPolicy#getCreateElementAndViewCommand(org.eclipse.gmf.runtime.diagram.ui.requests.CreateViewAndElementRequest)
-	 * 
+	 *
 	 * @param request
 	 * @return
 	 */
 	@Override
 	protected Command getCreateElementAndViewCommand(CreateViewAndElementRequest request) {
 		Command command = super.getCreateElementAndViewCommand(request);
-		if(command != null && command.canExecute()) {
+		if (command != null && command.canExecute()) {
 			ICommand orderingFragmentsCommand = FragmentsOrdererHelper.createOrderingFragmentsCommand(getHost(), request);
-			if(orderingFragmentsCommand != null) {
+			if (orderingFragmentsCommand != null) {
 				command = command.chain(new ICommandProxy(orderingFragmentsCommand));
 			}
 		}
@@ -51,13 +51,13 @@ public class InteractionFragmentsCreationEditPolicy extends PapyrusCreationEditP
 
 	/**
 	 * @see org.eclipse.gmf.runtime.diagram.ui.editpolicies.CreationEditPolicy#getReparentViewCommand(org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart)
-	 * 
+	 *
 	 * @param gep
 	 * @return
 	 */
 	@Override
 	protected ICommand getReparentViewCommand(IGraphicalEditPart gep) {
-		if(gep instanceof AppliedStereotypesCommentEditPart) {
+		if (gep instanceof AppliedStereotypesCommentEditPart) {
 			return UnexecutableCommand.INSTANCE;
 		}
 		return super.getReparentViewCommand(gep);

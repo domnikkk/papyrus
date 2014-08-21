@@ -25,7 +25,7 @@ public class CustomGateItemSemanticEditPolicy extends GateItemSemanticEditPolicy
 	/** Handles the "Hide Element" (remove only the view, and keep the semantic element) */
 	@Override
 	public Command getCommand(final Request request) {
-		if(request.getType() == REQ_DELETE) {
+		if (request.getType() == REQ_DELETE) {
 			// TODO: delete elements linked to Gate
 			// final Command baseCommand = super.getCommand(request);
 			// return GateUtils.getHideGateCommand(getHost(), baseCommand);
@@ -36,10 +36,10 @@ public class CustomGateItemSemanticEditPolicy extends GateItemSemanticEditPolicy
 	@Override
 	protected Command getCreateRelationshipCommand(final CreateRelationshipRequest req) {
 		final IElementType requestElementType = req.getElementType();
-		if(requestElementType == null) {
+		if (requestElementType == null) {
 			return null;
 		}
-		if(MessageUtils.isMessage(requestElementType)) {
+		if (MessageUtils.isMessage(requestElementType)) {
 			return getGEFWrapper(new CustomMessageCreateCommand(req));
 		}
 		return super.getCreateRelationshipCommand(req);

@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -54,56 +54,56 @@ import org.eclipse.uml2.uml.Lifeline;
  * Edit Policy to create an element on a lifeline associated with the creation of a message.
  * For example it can be used to create a Destruction Event with a Message Delete
  * or the target Execution Specification with a Message Sync.
- * 
+ *
  * @author Mathieu Velten
- * 
+ *
  */
 public class ElementCreationWithMessageEditPolicy extends LifelineChildGraphicalNodeEditPolicy {
 
 	@Override
 	protected Command getConnectionCompleteCommand(CreateConnectionRequest request) {
-		//		CompoundCommand compound = new CompoundCommand();
+		// CompoundCommand compound = new CompoundCommand();
 		Command command = super.getConnectionCompleteCommand(request);
-		if(command != null && command.canExecute()) {
-			//			compound.add(command);
-			if(request instanceof CreateConnectionViewAndElementRequest) {
-				CreateConnectionViewAndElementRequest viewRequest = (CreateConnectionViewAndElementRequest)request;
+		if (command != null && command.canExecute()) {
+			// compound.add(command);
+			if (request instanceof CreateConnectionViewAndElementRequest) {
+				CreateConnectionViewAndElementRequest viewRequest = (CreateConnectionViewAndElementRequest) request;
 				EditPart targetEP = getTargetEditPart(viewRequest);
-				EObject target = ViewUtil.resolveSemanticElement((View)targetEP.getModel());
+				EObject target = ViewUtil.resolveSemanticElement((View) targetEP.getModel());
 				EditPart sourceEP = viewRequest.getSourceEditPart();
-				EObject source = ViewUtil.resolveSemanticElement((View)sourceEP.getModel());
-				if(getSyncMessageHint().equals(viewRequest.getConnectionViewDescriptor().getSemanticHint()) || getReplyMessageHint().equals(viewRequest.getConnectionViewDescriptor().getSemanticHint())) {
-					if(target instanceof Lifeline ||
-					// handle reflexive synch message by creating a new ES
-					(target instanceof ExecutionSpecification && target.equals(source))) {
+				EObject source = ViewUtil.resolveSemanticElement((View) sourceEP.getModel());
+				if (getSyncMessageHint().equals(viewRequest.getConnectionViewDescriptor().getSemanticHint()) || getReplyMessageHint().equals(viewRequest.getConnectionViewDescriptor().getSemanticHint())) {
+					if (target instanceof Lifeline ||
+							// handle reflexive synch message by creating a new ES
+							(target instanceof ExecutionSpecification && target.equals(source))) {
 						InteractionFragment ift = SequenceUtil.findInteractionFragmentContainerAt(viewRequest.getLocation(), getHost());
 						// retrieve the good execution specification type using the source of the message
-						if(target instanceof ExecutionSpecification) {
+						if (target instanceof ExecutionSpecification) {
 							// retrieve its associated lifeline
 							targetEP = targetEP.getParent();
-							target = ViewUtil.resolveSemanticElement((View)targetEP.getModel());
+							target = ViewUtil.resolveSemanticElement((View) targetEP.getModel());
 						}
 						EditPart sourceEditPart = request.getSourceEditPart();
-						if(sourceEditPart instanceof ActionExecutionSpecificationEditPart || sourceEditPart instanceof BehaviorExecutionSpecificationEditPart) {
-							return new ICommandProxy(new PromptCreateElementAndNodeCommand(command, getEditingDomain(), viewRequest.getConnectionViewDescriptor(), (ShapeNodeEditPart)targetEP, target, sourceEP, request, ift));
+						if (sourceEditPart instanceof ActionExecutionSpecificationEditPart || sourceEditPart instanceof BehaviorExecutionSpecificationEditPart) {
+							return new ICommandProxy(new PromptCreateElementAndNodeCommand(command, getEditingDomain(), viewRequest.getConnectionViewDescriptor(), (ShapeNodeEditPart) targetEP, target, sourceEP, request, ift));
 						}
-						//						IHintedType elementType = null;
-						//						if(sourceEditPart instanceof ActionExecutionSpecificationEditPart) {
-						//							elementType = (IHintedType)UMLElementTypes.ActionExecutionSpecification_3006;
-						//						} else if(request.getSourceEditPart() instanceof BehaviorExecutionSpecificationEditPart) {
-						//							elementType = (IHintedType)UMLElementTypes.BehaviorExecutionSpecification_3003;
-						//						}
+						// IHintedType elementType = null;
+						// if(sourceEditPart instanceof ActionExecutionSpecificationEditPart) {
+						// elementType = (IHintedType)UMLElementTypes.ActionExecutionSpecification_3006;
+						// } else if(request.getSourceEditPart() instanceof BehaviorExecutionSpecificationEditPart) {
+						// elementType = (IHintedType)UMLElementTypes.BehaviorExecutionSpecification_3003;
+						// }
 						//
 						//
-						//						if(elementType != null) {
-						//							CreateElementAndNodeCommand createExecutionSpecificationCommand = new CreateElementAndNodeCommand(getEditingDomain(), (ShapeNodeEditPart)targetEP, target, elementType, request.getLocation());
-						//							createExecutionSpecificationCommand.putCreateElementRequestParameter(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER, ift);
-						//							compound.add(createExecutionSpecificationCommand);
+						// if(elementType != null) {
+						// CreateElementAndNodeCommand createExecutionSpecificationCommand = new CreateElementAndNodeCommand(getEditingDomain(), (ShapeNodeEditPart)targetEP, target, elementType, request.getLocation());
+						// createExecutionSpecificationCommand.putCreateElementRequestParameter(SequenceRequestConstant.INTERACTIONFRAGMENT_CONTAINER, ift);
+						// compound.add(createExecutionSpecificationCommand);
 						//
-						//							// put the anchor at the top of the figure
-						//							ChangeEdgeTargetCommand changeTargetCommand = new ChangeEdgeTargetCommand(getEditingDomain(), createExecutionSpecificationCommand, viewRequest.getConnectionViewDescriptor(), "(0.5, 0.0)");
-						//							compound.add(new ICommandProxy(changeTargetCommand));
-						//						}
+						// // put the anchor at the top of the figure
+						// ChangeEdgeTargetCommand changeTargetCommand = new ChangeEdgeTargetCommand(getEditingDomain(), createExecutionSpecificationCommand, viewRequest.getConnectionViewDescriptor(), "(0.5, 0.0)");
+						// compound.add(new ICommandProxy(changeTargetCommand));
+						// }
 					}
 				}
 			}
@@ -112,44 +112,45 @@ public class ElementCreationWithMessageEditPolicy extends LifelineChildGraphical
 	}
 
 	private static String getSyncMessageHint() {
-		IHintedType message = (IHintedType)UMLElementTypes.Message_4003;
+		IHintedType message = (IHintedType) UMLElementTypes.Message_4003;
 		return message.getSemanticHint();
 	}
 
 	private static String getReplyMessageHint() {
-		IHintedType message = (IHintedType)UMLElementTypes.Message_4005;
+		IHintedType message = (IHintedType) UMLElementTypes.Message_4005;
 		return message.getSemanticHint();
 	}
 
 	private TransactionalEditingDomain getEditingDomain() {
-		return ((IGraphicalEditPart)getHost()).getEditingDomain();
+		return ((IGraphicalEditPart) getHost()).getEditingDomain();
 	}
 
-	//Fixed bugs about creating connections on a PartDecomposition.
+	// Fixed bugs about creating connections on a PartDecomposition.
+	@Override
 	public EditPart getTargetEditPart(Request request) {
 		EditPart host = getHost();
-		if(host instanceof CustomLifelineEditPart) {
-			CustomLifelineEditPart lifeline = (CustomLifelineEditPart)host;
+		if (host instanceof CustomLifelineEditPart) {
+			CustomLifelineEditPart lifeline = (CustomLifelineEditPart) host;
 			boolean inlineMode = lifeline.isInlineMode();
-			if(inlineMode) {
+			if (inlineMode) {
 				Object type = request.getType();
-				if(REQ_CONNECTION_END.equals(type)) {
-					Point location = ((CreateConnectionRequest)request).getLocation().getCopy();
-					if(isCreateConnectionRequest(request, UMLElementTypes.Message_4006) && isLocatedOnLifelineHeader(lifeline, location)) {
+				if (REQ_CONNECTION_END.equals(type)) {
+					Point location = ((CreateConnectionRequest) request).getLocation().getCopy();
+					if (isCreateConnectionRequest(request, UMLElementTypes.Message_4006) && isLocatedOnLifelineHeader(lifeline, location)) {
 						return host;
 					}
 					return getTargetEditPart(request, lifeline, location);
-				} else if(REQ_CONNECTION_START.equals(type)) {
-					Point location = ((CreateConnectionRequest)request).getLocation().getCopy();
+				} else if (REQ_CONNECTION_START.equals(type)) {
+					Point location = ((CreateConnectionRequest) request).getLocation().getCopy();
 					return getTargetEditPart(request, lifeline, location);
-				} else if(REQ_RECONNECT_SOURCE.equals(type)) {
-					Point location = ((ReconnectRequest)request).getLocation().getCopy();
+				} else if (REQ_RECONNECT_SOURCE.equals(type)) {
+					Point location = ((ReconnectRequest) request).getLocation().getCopy();
 					return getTargetEditPart(request, lifeline, location);
-				} else if(REQ_RECONNECT_TARGET.equals(type)) {
-					Point location = ((ReconnectRequest)request).getLocation().getCopy();
-					ConnectionEditPart conn = ((ReconnectRequest)request).getConnectionEditPart();
-					View model = (View)conn.getModel();
-					if(4006 == UMLVisualIDRegistry.getVisualID(model) && isLocatedOnLifelineHeader(lifeline, location)) {
+				} else if (REQ_RECONNECT_TARGET.equals(type)) {
+					Point location = ((ReconnectRequest) request).getLocation().getCopy();
+					ConnectionEditPart conn = ((ReconnectRequest) request).getConnectionEditPart();
+					View model = (View) conn.getModel();
+					if (4006 == UMLVisualIDRegistry.getVisualID(model) && isLocatedOnLifelineHeader(lifeline, location)) {
 						return host;
 					}
 					return getTargetEditPart(request, lifeline, location);
@@ -161,13 +162,13 @@ public class ElementCreationWithMessageEditPolicy extends LifelineChildGraphical
 
 	private EditPart getTargetEditPart(Request request, CustomLifelineEditPart lifeline, Point location) {
 		EditPart childEditPart = getChildEditPart(lifeline, location);
-		if(childEditPart instanceof CustomLifelineEditPart) {
-			CustomLifelineEditPart childLifeline = (CustomLifelineEditPart)childEditPart;
-			if(isCreateConnectionRequest(request, UMLElementTypes.Message_4006) && isLocatedOnLifelineHeader(childLifeline, location)) {
+		if (childEditPart instanceof CustomLifelineEditPart) {
+			CustomLifelineEditPart childLifeline = (CustomLifelineEditPart) childEditPart;
+			if (isCreateConnectionRequest(request, UMLElementTypes.Message_4006) && isLocatedOnLifelineHeader(childLifeline, location)) {
 				return childEditPart;
-			} else if(request instanceof ReconnectRequest && (4006 == UMLVisualIDRegistry.getVisualID((View)((ReconnectRequest)request).getConnectionEditPart().getModel()) && isLocatedOnLifelineHeader(childLifeline, location))) {
+			} else if (request instanceof ReconnectRequest && (4006 == UMLVisualIDRegistry.getVisualID((View) ((ReconnectRequest) request).getConnectionEditPart().getModel()) && isLocatedOnLifelineHeader(childLifeline, location))) {
 				return childEditPart;
-			} else if(isLocatedOnLifelineDotLine(childLifeline, location)) {
+			} else if (isLocatedOnLifelineDotLine(childLifeline, location)) {
 				return childEditPart;
 			} else {
 				return null;
@@ -178,15 +179,15 @@ public class ElementCreationWithMessageEditPolicy extends LifelineChildGraphical
 
 	private EditPart getChildEditPart(CustomLifelineEditPart lifeline, Point location) {
 		List children = lifeline.getChildren();
-		for(Object object : children) {
-			if(!(object instanceof GraphicalEditPart)) {
+		for (Object object : children) {
+			if (!(object instanceof GraphicalEditPart)) {
 				continue;
 			}
-			GraphicalEditPart child = (GraphicalEditPart)object;
+			GraphicalEditPart child = (GraphicalEditPart) object;
 			IFigure figure = child.getFigure();
 			Point pt = location.getCopy();
 			figure.translateToRelative(pt);
-			if(figure.containsPoint(pt)) {
+			if (figure.containsPoint(pt)) {
 				return child;
 			}
 		}

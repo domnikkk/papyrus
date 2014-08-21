@@ -1,9 +1,9 @@
 /*******************************************************************************
  * Copyright (c) 2009 CEA LIST.
  * All rights reserved. This program and the accompanying materials
- * are property of the CEA, their use is subject to specific agreement 
+ * are property of the CEA, their use is subject to specific agreement
  * with the CEA.
- * 
+ *
  * Contributors:
  *    CEA LIST - initial API and implementation
  *******************************************************************************/
@@ -37,15 +37,16 @@ public class SetVisualIDWithUnusedValue extends Action {
 	 * 
 	 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
 	 */
+	@Override
 	public void run(IAction action) {
 
 		Iterator<EObject> it = getSelectedEObject().iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
 
 			// Action should not be available on objects that are not GenCommonBase
-			if(eObject instanceof GenCommonBase) {
-				GenCommonBase genCommonBase = (GenCommonBase)eObject;
+			if (eObject instanceof GenCommonBase) {
+				GenCommonBase genCommonBase = (GenCommonBase) eObject;
 				int visualID = getNewVisualID(genCommonBase.eResource(), genCommonBase.getClass());
 
 				genCommonBase.setVisualID(visualID);
@@ -58,11 +59,11 @@ public class SetVisualIDWithUnusedValue extends Action {
 	 * This method returns an unused VisualID The method first parse all the VisualID of a particular kind of node (clazz) to find the highest. The
 	 * new VisualID is the highest + 1 (also tested against
 	 * the case another kind of node uses same id)
-	 * 
+	 *
 	 * @param gmfgen
-	 *        the gmfgen model
+	 *            the gmfgen model
 	 * @param clazz
-	 *        kind of GenCommonBase node tested
+	 *            kind of GenCommonBase node tested
 	 * @return an unused VisualID (following the highest VisualID used by same kind of node)
 	 */
 	public static int getNewVisualID(Resource gmfgen, Class<?> clazz) {
@@ -71,11 +72,11 @@ public class SetVisualIDWithUnusedValue extends Action {
 		// Find the highest VisualID used by the chosen kind of node (given by clazz)
 		int lastUsed = 0;
 		Iterator<EObject> it = gmfgen.getAllContents();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			EObject eObject = it.next();
-			if(clazz.isInstance(eObject)) {
-				GenCommonBase genCommonBase = (GenCommonBase)eObject;
-				if(lastUsed < genCommonBase.getVisualID()) {
+			if (clazz.isInstance(eObject)) {
+				GenCommonBase genCommonBase = (GenCommonBase) eObject;
+				if (lastUsed < genCommonBase.getVisualID()) {
 					lastUsed = genCommonBase.getVisualID();
 				}
 			}
@@ -84,7 +85,7 @@ public class SetVisualIDWithUnusedValue extends Action {
 		// Check if another kind of node does not already use visualID
 		// increment result in such a case
 		visualID = lastUsed + 1;
-		while(isUsedVisualID(gmfgen, visualID)) {
+		while (isUsedVisualID(gmfgen, visualID)) {
 			visualID++;
 		}
 		return visualID;
@@ -92,11 +93,11 @@ public class SetVisualIDWithUnusedValue extends Action {
 
 	/**
 	 * Tests if the VisualID parameter is already used in the resource
-	 * 
+	 *
 	 * @param gmfgen
-	 *        the gmfgen model
+	 *            the gmfgen model
 	 * @param visualID
-	 *        the id to check
+	 *            the id to check
 	 * @return true if visualID is already used, else returns false
 	 */
 	public static boolean isUsedVisualID(Resource gmfgen, int visualID) {
@@ -105,13 +106,13 @@ public class SetVisualIDWithUnusedValue extends Action {
 
 		// Iterate over the gmfgen model
 		Iterator<EObject> it = gmfgen.getAllContents();
-		while(it.hasNext() && !used) {
+		while (it.hasNext() && !used) {
 			EObject eObject = it.next();
 
 			// Most Gen node inherits from GenCommonBase (owns VisualID)
-			if(eObject instanceof GenCommonBase) {
-				GenCommonBase genCommonBase = (GenCommonBase)eObject;
-				if(visualID == genCommonBase.getVisualID()) {
+			if (eObject instanceof GenCommonBase) {
+				GenCommonBase genCommonBase = (GenCommonBase) eObject;
+				if (visualID == genCommonBase.getVisualID()) {
 					used = true;
 				}
 			}

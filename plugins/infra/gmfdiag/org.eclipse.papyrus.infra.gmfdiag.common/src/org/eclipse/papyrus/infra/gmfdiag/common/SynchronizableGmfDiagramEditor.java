@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2010 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -72,14 +72,14 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 
 /**
- * 
+ *
  * This GMF editor contains a methods in order to reveal visual element from a list of semantic element.
  * <p/>
  * It also provides subclasses with common capability to automatically migrate (reconcile) input diagrams between papurus versions.
  */
 
 @SuppressWarnings("restriction")
-//suppress the warning for WorkspaceViewerProperties
+// suppress the warning for WorkspaceViewerProperties
 public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implements IRevealSemanticElement, NavigationTarget {
 
 	private Collection<PalettePageWrapper> palettePages;
@@ -92,10 +92,11 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 	/**
 	 * reveal all editpart that represent an element in the given list.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.ui.IRevealSemanticElement#revealSemanticElement(java.util.List)
-	 * 
+	 *
 	 */
+	@Override
 	public void revealSemanticElement(List<?> elementList) {
 		revealElement(elementList);
 	}
@@ -103,6 +104,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public boolean revealElement(Object element) {
 		return revealElement(Collections.singleton(element));
 	}
@@ -110,46 +112,47 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * reveal all editpart that represent an element in the given list.
-	 * 
+	 *
 	 * @see org.eclipse.papyrus.infra.core.ui.IRevealSemanticElement#revealSemanticElement(java.util.List)
-	 * 
+	 *
 	 */
+	@Override
 	public boolean revealElement(Collection<?> elementList) {
-		//create an instance that can get semantic element from gmf
+		// create an instance that can get semantic element from gmf
 		SemanticFromGMFElement semanticFromGMFElement = new SemanticFromGMFElement();
 
 		// get the graphical viewer
 		GraphicalViewer graphicalViewer = getGraphicalViewer();
-		if(graphicalViewer != null) {
+		if (graphicalViewer != null) {
 
-			//look amidst all edit part if the semantic is contained in the list
+			// look amidst all edit part if the semantic is contained in the list
 			Iterator<?> iter = graphicalViewer.getEditPartRegistry().values().iterator();
 			IGraphicalEditPart researchedEditPart = null;
 			List<?> clonedList = new ArrayList<Object>(elementList);
 			List<IGraphicalEditPart> partSelection = new ArrayList<IGraphicalEditPart>();
 
-			while(iter.hasNext() && !clonedList.isEmpty()) {
+			while (iter.hasNext() && !clonedList.isEmpty()) {
 				Object currentEditPart = iter.next();
-				//look only amidst IPrimary editpart to avoid compartment and labels of links
-				if(currentEditPart instanceof IPrimaryEditPart) {
+				// look only amidst IPrimary editpart to avoid compartment and labels of links
+				if (currentEditPart instanceof IPrimaryEditPart) {
 					Object currentElement = semanticFromGMFElement.getSemanticElement(currentEditPart);
-					if(clonedList.contains(currentElement)) {
+					if (clonedList.contains(currentElement)) {
 						clonedList.remove(currentElement);
-						researchedEditPart = ((IGraphicalEditPart)currentEditPart);
+						researchedEditPart = ((IGraphicalEditPart) currentEditPart);
 						partSelection.add(researchedEditPart);
 
 					}
 				}
 			}
 
-			//We may also search for a GMF View (Instead of a semantic model Element)
-			if(!clonedList.isEmpty()) {
-				for(Object element : clonedList) {
-					if(graphicalViewer.getEditPartRegistry().containsKey(element) && !clonedList.isEmpty()) {
+			// We may also search for a GMF View (Instead of a semantic model Element)
+			if (!clonedList.isEmpty()) {
+				for (Object element : clonedList) {
+					if (graphicalViewer.getEditPartRegistry().containsKey(element) && !clonedList.isEmpty()) {
 						clonedList.remove(element);
-						researchedEditPart = (IGraphicalEditPart)graphicalViewer.getEditPartRegistry().get(element);
+						researchedEditPart = (IGraphicalEditPart) graphicalViewer.getEditPartRegistry().get(element);
 						partSelection.add(researchedEditPart);
 
 					}
@@ -157,9 +160,9 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 			}
 
 			// the second test, as the model element is not a PrimaryEditPart, is to allow the selection even if the user selected it with other elements
-			//	and reset the selection if only the model is selected
-			if(clonedList.isEmpty() || (clonedList.size() == 1 && clonedList.get(0) == getDiagram().getElement())) {
-				//all parts have been found
+			// and reset the selection if only the model is selected
+			if (clonedList.isEmpty() || (clonedList.size() == 1 && clonedList.get(0) == getDiagram().getElement())) {
+				// all parts have been found
 				IStructuredSelection sSelection = new StructuredSelection(partSelection);
 				// this is used instead of graphicalViewer.select(IGraphicalEditPart) as the later only allows the selection of a single element
 				graphicalViewer.setSelection(sSelection);
@@ -175,27 +178,27 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	 */
 	@Override
 	public Object getAdapter(@SuppressWarnings("rawtypes") Class type) {
-		if(type == DiagramEditPart.class) {
+		if (type == DiagramEditPart.class) {
 			return getDiagramEditPart();
 		}
-		if(type == Diagram.class) {
+		if (type == Diagram.class) {
 			return getDiagram();
 		}
-		if(type == IReloadContextProvider.class) {
+		if (type == IReloadContextProvider.class) {
 			return new DiagramReloadContextProvider(this);
 		}
-		if(type == PalettePage.class) {
-			if(palettePages == null) {
+		if (type == PalettePage.class) {
+			if (palettePages == null) {
 				palettePages = Lists.newArrayListWithExpectedSize(1);
 			} else {
 				cleanUpPalettePages();
-				if(!palettePages.isEmpty()) {
+				if (!palettePages.isEmpty()) {
 					// Make the new page look just like the last one (for continuity of the UI when the
 					// PapyrusPaletteSynchronizer causes a new page to be created)
 					Iterables.getLast(palettePages, null).saveState();
 				}
 			}
-			PalettePageWrapper result = new PalettePageWrapper((CustomPalettePage)super.getAdapter(type));
+			PalettePageWrapper result = new PalettePageWrapper((CustomPalettePage) super.getAdapter(type));
 			palettePages.add(result);
 			return result;
 		}
@@ -203,7 +206,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	}
 
 	Collection<? extends PalettePage> getPalettePages() {
-		if(palettePages == null) {
+		if (palettePages == null) {
 			return Collections.emptyList();
 		} else {
 			cleanUpPalettePages();
@@ -216,8 +219,8 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	}
 
 	private void cleanUpPalettePages() {
-		for(Iterator<PalettePageWrapper> iter = palettePages.iterator(); iter.hasNext();) {
-			if(iter.next().isDisposed()) {
+		for (Iterator<PalettePageWrapper> iter = palettePages.iterator(); iter.hasNext();) {
+			if (iter.next().isDisposed()) {
 				iter.remove();
 			}
 		}
@@ -232,9 +235,9 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 		DefaultEditDomain editDomain = getEditDomain();
 
-		if(editDomain != null) {
+		if (editDomain != null) {
 			CommandStack stack = editDomain.getCommandStack();
-			if(stack != null) {
+			if (stack != null) {
 				// dispose the old stack
 				stack.dispose();
 			}
@@ -245,7 +248,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 			editDomain.setCommandStack(diagramStack);
 		}
 
-		DiagramEditDomain diagEditDomain = (DiagramEditDomain)getDiagramEditDomain();
+		DiagramEditDomain diagEditDomain = (DiagramEditDomain) getDiagramEditDomain();
 		diagEditDomain.setActionManager(createActionManager());
 	}
 
@@ -263,9 +266,9 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	 * this command update the status of the toggle actions
 	 */
 	protected void updateToggleActionState() {
-		final ICommandService commandService = (ICommandService)PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
-		if(commandService != null) {
-			final IPreferenceStore wsPreferenceStore = ((DiagramGraphicalViewer)getDiagramGraphicalViewer()).getWorkspaceViewerPreferenceStore();
+		final ICommandService commandService = (ICommandService) PlatformUI.getWorkbench().getActiveWorkbenchWindow().getService(ICommandService.class);
+		if (commandService != null) {
+			final IPreferenceStore wsPreferenceStore = ((DiagramGraphicalViewer) getDiagramGraphicalViewer()).getWorkspaceViewerPreferenceStore();
 			org.eclipse.core.commands.Command command = commandService.getCommand(CommandIds.VIEW_GRID_COMMAND);
 			EclipseCommandUtils.updateToggleCommandState(command, wsPreferenceStore.getBoolean(WorkspaceViewerProperties.VIEWGRID));
 
@@ -288,9 +291,9 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 	protected void addDefaultPreferences() {
 		super.addDefaultPreferences();
 		final PreferencesHint preferencesHint = getPreferencesHint();
-		final IPreferenceStore globalPreferenceStore = (IPreferenceStore)preferencesHint.getPreferenceStore();
+		final IPreferenceStore globalPreferenceStore = (IPreferenceStore) preferencesHint.getPreferenceStore();
 		final String diagramType = getDiagram().getType();
-		//get the preferences
+		// get the preferences
 		final boolean viewGrid = globalPreferenceStore.getBoolean(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.VIEW_GRID));
 		final boolean viewRuler = globalPreferenceStore.getBoolean(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.VIEW_RULER));
 		final int rulerUnit = globalPreferenceStore.getInt(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.RULER_UNITS));
@@ -302,7 +305,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 		final boolean gridOrder = globalPreferenceStore.getBoolean(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.GRID_ORDER));
 		final int gridLineStyle = globalPreferenceStore.getInt(PreferencesConstantsHelper.getDiagramConstant(diagramType, PreferencesConstantsHelper.GRID_LINE_STYLE));
 
-		//set the preferences
+		// set the preferences
 		final IPreferenceStore localStore = getWorkspaceViewerPreferenceStore();
 		localStore.setValue(PreferencesConstantsHelper.VIEW_GRID_CONSTANT, viewGrid);
 		localStore.setValue(PreferencesConstantsHelper.VIEW_RULERS_CONSTANT, viewRuler);
@@ -312,7 +315,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 		localStore.setValue(PreferencesConstantsHelper.GRID_LINE_COLOR_CONSTANT, gridLineColor);
 		localStore.setValue(PreferencesConstantsHelper.GRID_SPACING_CONSTANT, gridSpacing);
 
-		//to force refresh
+		// to force refresh
 		localStore.setValue(PreferencesConstantsHelper.GRID_ORDER_CONSTANT, !gridOrder);
 		localStore.setValue(PreferencesConstantsHelper.GRID_ORDER_CONSTANT, gridOrder);
 
@@ -336,21 +339,19 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 		}
 
 		/**
-		 * Process diagram reconcilers to migrate models. Does nothing if the diagram is already of the current Papyrus version based on
-		 * {@link DiagramVersioningUtils#isOfCurrentPapyrusVersion(Diagram)} check.
+		 * Process diagram reconcilers to migrate models. Does nothing if the diagram is already of the current Papyrus version based on {@link DiagramVersioningUtils#isOfCurrentPapyrusVersion(Diagram)} check.
 		 * <p/>
-		 * This method needs configured {@link DiagramEditDomain} to execute collected {@link ICommand} when needed, so it can't be called from
-		 * constructor
-		 * 
+		 * This method needs configured {@link DiagramEditDomain} to execute collected {@link ICommand} when needed, so it can't be called from constructor
+		 *
 		 * @param diagram
-		 *        the diagram to reconcile
+		 *            the diagram to reconcile
 		 * @throws CoreException
-		 *         subclass may throw wrapping any problem thrown from execution of reconcile using {@link GMFUnsafe}. Default implementation does not
-		 *         throw it however
+		 *             subclass may throw wrapping any problem thrown from execution of reconcile using {@link GMFUnsafe}. Default implementation does not
+		 *             throw it however
 		 */
 		public void reconcileDiagram(Diagram diagram) throws CoreException {
 			CompositeCommand migration = buildReconcileCommand(diagram);
-			if(migration == null) {
+			if (migration == null) {
 				return;
 			}
 			migration.add(DiagramVersioningUtils.createStampCurrentVersionCommand(diagram));
@@ -367,49 +368,48 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 		/**
 		 * Process diagram reconcilers to migrate models.
-		 * 
-		 * Returns <code>null</code> if the diagram is already of the current Papyrus version based on
-		 * {@link DiagramVersioningUtils#isOfCurrentPapyrusVersion(Diagram)} check.
+		 *
+		 * Returns <code>null</code> if the diagram is already of the current Papyrus version based on {@link DiagramVersioningUtils#isOfCurrentPapyrusVersion(Diagram)} check.
 		 * <p/>
 		 * If one of the reconcilers returns un-executable command, this method logs the problem and returns <code>null</code>
-		 * 
+		 *
 		 * @param diagram
-		 *        the diagram to reconcile
+		 *            the diagram to reconcile
 		 */
 		protected CompositeCommand buildReconcileCommand(Diagram diagram) {
-			if(DiagramVersioningUtils.isOfCurrentPapyrusVersion(diagram)) {
+			if (DiagramVersioningUtils.isOfCurrentPapyrusVersion(diagram)) {
 				return null;
 			}
 			String sourceVersion = DiagramVersioningUtils.getCompatibilityVersion(diagram);
 			Map<String, Collection<DiagramReconciler>> diagramReconcilers = DiagramReconcilersReader.getInstance().load();
 			String diagramType = diagram.getType();
-			if(!diagramReconcilers.containsKey(diagramType)) {
+			if (!diagramReconcilers.containsKey(diagramType)) {
 				return null;
 			}
 			Collection<DiagramReconciler> reconcilers = diagramReconcilers.get(diagram.getType());
 
 			boolean someFailed = false;
 			CompositeCommand whole = new CompositeCommand("Reconciling");
-			for(DiagramReconciler next : reconcilers) {
-				if(!next.canReconcileFrom(diagram, sourceVersion)) {
-					//asked for ignore it for this instance, all fine
+			for (DiagramReconciler next : reconcilers) {
+				if (!next.canReconcileFrom(diagram, sourceVersion)) {
+					// asked for ignore it for this instance, all fine
 					continue;
 				}
 				ICommand nextCommand = next.getReconcileCommand(diagram);
-				if(nextCommand == null) {
-					//legitimate no-op response, all fine
+				if (nextCommand == null) {
+					// legitimate no-op response, all fine
 					continue;
 				}
-				if(nextCommand.canExecute()) {
+				if (nextCommand.canExecute()) {
 					whole.add(nextCommand);
 				} else {
-					Activator.log.error("Diagram reconciler " + next + " failed to reconcile diagram : " + diagram, null); //$NON-NLS-1$ //$NON-NLS-2$  
+					Activator.log.error("Diagram reconciler " + next + " failed to reconcile diagram : " + diagram, null); //$NON-NLS-1$ //$NON-NLS-2$
 					someFailed = true;
 				}
 			}
-			if(someFailed) {
-				//probably better to fail the whole reconicle process as user will have a chance to reconcile later when we fix the problem with one of the reconcilers
-				//executing partial reconciliation will leave the diagram in the state with partially current and partially outdated versions
+			if (someFailed) {
+				// probably better to fail the whole reconicle process as user will have a chance to reconcile later when we fix the problem with one of the reconcilers
+				// executing partial reconciliation will leave the diagram in the state with partially current and partially outdated versions
 				return null;
 			}
 
@@ -437,9 +437,10 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 			this.delegate = delegate;
 		}
 
+		@Override
 		public void createControl(Composite parent) {
 			Control existing = getControl();
-			if((existing != null) && !existing.isDisposed()) {
+			if ((existing != null) && !existing.isDisposed()) {
 				// Attempting to creating the page controls again? Bail
 				return;
 			}
@@ -456,7 +457,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 				}
 			});
 
-			if(palettePageState != null) {
+			if (palettePageState != null) {
 				// We're re-creating the palette page after having closed it, either for editor re-load
 				// or the PapyrusPaletteSynchronizer forcing a palette refresh. Reinitialize from the
 				// last saved state
@@ -465,6 +466,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 			}
 		}
 
+		@Override
 		public void dispose() {
 			// Save current state for potential re-opening later
 			saveState();
@@ -477,13 +479,14 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 		void saveState() {
 			PaletteViewer palette = getPaletteViewer();
-			if(palette != null) {
+			if (palette != null) {
 				palettePageState = PaletteViewerReloadContextProvider.getInstance(palette).createReloadContext();
 			}
 		}
 
+		@Override
 		public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-			if(adapter == IReloadContextProvider.class) {
+			if (adapter == IReloadContextProvider.class) {
 				return new IReloadContextProvider() {
 
 					@Override
@@ -493,7 +496,7 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 
 					@Override
 					public void restore(Object reloadContext) {
-						if(getPaletteViewer() != null) {
+						if (getPaletteViewer() != null) {
 							PaletteViewerReloadContextProvider.getInstance(getPaletteViewer()).restore(reloadContext);
 						} else {
 							// We'll defer this until the page control is created
@@ -505,23 +508,28 @@ public class SynchronizableGmfDiagramEditor extends DiagramDocumentEditor implem
 			return delegate.getAdapter(adapter);
 		}
 
+		@Override
 		public Control getControl() {
 			// CustomPalettePage will NPE if asked for the control before the PaletteViewer is created
 			return (delegate.getPaletteViewer() == null) ? null : delegate.getControl();
 		}
 
+		@Override
 		public void setFocus() {
 			delegate.setFocus();
 		}
 
+		@Override
 		public void setActionBars(IActionBars actionBars) {
 			delegate.setActionBars(actionBars);
 		}
 
+		@Override
 		public void init(IPageSite pageSite) {
 			delegate.init(pageSite);
 		}
 
+		@Override
 		public IPageSite getSite() {
 			return delegate.getSite();
 		}

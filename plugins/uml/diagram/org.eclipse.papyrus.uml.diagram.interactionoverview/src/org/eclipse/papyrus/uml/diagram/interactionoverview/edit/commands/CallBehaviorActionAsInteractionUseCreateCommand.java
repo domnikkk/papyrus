@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2013 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -45,20 +45,20 @@ public class CallBehaviorActionAsInteractionUseCreateCommand extends CallBehavio
 		// get the activity containing the new element
 		Activity parentActivity = null;
 		EObject parent = getElementToEdit();
-		while(parent != null && parentActivity == null) {
-			if(parent instanceof Activity) {
-				parentActivity = (Activity)parent;
+		while (parent != null && parentActivity == null) {
+			if (parent instanceof Activity) {
+				parentActivity = (Activity) parent;
 			}
 			parent = parent.eContainer();
 		}
 		final CallBehaviorAction newElement = UMLFactory.eINSTANCE.createCallBehaviorAction();
 		final CreateInteractionUseDialog dialog = new CreateInteractionUseDialog(Display.getDefault().getActiveShell(), parentActivity, newElement);
-		if(IDialogConstants.OK_ID == dialog.open()) {
+		if (IDialogConstants.OK_ID == dialog.open()) {
 			// initialize the invoked element (no need to use a command, since
 			// action is being created)
 			final EObject behavior = dialog.getSelectedInvoked();
-			if(behavior instanceof Behavior) {
-				newElement.setBehavior((Behavior)behavior);
+			if (behavior instanceof Behavior) {
+				newElement.setBehavior((Behavior) behavior);
 			}
 		} else {
 			return CommandResult.newCancelledCommandResult();
@@ -66,7 +66,7 @@ public class CallBehaviorActionAsInteractionUseCreateCommand extends CallBehavio
 		initAndExecuteEmfCommand(newElement);
 		ElementInitializers.getInstance().init_CallBehaviorAction_3008(newElement);
 		doConfigure(newElement, monitor, info);
-		((CreateElementRequest)getRequest()).setNewElement(newElement);
+		((CreateElementRequest) getRequest()).setNewElement(newElement);
 		return CommandResult.newOKCommandResult(newElement);
 	}
 }

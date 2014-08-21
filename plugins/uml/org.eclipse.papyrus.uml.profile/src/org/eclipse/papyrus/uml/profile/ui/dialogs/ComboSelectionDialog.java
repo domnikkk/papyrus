@@ -1,7 +1,7 @@
 /*****************************************************************************
  * Copyright (c) 2008 CEA LIST.
  *
- *    
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -30,15 +30,15 @@ public class ComboSelectionDialog extends ChooseDialog {
 
 	/**
 	 * The Constructor.
-	 * 
+	 *
 	 * @param parentShell
-	 *        the parent shell
+	 *            the parent shell
 	 * @param message
-	 *        the message
+	 *            the message
 	 * @param listofChoice
-	 *        the listof choice
+	 *            the listof choice
 	 * @param initial
-	 *        the initial
+	 *            the initial
 	 */
 	public ComboSelectionDialog(Shell parentShell, String message, String[] listofChoice, String initial) {
 		super(parentShell);

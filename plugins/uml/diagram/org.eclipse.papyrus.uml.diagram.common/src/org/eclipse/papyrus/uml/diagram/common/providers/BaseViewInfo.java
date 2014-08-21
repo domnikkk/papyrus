@@ -1,10 +1,10 @@
 /*******************************************************************************
- * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat 
+ * Copyright (c) 2009 Conselleria de Infraestructuras y Transporte, Generalitat
  * de la Comunitat Valenciana . All rights reserved. This program
  * and the accompanying materials are made available under the terms of the
  * Eclipse Public License v1.0 which accompanies this distribution, and is
  * available at http://www.eclipse.org/legal/epl-v10.html
- * 
+ *
  * Contributors: Francisco Javier Cano Muñoz (Prodevelop) – Initial implementation
  *
  ******************************************************************************/
@@ -21,7 +21,7 @@ import java.util.Map;
  * that have parents that have not yet been added; these nodes are stores in a temporary storage.
  * Upon a later addition of a node, nodes in the temporary storage are revisited to put them in
  * their correct place.
- * 
+ *
  * @author <a href="mailto:fjcano@prodevelop.es">Francisco Javier Cano Muñoz</a>
  * @NOT-generated
  */
@@ -75,13 +75,13 @@ public class BaseViewInfo implements ViewInfo {
 
 	/**
 	 * Instantiates a new base view info.
-	 * 
+	 *
 	 * @param visualID
-	 *        the visual id
+	 *            the visual id
 	 * @param type
-	 *        the type
+	 *            the type
 	 * @param label
-	 *        the label
+	 *            the label
 	 */
 	public BaseViewInfo(int visualID, int type, String label) {
 		this(visualID, type, label, null, null);
@@ -89,17 +89,17 @@ public class BaseViewInfo implements ViewInfo {
 
 	/**
 	 * Instantiates a new base view info.
-	 * 
+	 *
 	 * @param visualID
-	 *        the visual id
+	 *            the visual id
 	 * @param type
-	 *        the type
+	 *            the type
 	 * @param label
-	 *        the label
+	 *            the label
 	 * @param children
-	 *        the children
+	 *            the children
 	 * @param parent
-	 *        the parent
+	 *            the parent
 	 */
 	public BaseViewInfo(int visualID, int type, String label, Collection<ViewInfo> children, ViewInfo parent) {
 		this.visualID = String.valueOf(visualID);
@@ -114,8 +114,9 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#getChildren()
 	 */
+	@Override
 	public Collection<ViewInfo> getChildren() {
-		if(children == null) {
+		if (children == null) {
 			children = new ArrayList<ViewInfo>();
 		}
 		return children;
@@ -124,6 +125,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#getLabel()
 	 */
+	@Override
 	public String getLabel() {
 		return label;
 	}
@@ -131,27 +133,27 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#getType()
 	 */
+	@Override
 	public int getType() {
 		// type by its integer form
-		switch(typeViewInfo) {
+		switch (typeViewInfo) {
 		case ViewInfo.Head:
 		case ViewInfo.Node:
 		case ViewInfo.Edge:
 		case ViewInfo.Label:
 			return typeViewInfo;
-		default:
-		{
+		default: {
 			// type by its String form
-			if(type != null && type.length() > 0) {
-				if(ViewInfo.NONE_LITERAL.equals(type)) {
+			if (type != null && type.length() > 0) {
+				if (ViewInfo.NONE_LITERAL.equals(type)) {
 					return ViewInfo.None;
-				} else if(ViewInfo.HEAD_LITERAL.equals(type)) {
+				} else if (ViewInfo.HEAD_LITERAL.equals(type)) {
 					return ViewInfo.Head;
-				} else if(ViewInfo.NODE_LITERAL.equals(type)) {
+				} else if (ViewInfo.NODE_LITERAL.equals(type)) {
 					return ViewInfo.Node;
-				} else if(ViewInfo.EDGE_LITERAL.equals(type)) {
+				} else if (ViewInfo.EDGE_LITERAL.equals(type)) {
 					return ViewInfo.Edge;
-				} else if(ViewInfo.LABEL_LITERAL.equals(type)) {
+				} else if (ViewInfo.LABEL_LITERAL.equals(type)) {
 					return ViewInfo.Label;
 				} else {
 					return ViewInfo.None;
@@ -167,6 +169,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#getVisualID()
 	 */
+	@Override
 	public int getVisualID() {
 		return Integer.valueOf(visualID);
 	}
@@ -174,6 +177,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#getParent()
 	 */
+	@Override
 	public ViewInfo getParent() {
 		return parentViewInfo;
 	}
@@ -181,17 +185,18 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * Indicates whether this ViewInfo can be selected to be filtered.
 	 */
+	@Override
 	public boolean isSelectable() {
 		return selectable;
 	}
 
 	/**
 	 * Gets the temporary storage for nodes without parents in the hierarchy.
-	 * 
+	 *
 	 * @return the to add
 	 */
 	protected static Map<Integer, Collection<ViewInfo>> getToAdd() {
-		if(toAdd == null) {
+		if (toAdd == null) {
 			toAdd = new HashMap<Integer, Collection<ViewInfo>>();
 		}
 		return toAdd;
@@ -202,6 +207,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#setChildren(java.util.Collection )
 	 */
+	@Override
 	public void setChildren(Collection<ViewInfo> children) {
 		this.children = children;
 	}
@@ -209,6 +215,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#setLabel(java.lang.String)
 	 */
+	@Override
 	public void setLabel(String label) {
 		this.label = label;
 	}
@@ -216,6 +223,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#setParent(es.cv.gvcase.mdt. common.provider.ViewInfo)
 	 */
+	@Override
 	public void setParent(ViewInfo parent) {
 		this.parentViewInfo = parent;
 	}
@@ -223,6 +231,7 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#setType(int)
 	 */
+	@Override
 	public void setType(int type) {
 		this.typeViewInfo = type;
 	}
@@ -230,18 +239,19 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#setVisualID(int)
 	 */
+	@Override
 	public void setVisualID(int visualID) {
 		this.visualID = String.valueOf(visualID);
 	}
 
 	/**
 	 * Gets the root info which this ViewInfo belong to.
-	 * 
+	 *
 	 * @return the root info
 	 */
 	protected ViewInfo getRootInfo() {
 		ViewInfo parent = null, aux = this;
-		while((parent = aux.getParent()) != null) {
+		while ((parent = aux.getParent()) != null) {
 			aux = parent;
 		}
 		return aux;
@@ -249,12 +259,12 @@ public class BaseViewInfo implements ViewInfo {
 
 	/**
 	 * Checks whether ViewInfo is the higher in the hierarchy.
-	 * 
+	 *
 	 * @return true, if is root
 	 */
 	protected boolean isRoot() {
 		ViewInfo root = getRootInfo();
-		if(root != null && root == this) {
+		if (root != null && root == this) {
 			return true;
 		}
 		return false;
@@ -266,20 +276,21 @@ public class BaseViewInfo implements ViewInfo {
 	 * Adds a node in its corresponding place in the hierarchy. The parent node
 	 * needs not exist yet in the hierarchy. Orphan nodes are stored in a
 	 * temporary storage, that is revisited when a new node is added.
-	 * 
+	 *
 	 * @see es.cv.gvcase.mdt.common.provider.ViewInfo#addNode(int, es.cv.gvcase.mdt.common.provider.ViewInfo)
 	 */
+	@Override
 	public boolean addNode(int parentVisualID, ViewInfo info) {
-		if(isAlreadyContained(info)) {
+		if (isAlreadyContained(info)) {
 			return true;
 		}
-		if(internalAddNode(parentVisualID, info)) {
-			if(isRoot()) {
+		if (internalAddNode(parentVisualID, info)) {
+			if (isRoot()) {
 				revisePendentNodes(info);
 			}
 			return true;
 		} else {
-			if(isRoot()) {
+			if (isRoot()) {
 				addPendentNode(parentVisualID, info);
 			}
 			return false;
@@ -288,14 +299,14 @@ public class BaseViewInfo implements ViewInfo {
 
 	/**
 	 * Checks if a ViewInfo is already contained in the hierarchy.
-	 * 
+	 *
 	 * @param info
-	 *        the info
-	 * 
+	 *            the info
+	 *
 	 * @return true, if is already contained
 	 */
 	protected boolean isAlreadyContained(ViewInfo info) {
-		if(info == null) {
+		if (info == null) {
 			return true;
 		}
 		return lookInChildren(this, info);
@@ -303,20 +314,20 @@ public class BaseViewInfo implements ViewInfo {
 
 	/**
 	 * Look in children for a given ViewInfo.
-	 * 
+	 *
 	 * @param info
-	 *        the info
+	 *            the info
 	 * @param lookFor
-	 *        the look for
-	 * 
+	 *            the look for
+	 *
 	 * @return true, if successful
 	 */
 	protected boolean lookInChildren(ViewInfo info, ViewInfo lookFor) {
-		if(info == lookFor) {
+		if (info == lookFor) {
 			return true;
 		}
-		for(ViewInfo child : info.getChildren()) {
-			if(lookInChildren(child, lookFor)) {
+		for (ViewInfo child : info.getChildren()) {
+			if (lookInChildren(child, lookFor)) {
 				return true;
 			}
 		}
@@ -326,18 +337,18 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * Adds a node that was in the temporary storage and its parent node has
 	 * just been added to the hierarchy.
-	 * 
+	 *
 	 * @param parentID
-	 *        the parent id
+	 *            the parent id
 	 * @param info
-	 *        the info
+	 *            the info
 	 */
 	private void addPendentNode(int parentID, ViewInfo info) {
 		Map<Integer, Collection<ViewInfo>> toAdd = getToAdd();
-		if(toAdd.containsKey(parentID) == false) {
+		if (toAdd.containsKey(parentID) == false) {
 			toAdd.put(parentID, new ArrayList<ViewInfo>());
 		}
-		if(toAdd.get(parentID).contains(info) == false) {
+		if (toAdd.get(parentID).contains(info) == false) {
 			toAdd.get(parentID).add(info);
 		}
 	}
@@ -345,18 +356,18 @@ public class BaseViewInfo implements ViewInfo {
 	/**
 	 * Revise pending nodes in the temporary storage. Nodes whose parent has
 	 * been added will be put in their corresponding in the hierarchy.
-	 * 
+	 *
 	 * @param info
-	 *        the info
+	 *            the info
 	 */
 	private void revisePendentNodes(ViewInfo info) {
 		int parentVisualID = info.getVisualID();
 		Map<Integer, Collection<ViewInfo>> toAdd = getToAdd();
-		if(toAdd.containsKey(parentVisualID)) {
-			for(ViewInfo viewInfo : toAdd.get(parentVisualID)) {
-				if(info.getChildren().contains(viewInfo) == false && info != viewInfo && isAlreadyContained(viewInfo) == false) {
+		if (toAdd.containsKey(parentVisualID)) {
+			for (ViewInfo viewInfo : toAdd.get(parentVisualID)) {
+				if (info.getChildren().contains(viewInfo) == false && info != viewInfo && isAlreadyContained(viewInfo) == false) {
 					info.getChildren().add(viewInfo);
-					if(viewInfo.getParent() == null) {
+					if (viewInfo.getParent() == null) {
 						viewInfo.setParent(info);
 					}
 				}
@@ -367,29 +378,29 @@ public class BaseViewInfo implements ViewInfo {
 
 	/**
 	 * Internal add node.
-	 * 
+	 *
 	 * @param parentVisualID
-	 *        the parent visual id
+	 *            the parent visual id
 	 * @param info
-	 *        the info
-	 * 
+	 *            the info
+	 *
 	 * @return true, if successful
 	 */
 	protected boolean internalAddNode(int parentVisualID, ViewInfo info) {
-		if(info == null) {
+		if (info == null) {
 			return true;
 		}
-		if(getVisualID() == parentVisualID) {
-			if(getChildren().contains(info) == false && this != info) {
+		if (getVisualID() == parentVisualID) {
+			if (getChildren().contains(info) == false && this != info) {
 				getChildren().add(info);
 			}
-			if(info.getParent() == null) {
+			if (info.getParent() == null) {
 				info.setParent(this);
 			}
 			return true;
 		}
-		for(ViewInfo viewInfo : getChildren()) {
-			if(viewInfo.addNode(parentVisualID, info)) {
+		for (ViewInfo viewInfo : getChildren()) {
+			if (viewInfo.addNode(parentVisualID, info)) {
 				return true;
 			}
 		}
@@ -399,7 +410,7 @@ public class BaseViewInfo implements ViewInfo {
 	// // for debugging purposes
 	/**
 	 * A Debugging method. Shows some info.
-	 * 
+	 *
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
